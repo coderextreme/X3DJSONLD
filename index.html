@@ -3510,12 +3510,11 @@
 <option>examples/X3dForAdvancedModeling/Visualization/BackgroundCollection.json</option>
 <option>examples/X3dForAdvancedModeling/Visualization/BackgroundCube.json</option>
 </select>
-<X3D>
-</X3D>
 </body>
     <script type="text/javascript" src="X3DJSONLD.js"></script>
     <script type="text/javascript">
 	$("select").change(function() {
+		$("x3d").remove();
 		loadX3DJSON('body',$('select option:selected').text());
 	});
     </script>
