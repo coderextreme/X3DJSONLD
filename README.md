@@ -9,8 +9,11 @@ cd X3DJSONLD
 ```
 
 * If you want to use node as your web server, download and install node.js (npm comes with it). You may wish to use python's SimpleHTTPServer or other.  If you use another server, you will need to create a junction in the local folder called examples that points to the folder found in config.js
+
+* Optional:
 ```
 ln -s examples ___path_to_examples___
+```
 
 * edit config.js, and start a web server
 ```
