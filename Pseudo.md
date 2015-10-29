@@ -8,18 +8,11 @@
 	loadX3DJSON('body','examples/HelloWorld.json');
 ```
 
-*
-```
-When the select changes, remove the x3d element, then load the selected file into the singleton body element.
-
-
-When the page loads, load HelloWorld.json into the singleton body element
-```
+When the select changes, remove the x3d element, then load the selected file into the singleton body element.  When the page loads, load HelloWorld.json into the singleton body element
 
 
 
 * function ConvertChildren(object, indent, parentkey, element)
-
 ```
 When the parser sees a parentkey with a leading '-', it converts all the key/value pairs in the object following the parentkey following to X3DOM by calling ConvertToX3DOM.
 indent is the amount to indent
@@ -27,7 +20,6 @@ element is the parent element
 ```
 
 * function ConvertToX3DOM(object, indent, parentkey, element)
-*
 ```
  for each key in object
 	if the key is a number, set isArray to true
@@ -71,12 +63,8 @@ element is the parent element
 ```
 
 * function loadX3DJS(selector, json)
-*
-```
- selector is the CSS selector for the singleton node to append to
- json is X3DJSON to load
-```
-*
+
+selector is the CSS selector for the singleton node to append to.  json is X3DJSON to load
 ```
 	set element to the value of querying for selector
 	if element is null
@@ -87,13 +75,7 @@ element is the parent element
 ```
 
 * function loadX3DJSON(selector, url);
-*
-```
-selector is the CSS selector for the singleton node to append to
-url is a link to the JSON URL to load
-```
-
-*
+selector is the CSS selector for the singleton node to append to.   url is a link to the JSON URL to load
 ```
 retrieve the value from url into json.  Fail on any ajax error
 	call loadX3DJS with selector = selector and json = json
