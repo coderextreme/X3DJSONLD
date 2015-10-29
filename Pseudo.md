@@ -1,4 +1,4 @@
-Pseudocode for X3DJSONLD
+* Pseudocode for X3DJSONLD
 
 ```
 	$("select").change(function() {
@@ -18,19 +18,15 @@ When the page loads, load HelloWorld.json into the singleton body element
 
 
 
-```
-function ConvertChildren(object, indent, parentkey, element)
-```
-*
+* function ConvertChildren(object, indent, parentkey, element)
+
 ```
 When the parser sees a parentkey with a leading '-', it converts all the key/value pairs in the object following the parentkey following to X3DOM by calling ConvertToX3DOM.
 indent is the amount to indent
 element is the parent element
 ```
 
-```
-function ConvertToX3DOM(object, indent, parentkey, element)
-```
+* function ConvertToX3DOM(object, indent, parentkey, element)
 *
 ```
  for each key in object
@@ -74,9 +70,7 @@ function ConvertToX3DOM(object, indent, parentkey, element)
 	return element
 ```
 
-```
-function loadX3DJS(selector, json)
-```
+* function loadX3DJS(selector, json)
 *
 ```
  selector is the CSS selector for the singleton node to append to
@@ -92,9 +86,7 @@ function loadX3DJS(selector, json)
 		reload x3dom
 ```
 
-```
-function loadX3DJSON(selector, url);
-```
+* function loadX3DJSON(selector, url);
 *
 ```
 selector is the CSS selector for the singleton node to append to
