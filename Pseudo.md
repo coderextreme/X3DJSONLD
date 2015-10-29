@@ -13,13 +13,14 @@ When the select changes, remove the x3d element, then load the selected file int
 
 
 * function ConvertChildren(object, indent, parentkey, element)
-```
+
 When the parser sees a parentkey with a leading '-', it converts all the key/value pairs in the object following the parentkey following to X3DOM by calling ConvertToX3DOM.
-indent is the amount to indent
-element is the parent element
-```
+indent is the amount to indent.
+element is the parent element.
 
 * function ConvertToX3DOM(object, indent, parentkey, element)
+
+Main function for loading JSON
 ```
  for each key in object
 	if the key is a number, set isArray to true
@@ -75,6 +76,7 @@ selector is the CSS selector for the singleton node to append to.  json is X3DJS
 ```
 
 * function loadX3DJSON(selector, url);
+
 selector is the CSS selector for the singleton node to append to.   url is a link to the JSON URL to load
 ```
 retrieve the value from url into json.  Fail on any ajax error
