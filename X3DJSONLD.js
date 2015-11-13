@@ -42,6 +42,11 @@ function ConvertToX3DOM(object, indent, parentkey, element) {
 				ConvertToX3DOM(object[key], indent, key, element);
 			} else if (key.substr(0,1) === '-') {
 				ConvertChildren(object[key], indent, key, element);
+			} else if (key.substr(0,1) === '#') {
+				for (var comment in object[key]) {
+					var child = document.createComment(object[key][comment]);
+					element.appendChild(child);
+				}
 			} else {
 				var createKey = key;
 				var child = document.createElement(createKey);
