@@ -39,8 +39,12 @@ Main function for loading JSON
 	else if object[key] is an object
 		if key starts with @
 			call ConvertToX3DOM with object = object[key] and parentkey = key
-		if key starts with -
+		else if key starts with -
 			call ConvertChildren with object = object[key] and parentkey = key
+		else if key starts with #
+			for each comment
+				create child for comment
+				append child to element
 		else
 			create a child element with tag key
 			call ConvertToX3DOM with object = object[key] and parentkey = key
