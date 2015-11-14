@@ -86,6 +86,7 @@
                 {
                   "@bboxCenter":[0, 0, 0],
                   "@bboxSize":[-1, -1, -1],
+	          "@onclick":"document.querySelector('material').setAttribute('diffuseColor', [0, 1, 0]);",
                   "-appearance":[
                     { "Appearance":
                       {
