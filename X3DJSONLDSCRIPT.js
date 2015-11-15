@@ -45,7 +45,7 @@ function ConvertToX3DOM(object, index, parentkey, elements, script) {
 			} else if (key.substr(0,1) === '#') {
 				for (var comment in object[key]) {
 					var i = elements.length;
-					script.push('elements['+i+'] = document.createComment("'+object[key][comment]+'");');
+					script.push('elements['+i+'] = document.createComment("'+object[key][comment].replace(/"/g, '&quot;')+'");');
 					elements[i] = document.createComment(object[key][comment]);
 					script.push('elements['+index+'].appendChild(elements['+i+']);');
 					elements[index].appendChild(elements[i]);
@@ -64,6 +64,9 @@ function ConvertToX3DOM(object, index, parentkey, elements, script) {
 			}
 		} else {
 			if (key === '#comment') {
+			} else if (typeof object[key] === 'string') {
+				script.push('elements['+index+'].setAttribute("'+key.substr(1)+'", "'+object[key].replace(/"/g, '&quot;')+'");');
+				elements[index].setAttribute(key.substr(1),object[key]);
 			} else {
 				script.push('elements['+index+'].setAttribute("'+key.substr(1)+'", "'+object[key]+'");');
 				elements[index].setAttribute(key.substr(1),object[key]);
