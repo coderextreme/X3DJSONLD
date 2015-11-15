@@ -28,7 +28,7 @@ function ConvertToX3DOM(object, index, parentkey, elements, script) {
 			if (typeof object[key] === 'number') {
 				localArray.push(object[key]);
 			} else if (typeof object[key] === 'string') {
-				localArray.push(object[key]);
+				localArray.push(object[key].replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;'));
 				arrayOfStrings = true;
 			} else if (typeof object[key] === 'boolean') {
 				localArray.push(object[key]);
@@ -45,7 +45,7 @@ function ConvertToX3DOM(object, index, parentkey, elements, script) {
 			} else if (key.substr(0,1) === '#') {
 				for (var comment in object[key]) {
 					var i = elements.length;
-					script.push('elements['+i+'] = document.createComment("'+object[key][comment].replace(/"/g, '&quot;')+'");');
+					script.push('elements['+i+'] = document.createComment("'+object[key][comment].replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;')+'");');
 					elements[i] = document.createComment(object[key][comment]);
 					script.push('elements['+index+'].appendChild(elements['+i+']);');
 					elements[index].appendChild(elements[i]);
@@ -65,7 +65,7 @@ function ConvertToX3DOM(object, index, parentkey, elements, script) {
 		} else {
 			if (key === '#comment') {
 			} else if (typeof object[key] === 'string') {
-				script.push('elements['+index+'].setAttribute("'+key.substr(1)+'", "'+object[key].replace(/"/g, '&quot;')+'");');
+				script.push('elements['+index+'].setAttribute("'+key.substr(1)+'", "'+object[key].replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;')+'");');
 				elements[index].setAttribute(key.substr(1),object[key]);
 			} else {
 				script.push('elements['+index+'].setAttribute("'+key.substr(1)+'", "'+object[key]+'");');
