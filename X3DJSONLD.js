@@ -79,16 +79,19 @@ function ConvertToX3DOM(object, indent, parentkey, element) {
 			if (arrayOfStrings) {
 				arrayOfStrings = false;
                                 if (parentkey === '@url') {
-				       var url;
-                                       for (url in localArray) {
-/*
-                                              if (localArray[url].indexOf("..") === 0) {
-                                                       localArray[url] = '/'+localArray[url].substring(3);
-					       } else if (localArray[url].indexOf("http://") < 0) {
-                                                       localArray[url] = '/'+localArray[url];
-                                               }
-*/
-					       // console.log(localArray[url]);
+					var url;
+					localArray = localArray[0].split(/" "/);
+					for (url in localArray) {
+						console.log('ORIGINAL', localArray[url]);
+						if (localArray[url].indexOf("http://") < 0
+						 && localArray[url].indexOf("https://") < 0) {
+							var pe = path.lastIndexOf('/');
+							var pc = path.substring(0, pe);
+							localArray[url] = pc+'/'+localArray[url];
+							console.log('NO HTTP', localArray[url]);
+						} else {
+							console.log('HTTP', localArray[url]);
+						}
                                        }
                                 }
 				element.setAttribute(parentkey.substr(1),'"'+localArray.join('" "')+'"');
@@ -111,8 +114,11 @@ function loadX3DJS(selector, json) {
 	}
 }
 
+var path = "";
+
 function loadX3DJSON(selector, url) {
 	$.getJSON(url, function(json) {
+		path = url;
 		loadX3DJS(selector, json);
 	})
 	.fail(function(jqXHR, textStatus, errorThrown) { alert('getJSON request failed! ' + textStatus + ' ' + errorThrown); });
