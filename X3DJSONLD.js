@@ -14,7 +14,7 @@ function ConvertChildren(object, indent, parentkey, element) {
 }
 
 function ConvertAttribute(key, object, indent, element) {
-	if (typeof object[key] === 'object') {
+	if (object !== null && typeof object[key] === 'object') {
 		if (key.substr(0,1) === '@') {
 			ConvertToX3DOM(object[key], indent, key, element);
 		} else if (key.substr(0,1) === '-') {
