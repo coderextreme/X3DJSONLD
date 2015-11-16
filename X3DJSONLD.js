@@ -78,20 +78,27 @@ function ConvertToX3DOM(object, indent, parentkey, element, path) {
 		if (parentkey.substr(0,1) === '@') {
 			if (arrayOfStrings) {
 				arrayOfStrings = false;
-                                if (parentkey === '@url') {
+                                if (parentkey === '@url' || parentkey.indexOf("Url") === parentkey.length - 3) {
 					var url;
 					localArray = localArray[0].split(/" "/);
 					for (url in localArray) {
 						localArray[url].replace(/"/g, '');
 						console.log('ORIGINAL', localArray[url]);
-						if (localArray[url].indexOf("http://") < 0
-						 && localArray[url].indexOf("https://") < 0) {
+						if (localArray[url].indexOf("http://") === 0
+						 || localArray[url].indexOf("https://") === 0) {
+							console.log('HTTP', localArray[url]);
+						} else if (localArray[url].indexOf("urn:web3d:media:textures/panoramas/") === 0) {
+							var ls = localArray[url].lastIndexOf("/");
+							if (ls > 0) {
+								localArray[url] = 'examples/Basic/UniversalMediaPanoramas/'+localArray[url].substring(ls+1);
+							}
+							console.log('URN', localArray[url]);
+
+						} else {
 							var pe = path.lastIndexOf('/');
 							var pc = path.substring(0, pe);
 							localArray[url] = pc+'/'+localArray[url];
 							console.log('NO HTTP', localArray[url]);
-						} else {
-							console.log('HTTP', localArray[url]);
 						}
                                        }
                                 }
