@@ -4,21 +4,21 @@
 
 // Load X3D JSON into web page
 
-function ConvertChildren(object, indent, parentkey, element) {
+function ConvertChildren(object, indent, parentkey, element, path) {
 	var key;
 	for (key in object) {
 		if (typeof object[key] === 'object') {
-				ConvertToX3DOM(object[key], indent, key, element);
+				ConvertToX3DOM(object[key], indent, key, element, path);
 		}
 	}
 }
 
-function ConvertAttribute(key, object, indent, element) {
+function ConvertAttribute(key, object, indent, element, path) {
 	if (object !== null && typeof object[key] === 'object') {
 		if (key.substr(0,1) === '@') {
-			ConvertToX3DOM(object[key], indent, key, element);
+			ConvertToX3DOM(object[key], indent, key, element, path);
 		} else if (key.substr(0,1) === '-') {
-			ConvertChildren(object[key], indent, key, element);
+			ConvertChildren(object[key], indent, key, element, path);
 		} else if (key.substr(0,1) === '#') {
 			for (var comment in object[key]) {
 				var child = document.createComment(object[key][comment]);
@@ -27,13 +27,13 @@ function ConvertAttribute(key, object, indent, element) {
 		} else {
 			var createKey = key;
 			var child = document.createElement(createKey);
-			ConvertToX3DOM(object[key], indent, key, child);
+			ConvertToX3DOM(object[key], indent, key, child, path);
 			element.appendChild(child);
 		}
 	}
 }
 
-function ConvertToX3DOM(object, indent, parentkey, element) {
+function ConvertToX3DOM(object, indent, parentkey, element, path) {
 	var key;
 	var localArray = [];
 	var isArray = false;
@@ -53,13 +53,13 @@ function ConvertToX3DOM(object, indent, parentkey, element) {
 			} else if (typeof object[key] === 'boolean') {
 				localArray.push(object[key]);
 			} else if (typeof object[key] === 'object') {
-				ConvertToX3DOM(object[key], indent, key, element);
+				ConvertToX3DOM(object[key], indent, key, element, path);
 			} else {
 				console.log("Unknown type found in array "+typeof object[key]);
 			}
 		} else if (typeof object[key] === 'object') {
 			if (key !== 'ROUTE') {
-				ConvertAttribute(key, object, indent, element)
+				ConvertAttribute(key, object, indent, element, path)
 			}
 		} else if (typeof object[key] === 'number') {
 			element.setAttribute(key.substr(1),object[key]);
@@ -73,7 +73,7 @@ function ConvertToX3DOM(object, indent, parentkey, element) {
 			console.log("Unknown type found in object "+typeof object[key]);
 		}
 	}
-	ConvertAttribute('ROUTE', object, indent, element)
+	ConvertAttribute('ROUTE', object, indent, element, path)
 	if (isArray) {
 		if (parentkey.substr(0,1) === '@') {
 			if (arrayOfStrings) {
@@ -104,22 +104,19 @@ function ConvertToX3DOM(object, indent, parentkey, element) {
 	return element;
 }
 
-function loadX3DJS(selector, json) {
+function loadX3DJS(selector, json, path) {
 	var element = document.querySelector(selector);
 	if (element === null) {
 		console.log("selector found nothing in document", selector);
 	} else {
-		ConvertToX3DOM(json, "", "", element);
+		ConvertToX3DOM(json, "", "", element, path);
 		x3dom.reload();
 	}
 }
 
-var path = "";
-
 function loadX3DJSON(selector, url) {
 	$.getJSON(url, function(json) {
-		path = url;
-		loadX3DJS(selector, json);
+		loadX3DJS(selector, json, url);
 	})
 	.fail(function(jqXHR, textStatus, errorThrown) { alert('getJSON request failed! ' + textStatus + ' ' + errorThrown); });
 }
