@@ -82,6 +82,7 @@ function ConvertToX3DOM(object, indent, parentkey, element, path) {
 					var url;
 					localArray = localArray[0].split(/" "/);
 					for (url in localArray) {
+						localArray[url].replace(/"/g, '');
 						console.log('ORIGINAL', localArray[url]);
 						if (localArray[url].indexOf("http://") < 0
 						 && localArray[url].indexOf("https://") < 0) {
