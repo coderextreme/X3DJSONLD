@@ -3519,9 +3519,20 @@
 <option>examples/Vrml2.0Sourcebook/Siggraph98Course/Windmill.json</option>
 <option>examples/Vrml2.0Sourcebook/Siggraph98Course/WoodColor.json</option>
 </select>
+<input type="text" onchange="filter(event)">
 </body>
     <script type="text/javascript" src="X3DJSONLD.js"></script>
     <script type="text/javascript">
+	function filter(event) {
+		$.each($("select option"), function(i, option) {
+			var text =$(option).text();
+			if (text.indexOf(event.srcElement.value) >= 0) {
+				$(option).show();
+			} else {
+				$(option).hide();
+			}
+		});
+	}
 	$("select").change(function() {
 		$("x3d").remove();
 		loadX3DJSON('body',$('select option:selected').text());
