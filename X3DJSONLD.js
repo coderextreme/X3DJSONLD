@@ -80,9 +80,10 @@ function ConvertToX3DOM(object, indent, parentkey, element, path) {
 				arrayOfStrings = false;
                                 if (parentkey === '@url' || parentkey.indexOf("Url") === parentkey.length - 3) {
 					var url;
-					localArray = localArray[0].split(/" "/);
+					// No longer need to split
+					// localArray = localArray[0].split(/" "/);
 					for (url in localArray) {
-						localArray[url].replace(/"/g, '');
+						// localArray[url].replace(/"/g, '');
 						console.log('ORIGINAL', localArray[url]);
 						if (localArray[url].indexOf("http://") === 0
 						 || localArray[url].indexOf("https://") === 0) {
@@ -101,9 +102,15 @@ function ConvertToX3DOM(object, indent, parentkey, element, path) {
 							console.log('NO HTTP', localArray[url]);
 						}
                                        }
-                                }
-				element.setAttribute(parentkey.substr(1),'"'+localArray.join('" "')+'"');
+					// if URL
+					console.log("Loading URL",localArray[0]);
+					element.setAttribute(parentkey.substr(1),'"'+localArray[0]+'"');
+                                } else {
+					// if string array
+					element.setAttribute(parentkey.substr(1),'"'+localArray.join('" "')+'"');
+				}
 			} else {
+				// if non string array
 				element.setAttribute(parentkey.substr(1),localArray.join(" "));
 			}
 		}
