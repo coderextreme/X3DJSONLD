@@ -103,8 +103,8 @@ function ConvertToX3DOM(object, indent, parentkey, element, path) {
 						}
                                        }
 					// if URL
-					console.log("Loading URL",localArray[0]);
-					element.setAttribute(parentkey.substr(1),'"'+localArray[0]+'"');
+					console.log("Loading URL",'"'+localArray.join('" "')+'"');
+					element.setAttribute(parentkey.substr(1),'"'+localArray.join('" "')+'"');
                                 } else {
 					// if string array
 					element.setAttribute(parentkey.substr(1),'"'+localArray.join('" "')+'"');
