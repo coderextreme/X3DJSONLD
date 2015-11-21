@@ -58,6 +58,14 @@ function ConvertToX3DOM(object, indent, parentkey, element, path) {
 				console.log("Unknown type found in array "+typeof object[key]);
 			}
 		} else if (typeof object[key] === 'object') {
+			if (key === '#sourceText') {
+				// shift off ecmascript:
+				var script = object[key];
+				script.shift();
+				console.log(script.join("\n"));
+				
+				eval (script.join("\n"));
+			}
 			if (key !== 'ROUTE') {
 				ConvertAttribute(key, object, indent, element, path)
 			}
