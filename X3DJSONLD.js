@@ -4,7 +4,7 @@
 
 // Load X3D JSON into web page
 
-function ConvertFields(object, indent, parentkey, element, path) {
+function ConvertFieldsRoutes(object, indent, parentkey, element, path) {
 	var key;
 	for (key in object) {  // for each field
 		if (typeof object[key] === 'object') {
@@ -69,9 +69,9 @@ function ConvertToX3DOM(object, indent, parentkey, element, path) {
 				console.log("Unknown type found in array "+typeof object[key]);
 			}
 		} else if (typeof object[key] === 'object') {
-			if (key === 'field') {
-				ConvertFields(object[key], indent, key, element, path);
-			} else if (key !== 'ROUTE') {
+			if (key === 'field' || key === 'ROUTE') {
+				ConvertFieldsRoutes(object[key], indent, key, element, path);
+			} else {
 				ConvertAttribute(key, object, indent, element, path)
 			}
 		} else if (typeof object[key] === 'number') {
@@ -86,7 +86,7 @@ function ConvertToX3DOM(object, indent, parentkey, element, path) {
 			console.log("Unknown type found in object "+typeof object[key]);
 		}
 	}
-	ConvertAttribute('ROUTE', object, indent, element, path)
+	// ConvertAttribute('ROUTE', object, indent, element, path)
 	if (isArray) {
 		if (parentkey.substr(0,1) === '@') {
 			if (arrayOfStrings) {
