@@ -45,8 +45,9 @@
                             }
                           ],
                           "-texture":[
-                            { "MultiTexture":
+                            { "ComposedCubeMapTexture":
                               {
+                                "@containerField":"texture",
                                 "-back":[
                                   { "ImageTexture":
                                     {
