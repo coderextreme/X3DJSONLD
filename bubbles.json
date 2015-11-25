@@ -1,0 +1,168 @@
+{ "X3D": {
+    "@profile":"Immersive",
+    "@version":3.3,
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "Scene": {
+        "-children":[
+          { "Viewpoint":
+            {
+              "@position":[0,0,4],
+              "@description":"sphere in road"
+            }
+          },
+          { "Background":
+            {
+              "@backUrl":["cubemap/BK.png", "http://coderextreme.net/roses/x3dom/cubemap/BK.png"],
+              "@bottomUrl":["cubemap/BT.png", "http://coderextreme.net/roses/x3dom/cubemap/BT.png"],
+              "@frontUrl":["cubemap/FR.png", "http://coderextreme.net/roses/x3dom/cubemap/FR.png"],
+              "@leftUrl":["cubemap/LF.png", "http://coderextreme.net/roses/x3dom/cubemap/LF.png"],
+              "@rightUrl":["cubemap/RT.png", "http://coderextreme.net/roses/x3dom/cubemap/RT.png"],
+              "@topUrl":["cubemap/TP.png", "http://coderextreme.net/roses/x3dom/cubemap/TP.png"]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"Rose01",
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":[
+                      { "Sphere":
+                        {
+                        }
+                      }
+                    ],
+                    "-appearance":[
+                      { "Appearance":
+                        {
+                          "@DEF":"_01_-_Default",
+                          "-material":[
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.7,0.7,0.7],
+                                "@specularColor":[0.5,0.5,0.5]
+                              }
+                            }
+                          ],
+                          "-texture":[
+                            { "MultiTexture":
+                              {
+                                "-back":[
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["cubemap/BK.png","http://coderextreme.net/roses/x3dom/cubemap/BK.png"],
+                                      "@containerField":"back"
+                                    }
+                                  }
+                                ],
+                                "-bottom":[
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["cubemap/BT.png","http://coderextreme.net/roses/x3dom/cubemap/BT.png"],
+                                      "@containerField":"bottom"
+                                    }
+                                  }
+                                ],
+                                "-front":[
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["cubemap/FR.png","http://coderextreme.net/roses/x3dom/cubemap/FR.png"],
+                                      "@containerField":"front"
+                                    }
+                                  }
+                                ],
+                                "-left":[
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["cubemap/LF.png","http://coderextreme.net/roses/x3dom/cubemap/LF.png"],
+                                      "@containerField":"left"
+                                    }
+                                  }
+                                ],
+                                "-right":[
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["cubemap/RT.png","http://coderextreme.net/roses/x3dom/cubemap/RT.png"],
+                                      "@containerField":"right"
+                                    }
+                                  }
+                                ],
+                                "-top":[
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["cubemap/TP.png","http://coderextreme.net/roses/x3dom/cubemap/TP.png"],
+                                      "@containerField":"top"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "-shaders":[
+                            { "ComposedShader":
+                              {
+                                "@DEF":"ComposedShader",
+                                "@containerField":"shaders",
+                                "@language":"GLSL",
+                                "field": [
+                                  {
+                                    "@name":"cube",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFInt32",
+                                    "@value":0
+                                  },
+                                  {
+                                    "@name":"chromaticDispertion",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFVec3f",
+                                    "@value":[0.98,1.0,1.033]
+                                  },
+                                  {
+                                    "@name":"bias",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFFloat",
+                                    "@value":0.5
+                                  },
+                                  {
+                                    "@name":"scale",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFFloat",
+                                    "@value":0.5
+                                  },
+                                  {
+                                    "@name":"power",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFFloat",
+                                    "@value":2.0
+                                  }
+                                ],
+                                "-parts":[
+                                  { "ShaderPart":
+                                    {
+                                      "@url":["bubbles.vs","http://coderextreme.net/roses/x3dom/cubemap/bubbles.vs"],
+                                      "@containerField":"parts"
+                                    }
+                                  },
+                                  { "ShaderPart":
+                                    {
+                                      "@url":["bubbles.fs","http://coderextreme.net/roses/x3dom/cubemap/bubbles.fs"],
+                                      "@containerField":"parts",
+                                      "@type":"FRAGMENT"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}
