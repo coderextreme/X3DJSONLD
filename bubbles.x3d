@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
+    <Scene>
+        <Viewpoint position='0 0 4' description='sphere in road'/>
+        <Background
+            backUrl='"cubemap/BK.png" "http://coderextreme.net/roses/x3dom/cubemap/BK.png"'
+            bottomUrl='"cubemap/BT.png" "http://coderextreme.net/roses/x3dom/cubemap/BT.png"'
+            frontUrl='"cubemap/FR.png" "http://coderextreme.net/roses/x3dom/cubemap/FR.png"'
+            leftUrl='"cubemap/LF.png" "http://coderextreme.net/roses/x3dom/cubemap/LF.png"' 
+            rightUrl='"cubemap/RT.png" "http://coderextreme.net/roses/x3dom/cubemap/RT.png"'
+            topUrl='"cubemap/TP.png" "http://coderextreme.net/roses/x3dom/cubemap/TP.png"' />
+        <Transform DEF='Rose01' >
+            <Shape>		
+                <Sphere/>
+                <Appearance DEF='_01_-_Default' >
+                    <Material diffuseColor=".7 .7 .7" specularColor=".5 .5 .5" />
+		    <ComposedCubeMapTexture>
+                            <ImageTexture url='"cubemap/BK.png" "http://coderextreme.net/roses/x3dom/cubemap/BK.png"' containerField="back"/>
+                            <ImageTexture url='"cubemap/BT.png" "http://coderextreme.net/roses/x3dom/cubemap/BT.png"' containerField="bottom"/>
+                            <ImageTexture url='"cubemap/FR.png" "http://coderextreme.net/roses/x3dom/cubemap/FR.png"' containerField="front"/>
+                            <ImageTexture url='"cubemap/LF.png" "http://coderextreme.net/roses/x3dom/cubemap/LF.png"' containerField="left"/>
+                            <ImageTexture url='"cubemap/RT.png" "http://coderextreme.net/roses/x3dom/cubemap/RT.png"' containerField="right"/>
+                            <ImageTexture url='"cubemap/TP.png" "http://coderextreme.net/roses/x3dom/cubemap/TP.png"' containerField="top"/>
+		    </ComposedCubeMapTexture>
+                
+                    <ComposedShader DEF='ComposedShader' containerField='shaders' language='GLSL'>
+                        <field accessType="inputOutput" name='cube' type='SFInt32' value='0'/>
+
+                        <field accessType="inputOutput" name='chromaticDispertion' type='SFVec3f' value='0.98 1.0 1.033'/>
+                        <field accessType="inputOutput" name='bias' type='SFFloat' value='0.5'/>
+                        <field accessType="inputOutput" name='scale' type='SFFloat' value='0.5'/>
+                        <field accessType="inputOutput" name='power' type='SFFloat' value='2.0'/>
+                        <ShaderPart url='"bubbles.vs" "http://coderextreme.net/roses/x3dom/bubbles.vs"' containerField='parts' type='VERTEX'>
+                        </ShaderPart>
+                        <ShaderPart url='"bubbles.fs" "http://coderextreme.net/roses/x3dom/bubbles.fs"'  containerField='parts' type='FRAGMENT'>
+                            
+                        </ShaderPart>
+                    </ComposedShader>
+                </Appearance>
+            </Shape>
+        </Transform>
+    </Scene>
+</X3D>
