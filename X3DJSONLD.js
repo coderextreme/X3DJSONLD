@@ -19,11 +19,12 @@ function ConvertAttribute(key, object, indent, element, path) {
 			ConvertToX3DOM(object[key], indent, key, element, path);
 		} else if (key.substr(0,1) === '-') {
 			ConvertChildren(object[key], indent, key, element, path);
-		} else if (key.substr(0,1) === '#') {
-			for (var comment in object[key]) {
-				var child = document.createComment(object[key][comment]);
-				element.appendChild(child);
-			}
+		} else if (key === '#comment') {
+			var child = document.createComment(object[key].join("\n"));
+			element.appendChild(child);
+		} else if (key === '#sourceText') {
+			var child = document.createTextNode(object[key].join("\n"));
+			element.appendChild(child);
 		} else {
 			var createKey = key;
 			var child = document.createElement(createKey);
@@ -58,14 +59,6 @@ function ConvertToX3DOM(object, indent, parentkey, element, path) {
 				console.log("Unknown type found in array "+typeof object[key]);
 			}
 		} else if (typeof object[key] === 'object') {
-			if (key === '#sourceText') {
-				// shift off ecmascript:
-				var script = object[key];
-				script.shift();
-				console.log(script.join("\n"));
-				
-				eval (script.join("\n"));
-			}
 			if (key !== 'ROUTE') {
 				ConvertAttribute(key, object, indent, element, path)
 			}
@@ -109,6 +102,18 @@ function ConvertToX3DOM(object, indent, parentkey, element, path) {
 							localArray[url] = pc+'/'+localArray[url];
 							console.log('NO HTTP', localArray[url]);
 						}
+/*
+						if (localArray[url].lastIndexOf('.x3d') === localArray[url].length-4
+						 || localArray[url].lastIndexOf('.wrl') === localArray[url].length-4) {
+							localArray[url] = localArray[url].substring(0, localArray[url].length-4)+".json";
+							var id = localArray[url].substring(localArray[url].lastIndexOf("/")+1, localArray[url].length-5);
+							element.setAttribute("id", id);
+							console.log("SUBSCENE", localArray[url]);
+							loadSubscene('#'+id, localArray[url], path);
+							break;
+						}
+*/
+							
                                        }
 					// if URL
 					console.log("Loading URL",'"'+localArray.join('" "')+'"');
@@ -136,7 +141,14 @@ function loadX3DJS(selector, json, path) {
 		x3dom.reload();
 	}
 }
-
+/*
+function loadSubscene(selector, url, path) {
+	$.getJSON(url, function(json) {
+		loadX3DJS(selector, json["X3D"]["Scene"], path);
+	})
+	.fail(function(jqXHR, textStatus, errorThrown) { alert('getJSON request failed! ' + textStatus + ' ' + errorThrown); });
+}
+*/
 function loadX3DJSON(selector, url) {
 	$.getJSON(url, function(json) {
 		loadX3DJS(selector, json, url);
