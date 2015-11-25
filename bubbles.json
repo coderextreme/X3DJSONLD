@@ -140,13 +140,13 @@
                                 "-parts":[
                                   { "ShaderPart":
                                     {
-                                      "@url":["bubbles.vs","http://coderextreme.net/roses/x3dom/cubemap/bubbles.vs"],
+                                      "@url":["bubbles.vs","http://coderextreme.net/roses/x3dom/bubbles.vs"],
                                       "@containerField":"parts"
                                     }
                                   },
                                   { "ShaderPart":
                                     {
-                                      "@url":["bubbles.fs","http://coderextreme.net/roses/x3dom/cubemap/bubbles.fs"],
+                                      "@url":["bubbles.fs","http://coderextreme.net/roses/x3dom/bubbles.fs"],
                                       "@containerField":"parts",
                                       "@type":"FRAGMENT"
                                     }
