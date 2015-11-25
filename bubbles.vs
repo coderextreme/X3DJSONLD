@@ -20,7 +20,17 @@ varying float rfac;
 
 void main()
 {
-    mat3 mvm3=mat3(modelViewMatrix);
+    mat3 mvm3=mat3(
+		modelViewMatrix[0].x,
+		modelViewMatrix[0].y,
+		modelViewMatrix[0].z,
+		modelViewMatrix[1].x,
+		modelViewMatrix[1].y,
+		modelViewMatrix[1].z,
+		modelViewMatrix[2].x,
+		modelViewMatrix[2].y,
+		modelViewMatrix[2].z
+    );
     vec3 fragNormal = mvm3*normal;
     gl_Position = modelViewProjectionMatrix*vec4(position, 1.0);
     vec3 incident = normalize((modelViewMatrix * vec4(position, 1.0)).xyz);
