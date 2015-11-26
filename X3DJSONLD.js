@@ -208,7 +208,9 @@ function loadX3DJS(selector, json, path, xml) {
 		console.log(el.children[0].children[0]);
 		console.log(el.children[0].children[0].attributes);
 */
-		el.children[0].children[0].attributes["id"] = "x3dele"; // for Cobweb
+ 		// for Cobweb
+		el.children[0].children[0].attributes["id"] = "x3dele";
+		el.children[0].children[0].attributes["xmlns:xsd"] = 'http://www.w3.org/2001/XMLSchema-instance';
 		printElement(el, xml);
 		if (typeof x3dom !== 'undefined') {
 			x3dom.reload();
