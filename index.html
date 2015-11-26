@@ -8,23 +8,18 @@
     <script type="text/javascript" 
             src="http://www.x3dom.org/x3dom/release/x3dom-full.js">
     </script>
-    <!--script type="text/javascript"
-            src="http://x3dom.org/x3dom/release/components/Geometry2D.js">
-    </script>
-    <script type="text/javascript"
-            src="http://x3dom.org/x3dom/release/components/Geometry3DExt.js">
-    </script-->
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
 </head>
 <body>
+<table>
+<tr>
+<td>
 <select>
 <option>flipper.json</option>
 <option>bubbles.json</option>
-<option>examples/Savage/Scenarios/RemusMission10MAR2003/RemusMissionLineTrackPlayback.json</option>
-<option>examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategies.json</option>
-<option>examples/HelloWorld.json</option>
+<option>ObliqueStrategies.json</option>
 <option>IcosahedronSubdivisionLevel5.json</option>
+<option>examples/Savage/Scenarios/RemusMission10MAR2003/RemusMissionLineTrackPlayback.json</option>
 <option>examples/Savage/CommunicationsAndSensors/Sonar/AuvwStackSceneVisualizationExample.json</option>
 <option>examples/Savage/ShipsMilitary/Seafighter/SeafighterWithHelos.json</option>
 <option>examples/Savage/Robots/UnmannedUnderwaterVehicles/Marv.json</option>
@@ -3521,9 +3516,41 @@
 <option>examples/Vrml2.0Sourcebook/Siggraph98Course/WoodColor.json</option>
 </select>
 <input type="text" onchange="filter(event)">
+</td>
+</tr>
+<tr>
+<td>
+<a onclick='updateX3DOM();'>Click to load X3D JSON text into X3DOM and convert to XML.</a>  <a onclick='updateXML();'>Click to load X3D XML into Cobweb and second X3DOM viewer.</a><br/>
+<textarea id="text" rows="15" cols="80"></textarea>
+</td>
+</tr>
+</table>
+<iframe  id='cobwebframe' src="cobwebframe.html"></iframe>
+<div id="x3domxml"></div>
 </body>
     <script type="text/javascript" src="X3DJSONLD.js"></script>
+
     <script type="text/javascript">
+        function updateXML(xml) {
+		if (typeof xml !== 'undefined') {
+			$('#x3domxml').empty();
+			// Do this inner HTML so we can sneak script tag past JQuery (BAD BAD TODO)
+			$('#x3domxml').get()[0].innerHTML = xml.join("\n");
+			x3dom.reload();
+	    	        $('textarea#text').val(xml.join("\n"));
+		}
+		var content = $('textarea#text').val();
+		var cobwebWindow = document.getElementById("cobwebframe").contentWindow ;
+		var cobwebEle = cobwebWindow.document.getElementById("x3dele");
+		var browser = cobwebWindow.X3D.getBrowser(cobwebEle);
+		browser.replaceWorld(browser.createX3DFromString(content));
+        }
+        function updateX3DOM() {
+	    $("x3d").remove();
+	    var xml = [];
+	    loadX3DJS('body',JSON.parse($('textarea#text').val()), "bubbles.json", xml);
+	    updateXML(xml);
+        }
 	function filter(event) {
 		$.each($("select option"), function(i, option) {
 			var text =$(option).text();
@@ -3534,10 +3561,15 @@
 			}
 		});
 	}
+
 	$("select").change(function() {
 		$("x3d").remove();
-		loadX3DJSON('body',$('select option:selected').text());
+		var element = loadX3DJSON('body',$('select option:selected').text(), function(xml) {
+			updateXML(xml);
+		});
 	});
-	loadX3DJSON('body','flipper.json');
+	loadX3DJSON('body','flipper.json', function(xml) {
+		updateXML(xml);
+	});
     </script>
 </html>
