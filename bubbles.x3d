@@ -2,29 +2,30 @@
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
     <Scene>
-        <Viewpoint position='0 0 4' description='sphere in road'/>
+	<NavigationInfo type='"ANY" "WALK" "EXAMINE" "FLY" "LOOKAT"'/>
+        <Viewpoint position='0 0 4' description='sphere in desert'/>
         <Background
-            backUrl='"cubemap/BK.png" "http://coderextreme.net/roses/x3dom/cubemap/BK.png"'
-            bottomUrl='"cubemap/BT.png" "http://coderextreme.net/roses/x3dom/cubemap/BT.png"'
-            frontUrl='"cubemap/FR.png" "http://coderextreme.net/roses/x3dom/cubemap/FR.png"'
-            leftUrl='"cubemap/LF.png" "http://coderextreme.net/roses/x3dom/cubemap/LF.png"' 
-            rightUrl='"cubemap/RT.png" "http://coderextreme.net/roses/x3dom/cubemap/RT.png"'
-            topUrl='"cubemap/TP.png" "http://coderextreme.net/roses/x3dom/cubemap/TP.png"' />
-        <Transform DEF='Rose01' >
+            backUrl='"cubemap/bBK.png" "http://coderextreme.net/roses/x3dom/cubemap/bBK.png"'
+            bottomUrl='"cubemap/bBT.png" "http://coderextreme.net/roses/x3dom/cubemap/bBT.png"'
+            frontUrl='"cubemap/bFR.png" "http://coderextreme.net/roses/x3dom/cubemap/bFR.png"'
+            leftUrl='"cubemap/bLF.png" "http://coderextreme.net/roses/x3dom/cubemap/bLF.png"' 
+            rightUrl='"cubemap/bRT.png" "http://coderextreme.net/roses/x3dom/cubemap/bRT.png"'
+            topUrl='"cubemap/bTP.png" "http://coderextreme.net/roses/x3dom/cubemap/bTP.png"' />
+        <Transform>
             <Shape>		
                 <Sphere/>
-                <Appearance DEF='_01_-_Default' >
+                <Appearance>
                     <Material diffuseColor=".7 .7 .7" specularColor=".5 .5 .5" />
-		    <ComposedCubeMapTexture>
-                            <ImageTexture url='"cubemap/BK.png" "http://coderextreme.net/roses/x3dom/cubemap/BK.png"' containerField="back"/>
-                            <ImageTexture url='"cubemap/BT.png" "http://coderextreme.net/roses/x3dom/cubemap/BT.png"' containerField="bottom"/>
-                            <ImageTexture url='"cubemap/FR.png" "http://coderextreme.net/roses/x3dom/cubemap/FR.png"' containerField="front"/>
-                            <ImageTexture url='"cubemap/LF.png" "http://coderextreme.net/roses/x3dom/cubemap/LF.png"' containerField="left"/>
-                            <ImageTexture url='"cubemap/RT.png" "http://coderextreme.net/roses/x3dom/cubemap/RT.png"' containerField="right"/>
-                            <ImageTexture url='"cubemap/TP.png" "http://coderextreme.net/roses/x3dom/cubemap/TP.png"' containerField="top"/>
-		    </ComposedCubeMapTexture>
+                    <ComposedCubeMapTexture>
+                            <ImageTexture url='"cubemap/bBK.png" "http://coderextreme.net/roses/x3dom/cubemap/bBK.png"' containerField="back"/>
+                            <ImageTexture url='"cubemap/bBT.png" "http://coderextreme.net/roses/x3dom/cubemap/bBT.png"' containerField="bottom"/>
+                            <ImageTexture url='"cubemap/bFR.png" "http://coderextreme.net/roses/x3dom/cubemap/bFR.png"' containerField="front"/>
+                            <ImageTexture url='"cubemap/bLF.png" "http://coderextreme.net/roses/x3dom/cubemap/bLF.png"' containerField="left"/>
+                            <ImageTexture url='"cubemap/bRT.png" "http://coderextreme.net/roses/x3dom/cubemap/bRT.png"' containerField="right"/>
+                            <ImageTexture url='"cubemap/bTP.png" "http://coderextreme.net/roses/x3dom/cubemap/bTP.png"' containerField="top"/>
+                    </ComposedCubeMapTexture>
                 
-                    <ComposedShader DEF='ComposedShader' containerField='shaders' language='GLSL'>
+                    <ComposedShader containerField='shaders' language="GLSL">
                         <field accessType="inputOutput" name='cube' type='SFInt32' value='0'/>
 
                         <field accessType="inputOutput" name='chromaticDispertion' type='SFVec3f' value='0.98 1.0 1.033'/>
