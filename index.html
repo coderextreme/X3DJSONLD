@@ -3533,6 +3533,7 @@
     <script type="text/javascript">
         function updateXML(xml) {
 		if (typeof xml !== 'undefined') {
+			// DISPLAY XML in X3DOM
 			$('#x3domxml').empty();
 			// Do this inner HTML so we can sneak script tag past JQuery (BAD BAD TODO)
 			$('#x3domxml').get()[0].innerHTML = xml.join("\n");
@@ -3542,8 +3543,12 @@
 		var content = $('textarea#text').val();
 		var cobwebWindow = document.getElementById("cobwebframe").contentWindow ;
 		var cobwebEle = cobwebWindow.document.getElementById("x3dele");
-		var browser = cobwebWindow.X3D.getBrowser(cobwebEle);
-		browser.replaceWorld(browser.createX3DFromString(content));
+		if (typeof cobwebWindow.X3D !== 'undefined') {
+			var browser = cobwebWindow.X3D.getBrowser(cobwebEle);
+			browser.replaceWorld(browser.createX3DFromString(content));
+		} else {
+			console.error("Cobweb disabled.  Use Firefox.");
+		}
         }
         function updateX3DOM() {
 	    $("x3d").remove();
