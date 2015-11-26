@@ -20,8 +20,8 @@
 <tr>
 <td>
 <select>
-<option>ArchHalf.json</option>
 <option>flipper.json</option>
+<option>ArchHalf.json</option>
 <option>bubbles.json</option>
 <option>ObliqueStrategies.json</option>
 <option>IcosahedronSubdivisionLevel5.json</option>
@@ -15694,12 +15694,14 @@
 	    updateXML(xml);
         }
 	function filter(event) {
-		$.each($("select option"), function(i, option) {
-			var text =$(option).text();
+		$.map($("select option"), function(option, i) {
+			var text = $(option).text();
 			if (text.indexOf(event.target.value) >= 0) {
 				$(option).show();
+				return true;
 			} else {
 				$(option).hide();
+				return false;
 			}
 		});
 	}
