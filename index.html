@@ -15696,7 +15696,6 @@
 	function filter(event) {
 		$.each($("select option"), function(i, option) {
 			var text =$(option).text();
-			console.log(event);
 			if (text.indexOf(event.target.value) >= 0) {
 				$(option).show();
 			} else {
