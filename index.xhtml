@@ -1,5 +1,5 @@
-<!doctype html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>JSON Loader</title>
     <link rel="stylesheet" type="text/css" href="http://www.x3dom.org/download/dev/x3dom.css"/>
@@ -15670,9 +15670,12 @@
 		if (typeof xml !== 'undefined') {
 			// DISPLAY XML in X3DOM
 			$('#x3domxml').empty();
+			// Shift off preamble/header
+			xml.shift();
+			xml.shift();
+	    	        $('textarea#xml').val(xml.join("\n"));
 			// Do this inner HTML so we can sneak script tag past JQuery (BAD BAD TODO)
 			$('#x3domxml').get()[0].innerHTML = xml.join("\n");
-	    	        $('textarea#xml').val(xml.join("\n"));
 		} else {
 			$('#x3domxml').get()[0].innerHTML = $('textarea#xml').val();
 		}
