@@ -15671,8 +15671,8 @@ Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into X3DOM and 
 			// DISPLAY XML in X3DOM
 			$('#x3domxml').empty();
 			// Do this inner HTML so we can sneak script tag past JQuery (BAD BAD TODO)
-			$('#x3domxml').get()[0].innerHTML = xml.join("\n");
-	    	        $('textarea#xml').val(xml.join("\n"));
+			$('#x3domxml').get()[0].innerHTML = xml.join("");
+	    	        $('textarea#xml').val(xml.join(""));
 		} else {
 			$('#x3domxml').get()[0].innerHTML = $('textarea#xml').val();
 		}

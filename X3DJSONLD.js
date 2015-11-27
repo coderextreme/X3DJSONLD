@@ -44,7 +44,11 @@ function printElement(el, xml) {
 
 function elementSetAttribute(element, key, value, attributes) {
 	element.setAttribute(key, value);
-	attributes[key] = value;
+	if (typeof value === 'string') {
+		attributes[key] = value.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, '&lt;').replace(/>/g, '&gt;');
+	} else {
+		attributes[key] = value;
+	}
 }
 
 function ConvertChildren(parentkey, object, element, path) {
@@ -110,6 +114,7 @@ function ConvertToX3DOM(object, parentkey, element, path) {
 	var arrayOfStrings = false;
 	var attributes = {};
 	var children = [];
+	var foundRoute = false;
 	for (key in object) {
 		if (isNaN(parseInt(key))) {
 			isArray = false;
@@ -130,11 +135,15 @@ function ConvertToX3DOM(object, parentkey, element, path) {
 				console.log("Unknown type found in array "+typeof object[key]);
 			}
 		} else if (typeof object[key] === 'object') {
-			var el = ConvertObject(key, object, element, path);
-			for (var a in el.attributes) {
-				attributes[a] = el.attributes[a];
+			if (key !== "ROUTE") {
+				var el = ConvertObject(key, object, element, path);
+				for (var a in el.attributes) {
+					attributes[a] = el.attributes[a];
+				}
+				children.push(el);
+			} else {
+				foundRoute = true;
 			}
-			children.push(el);
 		} else if (typeof object[key] === 'number') {
 			elementSetAttribute(element, key.substr(1),object[key], attributes);
 		} else if (typeof object[key] === 'string') {
@@ -150,6 +159,16 @@ function ConvertToX3DOM(object, parentkey, element, path) {
 		} else {
 			console.log("Unknown type found in object "+typeof object[key]);
 		}
+	}
+	// put ROUTEs last
+	if (foundRoute) {
+		var el = ConvertObject("ROUTE", object, element, path);
+		for (var a in el.attributes) {
+			attributes[a] = el.attributes[a];
+		}
+		children.push(el);
+	} else {
+		foundRoute = false;
 	}
 	if (isArray) {
 		if (parentkey.substr(0,1) === '@') {

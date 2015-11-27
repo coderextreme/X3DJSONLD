@@ -12,12 +12,12 @@
           },
           { "Background":
             {
-              "@backUrl":["cubemap/BK.png", "http://coderextreme.net/roses/x3dom/cubemap/BK.png"],
-              "@bottomUrl":["cubemap/BT.png", "http://coderextreme.net/roses/x3dom/cubemap/BT.png"],
-              "@frontUrl":["cubemap/FR.png", "http://coderextreme.net/roses/x3dom/cubemap/FR.png"],
-              "@leftUrl":["cubemap/LF.png", "http://coderextreme.net/roses/x3dom/cubemap/LF.png"],
-              "@rightUrl":["cubemap/RT.png", "http://coderextreme.net/roses/x3dom/cubemap/RT.png"],
-              "@topUrl":["cubemap/TP.png", "http://coderextreme.net/roses/x3dom/cubemap/TP.png"]
+              "@backUrl":["X3DJSONLD/cubemap/BK.png", "cubemap/BK.png", "http://coderextreme.net/X3DJSONLD/cubemap/BK.png"],
+              "@bottomUrl":["X3DJSONLD/cubemap/BT.png", "cubemap/BT.png", "http://coderextreme.net/X3DJSONLD/cubemap/BT.png"],
+              "@frontUrl":["X3DJSONLD/cubemap/FR.png", "cubemap/FR.png", "http://coderextreme.net/X3DJSONLD/cubemap/FR.png"],
+              "@leftUrl":["X3DJSONLD/cubemap/LF.png", "cubemap/LF.png", "http://coderextreme.net/X3DJSONLD/cubemap/LF.png"],
+              "@rightUrl":["X3DJSONLD/cubemap/RT.png", "cubemap/RT.png", "http://coderextreme.net/X3DJSONLD/cubemap/RT.png"],
+              "@topUrl":["X3DJSONLD/cubemap/TP.png", "cubemap/TP.png", "http://coderextreme.net/X3DJSONLD/cubemap/TP.png"]
             }
           },
           { "Transform":
@@ -51,7 +51,7 @@
                                 "-back":[
                                   { "ImageTexture":
                                     {
-                                      "@url":["cubemap/BK.png","http://coderextreme.net/roses/x3dom/cubemap/BK.png"],
+                                      "@url":["X3DJSONLD/cubemap/BK.png", "cubemap/BK.png", "http://coderextreme.net/X3DJSONLD/cubemap/BK.png"],
                                       "@containerField":"back"
                                     }
                                   }
@@ -59,7 +59,7 @@
                                 "-bottom":[
                                   { "ImageTexture":
                                     {
-                                      "@url":["cubemap/BT.png","http://coderextreme.net/roses/x3dom/cubemap/BT.png"],
+                                      "@url":["X3DJSONLD/cubemap/BT.png", "cubemap/BT.png","http://coderextreme.net/X3DJSONLD/cubemap/BT.png"],
                                       "@containerField":"bottom"
                                     }
                                   }
@@ -67,7 +67,7 @@
                                 "-front":[
                                   { "ImageTexture":
                                     {
-                                      "@url":["cubemap/FR.png","http://coderextreme.net/roses/x3dom/cubemap/FR.png"],
+                                      "@url":["X3DJSONLD/cubemap/FR.png", "cubemap/FR.png","http://coderextreme.net/X3DJSONLD/cubemap/FR.png"],
                                       "@containerField":"front"
                                     }
                                   }
@@ -75,7 +75,7 @@
                                 "-left":[
                                   { "ImageTexture":
                                     {
-                                      "@url":["cubemap/LF.png","http://coderextreme.net/roses/x3dom/cubemap/LF.png"],
+                                      "@url":["X3DJSONLD/cubemap/LF.png", "cubemap/LF.png","http://coderextreme.net/X3DJSONLD/cubemap/LF.png"],
                                       "@containerField":"left"
                                     }
                                   }
@@ -83,7 +83,7 @@
                                 "-right":[
                                   { "ImageTexture":
                                     {
-                                      "@url":["cubemap/RT.png","http://coderextreme.net/roses/x3dom/cubemap/RT.png"],
+                                      "@url":["X3DJSONLD/cubemap/RT.png", "cubemap/RT.png","http://coderextreme.net/X3DJSONLD/cubemap/RT.png"],
                                       "@containerField":"right"
                                     }
                                   }
@@ -91,7 +91,7 @@
                                 "-top":[
                                   { "ImageTexture":
                                     {
-                                      "@url":["cubemap/TP.png","http://coderextreme.net/roses/x3dom/cubemap/TP.png"],
+                                      "@url":["X3DJSONLD/cubemap/TP.png", "cubemap/TP.png","http://coderextreme.net/X3DJSONLD/cubemap/TP.png"],
                                       "@containerField":"top"
                                     }
                                   }
@@ -140,13 +140,13 @@
                                 "-parts":[
                                   { "ShaderPart":
                                     {
-                                      "@url":["bubbles.vs","http://coderextreme.net/roses/x3dom/bubbles.vs"],
+                                      "@url":["X3DJSONLD/bubbles.vs", "bubbles.vs","http://coderextreme.net/X3DJSONLD/bubbles.vs"],
                                       "@containerField":"parts"
                                     }
                                   },
                                   { "ShaderPart":
                                     {
-                                      "@url":["bubbles.fs","http://coderextreme.net/roses/x3dom/bubbles.fs"],
+                                      "@url":["X3DJSONLD/bubbles.fs", "bubbles.fs","http://coderextreme.net/X3DJSONLD/bubbles.fs"],
                                       "@containerField":"parts",
                                       "@type":"FRAGMENT"
                                     }
