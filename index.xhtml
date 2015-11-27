@@ -15671,11 +15671,11 @@ Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into X3DOM and 
 			// DISPLAY XML in X3DOM
 			$('#x3domxml').empty();
 			// Shift off preamble/header
-			xml.shift();
-			xml.shift();
-	    	        $('textarea#xml').val(xml.join("\n"));
+			//xml.shift();
+			//xml.shift();
+	    	        $('textarea#xml').val(xml.join(""));
 			// Do this inner HTML so we can sneak script tag past JQuery (BAD BAD TODO)
-			$('#x3domxml').get()[0].innerHTML = xml.join("\n");
+			$('#x3domxml').get()[0].innerHTML = xml.join("");
 		} else {
 			$('#x3domxml').get()[0].innerHTML = $('textarea#xml').val();
 		}
@@ -15691,7 +15691,7 @@ Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into X3DOM and 
 		}
         }
         function updateX3DOM() {
-	    $("x3d").remove();
+	    $("X3D").remove();
 	    var xml = [];
 	    loadX3DJS('body',JSON.parse($('textarea#json').val()), "bubbles.json", xml);
 	    updateXML(xml);
@@ -15710,7 +15710,7 @@ Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into X3DOM and 
 	}
 
 	$("select").change(function() {
-		$("x3d").remove();
+		$("X3D").remove();
 		var element = loadX3DJSON('body',$('select option:selected').text(), function(xml) {
 			updateXML(xml);
 		});
