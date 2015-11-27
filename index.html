@@ -15688,7 +15688,7 @@ Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into X3DOM and 
 		}
         }
         function updateX3DOM() {
-	    $("x3d").remove();
+	    $("X3D").remove();
 	    var xml = [];
 	    loadX3DJS('body',JSON.parse($('textarea#json').val()), "bubbles.json", xml);
 	    updateXML(xml);
@@ -15707,7 +15707,7 @@ Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into X3DOM and 
 	}
 
 	$("select").change(function() {
-		$("x3d").remove();
+		$("X3D").remove();
 		var element = loadX3DJSON('body',$('select option:selected').text(), function(xml) {
 			updateXML(xml);
 		});
