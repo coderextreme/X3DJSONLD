@@ -15658,7 +15658,8 @@
 <tr>
 <td>
 <a onclick='updateX3DOM();'>Click to load X3D JSON text into X3DOM and convert to XML.</a>  <a onclick='updateXML();'>Click to load X3D XML into Cobweb and second X3DOM viewer.</a><br/>
-<textarea id="text" rows="15" cols="80"></textarea>
+<textarea id="json" rows="15" cols="80"></textarea>
+<textarea id="xml" rows="15" cols="80"></textarea>
 </td>
 </tr>
 </table>
@@ -15675,9 +15676,9 @@
 			// Do this inner HTML so we can sneak script tag past JQuery (BAD BAD TODO)
 			$('#x3domxml').get()[0].innerHTML = xml.join("\n");
 			x3dom.reload();
-	    	        $('textarea#text').val(xml.join("\n"));
+	    	        $('textarea#xml').val(xml.join("\n"));
 		}
-		var content = $('textarea#text').val();
+		var content = $('textarea#xml').val();
 		var cobwebWindow = document.getElementById("cobwebframe").contentWindow ;
 		var cobwebEle = cobwebWindow.document.getElementById("x3dele");
 		if (typeof cobwebWindow.X3D !== 'undefined') {
@@ -15690,7 +15691,7 @@
         function updateX3DOM() {
 	    $("x3d").remove();
 	    var xml = [];
-	    loadX3DJS('body',JSON.parse($('textarea#text').val()), "bubbles.json", xml);
+	    loadX3DJS('body',JSON.parse($('textarea#json').val()), "bubbles.json", xml);
 	    updateXML(xml);
         }
 	function filter(event) {

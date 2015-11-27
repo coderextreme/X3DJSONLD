@@ -198,6 +198,7 @@ function loadX3DJS(selector, json, path, xml) {
 	if (element === null) {
 		console.log("selector found nothing in document", selector);
 	} else {
+		$('textarea#json').val(JSON.stringify(json, null, 2));
 		var el = ConvertToX3DOM(json, "", element, path);
 		xml = xml || [];
 		xml.push('<?xml version="1.0" encoding="UTF-8"?>');
