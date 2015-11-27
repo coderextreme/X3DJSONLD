@@ -2,7 +2,7 @@
     "@id":"x3dElement",
     "@showStat":false,
     "@showLog":false,
-    "@style":"width:100%; height:100%; border:0; margin:0; padding:0;",
+    "@style":"border:0; margin:0; padding:0;",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
     "Scene": {
         "-children":[
