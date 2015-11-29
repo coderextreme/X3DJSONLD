@@ -6,18 +6,24 @@
         "-children":[
           { "Viewpoint":
             {
+              "@DEF":"Tour",
+              "@description":"Tour Views"
+            }
+          },
+          { "Viewpoint":
+            {
               "@position":[0,0,4],
               "@description":"sphere in road"
             }
           },
           { "Background":
             {
-              "@backUrl":["X3DJSONLD/cubemap/BK.png", "cubemap/BK.png", "http://coderextreme.net/X3DJSONLD/cubemap/BK.png"],
-              "@bottomUrl":["X3DJSONLD/cubemap/BT.png", "cubemap/BT.png", "http://coderextreme.net/X3DJSONLD/cubemap/BT.png"],
-              "@frontUrl":["X3DJSONLD/cubemap/FR.png", "cubemap/FR.png", "http://coderextreme.net/X3DJSONLD/cubemap/FR.png"],
-              "@leftUrl":["X3DJSONLD/cubemap/LF.png", "cubemap/LF.png", "http://coderextreme.net/X3DJSONLD/cubemap/LF.png"],
-              "@rightUrl":["X3DJSONLD/cubemap/RT.png", "cubemap/RT.png", "http://coderextreme.net/X3DJSONLD/cubemap/RT.png"],
-              "@topUrl":["X3DJSONLD/cubemap/TP.png", "cubemap/TP.png", "http://coderextreme.net/X3DJSONLD/cubemap/TP.png"]
+              "@backUrl":["cubemap/BK.png", "http://coderextreme.net/X3DJSONLD/cubemap/BK.png"],
+              "@bottomUrl":["cubemap/BT.png", "http://coderextreme.net/X3DJSONLD/cubemap/BT.png"],
+              "@frontUrl":["cubemap/FR.png", "http://coderextreme.net/X3DJSONLD/cubemap/FR.png"],
+              "@leftUrl":["cubemap/LF.png", "http://coderextreme.net/X3DJSONLD/cubemap/LF.png"],
+              "@rightUrl":["cubemap/RT.png", "http://coderextreme.net/X3DJSONLD/cubemap/RT.png"],
+              "@topUrl":["cubemap/TP.png", "http://coderextreme.net/X3DJSONLD/cubemap/TP.png"]
             }
           },
           { "Transform":
@@ -51,7 +57,7 @@
                                 "-back":[
                                   { "ImageTexture":
                                     {
-                                      "@url":["X3DJSONLD/cubemap/BK.png", "cubemap/BK.png", "http://coderextreme.net/X3DJSONLD/cubemap/BK.png"],
+                                      "@url":["cubemap/BK.png", "http://coderextreme.net/X3DJSONLD/cubemap/BK.png"],
                                       "@containerField":"back"
                                     }
                                   }
@@ -59,7 +65,7 @@
                                 "-bottom":[
                                   { "ImageTexture":
                                     {
-                                      "@url":["X3DJSONLD/cubemap/BT.png", "cubemap/BT.png","http://coderextreme.net/X3DJSONLD/cubemap/BT.png"],
+                                      "@url":["cubemap/BT.png", "http://coderextreme.net/X3DJSONLD/cubemap/BT.png"],
                                       "@containerField":"bottom"
                                     }
                                   }
@@ -67,7 +73,7 @@
                                 "-front":[
                                   { "ImageTexture":
                                     {
-                                      "@url":["X3DJSONLD/cubemap/FR.png", "cubemap/FR.png","http://coderextreme.net/X3DJSONLD/cubemap/FR.png"],
+                                      "@url":["cubemap/FR.png", "http://coderextreme.net/X3DJSONLD/cubemap/FR.png"],
                                       "@containerField":"front"
                                     }
                                   }
@@ -75,7 +81,7 @@
                                 "-left":[
                                   { "ImageTexture":
                                     {
-                                      "@url":["X3DJSONLD/cubemap/LF.png", "cubemap/LF.png","http://coderextreme.net/X3DJSONLD/cubemap/LF.png"],
+                                      "@url":["cubemap/LF.png", "http://coderextreme.net/X3DJSONLD/cubemap/LF.png"],
                                       "@containerField":"left"
                                     }
                                   }
@@ -83,7 +89,7 @@
                                 "-right":[
                                   { "ImageTexture":
                                     {
-                                      "@url":["X3DJSONLD/cubemap/RT.png", "cubemap/RT.png","http://coderextreme.net/X3DJSONLD/cubemap/RT.png"],
+                                      "@url":["cubemap/RT.png", "http://coderextreme.net/X3DJSONLD/cubemap/RT.png"],
                                       "@containerField":"right"
                                     }
                                   }
@@ -91,7 +97,7 @@
                                 "-top":[
                                   { "ImageTexture":
                                     {
-                                      "@url":["X3DJSONLD/cubemap/TP.png", "cubemap/TP.png","http://coderextreme.net/X3DJSONLD/cubemap/TP.png"],
+                                      "@url":["cubemap/TP.png", "http://coderextreme.net/X3DJSONLD/cubemap/TP.png"],
                                       "@containerField":"top"
                                     }
                                   }
@@ -140,13 +146,13 @@
                                 "-parts":[
                                   { "ShaderPart":
                                     {
-                                      "@url":["X3DJSONLD/bubbles.vs", "bubbles.vs","http://coderextreme.net/X3DJSONLD/bubbles.vs"],
+                                      "@url":["bubbles.vs"],
                                       "@containerField":"parts"
                                     }
                                   },
                                   { "ShaderPart":
                                     {
-                                      "@url":["X3DJSONLD/bubbles.fs", "bubbles.fs","http://coderextreme.net/X3DJSONLD/bubbles.fs"],
+                                      "@url":["bubbles.fs"],
                                       "@containerField":"parts",
                                       "@type":"FRAGMENT"
                                     }
@@ -162,6 +168,53 @@
                 }
               ]
             }
+          },
+          { "TimeSensor":
+            {
+              "@DEF":"TourTime",
+              "@cycleInterval":36,
+              "@loop":true
+            }
+          },
+          { "PositionInterpolator":
+            {
+              "@DEF":"TourPosition",
+              "@key":[0,0.125,0.25,0.378,0.5,0.625,0.75,0.875,1],
+              "@keyValue":[0,0,10,-10,0,0,0,0,-10,10,0,0,0,0,10,0,10,0,0,0,10,0,-10,0,0,0,10]
+            }
+          },
+          { "OrientationInterpolator":
+            {
+              "@DEF":"TourOrientation",
+              "@key":[0,0.125,0.25,0.378,0.5,0.625,0.75,0.875,1],
+              "@keyValue":[0,1,0,0,0,1,0,-1.57,0,1,0,3.14,0,1,0,1.57,0,1,0,0,1,0,0,-1.57,0,1,0,0,1,0,0,1.57,0,1,0,0]
+            }
+          }
+        ],
+        "ROUTE": [
+          {
+            "@fromNode":"TourTime",
+            "@fromField":"fraction_changed",
+            "@toNode":"TourOrientation",
+            "@toField":"set_fraction"
+          },
+          {
+            "@fromNode":"TourOrientation",
+            "@fromField":"value_changed",
+            "@toNode":"Tour",
+            "@toField":"set_orientation"
+          },
+          {
+            "@fromNode":"TourTime",
+            "@fromField":"fraction_changed",
+            "@toNode":"TourPosition",
+            "@toField":"set_fraction"
+          },
+          {
+            "@fromNode":"TourPosition",
+            "@fromField":"value_changed",
+            "@toNode":"Tour",
+            "@toField":"set_position"
           }
         ]
     }
