@@ -1,20 +1,11 @@
-var velocity = new Array();
-var scalevelocity = new Array();
-
 function initialize() {
-	update_velocity();
-}
+    velocity = new SFVec3f(	Math.random() * 0.25 - 0.125,
+				Math.random() * 0.25 - 0.125,
+				Math.random() * 0.25 - 0.125);
 
-function update_velocity() {
-	velocity = new Array();
-        velocity[0] = Math.random() * 200000;
-        velocity[1] = Math.random() * 200000;
-        velocity[2] = Math.random() * 200000;
-
-	scalevelocity = new Array();
-        scalevelocity[0] = Math.random() * 0.01;
-        scalevelocity[1] = Math.random() * 0.01;
-        scalevelocity[2] = Math.random() * 0.01;
+    scalevelocity = new SFVec3f(Math.random() * 0.4,
+				Math.random() * 0.4,
+				Math.random() * 0.4);
 }
 
 function set_translation(value) {
@@ -26,20 +17,22 @@ function set_scale(value) {
 }
 
 function set_fraction(value) {
-    translation[0] = parseFloat(translation[0]) + velocity[0]
-    translation[1] = parseFloat(translation[1]) + velocity[1]
-    translation[2] = parseFloat(translation[2]) + velocity[2]
-    scale[0] = parseFloat(scale[0]) + scalevelocity[0]
-    scale[1] = parseFloat(scale[1]) + scalevelocity[1]
-    scale[2] = parseFloat(scale[2]) + scalevelocity[2]
-    for (var j = 0; j <= 2; j++) {
-	    if (Math.abs(scale[j]) > 4 || Math.abs(translation[j]) > 25600000) {
-		 // if you get to far away or too big, explode
+    translation = new SFVec3f(	translation[0] + velocity[0],
+    				translation[1] + velocity[1],
+    				translation[2] + velocity[2]);
+    scale = new SFVec3f(scale[0] + scalevelocity[0],
+    			scale[1] + scalevelocity[1],
+    			scale[2] + scalevelocity[2]);
+    for (var j = 0; j < 3; j++) {
+	    // if you get to far away or too big, explode
+	    if ( Math.abs(translation[j]) > 256) {
 		translation[j] = 0;
-		scale[0] = 1;
-		scale[1] = 1;
-		scale[2] = 1;
-		update_velocity();
+		initialize();
+	    }
+	    if (Math.abs(scale[j]) > 20) {
+		scale[j] = scale[j]/2;
+		translation[j] = 0;
+		initialize();
 	    }
     }
 }
