@@ -1,9 +1,13 @@
 { "X3D": {
-    "@profile":"Immersive",
+    "@profile":"Full",
     "@version":3.3,
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
     "Scene": {
         "-children":[
+          { "NavigationInfo":
+            {
+            }
+          },
           { "Viewpoint":
             {
               "@DEF":"Tour",
@@ -18,12 +22,12 @@
           },
           { "Background":
             {
-              "@backUrl":["cubemap/BK.png", "http://coderextreme.net/X3DJSONLD/cubemap/BK.png"],
-              "@bottomUrl":["cubemap/BT.png", "http://coderextreme.net/X3DJSONLD/cubemap/BT.png"],
-              "@frontUrl":["cubemap/FR.png", "http://coderextreme.net/X3DJSONLD/cubemap/FR.png"],
-              "@leftUrl":["cubemap/LF.png", "http://coderextreme.net/X3DJSONLD/cubemap/LF.png"],
-              "@rightUrl":["cubemap/RT.png", "http://coderextreme.net/X3DJSONLD/cubemap/RT.png"],
-              "@topUrl":["cubemap/TP.png", "http://coderextreme.net/X3DJSONLD/cubemap/TP.png"]
+              "@backUrl":"\"cubemap/BK.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/BK.png\"",
+              "@bottomUrl":"\"cubemap/BT.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/BT.png\"",
+              "@frontUrl":"\"cubemap/FR.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/FR.png\"",
+              "@leftUrl":"\"cubemap/LF.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/LF.png\"",
+              "@rightUrl":"\"cubemap/RT.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/RT.png\"",
+              "@topUrl":"\"cubemap/TP.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/TP.png\""
             }
           },
           { "Transform":
@@ -57,7 +61,7 @@
                                 "-back":[
                                   { "ImageTexture":
                                     {
-                                      "@url":["cubemap/BK.png", "http://coderextreme.net/X3DJSONLD/cubemap/BK.png"],
+                                      "@url":["cubemap/BK.png","http://coderextreme.net/X3DJSONLD/cubemap/BK.png"],
                                       "@containerField":"back"
                                     }
                                   }
@@ -65,7 +69,7 @@
                                 "-bottom":[
                                   { "ImageTexture":
                                     {
-                                      "@url":["cubemap/BT.png", "http://coderextreme.net/X3DJSONLD/cubemap/BT.png"],
+                                      "@url":["cubemap/BT.png","http://coderextreme.net/X3DJSONLD/cubemap/BT.png"],
                                       "@containerField":"bottom"
                                     }
                                   }
@@ -73,7 +77,7 @@
                                 "-front":[
                                   { "ImageTexture":
                                     {
-                                      "@url":["cubemap/FR.png", "http://coderextreme.net/X3DJSONLD/cubemap/FR.png"],
+                                      "@url":["cubemap/FR.png","http://coderextreme.net/X3DJSONLD/cubemap/FR.png"],
                                       "@containerField":"front"
                                     }
                                   }
@@ -81,7 +85,7 @@
                                 "-left":[
                                   { "ImageTexture":
                                     {
-                                      "@url":["cubemap/LF.png", "http://coderextreme.net/X3DJSONLD/cubemap/LF.png"],
+                                      "@url":["cubemap/LF.png","http://coderextreme.net/X3DJSONLD/cubemap/LF.png"],
                                       "@containerField":"left"
                                     }
                                   }
@@ -89,7 +93,7 @@
                                 "-right":[
                                   { "ImageTexture":
                                     {
-                                      "@url":["cubemap/RT.png", "http://coderextreme.net/X3DJSONLD/cubemap/RT.png"],
+                                      "@url":["cubemap/RT.png","http://coderextreme.net/X3DJSONLD/cubemap/RT.png"],
                                       "@containerField":"right"
                                     }
                                   }
@@ -97,7 +101,7 @@
                                 "-top":[
                                   { "ImageTexture":
                                     {
-                                      "@url":["cubemap/TP.png", "http://coderextreme.net/X3DJSONLD/cubemap/TP.png"],
+                                      "@url":["cubemap/TP.png","http://coderextreme.net/X3DJSONLD/cubemap/TP.png"],
                                       "@containerField":"top"
                                     }
                                   }
@@ -122,7 +126,7 @@
                                     "@name":"chromaticDispertion",
                                     "@accessType":"inputOutput",
                                     "@type":"SFVec3f",
-                                    "@value":[0.98,1.0,1.033]
+                                    "@value":[0.98,1,1.033]
                                   },
                                   {
                                     "@name":"bias",
@@ -140,19 +144,19 @@
                                     "@name":"power",
                                     "@accessType":"inputOutput",
                                     "@type":"SFFloat",
-                                    "@value":2.0
+                                    "@value":2
                                   }
                                 ],
                                 "-parts":[
                                   { "ShaderPart":
                                     {
-                                      "@url":["bubbles.vs"],
+                                      "@url":["bubbles.vs","http://coderextreme.net/X3DJSONLD/bubbles.vs"],
                                       "@containerField":"parts"
                                     }
                                   },
                                   { "ShaderPart":
                                     {
-                                      "@url":["bubbles.fs"],
+                                      "@url":["bubbles.fs","http://coderextreme.net/X3DJSONLD/bubbles.fs"],
                                       "@containerField":"parts",
                                       "@type":"FRAGMENT"
                                     }
@@ -172,26 +176,113 @@
           { "TimeSensor":
             {
               "@DEF":"TourTime",
-              "@cycleInterval":36,
+              "@cycleInterval":5,
               "@loop":true
             }
           },
           { "PositionInterpolator":
             {
               "@DEF":"TourPosition",
-              "@key":[0,0.125,0.25,0.378,0.5,0.625,0.75,0.875,1],
-              "@keyValue":[0,0,10,-10,0,0,0,0,-10,10,0,0,0,0,10,0,10,0,0,0,10,0,-10,0,0,0,10]
+              "@key":[0,1],
+              "@keyValue":[0,0,10,0,0,-10]
             }
           },
           { "OrientationInterpolator":
             {
               "@DEF":"TourOrientation",
-              "@key":[0,0.125,0.25,0.378,0.5,0.625,0.75,0.875,1],
-              "@keyValue":[0,1,0,0,0,1,0,-1.57,0,1,0,3.14,0,1,0,1.57,0,1,0,0,1,0,0,-1.57,0,1,0,0,1,0,0,1.57,0,1,0,0]
+              "@key":[0,1],
+              "@keyValue":[0,1,0,0,0,1,0,3.1416]
+            }
+          },
+          { "Script":
+            {
+              "@DEF":"RandomTourTime",
+              "field": [
+                {
+                  "@name":"set_fraction",
+                  "@accessType":"inputOnly",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"value_changed",
+                  "@accessType":"inputOutput",
+                  "@type":"SFFloat",
+                  "@value":0
+                },
+                {
+                  "@name":"orientations",
+                  "@accessType":"inputOutput",
+                  "@type":"MFRotation",
+                  "@value":[0,1,0,0,0,1,0,-1.57,0,1,0,3.14,0,1,0,1.57,0,1,0,0,1,0,0,-1.57,0,1,0,0,1,0,0,1.57,0,1,0,0]
+                },
+                {
+                  "@name":"positions",
+                  "@accessType":"inputOutput",
+                  "@type":"MFVec3f",
+                  "@value":[0,0,10,-10,0,0,0,0,-10,10,0,0,0,0,10,0,10,0,0,0,10,0,-10,0,0,0,10]
+                },
+                {
+                  "@name":"position_changed",
+                  "@accessType":"outputOnly",
+                  "@type":"MFVec3f"
+                },
+                {
+                  "@name":"orientation_changed",
+                  "@accessType":"outputOnly",
+                  "@type":"MFRotation"
+                }
+              ],
+              "#sourceText":[
+"ecmascript:",
+"            ",
+"         ",
+"               function set_fraction(value) {",
+"                        //var positions = [[0, 0, 10], [-10, 0, 0], [0, 0, -10], [10, 0, 0], [0, 0, 10], [0, 10, 0], [0, 0, 10], [0, -10, 0], [0, 0, 10]];",
+"                        //var orientations = [[0, 1, 0, 0], [0, 1, 0, -1.57], [0, 1, 0, 3.14], [0, 1, 0, 1.57], [0, 1, 0, 0] [1, 0, 0, -1.57], [0, 1, 0, 0], [1, 0, 0, 1.57], [0, 1, 0, 0]];",
+"                    //Browser.println(value);",
+"                        var ov = value_changed;",
+"                        Browser.println(ov);      ",
+"                        //Browser.println(positions.length);                  ",
+"\t\t\tdo {",
+"\t\t\t\tvalue_changed = Math.round(Math.random()*positions.length);",
+"\t\t\t} while (value_changed === ov);",
+"                        Browser.println(value_changed);",
+"                        var vc = value_changed;",
+"                        ",
+"                        Browser.println(orientations[ov]);",
+"                        Browser.println(orientations[vc]);",
+"                        orientation_changed[0] = new SFRotation(orientations[ov][0], orientations[ov][1], orientations[ov][2], orientations[ov][3]);",
+"                        orientation_changed[1] = new SFRotation(orientations[vc][0], orientations[vc][1], orientations[vc][2], orientations[vc][3]);",
+"                        Browser.println(positions[ov]);",
+"                        Browser.println(positions[vc]);",
+"\t\t\tposition_changed = new MFVec3f();",
+"                        position_changed[0] = new SFVec3f(positions[ov][0],positions[ov][1],positions[ov][2]);",
+"                        position_changed[1] = new SFVec3f(positions[vc][0],positions[vc][1],positions[vc][2]);",
+"                    // }",
+"               }"
+]
             }
           }
         ],
         "ROUTE": [
+          {
+            "@fromNode":"TourTime",
+            "@fromField":"cycleTime",
+            "@toNode":"RandomTourTime",
+            "@toField":"set_fraction"
+          },
+          {
+            "@fromNode":"RandomTourTime",
+            "@fromField":"orientation_changed",
+            "@toNode":"TourOrientation",
+            "@toField":"keyValue"
+          },
+          {
+            "@fromNode":"RandomTourTime",
+            "@fromField":"position_changed",
+            "@toNode":"TourPosition",
+            "@toField":"keyValue"
+          },
           {
             "@fromNode":"TourTime",
             "@fromField":"fraction_changed",

@@ -24,6 +24,7 @@
 <option>flipper.json</option>
 <option>ArchHalf.json</option>
 <option>bubbles.json</option>
+<option>geobubbles.json</option>
 <option>ObliqueStrategies.json</option>
 <option>IcosahedronSubdivisionLevel5.json</option>
 <option>ExtrusionHeart.json</option>
@@ -1637,7 +1638,6 @@
 <option>examples/ConformanceNist/SpecialGroups/Switch/nested-switch.json</option>
 <option>examples/ConformanceNist/SpecialGroups/Switch/select-firstchoice.json</option>
 <option>examples/ConformanceNist/SpecialGroups/Switch/select-lastchoice.json</option>
-<option>examples/flipper.json</option>
 <option>examples/HelloWorld.json</option>
 <option>examples/newScene.json</option>
 <option>examples/Savage/AircraftFixedWing/AV8B-Harrier-UnitedStates/AV8bHarrier.json</option>
@@ -15698,12 +15698,7 @@ Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into JSON X3DOM
 			console.error("Cobweb disabled.  Use Firefox.");
 		}
         }
-        function updateX3DOM() {
-	    $("X3D").remove();
-	    var xml = [];
-	    loadX3DJS('#x3domjson',JSON.parse($('textarea#json').val()), "bubbles.json", xml);
-	    updateXML(xml);
-        }
+
 	function filter(event) {
 		$.map($("select option"), function(option, i) {
 			var text = $(option).text();
@@ -15717,15 +15712,38 @@ Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into JSON X3DOM
 		});
 	}
 
+        function loadX3DOM(selector, json, url) {
+	    $(selector+" X3D").remove();
+	    var xml = [];
+	    loadX3DJS(selector, json, url, xml);
+	    updateXML(xml);
+        }
+
+	function updateX3DOM() {
+		loadX3DOM("#x3domjson", JSON.parse($('textarea#json').val()), "flipper.json"); // does not load flipper.json
+	}
+
+	function loadX3DJSON(selector, url) {
+		$.getJSON(url, function(json) {
+			$('textarea#json').val(JSON.stringify(json, null, 2));
+			loadX3DOM(selector, JSON.parse($('textarea#json').val()), url);
+		})
+		.fail(function(jqXHR, textStatus, errorThrown) { alert('getJSON request failed! ' + textStatus + ' ' + errorThrown); });
+	}
+
+	function loadX3DXSLT(jsonAsXml, url) {
+		$('textarea#json').val(getXmlString(jsonAsXml));
+		loadX3DJS("#x3domjson", JSON.parse($("textarea#json").val()), url);
+		// don't load XML, it's already loaded
+	}
+
 	$("select").change(function() {
 		$("X3D").remove();
-		var element = loadX3DJSON('#x3domjson',$('select option:selected').text(), function(xml) {
-			updateXML(xml);
-		});
+		var url = $('select option:selected').text();
+		loadX3DJSON('#x3domjson', url);
 	});
-	loadX3DJSON('#x3domjson','flipper.json', function(xml) {
-		updateXML(xml);
-	});
+
+	loadX3DJSON('#x3domjson','flipper.json'); // does load flipper.json
 
 	function getXmlString(xml) {
 	  if (window.ActiveXObject) { return xml.xml; }
@@ -15764,8 +15782,7 @@ Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into JSON X3DOM
 		}
 
 		console.log('JSON', result);
-		$('textarea#json').val(getXmlString(result));
-		loadX3DJS("#x3domjson",JSON.parse($("textarea#json").val()), "bubbles.json");
+		loadX3DXSLT(result, 'flipper.json'); // does not load flipper.json
 	    }, "xml");
 	}
     </script>

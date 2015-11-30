@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>JSON Loader</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
     <link rel="stylesheet" type="text/css" href="http://www.x3dom.org/download/dev/x3dom.css"></link>
     <script type="text/javascript" src="http://www.x3dom.org/download/dev/x3dom-full.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -19,12 +20,12 @@
 <tr>
 <td>
 <select>
-<option>flipper.json</option>
-<option>ArchHalf.json</option>
-<option>bubbles.json</option>
-<option>ObliqueStrategies.json</option>
-<option>IcosahedronSubdivisionLevel5.json</option>
-<option>ExtrusionHeart.json</option>
+<option>/flipper.json</option>
+<option>/ArchHalf.json</option>
+<option>/bubbles.json</option>
+<option>/ObliqueStrategies.json</option>
+<option>/IcosahedronSubdivisionLevel5.json</option>
+<option>/ExtrusionHeart.json</option>
 <option>examples/Savage/Scenarios/RemusMission10MAR2003/RemusMissionLineTrackPlayback.json</option>
 <option>examples/Savage/CommunicationsAndSensors/Sonar/AuvwStackSceneVisualizationExample.json</option>
 <option>examples/Savage/ShipsMilitary/Seafighter/SeafighterWithHelos.json</option>
@@ -15658,13 +15659,15 @@
 </tr>
 <tr>
 <td>
-Click <a onclick='updateXML();'>here</a> to load X3D XML into Cobweb and second X3DOM viewer.<br>
+Click <a onclick='updateXML();'>here</a> to load X3D XML into Cobweb and XML X3DOM viewer. Does not convert to JSON.<br>
+			
+	    
 <textarea id="xml" rows="15" cols="80"></textarea><br>
 <div id="x3domxml"></div>
 <iframe  id='cobwebframe' src="cobwebframe.html"></iframe>
 </td>
 <td>
-Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into X3DOM and convert to XML.<br>
+Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into JSON X3DOM viewer and convert to XML (and display).<br>
 <textarea id="json" rows="15" cols="80"></textarea><br>
 <div id="x3domjson"></div>
 </td>
@@ -15695,12 +15698,7 @@ Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into X3DOM and 
 			console.error("Cobweb disabled.  Use Firefox.");
 		}
         }
-        function updateX3DOM() {
-	    $("X3D").remove();
-	    var xml = [];
-	    loadX3DJS('#x3domjson',JSON.parse($('textarea#json').val()), "bubbles.json", xml);
-	    updateXML(xml);
-        }
+
 	function filter(event) {
 		$.map($("select option"), function(option, i) {
 			var text = $(option).text();
@@ -15714,14 +15712,31 @@ Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into X3DOM and 
 		});
 	}
 
+        function loadX3DOM(selector, json, url) {
+	    $(selector+" X3D").remove();
+	    var xml = [];
+	    loadX3DJS(selector, json, url, xml);
+	    updateXML(xml);
+        }
+
+	function updateX3DOM() {
+		loadX3DOM("#x3domjson", JSON.parse($('textarea#json').val()), "flipper.json"); // does not load flipper.json
+	}
+
+	function loadX3DJSON(selector, url) {
+		$.getJSON(url, function(json) {
+			$('textarea#json').val(JSON.stringify(json, null, 2));
+			loadX3DOM(selector, JSON.parse($('textarea#json').val()), url);
+		})
+		.fail(function(jqXHR, textStatus, errorThrown) { alert('getJSON request failed! ' + textStatus + ' ' + errorThrown); });
+	}
+
 	$("select").change(function() {
 		$("X3D").remove();
-		var element = loadX3DJSON('#x3domjson',$('select option:selected').text(), function(xml) {
-			updateXML(xml);
-		});
+		var url = $('select option:selected').text();
+		loadX3DJSON('#x3domjson', url);
 	});
-	loadX3DJSON('#x3domjson','flipper.json', function(xml) {
-		updateXML(xml);
-	});
+
+	loadX3DJSON('#x3domjson','flipper.json'); // does load flipper.json
     </script>
 </html>
