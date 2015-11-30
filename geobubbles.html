@@ -1,0 +1,95 @@
+<!--
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1" ><meta>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" ><meta>
+  <title>Tour of a ball</title>
+    <link rel="stylesheet" type="text/css" href="www.x3dom.org/x3dom/release/x3dom.css"></link>
+    <style type="text/css">
+	X3D {
+		width:100%;
+		height:100%;
+	}
+    </style>
+    <script type="text/javascript" src="www.x3dom.org/x3dom/release/x3dom-full.js"></script>
+</head>
+<body>
+<X3D profile='Full' version='3.3' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance'>
+    <head>
+        <meta name='title' content='geo.x3d'></meta>
+        <meta name='creator' content='John Carlson'></meta>
+        <meta name='description' content='Tour around a prismatic sphere'></meta>
+        <meta name='generator' content='X3D-Edit, https://savage.nps.edu/X3D-Edit'></meta>
+        <meta name='identifier' content='http://coderextreme.net/X3DJSONLD/geo.x3d'></meta>
+    </head>
+    <Scene>
+        <NavigationInfo type='"ANY" "WALK" "EXAMINE" "FLY" "LOOKAT"'></NavigationInfo>
+        <GeoViewpoint DEF='Tour' position='0 0 20000000' orientation='-1 0 0 1.5708' description='Tour Views'></GeoViewpoint>
+	
+        <Background backUrl='"cubemap/BK.png" "http://coderextreme.net/X3DJSONLD/cubemap/BK.png"' bottomUrl='"cubemap/BT.png" "http://coderextreme.net/X3DJSONLD/cubemap/BT.png"' frontUrl='"cubemap/FR.png" "http://coderextreme.net/X3DJSONLD/cubemap/FR.png"' leftUrl='"cubemap/LF.png" "http://coderextreme.net/X3DJSONLD/cubemap/LF.png"' rightUrl='"cubemap/RT.png" "http://coderextreme.net/X3DJSONLD/cubemap/RT.png"' topUrl='"cubemap/TP.png" "http://coderextreme.net/X3DJSONLD/cubemap/TP.png"'></Background>
+	<Transform translation="0 0 0">
+          <Shape DEF='bubble'>
+            <Sphere solid="true" radius="6400000"></Sphere>
+            <Appearance>
+                <Material diffuseColor="1 0 0"></Material>
+                    <ComposedCubeMapTexture containerField='texture'>
+                        <ImageTexture url='"cubemap/BK.png" "http://coderextreme.net/X3DJSONLD/cubemap/BK.png"' containerField='back'></ImageTexture>
+                        <ImageTexture url='"cubemap/BT.png" "http://coderextreme.net/X3DJSONLD/cubemap/BT.png"' containerField='bottom'></ImageTexture>
+                        <ImageTexture url='"cubemap/FR.png" "http://coderextreme.net/X3DJSONLD/cubemap/FR.png"' containerField='front'></ImageTexture>
+                        <ImageTexture url='"cubemap/LF.png" "http://coderextreme.net/X3DJSONLD/cubemap/LF.png"' containerField='left'></ImageTexture>
+                        <ImageTexture url='"cubemap/RT.png" "http://coderextreme.net/X3DJSONLD/cubemap/RT.png"' containerField='right'></ImageTexture>
+                        <ImageTexture url='"cubemap/TP.png" "http://coderextreme.net/X3DJSONLD/cubemap/TP.png"' containerField='top'></ImageTexture>
+                    </ComposedCubeMapTexture>
+                    <ComposedShader DEF='ComposedShader' containerField='shaders' language='GLSL'>
+                        <field name='cube' accessType='inputOutput' type='SFInt32' value='0'></field>
+                        <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'></field>
+                        <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field>
+                        <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'></field>
+                        <field name='power' accessType='inputOutput' type='SFFloat' value='2'></field>
+                        <ShaderPart url='"bubbles.vs" "http://coderextreme.net/X3DJSONLD/bubbles.vs"' containerField='parts'></ShaderPart>
+                        <ShaderPart url='"bubbles.fs" "http://coderextreme.net/X3DJSONLD/bubbles.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
+                    </ComposedShader>
+            </Appearance>
+          </Shape>
+	</Transform>
+	<Transform id="tr1" translation="0 0 0" scale="1 1 1">
+            <Shape USE="bubble"></Shape>
+	</Transform>
+	<Transform id="tr2" translation="0 0 0" scale="1 1 1">
+            <Shape USE="bubble"></Shape>
+	</Transform>
+	<Transform id="tr3" translation="0 0 0" scale="1 1 1">
+            <Shape USE="bubble"></Shape>
+	</Transform>
+        <TimeSensor DEF='TourTime' cycleInterval='10' loop='true'></TimeSensor>
+	<GeoPositionInterpolator DEF='TourPosition' key='0.0 0.167 0.333 0.50 0.667 0.833 1.0' 
+                                 keyValue='200 0.0 90, 200 0.0007845 90, 200 0.0015708 90, 200 0.0015708 -60 200 0.0015708 30, 200 0.0015708 90, 200 0.0 90'>
+        </GeoPositionInterpolator>
+        <ROUTE fromNode='TourTime' fromField='fraction_changed' toNode='TourPosition' toField='set_fraction'></ROUTE>
+        <ROUTE fromNode='TourPosition' fromField='value_changed' toNode='Tour' toField='set_position'></ROUTE>
+    </Scene>
+</X3D>
+<!--
+<script type="text/javascript">
+var value_changed = 0;
+var positions = [[10, 0, 90], [10, 0.0015708, 90]];
+var position_changed = '10 0 90 10 0.0015708 90';
+setInterval(function () {
+       var ov = value_changed;
+       do {
+           value_changed = Math.round(Math.random()*2);
+           var vc = value_changed;
+           positions[vc] = [0, 0,  Math.random()*360];
+       } while ( positions[ov][0] === positions[vc][0] && positions[ov][1] === positions[vc][1] && positions[ov][2] === positions[vc][2]);
+       position_changed = positions[ov].join(" ") + " " + positions[vc].join(" ");
+       document.getElementById("TourPosition").setAttribute("keyValue", position_changed);
+}, 5000);
+</script>
+-->
+<script type="text/javascript" src="bounce.js"></script>
+</body>
+</html>

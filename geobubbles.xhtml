@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <title>Spinning Earth</title>
+  <link rel="stylesheet" type="text/css" href="http://x3dom.org/release/x3dom.css" />
+  <script type="text/javascript" src="http://x3dom.org/release/x3dom-full.js"/>
+  <style>
+    X3D {
+      width: 100%;
+      height: 100%;
+    }
+    body {
+      background: black;
+    }
+  </style>
+</head>
+<body>
+<X3D xmlns="http://www.web3d.org/specifications/x3d-namespace"  showStat="false" showLog="false">
+  <Scene>
+    <GeoViewpoint DEF="Tour" position='0 0 20000000' orientation='-1 0 0 1.57'></GeoViewpoint>
+    <Shape>
+      <Appearance DEF='globeapp'>
+        <Material diffuseColor='midnightblue' specularColor='midnightblue' shininess='0.1' />  
+      </Appearance>
+      <GeoElevationGrid solid='false' DEF='southernhemi' creaseAngle='0' geoGridOrigin='-90 -180 0' xDimension='21' xSpacing='18' yScale='1.0' zDimension='6' zSpacing='18' 
+        height='
+        0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+        0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+        0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+        0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+        0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+        0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+        ' >
+      </GeoElevationGrid>
+    </Shape>
+    <Shape DEF='north'>
+      <Appearance USE='globeapp'/>
+      <GeoElevationGrid solid='false' DEF='northernhemi' creaseAngle='0' geoGridOrigin='0 -180 0' xDimension='16' xSpacing='18' yScale='1.0' zDimension='6' zSpacing='18' 
+        height='
+        0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+        0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+        0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+        0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+        0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+        0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+        ' >
+      </GeoElevationGrid>
+    </Shape>
+    <Group DEF='section'>
+      <Shape DEF='crust'>
+        <Appearance>
+          <Material diffuseColor='brown'/>
+        </Appearance>
+        <Disk2D solid='false' innerRadius='6270000' outerRadius='6355000' subdivision='20'/> 
+      </Shape>
+      <Shape DEF='mantle'>
+        <Appearance>
+          <Material diffuseColor='coral'/>
+        </Appearance>
+        <Disk2D solid='false' innerRadius='3470000' outerRadius='6270000' subdivision='20'/> 
+      </Shape>
+      <Shape DEF='outerCore'>
+        <Appearance>
+          <Material diffuseColor='orange'/>
+        </Appearance>
+        <Disk2D solid='false' innerRadius='1230000' outerRadius='3470000' subdivision='20'/> 
+      </Shape>
+      <Shape DEF='innerCore'>
+        <Appearance>
+          <Material diffuseColor='yellow'/>
+        </Appearance>
+        <Disk2D solid='false' innerRadius='0' outerRadius='1230000' subdivision='20'/> 
+      </Shape>
+    </Group>
+    <Transform rotation='1 0 0 1.5708'> 
+      <Group USE='section'/>
+    </Transform>
+    <Transform rotation='0 1 0 1.5708'> 
+      <Group USE='section'/>
+    </Transform>        
+<TimeSensor DEF='TourTime' cycleInterval='4' loop='true'/>
+<GeoPositionInterpolator onGreatCircle='true' id='TourPosition' DEF='TourPosition' key='0.0 0.2 0.4 0.6 0.8 1.0' keyValue='30 0.0 90 30 0.0031416 90 30 0.0062832 90 30 0.0062832 0 30 0.0062832 180 30 0.0031416 90'/> 
+
+<ROUTE fromNode='TourTime' fromField='fraction_changed' toNode='TourPosition' toField='set_fraction'/>
+<ROUTE fromNode='TourPosition' fromField='value_changed' toNode='Tour' toField='set_position'/>
+</Scene>
+</X3D>
+</body>
+</html>

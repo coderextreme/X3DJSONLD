@@ -1,0 +1,269 @@
+{ "X3D": {
+    "@profile":"Full",
+    "@version":3.3,
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"geo.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"John Carlson"
+          },
+          {
+            "@name":"description",
+            "@content":"Tour around a prismatic sphere"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://coderextreme.net/X3DJSONLD/geo.x3d"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "NavigationInfo":
+            {
+              "@type":["ANY","WALK","EXAMINE","FLY","LOOKAT"]
+            }
+          },
+          { "GeoViewpoint":
+            {
+              "@DEF":"Tour",
+              "@position":[0,0,20000000],
+              "@orientation":[-1,0,0,1.5708],
+              "@description":"Tour Views",
+              "@centerOfRotation":[0,0,0],
+              "@retainUserOffsets":false,
+              "@containerField":"children"
+            }
+          },
+          { "Background":
+            {
+              "@backUrl":"\"cubemap/BK.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/BK.png\"",
+              "@bottomUrl":"\"cubemap/BT.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/BT.png\"",
+              "@frontUrl":"\"cubemap/FR.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/FR.png\"",
+              "@leftUrl":"\"cubemap/LF.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/LF.png\"",
+              "@rightUrl":"\"cubemap/RT.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/RT.png\"",
+              "@topUrl":"\"cubemap/TP.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/TP.png\""
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"ORIGIN",
+              "-children":[
+                { "Shape":
+                  {
+                    "@DEF":"bubble",
+                    "-geometry":[
+                      { "Sphere":
+                        {
+                          "@radius":6400000
+                        }
+                      }
+                    ],
+                    "-appearance":[
+                      { "Appearance":
+                        {
+                          "-material":[
+                            { "Material":
+                              {
+                                "@diffuseColor":[1,0,0]
+                              }
+                            }
+                          ],
+                          "-texture":[
+                            { "ComposedCubeMapTexture":
+                              {
+                                "@containerField":"texture",
+                                "-back":[
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["cubemap/BK.png","http://coderextreme.net/X3DJSONLD/cubemap/BK.png"],
+                                      "@containerField":"back"
+                                    }
+                                  }
+                                ],
+                                "-bottom":[
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["cubemap/BT.png","http://coderextreme.net/X3DJSONLD/cubemap/BT.png"],
+                                      "@containerField":"bottom"
+                                    }
+                                  }
+                                ],
+                                "-front":[
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["cubemap/FR.png","http://coderextreme.net/X3DJSONLD/cubemap/FR.png"],
+                                      "@containerField":"front"
+                                    }
+                                  }
+                                ],
+                                "-left":[
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["cubemap/LF.png","http://coderextreme.net/X3DJSONLD/cubemap/LF.png"],
+                                      "@containerField":"left"
+                                    }
+                                  }
+                                ],
+                                "-right":[
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["cubemap/RT.png","http://coderextreme.net/X3DJSONLD/cubemap/RT.png"],
+                                      "@containerField":"right"
+                                    }
+                                  }
+                                ],
+                                "-top":[
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["cubemap/TP.png","http://coderextreme.net/X3DJSONLD/cubemap/TP.png"],
+                                      "@containerField":"top"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "-shaders":[
+                            { "ComposedShader":
+                              {
+                                "@DEF":"ComposedShader",
+                                "@containerField":"shaders",
+                                "@language":"GLSL",
+                                "field": [
+                                  {
+                                    "@name":"cube",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFInt32",
+                                    "@value":0
+                                  },
+                                  {
+                                    "@name":"chromaticDispertion",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFVec3f",
+                                    "@value":[0.98,1,1.033]
+                                  },
+                                  {
+                                    "@name":"bias",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFFloat",
+                                    "@value":0.5
+                                  },
+                                  {
+                                    "@name":"scale",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFFloat",
+                                    "@value":0.5
+                                  },
+                                  {
+                                    "@name":"power",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFFloat",
+                                    "@value":2
+                                  }
+                                ],
+                                "-parts":[
+                                  { "ShaderPart":
+                                    {
+                                      "@url":["bubbles.vs","http://coderextreme.net/X3DJSONLD/bubbles.vs"],
+                                      "@containerField":"parts"
+                                    }
+                                  },
+                                  { "ShaderPart":
+                                    {
+                                      "@url":["bubbles.fs","http://coderextreme.net/X3DJSONLD/bubbles.fs"],
+                                      "@containerField":"parts",
+                                      "@type":"FRAGMENT"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@USE":"ORIGIN",
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"bubble"
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@USE":"ORIGIN",
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"bubble"
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@USE":"ORIGIN",
+              "-children":[
+                { "Shape":
+                  {
+                    "@USE":"bubble"
+                  }
+                }
+              ]
+            }
+          },
+          { "TimeSensor":
+            {
+              "@DEF":"TourTime",
+              "@cycleInterval":10,
+              "@loop":true
+            }
+          },
+          { "GeoPositionInterpolator":
+            {
+              "@onGreatCircle":true,
+              "@id":"TourPosition",
+              "@DEF":"TourPosition",
+              "@key":[0.0,0.167,0.333,0.50,0.667,0.833,1.0],
+              "@keyValue":[100,0.0,90,100,0.007845,90,100,0.015708,90,100,0.015708,-628.32,100,0.015708,314.16,100,0.015708,90,100,0.0,90]
+            }
+          }
+        ],
+        "ROUTE": [
+          {
+            "@fromNode":"TourTime",
+            "@fromField":"fraction_changed",
+            "@toNode":"TourPosition",
+            "@toField":"set_fraction"
+          },
+          {
+            "@fromNode":"TourPosition",
+            "@fromField":"value_changed",
+            "@toNode":"Tour",
+            "@toField":"set_position"
+          }
+        ]
+    }
+  }
+}
