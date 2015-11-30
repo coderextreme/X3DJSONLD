@@ -12,12 +12,24 @@
     }
     </style>
     <script type="text/javascript" src="http://www.x3dom.org/download/dev/x3dom-full.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 </head>
 <body>
 <div id="x3domjson"></div>
 </body>
     <script type="text/javascript" src="X3DJSONLD.js"></script>
     <script type="text/javascript">
-	loadX3DJSON('#x3domjson','geobubbles.json')
+        function loadX3DOM(selector, json, url) {
+	    loadX3DJS(selector, json, url, []);
+        }
+
+	function loadX3DJSON(selector, url) {
+		$.getJSON(url, function(json) {
+			loadX3DOM(selector, json, url);
+		})
+		.fail(function(jqXHR, textStatus, errorThrown) { alert('getJSON request failed! ' + textStatus + ' ' + errorThrown); });
+	}
+
+	loadX3DJSON('#x3domjson','bubbles.json')
     </script>
 </html>
