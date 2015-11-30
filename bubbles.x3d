@@ -11,7 +11,7 @@
                 <Sphere/>
                 <Appearance DEF='_01_-_Default'>
                     <Material diffuseColor='0.7 0.7 0.7' specularColor='0.5 0.5 0.5'/>
-                    <!--ComposedCubeMapTexture containerField='texture'>
+                    <ComposedCubeMapTexture containerField='texture'>
                         <ImageTexture url='"cubemap/BK.png" "http://coderextreme.net/X3DJSONLD/cubemap/BK.png"' containerField='back'/>
                         <ImageTexture url='"cubemap/BT.png" "http://coderextreme.net/X3DJSONLD/cubemap/BT.png"' containerField='bottom'/>
                         <ImageTexture url='"cubemap/FR.png" "http://coderextreme.net/X3DJSONLD/cubemap/FR.png"' containerField='front'/>
@@ -27,7 +27,7 @@
                         <field name='power' accessType='inputOutput' type='SFFloat' value='2'/>
                         <ShaderPart url='"bubbles.vs" "http://coderextreme.net/X3DJSONLD/bubbles.vs"' containerField='parts'/>
                         <ShaderPart url='"bubbles.fs" "http://coderextreme.net/X3DJSONLD/bubbles.fs"' containerField='parts' type='FRAGMENT'/>
-                    </ComposedShader-->
+                    </ComposedShader>
                 </Appearance>
             </Shape>
         </Transform>
