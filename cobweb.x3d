@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D profile='Immersive' version='3.3' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance'>
+    <head>
+        <meta name='title' content='geo.x3d'></meta>
+        <meta name='creator' content='John Carlson'></meta>
+        <meta name='description' content='Tour around a prismatic sphere'></meta>
+        <meta name='generator' content='X3D-Edit, https://savage.nps.edu/X3D-Edit'></meta>
+        <meta name='identifier' content='http://coderextreme.net/X3DJSONLD/geo.x3d'></meta>
+    </head>
+    <Scene>
+        <NavigationInfo type='"ANY" "WALK" "EXAMINE" "FLY" "LOOKAT"'></NavigationInfo>
+	<Viewpoint position='0 0 4' orientation="1 0 0 0" description='Bubbles in action'/>
+
+        <Background backUrl='"cubemap/BK.png" "http://coderextreme.net/X3DJSONLD/cubemap/BK.png"' bottomUrl='"cubemap/BT.png" "http://coderextreme.net/X3DJSONLD/cubemap/BT.png"' frontUrl='"cubemap/FR.png" "http://coderextreme.net/X3DJSONLD/cubemap/FR.png"' leftUrl='"cubemap/LF.png" "http://coderextreme.net/X3DJSONLD/cubemap/LF.png"' rightUrl='"cubemap/RT.png" "http://coderextreme.net/X3DJSONLD/cubemap/RT.png"' topUrl='"cubemap/TP.png" "http://coderextreme.net/X3DJSONLD/cubemap/TP.png"'></Background>
+
+        <ProtoDeclare name="Bubble2">
+            <ProtoBody>
+        
+                <Transform DEF="transform" translation="0 0 0" scale="1 1 1">
+                    <Shape>
+                        <Sphere solid="true" radius="0.25"></Sphere>
+                        <Appearance>
+                            <Material diffuseColor="1 0 0" transparency="0.2"></Material>
+                        </Appearance>
+                    </Shape>
+                    <Script DEF="bounce" url='"bounce.js" "http://coderextreme.net/X3DJSONLD/bounce.js"'>
+                        <field name="set_scale" accessType="inputOutput" type="SFVec3f" value="1 1 1"></field>
+                        <field name="set_translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+                        <field name="translation" accessType="outputOnly" type="SFVec3f"></field>
+                        <field name="scale" accessType="outputOnly" type="SFVec3f"></field>
+                        <field name="velocity" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+                        <field name="scalevelocity" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+                        <field accessType='inputOnly' name='set_fraction' type='SFFloat'></field>
+                    </Script>
+                    <TimeSensor DEF='bubbleClock' cycleInterval='10' loop='true'></TimeSensor>
+                    <ROUTE fromNode='transform' fromField='translation' toNode='bounce' toField='set_translation'></ROUTE>
+                    <ROUTE fromNode='transform' fromField='scale' toNode='bounce' toField='set_scale'></ROUTE>
+                    <ROUTE fromNode='bounce' fromField='translation' toNode='transform' toField='set_translation'></ROUTE>
+                    <ROUTE fromNode='bounce' fromField='scale' toNode='transform' toField='set_scale'></ROUTE>
+                    <ROUTE fromNode='bubbleClock' fromField='fraction_changed' toNode='bounce' toField='set_fraction'></ROUTE>
+                </Transform>
+            </ProtoBody>
+        </ProtoDeclare>
+        <ProtoInstance name="Bubble2"></ProtoInstance>
+        <ProtoInstance name="Bubble2"></ProtoInstance>
+        <ProtoInstance name="Bubble2"></ProtoInstance> 
+        <ProtoInstance name="Bubble2"></ProtoInstance>
+    </Scene>
+</X3D>
