@@ -192,6 +192,10 @@ function ConvertToX3DOM(object, parentkey, element, path) {
 							var pe = path.lastIndexOf('/');
 							var pc = path.substring(0, pe);
 							localArray[url] = pc+'/'+localArray[url];
+						        if (localArray[url].indexOf('/') === 0) {
+								// no webroot absolute paths.  No /'s for cobweb shaders
+								localArray[url] = localArray[url].substring(1);
+							}
 						}
 							
                                        }
