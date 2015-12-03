@@ -1,6 +1,4 @@
-// Java Style Sheet Language, implementation 2
-
-// convert my JSON format to D3 JavaScript
+// X3D JSON Prototype preprocessor
 
 var content = '';
 // read content into buffer
