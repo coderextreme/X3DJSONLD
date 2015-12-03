@@ -52,7 +52,7 @@
           },
           { "ProtoDeclare":
             {
-              "@name":"Bubble2",
+              "@name":"Bubble",
               "ProtoBody": {
                   "-children":[
                     { "Transform":
@@ -179,22 +179,22 @@
           },
           { "ProtoInstance":
             {
-              "@name":"Bubble2"
+              "@name":"Bubble"
             }
           },
           { "ProtoInstance":
             {
-              "@name":"Bubble2"
+              "@name":"Bubble"
             }
           },
           { "ProtoInstance":
             {
-              "@name":"Bubble2"
+              "@name":"Bubble"
             }
           },
           { "ProtoInstance":
             {
-              "@name":"Bubble2"
+              "@name":"Bubble"
             }
           }
         ]
