@@ -43,7 +43,9 @@ function printElement(el, xml) {
 }
 
 function elementSetAttribute(element, key, value, attributes) {
-	element.setAttribute(key, value);
+	if (element !== null) {
+		element.setAttribute(key, value);
+	}
 	if (typeof value === 'string') {
 		attributes[key] = value.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, '&lt;').replace(/>/g, '&gt;');
 	} else {
@@ -77,30 +79,50 @@ function ConvertObject(key, object, element, path) {
 			children.push.apply(children, el.children);
 		} else if (key === '#comment') {
 			// a comment within a script
-			var child = document.createComment(object[key].join("\n"));
+			var child = null;
+			if (element !== null && typeof document !== 'undefined') {
+				child = document.createComment(object[key].join("\n"));
+			}
 			children.push("<!--"+object[key].join("\n")+"-->");
-			element.appendChild(child);
+			if (element !== null && child !== null) {
+				element.appendChild(child);
+			}
 		} else if (key === '#sourceText') {
-			var child = document.createTextNode(object[key].join("\n"));
+			var child = null;
+			if (element !== null && typeof document !== 'undefined') {
+				child = document.createTextNode(object[key].join("\n"));
+			}
 			children.push(object[key].join("\n"));
-			element.appendChild(child);
+			if (element !== null && child !== null) {
+				element.appendChild(child);
+			}
 		} else {
 			if (key === 'ROUTE' || key === 'field' || key === 'meta') {
 				for (var childkey in object[key]) {  // for each field
 					if (typeof object[key][childkey] === 'object') {
-						var child = document.createElement(key);
+						var child = null;
+						if (element !== null && typeof document !== 'undefined') {
+							child = document.createElement(key);
+						}
 						var el = ConvertToX3DOM(object[key][childkey], childkey, child, path);
 						el.key = key;
 						children.push(el);
-						element.appendChild(child);
+						if (element !== null && child !== null) {
+							element.appendChild(child);
+						}
 					}
 				}
 			} else {
-				var child = document.createElement(key);
+				var child = null;
+				if (element !== null && typeof document !== 'undefined') {
+					child = document.createElement(key);
+				}
 				var el = ConvertToX3DOM(object[key], key, child, path);
 				el.key = key;
 				children.push(el);
-				element.appendChild(child);
+				if (element !== null && child !== null) {
+					element.appendChild(child);
+				}
 			}
 		}
 	}
@@ -150,9 +172,11 @@ function ConvertToX3DOM(object, parentkey, element, path) {
 			if (key !== '#comment') {
 				elementSetAttribute(element, key.substr(1),object[key], attributes);
 			} else {
-				var child = document.createComment(object[key]);
+				if (element !== null) {
+					var child = document.createComment(object[key]);
+					element.appendChild(child);
+				}
 				children.push("<!--"+object[key]+"-->");
-				element.appendChild(child);
 			}
 		} else if (typeof object[key] === 'boolean') {
 			elementSetAttribute(element, key.substr(1),object[key], attributes);
@@ -217,26 +241,23 @@ function ConvertToX3DOM(object, parentkey, element, path) {
 }
 
 function loadX3DJS(selector, json, path, xml) {
-	var element = document.querySelector(selector);
-	if (element === null) {
-		console.log("selector found nothing in document", selector);
-	} else {
-		var el = ConvertToX3DOM(json, "", element, path);
-		xml = xml || [];
-		xml.push('<?xml version="1.0" encoding="UTF-8"?>');
-		xml.push('<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">');
-/*
-		console.log(el);
-		console.log(el.children[0]);
-		console.log(el.children[0].children[0]);
-		console.log(el.children[0].children[0].attributes);
-*/
- 		// for Cobweb
-		el.children[0].children[0].attributes["id"] = "x3dele";
-		el.children[0].children[0].attributes["xmlns:xsd"] = 'http://www.w3.org/2001/XMLSchema-instance';
-		printElement(el, xml);
-		if (typeof x3dom !== 'undefined') {
-			x3dom.reload();
-		}
+	var element = null;
+	if (typeof selector !== 'undefined' && typeof document !== 'undefined') {
+		element = document.querySelector(selector);
 	}
+	var el = ConvertToX3DOM(json, "", element, path);
+	xml = xml || [];
+	xml.push('<?xml version="1.0" encoding="UTF-8"?>');
+	xml.push('<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">');
+ 	// for Cobweb
+	el.children[0].children[0].attributes["id"] = "x3dele";
+	el.children[0].children[0].attributes["xmlns:xsd"] = 'http://www.w3.org/2001/XMLSchema-instance';
+	printElement(el, xml);
+	if (typeof x3dom !== 'undefined') {
+		x3dom.reload();
+	}
+}
+
+if (typeof module === 'object')  {
+	module.exports = loadX3DJS;
 }
