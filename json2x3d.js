@@ -9,5 +9,5 @@ process.stdin.on('end', function() {
 	var json = JSON.parse(content);
 	var xml = [];
 	loadX3DJS(null, json, 'pp3s.json', xml);
-	console.log(xml.join(""));
+	console.log(xml.join("\n"));
 });

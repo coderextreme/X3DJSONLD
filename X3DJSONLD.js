@@ -4,12 +4,12 @@
 
 // Load X3D JSON into web page
 
-function printElement(el, xml) {
+function printElement(el, indent, xml) {
         var child;
         var key;
         var attrs = "";
         if (typeof el === 'string') {
-                xml.push(el);
+                xml.push(indent+el);
                 return;
         }
         if (el.key) {
@@ -18,27 +18,27 @@ function printElement(el, xml) {
 	for (var a in el.attributes) {
                 attrs += " "+a+"='"+el.attributes[a]+"'";
         }
-        if (el.children && typeof key !== 'undefined' && attrs !== '' ) {
-                xml.push("<"+key+attrs+">");
-        } else if (el.children && typeof key !== 'undefined' ) {
-                xml.push("<"+key+">");
+        if (typeof el.children !== 'undefined' && el.children.length > 0 && typeof key !== 'undefined' && attrs !== '' ) {
+                xml.push(indent+"<"+key+attrs+">");
+        } else if (typeof el.children !== 'undefined' && el.children.length > 0 && typeof key !== 'undefined' ) {
+                xml.push(indent+"<"+key+">");
         } else if (typeof key !== 'undefined' && attrs !== '' ) {
-                xml.push("<"+key+attrs+"/>");
+                xml.push(indent+"<"+key+attrs+"/>");
         } else if (typeof key !== 'undefined' ) {
-                xml.push("<"+key+"/>");
+                xml.push(indent+"<"+key+"/>");
         }
         for (child in el) {
                 if (child === "children") {
-                        printElement(el[child], xml);
+                        printElement(el[child], indent+" ", xml);
                 } else {
                         if (isNaN(parseInt(child))) {
                         } else {
-                                printElement(el[child], xml);
+                                printElement(el[child], indent+" ", xml);
                         }
                 }
         }
-        if (el.children && typeof key !== 'undefined') {
-                xml.push("</"+key+">");
+        if (typeof el.children !== 'undefined' && el.children.length > 0 && typeof key !== 'undefined') {
+                xml.push(indent+"</"+key+">");
         }
 }
 
@@ -252,7 +252,7 @@ function loadX3DJS(selector, json, path, xml) {
  	// for Cobweb
 	el.children[0].children[0].attributes["id"] = "x3dele";
 	el.children[0].children[0].attributes["xmlns:xsd"] = 'http://www.w3.org/2001/XMLSchema-instance';
-	printElement(el, xml);
+	printElement(el, "", xml);
 	if (typeof x3dom !== 'undefined') {
 		x3dom.reload();
 	}
