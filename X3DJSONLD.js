@@ -90,14 +90,14 @@ function ConvertObject(key, object, element, path) {
 		} else if (key === '#sourceText') {
 			var child = null;
 			if (element !== null && typeof document !== 'undefined') {
-				child = document.createTextNode(object[key].join("\n"));
+				child = document.createCDATASection(object[key].join("\n"));
 			}
-			children.push(object[key].join("\n"));
+			children.push('<![CDATA['+object[key].join("\n").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&")+'\n]]>');
 			if (element !== null && child !== null) {
 				element.appendChild(child);
 			}
 		} else {
-			if (key === 'ROUTE' || key === 'field' || key === 'meta') {
+			if (key === 'ROUTE' || key === 'connect' || key === 'field' || key === 'meta') {
 				for (var childkey in object[key]) {  // for each field
 					if (typeof object[key][childkey] === 'object') {
 						var child = null;
