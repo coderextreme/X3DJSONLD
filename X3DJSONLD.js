@@ -100,8 +100,8 @@ function ConvertObject(key, object, element, path) {
 				// child = document.createCDATASection(object[key].join("\n").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&"));
 				child = document.createTextNode(object[key].join("\n"));
 			}
-			// children.push('<![CDATA['+object[key].join("\n").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&")+']]>');
-			children.push(object[key].join("\n"));
+			children.push('<![CDATA['+object[key].join("\n").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&")+']]>');
+			// children.push(object[key].join("\n"));
 			if (element !== null && child !== null) {
 				element.appendChild(child);
 			}
