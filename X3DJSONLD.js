@@ -4,7 +4,7 @@
 
 // Load X3D JSON into web page
 
-function printElement(el, indent, xml) {
+function printElement(el, indent, xml, selfclosingtags) {
 	var INDENT = "";
         var child;
         var key;
@@ -19,22 +19,28 @@ function printElement(el, indent, xml) {
 	for (var a in el.attributes) {
                 attrs += " "+a+"='"+el.attributes[a]+"'";
         }
-        if (el.children && typeof key !== 'undefined' && attrs !== '' ) {
-                xml.push("<"+key+attrs+">");
-        } else if (el.children && typeof key !== 'undefined' ) {
-                xml.push("<"+key+">");
-        } else if (typeof key !== 'undefined' && attrs !== '' ) {
-                xml.push("<"+key+attrs+"/>");
-        } else if (typeof key !== 'undefined' ) {
-                xml.push("<"+key+"/>");
-        }
+        if (typeof key !== 'undefined') {
+		var keyattr = "";
+		var keytrail = "";
+		if (attrs !== '' ) {
+			keyattr = "<"+key+attrs;
+		} else {
+			keyattr = "<"+key;
+		}
+		if (el.children) {
+			keytrail = ">";
+		} else {
+			keytrail = "/>";
+		}
+		xml.push(keyattr+keytrail);
+	}
         for (child in el) {
                 if (child === "children") {
-                        printElement(el[child], indent+INDENT, xml);
+                        printElement(el[child], indent+INDENT, xml, selfclosingtags);
                 } else {
                         if (isNaN(parseInt(child))) {
                         } else {
-                                printElement(el[child], indent+INDENT, xml);
+                                printElement(el[child], indent+INDENT, xml, selfclosingtags);
                         }
                 }
         }
@@ -243,7 +249,7 @@ function ConvertToX3DOM(object, parentkey, element, path) {
 	return { attributes: attributes, children: children };
 }
 
-function loadX3DJS(selector, json, path, xml) {
+function loadX3DJS(selector, json, path, xml, selfclosingtags) {
 	var element = null;
 	if (typeof selector !== 'undefined' && typeof document !== 'undefined') {
 		element = document.querySelector(selector);
@@ -255,7 +261,7 @@ function loadX3DJS(selector, json, path, xml) {
  	// for Cobweb
 	el.children[0].children[0].attributes["id"] = "x3dele";
 	el.children[0].children[0].attributes["xmlns:xsd"] = 'http://www.w3.org/2001/XMLSchema-instance';
-	printElement(el, "", xml);
+	printElement(el, "", xml, selfclosingtags);
 	if (typeof x3dom !== 'undefined') {
 		x3dom.reload();
 	}
