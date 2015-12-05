@@ -5,11 +5,12 @@
 // Load X3D JSON into web page
 
 function printElement(el, indent, xml) {
+	var INDENT = "";
         var child;
         var key;
         var attrs = "";
         if (typeof el === 'string') {
-                xml.push(indent+el);
+                xml.push(el);
                 return;
         }
         if (el.key) {
@@ -18,27 +19,27 @@ function printElement(el, indent, xml) {
 	for (var a in el.attributes) {
                 attrs += " "+a+"='"+el.attributes[a]+"'";
         }
-        if (typeof el.children !== 'undefined' && el.children.length > 0 && typeof key !== 'undefined' && attrs !== '' ) {
-                xml.push(indent+"<"+key+attrs+">");
-        } else if (typeof el.children !== 'undefined' && el.children.length > 0 && typeof key !== 'undefined' ) {
-                xml.push(indent+"<"+key+">");
+        if (el.children && typeof key !== 'undefined' && attrs !== '' ) {
+                xml.push("<"+key+attrs+">");
+        } else if (el.children && typeof key !== 'undefined' ) {
+                xml.push("<"+key+">");
         } else if (typeof key !== 'undefined' && attrs !== '' ) {
-                xml.push(indent+"<"+key+attrs+"/>");
+                xml.push("<"+key+attrs+"/>");
         } else if (typeof key !== 'undefined' ) {
-                xml.push(indent+"<"+key+"/>");
+                xml.push("<"+key+"/>");
         }
         for (child in el) {
                 if (child === "children") {
-                        printElement(el[child], indent+" ", xml);
+                        printElement(el[child], indent+INDENT, xml);
                 } else {
                         if (isNaN(parseInt(child))) {
                         } else {
-                                printElement(el[child], indent+" ", xml);
+                                printElement(el[child], indent+INDENT, xml);
                         }
                 }
         }
-        if (typeof el.children !== 'undefined' && el.children.length > 0 && typeof key !== 'undefined') {
-                xml.push(indent+"</"+key+">");
+        if (el.children && typeof key !== 'undefined') {
+                xml.push("</"+key+">");
         }
 }
 
@@ -90,9 +91,11 @@ function ConvertObject(key, object, element, path) {
 		} else if (key === '#sourceText') {
 			var child = null;
 			if (element !== null && typeof document !== 'undefined') {
-				child = document.createCDATASection(object[key].join("\n"));
+				// child = document.createCDATASection(object[key].join("\n").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&"));
+				child = document.createTextNode(object[key].join("\n"));
 			}
-			children.push('<![CDATA['+object[key].join("\n").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&")+'\n]]>');
+			// children.push('<![CDATA['+object[key].join("\n").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&")+']]>');
+			children.push(object[key].join("\n"));
 			if (element !== null && child !== null) {
 				element.appendChild(child);
 			}
