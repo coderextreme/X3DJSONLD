@@ -11,7 +11,7 @@
                 <Sphere/>
                 <Appearance DEF='_01_-_Default'>
                     <Material diffuseColor='0.7 0.7 0.7' specularColor='0.5 0.5 0.5'/>
-                    <ComposedCubeMapTexture containerField='texture'>
+                    <!--ComposedCubeMapTexture containerField='texture'>
                         <ImageTexture url='"cubemap/BK.png" "http://coderextreme.net/X3DJSONLD/cubemap/BK.png"' containerField='back'/>
                         <ImageTexture url='"cubemap/BT.png" "http://coderextreme.net/X3DJSONLD/cubemap/BT.png"' containerField='bottom'/>
                         <ImageTexture url='"cubemap/FR.png" "http://coderextreme.net/X3DJSONLD/cubemap/FR.png"' containerField='front'/>
@@ -27,7 +27,7 @@
                         <field name='power' accessType='inputOutput' type='SFFloat' value='2'/>
                         <ShaderPart url='"bubbles.vs" "http://coderextreme.net/X3DJSONLD/bubbles.vs"' containerField='parts'/>
                         <ShaderPart url='"bubbles.fs" "http://coderextreme.net/X3DJSONLD/bubbles.fs"' containerField='parts' type='FRAGMENT'/>
-                    </ComposedShader>
+                    </ComposedShader-->
                 </Appearance>
             </Shape>
         </Transform>
@@ -41,7 +41,7 @@
             <field name='positions' accessType='inputOutput' type='MFVec3f' value='0,0,10,-10,0,0,0,0,-10,10,0,0,0,0,10,0,10,0,0,0,10,0,-10,0,0,0,10'/>
             <field name='position_changed' accessType='outputOnly' type='MFVec3f'/>
             <field name='orientation_changed' accessType='outputOnly' type='MFRotation'/>
-            ecmascript:
+<![CDATA[ecmascript:
             
          
                function set_fraction(value) {
@@ -68,7 +68,7 @@
                         position_changed[1] = new SFVec3f(positions[vc][0],positions[vc][1],positions[vc][2]);
                     // }
                }
-        </Script>
+        ]]></Script>
         <ROUTE fromNode='TourTime' fromField='cycleTime' toNode='RandomTourTime' toField='set_fraction'/>
         <ROUTE fromNode='RandomTourTime' fromField='orientation_changed' toNode='TourOrientation' toField='keyValue'/>
         <ROUTE fromNode='RandomTourTime' fromField='position_changed' toNode='TourPosition' toField='keyValue'/>
