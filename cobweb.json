@@ -52,7 +52,7 @@
           },
           { "ProtoDeclare":
             {
-              "@name":"Bubble",
+              "@name":"Bubble2",
               "ProtoBody": {
                   "-children":[
                     { "Transform":
@@ -87,7 +87,6 @@
                           { "Script":
                             {
                               "@DEF":"bounce",
-                              "@url":["bounce.js","http://coderextreme.net/X3DJSONLD/bounce.js"],
                               "field": [
                                 {
                                   "@name":"set_scale",
@@ -128,7 +127,49 @@
                                   "@accessType":"inputOnly",
                                   "@type":"SFFloat"
                                 }
-                              ]
+                              ],
+                              "#sourceText":[
+"ecmascript:",
+"",
+"function initialize() {",
+"    velocity = new SFVec3f(\tMath.random() * 0.25 - 0.125,",
+"\t\t\t\tMath.random() * 0.25 - 0.125,",
+"\t\t\t\tMath.random() * 0.25 - 0.125);",
+"",
+"    scalevelocity = new SFVec3f(Math.random() * 0.4,",
+"\t\t\t\tMath.random() * 0.4,",
+"\t\t\t\tMath.random() * 0.4);",
+"}",
+"",
+"function set_translation(value) {",
+"   translation = value;",
+"}",
+"",
+"function set_scale(value) {",
+"   scale = value;",
+"}",
+"",
+"function set_fraction(value) {",
+"    translation = new SFVec3f(\ttranslation[0] + velocity[0],",
+"    \t\t\t\ttranslation[1] + velocity[1],",
+"    \t\t\t\ttranslation[2] + velocity[2]);",
+"    scale = new SFVec3f(scale[0] + scalevelocity[0],",
+"    \t\t\tscale[1] + scalevelocity[1],",
+"    \t\t\tscale[2] + scalevelocity[2]);",
+"    for (var j = 0; j &lt; 3; j++) {",
+"\t    // if you get to far away or too big, explode",
+"\t    if ( Math.abs(translation[j]) &gt; 256) {",
+"\t\ttranslation[j] = 0;",
+"\t\tinitialize();",
+"\t    }",
+"\t    if (Math.abs(scale[j]) &gt; 20) {",
+"\t\tscale[j] = scale[j]/2;",
+"\t\ttranslation[j] = 0;",
+"\t\tinitialize();",
+"\t    }",
+"    }",
+"}"
+]
                             }
                           },
                           { "TimeSensor":
@@ -179,22 +220,22 @@
           },
           { "ProtoInstance":
             {
-              "@name":"Bubble"
+              "@name":"Bubble2"
             }
           },
           { "ProtoInstance":
             {
-              "@name":"Bubble"
+              "@name":"Bubble2"
             }
           },
           { "ProtoInstance":
             {
-              "@name":"Bubble"
+              "@name":"Bubble2"
             }
           },
           { "ProtoInstance":
             {
-              "@name":"Bubble"
+              "@name":"Bubble2"
             }
           }
         ]

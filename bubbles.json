@@ -47,6 +47,9 @@
                       { "Appearance":
                         {
                           "@DEF":"_01_-_Default",
+                          "#comment":[
+                            "ComposedCubeMapTexture containerField='texture'&gt; &lt;ImageTexture url='\"cubemap/BK.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/BK.png\"' containerField='back'/&gt; &lt;ImageTexture url='\"cubemap/BT.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/BT.png\"' containerField='bottom'/&gt; &lt;ImageTexture url='\"cubemap/FR.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/FR.png\"' containerField='front'/&gt; &lt;ImageTexture url='\"cubemap/LF.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/LF.png\"' containerField='left'/&gt; &lt;ImageTexture url='\"cubemap/RT.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/RT.png\"' containerField='right'/&gt; &lt;ImageTexture url='\"cubemap/TP.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/TP.png\"' containerField='top'/&gt; &lt;/ComposedCubeMapTexture&gt; &lt;ComposedShader DEF='ComposedShader' containerField='shaders' language='GLSL'&gt; &lt;field name='cube' accessType='inputOutput' type='SFInt32' value='0'/&gt; &lt;field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'/&gt; &lt;field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/&gt; &lt;field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/&gt; &lt;field name='power' accessType='inputOutput' type='SFFloat' value='2'/&gt; &lt;ShaderPart url='\"bubbles.vs\" \"http://coderextreme.net/X3DJSONLD/bubbles.vs\"' containerField='parts'/&gt; &lt;ShaderPart url='\"bubbles.fs\" \"http://coderextreme.net/X3DJSONLD/bubbles.fs\"' containerField='parts' type='FRAGMENT'/&gt; &lt;/ComposedShader"
+                          ],
                           "-material":[
                             { "Material":
                               {
@@ -86,7 +89,6 @@
           },
           { "Script":
             {
-              "@url":["bubbles.js"],
               "@DEF":"RandomTourTime",
               "field": [
                 {
@@ -122,7 +124,36 @@
                   "@accessType":"outputOnly",
                   "@type":"MFRotation"
                 }
-              ]
+              ],
+              "#sourceText":[
+"ecmascript:",
+"            ",
+"         ",
+"               function set_fraction(value) {",
+"                        //var positions = [[0, 0, 10], [-10, 0, 0], [0, 0, -10], [10, 0, 0], [0, 0, 10], [0, 10, 0], [0, 0, 10], [0, -10, 0], [0, 0, 10]];",
+"                        //var orientations = [[0, 1, 0, 0], [0, 1, 0, -1.57], [0, 1, 0, 3.14], [0, 1, 0, 1.57], [0, 1, 0, 0] [1, 0, 0, -1.57], [0, 1, 0, 0], [1, 0, 0, 1.57], [0, 1, 0, 0]];",
+"                    //Browser.println(value);",
+"                        var ov = value_changed;",
+"                        Browser.println(ov);      ",
+"                        //Browser.println(positions.length);                  ",
+"\t\t\tdo {",
+"\t\t\t\tvalue_changed = Math.round(Math.random()*positions.length);",
+"\t\t\t} while (value_changed === ov);",
+"                        Browser.println(value_changed);",
+"                        var vc = value_changed;",
+"                        ",
+"                        Browser.println(orientations[ov]);",
+"                        Browser.println(orientations[vc]);",
+"                        orientation_changed[0] = new SFRotation(orientations[ov][0], orientations[ov][1], orientations[ov][2], orientations[ov][3]);",
+"                        orientation_changed[1] = new SFRotation(orientations[vc][0], orientations[vc][1], orientations[vc][2], orientations[vc][3]);",
+"                        Browser.println(positions[ov]);",
+"                        Browser.println(positions[vc]);",
+"\t\t\tposition_changed = new MFVec3f();",
+"                        position_changed[0] = new SFVec3f(positions[ov][0],positions[ov][1],positions[ov][2]);",
+"                        position_changed[1] = new SFVec3f(positions[vc][0],positions[vc][1],positions[vc][2]);",
+"                    // }",
+"               }"
+]
             }
           }
         ],
