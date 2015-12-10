@@ -106,7 +106,7 @@ function ConvertObject(key, object, element, path) {
 				element.appendChild(child);
 			}
 		} else {
-			if (key === 'ROUTE' || key === 'connect' || key === 'field' || key === 'meta') {
+			if (key === 'ROUTE' || key === 'connect' || key === 'fieldValue' || key === 'field' || key === 'meta') {
 				for (var childkey in object[key]) {  // for each field
 					if (typeof object[key][childkey] === 'object') {
 						var child = null;
@@ -163,7 +163,7 @@ function ConvertToX3DOM(object, parentkey, element, path) {
 			} else if (typeof object[key] === 'object') {
 				children.push(ConvertToX3DOM(object[key], key, element, path));
 			} else {
-				console.log("Unknown type found in array "+typeof object[key]);
+				console.error("Unknown type found in array "+typeof object[key]);
 			}
 		} else if (typeof object[key] === 'object') {
 			if (key !== "ROUTE") {
@@ -190,7 +190,7 @@ function ConvertToX3DOM(object, parentkey, element, path) {
 		} else if (typeof object[key] === 'boolean') {
 			elementSetAttribute(element, key.substr(1),object[key], attributes);
 		} else {
-			console.log("Unknown type found in object "+typeof object[key]);
+			console.error("Unknown type found in object "+typeof object[key]);
 		}
 	}
 	// put ROUTEs last
@@ -233,7 +233,7 @@ function ConvertToX3DOM(object, parentkey, element, path) {
 							
                                        }
 					// if URL
-					console.log("Loading URL",'"'+localArray.join('" "')+'"');
+					console.error("Loading URL",'"'+localArray.join('" "')+'"');
 					elementSetAttribute(element, parentkey.substr(1),'"'+localArray.join('" "')+'"', attributes);
                                 } else {
 					// if string array
