@@ -89,26 +89,16 @@
                               "@DEF":"bounce",
                               "field": [
                                 {
-                                  "@name":"set_scale",
+                                  "@name":"scale",
                                   "@accessType":"inputOutput",
                                   "@type":"SFVec3f",
                                   "@value":[1,1,1]
                                 },
                                 {
-                                  "@name":"set_translation",
+                                  "@name":"translation",
                                   "@accessType":"inputOutput",
                                   "@type":"SFVec3f",
                                   "@value":[0,0,0]
-                                },
-                                {
-                                  "@name":"translation",
-                                  "@accessType":"outputOnly",
-                                  "@type":"SFVec3f"
-                                },
-                                {
-                                  "@name":"scale",
-                                  "@accessType":"outputOnly",
-                                  "@type":"SFVec3f"
                                 },
                                 {
                                   "@name":"velocity",
