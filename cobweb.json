@@ -125,7 +125,7 @@
                                 {
                                   "@name":"set_fraction",
                                   "@accessType":"inputOnly",
-                                  "@type":"SFFloat"
+                                  "@type":"SFTime"
                                 }
                               ],
                               "#sourceText":[

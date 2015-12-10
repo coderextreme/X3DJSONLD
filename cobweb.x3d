@@ -31,7 +31,7 @@
                         <field name="scale" accessType="outputOnly" type="SFVec3f"></field>
                         <field name="velocity" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
                         <field name="scalevelocity" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
-                        <field accessType='inputOnly' name='set_fraction' type='SFFloat'></field>
+                        <field accessType='inputOnly' name='set_fraction' type='SFTime'></field>
 <![CDATA[ecmascript:
 
 function initialize() {
