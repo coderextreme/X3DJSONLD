@@ -281,6 +281,6 @@ process.stdin.on('data', function(buf) { content += buf.toString(); });
 process.stdin.on('end', function() {
 	var json = JSON.parse(content);
 	var xml = [];
-	loadX3DJS(null, json, 'pp3s.json', xml, true);
+	loadX3DJS(null, json, 'pp3s.json', xml);
 	console.log(xml.join("\n"));
 });

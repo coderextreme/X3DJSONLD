@@ -4,7 +4,7 @@
 
 // Load X3D JSON into web page
 
-function printElement(el, indent, xml, selfclosingtags) {
+function printElement(el, indent, xml) {
 	var INDENT = "";
         var child;
         var key;
@@ -36,11 +36,11 @@ function printElement(el, indent, xml, selfclosingtags) {
 	}
         for (child in el) {
                 if (child === "children") {
-                        printElement(el[child], indent+INDENT, xml, selfclosingtags);
+                        printElement(el[child], indent+INDENT, xml);
                 } else {
                         if (isNaN(parseInt(child))) {
                         } else {
-                                printElement(el[child], indent+INDENT, xml, selfclosingtags);
+                                printElement(el[child], indent+INDENT, xml);
                         }
                 }
         }
@@ -249,7 +249,7 @@ function ConvertToX3DOM(object, parentkey, element, path) {
 	return { attributes: attributes, children: children };
 }
 
-function loadX3DJS(selector, json, path, xml, selfclosingtags) {
+function loadX3DJS(selector, json, path, xml) {
 	var element = null;
 	if (typeof selector !== 'undefined' && typeof document !== 'undefined') {
 		element = document.querySelector(selector);
@@ -261,7 +261,7 @@ function loadX3DJS(selector, json, path, xml, selfclosingtags) {
  	// for Cobweb
 	el.children[0].children[0].attributes["id"] = "x3dele";
 	el.children[0].children[0].attributes["xmlns:xsd"] = 'http://www.w3.org/2001/XMLSchema-instance';
-	printElement(el, "", xml, selfclosingtags);
+	printElement(el, "", xml);
 	if (typeof x3dom !== 'undefined') {
 		x3dom.reload();
 	}
