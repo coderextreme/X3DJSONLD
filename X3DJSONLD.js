@@ -106,7 +106,7 @@ function ConvertObject(key, object, element, path) {
 				element.appendChild(child);
 			}
 		} else {
-			if (key === 'ROUTE' || key === 'connect' || key === 'field' || key === 'meta') {
+			if (key === 'ROUTE' || key === 'connect' || key === 'fieldValue' || key === 'field' || key === 'meta') {
 				for (var childkey in object[key]) {  // for each field
 					if (typeof object[key][childkey] === 'object') {
 						var child = null;
