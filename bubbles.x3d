@@ -35,10 +35,10 @@
         <PositionInterpolator DEF='TourPosition' key='0 1' keyValue='0 0 10 0 0 -10'/>
         <OrientationInterpolator DEF='TourOrientation' key='0 1' keyValue='0 1 0 0 0 1 0 3.1416'/>
         <Script DEF='RandomTourTime'>
-            <field accessType='inputOnly' name='set_fraction' type='SFFloat'/>
+            <field accessType='inputOnly' name='set_fraction' type='SFTime'/>
             <field name='value_changed' accessType='inputOutput' type='SFFloat' value='0'/>
-	    <field name='orientations' accessType='inputOutput' type='MFRotation' value='0,1,0,0,0,1,0,-1.57,0,1,0,3.14,0,1,0,1.57,0,1,0,0,1,0,0,-1.57,0,1,0,0,1,0,0,1.57,0,1,0,0'/>
-            <field name='positions' accessType='inputOutput' type='MFVec3f' value='0,0,10,-10,0,0,0,0,-10,10,0,0,0,0,10,0,10,0,0,0,10,0,-10,0,0,0,10'/>
+	    <field name='orientations' accessType='inputOutput' type='MFRotation' value='0 1 0 0,0 1 0 -1.57,0 1 0 3.14,0 1 0 1.57,0 1 0 0,1 0 0 -1.57,0 1 0 0,1 0 0 1.57,0 1 0 0'/>
+            <field name='positions' accessType='inputOutput' type='MFVec3f' value='0 0 10,-10 0 0,0 0 -10,10 0 0,0 0 10,0 10 0,0 0 10,0 -10 0,0 0 10'/>
             <field name='position_changed' accessType='outputOnly' type='MFVec3f'/>
             <field name='orientation_changed' accessType='outputOnly' type='MFRotation'/>
 <![CDATA[ecmascript:

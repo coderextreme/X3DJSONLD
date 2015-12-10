@@ -94,7 +94,7 @@
                 {
                   "@name":"set_fraction",
                   "@accessType":"inputOnly",
-                  "@type":"SFFloat"
+                  "@type":"SFTime"
                 },
                 {
                   "@name":"value_changed",
