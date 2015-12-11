@@ -5,7 +5,7 @@
 // Load X3D JSON into web page
 
 function printElement(el, indent, xml) {
-	var INDENT = " ";
+	var INDENT = "";
         var child;
         var key;
         var attrs = "";
@@ -282,5 +282,5 @@ process.stdin.on('end', function() {
 	var json = JSON.parse(content);
 	var xml = [];
 	loadX3DJS(null, json, 'pp3s.json', xml);
-	console.log(xml.join("\n"));
+	console.log(xml.join(""));
 });
