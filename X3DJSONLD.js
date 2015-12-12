@@ -85,14 +85,15 @@ function ConvertObject(key, object, element, path) {
 			var el = ConvertChildren(key, object[key], element, path);
 			children.push.apply(children, el.children);
 		} else if (key === '#comment') {
-			// a comment within a script
-			var child = null;
-			if (element !== null && typeof document !== 'undefined') {
-				child = document.createComment(object[key].join("\n"));
-			}
-			children.push("<!--"+object[key].join("\n")+"-->");
-			if (element !== null && child !== null) {
-				element.appendChild(child);
+			for (var c in object[key]) {
+				var child = null;
+				if (element !== null && typeof document !== 'undefined') {
+					child = document.createComment(object[key][c]);
+				}
+				children.push("<!--"+object[key][c]+"-->");
+				if (element !== null && child !== null) {
+					element.appendChild(child);
+				}
 			}
 		} else if (key === '#sourceText') {
 			var child = null;
