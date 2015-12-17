@@ -1,0 +1,441 @@
+{ "X3D": {
+    "@profile":"Immersive",
+    "@version":4.0,
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-4.0.xsd",
+    "head": {
+        "meta": [
+          {
+            "@name":"author",
+            "@content":"John W Carlson"
+          },
+          {
+            "@name":"created",
+            "@content":"December 13 2015"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ProtoDeclare":
+            {
+              "@name":"node",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"position",
+                      "@accessType":"inputOutput",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                      {
+                        "@DEF":"transform",
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"translation",
+                                "@protoField":"position"
+                              }
+                            ]
+                        },
+                        "-children":[
+                          { "Shape":
+                            {
+                              "-geometry":[
+                                { "Sphere":
+                                  {
+                                  }
+                                }
+                              ],
+                              "-appearance":[
+                                { "Appearance":
+                                  {
+                                    "-material":[
+                                      { "Material":
+                                        {
+                                          "@diffuseColor":[1,0,0]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          { "Transform":
+                            {
+                              "@translation":[1,0,0],
+                              "-children":[
+                                { "Shape":
+                                  {
+                                    "-geometry":[
+                                      { "Text":
+                                        {
+                                          "@string":["Node"],
+                                          "-fontStyle":[
+                                            { "FontStyle":
+                                              {
+                                                "@justify":["MIDDLE","MIDDLE"],
+                                                "@size":5
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ],
+                                    "-appearance":[
+                                      { "Appearance":
+                                        {
+                                          "-material":[
+                                            { "Material":
+                                              {
+                                                "@diffuseColor":[0,0,1]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    { "PositionInterpolator":
+                      {
+                        "@DEF":"NodePosition",
+                        "@key":[0,1],
+                        "@keyValue":[0,0,0,0,5,0]
+                      }
+                    },
+                    { "Script":
+                      {
+                        "@DEF":"MoveBall",
+                        "field": [
+                          {
+                            "@name":"translation",
+                            "@accessType":"inputOutput",
+                            "@type":"SFVec3f",
+                            "@value":[1,1,0]
+                          },
+                          {
+                            "@name":"old_translation",
+                            "@accessType":"inputOutput",
+                            "@type":"SFVec3f",
+                            "@value":[0,0,0]
+                          },
+                          {
+                            "@name":"new_location",
+                            "@accessType":"inputOnly",
+                            "@type":"SFTime"
+                          },
+                          {
+                            "@name":"keyValue",
+                            "@accessType":"outputOnly",
+                            "@type":"MFVec3f"
+                          }
+                        ],
+                        "#sourceText":[
+"ecmascript:",
+"\t\t\t\t\tfunction new_location(value) {",
+"                                                old_translation = translation;",
+"\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
+"                                                keyValue[0] = old_translation;",
+"                                                keyValue[1] = translation;",
+"\t\t\t\t\t}"
+]
+                      }
+                    },
+                    { "TimeSensor":
+                      {
+                        "@DEF":"nodeClock",
+                        "@cycleInterval":3,
+                        "@loop":true
+                      }
+                    }
+                  ],
+                  "ROUTE": [
+                    {
+                      "@fromNode":"nodeClock",
+                      "@fromField":"cycleTime",
+                      "@toNode":"MoveBall",
+                      "@toField":"new_location"
+                    },
+                    {
+                      "@fromNode":"nodeClock",
+                      "@fromField":"fraction_changed",
+                      "@toNode":"NodePosition",
+                      "@toField":"set_fraction"
+                    },
+                    {
+                      "@fromNode":"MoveBall",
+                      "@fromField":"keyValue",
+                      "@toNode":"NodePosition",
+                      "@toField":"keyValue"
+                    },
+                    {
+                      "@fromNode":"NodePosition",
+                      "@fromField":"value_changed",
+                      "@toNode":"transform",
+                      "@toField":"set_translation"
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"cylinder",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"positionA",
+                      "@accessType":"inputOnly",
+                      "@type":"SFVec3f"
+                    },
+                    {
+                      "@name":"positionB",
+                      "@accessType":"inputOnly",
+                      "@type":"SFVec3f"
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Shape":
+                      {
+                        "-geometry":[
+                          { "Extrusion":
+                            {
+                              "@DEF":"extrusion",
+                              "@creaseAngle":0.785,
+                              "@crossSection":[1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00],
+                              "@spine":[0,-1,0,0,1,0]
+                            }
+                          }
+                        ],
+                        "-appearance":[
+                          { "Appearance":
+                            {
+                              "-material":[
+                                { "Material":
+                                  {
+                                    "@diffuseColor":[0,1,0]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    { "Script":
+                      {
+                        "@DEF":"MoveCylinder",
+                        "field": [
+                          {
+                            "@name":"spine",
+                            "@accessType":"outputOnly",
+                            "@type":"MFVec3f",
+                            "@value":[0,-1,0,0,1,0]
+                          },
+                          {
+                            "@name":"set_endA",
+                            "@accessType":"inputOnly",
+                            "@type":"SFVec3f"
+                          },
+                          {
+                            "@name":"set_endB",
+                            "@accessType":"inputOnly",
+                            "@type":"SFVec3f"
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"set_endA",
+                                "@protoField":"positionA"
+                              },
+                              {
+                                "@nodeField":"set_endB",
+                                "@protoField":"positionB"
+                              }
+                            ]
+                        },
+                        "#sourceText":[
+"ecmascript:",
+"",
+"                function set_endA(value) {",
+"\t\t    spine = new MFVec3f(value, spine[1]);",
+"                }",
+"                ",
+"                function set_endB(value) {",
+"\t\t    spine = new MFVec3f(spine[0], value);",
+"                }"
+]
+                      }
+                    }
+                  ],
+                  "ROUTE": [
+                    {
+                      "@fromNode":"MoveCylinder",
+                      "@fromField":"spine",
+                      "@toNode":"extrusion",
+                      "@toField":"set_spine"
+                    }
+                  ]
+              }
+            }
+          },
+          { "Transform":
+            {
+              "@scale":[0.1,0.1,0.1],
+              "-children":[
+                { "ProtoInstance":
+                  {
+                    "@name":"node",
+                    "@DEF":"nodeA",
+                    "fieldValue": [
+                      {
+                        "@name":"position",
+                        "@value":[0.0,0.0,0.0]
+                      }
+                    ]
+                  }
+                },
+                { "ProtoInstance":
+                  {
+                    "@name":"node",
+                    "@DEF":"nodeB",
+                    "fieldValue": [
+                      {
+                        "@name":"position",
+                        "@value":[1.0,1.0,1.0]
+                      }
+                    ]
+                  }
+                },
+                { "ProtoInstance":
+                  {
+                    "@name":"node",
+                    "@DEF":"nodeC",
+                    "fieldValue": [
+                      {
+                        "@name":"position",
+                        "@value":[-1.0,-1.0,-1.0]
+                      }
+                    ]
+                  }
+                },
+                { "ProtoInstance":
+                  {
+                    "@name":"node",
+                    "@DEF":"nodeD",
+                    "fieldValue": [
+                      {
+                        "@name":"position",
+                        "@value":[1.0,1.0,-1.0]
+                      }
+                    ]
+                  }
+                },
+                { "ProtoInstance":
+                  {
+                    "@name":"cylinder",
+                    "@DEF":"linkA",
+                    "fieldValue": [
+                      {
+                        "@name":"positionA",
+                        "@value":[0,0,0]
+                      },
+                      {
+                        "@name":"positionB",
+                        "@value":[1,1,1]
+                      }
+                    ]
+                  }
+                },
+                { "ProtoInstance":
+                  {
+                    "@name":"cylinder",
+                    "@DEF":"linkB",
+                    "fieldValue": [
+                      {
+                        "@name":"positionA",
+                        "@value":[0,0,0]
+                      },
+                      {
+                        "@name":"positionB",
+                        "@value":[-1,-1,-1]
+                      }
+                    ]
+                  }
+                },
+                { "ProtoInstance":
+                  {
+                    "@name":"cylinder",
+                    "@DEF":"linkC",
+                    "fieldValue": [
+                      {
+                        "@name":"positionA",
+                        "@value":[1,1,1]
+                      },
+                      {
+                        "@name":"positionB",
+                        "@value":[1,1,-1]
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "ROUTE": [
+          {
+            "@fromNode":"nodeA",
+            "@fromField":"position",
+            "@toNode":"linkA",
+            "@toField":"positionA"
+          },
+          {
+            "@fromNode":"nodeB",
+            "@fromField":"position",
+            "@toNode":"linkA",
+            "@toField":"positionB"
+          },
+          {
+            "@fromNode":"nodeA",
+            "@fromField":"position",
+            "@toNode":"linkB",
+            "@toField":"positionA"
+          },
+          {
+            "@fromNode":"nodeC",
+            "@fromField":"position",
+            "@toNode":"linkB",
+            "@toField":"positionB"
+          },
+          {
+            "@fromNode":"nodeA",
+            "@fromField":"position",
+            "@toNode":"linkC",
+            "@toField":"positionA"
+          },
+          {
+            "@fromNode":"nodeD",
+            "@fromField":"position",
+            "@toNode":"linkC",
+            "@toField":"positionB"
+          }
+        ]
+    }
+  }
+}
