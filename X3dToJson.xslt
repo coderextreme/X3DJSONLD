@@ -18,7 +18,7 @@ are met:
       nor the names of its contributors may be used to endorse or
       promote products derived from this software without specific
       prior written permission.
-
+ 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
 "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
 LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
@@ -137,18 +137,11 @@ POSSIBILITY OF SUCH DAMAGE.
         
         <xsl:choose>
             <!-- ============================================================================================ -->
-            <xsl:when test="($elementName = 'ProtoInterface')">
-                <!-- ignore this marker element itself, simply process contained nodes -->
-                <xsl:apply-templates select="* | comment()"> <!-- node() includes CDATA text -->
-                    <xsl:with-param name="indent" select="$indent"/>
-                </xsl:apply-templates>
-            </xsl:when>
-            <!-- ============================================================================================ -->
             <xsl:when test="($elementName = 'X3D')       or ($elementName = 'head')       or ($elementName = 'Scene')     or
                             ($elementName = 'component') or ($elementName = 'meta')       or ($elementName = 'unit')      or 
                             ($elementName = 'IS')        or ($elementName = 'connect')    or ($elementName = 'ROUTE')     or
-                            ($elementName = 'field')     or ($elementName = 'fieldValue') or ($elementName = 'ProtoBody') or
-                            ($elementName = 'IMPORT')    or ($elementName = 'EXPORT')">
+                            ($elementName = 'field')     or ($elementName = 'fieldValue') or ($elementName = 'ProtoInterface') or
+                            ($elementName = 'IMPORT')    or ($elementName = 'EXPORT')     or ($elementName = 'ProtoBody')">
                 <!-- special statements: scene-graph structure element may have attributes, contains arrays, NOT surrounded by {squiggly brackets} -->
                 
                 <!-- if first of multiple siblings, process all at once -->
@@ -176,7 +169,7 @@ POSSIBILITY OF SUCH DAMAGE.
                         <xsl:when test="($elementName='X3D')">
                             <!-- all set already -->
                         </xsl:when>
-                        <xsl:when test="($elementName='head') or ($elementName='Scene') or ($elementName='ProtoBody') or ($elementName='IS')">
+                        <xsl:when test="($elementName='head') or ($elementName='Scene') or ($elementName='ProtoInterface') or ($elementName='ProtoBody') or ($elementName='IS')">
                             <xsl:if test="(count(@*) = 0)">
                                 <xsl:text> {</xsl:text>
                             </xsl:if>
@@ -227,7 +220,7 @@ POSSIBILITY OF SUCH DAMAGE.
                         <xsl:when test="($elementName='X3D')">
                             <!-- all set already -->
                         </xsl:when>
-                        <xsl:when test="($elementName='head') or ($elementName='Scene') or ($elementName='ProtoBody') or ($elementName='IS')">
+                        <xsl:when test="($elementName='head') or ($elementName='Scene') or ($elementName = 'ProtoInterface') or ($elementName='ProtoBody') or ($elementName='IS')">
                             <xsl:if test="(count(@*) = 0)">
                                 <xsl:text>&#10;</xsl:text>
                                 <xsl:call-template name="print-indent"><xsl:with-param name="indent" select="$indent"/></xsl:call-template>
@@ -263,8 +256,8 @@ POSSIBILITY OF SUCH DAMAGE.
                         <xsl:when test="($elementName = 'ProtoDeclare') or ($elementName = 'ExternProtoDeclare')">
                             <!-- <xsl:value-of select="$elementName"/>  similarly to containerField names, each contains an array-->
                             <xsl:text>children</xsl:text>
-                        </xsl:when>
-                        <!-- ProtoBody handled by previous rule, not needed here -->
+                        </xsl:when> 
+                        <!-- ProtoInterface and ProtoBody handled by previous rule, not needed here -->
                         <xsl:when test="string-length(@containerField) > 0">
                             <xsl:value-of select="@containerField"/>
                         </xsl:when>
@@ -283,7 +276,7 @@ POSSIBILITY OF SUCH DAMAGE.
                     <xsl:text>&#10;</xsl:text>
                     <xsl:call-template name="print-indent"><xsl:with-param name="indent" select="$indent"/></xsl:call-template>
 
-                    <xsl:if test="not(local-name() = 'ProtoBody')">
+                    <xsl:if test="not(local-name() = 'ProtoInterface') and not(local-name() = 'ProtoBody')">
                         <xsl:text>"</xsl:text>
                         <xsl:text>-</xsl:text><!-- visual assist, TODO determine if part of final pattern -->
 
@@ -352,7 +345,7 @@ POSSIBILITY OF SUCH DAMAGE.
                         </xsl:if>
                     </xsl:for-each>
                 
-                    <xsl:if test="not(local-name() = 'ProtoBody')">
+                    <xsl:if test="not(local-name() = 'ProtoInterface') and not(local-name() = 'ProtoBody')">
                         <xsl:text>&#10;</xsl:text>
                         <xsl:call-template name="print-indent"><xsl:with-param name="indent" select="$indent"/></xsl:call-template>
                         <xsl:text>]</xsl:text><!-- children containerField -->
@@ -482,7 +475,7 @@ POSSIBILITY OF SUCH DAMAGE.
             <xsl:variable name="fieldValueType2"   select="//ExternProtoDeclare[@name = $protoInstanceName][1]               /field[@name=$fieldValueName][1]/@type"/>
             <!-- only one of these should be available -->
             <xsl:variable name="fieldValueType"    select="concat($fieldValueType1,$fieldValueType2)"/>
-            <!-- debug
+            <!-- debug ProtoInstance
             <xsl:if test="(string-length($protoInstanceName) > 0) and ($attributeName = 'value')">
                 <xsl:message>
                     <xsl:text>$protoInstanceName=</xsl:text>
@@ -552,13 +545,15 @@ POSSIBILITY OF SUCH DAMAGE.
                         </xsl:call-template>
                         <xsl:text>]</xsl:text>
                     </xsl:when>
-                    <xsl:when test="(((local-name()='value') and ((../@type='SFString') or (contains(local-name(../..),'ProtoDeclare') and ($fieldValueType='SFString')))) or
-                                      (local-name()='DEF')        or (local-name()='USE')           or (local-name()='class')   or (local-name()='containerField') or
-                                      (local-name()='fromField')  or (local-name()='fromNode')      or (local-name()='toField') or (local-name()='toNode')         or
-                                      (local-name()='appinfo')    or (local-name()='description')   or (local-name()='name')    or (local-name()='accessType')     or 
-                                      (local-name()='content')    or (local-name()='documentation') or
-                                     ((local-name()='type') and not(local-name(..)='NavigationInfo')) and
-                                     not(local-name()='url') or ends-with(local-name(),'Url'))">
+                    <xsl:when test="not(local-name() ='url') and not(ends-with(local-name(),'Url')) and
+                                       ((local-name()='value') and ((contains(local-name(../..),'Proto') or contains(local-name(../../..),'Proto')) and
+                                                                   ((../@type='SFString') or ($fieldValueType='SFString'))) or
+                                        (local-name()='DEF')        or (local-name()='USE')           or (local-name()='class')     or (local-name()='containerField') or
+                                        (local-name()='fromField')  or (local-name()='fromNode')      or (local-name()='toField')   or (local-name()='toNode')         or
+                                        (local-name()='appinfo')    or (local-name()='description')   or (local-name()='name')      or (local-name()='accessType')     or 
+                                        (local-name()='content')    or (local-name()='documentation') or (local-name()='nodeField') or (local-name()='protoField') or
+                                       ((local-name()='type') and not(local-name(..)='NavigationInfo')))
+                                     ">
                         <!-- single string -->
                         <xsl:text>"</xsl:text>
                         <!--  escaped quote requires preceding backslash in JSON encoding -->
@@ -569,7 +564,8 @@ POSSIBILITY OF SUCH DAMAGE.
                         <xsl:text>"</xsl:text>
                     </xsl:when>
                     <xsl:when test="((local-name()='value') and ((../@type='MFString') or (contains(local-name(../..),'ProtoDeclare') and ($fieldValueType='MFString')))) or
-                                     (local-name()='url') or ends-with(local-name(),'Url') or (local-name()='geoSystem') or
+                                     (local-name()='url') or ends-with(local-name(),'Url') or
+                                     (  ../@name = 'url') or ends-with(  ../@name,  'Url') or (local-name()='geoSystem') or
                                     ((local-name(..)='Text')                and (local-name()='string')) or
                                     ((local-name(..)='Anchor')              and (local-name()='parameter')) or
                             (contains(local-name(..),'FontStyle')           and ((local-name()='family') or (local-name()='justify'))) or
@@ -584,6 +580,16 @@ POSSIBILITY OF SUCH DAMAGE.
                                     ((local-name(..)='GeoViewpoint')        and (local-name()='navType')) or
                                      (local-name()='objectType')">
                         <!-- string array -->
+                        <!-- debug fieldValue
+                        <xsl:if test="(local-name(..) = 'fieldValue') and (local-name() = 'value')">
+                            <xsl:message>
+                                <xsl:value-of select="local-name(..)"/>
+                                <xsl:text>, local-name()=</xsl:text>
+                                <xsl:value-of select="local-name()"/>
+                                <xsl:text>, (../@name/.)=</xsl:text>
+                                <xsl:value-of select="(../@name/.)"/>
+                            </xsl:message>
+                        </xsl:if> -->
                         <xsl:text>[</xsl:text>
                         
                         <xsl:variable name="escape-special-characters-quotes-recurse-result">
@@ -644,19 +650,27 @@ POSSIBILITY OF SUCH DAMAGE.
 
                         <xsl:text>]</xsl:text>
                     </xsl:when>
-                    <xsl:when test="(local-name()='value') and ((../@type='SFInt32')        or (../@type='SFFloat') or
-                                    (contains(local-name(../..),'ProtoDeclare') and ($fieldValueType='SFInt32') or ($fieldValueType='SFFloat')))">
+                    <xsl:when test="((local-name()='value') and 
+                                     ((../@type='SFInt32') or (../@type='SFFloat') or (../@type='SFDouble') or (../@type='SFTime'))) or
+                                    (contains(local-name(../..),'ProtoDeclare') and
+                                     (($fieldValueType='SFInt32') or ($fieldValueType='SFFloat') or ($fieldValueType='SFDouble') or ($fieldValueType='SFTime')))">
                         <!-- single number -->
                         <xsl:value-of select="$normalizedFloats"/>
                     </xsl:when>
                     <xsl:when test="((local-name()='value') and 
-                                     (             (../@type='MFInt32') or                   (../@type='MFFloat') or 
-                                        starts-with(../@type,'SFVec')   or        starts-with(../@type,'MFVec')   or
-                                           contains(../@type,'Color')   or           contains(../@type,'Matrix'))  or
+                                     (             (../@type='MFInt32')    or            (../@type='MFFloat')        or  
+                                                   (../@type='MFDouble')   or            (../@type='MFTime')         or
+                                                   (../@type='SFImage')    or            (../@type='MFImage')        or
+                                                   (../@type='SFRotation') or            (../@type='MFRotation')     or
+                                        starts-with(../@type,'SFVec')      or starts-with(../@type,'MFVec')          or
+                                           contains(../@type,'Color')      or    contains(../@type,'Matrix')))       or
                                      (contains(local-name(../..),'ProtoDeclare') and 
-                                     (      ($fieldValueType='MFInt32') or            ($fieldValueType='MFFloat') or 
-                                 starts-with($fieldValueType,'SFVec')   or starts-with($fieldValueType,'MFVec')   or
-                                    contains($fieldValueType,'Color')   or    contains($fieldValueType,'Matrix'))))">
+                                     (     ($fieldValueType='MFInt32')     or        ($fieldValueType='MFFloat')     or
+                                           ($fieldValueType='MFDouble')    or        ($fieldValueType='MFTime')      or
+                                           ($fieldValueType='SFImage')     or        ($fieldValueType='MFImage')     or
+                                           ($fieldValueType='SFRotation')  or        ($fieldValueType='MFRotation')  or
+                                starts-with($fieldValueType,'SFVec')       or starts-with($fieldValueType,'MFVec')   or
+                                   contains($fieldValueType,'Color')       or    contains($fieldValueType,'Matrix')))">
                         <!-- number array -->
                         <xsl:text>[</xsl:text>
                         <!--  array values require comma between values in JSON encoding -->
