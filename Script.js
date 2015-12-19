@@ -5,7 +5,7 @@ var content = '';
 process.stdin.resume();
 process.stdin.on('data', function(buf) { content += buf.toString(); });
 
-function Package(package, name) {
+function Script(package, name) {
 	this.initializers = [];
 	this.getters = {};
 	this.setters = {};
@@ -30,17 +30,17 @@ function Package(package, name) {
 	// add package to parent so you can find the package without full path
 }
 
-Package.prototype.find = function (name) {
+Script.prototype.find = function (name) {
 	if (typeof this.packages[name] === 'undefined') {
 		// there is no package, so global package
-		return new Package(undefined, name);
+		return new Script(undefined, name);
 	} else {
 		return this.packages[name];
 	}
 }
 
 
-function processPrototypes(object, clazz, package) {
+function processScripts(object, clazz, package) {
 	var p;
 	if (typeof object === "object") {
 		for (p in object) {
@@ -49,8 +49,8 @@ function processPrototypes(object, clazz, package) {
 				name = object[p]["@DEF"];
 			}
 			if (p.toLowerCase() === 'script') {
-				var script = new Package(package, name);
-				processPrototypes(object[p], clazz, script);
+				var script = new Script(package, name);
+				processScripts(object[p], clazz, script);
 			} else if (p.toLowerCase() === 'route') {
 				processRoutes(object[p], clazz, package);
 			} else if (p.toLowerCase() === 'field' && object['@language'] !== 'GLSL') {
@@ -73,7 +73,7 @@ function processPrototypes(object, clazz, package) {
 					}
 				processSource(object['#sourceText'], clazz, package);
 				clazz.push('}');
-				processPrototypes(object[p], clazz, package);
+				processScripts(object[p], clazz, package);
 			} else if (p.toLowerCase() === '@use') {
 				var name = object["@USE"];
 				object["@USE"] = name;
@@ -83,7 +83,7 @@ function processPrototypes(object, clazz, package) {
 				object["@DEF"] = name;
 				// object[p] is not an object
 			} else {
-				processPrototypes(object[p], clazz, package);
+				processScripts(object[p], clazz, package);
 			}
 		}
 	}
@@ -155,7 +155,7 @@ function processSource(lines, clazz, package) {
 process.stdin.on('end', function() {
 	var object = JSON.parse(content);
 	var clazz = [];
-	processPrototypes(object, clazz, new Package());
+	processScripts(object, clazz, new Script());
 	console.log(clazz.join('\n'));
 	//console.log(JSON.stringify(object, null, 2));
 });
