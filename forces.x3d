@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D profile='Immersive' version='3.3' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance'>
+    <head>
+        <meta name='author' content='John W Carlson'/>
+        <meta name='creator' content='John W Carlson'/>
+        <meta name='created' content='December 19 2015'/>
+        <meta name='title' content='forces.x3d'/>
+        <meta name='identifier' content='https://github.com/coderextreme/X3DJSONLD/forces.x3d'/>
+        <meta name='generator' content="json2x3d.js"/>
+        <meta name='description' content='The start of a force directed graph without protos'/>
+    </head>
+    <Scene>
+        <Transform scale='0.1 0.1 0.1'>
+            <Group DEF='nodeAnode'>
+                <Transform DEF='transformnodenodeAnode' translation='0 0 0'>
+                    <Shape>
+                        <Sphere/>
+                        <Appearance>
+                            <Material diffuseColor='1 0 0'></Material>
+                        </Appearance>
+                    </Shape>
+                    <Transform translation='1 0 0'>
+                        <Shape>
+                            <Text string='&quot;Node&quot;'>
+                                <FontStyle justify='&quot;MIDDLE&quot; &quot;MIDDLE&quot;' size='5'></FontStyle>
+                            </Text>
+                            <Appearance>
+                                <Material diffuseColor='0 0 1'></Material>
+                            </Appearance>
+                        </Shape>
+                    </Transform>
+                </Transform>
+                <PositionInterpolator DEF='NodePositionnodenodeAnode' key='0 1' keyValue='0 0 0 0 5 0'></PositionInterpolator>
+                <Script DEF='MoveBallnodenodeAnode'>
+                    <field name='translation' accessType='inputOutput' type='SFVec3f' value='50 50 0'></field>
+                    <field name='old' accessType='inputOutput' type='SFVec3f' value='0 0 0'></field>
+                    <field name='set_location' accessType='inputOnly' type='SFTime'/>
+                    <field name='keyValue' accessType='outputOnly' type='MFVec3f'/><![CDATA[ecmascript:
+					function set_location(value) {
+                                                old = translation;
+						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
+                                                keyValue = new MFVec3f(old, translation);
+					}]]></Script>
+                <TimeSensor DEF='nodeClocknodenodeAnode' cycleInterval='3' loop='true'/>
+                <ROUTE fromNode='nodeClocknodenodeAnode' fromField='cycleTime' toNode='MoveBallnodenodeAnode' toField='set_location'/>
+                <ROUTE fromNode='nodeClocknodenodeAnode' fromField='fraction_changed' toNode='NodePositionnodenodeAnode' toField='set_fraction'/>
+                <ROUTE fromNode='MoveBallnodenodeAnode' fromField='keyValue' toNode='NodePositionnodenodeAnode' toField='keyValue'/>
+                <ROUTE fromNode='NodePositionnodenodeAnode' fromField='value_changed' toNode='transformnodenodeAnode' toField='translation'/>
+            </Group>
+            <Group DEF='nodeBnode'>
+                <Transform DEF='transformnodenodeBnode' translation='50 50 50'>
+                    <Shape>
+                        <Sphere/>
+                        <Appearance>
+                            <Material diffuseColor='1 0 0'></Material>
+                        </Appearance>
+                    </Shape>
+                    <Transform translation='1 0 0'>
+                        <Shape>
+                            <Text string='&quot;Node&quot;'>
+                                <FontStyle justify='&quot;MIDDLE&quot; &quot;MIDDLE&quot;' size='5'></FontStyle>
+                            </Text>
+                            <Appearance>
+                                <Material diffuseColor='0 0 1'></Material>
+                            </Appearance>
+                        </Shape>
+                    </Transform>
+                </Transform>
+                <PositionInterpolator DEF='NodePositionnodenodeBnode' key='0 1' keyValue='0 0 0 0 5 0'></PositionInterpolator>
+                <Script DEF='MoveBallnodenodeBnode'>
+                    <field name='translation' accessType='inputOutput' type='SFVec3f' value='50 50 0'></field>
+                    <field name='old' accessType='inputOutput' type='SFVec3f' value='0 0 0'></field>
+                    <field name='set_location' accessType='inputOnly' type='SFTime'/>
+                    <field name='keyValue' accessType='outputOnly' type='MFVec3f'/><![CDATA[ecmascript:
+					function set_location(value) {
+                                                old = translation;
+						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
+                                                keyValue = new MFVec3f(old, translation);
+					}]]></Script>
+                <TimeSensor DEF='nodeClocknodenodeBnode' cycleInterval='3' loop='true'/>
+                <ROUTE fromNode='nodeClocknodenodeBnode' fromField='cycleTime' toNode='MoveBallnodenodeBnode' toField='set_location'/>
+                <ROUTE fromNode='nodeClocknodenodeBnode' fromField='fraction_changed' toNode='NodePositionnodenodeBnode' toField='set_fraction'/>
+                <ROUTE fromNode='MoveBallnodenodeBnode' fromField='keyValue' toNode='NodePositionnodenodeBnode' toField='keyValue'/>
+                <ROUTE fromNode='NodePositionnodenodeBnode' fromField='value_changed' toNode='transformnodenodeBnode' toField='translation'/>
+            </Group>
+            <Group DEF='nodeCnode'>
+                <Transform DEF='transformnodenodeCnode' translation='-50 -50 -50'>
+                    <Shape>
+                        <Sphere/>
+                        <Appearance>
+                            <Material diffuseColor='1 0 0'></Material>
+                        </Appearance>
+                    </Shape>
+                    <Transform translation='1 0 0'>
+                        <Shape>
+                            <Text string='&quot;Node&quot;'>
+                                <FontStyle justify='&quot;MIDDLE&quot; &quot;MIDDLE&quot;' size='5'></FontStyle>
+                            </Text>
+                            <Appearance>
+                                <Material diffuseColor='0 0 1'></Material>
+                            </Appearance>
+                        </Shape>
+                    </Transform>
+                </Transform>
+                <PositionInterpolator DEF='NodePositionnodenodeCnode' key='0 1' keyValue='0 0 0 0 5 0'></PositionInterpolator>
+                <Script DEF='MoveBallnodenodeCnode'>
+                    <field name='translation' accessType='inputOutput' type='SFVec3f' value='50 50 0'></field>
+                    <field name='old' accessType='inputOutput' type='SFVec3f' value='0 0 0'></field>
+                    <field name='set_location' accessType='inputOnly' type='SFTime'/>
+                    <field name='keyValue' accessType='outputOnly' type='MFVec3f'/><![CDATA[ecmascript:
+					function set_location(value) {
+                                                old = translation;
+						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
+                                                keyValue = new MFVec3f(old, translation);
+					}]]></Script>
+                <TimeSensor DEF='nodeClocknodenodeCnode' cycleInterval='3' loop='true'/>
+                <ROUTE fromNode='nodeClocknodenodeCnode' fromField='cycleTime' toNode='MoveBallnodenodeCnode' toField='set_location'/>
+                <ROUTE fromNode='nodeClocknodenodeCnode' fromField='fraction_changed' toNode='NodePositionnodenodeCnode' toField='set_fraction'/>
+                <ROUTE fromNode='MoveBallnodenodeCnode' fromField='keyValue' toNode='NodePositionnodenodeCnode' toField='keyValue'/>
+                <ROUTE fromNode='NodePositionnodenodeCnode' fromField='value_changed' toNode='transformnodenodeCnode' toField='translation'/>
+            </Group>
+            <Group DEF='nodeDnode'>
+                <Transform DEF='transformnodenodeDnode' translation='50 50 -50'>
+                    <Shape>
+                        <Sphere/>
+                        <Appearance>
+                            <Material diffuseColor='1 0 0'></Material>
+                        </Appearance>
+                    </Shape>
+                    <Transform translation='1 0 0'>
+                        <Shape>
+                            <Text string='&quot;Node&quot;'>
+                                <FontStyle justify='&quot;MIDDLE&quot; &quot;MIDDLE&quot;' size='5'></FontStyle>
+                            </Text>
+                            <Appearance>
+                                <Material diffuseColor='0 0 1'></Material>
+                            </Appearance>
+                        </Shape>
+                    </Transform>
+                </Transform>
+                <PositionInterpolator DEF='NodePositionnodenodeDnode' key='0 1' keyValue='0 0 0 0 5 0'></PositionInterpolator>
+                <Script DEF='MoveBallnodenodeDnode'>
+                    <field name='translation' accessType='inputOutput' type='SFVec3f' value='50 50 0'></field>
+                    <field name='old' accessType='inputOutput' type='SFVec3f' value='0 0 0'></field>
+                    <field name='set_location' accessType='inputOnly' type='SFTime'/>
+                    <field name='keyValue' accessType='outputOnly' type='MFVec3f'/><![CDATA[ecmascript:
+					function set_location(value) {
+                                                old = translation;
+						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
+                                                keyValue = new MFVec3f(old, translation);
+					}]]></Script>
+                <TimeSensor DEF='nodeClocknodenodeDnode' cycleInterval='3' loop='true'/>
+                <ROUTE fromNode='nodeClocknodenodeDnode' fromField='cycleTime' toNode='MoveBallnodenodeDnode' toField='set_location'/>
+                <ROUTE fromNode='nodeClocknodenodeDnode' fromField='fraction_changed' toNode='NodePositionnodenodeDnode' toField='set_fraction'/>
+                <ROUTE fromNode='MoveBallnodenodeDnode' fromField='keyValue' toNode='NodePositionnodenodeDnode' toField='keyValue'/>
+                <ROUTE fromNode='NodePositionnodenodeDnode' fromField='value_changed' toNode='transformnodenodeDnode' toField='translation'/>
+            </Group>
+            <Group DEF='linkAcylinder'>
+                <Shape>
+                    <Extrusion DEF='extrusioncylinderlinkAcylinder' creaseAngle='0.785' crossSection='1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0' spine='0 -50 0 0 50 0'></Extrusion>
+                    <Appearance>
+                        <Material diffuseColor='0 1 0'></Material>
+                    </Appearance>
+                </Shape>
+                <Script DEF='MoveCylindercylinderlinkAcylinder'>
+                    <field name='spine' accessType='outputOnly' type='MFVec3f' value='0 -50 0 0 50 0'></field>
+                    <field name='set_endA' accessType='inputOnly' type='SFVec3f' value='0 0 0'></field>
+                    <field name='set_endB' accessType='inputOnly' type='SFVec3f' value='50 50 50'></field><![CDATA[ecmascript:
+
+                function set_endA(value) {
+		    if (typeof spine === 'undefined') {
+		        spine = new MFVec3f(value, value);
+		    } else {
+		        spine = new MFVec3f(value, spine[1]);
+		    }
+                }
+                
+                function set_endB(value) {
+		    if (typeof spine === 'undefined') {
+		        spine = new MFVec3f(value, value);
+		    } else {
+		        spine = new MFVec3f(spine[0], value);
+		    }
+                }]]></Script>
+                <ROUTE fromNode='MoveCylindercylinderlinkAcylinder' fromField='spine' toNode='extrusioncylinderlinkAcylinder' toField='spine'/>
+            </Group>
+            <Group DEF='linkBcylinder'>
+                <Shape>
+                    <Extrusion DEF='extrusioncylinderlinkBcylinder' creaseAngle='0.785' crossSection='1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0' spine='0 -50 0 0 50 0'></Extrusion>
+                    <Appearance>
+                        <Material diffuseColor='0 1 0'></Material>
+                    </Appearance>
+                </Shape>
+                <Script DEF='MoveCylindercylinderlinkBcylinder'>
+                    <field name='spine' accessType='outputOnly' type='MFVec3f' value='0 -50 0 0 50 0'></field>
+                    <field name='set_endA' accessType='inputOnly' type='SFVec3f' value='0 0 0'></field>
+                    <field name='set_endB' accessType='inputOnly' type='SFVec3f' value='-50 -50 -50'></field><![CDATA[ecmascript:
+
+                function set_endA(value) {
+		    if (typeof spine === 'undefined') {
+		        spine = new MFVec3f(value, value);
+		    } else {
+		        spine = new MFVec3f(value, spine[1]);
+		    }
+                }
+                
+                function set_endB(value) {
+		    if (typeof spine === 'undefined') {
+		        spine = new MFVec3f(value, value);
+		    } else {
+		        spine = new MFVec3f(spine[0], value);
+		    }
+                }]]></Script>
+                <ROUTE fromNode='MoveCylindercylinderlinkBcylinder' fromField='spine' toNode='extrusioncylinderlinkBcylinder' toField='spine'/>
+            </Group>
+            <Group DEF='linkCcylinder'>
+                <Shape>
+                    <Extrusion DEF='extrusioncylinderlinkCcylinder' creaseAngle='0.785' crossSection='1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0' spine='0 -50 0 0 50 0'></Extrusion>
+                    <Appearance>
+                        <Material diffuseColor='0 1 0'></Material>
+                    </Appearance>
+                </Shape>
+                <Script DEF='MoveCylindercylinderlinkCcylinder'>
+                    <field name='spine' accessType='outputOnly' type='MFVec3f' value='0 -50 0 0 50 0'></field>
+                    <field name='set_endA' accessType='inputOnly' type='SFVec3f' value='50 50 50'></field>
+                    <field name='set_endB' accessType='inputOnly' type='SFVec3f' value='50 50 -50'></field><![CDATA[ecmascript:
+
+                function set_endA(value) {
+		    if (typeof spine === 'undefined') {
+		        spine = new MFVec3f(value, value);
+		    } else {
+		        spine = new MFVec3f(value, spine[1]);
+		    }
+                }
+                
+                function set_endB(value) {
+		    if (typeof spine === 'undefined') {
+		        spine = new MFVec3f(value, value);
+		    } else {
+		        spine = new MFVec3f(spine[0], value);
+		    }
+                }]]></Script>
+                <ROUTE fromNode='MoveCylindercylinderlinkCcylinder' fromField='spine' toNode='extrusioncylinderlinkCcylinder' toField='spine'/>
+            </Group>
+        </Transform>
+        <ROUTE fromNode='transformnodenodeAnode' fromField='translation' toNode='MoveCylindercylinderlinkAcylinder' toField='set_endA'/>
+        <ROUTE fromNode='transformnodenodeBnode' fromField='translation' toNode='MoveCylindercylinderlinkAcylinder' toField='set_endB'/>
+        <ROUTE fromNode='transformnodenodeAnode' fromField='translation' toNode='MoveCylindercylinderlinkBcylinder' toField='set_endA'/>
+        <ROUTE fromNode='transformnodenodeCnode' fromField='translation' toNode='MoveCylindercylinderlinkBcylinder' toField='set_endB'/>
+        <ROUTE fromNode='transformnodenodeAnode' fromField='translation' toNode='MoveCylindercylinderlinkCcylinder' toField='set_endA'/>
+        <ROUTE fromNode='transformnodenodeDnode' fromField='translation' toNode='MoveCylindercylinderlinkCcylinder' toField='set_endB'/>
+    </Scene>
+</X3D>
