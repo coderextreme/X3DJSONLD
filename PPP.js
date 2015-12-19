@@ -19,7 +19,7 @@ process.stdin.on('end', function() {
 	var routecode = [];
 	routecode.push("setInterval(function() {");
 	processScripts(object, classes, undefined, routecode);
-	routecode.push("}, 10000);");
+	routecode.push("}, 500);");
 	classes.push("};");
 	console.log(classes.join('\n'));
 	console.log(routecode.join('\n'));
