@@ -3,36 +3,67 @@ var scripts = {};
 var currentproto = {};
 var defs = {};
 var nodeField = {};
-var scopecount = 1000;
+// var scopecount = 1000;
 
 function setEnv(scope, field, newscope, newfield) {
-	//console.log('set', scope, field, newscope, newfield);
+	console.error('set', scope, field, newscope, newfield);
+	nodeField[scope+'__generic__field__'] = newscope;
 	nodeField[scope+field] = [ newscope, newfield ];
 }
 
+function setIfNotSetEnv(scope, field, newscope, newfield) {
+	console.error('setif', scope, field, newscope, newfield);
+	if (typeof nodeField[scope+field] === 'undefined') {
+		nodeField[scope+'__generic__field__'] = newscope;
+		nodeField[scope+field] = [ newscope, newfield ];
+	}
+}
+
 function getEnv(scope, field) {
-	//console.log('get', scope, field, nodeField[scope+field]);
-	return nodeField[scope+field];
+	var obj = nodeField[scope+field];
+	if (typeof obj === 'undefined') {
+		obj = [nodeField[scope+'__generic__field__'], field]
+	}
+	console.error('get', scope, field, obj);
+	return obj;
 }
 
 function prototypeExpander(object, scope) {
+	realPrototypeExpander(object, scope);
+	zapIs(object);
+}
+
+function zapIs(object) {
+	var p;
+	if (typeof object === "object") {
+		for (p in object) {
+			if (p.toLowerCase() === 'is') {
+				delete object[p];// no longer need IS
+			} else {
+				zapIs(object[p]);
+			}
+		}
+	}
+}
+
+function realPrototypeExpander(object, scope) {
 	var p;
 	if (typeof object === "object") {
 		for (p in object) {
 			if (p.toLowerCase() === 'script') {
-				prototypeExpander(object[p], scope);
+				realPrototypeExpander(object[p], scope);
 			} else if (p.toLowerCase() === 'protodeclare') {
 				var name = object[p]["@name"];
 				protos[name] = object[p];
 				currentproto = protos[name];
-				prototypeExpander(object[p], scope);
+				realPrototypeExpander(object[p], name+scope);
 				delete object[p];
 			} else if (p.toLowerCase() === 'protointerface') {
 				currentproto['interface'] = object[p];
-				prototypeExpander(object[p], scope);
+				realPrototypeExpander(object[p], scope);
 			} else if (p.toLowerCase() === 'protobody') {
 				currentproto['body'] = object[p];
-				prototypeExpander(object[p], scope);
+				realPrototypeExpander(object[p], scope);
 			} else if (p.toLowerCase() === 'protoinstance') {
 				var name = object[p]["@name"];
 				var def  = object[p]["@DEF"];
@@ -40,41 +71,65 @@ function prototypeExpander(object, scope) {
 				// handle scoping
 				body = object["Group"];
 				protos[def+name] = body;
-				prototypeExpander(body, def+name);
+				realPrototypeExpander(body, def+name);
 				// assign afterward so we don't get a double name
 				body["@DEF"] = def+name;
-				defs[def] = def+name;
+				defs[def] = def+name+scope;
 				// console.log("BODY", JSON.stringify(body));
 
 				// handle field values
 
 				delete object[p];
 			} else if (p.toLowerCase() === 'connect') {
-				prototypeExpander(object[p], scope);
+				realPrototypeExpander(object[p], scope);
+			} else if (p.toLowerCase() === 'fieldvalue') {
+/*
+				var name = object["@name"];
+				var def  = object["@DEF"];
+				var fields = object[p];
+				for (var field in fields) {
+					// merely put it in the environment so it will be found
+					setEnv(def+name,
+					    fields[field]["@name"],
+					    def+name,
+					    fields[field]["@name"]);
+				}
+*/
+				realPrototypeExpander(object[p], scope);
 			} else if (p.toLowerCase() === 'field') {
-				prototypeExpander(object[p], scope);
+				var fields = object[p];
+				for (var field in fields) {
+					// merely put it in the environment so it will be found
+					setIfNotSetEnv(scope,
+					    fields[field]["@name"],
+					    scope,
+					    fields[field]["@name"]);
+				}
+				realPrototypeExpander(object[p], scope);
 			} else if (p.toLowerCase() === 'is') {
-				// console.log(object[p]);
+				var def = object["@DEF"];
 				var connect = object[p]["connect"];
-				// since there may be more than on IS in a ProtoBody, we need a scopecount to keep track of each is for declaring new DEFs
+				console.error('connect');
 				for (var field in connect) {
+					console.error(connect[field]);
 					setEnv(scope,
 					    connect[field]["@protoField"],
-					    scope+"IS"+scopecount,
+					    def,
 					    connect[field]["@nodeField"]);
-					object["@DEF"] = scope+"IS"+scopecount;
 				}
-				scopecount += 1000;
 			} else if (p.toLowerCase() === '@fromnode') {
 				var name = object["@fromNode"];
 				if (typeof scope !== 'undefined') {
 					object["@fromNode"] = name+scope;
 				}
+				env = [];
 				if (typeof defs[name] !== 'undefined') {
-					//  This resolves a field to a protobody nodeField
+					// console.error("FROM ENV", scope, name, defs[name], env);
  					var env = getEnv(defs[name], object["@fromField"]);
-					object["@fromNode"] = env[0];
-					object["@fromField"] = env[1];
+					if (typeof env !== 'undefined') {
+						object["@fromNode"] = env[0];
+						object["@fromField"] = env[1];
+					}
 				}
 				// object[p] is not an object
 			} else if (p.toLowerCase() === '@tonode') {
@@ -82,24 +137,31 @@ function prototypeExpander(object, scope) {
 				if (typeof scope !== 'undefined') {
 					object["@toNode"] = name+scope;
 				}
+				env = [];
 				if (typeof defs[name] !== 'undefined') {
-					//  This resolves a field to a protobody nodeField
+					// console.error("TO ENV", scope, name, defs[name], env);
  					var env = getEnv(defs[name], object["@toField"]);
-					object["@toNode"] = env[0];
-					object["@toField"] = env[1];
+					if (typeof env !== 'undefined') {
+						object["@toNode"] = env[0];
+						object["@toField"] = env[1];
+					}
 				}
 				// object[p] is not an object
 			} else if (p.toLowerCase() === '@name') {
 				var name = object["@name"];
 				// object[p] is not an object
 			} else if (p.toLowerCase() === '@def') {
-				var name = object["@DEF"];
+				var def = object["@DEF"];
 				if (typeof scope !== 'undefined') {
-					object["@DEF"] = name+scope;
+					object["@DEF"] = def+scope;
+					setEnv(def,
+					    '',
+					    def+scope,
+					    '');
 				}
 				// object[p] is not an object
 			} else {
-				prototypeExpander(object[p], scope);
+				realPrototypeExpander(object[p], scope);
 			}
 		}
 	}
