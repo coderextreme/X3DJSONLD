@@ -126,13 +126,13 @@
                             "@value":[1,1,0]
                           },
                           {
-                            "@name":"old_translation",
+                            "@name":"old",
                             "@accessType":"inputOutput",
                             "@type":"SFVec3f",
                             "@value":[0,0,0]
                           },
                           {
-                            "@name":"new_location",
+                            "@name":"set_location",
                             "@accessType":"inputOnly",
                             "@type":"SFTime"
                           },
@@ -144,11 +144,11 @@
                         ],
                         "#sourceText":[
 "ecmascript:",
-"\t\t\t\t\tfunction new_location(value) {",
-"                                                old_translation = translation;",
+"\t\t\t\t\tfunction set_location(value) {",
+"                                                old = translation;",
 "\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
-"                                                keyValue[0] = old_translation;",
-"                                                keyValue[1] = translation;",
+						
+"                                                keyValue = new MFVec3f(old, translation);",
 "\t\t\t\t\t}"
 ]
                       }
@@ -166,7 +166,7 @@
                       "@fromNode":"nodeClock",
                       "@fromField":"cycleTime",
                       "@toNode":"MoveBall",
-                      "@toField":"new_location"
+                      "@toField":"set_location"
                     },
                     {
                       "@fromNode":"nodeClock",
@@ -184,7 +184,7 @@
                       "@fromNode":"NodePosition",
                       "@fromField":"value_changed",
                       "@toNode":"transform",
-                      "@toField":"set_translation"
+                      "@toField":"translation"
                     }
                   ]
               }
@@ -273,11 +273,19 @@
 "ecmascript:",
 "",
 "                function set_endA(value) {",
-"\t\t    spine = new MFVec3f(value, spine[1]);",
+"\t\t    if (typeof spine === 'undefined') {",
+"\t\t        spine = new MFVec3f(value, value);",
+"\t\t    } else {",
+"\t\t        spine = new MFVec3f(value, spine[1]);",
+"\t\t    }",
 "                }",
 "                ",
 "                function set_endB(value) {",
-"\t\t    spine = new MFVec3f(spine[0], value);",
+"\t\t    if (typeof spine === 'undefined') {",
+"\t\t        spine = new MFVec3f(value, value);",
+"\t\t    } else {",
+"\t\t        spine = new MFVec3f(spine[0], value);",
+"\t\t    }",
 "                }"
 ]
                       }
@@ -288,7 +296,7 @@
                       "@fromNode":"MoveCylinder",
                       "@fromField":"spine",
                       "@toNode":"extrusion",
-                      "@toField":"set_spine"
+                      "@toField":"spine"
                     }
                   ]
               }

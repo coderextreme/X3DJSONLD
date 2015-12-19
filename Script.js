@@ -1,8 +1,9 @@
 // X3D JSON Script expander
+packages = {};
 
 function Script(package, name) {
 	this.setters = {};
-	this.packages = {};
+	this.getters = {};
 	if (typeof package === 'undefined' || package.name === "") {
 		if (typeof name === 'undefined') {
 			this.name = "";
@@ -15,23 +16,19 @@ function Script(package, name) {
 		} else {
 			this.name = package.name+'.'+name;
 		}
-		package.packages[name] = this;
 	}
-	// initialize children packages
-	// add package to parent so you can find the package without full path
+	packages[this.name] = this;
 }
 
 Script.prototype.find = function (name) {
-	if (typeof this.packages[name] === 'undefined') {
-		// there is no package, so global package
-		return new Script(undefined, name);
-	} else {
-		return this.packages[name];
-	}
+	return packages[name];
 }
 
 
-function processScripts(object, clazz, package) {
+function processScripts(object, classes, package, routecode) {
+	if (typeof package === 'undefined') {
+		classes.push('var X3DJSON = {');
+	}
 	package = package || new Script();
 	var p;
 	if (typeof object === "object") {
@@ -42,13 +39,12 @@ function processScripts(object, clazz, package) {
 			}
 			if (p.toLowerCase() === 'script') {
 				var script = new Script(package, name);
-				processFields(object[p]['field'], clazz, script);
-				processSource(object[p]['#sourceText'], clazz, script);
-				clazz.push('\treturn this;');
-				clazz.push('})();');
-				processScripts(object[p], clazz, script);
+				processFields(object[p]['field'], classes, script);
+				processSource(object[p]['#sourceText'], classes, script);
+				classes.push('},');
+				processScripts(object[p], classes, script, routecode);
 			} else if (p.toLowerCase() === 'route') {
-				processRoutes(object[p], clazz, package);
+				processRoutes(object[p], routecode, package);
 			} else if (p.toLowerCase() === '@use') {
 				var name = object["@USE"];
 				object["@USE"] = name;
@@ -58,20 +54,13 @@ function processScripts(object, clazz, package) {
 				object["@DEF"] = name;
 				// object[p] is not an object
 			} else {
-				processScripts(object[p], clazz, package);
+				processScripts(object[p], classes, package, routecode);
 			}
 		}
 	}
 }
 
-var routecount = 0;
-
-function processRoutes(routes, clazz, package) {
-	if (routecount === 0) {
-		clazz.push("var runRoutes = [];");
-	}
-	clazz.push("runRoutes["+routecount+"] = function() {");
-	routecount++;
+function processRoutes(routes, classes, package) {
 	var r;
 	for (r in routes) {
 		var route = routes[r];
@@ -79,19 +68,23 @@ function processRoutes(routes, clazz, package) {
 		var fromField = route["@fromField"];
 		var toNode = route["@toNode"];
 		var toField = route["@toField"];
-		if (package.name) {
-			clazz.push(package.name+'.this.'+toNode+'.setters.'+toField+'('+package.name+'.this.'+fromNode+'.getters.'+fromField+'());');
+		if (typeof package.find(toNode) === 'undefined') {
+			var  to = 'document.getElementById("'+toNode+'").setAttribute("'+toField+'",';
 		} else {
-			clazz.push('\t'+toNode+'.setters.'+toField+'('+fromNode+'.getters.'+fromField+'());');
+			var  to = 'X3DJSON.' +toNode+'.'+toField+'(';
 		}
+		if (typeof package.find(fromNode) === 'undefined') {
+			var  from = 'document.getElementById("'+fromNode+'").getAttribute("'+fromField+'")';
+		} else {
+			var from = 'X3DJSON.' +fromNode+'.'+fromField+'_changed()';
+		}
+		classes.push('\t'+to+from+');');
 	}
-	clazz.push("}");
 }
 
-function processFields(fields, clazz, package) {
+function processFields(fields, classes, package) {
 	var f;
 	var initializers = [];
-	var getters = {};
 	var values = {};
 	var indent = '\t';
 	var types = {};
@@ -108,7 +101,7 @@ function processFields(fields, clazz, package) {
 		case 'inputOutput':
 			// setters should be looked up by name
 			package.setters[name] = object;
-			getters[name] = object;
+			package.getters[name] = object;
 			values[name] = object["@value"];
 			break;
 		case 'inputOnly':
@@ -117,31 +110,32 @@ function processFields(fields, clazz, package) {
 			values[name] = object["@value"];
 			break;
 		case 'outputOnly':
-			getters[name] = object;
+			package.getters[name] = object;
+			values[name] = undefined;
 			break;
 		default:
 			break;
 		}
 	}
 
-	clazz.push('var ' +  package.name +  ' = (function(' +  initializers.join(', ') + ') {');
-	clazz.push(indent+'var that = this;');
-	clazz.push(indent+'this.setters = {};');
-	clazz.push(indent+'this.getters = {};');
+	classes.push(package.name +  ' : {');
+	// classes.push(indent+'setters = {};');
+	// classes.push(indent+'getters = {};');
 	for (var v in values) {
-		// clazz.push(types[v]);
-		if (types[v].indexOf("MF") === 0 || types[v].indexOf("SFVec") === 0 || types[v] === 'SFRotation') {
-			clazz.push(indent+'that.' + v + ' = ['+ values[v] + '];');
-		} else {
-			clazz.push(indent+'that.' + v + ' = '+ values[v] + ';');
+		// classes.push(types[v]);
+		if (typeof values[v] !== 'undefined') {
+			if (types[v].indexOf("MF") === 0 || types[v].indexOf("SFMatrix") === 0 || types[v].indexOf("SFVec") === 0 || types[v] === 'SFRotation') {
+				classes.push(indent + v + ' : ['+ values[v] + '],');
+			} else {
+				classes.push(indent + v + ' : '+ values[v] + ',');
+			}
+		} else if (typeof package.setters[v] === 'undefined') {
+			classes.push(indent+ v +  '_changed : function () { return this.' + v +  '; },');
 		}
-	}
-	for (var v in getters) {
-		clazz.push(indent+'this.getters.' + v +  ' = function () { return that.' +  v +  '; };');
 	}
 }
 
-function processSource(lines, clazz, package) {
+function processSource(lines, classes, package) {
 	if (typeof lines !== 'undefined') {
 		var functions = lines.join("\n").split("function");
 		var f;
@@ -149,25 +143,24 @@ function processSource(lines, clazz, package) {
 			var func = functions[f];
 			var sp = func.indexOf('(');
 			var name = func.substr(0, sp).trim();
-			var funcvar = 'this.' + name;  //  a non setter function
+			var funcvar = name;  //  a non setter function
 			if (typeof package.setters[name] !== 'undefined') {
-				funcvar = 'this.setters.' + name; // a setter function
+				funcvar = name; // a setter function
 			}
-			clazz.push('\t'+funcvar + ' = function ' + func.substr(sp));
+			var body = func.substr(sp);
+			for (var n in package.getters) {
+				body = body.replace(new RegExp(n, 'g'), "this."+n);
+				body = body.replace(/new (MF[A-Za-z0-9]+|SFMatrix[A-Za-z0-9]+|SFVec[234][df]|SFRotation)[ 	]*\(([^;]*)\)[ 	]*;/g, '[$2];');
+			}
+			classes.push('\t'+funcvar + ' : function ' + body + ',');
 		}
 	}
 }
 
-function runRoutes(clazz) {
-	
-	clazz.push("for (var route in runRoutes) {");
-	clazz.push('\t'+"runRoutes[route]();");
-	clazz.push("}");
-}
-
 if (typeof module === 'object')  {
-        module.exports = {
-		'processScripts' : processScripts,
-		'runRoutes' : runRoutes
+
+	module.exports = {
+		'processScripts' : processScripts
 	};
+
 }

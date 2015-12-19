@@ -16,8 +16,12 @@ process.stdin.on('end', function() {
 	console.log(JSON.stringify(object, null, 2));
 
 	var classes = [];
-	processScripts(object, classes);
-	runRoutes(classes);
+	var routecode = [];
+	routecode.push("setInterval(function() {");
+	processScripts(object, classes, undefined, routecode);
+	routecode.push("}, 10000);");
+	classes.push("};");
 	console.log(classes.join('\n'));
+	console.log(routecode.join('\n'));
 	// eval(classes.join('\n'));
 });

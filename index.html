@@ -15680,6 +15680,7 @@ Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into JSON X3DOM
 </body>
     <script type="text/javascript" src="X3DJSONLD.js"></script>
     <script type="text/javascript" src="PrototypeExpander.js"></script>
+    <script type="text/javascript" src="Script.js"></script>
 
     <script type="text/javascript">
         function updateXML(xml) {
@@ -15721,8 +15722,22 @@ Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into JSON X3DOM
 	    $(selector+" X3D").remove();
 	    var xml = [];
 	    if ($('#prototype').is(':checked')) {
-		    prototypeExpander(json, "");
-	            $('textarea#json').val(JSON.stringify(json, null, 2));
+
+		// Expand Protos
+		prototypeExpander(json, "");
+	        $('textarea#json').val(JSON.stringify(json, null, 2));
+
+		// Now generate JavaScript code for Scripts and Routes
+		var classes = [];
+		var routecode = [];
+		routecode.push("setInterval(function() {");
+		processScripts(json, classes, undefined, routecode);
+		routecode.push("}, 500);");
+		classes.push("};");
+		console.log(classes.join('\n'));
+		console.log(routecode.join('\n'));
+		eval(classes.join('\n'));
+		eval(routecode.join('\n'));
 	    }
 	    loadX3DJS(selector, json, url, xml);
 			
