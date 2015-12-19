@@ -147,7 +147,6 @@
 "\t\t\t\t\tfunction set_location(value) {",
 "                                                old = translation;",
 "\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
-						
 "                                                keyValue = new MFVec3f(old, translation);",
 "\t\t\t\t\t}"
 ]
@@ -184,7 +183,7 @@
                       "@fromNode":"NodePosition",
                       "@fromField":"value_changed",
                       "@toNode":"transform",
-                      "@toField":"translation"
+                      "@toField":"set_translation"
                     }
                   ]
               }
@@ -296,7 +295,7 @@
                       "@fromNode":"MoveCylinder",
                       "@fromField":"spine",
                       "@toNode":"extrusion",
-                      "@toField":"spine"
+                      "@toField":"set_spine"
                     }
                   ]
               }

@@ -21,7 +21,8 @@ process.stdin.on('end', function() {
 	processScripts(object, classes, undefined, routecode);
 	routecode.push("}, 500);");
 	classes.push("};");
-	console.log(classes.join('\n'));
-	console.log(routecode.join('\n'));
-	// eval(classes.join('\n'));
+	console.error(classes.join('\n'));
+	console.error(routecode.join('\n'));
+	eval(classes.join('\n'));
+	// eval(routecode.join('\n'));
 });

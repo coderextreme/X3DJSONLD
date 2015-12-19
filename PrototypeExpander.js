@@ -7,7 +7,7 @@ var protoField = {};
 // var scopecount = 1000;
 
 function setObjectPlaceHolder(scope, field, object, objectfield) {
-	console.error('setobjphn', scope, field, object["@DEF"], object["@name"], objectfield);
+	// console.error('setobjphn', scope, field, object["@DEF"], object["@name"], objectfield);
 	protoField[scope+field] = [ object, objectfield ];
 }
 
@@ -16,25 +16,25 @@ function setObjectValue(scope, field, value) {
 	if (typeof obj !== 'undefined') {
 		if (obj[1] === 'value' || field.indexOf("set_") === 0) {
 			obj[0]['@'+obj[1]] = value;
-			console.error('setobjvv', scope, field, obj[0]["@name"], obj[1], value);
+			// console.error('setobjvv', scope, field, obj[0]["@name"], obj[1], value);
 			retval = true;
 		} else {
-			console.error('setobjvd', scope, field, obj[0]["@DEF"], obj[1], value);
+			// console.error('setobjvd', scope, field, obj[0]["@DEF"], obj[1], value);
 			scope = obj[0]["@DEF"];
 			field = obj[1];
-			console.error('setobjrecurse', scope, field, value);
+			// console.error('setobjrecurse', scope, field, value);
 			var retval = setObjectValue(scope, field, value);
 			if (!retval) {
 				// if the recursion didn't set it, set it now
 				obj[0]['@'+obj[1]] = value;
-				console.error('setobjvn', scope, field, obj[0]["@name"], obj[1], value);
+				// console.error('setobjvn', scope, field, obj[0]["@name"], obj[1], value);
 				retval = true;
 			}
 				
 		}
 		return retval;
 	} else {
-		console.error('setobjfailed', scope, field, value);
+		// console.error('setobjfailed', scope, field, value);
 		return false;
 	}
 }
