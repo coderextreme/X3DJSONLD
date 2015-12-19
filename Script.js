@@ -5,8 +5,6 @@ var content = '';
 process.stdin.resume();
 process.stdin.on('data', function(buf) { content += buf.toString(); });
 
-var instancecount = 0;
-
 function Package(package, name) {
 	this.initializers = [];
 	this.getters = {};
@@ -53,25 +51,6 @@ function processPrototypes(object, clazz, package) {
 			if (p.toLowerCase() === 'script') {
 				var script = new Package(package, name);
 				processPrototypes(object[p], clazz, script);
-			} else if (p.toLowerCase() === 'protodeclare') {
-				var proto = new Package(package, name);
-				processPrototypes(object[p], clazz, proto);
-				clazz.unshift('var ' +  proto.name +  ' = function(' +  proto.initializers.join(', ') + ') {');
-				clazz.push('}');
-/* No ProtoInterface in X3DJON see protodeclare
-				package.pop();
-			} else if (p.toLowerCase() === 'protointerface') {
-				processPrototypes(object[p], clazz, package);
-*/
-			} else if (p.toLowerCase() === 'protobody') {
-				processPrototypes(object[p], clazz, package);
-			} else if (p.toLowerCase() === 'protoinstance') {
-				var proto = package.find(name);
-				clazz.push('var ' + proto.name+instancecount + ' = new ' + name+ '(' + proto.initializers.join(', ') + ');');
-				processPrototypes(object[p], clazz, package);
-				instancecount += 1;
-			} else if (p.toLowerCase() === 'connect') {
-				processPrototypes(object[p], clazz, package);
 			} else if (p.toLowerCase() === 'route') {
 				processRoutes(object[p], clazz, package);
 			} else if (p.toLowerCase() === 'field' && object['@language'] !== 'GLSL') {
@@ -95,11 +74,6 @@ function processPrototypes(object, clazz, package) {
 				processSource(object['#sourceText'], clazz, package);
 				clazz.push('}');
 				processPrototypes(object[p], clazz, package);
-			} else if (p.toLowerCase() === 'is') {
-				processPrototypes(object[p], clazz, package);
-			} else if (p.toLowerCase() === '@name') {
-				var name = object["@name"];
-				// object[p] is not an object
 			} else if (p.toLowerCase() === '@use') {
 				var name = object["@USE"];
 				object["@USE"] = name;
