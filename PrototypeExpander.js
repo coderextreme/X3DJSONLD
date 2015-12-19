@@ -6,13 +6,13 @@ var nodeField = {};
 // var scopecount = 1000;
 
 function setEnv(scope, field, newscope, newfield) {
-	console.error('set', scope, field, newscope, newfield);
+	// console.error('set', scope, field, newscope, newfield);
 	nodeField[scope+'__generic__field__'] = newscope;
 	nodeField[scope+field] = [ newscope, newfield ];
 }
 
 function setIfNotSetEnv(scope, field, newscope, newfield) {
-	console.error('setif', scope, field, newscope, newfield);
+	// console.error('setif', scope, field, newscope, newfield);
 	if (typeof nodeField[scope+field] === 'undefined') {
 		nodeField[scope+'__generic__field__'] = newscope;
 		nodeField[scope+field] = [ newscope, newfield ];
@@ -24,7 +24,7 @@ function getEnv(scope, field) {
 	if (typeof obj === 'undefined') {
 		obj = [nodeField[scope+'__generic__field__'], field]
 	}
-	console.error('get', scope, field, obj);
+	// console.error('get', scope, field, obj);
 	return obj;
 }
 
@@ -74,6 +74,7 @@ function realPrototypeExpander(object, scope) {
 				realPrototypeExpander(body, def+name);
 				// assign afterward so we don't get a double name
 				body["@DEF"] = def+name;
+				body["@id"] = def+name;
 				defs[def] = def+name+scope;
 				// console.log("BODY", JSON.stringify(body));
 
@@ -107,9 +108,9 @@ function realPrototypeExpander(object, scope) {
 			} else if (p.toLowerCase() === 'is') {
 				var def = object["@DEF"];
 				var connect = object[p]["connect"];
-				console.error('connect');
+				//console.error('connect');
 				for (var field in connect) {
-					console.error(connect[field]);
+					//console.error(connect[field]);
 					setEnv(scope,
 					    connect[field]["@protoField"],
 					    def,
@@ -152,6 +153,7 @@ function realPrototypeExpander(object, scope) {
 				var def = object["@DEF"];
 				if (typeof scope !== 'undefined') {
 					object["@DEF"] = def+scope;
+					object["@id"] = def+scope;
 					setEnv(def,
 					    '',
 					    def+scope,

@@ -1,13 +1,7 @@
-// X3D JSON Prototype preprocessor
-
-var content = '';
-// read content into buffer
-process.stdin.resume();
-process.stdin.on('data', function(buf) { content += buf.toString(); });
+// X3D JSON Script expander
 
 function Script(package, name) {
 	this.setters = {};
-	this.types = {};
 	this.packages = {};
 	if (typeof package === 'undefined' || package.name === "") {
 		if (typeof name === 'undefined') {
@@ -38,6 +32,7 @@ Script.prototype.find = function (name) {
 
 
 function processScripts(object, clazz, package) {
+	package = package || new Script();
 	var p;
 	if (typeof object === "object") {
 		for (p in object) {
@@ -99,10 +94,11 @@ function processFields(fields, clazz, package) {
 	var getters = {};
 	var values = {};
 	var indent = '\t';
+	var types = {};
 	for (f in fields) {
 		var object = fields[f];
 		var name = object["@name"];
-		package.types[name] = object["@type"];
+		types[name] = object["@type"];
 		switch(object['@accessType']) {
 		case 'initializeOnly':
 			// these should be in order, so it's an array
@@ -133,8 +129,8 @@ function processFields(fields, clazz, package) {
 	clazz.push(indent+'this.setters = {};');
 	clazz.push(indent+'this.getters = {};');
 	for (var v in values) {
-		// clazz.push(package.types[v]);
-		if (package.types[v].indexOf("MF") === 0 || package.types[v].indexOf("SFVec") === 0) {
+		// clazz.push(types[v]);
+		if (types[v].indexOf("MF") === 0 || types[v].indexOf("SFVec") === 0 || types[v] === 'SFRotation') {
 			clazz.push(indent+'that.' + v + ' = ['+ values[v] + '];');
 		} else {
 			clazz.push(indent+'that.' + v + ' = '+ values[v] + ';');
@@ -164,16 +160,14 @@ function processSource(lines, clazz, package) {
 
 function runRoutes(clazz) {
 	
-	clazz.push("for (var r in runRoutes) {");
-	clazz.push('\t'+"runRoutes[r]();");
+	clazz.push("for (var route in runRoutes) {");
+	clazz.push('\t'+"runRoutes[route]();");
 	clazz.push("}");
 }
 
-process.stdin.on('end', function() {
-	var object = JSON.parse(content);
-	var clazz = [];
-	processScripts(object, clazz, new Script());
-	runRoutes(clazz);
-	console.log(clazz.join('\n'));
-	//console.log(JSON.stringify(object, null, 2));
-});
+if (typeof module === 'object')  {
+        module.exports = {
+		'processScripts' : processScripts,
+		'runRoutes' : runRoutes
+	};
+}
