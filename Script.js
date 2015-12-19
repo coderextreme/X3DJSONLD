@@ -60,10 +60,11 @@ function processScripts(object, clazz, package) {
 					clazz.push('this.setters = {};');
 					clazz.push('this.getters = {};');
 					for (var v in package.values) {
-						if (package.types[v].indexOf("MF") === 0) {
-							clazz.push('var that.' + v + ' = ['+ package.values[v] + '];');
+						// clazz.push(package.types[v]);
+						if (package.types[v].indexOf("MF") === 0 || package.types[v].indexOf("SFVec") === 0) {
+							clazz.push('that.' + v + ' = ['+ package.values[v] + '];');
 						} else {
-							clazz.push('var that.' + v + ' = '+ package.values[v] + ';');
+							clazz.push('that.' + v + ' = '+ package.values[v] + ';');
 						}
 					
 					}
@@ -89,8 +90,14 @@ function processScripts(object, clazz, package) {
 	}
 }
 
+var routecount = 0;
+
 function processRoutes(routes, clazz, package) {
-	clazz.push("this.runRoute = function() {");
+	if (routecount === 0) {
+		clazz.push("var runRoutes = [];");
+	}
+	clazz.push("runRoutes["+routecount+"] = function() {");
+	routecount++;
 	var r;
 	for (r in routes) {
 		var route = routes[r];
@@ -98,7 +105,11 @@ function processRoutes(routes, clazz, package) {
 		var fromField = route["@fromField"];
 		var toNode = route["@toNode"];
 		var toField = route["@toField"];
-		clazz.push(package.name+'.this.'+toNode+'.setters.'+toField+'('+package.name+'.this.'+fromNode+'.getters.'+fromField+'());');
+		if (package.name) {
+			clazz.push(package.name+'.this.'+toNode+'.setters.'+toField+'('+package.name+'.this.'+fromNode+'.getters.'+fromField+'());');
+		} else {
+			clazz.push(toNode+'.setters.'+toField+'('+fromNode+'.getters.'+fromField+'());');
+		}
 	}
 	clazz.push("};");
 }
