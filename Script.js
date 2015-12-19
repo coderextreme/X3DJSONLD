@@ -6,10 +6,7 @@ process.stdin.resume();
 process.stdin.on('data', function(buf) { content += buf.toString(); });
 
 function Script(package, name) {
-	this.initializers = [];
-	this.getters = {};
 	this.setters = {};
-	this.values = {};
 	this.types = {};
 	this.packages = {};
 	if (typeof package === 'undefined' || package.name === "") {
@@ -50,31 +47,12 @@ function processScripts(object, clazz, package) {
 			}
 			if (p.toLowerCase() === 'script') {
 				var script = new Script(package, name);
+				processFields(object[p]['field'], clazz, script);
+				processSource(object[p]['#sourceText'], clazz, script);
+				clazz.push('}');
 				processScripts(object[p], clazz, script);
 			} else if (p.toLowerCase() === 'route') {
 				processRoutes(object[p], clazz, package);
-			} else if (p.toLowerCase() === 'field' && object['@language'] !== 'GLSL') {
-				processFields(object[p], package);
-				clazz.push('var ' +  package.name +  ' = function(' +  package.initializers.join(', ') + ') {');
-					clazz.push('var that = this;');
-					clazz.push('this.setters = {};');
-					clazz.push('this.getters = {};');
-					for (var v in package.values) {
-						// clazz.push(package.types[v]);
-						if (package.types[v].indexOf("MF") === 0 || package.types[v].indexOf("SFVec") === 0) {
-							clazz.push('that.' + v + ' = ['+ package.values[v] + '];');
-						} else {
-							clazz.push('that.' + v + ' = '+ package.values[v] + ';');
-						}
-					
-					}
-					for (var v in package.getters) {
-						clazz.push('this.getters.' + v +  ' = function () { return that.' +  v +  '; };');
-					
-					}
-				processSource(object['#sourceText'], clazz, package);
-				clazz.push('}');
-				processScripts(object[p], clazz, package);
 			} else if (p.toLowerCase() === '@use') {
 				var name = object["@USE"];
 				object["@USE"] = name;
@@ -108,14 +86,18 @@ function processRoutes(routes, clazz, package) {
 		if (package.name) {
 			clazz.push(package.name+'.this.'+toNode+'.setters.'+toField+'('+package.name+'.this.'+fromNode+'.getters.'+fromField+'());');
 		} else {
-			clazz.push(toNode+'.setters.'+toField+'('+fromNode+'.getters.'+fromField+'());');
+			clazz.push('\t'+toNode+'.setters.'+toField+'('+fromNode+'.getters.'+fromField+'());');
 		}
 	}
 	clazz.push("};");
 }
 
-function processFields(fields, package) {
+function processFields(fields, clazz, package) {
 	var f;
+	var initializers = [];
+	var getters = {};
+	var values = {};
+	var indent = '\t';
 	for (f in fields) {
 		var object = fields[f];
 		var name = object["@name"];
@@ -123,26 +105,42 @@ function processFields(fields, package) {
 		switch(object['@accessType']) {
 		case 'initializeOnly':
 			// these should be in order, so it's an array
-			package.initializers.push(name);
-			package.values[name] = object["@value"];
+			initializers.push(name);
+			values[name] = object["@value"];
 			break;
 		case 'inputOutput':
 			// setters should be looked up by name
 			package.setters[name] = object;
-			package.getters[name] = object;
-			package.values[name] = object["@value"];
+			getters[name] = object;
+			values[name] = object["@value"];
 			break;
 		case 'inputOnly':
 			// setters should be looked up by name
 			package.setters[name] = object;
-			package.values[name] = object["@value"];
+			values[name] = object["@value"];
 			break;
 		case 'outputOnly':
 			break;
-			package.getters[name] = object;
+			getters[name] = object;
 		default:
 			break;
 		}
+	}
+
+	clazz.push('var ' +  package.name +  ' = function(' +  initializers.join(', ') + ') {');
+	clazz.push(indent+'var that = this;');
+	clazz.push(indent+'this.setters = {};');
+	clazz.push(indent+'this.getters = {};');
+	for (var v in values) {
+		// clazz.push(package.types[v]);
+		if (package.types[v].indexOf("MF") === 0 || package.types[v].indexOf("SFVec") === 0) {
+			clazz.push(indent+'that.' + v + ' = ['+ values[v] + '];');
+		} else {
+			clazz.push(indent+'that.' + v + ' = '+ values[v] + ';');
+		}
+	}
+	for (var v in getters) {
+		clazz.push(indent+'this.getters.' + v +  ' = function () { return that.' +  v +  '; };');
 	}
 }
 
@@ -158,7 +156,7 @@ function processSource(lines, clazz, package) {
 			if (typeof package.setters[name] !== 'undefined') {
 				funcvar = 'this.setters.' + name; // a setter function
 			}
-			clazz.push(funcvar + ' = function ' + func.substr(sp));
+			clazz.push('\t'+funcvar + ' = function ' + func.substr(sp));
 		}
 	}
 }
