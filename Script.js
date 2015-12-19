@@ -120,8 +120,8 @@ function processFields(fields, clazz, package) {
 			values[name] = object["@value"];
 			break;
 		case 'outputOnly':
-			break;
 			getters[name] = object;
+			break;
 		default:
 			break;
 		}
