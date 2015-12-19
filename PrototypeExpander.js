@@ -3,7 +3,41 @@ var scripts = {};
 var currentproto = {};
 var defs = {};
 var nodeField = {};
+var protoField = {};
 // var scopecount = 1000;
+
+function setObjectPlaceHolder(scope, field, object, objectfield) {
+	console.error('setobjphn', scope, field, object["@DEF"], object["@name"], objectfield);
+	protoField[scope+field] = [ object, objectfield ];
+}
+
+function setObjectValue(scope, field, value) {
+	var obj = protoField[scope+field];
+	if (typeof obj !== 'undefined') {
+		if (obj[1] === 'value' || field.indexOf("set_") === 0) {
+			obj[0]['@'+obj[1]] = value;
+			console.error('setobjvv', scope, field, obj[0]["@name"], obj[1], value);
+			retval = true;
+		} else {
+			console.error('setobjvd', scope, field, obj[0]["@DEF"], obj[1], value);
+			scope = obj[0]["@DEF"];
+			field = obj[1];
+			console.error('setobjrecurse', scope, field, value);
+			var retval = setObjectValue(scope, field, value);
+			if (!retval) {
+				// if the recursion didn't set it, set it now
+				obj[0]['@'+obj[1]] = value;
+				console.error('setobjvn', scope, field, obj[0]["@name"], obj[1], value);
+				retval = true;
+			}
+				
+		}
+		return retval;
+	} else {
+		console.error('setobjfailed', scope, field, value);
+		return false;
+	}
+}
 
 function setEnv(scope, field, newscope, newfield) {
 	// console.error('set', scope, field, newscope, newfield);
@@ -51,6 +85,13 @@ function realPrototypeExpander(object, scope) {
 	if (typeof object === "object") {
 		for (p in object) {
 			if (p.toLowerCase() === 'script') {
+				var def  = object[p]["@DEF"];
+				var fields  = object[p]["field"];
+				for (var field in fields) {
+					setObjectPlaceHolder(def+scope,
+					    fields[field]["@name"],
+					    fields[field], "value");
+				}
 				realPrototypeExpander(object[p], scope);
 			} else if (p.toLowerCase() === 'protodeclare') {
 				var name = object[p]["@name"];
@@ -78,23 +119,17 @@ function realPrototypeExpander(object, scope) {
 				defs[def] = def+name+scope;
 				// console.log("BODY", JSON.stringify(body));
 
+				var fieldValue = object[p]["fieldValue"];
+				for (var field in fieldValue) {
+					setObjectValue(def+name+scope,
+					    fieldValue[field]["@name"],
+					    fieldValue[field]["@value"]);
+				}
+
 				delete object[p];
 			} else if (p.toLowerCase() === 'connect') {
 				realPrototypeExpander(object[p], scope);
 			} else if (p.toLowerCase() === 'fieldvalue') {
-/*
-				var name = object["@name"];
-				var def  = object["@DEF"];
-				var fields = object[p];
-				for (var field in fields) {
-					// merely put it in the environment so it will be found
-					setEnv(def+name,
-					    fields[field]["@name"],
-					    def+name,
-					    fields[field]["@name"]);
-				}
-*/
-				realPrototypeExpander(object[p], scope);
 			} else if (p.toLowerCase() === 'field') {
 				var fields = object[p];
 				for (var field in fields) {
@@ -114,6 +149,11 @@ function realPrototypeExpander(object, scope) {
 					setEnv(scope,
 					    connect[field]["@protoField"],
 					    def,
+					    connect[field]["@nodeField"]);
+					setObjectPlaceHolder(scope,
+					    connect[field]["@protoField"],
+					    object,
+					    // TODO we may have to do something different when the field is a node versus an attribute
 					    connect[field]["@nodeField"]);
 				}
 			} else if (p.toLowerCase() === '@fromnode') {

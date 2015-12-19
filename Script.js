@@ -69,11 +69,13 @@ function processRoutes(routes, classes, package) {
 		var toNode = route["@toNode"];
 		var toField = route["@toField"];
 		if (typeof package.find(toNode) === 'undefined') {
+			classes.push('if (!document.getElementById("'+toNode+'")) alert("'+toNode+'");');
 			var  to = 'document.getElementById("'+toNode+'").setAttribute("'+toField+'",';
 		} else {
 			var  to = 'X3DJSON.' +toNode+'.'+toField+'(';
 		}
 		if (typeof package.find(fromNode) === 'undefined') {
+			classes.push('if (!document.getElementById("'+fromNode+'")) alert("'+fromNode+'");');
 			var  from = 'document.getElementById("'+fromNode+'").getAttribute("'+fromField+'")';
 		} else {
 			var from = 'X3DJSON.' +fromNode+'.'+fromField+'_changed()';
