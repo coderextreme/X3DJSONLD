@@ -77,8 +77,6 @@ function realPrototypeExpander(object, scope) {
 				defs[def] = def+name+scope;
 				// console.log("BODY", JSON.stringify(body));
 
-				// handle field values
-
 				delete object[p];
 			} else if (p.toLowerCase() === 'connect') {
 				realPrototypeExpander(object[p], scope);
