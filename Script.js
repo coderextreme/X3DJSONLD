@@ -49,7 +49,8 @@ function processScripts(object, clazz, package) {
 				var script = new Script(package, name);
 				processFields(object[p]['field'], clazz, script);
 				processSource(object[p]['#sourceText'], clazz, script);
-				clazz.push('}');
+				clazz.push('\treturn this;');
+				clazz.push('})();');
 				processScripts(object[p], clazz, script);
 			} else if (p.toLowerCase() === 'route') {
 				processRoutes(object[p], clazz, package);
@@ -89,7 +90,7 @@ function processRoutes(routes, clazz, package) {
 			clazz.push('\t'+toNode+'.setters.'+toField+'('+fromNode+'.getters.'+fromField+'());');
 		}
 	}
-	clazz.push("};");
+	clazz.push("}");
 }
 
 function processFields(fields, clazz, package) {
@@ -127,7 +128,7 @@ function processFields(fields, clazz, package) {
 		}
 	}
 
-	clazz.push('var ' +  package.name +  ' = function(' +  initializers.join(', ') + ') {');
+	clazz.push('var ' +  package.name +  ' = (function(' +  initializers.join(', ') + ') {');
 	clazz.push(indent+'var that = this;');
 	clazz.push(indent+'this.setters = {};');
 	clazz.push(indent+'this.getters = {};');
@@ -161,10 +162,18 @@ function processSource(lines, clazz, package) {
 	}
 }
 
+function runRoutes(clazz) {
+	
+	clazz.push("for (var r in runRoutes) {");
+	clazz.push('\t'+"runRoutes[r]();");
+	clazz.push("}");
+}
+
 process.stdin.on('end', function() {
 	var object = JSON.parse(content);
 	var clazz = [];
 	processScripts(object, clazz, new Script());
+	runRoutes(clazz);
 	console.log(clazz.join('\n'));
 	//console.log(JSON.stringify(object, null, 2));
 });
