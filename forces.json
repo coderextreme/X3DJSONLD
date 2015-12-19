@@ -1,0 +1,1312 @@
+{
+  "X3D": {
+    "@profile": "Immersive",
+    "@version": 4,
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-4.0.xsd",
+    "head": {
+      "meta": [
+        {
+          "@name": "author",
+          "@content": "John W Carlson"
+        },
+        {
+          "@name": "created",
+          "@content": "December 13 2015"
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        {},
+        {},
+        {
+          "Transform": {
+            "@scale": [
+              0.1,
+              0.1,
+              0.1
+            ],
+            "-children": [
+              {
+                "Group": {
+                  "-children": [
+                    {
+                      "Transform": {
+                        "@DEF": "transformnodenodeAnode",
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-geometry": [
+                                {
+                                  "Sphere": {}
+                                }
+                              ],
+                              "-appearance": [
+                                {
+                                  "Appearance": {
+                                    "-material": [
+                                      {
+                                        "Material": {
+                                          "@diffuseColor": [
+                                            1,
+                                            0,
+                                            0
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "Transform": {
+                              "@translation": [
+                                1,
+                                0,
+                                0
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": [
+                                      {
+                                        "Text": {
+                                          "@string": [
+                                            "Node"
+                                          ],
+                                          "-fontStyle": [
+                                            {
+                                              "FontStyle": {
+                                                "@justify": [
+                                                  "MIDDLE",
+                                                  "MIDDLE"
+                                                ],
+                                                "@size": 5
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ],
+                                    "-appearance": [
+                                      {
+                                        "Appearance": {
+                                          "-material": [
+                                            {
+                                              "Material": {
+                                                "@diffuseColor": [
+                                                  0,
+                                                  0,
+                                                  1
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ],
+                        "@id": "transformnodenodeAnode",
+                        "@translation": [
+                          0,
+                          0,
+                          0
+                        ]
+                      }
+                    },
+                    {
+                      "PositionInterpolator": {
+                        "@DEF": "NodePositionnodenodeAnode",
+                        "@key": [
+                          0,
+                          1
+                        ],
+                        "@keyValue": [
+                          0,
+                          0,
+                          0,
+                          0,
+                          5,
+                          0
+                        ],
+                        "@id": "NodePositionnodenodeAnode"
+                      }
+                    },
+                    {
+                      "Script": {
+                        "@DEF": "MoveBallnodenodeAnode",
+                        "field": [
+                          {
+                            "@name": "translation",
+                            "@accessType": "inputOutput",
+                            "@type": "SFVec3f",
+                            "@value": [
+                              50,
+                              50,
+                              0
+                            ]
+                          },
+                          {
+                            "@name": "old",
+                            "@accessType": "inputOutput",
+                            "@type": "SFVec3f",
+                            "@value": [
+                              0,
+                              0,
+                              0
+                            ]
+                          },
+                          {
+                            "@name": "set_location",
+                            "@accessType": "inputOnly",
+                            "@type": "SFTime"
+                          },
+                          {
+                            "@name": "keyValue",
+                            "@accessType": "outputOnly",
+                            "@type": "MFVec3f"
+                          }
+                        ],
+                        "#sourceText": [
+                          "ecmascript:",
+                          "\t\t\t\t\tfunction set_location(value) {",
+                          "                                                old = translation;",
+                          "\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
+                          "                                                keyValue = new MFVec3f(old, translation);",
+                          "\t\t\t\t\t}"
+                        ],
+                        "@id": "MoveBallnodenodeAnode"
+                      }
+                    },
+                    {
+                      "TimeSensor": {
+                        "@DEF": "nodeClocknodenodeAnode",
+                        "@cycleInterval": 3,
+                        "@loop": true,
+                        "@id": "nodeClocknodenodeAnode"
+                      }
+                    }
+                  ],
+                  "ROUTE": [
+                    {
+                      "@fromNode": "nodeClocknodenodeAnode",
+                      "@fromField": "cycleTime",
+                      "@toNode": "MoveBallnodenodeAnode",
+                      "@toField": "set_location"
+                    },
+                    {
+                      "@fromNode": "nodeClocknodenodeAnode",
+                      "@fromField": "fraction_changed",
+                      "@toNode": "NodePositionnodenodeAnode",
+                      "@toField": "set_fraction"
+                    },
+                    {
+                      "@fromNode": "MoveBallnodenodeAnode",
+                      "@fromField": "keyValue",
+                      "@toNode": "NodePositionnodenodeAnode",
+                      "@toField": "keyValue"
+                    },
+                    {
+                      "@fromNode": "NodePositionnodenodeAnode",
+                      "@fromField": "value_changed",
+                      "@toNode": "transformnodenodeAnode",
+                      "@toField": "translation"
+                    }
+                  ],
+                  "@DEF": "nodeAnode",
+                  "@id": "nodeAnode"
+                }
+              },
+              {
+                "Group": {
+                  "-children": [
+                    {
+                      "Transform": {
+                        "@DEF": "transformnodenodeBnode",
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-geometry": [
+                                {
+                                  "Sphere": {}
+                                }
+                              ],
+                              "-appearance": [
+                                {
+                                  "Appearance": {
+                                    "-material": [
+                                      {
+                                        "Material": {
+                                          "@diffuseColor": [
+                                            1,
+                                            0,
+                                            0
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "Transform": {
+                              "@translation": [
+                                1,
+                                0,
+                                0
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": [
+                                      {
+                                        "Text": {
+                                          "@string": [
+                                            "Node"
+                                          ],
+                                          "-fontStyle": [
+                                            {
+                                              "FontStyle": {
+                                                "@justify": [
+                                                  "MIDDLE",
+                                                  "MIDDLE"
+                                                ],
+                                                "@size": 5
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ],
+                                    "-appearance": [
+                                      {
+                                        "Appearance": {
+                                          "-material": [
+                                            {
+                                              "Material": {
+                                                "@diffuseColor": [
+                                                  0,
+                                                  0,
+                                                  1
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ],
+                        "@id": "transformnodenodeBnode",
+                        "@translation": [
+                          50,
+                          50,
+                          50
+                        ]
+                      }
+                    },
+                    {
+                      "PositionInterpolator": {
+                        "@DEF": "NodePositionnodenodeBnode",
+                        "@key": [
+                          0,
+                          1
+                        ],
+                        "@keyValue": [
+                          0,
+                          0,
+                          0,
+                          0,
+                          5,
+                          0
+                        ],
+                        "@id": "NodePositionnodenodeBnode"
+                      }
+                    },
+                    {
+                      "Script": {
+                        "@DEF": "MoveBallnodenodeBnode",
+                        "field": [
+                          {
+                            "@name": "translation",
+                            "@accessType": "inputOutput",
+                            "@type": "SFVec3f",
+                            "@value": [
+                              50,
+                              50,
+                              0
+                            ]
+                          },
+                          {
+                            "@name": "old",
+                            "@accessType": "inputOutput",
+                            "@type": "SFVec3f",
+                            "@value": [
+                              0,
+                              0,
+                              0
+                            ]
+                          },
+                          {
+                            "@name": "set_location",
+                            "@accessType": "inputOnly",
+                            "@type": "SFTime"
+                          },
+                          {
+                            "@name": "keyValue",
+                            "@accessType": "outputOnly",
+                            "@type": "MFVec3f"
+                          }
+                        ],
+                        "#sourceText": [
+                          "ecmascript:",
+                          "\t\t\t\t\tfunction set_location(value) {",
+                          "                                                old = translation;",
+                          "\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
+                          "                                                keyValue = new MFVec3f(old, translation);",
+                          "\t\t\t\t\t}"
+                        ],
+                        "@id": "MoveBallnodenodeBnode"
+                      }
+                    },
+                    {
+                      "TimeSensor": {
+                        "@DEF": "nodeClocknodenodeBnode",
+                        "@cycleInterval": 3,
+                        "@loop": true,
+                        "@id": "nodeClocknodenodeBnode"
+                      }
+                    }
+                  ],
+                  "ROUTE": [
+                    {
+                      "@fromNode": "nodeClocknodenodeBnode",
+                      "@fromField": "cycleTime",
+                      "@toNode": "MoveBallnodenodeBnode",
+                      "@toField": "set_location"
+                    },
+                    {
+                      "@fromNode": "nodeClocknodenodeBnode",
+                      "@fromField": "fraction_changed",
+                      "@toNode": "NodePositionnodenodeBnode",
+                      "@toField": "set_fraction"
+                    },
+                    {
+                      "@fromNode": "MoveBallnodenodeBnode",
+                      "@fromField": "keyValue",
+                      "@toNode": "NodePositionnodenodeBnode",
+                      "@toField": "keyValue"
+                    },
+                    {
+                      "@fromNode": "NodePositionnodenodeBnode",
+                      "@fromField": "value_changed",
+                      "@toNode": "transformnodenodeBnode",
+                      "@toField": "translation"
+                    }
+                  ],
+                  "@DEF": "nodeBnode",
+                  "@id": "nodeBnode"
+                }
+              },
+              {
+                "Group": {
+                  "-children": [
+                    {
+                      "Transform": {
+                        "@DEF": "transformnodenodeCnode",
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-geometry": [
+                                {
+                                  "Sphere": {}
+                                }
+                              ],
+                              "-appearance": [
+                                {
+                                  "Appearance": {
+                                    "-material": [
+                                      {
+                                        "Material": {
+                                          "@diffuseColor": [
+                                            1,
+                                            0,
+                                            0
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "Transform": {
+                              "@translation": [
+                                1,
+                                0,
+                                0
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": [
+                                      {
+                                        "Text": {
+                                          "@string": [
+                                            "Node"
+                                          ],
+                                          "-fontStyle": [
+                                            {
+                                              "FontStyle": {
+                                                "@justify": [
+                                                  "MIDDLE",
+                                                  "MIDDLE"
+                                                ],
+                                                "@size": 5
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ],
+                                    "-appearance": [
+                                      {
+                                        "Appearance": {
+                                          "-material": [
+                                            {
+                                              "Material": {
+                                                "@diffuseColor": [
+                                                  0,
+                                                  0,
+                                                  1
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ],
+                        "@id": "transformnodenodeCnode",
+                        "@translation": [
+                          -50,
+                          -50,
+                          -50
+                        ]
+                      }
+                    },
+                    {
+                      "PositionInterpolator": {
+                        "@DEF": "NodePositionnodenodeCnode",
+                        "@key": [
+                          0,
+                          1
+                        ],
+                        "@keyValue": [
+                          0,
+                          0,
+                          0,
+                          0,
+                          5,
+                          0
+                        ],
+                        "@id": "NodePositionnodenodeCnode"
+                      }
+                    },
+                    {
+                      "Script": {
+                        "@DEF": "MoveBallnodenodeCnode",
+                        "field": [
+                          {
+                            "@name": "translation",
+                            "@accessType": "inputOutput",
+                            "@type": "SFVec3f",
+                            "@value": [
+                              50,
+                              50,
+                              0
+                            ]
+                          },
+                          {
+                            "@name": "old",
+                            "@accessType": "inputOutput",
+                            "@type": "SFVec3f",
+                            "@value": [
+                              0,
+                              0,
+                              0
+                            ]
+                          },
+                          {
+                            "@name": "set_location",
+                            "@accessType": "inputOnly",
+                            "@type": "SFTime"
+                          },
+                          {
+                            "@name": "keyValue",
+                            "@accessType": "outputOnly",
+                            "@type": "MFVec3f"
+                          }
+                        ],
+                        "#sourceText": [
+                          "ecmascript:",
+                          "\t\t\t\t\tfunction set_location(value) {",
+                          "                                                old = translation;",
+                          "\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
+                          "                                                keyValue = new MFVec3f(old, translation);",
+                          "\t\t\t\t\t}"
+                        ],
+                        "@id": "MoveBallnodenodeCnode"
+                      }
+                    },
+                    {
+                      "TimeSensor": {
+                        "@DEF": "nodeClocknodenodeCnode",
+                        "@cycleInterval": 3,
+                        "@loop": true,
+                        "@id": "nodeClocknodenodeCnode"
+                      }
+                    }
+                  ],
+                  "ROUTE": [
+                    {
+                      "@fromNode": "nodeClocknodenodeCnode",
+                      "@fromField": "cycleTime",
+                      "@toNode": "MoveBallnodenodeCnode",
+                      "@toField": "set_location"
+                    },
+                    {
+                      "@fromNode": "nodeClocknodenodeCnode",
+                      "@fromField": "fraction_changed",
+                      "@toNode": "NodePositionnodenodeCnode",
+                      "@toField": "set_fraction"
+                    },
+                    {
+                      "@fromNode": "MoveBallnodenodeCnode",
+                      "@fromField": "keyValue",
+                      "@toNode": "NodePositionnodenodeCnode",
+                      "@toField": "keyValue"
+                    },
+                    {
+                      "@fromNode": "NodePositionnodenodeCnode",
+                      "@fromField": "value_changed",
+                      "@toNode": "transformnodenodeCnode",
+                      "@toField": "translation"
+                    }
+                  ],
+                  "@DEF": "nodeCnode",
+                  "@id": "nodeCnode"
+                }
+              },
+              {
+                "Group": {
+                  "-children": [
+                    {
+                      "Transform": {
+                        "@DEF": "transformnodenodeDnode",
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-geometry": [
+                                {
+                                  "Sphere": {}
+                                }
+                              ],
+                              "-appearance": [
+                                {
+                                  "Appearance": {
+                                    "-material": [
+                                      {
+                                        "Material": {
+                                          "@diffuseColor": [
+                                            1,
+                                            0,
+                                            0
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "Transform": {
+                              "@translation": [
+                                1,
+                                0,
+                                0
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": [
+                                      {
+                                        "Text": {
+                                          "@string": [
+                                            "Node"
+                                          ],
+                                          "-fontStyle": [
+                                            {
+                                              "FontStyle": {
+                                                "@justify": [
+                                                  "MIDDLE",
+                                                  "MIDDLE"
+                                                ],
+                                                "@size": 5
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ],
+                                    "-appearance": [
+                                      {
+                                        "Appearance": {
+                                          "-material": [
+                                            {
+                                              "Material": {
+                                                "@diffuseColor": [
+                                                  0,
+                                                  0,
+                                                  1
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ],
+                        "@id": "transformnodenodeDnode",
+                        "@translation": [
+                          50,
+                          50,
+                          -50
+                        ]
+                      }
+                    },
+                    {
+                      "PositionInterpolator": {
+                        "@DEF": "NodePositionnodenodeDnode",
+                        "@key": [
+                          0,
+                          1
+                        ],
+                        "@keyValue": [
+                          0,
+                          0,
+                          0,
+                          0,
+                          5,
+                          0
+                        ],
+                        "@id": "NodePositionnodenodeDnode"
+                      }
+                    },
+                    {
+                      "Script": {
+                        "@DEF": "MoveBallnodenodeDnode",
+                        "field": [
+                          {
+                            "@name": "translation",
+                            "@accessType": "inputOutput",
+                            "@type": "SFVec3f",
+                            "@value": [
+                              50,
+                              50,
+                              0
+                            ]
+                          },
+                          {
+                            "@name": "old",
+                            "@accessType": "inputOutput",
+                            "@type": "SFVec3f",
+                            "@value": [
+                              0,
+                              0,
+                              0
+                            ]
+                          },
+                          {
+                            "@name": "set_location",
+                            "@accessType": "inputOnly",
+                            "@type": "SFTime"
+                          },
+                          {
+                            "@name": "keyValue",
+                            "@accessType": "outputOnly",
+                            "@type": "MFVec3f"
+                          }
+                        ],
+                        "#sourceText": [
+                          "ecmascript:",
+                          "\t\t\t\t\tfunction set_location(value) {",
+                          "                                                old = translation;",
+                          "\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
+                          "                                                keyValue = new MFVec3f(old, translation);",
+                          "\t\t\t\t\t}"
+                        ],
+                        "@id": "MoveBallnodenodeDnode"
+                      }
+                    },
+                    {
+                      "TimeSensor": {
+                        "@DEF": "nodeClocknodenodeDnode",
+                        "@cycleInterval": 3,
+                        "@loop": true,
+                        "@id": "nodeClocknodenodeDnode"
+                      }
+                    }
+                  ],
+                  "ROUTE": [
+                    {
+                      "@fromNode": "nodeClocknodenodeDnode",
+                      "@fromField": "cycleTime",
+                      "@toNode": "MoveBallnodenodeDnode",
+                      "@toField": "set_location"
+                    },
+                    {
+                      "@fromNode": "nodeClocknodenodeDnode",
+                      "@fromField": "fraction_changed",
+                      "@toNode": "NodePositionnodenodeDnode",
+                      "@toField": "set_fraction"
+                    },
+                    {
+                      "@fromNode": "MoveBallnodenodeDnode",
+                      "@fromField": "keyValue",
+                      "@toNode": "NodePositionnodenodeDnode",
+                      "@toField": "keyValue"
+                    },
+                    {
+                      "@fromNode": "NodePositionnodenodeDnode",
+                      "@fromField": "value_changed",
+                      "@toNode": "transformnodenodeDnode",
+                      "@toField": "translation"
+                    }
+                  ],
+                  "@DEF": "nodeDnode",
+                  "@id": "nodeDnode"
+                }
+              },
+              {
+                "Group": {
+                  "-children": [
+                    {
+                      "Shape": {
+                        "-geometry": [
+                          {
+                            "Extrusion": {
+                              "@DEF": "extrusioncylinderlinkAcylinder",
+                              "@creaseAngle": 0.785,
+                              "@crossSection": [
+                                1,
+                                0,
+                                0.92,
+                                -0.38,
+                                0.71,
+                                -0.71,
+                                0.38,
+                                -0.92,
+                                0,
+                                -1,
+                                -0.38,
+                                -0.92,
+                                -0.71,
+                                -0.71,
+                                -0.92,
+                                -0.38,
+                                -1,
+                                0,
+                                -0.92,
+                                0.38,
+                                -0.71,
+                                0.71,
+                                -0.38,
+                                0.92,
+                                0,
+                                1,
+                                0.38,
+                                0.92,
+                                0.71,
+                                0.71,
+                                0.92,
+                                0.38,
+                                1,
+                                0
+                              ],
+                              "@spine": [
+                                0,
+                                -50,
+                                0,
+                                0,
+                                50,
+                                0
+                              ],
+                              "@id": "extrusioncylinderlinkAcylinder"
+                            }
+                          }
+                        ],
+                        "-appearance": [
+                          {
+                            "Appearance": {
+                              "-material": [
+                                {
+                                  "Material": {
+                                    "@diffuseColor": [
+                                      0,
+                                      1,
+                                      0
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Script": {
+                        "@DEF": "MoveCylindercylinderlinkAcylinder",
+                        "field": [
+                          {
+                            "@name": "spine",
+                            "@accessType": "outputOnly",
+                            "@type": "MFVec3f",
+                            "@value": [
+                              0,
+                              -50,
+                              0,
+                              0,
+                              50,
+                              0
+                            ]
+                          },
+                          {
+                            "@name": "set_endA",
+                            "@accessType": "inputOnly",
+                            "@type": "SFVec3f",
+                            "@value": [
+                              0,
+                              0,
+                              0
+                            ]
+                          },
+                          {
+                            "@name": "set_endB",
+                            "@accessType": "inputOnly",
+                            "@type": "SFVec3f",
+                            "@value": [
+                              50,
+                              50,
+                              50
+                            ]
+                          }
+                        ],
+                        "#sourceText": [
+                          "ecmascript:",
+                          "",
+                          "                function set_endA(value) {",
+                          "\t\t    if (typeof spine === 'undefined') {",
+                          "\t\t        spine = new MFVec3f(value, value);",
+                          "\t\t    } else {",
+                          "\t\t        spine = new MFVec3f(value, spine[1]);",
+                          "\t\t    }",
+                          "                }",
+                          "                ",
+                          "                function set_endB(value) {",
+                          "\t\t    if (typeof spine === 'undefined') {",
+                          "\t\t        spine = new MFVec3f(value, value);",
+                          "\t\t    } else {",
+                          "\t\t        spine = new MFVec3f(spine[0], value);",
+                          "\t\t    }",
+                          "                }"
+                        ],
+                        "@id": "MoveCylindercylinderlinkAcylinder"
+                      }
+                    }
+                  ],
+                  "ROUTE": [
+                    {
+                      "@fromNode": "MoveCylindercylinderlinkAcylinder",
+                      "@fromField": "spine",
+                      "@toNode": "extrusioncylinderlinkAcylinder",
+                      "@toField": "spine"
+                    }
+                  ],
+                  "@DEF": "linkAcylinder",
+                  "@id": "linkAcylinder"
+                }
+              },
+              {
+                "Group": {
+                  "-children": [
+                    {
+                      "Shape": {
+                        "-geometry": [
+                          {
+                            "Extrusion": {
+                              "@DEF": "extrusioncylinderlinkBcylinder",
+                              "@creaseAngle": 0.785,
+                              "@crossSection": [
+                                1,
+                                0,
+                                0.92,
+                                -0.38,
+                                0.71,
+                                -0.71,
+                                0.38,
+                                -0.92,
+                                0,
+                                -1,
+                                -0.38,
+                                -0.92,
+                                -0.71,
+                                -0.71,
+                                -0.92,
+                                -0.38,
+                                -1,
+                                0,
+                                -0.92,
+                                0.38,
+                                -0.71,
+                                0.71,
+                                -0.38,
+                                0.92,
+                                0,
+                                1,
+                                0.38,
+                                0.92,
+                                0.71,
+                                0.71,
+                                0.92,
+                                0.38,
+                                1,
+                                0
+                              ],
+                              "@spine": [
+                                0,
+                                -50,
+                                0,
+                                0,
+                                50,
+                                0
+                              ],
+                              "@id": "extrusioncylinderlinkBcylinder"
+                            }
+                          }
+                        ],
+                        "-appearance": [
+                          {
+                            "Appearance": {
+                              "-material": [
+                                {
+                                  "Material": {
+                                    "@diffuseColor": [
+                                      0,
+                                      1,
+                                      0
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Script": {
+                        "@DEF": "MoveCylindercylinderlinkBcylinder",
+                        "field": [
+                          {
+                            "@name": "spine",
+                            "@accessType": "outputOnly",
+                            "@type": "MFVec3f",
+                            "@value": [
+                              0,
+                              -50,
+                              0,
+                              0,
+                              50,
+                              0
+                            ]
+                          },
+                          {
+                            "@name": "set_endA",
+                            "@accessType": "inputOnly",
+                            "@type": "SFVec3f",
+                            "@value": [
+                              0,
+                              0,
+                              0
+                            ]
+                          },
+                          {
+                            "@name": "set_endB",
+                            "@accessType": "inputOnly",
+                            "@type": "SFVec3f",
+                            "@value": [
+                              -50,
+                              -50,
+                              -50
+                            ]
+                          }
+                        ],
+                        "#sourceText": [
+                          "ecmascript:",
+                          "",
+                          "                function set_endA(value) {",
+                          "\t\t    if (typeof spine === 'undefined') {",
+                          "\t\t        spine = new MFVec3f(value, value);",
+                          "\t\t    } else {",
+                          "\t\t        spine = new MFVec3f(value, spine[1]);",
+                          "\t\t    }",
+                          "                }",
+                          "                ",
+                          "                function set_endB(value) {",
+                          "\t\t    if (typeof spine === 'undefined') {",
+                          "\t\t        spine = new MFVec3f(value, value);",
+                          "\t\t    } else {",
+                          "\t\t        spine = new MFVec3f(spine[0], value);",
+                          "\t\t    }",
+                          "                }"
+                        ],
+                        "@id": "MoveCylindercylinderlinkBcylinder"
+                      }
+                    }
+                  ],
+                  "ROUTE": [
+                    {
+                      "@fromNode": "MoveCylindercylinderlinkBcylinder",
+                      "@fromField": "spine",
+                      "@toNode": "extrusioncylinderlinkBcylinder",
+                      "@toField": "spine"
+                    }
+                  ],
+                  "@DEF": "linkBcylinder",
+                  "@id": "linkBcylinder"
+                }
+              },
+              {
+                "Group": {
+                  "-children": [
+                    {
+                      "Shape": {
+                        "-geometry": [
+                          {
+                            "Extrusion": {
+                              "@DEF": "extrusioncylinderlinkCcylinder",
+                              "@creaseAngle": 0.785,
+                              "@crossSection": [
+                                1,
+                                0,
+                                0.92,
+                                -0.38,
+                                0.71,
+                                -0.71,
+                                0.38,
+                                -0.92,
+                                0,
+                                -1,
+                                -0.38,
+                                -0.92,
+                                -0.71,
+                                -0.71,
+                                -0.92,
+                                -0.38,
+                                -1,
+                                0,
+                                -0.92,
+                                0.38,
+                                -0.71,
+                                0.71,
+                                -0.38,
+                                0.92,
+                                0,
+                                1,
+                                0.38,
+                                0.92,
+                                0.71,
+                                0.71,
+                                0.92,
+                                0.38,
+                                1,
+                                0
+                              ],
+                              "@spine": [
+                                0,
+                                -50,
+                                0,
+                                0,
+                                50,
+                                0
+                              ],
+                              "@id": "extrusioncylinderlinkCcylinder"
+                            }
+                          }
+                        ],
+                        "-appearance": [
+                          {
+                            "Appearance": {
+                              "-material": [
+                                {
+                                  "Material": {
+                                    "@diffuseColor": [
+                                      0,
+                                      1,
+                                      0
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Script": {
+                        "@DEF": "MoveCylindercylinderlinkCcylinder",
+                        "field": [
+                          {
+                            "@name": "spine",
+                            "@accessType": "outputOnly",
+                            "@type": "MFVec3f",
+                            "@value": [
+                              0,
+                              -50,
+                              0,
+                              0,
+                              50,
+                              0
+                            ]
+                          },
+                          {
+                            "@name": "set_endA",
+                            "@accessType": "inputOnly",
+                            "@type": "SFVec3f",
+                            "@value": [
+                              50,
+                              50,
+                              50
+                            ]
+                          },
+                          {
+                            "@name": "set_endB",
+                            "@accessType": "inputOnly",
+                            "@type": "SFVec3f",
+                            "@value": [
+                              50,
+                              50,
+                              -50
+                            ]
+                          }
+                        ],
+                        "#sourceText": [
+                          "ecmascript:",
+                          "",
+                          "                function set_endA(value) {",
+                          "\t\t    if (typeof spine === 'undefined') {",
+                          "\t\t        spine = new MFVec3f(value, value);",
+                          "\t\t    } else {",
+                          "\t\t        spine = new MFVec3f(value, spine[1]);",
+                          "\t\t    }",
+                          "                }",
+                          "                ",
+                          "                function set_endB(value) {",
+                          "\t\t    if (typeof spine === 'undefined') {",
+                          "\t\t        spine = new MFVec3f(value, value);",
+                          "\t\t    } else {",
+                          "\t\t        spine = new MFVec3f(spine[0], value);",
+                          "\t\t    }",
+                          "                }"
+                        ],
+                        "@id": "MoveCylindercylinderlinkCcylinder"
+                      }
+                    }
+                  ],
+                  "ROUTE": [
+                    {
+                      "@fromNode": "MoveCylindercylinderlinkCcylinder",
+                      "@fromField": "spine",
+                      "@toNode": "extrusioncylinderlinkCcylinder",
+                      "@toField": "spine"
+                    }
+                  ],
+                  "@DEF": "linkCcylinder",
+                  "@id": "linkCcylinder"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "ROUTE": [
+        {
+          "@fromNode": "transformnodenodeAnode",
+          "@fromField": "translation",
+          "@toNode": "MoveCylindercylinderlinkAcylinder",
+          "@toField": "set_endA"
+        },
+        {
+          "@fromNode": "transformnodenodeBnode",
+          "@fromField": "translation",
+          "@toNode": "MoveCylindercylinderlinkAcylinder",
+          "@toField": "set_endB"
+        },
+        {
+          "@fromNode": "transformnodenodeAnode",
+          "@fromField": "translation",
+          "@toNode": "MoveCylindercylinderlinkBcylinder",
+          "@toField": "set_endA"
+        },
+        {
+          "@fromNode": "transformnodenodeCnode",
+          "@fromField": "translation",
+          "@toNode": "MoveCylindercylinderlinkBcylinder",
+          "@toField": "set_endB"
+        },
+        {
+          "@fromNode": "transformnodenodeAnode",
+          "@fromField": "translation",
+          "@toNode": "MoveCylindercylinderlinkCcylinder",
+          "@toField": "set_endA"
+        },
+        {
+          "@fromNode": "transformnodenodeDnode",
+          "@fromField": "translation",
+          "@toNode": "MoveCylindercylinderlinkCcylinder",
+          "@toField": "set_endB"
+        }
+      ]
+    }
+  }
+}
