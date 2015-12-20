@@ -1,14 +1,29 @@
 var protos = {};
-var scripts = {};
 var currentproto = {};
 var defs = {};
 var nodeField = {};
 var protoField = {};
+var interfaceField = {};
 // var scopecount = 1000;
 
 function setObjectPlaceHolder(scope, field, object, objectfield) {
 	// console.error('setobjphn', scope, field, object["@DEF"], object["@name"], objectfield);
 	protoField[scope+field] = [ object, objectfield ];
+	// set default value
+	if (typeof interfaceField[scope+field] !== 'undefined') {
+		var fields = object["field"];
+		for  (var f in fields) {
+			if (objectfield === fields[f]["@name"]) {
+				console.error(object);
+				fields[f]["@value"] = interfaceField[scope+field];
+				break;
+			}
+		}
+	}
+}
+
+function setObjectInterface(scope, field, value) {
+	interfaceField[scope+field] = value;
 }
 
 function setObjectValue(scope, field, value) {
@@ -101,6 +116,12 @@ function realPrototypeExpander(object, scope) {
 				delete object[p];
 			} else if (p.toLowerCase() === 'protointerface') {
 				currentproto['interface'] = object[p];
+				var fields = object[p]["field"];
+				for (var field in fields) {
+					setObjectInterface(scope,
+					    fields[field]["@name"],
+					    fields[field]["@value"]);
+				}
 				realPrototypeExpander(object[p], scope);
 			} else if (p.toLowerCase() === 'protobody') {
 				currentproto['body'] = object[p];
@@ -115,7 +136,7 @@ function realPrototypeExpander(object, scope) {
 				realPrototypeExpander(body, def+name);
 				// assign afterward so we don't get a double name
 				body["@DEF"] = def+name;
-				body["@id"] = def+name;
+				// body["@id"] = def+name;
 				defs[def] = def+name+scope;
 				// console.log("BODY", JSON.stringify(body));
 
@@ -193,7 +214,7 @@ function realPrototypeExpander(object, scope) {
 				var def = object["@DEF"];
 				if (typeof scope !== 'undefined') {
 					object["@DEF"] = def+scope;
-					object["@id"] = def+scope;
+					// object["@id"] = def+scope;
 					setEnv(def,
 					    '',
 					    def+scope,
