@@ -113,7 +113,7 @@
                             }
                           }
                         ],
-                        "@id": "transformnodenodeAnode",
+                        "@class": "transformnodenodeAnode",
                         "@translation": [
                           0,
                           0,
@@ -136,7 +136,7 @@
                           5,
                           0
                         ],
-                        "@id": "NodePositionnodenodeAnode"
+                        "@class": "NodePositionnodenodeAnode"
                       }
                     },
                     {
@@ -182,7 +182,7 @@
                           "                                                keyValue = new MFVec3f(old, translation);",
                           "\t\t\t\t\t}"
                         ],
-                        "@id": "MoveBallnodenodeAnode"
+                        "@class": "MoveBallnodenodeAnode"
                       }
                     },
                     {
@@ -190,7 +190,7 @@
                         "@DEF": "nodeClocknodenodeAnode",
                         "@cycleInterval": 3,
                         "@loop": true,
-                        "@id": "nodeClocknodenodeAnode"
+                        "@class": "nodeClocknodenodeAnode"
                       }
                     }
                   ],
@@ -217,11 +217,11 @@
                       "@fromNode": "NodePositionnodenodeAnode",
                       "@fromField": "value_changed",
                       "@toNode": "transformnodenodeAnode",
-                      "@toField": "translation"
+                      "@toField": "set_translation"
                     }
                   ],
                   "@DEF": "nodeAnode",
-                  "@id": "nodeAnode"
+                  "@class": "nodeAnode"
                 }
               },
               {
@@ -310,7 +310,7 @@
                             }
                           }
                         ],
-                        "@id": "transformnodenodeBnode",
+                        "@class": "transformnodenodeBnode",
                         "@translation": [
                           50,
                           50,
@@ -333,7 +333,7 @@
                           5,
                           0
                         ],
-                        "@id": "NodePositionnodenodeBnode"
+                        "@class": "NodePositionnodenodeBnode"
                       }
                     },
                     {
@@ -379,7 +379,7 @@
                           "                                                keyValue = new MFVec3f(old, translation);",
                           "\t\t\t\t\t}"
                         ],
-                        "@id": "MoveBallnodenodeBnode"
+                        "@class": "MoveBallnodenodeBnode"
                       }
                     },
                     {
@@ -387,7 +387,7 @@
                         "@DEF": "nodeClocknodenodeBnode",
                         "@cycleInterval": 3,
                         "@loop": true,
-                        "@id": "nodeClocknodenodeBnode"
+                        "@class": "nodeClocknodenodeBnode"
                       }
                     }
                   ],
@@ -414,11 +414,11 @@
                       "@fromNode": "NodePositionnodenodeBnode",
                       "@fromField": "value_changed",
                       "@toNode": "transformnodenodeBnode",
-                      "@toField": "translation"
+                      "@toField": "set_translation"
                     }
                   ],
                   "@DEF": "nodeBnode",
-                  "@id": "nodeBnode"
+                  "@class": "nodeBnode"
                 }
               },
               {
@@ -507,7 +507,7 @@
                             }
                           }
                         ],
-                        "@id": "transformnodenodeCnode",
+                        "@class": "transformnodenodeCnode",
                         "@translation": [
                           -50,
                           -50,
@@ -530,7 +530,7 @@
                           5,
                           0
                         ],
-                        "@id": "NodePositionnodenodeCnode"
+                        "@class": "NodePositionnodenodeCnode"
                       }
                     },
                     {
@@ -576,7 +576,7 @@
                           "                                                keyValue = new MFVec3f(old, translation);",
                           "\t\t\t\t\t}"
                         ],
-                        "@id": "MoveBallnodenodeCnode"
+                        "@class": "MoveBallnodenodeCnode"
                       }
                     },
                     {
@@ -584,7 +584,7 @@
                         "@DEF": "nodeClocknodenodeCnode",
                         "@cycleInterval": 3,
                         "@loop": true,
-                        "@id": "nodeClocknodenodeCnode"
+                        "@class": "nodeClocknodenodeCnode"
                       }
                     }
                   ],
@@ -611,11 +611,11 @@
                       "@fromNode": "NodePositionnodenodeCnode",
                       "@fromField": "value_changed",
                       "@toNode": "transformnodenodeCnode",
-                      "@toField": "translation"
+                      "@toField": "set_translation"
                     }
                   ],
                   "@DEF": "nodeCnode",
-                  "@id": "nodeCnode"
+                  "@class": "nodeCnode"
                 }
               },
               {
@@ -704,7 +704,7 @@
                             }
                           }
                         ],
-                        "@id": "transformnodenodeDnode",
+                        "@class": "transformnodenodeDnode",
                         "@translation": [
                           50,
                           50,
@@ -727,7 +727,7 @@
                           5,
                           0
                         ],
-                        "@id": "NodePositionnodenodeDnode"
+                        "@class": "NodePositionnodenodeDnode"
                       }
                     },
                     {
@@ -773,7 +773,7 @@
                           "                                                keyValue = new MFVec3f(old, translation);",
                           "\t\t\t\t\t}"
                         ],
-                        "@id": "MoveBallnodenodeDnode"
+                        "@class": "MoveBallnodenodeDnode"
                       }
                     },
                     {
@@ -781,7 +781,7 @@
                         "@DEF": "nodeClocknodenodeDnode",
                         "@cycleInterval": 3,
                         "@loop": true,
-                        "@id": "nodeClocknodenodeDnode"
+                        "@class": "nodeClocknodenodeDnode"
                       }
                     }
                   ],
@@ -808,11 +808,11 @@
                       "@fromNode": "NodePositionnodenodeDnode",
                       "@fromField": "value_changed",
                       "@toNode": "transformnodenodeDnode",
-                      "@toField": "translation"
+                      "@toField": "set_translation"
                     }
                   ],
                   "@DEF": "nodeDnode",
-                  "@id": "nodeDnode"
+                  "@class": "nodeDnode"
                 }
               },
               {
@@ -869,7 +869,7 @@
                                 50,
                                 0
                               ],
-                              "@id": "extrusioncylinderlinkAcylinder"
+                              "@class": "extrusioncylinderlinkAcylinder"
                             }
                           }
                         ],
@@ -949,7 +949,7 @@
                           "\t\t    }",
                           "                }"
                         ],
-                        "@id": "MoveCylindercylinderlinkAcylinder"
+                        "@class": "MoveCylindercylinderlinkAcylinder"
                       }
                     }
                   ],
@@ -958,11 +958,11 @@
                       "@fromNode": "MoveCylindercylinderlinkAcylinder",
                       "@fromField": "spine",
                       "@toNode": "extrusioncylinderlinkAcylinder",
-                      "@toField": "spine"
+                      "@toField": "set_spine"
                     }
                   ],
                   "@DEF": "linkAcylinder",
-                  "@id": "linkAcylinder"
+                  "@class": "linkAcylinder"
                 }
               },
               {
@@ -1019,7 +1019,7 @@
                                 50,
                                 0
                               ],
-                              "@id": "extrusioncylinderlinkBcylinder"
+                              "@class": "extrusioncylinderlinkBcylinder"
                             }
                           }
                         ],
@@ -1099,7 +1099,7 @@
                           "\t\t    }",
                           "                }"
                         ],
-                        "@id": "MoveCylindercylinderlinkBcylinder"
+                        "@class": "MoveCylindercylinderlinkBcylinder"
                       }
                     }
                   ],
@@ -1108,11 +1108,11 @@
                       "@fromNode": "MoveCylindercylinderlinkBcylinder",
                       "@fromField": "spine",
                       "@toNode": "extrusioncylinderlinkBcylinder",
-                      "@toField": "spine"
+                      "@toField": "set_spine"
                     }
                   ],
                   "@DEF": "linkBcylinder",
-                  "@id": "linkBcylinder"
+                  "@class": "linkBcylinder"
                 }
               },
               {
@@ -1169,7 +1169,7 @@
                                 50,
                                 0
                               ],
-                              "@id": "extrusioncylinderlinkCcylinder"
+                              "@class": "extrusioncylinderlinkCcylinder"
                             }
                           }
                         ],
@@ -1249,7 +1249,7 @@
                           "\t\t    }",
                           "                }"
                         ],
-                        "@id": "MoveCylindercylinderlinkCcylinder"
+                        "@class": "MoveCylindercylinderlinkCcylinder"
                       }
                     }
                   ],
@@ -1258,11 +1258,11 @@
                       "@fromNode": "MoveCylindercylinderlinkCcylinder",
                       "@fromField": "spine",
                       "@toNode": "extrusioncylinderlinkCcylinder",
-                      "@toField": "spine"
+                      "@toField": "set_spine"
                     }
                   ],
                   "@DEF": "linkCcylinder",
-                  "@id": "linkCcylinder"
+                  "@class": "linkCcylinder"
                 }
               }
             ]
