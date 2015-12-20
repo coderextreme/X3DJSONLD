@@ -52,7 +52,7 @@
           },
           { "ProtoDeclare":
             {
-              "@name":"Bubble2",
+              "@name":"Bubble",
               "ProtoBody": {
                   "-children":[
                     { "Transform":
@@ -87,7 +87,6 @@
                           { "Script":
                             {
                               "@DEF":"bounce",
-                              "@url":["bounce.js","http://coderextreme.net/X3DJSONLD/bounce.js"],
                               "field": [
                                 {
                                   "@name":"scale",
@@ -108,7 +107,7 @@
                                   "@value":[0,0,0]
                                 },
                                 {
-                                  "@name":"scalevelocity",
+                                  "@name":"scalvel",
                                   "@accessType":"inputOutput",
                                   "@type":"SFVec3f",
                                   "@value":[0,0,0]
@@ -118,7 +117,44 @@
                                   "@accessType":"inputOnly",
                                   "@type":"SFTime"
                                 }
-                              ]
+                              ],
+                              "#sourceText":[
+"ecmascript:",
+"function initialize() {",
+"    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);",
+"",
+"    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);",
+"}",
+"",
+"function set_translation(value) {",
+"   translation = value;",
+"}",
+"",
+"function set_scale(value) {",
+"   scale = value;",
+"}",
+"",
+"function translation_changed() {",
+"\treturn translation;",
+"}",
+"",
+"function set_fraction(value) {",
+"    translation = new SFVec3f(\ttranslation[0] + velocity[0], translation[1] + velocity[1], translation[2] + velocity[2]);",
+"    scale = new SFVec3f(scale[0] + scalvel[0], scale[1] + scalvel[1], scale[2] + scalvel[2]);",
+"    for (var j = 0; j &lt; 3; j++) {",
+"\t    // if you get to far away or too big, explode",
+"\t    if ( Math.abs(translation[j]) &gt; 256) {",
+"\t\ttranslation[j] = 0;",
+"\t\tinitialize();",
+"\t    }",
+"\t    if (Math.abs(scale[j]) &gt; 20) {",
+"\t\tscale[j] = scale[j]/2;",
+"\t\ttranslation[j] = 0;",
+"\t\tinitialize();",
+"\t    }",
+"    }",
+"}"
+]
                             }
                           },
                           { "TimeSensor":
@@ -132,25 +168,25 @@
                         "ROUTE": [
                           {
                             "@fromNode":"transform",
-                            "@fromField":"translation",
+                            "@fromField":"translation_changed",
                             "@toNode":"bounce",
                             "@toField":"set_translation"
                           },
                           {
                             "@fromNode":"transform",
-                            "@fromField":"scale",
+                            "@fromField":"scale_changed",
                             "@toNode":"bounce",
                             "@toField":"set_scale"
                           },
                           {
                             "@fromNode":"bounce",
-                            "@fromField":"translation",
+                            "@fromField":"translation_changed",
                             "@toNode":"transform",
                             "@toField":"set_translation"
                           },
                           {
                             "@fromNode":"bounce",
-                            "@fromField":"scale",
+                            "@fromField":"scale_changed",
                             "@toNode":"transform",
                             "@toField":"set_scale"
                           },
@@ -169,22 +205,26 @@
           },
           { "ProtoInstance":
             {
-              "@name":"Bubble2"
+              "@name":"Bubble",
+              "@DEF":"bubbleA"
             }
           },
           { "ProtoInstance":
             {
-              "@name":"Bubble2"
+              "@name":"Bubble",
+              "@DEF":"bubbleB"
             }
           },
           { "ProtoInstance":
             {
-              "@name":"Bubble2"
+              "@name":"Bubble",
+              "@DEF":"bubbleC"
             }
           },
           { "ProtoInstance":
             {
-              "@name":"Bubble2"
+              "@name":"Bubble",
+              "@DEF":"bubbleD"
             }
           }
         ]

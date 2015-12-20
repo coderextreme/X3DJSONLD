@@ -21,8 +21,11 @@ process.stdin.on('end', function() {
 	processScripts(object, classes, undefined, routecode);
 	routecode.push("}, 500);");
 	classes.push("};");
-	console.error(classes.join('\n'));
+	var code = classes.join('\n')
+		.replace(/&lt;/g, '<')
+		.replace(/&gt;/g, '>')
+	console.error(code);
 	console.error(routecode.join('\n'));
-	eval(classes.join('\n'));
+	eval(code);
 	// eval(routecode.join('\n'));
 });
