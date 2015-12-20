@@ -136,7 +136,7 @@ function realPrototypeExpander(object, scope) {
 				realPrototypeExpander(body, def+name);
 				// assign afterward so we don't get a double name
 				body["@DEF"] = def+name;
-				// body["@id"] = def+name;
+				body["@class"] = def+name;
 				defs[def] = def+name+scope;
 				// console.log("BODY", JSON.stringify(body));
 
@@ -214,7 +214,7 @@ function realPrototypeExpander(object, scope) {
 				var def = object["@DEF"];
 				if (typeof scope !== 'undefined') {
 					object["@DEF"] = def+scope;
-					// object["@id"] = def+scope;
+					object["@class"] = def+scope;
 					setEnv(def,
 					    '',
 					    def+scope,
