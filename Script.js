@@ -25,6 +25,17 @@ Script.prototype.find = function (name) {
 }
 
 
+function zapSource(object) {
+	if (typeof object === "object") {
+		for (p in object) {
+			if (p === '#sourceText') {
+				delete object[p];
+			} else {
+				zapSource(object[p]);
+			}
+		}
+	}
+}
 function processScripts(object, classes, package, routecode) {
 	if (typeof package === 'undefined') {
 		classes.push('var X3DJSON = {');
@@ -41,8 +52,10 @@ function processScripts(object, classes, package, routecode) {
 				var script = new Script(package, name);
 				processFields(object[p]['field'], classes, script);
 				processSource(object[p]['#sourceText'], classes, script);
+				// zap original source because we don't need it
 				classes.push('},');
 				processScripts(object[p], classes, script, routecode);
+				// delete object[p]['#sourceText'];
 			} else if (p.toLowerCase() === 'route') {
 				processRoutes(object[p], routecode, package);
 			} else if (p.toLowerCase() === '@use') {
@@ -78,7 +91,11 @@ function processRoutes(routes, classes, package) {
 			classes.push('if (!$(".'+fromNode+'")) console.log("undefined '+fromNode+'");');
 			var  from = '$(".'+fromNode+'").attr("'+fromField+'")';
 		} else {
-			var from = 'X3DJSON.' +fromNode+'.'+fromField+'_changed()';
+			if (fromField.indexOf("_changed") > 0) {
+				var from = 'X3DJSON.' +fromNode+'.'+fromField+'()';
+			} else {
+				var from = 'X3DJSON.' +fromNode+'.'+fromField+'_changed()';
+			}
 		}
 		classes.push('\t'+to+from+');');
 	}
@@ -153,6 +170,9 @@ function processSource(lines, classes, package) {
 			for (var n in package.getters) {
 				body = body.replace(new RegExp(n, 'g'), "this."+n);
 				body = body.replace(/new (MF[A-Za-z0-9]+|SFMatrix[A-Za-z0-9]+|SFVec[234][df]|SFRotation)[ 	]*\(([^;]*)\)[ 	]*;/g, '[$2];');
+				//body = body.replace(/&amp;/g, '&');
+				//body = body.replace(/&lt;/g, '<');
+				//body = body.replace(/&gt;/g, '>');
 			}
 			classes.push('\t'+funcvar + ' : function ' + body + ',');
 		}

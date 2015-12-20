@@ -3,8 +3,8 @@
 <head>
     <title>JSON Loader</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <link rel="stylesheet" type="text/css" href="http://www.x3dom.org/download/dev/x3dom.css"></link>
-    <script type="text/javascript" src="http://www.x3dom.org/download/dev/x3dom-full.js"></script>
+    <link rel="stylesheet" type="text/css" href="www.x3dom.org/download/dev/x3dom.css"></link>
+    <script type="text/javascript" src="www.x3dom.org/download/dev/x3dom-full.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <style type="text/css">
     X3D {
@@ -32,6 +32,7 @@
 <option>IcosahedronSubdivisionLevel5.json</option>
 <option>ExtrusionHeart.json</option>
 <option>cobweb.json</option>
+<option>cobwebs.json</option>
 <option>examples/Savage/Scenarios/RemusMission10MAR2003/RemusMissionLineTrackPlayback.json</option>
 <option>examples/Savage/CommunicationsAndSensors/Sonar/AuvwStackSceneVisualizationExample.json</option>
 <option>examples/Savage/ShipsMilitary/Seafighter/SeafighterWithHelos.json</option>
@@ -15729,7 +15730,6 @@ Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into JSON X3DOM
 
 		// Expand Protos
 		prototypeExpander(json, "");
-	        $('textarea#json').val(JSON.stringify(json, null, 2));
 
 		// Now generate JavaScript code for Scripts and Routes
 		var classes = [];
@@ -15750,13 +15750,18 @@ Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into JSON X3DOM
 		if (typeof scripts.lastChild === 'Node') {
 			scripts.removeChild(scripts.lastChild);
 		}
-		scripts.text = classes.join("\n");
+		scripts.text = classes.join("\n")
+			.replace(/&lt;/g, '<')
+			.replace(/&gt;/g, '>');
 
 		var routes = document.getElementById("routes");
 		if (typeof routes.lastChild === 'Node') {
 			routes.removeChild(routes.lastChild);
 		}
 		routes.text = routecode.join("\n");
+		// When we zap the source, we prevent animation
+		// zapSource(json);
+	        $('textarea#json').val(JSON.stringify(json, null, 2));
 	    }
 	    loadX3DJS(selector, json, url, xml);
 			
