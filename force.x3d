@@ -2,8 +2,12 @@
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "http://www.web3d.org/specifications/x3d-4.0.dtd">
 <X3D profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-4.0.xsd' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance'>
     <head>
-	<meta name='author' content='John W Carlson'/>
-	<meta name='created' content='December 13 2015'/>
+        <meta name='creator' content='John W Carlson'/>
+        <meta name='created' content='December 13 2015'/>
+        <meta name='title' content='force.x3d'/>
+        <meta name='identifier' content='http://coderextreme.net/X3DJSONLD/force.x3d'/>
+        <meta name='description' content='beginnings of a force directed graph in 3D'/>
+        <meta name='generator' content='Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit'/>
     </head>
     <Scene>
         <ProtoDeclare name='node'>
@@ -23,14 +27,14 @@
                     </Shape>  
                     
                     <Transform translation='1 0 0'>            
-                    <Shape>
-                        <Text string='"Node"'>
-                            <FontStyle family='"SERIF"' justify='"MIDDLE" "MIDDLE"' size="5"/>
-                        </Text>
-                        <Appearance>
-                            <Material diffuseColor='0 0 1'/>
-                        </Appearance>
-                    </Shape> 
+                        <Shape>
+                            <Text string='"Node"'>
+                                <FontStyle family='"SERIF"' justify='"MIDDLE" "MIDDLE"' size="5"/>
+                            </Text>
+                            <Appearance>
+                                <Material diffuseColor='0 0 1'/>
+                            </Appearance>
+                        </Shape> 
                     </Transform>               
                 </Transform>
                 <PositionInterpolator DEF='NodePosition' key='0 1' keyValue='0 0 0, 0 5 0'/>
@@ -68,7 +72,7 @@ ecmascript:
                     </Appearance>
                 </Shape>
                 <Script DEF='MoveCylinder'>
-                    <field name='spine' accessType='outputOnly' type='MFVec3f' value='0 -50 0, 0 50 0'/>
+                    <field name='spine' accessType='inputOutput' type='MFVec3f' value='0 -50 0, 0 50 0'/>
                     <field name='set_endA' accessType='inputOnly' type='SFVec3f'/>
                     <field name='set_endB' accessType='inputOnly' type='SFVec3f'/>
                     <IS>
@@ -93,6 +97,10 @@ ecmascript:
 		        spine = new MFVec3f(spine[0], value);
 		    }
                 }
+                
+                function set_spine(value) {
+                    spine = value;
+                }
 ]]>
                 </Script>
                 
@@ -100,32 +108,51 @@ ecmascript:
                 
             </ProtoBody>
         </ProtoDeclare>
-        <Transform scale='0.1 0.1 0.1'>
-        <ProtoInstance DEF='nodeA' name='node'>
-            <fieldValue name='position' value='0.0 0.0 0.0'/>
-        </ProtoInstance>
-        <ProtoInstance DEF='nodeB' name='node'>
-            <fieldValue name='position' value='50.0 50.0 50.0'/>
-        </ProtoInstance>
-        <ProtoInstance DEF='nodeC' name='node'>
-            <fieldValue name='position' value='-50.0 -50.0 -50.0'/>
-        </ProtoInstance>
-        <ProtoInstance DEF='nodeD' name='node'>
-            <fieldValue name='position' value='50.0 50.0 -50.0'/>
-        </ProtoInstance>
-        <ProtoInstance DEF='linkA' name='cylinder'>
-            <fieldValue name='positionA' value='0 0 0'/>
-            <fieldValue name='positionB' value='50 50 50'/>
-        </ProtoInstance>
-        <ProtoInstance DEF='linkB' name='cylinder'>
-            <fieldValue name='positionA' value='0 0 0'/>
-            <fieldValue name='positionB' value='-50 -50 -50'/>
-        </ProtoInstance>
-        <ProtoInstance DEF='linkC' name='cylinder'>
-            <fieldValue name='positionA' value='50 50 50'/>
-            <fieldValue name='positionB' value='50 50 -50'/>
-        </ProtoInstance>
+        <Transform  DEF="HoldsContent" scale='0.1 0.1 0.1'>
+            <PlaneSensor DEF="clickGenerator" enabled="true"  minPosition="-50 -50" maxPosition="50 50" description="click on background to add nodes, click on nodes to add links"/>
+            <ProtoInstance DEF='nodeA' name='node'>
+                <fieldValue name='position' value='0.0 0.0 0.0'/>
+            </ProtoInstance>
+            <ProtoInstance DEF='nodeB' name='node'>
+                <fieldValue name='position' value='50.0 50.0 50.0'/>
+            </ProtoInstance>
+            <ProtoInstance DEF='nodeC' name='node'>
+                <fieldValue name='position' value='-50.0 -50.0 -50.0'/>
+            </ProtoInstance>
+            <ProtoInstance DEF='nodeD' name='node'>
+                <fieldValue name='position' value='50.0 50.0 -50.0'/>
+            </ProtoInstance>
+            <ProtoInstance DEF='linkA' name='cylinder'>
+                <fieldValue name='positionA' value='0 0 0'/>
+                <fieldValue name='positionB' value='50 50 50'/>
+            </ProtoInstance>
+            <ProtoInstance DEF='linkB' name='cylinder'>
+                <fieldValue name='positionA' value='0 0 0'/>
+                <fieldValue name='positionB' value='-50 -50 -50'/>
+            </ProtoInstance>
+            <ProtoInstance DEF='linkC' name='cylinder'>
+                <fieldValue name='positionA' value='50 50 50'/>
+                <fieldValue name='positionB' value='50 50 -50'/>
+            </ProtoInstance>
         </Transform>
+        <Script DEF="clickHandler">
+            <field accessType="inputOutput" name="counter" value="0" type="SFInt32"/>
+            <field accessType="outputOnly" name="node_changed" type="SFNode"/>
+            <field accessType="inputOnly" name="add_node" value="0" type="SFBool"/>
+            <field name="ModifiableNode" type="SFNode" accessType="initializeOnly">
+                <Transform USE="HoldsContent"/>
+            </field>
+	<![CDATA[
+ecmascript:
+	function add_node(value) {
+                Browser.print('hey ', counter);
+                counter = counter++;
+        	node_changed = Browser.createX3DFromString("<ProtoInstance DEF='node"+counter+"' name='node'><fieldValue name='position' value='0.0 0.0 0.0'/></ProtoInstance>");
+                ModifiableNode.children[ModifiableNode.children.length] = node_changed[0];
+        }
+	]]>
+        </Script>
+        <ROUTE fromNode='clickGenerator' fromField='isActive' toNode='clickHandler' toField='add_node'/>
         <ROUTE fromNode='nodeA' fromField='position' toNode='linkA' toField='positionA'/>
         <ROUTE fromNode='nodeB' fromField='position' toNode='linkA' toField='positionB'/>
         <ROUTE fromNode='nodeA' fromField='position' toNode='linkB' toField='positionA'/>
