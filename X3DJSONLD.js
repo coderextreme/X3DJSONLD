@@ -162,9 +162,12 @@ function ConvertToX3DOM(object, parentkey, element, path) {
 			} else if (typeof object[key] === 'boolean') {
 				localArray.push(object[key]);
 			} else if (typeof object[key] === 'object') {
+				if (object[key] != null && typeof object[key].join === 'function') {
+					localArray.push(object[key].join(" "));
+				}
 				children.push(ConvertToX3DOM(object[key], key, element, path));
 			} else {
-				console.log("Unknown type found in array "+typeof object[key]);
+				console.error("Unknown type found in array "+typeof object[key]);
 			}
 		} else if (typeof object[key] === 'object') {
 			if (key !== "ROUTE") {
@@ -191,7 +194,7 @@ function ConvertToX3DOM(object, parentkey, element, path) {
 		} else if (typeof object[key] === 'boolean') {
 			elementSetAttribute(element, key.substr(1),object[key], attributes);
 		} else {
-			console.log("Unknown type found in object "+typeof object[key]);
+			console.error("Unknown type found in object "+typeof object[key]);
 		}
 	}
 	// put ROUTEs last
@@ -242,7 +245,7 @@ function ConvertToX3DOM(object, parentkey, element, path) {
 				}
 			} else {
 				// if non string array
-				elementSetAttribute(element, parentkey.substr(1),localArray.join(" "), attributes);
+				elementSetAttribute(element, parentkey.substr(1),localArray.join(", "), attributes);
 			}
 		}
 		isArray = false;
