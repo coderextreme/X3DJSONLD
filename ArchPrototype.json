@@ -2,54 +2,6 @@
     "@profile":"Immersive",
     "@version":3.3,
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "head": {
-        "meta": [
-          {
-            "@name":"title",
-            "@content":"ArchPrototype.x3d"
-          },
-          {
-            "@name":"description",
-            "@content":"Create an arch. Can modify general parameters: clearSpanWidth, riseHeight, depth, topAbutmentHeight, pierWidth, pierHeight. See the reference file ArchModelingDiagrams.pdf to find further information. See also ArchPrototypeScript_more_readable.js."
-          },
-          {
-            "@name":"description",
-            "@content":"Possibility to create shapes related to arch: ArchHalf; IntradosOnly; ArchFilled; ArchHalfFilled; Lintel. See the reference file ArchModelingDiagrams.pdf to find further information."
-          },
-          {
-            "@name":"creator",
-            "@content":"Michele Foti, Don Brutzman"
-          },
-          {
-            "@name":"created",
-            "@content":"15 December 2014"
-          },
-          {
-            "@name":"modified",
-            "@content":"27 November 2015"
-          },
-          {
-            "@name":"reference",
-            "@content":"ArchModelingDiagrams.pdf"
-          },
-          {
-            "@name":"reference",
-            "@content":"https://en.wikipedia.org/wiki/Arch"
-          },
-          {
-            "@name":"identifier",
-            "@content":"http://X3dGraphics.com/examples/X3dForAdvancedModeling/Buildings/ArchPrototype.x3d"
-          },
-          {
-            "@name":"generator",
-            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
-          },
-          {
-            "@name":"license",
-            "@content":"../license.html"
-          }
-        ]
-    },
     "Scene": {
         "#comment":[
           "Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare)"
@@ -234,7 +186,7 @@
                     { "Script":
                       {
                         "@DEF":"ArchPrototypeScript",
-                        "@url":["ArchPrototypeScript.js","http://X3dGraphics.com/examples/X3dForAdvancedModeling/Buildings/ArchPrototypeScript.js"],
+                        "@url":["ArchPrototypeScript.js"],
                         "#comment":[
                           "INPUT PARAMETERS",
                           "General parameters",
@@ -454,7 +406,7 @@
           { "Inline":
             {
               "@DEF":"CoordinateAxes",
-              "@url":["../../X3dForWebAuthors/Chapter03-Grouping/CoordinateAxes.x3d","../../../Savage/Tools/Authoring/CoordinateAxes.x3d","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03-Grouping/CoordinateAxes.x3d","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03-Grouping/CoordinateAxes.wrl","../../../Savage/Tools/Authoring/CoordinateAxes.wrl","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03-Grouping/CoordinateAxes.wrl","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"]
+              "@url":["CoordinateAxes.x3d"]
             }
           }
         ]
