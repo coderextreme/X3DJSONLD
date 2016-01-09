@@ -5,12 +5,12 @@
 // Load X3D JSON into web page
 
 function printElement(el, indent, xml) {
-	var INDENT = "";
+	var INDENT = " ";
         var child;
         var key;
         var attrs = "";
         if (typeof el === 'string') {
-                xml.push(el);
+                xml.push(indent+el);
                 return;
         }
         if (el.key) {
@@ -107,7 +107,7 @@ function ConvertObject(key, object, element, path) {
 				element.appendChild(child);
 			}
 		} else {
-			if (key === 'ROUTE' || key === 'connect' || key === 'fieldValue' || key === 'field' || key === 'meta') {
+			if (key === 'connect' || key === 'fieldValue' || key === 'field' || key === 'meta') {
 				for (var childkey in object[key]) {  // for each field
 					if (typeof object[key][childkey] === 'object') {
 						var child = null;
@@ -146,7 +146,6 @@ function ConvertToX3DOM(object, parentkey, element, path) {
 	var arrayOfStrings = false;
 	var attributes = {};
 	var children = [];
-	var foundRoute = false;
 	for (key in object) {
 		if (isNaN(parseInt(key))) {
 			isArray = false;
@@ -170,15 +169,11 @@ function ConvertToX3DOM(object, parentkey, element, path) {
 				console.error("Unknown type found in array "+typeof object[key]);
 			}
 		} else if (typeof object[key] === 'object') {
-			if (key !== "ROUTE") {
-				var el = ConvertObject(key, object, element, path);
-				for (var a in el.attributes) {
-					attributes[a] = el.attributes[a];
-				}
-				children.push(el);
-			} else {
-				foundRoute = true;
+			var el = ConvertObject(key, object, element, path);
+			for (var a in el.attributes) {
+				attributes[a] = el.attributes[a];
 			}
+			children.push(el);
 		} else if (typeof object[key] === 'number') {
 			elementSetAttribute(element, key.substr(1),object[key], attributes);
 		} else if (typeof object[key] === 'string') {
@@ -196,16 +191,6 @@ function ConvertToX3DOM(object, parentkey, element, path) {
 		} else {
 			console.error("Unknown type found in object "+typeof object[key]);
 		}
-	}
-	// put ROUTEs last
-	if (foundRoute) {
-		var el = ConvertObject("ROUTE", object, element, path);
-		for (var a in el.attributes) {
-			attributes[a] = el.attributes[a];
-		}
-		children.push(el);
-	} else {
-		foundRoute = false;
 	}
 	if (isArray) {
 		if (parentkey.substr(0,1) === '@') {
@@ -286,5 +271,5 @@ process.stdin.on('end', function() {
 	var json = JSON.parse(content);
 	var xml = [];
 	loadX3DJS(null, json, 'pp3s.json', xml);
-	console.log(xml.join(""));
+	console.log(xml.join("\n"));
 });

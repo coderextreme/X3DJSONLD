@@ -5,12 +5,28 @@
     "head": {
         "meta": [
           {
-            "@name":"author",
+            "@name":"creator",
             "@content":"John W Carlson"
           },
           {
             "@name":"created",
             "@content":"December 13 2015"
+          },
+          {
+            "@name":"title",
+            "@content":"force.x3d"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://coderextreme.net/X3DJSONLD/force.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"beginnings of a force directed graph in 3D"
+          },
+          {
+            "@name":"generator",
+            "@content":"Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit"
           }
         ]
     },
@@ -158,32 +174,38 @@
                         "@cycleInterval":3,
                         "@loop":true
                       }
-                    }
-                  ],
-                  "ROUTE": [
-                    {
-                      "@fromNode":"nodeClock",
-                      "@fromField":"cycleTime",
-                      "@toNode":"MoveBall",
-                      "@toField":"set_location"
                     },
-                    {
-                      "@fromNode":"nodeClock",
-                      "@fromField":"fraction_changed",
-                      "@toNode":"NodePosition",
-                      "@toField":"set_fraction"
+                    { "ROUTE":
+                      {
+                        "@fromNode":"nodeClock",
+                        "@fromField":"cycleTime",
+                        "@toNode":"MoveBall",
+                        "@toField":"set_location"
+                      }
                     },
-                    {
-                      "@fromNode":"MoveBall",
-                      "@fromField":"keyValue",
-                      "@toNode":"NodePosition",
-                      "@toField":"keyValue"
+                    { "ROUTE":
+                      {
+                        "@fromNode":"nodeClock",
+                        "@fromField":"fraction_changed",
+                        "@toNode":"NodePosition",
+                        "@toField":"set_fraction"
+                      }
                     },
-                    {
-                      "@fromNode":"NodePosition",
-                      "@fromField":"value_changed",
-                      "@toNode":"transform",
-                      "@toField":"set_translation"
+                    { "ROUTE":
+                      {
+                        "@fromNode":"MoveBall",
+                        "@fromField":"keyValue",
+                        "@toNode":"NodePosition",
+                        "@toField":"keyValue"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromNode":"NodePosition",
+                        "@fromField":"value_changed",
+                        "@toNode":"transform",
+                        "@toField":"set_translation"
+                      }
                     }
                   ]
               }
@@ -241,7 +263,7 @@
                         "field": [
                           {
                             "@name":"spine",
-                            "@accessType":"outputOnly",
+                            "@accessType":"inputOutput",
                             "@type":"MFVec3f",
                             "@value":[0,-50,0,0,50,0]
                           },
@@ -285,17 +307,21 @@
 "\t\t    } else {",
 "\t\t        spine = new MFVec3f(spine[0], value);",
 "\t\t    }",
+"                }",
+"                ",
+"                function set_spine(value) {",
+"                    spine = value;",
 "                }"
 ]
                       }
-                    }
-                  ],
-                  "ROUTE": [
-                    {
-                      "@fromNode":"MoveCylinder",
-                      "@fromField":"spine",
-                      "@toNode":"extrusion",
-                      "@toField":"set_spine"
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromNode":"MoveCylinder",
+                        "@fromField":"spine",
+                        "@toNode":"extrusion",
+                        "@toField":"set_spine"
+                      }
                     }
                   ]
               }
@@ -303,8 +329,18 @@
           },
           { "Transform":
             {
+              "@DEF":"HoldsContent",
               "@scale":[0.1,0.1,0.1],
               "-children":[
+                { "PlaneSensor":
+                  {
+                    "@DEF":"clickGenerator",
+                    "@minPosition":[-50,-50],
+                    "@maxPosition":[50,50],
+                    "@description":"click on background to add nodes, click on nodes to add links",
+                    "@axisRotation":[0,1,0,0]
+                  }
+                },
                 { "ProtoInstance":
                   {
                     "@name":"node",
@@ -403,44 +439,107 @@
                 }
               ]
             }
-          }
-        ],
-        "ROUTE": [
-          {
-            "@fromNode":"nodeA",
-            "@fromField":"position",
-            "@toNode":"linkA",
-            "@toField":"positionA"
           },
-          {
-            "@fromNode":"nodeB",
-            "@fromField":"position",
-            "@toNode":"linkA",
-            "@toField":"positionB"
+          { "Script":
+            {
+              "@DEF":"clickHandler",
+              "field": [
+                {
+                  "@name":"counter",
+                  "@accessType":"inputOutput",
+                  "@value":0,
+                  "@type":"SFInt32"
+                },
+                {
+                  "@name":"node_changed",
+                  "@accessType":"outputOnly",
+                  "@type":"SFNode"
+                },
+                {
+                  "@name":"add_node",
+                  "@accessType":"inputOnly",
+                  "@value":0,
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"ModifiableNode",
+                  "@type":"SFNode",
+                  "@accessType":"initializeOnly",
+                  "-children":[
+                    { "Transform":
+                      {
+                        "@USE":"HoldsContent"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "#sourceText":[
+"ecmascript:",
+"\tfunction add_node(value) {",
+"                Browser.print('hey ', counter);",
+"                counter = counter++;",
+"        \tnode_changed = Browser.createX3DFromString(\"<ProtoInstance DEF='node\"+counter+\"' name='node'><fieldValue name='position' value='0.0 0.0 0.0'/></ProtoInstance>\");",
+"                ModifiableNode.children[ModifiableNode.children.length] = node_changed[0];",
+"        }"
+]
+            }
           },
-          {
-            "@fromNode":"nodeA",
-            "@fromField":"position",
-            "@toNode":"linkB",
-            "@toField":"positionA"
+          { "ROUTE":
+            {
+              "@fromNode":"clickGenerator",
+              "@fromField":"isActive",
+              "@toNode":"clickHandler",
+              "@toField":"add_node"
+            }
           },
-          {
-            "@fromNode":"nodeC",
-            "@fromField":"position",
-            "@toNode":"linkB",
-            "@toField":"positionB"
+          { "ROUTE":
+            {
+              "@fromNode":"nodeA",
+              "@fromField":"position",
+              "@toNode":"linkA",
+              "@toField":"positionA"
+            }
           },
-          {
-            "@fromNode":"nodeA",
-            "@fromField":"position",
-            "@toNode":"linkC",
-            "@toField":"positionA"
+          { "ROUTE":
+            {
+              "@fromNode":"nodeB",
+              "@fromField":"position",
+              "@toNode":"linkA",
+              "@toField":"positionB"
+            }
           },
-          {
-            "@fromNode":"nodeD",
-            "@fromField":"position",
-            "@toNode":"linkC",
-            "@toField":"positionB"
+          { "ROUTE":
+            {
+              "@fromNode":"nodeA",
+              "@fromField":"position",
+              "@toNode":"linkB",
+              "@toField":"positionA"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"nodeC",
+              "@fromField":"position",
+              "@toNode":"linkB",
+              "@toField":"positionB"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"nodeA",
+              "@fromField":"position",
+              "@toNode":"linkC",
+              "@toField":"positionA"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"nodeD",
+              "@fromField":"position",
+              "@toNode":"linkC",
+              "@toField":"positionB"
+            }
           }
         ]
     }

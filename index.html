@@ -22,19 +22,15 @@
 <select>
 <option>flipper.json</option>
 <option>force.json</option>
-<option>forces.json</option>
 <option>ArchHalf.json</option>
 <option>ArchPrototype.json</option>
-<option>ArchPrototype2.json</option>
 <option>examples/X3dForAdvancedModeling/Buildings/ArchPrototype.json</option>
-<option>ArchPrototypes.json</option>
 <option>bubbles.json</option>
 <option>geobubbles.json</option>
 <option>ObliqueStrategies.json</option>
 <option>IcosahedronSubdivisionLevel5.json</option>
 <option>ExtrusionHeart.json</option>
 <option>cobweb.json</option>
-<option>cobwebs.json</option>
 </select>
 </td>
 <td>
@@ -71,8 +67,8 @@ Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into JSON X3DOM
 			// DISPLAY XML in X3DOM
 			$('#x3domxml').empty();
 			// Do this inner HTML so we can sneak script tag past JQuery (BAD BAD TODO)
-			$('#x3domxml').get()[0].innerHTML = xml.join("\n");
-	    	        $('textarea#xml').val(xml.join("\n"));
+			$('#x3domxml').get()[0].innerHTML = xml.join("");
+	    	        $('textarea#xml').val(xml.join(""));
 		} else {
 			$('#x3domxml').get()[0].innerHTML = $('textarea#xml').val();
 		}
