@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd"><X3D profile='Immersive' version='3.3' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd' id='x3dele' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance'>
+    <head>
+        <meta name='title' content='ArchPrototype.x3d'/>
+        <meta name='description' content='Create an arch. Can modify general parameters: clearSpanWidth, riseHeight, depth, topAbutmentHeight, pierWidth, pierHeight. See the reference file ArchModelingDiagrams.pdf to find further information. See also ArchPrototypeScript_more_readable.js.'/>
+        <meta name='description' content='Possibility to create shapes related to arch: ArchHalf; IntradosOnly; ArchFilled; ArchHalfFilled; Lintel. See the reference file ArchModelingDiagrams.pdf to find further information.'/>
+        <meta name='creator' content='Michele Foti, Don Brutzman'/>
+        <meta name='created' content='15 December 2014'/>
+        <meta name='modified' content='27 November 2015'/>
+        <meta name='reference' content='ArchModelingDiagrams.pdf'/>
+        <meta name='reference' content='https://en.wikipedia.org/wiki/Arch'/>
+        <meta name='identifier' content='http://X3dGraphics.com/examples/X3dForAdvancedModeling/Buildings/ArchPrototype.x3d'/>
+        <meta name='generator' content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit'/>
+        <meta name='license' content='../license.html'/>
+    </head>
     <Scene><!--Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare)-->
         <ProtoDeclare name='ArchPrototype' appinfo='Create an arch. Can modify general parameters: clearSpanWidth, riseHeight, depth, topAbutmentHeight, pierWidth, pierHeight. - Possibility to create shapes related to an arch: ArchHalf; IntradosOnly; ArchFilled; ArchHalfFilled; Lintel. See the reference file ArchModelingDiagrams.pdf to find further information. See also ArchPrototypeScript_more_readable.js.js.'>
             <ProtoInterface><!--COLOR OF ARCH--><!--INPUT PARAMETERS--><!--General parameters: measures in meters--><!--Parameters to create to create shapes related to arch: put true to apply-->
