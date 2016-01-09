@@ -1,0 +1,146 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf340
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fmodern\fcharset0 CourierNewPSMT;\f2\fnil\fcharset0 Menlo-Regular;
+}
+{\colortbl;\red255\green255\blue255;\red56\green110\blue255;\red20\green160\blue194;\red69\green60\blue204;
+\red0\green3\blue255;}
+\vieww21540\viewh19800\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs36 \cf0 \expnd0\expndtw0\kerning0
+Introducing: \'a0The X3D JSON Loader (1.0 beta) and X3D JSON Prototype Expander (1.0 alpha)
+\fs24 \
+\
+\
+I still have extra stuff in the global scope of JavaScript\'97let people know this. \'a0Pull requests and forks are welcome, as long as you agree to the license.\
+\
+License is here:\'a0{\field{\*\fldinst{HYPERLINK "https://github.com/coderextreme/X3DJSONLD/blob/master/LICENSE"}}{\fldrslt \cf2 \ul \ulc2 https://github.com/coderextreme/X3DJSONLD/blob/master/LICENSE}}\'a0 Repository is here:\'a0{\field{\*\fldinst{HYPERLINK "https://github.com/coderextreme/X3DJSONLD/"}}{\fldrslt \cf2 \ul \ulc2 https://github.com/coderextreme/X3DJSONLD/}}\
+\
+For a web browser, \'a0a live, development version of the X3D JSON loader (I\'a0recommend downloading locally or forking) in your HTML, put:\
+\pard\pardeftab720\partightenfactor0
+\cf3 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs22 \cf0 <script type="text/javascript" src="{\field{\*\fldinst{HYPERLINK "https://raw.githubusercontent.com/coderextreme/X3DJSONLD/master/X3DJSONLD.js"}}{\fldrslt 
+\f0 \cf2 \ul \ulc2 https://raw.githubusercontent.com/coderextreme/X3DJSONLD/master/X3DJSONLD.js}}"></script>
+\f0 \
+\pard\pardeftab720\partightenfactor0
+
+\f2 \cf3 \
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf0 somewhere in the script afterwards (see index.html),\
+\pard\pardeftab720\partightenfactor0
+\cf3 \
+\pard\pardeftab720\partightenfactor0
+\cf0 call\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs22 \cf3 \
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf5 loadX3DJS(selector, json, url, xml);
+\f0\fs24 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs22 \cf3 \
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf5 selector
+\f2 \cf0  
+\f0 is the CSS selector which you want to append the X3DOM HTML code to.
+\fs24 \
+
+\f1\fs22 \cf5 json
+\f2 \cf0  
+\f0 is the X3D JSON you want to display.
+\fs24 \
+
+\f1\fs22 \cf5 url
+\f2 \cf0  
+\f0 is used for resolving URLs in the X3D JSON. \'a0Should be similar or the same as the URL you passed to retrieve the JSON from the server.
+\fs24 \
+
+\f1\fs22 \cf5 xml
+\f2 \cf0  
+\f0 is the XML for inclusion into Cobweb.
+\fs24 \
+\pard\pardeftab720\partightenfactor0
+\cf3 \
+\pard\pardeftab720\partightenfactor0
+\cf0 use 
+\f1 \cf5 xml.join(
+\fs22 "")
+\f0\fs24 \cf0 \'a0when passing the xml to createX3DFromString()\
+\pard\pardeftab720\partightenfactor0
+\cf3 \
+\pard\pardeftab720\partightenfactor0
+\cf0 Sample code for cobweb into an iframe with id cobwebframe (thank you Andreas Plesch):\
+\pard\pardeftab720\partightenfactor0
+\cf3 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs22 \cf0 		
+\f1 \cf5 var content = xml.join("");
+\fs24 \
+\pard\pardeftab720\partightenfactor0
+
+\fs22 \cf5 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 var cobwebWindow = document.getElementById("cobwebframe").contentWindow ;
+\fs24 \
+
+\fs22 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 var cobwebEle = cobwebWindow.document.getElementById("x3dele");
+\fs24 \
+
+\fs22 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 if (typeof cobwebWindow.X3D !== 'undefined') \{
+\fs24 \
+
+\fs22 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 var browser = cobwebWindow.X3D.getBrowser(cobwebEle);
+\fs24 \
+
+\fs22 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 browser.replaceWorld(browser.createX3DFromString(content));
+\fs24 \
+\pard\pardeftab720\partightenfactor0
+\cf3 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs22 \cf3 \
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf0 For the prototype expander a live, development version (I\'a0recommend downloading locally or forking) in your HTML, put:\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs22 \cf3 \
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf5 <script type="text/javascript" src="{\field{\*\fldinst{HYPERLINK "https://raw.githubusercontent.com/coderextreme/X3DJSONLD/master/PrototypeExpander.js"}}{\fldrslt 
+\f0\fs24 \cf2 \ul \ulc2 https://raw.githubusercontent.com/coderextreme/X3DJSONLD/master/PrototypeExpander.js}}"></script>
+\f0\fs24 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs22 \cf3 \
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf0 then call (does not modify extern protos yet):\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs22 \cf3 \
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf5 prototypeExpander(json, scope);
+\f0\fs24 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs22 \cf3 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs24 \cf5 json
+\f0 \cf0  is the X3DJSON you want to expand photos for (also modifies the parameter as output)\
+
+\f1 \cf5 scope
+\f0 \cf0  is a scope string added to DEF, name and id attributes and route fromNode and toNode\'92s. \'a0\'93\'94 is fine for the top level call\
+\
+\
+There is a lot of useful code in index.html. \'a0You may want to look at it at the bottom of the file.\
+}
