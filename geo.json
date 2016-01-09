@@ -2,34 +2,7 @@
     "@profile":"Immersive",
     "@version":3.3,
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "head": {
-        "meta": [
-          {
-            "@name":"title",
-            "@content":"geo.x3d"
-          },
-          {
-            "@name":"creator",
-            "@content":"John Carlson"
-          },
-          {
-            "@name":"description",
-            "@content":"Tour around a prismatic sphere"
-          },
-          {
-            "@name":"generator",
-            "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit"
-          },
-          {
-            "@name":"identifier",
-            "@content":"http://coderextreme.net/X3DJSONLD/geo.x3d"
-          }
-        ]
-    },
     "Scene": {
-        "#comment":[
-          "&lt;PositionInterpolator DEF='TourPosition' key='0.0 0.125 0.250 0.375 0.500 0.625 0.750 0.875 1.0' keyValue='0 0 4 -90 0 4 180 0 4 90 0 4 0 0 4 0 90 4 0 0 4 0 -90 4 0 0 4'/&gt; &lt;OrientationInterpolator DEF='TourOrientation' key='0.0 0.125 0.250 0.375 0.500 0.625 0.750 0.875 1.0' keyValue='1 0 0 -1.57 1 0 0 -1.57 1 0 0 -1.57 1 0 0 -1.57 1 0 0 -1.57 1 0 0 -1.57 1 0 0 -1.57 1 0 0 -1.57 1 0 0 -1.57'/&gt; &lt;TimeSensor DEF='TourTime' cycleInterval='5' loop='true'&gt;&lt;/TimeSensor&gt; &lt;ROUTE fromNode='TourTime' fromField='fraction_changed' toNode='TourPosition' toField='set_fraction'&gt;&lt;/ROUTE&gt; &lt;ROUTE fromNode='TourPosition' fromField='value_changed' toNode='Tour' toField='set_position'&gt;&lt;/ROUTE&gt; &lt;ROUTE fromNode='TourTime' fromField='fraction_changed' toNode='TourOrientation' toField='set_fraction'&gt;&lt;/ROUTE&gt; &lt;ROUTE fromNode='TourOrientation' fromField='value_changed' toNode='Tour' toField='set_orientation'&gt;&lt;/ROUTE&gt;"
-        ],
         "-children":[
           { "NavigationInfo":
             {
@@ -38,277 +11,167 @@
           },
           { "Viewpoint":
             {
+              "@DEF":"Tour",
+              "@description":"Tour Views"
+            }
+          },
+          { "Viewpoint":
+            {
               "@position":[0,0,4],
-              "@orientation":[1,0,0,0],
-              "@description":"Bubbles in action"
+              "@description":"sphere in road"
             }
           },
           { "Background":
             {
-              "@backUrl":"\"cubemap/BK.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/BK.png\"",
-              "@bottomUrl":"\"cubemap/BT.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/BT.png\"",
-              "@frontUrl":"\"cubemap/FR.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/FR.png\"",
-              "@leftUrl":"\"cubemap/LF.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/LF.png\"",
-              "@rightUrl":"\"cubemap/RT.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/RT.png\"",
-              "@topUrl":"\"cubemap/TP.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/TP.png\""
+              "@backUrl":["bBK.png","http://coderextreme.net/bug/bBK.png"],
+              "@bottomUrl":["bBT.png","http://coderextreme.net/bug/bBT.png"],
+              "@frontUrl":["bFR.png","http://coderextreme.net/bug/bFR.png"],
+              "@leftUrl":["bLF.png","http://coderextreme.net/bug/bLF.png"],
+              "@rightUrl":["bRT.png","http://coderextreme.net/bug/bRT.png"],
+              "@topUrl":["bTP.png","http://coderextreme.net/bug/bTP.png"]
             }
           },
-          { "ProtoDeclare":
+          { "Transform":
             {
-              "@name":"Bubble2",
-              "ProtoBody": {
-                  "-children":[
-                    { "Transform":
-                      {
-                        "@DEF":"transform",
-                        "-children":[
-                          { "Shape":
-                            {
-                              "-geometry":[
-                                { "Sphere":
-                                  {
-                                    "@radius":0.25
-                                  }
-                                }
-                              ],
-                              "-appearance":[
-                                { "Appearance":
-                                  {
-                                    "-material":[
-                                      { "Material":
-                                        {
-                                          "@diffuseColor":[1,0,0],
-                                          "@transparency":0.2
-                                        }
-                                      }
-                                    ],
-                                    "-texture":[
-                                      { "ComposedCubeMapTexture":
-                                        {
-                                          "@containerField":"texture",
-                                          "-back":[
-                                            { "ImageTexture":
-                                              {
-                                                "@url":["cubemap/BK.png","http://coderextreme.net/X3DJSONLD/cubemap/BK.png"],
-                                                "@containerField":"back"
-                                              }
-                                            }
-                                          ],
-                                          "-bottom":[
-                                            { "ImageTexture":
-                                              {
-                                                "@url":["cubemap/BT.png","http://coderextreme.net/X3DJSONLD/cubemap/BT.png"],
-                                                "@containerField":"bottom"
-                                              }
-                                            }
-                                          ],
-                                          "-front":[
-                                            { "ImageTexture":
-                                              {
-                                                "@url":["cubemap/FR.png","http://coderextreme.net/X3DJSONLD/cubemap/FR.png"],
-                                                "@containerField":"front"
-                                              }
-                                            }
-                                          ],
-                                          "-left":[
-                                            { "ImageTexture":
-                                              {
-                                                "@url":["cubemap/LF.png","http://coderextreme.net/X3DJSONLD/cubemap/LF.png"],
-                                                "@containerField":"left"
-                                              }
-                                            }
-                                          ],
-                                          "-right":[
-                                            { "ImageTexture":
-                                              {
-                                                "@url":["cubemap/RT.png","http://coderextreme.net/X3DJSONLD/cubemap/RT.png"],
-                                                "@containerField":"right"
-                                              }
-                                            }
-                                          ],
-                                          "-top":[
-                                            { "ImageTexture":
-                                              {
-                                                "@url":["cubemap/TP.png","http://coderextreme.net/X3DJSONLD/cubemap/TP.png"],
-                                                "@containerField":"top"
-                                              }
-                                            }
-                                          ]
-                                        }
-                                      }
-                                    ],
-                                    "-shaders":[
-                                      { "ComposedShader":
-                                        {
-                                          "@DEF":"ComposedShader",
-                                          "@containerField":"shaders",
-                                          "@language":"GLSL",
-                                          "field": [
-                                            {
-                                              "@name":"cube",
-                                              "@accessType":"inputOutput",
-                                              "@type":"SFInt32",
-                                              "@value":0
-                                            },
-                                            {
-                                              "@name":"chromaticDispertion",
-                                              "@accessType":"inputOutput",
-                                              "@type":"SFVec3f",
-                                              "@value":[0.98,1,1.033]
-                                            },
-                                            {
-                                              "@name":"bias",
-                                              "@accessType":"inputOutput",
-                                              "@type":"SFFloat",
-                                              "@value":0.5
-                                            },
-                                            {
-                                              "@name":"scale",
-                                              "@accessType":"inputOutput",
-                                              "@type":"SFFloat",
-                                              "@value":0.5
-                                            },
-                                            {
-                                              "@name":"power",
-                                              "@accessType":"inputOutput",
-                                              "@type":"SFFloat",
-                                              "@value":2
-                                            }
-                                          ],
-                                          "-parts":[
-                                            { "ShaderPart":
-                                              {
-                                                "@url":["bubbles.vs","http://coderextreme.net/X3DJSONLD/bubbles.vs"],
-                                                "@containerField":"parts"
-                                              }
-                                            },
-                                            { "ShaderPart":
-                                              {
-                                                "@url":["bubbles.fs","http://coderextreme.net/X3DJSONLD/bubbles.fs"],
-                                                "@containerField":"parts",
-                                                "@type":"FRAGMENT"
-                                              }
-                                            }
-                                          ]
-                                        }
-                                      }
-                                    ]
-                                  }
-                                }
-                              ]
-                            }
-                          },
-                          { "Script":
-                            {
-                              "@DEF":"bounce",
-                              "@url":["bounce.js","http://coderextreme.net/X3DJSONLD/bounce.js"],
-                              "field": [
-                                {
-                                  "@name":"set_scale",
-                                  "@accessType":"inputOutput",
-                                  "@type":"SFVec3f",
-                                  "@value":[1,1,1]
-                                },
-                                {
-                                  "@name":"set_translation",
-                                  "@accessType":"inputOutput",
-                                  "@type":"SFVec3f",
-                                  "@value":[0,0,0]
-                                },
-                                {
-                                  "@name":"translation",
-                                  "@accessType":"outputOnly",
-                                  "@type":"SFVec3f"
-                                },
-                                {
-                                  "@name":"scale",
-                                  "@accessType":"outputOnly",
-                                  "@type":"SFVec3f"
-                                },
-                                {
-                                  "@name":"velocity",
-                                  "@accessType":"inputOutput",
-                                  "@type":"SFVec3f",
-                                  "@value":[0,0,0]
-                                },
-                                {
-                                  "@name":"scalevelocity",
-                                  "@accessType":"inputOutput",
-                                  "@type":"SFVec3f",
-                                  "@value":[0,0,0]
-                                },
-                                {
-                                  "@name":"set_fraction",
-                                  "@accessType":"inputOnly",
-                                  "@type":"SFFloat"
-                                }
-                              ]
-                            }
-                          },
-                          { "TimeSensor":
-                            {
-                              "@DEF":"bubbleClock",
-                              "@cycleInterval":10,
-                              "@loop":true
-                            }
-                          }
-                        ],
-                        "ROUTE": [
-                          {
-                            "@fromNode":"transform",
-                            "@fromField":"translation",
-                            "@toNode":"bounce",
-                            "@toField":"set_translation"
-                          },
-                          {
-                            "@fromNode":"transform",
-                            "@fromField":"scale",
-                            "@toNode":"bounce",
-                            "@toField":"set_scale"
-                          },
-                          {
-                            "@fromNode":"bounce",
-                            "@fromField":"translation",
-                            "@toNode":"transform",
-                            "@toField":"set_translation"
-                          },
-                          {
-                            "@fromNode":"bounce",
-                            "@fromField":"scale",
-                            "@toNode":"transform",
-                            "@toField":"set_scale"
-                          },
-                          {
-                            "@fromNode":"bubbleClock",
-                            "@fromField":"fraction_changed",
-                            "@toNode":"bounce",
-                            "@toField":"set_fraction"
-                          }
-                        ]
+              "@DEF":"Rose01",
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":[
+                      { "Sphere":
+                        {
+                        }
                       }
-                    }
-                  ]
-              }
-            }
-          },
-          { "ProtoInstance":
-            {
-              "@name":"Bubble2"
-            }
-          },
-          { "ProtoInstance":
-            {
-              "@name":"Bubble2"
-            }
-          },
-          { "ProtoInstance":
-            {
-              "@name":"Bubble2"
-            }
-          },
-          { "ProtoInstance":
-            {
-              "@name":"Bubble2"
+                    ],
+                    "-appearance":[
+                      { "Appearance":
+                        {
+                          "@DEF":"_01_-_Default",
+                          "-material":[
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.7,0.7,0.7],
+                                "@specularColor":[0.5,0.5,0.5]
+                              }
+                            }
+                          ],
+                          "-texture":[
+                            { "ComposedCubeMapTexture":
+                              {
+                                "@containerField":"texture",
+                                "-back":[
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["bBK.png","http://coderextreme.net/bug/bBK.png"],
+                                      "@containerField":"back"
+                                    }
+                                  }
+                                ],
+                                "-bottom":[
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["bBT.png","http://coderextreme.net/bug/bBT.png"],
+                                      "@containerField":"bottom"
+                                    }
+                                  }
+                                ],
+                                "-front":[
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["bFR.png","http://coderextreme.net/bug/bFR.png"],
+                                      "@containerField":"front"
+                                    }
+                                  }
+                                ],
+                                "-left":[
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["bLF.png","http://coderextreme.net/bug/bLF.png"],
+                                      "@containerField":"left"
+                                    }
+                                  }
+                                ],
+                                "-right":[
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["bRT.png","http://coderextreme.net/bug/bRT.png"],
+                                      "@containerField":"right"
+                                    }
+                                  }
+                                ],
+                                "-top":[
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["bTP.png","http://coderextreme.net/bug/bTP.png"],
+                                      "@containerField":"top"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "-shaders":[
+                            { "ComposedShader":
+                              {
+                                "@DEF":"ComposedShader",
+                                "@containerField":"shaders",
+                                "@language":"GLSL",
+                                "field": [
+                                  {
+                                    "@name":"cube",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFInt32",
+                                    "@value":0
+                                  },
+                                  {
+                                    "@name":"chromaticDispertion",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFVec3f",
+                                    "@value":[0.98,1,1.033]
+                                  },
+                                  {
+                                    "@name":"bias",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFFloat",
+                                    "@value":0.5
+                                  },
+                                  {
+                                    "@name":"scale",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFFloat",
+                                    "@value":0.5
+                                  },
+                                  {
+                                    "@name":"power",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFFloat",
+                                    "@value":2
+                                  }
+                                ],
+                                "-parts":[
+                                  { "ShaderPart":
+                                    {
+                                      "@url":["bubbles.vs","http://coderextreme.net/bug/bubbles.vs"],
+                                      "@containerField":"parts"
+                                    }
+                                  },
+                                  { "ShaderPart":
+                                    {
+                                      "@url":["bubbles.fs","http://coderextreme.net/bug/bubbles.fs"],
+                                      "@containerField":"parts",
+                                      "@type":"FRAGMENT"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
             }
           }
         ]

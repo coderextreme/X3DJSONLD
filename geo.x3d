@@ -1,96 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D profile='Immersive' version='3.3' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance'>
-    <head>
-        <meta name='title' content='geo.x3d'></meta>
-        <meta name='creator' content='John Carlson'></meta>
-        <meta name='description' content='Tour around a prismatic sphere'></meta>
-        <meta name='generator' content='X3D-Edit, https://savage.nps.edu/X3D-Edit'></meta>
-        <meta name='identifier' content='http://coderextreme.net/X3DJSONLD/geo.x3d'></meta>
-    </head>
     <Scene>
-        <NavigationInfo type='"ANY" "WALK" "EXAMINE" "FLY" "LOOKAT"'></NavigationInfo>
-	<Viewpoint position='0 0 4' orientation="1 0 0 0" description='Bubbles in action'/>
-
-        <Background backUrl='"cubemap/BK.png" "http://coderextreme.net/X3DJSONLD/cubemap/BK.png"' bottomUrl='"cubemap/BT.png" "http://coderextreme.net/X3DJSONLD/cubemap/BT.png"' frontUrl='"cubemap/FR.png" "http://coderextreme.net/X3DJSONLD/cubemap/FR.png"' leftUrl='"cubemap/LF.png" "http://coderextreme.net/X3DJSONLD/cubemap/LF.png"' rightUrl='"cubemap/RT.png" "http://coderextreme.net/X3DJSONLD/cubemap/RT.png"' topUrl='"cubemap/TP.png" "http://coderextreme.net/X3DJSONLD/cubemap/TP.png"'></Background>
-
-        <ProtoDeclare name="Bubble2">
-            <ProtoBody>
-        
-                <Transform DEF="transform" translation="0 0 0" scale="1 1 1">
-                    <Shape>
-                        <Sphere solid="true" radius="0.25"></Sphere>
-                        <Appearance>
-                            <Material diffuseColor="1 0 0" transparency="0.2"></Material>
-                            <ComposedCubeMapTexture containerField='texture'>
-                                <ImageTexture url='"cubemap/BK.png" "http://coderextreme.net/X3DJSONLD/cubemap/BK.png"' containerField='back'></ImageTexture>
-                                <ImageTexture url='"cubemap/BT.png" "http://coderextreme.net/X3DJSONLD/cubemap/BT.png"' containerField='bottom'></ImageTexture>
-                                <ImageTexture url='"cubemap/FR.png" "http://coderextreme.net/X3DJSONLD/cubemap/FR.png"' containerField='front'></ImageTexture>
-                                <ImageTexture url='"cubemap/LF.png" "http://coderextreme.net/X3DJSONLD/cubemap/LF.png"' containerField='left'></ImageTexture>
-                                <ImageTexture url='"cubemap/RT.png" "http://coderextreme.net/X3DJSONLD/cubemap/RT.png"' containerField='right'></ImageTexture>
-                                <ImageTexture url='"cubemap/TP.png" "http://coderextreme.net/X3DJSONLD/cubemap/TP.png"' containerField='top'></ImageTexture>
-                            </ComposedCubeMapTexture>
-                            <ComposedShader DEF='ComposedShader' containerField='shaders' language='GLSL'>
-                                <field name='cube' accessType='inputOutput' type='SFInt32' value='0'></field>
-                                <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'></field>
-                                <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field>
-                                <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'></field>
-                                <field name='power' accessType='inputOutput' type='SFFloat' value='2'></field>
-                                <ShaderPart url='"bubbles.vs" "http://coderextreme.net/X3DJSONLD/bubbles.vs"' containerField='parts'></ShaderPart>
-                                <ShaderPart url='"bubbles.fs" "http://coderextreme.net/X3DJSONLD/bubbles.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
-                            </ComposedShader>
-                        </Appearance>
-                    </Shape>
-                    <Script DEF="bounce" url='"bounce.js" "http://coderextreme.net/X3DJSONLD/bounce.js"'>
-                        <field name="set_scale" accessType="inputOutput" type="SFVec3f" value="1 1 1"></field>
-                        <field name="set_translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
-                        <field name="translation" accessType="outputOnly" type="SFVec3f"></field>
-                        <field name="scale" accessType="outputOnly" type="SFVec3f"></field>
-                        <field name="velocity" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
-                        <field name="scalevelocity" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
-                        <field accessType='inputOnly' name='set_fraction' type='SFFloat'></field>
-                    </Script>
-                    <TimeSensor DEF='bubbleClock' cycleInterval='10' loop='true'></TimeSensor>
-                    <ROUTE fromNode='transform' fromField='translation' toNode='bounce' toField='set_translation'></ROUTE>
-                    <ROUTE fromNode='transform' fromField='scale' toNode='bounce' toField='set_scale'></ROUTE>
-                    <ROUTE fromNode='bounce' fromField='translation' toNode='transform' toField='set_translation'></ROUTE>
-                    <ROUTE fromNode='bounce' fromField='scale' toNode='transform' toField='set_scale'></ROUTE>
-                    <ROUTE fromNode='bubbleClock' fromField='fraction_changed' toNode='bounce' toField='set_fraction'></ROUTE>
-                </Transform>
-            </ProtoBody>
-        </ProtoDeclare>
-        <ProtoInstance name="Bubble2"></ProtoInstance>
-        <ProtoInstance name="Bubble2"></ProtoInstance>
-        <ProtoInstance name="Bubble2"></ProtoInstance> 
-        <ProtoInstance name="Bubble2"></ProtoInstance>
-<!--
-        <PositionInterpolator DEF='TourPosition' key='0.0 0.125 0.250 0.375 0.500 0.625 0.750 0.875 1.0' keyValue='0 0 4 -90 0 4 180 0 4 90 0 4 0 0 4 0 90 4 0 0 4 0 -90 4 0 0 4'/> 
-        <OrientationInterpolator DEF='TourOrientation' key='0.0 0.125 0.250 0.375 0.500 0.625 0.750 0.875 1.0' keyValue='1 0 0 -1.57 1 0 0 -1.57 1 0 0 -1.57 1 0 0 -1.57 1 0 0 -1.57 1 0 0 -1.57 1 0 0 -1.57 1 0 0 -1.57 1 0 0 -1.57'/>
-
-        <TimeSensor DEF='TourTime' cycleInterval='5' loop='true'></TimeSensor>
-        <ROUTE fromNode='TourTime' fromField='fraction_changed' toNode='TourPosition' toField='set_fraction'></ROUTE>
-        <ROUTE fromNode='TourPosition' fromField='value_changed' toNode='Tour' toField='set_position'></ROUTE>
-        <ROUTE fromNode='TourTime' fromField='fraction_changed' toNode='TourOrientation' toField='set_fraction'></ROUTE>
-        <ROUTE fromNode='TourOrientation' fromField='value_changed' toNode='Tour' toField='set_orientation'></ROUTE>
--->
+        <NavigationInfo type='"ANY" "WALK" "EXAMINE" "FLY" "LOOKAT"'/>
+        <Viewpoint DEF='Tour' description='Tour Views'/>
+        <Viewpoint position='0 0 4' description='sphere in road'/>
+        <Background backUrl='"bBK.png" "http://coderextreme.net/bug/bBK.png"' bottomUrl='"bBT.png" "http://coderextreme.net/bug/bBT.png"' frontUrl='"bFR.png" "http://coderextreme.net/bug/bFR.png"' leftUrl='"bLF.png" "http://coderextreme.net/bug/bLF.png"' rightUrl='"bRT.png" "http://coderextreme.net/bug/bRT.png"' topUrl='"bTP.png" "http://coderextreme.net/bug/bTP.png"'/>
+        <Transform DEF='Rose01'>
+            <Shape>
+                <Sphere/>
+                <Appearance DEF='_01_-_Default'>
+                    <Material diffuseColor='0.7 0.7 0.7' specularColor='0.5 0.5 0.5'/>
+                    <ComposedCubeMapTexture containerField='texture'>
+                        <ImageTexture url='"bBK.png" "http://coderextreme.net/bug/bBK.png"' containerField='back'/>
+                        <ImageTexture url='"bBT.png" "http://coderextreme.net/bug/bBT.png"' containerField='bottom'/>
+                        <ImageTexture url='"bFR.png" "http://coderextreme.net/bug/bFR.png"' containerField='front'/>
+                        <ImageTexture url='"bLF.png" "http://coderextreme.net/bug/bLF.png"' containerField='left'/>
+                        <ImageTexture url='"bRT.png" "http://coderextreme.net/bug/bRT.png"' containerField='right'/>
+                        <ImageTexture url='"bTP.png" "http://coderextreme.net/bug/bTP.png"' containerField='top'/>
+                    </ComposedCubeMapTexture>
+                    <ComposedShader DEF='ComposedShader' containerField='shaders' language='GLSL'>
+                        <field name='cube' accessType='inputOutput' type='SFInt32' value='0'/>
+                        <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'/>
+                        <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/>
+                        <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/>
+                        <field name='power' accessType='inputOutput' type='SFFloat' value='2'/>
+                        <ShaderPart url='"bubbles.vs" "http://coderextreme.net/bug/bubbles.vs"' containerField='parts'/>
+                        <ShaderPart url='"bubbles.fs" "http://coderextreme.net/bug/bubbles.fs"' containerField='parts' type='FRAGMENT'/>
+                    </ComposedShader>
+                </Appearance>
+            </Shape>
+        </Transform>
     </Scene>
 </X3D>
-<!--
-<script type="text/javascript">
-var value_changed = 0;
-var positions = [[10, 0, 90], [10, 0.0015708, 90]];
-var position_changed = '10 0 90 10 0.0015708 90';
-setInterval(function () {
-       var ov = value_changed;
-       do {
-           value_changed = Math.round(Math.random()*2);
-           var vc = value_changed;
-           positions[vc] = [0, 0,  Math.random()*360];
-       } while ( positions[ov][0] === positions[vc][0] && positions[ov][1] === positions[vc][1] && positions[ov][2] === positions[vc][2]);
-       position_changed = positions[ov].join(" ") + " " + positions[vc].join(" ");
-       document.getElementById("TourPosition").setAttribute("keyValue", position_changed);
-}, 5000);
-</script>
-</body>
-</html>
--->
