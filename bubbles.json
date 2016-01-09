@@ -23,12 +23,12 @@
           },
           { "Background":
             {
-              "@backUrl":"\"cubemap/BK.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/BK.png\"",
-              "@bottomUrl":"\"cubemap/BT.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/BT.png\"",
-              "@frontUrl":"\"cubemap/FR.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/FR.png\"",
-              "@leftUrl":"\"cubemap/LF.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/LF.png\"",
-              "@rightUrl":"\"cubemap/RT.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/RT.png\"",
-              "@topUrl":"\"cubemap/TP.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/TP.png\""
+              "@backUrl":["cubemap/BK.png","http://coderextreme.net/X3DJSONLD/cubemap/BK.png"],
+              "@bottomUrl":["cubemap/BT.png","http://coderextreme.net/X3DJSONLD/cubemap/BT.png"],
+              "@frontUrl":["cubemap/FR.png","http://coderextreme.net/X3DJSONLD/cubemap/FR.png"],
+              "@leftUrl":["cubemap/LF.png","http://coderextreme.net/X3DJSONLD/cubemap/LF.png"],
+              "@rightUrl":["cubemap/RT.png","http://coderextreme.net/X3DJSONLD/cubemap/RT.png"],
+              "@topUrl":["cubemap/TP.png","http://coderextreme.net/X3DJSONLD/cubemap/TP.png"]
             }
           },
           { "Transform":
@@ -47,15 +47,16 @@
                       { "Appearance":
                         {
                           "@DEF":"_01_-_Default",
-                          "#comment":[
-                            "ComposedCubeMapTexture containerField='texture'> <ImageTexture url='\"cubemap/BK.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/BK.png\"' containerField='back'/> <ImageTexture url='\"cubemap/BT.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/BT.png\"' containerField='bottom'/> <ImageTexture url='\"cubemap/FR.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/FR.png\"' containerField='front'/> <ImageTexture url='\"cubemap/LF.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/LF.png\"' containerField='left'/> <ImageTexture url='\"cubemap/RT.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/RT.png\"' containerField='right'/> <ImageTexture url='\"cubemap/TP.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/TP.png\"' containerField='top'/> </ComposedCubeMapTexture> <ComposedShader DEF='ComposedShader' containerField='shaders' language='GLSL'> <field name='cube' accessType='inputOutput' type='SFInt32' value='0'/> <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'/> <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/> <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/> <field name='power' accessType='inputOutput' type='SFFloat' value='2'/> <ShaderPart url='\"bubbles.vs\" \"http://coderextreme.net/X3DJSONLD/bubbles.vs\"' containerField='parts'/> <ShaderPart url='\"bubbles.fs\" \"http://coderextreme.net/X3DJSONLD/bubbles.fs\"' containerField='parts' type='FRAGMENT'/> </ComposedShader"
-                          ],
                           "-material":[
                             { "Material":
                               {
                                 "@diffuseColor":[0.7,0.7,0.7],
                                 "@specularColor":[0.5,0.5,0.5]
                               }
+                            }
+                          ],
+                          "-children":[
+                            { "#comment":"ComposedCubeMapTexture containerField='texture'> <ImageTexture url='\"cubemap/BK.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/BK.png\"' containerField='back'/> <ImageTexture url='\"cubemap/BT.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/BT.png\"' containerField='bottom'/> <ImageTexture url='\"cubemap/FR.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/FR.png\"' containerField='front'/> <ImageTexture url='\"cubemap/LF.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/LF.png\"' containerField='left'/> <ImageTexture url='\"cubemap/RT.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/RT.png\"' containerField='right'/> <ImageTexture url='\"cubemap/TP.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/TP.png\"' containerField='top'/> </ComposedCubeMapTexture> <ComposedShader DEF='ComposedShader' containerField='shaders' language='GLSL'> <field name='cube' accessType='inputOutput' type='SFInt32' value='0'/> <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'/> <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/> <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/> <field name='power' accessType='inputOutput' type='SFFloat' value='2'/> <ShaderPart url='\"bubbles.vs\" \"http://coderextreme.net/X3DJSONLD/bubbles.vs\"' containerField='parts'/> <ShaderPart url='\"bubbles.fs\" \"http://coderextreme.net/X3DJSONLD/bubbles.fs\"' containerField='parts' type='FRAGMENT'/> </ComposedShader"
                             }
                           ]
                         }
@@ -155,50 +156,62 @@
 "               }"
 ]
             }
-          }
-        ],
-        "ROUTE": [
-          {
-            "@fromNode":"TourTime",
-            "@fromField":"cycleTime",
-            "@toNode":"RandomTourTime",
-            "@toField":"set_fraction"
           },
-          {
-            "@fromNode":"RandomTourTime",
-            "@fromField":"orientation_changed",
-            "@toNode":"TourOrientation",
-            "@toField":"keyValue"
+          { "ROUTE":
+            {
+              "@fromNode":"TourTime",
+              "@fromField":"cycleTime",
+              "@toNode":"RandomTourTime",
+              "@toField":"set_fraction"
+            }
           },
-          {
-            "@fromNode":"RandomTourTime",
-            "@fromField":"position_changed",
-            "@toNode":"TourPosition",
-            "@toField":"keyValue"
+          { "ROUTE":
+            {
+              "@fromNode":"RandomTourTime",
+              "@fromField":"orientation_changed",
+              "@toNode":"TourOrientation",
+              "@toField":"keyValue"
+            }
           },
-          {
-            "@fromNode":"TourTime",
-            "@fromField":"fraction_changed",
-            "@toNode":"TourOrientation",
-            "@toField":"set_fraction"
+          { "ROUTE":
+            {
+              "@fromNode":"RandomTourTime",
+              "@fromField":"position_changed",
+              "@toNode":"TourPosition",
+              "@toField":"keyValue"
+            }
           },
-          {
-            "@fromNode":"TourOrientation",
-            "@fromField":"value_changed",
-            "@toNode":"Tour",
-            "@toField":"set_orientation"
+          { "ROUTE":
+            {
+              "@fromNode":"TourTime",
+              "@fromField":"fraction_changed",
+              "@toNode":"TourOrientation",
+              "@toField":"set_fraction"
+            }
           },
-          {
-            "@fromNode":"TourTime",
-            "@fromField":"fraction_changed",
-            "@toNode":"TourPosition",
-            "@toField":"set_fraction"
+          { "ROUTE":
+            {
+              "@fromNode":"TourOrientation",
+              "@fromField":"value_changed",
+              "@toNode":"Tour",
+              "@toField":"set_orientation"
+            }
           },
-          {
-            "@fromNode":"TourPosition",
-            "@fromField":"value_changed",
-            "@toNode":"Tour",
-            "@toField":"set_position"
+          { "ROUTE":
+            {
+              "@fromNode":"TourTime",
+              "@fromField":"fraction_changed",
+              "@toNode":"TourPosition",
+              "@toField":"set_fraction"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"TourPosition",
+              "@fromField":"value_changed",
+              "@toNode":"Tour",
+              "@toField":"set_position"
+            }
           }
         ]
     }
