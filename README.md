@@ -1,7 +1,7 @@
 # content
 X3D JSON loader and node.js express web server for serving files from localhost
 
-* for using the API, read GettingStarted.rtf  There are still symbols in the global scope I'd like to get rid of.  If you'd like to help, fork and issue a pull request.
+* for using the API, read GettingStarted.pdf  There are still symbols in the global scope I'd like to get rid of.  If you'd like to help, fork and issue a pull request.
 
 
 * Download and install git
