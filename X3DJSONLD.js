@@ -230,7 +230,7 @@ function ConvertToX3DOM(object, parentkey, element, path) {
 				}
 			} else {
 				// if non string array
-				elementSetAttribute(element, parentkey.substr(1),localArray.join(", "), attributes);
+				elementSetAttribute(element, parentkey.substr(1),localArray.join(" "), attributes);
 			}
 		}
 		isArray = false;

@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D profile='Immersive' version='3.3' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance'>        
+    <Scene>                
+        <NavigationInfo type='&quot;ANY&quot; &quot;WALK&quot; &quot;EXAMINE&quot; &quot;FLY&quot; &quot;LOOKAT&quot;'>                </NavigationInfo>                
+        <Viewpoint description='Rubiks Cube' position='0 0 12'>                </Viewpoint>                
+        <Group>                        
+            <Transform translation='0 0 0'>                                
+                <Group>                                        
+                    <Transform translation='0 0 0'>                                                
+                        <Group>                                                        
+                            <Transform translation='0 0 0'>                                                                
+                                <Group DEF='twentyseven82000twentyseven82000sphere109000' class='twentyseven82000twentyseven82000sphere109000'>                                                                        
+                                    <Transform translation='0 0 0'>                                                                                
+                                        <Shape>                                                                                        
+                                            <Sphere/>                                                                                        
+                                            <Appearance>                                                                                                
+                                                <Material diffuseColor='1 1 1'>                                                                                                </Material>                                                                                        
+                                            </Appearance>                                                                                
+                                        </Shape>                                                                        
+                                    </Transform>                                                                
+                                </Group>                                                                
+                                <Group DEF='twentyseven82000twentyseven82000sphere110000' class='twentyseven82000twentyseven82000sphere110000'>                                                                        
+                                    <Transform translation='2 0 0'>                                                                                
+                                        <Shape>                                                                                        
+                                            <Sphere/>                                                                                        
+                                            <Appearance>                                                                                                
+                                                <Material diffuseColor='1 1 1'>                                                                                                </Material>                                                                                        
+                                            </Appearance>                                                                                
+                                        </Shape>                                                                        
+                                    </Transform>                                                                
+                                </Group>                                                                
+                                <Group DEF='twentyseven82000twentyseven82000sphere111000' class='twentyseven82000twentyseven82000sphere111000'>                                                                        
+                                    <Transform translation='-2 0 0'>                                                                                
+                                        <Shape>                                                                                        
+                                            <Sphere/>                                                                                        
+                                            <Appearance>                                                                                                
+                                                <Material diffuseColor='1 1 1'>                                                                                                </Material>                                                                                        
+                                            </Appearance>                                                                                
+                                        </Shape>                                                                        
+                                    </Transform>                                                                
+                                </Group>                                                        
+                            </Transform>                                                
+                        </Group>                                                
+                        <Group>                                                        
+                            <Transform translation='0 2 0'>                                                                
+                                <Group DEF='twentyseven82000twentyseven82000sphere116000' class='twentyseven82000twentyseven82000sphere116000'>                                                                        
+                                    <Transform translation='0 0 0'>                                                                                
+                                        <Shape>                                                                                        
+                                            <Sphere/>                                                                                        
+                                            <Appearance>                                                                                                
+                                                <Material diffuseColor='1 1 1'>                                                                                                </Material>                                                                                        
+                                            </Appearance>                                                                                
+                                        </Shape>                                                                        
+                                    </Transform>                                                                
+                                </Group>                                                                
+                                <Group DEF='twentyseven82000twentyseven82000sphere117000' class='twentyseven82000twentyseven82000sphere117000'>                                                                        
+                                    <Transform translation='2 0 0'>                                                                                
+                                        <Shape>                                                                                        
+                                            <Sphere/>                                                                                        
+                                            <Appearance>                                                                                                
+                                                <Material diffuseColor='1 1 1'>                                                                                                </Material>                                                                                        
+                                            </Appearance>                                                                                
+                                        </Shape>                                                                        
+                                    </Transform>                                                                
+                                </Group>                                                                
+                                <Group DEF='twentyseven82000twentyseven82000sphere118000' class='twentyseven82000twentyseven82000sphere118000'>                                                                        
+                                    <Transform translation='-2 0 0'>                                                                                
+                                        <Shape>                                                                                        
+                                            <Sphere/>                                                                                        
+                                            <Appearance>                                                                                                
+                                                <Material diffuseColor='1 1 1'>                                                                                                </Material>                                                                                        
+                                            </Appearance>                                                                                
+                                        </Shape>                                                                        
+                                    </Transform>                                                                
+                                </Group>                                                        
+                            </Transform>                                                
+                        </Group>                                                
+                        <Group>                                                        
+                            <Transform translation='0 -2 0'>                                                                
+                                <Group DEF='twentyseven82000twentyseven82000sphere123000' class='twentyseven82000twentyseven82000sphere123000'>                                                                        
+                                    <Transform translation='0 0 0'>                                                                                
+                                        <Shape>                                                                                        
+                                            <Sphere/>                                                                                        
+                                            <Appearance>                                                                                                
+                                                <Material diffuseColor='1 1 1'>                                                                                                </Material>                                                                                        
+                                            </Appearance>                                                                                
+                                        </Shape>                                                                        
+                                    </Transform>                                                                
+                                </Group>                                                                
+                                <Group DEF='twentyseven82000twentyseven82000sphere124000' class='twentyseven82000twentyseven82000sphere124000'>                                                                        
+                                    <Transform translation='2 0 0'>                                                                                
+                                        <Shape>                                                                                        
+                                            <Sphere/>                                                                                        
+                                            <Appearance>                                                                                                
+                                                <Material diffuseColor='1 1 1'>                                                                                                </Material>                                                                                        
+                                            </Appearance>                                                                                
+                                        </Shape>                                                                        
+                                    </Transform>                                                                
+                                </Group>                                                                
+                                <Group DEF='twentyseven82000twentyseven82000sphere125000' class='twentyseven82000twentyseven82000sphere125000'>                                                                        
+                                    <Transform translation='-2 0 0'>                                                                                
+                                        <Shape>                                                                                        
+                                            <Sphere/>                                                                                        
+                                            <Appearance>                                                                                                
+                                                <Material diffuseColor='1 1 1'>                                                                                                </Material>                                                                                        
+                                            </Appearance>                                                                                
+                                        </Shape>                                                                        
+                                    </Transform>                                                                
+                                </Group>                                                        
+                            </Transform>                                                
+                        </Group>                                        
+                    </Transform>                                
+                </Group>                                
+                <Group>                                        
+                    <Transform translation='0 0 2'>                                                
+                        <Group>                                                        
+                            <Transform translation='0 0 0'>                                                                
+                                <Group DEF='twentyseven82000twentyseven82000sphere152000' class='twentyseven82000twentyseven82000sphere152000'>                                                                        
+                                    <Transform translation='0 0 0'>                                                                                
+                                        <Shape>                                                                                        
+                                            <Sphere/>                                                                                        
+                                            <Appearance>                                                                                                
+                                                <Material diffuseColor='1 1 1'>                                                                                                </Material>                                                                                        
+                                            </Appearance>                                                                                
+                                        </Shape>                                                                        
+                                    </Transform>                                                                
+                                </Group>                                                                
+                                <Group DEF='twentyseven82000twentyseven82000sphere153000' class='twentyseven82000twentyseven82000sphere153000'>                                                                        
+                                    <Transform translation='2 0 0'>                                                                                
+                                        <Shape>                                                                                        
+                                            <Sphere/>                                                                                        
+                                            <Appearance>                                                                                                
+                                                <Material diffuseColor='1 1 1'>                                                                                                </Material>                                                                                        
+                                            </Appearance>                                                                                
+                                        </Shape>                                                                        
+                                    </Transform>                                                                
+                                </Group>                                                                
+                                <Group DEF='twentyseven82000twentyseven82000sphere154000' class='twentyseven82000twentyseven82000sphere154000'>                                                                        
+                                    <Transform translation='-2 0 0'>                                                                                
+                                        <Shape>                                                                                        
+                                            <Sphere/>                                                                                        
+                                            <Appearance>                                                                                                
+                                                <Material diffuseColor='1 1 1'>                                                                                                </Material>                                                                                        
+                                            </Appearance>                                                                                
+                                        </Shape>                                                                        
+                                    </Transform>                                                                
+                                </Group>                                                        
+                            </Transform>                                                
+                        </Group>                                                
+                        <Group>                                                        
+                            <Transform translation='0 2 0'>                                                                
+                                <Group DEF='twentyseven82000twentyseven82000sphere159000' class='twentyseven82000twentyseven82000sphere159000'>                                                                        
+                                    <Transform translation='0 0 0'>                                                                                
+                                        <Shape>                                                                                        
+                                            <Sphere/>                                                                                        
+                                            <Appearance>                                                                                                
+                                                <Material diffuseColor='1 1 1'>                                                                                                </Material>                                                                                        
+                                            </Appearance>                                                                                
+                                        </Shape>                                                                        
+                                    </Transform>                                                                
+                                </Group>                                                                
+                                <Group DEF='twentyseven82000twentyseven82000sphere160000' class='twentyseven82000twentyseven82000sphere160000'>                                                                        
+                                    <Transform translation='2 0 0'>                                                                                
+                                        <Shape>                                                                                        
+                                            <Sphere/>                                                                                        
+                                            <Appearance>                                                                                                
+                                                <Material diffuseColor='1 1 1'>                                                                                                </Material>                                                                                        
+                                            </Appearance>                                                                                
+                                        </Shape>                                                                        
+                                    </Transform>                                                                
+                                </Group>                                                                
+                                <Group DEF='twentyseven82000twentyseven82000sphere161000' class='twentyseven82000twentyseven82000sphere161000'>                                                                        
+                                    <Transform translation='-2 0 0'>                                                                                
+                                        <Shape>                                                                                        
+                                            <Sphere/>                                                                                        
+                                            <Appearance>                                                                                                
+                                                <Material diffuseColor='1 1 1'>                                                                                                </Material>                                                                                        
+                                            </Appearance>                                                                                
+                                        </Shape>                                                                        
+                                    </Transform>                                                                
+                                </Group>                                                        
+                            </Transform>                                                
+                        </Group>                                                
+                        <Group>                                                        
+                            <Transform translation='0 -2 0'>                                                                
+                                <Group DEF='twentyseven82000twentyseven82000sphere166000' class='twentyseven82000twentyseven82000sphere166000'>                                                                        
+                                    <Transform translation='0 0 0'>                                                                                
+                                        <Shape>                                                                                        
+                                            <Sphere/>                                                                                        
+                                            <Appearance>                                                                                                
+                                                <Material diffuseColor='1 1 1'>                                                                                                </Material>                                                                                        
+                                            </Appearance>                                                                                
+                                        </Shape>                                                                        
+                                    </Transform>                                                                
+                                </Group>                                                                
+                                <Group DEF='twentyseven82000twentyseven82000sphere167000' class='twentyseven82000twentyseven82000sphere167000'>                                                                        
+                                    <Transform translation='2 0 0'>                                                                                
+                                        <Shape>                                                                                        
+                                            <Sphere/>                                                                                        
+                                            <Appearance>                                                                                                
+                                                <Material diffuseColor='1 1 1'>                                                                                                </Material>                                                                                        
+                                            </Appearance>                                                                                
+                                        </Shape>                                                                        
+                                    </Transform>                                                                
+                                </Group>                                                                
+                                <Group DEF='twentyseven82000twentyseven82000sphere168000' class='twentyseven82000twentyseven82000sphere168000'>                                                                        
+                                    <Transform translation='-2 0 0'>                                                                                
+                                        <Shape>                                                                                        
+                                            <Sphere/>                                                                                        
+                                            <Appearance>                                                                                                
+                                                <Material diffuseColor='1 1 1'>                                                                                                </Material>                                                                                        
+                                            </Appearance>                                                                                
+                                        </Shape>                                                                        
+                                    </Transform>                                                                
+                                </Group>                                                        
+                            </Transform>                                                
+                        </Group>                                        
+                    </Transform>                                
+                </Group>                                
+                <Group>                                        
+                    <Transform translation='0 0 -2'>                                                
+                        <Group>                                                        
+                            <Transform translation='0 0 0'>                                                                
+                                <Group DEF='twentyseven82000twentyseven82000sphere195000' class='twentyseven82000twentyseven82000sphere195000'>                                                                        
+                                    <Transform translation='0 0 0'>                                                                                
+                                        <Shape>                                                                                        
+                                            <Sphere/>                                                                                        
+                                            <Appearance>                                                                                                
+                                                <Material diffuseColor='1 1 1'>                                                                                                </Material>                                                                                        
+                                            </Appearance>                                                                                
+                                        </Shape>                                                                        
+                                    </Transform>                                                                
+                                </Group>                                                                
+                                <Group DEF='twentyseven82000twentyseven82000sphere196000' class='twentyseven82000twentyseven82000sphere196000'>                                                                        
+                                    <Transform translation='2 0 0'>                                                                                
+                                        <Shape>                                                                                        
+                                            <Sphere/>                                                                                        
+                                            <Appearance>                                                                                                
+                                                <Material diffuseColor='1 1 1'>                                                                                                </Material>                                                                                        
+                                            </Appearance>                                                                                
+                                        </Shape>                                                                        
+                                    </Transform>                                                                
+                                </Group>                                                                
+                                <Group DEF='twentyseven82000twentyseven82000sphere197000' class='twentyseven82000twentyseven82000sphere197000'>                                                                        
+                                    <Transform translation='-2 0 0'>                                                                                
+                                        <Shape>                                                                                        
+                                            <Sphere/>                                                                                        
+                                            <Appearance>                                                                                                
+                                                <Material diffuseColor='1 1 1'>                                                                                                </Material>                                                                                        
+                                            </Appearance>                                                                                
+                                        </Shape>                                                                        
+                                    </Transform>                                                                
+                                </Group>                                                        
+                            </Transform>                                                
+                        </Group>                                                
+                        <Group>                                                        
+                            <Transform translation='0 2 0'>                                                                
+                                <Group DEF='twentyseven82000twentyseven82000sphere202000' class='twentyseven82000twentyseven82000sphere202000'>                                                                        
+                                    <Transform translation='0 0 0'>                                                                                
+                                        <Shape>                                                                                        
+                                            <Sphere/>                                                                                        
+                                            <Appearance>                                                                                                
+                                                <Material diffuseColor='1 1 1'>                                                                                                </Material>                                                                                        
+                                            </Appearance>                                                                                
+                                        </Shape>                                                                        
+                                    </Transform>                                                                
+                                </Group>                                                                
+                                <Group DEF='twentyseven82000twentyseven82000sphere203000' class='twentyseven82000twentyseven82000sphere203000'>                                                                        
+                                    <Transform translation='2 0 0'>                                                                                
+                                        <Shape>                                                                                        
+                                            <Sphere/>                                                                                        
+                                            <Appearance>                                                                                                
+                                                <Material diffuseColor='1 1 1'>                                                                                                </Material>                                                                                        
+                                            </Appearance>                                                                                
+                                        </Shape>                                                                        
+                                    </Transform>                                                                
+                                </Group>                                                                
+                                <Group DEF='twentyseven82000twentyseven82000sphere204000' class='twentyseven82000twentyseven82000sphere204000'>                                                                        
+                                    <Transform translation='-2 0 0'>                                                                                
+                                        <Shape>                                                                                        
+                                            <Sphere/>                                                                                        
+                                            <Appearance>                                                                                                
+                                                <Material diffuseColor='1 1 1'>                                                                                                </Material>                                                                                        
+                                            </Appearance>                                                                                
+                                        </Shape>                                                                        
+                                    </Transform>                                                                
+                                </Group>                                                        
+                            </Transform>                                                
+                        </Group>                                                
+                        <Group>                                                        
+                            <Transform translation='0 -2 0'>                                                                
+                                <Group DEF='twentyseven82000twentyseven82000sphere209000' class='twentyseven82000twentyseven82000sphere209000'>                                                                        
+                                    <Transform translation='0 0 0'>                                                                                
+                                        <Shape>                                                                                        
+                                            <Sphere/>                                                                                        
+                                            <Appearance>                                                                                                
+                                                <Material diffuseColor='1 1 1'>                                                                                                </Material>                                                                                        
+                                            </Appearance>                                                                                
+                                        </Shape>                                                                        
+                                    </Transform>                                                                
+                                </Group>                                                                
+                                <Group DEF='twentyseven82000twentyseven82000sphere210000' class='twentyseven82000twentyseven82000sphere210000'>                                                                        
+                                    <Transform translation='2 0 0'>                                                                                
+                                        <Shape>                                                                                        
+                                            <Sphere/>                                                                                        
+                                            <Appearance>                                                                                                
+                                                <Material diffuseColor='1 1 1'>                                                                                                </Material>                                                                                        
+                                            </Appearance>                                                                                
+                                        </Shape>                                                                        
+                                    </Transform>                                                                
+                                </Group>                                                                
+                                <Group DEF='twentyseven82000' class='twentyseven82000'>                                                                        
+                                    <Transform translation='-2 0 0'>                                                                                
+                                        <Shape>                                                                                        
+                                            <Sphere/>                                                                                        
+                                            <Appearance>                                                                                                
+                                                <Material diffuseColor='1 1 1'>                                                                                                </Material>                                                                                        
+                                            </Appearance>                                                                                
+                                        </Shape>                                                                        
+                                    </Transform>                                                                
+                                </Group>                                                        
+                            </Transform>                                                
+                        </Group>                                        
+                    </Transform>                                
+                </Group>                        
+            </Transform>                
+        </Group>        
+    </Scene>    
+</X3D>

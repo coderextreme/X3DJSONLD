@@ -1,8 +1,8 @@
 {
   "X3D": {
     "@profile": "Immersive",
-    "@version": 4,
-    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-4.0.xsd",
+    "@version": 3.3,
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
     "head": {
       "meta": [
         {
@@ -70,7 +70,7 @@
                   "-children": [
                     {
                       "Transform": {
-                        "@DEF": "transformnodenodeAnode",
+                        "@DEF": "nodenodeAnodetransform",
                         "-children": [
                           {
                             "Shape": {
@@ -151,7 +151,7 @@
                             }
                           }
                         ],
-                        "@class": "transformnodenodeAnode",
+                        "@class": "nodenodeAnodetransform",
                         "@translation": [
                           0,
                           0,
@@ -161,7 +161,7 @@
                     },
                     {
                       "PositionInterpolator": {
-                        "@DEF": "NodePositionnodenodeAnode",
+                        "@DEF": "nodenodeAnodeNodePosition",
                         "@key": [
                           0,
                           1
@@ -174,12 +174,12 @@
                           5,
                           0
                         ],
-                        "@class": "NodePositionnodenodeAnode"
+                        "@class": "nodenodeAnodeNodePosition"
                       }
                     },
                     {
                       "Script": {
-                        "@DEF": "MoveBallnodenodeAnode",
+                        "@DEF": "nodenodeAnodeMoveBall",
                         "field": [
                           {
                             "@name": "translation",
@@ -220,52 +220,52 @@
                           "                                                keyValue = new MFVec3f(old, translation);",
                           "\t\t\t\t\t}"
                         ],
-                        "@class": "MoveBallnodenodeAnode"
+                        "@class": "nodenodeAnodeMoveBall"
                       }
                     },
                     {
                       "TimeSensor": {
-                        "@DEF": "nodeClocknodenodeAnode",
+                        "@DEF": "nodenodeAnodenodeClock",
                         "@cycleInterval": 3,
                         "@loop": true,
-                        "@class": "nodeClocknodenodeAnode"
+                        "@class": "nodenodeAnodenodeClock"
                       }
                     },
                     {
                       "ROUTE": {
-                        "@fromNode": "nodeClocknodenodeAnode",
+                        "@fromNode": "nodenodeAnodenodeClock",
                         "@fromField": "cycleTime",
-                        "@toNode": "MoveBallnodenodeAnode",
+                        "@toNode": "nodenodeAnodeMoveBall",
                         "@toField": "set_location"
                       }
                     },
                     {
                       "ROUTE": {
-                        "@fromNode": "nodeClocknodenodeAnode",
+                        "@fromNode": "nodenodeAnodenodeClock",
                         "@fromField": "fraction_changed",
-                        "@toNode": "NodePositionnodenodeAnode",
+                        "@toNode": "nodenodeAnodeNodePosition",
                         "@toField": "set_fraction"
                       }
                     },
                     {
                       "ROUTE": {
-                        "@fromNode": "MoveBallnodenodeAnode",
+                        "@fromNode": "nodenodeAnodeMoveBall",
                         "@fromField": "keyValue",
-                        "@toNode": "NodePositionnodenodeAnode",
+                        "@toNode": "nodenodeAnodeNodePosition",
                         "@toField": "keyValue"
                       }
                     },
                     {
                       "ROUTE": {
-                        "@fromNode": "NodePositionnodenodeAnode",
+                        "@fromNode": "nodenodeAnodeNodePosition",
                         "@fromField": "value_changed",
-                        "@toNode": "transformnodenodeAnode",
+                        "@toNode": "nodenodeAnodetransform",
                         "@toField": "set_translation"
                       }
                     }
                   ],
-                  "@DEF": "nodeAnode",
-                  "@class": "nodeAnode"
+                  "@DEF": "nodenodeA",
+                  "@class": "nodenodeA"
                 }
               },
               {
@@ -273,7 +273,7 @@
                   "-children": [
                     {
                       "Transform": {
-                        "@DEF": "transformnodenodeBnode",
+                        "@DEF": "nodenodeBnodetransform",
                         "-children": [
                           {
                             "Shape": {
@@ -354,7 +354,7 @@
                             }
                           }
                         ],
-                        "@class": "transformnodenodeBnode",
+                        "@class": "nodenodeBnodetransform",
                         "@translation": [
                           50,
                           50,
@@ -364,7 +364,7 @@
                     },
                     {
                       "PositionInterpolator": {
-                        "@DEF": "NodePositionnodenodeBnode",
+                        "@DEF": "nodenodeBnodeNodePosition",
                         "@key": [
                           0,
                           1
@@ -377,12 +377,12 @@
                           5,
                           0
                         ],
-                        "@class": "NodePositionnodenodeBnode"
+                        "@class": "nodenodeBnodeNodePosition"
                       }
                     },
                     {
                       "Script": {
-                        "@DEF": "MoveBallnodenodeBnode",
+                        "@DEF": "nodenodeBnodeMoveBall",
                         "field": [
                           {
                             "@name": "translation",
@@ -423,52 +423,52 @@
                           "                                                keyValue = new MFVec3f(old, translation);",
                           "\t\t\t\t\t}"
                         ],
-                        "@class": "MoveBallnodenodeBnode"
+                        "@class": "nodenodeBnodeMoveBall"
                       }
                     },
                     {
                       "TimeSensor": {
-                        "@DEF": "nodeClocknodenodeBnode",
+                        "@DEF": "nodenodeBnodenodeClock",
                         "@cycleInterval": 3,
                         "@loop": true,
-                        "@class": "nodeClocknodenodeBnode"
+                        "@class": "nodenodeBnodenodeClock"
                       }
                     },
                     {
                       "ROUTE": {
-                        "@fromNode": "nodeClocknodenodeBnode",
+                        "@fromNode": "nodenodeBnodenodeClock",
                         "@fromField": "cycleTime",
-                        "@toNode": "MoveBallnodenodeBnode",
+                        "@toNode": "nodenodeBnodeMoveBall",
                         "@toField": "set_location"
                       }
                     },
                     {
                       "ROUTE": {
-                        "@fromNode": "nodeClocknodenodeBnode",
+                        "@fromNode": "nodenodeBnodenodeClock",
                         "@fromField": "fraction_changed",
-                        "@toNode": "NodePositionnodenodeBnode",
+                        "@toNode": "nodenodeBnodeNodePosition",
                         "@toField": "set_fraction"
                       }
                     },
                     {
                       "ROUTE": {
-                        "@fromNode": "MoveBallnodenodeBnode",
+                        "@fromNode": "nodenodeBnodeMoveBall",
                         "@fromField": "keyValue",
-                        "@toNode": "NodePositionnodenodeBnode",
+                        "@toNode": "nodenodeBnodeNodePosition",
                         "@toField": "keyValue"
                       }
                     },
                     {
                       "ROUTE": {
-                        "@fromNode": "NodePositionnodenodeBnode",
+                        "@fromNode": "nodenodeBnodeNodePosition",
                         "@fromField": "value_changed",
-                        "@toNode": "transformnodenodeBnode",
+                        "@toNode": "nodenodeBnodetransform",
                         "@toField": "set_translation"
                       }
                     }
                   ],
-                  "@DEF": "nodeBnode",
-                  "@class": "nodeBnode"
+                  "@DEF": "nodenodeB",
+                  "@class": "nodenodeB"
                 }
               },
               {
@@ -476,7 +476,7 @@
                   "-children": [
                     {
                       "Transform": {
-                        "@DEF": "transformnodenodeCnode",
+                        "@DEF": "nodenodeCnodetransform",
                         "-children": [
                           {
                             "Shape": {
@@ -557,7 +557,7 @@
                             }
                           }
                         ],
-                        "@class": "transformnodenodeCnode",
+                        "@class": "nodenodeCnodetransform",
                         "@translation": [
                           -50,
                           -50,
@@ -567,7 +567,7 @@
                     },
                     {
                       "PositionInterpolator": {
-                        "@DEF": "NodePositionnodenodeCnode",
+                        "@DEF": "nodenodeCnodeNodePosition",
                         "@key": [
                           0,
                           1
@@ -580,12 +580,12 @@
                           5,
                           0
                         ],
-                        "@class": "NodePositionnodenodeCnode"
+                        "@class": "nodenodeCnodeNodePosition"
                       }
                     },
                     {
                       "Script": {
-                        "@DEF": "MoveBallnodenodeCnode",
+                        "@DEF": "nodenodeCnodeMoveBall",
                         "field": [
                           {
                             "@name": "translation",
@@ -626,52 +626,52 @@
                           "                                                keyValue = new MFVec3f(old, translation);",
                           "\t\t\t\t\t}"
                         ],
-                        "@class": "MoveBallnodenodeCnode"
+                        "@class": "nodenodeCnodeMoveBall"
                       }
                     },
                     {
                       "TimeSensor": {
-                        "@DEF": "nodeClocknodenodeCnode",
+                        "@DEF": "nodenodeCnodenodeClock",
                         "@cycleInterval": 3,
                         "@loop": true,
-                        "@class": "nodeClocknodenodeCnode"
+                        "@class": "nodenodeCnodenodeClock"
                       }
                     },
                     {
                       "ROUTE": {
-                        "@fromNode": "nodeClocknodenodeCnode",
+                        "@fromNode": "nodenodeCnodenodeClock",
                         "@fromField": "cycleTime",
-                        "@toNode": "MoveBallnodenodeCnode",
+                        "@toNode": "nodenodeCnodeMoveBall",
                         "@toField": "set_location"
                       }
                     },
                     {
                       "ROUTE": {
-                        "@fromNode": "nodeClocknodenodeCnode",
+                        "@fromNode": "nodenodeCnodenodeClock",
                         "@fromField": "fraction_changed",
-                        "@toNode": "NodePositionnodenodeCnode",
+                        "@toNode": "nodenodeCnodeNodePosition",
                         "@toField": "set_fraction"
                       }
                     },
                     {
                       "ROUTE": {
-                        "@fromNode": "MoveBallnodenodeCnode",
+                        "@fromNode": "nodenodeCnodeMoveBall",
                         "@fromField": "keyValue",
-                        "@toNode": "NodePositionnodenodeCnode",
+                        "@toNode": "nodenodeCnodeNodePosition",
                         "@toField": "keyValue"
                       }
                     },
                     {
                       "ROUTE": {
-                        "@fromNode": "NodePositionnodenodeCnode",
+                        "@fromNode": "nodenodeCnodeNodePosition",
                         "@fromField": "value_changed",
-                        "@toNode": "transformnodenodeCnode",
+                        "@toNode": "nodenodeCnodetransform",
                         "@toField": "set_translation"
                       }
                     }
                   ],
-                  "@DEF": "nodeCnode",
-                  "@class": "nodeCnode"
+                  "@DEF": "nodenodeC",
+                  "@class": "nodenodeC"
                 }
               },
               {
@@ -679,7 +679,7 @@
                   "-children": [
                     {
                       "Transform": {
-                        "@DEF": "transformnodenodeDnode",
+                        "@DEF": "nodenodeDnodetransform",
                         "-children": [
                           {
                             "Shape": {
@@ -760,7 +760,7 @@
                             }
                           }
                         ],
-                        "@class": "transformnodenodeDnode",
+                        "@class": "nodenodeDnodetransform",
                         "@translation": [
                           50,
                           50,
@@ -770,7 +770,7 @@
                     },
                     {
                       "PositionInterpolator": {
-                        "@DEF": "NodePositionnodenodeDnode",
+                        "@DEF": "nodenodeDnodeNodePosition",
                         "@key": [
                           0,
                           1
@@ -783,12 +783,12 @@
                           5,
                           0
                         ],
-                        "@class": "NodePositionnodenodeDnode"
+                        "@class": "nodenodeDnodeNodePosition"
                       }
                     },
                     {
                       "Script": {
-                        "@DEF": "MoveBallnodenodeDnode",
+                        "@DEF": "nodenodeDnodeMoveBall",
                         "field": [
                           {
                             "@name": "translation",
@@ -829,52 +829,52 @@
                           "                                                keyValue = new MFVec3f(old, translation);",
                           "\t\t\t\t\t}"
                         ],
-                        "@class": "MoveBallnodenodeDnode"
+                        "@class": "nodenodeDnodeMoveBall"
                       }
                     },
                     {
                       "TimeSensor": {
-                        "@DEF": "nodeClocknodenodeDnode",
+                        "@DEF": "nodenodeDnodenodeClock",
                         "@cycleInterval": 3,
                         "@loop": true,
-                        "@class": "nodeClocknodenodeDnode"
+                        "@class": "nodenodeDnodenodeClock"
                       }
                     },
                     {
                       "ROUTE": {
-                        "@fromNode": "nodeClocknodenodeDnode",
+                        "@fromNode": "nodenodeDnodenodeClock",
                         "@fromField": "cycleTime",
-                        "@toNode": "MoveBallnodenodeDnode",
+                        "@toNode": "nodenodeDnodeMoveBall",
                         "@toField": "set_location"
                       }
                     },
                     {
                       "ROUTE": {
-                        "@fromNode": "nodeClocknodenodeDnode",
+                        "@fromNode": "nodenodeDnodenodeClock",
                         "@fromField": "fraction_changed",
-                        "@toNode": "NodePositionnodenodeDnode",
+                        "@toNode": "nodenodeDnodeNodePosition",
                         "@toField": "set_fraction"
                       }
                     },
                     {
                       "ROUTE": {
-                        "@fromNode": "MoveBallnodenodeDnode",
+                        "@fromNode": "nodenodeDnodeMoveBall",
                         "@fromField": "keyValue",
-                        "@toNode": "NodePositionnodenodeDnode",
+                        "@toNode": "nodenodeDnodeNodePosition",
                         "@toField": "keyValue"
                       }
                     },
                     {
                       "ROUTE": {
-                        "@fromNode": "NodePositionnodenodeDnode",
+                        "@fromNode": "nodenodeDnodeNodePosition",
                         "@fromField": "value_changed",
-                        "@toNode": "transformnodenodeDnode",
+                        "@toNode": "nodenodeDnodetransform",
                         "@toField": "set_translation"
                       }
                     }
                   ],
-                  "@DEF": "nodeDnode",
-                  "@class": "nodeDnode"
+                  "@DEF": "nodenodeD",
+                  "@class": "nodenodeD"
                 }
               },
               {
@@ -885,7 +885,7 @@
                         "-geometry": [
                           {
                             "Extrusion": {
-                              "@DEF": "extrusioncylinderlinkAcylinder",
+                              "@DEF": "cylinderlinkAcylinderextrusion",
                               "@creaseAngle": 0.785,
                               "@crossSection": [
                                 1,
@@ -931,7 +931,7 @@
                                 50,
                                 0
                               ],
-                              "@class": "extrusioncylinderlinkAcylinder"
+                              "@class": "cylinderlinkAcylinderextrusion"
                             }
                           }
                         ],
@@ -956,7 +956,7 @@
                     },
                     {
                       "Script": {
-                        "@DEF": "MoveCylindercylinderlinkAcylinder",
+                        "@DEF": "cylinderlinkAcylinderMoveCylinder",
                         "field": [
                           {
                             "@name": "spine",
@@ -1015,20 +1015,20 @@
                           "                    spine = value;",
                           "                }"
                         ],
-                        "@class": "MoveCylindercylinderlinkAcylinder"
+                        "@class": "cylinderlinkAcylinderMoveCylinder"
                       }
                     },
                     {
                       "ROUTE": {
-                        "@fromNode": "MoveCylindercylinderlinkAcylinder",
+                        "@fromNode": "cylinderlinkAcylinderMoveCylinder",
                         "@fromField": "spine",
-                        "@toNode": "extrusioncylinderlinkAcylinder",
+                        "@toNode": "cylinderlinkAcylinderextrusion",
                         "@toField": "set_spine"
                       }
                     }
                   ],
-                  "@DEF": "linkAcylinder",
-                  "@class": "linkAcylinder"
+                  "@DEF": "cylinderlinkA",
+                  "@class": "cylinderlinkA"
                 }
               },
               {
@@ -1039,7 +1039,7 @@
                         "-geometry": [
                           {
                             "Extrusion": {
-                              "@DEF": "extrusioncylinderlinkBcylinder",
+                              "@DEF": "cylinderlinkBcylinderextrusion",
                               "@creaseAngle": 0.785,
                               "@crossSection": [
                                 1,
@@ -1085,7 +1085,7 @@
                                 50,
                                 0
                               ],
-                              "@class": "extrusioncylinderlinkBcylinder"
+                              "@class": "cylinderlinkBcylinderextrusion"
                             }
                           }
                         ],
@@ -1110,7 +1110,7 @@
                     },
                     {
                       "Script": {
-                        "@DEF": "MoveCylindercylinderlinkBcylinder",
+                        "@DEF": "cylinderlinkBcylinderMoveCylinder",
                         "field": [
                           {
                             "@name": "spine",
@@ -1169,20 +1169,20 @@
                           "                    spine = value;",
                           "                }"
                         ],
-                        "@class": "MoveCylindercylinderlinkBcylinder"
+                        "@class": "cylinderlinkBcylinderMoveCylinder"
                       }
                     },
                     {
                       "ROUTE": {
-                        "@fromNode": "MoveCylindercylinderlinkBcylinder",
+                        "@fromNode": "cylinderlinkBcylinderMoveCylinder",
                         "@fromField": "spine",
-                        "@toNode": "extrusioncylinderlinkBcylinder",
+                        "@toNode": "cylinderlinkBcylinderextrusion",
                         "@toField": "set_spine"
                       }
                     }
                   ],
-                  "@DEF": "linkBcylinder",
-                  "@class": "linkBcylinder"
+                  "@DEF": "cylinderlinkB",
+                  "@class": "cylinderlinkB"
                 }
               },
               {
@@ -1193,7 +1193,7 @@
                         "-geometry": [
                           {
                             "Extrusion": {
-                              "@DEF": "extrusioncylinderlinkCcylinder",
+                              "@DEF": "cylinderlinkCcylinderextrusion",
                               "@creaseAngle": 0.785,
                               "@crossSection": [
                                 1,
@@ -1239,7 +1239,7 @@
                                 50,
                                 0
                               ],
-                              "@class": "extrusioncylinderlinkCcylinder"
+                              "@class": "cylinderlinkCcylinderextrusion"
                             }
                           }
                         ],
@@ -1264,7 +1264,7 @@
                     },
                     {
                       "Script": {
-                        "@DEF": "MoveCylindercylinderlinkCcylinder",
+                        "@DEF": "cylinderlinkCcylinderMoveCylinder",
                         "field": [
                           {
                             "@name": "spine",
@@ -1323,20 +1323,20 @@
                           "                    spine = value;",
                           "                }"
                         ],
-                        "@class": "MoveCylindercylinderlinkCcylinder"
+                        "@class": "cylinderlinkCcylinderMoveCylinder"
                       }
                     },
                     {
                       "ROUTE": {
-                        "@fromNode": "MoveCylindercylinderlinkCcylinder",
+                        "@fromNode": "cylinderlinkCcylinderMoveCylinder",
                         "@fromField": "spine",
-                        "@toNode": "extrusioncylinderlinkCcylinder",
+                        "@toNode": "cylinderlinkCcylinderextrusion",
                         "@toField": "set_spine"
                       }
                     }
                   ],
-                  "@DEF": "linkCcylinder",
-                  "@class": "linkCcylinder"
+                  "@DEF": "cylinderlinkC",
+                  "@class": "cylinderlinkC"
                 }
               }
             ],
@@ -1399,49 +1399,49 @@
         },
         {
           "ROUTE": {
-            "@fromNode": "transformnodenodeAnode",
+            "@fromNode": "nodenodeAnodetransform",
             "@fromField": "translation",
-            "@toNode": "MoveCylindercylinderlinkAcylinder",
+            "@toNode": "cylinderlinkAcylinderMoveCylinder",
             "@toField": "set_endA"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "transformnodenodeBnode",
+            "@fromNode": "nodenodeBnodetransform",
             "@fromField": "translation",
-            "@toNode": "MoveCylindercylinderlinkAcylinder",
+            "@toNode": "cylinderlinkAcylinderMoveCylinder",
             "@toField": "set_endB"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "transformnodenodeAnode",
+            "@fromNode": "nodenodeAnodetransform",
             "@fromField": "translation",
-            "@toNode": "MoveCylindercylinderlinkBcylinder",
+            "@toNode": "cylinderlinkBcylinderMoveCylinder",
             "@toField": "set_endA"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "transformnodenodeCnode",
+            "@fromNode": "nodenodeCnodetransform",
             "@fromField": "translation",
-            "@toNode": "MoveCylindercylinderlinkBcylinder",
+            "@toNode": "cylinderlinkBcylinderMoveCylinder",
             "@toField": "set_endB"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "transformnodenodeAnode",
+            "@fromNode": "nodenodeAnodetransform",
             "@fromField": "translation",
-            "@toNode": "MoveCylindercylinderlinkCcylinder",
+            "@toNode": "cylinderlinkCcylinderMoveCylinder",
             "@toField": "set_endA"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "transformnodenodeDnode",
+            "@fromNode": "nodenodeDnodetransform",
             "@fromField": "translation",
-            "@toNode": "MoveCylindercylinderlinkCcylinder",
+            "@toNode": "cylinderlinkCcylinderMoveCylinder",
             "@toField": "set_endB"
           }
         }
