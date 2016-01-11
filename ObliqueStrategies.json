@@ -217,7 +217,7 @@
           { "Script":
             {
               "@DEF":"TextScript",
-              "@url":["ObliqueStrategiesScript.js","http://X3dGraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategiesScript.js"],
+              "@url":["ObliqueStrategiesScript.js"],
               "#comment":[
                 "initialize() method includes unit test to printAllStrategies() to console",
                 "TODO insert field definitions here (index string_changed previous next random) and then animate!"
@@ -330,7 +330,7 @@
                         {
                           "@DEF":"TextToSpeechAudioClip",
                           "@description":"sends strategy text google translate",
-                          "@url":["http://translate.google.com/translate_tts?tl=en&amp;q=Feed%20the%20recording%20back%20out%20of%20the%20medium","translate_tts_mp3FileFormatNotSupported.wav","http://X3dGraphics.com/examples/X3dForAdvancedModeling/Inspiration/translate_tts_mp3FileFormatNotSupported.wav"]
+                          "@url":["http://translate.google.com/translate_tts?tl=en&amp;q=Feed%20the%20recording%20back%20out%20of%20the%20medium", "translate_tts_mp3FileFormatNotSupported.wav"]
                         }
                       }
                     ]
