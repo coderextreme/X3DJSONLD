@@ -1,10 +1,9 @@
 var protos = {};
-var currentproto = {};
 var defs = {};
 var nodeField = {};
 var protoField = {};
 var interfaceField = {};
-// var scopecount = 1000;
+var scopecount = 0;
 
 function setObjectPlaceHolder(scope, field, object, objectfield) {
 	// console.error('setobjphn', scope, field, object["@DEF"], object["@name"], objectfield);
@@ -79,17 +78,21 @@ function getEnv(scope, field) {
 
 function prototypeExpander(object, scope) {
 	realPrototypeExpander(object, scope);
-	zapIs(object);
+	zap(object);
 }
 
-function zapIs(object) {
+function zap(object) {
 	var p;
 	if (typeof object === "object") {
 		for (p in object) {
 			if (p.toLowerCase() === 'is') {
 				delete object[p];// no longer need IS
+			} else if (p.toLowerCase() === 'protodeclare') {
+				delete object[p];// no longer need PROTO
+			} else if (p.toLowerCase() === 'protoinstance') {
+				delete object[p];// no longer need INSTANCE
 			} else {
-				zapIs(object[p]);
+				zap(object[p]);
 			}
 		}
 	}
@@ -111,11 +114,8 @@ function realPrototypeExpander(object, scope) {
 			} else if (p.toLowerCase() === 'protodeclare') {
 				var name = object[p]["@name"];
 				protos[name] = object[p];
-				currentproto = protos[name];
 				realPrototypeExpander(object[p], name+scope);
-				delete object[p];
 			} else if (p.toLowerCase() === 'protointerface') {
-				currentproto['interface'] = object[p];
 				var fields = object[p]["field"];
 				for (var field in fields) {
 					setObjectInterface(scope,
@@ -124,21 +124,23 @@ function realPrototypeExpander(object, scope) {
 				}
 				realPrototypeExpander(object[p], scope);
 			} else if (p.toLowerCase() === 'protobody') {
-				currentproto['body'] = object[p];
 				realPrototypeExpander(object[p], scope);
 			} else if (p.toLowerCase() === 'protoinstance') {
 				var name = object[p]["@name"];
 				var def  = object[p]["@DEF"];
-				object["Group"] = JSON.parse(JSON.stringify(protos[name]['body']));
-				// handle scoping
+				if (typeof def === 'undefined') {
+					scopecount += 1000;
+					if (scopecount > 0) {
+						def = scopecount;
+					} else {
+						def = "";
+					}
+
+				}
+				console.error('Proto', name, protos[name]['ProtoBody']);
+				object["Group"] = JSON.parse(JSON.stringify(protos[name]['ProtoBody']));
 				body = object["Group"];
-				protos[def+name] = body;
 				realPrototypeExpander(body, def+name);
-				// assign afterward so we don't get a double name
-				body["@DEF"] = def+name;
-				body["@class"] = def+name;
-				defs[def] = def+name+scope;
-				// console.log("BODY", JSON.stringify(body));
 
 				var fieldValue = object[p]["fieldValue"];
 				for (var field in fieldValue) {
@@ -147,7 +149,10 @@ function realPrototypeExpander(object, scope) {
 					    fieldValue[field]["@value"]);
 				}
 
-				delete object[p];
+				// handle scoping
+				body["@DEF"] = def+name;
+				body["@class"] = def+name;
+				defs[def] = def+name;
 			} else if (p.toLowerCase() === 'connect') {
 				realPrototypeExpander(object[p], scope);
 			} else if (p.toLowerCase() === 'fieldvalue') {
@@ -221,6 +226,9 @@ function realPrototypeExpander(object, scope) {
 					    '');
 				}
 				// object[p] is not an object
+			} else if (p.toLowerCase() === '@use') {
+				var use = object["@USE"];
+				object["@USE"] = use+scope;
 			} else {
 				realPrototypeExpander(object[p], scope);
 			}

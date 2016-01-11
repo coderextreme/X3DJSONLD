@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D profile='Immersive' version='3.3' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance'>
+    <head>
+        <meta name='title' content='qq3.x3d'/>
+        <meta name='creator' content='John Carlson'/>
+        <meta name='translator' content='John Carlson'/>
+        <meta name='created' content='11 Jan 2015'/>
+        <meta name='revised' content='11 Jan 2015'/>
+        <meta name='description' content='1 extrusion to test X3DOM'/>
+        <meta name='identifier' content='http://coderextreme.net/x3d/qq3.x3d'/>
+        <meta name='generator' content='manual'/>
+    </head>
+    <Scene>
+        <Viewpoint description='Extrusion Test' orientation='1 0 0 -0.4' position='0 5 12'/>
+        <Shape>
+            <Appearance>
+                <Material diffuseColor='0.7 1 0'/>
+            </Appearance>
+            <Extrusion spine='-2.5 0 0 -1.5 0 0' creaseAngle='0.785' crossSection='1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0'/>
+        </Shape>
+
+    </Scene>
+</X3D>
