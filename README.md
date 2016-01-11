@@ -23,4 +23,4 @@ npm install
 node app.js
 ```
 Then go to http://localhost:3000 in your web browser and select a JSON file in
-the pulldown.  A link called examples to the configured folder will be created on the web servers root
+the pulldown.  A link called examples to the configured folder will be created on the web servers root.  If you have examples linked to the X3D Resources examples, then you can try: http://localhost:3000/X3DExamplesViewer.html
