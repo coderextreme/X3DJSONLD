@@ -57,7 +57,7 @@ function processScripts(object, classes, package, routecode) {
 				processScripts(object[p], classes, script, routecode);
 				// delete object[p]['#sourceText'];
 			} else if (p.toLowerCase() === 'route') {
-				processRoutes(object[p], routecode, package);
+				processRoute(object[p], routecode, package);
 			} else if (p.toLowerCase() === '@use') {
 				var name = object["@USE"];
 				object["@USE"] = name;
@@ -73,32 +73,28 @@ function processScripts(object, classes, package, routecode) {
 	}
 }
 
-function processRoutes(routes, classes, package) {
-	var r;
-	for (r in routes) {
-		var route = routes[r];
-		var fromNode = route["@fromNode"];
-		var fromField = route["@fromField"];
-		var toNode = route["@toNode"];
-		var toField = route["@toField"];
-		if (typeof package.find(toNode) === 'undefined') {
-			classes.push('if (!$(".'+toNode+'")) console.log("undefined '+toNode+'");');
-			var  to = '$(".'+toNode+'").attr("'+toField+'",';
-		} else {
-			var  to = 'X3DJSON.' +toNode+'.'+toField+'(';
-		}
-		if (typeof package.find(fromNode) === 'undefined') {
-			classes.push('if (!$(".'+fromNode+'")) console.log("undefined '+fromNode+'");');
-			var  from = '$(".'+fromNode+'").attr("'+fromField+'")';
-		} else {
-			if (fromField.indexOf("_changed") > 0) {
-				var from = 'X3DJSON.' +fromNode+'.'+fromField+'()';
-			} else {
-				var from = 'X3DJSON.' +fromNode+'.'+fromField+'_changed()';
-			}
-		}
-		classes.push('\t'+to+from+');');
+function processRoute(route, classes, package) {
+	var fromNode = route["@fromNode"];
+	var fromField = route["@fromField"];
+	var toNode = route["@toNode"];
+	var toField = route["@toField"];
+	if (typeof package.find(toNode) === 'undefined') {
+		classes.push('if (!$(".'+toNode+'")) console.log("undefined '+toNode+'");');
+		var  to = '$(".'+toNode+'").attr("'+toField+'",';
+	} else {
+		var  to = 'X3DJSON.' +toNode+'.'+toField+'(';
 	}
+	if (typeof package.find(fromNode) === 'undefined') {
+		classes.push('if (!$(".'+fromNode+'")) console.log("undefined '+fromNode+'");');
+		var  from = '$(".'+fromNode+'").attr("'+fromField+'")';
+	} else {
+		if (fromField.indexOf("_changed") > 0) {
+			var from = 'X3DJSON.' +fromNode+'.'+fromField+'()';
+		} else {
+			var from = 'X3DJSON.' +fromNode+'.'+fromField+'_changed()';
+		}
+	}
+	classes.push('\t'+to+from+');');
 }
 
 function processFields(fields, classes, package) {
