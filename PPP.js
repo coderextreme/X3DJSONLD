@@ -3,7 +3,6 @@
 var prototypeExpander = require('./PrototypeExpander');
 var script = require('./Script');
 processScripts = script.processScripts;
-runRoutes = script.runRoutes;
 
 var content = '';
 // read content into buffer
