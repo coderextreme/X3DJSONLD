@@ -1,7 +1,7 @@
 { "X3D": {
     "@profile":"Immersive",
-    "@version":4.0,
-    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-4.0.xsd",
+    "@version":3.3,
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
     "head": {
         "meta": [
           {
