@@ -136,8 +136,12 @@ function realPrototypeExpander(object, scope, isInDeclaration) {
 				var name = object[p]["@name"];
 				var def = object[p]["@DEF"];
 				protos[name] = object[p];
-				protos[name]["@appinfo"] = object[p]["@appinfo"];
-				protos[name]["@documentation"] = object[p]["@documentation"];
+				if (typeof object[p]["@appinfo"] !== 'undefined') {
+					protos[name]["@appinfo"] = object[p]["@appinfo"];
+				}
+				if (typeof object[p]["@documentation"] !== 'undefined') {
+					protos[name]["@documentation"] = object[p]["@documentation"];
+				}
 				names[def] = name;
 				realPrototypeExpander(object[p], scope+name, true);
 			} else if (p.toLowerCase() === 'protointerface') {
@@ -169,8 +173,12 @@ function realPrototypeExpander(object, scope, isInDeclaration) {
 				}
 				object["Group"] = JSON.parse(JSON.stringify(protos[name]['ProtoBody']));
 				body = object["Group"];
-				body["@appinfo"] = protos[name]["@appinfo"];
-				body["@documentation"] = protos[name]["@documentation"];
+				if (typeof protos[name]["@appinfo"] !== 'undefined') {
+					body["@appinfo"] = protos[name]["@appinfo"];
+				}
+				if (typeof protos[name]["@documentation"] !== 'undefined') {
+					body["@documentation"] = protos[name]["@documentation"];
+				}
 				if (typeof use !== 'undefined') {
 					body["@USE"] = use;
 					//console.error("Use is", use);
