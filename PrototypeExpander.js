@@ -1,52 +1,76 @@
 var protos = {};
 var defs = {};
+var names = {};
 var nodeField = {};
 var protoField = {};
 var interfaceField = {};
 var scopecount = 0;
+var defdefined = {};
 
-function setObjectPlaceHolder(scope, field, object, objectfield) {
-	// console.error("setoph", scope, field, object, objectfield);
+function setScript(scope, field, object, objectfield) {
+	// console.error("setscrip", scope, field, object, objectfield, "<<<");
+	console.error("setmeta ", scope, field);
 	protoField[scope+field] = [ object, objectfield ];
 	// set default value
 	if (typeof interfaceField[scope+field] !== 'undefined') {
 		var fields = object["field"];
 		for  (var f in fields) {
 			if (objectfield === fields[f]["@name"]) {
-				fields[f]["@value"] = interfaceField[scope+field];
+				fields[f]["@value"] = getInterface(scope,field);
 				break;
 			}
 		}
 	}
 }
 
-function setObjectInterface(scope, field, value) {
-	// console.error("setoi", scope, field, value);
+function setConnect(scope, field, object, objectfield) {
+	console.error("setconn ", scope, field);
+	protoField[scope+field] = [ object, objectfield ];
+	// set default value
+	if (typeof interfaceField[scope+field] !== 'undefined') {
+		var fields = object["field"];
+		for  (var f in fields) {
+			if (objectfield === fields[f]["@name"]) {
+				fields[f]["@value"] = getInterface(scope,field);
+				break;
+			}
+		}
+	}
+}
+
+function getInterface(scope, field) {
+	console.error("getinter", scope, field);
+	return interfaceField[scope+field];
+}
+
+function setInterface(scope, field, value) {
+	console.error("setinter", scope, field);
 	interfaceField[scope+field] = value;
 }
 
-function setObjectValue(scope, field, value) {
-	// console.error("setov", scope, field, value);
+function setObjectValue(scope, field, fieldOrNode, value) {
+	console.error("setvalue", scope, field);
 	var obj = protoField[scope+field];
 	if (typeof obj !== 'undefined') {
 		if (obj[1] === 'value' || field.indexOf("set_") === 0) {
-			obj[0]['@'+obj[1]] = value;
+			obj[0][fieldOrNode+obj[1]] = value;
 			retval = true;
 		} else {
 			scope = obj[0]["@DEF"];
 			field = obj[1];
 			// console.error("recurse", obj, value);
-			var retval = setObjectValue(scope, field, value);
+			var retval = setObjectValue(scope, field, fieldOrNode, value);
 			if (!retval) {
 				// if the recursion didn't set it, set it now
-				obj[0]['@'+obj[1]] = value;
+				obj[0][fieldOrNode+obj[1]] = value;
 				retval = true;
 			}
 		}
 		return retval;
 	} else {
-		return false;
+		retval = false;
 	}
+	console.error("return", retval);
 }
 
 function setEnv(scope, field, newscope, newfield) {
@@ -73,7 +97,7 @@ function getEnv(scope, field) {
 }
 
 function prototypeExpander(object, scope) {
-	realPrototypeExpander(object, scope);
+	realPrototypeExpander(object, scope, false);
 	zap(object);
 }
 
@@ -94,7 +118,7 @@ function zap(object) {
 	}
 }
 
-function realPrototypeExpander(object, scope) {
+function realPrototypeExpander(object, scope, isInDeclaration) {
 	var p;
 	if (typeof object === "object") {
 		for (p in object) {
@@ -102,29 +126,34 @@ function realPrototypeExpander(object, scope) {
 				var def  = object[p]["@DEF"];
 				var fields  = object[p]["field"];
 				for (var field in fields) {
-					setObjectPlaceHolder(scope+def,
+					setScript(scope+def,
 					    fields[field]["@name"],
 					    fields[field],
 					    "value");
 				}
-				realPrototypeExpander(object[p], scope);
+				realPrototypeExpander(object[p], scope, isInDeclaration);
 			} else if (p.toLowerCase() === 'protodeclare') {
 				var name = object[p]["@name"];
+				var def = object[p]["@DEF"];
 				protos[name] = object[p];
-				realPrototypeExpander(object[p], scope+name);
+				protos[name]["@appinfo"] = object[p]["@appinfo"];
+				protos[name]["@documentation"] = object[p]["@documentation"];
+				names[def] = name;
+				realPrototypeExpander(object[p], scope+name, true);
 			} else if (p.toLowerCase() === 'protointerface') {
 				var fields = object[p]["field"];
 				for (var field in fields) {
-					setObjectInterface(scope,
+					setInterface(scope,
 					    fields[field]["@name"],
 					    fields[field]["@value"]);
 				}
-				realPrototypeExpander(object[p], scope);
+				realPrototypeExpander(object[p], scope, isInDeclaration);
 			} else if (p.toLowerCase() === 'protobody') {
-				realPrototypeExpander(object[p], scope);
+				realPrototypeExpander(object[p], scope, isInDeclaration);
 			} else if (p.toLowerCase() === 'protoinstance') {
 				var name = object[p]["@name"];
 				var def  = object[p]["@DEF"];
+				var use  = object[p]["@USE"];
 				if (typeof def === 'undefined') {
 					scopecount += 1000;
 					if (scopecount > 0) {
@@ -134,24 +163,50 @@ function realPrototypeExpander(object, scope) {
 					}
 
 				}
-				// console.error('Proto', name, protos[name]['ProtoBody']);
+				names[def] = name;
+				if (typeof name === 'undefined' && typeof use !== 'undefined') {
+					name = names[use];
+				}
 				object["Group"] = JSON.parse(JSON.stringify(protos[name]['ProtoBody']));
 				body = object["Group"];
-				realPrototypeExpander(body, scope+name+def);
+				body["@appinfo"] = protos[name]["@appinfo"];
+				body["@documentation"] = protos[name]["@documentation"];
+				if (typeof use !== 'undefined') {
+					body["@USE"] = use;
+					console.error("Use is", use);
+				}
+				body["@DEF"] = def;
+				body["@class"] = def;
+				var newscope = scope+name+def;
+				defs[def] = newscope;
+				console.error('BEFORE', body["@USE"]);
+				realPrototypeExpander(body, newscope, isInDeclaration);
+				console.error('AFTER ', body["@USE"]);
 
 				var fieldValue = object[p]["fieldValue"];
 				for (var field in fieldValue) {
-					setObjectValue(scope+name+def,
-					    fieldValue[field]["@name"],
-					    fieldValue[field]["@value"]);
+					var fv = fieldValue[field];
+					var name = fieldValue[field]["@name"];
+					var value = fieldValue[field]["@value"];
+					var fieldOrNode = "@";
+					for (var nv in fv) {
+						if (nv === '@name') {
+							name = fv[nv];
+						} else {
+							fieldOrNode = nv.substr(0, 1);
+							value = fv[nv];
+							realPrototypeExpander(fv, scope+name+def, isInDeclaration);
+							// zap(fv); // zap instances
+							// console.error('>   ', JSON.stringify(fv));
+						}
+					}
+					setObjectValue(newscope,
+					    name,
+					    fieldOrNode,
+					    value);
 				}
-
-				// handle scoping
-				body["@DEF"] = scope+name+def;
-				body["@class"] = scope+name+def;
-				defs[def] = scope+name+def;
 			} else if (p.toLowerCase() === 'connect') {
-				realPrototypeExpander(object[p], scope);
+				realPrototypeExpander(object[p], scope, isInDeclaration);
 			} else if (p.toLowerCase() === 'fieldvalue') {
 			} else if (p.toLowerCase() === 'field') {
 				var fields = object[p];
@@ -162,7 +217,7 @@ function realPrototypeExpander(object, scope) {
 					    scope,
 					    fields[field]["@name"]);
 				}
-				realPrototypeExpander(object[p], scope);
+				realPrototypeExpander(object[p], scope, isInDeclaration);
 			} else if (p.toLowerCase() === 'is') {
 				var def = object["@DEF"];
 				var connect = object[p]["connect"];
@@ -173,7 +228,7 @@ function realPrototypeExpander(object, scope) {
 					    connect[field]["@protoField"],
 					    def,
 					    connect[field]["@nodeField"]);
-					setObjectPlaceHolder(scope,
+					setConnect(scope,
 					    connect[field]["@protoField"],
 					    object,
 					    connect[field]["@nodeField"]);
@@ -185,7 +240,6 @@ function realPrototypeExpander(object, scope) {
 				}
 				env = [];
 				if (typeof defs[name] !== 'undefined') {
-					// console.error("FROM ENV", scope, name, defs[name], env);
  					var env = getEnv(defs[name], object["@fromField"]);
 					if (typeof env !== 'undefined') {
 						object["@fromNode"] = env[0];
@@ -200,7 +254,6 @@ function realPrototypeExpander(object, scope) {
 				}
 				env = [];
 				if (typeof defs[name] !== 'undefined') {
-					// console.error("TO ENV", scope, name, defs[name], env);
  					var env = getEnv(defs[name], object["@toField"]);
 					if (typeof env !== 'undefined') {
 						object["@toNode"] = env[0];
@@ -224,9 +277,13 @@ function realPrototypeExpander(object, scope) {
 				// object[p] is not an object
 			} else if (p.toLowerCase() === '@use') {
 				var use = object["@USE"];
-				object["@USE"] = scope+use;
+ 				var env = getEnv(use, '');
+				if (typeof env !== 'undefined') {
+					object["@USE"] = env[0];
+				}
+				// object[p] is not an object
 			} else {
-				realPrototypeExpander(object[p], scope);
+				realPrototypeExpander(object[p], scope, isInDeclaration);
 			}
 		}
 	}

@@ -44,6 +44,9 @@ function processScripts(object, classes, package, routecode) {
 	var p;
 	if (typeof object === "object") {
 		for (p in object) {
+			if (typeof object[p] === 'undefined') {
+				continue;
+			}
 			var name = object[p]["@name"];
 			if (typeof name === 'undefined') {
 				name = object[p]["@DEF"];
