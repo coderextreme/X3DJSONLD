@@ -9,7 +9,7 @@ var defdefined = {};
 
 function setScript(scope, field, object, objectfield) {
 	// console.error("setscrip", scope, field, object, objectfield, "<<<");
-	console.error("setmeta ", scope, field);
+	//console.error("setmeta ", scope, field);
 	protoField[scope+field] = [ object, objectfield ];
 	// set default value
 	if (typeof interfaceField[scope+field] !== 'undefined') {
@@ -24,7 +24,7 @@ function setScript(scope, field, object, objectfield) {
 }
 
 function setConnect(scope, field, object, objectfield) {
-	console.error("setconn ", scope, field);
+	//console.error("setconn ", scope, field);
 	protoField[scope+field] = [ object, objectfield ];
 	// set default value
 	if (typeof interfaceField[scope+field] !== 'undefined') {
@@ -39,17 +39,17 @@ function setConnect(scope, field, object, objectfield) {
 }
 
 function getInterface(scope, field) {
-	console.error("getinter", scope, field);
+	//console.error("getinter", scope, field);
 	return interfaceField[scope+field];
 }
 
 function setInterface(scope, field, value) {
-	console.error("setinter", scope, field);
+	//console.error("setinter", scope, field);
 	interfaceField[scope+field] = value;
 }
 
 function setObjectValue(scope, field, fieldOrNode, value) {
-	console.error("setvalue", scope, field);
+	//console.error("setvalue", scope, field);
 	var obj = protoField[scope+field];
 	if (typeof obj !== 'undefined') {
 		if (obj[1] === 'value' || field.indexOf("set_") === 0) {
@@ -70,7 +70,7 @@ function setObjectValue(scope, field, fieldOrNode, value) {
 	} else {
 		retval = false;
 	}
-	console.error("return", retval);
+	//console.error("return", retval);
 }
 
 function setEnv(scope, field, newscope, newfield) {
@@ -173,15 +173,15 @@ function realPrototypeExpander(object, scope, isInDeclaration) {
 				body["@documentation"] = protos[name]["@documentation"];
 				if (typeof use !== 'undefined') {
 					body["@USE"] = use;
-					console.error("Use is", use);
+					//console.error("Use is", use);
 				}
 				body["@DEF"] = def;
 				body["@class"] = def;
 				var newscope = scope+name+def;
 				defs[def] = newscope;
-				console.error('BEFORE', body["@USE"]);
+				//console.error('BEFORE', body["@USE"]);
 				realPrototypeExpander(body, newscope, isInDeclaration);
-				console.error('AFTER ', body["@USE"]);
+				//console.error('AFTER ', body["@USE"]);
 
 				var fieldValue = object[p]["fieldValue"];
 				for (var field in fieldValue) {
