@@ -189,7 +189,7 @@ function ConvertToX3DOM(object, parentkey, element, path) {
 		} else if (typeof object[key] === 'boolean') {
 			elementSetAttribute(element, key.substr(1),object[key], attributes);
 		} else {
-			console.error("Unknown type found in object "+typeof object[key]);
+			console.error("Unknown type found in object "+typeof object[key], object, key);
 		}
 	}
 	if (isArray) {
