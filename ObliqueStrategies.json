@@ -2,7 +2,6 @@
     "@profile":"Immersive",
     "@version":3.3,
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "@id":"x3dele",
     "head": {
         "meta": [
           {
@@ -67,7 +66,7 @@
           },
           {
             "@name":"audio",
-            "@content":"http://translate.google.com/translate_tts?tl=en&amp;q=hello%20X3D"
+            "@content":"http://translate.google.com/translate_tts?tl=en&q=hello%20X3D"
           },
           {
             "@name":"audio",
@@ -218,7 +217,7 @@
           { "Script":
             {
               "@DEF":"TextScript",
-              "@url":["/ObliqueStrategiesScript.js","http://X3dGraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategiesScript.js"],
+              "@url":["ObliqueStrategiesScript.js","http://X3dGraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategiesScript.js"],
               "field": [
                 {
                   "@name":"index",
@@ -269,7 +268,9 @@
                 }
               ],
               "-children":[
-                { "#comment":"initialize() method includes unit test to printAllStrategies() to console TODO insert field definitions here (index string_changed previous next random) and then animate!"
+                { "#comment":"initialize() method includes unit test to printAllStrategies() to console"
+                },
+                { "#comment":"TODO insert field definitions here (index string_changed previous next random) and then animate!"
                 }
               ]
             }
@@ -313,6 +314,14 @@
                     ]
                   }
                 },
+                { "ROUTE":
+                  {
+                    "@fromField":"string_changed",
+                    "@fromNode":"TextScript",
+                    "@toField":"string",
+                    "@toNode":"CardText"
+                  }
+                },
                 { "Sound":
                   {
                     "@DEF":"CardSoundSpatialization",
@@ -321,7 +330,13 @@
                     "@minBack":20,
                     "@minFront":20,
                     "-children":[
-                      { "#comment":"Make sure the sound source AudioClip is audible at the user location Not all X3D players seem to use the .mp3 &amp;#38; is ampersand character, avoids escaping problems and inconsistencies in browsers and X3D players %20 is space character used in uri/url encoding"
+                      { "#comment":"Make sure the sound source AudioClip is audible at the user location"
+                      },
+                      { "#comment":"Not all X3D players seem to use the .mp3"
+                      },
+                      { "#comment":"&#38; is ampersand character, avoids escaping problems and inconsistencies in browsers and X3D players"
+                      },
+                      { "#comment":"%20 is space character used in uri/url encoding"
                       }
                     ],
                     "-source":[
@@ -329,18 +344,10 @@
                         {
                           "@DEF":"TextToSpeechAudioClip",
                           "@description":"sends strategy text google translate",
-                          "@url":["http://translate.google.com/translate_tts?tl=en&amp;q=Feed%20the%20recording%20back%20out%20of%20the%20medium","/translate_tts_mp3FileFormatNotSupported.wav","http://X3dGraphics.com/examples/X3dForAdvancedModeling/Inspiration/translate_tts_mp3FileFormatNotSupported.wav"]
+                          "@url":["http://translate.google.com/translate_tts?tl=en&q=Feed%20the%20recording%20back%20out%20of%20the%20medium","translate_tts_mp3FileFormatNotSupported.wav","http://X3dGraphics.com/examples/X3dForAdvancedModeling/Inspiration/translate_tts_mp3FileFormatNotSupported.wav"]
                         }
                       }
                     ]
-                  }
-                },
-                { "ROUTE":
-                  {
-                    "@fromField":"string_changed",
-                    "@fromNode":"TextScript",
-                    "@toField":"string",
-                    "@toNode":"CardText"
                   }
                 },
                 { "ROUTE":
@@ -371,6 +378,14 @@
                   {
                     "@DEF":"PreviousTextClickedSensor",
                     "@description":"Select to see previous strategy"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"isActive",
+                    "@fromNode":"PreviousTextClickedSensor",
+                    "@toField":"selectPreviousCard",
+                    "@toNode":"TextScript"
                   }
                 },
                 { "Shape":
@@ -448,14 +463,6 @@
                       }
                     ]
                   }
-                },
-                { "ROUTE":
-                  {
-                    "@fromField":"isActive",
-                    "@fromNode":"PreviousTextClickedSensor",
-                    "@toField":"selectPreviousCard",
-                    "@toNode":"TextScript"
-                  }
                 }
               ]
             }
@@ -469,6 +476,14 @@
                   {
                     "@DEF":"NextTextClickedSensor",
                     "@description":"Select to see next strategy"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"isActive",
+                    "@fromNode":"NextTextClickedSensor",
+                    "@toField":"selectNextCard",
+                    "@toNode":"TextScript"
                   }
                 },
                 { "Shape":
@@ -507,14 +522,6 @@
                       }
                     ]
                   }
-                },
-                { "ROUTE":
-                  {
-                    "@fromField":"isActive",
-                    "@fromNode":"NextTextClickedSensor",
-                    "@toField":"selectNextCard",
-                    "@toNode":"TextScript"
-                  }
                 }
               ]
             }
@@ -527,6 +534,14 @@
                 { "TouchSensor":
                   {
                     "@USE":"RandomTextClickedSensor"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"isActive",
+                    "@fromNode":"RandomTextClickedSensor",
+                    "@toField":"selectRandomCard",
+                    "@toNode":"TextScript"
                   }
                 },
                 { "Shape":
@@ -565,14 +580,6 @@
                       }
                     ]
                   }
-                },
-                { "ROUTE":
-                  {
-                    "@fromField":"isActive",
-                    "@fromNode":"RandomTextClickedSensor",
-                    "@toField":"selectRandomCard",
-                    "@toNode":"TextScript"
-                  }
                 }
               ]
             }
@@ -587,8 +594,16 @@
                     "@DEF":"TextToSpeechAnchor",
                     "@description":"text to speech in browser",
                     "@parameter":["target=_blank"],
-                    "@url":["http://translate.google.com/translate_tts?tl=en&amp;q=Overtly%20resist%20change"],
+                    "@url":["http://translate.google.com/translate_tts?tl=en&q=Overtly%20resist%20change"],
                     "-children":[
+                      { "ROUTE":
+                        {
+                          "@fromField":"textToSpeechUrl",
+                          "@fromNode":"TextScript",
+                          "@toField":"url",
+                          "@toNode":"TextToSpeechAnchor"
+                        }
+                      },
                       { "Shape":
                         {
                           "-geometry":[
@@ -624,14 +639,6 @@
                               }
                             }
                           ]
-                        }
-                      },
-                      { "ROUTE":
-                        {
-                          "@fromField":"textToSpeechUrl",
-                          "@fromNode":"TextScript",
-                          "@toField":"url",
-                          "@toNode":"TextToSpeechAnchor"
                         }
                       }
                     ]
