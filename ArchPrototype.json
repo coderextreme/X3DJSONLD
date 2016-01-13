@@ -238,7 +238,7 @@
                     { "Script":
                       {
                         "@DEF":"ArchPrototypeScript",
-                        "@url":["./ArchPrototypeScript.js","X3DJSONLD/ArchPrototypeScript.js","http://coderextreme.net/X3DJSONLD/ArchPrototypeScript.js","http://X3dGraphics.com/examples/X3dForAdvancedModeling/Buildings/ArchPrototypeScript.js"],
+                        "@url":["X3DJSONLD/ArchPrototypeScript.js","http://coderextreme.net/X3DJSONLD/ArchPrototypeScript.js","http://X3dGraphics.com/examples/X3dForAdvancedModeling/Buildings/ArchPrototypeScript.js"],
                         "field": [
                           {
                             "@name":"clearSpanWidth",
