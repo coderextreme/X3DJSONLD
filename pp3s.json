@@ -265,13 +265,13 @@
                                                 "-material": [
                                                   {
                                                     "Material": {
-                                                      "@DEF": "MaterialLightBlueProcess1000Process",
+                                                      "@DEF": "Process1000ProcessMaterialLightBlue",
                                                       "@diffuseColor": [
                                                         1,
                                                         1,
                                                         1
                                                       ],
-                                                      "@class": "MaterialLightBlueProcess1000Process"
+                                                      "@class": "Process1000ProcessMaterialLightBlue"
                                                     }
                                                   }
                                                 ]
@@ -281,11 +281,11 @@
                                           "-geometry": [
                                             {
                                               "Text": {
-                                                "@DEF": "RightStringProcess1000Process",
+                                                "@DEF": "Process1000ProcessRightString",
                                                 "@string": [
                                                   "r"
                                                 ],
-                                                "@class": "RightStringProcess1000Process"
+                                                "@class": "Process1000ProcessRightString"
                                               }
                                             }
                                           ]
@@ -297,17 +297,17 @@
                                 {
                                   "StringSensor": {
                                     "@description": "touch to activate",
-                                    "@DEF": "RightSensorProcess1000Process",
+                                    "@DEF": "Process1000ProcessRightSensor",
                                     "@enabled": false,
                                     "@deletionAllowed": true,
-                                    "@class": "RightSensorProcess1000Process"
+                                    "@class": "Process1000ProcessRightSensor"
                                   }
                                 },
                                 {
                                   "TouchSensor": {
                                     "@description": "touch to activate",
-                                    "@DEF": "RightTouchProcess1000Process",
-                                    "@class": "RightTouchProcess1000Process"
+                                    "@DEF": "Process1000ProcessRightTouch",
+                                    "@class": "Process1000ProcessRightTouch"
                                   }
                                 }
                               ]
@@ -413,7 +413,7 @@
                                                 "-material": [
                                                   {
                                                     "Material": {
-                                                      "@USE": "MaterialLightBlueProcess1000Process"
+                                                      "@USE": "Process1000ProcessMaterialLightBlue"
                                                     }
                                                   }
                                                 ]
@@ -423,11 +423,11 @@
                                           "-geometry": [
                                             {
                                               "Text": {
-                                                "@DEF": "UpStringProcess1000Process",
+                                                "@DEF": "Process1000ProcessUpString",
                                                 "@string": [
                                                   "u"
                                                 ],
-                                                "@class": "UpStringProcess1000Process"
+                                                "@class": "Process1000ProcessUpString"
                                               }
                                             }
                                           ]
@@ -439,17 +439,17 @@
                                 {
                                   "StringSensor": {
                                     "@description": "touch to activate",
-                                    "@DEF": "UpSensorProcess1000Process",
+                                    "@DEF": "Process1000ProcessUpSensor",
                                     "@enabled": false,
                                     "@deletionAllowed": true,
-                                    "@class": "UpSensorProcess1000Process"
+                                    "@class": "Process1000ProcessUpSensor"
                                   }
                                 },
                                 {
                                   "TouchSensor": {
                                     "@description": "touch to activate",
-                                    "@DEF": "UpTouchProcess1000Process",
-                                    "@class": "UpTouchProcess1000Process"
+                                    "@DEF": "Process1000ProcessUpTouch",
+                                    "@class": "Process1000ProcessUpTouch"
                                   }
                                 }
                               ]
@@ -598,7 +598,7 @@
                                                 "-material": [
                                                   {
                                                     "Material": {
-                                                      "@USE": "MaterialLightBlueProcess1000Process"
+                                                      "@USE": "Process1000ProcessMaterialLightBlue"
                                                     }
                                                   }
                                                 ]
@@ -608,8 +608,8 @@
                                           "-geometry": [
                                             {
                                               "Text": {
-                                                "@DEF": "CenterStringProcess1000Process",
-                                                "@class": "CenterStringProcess1000Process"
+                                                "@DEF": "Process1000ProcessCenterString",
+                                                "@class": "Process1000ProcessCenterString"
                                               }
                                             }
                                           ]
@@ -621,17 +621,17 @@
                                 {
                                   "StringSensor": {
                                     "@description": "touch to activate",
-                                    "@DEF": "CenterSensorProcess1000Process",
+                                    "@DEF": "Process1000ProcessCenterSensor",
                                     "@enabled": false,
                                     "@deletionAllowed": true,
-                                    "@class": "CenterSensorProcess1000Process"
+                                    "@class": "Process1000ProcessCenterSensor"
                                   }
                                 },
                                 {
                                   "TouchSensor": {
                                     "@description": "touch to activate",
-                                    "@DEF": "CenterTouchProcess1000Process",
-                                    "@class": "CenterTouchProcess1000Process"
+                                    "@DEF": "Process1000ProcessCenterTouch",
+                                    "@class": "Process1000ProcessCenterTouch"
                                   }
                                 }
                               ]
@@ -642,7 +642,7 @@
                     },
                     {
                       "Script": {
-                        "@DEF": "RightSingleToMultiStringProcess1000Process",
+                        "@DEF": "Process1000ProcessRightSingleToMultiString",
                         "field": [
                           {
                             "@name": "set_rightstring",
@@ -666,12 +666,12 @@
                           "\trightlines = new MFString(rightstr);",
                           "}"
                         ],
-                        "@class": "RightSingleToMultiStringProcess1000Process"
+                        "@class": "Process1000ProcessRightSingleToMultiString"
                       }
                     },
                     {
                       "Script": {
-                        "@DEF": "UpSingleToMultiStringProcess1000Process",
+                        "@DEF": "Process1000ProcessUpSingleToMultiString",
                         "field": [
                           {
                             "@name": "set_upstring",
@@ -695,12 +695,12 @@
                           "\tuplines = new MFString(upstr);",
                           "}"
                         ],
-                        "@class": "UpSingleToMultiStringProcess1000Process"
+                        "@class": "Process1000ProcessUpSingleToMultiString"
                       }
                     },
                     {
                       "Script": {
-                        "@DEF": "CenterSingleToMultiStringProcess1000Process",
+                        "@DEF": "Process1000ProcessCenterSingleToMultiString",
                         "field": [
                           {
                             "@name": "set_centerstring",
@@ -724,84 +724,84 @@
                           "\tcenterlines = new MFString(centerstr);",
                           "}"
                         ],
-                        "@class": "CenterSingleToMultiStringProcess1000Process"
+                        "@class": "Process1000ProcessCenterSingleToMultiString"
                       }
                     },
                     {
                       "ROUTE": {
                         "@fromField": "enteredText",
-                        "@fromNode": "CenterSensorProcess1000Process",
+                        "@fromNode": "Process1000ProcessCenterSensor",
                         "@toField": "set_centerstring",
-                        "@toNode": "CenterSingleToMultiStringProcess1000Process"
+                        "@toNode": "Process1000ProcessCenterSingleToMultiString"
                       }
                     },
                     {
                       "ROUTE": {
                         "@fromField": "centerlines",
-                        "@fromNode": "CenterSingleToMultiStringProcess1000Process",
+                        "@fromNode": "Process1000ProcessCenterSingleToMultiString",
                         "@toField": "set_string",
-                        "@toNode": "CenterStringProcess1000Process"
+                        "@toNode": "Process1000ProcessCenterString"
                       }
                     },
                     {
                       "ROUTE": {
                         "@fromField": "isOver",
-                        "@fromNode": "CenterTouchProcess1000Process",
+                        "@fromNode": "Process1000ProcessCenterTouch",
                         "@toField": "set_enabled",
-                        "@toNode": "CenterSensorProcess1000Process"
+                        "@toNode": "Process1000ProcessCenterSensor"
                       }
                     },
                     {
                       "ROUTE": {
                         "@fromField": "enteredText",
-                        "@fromNode": "RightSensorProcess1000Process",
+                        "@fromNode": "Process1000ProcessRightSensor",
                         "@toField": "set_rightstring",
-                        "@toNode": "RightSingleToMultiStringProcess1000Process"
+                        "@toNode": "Process1000ProcessRightSingleToMultiString"
                       }
                     },
                     {
                       "ROUTE": {
                         "@fromField": "rightlines",
-                        "@fromNode": "RightSingleToMultiStringProcess1000Process",
+                        "@fromNode": "Process1000ProcessRightSingleToMultiString",
                         "@toField": "set_string",
-                        "@toNode": "RightStringProcess1000Process"
+                        "@toNode": "Process1000ProcessRightString"
                       }
                     },
                     {
                       "ROUTE": {
                         "@fromField": "isOver",
-                        "@fromNode": "RightTouchProcess1000Process",
+                        "@fromNode": "Process1000ProcessRightTouch",
                         "@toField": "set_enabled",
-                        "@toNode": "RightSensorProcess1000Process"
+                        "@toNode": "Process1000ProcessRightSensor"
                       }
                     },
                     {
                       "ROUTE": {
                         "@fromField": "enteredText",
-                        "@fromNode": "UpSensorProcess1000Process",
+                        "@fromNode": "Process1000ProcessUpSensor",
                         "@toField": "set_upstring",
-                        "@toNode": "UpSingleToMultiStringProcess1000Process"
+                        "@toNode": "Process1000ProcessUpSingleToMultiString"
                       }
                     },
                     {
                       "ROUTE": {
                         "@fromField": "uplines",
-                        "@fromNode": "UpSingleToMultiStringProcess1000Process",
+                        "@fromNode": "Process1000ProcessUpSingleToMultiString",
                         "@toField": "set_string",
-                        "@toNode": "UpStringProcess1000Process"
+                        "@toNode": "Process1000ProcessUpString"
                       }
                     },
                     {
                       "ROUTE": {
                         "@fromField": "isOver",
-                        "@fromNode": "UpTouchProcess1000Process",
+                        "@fromNode": "Process1000ProcessUpTouch",
                         "@toField": "set_enabled",
-                        "@toNode": "UpSensorProcess1000Process"
+                        "@toNode": "Process1000ProcessUpSensor"
                       }
                     }
                   ],
-                  "@DEF": "1000Process",
-                  "@class": "1000Process"
+                  "@DEF": "Process10001000",
+                  "@class": "Process10001000"
                 }
               }
             ]
@@ -1006,13 +1006,13 @@
                                                 "-material": [
                                                   {
                                                     "Material": {
-                                                      "@DEF": "MaterialLightBlueProcess2000Process",
+                                                      "@DEF": "Process2000ProcessMaterialLightBlue",
                                                       "@diffuseColor": [
                                                         1,
                                                         1,
                                                         1
                                                       ],
-                                                      "@class": "MaterialLightBlueProcess2000Process"
+                                                      "@class": "Process2000ProcessMaterialLightBlue"
                                                     }
                                                   }
                                                 ]
@@ -1022,11 +1022,11 @@
                                           "-geometry": [
                                             {
                                               "Text": {
-                                                "@DEF": "RightStringProcess2000Process",
+                                                "@DEF": "Process2000ProcessRightString",
                                                 "@string": [
                                                   "r"
                                                 ],
-                                                "@class": "RightStringProcess2000Process"
+                                                "@class": "Process2000ProcessRightString"
                                               }
                                             }
                                           ]
@@ -1038,17 +1038,17 @@
                                 {
                                   "StringSensor": {
                                     "@description": "touch to activate",
-                                    "@DEF": "RightSensorProcess2000Process",
+                                    "@DEF": "Process2000ProcessRightSensor",
                                     "@enabled": false,
                                     "@deletionAllowed": true,
-                                    "@class": "RightSensorProcess2000Process"
+                                    "@class": "Process2000ProcessRightSensor"
                                   }
                                 },
                                 {
                                   "TouchSensor": {
                                     "@description": "touch to activate",
-                                    "@DEF": "RightTouchProcess2000Process",
-                                    "@class": "RightTouchProcess2000Process"
+                                    "@DEF": "Process2000ProcessRightTouch",
+                                    "@class": "Process2000ProcessRightTouch"
                                   }
                                 }
                               ]
@@ -1154,7 +1154,7 @@
                                                 "-material": [
                                                   {
                                                     "Material": {
-                                                      "@USE": "MaterialLightBlueProcess2000Process"
+                                                      "@USE": "Process2000ProcessMaterialLightBlue"
                                                     }
                                                   }
                                                 ]
@@ -1164,11 +1164,11 @@
                                           "-geometry": [
                                             {
                                               "Text": {
-                                                "@DEF": "UpStringProcess2000Process",
+                                                "@DEF": "Process2000ProcessUpString",
                                                 "@string": [
                                                   "u"
                                                 ],
-                                                "@class": "UpStringProcess2000Process"
+                                                "@class": "Process2000ProcessUpString"
                                               }
                                             }
                                           ]
@@ -1180,17 +1180,17 @@
                                 {
                                   "StringSensor": {
                                     "@description": "touch to activate",
-                                    "@DEF": "UpSensorProcess2000Process",
+                                    "@DEF": "Process2000ProcessUpSensor",
                                     "@enabled": false,
                                     "@deletionAllowed": true,
-                                    "@class": "UpSensorProcess2000Process"
+                                    "@class": "Process2000ProcessUpSensor"
                                   }
                                 },
                                 {
                                   "TouchSensor": {
                                     "@description": "touch to activate",
-                                    "@DEF": "UpTouchProcess2000Process",
-                                    "@class": "UpTouchProcess2000Process"
+                                    "@DEF": "Process2000ProcessUpTouch",
+                                    "@class": "Process2000ProcessUpTouch"
                                   }
                                 }
                               ]
@@ -1339,7 +1339,7 @@
                                                 "-material": [
                                                   {
                                                     "Material": {
-                                                      "@USE": "MaterialLightBlueProcess2000Process"
+                                                      "@USE": "Process2000ProcessMaterialLightBlue"
                                                     }
                                                   }
                                                 ]
@@ -1349,8 +1349,8 @@
                                           "-geometry": [
                                             {
                                               "Text": {
-                                                "@DEF": "CenterStringProcess2000Process",
-                                                "@class": "CenterStringProcess2000Process"
+                                                "@DEF": "Process2000ProcessCenterString",
+                                                "@class": "Process2000ProcessCenterString"
                                               }
                                             }
                                           ]
@@ -1362,17 +1362,17 @@
                                 {
                                   "StringSensor": {
                                     "@description": "touch to activate",
-                                    "@DEF": "CenterSensorProcess2000Process",
+                                    "@DEF": "Process2000ProcessCenterSensor",
                                     "@enabled": false,
                                     "@deletionAllowed": true,
-                                    "@class": "CenterSensorProcess2000Process"
+                                    "@class": "Process2000ProcessCenterSensor"
                                   }
                                 },
                                 {
                                   "TouchSensor": {
                                     "@description": "touch to activate",
-                                    "@DEF": "CenterTouchProcess2000Process",
-                                    "@class": "CenterTouchProcess2000Process"
+                                    "@DEF": "Process2000ProcessCenterTouch",
+                                    "@class": "Process2000ProcessCenterTouch"
                                   }
                                 }
                               ]
@@ -1383,7 +1383,7 @@
                     },
                     {
                       "Script": {
-                        "@DEF": "RightSingleToMultiStringProcess2000Process",
+                        "@DEF": "Process2000ProcessRightSingleToMultiString",
                         "field": [
                           {
                             "@name": "set_rightstring",
@@ -1407,12 +1407,12 @@
                           "\trightlines = new MFString(rightstr);",
                           "}"
                         ],
-                        "@class": "RightSingleToMultiStringProcess2000Process"
+                        "@class": "Process2000ProcessRightSingleToMultiString"
                       }
                     },
                     {
                       "Script": {
-                        "@DEF": "UpSingleToMultiStringProcess2000Process",
+                        "@DEF": "Process2000ProcessUpSingleToMultiString",
                         "field": [
                           {
                             "@name": "set_upstring",
@@ -1436,12 +1436,12 @@
                           "\tuplines = new MFString(upstr);",
                           "}"
                         ],
-                        "@class": "UpSingleToMultiStringProcess2000Process"
+                        "@class": "Process2000ProcessUpSingleToMultiString"
                       }
                     },
                     {
                       "Script": {
-                        "@DEF": "CenterSingleToMultiStringProcess2000Process",
+                        "@DEF": "Process2000ProcessCenterSingleToMultiString",
                         "field": [
                           {
                             "@name": "set_centerstring",
@@ -1465,84 +1465,84 @@
                           "\tcenterlines = new MFString(centerstr);",
                           "}"
                         ],
-                        "@class": "CenterSingleToMultiStringProcess2000Process"
+                        "@class": "Process2000ProcessCenterSingleToMultiString"
                       }
                     },
                     {
                       "ROUTE": {
                         "@fromField": "enteredText",
-                        "@fromNode": "CenterSensorProcess2000Process",
+                        "@fromNode": "Process2000ProcessCenterSensor",
                         "@toField": "set_centerstring",
-                        "@toNode": "CenterSingleToMultiStringProcess2000Process"
+                        "@toNode": "Process2000ProcessCenterSingleToMultiString"
                       }
                     },
                     {
                       "ROUTE": {
                         "@fromField": "centerlines",
-                        "@fromNode": "CenterSingleToMultiStringProcess2000Process",
+                        "@fromNode": "Process2000ProcessCenterSingleToMultiString",
                         "@toField": "set_string",
-                        "@toNode": "CenterStringProcess2000Process"
+                        "@toNode": "Process2000ProcessCenterString"
                       }
                     },
                     {
                       "ROUTE": {
                         "@fromField": "isOver",
-                        "@fromNode": "CenterTouchProcess2000Process",
+                        "@fromNode": "Process2000ProcessCenterTouch",
                         "@toField": "set_enabled",
-                        "@toNode": "CenterSensorProcess2000Process"
+                        "@toNode": "Process2000ProcessCenterSensor"
                       }
                     },
                     {
                       "ROUTE": {
                         "@fromField": "enteredText",
-                        "@fromNode": "RightSensorProcess2000Process",
+                        "@fromNode": "Process2000ProcessRightSensor",
                         "@toField": "set_rightstring",
-                        "@toNode": "RightSingleToMultiStringProcess2000Process"
+                        "@toNode": "Process2000ProcessRightSingleToMultiString"
                       }
                     },
                     {
                       "ROUTE": {
                         "@fromField": "rightlines",
-                        "@fromNode": "RightSingleToMultiStringProcess2000Process",
+                        "@fromNode": "Process2000ProcessRightSingleToMultiString",
                         "@toField": "set_string",
-                        "@toNode": "RightStringProcess2000Process"
+                        "@toNode": "Process2000ProcessRightString"
                       }
                     },
                     {
                       "ROUTE": {
                         "@fromField": "isOver",
-                        "@fromNode": "RightTouchProcess2000Process",
+                        "@fromNode": "Process2000ProcessRightTouch",
                         "@toField": "set_enabled",
-                        "@toNode": "RightSensorProcess2000Process"
+                        "@toNode": "Process2000ProcessRightSensor"
                       }
                     },
                     {
                       "ROUTE": {
                         "@fromField": "enteredText",
-                        "@fromNode": "UpSensorProcess2000Process",
+                        "@fromNode": "Process2000ProcessUpSensor",
                         "@toField": "set_upstring",
-                        "@toNode": "UpSingleToMultiStringProcess2000Process"
+                        "@toNode": "Process2000ProcessUpSingleToMultiString"
                       }
                     },
                     {
                       "ROUTE": {
                         "@fromField": "uplines",
-                        "@fromNode": "UpSingleToMultiStringProcess2000Process",
+                        "@fromNode": "Process2000ProcessUpSingleToMultiString",
                         "@toField": "set_string",
-                        "@toNode": "UpStringProcess2000Process"
+                        "@toNode": "Process2000ProcessUpString"
                       }
                     },
                     {
                       "ROUTE": {
                         "@fromField": "isOver",
-                        "@fromNode": "UpTouchProcess2000Process",
+                        "@fromNode": "Process2000ProcessUpTouch",
                         "@toField": "set_enabled",
-                        "@toNode": "UpSensorProcess2000Process"
+                        "@toNode": "Process2000ProcessUpSensor"
                       }
                     }
                   ],
-                  "@DEF": "2000Process",
-                  "@class": "2000Process"
+                  "@DEF": "Process20002000",
+                  "@class": "Process20002000"
                 }
               }
             ]
@@ -1752,13 +1752,13 @@
                                                 "-material": [
                                                   {
                                                     "Material": {
-                                                      "@DEF": "MaterialLightBlueProcess3000Process",
+                                                      "@DEF": "Process3000ProcessMaterialLightBlue",
                                                       "@diffuseColor": [
                                                         1,
                                                         1,
                                                         1
                                                       ],
-                                                      "@class": "MaterialLightBlueProcess3000Process"
+                                                      "@class": "Process3000ProcessMaterialLightBlue"
                                                     }
                                                   }
                                                 ]
@@ -1768,11 +1768,11 @@
                                           "-geometry": [
                                             {
                                               "Text": {
-                                                "@DEF": "RightStringProcess3000Process",
+                                                "@DEF": "Process3000ProcessRightString",
                                                 "@string": [
                                                   "r"
                                                 ],
-                                                "@class": "RightStringProcess3000Process"
+                                                "@class": "Process3000ProcessRightString"
                                               }
                                             }
                                           ]
@@ -1784,17 +1784,17 @@
                                 {
                                   "StringSensor": {
                                     "@description": "touch to activate",
-                                    "@DEF": "RightSensorProcess3000Process",
+                                    "@DEF": "Process3000ProcessRightSensor",
                                     "@enabled": false,
                                     "@deletionAllowed": true,
-                                    "@class": "RightSensorProcess3000Process"
+                                    "@class": "Process3000ProcessRightSensor"
                                   }
                                 },
                                 {
                                   "TouchSensor": {
                                     "@description": "touch to activate",
-                                    "@DEF": "RightTouchProcess3000Process",
-                                    "@class": "RightTouchProcess3000Process"
+                                    "@DEF": "Process3000ProcessRightTouch",
+                                    "@class": "Process3000ProcessRightTouch"
                                   }
                                 }
                               ]
@@ -1900,7 +1900,7 @@
                                                 "-material": [
                                                   {
                                                     "Material": {
-                                                      "@USE": "MaterialLightBlueProcess3000Process"
+                                                      "@USE": "Process3000ProcessMaterialLightBlue"
                                                     }
                                                   }
                                                 ]
@@ -1910,11 +1910,11 @@
                                           "-geometry": [
                                             {
                                               "Text": {
-                                                "@DEF": "UpStringProcess3000Process",
+                                                "@DEF": "Process3000ProcessUpString",
                                                 "@string": [
                                                   "u"
                                                 ],
-                                                "@class": "UpStringProcess3000Process"
+                                                "@class": "Process3000ProcessUpString"
                                               }
                                             }
                                           ]
@@ -1926,17 +1926,17 @@
                                 {
                                   "StringSensor": {
                                     "@description": "touch to activate",
-                                    "@DEF": "UpSensorProcess3000Process",
+                                    "@DEF": "Process3000ProcessUpSensor",
                                     "@enabled": false,
                                     "@deletionAllowed": true,
-                                    "@class": "UpSensorProcess3000Process"
+                                    "@class": "Process3000ProcessUpSensor"
                                   }
                                 },
                                 {
                                   "TouchSensor": {
                                     "@description": "touch to activate",
-                                    "@DEF": "UpTouchProcess3000Process",
-                                    "@class": "UpTouchProcess3000Process"
+                                    "@DEF": "Process3000ProcessUpTouch",
+                                    "@class": "Process3000ProcessUpTouch"
                                   }
                                 }
                               ]
@@ -2085,7 +2085,7 @@
                                                 "-material": [
                                                   {
                                                     "Material": {
-                                                      "@USE": "MaterialLightBlueProcess3000Process"
+                                                      "@USE": "Process3000ProcessMaterialLightBlue"
                                                     }
                                                   }
                                                 ]
@@ -2095,8 +2095,8 @@
                                           "-geometry": [
                                             {
                                               "Text": {
-                                                "@DEF": "CenterStringProcess3000Process",
-                                                "@class": "CenterStringProcess3000Process"
+                                                "@DEF": "Process3000ProcessCenterString",
+                                                "@class": "Process3000ProcessCenterString"
                                               }
                                             }
                                           ]
@@ -2108,17 +2108,17 @@
                                 {
                                   "StringSensor": {
                                     "@description": "touch to activate",
-                                    "@DEF": "CenterSensorProcess3000Process",
+                                    "@DEF": "Process3000ProcessCenterSensor",
                                     "@enabled": false,
                                     "@deletionAllowed": true,
-                                    "@class": "CenterSensorProcess3000Process"
+                                    "@class": "Process3000ProcessCenterSensor"
                                   }
                                 },
                                 {
                                   "TouchSensor": {
                                     "@description": "touch to activate",
-                                    "@DEF": "CenterTouchProcess3000Process",
-                                    "@class": "CenterTouchProcess3000Process"
+                                    "@DEF": "Process3000ProcessCenterTouch",
+                                    "@class": "Process3000ProcessCenterTouch"
                                   }
                                 }
                               ]
@@ -2129,7 +2129,7 @@
                     },
                     {
                       "Script": {
-                        "@DEF": "RightSingleToMultiStringProcess3000Process",
+                        "@DEF": "Process3000ProcessRightSingleToMultiString",
                         "field": [
                           {
                             "@name": "set_rightstring",
@@ -2153,12 +2153,12 @@
                           "\trightlines = new MFString(rightstr);",
                           "}"
                         ],
-                        "@class": "RightSingleToMultiStringProcess3000Process"
+                        "@class": "Process3000ProcessRightSingleToMultiString"
                       }
                     },
                     {
                       "Script": {
-                        "@DEF": "UpSingleToMultiStringProcess3000Process",
+                        "@DEF": "Process3000ProcessUpSingleToMultiString",
                         "field": [
                           {
                             "@name": "set_upstring",
@@ -2182,12 +2182,12 @@
                           "\tuplines = new MFString(upstr);",
                           "}"
                         ],
-                        "@class": "UpSingleToMultiStringProcess3000Process"
+                        "@class": "Process3000ProcessUpSingleToMultiString"
                       }
                     },
                     {
                       "Script": {
-                        "@DEF": "CenterSingleToMultiStringProcess3000Process",
+                        "@DEF": "Process3000ProcessCenterSingleToMultiString",
                         "field": [
                           {
                             "@name": "set_centerstring",
@@ -2211,84 +2211,84 @@
                           "\tcenterlines = new MFString(centerstr);",
                           "}"
                         ],
-                        "@class": "CenterSingleToMultiStringProcess3000Process"
+                        "@class": "Process3000ProcessCenterSingleToMultiString"
                       }
                     },
                     {
                       "ROUTE": {
                         "@fromField": "enteredText",
-                        "@fromNode": "CenterSensorProcess3000Process",
+                        "@fromNode": "Process3000ProcessCenterSensor",
                         "@toField": "set_centerstring",
-                        "@toNode": "CenterSingleToMultiStringProcess3000Process"
+                        "@toNode": "Process3000ProcessCenterSingleToMultiString"
                       }
                     },
                     {
                       "ROUTE": {
                         "@fromField": "centerlines",
-                        "@fromNode": "CenterSingleToMultiStringProcess3000Process",
+                        "@fromNode": "Process3000ProcessCenterSingleToMultiString",
                         "@toField": "set_string",
-                        "@toNode": "CenterStringProcess3000Process"
+                        "@toNode": "Process3000ProcessCenterString"
                       }
                     },
                     {
                       "ROUTE": {
                         "@fromField": "isOver",
-                        "@fromNode": "CenterTouchProcess3000Process",
+                        "@fromNode": "Process3000ProcessCenterTouch",
                         "@toField": "set_enabled",
-                        "@toNode": "CenterSensorProcess3000Process"
+                        "@toNode": "Process3000ProcessCenterSensor"
                       }
                     },
                     {
                       "ROUTE": {
                         "@fromField": "enteredText",
-                        "@fromNode": "RightSensorProcess3000Process",
+                        "@fromNode": "Process3000ProcessRightSensor",
                         "@toField": "set_rightstring",
-                        "@toNode": "RightSingleToMultiStringProcess3000Process"
+                        "@toNode": "Process3000ProcessRightSingleToMultiString"
                       }
                     },
                     {
                       "ROUTE": {
                         "@fromField": "rightlines",
-                        "@fromNode": "RightSingleToMultiStringProcess3000Process",
+                        "@fromNode": "Process3000ProcessRightSingleToMultiString",
                         "@toField": "set_string",
-                        "@toNode": "RightStringProcess3000Process"
+                        "@toNode": "Process3000ProcessRightString"
                       }
                     },
                     {
                       "ROUTE": {
                         "@fromField": "isOver",
-                        "@fromNode": "RightTouchProcess3000Process",
+                        "@fromNode": "Process3000ProcessRightTouch",
                         "@toField": "set_enabled",
-                        "@toNode": "RightSensorProcess3000Process"
+                        "@toNode": "Process3000ProcessRightSensor"
                       }
                     },
                     {
                       "ROUTE": {
                         "@fromField": "enteredText",
-                        "@fromNode": "UpSensorProcess3000Process",
+                        "@fromNode": "Process3000ProcessUpSensor",
                         "@toField": "set_upstring",
-                        "@toNode": "UpSingleToMultiStringProcess3000Process"
+                        "@toNode": "Process3000ProcessUpSingleToMultiString"
                       }
                     },
                     {
                       "ROUTE": {
                         "@fromField": "uplines",
-                        "@fromNode": "UpSingleToMultiStringProcess3000Process",
+                        "@fromNode": "Process3000ProcessUpSingleToMultiString",
                         "@toField": "set_string",
-                        "@toNode": "UpStringProcess3000Process"
+                        "@toNode": "Process3000ProcessUpString"
                       }
                     },
                     {
                       "ROUTE": {
                         "@fromField": "isOver",
-                        "@fromNode": "UpTouchProcess3000Process",
+                        "@fromNode": "Process3000ProcessUpTouch",
                         "@toField": "set_enabled",
-                        "@toNode": "UpSensorProcess3000Process"
+                        "@toNode": "Process3000ProcessUpSensor"
                       }
                     }
                   ],
-                  "@DEF": "3000Process",
-                  "@class": "3000Process"
+                  "@DEF": "Process30003000",
+                  "@class": "Process30003000"
                 }
               }
             ]

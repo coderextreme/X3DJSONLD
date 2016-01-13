@@ -1,8 +1,8 @@
 {
   "X3D": {
     "@profile": "Immersive",
-    "@version": 3.3,
-    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "@version": 4,
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-4.0.xsd",
     "head": {
       "meta": [
         {
@@ -218,6 +218,7 @@
                           "                                                old = translation;",
                           "\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
                           "                                                keyValue = new MFVec3f(old, translation);",
+                          "\t\t\t\t\t\tBrowser.println(translation);",
                           "\t\t\t\t\t}"
                         ],
                         "@class": "nodenodeAnodeMoveBall"
@@ -264,8 +265,8 @@
                       }
                     }
                   ],
-                  "@DEF": "nodenodeA",
-                  "@class": "nodenodeA"
+                  "@DEF": "nodenodeAnodeA",
+                  "@class": "nodenodeAnodeA"
                 }
               },
               {
@@ -421,6 +422,7 @@
                           "                                                old = translation;",
                           "\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
                           "                                                keyValue = new MFVec3f(old, translation);",
+                          "\t\t\t\t\t\tBrowser.println(translation);",
                           "\t\t\t\t\t}"
                         ],
                         "@class": "nodenodeBnodeMoveBall"
@@ -467,8 +469,8 @@
                       }
                     }
                   ],
-                  "@DEF": "nodenodeB",
-                  "@class": "nodenodeB"
+                  "@DEF": "nodenodeBnodeB",
+                  "@class": "nodenodeBnodeB"
                 }
               },
               {
@@ -624,6 +626,7 @@
                           "                                                old = translation;",
                           "\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
                           "                                                keyValue = new MFVec3f(old, translation);",
+                          "\t\t\t\t\t\tBrowser.println(translation);",
                           "\t\t\t\t\t}"
                         ],
                         "@class": "nodenodeCnodeMoveBall"
@@ -670,8 +673,8 @@
                       }
                     }
                   ],
-                  "@DEF": "nodenodeC",
-                  "@class": "nodenodeC"
+                  "@DEF": "nodenodeCnodeC",
+                  "@class": "nodenodeCnodeC"
                 }
               },
               {
@@ -827,6 +830,7 @@
                           "                                                old = translation;",
                           "\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
                           "                                                keyValue = new MFVec3f(old, translation);",
+                          "\t\t\t\t\t\tBrowser.println(translation);",
                           "\t\t\t\t\t}"
                         ],
                         "@class": "nodenodeDnodeMoveBall"
@@ -873,8 +877,8 @@
                       }
                     }
                   ],
-                  "@DEF": "nodenodeD",
-                  "@class": "nodenodeD"
+                  "@DEF": "nodenodeDnodeD",
+                  "@class": "nodenodeDnodeD"
                 }
               },
               {
@@ -1027,8 +1031,8 @@
                       }
                     }
                   ],
-                  "@DEF": "cylinderlinkA",
-                  "@class": "cylinderlinkA"
+                  "@DEF": "cylinderlinkAlinkA",
+                  "@class": "cylinderlinkAlinkA"
                 }
               },
               {
@@ -1181,8 +1185,8 @@
                       }
                     }
                   ],
-                  "@DEF": "cylinderlinkB",
-                  "@class": "cylinderlinkB"
+                  "@DEF": "cylinderlinkBlinkB",
+                  "@class": "cylinderlinkBlinkB"
                 }
               },
               {
@@ -1335,8 +1339,8 @@
                       }
                     }
                   ],
-                  "@DEF": "cylinderlinkC",
-                  "@class": "cylinderlinkC"
+                  "@DEF": "cylinderlinkClinkC",
+                  "@class": "cylinderlinkClinkC"
                 }
               }
             ],
@@ -1382,7 +1386,7 @@
               "\tfunction add_node(value) {",
               "                Browser.print('hey ', counter);",
               "                counter = counter++;",
-              "        \tnode_changed = Browser.createX3DFromString(\"<ProtoInstance DEF='node\"+counter+\"' name='node'><fieldValue name='position' value='0.0 0.0 0.0'/></ProtoInstance>\");",
+              "\t\tnode_changed = Browser.createX3DFromString('{ \"ProtoInstance\": { \"@name\":\"node\", \"@DEF\":\"node'+counter+'\", \"fieldValue\": [ { \"@name\":\"position\", \"@value\":[0.0,0.0,0.0]}]}}');",
               "                ModifiableNode.children[ModifiableNode.children.length] = node_changed[0];",
               "        }"
             ],

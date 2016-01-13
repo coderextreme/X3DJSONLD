@@ -5,7 +5,7 @@
 // Load X3D JSON into web page
 
 function printElement(el, indent, xml) {
-	var INDENT = " ";
+	var INDENT = "";
         var child;
         var key;
         var attrs = "";

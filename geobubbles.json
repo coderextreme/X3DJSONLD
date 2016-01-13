@@ -111,7 +111,7 @@
 "\t\t\t\tvalue_changed = Math.round(Math.random()*2);",
 "                        \tvar vc = value_changed;",
 "                        \tpositions[vc] = new SFVec3d(Math.round(Math.random()*2)*0.0015708*cartesianMult, Math.round(Math.random()*2)*0.0015708*cartesianMult, 4);",
-"\t\t\t} while ( positions[ov][0] === positions[vc][0] &amp;&amp; positions[ov][1] === positions[vc][1] &amp;&amp; positions[ov][2] === positions[vc][2]);",
+"\t\t\t} while ( positions[ov][0] === positions[vc][0] && positions[ov][1] === positions[vc][1] && positions[ov][2] === positions[vc][2]);",
 "                        Browser.println(positions[ov]);",
 "                        Browser.println(positions[vc]);",
 "\t\t\t// position_changed = new MFVec3d();",

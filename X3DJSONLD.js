@@ -1,5 +1,15 @@
 "use strict";
 
+// For X3D Browser functions
+if (typeof Browser === 'undefined') {
+	var Browser = {
+		print : function(string) { console.error(string); },
+		println : function(string) { console.error(string); },
+		stringToArray : function(string) { return JSON.parse('['+string+']'); },
+		createX3DFromString : function(string) { return loadX3DJS(undefined, JSON.parse(string), 'foo.json'); }
+	}
+}
+
 // 'http://www.web3d.org/specifications/x3d-namespace'
 
 // Load X3D JSON into web page
@@ -240,22 +250,31 @@ function ConvertToX3DOM(object, parentkey, element, path) {
 
 function loadX3DJS(selector, json, path, xml) {
 	var element = null;
-	if (typeof selector !== 'undefined' && typeof document !== 'undefined') {
-		element = document.querySelector(selector);
+	if (typeof document !== 'undefined') {
+		if (typeof selector !== 'undefined') {
+			element = document.querySelector(selector);
+		} else {
+			element = document.createElement('div')
+		}
 	}
 	var el = ConvertToX3DOM(json, "", element, path);
-	xml = xml || [];
-	xml.push('<?xml version="1.0" encoding="UTF-8"?>');
-	xml.push('<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">');
- 	// for Cobweb
-	el.children[0].children[0].attributes["id"] = "x3dele";
-	el.children[0].children[0].attributes["xmlns:xsd"] = 'http://www.w3.org/2001/XMLSchema-instance';
-	printElement(el, "", xml);
 	if (typeof x3dom !== 'undefined') {
 		x3dom.reload();
 	}
+	if (typeof xml !== 'undefined') {
+		xml.push('<?xml version="1.0" encoding="UTF-8"?>');
+		xml.push('<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">');
+		// for Cobweb
+		el.children[0].children[0].attributes["id"] = "x3dele";
+		el.children[0].children[0].attributes["xmlns:xsd"] = 'http://www.w3.org/2001/XMLSchema-instance';
+		printElement(el, "", xml);
+	}
+	return element;
 }
 
 if (typeof module === 'object')  {
-	module.exports = loadX3DJS;
+	module.exports = {
+		loadX3DJS : loadX3DJS,
+		Browser : Browser
+	}
 }

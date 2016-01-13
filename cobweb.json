@@ -107,7 +107,7 @@
                                   "@value":[0,0,0]
                                 },
                                 {
-                                  "@name":"scalvel",
+                                  "@name":"scalevel",
                                   "@accessType":"inputOutput",
                                   "@type":"SFVec3f",
                                   "@value":[0,0,0]
@@ -121,37 +121,25 @@
                               "#sourceText":[
 "ecmascript:",
 "function initialize() {",
-"    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);",
+"    velocity = new SFVec3f(- Math.random() * 0.25 + 0.125, - Math.random() * 0.25 + 0.125, - Math.random() * 0.25 + 0.125);",
 "",
-"    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);",
-"}",
-"",
-"function set_translation(value) {",
-"   translation = value;",
-"}",
-"",
-"function set_scale(value) {",
-"   scale = value;",
-"}",
-"",
-"function translation_changed() {",
-"\treturn translation;",
+"    scalevel = new SFVec3f(- Math.random() * 0.4, - Math.random() * 0.4, - Math.random() * 0.4);",
 "}",
 "",
 "function set_fraction(value) {",
-"    translation = new SFVec3f(\ttranslation[0] + velocity[0], translation[1] + velocity[1], translation[2] + velocity[2]);",
-"    scale = new SFVec3f(scale[0] + scalvel[0], scale[1] + scalvel[1], scale[2] + scalvel[2]);",
+"    translation = new SFVec3f(translation[0] - velocity[0], translation[1] - velocity[1], translation[2] - velocity[2]);",
+"    scale = new SFVec3f(scale[0] - scalevel[0], scale[1] - scalevel[1], scale[2] - scalevel[2]);",
 "    for (var j = 0; j < 3; j++) {",
-"\t    // if you get to far away or too big, explode",
-"\t    if ( Math.abs(translation[j]) > 256) {",
-"\t\ttranslation[j] = 0;",
-"\t\tinitialize();",
-"\t    }",
-"\t    if (Math.abs(scale[j]) > 20) {",
-"\t\tscale[j] = scale[j]/2;",
-"\t\ttranslation[j] = 0;",
-"\t\tinitialize();",
-"\t    }",
+"        // if you get to far away or too big, explode",
+"        if ( Math.abs(translation[j]) > 256) {",
+"            translation[j] = 0;",
+"            initialize();",
+"        }",
+"        if (Math.abs(scale[j]) > 20) {",
+"            scale[j] = scale[j]/2;",
+"            translation[j] = 0;",
+"            initialize();",
+"        }",
 "    }",
 "}"
 ]
@@ -182,6 +170,14 @@
                           },
                           { "ROUTE":
                             {
+                              "@fromNode":"bubbleClock",
+                              "@fromField":"fraction_changed",
+                              "@toNode":"bounce",
+                              "@toField":"set_fraction"
+                            }
+                          },
+                          { "ROUTE":
+                            {
                               "@fromNode":"bounce",
                               "@fromField":"translation_changed",
                               "@toNode":"transform",
@@ -194,14 +190,6 @@
                               "@fromField":"scale_changed",
                               "@toNode":"transform",
                               "@toField":"set_scale"
-                            }
-                          },
-                          { "ROUTE":
-                            {
-                              "@fromNode":"bubbleClock",
-                              "@fromField":"fraction_changed",
-                              "@toNode":"bounce",
-                              "@toField":"set_fraction"
                             }
                           }
                         ]
