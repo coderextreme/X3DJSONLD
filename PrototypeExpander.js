@@ -24,7 +24,7 @@ function setScript(scope, field, object, objectfield) {
 }
 
 function setConnect(scope, field, object, objectfield) {
-	//console.error("setconn ", scope, field);
+	// console.error("setconn ", scope, field);
 	protoField[scope+field] = [ object, objectfield ];
 	// set default value
 	if (typeof interfaceField[scope+field] !== 'undefined') {
@@ -39,17 +39,17 @@ function setConnect(scope, field, object, objectfield) {
 }
 
 function getInterface(scope, field) {
-	//console.error("getinter", scope, field);
+	// console.error("getinter", scope, field);
 	return interfaceField[scope+field];
 }
 
 function setInterface(scope, field, value) {
-	//console.error("setinter", scope, field);
+	// console.error("setinter", scope, field);
 	interfaceField[scope+field] = value;
 }
 
 function setObjectValue(scope, field, fieldOrNode, value) {
-	//console.error("setvalue", scope, field);
+	// console.error("setvalue", scope, field);
 	var obj = protoField[scope+field];
 	if (typeof obj !== 'undefined') {
 		if (obj[1] === 'value' || field.indexOf("set_") === 0) {
@@ -118,18 +118,59 @@ function zap(object) {
 	}
 }
 
+var fs = require("fs");
+
 function realPrototypeExpander(object, scope, isInDeclaration) {
 	var p;
 	if (typeof object === "object") {
 		for (p in object) {
 			if (p.toLowerCase() === 'script') {
 				var def  = object[p]["@DEF"];
+				var url  = object[p]["@url"];
 				var fields  = object[p]["field"];
 				for (var field in fields) {
 					setScript(scope+def,
 					    fields[field]["@name"],
 					    fields[field],
 					    "value");
+				}
+				if (typeof url !== 'undefined') {
+					var data;
+					for (var u in url) {
+						if (typeof $ !== 'undefined' && url[u].indexOf("http") === 0) {
+							console.error("Loading URL", url[u]);
+							$.get(url[u], function(data) {
+								if (typeof data !== 'undefined') {
+									object[p]["#sourceText"] = data;
+									console.error("Loaded URL", url);
+									delete object[p]["@url"];
+									console.error("SCRIPT", object[p]);
+								}
+							});
+						} else if (typeof fs !== 'undefined' && url[u].indexOf("http") != 0) {
+							console.error("Loading File", url[u]);
+							data = fs.readFileSync(url[u]);
+							if (typeof data !== 'undefined') {
+								data = data.toString().replace(/"/, "\"").split("\n");
+								object[p]["#sourceText"] = data;
+								console.error("Loaded URL", url[u]);
+								delete object[p]["@url"];
+								console.error("SCRIPT", object[p]);
+							}
+						} else if (typeof $ !== 'undefined') {
+							console.error("Loading URL", url[u]);
+							$.get(url[u], function(data) {
+								if (typeof data !== 'undefined') {
+									object[p]["#sourceText"] = data;
+									console.error("Loaded URL", url);
+									delete object[p]["@url"];
+									console.error("SCRIPT", object[p]);
+								}
+							});
+						} else {
+							console.error("Didn't load", url[u], $, fs.readFileSync);
+						}
+					}
 				}
 				realPrototypeExpander(object[p], scope, isInDeclaration);
 			} else if (p.toLowerCase() === 'protodeclare') {

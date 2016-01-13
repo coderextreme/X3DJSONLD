@@ -238,7 +238,7 @@
                     { "Script":
                       {
                         "@DEF":"ArchPrototypeScript",
-                        "@url":["ArchPrototypeScript.js","http://X3dGraphics.com/examples/X3dForAdvancedModeling/Buildings/ArchPrototypeScript.js"],
+                        "@url":["./ArchPrototypeScript.js","X3DJSONLD/ArchPrototypeScript.js","http://coderextreme.net/X3DJSONLD/ArchPrototypeScript.js","http://X3dGraphics.com/examples/X3dForAdvancedModeling/Buildings/ArchPrototypeScript.js"],
                         "field": [
                           {
                             "@name":"clearSpanWidth",
@@ -468,7 +468,7 @@
           { "Inline":
             {
               "@DEF":"CoordinateAxes",
-              "@url":["../../X3dForWebAuthors/Chapter03-Grouping/CoordinateAxes.x3d","../../../Savage/Tools/Authoring/CoordinateAxes.x3d","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03-Grouping/CoordinateAxes.x3d","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03-Grouping/CoordinateAxes.wrl","../../../Savage/Tools/Authoring/CoordinateAxes.wrl","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03-Grouping/CoordinateAxes.wrl","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"]
+              "@url":["./CoordinateAxes.x3d", "X3DJSONLD/CoordinateAxes.x3d", "http://coderextreme.net/X3DJSONLD/CoordinateAxes.x3d"]
             }
           }
         ]
