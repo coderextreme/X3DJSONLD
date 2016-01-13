@@ -90,7 +90,7 @@
             "-children": [
               {
                 "Transform": {
-                  "@DEF": "transformBubblebubbleABubble",
+                  "@DEF": "BubblebubbleABubbletransform",
                   "-children": [
                     {
                       "Shape": {
@@ -123,7 +123,7 @@
                     },
                     {
                       "Script": {
-                        "@DEF": "bounceBubblebubbleABubble",
+                        "@DEF": "BubblebubbleABubblebounce",
                         "field": [
                           {
                             "@name": "scale",
@@ -156,7 +156,7 @@
                             ]
                           },
                           {
-                            "@name": "scalvel",
+                            "@name": "scalevel",
                             "@accessType": "inputOutput",
                             "@type": "SFVec3f",
                             "@value": [
@@ -174,98 +174,86 @@
                         "#sourceText": [
                           "ecmascript:",
                           "function initialize() {",
-                          "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);",
+                          "    velocity = new SFVec3f(- Math.random() * 0.25 + 0.125, - Math.random() * 0.25 + 0.125, - Math.random() * 0.25 + 0.125);",
                           "",
-                          "    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);",
-                          "}",
-                          "",
-                          "function set_translation(value) {",
-                          "   translation = value;",
-                          "}",
-                          "",
-                          "function set_scale(value) {",
-                          "   scale = value;",
-                          "}",
-                          "",
-                          "function translation_changed() {",
-                          "\treturn translation;",
+                          "    scalevel = new SFVec3f(- Math.random() * 0.4, - Math.random() * 0.4, - Math.random() * 0.4);",
                           "}",
                           "",
                           "function set_fraction(value) {",
-                          "    translation = new SFVec3f(\ttranslation[0] + velocity[0], translation[1] + velocity[1], translation[2] + velocity[2]);",
-                          "    scale = new SFVec3f(scale[0] + scalvel[0], scale[1] + scalvel[1], scale[2] + scalvel[2]);",
+                          "    translation = new SFVec3f(translation[0] - velocity[0], translation[1] - velocity[1], translation[2] - velocity[2]);",
+                          "    scale = new SFVec3f(scale[0] - scalevel[0], scale[1] - scalevel[1], scale[2] - scalevel[2]);",
                           "    for (var j = 0; j < 3; j++) {",
-                          "\t    // if you get to far away or too big, explode",
-                          "\t    if ( Math.abs(translation[j]) > 256) {",
-                          "\t\ttranslation[j] = 0;",
-                          "\t\tinitialize();",
-                          "\t    }",
-                          "\t    if (Math.abs(scale[j]) > 20) {",
-                          "\t\tscale[j] = scale[j]/2;",
-                          "\t\ttranslation[j] = 0;",
-                          "\t\tinitialize();",
-                          "\t    }",
+                          "        // if you get to far away or too big, explode",
+                          "        if ( Math.abs(translation[j]) > 256) {",
+                          "            translation[j] = 0;",
+                          "            initialize();",
+                          "        }",
+                          "        if (Math.abs(scale[j]) > 20) {",
+                          "            scale[j] = scale[j]/2;",
+                          "            translation[j] = 0;",
+                          "            initialize();",
+                          "        }",
                           "    }",
                           "}"
                         ],
-                        "@class": "bounceBubblebubbleABubble"
+                        "@class": "BubblebubbleABubblebounce"
                       }
                     },
                     {
                       "TimeSensor": {
-                        "@DEF": "bubbleClockBubblebubbleABubble",
+                        "@DEF": "BubblebubbleABubblebubbleClock",
                         "@cycleInterval": 10,
                         "@loop": true,
-                        "@class": "bubbleClockBubblebubbleABubble"
+                        "@class": "BubblebubbleABubblebubbleClock"
                       }
                     },
                     {
                       "ROUTE": {
-                        "@fromNode": "transformBubblebubbleABubble",
+                        "@fromNode": "BubblebubbleABubbletransform",
                         "@fromField": "translation_changed",
-                        "@toNode": "bounceBubblebubbleABubble",
+                        "@toNode": "BubblebubbleABubblebounce",
                         "@toField": "set_translation"
                       }
                     },
                     {
                       "ROUTE": {
-                        "@fromNode": "transformBubblebubbleABubble",
+                        "@fromNode": "BubblebubbleABubbletransform",
                         "@fromField": "scale_changed",
-                        "@toNode": "bounceBubblebubbleABubble",
+                        "@toNode": "BubblebubbleABubblebounce",
                         "@toField": "set_scale"
                       }
                     },
                     {
                       "ROUTE": {
-                        "@fromNode": "bounceBubblebubbleABubble",
-                        "@fromField": "translation_changed",
-                        "@toNode": "transformBubblebubbleABubble",
-                        "@toField": "set_translation"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromNode": "bounceBubblebubbleABubble",
-                        "@fromField": "scale_changed",
-                        "@toNode": "transformBubblebubbleABubble",
-                        "@toField": "set_scale"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromNode": "bubbleClockBubblebubbleABubble",
+                        "@fromNode": "BubblebubbleABubblebubbleClock",
                         "@fromField": "fraction_changed",
-                        "@toNode": "bounceBubblebubbleABubble",
+                        "@toNode": "BubblebubbleABubblebounce",
                         "@toField": "set_fraction"
+                      }
+                    },
+                    {
+                      "ROUTE": {
+                        "@fromNode": "BubblebubbleABubblebounce",
+                        "@fromField": "translation_changed",
+                        "@toNode": "BubblebubbleABubbletransform",
+                        "@toField": "set_translation"
+                      }
+                    },
+                    {
+                      "ROUTE": {
+                        "@fromNode": "BubblebubbleABubblebounce",
+                        "@fromField": "scale_changed",
+                        "@toNode": "BubblebubbleABubbletransform",
+                        "@toField": "set_scale"
                       }
                     }
                   ],
-                  "@class": "transformBubblebubbleABubble"
+                  "@class": "BubblebubbleABubbletransform"
                 }
               }
             ],
-            "@DEF": "bubbleABubble",
-            "@class": "bubbleABubble"
+            "@DEF": "BubblebubbleAbubbleA",
+            "@class": "BubblebubbleAbubbleA"
           }
         },
         {
@@ -273,7 +261,7 @@
             "-children": [
               {
                 "Transform": {
-                  "@DEF": "transformBubblebubbleBBubble",
+                  "@DEF": "BubblebubbleBBubbletransform",
                   "-children": [
                     {
                       "Shape": {
@@ -306,7 +294,7 @@
                     },
                     {
                       "Script": {
-                        "@DEF": "bounceBubblebubbleBBubble",
+                        "@DEF": "BubblebubbleBBubblebounce",
                         "field": [
                           {
                             "@name": "scale",
@@ -339,7 +327,7 @@
                             ]
                           },
                           {
-                            "@name": "scalvel",
+                            "@name": "scalevel",
                             "@accessType": "inputOutput",
                             "@type": "SFVec3f",
                             "@value": [
@@ -357,98 +345,86 @@
                         "#sourceText": [
                           "ecmascript:",
                           "function initialize() {",
-                          "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);",
+                          "    velocity = new SFVec3f(- Math.random() * 0.25 + 0.125, - Math.random() * 0.25 + 0.125, - Math.random() * 0.25 + 0.125);",
                           "",
-                          "    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);",
-                          "}",
-                          "",
-                          "function set_translation(value) {",
-                          "   translation = value;",
-                          "}",
-                          "",
-                          "function set_scale(value) {",
-                          "   scale = value;",
-                          "}",
-                          "",
-                          "function translation_changed() {",
-                          "\treturn translation;",
+                          "    scalevel = new SFVec3f(- Math.random() * 0.4, - Math.random() * 0.4, - Math.random() * 0.4);",
                           "}",
                           "",
                           "function set_fraction(value) {",
-                          "    translation = new SFVec3f(\ttranslation[0] + velocity[0], translation[1] + velocity[1], translation[2] + velocity[2]);",
-                          "    scale = new SFVec3f(scale[0] + scalvel[0], scale[1] + scalvel[1], scale[2] + scalvel[2]);",
+                          "    translation = new SFVec3f(translation[0] - velocity[0], translation[1] - velocity[1], translation[2] - velocity[2]);",
+                          "    scale = new SFVec3f(scale[0] - scalevel[0], scale[1] - scalevel[1], scale[2] - scalevel[2]);",
                           "    for (var j = 0; j < 3; j++) {",
-                          "\t    // if you get to far away or too big, explode",
-                          "\t    if ( Math.abs(translation[j]) > 256) {",
-                          "\t\ttranslation[j] = 0;",
-                          "\t\tinitialize();",
-                          "\t    }",
-                          "\t    if (Math.abs(scale[j]) > 20) {",
-                          "\t\tscale[j] = scale[j]/2;",
-                          "\t\ttranslation[j] = 0;",
-                          "\t\tinitialize();",
-                          "\t    }",
+                          "        // if you get to far away or too big, explode",
+                          "        if ( Math.abs(translation[j]) > 256) {",
+                          "            translation[j] = 0;",
+                          "            initialize();",
+                          "        }",
+                          "        if (Math.abs(scale[j]) > 20) {",
+                          "            scale[j] = scale[j]/2;",
+                          "            translation[j] = 0;",
+                          "            initialize();",
+                          "        }",
                           "    }",
                           "}"
                         ],
-                        "@class": "bounceBubblebubbleBBubble"
+                        "@class": "BubblebubbleBBubblebounce"
                       }
                     },
                     {
                       "TimeSensor": {
-                        "@DEF": "bubbleClockBubblebubbleBBubble",
+                        "@DEF": "BubblebubbleBBubblebubbleClock",
                         "@cycleInterval": 10,
                         "@loop": true,
-                        "@class": "bubbleClockBubblebubbleBBubble"
+                        "@class": "BubblebubbleBBubblebubbleClock"
                       }
                     },
                     {
                       "ROUTE": {
-                        "@fromNode": "transformBubblebubbleBBubble",
+                        "@fromNode": "BubblebubbleBBubbletransform",
                         "@fromField": "translation_changed",
-                        "@toNode": "bounceBubblebubbleBBubble",
+                        "@toNode": "BubblebubbleBBubblebounce",
                         "@toField": "set_translation"
                       }
                     },
                     {
                       "ROUTE": {
-                        "@fromNode": "transformBubblebubbleBBubble",
+                        "@fromNode": "BubblebubbleBBubbletransform",
                         "@fromField": "scale_changed",
-                        "@toNode": "bounceBubblebubbleBBubble",
+                        "@toNode": "BubblebubbleBBubblebounce",
                         "@toField": "set_scale"
                       }
                     },
                     {
                       "ROUTE": {
-                        "@fromNode": "bounceBubblebubbleBBubble",
-                        "@fromField": "translation_changed",
-                        "@toNode": "transformBubblebubbleBBubble",
-                        "@toField": "set_translation"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromNode": "bounceBubblebubbleBBubble",
-                        "@fromField": "scale_changed",
-                        "@toNode": "transformBubblebubbleBBubble",
-                        "@toField": "set_scale"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromNode": "bubbleClockBubblebubbleBBubble",
+                        "@fromNode": "BubblebubbleBBubblebubbleClock",
                         "@fromField": "fraction_changed",
-                        "@toNode": "bounceBubblebubbleBBubble",
+                        "@toNode": "BubblebubbleBBubblebounce",
                         "@toField": "set_fraction"
+                      }
+                    },
+                    {
+                      "ROUTE": {
+                        "@fromNode": "BubblebubbleBBubblebounce",
+                        "@fromField": "translation_changed",
+                        "@toNode": "BubblebubbleBBubbletransform",
+                        "@toField": "set_translation"
+                      }
+                    },
+                    {
+                      "ROUTE": {
+                        "@fromNode": "BubblebubbleBBubblebounce",
+                        "@fromField": "scale_changed",
+                        "@toNode": "BubblebubbleBBubbletransform",
+                        "@toField": "set_scale"
                       }
                     }
                   ],
-                  "@class": "transformBubblebubbleBBubble"
+                  "@class": "BubblebubbleBBubbletransform"
                 }
               }
             ],
-            "@DEF": "bubbleBBubble",
-            "@class": "bubbleBBubble"
+            "@DEF": "BubblebubbleBbubbleB",
+            "@class": "BubblebubbleBbubbleB"
           }
         },
         {
@@ -456,7 +432,7 @@
             "-children": [
               {
                 "Transform": {
-                  "@DEF": "transformBubblebubbleCBubble",
+                  "@DEF": "BubblebubbleCBubbletransform",
                   "-children": [
                     {
                       "Shape": {
@@ -489,7 +465,7 @@
                     },
                     {
                       "Script": {
-                        "@DEF": "bounceBubblebubbleCBubble",
+                        "@DEF": "BubblebubbleCBubblebounce",
                         "field": [
                           {
                             "@name": "scale",
@@ -522,7 +498,7 @@
                             ]
                           },
                           {
-                            "@name": "scalvel",
+                            "@name": "scalevel",
                             "@accessType": "inputOutput",
                             "@type": "SFVec3f",
                             "@value": [
@@ -540,98 +516,86 @@
                         "#sourceText": [
                           "ecmascript:",
                           "function initialize() {",
-                          "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);",
+                          "    velocity = new SFVec3f(- Math.random() * 0.25 + 0.125, - Math.random() * 0.25 + 0.125, - Math.random() * 0.25 + 0.125);",
                           "",
-                          "    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);",
-                          "}",
-                          "",
-                          "function set_translation(value) {",
-                          "   translation = value;",
-                          "}",
-                          "",
-                          "function set_scale(value) {",
-                          "   scale = value;",
-                          "}",
-                          "",
-                          "function translation_changed() {",
-                          "\treturn translation;",
+                          "    scalevel = new SFVec3f(- Math.random() * 0.4, - Math.random() * 0.4, - Math.random() * 0.4);",
                           "}",
                           "",
                           "function set_fraction(value) {",
-                          "    translation = new SFVec3f(\ttranslation[0] + velocity[0], translation[1] + velocity[1], translation[2] + velocity[2]);",
-                          "    scale = new SFVec3f(scale[0] + scalvel[0], scale[1] + scalvel[1], scale[2] + scalvel[2]);",
+                          "    translation = new SFVec3f(translation[0] - velocity[0], translation[1] - velocity[1], translation[2] - velocity[2]);",
+                          "    scale = new SFVec3f(scale[0] - scalevel[0], scale[1] - scalevel[1], scale[2] - scalevel[2]);",
                           "    for (var j = 0; j < 3; j++) {",
-                          "\t    // if you get to far away or too big, explode",
-                          "\t    if ( Math.abs(translation[j]) > 256) {",
-                          "\t\ttranslation[j] = 0;",
-                          "\t\tinitialize();",
-                          "\t    }",
-                          "\t    if (Math.abs(scale[j]) > 20) {",
-                          "\t\tscale[j] = scale[j]/2;",
-                          "\t\ttranslation[j] = 0;",
-                          "\t\tinitialize();",
-                          "\t    }",
+                          "        // if you get to far away or too big, explode",
+                          "        if ( Math.abs(translation[j]) > 256) {",
+                          "            translation[j] = 0;",
+                          "            initialize();",
+                          "        }",
+                          "        if (Math.abs(scale[j]) > 20) {",
+                          "            scale[j] = scale[j]/2;",
+                          "            translation[j] = 0;",
+                          "            initialize();",
+                          "        }",
                           "    }",
                           "}"
                         ],
-                        "@class": "bounceBubblebubbleCBubble"
+                        "@class": "BubblebubbleCBubblebounce"
                       }
                     },
                     {
                       "TimeSensor": {
-                        "@DEF": "bubbleClockBubblebubbleCBubble",
+                        "@DEF": "BubblebubbleCBubblebubbleClock",
                         "@cycleInterval": 10,
                         "@loop": true,
-                        "@class": "bubbleClockBubblebubbleCBubble"
+                        "@class": "BubblebubbleCBubblebubbleClock"
                       }
                     },
                     {
                       "ROUTE": {
-                        "@fromNode": "transformBubblebubbleCBubble",
+                        "@fromNode": "BubblebubbleCBubbletransform",
                         "@fromField": "translation_changed",
-                        "@toNode": "bounceBubblebubbleCBubble",
+                        "@toNode": "BubblebubbleCBubblebounce",
                         "@toField": "set_translation"
                       }
                     },
                     {
                       "ROUTE": {
-                        "@fromNode": "transformBubblebubbleCBubble",
+                        "@fromNode": "BubblebubbleCBubbletransform",
                         "@fromField": "scale_changed",
-                        "@toNode": "bounceBubblebubbleCBubble",
+                        "@toNode": "BubblebubbleCBubblebounce",
                         "@toField": "set_scale"
                       }
                     },
                     {
                       "ROUTE": {
-                        "@fromNode": "bounceBubblebubbleCBubble",
-                        "@fromField": "translation_changed",
-                        "@toNode": "transformBubblebubbleCBubble",
-                        "@toField": "set_translation"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromNode": "bounceBubblebubbleCBubble",
-                        "@fromField": "scale_changed",
-                        "@toNode": "transformBubblebubbleCBubble",
-                        "@toField": "set_scale"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromNode": "bubbleClockBubblebubbleCBubble",
+                        "@fromNode": "BubblebubbleCBubblebubbleClock",
                         "@fromField": "fraction_changed",
-                        "@toNode": "bounceBubblebubbleCBubble",
+                        "@toNode": "BubblebubbleCBubblebounce",
                         "@toField": "set_fraction"
+                      }
+                    },
+                    {
+                      "ROUTE": {
+                        "@fromNode": "BubblebubbleCBubblebounce",
+                        "@fromField": "translation_changed",
+                        "@toNode": "BubblebubbleCBubbletransform",
+                        "@toField": "set_translation"
+                      }
+                    },
+                    {
+                      "ROUTE": {
+                        "@fromNode": "BubblebubbleCBubblebounce",
+                        "@fromField": "scale_changed",
+                        "@toNode": "BubblebubbleCBubbletransform",
+                        "@toField": "set_scale"
                       }
                     }
                   ],
-                  "@class": "transformBubblebubbleCBubble"
+                  "@class": "BubblebubbleCBubbletransform"
                 }
               }
             ],
-            "@DEF": "bubbleCBubble",
-            "@class": "bubbleCBubble"
+            "@DEF": "BubblebubbleCbubbleC",
+            "@class": "BubblebubbleCbubbleC"
           }
         },
         {
@@ -639,7 +603,7 @@
             "-children": [
               {
                 "Transform": {
-                  "@DEF": "transformBubblebubbleDBubble",
+                  "@DEF": "BubblebubbleDBubbletransform",
                   "-children": [
                     {
                       "Shape": {
@@ -672,7 +636,7 @@
                     },
                     {
                       "Script": {
-                        "@DEF": "bounceBubblebubbleDBubble",
+                        "@DEF": "BubblebubbleDBubblebounce",
                         "field": [
                           {
                             "@name": "scale",
@@ -705,7 +669,7 @@
                             ]
                           },
                           {
-                            "@name": "scalvel",
+                            "@name": "scalevel",
                             "@accessType": "inputOutput",
                             "@type": "SFVec3f",
                             "@value": [
@@ -723,98 +687,86 @@
                         "#sourceText": [
                           "ecmascript:",
                           "function initialize() {",
-                          "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);",
+                          "    velocity = new SFVec3f(- Math.random() * 0.25 + 0.125, - Math.random() * 0.25 + 0.125, - Math.random() * 0.25 + 0.125);",
                           "",
-                          "    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);",
-                          "}",
-                          "",
-                          "function set_translation(value) {",
-                          "   translation = value;",
-                          "}",
-                          "",
-                          "function set_scale(value) {",
-                          "   scale = value;",
-                          "}",
-                          "",
-                          "function translation_changed() {",
-                          "\treturn translation;",
+                          "    scalevel = new SFVec3f(- Math.random() * 0.4, - Math.random() * 0.4, - Math.random() * 0.4);",
                           "}",
                           "",
                           "function set_fraction(value) {",
-                          "    translation = new SFVec3f(\ttranslation[0] + velocity[0], translation[1] + velocity[1], translation[2] + velocity[2]);",
-                          "    scale = new SFVec3f(scale[0] + scalvel[0], scale[1] + scalvel[1], scale[2] + scalvel[2]);",
+                          "    translation = new SFVec3f(translation[0] - velocity[0], translation[1] - velocity[1], translation[2] - velocity[2]);",
+                          "    scale = new SFVec3f(scale[0] - scalevel[0], scale[1] - scalevel[1], scale[2] - scalevel[2]);",
                           "    for (var j = 0; j < 3; j++) {",
-                          "\t    // if you get to far away or too big, explode",
-                          "\t    if ( Math.abs(translation[j]) > 256) {",
-                          "\t\ttranslation[j] = 0;",
-                          "\t\tinitialize();",
-                          "\t    }",
-                          "\t    if (Math.abs(scale[j]) > 20) {",
-                          "\t\tscale[j] = scale[j]/2;",
-                          "\t\ttranslation[j] = 0;",
-                          "\t\tinitialize();",
-                          "\t    }",
+                          "        // if you get to far away or too big, explode",
+                          "        if ( Math.abs(translation[j]) > 256) {",
+                          "            translation[j] = 0;",
+                          "            initialize();",
+                          "        }",
+                          "        if (Math.abs(scale[j]) > 20) {",
+                          "            scale[j] = scale[j]/2;",
+                          "            translation[j] = 0;",
+                          "            initialize();",
+                          "        }",
                           "    }",
                           "}"
                         ],
-                        "@class": "bounceBubblebubbleDBubble"
+                        "@class": "BubblebubbleDBubblebounce"
                       }
                     },
                     {
                       "TimeSensor": {
-                        "@DEF": "bubbleClockBubblebubbleDBubble",
+                        "@DEF": "BubblebubbleDBubblebubbleClock",
                         "@cycleInterval": 10,
                         "@loop": true,
-                        "@class": "bubbleClockBubblebubbleDBubble"
+                        "@class": "BubblebubbleDBubblebubbleClock"
                       }
                     },
                     {
                       "ROUTE": {
-                        "@fromNode": "transformBubblebubbleDBubble",
+                        "@fromNode": "BubblebubbleDBubbletransform",
                         "@fromField": "translation_changed",
-                        "@toNode": "bounceBubblebubbleDBubble",
+                        "@toNode": "BubblebubbleDBubblebounce",
                         "@toField": "set_translation"
                       }
                     },
                     {
                       "ROUTE": {
-                        "@fromNode": "transformBubblebubbleDBubble",
+                        "@fromNode": "BubblebubbleDBubbletransform",
                         "@fromField": "scale_changed",
-                        "@toNode": "bounceBubblebubbleDBubble",
+                        "@toNode": "BubblebubbleDBubblebounce",
                         "@toField": "set_scale"
                       }
                     },
                     {
                       "ROUTE": {
-                        "@fromNode": "bounceBubblebubbleDBubble",
-                        "@fromField": "translation_changed",
-                        "@toNode": "transformBubblebubbleDBubble",
-                        "@toField": "set_translation"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromNode": "bounceBubblebubbleDBubble",
-                        "@fromField": "scale_changed",
-                        "@toNode": "transformBubblebubbleDBubble",
-                        "@toField": "set_scale"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromNode": "bubbleClockBubblebubbleDBubble",
+                        "@fromNode": "BubblebubbleDBubblebubbleClock",
                         "@fromField": "fraction_changed",
-                        "@toNode": "bounceBubblebubbleDBubble",
+                        "@toNode": "BubblebubbleDBubblebounce",
                         "@toField": "set_fraction"
+                      }
+                    },
+                    {
+                      "ROUTE": {
+                        "@fromNode": "BubblebubbleDBubblebounce",
+                        "@fromField": "translation_changed",
+                        "@toNode": "BubblebubbleDBubbletransform",
+                        "@toField": "set_translation"
+                      }
+                    },
+                    {
+                      "ROUTE": {
+                        "@fromNode": "BubblebubbleDBubblebounce",
+                        "@fromField": "scale_changed",
+                        "@toNode": "BubblebubbleDBubbletransform",
+                        "@toField": "set_scale"
                       }
                     }
                   ],
-                  "@class": "transformBubblebubbleDBubble"
+                  "@class": "BubblebubbleDBubbletransform"
                 }
               }
             ],
-            "@DEF": "bubbleDBubble",
-            "@class": "bubbleDBubble"
+            "@DEF": "BubblebubbleDbubbleD",
+            "@class": "BubblebubbleDbubbleD"
           }
         }
       ]

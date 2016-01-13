@@ -25,7 +25,5 @@
         </Script>
         <ROUTE fromNode='TourTime' fromField='cycleTime' toNode='RandomTourTime' toField='set_fraction'/>
         <ROUTE fromNode='RandomTourTime' fromField='position_changed' toNode='TourPosition' toField='keyValue'/>
-        <ROUTE fromNode='TourTime' fromField='fraction_changed' toNode='TourPosition' toField='set_fraction'/>
-        <ROUTE fromNode='TourPosition' fromField='value_changed' toNode='Tour' toField='set_position'/>
     </Scene>
 </X3D>

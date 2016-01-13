@@ -49,6 +49,7 @@ ecmascript:
                                                 old = translation;
 						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
                                                 keyValue = new MFVec3f(old, translation);
+						Browser.println(translation);
 					}
 ]]>
                 </Script>
@@ -147,7 +148,7 @@ ecmascript:
 	function add_node(value) {
                 Browser.print('hey ', counter);
                 counter = counter++;
-        	node_changed = Browser.createX3DFromString("<ProtoInstance DEF='node"+counter+"' name='node'><fieldValue name='position' value='0.0 0.0 0.0'/></ProtoInstance>");
+		node_changed = Browser.createX3DFromString('{ "ProtoInstance": { "@name":"node", "@DEF":"node'+counter+'", "fieldValue": [ { "@name":"position", "@value":[0.0,0.0,0.0]}]}}');
                 ModifiableNode.children[ModifiableNode.children.length] = node_changed[0];
         }
 	]]>

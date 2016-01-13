@@ -38,6 +38,7 @@
 <option>ObliqueStrategies.json</option>
 <option>IcosahedronSubdivisionLevel5.json</option>
 <option>ExtrusionHeart.json</option>
+<option>cob.json</option>
 <option>cobweb.json</option>
 <option>cobwebs.json</option>
 <option>pp3.json</option>
@@ -48,7 +49,7 @@
 </td>
 <td>
 <input type="text" onchange="filter(event)"></input>
-Use Prototype Expander? <input id="prototype" type="checkbox"></input>
+Use Prototype Expander? <input id="prototype" type="checkbox" checked="true"></input>
 </td>
 </tr>
 <tr>
@@ -71,10 +72,9 @@ Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into JSON X3DOM
     <script type="text/javascript" src="X3DJSONLD.js"></script>
     <script type="text/javascript" src="PrototypeExpander.js"></script>
     <script type="text/javascript" src="Script.js"></script>
-    <script type="text/javascript" id="scripts"></script>
-    <script type="text/javascript" id="routes"></script>
 
     <script type="text/javascript">
+	var intervalId;
         function updateXML(xml) {
 		if (typeof xml !== 'undefined') {
 			// DISPLAY XML in X3DOM
@@ -121,34 +121,47 @@ Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into JSON X3DOM
 		// Now generate JavaScript code for Scripts and Routes
 		var classes = [];
 		var routecode = [];
-		routecode.push("var intervalId = setInterval(function() {");
+		routecode.push("function runRoute() {");
 		processScripts(json, classes, undefined, routecode);
-		routecode.push("}, 500);");
-		classes.push("};");
-		// console.log(classes.join('\n'));
-		// console.log(routecode.join('\n'));
-		var scripts = document.getElementById("scripts");
+		routecode.push("}");
+
 		if (typeof intervalId !== 'undefined') {
+			console.log("Interval", intervalId, "cleared");
 			clearInterval(intervalId);
+		} else {
+			console.log("intervalId undefined");
 		}
 		if (typeof X3DJSON !== 'undefined') {
 			delete X3DJSON;
 		}
-		if (typeof scripts.lastChild === 'Node') {
-			scripts.removeChild(scripts.lastChild);
-		}
-		scripts.text = classes.join("\n")
-			.replace(/&lt;/g, '<')
-			.replace(/&gt;/g, '>');
 
-		var routes = document.getElementById("routes");
-		if (typeof routes.lastChild === 'Node') {
-			routes.removeChild(routes.lastChild);
-		}
+		$("#scripts").remove();
+		var scripts = document.createElement('script');
+		scripts.id = "scripts";
+		scripts.type = 'text/javascript';
+		scripts.text = classes.join("\n");
+		$('body').append(scripts);
+
+		$("#routes").remove();
+		var routes =  document.createElement('script');
+		routes.id = "routes";
+		routes.type = 'text/javascript';
 		routes.text = routecode.join("\n");
+		$('body').append(routes);
+
 		// When we zap the source, we prevent animation
 		// zapSource(json);
+
+		console.log(scripts.text);
+		// TODO eval is evil
+		eval(scripts.text);
+		console.log(routes.text);
+		// TODO eval is evil
+		eval(routes.text);
+
 	        $('textarea#json').val(JSON.stringify(json, null, 2));
+	
+		intervalId = setInterval(runRoute, 500);
 	    }
 	    loadX3DJS(selector, json, url, xml);
 			

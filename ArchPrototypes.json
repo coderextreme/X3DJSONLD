@@ -65,11 +65,11 @@
               },
               {
                 "Transform": {
-                  "@DEF": "ArchTransformArchPrototypeArchInstanceArchPrototype",
+                  "@DEF": "ArchPrototypeArchInstanceArchPrototypeArchTransform",
                   "-children": [
                     {
                       "Shape": {
-                        "@DEF": "ArchArchPrototypeArchInstanceArchPrototype",
+                        "@DEF": "ArchPrototypeArchInstanceArchPrototypeArch",
                         "-children": [
                           {
                             "#comment": "note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly"
@@ -78,18 +78,18 @@
                         "-geometry": [
                           {
                             "IndexedFaceSet": {
-                              "@DEF": "ArchIndexArchPrototypeArchInstanceArchPrototype",
+                              "@DEF": "ArchPrototypeArchInstanceArchPrototypeArchIndex",
                               "@convex": false,
                               "@solid": false,
                               "-coord": [
                                 {
                                   "Coordinate": {
-                                    "@DEF": "ArchChordArchPrototypeArchInstanceArchPrototype",
-                                    "@class": "ArchChordArchPrototypeArchInstanceArchPrototype"
+                                    "@DEF": "ArchPrototypeArchInstanceArchPrototypeArchChord",
+                                    "@class": "ArchPrototypeArchInstanceArchPrototypeArchChord"
                                   }
                                 }
                               ],
-                              "@class": "ArchIndexArchPrototypeArchInstanceArchPrototype"
+                              "@class": "ArchPrototypeArchInstanceArchPrototypeArchIndex"
                             }
                           }
                         ],
@@ -99,8 +99,8 @@
                               "-material": [
                                 {
                                   "Material": {
-                                    "@DEF": "MaterialNodeArchPrototypeArchInstanceArchPrototype",
-                                    "@class": "MaterialNodeArchPrototypeArchInstanceArchPrototype",
+                                    "@DEF": "ArchPrototypeArchInstanceArchPrototypeMaterialNode",
+                                    "@class": "ArchPrototypeArchInstanceArchPrototypeMaterialNode",
                                     "@diffuseColor": [
                                       0.5,
                                       0.3,
@@ -117,11 +117,11 @@
                             }
                           }
                         ],
-                        "@class": "ArchArchPrototypeArchInstanceArchPrototype"
+                        "@class": "ArchPrototypeArchInstanceArchPrototypeArch"
                       }
                     }
                   ],
-                  "@class": "ArchTransformArchPrototypeArchInstanceArchPrototype"
+                  "@class": "ArchPrototypeArchInstanceArchPrototypeArchTransform"
                 }
               },
               {
@@ -132,7 +132,7 @@
               },
               {
                 "Script": {
-                  "@DEF": "ArchPrototypeScriptArchPrototypeArchInstanceArchPrototype",
+                  "@DEF": "ArchPrototypeArchInstanceArchPrototypeArchPrototypeScript",
                   "@url": [
                     "ArchPrototypeScript.js",
                     "http://X3dGraphics.com/examples/X3dForAdvancedModeling/Buildings/ArchPrototypeScript.js"
@@ -255,36 +255,37 @@
                       "#comment": "OUTPUT PARAMETERS"
                     }
                   ],
-                  "@class": "ArchPrototypeScriptArchPrototypeArchInstanceArchPrototype"
+                  "@class": "ArchPrototypeArchInstanceArchPrototypeArchPrototypeScript"
                 }
               },
               {
                 "ROUTE": {
                   "@fromField": "computedScale",
-                  "@fromNode": "ArchPrototypeScriptArchPrototypeArchInstanceArchPrototype",
+                  "@fromNode": "ArchPrototypeArchInstanceArchPrototypeArchPrototypeScript",
                   "@toField": "scale",
-                  "@toNode": "ArchTransformArchPrototypeArchInstanceArchPrototype"
+                  "@toNode": "ArchPrototypeArchInstanceArchPrototypeArchTransform"
                 }
               },
               {
                 "ROUTE": {
                   "@fromField": "pointOut",
-                  "@fromNode": "ArchPrototypeScriptArchPrototypeArchInstanceArchPrototype",
+                  "@fromNode": "ArchPrototypeArchInstanceArchPrototypeArchPrototypeScript",
                   "@toField": "point",
-                  "@toNode": "ArchChordArchPrototypeArchInstanceArchPrototype"
+                  "@toNode": "ArchPrototypeArchInstanceArchPrototypeArchChord"
                 }
               },
               {
                 "ROUTE": {
                   "@fromField": "indexOut",
-                  "@fromNode": "ArchPrototypeScriptArchPrototypeArchInstanceArchPrototype",
+                  "@fromNode": "ArchPrototypeArchInstanceArchPrototypeArchPrototypeScript",
                   "@toField": "set_coordIndex",
-                  "@toNode": "ArchIndexArchPrototypeArchInstanceArchPrototype"
+                  "@toNode": "ArchPrototypeArchInstanceArchPrototypeArchIndex"
                 }
               }
             ],
-            "@DEF": "ArchInstanceArchPrototype",
-            "@class": "ArchInstanceArchPrototype"
+            "@appinfo": "Create an arch. Can modify general parameters: clearSpanWidth, riseHeight, depth, topAbutmentHeight, pierWidth, pierHeight. - Possibility to create shapes related to an arch: ArchHalf; IntradosOnly; ArchFilled; ArchHalfFilled; Lintel. See the reference file ArchModelingDiagrams.pdf to find further information. See also ArchPrototypeScript_more_readable.js.js.",
+            "@DEF": "ArchPrototypeArchInstanceArchInstance",
+            "@class": "ArchPrototypeArchInstanceArchInstance"
           }
         },
         {

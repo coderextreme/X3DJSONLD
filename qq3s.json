@@ -91,13 +91,13 @@
                                           "-material": [
                                             {
                                               "Material": {
-                                                "@DEF": "MaterialLeftDownProcess1000Process",
+                                                "@DEF": "Process1000ProcessMaterialLeftDown",
                                                 "@diffuseColor": [
                                                   0.7,
                                                   1,
                                                   0
                                                 ],
-                                                "@class": "MaterialLeftDownProcess1000Process"
+                                                "@class": "Process1000ProcessMaterialLeftDown"
                                               }
                                             }
                                           ]
@@ -179,13 +179,13 @@
                                           "-material": [
                                             {
                                               "Material": {
-                                                "@DEF": "MaterialUpRightProcess1000Process",
+                                                "@DEF": "Process1000ProcessMaterialUpRight",
                                                 "@diffuseColor": [
                                                   0,
                                                   0.7,
                                                   1
                                                 ],
-                                                "@class": "MaterialUpRightProcess1000Process"
+                                                "@class": "Process1000ProcessMaterialUpRight"
                                               }
                                             }
                                           ]
@@ -267,7 +267,7 @@
                                           "-material": [
                                             {
                                               "Material": {
-                                                "@USE": "MaterialUpRightProcess1000Process"
+                                                "@USE": "Process1000ProcessMaterialUpRight"
                                               }
                                             }
                                           ]
@@ -349,7 +349,7 @@
                                           "-material": [
                                             {
                                               "Material": {
-                                                "@USE": "MaterialLeftDownProcess1000Process"
+                                                "@USE": "Process1000ProcessMaterialLeftDown"
                                               }
                                             }
                                           ]
@@ -416,8 +416,8 @@
                       }
                     }
                   ],
-                  "@DEF": "1000Process",
-                  "@class": "1000Process"
+                  "@DEF": "Process10001000",
+                  "@class": "Process10001000"
                 }
               }
             ]
@@ -451,13 +451,13 @@
                                           "-material": [
                                             {
                                               "Material": {
-                                                "@DEF": "MaterialLeftDownProcess2000Process",
+                                                "@DEF": "Process2000ProcessMaterialLeftDown",
                                                 "@diffuseColor": [
                                                   0.7,
                                                   1,
                                                   0
                                                 ],
-                                                "@class": "MaterialLeftDownProcess2000Process"
+                                                "@class": "Process2000ProcessMaterialLeftDown"
                                               }
                                             }
                                           ]
@@ -539,13 +539,13 @@
                                           "-material": [
                                             {
                                               "Material": {
-                                                "@DEF": "MaterialUpRightProcess2000Process",
+                                                "@DEF": "Process2000ProcessMaterialUpRight",
                                                 "@diffuseColor": [
                                                   0,
                                                   0.7,
                                                   1
                                                 ],
-                                                "@class": "MaterialUpRightProcess2000Process"
+                                                "@class": "Process2000ProcessMaterialUpRight"
                                               }
                                             }
                                           ]
@@ -627,7 +627,7 @@
                                           "-material": [
                                             {
                                               "Material": {
-                                                "@USE": "MaterialUpRightProcess2000Process"
+                                                "@USE": "Process2000ProcessMaterialUpRight"
                                               }
                                             }
                                           ]
@@ -709,7 +709,7 @@
                                           "-material": [
                                             {
                                               "Material": {
-                                                "@USE": "MaterialLeftDownProcess2000Process"
+                                                "@USE": "Process2000ProcessMaterialLeftDown"
                                               }
                                             }
                                           ]
@@ -776,8 +776,8 @@
                       }
                     }
                   ],
-                  "@DEF": "2000Process",
-                  "@class": "2000Process"
+                  "@DEF": "Process20002000",
+                  "@class": "Process20002000"
                 }
               }
             ]
@@ -816,13 +816,13 @@
                                           "-material": [
                                             {
                                               "Material": {
-                                                "@DEF": "MaterialLeftDownProcess3000Process",
+                                                "@DEF": "Process3000ProcessMaterialLeftDown",
                                                 "@diffuseColor": [
                                                   0.7,
                                                   1,
                                                   0
                                                 ],
-                                                "@class": "MaterialLeftDownProcess3000Process"
+                                                "@class": "Process3000ProcessMaterialLeftDown"
                                               }
                                             }
                                           ]
@@ -904,13 +904,13 @@
                                           "-material": [
                                             {
                                               "Material": {
-                                                "@DEF": "MaterialUpRightProcess3000Process",
+                                                "@DEF": "Process3000ProcessMaterialUpRight",
                                                 "@diffuseColor": [
                                                   0,
                                                   0.7,
                                                   1
                                                 ],
-                                                "@class": "MaterialUpRightProcess3000Process"
+                                                "@class": "Process3000ProcessMaterialUpRight"
                                               }
                                             }
                                           ]
@@ -992,7 +992,7 @@
                                           "-material": [
                                             {
                                               "Material": {
-                                                "@USE": "MaterialUpRightProcess3000Process"
+                                                "@USE": "Process3000ProcessMaterialUpRight"
                                               }
                                             }
                                           ]
@@ -1074,7 +1074,7 @@
                                           "-material": [
                                             {
                                               "Material": {
-                                                "@USE": "MaterialLeftDownProcess3000Process"
+                                                "@USE": "Process3000ProcessMaterialLeftDown"
                                               }
                                             }
                                           ]
@@ -1141,8 +1141,8 @@
                       }
                     }
                   ],
-                  "@DEF": "3000Process",
-                  "@class": "3000Process"
+                  "@DEF": "Process30003000",
+                  "@class": "Process30003000"
                 }
               }
             ]

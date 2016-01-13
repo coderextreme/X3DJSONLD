@@ -1,5 +1,7 @@
 // X3D JSON Prototype and Script preprocessor
 
+var loadX3DJS = require('./X3DJSONLD').loadX3DJS;
+var Browser = require('./X3DJSONLD').Browser;
 var prototypeExpander = require('./PrototypeExpander');
 var script = require('./Script');
 processScripts = script.processScripts;
@@ -16,15 +18,12 @@ process.stdin.on('end', function() {
 
 	var classes = [];
 	var routecode = [];
-	routecode.push("setInterval(function() {");
 	processScripts(object, classes, undefined, routecode);
-	routecode.push("}, 500);");
-	classes.push("};");
 	var code = classes.join('\n')
 		.replace(/&lt;/g, '<')
 		.replace(/&gt;/g, '>')
 	console.error(code);
 	console.error(routecode.join('\n'));
 	eval(code);
-	// eval(routecode.join('\n'));
+	eval(routecode.join('\n'));
 });
