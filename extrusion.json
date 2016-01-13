@@ -1,0 +1,124 @@
+{ "X3D": {
+    "@profile":"Immersive",
+    "@version":4.0,
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-4.0.xsd",
+    "head": {
+        "meta": [
+          {
+            "@name":"creator",
+            "@content":"John W Carlson"
+          },
+          {
+            "@name":"created",
+            "@content":"December 13 2015"
+          },
+          {
+            "@name":"title",
+            "@content":"force.x3d"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://coderextreme.net/X3DJSONLD/force.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"beginnings of a force directed graph in 3D"
+          },
+          {
+            "@name":"generator",
+            "@content":"Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Group":
+            {
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":[
+                      { "Extrusion":
+                        {
+                          "@DEF":"extrusion",
+                          "@spine":[-50,-50,0,50,50,0],
+                          "@creaseAngle":0.785,
+                          "@crossSection":[1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00]
+                        }
+                      }
+                    ],
+                    "-appearance":[
+                      { "Appearance":
+                        {
+                          "-material":[
+                            { "Material":
+                              {
+                                "@diffuseColor":[0,1,0]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "TimeSensor":
+                  {
+                    "@DEF":"TourTime",
+                    "@loop":true
+                  }
+                },
+                { "Script":
+                  {
+                    "@DEF":"MoveCylinder",
+                    "field": [
+                      {
+                        "@name":"set_fraction",
+                        "@accessType":"inputOnly",
+                        "@type":"SFTime"
+                      },
+                      {
+                        "@name":"spine",
+                        "@accessType":"inputOutput",
+                        "@type":"MFVec3f",
+                        "@value":[-50,-50,0,50,50,0]
+                      }
+                    ],
+                    "#sourceText":[
+"ecmascript:",
+"",
+"                function set_fraction(value) {",
+"                        Browser.print(value);",
+"                        var endA = new SFVec3f(spine[0][0]*Math.random()*2, spine[0][1]*Math.random()*2, spine[0][2]*Math.random()*2);",
+"                        var endB = new SFVec3f(spine[1][0]*Math.random()*2, spine[1][1]*Math.random()*2, spine[1][2]*Math.random()*2);",
+"\t\t        spine = new MFVec3f(endA, endB);",
+"                }",
+"                function set_spine(value) {",
+"                    spine = value;",
+"                }"
+]
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode":"MoveCylinder",
+                    "@fromField":"spine",
+                    "@toNode":"extrusion",
+                    "@toField":"set_spine"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode":"TourTime",
+                    "@fromField":"cycleTime",
+                    "@toNode":"MoveCylinder",
+                    "@toField":"set_fraction"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

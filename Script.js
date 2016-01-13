@@ -61,9 +61,9 @@ function processScripts(object, classes, package, routecode) {
 		routecode.log("	$ = function(selector) { return {");
 		routecode.log("		attr : function(attr, value) {");
 		routecode.log("			if (arguments.length > 1) {");
-		routecode.log("				console.error('set', attr, '=', value);");
+		routecode.log("				Browser.print('set', attr, '=', value);");
 		routecode.log("			} else {");
-		routecode.log("				console.error('get', attr); }");
+		routecode.log("				Browser.print('get', attr); }");
 		routecode.log("			}");
 		routecode.log("}}}");
 	}

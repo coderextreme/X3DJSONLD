@@ -6,7 +6,6 @@ if (typeof Browser === 'undefined') {
 		print : function(string) { console.error(string); },
 		println : function(string) { console.error(string); },
 		stringToArray : function(obj) {
-			console.error("CONSOLE", typeof obj, obj);
 			if (typeof obj === 'object') {
 				return obj;
 			} else {
