@@ -45,7 +45,7 @@ function printElement(el, indent, xml) {
                 }
         }
         if (typeof el.children  != 'undefined' && el.children.length > 0 && typeof key !== 'undefined') {
-                xml.push(indent+"</"+key+">");
+                xml.push("</"+key+">");
         }
 }
 
@@ -271,5 +271,5 @@ process.stdin.on('end', function() {
 	var json = JSON.parse(content);
 	var xml = [];
 	loadX3DJS(null, json, 'pp3s.json', xml);
-	console.log(xml.join(""));
+	console.log(xml.join("\n"));
 });

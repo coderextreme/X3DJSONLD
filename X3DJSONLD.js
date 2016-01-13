@@ -5,7 +5,14 @@ if (typeof Browser === 'undefined') {
 	var Browser = {
 		print : function(string) { console.error(string); },
 		println : function(string) { console.error(string); },
-		stringToArray : function(string) { return JSON.parse('['+string+']'); },
+		stringToArray : function(obj) {
+			console.error("CONSOLE", typeof obj, obj);
+			if (typeof obj === 'object') {
+				return obj;
+			} else {
+				return JSON.parse('['+obj+']');
+			}
+		},
 		createX3DFromString : function(string) { return loadX3DJS(undefined, JSON.parse(string), 'foo.json'); }
 	}
 }

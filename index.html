@@ -112,18 +112,18 @@ Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into JSON X3DOM
 
         function loadX3DOM(selector, json, url) {
 	    $(selector+" X3D").remove();
-	    var xml = [];
+	    var xml = new LOG();
 	    if ($('#prototype').is(':checked')) {
 
 		// Expand Protos
 		prototypeExpander(json, "");
 
 		// Now generate JavaScript code for Scripts and Routes
-		var classes = [];
-		var routecode = [];
-		routecode.push("function runRoute() {");
+		var classes = new LOG();
+		var routecode = new LOG();
+		routecode.log("function runRoutes() {");
 		processScripts(json, classes, undefined, routecode);
-		routecode.push("}");
+		routecode.log("}");
 
 		if (typeof intervalId !== 'undefined') {
 			console.log("Interval", intervalId, "cleared");
@@ -161,7 +161,7 @@ Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into JSON X3DOM
 
 	        $('textarea#json').val(JSON.stringify(json, null, 2));
 	
-		intervalId = setInterval(runRoute, 100);
+		intervalId = setInterval(runRoutes, 100);
 	    }
 	    loadX3DJS(selector, json, url, xml);
 			

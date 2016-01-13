@@ -1352,12 +1352,6 @@
             "@DEF": "clickHandler",
             "field": [
               {
-                "@name": "counter",
-                "@accessType": "inputOutput",
-                "@value": 0,
-                "@type": "SFInt32"
-              },
-              {
                 "@name": "node_changed",
                 "@accessType": "outputOnly",
                 "@type": "SFNode"
@@ -1383,7 +1377,8 @@
             ],
             "#sourceText": [
               "ecmascript:",
-              "\tfunction add_node(value) {",
+              "        var counter = 0;",
+              "        function add_node(value) {",
               "                Browser.print('hey ', counter);",
               "                counter = counter++;",
               "\t\tnode_changed = Browser.createX3DFromString('{ \"ProtoInstance\": { \"@name\":\"node\", \"@DEF\":\"node'+counter+'\", \"fieldValue\": [ { \"@name\":\"position\", \"@value\":[0.0,0.0,0.0]}]}}');",
