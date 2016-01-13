@@ -20,6 +20,7 @@ function Script(package, name) {
 	// this.setters = {};
 	// this.getters = {};
 	this.fields = {};
+	this.functions = {};
 	if (typeof package === 'undefined' || package.name === "") {
 		if (typeof name === 'undefined') {
 			this.name = "";
@@ -80,8 +81,9 @@ function processScripts(object, classes, package, routecode) {
 			if (p.toLowerCase() === 'script') {
 				var script = new Script(package, name);
 				// console.error("SCRIPT IS ",JSON.stringify(object[p]));
-				processFields(object[p]['field'], classes, script);
+				registerFields(object[p]['field'], classes, script);
 				processSource(object[p]['#sourceText'], classes, script);
+				processFields(object[p]['field'], classes, script);
 				// zap original source because we don't need it
 				processScripts(object[p], classes, script, routecode);
 				// delete object[p]['#sourceText'];
@@ -196,6 +198,15 @@ function valueExpand(type, flat) {
 		return JSON.stringify(flat);
 	}
 }
+function registerFields(fields, classes, package) {
+	var f;
+	for (f in fields) {
+		var object = fields[f];
+		var name = object["@name"];
+		package.fields[name] = object;
+	}
+}
+
 function processFields(fields, classes, package) {
 	// console.error("0FIELDS IS "+JSON.stringify(fields));
 	var f;
@@ -213,7 +224,6 @@ function processFields(fields, classes, package) {
 		// console.error("TYPE IS ",f, object["@type"]);
 		values[name] = valueExpand(types[name], object["@value"]);
 		// console.error("VALUE IS ",f, object["@value"]);
-		package.fields[name] = object;
 		switch(object['@accessType']) {
 		case 'initializeOnly':
 			// these should be in order, so it's an array
@@ -236,7 +246,6 @@ function processFields(fields, classes, package) {
 		}
 	}
 
-	classes.log('X3DJSON.'+package.name +  ' = function() {');
 	for (var v in values) {
 		// console.error("PROCESS FIELD", v, values[v]);
 		var set = v.indexOf("set_");
@@ -247,15 +256,26 @@ function processFields(fields, classes, package) {
 			v = v.substr(4);
 		}
 		if (!v) {
-			// console.error("--------------------------------------");
+			console.error("--------------------------------------undefined field", v);
 		}
-		classes.log(indent + "this." + v + ' = '+ values[v] + ';');
-		classes.log(indent+ "this.set_" + v + ' = function (value) { if (value) this.' + v +  ' = (value.indexOf(",") >= 0 ? value.split(",") : value); };');
-                classes.log(indent+ "this." + v + '_changed = function () { return this.' + v +  '; };');
+		// Don't override existing functions
+		if (!package.functions[v]) {
+			classes.log(indent + "this." + v + ' = '+ values[v] + ';');
+		}
+		if (!package.functions['set_'+v]) {
+			classes.log(indent+ "this.set_" + v + ' = function (value) { if (value) this.' + v +  ' = (value.indexOf(",") >= 0 ? value.split(",") : value); };');
+		}
+		if (!package.functions[v+'_changed']) {
+			classes.log(indent+ "this." + v + '_changed = function () { return this.' + v +  '; };');
+		}
 	}
+	classes.log('};');
+	classes.log('X3DJSON.Object_'+package.name + ' = new X3DJSON.'+package.name+'();');
+	classes.log('if (typeof X3DJSON.Object_'+package.name + '.initialize === "function") X3DJSON.Object_'+package.name + '.initialize();');
 }
 
 function processSource(lines, classes, package) {
+	classes.log('X3DJSON.'+package.name +  ' = function() {');
 	if (typeof lines !== 'undefined') {
 		for (var l in lines) {
 			lines[l] = lines[l].replace(/\/\/(.*)function/g, '//$1functino');
@@ -278,6 +298,7 @@ function processSource(lines, classes, package) {
 				body : func.substr(sp, end+1),
 				trail : func.substr(end+1).trim()
 			};
+			package.functions[fxns[f-1].name] = fxns[f-1].body;
 		}
 
 		for (var f1 = 0; f1 < fxns.length; f1++) {
@@ -291,9 +312,7 @@ function processSource(lines, classes, package) {
 			}
 
 			// replace function call names in body (not function declarations, see below)
-
-			for (var f2 = 0; f2 < fxns.length; f2++) { 
-				var fv = fxns[f2].name;
+			for (var fv in package.functions) {
 				var pattern = '(\\b)('+fv+')(\\b)';
 				body = body.replace(new RegExp(pattern, 'g'), "$1this.$2$3");
 			}
@@ -311,9 +330,6 @@ function processSource(lines, classes, package) {
 			classes.log(trail);
 		}
 	}
-	classes.log('};');
-	classes.log('X3DJSON.Object_'+package.name + ' = new X3DJSON.'+package.name+'();');
-	classes.log('if (typeof X3DJSON.Object_'+package.name + '.initialize === "function") X3DJSON.Object_'+package.name + '.initialize();');
 }
 
 if (typeof module === 'object')  {
