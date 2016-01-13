@@ -217,7 +217,7 @@
           { "Script":
             {
               "@DEF":"TextScript",
-              "@url":["ObliqueStrategiesScript.js","http://X3dGraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategiesScript.js"],
+              "@url":["ObliqueStrategiesScript.js","http://coderextreme.net/X3DJSONLD/ObliqueStrategiesScript.js","http://X3dGraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategiesScript.js"],
               "field": [
                 {
                   "@name":"index",
