@@ -2,8 +2,9 @@
 packages = {};
 
 function Script(package, name) {
-	this.setters = {};
-	this.getters = {};
+	// this.setters = {};
+	// this.getters = {};
+	this.fields = {};
 	if (typeof package === 'undefined' || package.name === "") {
 		if (typeof name === 'undefined') {
 			this.name = "";
@@ -119,7 +120,25 @@ function processRoute(route, classes, package) {
 
 function valueExpand(type, flat) {
 	if (!flat) {
-		return flat;
+		if (type === 'SFBool') {
+			return "false";
+		} else if (type === 'SFFloat') {
+			return 0.0;
+		} else if (type === 'SFInt32') {
+			return 0;
+		} else if (type === 'SFNode') {
+			return "{}";
+		} else if (type.indexOf('SFVec') === 0){
+			return "[]";
+		} else if (type.indexOf('SFString') === 0){
+			return "''";
+		} else if (type.indexOf('SFTime') === 0){
+			return 0;
+		} else if (type.indexOf('MF') === 0){
+			return "[]";
+		} else {
+			return "new "+type+"()";  // THIS WILL THROW AN ERROR IF you don't have a value for an outputOnly.  Fill in the type case above
+		}
 	}
 	if (type.indexOf("MF") === 0) {
 		console.error("/*", type, "*/");
@@ -170,6 +189,7 @@ function processFields(fields, classes, package) {
 		var name = object["@name"];
 		types[name] = object["@type"];
 		values[name] = valueExpand(types[name], object["@value"]);
+		package.fields[name] = object;
 		switch(object['@accessType']) {
 		case 'initializeOnly':
 			// these should be in order, so it's an array
@@ -177,15 +197,15 @@ function processFields(fields, classes, package) {
 			break;
 		case 'inputOutput':
 			// setters should be looked up by name
-			package.setters[name] = object;
-			package.getters[name] = object;
+			// package.setters[name] = object;
+			// package.getters[name] = object;
 			break;
 		case 'inputOnly':
 			// setters should be looked up by name
-			package.setters[name] = object;
+			// package.setters[name] = object;
 			break;
 		case 'outputOnly':
-			package.getters[name] = object;
+			// package.getters[name] = object;
 			break;
 		default:
 			break;
@@ -220,13 +240,18 @@ function processSource(lines, classes, package) {
 			var sp = func.indexOf('(');
 			var name = func.substr(0, sp).trim();
 			var funcvar = name;  //  a non setter function
+/*
 			if (typeof package.setters[name] !== 'undefined') {
 				funcvar = name; // a setter function
 			}
+*/
 			var body = func.substr(sp);
-			for (var n in package.getters) {
+			for (var n in package.fields) {
+			        // console.error("BODY BEFORE", body);
 				var pattern = "\\b"+n+"\\b";
+				// console.error("PATTERN", pattern);
 				body = body.replace(new RegExp(pattern, 'g'), "this."+n);
+			        // console.error("BODY AFTER", body);
 				body = body.replace(/[^\.]initialize\(\)/g, "this.initialize()");
 				body = body.replace(/new (MF[A-Za-z0-9]+|SFMatrix[A-Za-z0-9]+|SFVec[234][df]|SFRotation)[ 	]*\(([^;]*)\)[ 	]*;/g, 'Browser.stringToArray\([$2]\);');
 				//body = body.replace(/&amp;/g, '&');

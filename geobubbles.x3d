@@ -1,29 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
-<X3D profile='Full' version='3.3' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance'>
-    <Scene>
-        <NavigationInfo type='"ANY" "WALK" "EXAMINE" "FLY" "LOOKAT"'/>
-        <GeoViewpoint DEF='Tour' position='0 0 90' orientation='1 0 0 0' description='Tour Views'/>
-        <Background backUrl='"cubemap/BK.png" "http://coderextreme.net/X3DJSONLD/cubemap/BK.png"' bottomUrl='"cubemap/BT.png" "http://coderextreme.net/X3DJSONLD/cubemap/BT.png"' frontUrl='"cubemap/FR.png" "http://coderextreme.net/X3DJSONLD/cubemap/FR.png"' leftUrl='"cubemap/LF.png" "http://coderextreme.net/X3DJSONLD/cubemap/LF.png"' rightUrl='"cubemap/RT.png" "http://coderextreme.net/X3DJSONLD/cubemap/RT.png"' topUrl='"cubemap/TP.png" "http://coderextreme.net/X3DJSONLD/cubemap/TP.png"'/>
-        <Shape>
-            <Sphere/>
-            <Appearance>
-                <Material diffuseColor='0.7 0.7 0.7' specularColor='0.5 0.5 0.5'/>
-            </Appearance>
-        </Shape>
-        <TimeSensor DEF='TourTime' cycleInterval='5' loop='true'/>
-	<GeoPositionInterpolator DEF='TourPosition' key='0.0 0.125 0.250 0.375 0.500 0.625 0.750 0.875 1.0' keyValue='0 0 20000000 -90 0 20000000 180 0 20000000 90 0 20000000 0 0 20000000 0 90 20000000 0 0 20000000 0 -90 20000000 0 0 20000000'></GeoPositionInterpolator>
-	<ROUTE fromNode='TourTime' fromField='fraction_changed' toNode='TourPosition' toField='set_fraction'></ROUTE>
-	<ROUTE fromNode='TourPosition' fromField='value_changed' toNode='Tour' toField='set_position'></ROUTE>
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd"><X3D profile='Full' version='3.3' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd' id='x3dele' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance'><Scene><!--Viewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views'/--><!--PositionInterpolator DEF='TourPosition' key='0 1' keyValue='-0.5 -0.5 4 -0.5 0.5 4'/--><GeoViewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views' centerOfRotation='0 0 0' retainUserOffsets='false' containerField='children'></GeoViewpoint><Background backUrl='&quot;cubemap/BK.png&quot; &quot;http://coderextreme.net/X3DJSONLD/cubemap/BK.png&quot;' bottomUrl='&quot;cubemap/BT.png&quot; &quot;http://coderextreme.net/X3DJSONLD/cubemap/BT.png&quot;' frontUrl='&quot;cubemap/FR.png&quot; &quot;http://coderextreme.net/X3DJSONLD/cubemap/FR.png&quot;' leftUrl='&quot;cubemap/LF.png&quot; &quot;http://coderextreme.net/X3DJSONLD/cubemap/LF.png&quot;' rightUrl='&quot;cubemap/RT.png&quot; &quot;http://coderextreme.net/X3DJSONLD/cubemap/RT.png&quot;' topUrl='&quot;cubemap/TP.png&quot; &quot;http://coderextreme.net/X3DJSONLD/cubemap/TP.png&quot;'/><Transform><Shape><Sphere/><Appearance><Material diffuseColor='0.7 0.7 0.7' specularColor='0.5 0.5 0.5'></Material></Appearance></Shape></Transform><TimeSensor DEF='TourTime' cycleInterval='5' loop='true'/><GeoPositionInterpolator DEF='TourPosition' key='0 1' keyValue='0.0015708 0 4 0 0.0015708 4'></GeoPositionInterpolator><Script DEF='RandomTourTime'><field name='set_fraction' accessType='inputOnly' type='SFFloat'/><field name='val' accessType='inputOutput' type='SFFloat' value='0'/><field name='positions' accessType='inputOutput' type='MFVec3d' value='0.0015708 0 4 0 0.0015708 4'></field><field name='position' accessType='inputOutput' type='MFVec3d' value='0.0015708 0 4 0 0.0015708 4'></field><![CDATA[ecmascript:
 
-        <Script DEF='RandomTourTime' url='"geobubbles.js"'>
-            <field accessType='inputOnly' name='set_fraction' type='SFFloat'/>
-            <field name='value_changed' accessType='inputOutput' type='SFFloat' value='0'/>
-            <field name='positions' accessType='inputOutput' type='MFVec3d' value='10 0 90 10 0.0015708 90'/>
-
-            <field name='position_changed' accessType='inputOutput' type='MFVec3d' value='10 0 90 10 0.0015708 90'/>
-        </Script>
-        <ROUTE fromNode='TourTime' fromField='cycleTime' toNode='RandomTourTime' toField='set_fraction'/>
-        <ROUTE fromNode='RandomTourTime' fromField='position_changed' toNode='TourPosition' toField='keyValue'/>
-    </Scene>
-</X3D>
+               function set_fraction(value) {
+                        var cartesianMult = -150;  // -150 if cartesian, 1 if geo
+                        var ov = val;
+                        Browser.print('old '+ov);
+                        do {
+                                val = Math.floor(Math.random()*2);
+                                var vc = val;
+                                positions[vc] = new SFVec3d(Math.round(Math.random()*2)*0.0015708*cartesianMult, Math.round(Math.random()*2)*0.0015708*cartesianMult, 4);
+                        } while ( positions[ov][0] === positions[vc][0] && positions[ov][1] === positions[vc][1] && positions[ov][2] === positions[vc][2]);
+                        Browser.println(positions[ov]);
+                        Browser.println(positions[vc]);
+                        position = new MFVec3d();
+                        position[0] = new SFVec3d(positions[ov][0],positions[ov][1],positions[ov][2]);
+                        position[1] = new SFVec3d(positions[vc][0],positions[vc][1],positions[vc][2]);
+               }]]></Script><ROUTE fromNode='TourTime' fromField='cycleTime' toNode='RandomTourTime' toField='set_fraction'/><ROUTE fromNode='RandomTourTime' fromField='position' toNode='TourPosition' toField='keyValue'/><ROUTE fromNode='TourTime' fromField='fraction_changed' toNode='TourPosition' toField='set_fraction'/><ROUTE fromNode='TourPosition' fromField='value_changed' toNode='Tour' toField='set_position'/></Scene></X3D>
