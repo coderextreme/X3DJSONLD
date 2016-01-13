@@ -1,0 +1,77 @@
+
+"-children":[
+  { "#comment":"Comment before"
+  },
+  { "#comment":"Comment after"
+  }
+],{ "X3D": {
+    "@profile":"Interchange",
+    "@version":3.3,
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "-children":[
+      { "#comment":"Comment before head"
+      },
+      { "#comment":"comment between head and scene"
+      },
+      { "#comment":"comment after scene"
+      }
+    ],
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"FileName.x3d"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://someAddress/somePath/FileName.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Author Name"
+          },
+          {
+            "@name":"description",
+            "@content":"topic sentence plus good summary"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Group":
+            {
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":[
+                      { "Sphere":
+                        {
+                        }
+                      }
+                    ],
+                    "-appearance":[
+                      { "Appearance":
+                        {
+                          "-material":[
+                            { "Material":
+                              {
+                                "@diffuseColor":[1,1,1]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

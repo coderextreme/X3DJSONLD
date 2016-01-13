@@ -144,7 +144,7 @@ function realPrototypeExpander(object, scope, isInDeclaration) {
 									object[p]["#sourceText"] = data;
 									console.error("Loaded URL", url);
 									delete object[p]["@url"];
-									console.error("SCRIPT", object[p]);
+									// console.error("SCRIPT", object[p]);
 								}
 							});
 						} else if (typeof fs !== 'undefined' && url[u].indexOf("http") != 0) {
@@ -155,7 +155,7 @@ function realPrototypeExpander(object, scope, isInDeclaration) {
 								object[p]["#sourceText"] = data;
 								console.error("Loaded URL", url[u]);
 								delete object[p]["@url"];
-								console.error("SCRIPT", object[p]);
+								// console.error("SCRIPT", object[p]);
 							}
 						} else if (typeof $ !== 'undefined') {
 							console.error("Loading URL", url[u]);
@@ -164,11 +164,11 @@ function realPrototypeExpander(object, scope, isInDeclaration) {
 									object[p]["#sourceText"] = data;
 									console.error("Loaded URL", url);
 									delete object[p]["@url"];
-									console.error("SCRIPT", object[p]);
+									// console.error("SCRIPT", object[p]);
 								}
 							});
 						} else {
-							console.error("Didn't load", url[u], $, fs.readFileSync);
+							console.error("Didn't load", url[u]);
 						}
 					}
 				}

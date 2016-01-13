@@ -1,0 +1,350 @@
+{
+  "X3D": {
+    "@profile": "Immersive",
+    "@version": 3.3,
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "@id": "x3dele",
+    "Scene": {
+      "-children": [
+        {
+          "NavigationInfo": {
+            "@type": [
+              "ANY",
+              "WALK",
+              "EXAMINE",
+              "FLY",
+              "LOOKAT"
+            ]
+          }
+        },
+        {
+          "Viewpoint": {
+            "@DEF": "Tour",
+            "@description": "Tour Views",
+            "@class": "Tour"
+          }
+        },
+        {
+          "Viewpoint": {
+            "@position": [
+              0,
+              0,
+              4
+            ],
+            "@description": "sphere in road"
+          }
+        },
+        {
+          "Background": {
+            "@backUrl": [
+              "cubemap/BK.png",
+              "http://coderextreme.net/X3DJSONLD/cubemap/BK.png"
+            ],
+            "@bottomUrl": [
+              "cubemap/BT.png",
+              "http://coderextreme.net/X3DJSONLD/cubemap/BT.png"
+            ],
+            "@frontUrl": [
+              "cubemap/FR.png",
+              "http://coderextreme.net/X3DJSONLD/cubemap/FR.png"
+            ],
+            "@leftUrl": [
+              "cubemap/LF.png",
+              "http://coderextreme.net/X3DJSONLD/cubemap/LF.png"
+            ],
+            "@rightUrl": [
+              "cubemap/RT.png",
+              "http://coderextreme.net/X3DJSONLD/cubemap/RT.png"
+            ],
+            "@topUrl": [
+              "cubemap/TP.png",
+              "http://coderextreme.net/X3DJSONLD/cubemap/TP.png"
+            ]
+          }
+        },
+        {
+          "Transform": {
+            "@DEF": "Rose01",
+            "-children": [
+              {
+                "Shape": {
+                  "-geometry": [
+                    {
+                      "Sphere": {}
+                    }
+                  ],
+                  "-appearance": [
+                    {
+                      "Appearance": {
+                        "@DEF": "_01_-_Default",
+                        "-material": [
+                          {
+                            "Material": {
+                              "@diffuseColor": [
+                                0.7,
+                                0.7,
+                                0.7
+                              ],
+                              "@specularColor": [
+                                0.5,
+                                0.5,
+                                0.5
+                              ]
+                            }
+                          }
+                        ],
+                        "-children": [
+                          {
+                            "#comment": "ComposedCubeMapTexture containerField='texture'> <ImageTexture url='\"cubemap/BK.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/BK.png\"' containerField='back'/> <ImageTexture url='\"cubemap/BT.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/BT.png\"' containerField='bottom'/> <ImageTexture url='\"cubemap/FR.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/FR.png\"' containerField='front'/> <ImageTexture url='\"cubemap/LF.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/LF.png\"' containerField='left'/> <ImageTexture url='\"cubemap/RT.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/RT.png\"' containerField='right'/> <ImageTexture url='\"cubemap/TP.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/TP.png\"' containerField='top'/> </ComposedCubeMapTexture> <ComposedShader DEF='ComposedShader' containerField='shaders' language='GLSL'> <field name='cube' accessType='inputOutput' type='SFInt32' value='0'/> <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'/> <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/> <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/> <field name='power' accessType='inputOutput' type='SFFloat' value='2'/> <ShaderPart url='\"bubbles.vs\" \"http://coderextreme.net/X3DJSONLD/bubbles.vs\"' containerField='parts'/> <ShaderPart url='\"bubbles.fs\" \"http://coderextreme.net/X3DJSONLD/bubbles.fs\"' containerField='parts' type='FRAGMENT'/> </ComposedShader"
+                          }
+                        ],
+                        "@class": "_01_-_Default"
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
+            "@class": "Rose01"
+          }
+        },
+        {
+          "TimeSensor": {
+            "@DEF": "TourTime",
+            "@cycleInterval": 5,
+            "@loop": true,
+            "@class": "TourTime"
+          }
+        },
+        {
+          "PositionInterpolator": {
+            "@DEF": "TourPosition",
+            "@key": [
+              0,
+              1
+            ],
+            "@keyValue": [
+              0,
+              0,
+              10,
+              0,
+              0,
+              -10
+            ],
+            "@class": "TourPosition"
+          }
+        },
+        {
+          "OrientationInterpolator": {
+            "@DEF": "TourOrientation",
+            "@key": [
+              0,
+              1
+            ],
+            "@keyValue": [
+              0,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              3.1416
+            ],
+            "@class": "TourOrientation"
+          }
+        },
+        {
+          "Script": {
+            "@DEF": "RandomTourTime",
+            "field": [
+              {
+                "@name": "set_fraction",
+                "@accessType": "inputOnly",
+                "@type": "SFTime"
+              },
+              {
+                "@name": "lastKey",
+                "@accessType": "inputOutput",
+                "@type": "SFFloat",
+                "@value": 0
+              },
+              {
+                "@name": "orientations",
+                "@accessType": "inputOutput",
+                "@type": "MFRotation",
+                "@value": [
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  -1.57,
+                  0,
+                  1,
+                  0,
+                  3.14,
+                  0,
+                  1,
+                  0,
+                  1.57,
+                  0,
+                  1,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  -1.57,
+                  0,
+                  1,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  1.57,
+                  0,
+                  1,
+                  0,
+                  0
+                ]
+              },
+              {
+                "@name": "positions",
+                "@accessType": "inputOutput",
+                "@type": "MFVec3f",
+                "@value": [
+                  0,
+                  0,
+                  10,
+                  -10,
+                  0,
+                  0,
+                  0,
+                  0,
+                  -10,
+                  10,
+                  0,
+                  0,
+                  0,
+                  0,
+                  10,
+                  0,
+                  10,
+                  0,
+                  0,
+                  0,
+                  10,
+                  0,
+                  -10,
+                  0,
+                  0,
+                  0,
+                  10
+                ]
+              },
+              {
+                "@name": "position",
+                "@accessType": "outputOnly",
+                "@type": "MFVec3f"
+              },
+              {
+                "@name": "orientation",
+                "@accessType": "outputOnly",
+                "@type": "MFRotation"
+              }
+            ],
+            "#sourceText": [
+              "ecmascript:",
+              "               function set_fraction(value) {",
+              "                        //var positions = [[0, 0, 10], [-10, 0, 0], [0, 0, -10], [10, 0, 0], [0, 0, 10], [0, 10, 0], [0, 0, 10], [0, -10, 0], [0, 0, 10]];",
+              "                        //var orientations = [[0, 1, 0, 0], [0, 1, 0, -1.57], [0, 1, 0, 3.14], [0, 1, 0, 1.57], [0, 1, 0, 0] [1, 0, 0, -1.57], [0, 1, 0, 0], [1, 0, 0, 1.57], [0, 1, 0, 0]];",
+              "                        //Browser.println(lastKey);",
+              "                        var ov = lastKey;",
+              "                        Browser.println(ov);      ",
+              "                        //Browser.println(positions.length);                  ",
+              "                        do {",
+              "                            lastKey = Math.round(Math.random()*positions.length);",
+              "                        } while (lastKey === ov);",
+              "                        Browser.println(lastKey);",
+              "                        var vc = lastKey;",
+              "                        ",
+              "                        Browser.println(orientations[ov]);",
+              "                        Browser.println(orientations[vc]);",
+              "                        orientation = new MFRotation();",
+              "                        orientation[0] = new SFRotation(orientations[ov][0], orientations[ov][1], orientations[ov][2], orientations[ov][3]);",
+              "                        orientation[1] = new SFRotation(orientations[vc][0], orientations[vc][1], orientations[vc][2], orientations[vc][3]);",
+              "                        Browser.println(positions[ov]);",
+              "                        Browser.println(positions[vc]);",
+              "                        position = new MFVec3f();",
+              "                        position[0] = new SFVec3f(positions[ov][0],positions[ov][1],positions[ov][2]);",
+              "                        position[1] = new SFVec3f(positions[vc][0],positions[vc][1],positions[vc][2]);",
+              "                    // }",
+              "               }"
+            ],
+            "@class": "RandomTourTime"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "TourTime",
+            "@fromField": "cycleTime",
+            "@toNode": "RandomTourTime",
+            "@toField": "set_fraction"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "RandomTourTime",
+            "@fromField": "orientation_changed",
+            "@toNode": "TourOrientation",
+            "@toField": "keyValue"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "RandomTourTime",
+            "@fromField": "position_changed",
+            "@toNode": "TourPosition",
+            "@toField": "keyValue"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "TourTime",
+            "@fromField": "fraction_changed",
+            "@toNode": "TourOrientation",
+            "@toField": "set_fraction"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "TourOrientation",
+            "@fromField": "value_changed",
+            "@toNode": "Tour",
+            "@toField": "set_orientation"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "TourTime",
+            "@fromField": "fraction_changed",
+            "@toNode": "TourPosition",
+            "@toField": "set_fraction"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "TourPosition",
+            "@fromField": "value_changed",
+            "@toNode": "Tour",
+            "@toField": "set_position"
+          }
+        }
+      ]
+    }
+  }
+}

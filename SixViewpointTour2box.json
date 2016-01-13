@@ -1,0 +1,106 @@
+{ "X3D": {
+    "@profile":"Full",
+    "@version":3.0,
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "Scene":
+      {
+        "@DEF":"scene",
+        "-children":[
+          { "NavigationInfo":
+            {
+            }
+          },
+          { "Viewpoint":
+            {
+              "@DEF":"Tour",
+              "@description":"Tour Views"
+            }
+          },
+          { "Background":
+            {
+              "@backUrl":["cubemap/BK.png", "http://coderextreme.net/X3DJSONLD/cubemap/BK.png"],
+              "@bottomUrl":["cubemap/BT.png", "http://coderextreme.net/X3DJSONLD/cubemap/BT.png"],
+              "@frontUrl":["cubemap/FR.png", "http://coderextreme.net/X3DJSONLD/cubemap/FR.png"],
+              "@leftUrl":["cubemap/LF.png", "http://coderextreme.net/X3DJSONLD/cubemap/LF.png"],
+              "@rightUrl":["cubemap/RT.png", "http://coderextreme.net/X3DJSONLD/cubemap/RT.png"],
+              "@topUrl":["cubemap/TP.png", "http://coderextreme.net/X3DJSONLD/cubemap/TP.png"]
+            }
+          },
+          { "Shape":
+            {
+              "@DEF":"boxfront",
+              "-appearance":[
+                { "Appearance":
+                  {
+                    "-material":[
+                      { "Material":
+                        {
+                          "@ambientIntensity":0,
+                          "@diffuseColor":[0,0,0],
+                          "@emissiveColor":[1,0,0],
+                          "@shininess":0
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "-geometry":[
+                { "Box":
+                  {
+                  }
+                }
+              ]
+            }
+          },
+          { "TimeSensor":
+            {
+              "@DEF":"TourTime",
+              "@cycleInterval":36,
+              "@loop":true
+            }
+          },
+          { "PositionInterpolator":
+            {
+              "@DEF":"TourPosition",
+              "@key":[0,0.125,0.25,0.378,0.5,0.625,0.75,0.875,1],
+              "@keyValue":[0,0,10,-10,0,0,0,0,-10,10,0,0,0,0,10,0,10,0,0,0,10,0,-10,0,0,0,10]
+            }
+          },
+          { "OrientationInterpolator":
+            {
+              "@DEF":"TourOrientation",
+              "@key":[0,0.125,0.25,0.378,0.5,0.625,0.75,0.875,1],
+              "@keyValue":[0,1,0,0,0,1,0,-1.57,0,1,0,3.14,0,1,0,1.57,0,1,0,0,1,0,0,-1.57,0,1,0,0,1,0,0,1.57,0,1,0,0]
+            }
+          }
+        ],
+        "ROUTE": [
+          {
+            "@fromNode":"TourTime",
+            "@fromField":"fraction_changed",
+            "@toNode":"TourOrientation",
+            "@toField":"set_fraction"
+          },
+          {
+            "@fromNode":"TourOrientation",
+            "@fromField":"value_changed",
+            "@toNode":"Tour",
+            "@toField":"set_orientation"
+          },
+          {
+            "@fromNode":"TourTime",
+            "@fromField":"fraction_changed",
+            "@toNode":"TourPosition",
+            "@toField":"set_fraction"
+          },
+          {
+            "@fromNode":"TourPosition",
+            "@fromField":"value_changed",
+            "@toNode":"Tour",
+            "@toField":"set_position"
+          }
+        ]
+      }
+  }
+}

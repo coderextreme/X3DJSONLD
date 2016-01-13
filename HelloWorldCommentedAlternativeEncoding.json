@@ -1,0 +1,186 @@
+{ "X3D": {
+    "@profile":"Immersive",
+    "@version":3.3,
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"HelloWorldCommented.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Numerous comments added to simple X3D scene example for testing JSON encoding alternatives."
+          },
+          {
+            "@name":"created",
+            "@content":"19 December 2015"
+          },
+          {
+            "@name":"modified",
+            "@content":"19 December 2015"
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"reference",
+            "@content":"HelloWorldCommentedOriginalEncoding.json"
+          },
+          {
+            "@name":"reference",
+            "@content":"HelloWorldCommentedAlternativeEncoding.json"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorldCommented.x3d"
+          },
+          {
+            "@name":"license",
+            "@content":"http://www.web3d.org/x3d/content/examples/license.html"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "#comment":"Example scene to illustrate comments interspersed among X3D nodes and fields (XML elements and attributes)"},
+          { "#comment":"WorldInfo begin"},
+          { "WorldInfo":
+            {
+              "@title":"Hello world!"
+            }
+          },
+          { "#comment":"WorldInfo complete, Group begin"},
+          { "Group":
+            {
+              "-children":[
+                { "#comment":"Viewpoint begin"},
+                { "Viewpoint":
+                  {
+                    "@DEF":"ViewUpClose",
+                    "@centerOfRotation":[0,-1,0],
+                    "@description":"Hello world!",
+                    "@position":[0,-1,7]
+                  }
+                },
+                { "#comment":"Viewpoint complete, Transform begin"},
+                { "Transform":
+                  {
+                    "@rotation":[0,1,0,3],
+                    "-children":[
+                      { "#comment":"Shape begin"},
+                      { "Shape":
+                        {
+                          "-children":[
+                            { "#comment":"Sphere begin"},
+                            { "#comment":"Sphere complete, Appearance begin"},
+                            { "#comment":"Appearance complete"}
+                          ],
+                          "-geometry":[
+                            { "Sphere":
+                              {
+                              }
+                            }
+                          ],
+                          "-appearance":[
+                            { "Appearance":
+                              {
+                                "-children":[
+                                 { "#comment":"Material begin"},
+                                 { "#comment":"Material complete, ImageTexture begin"},
+                                 { "#comment":"ImageTexture complete"}
+                                ],
+                                "-material":[
+                                  { "Material":
+                                    {
+                                      "@DEF":"MaterialLightBlue",
+                                      "@diffuseColor":[0.1,0.5,1]
+                                    }
+                                  }
+                                ],
+                                "-texture":[
+                                  { "ImageTexture":
+                                    {
+                                      "@DEF":"ImageCloudlessEarth",
+                                      "@url":["earth-topo.png","earth-topo.jpg","earth-topo-small.gif","http://www.web3d.org/x3d/content/examples/Basic/earth-topo.png","http://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg","http://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "#comment":"Shape complete"}
+                    ]
+                  }
+                },
+                { "#comment":"Transform complete, Transform begin"},
+                { "Transform":
+                  {
+                    "@translation":[0,-2,0],
+                    "-children":[
+                      { "#comment":"Shape begin"},
+                      { "Shape":
+                        {
+                          "-children":[
+                            { "#comment":"Text begin"},
+                            { "#comment":"Text complete, Appearance begin"},
+                            { "#comment":"Appearance complete"}
+                          ],
+                          "-geometry":[
+                            { "Text":
+                              {
+                                "@DEF":"TextMessage",
+                                "@string":["Hello","world!"],
+                                "-children":[
+                                  { "#comment":"FontStyle begin"},
+                                  { "#comment":"FontStyle complete"}
+                                ],
+                                "-fontStyle":[
+                                  { "FontStyle":
+                                    {
+                                      "@justify":["MIDDLE","MIDDLE"]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "-appearance":[
+                            { "Appearance":
+                              {
+                                "-children":[
+                                  { "#comment":"Material begin"},
+                                  { "#comment":"Material complete"}
+                                ],
+                                "-material":[
+                                  { "Material":
+                                    {
+                                      "@USE":"MaterialLightBlue"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "#comment":"Shape complete"}
+                    ]
+                  }
+                },
+                { "#comment":"Transform complete"}
+              ]
+            }
+          },
+          { "#comment":"Group complete"}
+        ]
+    }
+  }
+}

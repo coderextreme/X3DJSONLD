@@ -1,0 +1,147 @@
+{ "X3D": {
+    "@profile":"Immersive",
+    "@version":3.3,
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "Scene": {
+        "-children":[
+          { "ProtoDeclare":
+            {
+              "@name":"ArchPrototype",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"diffuseColor",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"color of arch",
+                      "@type":"SFColor",
+                      "@value":[0.2,0.8,0.8]
+                    },
+                    {
+                      "@name":"emissiveColor",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"color of arch",
+                      "@type":"SFColor",
+                      "@value":[0.2,0.8,0.8]
+                    },
+                    {
+                      "@name":"topAbutmentHeight",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"topAbutmentHeight:topAbutmentHeight=0 means no topAbutment",
+                      "@type":"SFFloat",
+                      "@value":0.5
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                      {
+                        "@DEF":"ArchTransform",
+                        "-children":[
+                          { "Shape":
+                            {
+                              "@DEF":"Arch",
+                              "-children":[
+                                { "#comment":"note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly"
+                                }
+                              ],
+                              "-geometry":[
+                                { "IndexedFaceSet":
+                                  {
+                                    "@DEF":"ArchIndex",
+                                    "@convex":false,
+                                    "@solid":false,
+                                    "-coord":[
+                                      { "Coordinate":
+                                        {
+                                          "@DEF":"ArchChord"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ],
+                              "-appearance":[
+                                { "Appearance":
+                                  {
+                                    "-material":[
+                                      { "Material":
+                                        {
+                                          "@DEF":"MaterialNode",
+                                          "IS": {
+                                              "connect": [
+                                                {
+                                                  "@nodeField":"emissiveColor",
+                                                  "@protoField":"emissiveColor"
+                                                },
+                                                {
+                                                  "@nodeField":"diffuseColor",
+                                                  "@protoField":"diffuseColor"
+                                                }
+                                              ]
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    { "#comment":"Subsequent nodes do not render, but still must be a valid X3D subgraph"
+                    },
+                    { "#comment":"This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs"
+                    },
+                    { "Script":
+                      {
+                        "@DEF":"APS",
+                        "@url":["APS.js"],
+                        "field": [
+                          {
+                            "@name":"topAbutmentHeight",
+                            "@accessType":"initializeOnly",
+                            "@appinfo":"user or default input for topAbutmentHeight parameter",
+                            "@type":"SFFloat"
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"topAbutmentHeight",
+                                "@protoField":"topAbutmentHeight"
+                              }
+                            ]
+                        }
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"ArchPrototype",
+              "@DEF":"ArchInstance",
+              "fieldValue": [
+                {
+                  "@name":"diffuseColor",
+                  "@value":[0.5,0.3,0.6]
+                },
+                {
+                  "@name":"emissiveColor",
+                  "@value":[0.5,0.3,0.6]
+                },
+                {
+                  "@name":"topAbutmentHeight",
+                  "@value":0.6
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

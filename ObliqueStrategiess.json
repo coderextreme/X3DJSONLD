@@ -1,0 +1,1141 @@
+{
+  "X3D": {
+    "@profile": "Immersive",
+    "@version": 3.3,
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "head": {
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "ObliqueStrategies.x3d"
+        },
+        {
+          "@name": "description",
+          "@content": "Text scripting and animation example using Oblique Strategies card set by Brian Eno."
+        },
+        {
+          "@name": "creator",
+          "@content": "Don Brutzman, John Kelly, Ben Cheng"
+        },
+        {
+          "@name": "created",
+          "@content": "3 November 2013"
+        },
+        {
+          "@name": "modified",
+          "@content": "18 October 2015"
+        },
+        {
+          "@name": "reference",
+          "@content": "oblique.html"
+        },
+        {
+          "@name": "reference",
+          "@content": "ObliqueStrategies.txt"
+        },
+        {
+          "@name": "reference",
+          "@content": "ObliqueStrategiesScript.js"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://music.hyperreal.org/artists/brian_eno/oblique/oblique.html"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://www.eno-web.co.uk/obliques.html"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://gothpunk.com/haiku-intro.html"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://www.rtqe.net/ObliqueStrategies/OSintro.html"
+        },
+        {
+          "@name": "reference",
+          "@content": "https://en.wikipedia.org/wiki/Oblique_Strategies"
+        },
+        {
+          "@name": "subject",
+          "@content": "Brian Eno, Oblique Strategies"
+        },
+        {
+          "@name": "Image",
+          "@content": "images/ObliqueStrategiesEntryScreen.png"
+        },
+        {
+          "@name": "audio",
+          "@content": "http://translate.google.com/translate_tts?tl=en&q=hello%20X3D"
+        },
+        {
+          "@name": "audio",
+          "@content": "translate_tts_HelloX3D.mp3"
+        },
+        {
+          "@name": "audio",
+          "@content": "translate_tts_HelloX3D.wav"
+        },
+        {
+          "@name": "TODO",
+          "@content": "multiliingual translation parameter"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://stackoverflow.com/questions/9163988/download-mp3-from-google-translate-text-to-speech"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://www.greenbot.com/article/2105862/how-to-get-started-with-google-text-to-speech.html"
+        },
+        {
+          "@name": "warning",
+          "@content": "under development, scene Sound/AudioClip triggering (or retrieved file format) not working"
+        },
+        {
+          "@name": "warning",
+          "@content": "BSContact error: Script node TextScript: parse error: line 15 \" var strategy = [];"
+        },
+        {
+          "@name": "identifier",
+          "@content": "http://X3dGraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategies.x3d"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+        },
+        {
+          "@name": "license",
+          "@content": "../license.html"
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        {
+          "NavigationInfo": {
+            "@type": [
+              "NONE"
+            ]
+          }
+        },
+        {
+          "Background": {
+            "@skyColor": [
+              0.419608,
+              0.427451,
+              1
+            ]
+          }
+        },
+        {
+          "Transform": {
+            "@scale": [
+              0.4,
+              0.4,
+              0.4
+            ],
+            "@translation": [
+              0,
+              1,
+              0
+            ],
+            "-children": [
+              {
+                "TouchSensor": {
+                  "@DEF": "RandomTextClickedSensor",
+                  "@description": "Select to see a new strategy",
+                  "@class": "RandomTextClickedSensor"
+                }
+              },
+              {
+                "Shape": {
+                  "-geometry": [
+                    {
+                      "Text": {
+                        "@string": [
+                          "Oblique Strategies",
+                          "",
+                          "(Over One Hundred Worthwhile Dilemmas)",
+                          "",
+                          "by,Brian,Eno,and,Peter,Schmidt"
+                        ],
+                        "-fontStyle": [
+                          {
+                            "FontStyle": {
+                              "@DEF": "MessageFont",
+                              "@family": [
+                                "SANS"
+                              ],
+                              "@justify": [
+                                "MIDDLE",
+                                "MIDDLE"
+                              ],
+                              "@style": "BOLD",
+                              "@class": "MessageFont"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "-appearance": [
+                    {
+                      "Appearance": {
+                        "-material": [
+                          {
+                            "Material": {
+                              "@diffuseColor": [
+                                1,
+                                1,
+                                1
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@scale": [
+                    10,
+                    3,
+                    1
+                  ],
+                  "-children": [
+                    {
+                      "Shape": {
+                        "@DEF": "HeadlineClickSurface",
+                        "-geometry": [
+                          {
+                            "IndexedFaceSet": {
+                              "@coordIndex": [
+                                0,
+                                1,
+                                2,
+                                3,
+                                -1
+                              ],
+                              "@solid": false,
+                              "-coord": [
+                                {
+                                  "Coordinate": {
+                                    "@point": [
+                                      1,
+                                      1,
+                                      0,
+                                      1,
+                                      -1,
+                                      0,
+                                      -1,
+                                      -1,
+                                      0,
+                                      -1,
+                                      1,
+                                      0
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ],
+                        "-appearance": [
+                          {
+                            "Appearance": {
+                              "-material": [
+                                {
+                                  "Material": {
+                                    "@ambientIntensity": 0.245763,
+                                    "@diffuseColor": [
+                                      0.34773,
+                                      0.090909,
+                                      0.005289
+                                    ],
+                                    "@shininess": 0.07,
+                                    "@specularColor": [
+                                      0.336735,
+                                      0.051091,
+                                      0.051091
+                                    ],
+                                    "@transparency": 0.8
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ],
+                        "@class": "HeadlineClickSurface"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Script": {
+            "@DEF": "TextScript",
+            "field": [
+              {
+                "@name": "index",
+                "@accessType": "initializeOnly",
+                "@appinfo": "index for active strategy card, -1 means no selection",
+                "@type": "SFInt32",
+                "@value": 0
+              },
+              {
+                "@name": "string_changed",
+                "@accessType": "outputOnly",
+                "@appinfo": "latest strategy card value",
+                "@type": "MFString"
+              },
+              {
+                "@name": "textToSpeechUrl",
+                "@accessType": "outputOnly",
+                "@appinfo": "url to invoke Google Translate",
+                "@type": "MFString"
+              },
+              {
+                "@name": "newCardTime",
+                "@accessType": "outputOnly",
+                "@appinfo": "activate Sound node",
+                "@type": "SFTime"
+              },
+              {
+                "@name": "selectPreviousCard",
+                "@accessType": "inputOnly",
+                "@type": "SFBool"
+              },
+              {
+                "@name": "selectNextCard",
+                "@accessType": "inputOnly",
+                "@type": "SFBool"
+              },
+              {
+                "@name": "selectRandomCard",
+                "@accessType": "inputOnly",
+                "@type": "SFBool"
+              },
+              {
+                "@name": "traceEnabled",
+                "@accessType": "initializeOnly",
+                "@appinfo": "controls console tracing",
+                "@type": "SFBool",
+                "@value": true
+              }
+            ],
+            "-children": [
+              {
+                "#comment": "initialize() method includes unit test to printAllStrategies() to console"
+              },
+              {
+                "#comment": "TODO insert field definitions here (index string_changed previous next random) and then animate!"
+              }
+            ],
+            "#sourceText": [
+              "// description: Script methods to load and sequence cards, create text-to-speech url for online retrieval of audio\r",
+              "// title:       ObliqueStrategiesScript.js    \r",
+              "// creator:     Don Brutzman, John Kelly, Ben Cheng\r",
+              "// identifier:  http://X3dGraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategiesScript.js\r",
+              "// created:      3 November 2013\r",
+              "// revised:     18 October  2015\r",
+              "// reference:   http://www.web3d.org/x3d/content/X3dTooltips.html#Script\r",
+              "// reference:   http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Scripts\r",
+              "// reference:   http://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/scripting.html\r",
+              "// reference:   http://www.web3d.org/x3d/specifications/ISO-IEC-19777-1-X3DLanguageBindings-ECMAScript/Part1/X3D_ECMAScript.html\r",
+              "// license:     ../license.html\r",
+              "\r",
+              "// ================================================================\r",
+              "// Data initialization - global variables within this script\r",
+              "// initialize array of arrays; TODO note which version of ecmascript is this new syntax (best practice)\r",
+              "\r",
+              "var strategy = []; // TODO BS Contact not supporting this preferred construct\r",
+              "  strategy[  0]=['Remove specifics and convert to ambiguities'];\r",
+              "  strategy[  1]=['Don\\'t be frightened of cliches'];\r",
+              "  strategy[  2]=['What is the reality of the situation?'];\r",
+              "  strategy[  3]=['Are there sections?', 'Consider transitions'];\r",
+              "  strategy[  4]=['Turn it upside down'];\r",
+              "  strategy[  5]=['Think of the radio'];\r",
+              "  strategy[  6]=['Allow an easement', '(an easement is the abandonment of a stricture)'];\r",
+              "  strategy[  7]=['Simple subtraction'];\r",
+              "  strategy[  8]=['Be dirty'];\r",
+              "  strategy[  9]=['Go slowly all the way round the outside'];\r",
+              "  strategy[ 10]=['A line has two sides'];\r",
+              "  strategy[ 11]=['Make an exhaustive list of everything you might do', 'do the last thing on the list'];\r",
+              "  strategy[ 12]=['Into the impossible'];\r",
+              "  strategy[ 13]=['Towards the insignificant'];\r",
+              "  strategy[ 14]=['Ask people to work against their better judgement'];\r",
+              "  strategy[ 15]=['Take away the elements in order of apparent non-importance'];\r",
+              "  strategy[ 16]=['Infinitesimal gradations'];\r",
+              "  strategy[ 17]=['Change instrument roles'];\r",
+              "  strategy[ 18]=['Accretion'];\r",
+              "  strategy[ 19]=['Disconnect from desire'];\r",
+              "  strategy[ 20]=['Emphasize repetitions'];\r",
+              "  strategy[ 21]=['Faced with a choice, do both'];\r",
+              "  strategy[ 22]=['Children', '-speaking', '-singing'];\r",
+              "  strategy[ 23]=['Lost in useless territory'];\r",
+              "  strategy[ 24]=['A very small object', 'Its center'];\r",
+              "  strategy[ 25]=['Dont be afraid of things because they\\'re easy to do'];\r",
+              "  strategy[ 26]=['Dont be frightened to display your talents'];\r",
+              "  strategy[ 27]=['Breathe more deeply'];\r",
+              "  strategy[ 28]=['Honor thy error as a hidden intention'];\r",
+              "  strategy[ 29]=['What are the sections sections of?', 'Imagine a caterpillar moving'];\r",
+              "  strategy[ 30]=['Only one element of each kind'];\r",
+              "  strategy[ 31]=['Is there something missing'];\r",
+              "  strategy[ 32]=['Use \\'unqualified\\' people'];\r",
+              "  strategy[ 33]=['How would you have done it?'];\r",
+              "  strategy[ 34]=['Emphasize differences'];\r",
+              "  strategy[ 35]=['Do nothing for as long as possible'];\r",
+              "  strategy[ 36]=['Bridges', '-build', '-burn'];\r",
+              "  strategy[ 37]=['Always give yourself credit for having more than personality'];\r",
+              "  strategy[ 38]=['You don\\'t have to be ashamed of using your own ideas'];\r",
+              "  strategy[ 39]=['Tidy up'];\r",
+              "  strategy[ 40]=['Do the words need changing?'];\r",
+              "  strategy[ 41]=['Ask your body'];\r",
+              "  strategy[ 42]=['Tape your mouth'];\r",
+              "  strategy[ 43]=['Water'];\r",
+              "  strategy[ 44]=['Simply a matter of work'];\r",
+              "  strategy[ 45]=['Make a sudden, destructive unpredictable action; incorporate'];\r",
+              "  strategy[ 46]=['Consult other sources', '-promising', '-unpromising'];\r",
+              "  strategy[ 47]=['Use an unacceptable color'];\r",
+              "  strategy[ 48]=['Humanize something free of error'];\r",
+              "  strategy[ 49]=['Use filters'];\r",
+              "  strategy[ 50]=['Fill every beat with something'];\r",
+              "  strategy[ 51]=['Discard an axiom'];\r",
+              "  strategy[ 52]=['Not building a wall but making a brick'];\r",
+              "  strategy[ 53]=['What wouldn\\'t you do?'];\r",
+              "  strategy[ 54]=['Lowest common denominator'];\r",
+              "  strategy[ 55]=['Decorate, decorate'];\r",
+              "  strategy[ 56]=['Balance the consistency principle with the inconsistency principle'];\r",
+              "  strategy[ 57]=['Get your neck massaged'];\r",
+              "  strategy[ 58]=['Listen to the quiet voice'];\r",
+              "  strategy[ 59]=['Do the washing up'];\r",
+              "  strategy[ 60]=['Is it finished?'];\r",
+              "  strategy[ 61]=['Put in earplugs'];\r",
+              "  strategy[ 62]=['Reevaluation (a warm feeling)'];\r",
+              "  strategy[ 63]=['Give the name away'];\r",
+              "  strategy[ 64]=['Intentions', '-nobility of', '-humility of', '-credibility of'];\r",
+              "  strategy[ 65]=['Abandon normal instruments'];\r",
+              "  strategy[ 66]=['Use fewer notes'];\r",
+              "  strategy[ 67]=['Repetition is a form of change'];\r",
+              "  strategy[ 68]=['Give way to your worst impulse'];\r",
+              "  strategy[ 69]=['Reverse'];\r",
+              "  strategy[ 70]=['Trust in the you of now'];\r",
+              "  strategy[ 71]=['Imagine the piece as a set of disconnected events'];\r",
+              "  strategy[ 72]=['What would your closest friend do?'];\r",
+              "  strategy[ 73]=['Distorting time'];\r",
+              "  strategy[ 74]=['Make a blank valuable by putting it in an exquisite frame'];\r",
+              "  strategy[ 75]=['Feed the recording back out of the medium'];\r",
+              "  strategy[ 76]=['Convert a melodic element', 'into a rhythmic element'];\r",
+              "  strategy[ 77]=['The most important thing', 'is the thing most easily forgotten'];\r",
+              "  strategy[ 78]=['  ']; // empty line\r",
+              "  strategy[ 79]=['Ghost echoes'];\r",
+              "  strategy[ 80]=['You can only make one dot at a time'];\r",
+              "  strategy[ 81]=['Just carry on'];\r",
+              "  strategy[ 82]=['(Organic) machinery'];\r",
+              "  strategy[ 83]=['The inconsistency principle'];\r",
+              "  strategy[ 84]=['Don\\'t break the silence'];\r",
+              "  strategy[ 85]=['Idiot glee (?)'];\r",
+              "  strategy[ 86]=['Discover the recipes you are using', 'and abandon them'];\r",
+              "  strategy[ 87]=['Cascades'];\r",
+              "  strategy[ 88]=['Courage!'];\r",
+              "  strategy[ 89]=['Spectrum analysis'];\r",
+              "  strategy[ 90]=['What mistakes did you make last time?'];\r",
+              "  strategy[ 91]=['Consider different fading systems'];\r",
+              "  strategy[ 92]=['Mute and continue'];\r",
+              "  strategy[ 93]=['Be extravagant'];\r",
+              "  strategy[ 94]=['It is quite possible (after all)'];\r",
+              "  strategy[ 95]=['What are you really thinking about just now?'];\r",
+              "  strategy[ 96]=['Don\\'t stress on thing more than another [sic]'];\r",
+              "  strategy[ 97]=['State the problem in words', 'as clearly as possible'];\r",
+              "  strategy[ 98]=['Assemble some of the elements', 'in a group and treat the group'];\r",
+              "  strategy[ 99]=['You are an engineer'];\r",
+              "  strategy[100]=['Remove ambiguities and', 'convert to specifics'];\r",
+              "  strategy[101]=['Look at the order', 'in which you do things'];\r",
+              "  strategy[102]=['Go outside.', 'Shut the door.'];\r",
+              "  strategy[103]=['Disciplined self-indulgence'];\r",
+              "  strategy[104]=['Do we need holes?'];\r",
+              "  strategy[105]=['Cluster analysis'];\r",
+              "  strategy[106]=['Always first steps'];\r",
+              "  strategy[107]=['Cut a vital connection'];\r",
+              "  strategy[108]=['Do something boring'];\r",
+              "  strategy[109]=['Define an area as \\'safe\\'', 'and use it as an anchor'];\r",
+              "  strategy[110]=['Is the information correct?'];\r",
+              "  strategy[111]=['Overtly resist change'];\r",
+              "  strategy[112]=['Question the heroic approach'];\r",
+              "  strategy[113]=['Accept advice'];\r",
+              "  strategy[114]=['Twist the spine'];\r",
+              "  strategy[115]=['Work at a different speed'];\r",
+              "  strategy[116]=['Look closely at the most embarrassing details and amplify them'];\r",
+              "  strategy[117]=['Mechanicalize something idiosyncratic'];\r",
+              "  strategy[118]=['Emphasize the flaws'];\r",
+              "  strategy[119]=['Remember those quiet evenings'];\r",
+              "  strategy[120]=['Take a break'];\r",
+              "  strategy[121]=['Short circuit', '(example: a man eating peas', 'with the idea that they will improve his virility', 'shovels them straight into his lap)'];\r",
+              "  strategy[122]=['Left channel, right channel, center channel'];\r",
+              "  strategy[123]=['Use an old idea'];\r",
+              "  strategy[124]=['Destroy', '-nothing', '-the most important thing'];\r",
+              "  strategy[125]=['Change nothing and continue with immaculate consistency'];\r",
+              "  strategy[126]=['The tape is now the music'];\r",
+              "\r",
+              "// utility methods ======================================================\r",
+              "\r",
+              "// These variable declarations may be hidden or removed if defined in parent X3D Script node:\r",
+              "//var traceEnabled = true; // local variable\r",
+              "var scriptName   = 'ObliqueStrategiesScript.js';\r",
+              "var terseTrace   = false;\r",
+              "\r",
+              "function forcePrint (stringValue)\r",
+              "{\r",
+              "    // Browser.print, println is the function to output text on the X3D player's console window\r",
+              "    if ((scriptName.length > 0) && (terseTrace === false))\r",
+              "    {\r",
+              "        Browser.print ('[' + scriptName + '] ' + stringValue + '\\n');\r",
+              "    }\r",
+              "    else \r",
+              "    {\r",
+              "        Browser.print (                          stringValue + '\\n');\r",
+              "    }\r",
+              "}\r",
+              "function tracePrint (stringValue)\r",
+              "{\r",
+              "    if (traceEnabled)\r",
+              "    {\r",
+              "        forcePrint (stringValue);\r",
+              "    }\r",
+              "}\r",
+              "// ================================================================\r",
+              "\r",
+              "var index;\r",
+              "\r",
+              "function generateTextToSpeechUrl () // TODO add SFBool field to silence, SFString field to choose output language\r",
+              "{\r",
+              "  // http://stackoverflow.com/questions/12141251/how-can-i-replace-space-with-20-in-javascript\r",
+              "  textToSpeechUrl = new MFString ('http://translate.google.com/translate_tts?tl=en&q=' + encodeURIComponent(strategy[index]));\r",
+              "  tracePrint ('generateTextToSpeechUrl() ' + textToSpeechUrl);\r",
+              "}\r",
+              "\r",
+              "function produceMFStringCard () // internal utility function\r",
+              "{\r",
+              "    tracePrint ('produceMFStringCard index = ' + index);\r",
+              "    // invoke MFString constructor based on input size\r",
+              "    if       (strategy[index].length === 1)\r",
+              "    {\r",
+              "        string_changed = new MFString (strategy[index]);\r",
+              "    }\r",
+              "    else  if (strategy[index].length === 2)\r",
+              "    {\r",
+              "        string_changed = new MFString (strategy[index][0], strategy[index][1]);\r",
+              "    }\r",
+              "    else  if (strategy[index].length >= 3)\r",
+              "    {\r",
+              "        string_changed = new MFString (strategy[index][0], strategy[index][1], strategy[index][2]);\r",
+              "    }\r",
+              "    tracePrint ('string_changed = ' + strategy[index]);\r",
+              "    if (strategy[index].length > 3)\r",
+              "    {\r",
+              "        forcePrint ('strategy[index].length > 3, omitted remainder of ' + strategy[index]);\r",
+              "    }\r",
+              "    \r",
+              "    generateTextToSpeechUrl ();\r",
+              "    tracePrint ('============================'); // done with this card\r",
+              "}\r",
+              "\r",
+              "function selectRandomCard (eventValue, timestamp) // eventValue is routed into Script, timestamp parameter optional\r",
+              "{\r",
+              "  if (eventValue === true)\r",
+              "  {\r",
+              "    tracePrint ('selectRandomCard (' + eventValue + ')');\r",
+              "    index = Math.floor(Math.random() * strategy.length); // range [0..length)\r",
+              "    tracePrint('random index = ' + index);\r",
+              "    produceMFStringCard (); // returns string_changed to the scene, where it gets ROUTEd\r",
+              "    newCardTime = timestamp + 0.1;\r",
+              "  }\r",
+              "}\r",
+              "\r",
+              "function selectPreviousCard (eventValue, timestamp) // TODO test\r",
+              "{\r",
+              "  if (eventValue === true)\r",
+              "  {\r",
+              "    tracePrint ('selectPreviousCard (' + eventValue + ')');\r",
+              "    if (index < 0) // if -1 then no value was previously chosen, so pick a random one\r",
+              "    {\r",
+              "        index = Math.floor(Math.random() * strategy.length);\r",
+              "    }\r",
+              "    if (index === 0)\r",
+              "    {\r",
+              "        index = strategy.length; // intentionally out of bounds, depend on next step:\r",
+              "    }\r",
+              "    index = (index-1) % strategy.length;\r",
+              "    produceMFStringCard ();\r",
+              "    newCardTime = timestamp + 0.1;\r",
+              "  }\r",
+              "}\r",
+              "\r",
+              "function selectNextCard (eventValue, timestamp) // TODO test\r",
+              "{\r",
+              "  if (eventValue === true)\r",
+              "  {\r",
+              "    tracePrint ('selectNextCard (' + eventValue + ')');\r",
+              "    if (index < 0) // if -1 then no value was previously chosen, so pick a random one\r",
+              "    {\r",
+              "        index = Math.floor(Math.random() * strategy.length);\r",
+              "    }\r",
+              "    index = (index+1) % strategy.length; // % is modulus operator\r",
+              "    produceMFStringCard ();\r",
+              "    newCardTime = timestamp + 0.1;\r",
+              "  }\r",
+              "}\r",
+              "\r",
+              "function printAllStrategies()\r",
+              "{\r",
+              "  var i;\r",
+              "  var saveTrace = terseTrace; // remember prior value\r",
+              "  terseTrace = true;\r",
+              "  Browser.println ('');\r",
+              "  Browser.println ('            Oblique Strategies');\r",
+              "  Browser.println ('  (Over One Hundred Worthwhile Dilemmas)');\r",
+              "  Browser.println ('      by Brian Eno and Peter Schmidt');\r",
+              "  Browser.println ('');\r",
+              "  for (i=0; i < strategy.length; i++)\r",
+              "  {\r",
+              "    forcePrint (strategy[i]); // to Browser console\r",
+              "  }\r",
+              "  Browser.println ('');\r",
+              "  terseTrace = saveTrace; // restore prior value\r",
+              "}\r",
+              "// ================================================================\r",
+              "\r",
+              "function initialize() // no parameters allowed\r",
+              "{\r",
+              "  // The initialize() function is automatically invoked when the Script node is first activated, prior to other events\r",
+              "  \r",
+              "  printAllStrategies(); // output goes to browser console\r",
+              "  \r",
+              "  index = index % strategy.length; // sometimes modulo operator does not work on negative numbers\r",
+              "  tracePrint ('initial index = ' + index);\r",
+              "  \r",
+              "  if ((index >= 0) && (index < strategy.length))\r",
+              "  {\r",
+              "    // type conversion: Javascript string array to X3D MFString array\r",
+              "    string_changed = new MFString (strategy[index]); // expects length of one\r",
+              "    tracePrint ('initialize() string_changed=' + string_changed);\r",
+              "  }\r",
+              "  else if (index === -1)\r",
+              "  {\r",
+              "    tracePrint ('initialize() index = -1, no initial value chosen'); // report error to console\r",
+              "  }\r",
+              "  else\r",
+              "  {\r",
+              "    forcePrint ('initialize() index=' + index + ' out of bounds, reset to 0'); // report error to console\r",
+              "    index = 0;\r",
+              "  }\r",
+              "  generateTextToSpeechUrl ();\r",
+              "  tracePrint ('============================'); // done with initialize\r",
+              "}\r",
+              "// ================================================================\r",
+              ""
+            ],
+            "@class": "TextScript"
+          }
+        },
+        {
+          "Transform": {
+            "@DEF": "CardTransform",
+            "@scale": [
+              0.4,
+              0.4,
+              0.4
+            ],
+            "@translation": [
+              0,
+              -1.5,
+              0
+            ],
+            "-children": [
+              {
+                "Shape": {
+                  "-geometry": [
+                    {
+                      "Text": {
+                        "@DEF": "CardText",
+                        "-fontStyle": [
+                          {
+                            "FontStyle": {
+                              "@family": [
+                                "SANS"
+                              ],
+                              "@justify": [
+                                "MIDDLE",
+                                "MIDDLE"
+                              ],
+                              "@style": "BOLD"
+                            }
+                          }
+                        ],
+                        "@class": "CardText"
+                      }
+                    }
+                  ],
+                  "-appearance": [
+                    {
+                      "Appearance": {
+                        "-material": [
+                          {
+                            "Material": {
+                              "@diffuseColor": [
+                                1,
+                                1,
+                                1
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromField": "string_changed",
+                  "@fromNode": "TextScript",
+                  "@toField": "string",
+                  "@toNode": "CardText"
+                }
+              },
+              {
+                "Sound": {
+                  "@DEF": "CardSoundSpatialization",
+                  "@maxBack": 100,
+                  "@maxFront": 100,
+                  "@minBack": 20,
+                  "@minFront": 20,
+                  "-children": [
+                    {
+                      "#comment": "Make sure the sound source AudioClip is audible at the user location"
+                    },
+                    {
+                      "#comment": "Not all X3D players seem to use the .mp3"
+                    },
+                    {
+                      "#comment": "&#38; is ampersand character, avoids escaping problems and inconsistencies in browsers and X3D players"
+                    },
+                    {
+                      "#comment": "%20 is space character used in uri/url encoding"
+                    }
+                  ],
+                  "-source": [
+                    {
+                      "AudioClip": {
+                        "@DEF": "TextToSpeechAudioClip",
+                        "@description": "sends strategy text google translate",
+                        "@url": [
+                          "http://translate.google.com/translate_tts?tl=en&q=Feed%20the%20recording%20back%20out%20of%20the%20medium",
+                          "translate_tts_mp3FileFormatNotSupported.wav",
+                          "http://X3dGraphics.com/examples/X3dForAdvancedModeling/Inspiration/translate_tts_mp3FileFormatNotSupported.wav"
+                        ],
+                        "@class": "TextToSpeechAudioClip"
+                      }
+                    }
+                  ],
+                  "@class": "CardSoundSpatialization"
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromField": "textToSpeechUrl",
+                  "@fromNode": "TextScript",
+                  "@toField": "url",
+                  "@toNode": "TextToSpeechAudioClip"
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromField": "newCardTime",
+                  "@fromNode": "TextScript",
+                  "@toField": "startTime",
+                  "@toNode": "TextToSpeechAudioClip"
+                }
+              }
+            ],
+            "@class": "CardTransform"
+          }
+        },
+        {
+          "Transform": {
+            "@scale": [
+              0.4,
+              0.4,
+              0.4
+            ],
+            "@translation": [
+              -3.2,
+              2.5,
+              0
+            ],
+            "-children": [
+              {
+                "TouchSensor": {
+                  "@DEF": "PreviousTextClickedSensor",
+                  "@description": "Select to see previous strategy",
+                  "@class": "PreviousTextClickedSensor"
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromField": "isActive",
+                  "@fromNode": "PreviousTextClickedSensor",
+                  "@toField": "selectPreviousCard",
+                  "@toNode": "TextScript"
+                }
+              },
+              {
+                "Shape": {
+                  "-geometry": [
+                    {
+                      "Text": {
+                        "@string": [
+                          "previous"
+                        ],
+                        "-fontStyle": [
+                          {
+                            "FontStyle": {
+                              "@USE": "MessageFont"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "-appearance": [
+                    {
+                      "Appearance": {
+                        "@DEF": "InterfaceAppearance",
+                        "-material": [
+                          {
+                            "Material": {
+                              "@diffuseColor": [
+                                1,
+                                0,
+                                0.6
+                              ]
+                            }
+                          }
+                        ],
+                        "@class": "InterfaceAppearance"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@scale": [
+                    2,
+                    0.6,
+                    1
+                  ],
+                  "-children": [
+                    {
+                      "Shape": {
+                        "@DEF": "TransparentClickSurface",
+                        "-children": [
+                          {
+                            "#comment": "support Selectable Text with a scalable IFS"
+                          }
+                        ],
+                        "-geometry": [
+                          {
+                            "IndexedFaceSet": {
+                              "@coordIndex": [
+                                0,
+                                1,
+                                2,
+                                3,
+                                -1
+                              ],
+                              "@solid": false,
+                              "-coord": [
+                                {
+                                  "Coordinate": {
+                                    "@point": [
+                                      1,
+                                      1,
+                                      0,
+                                      1,
+                                      -1,
+                                      0,
+                                      -1,
+                                      -1,
+                                      0,
+                                      -1,
+                                      1,
+                                      0
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ],
+                        "-appearance": [
+                          {
+                            "Appearance": {
+                              "-material": [
+                                {
+                                  "Material": {
+                                    "@transparency": 1
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ],
+                        "@class": "TransparentClickSurface"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Transform": {
+            "@scale": [
+              0.4,
+              0.4,
+              0.4
+            ],
+            "@translation": [
+              3.5,
+              2.5,
+              0
+            ],
+            "-children": [
+              {
+                "TouchSensor": {
+                  "@DEF": "NextTextClickedSensor",
+                  "@description": "Select to see next strategy",
+                  "@class": "NextTextClickedSensor"
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromField": "isActive",
+                  "@fromNode": "NextTextClickedSensor",
+                  "@toField": "selectNextCard",
+                  "@toNode": "TextScript"
+                }
+              },
+              {
+                "Shape": {
+                  "-geometry": [
+                    {
+                      "Text": {
+                        "@string": [
+                          "next"
+                        ],
+                        "-fontStyle": [
+                          {
+                            "FontStyle": {
+                              "@USE": "MessageFont"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "-appearance": [
+                    {
+                      "Appearance": {
+                        "@USE": "InterfaceAppearance"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@scale": [
+                    1.2,
+                    0.6,
+                    1
+                  ],
+                  "-children": [
+                    {
+                      "Shape": {
+                        "@USE": "TransparentClickSurface"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Transform": {
+            "@scale": [
+              0.4,
+              0.4,
+              0.4
+            ],
+            "@translation": [
+              -3.3,
+              -0.5,
+              0
+            ],
+            "-children": [
+              {
+                "TouchSensor": {
+                  "@USE": "RandomTextClickedSensor"
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromField": "isActive",
+                  "@fromNode": "RandomTextClickedSensor",
+                  "@toField": "selectRandomCard",
+                  "@toNode": "TextScript"
+                }
+              },
+              {
+                "Shape": {
+                  "-geometry": [
+                    {
+                      "Text": {
+                        "@string": [
+                          "random"
+                        ],
+                        "-fontStyle": [
+                          {
+                            "FontStyle": {
+                              "@USE": "MessageFont"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "-appearance": [
+                    {
+                      "Appearance": {
+                        "@USE": "InterfaceAppearance"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@scale": [
+                    1.8,
+                    0.6,
+                    1
+                  ],
+                  "-children": [
+                    {
+                      "Shape": {
+                        "@USE": "TransparentClickSurface"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Transform": {
+            "@scale": [
+              0.4,
+              0.4,
+              0.4
+            ],
+            "@translation": [
+              3.3,
+              -0.5,
+              0
+            ],
+            "-children": [
+              {
+                "Anchor": {
+                  "@DEF": "TextToSpeechAnchor",
+                  "@description": "text to speech in browser",
+                  "@parameter": [
+                    "target=_blank"
+                  ],
+                  "@url": [
+                    "http://translate.google.com/translate_tts?tl=en&q=Overtly%20resist%20change"
+                  ],
+                  "-children": [
+                    {
+                      "ROUTE": {
+                        "@fromField": "textToSpeechUrl",
+                        "@fromNode": "TextScript",
+                        "@toField": "url",
+                        "@toNode": "TextToSpeechAnchor"
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-geometry": [
+                          {
+                            "Text": {
+                              "@string": [
+                                "speech"
+                              ],
+                              "-fontStyle": [
+                                {
+                                  "FontStyle": {
+                                    "@USE": "MessageFont"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ],
+                        "-appearance": [
+                          {
+                            "Appearance": {
+                              "@USE": "InterfaceAppearance"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Transform": {
+                        "@scale": [
+                          1.8,
+                          0.6,
+                          1
+                        ],
+                        "-children": [
+                          {
+                            "Shape": {
+                              "@USE": "TransparentClickSurface"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "@class": "TextToSpeechAnchor"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
