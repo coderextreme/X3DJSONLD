@@ -264,7 +264,7 @@ function loadX3DJS(selector, json, path, xml) {
 		}
 	}
 	var el = ConvertToX3DOM(json, "", element, path);
-	if (typeof x3dom !== 'undefined') {
+	if (typeof x3dom !== 'undefined' && typeof x3dom.reload === 'function') {
 		x3dom.reload();
 	}
 	if (typeof xml !== 'undefined') {
