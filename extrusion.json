@@ -89,9 +89,9 @@
 "",
 "                function set_fraction(value) {",
 "                        Browser.print(value);",
-"                        var endA = new SFVec3f(spine[0][0]*Math.random()*2, spine[0][1]*Math.random()*2, spine[0][2]*Math.random()*2);",
-"                        var endB = new SFVec3f(spine[1][0]*Math.random()*2, spine[1][1]*Math.random()*2, spine[1][2]*Math.random()*2);",
-"\t\t        spine = new MFVec3f(endA, endB);",
+"                        var endA = new SFVec3f(spine[0][0]*Math.random()*2+1, spine[0][1]*Math.random()*2+1, spine[0][2]*Math.random()*2+1);",
+"                        var endB = new SFVec3f(spine[1][0]*Math.random()*2-1, spine[1][1]*Math.random()*2-1, spine[1][2]*Math.random()*2-1);",
+"                        spine = new MFVec3f(endA, endB);",
 "                }",
 "                function set_spine(value) {",
 "                    spine = value;",
@@ -101,18 +101,18 @@
                 },
                 { "ROUTE":
                   {
-                    "@fromNode":"MoveCylinder",
-                    "@fromField":"spine",
-                    "@toNode":"extrusion",
-                    "@toField":"set_spine"
-                  }
-                },
-                { "ROUTE":
-                  {
                     "@fromNode":"TourTime",
                     "@fromField":"cycleTime",
                     "@toNode":"MoveCylinder",
                     "@toField":"set_fraction"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode":"MoveCylinder",
+                    "@fromField":"spine",
+                    "@toNode":"extrusion",
+                    "@toField":"set_spine"
                   }
                 }
               ]

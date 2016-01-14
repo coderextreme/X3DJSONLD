@@ -36,8 +36,8 @@ ecmascript:
                 }
 ]]>
                 </Script>               
-                <ROUTE fromNode='MoveCylinder' fromField='spine' toNode='extrusion' toField='set_spine'/>
                 <ROUTE fromNode='TourTime' fromField='cycleTime' toNode='MoveCylinder' toField='set_fraction'/>
+                <ROUTE fromNode='MoveCylinder' fromField='spine' toNode='extrusion' toField='set_spine'/>
         </Group>
 
     </Scene>

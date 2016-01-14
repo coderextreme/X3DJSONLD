@@ -3,8 +3,8 @@
 // For X3D Browser functions
 if (typeof Browser === 'undefined') {
 	var Browser = {
-		print : function(string) { console.error(string); },
-		println : function(string) { console.error(string); },
+		print : function(string) { if (typeof console !== 'undefined' && typeof string !== 'undefined') console.error(string); },
+		println : function(string) { if (typeof console !== 'undefined' && typeof string !== 'undefined') console.error(string); },
 		stringToArray : function(obj) {
 			if (typeof obj === 'object') {
 				return obj;
