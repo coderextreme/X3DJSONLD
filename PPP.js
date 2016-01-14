@@ -26,7 +26,10 @@ process.stdin.on('end', function() {
 		.replace(/&lt;/g, '<')
 		.replace(/&gt;/g, '>')
 	console.error(code);
-	console.error(routecode.join('\n'));
+	var route = routecode.join('\n');
+	console.error(route);
 	eval(code);
-	eval(routecode.join('\n'));
+	//setInterval(function() {
+		eval(route);
+	//}, 500);
 });

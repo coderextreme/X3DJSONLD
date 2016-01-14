@@ -118,7 +118,9 @@ function zap(object) {
 	}
 }
 
-var fs = require("fs");
+if (typeof require === 'function') {
+	var fs = require("fs");
+}
 
 function realPrototypeExpander(object, scope, isInDeclaration) {
 	var p;
