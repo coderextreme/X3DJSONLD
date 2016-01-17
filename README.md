@@ -24,3 +24,16 @@ node app.js
 ```
 Then go to http://localhost:3000 in your web browser and select a JSON file in
 the pulldown.  A link called examples to the configured folder will be created on the web servers root.  If you have examples linked to the X3D Resources examples, then you can try: http://localhost:3000/X3DExamplesViewer.html
+
+* WARNING
+
+You should not put up index.html from the X3D JSON Loader found here https://github.com/coderextreme/X3DJSONLD/ and here http://coderextreme.net/X3DJSONLD/  without careful consideration of this:
+
+https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet
+
+In particular, I am choosing tags, attribute names, and attributes right out of the JSON and XML without any filtering or checking.    You should validate any JSON or XML being loaded into the X3D JSON Loader (yes I know it’s problematic).  In particular, if you store XML or JSON from untrusted sources and display them in the Loader, it’s likely you will get an XSS attack.  Please sanitize all input from untrusted source and make sure it’s valid.  We don’t currently have XML Schema or XML Schematron for JSON data yet.
+
+It’s in the license that I will not be liable for damages.  Please use my software with care.  I am not a security researcher.
+
+If someone wants me to write a sanitizer for the X3D JSON Loader, I am willing to for $$$.  I will need to run it by some security researchers.
+
