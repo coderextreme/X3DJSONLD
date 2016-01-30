@@ -22,8 +22,9 @@
                   "field": [
                     {
                       "@name":"xtranslation",
-                      "@accessType":"inputOnly",
-                      "@type":"SFVec3f"
+                      "@accessType":"inputOutput",
+                      "@type":"SFVec3f",
+                      "@value":[0.0,0.0,0.0]
                     }
                   ]
               },
@@ -77,8 +78,9 @@
                   "field": [
                     {
                       "@name":"ytranslation",
-                      "@accessType":"inputOnly",
-                      "@type":"SFVec3f"
+                      "@accessType":"inputOutput",
+                      "@type":"SFVec3f",
+                      "@value":[0.0,0.0,0.0]
                     }
                   ]
               },
@@ -142,8 +144,9 @@
                   "field": [
                     {
                       "@name":"ztranslation",
-                      "@accessType":"inputOnly",
-                      "@type":"SFVec3f"
+                      "@accessType":"inputOutput",
+                      "@type":"SFVec3f",
+                      "@value":[0.0,0.0,0.0]
                     }
                   ]
               },
@@ -207,8 +210,9 @@
                   "field": [
                     {
                       "@name":"ttranslation",
-                      "@accessType":"inputOnly",
-                      "@type":"SFVec3f"
+                      "@accessType":"inputOutput",
+                      "@type":"SFVec3f",
+                      "@value":[0.0,0.0,0.0]
                     }
                   ]
               },
