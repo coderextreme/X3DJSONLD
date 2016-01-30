@@ -139,42 +139,42 @@
                       "@accessType": "initializeOnly",
                       "@appinfo": "user or default input for clearSpanWidth parameter",
                       "@type": "SFFloat",
-                      "@value": 5
+                      "@value": 4
                     },
                     {
                       "@name": "riseHeight",
                       "@accessType": "initializeOnly",
                       "@appinfo": "user or default input for riseHeight parameter",
                       "@type": "SFFloat",
-                      "@value": 2.5
+                      "@value": 2
                     },
                     {
                       "@name": "depth",
                       "@accessType": "initializeOnly",
                       "@appinfo": "user or default input for depth parameter",
                       "@type": "SFFloat",
-                      "@value": 2
+                      "@value": 3
                     },
                     {
                       "@name": "topAbutmentHeight",
                       "@accessType": "initializeOnly",
                       "@appinfo": "user or default input for topAbutmentHeight parameter",
                       "@type": "SFFloat",
-                      "@value": 0.6
+                      "@value": 0.5
                     },
                     {
                       "@name": "pierWidth",
                       "@accessType": "initializeOnly",
                       "@appinfo": "user or default input for pierWidth parameter",
                       "@type": "SFFloat",
-                      "@value": 1
+                      "@value": 0.5
                     },
                     {
                       "@name": "pierHeight",
                       "@accessType": "initializeOnly",
                       "@appinfo": "user or default input for pierHeight parameter",
                       "@type": "SFFloat",
-                      "@value": 2
+                      "@value": 1
                     },
                     {
                       "@name": "archHalf",
@@ -542,7 +542,13 @@
                     "         ",
                     ""
                   ],
-                  "@class": "ArchPrototypeArchInstanceArchPrototypeArchPrototypeScript"
+                  "@class": "ArchPrototypeArchInstanceArchPrototypeArchPrototypeScript",
+                  "@clearSpanWidth": 5,
+                  "@riseHeight": 2.5,
+                  "@depth": 2,
+                  "@topAbutmentHeight": 0.6,
+                  "@pierWidth": 1,
+                  "@pierHeight": 2
                 }
               },
               {

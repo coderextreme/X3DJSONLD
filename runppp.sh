@@ -1,4 +1,6 @@
 #!/bin/sh -x
+node PPP.js < rubikOnFire.json > rubikOnFires.json
+read me
 node PPP.js < bubbles.json > bubbless.json 
 read me
 node PPP.js < ArchPrototype.json > ArchPrototypes.json 
