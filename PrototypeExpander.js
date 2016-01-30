@@ -10,7 +10,11 @@ var defdefined = {};
 function setScript(scope, field, object, objectfield) {
 	// console.error("setscrip", scope, field, object, objectfield, "<<<");
 	//console.error("setmeta ", scope, field);
-	protoField[scope+field] = [ object, objectfield ];
+	// protoField[scope+field] = [ object, objectfield ];
+	if (typeof protoField[scope+field] === 'undefined') {
+		protoField[scope+field] = [];
+	}
+	protoField[scope+field][protoField[scope+field].length] = [ object, objectfield ];
 	// set default value
 	if (typeof interfaceField[scope+field] !== 'undefined') {
 		var fields = object["field"];
@@ -24,8 +28,12 @@ function setScript(scope, field, object, objectfield) {
 }
 
 function setConnect(scope, field, object, objectfield) {
-	// console.error("setconn ", scope, field);
-	protoField[scope+field] = [ object, objectfield ];
+	console.error("setconn ", scope, field);
+	// protoField[scope+field] = [ object, objectfield ];
+	if (typeof protoField[scope+field] === 'undefined') {
+		protoField[scope+field] = [];
+	}
+	protoField[scope+field][protoField[scope+field].length] = [ object, objectfield ];
 	// set default value
 	if (typeof interfaceField[scope+field] !== 'undefined') {
 		var fields = object["field"];
@@ -48,29 +56,33 @@ function setInterface(scope, field, value) {
 	interfaceField[scope+field] = value;
 }
 
-function setObjectValue(scope, field, fieldOrNode, value) {
-	// console.error("setvalue", scope, field);
-	var obj = protoField[scope+field];
-	if (typeof obj !== 'undefined') {
-		if (obj[1] === 'value' || field.indexOf("set_") === 0) {
+function setObjectValues(scope, field, fieldOrNode, value) {
+	console.error("setvalue", scope, field, fieldOrNode, value);
+	for (var pf in protoField[scope+field]) {
+		var obj = protoField[scope+field][pf];
+		if (typeof obj !== 'undefined') {
+			setObjectValue(scope, field, obj, fieldOrNode, value);
+		}
+	}
+}
+
+function setObjectValue(scope, field, obj, fieldOrNode, value) {
+	console.error("setobj[1]", obj[1], fieldOrNode, field);
+        // if (obj[1] === 'value' || fieldOrNode === '-' || field.indexOf("set_") === 0) {
+		obj[0][fieldOrNode+obj[1]] = value;
+		retval = true;
+	/*} else {
+		scope = obj[0]["@DEF"] || scope;
+		field = obj[1];
+		console.error("recurse", obj, value);
+		var retval = setObjectValue(scope, field, obj, fieldOrNode, value);
+		if (!retval) {
+			// if the recursion didn't set it, set it now
 			obj[0][fieldOrNode+obj[1]] = value;
 			retval = true;
-		} else {
-			scope = obj[0]["@DEF"];
-			field = obj[1];
-			// console.error("recurse", obj, value);
-			var retval = setObjectValue(scope, field, fieldOrNode, value);
-			if (!retval) {
-				// if the recursion didn't set it, set it now
-				obj[0][fieldOrNode+obj[1]] = value;
-				retval = true;
-			}
 		}
-		return retval;
-	} else {
-		retval = false;
-	}
-	//console.error("return", retval);
+	}*/
+	return retval;
 }
 
 function setEnv(scope, field, newscope, newfield) {
@@ -251,7 +263,7 @@ function realPrototypeExpander(object, scope, isInDeclaration) {
 							// console.error('>   ', JSON.stringify(fv));
 						}
 					}
-					setObjectValue(newscope,
+					setObjectValues(newscope,
 					    name,
 					    fieldOrNode,
 					    value);
@@ -272,7 +284,7 @@ function realPrototypeExpander(object, scope, isInDeclaration) {
 			} else if (p.toLowerCase() === 'is') {
 				var def = object["@DEF"];
 				var connect = object[p]["connect"];
-				//console.error('connect');
+				// console.error('connect', scope);
 				for (var field in connect) {
 					//console.error(connect[field]);
 					setEnv(scope,
