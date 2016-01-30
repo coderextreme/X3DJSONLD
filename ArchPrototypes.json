@@ -139,84 +139,78 @@
                       "@accessType": "initializeOnly",
                       "@appinfo": "user or default input for clearSpanWidth parameter",
                       "@type": "SFFloat",
-                      "@value": 4
+                      "@value": 5
                     },
                     {
                       "@name": "riseHeight",
                       "@accessType": "initializeOnly",
                       "@appinfo": "user or default input for riseHeight parameter",
                       "@type": "SFFloat",
-                      "@value": 2
+                      "@value": 2.5
                     },
                     {
                       "@name": "depth",
                       "@accessType": "initializeOnly",
                       "@appinfo": "user or default input for depth parameter",
                       "@type": "SFFloat",
-                      "@value": 3
+                      "@value": 2
                     },
                     {
                       "@name": "topAbutmentHeight",
                       "@accessType": "initializeOnly",
                       "@appinfo": "user or default input for topAbutmentHeight parameter",
                       "@type": "SFFloat",
-                      "@value": 0.5
+                      "@value": 0.6
                     },
                     {
                       "@name": "pierWidth",
                       "@accessType": "initializeOnly",
                       "@appinfo": "user or default input for pierWidth parameter",
                       "@type": "SFFloat",
-                      "@value": 0.5
+                      "@value": 1
                     },
                     {
                       "@name": "pierHeight",
                       "@accessType": "initializeOnly",
                       "@appinfo": "user or default input for pierHeight parameter",
                       "@type": "SFFloat",
-                      "@value": 1
+                      "@value": 2
                     },
                     {
                       "@name": "archHalf",
                       "@accessType": "initializeOnly",
                       "@appinfo": "user or default input for archHalf parameter",
-                      "@type": "SFBool",
-                      "@value": false
+                      "@type": "SFBool"
                     },
                     {
                       "@name": "archHalfExtensionWidth",
                       "@accessType": "initializeOnly",
                       "@appinfo": "user or default input for archHalfExtensionWidth parameter",
-                      "@type": "SFFloat",
-                      "@value": 0
+                      "@type": "SFFloat"
                     },
                     {
                       "@name": "onlyIntrados",
                       "@accessType": "initializeOnly",
                       "@appinfo": "user or default input for onlyIntrados parameter",
-                      "@type": "SFBool",
-                      "@value": false
+                      "@type": "SFBool"
                     },
                     {
                       "@name": "archFilled",
                       "@accessType": "initializeOnly",
                       "@appinfo": "user or default input for archFilled parameter",
-                      "@type": "SFBool",
-                      "@value": false
+                      "@type": "SFBool"
                     },
                     {
                       "@name": "archHalfFilled",
                       "@accessType": "initializeOnly",
                       "@appinfo": "user or default input for archHalfFilled parameter",
-                      "@type": "SFBool",
-                      "@value": false
+                      "@type": "SFBool"
                     },
                     {
                       "@name": "lintel",
                       "@accessType": "initializeOnly",
                       "@appinfo": "user or default input for lintel parameter",
-                      "@type": "SFBool",
-                      "@value": false
+                      "@type": "SFBool"
                     },
                     {
                       "@name": "computedScale",
@@ -542,13 +536,7 @@
                     "         ",
                     ""
                   ],
-                  "@class": "ArchPrototypeArchInstanceArchPrototypeArchPrototypeScript",
-                  "@clearSpanWidth": 5,
-                  "@riseHeight": 2.5,
-                  "@depth": 2,
-                  "@topAbutmentHeight": 0.6,
-                  "@pierWidth": 1,
-                  "@pierHeight": 2
+                  "@class": "ArchPrototypeArchInstanceArchPrototypeArchPrototypeScript"
                 }
               },
               {

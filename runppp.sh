@@ -1,4 +1,6 @@
 #!/bin/sh -x
+node PPP.js < for.json > fors.json
+read me
 node PPP.js < rubikOnFire.json > rubikOnFires.json
 read me
 node PPP.js < bubbles.json > bubbless.json 
@@ -16,4 +18,4 @@ read me
 node PPP.js < cobweb.json > cobwebs.json 
 read me
 node PPP.js < force.json > forces.json
-node PPP.js < for.json > fors.json
+read me
