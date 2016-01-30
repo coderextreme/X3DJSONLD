@@ -3,10 +3,10 @@
 <X3D profile="Immersive" version="3.3" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd">
     <Scene>
         <NavigationInfo type='"ANY" "WALK" "EXAMINE" "FLY" "LOOKAT"'/>
-        <Viewpoint description="Rubik's Cube" position="0 0 12"/>
+        <Viewpoint description="Rubiks Cube" position="0 0 12"/>
         <ProtoDeclare name="sphere">
             <ProtoInterface>
-                <field name="xtranslation" accessType="inputOnly" type="SFVec3f"/>
+                <field name="xtranslation" accessType="inputOutput" type="SFVec3f" value="0.0 0.0 0.0"/>
             </ProtoInterface>
             <ProtoBody>
                 <Transform translation="0 0 0">
@@ -24,7 +24,7 @@
         </ProtoDeclare>
         <ProtoDeclare name="three">
             <ProtoInterface>
-                <field name="ytranslation" accessType="inputOnly" type="SFVec3f"/>
+                <field name="ytranslation" accessType="inputOutput" type="SFVec3f" value="0.0 0.0 0.0"/>
             </ProtoInterface>
             <ProtoBody>
                 <Transform translation="0 0 0">
@@ -45,7 +45,7 @@
         </ProtoDeclare>
         <ProtoDeclare name="nine">
             <ProtoInterface>
-                <field name="ztranslation" accessType="inputOnly" type="SFVec3f"/>
+                <field name="ztranslation" accessType="inputOutput" type="SFVec3f" value="0.0 0.0 0.0"/>
             </ProtoInterface>
             <ProtoBody>
                 <Transform translation="0 0 0">
@@ -66,7 +66,7 @@
         </ProtoDeclare>
         <ProtoDeclare name="twentyseven">
             <ProtoInterface>
-                <field name="ttranslation" accessType="inputOnly" type="SFVec3f"/>
+                <field name="ttranslation" accessType="inputOutput" type="SFVec3f" value="0.0 0.0 0.0"/>
             </ProtoInterface>
             <ProtoBody>
                 <Transform translation="0 0 0">
