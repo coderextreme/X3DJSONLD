@@ -2,37 +2,51 @@ var fs = require("fs");
 var https = require('https');
 var http = require('http');
 
-var nameMap = {};
-
 function searchForProtoDeclare(object, name) {
 	var p;
 	var retval;
+	var found;
 	if (typeof object === "object") {
 		for (p in object) {
-			if (p === 'ProtoDeclare' && object[p]["@name"] === name) {
-				// console.log("Found proto declare ",object);
-				return object;
-			} else {
-				retval = searchForProtoDeclare(object[p], name);
+			if (p === 'ProtoDeclare') {
+				console.log("looked at", object[p]["@name"])
+				if (object[p]["@name"] === name) {
+					found = object;
+				}
+				// find the first one if none match
+				if (typeof found === 'undefined') {
+					found = object;
+				}
+			}
+			retval = searchForProtoDeclare(object[p], name);
+			if (typeof found === 'undefined') {
 				if (typeof retval !== 'undefined') {
-					return retval;
+					found = retval;
 				}
 			}
 		}
 	}
-	return retval;
+	if (typeof found !== 'undefined') {
+		console.log("defaulted to", found["ProtoDeclare"]["@name"])
+	}
+	return found;
 }
 
-function loadedProto(data, object, name, appinfo, description) {
+function loadedProto(data, object, name, protoname, appinfo, description, filename) {
 	if (typeof data !== 'undefined') {
-		var newobj = searchForProtoDeclare(JSON.parse(data), name);
-		for (var p in newobj) {
-			object[p] = newobj[p];
+		console.log("searching for", name)
+		try {
+			var newobj = searchForProtoDeclare(JSON.parse(data), protoname);
+			for (var p in newobj) {
+				object[p] = newobj[p];
+			}
+			console.log("found", newobj[p]["@name"])
+			object[p]["@name"] = name;
+			object[p]["@appinfo"] = appinfo;
+			object[p]["@description"] = description;
+		} catch (e) {
+			console.log("Failed to parse JSON in ", filename);
 		}
-		object[p]["@appinfo"] = appinfo;
-		object[p]["@description"] = description;
-		// think about copying over name
-		// console.log(object);
 	}
 }
 
@@ -58,8 +72,10 @@ function loadProto(dir, object, url, name, appinfo, description) {
 		for (var u in url) {
 			// console.log("Loading File", url[u]);
 			var nameIndex = url[u].indexOf("#");
-			var protoname = url[u].substring(nameIndex+1);
-			nameMap[name] = protoname;
+			var protoname = name;
+			if (nameIndex >= 0) {
+				protoname = url[u].substring(nameIndex+1);
+			}
 			var ext = url[u].lastIndexOf(".");
 			var file = url[u].substr(0, ext)+".json";
 			var filename = resolve(dir, file);
@@ -72,7 +88,7 @@ function loadProto(dir, object, url, name, appinfo, description) {
 				   });
 				   res.on('end', function() {
 					  // console.log("Got back from https", response.toString());
-					  loadedProto(response, object, protoname, appinfo, description);
+					  loadedProto(response, object, name, protoname, appinfo, description, filename);
 				   });
 				});
 			} else if (filename.indexOf("http://") === 0) {
@@ -83,15 +99,19 @@ function loadProto(dir, object, url, name, appinfo, description) {
 				   });
 				   res.on('end', function() {
 					  // console.log("Got back from http", response.toString());
-					  loadedProto(response, object, protoname, appinfo, description);
+					  loadedProto(response, object, name, protoname, appinfo, description, filename);
 				   });
 				});
 			} else if (url[u].indexOf("urn:") === 0) {
 				console.log("Don't know how to load URN", filename);
 			} else {
-				response = fs.readFileSync(filename);
-				// console.log("Got back from file", response);
-				loadedProto(response, object, protoname, appinfo, description);
+				try {
+					response = fs.readFileSync(filename);
+					// console.log("Got back from file", response);
+					loadedProto(response, object, name, protoname, appinfo, description, filename);
+				} catch (e) {
+					console.log("couldn't load file", filename, "from filesystem");
+				}
 			}
 		}
 	}
@@ -109,15 +129,8 @@ function externPrototypeExpander(dir, object) {
 				var description = object[p]["@description"];
 				loadProto(dir, object, url, name, appinfo, description);
 				delete object[p];
-			} else if (p === 'ProtoInstance') {
-				var oldname = object[p]["@name"];
-				var newname = nameMap[oldname];
-				if (typeof newname !== 'undefined') {
-					object[p]["@name"] = newname;
-				}
-			} else {
-				externPrototypeExpander(dir, object[p]);
 			}
+			externPrototypeExpander(dir, object[p]);
 		}
 	}
 }

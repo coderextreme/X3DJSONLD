@@ -58,11 +58,15 @@ app.get("*.json", function(req, res, next) {
 		if (err) {
 			console.error(err);
 		} else {
-			res.header("Content-Type", "text/json");
-			var json = JSON.parse(data.toString());
-			console.log("Calling expander");
-			externPrototypeExpander(url, json);
-			res.send(json);
+			try {
+				var json = JSON.parse(data.toString());
+				console.log("Calling expander");
+				externPrototypeExpander(url, json);
+				res.header("Content-Type", "text/json");
+				res.send(json);
+			} catch (e) {
+				console.log(e);
+			}
 		}
 		next();
 	});
