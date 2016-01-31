@@ -7,14 +7,21 @@ var loadX3DJS = X3DJSONLD.loadX3DJS;
 var Browser = X3DJSONLD.Browser;
 var processScripts = Script.processScripts;
 var LOG = Script.LOG;
+var externPrototypeExpander = require("./ServerPrototypeExpander");
+var fs = require("fs");
 
+/*
 var content = '';
 // read content into buffer
 process.stdin.resume();
 process.stdin.on('data', function(buf) { content += buf.toString(); });
 
 process.stdin.on('end', function() {
-	var object = JSON.parse(content);
+*/
+	var file = process.argv[2];
+	var object = JSON.parse(fs.readFileSync(file).toString());
+	// var object = JSON.parse(content);
+	externPrototypeExpander(file, object);
 	prototypeExpander(object, "");
 	console.log(JSON.stringify(object, null, 2));
 
@@ -32,4 +39,4 @@ process.stdin.on('end', function() {
 	//setInterval(function() {
 		eval(route);
 	//}, 500);
-});
+// });
