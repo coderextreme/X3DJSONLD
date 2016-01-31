@@ -9,7 +9,7 @@ var scopecount = 0;
 var defdefined = {};
 
 function setScript(scope, field, object, objectfield) {
-	console.error("setscript", scope, field, object, objectfield);
+	// console.error("setscript", scope, field, object, objectfield);
 	//console.error("setmeta ", scope, field);
 	// scriptField[scope+field] = [ object, objectfield ];
 	if (typeof scriptField[scope+field] === 'undefined') {
@@ -29,7 +29,7 @@ function setScript(scope, field, object, objectfield) {
 }
 
 function setConnect(scope, field, object, objectfield) {
-	console.error("setconn", scope, field, object, objectfield);
+	// console.error("setconn", scope, field, object, objectfield);
 	// protoField[scope+field] = [ object, objectfield ];
 	if (typeof protoField[scope+field] === 'undefined') {
 		protoField[scope+field] = [];
@@ -49,35 +49,35 @@ function setConnect(scope, field, object, objectfield) {
 
 function getInterface(scope, field) {
 	var value = interfaceField[scope+field];
-	console.error("getinter", scope, field, value);
+	// console.error("getinter", scope, field, value);
 }
 
 function setInterface(scope, field, value) {
 	interfaceField[scope+field] = value;
-	console.error("setinter", scope, field, value);
+	// console.error("setinter", scope, field, value);
 }
 
 function setObjectValues(scope, field, fieldOrNode, value) {
-	console.error("looking for ",scope+field);
+	// console.error("looking for ",scope+field);
 	var found = false;
 	for (var sf in scriptField[scope+field]) {
 		var obj = scriptField[scope+field][sf];
 		if (typeof obj !== 'undefined') {
-			console.error("foundscriptvalue", scope, field, obj, fieldOrNode, value);
+			// console.error("foundscriptvalue", scope, field, obj, fieldOrNode, value);
 			setObjectValue(scope, field, obj, fieldOrNode, value);
 			found = true;
 		} else {
-			console.error("scriptundef", scope, field);
+			// console.error("scriptundef", scope, field);
 		}
 	}
 	for (var pf in protoField[scope+field]) {
 		var obj = protoField[scope+field][pf];
 		if (typeof obj !== 'undefined') {
-			console.error("foundprotovalue", scope, field, obj, fieldOrNode, value);
+			// console.error("foundprotovalue", scope, field, obj, fieldOrNode, value);
 			setObjectValue(scope, field, obj, fieldOrNode, value);
 			found = true;
 		} else {
-			console.error("protoundef", scope, field);
+			// console.error("protoundef", scope, field);
 		}
 	}
 	return found;
@@ -88,16 +88,16 @@ function setObjectValue(scope, field, obj, fieldOrNode, value) {
 	var newscope = obj[0]["@DEF"];
         if (typeof newscope !== 'undefined' && scope != newscope) {
 		field = obj[1];
-		console.error("setrecurse", newscope, field, obj, fieldOrNode, value);
+		// console.error("setrecurse", newscope, field, obj, fieldOrNode, value);
 		retval = setObjectValues(newscope, field, fieldOrNode, value);
 		if (retval) {
 			return;
 		} else {
-			console.error("Didn't find it");
+			// console.error("Didn't find it");
 		}
 	}
 	// if the recursion didn't set it, set it now
-	console.error("found", fieldOrNode+obj[1], '=', value);
+	// console.error("found", fieldOrNode+obj[1], '=', value);
 	obj[0][fieldOrNode+obj[1]] = value;
 }
 
@@ -125,7 +125,7 @@ function getEnv(scope, field) {
 }
 
 function prototypeExpander(object, scope) {
-	realPrototypeExpander(object, scope, false);
+	realPrototypeExpander(object, scope);
 	zap(object);
 }
 
@@ -135,6 +135,8 @@ function zap(object) {
 		for (p in object) {
 			if (p.toLowerCase() === 'is') {
 				delete object[p];// no longer need IS
+			} else if (p.toLowerCase() === 'externprotodeclare') {
+				delete object[p];// no longer need PROTO
 			} else if (p.toLowerCase() === 'protodeclare') {
 				delete object[p];// no longer need PROTO
 			} else if (p.toLowerCase() === 'protoinstance') {
@@ -150,7 +152,40 @@ if (typeof require === 'function') {
 	var fs = require("fs");
 }
 
-function realPrototypeExpander(object, scope, isInDeclaration) {
+function loadedUrl(data, object, p, field) {
+	if (typeof data !== 'undefined') {
+		object[p][field] = data;
+		delete object[p]["@url"];
+	}
+}
+function loadUrl(url, object, p, field) {
+	if (typeof url !== 'undefined') {
+		for (var u in url) {
+			if (typeof $ !== 'undefined' && url[u].indexOf("http") === 0) {
+				console.error("Loading URL", url[u]);
+				$.get(url[u], function(data) {
+					loadedUrl(data, object, p, field);
+				});
+			} else if (typeof fs !== 'undefined' && url[u].indexOf("http") != 0) {
+				console.error("Loading File", url[u]);
+				data = fs.readFileSync(url[u]);
+				if (typeof data !== 'undefined') {
+					data = data.toString().replace(/"/, "\"").split("\n");
+					loadedUrl(data, object, p, field);
+				}
+			} else if (typeof $ !== 'undefined') {
+				console.error("Loading URL", url[u]);
+				$.get(url[u], function(data) {
+					loadedUrl(data, object, p, field);
+				});
+			} else {
+				console.error("Didn't load", url[u]);
+			}
+		}
+	}
+}
+
+function realPrototypeExpander(object, scope) {
 	var p;
 	if (typeof object === "object") {
 		for (p in object) {
@@ -164,45 +199,8 @@ function realPrototypeExpander(object, scope, isInDeclaration) {
 					    fields[field],
 					    "value");
 				}
-				if (typeof url !== 'undefined') {
-					var data;
-					for (var u in url) {
-						if (typeof $ !== 'undefined' && url[u].indexOf("http") === 0) {
-							console.error("Loading URL", url[u]);
-							$.get(url[u], function(data) {
-								if (typeof data !== 'undefined') {
-									object[p]["#sourceText"] = data;
-									console.error("Loaded URL", url);
-									delete object[p]["@url"];
-									// console.error("SCRIPT", object[p]);
-								}
-							});
-						} else if (typeof fs !== 'undefined' && url[u].indexOf("http") != 0) {
-							console.error("Loading File", url[u]);
-							data = fs.readFileSync(url[u]);
-							if (typeof data !== 'undefined') {
-								data = data.toString().replace(/"/, "\"").split("\n");
-								object[p]["#sourceText"] = data;
-								console.error("Loaded URL", url[u]);
-								delete object[p]["@url"];
-								// console.error("SCRIPT", object[p]);
-							}
-						} else if (typeof $ !== 'undefined') {
-							console.error("Loading URL", url[u]);
-							$.get(url[u], function(data) {
-								if (typeof data !== 'undefined') {
-									object[p]["#sourceText"] = data;
-									console.error("Loaded URL", url);
-									delete object[p]["@url"];
-									// console.error("SCRIPT", object[p]);
-								}
-							});
-						} else {
-							console.error("Didn't load", url[u]);
-						}
-					}
-				}
-				realPrototypeExpander(object[p], scope, isInDeclaration);
+				loadUrl(url, object, p, "#sourceText");
+				realPrototypeExpander(object[p], scope);
 			} else if (p.toLowerCase() === 'protodeclare') {
 				var name = object[p]["@name"];
 				var def = object[p]["@DEF"];
@@ -214,7 +212,7 @@ function realPrototypeExpander(object, scope, isInDeclaration) {
 					protos[name]["@documentation"] = object[p]["@documentation"];
 				}
 				names[def] = name;
-				realPrototypeExpander(object[p], scope+name, true);
+				realPrototypeExpander(object[p], scope+name);
 			} else if (p.toLowerCase() === 'protointerface') {
 				var fields = object[p]["field"];
 				for (var field in fields) {
@@ -222,9 +220,9 @@ function realPrototypeExpander(object, scope, isInDeclaration) {
 					    fields[field]["@name"],
 					    fields[field]["@value"]);
 				}
-				// realPrototypeExpander(object[p], scope, isInDeclaration);
+				// realPrototypeExpander(object[p], scope);
 			} else if (p.toLowerCase() === 'protobody') {
-				realPrototypeExpander(object[p], scope, isInDeclaration);
+				realPrototypeExpander(object[p], scope);
 			} else if (p.toLowerCase() === 'protoinstance') {
 				var name = object[p]["@name"];
 				var def  = object[p]["@DEF"];
@@ -242,7 +240,12 @@ function realPrototypeExpander(object, scope, isInDeclaration) {
 				if (typeof name === 'undefined' && typeof use !== 'undefined') {
 					name = names[use];
 				}
-				object["Group"] = JSON.parse(JSON.stringify(protos[name]['ProtoBody']));
+				object["Group"] = {};
+				if (typeof protos[name]['ProtoBody'] !== 'undefined') {
+					object["Group"] = JSON.parse(JSON.stringify(protos[name]['ProtoBody']));
+				} else {
+					console.error("ProtoBody undefined for", name);
+				}
 				body = object["Group"];
 				if (typeof protos[name]["@appinfo"] !== 'undefined') {
 					body["@appinfo"] = protos[name]["@appinfo"];
@@ -259,7 +262,7 @@ function realPrototypeExpander(object, scope, isInDeclaration) {
 				var newscope = scope+name+def;
 				defs[def] = newscope;
 				//console.error('BEFORE', body["@USE"]);
-				realPrototypeExpander(body, newscope, isInDeclaration);
+				realPrototypeExpander(body, newscope);
 				//console.error('AFTER ', body["@USE"]);
 
 				var fieldValue = object[p]["fieldValue"];
@@ -274,7 +277,7 @@ function realPrototypeExpander(object, scope, isInDeclaration) {
 						} else {
 							fieldOrNode = nv.substr(0, 1);
 							value = fv[nv];
-							realPrototypeExpander(fv, scope+name+def, isInDeclaration);
+							realPrototypeExpander(fv, scope+name+def);
 							// zap(fv); // zap instances
 							// console.error('>   ', JSON.stringify(fv));
 						}
@@ -285,7 +288,7 @@ function realPrototypeExpander(object, scope, isInDeclaration) {
 					    value);
 				}
 			} else if (p.toLowerCase() === 'connect') {
-				realPrototypeExpander(object[p], scope, isInDeclaration);
+				realPrototypeExpander(object[p], scope);
 			} else if (p.toLowerCase() === 'fieldvalue') {
 			} else if (p.toLowerCase() === 'field') {
 				var fields = object[p];
@@ -296,7 +299,7 @@ function realPrototypeExpander(object, scope, isInDeclaration) {
 					    scope,
 					    fields[field]["@name"]);
 				}
-				realPrototypeExpander(object[p], scope, isInDeclaration);
+				realPrototypeExpander(object[p], scope);
 			} else if (p.toLowerCase() === 'is') {
 				var def = object["@DEF"];
 				var connect = object[p]["connect"];
@@ -362,7 +365,7 @@ function realPrototypeExpander(object, scope, isInDeclaration) {
 				}
 				// object[p] is not an object
 			} else {
-				realPrototypeExpander(object[p], scope, isInDeclaration);
+				realPrototypeExpander(object[p], scope);
 			}
 		}
 	}

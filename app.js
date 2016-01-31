@@ -4,8 +4,10 @@ var http = require('http').Server(app);
 var config = require("./config");
 var port = process.env.PORT || 3000;
 var path = require('path');
+var fs = require("fs");
+var externPrototypeExpander = require("./ServerPrototypeExpander");
 
-require("fs").symlink(
+fs.symlink(
 path.resolve(config.examples),
 path.resolve(__dirname + "/examples"),
 'junction',
@@ -16,7 +18,51 @@ path.resolve(__dirname + "/examples"),
   }
 );
 
-app.use(express.static(__dirname));
+app.get("/", function(req, res, next) {
+	fs.readFile("index.html", function(err, data) {
+		if (err) throw err;
+		res.header("Content-Type", "text/html");
+	 	res.send(data);
+		next();
+	});
+});
+
+function magic(path, type) {
+    app.get(path, function(req, res, next) {
+	var url = req._parsedUrl.pathname.substr(1);
+	console.log(url);
+	fs.readFile(url, function(err, data) {
+		if (err) throw err;
+		res.header("Content-Type", type);
+	 	res.send(data);
+		next();
+	});
+    });
+}
+
+magic("*.x3d", "model/x3d+xml");
+magic("*.html", "text/html");
+magic("*.js", "text/javascript");
+magic("*.gif", "image/gif");
+magic("*.jpg", "image/jpeg");
+magic("*.jpeg", "image/jpeg");
+magic("*.png", "image/png");
+
+app.get("*.json", function(req, res, next) {
+	var url = req._parsedUrl.pathname.substr(1);
+	console.log(url);
+	fs.readFile(url, function(err, data) {
+		if (err) throw err;
+		res.header("Content-Type", "text/json");
+		var json = JSON.parse(data.toString());
+		console.log("Calling expander");
+		externPrototypeExpander(url, json);
+	 	res.send(json);
+		next();
+	});
+});
+
+// app.use(express.static(__dirname));
 
 http.listen(port, function () {
     console.log('listening on http://localhost:' + port);
