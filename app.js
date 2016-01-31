@@ -32,9 +32,12 @@ function magic(path, type) {
 	var url = req._parsedUrl.pathname.substr(1);
 	console.log(url);
 	fs.readFile(url, function(err, data) {
-		if (err) throw err;
-		res.header("Content-Type", type);
-	 	res.send(data);
+		if (err) {
+			console.error(err);
+		} else {
+			res.header("Content-Type", type);
+			res.send(data);
+		}
 		next();
 	});
     });
@@ -52,12 +55,15 @@ app.get("*.json", function(req, res, next) {
 	var url = req._parsedUrl.pathname.substr(1);
 	console.log(url);
 	fs.readFile(url, function(err, data) {
-		if (err) throw err;
-		res.header("Content-Type", "text/json");
-		var json = JSON.parse(data.toString());
-		console.log("Calling expander");
-		externPrototypeExpander(url, json);
-	 	res.send(json);
+		if (err) {
+			console.error(err);
+		} else {
+			res.header("Content-Type", "text/json");
+			var json = JSON.parse(data.toString());
+			console.log("Calling expander");
+			externPrototypeExpander(url, json);
+			res.send(json);
+		}
 		next();
 	});
 });

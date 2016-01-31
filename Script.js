@@ -148,14 +148,20 @@ function valueExpand(type, flat) {
 			return 0.0;
 		} else if (type === 'SFInt32') {
 			return 0;
+		} else if (type === 'SFString'){
+			return "''";
+		} else if (type === 'SFTime'){
+			return 0;
 		} else if (type === 'SFNode') {
 			return "{}";
+		} else if (type === 'SFRotation'){
+			return "[]";
+		} else if (type === 'SFColor'){
+			return "[]";
 		} else if (type.indexOf('SFVec') === 0){
 			return "[]";
-		} else if (type.indexOf('SFString') === 0){
-			return "''";
-		} else if (type.indexOf('SFTime') === 0){
-			return 0;
+		} else if (type.indexOf('SFMatrix') === 0){
+			return "[]";
 		} else if (type.indexOf('MF') === 0){
 			return "[]";
 		} else {
@@ -284,7 +290,7 @@ function processSource(lines, classes, package) {
 	classes.log('X3DJSON.'+package.name +  ' = function() {');
 	if (typeof lines !== 'undefined') {
 		for (var l in lines) {
-			lines[l] = lines[l].replace(/\/\/(.*)function/g, '//$1functino');
+			lines[l] = lines[l].replace(/[\n\r]/g, "").replace(/\/\/(.*)function/g, '//$1functino');
 		}
 		var functions = lines.join("\n").split("function");
 		var f;
@@ -327,9 +333,8 @@ function processSource(lines, classes, package) {
 			body = body.replace(/\svar\s+this\./g,  " var ");
 
 			// replace constructors with arrays
-			body = body.replace(/new (MF[A-Za-z0-9]+|SFMatrix[A-Za-z0-9]+|SFVec[234][df]|SFRotation)[ 	]*\(([^;]*)\)[ 	]*;/g, 'Browser.stringToArray\([$2]\);');
+			body = body.replace(/new (MF[A-Za-z0-9]+|SFMatrix[A-Za-z0-9]+|SFVec[234][df]|SFRotation|SFColor)[ 	]*\(([^;]*)\)[ 	]*;/g, 'Browser.stringToArray\([$2]\);');
 
-			body = body.replace(/\n'/g, "\\n'");
 			//body = body.replace(/&amp;/g, '&');
 			//body = body.replace(/&lt;/g, '<');
 			//body = body.replace(/&gt;/g, '>');

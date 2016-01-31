@@ -273,3 +273,9 @@ process.stdin.on('end', function() {
 	loadX3DJS(null, json, 'pp3s.json', xml);
 	console.log(xml.join("\n"));
 });
+
+if (typeof module === 'object')  {
+	module.exports = {
+		loadX3DJS : loadX3DJS,
+	}
+}
