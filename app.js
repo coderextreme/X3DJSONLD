@@ -43,8 +43,11 @@ function magic(path, type) {
     });
 }
 
+magic("*.vs", "text/plain");//"x-shader/x-vertex");
+magic("*.fs", "text/plain");//"x-shader/x-fragment");
 magic("*.x3d", "model/x3d+xml");
 magic("*.html", "text/html");
+magic("*.xhtml", "application/xhtml+xml");
 magic("*.js", "text/javascript");
 magic("*.gif", "image/gif");
 magic("*.jpg", "image/jpeg");
