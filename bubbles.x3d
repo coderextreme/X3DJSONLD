@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd"><X3D profile='Immersive' version='3.3' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd' id='x3dele' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance'>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D profile='Immersive' version='3.3' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd' id='x3dele' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance'>
     <Scene>
         <NavigationInfo type='&quot;ANY&quot; &quot;WALK&quot; &quot;EXAMINE&quot; &quot;FLY&quot; &quot;LOOKAT&quot;'></NavigationInfo>
         <Viewpoint DEF='Tour' description='Tour Views'/>
