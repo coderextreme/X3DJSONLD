@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
-<X3D profile="Full" version="3.3" xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd' xmlns:xsd='http://www.web3d.org/specifications/x3d-namespace'>
+<X3D profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd' xmlns:xsd='http://www.web3d.org/specifications/x3d-namespace'>
       <Scene>
         <Viewpoint position='0 5 100' description='Switch background and cubemap texture'/>
-	<TextureBackground>
-	<ImageTexture DEF="leftBack" containerField='leftTexture' url='"cubemap/all_probes/beach_cross/beach_left.png" "http://coderextreme.net/cubemap/all_probes/beach_cross/beach_left.png"'/> 
-	<ImageTexture DEF="rightBack" containerField='rightTexture' url='"cubemap/all_probes/beach_cross/beach_right.png" "http://coderextreme.net/cubemap/all_probes/beach_cross/beach_right.png"'/> 
-	<ImageTexture DEF="frontBack" containerField='frontTexture' url='"cubemap/all_probes/beach_cross/beach_front.png" "http://coderextreme.net/cubemap/all_probes/beach_cross/beach_front.png"'/> 
-	<ImageTexture DEF="backBack" containerField='backTexture' url='"cubemap/all_probes/beach_cross/beach_back.png" "http://coderextreme.net/cubemap/all_probes/beach_cross/beach_back.png"'/> 
-	<ImageTexture DEF="topBack" containerField='topTexture' url='"cubemap/all_probes/beach_cross/beach_top.png" "http://coderextreme.net/cubemap/all_probes/beach_cross/beach_top.png"'/> 
-	<ImageTexture DEF="bottomBack" containerField='bottomTexture' url='"cubemap/all_probes/beach_cross/beach_bottom.png" "http://coderextreme.net/cubemap/all_probes/beach_cross/beach_bottom.png"'/>
-	</TextureBackground> 
+	<Background DEF="background" leftUrl='"cubemap/all_probes/beach_cross/beach_left.png" "http://coderextreme.net/cubemap/all_probes/beach_cross/beach_left.png"' rightUrl='"cubemap/all_probes/beach_cross/beach_right.png" "http://coderextreme.net/cubemap/all_probes/beach_cross/beach_right.png"' frontUrl='"cubemap/all_probes/beach_cross/beach_front.png" "http://coderextreme.net/cubemap/all_probes/beach_cross/beach_front.png"' backUrl='"cubemap/all_probes/beach_cross/beach_back.png" "http://coderextreme.net/cubemap/all_probes/beach_cross/beach_back.png"' topUrl='"cubemap/all_probes/beach_cross/beach_top.png" "http://coderextreme.net/cubemap/all_probes/beach_cross/beach_top.png"' bottomUrl='"cubemap/all_probes/beach_cross/beach_bottom.png" "http://coderextreme.net/cubemap/all_probes/beach_cross/beach_bottom.png"'></Background> 
         <Transform >
           <Shape>
             <Appearance>
@@ -155,12 +148,12 @@ ecmascript:
 </Script> 
 	    <TimeSensor DEF="Clock" cycleInterval="45" loop='true'/>
             <ROUTE fromNode='Clock' fromField='fraction_changed' toNode='UrlSelector' toField='set_fraction'/> 
-	    <ROUTE fromNode='UrlSelector' fromField='front_changed' toNode='frontBack' toField='url'/>
-	    <ROUTE fromNode='UrlSelector' fromField='back_changed' toNode='backBack' toField='url'/>
-	    <ROUTE fromNode='UrlSelector' fromField='left_changed' toNode='leftBack' toField='url'/>
-	    <ROUTE fromNode='UrlSelector' fromField='right_changed' toNode='rightBack' toField='url'/>
-	    <ROUTE fromNode='UrlSelector' fromField='top_changed' toNode='topBack' toField='url'/>
-	    <ROUTE fromNode='UrlSelector' fromField='bottom_changed' toNode='bottomBack' toField='url'/>
+	    <ROUTE fromNode='UrlSelector' fromField='front_changed' toNode='background' toField='frontUrl'/>
+	    <ROUTE fromNode='UrlSelector' fromField='back_changed' toNode='background' toField='backUrl'/>
+	    <ROUTE fromNode='UrlSelector' fromField='left_changed' toNode='background' toField='leftUrl'/>
+	    <ROUTE fromNode='UrlSelector' fromField='right_changed' toNode='background' toField='rightUrl'/>
+	    <ROUTE fromNode='UrlSelector' fromField='top_changed' toNode='background' toField='topUrl'/>
+	    <ROUTE fromNode='UrlSelector' fromField='bottom_changed' toNode='background' toField='bottomUrl'/>
 	    <ROUTE fromNode='UrlSelector' fromField='front_changed' toNode='frontShader' toField='url'/>
 	    <ROUTE fromNode='UrlSelector' fromField='back_changed' toNode='backShader' toField='url'/>
 	    <ROUTE fromNode='UrlSelector' fromField='left_changed' toNode='leftShader' toField='url'/>
