@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN"
+                     "http://www.web3d.org/specifications/x3d-3.0.dtd">
+<X3D profile="Immersive" version="3.0"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.0.xsd">
+  <head>
+    <meta content="flowers2.x3d" name="filename"/>
+    <meta content="John Carlson" name="author"/>
+    <meta content="John Carlson" name="transcriber"/>
+    <meta content="23 January 2005" name="created"/>
+    <meta content="23 January 2005" name="revised"/>
+    <meta
+      content="2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)" name="description"/>
+    <meta content="http://coderextreme.net/x3d/flowers2.x3d" name="url"/>
+    <meta content="manually written" name="generator"/>
+  </head>
+  <Scene>
+    <NavigationInfo type="&quot;EXAMINE&quot; &quot;ANY&quot;"/>
+    <Viewpoint description="Two mathematical orbitals" position="0 0 50"/>
+    <Group>
+      <DirectionalLight direction="1 1 1"/>
+      <Transform DEF="OrbitTransform" translation="8 0 0">
+        <Shape>
+          <Appearance>
+            <Material diffuseColor="0 0.5 1" specularColor="0 0.5 1"/>
+          </Appearance>
+          <IndexedFaceSet DEF="Orbit" creaseAngle="1.57">
+            <Coordinate DEF="OrbitCoordinates"/>
+          </IndexedFaceSet>
+        </Shape>
+      </Transform>
+      <Transform DEF="OrbitTransform2" translation="-8 0 0">
+        <Shape>
+          <Appearance>
+            <Material diffuseColor="1 0.5 0" specularColor="1 0.5 0" transparency="0.75"/>
+          </Appearance>
+          <IndexedFaceSet DEF="Orbit2" creaseAngle="1.57">
+            <Coordinate DEF="OrbitCoordinates2"/>
+          </IndexedFaceSet>
+        </Shape>
+      </Transform>
+      <TimeSensor DEF="Clock" cycleInterval="16" loop="true"/>
+      <OrientationInterpolator DEF="OrbitPath" key="0.0, 0.50, 1.0" keyValue="1.0 0.0 0.0 0.0, 1.0 0.0 0.0 3.14, 1.0 0.0 0.0 6.28"/>
+      <Script DEF="OrbitScript">
+        <field accessType="inputOnly" name="set_fraction" type="SFFloat"/>
+        <field accessType="outputOnly" name="coordinates" type="MFVec3f"/>
+<field accessType="outputOnly" name="coordIndexes" type="MFInt32"/><![CDATA[
+
+ecmascript:
+
+var e = 5;
+var f = 5;
+var g = 5;
+var h = 5;
+
+function initialize() {
+     resolution = 100;
+     var localci = new MFInt32();
+     generateCoordinates(resolution);
+     ci = 0;
+     for ( i = 0; i < resolution-1; i++) {
+     	for ( j = 0; j < resolution-1; j++) {
+	     localci[ci] = i*resolution+j;
+	     localci[ci+1] = i*resolution+j+1;
+	     localci[ci+2] = (i+1)*resolution+j+1;
+	     localci[ci+3] = (i+1)*resolution+j;
+	     localci[ci+4] = -1;
+	     ci += 5;
+	}
+    }
+    coordIndexes = localci;
+}
+
+function generateCoordinates(resolution) {
+     theta = 0.0;
+     phi = 0.0;
+     delta = (2 * 3.141592653) / (resolution-1);
+     var localc = new MFVec3f();
+     for ( i = 0; i < resolution; i++) {
+     	for ( j = 0; j < resolution; j++) {
+		rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);
+		localc[i*resolution+j][0] = rho * Math.cos(phi) * Math.cos(theta);
+		localc[i*resolution+j][1] = rho * Math.cos(phi) * Math.sin(theta);
+		localc[i*resolution+j][2] = rho * Math.sin(phi);
+		theta += delta;
+	}
+	phi += delta;
+     }
+     coordinates = localc;
+}
+
+function set_fraction(fraction, eventTime) {
+	choice = Math.floor(Math.random() * 4);
+	switch (choice) {
+	case 0:
+		e += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 1:
+		f += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 2:
+		g += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 3:
+		h += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	}
+	if (f < 1) {
+		f = 10;
+	}
+	if (g < 1) {
+		g = 4;
+	}
+	if (h < 1) {
+		h = 4;
+	}
+	resolution = 100;
+	generateCoordinates(resolution);
+}
+      ]]></Script>
+      <Script DEF="OrbitScript2">
+        <field accessType="inputOnly" name="set_fraction" type="SFFloat"/>
+        <field accessType="outputOnly" name="coordinates" type="MFVec3f"/>
+<field accessType="outputOnly" name="coordIndexes" type="MFInt32"/><![CDATA[
+
+ecmascript:
+
+var e = 5;
+var f = 5;
+var g = 5;
+var h = 5;
+
+function initialize() {
+     resolution = 100;
+     var localci = new MFInt32();
+     generateCoordinates(resolution);
+     ci = 0;
+     for ( i = 0; i < resolution-1; i++) {
+     	for ( j = 0; j < resolution-1; j++) {
+	     localci[ci] = i*resolution+j;
+	     localci[ci+1] = i*resolution+j+1;
+	     localci[ci+2] = (i+1)*resolution+j+1;
+	     localci[ci+3] = (i+1)*resolution+j;
+	     localci[ci+4] = -1;
+	     ci += 5;
+	}
+    }
+    coordIndexes = localci;
+}
+
+function generateCoordinates(resolution) {
+     theta = 0.0;
+     phi = 0.0;
+     delta = (2 * 3.141592653) / (resolution-1);
+     var localc = new MFVec3f();
+     for ( i = 0; i < resolution; i++) {
+     	for ( j = 0; j < resolution; j++) {
+		rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);
+		localc[i*resolution+j][0] = rho * Math.cos(phi) * Math.cos(theta);
+		localc[i*resolution+j][1] = rho * Math.cos(phi) * Math.sin(theta);
+		localc[i*resolution+j][2] = rho * Math.sin(phi);
+		theta += delta;
+	}
+	phi += delta;
+     }
+     coordinates = localc;
+}
+
+function set_fraction(fraction, eventTime) {
+	choice = Math.floor(Math.random() * 4);
+	switch (choice) {
+	case 0:
+		e += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 1:
+		f += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 2:
+		g += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 3:
+		h += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	}
+	if (f < 1) {
+		f = 10;
+	}
+	if (g < 1) {
+		g = 4;
+	}
+	if (h < 1) {
+		h = 4;
+	}
+	resolution = 100;
+	generateCoordinates(resolution);
+}
+      ]]></Script>
+    </Group>
+    <ROUTE fromField="coordIndexes" fromNode="OrbitScript"
+      toField="set_coordIndex" toNode="Orbit"/>
+    <ROUTE fromField="coordinates" fromNode="OrbitScript"
+      toField="set_point" toNode="OrbitCoordinates"/>
+    <ROUTE fromField="coordIndexes" fromNode="OrbitScript2"
+      toField="set_coordIndex" toNode="Orbit2"/>
+    <ROUTE fromField="coordinates" fromNode="OrbitScript2"
+      toField="set_point" toNode="OrbitCoordinates2"/>
+    <ROUTE fromField="fraction_changed" fromNode="Clock"
+      toField="set_fraction" toNode="OrbitScript"/>
+    <ROUTE fromField="fraction_changed" fromNode="Clock"
+      toField="set_fraction" toNode="OrbitScript2"/>
+    <ROUTE fromField="fraction_changed" fromNode="Clock"
+      toField="set_fraction" toNode="OrbitPath"/>
+    <ROUTE fromField="value_changed" fromNode="OrbitPath"
+      toField="set_rotation" toNode="OrbitTransform"/>
+    <ROUTE fromField="value_changed" fromNode="OrbitPath"
+      toField="set_rotation" toNode="OrbitTransform2"/>
+  </Scene>
+</X3D>

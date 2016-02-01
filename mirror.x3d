@@ -51,33 +51,42 @@ uniform mat4 modelViewMatrix;
 uniform mat4 modelViewMatrixInverse;
 uniform mat4 normalMatrix;
 
-varying vec3 r;
+uniform vec3 chromaticDispertion;
+uniform float bias;
+uniform float scale;
+uniform float power;
+
+varying vec3 t;
 varying vec3 tr;
 varying vec3 tg;
 varying vec3 tb;
 varying float rfac;
 
-uniform vec3 chromaticDispersion;
-uniform float bias;
-uniform float scale;
-uniform float power;
-
-
 void main()
 {
-    vec4 eye = vec4(modelViewMatrixInverse * vec4(0,0,0,1));
-    vec3 fragEyeVector = position - eye.xyz;
-                            
-    vec3 i = normalize(fragEyeVector);
-    r = reflect(i, normal);
-    tr = refract(i, normal, chromaticDispersion.x);
-    tg = refract(i, normal, chromaticDispersion.y);
-    tb = refract(i, normal, chromaticDispersion.z);
-    rfac = bias + scale * pow(0.5+0.5*dot(i, normal), power);
+    mat3 mvm3=mat3(
+		modelViewMatrix[0].x,
+		modelViewMatrix[0].y,
+		modelViewMatrix[0].z,
+		modelViewMatrix[1].x,
+		modelViewMatrix[1].y,
+		modelViewMatrix[1].z,
+		modelViewMatrix[2].x,
+		modelViewMatrix[2].y,
+		modelViewMatrix[2].z
+    );
+    vec3 fragNormal = mvm3*normal;
+    gl_Position = modelViewProjectionMatrix*vec4(position, 1.0);
+    vec3 incident = normalize((modelViewMatrix * vec4(position, 1.0)).xyz);
 
-    gl_Position = modelViewProjectionMatrix*vec4(position, 1);
+    t = reflect(incident, fragNormal)*mvm3;
+    tr = refract(incident, fragNormal, chromaticDispertion.x)*mvm3;
+    tg = refract(incident, fragNormal, chromaticDispertion.y)*mvm3;
+    tb = refract(incident, fragNormal, chromaticDispertion.z)*mvm3;
+
+    rfac = bias + scale * pow(0.5+0.5*dot(incident, fragNormal), power);
 }
-                  </ShaderPart>
+		  </ShaderPart>
                   <ShaderPart type='FRAGMENT' containerField="parts">
 /*
 The MIT License (MIT)
@@ -93,9 +102,9 @@ THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED
   precision highp float;
 #endif
 
-uniform samplerCube background;
+uniform samplerCube cube;
 
-varying vec3 r;
+varying vec3 t;
 varying vec3 tr;
 varying vec3 tg;
 varying vec3 tb;
@@ -103,17 +112,16 @@ varying float rfac;
 
 void main()
 {
-    vec4 tcol = vec4(1.0);
+    vec4 ref = textureCube(cube, t);
+    vec4 ret = vec4(1.0);
 
-    vec4 rcol = textureCube(background, r);
-    tcol.r = textureCube(background, tr).r;
-    tcol.g = textureCube(background, tg).g;
-    tcol.b = textureCube(background, tb).b;
+    ret.r = textureCube(cube, tr).r;
+    ret.g = textureCube(cube, tg).g;
+    ret.b = textureCube(cube, tb).b;
 
-    gl_FragColor = mix(tcol, rcol, rfac);
+    gl_FragColor = ret * rfac + ref * (1.0 - rfac);
 }
-
-                  </ShaderPart>
+		  </ShaderPart>
                 </ComposedShader>
             </Appearance>
             <Sphere radius="30"></Sphere>
