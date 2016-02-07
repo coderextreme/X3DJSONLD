@@ -8,6 +8,7 @@ var p = 0;
 
 function initialize() {
      var localci = new Array();
+     updateCoordinates(resolution);
      var ci = 0;
      var buf = [];
      for (var i = 0; i < resolution-1; i++) {
@@ -29,11 +30,10 @@ function initialize() {
 	     ci += 5;
 	}
     }
-    updateCoordinates(resolution);
     document.getElementById("ifs").setAttribute("coordIndex", buf.join(" "));
 }
 
-var coordinates = new x3dom.fields.MFVec3f();
+var coordinates = [];
 
 function updateCoordinates(resolution) {
      theta = 0.0;
@@ -46,20 +46,14 @@ function updateCoordinates(resolution) {
 		var x = rho * Math.cos(phi) * Math.cos(theta);
 		var y = rho * Math.cos(phi) * Math.sin(theta);
 		var z = rho * Math.sin(phi);
-		coordinates[index] = new x3dom.fields.SFVec3f();
-		coordinates[index].x = x;
-		coordinates[index].y = y;
-		coordinates[index].z = z;
-		index++;
+		coordinates[index++] = x;
+		coordinates[index++] = y;
+		coordinates[index++] = z;
 		theta += delta;
 	}
 	phi += delta;
      }
-     var el = document.getElementById("crd");
-     el._x3domNode;
-     console.log(el);
-     // el._x3domNode._vf["point"] = coordinates;
-     document.getElementById("crd").setFieldValue("point", coordinates);
+    document.getElementById("crd").setAttribute("point", coordinates.join(" "));
 }
 
 function animate() {
