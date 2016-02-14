@@ -18,7 +18,7 @@ are met:
       nor the names of its contributors may be used to endorse or
       promote products derived from this software without specific
       prior written permission.
- 
+
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
 "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
 LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
@@ -86,43 +86,74 @@ POSSIBILITY OF SUCH DAMAGE.
     <!-- global variables: none -->
     
     <xsl:template match="/"> <!-- process root of input document -->
-
-        <!-- no commenting mechanism proved in JSON specification. -->
                 
-        <xsl:apply-templates select="X3D | comment()"> <!-- process top-level X3D element and comments. DOCTYPE dropped. -->
+        <xsl:apply-templates select="X3D"> <!-- process top-level X3D element. DOCTYPE dropped, external comments handled next. -->
             <xsl:with-param name="indent"><xsl:text>0</xsl:text></xsl:with-param>
         </xsl:apply-templates>
+        
+        <!-- report if comments encountered outside of the X3D document, do not convert/move them into the JSON object -->
+        <xsl:if test="comment()">
+            <xsl:message>
+                <xsl:text>Warning: comments outside of the X3D element are not translated as part of the X3D JSON object.</xsl:text>
+                <xsl:text>&#10;</xsl:text>
+                <xsl:for-each select="comment()">
+                    <xsl:text>&lt;!--</xsl:text>
+                    <xsl:value-of select="."/>
+                    <xsl:text>--&gt;</xsl:text>
+                    <xsl:text>&#10;</xsl:text>
+                </xsl:for-each>
+            </xsl:message>
+        </xsl:if>
         
     </xsl:template>
 
     <xsl:template name="comments-elements-ROUTEs"> <!-- rule to process all child comments, elements and ROUTEs (X3D nodes and scene-graph structure statements) -->
         <xsl:param name="indent"><xsl:text>0</xsl:text></xsl:param>
+		<!-- debug: fieldValue trace
+		<xsl:if test="(local-name() = 'fieldValue')">
+			<xsl:message>
+				<xsl:text>*** fieldValue with </xsl:text>
+				<xsl:value-of select="count(*)"/>
+				<xsl:text> contained nodes found: </xsl:text>
+				<xsl:text>@name=</xsl:text>
+				<xsl:value-of select="@name"/>
+				<xsl:text>, $parentName=</xsl:text>
+				<xsl:value-of select="local-name(..)"/>
+				<xsl:text> @name=</xsl:text>
+				<xsl:value-of select="../@name"/>
+			</xsl:message>
+		</xsl:if>
+		-->
+
+        <!-- No commenting mechanism proved in JSON specification.  Nevertheless comments are included in X3D JSON encoding
+             in order to support round-trip interoperability among X3D encodings. -->
 
         <!-- each child element is represented in a JSON array of JSON objects -->
         
         <!-- process entire set of immediate-child peers in an ordered fashion:  comments first, field/fieldValue next, IS next, elements next, ROUTEs last -->
         <xsl:variable name="allContainedCommentsElements">
-            <!-- order gets shuffled a bit due to JSON unique-key requirements -->
+            <!-- order gets shuffled a bit due to JSON unique-key requirements
             <xsl:apply-templates select="comment()">
                 <xsl:with-param name="indent" select="$indent"/>
-            </xsl:apply-templates>
-            <xsl:apply-templates select="*">
+            </xsl:apply-templates> -->
+            <xsl:apply-templates select="* | comment()">
                 <!-- listed in reverse order -->
-                <xsl:sort select="    (local-name() = 'ROUTE')"/>
-                <xsl:sort select="not((local-name() = 'ROUTE') or (local-name() = 'IS') or (local-name() = 'field') or (local-name() = 'fieldValue'))"/>
+                <!-- sorting does not appear to be necessary (and makes comment sorting problematic), so skip it
+                <xsl:sort select="not((local-name() = 'IS') or (local-name() = 'field') or (local-name() = 'fieldValue'))"/>
                 <xsl:sort select="    (local-name() = 'IS')"/>
                 <xsl:sort select="    (local-name() = 'field')"/>
-                <xsl:sort select="    (local-name() = 'fieldValue')"/>
+                <xsl:sort select="    (local-name() = 'fieldValue')"/> -->
                 <xsl:with-param name="indent" select="$indent"/>
             </xsl:apply-templates>
         </xsl:variable>
+		<!-- string results provides source output for the converted nodes -->
         
-        <!-- remove final comma -->
+        <!-- remove final comma from preceding construct to match JSON syntax: no comma at end of an array -->
         <xsl:value-of select="substring($allContainedCommentsElements,1,string-length($allContainedCommentsElements)-1)"/>
         
     </xsl:template>
 
-    <xsl:template match="*"> <!-- rule to process each element (X3D nodes and scene-graph structure statements) -->
+    <xsl:template match="* | comment()"> <!-- rule to process each element (X3D nodes and scene-graph structure statements) -->
         <xsl:param name="indent"><xsl:text>0</xsl:text></xsl:param>
         <xsl:call-template name="trace">
             <xsl:with-param name="message"><xsl:text></xsl:text></xsl:with-param>
@@ -134,21 +165,23 @@ POSSIBILITY OF SUCH DAMAGE.
         </xsl:call-template>
         
         <xsl:variable name="elementName" select="local-name()"/>
+        <xsl:variable name= "parentName" select="local-name(..)"/>
         
         <xsl:choose>
             <!-- ============================================================================================ -->
+			<!-- scene-graph structure statements -->
             <xsl:when test="($elementName = 'X3D')       or ($elementName = 'head')       or ($elementName = 'Scene')     or
                             ($elementName = 'component') or ($elementName = 'meta')       or ($elementName = 'unit')      or 
-                            ($elementName = 'IS')        or ($elementName = 'connect')    or ($elementName = 'ROUTE')     or
+                            ($elementName = 'IS')        or ($elementName = 'connect')    or
                             ($elementName = 'field')     or ($elementName = 'fieldValue') or ($elementName = 'ProtoInterface') or
                             ($elementName = 'IMPORT')    or ($elementName = 'EXPORT')     or ($elementName = 'ProtoBody')">
-                <!-- special statements: scene-graph structure element may have attributes, contains arrays, NOT surrounded by {squiggly brackets} -->
+                <!-- special statements: scene-graph structure element may have attributes, contains arrays, but NOT surrounded by {squiggly brackets} -->
                 
                 <!-- if first of multiple siblings, process all at once -->
                 <xsl:if test="not(preceding-sibling::*[local-name() = $elementName])">
-                    <!-- first peer of its kind, found no preceding siblings with same name -->
-                 
-                    <!-- special case: scene-graph top-level structure element -->
+                    <!-- first peer of its kind, found no preceding siblings with same name.  process all similar-sibling elements of this type at once. -->
+
+                    <!-- special case: scene-graph top-level structure element, pre-fix -->
                     <xsl:choose>
                         <xsl:when test="($elementName='X3D')">
                             <xsl:text>{ </xsl:text>
@@ -157,14 +190,14 @@ POSSIBILITY OF SUCH DAMAGE.
                             <xsl:text>&#10;</xsl:text>
                             <xsl:call-template name="print-indent"><xsl:with-param name="indent" select="$indent"/></xsl:call-template>
                         </xsl:otherwise>
-                    </xsl:choose>    
+                    </xsl:choose>
 
                     <xsl:text>"</xsl:text>
                     <xsl:value-of select="$elementName"/>
                     <xsl:text>"</xsl:text>
                     <xsl:text>:</xsl:text><!-- [scene-graph structure element contains keys -->
                     
-                    <!-- special case: scene-graph structure elements -->
+                    <!-- special case: scene-graph structure elements, pre-fix -->
                     <xsl:choose>
                         <xsl:when test="($elementName='X3D')">
                             <!-- all set already -->
@@ -178,47 +211,49 @@ POSSIBILITY OF SUCH DAMAGE.
                             <xsl:text> [</xsl:text>
                         </xsl:otherwise>
                     </xsl:choose>
-                    
-                    <xsl:for-each select="(self::* | following-sibling::*[local-name() = $elementName])">
-                        <!-- process all elements of this type at once -->
-                
-                        <!-- process attributes for this element, if any -->
-                        <xsl:if test="@*">
-                            <xsl:choose>
-                                <xsl:when test="($elementName='X3D')">
-                                    <xsl:text> </xsl:text>
-                                </xsl:when>
-                                <xsl:otherwise>
-                                    <xsl:text>&#10;</xsl:text>
-                                    <xsl:call-template name="print-indent"><xsl:with-param name="indent" select="$indent+2"/></xsl:call-template>
-                                </xsl:otherwise>
-                            </xsl:choose>
-                            <xsl:text>{</xsl:text><!-- attributes + follow-on nodes in scene-graph structure array -->
-                            <xsl:call-template name="attributes">
-                                <xsl:with-param name="indent"><xsl:value-of select="$indent+2"/></xsl:with-param>
-                            </xsl:call-template>
-                        </xsl:if>
-                        
-                        <xsl:call-template name="comments-elements-ROUTEs">
-                            <xsl:with-param name="indent"><xsl:value-of select="$indent+4"/></xsl:with-param>
-                        </xsl:call-template>
+						
+					<xsl:for-each select="(self::* | following-sibling::*[local-name() = $elementName])">
+						<!-- process all sibling elements of this type at once -->
 
-                        <xsl:if test="@*">
-                            <xsl:text>&#10;</xsl:text>
-                            <xsl:call-template name="print-indent"><xsl:with-param name="indent" select="$indent+2"/></xsl:call-template>
-                            <xsl:text>}</xsl:text><!-- attributes + follow-on nodes in scene-graph structure array -->
-                        </xsl:if>
-                        
-                        <!-- commas separate objects in this array.  do not terminate with comma. -->
-                        <xsl:if test="(last() > position())"> 
-                            <xsl:text>,</xsl:text>
-                        </xsl:if>
-                    </xsl:for-each>
-                    
-                    <!-- special case: scene-graph structure elements -->
+						<!-- process attributes for this element, if any -->
+						<xsl:if test="@*">
+							<xsl:choose>
+								<xsl:when test="($elementName='X3D')">
+									<xsl:text> </xsl:text>
+								</xsl:when>
+								<xsl:otherwise>
+									<xsl:text>&#10;</xsl:text>
+									<xsl:call-template name="print-indent"><xsl:with-param name="indent" select="$indent+2"/></xsl:call-template>
+								</xsl:otherwise>
+							</xsl:choose>
+							<xsl:text>{</xsl:text><!-- attributes + follow-on nodes in scene-graph structure array -->
+							<xsl:call-template name="attributes">
+								<xsl:with-param name="indent"><xsl:value-of select="$indent+2"/></xsl:with-param>
+							</xsl:call-template>
+						</xsl:if>
+
+						<xsl:call-template name="comments-elements-ROUTEs"> <!-- contained content -->
+							<xsl:with-param name="indent"><xsl:value-of select="$indent+4"/></xsl:with-param>
+						</xsl:call-template>
+
+						<!-- process attributes for this element, post-fix -->
+						<xsl:if test="@*">
+							<xsl:text>&#10;</xsl:text>
+							<xsl:call-template name="print-indent"><xsl:with-param name="indent" select="$indent+2"/></xsl:call-template>
+							<xsl:text>}</xsl:text><!-- attributes + follow-on nodes in scene-graph structure array -->
+						</xsl:if>
+
+						<!-- commas separate objects in this array.  do not terminate with comma. -->
+						<xsl:if test="(last() > position())"> 
+							<xsl:text>,</xsl:text>
+						</xsl:if>
+					</xsl:for-each>
+					
+                    <!-- special case: scene-graph structure elements, post-fix -->
                     <xsl:choose>
                         <xsl:when test="($elementName='X3D')">
-                            <!-- all set already -->
+                            <xsl:text>&#10;</xsl:text>
+                            <xsl:text>}</xsl:text>
                         </xsl:when>
                         <xsl:when test="($elementName='head') or ($elementName='Scene') or ($elementName = 'ProtoInterface') or ($elementName='ProtoBody') or ($elementName='IS')">
                             <xsl:if test="(count(@*) = 0)">
@@ -234,21 +269,16 @@ POSSIBILITY OF SUCH DAMAGE.
                         </xsl:otherwise>
                     </xsl:choose>
                     
-                    <!-- special case: scene-graph top-level structure element -->
-                    <xsl:choose>
-                        <xsl:when test="($elementName='X3D')">
-                            <xsl:text>&#10;</xsl:text>
-                            <xsl:text>}</xsl:text>
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <xsl:text>,</xsl:text>
-                        </xsl:otherwise>
-                    </xsl:choose>
+                    <!-- add comma after array elements, lingering final comma is stripped later -->
+                    <xsl:if test="not($elementName='X3D')">
+                        <xsl:text>,</xsl:text>
+                    </xsl:if>
                 </xsl:if> <!-- initial sibling -->
             </xsl:when>
             <!-- ============================================================================================ -->
             <xsl:otherwise>
-                <!-- base case: simple element, optional attributes, accessed by containerField -->
+                <!-- base case: simple element, optional attributes, accessed by containerField (or overriding fieldName) -->
+                <!-- includes ROUTE and ProtoInstance -->
                 
                 <xsl:variable name="fieldName">
                     <xsl:choose>
@@ -256,21 +286,51 @@ POSSIBILITY OF SUCH DAMAGE.
                         <xsl:when test="($elementName = 'ProtoDeclare') or ($elementName = 'ExternProtoDeclare')">
                             <!-- <xsl:value-of select="$elementName"/>  similarly to containerField names, each contains an array-->
                             <xsl:text>children</xsl:text>
-                        </xsl:when> 
-                        <!-- ProtoInterface and ProtoBody handled by previous rule, not needed here -->
+                        </xsl:when>
+                        <!-- comments and ROUTE elements are treated as objects under -children field, regardless of parent node -->
+                        <xsl:when test="self::comment()">
+                            <xsl:text>children</xsl:text>
+                        </xsl:when>
+                        <xsl:when test="($elementName = 'ROUTE')">
+                            <xsl:text>children</xsl:text>
+                        </xsl:when>
+						<!-- note that all children of ProtoBody go into "-children" field; first node is node type for that prototype declaration -->
+                        <xsl:when test="($parentName = 'ProtoBody')">
+                            <xsl:text>children</xsl:text>
+                        </xsl:when>
+						<!-- parent ProtoInterface handled separately -->
+                        <xsl:when test="($parentName = 'field') or ($parentName = 'fieldValue')">
+                            <xsl:text>children</xsl:text>
+                        </xsl:when>
                         <xsl:when test="string-length(@containerField) > 0">
                             <xsl:value-of select="@containerField"/>
                         </xsl:when>
                         <xsl:otherwise>
-                            <xsl:text>childNodeFieldNameNotFound</xsl:text>
+                            <xsl:text>ErrorChildNodeFieldNameNotFound</xsl:text>
+							<xsl:message>
+								<xsl:text>ErrorChildNodeFieldNameNotFound: no containerField or field name found for the X3D JSON object.</xsl:text>
+								<xsl:text>&#10;</xsl:text>
+                                <xsl:value-of select="local-name(..)"/>
+                                <xsl:text>  $elementName=</xsl:text>
+                                <xsl:value-of select="$elementName"/>
+                                <xsl:text>, $parentName=</xsl:text>
+                                <xsl:value-of select="$parentName"/>
+								<xsl:text>&#10;</xsl:text>
+								<xsl:text>  Please report this error to x3d-public@web3d.org - thanks for your help improving X3D Quality Assurance (QA).</xsl:text>
+								<xsl:text>&#10;</xsl:text>
+							</xsl:message>
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:variable>
-                
+
                 <!-- if first of multiple siblings, process all at once -->
-                <xsl:if test="not(preceding-sibling::*[@containerField = $fieldName] | 
-                                  preceding-sibling::ProtoDeclare      [$fieldName = 'children'] | 
-                                  preceding-sibling::ExternProtoDeclare[$fieldName = 'children'])">
+                <xsl:if test="not(preceding-sibling::*[@containerField = $fieldName] |
+                                  preceding-sibling::*[$parentName = 'fieldValue'][$fieldName = 'children']    |
+                                  preceding-sibling::*[$parentName = 'ProtoBody'] [$fieldName = 'children'] |
+                                  preceding-sibling::ProtoDeclare                 [$fieldName = 'children'] | 
+                                  preceding-sibling::ExternProtoDeclare           [$fieldName = 'children'] | 
+                                  preceding-sibling::ROUTE                        [$fieldName = 'children'] | 
+                                  preceding-sibling::comment()                    [$fieldName = 'children'])">
                     <!-- first peer of its kind, found no preceding siblings with same name -->
                     
                     <xsl:text>&#10;</xsl:text>
@@ -279,15 +339,20 @@ POSSIBILITY OF SUCH DAMAGE.
                     <xsl:if test="not(local-name() = 'ProtoInterface') and not(local-name() = 'ProtoBody')">
                         <xsl:text>"</xsl:text>
                         <xsl:text>-</xsl:text><!-- visual assist, TODO determine if part of final pattern -->
-
                         <xsl:value-of select="$fieldName"/>
                         <xsl:text>"</xsl:text>
                         <xsl:text>:[</xsl:text><!-- children containerField -->
                     </xsl:if>
 
-                    <xsl:for-each select="(self::* | following-sibling::*[@containerField = $fieldName] | 
-                                           following-sibling::ProtoDeclare      [$fieldName = 'children'] | 
-                                           following-sibling::ExternProtoDeclare[$fieldName = 'children'])">
+                    <xsl:for-each select="(self::* | 
+                                           self::comment() |
+                                           following-sibling::*[@containerField = $fieldName] | 
+                                           following-sibling::*[$parentName = 'fieldValue'][$fieldName = 'children']    |
+                                           following-sibling::*[$parentName = 'ProtoBody'] [$fieldName = 'children'] |
+                                           following-sibling::ProtoDeclare                 [$fieldName = 'children'] | 
+                                           following-sibling::ExternProtoDeclare           [$fieldName = 'children'] | 
+                                           following-sibling::ROUTE                        [$fieldName = 'children'] | 
+                                           following-sibling::comment()                    [$fieldName = 'children'])">
                         <!-- greedy algorithm to process all elements of this field type at once -->
                         <!-- base case: simple element, optional attributes, accessed by containerField -->
                         <xsl:text>&#10;</xsl:text>
@@ -295,23 +360,42 @@ POSSIBILITY OF SUCH DAMAGE.
                         <xsl:text>{</xsl:text><!-- base case: simple element inside containerField -->
                         <xsl:text> </xsl:text>
                         <xsl:text>"</xsl:text>
-                        <xsl:value-of select="local-name()"/> <!-- $elementName not working?? -->
+                        <xsl:choose>
+                            <xsl:when test="self::comment()">
+                                <xsl:text>#comment</xsl:text>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:value-of select="local-name()"/> <!-- $elementName not working?? -->
+                            </xsl:otherwise>
+                        </xsl:choose>
                         <xsl:text>"</xsl:text>
                         <xsl:text>:</xsl:text>
 
-                        <!-- process attributes for this element, if any -->
-                        <xsl:if test="@*">
-                            <xsl:text>&#10;</xsl:text>
-                            <xsl:call-template name="print-indent"><xsl:with-param name="indent" select="$indent+4"/></xsl:call-template>
-                            <xsl:text>{</xsl:text><!-- attributes array for otherwise case (followed by additional contained nodes, if any) -->
-                            <xsl:call-template name="attributes">
-                                <xsl:with-param name="indent" select="$indent+4"/>
-                            </xsl:call-template>
-                        </xsl:if>
+                        <xsl:choose>
+                            <!-- comment prose -->
+                            <xsl:when test="self::comment()">
+                                <xsl:text>"</xsl:text>
+                                <!--  escaped quote requires preceding backslash in JSON encoding -->
+                                <xsl:call-template name="escape-special-characters-quotes-recurse">
+                                    <xsl:with-param name="inputString" select="."/>
+                                    <xsl:with-param name="inputType"><xsl:text>SFString</xsl:text></xsl:with-param>
+                                </xsl:call-template>
+                                <xsl:text>"</xsl:text>
+                            </xsl:when>
+                            <!-- process attributes for this element, if any -->
+                            <xsl:when test="@*">
+                                <xsl:text>&#10;</xsl:text>
+                                <xsl:call-template name="print-indent"><xsl:with-param name="indent" select="$indent+4"/></xsl:call-template>
+                                <xsl:text>{</xsl:text><!-- attributes array for otherwise case (followed by additional contained nodes, if any) -->
+                                <xsl:call-template name="attributes">
+                                    <xsl:with-param name="indent" select="$indent+4"/>
+                                </xsl:call-template>
+                            </xsl:when>
+                        </xsl:choose>
                         
                         <xsl:if test="* | comment()"> <!-- node() includes CDATA text -->
-                            <!-- each child element is represented in a JSON array of JSON objects -->
-                            <xsl:call-template name="comments-elements-ROUTEs">
+                            <!-- recurse; each child element is represented in a JSON array of JSON objects -->
+                            <xsl:call-template name="comments-elements-ROUTEs"> <!-- contained content -->
                                 <xsl:with-param name="indent"><xsl:value-of select="$indent+6"/></xsl:with-param>
                             </xsl:call-template>
                         </xsl:if>
@@ -366,7 +450,7 @@ POSSIBILITY OF SUCH DAMAGE.
         
     </xsl:template> <!-- end match="*" -->
 
-    <xsl:template match="comment()">
+    <xsl:template match="hide/comment()">
         <xsl:param name="indent"><xsl:text>0</xsl:text></xsl:param>
         <xsl:param name="stripComments"><xsl:value-of select="$stripComments"/></xsl:param>
 
@@ -465,8 +549,8 @@ POSSIBILITY OF SUCH DAMAGE.
         </xsl:variable>
         
         <!-- eliminate default attribute values (based on parameter setting) otherwise they will all appear in output  -->
-        <xsl:if test="(string-length($notDefaultAttributeValue) > 0) or 
-                      (local-name()='DEF') or (local-name()='USE')">
+        <xsl:if test="(local-name()='DEF') or (local-name()='USE') or
+                      ((string-length($notDefaultAttributeValue) > 0) and not(local-name() = 'containerField'))">
         
             <xsl:variable name="attributeName"     select="local-name()"/>
             <xsl:variable name="fieldValueName"    select="../@name"/>
@@ -630,7 +714,9 @@ POSSIBILITY OF SUCH DAMAGE.
                                     <xsl:with-param name="message">
                                         <xsl:text>: wrapped missing &quot;quote marks&quot; around single-string value for MFString @</xsl:text>
                                         <xsl:value-of select="local-name()"/>
-                                        <xsl:text>... be sure to fix source file!</xsl:text>
+                                        <xsl:text>='</xsl:text>
+                                        <xsl:value-of select="."/>
+                                        <xsl:text>' and be sure to fix source file!</xsl:text>
                                         <xsl:if test="($traceScripts = 'true')">
                                             <xsl:text>&#10;</xsl:text>
                                             <xsl:value-of select="."/>

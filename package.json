@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "express": "*"
+    "express": "*",
+    "xml2js": "^0.4.16"
   },
   "scripts": {
     "start": "node app.js"
