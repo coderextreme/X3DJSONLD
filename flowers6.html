@@ -42,9 +42,9 @@ body {
                   <field name='scale' type='SFFloat' accessType='inputOnly' value='0.5'></field>
                   <field name='power' type='SFFloat' accessType='inputOnly' value='2'></field>
                   <field id="a" name='a' type='SFFloat' accessType='inputOnly' value='10'></field>
-                  <field id="b" name='b' type='SFFloat' accessType='inputOnly' value='1'></field>
-                  <field id="c" name='c' type='SFFloat' accessType='inputOnly' value='20'></field>
-                  <field id="d" name='d' type='SFFloat' accessType='inputOnly' value='20'></field>
+                  <field id="b" name='b' type='SFFloat' accessType='inputOnly' value='8'></field>
+                  <field id="c" name='c' type='SFFloat' accessType='inputOnly' value='3'></field>
+                  <field id="d" name='d' type='SFFloat' accessType='inputOnly' value='3'></field>
                   <field id="tdelta" name='tdelta' type='SFFloat' accessType='inputOnly' value='0.5'></field>
                   <field id="pdelta" name='pdelta' type='SFFloat' accessType='inputOnly' value='0.5'></field>
                   <ShaderPart containerField='parts' type='VERTEX'>
@@ -157,14 +157,7 @@ void main()
 </ShaderPart>
                 </ComposedShader>
 		</Appearance>
-		<SphereSegment id="ss" ccw="false" radius='20'
-			latitude='-90 -80 -70 -60 -50 -40 -30 -20 -10 0 10 20 30 40 50 60 70 80 90'
-			longitude='360 350 340 330 320 310 300 290 280 270 260 250 240 230 220 210 200 190 180 170 160 150 140 130 120 110 100 90 80 70 60 50 40 30 20 10 0' ></SphereSegment>
-		<!--Sphere solid="false" radius='20'></Sphere-->
-                <!--IndexedFaceSet id="ifs" creaseAngle="1.57">
-                  <Coordinate id="crd"></Coordinate>
-		  <Normal id="norm"></Normal>
-                </IndexedFaceSet-->
+		<Sphere subdivision="512,512" solid="true" radius='20'></Sphere>
 	</Shape>
       </Transform>
     </Scene>   
@@ -214,19 +207,6 @@ var c = 5;
 var d = 5;
 var tdelta = 0;
 var pdelta = 0;
-
-var latitudes = [];
-for (var lat = 0; lat <= 360; lat += 1) {
-	latitudes.push(lat);
-}
-
-var longitudes = [];
-for (var lon = 0; lon <= 360; lon += 1) {
-	longitudes.push(lon);
-}
-
-document.getElementById("ss").setAttribute("latitude", latitudes);
-document.getElementById("ss").setAttribute("longitude", longitudes);
 
 function animate() {
 	choice = Math.floor(Math.random() * 4);
