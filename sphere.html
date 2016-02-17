@@ -19,10 +19,10 @@ body {
   <body>
 <X3D profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd' xmlns:xsd='http://www.web3d.org/specifications/x3d-namespace'>
   <Scene>
-<!-- Images courtesy of Paul Debevec's Light Probe Image Gallery -->
     <NavigationInfo type="&quot;EXAMINE&quot; &quot;ANY&quot;"></NavigationInfo>
+<!-- Images courtesy of Paul Debevec's Light Probe Image Gallery -->
 	<Background id="background" leftUrl='"cubemap/all_probes/beach_cross/beach_left.png"' rightUrl='"cubemap/all_probes/beach_cross/beach_right.png"' frontUrl='"cubemap/all_probes/beach_cross/beach_front.png"' backUrl='"cubemap/all_probes/beach_cross/beach_back.png"' topUrl='"cubemap/all_probes/beach_cross/beach_top.png"' bottomUrl='"cubemap/all_probes/beach_cross/beach_bottom.png"'></Background> 
-	<Viewpoint position='0 0 40' description="Transparent rose"></Viewpoint>
+	<Viewpoint position='0 0 40' description="Transparent rose" zNear='0' ></Viewpoint>
 	<Transform DEF='Rose01' >
 	<Shape>
 	<Appearance DEF='_01_-_Default' >
@@ -36,18 +36,18 @@ body {
                     <ImageTexture id="topShader" containerField="top" url='"cubemap/all_probes/beach_cross/beach_top.png"' ></ImageTexture>
                 </ComposedCubeMapTexture>
 		<ComposedShader DEF='ComposedShader' language="GLSL">
-                  <field name='cubeMap' type='SFInt32' accessType='inputOnly' value='0'></field>
+                  <Uniform name='cubeMap' type='SFInt32' accessType='inputOnly' value='0'></Uniform>
 
-                  <field name='chromaticDispertion' accessType='inputOnly' type='SFVec3f' value='0.98 1.0 1.033'></field>
-                  <field name='bias' type='SFFloat' accessType='inputOnly' value='0.5'></field>
-                  <field name='scale' type='SFFloat' accessType='inputOnly' value='0.5'></field>
-                  <field name='power' type='SFFloat' accessType='inputOnly' value='2'></field>
-                  <field id="a" name='a' type='SFFloat' accessType='inputOnly' value='10'></field>
-                  <field id="b" name='b' type='SFFloat' accessType='inputOnly' value='1'></field>
-                  <field id="c" name='c' type='SFFloat' accessType='inputOnly' value='20'></field>
-                  <field id="d" name='d' type='SFFloat' accessType='inputOnly' value='20'></field>
-                  <field id="tdelta" name='tdelta' type='SFFloat' accessType='inputOnly' value='0'></field>
-                  <field id="pdelta" name='pdelta' type='SFFloat' accessType='inputOnly' value='0'></field>
+                  <Uniform name='chromaticDispersion' accessType='inputOnly' type='SFVec3f' value='0.98 1.0 1.033'></Uniform>
+                  <Uniform name='bias' type='SFFloat' accessType='inputOnly' value='0.5'></Uniform>
+                  <Uniform name='scale' type='SFFloat' accessType='inputOnly' value='0.5'></Uniform>
+                  <Uniform name='power' type='SFFloat' accessType='inputOnly' value='2'></Uniform>
+                  <Uniform id="a" name='a' type='SFFloat' accessType='inputOutput' value='10'></Uniform>
+                  <Uniform id="b" name='b' type='SFFloat' accessType='inputOutput' value='1'></Uniform>
+                  <Uniform id="c" name='c' type='SFFloat' accessType='inputOutput' value='20'></Uniform>
+                  <Uniform id="d" name='d' type='SFFloat' accessType='inputOutput' value='20'></Uniform>
+                  <Uniform id="tdelta" name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></Uniform>
+                  <Uniform id="pdelta" name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></Uniform>
                   <ShaderPart containerField='parts' type='VERTEX'>
 #ifdef GL_ES
   precision highp float;
@@ -66,7 +66,7 @@ uniform mat4 normalMatrix;
 uniform mat4 viewMatrix; // world to view transformation
 uniform mat4 viewMatrixInverse; // view to world transformation
 
-uniform vec3 chromaticDispertion;
+uniform vec3 chromaticDispersion;
 uniform float bias;
 uniform float scale;
 uniform float power;
@@ -83,16 +83,16 @@ varying vec3 normalDirection; // normal vector in world space
 
 vec3 cart2sphere(vec3 p) {
      float r = sqrt(p.x*p.x + p.y*p.y + p.z*p.z);
-     float theta = acos(p.z/r);
-     float phi = atan(p.y, p.x);
+     float theta = acos(p.y/r);
+     float phi = atan(p.z, p.x);
      return vec3(r, theta, phi);
 }
      
 vec3 rose(vec3 p) {
      float rho = a + b * cos(c * p.y + tdelta) * cos(d * p.z + pdelta);
      float x = rho * cos(p.z) * cos(p.y);
-     float y = rho * cos(p.z) * sin(p.y);
-     float z = rho * sin(p.z);
+     float z = rho * cos(p.z) * sin(p.y);
+     float y = rho * sin(p.z);
      return vec3(x, y, z);
 }
 
@@ -113,7 +113,7 @@ vec3 rose_normal(vec3 p) {
 }
 
 vec4 rose_position(vec3 p) {
-	return vec4(rose(cart2sphere(position)), 1.0);
+	return vec4(rose(cart2sphere(p)), 1.0);
 	/*return vec4(position, 1.0);*/
 }
 
@@ -124,7 +124,7 @@ void main()
        // to view coordinates
 
     vec4 viewDirectionInViewSpace = positionInViewSpace 
-       - vec4(0.0, 0.0, 0.0, 1.0);
+       - vec4(0.0, 0.0, 1.0, 0.0);
        // camera is always at (0,0,0,1) in view coordinates;
        // this is the direction in which the viewer is looking 
        // (not the direction to the viewer)
@@ -165,9 +165,9 @@ void main()
     vec3 fragNormal = normalize(normalDirection);
     vec3 reflectedDirection = reflect(viewDirection, fragNormal);
     /*
-    vec3 redDirection = refract(viewDirection, fragNormal, chromaticDispertion.x);
-    vec3 greenDirection = refract(viewDirection, fragNormal, chromaticDispertion.y);
-    vec3 blueDirection = refract(viewDirection, fragNormal, chromaticDispertion.z);
+    vec3 redDirection = refract(viewDirection, fragNormal, chromaticDispersion.x);
+    vec3 greenDirection = refract(viewDirection, fragNormal, chromaticDispersion.y);
+    vec3 blueDirection = refract(viewDirection, fragNormal, chromaticDispersion.z);
     float red = textureCube(cubeMap, redDirection).r;
     float green = textureCube(cubeMap, greenDirection).g;
     float blue = textureCube(cubeMap, greenDirection).b;
@@ -176,6 +176,7 @@ void main()
     vec4 reflectedColor = textureCube(cubeMap, reflectedDirection);
     /*vec4 refractedColor = vec4(red, green, blue, 1.0);*/
     gl_FragColor = reflectedColor;
+    /*gl_FragColor = refractedColor;*/
 }
 </ShaderPart>
                 </ComposedShader>
@@ -228,8 +229,8 @@ var a = 5;
 var b = 5;
 var c = 5;
 var d = 5;
-var tdelta = 0;
-var pdelta = 0;
+var tdelta = 0.5;
+var pdelta = 0.5;
 
 
 function animate() {
@@ -272,7 +273,7 @@ function animate() {
 	document.getElementById("tdelta").setAttribute("tdelta", tdelta);
 }
 
-setInterval(animate, 10000);
+setInterval(animate, 1000);
 </script>
 </body>
 </html>

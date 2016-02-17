@@ -21,7 +21,7 @@ body {
   <Scene>
     <NavigationInfo type="&quot;EXAMINE&quot; &quot;ANY&quot;"></NavigationInfo>
 	<Background id="background" leftUrl='"cubemap/all_probes/beach_cross/beach_left.png"' rightUrl='"cubemap/all_probes/beach_cross/beach_right.png"' frontUrl='"cubemap/all_probes/beach_cross/beach_front.png"' backUrl='"cubemap/all_probes/beach_cross/beach_back.png"' topUrl='"cubemap/all_probes/beach_cross/beach_top.png"' bottomUrl='"cubemap/all_probes/beach_cross/beach_bottom.png"'></Background> 
-	<Viewpoint position='0 0 40' description="Transparent rose"></Viewpoint>
+	<Viewpoint position='0 0 40' description="Transparent rose" zNear='0' ></Viewpoint>
 	<Transform DEF='Rose01' >
 	<Shape>
 	<Appearance DEF='_01_-_Default' >
@@ -35,29 +35,37 @@ body {
                     <ImageTexture id="topShader" containerField="top" url='"cubemap/all_probes/beach_cross/beach_top.png"' ></ImageTexture>
                 </ComposedCubeMapTexture>
 		<ComposedShader DEF='ComposedShader' language="GLSL">
-                  <field name='cube' type='SFInt32' accessType='inputOnly' value='0'></field>
+                  <field name='cubeMap' type='SFInt32' accessType='inputOnly' value='0'></field>
 
-                  <field name='chromaticDispertion' accessType='inputOnly' type='SFVec3f' value='0.98 1.0 1.033'></field>
+                  <field name='chromaticDispersion' accessType='inputOnly' type='SFVec3f' value='0.98 1.0 1.033'></field>
                   <field name='bias' type='SFFloat' accessType='inputOnly' value='0.5'></field>
                   <field name='scale' type='SFFloat' accessType='inputOnly' value='0.5'></field>
                   <field name='power' type='SFFloat' accessType='inputOnly' value='2'></field>
                   <field id="a" name='a' type='SFFloat' accessType='inputOnly' value='10'></field>
-                  <field id="b" name='b' type='SFFloat' accessType='inputOnly' value='8'></field>
-                  <field id="c" name='c' type='SFFloat' accessType='inputOnly' value='3'></field>
-                  <field id="d" name='d' type='SFFloat' accessType='inputOnly' value='3'></field>
-                  <field id="tdelta" name='tdelta' type='SFFloat' accessType='inputOnly' value='0.5'></field>
-                  <field id="pdelta" name='pdelta' type='SFFloat' accessType='inputOnly' value='0.5'></field>
+                  <field id="b" name='b' type='SFFloat' accessType='inputOnly' value='1'></field>
+                  <field id="c" name='c' type='SFFloat' accessType='inputOnly' value='20'></field>
+                  <field id="d" name='d' type='SFFloat' accessType='inputOnly' value='20'></field>
+                  <field id="tdelta" name='tdelta' type='SFFloat' accessType='inputOnly' value='0'></field>
+                  <field id="pdelta" name='pdelta' type='SFFloat' accessType='inputOnly' value='0'></field>
                   <ShaderPart containerField='parts' type='VERTEX'>
+#ifdef GL_ES
+  precision highp float;
+#endif
+
+/* from https://en.wikibooks.org/wiki/GLSL_Programming/Blender/Reflecting_Surfaces */
 attribute vec3 position;
 attribute vec3 normal;
 attribute vec2 texcoord;
+
 
 uniform mat4 modelViewProjectionMatrix;
 uniform mat4 modelViewMatrix;
 uniform mat4 modelViewMatrixInverse;
 uniform mat4 normalMatrix;
+uniform mat4 viewMatrix; // world to view transformation
+uniform mat4 viewMatrixInverse; // view to world transformation
 
-uniform vec3 chromaticDispertion;
+uniform vec3 chromaticDispersion;
 uniform float bias;
 uniform float scale;
 uniform float power;
@@ -68,14 +76,12 @@ uniform float d;
 uniform float tdelta;
 uniform float pdelta;
 
-varying vec3 t;
-varying vec3 tr;
-varying vec3 tg;
-varying vec3 tb;
-varying float rfac;
+varying vec3 viewDirection; // direction in world space 
+    // in which the viewer is looking
+varying vec3 normalDirection; // normal vector in world space 
 
 vec3 cart2sphere(vec3 p) {
-     float r = pow(p.x*p.x + p.y*p.y + p.z*p.z, 0.5);
+     float r = sqrt(p.x*p.x + p.y*p.y + p.z*p.z);
      float theta = acos(p.y/r);
      float phi = atan(p.z, p.x);
      return vec3(r, theta, phi);
@@ -93,9 +99,9 @@ vec3 rose_normal(vec3 p) {
      /* convert cartesian position to spherical coordinates */
      vec3 base = cart2sphere(p);
      /* add a little to phi */
-     vec3 td = base + vec3(0.0, 0.01, 0.0);
+     vec3 td = base + vec3(0.0, 0.0001, 0.0);
      /* add a little to theta */
-     vec3 pd = base + vec3(0.0, 0.0, 0.01);
+     vec3 pd = base + vec3(0.0, 0.0, 0.0001);
 
      /* convert back to cartesian coordinates */
      vec3 br = rose(base);
@@ -105,59 +111,78 @@ vec3 rose_normal(vec3 p) {
      return normalize(cross(bt - br, bp - br));
 }
 
+vec4 rose_position(vec3 p) {
+	return vec4(rose(cart2sphere(p)), 1.0);
+	/*return vec4(position, 1.0);*/
+}
+
 void main()
 {
-    mat3 mvm3=mat3(
-		modelViewMatrix[0].x,
-		modelViewMatrix[0].y,
-		modelViewMatrix[0].z,
-		modelViewMatrix[1].x,
-		modelViewMatrix[1].y,
-		modelViewMatrix[1].z,
-		modelViewMatrix[2].x,
-		modelViewMatrix[2].y,
-		modelViewMatrix[2].z
-    );
-    vec3 fragNormal = mvm3*rose_normal(position);
-    gl_Position = modelViewProjectionMatrix*vec4(rose(cart2sphere(position)), 1.0);
-    vec3 incident = normalize((modelViewMatrix * vec4(rose(cart2sphere(position)), 1.0)).xyz);
+    vec4 positionInViewSpace = modelViewMatrix * rose_position(position);
+       // transformation of vertex from object coordinates 
+       // to view coordinates
 
-    t = reflect(incident, fragNormal)*mvm3;
-    tr = refract(incident, fragNormal, chromaticDispertion.x)*mvm3;
-    tg = refract(incident, fragNormal, chromaticDispertion.y)*mvm3;
-    tb = refract(incident, fragNormal, chromaticDispertion.z)*mvm3;
+    vec4 viewDirectionInViewSpace = positionInViewSpace 
+       - vec4(0.0, 0.0, 1.0, 0.0);
+       // camera is always at (0,0,0,1) in view coordinates;
+       // this is the direction in which the viewer is looking 
+       // (not the direction to the viewer)
+    
+    viewDirection = 
+       vec3(viewMatrixInverse * viewDirectionInViewSpace);
+       // transformation from view coordinates 
+       // to world coordinates
+       
+    vec3 normalDirectionInViewSpace = 
+       mat3(normalMatrix) * rose_normal(position);
+       // transformation of normal from object coordinates 
+       // to view coordinates
 
-    rfac = bias + scale * pow(0.5+0.5*dot(incident, fragNormal), power);
+    normalDirection = normalize(vec3(
+       vec4(normalDirectionInViewSpace, 0.0) * viewMatrix));
+       // transformation of normal vector from view coordinates 
+       // to world coordinates with the transposed 
+       // (multiplication of the vector from the left) of 
+       // the inverse of viewMatrixInverse, which is viewMatrix
+    
+    gl_Position = modelViewProjectionMatrix * rose_position(position);
 }
+
 </ShaderPart>
 		  <ShaderPart containerField='parts' type='FRAGMENT'>
 #ifdef GL_ES
   precision highp float;
 #endif
 
-uniform samplerCube cube;
-
-varying vec3 t;
-varying vec3 tr;
-varying vec3 tg;
-varying vec3 tb;
-varying float rfac;
+varying vec3 viewDirection;
+varying vec3 normalDirection;
+uniform samplerCube cubeMap;
+uniform vec3 chromaticDispersion;
 
 void main()
 {
-    vec4 ref = textureCube(cube, t);
-    vec4 ret = vec4(1.0);
-
-    ret.r = textureCube(cube, tr).r;
-    ret.g = textureCube(cube, tg).g;
-    ret.b = textureCube(cube, tb).b;
-
-    gl_FragColor = ret * rfac + ref * (1.0 - rfac);
+    vec3 fragNormal = normalize(normalDirection);
+    vec3 reflectedDirection = reflect(viewDirection, fragNormal);
+    
+    
+    vec3 redDirection = refract(viewDirection, fragNormal, chromaticDispersion.x);
+    vec3 greenDirection = refract(viewDirection, fragNormal, chromaticDispersion.y);
+    vec3 blueDirection = refract(viewDirection, fragNormal, chromaticDispersion.z);
+    float red = textureCube(cubeMap, redDirection).r;
+    float green = textureCube(cubeMap, greenDirection).g;
+    float blue = textureCube(cubeMap, greenDirection).b;
+    
+    
+    vec4 reflectedColor = textureCube(cubeMap, reflectedDirection);
+    /*vec4 reflectedColor = vec4(1.0, 0, 0, 1.0);*/
+    vec4 refractedColor = vec4(red, green, blue, 1.0);
+    gl_FragColor = reflectedColor;
+    /*gl_FragColor = refractedColor;*/
 }
 </ShaderPart>
                 </ComposedShader>
 		</Appearance>
-		<Sphere subdivision="512,512" solid="true" radius='20'></Sphere>
+		<Sphere subdivision="512,512" solid="false" radius='20'></Sphere>
 	</Shape>
       </Transform>
     </Scene>   
@@ -174,7 +199,6 @@ var rightUrls = ["cubemap/all_probes/beach_cross/beach_right.png","cubemap/all_p
 var topUrls = ["cubemap/all_probes/beach_cross/beach_top.png","cubemap/all_probes/building_cross/building_top.png","cubemap/all_probes/campus_cross/campus_top.png","cubemap/all_probes/galileo_cross/galileo_top.png","cubemap/all_probes/grace_cross/grace_top.png","cubemap/all_probes/kitchen_cross/kitchen_top.png","cubemap/all_probes/rnl_cross/rnl_top.png","cubemap/all_probes/stpeters_cross/stpeters_top.png","cubemap/all_probes/uffizi_cross/uffizi_top.png"];
 
 var bottomUrls = ["cubemap/all_probes/beach_cross/beach_bottom.png","cubemap/all_probes/building_cross/building_bottom.png","cubemap/all_probes/campus_cross/campus_bottom.png","cubemap/all_probes/galileo_cross/galileo_bottom.png","cubemap/all_probes/grace_cross/grace_bottom.png","cubemap/all_probes/kitchen_cross/kitchen_bottom.png","cubemap/all_probes/rnl_cross/rnl_bottom.png","cubemap/all_probes/stpeters_cross/stpeters_bottom.png","cubemap/all_probes/uffizi_cross/uffizi_bottom.png"];
-
 var old = -1;
 
 setInterval(function () {
@@ -199,6 +223,7 @@ setInterval(function () {
 		    document.querySelector("#background").setAttribute("bottomUrl",  bottomUrls[side]);
             }
         }, 10000);
+        
 </script> 
 <script type="text/javascript">
 var a = 5;
@@ -207,6 +232,7 @@ var c = 5;
 var d = 5;
 var tdelta = 0;
 var pdelta = 0;
+
 
 function animate() {
 	choice = Math.floor(Math.random() * 4);
@@ -219,8 +245,8 @@ function animate() {
 	} else if (choice == 3) {
 		d += Math.floor(Math.random() * 2) * 2 - 1;
 	}
-	tdelta += 0.5;
-	pdelta += 0.5;
+	// tdelta += 0.5;
+	// pdelta += 0.5;
 	if (a < 1) {
 		a = 10;
 	}
@@ -246,9 +272,11 @@ function animate() {
 	document.getElementById("d").setAttribute("d", d);
 	document.getElementById("pdelta").setAttribute("pdelta", pdelta);
 	document.getElementById("tdelta").setAttribute("tdelta", tdelta);
+    
 }
 
 setInterval(animate, 10000);
+
 </script>
 </body>
 </html>
