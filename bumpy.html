@@ -101,6 +101,33 @@ body {
             });
         });
   
+        $(function() {
+            $( "#sliderRed" ).slider({
+                min: 0, max: 2, step: 0.02, value: 0.98,
+                slide: function( event, ui ) {
+                    changeShaderParamValue('red', ui.value);
+                }
+            });
+        });
+  
+        $(function() {
+            $( "#sliderGreen" ).slider({
+                min: 0, max: 2, step: 0.02, value: 1.0,
+                slide: function( event, ui ) {
+                    changeShaderParamValue('green', ui.value);
+                }
+            });
+        });
+  
+        $(function() {
+            $( "#sliderBlue" ).slider({
+                min: 0, max: 2, step: 0.02, value: 1.033,
+                slide: function( event, ui ) {
+                    changeShaderParamValue('blue', ui.value);
+                }
+            });
+        });
+  
         function changeShaderParamValue(fieldElementName, value)
         {
             var fieldDOMElement = document.getElementById(fieldElementName);
@@ -149,6 +176,18 @@ body {
         pdelta: <span id="pdeltaLabel">0</span>
         <div class="paramSlider" id="sliderPhi"></div>        
     </p>
+    <p>
+        red: <span id="redLabel">0.98</span>
+        <div class="paramSlider" id="sliderRed"></div>        
+    </p>
+    <p>
+        green: <span id="greenLabel">1.0</span>        
+        <div class="paramSlider" id="sliderGreen"></div>
+    </p>
+    <p>
+        blue: <span id="blueLabel">1.033</span>
+        <div class="paramSlider" id="sliderBlue"></div>        
+    </p>
 </div>
 <X3D profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd' xmlns:xsd='http://www.web3d.org/specifications/x3d-namespace'>
   <Scene>
@@ -169,12 +208,14 @@ body {
                     <ImageTexture id="topShader" containerField="top" url='"cubemap/all_probes/beach_cross/beach_top.png"' ></ImageTexture>
                 </ComposedCubeMapTexture>
 		<ComposedShader DEF='ComposedShader' language="GLSL">
-                  <Uniform name='cubeMap' type='SFInt32' accessType='inputOnly' value='0'></Uniform>
+                  <Uniform name='cubeMap' type='SFInt32' accessType='inputOutput' value='0'></Uniform>
 
-                  <Uniform name='chromaticDispersion' accessType='inputOnly' type='SFVec3f' value='0.98 1.0 1.033'></Uniform>
-                  <Uniform name='bias' type='SFFloat' accessType='inputOnly' value='0.5'></Uniform>
-                  <Uniform name='scale' type='SFFloat' accessType='inputOnly' value='0.5'></Uniform>
-                  <Uniform name='power' type='SFFloat' accessType='inputOnly' value='2'></Uniform>
+                  <Uniform id='red' name='red' accessType='inputOutput' type='SFVec3f' value='0.98'></Uniform>
+                  <Uniform id='green' name='green' accessType='inputOutput' type='SFVec3f' value='1.0'></Uniform>
+                  <Uniform id='blue' name='blue' accessType='inputOutput' type='SFVec3f' value='1.033'></Uniform>
+                  <Uniform name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></Uniform>
+                  <Uniform name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></Uniform>
+                  <Uniform name='power' type='SFFloat' accessType='inputOutput' value='2'></Uniform>
                   <Uniform id="a" name='a' type='SFFloat' accessType='inputOutput' value='10'></Uniform>
                   <Uniform id="b" name='b' type='SFFloat' accessType='inputOutput' value='1'></Uniform>
                   <Uniform id="c" name='c' type='SFFloat' accessType='inputOutput' value='20'></Uniform>
@@ -182,24 +223,18 @@ body {
                   <Uniform id="tdelta" name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></Uniform>
                   <Uniform id="pdelta" name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></Uniform>
                   <ShaderPart containerField='parts' type='VERTEX'>
-#ifdef GL_ES
-  precision highp float;
-#endif
-
-/* from https://en.wikibooks.org/wiki/GLSL_Programming/Blender/Reflecting_Surfaces */
 attribute vec3 position;
 attribute vec3 normal;
 attribute vec2 texcoord;
-
 
 uniform mat4 modelViewProjectionMatrix;
 uniform mat4 modelViewMatrix;
 uniform mat4 modelViewMatrixInverse;
 uniform mat4 normalMatrix;
-uniform mat4 viewMatrix; // world to view transformation
-uniform mat4 viewMatrixInverse; // view to world transformation
 
-uniform vec3 chromaticDispersion;
+uniform float red;
+uniform float green;
+uniform float blue;
 uniform float bias;
 uniform float scale;
 uniform float power;
@@ -210,12 +245,14 @@ uniform float d;
 uniform float tdelta;
 uniform float pdelta;
 
-varying vec3 viewDirection; // direction in world space 
-    // in which the viewer is looking
-varying vec3 normalDirection; // normal vector in world space 
+varying vec3 t;
+varying vec3 tr;
+varying vec3 tg;
+varying vec3 tb;
+varying float rfac;
 
 vec3 cart2sphere(vec3 p) {
-     float r = sqrt(p.x*p.x + p.y*p.y + p.z*p.z);
+     float r = pow(p.x*p.x + p.y*p.y + p.z*p.z, 0.5);
      float theta = acos(p.y/r);
      float phi = atan(p.z, p.x);
      return vec3(r, theta, phi);
@@ -233,9 +270,9 @@ vec3 rose_normal(vec3 p) {
      /* convert cartesian position to spherical coordinates */
      vec3 base = cart2sphere(p);
      /* add a little to phi */
-     vec3 td = base + vec3(0.0, 0.0001, 0.0);
+     vec3 td = base + vec3(0.0, 0.01, 0.0);
      /* add a little to theta */
-     vec3 pd = base + vec3(0.0, 0.0, 0.0001);
+     vec3 pd = base + vec3(0.0, 0.0, 0.01);
 
      /* convert back to cartesian coordinates */
      vec3 br = rose(base);
@@ -245,71 +282,54 @@ vec3 rose_normal(vec3 p) {
      return normalize(cross(bt - br, bp - br));
 }
 
-vec4 rose_position(vec3 p) {
-	return vec4(rose(cart2sphere(p)), 1.0);
-	/*return vec4(position, 1.0);*/
-}
-
 void main()
 {
-    vec4 positionInViewSpace = modelViewMatrix * rose_position(position);
-       // transformation of vertex from object coordinates 
-       // to view coordinates
+    mat3 mvm3=mat3(
+		modelViewMatrix[0].x,
+		modelViewMatrix[0].y,
+		modelViewMatrix[0].z,
+		modelViewMatrix[1].x,
+		modelViewMatrix[1].y,
+		modelViewMatrix[1].z,
+		modelViewMatrix[2].x,
+		modelViewMatrix[2].y,
+		modelViewMatrix[2].z
+    );
+    vec3 fragNormal = mvm3*rose_normal(position);
+    gl_Position = modelViewProjectionMatrix*vec4(rose(cart2sphere(position)), 1.0);
+    vec3 incident = normalize((modelViewMatrix * vec4(rose(cart2sphere(position)), 1.0)).xyz);
 
-    vec4 viewDirectionInViewSpace = positionInViewSpace 
-       - vec4(0.0, 0.0, 1.0, 0.0);
-       // camera is always at (0,0,0,1) in view coordinates;
-       // this is the direction in which the viewer is looking 
-       // (not the direction to the viewer)
-    
-    viewDirection = 
-       vec3(viewMatrixInverse * viewDirectionInViewSpace);
-       // transformation from view coordinates 
-       // to world coordinates
-       
-    vec3 normalDirectionInViewSpace = 
-       mat3(normalMatrix) * rose_normal(position);
-       // transformation of normal from object coordinates 
-       // to view coordinates
+    t = reflect(incident, fragNormal)*mvm3;
+    tr = refract(incident, fragNormal, red)*mvm3;
+    tg = refract(incident, fragNormal, green)*mvm3;
+    tb = refract(incident, fragNormal, blue)*mvm3;
 
-    normalDirection = normalize(vec3(
-       vec4(normalDirectionInViewSpace, 0.0) * viewMatrix));
-       // transformation of normal vector from view coordinates 
-       // to world coordinates with the transposed 
-       // (multiplication of the vector from the left) of 
-       // the inverse of viewMatrixInverse, which is viewMatrix
-    
-    gl_Position = modelViewProjectionMatrix * rose_position(position);
+    rfac = bias + scale * pow(0.5+0.5*dot(incident, fragNormal), power);
 }
-
 </ShaderPart>
 		  <ShaderPart containerField='parts' type='FRAGMENT'>
 #ifdef GL_ES
   precision highp float;
 #endif
 
-varying vec3 viewDirection;
-varying vec3 normalDirection;
-uniform samplerCube cubeMap;
-uniform vec3 chromaticDispersion;
+uniform samplerCube cube;
+
+varying vec3 t;
+varying vec3 tr;
+varying vec3 tg;
+varying vec3 tb;
+varying float rfac;
 
 void main()
 {
-    vec3 fragNormal = normalize(normalDirection);
-    vec3 reflectedDirection = reflect(viewDirection, fragNormal);
-    /*
-    vec3 redDirection = refract(viewDirection, fragNormal, chromaticDispersion.x);
-    vec3 greenDirection = refract(viewDirection, fragNormal, chromaticDispersion.y);
-    vec3 blueDirection = refract(viewDirection, fragNormal, chromaticDispersion.z);
-    float red = textureCube(cubeMap, redDirection).r;
-    float green = textureCube(cubeMap, greenDirection).g;
-    float blue = textureCube(cubeMap, greenDirection).b;
-    */
+    vec4 ref = textureCube(cube, t);
+    vec4 ret = vec4(1.0);
 
-    vec4 reflectedColor = textureCube(cubeMap, reflectedDirection);
-    /*vec4 refractedColor = vec4(red, green, blue, 1.0);*/
-    gl_FragColor = reflectedColor;
-    /*gl_FragColor = refractedColor;*/
+    ret.r = textureCube(cube, tr).r;
+    ret.g = textureCube(cube, tg).g;
+    ret.b = textureCube(cube, tb).b;
+
+    gl_FragColor = ret * rfac + ref * (1.0 - rfac);
 }
 </ShaderPart>
                 </ComposedShader>
@@ -406,7 +426,7 @@ function animate() {
         changeShaderParamValue('pdelta', pdelta);
 }
 
-// setInterval(animate, 1000);
+setInterval(animate, 1000);
 </script>
 </body>
 </html>

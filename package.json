@@ -4,7 +4,8 @@
   "private": true,
   "dependencies": {
     "express": "*",
-    "xml2js": "^0.4.16"
+    "xml2js": "^0.4.16",
+    "xmldom": "^0.1.22"
   },
   "scripts": {
     "start": "node app.js"

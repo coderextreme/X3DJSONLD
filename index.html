@@ -1,5 +1,5 @@
-<!doctype html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>JSON Loader</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
@@ -9,6 +9,8 @@
     <style type="text/css">
     X3D {
         background:#000;
+	width: 300px;
+	height:150px;
     }
     table td, table td * {
         vertical-align: top;
@@ -20,37 +22,48 @@
 <tr>
 <td>
 <select>
-<option>flipper.json</option>
-<option>for.json</option>
-<option>fors.json</option>
-<option>force.json</option>
-<option>forces.json</option>
-<option>extrusion.json</option>
 <option>ArchHalf.json</option>
 <option>ArchPrototype.json</option>
 <option>ArchPrototypes.json</option>
+<option>CoordinateAxes.json</option>
+<option>ExtrusionHeart.json</option>
+<option>IcosahedronSubdivisionLevel5.json</option>
+<option>NancyNativeTags.json</option>
 <option>NancyPrototypes.json</option>
 <option>NancyPrototypess.json</option>
-<option>NancyNativeTags.json</option>
-<option>examples/X3dForAdvancedModeling/Buildings/ArchPrototype.json</option>
-<option>rubikFurnace.json</option>
-<option>rubikOnFire.json</option>
-<option>rubikOnFires.json</option>
-<option>rubik.json</option>
-<option>rubiks.json</option>
-<option>bubbles.json</option>
-<option>geobubbles.json</option>
-<!--option>geo.json</option-->
 <option>ObliqueStrategies.json</option>
-<option>IcosahedronSubdivisionLevel5.json</option>
-<option>ExtrusionHeart.json</option>
+<option>ObliqueStrategiess.json</option>
+<option>arc.json</option>
+<option>bubbles.json</option>
+<option>bubbless.json</option>
 <option>cob.json</option>
+<option>cobs.json</option>
 <option>cobweb.json</option>
 <option>cobwebs.json</option>
+<option>extrusion.json</option>
+<option>flip.json</option>
+<option>flipper.json</option>
+<option>flowers2.json</option>
+<option>flowers4.json</option>
+<option>for.json</option>
+<option>force.json</option>
+<option>forces.json</option>
+<option>fors.json</option>
+<option>geo.json</option>
+<option>geobubbles.json</option>
+<option>mirror.json</option>
+<option>mirror2.json</option>
 <option>pp3.json</option>
 <option>pp3s.json</option>
 <option>qq3.json</option>
 <option>qq3s.json</option>
+<option>rubik.json</option>
+<option>rubikFurnace.json</option>
+<option>rubikOnFire.json</option>
+<option>rubikOnFires.json</option>
+<option>rubiks.json</option>
+<option>x3dconnector.json</option>
+<option>x3dconnectorProto.json</option>
 </select>
 </td>
 <td>
@@ -65,7 +78,9 @@ Click <a onclick='updateXML();'>here</a> to load X3D XML into Cobweb and XML X3D
 	    
 <textarea id="xml" rows="15" cols="80"></textarea><br>
 <div id="x3domxml"></div>
+<!--
 <iframe  id='cobwebframe' src="cobwebframe.html"></iframe>
+-->
 </td>
 <td>
 Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into JSON X3DOM viewer and convert to XML (and display).<br>
@@ -86,21 +101,23 @@ Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into JSON X3DOM
 			// DISPLAY XML in X3DOM
 			$('#x3domxml').empty();
 			// Do this inner HTML so we can sneak script tag past JQuery (BAD BAD TODO)
-			$('#x3domxml').get()[0].innerHTML = xml.join("");
-	    	        $('textarea#xml').val(xml.join(""));
+			$('#x3domxml').get()[0].innerHTML = xml.join("\n");
+	    	        $('textarea#xml').val(xml.join("\n"));
 		} else {
 			$('#x3domxml').get()[0].innerHTML = $('textarea#xml').val();
 		}
 		x3dom.reload();
 		var content = $('textarea#xml').val();
+/*
 		var cobwebWindow = document.getElementById("cobwebframe").contentWindow ;
-		var cobwebEle = cobwebWindow.document.getElementById("x3dele");
+		var cobwebEle = cobwebWindow.document.getElementsByTagName("X3D")[0];
 		if (typeof cobwebWindow.X3D !== 'undefined') {
 			var browser = cobwebWindow.X3D.getBrowser(cobwebEle);
 			browser.replaceWorld(browser.createX3DFromString(content));
 		} else {
 			console.error("Cobweb disabled.  Use Firefox.");
 		}
+*/
         }
 
 	function filter(event) {
@@ -169,7 +186,7 @@ Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into JSON X3DOM
 	
 		intervalId = setInterval(runRoutes, 100);
 	    }
-	    loadX3DJS(selector, json, url, xml);
+	    loadX3DJS(document.querySelector(selector), json, url, xml);
 			
 	    updateXML(xml);
         }

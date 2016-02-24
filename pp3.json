@@ -1,7 +1,8 @@
 { "X3D": {
     "@profile":"Immersive",
-    "@version":3.3,
+    "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "@id":"x3dele",
     "head": {
         "meta": [
           {
@@ -35,6 +36,18 @@
           {
             "@name":"generator",
             "@content":"manual"
+          },
+          {
+            "@name":"translated",
+            "@content":"24 February 2016"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
           }
         ]
     },
@@ -56,29 +69,26 @@
                               "-children":[
                                 { "Shape":
                                   {
-                                    "-appearance":[
+                                    "-appearance":
                                       { "Appearance":
                                         {
-                                          "-material":[
+                                          "-material":
                                             { "Material":
                                               {
                                                 "@diffuseColor":[0.7,1,0],
                                                 "@transparency":0.5
                                               }
                                             }
-                                          ]
                                         }
-                                      }
-                                    ],
-                                    "-geometry":[
+                                      },
+                                    "-geometry":
                                       { "Extrusion":
                                         {
                                           "@creaseAngle":0.785,
-                                          "@crossSection":[1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00],
+                                          "@crossSection":[1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0],
                                           "@spine":[-2.5,0,0,-1.5,0,0]
                                         }
                                       }
-                                    ]
                                   }
                                 },
                                 { "#comment":"<Transform translation=\"-2.5 0 0\"> <Shape> <Text DEF=\"LeftString\" string='\"l\"'/> </Shape> </Transform> <StringSensor DEF=\"LeftSensor\" enabled=\"false\"/> <TouchSensor DEF=\"LeftTouch\" enabled=\"true\"/>"
@@ -94,29 +104,26 @@
                               "-children":[
                                 { "Shape":
                                   {
-                                    "-appearance":[
+                                    "-appearance":
                                       { "Appearance":
                                         {
-                                          "-material":[
+                                          "-material":
                                             { "Material":
                                               {
                                                 "@diffuseColor":[0,0.7,1],
                                                 "@transparency":0.5
                                               }
                                             }
-                                          ]
                                         }
-                                      }
-                                    ],
-                                    "-geometry":[
+                                      },
+                                    "-geometry":
                                       { "Extrusion":
                                         {
                                           "@creaseAngle":0.785,
-                                          "@crossSection":[1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00],
+                                          "@crossSection":[1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0],
                                           "@spine":[1.5,0,0,2.5,0,0]
                                         }
                                       }
-                                    ]
                                   }
                                 },
                                 { "Transform":
@@ -125,28 +132,25 @@
                                     "-children":[
                                       { "Shape":
                                         {
-                                          "-appearance":[
+                                          "-appearance":
                                             { "Appearance":
                                               {
-                                                "-material":[
+                                                "-material":
                                                   { "Material":
                                                     {
                                                       "@DEF":"MaterialLightBlue",
                                                       "@diffuseColor":[1,1,1]
                                                     }
                                                   }
-                                                ]
                                               }
-                                            }
-                                          ],
-                                          "-geometry":[
+                                            },
+                                          "-geometry":
                                             { "Text":
                                               {
                                                 "@DEF":"RightString",
                                                 "@string":["r"]
                                               }
                                             }
-                                          ]
                                         }
                                       }
                                     ]
@@ -156,8 +160,7 @@
                                   {
                                     "@description":"touch to activate",
                                     "@DEF":"RightSensor",
-                                    "@enabled":false,
-                                    "@deletionAllowed":true
+                                    "@enabled":false
                                   }
                                 },
                                 { "TouchSensor":
@@ -177,29 +180,26 @@
                               "-children":[
                                 { "Shape":
                                   {
-                                    "-appearance":[
+                                    "-appearance":
                                       { "Appearance":
                                         {
-                                          "-material":[
+                                          "-material":
                                             { "Material":
                                               {
                                                 "@diffuseColor":[0,0.7,1],
                                                 "@transparency":0.5
                                               }
                                             }
-                                          ]
                                         }
-                                      }
-                                    ],
-                                    "-geometry":[
+                                      },
+                                    "-geometry":
                                       { "Extrusion":
                                         {
                                           "@creaseAngle":0.785,
-                                          "@crossSection":[1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00],
+                                          "@crossSection":[1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0],
                                           "@spine":[0,1.5,0,0,2.5,0]
                                         }
                                       }
-                                    ]
                                   }
                                 },
                                 { "Transform":
@@ -208,27 +208,24 @@
                                     "-children":[
                                       { "Shape":
                                         {
-                                          "-appearance":[
+                                          "-appearance":
                                             { "Appearance":
                                               {
-                                                "-material":[
+                                                "-material":
                                                   { "Material":
                                                     {
                                                       "@USE":"MaterialLightBlue"
                                                     }
                                                   }
-                                                ]
                                               }
-                                            }
-                                          ],
-                                          "-geometry":[
+                                            },
+                                          "-geometry":
                                             { "Text":
                                               {
                                                 "@DEF":"UpString",
                                                 "@string":["u"]
                                               }
                                             }
-                                          ]
                                         }
                                       }
                                     ]
@@ -238,8 +235,7 @@
                                   {
                                     "@description":"touch to activate",
                                     "@DEF":"UpSensor",
-                                    "@enabled":false,
-                                    "@deletionAllowed":true
+                                    "@enabled":false
                                   }
                                 },
                                 { "TouchSensor":
@@ -259,29 +255,26 @@
                               "-children":[
                                 { "Shape":
                                   {
-                                    "-appearance":[
+                                    "-appearance":
                                       { "Appearance":
                                         {
-                                          "-material":[
+                                          "-material":
                                             { "Material":
                                               {
                                                 "@diffuseColor":[0.7,1,0],
                                                 "@transparency":0.5
                                               }
                                             }
-                                          ]
                                         }
-                                      }
-                                    ],
-                                    "-geometry":[
+                                      },
+                                    "-geometry":
                                       { "Extrusion":
                                         {
                                           "@creaseAngle":0.785,
-                                          "@crossSection":[1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00],
+                                          "@crossSection":[1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0],
                                           "@spine":[0,-2.5,0,0,-1.5,0]
                                         }
                                       }
-                                    ]
                                   }
                                 },
                                 { "#comment":"<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor description='touch to activate' DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>"
@@ -296,25 +289,22 @@
                               "-children":[
                                 { "Shape":
                                   {
-                                    "-appearance":[
+                                    "-appearance":
                                       { "Appearance":
                                         {
-                                          "-material":[
+                                          "-material":
                                             { "Material":
                                               {
                                                 "@diffuseColor":[1,0,0.7]
                                               }
                                             }
-                                          ]
                                         }
-                                      }
-                                    ],
-                                    "-geometry":[
+                                      },
+                                    "-geometry":
                                       { "Sphere":
                                         {
                                         }
                                       }
-                                    ]
                                   }
                                 },
                                 { "Transform":
@@ -324,26 +314,23 @@
                                     "-children":[
                                       { "Shape":
                                         {
-                                          "-appearance":[
+                                          "-appearance":
                                             { "Appearance":
                                               {
-                                                "-material":[
+                                                "-material":
                                                   { "Material":
                                                     {
                                                       "@USE":"MaterialLightBlue"
                                                     }
                                                   }
-                                                ]
                                               }
-                                            }
-                                          ],
-                                          "-geometry":[
+                                            },
+                                          "-geometry":
                                             { "Text":
                                               {
                                                 "@DEF":"CenterString"
                                               }
                                             }
-                                          ]
                                         }
                                       }
                                     ]
@@ -353,8 +340,7 @@
                                   {
                                     "@description":"touch to activate",
                                     "@DEF":"CenterSensor",
-                                    "@enabled":false,
-                                    "@deletionAllowed":true
+                                    "@enabled":false
                                   }
                                 },
                                 { "TouchSensor":

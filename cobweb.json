@@ -1,6 +1,6 @@
 { "X3D": {
     "@profile":"Immersive",
-    "@version":3.3,
+    "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
     "head": {
         "meta": [
@@ -23,6 +23,18 @@
           {
             "@name":"identifier",
             "@content":"http://coderextreme.net/X3DJSONLD/geo.x3d"
+          },
+          {
+            "@name":"translated",
+            "@content":"24 February 2016"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
           }
         ]
     },
@@ -61,27 +73,24 @@
                         "-children":[
                           { "Shape":
                             {
-                              "-geometry":[
+                              "-geometry":
                                 { "Sphere":
                                   {
                                     "@radius":0.25
                                   }
-                                }
-                              ],
-                              "-appearance":[
+                                },
+                              "-appearance":
                                 { "Appearance":
                                   {
-                                    "-material":[
+                                    "-material":
                                       { "Material":
                                         {
                                           "@diffuseColor":[1,0,0],
                                           "@transparency":0.2
                                         }
                                       }
-                                    ]
                                   }
                                 }
-                              ]
                             }
                           },
                           { "Script":
@@ -107,7 +116,7 @@
                                   "@value":[0,0,0]
                                 },
                                 {
-                                  "@name":"scalevel",
+                                  "@name":"scalvel",
                                   "@accessType":"inputOutput",
                                   "@type":"SFVec3f",
                                   "@value":[0,0,0]
@@ -121,25 +130,37 @@
                               "#sourceText":[
 "ecmascript:",
 "function initialize() {",
-"    velocity = new SFVec3f(- Math.random() * 0.25 + 0.125, - Math.random() * 0.25 + 0.125, - Math.random() * 0.25 + 0.125);",
+"    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);",
 "",
-"    scalevel = new SFVec3f(- Math.random() * 0.4, - Math.random() * 0.4, - Math.random() * 0.4);",
+"    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);",
+"}",
+"",
+"function set_translation(value) {",
+"   translation = value;",
+"}",
+"",
+"function set_scale(value) {",
+"   scale = value;",
+"}",
+"",
+"function translation_changed() {",
+"\treturn translation;",
 "}",
 "",
 "function set_fraction(value) {",
-"    translation = new SFVec3f(translation[0] - velocity[0], translation[1] - velocity[1], translation[2] - velocity[2]);",
-"    scale = new SFVec3f(scale[0] - scalevel[0], scale[1] - scalevel[1], scale[2] - scalevel[2]);",
+"    translation = new SFVec3f(\ttranslation[0] + velocity[0], translation[1] + velocity[1], translation[2] + velocity[2]);",
+"    scale = new SFVec3f(scale[0] + scalvel[0], scale[1] + scalvel[1], scale[2] + scalvel[2]);",
 "    for (var j = 0; j < 3; j++) {",
-"        // if you get to far away or too big, explode",
-"        if ( Math.abs(translation[j]) > 256) {",
-"            translation[j] = 0;",
-"            initialize();",
-"        }",
-"        if (Math.abs(scale[j]) > 20) {",
-"            scale[j] = scale[j]/2;",
-"            translation[j] = 0;",
-"            initialize();",
-"        }",
+"\t    // if you get to far away or too big, explode",
+"\t    if ( Math.abs(translation[j]) > 256) {",
+"\t\ttranslation[j] = 0;",
+"\t\tinitialize();",
+"\t    }",
+"\t    if (Math.abs(scale[j]) > 20) {",
+"\t\tscale[j] = scale[j]/2;",
+"\t\ttranslation[j] = 0;",
+"\t\tinitialize();",
+"\t    }",
 "    }",
 "}"
 ]
@@ -170,14 +191,6 @@
                           },
                           { "ROUTE":
                             {
-                              "@fromNode":"bubbleClock",
-                              "@fromField":"fraction_changed",
-                              "@toNode":"bounce",
-                              "@toField":"set_fraction"
-                            }
-                          },
-                          { "ROUTE":
-                            {
                               "@fromNode":"bounce",
                               "@fromField":"translation_changed",
                               "@toNode":"transform",
@@ -190,6 +203,14 @@
                               "@fromField":"scale_changed",
                               "@toNode":"transform",
                               "@toField":"set_scale"
+                            }
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromNode":"bubbleClock",
+                              "@fromField":"fraction_changed",
+                              "@toNode":"bounce",
+                              "@toField":"set_fraction"
                             }
                           }
                         ]

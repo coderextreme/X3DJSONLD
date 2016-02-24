@@ -192,7 +192,7 @@ function valueExpand(type, flat) {
 			if (flat === 'NULL') {
 				return JSON.stringify(null);
 			} else {
-				return flat;
+				return JSON.stringify(flat);
 			}
 		}
 
