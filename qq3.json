@@ -1,6 +1,6 @@
 { "X3D": {
     "@profile":"Immersive",
-    "@version":3.3,
+    "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
     "head": {
         "meta": [
@@ -35,6 +35,18 @@
           {
             "@name":"generator",
             "@content":"manual"
+          },
+          {
+            "@name":"translated",
+            "@content":"24 February 2016"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
           }
         ]
     },
@@ -56,21 +68,19 @@
                               "-children":[
                                 { "Shape":
                                   {
-                                    "-appearance":[
+                                    "-appearance":
                                       { "Appearance":
                                         {
-                                          "-material":[
+                                          "-material":
                                             { "Material":
                                               {
                                                 "@DEF":"MaterialLeftDown",
                                                 "@diffuseColor":[0.7,1,0]
                                               }
                                             }
-                                          ]
                                         }
-                                      }
-                                    ],
-                                    "-geometry":[
+                                      },
+                                    "-geometry":
                                       { "Extrusion":
                                         {
                                           "@spine":[-2.5,0,0,-1.5,0,0],
@@ -78,7 +88,6 @@
                                           "@crossSection":[1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00]
                                         }
                                       }
-                                    ]
                                   }
                                 }
                               ]
@@ -92,21 +101,19 @@
                               "-children":[
                                 { "Shape":
                                   {
-                                    "-appearance":[
+                                    "-appearance":
                                       { "Appearance":
                                         {
-                                          "-material":[
+                                          "-material":
                                             { "Material":
                                               {
                                                 "@DEF":"MaterialUpRight",
                                                 "@diffuseColor":[0,0.7,1]
                                               }
                                             }
-                                          ]
                                         }
-                                      }
-                                    ],
-                                    "-geometry":[
+                                      },
+                                    "-geometry":
                                       { "Extrusion":
                                         {
                                           "@spine":[1.5,0,0,2.5,0,0],
@@ -114,7 +121,6 @@
                                           "@crossSection":[1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00]
                                         }
                                       }
-                                    ]
                                   }
                                 }
                               ]
@@ -128,20 +134,18 @@
                               "-children":[
                                 { "Shape":
                                   {
-                                    "-appearance":[
+                                    "-appearance":
                                       { "Appearance":
                                         {
-                                          "-material":[
+                                          "-material":
                                             { "Material":
                                               {
                                                 "@USE":"MaterialUpRight"
                                               }
                                             }
-                                          ]
                                         }
-                                      }
-                                    ],
-                                    "-geometry":[
+                                      },
+                                    "-geometry":
                                       { "Extrusion":
                                         {
                                           "@spine":[0,1.5,0,0,2.5,0],
@@ -149,7 +153,6 @@
                                           "@crossSection":[1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00]
                                         }
                                       }
-                                    ]
                                   }
                                 }
                               ]
@@ -163,20 +166,18 @@
                               "-children":[
                                 { "Shape":
                                   {
-                                    "-appearance":[
+                                    "-appearance":
                                       { "Appearance":
                                         {
-                                          "-material":[
+                                          "-material":
                                             { "Material":
                                               {
                                                 "@USE":"MaterialLeftDown"
                                               }
                                             }
-                                          ]
                                         }
-                                      }
-                                    ],
-                                    "-geometry":[
+                                      },
+                                    "-geometry":
                                       { "Extrusion":
                                         {
                                           "@spine":[0,-2.5,0,0,-1.5,0],
@@ -184,7 +185,6 @@
                                           "@crossSection":[1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00]
                                         }
                                       }
-                                    ]
                                   }
                                 }
                               ]

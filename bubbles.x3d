@@ -46,21 +46,21 @@
                         //var orientations = [[0, 1, 0, 0], [0, 1, 0, -1.57], [0, 1, 0, 3.14], [0, 1, 0, 1.57], [0, 1, 0, 0] [1, 0, 0, -1.57], [0, 1, 0, 0], [1, 0, 0, 1.57], [0, 1, 0, 0]];
                         //Browser.println(lastKey);
                         var ov = lastKey;
-                        Browser.println(ov);      
+                        // Browser.println(ov);      
                         //Browser.println(positions.length);                  
                         do {
                             lastKey = Math.round(Math.random()*positions.length);
                         } while (lastKey === ov);
-                        Browser.println(lastKey);
+                        // Browser.println(lastKey);
                         var vc = lastKey;
                         
-                        Browser.println(orientations[ov]);
-                        Browser.println(orientations[vc]);
+                        // Browser.println(orientations[ov]);
+                        // Browser.println(orientations[vc]);
                         orientation = new MFRotation();
                         orientation[0] = new SFRotation(orientations[ov][0], orientations[ov][1], orientations[ov][2], orientations[ov][3]);
                         orientation[1] = new SFRotation(orientations[vc][0], orientations[vc][1], orientations[vc][2], orientations[vc][3]);
-                        Browser.println(positions[ov]);
-                        Browser.println(positions[vc]);
+                        // Browser.println(positions[ov]);
+                        // Browser.println(positions[vc]);
                         position = new MFVec3f();
                         position[0] = new SFVec3f(positions[ov][0],positions[ov][1],positions[ov][2]);
                         position[1] = new SFVec3f(positions[vc][0],positions[vc][1],positions[vc][2]);

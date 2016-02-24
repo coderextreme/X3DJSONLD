@@ -1,6 +1,6 @@
 { "X3D": {
     "@profile":"Immersive",
-    "@version":3.3,
+    "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
     "Scene": {
         "-children":[
@@ -43,25 +43,22 @@
                         "-children":[
                           { "Shape":
                             {
-                              "-geometry":[
+                              "-geometry":
                                 { "Sphere":
                                   {
                                   }
-                                }
-                              ],
-                              "-appearance":[
+                                },
+                              "-appearance":
                                 { "Appearance":
                                   {
-                                    "-material":[
+                                    "-material":
                                       { "Material":
                                         {
                                           "@diffuseColor":[1,1,1]
                                         }
                                       }
-                                    ]
                                   }
                                 }
-                              ]
                             }
                           }
                         ]

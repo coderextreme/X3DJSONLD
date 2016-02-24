@@ -1,32 +1,30 @@
 { "X3D": {
     "@profile":"Full",
-    "@version":3.3,
+    "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "@id":"x3dele",
     "Scene": {
-        "#comment":[
-          "Viewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views'/",
-          "PositionInterpolator DEF='TourPosition' key='0 1' keyValue='-0.5 -0.5 4 -0.5 0.5 4'/"
-        ],
         "-children":[
+          { "#comment":"Viewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views'/"
+          },
+          { "#comment":"PositionInterpolator DEF='TourPosition' key='0 1' keyValue='-0.5 -0.5 4 -0.5 0.5 4'/"
+          },
           { "GeoViewpoint":
             {
               "@DEF":"Tour",
               "@position":[0,0,4],
               "@orientation":[1,0,0,0],
-              "@description":"Tour Views",
-              "@centerOfRotation":[0,0,0],
-              "@retainUserOffsets":false,
-              "@containerField":"children"
+              "@description":"Tour Views"
             }
           },
           { "Background":
             {
-              "@backUrl":"\"cubemap/BK.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/BK.png\"",
-              "@bottomUrl":"\"cubemap/BT.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/BT.png\"",
-              "@frontUrl":"\"cubemap/FR.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/FR.png\"",
-              "@leftUrl":"\"cubemap/LF.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/LF.png\"",
-              "@rightUrl":"\"cubemap/RT.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/RT.png\"",
-              "@topUrl":"\"cubemap/TP.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/TP.png\""
+              "@backUrl":["cubemap/BK.png","http://coderextreme.net/X3DJSONLD/cubemap/BK.png"],
+              "@bottomUrl":["cubemap/BT.png","http://coderextreme.net/X3DJSONLD/cubemap/BT.png"],
+              "@frontUrl":["cubemap/FR.png","http://coderextreme.net/X3DJSONLD/cubemap/FR.png"],
+              "@leftUrl":["cubemap/LF.png","http://coderextreme.net/X3DJSONLD/cubemap/LF.png"],
+              "@rightUrl":["cubemap/RT.png","http://coderextreme.net/X3DJSONLD/cubemap/RT.png"],
+              "@topUrl":["cubemap/TP.png","http://coderextreme.net/X3DJSONLD/cubemap/TP.png"]
             }
           },
           { "Transform":
@@ -34,26 +32,23 @@
               "-children":[
                 { "Shape":
                   {
-                    "-geometry":[
+                    "-geometry":
                       { "Sphere":
                         {
                         }
-                      }
-                    ],
-                    "-appearance":[
+                      },
+                    "-appearance":
                       { "Appearance":
                         {
-                          "-material":[
+                          "-material":
                             { "Material":
                               {
                                 "@diffuseColor":[0.7,0.7,0.7],
                                 "@specularColor":[0.5,0.5,0.5]
                               }
                             }
-                          ]
                         }
                       }
-                    ]
                   }
                 }
               ]
@@ -122,35 +117,39 @@
 ]
             }
           },
-        { "ROUTE": {
-            "@fromNode":"TourTime",
-            "@fromField":"cycleTime",
-            "@toNode":"RandomTourTime",
-            "@toField":"set_fraction"
+          { "ROUTE":
+            {
+              "@fromNode":"TourTime",
+              "@fromField":"cycleTime",
+              "@toNode":"RandomTourTime",
+              "@toField":"set_fraction"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"RandomTourTime",
+              "@fromField":"position",
+              "@toNode":"TourPosition",
+              "@toField":"keyValue"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"TourTime",
+              "@fromField":"fraction_changed",
+              "@toNode":"TourPosition",
+              "@toField":"set_fraction"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"TourPosition",
+              "@fromField":"value_changed",
+              "@toNode":"Tour",
+              "@toField":"set_position"
+            }
           }
-	},
-        { "ROUTE": {
-            "@fromNode":"RandomTourTime",
-            "@fromField":"position",
-            "@toNode":"TourPosition",
-            "@toField":"keyValue"
-          }
-	},
-        { "ROUTE": {
-            "@fromNode":"TourTime",
-            "@fromField":"fraction_changed",
-            "@toNode":"TourPosition",
-            "@toField":"set_fraction"
-          }
-	},
-        { "ROUTE": {
-            "@fromNode":"TourPosition",
-            "@fromField":"value_changed",
-            "@toNode":"Tour",
-            "@toField":"set_position"
-          }
-        }
-      ]
+        ]
     }
   }
 }

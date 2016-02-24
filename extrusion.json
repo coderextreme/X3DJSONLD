@@ -1,6 +1,6 @@
 { "X3D": {
     "@profile":"Immersive",
-    "@version":4.0,
+    "@version":"4.0",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-4.0.xsd",
     "head": {
         "meta": [
@@ -27,6 +27,18 @@
           {
             "@name":"generator",
             "@content":"Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"translated",
+            "@content":"24 February 2016"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
           }
         ]
     },
@@ -37,7 +49,7 @@
               "-children":[
                 { "Shape":
                   {
-                    "-geometry":[
+                    "-geometry":
                       { "Extrusion":
                         {
                           "@DEF":"extrusion",
@@ -45,21 +57,18 @@
                           "@creaseAngle":0.785,
                           "@crossSection":[1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00]
                         }
-                      }
-                    ],
-                    "-appearance":[
+                      },
+                    "-appearance":
                       { "Appearance":
                         {
-                          "-material":[
+                          "-material":
                             { "Material":
                               {
                                 "@diffuseColor":[0,1,0]
                               }
                             }
-                          ]
                         }
                       }
-                    ]
                   }
                 },
                 { "TimeSensor":
@@ -89,9 +98,9 @@
 "",
 "                function set_fraction(value) {",
 "                        Browser.print(value);",
-"                        var endA = new SFVec3f(spine[0][0]*Math.random()*2+1, spine[0][1]*Math.random()*2+1, spine[0][2]*Math.random()*2+1);",
-"                        var endB = new SFVec3f(spine[1][0]*Math.random()*2-1, spine[1][1]*Math.random()*2-1, spine[1][2]*Math.random()*2-1);",
-"                        spine = new MFVec3f(endA, endB);",
+"                        var endA = new SFVec3f(spine[0][0]*Math.random()*2, spine[0][1]*Math.random()*2, spine[0][2]*Math.random()*2);",
+"                        var endB = new SFVec3f(spine[1][0]*Math.random()*2, spine[1][1]*Math.random()*2, spine[1][2]*Math.random()*2);",
+"\t\t        spine = new MFVec3f(endA, endB);",
 "                }",
 "                function set_spine(value) {",
 "                    spine = value;",

@@ -20,7 +20,7 @@
     <script type="text/javascript" src="X3DJSONLD.js"></script>
     <script type="text/javascript">
         function loadX3DOM(selector, json, url) {
-	    loadX3DJS(selector, json, url, []);
+	    loadX3DJS(document.querySelector(selector), json, url, []);
         }
 
 	function loadX3DJSON(selector, url) {

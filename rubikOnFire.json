@@ -1,6 +1,6 @@
 { "X3D": {
     "@profile":"Immersive",
-    "@version":3.3,
+    "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
     "Scene": {
         "-children":[
@@ -30,7 +30,7 @@
                       "@name":"myShape",
                       "@accessType":"inputOutput",
                       "@type":"SFNode",
-                      "-geometry":[
+                      "-children":[
                         { "Sphere":
                           {
                           }
@@ -62,19 +62,17 @@
                                     }
                                   ]
                               },
-                              "-appearance":[
+                              "-appearance":
                                 { "Appearance":
                                   {
-                                    "-material":[
+                                    "-material":
                                       { "Material":
                                         {
                                           "@diffuseColor":[1,1,1]
                                         }
                                       }
-                                    ]
                                   }
                                 }
-                              ]
                             }
                           }
                         ]
@@ -99,7 +97,7 @@
                       "@name":"myShape",
                       "@accessType":"inputOutput",
                       "@type":"SFNode",
-                      "-geometry":[
+                      "-children":[
                         { "Sphere":
                           {
                           }
@@ -200,7 +198,7 @@
                       "@name":"myShape",
                       "@accessType":"inputOutput",
                       "@type":"SFNode",
-                      "-geometry":[
+                      "-children":[
                         { "Sphere":
                           {
                           }
@@ -301,7 +299,7 @@
                       "@name":"myShape",
                       "@accessType":"inputOutput",
                       "@type":"SFNode",
-                      "-geometry":[
+                      "-children":[
                         { "Sphere":
                           {
                           }
@@ -397,7 +395,7 @@
                 },
                 {
                   "@name":"myShape",
-                  "-geometry":[
+                  "-children":[
                     { "Box":
                       {
                         "@size":[1,1,1]

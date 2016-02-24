@@ -134,7 +134,7 @@ ecmascript:
 	    	side = 0;
 	    }
 	    if (side != old) {
-	    	    Browser.print(f+" "+side);
+	    	    // Browser.print(f+" "+side);
 	    	    old = side;
 		    front_changed[0] = frontUrls[side];
 		    back_changed[0] = backUrls[side];
