@@ -179,6 +179,14 @@ function ConvertToX3DOM(object, parentkey, element, path) {
 }
 
 
+/*
+ * Load X3D JSON into an element
+ * element - the element to append to
+ * json - the JSON to convert to XML and DOM
+ * path - the path of the JSON file
+ * xml - the output xml string array
+ * NS - a namespace for cobweb
+ */
 function loadX3DJS(element, json, path, xml, NS) {
 	x3djsonNS = NS;
 	var child = CreateElement('X3D', NS);
