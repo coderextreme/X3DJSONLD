@@ -69,6 +69,7 @@
 <td>
 <input type="text" onchange="filter(event)"></input>
 Use Prototype Expander? <input id="prototype" type="checkbox" checked="true"></input>
+Use Namespace? <input id="namespace" type="checkbox" checked="true"></input>
 </td>
 </tr>
 <tr>
@@ -182,7 +183,11 @@ Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into JSON X3DOM
 	
 		intervalId = setInterval(runRoutes, 100);
 	    }
-	    loadX3DJS(document.querySelector(selector), json, url, xml);
+	    if ($('#namespace').is(':checked')) {
+		    loadX3DJS(document.querySelector(selector), json, url, xml, "http://www.x3dom.org/x3dom");
+	    } else {
+		    loadX3DJS(document.querySelector(selector), json, url, xml);
+	    }
 			
 	    updateXML(xml);
         }
