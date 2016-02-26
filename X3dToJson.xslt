@@ -37,6 +37,7 @@ POSSIBILITY OF SUCH DAMAGE.
    <meta name="title"       content="X3dToJson.xslt"/>
    <meta name="author"      content="Don Brutzman"/>
    <meta name="contributor" content="John Carlson provided lots of design guidance and co-development support"/>
+   <meta name="contributor" content="Roy Walmsley fixed recursive array overflows through tokenization and also helped with encoding development"/>
    <meta name="created"     content="8 October 2014"/>
    <meta name="description" content="XSLT stylesheet to convert X3D source into JSON syntax."/>
    <meta name="reference"   content="http://www.web3d.org/x3d/stylesheets/X3dToJson.html"/>
@@ -360,7 +361,7 @@ POSSIBILITY OF SUCH DAMAGE.
                             <xsl:text>children</xsl:text>
                         </xsl:when>
 						<!-- parent ProtoInterface handled separately -->
-                        <xsl:when test="($parentName = 'field') or ($parentName = 'fieldValue') or ($parentName = 'MetadataSet')">
+                        <xsl:when test="($parentName = 'field') or ($parentName = 'fieldValue')">
                             <xsl:text>children</xsl:text>
                         </xsl:when>
                         <xsl:when test="string-length(@containerField) > 0">
@@ -387,46 +388,47 @@ POSSIBILITY OF SUCH DAMAGE.
                 <!-- if first of multiple siblings, process all at once -->
                 <xsl:if test="not(preceding-sibling::*[@containerField = $fieldName] |
                                   preceding-sibling::*[$parentName = 'field']      [$fieldName = 'children'] |
-                                  preceding-sibling::*[$parentName = 'fieldValue'][$fieldName = 'children']    |
+                                  preceding-sibling::*[$parentName = 'fieldValue'] [$fieldName = 'children'] |
                                   preceding-sibling::*[$parentName = 'MetadataSet'][$fieldName = 'children'] |
-                                  preceding-sibling::*[$parentName = 'ProtoBody'] [$fieldName = 'children'] |
-                                  preceding-sibling::ProtoDeclare                 [$fieldName = 'children'] | 
-                                  preceding-sibling::ExternProtoDeclare           [$fieldName = 'children'] | 
-                                  preceding-sibling::ROUTE                        [$fieldName = 'children'] | 
-                                  preceding-sibling::comment()                    [$fieldName = 'children'])">
+                                  preceding-sibling::*[$parentName = 'ProtoBody']  [$fieldName = 'children'] |
+                                  preceding-sibling::ProtoDeclare                  [$fieldName = 'children'] | 
+                                  preceding-sibling::ExternProtoDeclare            [$fieldName = 'children'] | 
+                                  preceding-sibling::ROUTE                         [$fieldName = 'children'] | 
+                                  preceding-sibling::comment()                     [$fieldName = 'children'])">
                     <!-- first peer of its kind, found no preceding siblings with same name -->
                     
                     <xsl:text>&#10;</xsl:text>
                     <xsl:call-template name="print-indent"><xsl:with-param name="indent" select="$indent"/></xsl:call-template>
 					
-					<xsl:variable name="SFNodeType" select="($fieldName = 'back')               or ($fieldName = 'bottom')            or ($fieldName = 'front')              or 
-					                                        ($fieldName = 'left')               or ($fieldName = 'right')             or ($fieldName = 'top')                or 
-					                                        ($fieldName = 'backTexture')        or ($fieldName = 'bottomTexture')     or ($fieldName = 'frontTexture')       or 
-					                                        ($fieldName = 'leftTexture')        or ($fieldName = 'rightTexture')      or ($fieldName = 'topTexture')         or 
-					                                        ($fieldName = 'appearance')         or ($fieldName = 'body1')             or ($fieldName = 'body2')              or
-					                                        ($fieldName = 'collidable')         or ($fieldName = 'collider')          or
-					                                        ($fieldName = 'color')              or ($fieldName = 'colorRamp')         or ($fieldName = 'coord')              or 
-					                                        ($fieldName = 'controlPoint')       or ($fieldName = 'controlPoints')     or ($fieldName = 'crossSectionCurve')  or
-					                                        ($fieldName = 'emitter')            or ($fieldName = 'fillProperties')    or
-					                                        ($fieldName = 'fogCoord')           or ($fieldName = 'fontStyle')         or ($fieldName = 'geoOrigin')          or
-					                                        ($fieldName = 'geometry')           or ($fieldName = 'geometry1')         or ($fieldName = 'geometry2')          or
-					                                        ($fieldName = 'gradients')          or ($fieldName = 'layout')            or ($fieldName = 'lineProperties')     or
-                                                                                ($fieldName = 'massDensityModel')   or ($fieldName = 'material')          or
-                                                                                ($fieldName = 'metadata')           or ($fieldName = 'normal')            or ($fieldName = 'pickingGeometry')    or
-                                                                                ($fieldName = 'profileCurve')       or ($fieldName = 'proxy')             or 
-					                                        (($fieldName = 'renderStyle') and not (($parentName='ComposedVolumeStyle') or ($parentName='SegmentedVolumeData'))) or
-                                                                                ($fieldName = 'segmentIdentifiers') or ($fieldName = 'skinCoord')         or ($fieldName = 'skinNormal')         or
-                                                                                ($fieldName = 'segmentIdentifiers') or ($fieldName = 'surface')           or ($fieldName = 'surfaceNormals')     or
-                                                                                ($fieldName = 'targetObject')       or ($fieldName = 'texCoordRamp')      or
-                                                                                (($fieldName = 'texCoord') and not ($parentName='MultiTextureCoordinate')) or 
-                                                                                (($fieldName = 'texture') and not (($parentName='ComposedTexture3D') or ($parentName='MultiTexture')))           or
-                                                                                ($fieldName = 'textureProperties')  or
-                                                                                (($fieldName = 'textureTransform') and not ($parentName='MultiTextureTransform'))   or
-                                                                                ($fieldName = 'trajectoryCurve')    or ($fieldName = 'transferFunction')  or
+					<xsl:variable name="SFNodeType" select="($fieldName = 'back')               or ($fieldName = 'bottom')             or ($fieldName = 'front')              or 
+					                                        ($fieldName = 'left')               or ($fieldName = 'right')              or ($fieldName = 'top')                or 
+					                                        ($fieldName = 'backTexture')        or ($fieldName = 'bottomTexture')      or ($fieldName = 'frontTexture')       or 
+					                                        ($fieldName = 'leftTexture')        or ($fieldName = 'rightTexture')       or ($fieldName = 'topTexture')         or 
+					                                        ($fieldName = 'appearance')         or ($fieldName = 'body1')              or ($fieldName = 'body2')              or
+					                                        ($fieldName = 'collidable')         or ($fieldName = 'collider')           or
+					                                        ($fieldName = 'color')              or ($fieldName = 'colorRamp')          or ($fieldName = 'coord')              or 
+					                                        ($fieldName = 'controlPoint')       or ($fieldName = 'controlPoints')      or ($fieldName = 'crossSectionCurve')  or
+					                                        ($fieldName = 'emitter')            or ($fieldName = 'fillProperties')     or
+					                                        ($fieldName = 'fogCoord')           or ($fieldName = 'fontStyle')          or ($fieldName = 'geoOrigin')          or
+					                                        ($fieldName = 'geometry')           or ($fieldName = 'geometry1')          or ($fieldName = 'geometry2')          or
+					                                        ($fieldName = 'gradients')          or ($fieldName = 'layout')             or ($fieldName = 'lineProperties')     or
+                                                            ($fieldName = 'massDensityModel')   or ($fieldName = 'material')           or
+                                                            ($fieldName = 'metadata')           or ($fieldName = 'normal')             or ($fieldName = 'pickingGeometry')    or
+                                                            ($fieldName = 'profileCurve')       or ($fieldName = 'proxy')              or 
+					                                        (($fieldName = 'renderStyle') and (($parentName='BlendedVolumeStyle') or ($parentName='VolumeData'))) or
+                                                            ($fieldName = 'segmentIdentifiers') or ($fieldName = 'skinCoord')          or ($fieldName = 'skinNormal')         or
+                                                            ($fieldName = 'surface')            or ($fieldName = 'surfaceNormals')     or
+                                                            ($fieldName = 'targetObject')       or ($fieldName = 'texCoordRamp')       or
+                                                            (($fieldName = 'texCoord') and not($parentName='MultiTextureCoordinate'))  or 
+                                                            (($fieldName = 'texture')  and not(($parentName='ComposedTexture3D') or ($parentName='MultiTexture')))            or
+                                                            ($fieldName = 'textureProperties')  or
+                                                            (($fieldName = 'textureTransform') and not($parentName='MultiTextureTransform')) or
+                                                            ($fieldName = 'trajectoryCurve')    or ($fieldName = 'transferFunction')  or
 					                                        ($fieldName = 'viewpoint')          or ($fieldName = 'voxels')            or
 					                                        ($fieldName = 'weightTransferFunction1') or ($fieldName = 'weightTransferFunction2') or
                                                                                 ($parentName='CADFace'         and $fieldName = 'shape') or
-                                                                                ($parentName='CollidableShape' and $fieldName = 'shape')" />
+                                                                                ($parentName='CollidableShape' and $fieldName = 'shape') or
+                                                                                ($parentName='Sound'           and $fieldName = 'source')" />
 
 					<!-- contained node containerField -->
                     <xsl:if test="not(local-name() = 'ProtoInterface') and not(local-name() = 'ProtoBody')">
@@ -445,13 +447,13 @@ POSSIBILITY OF SUCH DAMAGE.
                                            self::comment() |
                                            following-sibling::*[@containerField = $fieldName] | 
 										   following-sibling::*[$parentName = 'field']      [$fieldName = 'children'] |
-                                           following-sibling::*[$parentName = 'fieldValue'][$fieldName = 'children']    |
+                                           following-sibling::*[$parentName = 'fieldValue'] [$fieldName = 'children'] |
 										   following-sibling::*[$parentName = 'MetadataSet'][$fieldName = 'children'] |
-                                           following-sibling::*[$parentName = 'ProtoBody'] [$fieldName = 'children'] |
-                                           following-sibling::ProtoDeclare                 [$fieldName = 'children'] | 
-                                           following-sibling::ExternProtoDeclare           [$fieldName = 'children'] | 
-                                           following-sibling::ROUTE                        [$fieldName = 'children'] | 
-                                           following-sibling::comment()                    [$fieldName = 'children'])">
+                                           following-sibling::*[$parentName = 'ProtoBody']  [$fieldName = 'children'] |
+                                           following-sibling::ProtoDeclare                  [$fieldName = 'children'] | 
+                                           following-sibling::ExternProtoDeclare            [$fieldName = 'children'] | 
+                                           following-sibling::ROUTE                         [$fieldName = 'children'] | 
+                                           following-sibling::comment()                     [$fieldName = 'children'])">
                         <!-- greedy algorithm to process all elements of this field type at once -->
                         <!-- base case: simple element, optional attributes, accessed by containerField -->
                         <xsl:text>&#10;</xsl:text>
@@ -996,20 +998,22 @@ POSSIBILITY OF SUCH DAMAGE.
                             <xsl:text>&quot; mode</xsl:text>
                         </xsl:when>
                         <xsl:otherwise>
-                            <xsl:text> contains stray text</xsl:text>
+                            <xsl:text> contains stray text characters: &quot;</xsl:text>
+							<xsl:value-of select="."/>
+                            <xsl:text>&quot;</xsl:text>
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:variable>
         
                 <xsl:call-template name="trace">
                     <xsl:with-param name="message">
+						<xsl:value-of select="$textMessage"/>
                         <xsl:if test="($traceScripts = 'true')">
                             <xsl:text>&#10;</xsl:text>
                             <xsl:value-of select="."/>
                         </xsl:if>
                     </xsl:with-param>
                     <xsl:with-param name="element" select="$elementName"/>
-                    <xsl:with-param name="name"    select="../@name"/>
                     <xsl:with-param name="DEF"     select="../@DEF"/>
                     <xsl:with-param name="USE"     select="../@USE"/>
                     <xsl:with-param name="traceEnabled"><xsl:text>true</xsl:text></xsl:with-param><!-- override -->
@@ -1386,7 +1390,7 @@ POSSIBILITY OF SUCH DAMAGE.
                 <!-- Convert hexadecimal values to decimal -->
                 <xsl:when test="starts-with($singleInteger, '0x')">
                     <xsl:call-template name="hexToDecimal">
-                        <xsl:with-param name="hex" select="substring($singleInteger, 3)"/>
+                        <xsl:with-param name="hexDigits" select="substring($singleInteger, 3)"/>
                     </xsl:call-template>
                 </xsl:when>
                 <!-- Already decimal so just print out -->
@@ -1402,16 +1406,19 @@ POSSIBILITY OF SUCH DAMAGE.
     </xsl:template>
     
     <xsl:template name="hexToDecimal">
-        <xsl:param name="hex"/>
-        <xsl:param name="num" select="0"/>
-        <xsl:param name="MSB" select="translate(substring($hex, 1, 1), 'abcdef', 'ABCDEF')"/>
-        <xsl:param name="value" select="string-length(substring-before('0123456789ABCDEF', $MSB))"/>
-        <xsl:param name="result" select="16 * $num + $value"/>
+        <!-- Converts hexadecimal digits to decimal value, one digit at a time using recursion-->
+        <xsl:param name="hexDigits"/> <!-- The hexadecimal digits to be converted -->
+        <xsl:param name="decimalValue" select="0"/> <!-- The decimal value, which may already be partly computed -->
+        <xsl:variable name="mostSignificantHexDigit" select="translate(substring($hexDigits, 1, 1), 'abcdef', 'ABCDEF')"/>
+        <!-- One line trick to convert 0 to 0, 1 to 1, ..., A to 10, B to 11, ..., F to 16 -->
+        <xsl:variable name="decimalValueOfHexDigit" select="string-length(substring-before('0123456789ABCDEF', $mostSignificantHexDigit))"/>
+        <xsl:variable name="result" select="16 * $decimalValue + $decimalValueOfHexDigit"/>
         <xsl:choose>
-            <xsl:when test="string-length($hex) > 1">
+            <!-- tail recursion to convert leading value in array from hexadecimal to integer -->
+            <xsl:when test="string-length($hexDigits) > 1">
                 <xsl:call-template name="hexToDecimal">
-                    <xsl:with-param name="hex" select="substring($hex, 2)"/>
-                    <xsl:with-param name="num" select="$result"/>
+                    <xsl:with-param name="hexDigits" select="substring($hexDigits, 2)"/>
+                    <xsl:with-param name="decimalValue" select="$result"/>
                 </xsl:call-template>
             </xsl:when>
             <xsl:otherwise>
@@ -1541,8 +1548,8 @@ POSSIBILITY OF SUCH DAMAGE.
             <xsl:call-template name="print-indent">
                 <xsl:with-param name="indent" select="$indent - 1"/>
             </xsl:call-template>
-            <xsl:if test="(string-length($element) > 0)">
-                <xsl:value-of select="$element"/>
+            <xsl:if test="(string-length(normalize-space($element)) > 0)">
+                <xsl:value-of select="normalize-space($element)"/>
                 <xsl:text> </xsl:text>
             </xsl:if>
             <xsl:if test="(string-length($name) > 0)">
@@ -1550,7 +1557,7 @@ POSSIBILITY OF SUCH DAMAGE.
                 <xsl:value-of select="$name"/>
                 <xsl:text> </xsl:text>
             </xsl:if>
-            <xsl:if test="(string-length($DEF) > 0)">">
+            <xsl:if test="(string-length($DEF) > 0)">
                 <xsl:text>DEF=</xsl:text>
                 <xsl:value-of select="$DEF"/>
                 <xsl:text> </xsl:text>
@@ -1560,10 +1567,12 @@ POSSIBILITY OF SUCH DAMAGE.
                 <xsl:value-of select="$USE"/>
                 <xsl:text> </xsl:text>
             </xsl:if>
-            <xsl:value-of select="$message"/>
+            <xsl:value-of select="normalize-space($message)"/>
         </xsl:variable>
         <xsl:if test="(string-length(normalize-space($fullMessage)) > 0)">
-            <xsl:message><xsl:value-of select="$fullMessage"/></xsl:message>
+            <xsl:message>
+				<xsl:value-of select="normalize-space($fullMessage)"/>
+			</xsl:message>
         </xsl:if>
       </xsl:if>
     </xsl:template>

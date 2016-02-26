@@ -56,6 +56,7 @@ function ConvertObject(key, object, element, path) {
 			if (key === 'connect' || key === 'fieldValue' || key === 'field' || key === 'meta') {
 				for (var childkey in object[key]) {  // for each field
 					if (typeof object[key][childkey] === 'object') {
+						// var child = document.createElementNS("http://www.web3d.org/specifications/x3d", key);
 						var child = document.createElement(key);
 						ConvertToX3DOM(object[key][childkey], childkey, child, path);
 						element.appendChild(child);
@@ -63,6 +64,7 @@ function ConvertObject(key, object, element, path) {
 					}
 				}
 			} else {
+				// var child = document.createElementNS("http://www.web3d.org/specifications/x3d", key);
 				var child = document.createElement(key);
 				ConvertToX3DOM(object[key], key, child, path);
 				element.appendChild(child);
@@ -171,7 +173,7 @@ function ConvertToX3DOM(object, parentkey, element, path) {
 
 
 function loadX3DJS(element, json, path, xml) {
-	var child = document.createElement('X3D')
+	var child = document.createElementNS("http://www.web3d.org/specifications/x3d", 'X3D')
 	ConvertToX3DOM(json, "", child, path);
 	element.appendChild(child);
 /*
