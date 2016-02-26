@@ -16,6 +16,8 @@ if (typeof Browser === 'undefined') {
 	}
 }
 
+var x3djsonNS;
+
 // 'http://www.web3d.org/specifications/x3d-namespace'
 
 // Load X3D JSON into web page
@@ -37,6 +39,13 @@ function ConvertChildren(parentkey, object, element, path) {
 	}
 }
 
+function CreateElement(key, x3djsonNS) {
+	if (typeof x3djsonNS === 'undefined') {
+		return document.createElement(key);
+	} else {
+		return document.createElementNS(x3djsonNS, key);
+	}
+}
 function ConvertObject(key, object, element, path) {
 	if (object !== null && typeof object[key] === 'object') {
 		if (key.substr(0,1) === '@') {
@@ -56,16 +65,14 @@ function ConvertObject(key, object, element, path) {
 			if (key === 'connect' || key === 'fieldValue' || key === 'field' || key === 'meta') {
 				for (var childkey in object[key]) {  // for each field
 					if (typeof object[key][childkey] === 'object') {
-						// var child = document.createElementNS("http://www.web3d.org/specifications/x3d", key);
-						var child = document.createElement(key);
+						var child = CreateElement(key, x3djsonNS);
 						ConvertToX3DOM(object[key][childkey], childkey, child, path);
 						element.appendChild(child);
 						element.appendChild(document.createTextNode("\n"));
 					}
 				}
 			} else {
-				// var child = document.createElementNS("http://www.web3d.org/specifications/x3d", key);
-				var child = document.createElement(key);
+				var child = CreateElement(key, x3djsonNS);
 				ConvertToX3DOM(object[key], key, child, path);
 				element.appendChild(child);
 				element.appendChild(document.createTextNode("\n"));
@@ -172,8 +179,9 @@ function ConvertToX3DOM(object, parentkey, element, path) {
 }
 
 
-function loadX3DJS(element, json, path, xml) {
-	var child = document.createElementNS("http://www.web3d.org/specifications/x3d", 'X3D')
+function loadX3DJS(element, json, path, xml, NS) {
+	x3djsonNS = NS;
+	var child = CreateElement('X3D', NS);
 	ConvertToX3DOM(json, "", child, path);
 	element.appendChild(child);
 /*
