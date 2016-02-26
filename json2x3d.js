@@ -50,14 +50,14 @@ function ConvertObject(key, object, element, path) {
 			if (key === 'connect' || key === 'fieldValue' || key === 'field' || key === 'meta') {
 				for (var childkey in object[key]) {  // for each field
 					if (typeof object[key][childkey] === 'object') {
-						var child = document.createElement(key);
+						var child = document.createElementNS("http://www.web3d.org/specifications/x3d", key);
 						ConvertToX3DOM(object[key][childkey], childkey, child, path);
 						element.appendChild(child);
 						element.appendChild(document.createTextNode("\n"));
 					}
 				}
 			} else {
-				var child = document.createElement(key);
+				var child = document.createElementNS("http://www.web3d.org/specifications/x3d", key);
 				ConvertToX3DOM(object[key], key, child, path);
 				element.appendChild(child);
 				element.appendChild(document.createTextNode("\n"));
