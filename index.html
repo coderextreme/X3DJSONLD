@@ -21,7 +21,7 @@
 <table>
 <tr>
 <td>
-<select>
+<select id="file">
 <option>ArchHalf.json</option>
 <option>ArchPrototype.json</option>
 <option>ArchPrototypes.json</option>
@@ -69,7 +69,12 @@
 <td>
 <input type="text" onchange="filter(event)"></input>
 Use Prototype Expander? <input id="prototype" type="checkbox" checked="true"></input>
-Use Namespace? <input id="namespace" type="checkbox" checked="true"></input>
+Use Namespace: <select id="namespace">
+<option>http://www.w3.org/1999/xhtml</option> <!-- X3DOM XML -->
+<option>http://www.x3dom.org/x3dom</option>
+<option>http://www.web3d.org/specifications/x3d-namespace</option>  <!-- COBWEB -->
+<option>none</option> <!-- X3DOM HTML -->
+</select>
 </td>
 </tr>
 <tr>
@@ -118,7 +123,7 @@ Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into JSON X3DOM
         }
 
 	function filter(event) {
-		$.map($("select option"), function(option, i) {
+		$.map($("#file option"), function(option, i) {
 			var text = $(option).text();
 			if (text.indexOf(event.target.value) >= 0) {
 				$(option).show();
@@ -131,7 +136,7 @@ Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into JSON X3DOM
 	}
 
         function loadX3DOM(selector, json, url) {
-	    $(selector+" X3D").remove();
+	    $(selector).empty();
 	    var xml = new LOG();
 	    if ($('#prototype').is(':checked')) {
 
@@ -183,10 +188,14 @@ Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into JSON X3DOM
 	
 		intervalId = setInterval(runRoutes, 100);
 	    }
-	    if ($('#namespace').is(':checked')) {
-		    loadX3DJS(document.querySelector(selector), json, url, xml, "http://www.x3dom.org/x3dom");  // Cobweb
-	    } else {
-		    loadX3DJS(document.querySelector(selector), json, url, xml); // X3DOM
+	    var NS = $('#namespace option:selected').text();
+	    switch(NS) {
+	    case "none":
+		document.querySelector(selector).appendChild(loadX3DJS(json, url, xml)); // X3DOM
+		break;
+	    default:
+		document.querySelector(selector).appendChild(loadX3DJS(json, url, xml, NS));  // Cobweb if not XHTML NS
+		break;
 	    }
 			
 	    updateXML(xml);
@@ -205,8 +214,8 @@ Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into JSON X3DOM
 	}
 
 	$("select").change(function() {
-		$("X3D").remove();
-		var url = $('select option:selected').text();
+		$("#x3domjson").empty();
+		var url = $('#file option:selected').text();
 		loadX3DJSON('#x3domjson', url);
 	});
 

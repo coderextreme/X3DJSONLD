@@ -12,7 +12,9 @@ if (typeof Browser === 'undefined') {
 				return JSON.parse('['+obj+']');
 			}
 		},
-		createX3DFromString : function(string) { return loadX3DJS(undefined, JSON.parse(string), 'foo.json'); }
+		appendTo : function(element, json) {
+			 return ConvertToX3DOM(json, "", element, 'foo.json');
+		}
 	}
 }
 
@@ -63,8 +65,11 @@ function ConvertObject(key, object, element, path) {
 				element.appendChild(child);
 			}
 		} else if (key === '#sourceText') {
-			// var child = document.createCDATASection(object[key].join("\n").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&"));
 			var child = document.createTextNode(object[key].join("\n"));
+			if (typeof x3djsonNS !== 'undefined' && x3djsonNS !== "http://www.w3.org/1999/xhtml") {
+				var child = document.createCDATASection(object[key].join("\n").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&"));
+			}
+			$(element).css("display", "none");
 			element.appendChild(child);
 		} else {
 			if (key === 'connect' || key === 'fieldValue' || key === 'field' || key === 'meta') {
@@ -192,23 +197,18 @@ function ConvertToX3DOM(object, parentkey, element, path) {
  * xml - the output xml string array
  * NS - a namespace for cobweb
  */
-function loadX3DJS(element, json, path, xml, NS) {
+function loadX3DJS(json, path, xml, NS) {
 	x3djsonNS = NS;
 	var child = CreateElement('X3D', NS);
 	ConvertToX3DOM(json, "", child, path);
-	element.appendChild(child);
-/*
-	if (typeof x3dom !== 'undefined' && typeof x3dom.reload === 'function') {
-		x3dom.reload();
-	}
-*/
-	if (typeof xml !== 'undefined') {
+	if (typeof xml !== 'undefined' && typeof xml.push === 'function') {
 		xml.push('<?xml version="1.0" encoding="UTF-8"?>');
 		xml.push('<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">');
 		// for Cobweb
 		var serializer = new XMLSerializer();
 		xml.push(serializer.serializeToString(child));
 	}
+	return child;
 }
 
 if (typeof module === 'object')  {
