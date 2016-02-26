@@ -184,9 +184,9 @@ Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into JSON X3DOM
 		intervalId = setInterval(runRoutes, 100);
 	    }
 	    if ($('#namespace').is(':checked')) {
-		    loadX3DJS(document.querySelector(selector), json, url, xml, "http://www.x3dom.org/x3dom");
+		    loadX3DJS(document.querySelector(selector), json, url, xml, "http://www.x3dom.org/x3dom");  // Cobweb
 	    } else {
-		    loadX3DJS(document.querySelector(selector), json, url, xml);
+		    loadX3DJS(document.querySelector(selector), json, url, xml); // X3DOM
 	    }
 			
 	    updateXML(xml);
