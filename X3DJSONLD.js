@@ -43,7 +43,12 @@ function CreateElement(key, x3djsonNS) {
 	if (typeof x3djsonNS === 'undefined') {
 		return document.createElement(key);
 	} else {
-		return document.createElementNS(x3djsonNS, key);
+		var child = document.createElementNS(x3djsonNS, key);
+		if (child == null || typeof child === 'undefined') {
+			console.log('Trouble creating element for', key);
+			child = document.createElement(key);
+		}
+		return child;
 	}
 }
 function ConvertObject(key, object, element, path) {
