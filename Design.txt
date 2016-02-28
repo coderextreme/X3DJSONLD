@@ -40,5 +40,5 @@ Use Cases:
 		by Keyword
 		by Metadata
 		by Author
-		by Copany
+		by Comypany
 		Others?
