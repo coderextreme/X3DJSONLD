@@ -3,6 +3,7 @@
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
     "@id":"x3dele",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "Scene": {
         "-children":[
           { "NavigationInfo":
@@ -135,7 +136,8 @@
                                 "-parts":[
                                   { "ShaderPart":
                                     {
-                                      "@url":["bubbles.vs","http://coderextreme.net/X3DJSONLD/bubbles.vs"]
+                                      "@url":["bubbles.vs","http://coderextreme.net/X3DJSONLD/bubbles.vs"],
+                                      "@type":"VERTEX"
                                     }
                                   },
                                   { "ShaderPart":
@@ -224,7 +226,7 @@
 "                        // Browser.println(ov);      ",
 "                        //Browser.println(positions.length);                  ",
 "                        do {",
-"                            lastKey = Math.round(Math.random()*positions.length);",
+"                            lastKey = Math.round(Math.random()*(positions.length-1));",
 "                        } while (lastKey === ov);",
 "                        // Browser.println(lastKey);",
 "                        var vc = lastKey;",

@@ -1,8 +1,9 @@
 {
   "X3D": {
     "@profile": "Immersive",
-    "@version": 4,
+    "@version": "4.0",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-4.0.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "meta": [
         {
@@ -28,6 +29,18 @@
         {
           "@name": "generator",
           "@content": "Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit"
+        },
+        {
+          "@name": "translated",
+          "@content": "02 March 2016"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+        },
+        {
+          "@name": "warning",
+          "@content": "An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
         }
       ]
     },
@@ -52,28 +65,22 @@
                         "-children": [
                           {
                             "Shape": {
-                              "-geometry": [
-                                {
-                                  "Sphere": {}
-                                }
-                              ],
-                              "-appearance": [
-                                {
-                                  "Appearance": {
-                                    "-material": [
-                                      {
-                                        "Material": {
-                                          "@diffuseColor": [
-                                            1,
-                                            0,
-                                            0
-                                          ]
-                                        }
-                                      }
-                                    ]
+                              "-geometry": {
+                                "Sphere": {}
+                              },
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@diffuseColor": [
+                                        1,
+                                        0,
+                                        0
+                                      ]
+                                    }
                                   }
                                 }
-                              ]
+                              }
                             }
                           }
                         ],
@@ -204,28 +211,22 @@
                         "-children": [
                           {
                             "Shape": {
-                              "-geometry": [
-                                {
-                                  "Sphere": {}
-                                }
-                              ],
-                              "-appearance": [
-                                {
-                                  "Appearance": {
-                                    "-material": [
-                                      {
-                                        "Material": {
-                                          "@diffuseColor": [
-                                            1,
-                                            0,
-                                            0
-                                          ]
-                                        }
-                                      }
-                                    ]
+                              "-geometry": {
+                                "Sphere": {}
+                              },
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@diffuseColor": [
+                                        1,
+                                        0,
+                                        0
+                                      ]
+                                    }
                                   }
                                 }
-                              ]
+                              }
                             }
                           }
                         ],
@@ -352,76 +353,70 @@
                   "-children": [
                     {
                       "Shape": {
-                        "-geometry": [
-                          {
-                            "Extrusion": {
-                              "@DEF": "cylinderlinkAcylinderextrusion",
-                              "@creaseAngle": 0.785,
-                              "@crossSection": [
-                                1,
-                                0,
-                                0.92,
-                                -0.38,
-                                0.71,
-                                -0.71,
-                                0.38,
-                                -0.92,
-                                0,
-                                -1,
-                                -0.38,
-                                -0.92,
-                                -0.71,
-                                -0.71,
-                                -0.92,
-                                -0.38,
-                                -1,
-                                0,
-                                -0.92,
-                                0.38,
-                                -0.71,
-                                0.71,
-                                -0.38,
-                                0.92,
-                                0,
-                                1,
-                                0.38,
-                                0.92,
-                                0.71,
-                                0.71,
-                                0.92,
-                                0.38,
-                                1,
-                                0
-                              ],
-                              "@spine": [
-                                0,
-                                -50,
-                                0,
-                                0,
-                                50,
-                                0
-                              ],
-                              "@class": "cylinderlinkAcylinderextrusion"
+                        "-geometry": {
+                          "Extrusion": {
+                            "@DEF": "cylinderlinkAcylinderextrusion",
+                            "@creaseAngle": 0.785,
+                            "@crossSection": [
+                              1,
+                              0,
+                              0.92,
+                              -0.38,
+                              0.71,
+                              -0.71,
+                              0.38,
+                              -0.92,
+                              0,
+                              -1,
+                              -0.38,
+                              -0.92,
+                              -0.71,
+                              -0.71,
+                              -0.92,
+                              -0.38,
+                              -1,
+                              0,
+                              -0.92,
+                              0.38,
+                              -0.71,
+                              0.71,
+                              -0.38,
+                              0.92,
+                              0,
+                              1,
+                              0.38,
+                              0.92,
+                              0.71,
+                              0.71,
+                              0.92,
+                              0.38,
+                              1,
+                              0
+                            ],
+                            "@spine": [
+                              0,
+                              -50,
+                              0,
+                              0,
+                              50,
+                              0
+                            ],
+                            "@class": "cylinderlinkAcylinderextrusion"
+                          }
+                        },
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  0,
+                                  1,
+                                  0
+                                ]
+                              }
                             }
                           }
-                        ],
-                        "-appearance": [
-                          {
-                            "Appearance": {
-                              "-material": [
-                                {
-                                  "Material": {
-                                    "@diffuseColor": [
-                                      0,
-                                      1,
-                                      0
-                                    ]
-                                  }
-                                }
-                              ]
-                            }
-                          }
-                        ]
+                        }
                       }
                     },
                     {

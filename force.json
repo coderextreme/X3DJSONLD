@@ -2,6 +2,7 @@
     "@profile":"Immersive",
     "@version":"4.0",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-4.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
           {
@@ -30,7 +31,7 @@
           },
           {
             "@name":"translated",
-            "@content":"24 February 2016"
+            "@content":"02 March 2016"
           },
           {
             "@name":"generator",
@@ -169,7 +170,7 @@
 "                                                old = translation;",
 "\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
 "                                                keyValue = new MFVec3f(old, translation);",
-"\t\t\t\t\t\t//Browser.println(translation);",
+"\t\t\t\t\t\tBrowser.println(translation);",
 "\t\t\t\t\t}"
 ]
                       }
@@ -479,8 +480,10 @@
               "#sourceText":[
 "ecmascript:",
 "\tfunction add_node(value) {",
+"                Browser.print('hey ', counter);",
 "                counter = counter++;",
-"\t\tnode_changed = Browser.appendTo($('Scene')[0], { 'ProtoInstance': { '@name':'node', '@DEF':'node'+counter, 'fieldValue': [ { '@name':'position', '@value':[0.0,0.0,0.0]}]}});",
+"\t\tnode_changed = Browser.createX3DFromString('{ \"ProtoInstance\": { \"@name\":\"node\", \"@DEF\":\"node'+counter+'\", \"fieldValue\": [ { \"@name\":\"position\", \"@value\":[0.0,0.0,0.0]}]}}');",
+"                ModifiableNode.children[ModifiableNode.children.length] = node_changed[0];",
 "        }"
 ]
             }
