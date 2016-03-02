@@ -1,0 +1,282 @@
+{ "X3D": {
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "Scene": {
+        "-ErrorChildNodeFieldNameNotFound":[
+          { "Viewpoint":
+            {
+              "@position":[0,0,5]
+            }
+          }
+        ],
+        "-ErrorChildNodeFieldNameNotFound":[
+          { "Background":
+            {
+              "@skyColor":[0.4,0.4,0.4]
+            }
+          }
+        ],
+        "-ErrorChildNodeFieldNameNotFound":[
+          { "Transform":
+            {
+              "@DEF":"G1",
+              "-ErrorChildNodeFieldNameNotFound":[
+                { "Shape":
+                    "-ErrorChildNodeFieldNameNotFound":[
+                      { "Appearance":
+                          "-ErrorChildNodeFieldNameNotFound":[
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.7,0.2,0.2]
+                              }
+                            }
+                          ]
+                      }
+                    ],
+                    "-ErrorChildNodeFieldNameNotFound":[
+                      { "Sphere":
+                        {
+                          "@radius":0.1
+                        }
+                      }
+                    ]
+                }
+              ],
+              "-ErrorChildNodeFieldNameNotFound":[
+                { "PlaneSensor":
+                  {
+                    "@DEF":"PS1"
+                  }
+                }
+              ],
+              "-children":[
+                { "ROUTE":
+                  {
+                    "@fromNode":"PS1",
+                    "@fromField":"translation_changed",
+                    "@toNode":"G1",
+                    "@toField":"translation"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "-ErrorChildNodeFieldNameNotFound":[
+          { "Transform":
+            {
+              "@DEF":"G2",
+              "@translation":[1,-1,0.01],
+              "-ErrorChildNodeFieldNameNotFound":[
+                { "Shape":
+                    "-ErrorChildNodeFieldNameNotFound":[
+                      { "Appearance":
+                          "-ErrorChildNodeFieldNameNotFound":[
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.2,0.7,0.2]
+                              }
+                            }
+                          ]
+                      }
+                    ],
+                    "-ErrorChildNodeFieldNameNotFound":[
+                      { "Sphere":
+                        {
+                          "@radius":0.1
+                        }
+                      }
+                    ]
+                }
+              ],
+              "-ErrorChildNodeFieldNameNotFound":[
+                { "PlaneSensor":
+                  {
+                    "@DEF":"PS2"
+                  }
+                }
+              ],
+              "-children":[
+                { "ROUTE":
+                  {
+                    "@fromNode":"PS2",
+                    "@fromField":"translation_changed",
+                    "@toNode":"G2",
+                    "@toField":"translation"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "-ErrorChildNodeFieldNameNotFound":[
+          { "Transform":
+            {
+              "@DEF":"C0",
+              "-ErrorChildNodeFieldNameNotFound":[
+                { "Transform":
+                  {
+                    "@DEF":"C1",
+                    "-ErrorChildNodeFieldNameNotFound":[
+                      { "Transform":
+                        {
+                          "@DEF":"C2",
+                          "-ErrorChildNodeFieldNameNotFound":[
+                            { "Shape":
+                                "-ErrorChildNodeFieldNameNotFound":[
+                                  { "Appearance":
+                                      "-ErrorChildNodeFieldNameNotFound":[
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.2,0.7,0.7],
+                                            "@transparency":0.5
+                                          }
+                                        }
+                                      ]
+                                  }
+                                ],
+                                "-ErrorChildNodeFieldNameNotFound":[
+                                  { "Cylinder":
+                                    {
+                                      "@radius":0.05
+                                    }
+                                  }
+                                ]
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "-ErrorChildNodeFieldNameNotFound":[
+          { "Script":
+            {
+              "@DEF":"S1",
+              "field": [
+                {
+                  "@name":"startnode",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFNode",
+                  "-children":[
+                    { "Transform":
+                      {
+                        "@USE":"G1"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "@name":"endnode",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFNode",
+                  "-children":[
+                    { "Transform":
+                      {
+                        "@USE":"G2"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "@name":"set_startpoint",
+                  "@accessType":"inputOnly",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"set_endpoint",
+                  "@accessType":"inputOnly",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"translation",
+                  "@accessType":"outputOnly",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"rotation",
+                  "@accessType":"outputOnly",
+                  "@type":"SFRotation"
+                },
+                {
+                  "@name":"scale",
+                  "@accessType":"outputOnly",
+                  "@type":"SFVec3f"
+                }
+              ],
+              "#sourceText":[
+"ecmascript:",
+"        function recompute(startpoint,endpoint){",
+"            var dif = endpoint.subtract(startpoint);",
+"            var dist = dif.length()*.5;",
+"            var dif2 = dif.multiply(.5);",
+"            var norm = dif.normalize();",
+"            var trans = startpoint.add(dif2);",
+"            scale = new SFVec3f(1.0,dist,1.0);",
+"            translation = trans;",
+"            rotation = new SFRotation(new SFVec3f(0.0,1.0,0.0),norm);",
+"            //Browser.print('norm='+norm.toString());",
+"            //Browser.print('rotation='+rotation.toString());",
+"        }",
+"        function initialize(){",
+"            recompute(startnode.translation,endnode.translation);",
+"        }",
+"        function set_startpoint(val,t){",
+"            recompute(val,endnode.translation);",
+"        }",
+"        function set_endpoint(val,t){",
+"            recompute(startnode.translation,val);",
+"        }",
+"        />"
+]
+            }
+          }
+        ],
+        "-children":[
+          { "ROUTE":
+            {
+              "@fromNode":"G1",
+              "@fromField":"translation",
+              "@toNode":"S1",
+              "@toField":"set_startpoint"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"G2",
+              "@fromField":"translation",
+              "@toNode":"S1",
+              "@toField":"set_endpoint"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"S1",
+              "@fromField":"translation",
+              "@toNode":"C0",
+              "@toField":"translation"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"S1",
+              "@fromField":"rotation",
+              "@toNode":"C2",
+              "@toField":"rotation"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"S1",
+              "@fromField":"scale",
+              "@toNode":"C2",
+              "@toField":"scale"
+            }
+          }
+        ]
+    }
+  }
+}

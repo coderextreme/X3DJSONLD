@@ -1,1553 +1,1175 @@
-{
-  "X3D": {
-    "@profile": "Immersive",
-    "@version": "3.3",
-    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+{ "X3D": {
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "Scene": {
-      "-children": [
-        {
-          "NavigationInfo": {
-            "@type": [
-              "ANY",
-              "WALK",
-              "EXAMINE",
-              "FLY",
-              "LOOKAT"
-            ]
-          }
-        },
-        {
-          "Viewpoint": {
-            "@description": "Rubiks Cube on Fire",
-            "@position": [
-              0,
-              0,
-              12
-            ]
-          }
-        },
-        {},
-        {},
-        {},
-        {},
-        {
-          "Group": {
-            "-children": [
-              {
-                "Transform": {
-                  "-children": [
-                    {
-                      "Group": {
-                        "-children": [
-                          {
-                            "Transform": {
-                              "-children": [
-                                {
-                                  "Group": {
-                                    "-children": [
-                                      {
-                                        "Transform": {
-                                          "-children": [
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
+        "-children":[
+          { "NavigationInfo":
+            {
+              "@type":["ANY","WALK","EXAMINE","FLY","LOOKAT"]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Rubiks Cube on Fire",
+              "@position":[0,0,12]
+            }
+          },
+          { "Group":
+            {
+              "@DEF":"twentyseven504000504000",
+              "@class":"twentyseven504000504000",
+              "-children":[
+                { "Transform":
+                  {
+                    "-children":[
+                      { "Group":
+                        {
+                          "@DEF":"twentyseven504000twentyseven504000nine505000505000",
+                          "@class":"twentyseven504000twentyseven504000nine505000505000",
+                          "-children":[
+                            { "Transform":
+                              {
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@DEF":"twentyseven504000twentyseven504000three527000527000",
+                                      "@class":"twentyseven504000twentyseven504000three527000527000",
+                                      "-children":[
+                                        { "Transform":
+                                          {
+                                            "-children":[
+                                              { "Group":
+                                                {
+                                                  "@DEF":"twentyseven504000twentyseven504000anyShape531000531000",
+                                                  "@class":"twentyseven504000twentyseven504000anyShape531000531000",
+                                                  "-children":[
+                                                    { "Transform":
+                                                      {
+                                                        "-children":[
+                                                          { "Shape":
+                                                            {
+                                                              "-appearance":
+                                                                { "Appearance":
+                                                                  {
+                                                                    "-material":
+                                                                      { "Material":
+                                                                        {
+                                                                          "@diffuseColor":[1,1,1]
+                                                                        }
+                                                                      }
+                                                                  }
+                                                                },
+                                                              "-geometry":
+                                                                { "Box":
+                                                                  {
+                                                                    "@size":[1,1,1]
                                                                   }
                                                                 }
-                                                              }
-                                                            },
-                                                            "-geometry": [
-                                                              {
-                                                                "Box": {
-                                                                  "@size": [
-                                                                    1,
-                                                                    1,
-                                                                    1
-                                                                  ]
-                                                                }
-                                                              }
-                                                            ]
+                                                            }
                                                           }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        0,
-                                                        0,
-                                                        0
-                                                      ]
+                                                        ]
+                                                      }
                                                     }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000anyShape109000109000",
-                                                "@class": "twentyseven82000twentyseven82000anyShape109000109000"
-                                              }
-                                            },
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
+                                                  ]
+                                                }
+                                              },
+                                              { "Group":
+                                                {
+                                                  "@DEF":"twentyseven504000twentyseven504000anyShape532000532000",
+                                                  "@class":"twentyseven504000twentyseven504000anyShape532000532000",
+                                                  "-children":[
+                                                    { "Transform":
+                                                      {
+                                                        "@translation":[2,0,0],
+                                                        "-children":[
+                                                          { "Shape":
+                                                            {
+                                                              "-appearance":
+                                                                { "Appearance":
+                                                                  {
+                                                                    "-material":
+                                                                      { "Material":
+                                                                        {
+                                                                          "@diffuseColor":[1,1,1]
+                                                                        }
+                                                                      }
+                                                                  }
+                                                                },
+                                                              "-geometry":
+                                                                { "Box":
+                                                                  {
+                                                                    "@size":[1,1,1]
                                                                   }
                                                                 }
-                                                              }
-                                                            },
-                                                            "-geometry": [
-                                                              {
-                                                                "Box": {
-                                                                  "@size": [
-                                                                    1,
-                                                                    1,
-                                                                    1
-                                                                  ]
-                                                                }
-                                                              }
-                                                            ]
+                                                            }
                                                           }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        2,
-                                                        0,
-                                                        0
-                                                      ]
+                                                        ]
+                                                      }
                                                     }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000anyShape110000110000",
-                                                "@class": "twentyseven82000twentyseven82000anyShape110000110000"
-                                              }
-                                            },
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
+                                                  ]
+                                                }
+                                              },
+                                              { "Group":
+                                                {
+                                                  "@DEF":"twentyseven504000twentyseven504000anyShape533000533000",
+                                                  "@class":"twentyseven504000twentyseven504000anyShape533000533000",
+                                                  "-children":[
+                                                    { "Transform":
+                                                      {
+                                                        "@translation":[-2,0,0],
+                                                        "-children":[
+                                                          { "Shape":
+                                                            {
+                                                              "-appearance":
+                                                                { "Appearance":
+                                                                  {
+                                                                    "-material":
+                                                                      { "Material":
+                                                                        {
+                                                                          "@diffuseColor":[1,1,1]
+                                                                        }
+                                                                      }
+                                                                  }
+                                                                },
+                                                              "-geometry":
+                                                                { "Box":
+                                                                  {
+                                                                    "@size":[1,1,1]
                                                                   }
                                                                 }
-                                                              }
-                                                            },
-                                                            "-geometry": [
-                                                              {
-                                                                "Box": {
-                                                                  "@size": [
-                                                                    1,
-                                                                    1,
-                                                                    1
-                                                                  ]
-                                                                }
-                                                              }
-                                                            ]
+                                                            }
                                                           }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        -2,
-                                                        0,
-                                                        0
-                                                      ]
+                                                        ]
+                                                      }
                                                     }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000anyShape111000111000",
-                                                "@class": "twentyseven82000twentyseven82000anyShape111000111000"
+                                                  ]
+                                                }
                                               }
-                                            }
-                                          ],
-                                          "@translation": [
-                                            0,
-                                            0,
-                                            0
-                                          ]
+                                            ]
+                                          }
                                         }
-                                      }
-                                    ],
-                                    "@DEF": "twentyseven82000twentyseven82000three105000105000",
-                                    "@class": "twentyseven82000twentyseven82000three105000105000"
-                                  }
-                                },
-                                {
-                                  "Group": {
-                                    "-children": [
-                                      {
-                                        "Transform": {
-                                          "-children": [
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
+                                      ]
+                                    }
+                                  },
+                                  { "Group":
+                                    {
+                                      "@DEF":"twentyseven504000twentyseven504000three534000534000",
+                                      "@class":"twentyseven504000twentyseven504000three534000534000",
+                                      "-children":[
+                                        { "Transform":
+                                          {
+                                            "@translation":[0,2,0],
+                                            "-children":[
+                                              { "Group":
+                                                {
+                                                  "@DEF":"twentyseven504000twentyseven504000anyShape538000538000",
+                                                  "@class":"twentyseven504000twentyseven504000anyShape538000538000",
+                                                  "-children":[
+                                                    { "Transform":
+                                                      {
+                                                        "-children":[
+                                                          { "Shape":
+                                                            {
+                                                              "-appearance":
+                                                                { "Appearance":
+                                                                  {
+                                                                    "-material":
+                                                                      { "Material":
+                                                                        {
+                                                                          "@diffuseColor":[1,1,1]
+                                                                        }
+                                                                      }
+                                                                  }
+                                                                },
+                                                              "-geometry":
+                                                                { "Box":
+                                                                  {
+                                                                    "@size":[1,1,1]
                                                                   }
                                                                 }
-                                                              }
-                                                            },
-                                                            "-geometry": [
-                                                              {
-                                                                "Box": {
-                                                                  "@size": [
-                                                                    1,
-                                                                    1,
-                                                                    1
-                                                                  ]
-                                                                }
-                                                              }
-                                                            ]
+                                                            }
                                                           }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        0,
-                                                        0,
-                                                        0
-                                                      ]
+                                                        ]
+                                                      }
                                                     }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000anyShape116000116000",
-                                                "@class": "twentyseven82000twentyseven82000anyShape116000116000"
-                                              }
-                                            },
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
+                                                  ]
+                                                }
+                                              },
+                                              { "Group":
+                                                {
+                                                  "@DEF":"twentyseven504000twentyseven504000anyShape539000539000",
+                                                  "@class":"twentyseven504000twentyseven504000anyShape539000539000",
+                                                  "-children":[
+                                                    { "Transform":
+                                                      {
+                                                        "@translation":[2,0,0],
+                                                        "-children":[
+                                                          { "Shape":
+                                                            {
+                                                              "-appearance":
+                                                                { "Appearance":
+                                                                  {
+                                                                    "-material":
+                                                                      { "Material":
+                                                                        {
+                                                                          "@diffuseColor":[1,1,1]
+                                                                        }
+                                                                      }
+                                                                  }
+                                                                },
+                                                              "-geometry":
+                                                                { "Box":
+                                                                  {
+                                                                    "@size":[1,1,1]
                                                                   }
                                                                 }
-                                                              }
-                                                            },
-                                                            "-geometry": [
-                                                              {
-                                                                "Box": {
-                                                                  "@size": [
-                                                                    1,
-                                                                    1,
-                                                                    1
-                                                                  ]
-                                                                }
-                                                              }
-                                                            ]
+                                                            }
                                                           }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        2,
-                                                        0,
-                                                        0
-                                                      ]
+                                                        ]
+                                                      }
                                                     }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000anyShape117000117000",
-                                                "@class": "twentyseven82000twentyseven82000anyShape117000117000"
-                                              }
-                                            },
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
+                                                  ]
+                                                }
+                                              },
+                                              { "Group":
+                                                {
+                                                  "@DEF":"twentyseven504000twentyseven504000anyShape540000540000",
+                                                  "@class":"twentyseven504000twentyseven504000anyShape540000540000",
+                                                  "-children":[
+                                                    { "Transform":
+                                                      {
+                                                        "@translation":[-2,0,0],
+                                                        "-children":[
+                                                          { "Shape":
+                                                            {
+                                                              "-appearance":
+                                                                { "Appearance":
+                                                                  {
+                                                                    "-material":
+                                                                      { "Material":
+                                                                        {
+                                                                          "@diffuseColor":[1,1,1]
+                                                                        }
+                                                                      }
+                                                                  }
+                                                                },
+                                                              "-geometry":
+                                                                { "Box":
+                                                                  {
+                                                                    "@size":[1,1,1]
                                                                   }
                                                                 }
-                                                              }
-                                                            },
-                                                            "-geometry": [
-                                                              {
-                                                                "Box": {
-                                                                  "@size": [
-                                                                    1,
-                                                                    1,
-                                                                    1
-                                                                  ]
-                                                                }
-                                                              }
-                                                            ]
+                                                            }
                                                           }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        -2,
-                                                        0,
-                                                        0
-                                                      ]
+                                                        ]
+                                                      }
                                                     }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000anyShape118000118000",
-                                                "@class": "twentyseven82000twentyseven82000anyShape118000118000"
+                                                  ]
+                                                }
                                               }
-                                            }
-                                          ],
-                                          "@translation": [
-                                            0,
-                                            2,
-                                            0
-                                          ]
+                                            ]
+                                          }
                                         }
-                                      }
-                                    ],
-                                    "@DEF": "twentyseven82000twentyseven82000three112000112000",
-                                    "@class": "twentyseven82000twentyseven82000three112000112000"
-                                  }
-                                },
-                                {
-                                  "Group": {
-                                    "-children": [
-                                      {
-                                        "Transform": {
-                                          "-children": [
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
+                                      ]
+                                    }
+                                  },
+                                  { "Group":
+                                    {
+                                      "@DEF":"twentyseven504000twentyseven504000three541000541000",
+                                      "@class":"twentyseven504000twentyseven504000three541000541000",
+                                      "-children":[
+                                        { "Transform":
+                                          {
+                                            "@translation":[0,-2,0],
+                                            "-children":[
+                                              { "Group":
+                                                {
+                                                  "@DEF":"twentyseven504000twentyseven504000anyShape545000545000",
+                                                  "@class":"twentyseven504000twentyseven504000anyShape545000545000",
+                                                  "-children":[
+                                                    { "Transform":
+                                                      {
+                                                        "-children":[
+                                                          { "Shape":
+                                                            {
+                                                              "-appearance":
+                                                                { "Appearance":
+                                                                  {
+                                                                    "-material":
+                                                                      { "Material":
+                                                                        {
+                                                                          "@diffuseColor":[1,1,1]
+                                                                        }
+                                                                      }
+                                                                  }
+                                                                },
+                                                              "-geometry":
+                                                                { "Box":
+                                                                  {
+                                                                    "@size":[1,1,1]
                                                                   }
                                                                 }
-                                                              }
-                                                            },
-                                                            "-geometry": [
-                                                              {
-                                                                "Box": {
-                                                                  "@size": [
-                                                                    1,
-                                                                    1,
-                                                                    1
-                                                                  ]
-                                                                }
-                                                              }
-                                                            ]
+                                                            }
                                                           }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        0,
-                                                        0,
-                                                        0
-                                                      ]
+                                                        ]
+                                                      }
                                                     }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000anyShape123000123000",
-                                                "@class": "twentyseven82000twentyseven82000anyShape123000123000"
-                                              }
-                                            },
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
+                                                  ]
+                                                }
+                                              },
+                                              { "Group":
+                                                {
+                                                  "@DEF":"twentyseven504000twentyseven504000anyShape546000546000",
+                                                  "@class":"twentyseven504000twentyseven504000anyShape546000546000",
+                                                  "-children":[
+                                                    { "Transform":
+                                                      {
+                                                        "@translation":[2,0,0],
+                                                        "-children":[
+                                                          { "Shape":
+                                                            {
+                                                              "-appearance":
+                                                                { "Appearance":
+                                                                  {
+                                                                    "-material":
+                                                                      { "Material":
+                                                                        {
+                                                                          "@diffuseColor":[1,1,1]
+                                                                        }
+                                                                      }
+                                                                  }
+                                                                },
+                                                              "-geometry":
+                                                                { "Box":
+                                                                  {
+                                                                    "@size":[1,1,1]
                                                                   }
                                                                 }
-                                                              }
-                                                            },
-                                                            "-geometry": [
-                                                              {
-                                                                "Box": {
-                                                                  "@size": [
-                                                                    1,
-                                                                    1,
-                                                                    1
-                                                                  ]
-                                                                }
-                                                              }
-                                                            ]
+                                                            }
                                                           }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        2,
-                                                        0,
-                                                        0
-                                                      ]
+                                                        ]
+                                                      }
                                                     }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000anyShape124000124000",
-                                                "@class": "twentyseven82000twentyseven82000anyShape124000124000"
-                                              }
-                                            },
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
+                                                  ]
+                                                }
+                                              },
+                                              { "Group":
+                                                {
+                                                  "@DEF":"twentyseven504000twentyseven504000anyShape547000547000",
+                                                  "@class":"twentyseven504000twentyseven504000anyShape547000547000",
+                                                  "-children":[
+                                                    { "Transform":
+                                                      {
+                                                        "@translation":[-2,0,0],
+                                                        "-children":[
+                                                          { "Shape":
+                                                            {
+                                                              "-appearance":
+                                                                { "Appearance":
+                                                                  {
+                                                                    "-material":
+                                                                      { "Material":
+                                                                        {
+                                                                          "@diffuseColor":[1,1,1]
+                                                                        }
+                                                                      }
+                                                                  }
+                                                                },
+                                                              "-geometry":
+                                                                { "Box":
+                                                                  {
+                                                                    "@size":[1,1,1]
                                                                   }
                                                                 }
-                                                              }
-                                                            },
-                                                            "-geometry": [
-                                                              {
-                                                                "Box": {
-                                                                  "@size": [
-                                                                    1,
-                                                                    1,
-                                                                    1
-                                                                  ]
-                                                                }
-                                                              }
-                                                            ]
+                                                            }
                                                           }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        -2,
-                                                        0,
-                                                        0
-                                                      ]
+                                                        ]
+                                                      }
                                                     }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000anyShape125000125000",
-                                                "@class": "twentyseven82000twentyseven82000anyShape125000125000"
+                                                  ]
+                                                }
                                               }
-                                            }
-                                          ],
-                                          "@translation": [
-                                            0,
-                                            -2,
-                                            0
-                                          ]
+                                            ]
+                                          }
                                         }
-                                      }
-                                    ],
-                                    "@DEF": "twentyseven82000twentyseven82000three119000119000",
-                                    "@class": "twentyseven82000twentyseven82000three119000119000"
+                                      ]
+                                    }
                                   }
-                                }
-                              ],
-                              "@translation": [
-                                0,
-                                0,
-                                0
-                              ]
+                                ]
+                              }
                             }
-                          }
-                        ],
-                        "@DEF": "twentyseven82000twentyseven82000nine8300083000",
-                        "@class": "twentyseven82000twentyseven82000nine8300083000"
-                      }
-                    },
-                    {
-                      "Group": {
-                        "-children": [
-                          {
-                            "Transform": {
-                              "-children": [
-                                {
-                                  "Group": {
-                                    "-children": [
-                                      {
-                                        "Transform": {
-                                          "-children": [
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
+                          ]
+                        }
+                      },
+                      { "Group":
+                        {
+                          "@DEF":"twentyseven504000twentyseven504000nine548000548000",
+                          "@class":"twentyseven504000twentyseven504000nine548000548000",
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@translation":[0,0,2],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@DEF":"twentyseven504000twentyseven504000three570000570000",
+                                      "@class":"twentyseven504000twentyseven504000three570000570000",
+                                      "-children":[
+                                        { "Transform":
+                                          {
+                                            "-children":[
+                                              { "Group":
+                                                {
+                                                  "@DEF":"twentyseven504000twentyseven504000anyShape574000574000",
+                                                  "@class":"twentyseven504000twentyseven504000anyShape574000574000",
+                                                  "-children":[
+                                                    { "Transform":
+                                                      {
+                                                        "-children":[
+                                                          { "Shape":
+                                                            {
+                                                              "-appearance":
+                                                                { "Appearance":
+                                                                  {
+                                                                    "-material":
+                                                                      { "Material":
+                                                                        {
+                                                                          "@diffuseColor":[1,1,1]
+                                                                        }
+                                                                      }
+                                                                  }
+                                                                },
+                                                              "-geometry":
+                                                                { "Box":
+                                                                  {
+                                                                    "@size":[1,1,1]
                                                                   }
                                                                 }
-                                                              }
-                                                            },
-                                                            "-geometry": [
-                                                              {
-                                                                "Box": {
-                                                                  "@size": [
-                                                                    1,
-                                                                    1,
-                                                                    1
-                                                                  ]
-                                                                }
-                                                              }
-                                                            ]
+                                                            }
                                                           }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        0,
-                                                        0,
-                                                        0
-                                                      ]
+                                                        ]
+                                                      }
                                                     }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000anyShape152000152000",
-                                                "@class": "twentyseven82000twentyseven82000anyShape152000152000"
-                                              }
-                                            },
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
+                                                  ]
+                                                }
+                                              },
+                                              { "Group":
+                                                {
+                                                  "@DEF":"twentyseven504000twentyseven504000anyShape575000575000",
+                                                  "@class":"twentyseven504000twentyseven504000anyShape575000575000",
+                                                  "-children":[
+                                                    { "Transform":
+                                                      {
+                                                        "@translation":[2,0,0],
+                                                        "-children":[
+                                                          { "Shape":
+                                                            {
+                                                              "-appearance":
+                                                                { "Appearance":
+                                                                  {
+                                                                    "-material":
+                                                                      { "Material":
+                                                                        {
+                                                                          "@diffuseColor":[1,1,1]
+                                                                        }
+                                                                      }
+                                                                  }
+                                                                },
+                                                              "-geometry":
+                                                                { "Box":
+                                                                  {
+                                                                    "@size":[1,1,1]
                                                                   }
                                                                 }
-                                                              }
-                                                            },
-                                                            "-geometry": [
-                                                              {
-                                                                "Box": {
-                                                                  "@size": [
-                                                                    1,
-                                                                    1,
-                                                                    1
-                                                                  ]
-                                                                }
-                                                              }
-                                                            ]
+                                                            }
                                                           }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        2,
-                                                        0,
-                                                        0
-                                                      ]
+                                                        ]
+                                                      }
                                                     }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000anyShape153000153000",
-                                                "@class": "twentyseven82000twentyseven82000anyShape153000153000"
-                                              }
-                                            },
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
+                                                  ]
+                                                }
+                                              },
+                                              { "Group":
+                                                {
+                                                  "@DEF":"twentyseven504000twentyseven504000anyShape576000576000",
+                                                  "@class":"twentyseven504000twentyseven504000anyShape576000576000",
+                                                  "-children":[
+                                                    { "Transform":
+                                                      {
+                                                        "@translation":[-2,0,0],
+                                                        "-children":[
+                                                          { "Shape":
+                                                            {
+                                                              "-appearance":
+                                                                { "Appearance":
+                                                                  {
+                                                                    "-material":
+                                                                      { "Material":
+                                                                        {
+                                                                          "@diffuseColor":[1,1,1]
+                                                                        }
+                                                                      }
+                                                                  }
+                                                                },
+                                                              "-geometry":
+                                                                { "Box":
+                                                                  {
+                                                                    "@size":[1,1,1]
                                                                   }
                                                                 }
-                                                              }
-                                                            },
-                                                            "-geometry": [
-                                                              {
-                                                                "Box": {
-                                                                  "@size": [
-                                                                    1,
-                                                                    1,
-                                                                    1
-                                                                  ]
-                                                                }
-                                                              }
-                                                            ]
+                                                            }
                                                           }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        -2,
-                                                        0,
-                                                        0
-                                                      ]
+                                                        ]
+                                                      }
                                                     }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000anyShape154000154000",
-                                                "@class": "twentyseven82000twentyseven82000anyShape154000154000"
+                                                  ]
+                                                }
                                               }
-                                            }
-                                          ],
-                                          "@translation": [
-                                            0,
-                                            0,
-                                            0
-                                          ]
+                                            ]
+                                          }
                                         }
-                                      }
-                                    ],
-                                    "@DEF": "twentyseven82000twentyseven82000three148000148000",
-                                    "@class": "twentyseven82000twentyseven82000three148000148000"
-                                  }
-                                },
-                                {
-                                  "Group": {
-                                    "-children": [
-                                      {
-                                        "Transform": {
-                                          "-children": [
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
+                                      ]
+                                    }
+                                  },
+                                  { "Group":
+                                    {
+                                      "@DEF":"twentyseven504000twentyseven504000three577000577000",
+                                      "@class":"twentyseven504000twentyseven504000three577000577000",
+                                      "-children":[
+                                        { "Transform":
+                                          {
+                                            "@translation":[0,2,0],
+                                            "-children":[
+                                              { "Group":
+                                                {
+                                                  "@DEF":"twentyseven504000twentyseven504000anyShape581000581000",
+                                                  "@class":"twentyseven504000twentyseven504000anyShape581000581000",
+                                                  "-children":[
+                                                    { "Transform":
+                                                      {
+                                                        "-children":[
+                                                          { "Shape":
+                                                            {
+                                                              "-appearance":
+                                                                { "Appearance":
+                                                                  {
+                                                                    "-material":
+                                                                      { "Material":
+                                                                        {
+                                                                          "@diffuseColor":[1,1,1]
+                                                                        }
+                                                                      }
+                                                                  }
+                                                                },
+                                                              "-geometry":
+                                                                { "Box":
+                                                                  {
+                                                                    "@size":[1,1,1]
                                                                   }
                                                                 }
-                                                              }
-                                                            },
-                                                            "-geometry": [
-                                                              {
-                                                                "Box": {
-                                                                  "@size": [
-                                                                    1,
-                                                                    1,
-                                                                    1
-                                                                  ]
-                                                                }
-                                                              }
-                                                            ]
+                                                            }
                                                           }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        0,
-                                                        0,
-                                                        0
-                                                      ]
+                                                        ]
+                                                      }
                                                     }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000anyShape159000159000",
-                                                "@class": "twentyseven82000twentyseven82000anyShape159000159000"
-                                              }
-                                            },
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
+                                                  ]
+                                                }
+                                              },
+                                              { "Group":
+                                                {
+                                                  "@DEF":"twentyseven504000twentyseven504000anyShape582000582000",
+                                                  "@class":"twentyseven504000twentyseven504000anyShape582000582000",
+                                                  "-children":[
+                                                    { "Transform":
+                                                      {
+                                                        "@translation":[2,0,0],
+                                                        "-children":[
+                                                          { "Shape":
+                                                            {
+                                                              "-appearance":
+                                                                { "Appearance":
+                                                                  {
+                                                                    "-material":
+                                                                      { "Material":
+                                                                        {
+                                                                          "@diffuseColor":[1,1,1]
+                                                                        }
+                                                                      }
+                                                                  }
+                                                                },
+                                                              "-geometry":
+                                                                { "Box":
+                                                                  {
+                                                                    "@size":[1,1,1]
                                                                   }
                                                                 }
-                                                              }
-                                                            },
-                                                            "-geometry": [
-                                                              {
-                                                                "Box": {
-                                                                  "@size": [
-                                                                    1,
-                                                                    1,
-                                                                    1
-                                                                  ]
-                                                                }
-                                                              }
-                                                            ]
+                                                            }
                                                           }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        2,
-                                                        0,
-                                                        0
-                                                      ]
+                                                        ]
+                                                      }
                                                     }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000anyShape160000160000",
-                                                "@class": "twentyseven82000twentyseven82000anyShape160000160000"
-                                              }
-                                            },
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
+                                                  ]
+                                                }
+                                              },
+                                              { "Group":
+                                                {
+                                                  "@DEF":"twentyseven504000twentyseven504000anyShape583000583000",
+                                                  "@class":"twentyseven504000twentyseven504000anyShape583000583000",
+                                                  "-children":[
+                                                    { "Transform":
+                                                      {
+                                                        "@translation":[-2,0,0],
+                                                        "-children":[
+                                                          { "Shape":
+                                                            {
+                                                              "-appearance":
+                                                                { "Appearance":
+                                                                  {
+                                                                    "-material":
+                                                                      { "Material":
+                                                                        {
+                                                                          "@diffuseColor":[1,1,1]
+                                                                        }
+                                                                      }
+                                                                  }
+                                                                },
+                                                              "-geometry":
+                                                                { "Box":
+                                                                  {
+                                                                    "@size":[1,1,1]
                                                                   }
                                                                 }
-                                                              }
-                                                            },
-                                                            "-geometry": [
-                                                              {
-                                                                "Box": {
-                                                                  "@size": [
-                                                                    1,
-                                                                    1,
-                                                                    1
-                                                                  ]
-                                                                }
-                                                              }
-                                                            ]
+                                                            }
                                                           }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        -2,
-                                                        0,
-                                                        0
-                                                      ]
+                                                        ]
+                                                      }
                                                     }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000anyShape161000161000",
-                                                "@class": "twentyseven82000twentyseven82000anyShape161000161000"
+                                                  ]
+                                                }
                                               }
-                                            }
-                                          ],
-                                          "@translation": [
-                                            0,
-                                            2,
-                                            0
-                                          ]
+                                            ]
+                                          }
                                         }
-                                      }
-                                    ],
-                                    "@DEF": "twentyseven82000twentyseven82000three155000155000",
-                                    "@class": "twentyseven82000twentyseven82000three155000155000"
-                                  }
-                                },
-                                {
-                                  "Group": {
-                                    "-children": [
-                                      {
-                                        "Transform": {
-                                          "-children": [
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
+                                      ]
+                                    }
+                                  },
+                                  { "Group":
+                                    {
+                                      "@DEF":"twentyseven504000twentyseven504000three584000584000",
+                                      "@class":"twentyseven504000twentyseven504000three584000584000",
+                                      "-children":[
+                                        { "Transform":
+                                          {
+                                            "@translation":[0,-2,0],
+                                            "-children":[
+                                              { "Group":
+                                                {
+                                                  "@DEF":"twentyseven504000twentyseven504000anyShape588000588000",
+                                                  "@class":"twentyseven504000twentyseven504000anyShape588000588000",
+                                                  "-children":[
+                                                    { "Transform":
+                                                      {
+                                                        "-children":[
+                                                          { "Shape":
+                                                            {
+                                                              "-appearance":
+                                                                { "Appearance":
+                                                                  {
+                                                                    "-material":
+                                                                      { "Material":
+                                                                        {
+                                                                          "@diffuseColor":[1,1,1]
+                                                                        }
+                                                                      }
+                                                                  }
+                                                                },
+                                                              "-geometry":
+                                                                { "Box":
+                                                                  {
+                                                                    "@size":[1,1,1]
                                                                   }
                                                                 }
-                                                              }
-                                                            },
-                                                            "-geometry": [
-                                                              {
-                                                                "Box": {
-                                                                  "@size": [
-                                                                    1,
-                                                                    1,
-                                                                    1
-                                                                  ]
-                                                                }
-                                                              }
-                                                            ]
+                                                            }
                                                           }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        0,
-                                                        0,
-                                                        0
-                                                      ]
+                                                        ]
+                                                      }
                                                     }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000anyShape166000166000",
-                                                "@class": "twentyseven82000twentyseven82000anyShape166000166000"
-                                              }
-                                            },
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
+                                                  ]
+                                                }
+                                              },
+                                              { "Group":
+                                                {
+                                                  "@DEF":"twentyseven504000twentyseven504000anyShape589000589000",
+                                                  "@class":"twentyseven504000twentyseven504000anyShape589000589000",
+                                                  "-children":[
+                                                    { "Transform":
+                                                      {
+                                                        "@translation":[2,0,0],
+                                                        "-children":[
+                                                          { "Shape":
+                                                            {
+                                                              "-appearance":
+                                                                { "Appearance":
+                                                                  {
+                                                                    "-material":
+                                                                      { "Material":
+                                                                        {
+                                                                          "@diffuseColor":[1,1,1]
+                                                                        }
+                                                                      }
+                                                                  }
+                                                                },
+                                                              "-geometry":
+                                                                { "Box":
+                                                                  {
+                                                                    "@size":[1,1,1]
                                                                   }
                                                                 }
-                                                              }
-                                                            },
-                                                            "-geometry": [
-                                                              {
-                                                                "Box": {
-                                                                  "@size": [
-                                                                    1,
-                                                                    1,
-                                                                    1
-                                                                  ]
-                                                                }
-                                                              }
-                                                            ]
+                                                            }
                                                           }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        2,
-                                                        0,
-                                                        0
-                                                      ]
+                                                        ]
+                                                      }
                                                     }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000anyShape167000167000",
-                                                "@class": "twentyseven82000twentyseven82000anyShape167000167000"
-                                              }
-                                            },
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
+                                                  ]
+                                                }
+                                              },
+                                              { "Group":
+                                                {
+                                                  "@DEF":"twentyseven504000twentyseven504000anyShape590000590000",
+                                                  "@class":"twentyseven504000twentyseven504000anyShape590000590000",
+                                                  "-children":[
+                                                    { "Transform":
+                                                      {
+                                                        "@translation":[-2,0,0],
+                                                        "-children":[
+                                                          { "Shape":
+                                                            {
+                                                              "-appearance":
+                                                                { "Appearance":
+                                                                  {
+                                                                    "-material":
+                                                                      { "Material":
+                                                                        {
+                                                                          "@diffuseColor":[1,1,1]
+                                                                        }
+                                                                      }
+                                                                  }
+                                                                },
+                                                              "-geometry":
+                                                                { "Box":
+                                                                  {
+                                                                    "@size":[1,1,1]
                                                                   }
                                                                 }
-                                                              }
-                                                            },
-                                                            "-geometry": [
-                                                              {
-                                                                "Box": {
-                                                                  "@size": [
-                                                                    1,
-                                                                    1,
-                                                                    1
-                                                                  ]
-                                                                }
-                                                              }
-                                                            ]
+                                                            }
                                                           }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        -2,
-                                                        0,
-                                                        0
-                                                      ]
+                                                        ]
+                                                      }
                                                     }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000anyShape168000168000",
-                                                "@class": "twentyseven82000twentyseven82000anyShape168000168000"
+                                                  ]
+                                                }
                                               }
-                                            }
-                                          ],
-                                          "@translation": [
-                                            0,
-                                            -2,
-                                            0
-                                          ]
+                                            ]
+                                          }
                                         }
-                                      }
-                                    ],
-                                    "@DEF": "twentyseven82000twentyseven82000three162000162000",
-                                    "@class": "twentyseven82000twentyseven82000three162000162000"
+                                      ]
+                                    }
                                   }
-                                }
-                              ],
-                              "@translation": [
-                                0,
-                                0,
-                                2
-                              ]
+                                ]
+                              }
                             }
-                          }
-                        ],
-                        "@DEF": "twentyseven82000twentyseven82000nine126000126000",
-                        "@class": "twentyseven82000twentyseven82000nine126000126000"
-                      }
-                    },
-                    {
-                      "Group": {
-                        "-children": [
-                          {
-                            "Transform": {
-                              "-children": [
-                                {
-                                  "Group": {
-                                    "-children": [
-                                      {
-                                        "Transform": {
-                                          "-children": [
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
+                          ]
+                        }
+                      },
+                      { "Group":
+                        {
+                          "@DEF":"twentyseven504000twentyseven504000nine591000591000",
+                          "@class":"twentyseven504000twentyseven504000nine591000591000",
+                          "-children":[
+                            { "Transform":
+                              {
+                                "@translation":[0,0,-2],
+                                "-children":[
+                                  { "Group":
+                                    {
+                                      "@DEF":"twentyseven504000twentyseven504000three613000613000",
+                                      "@class":"twentyseven504000twentyseven504000three613000613000",
+                                      "-children":[
+                                        { "Transform":
+                                          {
+                                            "-children":[
+                                              { "Group":
+                                                {
+                                                  "@DEF":"twentyseven504000twentyseven504000anyShape617000617000",
+                                                  "@class":"twentyseven504000twentyseven504000anyShape617000617000",
+                                                  "-children":[
+                                                    { "Transform":
+                                                      {
+                                                        "-children":[
+                                                          { "Shape":
+                                                            {
+                                                              "-appearance":
+                                                                { "Appearance":
+                                                                  {
+                                                                    "-material":
+                                                                      { "Material":
+                                                                        {
+                                                                          "@diffuseColor":[1,1,1]
+                                                                        }
+                                                                      }
+                                                                  }
+                                                                },
+                                                              "-geometry":
+                                                                { "Box":
+                                                                  {
+                                                                    "@size":[1,1,1]
                                                                   }
                                                                 }
-                                                              }
-                                                            },
-                                                            "-geometry": [
-                                                              {
-                                                                "Box": {
-                                                                  "@size": [
-                                                                    1,
-                                                                    1,
-                                                                    1
-                                                                  ]
-                                                                }
-                                                              }
-                                                            ]
+                                                            }
                                                           }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        0,
-                                                        0,
-                                                        0
-                                                      ]
+                                                        ]
+                                                      }
                                                     }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000anyShape195000195000",
-                                                "@class": "twentyseven82000twentyseven82000anyShape195000195000"
-                                              }
-                                            },
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
+                                                  ]
+                                                }
+                                              },
+                                              { "Group":
+                                                {
+                                                  "@DEF":"twentyseven504000twentyseven504000anyShape618000618000",
+                                                  "@class":"twentyseven504000twentyseven504000anyShape618000618000",
+                                                  "-children":[
+                                                    { "Transform":
+                                                      {
+                                                        "@translation":[2,0,0],
+                                                        "-children":[
+                                                          { "Shape":
+                                                            {
+                                                              "-appearance":
+                                                                { "Appearance":
+                                                                  {
+                                                                    "-material":
+                                                                      { "Material":
+                                                                        {
+                                                                          "@diffuseColor":[1,1,1]
+                                                                        }
+                                                                      }
+                                                                  }
+                                                                },
+                                                              "-geometry":
+                                                                { "Box":
+                                                                  {
+                                                                    "@size":[1,1,1]
                                                                   }
                                                                 }
-                                                              }
-                                                            },
-                                                            "-geometry": [
-                                                              {
-                                                                "Box": {
-                                                                  "@size": [
-                                                                    1,
-                                                                    1,
-                                                                    1
-                                                                  ]
-                                                                }
-                                                              }
-                                                            ]
+                                                            }
                                                           }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        2,
-                                                        0,
-                                                        0
-                                                      ]
+                                                        ]
+                                                      }
                                                     }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000anyShape196000196000",
-                                                "@class": "twentyseven82000twentyseven82000anyShape196000196000"
-                                              }
-                                            },
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
+                                                  ]
+                                                }
+                                              },
+                                              { "Group":
+                                                {
+                                                  "@DEF":"twentyseven504000twentyseven504000anyShape619000619000",
+                                                  "@class":"twentyseven504000twentyseven504000anyShape619000619000",
+                                                  "-children":[
+                                                    { "Transform":
+                                                      {
+                                                        "@translation":[-2,0,0],
+                                                        "-children":[
+                                                          { "Shape":
+                                                            {
+                                                              "-appearance":
+                                                                { "Appearance":
+                                                                  {
+                                                                    "-material":
+                                                                      { "Material":
+                                                                        {
+                                                                          "@diffuseColor":[1,1,1]
+                                                                        }
+                                                                      }
+                                                                  }
+                                                                },
+                                                              "-geometry":
+                                                                { "Box":
+                                                                  {
+                                                                    "@size":[1,1,1]
                                                                   }
                                                                 }
-                                                              }
-                                                            },
-                                                            "-geometry": [
-                                                              {
-                                                                "Box": {
-                                                                  "@size": [
-                                                                    1,
-                                                                    1,
-                                                                    1
-                                                                  ]
-                                                                }
-                                                              }
-                                                            ]
+                                                            }
                                                           }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        -2,
-                                                        0,
-                                                        0
-                                                      ]
+                                                        ]
+                                                      }
                                                     }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000anyShape197000197000",
-                                                "@class": "twentyseven82000twentyseven82000anyShape197000197000"
+                                                  ]
+                                                }
                                               }
-                                            }
-                                          ],
-                                          "@translation": [
-                                            0,
-                                            0,
-                                            0
-                                          ]
+                                            ]
+                                          }
                                         }
-                                      }
-                                    ],
-                                    "@DEF": "twentyseven82000twentyseven82000three191000191000",
-                                    "@class": "twentyseven82000twentyseven82000three191000191000"
-                                  }
-                                },
-                                {
-                                  "Group": {
-                                    "-children": [
-                                      {
-                                        "Transform": {
-                                          "-children": [
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
+                                      ]
+                                    }
+                                  },
+                                  { "Group":
+                                    {
+                                      "@DEF":"twentyseven504000twentyseven504000three620000620000",
+                                      "@class":"twentyseven504000twentyseven504000three620000620000",
+                                      "-children":[
+                                        { "Transform":
+                                          {
+                                            "@translation":[0,2,0],
+                                            "-children":[
+                                              { "Group":
+                                                {
+                                                  "@DEF":"twentyseven504000twentyseven504000anyShape624000624000",
+                                                  "@class":"twentyseven504000twentyseven504000anyShape624000624000",
+                                                  "-children":[
+                                                    { "Transform":
+                                                      {
+                                                        "-children":[
+                                                          { "Shape":
+                                                            {
+                                                              "-appearance":
+                                                                { "Appearance":
+                                                                  {
+                                                                    "-material":
+                                                                      { "Material":
+                                                                        {
+                                                                          "@diffuseColor":[1,1,1]
+                                                                        }
+                                                                      }
+                                                                  }
+                                                                },
+                                                              "-geometry":
+                                                                { "Box":
+                                                                  {
+                                                                    "@size":[1,1,1]
                                                                   }
                                                                 }
-                                                              }
-                                                            },
-                                                            "-geometry": [
-                                                              {
-                                                                "Box": {
-                                                                  "@size": [
-                                                                    1,
-                                                                    1,
-                                                                    1
-                                                                  ]
-                                                                }
-                                                              }
-                                                            ]
+                                                            }
                                                           }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        0,
-                                                        0,
-                                                        0
-                                                      ]
+                                                        ]
+                                                      }
                                                     }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000anyShape202000202000",
-                                                "@class": "twentyseven82000twentyseven82000anyShape202000202000"
-                                              }
-                                            },
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
+                                                  ]
+                                                }
+                                              },
+                                              { "Group":
+                                                {
+                                                  "@DEF":"twentyseven504000twentyseven504000anyShape625000625000",
+                                                  "@class":"twentyseven504000twentyseven504000anyShape625000625000",
+                                                  "-children":[
+                                                    { "Transform":
+                                                      {
+                                                        "@translation":[2,0,0],
+                                                        "-children":[
+                                                          { "Shape":
+                                                            {
+                                                              "-appearance":
+                                                                { "Appearance":
+                                                                  {
+                                                                    "-material":
+                                                                      { "Material":
+                                                                        {
+                                                                          "@diffuseColor":[1,1,1]
+                                                                        }
+                                                                      }
+                                                                  }
+                                                                },
+                                                              "-geometry":
+                                                                { "Box":
+                                                                  {
+                                                                    "@size":[1,1,1]
                                                                   }
                                                                 }
-                                                              }
-                                                            },
-                                                            "-geometry": [
-                                                              {
-                                                                "Box": {
-                                                                  "@size": [
-                                                                    1,
-                                                                    1,
-                                                                    1
-                                                                  ]
-                                                                }
-                                                              }
-                                                            ]
+                                                            }
                                                           }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        2,
-                                                        0,
-                                                        0
-                                                      ]
+                                                        ]
+                                                      }
                                                     }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000anyShape203000203000",
-                                                "@class": "twentyseven82000twentyseven82000anyShape203000203000"
-                                              }
-                                            },
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
+                                                  ]
+                                                }
+                                              },
+                                              { "Group":
+                                                {
+                                                  "@DEF":"twentyseven504000twentyseven504000anyShape626000626000",
+                                                  "@class":"twentyseven504000twentyseven504000anyShape626000626000",
+                                                  "-children":[
+                                                    { "Transform":
+                                                      {
+                                                        "@translation":[-2,0,0],
+                                                        "-children":[
+                                                          { "Shape":
+                                                            {
+                                                              "-appearance":
+                                                                { "Appearance":
+                                                                  {
+                                                                    "-material":
+                                                                      { "Material":
+                                                                        {
+                                                                          "@diffuseColor":[1,1,1]
+                                                                        }
+                                                                      }
+                                                                  }
+                                                                },
+                                                              "-geometry":
+                                                                { "Box":
+                                                                  {
+                                                                    "@size":[1,1,1]
                                                                   }
                                                                 }
-                                                              }
-                                                            },
-                                                            "-geometry": [
-                                                              {
-                                                                "Box": {
-                                                                  "@size": [
-                                                                    1,
-                                                                    1,
-                                                                    1
-                                                                  ]
-                                                                }
-                                                              }
-                                                            ]
+                                                            }
                                                           }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        -2,
-                                                        0,
-                                                        0
-                                                      ]
+                                                        ]
+                                                      }
                                                     }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000anyShape204000204000",
-                                                "@class": "twentyseven82000twentyseven82000anyShape204000204000"
+                                                  ]
+                                                }
                                               }
-                                            }
-                                          ],
-                                          "@translation": [
-                                            0,
-                                            2,
-                                            0
-                                          ]
+                                            ]
+                                          }
                                         }
-                                      }
-                                    ],
-                                    "@DEF": "twentyseven82000twentyseven82000three198000198000",
-                                    "@class": "twentyseven82000twentyseven82000three198000198000"
-                                  }
-                                },
-                                {
-                                  "Group": {
-                                    "-children": [
-                                      {
-                                        "Transform": {
-                                          "-children": [
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
+                                      ]
+                                    }
+                                  },
+                                  { "Group":
+                                    {
+                                      "@DEF":"twentyseven504000twentyseven504000three627000627000",
+                                      "@class":"twentyseven504000twentyseven504000three627000627000",
+                                      "-children":[
+                                        { "Transform":
+                                          {
+                                            "@translation":[0,-2,0],
+                                            "-children":[
+                                              { "Group":
+                                                {
+                                                  "@DEF":"twentyseven504000twentyseven504000anyShape631000631000",
+                                                  "@class":"twentyseven504000twentyseven504000anyShape631000631000",
+                                                  "-children":[
+                                                    { "Transform":
+                                                      {
+                                                        "-children":[
+                                                          { "Shape":
+                                                            {
+                                                              "-appearance":
+                                                                { "Appearance":
+                                                                  {
+                                                                    "-material":
+                                                                      { "Material":
+                                                                        {
+                                                                          "@diffuseColor":[1,1,1]
+                                                                        }
+                                                                      }
+                                                                  }
+                                                                },
+                                                              "-geometry":
+                                                                { "Box":
+                                                                  {
+                                                                    "@size":[1,1,1]
                                                                   }
                                                                 }
-                                                              }
-                                                            },
-                                                            "-geometry": [
-                                                              {
-                                                                "Box": {
-                                                                  "@size": [
-                                                                    1,
-                                                                    1,
-                                                                    1
-                                                                  ]
-                                                                }
-                                                              }
-                                                            ]
+                                                            }
                                                           }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        0,
-                                                        0,
-                                                        0
-                                                      ]
+                                                        ]
+                                                      }
                                                     }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000anyShape209000209000",
-                                                "@class": "twentyseven82000twentyseven82000anyShape209000209000"
-                                              }
-                                            },
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
+                                                  ]
+                                                }
+                                              },
+                                              { "Group":
+                                                {
+                                                  "@DEF":"twentyseven504000twentyseven504000anyShape632000632000",
+                                                  "@class":"twentyseven504000twentyseven504000anyShape632000632000",
+                                                  "-children":[
+                                                    { "Transform":
+                                                      {
+                                                        "@translation":[2,0,0],
+                                                        "-children":[
+                                                          { "Shape":
+                                                            {
+                                                              "-appearance":
+                                                                { "Appearance":
+                                                                  {
+                                                                    "-material":
+                                                                      { "Material":
+                                                                        {
+                                                                          "@diffuseColor":[1,1,1]
+                                                                        }
+                                                                      }
+                                                                  }
+                                                                },
+                                                              "-geometry":
+                                                                { "Box":
+                                                                  {
+                                                                    "@size":[1,1,1]
                                                                   }
                                                                 }
-                                                              }
-                                                            },
-                                                            "-geometry": [
-                                                              {
-                                                                "Box": {
-                                                                  "@size": [
-                                                                    1,
-                                                                    1,
-                                                                    1
-                                                                  ]
-                                                                }
-                                                              }
-                                                            ]
+                                                            }
                                                           }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        2,
-                                                        0,
-                                                        0
-                                                      ]
+                                                        ]
+                                                      }
                                                     }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000anyShape210000210000",
-                                                "@class": "twentyseven82000twentyseven82000anyShape210000210000"
-                                              }
-                                            },
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
+                                                  ]
+                                                }
+                                              },
+                                              { "Group":
+                                                {
+                                                  "@DEF":"twentyseven504000twentyseven504000anyShape633000633000",
+                                                  "@class":"twentyseven504000twentyseven504000anyShape633000633000",
+                                                  "-children":[
+                                                    { "Transform":
+                                                      {
+                                                        "@translation":[-2,0,0],
+                                                        "-children":[
+                                                          { "Shape":
+                                                            {
+                                                              "-appearance":
+                                                                { "Appearance":
+                                                                  {
+                                                                    "-material":
+                                                                      { "Material":
+                                                                        {
+                                                                          "@diffuseColor":[1,1,1]
+                                                                        }
+                                                                      }
+                                                                  }
+                                                                },
+                                                              "-geometry":
+                                                                { "Box":
+                                                                  {
+                                                                    "@size":[1,1,1]
                                                                   }
                                                                 }
-                                                              }
-                                                            },
-                                                            "-geometry": [
-                                                              {
-                                                                "Box": {
-                                                                  "@size": [
-                                                                    1,
-                                                                    1,
-                                                                    1
-                                                                  ]
-                                                                }
-                                                              }
-                                                            ]
+                                                            }
                                                           }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        -2,
-                                                        0,
-                                                        0
-                                                      ]
+                                                        ]
+                                                      }
                                                     }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000anyShape211000211000",
-                                                "@class": "twentyseven82000twentyseven82000anyShape211000211000"
+                                                  ]
+                                                }
                                               }
-                                            }
-                                          ],
-                                          "@translation": [
-                                            0,
-                                            -2,
-                                            0
-                                          ]
+                                            ]
+                                          }
                                         }
-                                      }
-                                    ],
-                                    "@DEF": "twentyseven82000twentyseven82000three205000205000",
-                                    "@class": "twentyseven82000twentyseven82000three205000205000"
+                                      ]
+                                    }
                                   }
-                                }
-                              ],
-                              "@translation": [
-                                0,
-                                0,
-                                -2
-                              ]
+                                ]
+                              }
                             }
-                          }
-                        ],
-                        "@DEF": "twentyseven82000twentyseven82000nine169000169000",
-                        "@class": "twentyseven82000twentyseven82000nine169000169000"
+                          ]
+                        }
                       }
-                    }
-                  ],
-                  "@translation": [
-                    0,
-                    0,
-                    0
-                  ]
+                    ]
+                  }
                 }
-              }
-            ],
-            "@DEF": "twentyseven8200082000",
-            "@class": "twentyseven8200082000"
+              ]
+            }
           }
-        }
-      ]
+        ]
     }
   }
 }
