@@ -68,9 +68,9 @@ function ConvertObject(key, object, element, path) {
 			}
 		} else if (key === '#sourceText') {
 			var child = document.createTextNode(object[key].join("\n"));
-			if (typeof x3djsonNS !== 'undefined' && x3djsonNS !== "http://www.w3.org/1999/xhtml") {
-				var child = document.createCDATASection(object[key].join("\n").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&"));
-			}
+			//if (typeof x3djsonNS !== 'undefined' && x3djsonNS !== "http://www.w3.org/1999/xhtml") {
+				//var child = document.createCDATASection(object[key].join("\n").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&"));
+			//}
 			$(element).css("display", "none");
 			element.appendChild(child);
 		} else {
