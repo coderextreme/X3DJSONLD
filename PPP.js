@@ -31,7 +31,7 @@ process.stdin.on('end', function() {
 
 	processScripts(object, classes, undefined, routecode);
 	var xml = [];
-	loadX3DJS(null, object, file, xml);
+	loadX3DJS(object, file, xml);
 	console.error(xml.join("\n"));
 	var code = classes.join('\n')
 		.replace(/&lt;/g, '<')

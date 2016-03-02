@@ -1,14 +1,16 @@
-<!doctype html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>JSON Loader</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <link rel="stylesheet" type="text/css" href="http://www.x3dom.org/download/dev/x3dom.css"></link>
-    <script type="text/javascript" src="http://www.x3dom.org/download/dev/x3dom-full.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://www.x3dom.org/download/1.7.1/x3dom.css"></link>
+    <script type="text/javascript" src="http://www.x3dom.org/download/1.7.1/x3dom-full.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <style type="text/css">
     X3D {
         background:#000;
+	width: 300px;
+	height:150px;
     }
     table td, table td * {
         vertical-align: top;
@@ -19,7 +21,7 @@
 <table>
 <tr>
 <td>
-<select>
+<select id="file">
 <option>flipper.json</option>
 <option>force.json</option>
 <option>forces.json</option>
@@ -15662,6 +15664,12 @@
 <td>
 <input type="text" onchange="filter(event)"></input>
 Use Prototype Expander? <input id="prototype" type="checkbox" checked="true"></input>
+Use Namespace: <select id="namespace">
+<option>http://www.w3.org/1999/xhtml</option> <!-- X3DOM XML -->
+<option>http://www.x3dom.org/x3dom</option>
+<option>http://www.web3d.org/specifications/x3d-namespace</option>  <!-- COBWEB -->
+<option>none</option> <!-- X3DOM HTML -->
+</select>
 </td>
 </tr>
 <tr>
@@ -15671,9 +15679,7 @@ Click <a onclick='updateXML();'>here</a> to load X3D XML into Cobweb and XML X3D
 	    
 <textarea id="xml" rows="15" cols="80"></textarea><br>
 <div id="x3domxml"></div>
-<!--
 <iframe  id='cobwebframe' src="cobwebframe.html"></iframe>
--->
 </td>
 <td>
 Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into JSON X3DOM viewer and convert to XML (and display).<br>
@@ -15701,20 +15707,18 @@ Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into JSON X3DOM
 		}
 		x3dom.reload();
 		var content = $('textarea#xml').val();
-/*
 		var cobwebWindow = document.getElementById("cobwebframe").contentWindow ;
-		var cobwebEle = cobwebWindow.document.getElementById("x3dele");
+		var cobwebEle = cobwebWindow.document.getElementsByTagName("X3D")[0];
 		if (typeof cobwebWindow.X3D !== 'undefined') {
 			var browser = cobwebWindow.X3D.getBrowser(cobwebEle);
 			browser.replaceWorld(browser.createX3DFromString(content));
 		} else {
 			console.error("Cobweb disabled.  Use Firefox.");
 		}
-*/
         }
 
 	function filter(event) {
-		$.map($("select option"), function(option, i) {
+		$.map($("#file option"), function(option, i) {
 			var text = $(option).text();
 			if (text.indexOf(event.target.value) >= 0) {
 				$(option).show();
@@ -15727,7 +15731,7 @@ Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into JSON X3DOM
 	}
 
         function loadX3DOM(selector, json, url) {
-	    $(selector+" X3D").remove();
+	    $(selector).empty();
 	    var xml = new LOG();
 	    if ($('#prototype').is(':checked')) {
 
@@ -15779,7 +15783,15 @@ Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into JSON X3DOM
 	
 		intervalId = setInterval(runRoutes, 100);
 	    }
-	    loadX3DJS(document.querySelector(selector), json, url, xml);
+	    var NS = $('#namespace option:selected').text();
+	    switch(NS) {
+	    case "none":
+		document.querySelector(selector).appendChild(loadX3DJS(json, url, xml)); // X3DOM
+		break;
+	    default:
+		document.querySelector(selector).appendChild(loadX3DJS(json, url, xml, NS));  // Cobweb if not XHTML NS
+		break;
+	    }
 			
 	    updateXML(xml);
         }
@@ -15797,8 +15809,8 @@ Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into JSON X3DOM
 	}
 
 	$("select").change(function() {
-		$("X3D").remove();
-		var url = $('select option:selected').text();
+		$("#x3domjson").empty();
+		var url = $('#file option:selected').text();
 		loadX3DJSON('#x3domjson', url);
 	});
 
