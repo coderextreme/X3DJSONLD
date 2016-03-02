@@ -15,7 +15,9 @@ var element = document.getElementsByTagNameNS(null, "X3D")[0];
 element.setAttribute("xmlns:xsd", 'http://www.w3.org/2001/XMLSchema-instance');
 
 function elementSetAttribute(element, key, value) {
-	element.setAttribute(key, value);
+	if (key !== 'SON schema') {
+		element.setAttribute(key, value);
+	}
 }
 
 function ConvertChildren(parentkey, object, element, path) {
@@ -162,27 +164,10 @@ function ConvertToX3DOM(object, parentkey, element, path) {
 	return element;
 }
 
-function loadX3DJS(selector, json, path) {
+function loadX3DJS(json, path, xml) {
 	ConvertToX3DOM(json, "", element, path);
-	return XMLSerializer.serializeToString(element);
+	xml.push(XMLSerializer.serializeToString(element));
 }
-
-if (typeof module === 'object')  {
-	module.exports = loadX3DJS;
-}
-
-
-var content = '';
-
-// read content into buffer
-process.stdin.resume();
-process.stdin.on('data', function(buf) { content += buf.toString(); });
-
-process.stdin.on('end', function() {
-	var json = JSON.parse(content);
-	var xml = loadX3DJS(null, json, 'pp3s.json');
-	console.log(xml);
-});
 
 if (typeof module === 'object')  {
 	module.exports = {

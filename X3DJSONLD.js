@@ -25,7 +25,9 @@ var x3djsonNS;
 // Load X3D JSON into web page
 
 function elementSetAttribute(element, key, value) {
-	element.setAttribute(key, value);
+	if (key !== 'SON schema') {
+		element.setAttribute(key, value);
+	}
 }
 
 function ConvertChildren(parentkey, object, element, path) {
