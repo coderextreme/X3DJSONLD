@@ -1,0 +1,44 @@
+Use Cases:
+	* for first phase
+
+
+	*Convert JSON to XML
+	*Convert XML to JSON (near future, at another site, but uses Java, not supported by Modulus).  We may be able to use Saxonce for smaller files.  See index2.html
+	Convert XML to VRML
+
+	*Edit X3D JSON, VRML, and X3D XML with syntax highlighting
+	*Upload JSON and XML files from client, file dialog, copy and paste, type in.  Download files to desktop from server, copy and paste, or drag and drop.
+
+	*View X3D JSON in 3D.
+	*View X3D XML in 3D (Cobweb)-- Firefox only.
+	View VRML XML in Cobweb.
+	*View X3D XML in 3D (X3DOM).
+	*Validate JSON against a JSON schema.
+		Validate JSON entering website and exiting website
+		Validate JSON being retrieved from JSON database.
+	*Validate XML against an XML schema.
+		*run Schematron.
+		run X3dTidy.xslt
+		*run stylesheets
+		*upload a stylesheet and run it
+	Validate VRML.
+	*Search for files by file name substring. (Server side, but provide GUI).
+	*Search for files by file name contents substring. (Server side, but provide GUI).
+
+	*Sign files with passphrase. (see http://node.carlsonsolutiondesign.com/
+	*Encrypt files with recipient.
+	*Decrypt files.
+	*Verify signature.
+		*Accept passphrase for signing and decrypting.
+		*Accept recipient for encryption.
+		*Show sender for verifying.
+	
+	Store and retrieve JSON documents from a JSON database.
+	Upload and Search JSON database with Hadoop or Spark
+		by Model type
+		by Name
+		by Keyword
+		by Metadata
+		by Author
+		by Comypany
+		Others?

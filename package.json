@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "express": "*",
+    "express": "^4.13.4",
     "xml2js": "^0.4.16",
     "xmldom": "^0.1.22"
   },
