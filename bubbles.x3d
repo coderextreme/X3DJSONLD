@@ -49,7 +49,7 @@
                         // Browser.println(ov);      
                         //Browser.println(positions.length);                  
                         do {
-                            lastKey = Math.round(Math.random()*positions.length);
+                            lastKey = Math.round(Math.random()*(positions.length-1));
                         } while (lastKey === ov);
                         // Browser.println(lastKey);
                         var vc = lastKey;

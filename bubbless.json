@@ -1,9 +1,10 @@
 {
   "X3D": {
     "@profile": "Immersive",
-    "@version": 3.3,
+    "@version": "3.3",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
     "@id": "x3dele",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "Scene": {
       "-children": [
         {
@@ -68,40 +69,146 @@
             "-children": [
               {
                 "Shape": {
-                  "-geometry": [
-                    {
-                      "Sphere": {}
-                    }
-                  ],
-                  "-appearance": [
-                    {
-                      "Appearance": {
-                        "@DEF": "_01_-_Default",
-                        "-material": [
-                          {
-                            "Material": {
-                              "@diffuseColor": [
-                                0.7,
-                                0.7,
-                                0.7
-                              ],
-                              "@specularColor": [
-                                0.5,
-                                0.5,
-                                0.5
+                  "-geometry": {
+                    "Sphere": {}
+                  },
+                  "-appearance": {
+                    "Appearance": {
+                      "@DEF": "_01_-_Default",
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            0.7,
+                            0.7,
+                            0.7
+                          ],
+                          "@specularColor": [
+                            0.5,
+                            0.5,
+                            0.5
+                          ]
+                        }
+                      },
+                      "-texture": {
+                        "ComposedCubeMapTexture": {
+                          "-back": {
+                            "ImageTexture": {
+                              "@url": [
+                                "cubemap/BK.png",
+                                "http://coderextreme.net/X3DJSONLD/cubemap/BK.png"
+                              ]
+                            }
+                          },
+                          "-bottom": {
+                            "ImageTexture": {
+                              "@url": [
+                                "cubemap/BT.png",
+                                "http://coderextreme.net/X3DJSONLD/cubemap/BT.png"
+                              ]
+                            }
+                          },
+                          "-front": {
+                            "ImageTexture": {
+                              "@url": [
+                                "cubemap/FR.png",
+                                "http://coderextreme.net/X3DJSONLD/cubemap/FR.png"
+                              ]
+                            }
+                          },
+                          "-left": {
+                            "ImageTexture": {
+                              "@url": [
+                                "cubemap/LF.png",
+                                "http://coderextreme.net/X3DJSONLD/cubemap/LF.png"
+                              ]
+                            }
+                          },
+                          "-right": {
+                            "ImageTexture": {
+                              "@url": [
+                                "cubemap/RT.png",
+                                "http://coderextreme.net/X3DJSONLD/cubemap/RT.png"
+                              ]
+                            }
+                          },
+                          "-top": {
+                            "ImageTexture": {
+                              "@url": [
+                                "cubemap/TP.png",
+                                "http://coderextreme.net/X3DJSONLD/cubemap/TP.png"
                               ]
                             }
                           }
-                        ],
-                        "-children": [
-                          {
-                            "#comment": "ComposedCubeMapTexture containerField='texture'> <ImageTexture url='\"cubemap/BK.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/BK.png\"' containerField='back'/> <ImageTexture url='\"cubemap/BT.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/BT.png\"' containerField='bottom'/> <ImageTexture url='\"cubemap/FR.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/FR.png\"' containerField='front'/> <ImageTexture url='\"cubemap/LF.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/LF.png\"' containerField='left'/> <ImageTexture url='\"cubemap/RT.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/RT.png\"' containerField='right'/> <ImageTexture url='\"cubemap/TP.png\" \"http://coderextreme.net/X3DJSONLD/cubemap/TP.png\"' containerField='top'/> </ComposedCubeMapTexture> <ComposedShader DEF='ComposedShader' containerField='shaders' language='GLSL'> <field name='cube' accessType='inputOutput' type='SFInt32' value='0'/> <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'/> <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/> <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/> <field name='power' accessType='inputOutput' type='SFFloat' value='2'/> <ShaderPart url='\"bubbles.vs\" \"http://coderextreme.net/X3DJSONLD/bubbles.vs\"' containerField='parts'/> <ShaderPart url='\"bubbles.fs\" \"http://coderextreme.net/X3DJSONLD/bubbles.fs\"' containerField='parts' type='FRAGMENT'/> </ComposedShader"
+                        }
+                      },
+                      "-shaders": [
+                        {
+                          "ComposedShader": {
+                            "@DEF": "ComposedShader",
+                            "@language": "GLSL",
+                            "field": [
+                              {
+                                "@name": "cube",
+                                "@accessType": "inputOutput",
+                                "@type": "SFInt32",
+                                "@value": 0
+                              },
+                              {
+                                "@name": "chromaticDispertion",
+                                "@accessType": "inputOutput",
+                                "@type": "SFVec3f",
+                                "@value": [
+                                  0.98,
+                                  1,
+                                  1.033
+                                ]
+                              },
+                              {
+                                "@name": "bias",
+                                "@accessType": "inputOutput",
+                                "@type": "SFFloat",
+                                "@value": 0.5
+                              },
+                              {
+                                "@name": "scale",
+                                "@accessType": "inputOutput",
+                                "@type": "SFFloat",
+                                "@value": 0.5
+                              },
+                              {
+                                "@name": "power",
+                                "@accessType": "inputOutput",
+                                "@type": "SFFloat",
+                                "@value": 2
+                              }
+                            ],
+                            "-parts": [
+                              {
+                                "ShaderPart": {
+                                  "@url": [
+                                    "bubbles.vs",
+                                    "http://coderextreme.net/X3DJSONLD/bubbles.vs"
+                                  ],
+                                  "@type": "VERTEX"
+                                }
+                              },
+                              {
+                                "ShaderPart": {
+                                  "@url": [
+                                    "bubbles.fs",
+                                    "http://coderextreme.net/X3DJSONLD/bubbles.fs"
+                                  ],
+                                  "@type": "FRAGMENT"
+                                }
+                              }
+                            ],
+                            "@class": "ComposedShader"
                           }
-                        ],
-                        "@class": "_01_-_Default"
-                      }
+                        }
+                      ],
+                      "@class": "_01_-_Default"
                     }
-                  ]
+                  }
                 }
               }
             ],
@@ -264,21 +371,21 @@
               "                        //var orientations = [[0, 1, 0, 0], [0, 1, 0, -1.57], [0, 1, 0, 3.14], [0, 1, 0, 1.57], [0, 1, 0, 0] [1, 0, 0, -1.57], [0, 1, 0, 0], [1, 0, 0, 1.57], [0, 1, 0, 0]];",
               "                        //Browser.println(lastKey);",
               "                        var ov = lastKey;",
-              "                        Browser.println(ov);      ",
+              "                        // Browser.println(ov);      ",
               "                        //Browser.println(positions.length);                  ",
               "                        do {",
-              "                            lastKey = Math.round(Math.random()*positions.length);",
+              "                            lastKey = Math.round(Math.random()*(positions.length-1));",
               "                        } while (lastKey === ov);",
-              "                        Browser.println(lastKey);",
+              "                        // Browser.println(lastKey);",
               "                        var vc = lastKey;",
               "                        ",
-              "                        Browser.println(orientations[ov]);",
-              "                        Browser.println(orientations[vc]);",
+              "                        // Browser.println(orientations[ov]);",
+              "                        // Browser.println(orientations[vc]);",
               "                        orientation = new MFRotation();",
               "                        orientation[0] = new SFRotation(orientations[ov][0], orientations[ov][1], orientations[ov][2], orientations[ov][3]);",
               "                        orientation[1] = new SFRotation(orientations[vc][0], orientations[vc][1], orientations[vc][2], orientations[vc][3]);",
-              "                        Browser.println(positions[ov]);",
-              "                        Browser.println(positions[vc]);",
+              "                        // Browser.println(positions[ov]);",
+              "                        // Browser.println(positions[vc]);",
               "                        position = new MFVec3f();",
               "                        position[0] = new SFVec3f(positions[ov][0],positions[ov][1],positions[ov][2]);",
               "                        position[1] = new SFVec3f(positions[vc][0],positions[vc][1],positions[vc][2]);",

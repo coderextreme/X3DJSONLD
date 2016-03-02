@@ -1,1072 +1,1388 @@
-{ "X3D": {
-    "@profile":"Immersive",
-    "@version":"3.3",
-    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "@id":"x3dele",
+{
+  "X3D": {
+    "@profile": "Immersive",
+    "@version": "4.0",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-4.0.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
-        "meta": [
-          {
-            "@name":"creator",
-            "@content":"John W Carlson"
-          },
-          {
-            "@name":"created",
-            "@content":"December 13 2015"
-          },
-          {
-            "@name":"title",
-            "@content":"force.x3d"
-          },
-          {
-            "@name":"identifier",
-            "@content":"http://coderextreme.net/X3DJSONLD/force.x3d"
-          },
-          {
-            "@name":"description",
-            "@content":"beginnings of a force directed graph in 3D"
-          },
-          {
-            "@name":"generator",
-            "@content":"Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit"
-          },
-          {
-            "@name":"translated",
-            "@content":"24 February 2016"
-          },
-          {
-            "@name":"generator",
-            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
-          },
-          {
-            "@name":"warning",
-            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
-          }
-        ]
+      "meta": [
+        {
+          "@name": "creator",
+          "@content": "John W Carlson"
+        },
+        {
+          "@name": "created",
+          "@content": "December 13 2015"
+        },
+        {
+          "@name": "title",
+          "@content": "force.x3d"
+        },
+        {
+          "@name": "identifier",
+          "@content": "http://coderextreme.net/X3DJSONLD/force.x3d"
+        },
+        {
+          "@name": "description",
+          "@content": "beginnings of a force directed graph in 3D"
+        },
+        {
+          "@name": "generator",
+          "@content": "Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit"
+        },
+        {
+          "@name": "translated",
+          "@content": "02 March 2016"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+        },
+        {
+          "@name": "warning",
+          "@content": "An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+        }
+      ]
     },
     "Scene": {
-        "-children":[
-          { "Transform":
-            {
-              "@DEF":"HoldsContent",
-              "@scale":[0.1,0.1,0.1],
-              "@class":"HoldsContent",
-              "-children":[
-                { "PlaneSensor":
-                  {
-                    "@DEF":"clickGenerator",
-                    "@minPosition":[-50,-50],
-                    "@maxPosition":[50,50],
-                    "@description":"click on background to add nodes, click on nodes to add links",
-                    "@class":"clickGenerator"
-                  }
-                },
-                { "Group":
-                  {
-                    "@DEF":"nodenodeA",
-                    "@class":"nodenodeA",
-                    "-children":[
-                      { "Transform":
-                        {
-                          "@DEF":"nodenodeAnodetransform",
-                          "@class":"nodenodeAnodetransform",
-                          "-children":[
-                            { "Shape":
-                              {
-                                "-geometry":
-                                  { "Sphere":
-                                    {
-                                    }
-                                  },
-                                "-appearance":
-                                  { "Appearance":
-                                    {
-                                      "-material":
-                                        { "Material":
-                                          {
-                                            "@diffuseColor":[1,0,0]
-                                          }
-                                        }
-                                    }
-                                  }
-                              }
-                            },
-                            { "Transform":
-                              {
-                                "@translation":[1,0,0],
-                                "-children":[
-                                  { "Shape":
-                                    {
-                                      "-geometry":
-                                        { "Text":
-                                          {
-                                            "@string":["Node"],
-                                            "-fontStyle":
-                                              { "FontStyle":
-                                                {
-                                                  "@justify":["MIDDLE","MIDDLE"],
-                                                  "@size":5
-                                                }
-                                              }
-                                          }
-                                        },
-                                      "-appearance":
-                                        { "Appearance":
-                                          {
-                                            "-material":
-                                              { "Material":
-                                                {
-                                                  "@diffuseColor":[0,0,1]
-                                                }
-                                              }
-                                          }
-                                        }
-                                    }
-                                  }
-                                ]
-                              }
-                            }
-                          ]
-                        }
-                      },
-                      { "PositionInterpolator":
-                        {
-                          "@DEF":"nodenodeAnodeNodePosition",
-                          "@key":[0,1],
-                          "@keyValue":[0,0,0,0,5,0],
-                          "@class":"nodenodeAnodeNodePosition"
-                        }
-                      },
-                      { "Script":
-                        {
-                          "@DEF":"nodenodeAnodeMoveBall",
-                          "@class":"nodenodeAnodeMoveBall",
-                          "field": [
-                            {
-                              "@name":"translation",
-                              "@accessType":"inputOutput",
-                              "@type":"SFVec3f",
-                              "@value":[50,50,0]
-                            },
-                            {
-                              "@name":"old",
-                              "@accessType":"inputOutput",
-                              "@type":"SFVec3f",
-                              "@value":[0,0,0]
-                            },
-                            {
-                              "@name":"set_location",
-                              "@accessType":"inputOnly",
-                              "@type":"SFTime"
-                            },
-                            {
-                              "@name":"keyValue",
-                              "@accessType":"outputOnly",
-                              "@type":"MFVec3f"
-                            }
-                          ],
-                          "#sourceText":[
-"ecmascript:",
-"\t\t\t\t\tfunction set_location(value) {",
-"                                                old = translation;",
-"\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
-"                                                keyValue = new MFVec3f(old, translation);",
-"\t\t\t\t\t}"
-]
-                        }
-                      },
-                      { "TimeSensor":
-                        {
-                          "@DEF":"nodenodeAnodenodeClock",
-                          "@cycleInterval":3,
-                          "@loop":true,
-                          "@class":"nodenodeAnodenodeClock"
-                        }
-                      },
-                      { "ROUTE":
-                        {
-                          "@fromNode":"nodenodeAnodenodeClock",
-                          "@fromField":"cycleTime",
-                          "@toNode":"nodenodeAnodeMoveBall",
-                          "@toField":"set_location"
-                        }
-                      },
-                      { "ROUTE":
-                        {
-                          "@fromNode":"nodenodeAnodenodeClock",
-                          "@fromField":"fraction_changed",
-                          "@toNode":"nodenodeAnodeNodePosition",
-                          "@toField":"set_fraction"
-                        }
-                      },
-                      { "ROUTE":
-                        {
-                          "@fromNode":"nodenodeAnodeMoveBall",
-                          "@fromField":"keyValue",
-                          "@toNode":"nodenodeAnodeNodePosition",
-                          "@toField":"keyValue"
-                        }
-                      },
-                      { "ROUTE":
-                        {
-                          "@fromNode":"nodenodeAnodeNodePosition",
-                          "@fromField":"value_changed",
-                          "@toNode":"nodenodeAnodetransform",
-                          "@toField":"set_translation"
-                        }
-                      }
-                    ]
-                  }
-                },
-                { "Group":
-                  {
-                    "@DEF":"nodenodeB",
-                    "@class":"nodenodeB",
-                    "-children":[
-                      { "Transform":
-                        {
-                          "@DEF":"nodenodeBnodetransform",
-                          "@class":"nodenodeBnodetransform",
-                          "@translation":[50,50,50],
-                          "-children":[
-                            { "Shape":
-                              {
-                                "-geometry":
-                                  { "Sphere":
-                                    {
-                                    }
-                                  },
-                                "-appearance":
-                                  { "Appearance":
-                                    {
-                                      "-material":
-                                        { "Material":
-                                          {
-                                            "@diffuseColor":[1,0,0]
-                                          }
-                                        }
-                                    }
-                                  }
-                              }
-                            },
-                            { "Transform":
-                              {
-                                "@translation":[1,0,0],
-                                "-children":[
-                                  { "Shape":
-                                    {
-                                      "-geometry":
-                                        { "Text":
-                                          {
-                                            "@string":["Node"],
-                                            "-fontStyle":
-                                              { "FontStyle":
-                                                {
-                                                  "@justify":["MIDDLE","MIDDLE"],
-                                                  "@size":5
-                                                }
-                                              }
-                                          }
-                                        },
-                                      "-appearance":
-                                        { "Appearance":
-                                          {
-                                            "-material":
-                                              { "Material":
-                                                {
-                                                  "@diffuseColor":[0,0,1]
-                                                }
-                                              }
-                                          }
-                                        }
-                                    }
-                                  }
-                                ]
-                              }
-                            }
-                          ]
-                        }
-                      },
-                      { "PositionInterpolator":
-                        {
-                          "@DEF":"nodenodeBnodeNodePosition",
-                          "@key":[0,1],
-                          "@keyValue":[0,0,0,0,5,0],
-                          "@class":"nodenodeBnodeNodePosition"
-                        }
-                      },
-                      { "Script":
-                        {
-                          "@DEF":"nodenodeBnodeMoveBall",
-                          "@class":"nodenodeBnodeMoveBall",
-                          "field": [
-                            {
-                              "@name":"translation",
-                              "@accessType":"inputOutput",
-                              "@type":"SFVec3f",
-                              "@value":[50,50,0]
-                            },
-                            {
-                              "@name":"old",
-                              "@accessType":"inputOutput",
-                              "@type":"SFVec3f",
-                              "@value":[0,0,0]
-                            },
-                            {
-                              "@name":"set_location",
-                              "@accessType":"inputOnly",
-                              "@type":"SFTime"
-                            },
-                            {
-                              "@name":"keyValue",
-                              "@accessType":"outputOnly",
-                              "@type":"MFVec3f"
-                            }
-                          ],
-                          "#sourceText":[
-"ecmascript:",
-"\t\t\t\t\tfunction set_location(value) {",
-"                                                old = translation;",
-"\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
-"                                                keyValue = new MFVec3f(old, translation);",
-"\t\t\t\t\t}"
-]
-                        }
-                      },
-                      { "TimeSensor":
-                        {
-                          "@DEF":"nodenodeBnodenodeClock",
-                          "@cycleInterval":3,
-                          "@loop":true,
-                          "@class":"nodenodeBnodenodeClock"
-                        }
-                      },
-                      { "ROUTE":
-                        {
-                          "@fromNode":"nodenodeBnodenodeClock",
-                          "@fromField":"cycleTime",
-                          "@toNode":"nodenodeBnodeMoveBall",
-                          "@toField":"set_location"
-                        }
-                      },
-                      { "ROUTE":
-                        {
-                          "@fromNode":"nodenodeBnodenodeClock",
-                          "@fromField":"fraction_changed",
-                          "@toNode":"nodenodeBnodeNodePosition",
-                          "@toField":"set_fraction"
-                        }
-                      },
-                      { "ROUTE":
-                        {
-                          "@fromNode":"nodenodeBnodeMoveBall",
-                          "@fromField":"keyValue",
-                          "@toNode":"nodenodeBnodeNodePosition",
-                          "@toField":"keyValue"
-                        }
-                      },
-                      { "ROUTE":
-                        {
-                          "@fromNode":"nodenodeBnodeNodePosition",
-                          "@fromField":"value_changed",
-                          "@toNode":"nodenodeBnodetransform",
-                          "@toField":"set_translation"
-                        }
-                      }
-                    ]
-                  }
-                },
-                { "Group":
-                  {
-                    "@DEF":"nodenodeC",
-                    "@class":"nodenodeC",
-                    "-children":[
-                      { "Transform":
-                        {
-                          "@DEF":"nodenodeCnodetransform",
-                          "@class":"nodenodeCnodetransform",
-                          "@translation":[-50,-50,-50],
-                          "-children":[
-                            { "Shape":
-                              {
-                                "-geometry":
-                                  { "Sphere":
-                                    {
-                                    }
-                                  },
-                                "-appearance":
-                                  { "Appearance":
-                                    {
-                                      "-material":
-                                        { "Material":
-                                          {
-                                            "@diffuseColor":[1,0,0]
-                                          }
-                                        }
-                                    }
-                                  }
-                              }
-                            },
-                            { "Transform":
-                              {
-                                "@translation":[1,0,0],
-                                "-children":[
-                                  { "Shape":
-                                    {
-                                      "-geometry":
-                                        { "Text":
-                                          {
-                                            "@string":["Node"],
-                                            "-fontStyle":
-                                              { "FontStyle":
-                                                {
-                                                  "@justify":["MIDDLE","MIDDLE"],
-                                                  "@size":5
-                                                }
-                                              }
-                                          }
-                                        },
-                                      "-appearance":
-                                        { "Appearance":
-                                          {
-                                            "-material":
-                                              { "Material":
-                                                {
-                                                  "@diffuseColor":[0,0,1]
-                                                }
-                                              }
-                                          }
-                                        }
-                                    }
-                                  }
-                                ]
-                              }
-                            }
-                          ]
-                        }
-                      },
-                      { "PositionInterpolator":
-                        {
-                          "@DEF":"nodenodeCnodeNodePosition",
-                          "@key":[0,1],
-                          "@keyValue":[0,0,0,0,5,0],
-                          "@class":"nodenodeCnodeNodePosition"
-                        }
-                      },
-                      { "Script":
-                        {
-                          "@DEF":"nodenodeCnodeMoveBall",
-                          "@class":"nodenodeCnodeMoveBall",
-                          "field": [
-                            {
-                              "@name":"translation",
-                              "@accessType":"inputOutput",
-                              "@type":"SFVec3f",
-                              "@value":[50,50,0]
-                            },
-                            {
-                              "@name":"old",
-                              "@accessType":"inputOutput",
-                              "@type":"SFVec3f",
-                              "@value":[0,0,0]
-                            },
-                            {
-                              "@name":"set_location",
-                              "@accessType":"inputOnly",
-                              "@type":"SFTime"
-                            },
-                            {
-                              "@name":"keyValue",
-                              "@accessType":"outputOnly",
-                              "@type":"MFVec3f"
-                            }
-                          ],
-                          "#sourceText":[
-"ecmascript:",
-"\t\t\t\t\tfunction set_location(value) {",
-"                                                old = translation;",
-"\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
-"                                                keyValue = new MFVec3f(old, translation);",
-"\t\t\t\t\t}"
-]
-                        }
-                      },
-                      { "TimeSensor":
-                        {
-                          "@DEF":"nodenodeCnodenodeClock",
-                          "@cycleInterval":3,
-                          "@loop":true,
-                          "@class":"nodenodeCnodenodeClock"
-                        }
-                      },
-                      { "ROUTE":
-                        {
-                          "@fromNode":"nodenodeCnodenodeClock",
-                          "@fromField":"cycleTime",
-                          "@toNode":"nodenodeCnodeMoveBall",
-                          "@toField":"set_location"
-                        }
-                      },
-                      { "ROUTE":
-                        {
-                          "@fromNode":"nodenodeCnodenodeClock",
-                          "@fromField":"fraction_changed",
-                          "@toNode":"nodenodeCnodeNodePosition",
-                          "@toField":"set_fraction"
-                        }
-                      },
-                      { "ROUTE":
-                        {
-                          "@fromNode":"nodenodeCnodeMoveBall",
-                          "@fromField":"keyValue",
-                          "@toNode":"nodenodeCnodeNodePosition",
-                          "@toField":"keyValue"
-                        }
-                      },
-                      { "ROUTE":
-                        {
-                          "@fromNode":"nodenodeCnodeNodePosition",
-                          "@fromField":"value_changed",
-                          "@toNode":"nodenodeCnodetransform",
-                          "@toField":"set_translation"
-                        }
-                      }
-                    ]
-                  }
-                },
-                { "Group":
-                  {
-                    "@DEF":"nodenodeD",
-                    "@class":"nodenodeD",
-                    "-children":[
-                      { "Transform":
-                        {
-                          "@DEF":"nodenodeDnodetransform",
-                          "@class":"nodenodeDnodetransform",
-                          "@translation":[50,50,-50],
-                          "-children":[
-                            { "Shape":
-                              {
-                                "-geometry":
-                                  { "Sphere":
-                                    {
-                                    }
-                                  },
-                                "-appearance":
-                                  { "Appearance":
-                                    {
-                                      "-material":
-                                        { "Material":
-                                          {
-                                            "@diffuseColor":[1,0,0]
-                                          }
-                                        }
-                                    }
-                                  }
-                              }
-                            },
-                            { "Transform":
-                              {
-                                "@translation":[1,0,0],
-                                "-children":[
-                                  { "Shape":
-                                    {
-                                      "-geometry":
-                                        { "Text":
-                                          {
-                                            "@string":["Node"],
-                                            "-fontStyle":
-                                              { "FontStyle":
-                                                {
-                                                  "@justify":["MIDDLE","MIDDLE"],
-                                                  "@size":5
-                                                }
-                                              }
-                                          }
-                                        },
-                                      "-appearance":
-                                        { "Appearance":
-                                          {
-                                            "-material":
-                                              { "Material":
-                                                {
-                                                  "@diffuseColor":[0,0,1]
-                                                }
-                                              }
-                                          }
-                                        }
-                                    }
-                                  }
-                                ]
-                              }
-                            }
-                          ]
-                        }
-                      },
-                      { "PositionInterpolator":
-                        {
-                          "@DEF":"nodenodeDnodeNodePosition",
-                          "@key":[0,1],
-                          "@keyValue":[0,0,0,0,5,0],
-                          "@class":"nodenodeDnodeNodePosition"
-                        }
-                      },
-                      { "Script":
-                        {
-                          "@DEF":"nodenodeDnodeMoveBall",
-                          "@class":"nodenodeDnodeMoveBall",
-                          "field": [
-                            {
-                              "@name":"translation",
-                              "@accessType":"inputOutput",
-                              "@type":"SFVec3f",
-                              "@value":[50,50,0]
-                            },
-                            {
-                              "@name":"old",
-                              "@accessType":"inputOutput",
-                              "@type":"SFVec3f",
-                              "@value":[0,0,0]
-                            },
-                            {
-                              "@name":"set_location",
-                              "@accessType":"inputOnly",
-                              "@type":"SFTime"
-                            },
-                            {
-                              "@name":"keyValue",
-                              "@accessType":"outputOnly",
-                              "@type":"MFVec3f"
-                            }
-                          ],
-                          "#sourceText":[
-"ecmascript:",
-"\t\t\t\t\tfunction set_location(value) {",
-"                                                old = translation;",
-"\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
-"                                                keyValue = new MFVec3f(old, translation);",
-"\t\t\t\t\t}"
-]
-                        }
-                      },
-                      { "TimeSensor":
-                        {
-                          "@DEF":"nodenodeDnodenodeClock",
-                          "@cycleInterval":3,
-                          "@loop":true,
-                          "@class":"nodenodeDnodenodeClock"
-                        }
-                      },
-                      { "ROUTE":
-                        {
-                          "@fromNode":"nodenodeDnodenodeClock",
-                          "@fromField":"cycleTime",
-                          "@toNode":"nodenodeDnodeMoveBall",
-                          "@toField":"set_location"
-                        }
-                      },
-                      { "ROUTE":
-                        {
-                          "@fromNode":"nodenodeDnodenodeClock",
-                          "@fromField":"fraction_changed",
-                          "@toNode":"nodenodeDnodeNodePosition",
-                          "@toField":"set_fraction"
-                        }
-                      },
-                      { "ROUTE":
-                        {
-                          "@fromNode":"nodenodeDnodeMoveBall",
-                          "@fromField":"keyValue",
-                          "@toNode":"nodenodeDnodeNodePosition",
-                          "@toField":"keyValue"
-                        }
-                      },
-                      { "ROUTE":
-                        {
-                          "@fromNode":"nodenodeDnodeNodePosition",
-                          "@fromField":"value_changed",
-                          "@toNode":"nodenodeDnodetransform",
-                          "@toField":"set_translation"
-                        }
-                      }
-                    ]
-                  }
-                },
-                { "Group":
-                  {
-                    "@DEF":"cylinderlinkA",
-                    "@class":"cylinderlinkA",
-                    "-children":[
-                      { "Shape":
-                        {
-                          "-geometry":
-                            { "Extrusion":
-                              {
-                                "@DEF":"cylinderlinkAcylinderextrusion",
-                                "@creaseAngle":0.785,
-                                "@crossSection":[1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0],
-                                "@spine":[0,-50,0,0,50,0],
-                                "@class":"cylinderlinkAcylinderextrusion"
-                              }
-                            },
-                          "-appearance":
-                            { "Appearance":
-                              {
-                                "-material":
-                                  { "Material":
-                                    {
-                                      "@diffuseColor":[0,1,0]
-                                    }
-                                  }
-                              }
-                            }
-                        }
-                      },
-                      { "Script":
-                        {
-                          "@DEF":"cylinderlinkAcylinderMoveCylinder",
-                          "@class":"cylinderlinkAcylinderMoveCylinder",
-                          "field": [
-                            {
-                              "@name":"spine",
-                              "@accessType":"inputOutput",
-                              "@type":"MFVec3f",
-                              "@value":[0,-50,0,0,50,0]
-                            },
-                            {
-                              "@name":"set_endA",
-                              "@accessType":"inputOnly",
-                              "@type":"SFVec3f",
-                              "@value":[0,0,0]
-                            },
-                            {
-                              "@name":"set_endB",
-                              "@accessType":"inputOnly",
-                              "@type":"SFVec3f",
-                              "@value":[50,50,50]
-                            }
-                          ],
-                          "#sourceText":[
-"ecmascript:",
-"",
-"                function set_endA(value) {",
-"\t\t    if (typeof spine === 'undefined') {",
-"\t\t        spine = new MFVec3f(value, value);",
-"\t\t    } else {",
-"\t\t        spine = new MFVec3f(value, spine[1]);",
-"\t\t    }",
-"                }",
-"                ",
-"                function set_endB(value) {",
-"\t\t    if (typeof spine === 'undefined') {",
-"\t\t        spine = new MFVec3f(value, value);",
-"\t\t    } else {",
-"\t\t        spine = new MFVec3f(spine[0], value);",
-"\t\t    }",
-"                }",
-"                ",
-"                function set_spine(value) {",
-"                    spine = value;",
-"                }"
-]
-                        }
-                      },
-                      { "ROUTE":
-                        {
-                          "@fromNode":"cylinderlinkAcylinderMoveCylinder",
-                          "@fromField":"spine",
-                          "@toNode":"cylinderlinkAcylinderextrusion",
-                          "@toField":"set_spine"
-                        }
-                      }
-                    ]
-                  }
-                },
-                { "Group":
-                  {
-                    "@DEF":"cylinderlinkB",
-                    "@class":"cylinderlinkB",
-                    "-children":[
-                      { "Shape":
-                        {
-                          "-geometry":
-                            { "Extrusion":
-                              {
-                                "@DEF":"cylinderlinkBcylinderextrusion",
-                                "@creaseAngle":0.785,
-                                "@crossSection":[1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0],
-                                "@spine":[0,-50,0,0,50,0],
-                                "@class":"cylinderlinkBcylinderextrusion"
-                              }
-                            },
-                          "-appearance":
-                            { "Appearance":
-                              {
-                                "-material":
-                                  { "Material":
-                                    {
-                                      "@diffuseColor":[0,1,0]
-                                    }
-                                  }
-                              }
-                            }
-                        }
-                      },
-                      { "Script":
-                        {
-                          "@DEF":"cylinderlinkBcylinderMoveCylinder",
-                          "@class":"cylinderlinkBcylinderMoveCylinder",
-                          "field": [
-                            {
-                              "@name":"spine",
-                              "@accessType":"inputOutput",
-                              "@type":"MFVec3f",
-                              "@value":[0,-50,0,0,50,0]
-                            },
-                            {
-                              "@name":"set_endA",
-                              "@accessType":"inputOnly",
-                              "@type":"SFVec3f",
-                              "@value":[0,0,0]
-                            },
-                            {
-                              "@name":"set_endB",
-                              "@accessType":"inputOnly",
-                              "@type":"SFVec3f",
-                              "@value":[-50,-50,-50]
-                            }
-                          ],
-                          "#sourceText":[
-"ecmascript:",
-"",
-"                function set_endA(value) {",
-"\t\t    if (typeof spine === 'undefined') {",
-"\t\t        spine = new MFVec3f(value, value);",
-"\t\t    } else {",
-"\t\t        spine = new MFVec3f(value, spine[1]);",
-"\t\t    }",
-"                }",
-"                ",
-"                function set_endB(value) {",
-"\t\t    if (typeof spine === 'undefined') {",
-"\t\t        spine = new MFVec3f(value, value);",
-"\t\t    } else {",
-"\t\t        spine = new MFVec3f(spine[0], value);",
-"\t\t    }",
-"                }",
-"                ",
-"                function set_spine(value) {",
-"                    spine = value;",
-"                }"
-]
-                        }
-                      },
-                      { "ROUTE":
-                        {
-                          "@fromNode":"cylinderlinkBcylinderMoveCylinder",
-                          "@fromField":"spine",
-                          "@toNode":"cylinderlinkBcylinderextrusion",
-                          "@toField":"set_spine"
-                        }
-                      }
-                    ]
-                  }
-                },
-                { "Group":
-                  {
-                    "@DEF":"cylinderlinkC",
-                    "@class":"cylinderlinkC",
-                    "-children":[
-                      { "Shape":
-                        {
-                          "-geometry":
-                            { "Extrusion":
-                              {
-                                "@DEF":"cylinderlinkCcylinderextrusion",
-                                "@creaseAngle":0.785,
-                                "@crossSection":[1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0],
-                                "@spine":[0,-50,0,0,50,0],
-                                "@class":"cylinderlinkCcylinderextrusion"
-                              }
-                            },
-                          "-appearance":
-                            { "Appearance":
-                              {
-                                "-material":
-                                  { "Material":
-                                    {
-                                      "@diffuseColor":[0,1,0]
-                                    }
-                                  }
-                              }
-                            }
-                        }
-                      },
-                      { "Script":
-                        {
-                          "@DEF":"cylinderlinkCcylinderMoveCylinder",
-                          "@class":"cylinderlinkCcylinderMoveCylinder",
-                          "field": [
-                            {
-                              "@name":"spine",
-                              "@accessType":"inputOutput",
-                              "@type":"MFVec3f",
-                              "@value":[0,-50,0,0,50,0]
-                            },
-                            {
-                              "@name":"set_endA",
-                              "@accessType":"inputOnly",
-                              "@type":"SFVec3f",
-                              "@value":[50,50,50]
-                            },
-                            {
-                              "@name":"set_endB",
-                              "@accessType":"inputOnly",
-                              "@type":"SFVec3f",
-                              "@value":[50,50,-50]
-                            }
-                          ],
-                          "#sourceText":[
-"ecmascript:",
-"",
-"                function set_endA(value) {",
-"\t\t    if (typeof spine === 'undefined') {",
-"\t\t        spine = new MFVec3f(value, value);",
-"\t\t    } else {",
-"\t\t        spine = new MFVec3f(value, spine[1]);",
-"\t\t    }",
-"                }",
-"                ",
-"                function set_endB(value) {",
-"\t\t    if (typeof spine === 'undefined') {",
-"\t\t        spine = new MFVec3f(value, value);",
-"\t\t    } else {",
-"\t\t        spine = new MFVec3f(spine[0], value);",
-"\t\t    }",
-"                }",
-"                ",
-"                function set_spine(value) {",
-"                    spine = value;",
-"                }"
-]
-                        }
-                      },
-                      { "ROUTE":
-                        {
-                          "@fromNode":"cylinderlinkCcylinderMoveCylinder",
-                          "@fromField":"spine",
-                          "@toNode":"cylinderlinkCcylinderextrusion",
-                          "@toField":"set_spine"
-                        }
-                      }
-                    ]
-                  }
+      "-children": [
+        {},
+        {},
+        {
+          "Transform": {
+            "@DEF": "HoldsContent",
+            "@scale": [
+              0.1,
+              0.1,
+              0.1
+            ],
+            "-children": [
+              {
+                "PlaneSensor": {
+                  "@DEF": "clickGenerator",
+                  "@minPosition": [
+                    -50,
+                    -50
+                  ],
+                  "@maxPosition": [
+                    50,
+                    50
+                  ],
+                  "@description": "click on background to add nodes, click on nodes to add links",
+                  "@class": "clickGenerator"
                 }
-              ]
-            }
-          },
-          { "Script":
-            {
-              "@DEF":"clickHandler",
-              "@class":"clickHandler",
-              "field": [
-                {
-                  "@name":"counter",
-                  "@accessType":"inputOutput",
-                  "@value":0,
-                  "@type":"SFInt32"
-                },
-                {
-                  "@name":"node_changed",
-                  "@accessType":"outputOnly",
-                  "@type":"SFNode"
-                },
-                {
-                  "@name":"add_node",
-                  "@accessType":"inputOnly",
-                  "@value":0,
-                  "@type":"SFBool"
-                },
-                {
-                  "@name":"ModifiableNode",
-                  "@type":"SFNode",
-                  "@accessType":"initializeOnly",
-                  "-children":[
-                    { "Transform":
-                      {
-                        "@USE":"HoldsContent"
+              },
+              {
+                "Group": {
+                  "-children": [
+                    {
+                      "Transform": {
+                        "@DEF": "nodenodeAnodetransform",
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-geometry": {
+                                "Sphere": {}
+                              },
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@diffuseColor": [
+                                        1,
+                                        0,
+                                        0
+                                      ]
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "Transform": {
+                              "@translation": [
+                                1,
+                                0,
+                                0
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Text": {
+                                        "@string": [
+                                          "Node"
+                                        ],
+                                        "-fontStyle": {
+                                          "FontStyle": {
+                                            "@justify": [
+                                              "MIDDLE",
+                                              "MIDDLE"
+                                            ],
+                                            "@size": 5
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              0,
+                                              0,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ],
+                        "@class": "nodenodeAnodetransform",
+                        "@translation": [
+                          0,
+                          0,
+                          0
+                        ]
+                      }
+                    },
+                    {
+                      "PositionInterpolator": {
+                        "@DEF": "nodenodeAnodeNodePosition",
+                        "@key": [
+                          0,
+                          1
+                        ],
+                        "@keyValue": [
+                          0,
+                          0,
+                          0,
+                          0,
+                          5,
+                          0
+                        ],
+                        "@class": "nodenodeAnodeNodePosition"
+                      }
+                    },
+                    {
+                      "Script": {
+                        "@DEF": "nodenodeAnodeMoveBall",
+                        "field": [
+                          {
+                            "@name": "translation",
+                            "@accessType": "inputOutput",
+                            "@type": "SFVec3f",
+                            "@value": [
+                              50,
+                              50,
+                              0
+                            ]
+                          },
+                          {
+                            "@name": "old",
+                            "@accessType": "inputOutput",
+                            "@type": "SFVec3f",
+                            "@value": [
+                              0,
+                              0,
+                              0
+                            ]
+                          },
+                          {
+                            "@name": "set_location",
+                            "@accessType": "inputOnly",
+                            "@type": "SFTime"
+                          },
+                          {
+                            "@name": "keyValue",
+                            "@accessType": "outputOnly",
+                            "@type": "MFVec3f"
+                          }
+                        ],
+                        "#sourceText": [
+                          "ecmascript:",
+                          "\t\t\t\t\tfunction set_location(value) {",
+                          "                                                old = translation;",
+                          "\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
+                          "                                                keyValue = new MFVec3f(old, translation);",
+                          "\t\t\t\t\t\tBrowser.println(translation);",
+                          "\t\t\t\t\t}"
+                        ],
+                        "@class": "nodenodeAnodeMoveBall"
+                      }
+                    },
+                    {
+                      "TimeSensor": {
+                        "@DEF": "nodenodeAnodenodeClock",
+                        "@cycleInterval": 3,
+                        "@loop": true,
+                        "@class": "nodenodeAnodenodeClock"
+                      }
+                    },
+                    {
+                      "ROUTE": {
+                        "@fromNode": "nodenodeAnodenodeClock",
+                        "@fromField": "cycleTime",
+                        "@toNode": "nodenodeAnodeMoveBall",
+                        "@toField": "set_location"
+                      }
+                    },
+                    {
+                      "ROUTE": {
+                        "@fromNode": "nodenodeAnodenodeClock",
+                        "@fromField": "fraction_changed",
+                        "@toNode": "nodenodeAnodeNodePosition",
+                        "@toField": "set_fraction"
+                      }
+                    },
+                    {
+                      "ROUTE": {
+                        "@fromNode": "nodenodeAnodeMoveBall",
+                        "@fromField": "keyValue",
+                        "@toNode": "nodenodeAnodeNodePosition",
+                        "@toField": "keyValue"
+                      }
+                    },
+                    {
+                      "ROUTE": {
+                        "@fromNode": "nodenodeAnodeNodePosition",
+                        "@fromField": "value_changed",
+                        "@toNode": "nodenodeAnodetransform",
+                        "@toField": "set_translation"
                       }
                     }
-                  ]
+                  ],
+                  "@DEF": "nodenodeAnodeA",
+                  "@class": "nodenodeAnodeA"
                 }
-              ],
-              "#sourceText":[
-"ecmascript:",
-"\tfunction add_node(value) {",
-"                Browser.print('hey ', counter);",
-"                counter = counter++;",
-"        \tnode_changed = Browser.createX3DFromString(\"<ProtoInstance DEF='node\"+counter+\"' name='node'><fieldValue name='position' value='0.0 0.0 0.0'/></ProtoInstance>\");",
-"                ModifiableNode.children[ModifiableNode.children.length] = node_changed[0];",
-"        }"
-]
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromNode":"clickGenerator",
-              "@fromField":"isActive",
-              "@toNode":"clickHandler",
-              "@toField":"add_node"
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromNode":"nodenodeAnodetransform",
-              "@fromField":"translation",
-              "@toNode":"cylinderlinkAcylinderMoveCylinder",
-              "@toField":"set_endA"
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromNode":"nodenodeBnodetransform",
-              "@fromField":"translation",
-              "@toNode":"cylinderlinkAcylinderMoveCylinder",
-              "@toField":"set_endB"
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromNode":"nodenodeAnodetransform",
-              "@fromField":"translation",
-              "@toNode":"cylinderlinkBcylinderMoveCylinder",
-              "@toField":"set_endA"
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromNode":"nodenodeCnodetransform",
-              "@fromField":"translation",
-              "@toNode":"cylinderlinkBcylinderMoveCylinder",
-              "@toField":"set_endB"
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromNode":"nodenodeAnodetransform",
-              "@fromField":"translation",
-              "@toNode":"cylinderlinkCcylinderMoveCylinder",
-              "@toField":"set_endA"
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromNode":"nodenodeDnodetransform",
-              "@fromField":"translation",
-              "@toNode":"cylinderlinkCcylinderMoveCylinder",
-              "@toField":"set_endB"
-            }
+              },
+              {
+                "Group": {
+                  "-children": [
+                    {
+                      "Transform": {
+                        "@DEF": "nodenodeBnodetransform",
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-geometry": {
+                                "Sphere": {}
+                              },
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@diffuseColor": [
+                                        1,
+                                        0,
+                                        0
+                                      ]
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "Transform": {
+                              "@translation": [
+                                1,
+                                0,
+                                0
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Text": {
+                                        "@string": [
+                                          "Node"
+                                        ],
+                                        "-fontStyle": {
+                                          "FontStyle": {
+                                            "@justify": [
+                                              "MIDDLE",
+                                              "MIDDLE"
+                                            ],
+                                            "@size": 5
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              0,
+                                              0,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ],
+                        "@class": "nodenodeBnodetransform",
+                        "@translation": [
+                          50,
+                          50,
+                          50
+                        ]
+                      }
+                    },
+                    {
+                      "PositionInterpolator": {
+                        "@DEF": "nodenodeBnodeNodePosition",
+                        "@key": [
+                          0,
+                          1
+                        ],
+                        "@keyValue": [
+                          0,
+                          0,
+                          0,
+                          0,
+                          5,
+                          0
+                        ],
+                        "@class": "nodenodeBnodeNodePosition"
+                      }
+                    },
+                    {
+                      "Script": {
+                        "@DEF": "nodenodeBnodeMoveBall",
+                        "field": [
+                          {
+                            "@name": "translation",
+                            "@accessType": "inputOutput",
+                            "@type": "SFVec3f",
+                            "@value": [
+                              50,
+                              50,
+                              0
+                            ]
+                          },
+                          {
+                            "@name": "old",
+                            "@accessType": "inputOutput",
+                            "@type": "SFVec3f",
+                            "@value": [
+                              0,
+                              0,
+                              0
+                            ]
+                          },
+                          {
+                            "@name": "set_location",
+                            "@accessType": "inputOnly",
+                            "@type": "SFTime"
+                          },
+                          {
+                            "@name": "keyValue",
+                            "@accessType": "outputOnly",
+                            "@type": "MFVec3f"
+                          }
+                        ],
+                        "#sourceText": [
+                          "ecmascript:",
+                          "\t\t\t\t\tfunction set_location(value) {",
+                          "                                                old = translation;",
+                          "\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
+                          "                                                keyValue = new MFVec3f(old, translation);",
+                          "\t\t\t\t\t\tBrowser.println(translation);",
+                          "\t\t\t\t\t}"
+                        ],
+                        "@class": "nodenodeBnodeMoveBall"
+                      }
+                    },
+                    {
+                      "TimeSensor": {
+                        "@DEF": "nodenodeBnodenodeClock",
+                        "@cycleInterval": 3,
+                        "@loop": true,
+                        "@class": "nodenodeBnodenodeClock"
+                      }
+                    },
+                    {
+                      "ROUTE": {
+                        "@fromNode": "nodenodeBnodenodeClock",
+                        "@fromField": "cycleTime",
+                        "@toNode": "nodenodeBnodeMoveBall",
+                        "@toField": "set_location"
+                      }
+                    },
+                    {
+                      "ROUTE": {
+                        "@fromNode": "nodenodeBnodenodeClock",
+                        "@fromField": "fraction_changed",
+                        "@toNode": "nodenodeBnodeNodePosition",
+                        "@toField": "set_fraction"
+                      }
+                    },
+                    {
+                      "ROUTE": {
+                        "@fromNode": "nodenodeBnodeMoveBall",
+                        "@fromField": "keyValue",
+                        "@toNode": "nodenodeBnodeNodePosition",
+                        "@toField": "keyValue"
+                      }
+                    },
+                    {
+                      "ROUTE": {
+                        "@fromNode": "nodenodeBnodeNodePosition",
+                        "@fromField": "value_changed",
+                        "@toNode": "nodenodeBnodetransform",
+                        "@toField": "set_translation"
+                      }
+                    }
+                  ],
+                  "@DEF": "nodenodeBnodeB",
+                  "@class": "nodenodeBnodeB"
+                }
+              },
+              {
+                "Group": {
+                  "-children": [
+                    {
+                      "Transform": {
+                        "@DEF": "nodenodeCnodetransform",
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-geometry": {
+                                "Sphere": {}
+                              },
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@diffuseColor": [
+                                        1,
+                                        0,
+                                        0
+                                      ]
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "Transform": {
+                              "@translation": [
+                                1,
+                                0,
+                                0
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Text": {
+                                        "@string": [
+                                          "Node"
+                                        ],
+                                        "-fontStyle": {
+                                          "FontStyle": {
+                                            "@justify": [
+                                              "MIDDLE",
+                                              "MIDDLE"
+                                            ],
+                                            "@size": 5
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              0,
+                                              0,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ],
+                        "@class": "nodenodeCnodetransform",
+                        "@translation": [
+                          -50,
+                          -50,
+                          -50
+                        ]
+                      }
+                    },
+                    {
+                      "PositionInterpolator": {
+                        "@DEF": "nodenodeCnodeNodePosition",
+                        "@key": [
+                          0,
+                          1
+                        ],
+                        "@keyValue": [
+                          0,
+                          0,
+                          0,
+                          0,
+                          5,
+                          0
+                        ],
+                        "@class": "nodenodeCnodeNodePosition"
+                      }
+                    },
+                    {
+                      "Script": {
+                        "@DEF": "nodenodeCnodeMoveBall",
+                        "field": [
+                          {
+                            "@name": "translation",
+                            "@accessType": "inputOutput",
+                            "@type": "SFVec3f",
+                            "@value": [
+                              50,
+                              50,
+                              0
+                            ]
+                          },
+                          {
+                            "@name": "old",
+                            "@accessType": "inputOutput",
+                            "@type": "SFVec3f",
+                            "@value": [
+                              0,
+                              0,
+                              0
+                            ]
+                          },
+                          {
+                            "@name": "set_location",
+                            "@accessType": "inputOnly",
+                            "@type": "SFTime"
+                          },
+                          {
+                            "@name": "keyValue",
+                            "@accessType": "outputOnly",
+                            "@type": "MFVec3f"
+                          }
+                        ],
+                        "#sourceText": [
+                          "ecmascript:",
+                          "\t\t\t\t\tfunction set_location(value) {",
+                          "                                                old = translation;",
+                          "\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
+                          "                                                keyValue = new MFVec3f(old, translation);",
+                          "\t\t\t\t\t\tBrowser.println(translation);",
+                          "\t\t\t\t\t}"
+                        ],
+                        "@class": "nodenodeCnodeMoveBall"
+                      }
+                    },
+                    {
+                      "TimeSensor": {
+                        "@DEF": "nodenodeCnodenodeClock",
+                        "@cycleInterval": 3,
+                        "@loop": true,
+                        "@class": "nodenodeCnodenodeClock"
+                      }
+                    },
+                    {
+                      "ROUTE": {
+                        "@fromNode": "nodenodeCnodenodeClock",
+                        "@fromField": "cycleTime",
+                        "@toNode": "nodenodeCnodeMoveBall",
+                        "@toField": "set_location"
+                      }
+                    },
+                    {
+                      "ROUTE": {
+                        "@fromNode": "nodenodeCnodenodeClock",
+                        "@fromField": "fraction_changed",
+                        "@toNode": "nodenodeCnodeNodePosition",
+                        "@toField": "set_fraction"
+                      }
+                    },
+                    {
+                      "ROUTE": {
+                        "@fromNode": "nodenodeCnodeMoveBall",
+                        "@fromField": "keyValue",
+                        "@toNode": "nodenodeCnodeNodePosition",
+                        "@toField": "keyValue"
+                      }
+                    },
+                    {
+                      "ROUTE": {
+                        "@fromNode": "nodenodeCnodeNodePosition",
+                        "@fromField": "value_changed",
+                        "@toNode": "nodenodeCnodetransform",
+                        "@toField": "set_translation"
+                      }
+                    }
+                  ],
+                  "@DEF": "nodenodeCnodeC",
+                  "@class": "nodenodeCnodeC"
+                }
+              },
+              {
+                "Group": {
+                  "-children": [
+                    {
+                      "Transform": {
+                        "@DEF": "nodenodeDnodetransform",
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-geometry": {
+                                "Sphere": {}
+                              },
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@diffuseColor": [
+                                        1,
+                                        0,
+                                        0
+                                      ]
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "Transform": {
+                              "@translation": [
+                                1,
+                                0,
+                                0
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Text": {
+                                        "@string": [
+                                          "Node"
+                                        ],
+                                        "-fontStyle": {
+                                          "FontStyle": {
+                                            "@justify": [
+                                              "MIDDLE",
+                                              "MIDDLE"
+                                            ],
+                                            "@size": 5
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              0,
+                                              0,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ],
+                        "@class": "nodenodeDnodetransform",
+                        "@translation": [
+                          50,
+                          50,
+                          -50
+                        ]
+                      }
+                    },
+                    {
+                      "PositionInterpolator": {
+                        "@DEF": "nodenodeDnodeNodePosition",
+                        "@key": [
+                          0,
+                          1
+                        ],
+                        "@keyValue": [
+                          0,
+                          0,
+                          0,
+                          0,
+                          5,
+                          0
+                        ],
+                        "@class": "nodenodeDnodeNodePosition"
+                      }
+                    },
+                    {
+                      "Script": {
+                        "@DEF": "nodenodeDnodeMoveBall",
+                        "field": [
+                          {
+                            "@name": "translation",
+                            "@accessType": "inputOutput",
+                            "@type": "SFVec3f",
+                            "@value": [
+                              50,
+                              50,
+                              0
+                            ]
+                          },
+                          {
+                            "@name": "old",
+                            "@accessType": "inputOutput",
+                            "@type": "SFVec3f",
+                            "@value": [
+                              0,
+                              0,
+                              0
+                            ]
+                          },
+                          {
+                            "@name": "set_location",
+                            "@accessType": "inputOnly",
+                            "@type": "SFTime"
+                          },
+                          {
+                            "@name": "keyValue",
+                            "@accessType": "outputOnly",
+                            "@type": "MFVec3f"
+                          }
+                        ],
+                        "#sourceText": [
+                          "ecmascript:",
+                          "\t\t\t\t\tfunction set_location(value) {",
+                          "                                                old = translation;",
+                          "\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
+                          "                                                keyValue = new MFVec3f(old, translation);",
+                          "\t\t\t\t\t\tBrowser.println(translation);",
+                          "\t\t\t\t\t}"
+                        ],
+                        "@class": "nodenodeDnodeMoveBall"
+                      }
+                    },
+                    {
+                      "TimeSensor": {
+                        "@DEF": "nodenodeDnodenodeClock",
+                        "@cycleInterval": 3,
+                        "@loop": true,
+                        "@class": "nodenodeDnodenodeClock"
+                      }
+                    },
+                    {
+                      "ROUTE": {
+                        "@fromNode": "nodenodeDnodenodeClock",
+                        "@fromField": "cycleTime",
+                        "@toNode": "nodenodeDnodeMoveBall",
+                        "@toField": "set_location"
+                      }
+                    },
+                    {
+                      "ROUTE": {
+                        "@fromNode": "nodenodeDnodenodeClock",
+                        "@fromField": "fraction_changed",
+                        "@toNode": "nodenodeDnodeNodePosition",
+                        "@toField": "set_fraction"
+                      }
+                    },
+                    {
+                      "ROUTE": {
+                        "@fromNode": "nodenodeDnodeMoveBall",
+                        "@fromField": "keyValue",
+                        "@toNode": "nodenodeDnodeNodePosition",
+                        "@toField": "keyValue"
+                      }
+                    },
+                    {
+                      "ROUTE": {
+                        "@fromNode": "nodenodeDnodeNodePosition",
+                        "@fromField": "value_changed",
+                        "@toNode": "nodenodeDnodetransform",
+                        "@toField": "set_translation"
+                      }
+                    }
+                  ],
+                  "@DEF": "nodenodeDnodeD",
+                  "@class": "nodenodeDnodeD"
+                }
+              },
+              {
+                "Group": {
+                  "-children": [
+                    {
+                      "Shape": {
+                        "-geometry": {
+                          "Extrusion": {
+                            "@DEF": "cylinderlinkAcylinderextrusion",
+                            "@creaseAngle": 0.785,
+                            "@crossSection": [
+                              1,
+                              0,
+                              0.92,
+                              -0.38,
+                              0.71,
+                              -0.71,
+                              0.38,
+                              -0.92,
+                              0,
+                              -1,
+                              -0.38,
+                              -0.92,
+                              -0.71,
+                              -0.71,
+                              -0.92,
+                              -0.38,
+                              -1,
+                              0,
+                              -0.92,
+                              0.38,
+                              -0.71,
+                              0.71,
+                              -0.38,
+                              0.92,
+                              0,
+                              1,
+                              0.38,
+                              0.92,
+                              0.71,
+                              0.71,
+                              0.92,
+                              0.38,
+                              1,
+                              0
+                            ],
+                            "@spine": [
+                              0,
+                              -50,
+                              0,
+                              0,
+                              50,
+                              0
+                            ],
+                            "@class": "cylinderlinkAcylinderextrusion"
+                          }
+                        },
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  0,
+                                  1,
+                                  0
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "Script": {
+                        "@DEF": "cylinderlinkAcylinderMoveCylinder",
+                        "field": [
+                          {
+                            "@name": "spine",
+                            "@accessType": "inputOutput",
+                            "@type": "MFVec3f",
+                            "@value": [
+                              0,
+                              -50,
+                              0,
+                              0,
+                              50,
+                              0
+                            ]
+                          },
+                          {
+                            "@name": "set_endA",
+                            "@accessType": "inputOnly",
+                            "@type": "SFVec3f",
+                            "@value": [
+                              0,
+                              0,
+                              0
+                            ]
+                          },
+                          {
+                            "@name": "set_endB",
+                            "@accessType": "inputOnly",
+                            "@type": "SFVec3f",
+                            "@value": [
+                              50,
+                              50,
+                              50
+                            ]
+                          }
+                        ],
+                        "#sourceText": [
+                          "ecmascript:",
+                          "",
+                          "                function set_endA(value) {",
+                          "\t\t    if (typeof spine === 'undefined') {",
+                          "\t\t        spine = new MFVec3f(value, value);",
+                          "\t\t    } else {",
+                          "\t\t        spine = new MFVec3f(value, spine[1]);",
+                          "\t\t    }",
+                          "                }",
+                          "                ",
+                          "                function set_endB(value) {",
+                          "\t\t    if (typeof spine === 'undefined') {",
+                          "\t\t        spine = new MFVec3f(value, value);",
+                          "\t\t    } else {",
+                          "\t\t        spine = new MFVec3f(spine[0], value);",
+                          "\t\t    }",
+                          "                }",
+                          "                ",
+                          "                function set_spine(value) {",
+                          "                    spine = value;",
+                          "                }"
+                        ],
+                        "@class": "cylinderlinkAcylinderMoveCylinder"
+                      }
+                    },
+                    {
+                      "ROUTE": {
+                        "@fromNode": "cylinderlinkAcylinderMoveCylinder",
+                        "@fromField": "spine",
+                        "@toNode": "cylinderlinkAcylinderextrusion",
+                        "@toField": "set_spine"
+                      }
+                    }
+                  ],
+                  "@DEF": "cylinderlinkAlinkA",
+                  "@class": "cylinderlinkAlinkA"
+                }
+              },
+              {
+                "Group": {
+                  "-children": [
+                    {
+                      "Shape": {
+                        "-geometry": {
+                          "Extrusion": {
+                            "@DEF": "cylinderlinkBcylinderextrusion",
+                            "@creaseAngle": 0.785,
+                            "@crossSection": [
+                              1,
+                              0,
+                              0.92,
+                              -0.38,
+                              0.71,
+                              -0.71,
+                              0.38,
+                              -0.92,
+                              0,
+                              -1,
+                              -0.38,
+                              -0.92,
+                              -0.71,
+                              -0.71,
+                              -0.92,
+                              -0.38,
+                              -1,
+                              0,
+                              -0.92,
+                              0.38,
+                              -0.71,
+                              0.71,
+                              -0.38,
+                              0.92,
+                              0,
+                              1,
+                              0.38,
+                              0.92,
+                              0.71,
+                              0.71,
+                              0.92,
+                              0.38,
+                              1,
+                              0
+                            ],
+                            "@spine": [
+                              0,
+                              -50,
+                              0,
+                              0,
+                              50,
+                              0
+                            ],
+                            "@class": "cylinderlinkBcylinderextrusion"
+                          }
+                        },
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  0,
+                                  1,
+                                  0
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "Script": {
+                        "@DEF": "cylinderlinkBcylinderMoveCylinder",
+                        "field": [
+                          {
+                            "@name": "spine",
+                            "@accessType": "inputOutput",
+                            "@type": "MFVec3f",
+                            "@value": [
+                              0,
+                              -50,
+                              0,
+                              0,
+                              50,
+                              0
+                            ]
+                          },
+                          {
+                            "@name": "set_endA",
+                            "@accessType": "inputOnly",
+                            "@type": "SFVec3f",
+                            "@value": [
+                              0,
+                              0,
+                              0
+                            ]
+                          },
+                          {
+                            "@name": "set_endB",
+                            "@accessType": "inputOnly",
+                            "@type": "SFVec3f",
+                            "@value": [
+                              -50,
+                              -50,
+                              -50
+                            ]
+                          }
+                        ],
+                        "#sourceText": [
+                          "ecmascript:",
+                          "",
+                          "                function set_endA(value) {",
+                          "\t\t    if (typeof spine === 'undefined') {",
+                          "\t\t        spine = new MFVec3f(value, value);",
+                          "\t\t    } else {",
+                          "\t\t        spine = new MFVec3f(value, spine[1]);",
+                          "\t\t    }",
+                          "                }",
+                          "                ",
+                          "                function set_endB(value) {",
+                          "\t\t    if (typeof spine === 'undefined') {",
+                          "\t\t        spine = new MFVec3f(value, value);",
+                          "\t\t    } else {",
+                          "\t\t        spine = new MFVec3f(spine[0], value);",
+                          "\t\t    }",
+                          "                }",
+                          "                ",
+                          "                function set_spine(value) {",
+                          "                    spine = value;",
+                          "                }"
+                        ],
+                        "@class": "cylinderlinkBcylinderMoveCylinder"
+                      }
+                    },
+                    {
+                      "ROUTE": {
+                        "@fromNode": "cylinderlinkBcylinderMoveCylinder",
+                        "@fromField": "spine",
+                        "@toNode": "cylinderlinkBcylinderextrusion",
+                        "@toField": "set_spine"
+                      }
+                    }
+                  ],
+                  "@DEF": "cylinderlinkBlinkB",
+                  "@class": "cylinderlinkBlinkB"
+                }
+              },
+              {
+                "Group": {
+                  "-children": [
+                    {
+                      "Shape": {
+                        "-geometry": {
+                          "Extrusion": {
+                            "@DEF": "cylinderlinkCcylinderextrusion",
+                            "@creaseAngle": 0.785,
+                            "@crossSection": [
+                              1,
+                              0,
+                              0.92,
+                              -0.38,
+                              0.71,
+                              -0.71,
+                              0.38,
+                              -0.92,
+                              0,
+                              -1,
+                              -0.38,
+                              -0.92,
+                              -0.71,
+                              -0.71,
+                              -0.92,
+                              -0.38,
+                              -1,
+                              0,
+                              -0.92,
+                              0.38,
+                              -0.71,
+                              0.71,
+                              -0.38,
+                              0.92,
+                              0,
+                              1,
+                              0.38,
+                              0.92,
+                              0.71,
+                              0.71,
+                              0.92,
+                              0.38,
+                              1,
+                              0
+                            ],
+                            "@spine": [
+                              0,
+                              -50,
+                              0,
+                              0,
+                              50,
+                              0
+                            ],
+                            "@class": "cylinderlinkCcylinderextrusion"
+                          }
+                        },
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  0,
+                                  1,
+                                  0
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "Script": {
+                        "@DEF": "cylinderlinkCcylinderMoveCylinder",
+                        "field": [
+                          {
+                            "@name": "spine",
+                            "@accessType": "inputOutput",
+                            "@type": "MFVec3f",
+                            "@value": [
+                              0,
+                              -50,
+                              0,
+                              0,
+                              50,
+                              0
+                            ]
+                          },
+                          {
+                            "@name": "set_endA",
+                            "@accessType": "inputOnly",
+                            "@type": "SFVec3f",
+                            "@value": [
+                              50,
+                              50,
+                              50
+                            ]
+                          },
+                          {
+                            "@name": "set_endB",
+                            "@accessType": "inputOnly",
+                            "@type": "SFVec3f",
+                            "@value": [
+                              50,
+                              50,
+                              -50
+                            ]
+                          }
+                        ],
+                        "#sourceText": [
+                          "ecmascript:",
+                          "",
+                          "                function set_endA(value) {",
+                          "\t\t    if (typeof spine === 'undefined') {",
+                          "\t\t        spine = new MFVec3f(value, value);",
+                          "\t\t    } else {",
+                          "\t\t        spine = new MFVec3f(value, spine[1]);",
+                          "\t\t    }",
+                          "                }",
+                          "                ",
+                          "                function set_endB(value) {",
+                          "\t\t    if (typeof spine === 'undefined') {",
+                          "\t\t        spine = new MFVec3f(value, value);",
+                          "\t\t    } else {",
+                          "\t\t        spine = new MFVec3f(spine[0], value);",
+                          "\t\t    }",
+                          "                }",
+                          "                ",
+                          "                function set_spine(value) {",
+                          "                    spine = value;",
+                          "                }"
+                        ],
+                        "@class": "cylinderlinkCcylinderMoveCylinder"
+                      }
+                    },
+                    {
+                      "ROUTE": {
+                        "@fromNode": "cylinderlinkCcylinderMoveCylinder",
+                        "@fromField": "spine",
+                        "@toNode": "cylinderlinkCcylinderextrusion",
+                        "@toField": "set_spine"
+                      }
+                    }
+                  ],
+                  "@DEF": "cylinderlinkClinkC",
+                  "@class": "cylinderlinkClinkC"
+                }
+              }
+            ],
+            "@class": "HoldsContent"
           }
-        ]
+        },
+        {
+          "Script": {
+            "@DEF": "clickHandler",
+            "field": [
+              {
+                "@name": "counter",
+                "@accessType": "inputOutput",
+                "@value": 0,
+                "@type": "SFInt32"
+              },
+              {
+                "@name": "node_changed",
+                "@accessType": "outputOnly",
+                "@type": "SFNode"
+              },
+              {
+                "@name": "add_node",
+                "@accessType": "inputOnly",
+                "@value": 0,
+                "@type": "SFBool"
+              },
+              {
+                "@name": "ModifiableNode",
+                "@type": "SFNode",
+                "@accessType": "initializeOnly",
+                "-children": [
+                  {
+                    "Transform": {
+                      "@USE": "HoldsContent"
+                    }
+                  }
+                ]
+              }
+            ],
+            "#sourceText": [
+              "ecmascript:",
+              "\tfunction add_node(value) {",
+              "                Browser.print('hey ', counter);",
+              "                counter = counter++;",
+              "\t\tnode_changed = Browser.createX3DFromString('{ \"ProtoInstance\": { \"@name\":\"node\", \"@DEF\":\"node'+counter+'\", \"fieldValue\": [ { \"@name\":\"position\", \"@value\":[0.0,0.0,0.0]}]}}');",
+              "                ModifiableNode.children[ModifiableNode.children.length] = node_changed[0];",
+              "        }"
+            ],
+            "@class": "clickHandler"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "clickGenerator",
+            "@fromField": "isActive",
+            "@toNode": "clickHandler",
+            "@toField": "add_node"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "nodenodeAnodetransform",
+            "@fromField": "translation",
+            "@toNode": "cylinderlinkAcylinderMoveCylinder",
+            "@toField": "set_endA"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "nodenodeBnodetransform",
+            "@fromField": "translation",
+            "@toNode": "cylinderlinkAcylinderMoveCylinder",
+            "@toField": "set_endB"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "nodenodeAnodetransform",
+            "@fromField": "translation",
+            "@toNode": "cylinderlinkBcylinderMoveCylinder",
+            "@toField": "set_endA"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "nodenodeCnodetransform",
+            "@fromField": "translation",
+            "@toNode": "cylinderlinkBcylinderMoveCylinder",
+            "@toField": "set_endB"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "nodenodeAnodetransform",
+            "@fromField": "translation",
+            "@toNode": "cylinderlinkCcylinderMoveCylinder",
+            "@toField": "set_endA"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "nodenodeDnodetransform",
+            "@fromField": "translation",
+            "@toNode": "cylinderlinkCcylinderMoveCylinder",
+            "@toField": "set_endB"
+          }
+        }
+      ]
     }
   }
 }
