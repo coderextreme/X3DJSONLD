@@ -4,28 +4,27 @@
     <title>JSON Loader</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
     <link rel="stylesheet" type="text/css" href="http://www.x3dom.org/download/dev/x3dom.css"></link>
+    <script type="text/javascript" src="http://www.x3dom.org/download/dev/x3dom-full.js"></script>
     <style type="text/css">
     X3D {
         background:#000;
-	width:100%;
-	height:100%;
+	width: 900px;
+	height:450px;
     }
     </style>
-    <script type="text/javascript" src="http://www.x3dom.org/download/dev/x3dom-full.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 </head>
 <body>
 <div id="x3domjson"></div>
 </body>
     <script type="text/javascript" src="X3DJSONLD.js"></script>
+    <script type="text/javascript" src="PrototypeExpander.js"></script>
+    <script type="text/javascript" src="Script.js"></script>
+    <script type="text/javascript" src="loaderJQuery.js"></script>
     <script type="text/javascript">
-        function loadX3DOM(selector, json, url) {
-	    loadX3DJS(document.querySelector(selector), json, url, []);
-        }
-
 	function loadX3DJSON(selector, url) {
 		$.getJSON(url, function(json) {
-			loadX3DOM(selector, json, url);
+	    		replaceX3DJSON(selector, json, url, []);
 		})
 		.fail(function(jqXHR, textStatus, errorThrown) { alert('getJSON request failed! ' + textStatus + ' ' + errorThrown); });
 	}

@@ -3,8 +3,8 @@
 <head>
     <title>X3D JSON Loader</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <link rel="stylesheet" type="text/css" href="http://www.x3dom.org/download/1.7.1/x3dom.css"></link>
-    <script type="text/javascript" src="http://www.x3dom.org/download/1.7.1/x3dom-full.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://www.x3dom.org/download/dev/x3dom.css"></link>
+    <script type="text/javascript" src="http://www.x3dom.org/download/dev/x3dom-full.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <style type="text/css">
     X3D {
@@ -15,6 +15,25 @@
     table td, table td * {
         vertical-align: top;
     }
+/* unvisited link */
+a:link {
+    color: red;
+}
+
+/* visited link */
+a:visited {
+    color: green;
+}
+
+/* mouse over link */
+a:hover {
+    color: hotpink;
+}
+
+/* selected link */
+a:active {
+    color: blue;
+}
     </style>
 </head>
 <body>
@@ -65,6 +84,7 @@
 <input type="text" onchange="filter(event)"></input>
 Use Prototype Expander? <input id="prototype" type="checkbox" checked="true"></input>
 Use Namespace: <select id="namespace">
+<option>http://www.web3d.org/specifications/x3d</option>
 <option>http://www.w3.org/1999/xhtml</option> <!-- X3DOM XML -->
 <option>http://www.x3dom.org/x3dom</option>
 <option>http://www.web3d.org/specifications/x3d-namespace</option>  <!-- COBWEB -->
@@ -75,7 +95,6 @@ Use Namespace: <select id="namespace">
 <tr>
 <td>
 Click <a onclick='updateXML();'>here</a> to load X3D XML into Cobweb and XML X3DOM viewer. Does not convert to JSON.<br>
-			
 	    
 <textarea id="xml" rows="15" cols="80"></textarea><br>
 <div id="x3domxml"></div>
@@ -92,6 +111,5 @@ Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into JSON X3DOM
     <script type="text/javascript" src="X3DJSONLD.js"></script>
     <script type="text/javascript" src="PrototypeExpander.js"></script>
     <script type="text/javascript" src="Script.js"></script>
-
     <script type="text/javascript" src="loaderJQuery.js"></script>
 </html>

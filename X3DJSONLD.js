@@ -1,10 +1,14 @@
 "use strict";
 
+if (typeof document === 'undefined') {
+	var document = {};
+}
+
 // For X3D Browser functions
 if (typeof Browser === 'undefined') {
 	var Browser = {
-		print : function(string) { if (typeof console !== 'undefined' && typeof string !== 'undefined') console.error(string); },
-		println : function(string) { if (typeof console !== 'undefined' && typeof string !== 'undefined') console.error(string); },
+		print : function(string) { if (typeof console !== 'undefined' && typeof string !== 'undefined') console.log(string); },
+		println : function(string) { if (typeof console !== 'undefined' && typeof string !== 'undefined') console.log(string); },
 		stringToArray : function(obj) {
 			if (typeof obj === 'object') {
 				return obj;
@@ -124,8 +128,6 @@ function ConvertToX3DOM(object, parentkey, element, path) {
 			// This is where the whole thing starts
 			if (key === 'X3D') {
 				ConvertToX3DOM(object[key], key, element, path);
-				elementSetAttribute(element, "id", "x3dele");
-				elementSetAttribute(element, "xmlns:xsd", 'http://www.w3.org/2001/XMLSchema-instance');
 			} else {
 				ConvertObject(key, object, element, path);
 			}
@@ -174,7 +176,7 @@ function ConvertToX3DOM(object, parentkey, element, path) {
 							
                                        }
 					// if URL
-					console.error("Loading URL",'"'+localArray.join('" "')+'"');
+					console.log("Loading URL",'"'+localArray.join('" "')+'"');
 					elementSetAttribute(element, parentkey.substr(1),'"'+localArray.join('" "')+'"');
                                 } else {
 					// if string array
@@ -216,6 +218,10 @@ function loadX3DJS(json, path, xml, NS) {
 if (typeof module === 'object')  {
 	module.exports = {
 		loadX3DJS : loadX3DJS,
-		Browser : Browser
+		Browser : Browser,
+		ConvertToX3DOM : ConvertToX3DOM,
+		setDocument : function(doc) {
+			document = doc;
+		}
 	}
 }

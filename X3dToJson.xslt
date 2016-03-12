@@ -84,7 +84,12 @@ POSSIBILITY OF SUCH DAMAGE.
     <!-- http://stackoverflow.com/questions/9328882/encoding-special-chars-in-xslt-output -->
     <!-- http://stackoverflow.com/questions/4901133/json-and-escaping-characters -->
     
-    <!-- global variables: none -->
+    <!-- global variables -->
+	
+	  <!-- Identification of unit-test scenes rule is used in X3D Schematron and X3dToJson.xslt -->
+	  <xsl:variable name="isTestScene" 
+				  select="(//meta[(@name='error') or (@name='warning') or (@name='hint') or (@name='info') or (@name='TODO')][starts-with(lower-case(@content),'test')]) or
+						  (//meta[(@name='title')][starts-with(lower-case(@content),'test') or ends-with(lower-case(@content),'test.x3d')])"/>
     
     <xsl:template match="/"> <!-- process root of input document -->
         
@@ -96,7 +101,7 @@ POSSIBILITY OF SUCH DAMAGE.
 		<!-- note preceding:: and following:: constraints refer to the position of the X3D element with respect to the comment, hence logic appears reversed -->
         <xsl:if test="comment()[following::X3D]">
             <xsl:message>
-                <xsl:text>Warning: comments preceding the X3D element are not translated as part of the X3D JSON object.</xsl:text>
+                <xsl:text>Warning: comments preceding the X3D element are not translated as part of the X3D JSON object file.</xsl:text>
                 <xsl:text>&#10;</xsl:text>
                 <xsl:for-each select="comment()[following::X3D]">
                     <xsl:text>&lt;!--</xsl:text>
@@ -108,7 +113,7 @@ POSSIBILITY OF SUCH DAMAGE.
         </xsl:if>
         <xsl:if test="comment()[preceding::X3D]">
             <xsl:message>
-                <xsl:text>Warning: comments following the X3D element are not translated as part of the X3D JSON object.</xsl:text>
+                <xsl:text>Warning: comments following the X3D element are not translated as part of the X3D JSON object file.</xsl:text>
                 <xsl:text>&#10;</xsl:text>
                 <xsl:for-each select="comment()[preceding::X3D]">
                     <xsl:text>&lt;!--</xsl:text>
@@ -215,7 +220,7 @@ POSSIBILITY OF SUCH DAMAGE.
                     <!-- special case: scene-graph structure elements, pre-fix -->
                     <xsl:choose>
                         <xsl:when test="($elementName='X3D')">
-                            <!-- all set already -->
+							<xsl:text> {</xsl:text><!-- attributes + follow-on nodes in scene-graph structure array -->
                         </xsl:when>
                         <xsl:when test="($elementName='head') or ($elementName='Scene') or ($elementName='ProtoInterface') or ($elementName='ProtoBody') or ($elementName='IS') or ($elementName='AllX3dElementsAttributes')">
                             <xsl:if test="(count(@*) = 0)">
@@ -231,20 +236,24 @@ POSSIBILITY OF SUCH DAMAGE.
 						<!-- process all sibling elements of this type at once -->
 
 						<!-- process attributes for this element, if any -->
-						<xsl:if test="@*">
-							<xsl:choose>
-								<xsl:when test="($elementName='X3D') or ($elementName='AllX3dElementsAttributes')">
-									<xsl:text> </xsl:text>
-								</xsl:when>
-								<xsl:otherwise>
-									<xsl:text>&#10;</xsl:text>
-									<xsl:call-template name="print-indent"><xsl:with-param name="indent" select="$indent+2"/></xsl:call-template>
-								</xsl:otherwise>
-							</xsl:choose>
+						<xsl:if test="@* and not($elementName='X3D') and not($elementName='AllX3dElementsAttributes')">
+							<xsl:text>&#10;</xsl:text>
+							<xsl:call-template name="print-indent"><xsl:with-param name="indent" select="$indent+2"/></xsl:call-template>
 							<xsl:text>{</xsl:text><!-- attributes + follow-on nodes in scene-graph structure array -->
+						</xsl:if>
+						
+						<xsl:if test="@*">
 							<xsl:call-template name="attributes">
 								<xsl:with-param name="indent"><xsl:value-of select="$indent+2"/></xsl:with-param>
 							</xsl:call-template>
+						</xsl:if>
+						
+						<xsl:if test="($elementName='X3D') and not($parentName='AllX3dElementsAttributes')">
+							<xsl:text>&#10;</xsl:text>
+							<xsl:call-template name="print-indent"><xsl:with-param name="indent" select="$indent+4"/></xsl:call-template>
+							<!-- TODO no guidance yet on how to properly mark the governing schema within a JSON file at http://json-schema.org -->
+							<xsl:text>"JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"</xsl:text>
+							<xsl:text>,</xsl:text>
 						</xsl:if>
 
 						<xsl:call-template name="comments-elements-ROUTEs"> <!-- contained content -->
@@ -252,10 +261,10 @@ POSSIBILITY OF SUCH DAMAGE.
 						</xsl:call-template>
 
 						<!-- process attributes for this element, post-fix -->
-						<xsl:if test="@*">
-							<xsl:text>&#10;</xsl:text>
-							<xsl:call-template name="print-indent"><xsl:with-param name="indent" select="$indent+2"/></xsl:call-template>
-							<xsl:text>}</xsl:text><!-- attributes + follow-on nodes in scene-graph structure array -->
+						<xsl:if test="@* or ($elementName='X3D')">
+						<xsl:text>&#10;</xsl:text>
+						<xsl:call-template name="print-indent"><xsl:with-param name="indent" select="$indent+2"/></xsl:call-template>
+						<xsl:text>}</xsl:text><!-- attributes + follow-on nodes in scene-graph structure array -->
 						</xsl:if>
 					
 						<!-- special case: add meta tags for conversion, if others exist.  TODO handle if no head element provided. -->
@@ -364,6 +373,7 @@ POSSIBILITY OF SUCH DAMAGE.
                         <xsl:when test="($parentName = 'field') or ($parentName = 'fieldValue')">
                             <xsl:text>children</xsl:text>
                         </xsl:when>
+						<!-- following depends on schema being properly read and providing containerField values -->
                         <xsl:when test="string-length(@containerField) > 0">
                             <xsl:value-of select="@containerField"/>
                         </xsl:when>
@@ -372,14 +382,29 @@ POSSIBILITY OF SUCH DAMAGE.
 							<xsl:message>
 								<xsl:text>ErrorChildNodeFieldNameNotFound: no containerField or field name found for the X3D JSON object.</xsl:text>
 								<xsl:text>&#10;</xsl:text>
-                                <xsl:value-of select="local-name(..)"/>
                                 <xsl:text>  $elementName=</xsl:text>
                                 <xsl:value-of select="$elementName"/>
+								<xsl:if test="(string-length(@DEF) > 0)">
+									<xsl:text>, DEF=</xsl:text>
+									<xsl:value-of select="@DEF"/>
+								</xsl:if>
+								<xsl:if test="(string-length(@USE) > 0)">
+									<xsl:text>, USE=</xsl:text>
+									<xsl:value-of select="@USE"/>
+								</xsl:if>
                                 <xsl:text>, $parentName=</xsl:text>
                                 <xsl:value-of select="$parentName"/>
 								<xsl:text>&#10;</xsl:text>
-								<xsl:text>  Please report this error to x3d-public@web3d.org - thanks for your help improving X3D Quality Assurance (QA).</xsl:text>
-								<xsl:text>&#10;</xsl:text>
+								<xsl:choose>
+									<xsl:when test="not($isTestScene)">
+										<xsl:text>  Please report this error to x3d-public@web3d.org - thanks for your help improving X3D Quality Assurance (QA).</xsl:text>
+									</xsl:when>
+									<xsl:when test="(string-length(//meta[(@name='title')]/@content) > 0)">
+										<xsl:text>  </xsl:text>
+										<xsl:value-of      select="//meta[(@name='title')]/@content"/>
+										<xsl:text> is a test scene supporting X3D Quality Assurance (QA).</xsl:text>
+									</xsl:when>
+								</xsl:choose>
 							</xsl:message>
                         </xsl:otherwise>
                     </xsl:choose>
@@ -389,7 +414,6 @@ POSSIBILITY OF SUCH DAMAGE.
                 <xsl:if test="not(preceding-sibling::*[@containerField = $fieldName] |
                                   preceding-sibling::*[$parentName = 'field']      [$fieldName = 'children'] |
                                   preceding-sibling::*[$parentName = 'fieldValue'] [$fieldName = 'children'] |
-                                  preceding-sibling::*[$parentName = 'MetadataSet'][$fieldName = 'children'] |
                                   preceding-sibling::*[$parentName = 'ProtoBody']  [$fieldName = 'children'] |
                                   preceding-sibling::ProtoDeclare                  [$fieldName = 'children'] | 
                                   preceding-sibling::ExternProtoDeclare            [$fieldName = 'children'] | 
@@ -415,20 +439,19 @@ POSSIBILITY OF SUCH DAMAGE.
                                                             ($fieldName = 'massDensityModel')   or ($fieldName = 'material')           or
                                                             ($fieldName = 'metadata')           or ($fieldName = 'normal')             or ($fieldName = 'pickingGeometry')    or
                                                             ($fieldName = 'profileCurve')       or ($fieldName = 'proxy')              or 
-					                                        (($fieldName = 'renderStyle') and (($parentName='BlendedVolumeStyle') or ($parentName='VolumeData'))) or
-                                                            ($fieldName = 'segmentIdentifiers') or ($fieldName = 'skinCoord')          or ($fieldName = 'skinNormal')         or
+					                                        ($fieldName = 'segmentIdentifiers') or ($fieldName = 'skinCoord')          or ($fieldName = 'skinNormal')         or
                                                             ($fieldName = 'surface')            or ($fieldName = 'surfaceNormals')     or
-                                                            ($fieldName = 'targetObject')       or ($fieldName = 'texCoordRamp')       or
-                                                            (($fieldName = 'texCoord') and not($parentName='MultiTextureCoordinate'))  or 
-                                                            (($fieldName = 'texture')  and not(($parentName='ComposedTexture3D') or ($parentName='MultiTexture')))            or
-                                                            ($fieldName = 'textureProperties')  or
-                                                            (($fieldName = 'textureTransform') and not($parentName='MultiTextureTransform')) or
-                                                            ($fieldName = 'trajectoryCurve')    or ($fieldName = 'transferFunction')  or
-					                                        ($fieldName = 'viewpoint')          or ($fieldName = 'voxels')            or
-					                                        ($fieldName = 'weightTransferFunction1') or ($fieldName = 'weightTransferFunction2') or
-                                                                                ($parentName='CADFace'         and $fieldName = 'shape') or
-                                                                                ($parentName='CollidableShape' and $fieldName = 'shape') or
-                                                                                ($parentName='Sound'           and $fieldName = 'source')" />
+                                                            ($fieldName = 'targetObject')       or ($fieldName = 'texCoordRamp')       or ($fieldName = 'textureProperties')  or
+                                                            ($fieldName = 'trajectoryCurve')    or ($fieldName = 'transferFunction')   or
+					                                        ($fieldName = 'viewpoint')          or ($fieldName = 'voxels')             or
+					                                        ($fieldName = 'weightTransferFunction1') or
+					                                        ($fieldName = 'weightTransferFunction2') or
+                                                            (($fieldName = 'renderStyle')       and (($parentName='BlendedVolumeStyle') or ($parentName='VolumeData')))     or
+                                                            (($fieldName = 'source')            and ($parentName='Sound'))                                                  or
+                                                            (($fieldName = 'texCoord')          and not($parentName='MultiTextureCoordinate'))                              or 
+                                                            (($fieldName = 'texture')           and not(($parentName='ComposedTexture3D') or ($parentName='MultiTexture'))) or
+                                                            (($fieldName = 'textureTransform')  and not($parentName='MultiTextureTransform'))                               or
+                                                            (($fieldName = 'shape')             and (($parentName='CADFace') or ($parentName='CollidableShape')))" />
 
 					<!-- contained node containerField -->
                     <xsl:if test="not(local-name() = 'ProtoInterface') and not(local-name() = 'ProtoBody')">
@@ -448,7 +471,6 @@ POSSIBILITY OF SUCH DAMAGE.
                                            following-sibling::*[@containerField = $fieldName] | 
 										   following-sibling::*[$parentName = 'field']      [$fieldName = 'children'] |
                                            following-sibling::*[$parentName = 'fieldValue'] [$fieldName = 'children'] |
-										   following-sibling::*[$parentName = 'MetadataSet'][$fieldName = 'children'] |
                                            following-sibling::*[$parentName = 'ProtoBody']  [$fieldName = 'children'] |
                                            following-sibling::ProtoDeclare                  [$fieldName = 'children'] | 
                                            following-sibling::ExternProtoDeclare            [$fieldName = 'children'] | 
@@ -696,6 +718,27 @@ POSSIBILITY OF SUCH DAMAGE.
                 </xsl:message>
             </xsl:if>
             -->
+            <!-- debug field, fieldValue
+            <xsl:if test="starts-with(local-name(..),'field') and (local-name()='name')">
+                <xsl:message>
+                    <xsl:text>&gt;</xsl:text>
+                    <xsl:value-of select="local-name(..)"/>
+                    <xsl:text> name='</xsl:text>
+                    <xsl:value-of select="."/>
+					<xsl:if test="(string-length(normalize-space(../@type)) > 0)">
+						<xsl:text>' type='</xsl:text>
+						<xsl:value-of select="../@type"/>
+					</xsl:if>
+					<xsl:if test="(string-length(normalize-space(../@accessType)) > 0)">
+						<xsl:text>' accessType='</xsl:text>
+						<xsl:value-of select="../@accessType"/>
+					</xsl:if>
+                    <xsl:text>' value='</xsl:text>
+                    <xsl:value-of select="../@value"/>
+                    <xsl:text>'/&lt;</xsl:text>
+                </xsl:message>
+            </xsl:if>
+            -->
             
             <!-- common processing for each attribute -->
             <!--  escaped quote requires preceding backslash in JSON encoding
@@ -749,7 +792,7 @@ POSSIBILITY OF SUCH DAMAGE.
                         <xsl:text>]</xsl:text>
                     </xsl:when>
                     <!-- single string -->
-                    <xsl:when test="($attributeType = 'SFString') or ($attributeType = 'xs:string') or
+                    <xsl:when test="($attributeType = 'SFString') or ($attributeType = 'xs:string') or 
                                     not(local-name() ='url') and not(ends-with(local-name(),'Url')) and
                                        ((local-name()='value') and ((contains(local-name(../..),'Proto') or contains(local-name(../../..),'Proto')) and
                                                                    ((../@type='SFString') or ($fieldValueType='SFString'))) or
@@ -949,7 +992,11 @@ POSSIBILITY OF SUCH DAMAGE.
                         <xsl:call-template name="insert-commas-recurse">
                             <xsl:with-param name="inputString">
                                 <xsl:call-template name="escape-less-than-characters-recurse">
-                                    <xsl:with-param name="inputString" select="$normalizedValue"/>
+									<xsl:with-param name="inputString">
+										<xsl:call-template name="escape-backslash-characters-recurse">
+											<xsl:with-param name="inputString" select="$normalizedValue"/>
+										</xsl:call-template>
+									</xsl:with-param>
                                 </xsl:call-template>
                             </xsl:with-param>
                             <xsl:with-param name="inputType"><xsl:text>MFString</xsl:text></xsl:with-param>
@@ -1031,7 +1078,11 @@ POSSIBILITY OF SUCH DAMAGE.
                     <xsl:call-template name="escape-quotes-recurse">
                         <xsl:with-param name="inputString">
                             <xsl:call-template name="omit-leading-trailing-whitespace">
-                                <xsl:with-param name="inputString" select="."/>
+                                <xsl:with-param name="inputString">
+									<xsl:call-template name="escape-backslash-characters-recurse">
+										<xsl:with-param name="inputString" select="."/>
+									</xsl:call-template>
+								</xsl:with-param>
                             </xsl:call-template>
                         </xsl:with-param>
                     </xsl:call-template>
@@ -1110,8 +1161,12 @@ POSSIBILITY OF SUCH DAMAGE.
                 <xsl:call-template name="escape-less-than-characters-recurse">
                     <xsl:with-param name="inputString">
                         <xsl:call-template name="escape-greater-than-characters-recurse">
-                            <xsl:with-param name="inputString" select="normalize-space($inputString)"/>
-                        </xsl:call-template>
+							<xsl:with-param name="inputString">
+								<xsl:call-template name="escape-backslash-characters-recurse">
+									<xsl:with-param name="inputString" select="normalize-space($inputString)"/>
+								</xsl:call-template>
+							</xsl:with-param>
+						</xsl:call-template>
                     </xsl:with-param>
                 </xsl:call-template>
             </xsl:with-param>
@@ -1245,6 +1300,23 @@ POSSIBILITY OF SUCH DAMAGE.
       </xsl:choose>
     </xsl:template>
 
+    <xsl:template name="escape-backslash-characters-recurse">
+      <xsl:param name="inputString"><xsl:text></xsl:text></xsl:param> <!-- already normalized white space -->
+      <xsl:choose>
+        <xsl:when test="not(contains($inputString,'\'))">
+          <xsl:value-of select="$inputString"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="substring-before($inputString,'\')"/>
+          <xsl:text>\\</xsl:text>
+          <xsl:call-template name="escape-backslash-characters-recurse">
+            <xsl:with-param name="inputString" select="substring-after($inputString,'\')"/>
+          </xsl:call-template>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:template>
+
+
     <xsl:template name="escape-less-than-characters-recurse">
       <xsl:param name="inputString"><xsl:text></xsl:text></xsl:param> <!-- already normalized white space -->
       <xsl:choose>
@@ -1260,7 +1332,7 @@ POSSIBILITY OF SUCH DAMAGE.
         </xsl:otherwise>
       </xsl:choose>
     </xsl:template>
-
+	
     <xsl:template name="replace-newlines-recurse">
       <xsl:param name="inputString"><xsl:text></xsl:text></xsl:param> <!-- not normalized white space -->
       <xsl:choose>
@@ -1302,7 +1374,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <xsl:otherwise>
           <xsl:value-of select="substring-before($inputString,'&gt;')"/>
           <xsl:text>&gt;</xsl:text>
-          <xsl:call-template name="escape-less-than-characters-recurse">
+          <xsl:call-template name="escape-greater-than-characters-recurse">
             <xsl:with-param name="inputString" select="substring-after($inputString,'&gt;')"/>
           </xsl:call-template>
         </xsl:otherwise>
@@ -1312,7 +1384,7 @@ POSSIBILITY OF SUCH DAMAGE.
     <xsl:template name="insert-commas-recurse">
       <!-- insert commas before space characters between array values -->
       <xsl:param name="inputString"><xsl:text></xsl:text></xsl:param> <!-- already normalized white space -->
-      <xsl:param name="inputType"><xsl:text>false</xsl:text></xsl:param>
+      <xsl:param name="inputType"><xsl:text></xsl:text></xsl:param><!-- data type for this field -->
       <xsl:choose>
         <!-- no space, all done -->
         <xsl:when test="not(contains($inputString,' '))">
@@ -1337,8 +1409,8 @@ POSSIBILITY OF SUCH DAMAGE.
           </xsl:call-template>
         </xsl:when>
         <!-- do not insert commas within string types -->
-        <xsl:when test="($inputType = 'true')">
-          <!-- all done -->
+        <xsl:when test="($inputType = 'SFString') or ($inputType = 'MFString')">
+          <!-- MFString commas between SFString values already handled, so do not insert further commas -->
           <xsl:value-of select="$inputString"/>
         </xsl:when>
         <xsl:when test="(local-name()='url') or contains(local-name(),'Url')">
@@ -1384,7 +1456,7 @@ POSSIBILITY OF SUCH DAMAGE.
 
     <xsl:template name="output-integers">
         <xsl:param name="inputString"><xsl:text></xsl:text></xsl:param> <!-- already normalized white space -->
-        <xsl:for-each select="tokenize($inputString, ' ')">
+        <xsl:for-each select="tokenize($inputString, '\s')">
             <xsl:variable name="singleInteger" select="."/>
             <xsl:choose>
                 <!-- Convert hexadecimal values to decimal -->
@@ -1399,7 +1471,7 @@ POSSIBILITY OF SUCH DAMAGE.
                 </xsl:otherwise>
             </xsl:choose>
             <!--  array values require comma between values in JSON encoding -->
-            <xsl:if test="position() lt last()">
+            <xsl:if test="last() > position()">
                 <xsl:text>,</xsl:text>
             </xsl:if>
         </xsl:for-each>
@@ -1430,13 +1502,13 @@ POSSIBILITY OF SUCH DAMAGE.
     <xsl:template name="output-reals">
         <xsl:param name="inputString"><xsl:text></xsl:text></xsl:param> <!-- already normalized white space -->
         <!-- insert leading zeroes before float values starting with decimal point; omit leading + signs -->
-        <xsl:for-each select="tokenize($inputString, ' ')">
+        <xsl:for-each select="tokenize($inputString, '\s')">
             <xsl:variable name="singleReal" select="."/>
             <xsl:call-template name="insert-leading-trailing-zero">
                 <xsl:with-param name="inputReal" select="$singleReal"/>
             </xsl:call-template>
             <!--  array values require comma between values in JSON encoding -->
-            <xsl:if test="position() lt last()">
+            <xsl:if test="last() > position()">
                 <xsl:text>,</xsl:text>
             </xsl:if>
         </xsl:for-each>
@@ -1461,6 +1533,17 @@ POSSIBILITY OF SUCH DAMAGE.
                 <xsl:text>-0</xsl:text>
                 <xsl:value-of select="substring($inputReal,2)"/>
             </xsl:when>
+			<!-- missing numeral after decimal point before scientific notation, insert 0 -->
+			<xsl:when test="contains($inputReal,'.e')">
+				<xsl:value-of select="substring-before($inputReal,'.e')"/>
+				<xsl:text>.0e</xsl:text>
+				<xsl:value-of select="substring-after($inputReal,'.e')"/>
+			</xsl:when>
+			<xsl:when test="contains($inputReal,'.E')">
+				<xsl:value-of select="substring-before($inputReal,'.E')"/>
+				<xsl:text>.0E</xsl:text>
+				<xsl:value-of select="substring-after($inputReal,'.E')"/>
+			</xsl:when>
             <!-- doesn't start with decimal point -->
             <xsl:otherwise>
               <xsl:value-of select="$inputReal"/>
@@ -2396,11 +2479,14 @@ POSSIBILITY OF SUCH DAMAGE.
 		<xsl:variable name="attributeName"       select="local-name()"/>
 		<xsl:variable name="parentElementName"   select="local-name(..)"/>
 		<xsl:variable name="normalizeSpaceValue" select="normalize-space(.)"/>
+		<xsl:variable name="localFieldType"      select="normalize-space(../@type)"/> <!-- locally defined field -->
 
 		<xsl:choose>
 		  <!-- SFString -->
-		  <xsl:when test="($attributeName='DEF')  or ($attributeName='USE') or
+		  <xsl:when test="($localFieldType='SFString')          or
+                          ($attributeName='DEF')                or ($attributeName='USE') or
                           ($attributeName='name')               or
+                          ($attributeName='class')              or
                           ($attributeName='description')        or
                           ($attributeName='address')            or
                           ($attributeName='language')           or
@@ -2408,6 +2494,10 @@ POSSIBILITY OF SUCH DAMAGE.
                           ($attributeName='multicastAddress')   or
                           ($attributeName='networkMode')        or
                           ($attributeName='reference')          or
+					      (starts-with($parentElementName,'field')         and (($attributeName='accessType') or ($attributeName='type')       or ($attributeName='appinfo') or ($attributeName='documentation'))) or
+					      (starts-with($parentElementName,'meta')          and (($attributeName='content')    or ($attributeName='http-equiv') or ($attributeName='scheme')  or ($attributeName='dir') or ($attributeName='lang') or ($attributeName='xml:lang'))) or
+                          (($parentElementName='component')                and not($attributeName='level')) or
+                          (($parentElementName='unit')                     and not($attributeName='conversionFactor')) or
 					      ($parentElementName='ArcClose2D'                 and $attributeName='closureType') or
 					      ($parentElementName='BlendedVolumeStyle'         and (starts-with($attributeName,'weightFunction') or ($attributeName='magnificationFilter') or ($attributeName='minificationFilter') or ($attributeName='textureCompression'))) or
                           (ends-with($parentElementName,'Fog')             and $attributeName='fogType') or
@@ -2423,15 +2513,16 @@ POSSIBILITY OF SUCH DAMAGE.
 					      ($parentElementName='TextureCoordinateGenerator' and $attributeName='mode') or
 					      ($parentElementName='TextureProperties'          and (starts-with($attributeName,'boundaryMode') or ($attributeName='magnificationFilter') or ($attributeName='minificationFilter') or ($attributeName='textureCompression'))) or
                           ($parentElementName='WorldInfo'                  and $attributeName='title') or
-                          (($parentElementName='component')                and not($attributeName='level')) or
-                          (($parentElementName='unit')                     and not($attributeName='conversionFactor'))">
+                          ($parentElementName='XvlShell'                   and $attributeName='shellType')">
 			  <xsl:text>SFString</xsl:text>
 		  </xsl:when>
 		  <!-- Statements: xs:integer as SFInt32 - TODO schema/spec change? -->
-		  <xsl:when test="(($parentElementName='component')                and $attributeName='level')">
+		  <xsl:when test="($localFieldType='SFInt32')           or 
+                          (($parentElementName='component')                and $attributeName='level')">
 			  <xsl:text>SFInt32</xsl:text>
 		  </xsl:when>
-		  <xsl:when test="($parentElementName='unit'      and $attributeName='conversionFactor')">
+		  <xsl:when test="($localFieldType='SFDouble')          or 
+                          ($parentElementName='unit'      and $attributeName='conversionFactor')">
 			  <xsl:text>SFDouble</xsl:text>
 		  </xsl:when>
 		  <!-- X3D statements (i.e. not nodes): xs:string (including X3D version attribute) -->
@@ -2443,7 +2534,8 @@ POSSIBILITY OF SUCH DAMAGE.
 		  </xsl:when>
 		  <!-- MFString (some are also enumerations) -->
 		  <xsl:when test="
-					($attributeName='url') or contains($attributeName,'Url') or
+					($localFieldType='MFString')   or 
+                    ($attributeName='url') or contains($attributeName,'Url') or
 					($attributeName='forceOutput') or
 					($attributeName='objectType')  or
 					($parentElementName='Anchor' and $attributeName='parameter') or
@@ -2465,16 +2557,17 @@ POSSIBILITY OF SUCH DAMAGE.
 		  </xsl:when>
 		  <!-- SFBool -->
 		  <xsl:when test="
-					($attributeName='activate') or
-					($attributeName='ccw') or
-					($attributeName='closed') or
-					($attributeName='convex') or
+					($localFieldType='SFBool')  or 
+                    ($attributeName='activate') or
+					($attributeName='ccw')      or
+					($attributeName='closed')   or
+					($attributeName='convex')   or
 					($attributeName='colorPerVertex') or
-					($attributeName='enabled') or
-					($attributeName='global') or
+					($attributeName='enabled')  or
+					($attributeName='global')   or
 					($attributeName='normalPerVertex') or
-					($attributeName='on') or
-					($attributeName='loop') or
+					($attributeName='on')       or
+					($attributeName='loop')     or
 					($attributeName='normalizeVelocity') or
 					($attributeName='rtpHeaderExpected') or
 					($attributeName='solid') or
@@ -2520,9 +2613,10 @@ POSSIBILITY OF SUCH DAMAGE.
 					($parentElementName='VolumeEmitter' and $attributeName='internal')">
 			  <xsl:text>SFBool</xsl:text>
 		  </xsl:when>
-		  <!-- MFBool:  no native MFBool attributes but Scripts, prototypes and Lattice XvlShell can have them. -->
+		  <!-- MFBool -->
 		  <xsl:when test="
-					(contains($parentElementName,'BooleanSequencer') and $attributeName='keyValue') or
+					($localFieldType='MFBool')  or 
+                    (contains($parentElementName,'BooleanSequencer') and $attributeName='keyValue') or
 					($parentElementName='CADLayer'                   and $attributeName='visible') or
 					($parentElementName='MetadataBoolean'            and $attributeName='value') or
 					($parentElementName='SegmentedVolumeData'        and $attributeName='segmentEnabled') or
@@ -2531,7 +2625,8 @@ POSSIBILITY OF SUCH DAMAGE.
 		  </xsl:when>
 		  <!-- SFColor -->
 		  <xsl:when test="
-					($parentElementName='CartoonVolumeStyle' and ($attributeName='orthogonalColor' or $attributeName='parallelColor')) or
+					($localFieldType='SFColor')  or 
+                    ($parentElementName='CartoonVolumeStyle' and ($attributeName='orthogonalColor' or $attributeName='parallelColor')) or
 					($parentElementName='ColorChaser' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
 					($parentElementName='ColorDamper' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
 					(contains($parentElementName,'Light') and $attributeName='color') or
@@ -2543,43 +2638,51 @@ POSSIBILITY OF SUCH DAMAGE.
 		  </xsl:when>
 		  <!-- SFColorRGBA -->
 		  <xsl:when test="
-					($parentElementName='EdgeEnhancementVolumeStyle' and $attributeName='edgeColor') or
+					($localFieldType='SFColorRGBA')  or 
+                    ($parentElementName='EdgeEnhancementVolumeStyle' and $attributeName='edgeColor') or
 					($parentElementName='TextureProperties' and $attributeName='borderColor') or
 					($parentElementName='ToneMappedVolumeStyle' and ($attributeName='coolColor' or $attributeName='warmColor'))">
 			  <xsl:text>SFColorRGBA</xsl:text>
 		  </xsl:when>
 		  <!-- MFColor -->
 		  <xsl:when test="
-					($parentElementName='Color' and $attributeName='color') or
+					(($localFieldType='MFColor')  or 
+                    $parentElementName='Color' and $attributeName='color') or
 					($parentElementName='ColorInterpolator' and $attributeName='keyValue') or
 					(ends-with($parentElementName,'Background') and ($attributeName='groundColor' or $attributeName='skyColor'))">
 			  <xsl:text>MFColor</xsl:text>
 		  </xsl:when>
 		  <!-- MFColorRGBA -->
-		  <xsl:when test="($parentElementName='ColorRGBA' and $attributeName='color')">
+		  <xsl:when test="
+					($localFieldType='MFColorRGBA')  or 
+                    ($parentElementName='ColorRGBA' and $attributeName='color')">
 			  <xsl:text>MFColorRGBA</xsl:text>
 		  </xsl:when>
 		  <!-- SFImage -->
 		  <xsl:when test="
-					($parentElementName='PixelTexture' and $attributeName='image')">
+					($localFieldType='SFImage')  or 
+                    ($parentElementName='PixelTexture' and $attributeName='image')">
 			  <xsl:text>SFImage</xsl:text>
 		  </xsl:when>
 		  <!-- no MFImage attributes -->
 		  <!-- SFDouble --> <!-- precedes SFFloat since some fields are different than usual -->
 		  <xsl:when test="
-					($parentElementName='GeoElevationGrid' and (($attributeName='creaseAngle') or ($attributeName='xSpacing') or ($attributeName='zSpacing')))">
+					($localFieldType='SFDouble')  or 
+                    ($parentElementName='GeoElevationGrid' and (($attributeName='creaseAngle') or ($attributeName='xSpacing') or ($attributeName='zSpacing')))">
 			  <xsl:text>SFDouble</xsl:text>
 		  </xsl:when>
 		  <!-- MFDouble -->
 		  <xsl:when test="
-					($parentElementName='GeoElevationGrid'   and $attributeName='height') or
+					($localFieldType='MFDouble')  or 
+                    ($parentElementName='GeoElevationGrid'   and $attributeName='height') or
 					($parentElementName='MetadataDouble'     and $attributeName='value')  or
 					(starts-with($parentElementName,'Nurbs') and (($attributeName='knot') or ($attributeName='weight') or contains($attributeName,'Knot')))">
 			  <xsl:text>MFDouble</xsl:text>
 		  </xsl:when>
 		  <!-- SFFloat -->
 		  <xsl:when test="
-					($attributeName='ambientIntensity') or
+					($localFieldType='SFFloat')  or 
+                    ($attributeName='ambientIntensity') or
 					($attributeName='intensity')        or
 					($attributeName='creaseAngle')      or
                     ($attributeName='radius')           or ($attributeName='innerRadius') or ($attributeName='outerRadius') or
@@ -2644,7 +2747,8 @@ POSSIBILITY OF SUCH DAMAGE.
 		  </xsl:when>
 		  <!-- MFFloat -->
 		  <xsl:when test="
-					($attributeName='key') or
+					($localFieldType='MFFloat')  or 
+                    ($attributeName='key')       or
 					(contains($parentElementName,'ElevationGrid') and $attributeName='height') or
 					(contains($parentElementName,'LOD') and $attributeName='range') or
 					(ends-with($parentElementName,'Background') and ($attributeName='groundAngle' or $attributeName='skyAngle')) or
@@ -2670,7 +2774,8 @@ POSSIBILITY OF SUCH DAMAGE.
 		  </xsl:when>
 		  <!-- SFTime -->
 		  <xsl:when test="
-					($parentElementName='TimeSensor') or
+					($localFieldType='SFTime')        or 
+                    ($parentElementName='TimeSensor') or
                     ($attributeName='duration')       or
                     ($attributeName='tau')            or
                     ($attributeName='timestamp')      or
@@ -2686,7 +2791,8 @@ POSSIBILITY OF SUCH DAMAGE.
 		  <!-- no MFTime -->
 		  <!-- SFVec2f -->
 		  <xsl:when test="
-					($parentElementName='CollisionCollection' and ($attributeName='frictionCoefficients' or $attributeName='slipFactors' or $attributeName='surfaceSpeed')) or
+					($localFieldType='SFVec2f')  or 
+                    ($parentElementName='CollisionCollection' and ($attributeName='frictionCoefficients' or $attributeName='slipFactors' or $attributeName='surfaceSpeed')) or
 					($parentElementName='Contact' and ($attributeName='frictionCoefficients' or $attributeName='slipCoefficients' or $attributeName='surfaceSpeed')) or
 					($parentElementName='ParticleSystem' and $attributeName='particleSize') or
 					($parentElementName='PlaneSensor' and ($attributeName='maxPosition' or $attributeName='minPosition')) or
@@ -2698,7 +2804,8 @@ POSSIBILITY OF SUCH DAMAGE.
 		  </xsl:when>
 		  <!-- MFVec2f -->
 		  <xsl:when test="
-					($parentElementName='EaseInEaseOut' and $attributeName='easeInEaseOut') or
+					($localFieldType='MFVec2f')  or 
+                    ($parentElementName='EaseInEaseOut' and $attributeName='easeInEaseOut') or
 					($parentElementName='Extrusion' and ($attributeName='crossSection' or $attributeName='scale')) or
 					(($parentElementName='CoordinateInterpolator2D' or $parentElementName='PositionInterpolator2D') and $attributeName='keyValue') or
 					(($parentElementName='ContourPolyline2D' or $parentElementName='Polypoint2D' or $parentElementName='TextureCoordinate') and $attributeName='point') or
@@ -2712,7 +2819,8 @@ POSSIBILITY OF SUCH DAMAGE.
 		  </xsl:when>
 		  <!-- SFVec3d -->
 		  <xsl:when test="
-					($attributeName='geoCenter') or
+					($localFieldType='SFVec3d')  or 
+                    ($attributeName='geoCenter') or
 					($attributeName='geoCoords') or
 					($parentElementName='GeoElevationGrid'   and $attributeName='geoGridOrigin') or
 					($parentElementName='GeoLOD'             and $attributeName='center') or
@@ -2722,7 +2830,8 @@ POSSIBILITY OF SUCH DAMAGE.
 		  </xsl:when>
 		  <!-- MFVec3d -->
 		  <xsl:when test="
-					($parentElementName='ContourPolyline2D'       and $attributeName='controlPoint') or
+					($localFieldType='MFVec3d')  or 
+                    ($parentElementName='ContourPolyline2D'       and $attributeName='controlPoint') or
 					($parentElementName='CoordinateDouble'        and $attributeName='point') or
 					($parentElementName='GeoCoordinate'           and $attributeName='point') or
 					($parentElementName='GeoPositionInterpolator' and $attributeName='keyValue') or
@@ -2732,11 +2841,12 @@ POSSIBILITY OF SUCH DAMAGE.
 		  <!-- SFVec3f -->
 		  <!-- note TextureTransform tests must precede these default checks -->
 		  <xsl:when test="
-					($attributeName='anchorPoint') or
-					($attributeName='bboxCenter') or
-					($attributeName='bboxSize') or
-					($attributeName='center') or
-					($attributeName='scale') or
+					($localFieldType='SFVec3f')    or 
+                    ($attributeName='anchorPoint') or
+					($attributeName='bboxCenter')  or
+					($attributeName='bboxSize')    or
+					($attributeName='center')      or
+					($attributeName='scale')       or
 					($attributeName='translation') or
 					($parentElementName='Billboard' and $attributeName='axisOfRotation') or
 					($parentElementName='Box' and $attributeName='size') or
@@ -2775,7 +2885,8 @@ POSSIBILITY OF SUCH DAMAGE.
 		  </xsl:when>
 		  <!-- MFVec3f -->
 		  <xsl:when test="
-					($parentElementName='CoordinateChaser' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
+					($localFieldType='MFVec3f')    or 
+                    ($parentElementName='CoordinateChaser' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
 					($parentElementName='CoordinateDamper' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
 					($parentElementName='CoordinateInterpolator'     and $attributeName='keyValue') or
 					($parentElementName='NormalInterpolator'         and $attributeName='keyValue') or
@@ -2790,13 +2901,15 @@ POSSIBILITY OF SUCH DAMAGE.
 		  </xsl:when>
 		  <!-- SFVec4f -->
 		  <xsl:when test="
-					($parentElementName='ClipPlane' and $attributeName='plane')">
+					($localFieldType='MFVec3f')    or 
+                    ($parentElementName='ClipPlane' and $attributeName='plane')">
 			  <xsl:text>SFVec4f</xsl:text>
 		  </xsl:when>
 		  <!-- SFRotation -->
 		  <!-- note TextureTransform tests must precede these default checks -->
 		  <xsl:when test="
-					($attributeName='rotation') or
+					($localFieldType='MFVec3f')    or 
+                    ($attributeName='rotation') or
 					($attributeName='scaleOrientation') or
 					(($parentElementName='CylinderSensor' or $parentElementName='PlaneSensor') and $attributeName='axisRotation') or
 					($parentElementName='OrientationChaser' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
@@ -2811,28 +2924,33 @@ POSSIBILITY OF SUCH DAMAGE.
 		  </xsl:when>
 		  <!-- MFRotation -->
 		  <xsl:when test="
-					($parentElementName='Extrusion' and $attributeName='orientation') or
+					($localFieldType='MFVec3f')    or 
+                    ($parentElementName='Extrusion' and $attributeName='orientation') or
 					(ends-with($parentElementName,'OrientationInterpolator') and $attributeName='keyValue')">
 			  <xsl:text>MFRotation</xsl:text>
 		  </xsl:when>
 		  <!-- MFMatrix3f -->
 		  <xsl:when test="
-					($parentElementName='Matrix3VertexAttribute' and $attributeName='value')">
+					($localFieldType='MFVec3f')    or 
+                    ($parentElementName='Matrix3VertexAttribute' and $attributeName='value')">
 			  <xsl:text>MFMatrix3f</xsl:text>
 		  </xsl:when>
 		  <!-- SFMatrix4f -->
 		  <xsl:when test="
-					($parentElementName='TextureTransformMatrix3D' and $attributeName='matrix')">
+					($localFieldType='MFVec3f')    or 
+                    ($parentElementName='TextureTransformMatrix3D' and $attributeName='matrix')">
 			  <xsl:text>SFMatrix4f</xsl:text>
 		  </xsl:when>
 		  <!-- MFMatrix4f -->
 		  <xsl:when test="
-					($parentElementName='Matrix4VertexAttribute' and $attributeName='value')">
+					(($localFieldType='MFVec3f')    or 
+                    $parentElementName='Matrix4VertexAttribute' and $attributeName='value')">
 			  <xsl:text>MFMatrix4f</xsl:text>
 		  </xsl:when>
 		  <!-- MFInt32 --> <!-- must precede MFInt32 -->
 		  <xsl:when test="
-					($attributeName='colorIndex') or
+					($localFieldType='MFVec3f')    or 
+                    ($attributeName='colorIndex') or
 					($attributeName='coordIndex') or
 					($attributeName='normalIndex') or
 					($attributeName='texCoordIndex') or
@@ -2856,6 +2974,7 @@ POSSIBILITY OF SUCH DAMAGE.
 		  </xsl:when>
 		  <!-- SFInt32 --> <!-- Note that other DIS attibutes must get tested before this, including MFInt32 -->
 		  <xsl:when test="
+                    ($localFieldType='MFVec3f')    or 
                      ends-with($attributeName,'ID')             or
                     ($attributeName='order')                    or
 					($attributeName='uOrder')                   or
@@ -2887,6 +3006,9 @@ POSSIBILITY OF SUCH DAMAGE.
 		  </xsl:when>
 		  <xsl:otherwise>
 			  <xsl:choose>
+				<xsl:when test="($parentElementName='field')">
+					<xsl:value-of select="$localFieldType"/>
+				</xsl:when>
 				<!-- Other statement values require special handling, do not warn here -->
 				<xsl:when test="($parentElementName='field')          or ($parentElementName='fieldValue') or contains($parentElementName,'Proto') or
                                 ($parentElementName='meta')">
@@ -2898,7 +3020,7 @@ POSSIBILITY OF SUCH DAMAGE.
 				</xsl:when>
 				<xsl:otherwise>
 					<xsl:message>
-						  <xsl:text>Warning: X3dToJson.xslt error, attribute type not found for </xsl:text>
+						  <xsl:text>Warning: X3dToJson.xslt attribute type not found for </xsl:text>
 						  <xsl:value-of select="$parentElementName"/>
 						  <xsl:text> </xsl:text>
 						  <xsl:value-of select="$attributeName"/>

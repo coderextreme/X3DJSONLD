@@ -90,15 +90,30 @@
 	    var NS = $('#namespace option:selected').text();
 	    switch(NS) {
 	    case "none":
-		document.querySelector(selector).appendChild(loadX3DJS(json, url, xml)); // X3DOM
+		replaceX3DJSON(selector, json, url, xml); // X3DOM
 		break;
 	    default:
-		document.querySelector(selector).appendChild(loadX3DJS(json, url, xml, NS));  // Cobweb if not XHTML NS
+		replaceX3DJSON(selector, json, url, xml, NS);  // Cobweb if not XHTML NS
 		break;
 	    }
 			
 	    updateXML(xml);
         }
+
+	function appendX3DJSON2Selector(selector, json, url, xml, NS) {
+		var element = loadX3DJS(json, url, xml, NS);  // Cobweb if not XHTML NS
+		elementSetAttribute(element, "xmlns:xsd", 'http://www.w3.org/2001/XMLSchema-instance');
+		document.querySelector(selector).appendChild(element);
+		x3dom.reload();
+	}
+
+	function replaceX3DJSON(selector, json, url, xml, NS) {
+		var element = loadX3DJS(json, url, xml, NS);  // Cobweb if not XHTML NS
+		elementSetAttribute(element, "xmlns:xsd", 'http://www.w3.org/2001/XMLSchema-instance');
+		$(selector).empty();
+		$(selector).append(element);
+		x3dom.reload();
+	}
 
 	function updateX3DOM() {
 		loadX3DOM("#x3domjson", JSON.parse($('textarea#json').val()), "flipper.json"); // does not load flipper.json
@@ -112,12 +127,69 @@
 		.fail(function(jqXHR, textStatus, errorThrown) { alert('getJSON request failed! ' + textStatus + ' ' + errorThrown); });
 	}
 
+	function loadX3DXSLT(jsonAsXml, url) {
+		$('textarea#json').val(getXmlString(jsonAsXml));
+		replaceX3DJSON("#x3domjson", JSON.parse($("textarea#json").val()), url);
+		// don't load XML, it's already loaded
+	}
+
 	$("select").change(function() {
 		$("#x3domjson").empty();
 		var url = $('#file option:selected').text();
 		loadX3DJSON('#x3domjson', url);
 	});
 
+/*
 	$(document).ready(function() {
 		loadX3DJSON('#x3domjson','flipper.json'); // does load flipper.json
 	});
+*/
+
+	function getXmlString(xml) {
+	  if (window.ActiveXObject) { return xml.xml; }
+	  return new XMLSerializer().serializeToString(xml);
+	}
+
+	function convertXMLToJSON() {
+	    var xmlString = $('textarea#xml').val();
+	    $.post("/convert", xmlString, function(json) {
+		console.log('JSON', json);
+		$('textarea#json').val(JSON.stringify(json, null, 2));
+		replaceX3DJSON("#x3domjson", JSON.parse($("textarea#json").val()), "flipper.json");  // does not load flipper.json
+	    }, "json");
+/*
+	    $.get("X3dToJson.xslt", function(xslt) {
+		var xmlString = $('textarea#xml').val();
+		console.log("VAL", xmlString);
+		var demo = { xslt: xslt};
+
+		// code for regular browsers
+		if (window.DOMParser) {
+		    var parser = new DOMParser();
+		    demo.xml = parser.parseFromString(xmlString, "application/xml");
+		}
+		// code for IE
+		if (window.ActiveXObject) {
+		    demo.xml = new ActiveXObject("Microsoft.XMLDOM");
+		    demo.xml.async = false;
+		    demo.xml.loadXML(xmlString);
+		}
+		console.log("PARSED XML", demo.xml);
+
+		// code for regular browsers
+		if (document.implementation && document.implementation.createDocument)
+		{
+		    var xsltProcessor = Saxon.newXSLT20Processor();
+		    xsltProcessor.importStylesheet(demo.xslt);
+		    result = xsltProcessor.transformToFragment(demo.xml, document);
+		}
+		else if (window.ActiveXObject) {
+		    // code for IE
+		    result = demo.xml.transformNode(demo.xslt);
+		}
+
+		console.log('JSON', result);
+		loadX3DXSLT(result, 'flipper.json'); // does not load flipper.json
+	    }, "xml");
+*/
+	}
