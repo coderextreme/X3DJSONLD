@@ -100,6 +100,16 @@
 	    updateXML(xml);
         }
 
+        /*
+         * appendX3DJSON2Selector
+         * append to selector DOM created from X3D JSON.
+         *	also, generate xml for inclusion elsewhere
+         *
+	 * selector (string) -- css selector
+         * json (json object) -- json to convert to DOM
+         * xml (array or LOG, must have push function which takes a string) -- xml output (optional)
+         * NS -- XML namespace (optional)
+         */
 	function appendX3DJSON2Selector(selector, json, url, xml, NS) {
 		var element = loadX3DJS(json, url, xml, NS);  // Cobweb if not XHTML NS
 		elementSetAttribute(element, "xmlns:xsd", 'http://www.w3.org/2001/XMLSchema-instance');
@@ -107,6 +117,16 @@
 		x3dom.reload();
 	}
 
+        /*
+         * replaceX3DJSON
+         * replace body of selector with DOM created from X3D JSON.
+         *	also, generate xml for inclusion elsewhere
+         *
+	 * selector (string) -- css selector
+         * json (json object) -- json to convert to DOM
+         * xml (array or LOG, must have push function which takes a string) -- xml output (optional)
+         * NS -- XML namespace (optional)
+         */
 	function replaceX3DJSON(selector, json, url, xml, NS) {
 		var element = loadX3DJS(json, url, xml, NS);  // Cobweb if not XHTML NS
 		elementSetAttribute(element, "xmlns:xsd", 'http://www.w3.org/2001/XMLSchema-instance');
