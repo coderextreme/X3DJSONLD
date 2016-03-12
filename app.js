@@ -7,6 +7,8 @@ var path = require('path');
 var fs = require("fs");
 var externPrototypeExpander = require("./ServerPrototypeExpander");
 
+var runsaxon = require('./allsaxon');
+
 fs.symlink(
 path.resolve(config.examples),
 path.resolve(__dirname + "/examples"),
@@ -17,6 +19,31 @@ path.resolve(__dirname + "/examples"),
         }
   }
 );
+
+function runAndSend(infile) {
+	runsaxon([infile]);
+	var outfile = infile.substr(0, infile.lastIndexOf("."))+".json";
+	var content = fs.readFileSync(outfile);
+	var json = JSON.parse(content.toString());
+	externPrototypeExpander(outfile, json);
+	fs.unlink(outfile);
+	console.log('sending back', json);
+	return json;
+}
+
+var infl = 0;
+app.post("/convert", function(req, res, next) {
+	var buf = '';
+	req.on('data', function(chunk){ buf += chunk; });
+	req.on('end', function(){
+		var infile = "/tmp/x3d"+(infl++)+".x3d";
+		console.log("converting ", buf);
+		fs.writeFileSync(infile, buf);
+		var json = runAndSend(infile);
+		fs.unlink(infile);
+		res.send(json);
+	});
+});
 
 app.get("/", function(req, res, next) {
 	fs.readFile("index.html", function(err, data) {
@@ -50,6 +77,7 @@ magic("*.html", "text/html");
 magic("*.xslt", "text/xsl");
 magic("*.xhtml", "application/xhtml+xml");
 magic("*.js", "text/javascript");
+magic("*.css", "text/css");
 magic("*.gif", "image/gif");
 magic("*.jpg", "image/jpeg");
 magic("*.jpeg", "image/jpeg");

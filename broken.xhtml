@@ -15664,6 +15664,9 @@ Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into X3DOM and 
 <div id="x3domxml"></div>
 </body>
     <script type="text/javascript" src="X3DJSONLD.js"></script>
+    <script type="text/javascript" src="PrototypeExpander.js"></script>
+    <script type="text/javascript" src="Script.js"></script>
+    <script type="text/javascript" src="loaderJQuery.js"></script>
 
     <script type="text/javascript">
         function updateXML(xml) {
@@ -15690,7 +15693,7 @@ Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into X3DOM and 
         function updateX3DOM() {
 	    $("X3D").remove();
 	    var xml = [];
-	    loadX3DJS(document.querySelector('body'),JSON.parse($('textarea#json').val()), "bubbles.json", xml);
+	    appendX3DJSON2Selector('body', JSON.parse($('textarea#json').val()), "bubbles.json", xml);
 	    updateXML(xml);
         }
 	function filter(event) {

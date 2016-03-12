@@ -1,7 +1,7 @@
-<!doctype html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>JSON Loader</title>
+    <title>X3D JSON Loader</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
     <link rel="stylesheet" type="text/css" href="http://www.x3dom.org/download/dev/x3dom.css"></link>
     <script type="text/javascript" src="http://www.x3dom.org/download/dev/x3dom-full.js"></script>
@@ -10,6 +10,8 @@
     <style type="text/css">
     X3D {
         background:#000;
+	width: 300px;
+	height:150px;
     }
     table td, table td * {
         vertical-align: top;
@@ -39,7 +41,7 @@ a:active {
 <table>
 <tr>
 <td>
-<select>
+<select id="file">
 <option>flipper.json</option>
 <option>ArchHalf.json</option>
 <option>bubbles.json</option>
@@ -15677,6 +15679,13 @@ a:active {
 <td>
 <input type="text" onchange="filter(event)"></input>
 Use Prototype Expander? <input id="prototype" type="checkbox" checked="true"></input>
+Use Namespace: <select id="namespace">
+<option>http://www.web3d.org/specifications/x3d</option>
+<option>http://www.w3.org/1999/xhtml</option> <!-- X3DOM XML -->
+<option>http://www.x3dom.org/x3dom</option>
+<option>http://www.web3d.org/specifications/x3d-namespace</option>  <!-- COBWEB -->
+<option>none</option> <!-- X3DOM HTML -->
+</select>
 </td>
 </tr>
 <tr>
@@ -15685,9 +15694,7 @@ Click <a onclick='updateXML();convertXMLToJSON();'>here</a> to load X3D XML into
 	    
 <textarea id="xml" rows="15" cols="80"></textarea><br>
 <div id="x3domxml"></div>
-<!--
 <iframe  id='cobwebframe' src="cobwebframe.html"></iframe>
--->
 </td>
 <td>
 Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into JSON X3DOM viewer and convert to XML (and display).<br>
@@ -15700,170 +15707,5 @@ Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into JSON X3DOM
     <script type="text/javascript" src="X3DJSONLD.js"></script>
     <script type="text/javascript" src="PrototypeExpander.js"></script>
     <script type="text/javascript" src="Script.js"></script>
-
-    <script type="text/javascript">
-	var intervalId;
-        function updateXML(xml) {
-		if (typeof xml !== 'undefined') {
-			// DISPLAY XML in X3DOM
-			$('#x3domxml').empty();
-			// Do this inner HTML so we can sneak script tag past JQuery (BAD BAD TODO)
-			$('#x3domxml').get()[0].innerHTML = xml.join("\n");
-	    	        $('textarea#xml').val(xml.join("\n"));
-		} else {
-			$('#x3domxml').get()[0].innerHTML = $('textarea#xml').val();
-		}
-		x3dom.reload();
-		var content = $('textarea#xml').val();
-/*
-		var cobwebWindow = document.getElementById("cobwebframe").contentWindow ;
-		var cobwebEle = cobwebWindow.document.getElementById("x3dele");
-		if (typeof cobwebWindow.X3D !== 'undefined') {
-			var browser = cobwebWindow.X3D.getBrowser(cobwebEle);
-			browser.replaceWorld(browser.createX3DFromString(content));
-		} else {
-			console.error("Cobweb disabled.  Use Firefox.");
-		}
-*/
-        }
-
-	function filter(event) {
-		$.map($("select option"), function(option, i) {
-			var text = $(option).text();
-			if (text.indexOf(event.target.value) >= 0) {
-				$(option).show();
-				return true;
-			} else {
-				$(option).hide();
-				return false;
-			}
-		});
-	}
-
-        function loadX3DOM(selector, json, url) {
-	    $(selector+" X3D").remove();
-	    var xml = new LOG();
-	    if ($('#prototype').is(':checked')) {
-
-		// Expand Protos
-		prototypeExpander(json, "");
-
-		// Now generate JavaScript code for Scripts and Routes
-		var classes = new LOG();
-		var routecode = new LOG();
-		routecode.log("function runRoutes() {");
-		processScripts(json, classes, undefined, routecode);
-		routecode.log("}");
-
-		if (typeof intervalId !== 'undefined') {
-			console.log("Interval", intervalId, "cleared");
-			clearInterval(intervalId);
-		} else {
-			console.log("intervalId undefined");
-		}
-		if (typeof X3DJSON !== 'undefined') {
-			delete X3DJSON;
-		}
-
-		$("#scripts").remove();
-		var scripts = document.createElement('script');
-		scripts.id = "scripts";
-		scripts.type = 'text/javascript';
-		scripts.text = classes.join("\n");
-		$('body').append(scripts);
-
-		$("#routes").remove();
-		var routes =  document.createElement('script');
-		routes.id = "routes";
-		routes.type = 'text/javascript';
-		routes.text = routecode.join("\n");
-		$('body').append(routes);
-
-		// When we zap the source, we prevent animation
-		// zapSource(json);
-
-		console.log(scripts.text);
-		// TODO eval is evil
-		eval(scripts.text);
-		console.log(routes.text);
-		// TODO eval is evil
-		eval(routes.text);
-
-	        $('textarea#json').val(JSON.stringify(json, null, 2));
-	
-		intervalId = setInterval(runRoutes, 100);
-	    }
-	    loadX3DJS(document.querySelector(selector), json, url, xml);
-	    updateXML(xml);
-        }
-
-	function updateX3DOM() {
-		loadX3DOM("#x3domjson", JSON.parse($('textarea#json').val()), "flipper.json"); // does not load flipper.json
-	}
-
-	function loadX3DJSON(selector, url) {
-		$.getJSON(url, function(json) {
-			$('textarea#json').val(JSON.stringify(json, null, 2));
-			loadX3DOM(selector, JSON.parse($('textarea#json').val()), url);
-		})
-		.fail(function(jqXHR, textStatus, errorThrown) { alert('getJSON request failed! ' + textStatus + ' ' + errorThrown); });
-	}
-
-	function loadX3DXSLT(jsonAsXml, url) {
-		$('textarea#json').val(getXmlString(jsonAsXml));
-		loadX3DJS(document.querySelector("#x3domjson"), JSON.parse($("textarea#json").val()), url);
-		// don't load XML, it's already loaded
-	}
-
-	$("select").change(function() {
-		$("X3D").remove();
-		var url = $('select option:selected').text();
-		loadX3DJSON('#x3domjson', url);
-	});
-
-	$(document).ready(function() {
-		loadX3DJSON('#x3domjson','flipper.json'); // does load flipper.json
-	});
-
-	function getXmlString(xml) {
-	  if (window.ActiveXObject) { return xml.xml; }
-	  return new XMLSerializer().serializeToString(xml);
-	}
-
-	function convertXMLToJSON() {
-	    $.get("X3dToJson.xslt", function(xslt) {
-		var xmlString = $('textarea#xml').val();
-		console.log("VAL", xmlString);
-		var demo = { xslt: xslt};
-
-		// code for regular browsers
-		if (window.DOMParser) {
-		    var parser = new DOMParser();
-		    demo.xml = parser.parseFromString(xmlString, "application/xml");
-		}
-		// code for IE
-		if (window.ActiveXObject) {
-		    demo.xml = new ActiveXObject("Microsoft.XMLDOM");
-		    demo.xml.async = false;
-		    demo.xml.loadXML(xmlString);
-		}
-		console.log("PARSED XML", demo.xml);
-
-		// code for regular browsers
-		if (document.implementation && document.implementation.createDocument)
-		{
-		    var xsltProcessor = Saxon.newXSLT20Processor();
-		    xsltProcessor.importStylesheet(demo.xslt);
-		    result = xsltProcessor.transformToFragment(demo.xml, document);
-		}
-		else if (window.ActiveXObject) {
-		    // code for IE
-		    result = demo.xml.transformNode(demo.xslt);
-		}
-
-		console.log('JSON', result);
-		loadX3DXSLT(result, 'flipper.json'); // does not load flipper.json
-	    }, "xml");
-	}
-    </script>
+    <script type="text/javascript" src="loaderJQuery.js"></script>
 </html>
