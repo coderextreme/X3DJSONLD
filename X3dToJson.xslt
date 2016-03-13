@@ -1308,9 +1308,24 @@ POSSIBILITY OF SUCH DAMAGE.
         </xsl:when>
         <xsl:otherwise>
           <xsl:value-of select="substring-before($inputString,'\')"/>
-          <xsl:text>\\</xsl:text>
+		  <xsl:variable name="nextChar"  select="substring(substring-after($inputString,'\'),1,1)"/>
+		  <xsl:variable name="remainder" select="substring(substring-after($inputString,'\'),2)"/>
+		  <xsl:choose>
+			  <!-- pass through escaped characters   http://www.web3d.org/x3d/stylesheets/X3dToJson.html#strings -->
+			  <!-- special characters backspace, formfeed, newline, carriage return, horizontal tab are presumably character entities already -->
+			  <!-- page links for character entities http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#HTML -->
+			  <xsl:when test="($nextChar = '&quot;') or ($nextChar = '\') or ($nextChar = '/') or
+                              ($nextChar = '&amp;')"> <!-- start of character entity -->
+				  <xsl:text>\</xsl:text>
+				  <xsl:value-of select="$nextChar"/>
+			  </xsl:when>
+			  <!-- TODO any special handling needed for ($nextChar = '\&apos;') ? -->
+			  <xsl:otherwise> <!-- escape this backslash character -->
+				  <xsl:text>\\</xsl:text>
+			  </xsl:otherwise>
+		  </xsl:choose>
           <xsl:call-template name="escape-backslash-characters-recurse">
-            <xsl:with-param name="inputString" select="substring-after($inputString,'\')"/>
+            <xsl:with-param name="inputString" select="$remainder"/>
           </xsl:call-template>
         </xsl:otherwise>
       </xsl:choose>

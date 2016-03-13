@@ -31,7 +31,7 @@
           },
           {
             "@name":"translated",
-            "@content":"02 March 2016"
+            "@content":"12 March 2016"
           },
           {
             "@name":"generator",
@@ -53,7 +53,7 @@
                     "-geometry":
                       { "Text":
                         {
-                          "@string":["Node\\\\"\\\\"\\\\""],
+                          "@string":["Node\"\"\""],
                           "-fontStyle":
                             { "FontStyle":
                               {
