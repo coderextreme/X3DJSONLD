@@ -159,12 +159,6 @@
 		loadX3DJSON('#x3domjson', url);
 	});
 
-/*
-	$(document).ready(function() {
-		loadX3DJSON('#x3domjson','flipper.json'); // does load flipper.json
-	});
-*/
-
 	function getXmlString(xml) {
 	  if (window.ActiveXObject) { return xml.xml; }
 	  return new XMLSerializer().serializeToString(xml);
