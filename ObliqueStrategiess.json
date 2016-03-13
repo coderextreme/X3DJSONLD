@@ -726,8 +726,7 @@
                       "@description": "sends strategy text google translate",
                       "@url": [
                         "http://translate.google.com/translate_tts?tl=en&q=Feed%20the%20recording%20back%20out%20of%20the%20medium",
-                        "translate_tts_mp3FileFormatNotSupported.wav",
-                        "http://X3dGraphics.com/examples/X3dForAdvancedModeling/Inspiration/translate_tts_mp3FileFormatNotSupported.wav"
+                        "translate_tts_mp3FileFormatNotSupported.wav"
                       ],
                       "@class": "TextToSpeechAudioClip"
                     }

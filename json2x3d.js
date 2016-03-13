@@ -24,6 +24,8 @@ function loadX3DJS(json, path, xml) {
 	ConvertToX3DOM(json, "", element, path);
 	var xmlstr = XMLSerializer.serializeToString(element);
 	xmlstr = fixXML(xmlstr);
+	xml.push('<?xml version="1.0" encoding="UTF-8"?>');
+	xml.push('<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">');
 	xml.push(xmlstr);
 }
 

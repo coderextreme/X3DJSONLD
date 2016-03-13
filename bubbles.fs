@@ -12,7 +12,7 @@ THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED
   precision highp float;
 #endif
 
-uniform samplerCube cube;
+uniform samplerCube cubeMap;
 
 varying vec3 t;
 varying vec3 tr;
@@ -22,12 +22,12 @@ varying float rfac;
 
 void main()
 {
-    vec4 ref = textureCube(cube, t);
+    vec4 ref = textureCube(cubeMap, t);
     vec4 ret = vec4(1.0);
 
-    ret.r = textureCube(cube, tr).r;
-    ret.g = textureCube(cube, tg).g;
-    ret.b = textureCube(cube, tb).b;
+    ret.r = textureCube(cubeMap, tr).r;
+    ret.g = textureCube(cubeMap, tg).g;
+    ret.b = textureCube(cubeMap, tb).b;
 
     gl_FragColor = ret * rfac + ref * (1.0 - rfac);
 }

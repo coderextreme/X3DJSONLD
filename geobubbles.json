@@ -73,9 +73,9 @@
               "@DEF":"RandomTourTime",
               "field": [
                 {
-                  "@name":"set_fraction",
+                  "@name":"set_cycle",
                   "@accessType":"inputOnly",
-                  "@type":"SFFloat"
+                  "@type":"SFTime"
                 },
                 {
                   "@name":"val",
@@ -99,7 +99,7 @@
               "#sourceText":[
 "ecmascript:",
 "",
-"               function set_fraction(value) {",
+"               function set_cycle(value) {",
 "                        var cartesianMult = -150;  // -150 if cartesian, 1 if geo",
 "                        var ov = val;",
 "                        Browser.print('old '+ov);",
@@ -122,7 +122,7 @@
               "@fromNode":"TourTime",
               "@fromField":"cycleTime",
               "@toNode":"RandomTourTime",
-              "@toField":"set_fraction"
+              "@toField":"set_cycle"
             }
           },
           { "ROUTE":

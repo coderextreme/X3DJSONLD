@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml'>
+	<head>
+<meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge" />
+    <link rel="stylesheet" type="text/css" href="x3dom.css"></link>
+    <script type="text/javascript" src="x3dom-full.js"></script>
+		<style>
+			X3D, x3d { position:absolute; border: none; width: 800px; height: 450px; top:50%; left:50%; margin-left:-400px; margin-top:-225px; float: none; display:block;}
+		</style>
+	</head>
+	<body>
+<!--
+The MIT License (MIT)
+Copyright (c) 2011 Authors of J3D. All rights reserved.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+-->
+		 <h1 style="width:100%; text-align:center;">Bubbles</h1>
+		
+		<X3D id='Main' showStat='false' showLog='false' width='800px' height='500px' backend='webgl'>
+			<Scene DEF='scene'>
+				<NavigationInfo type="&quot;EXAMINE&quot; &quot;ANY&quot;"/>
+				<Background backUrl='cubemap/BK.png' bottomUrl='cubemap/BT.png'
+				    frontUrl='cubemap/FR.png' leftUrl='cubemap/LF.png' 
+				    rightUrl='cubemap/RT.png' topUrl='cubemap/TP.png' />
+				<Viewpoint position='0 0 20' />
+				<Transform id="tr1" translation="0 0 0">
+					<Shape>
+						<Appearance DEF='_01_-_Default' >
+                				<Material diffuseColor=".7 .7 .7" specularColor=".5 .5 .5" />
+					<ComposedCubeMapTexture>
+						<ImageTexture url="cubemap/BK.png" containerField="back"/>
+						<ImageTexture url="cubemap/BT.png" containerField="bottom"/>
+						<ImageTexture url="cubemap/FR.png" containerField="front"/>
+						<ImageTexture url="cubemap/LF.png" containerField="left"/>
+						<ImageTexture url="cubemap/RT.png" containerField="right"/>
+						<ImageTexture url="cubemap/TP.png" containerField="top"/>
+					</ComposedCubeMapTexture>
+                
+                <ComposedShader DEF='ComposedShader'>
+                  <field name='cube' type='SFInt32' value='0'/>
+
+                  <field name='chromaticDispersion' type='SFVec3f' value='0.98 1.0 1.033'/>
+                  <field name='bias' type='SFFloat' value='0.5'/>
+                  <field name='scale' type='SFFloat' value='0.5'/>
+                  <field name='power' type='SFFloat' value='2.0'/>
+                  
+                  <ShaderPart url='"x3dom.vs"' type='VERTEX'>
+                  </ShaderPart>
+                  <ShaderPart url='"bubbles.fs"' type='FRAGMENT'>
+                  </ShaderPart>
+                </ComposedShader>
+						</Appearance>
+		<Sphere/>
+					</Shape>
+				</Transform>
+				<Transform id="tr2" translation="0 0 0">
+					<Shape>
+						<Appearance DEF='_01_-_Default' >
+                				<Material diffuseColor=".7 .7 .7" specularColor=".5 .5 .5" />
+					<ComposedCubeMapTexture>
+						<ImageTexture url="cubemap/BK.png" containerField="back"/>
+						<ImageTexture url="cubemap/BT.png" containerField="bottom"/>
+						<ImageTexture url="cubemap/FR.png" containerField="front"/>
+						<ImageTexture url="cubemap/LF.png" containerField="left"/>
+						<ImageTexture url="cubemap/RT.png" containerField="right"/>
+						<ImageTexture url="cubemap/TP.png" containerField="top"/>
+					</ComposedCubeMapTexture>
+                
+                <ComposedShader DEF='ComposedShader'>
+                  <field name='cube' type='SFInt32' value='0'/>
+
+                  <field name='chromaticDispersion' type='SFVec3f' value='0.98 1.0 1.033'/>
+                  <field name='bias' type='SFFloat' value='0.5'/>
+                  <field name='scale' type='SFFloat' value='0.5'/>
+                  <field name='power' type='SFFloat' value='2.0'/>
+                  
+                  <ShaderPart url='"x3dom.vs"' type='VERTEX'>
+                  </ShaderPart>
+                  <ShaderPart url='"bubbles.fs"' type='FRAGMENT'>
+                  </ShaderPart>
+                </ComposedShader>
+						</Appearance>
+		<Sphere/>
+					</Shape>
+				</Transform>
+				<Transform id="tr3" translation="0 0 0">
+					<Shape>
+						<Appearance DEF='_01_-_Default' >
+                				<Material diffuseColor=".7 .7 .7" specularColor=".5 .5 .5" />
+					<ComposedCubeMapTexture>
+						<ImageTexture url="cubemap/BK.png" containerField="back"/>
+						<ImageTexture url="cubemap/BT.png" containerField="bottom"/>
+						<ImageTexture url="cubemap/FR.png" containerField="front"/>
+						<ImageTexture url="cubemap/LF.png" containerField="left"/>
+						<ImageTexture url="cubemap/RT.png" containerField="right"/>
+						<ImageTexture url="cubemap/TP.png" containerField="top"/>
+					</ComposedCubeMapTexture>
+                
+                <ComposedShader DEF='ComposedShader'>
+                  <field name='cube' type='SFInt32' value='0'/>
+
+                  <field name='chromaticDispersion' type='SFVec3f' value='0.98 1.0 1.033'/>
+                  <field name='bias' type='SFFloat' value='0.5'/>
+                  <field name='scale' type='SFFloat' value='0.5'/>
+                  <field name='power' type='SFFloat' value='2.0'/>
+                  
+                  <ShaderPart url='"x3dom.vs"' type='VERTEX'>
+                  </ShaderPart>
+                  <ShaderPart url='"bubbles.fs"' type='FRAGMENT'>
+                  </ShaderPart>
+                </ComposedShader>
+						</Appearance>
+		<Sphere/>
+					</Shape>
+				</Transform>
+			</Scene>
+		</X3D>
+	</body>
+        <script type="text/javascript" src="bounce.js"></script>
+</html>
