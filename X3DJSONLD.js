@@ -7,8 +7,8 @@ if (typeof document === 'undefined') {
 // For X3D Browser functions
 if (typeof Browser === 'undefined') {
 	var Browser = {
-		print : function(string) { if (typeof console !== 'undefined' && typeof string !== 'undefined') console.log(string); },
-		println : function(string) { if (typeof console !== 'undefined' && typeof string !== 'undefined') console.log(string); },
+		print : function(string) { if (typeof console !== 'undefined' && typeof string !== 'undefined') console.error(string); },
+		println : function(string) { if (typeof console !== 'undefined' && typeof string !== 'undefined') console.error(string); },
 		stringToArray : function(obj) {
 			if (typeof obj === 'object') {
 				return obj;
@@ -53,7 +53,7 @@ function CreateElement(key, x3djsonNS) {
 	} else {
 		var child = document.createElementNS(x3djsonNS, key);
 		if (child == null || typeof child === 'undefined') {
-			console.log('Trouble creating element for', key);
+			console.error('Trouble creating element for', key);
 			child = document.createElement(key);
 		}
 		return child;
@@ -176,7 +176,7 @@ function ConvertToX3DOM(object, parentkey, element, path) {
 							
                                        }
 					// if URL
-					console.log("Loading URL",'"'+localArray.join('" "')+'"');
+					console.error("Loading URL",'"'+localArray.join('" "')+'"');
 					elementSetAttribute(element, parentkey.substr(1),'"'+localArray.join('" "')+'"');
                                 } else {
 					// if string array

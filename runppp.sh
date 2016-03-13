@@ -21,3 +21,5 @@ node PPP.js cobweb.json > cobwebs.json
 read me
 node PPP.js force.json > forces.json
 read me
+node PPP.js NancyPrototypes.json > NancyPrototypess.json
+read me

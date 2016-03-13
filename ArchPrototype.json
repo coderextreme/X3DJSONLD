@@ -1,7 +1,8 @@
 { "X3D": {
     "@profile":"Immersive",
-    "@version":3.3,
+    "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
           {
@@ -47,6 +48,18 @@
           {
             "@name":"license",
             "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"12 March 2016"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
           }
         ]
     },
@@ -57,6 +70,16 @@
               "@name":"ArchPrototype",
               "@appinfo":"Create an arch. Can modify general parameters: clearSpanWidth, riseHeight, depth, topAbutmentHeight, pierWidth, pierHeight. - Possibility to create shapes related to an arch: ArchHalf; IntradosOnly; ArchFilled; ArchHalfFilled; Lintel. See the reference file ArchModelingDiagrams.pdf to find further information. See also ArchPrototypeScript_more_readable.js.js.",
               "ProtoInterface": {
+                  "-children":[
+                    { "#comment":"COLOR OF ARCH"
+                    },
+                    { "#comment":"INPUT PARAMETERS"
+                    },
+                    { "#comment":"General parameters: measures in meters"
+                    },
+                    { "#comment":"Parameters to create to create shapes related to arch: put true to apply"
+                    }
+                  ],
                   "field": [
                     {
                       "@name":"diffuseColor",
@@ -156,16 +179,6 @@
                       "@type":"SFBool",
                       "@value":false
                     }
-                  ],
-                  "-children":[
-                    { "#comment":"COLOR OF ARCH"
-                    },
-                    { "#comment":"INPUT PARAMETERS"
-                    },
-                    { "#comment":"General parameters: measures in meters"
-                    },
-                    { "#comment":"Parameters to create to create shapes related to arch: put true to apply"
-                    }
                   ]
               },
               "ProtoBody": {
@@ -185,26 +198,24 @@
                                 { "#comment":"note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly"
                                 }
                               ],
-                              "-geometry":[
+                              "-geometry":
                                 { "IndexedFaceSet":
                                   {
                                     "@DEF":"ArchIndex",
                                     "@convex":false,
                                     "@solid":false,
-                                    "-coord":[
+                                    "-coord":
                                       { "Coordinate":
                                         {
                                           "@DEF":"ArchChord"
                                         }
                                       }
-                                    ]
                                   }
-                                }
-                              ],
-                              "-appearance":[
+                                },
+                              "-appearance":
                                 { "Appearance":
                                   {
-                                    "-material":[
+                                    "-material":
                                       { "Material":
                                         {
                                           "@DEF":"MaterialNode",
@@ -222,10 +233,8 @@
                                           }
                                         }
                                       }
-                                    ]
                                   }
                                 }
-                              ]
                             }
                           }
                         ]
@@ -238,7 +247,17 @@
                     { "Script":
                       {
                         "@DEF":"ArchPrototypeScript",
-                        "@url":["X3DJSONLD/ArchPrototypeScript.js","http://coderextreme.net/X3DJSONLD/ArchPrototypeScript.js","http://X3dGraphics.com/examples/X3dForAdvancedModeling/Buildings/ArchPrototypeScript.js"],
+                        "@url":["ArchPrototypeScript.js","http://X3dGraphics.com/examples/X3dForAdvancedModeling/Buildings/ArchPrototypeScript.js"],
+                        "-children":[
+                          { "#comment":"INPUT PARAMETERS"
+                          },
+                          { "#comment":"General parameters"
+                          },
+                          { "#comment":"Parameters to create to create shapes related to arch: put true to apply"
+                          },
+                          { "#comment":"OUTPUT PARAMETERS"
+                          }
+                        ],
                         "field": [
                           {
                             "@name":"clearSpanWidth",
@@ -382,17 +401,7 @@
                                 "@protoField":"lintel"
                               }
                             ]
-                        },
-                        "-children":[
-                          { "#comment":"INPUT PARAMETERS"
-                          },
-                          { "#comment":"General parameters"
-                          },
-                          { "#comment":"Parameters to create to create shapes related to arch: put true to apply"
-                          },
-                          { "#comment":"OUTPUT PARAMETERS"
-                          }
-                        ]
+                        }
                       }
                     },
                     { "ROUTE":
@@ -468,7 +477,7 @@
           { "Inline":
             {
               "@DEF":"CoordinateAxes",
-              "@url":["./CoordinateAxes.x3d", "X3DJSONLD/CoordinateAxes.x3d", "http://coderextreme.net/X3DJSONLD/CoordinateAxes.x3d"]
+              "@url":["CoordinateAxes.x3d"]
             }
           }
         ]
