@@ -18,10 +18,13 @@ element.setAttribute("xmlns:xsd", 'http://www.w3.org/2001/XMLSchema-instance');
 var X3DJSONLD = require('./X3DJSONLD');
 X3DJSONLD.setDocument(document);
 var ConvertToX3DOM = X3DJSONLD.ConvertToX3DOM;
+var fixXML = X3DJSONLD.fixXML;
 
 function loadX3DJS(json, path, xml) {
 	ConvertToX3DOM(json, "", element, path);
-	xml.push(XMLSerializer.serializeToString(element));
+	var xmlstr = XMLSerializer.serializeToString(element);
+	xmlstr = fixXML(xmlstr);
+	xml.push(xmlstr);
 }
 
 var file = process.argv[2];

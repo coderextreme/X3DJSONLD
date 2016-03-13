@@ -72,7 +72,7 @@ function ConvertObject(key, object, element, path) {
 			}
 		} else if (key === '#sourceText') {
 			var open = document.createTextNode("<![CDATA[");
-			var child = document.createTextNode(object[key].join("\n").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&"));
+			var child = document.createTextNode(object[key].join("\n"));
 			var close = document.createTextNode("]]>");
 			element.appendChild(open);
 			element.appendChild(child);
@@ -192,6 +192,30 @@ function ConvertToX3DOM(object, parentkey, element, path) {
 	return element;
 }
 
+function fixXML(xmlstr) {
+	// get rid of self-closing tags
+	xmlstr = xmlstr.replace(/(<[ \t]*)([A-Za-z0-9]+)([^>]*)\/>/g, "$1$2$3></$2>");
+	// strip out namespace
+	xmlstr = xmlstr.replace(/xmlns="[^"]*"/g, "");
+
+	// strip out schema
+	xmlstr = xmlstr.replace(/xsd:noNamespaceSchemaLocation="[^"]*"/g, "");
+
+
+	// Fix CDATA sections
+	xmlstr = xmlstr.replace(/&lt;!\[CDATA\[/g, "<![CDATA[");
+	xmlstr = xmlstr.replace(/\]\]&gt;/g, "]]>");
+	do {
+		var xmlstr2 = xmlstr;
+		xmlstr = xmlstr2.replace(/(\<\!\[CDATA\[(.|\n)*)&lt;((.|\n)*\]\]\>)/g, "$1<$3");
+	} while (xmlstr !== xmlstr2);
+	do {
+		xmlstr2 = xmlstr;
+		xmlstr = xmlstr2.replace(/(\<\!\[CDATA\[(.|\n)*)&gt;((.|\n)*\]\]\>)/g, "$1>$3");
+	} while (xmlstr !== xmlstr2);
+	return xmlstr;
+}
+
 
 /*
  * Load X3D JSON into an element
@@ -212,17 +236,7 @@ function loadX3DJS(json, path, xml, NS) {
 		var serializer = new XMLSerializer();
 		var xmlstr = serializer.serializeToString(child);
 
-		// get rid of self-closing tags
-		xmlstr = xmlstr.replace(/(<[ \t]*)([A-Za-z0-9]+)([^>]*)\/>/g, "$1$2$3></$2>");
-		// strip out namespace
-		xmlstr = xmlstr.replace(/xmlns="[^"]*"/g, "");
-
-		// strip out schema
-		xmlstr = xmlstr.replace(/xsd:noNamespaceSchemaLocation="[^"]*"/g, "");
-		// Fix CDATA sections
-
-		xmlstr = xmlstr.replace(/&lt;!\[CDATA\[/g, "<![CDATA[");
-		xmlstr = xmlstr.replace(/\]\]&gt;/g, "]]>");
+		xmlstr = fixXML(xmlstr);
 		xml.push(xmlstr);
 	}
 	return child;
@@ -233,6 +247,7 @@ if (typeof module === 'object')  {
 		loadX3DJS : loadX3DJS,
 		Browser : Browser,
 		ConvertToX3DOM : ConvertToX3DOM,
+		fixXML : fixXML,
 		setDocument : function(doc) {
 			document = doc;
 		}

@@ -35,7 +35,7 @@
         <PositionInterpolator DEF='TourPosition' key='0 1' keyValue='0 0 10 0 0 -10'></PositionInterpolator>
         <OrientationInterpolator DEF='TourOrientation' key='0 1' keyValue='0 1 0 0 0 1 0 3.1416'></OrientationInterpolator>
         <Script DEF='RandomTourTime'>
-            <field name='set_fraction' accessType='inputOnly' type='SFTime'/>
+            <field name='set_fraction' accessType='inputOnly' type='SFFloat'/>
             <field name='lastKey' accessType='inputOutput' type='SFFloat' value='0'/>
             <field name='orientations' accessType='inputOutput' type='MFRotation' value='0 1 0 0 0 1 0 -1.57 0 1 0 3.14 0 1 0 1.57 0 1 0 0 1 0 0 -1.57 0 1 0 0 1 0 0 1.57 0 1 0 0'></field>
             <field name='positions' accessType='inputOutput' type='MFVec3f' value='0 0 10 -10 0 0 0 0 -10 10 0 0 0 0 10 0 10 0 0 0 10 0 -10 0 0 0 10'></field>
@@ -67,8 +67,8 @@
                     // }
                }]]></Script>
         <ROUTE fromNode='TourTime' fromField='cycleTime' toNode='RandomTourTime' toField='set_fraction'/>
-        <ROUTE fromNode='RandomTourTime' fromField='orientation_changed' toNode='TourOrientation' toField='keyValue'/>
-        <ROUTE fromNode='RandomTourTime' fromField='position_changed' toNode='TourPosition' toField='keyValue'/>
+        <ROUTE fromNode='RandomTourTime' fromField='orientation' toNode='TourOrientation' toField='keyValue'/>
+        <ROUTE fromNode='RandomTourTime' fromField='position' toNode='TourPosition' toField='keyValue'/>
         <ROUTE fromNode='TourTime' fromField='fraction_changed' toNode='TourOrientation' toField='set_fraction'/>
         <ROUTE fromNode='TourOrientation' fromField='value_changed' toNode='Tour' toField='set_orientation'/>
         <ROUTE fromNode='TourTime' fromField='fraction_changed' toNode='TourPosition' toField='set_fraction'/>

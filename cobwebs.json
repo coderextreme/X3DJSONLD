@@ -28,7 +28,7 @@
         },
         {
           "@name": "translated",
-          "@content": "12 March 2016"
+          "@content": "13 March 2016"
         },
         {
           "@name": "generator",
@@ -175,7 +175,7 @@
                           {
                             "@name": "set_fraction",
                             "@accessType": "inputOnly",
-                            "@type": "SFTime"
+                            "@type": "SFFloat"
                           }
                         ],
                         "#sourceText": [
@@ -352,7 +352,7 @@
                           {
                             "@name": "set_fraction",
                             "@accessType": "inputOnly",
-                            "@type": "SFTime"
+                            "@type": "SFFloat"
                           }
                         ],
                         "#sourceText": [
@@ -529,7 +529,7 @@
                           {
                             "@name": "set_fraction",
                             "@accessType": "inputOnly",
-                            "@type": "SFTime"
+                            "@type": "SFFloat"
                           }
                         ],
                         "#sourceText": [
@@ -706,7 +706,7 @@
                           {
                             "@name": "set_fraction",
                             "@accessType": "inputOnly",
-                            "@type": "SFTime"
+                            "@type": "SFFloat"
                           }
                         ],
                         "#sourceText": [

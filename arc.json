@@ -186,12 +186,9 @@
 "ecmascript:",
 "\t\tfunction set_location(value) {",
 "                    old = translation;",
-"\t\t    translation = new SFVec3f(",
-"\t\t\t\t\tMath.random()*10-5,",
-"\t\t\t\t\tMath.random()*10-5,",
-"\t\t\t\t\tMath.random()*10-5);",
+"\t\t    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);",
 "                    keyValue = new MFVec3f(old, translation);",
-"\t\t    Browser.println(translation);",
+"\t\t    // Browser.println(translation);",
 "\t\t}"
 ]
                             }
