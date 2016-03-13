@@ -210,7 +210,10 @@ function loadX3DJS(json, path, xml, NS) {
 		xml.push('<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">');
 		// for Cobweb
 		var serializer = new XMLSerializer();
-		xml.push(serializer.serializeToString(child));
+		var xmlstr = serializer.serializeToString(child);
+		xmlstr = xmlstr.replace(/(<[ \t]*)([A-Za-z0-9]+)([^>]*)\/>/g, "$1$2$3></$2>");
+		xmlstr = xmlstr.replace(/xmlns="[^"]"/g, "");
+		xml.push(xmlstr);
 	}
 	return child;
 }
