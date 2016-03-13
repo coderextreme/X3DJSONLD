@@ -195,11 +195,11 @@ function ConvertToX3DOM(object, parentkey, element, path) {
 
 /*
  * Load X3D JSON into an element
- * element - the element to append to
  * json - the JSON to convert to XML and DOM
  * path - the path of the JSON file
- * xml - the output xml string array
- * NS - a namespace for cobweb
+ * xml - the output xml string array (optional)
+ * NS - a namespace for cobweb (optional) -- stripped out
+ * returns an element - the element to append or insert into the DOM
  */
 function loadX3DJS(json, path, xml, NS) {
 	x3djsonNS = NS;
@@ -208,11 +208,16 @@ function loadX3DJS(json, path, xml, NS) {
 	if (typeof xml !== 'undefined' && typeof xml.push === 'function') {
 		xml.push('<?xml version="1.0" encoding="UTF-8"?>');
 		xml.push('<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">');
-		// for Cobweb
+
 		var serializer = new XMLSerializer();
 		var xmlstr = serializer.serializeToString(child);
+
+		// get rid of self-closing tags
 		xmlstr = xmlstr.replace(/(<[ \t]*)([A-Za-z0-9]+)([^>]*)\/>/g, "$1$2$3></$2>");
+		// strip out namespace
 		xmlstr = xmlstr.replace(/xmlns="[^"]*"/g, "");
+
+		// strip out schema
 		xmlstr = xmlstr.replace(/xsd:noNamespaceSchemaLocation="[^"]*"/g, "");
 		xml.push(xmlstr);
 	}
