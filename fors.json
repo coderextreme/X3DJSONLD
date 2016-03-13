@@ -135,7 +135,7 @@
                             ]
                           },
                           {
-                            "@name": "set_location",
+                            "@name": "set_cycle",
                             "@accessType": "inputOnly",
                             "@type": "SFTime"
                           },
@@ -147,7 +147,7 @@
                         ],
                         "#sourceText": [
                           "ecmascript:",
-                          "\t\t\t\t\tfunction set_location(value) {",
+                          "\t\t\t\t\tfunction set_cycle(value) {",
                           "                                                old = translation;",
                           "\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
                           "                                                keyValue = new MFVec3f(old, translation);",
@@ -170,7 +170,7 @@
                         "@fromNode": "nodenodeAnodenodeClock",
                         "@fromField": "cycleTime",
                         "@toNode": "nodenodeAnodeMoveBall",
-                        "@toField": "set_location"
+                        "@toField": "set_cycle"
                       }
                     },
                     {
@@ -281,7 +281,7 @@
                             ]
                           },
                           {
-                            "@name": "set_location",
+                            "@name": "set_cycle",
                             "@accessType": "inputOnly",
                             "@type": "SFTime"
                           },
@@ -293,7 +293,7 @@
                         ],
                         "#sourceText": [
                           "ecmascript:",
-                          "\t\t\t\t\tfunction set_location(value) {",
+                          "\t\t\t\t\tfunction set_cycle(value) {",
                           "                                                old = translation;",
                           "\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
                           "                                                keyValue = new MFVec3f(old, translation);",
@@ -316,7 +316,7 @@
                         "@fromNode": "nodenodeBnodenodeClock",
                         "@fromField": "cycleTime",
                         "@toNode": "nodenodeBnodeMoveBall",
-                        "@toField": "set_location"
+                        "@toField": "set_cycle"
                       }
                     },
                     {

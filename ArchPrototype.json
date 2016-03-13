@@ -247,7 +247,7 @@
                     { "Script":
                       {
                         "@DEF":"ArchPrototypeScript",
-                        "@url":["ArchPrototypeScript.js","http://X3dGraphics.com/examples/X3dForAdvancedModeling/Buildings/ArchPrototypeScript.js"],
+                        "@url":["ArchPrototypeScript.js"],
                         "-children":[
                           { "#comment":"INPUT PARAMETERS"
                           },

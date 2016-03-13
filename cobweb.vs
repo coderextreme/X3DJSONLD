@@ -12,12 +12,10 @@ attribute vec3 position;
 attribute vec3 normal;
 attribute vec2 texcoord;
 
-uniform mat4 modelViewProjectionMatrix;
-uniform mat4 modelViewMatrix;
-uniform mat4 modelViewMatrixInverse;
-uniform mat4 normalMatrix;
+uniform mat4 x3d_ModelViewMatrix;
+uniform mat4 x3d_ProjectionMatrix;
 
-uniform vec3 chromaticDispertion;
+uniform vec3 chromaticDispersion;
 uniform float bias;
 uniform float scale;
 uniform float power;
@@ -31,24 +29,24 @@ varying float rfac;
 void main()
 {
     mat3 mvm3=mat3(
-		modelViewMatrix[0].x,
-		modelViewMatrix[0].y,
-		modelViewMatrix[0].z,
-		modelViewMatrix[1].x,
-		modelViewMatrix[1].y,
-		modelViewMatrix[1].z,
-		modelViewMatrix[2].x,
-		modelViewMatrix[2].y,
-		modelViewMatrix[2].z
+        x3d_ModelViewMatrix[0].x,
+        x3d_ModelViewMatrix[0].y,
+        x3d_ModelViewMatrix[0].z,
+        x3d_ModelViewMatrix[1].x,
+        x3d_ModelViewMatrix[1].y,
+        x3d_ModelViewMatrix[1].z,
+        x3d_ModelViewMatrix[2].x,
+        x3d_ModelViewMatrix[2].y,
+        x3d_ModelViewMatrix[2].z
     );
     vec3 fragNormal = mvm3*normal;
-    gl_Position = modelViewProjectionMatrix*vec4(position, 1.0);
-    vec3 incident = normalize((modelViewMatrix * vec4(position, 1.0)).xyz);
+    gl_Position = x3d_ProjectionMatrix * x3d_ModelViewMatrix*vec4(position, 1.0);
+    vec3 incident = normalize((x3d_ModelViewMatrix * vec4(position, 1.0)).xyz);
 
     t = reflect(incident, fragNormal)*mvm3;
-    tr = refract(incident, fragNormal, chromaticDispertion.x)*mvm3;
-    tg = refract(incident, fragNormal, chromaticDispertion.y)*mvm3;
-    tb = refract(incident, fragNormal, chromaticDispertion.z)*mvm3;
+    tr = refract(incident, fragNormal, chromaticDispersion.x)*mvm3;
+    tg = refract(incident, fragNormal, chromaticDispersion.y)*mvm3;
+    tb = refract(incident, fragNormal, chromaticDispersion.z)*mvm3;
 
     rfac = bias + scale * pow(0.5+0.5*dot(incident, fragNormal), power);
 }

@@ -1,38 +1,47 @@
+var crds = new Object();
+var velocity = new Object();
+
+function newVelocity(id) {
+	velocity[id] = new Array();
+        velocity[id][0] = Math.random() - 0.5;
+        velocity[id][1] = Math.random() - 0.5;
+        velocity[id][2] = Math.random() - 0.5;
+}
+
+function setup(id) {
+	crds[id] = [0, 0, 0];
+    	var crd = document.getElementById(id);
+        crd.setAttribute("translation", crds[id].join(" "));
+	newVelocity(id);
+}
+
 function initialize() {
-    velocity = new SFVec3f(	Math.random() * 0.25 - 0.125,
-				Math.random() * 0.25 - 0.125,
-				Math.random() * 0.25 - 0.125);
-
-    scalevelocity = new SFVec3f(Math.random() * 0.4,
-				Math.random() * 0.4,
-				Math.random() * 0.4);
+	setup("tr1");
+	setup("tr2");
+	setup("tr3");
 }
-
-function set_translation(value) {
-   translation = value;
-}
-
-function set_scale(value) {
-   scale = value;
-}
-
-function set_fraction(value) {
-    translation = new SFVec3f(	translation[0] + velocity[0],
-    				translation[1] + velocity[1],
-    				translation[2] + velocity[2]);
-    scale = new SFVec3f(scale[0] + scalevelocity[0],
-    			scale[1] + scalevelocity[1],
-    			scale[2] + scalevelocity[2]);
-    for (var j = 0; j < 3; j++) {
-	    // if you get to far away or too big, explode
-	    if ( Math.abs(translation[j]) > 256) {
-		translation[j] = 0;
-		initialize();
-	    }
-	    if (Math.abs(scale[j]) > 20) {
-		scale[j] = scale[j]/2;
-		translation[j] = 0;
-		initialize();
+function setCoordinates(id) {
+    var crd = document.getElementById(id);
+    crds[id][0] = crds[id][0] + velocity[id][0];
+    crds[id][1] = crds[id][1] + velocity[id][1];
+    crds[id][2] = crds[id][2] + velocity[id][2];
+    for (var j = 0; j <= 2; j++) {
+	    if (Math.abs(crds[id][j]) > 10) {
+		setup(id);
+	    } else {
+		velocity[id][0] += Math.random() * 0.2 - 0.1;
+		velocity[id][1] += Math.random() * 0.2 - 0.1;
+		velocity[id][2] += Math.random() * 0.2 - 0.1;
 	    }
     }
+    crd.setAttribute("translation", crds[id].join(" "));
 }
+
+function animate() {
+	setCoordinates("tr1");
+	setCoordinates("tr2");
+	setCoordinates("tr3");
+}
+
+initialize();
+setInterval(animate, 150);

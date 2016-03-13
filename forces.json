@@ -195,7 +195,7 @@
                             ]
                           },
                           {
-                            "@name": "set_location",
+                            "@name": "set_cycle",
                             "@accessType": "inputOnly",
                             "@type": "SFTime"
                           },
@@ -207,7 +207,7 @@
                         ],
                         "#sourceText": [
                           "ecmascript:",
-                          "\t\t\t\t\tfunction set_location(value) {",
+                          "\t\t\t\t\tfunction set_cycle(value) {",
                           "                                                old = translation;",
                           "\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
                           "                                                keyValue = new MFVec3f(old, translation);",
@@ -230,7 +230,7 @@
                         "@fromNode": "nodenodeAnodenodeClock",
                         "@fromField": "cycleTime",
                         "@toNode": "nodenodeAnodeMoveBall",
-                        "@toField": "set_location"
+                        "@toField": "set_cycle"
                       }
                     },
                     {
@@ -385,7 +385,7 @@
                             ]
                           },
                           {
-                            "@name": "set_location",
+                            "@name": "set_cycle",
                             "@accessType": "inputOnly",
                             "@type": "SFTime"
                           },
@@ -397,7 +397,7 @@
                         ],
                         "#sourceText": [
                           "ecmascript:",
-                          "\t\t\t\t\tfunction set_location(value) {",
+                          "\t\t\t\t\tfunction set_cycle(value) {",
                           "                                                old = translation;",
                           "\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
                           "                                                keyValue = new MFVec3f(old, translation);",
@@ -420,7 +420,7 @@
                         "@fromNode": "nodenodeBnodenodeClock",
                         "@fromField": "cycleTime",
                         "@toNode": "nodenodeBnodeMoveBall",
-                        "@toField": "set_location"
+                        "@toField": "set_cycle"
                       }
                     },
                     {
@@ -575,7 +575,7 @@
                             ]
                           },
                           {
-                            "@name": "set_location",
+                            "@name": "set_cycle",
                             "@accessType": "inputOnly",
                             "@type": "SFTime"
                           },
@@ -587,7 +587,7 @@
                         ],
                         "#sourceText": [
                           "ecmascript:",
-                          "\t\t\t\t\tfunction set_location(value) {",
+                          "\t\t\t\t\tfunction set_cycle(value) {",
                           "                                                old = translation;",
                           "\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
                           "                                                keyValue = new MFVec3f(old, translation);",
@@ -610,7 +610,7 @@
                         "@fromNode": "nodenodeCnodenodeClock",
                         "@fromField": "cycleTime",
                         "@toNode": "nodenodeCnodeMoveBall",
-                        "@toField": "set_location"
+                        "@toField": "set_cycle"
                       }
                     },
                     {
@@ -765,7 +765,7 @@
                             ]
                           },
                           {
-                            "@name": "set_location",
+                            "@name": "set_cycle",
                             "@accessType": "inputOnly",
                             "@type": "SFTime"
                           },
@@ -777,7 +777,7 @@
                         ],
                         "#sourceText": [
                           "ecmascript:",
-                          "\t\t\t\t\tfunction set_location(value) {",
+                          "\t\t\t\t\tfunction set_cycle(value) {",
                           "                                                old = translation;",
                           "\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
                           "                                                keyValue = new MFVec3f(old, translation);",
@@ -800,7 +800,7 @@
                         "@fromNode": "nodenodeDnodenodeClock",
                         "@fromField": "cycleTime",
                         "@toNode": "nodenodeDnodeMoveBall",
-                        "@toField": "set_location"
+                        "@toField": "set_cycle"
                       }
                     },
                     {
@@ -1303,6 +1303,7 @@
               },
               {
                 "@name": "ModifiableNode",
+                "@id": "MN",
                 "@type": "SFNode",
                 "@accessType": "initializeOnly",
                 "-children": [
@@ -1319,8 +1320,19 @@
               "\tfunction add_node(value) {",
               "                // Browser.print('hey ', counter);",
               "                counter = counter++;",
-              "\t\tnode_changed = Browser.createX3DFromString('{ \"ProtoInstance\": { \"@name\":\"node\", \"@DEF\":\"node'+counter+'\", \"fieldValue\": [ { \"@name\":\"position\", \"@value\":[0.0,0.0,0.0]}]}}');",
-              "                ModifiableNode.children[ModifiableNode.children.length] = node_changed[0];",
+              "\t\tBrowser.appendTo(document.getElementById(\"MN\"),",
+              "\t\t\t{ \"ProtoInstance\":",
+              "\t\t\t\t{ \"@name\":\"node\",",
+              "\t\t\t\t  \"@DEF\":\"node'+counter+'\",",
+              "\t\t\t\t  \"fieldValue\": [",
+              "\t\t\t\t\t{",
+              "\t\t\t\t\t\t \"@name\":\"position\",",
+              "\t\t\t\t\t\t \"@value\":[0.0,0.0,0.0]",
+              "\t\t\t\t\t}",
+              "\t\t\t\t  ]",
+              "\t\t\t\t}",
+              "\t\t\t});",
+              "                ",
               "        }"
             ],
             "@class": "clickHandler"

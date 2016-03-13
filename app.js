@@ -82,6 +82,7 @@ magic("*.gif", "image/gif");
 magic("*.jpg", "image/jpeg");
 magic("*.jpeg", "image/jpeg");
 magic("*.png", "image/png");
+magic("*.swf", "application/x-shockwave-flash");
 
 app.get("*.json", function(req, res, next) {
 	var url = req._parsedUrl.pathname.substr(1);
