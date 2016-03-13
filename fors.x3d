@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
-<X3D profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance">
+<X3D  profile="Immersive" version="3.3" >
     <head>
         <meta name="creator" content="John W Carlson"/>
         <meta name="created" content="December 13 2015"/>
@@ -8,6 +8,8 @@
         <meta name="identifier" content="http://coderextreme.net/X3DJSONLD/force.x3d"/>
         <meta name="description" content="beginnings of a force directed graph in 3D"/>
         <meta name="generator" content="Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit"/>
+        <meta name="translated" content="12 March 2016"/>
+        <meta name="generator" content="X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"/>
     </head>
     <Scene>
         <ProtoDeclare name="node">
@@ -24,31 +26,31 @@
                         <Appearance>
                             <Material diffuseColor="1 0 0"/>
                         </Appearance>
-                    </Shape>  
+                    </Shape>
                 </Transform>
-                <PositionInterpolator DEF="NodePosition" key="0 1" keyValue="0 0 0, 0 5 0"/>
+                <PositionInterpolator DEF="NodePosition" key="0 1" keyValue="0 0 0 0 5 0"/>
                 <Script DEF="MoveBall">
                     <field name="translation" accessType="inputOutput" type="SFVec3f" value="50 50 0"/>
                     <field name="old" accessType="inputOutput" type="SFVec3f" value="0 0 0"/>
                     <field name="set_location" accessType="inputOnly" type="SFTime"/>
                     <field name="keyValue" accessType="outputOnly" type="MFVec3f"/>
 <![CDATA[
-ecmascript:
-					function set_location(value) {
-                                                old = translation;
-						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
-                                                keyValue = new MFVec3f(old, translation);
-						// Browser.println(translation);
-					}
+                    ecmascript:
+                    function set_location(value) {
+                    old = translation;
+                    translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
+                    keyValue = new MFVec3f(old, translation);
+                    Browser.println(translation);
+                    }
 ]]>
-                </Script>
-                <TimeSensor DEF="nodeClock" cycleInterval="3" loop="true"></TimeSensor>
+</Script>
+                <TimeSensor DEF="nodeClock" cycleInterval="3" loop="true"/>
                 <ROUTE fromNode="nodeClock" fromField="cycleTime" toNode="MoveBall" toField="set_location"/>
                 <ROUTE fromNode="nodeClock" fromField="fraction_changed" toNode="NodePosition" toField="set_fraction"/>
                 <ROUTE fromNode="MoveBall" fromField="keyValue" toNode="NodePosition" toField="keyValue"/>
                 <ROUTE fromNode="NodePosition" fromField="value_changed" toNode="transform" toField="set_translation"/>
             </ProtoBody>
-        </ProtoDeclare>        
+        </ProtoDeclare>
         <ProtoDeclare name="cylinder">
             <ProtoInterface>
                 <field name="positionA" accessType="inputOnly" type="SFVec3f"/>
@@ -56,7 +58,7 @@ ecmascript:
             </ProtoInterface>
             <ProtoBody>
                 <Shape>
-                    <Extrusion DEF="extrusion" creaseAngle="0.785" crossSection=" 1.00 0.00, 0.92 -0.38, 0.71 -0.71, 0.38 -0.92, 0.00 -1.00, -0.38 -0.92, -0.71 -0.71, -0.92 -0.38, -1.00 -0.00, -0.92 0.38, -0.71 0.71, -0.38 0.92, 0.00 1.00, 0.38 0.92, 0.71 0.71, 0.92 0.38, 1.00 0.00" spine="0 -50 0, 0 0 0, 0 50 0"/>
+                    <Extrusion DEF="extrusion" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 -50 0, 0 0 0, 0 50 0"/>
                     <Appearance>
                         <Material diffuseColor="0 1 0"/>
                     </Appearance>
@@ -70,42 +72,40 @@ ecmascript:
                         <connect nodeField="set_endB" protoField="positionB"/>
                     </IS>
 <![CDATA[
-ecmascript:
+                    ecmascript:
 
-                function set_endA(value) {
-		    if (typeof spine === "undefined") {
-		        spine = new MFVec3f(value, value);
-		    } else {
-		        spine = new MFVec3f(value, spine[1]);
-		    }
-                }
+                    function set_endA(value) {
+                    if (typeof spine === 'undefined') {
+                    spine = new MFVec3f(value, value);
+                    } else {
+                    spine = new MFVec3f(value, spine[1]);
+                    }
+                    }
                 
-                function set_endB(value) {
-		    if (typeof spine === "undefined") {
-		        spine = new MFVec3f(value, value);
-		    } else {
-		        spine = new MFVec3f(spine[0], value);
-		    }
-                }
+                    function set_endB(value) {
+                    if (typeof spine === 'undefined') {
+                    spine = new MFVec3f(value, value);
+                    } else {
+                    spine = new MFVec3f(spine[0], value);
+                    }
+                    }
                 
-                function set_spine(value) {
+                    function set_spine(value) {
                     spine = value;
-                }
+                    }
 ]]>
-                </Script>
-                
+</Script>
                 <ROUTE fromNode="MoveCylinder" fromField="spine" toNode="extrusion" toField="set_spine"/>
-                
             </ProtoBody>
         </ProtoDeclare>
-        <Transform  scale="0.1 0.1 0.1">
-            <ProtoInstance DEF="nodeA" name="node">
-                <fieldValue name="position" value="-50.0 -50.0 -50.0"/>
+        <Transform scale="0.1 0.1 0.1">
+            <ProtoInstance name="node" DEF="nodeA">
+                <fieldValue name="position" value="-50 -50 -50"/>
             </ProtoInstance>
-            <ProtoInstance DEF="nodeB" name="node">
-                <fieldValue name="position" value="50.0 50.0 50.0"/>
+            <ProtoInstance name="node" DEF="nodeB">
+                <fieldValue name="position" value="50 50 50"/>
             </ProtoInstance>
-            <ProtoInstance DEF="linkA" name="cylinder">
+            <ProtoInstance name="cylinder" DEF="linkA">
                 <fieldValue name="positionA" value="0 0 0"/>
                 <fieldValue name="positionB" value="50 50 50"/>
             </ProtoInstance>

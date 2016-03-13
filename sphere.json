@@ -2,35 +2,32 @@
     "@profile":"Immersive",
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "@showStat":true,
     "@showLog":true,
     "@showProgress":"bar",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "Scene": {
-        "-children":[
+        "-ErrorChildNodeFieldNameNotFound":[
           { "Group":
-            {
-              "-children":[
+              "-ErrorChildNodeFieldNameNotFound":[
                 { "Shape":
-                  {
-                    "-appearance":
+                    "-ErrorChildNodeFieldNameNotFound":[
                       { "Appearance":
-                        {
-                          "-material":
+                          "-ErrorChildNodeFieldNameNotFound":[
                             { "Material":
                               {
-                                "@diffuseColor":[1, 1, 1]
+                                "@diffuseColor":[1,1,1]
                               }
                             }
-                        }
-                      },
-                    "-geometry":
-                      { "Sphere": {}
+                          ]
                       }
-                  }
+                    ],
+                    "-ErrorChildNodeFieldNameNotFound":[
+                      { "Sphere":
+                      }
+                    ]
                 }
               ]
-            }
           }
         ]
     }

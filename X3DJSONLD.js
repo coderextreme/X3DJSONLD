@@ -71,12 +71,12 @@ function ConvertObject(key, object, element, path) {
 				element.appendChild(child);
 			}
 		} else if (key === '#sourceText') {
-			var child = document.createTextNode(object[key].join("\n"));
-			//if (typeof x3djsonNS !== 'undefined' && x3djsonNS !== "http://www.w3.org/1999/xhtml") {
-				//var child = document.createCDATASection(object[key].join("\n").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&"));
-			//}
-			// $(element).css("display", "none");
+			var open = document.createTextNode("<![CDATA[");
+			var child = document.createTextNode(object[key].join("\n").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&"));
+			var close = document.createTextNode("]]>");
+			element.appendChild(open);
 			element.appendChild(child);
+			element.appendChild(close);
 		} else {
 			if (key === 'connect' || key === 'fieldValue' || key === 'field' || key === 'meta') {
 				for (var childkey in object[key]) {  // for each field
@@ -219,6 +219,10 @@ function loadX3DJS(json, path, xml, NS) {
 
 		// strip out schema
 		xmlstr = xmlstr.replace(/xsd:noNamespaceSchemaLocation="[^"]*"/g, "");
+		// Fix CDATA sections
+
+		xmlstr = xmlstr.replace(/&lt;!\[CDATA\[/g, "<![CDATA[");
+		xmlstr = xmlstr.replace(/\]\]&gt;/g, "]]>");
 		xml.push(xmlstr);
 	}
 	return child;

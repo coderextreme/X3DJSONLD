@@ -3,9 +3,6 @@
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
     "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
-    "@showStat":true,
-    "@showLog":true,
-    "@showProgress":"bar",
     "head": {
         "meta": [
           {
@@ -30,7 +27,7 @@
           },
           {
             "@name":"translated",
-            "@content":"02 March 2016"
+            "@content":"12 March 2016"
           },
           {
             "@name":"generator",
