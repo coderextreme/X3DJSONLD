@@ -184,7 +184,7 @@
                 {
                   "@name":"set_fraction",
                   "@accessType":"inputOnly",
-                  "@type":"SFTime"
+                  "@type":"SFFloat"
                 },
                 {
                   "@name":"lastKey",
@@ -256,7 +256,7 @@
           { "ROUTE":
             {
               "@fromNode":"RandomTourTime",
-              "@fromField":"orientation_changed",
+              "@fromField":"orientation",
               "@toNode":"TourOrientation",
               "@toField":"keyValue"
             }
@@ -264,7 +264,7 @@
           { "ROUTE":
             {
               "@fromNode":"RandomTourTime",
-              "@fromField":"position_changed",
+              "@fromField":"position",
               "@toNode":"TourPosition",
               "@toField":"keyValue"
             }
