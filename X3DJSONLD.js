@@ -75,7 +75,7 @@ function ConvertObject(key, object, element, path) {
 			//if (typeof x3djsonNS !== 'undefined' && x3djsonNS !== "http://www.w3.org/1999/xhtml") {
 				//var child = document.createCDATASection(object[key].join("\n").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&"));
 			//}
-			$(element).css("display", "none");
+			// $(element).css("display", "none");
 			element.appendChild(child);
 		} else {
 			if (key === 'connect' || key === 'fieldValue' || key === 'field' || key === 'meta') {
@@ -212,7 +212,8 @@ function loadX3DJS(json, path, xml, NS) {
 		var serializer = new XMLSerializer();
 		var xmlstr = serializer.serializeToString(child);
 		xmlstr = xmlstr.replace(/(<[ \t]*)([A-Za-z0-9]+)([^>]*)\/>/g, "$1$2$3></$2>");
-		xmlstr = xmlstr.replace(/xmlns="[^"]"/g, "");
+		xmlstr = xmlstr.replace(/xmlns="[^"]*"/g, "");
+		xmlstr = xmlstr.replace(/xsd:noNamespaceSchemaLocation="[^"]*"/g, "");
 		xml.push(xmlstr);
 	}
 	return child;
