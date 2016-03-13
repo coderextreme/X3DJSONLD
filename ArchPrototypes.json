@@ -1,8 +1,9 @@
 {
   "X3D": {
     "@profile": "Immersive",
-    "@version": 3.3,
+    "@version": "3.3",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "meta": [
         {
@@ -48,6 +49,18 @@
         {
           "@name": "license",
           "@content": "../license.html"
+        },
+        {
+          "@name": "translated",
+          "@content": "12 March 2016"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+        },
+        {
+          "@name": "warning",
+          "@content": "An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
         }
       ]
     },
@@ -75,48 +88,40 @@
                             "#comment": "note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly"
                           }
                         ],
-                        "-geometry": [
-                          {
-                            "IndexedFaceSet": {
-                              "@DEF": "ArchPrototypeArchInstanceArchPrototypeArchIndex",
-                              "@convex": false,
-                              "@solid": false,
-                              "-coord": [
-                                {
-                                  "Coordinate": {
-                                    "@DEF": "ArchPrototypeArchInstanceArchPrototypeArchChord",
-                                    "@class": "ArchPrototypeArchInstanceArchPrototypeArchChord"
-                                  }
-                                }
-                              ],
-                              "@class": "ArchPrototypeArchInstanceArchPrototypeArchIndex"
+                        "-geometry": {
+                          "IndexedFaceSet": {
+                            "@DEF": "ArchPrototypeArchInstanceArchPrototypeArchIndex",
+                            "@convex": false,
+                            "@solid": false,
+                            "-coord": {
+                              "Coordinate": {
+                                "@DEF": "ArchPrototypeArchInstanceArchPrototypeArchChord",
+                                "@class": "ArchPrototypeArchInstanceArchPrototypeArchChord"
+                              }
+                            },
+                            "@class": "ArchPrototypeArchInstanceArchPrototypeArchIndex"
+                          }
+                        },
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@DEF": "ArchPrototypeArchInstanceArchPrototypeMaterialNode",
+                                "@class": "ArchPrototypeArchInstanceArchPrototypeMaterialNode",
+                                "@diffuseColor": [
+                                  0.5,
+                                  0.3,
+                                  0.6
+                                ],
+                                "@emissiveColor": [
+                                  0.5,
+                                  0.3,
+                                  0.6
+                                ]
+                              }
                             }
                           }
-                        ],
-                        "-appearance": [
-                          {
-                            "Appearance": {
-                              "-material": [
-                                {
-                                  "Material": {
-                                    "@DEF": "ArchPrototypeArchInstanceArchPrototypeMaterialNode",
-                                    "@class": "ArchPrototypeArchInstanceArchPrototypeMaterialNode",
-                                    "@diffuseColor": [
-                                      0.5,
-                                      0.3,
-                                      0.6
-                                    ],
-                                    "@emissiveColor": [
-                                      0.5,
-                                      0.3,
-                                      0.6
-                                    ]
-                                  }
-                                }
-                              ]
-                            }
-                          }
-                        ],
+                        },
                         "@class": "ArchPrototypeArchInstanceArchPrototypeArch"
                       }
                     }
@@ -133,6 +138,20 @@
               {
                 "Script": {
                   "@DEF": "ArchPrototypeArchInstanceArchPrototypeArchPrototypeScript",
+                  "-children": [
+                    {
+                      "#comment": "INPUT PARAMETERS"
+                    },
+                    {
+                      "#comment": "General parameters"
+                    },
+                    {
+                      "#comment": "Parameters to create to create shapes related to arch: put true to apply"
+                    },
+                    {
+                      "#comment": "OUTPUT PARAMETERS"
+                    }
+                  ],
                   "field": [
                     {
                       "@name": "clearSpanWidth",
@@ -229,20 +248,6 @@
                       "@accessType": "outputOnly",
                       "@appinfo": "send computed indices to the IndexedFaceSet node",
                       "@type": "MFInt32"
-                    }
-                  ],
-                  "-children": [
-                    {
-                      "#comment": "INPUT PARAMETERS"
-                    },
-                    {
-                      "#comment": "General parameters"
-                    },
-                    {
-                      "#comment": "Parameters to create to create shapes related to arch: put true to apply"
-                    },
-                    {
-                      "#comment": "OUTPUT PARAMETERS"
                     }
                   ],
                   "#sourceText": [
@@ -576,9 +581,7 @@
           "Inline": {
             "@DEF": "CoordinateAxes",
             "@url": [
-              "./CoordinateAxes.x3d",
-              "X3DJSONLD/CoordinateAxes.x3d",
-              "http://coderextreme.net/X3DJSONLD/CoordinateAxes.x3d"
+              "CoordinateAxes.x3d"
             ],
             "@class": "CoordinateAxes"
           }

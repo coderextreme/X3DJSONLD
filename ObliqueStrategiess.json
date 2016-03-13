@@ -1,8 +1,9 @@
 {
   "X3D": {
     "@profile": "Immersive",
-    "@version": 3.3,
+    "@version": "3.3",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "meta": [
         {
@@ -108,6 +109,18 @@
         {
           "@name": "license",
           "@content": "../license.html"
+        },
+        {
+          "@name": "translated",
+          "@content": "12 March 2016"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+        },
+        {
+          "@name": "warning",
+          "@content": "An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
         }
       ]
     },
@@ -151,52 +164,44 @@
               },
               {
                 "Shape": {
-                  "-geometry": [
-                    {
-                      "Text": {
-                        "@string": [
-                          "Oblique Strategies",
-                          "",
-                          "(Over One Hundred Worthwhile Dilemmas)",
-                          "",
-                          "by,Brian,Eno,and,Peter,Schmidt"
-                        ],
-                        "-fontStyle": [
-                          {
-                            "FontStyle": {
-                              "@DEF": "MessageFont",
-                              "@family": [
-                                "SANS"
-                              ],
-                              "@justify": [
-                                "MIDDLE",
-                                "MIDDLE"
-                              ],
-                              "@style": "BOLD",
-                              "@class": "MessageFont"
-                            }
-                          }
-                        ]
+                  "-geometry": {
+                    "Text": {
+                      "@string": [
+                        "Oblique Strategies",
+                        "",
+                        "(Over One Hundred Worthwhile Dilemmas)",
+                        "",
+                        "by Brian Eno and Peter Schmidt"
+                      ],
+                      "-fontStyle": {
+                        "FontStyle": {
+                          "@DEF": "MessageFont",
+                          "@family": [
+                            "SANS"
+                          ],
+                          "@justify": [
+                            "MIDDLE",
+                            "MIDDLE"
+                          ],
+                          "@style": "BOLD",
+                          "@class": "MessageFont"
+                        }
                       }
                     }
-                  ],
-                  "-appearance": [
-                    {
-                      "Appearance": {
-                        "-material": [
-                          {
-                            "Material": {
-                              "@diffuseColor": [
-                                1,
-                                1,
-                                1
-                              ]
-                            }
-                          }
-                        ]
+                  },
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            1,
+                            1,
+                            1
+                          ]
+                        }
                       }
                     }
-                  ]
+                  }
                 }
               },
               {
@@ -210,65 +215,57 @@
                     {
                       "Shape": {
                         "@DEF": "HeadlineClickSurface",
-                        "-geometry": [
-                          {
-                            "IndexedFaceSet": {
-                              "@coordIndex": [
-                                0,
-                                1,
-                                2,
-                                3,
-                                -1
-                              ],
-                              "@solid": false,
-                              "-coord": [
-                                {
-                                  "Coordinate": {
-                                    "@point": [
-                                      1,
-                                      1,
-                                      0,
-                                      1,
-                                      -1,
-                                      0,
-                                      -1,
-                                      -1,
-                                      0,
-                                      -1,
-                                      1,
-                                      0
-                                    ]
-                                  }
-                                }
-                              ]
+                        "-geometry": {
+                          "IndexedFaceSet": {
+                            "@coordIndex": [
+                              0,
+                              1,
+                              2,
+                              3,
+                              -1
+                            ],
+                            "@solid": false,
+                            "-coord": {
+                              "Coordinate": {
+                                "@point": [
+                                  1,
+                                  1,
+                                  0,
+                                  1,
+                                  -1,
+                                  0,
+                                  -1,
+                                  -1,
+                                  0,
+                                  -1,
+                                  1,
+                                  0
+                                ]
+                              }
                             }
                           }
-                        ],
-                        "-appearance": [
-                          {
-                            "Appearance": {
-                              "-material": [
-                                {
-                                  "Material": {
-                                    "@ambientIntensity": 0.245763,
-                                    "@diffuseColor": [
-                                      0.34773,
-                                      0.090909,
-                                      0.005289
-                                    ],
-                                    "@shininess": 0.07,
-                                    "@specularColor": [
-                                      0.336735,
-                                      0.051091,
-                                      0.051091
-                                    ],
-                                    "@transparency": 0.8
-                                  }
-                                }
-                              ]
+                        },
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@ambientIntensity": 0.245763,
+                                "@diffuseColor": [
+                                  0.34773,
+                                  0.090909,
+                                  0.005289
+                                ],
+                                "@shininess": 0.07,
+                                "@specularColor": [
+                                  0.336735,
+                                  0.051091,
+                                  0.051091
+                                ],
+                                "@transparency": 0.8
+                              }
                             }
                           }
-                        ],
+                        },
                         "@class": "HeadlineClickSurface"
                       }
                     }
@@ -281,6 +278,14 @@
         {
           "Script": {
             "@DEF": "TextScript",
+            "-children": [
+              {
+                "#comment": "initialize() method includes unit test to printAllStrategies() to console"
+              },
+              {
+                "#comment": "TODO insert field definitions here (index string_changed previous next random) and then animate!"
+              }
+            ],
             "field": [
               {
                 "@name": "index",
@@ -328,14 +333,6 @@
                 "@appinfo": "controls console tracing",
                 "@type": "SFBool",
                 "@value": true
-              }
-            ],
-            "-children": [
-              {
-                "#comment": "initialize() method includes unit test to printAllStrategies() to console"
-              },
-              {
-                "#comment": "TODO insert field definitions here (index string_changed previous next random) and then animate!"
               }
             ],
             "#sourceText": [
@@ -661,45 +658,37 @@
             "-children": [
               {
                 "Shape": {
-                  "-geometry": [
-                    {
-                      "Text": {
-                        "@DEF": "CardText",
-                        "-fontStyle": [
-                          {
-                            "FontStyle": {
-                              "@family": [
-                                "SANS"
-                              ],
-                              "@justify": [
-                                "MIDDLE",
-                                "MIDDLE"
-                              ],
-                              "@style": "BOLD"
-                            }
-                          }
-                        ],
-                        "@class": "CardText"
+                  "-geometry": {
+                    "Text": {
+                      "@DEF": "CardText",
+                      "-fontStyle": {
+                        "FontStyle": {
+                          "@family": [
+                            "SANS"
+                          ],
+                          "@justify": [
+                            "MIDDLE",
+                            "MIDDLE"
+                          ],
+                          "@style": "BOLD"
+                        }
+                      },
+                      "@class": "CardText"
+                    }
+                  },
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            1,
+                            1,
+                            1
+                          ]
+                        }
                       }
                     }
-                  ],
-                  "-appearance": [
-                    {
-                      "Appearance": {
-                        "-material": [
-                          {
-                            "Material": {
-                              "@diffuseColor": [
-                                1,
-                                1,
-                                1
-                              ]
-                            }
-                          }
-                        ]
-                      }
-                    }
-                  ]
+                  }
                 }
               },
               {
@@ -731,20 +720,18 @@
                       "#comment": "%20 is space character used in uri/url encoding"
                     }
                   ],
-                  "-source": [
-                    {
-                      "AudioClip": {
-                        "@DEF": "TextToSpeechAudioClip",
-                        "@description": "sends strategy text google translate",
-                        "@url": [
-                          "http://translate.google.com/translate_tts?tl=en&q=Feed%20the%20recording%20back%20out%20of%20the%20medium",
-                          "translate_tts_mp3FileFormatNotSupported.wav",
-                          "http://X3dGraphics.com/examples/X3dForAdvancedModeling/Inspiration/translate_tts_mp3FileFormatNotSupported.wav"
-                        ],
-                        "@class": "TextToSpeechAudioClip"
-                      }
+                  "-source": {
+                    "AudioClip": {
+                      "@DEF": "TextToSpeechAudioClip",
+                      "@description": "sends strategy text google translate",
+                      "@url": [
+                        "http://translate.google.com/translate_tts?tl=en&q=Feed%20the%20recording%20back%20out%20of%20the%20medium",
+                        "translate_tts_mp3FileFormatNotSupported.wav",
+                        "http://X3dGraphics.com/examples/X3dForAdvancedModeling/Inspiration/translate_tts_mp3FileFormatNotSupported.wav"
+                      ],
+                      "@class": "TextToSpeechAudioClip"
                     }
-                  ],
+                  },
                   "@class": "CardSoundSpatialization"
                 }
               },
@@ -798,41 +785,33 @@
               },
               {
                 "Shape": {
-                  "-geometry": [
-                    {
-                      "Text": {
-                        "@string": [
-                          "previous"
-                        ],
-                        "-fontStyle": [
-                          {
-                            "FontStyle": {
-                              "@USE": "MessageFont"
-                            }
-                          }
-                        ]
+                  "-geometry": {
+                    "Text": {
+                      "@string": [
+                        "previous"
+                      ],
+                      "-fontStyle": {
+                        "FontStyle": {
+                          "@USE": "MessageFont"
+                        }
                       }
                     }
-                  ],
-                  "-appearance": [
-                    {
-                      "Appearance": {
-                        "@DEF": "InterfaceAppearance",
-                        "-material": [
-                          {
-                            "Material": {
-                              "@diffuseColor": [
-                                1,
-                                0,
-                                0.6
-                              ]
-                            }
-                          }
-                        ],
-                        "@class": "InterfaceAppearance"
-                      }
+                  },
+                  "-appearance": {
+                    "Appearance": {
+                      "@DEF": "InterfaceAppearance",
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            1,
+                            0,
+                            0.6
+                          ]
+                        }
+                      },
+                      "@class": "InterfaceAppearance"
                     }
-                  ]
+                  }
                 }
               },
               {
@@ -851,53 +830,45 @@
                             "#comment": "support Selectable Text with a scalable IFS"
                           }
                         ],
-                        "-geometry": [
-                          {
-                            "IndexedFaceSet": {
-                              "@coordIndex": [
-                                0,
-                                1,
-                                2,
-                                3,
-                                -1
-                              ],
-                              "@solid": false,
-                              "-coord": [
-                                {
-                                  "Coordinate": {
-                                    "@point": [
-                                      1,
-                                      1,
-                                      0,
-                                      1,
-                                      -1,
-                                      0,
-                                      -1,
-                                      -1,
-                                      0,
-                                      -1,
-                                      1,
-                                      0
-                                    ]
-                                  }
-                                }
-                              ]
+                        "-geometry": {
+                          "IndexedFaceSet": {
+                            "@coordIndex": [
+                              0,
+                              1,
+                              2,
+                              3,
+                              -1
+                            ],
+                            "@solid": false,
+                            "-coord": {
+                              "Coordinate": {
+                                "@point": [
+                                  1,
+                                  1,
+                                  0,
+                                  1,
+                                  -1,
+                                  0,
+                                  -1,
+                                  -1,
+                                  0,
+                                  -1,
+                                  1,
+                                  0
+                                ]
+                              }
                             }
                           }
-                        ],
-                        "-appearance": [
-                          {
-                            "Appearance": {
-                              "-material": [
-                                {
-                                  "Material": {
-                                    "@transparency": 1
-                                  }
-                                }
-                              ]
+                        },
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@transparency": 1
+                              }
                             }
                           }
-                        ],
+                        },
                         "@class": "TransparentClickSurface"
                       }
                     }
@@ -937,29 +908,23 @@
               },
               {
                 "Shape": {
-                  "-geometry": [
-                    {
-                      "Text": {
-                        "@string": [
-                          "next"
-                        ],
-                        "-fontStyle": [
-                          {
-                            "FontStyle": {
-                              "@USE": "MessageFont"
-                            }
-                          }
-                        ]
+                  "-geometry": {
+                    "Text": {
+                      "@string": [
+                        "next"
+                      ],
+                      "-fontStyle": {
+                        "FontStyle": {
+                          "@USE": "MessageFont"
+                        }
                       }
                     }
-                  ],
-                  "-appearance": [
-                    {
-                      "Appearance": {
-                        "@USE": "InterfaceAppearance"
-                      }
+                  },
+                  "-appearance": {
+                    "Appearance": {
+                      "@USE": "InterfaceAppearance"
                     }
-                  ]
+                  }
                 }
               },
               {
@@ -1009,29 +974,23 @@
               },
               {
                 "Shape": {
-                  "-geometry": [
-                    {
-                      "Text": {
-                        "@string": [
-                          "random"
-                        ],
-                        "-fontStyle": [
-                          {
-                            "FontStyle": {
-                              "@USE": "MessageFont"
-                            }
-                          }
-                        ]
+                  "-geometry": {
+                    "Text": {
+                      "@string": [
+                        "random"
+                      ],
+                      "-fontStyle": {
+                        "FontStyle": {
+                          "@USE": "MessageFont"
+                        }
                       }
                     }
-                  ],
-                  "-appearance": [
-                    {
-                      "Appearance": {
-                        "@USE": "InterfaceAppearance"
-                      }
+                  },
+                  "-appearance": {
+                    "Appearance": {
+                      "@USE": "InterfaceAppearance"
                     }
-                  ]
+                  }
                 }
               },
               {
@@ -1087,29 +1046,23 @@
                     },
                     {
                       "Shape": {
-                        "-geometry": [
-                          {
-                            "Text": {
-                              "@string": [
-                                "speech"
-                              ],
-                              "-fontStyle": [
-                                {
-                                  "FontStyle": {
-                                    "@USE": "MessageFont"
-                                  }
-                                }
-                              ]
+                        "-geometry": {
+                          "Text": {
+                            "@string": [
+                              "speech"
+                            ],
+                            "-fontStyle": {
+                              "FontStyle": {
+                                "@USE": "MessageFont"
+                              }
                             }
                           }
-                        ],
-                        "-appearance": [
-                          {
-                            "Appearance": {
-                              "@USE": "InterfaceAppearance"
-                            }
+                        },
+                        "-appearance": {
+                          "Appearance": {
+                            "@USE": "InterfaceAppearance"
                           }
-                        ]
+                        }
                       }
                     },
                     {

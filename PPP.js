@@ -1,15 +1,36 @@
 // X3D JSON Prototype and Script preprocessor
 
-var X3DJSONLD =require('./X3DJSONLD');
-var json2x3d =require('./json2x3d');
+// set up XML DOM
+var xmldom = require('xmldom');
+var DOMImplementation = new xmldom.DOMImplementation();
+var XMLSerializer = new xmldom.XMLSerializer();
+var docType = DOMImplementation.createDocumentType("X3D", 'ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd', null);
+var document = DOMImplementation.createDocument(null, "X3D", docType);
+document.insertBefore(document.createProcessingInstruction('xml', 'version="1.0" encoding="UTF-8"'), document.doctype);
+var element = document.getElementsByTagNameNS(null, "X3D")[0];
+element.setAttribute("xmlns:xsd", 'http://www.w3.org/2001/XMLSchema-instance');
+
+// Bring in JSON to DOM/XML conversion --  used to build DOM/XML.
+var X3DJSONLD = require('./X3DJSONLD');
+X3DJSONLD.setDocument(document);
+var ConvertToX3DOM = X3DJSONLD.ConvertToX3DOM;
+var Browser = X3DJSONLD.Browser;
+
+// Bring in prototype expander and script expander
+
 var prototypeExpander = require('./PrototypeExpander');
 var Script = require('./Script');
-var loadX3DJS = json2x3d.loadX3DJS;
-var Browser = X3DJSONLD.Browser;
-var processScripts = Script.processScripts;
 var LOG = Script.LOG;
+var processScripts = Script.processScripts;
 var externPrototypeExpander = require("./ServerPrototypeExpander");
+
 var fs = require("fs");
+
+function loadX3DJS(json, path, xml) {
+	ConvertToX3DOM(json, "", element, path);
+	xml.push(XMLSerializer.serializeToString(element));
+}
+
 
 /*
 var content = '';
