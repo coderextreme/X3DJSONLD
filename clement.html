@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+    <title>JSON Loader</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <link rel="stylesheet" type="text/css" href="http://www.x3dom.org/download/dev/x3dom.css"></link>
+    <script type="text/javascript" src="http://www.x3dom.org/download/dev/x3dom-full.js"></script>
+    <style type="text/css">
+    X3D {
+        background:#000;
+	width: 900px;
+	height:450px;
+    }
+    </style>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+<div id="x3domjson"></div>
+</body>
+    <script type="text/javascript" src="X3DJSONLD.js"></script>
+    <!--script type="text/javascript" src="PrototypeExpander.js"></script>
+    <script type="text/javascript" src="Script.js"></script-->
+    <script type="text/javascript" src="loaderJQuery.js"></script>
+    <script type="text/javascript">
+	function loadX3DJSON(selector, url) {
+		$.getJSON(url, function(json) {
+	    		replaceX3DJSON(selector, json, url, []);
+		})
+		.fail(function(jqXHR, textStatus, errorThrown) { alert('getJSON request failed! ' + textStatus + ' ' + errorThrown); });
+	}
+
+	loadX3DJSON('#x3domjson','http://www.openearthview.net/3dtile.php?format=x3djson&zoom=18&xtile=134118&ytile=95589');
+    </script>
+</html>
