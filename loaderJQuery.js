@@ -126,6 +126,12 @@
 		x3dom.reload();
 	}
 
+var validate;
+$.getJSON("x3d-3.3-JSONSchema.json", function(schema) {
+	var ajv = Ajv();
+	validate = ajv.compile(schema);
+});
+
         /*
          * replaceX3DJSON
          * replace body of selector with DOM created from X3D JSON.
@@ -137,11 +143,16 @@
          * NS -- XML namespace (optional)
          */
 	function replaceX3DJSON(selector, json, url, xml, NS) {
-		var element = loadX3DJS(json, url, xml, NS);  // Cobweb if not XHTML NS
-		elementSetAttribute(element, "xmlns:xsd", 'http://www.w3.org/2001/XMLSchema-instance');
-		$(selector).empty();
-		$(selector).append(element);
-		x3dom.reload();
+		// check against schema
+		var valid = validate(json);
+		if (valid || confirm(JSON.stringify(validate.errors))) {
+
+			var element = loadX3DJS(json, url, xml, NS);  // Cobweb if not XHTML NS
+			elementSetAttribute(element, "xmlns:xsd", 'http://www.w3.org/2001/XMLSchema-instance');
+			$(selector).empty();
+			$(selector).append(element);
+			x3dom.reload();
+		}
 	}
 
 	function updateX3DOM() {
