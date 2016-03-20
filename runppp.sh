@@ -1,6 +1,6 @@
 #!/bin/sh -x
-node PPP.js examples/X3dForWebAuthors/KelpForestExhibit/KelpForestMain.json
-read me
+#node PPP.js examples/X3dForWebAuthors/KelpForestExhibit/KelpForestMain.json
+#read me
 node PPP.js for.json > fors.json
 read me
 node PPP.js rubikOnFire.json > rubikOnFires.json
