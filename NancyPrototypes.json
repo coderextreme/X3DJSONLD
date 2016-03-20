@@ -1,4 +1,5 @@
 { "X3D": {
+    "encoding":"UTF-8",
     "@profile":"Immersive",
     "@version":"3.0",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
@@ -51,7 +52,7 @@
           },
           {
             "@name":"translated",
-            "@content":"13 March 2016"
+            "@content":"19 March 2016"
           },
           {
             "@name":"generator",
@@ -1904,86 +1905,103 @@
                   "-children":[
                     { "ProtoInstance":
                       {
+                        "@name":"Joint",
                         "@USE":"hanim_HumanoidRoot"
                       }
                     },
                     { "ProtoInstance":
                       {
+                        "@name":"Joint",
                         "@USE":"hanim_sacroiliac"
                       }
                     },
                     { "ProtoInstance":
                       {
+                        "@name":"Joint",
                         "@USE":"hanim_l_hip"
                       }
                     },
                     { "ProtoInstance":
                       {
+                        "@name":"Joint",
                         "@USE":"hanim_l_knee"
                       }
                     },
                     { "ProtoInstance":
                       {
+                        "@name":"Joint",
                         "@USE":"hanim_l_ankle"
                       }
                     },
                     { "ProtoInstance":
                       {
+                        "@name":"Joint",
                         "@USE":"hanim_r_hip"
                       }
                     },
                     { "ProtoInstance":
                       {
+                        "@name":"Joint",
                         "@USE":"hanim_r_knee"
                       }
                     },
                     { "ProtoInstance":
                       {
+                        "@name":"Joint",
                         "@USE":"hanim_r_ankle"
                       }
                     },
                     { "ProtoInstance":
                       {
+                        "@name":"Joint",
                         "@USE":"hanim_vl1"
                       }
                     },
                     { "ProtoInstance":
                       {
+                        "@name":"Joint",
                         "@USE":"hanim_l_shoulder"
                       }
                     },
                     { "ProtoInstance":
                       {
+                        "@name":"Joint",
                         "@USE":"hanim_l_elbow"
                       }
                     },
                     { "ProtoInstance":
                       {
+                        "@name":"Joint",
                         "@USE":"hanim_l_wrist"
                       }
                     },
                     { "ProtoInstance":
                       {
+                        "@name":"Joint",
                         "@USE":"hanim_r_shoulder"
                       }
                     },
                     { "ProtoInstance":
                       {
+                        "@name":"Joint",
                         "@USE":"hanim_r_elbow"
                       }
                     },
                     { "ProtoInstance":
                       {
+                        "@name":"Joint",
                         "@USE":"hanim_r_wrist"
                       }
                     },
                     { "ProtoInstance":
                       {
+                        "@name":"Joint",
                         "@USE":"hanim_vc4"
                       }
                     },
                     { "ProtoInstance":
                       {
+                        "@name":"Joint",
                         "@USE":"hanim_skullbase"
                       }
                     }
@@ -1994,81 +2012,97 @@
                   "-children":[
                     { "ProtoInstance":
                       {
+                        "@name":"Segment",
                         "@USE":"hanim_pelvis"
                       }
                     },
                     { "ProtoInstance":
                       {
+                        "@name":"Segment",
                         "@USE":"hanim_l_thigh"
                       }
                     },
                     { "ProtoInstance":
                       {
+                        "@name":"Segment",
                         "@USE":"hanim_l_calf"
                       }
                     },
                     { "ProtoInstance":
                       {
+                        "@name":"Segment",
                         "@USE":"hanim_l_hindfoot"
                       }
                     },
                     { "ProtoInstance":
                       {
+                        "@name":"Segment",
                         "@USE":"hanim_r_thigh"
                       }
                     },
                     { "ProtoInstance":
                       {
+                        "@name":"Segment",
                         "@USE":"hanim_r_calf"
                       }
                     },
                     { "ProtoInstance":
                       {
+                        "@name":"Segment",
                         "@USE":"hanim_r_hindfoot"
                       }
                     },
                     { "ProtoInstance":
                       {
+                        "@name":"Segment",
                         "@USE":"hanim_c7"
                       }
                     },
                     { "ProtoInstance":
                       {
+                        "@name":"Segment",
                         "@USE":"hanim_l_upperarm"
                       }
                     },
                     { "ProtoInstance":
                       {
+                        "@name":"Segment",
                         "@USE":"hanim_l_forearm"
                       }
                     },
                     { "ProtoInstance":
                       {
+                        "@name":"Segment",
                         "@USE":"hanim_l_hand"
                       }
                     },
                     { "ProtoInstance":
                       {
+                        "@name":"Segment",
                         "@USE":"hanim_r_upperarm"
                       }
                     },
                     { "ProtoInstance":
                       {
+                        "@name":"Segment",
                         "@USE":"hanim_r_forearm"
                       }
                     },
                     { "ProtoInstance":
                       {
+                        "@name":"Segment",
                         "@USE":"hanim_r_hand"
                       }
                     },
                     { "ProtoInstance":
                       {
+                        "@name":"Segment",
                         "@USE":"hanim_c4"
                       }
                     },
                     { "ProtoInstance":
                       {
+                        "@name":"Segment",
                         "@USE":"hanim_skull"
                       }
                     }

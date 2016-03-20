@@ -1,4 +1,5 @@
 { "X3D": {
+    "encoding":"UTF-8",
     "@profile":"Immersive",
     "@version":"3.0",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
@@ -53,7 +54,7 @@
           },
           {
             "@name":"translated",
-            "@content":"13 March 2016"
+            "@content":"19 March 2016"
           },
           {
             "@name":"generator",
