@@ -484,7 +484,7 @@
 "\tfunction add_node(value) {",
 "                // Browser.print('hey ', counter);",
 "                counter = counter++;",
-"\t\tBrowser.appendTo(document.getElementById(\"MN\"),",
+"\t\tBrowser.appendTo(Browser.getDocument().getElementById(\"MN\"),",
 "\t\t\t{ \"ProtoInstance\":",
 "\t\t\t\t{ \"@name\":\"node\",",
 "\t\t\t\t  \"@DEF\":\"node'+counter+'\",",
