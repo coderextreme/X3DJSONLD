@@ -247,18 +247,20 @@ function realPrototypeExpander(object, scope) {
 					console.error("ProtoBody undefined for", name);
 				}
 				body = object["Group"];
+/*
 				if (typeof protos[name]["@appinfo"] !== 'undefined') {
 					body["@appinfo"] = protos[name]["@appinfo"];
 				}
 				if (typeof protos[name]["@documentation"] !== 'undefined') {
 					body["@documentation"] = protos[name]["@documentation"];
 				}
+*/
 				if (typeof use !== 'undefined') {
 					body["@USE"] = use;
 					//console.error("Use is", use);
 				}
 				body["@DEF"] = def;
-				body["@class"] = def;
+				// body["@class"] = def;
 				var newscope = scope+name+def;
 				defs[def] = newscope;
 				//console.error('BEFORE', body["@USE"]);
@@ -350,7 +352,7 @@ function realPrototypeExpander(object, scope) {
 				var def = object["@DEF"];
 				if (typeof scope !== 'undefined') {
 					object["@DEF"] = scope+def;
-					object["@class"] = scope+def;
+					// object["@class"] = scope+def;
 					setEnv(def,
 					    '',
 					    scope+def,

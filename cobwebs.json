@@ -29,7 +29,7 @@
         },
         {
           "@name": "translated",
-          "@content": "19 March 2016"
+          "@content": "26 March 2016"
         },
         {
           "@name": "generator",
@@ -227,16 +227,14 @@
                           "\t    }",
                           "    }",
                           "}"
-                        ],
-                        "@class": "BubblebubbleABubblebounce"
+                        ]
                       }
                     },
                     {
                       "TimeSensor": {
                         "@DEF": "BubblebubbleABubblebubbleClock",
                         "@cycleInterval": 10,
-                        "@loop": true,
-                        "@class": "BubblebubbleABubblebubbleClock"
+                        "@loop": true
                       }
                     },
                     {
@@ -279,13 +277,11 @@
                         "@toField": "set_fraction"
                       }
                     }
-                  ],
-                  "@class": "BubblebubbleABubbletransform"
+                  ]
                 }
               }
             ],
-            "@DEF": "BubblebubbleAbubbleA",
-            "@class": "BubblebubbleAbubbleA"
+            "@DEF": "BubblebubbleAbubbleA"
           }
         },
         {
@@ -416,16 +412,14 @@
                           "\t    }",
                           "    }",
                           "}"
-                        ],
-                        "@class": "BubblebubbleBBubblebounce"
+                        ]
                       }
                     },
                     {
                       "TimeSensor": {
                         "@DEF": "BubblebubbleBBubblebubbleClock",
                         "@cycleInterval": 10,
-                        "@loop": true,
-                        "@class": "BubblebubbleBBubblebubbleClock"
+                        "@loop": true
                       }
                     },
                     {
@@ -468,13 +462,11 @@
                         "@toField": "set_fraction"
                       }
                     }
-                  ],
-                  "@class": "BubblebubbleBBubbletransform"
+                  ]
                 }
               }
             ],
-            "@DEF": "BubblebubbleBbubbleB",
-            "@class": "BubblebubbleBbubbleB"
+            "@DEF": "BubblebubbleBbubbleB"
           }
         },
         {
@@ -605,16 +597,14 @@
                           "\t    }",
                           "    }",
                           "}"
-                        ],
-                        "@class": "BubblebubbleCBubblebounce"
+                        ]
                       }
                     },
                     {
                       "TimeSensor": {
                         "@DEF": "BubblebubbleCBubblebubbleClock",
                         "@cycleInterval": 10,
-                        "@loop": true,
-                        "@class": "BubblebubbleCBubblebubbleClock"
+                        "@loop": true
                       }
                     },
                     {
@@ -657,13 +647,11 @@
                         "@toField": "set_fraction"
                       }
                     }
-                  ],
-                  "@class": "BubblebubbleCBubbletransform"
+                  ]
                 }
               }
             ],
-            "@DEF": "BubblebubbleCbubbleC",
-            "@class": "BubblebubbleCbubbleC"
+            "@DEF": "BubblebubbleCbubbleC"
           }
         },
         {
@@ -794,16 +782,14 @@
                           "\t    }",
                           "    }",
                           "}"
-                        ],
-                        "@class": "BubblebubbleDBubblebounce"
+                        ]
                       }
                     },
                     {
                       "TimeSensor": {
                         "@DEF": "BubblebubbleDBubblebubbleClock",
                         "@cycleInterval": 10,
-                        "@loop": true,
-                        "@class": "BubblebubbleDBubblebubbleClock"
+                        "@loop": true
                       }
                     },
                     {
@@ -846,13 +832,11 @@
                         "@toField": "set_fraction"
                       }
                     }
-                  ],
-                  "@class": "BubblebubbleDBubbletransform"
+                  ]
                 }
               }
             ],
-            "@DEF": "BubblebubbleDbubbleD",
-            "@class": "BubblebubbleDbubbleD"
+            "@DEF": "BubblebubbleDbubbleD"
           }
         }
       ]

@@ -113,7 +113,7 @@
         },
         {
           "@name": "translated",
-          "@content": "19 March 2016"
+          "@content": "26 March 2016"
         },
         {
           "@name": "generator",
@@ -128,11 +128,7 @@
     "Scene": {
       "-children": [
         {
-          "NavigationInfo": {
-            "@type": [
-              "NONE"
-            ]
-          }
+          "NavigationInfo": {}
         },
         {
           "Background": {
@@ -159,8 +155,7 @@
               {
                 "TouchSensor": {
                   "@DEF": "RandomTextClickedSensor",
-                  "@description": "Select to see a new strategy",
-                  "@class": "RandomTextClickedSensor"
+                  "@description": "Select to see a new strategy"
                 }
               },
               {
@@ -184,8 +179,7 @@
                             "MIDDLE",
                             "MIDDLE"
                           ],
-                          "@style": "BOLD",
-                          "@class": "MessageFont"
+                          "@style": "BOLD"
                         }
                       }
                     }
@@ -266,8 +260,7 @@
                               }
                             }
                           }
-                        },
-                        "@class": "HeadlineClickSurface"
+                        }
                       }
                     }
                   ]
@@ -639,8 +632,7 @@
               "}\r",
               "// ================================================================\r",
               ""
-            ],
-            "@class": "TextScript"
+            ]
           }
         },
         {
@@ -673,8 +665,7 @@
                           ],
                           "@style": "BOLD"
                         }
-                      },
-                      "@class": "CardText"
+                      }
                     }
                   },
                   "-appearance": {
@@ -728,11 +719,9 @@
                       "@url": [
                         "http://translate.google.com/translate_tts?tl=en&q=Feed%20the%20recording%20back%20out%20of%20the%20medium",
                         "translate_tts_mp3FileFormatNotSupported.wav"
-                      ],
-                      "@class": "TextToSpeechAudioClip"
+                      ]
                     }
-                  },
-                  "@class": "CardSoundSpatialization"
+                  }
                 }
               },
               {
@@ -751,8 +740,7 @@
                   "@toNode": "TextToSpeechAudioClip"
                 }
               }
-            ],
-            "@class": "CardTransform"
+            ]
           }
         },
         {
@@ -771,8 +759,7 @@
               {
                 "TouchSensor": {
                   "@DEF": "PreviousTextClickedSensor",
-                  "@description": "Select to see previous strategy",
-                  "@class": "PreviousTextClickedSensor"
+                  "@description": "Select to see previous strategy"
                 }
               },
               {
@@ -808,8 +795,7 @@
                             0.6
                           ]
                         }
-                      },
-                      "@class": "InterfaceAppearance"
+                      }
                     }
                   }
                 }
@@ -868,8 +854,7 @@
                               }
                             }
                           }
-                        },
-                        "@class": "TransparentClickSurface"
+                        }
                       }
                     }
                   ]
@@ -894,8 +879,7 @@
               {
                 "TouchSensor": {
                   "@DEF": "NextTextClickedSensor",
-                  "@description": "Select to see next strategy",
-                  "@class": "NextTextClickedSensor"
+                  "@description": "Select to see next strategy"
                 }
               },
               {
@@ -1081,8 +1065,7 @@
                         ]
                       }
                     }
-                  ],
-                  "@class": "TextToSpeechAnchor"
+                  ]
                 }
               }
             ]

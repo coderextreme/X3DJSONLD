@@ -33,7 +33,7 @@
         },
         {
           "@name": "translated",
-          "@content": "19 March 2016"
+          "@content": "26 March 2016"
         },
         {
           "@name": "generator",
@@ -69,8 +69,7 @@
                     50,
                     50
                   ],
-                  "@description": "click on background to add nodes, click on nodes to add links",
-                  "@class": "clickGenerator"
+                  "@description": "click on background to add nodes, click on nodes to add links"
                 }
               },
               {
@@ -145,7 +144,6 @@
                             }
                           }
                         ],
-                        "@class": "nodenodeAnodetransform",
                         "@translation": [
                           0,
                           0,
@@ -167,8 +165,7 @@
                           0,
                           5,
                           0
-                        ],
-                        "@class": "nodenodeAnodeNodePosition"
+                        ]
                       }
                     },
                     {
@@ -214,16 +211,14 @@
                           "                                                keyValue = new MFVec3f(old, translation);",
                           "\t\t\t\t\t\t// Browser.println(translation);",
                           "\t\t\t\t\t}"
-                        ],
-                        "@class": "nodenodeAnodeMoveBall"
+                        ]
                       }
                     },
                     {
                       "TimeSensor": {
                         "@DEF": "nodenodeAnodenodeClock",
                         "@cycleInterval": 3,
-                        "@loop": true,
-                        "@class": "nodenodeAnodenodeClock"
+                        "@loop": true
                       }
                     },
                     {
@@ -259,8 +254,7 @@
                       }
                     }
                   ],
-                  "@DEF": "nodenodeAnodeA",
-                  "@class": "nodenodeAnodeA"
+                  "@DEF": "nodenodeAnodeA"
                 }
               },
               {
@@ -335,7 +329,6 @@
                             }
                           }
                         ],
-                        "@class": "nodenodeBnodetransform",
                         "@translation": [
                           50,
                           50,
@@ -357,8 +350,7 @@
                           0,
                           5,
                           0
-                        ],
-                        "@class": "nodenodeBnodeNodePosition"
+                        ]
                       }
                     },
                     {
@@ -404,16 +396,14 @@
                           "                                                keyValue = new MFVec3f(old, translation);",
                           "\t\t\t\t\t\t// Browser.println(translation);",
                           "\t\t\t\t\t}"
-                        ],
-                        "@class": "nodenodeBnodeMoveBall"
+                        ]
                       }
                     },
                     {
                       "TimeSensor": {
                         "@DEF": "nodenodeBnodenodeClock",
                         "@cycleInterval": 3,
-                        "@loop": true,
-                        "@class": "nodenodeBnodenodeClock"
+                        "@loop": true
                       }
                     },
                     {
@@ -449,8 +439,7 @@
                       }
                     }
                   ],
-                  "@DEF": "nodenodeBnodeB",
-                  "@class": "nodenodeBnodeB"
+                  "@DEF": "nodenodeBnodeB"
                 }
               },
               {
@@ -525,7 +514,6 @@
                             }
                           }
                         ],
-                        "@class": "nodenodeCnodetransform",
                         "@translation": [
                           -50,
                           -50,
@@ -547,8 +535,7 @@
                           0,
                           5,
                           0
-                        ],
-                        "@class": "nodenodeCnodeNodePosition"
+                        ]
                       }
                     },
                     {
@@ -594,16 +581,14 @@
                           "                                                keyValue = new MFVec3f(old, translation);",
                           "\t\t\t\t\t\t// Browser.println(translation);",
                           "\t\t\t\t\t}"
-                        ],
-                        "@class": "nodenodeCnodeMoveBall"
+                        ]
                       }
                     },
                     {
                       "TimeSensor": {
                         "@DEF": "nodenodeCnodenodeClock",
                         "@cycleInterval": 3,
-                        "@loop": true,
-                        "@class": "nodenodeCnodenodeClock"
+                        "@loop": true
                       }
                     },
                     {
@@ -639,8 +624,7 @@
                       }
                     }
                   ],
-                  "@DEF": "nodenodeCnodeC",
-                  "@class": "nodenodeCnodeC"
+                  "@DEF": "nodenodeCnodeC"
                 }
               },
               {
@@ -715,7 +699,6 @@
                             }
                           }
                         ],
-                        "@class": "nodenodeDnodetransform",
                         "@translation": [
                           50,
                           50,
@@ -737,8 +720,7 @@
                           0,
                           5,
                           0
-                        ],
-                        "@class": "nodenodeDnodeNodePosition"
+                        ]
                       }
                     },
                     {
@@ -784,16 +766,14 @@
                           "                                                keyValue = new MFVec3f(old, translation);",
                           "\t\t\t\t\t\t// Browser.println(translation);",
                           "\t\t\t\t\t}"
-                        ],
-                        "@class": "nodenodeDnodeMoveBall"
+                        ]
                       }
                     },
                     {
                       "TimeSensor": {
                         "@DEF": "nodenodeDnodenodeClock",
                         "@cycleInterval": 3,
-                        "@loop": true,
-                        "@class": "nodenodeDnodenodeClock"
+                        "@loop": true
                       }
                     },
                     {
@@ -829,8 +809,7 @@
                       }
                     }
                   ],
-                  "@DEF": "nodenodeDnodeD",
-                  "@class": "nodenodeDnodeD"
+                  "@DEF": "nodenodeDnodeD"
                 }
               },
               {
@@ -885,8 +864,7 @@
                               0,
                               50,
                               0
-                            ],
-                            "@class": "cylinderlinkAcylinderextrusion"
+                            ]
                           }
                         },
                         "-appearance": {
@@ -964,8 +942,7 @@
                           "                function set_spine(value) {",
                           "                    spine = value;",
                           "                }"
-                        ],
-                        "@class": "cylinderlinkAcylinderMoveCylinder"
+                        ]
                       }
                     },
                     {
@@ -977,8 +954,7 @@
                       }
                     }
                   ],
-                  "@DEF": "cylinderlinkAlinkA",
-                  "@class": "cylinderlinkAlinkA"
+                  "@DEF": "cylinderlinkAlinkA"
                 }
               },
               {
@@ -1033,8 +1009,7 @@
                               0,
                               50,
                               0
-                            ],
-                            "@class": "cylinderlinkBcylinderextrusion"
+                            ]
                           }
                         },
                         "-appearance": {
@@ -1112,8 +1087,7 @@
                           "                function set_spine(value) {",
                           "                    spine = value;",
                           "                }"
-                        ],
-                        "@class": "cylinderlinkBcylinderMoveCylinder"
+                        ]
                       }
                     },
                     {
@@ -1125,8 +1099,7 @@
                       }
                     }
                   ],
-                  "@DEF": "cylinderlinkBlinkB",
-                  "@class": "cylinderlinkBlinkB"
+                  "@DEF": "cylinderlinkBlinkB"
                 }
               },
               {
@@ -1181,8 +1154,7 @@
                               0,
                               50,
                               0
-                            ],
-                            "@class": "cylinderlinkCcylinderextrusion"
+                            ]
                           }
                         },
                         "-appearance": {
@@ -1260,8 +1232,7 @@
                           "                function set_spine(value) {",
                           "                    spine = value;",
                           "                }"
-                        ],
-                        "@class": "cylinderlinkCcylinderMoveCylinder"
+                        ]
                       }
                     },
                     {
@@ -1273,12 +1244,10 @@
                       }
                     }
                   ],
-                  "@DEF": "cylinderlinkClinkC",
-                  "@class": "cylinderlinkClinkC"
+                  "@DEF": "cylinderlinkClinkC"
                 }
               }
-            ],
-            "@class": "HoldsContent"
+            ]
           }
         },
         {
@@ -1335,8 +1304,7 @@
               "\t\t\t});",
               "                ",
               "        }"
-            ],
-            "@class": "clickHandler"
+            ]
           }
         },
         {

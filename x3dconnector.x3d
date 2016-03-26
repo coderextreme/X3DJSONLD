@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<X3D>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd">
 <Scene>
-	<Viewpoint position='0 0 5' orientation='0 0 1 0' />
+	<Viewpoint position='0 0 5' description="Only Viewpoint" orientation='0 0 1 0' />
 	<Background skyColor='0.4 0.4 0.4'/>
 	<Transform DEF='G1'>
 		<Shape>
 			<Appearance><Material diffuseColor='0.7 0.2 0.2'></Material></Appearance>
 			<Sphere radius='.1'/>
 		</Shape>
-		<PlaneSensor DEF='PS1'/>
+		<PlaneSensor description="Grab to move" DEF='PS1'/>
 		<ROUTE fromNode='PS1' fromField='translation_changed' toNode='G1' toField='translation' />
 	</Transform>              
         
@@ -17,7 +18,7 @@
 			<Appearance><Material diffuseColor='0.2 0.7 0.2'></Material></Appearance>
 			<Sphere radius='.1'/>
 		</Shape>
-		<PlaneSensor DEF='PS2'/>
+		<PlaneSensor description="Grab to move" DEF='PS2'/>
 		<ROUTE fromNode='PS2' fromField='translation_changed' toNode='G2' toField='translation' />
 	</Transform>
 	<Transform DEF='C0' >

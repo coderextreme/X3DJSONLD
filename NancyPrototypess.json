@@ -53,7 +53,7 @@
         },
         {
           "@name": "translated",
-          "@content": "19 March 2016"
+          "@content": "26 March 2016"
         },
         {
           "@name": "generator",
@@ -85,7 +85,6 @@
                     {
                       "Group": {
                         "@DEF": "HumanoidHumanoidHumanoidHumanoidGroup1",
-                        "@class": "HumanoidHumanoidHumanoidHumanoidGroup1",
                         "-children": [
                           {
                             "Group": {
@@ -93,7 +92,6 @@
                                 {
                                   "Transform": {
                                     "@DEF": "humanoidBodyHumanoidJointhanim_HumanoidRootJointJointTransform",
-                                    "@class": "humanoidBodyHumanoidJointhanim_HumanoidRootJointJointTransform",
                                     "@center": [
                                       -0.00405,
                                       0.855,
@@ -106,7 +104,6 @@
                                             {
                                               "Transform": {
                                                 "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootJointhanim_sacroiliacJointJointTransform",
-                                                "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootJointhanim_sacroiliacJointJointTransform",
                                                 "@center": [
                                                   0,
                                                   1.01,
@@ -119,7 +116,6 @@
                                                         {
                                                           "Group": {
                                                             "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacSegmenthanim_pelvisSegmentSegmentGroup",
-                                                            "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacSegmenthanim_pelvisSegmentSegmentGroup",
                                                             "-children": [
                                                               {
                                                                 "Shape": {
@@ -133,8 +129,7 @@
                                                                             0.054,
                                                                             0.233,
                                                                             0.39
-                                                                          ],
-                                                                          "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_pelvisPants_Color"
+                                                                          ]
                                                                         }
                                                                       }
                                                                     }
@@ -1143,10 +1138,7 @@
                                                           }
                                                         }
                                                       ],
-                                                      "@appinfo": "The Segment node is used describe the attributes of the physical links between the joints of the humanoid figure. Each body part (pelvis thigh calf etc) of the humanoid figure is represented by a Segment node.",
-                                                      "@documentation": "http://H-Anim.org/Specifications/H-Anim2001/part1/Segment.html",
-                                                      "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacSegmenthanim_pelvishanim_pelvis",
-                                                      "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacSegmenthanim_pelvishanim_pelvis"
+                                                      "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacSegmenthanim_pelvishanim_pelvis"
                                                     }
                                                   },
                                                   {
@@ -1155,7 +1147,6 @@
                                                         {
                                                           "Transform": {
                                                             "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacJointhanim_l_hipJointJointTransform",
-                                                            "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacJointhanim_l_hipJointJointTransform",
                                                             "@center": [
                                                               0.122,
                                                               0.888271,
@@ -1168,7 +1159,6 @@
                                                                     {
                                                                       "Group": {
                                                                         "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_l_hipSegmenthanim_l_thighSegmentSegmentGroup",
-                                                                        "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_l_hipSegmenthanim_l_thighSegmentSegmentGroup",
                                                                         "-children": [
                                                                           {
                                                                             "Shape": {
@@ -1547,10 +1537,7 @@
                                                                       }
                                                                     }
                                                                   ],
-                                                                  "@appinfo": "The Segment node is used describe the attributes of the physical links between the joints of the humanoid figure. Each body part (pelvis thigh calf etc) of the humanoid figure is represented by a Segment node.",
-                                                                  "@documentation": "http://H-Anim.org/Specifications/H-Anim2001/part1/Segment.html",
-                                                                  "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_l_hipSegmenthanim_l_thighhanim_l_thigh",
-                                                                  "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_l_hipSegmenthanim_l_thighhanim_l_thigh"
+                                                                  "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_l_hipSegmenthanim_l_thighhanim_l_thigh"
                                                                 }
                                                               },
                                                               {
@@ -1559,7 +1546,6 @@
                                                                     {
                                                                       "Transform": {
                                                                         "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_l_hipJointhanim_l_kneeJointJointTransform",
-                                                                        "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_l_hipJointhanim_l_kneeJointJointTransform",
                                                                         "@center": [
                                                                           0.0738,
                                                                           0.517,
@@ -1572,7 +1558,6 @@
                                                                                 {
                                                                                   "Group": {
                                                                                     "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_l_hipchildrenhanim_l_kneeSegmenthanim_l_calfSegmentSegmentGroup",
-                                                                                    "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_l_hipchildrenhanim_l_kneeSegmenthanim_l_calfSegmentSegmentGroup",
                                                                                     "-children": [
                                                                                       {
                                                                                         "Shape": {
@@ -2116,10 +2101,7 @@
                                                                                   }
                                                                                 }
                                                                               ],
-                                                                              "@appinfo": "The Segment node is used describe the attributes of the physical links between the joints of the humanoid figure. Each body part (pelvis thigh calf etc) of the humanoid figure is represented by a Segment node.",
-                                                                              "@documentation": "http://H-Anim.org/Specifications/H-Anim2001/part1/Segment.html",
-                                                                              "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_l_hipchildrenhanim_l_kneeSegmenthanim_l_calfhanim_l_calf",
-                                                                              "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_l_hipchildrenhanim_l_kneeSegmenthanim_l_calfhanim_l_calf"
+                                                                              "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_l_hipchildrenhanim_l_kneeSegmenthanim_l_calfhanim_l_calf"
                                                                             }
                                                                           },
                                                                           {
@@ -2128,7 +2110,6 @@
                                                                                 {
                                                                                   "Transform": {
                                                                                     "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_l_hipchildrenhanim_l_kneeJointhanim_l_ankleJointJointTransform",
-                                                                                    "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_l_hipchildrenhanim_l_kneeJointhanim_l_ankleJointJointTransform",
                                                                                     "@center": [
                                                                                       0.0645,
                                                                                       0.0719,
@@ -2141,7 +2122,6 @@
                                                                                             {
                                                                                               "Group": {
                                                                                                 "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_l_hipchildrenhanim_l_kneechildrenhanim_l_ankleSegmenthanim_l_hindfootSegmentSegmentGroup",
-                                                                                                "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_l_hipchildrenhanim_l_kneechildrenhanim_l_ankleSegmenthanim_l_hindfootSegmentSegmentGroup",
                                                                                                 "-children": [
                                                                                                   {
                                                                                                     "Shape": {
@@ -2150,8 +2130,7 @@
                                                                                                           "-material": {
                                                                                                             "Material": {
                                                                                                               "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_l_hipchildrenhanim_l_kneechildrenhanim_l_anklechildrenhanim_l_hindfootShoe_Color",
-                                                                                                              "@ambientIntensity": 0.25,
-                                                                                                              "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_l_hipchildrenhanim_l_kneechildrenhanim_l_anklechildrenhanim_l_hindfootShoe_Color"
+                                                                                                              "@ambientIntensity": 0.25
                                                                                                             }
                                                                                                           }
                                                                                                         }
@@ -2720,40 +2699,28 @@
                                                                                               }
                                                                                             }
                                                                                           ],
-                                                                                          "@appinfo": "The Segment node is used describe the attributes of the physical links between the joints of the humanoid figure. Each body part (pelvis thigh calf etc) of the humanoid figure is represented by a Segment node.",
-                                                                                          "@documentation": "http://H-Anim.org/Specifications/H-Anim2001/part1/Segment.html",
-                                                                                          "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_l_hipchildrenhanim_l_kneechildrenhanim_l_ankleSegmenthanim_l_hindfoothanim_l_hindfoot",
-                                                                                          "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_l_hipchildrenhanim_l_kneechildrenhanim_l_ankleSegmenthanim_l_hindfoothanim_l_hindfoot"
+                                                                                          "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_l_hipchildrenhanim_l_kneechildrenhanim_l_ankleSegmenthanim_l_hindfoothanim_l_hindfoot"
                                                                                         }
                                                                                       }
                                                                                     ]
                                                                                   }
                                                                                 }
                                                                               ],
-                                                                              "@appinfo": "The Joint node is used as a building block to describe the articulations of the humanoid figure. Each articulation of the humanoid figure is represented by a Joint node each of which is organized into a hierarchy that describes the overall skeleton of the humanoid.",
-                                                                              "@documentation": "http://H-Anim.org/Specifications/H-Anim2001/part1/Joint.html",
-                                                                              "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_l_hipchildrenhanim_l_kneeJointhanim_l_anklehanim_l_ankle",
-                                                                              "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_l_hipchildrenhanim_l_kneeJointhanim_l_anklehanim_l_ankle"
+                                                                              "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_l_hipchildrenhanim_l_kneeJointhanim_l_anklehanim_l_ankle"
                                                                             }
                                                                           }
                                                                         ]
                                                                       }
                                                                     }
                                                                   ],
-                                                                  "@appinfo": "The Joint node is used as a building block to describe the articulations of the humanoid figure. Each articulation of the humanoid figure is represented by a Joint node each of which is organized into a hierarchy that describes the overall skeleton of the humanoid.",
-                                                                  "@documentation": "http://H-Anim.org/Specifications/H-Anim2001/part1/Joint.html",
-                                                                  "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_l_hipJointhanim_l_kneehanim_l_knee",
-                                                                  "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_l_hipJointhanim_l_kneehanim_l_knee"
+                                                                  "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_l_hipJointhanim_l_kneehanim_l_knee"
                                                                 }
                                                               }
                                                             ]
                                                           }
                                                         }
                                                       ],
-                                                      "@appinfo": "The Joint node is used as a building block to describe the articulations of the humanoid figure. Each articulation of the humanoid figure is represented by a Joint node each of which is organized into a hierarchy that describes the overall skeleton of the humanoid.",
-                                                      "@documentation": "http://H-Anim.org/Specifications/H-Anim2001/part1/Joint.html",
-                                                      "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacJointhanim_l_hiphanim_l_hip",
-                                                      "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacJointhanim_l_hiphanim_l_hip"
+                                                      "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacJointhanim_l_hiphanim_l_hip"
                                                     }
                                                   },
                                                   {
@@ -2762,7 +2729,6 @@
                                                         {
                                                           "Transform": {
                                                             "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacJointhanim_r_hipJointJointTransform",
-                                                            "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacJointhanim_r_hipJointJointTransform",
                                                             "@center": [
                                                               -0.11,
                                                               0.892362,
@@ -2775,7 +2741,6 @@
                                                                     {
                                                                       "Group": {
                                                                         "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_r_hipSegmenthanim_r_thighSegmentSegmentGroup",
-                                                                        "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_r_hipSegmenthanim_r_thighSegmentSegmentGroup",
                                                                         "-children": [
                                                                           {
                                                                             "Shape": {
@@ -3143,10 +3108,7 @@
                                                                       }
                                                                     }
                                                                   ],
-                                                                  "@appinfo": "The Segment node is used describe the attributes of the physical links between the joints of the humanoid figure. Each body part (pelvis thigh calf etc) of the humanoid figure is represented by a Segment node.",
-                                                                  "@documentation": "http://H-Anim.org/Specifications/H-Anim2001/part1/Segment.html",
-                                                                  "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_r_hipSegmenthanim_r_thighhanim_r_thigh",
-                                                                  "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_r_hipSegmenthanim_r_thighhanim_r_thigh"
+                                                                  "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_r_hipSegmenthanim_r_thighhanim_r_thigh"
                                                                 }
                                                               },
                                                               {
@@ -3155,7 +3117,6 @@
                                                                     {
                                                                       "Transform": {
                                                                         "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_r_hipJointhanim_r_kneeJointJointTransform",
-                                                                        "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_r_hipJointhanim_r_kneeJointJointTransform",
                                                                         "@center": [
                                                                           -0.0699,
                                                                           0.51,
@@ -3168,7 +3129,6 @@
                                                                                 {
                                                                                   "Group": {
                                                                                     "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_r_hipchildrenhanim_r_kneeSegmenthanim_r_calfSegmentSegmentGroup",
-                                                                                    "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_r_hipchildrenhanim_r_kneeSegmenthanim_r_calfSegmentSegmentGroup",
                                                                                     "-children": [
                                                                                       {
                                                                                         "Shape": {
@@ -3712,10 +3672,7 @@
                                                                                   }
                                                                                 }
                                                                               ],
-                                                                              "@appinfo": "The Segment node is used describe the attributes of the physical links between the joints of the humanoid figure. Each body part (pelvis thigh calf etc) of the humanoid figure is represented by a Segment node.",
-                                                                              "@documentation": "http://H-Anim.org/Specifications/H-Anim2001/part1/Segment.html",
-                                                                              "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_r_hipchildrenhanim_r_kneeSegmenthanim_r_calfhanim_r_calf",
-                                                                              "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_r_hipchildrenhanim_r_kneeSegmenthanim_r_calfhanim_r_calf"
+                                                                              "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_r_hipchildrenhanim_r_kneeSegmenthanim_r_calfhanim_r_calf"
                                                                             }
                                                                           },
                                                                           {
@@ -3724,7 +3681,6 @@
                                                                                 {
                                                                                   "Transform": {
                                                                                     "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_r_hipchildrenhanim_r_kneeJointhanim_r_ankleJointJointTransform",
-                                                                                    "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_r_hipchildrenhanim_r_kneeJointhanim_r_ankleJointJointTransform",
                                                                                     "@center": [
                                                                                       -0.064,
                                                                                       0.0753,
@@ -3737,7 +3693,6 @@
                                                                                             {
                                                                                               "Group": {
                                                                                                 "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_r_hipchildrenhanim_r_kneechildrenhanim_r_ankleSegmenthanim_r_hindfootSegmentSegmentGroup",
-                                                                                                "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_r_hipchildrenhanim_r_kneechildrenhanim_r_ankleSegmenthanim_r_hindfootSegmentSegmentGroup",
                                                                                                 "-children": [
                                                                                                   {
                                                                                                     "Shape": {
@@ -4314,50 +4269,35 @@
                                                                                               }
                                                                                             }
                                                                                           ],
-                                                                                          "@appinfo": "The Segment node is used describe the attributes of the physical links between the joints of the humanoid figure. Each body part (pelvis thigh calf etc) of the humanoid figure is represented by a Segment node.",
-                                                                                          "@documentation": "http://H-Anim.org/Specifications/H-Anim2001/part1/Segment.html",
-                                                                                          "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_r_hipchildrenhanim_r_kneechildrenhanim_r_ankleSegmenthanim_r_hindfoothanim_r_hindfoot",
-                                                                                          "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_r_hipchildrenhanim_r_kneechildrenhanim_r_ankleSegmenthanim_r_hindfoothanim_r_hindfoot"
+                                                                                          "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_r_hipchildrenhanim_r_kneechildrenhanim_r_ankleSegmenthanim_r_hindfoothanim_r_hindfoot"
                                                                                         }
                                                                                       }
                                                                                     ]
                                                                                   }
                                                                                 }
                                                                               ],
-                                                                              "@appinfo": "The Joint node is used as a building block to describe the articulations of the humanoid figure. Each articulation of the humanoid figure is represented by a Joint node each of which is organized into a hierarchy that describes the overall skeleton of the humanoid.",
-                                                                              "@documentation": "http://H-Anim.org/Specifications/H-Anim2001/part1/Joint.html",
-                                                                              "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_r_hipchildrenhanim_r_kneeJointhanim_r_anklehanim_r_ankle",
-                                                                              "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_r_hipchildrenhanim_r_kneeJointhanim_r_anklehanim_r_ankle"
+                                                                              "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_r_hipchildrenhanim_r_kneeJointhanim_r_anklehanim_r_ankle"
                                                                             }
                                                                           }
                                                                         ]
                                                                       }
                                                                     }
                                                                   ],
-                                                                  "@appinfo": "The Joint node is used as a building block to describe the articulations of the humanoid figure. Each articulation of the humanoid figure is represented by a Joint node each of which is organized into a hierarchy that describes the overall skeleton of the humanoid.",
-                                                                  "@documentation": "http://H-Anim.org/Specifications/H-Anim2001/part1/Joint.html",
-                                                                  "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_r_hipJointhanim_r_kneehanim_r_knee",
-                                                                  "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_r_hipJointhanim_r_kneehanim_r_knee"
+                                                                  "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacchildrenhanim_r_hipJointhanim_r_kneehanim_r_knee"
                                                                 }
                                                               }
                                                             ]
                                                           }
                                                         }
                                                       ],
-                                                      "@appinfo": "The Joint node is used as a building block to describe the articulations of the humanoid figure. Each articulation of the humanoid figure is represented by a Joint node each of which is organized into a hierarchy that describes the overall skeleton of the humanoid.",
-                                                      "@documentation": "http://H-Anim.org/Specifications/H-Anim2001/part1/Joint.html",
-                                                      "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacJointhanim_r_hiphanim_r_hip",
-                                                      "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacJointhanim_r_hiphanim_r_hip"
+                                                      "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_sacroiliacJointhanim_r_hiphanim_r_hip"
                                                     }
                                                   }
                                                 ]
                                               }
                                             }
                                           ],
-                                          "@appinfo": "The Joint node is used as a building block to describe the articulations of the humanoid figure. Each articulation of the humanoid figure is represented by a Joint node each of which is organized into a hierarchy that describes the overall skeleton of the humanoid.",
-                                          "@documentation": "http://H-Anim.org/Specifications/H-Anim2001/part1/Joint.html",
-                                          "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootJointhanim_sacroiliachanim_sacroiliac",
-                                          "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootJointhanim_sacroiliachanim_sacroiliac"
+                                          "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootJointhanim_sacroiliachanim_sacroiliac"
                                         }
                                       },
                                       {
@@ -4366,7 +4306,6 @@
                                             {
                                               "Transform": {
                                                 "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootJointhanim_vl1JointJointTransform",
-                                                "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootJointhanim_vl1JointJointTransform",
                                                 "@center": [
                                                   -0.00405,
                                                   1.07,
@@ -4379,7 +4318,6 @@
                                                         {
                                                           "Group": {
                                                             "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1Segmenthanim_c7SegmentSegmentGroup",
-                                                            "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1Segmenthanim_c7SegmentSegmentGroup",
                                                             "-children": [
                                                               {
                                                                 "Shape": {
@@ -4393,8 +4331,7 @@
                                                                             0.6,
                                                                             0.0745,
                                                                             0.1137
-                                                                          ],
-                                                                          "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_c7Shirt_Color"
+                                                                          ]
                                                                         }
                                                                       },
                                                                       "-texture": {
@@ -4403,8 +4340,7 @@
                                                                           "@url": [
                                                                             "small_logo.gif",
                                                                             "http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/small_logo.gif"
-                                                                          ],
-                                                                          "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_c7small_logo_Tex"
+                                                                          ]
                                                                         }
                                                                       }
                                                                     }
@@ -6558,10 +6494,7 @@
                                                           }
                                                         }
                                                       ],
-                                                      "@appinfo": "The Segment node is used describe the attributes of the physical links between the joints of the humanoid figure. Each body part (pelvis thigh calf etc) of the humanoid figure is represented by a Segment node.",
-                                                      "@documentation": "http://H-Anim.org/Specifications/H-Anim2001/part1/Segment.html",
-                                                      "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1Segmenthanim_c7hanim_c7",
-                                                      "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1Segmenthanim_c7hanim_c7"
+                                                      "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1Segmenthanim_c7hanim_c7"
                                                     }
                                                   },
                                                   {
@@ -6570,7 +6503,6 @@
                                                         {
                                                           "Transform": {
                                                             "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1Jointhanim_l_shoulderJointJointTransform",
-                                                            "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1Jointhanim_l_shoulderJointJointTransform",
                                                             "@center": [
                                                               0.167,
                                                               1.36,
@@ -6583,7 +6515,6 @@
                                                                     {
                                                                       "Group": {
                                                                         "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_l_shoulderSegmenthanim_l_upperarmSegmentSegmentGroup",
-                                                                        "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_l_shoulderSegmenthanim_l_upperarmSegmentSegmentGroup",
                                                                         "-children": [
                                                                           {
                                                                             "Transform": {
@@ -6617,8 +6548,7 @@
                                                                                               0.749,
                                                                                               0.601,
                                                                                               0.462
-                                                                                            ],
-                                                                                            "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_l_shoulderchildrenhanim_l_upperarmSkin_Color"
+                                                                                            ]
                                                                                           }
                                                                                         }
                                                                                       }
@@ -6864,18 +6794,14 @@
                                                                                     }
                                                                                   }
                                                                                 }
-                                                                              ],
-                                                                              "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_l_shoulderchildrenhanim_l_upperarml_upperarm_adjust"
+                                                                              ]
                                                                             }
                                                                           }
                                                                         ]
                                                                       }
                                                                     }
                                                                   ],
-                                                                  "@appinfo": "The Segment node is used describe the attributes of the physical links between the joints of the humanoid figure. Each body part (pelvis thigh calf etc) of the humanoid figure is represented by a Segment node.",
-                                                                  "@documentation": "http://H-Anim.org/Specifications/H-Anim2001/part1/Segment.html",
-                                                                  "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_l_shoulderSegmenthanim_l_upperarmhanim_l_upperarm",
-                                                                  "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_l_shoulderSegmenthanim_l_upperarmhanim_l_upperarm"
+                                                                  "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_l_shoulderSegmenthanim_l_upperarmhanim_l_upperarm"
                                                                 }
                                                               },
                                                               {
@@ -6884,7 +6810,6 @@
                                                                     {
                                                                       "Transform": {
                                                                         "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_l_shoulderJointhanim_l_elbowJointJointTransform",
-                                                                        "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_l_shoulderJointhanim_l_elbowJointJointTransform",
                                                                         "@center": [
                                                                           0.196,
                                                                           1.07,
@@ -6897,7 +6822,6 @@
                                                                                 {
                                                                                   "Group": {
                                                                                     "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_l_shoulderchildrenhanim_l_elbowSegmenthanim_l_forearmSegmentSegmentGroup",
-                                                                                    "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_l_shoulderchildrenhanim_l_elbowSegmenthanim_l_forearmSegmentSegmentGroup",
                                                                                     "-children": [
                                                                                       {
                                                                                         "Transform": {
@@ -7138,18 +7062,14 @@
                                                                                                 }
                                                                                               }
                                                                                             }
-                                                                                          ],
-                                                                                          "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_l_shoulderchildrenhanim_l_elbowchildrenhanim_l_forearml_forearm_adjust"
+                                                                                          ]
                                                                                         }
                                                                                       }
                                                                                     ]
                                                                                   }
                                                                                 }
                                                                               ],
-                                                                              "@appinfo": "The Segment node is used describe the attributes of the physical links between the joints of the humanoid figure. Each body part (pelvis thigh calf etc) of the humanoid figure is represented by a Segment node.",
-                                                                              "@documentation": "http://H-Anim.org/Specifications/H-Anim2001/part1/Segment.html",
-                                                                              "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_l_shoulderchildrenhanim_l_elbowSegmenthanim_l_forearmhanim_l_forearm",
-                                                                              "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_l_shoulderchildrenhanim_l_elbowSegmenthanim_l_forearmhanim_l_forearm"
+                                                                              "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_l_shoulderchildrenhanim_l_elbowSegmenthanim_l_forearmhanim_l_forearm"
                                                                             }
                                                                           },
                                                                           {
@@ -7158,7 +7078,6 @@
                                                                                 {
                                                                                   "Transform": {
                                                                                     "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_l_shoulderchildrenhanim_l_elbowJointhanim_l_wristJointJointTransform",
-                                                                                    "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_l_shoulderchildrenhanim_l_elbowJointhanim_l_wristJointJointTransform",
                                                                                     "@center": [
                                                                                       0.213,
                                                                                       0.811,
@@ -7171,7 +7090,6 @@
                                                                                             {
                                                                                               "Group": {
                                                                                                 "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_l_shoulderchildrenhanim_l_elbowchildrenhanim_l_wristSegmenthanim_l_handSegmentSegmentGroup",
-                                                                                                "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_l_shoulderchildrenhanim_l_elbowchildrenhanim_l_wristSegmenthanim_l_handSegmentSegmentGroup",
                                                                                                 "-children": [
                                                                                                   {
                                                                                                     "Transform": {
@@ -7731,48 +7649,35 @@
                                                                                                             }
                                                                                                           }
                                                                                                         }
-                                                                                                      ],
-                                                                                                      "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_l_shoulderchildrenhanim_l_elbowchildrenhanim_l_wristchildrenhanim_l_handl_hand_adjust"
+                                                                                                      ]
                                                                                                     }
                                                                                                   }
                                                                                                 ]
                                                                                               }
                                                                                             }
                                                                                           ],
-                                                                                          "@appinfo": "The Segment node is used describe the attributes of the physical links between the joints of the humanoid figure. Each body part (pelvis thigh calf etc) of the humanoid figure is represented by a Segment node.",
-                                                                                          "@documentation": "http://H-Anim.org/Specifications/H-Anim2001/part1/Segment.html",
-                                                                                          "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_l_shoulderchildrenhanim_l_elbowchildrenhanim_l_wristSegmenthanim_l_handhanim_l_hand",
-                                                                                          "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_l_shoulderchildrenhanim_l_elbowchildrenhanim_l_wristSegmenthanim_l_handhanim_l_hand"
+                                                                                          "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_l_shoulderchildrenhanim_l_elbowchildrenhanim_l_wristSegmenthanim_l_handhanim_l_hand"
                                                                                         }
                                                                                       }
                                                                                     ]
                                                                                   }
                                                                                 }
                                                                               ],
-                                                                              "@appinfo": "The Joint node is used as a building block to describe the articulations of the humanoid figure. Each articulation of the humanoid figure is represented by a Joint node each of which is organized into a hierarchy that describes the overall skeleton of the humanoid.",
-                                                                              "@documentation": "http://H-Anim.org/Specifications/H-Anim2001/part1/Joint.html",
-                                                                              "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_l_shoulderchildrenhanim_l_elbowJointhanim_l_wristhanim_l_wrist",
-                                                                              "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_l_shoulderchildrenhanim_l_elbowJointhanim_l_wristhanim_l_wrist"
+                                                                              "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_l_shoulderchildrenhanim_l_elbowJointhanim_l_wristhanim_l_wrist"
                                                                             }
                                                                           }
                                                                         ]
                                                                       }
                                                                     }
                                                                   ],
-                                                                  "@appinfo": "The Joint node is used as a building block to describe the articulations of the humanoid figure. Each articulation of the humanoid figure is represented by a Joint node each of which is organized into a hierarchy that describes the overall skeleton of the humanoid.",
-                                                                  "@documentation": "http://H-Anim.org/Specifications/H-Anim2001/part1/Joint.html",
-                                                                  "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_l_shoulderJointhanim_l_elbowhanim_l_elbow",
-                                                                  "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_l_shoulderJointhanim_l_elbowhanim_l_elbow"
+                                                                  "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_l_shoulderJointhanim_l_elbowhanim_l_elbow"
                                                                 }
                                                               }
                                                             ]
                                                           }
                                                         }
                                                       ],
-                                                      "@appinfo": "The Joint node is used as a building block to describe the articulations of the humanoid figure. Each articulation of the humanoid figure is represented by a Joint node each of which is organized into a hierarchy that describes the overall skeleton of the humanoid.",
-                                                      "@documentation": "http://H-Anim.org/Specifications/H-Anim2001/part1/Joint.html",
-                                                      "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1Jointhanim_l_shoulderhanim_l_shoulder",
-                                                      "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1Jointhanim_l_shoulderhanim_l_shoulder"
+                                                      "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1Jointhanim_l_shoulderhanim_l_shoulder"
                                                     }
                                                   },
                                                   {
@@ -7781,7 +7686,6 @@
                                                         {
                                                           "Transform": {
                                                             "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1Jointhanim_r_shoulderJointJointTransform",
-                                                            "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1Jointhanim_r_shoulderJointJointTransform",
                                                             "@center": [
                                                               -0.167,
                                                               1.36,
@@ -7794,7 +7698,6 @@
                                                                     {
                                                                       "Group": {
                                                                         "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_r_shoulderSegmenthanim_r_upperarmSegmentSegmentGroup",
-                                                                        "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_r_shoulderSegmenthanim_r_upperarmSegmentSegmentGroup",
                                                                         "-children": [
                                                                           {
                                                                             "Transform": {
@@ -8134,18 +8037,14 @@
                                                                                     }
                                                                                   }
                                                                                 }
-                                                                              ],
-                                                                              "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_r_shoulderchildrenhanim_r_upperarmr_upperarm_adjust"
+                                                                              ]
                                                                             }
                                                                           }
                                                                         ]
                                                                       }
                                                                     }
                                                                   ],
-                                                                  "@appinfo": "The Segment node is used describe the attributes of the physical links between the joints of the humanoid figure. Each body part (pelvis thigh calf etc) of the humanoid figure is represented by a Segment node.",
-                                                                  "@documentation": "http://H-Anim.org/Specifications/H-Anim2001/part1/Segment.html",
-                                                                  "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_r_shoulderSegmenthanim_r_upperarmhanim_r_upperarm",
-                                                                  "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_r_shoulderSegmenthanim_r_upperarmhanim_r_upperarm"
+                                                                  "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_r_shoulderSegmenthanim_r_upperarmhanim_r_upperarm"
                                                                 }
                                                               },
                                                               {
@@ -8154,7 +8053,6 @@
                                                                     {
                                                                       "Transform": {
                                                                         "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_r_shoulderJointhanim_r_elbowJointJointTransform",
-                                                                        "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_r_shoulderJointhanim_r_elbowJointJointTransform",
                                                                         "@center": [
                                                                           -0.192,
                                                                           1.07,
@@ -8167,7 +8065,6 @@
                                                                                 {
                                                                                   "Group": {
                                                                                     "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_r_shoulderchildrenhanim_r_elbowSegmenthanim_r_forearmSegmentSegmentGroup",
-                                                                                    "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_r_shoulderchildrenhanim_r_elbowSegmenthanim_r_forearmSegmentSegmentGroup",
                                                                                     "-children": [
                                                                                       {
                                                                                         "Transform": {
@@ -8474,18 +8371,14 @@
                                                                                                 }
                                                                                               }
                                                                                             }
-                                                                                          ],
-                                                                                          "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_r_shoulderchildrenhanim_r_elbowchildrenhanim_r_forearmr_forearm_adjust"
+                                                                                          ]
                                                                                         }
                                                                                       }
                                                                                     ]
                                                                                   }
                                                                                 }
                                                                               ],
-                                                                              "@appinfo": "The Segment node is used describe the attributes of the physical links between the joints of the humanoid figure. Each body part (pelvis thigh calf etc) of the humanoid figure is represented by a Segment node.",
-                                                                              "@documentation": "http://H-Anim.org/Specifications/H-Anim2001/part1/Segment.html",
-                                                                              "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_r_shoulderchildrenhanim_r_elbowSegmenthanim_r_forearmhanim_r_forearm",
-                                                                              "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_r_shoulderchildrenhanim_r_elbowSegmenthanim_r_forearmhanim_r_forearm"
+                                                                              "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_r_shoulderchildrenhanim_r_elbowSegmenthanim_r_forearmhanim_r_forearm"
                                                                             }
                                                                           },
                                                                           {
@@ -8494,7 +8387,6 @@
                                                                                 {
                                                                                   "Transform": {
                                                                                     "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_r_shoulderchildrenhanim_r_elbowJointhanim_r_wristJointJointTransform",
-                                                                                    "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_r_shoulderchildrenhanim_r_elbowJointhanim_r_wristJointJointTransform",
                                                                                     "@center": [
                                                                                       -0.217,
                                                                                       0.811,
@@ -8507,7 +8399,6 @@
                                                                                             {
                                                                                               "Group": {
                                                                                                 "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_r_shoulderchildrenhanim_r_elbowchildrenhanim_r_wristSegmenthanim_r_handSegmentSegmentGroup",
-                                                                                                "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_r_shoulderchildrenhanim_r_elbowchildrenhanim_r_wristSegmenthanim_r_handSegmentSegmentGroup",
                                                                                                 "-children": [
                                                                                                   {
                                                                                                     "Transform": {
@@ -9062,48 +8953,35 @@
                                                                                                             }
                                                                                                           }
                                                                                                         }
-                                                                                                      ],
-                                                                                                      "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_r_shoulderchildrenhanim_r_elbowchildrenhanim_r_wristchildrenhanim_r_handr_hand_adjust"
+                                                                                                      ]
                                                                                                     }
                                                                                                   }
                                                                                                 ]
                                                                                               }
                                                                                             }
                                                                                           ],
-                                                                                          "@appinfo": "The Segment node is used describe the attributes of the physical links between the joints of the humanoid figure. Each body part (pelvis thigh calf etc) of the humanoid figure is represented by a Segment node.",
-                                                                                          "@documentation": "http://H-Anim.org/Specifications/H-Anim2001/part1/Segment.html",
-                                                                                          "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_r_shoulderchildrenhanim_r_elbowchildrenhanim_r_wristSegmenthanim_r_handhanim_r_hand",
-                                                                                          "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_r_shoulderchildrenhanim_r_elbowchildrenhanim_r_wristSegmenthanim_r_handhanim_r_hand"
+                                                                                          "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_r_shoulderchildrenhanim_r_elbowchildrenhanim_r_wristSegmenthanim_r_handhanim_r_hand"
                                                                                         }
                                                                                       }
                                                                                     ]
                                                                                   }
                                                                                 }
                                                                               ],
-                                                                              "@appinfo": "The Joint node is used as a building block to describe the articulations of the humanoid figure. Each articulation of the humanoid figure is represented by a Joint node each of which is organized into a hierarchy that describes the overall skeleton of the humanoid.",
-                                                                              "@documentation": "http://H-Anim.org/Specifications/H-Anim2001/part1/Joint.html",
-                                                                              "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_r_shoulderchildrenhanim_r_elbowJointhanim_r_wristhanim_r_wrist",
-                                                                              "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_r_shoulderchildrenhanim_r_elbowJointhanim_r_wristhanim_r_wrist"
+                                                                              "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_r_shoulderchildrenhanim_r_elbowJointhanim_r_wristhanim_r_wrist"
                                                                             }
                                                                           }
                                                                         ]
                                                                       }
                                                                     }
                                                                   ],
-                                                                  "@appinfo": "The Joint node is used as a building block to describe the articulations of the humanoid figure. Each articulation of the humanoid figure is represented by a Joint node each of which is organized into a hierarchy that describes the overall skeleton of the humanoid.",
-                                                                  "@documentation": "http://H-Anim.org/Specifications/H-Anim2001/part1/Joint.html",
-                                                                  "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_r_shoulderJointhanim_r_elbowhanim_r_elbow",
-                                                                  "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_r_shoulderJointhanim_r_elbowhanim_r_elbow"
+                                                                  "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_r_shoulderJointhanim_r_elbowhanim_r_elbow"
                                                                 }
                                                               }
                                                             ]
                                                           }
                                                         }
                                                       ],
-                                                      "@appinfo": "The Joint node is used as a building block to describe the articulations of the humanoid figure. Each articulation of the humanoid figure is represented by a Joint node each of which is organized into a hierarchy that describes the overall skeleton of the humanoid.",
-                                                      "@documentation": "http://H-Anim.org/Specifications/H-Anim2001/part1/Joint.html",
-                                                      "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1Jointhanim_r_shoulderhanim_r_shoulder",
-                                                      "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1Jointhanim_r_shoulderhanim_r_shoulder"
+                                                      "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1Jointhanim_r_shoulderhanim_r_shoulder"
                                                     }
                                                   },
                                                   {
@@ -9112,7 +8990,6 @@
                                                         {
                                                           "Transform": {
                                                             "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1Jointhanim_vc4JointJointTransform",
-                                                            "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1Jointhanim_vc4JointJointTransform",
                                                             "@center": [
                                                               0,
                                                               1.43,
@@ -9125,7 +9002,6 @@
                                                                     {
                                                                       "Group": {
                                                                         "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_vc4Segmenthanim_c4SegmentSegmentGroup",
-                                                                        "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_vc4Segmenthanim_c4SegmentSegmentGroup",
                                                                         "-children": [
                                                                           {
                                                                             "Shape": {
@@ -9309,8 +9185,7 @@
                                                                                         -0.1
                                                                                       ]
                                                                                     }
-                                                                                  },
-                                                                                  "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_vc4childrenhanim_c4neck"
+                                                                                  }
                                                                                 }
                                                                               }
                                                                             }
@@ -9319,10 +9194,7 @@
                                                                       }
                                                                     }
                                                                   ],
-                                                                  "@appinfo": "The Segment node is used describe the attributes of the physical links between the joints of the humanoid figure. Each body part (pelvis thigh calf etc) of the humanoid figure is represented by a Segment node.",
-                                                                  "@documentation": "http://H-Anim.org/Specifications/H-Anim2001/part1/Segment.html",
-                                                                  "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_vc4Segmenthanim_c4hanim_c4",
-                                                                  "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_vc4Segmenthanim_c4hanim_c4"
+                                                                  "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_vc4Segmenthanim_c4hanim_c4"
                                                                 }
                                                               },
                                                               {
@@ -9331,7 +9203,6 @@
                                                                     {
                                                                       "Transform": {
                                                                         "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_vc4Jointhanim_skullbaseJointJointTransform",
-                                                                        "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_vc4Jointhanim_skullbaseJointJointTransform",
                                                                         "@center": [
                                                                           0,
                                                                           1.54,
@@ -9344,7 +9215,6 @@
                                                                                 {
                                                                                   "Group": {
                                                                                     "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_vc4childrenhanim_skullbaseSegmenthanim_skullSegmentSegmentGroup",
-                                                                                    "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_vc4childrenhanim_skullbaseSegmenthanim_skullSegmentSegmentGroup",
                                                                                     "-children": [
                                                                                       {
                                                                                         "Shape": {
@@ -13423,8 +13293,7 @@
                                                                                                     0,
                                                                                                     1.524,
                                                                                                     -0.102
-                                                                                                  ],
-                                                                                                  "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_vc4childrenhanim_skullbasechildrenhanim_skullFace"
+                                                                                                  ]
                                                                                                 }
                                                                                               },
                                                                                               "-color": {
@@ -13444,8 +13313,7 @@
                                                                                                     0.1902
                                                                                                   ]
                                                                                                 }
-                                                                                              },
-                                                                                              "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_vc4childrenhanim_skullbasechildrenhanim_skullheadIFS"
+                                                                                              }
                                                                                             }
                                                                                           }
                                                                                         }
@@ -13454,50 +13322,35 @@
                                                                                   }
                                                                                 }
                                                                               ],
-                                                                              "@appinfo": "The Segment node is used describe the attributes of the physical links between the joints of the humanoid figure. Each body part (pelvis thigh calf etc) of the humanoid figure is represented by a Segment node.",
-                                                                              "@documentation": "http://H-Anim.org/Specifications/H-Anim2001/part1/Segment.html",
-                                                                              "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_vc4childrenhanim_skullbaseSegmenthanim_skullhanim_skull",
-                                                                              "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_vc4childrenhanim_skullbaseSegmenthanim_skullhanim_skull"
+                                                                              "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_vc4childrenhanim_skullbaseSegmenthanim_skullhanim_skull"
                                                                             }
                                                                           }
                                                                         ]
                                                                       }
                                                                     }
                                                                   ],
-                                                                  "@appinfo": "The Joint node is used as a building block to describe the articulations of the humanoid figure. Each articulation of the humanoid figure is represented by a Joint node each of which is organized into a hierarchy that describes the overall skeleton of the humanoid.",
-                                                                  "@documentation": "http://H-Anim.org/Specifications/H-Anim2001/part1/Joint.html",
-                                                                  "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_vc4Jointhanim_skullbasehanim_skullbase",
-                                                                  "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_vc4Jointhanim_skullbasehanim_skullbase"
+                                                                  "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1childrenhanim_vc4Jointhanim_skullbasehanim_skullbase"
                                                                 }
                                                               }
                                                             ]
                                                           }
                                                         }
                                                       ],
-                                                      "@appinfo": "The Joint node is used as a building block to describe the articulations of the humanoid figure. Each articulation of the humanoid figure is represented by a Joint node each of which is organized into a hierarchy that describes the overall skeleton of the humanoid.",
-                                                      "@documentation": "http://H-Anim.org/Specifications/H-Anim2001/part1/Joint.html",
-                                                      "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1Jointhanim_vc4hanim_vc4",
-                                                      "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1Jointhanim_vc4hanim_vc4"
+                                                      "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootchildrenhanim_vl1Jointhanim_vc4hanim_vc4"
                                                     }
                                                   }
                                                 ]
                                               }
                                             }
                                           ],
-                                          "@appinfo": "The Joint node is used as a building block to describe the articulations of the humanoid figure. Each articulation of the humanoid figure is represented by a Joint node each of which is organized into a hierarchy that describes the overall skeleton of the humanoid.",
-                                          "@documentation": "http://H-Anim.org/Specifications/H-Anim2001/part1/Joint.html",
-                                          "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootJointhanim_vl1hanim_vl1",
-                                          "@class": "humanoidBodyHumanoidchildrenhanim_HumanoidRootJointhanim_vl1hanim_vl1"
+                                          "@DEF": "humanoidBodyHumanoidchildrenhanim_HumanoidRootJointhanim_vl1hanim_vl1"
                                         }
                                       }
                                     ]
                                   }
                                 }
                               ],
-                              "@appinfo": "The Joint node is used as a building block to describe the articulations of the humanoid figure. Each articulation of the humanoid figure is represented by a Joint node each of which is organized into a hierarchy that describes the overall skeleton of the humanoid.",
-                              "@documentation": "http://H-Anim.org/Specifications/H-Anim2001/part1/Joint.html",
-                              "@DEF": "humanoidBodyHumanoidJointhanim_HumanoidRoothanim_HumanoidRoot",
-                              "@class": "humanoidBodyHumanoidJointhanim_HumanoidRoothanim_HumanoidRoot"
+                              "@DEF": "humanoidBodyHumanoidJointhanim_HumanoidRoothanim_HumanoidRoot"
                             }
                           },
                           {
@@ -13508,14 +13361,12 @@
                     },
                     {
                       "Group": {
-                        "@DEF": "HumanoidHumanoidHumanoidHumanoidGroup2",
-                        "@class": "HumanoidHumanoidHumanoidHumanoidGroup2"
+                        "@DEF": "HumanoidHumanoidHumanoidHumanoidGroup2"
                       }
                     },
                     {
                       "Group": {
                         "@DEF": "HumanoidHumanoidHumanoidHumanoidGroup3",
-                        "@class": "HumanoidHumanoidHumanoidHumanoidGroup3",
                         "-children": [
                           {
                             "Viewpoint": {
@@ -13531,8 +13382,7 @@
                                 1.62,
                                 1.05,
                                 2.06
-                              ],
-                              "@class": "viewpointsHumanoidInclinedView"
+                              ]
                             }
                           },
                           {
@@ -13543,8 +13393,7 @@
                                 0,
                                 0.854,
                                 2.57665
-                              ],
-                              "@class": "viewpointsHumanoidFrontView"
+                              ]
                             }
                           },
                           {
@@ -13561,8 +13410,7 @@
                                 2.5929,
                                 0.854,
                                 0
-                              ],
-                              "@class": "viewpointsHumanoidSideView"
+                              ]
                             }
                           },
                           {
@@ -13579,22 +13427,17 @@
                                 0,
                                 3.4495,
                                 0
-                              ],
-                              "@class": "viewpointsHumanoidTopView"
+                              ]
                             }
                           }
                         ]
                       }
                     }
-                  ],
-                  "@class": "HumanoidHumanoidHumanoidHumanoidTransform"
+                  ]
                 }
               }
             ],
-            "@appinfo": "The Humanoid node serves as overall container for the Joint Segment Site and Viewpoint nodes which define the skeleton geometry and landmarks of the humanoid figure. Additionally the node provides a means for defining information about the author copyright and usage restrictions of the model.",
-            "@documentation": "http://H-Anim.org/Specifications/H-Anim2001/part1/Humanoid.html",
-            "@DEF": "HumanoidHumanoidHumanoid",
-            "@class": "HumanoidHumanoidHumanoid"
+            "@DEF": "HumanoidHumanoidHumanoid"
           }
         },
         {
@@ -13612,10 +13455,7 @@
               1.53,
               0.75
             ],
-            "@speed": 0.5,
-            "@type": [
-              "EXAMINE"
-            ]
+            "@speed": 0.5
           }
         },
         {
@@ -13637,8 +13477,7 @@
                           500,
                           100,
                           500
-                        ],
-                        "@class": "HudProx"
+                        ]
                       }
                     }
                   ]
@@ -13673,8 +13512,7 @@
                                       {
                                         "TouchSensor": {
                                           "@DEF": "Stand_Touch",
-                                          "@description": "click for behavior",
-                                          "@class": "Stand_Touch"
+                                          "@description": "click for behavior"
                                         }
                                       },
                                       {
@@ -14686,13 +14524,11 @@
                                                     0.819,
                                                     0.521,
                                                     0.169
-                                                  ],
-                                                  "@class": "text_color"
+                                                  ]
                                                 }
                                               }
                                             }
-                                          },
-                                          "@class": "Stand"
+                                          }
                                         }
                                       },
                                       {
@@ -14754,20 +14590,17 @@
                                                           0,
                                                           0
                                                         ],
-                                                        "@transparency": 1,
-                                                        "@class": "Clear"
+                                                        "@transparency": 1
                                                       }
                                                     }
                                                   }
-                                                },
-                                                "@class": "Stand_Back"
+                                                }
                                               }
                                             }
                                           ]
                                         }
                                       }
-                                    ],
-                                    "@class": "Stand_Text"
+                                    ]
                                   }
                                 },
                                 {
@@ -14777,8 +14610,7 @@
                                       {
                                         "TouchSensor": {
                                           "@DEF": "Walk_Touch",
-                                          "@description": "click for behavior",
-                                          "@class": "Walk_Touch"
+                                          "@description": "click for behavior"
                                         }
                                       },
                                       {
@@ -15190,8 +15022,7 @@
                                                 }
                                               }
                                             }
-                                          },
-                                          "@class": "WALK"
+                                          }
                                         }
                                       },
                                       {
@@ -15250,15 +15081,13 @@
                                                       }
                                                     }
                                                   }
-                                                },
-                                                "@class": "Walk_Back"
+                                                }
                                               }
                                             }
                                           ]
                                         }
                                       }
-                                    ],
-                                    "@class": "Walk_Text"
+                                    ]
                                   }
                                 },
                                 {
@@ -15268,8 +15097,7 @@
                                       {
                                         "TouchSensor": {
                                           "@DEF": "Run_Touch",
-                                          "@description": "click for behavior",
-                                          "@class": "Run_Touch"
+                                          "@description": "click for behavior"
                                         }
                                       },
                                       {
@@ -15772,8 +15600,7 @@
                                                 }
                                               }
                                             }
-                                          },
-                                          "@class": "Run"
+                                          }
                                         }
                                       },
                                       {
@@ -15832,15 +15659,13 @@
                                                       }
                                                     }
                                                   }
-                                                },
-                                                "@class": "Run_Back"
+                                                }
                                               }
                                             }
                                           ]
                                         }
                                       }
-                                    ],
-                                    "@class": "Run_Text"
+                                    ]
                                   }
                                 },
                                 {
@@ -15850,8 +15675,7 @@
                                       {
                                         "TouchSensor": {
                                           "@DEF": "Jump_Touch",
-                                          "@description": "click for behavior",
-                                          "@class": "Jump_Touch"
+                                          "@description": "click for behavior"
                                         }
                                       },
                                       {
@@ -16593,8 +16417,7 @@
                                                 }
                                               }
                                             }
-                                          },
-                                          "@class": "Jump"
+                                          }
                                         }
                                       },
                                       {
@@ -16653,26 +16476,22 @@
                                                       }
                                                     }
                                                   }
-                                                },
-                                                "@class": "Jump_Back"
+                                                }
                                               }
                                             }
                                           ]
                                         }
                                       }
-                                    ],
-                                    "@class": "Jump_Text"
+                                    ]
                                   }
                                 }
                               ]
                             }
                           }
-                        ],
-                        "@class": "HudXform"
+                        ]
                       }
                     }
-                  ],
-                  "@class": "HUD"
+                  ]
                 }
               },
               {
@@ -16703,12 +16522,10 @@
                         }
                       }
                     }
-                  ],
-                  "@class": "Floor"
+                  ]
                 }
               }
-            ],
-            "@class": "Interface"
+            ]
           }
         },
         {
@@ -16735,8 +16552,7 @@
                           0,
                           1,
                           0
-                        ],
-                        "@class": "r_ankleRotInterp_Stand"
+                        ]
                       }
                     },
                     {
@@ -16755,8 +16571,7 @@
                           0,
                           1,
                           0
-                        ],
-                        "@class": "r_kneeRotInterp_Stand"
+                        ]
                       }
                     },
                     {
@@ -16775,8 +16590,7 @@
                           0,
                           1,
                           0
-                        ],
-                        "@class": "r_hipRotInterp_Stand"
+                        ]
                       }
                     },
                     {
@@ -16795,8 +16609,7 @@
                           0,
                           1,
                           0
-                        ],
-                        "@class": "l_ankleRotInterp_Stand"
+                        ]
                       }
                     },
                     {
@@ -16815,8 +16628,7 @@
                           0,
                           1,
                           0
-                        ],
-                        "@class": "l_kneeRotInterp_Stand"
+                        ]
                       }
                     },
                     {
@@ -16835,8 +16647,7 @@
                           0,
                           1,
                           0
-                        ],
-                        "@class": "l_hipRotInterp_Stand"
+                        ]
                       }
                     },
                     {
@@ -16855,8 +16666,7 @@
                           0,
                           1,
                           0
-                        ],
-                        "@class": "lower_bodyRotInterp_Stand"
+                        ]
                       }
                     },
                     {
@@ -16875,8 +16685,7 @@
                           0,
                           1,
                           0
-                        ],
-                        "@class": "r_wristRotInterp_Stand"
+                        ]
                       }
                     },
                     {
@@ -16895,8 +16704,7 @@
                           0,
                           1,
                           0
-                        ],
-                        "@class": "r_elbowRotInterp_Stand"
+                        ]
                       }
                     },
                     {
@@ -16915,8 +16723,7 @@
                           0,
                           1,
                           0
-                        ],
-                        "@class": "r_shoulderRotInterp_Stand"
+                        ]
                       }
                     },
                     {
@@ -16935,8 +16742,7 @@
                           0,
                           1,
                           0
-                        ],
-                        "@class": "l_wristRotInterp_Stand"
+                        ]
                       }
                     },
                     {
@@ -16955,8 +16761,7 @@
                           0,
                           1,
                           0
-                        ],
-                        "@class": "l_elbowRotInterp_Stand"
+                        ]
                       }
                     },
                     {
@@ -16975,8 +16780,7 @@
                           0,
                           1,
                           0
-                        ],
-                        "@class": "l_shoulderRotInterp_Stand"
+                        ]
                       }
                     },
                     {
@@ -16995,8 +16799,7 @@
                           0,
                           1,
                           0
-                        ],
-                        "@class": "headRotInterp_Stand"
+                        ]
                       }
                     },
                     {
@@ -17015,8 +16818,7 @@
                           0,
                           1,
                           0
-                        ],
-                        "@class": "neckRotInterp_Stand"
+                        ]
                       }
                     },
                     {
@@ -17035,8 +16837,7 @@
                           0,
                           1,
                           0
-                        ],
-                        "@class": "upper_bodyRotInterp_Stand"
+                        ]
                       }
                     },
                     {
@@ -17055,8 +16856,7 @@
                           0,
                           1,
                           0
-                        ],
-                        "@class": "whole_bodyRotInterp_Stand"
+                        ]
                       }
                     },
                     {
@@ -17073,19 +16873,16 @@
                           0,
                           0,
                           0
-                        ],
-                        "@class": "whole_bodyTranInterp_Stand"
+                        ]
                       }
                     },
                     {
                       "TimeSensor": {
                         "@DEF": "Stand_Time",
-                        "@cycleInterval": 0.009999999776482582,
-                        "@class": "Stand_Time"
+                        "@cycleInterval": 0.009999999776482582
                       }
                     }
-                  ],
-                  "@class": "Stand_Animation"
+                  ]
                 }
               },
               {
@@ -17153,8 +16950,7 @@
                           0,
                           1,
                           0
-                        ],
-                        "@class": "r_ankleRotInterp_BasicWalk"
+                        ]
                       }
                     },
                     {
@@ -17213,8 +17009,7 @@
                           0,
                           0,
                           0.8573
-                        ],
-                        "@class": "r_kneeRotInterp_BasicWalk"
+                        ]
                       }
                     },
                     {
@@ -17273,8 +17068,7 @@
                           0.03511,
                           0.8116,
                           0.1481
-                        ],
-                        "@class": "r_hipRotInterp_BasicWalk"
+                        ]
                       }
                     },
                     {
@@ -17318,8 +17112,7 @@
                           0,
                           0,
                           0.06714
-                        ],
-                        "@class": "l_ankleRotInterp_BasicWalk"
+                        ]
                       }
                     },
                     {
@@ -17368,8 +17161,7 @@
                           0,
                           0,
                           0.3226
-                        ],
-                        "@class": "l_kneeRotInterp_BasicWalk"
+                        ]
                       }
                     },
                     {
@@ -17418,8 +17210,7 @@
                           0.06094,
                           0.484,
                           0.2865
-                        ],
-                        "@class": "l_hipRotInterp_BasicWalk"
+                        ]
                       }
                     },
                     {
@@ -17443,8 +17234,7 @@
                           0,
                           -1,
                           0.1056
-                        ],
-                        "@class": "lower_bodyRotInterp_BasicWalk"
+                        ]
                       }
                     },
                     {
@@ -17473,8 +17263,7 @@
                           0.4759,
                           -0.3357,
                           0.1346
-                        ],
-                        "@class": "r_wristRotInterp_BasicWalk"
+                        ]
                       }
                     },
                     {
@@ -17503,8 +17292,7 @@
                           0,
                           0,
                           0.411508
-                        ],
-                        "@class": "r_elbowRotInterp_BasicWalk"
+                        ]
                       }
                     },
                     {
@@ -17533,8 +17321,7 @@
                           0,
                           0,
                           0.09346
-                        ],
-                        "@class": "r_shoulderRotInterp_BasicWalk"
+                        ]
                       }
                     },
                     {
@@ -17563,8 +17350,7 @@
                           -1,
                           0,
                           0.461076
-                        ],
-                        "@class": "l_wristRotInterp_BasicWalk"
+                        ]
                       }
                     },
                     {
@@ -17593,8 +17379,7 @@
                           0,
                           0,
                           0.0659878
-                        ],
-                        "@class": "l_elbowRotInterp_BasicWalk"
+                        ]
                       }
                     },
                     {
@@ -17623,8 +17408,7 @@
                           0,
                           0,
                           0.1189
-                        ],
-                        "@class": "l_shoulderRotInterp_BasicWalk"
+                        ]
                       }
                     },
                     {
@@ -17683,8 +17467,7 @@
                           -1,
                           0,
                           0.08642
-                        ],
-                        "@class": "headRotInterp_BasicWalk"
+                        ]
                       }
                     },
                     {
@@ -17703,8 +17486,7 @@
                           0,
                           1,
                           0
-                        ],
-                        "@class": "neckRotInterp_BasicWalk"
+                        ]
                       }
                     },
                     {
@@ -17743,8 +17525,7 @@
                           1,
                           0,
                           0.0826
-                        ],
-                        "@class": "upper_bodyRotInterp_BasicWalk"
+                        ]
                       }
                     },
                     {
@@ -17763,8 +17544,7 @@
                           0,
                           1,
                           0
-                        ],
-                        "@class": "whole_bodyRotInterp_BasicWalk"
+                        ]
                       }
                     },
                     {
@@ -17849,8 +17629,7 @@
                           0,
                           -0.00928,
                           0
-                        ],
-                        "@class": "whole_bodyTranInterp_BasicWalk"
+                        ]
                       }
                     },
                     {
@@ -17858,12 +17637,10 @@
                         "@DEF": "Walk_Time",
                         "@cycleInterval": 2,
                         "@loop": true,
-                        "@startTime": -1,
-                        "@class": "Walk_Time"
+                        "@startTime": -1
                       }
                     }
-                  ],
-                  "@class": "Walk_Animation"
+                  ]
                 }
               },
               {
@@ -17906,8 +17683,7 @@
                           0,
                           0,
                           0.2323
-                        ],
-                        "@class": "r_ankleRotInterp_Run"
+                        ]
                       }
                     },
                     {
@@ -17946,8 +17722,7 @@
                           0,
                           0,
                           0.7004
-                        ],
-                        "@class": "r_kneeRotInterp_Run"
+                        ]
                       }
                     },
                     {
@@ -17981,8 +17756,7 @@
                           0.00293,
                           -0.00989,
                           0.402
-                        ],
-                        "@class": "r_hipRotInterp_Run"
+                        ]
                       }
                     },
                     {
@@ -18016,8 +17790,7 @@
                           0,
                           0,
                           0.03543
-                        ],
-                        "@class": "l_ankleRotInterp_Run"
+                        ]
                       }
                     },
                     {
@@ -18051,8 +17824,7 @@
                           0,
                           0,
                           1.108
-                        ],
-                        "@class": "l_kneeRotInterp_Run"
+                        ]
                       }
                     },
                     {
@@ -18086,8 +17858,7 @@
                           0.03354,
                           0.04001,
                           1.212
-                        ],
-                        "@class": "l_hipRotInterp_Run"
+                        ]
                       }
                     },
                     {
@@ -18106,8 +17877,7 @@
                           -0.05444,
                           0.05596,
                           0.07687
-                        ],
-                        "@class": "lower_bodyRotInterp_Run"
+                        ]
                       }
                     },
                     {
@@ -18126,8 +17896,7 @@
                           -0.237244,
                           -0.318536,
                           0.214273
-                        ],
-                        "@class": "r_wristRotInterp_Run"
+                        ]
                       }
                     },
                     {
@@ -18161,8 +17930,7 @@
                           -0.2978,
                           -0.191,
                           4.222
-                        ],
-                        "@class": "r_elbowRotInterp_Run"
+                        ]
                       }
                     },
                     {
@@ -18196,8 +17964,7 @@
                           0,
                           0,
                           0.6979
-                        ],
-                        "@class": "r_shoulderRotInterp_Run"
+                        ]
                       }
                     },
                     {
@@ -18216,8 +17983,7 @@
                           -0.999682,
                           0.00741506,
                           0.120409
-                        ],
-                        "@class": "l_wristRotInterp_Run"
+                        ]
                       }
                     },
                     {
@@ -18251,8 +18017,7 @@
                           0.03887,
                           0.03802,
                           4.689
-                        ],
-                        "@class": "l_elbowRotInterp_Run"
+                        ]
                       }
                     },
                     {
@@ -18286,8 +18051,7 @@
                           -0.07264,
                           0.115,
                           1.135
-                        ],
-                        "@class": "l_shoulderRotInterp_Run"
+                        ]
                       }
                     },
                     {
@@ -18311,8 +18075,7 @@
                           -0.7559,
                           0.06211,
                           0.2508
-                        ],
-                        "@class": "headRotInterp_Run"
+                        ]
                       }
                     },
                     {
@@ -18331,8 +18094,7 @@
                           0,
                           1,
                           0
-                        ],
-                        "@class": "neckRotInterp_Run"
+                        ]
                       }
                     },
                     {
@@ -18366,8 +18128,7 @@
                           0.6382,
                           0.08586,
                           0.2712
-                        ],
-                        "@class": "upper_bodyRotInterp_Run"
+                        ]
                       }
                     },
                     {
@@ -18386,8 +18147,7 @@
                           0,
                           1,
                           0
-                        ],
-                        "@class": "whole_bodyRotInterp_Run"
+                        ]
                       }
                     },
                     {
@@ -18428,20 +18188,17 @@
                           0,
                           -0.0351,
                           0
-                        ],
-                        "@class": "whole_bodyTranInterp_Run"
+                        ]
                       }
                     },
                     {
                       "TimeSensor": {
                         "@DEF": "Run_Time",
                         "@loop": true,
-                        "@startTime": -1,
-                        "@class": "Run_Time"
+                        "@startTime": -1
                       }
                     }
-                  ],
-                  "@class": "Run_Animation"
+                  ]
                 }
               },
               {
@@ -18524,8 +18281,7 @@
                           0,
                           1,
                           0
-                        ],
-                        "@class": "r_ankleRotInterp_Jump"
+                        ]
                       }
                     },
                     {
@@ -18574,8 +18330,7 @@
                           0,
                           1,
                           0
-                        ],
-                        "@class": "r_kneeRotInterp_Jump"
+                        ]
                       }
                     },
                     {
@@ -18639,8 +18394,7 @@
                           0,
                           1,
                           0
-                        ],
-                        "@class": "r_hipRotInterp_Jump"
+                        ]
                       }
                     },
                     {
@@ -18719,8 +18473,7 @@
                           0,
                           1,
                           0
-                        ],
-                        "@class": "l_ankleRotInterp_Jump"
+                        ]
                       }
                     },
                     {
@@ -18769,8 +18522,7 @@
                           0,
                           1,
                           0
-                        ],
-                        "@class": "l_kneeRotInterp_Jump"
+                        ]
                       }
                     },
                     {
@@ -18834,8 +18586,7 @@
                           0,
                           1,
                           0
-                        ],
-                        "@class": "l_hipRotInterp_Jump"
+                        ]
                       }
                     },
                     {
@@ -18874,8 +18625,7 @@
                           0,
                           1,
                           0
-                        ],
-                        "@class": "lower_bodyRotInterp_Jump"
+                        ]
                       }
                     },
                     {
@@ -18914,8 +18664,7 @@
                           0,
                           1,
                           0
-                        ],
-                        "@class": "r_wristRotInterp_Jump"
+                        ]
                       }
                     },
                     {
@@ -18954,8 +18703,7 @@
                           0,
                           1,
                           0
-                        ],
-                        "@class": "r_elbowRotInterp_Jump"
+                        ]
                       }
                     },
                     {
@@ -18999,8 +18747,7 @@
                           0,
                           1,
                           0
-                        ],
-                        "@class": "r_shoulderRotInterp_Jump"
+                        ]
                       }
                     },
                     {
@@ -19044,8 +18791,7 @@
                           0,
                           1,
                           0
-                        ],
-                        "@class": "l_wristRotInterp_Jump"
+                        ]
                       }
                     },
                     {
@@ -19084,8 +18830,7 @@
                           0,
                           1,
                           0
-                        ],
-                        "@class": "l_elbowRotInterp_Jump"
+                        ]
                       }
                     },
                     {
@@ -19129,8 +18874,7 @@
                           0,
                           1,
                           0
-                        ],
-                        "@class": "l_shoulderRotInterp_Jump"
+                        ]
                       }
                     },
                     {
@@ -19169,8 +18913,7 @@
                           0,
                           1,
                           0
-                        ],
-                        "@class": "headRotInterp_Jump"
+                        ]
                       }
                     },
                     {
@@ -19209,8 +18952,7 @@
                           0,
                           1,
                           0
-                        ],
-                        "@class": "neckRotInterp_Jump"
+                        ]
                       }
                     },
                     {
@@ -19254,8 +18996,7 @@
                           0,
                           1,
                           0
-                        ],
-                        "@class": "upper_bodyRotInterp_Jump"
+                        ]
                       }
                     },
                     {
@@ -19299,8 +19040,7 @@
                           0,
                           1,
                           0
-                        ],
-                        "@class": "whole_bodyRotInterp_Jump"
+                        ]
                       }
                     },
                     {
@@ -19393,24 +19133,20 @@
                           0,
                           0,
                           0
-                        ],
-                        "@class": "whole_bodyTranInterp_Jump"
+                        ]
                       }
                     },
                     {
                       "TimeSensor": {
                         "@DEF": "Jump_Time",
                         "@cycleInterval": 2,
-                        "@startTime": -1,
-                        "@class": "Jump_Time"
+                        "@startTime": -1
                       }
                     }
-                  ],
-                  "@class": "Jump_Animation"
+                  ]
                 }
               }
-            ],
-            "@class": "Animations"
+            ]
           }
         },
         {

@@ -264,7 +264,7 @@
       <Viewpoint DEF='TopView' containerField='viewpoints' description='Top View' orientation='1 0 0 -1.57079' position='0 3.4495 0'/>
     </HAnimHumanoid>
     <WorldInfo info='"Copyright (c) 1997. 3Name3D / Yglesias Wallock Divekar, Inc."' title='Nancy - an H-Anim compliant avatar by 3Name3D'/>
-    <NavigationInfo avatarSize='0.15 1.53 0.75' speed='0.5' type='"EXAMINE"'/>
+    <NavigationInfo avatarSize='0.15 1.53 0.75' speed='0.5' type='"EXAMINE" "ANY"'/>
     <Group DEF='Interface'>
       <Transform>
         <ProximitySensor DEF='HudProx' center='0.0 20.0 0.0' size='500.0 100.0 500.0'/>
