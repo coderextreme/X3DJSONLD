@@ -18,18 +18,35 @@ if (typeof Browser === 'undefined') {
 		},
 		appendTo : function(element, json) {
 			 return ConvertToX3DOM(json, "", element, 'foo.json');
+		},
+		getDocument : function() {
+			return document;
 		}
 	}
 }
 
 var x3djsonNS;
+var encoding;
+
+function getEncoding() {
+	return encoding;
+}
+
+function setEncoding(enc) {
+	encoding = enc;
+}
 
 // 'http://www.web3d.org/specifications/x3d-namespace'
 
 // Load X3D JSON into web page
 
 function elementSetAttribute(element, key, value) {
-	if (key !== 'SON schema') {
+	if (key === 'SON schema') {
+		// JSON Schema
+	} else if (key === 'ncoding') {
+		// encoding, UTF-8, UTF-16 or UTF-32
+		setEncoding(value);
+	} else {
 		element.setAttribute(key, value);
 	}
 }
@@ -226,12 +243,13 @@ function fixXML(xmlstr) {
  * returns an element - the element to append or insert into the DOM
  */
 function loadX3DJS(json, path, xml, NS) {
+	var version = json.X3D["@version"];
 	x3djsonNS = NS;
 	var child = CreateElement('X3D', NS);
 	ConvertToX3DOM(json, "", child, path);
 	if (typeof xml !== 'undefined' && typeof xml.push === 'function') {
-		xml.push('<?xml version="1.0" encoding="UTF-8"?>');
-		xml.push('<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">');
+		xml.push('<?xml version="1.0" encoding="'+getEncoding()+'"?>');
+		xml.push('<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D '+version+'//EN" "http://www.web3d.org/specifications/x3d-'+version+'.dtd">');
 
 		var serializer = new XMLSerializer();
 		var xmlstr = serializer.serializeToString(child);
@@ -248,6 +266,7 @@ if (typeof module === 'object')  {
 		Browser : Browser,
 		ConvertToX3DOM : ConvertToX3DOM,
 		fixXML : fixXML,
+		getEncoding : getEncoding,
 		setDocument : function(doc) {
 			document = doc;
 		}

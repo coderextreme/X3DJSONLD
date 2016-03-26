@@ -148,7 +148,7 @@ ecmascript:
 	function add_node(value) {
                 // Browser.print('hey ', counter);
                 counter = counter++;
-		Browser.appendTo(document.getElementById("MN"),
+		Browser.appendTo(Browser.getDocument().getElementById("MN"),
 			{ "ProtoInstance":
 				{ "@name":"node",
 				  "@DEF":"node'+counter+'",
