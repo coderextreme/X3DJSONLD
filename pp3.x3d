@@ -47,7 +47,7 @@
 </Text>
 </Shape>
 </Transform>
-<StringSensor description='touch to activate' DEF='RightSensor' enabled='false' deletionAllowed='true'/>
+<StringSensor DEF='RightSensor' enabled='false' deletionAllowed='true'/>
 <TouchSensor description='touch to activate' DEF='RightTouch'/>
 </Transform>
 <!--up-->
@@ -69,7 +69,7 @@
 </Text>
 </Shape>
 </Transform>
-<StringSensor description='touch to activate' DEF='UpSensor' enabled='false' deletionAllowed='true'/>
+<StringSensor DEF='UpSensor' enabled='false' deletionAllowed='true'/>
 <TouchSensor description='touch to activate' DEF='UpTouch'/>
 </Transform>
 <!--down-->
@@ -82,7 +82,7 @@
 <Extrusion creaseAngle='0.785' crossSection='1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0' spine='0 -2.5 0 0 -1.5 0'>
 </Extrusion>
 </Shape>
-<!--<Transform translation="-0.5 -2.5 0"> <Shape> <Text DEF="DownString" string='"d"'/> </Shape> </Transform> <StringSensor description='touch to activate' DEF="DownSensor" enabled="false"/> <TouchSensor description='touch to activate' DEF="DownTouch" enabled="true"/>-->
+<!--<Transform translation="-0.5 -2.5 0"> <Shape> <Text DEF="DownString" string='"d"'/> </Shape> </Transform> <StringSensor DEF="DownSensor" enabled="false"/> <TouchSensor description='touch to activate' DEF="DownTouch" enabled="true"/>-->
 </Transform>
 <!--center-->
 <Transform>
@@ -101,7 +101,7 @@
 <Text DEF='CenterString'/>
 </Shape>
 </Transform>
-<StringSensor description='touch to activate' DEF='CenterSensor' enabled='false' deletionAllowed='true'/>
+<StringSensor DEF='CenterSensor' enabled='false' deletionAllowed='true'/>
 <TouchSensor description='touch to activate' DEF='CenterTouch'/>
 </Transform>
 </Group>

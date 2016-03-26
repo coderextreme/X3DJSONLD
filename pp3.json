@@ -40,7 +40,7 @@
           },
           {
             "@name":"translated",
-            "@content":"19 March 2016"
+            "@content":"26 March 2016"
           },
           {
             "@name":"generator",
@@ -159,7 +159,6 @@
                                 },
                                 { "StringSensor":
                                   {
-                                    "@description":"touch to activate",
                                     "@DEF":"RightSensor",
                                     "@enabled":false
                                   }
@@ -234,7 +233,6 @@
                                 },
                                 { "StringSensor":
                                   {
-                                    "@description":"touch to activate",
                                     "@DEF":"UpSensor",
                                     "@enabled":false
                                   }
@@ -278,7 +276,7 @@
                                       }
                                   }
                                 },
-                                { "#comment":"<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor description='touch to activate' DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>"
+                                { "#comment":"<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>"
                                 }
                               ]
                             }
@@ -339,7 +337,6 @@
                                 },
                                 { "StringSensor":
                                   {
-                                    "@description":"touch to activate",
                                     "@DEF":"CenterSensor",
                                     "@enabled":false
                                   }

@@ -21,8 +21,7 @@
         {
           "Viewpoint": {
             "@DEF": "Tour",
-            "@description": "Tour Views",
-            "@class": "Tour"
+            "@description": "Tour Views"
           }
         },
         {
@@ -199,26 +198,22 @@
                                   "@type": "FRAGMENT"
                                 }
                               }
-                            ],
-                            "@class": "ComposedShader"
+                            ]
                           }
                         }
-                      ],
-                      "@class": "_01_-_Default"
+                      ]
                     }
                   }
                 }
               }
-            ],
-            "@class": "Rose01"
+            ]
           }
         },
         {
           "TimeSensor": {
             "@DEF": "TourTime",
             "@cycleInterval": 5,
-            "@loop": true,
-            "@class": "TourTime"
+            "@loop": true
           }
         },
         {
@@ -235,8 +230,7 @@
               0,
               0,
               -10
-            ],
-            "@class": "TourPosition"
+            ]
           }
         },
         {
@@ -255,8 +249,7 @@
               1,
               0,
               3.1416
-            ],
-            "@class": "TourOrientation"
+            ]
           }
         },
         {
@@ -389,8 +382,7 @@
               "                        position[1] = new SFVec3f(positions[vc][0],positions[vc][1],positions[vc][2]);",
               "                    // }",
               "               }"
-            ],
-            "@class": "RandomTourTime"
+            ]
           }
         },
         {

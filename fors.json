@@ -33,7 +33,7 @@
         },
         {
           "@name": "translated",
-          "@content": "19 March 2016"
+          "@content": "26 March 2016"
         },
         {
           "@name": "generator",
@@ -85,7 +85,6 @@
                             }
                           }
                         ],
-                        "@class": "nodenodeAnodetransform",
                         "@translation": [
                           -50,
                           -50,
@@ -107,8 +106,7 @@
                           0,
                           5,
                           0
-                        ],
-                        "@class": "nodenodeAnodeNodePosition"
+                        ]
                       }
                     },
                     {
@@ -154,16 +152,14 @@
                           "                                                keyValue = new MFVec3f(old, translation);",
                           "\t\t\t\t\t\t// Browser.println(translation);",
                           "\t\t\t\t\t}"
-                        ],
-                        "@class": "nodenodeAnodeMoveBall"
+                        ]
                       }
                     },
                     {
                       "TimeSensor": {
                         "@DEF": "nodenodeAnodenodeClock",
                         "@cycleInterval": 3,
-                        "@loop": true,
-                        "@class": "nodenodeAnodenodeClock"
+                        "@loop": true
                       }
                     },
                     {
@@ -199,8 +195,7 @@
                       }
                     }
                   ],
-                  "@DEF": "nodenodeAnodeA",
-                  "@class": "nodenodeAnodeA"
+                  "@DEF": "nodenodeAnodeA"
                 }
               },
               {
@@ -231,7 +226,6 @@
                             }
                           }
                         ],
-                        "@class": "nodenodeBnodetransform",
                         "@translation": [
                           50,
                           50,
@@ -253,8 +247,7 @@
                           0,
                           5,
                           0
-                        ],
-                        "@class": "nodenodeBnodeNodePosition"
+                        ]
                       }
                     },
                     {
@@ -300,16 +293,14 @@
                           "                                                keyValue = new MFVec3f(old, translation);",
                           "\t\t\t\t\t\t// Browser.println(translation);",
                           "\t\t\t\t\t}"
-                        ],
-                        "@class": "nodenodeBnodeMoveBall"
+                        ]
                       }
                     },
                     {
                       "TimeSensor": {
                         "@DEF": "nodenodeBnodenodeClock",
                         "@cycleInterval": 3,
-                        "@loop": true,
-                        "@class": "nodenodeBnodenodeClock"
+                        "@loop": true
                       }
                     },
                     {
@@ -345,8 +336,7 @@
                       }
                     }
                   ],
-                  "@DEF": "nodenodeBnodeB",
-                  "@class": "nodenodeBnodeB"
+                  "@DEF": "nodenodeBnodeB"
                 }
               },
               {
@@ -404,8 +394,7 @@
                               0,
                               50,
                               0
-                            ],
-                            "@class": "cylinderlinkAcylinderextrusion"
+                            ]
                           }
                         },
                         "-appearance": {
@@ -486,8 +475,7 @@
                           "                function set_spine(value) {",
                           "                    spine = value;",
                           "                }"
-                        ],
-                        "@class": "cylinderlinkAcylinderMoveCylinder"
+                        ]
                       }
                     },
                     {
@@ -499,8 +487,7 @@
                       }
                     }
                   ],
-                  "@DEF": "cylinderlinkAlinkA",
-                  "@class": "cylinderlinkAlinkA"
+                  "@DEF": "cylinderlinkAlinkA"
                 }
               }
             ]

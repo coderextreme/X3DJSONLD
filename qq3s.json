@@ -41,7 +41,7 @@
         },
         {
           "@name": "translated",
-          "@content": "19 March 2016"
+          "@content": "26 March 2016"
         },
         {
           "@name": "generator",
@@ -108,8 +108,7 @@
                                               0.7,
                                               1,
                                               0
-                                            ],
-                                            "@class": "Process1000ProcessMaterialLeftDown"
+                                            ]
                                           }
                                         }
                                       }
@@ -190,8 +189,7 @@
                                               0,
                                               0.7,
                                               1
-                                            ],
-                                            "@class": "Process1000ProcessMaterialUpRight"
+                                            ]
                                           }
                                         }
                                       }
@@ -406,8 +404,7 @@
                       }
                     }
                   ],
-                  "@DEF": "Process10001000",
-                  "@class": "Process10001000"
+                  "@DEF": "Process10001000"
                 }
               }
             ]
@@ -444,8 +441,7 @@
                                               0.7,
                                               1,
                                               0
-                                            ],
-                                            "@class": "Process2000ProcessMaterialLeftDown"
+                                            ]
                                           }
                                         }
                                       }
@@ -526,8 +522,7 @@
                                               0,
                                               0.7,
                                               1
-                                            ],
-                                            "@class": "Process2000ProcessMaterialUpRight"
+                                            ]
                                           }
                                         }
                                       }
@@ -742,8 +737,7 @@
                       }
                     }
                   ],
-                  "@DEF": "Process20002000",
-                  "@class": "Process20002000"
+                  "@DEF": "Process20002000"
                 }
               }
             ]
@@ -785,8 +779,7 @@
                                               0.7,
                                               1,
                                               0
-                                            ],
-                                            "@class": "Process3000ProcessMaterialLeftDown"
+                                            ]
                                           }
                                         }
                                       }
@@ -867,8 +860,7 @@
                                               0,
                                               0.7,
                                               1
-                                            ],
-                                            "@class": "Process3000ProcessMaterialUpRight"
+                                            ]
                                           }
                                         }
                                       }
@@ -1083,8 +1075,7 @@
                       }
                     }
                   ],
-                  "@DEF": "Process30003000",
-                  "@class": "Process30003000"
+                  "@DEF": "Process30003000"
                 }
               }
             ]

@@ -1,5 +1,5 @@
 { "X3D": {
-    "encoding":"UTF-32",
+    "encoding":"UTF-8",
     "@profile":"Immersive",
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"19 March 2016"
+            "@content":"26 March 2016"
           },
           {
             "@name":"generator",
@@ -127,7 +127,6 @@
             {
               "@DEF":"ts",
               "@cycleInterval":2,
-              "@description":"Make the dolphin move",
               "@loop":true
             }
           },

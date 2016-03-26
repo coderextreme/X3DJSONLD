@@ -1,34 +1,36 @@
 { "X3D": {
     "encoding":"UTF-8",
-    "@profile":"Immersive",
+    "@profile":"Interchange",
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "@showStat":true,
-    "@showLog":true,
-    "@showProgress":"bar",
     "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "Scene": {
-        "-ErrorChildNodeFieldNameNotFound":[
+        "-children":[
           { "Group":
-              "-ErrorChildNodeFieldNameNotFound":[
+            {
+              "-children":[
                 { "Shape":
-                    "-ErrorChildNodeFieldNameNotFound":[
+                  {
+                    "-appearance":
                       { "Appearance":
-                          "-ErrorChildNodeFieldNameNotFound":[
+                        {
+                          "-material":
                             { "Material":
                               {
                                 "@diffuseColor":[1,1,1]
                               }
                             }
-                          ]
-                      }
-                    ],
-                    "-ErrorChildNodeFieldNameNotFound":[
+                        }
+                      },
+                    "-geometry":
                       { "Sphere":
+                        {
+                        }
                       }
-                    ]
+                  }
                 }
               ]
+            }
           }
         ]
     }

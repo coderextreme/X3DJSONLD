@@ -52,7 +52,7 @@
           },
           {
             "@name":"translated",
-            "@content":"19 March 2016"
+            "@content":"26 March 2016"
           },
           {
             "@name":"generator",
@@ -2156,8 +2156,7 @@
           { "NavigationInfo":
             {
               "@avatarSize":[0.15,1.53,0.75],
-              "@speed":0.5,
-              "@type":["EXAMINE"]
+              "@speed":0.5
             }
           },
           { "Group":

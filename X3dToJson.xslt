@@ -383,9 +383,9 @@ POSSIBILITY OF SUCH DAMAGE.
                             <xsl:value-of select="@containerField"/>
                         </xsl:when>
                         <xsl:otherwise>
-                            <xsl:text>ErrorChildNodeFieldNameNotFound</xsl:text>
+                            <xsl:text>IllegalChildNodeFieldNameNotFound</xsl:text>
 							<xsl:message>
-								<xsl:text>ErrorChildNodeFieldNameNotFound: no containerField or field name found for the X3D JSON object.</xsl:text>
+								<xsl:text>Error: IllegalChildNodeFieldNameNotFound no containerField or field name found for the X3D JSON object. Check spelling of node.</xsl:text>
 								<xsl:text>&#10;</xsl:text>
                                 <xsl:text>  $elementName=</xsl:text>
                                 <xsl:value-of select="$elementName"/>
@@ -406,7 +406,7 @@ POSSIBILITY OF SUCH DAMAGE.
 									</xsl:when>
 									<xsl:when test="(string-length(//meta[(@name='title')]/@content) > 0)">
 										<xsl:text>  </xsl:text>
-										<xsl:value-of      select="//meta[(@name='title')]/@content"/>
+										<xsl:value-of select="//meta[(@name='title')]/@content"/>
 										<xsl:text> is a test scene supporting X3D Quality Assurance (QA).</xsl:text>
 									</xsl:when>
 								</xsl:choose>
@@ -861,12 +861,7 @@ POSSIBILITY OF SUCH DAMAGE.
                         -->
                         <xsl:variable name="insert-commas-recurse-result">
                             <xsl:call-template name="insert-commas-recurse">
-                                <xsl:with-param name="inputString">
-                                    <xsl:call-template name="escape-special-characters-quotes-recurse">
-                                        <xsl:with-param name="inputString" select="$escape-special-characters-quotes-recurse-result"/>
-                                        <xsl:with-param name="inputType"><xsl:text>MFString</xsl:text></xsl:with-param>
-                                    </xsl:call-template>
-                                </xsl:with-param>
+                                <xsl:with-param name="inputString" select="$escape-special-characters-quotes-recurse-result"/>
                                 <xsl:with-param name="inputType"><xsl:text>MFString</xsl:text></xsl:with-param>
                             </xsl:call-template>
                         </xsl:variable>
@@ -1022,7 +1017,7 @@ POSSIBILITY OF SUCH DAMAGE.
 						<!-- TODO terser test, check coverage -->
 						<xsl:if test="not((local-name(..)='field') or (local-name(..)='fieldValue') or contains(local-name(..),'Proto') or (local-name(..)='meta'))">
 							<xsl:message>
-								  <xsl:text>Warning: X3dToJson.xslt error, attribute type not found: </xsl:text>
+								  <xsl:text>Error: X3dToJson.xslt converter not finding element-attribute type for </xsl:text>
 								  <xsl:value-of select="local-name(..)"/>
 								  <xsl:text> </xsl:text>
 								  <xsl:value-of select="local-name()"/>
@@ -1203,6 +1198,17 @@ POSSIBILITY OF SUCH DAMAGE.
           <!-- <xsl:message><xsl:text>[1]</xsl:text></xsl:message> -->
           <xsl:value-of select="$inputString"/>
         </xsl:when>
+        <!-- comment: escaped quote needs to be left alone -->
+        <xsl:when test="self::comment() and contains($inputString,'\&quot;') and 
+                       (string-length(substring-before($inputString,'\&quot;')) lt string-length(substring-before($inputString,'&quot;')))">
+          <!-- <xsl:message><xsl:text>[2]</xsl:text></xsl:message> -->
+          <xsl:value-of select="substring-before($inputString,'\&quot;')"/>
+          <xsl:text>\&quot;</xsl:text>
+          <xsl:call-template name="escape-quotes-recurse">
+              <xsl:with-param name="inputString" select="substring-after($inputString,'\&quot;')"/>
+              <xsl:with-param name="inputType"   select="$inputType"/>
+          </xsl:call-template>
+        </xsl:when>
         <!-- comment: unescaped quote needs \ escape character inserted, no quote delimiter remaining -->
         <xsl:when test="self::comment() and contains($inputString,'&quot;')">
           <!-- <xsl:message><xsl:text>[2]</xsl:text></xsl:message> -->
@@ -1222,8 +1228,26 @@ POSSIBILITY OF SUCH DAMAGE.
               <xsl:with-param name="inputType"   select="$inputType"/>
           </xsl:call-template>
         </xsl:when>
+        <!-- SFString or MFString containing empty string "" -->
+        <xsl:when test="starts-with($inputString,'&quot;&quot;')">
+          <!-- <xsl:message><xsl:text>[3.5]</xsl:text></xsl:message> -->
+          <xsl:text>&quot;&quot;</xsl:text>
+		  <xsl:if test="(string-length(normalize-space(substring($inputString,3))) > 0)">
+			<xsl:text>,</xsl:text>
+			<xsl:call-template name="escape-quotes-recurse">
+				<xsl:with-param name="inputString" select="substring($inputString,3)"/>
+				<xsl:with-param name="inputType"   select="$inputType"/>
+			</xsl:call-template>
+		  </xsl:if>
+		  <xsl:if test="($inputType = 'SFString')">
+			  <xsl:message>
+				  <xsl:text>Error: malformed SFString value has "" empty string followed by extra characters: </xsl:text>
+			      <xsl:value-of select="substring($inputString,3)"/>
+			  </xsl:message>
+		  </xsl:if>
+        </xsl:when>
         <!-- starting and ending quotes indicate outer delimeters of MFString array -->
-        <xsl:when test="starts-with($inputString,'&quot;') and ends-with($inputString,'&quot;')">
+        <xsl:when test="starts-with($inputString,'&quot;') and ends-with($inputString,'&quot;') and not(ends-with($inputString,'\&quot;'))">
           <!-- <xsl:message><xsl:text>[4]</xsl:text></xsl:message> -->
           <xsl:text>&quot;</xsl:text>
           <xsl:call-template name="escape-quotes-recurse">
@@ -1318,22 +1342,32 @@ POSSIBILITY OF SUCH DAMAGE.
 		  <xsl:variable name="nextChar"  select="substring(substring-after($inputString,'\'),1,1)"/>
 		  <xsl:variable name="remainder" select="substring(substring-after($inputString,'\'),2)"/>
 		  <xsl:choose>
+			  <!-- double backslash is already escaped, pass it through -->
+			  <xsl:when test="($nextChar = '\') and ($remainder[1] = '\')">
+				<xsl:text>\\</xsl:text>
+				<xsl:call-template name="escape-backslash-characters-recurse">
+				  <xsl:with-param name="inputString" select="substring($remainder,2)"/>
+				</xsl:call-template>
+			  </xsl:when>
 			  <!-- pass through escaped characters   http://www.web3d.org/x3d/stylesheets/X3dToJson.html#strings -->
 			  <!-- special characters backspace, formfeed, newline, carriage return, horizontal tab are presumably character entities already -->
 			  <!-- page links for character entities http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#HTML -->
-			  <xsl:when test="($nextChar = '&quot;') or ($nextChar = '\') or ($nextChar = '/') or
-                              ($nextChar = '&amp;')"> <!-- start of character entity -->
+			  <xsl:when test="($nextChar = '&quot;') or ($nextChar = '\') or ($nextChar = '/')">
+                         <!-- or ($nextChar = '&amp;') start of character entity -->
 				  <xsl:text>\</xsl:text>
 				  <xsl:value-of select="$nextChar"/>
+				<xsl:call-template name="escape-backslash-characters-recurse">
+				  <xsl:with-param name="inputString" select="$remainder"/>
+				</xsl:call-template>
 			  </xsl:when>
 			  <!-- TODO any special handling needed for ($nextChar = '\&apos;') ? -->
 			  <xsl:otherwise> <!-- escape this backslash character -->
-				  <xsl:text>\\</xsl:text>
+				<xsl:text>\\</xsl:text>
+				<xsl:call-template name="escape-backslash-characters-recurse">
+				  <xsl:with-param name="inputString" select="$remainder"/>
+				</xsl:call-template>
 			  </xsl:otherwise>
 		  </xsl:choose>
-          <xsl:call-template name="escape-backslash-characters-recurse">
-            <xsl:with-param name="inputString" select="$remainder"/>
-          </xsl:call-template>
         </xsl:otherwise>
       </xsl:choose>
     </xsl:template>

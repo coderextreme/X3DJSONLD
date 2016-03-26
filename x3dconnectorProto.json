@@ -1,55 +1,53 @@
 { "X3D": {
     "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
     "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "Scene": {
-        "-ErrorChildNodeFieldNameNotFound":[
+        "-children":[
           { "Viewpoint":
             {
-              "@position":[0,0,5]
+              "@position":[0,0,5],
+              "@description":"Only Viewpoint"
             }
-          }
-        ],
-        "-ErrorChildNodeFieldNameNotFound":[
+          },
           { "Background":
             {
               "@skyColor":[0.4,0.4,0.4]
             }
-          }
-        ],
-        "-ErrorChildNodeFieldNameNotFound":[
+          },
           { "Transform":
             {
               "@DEF":"G1",
-              "-ErrorChildNodeFieldNameNotFound":[
+              "-children":[
                 { "Shape":
-                    "-ErrorChildNodeFieldNameNotFound":[
+                  {
+                    "-appearance":
                       { "Appearance":
-                          "-ErrorChildNodeFieldNameNotFound":[
+                        {
+                          "-material":
                             { "Material":
                               {
                                 "@diffuseColor":[0.7,0.2,0.2]
                               }
                             }
-                          ]
-                      }
-                    ],
-                    "-ErrorChildNodeFieldNameNotFound":[
+                        }
+                      },
+                    "-geometry":
                       { "Sphere":
                         {
                           "@radius":0.1
                         }
                       }
-                    ]
-                }
-              ],
-              "-ErrorChildNodeFieldNameNotFound":[
+                  }
+                },
                 { "PlaneSensor":
                   {
+                    "@description":"Grab to move",
                     "@DEF":"PS1"
                   }
-                }
-              ],
-              "-children":[
+                },
                 { "ROUTE":
                   {
                     "@fromNode":"PS1",
@@ -60,43 +58,39 @@
                 }
               ]
             }
-          }
-        ],
-        "-ErrorChildNodeFieldNameNotFound":[
+          },
           { "Transform":
             {
               "@DEF":"G2",
               "@translation":[1,-1,0.01],
-              "-ErrorChildNodeFieldNameNotFound":[
+              "-children":[
                 { "Shape":
-                    "-ErrorChildNodeFieldNameNotFound":[
+                  {
+                    "-appearance":
                       { "Appearance":
-                          "-ErrorChildNodeFieldNameNotFound":[
+                        {
+                          "-material":
                             { "Material":
                               {
                                 "@diffuseColor":[0.2,0.7,0.2]
                               }
                             }
-                          ]
-                      }
-                    ],
-                    "-ErrorChildNodeFieldNameNotFound":[
+                        }
+                      },
+                    "-geometry":
                       { "Sphere":
                         {
                           "@radius":0.1
                         }
                       }
-                    ]
-                }
-              ],
-              "-ErrorChildNodeFieldNameNotFound":[
+                  }
+                },
                 { "PlaneSensor":
                   {
+                    "@description":"Grab to move",
                     "@DEF":"PS2"
                   }
-                }
-              ],
-              "-children":[
+                },
                 { "ROUTE":
                   {
                     "@fromNode":"PS2",
@@ -107,43 +101,39 @@
                 }
               ]
             }
-          }
-        ],
-        "-ErrorChildNodeFieldNameNotFound":[
+          },
           { "Transform":
             {
               "@DEF":"G3",
               "@translation":[1,1,0.01],
-              "-ErrorChildNodeFieldNameNotFound":[
+              "-children":[
                 { "Shape":
-                    "-ErrorChildNodeFieldNameNotFound":[
+                  {
+                    "-appearance":
                       { "Appearance":
-                          "-ErrorChildNodeFieldNameNotFound":[
+                        {
+                          "-material":
                             { "Material":
                               {
                                 "@diffuseColor":[0.2,0.7,0.2]
                               }
                             }
-                          ]
-                      }
-                    ],
-                    "-ErrorChildNodeFieldNameNotFound":[
+                        }
+                      },
+                    "-geometry":
                       { "Sphere":
                         {
                           "@radius":0.1
                         }
                       }
-                    ]
-                }
-              ],
-              "-ErrorChildNodeFieldNameNotFound":[
+                  }
+                },
                 { "PlaneSensor":
                   {
+                    "@description":"Grab to move",
                     "@DEF":"PS3"
                   }
-                }
-              ],
-              "-children":[
+                },
                 { "ROUTE":
                   {
                     "@fromNode":"PS3",
@@ -154,43 +144,39 @@
                 }
               ]
             }
-          }
-        ],
-        "-ErrorChildNodeFieldNameNotFound":[
+          },
           { "Transform":
             {
               "@DEF":"G4",
               "@translation":[-1,1,0.01],
-              "-ErrorChildNodeFieldNameNotFound":[
+              "-children":[
                 { "Shape":
-                    "-ErrorChildNodeFieldNameNotFound":[
+                  {
+                    "-appearance":
                       { "Appearance":
-                          "-ErrorChildNodeFieldNameNotFound":[
+                        {
+                          "-material":
                             { "Material":
                               {
                                 "@diffuseColor":[0.2,0.7,0.2]
                               }
                             }
-                          ]
-                      }
-                    ],
-                    "-ErrorChildNodeFieldNameNotFound":[
+                        }
+                      },
+                    "-geometry":
                       { "Sphere":
                         {
                           "@radius":0.1
                         }
                       }
-                    ]
-                }
-              ],
-              "-ErrorChildNodeFieldNameNotFound":[
+                  }
+                },
                 { "PlaneSensor":
                   {
+                    "@description":"Grab to move",
                     "@DEF":"PS4"
                   }
-                }
-              ],
-              "-children":[
+                },
                 { "ROUTE":
                   {
                     "@fromNode":"PS4",
@@ -201,99 +187,94 @@
                 }
               ]
             }
-          }
-        ],
-        "-ErrorChildNodeFieldNameNotFound":[
+          },
           { "Transform":
             {
               "@DEF":"C1",
-              "-ErrorChildNodeFieldNameNotFound":[
+              "-children":[
                 { "Shape":
-                    "-ErrorChildNodeFieldNameNotFound":[
+                  {
+                    "-appearance":
                       { "Appearance":
-                          "-ErrorChildNodeFieldNameNotFound":[
+                        {
+                          "-material":
                             { "Material":
                               {
                                 "@diffuseColor":[0.2,0.7,0.7],
                                 "@transparency":0.5
                               }
                             }
-                          ]
-                      }
-                    ],
-                    "-ErrorChildNodeFieldNameNotFound":[
+                        }
+                      },
+                    "-geometry":
                       { "Cylinder":
                         {
                           "@radius":0.05
                         }
                       }
-                    ]
+                  }
                 }
               ]
             }
-          }
-        ],
-        "-ErrorChildNodeFieldNameNotFound":[
+          },
           { "Transform":
             {
               "@DEF":"C2",
-              "-ErrorChildNodeFieldNameNotFound":[
+              "-children":[
                 { "Shape":
-                    "-ErrorChildNodeFieldNameNotFound":[
+                  {
+                    "-appearance":
                       { "Appearance":
-                          "-ErrorChildNodeFieldNameNotFound":[
+                        {
+                          "-material":
                             { "Material":
                               {
                                 "@diffuseColor":[0.2,0.7,0.7],
                                 "@transparency":0.5
                               }
                             }
-                          ]
-                      }
-                    ],
-                    "-ErrorChildNodeFieldNameNotFound":[
+                        }
+                      },
+                    "-geometry":
                       { "Cylinder":
                         {
                           "@radius":0.05
                         }
                       }
-                    ]
+                  }
                 }
               ]
             }
-          }
-        ],
-        "-ErrorChildNodeFieldNameNotFound":[
+          },
           { "Transform":
             {
               "@DEF":"C3",
-              "-ErrorChildNodeFieldNameNotFound":[
+              "-children":[
                 { "Shape":
-                    "-ErrorChildNodeFieldNameNotFound":[
+                  {
+                    "-appearance":
                       { "Appearance":
-                          "-ErrorChildNodeFieldNameNotFound":[
+                        {
+                          "-material":
                             { "Material":
                               {
                                 "@diffuseColor":[0.2,0.7,0.7],
                                 "@transparency":0.5
                               }
                             }
-                          ]
-                      }
-                    ],
-                    "-ErrorChildNodeFieldNameNotFound":[
+                        }
+                      },
+                    "-geometry":
                       { "Cylinder":
                         {
                           "@radius":0.05
                         }
                       }
-                    ]
+                  }
                 }
               ]
             }
-          }
-        ],
-        "-children":[
+          },
           { "ProtoDeclare":
             {
               "@name":"x3dconnector",
@@ -412,6 +393,120 @@
               }
             }
           },
+          { "ProtoInstance":
+            {
+              "@name":"x3dconnector",
+              "@DEF":"connector1",
+              "fieldValue": [
+                {
+                  "@name":"startnode",
+                  "-children":[
+                    { "Transform":
+                      {
+                        "@USE":"G1"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "@name":"endnode",
+                  "-children":[
+                    { "Transform":
+                      {
+                        "@USE":"G2"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "@name":"connectornode",
+                  "-children":[
+                    { "Transform":
+                      {
+                        "@USE":"C1"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"x3dconnector",
+              "@DEF":"connector2",
+              "fieldValue": [
+                {
+                  "@name":"startnode",
+                  "-children":[
+                    { "Transform":
+                      {
+                        "@USE":"G1"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "@name":"endnode",
+                  "-children":[
+                    { "Transform":
+                      {
+                        "@USE":"G3"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "@name":"connectornode",
+                  "-children":[
+                    { "Transform":
+                      {
+                        "@USE":"C2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"x3dconnector",
+              "@DEF":"connector3",
+              "fieldValue": [
+                {
+                  "@name":"startnode",
+                  "-children":[
+                    { "Transform":
+                      {
+                        "@USE":"G1"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "@name":"endnode",
+                  "-children":[
+                    { "Transform":
+                      {
+                        "@USE":"G4"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "@name":"connectornode",
+                  "-children":[
+                    { "Transform":
+                      {
+                        "@USE":"C3"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          },
           { "ROUTE":
             {
               "@fromNode":"G1",
@@ -458,126 +553,6 @@
               "@fromField":"translation",
               "@toNode":"connector3",
               "@toField":"set_endpoint"
-            }
-          }
-        ],
-        "-ErrorChildNodeFieldNameNotFound":[
-          { "ProtoInstance":
-            {
-              "@name":"x3dconnector",
-              "@DEF":"connector1",
-              "fieldValue": [
-                {
-                  "@name":"startnode",
-                  "-children":[
-                    { "Transform":
-                      {
-                        "@USE":"G1"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "@name":"endnode",
-                  "-children":[
-                    { "Transform":
-                      {
-                        "@USE":"G2"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "@name":"connectornode",
-                  "-children":[
-                    { "Transform":
-                      {
-                        "@USE":"C1"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        ],
-        "-ErrorChildNodeFieldNameNotFound":[
-          { "ProtoInstance":
-            {
-              "@name":"x3dconnector",
-              "@DEF":"connector2",
-              "fieldValue": [
-                {
-                  "@name":"startnode",
-                  "-children":[
-                    { "Transform":
-                      {
-                        "@USE":"G1"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "@name":"endnode",
-                  "-children":[
-                    { "Transform":
-                      {
-                        "@USE":"G3"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "@name":"connectornode",
-                  "-children":[
-                    { "Transform":
-                      {
-                        "@USE":"C2"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        ],
-        "-ErrorChildNodeFieldNameNotFound":[
-          { "ProtoInstance":
-            {
-              "@name":"x3dconnector",
-              "@DEF":"connector3",
-              "fieldValue": [
-                {
-                  "@name":"startnode",
-                  "-children":[
-                    { "Transform":
-                      {
-                        "@USE":"G1"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "@name":"endnode",
-                  "-children":[
-                    { "Transform":
-                      {
-                        "@USE":"G4"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "@name":"connectornode",
-                  "-children":[
-                    { "Transform":
-                      {
-                        "@USE":"C3"
-                      }
-                    }
-                  ]
-                }
-              ]
             }
           }
         ]

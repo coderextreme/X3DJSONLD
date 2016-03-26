@@ -41,7 +41,7 @@
         },
         {
           "@name": "translated",
-          "@content": "19 March 2016"
+          "@content": "26 March 2016"
         },
         {
           "@name": "generator",
@@ -270,8 +270,7 @@
                                                     1,
                                                     1,
                                                     1
-                                                  ],
-                                                  "@class": "Process1000ProcessMaterialLightBlue"
+                                                  ]
                                                 }
                                               }
                                             }
@@ -281,8 +280,7 @@
                                               "@DEF": "Process1000ProcessRightString",
                                               "@string": [
                                                 "r"
-                                              ],
-                                              "@class": "Process1000ProcessRightString"
+                                              ]
                                             }
                                           }
                                         }
@@ -292,17 +290,14 @@
                                 },
                                 {
                                   "StringSensor": {
-                                    "@description": "touch to activate",
                                     "@DEF": "Process1000ProcessRightSensor",
-                                    "@enabled": false,
-                                    "@class": "Process1000ProcessRightSensor"
+                                    "@enabled": false
                                   }
                                 },
                                 {
                                   "TouchSensor": {
                                     "@description": "touch to activate",
-                                    "@DEF": "Process1000ProcessRightTouch",
-                                    "@class": "Process1000ProcessRightTouch"
+                                    "@DEF": "Process1000ProcessRightTouch"
                                   }
                                 }
                               ]
@@ -410,8 +405,7 @@
                                               "@DEF": "Process1000ProcessUpString",
                                               "@string": [
                                                 "u"
-                                              ],
-                                              "@class": "Process1000ProcessUpString"
+                                              ]
                                             }
                                           }
                                         }
@@ -421,17 +415,14 @@
                                 },
                                 {
                                   "StringSensor": {
-                                    "@description": "touch to activate",
                                     "@DEF": "Process1000ProcessUpSensor",
-                                    "@enabled": false,
-                                    "@class": "Process1000ProcessUpSensor"
+                                    "@enabled": false
                                   }
                                 },
                                 {
                                   "TouchSensor": {
                                     "@description": "touch to activate",
-                                    "@DEF": "Process1000ProcessUpTouch",
-                                    "@class": "Process1000ProcessUpTouch"
+                                    "@DEF": "Process1000ProcessUpTouch"
                                   }
                                 }
                               ]
@@ -516,7 +507,7 @@
                                   }
                                 },
                                 {
-                                  "#comment": "<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor description='touch to activate' DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>"
+                                  "#comment": "<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>"
                                 }
                               ]
                             }
@@ -573,8 +564,7 @@
                                           },
                                           "-geometry": {
                                             "Text": {
-                                              "@DEF": "Process1000ProcessCenterString",
-                                              "@class": "Process1000ProcessCenterString"
+                                              "@DEF": "Process1000ProcessCenterString"
                                             }
                                           }
                                         }
@@ -584,17 +574,14 @@
                                 },
                                 {
                                   "StringSensor": {
-                                    "@description": "touch to activate",
                                     "@DEF": "Process1000ProcessCenterSensor",
-                                    "@enabled": false,
-                                    "@class": "Process1000ProcessCenterSensor"
+                                    "@enabled": false
                                   }
                                 },
                                 {
                                   "TouchSensor": {
                                     "@description": "touch to activate",
-                                    "@DEF": "Process1000ProcessCenterTouch",
-                                    "@class": "Process1000ProcessCenterTouch"
+                                    "@DEF": "Process1000ProcessCenterTouch"
                                   }
                                 }
                               ]
@@ -628,8 +615,7 @@
                           "function set_rightstring(rightstr) {",
                           "\trightlines = new MFString(rightstr);",
                           "}"
-                        ],
-                        "@class": "Process1000ProcessRightSingleToMultiString"
+                        ]
                       }
                     },
                     {
@@ -657,8 +643,7 @@
                           "function set_upstring(upstr) {",
                           "\tuplines = new MFString(upstr);",
                           "}"
-                        ],
-                        "@class": "Process1000ProcessUpSingleToMultiString"
+                        ]
                       }
                     },
                     {
@@ -686,8 +671,7 @@
                           "function set_centerstring(centerstr) {",
                           "\tcenterlines = new MFString(centerstr);",
                           "}"
-                        ],
-                        "@class": "Process1000ProcessCenterSingleToMultiString"
+                        ]
                       }
                     },
                     {
@@ -763,8 +747,7 @@
                       }
                     }
                   ],
-                  "@DEF": "Process10001000",
-                  "@class": "Process10001000"
+                  "@DEF": "Process10001000"
                 }
               }
             ]
@@ -960,8 +943,7 @@
                                                     1,
                                                     1,
                                                     1
-                                                  ],
-                                                  "@class": "Process2000ProcessMaterialLightBlue"
+                                                  ]
                                                 }
                                               }
                                             }
@@ -971,8 +953,7 @@
                                               "@DEF": "Process2000ProcessRightString",
                                               "@string": [
                                                 "r"
-                                              ],
-                                              "@class": "Process2000ProcessRightString"
+                                              ]
                                             }
                                           }
                                         }
@@ -982,17 +963,14 @@
                                 },
                                 {
                                   "StringSensor": {
-                                    "@description": "touch to activate",
                                     "@DEF": "Process2000ProcessRightSensor",
-                                    "@enabled": false,
-                                    "@class": "Process2000ProcessRightSensor"
+                                    "@enabled": false
                                   }
                                 },
                                 {
                                   "TouchSensor": {
                                     "@description": "touch to activate",
-                                    "@DEF": "Process2000ProcessRightTouch",
-                                    "@class": "Process2000ProcessRightTouch"
+                                    "@DEF": "Process2000ProcessRightTouch"
                                   }
                                 }
                               ]
@@ -1100,8 +1078,7 @@
                                               "@DEF": "Process2000ProcessUpString",
                                               "@string": [
                                                 "u"
-                                              ],
-                                              "@class": "Process2000ProcessUpString"
+                                              ]
                                             }
                                           }
                                         }
@@ -1111,17 +1088,14 @@
                                 },
                                 {
                                   "StringSensor": {
-                                    "@description": "touch to activate",
                                     "@DEF": "Process2000ProcessUpSensor",
-                                    "@enabled": false,
-                                    "@class": "Process2000ProcessUpSensor"
+                                    "@enabled": false
                                   }
                                 },
                                 {
                                   "TouchSensor": {
                                     "@description": "touch to activate",
-                                    "@DEF": "Process2000ProcessUpTouch",
-                                    "@class": "Process2000ProcessUpTouch"
+                                    "@DEF": "Process2000ProcessUpTouch"
                                   }
                                 }
                               ]
@@ -1206,7 +1180,7 @@
                                   }
                                 },
                                 {
-                                  "#comment": "<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor description='touch to activate' DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>"
+                                  "#comment": "<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>"
                                 }
                               ]
                             }
@@ -1263,8 +1237,7 @@
                                           },
                                           "-geometry": {
                                             "Text": {
-                                              "@DEF": "Process2000ProcessCenterString",
-                                              "@class": "Process2000ProcessCenterString"
+                                              "@DEF": "Process2000ProcessCenterString"
                                             }
                                           }
                                         }
@@ -1274,17 +1247,14 @@
                                 },
                                 {
                                   "StringSensor": {
-                                    "@description": "touch to activate",
                                     "@DEF": "Process2000ProcessCenterSensor",
-                                    "@enabled": false,
-                                    "@class": "Process2000ProcessCenterSensor"
+                                    "@enabled": false
                                   }
                                 },
                                 {
                                   "TouchSensor": {
                                     "@description": "touch to activate",
-                                    "@DEF": "Process2000ProcessCenterTouch",
-                                    "@class": "Process2000ProcessCenterTouch"
+                                    "@DEF": "Process2000ProcessCenterTouch"
                                   }
                                 }
                               ]
@@ -1318,8 +1288,7 @@
                           "function set_rightstring(rightstr) {",
                           "\trightlines = new MFString(rightstr);",
                           "}"
-                        ],
-                        "@class": "Process2000ProcessRightSingleToMultiString"
+                        ]
                       }
                     },
                     {
@@ -1347,8 +1316,7 @@
                           "function set_upstring(upstr) {",
                           "\tuplines = new MFString(upstr);",
                           "}"
-                        ],
-                        "@class": "Process2000ProcessUpSingleToMultiString"
+                        ]
                       }
                     },
                     {
@@ -1376,8 +1344,7 @@
                           "function set_centerstring(centerstr) {",
                           "\tcenterlines = new MFString(centerstr);",
                           "}"
-                        ],
-                        "@class": "Process2000ProcessCenterSingleToMultiString"
+                        ]
                       }
                     },
                     {
@@ -1453,8 +1420,7 @@
                       }
                     }
                   ],
-                  "@DEF": "Process20002000",
-                  "@class": "Process20002000"
+                  "@DEF": "Process20002000"
                 }
               }
             ]
@@ -1655,8 +1621,7 @@
                                                     1,
                                                     1,
                                                     1
-                                                  ],
-                                                  "@class": "Process3000ProcessMaterialLightBlue"
+                                                  ]
                                                 }
                                               }
                                             }
@@ -1666,8 +1631,7 @@
                                               "@DEF": "Process3000ProcessRightString",
                                               "@string": [
                                                 "r"
-                                              ],
-                                              "@class": "Process3000ProcessRightString"
+                                              ]
                                             }
                                           }
                                         }
@@ -1677,17 +1641,14 @@
                                 },
                                 {
                                   "StringSensor": {
-                                    "@description": "touch to activate",
                                     "@DEF": "Process3000ProcessRightSensor",
-                                    "@enabled": false,
-                                    "@class": "Process3000ProcessRightSensor"
+                                    "@enabled": false
                                   }
                                 },
                                 {
                                   "TouchSensor": {
                                     "@description": "touch to activate",
-                                    "@DEF": "Process3000ProcessRightTouch",
-                                    "@class": "Process3000ProcessRightTouch"
+                                    "@DEF": "Process3000ProcessRightTouch"
                                   }
                                 }
                               ]
@@ -1795,8 +1756,7 @@
                                               "@DEF": "Process3000ProcessUpString",
                                               "@string": [
                                                 "u"
-                                              ],
-                                              "@class": "Process3000ProcessUpString"
+                                              ]
                                             }
                                           }
                                         }
@@ -1806,17 +1766,14 @@
                                 },
                                 {
                                   "StringSensor": {
-                                    "@description": "touch to activate",
                                     "@DEF": "Process3000ProcessUpSensor",
-                                    "@enabled": false,
-                                    "@class": "Process3000ProcessUpSensor"
+                                    "@enabled": false
                                   }
                                 },
                                 {
                                   "TouchSensor": {
                                     "@description": "touch to activate",
-                                    "@DEF": "Process3000ProcessUpTouch",
-                                    "@class": "Process3000ProcessUpTouch"
+                                    "@DEF": "Process3000ProcessUpTouch"
                                   }
                                 }
                               ]
@@ -1901,7 +1858,7 @@
                                   }
                                 },
                                 {
-                                  "#comment": "<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor description='touch to activate' DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>"
+                                  "#comment": "<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>"
                                 }
                               ]
                             }
@@ -1958,8 +1915,7 @@
                                           },
                                           "-geometry": {
                                             "Text": {
-                                              "@DEF": "Process3000ProcessCenterString",
-                                              "@class": "Process3000ProcessCenterString"
+                                              "@DEF": "Process3000ProcessCenterString"
                                             }
                                           }
                                         }
@@ -1969,17 +1925,14 @@
                                 },
                                 {
                                   "StringSensor": {
-                                    "@description": "touch to activate",
                                     "@DEF": "Process3000ProcessCenterSensor",
-                                    "@enabled": false,
-                                    "@class": "Process3000ProcessCenterSensor"
+                                    "@enabled": false
                                   }
                                 },
                                 {
                                   "TouchSensor": {
                                     "@description": "touch to activate",
-                                    "@DEF": "Process3000ProcessCenterTouch",
-                                    "@class": "Process3000ProcessCenterTouch"
+                                    "@DEF": "Process3000ProcessCenterTouch"
                                   }
                                 }
                               ]
@@ -2013,8 +1966,7 @@
                           "function set_rightstring(rightstr) {",
                           "\trightlines = new MFString(rightstr);",
                           "}"
-                        ],
-                        "@class": "Process3000ProcessRightSingleToMultiString"
+                        ]
                       }
                     },
                     {
@@ -2042,8 +1994,7 @@
                           "function set_upstring(upstr) {",
                           "\tuplines = new MFString(upstr);",
                           "}"
-                        ],
-                        "@class": "Process3000ProcessUpSingleToMultiString"
+                        ]
                       }
                     },
                     {
@@ -2071,8 +2022,7 @@
                           "function set_centerstring(centerstr) {",
                           "\tcenterlines = new MFString(centerstr);",
                           "}"
-                        ],
-                        "@class": "Process3000ProcessCenterSingleToMultiString"
+                        ]
                       }
                     },
                     {
@@ -2148,8 +2098,7 @@
                       }
                     }
                   ],
-                  "@DEF": "Process30003000",
-                  "@class": "Process30003000"
+                  "@DEF": "Process30003000"
                 }
               }
             ]
