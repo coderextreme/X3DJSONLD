@@ -109,6 +109,12 @@
 	    updateXML(xml);
         }
 
+	function loadSubscene(selector, url) {
+                $.getJSON(url, function(json) {
+                        ConvertToX3DOM(json, "", document.querySelector(selector), url);
+                }).fail(function(jqXHR, textStatus, errorThrown) { alert('getJSON request failed! ' + textStatus + ' ' + errorThrown); });
+        }
+
         /*
          * appendX3DJSON2Selector
          * append to selector DOM created from X3D JSON.
