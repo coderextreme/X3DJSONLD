@@ -112,21 +112,21 @@ function processRoute(route, routecode, package) {
 	var toNode = route["@toNode"];
 	var toField = route["@toField"];
 	if (typeof package.find(toNode) === 'undefined') {
-		routecode.log('	if (!$(".'+toNode+'")) console.error("undefined '+toNode+'");');
+		routecode.log('	if (!$("[DEF='+toNode+'], [USE='+toNode+']")) console.error("undefined '+toNode+'");');
 		if (toField.indexOf("set_") === 0) {
-			var  to = '$(".'+toNode+'").attr("'+toField.substr(4)+'",';
+			var  to = '$("[DEF='+toNode+'], [USE='+toNode+']").attr("'+toField.substr(4)+'",';
 		} else {
-			var  to = '$(".'+toNode+'").attr("'+toField+'",';
+			var  to = '$("[DEF='+toNode+'], [USE='+toNode+']").attr("'+toField+'",';
 		}
 	} else {
 		var  to = 'X3DJSON.Object_' +toNode+'.'+toField+'(';
 	}
 	if (typeof package.find(fromNode) === 'undefined') {
-		routecode.log('	if (!$(".'+fromNode+'")) console.error("undefined '+fromNode+'");');
+		routecode.log('	if (!$("[DEF='+fromNode+'], [USE='+fromNode+']")) console.error("undefined '+fromNode+'");');
 		if (fromField.indexOf("_changed") > 0) {
-			var  from = '$(".'+fromNode+'").attr("'+fromField.substr(0, fromField.length-8)+'")';
+			var  from = '$("[DEF='+fromNode+'], [USE='+fromNode+']").attr("'+fromField.substr(0, fromField.length-8)+'")';
 		} else {
-			var  from = '$(".'+fromNode+'").attr("'+fromField+'")';
+			var  from = '$("[DEF='+fromNode+'], [USE='+fromNode+']").attr("'+fromField+'")';
 		}
 	} else {
 		var field = 'X3DJSON.Object_'+fromNode+'.'+fromField;
