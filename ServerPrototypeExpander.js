@@ -9,7 +9,7 @@ function searchForProtoDeclare(object, name) {
 	if (typeof object === "object") {
 		for (p in object) {
 			if (p === 'ProtoDeclare') {
-				console.log("looked at", object[p]["@name"])
+				console.log("looked at", object[p]["@name"]);
 				if (object[p]["@name"] === name) {
 					found = object;
 				}
@@ -27,20 +27,20 @@ function searchForProtoDeclare(object, name) {
 		}
 	}
 	if (typeof found !== 'undefined') {
-		console.log("defaulted to", found["ProtoDeclare"]["@name"])
+		console.log("defaulted to", found["ProtoDeclare"]["@name"]);
 	}
 	return found;
 }
 
 function loadedProto(data, object, name, protoname, appinfo, description, filename) {
 	if (typeof data !== 'undefined') {
-		console.log("searching for", name)
+		console.log("searching for", name);
 		try {
 			var newobj = searchForProtoDeclare(JSON.parse(data), protoname);
 			for (var p in newobj) {
 				object[p] = newobj[p];
 			}
-			console.log("found", newobj[p]["@name"])
+			console.log("found", newobj[p]["@name"]);
 			object[p]["@name"] = name;
 			object[p]["@appinfo"] = appinfo;
 			object[p]["@description"] = description;

@@ -1,0 +1,683 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "Scene": {
+        "-children":[
+          { "NavigationInfo":
+            {
+            }
+          },
+          { "#comment":"Images courtesy of Paul Debevec's Light Probe Image Gallery"
+          },
+          { "Background":
+            {
+              "@DEF":"background",
+              "@leftUrl":["cubemap/all_probes/beach_cross/beach_left.png"],
+              "@rightUrl":["cubemap/all_probes/beach_cross/beach_right.png"],
+              "@frontUrl":["cubemap/all_probes/beach_cross/beach_front.png"],
+              "@backUrl":["cubemap/all_probes/beach_cross/beach_back.png"],
+              "@topUrl":["cubemap/all_probes/beach_cross/beach_top.png"],
+              "@bottomUrl":["cubemap/all_probes/beach_cross/beach_bottom.png"]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@position":[0,0,40],
+              "@description":"Transparent rose"
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"Rose01",
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@DEF":"_01_-_Default",
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.7,0.7,0.7],
+                                "@specularColor":[0.5,0.5,0.5]
+                              }
+                            },
+                          "-texture":
+                            { "ComposedCubeMapTexture":
+                              {
+                                "-back":
+                                  { "ImageTexture":
+                                    {
+                                      "@DEF":"backShader",
+                                      "@url":["cubemap/all_probes/beach_cross/beach_back.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_back.png"]
+                                    }
+                                  },
+                                "-bottom":
+                                  { "ImageTexture":
+                                    {
+                                      "@DEF":"bottomShader",
+                                      "@url":["cubemap/all_probes/beach_cross/beach_bottom.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_bottom.png"]
+                                    }
+                                  },
+                                "-front":
+                                  { "ImageTexture":
+                                    {
+                                      "@DEF":"frontShader",
+                                      "@url":["cubemap/all_probes/beach_cross/beach_front.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_front.png"]
+                                    }
+                                  },
+                                "-left":
+                                  { "ImageTexture":
+                                    {
+                                      "@DEF":"leftShader",
+                                      "@url":["cubemap/all_probes/beach_cross/beach_left.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_left.png"]
+                                    }
+                                  },
+                                "-right":
+                                  { "ImageTexture":
+                                    {
+                                      "@DEF":"rightShader",
+                                      "@url":["cubemap/all_probes/beach_cross/beach_right.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_right.png"]
+                                    }
+                                  },
+                                "-top":
+                                  { "ImageTexture":
+                                    {
+                                      "@DEF":"topShader",
+                                      "@url":["cubemap/all_probes/beach_cross/beach_top.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_top.png"]
+                                    }
+                                  }
+                              }
+                            },
+                          "-shaders":[
+                            { "ComposedShader":
+                              {
+                                "@DEF":"ComposedShader",
+                                "@language":"GLSL",
+                                "field": [
+                                  {
+                                    "@name":"cubeMap",
+                                    "@type":"SFInt32",
+                                    "@accessType":"inputOutput",
+                                    "@value":0
+                                  },
+                                  {
+                                    "@name":"chromaticDispersion",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFVec3f",
+                                    "@value":[0.98,1.0,1.033]
+                                  },
+                                  {
+                                    "@name":"bias",
+                                    "@type":"SFFloat",
+                                    "@accessType":"inputOutput",
+                                    "@value":0.5
+                                  },
+                                  {
+                                    "@name":"scale",
+                                    "@type":"SFFloat",
+                                    "@accessType":"inputOutput",
+                                    "@value":0.5
+                                  },
+                                  {
+                                    "@name":"power",
+                                    "@type":"SFFloat",
+                                    "@accessType":"inputOutput",
+                                    "@value":2
+                                  },
+                                  {
+                                    "@name":"a",
+                                    "@type":"SFFloat",
+                                    "@accessType":"inputOutput",
+                                    "@value":10
+                                  },
+                                  {
+                                    "@name":"b",
+                                    "@type":"SFFloat",
+                                    "@accessType":"inputOutput",
+                                    "@value":1
+                                  },
+                                  {
+                                    "@name":"c",
+                                    "@type":"SFFloat",
+                                    "@accessType":"inputOutput",
+                                    "@value":20
+                                  },
+                                  {
+                                    "@name":"d",
+                                    "@type":"SFFloat",
+                                    "@accessType":"inputOutput",
+                                    "@value":20
+                                  },
+                                  {
+                                    "@name":"tdelta",
+                                    "@type":"SFFloat",
+                                    "@accessType":"inputOutput",
+                                    "@value":0
+                                  },
+                                  {
+                                    "@name":"pdelta",
+                                    "@type":"SFFloat",
+                                    "@accessType":"inputOutput",
+                                    "@value":0
+                                  }
+                                ],
+                                "-parts":[
+                                  { "ShaderPart":
+                                    {
+                                      "@type":"VERTEX",
+                                      "#sourceText":[
+"#ifdef GL_ES",
+"  precision highp float;",
+"#endif",
+"",
+"/* from https://en.wikibooks.org/wiki/GLSL_Programming/Blender/Reflecting_Surfaces */",
+"attribute vec3 position;",
+"attribute vec3 normal;",
+"attribute vec2 texcoord;",
+"",
+"",
+"uniform mat4 modelViewProjectionMatrix;",
+"uniform mat4 modelViewMatrix;",
+"uniform mat4 modelViewMatrixInverse;",
+"uniform mat4 normalMatrix;",
+"uniform mat4 viewMatrix; // world to view transformation",
+"uniform mat4 viewMatrixInverse; // view to world transformation",
+"",
+"uniform vec3 chromaticDispersion;",
+"uniform float bias;",
+"uniform float scale;",
+"uniform float power;",
+"uniform float a;",
+"uniform float b;",
+"uniform float c;",
+"uniform float d;",
+"uniform float tdelta;",
+"uniform float pdelta;",
+"",
+"varying vec3 viewDirection; // direction in world space ",
+"    // in which the viewer is looking",
+"varying vec3 normalDirection; // normal vector in world space ",
+"",
+"vec3 cart2sphere(vec3 p) {",
+"     float r = sqrt(p.x*p.x + p.y*p.y + p.z*p.z);",
+"     float theta = acos(p.y/r);",
+"     float phi = atan(p.z, p.x);",
+"     return vec3(r, theta, phi);",
+"}",
+"     ",
+"vec3 rose(vec3 p) {",
+"     float rho = a + b * cos(c * p.y + tdelta) * cos(d * p.z + pdelta);",
+"     float x = rho * cos(p.z) * cos(p.y);",
+"     float z = rho * cos(p.z) * sin(p.y);",
+"     float y = rho * sin(p.z);",
+"     return vec3(x, y, z);",
+"}",
+"",
+"vec3 rose_normal(vec3 p) {",
+"     /* convert cartesian position to spherical coordinates */",
+"     vec3 base = cart2sphere(p);",
+"     /* add a little to phi */",
+"     vec3 td = base + vec3(0.0, 0.0001, 0.0);",
+"     /* add a little to theta */",
+"     vec3 pd = base + vec3(0.0, 0.0, 0.0001);",
+"",
+"     /* convert back to cartesian coordinates */",
+"     vec3 br = rose(base);",
+"     vec3 bt = rose(td);",
+"     vec3 bp = rose(pd);",
+"",
+"     return normalize(cross(bt - br, bp - br));",
+"}",
+"",
+"vec4 rose_position(vec3 p) {",
+"\treturn vec4(rose(cart2sphere(p)), 1.0);",
+"\t/*return vec4(position, 1.0);*/",
+"}",
+"",
+"void main()",
+"{",
+"    vec4 positionInViewSpace = modelViewMatrix * rose_position(position);",
+"       // transformation of vertex from object coordinates ",
+"       // to view coordinates",
+"",
+"    vec4 viewDirectionInViewSpace = positionInViewSpace ",
+"       - vec4(0.0, 0.0, 1.0, 0.0);",
+"       // camera is always at (0,0,0,1) in view coordinates;",
+"       // this is the direction in which the viewer is looking ",
+"       // (not the direction to the viewer)",
+"    ",
+"    viewDirection = ",
+"       vec3(viewMatrixInverse * viewDirectionInViewSpace);",
+"       // transformation from view coordinates ",
+"       // to world coordinates",
+"       ",
+"    vec3 normalDirectionInViewSpace = ",
+"       mat3(normalMatrix) * rose_normal(position);",
+"       // transformation of normal from object coordinates ",
+"       // to view coordinates",
+"",
+"    normalDirection = normalize(vec3(",
+"       vec4(normalDirectionInViewSpace, 0.0) * viewMatrix));",
+"       // transformation of normal vector from view coordinates ",
+"       // to world coordinates with the transposed ",
+"       // (multiplication of the vector from the left) of ",
+"       // the inverse of viewMatrixInverse, which is viewMatrix",
+"    ",
+"    gl_Position = modelViewProjectionMatrix * rose_position(position);",
+"}"
+]
+                                    }
+                                  },
+                                  { "ShaderPart":
+                                    {
+                                      "@type":"FRAGMENT",
+                                      "#sourceText":[
+"#ifdef GL_ES",
+"  precision highp float;",
+"#endif",
+"",
+"varying vec3 viewDirection;",
+"varying vec3 normalDirection;",
+"uniform samplerCube cubeMap;",
+"uniform vec3 chromaticDispersion;",
+"",
+"void main()",
+"{",
+"    vec3 fragNormal = normalize(normalDirection);",
+"    vec3 reflectedDirection = reflect(viewDirection, fragNormal);",
+"    /*",
+"    vec3 redDirection = refract(viewDirection, fragNormal, chromaticDispersion.x);",
+"    vec3 greenDirection = refract(viewDirection, fragNormal, chromaticDispersion.y);",
+"    vec3 blueDirection = refract(viewDirection, fragNormal, chromaticDispersion.z);",
+"    float red = textureCube(cubeMap, redDirection).r;",
+"    float green = textureCube(cubeMap, greenDirection).g;",
+"    float blue = textureCube(cubeMap, greenDirection).b;",
+"    */",
+"",
+"    vec4 reflectedColor = textureCube(cubeMap, reflectedDirection);",
+"    /*vec4 refractedColor = vec4(red, green, blue, 1.0);*/",
+"    gl_FragColor = reflectedColor;",
+"    /*gl_FragColor = refractedColor;*/",
+"}"
+]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                    "-geometry":
+                      { "Sphere":
+                        {
+                          "@solid":false,
+                          "@radius":20
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Script":
+            {
+              "@DEF":"UrlSelector",
+              "@directOutput":true,
+              "field": [
+                {
+                  "@name":"frontUrls",
+                  "@type":"MFString",
+                  "@accessType":"initializeOnly",
+                  "@value":["cubemap/all_probes/beach_cross/beach_front.png","cubemap/all_probes/building_cross/building_front.png","cubemap/all_probes/campus_cross/campus_front.png","cubemap/all_probes/galileo_cross/galileo_front.png","cubemap/all_probes/grace_cross/grace_front.png","cubemap/all_probes/kitchen_cross/kitchen_front.png","cubemap/all_probes/rnl_cross/rnl_front.png","cubemap/all_probes/stpeters_cross/stpeters_front.png","cubemap/all_probes/uffizi_cross/uffizi_front.png"]
+                },
+                {
+                  "@name":"backUrls",
+                  "@type":"MFString",
+                  "@accessType":"initializeOnly",
+                  "@value":["cubemap/all_probes/beach_cross/beach_back.png","cubemap/all_probes/building_cross/building_back.png","cubemap/all_probes/campus_cross/campus_back.png","cubemap/all_probes/galileo_cross/galileo_back.png","cubemap/all_probes/grace_cross/grace_back.png","cubemap/all_probes/kitchen_cross/kitchen_back.png","cubemap/all_probes/rnl_cross/rnl_back.png","cubemap/all_probes/stpeters_cross/stpeters_back.png","cubemap/all_probes/uffizi_cross/uffizi_back.png"]
+                },
+                {
+                  "@name":"leftUrls",
+                  "@type":"MFString",
+                  "@accessType":"initializeOnly",
+                  "@value":["cubemap/all_probes/beach_cross/beach_left.png","cubemap/all_probes/building_cross/building_left.png","cubemap/all_probes/campus_cross/campus_left.png","cubemap/all_probes/galileo_cross/galileo_left.png","cubemap/all_probes/grace_cross/grace_left.png","cubemap/all_probes/kitchen_cross/kitchen_left.png","cubemap/all_probes/rnl_cross/rnl_left.png","cubemap/all_probes/stpeters_cross/stpeters_left.png","cubemap/all_probes/uffizi_cross/uffizi_left.png"]
+                },
+                {
+                  "@name":"rightUrls",
+                  "@type":"MFString",
+                  "@accessType":"initializeOnly",
+                  "@value":["cubemap/all_probes/beach_cross/beach_right.png","cubemap/all_probes/building_cross/building_right.png","cubemap/all_probes/campus_cross/campus_right.png","cubemap/all_probes/galileo_cross/galileo_right.png","cubemap/all_probes/grace_cross/grace_right.png","cubemap/all_probes/kitchen_cross/kitchen_right.png","cubemap/all_probes/rnl_cross/rnl_right.png","cubemap/all_probes/stpeters_cross/stpeters_right.png","cubemap/all_probes/uffizi_cross/uffizi_right.png"]
+                },
+                {
+                  "@name":"topUrls",
+                  "@type":"MFString",
+                  "@accessType":"initializeOnly",
+                  "@value":["cubemap/all_probes/beach_cross/beach_top.png","cubemap/all_probes/building_cross/building_top.png","cubemap/all_probes/campus_cross/campus_top.png","cubemap/all_probes/galileo_cross/galileo_top.png","cubemap/all_probes/grace_cross/grace_top.png","cubemap/all_probes/kitchen_cross/kitchen_top.png","cubemap/all_probes/rnl_cross/rnl_top.png","cubemap/all_probes/stpeters_cross/stpeters_top.png","cubemap/all_probes/uffizi_cross/uffizi_top.png"]
+                },
+                {
+                  "@name":"bottomUrls",
+                  "@type":"MFString",
+                  "@accessType":"initializeOnly",
+                  "@value":["cubemap/all_probes/beach_cross/beach_bottom.png","cubemap/all_probes/building_cross/building_bottom.png","cubemap/all_probes/campus_cross/campus_bottom.png","cubemap/all_probes/galileo_cross/galileo_bottom.png","cubemap/all_probes/grace_cross/grace_bottom.png","cubemap/all_probes/kitchen_cross/kitchen_bottom.png","cubemap/all_probes/rnl_cross/rnl_bottom.png","cubemap/all_probes/stpeters_cross/stpeters_bottom.png","cubemap/all_probes/uffizi_cross/uffizi_bottom.png"]
+                },
+                {
+                  "@name":"front_changed",
+                  "@type":"MFString",
+                  "@accessType":"outputOnly"
+                },
+                {
+                  "@name":"back_changed",
+                  "@type":"MFString",
+                  "@accessType":"outputOnly"
+                },
+                {
+                  "@name":"left_changed",
+                  "@type":"MFString",
+                  "@accessType":"outputOnly"
+                },
+                {
+                  "@name":"right_changed",
+                  "@type":"MFString",
+                  "@accessType":"outputOnly"
+                },
+                {
+                  "@name":"top_changed",
+                  "@type":"MFString",
+                  "@accessType":"outputOnly"
+                },
+                {
+                  "@name":"bottom_changed",
+                  "@type":"MFString",
+                  "@accessType":"outputOnly"
+                },
+                {
+                  "@name":"set_fraction",
+                  "@type":"SFFloat",
+                  "@accessType":"inputOnly"
+                },
+                {
+                  "@name":"old",
+                  "@type":"SFInt32",
+                  "@accessType":"inputOutput",
+                  "@value":-1
+                }
+              ],
+              "#sourceText":[
+"ecmascript:",
+"        function set_fraction( f, tm ) {",
+"            var side = Math.floor(f*frontUrls.length);",
+"            if (side > frontUrls.length-1) {",
+"                side = 0;",
+"            }",
+"            if (side != old) {",
+"                    Browser.print(f+\" \"+side);",
+"                    old = side;",
+"                    front_changed[0] = frontUrls[side];",
+"                    back_changed[0] = backUrls[side];",
+"                    left_changed[0] = leftUrls[side];",
+"                    right_changed[0] = rightUrls[side];",
+"                    top_changed[0] = topUrls[side];",
+"                    bottom_changed[0] = bottomUrls[side];",
+"            }",
+"        }"
+]
+            }
+          },
+          { "TimeSensor":
+            {
+              "@DEF":"Clock",
+              "@cycleInterval":45,
+              "@loop":true
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"Clock",
+              "@fromField":"fraction_changed",
+              "@toNode":"UrlSelector",
+              "@toField":"set_fraction"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"UrlSelector",
+              "@fromField":"front_changed",
+              "@toNode":"background",
+              "@toField":"frontUrl"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"UrlSelector",
+              "@fromField":"back_changed",
+              "@toNode":"background",
+              "@toField":"backUrl"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"UrlSelector",
+              "@fromField":"left_changed",
+              "@toNode":"background",
+              "@toField":"leftUrl"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"UrlSelector",
+              "@fromField":"right_changed",
+              "@toNode":"background",
+              "@toField":"rightUrl"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"UrlSelector",
+              "@fromField":"top_changed",
+              "@toNode":"background",
+              "@toField":"topUrl"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"UrlSelector",
+              "@fromField":"bottom_changed",
+              "@toNode":"background",
+              "@toField":"bottomUrl"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"UrlSelector",
+              "@fromField":"front_changed",
+              "@toNode":"frontShader",
+              "@toField":"url"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"UrlSelector",
+              "@fromField":"back_changed",
+              "@toNode":"backShader",
+              "@toField":"url"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"UrlSelector",
+              "@fromField":"left_changed",
+              "@toNode":"leftShader",
+              "@toField":"url"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"UrlSelector",
+              "@fromField":"right_changed",
+              "@toNode":"rightShader",
+              "@toField":"url"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"UrlSelector",
+              "@fromField":"top_changed",
+              "@toNode":"topShader",
+              "@toField":"url"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"UrlSelector",
+              "@fromField":"bottom_changed",
+              "@toNode":"bottomShader",
+              "@toField":"url"
+            }
+          },
+          { "Script":
+            {
+              "@DEF":"Animate",
+              "@directOutput":true,
+              "field": [
+                {
+                  "@name":"a",
+                  "@type":"SFFloat",
+                  "@accessType":"inputOutput",
+                  "@value":10
+                },
+                {
+                  "@name":"b",
+                  "@type":"SFFloat",
+                  "@accessType":"inputOutput",
+                  "@value":1
+                },
+                {
+                  "@name":"c",
+                  "@type":"SFFloat",
+                  "@accessType":"inputOutput",
+                  "@value":20
+                },
+                {
+                  "@name":"d",
+                  "@type":"SFFloat",
+                  "@accessType":"inputOutput",
+                  "@value":20
+                },
+                {
+                  "@name":"tdelta",
+                  "@type":"SFFloat",
+                  "@accessType":"inputOutput",
+                  "@value":0
+                },
+                {
+                  "@name":"pdelta",
+                  "@type":"SFFloat",
+                  "@accessType":"inputOutput",
+                  "@value":0
+                }
+              ],
+              "#sourceText":[
+"ecmascript:",
+"",
+"function set_fraction() {",
+"\tvar choice = Math.floor(Math.random() * 4);",
+"\tif (choice == 0) {",
+"\t\ta += Math.floor(Math.random() * 2) * 2 - 1;",
+"\t} else if (choice == 1) {",
+"\t\tb += Math.floor(Math.random() * 2) * 2 - 1;",
+"\t} else if (choice == 2) {",
+"\t\tc += Math.floor(Math.random() * 2) * 2 - 1;",
+"\t} else if (choice == 3) {",
+"\t\td += Math.floor(Math.random() * 2) * 2 - 1;",
+"\t}",
+"\ttdelta += 0.5;",
+"\tpdelta += 0.5;",
+"\tif (a < 1) {",
+"\t\ta = 10;",
+"\t}",
+"\tif (b < 1) {",
+"\t\tb = 4;",
+"\t}",
+"\tif (c < 1) {",
+"\t\tc = 4;",
+"\t}",
+"\tif (c > 20) {",
+"\t\tc = 4;",
+"\t}",
+"\tif (d < 1) {",
+"\t\td = 4;",
+"\t}",
+"\tif (d > 20) {",
+"\t\td = 4;",
+"\t}",
+"\t// console.log(a, b, c, d, tdelta, pdelta);",
+"}"
+]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"Clock",
+              "@fromField":"fraction_changed",
+              "@toNode":"Animate",
+              "@toField":"set_fraction"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"Animate",
+              "@fromField":"a",
+              "@toNode":"ComposedShader",
+              "@toField":"a"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"Animate",
+              "@fromField":"b",
+              "@toNode":"ComposedShader",
+              "@toField":"b"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"Animate",
+              "@fromField":"c",
+              "@toNode":"ComposedShader",
+              "@toField":"c"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"Animate",
+              "@fromField":"d",
+              "@toNode":"ComposedShader",
+              "@toField":"d"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"Animate",
+              "@fromField":"pdelta",
+              "@toNode":"ComposedShader",
+              "@toField":"pdelta"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"Animate",
+              "@fromField":"tdelta",
+              "@toNode":"ComposedShader",
+              "@toField":"tdelta"
+            }
+          }
+        ]
+    }
+  }
+}

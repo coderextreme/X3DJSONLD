@@ -216,7 +216,7 @@ function parseXML(xmlfile) {
 		handleObject(result);
 		zap(result);
 		addContainerField(result);
-		handleContainerField([], result, "X3D", "X3D")
+		handleContainerField([], result, "X3D", "X3D");
 		routes(result);
 		proto(result);
 		// arrayToObj(result);
