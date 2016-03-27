@@ -81,7 +81,7 @@ function CreateElement(key, x3djsonNS) {
 			child = document.createElement(key);
 		}
 	}
-	if (containerFields.length > 1 && containerFields[0] !== 'material' && containerFields[0] !== 'geometry') {
+	if (containerFields.length > 1) {
 		child.setAttribute('containerField', containerFields[0]);
 	}
 	return child;
@@ -115,7 +115,7 @@ function ConvertObject(key, object, element, path) {
 		} else if (key === '#sourceText') {
 			CDATACreateFunction(document, element, object[key].join("\n"));
 		} else {
-			if (key === 'connect' || key === 'fieldValue' || key === 'field' || key === 'meta') {
+			if (key === 'connect' || key === 'fieldValue' || key === 'field' || key === 'meta' || key === 'component') {
 				for (var childkey in object[key]) {  // for each field
 					if (key === 'meta') {
 						// console.error("Examining ", childkey, object[key].length);

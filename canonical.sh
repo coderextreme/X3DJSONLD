@@ -2,7 +2,6 @@
 
 for i in "$@"
 do
-	echo $i >> diffresults.txt
 	export DIRNAME=`dirname "$i"`
  	export ORIGINAL=`basename "$i" -roundtrip.x3d`.x3d
  	export CANON=`basename "$i" -roundtrip.x3d`Canonical.x3d
