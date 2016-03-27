@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
-<X3D profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd' xmlns:xsd='http://www.web3d.org/specifications/x3d-namespace'>
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
       <Scene>
         <Viewpoint position='0 5 100' description='Switch background and cubemap texture'/>
 	<Background DEF="background" leftUrl='"cubemap/all_probes/beach_cross/beach_left.png" "http://coderextreme.net/cubemap/all_probes/beach_cross/beach_left.png"' rightUrl='"cubemap/all_probes/beach_cross/beach_right.png" "http://coderextreme.net/cubemap/all_probes/beach_cross/beach_right.png"' frontUrl='"cubemap/all_probes/beach_cross/beach_front.png" "http://coderextreme.net/cubemap/all_probes/beach_cross/beach_front.png"' backUrl='"cubemap/all_probes/beach_cross/beach_back.png" "http://coderextreme.net/cubemap/all_probes/beach_cross/beach_back.png"' topUrl='"cubemap/all_probes/beach_cross/beach_top.png" "http://coderextreme.net/cubemap/all_probes/beach_cross/beach_top.png"' bottomUrl='"cubemap/all_probes/beach_cross/beach_bottom.png" "http://coderextreme.net/cubemap/all_probes/beach_cross/beach_bottom.png"'></Background> 

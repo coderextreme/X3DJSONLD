@@ -119,7 +119,7 @@ function getEnv(scope, field) {
 	// console.error("gete", scope, field);
 	var obj = nodeField[scope+field];
 	if (typeof obj === 'undefined') {
-		obj = [nodeField[scope+'__generic__field__'], field]
+		obj = [nodeField[scope+'__generic__field__'], field];
 	}
 	return obj;
 }

@@ -22,7 +22,7 @@ if (typeof Browser === 'undefined') {
 		getDocument : function() {
 			return document;
 		}
-	}
+	};
 }
 
 var x3djsonNS;
@@ -40,6 +40,9 @@ function setEncoding(enc) {
 
 // Load X3D JSON into web page
 
+var containerFields = [];
+
+
 function elementSetAttribute(element, key, value) {
 	if (key === 'SON schema') {
 		// JSON Schema
@@ -53,6 +56,8 @@ function elementSetAttribute(element, key, value) {
 
 function ConvertChildren(parentkey, object, element, path) {
 	var key;
+	containerFields.unshift(parentkey.substr(1));
+
 	for (key in object) {
 		if (typeof object[key] === 'object') {
 			if (isNaN(parseInt(key))) {
@@ -62,20 +67,40 @@ function ConvertChildren(parentkey, object, element, path) {
 			}
 		}
 	}
+	containerFields.shift();
 }
 
 function CreateElement(key, x3djsonNS) {
+	var child = null;
 	if (typeof x3djsonNS === 'undefined') {
-		return document.createElement(key);
+		child = document.createElement(key);
 	} else {
-		var child = document.createElementNS(x3djsonNS, key);
+		child = document.createElementNS(x3djsonNS, key);
 		if (child == null || typeof child === 'undefined') {
 			console.error('Trouble creating element for', key);
 			child = document.createElement(key);
 		}
-		return child;
 	}
+	if (containerFields.length > 1 && containerFields[0] !== 'material' && containerFields[0] !== 'geometry') {
+		child.setAttribute('containerField', containerFields[0]);
+	}
+	return child;
 }
+
+function CDATACreateFunction(document, element, str) {
+	// for script nodes
+	var open = document.createTextNode('<![CDATA[');
+	var child = document.createTextNode(str.replace(/\&lt;/g, '<').replace(/&gt;/g, '>'));
+	var close = document.createTextNode(']]>');
+	element.appendChild(open);
+	element.appendChild(child);
+	element.appendChild(close);
+}
+
+function setCDATACreateFunction(fnc) {
+	CDATACreateFunction = fnc;
+}
+
 function ConvertObject(key, object, element, path) {
 	if (object !== null && typeof object[key] === 'object') {
 		if (key.substr(0,1) === '@') {
@@ -84,19 +109,22 @@ function ConvertObject(key, object, element, path) {
 			ConvertChildren(key, object[key], element, path);
 		} else if (key === '#comment') {
 			for (var c in object[key]) {
-				var child = document.createComment(object[key][c]);
+				var child = document.createComment(CommentStringToXML(object[key][c]));
 				element.appendChild(child);
 			}
 		} else if (key === '#sourceText') {
-			var open = document.createTextNode("<![CDATA[");
-			var child = document.createTextNode(object[key].join("\n"));
-			var close = document.createTextNode("]]>");
-			element.appendChild(open);
-			element.appendChild(child);
-			element.appendChild(close);
+			CDATACreateFunction(document, element, object[key].join("\n"));
 		} else {
 			if (key === 'connect' || key === 'fieldValue' || key === 'field' || key === 'meta') {
 				for (var childkey in object[key]) {  // for each field
+					if (key === 'meta') {
+						// console.error("Examining ", childkey, object[key].length);
+						if (parseInt(childkey) + 3 >= object[key].length) {
+							// get rid of meta stuff added by stylesheet
+							// console.error("Bailing");
+							break;
+						}
+					}
 					if (typeof object[key][childkey] === 'object') {
 						var child = CreateElement(key, x3djsonNS);
 						ConvertToX3DOM(object[key][childkey], childkey, child, path);
@@ -112,6 +140,24 @@ function ConvertObject(key, object, element, path) {
 			}
 		}
 	}
+}
+
+function CommentStringToXML(str) {
+	str = str.replace(/[\u0080-\uFFFF]/g, 
+		function (v) {return '&#'+v.charCodeAt()+';';}
+	);
+	str = str.replace(/\\"/g, '"');
+	return str;
+}
+
+function JSONStringToXML(str) {
+	str = str.replace(/[\u0080-\uFFFF]/g, 
+		function (v) {return '&#'+v.charCodeAt()+';';}
+	);
+	// replace  \'s first
+	str = str.replace(/\\/g, '\\\\');
+	str = str.replace(/"/g, '\\"');
+	return str;
 }
 
 function ConvertToX3DOM(object, parentkey, element, path) {
@@ -152,9 +198,10 @@ function ConvertToX3DOM(object, parentkey, element, path) {
 			elementSetAttribute(element, key.substr(1),object[key]);
 		} else if (typeof object[key] === 'string') {
 			if (key !== '#comment') {
-				elementSetAttribute(element, key.substr(1),object[key]);
+				// ordinary string attributes
+				elementSetAttribute(element, key.substr(1), JSONStringToXML(object[key]));
 			} else {
-				var child = document.createComment(object[key]);
+				var child = document.createComment(CommentStringToXML(object[key]));
 				element.appendChild(child);
 			}
 		} else if (typeof object[key] === 'boolean') {
@@ -167,12 +214,13 @@ function ConvertToX3DOM(object, parentkey, element, path) {
 		if (parentkey.substr(0,1) === '@') {
 			if (arrayOfStrings) {
 				arrayOfStrings = false;
+				for (var str in localArray) {
+					localArray[str] = JSONStringToXML(localArray[str]);
+				}
                                 if (parentkey === '@url' || parentkey.indexOf("Url") === parentkey.length - 3) {
 					var url;
 					// No longer need to split
-					// localArray = localArray[0].split(/" "/);
 					for (url in localArray) {
-						// localArray[url].replace(/"/g, '');
 						if (localArray[url].indexOf("http://") === 0
 						 || localArray[url].indexOf("https://") === 0) {
 						} else if (localArray[url].indexOf("urn:web3d:media:textures/panoramas/") === 0) {
@@ -193,7 +241,7 @@ function ConvertToX3DOM(object, parentkey, element, path) {
 							
                                        }
 					// if URL
-					console.error("Loading URL",'"'+localArray.join('" "')+'"');
+					// console.error("Loading URL",'"'+localArray.join('" "')+'"');
 					elementSetAttribute(element, parentkey.substr(1),'"'+localArray.join('" "')+'"');
                                 } else {
 					// if string array
@@ -267,8 +315,9 @@ if (typeof module === 'object')  {
 		ConvertToX3DOM : ConvertToX3DOM,
 		fixXML : fixXML,
 		getEncoding : getEncoding,
+		setCDATACreateFunction : setCDATACreateFunction,
 		setDocument : function(doc) {
 			document = doc;
 		}
-	}
+	};
 }

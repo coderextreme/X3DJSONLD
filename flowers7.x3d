@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
-<X3D profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd' xmlns:xsd='http://www.web3d.org/specifications/x3d-namespace'>
+<X3D profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
   <Scene>
     <NavigationInfo type="&quot;EXAMINE&quot; &quot;ANY&quot;"></NavigationInfo>
 <!-- Images courtesy of Paul Debevec's Light Probe Image Gallery -->
-	<Background id="background" leftUrl='"cubemap/all_probes/beach_cross/beach_left.png"' rightUrl='"cubemap/all_probes/beach_cross/beach_right.png"' frontUrl='"cubemap/all_probes/beach_cross/beach_front.png"' backUrl='"cubemap/all_probes/beach_cross/beach_back.png"' topUrl='"cubemap/all_probes/beach_cross/beach_top.png"' bottomUrl='"cubemap/all_probes/beach_cross/beach_bottom.png"'></Background> 
-	<Viewpoint position='0 0 40' description="Transparent rose" zNear='0' ></Viewpoint>
+	<Background DEF="background" leftUrl='"cubemap/all_probes/beach_cross/beach_left.png"' rightUrl='"cubemap/all_probes/beach_cross/beach_right.png"' frontUrl='"cubemap/all_probes/beach_cross/beach_front.png"' backUrl='"cubemap/all_probes/beach_cross/beach_back.png"' topUrl='"cubemap/all_probes/beach_cross/beach_top.png"' bottomUrl='"cubemap/all_probes/beach_cross/beach_bottom.png"'></Background> 
+	<Viewpoint position='0 0 40' description="Transparent rose"></Viewpoint>
 	<Transform DEF='Rose01' >
 	<Shape>
 	<Appearance DEF='_01_-_Default' >
         <Material diffuseColor=".7 .7 .7" specularColor=".5 .5 .5" ></Material>
                 <ComposedCubeMapTexture>
-                    <ImageTexture id="backShader" containerField="back" url='"cubemap/all_probes/beach_cross/beach_back.png"' ></ImageTexture>
-                    <ImageTexture id="bottomShader" containerField="bottom" url='"cubemap/all_probes/beach_cross/beach_bottom.png"' ></ImageTexture>
-                    <ImageTexture id="frontShader" containerField="front" url='"cubemap/all_probes/beach_cross/beach_front.png"' ></ImageTexture>
-                    <ImageTexture id="leftShader" containerField="left" url='"cubemap/all_probes/beach_cross/beach_left.png"' ></ImageTexture>
-                    <ImageTexture id="rightShader" containerField="right" url='"cubemap/all_probes/beach_cross/beach_right.png"' ></ImageTexture>
-                    <ImageTexture id="topShader" containerField="top" url='"cubemap/all_probes/beach_cross/beach_top.png"' ></ImageTexture>
+                    <ImageTexture DEF="backShader" containerField="back" url='"cubemap/all_probes/beach_cross/beach_back.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_back.png"' ></ImageTexture>
+                    <ImageTexture DEF="bottomShader" containerField="bottom" url='"cubemap/all_probes/beach_cross/beach_bottom.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_bottom.png"' ></ImageTexture>
+                    <ImageTexture DEF="frontShader" containerField="front" url='"cubemap/all_probes/beach_cross/beach_front.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_front.png"' ></ImageTexture>
+                    <ImageTexture DEF="leftShader" containerField="left" url='"cubemap/all_probes/beach_cross/beach_left.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_left.png"' ></ImageTexture>
+                    <ImageTexture DEF="rightShader" containerField="right" url='"cubemap/all_probes/beach_cross/beach_right.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_right.png"' ></ImageTexture>
+                    <ImageTexture DEF="topShader" containerField="top" url='"cubemap/all_probes/beach_cross/beach_top.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_top.png"' ></ImageTexture>
                 </ComposedCubeMapTexture>
 		<ComposedShader DEF='ComposedShader' language="GLSL">
                   <field name='cubeMap' type='SFInt32' accessType='inputOutput' value='0'></field>
@@ -25,12 +25,12 @@
                   <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field>
                   <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field>
                   <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field>
-                  <field id="a" name='a' type='SFFloat' accessType='inputOutput' value='10'></field>
-                  <field id="b" name='b' type='SFFloat' accessType='inputOutput' value='1'></field>
-                  <field id="c" name='c' type='SFFloat' accessType='inputOutput' value='20'></field>
-                  <field id="d" name='d' type='SFFloat' accessType='inputOutput' value='20'></field>
-                  <field id="tdelta" name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
-                  <field id="pdelta" name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
+                  <field name='a' type='SFFloat' accessType='inputOutput' value='10'></field>
+                  <field name='b' type='SFFloat' accessType='inputOutput' value='1'></field>
+                  <field name='c' type='SFFloat' accessType='inputOutput' value='20'></field>
+                  <field name='d' type='SFFloat' accessType='inputOutput' value='20'></field>
+                  <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
+                  <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
                   <ShaderPart containerField='parts' type='VERTEX'>
 #ifdef GL_ES
   precision highp float;
@@ -164,7 +164,7 @@ void main()
 </ShaderPart>
                 </ComposedShader>
 		</Appearance>
-		<Sphere subdivision="512,512" solid="false" radius='20'></Sphere>
+		<Sphere solid="false" radius='20'></Sphere>
 	</Shape>
       </Transform>
           <Script DEF='UrlSelector' directOutput='true'>
@@ -223,6 +223,8 @@ ecmascript:
                   <field name='d' type='SFFloat' accessType='inputOutput' value='20'></field>
                   <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
                   <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
+<![CDATA[
+ecmascript:
 
 function set_fraction() {
 	var choice = Math.floor(Math.random() * 4);
@@ -257,6 +259,8 @@ function set_fraction() {
 	}
 	// console.log(a, b, c, d, tdelta, pdelta);
 }
+]]>
+</Script>
             <ROUTE fromNode='Clock' fromField='fraction_changed' toNode='Animate' toField='set_fraction'/>
             <ROUTE fromNode='Animate' fromField='a' toNode='ComposedShader' toField='a'/>
             <ROUTE fromNode='Animate' fromField='b' toNode='ComposedShader' toField='b'/>

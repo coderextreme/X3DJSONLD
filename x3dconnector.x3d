@@ -65,7 +65,7 @@
         function set_endpoint(val,t){
             recompute(startnode.translation,val);
         }
-        ]]>/>
+        ]]>
     </Script>
     <ROUTE fromNode='G1' fromField='translation' toNode='S1' toField='set_startpoint'/>
     <ROUTE fromNode='G2' fromField='translation' toNode='S1' toField='set_endpoint'/>
