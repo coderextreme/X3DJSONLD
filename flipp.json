@@ -94,6 +94,13 @@
               "@DEF":"trans",
               "@rotation":[1,0,0,0.78],
               "-children":[
+		 { "Inline":
+                  {
+                    "@DEF":"MyBox",
+		    "@load": true,
+                    "@url":["Box.json"]
+                  }
+                },
                 { "Shape":
                   {
                     "-appearance":

@@ -43,6 +43,13 @@
                             ]
                         },
                         "-children":[
+				{ "Inline":
+				  {
+				    "@DEF":"MyBox",
+				    "@load": true,
+				    "@url":["http://localhost:3000/Box.json"]
+				  }
+				},
                           { "Shape":
                             {
                               "-geometry":
