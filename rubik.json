@@ -17,6 +17,13 @@
               "@position":[0,0,12]
             }
           },
+	  { "Inline":
+		{
+		  "@DEF":"MyBox",
+		  "@load": true,
+		   "@url":["http://coderextreme.net/X3DJSONLD/Box.json"]
+		}
+          },
           { "ProtoDeclare":
             {
               "@name":"sphere",
@@ -43,13 +50,6 @@
                             ]
                         },
                         "-children":[
-				{ "Inline":
-				  {
-				    "@DEF":"MyBox",
-				    "@load": true,
-				    "@url":["http://coderextreme.net/X3DJSONLD/Box.json"]
-				  }
-				},
                           { "Shape":
                             {
                               "-geometry":
