@@ -89,18 +89,18 @@
             {
             }
           },
-          { "Transform":
-            {
-              "@DEF":"trans",
-              "@rotation":[1,0,0,0.78],
-              "-children":[
-		 { "Inline":
+          { "Inline":
                   {
                     "@DEF":"MyBox",
 		    "@load": true,
                     "@url":["Box.json"]
                   }
-                },
+          },
+          { "Transform":
+            {
+              "@DEF":"trans",
+              "@rotation":[1,0,0,0.78],
+              "-children":[
                 { "Shape":
                   {
                     "-appearance":
