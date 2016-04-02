@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "http://www.web3d.org/specifications/x3d-3.0.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Interchange" version="3.0" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.0.xsd"><head><meta name="title" content="Box.x3d"></meta>
+<meta name="description" content="Simple Box shape used as test scene for GeoInline/Inline loading and unloading."></meta>
+<meta name="translator" content="Xeena VRML importer, X3D-Edit 3.1, http://www.web3d.org/x3d/content/README.X3D-Edit.html"></meta>
+<meta name="translated" content="22 April 2003"></meta>
+<meta name="modified" content="22 December 2011"></meta>
+<meta name="creator" content="GeoVRML Working Group"></meta>
+<meta name="reference" content="http://www.web3d.org/x3d/content/examples/Basic/Geospatial/A3_GeoInline.x3d"></meta>
+<meta name="identifier" content="http://www.web3d.org/x3d/content/examples/Basic/Geospatial/Box.x3d"></meta>
+<meta name="generator" content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"></meta>
+<meta name="generator" content="Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"></meta>
+<meta name="license" content="../license.html"></meta>
+</head>
+<Scene><Transform translation="-1 0 0"><Shape containerField="children"><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 1 0"></Material>
+</Appearance>
+<Box containerField="geometry"></Box>
+</Shape>
+</Transform>
+</Scene>
+</X3D>
