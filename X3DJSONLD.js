@@ -81,7 +81,7 @@ function CreateElement(key, x3djsonNS) {
 			child = document.createElement(key);
 		}
 	}
-	if (containerFields.length > 1) {
+	if (containerFields.length > 1 && containerFields[0] !== 'shaders') {
 		child.setAttribute('containerField', containerFields[0]);
 	}
 	return child;
@@ -112,6 +112,29 @@ function ConvertObject(key, object, element, path) {
 				var child = document.createComment(CommentStringToXML(object[key][c]));
 				element.appendChild(child);
 			}
+/*
+		} else if (key === 'Inline') {
+			var localArray =object[key]["@url"];
+			processURLs(localArray, path);
+			for (var i in localArray) {
+				var url = localArray[i];
+				var tail = url.length - url.lastIndexOf(".json");
+				if (tail === 5 && object[key]["@load"]) {
+					$.getJSON(url, function(json) {
+						console.error("Loaded"+json);
+						var child = document.createDocumentFragment();
+						ConvertToX3DOM(json, "-children", child, path);
+						element.appendChild(child);
+						element.appendChild(document.createTextNode("\n"));
+					});
+				} else {
+					var child = CreateElement(key, x3djsonNS);
+					ConvertToX3DOM(object[key], key, child, path);
+					element.appendChild(child);
+					element.appendChild(document.createTextNode("\n"));
+				}
+			}
+*/					
 		} else if (key === '#sourceText') {
 			CDATACreateFunction(document, element, object[key].join("\n"));
 		} else {
@@ -158,6 +181,31 @@ function JSONStringToXML(str) {
 	str = str.replace(/\\/g, '\\\\');
 	str = str.replace(/"/g, '\\"');
 	return str;
+}
+
+function processURLs(localArray, path) {
+	var url;
+	// No longer need to split
+	for (url in localArray) {
+		if (localArray[url].indexOf("http://") === 0
+		 || localArray[url].indexOf("https://") === 0) {
+		} else if (localArray[url].indexOf("urn:web3d:media:textures/panoramas/") === 0) {
+			var ls = localArray[url].lastIndexOf("/");
+			if (ls > 0) {
+				localArray[url] = 'examples/Basic/UniversalMediaPanoramas/'+localArray[url].substring(ls+1);
+			}
+
+		} else {
+			var pe = path.lastIndexOf('/');
+			var pc = path.substring(0, pe);
+			localArray[url] = pc+'/'+localArray[url];
+			if (localArray[url].indexOf('/') === 0) {
+				// no webroot absolute paths.  No /'s for cobweb shaders
+				localArray[url] = localArray[url].substring(1);
+			}
+		}
+			
+       }
 }
 
 function ConvertToX3DOM(object, parentkey, element, path) {
@@ -218,29 +266,7 @@ function ConvertToX3DOM(object, parentkey, element, path) {
 					localArray[str] = JSONStringToXML(localArray[str]);
 				}
                                 if (parentkey === '@url' || parentkey.indexOf("Url") === parentkey.length - 3) {
-					var url;
-					// No longer need to split
-					for (url in localArray) {
-						if (localArray[url].indexOf("http://") === 0
-						 || localArray[url].indexOf("https://") === 0) {
-						} else if (localArray[url].indexOf("urn:web3d:media:textures/panoramas/") === 0) {
-							var ls = localArray[url].lastIndexOf("/");
-							if (ls > 0) {
-								localArray[url] = 'examples/Basic/UniversalMediaPanoramas/'+localArray[url].substring(ls+1);
-							}
-
-						} else {
-							var pe = path.lastIndexOf('/');
-							var pc = path.substring(0, pe);
-							localArray[url] = pc+'/'+localArray[url];
-						        if (localArray[url].indexOf('/') === 0) {
-								// no webroot absolute paths.  No /'s for cobweb shaders
-								localArray[url] = localArray[url].substring(1);
-							}
-						}
-							
-                                       }
-					// if URL
+					processURLs(localArray, path);
 					// console.error("Loading URL",'"'+localArray.join('" "')+'"');
 					elementSetAttribute(element, parentkey.substr(1),'"'+localArray.join('" "')+'"');
                                 } else {
