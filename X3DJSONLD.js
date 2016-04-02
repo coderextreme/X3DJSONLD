@@ -115,24 +115,27 @@ function ConvertObject(key, object, element, path) {
 				element.appendChild(child);
 			}
 		} else if (key === 'Inline') {
-			var localArray =object[key]["@url"];
+			var localArray = object[key]["@url"];
 			processURLs(localArray, path);
+			var isJson = false;
 			for (var i in localArray) {
 				var url = localArray[i];
 				var tail = url.length - url.lastIndexOf(".json");
 				if (tail === 5 && object[key]["@load"]) {
+					isJson = true;
 					$.getJSON(url, function(json) {
 						var child = document.createDocumentFragment();
 						ConvertToX3DOM(json, "-children", child, path);
 						element.appendChild(child);
 						element.appendChild(document.createTextNode("\n"));
 					});
-				} else {
-					var child = CreateElement(key, x3djsonNS);
-					ConvertToX3DOM(object[key], key, child, path);
-					element.appendChild(child);
-					element.appendChild(document.createTextNode("\n"));
 				}
+			}
+			if (!isJson) {
+				var child = CreateElement(key, x3djsonNS);
+				ConvertToX3DOM(object[key], key, child, path);
+				element.appendChild(child);
+				element.appendChild(document.createTextNode("\n"));
 			}
 		} else if (key === '#sourceText') {
 			CDATACreateFunction(document, element, object[key].join("\n"));
