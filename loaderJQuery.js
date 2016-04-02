@@ -31,7 +31,7 @@ function setVersion(version) {
 			var browser = cobwebWindow.X3D.getBrowser(cobwebEle);
 			browser.replaceWorld(browser.createX3DFromString(content));
 		} else {
-			console.error("Cobweb disabled.  Use Firefox.");
+			console.error("Cobweb disabled temporarily.  May work on next load");
 		}
         }
 
