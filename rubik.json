@@ -21,7 +21,7 @@
 		{
 		  "@DEF":"MyBox",
 		  "@load": true,
-		   "@url":["Box.json"]
+		   "@url":["http://coderextreme.net/X3DJSONLD/Box.json"]
 		}
           },
           { "ProtoDeclare":
