@@ -112,7 +112,6 @@ function ConvertObject(key, object, element, path) {
 				var child = document.createComment(CommentStringToXML(object[key][c]));
 				element.appendChild(child);
 			}
-/*
 		} else if (key === 'Inline') {
 			var localArray =object[key]["@url"];
 			processURLs(localArray, path);
@@ -135,7 +134,6 @@ function ConvertObject(key, object, element, path) {
 					element.appendChild(document.createTextNode("\n"));
 				}
 			}
-*/					
 		} else if (key === '#sourceText') {
 			CDATACreateFunction(document, element, object[key].join("\n"));
 		} else {
