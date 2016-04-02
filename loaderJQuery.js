@@ -17,7 +17,6 @@ function setVersion(version) {
 			// DISPLAY XML in X3DOM
 			$('#x3domxml').empty();
 			// Do this inner HTML so we can sneak script tag past JQuery (BAD BAD TODO)
-			console.log(xml);
 			$('#x3domxml').get()[0].innerHTML = xml.join("\n");
 	    	        $('textarea#xml').val(xml.join("\n"));
 		} else {
