@@ -120,8 +120,9 @@ function ConvertObject(key, object, element, path) {
 				var url = localArray[i];
 				var tail = url.length - url.lastIndexOf(".json");
 				if (tail === 5 && object[key]["@load"]) {
+					alert(url);
 					$.getJSON(url, function(json) {
-						console.error("Loaded"+json);
+						console.error(element.localName+" Loaded "+json);
 						var child = document.createDocumentFragment();
 						ConvertToX3DOM(json, "-children", child, path);
 						element.appendChild(child);
