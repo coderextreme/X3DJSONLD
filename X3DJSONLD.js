@@ -50,7 +50,9 @@ function elementSetAttribute(element, key, value) {
 		// encoding, UTF-8, UTF-16 or UTF-32
 		setEncoding(value);
 	} else {
-		element.setAttribute(key, value);
+		if (typeof element.setAttribute === 'function') {
+			element.setAttribute(key, value);
+		}
 	}
 }
 
@@ -119,9 +121,8 @@ function ConvertObject(key, object, element, path) {
 				var url = localArray[i];
 				var tail = url.length - url.lastIndexOf(".json");
 				if (tail === 5 && object[key]["@load"]) {
-					alert(url);
 					$.getJSON(url, function(json) {
-						console.error(element.localName+" Loaded "+json);
+						console.error(element.localName+" Loaded "+JSON.stringify(json));
 						var child = document.createDocumentFragment();
 						ConvertToX3DOM(json, "-children", child, path);
 						element.appendChild(child);
