@@ -202,6 +202,7 @@ function processURLs(localArray, path) {
 				// no webroot absolute paths.  No /'s for cobweb shaders
 				localArray[url] = localArray[url].substring(1);
 			}
+			console.error("Loading "+localArray[url]);
 		}
 			
        }
