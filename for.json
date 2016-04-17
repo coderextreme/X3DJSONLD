@@ -32,7 +32,7 @@
           },
           {
             "@name":"translated",
-            "@content":"16 April 2016"
+            "@content":"17 April 2016"
           },
           {
             "@name":"generator",
@@ -75,6 +75,14 @@
                         "-children":[
                           { "Shape":
                             {
+                              "-children":[
+                                { "#comment":"comment before Sphere"
+                                },
+                                { "#comment":"comment after Sphere"
+                                },
+                                { "#comment":"comment after Appearance"
+                                }
+                              ],
                               "-geometry":
                                 { "Sphere":
                                   {
@@ -83,6 +91,12 @@
                               "-appearance":
                                 { "Appearance":
                                   {
+                                    "-children":[
+                                      { "#comment":"comment before Material"
+                                      },
+                                      { "#comment":"comment after Material"
+                                      }
+                                    ],
                                     "-material":
                                       { "Material":
                                         {
