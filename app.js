@@ -15,7 +15,7 @@ path.resolve(__dirname + "/examples"),
 'junction',
  function (err) {
         if (err) {
-                console.log( err.code === 'EEXIST' ? "Go to the link above!\n" : err);
+                console.log( err.code === 'EEXIST' ? "listening on http://localhost:"+port+"\n" : err);
         }
   }
 );
@@ -107,6 +107,4 @@ app.get("*.json", function(req, res, next) {
 
 // app.use(express.static(__dirname));
 
-http.listen(port, function () {
-    console.log('listening on http://localhost:' + port);
-});
+app.listen(port, 'localhost');

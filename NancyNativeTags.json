@@ -1,8 +1,8 @@
 { "X3D": {
     "encoding":"UTF-8",
     "@profile":"Immersive",
-    "@version":"3.0",
-    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
     "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "component": [
@@ -30,7 +30,7 @@
           },
           {
             "@name":"modified",
-            "@content":"23 December 2013"
+            "@content":"2 April 2016"
           },
           {
             "@name":"info",
@@ -54,7 +54,7 @@
           },
           {
             "@name":"translated",
-            "@content":"26 March 2016"
+            "@content":"16 April 2016"
           },
           {
             "@name":"generator",
@@ -1107,7 +1107,8 @@
           { "NavigationInfo":
             {
               "@avatarSize":[0.15,1.53,0.75],
-              "@speed":0.5
+              "@speed":0.5,
+              "@type":["EXAMINE"]
             }
           },
           { "Group":

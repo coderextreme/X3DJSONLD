@@ -53,7 +53,7 @@
         },
         {
           "@name": "translated",
-          "@content": "26 March 2016"
+          "@content": "16 April 2016"
         },
         {
           "@name": "generator",
@@ -13455,7 +13455,10 @@
               1.53,
               0.75
             ],
-            "@speed": 0.5
+            "@speed": 0.5,
+            "@type": [
+              "EXAMINE"
+            ]
           }
         },
         {

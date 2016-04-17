@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "http://www.web3d.org/specifications/x3d-3.0.dtd">
-<X3D profile='Immersive' version='3.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.0.xsd'>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
   <head>
     <component level='1' name='H-Anim'/>
     <meta content='NancyNativeTags.x3d' name='title'/>
     <meta content='Cindy Ballreich' name='creator'/>
     <meta content='Tom Miller and Don Brutzman, NPS' name='translators'/>
     <meta content='9 July 2000' name='created'/>
-    <meta content='23 December 2013' name='modified'/>
+    <meta content='2 April 2016' name='modified'/>
     <meta content='need height, weight. not sure if we should ask a lady her age.' name='info'/>
     <meta content='Canonical H-Anim 1.1 specification example, using native X3D tags instead of ProtoDeclaration/ExternProtoDeclaration and ProtoInstance.' name='description'/>
     <meta content='http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/NancyNativeTags.x3d' name='identifier'/>
@@ -264,7 +264,7 @@
       <Viewpoint DEF='TopView' containerField='viewpoints' description='Top View' orientation='1 0 0 -1.57079' position='0 3.4495 0'/>
     </HAnimHumanoid>
     <WorldInfo info='"Copyright (c) 1997. 3Name3D / Yglesias Wallock Divekar, Inc."' title='Nancy - an H-Anim compliant avatar by 3Name3D'/>
-    <NavigationInfo avatarSize='0.15 1.53 0.75' speed='0.5' type='"EXAMINE" "ANY"'/>
+    <NavigationInfo avatarSize='0.15 1.53 0.75' speed='0.5' type='"EXAMINE"'/>
     <Group DEF='Interface'>
       <Transform>
         <ProximitySensor DEF='HudProx' center='0.0 20.0 0.0' size='500.0 100.0 500.0'/>
