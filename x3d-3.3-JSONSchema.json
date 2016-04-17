@@ -3729,7 +3729,7 @@
                             "type": "number"
                         }
                     ],
-                    "additionalItems": false
+                    "additionalItems": true
                 },
                 "-metadata": {
                     "$ref": "#/definitions/-metadata"
