@@ -397,13 +397,11 @@
                 },
                 {
                   "@name":"myShape",
-                  "-children":[
-                    { "Box":
-                      {
-                        "@size":[1,1,1]
-                      }
+                  "@value": {
+		    "Box": {
+                      "@size":[1,1,1]
                     }
-                  ]
+                  }
                 }
               ]
             }
