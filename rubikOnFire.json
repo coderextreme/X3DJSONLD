@@ -398,8 +398,6 @@
                 {
                   "@name":"myShape",
                   "-children":[
-                    { "#comment":"I am commenting on my Box here"
-                    },
                     { "Box":
                       {
                         "@size":[1,1,1]
