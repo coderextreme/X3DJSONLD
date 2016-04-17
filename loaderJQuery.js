@@ -1,8 +1,9 @@
 var validate = function() { return true; }
 
 function setVersion(version) {
-	if (version !== "3.3") {
-		alert("Can only validate version 3.3 presently. Switching version to 3.3.");
+	var versions = { "3.0":true,"3.1":true,"3.2":true,"3.3":true,"3.4":true }
+	if (!versions[version]) {
+		alert("Can only validate version 3.0-3.4 presently. Switching version to 3.3.");
 		version = "3.3";
 	}
 	$.getJSON("x3d-"+version+"-JSONSchema.json", function(schema) {

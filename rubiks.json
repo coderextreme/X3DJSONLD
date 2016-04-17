@@ -28,6 +28,15 @@
             ]
           }
         },
+        {
+          "Inline": {
+            "@DEF": "MyBox",
+            "@load": true,
+            "@url": [
+              "http://coderextreme.net/X3DJSONLD/Box.json"
+            ]
+          }
+        },
         {},
         {},
         {},
