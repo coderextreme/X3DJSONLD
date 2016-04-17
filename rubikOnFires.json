@@ -71,15 +71,20 @@
                                                                 }
                                                               }
                                                             },
-                                                            "-geometry": {
-                                                              "Box": {
-                                                                "@size": [
-                                                                  1,
-                                                                  1,
-                                                                  1
-                                                                ]
+                                                            "-geometry": [
+                                                              {
+                                                                "#comment": "I am commenting on my Box here"
+                                                              },
+                                                              {
+                                                                "Box": {
+                                                                  "@size": [
+                                                                    1,
+                                                                    1,
+                                                                    1
+                                                                  ]
+                                                                }
                                                               }
-                                                            }
+                                                            ]
                                                           }
                                                         }
                                                       ],
@@ -115,15 +120,20 @@
                                                                 }
                                                               }
                                                             },
-                                                            "-geometry": {
-                                                              "Box": {
-                                                                "@size": [
-                                                                  1,
-                                                                  1,
-                                                                  1
-                                                                ]
+                                                            "-geometry": [
+                                                              {
+                                                                "#comment": "I am commenting on my Box here"
+                                                              },
+                                                              {
+                                                                "Box": {
+                                                                  "@size": [
+                                                                    1,
+                                                                    1,
+                                                                    1
+                                                                  ]
+                                                                }
                                                               }
-                                                            }
+                                                            ]
                                                           }
                                                         }
                                                       ],
@@ -159,15 +169,20 @@
                                                                 }
                                                               }
                                                             },
-                                                            "-geometry": {
-                                                              "Box": {
-                                                                "@size": [
-                                                                  1,
-                                                                  1,
-                                                                  1
-                                                                ]
+                                                            "-geometry": [
+                                                              {
+                                                                "#comment": "I am commenting on my Box here"
+                                                              },
+                                                              {
+                                                                "Box": {
+                                                                  "@size": [
+                                                                    1,
+                                                                    1,
+                                                                    1
+                                                                  ]
+                                                                }
                                                               }
-                                                            }
+                                                            ]
                                                           }
                                                         }
                                                       ],
@@ -221,15 +236,20 @@
                                                                 }
                                                               }
                                                             },
-                                                            "-geometry": {
-                                                              "Box": {
-                                                                "@size": [
-                                                                  1,
-                                                                  1,
-                                                                  1
-                                                                ]
+                                                            "-geometry": [
+                                                              {
+                                                                "#comment": "I am commenting on my Box here"
+                                                              },
+                                                              {
+                                                                "Box": {
+                                                                  "@size": [
+                                                                    1,
+                                                                    1,
+                                                                    1
+                                                                  ]
+                                                                }
                                                               }
-                                                            }
+                                                            ]
                                                           }
                                                         }
                                                       ],
@@ -265,15 +285,20 @@
                                                                 }
                                                               }
                                                             },
-                                                            "-geometry": {
-                                                              "Box": {
-                                                                "@size": [
-                                                                  1,
-                                                                  1,
-                                                                  1
-                                                                ]
+                                                            "-geometry": [
+                                                              {
+                                                                "#comment": "I am commenting on my Box here"
+                                                              },
+                                                              {
+                                                                "Box": {
+                                                                  "@size": [
+                                                                    1,
+                                                                    1,
+                                                                    1
+                                                                  ]
+                                                                }
                                                               }
-                                                            }
+                                                            ]
                                                           }
                                                         }
                                                       ],
@@ -309,15 +334,20 @@
                                                                 }
                                                               }
                                                             },
-                                                            "-geometry": {
-                                                              "Box": {
-                                                                "@size": [
-                                                                  1,
-                                                                  1,
-                                                                  1
-                                                                ]
+                                                            "-geometry": [
+                                                              {
+                                                                "#comment": "I am commenting on my Box here"
+                                                              },
+                                                              {
+                                                                "Box": {
+                                                                  "@size": [
+                                                                    1,
+                                                                    1,
+                                                                    1
+                                                                  ]
+                                                                }
                                                               }
-                                                            }
+                                                            ]
                                                           }
                                                         }
                                                       ],
@@ -371,15 +401,20 @@
                                                                 }
                                                               }
                                                             },
-                                                            "-geometry": {
-                                                              "Box": {
-                                                                "@size": [
-                                                                  1,
-                                                                  1,
-                                                                  1
-                                                                ]
+                                                            "-geometry": [
+                                                              {
+                                                                "#comment": "I am commenting on my Box here"
+                                                              },
+                                                              {
+                                                                "Box": {
+                                                                  "@size": [
+                                                                    1,
+                                                                    1,
+                                                                    1
+                                                                  ]
+                                                                }
                                                               }
-                                                            }
+                                                            ]
                                                           }
                                                         }
                                                       ],
@@ -415,15 +450,20 @@
                                                                 }
                                                               }
                                                             },
-                                                            "-geometry": {
-                                                              "Box": {
-                                                                "@size": [
-                                                                  1,
-                                                                  1,
-                                                                  1
-                                                                ]
+                                                            "-geometry": [
+                                                              {
+                                                                "#comment": "I am commenting on my Box here"
+                                                              },
+                                                              {
+                                                                "Box": {
+                                                                  "@size": [
+                                                                    1,
+                                                                    1,
+                                                                    1
+                                                                  ]
+                                                                }
                                                               }
-                                                            }
+                                                            ]
                                                           }
                                                         }
                                                       ],
@@ -459,15 +499,20 @@
                                                                 }
                                                               }
                                                             },
-                                                            "-geometry": {
-                                                              "Box": {
-                                                                "@size": [
-                                                                  1,
-                                                                  1,
-                                                                  1
-                                                                ]
+                                                            "-geometry": [
+                                                              {
+                                                                "#comment": "I am commenting on my Box here"
+                                                              },
+                                                              {
+                                                                "Box": {
+                                                                  "@size": [
+                                                                    1,
+                                                                    1,
+                                                                    1
+                                                                  ]
+                                                                }
                                                               }
-                                                            }
+                                                            ]
                                                           }
                                                         }
                                                       ],
@@ -539,15 +584,20 @@
                                                                 }
                                                               }
                                                             },
-                                                            "-geometry": {
-                                                              "Box": {
-                                                                "@size": [
-                                                                  1,
-                                                                  1,
-                                                                  1
-                                                                ]
+                                                            "-geometry": [
+                                                              {
+                                                                "#comment": "I am commenting on my Box here"
+                                                              },
+                                                              {
+                                                                "Box": {
+                                                                  "@size": [
+                                                                    1,
+                                                                    1,
+                                                                    1
+                                                                  ]
+                                                                }
                                                               }
-                                                            }
+                                                            ]
                                                           }
                                                         }
                                                       ],
@@ -583,15 +633,20 @@
                                                                 }
                                                               }
                                                             },
-                                                            "-geometry": {
-                                                              "Box": {
-                                                                "@size": [
-                                                                  1,
-                                                                  1,
-                                                                  1
-                                                                ]
+                                                            "-geometry": [
+                                                              {
+                                                                "#comment": "I am commenting on my Box here"
+                                                              },
+                                                              {
+                                                                "Box": {
+                                                                  "@size": [
+                                                                    1,
+                                                                    1,
+                                                                    1
+                                                                  ]
+                                                                }
                                                               }
-                                                            }
+                                                            ]
                                                           }
                                                         }
                                                       ],
@@ -627,15 +682,20 @@
                                                                 }
                                                               }
                                                             },
-                                                            "-geometry": {
-                                                              "Box": {
-                                                                "@size": [
-                                                                  1,
-                                                                  1,
-                                                                  1
-                                                                ]
+                                                            "-geometry": [
+                                                              {
+                                                                "#comment": "I am commenting on my Box here"
+                                                              },
+                                                              {
+                                                                "Box": {
+                                                                  "@size": [
+                                                                    1,
+                                                                    1,
+                                                                    1
+                                                                  ]
+                                                                }
                                                               }
-                                                            }
+                                                            ]
                                                           }
                                                         }
                                                       ],
@@ -689,15 +749,20 @@
                                                                 }
                                                               }
                                                             },
-                                                            "-geometry": {
-                                                              "Box": {
-                                                                "@size": [
-                                                                  1,
-                                                                  1,
-                                                                  1
-                                                                ]
+                                                            "-geometry": [
+                                                              {
+                                                                "#comment": "I am commenting on my Box here"
+                                                              },
+                                                              {
+                                                                "Box": {
+                                                                  "@size": [
+                                                                    1,
+                                                                    1,
+                                                                    1
+                                                                  ]
+                                                                }
                                                               }
-                                                            }
+                                                            ]
                                                           }
                                                         }
                                                       ],
@@ -733,15 +798,20 @@
                                                                 }
                                                               }
                                                             },
-                                                            "-geometry": {
-                                                              "Box": {
-                                                                "@size": [
-                                                                  1,
-                                                                  1,
-                                                                  1
-                                                                ]
+                                                            "-geometry": [
+                                                              {
+                                                                "#comment": "I am commenting on my Box here"
+                                                              },
+                                                              {
+                                                                "Box": {
+                                                                  "@size": [
+                                                                    1,
+                                                                    1,
+                                                                    1
+                                                                  ]
+                                                                }
                                                               }
-                                                            }
+                                                            ]
                                                           }
                                                         }
                                                       ],
@@ -777,15 +847,20 @@
                                                                 }
                                                               }
                                                             },
-                                                            "-geometry": {
-                                                              "Box": {
-                                                                "@size": [
-                                                                  1,
-                                                                  1,
-                                                                  1
-                                                                ]
+                                                            "-geometry": [
+                                                              {
+                                                                "#comment": "I am commenting on my Box here"
+                                                              },
+                                                              {
+                                                                "Box": {
+                                                                  "@size": [
+                                                                    1,
+                                                                    1,
+                                                                    1
+                                                                  ]
+                                                                }
                                                               }
-                                                            }
+                                                            ]
                                                           }
                                                         }
                                                       ],
@@ -839,15 +914,20 @@
                                                                 }
                                                               }
                                                             },
-                                                            "-geometry": {
-                                                              "Box": {
-                                                                "@size": [
-                                                                  1,
-                                                                  1,
-                                                                  1
-                                                                ]
+                                                            "-geometry": [
+                                                              {
+                                                                "#comment": "I am commenting on my Box here"
+                                                              },
+                                                              {
+                                                                "Box": {
+                                                                  "@size": [
+                                                                    1,
+                                                                    1,
+                                                                    1
+                                                                  ]
+                                                                }
                                                               }
-                                                            }
+                                                            ]
                                                           }
                                                         }
                                                       ],
@@ -883,15 +963,20 @@
                                                                 }
                                                               }
                                                             },
-                                                            "-geometry": {
-                                                              "Box": {
-                                                                "@size": [
-                                                                  1,
-                                                                  1,
-                                                                  1
-                                                                ]
+                                                            "-geometry": [
+                                                              {
+                                                                "#comment": "I am commenting on my Box here"
+                                                              },
+                                                              {
+                                                                "Box": {
+                                                                  "@size": [
+                                                                    1,
+                                                                    1,
+                                                                    1
+                                                                  ]
+                                                                }
                                                               }
-                                                            }
+                                                            ]
                                                           }
                                                         }
                                                       ],
@@ -927,15 +1012,20 @@
                                                                 }
                                                               }
                                                             },
-                                                            "-geometry": {
-                                                              "Box": {
-                                                                "@size": [
-                                                                  1,
-                                                                  1,
-                                                                  1
-                                                                ]
+                                                            "-geometry": [
+                                                              {
+                                                                "#comment": "I am commenting on my Box here"
+                                                              },
+                                                              {
+                                                                "Box": {
+                                                                  "@size": [
+                                                                    1,
+                                                                    1,
+                                                                    1
+                                                                  ]
+                                                                }
                                                               }
-                                                            }
+                                                            ]
                                                           }
                                                         }
                                                       ],
@@ -1007,15 +1097,20 @@
                                                                 }
                                                               }
                                                             },
-                                                            "-geometry": {
-                                                              "Box": {
-                                                                "@size": [
-                                                                  1,
-                                                                  1,
-                                                                  1
-                                                                ]
+                                                            "-geometry": [
+                                                              {
+                                                                "#comment": "I am commenting on my Box here"
+                                                              },
+                                                              {
+                                                                "Box": {
+                                                                  "@size": [
+                                                                    1,
+                                                                    1,
+                                                                    1
+                                                                  ]
+                                                                }
                                                               }
-                                                            }
+                                                            ]
                                                           }
                                                         }
                                                       ],
@@ -1051,15 +1146,20 @@
                                                                 }
                                                               }
                                                             },
-                                                            "-geometry": {
-                                                              "Box": {
-                                                                "@size": [
-                                                                  1,
-                                                                  1,
-                                                                  1
-                                                                ]
+                                                            "-geometry": [
+                                                              {
+                                                                "#comment": "I am commenting on my Box here"
+                                                              },
+                                                              {
+                                                                "Box": {
+                                                                  "@size": [
+                                                                    1,
+                                                                    1,
+                                                                    1
+                                                                  ]
+                                                                }
                                                               }
-                                                            }
+                                                            ]
                                                           }
                                                         }
                                                       ],
@@ -1095,15 +1195,20 @@
                                                                 }
                                                               }
                                                             },
-                                                            "-geometry": {
-                                                              "Box": {
-                                                                "@size": [
-                                                                  1,
-                                                                  1,
-                                                                  1
-                                                                ]
+                                                            "-geometry": [
+                                                              {
+                                                                "#comment": "I am commenting on my Box here"
+                                                              },
+                                                              {
+                                                                "Box": {
+                                                                  "@size": [
+                                                                    1,
+                                                                    1,
+                                                                    1
+                                                                  ]
+                                                                }
                                                               }
-                                                            }
+                                                            ]
                                                           }
                                                         }
                                                       ],
@@ -1157,15 +1262,20 @@
                                                                 }
                                                               }
                                                             },
-                                                            "-geometry": {
-                                                              "Box": {
-                                                                "@size": [
-                                                                  1,
-                                                                  1,
-                                                                  1
-                                                                ]
+                                                            "-geometry": [
+                                                              {
+                                                                "#comment": "I am commenting on my Box here"
+                                                              },
+                                                              {
+                                                                "Box": {
+                                                                  "@size": [
+                                                                    1,
+                                                                    1,
+                                                                    1
+                                                                  ]
+                                                                }
                                                               }
-                                                            }
+                                                            ]
                                                           }
                                                         }
                                                       ],
@@ -1201,15 +1311,20 @@
                                                                 }
                                                               }
                                                             },
-                                                            "-geometry": {
-                                                              "Box": {
-                                                                "@size": [
-                                                                  1,
-                                                                  1,
-                                                                  1
-                                                                ]
+                                                            "-geometry": [
+                                                              {
+                                                                "#comment": "I am commenting on my Box here"
+                                                              },
+                                                              {
+                                                                "Box": {
+                                                                  "@size": [
+                                                                    1,
+                                                                    1,
+                                                                    1
+                                                                  ]
+                                                                }
                                                               }
-                                                            }
+                                                            ]
                                                           }
                                                         }
                                                       ],
@@ -1245,15 +1360,20 @@
                                                                 }
                                                               }
                                                             },
-                                                            "-geometry": {
-                                                              "Box": {
-                                                                "@size": [
-                                                                  1,
-                                                                  1,
-                                                                  1
-                                                                ]
+                                                            "-geometry": [
+                                                              {
+                                                                "#comment": "I am commenting on my Box here"
+                                                              },
+                                                              {
+                                                                "Box": {
+                                                                  "@size": [
+                                                                    1,
+                                                                    1,
+                                                                    1
+                                                                  ]
+                                                                }
                                                               }
-                                                            }
+                                                            ]
                                                           }
                                                         }
                                                       ],
@@ -1307,15 +1427,20 @@
                                                                 }
                                                               }
                                                             },
-                                                            "-geometry": {
-                                                              "Box": {
-                                                                "@size": [
-                                                                  1,
-                                                                  1,
-                                                                  1
-                                                                ]
+                                                            "-geometry": [
+                                                              {
+                                                                "#comment": "I am commenting on my Box here"
+                                                              },
+                                                              {
+                                                                "Box": {
+                                                                  "@size": [
+                                                                    1,
+                                                                    1,
+                                                                    1
+                                                                  ]
+                                                                }
                                                               }
-                                                            }
+                                                            ]
                                                           }
                                                         }
                                                       ],
@@ -1351,15 +1476,20 @@
                                                                 }
                                                               }
                                                             },
-                                                            "-geometry": {
-                                                              "Box": {
-                                                                "@size": [
-                                                                  1,
-                                                                  1,
-                                                                  1
-                                                                ]
+                                                            "-geometry": [
+                                                              {
+                                                                "#comment": "I am commenting on my Box here"
+                                                              },
+                                                              {
+                                                                "Box": {
+                                                                  "@size": [
+                                                                    1,
+                                                                    1,
+                                                                    1
+                                                                  ]
+                                                                }
                                                               }
-                                                            }
+                                                            ]
                                                           }
                                                         }
                                                       ],
@@ -1395,15 +1525,20 @@
                                                                 }
                                                               }
                                                             },
-                                                            "-geometry": {
-                                                              "Box": {
-                                                                "@size": [
-                                                                  1,
-                                                                  1,
-                                                                  1
-                                                                ]
+                                                            "-geometry": [
+                                                              {
+                                                                "#comment": "I am commenting on my Box here"
+                                                              },
+                                                              {
+                                                                "Box": {
+                                                                  "@size": [
+                                                                    1,
+                                                                    1,
+                                                                    1
+                                                                  ]
+                                                                }
                                                               }
-                                                            }
+                                                            ]
                                                           }
                                                         }
                                                       ],
