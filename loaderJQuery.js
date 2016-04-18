@@ -175,6 +175,34 @@ function setVersion(version) {
 	}
 
 	function loadX3DJSON(selector, url) {
+		var slash = url.lastIndexOf("/");
+		if (slash >= 0) {
+			// load the default viewpoint as an image
+			var dot = url.lastIndexOf(".");
+
+			var base = url.substr(0, slash);
+			var file = url.substr(slash, url.length - slash - 5); // .json
+			var png = base+"/_viewpoints"+file+".x3d._VP_Default_viewpoint.png";
+			$('#image').attr('src', png);
+
+			// load an example movie
+			var mpg = base+file+"-movie.mpg";
+			var canvas = document.getElementById('canvas');
+			var ctx    = canvas.getContext('2d');
+			var video  = document.getElementById('video');
+			video.setAttribute('src', mpg);
+			video.addEventListener('play', function () {
+    				var $this = this; //cache
+    				(function loop() {
+        				if (!$this.paused && !$this.ended) {
+            					ctx.drawImage($this, 0, 0);
+            					canvas.parentNode._x3domNode.invalidateGLObject();
+            					setTimeout(loop, 1000 / 30); // drawing at 30fps
+        				}
+    				})();
+			}, 0);
+			video.play();
+		}
 		$.getJSON(url, function(json) {
 			$('textarea#json').val(JSON.stringify(json, null, 2));
 			loadX3DOM(selector, JSON.parse($('textarea#json').val()), url);
