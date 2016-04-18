@@ -185,6 +185,7 @@ function setVersion(version) {
 			var png = base+"/_viewpoints"+file+".x3d._VP_Default_viewpoint.png";
 			$('#image').attr('src', png);
 
+/*
 			// load an example movie
 			var mpg = base+file+"-movie.mpg";
 			var canvas = document.getElementById('canvas');
@@ -202,6 +203,7 @@ function setVersion(version) {
     				})();
 			}, 0);
 			video.play();
+*/
 		}
 		$.getJSON(url, function(json) {
 			$('textarea#json').val(JSON.stringify(json, null, 2));
