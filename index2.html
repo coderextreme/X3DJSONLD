@@ -5,9 +5,11 @@
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
     <link rel="stylesheet" type="text/css" href="http://www.x3dom.org/download/dev/x3dom.css"></link>
     <script type="text/javascript" src="http://www.x3dom.org/download/dev/x3dom-full.js"></script>
-    <script type="text/javascript" language="javascript" src="Saxonce/Saxonce.nocache.js"></script>
+    <!--script type="text/javascript" language="javascript" src="Saxonce/Saxonce.nocache.js"></script-->
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ajv/3.8.5/ajv.min.js"></script>
+    <script type="text/javascript" src="http://exificient.github.io/javascript/demo/exificient.js"></script>
+    <script type="text/javascript" src="http://exificient.github.io/javascript/demo/exificient-for-json.js"></script>
     <style type="text/css">
     X3D {
         background:#000;
@@ -36,6 +38,16 @@ a:hover {
 a:active {
     color: blue;
 }
+
+#image {
+	width: 300px;
+	height:150px;
+}
+
+#video {
+	width: 300px;
+	height:150px;
+}
     </style>
 </head>
 <body>
@@ -44,6 +56,8 @@ a:active {
 <td>
 <select id="file">
 <option>flipper.json</option>
+<option>florig.json</option>
+<option>flexi.json</option>
 <option>ArchHalf.json</option>
 <option>bubbles.json</option>
 <option>geobubbles.json</option>
@@ -15677,6 +15691,7 @@ a:active {
 <option>examples/X3dForWebAuthors/newScene.json</option>
 </select>
 </td>
+
 <td>
 <input type="text" onchange="filter(event)"></input>
 Use Prototype Expander? <input id="prototype" type="checkbox" checked="true"></input>
@@ -15689,26 +15704,53 @@ Use Namespace: <select id="namespace">
 </select>
 </td>
 </tr>
+
 <tr>
-<td>
-Click <a onclick='updateXML();convertXMLToJSON();'>here</a> to load X3D XML into Cobweb and XML X3DOM viewer and convert to JSON (and display).<br>
-	    
-<textarea id="xml" rows="15" cols="80"></textarea><br>
-<div id="x3domxml"></div>
-<iframe  id='cobwebframe' src="cobwebframe.html"></iframe>
-</td>
-<td>
-Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into JSON X3DOM viewer and convert to XML (and display).<br>
-<textarea id="json" rows="15" cols="80"></textarea><br>
-<div id="x3domjson"></div>
-</td>
+	<td>
+		Click <a onclick='updateXML();convertXMLToJSON();'>here</a> to load X3D XML into Cobweb and XML X3DOM viewer and convert to JSON (and display).
+	</td>
+	<td>
+		Click <a onclick='updateX3DOM();encodeJSON();'>here</a> to load X3D JSON text into JSON X3DOM viewer and convert to XML and EXI (and display).
+	</td>
+	<td>
+		Click <a onclick='decodeEXI4JSON();updateX3DOM()'>here</a> to convert EXI to JSON, load X3D JSON and Display.
+	</td>
 </tr>
+
+<tr>
+	<td>
+		<textarea id="xml" rows="15" cols="80"></textarea><br>
+	</td>
+	<td>
+		<textarea id="json" rows="15" cols="80"></textarea><br>
+	</td>
+	<td>
+		<textarea id="exi" rows="15" cols="80"></textarea><br>
+	</td>
+</tr>
+
+<tr>
+	<td>
+		<div id="x3domxml"></div>
+		<iframe  id='cobwebframe' src="cobwebframe.html"></iframe>
+	</td>
+	<td>
+		<div id="x3domjson"></div>
+		<image id="image" src="">
+	</td>
+	<td>
+		No Display for EXI
+	</td>
+
+</tr>
+
 </table>
 </body>
     <script type="text/javascript" src="X3DJSONLD.js"></script>
     <script type="text/javascript" src="PrototypeExpander.js"></script>
     <script type="text/javascript" src="Script.js"></script>
     <script type="text/javascript" src="loaderJQuery.js"></script>
+    <script type="text/javascript" src="exi.js"></script>
     <script type="text/javascript">
 	$(document).ready(function() {
 		loadX3DJSON('#x3domjson','flipper.json'); // does load flipper.json

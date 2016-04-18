@@ -83,6 +83,9 @@ function loadProto(dir, object, url, name, appinfo, description) {
 			if (filename.indexOf("https://") === 0) {
 				https.get(filename, function(res) {
 				   var response = '';
+				   res.on('error', function(err) {
+					console.error(err);
+				   });
 				   res.on('data', function(data) {
 					  response += data;
 				   });
@@ -94,6 +97,9 @@ function loadProto(dir, object, url, name, appinfo, description) {
 			} else if (filename.indexOf("http://") === 0) {
 				http.get(filename, function(res) {
 				   var response = '';
+				   res.on('error', function(err) {
+					console.error(err);
+				   });
 				   res.on('data', function(data) {
 					  response += data;
 				   });

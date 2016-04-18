@@ -138,7 +138,7 @@ function ConvertObject(key, object, element, path) {
 				element.appendChild(document.createTextNode("\n"));
 			}
 		} else if (key === '#sourceText') {
-			CDATACreateFunction(document, element, object[key].join("\n"));
+			CDATACreateFunction(document, element, object[key].join("\r\n")+"\r\n");
 		} else {
 			if (key === 'connect' || key === 'fieldValue' || key === 'field' || key === 'meta' || key === 'component') {
 				for (var childkey in object[key]) {  // for each field
@@ -205,7 +205,7 @@ function processURLs(localArray, path) {
 				// no webroot absolute paths.  No /'s for cobweb shaders
 				localArray[url] = localArray[url].substring(1);
 			}
-			console.error("Loading "+localArray[url]);
+			// console.error("Loading "+localArray[url]);
 		}
 			
        }
