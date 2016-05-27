@@ -55,13 +55,21 @@ function processURLs(localArray, path) {
 				}
 			}
 		}
+		var hash = localArray[url].lastIndexOf("#") ;
+		if (hash >= 0) {
+			localArray[url] = localArray[url].substring(0, hash);
+		}
 		var x3d = localArray[url].lastIndexOf(".x3d") ;
 		if (x3d === localArray[url].length - 4) {
 			localArray[url] = localArray[url].substring(0, x3d)+".json";
 		}
+		var wrl = localArray[url].lastIndexOf(".wrl") ;
+		if (wrl === localArray[url].length - 4) {
+			localArray[url] = localArray[url].substring(0, wrl)+".json";
+		}
 			
         }
-	console.error("Processed URLs", localArray.join(" "));
+	// console.error("Processed URLs", localArray.join(" "));
 	return localArray;
 }
 
@@ -75,64 +83,75 @@ function loadURLs(loadpath, urls, loadedCallback) {
 	if (typeof urls !== 'undefined') {
 		urls = processURLs(urls, loadpath);
 		for (var u in urls) {
-			var url = urls[u];
-			var p = url.indexOf("://");
-			if (p > 0) {
-				var protocol = url.substring(0, p);
- 				var pa = url.indexOf("/", p+3);
-				var host = url.substring(p+3, pa);
-				var path = url.substring(pa);
-			}
-			console.log("Loading URL", url, "from", path);
-			if (protocol === "http") {
-				if (typeof $ !== 'undefined') {
-					$.get(url, function(data) {
-						loadedCallback(data);
-					});
-				} else {
-					http.get({ host: host, path: path}, function(res) {
-						var data = '';
-						res.on('data', function (d) {
-							data += d;
-						});
-						res.on('end', function() {
-							loadedCallback(data);
-						});
-					});
-			
-				}
-			} else if (protocol === "https") {
-				if (typeof $ !== 'undefined') {
-					$.get(url, function(data) {
-						loadedCallback(data);
-					});
-				} else {
-					https.get({ host: host, path: path}, function(res) {
-						var data = '';
-						res.on('data', function (d) {
-							data += d;
-						});
-						res.on('end', function() {
-							loadedCallback(data);
-						});
-					});
-			
-				}
-			} else if (typeof fs !== 'undefined') {
-				fs.readFile(url, (err, data) => {
-					if (!err && typeof data !== 'undefined') {
-						loadedCallback(data);
-					} else {
-						console.error(err);
+			try {
+				var url = urls[u];
+				(function(url) {
+					var p = url.indexOf("://");
+					var protocol = "file";
+					var host = "localhost";
+					var path = "/"+loadpath;
+					if (p > 0) {
+						protocol = url.substring(0, p);
+						var pa = url.indexOf("/", p+3);
+						host = url.substring(p+3, pa);
+						path = url.substring(pa);
 					}
-				});
-			} else if (typeof $ !== 'undefined') {
-				// load a relative URL
-				$.get(url, function(data) {
-					loadedCallback(data);
-				});
-			} else {
-				console.error("Didn't load", url, ".  No JQuery or file system");
+					if (protocol === "http") {
+						console.error("Loading HTTP URL", url);
+						if (typeof $ !== 'undefined') {
+							$.get(url, function(data) {
+								loadedCallback(data, url);
+							});
+						} else {
+							http.get({ host: host, path: path}, function(res) {
+								var data = '';
+								res.on('data', function (d) {
+									data += d;
+								});
+								res.on('end', function() {
+									loadedCallback(data, url);
+								});
+							});
+					
+						}
+					} else if (protocol === "https") {
+						console.error("Loading HTTPS URL", url);
+						if (typeof $ !== 'undefined') {
+							$.get(url, function(data) {
+								loadedCallback(data, url);
+							});
+						} else {
+							https.get({ host: host, path: path}, function(res) {
+								var data = '';
+								res.on('data', function (d) {
+									data += d;
+								});
+								res.on('end', function() {
+									loadedCallback(data, url);
+								});
+							});
+					
+						}
+					} else if (typeof fs !== 'undefined') {
+						// should be async, but out of memory
+						if (fs.statSync(url).isFile()) {
+							console.error("Loading FILE URL", url);
+							var data = fs.readFileSync(url);
+							loadedCallback(data.toString(), url);
+						} else {
+							console.error("File doesn't exist or is not available,", url);
+						}
+					} else if (typeof $ !== 'undefined') {
+						console.error("Loading Relative URL", url);
+						$.get(url, function(data) {
+							loadedCallback(data, url);
+						});
+					} else {
+						console.error("Didn't load", url, ".  No JQuery or file system");
+					}
+				})(url);
+			} catch (e) {
+				console.log(e);
 			}
 		}
 	}
@@ -318,6 +337,7 @@ function ConvertToX3DOM(object, parentkey, element, path) {
 					localArray.push(object[key].join(" "));
 				}
 				ConvertToX3DOM(object[key], key, element, path);
+			} else if (typeof object[key] === 'undefined') {
 			} else {
 				console.error("Unknown type found in array "+typeof object[key]);
 			}
@@ -340,6 +360,7 @@ function ConvertToX3DOM(object, parentkey, element, path) {
 			}
 		} else if (typeof object[key] === 'boolean') {
 			elementSetAttribute(element, key.substr(1),object[key]);
+		} else if (typeof object[key] === 'undefined') {
 		} else {
 			console.error("Unknown type found in object "+typeof object[key]);
 		}
