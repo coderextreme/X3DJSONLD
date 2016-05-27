@@ -7,7 +7,7 @@ var path = require('path');
 var fs = require("fs");
 var externPrototypeExpander = require("./ServerPrototypeExpander");
 
-var runsaxon = require('./allsaxon');
+//var runsaxon = require('./allsaxon');
 
 fs.symlink(
 path.resolve(config.examples),
@@ -21,7 +21,7 @@ path.resolve(__dirname + "/examples"),
 );
 
 function runAndSend(infile) {
-	runsaxon([infile]);
+	//runsaxon([infile]);
 	var outfile = infile.substr(0, infile.lastIndexOf("."))+".json";
 	var content = fs.readFileSync(outfile);
 	var json = JSON.parse(content.toString());
