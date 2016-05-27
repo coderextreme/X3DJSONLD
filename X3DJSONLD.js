@@ -9,8 +9,11 @@ if (typeof Browser === 'undefined') {
 	var Browser = {
 		print : function(string) { if (typeof console !== 'undefined' && typeof string !== 'undefined') console.error(string); },
 		println : function(string) { if (typeof console !== 'undefined' && typeof string !== 'undefined') console.error(string); },
-		stringToArray : function(obj) {
+		stringToArray : function(clazz, obj) {
 			if (typeof obj === 'object') {
+				if (clazz === 'SFRotation') {
+					return [0.0,0.0,0.0,0.0];
+				}
 				return obj;
 			} else {
 				return JSON.parse('['+obj+']');
@@ -23,6 +26,135 @@ if (typeof Browser === 'undefined') {
 			return document;
 		}
 	};
+}
+
+function processURLs(localArray, path) {
+	var url;
+	// No longer need to split
+	for (url in localArray) {
+		if (localArray[url].indexOf("http://") === 0
+		 || localArray[url].indexOf("https://") === 0) {
+		} else if (localArray[url].indexOf("urn:web3d:media:textures/panoramas/") === 0) {
+			var ls = localArray[url].lastIndexOf("/");
+			if (ls > 0) {
+				localArray[url] = 'examples/Basic/UniversalMediaPanoramas/'+localArray[url].substring(ls+1);
+			}
+
+		} else {
+			var s = localArray[url].indexOf('/');
+			var p = localArray[url].indexOf('#');
+			var pe = path.lastIndexOf('/');
+			var pc = path.substring(0, pe);
+			if (s != 0 && p != 0) {
+				if (localArray[url].indexOf(pc) != 0) {
+					 localArray[url] = pc+'/'+localArray[url];
+				}
+				if (localArray[url].indexOf('/') === 0) {
+					// no webroot absolute paths.  No /'s for cobweb shaders
+					localArray[url] = localArray[url].substring(1);
+				}
+			}
+		}
+		var hash = localArray[url].lastIndexOf("#") ;
+		if (hash >= 0) {
+			localArray[url] = localArray[url].substring(0, hash);
+		}
+		var x3d = localArray[url].lastIndexOf(".x3d") ;
+		if (x3d === localArray[url].length - 4) {
+			localArray[url] = localArray[url].substring(0, x3d)+".json";
+		}
+		var wrl = localArray[url].lastIndexOf(".wrl") ;
+		if (wrl === localArray[url].length - 4) {
+			localArray[url] = localArray[url].substring(0, wrl)+".json";
+		}
+			
+        }
+	// console.error("Processed URLs", localArray.join(" "));
+	return localArray;
+}
+
+if (typeof require === 'function') {
+	var fs = require("fs");
+	var http = require("http");
+	var https = require("https");
+}
+
+function loadURLs(loadpath, urls, loadedCallback) {
+	if (typeof urls !== 'undefined') {
+		urls = processURLs(urls, loadpath);
+		for (var u in urls) {
+			try {
+				var url = urls[u];
+				(function(url) {
+					var p = url.indexOf("://");
+					var protocol = "file";
+					var host = "localhost";
+					var path = "/"+loadpath;
+					if (p > 0) {
+						protocol = url.substring(0, p);
+						var pa = url.indexOf("/", p+3);
+						host = url.substring(p+3, pa);
+						path = url.substring(pa);
+					}
+					if (protocol === "http") {
+						console.error("Loading HTTP URL", url);
+						if (typeof $ !== 'undefined') {
+							$.get(url, function(data) {
+								loadedCallback(data, url);
+							});
+						} else {
+							http.get({ host: host, path: path}, function(res) {
+								var data = '';
+								res.on('data', function (d) {
+									data += d;
+								});
+								res.on('end', function() {
+									loadedCallback(data, url);
+								});
+							});
+					
+						}
+					} else if (protocol === "https") {
+						console.error("Loading HTTPS URL", url);
+						if (typeof $ !== 'undefined') {
+							$.get(url, function(data) {
+								loadedCallback(data, url);
+							});
+						} else {
+							https.get({ host: host, path: path}, function(res) {
+								var data = '';
+								res.on('data', function (d) {
+									data += d;
+								});
+								res.on('end', function() {
+									loadedCallback(data, url);
+								});
+							});
+					
+						}
+					} else if (typeof fs !== 'undefined') {
+						// should be async, but out of memory
+						if (fs.statSync(url).isFile()) {
+							console.error("Loading FILE URL", url);
+							var data = fs.readFileSync(url);
+							loadedCallback(data.toString(), url);
+						} else {
+							console.error("File doesn't exist or is not available,", url);
+						}
+					} else if (typeof $ !== 'undefined') {
+						console.error("Loading Relative URL", url);
+						$.get(url, function(data) {
+							loadedCallback(data, url);
+						});
+					} else {
+						console.error("Didn't load", url, ".  No JQuery or file system");
+					}
+				})(url);
+			} catch (e) {
+				console.log(e);
+			}
+		}
+	}
 }
 
 var x3djsonNS;
@@ -116,27 +248,23 @@ function ConvertObject(key, object, element, path) {
 			}
 		} else if (key === 'Inline') {
 			var localArray = object[key]["@url"];
-			processURLs(localArray, path);
-			var isJson = false;
-			for (var i in localArray) {
-				var url = localArray[i];
-				var tail = url.length - url.lastIndexOf(".json");
-				if (tail === 5 && object[key]["@load"]) {
-					isJson = true;
-					$.getJSON(url, function(json) {
-						var child = document.createDocumentFragment();
-						ConvertToX3DOM(json, "-children", child, path);
-						element.appendChild(child);
-						element.appendChild(document.createTextNode("\n"));
-					});
+			loadURLs(path, localArray, function(data) {
+				// console.error("Read", data);
+				try {
+					var json = JSON.parse(data); 
+					var child = document.createDocumentFragment();
+					ConvertToX3DOM(json, "-children", child, path);
+					element.appendChild(child);
+					element.appendChild(document.createTextNode("\n"));
+				} catch(e) {
+					// if JSON parse failed, it might be XML or WRL
+					var child = CreateElement(key, x3djsonNS);
+					console.error("Reloading", object[key]["@url"]);
+					ConvertToX3DOM(object[key], key, child, path);
+					element.appendChild(child);
+					element.appendChild(document.createTextNode("\n"));
 				}
-			}
-			if (!isJson) {
-				var child = CreateElement(key, x3djsonNS);
-				ConvertToX3DOM(object[key], key, child, path);
-				element.appendChild(child);
-				element.appendChild(document.createTextNode("\n"));
-			}
+			});
 		} else if (key === '#sourceText') {
 			CDATACreateFunction(document, element, object[key].join("\r\n")+"\r\n");
 		} else {
@@ -185,32 +313,6 @@ function JSONStringToXML(str) {
 	return str;
 }
 
-function processURLs(localArray, path) {
-	var url;
-	// No longer need to split
-	for (url in localArray) {
-		if (localArray[url].indexOf("http://") === 0
-		 || localArray[url].indexOf("https://") === 0) {
-		} else if (localArray[url].indexOf("urn:web3d:media:textures/panoramas/") === 0) {
-			var ls = localArray[url].lastIndexOf("/");
-			if (ls > 0) {
-				localArray[url] = 'examples/Basic/UniversalMediaPanoramas/'+localArray[url].substring(ls+1);
-			}
-
-		} else {
-			var pe = path.lastIndexOf('/');
-			var pc = path.substring(0, pe);
-			localArray[url] = pc+'/'+localArray[url];
-			if (localArray[url].indexOf('/') === 0) {
-				// no webroot absolute paths.  No /'s for cobweb shaders
-				localArray[url] = localArray[url].substring(1);
-			}
-			// console.error("Loading "+localArray[url]);
-		}
-			
-       }
-}
-
 function ConvertToX3DOM(object, parentkey, element, path) {
 	var key;
 	var localArray = [];
@@ -235,6 +337,7 @@ function ConvertToX3DOM(object, parentkey, element, path) {
 					localArray.push(object[key].join(" "));
 				}
 				ConvertToX3DOM(object[key], key, element, path);
+			} else if (typeof object[key] === 'undefined') {
 			} else {
 				console.error("Unknown type found in array "+typeof object[key]);
 			}
@@ -257,6 +360,7 @@ function ConvertToX3DOM(object, parentkey, element, path) {
 			}
 		} else if (typeof object[key] === 'boolean') {
 			elementSetAttribute(element, key.substr(1),object[key]);
+		} else if (typeof object[key] === 'undefined') {
 		} else {
 			console.error("Unknown type found in object "+typeof object[key]);
 		}
@@ -345,6 +449,7 @@ if (typeof module === 'object')  {
 		fixXML : fixXML,
 		getEncoding : getEncoding,
 		setCDATACreateFunction : setCDATACreateFunction,
+		loadURLs : loadURLs,
 		setDocument : function(doc) {
 			document = doc;
 		}
