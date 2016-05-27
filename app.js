@@ -4,8 +4,14 @@ var http = require('http').Server(app);
 var config = require("./config");
 var port = process.env.PORT || 3000;
 var path = require('path');
+
 var fs = require("fs");
-var externPrototypeExpander = require("./ServerPrototypeExpander");
+var X3DJSONLD = require('./X3DJSONLD');
+var loadURLs = X3DJSONLD.loadURLs;
+var PE = require('./PrototypeExpander')
+PE.setLoadURLs(loadURLs);
+var prototypeExpander = PE.prototypeExpander;
+var externPrototypeExpander = PE.externPrototypeExpander;
 
 //var runsaxon = require('./allsaxon');
 
@@ -25,7 +31,7 @@ function runAndSend(infile) {
 	var outfile = infile.substr(0, infile.lastIndexOf("."))+".json";
 	var content = fs.readFileSync(outfile);
 	var json = JSON.parse(content.toString());
-	externPrototypeExpander(outfile, json);
+	json = externPrototypeExpander(outfile, json);
 	fs.unlink(outfile);
 	console.log('sending back', json);
 	return json;
@@ -86,26 +92,25 @@ magic("*.mpg", "video/mp4");
 magic("*.swf", "application/x-shockwave-flash");
 
 app.get("*.json", function(req, res, next) {
-	var url = req._parsedUrl.pathname.substr(1);
-	console.log(url);
-	fs.readFile(url, function(err, data) {
-		if (err) {
-			console.error(err);
-		} else {
-			try {
-				var json = JSON.parse(data.toString());
-				console.log("Calling expander");
-				externPrototypeExpander(url, json);
-				res.header("Content-Type", "text/json");
-				res.send(json);
-			} catch (e) {
-				console.log(e);
-			}
-		}
-		next();
-	});
+       var url = req._parsedUrl.pathname.substr(1);
+       console.log(url);
+       fs.readFile(url, function(err, data) {
+	       console.log("Calling expander");
+               if (err) {
+                       console.error(err);
+               } else {
+                       try {
+                               var json = JSON.parse(data.toString());
+                               json = externPrototypeExpander(url, json);
+                               res.header("Content-Type", "text/json");
+                               res.send(json);
+                       } catch (e) {
+                               console.log(e);
+                       }
+               }
+               next();
+       });
 });
 
-// app.use(express.static(__dirname));
 
 app.listen(port, 'localhost');
