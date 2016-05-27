@@ -2,13 +2,16 @@
 
 // set up XML DOM
 var xmldom = require('xmldom');
+var fs = require("fs");
+
 var X3DJSONLD = require('./X3DJSONLD');
 var loadURLs = X3DJSONLD.loadURLs;
-var fs = require("fs");
-var prototypeExpander = require('./PrototypeExpander');
-prototypeExpander.setLoadURLs(loadURLs);
+var PE = require('./PrototypeExpander')
+PE.setLoadURLs(loadURLs);
+var prototypeExpander = PE.prototypeExpander;
+var externPrototypeExpander = PE.externPrototypeExpander;
+
 var Script = require('./Script');
-var externPrototypeExpander = require("./ServerPrototypeExpander");
 
 
 
@@ -23,6 +26,9 @@ var DOMImplementation = new xmldom.DOMImplementation();
 var XMLSerializer = new xmldom.XMLSerializer();
 
 function loadX3DJS(json, path, xml) {
+	if (typeof json === 'undefined') {
+		console.error('json undefined.  Look in', path, 'for hints');
+	}
 	var version = json.X3D["@version"];
 	var document = DOMImplementation.createDocument(null, "X3D", docType);
 	var docType = DOMImplementation.createDocumentType("X3D", 'ISO//Web3D//DTD X3D '+version+'//EN" "http://www.web3d.org/specifications/x3d-'+version+'.dtd', null);
@@ -50,7 +56,7 @@ process.stdin.on('end', function() {
 	var file = process.argv[2];
 	var object = JSON.parse(fs.readFileSync(file).toString());
 	// var object = JSON.parse(content);
-	externPrototypeExpander(file, object);
+	object = externPrototypeExpander(file, object);
 	object = prototypeExpander(file, object, "");
 	console.log(JSON.stringify(object, null, 2));
 

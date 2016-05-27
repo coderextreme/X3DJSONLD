@@ -1,5 +1,4 @@
 var protos = {};
-var defs = {};
 var names = {};
 var nodeField = {};
 var protoField = {};
@@ -7,6 +6,38 @@ var scriptField = {};
 var interfaceField = {};
 var scopecount = 0;
 var defdefined = {};
+var privatescope = [];
+var defs = {};
+
+function pushScope(s) {
+	console.error("PUSH", s);
+	privatescope.push(s);
+}
+
+function popScope() {
+	console.error("POP", privatescope.pop());
+}
+
+function saveScope(def) {
+	defs[def] = getScope();
+	return getScope(def);
+}
+
+function getScope(def) {
+	if (def) {
+		return defs[def]+"_"+def;
+	} else {
+		return privatescope.join("_");
+	}
+}
+
+function scopeLength() {
+	return privatescope.length;
+}
+
+function upScope(i) {
+	return privatescope.slice(0,privatescope.length-i).join("_");
+}
 
 // var loadURLs = function() {};
 
@@ -16,7 +47,7 @@ function setLoadURLs(func) {
 
 function setScript(scope, field, object, objectfield) {
 	// copy the default value;
-	object["@"+objectfield] = getInterface(scope,field);
+	object["@"+objectfield] = getInterface(field);
 	// console.error("setscript", scope, field, object, objectfield);
 	// scriptField[scope+field] = [ object, objectfield ];
 	if (typeof scriptField[scope+field] === 'undefined') {
@@ -28,8 +59,8 @@ function setScript(scope, field, object, objectfield) {
 
 function setConnect(scope, field, object, objectfield) {
 	// copy the default value;
-	object["@"+objectfield] = getInterface(scope,field);
-	// console.error("setconn", scope, field, object, objectfield);
+	object["@"+objectfield] = getInterface(field);
+	console.error("setconn", scope, field, object, objectfield);
 	// protoField[scope+field] = [ object, objectfield ];
 	if (typeof protoField[scope+field] === 'undefined') {
 		protoField[scope+field] = [];
@@ -37,15 +68,24 @@ function setConnect(scope, field, object, objectfield) {
 	protoField[scope+field][protoField[scope+field].length] = [ object, objectfield];
 }
 
-function getInterface(scope, field) {
-	var value = interfaceField[scope+field];
-	// console.error("getinter", scope, field, value);
-	return value;
+function getInterface(field) {
+	for(var i = 0; i < scopeLength(); i++) {
+		var scope = upScope(i);
+		if (!scope) {
+			break;
+		}
+		var value = interfaceField[scope+field];
+		console.error("getinter", scope, field, value);
+		if (value) {
+			return value;
+		}
+		console.error("looping", i);
+	}
 }
 
 function setInterface(scope, field, value) {
 	interfaceField[scope+field] = value;
-	// console.error("setinter", scope, field, value);
+	console.error("setinter", scope, field, value);
 }
 
 function clearScope(scope, field, object) {
@@ -78,16 +118,16 @@ function setObjectValues(scope, field, fieldOrNode, value) {
 			console.error("protoundef", scope, field);
 		}
 	}
-	console.error("result ====== ", value);
+	// console.error("result ====== ", value);
 	return retobj;
 }
 
 function setObjectValue(scope, field, obj, fieldOrNode, value) {
 	var newscope = obj[0]["@DEF"];
-	console.error("newscope", newscope, "scope", scope);
+	// console.error("newscope", newscope, "scope", scope);
         if (typeof newscope !== 'undefined' && scope != newscope) {
 		field = obj[1];
-		console.error("setrecurse", newscope, field, obj, fieldOrNode, value);
+		// console.error("setrecurse", newscope, field, obj, fieldOrNode, value);
 		var retobj = setObjectValues(newscope, field, fieldOrNode, value);
 		if (retobj) {
 			return retobj;
@@ -101,29 +141,6 @@ function setObjectValue(scope, field, obj, fieldOrNode, value) {
 	return obj;
 }
 
-function setEnv(scope, field, newscope, newfield) {
-	// console.error("sete", scope, field, newscope, newfield);
-	nodeField[scope+'__generic__field__'] = newscope;
-	nodeField[scope+field] = [ newscope, newfield ];
-}
-
-function setIfNotSetEnv(scope, field, newscope, newfield) {
-	// console.error("setinse", scope, field, newscope, newfield);
-	if (typeof nodeField[scope+field] === 'undefined') {
-		nodeField[scope+'__generic__field__'] = newscope;
-		nodeField[scope+field] = [ newscope, newfield ];
-	}
-}
-
-function getEnv(scope, field) {
-	// console.error("gete", scope, field);
-	var obj = nodeField[scope+field];
-	if (typeof obj === 'undefined') {
-		obj = [nodeField[scope+'__generic__field__'], field];
-	}
-	return obj;
-}
-
 function zap(field, object) {
 	var p;
 	if (typeof object === "object") {
@@ -133,7 +150,7 @@ function zap(field, object) {
 				for (var fld in connect) {
 					var f = connect[fld];
 					if (f && f["@protoField"] === field) {
-						console.error("zapping", field);
+						// console.error("zapping", field);
 						delete connect[fld];
 					}
 				}
@@ -158,13 +175,13 @@ function zapIs(object) {
 	return object;
 }
 
-function prototypeExpander(file, object, scope) {
-	object = realPrototypeExpander(file, object, scope);
-	zapIs(object);
+function prototypeExpander(file, object) {
+	object = realPrototypeExpander(file, object);
+	// zapIs(object);
 	return object;
 }
 
-function realPrototypeExpander(file, object, scope) {
+function realPrototypeExpander(file, object) {
 	var p;
 	if (typeof object === "object") {
 		if (Array.isArray(object)) {
@@ -174,7 +191,6 @@ function realPrototypeExpander(file, object, scope) {
 		}
 		for (p in object) {
 			if (p.toLowerCase() === 'script') {
-				var def  = object[p]["@DEF"];
 				var url  = object[p]["@url"];
 				var fields  = object[p]["field"];
 				for (var field in fields) {
@@ -186,7 +202,7 @@ function realPrototypeExpander(file, object, scope) {
 							corv = a.substr(1);
 						}
 					}
-					setScript(scope,
+					setScript(getScope(),
 					    f["@name"],
 					    f,
 					    corv);
@@ -197,10 +213,15 @@ function realPrototypeExpander(file, object, scope) {
 						delete object[p]["@url"];
 					}
 				});
-				newobject[p] = realPrototypeExpander(file, object[p], scope);
+				var def  = object[p]["@DEF"];
+				pushScope("SCRIPT_"+def);
+				newobject[p] = realPrototypeExpander(file, object[p]);
+				newobject[p]["@DEF"] = getScope();
+				popScope();
 			} else if (p.toLowerCase() === 'protodeclare') {
 				var name = object[p]["@name"];
 				var def = object[p]["@DEF"];
+				saveScope(def);
 				protos[name] = object[p];
 				if (typeof object[p]["@appinfo"] !== 'undefined') {
 					protos[name]["@appinfo"] = object[p]["@appinfo"];
@@ -208,31 +229,26 @@ function realPrototypeExpander(file, object, scope) {
 				if (typeof object[p]["@documentation"] !== 'undefined') {
 					protos[name]["@documentation"] = object[p]["@documentation"];
 				}
+				pushScope("DECL"+name);
 				names[def] = name;
-				realPrototypeExpander(file, object[p], scope+name);
+				realPrototypeExpander(file, object[p]);
+				popScope();
 			} else if (p.toLowerCase() === 'protointerface') {
 				var fields = object[p]["field"];
 				for (var field in fields) {
-					setInterface(scope,
+					setInterface(getScope(),
 					    fields[field]["@name"],
 					    fields[field]["@value"]);
 				}
-				// realPrototypeExpander(file, object[p], scope);
+				// realPrototypeExpander(file, object[p]);
 			} else if (p.toLowerCase() === 'protobody') {
-				realPrototypeExpander(file, object[p], scope);
+				realPrototypeExpander(file, object[p]);
 			} else if (p.toLowerCase() === 'protoinstance') {
 				var name = object[p]["@name"];
+				pushScope("DECL"+name);
 				var def  = object[p]["@DEF"];
 				var use  = object[p]["@USE"];
-				if (typeof def === 'undefined') {
-					scopecount += 1000;
-					if (scopecount > 0) {
-						def = scopecount;
-					} else {
-						def = "";
-					}
-
-				}
+				scopecount += 1000;
 				names[def] = name;
 				if (typeof name === 'undefined' && typeof use !== 'undefined') {
 					name = names[use];
@@ -252,18 +268,18 @@ function realPrototypeExpander(file, object, scope) {
 
 				if (!Array.isArray(instance)) {
 					if (typeof use !== 'undefined') {
-						instance["@USE"] = use;
+						instance["@USE"] = getScope(use);
 					}
 					if (typeof def !== 'undefined') {
-						instance["@DEF"] = def;
+						instance["@DEF"] = saveScope(def);
 					}
 				}
 
 				// We need def to make this instance unique
-				var newscope = scope+name+def;
-				defs[def] = newscope;
-				newobject = realPrototypeExpander(file, instance, newscope);
-				// console.error("Instance is", JSON.stringify(newobject));
+				pushScope("INST"+scopecount);
+				console.error("WIPED1", newobject);
+				newobject = realPrototypeExpander(file, instance);
+				// console.error("1>>>>", getScope(), def, JSON.stringify(newobject));
 
 				var fieldValue = object[p]["fieldValue"];
 				for (var field in fieldValue) {
@@ -277,104 +293,57 @@ function realPrototypeExpander(file, object, scope) {
 						} else {
 							fieldOrNode = nv;
 							value = fv[fieldOrNode];
-							realPrototypeExpander(file, fv, newscope);
+							if (fieldOrNode.substr(0,1) === '-') {
+								pushScope("FIELD"+fieldname);
+								value = realPrototypeExpander(file, value);
+								// console.error("2>>>>", getScope(), JSON.stringify(value));
+								popScope();
+							}
 						}
 					}
-					var obj = setObjectValues(newscope,
+					var obj = setObjectValues(getScope(),
 					    fieldname,
 					    fieldOrNode,
 					    value);
-					clearScope(newscope, fieldname, newobject);
+					// clearScope(getScope(), fieldname, newobject);
 					console.error("value is", value);
+					console.error("obj is", obj);
 				}
 				console.error("result Instance is", JSON.stringify(newobject));
+				popScope();
+				popScope();
 			} else if (p.toLowerCase() === 'connect') {
-				//realPrototypeExpander(file, object[p], scope);
+				realPrototypeExpander(file, object[p]);
 			} else if (p.toLowerCase() === 'fieldvalue') {
-				//
+				realPrototypeExpander(file, object[p]);
 			} else if (p.toLowerCase() === 'field') {
-				var fields = object[p];
-				for (var field in fields) {
-					// merely put it in the environment so it will be found
-					setIfNotSetEnv(scope,
-					    fields[field]["@name"],
-					    scope,
-					    fields[field]["@name"]);
-				}
-				realPrototypeExpander(file, object[p], scope);
-				newobject[p] = object[p];
+				newobject[p] = realPrototypeExpander(file, object[p]);
 			} else if (p.toLowerCase() === 'is') {
-				var def = object["@DEF"];
 				var connect = object[p]["connect"];
-				// delete object[p];
-				newobject = object;
-				// console.error('connect', scope);
 				for (var field in connect) {
 					var f = connect[field];
 					if (f) {
-						setEnv(scope,
-						    f["@protoField"],
-						    def,
-						    f["@nodeField"]);
-						setConnect(scope,
+						setConnect(getScope(),
 						    f["@protoField"],
 						    newobject,
 						    f["@nodeField"]);
 					}
 				}
+				realPrototypeExpander(file, object[p]);
 			} else if (p.toLowerCase() === '@fromnode') {
-				var name = object["@fromNode"];
-				if (typeof scope !== 'undefined') {
-					object["@fromNode"] = scope+name;
-				}
-				env = [];
-				if (typeof defs[name] !== 'undefined') {
- 					var env = getEnv(defs[name], object["@fromField"]);
-					if (typeof env !== 'undefined') {
-						object["@fromNode"] = env[0];
-						object["@fromField"] = env[1];
-					}
-				}
-				newobject[p] = object["@fromNode"];
+				newobject["@fromNode"] = getScope(object["@fromNode"]);
 				newobject["@fromField"] = object["@fromField"];
 			} else if (p.toLowerCase() === '@tonode') {
-				var name = object["@toNode"];
-				if (typeof scope !== 'undefined') {
-					object["@toNode"] = scope+name;
-				}
-				env = [];
-				if (typeof defs[name] !== 'undefined') {
- 					var env = getEnv(defs[name], object["@toField"]);
-					if (typeof env !== 'undefined') {
-						object["@toNode"] = env[0];
-						object["@toField"] = env[1];
-					}
-				}
-				newobject[p] = object["@toNode"];
+				newobject["@toNode"] = getScope(object["@toNode"]);
 				newobject["@toField"] = object["@toField"];
 			} else if (p.toLowerCase() === '@name') {
-				var name = object["@name"];
 				newobject[p] = object[p];
 			} else if (p.toLowerCase() === '@def') {
-				var def = object["@DEF"];
-				if (typeof def !== 'undefined' && typeof scope !== 'undefined') {
-					object["@DEF"] = scope+def;
-					// console.error("NEW DEF", scope+def);
-					setEnv(def,
-					    '',
-					    scope+def,
-					    '');
-				}
-				newobject[p] = object[p];
+				newobject[p] = saveScope(object[p]);
 			} else if (p.toLowerCase() === '@use') {
-				var use = object["@USE"];
- 				var env = getEnv(use, '');
-				if (typeof env !== 'undefined') {
-					object["@USE"] = env[0];
-				}
-				newobject[p] = object[p];
+				newobject[p] = getScope(object[p]);
 			} else {
-				newobject[p] = realPrototypeExpander(file, object[p], scope);
+				newobject[p] = realPrototypeExpander(file, object[p]);
 			}
 		}
 	} else {
@@ -382,8 +351,108 @@ function realPrototypeExpander(file, object, scope) {
 	}
 	return newobject;
 }
+var def = null;
+
+function searchForProtoDeclare(object, name) {
+	var p;
+	var found;
+	if (typeof object === "object") {
+		for (p in object) {
+			if (p === 'ProtoDeclare') {
+				// console.error("looked at", object[p]["@name"], "for", name);
+				if (object[p]["@name"] === name) {
+					found = object;
+				}
+				// find the first one if none match
+				if (typeof found === 'undefined' && def === null) {
+					def = object;
+				}
+			}
+			if (typeof found === 'undefined') {
+				found = searchForProtoDeclare(object[p], name);
+			}
+		}
+	}
+	if (typeof found !== 'undefined') {
+		// console.error("defaulted to", found["ProtoDeclare"]["@name"]);
+	}
+	return found;
+}
+
+function loadedProto(data, name, protoname, appinfo, description, filename) {
+	if (typeof data !== 'undefined') {
+		// console.error("searching for", name, "in", data.toString());
+		try {
+			def = null;
+			var newobj = searchForProtoDeclare(JSON.parse(data), protoname);
+			if (typeof newobj === 'undefined') {
+				newobj = def;
+			}
+			newobj["@name"] = name;
+			newobj["@appinfo"] = appinfo;
+			newobj["@description"] = description;
+			return newobj;
+		} catch (e) {
+			console.error("Failed to parse JSON in ", filename, e);
+		}
+	}
+}
+
+function externPrototypeExpander(file, object) {
+	if (typeof object === "object") {
+		if (Array.isArray(object)) {
+			var newobject = [];
+		} else {
+			var newobject = {};
+		}
+		// Wait for numreturn tasks to finish
+		var numreturn = Object.keys(object).length;
+		function expand(done) {
+			for (var p in object) {
+				if (p === 'ExternProtoDeclare') {
+					function load(p) {
+						var obj = object[p];
+						var url = obj["@url"];
+						var name = obj["@name"];
+						var appinfo = obj["@appinfo"];
+						var description = obj["@description"];
+						// this is a single task
+						loadURLs(file, url, function(data, u) {
+							var nameIndex = u.indexOf("#");
+							var protoname = name;
+							if (nameIndex >= 0) {
+								protoname = u.substring(nameIndex+1);
+							}
+							var newobject = loadedProto(data, name, protoname, appinfo, description, u);
+							done(p, newobject);
+						});
+					}
+					load(p);
+				} else {
+					// this is a single task
+					done(p, externPrototypeExpander(file, object[p]));
+				}
+			}
+		}
+		expand(function (p, newobj) {
+			if (p === "ExternProtoDeclare") {
+				newobject = newobj;
+			} else {
+				newobject[p] = newobj;
+			}
+		});
+		while (numreturn > Object.keys(newobject).length) {
+			setTimeout(function() {}, 50);
+		}
+		return newobject;
+	} else {
+		return object;
+	}
+}
+
 
 if (typeof module === 'object')  {
-        module.exports = prototypeExpander;
+        module.exports.prototypeExpander = prototypeExpander;
+	module.exports.externPrototypeExpander = externPrototypeExpander;
         module.exports.setLoadURLs = setLoadURLs;
 }
