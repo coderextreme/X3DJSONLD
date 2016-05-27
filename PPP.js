@@ -3,8 +3,10 @@
 // set up XML DOM
 var xmldom = require('xmldom');
 var X3DJSONLD = require('./X3DJSONLD');
+var loadURLs = X3DJSONLD.loadURLs;
 var fs = require("fs");
 var prototypeExpander = require('./PrototypeExpander');
+prototypeExpander.setLoadURLs(loadURLs);
 var Script = require('./Script');
 var externPrototypeExpander = require("./ServerPrototypeExpander");
 
@@ -49,7 +51,7 @@ process.stdin.on('end', function() {
 	var object = JSON.parse(fs.readFileSync(file).toString());
 	// var object = JSON.parse(content);
 	externPrototypeExpander(file, object);
-	prototypeExpander(object, "");
+	object = prototypeExpander(file, object, "");
 	console.log(JSON.stringify(object, null, 2));
 
 	var classes = new LOG();
@@ -58,7 +60,7 @@ process.stdin.on('end', function() {
 	processScripts(object, classes, undefined, routecode);
 	var xml = [];
 	loadX3DJS(object, file, xml);
-	console.error(xml.join("\n"));
+	// console.error(xml.join("\n"));
 	var code = classes.join('\n')
 		.replace(/&lt;/g, '<')
 		.replace(/&gt;/g, '>')

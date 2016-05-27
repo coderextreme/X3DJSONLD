@@ -2,50 +2,52 @@ var fs = require("fs");
 var https = require('https');
 var http = require('http');
 
+var def = null;
+
 function searchForProtoDeclare(object, name) {
 	var p;
-	var retval;
 	var found;
 	if (typeof object === "object") {
 		for (p in object) {
 			if (p === 'ProtoDeclare') {
-				console.log("looked at", object[p]["@name"]);
+				// console.error("looked at", object[p]["@name"]);
 				if (object[p]["@name"] === name) {
 					found = object;
 				}
 				// find the first one if none match
-				if (typeof found === 'undefined') {
-					found = object;
+				if (typeof found === 'undefined' && def === null) {
+					def = object;
 				}
 			}
-			retval = searchForProtoDeclare(object[p], name);
 			if (typeof found === 'undefined') {
-				if (typeof retval !== 'undefined') {
-					found = retval;
-				}
+				found = searchForProtoDeclare(object[p], name);
 			}
 		}
 	}
 	if (typeof found !== 'undefined') {
-		console.log("defaulted to", found["ProtoDeclare"]["@name"]);
+		// console.error("defaulted to", found["ProtoDeclare"]["@name"]);
 	}
 	return found;
 }
 
 function loadedProto(data, object, name, protoname, appinfo, description, filename) {
 	if (typeof data !== 'undefined') {
-		console.log("searching for", name);
+		// console.error("searching for", name);
 		try {
+			def = null;
 			var newobj = searchForProtoDeclare(JSON.parse(data), protoname);
+			if (typeof newobj === 'undefined') {
+				newobj = def;
+			}
 			for (var p in newobj) {
 				object[p] = newobj[p];
 			}
-			console.log("found", newobj[p]["@name"]);
+			// console.error("found", newobj[p]["@name"]);
 			object[p]["@name"] = name;
 			object[p]["@appinfo"] = appinfo;
 			object[p]["@description"] = description;
 		} catch (e) {
-			console.log("Failed to parse JSON in ", filename);
+			console.error("Failed to parse JSON in ", filename);
 		}
 	}
 }
@@ -67,10 +69,10 @@ function resolve(dir, file) {
 }
 
 function loadProto(dir, object, url, name, appinfo, description) {
-	// console.log("Found extern Proto", name);
+	// console.error("Found extern Proto", name);
 	if (typeof url !== 'undefined') {
 		for (var u in url) {
-			// console.log("Loading File", url[u]);
+			// console.error("Loading File", url[u]);
 			var nameIndex = url[u].indexOf("#");
 			var protoname = name;
 			if (nameIndex >= 0) {
@@ -79,7 +81,7 @@ function loadProto(dir, object, url, name, appinfo, description) {
 			var ext = url[u].lastIndexOf(".");
 			var file = url[u].substr(0, ext)+".json";
 			var filename = resolve(dir, file);
-			// console.log("Reading", filename, " for proto");
+			// console.error("Reading", filename, " for proto");
 			if (filename.indexOf("https://") === 0) {
 				https.get(filename, function(res) {
 				   var response = '';
@@ -90,7 +92,7 @@ function loadProto(dir, object, url, name, appinfo, description) {
 					  response += data;
 				   });
 				   res.on('end', function() {
-					  // console.log("Got back from https", response.toString());
+					  // console.error("Got back from https", response.toString());
 					  loadedProto(response, object, name, protoname, appinfo, description, filename);
 				   });
 				});
@@ -104,24 +106,24 @@ function loadProto(dir, object, url, name, appinfo, description) {
 					  response += data;
 				   });
 				   res.on('end', function() {
-					  // console.log("Got back from http", response.toString());
+					  // console.error("Got back from http", response.toString());
 					  loadedProto(response, object, name, protoname, appinfo, description, filename);
 				   });
 				});
 			} else if (url[u].indexOf("urn:") === 0) {
-				console.log("Don't know how to load URN", filename);
+				console.error("Don't know how to load URN", filename);
 			} else {
 				try {
 					response = fs.readFileSync(filename);
-					// console.log("Got back from file", response);
+					// console.error("Got back from file", response);
 					loadedProto(response, object, name, protoname, appinfo, description, filename);
 				} catch (e) {
-					console.log("couldn't load file", filename, "from filesystem");
+					console.error("couldn't load file", filename, "from filesystem");
 				}
 			}
 		}
 	}
-	// console.log(object);
+	// console.error(object);
 }
 
 function externPrototypeExpander(dir, object) {
