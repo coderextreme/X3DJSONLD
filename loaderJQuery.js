@@ -23,7 +23,6 @@ function setVersion(version) {
 		} else {
 			$('#x3domxml').get()[0].innerHTML = $('textarea#xml').val();
 		}
-		x3dom.reload();
 		var content = $('textarea#xml').val();
 		var cobwebWindow = document.getElementById("cobwebframe").contentWindow ;
 		var cobwebEle = cobwebWindow.document.getElementsByTagName("X3D")[0];
@@ -33,6 +32,7 @@ function setVersion(version) {
 		} else {
 			console.error("Cobweb disabled temporarily.  May work on next load");
 		}
+	        x3dom.reload();
         }
 
 	function filter(event) {
@@ -54,7 +54,8 @@ function setVersion(version) {
 	    if ($('#prototype').is(':checked')) {
 
 		// Expand Protos
-		prototypeExpander(json, "");
+		json = externPrototypeExpander(url, json);
+		json = prototypeExpander(url, json, "");
 
 		// Now generate JavaScript code for Scripts and Routes
 		var classes = new LOG();
@@ -110,13 +111,10 @@ function setVersion(version) {
 		intervalId = setInterval(runRoutes, 100);
 	    }
 	    var NS = $('#namespace option:selected').text();
-	    switch(NS) {
-	    case "none":
+	    if (NS === "none") {
 		replaceX3DJSON(selector, json, url, xml); // X3DOM
-		break;
-	    default:
+	    } else {
 		replaceX3DJSON(selector, json, url, xml, NS);  // Cobweb if not XHTML NS
-		break;
 	    }
 			
 	    updateXML(xml);
@@ -166,7 +164,6 @@ function setVersion(version) {
 			elementSetAttribute(element, "xmlns:xsd", 'http://www.w3.org/2001/XMLSchema-instance');
 			$(selector).empty();
 			$(selector).append(element);
-			x3dom.reload();
 		}
 	}
 
@@ -215,6 +212,7 @@ function setVersion(version) {
 	function loadX3DXSLT(jsonAsXml, url) {
 		$('textarea#json').val(getXmlString(jsonAsXml));
 		replaceX3DJSON("#x3domjson", JSON.parse($("textarea#json").val()), url);
+		x3dom.reload();
 		// don't load XML, it's already loaded
 	}
 
@@ -235,6 +233,7 @@ function setVersion(version) {
 		console.log('JSON', json);
 		$('textarea#json').val(JSON.stringify(json, null, 2));
 		replaceX3DJSON("#x3domjson", JSON.parse($("textarea#json").val()), "flipper.json");  // does not load flipper.json
+		x3dom.reload();
 	    }, "json");
 /*
 	    $.get("X3dToJson.xslt", function(xslt) {

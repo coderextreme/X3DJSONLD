@@ -119,7 +119,11 @@ function processRoute(route, routecode, package) {
 			var  to = '$("[DEF='+toNode+'], [USE='+toNode+']").attr("'+toField+'",';
 		}
 	} else {
-		var  to = 'X3DJSON.Object_' +toNode+'.'+toField+'(';
+		if (toField.indexOf("set_") == 0) {
+			var  to = 'X3DJSON.Object_' +toNode+'.'+toField+'(';
+		} else {
+			var  to = 'X3DJSON.Object_' +toNode+'.set_'+toField+'(';
+		}
 	}
 	if (typeof package.find(fromNode) === 'undefined') {
 		routecode.log('	if (!$("[DEF='+fromNode+'], [USE='+fromNode+']")) console.error("undefined '+fromNode+'");');
@@ -333,7 +337,7 @@ function processSource(lines, classes, package) {
 			body = body.replace(/\svar\s+this\./g,  " var ");
 
 			// replace constructors with arrays
-			body = body.replace(/new (MF[A-Za-z0-9]+|SFMatrix[A-Za-z0-9]+|SFVec[234][df]|SFRotation|SFColor)[ 	]*\(([^;]*)\)[ 	]*;/g, 'Browser.stringToArray\([$2]\);');
+			body = body.replace(/new (MF[A-Za-z0-9]+|SFMatrix[A-Za-z0-9]+|SFVec[234][df]|SFRotation|SFColor)[ 	]*\(([^;]*)\)[ 	]*;/g, "Browser.stringToArray\('$1',[$2]\);");
 
 			//body = body.replace(/&amp;/g, '&');
 			//body = body.replace(/&lt;/g, '<');

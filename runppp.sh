@@ -1,25 +1,9 @@
 #!/bin/sh -x
-#node PPP.js examples/X3dForWebAuthors/KelpForestExhibit/KelpForestMain.json
-#read me
-node PPP.js for.json > fors.json
-read me
-node PPP.js rubikOnFire.json > rubikOnFires.json
-read me
-node PPP.js bubbles.json > bubbless.json 
-read me
-node PPP.js ArchPrototype.json > ArchPrototypes.json 
-read me
-node PPP.js ObliqueStrategies.json > ObliqueStrategiess.json 
-read me
-node PPP.js rubik.json > rubiks.json
-read me
-node PPP.js pp3.json > pp3s.json
-read me
-node PPP.js qq3.json > qq3s.json
-read me
-node PPP.js cobweb.json > cobwebs.json 
-read me
-node PPP.js force.json > forces.json
-read me
-node PPP.js NancyPrototypes.json > NancyPrototypess.json
-read me
+
+# for i in force.json
+for i in for.json rubikOnFire.json bubbles.json ArchPrototype.json ObliqueStrategies.json rubik.json pp3.json qq3.json cobweb.json force.json NancyPrototypes.json examples/X3dForWebAuthors/KelpForestExhibit/KelpForestMain.json 
+do
+	echo "=========================$i====================="
+	read me
+	node PPP.js $i > `basename $i .json`s.json
+done
