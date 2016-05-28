@@ -1,94 +1,234 @@
 { "X3D": {
     "encoding":"UTF-8",
-    "@profile":"Interchange",
-    "@version":"3.0",
-    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
     "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
-    "head": {
-        "meta": [
-          {
-            "@name":"title",
-            "@content":"Box.x3d"
-          },
-          {
-            "@name":"description",
-            "@content":"Simple Box shape used as test scene for GeoInline/Inline loading and unloading."
-          },
-          {
-            "@name":"translator",
-            "@content":"Xeena VRML importer, X3D-Edit 3.1, http://www.web3d.org/x3d/content/README.X3D-Edit.html"
-          },
-          {
-            "@name":"translated",
-            "@content":"22 April 2003"
-          },
-          {
-            "@name":"modified",
-            "@content":"22 December 2011"
-          },
-          {
-            "@name":"creator",
-            "@content":"GeoVRML Working Group"
-          },
-          {
-            "@name":"reference",
-            "@content":"http://www.web3d.org/x3d/content/examples/Basic/Geospatial/A3_GeoInline.x3d"
-          },
-          {
-            "@name":"identifier",
-            "@content":"http://www.web3d.org/x3d/content/examples/Basic/Geospatial/Box.x3d"
-          },
-          {
-            "@name":"generator",
-            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
-          },
-          {
-            "@name":"generator",
-            "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
-          },
-          {
-            "@name":"license",
-            "@content":"../license.html"
-          },
-          {
-            "@name":"translated",
-            "@content":"17 April 2016"
-          },
-          {
-            "@name":"generator",
-            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
-          },
-          {
-            "@name":"warning",
-            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
-          }
-        ]
-    },
     "Scene": {
         "-children":[
-          { "Transform":
+          { "NavigationInfo":
             {
-              "@translation":[-1,0,0],
-              "-children":[
-                { "Shape":
-                  {
-                    "-appearance":
-                      { "Appearance":
-                        {
-                          "-material":
-                            { "Material":
-                              {
-                                "@diffuseColor":[0,1,0]
+              "@type":["ANY","WALK","EXAMINE","FLY","LOOKAT"]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Cubes on Fire",
+              "@position":[0,0,12]
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"anyShape",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"xtranslation",
+                      "@accessType":"inputOutput",
+                      "@type":"SFVec3f",
+                      "@value":[0.0,0.0,0.0]
+                    },
+                    {
+                      "@name":"myShape",
+                      "@accessType":"inputOutput",
+                      "@type":"MFNode",
+                      "-children":[
+                        { "Shape":
+                          {
+                            "-geometry":
+                              { "Sphere":
+                                {
+                                }
+                              },
+                            "-appearance":
+                              { "Appearance":
+                                {
+                                  "-material":
+                                    { "Material":
+                                      {
+                                        "@diffuseColor":[1,1,1]
+                                      }
+                                    }
+                                }
                               }
-                            }
+                          }
                         }
-                      },
-                    "-geometry":
-                      { "Box":
-                        {
+                      ]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                      {
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"translation",
+                                "@protoField":"xtranslation"
+                              },
+                              {
+                                "@nodeField":"children",
+                                "@protoField":"myShape"
+                              }
+                            ]
                         }
                       }
-                  }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"three",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"ytranslation",
+                      "@accessType":"inputOutput",
+                      "@type":"SFVec3f",
+                      "@value":[0.0,0.0,0.0]
+                    },
+                    {
+                      "@name":"myShape",
+                      "@accessType":"inputOutput",
+                      "@type":"MFNode",
+                      "-children":[
+                        { "Shape":
+                          {
+                            "-geometry":
+                              { "Cylinder":
+                                {
+                                }
+                              },
+                            "-appearance":
+                              { "Appearance":
+                                {
+                                  "-material":
+                                    { "Material":
+                                      {
+                                        "@diffuseColor":[1,1,1]
+                                      }
+                                    }
+                                }
+                              }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                      {
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"translation",
+                                "@protoField":"ytranslation"
+                              }
+                            ]
+                        },
+                        "-children":[
+                          { "ProtoInstance":
+                            {
+                              "@name":"anyShape",
+                              "fieldValue": [
+                                {
+                                  "@name":"xtranslation",
+                                  "@value":[0,0,0]
+                                }
+                              ],
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"myShape",
+                                      "@protoField":"myShape"
+                                    }
+                                  ]
+                              }
+                            }
+                          },
+                          { "ProtoInstance":
+                            {
+                              "@name":"anyShape",
+                              "fieldValue": [
+                                {
+                                  "@name":"xtranslation",
+                                  "@value":[2,0,0]
+                                }
+                              ],
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"myShape",
+                                      "@protoField":"myShape"
+                                    }
+                                  ]
+                              }
+                            }
+                          },
+                          { "ProtoInstance":
+                            {
+                              "@name":"anyShape",
+                              "fieldValue": [
+                                {
+                                  "@name":"xtranslation",
+                                  "@value":[-2,0,0]
+                                }
+                              ],
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"myShape",
+                                      "@protoField":"myShape"
+                                    }
+                                  ]
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"three",
+              "fieldValue": [
+                {
+                  "@name":"ytranslation",
+                  "@value":[0,0,0]
+                },
+                {
+                  "@name":"myShape",
+                  "-children":[
+                    { "Shape":
+                      {
+                        "-geometry":
+                          { "Box":
+                            {
+                              "@size":[1,1,1]
+                            }
+                          },
+                        "-appearance":
+                          { "Appearance":
+                            {
+                              "-material":
+                                { "Material":
+                                  {
+                                    "@diffuseColor":[0,1,0]
+                                  }
+                                }
+                            }
+                          }
+                      }
+                    }
+                  ]
                 }
               ]
             }
