@@ -1,6 +1,5 @@
 var protos = {};
 var names = {};
-var nodeField = {};
 var protoField = {};
 var scriptField = {};
 var interfaceField = {};
@@ -10,12 +9,11 @@ var privatescope = [];
 var defs = {};
 
 function pushScope(s) {
-	console.error("PUSH", s);
 	privatescope.push(s);
 }
 
 function popScope() {
-	console.error("POP", privatescope.pop());
+	privatescope.pop();
 }
 
 function saveScope(def) {
@@ -45,26 +43,40 @@ function setLoadURLs(func) {
 	loadURLs = func;
 }
 
+function setValueFromInterface(field, object, objectfield) {
+	// copy the default interface value;
+	var fieldnamefield = getInterface(field);
+	// default to "@".  - might need to be specified for children, see setter.
+	var prefix = "@";
+	if (typeof fieldnamefield != 'undefined' && typeof fieldnamefield[0] != 'undefined') {
+		prefix = fieldnamefield[0].substr(0,1);
+	}
+	objectfield = prefix+objectfield;
+	if (typeof fieldnamefield != 'undefined' && typeof fieldnamefield[1] != 'undefined' && typeof fieldnamefield[0] != 'undefined' && typeof fieldnamefield[1][fieldnamefield[0]] != 'undefined') {
+		// just grab the one value out of the interface.  We may want more later for typechecking
+		object[objectfield] = fieldnamefield[1][fieldnamefield[0]];
+	}
+}
+
 function setScript(scope, field, object, objectfield) {
-	// copy the default value;
-	object["@"+objectfield] = getInterface(field);
+	setValueFromInterface(field, object, objectfield);
+
 	// console.error("setscript", scope, field, object, objectfield);
-	// scriptField[scope+field] = [ object, objectfield ];
 	if (typeof scriptField[scope+field] === 'undefined') {
 		scriptField[scope+field] = [];
 	}
+	// set another reference
 	scriptField[scope+field][scriptField[scope+field].length] = [ object, objectfield];
 				
 }
 
 function setConnect(scope, field, object, objectfield) {
-	// copy the default value;
-	object["@"+objectfield] = getInterface(field);
-	console.error("setconn", scope, field, object, objectfield);
-	// protoField[scope+field] = [ object, objectfield ];
+	setValueFromInterface(field, object, objectfield);
+	console.error("setconn", scope, field, JSON.stringify(object), objectfield);
 	if (typeof protoField[scope+field] === 'undefined') {
 		protoField[scope+field] = [];
 	}
+	// set another reference
 	protoField[scope+field][protoField[scope+field].length] = [ object, objectfield];
 }
 
@@ -74,18 +86,18 @@ function getInterface(field) {
 		if (!scope) {
 			break;
 		}
-		var value = interfaceField[scope+field];
-		console.error("getinter", scope, field, value);
-		if (value) {
-			return value;
+		var fieldnamefield = interfaceField[scope+field];
+		//console.error("getinter", scope, field, fieldnamefield);
+		if (fieldnamefield) {
+			return fieldnamefield;
 		}
-		console.error("looping", i);
+		//console.error("looping", i);
 	}
 }
 
-function setInterface(scope, field, value) {
-	interfaceField[scope+field] = value;
-	console.error("setinter", scope, field, value);
+function setInterface(scope, field, fieldname) {
+	interfaceField[scope+field["@name"]] = [fieldname, field];
+	console.error("setinter", scope, field["@name"], fieldname, field[fieldname]);
 }
 
 function clearScope(scope, field, object) {
@@ -96,7 +108,7 @@ function clearScope(scope, field, object) {
 
 function setObjectValues(scope, field, fieldOrNode, value) {
 	var retobj;
-	// console.error("looking for ", scope, field, "setting", value);
+	console.error("resolve", scope, field, fieldOrNode, value);
 	for (var sf in scriptField[scope+field]) {
 		var obj = scriptField[scope+field][sf];
 		if (typeof obj !== 'undefined') {
@@ -109,9 +121,9 @@ function setObjectValues(scope, field, fieldOrNode, value) {
 	}
 	for (var pf in protoField[scope+field]) {
 		var obj = protoField[scope+field][pf];
-		// console.error("tempobj ====== ", obj);
+		console.error("tempobj ====== ", scope, field, pf, obj);
 		if (typeof obj !== 'undefined') {
-			// console.error("foundprotovalue", scope, field, obj, fieldOrNode, value);
+			console.error("foundprotovalue", scope, field, obj, fieldOrNode, value);
 			retobj = setObjectValue(scope, field, obj, fieldOrNode, value);
 			// console.error("set result return2 ", obj[0], fieldOrNode, obj[1], '=', value);
 		} else {
@@ -127,7 +139,7 @@ function setObjectValue(scope, field, obj, fieldOrNode, value) {
 	// console.error("newscope", newscope, "scope", scope);
         if (typeof newscope !== 'undefined' && scope != newscope) {
 		field = obj[1];
-		// console.error("setrecurse", newscope, field, obj, fieldOrNode, value);
+		console.error("setrecurse", newscope, field, obj, fieldOrNode, value);
 		var retobj = setObjectValues(newscope, field, fieldOrNode, value);
 		if (retobj) {
 			return retobj;
@@ -136,8 +148,14 @@ function setObjectValue(scope, field, obj, fieldOrNode, value) {
 		}
 	}
 	// if the recursion didn't set it, set it now
-	obj[0][fieldOrNode.substr(0,1)+obj[1]] = value;
-	// console.error("set result", obj[0], fieldOrNode, obj[1], '=', value);
+	var prefix = obj[1].substr(0,1);
+	if (prefix !== '-' && prefix !== '@') {
+		prefix = fieldOrNode.substr(0,1);
+	} else {
+		prefix = "";
+	}
+	obj[0][prefix+obj[1]] = value;
+	console.error("setresult", obj[0], prefix, obj[1], '=', value, 'alt', fieldOrNode);
 	return obj;
 }
 
@@ -195,11 +213,11 @@ function realPrototypeExpander(file, object) {
 				var fields  = object[p]["field"];
 				for (var field in fields) {
 					var f = fields[field];
-					var corv = "value";
+					var corv = "@value";
 					for (var a in fields) {
 						if ( a === '@value' || a === '-children') {
 							// console.error("===========attribute", a);
-							corv = a.substr(1);
+							corv = a;
 						}
 					}
 					setScript(getScope(),
@@ -236,9 +254,14 @@ function realPrototypeExpander(file, object) {
 			} else if (p.toLowerCase() === 'protointerface') {
 				var fields = object[p]["field"];
 				for (var field in fields) {
-					setInterface(getScope(),
-					    fields[field]["@name"],
-					    fields[field]["@value"]);
+					var f = fields[field];
+					if (typeof f["@value"] !== 'undefined') {
+						setInterface(getScope(), f, "@value")
+					} else if (typeof f["-children"] !== 'undefined') {
+						setInterface(getScope(), f, "-children");
+					} else {
+						setInterface(getScope(), f);
+					}
 				}
 				// realPrototypeExpander(file, object[p]);
 			} else if (p.toLowerCase() === 'protobody') {
@@ -289,25 +312,22 @@ function realPrototypeExpander(file, object) {
 					var value = fv[fieldOrNode];
 					for (var nv in fv) {
 						if (nv === '@name') {
-							fieldname = fv[nv];
-						} else {
-							fieldOrNode = nv;
-							value = fv[fieldOrNode];
-							if (fieldOrNode.substr(0,1) === '-') {
-								pushScope("FIELD"+fieldname);
-								value = realPrototypeExpander(file, value);
-								// console.error("2>>>>", getScope(), JSON.stringify(value));
-								popScope();
-							}
+							continue;
 						}
+						fieldOrNode = nv;
+						value = fv[fieldOrNode];
+						pushScope("FIELD"+fieldname);
+						value = realPrototypeExpander(file, value);
+						console.error("2>>>>", getScope(), JSON.stringify(value));
+						popScope();
+						var obj = setObjectValues(getScope(),
+						    fieldname,
+						    fieldOrNode,
+						    value);
+						console.error("value is", value);
+						console.error("obj is", obj);
 					}
-					var obj = setObjectValues(getScope(),
-					    fieldname,
-					    fieldOrNode,
-					    value);
 					// clearScope(getScope(), fieldname, newobject);
-					console.error("value is", value);
-					console.error("obj is", obj);
 				}
 				console.error("result Instance is", JSON.stringify(newobject));
 				popScope();
@@ -388,9 +408,9 @@ function loadedProto(data, name, protoname, appinfo, description, filename) {
 			if (typeof newobj === 'undefined') {
 				newobj = def;
 			}
-			newobj["@name"] = name;
-			newobj["@appinfo"] = appinfo;
-			newobj["@description"] = description;
+			newobj["ProtoDeclare"]["@name"] = name;
+			newobj["ProtoDeclare"]["@appinfo"] = appinfo;
+			newobj["ProtoDeclare"]["@description"] = description;
 			return newobj;
 		} catch (e) {
 			console.error("Failed to parse JSON in ", filename, e);
