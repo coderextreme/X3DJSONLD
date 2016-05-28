@@ -54,7 +54,7 @@ function setVersion(version) {
 	    if ($('#prototype').is(':checked')) {
 
 		// Expand Protos
-		json = externPrototypeExpander(url, json);
+		// json = externPrototypeExpander(url, json);
 		json = prototypeExpander(url, json, "");
 
 		// Now generate JavaScript code for Scripts and Routes

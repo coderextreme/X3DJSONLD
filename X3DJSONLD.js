@@ -97,6 +97,7 @@ function loadURLs(loadpath, urls, loadedCallback) {
 						path = url.substring(pa);
 					}
 					if (protocol === "http") {
+/*
 						console.error("Loading HTTP URL", url);
 						if (typeof $ !== 'undefined') {
 							$.get(url, function(data) {
@@ -114,7 +115,9 @@ function loadURLs(loadpath, urls, loadedCallback) {
 							});
 					
 						}
+*/
 					} else if (protocol === "https") {
+/*
 						console.error("Loading HTTPS URL", url);
 						if (typeof $ !== 'undefined') {
 							$.get(url, function(data) {
@@ -132,6 +135,7 @@ function loadURLs(loadpath, urls, loadedCallback) {
 							});
 					
 						}
+*/
 					} else if (typeof fs !== 'undefined') {
 						// should be async, but out of memory
 						if (fs.statSync(url).isFile()) {
