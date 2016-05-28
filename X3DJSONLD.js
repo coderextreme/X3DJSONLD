@@ -96,6 +96,7 @@ function loadURLs(loadpath, urls, loadedCallback) {
 						host = url.substring(p+3, pa);
 						path = url.substring(pa);
 					}
+/*
 					if (protocol === "http") {
 						console.error("Loading HTTP URL", url);
 						if (typeof $ !== 'undefined') {
@@ -132,7 +133,9 @@ function loadURLs(loadpath, urls, loadedCallback) {
 							});
 					
 						}
-					} else if (typeof fs !== 'undefined') {
+					} else
+*/
+					 if (typeof fs !== 'undefined') {
 						// should be async, but out of memory
 						if (fs.statSync(url).isFile()) {
 							console.error("Loading FILE URL", url);

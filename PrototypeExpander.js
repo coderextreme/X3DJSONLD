@@ -441,7 +441,8 @@ function externPrototypeExpander(file, object) {
 				newobject[p] = newobj;
 			}
 		});
-		while (numreturn > Object.keys(newobject).length) {
+		while (numreturn > Object.keys(newobject).length+1) {
+			console.log(numreturn, '=', Object.keys(newobject).length);
 			setTimeout(function() {}, 50);
 		}
 		return newobject;
