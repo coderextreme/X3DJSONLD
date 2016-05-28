@@ -218,7 +218,7 @@ function CreateElement(key, x3djsonNS) {
 			child = document.createElement(key);
 		}
 	}
-	if (containerFields.length > 1 && containerFields[0] !== 'shaders') {
+	if (containerFields.length > 1 && containerFields[0] !== 'children' && containerFields[0] !== 'shaders') {
 		child.setAttribute('containerField', containerFields[0]);
 	}
 	return child;
