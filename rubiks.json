@@ -33,411 +33,40 @@
         {},
         {},
         {
-          "Group": {
+          "Transform": {
+            "@translation": [
+              0,
+              0,
+              0
+            ],
             "-children": [
               {
                 "Transform": {
                   "-children": [
                     {
-                      "Group": {
+                      "Transform": {
                         "-children": [
                           {
                             "Transform": {
                               "-children": [
                                 {
-                                  "Group": {
-                                    "-children": [
-                                      {
-                                        "Transform": {
-                                          "-children": [
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-geometry": {
-                                                              "Sphere": {}
-                                                            },
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
-                                                                  }
-                                                                }
-                                                              }
-                                                            }
-                                                          }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        0,
-                                                        0,
-                                                        0
-                                                      ]
-                                                    }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000sphere109000109000"
-                                              }
-                                            },
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-geometry": {
-                                                              "Sphere": {}
-                                                            },
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
-                                                                  }
-                                                                }
-                                                              }
-                                                            }
-                                                          }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        2,
-                                                        0,
-                                                        0
-                                                      ]
-                                                    }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000sphere110000110000"
-                                              }
-                                            },
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-geometry": {
-                                                              "Sphere": {}
-                                                            },
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
-                                                                  }
-                                                                }
-                                                              }
-                                                            }
-                                                          }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        -2,
-                                                        0,
-                                                        0
-                                                      ]
-                                                    }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000sphere111000111000"
-                                              }
-                                            }
-                                          ],
-                                          "@translation": [
-                                            0,
-                                            0,
-                                            0
-                                          ]
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Sphere": {}
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
                                         }
                                       }
-                                    ],
-                                    "@DEF": "twentyseven82000twentyseven82000three105000105000"
-                                  }
-                                },
-                                {
-                                  "Group": {
-                                    "-children": [
-                                      {
-                                        "Transform": {
-                                          "-children": [
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-geometry": {
-                                                              "Sphere": {}
-                                                            },
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
-                                                                  }
-                                                                }
-                                                              }
-                                                            }
-                                                          }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        0,
-                                                        0,
-                                                        0
-                                                      ]
-                                                    }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000sphere116000116000"
-                                              }
-                                            },
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-geometry": {
-                                                              "Sphere": {}
-                                                            },
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
-                                                                  }
-                                                                }
-                                                              }
-                                                            }
-                                                          }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        2,
-                                                        0,
-                                                        0
-                                                      ]
-                                                    }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000sphere117000117000"
-                                              }
-                                            },
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-geometry": {
-                                                              "Sphere": {}
-                                                            },
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
-                                                                  }
-                                                                }
-                                                              }
-                                                            }
-                                                          }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        -2,
-                                                        0,
-                                                        0
-                                                      ]
-                                                    }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000sphere118000118000"
-                                              }
-                                            }
-                                          ],
-                                          "@translation": [
-                                            0,
-                                            2,
-                                            0
-                                          ]
-                                        }
-                                      }
-                                    ],
-                                    "@DEF": "twentyseven82000twentyseven82000three112000112000"
-                                  }
-                                },
-                                {
-                                  "Group": {
-                                    "-children": [
-                                      {
-                                        "Transform": {
-                                          "-children": [
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-geometry": {
-                                                              "Sphere": {}
-                                                            },
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
-                                                                  }
-                                                                }
-                                                              }
-                                                            }
-                                                          }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        0,
-                                                        0,
-                                                        0
-                                                      ]
-                                                    }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000sphere123000123000"
-                                              }
-                                            },
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-geometry": {
-                                                              "Sphere": {}
-                                                            },
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
-                                                                  }
-                                                                }
-                                                              }
-                                                            }
-                                                          }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        2,
-                                                        0,
-                                                        0
-                                                      ]
-                                                    }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000sphere124000124000"
-                                              }
-                                            },
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-geometry": {
-                                                              "Sphere": {}
-                                                            },
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
-                                                                  }
-                                                                }
-                                                              }
-                                                            }
-                                                          }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        -2,
-                                                        0,
-                                                        0
-                                                      ]
-                                                    }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000sphere125000125000"
-                                              }
-                                            }
-                                          ],
-                                          "@translation": [
-                                            0,
-                                            -2,
-                                            0
-                                          ]
-                                        }
-                                      }
-                                    ],
-                                    "@DEF": "twentyseven82000twentyseven82000three119000119000"
+                                    }
                                   }
                                 }
                               ],
@@ -446,839 +75,297 @@
                                 0,
                                 0
                               ]
-                            }
+                            },
+                            "@DEF": "DECLtwentyseven_INSTANCE54000_DECLnine_INSTANCE55000_DECLthree_INSTANCE56000_DECLsphere_INSTANCE57000"
+                          },
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Sphere": {}
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                2,
+                                0,
+                                0
+                              ]
+                            },
+                            "@DEF": "DECLtwentyseven_INSTANCE54000_DECLnine_INSTANCE55000_DECLthree_INSTANCE56000_DECLsphere_INSTANCE58000"
+                          },
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Sphere": {}
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                -2,
+                                0,
+                                0
+                              ]
+                            },
+                            "@DEF": "DECLtwentyseven_INSTANCE54000_DECLnine_INSTANCE55000_DECLthree_INSTANCE56000_DECLsphere_INSTANCE59000"
                           }
                         ],
-                        "@DEF": "twentyseven82000twentyseven82000nine8300083000"
-                      }
+                        "@translation": [
+                          0,
+                          0,
+                          0
+                        ]
+                      },
+                      "@DEF": "DECLtwentyseven_INSTANCE54000_DECLnine_INSTANCE55000_DECLthree_INSTANCE56000"
                     },
                     {
-                      "Group": {
+                      "Transform": {
                         "-children": [
                           {
                             "Transform": {
                               "-children": [
                                 {
-                                  "Group": {
-                                    "-children": [
-                                      {
-                                        "Transform": {
-                                          "-children": [
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-geometry": {
-                                                              "Sphere": {}
-                                                            },
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
-                                                                  }
-                                                                }
-                                                              }
-                                                            }
-                                                          }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        0,
-                                                        0,
-                                                        0
-                                                      ]
-                                                    }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000sphere152000152000"
-                                              }
-                                            },
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-geometry": {
-                                                              "Sphere": {}
-                                                            },
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
-                                                                  }
-                                                                }
-                                                              }
-                                                            }
-                                                          }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        2,
-                                                        0,
-                                                        0
-                                                      ]
-                                                    }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000sphere153000153000"
-                                              }
-                                            },
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-geometry": {
-                                                              "Sphere": {}
-                                                            },
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
-                                                                  }
-                                                                }
-                                                              }
-                                                            }
-                                                          }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        -2,
-                                                        0,
-                                                        0
-                                                      ]
-                                                    }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000sphere154000154000"
-                                              }
-                                            }
-                                          ],
-                                          "@translation": [
-                                            0,
-                                            0,
-                                            0
-                                          ]
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Sphere": {}
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
                                         }
                                       }
-                                    ],
-                                    "@DEF": "twentyseven82000twentyseven82000three148000148000"
-                                  }
-                                },
-                                {
-                                  "Group": {
-                                    "-children": [
-                                      {
-                                        "Transform": {
-                                          "-children": [
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-geometry": {
-                                                              "Sphere": {}
-                                                            },
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
-                                                                  }
-                                                                }
-                                                              }
-                                                            }
-                                                          }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        0,
-                                                        0,
-                                                        0
-                                                      ]
-                                                    }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000sphere159000159000"
-                                              }
-                                            },
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-geometry": {
-                                                              "Sphere": {}
-                                                            },
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
-                                                                  }
-                                                                }
-                                                              }
-                                                            }
-                                                          }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        2,
-                                                        0,
-                                                        0
-                                                      ]
-                                                    }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000sphere160000160000"
-                                              }
-                                            },
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-geometry": {
-                                                              "Sphere": {}
-                                                            },
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
-                                                                  }
-                                                                }
-                                                              }
-                                                            }
-                                                          }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        -2,
-                                                        0,
-                                                        0
-                                                      ]
-                                                    }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000sphere161000161000"
-                                              }
-                                            }
-                                          ],
-                                          "@translation": [
-                                            0,
-                                            2,
-                                            0
-                                          ]
-                                        }
-                                      }
-                                    ],
-                                    "@DEF": "twentyseven82000twentyseven82000three155000155000"
-                                  }
-                                },
-                                {
-                                  "Group": {
-                                    "-children": [
-                                      {
-                                        "Transform": {
-                                          "-children": [
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-geometry": {
-                                                              "Sphere": {}
-                                                            },
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
-                                                                  }
-                                                                }
-                                                              }
-                                                            }
-                                                          }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        0,
-                                                        0,
-                                                        0
-                                                      ]
-                                                    }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000sphere166000166000"
-                                              }
-                                            },
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-geometry": {
-                                                              "Sphere": {}
-                                                            },
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
-                                                                  }
-                                                                }
-                                                              }
-                                                            }
-                                                          }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        2,
-                                                        0,
-                                                        0
-                                                      ]
-                                                    }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000sphere167000167000"
-                                              }
-                                            },
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-geometry": {
-                                                              "Sphere": {}
-                                                            },
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
-                                                                  }
-                                                                }
-                                                              }
-                                                            }
-                                                          }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        -2,
-                                                        0,
-                                                        0
-                                                      ]
-                                                    }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000sphere168000168000"
-                                              }
-                                            }
-                                          ],
-                                          "@translation": [
-                                            0,
-                                            -2,
-                                            0
-                                          ]
-                                        }
-                                      }
-                                    ],
-                                    "@DEF": "twentyseven82000twentyseven82000three162000162000"
+                                    }
                                   }
                                 }
                               ],
                               "@translation": [
                                 0,
                                 0,
-                                2
+                                0
                               ]
-                            }
+                            },
+                            "@DEF": "DECLtwentyseven_INSTANCE54000_DECLnine_INSTANCE55000_DECLthree_INSTANCE60000_DECLsphere_INSTANCE61000"
+                          },
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Sphere": {}
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                2,
+                                0,
+                                0
+                              ]
+                            },
+                            "@DEF": "DECLtwentyseven_INSTANCE54000_DECLnine_INSTANCE55000_DECLthree_INSTANCE60000_DECLsphere_INSTANCE62000"
+                          },
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Sphere": {}
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                -2,
+                                0,
+                                0
+                              ]
+                            },
+                            "@DEF": "DECLtwentyseven_INSTANCE54000_DECLnine_INSTANCE55000_DECLthree_INSTANCE60000_DECLsphere_INSTANCE63000"
                           }
                         ],
-                        "@DEF": "twentyseven82000twentyseven82000nine126000126000"
-                      }
+                        "@translation": [
+                          0,
+                          2,
+                          0
+                        ]
+                      },
+                      "@DEF": "DECLtwentyseven_INSTANCE54000_DECLnine_INSTANCE55000_DECLthree_INSTANCE60000"
                     },
                     {
-                      "Group": {
+                      "Transform": {
                         "-children": [
                           {
                             "Transform": {
                               "-children": [
                                 {
-                                  "Group": {
-                                    "-children": [
-                                      {
-                                        "Transform": {
-                                          "-children": [
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-geometry": {
-                                                              "Sphere": {}
-                                                            },
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
-                                                                  }
-                                                                }
-                                                              }
-                                                            }
-                                                          }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        0,
-                                                        0,
-                                                        0
-                                                      ]
-                                                    }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000sphere195000195000"
-                                              }
-                                            },
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-geometry": {
-                                                              "Sphere": {}
-                                                            },
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
-                                                                  }
-                                                                }
-                                                              }
-                                                            }
-                                                          }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        2,
-                                                        0,
-                                                        0
-                                                      ]
-                                                    }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000sphere196000196000"
-                                              }
-                                            },
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-geometry": {
-                                                              "Sphere": {}
-                                                            },
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
-                                                                  }
-                                                                }
-                                                              }
-                                                            }
-                                                          }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        -2,
-                                                        0,
-                                                        0
-                                                      ]
-                                                    }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000sphere197000197000"
-                                              }
-                                            }
-                                          ],
-                                          "@translation": [
-                                            0,
-                                            0,
-                                            0
-                                          ]
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Sphere": {}
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
                                         }
                                       }
-                                    ],
-                                    "@DEF": "twentyseven82000twentyseven82000three191000191000"
-                                  }
-                                },
-                                {
-                                  "Group": {
-                                    "-children": [
-                                      {
-                                        "Transform": {
-                                          "-children": [
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-geometry": {
-                                                              "Sphere": {}
-                                                            },
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
-                                                                  }
-                                                                }
-                                                              }
-                                                            }
-                                                          }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        0,
-                                                        0,
-                                                        0
-                                                      ]
-                                                    }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000sphere202000202000"
-                                              }
-                                            },
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-geometry": {
-                                                              "Sphere": {}
-                                                            },
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
-                                                                  }
-                                                                }
-                                                              }
-                                                            }
-                                                          }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        2,
-                                                        0,
-                                                        0
-                                                      ]
-                                                    }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000sphere203000203000"
-                                              }
-                                            },
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-geometry": {
-                                                              "Sphere": {}
-                                                            },
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
-                                                                  }
-                                                                }
-                                                              }
-                                                            }
-                                                          }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        -2,
-                                                        0,
-                                                        0
-                                                      ]
-                                                    }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000sphere204000204000"
-                                              }
-                                            }
-                                          ],
-                                          "@translation": [
-                                            0,
-                                            2,
-                                            0
-                                          ]
-                                        }
-                                      }
-                                    ],
-                                    "@DEF": "twentyseven82000twentyseven82000three198000198000"
-                                  }
-                                },
-                                {
-                                  "Group": {
-                                    "-children": [
-                                      {
-                                        "Transform": {
-                                          "-children": [
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-geometry": {
-                                                              "Sphere": {}
-                                                            },
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
-                                                                  }
-                                                                }
-                                                              }
-                                                            }
-                                                          }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        0,
-                                                        0,
-                                                        0
-                                                      ]
-                                                    }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000sphere209000209000"
-                                              }
-                                            },
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-geometry": {
-                                                              "Sphere": {}
-                                                            },
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
-                                                                  }
-                                                                }
-                                                              }
-                                                            }
-                                                          }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        2,
-                                                        0,
-                                                        0
-                                                      ]
-                                                    }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000sphere210000210000"
-                                              }
-                                            },
-                                            {
-                                              "Group": {
-                                                "-children": [
-                                                  {
-                                                    "Transform": {
-                                                      "-children": [
-                                                        {
-                                                          "Shape": {
-                                                            "-geometry": {
-                                                              "Sphere": {}
-                                                            },
-                                                            "-appearance": {
-                                                              "Appearance": {
-                                                                "-material": {
-                                                                  "Material": {
-                                                                    "@diffuseColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
-                                                                  }
-                                                                }
-                                                              }
-                                                            }
-                                                          }
-                                                        }
-                                                      ],
-                                                      "@translation": [
-                                                        -2,
-                                                        0,
-                                                        0
-                                                      ]
-                                                    }
-                                                  }
-                                                ],
-                                                "@DEF": "twentyseven82000twentyseven82000sphere211000211000"
-                                              }
-                                            }
-                                          ],
-                                          "@translation": [
-                                            0,
-                                            -2,
-                                            0
-                                          ]
-                                        }
-                                      }
-                                    ],
-                                    "@DEF": "twentyseven82000twentyseven82000three205000205000"
+                                    }
                                   }
                                 }
                               ],
                               "@translation": [
                                 0,
                                 0,
-                                -2
+                                0
                               ]
-                            }
+                            },
+                            "@DEF": "DECLtwentyseven_INSTANCE54000_DECLnine_INSTANCE55000_DECLthree_INSTANCE64000_DECLsphere_INSTANCE65000"
+                          },
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Sphere": {}
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                2,
+                                0,
+                                0
+                              ]
+                            },
+                            "@DEF": "DECLtwentyseven_INSTANCE54000_DECLnine_INSTANCE55000_DECLthree_INSTANCE64000_DECLsphere_INSTANCE66000"
+                          },
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Sphere": {}
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                -2,
+                                0,
+                                0
+                              ]
+                            },
+                            "@DEF": "DECLtwentyseven_INSTANCE54000_DECLnine_INSTANCE55000_DECLthree_INSTANCE64000_DECLsphere_INSTANCE67000"
                           }
                         ],
-                        "@DEF": "twentyseven82000twentyseven82000nine169000169000"
-                      }
+                        "@translation": [
+                          0,
+                          -2,
+                          0
+                        ]
+                      },
+                      "@DEF": "DECLtwentyseven_INSTANCE54000_DECLnine_INSTANCE55000_DECLthree_INSTANCE64000"
                     }
                   ],
                   "@translation": [
@@ -1286,11 +373,684 @@
                     0,
                     0
                   ]
-                }
+                },
+                "@DEF": "DECLtwentyseven_INSTANCE54000_DECLnine_INSTANCE55000"
+              },
+              {
+                "Transform": {
+                  "-children": [
+                    {
+                      "Transform": {
+                        "-children": [
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Sphere": {}
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                0,
+                                0,
+                                0
+                              ]
+                            },
+                            "@DEF": "DECLtwentyseven_INSTANCE54000_DECLnine_INSTANCE68000_DECLthree_INSTANCE69000_DECLsphere_INSTANCE70000"
+                          },
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Sphere": {}
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                2,
+                                0,
+                                0
+                              ]
+                            },
+                            "@DEF": "DECLtwentyseven_INSTANCE54000_DECLnine_INSTANCE68000_DECLthree_INSTANCE69000_DECLsphere_INSTANCE71000"
+                          },
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Sphere": {}
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                -2,
+                                0,
+                                0
+                              ]
+                            },
+                            "@DEF": "DECLtwentyseven_INSTANCE54000_DECLnine_INSTANCE68000_DECLthree_INSTANCE69000_DECLsphere_INSTANCE72000"
+                          }
+                        ],
+                        "@translation": [
+                          0,
+                          0,
+                          0
+                        ]
+                      },
+                      "@DEF": "DECLtwentyseven_INSTANCE54000_DECLnine_INSTANCE68000_DECLthree_INSTANCE69000"
+                    },
+                    {
+                      "Transform": {
+                        "-children": [
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Sphere": {}
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                0,
+                                0,
+                                0
+                              ]
+                            },
+                            "@DEF": "DECLtwentyseven_INSTANCE54000_DECLnine_INSTANCE68000_DECLthree_INSTANCE73000_DECLsphere_INSTANCE74000"
+                          },
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Sphere": {}
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                2,
+                                0,
+                                0
+                              ]
+                            },
+                            "@DEF": "DECLtwentyseven_INSTANCE54000_DECLnine_INSTANCE68000_DECLthree_INSTANCE73000_DECLsphere_INSTANCE75000"
+                          },
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Sphere": {}
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                -2,
+                                0,
+                                0
+                              ]
+                            },
+                            "@DEF": "DECLtwentyseven_INSTANCE54000_DECLnine_INSTANCE68000_DECLthree_INSTANCE73000_DECLsphere_INSTANCE76000"
+                          }
+                        ],
+                        "@translation": [
+                          0,
+                          2,
+                          0
+                        ]
+                      },
+                      "@DEF": "DECLtwentyseven_INSTANCE54000_DECLnine_INSTANCE68000_DECLthree_INSTANCE73000"
+                    },
+                    {
+                      "Transform": {
+                        "-children": [
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Sphere": {}
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                0,
+                                0,
+                                0
+                              ]
+                            },
+                            "@DEF": "DECLtwentyseven_INSTANCE54000_DECLnine_INSTANCE68000_DECLthree_INSTANCE77000_DECLsphere_INSTANCE78000"
+                          },
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Sphere": {}
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                2,
+                                0,
+                                0
+                              ]
+                            },
+                            "@DEF": "DECLtwentyseven_INSTANCE54000_DECLnine_INSTANCE68000_DECLthree_INSTANCE77000_DECLsphere_INSTANCE79000"
+                          },
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Sphere": {}
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                -2,
+                                0,
+                                0
+                              ]
+                            },
+                            "@DEF": "DECLtwentyseven_INSTANCE54000_DECLnine_INSTANCE68000_DECLthree_INSTANCE77000_DECLsphere_INSTANCE80000"
+                          }
+                        ],
+                        "@translation": [
+                          0,
+                          -2,
+                          0
+                        ]
+                      },
+                      "@DEF": "DECLtwentyseven_INSTANCE54000_DECLnine_INSTANCE68000_DECLthree_INSTANCE77000"
+                    }
+                  ],
+                  "@translation": [
+                    0,
+                    0,
+                    2
+                  ]
+                },
+                "@DEF": "DECLtwentyseven_INSTANCE54000_DECLnine_INSTANCE68000"
+              },
+              {
+                "Transform": {
+                  "-children": [
+                    {
+                      "Transform": {
+                        "-children": [
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Sphere": {}
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                0,
+                                0,
+                                0
+                              ]
+                            },
+                            "@DEF": "DECLtwentyseven_INSTANCE54000_DECLnine_INSTANCE81000_DECLthree_INSTANCE82000_DECLsphere_INSTANCE83000"
+                          },
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Sphere": {}
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                2,
+                                0,
+                                0
+                              ]
+                            },
+                            "@DEF": "DECLtwentyseven_INSTANCE54000_DECLnine_INSTANCE81000_DECLthree_INSTANCE82000_DECLsphere_INSTANCE84000"
+                          },
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Sphere": {}
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                -2,
+                                0,
+                                0
+                              ]
+                            },
+                            "@DEF": "DECLtwentyseven_INSTANCE54000_DECLnine_INSTANCE81000_DECLthree_INSTANCE82000_DECLsphere_INSTANCE85000"
+                          }
+                        ],
+                        "@translation": [
+                          0,
+                          0,
+                          0
+                        ]
+                      },
+                      "@DEF": "DECLtwentyseven_INSTANCE54000_DECLnine_INSTANCE81000_DECLthree_INSTANCE82000"
+                    },
+                    {
+                      "Transform": {
+                        "-children": [
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Sphere": {}
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                0,
+                                0,
+                                0
+                              ]
+                            },
+                            "@DEF": "DECLtwentyseven_INSTANCE54000_DECLnine_INSTANCE81000_DECLthree_INSTANCE86000_DECLsphere_INSTANCE87000"
+                          },
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Sphere": {}
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                2,
+                                0,
+                                0
+                              ]
+                            },
+                            "@DEF": "DECLtwentyseven_INSTANCE54000_DECLnine_INSTANCE81000_DECLthree_INSTANCE86000_DECLsphere_INSTANCE88000"
+                          },
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Sphere": {}
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                -2,
+                                0,
+                                0
+                              ]
+                            },
+                            "@DEF": "DECLtwentyseven_INSTANCE54000_DECLnine_INSTANCE81000_DECLthree_INSTANCE86000_DECLsphere_INSTANCE89000"
+                          }
+                        ],
+                        "@translation": [
+                          0,
+                          2,
+                          0
+                        ]
+                      },
+                      "@DEF": "DECLtwentyseven_INSTANCE54000_DECLnine_INSTANCE81000_DECLthree_INSTANCE86000"
+                    },
+                    {
+                      "Transform": {
+                        "-children": [
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Sphere": {}
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                0,
+                                0,
+                                0
+                              ]
+                            },
+                            "@DEF": "DECLtwentyseven_INSTANCE54000_DECLnine_INSTANCE81000_DECLthree_INSTANCE90000_DECLsphere_INSTANCE91000"
+                          },
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Sphere": {}
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                2,
+                                0,
+                                0
+                              ]
+                            },
+                            "@DEF": "DECLtwentyseven_INSTANCE54000_DECLnine_INSTANCE81000_DECLthree_INSTANCE90000_DECLsphere_INSTANCE92000"
+                          },
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Sphere": {}
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                -2,
+                                0,
+                                0
+                              ]
+                            },
+                            "@DEF": "DECLtwentyseven_INSTANCE54000_DECLnine_INSTANCE81000_DECLthree_INSTANCE90000_DECLsphere_INSTANCE93000"
+                          }
+                        ],
+                        "@translation": [
+                          0,
+                          -2,
+                          0
+                        ]
+                      },
+                      "@DEF": "DECLtwentyseven_INSTANCE54000_DECLnine_INSTANCE81000_DECLthree_INSTANCE90000"
+                    }
+                  ],
+                  "@translation": [
+                    0,
+                    0,
+                    -2
+                  ]
+                },
+                "@DEF": "DECLtwentyseven_INSTANCE54000_DECLnine_INSTANCE81000"
               }
-            ],
-            "@DEF": "twentyseven8200082000"
-          }
+            ]
+          },
+          "@DEF": "DECLtwentyseven_INSTANCE54000"
         }
       ]
     }

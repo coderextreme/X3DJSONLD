@@ -56,6 +56,7 @@ function setVersion(version) {
 		// Expand Protos
 		// json = externPrototypeExpander(url, json);
 		json = prototypeExpander(url, json, "");
+		console.log("JSON IS NOW", json);
 
 		// Now generate JavaScript code for Scripts and Routes
 		var classes = new LOG();

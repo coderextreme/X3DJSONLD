@@ -96,9 +96,9 @@ function loadURLs(loadpath, urls, loadedCallback) {
 						host = url.substring(p+3, pa);
 						path = url.substring(pa);
 					}
-/*
+
 					if (protocol === "http") {
-						console.error("Loading HTTP URL", url);
+						// console.error("Loading HTTP URL", url);
 						if (typeof $ !== 'undefined') {
 							$.get(url, function(data) {
 								loadedCallback(data, url);
@@ -116,7 +116,7 @@ function loadURLs(loadpath, urls, loadedCallback) {
 					
 						}
 					} else if (protocol === "https") {
-						console.error("Loading HTTPS URL", url);
+						// console.error("Loading HTTPS URL", url);
 						if (typeof $ !== 'undefined') {
 							$.get(url, function(data) {
 								loadedCallback(data, url);
@@ -133,19 +133,17 @@ function loadURLs(loadpath, urls, loadedCallback) {
 							});
 					
 						}
-					} else
-*/
-					 if (typeof fs !== 'undefined') {
+					} else if (typeof fs !== 'undefined' && protocol.indexOf("http") !== 0) {
 						// should be async, but out of memory
 						if (fs.statSync(url).isFile()) {
-							console.error("Loading FILE URL", url);
+							// console.error("Loading FILE URL", url);
 							var data = fs.readFileSync(url);
 							loadedCallback(data.toString(), url);
 						} else {
 							console.error("File doesn't exist or is not available,", url);
 						}
 					} else if (typeof $ !== 'undefined') {
-						console.error("Loading Relative URL", url);
+						// console.error("Loading Relative URL", url);
 						$.get(url, function(data) {
 							loadedCallback(data, url);
 						});
@@ -154,7 +152,7 @@ function loadURLs(loadpath, urls, loadedCallback) {
 					}
 				})(url);
 			} catch (e) {
-				console.log(e);
+				console.error(e);
 			}
 		}
 	}

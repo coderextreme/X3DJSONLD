@@ -9,24 +9,40 @@ var privatescope = [];
 var defs = {};
 
 function pushScope(s) {
+	// console.error("PUSH", s);
 	privatescope.push(s);
 }
 
 function popScope() {
+	// console.error("POP", privatescope[privatescope.length-1]);
 	privatescope.pop();
 }
 
-function saveScope(def) {
+function saveDef(def) {
 	defs[def] = getScope();
-	return getScope(def);
+	var d = getScope(def);
+	// console.error("DEF SAVED", d, defs[def]);
+	return d
+}
+
+function getDef(def) {
+	// console.error("SCOPE OF DEF", def, defs[def]);
+	return defs[def];
 }
 
 function getScope(def) {
+	var scope;
 	if (def) {
-		return defs[def]+"_"+def;
+		if (defs[def]) {
+			scope = defs[def]+"_"+def;
+		} else {
+			scope = def;
+		}
 	} else {
-		return privatescope.join("_");
+		scope = privatescope.join("_");
 	}
+	// console.error("GET", [def], scope);
+	return scope;
 }
 
 function scopeLength() {
@@ -54,30 +70,72 @@ function setValueFromInterface(field, object, objectfield) {
 	objectfield = prefix+objectfield;
 	if (typeof fieldnamefield != 'undefined' && typeof fieldnamefield[1] != 'undefined' && typeof fieldnamefield[0] != 'undefined' && typeof fieldnamefield[1][fieldnamefield[0]] != 'undefined') {
 		// just grab the one value out of the interface.  We may want more later for typechecking
-		object[objectfield] = fieldnamefield[1][fieldnamefield[0]];
+		var value = fieldnamefield[1][fieldnamefield[0]];
+		if (Array.isArray(value) && fieldnamefield[1]["@type"] === "SFNode") {
+			// and some SF fields are arrays, so we have to explicitly test for SFNode
+			// can't shove an array into an SFNode, so take the first element, per Roy Walmsley
+			// console.error("SFNode is array=", value);
+			value = value[0];
+			// console.error("SFNode array[0]=", value);
+		}
+		object[objectfield] = value
+		return fieldnamefield[1]["@type"];
 	}
+	return undefined;
 }
 
-function setScript(scope, field, object, objectfield) {
-	setValueFromInterface(field, object, objectfield);
+function setScriptFields(objectp, def) {
+	var fields  = objectp["field"];
+	var scope = getScope();
+	for (var field in fields) {
+		var f = fields[field];
+		var field = f["@name"];
+		var type = f["@type"];
+		var objectfield = "value";
+		for (var a in f) {
+			if ( a === '@value' || a === '-children') {
+				// console.error("===========attribute", a);
+				objectfield = a.substr(1);
+			}
+		}
+		setValueFromInterface(field, f, objectfield);
 
-	// console.error("setscript", scope, field, object, objectfield);
-	if (typeof scriptField[scope+field] === 'undefined') {
-		scriptField[scope+field] = [];
+		console.error("setscript", scope, field, f, objectfield, type, def);
+		if (typeof scriptField[scope+field] === 'undefined') {
+			scriptField[scope+field] = [];
+		}
+		// set another reference
+		scriptField[scope+field][scriptField[scope+field].length] = [ f, objectfield, type, def];
 	}
-	// set another reference
-	scriptField[scope+field][scriptField[scope+field].length] = [ object, objectfield];
 				
 }
 
-function setConnect(scope, field, object, objectfield) {
-	setValueFromInterface(field, object, objectfield);
-	console.error("setconn", scope, field, JSON.stringify(object), objectfield);
-	if (typeof protoField[scope+field] === 'undefined') {
-		protoField[scope+field] = [];
+function setConnectFields(object, p, newobject) {
+	var def = object["@DEF"]; // at same level as IS
+	newdef = saveDef(def);
+	var connect = object[p]["connect"];
+	var scope = getScope();
+	for (var cfield in connect) {
+		var f = connect[cfield];
+		// console.error("Connect field", field, f);
+		if (f) {
+/*
+			setEnv(scope,
+			    f["@protoField"],
+			    newdef,
+			    f["@nodeField"]);
+*/
+			var field = getScope(f["@protoField"]);
+			var objectfield = f["@nodeField"];
+			var type = setValueFromInterface(field, newobject, objectfield);
+			console.error("setconn", scope, field, JSON.stringify(newobject), objectfield, type, newdef);
+			if (typeof protoField[scope+field] === 'undefined') {
+				protoField[scope+field] = [];
+			}
+			// set another reference
+			protoField[scope+field][protoField[scope+field].length] = [ newobject, objectfield, type, newdef];
+		}
 	}
-	// set another reference
-	protoField[scope+field][protoField[scope+field].length] = [ object, objectfield];
 }
 
 function getInterface(field) {
@@ -95,20 +153,47 @@ function getInterface(field) {
 	}
 }
 
-function setInterface(scope, field, fieldname) {
+function setInterface(field, fieldname) {
+	var scope = getScope();
 	interfaceField[scope+field["@name"]] = [fieldname, field];
 	console.error("setinter", scope, field["@name"], fieldname, field[fieldname]);
 }
 
-function clearScope(scope, field, object) {
+function clearScope(field, object) {
+	var scope = getScope();
 	delete scriptField[scope+field];
 	delete protoField[scope+field];
 	zap(field, object);
 }
 
+function extractConnectedDef(scope, node) {
+	var defobj;
+	for (var sf in scriptField[scope+node]) {
+		var obj = scriptField[scope+node][sf];
+		if (typeof obj !== 'undefined') {
+			defobj = [obj[3], obj[1]];
+			console.error("def1 is", defobj);
+		}
+	}
+	if (typeof defobj === 'undefined') {
+		for (var pf in protoField[scope+node]) {
+			var obj = protoField[scope+node][pf];
+			if (typeof obj !== 'undefined') {
+				defobj = [obj[3], obj[1]];
+				console.error("def2 is", defobj);
+			}
+		}
+	}
+	if (typeof defobj === 'undefined') {
+		defobj = [scope, node];
+		console.error("def3 is", defobj);
+	}
+	return defobj;
+}
+
 function setObjectValues(scope, field, fieldOrNode, value) {
 	var retobj;
-	console.error("resolve", scope, field, fieldOrNode, value);
+	// console.error("resolve", scope, field, fieldOrNode, value);
 	for (var sf in scriptField[scope+field]) {
 		var obj = scriptField[scope+field][sf];
 		if (typeof obj !== 'undefined') {
@@ -121,22 +206,23 @@ function setObjectValues(scope, field, fieldOrNode, value) {
 	}
 	for (var pf in protoField[scope+field]) {
 		var obj = protoField[scope+field][pf];
-		console.error("tempobj ====== ", scope, field, pf, obj);
+		// console.error("tempobj ====== ", scope, field, pf, obj);
 		if (typeof obj !== 'undefined') {
-			console.error("foundprotovalue", scope, field, obj, fieldOrNode, value);
+			// console.error("foundprotovalue", scope, field, obj, fieldOrNode, value);
 			retobj = setObjectValue(scope, field, obj, fieldOrNode, value);
 			// console.error("set result return2 ", obj[0], fieldOrNode, obj[1], '=', value);
 		} else {
 			console.error("protoundef", scope, field);
 		}
 	}
-	// console.error("result ====== ", value);
+	// console.error("result ====== ", retobj);
 	return retobj;
 }
 
 function setObjectValue(scope, field, obj, fieldOrNode, value) {
-	var newscope = obj[0]["@DEF"];
-	// console.error("newscope", newscope, "scope", scope);
+	var newscope = obj[3];
+	console.error("newscope", newscope, "scope", scope);
+/*
         if (typeof newscope !== 'undefined' && scope != newscope) {
 		field = obj[1];
 		console.error("setrecurse", newscope, field, obj, fieldOrNode, value);
@@ -147,6 +233,19 @@ function setObjectValue(scope, field, obj, fieldOrNode, value) {
 			// console.error("Didn't find it");
 		}
 	}
+*/
+	if (Array.isArray(value) && typeof obj[2] !== 'undefined') {
+		// and some SF fields are arrays, so we have to explicitly test for SFNode
+		if (obj[2] === "SFNode") {
+			// can't shove an array into an SF, so take the first element, per Roy Walmsley
+			// console.error("SFNode is array=", value);
+			value = value[0];
+			// console.error("SFNode array[0]=", value);
+		} else if (obj[2] === "MFNode") {
+			// value = { "Group" : { "-children" : value }};
+			// console.error("MFNode", value);
+		}
+	}
 	// if the recursion didn't set it, set it now
 	var prefix = obj[1].substr(0,1);
 	if (prefix !== '-' && prefix !== '@') {
@@ -155,7 +254,7 @@ function setObjectValue(scope, field, obj, fieldOrNode, value) {
 		prefix = "";
 	}
 	obj[0][prefix+obj[1]] = value;
-	console.error("setresult", obj[0], prefix, obj[1], '=', value, 'alt', fieldOrNode);
+	// console.error("setresult", obj[0], prefix, obj[1], '=', value, 'alt', fieldOrNode);
 	return obj;
 }
 
@@ -194,9 +293,157 @@ function zapIs(object) {
 }
 
 function prototypeExpander(file, object) {
+	protos = {};
+	names = {};
+	protoField = {};
+	scriptField = {};
+	interfaceField = {};
+	scopecount = 0;
+	defdefined = {};
+	privatescope = [];
+	defs = {};
+
 	object = realPrototypeExpander(file, object);
 	// zapIs(object);
 	return object;
+}
+
+function handleScript(file, object, p) {
+	var def  = object[p]["@DEF"];
+	var newdef = saveDef(def);
+	setScriptFields(object[p], newdef);
+	var url  = object[p]["@url"];
+	loadURLs(file, url, function(data, fileExt) {
+		if (typeof data !== 'undefined') {
+			object[p]["#sourceText"] = data.split(/\r?\n/);
+			delete object[p]["@url"];
+		}
+	});
+	var newobject = realPrototypeExpander(file, object[p]);
+	newobject["@DEF"] = getScope(def);
+	return newobject;
+}
+
+function handleProtoDeclare(file, object, p) {
+	var name = object[p]["@name"];
+	var def = object[p]["@DEF"];
+	protos[name] = object[p];
+	saveDef(def);
+	if (typeof object[p]["@appinfo"] !== 'undefined') {
+		protos[name]["@appinfo"] = object[p]["@appinfo"];
+	}
+	if (typeof object[p]["@documentation"] !== 'undefined') {
+		protos[name]["@documentation"] = object[p]["@documentation"];
+	}
+	pushScope("DECL"+name);
+	names[def] = name;
+	realPrototypeExpander(file, object[p]);
+	popScope();
+}
+
+function handleProtoInterface(file, object, p) {
+	var fields = object[p]["field"];
+	for (var field in fields) {
+		var f = fields[field];
+		if (typeof f["@value"] !== 'undefined') {
+			setInterface(f, "@value")
+		} else if (typeof f["-children"] !== 'undefined') {
+			setInterface(f, "-children");
+		} else {
+			setInterface(f);
+		}
+	}
+}
+
+function handleProtoInstance(file, object, p) {
+	var name = object[p]["@name"];
+	pushScope("DECL"+name);
+	var def  = object[p]["@DEF"];
+	var use  = object[p]["@USE"];
+	names[def] = name;
+	if (typeof name === 'undefined' && typeof use !== 'undefined') {
+		name = names[use];
+	}
+	if (typeof def === 'undefined') {
+		def = "INSTANCE";
+	}
+	var instance = {};
+	if (getDef(def)) {
+		scopecount += 1000;
+		def += scopecount;
+	} else {
+		// first appearance of def is left alone
+	}
+	saveDef(def);
+	pushScope(def);
+	if (typeof protos[name] === 'undefined' ||  typeof protos[name]['ProtoBody'] === 'undefined') {
+		console.error("ProtoBody undefined for", name);
+	} else {
+		console.error("Copying ProtoBody", name);
+		var obj = protos[name]['ProtoBody']['-children'];
+		// if there's only one object as a child, grab it
+		if (Object.keys(obj).length === 1) {
+			obj = obj[0];
+		}
+		instance = JSON.parse(JSON.stringify(obj));
+	}
+
+	// We need def to make this instance unique
+	var newobject = realPrototypeExpander(file, instance);
+	// console.error("1>>>>", getScope(), def, JSON.stringify(newobject));
+
+	var fieldValue = object[p]["fieldValue"];
+	for (var field in fieldValue) {
+		var fv = fieldValue[field];
+		var fieldname = fv["@name"];
+		var fieldOrNode = "@value";
+		var value = fv[fieldOrNode];
+		for (var nv in fv) {
+			if (nv === '@name') {
+				continue;
+			}
+			fieldOrNode = nv;
+			value = fv[fieldOrNode];
+			// console.error("value1 is", value);
+			pushScope("FIELD"+fieldname);
+			value = realPrototypeExpander(file, value);
+			// console.error("value2 is", value);
+			popScope();
+			var obj = setObjectValues(getScope(),
+			    fieldname,
+			    fieldOrNode,
+			    value);
+			// console.error("obj is", obj);
+		}
+		// clearScope(fieldname, newobject);
+	}
+
+	if (Array.isArray(newobject)) {
+/*
+		// What a hack, but it may work
+		if (newobject[0]["Transform"] || newobject[0]["Group"]) {
+			newobject = { "Group" : { "-children" : newobject }};
+			if (typeof use !== 'undefined') {
+				newobject["@USE"] = getScope(use);  // there will be at least DEF with this USE
+			}
+			if (typeof def !== 'undefined') {
+				newobject["@DEF"] = getScope(def);
+			}
+		}
+*/
+	} else {
+		if (typeof use !== 'undefined') {
+			newobject["@USE"] = getScope(use);  // there will be at least DEF with this USE
+		}
+		if (typeof def !== 'undefined') {
+			newobject["@DEF"] = getScope(def);
+		}
+	}
+
+	popScope();
+	popScope();
+	// console.error("NEW OBJECT is", JSON.stringify(newobject));
+	return newobject;
 }
 
 function realPrototypeExpander(file, object) {
@@ -209,129 +456,16 @@ function realPrototypeExpander(file, object) {
 		}
 		for (p in object) {
 			if (p.toLowerCase() === 'script') {
-				var url  = object[p]["@url"];
-				var fields  = object[p]["field"];
-				for (var field in fields) {
-					var f = fields[field];
-					var corv = "@value";
-					for (var a in fields) {
-						if ( a === '@value' || a === '-children') {
-							// console.error("===========attribute", a);
-							corv = a;
-						}
-					}
-					setScript(getScope(),
-					    f["@name"],
-					    f,
-					    corv);
-				}
-				loadURLs(file, url, function(data, fileExt) {
-					if (typeof data !== 'undefined') {
-						object[p]["#sourceText"] = data;
-						delete object[p]["@url"];
-					}
-				});
-				var def  = object[p]["@DEF"];
-				pushScope("SCRIPT_"+def);
-				newobject[p] = realPrototypeExpander(file, object[p]);
-				newobject[p]["@DEF"] = getScope();
-				popScope();
+				newobject[p] = handleScript(file, object, p);
 			} else if (p.toLowerCase() === 'protodeclare') {
-				var name = object[p]["@name"];
-				var def = object[p]["@DEF"];
-				saveScope(def);
-				protos[name] = object[p];
-				if (typeof object[p]["@appinfo"] !== 'undefined') {
-					protos[name]["@appinfo"] = object[p]["@appinfo"];
-				}
-				if (typeof object[p]["@documentation"] !== 'undefined') {
-					protos[name]["@documentation"] = object[p]["@documentation"];
-				}
-				pushScope("DECL"+name);
-				names[def] = name;
-				realPrototypeExpander(file, object[p]);
-				popScope();
+				handleProtoDeclare(file, object, p);
 			} else if (p.toLowerCase() === 'protointerface') {
-				var fields = object[p]["field"];
-				for (var field in fields) {
-					var f = fields[field];
-					if (typeof f["@value"] !== 'undefined') {
-						setInterface(getScope(), f, "@value")
-					} else if (typeof f["-children"] !== 'undefined') {
-						setInterface(getScope(), f, "-children");
-					} else {
-						setInterface(getScope(), f);
-					}
-				}
-				// realPrototypeExpander(file, object[p]);
+				handleProtoInterface(file, object, p);
 			} else if (p.toLowerCase() === 'protobody') {
 				realPrototypeExpander(file, object[p]);
 			} else if (p.toLowerCase() === 'protoinstance') {
-				var name = object[p]["@name"];
-				pushScope("DECL"+name);
-				var def  = object[p]["@DEF"];
-				var use  = object[p]["@USE"];
-				scopecount += 1000;
-				names[def] = name;
-				if (typeof name === 'undefined' && typeof use !== 'undefined') {
-					name = names[use];
-				}
-				var instance = {};
-				if (typeof protos[name] === 'undefined' ||  typeof protos[name]['ProtoBody'] === 'undefined') {
-					console.error("ProtoBody undefined for", name);
-				} else {
-					console.error("Copying ProtoBody", name);
-					var obj = protos[name]['ProtoBody']['-children'];
-					// if there's only one object as a child, grab it
-					if (Object.keys(obj).length === 1) {
-						obj = obj[0];
-					}
-					instance = JSON.parse(JSON.stringify(obj));
-				}
-
-				if (!Array.isArray(instance)) {
-					if (typeof use !== 'undefined') {
-						instance["@USE"] = getScope(use);
-					}
-					if (typeof def !== 'undefined') {
-						instance["@DEF"] = saveScope(def);
-					}
-				}
-
-				// We need def to make this instance unique
-				pushScope("INST"+scopecount);
-				console.error("WIPED1", newobject);
-				newobject = realPrototypeExpander(file, instance);
-				// console.error("1>>>>", getScope(), def, JSON.stringify(newobject));
-
-				var fieldValue = object[p]["fieldValue"];
-				for (var field in fieldValue) {
-					var fv = fieldValue[field];
-					var fieldname = fv["@name"];
-					var fieldOrNode = "@value";
-					var value = fv[fieldOrNode];
-					for (var nv in fv) {
-						if (nv === '@name') {
-							continue;
-						}
-						fieldOrNode = nv;
-						value = fv[fieldOrNode];
-						pushScope("FIELD"+fieldname);
-						value = realPrototypeExpander(file, value);
-						console.error("2>>>>", getScope(), JSON.stringify(value));
-						popScope();
-						var obj = setObjectValues(getScope(),
-						    fieldname,
-						    fieldOrNode,
-						    value);
-						console.error("value is", value);
-						console.error("obj is", obj);
-					}
-					// clearScope(getScope(), fieldname, newobject);
-				}
-				console.error("result Instance is", JSON.stringify(newobject));
-				popScope();
-				popScope();
+				newobject = handleProtoInstance(file, object, p);
+				// console.error("NEW OBJECT2 is", JSON.stringify(newobject));
 			} else if (p.toLowerCase() === 'connect') {
 				realPrototypeExpander(file, object[p]);
 			} else if (p.toLowerCase() === 'fieldvalue') {
@@ -339,27 +473,20 @@ function realPrototypeExpander(file, object) {
 			} else if (p.toLowerCase() === 'field') {
 				newobject[p] = realPrototypeExpander(file, object[p]);
 			} else if (p.toLowerCase() === 'is') {
-				var connect = object[p]["connect"];
-				for (var field in connect) {
-					var f = connect[field];
-					if (f) {
-						setConnect(getScope(),
-						    f["@protoField"],
-						    newobject,
-						    f["@nodeField"]);
-					}
-				}
+				setConnectFields(object, p, newobject)
 				realPrototypeExpander(file, object[p]);
-			} else if (p.toLowerCase() === '@fromnode') {
-				newobject["@fromNode"] = getScope(object["@fromNode"]);
-				newobject["@fromField"] = object["@fromField"];
-			} else if (p.toLowerCase() === '@tonode') {
-				newobject["@toNode"] = getScope(object["@toNode"]);
-				newobject["@toField"] = object["@toField"];
+			} else if (p.toLowerCase() === 'route') {
+				newobject[p] = {};
+				var envFrom = extractConnectedDef(getScope(object[p]["@fromNode"]), object[p]["@fromField"]);
+				newobject[p]["@fromNode" ] = envFrom[0];
+				newobject[p]["@fromField"] = envFrom[1];
+				var envTo = extractConnectedDef(getScope(object[p]["@toNode"]), object[p]["@toField"]);
+				newobject[p]["@toNode" ] = envTo[0];
+				newobject[p]["@toField"] = envTo[1];
 			} else if (p.toLowerCase() === '@name') {
 				newobject[p] = object[p];
 			} else if (p.toLowerCase() === '@def') {
-				newobject[p] = saveScope(object[p]);
+				newobject[p] = saveDef(object[p]);
 			} else if (p.toLowerCase() === '@use') {
 				newobject[p] = getScope(object[p]);
 			} else {
@@ -462,7 +589,7 @@ function externPrototypeExpander(file, object) {
 			}
 		});
 		while (numreturn > Object.keys(newobject).length+1) {
-			console.log(numreturn, '=', Object.keys(newobject).length);
+			console.error(numreturn, '=', Object.keys(newobject).length);
 			setTimeout(function() {}, 50);
 		}
 		return newobject;
