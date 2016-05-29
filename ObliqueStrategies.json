@@ -222,7 +222,7 @@
           { "Script":
             {
               "@DEF":"TextScript",
-              "@url":["./ObliqueStrategiesScript.js"],
+              "@url":["ObliqueStrategiesScript.js"],
               "-children":[
                 { "#comment":"initialize() method includes unit test to printAllStrategies() to console"
                 },

@@ -1,0 +1,144 @@
+{
+  "X3D": {
+    "encoding": "UTF-8",
+    "@profile": "Immersive",
+    "@version": "3.3",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "Scene": {
+      "-children": [
+        {
+          "NavigationInfo": {
+            "@type": [
+              "ANY",
+              "WALK",
+              "EXAMINE",
+              "FLY",
+              "LOOKAT"
+            ]
+          }
+        },
+        {
+          "Viewpoint": {
+            "@description": "Cubes on Fire",
+            "@position": [
+              0,
+              0,
+              12
+            ]
+          }
+        },
+        {},
+        {},
+        {
+          "Transform": {
+            "@translation": [
+              0,
+              0,
+              0
+            ],
+            "-children": [
+              {
+                "Transform": {
+                  "-children": [
+                    {
+                      "Shape": {
+                        "-geometry": {
+                          "Cylinder": {}
+                        },
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  1,
+                                  1,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "@translation": [
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                "@DEF": "DECLthree_INSTANCE3000_DECLanyShape_INSTANCE4000"
+              },
+              {
+                "Transform": {
+                  "-children": [
+                    {
+                      "Shape": {
+                        "-geometry": {
+                          "Cylinder": {}
+                        },
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  1,
+                                  1,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "@translation": [
+                    2,
+                    0,
+                    0
+                  ]
+                },
+                "@DEF": "DECLthree_INSTANCE3000_DECLanyShape_INSTANCE5000"
+              },
+              {
+                "Transform": {
+                  "-children": [
+                    {
+                      "Shape": {
+                        "-geometry": {
+                          "Cylinder": {}
+                        },
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  1,
+                                  1,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "@translation": [
+                    -2,
+                    0,
+                    0
+                  ]
+                },
+                "@DEF": "DECLthree_INSTANCE3000_DECLanyShape_INSTANCE6000"
+              }
+            ]
+          },
+          "@DEF": "DECLthree_INSTANCE3000"
+        }
+      ]
+    }
+  }
+}
