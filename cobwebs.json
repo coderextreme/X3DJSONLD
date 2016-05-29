@@ -100,744 +100,720 @@
         },
         {},
         {
-          "Group": {
+          "Transform": {
+            "@DEF": "DECLBubble_bubbleA_transform",
             "-children": [
               {
-                "Transform": {
-                  "@DEF": "BubblebubbleABubbletransform",
-                  "-children": [
-                    {
-                      "Shape": {
-                        "-geometry": {
-                          "Sphere": {
-                            "@radius": 0.25
-                          }
-                        },
-                        "-appearance": {
-                          "Appearance": {
-                            "-material": {
-                              "Material": {
-                                "@diffuseColor": [
-                                  1,
-                                  0,
-                                  0
-                                ],
-                                "@transparency": 0.2
-                              }
-                            }
-                          }
+                "Shape": {
+                  "-geometry": {
+                    "Sphere": {
+                      "@radius": 0.25
+                    }
+                  },
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            1,
+                            0,
+                            0
+                          ],
+                          "@transparency": 0.2
                         }
                       }
-                    },
-                    {
-                      "Script": {
-                        "@DEF": "BubblebubbleABubblebounce",
-                        "field": [
-                          {
-                            "@name": "scale",
-                            "@accessType": "inputOutput",
-                            "@type": "SFVec3f",
-                            "@value": [
-                              1,
-                              1,
-                              1
-                            ]
-                          },
-                          {
-                            "@name": "translation",
-                            "@accessType": "inputOutput",
-                            "@type": "SFVec3f",
-                            "@value": [
-                              0,
-                              0,
-                              0
-                            ]
-                          },
-                          {
-                            "@name": "velocity",
-                            "@accessType": "inputOutput",
-                            "@type": "SFVec3f",
-                            "@value": [
-                              0,
-                              0,
-                              0
-                            ]
-                          },
-                          {
-                            "@name": "scalvel",
-                            "@accessType": "inputOutput",
-                            "@type": "SFVec3f",
-                            "@value": [
-                              0,
-                              0,
-                              0
-                            ]
-                          },
-                          {
-                            "@name": "set_fraction",
-                            "@accessType": "inputOnly",
-                            "@type": "SFFloat"
-                          }
-                        ],
-                        "#sourceText": [
-                          "ecmascript:",
-                          "function initialize() {",
-                          "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);",
-                          "",
-                          "    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);",
-                          "}",
-                          "",
-                          "function set_translation(value) {",
-                          "   translation = value;",
-                          "}",
-                          "",
-                          "function set_scale(value) {",
-                          "   scale = value;",
-                          "}",
-                          "",
-                          "function translation_changed() {",
-                          "\treturn translation;",
-                          "}",
-                          "",
-                          "function set_fraction(value) {",
-                          "    if (typeof translation === 'undefined') {",
-                          "\t\ttranslation = [0, 0, 0];",
-                          "    }",
-                          "    if (typeof velocity === 'undefined') {",
-                          "\t\tvelocity = [0, 0, 0];",
-                          "    }",
-                          "    if (typeof scalevel === 'undefined') {",
-                          "\t\tscalevel = [0, 0, 0];",
-                          "    }",
-                          "    if (typeof scale === 'undefined') {",
-                          "\t\tscale = [1, 1, 1];",
-                          "    }",
-                          "    translation = new SFVec3f(\ttranslation[0] + velocity[0], translation[1] + velocity[1], translation[2] + velocity[2]);",
-                          "    scale = new SFVec3f(scale[0] + scalvel[0], scale[1] + scalvel[1], scale[2] + scalvel[2]);",
-                          "    for (var j = 0; j < 3; j++) {",
-                          "\t    // if you get to far away or too big, explode",
-                          "\t    if ( Math.abs(translation[j]) > 256) {",
-                          "\t\ttranslation[j] = 0;",
-                          "\t\tinitialize();",
-                          "\t    }",
-                          "\t    if (Math.abs(scale[j]) > 20) {",
-                          "\t\tscale[j] = scale[j]/2;",
-                          "\t\ttranslation[j] = 0;",
-                          "\t\tinitialize();",
-                          "\t    }",
-                          "    }",
-                          "}"
-                        ]
-                      }
-                    },
-                    {
-                      "TimeSensor": {
-                        "@DEF": "BubblebubbleABubblebubbleClock",
-                        "@cycleInterval": 10,
-                        "@loop": true
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromNode": "BubblebubbleABubbletransform",
-                        "@fromField": "translation_changed",
-                        "@toNode": "BubblebubbleABubblebounce",
-                        "@toField": "set_translation"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromNode": "BubblebubbleABubbletransform",
-                        "@fromField": "scale_changed",
-                        "@toNode": "BubblebubbleABubblebounce",
-                        "@toField": "set_scale"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromNode": "BubblebubbleABubblebounce",
-                        "@fromField": "translation_changed",
-                        "@toNode": "BubblebubbleABubbletransform",
-                        "@toField": "set_translation"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromNode": "BubblebubbleABubblebounce",
-                        "@fromField": "scale_changed",
-                        "@toNode": "BubblebubbleABubbletransform",
-                        "@toField": "set_scale"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromNode": "BubblebubbleABubblebubbleClock",
-                        "@fromField": "fraction_changed",
-                        "@toNode": "BubblebubbleABubblebounce",
-                        "@toField": "set_fraction"
-                      }
                     }
+                  }
+                }
+              },
+              {
+                "Script": {
+                  "@DEF": "DECLBubble_bubbleA_bounce",
+                  "field": [
+                    {
+                      "@name": "scale",
+                      "@accessType": "inputOutput",
+                      "@type": "SFVec3f",
+                      "@value": [
+                        1,
+                        1,
+                        1
+                      ]
+                    },
+                    {
+                      "@name": "translation",
+                      "@accessType": "inputOutput",
+                      "@type": "SFVec3f",
+                      "@value": [
+                        0,
+                        0,
+                        0
+                      ]
+                    },
+                    {
+                      "@name": "velocity",
+                      "@accessType": "inputOutput",
+                      "@type": "SFVec3f",
+                      "@value": [
+                        0,
+                        0,
+                        0
+                      ]
+                    },
+                    {
+                      "@name": "scalvel",
+                      "@accessType": "inputOutput",
+                      "@type": "SFVec3f",
+                      "@value": [
+                        0,
+                        0,
+                        0
+                      ]
+                    },
+                    {
+                      "@name": "set_fraction",
+                      "@accessType": "inputOnly",
+                      "@type": "SFFloat"
+                    }
+                  ],
+                  "#sourceText": [
+                    "ecmascript:",
+                    "function initialize() {",
+                    "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);",
+                    "",
+                    "    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);",
+                    "}",
+                    "",
+                    "function set_translation(value) {",
+                    "   translation = value;",
+                    "}",
+                    "",
+                    "function set_scale(value) {",
+                    "   scale = value;",
+                    "}",
+                    "",
+                    "function translation_changed() {",
+                    "\treturn translation;",
+                    "}",
+                    "",
+                    "function set_fraction(value) {",
+                    "    if (typeof translation === 'undefined') {",
+                    "\t\ttranslation = [0, 0, 0];",
+                    "    }",
+                    "    if (typeof velocity === 'undefined') {",
+                    "\t\tvelocity = [0, 0, 0];",
+                    "    }",
+                    "    if (typeof scalevel === 'undefined') {",
+                    "\t\tscalevel = [0, 0, 0];",
+                    "    }",
+                    "    if (typeof scale === 'undefined') {",
+                    "\t\tscale = [1, 1, 1];",
+                    "    }",
+                    "    translation = new SFVec3f(\ttranslation[0] + velocity[0], translation[1] + velocity[1], translation[2] + velocity[2]);",
+                    "    scale = new SFVec3f(scale[0] + scalvel[0], scale[1] + scalvel[1], scale[2] + scalvel[2]);",
+                    "    for (var j = 0; j < 3; j++) {",
+                    "\t    // if you get to far away or too big, explode",
+                    "\t    if ( Math.abs(translation[j]) > 256) {",
+                    "\t\ttranslation[j] = 0;",
+                    "\t\tinitialize();",
+                    "\t    }",
+                    "\t    if (Math.abs(scale[j]) > 20) {",
+                    "\t\tscale[j] = scale[j]/2;",
+                    "\t\ttranslation[j] = 0;",
+                    "\t\tinitialize();",
+                    "\t    }",
+                    "    }",
+                    "}"
                   ]
                 }
+              },
+              {
+                "TimeSensor": {
+                  "@DEF": "DECLBubble_bubbleA_bubbleClock",
+                  "@cycleInterval": 10,
+                  "@loop": true
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromNode": "DECLBubble_bubbleA_transform",
+                  "@fromField": "translation_changed",
+                  "@toNode": "DECLBubble_bubbleA_bounce",
+                  "@toField": "set_translation"
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromNode": "DECLBubble_bubbleA_transform",
+                  "@fromField": "scale_changed",
+                  "@toNode": "DECLBubble_bubbleA_bounce",
+                  "@toField": "set_scale"
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromNode": "DECLBubble_bubbleA_bounce",
+                  "@fromField": "translation_changed",
+                  "@toNode": "DECLBubble_bubbleA_transform",
+                  "@toField": "set_translation"
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromNode": "DECLBubble_bubbleA_bounce",
+                  "@fromField": "scale_changed",
+                  "@toNode": "DECLBubble_bubbleA_transform",
+                  "@toField": "set_scale"
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromNode": "DECLBubble_bubbleA_bubbleClock",
+                  "@fromField": "fraction_changed",
+                  "@toNode": "DECLBubble_bubbleA_bounce",
+                  "@toField": "set_fraction"
+                }
               }
-            ],
-            "@DEF": "BubblebubbleAbubbleA"
-          }
+            ]
+          },
+          "@DEF": "DECLBubble_bubbleA"
         },
         {
-          "Group": {
+          "Transform": {
+            "@DEF": "DECLBubble_bubbleB_transform",
             "-children": [
               {
-                "Transform": {
-                  "@DEF": "BubblebubbleBBubbletransform",
-                  "-children": [
-                    {
-                      "Shape": {
-                        "-geometry": {
-                          "Sphere": {
-                            "@radius": 0.25
-                          }
-                        },
-                        "-appearance": {
-                          "Appearance": {
-                            "-material": {
-                              "Material": {
-                                "@diffuseColor": [
-                                  1,
-                                  0,
-                                  0
-                                ],
-                                "@transparency": 0.2
-                              }
-                            }
-                          }
+                "Shape": {
+                  "-geometry": {
+                    "Sphere": {
+                      "@radius": 0.25
+                    }
+                  },
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            1,
+                            0,
+                            0
+                          ],
+                          "@transparency": 0.2
                         }
                       }
-                    },
-                    {
-                      "Script": {
-                        "@DEF": "BubblebubbleBBubblebounce",
-                        "field": [
-                          {
-                            "@name": "scale",
-                            "@accessType": "inputOutput",
-                            "@type": "SFVec3f",
-                            "@value": [
-                              1,
-                              1,
-                              1
-                            ]
-                          },
-                          {
-                            "@name": "translation",
-                            "@accessType": "inputOutput",
-                            "@type": "SFVec3f",
-                            "@value": [
-                              0,
-                              0,
-                              0
-                            ]
-                          },
-                          {
-                            "@name": "velocity",
-                            "@accessType": "inputOutput",
-                            "@type": "SFVec3f",
-                            "@value": [
-                              0,
-                              0,
-                              0
-                            ]
-                          },
-                          {
-                            "@name": "scalvel",
-                            "@accessType": "inputOutput",
-                            "@type": "SFVec3f",
-                            "@value": [
-                              0,
-                              0,
-                              0
-                            ]
-                          },
-                          {
-                            "@name": "set_fraction",
-                            "@accessType": "inputOnly",
-                            "@type": "SFFloat"
-                          }
-                        ],
-                        "#sourceText": [
-                          "ecmascript:",
-                          "function initialize() {",
-                          "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);",
-                          "",
-                          "    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);",
-                          "}",
-                          "",
-                          "function set_translation(value) {",
-                          "   translation = value;",
-                          "}",
-                          "",
-                          "function set_scale(value) {",
-                          "   scale = value;",
-                          "}",
-                          "",
-                          "function translation_changed() {",
-                          "\treturn translation;",
-                          "}",
-                          "",
-                          "function set_fraction(value) {",
-                          "    if (typeof translation === 'undefined') {",
-                          "\t\ttranslation = [0, 0, 0];",
-                          "    }",
-                          "    if (typeof velocity === 'undefined') {",
-                          "\t\tvelocity = [0, 0, 0];",
-                          "    }",
-                          "    if (typeof scalevel === 'undefined') {",
-                          "\t\tscalevel = [0, 0, 0];",
-                          "    }",
-                          "    if (typeof scale === 'undefined') {",
-                          "\t\tscale = [1, 1, 1];",
-                          "    }",
-                          "    translation = new SFVec3f(\ttranslation[0] + velocity[0], translation[1] + velocity[1], translation[2] + velocity[2]);",
-                          "    scale = new SFVec3f(scale[0] + scalvel[0], scale[1] + scalvel[1], scale[2] + scalvel[2]);",
-                          "    for (var j = 0; j < 3; j++) {",
-                          "\t    // if you get to far away or too big, explode",
-                          "\t    if ( Math.abs(translation[j]) > 256) {",
-                          "\t\ttranslation[j] = 0;",
-                          "\t\tinitialize();",
-                          "\t    }",
-                          "\t    if (Math.abs(scale[j]) > 20) {",
-                          "\t\tscale[j] = scale[j]/2;",
-                          "\t\ttranslation[j] = 0;",
-                          "\t\tinitialize();",
-                          "\t    }",
-                          "    }",
-                          "}"
-                        ]
-                      }
-                    },
-                    {
-                      "TimeSensor": {
-                        "@DEF": "BubblebubbleBBubblebubbleClock",
-                        "@cycleInterval": 10,
-                        "@loop": true
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromNode": "BubblebubbleBBubbletransform",
-                        "@fromField": "translation_changed",
-                        "@toNode": "BubblebubbleBBubblebounce",
-                        "@toField": "set_translation"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromNode": "BubblebubbleBBubbletransform",
-                        "@fromField": "scale_changed",
-                        "@toNode": "BubblebubbleBBubblebounce",
-                        "@toField": "set_scale"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromNode": "BubblebubbleBBubblebounce",
-                        "@fromField": "translation_changed",
-                        "@toNode": "BubblebubbleBBubbletransform",
-                        "@toField": "set_translation"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromNode": "BubblebubbleBBubblebounce",
-                        "@fromField": "scale_changed",
-                        "@toNode": "BubblebubbleBBubbletransform",
-                        "@toField": "set_scale"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromNode": "BubblebubbleBBubblebubbleClock",
-                        "@fromField": "fraction_changed",
-                        "@toNode": "BubblebubbleBBubblebounce",
-                        "@toField": "set_fraction"
-                      }
                     }
+                  }
+                }
+              },
+              {
+                "Script": {
+                  "@DEF": "DECLBubble_bubbleB_bounce",
+                  "field": [
+                    {
+                      "@name": "scale",
+                      "@accessType": "inputOutput",
+                      "@type": "SFVec3f",
+                      "@value": [
+                        1,
+                        1,
+                        1
+                      ]
+                    },
+                    {
+                      "@name": "translation",
+                      "@accessType": "inputOutput",
+                      "@type": "SFVec3f",
+                      "@value": [
+                        0,
+                        0,
+                        0
+                      ]
+                    },
+                    {
+                      "@name": "velocity",
+                      "@accessType": "inputOutput",
+                      "@type": "SFVec3f",
+                      "@value": [
+                        0,
+                        0,
+                        0
+                      ]
+                    },
+                    {
+                      "@name": "scalvel",
+                      "@accessType": "inputOutput",
+                      "@type": "SFVec3f",
+                      "@value": [
+                        0,
+                        0,
+                        0
+                      ]
+                    },
+                    {
+                      "@name": "set_fraction",
+                      "@accessType": "inputOnly",
+                      "@type": "SFFloat"
+                    }
+                  ],
+                  "#sourceText": [
+                    "ecmascript:",
+                    "function initialize() {",
+                    "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);",
+                    "",
+                    "    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);",
+                    "}",
+                    "",
+                    "function set_translation(value) {",
+                    "   translation = value;",
+                    "}",
+                    "",
+                    "function set_scale(value) {",
+                    "   scale = value;",
+                    "}",
+                    "",
+                    "function translation_changed() {",
+                    "\treturn translation;",
+                    "}",
+                    "",
+                    "function set_fraction(value) {",
+                    "    if (typeof translation === 'undefined') {",
+                    "\t\ttranslation = [0, 0, 0];",
+                    "    }",
+                    "    if (typeof velocity === 'undefined') {",
+                    "\t\tvelocity = [0, 0, 0];",
+                    "    }",
+                    "    if (typeof scalevel === 'undefined') {",
+                    "\t\tscalevel = [0, 0, 0];",
+                    "    }",
+                    "    if (typeof scale === 'undefined') {",
+                    "\t\tscale = [1, 1, 1];",
+                    "    }",
+                    "    translation = new SFVec3f(\ttranslation[0] + velocity[0], translation[1] + velocity[1], translation[2] + velocity[2]);",
+                    "    scale = new SFVec3f(scale[0] + scalvel[0], scale[1] + scalvel[1], scale[2] + scalvel[2]);",
+                    "    for (var j = 0; j < 3; j++) {",
+                    "\t    // if you get to far away or too big, explode",
+                    "\t    if ( Math.abs(translation[j]) > 256) {",
+                    "\t\ttranslation[j] = 0;",
+                    "\t\tinitialize();",
+                    "\t    }",
+                    "\t    if (Math.abs(scale[j]) > 20) {",
+                    "\t\tscale[j] = scale[j]/2;",
+                    "\t\ttranslation[j] = 0;",
+                    "\t\tinitialize();",
+                    "\t    }",
+                    "    }",
+                    "}"
                   ]
                 }
+              },
+              {
+                "TimeSensor": {
+                  "@DEF": "DECLBubble_bubbleB_bubbleClock",
+                  "@cycleInterval": 10,
+                  "@loop": true
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromNode": "DECLBubble_bubbleB_transform",
+                  "@fromField": "translation_changed",
+                  "@toNode": "DECLBubble_bubbleB_bounce",
+                  "@toField": "set_translation"
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromNode": "DECLBubble_bubbleB_transform",
+                  "@fromField": "scale_changed",
+                  "@toNode": "DECLBubble_bubbleB_bounce",
+                  "@toField": "set_scale"
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromNode": "DECLBubble_bubbleB_bounce",
+                  "@fromField": "translation_changed",
+                  "@toNode": "DECLBubble_bubbleB_transform",
+                  "@toField": "set_translation"
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromNode": "DECLBubble_bubbleB_bounce",
+                  "@fromField": "scale_changed",
+                  "@toNode": "DECLBubble_bubbleB_transform",
+                  "@toField": "set_scale"
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromNode": "DECLBubble_bubbleB_bubbleClock",
+                  "@fromField": "fraction_changed",
+                  "@toNode": "DECLBubble_bubbleB_bounce",
+                  "@toField": "set_fraction"
+                }
               }
-            ],
-            "@DEF": "BubblebubbleBbubbleB"
-          }
+            ]
+          },
+          "@DEF": "DECLBubble_bubbleB"
         },
         {
-          "Group": {
+          "Transform": {
+            "@DEF": "DECLBubble_bubbleC_transform",
             "-children": [
               {
-                "Transform": {
-                  "@DEF": "BubblebubbleCBubbletransform",
-                  "-children": [
-                    {
-                      "Shape": {
-                        "-geometry": {
-                          "Sphere": {
-                            "@radius": 0.25
-                          }
-                        },
-                        "-appearance": {
-                          "Appearance": {
-                            "-material": {
-                              "Material": {
-                                "@diffuseColor": [
-                                  1,
-                                  0,
-                                  0
-                                ],
-                                "@transparency": 0.2
-                              }
-                            }
-                          }
+                "Shape": {
+                  "-geometry": {
+                    "Sphere": {
+                      "@radius": 0.25
+                    }
+                  },
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            1,
+                            0,
+                            0
+                          ],
+                          "@transparency": 0.2
                         }
                       }
-                    },
-                    {
-                      "Script": {
-                        "@DEF": "BubblebubbleCBubblebounce",
-                        "field": [
-                          {
-                            "@name": "scale",
-                            "@accessType": "inputOutput",
-                            "@type": "SFVec3f",
-                            "@value": [
-                              1,
-                              1,
-                              1
-                            ]
-                          },
-                          {
-                            "@name": "translation",
-                            "@accessType": "inputOutput",
-                            "@type": "SFVec3f",
-                            "@value": [
-                              0,
-                              0,
-                              0
-                            ]
-                          },
-                          {
-                            "@name": "velocity",
-                            "@accessType": "inputOutput",
-                            "@type": "SFVec3f",
-                            "@value": [
-                              0,
-                              0,
-                              0
-                            ]
-                          },
-                          {
-                            "@name": "scalvel",
-                            "@accessType": "inputOutput",
-                            "@type": "SFVec3f",
-                            "@value": [
-                              0,
-                              0,
-                              0
-                            ]
-                          },
-                          {
-                            "@name": "set_fraction",
-                            "@accessType": "inputOnly",
-                            "@type": "SFFloat"
-                          }
-                        ],
-                        "#sourceText": [
-                          "ecmascript:",
-                          "function initialize() {",
-                          "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);",
-                          "",
-                          "    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);",
-                          "}",
-                          "",
-                          "function set_translation(value) {",
-                          "   translation = value;",
-                          "}",
-                          "",
-                          "function set_scale(value) {",
-                          "   scale = value;",
-                          "}",
-                          "",
-                          "function translation_changed() {",
-                          "\treturn translation;",
-                          "}",
-                          "",
-                          "function set_fraction(value) {",
-                          "    if (typeof translation === 'undefined') {",
-                          "\t\ttranslation = [0, 0, 0];",
-                          "    }",
-                          "    if (typeof velocity === 'undefined') {",
-                          "\t\tvelocity = [0, 0, 0];",
-                          "    }",
-                          "    if (typeof scalevel === 'undefined') {",
-                          "\t\tscalevel = [0, 0, 0];",
-                          "    }",
-                          "    if (typeof scale === 'undefined') {",
-                          "\t\tscale = [1, 1, 1];",
-                          "    }",
-                          "    translation = new SFVec3f(\ttranslation[0] + velocity[0], translation[1] + velocity[1], translation[2] + velocity[2]);",
-                          "    scale = new SFVec3f(scale[0] + scalvel[0], scale[1] + scalvel[1], scale[2] + scalvel[2]);",
-                          "    for (var j = 0; j < 3; j++) {",
-                          "\t    // if you get to far away or too big, explode",
-                          "\t    if ( Math.abs(translation[j]) > 256) {",
-                          "\t\ttranslation[j] = 0;",
-                          "\t\tinitialize();",
-                          "\t    }",
-                          "\t    if (Math.abs(scale[j]) > 20) {",
-                          "\t\tscale[j] = scale[j]/2;",
-                          "\t\ttranslation[j] = 0;",
-                          "\t\tinitialize();",
-                          "\t    }",
-                          "    }",
-                          "}"
-                        ]
-                      }
-                    },
-                    {
-                      "TimeSensor": {
-                        "@DEF": "BubblebubbleCBubblebubbleClock",
-                        "@cycleInterval": 10,
-                        "@loop": true
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromNode": "BubblebubbleCBubbletransform",
-                        "@fromField": "translation_changed",
-                        "@toNode": "BubblebubbleCBubblebounce",
-                        "@toField": "set_translation"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromNode": "BubblebubbleCBubbletransform",
-                        "@fromField": "scale_changed",
-                        "@toNode": "BubblebubbleCBubblebounce",
-                        "@toField": "set_scale"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromNode": "BubblebubbleCBubblebounce",
-                        "@fromField": "translation_changed",
-                        "@toNode": "BubblebubbleCBubbletransform",
-                        "@toField": "set_translation"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromNode": "BubblebubbleCBubblebounce",
-                        "@fromField": "scale_changed",
-                        "@toNode": "BubblebubbleCBubbletransform",
-                        "@toField": "set_scale"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromNode": "BubblebubbleCBubblebubbleClock",
-                        "@fromField": "fraction_changed",
-                        "@toNode": "BubblebubbleCBubblebounce",
-                        "@toField": "set_fraction"
-                      }
                     }
+                  }
+                }
+              },
+              {
+                "Script": {
+                  "@DEF": "DECLBubble_bubbleC_bounce",
+                  "field": [
+                    {
+                      "@name": "scale",
+                      "@accessType": "inputOutput",
+                      "@type": "SFVec3f",
+                      "@value": [
+                        1,
+                        1,
+                        1
+                      ]
+                    },
+                    {
+                      "@name": "translation",
+                      "@accessType": "inputOutput",
+                      "@type": "SFVec3f",
+                      "@value": [
+                        0,
+                        0,
+                        0
+                      ]
+                    },
+                    {
+                      "@name": "velocity",
+                      "@accessType": "inputOutput",
+                      "@type": "SFVec3f",
+                      "@value": [
+                        0,
+                        0,
+                        0
+                      ]
+                    },
+                    {
+                      "@name": "scalvel",
+                      "@accessType": "inputOutput",
+                      "@type": "SFVec3f",
+                      "@value": [
+                        0,
+                        0,
+                        0
+                      ]
+                    },
+                    {
+                      "@name": "set_fraction",
+                      "@accessType": "inputOnly",
+                      "@type": "SFFloat"
+                    }
+                  ],
+                  "#sourceText": [
+                    "ecmascript:",
+                    "function initialize() {",
+                    "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);",
+                    "",
+                    "    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);",
+                    "}",
+                    "",
+                    "function set_translation(value) {",
+                    "   translation = value;",
+                    "}",
+                    "",
+                    "function set_scale(value) {",
+                    "   scale = value;",
+                    "}",
+                    "",
+                    "function translation_changed() {",
+                    "\treturn translation;",
+                    "}",
+                    "",
+                    "function set_fraction(value) {",
+                    "    if (typeof translation === 'undefined') {",
+                    "\t\ttranslation = [0, 0, 0];",
+                    "    }",
+                    "    if (typeof velocity === 'undefined') {",
+                    "\t\tvelocity = [0, 0, 0];",
+                    "    }",
+                    "    if (typeof scalevel === 'undefined') {",
+                    "\t\tscalevel = [0, 0, 0];",
+                    "    }",
+                    "    if (typeof scale === 'undefined') {",
+                    "\t\tscale = [1, 1, 1];",
+                    "    }",
+                    "    translation = new SFVec3f(\ttranslation[0] + velocity[0], translation[1] + velocity[1], translation[2] + velocity[2]);",
+                    "    scale = new SFVec3f(scale[0] + scalvel[0], scale[1] + scalvel[1], scale[2] + scalvel[2]);",
+                    "    for (var j = 0; j < 3; j++) {",
+                    "\t    // if you get to far away or too big, explode",
+                    "\t    if ( Math.abs(translation[j]) > 256) {",
+                    "\t\ttranslation[j] = 0;",
+                    "\t\tinitialize();",
+                    "\t    }",
+                    "\t    if (Math.abs(scale[j]) > 20) {",
+                    "\t\tscale[j] = scale[j]/2;",
+                    "\t\ttranslation[j] = 0;",
+                    "\t\tinitialize();",
+                    "\t    }",
+                    "    }",
+                    "}"
                   ]
                 }
+              },
+              {
+                "TimeSensor": {
+                  "@DEF": "DECLBubble_bubbleC_bubbleClock",
+                  "@cycleInterval": 10,
+                  "@loop": true
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromNode": "DECLBubble_bubbleC_transform",
+                  "@fromField": "translation_changed",
+                  "@toNode": "DECLBubble_bubbleC_bounce",
+                  "@toField": "set_translation"
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromNode": "DECLBubble_bubbleC_transform",
+                  "@fromField": "scale_changed",
+                  "@toNode": "DECLBubble_bubbleC_bounce",
+                  "@toField": "set_scale"
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromNode": "DECLBubble_bubbleC_bounce",
+                  "@fromField": "translation_changed",
+                  "@toNode": "DECLBubble_bubbleC_transform",
+                  "@toField": "set_translation"
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromNode": "DECLBubble_bubbleC_bounce",
+                  "@fromField": "scale_changed",
+                  "@toNode": "DECLBubble_bubbleC_transform",
+                  "@toField": "set_scale"
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromNode": "DECLBubble_bubbleC_bubbleClock",
+                  "@fromField": "fraction_changed",
+                  "@toNode": "DECLBubble_bubbleC_bounce",
+                  "@toField": "set_fraction"
+                }
               }
-            ],
-            "@DEF": "BubblebubbleCbubbleC"
-          }
+            ]
+          },
+          "@DEF": "DECLBubble_bubbleC"
         },
         {
-          "Group": {
+          "Transform": {
+            "@DEF": "DECLBubble_bubbleD_transform",
             "-children": [
               {
-                "Transform": {
-                  "@DEF": "BubblebubbleDBubbletransform",
-                  "-children": [
-                    {
-                      "Shape": {
-                        "-geometry": {
-                          "Sphere": {
-                            "@radius": 0.25
-                          }
-                        },
-                        "-appearance": {
-                          "Appearance": {
-                            "-material": {
-                              "Material": {
-                                "@diffuseColor": [
-                                  1,
-                                  0,
-                                  0
-                                ],
-                                "@transparency": 0.2
-                              }
-                            }
-                          }
+                "Shape": {
+                  "-geometry": {
+                    "Sphere": {
+                      "@radius": 0.25
+                    }
+                  },
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            1,
+                            0,
+                            0
+                          ],
+                          "@transparency": 0.2
                         }
                       }
-                    },
-                    {
-                      "Script": {
-                        "@DEF": "BubblebubbleDBubblebounce",
-                        "field": [
-                          {
-                            "@name": "scale",
-                            "@accessType": "inputOutput",
-                            "@type": "SFVec3f",
-                            "@value": [
-                              1,
-                              1,
-                              1
-                            ]
-                          },
-                          {
-                            "@name": "translation",
-                            "@accessType": "inputOutput",
-                            "@type": "SFVec3f",
-                            "@value": [
-                              0,
-                              0,
-                              0
-                            ]
-                          },
-                          {
-                            "@name": "velocity",
-                            "@accessType": "inputOutput",
-                            "@type": "SFVec3f",
-                            "@value": [
-                              0,
-                              0,
-                              0
-                            ]
-                          },
-                          {
-                            "@name": "scalvel",
-                            "@accessType": "inputOutput",
-                            "@type": "SFVec3f",
-                            "@value": [
-                              0,
-                              0,
-                              0
-                            ]
-                          },
-                          {
-                            "@name": "set_fraction",
-                            "@accessType": "inputOnly",
-                            "@type": "SFFloat"
-                          }
-                        ],
-                        "#sourceText": [
-                          "ecmascript:",
-                          "function initialize() {",
-                          "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);",
-                          "",
-                          "    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);",
-                          "}",
-                          "",
-                          "function set_translation(value) {",
-                          "   translation = value;",
-                          "}",
-                          "",
-                          "function set_scale(value) {",
-                          "   scale = value;",
-                          "}",
-                          "",
-                          "function translation_changed() {",
-                          "\treturn translation;",
-                          "}",
-                          "",
-                          "function set_fraction(value) {",
-                          "    if (typeof translation === 'undefined') {",
-                          "\t\ttranslation = [0, 0, 0];",
-                          "    }",
-                          "    if (typeof velocity === 'undefined') {",
-                          "\t\tvelocity = [0, 0, 0];",
-                          "    }",
-                          "    if (typeof scalevel === 'undefined') {",
-                          "\t\tscalevel = [0, 0, 0];",
-                          "    }",
-                          "    if (typeof scale === 'undefined') {",
-                          "\t\tscale = [1, 1, 1];",
-                          "    }",
-                          "    translation = new SFVec3f(\ttranslation[0] + velocity[0], translation[1] + velocity[1], translation[2] + velocity[2]);",
-                          "    scale = new SFVec3f(scale[0] + scalvel[0], scale[1] + scalvel[1], scale[2] + scalvel[2]);",
-                          "    for (var j = 0; j < 3; j++) {",
-                          "\t    // if you get to far away or too big, explode",
-                          "\t    if ( Math.abs(translation[j]) > 256) {",
-                          "\t\ttranslation[j] = 0;",
-                          "\t\tinitialize();",
-                          "\t    }",
-                          "\t    if (Math.abs(scale[j]) > 20) {",
-                          "\t\tscale[j] = scale[j]/2;",
-                          "\t\ttranslation[j] = 0;",
-                          "\t\tinitialize();",
-                          "\t    }",
-                          "    }",
-                          "}"
-                        ]
-                      }
-                    },
-                    {
-                      "TimeSensor": {
-                        "@DEF": "BubblebubbleDBubblebubbleClock",
-                        "@cycleInterval": 10,
-                        "@loop": true
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromNode": "BubblebubbleDBubbletransform",
-                        "@fromField": "translation_changed",
-                        "@toNode": "BubblebubbleDBubblebounce",
-                        "@toField": "set_translation"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromNode": "BubblebubbleDBubbletransform",
-                        "@fromField": "scale_changed",
-                        "@toNode": "BubblebubbleDBubblebounce",
-                        "@toField": "set_scale"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromNode": "BubblebubbleDBubblebounce",
-                        "@fromField": "translation_changed",
-                        "@toNode": "BubblebubbleDBubbletransform",
-                        "@toField": "set_translation"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromNode": "BubblebubbleDBubblebounce",
-                        "@fromField": "scale_changed",
-                        "@toNode": "BubblebubbleDBubbletransform",
-                        "@toField": "set_scale"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromNode": "BubblebubbleDBubblebubbleClock",
-                        "@fromField": "fraction_changed",
-                        "@toNode": "BubblebubbleDBubblebounce",
-                        "@toField": "set_fraction"
-                      }
                     }
+                  }
+                }
+              },
+              {
+                "Script": {
+                  "@DEF": "DECLBubble_bubbleD_bounce",
+                  "field": [
+                    {
+                      "@name": "scale",
+                      "@accessType": "inputOutput",
+                      "@type": "SFVec3f",
+                      "@value": [
+                        1,
+                        1,
+                        1
+                      ]
+                    },
+                    {
+                      "@name": "translation",
+                      "@accessType": "inputOutput",
+                      "@type": "SFVec3f",
+                      "@value": [
+                        0,
+                        0,
+                        0
+                      ]
+                    },
+                    {
+                      "@name": "velocity",
+                      "@accessType": "inputOutput",
+                      "@type": "SFVec3f",
+                      "@value": [
+                        0,
+                        0,
+                        0
+                      ]
+                    },
+                    {
+                      "@name": "scalvel",
+                      "@accessType": "inputOutput",
+                      "@type": "SFVec3f",
+                      "@value": [
+                        0,
+                        0,
+                        0
+                      ]
+                    },
+                    {
+                      "@name": "set_fraction",
+                      "@accessType": "inputOnly",
+                      "@type": "SFFloat"
+                    }
+                  ],
+                  "#sourceText": [
+                    "ecmascript:",
+                    "function initialize() {",
+                    "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);",
+                    "",
+                    "    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);",
+                    "}",
+                    "",
+                    "function set_translation(value) {",
+                    "   translation = value;",
+                    "}",
+                    "",
+                    "function set_scale(value) {",
+                    "   scale = value;",
+                    "}",
+                    "",
+                    "function translation_changed() {",
+                    "\treturn translation;",
+                    "}",
+                    "",
+                    "function set_fraction(value) {",
+                    "    if (typeof translation === 'undefined') {",
+                    "\t\ttranslation = [0, 0, 0];",
+                    "    }",
+                    "    if (typeof velocity === 'undefined') {",
+                    "\t\tvelocity = [0, 0, 0];",
+                    "    }",
+                    "    if (typeof scalevel === 'undefined') {",
+                    "\t\tscalevel = [0, 0, 0];",
+                    "    }",
+                    "    if (typeof scale === 'undefined') {",
+                    "\t\tscale = [1, 1, 1];",
+                    "    }",
+                    "    translation = new SFVec3f(\ttranslation[0] + velocity[0], translation[1] + velocity[1], translation[2] + velocity[2]);",
+                    "    scale = new SFVec3f(scale[0] + scalvel[0], scale[1] + scalvel[1], scale[2] + scalvel[2]);",
+                    "    for (var j = 0; j < 3; j++) {",
+                    "\t    // if you get to far away or too big, explode",
+                    "\t    if ( Math.abs(translation[j]) > 256) {",
+                    "\t\ttranslation[j] = 0;",
+                    "\t\tinitialize();",
+                    "\t    }",
+                    "\t    if (Math.abs(scale[j]) > 20) {",
+                    "\t\tscale[j] = scale[j]/2;",
+                    "\t\ttranslation[j] = 0;",
+                    "\t\tinitialize();",
+                    "\t    }",
+                    "    }",
+                    "}"
                   ]
                 }
+              },
+              {
+                "TimeSensor": {
+                  "@DEF": "DECLBubble_bubbleD_bubbleClock",
+                  "@cycleInterval": 10,
+                  "@loop": true
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromNode": "DECLBubble_bubbleD_transform",
+                  "@fromField": "translation_changed",
+                  "@toNode": "DECLBubble_bubbleD_bounce",
+                  "@toField": "set_translation"
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromNode": "DECLBubble_bubbleD_transform",
+                  "@fromField": "scale_changed",
+                  "@toNode": "DECLBubble_bubbleD_bounce",
+                  "@toField": "set_scale"
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromNode": "DECLBubble_bubbleD_bounce",
+                  "@fromField": "translation_changed",
+                  "@toNode": "DECLBubble_bubbleD_transform",
+                  "@toField": "set_translation"
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromNode": "DECLBubble_bubbleD_bounce",
+                  "@fromField": "scale_changed",
+                  "@toNode": "DECLBubble_bubbleD_transform",
+                  "@toField": "set_scale"
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromNode": "DECLBubble_bubbleD_bubbleClock",
+                  "@fromField": "fraction_changed",
+                  "@toNode": "DECLBubble_bubbleD_bounce",
+                  "@toField": "set_fraction"
+                }
               }
-            ],
-            "@DEF": "BubblebubbleDbubbleD"
-          }
+            ]
+          },
+          "@DEF": "DECLBubble_bubbleD"
         }
       ]
     }

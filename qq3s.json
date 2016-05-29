@@ -84,328 +84,322 @@
                 "Group": {
                   "-children": [
                     {
-                      "Group": {
+                      "#comment": "left"
+                    },
+                    {
+                      "Transform": {
+                        "@scale": [
+                          0.5,
+                          0.5,
+                          0.5
+                        ],
                         "-children": [
                           {
-                            "#comment": "left"
-                          },
-                          {
-                            "Transform": {
-                              "@scale": [
-                                0.5,
-                                0.5,
-                                0.5
-                              ],
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@DEF": "Process1000ProcessMaterialLeftDown",
-                                            "@diffuseColor": [
-                                              0.7,
-                                              1,
-                                              0
-                                            ]
-                                          }
-                                        }
-                                      }
-                                    },
-                                    "-geometry": {
-                                      "Extrusion": {
-                                        "@spine": [
-                                          -2.5,
-                                          0,
-                                          0,
-                                          -1.5,
-                                          0,
-                                          0
-                                        ],
-                                        "@creaseAngle": 0.785,
-                                        "@crossSection": [
-                                          1,
-                                          0,
-                                          0.92,
-                                          -0.38,
-                                          0.71,
-                                          -0.71,
-                                          0.38,
-                                          -0.92,
-                                          0,
-                                          -1,
-                                          -0.38,
-                                          -0.92,
-                                          -0.71,
-                                          -0.71,
-                                          -0.92,
-                                          -0.38,
-                                          -1,
-                                          0,
-                                          -0.92,
-                                          0.38,
-                                          -0.71,
-                                          0.71,
-                                          -0.38,
-                                          0.92,
-                                          0,
-                                          1,
-                                          0.38,
-                                          0.92,
-                                          0.71,
-                                          0.71,
-                                          0.92,
-                                          0.38,
-                                          1,
-                                          0
-                                        ]
-                                      }
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@DEF": "DECLProcess_INSTANCE_MaterialLeftDown",
+                                      "@diffuseColor": [
+                                        0.7,
+                                        1,
+                                        0
+                                      ]
                                     }
                                   }
                                 }
-                              ]
+                              },
+                              "-geometry": {
+                                "Extrusion": {
+                                  "@spine": [
+                                    -2.5,
+                                    0,
+                                    0,
+                                    -1.5,
+                                    0,
+                                    0
+                                  ],
+                                  "@creaseAngle": 0.785,
+                                  "@crossSection": [
+                                    1,
+                                    0,
+                                    0.92,
+                                    -0.38,
+                                    0.71,
+                                    -0.71,
+                                    0.38,
+                                    -0.92,
+                                    0,
+                                    -1,
+                                    -0.38,
+                                    -0.92,
+                                    -0.71,
+                                    -0.71,
+                                    -0.92,
+                                    -0.38,
+                                    -1,
+                                    0,
+                                    -0.92,
+                                    0.38,
+                                    -0.71,
+                                    0.71,
+                                    -0.38,
+                                    0.92,
+                                    0,
+                                    1,
+                                    0.38,
+                                    0.92,
+                                    0.71,
+                                    0.71,
+                                    0.92,
+                                    0.38,
+                                    1,
+                                    0
+                                  ]
+                                }
+                              }
                             }
-                          },
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "#comment": "right"
+                    },
+                    {
+                      "Transform": {
+                        "@scale": [
+                          0.5,
+                          0.5,
+                          0.5
+                        ],
+                        "-children": [
                           {
-                            "#comment": "right"
-                          },
-                          {
-                            "Transform": {
-                              "@scale": [
-                                0.5,
-                                0.5,
-                                0.5
-                              ],
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@DEF": "Process1000ProcessMaterialUpRight",
-                                            "@diffuseColor": [
-                                              0,
-                                              0.7,
-                                              1
-                                            ]
-                                          }
-                                        }
-                                      }
-                                    },
-                                    "-geometry": {
-                                      "Extrusion": {
-                                        "@spine": [
-                                          1.5,
-                                          0,
-                                          0,
-                                          2.5,
-                                          0,
-                                          0
-                                        ],
-                                        "@creaseAngle": 0.785,
-                                        "@crossSection": [
-                                          1,
-                                          0,
-                                          0.92,
-                                          -0.38,
-                                          0.71,
-                                          -0.71,
-                                          0.38,
-                                          -0.92,
-                                          0,
-                                          -1,
-                                          -0.38,
-                                          -0.92,
-                                          -0.71,
-                                          -0.71,
-                                          -0.92,
-                                          -0.38,
-                                          -1,
-                                          0,
-                                          -0.92,
-                                          0.38,
-                                          -0.71,
-                                          0.71,
-                                          -0.38,
-                                          0.92,
-                                          0,
-                                          1,
-                                          0.38,
-                                          0.92,
-                                          0.71,
-                                          0.71,
-                                          0.92,
-                                          0.38,
-                                          1,
-                                          0
-                                        ]
-                                      }
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@DEF": "DECLProcess_INSTANCE_MaterialUpRight",
+                                      "@diffuseColor": [
+                                        0,
+                                        0.7,
+                                        1
+                                      ]
                                     }
                                   }
                                 }
-                              ]
+                              },
+                              "-geometry": {
+                                "Extrusion": {
+                                  "@spine": [
+                                    1.5,
+                                    0,
+                                    0,
+                                    2.5,
+                                    0,
+                                    0
+                                  ],
+                                  "@creaseAngle": 0.785,
+                                  "@crossSection": [
+                                    1,
+                                    0,
+                                    0.92,
+                                    -0.38,
+                                    0.71,
+                                    -0.71,
+                                    0.38,
+                                    -0.92,
+                                    0,
+                                    -1,
+                                    -0.38,
+                                    -0.92,
+                                    -0.71,
+                                    -0.71,
+                                    -0.92,
+                                    -0.38,
+                                    -1,
+                                    0,
+                                    -0.92,
+                                    0.38,
+                                    -0.71,
+                                    0.71,
+                                    -0.38,
+                                    0.92,
+                                    0,
+                                    1,
+                                    0.38,
+                                    0.92,
+                                    0.71,
+                                    0.71,
+                                    0.92,
+                                    0.38,
+                                    1,
+                                    0
+                                  ]
+                                }
+                              }
                             }
-                          },
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "#comment": "up"
+                    },
+                    {
+                      "Transform": {
+                        "@scale": [
+                          0.5,
+                          0.5,
+                          0.5
+                        ],
+                        "-children": [
                           {
-                            "#comment": "up"
-                          },
-                          {
-                            "Transform": {
-                              "@scale": [
-                                0.5,
-                                0.5,
-                                0.5
-                              ],
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@USE": "Process1000ProcessMaterialUpRight"
-                                          }
-                                        }
-                                      }
-                                    },
-                                    "-geometry": {
-                                      "Extrusion": {
-                                        "@spine": [
-                                          0,
-                                          1.5,
-                                          0,
-                                          0,
-                                          2.5,
-                                          0
-                                        ],
-                                        "@creaseAngle": 0.785,
-                                        "@crossSection": [
-                                          1,
-                                          0,
-                                          0.92,
-                                          -0.38,
-                                          0.71,
-                                          -0.71,
-                                          0.38,
-                                          -0.92,
-                                          0,
-                                          -1,
-                                          -0.38,
-                                          -0.92,
-                                          -0.71,
-                                          -0.71,
-                                          -0.92,
-                                          -0.38,
-                                          -1,
-                                          0,
-                                          -0.92,
-                                          0.38,
-                                          -0.71,
-                                          0.71,
-                                          -0.38,
-                                          0.92,
-                                          0,
-                                          1,
-                                          0.38,
-                                          0.92,
-                                          0.71,
-                                          0.71,
-                                          0.92,
-                                          0.38,
-                                          1,
-                                          0
-                                        ]
-                                      }
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@USE": "DECLProcess_INSTANCE_MaterialUpRight"
                                     }
                                   }
                                 }
-                              ]
+                              },
+                              "-geometry": {
+                                "Extrusion": {
+                                  "@spine": [
+                                    0,
+                                    1.5,
+                                    0,
+                                    0,
+                                    2.5,
+                                    0
+                                  ],
+                                  "@creaseAngle": 0.785,
+                                  "@crossSection": [
+                                    1,
+                                    0,
+                                    0.92,
+                                    -0.38,
+                                    0.71,
+                                    -0.71,
+                                    0.38,
+                                    -0.92,
+                                    0,
+                                    -1,
+                                    -0.38,
+                                    -0.92,
+                                    -0.71,
+                                    -0.71,
+                                    -0.92,
+                                    -0.38,
+                                    -1,
+                                    0,
+                                    -0.92,
+                                    0.38,
+                                    -0.71,
+                                    0.71,
+                                    -0.38,
+                                    0.92,
+                                    0,
+                                    1,
+                                    0.38,
+                                    0.92,
+                                    0.71,
+                                    0.71,
+                                    0.92,
+                                    0.38,
+                                    1,
+                                    0
+                                  ]
+                                }
+                              }
                             }
-                          },
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "#comment": "down"
+                    },
+                    {
+                      "Transform": {
+                        "@scale": [
+                          0.5,
+                          0.5,
+                          0.5
+                        ],
+                        "-children": [
                           {
-                            "#comment": "down"
-                          },
-                          {
-                            "Transform": {
-                              "@scale": [
-                                0.5,
-                                0.5,
-                                0.5
-                              ],
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@USE": "Process1000ProcessMaterialLeftDown"
-                                          }
-                                        }
-                                      }
-                                    },
-                                    "-geometry": {
-                                      "Extrusion": {
-                                        "@spine": [
-                                          0,
-                                          -2.5,
-                                          0,
-                                          0,
-                                          -1.5,
-                                          0
-                                        ],
-                                        "@creaseAngle": 0.785,
-                                        "@crossSection": [
-                                          1,
-                                          0,
-                                          0.92,
-                                          -0.38,
-                                          0.71,
-                                          -0.71,
-                                          0.38,
-                                          -0.92,
-                                          0,
-                                          -1,
-                                          -0.38,
-                                          -0.92,
-                                          -0.71,
-                                          -0.71,
-                                          -0.92,
-                                          -0.38,
-                                          -1,
-                                          0,
-                                          -0.92,
-                                          0.38,
-                                          -0.71,
-                                          0.71,
-                                          -0.38,
-                                          0.92,
-                                          0,
-                                          1,
-                                          0.38,
-                                          0.92,
-                                          0.71,
-                                          0.71,
-                                          0.92,
-                                          0.38,
-                                          1,
-                                          0
-                                        ]
-                                      }
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@USE": "DECLProcess_INSTANCE_MaterialLeftDown"
                                     }
                                   }
                                 }
-                              ]
+                              },
+                              "-geometry": {
+                                "Extrusion": {
+                                  "@spine": [
+                                    0,
+                                    -2.5,
+                                    0,
+                                    0,
+                                    -1.5,
+                                    0
+                                  ],
+                                  "@creaseAngle": 0.785,
+                                  "@crossSection": [
+                                    1,
+                                    0,
+                                    0.92,
+                                    -0.38,
+                                    0.71,
+                                    -0.71,
+                                    0.38,
+                                    -0.92,
+                                    0,
+                                    -1,
+                                    -0.38,
+                                    -0.92,
+                                    -0.71,
+                                    -0.71,
+                                    -0.92,
+                                    -0.38,
+                                    -1,
+                                    0,
+                                    -0.92,
+                                    0.38,
+                                    -0.71,
+                                    0.71,
+                                    -0.38,
+                                    0.92,
+                                    0,
+                                    1,
+                                    0.38,
+                                    0.92,
+                                    0.71,
+                                    0.71,
+                                    0.92,
+                                    0.38,
+                                    1,
+                                    0
+                                  ]
+                                }
+                              }
                             }
                           }
                         ]
                       }
                     }
-                  ],
-                  "@DEF": "Process10001000"
-                }
+                  ]
+                },
+                "@DEF": "DECLProcess_INSTANCE"
               }
             ]
           }
@@ -417,328 +411,322 @@
                 "Group": {
                   "-children": [
                     {
-                      "Group": {
+                      "#comment": "left"
+                    },
+                    {
+                      "Transform": {
+                        "@scale": [
+                          0.5,
+                          0.5,
+                          0.5
+                        ],
                         "-children": [
                           {
-                            "#comment": "left"
-                          },
-                          {
-                            "Transform": {
-                              "@scale": [
-                                0.5,
-                                0.5,
-                                0.5
-                              ],
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@DEF": "Process2000ProcessMaterialLeftDown",
-                                            "@diffuseColor": [
-                                              0.7,
-                                              1,
-                                              0
-                                            ]
-                                          }
-                                        }
-                                      }
-                                    },
-                                    "-geometry": {
-                                      "Extrusion": {
-                                        "@spine": [
-                                          -2.5,
-                                          0,
-                                          0,
-                                          -1.5,
-                                          0,
-                                          0
-                                        ],
-                                        "@creaseAngle": 0.785,
-                                        "@crossSection": [
-                                          1,
-                                          0,
-                                          0.92,
-                                          -0.38,
-                                          0.71,
-                                          -0.71,
-                                          0.38,
-                                          -0.92,
-                                          0,
-                                          -1,
-                                          -0.38,
-                                          -0.92,
-                                          -0.71,
-                                          -0.71,
-                                          -0.92,
-                                          -0.38,
-                                          -1,
-                                          0,
-                                          -0.92,
-                                          0.38,
-                                          -0.71,
-                                          0.71,
-                                          -0.38,
-                                          0.92,
-                                          0,
-                                          1,
-                                          0.38,
-                                          0.92,
-                                          0.71,
-                                          0.71,
-                                          0.92,
-                                          0.38,
-                                          1,
-                                          0
-                                        ]
-                                      }
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@DEF": "DECLProcess_INSTANCE1000_MaterialLeftDown",
+                                      "@diffuseColor": [
+                                        0.7,
+                                        1,
+                                        0
+                                      ]
                                     }
                                   }
                                 }
-                              ]
+                              },
+                              "-geometry": {
+                                "Extrusion": {
+                                  "@spine": [
+                                    -2.5,
+                                    0,
+                                    0,
+                                    -1.5,
+                                    0,
+                                    0
+                                  ],
+                                  "@creaseAngle": 0.785,
+                                  "@crossSection": [
+                                    1,
+                                    0,
+                                    0.92,
+                                    -0.38,
+                                    0.71,
+                                    -0.71,
+                                    0.38,
+                                    -0.92,
+                                    0,
+                                    -1,
+                                    -0.38,
+                                    -0.92,
+                                    -0.71,
+                                    -0.71,
+                                    -0.92,
+                                    -0.38,
+                                    -1,
+                                    0,
+                                    -0.92,
+                                    0.38,
+                                    -0.71,
+                                    0.71,
+                                    -0.38,
+                                    0.92,
+                                    0,
+                                    1,
+                                    0.38,
+                                    0.92,
+                                    0.71,
+                                    0.71,
+                                    0.92,
+                                    0.38,
+                                    1,
+                                    0
+                                  ]
+                                }
+                              }
                             }
-                          },
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "#comment": "right"
+                    },
+                    {
+                      "Transform": {
+                        "@scale": [
+                          0.5,
+                          0.5,
+                          0.5
+                        ],
+                        "-children": [
                           {
-                            "#comment": "right"
-                          },
-                          {
-                            "Transform": {
-                              "@scale": [
-                                0.5,
-                                0.5,
-                                0.5
-                              ],
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@DEF": "Process2000ProcessMaterialUpRight",
-                                            "@diffuseColor": [
-                                              0,
-                                              0.7,
-                                              1
-                                            ]
-                                          }
-                                        }
-                                      }
-                                    },
-                                    "-geometry": {
-                                      "Extrusion": {
-                                        "@spine": [
-                                          1.5,
-                                          0,
-                                          0,
-                                          2.5,
-                                          0,
-                                          0
-                                        ],
-                                        "@creaseAngle": 0.785,
-                                        "@crossSection": [
-                                          1,
-                                          0,
-                                          0.92,
-                                          -0.38,
-                                          0.71,
-                                          -0.71,
-                                          0.38,
-                                          -0.92,
-                                          0,
-                                          -1,
-                                          -0.38,
-                                          -0.92,
-                                          -0.71,
-                                          -0.71,
-                                          -0.92,
-                                          -0.38,
-                                          -1,
-                                          0,
-                                          -0.92,
-                                          0.38,
-                                          -0.71,
-                                          0.71,
-                                          -0.38,
-                                          0.92,
-                                          0,
-                                          1,
-                                          0.38,
-                                          0.92,
-                                          0.71,
-                                          0.71,
-                                          0.92,
-                                          0.38,
-                                          1,
-                                          0
-                                        ]
-                                      }
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@DEF": "DECLProcess_INSTANCE1000_MaterialUpRight",
+                                      "@diffuseColor": [
+                                        0,
+                                        0.7,
+                                        1
+                                      ]
                                     }
                                   }
                                 }
-                              ]
+                              },
+                              "-geometry": {
+                                "Extrusion": {
+                                  "@spine": [
+                                    1.5,
+                                    0,
+                                    0,
+                                    2.5,
+                                    0,
+                                    0
+                                  ],
+                                  "@creaseAngle": 0.785,
+                                  "@crossSection": [
+                                    1,
+                                    0,
+                                    0.92,
+                                    -0.38,
+                                    0.71,
+                                    -0.71,
+                                    0.38,
+                                    -0.92,
+                                    0,
+                                    -1,
+                                    -0.38,
+                                    -0.92,
+                                    -0.71,
+                                    -0.71,
+                                    -0.92,
+                                    -0.38,
+                                    -1,
+                                    0,
+                                    -0.92,
+                                    0.38,
+                                    -0.71,
+                                    0.71,
+                                    -0.38,
+                                    0.92,
+                                    0,
+                                    1,
+                                    0.38,
+                                    0.92,
+                                    0.71,
+                                    0.71,
+                                    0.92,
+                                    0.38,
+                                    1,
+                                    0
+                                  ]
+                                }
+                              }
                             }
-                          },
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "#comment": "up"
+                    },
+                    {
+                      "Transform": {
+                        "@scale": [
+                          0.5,
+                          0.5,
+                          0.5
+                        ],
+                        "-children": [
                           {
-                            "#comment": "up"
-                          },
-                          {
-                            "Transform": {
-                              "@scale": [
-                                0.5,
-                                0.5,
-                                0.5
-                              ],
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@USE": "Process2000ProcessMaterialUpRight"
-                                          }
-                                        }
-                                      }
-                                    },
-                                    "-geometry": {
-                                      "Extrusion": {
-                                        "@spine": [
-                                          0,
-                                          1.5,
-                                          0,
-                                          0,
-                                          2.5,
-                                          0
-                                        ],
-                                        "@creaseAngle": 0.785,
-                                        "@crossSection": [
-                                          1,
-                                          0,
-                                          0.92,
-                                          -0.38,
-                                          0.71,
-                                          -0.71,
-                                          0.38,
-                                          -0.92,
-                                          0,
-                                          -1,
-                                          -0.38,
-                                          -0.92,
-                                          -0.71,
-                                          -0.71,
-                                          -0.92,
-                                          -0.38,
-                                          -1,
-                                          0,
-                                          -0.92,
-                                          0.38,
-                                          -0.71,
-                                          0.71,
-                                          -0.38,
-                                          0.92,
-                                          0,
-                                          1,
-                                          0.38,
-                                          0.92,
-                                          0.71,
-                                          0.71,
-                                          0.92,
-                                          0.38,
-                                          1,
-                                          0
-                                        ]
-                                      }
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@USE": "DECLProcess_INSTANCE1000_MaterialUpRight"
                                     }
                                   }
                                 }
-                              ]
+                              },
+                              "-geometry": {
+                                "Extrusion": {
+                                  "@spine": [
+                                    0,
+                                    1.5,
+                                    0,
+                                    0,
+                                    2.5,
+                                    0
+                                  ],
+                                  "@creaseAngle": 0.785,
+                                  "@crossSection": [
+                                    1,
+                                    0,
+                                    0.92,
+                                    -0.38,
+                                    0.71,
+                                    -0.71,
+                                    0.38,
+                                    -0.92,
+                                    0,
+                                    -1,
+                                    -0.38,
+                                    -0.92,
+                                    -0.71,
+                                    -0.71,
+                                    -0.92,
+                                    -0.38,
+                                    -1,
+                                    0,
+                                    -0.92,
+                                    0.38,
+                                    -0.71,
+                                    0.71,
+                                    -0.38,
+                                    0.92,
+                                    0,
+                                    1,
+                                    0.38,
+                                    0.92,
+                                    0.71,
+                                    0.71,
+                                    0.92,
+                                    0.38,
+                                    1,
+                                    0
+                                  ]
+                                }
+                              }
                             }
-                          },
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "#comment": "down"
+                    },
+                    {
+                      "Transform": {
+                        "@scale": [
+                          0.5,
+                          0.5,
+                          0.5
+                        ],
+                        "-children": [
                           {
-                            "#comment": "down"
-                          },
-                          {
-                            "Transform": {
-                              "@scale": [
-                                0.5,
-                                0.5,
-                                0.5
-                              ],
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@USE": "Process2000ProcessMaterialLeftDown"
-                                          }
-                                        }
-                                      }
-                                    },
-                                    "-geometry": {
-                                      "Extrusion": {
-                                        "@spine": [
-                                          0,
-                                          -2.5,
-                                          0,
-                                          0,
-                                          -1.5,
-                                          0
-                                        ],
-                                        "@creaseAngle": 0.785,
-                                        "@crossSection": [
-                                          1,
-                                          0,
-                                          0.92,
-                                          -0.38,
-                                          0.71,
-                                          -0.71,
-                                          0.38,
-                                          -0.92,
-                                          0,
-                                          -1,
-                                          -0.38,
-                                          -0.92,
-                                          -0.71,
-                                          -0.71,
-                                          -0.92,
-                                          -0.38,
-                                          -1,
-                                          0,
-                                          -0.92,
-                                          0.38,
-                                          -0.71,
-                                          0.71,
-                                          -0.38,
-                                          0.92,
-                                          0,
-                                          1,
-                                          0.38,
-                                          0.92,
-                                          0.71,
-                                          0.71,
-                                          0.92,
-                                          0.38,
-                                          1,
-                                          0
-                                        ]
-                                      }
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@USE": "DECLProcess_INSTANCE1000_MaterialLeftDown"
                                     }
                                   }
                                 }
-                              ]
+                              },
+                              "-geometry": {
+                                "Extrusion": {
+                                  "@spine": [
+                                    0,
+                                    -2.5,
+                                    0,
+                                    0,
+                                    -1.5,
+                                    0
+                                  ],
+                                  "@creaseAngle": 0.785,
+                                  "@crossSection": [
+                                    1,
+                                    0,
+                                    0.92,
+                                    -0.38,
+                                    0.71,
+                                    -0.71,
+                                    0.38,
+                                    -0.92,
+                                    0,
+                                    -1,
+                                    -0.38,
+                                    -0.92,
+                                    -0.71,
+                                    -0.71,
+                                    -0.92,
+                                    -0.38,
+                                    -1,
+                                    0,
+                                    -0.92,
+                                    0.38,
+                                    -0.71,
+                                    0.71,
+                                    -0.38,
+                                    0.92,
+                                    0,
+                                    1,
+                                    0.38,
+                                    0.92,
+                                    0.71,
+                                    0.71,
+                                    0.92,
+                                    0.38,
+                                    1,
+                                    0
+                                  ]
+                                }
+                              }
                             }
                           }
                         ]
                       }
                     }
-                  ],
-                  "@DEF": "Process20002000"
-                }
+                  ]
+                },
+                "@DEF": "DECLProcess_INSTANCE1000"
               }
             ]
           }
@@ -755,328 +743,322 @@
                 "Group": {
                   "-children": [
                     {
-                      "Group": {
+                      "#comment": "left"
+                    },
+                    {
+                      "Transform": {
+                        "@scale": [
+                          0.5,
+                          0.5,
+                          0.5
+                        ],
                         "-children": [
                           {
-                            "#comment": "left"
-                          },
-                          {
-                            "Transform": {
-                              "@scale": [
-                                0.5,
-                                0.5,
-                                0.5
-                              ],
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@DEF": "Process3000ProcessMaterialLeftDown",
-                                            "@diffuseColor": [
-                                              0.7,
-                                              1,
-                                              0
-                                            ]
-                                          }
-                                        }
-                                      }
-                                    },
-                                    "-geometry": {
-                                      "Extrusion": {
-                                        "@spine": [
-                                          -2.5,
-                                          0,
-                                          0,
-                                          -1.5,
-                                          0,
-                                          0
-                                        ],
-                                        "@creaseAngle": 0.785,
-                                        "@crossSection": [
-                                          1,
-                                          0,
-                                          0.92,
-                                          -0.38,
-                                          0.71,
-                                          -0.71,
-                                          0.38,
-                                          -0.92,
-                                          0,
-                                          -1,
-                                          -0.38,
-                                          -0.92,
-                                          -0.71,
-                                          -0.71,
-                                          -0.92,
-                                          -0.38,
-                                          -1,
-                                          0,
-                                          -0.92,
-                                          0.38,
-                                          -0.71,
-                                          0.71,
-                                          -0.38,
-                                          0.92,
-                                          0,
-                                          1,
-                                          0.38,
-                                          0.92,
-                                          0.71,
-                                          0.71,
-                                          0.92,
-                                          0.38,
-                                          1,
-                                          0
-                                        ]
-                                      }
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@DEF": "DECLProcess_INSTANCE2000_MaterialLeftDown",
+                                      "@diffuseColor": [
+                                        0.7,
+                                        1,
+                                        0
+                                      ]
                                     }
                                   }
                                 }
-                              ]
+                              },
+                              "-geometry": {
+                                "Extrusion": {
+                                  "@spine": [
+                                    -2.5,
+                                    0,
+                                    0,
+                                    -1.5,
+                                    0,
+                                    0
+                                  ],
+                                  "@creaseAngle": 0.785,
+                                  "@crossSection": [
+                                    1,
+                                    0,
+                                    0.92,
+                                    -0.38,
+                                    0.71,
+                                    -0.71,
+                                    0.38,
+                                    -0.92,
+                                    0,
+                                    -1,
+                                    -0.38,
+                                    -0.92,
+                                    -0.71,
+                                    -0.71,
+                                    -0.92,
+                                    -0.38,
+                                    -1,
+                                    0,
+                                    -0.92,
+                                    0.38,
+                                    -0.71,
+                                    0.71,
+                                    -0.38,
+                                    0.92,
+                                    0,
+                                    1,
+                                    0.38,
+                                    0.92,
+                                    0.71,
+                                    0.71,
+                                    0.92,
+                                    0.38,
+                                    1,
+                                    0
+                                  ]
+                                }
+                              }
                             }
-                          },
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "#comment": "right"
+                    },
+                    {
+                      "Transform": {
+                        "@scale": [
+                          0.5,
+                          0.5,
+                          0.5
+                        ],
+                        "-children": [
                           {
-                            "#comment": "right"
-                          },
-                          {
-                            "Transform": {
-                              "@scale": [
-                                0.5,
-                                0.5,
-                                0.5
-                              ],
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@DEF": "Process3000ProcessMaterialUpRight",
-                                            "@diffuseColor": [
-                                              0,
-                                              0.7,
-                                              1
-                                            ]
-                                          }
-                                        }
-                                      }
-                                    },
-                                    "-geometry": {
-                                      "Extrusion": {
-                                        "@spine": [
-                                          1.5,
-                                          0,
-                                          0,
-                                          2.5,
-                                          0,
-                                          0
-                                        ],
-                                        "@creaseAngle": 0.785,
-                                        "@crossSection": [
-                                          1,
-                                          0,
-                                          0.92,
-                                          -0.38,
-                                          0.71,
-                                          -0.71,
-                                          0.38,
-                                          -0.92,
-                                          0,
-                                          -1,
-                                          -0.38,
-                                          -0.92,
-                                          -0.71,
-                                          -0.71,
-                                          -0.92,
-                                          -0.38,
-                                          -1,
-                                          0,
-                                          -0.92,
-                                          0.38,
-                                          -0.71,
-                                          0.71,
-                                          -0.38,
-                                          0.92,
-                                          0,
-                                          1,
-                                          0.38,
-                                          0.92,
-                                          0.71,
-                                          0.71,
-                                          0.92,
-                                          0.38,
-                                          1,
-                                          0
-                                        ]
-                                      }
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@DEF": "DECLProcess_INSTANCE2000_MaterialUpRight",
+                                      "@diffuseColor": [
+                                        0,
+                                        0.7,
+                                        1
+                                      ]
                                     }
                                   }
                                 }
-                              ]
+                              },
+                              "-geometry": {
+                                "Extrusion": {
+                                  "@spine": [
+                                    1.5,
+                                    0,
+                                    0,
+                                    2.5,
+                                    0,
+                                    0
+                                  ],
+                                  "@creaseAngle": 0.785,
+                                  "@crossSection": [
+                                    1,
+                                    0,
+                                    0.92,
+                                    -0.38,
+                                    0.71,
+                                    -0.71,
+                                    0.38,
+                                    -0.92,
+                                    0,
+                                    -1,
+                                    -0.38,
+                                    -0.92,
+                                    -0.71,
+                                    -0.71,
+                                    -0.92,
+                                    -0.38,
+                                    -1,
+                                    0,
+                                    -0.92,
+                                    0.38,
+                                    -0.71,
+                                    0.71,
+                                    -0.38,
+                                    0.92,
+                                    0,
+                                    1,
+                                    0.38,
+                                    0.92,
+                                    0.71,
+                                    0.71,
+                                    0.92,
+                                    0.38,
+                                    1,
+                                    0
+                                  ]
+                                }
+                              }
                             }
-                          },
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "#comment": "up"
+                    },
+                    {
+                      "Transform": {
+                        "@scale": [
+                          0.5,
+                          0.5,
+                          0.5
+                        ],
+                        "-children": [
                           {
-                            "#comment": "up"
-                          },
-                          {
-                            "Transform": {
-                              "@scale": [
-                                0.5,
-                                0.5,
-                                0.5
-                              ],
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@USE": "Process3000ProcessMaterialUpRight"
-                                          }
-                                        }
-                                      }
-                                    },
-                                    "-geometry": {
-                                      "Extrusion": {
-                                        "@spine": [
-                                          0,
-                                          1.5,
-                                          0,
-                                          0,
-                                          2.5,
-                                          0
-                                        ],
-                                        "@creaseAngle": 0.785,
-                                        "@crossSection": [
-                                          1,
-                                          0,
-                                          0.92,
-                                          -0.38,
-                                          0.71,
-                                          -0.71,
-                                          0.38,
-                                          -0.92,
-                                          0,
-                                          -1,
-                                          -0.38,
-                                          -0.92,
-                                          -0.71,
-                                          -0.71,
-                                          -0.92,
-                                          -0.38,
-                                          -1,
-                                          0,
-                                          -0.92,
-                                          0.38,
-                                          -0.71,
-                                          0.71,
-                                          -0.38,
-                                          0.92,
-                                          0,
-                                          1,
-                                          0.38,
-                                          0.92,
-                                          0.71,
-                                          0.71,
-                                          0.92,
-                                          0.38,
-                                          1,
-                                          0
-                                        ]
-                                      }
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@USE": "DECLProcess_INSTANCE2000_MaterialUpRight"
                                     }
                                   }
                                 }
-                              ]
+                              },
+                              "-geometry": {
+                                "Extrusion": {
+                                  "@spine": [
+                                    0,
+                                    1.5,
+                                    0,
+                                    0,
+                                    2.5,
+                                    0
+                                  ],
+                                  "@creaseAngle": 0.785,
+                                  "@crossSection": [
+                                    1,
+                                    0,
+                                    0.92,
+                                    -0.38,
+                                    0.71,
+                                    -0.71,
+                                    0.38,
+                                    -0.92,
+                                    0,
+                                    -1,
+                                    -0.38,
+                                    -0.92,
+                                    -0.71,
+                                    -0.71,
+                                    -0.92,
+                                    -0.38,
+                                    -1,
+                                    0,
+                                    -0.92,
+                                    0.38,
+                                    -0.71,
+                                    0.71,
+                                    -0.38,
+                                    0.92,
+                                    0,
+                                    1,
+                                    0.38,
+                                    0.92,
+                                    0.71,
+                                    0.71,
+                                    0.92,
+                                    0.38,
+                                    1,
+                                    0
+                                  ]
+                                }
+                              }
                             }
-                          },
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "#comment": "down"
+                    },
+                    {
+                      "Transform": {
+                        "@scale": [
+                          0.5,
+                          0.5,
+                          0.5
+                        ],
+                        "-children": [
                           {
-                            "#comment": "down"
-                          },
-                          {
-                            "Transform": {
-                              "@scale": [
-                                0.5,
-                                0.5,
-                                0.5
-                              ],
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@USE": "Process3000ProcessMaterialLeftDown"
-                                          }
-                                        }
-                                      }
-                                    },
-                                    "-geometry": {
-                                      "Extrusion": {
-                                        "@spine": [
-                                          0,
-                                          -2.5,
-                                          0,
-                                          0,
-                                          -1.5,
-                                          0
-                                        ],
-                                        "@creaseAngle": 0.785,
-                                        "@crossSection": [
-                                          1,
-                                          0,
-                                          0.92,
-                                          -0.38,
-                                          0.71,
-                                          -0.71,
-                                          0.38,
-                                          -0.92,
-                                          0,
-                                          -1,
-                                          -0.38,
-                                          -0.92,
-                                          -0.71,
-                                          -0.71,
-                                          -0.92,
-                                          -0.38,
-                                          -1,
-                                          0,
-                                          -0.92,
-                                          0.38,
-                                          -0.71,
-                                          0.71,
-                                          -0.38,
-                                          0.92,
-                                          0,
-                                          1,
-                                          0.38,
-                                          0.92,
-                                          0.71,
-                                          0.71,
-                                          0.92,
-                                          0.38,
-                                          1,
-                                          0
-                                        ]
-                                      }
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@USE": "DECLProcess_INSTANCE2000_MaterialLeftDown"
                                     }
                                   }
                                 }
-                              ]
+                              },
+                              "-geometry": {
+                                "Extrusion": {
+                                  "@spine": [
+                                    0,
+                                    -2.5,
+                                    0,
+                                    0,
+                                    -1.5,
+                                    0
+                                  ],
+                                  "@creaseAngle": 0.785,
+                                  "@crossSection": [
+                                    1,
+                                    0,
+                                    0.92,
+                                    -0.38,
+                                    0.71,
+                                    -0.71,
+                                    0.38,
+                                    -0.92,
+                                    0,
+                                    -1,
+                                    -0.38,
+                                    -0.92,
+                                    -0.71,
+                                    -0.71,
+                                    -0.92,
+                                    -0.38,
+                                    -1,
+                                    0,
+                                    -0.92,
+                                    0.38,
+                                    -0.71,
+                                    0.71,
+                                    -0.38,
+                                    0.92,
+                                    0,
+                                    1,
+                                    0.38,
+                                    0.92,
+                                    0.71,
+                                    0.71,
+                                    0.92,
+                                    0.38,
+                                    1,
+                                    0
+                                  ]
+                                }
+                              }
                             }
                           }
                         ]
                       }
                     }
-                  ],
-                  "@DEF": "Process30003000"
-                }
+                  ]
+                },
+                "@DEF": "DECLProcess_INSTANCE2000"
               }
             ]
           }

@@ -83,1346 +83,1336 @@
               0
             ],
             "-children": [
-              {
-                "Group": {
-                  "-children": [
-                    {
-                      "Group": {
-                        "-children": [
-                          {
-                            "#comment": "left"
-                          },
-                          {
-                            "Transform": {
-                              "@scale": [
-                                0.5,
-                                0.5,
-                                0.5
-                              ],
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@diffuseColor": [
-                                              0.7,
-                                              1,
-                                              0
-                                            ],
-                                            "@transparency": 0.5
-                                          }
-                                        }
-                                      }
-                                    },
-                                    "-geometry": {
-                                      "Extrusion": {
-                                        "@creaseAngle": 0.785,
-                                        "@crossSection": [
-                                          1,
-                                          0,
-                                          0.92,
-                                          -0.38,
-                                          0.71,
-                                          -0.71,
-                                          0.38,
-                                          -0.92,
-                                          0,
-                                          -1,
-                                          -0.38,
-                                          -0.92,
-                                          -0.71,
-                                          -0.71,
-                                          -0.92,
-                                          -0.38,
-                                          -1,
-                                          0,
-                                          -0.92,
-                                          0.38,
-                                          -0.71,
-                                          0.71,
-                                          -0.38,
-                                          0.92,
-                                          0,
-                                          1,
-                                          0.38,
-                                          0.92,
-                                          0.71,
-                                          0.71,
-                                          0.92,
-                                          0.38,
+              [
+                {
+                  "Group": {
+                    "-children": [
+                      {
+                        "#comment": "left"
+                      },
+                      {
+                        "Transform": {
+                          "@scale": [
+                            0.5,
+                            0.5,
+                            0.5
+                          ],
+                          "-children": [
+                            {
+                              "Shape": {
+                                "-appearance": {
+                                  "Appearance": {
+                                    "-material": {
+                                      "Material": {
+                                        "@diffuseColor": [
+                                          0.7,
                                           1,
                                           0
                                         ],
-                                        "@spine": [
-                                          -2.5,
-                                          0,
-                                          0,
-                                          -1.5,
-                                          0,
-                                          0
-                                        ]
+                                        "@transparency": 0.5
                                       }
                                     }
                                   }
                                 },
-                                {
-                                  "#comment": "<Transform translation=\"-2.5 0 0\"> <Shape> <Text DEF=\"LeftString\" string='\"l\"'/> </Shape> </Transform> <StringSensor DEF=\"LeftSensor\" enabled=\"false\"/> <TouchSensor DEF=\"LeftTouch\" enabled=\"true\"/>"
-                                }
-                              ]
-                            }
-                          },
-                          {
-                            "#comment": "right"
-                          },
-                          {
-                            "Transform": {
-                              "@scale": [
-                                0.5,
-                                0.5,
-                                0.5
-                              ],
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@diffuseColor": [
-                                              0,
-                                              0.7,
-                                              1
-                                            ],
-                                            "@transparency": 0.5
-                                          }
-                                        }
-                                      }
-                                    },
-                                    "-geometry": {
-                                      "Extrusion": {
-                                        "@creaseAngle": 0.785,
-                                        "@crossSection": [
-                                          1,
-                                          0,
-                                          0.92,
-                                          -0.38,
-                                          0.71,
-                                          -0.71,
-                                          0.38,
-                                          -0.92,
-                                          0,
-                                          -1,
-                                          -0.38,
-                                          -0.92,
-                                          -0.71,
-                                          -0.71,
-                                          -0.92,
-                                          -0.38,
-                                          -1,
-                                          0,
-                                          -0.92,
-                                          0.38,
-                                          -0.71,
-                                          0.71,
-                                          -0.38,
-                                          0.92,
-                                          0,
-                                          1,
-                                          0.38,
-                                          0.92,
-                                          0.71,
-                                          0.71,
-                                          0.92,
-                                          0.38,
-                                          1,
-                                          0
-                                        ],
-                                        "@spine": [
-                                          1.5,
-                                          0,
-                                          0,
-                                          2.5,
-                                          0,
-                                          0
-                                        ]
-                                      }
-                                    }
-                                  }
-                                },
-                                {
-                                  "Transform": {
-                                    "@translation": [
-                                      2,
+                                "-geometry": {
+                                  "Extrusion": {
+                                    "@creaseAngle": 0.785,
+                                    "@crossSection": [
+                                      1,
                                       0,
+                                      0.92,
+                                      -0.38,
+                                      0.71,
+                                      -0.71,
+                                      0.38,
+                                      -0.92,
+                                      0,
+                                      -1,
+                                      -0.38,
+                                      -0.92,
+                                      -0.71,
+                                      -0.71,
+                                      -0.92,
+                                      -0.38,
+                                      -1,
+                                      0,
+                                      -0.92,
+                                      0.38,
+                                      -0.71,
+                                      0.71,
+                                      -0.38,
+                                      0.92,
+                                      0,
+                                      1,
+                                      0.38,
+                                      0.92,
+                                      0.71,
+                                      0.71,
+                                      0.92,
+                                      0.38,
+                                      1,
                                       0
                                     ],
-                                    "-children": [
-                                      {
-                                        "Shape": {
-                                          "-appearance": {
-                                            "Appearance": {
-                                              "-material": {
-                                                "Material": {
-                                                  "@DEF": "Process1000ProcessMaterialLightBlue",
-                                                  "@diffuseColor": [
-                                                    1,
-                                                    1,
-                                                    1
-                                                  ]
-                                                }
-                                              }
-                                            }
-                                          },
-                                          "-geometry": {
-                                            "Text": {
-                                              "@DEF": "Process1000ProcessRightString",
-                                              "@string": [
-                                                "r"
+                                    "@spine": [
+                                      -2.5,
+                                      0,
+                                      0,
+                                      -1.5,
+                                      0,
+                                      0
+                                    ]
+                                  }
+                                }
+                              }
+                            },
+                            {
+                              "#comment": "<Transform translation=\"-2.5 0 0\"> <Shape> <Text DEF=\"LeftString\" string='\"l\"'/> </Shape> </Transform> <StringSensor DEF=\"LeftSensor\" enabled=\"false\"/> <TouchSensor DEF=\"LeftTouch\" enabled=\"true\"/>"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "#comment": "right"
+                      },
+                      {
+                        "Transform": {
+                          "@scale": [
+                            0.5,
+                            0.5,
+                            0.5
+                          ],
+                          "-children": [
+                            {
+                              "Shape": {
+                                "-appearance": {
+                                  "Appearance": {
+                                    "-material": {
+                                      "Material": {
+                                        "@diffuseColor": [
+                                          0,
+                                          0.7,
+                                          1
+                                        ],
+                                        "@transparency": 0.5
+                                      }
+                                    }
+                                  }
+                                },
+                                "-geometry": {
+                                  "Extrusion": {
+                                    "@creaseAngle": 0.785,
+                                    "@crossSection": [
+                                      1,
+                                      0,
+                                      0.92,
+                                      -0.38,
+                                      0.71,
+                                      -0.71,
+                                      0.38,
+                                      -0.92,
+                                      0,
+                                      -1,
+                                      -0.38,
+                                      -0.92,
+                                      -0.71,
+                                      -0.71,
+                                      -0.92,
+                                      -0.38,
+                                      -1,
+                                      0,
+                                      -0.92,
+                                      0.38,
+                                      -0.71,
+                                      0.71,
+                                      -0.38,
+                                      0.92,
+                                      0,
+                                      1,
+                                      0.38,
+                                      0.92,
+                                      0.71,
+                                      0.71,
+                                      0.92,
+                                      0.38,
+                                      1,
+                                      0
+                                    ],
+                                    "@spine": [
+                                      1.5,
+                                      0,
+                                      0,
+                                      2.5,
+                                      0,
+                                      0
+                                    ]
+                                  }
+                                }
+                              }
+                            },
+                            {
+                              "Transform": {
+                                "@translation": [
+                                  2,
+                                  0,
+                                  0
+                                ],
+                                "-children": [
+                                  {
+                                    "Shape": {
+                                      "-appearance": {
+                                        "Appearance": {
+                                          "-material": {
+                                            "Material": {
+                                              "@DEF": "DECLProcess_INSTANCE_MaterialLightBlue",
+                                              "@diffuseColor": [
+                                                1,
+                                                1,
+                                                1
                                               ]
                                             }
                                           }
                                         }
-                                      }
-                                    ]
-                                  }
-                                },
-                                {
-                                  "StringSensor": {
-                                    "@DEF": "Process1000ProcessRightSensor",
-                                    "@enabled": false
-                                  }
-                                },
-                                {
-                                  "TouchSensor": {
-                                    "@description": "touch to activate",
-                                    "@DEF": "Process1000ProcessRightTouch"
-                                  }
-                                }
-                              ]
-                            }
-                          },
-                          {
-                            "#comment": "up"
-                          },
-                          {
-                            "Transform": {
-                              "@scale": [
-                                0.5,
-                                0.5,
-                                0.5
-                              ],
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@diffuseColor": [
-                                              0,
-                                              0.7,
-                                              1
-                                            ],
-                                            "@transparency": 0.5
-                                          }
+                                      },
+                                      "-geometry": {
+                                        "Text": {
+                                          "@DEF": "DECLProcess_INSTANCE_RightString",
+                                          "@string": [
+                                            "r"
+                                          ]
                                         }
                                       }
-                                    },
-                                    "-geometry": {
-                                      "Extrusion": {
-                                        "@creaseAngle": 0.785,
-                                        "@crossSection": [
-                                          1,
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "StringSensor": {
+                                "@DEF": "DECLProcess_INSTANCE_RightSensor",
+                                "@enabled": false
+                              }
+                            },
+                            {
+                              "TouchSensor": {
+                                "@description": "touch to activate",
+                                "@DEF": "DECLProcess_INSTANCE_RightTouch"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "#comment": "up"
+                      },
+                      {
+                        "Transform": {
+                          "@scale": [
+                            0.5,
+                            0.5,
+                            0.5
+                          ],
+                          "-children": [
+                            {
+                              "Shape": {
+                                "-appearance": {
+                                  "Appearance": {
+                                    "-material": {
+                                      "Material": {
+                                        "@diffuseColor": [
                                           0,
-                                          0.92,
-                                          -0.38,
-                                          0.71,
-                                          -0.71,
-                                          0.38,
-                                          -0.92,
-                                          0,
-                                          -1,
-                                          -0.38,
-                                          -0.92,
-                                          -0.71,
-                                          -0.71,
-                                          -0.92,
-                                          -0.38,
-                                          -1,
-                                          0,
-                                          -0.92,
-                                          0.38,
-                                          -0.71,
-                                          0.71,
-                                          -0.38,
-                                          0.92,
-                                          0,
-                                          1,
-                                          0.38,
-                                          0.92,
-                                          0.71,
-                                          0.71,
-                                          0.92,
-                                          0.38,
-                                          1,
-                                          0
+                                          0.7,
+                                          1
                                         ],
-                                        "@spine": [
-                                          0,
-                                          1.5,
-                                          0,
-                                          0,
-                                          2.5,
-                                          0
-                                        ]
+                                        "@transparency": 0.5
                                       }
                                     }
                                   }
                                 },
-                                {
-                                  "Transform": {
-                                    "@translation": [
-                                      -0.5,
-                                      2,
+                                "-geometry": {
+                                  "Extrusion": {
+                                    "@creaseAngle": 0.785,
+                                    "@crossSection": [
+                                      1,
+                                      0,
+                                      0.92,
+                                      -0.38,
+                                      0.71,
+                                      -0.71,
+                                      0.38,
+                                      -0.92,
+                                      0,
+                                      -1,
+                                      -0.38,
+                                      -0.92,
+                                      -0.71,
+                                      -0.71,
+                                      -0.92,
+                                      -0.38,
+                                      -1,
+                                      0,
+                                      -0.92,
+                                      0.38,
+                                      -0.71,
+                                      0.71,
+                                      -0.38,
+                                      0.92,
+                                      0,
+                                      1,
+                                      0.38,
+                                      0.92,
+                                      0.71,
+                                      0.71,
+                                      0.92,
+                                      0.38,
+                                      1,
                                       0
                                     ],
-                                    "-children": [
-                                      {
-                                        "Shape": {
-                                          "-appearance": {
-                                            "Appearance": {
-                                              "-material": {
-                                                "Material": {
-                                                  "@USE": "Process1000ProcessMaterialLightBlue"
-                                                }
-                                              }
-                                            }
-                                          },
-                                          "-geometry": {
-                                            "Text": {
-                                              "@DEF": "Process1000ProcessUpString",
-                                              "@string": [
-                                                "u"
-                                              ]
-                                            }
-                                          }
-                                        }
-                                      }
+                                    "@spine": [
+                                      0,
+                                      1.5,
+                                      0,
+                                      0,
+                                      2.5,
+                                      0
                                     ]
                                   }
-                                },
-                                {
-                                  "StringSensor": {
-                                    "@DEF": "Process1000ProcessUpSensor",
-                                    "@enabled": false
-                                  }
-                                },
-                                {
-                                  "TouchSensor": {
-                                    "@description": "touch to activate",
-                                    "@DEF": "Process1000ProcessUpTouch"
-                                  }
                                 }
-                              ]
-                            }
-                          },
-                          {
-                            "#comment": "down"
-                          },
-                          {
-                            "Transform": {
-                              "@scale": [
-                                0.5,
-                                0.5,
-                                0.5
-                              ],
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@diffuseColor": [
-                                              0.7,
-                                              1,
-                                              0
-                                            ],
-                                            "@transparency": 0.5
+                              }
+                            },
+                            {
+                              "Transform": {
+                                "@translation": [
+                                  -0.5,
+                                  2,
+                                  0
+                                ],
+                                "-children": [
+                                  {
+                                    "Shape": {
+                                      "-appearance": {
+                                        "Appearance": {
+                                          "-material": {
+                                            "Material": {
+                                              "@USE": "DECLProcess_INSTANCE_MaterialLightBlue"
+                                            }
                                           }
                                         }
+                                      },
+                                      "-geometry": {
+                                        "Text": {
+                                          "@DEF": "DECLProcess_INSTANCE_UpString",
+                                          "@string": [
+                                            "u"
+                                          ]
+                                        }
                                       }
-                                    },
-                                    "-geometry": {
-                                      "Extrusion": {
-                                        "@creaseAngle": 0.785,
-                                        "@crossSection": [
-                                          1,
-                                          0,
-                                          0.92,
-                                          -0.38,
-                                          0.71,
-                                          -0.71,
-                                          0.38,
-                                          -0.92,
-                                          0,
-                                          -1,
-                                          -0.38,
-                                          -0.92,
-                                          -0.71,
-                                          -0.71,
-                                          -0.92,
-                                          -0.38,
-                                          -1,
-                                          0,
-                                          -0.92,
-                                          0.38,
-                                          -0.71,
-                                          0.71,
-                                          -0.38,
-                                          0.92,
-                                          0,
-                                          1,
-                                          0.38,
-                                          0.92,
-                                          0.71,
-                                          0.71,
-                                          0.92,
-                                          0.38,
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "StringSensor": {
+                                "@DEF": "DECLProcess_INSTANCE_UpSensor",
+                                "@enabled": false
+                              }
+                            },
+                            {
+                              "TouchSensor": {
+                                "@description": "touch to activate",
+                                "@DEF": "DECLProcess_INSTANCE_UpTouch"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "#comment": "down"
+                      },
+                      {
+                        "Transform": {
+                          "@scale": [
+                            0.5,
+                            0.5,
+                            0.5
+                          ],
+                          "-children": [
+                            {
+                              "Shape": {
+                                "-appearance": {
+                                  "Appearance": {
+                                    "-material": {
+                                      "Material": {
+                                        "@diffuseColor": [
+                                          0.7,
                                           1,
                                           0
                                         ],
-                                        "@spine": [
+                                        "@transparency": 0.5
+                                      }
+                                    }
+                                  }
+                                },
+                                "-geometry": {
+                                  "Extrusion": {
+                                    "@creaseAngle": 0.785,
+                                    "@crossSection": [
+                                      1,
+                                      0,
+                                      0.92,
+                                      -0.38,
+                                      0.71,
+                                      -0.71,
+                                      0.38,
+                                      -0.92,
+                                      0,
+                                      -1,
+                                      -0.38,
+                                      -0.92,
+                                      -0.71,
+                                      -0.71,
+                                      -0.92,
+                                      -0.38,
+                                      -1,
+                                      0,
+                                      -0.92,
+                                      0.38,
+                                      -0.71,
+                                      0.71,
+                                      -0.38,
+                                      0.92,
+                                      0,
+                                      1,
+                                      0.38,
+                                      0.92,
+                                      0.71,
+                                      0.71,
+                                      0.92,
+                                      0.38,
+                                      1,
+                                      0
+                                    ],
+                                    "@spine": [
+                                      0,
+                                      -2.5,
+                                      0,
+                                      0,
+                                      -1.5,
+                                      0
+                                    ]
+                                  }
+                                }
+                              }
+                            },
+                            {
+                              "#comment": "<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "#comment": "center"
+                      },
+                      {
+                        "Transform": {
+                          "-children": [
+                            {
+                              "Shape": {
+                                "-appearance": {
+                                  "Appearance": {
+                                    "-material": {
+                                      "Material": {
+                                        "@diffuseColor": [
+                                          1,
                                           0,
-                                          -2.5,
-                                          0,
-                                          0,
-                                          -1.5,
-                                          0
+                                          0.7
                                         ]
                                       }
                                     }
                                   }
                                 },
-                                {
-                                  "#comment": "<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>"
+                                "-geometry": {
+                                  "Sphere": {}
                                 }
-                              ]
-                            }
-                          },
-                          {
-                            "#comment": "center"
-                          },
-                          {
-                            "Transform": {
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@diffuseColor": [
-                                              1,
-                                              0,
-                                              0.7
-                                            ]
+                              }
+                            },
+                            {
+                              "Transform": {
+                                "@scale": [
+                                  0.5,
+                                  0.5,
+                                  0.5
+                                ],
+                                "@translation": [
+                                  -0.5,
+                                  0,
+                                  1
+                                ],
+                                "-children": [
+                                  {
+                                    "Shape": {
+                                      "-appearance": {
+                                        "Appearance": {
+                                          "-material": {
+                                            "Material": {
+                                              "@USE": "DECLProcess_INSTANCE_MaterialLightBlue"
+                                            }
                                           }
                                         }
+                                      },
+                                      "-geometry": {
+                                        "Text": {
+                                          "@DEF": "DECLProcess_INSTANCE_CenterString"
+                                        }
                                       }
-                                    },
-                                    "-geometry": {
-                                      "Sphere": {}
                                     }
                                   }
-                                },
-                                {
-                                  "Transform": {
-                                    "@scale": [
-                                      0.5,
-                                      0.5,
-                                      0.5
-                                    ],
-                                    "@translation": [
-                                      -0.5,
-                                      0,
-                                      1
-                                    ],
-                                    "-children": [
-                                      {
-                                        "Shape": {
-                                          "-appearance": {
-                                            "Appearance": {
-                                              "-material": {
-                                                "Material": {
-                                                  "@USE": "Process1000ProcessMaterialLightBlue"
-                                                }
-                                              }
-                                            }
-                                          },
-                                          "-geometry": {
-                                            "Text": {
-                                              "@DEF": "Process1000ProcessCenterString"
-                                            }
-                                          }
-                                        }
-                                      }
-                                    ]
-                                  }
-                                },
-                                {
-                                  "StringSensor": {
-                                    "@DEF": "Process1000ProcessCenterSensor",
-                                    "@enabled": false
-                                  }
-                                },
-                                {
-                                  "TouchSensor": {
-                                    "@description": "touch to activate",
-                                    "@DEF": "Process1000ProcessCenterTouch"
-                                  }
-                                }
-                              ]
+                                ]
+                              }
+                            },
+                            {
+                              "StringSensor": {
+                                "@DEF": "DECLProcess_INSTANCE_CenterSensor",
+                                "@enabled": false
+                              }
+                            },
+                            {
+                              "TouchSensor": {
+                                "@description": "touch to activate",
+                                "@DEF": "DECLProcess_INSTANCE_CenterTouch"
+                              }
                             }
-                          }
-                        ]
+                          ]
+                        }
                       }
-                    },
-                    {
-                      "Script": {
-                        "@DEF": "Process1000ProcessRightSingleToMultiString",
-                        "field": [
-                          {
-                            "@name": "set_rightstring",
-                            "@accessType": "inputOnly",
-                            "@type": "SFString"
-                          },
-                          {
-                            "@name": "rightlines",
-                            "@accessType": "outputOnly",
-                            "@type": "MFString"
-                          }
-                        ],
-                        "#sourceText": [
-                          "ecmascript:",
-                          "",
-                          "function initialize() {",
-                          "\trightlines = new MFString(\"\");",
-                          "}",
-                          "",
-                          "function set_rightstring(rightstr) {",
-                          "\trightlines = new MFString(rightstr);",
-                          "}"
-                        ]
+                    ]
+                  }
+                },
+                {
+                  "Script": {
+                    "@DEF": "DECLProcess_INSTANCE_RightSingleToMultiString",
+                    "field": [
+                      {
+                        "@name": "set_rightstring",
+                        "@accessType": "inputOnly",
+                        "@type": "SFString"
+                      },
+                      {
+                        "@name": "rightlines",
+                        "@accessType": "outputOnly",
+                        "@type": "MFString"
                       }
-                    },
-                    {
-                      "Script": {
-                        "@DEF": "Process1000ProcessUpSingleToMultiString",
-                        "field": [
-                          {
-                            "@name": "set_upstring",
-                            "@accessType": "inputOnly",
-                            "@type": "SFString"
-                          },
-                          {
-                            "@name": "uplines",
-                            "@accessType": "outputOnly",
-                            "@type": "MFString"
-                          }
-                        ],
-                        "#sourceText": [
-                          "ecmascript:",
-                          "",
-                          "function initialize() {",
-                          "\tuplines = new MFString(\"\");",
-                          "}",
-                          "",
-                          "function set_upstring(upstr) {",
-                          "\tuplines = new MFString(upstr);",
-                          "}"
-                        ]
+                    ],
+                    "#sourceText": [
+                      "ecmascript:",
+                      "",
+                      "function initialize() {",
+                      "\trightlines = new MFString(\"\");",
+                      "}",
+                      "",
+                      "function set_rightstring(rightstr) {",
+                      "\trightlines = new MFString(rightstr);",
+                      "}"
+                    ]
+                  }
+                },
+                {
+                  "Script": {
+                    "@DEF": "DECLProcess_INSTANCE_UpSingleToMultiString",
+                    "field": [
+                      {
+                        "@name": "set_upstring",
+                        "@accessType": "inputOnly",
+                        "@type": "SFString"
+                      },
+                      {
+                        "@name": "uplines",
+                        "@accessType": "outputOnly",
+                        "@type": "MFString"
                       }
-                    },
-                    {
-                      "Script": {
-                        "@DEF": "Process1000ProcessCenterSingleToMultiString",
-                        "field": [
-                          {
-                            "@name": "set_centerstring",
-                            "@accessType": "inputOnly",
-                            "@type": "SFString"
-                          },
-                          {
-                            "@name": "centerlines",
-                            "@accessType": "outputOnly",
-                            "@type": "MFString"
-                          }
-                        ],
-                        "#sourceText": [
-                          "ecmascript:",
-                          "",
-                          "function initialize() {",
-                          "\tcenterlines = new MFString(\"\");",
-                          "}",
-                          "",
-                          "function set_centerstring(centerstr) {",
-                          "\tcenterlines = new MFString(centerstr);",
-                          "}"
-                        ]
+                    ],
+                    "#sourceText": [
+                      "ecmascript:",
+                      "",
+                      "function initialize() {",
+                      "\tuplines = new MFString(\"\");",
+                      "}",
+                      "",
+                      "function set_upstring(upstr) {",
+                      "\tuplines = new MFString(upstr);",
+                      "}"
+                    ]
+                  }
+                },
+                {
+                  "Script": {
+                    "@DEF": "DECLProcess_INSTANCE_CenterSingleToMultiString",
+                    "field": [
+                      {
+                        "@name": "set_centerstring",
+                        "@accessType": "inputOnly",
+                        "@type": "SFString"
+                      },
+                      {
+                        "@name": "centerlines",
+                        "@accessType": "outputOnly",
+                        "@type": "MFString"
                       }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromField": "enteredText",
-                        "@fromNode": "Process1000ProcessCenterSensor",
-                        "@toField": "set_centerstring",
-                        "@toNode": "Process1000ProcessCenterSingleToMultiString"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromField": "centerlines",
-                        "@fromNode": "Process1000ProcessCenterSingleToMultiString",
-                        "@toField": "set_string",
-                        "@toNode": "Process1000ProcessCenterString"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromField": "isOver",
-                        "@fromNode": "Process1000ProcessCenterTouch",
-                        "@toField": "set_enabled",
-                        "@toNode": "Process1000ProcessCenterSensor"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromField": "enteredText",
-                        "@fromNode": "Process1000ProcessRightSensor",
-                        "@toField": "set_rightstring",
-                        "@toNode": "Process1000ProcessRightSingleToMultiString"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromField": "rightlines",
-                        "@fromNode": "Process1000ProcessRightSingleToMultiString",
-                        "@toField": "set_string",
-                        "@toNode": "Process1000ProcessRightString"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromField": "isOver",
-                        "@fromNode": "Process1000ProcessRightTouch",
-                        "@toField": "set_enabled",
-                        "@toNode": "Process1000ProcessRightSensor"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromField": "enteredText",
-                        "@fromNode": "Process1000ProcessUpSensor",
-                        "@toField": "set_upstring",
-                        "@toNode": "Process1000ProcessUpSingleToMultiString"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromField": "uplines",
-                        "@fromNode": "Process1000ProcessUpSingleToMultiString",
-                        "@toField": "set_string",
-                        "@toNode": "Process1000ProcessUpString"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromField": "isOver",
-                        "@fromNode": "Process1000ProcessUpTouch",
-                        "@toField": "set_enabled",
-                        "@toNode": "Process1000ProcessUpSensor"
-                      }
-                    }
-                  ],
-                  "@DEF": "Process10001000"
+                    ],
+                    "#sourceText": [
+                      "ecmascript:",
+                      "",
+                      "function initialize() {",
+                      "\tcenterlines = new MFString(\"\");",
+                      "}",
+                      "",
+                      "function set_centerstring(centerstr) {",
+                      "\tcenterlines = new MFString(centerstr);",
+                      "}"
+                    ]
+                  }
+                },
+                {
+                  "ROUTE": {
+                    "@fromNode": "DECLProcess_INSTANCE_CenterSensor",
+                    "@fromField": "enteredText",
+                    "@toNode": "DECLProcess_INSTANCE_CenterSingleToMultiString",
+                    "@toField": "set_centerstring"
+                  }
+                },
+                {
+                  "ROUTE": {
+                    "@fromNode": "DECLProcess_INSTANCE_CenterSingleToMultiString",
+                    "@fromField": "centerlines",
+                    "@toNode": "DECLProcess_INSTANCE_CenterString",
+                    "@toField": "set_string"
+                  }
+                },
+                {
+                  "ROUTE": {
+                    "@fromNode": "DECLProcess_INSTANCE_CenterTouch",
+                    "@fromField": "isOver",
+                    "@toNode": "DECLProcess_INSTANCE_CenterSensor",
+                    "@toField": "set_enabled"
+                  }
+                },
+                {
+                  "ROUTE": {
+                    "@fromNode": "DECLProcess_INSTANCE_RightSensor",
+                    "@fromField": "enteredText",
+                    "@toNode": "DECLProcess_INSTANCE_RightSingleToMultiString",
+                    "@toField": "set_rightstring"
+                  }
+                },
+                {
+                  "ROUTE": {
+                    "@fromNode": "DECLProcess_INSTANCE_RightSingleToMultiString",
+                    "@fromField": "rightlines",
+                    "@toNode": "DECLProcess_INSTANCE_RightString",
+                    "@toField": "set_string"
+                  }
+                },
+                {
+                  "ROUTE": {
+                    "@fromNode": "DECLProcess_INSTANCE_RightTouch",
+                    "@fromField": "isOver",
+                    "@toNode": "DECLProcess_INSTANCE_RightSensor",
+                    "@toField": "set_enabled"
+                  }
+                },
+                {
+                  "ROUTE": {
+                    "@fromNode": "DECLProcess_INSTANCE_UpSensor",
+                    "@fromField": "enteredText",
+                    "@toNode": "DECLProcess_INSTANCE_UpSingleToMultiString",
+                    "@toField": "set_upstring"
+                  }
+                },
+                {
+                  "ROUTE": {
+                    "@fromNode": "DECLProcess_INSTANCE_UpSingleToMultiString",
+                    "@fromField": "uplines",
+                    "@toNode": "DECLProcess_INSTANCE_UpString",
+                    "@toField": "set_string"
+                  }
+                },
+                {
+                  "ROUTE": {
+                    "@fromNode": "DECLProcess_INSTANCE_UpTouch",
+                    "@fromField": "isOver",
+                    "@toNode": "DECLProcess_INSTANCE_UpSensor",
+                    "@toField": "set_enabled"
+                  }
                 }
-              }
+              ]
             ]
           }
         },
         {
           "Transform": {
             "-children": [
-              {
-                "Group": {
-                  "-children": [
-                    {
-                      "Group": {
-                        "-children": [
-                          {
-                            "#comment": "left"
-                          },
-                          {
-                            "Transform": {
-                              "@scale": [
-                                0.5,
-                                0.5,
-                                0.5
-                              ],
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@diffuseColor": [
-                                              0.7,
-                                              1,
-                                              0
-                                            ],
-                                            "@transparency": 0.5
-                                          }
-                                        }
-                                      }
-                                    },
-                                    "-geometry": {
-                                      "Extrusion": {
-                                        "@creaseAngle": 0.785,
-                                        "@crossSection": [
-                                          1,
-                                          0,
-                                          0.92,
-                                          -0.38,
-                                          0.71,
-                                          -0.71,
-                                          0.38,
-                                          -0.92,
-                                          0,
-                                          -1,
-                                          -0.38,
-                                          -0.92,
-                                          -0.71,
-                                          -0.71,
-                                          -0.92,
-                                          -0.38,
-                                          -1,
-                                          0,
-                                          -0.92,
-                                          0.38,
-                                          -0.71,
-                                          0.71,
-                                          -0.38,
-                                          0.92,
-                                          0,
-                                          1,
-                                          0.38,
-                                          0.92,
-                                          0.71,
-                                          0.71,
-                                          0.92,
-                                          0.38,
+              [
+                {
+                  "Group": {
+                    "-children": [
+                      {
+                        "#comment": "left"
+                      },
+                      {
+                        "Transform": {
+                          "@scale": [
+                            0.5,
+                            0.5,
+                            0.5
+                          ],
+                          "-children": [
+                            {
+                              "Shape": {
+                                "-appearance": {
+                                  "Appearance": {
+                                    "-material": {
+                                      "Material": {
+                                        "@diffuseColor": [
+                                          0.7,
                                           1,
                                           0
                                         ],
-                                        "@spine": [
-                                          -2.5,
-                                          0,
-                                          0,
-                                          -1.5,
-                                          0,
-                                          0
-                                        ]
+                                        "@transparency": 0.5
                                       }
                                     }
                                   }
                                 },
-                                {
-                                  "#comment": "<Transform translation=\"-2.5 0 0\"> <Shape> <Text DEF=\"LeftString\" string='\"l\"'/> </Shape> </Transform> <StringSensor DEF=\"LeftSensor\" enabled=\"false\"/> <TouchSensor DEF=\"LeftTouch\" enabled=\"true\"/>"
-                                }
-                              ]
-                            }
-                          },
-                          {
-                            "#comment": "right"
-                          },
-                          {
-                            "Transform": {
-                              "@scale": [
-                                0.5,
-                                0.5,
-                                0.5
-                              ],
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@diffuseColor": [
-                                              0,
-                                              0.7,
-                                              1
-                                            ],
-                                            "@transparency": 0.5
-                                          }
-                                        }
-                                      }
-                                    },
-                                    "-geometry": {
-                                      "Extrusion": {
-                                        "@creaseAngle": 0.785,
-                                        "@crossSection": [
-                                          1,
-                                          0,
-                                          0.92,
-                                          -0.38,
-                                          0.71,
-                                          -0.71,
-                                          0.38,
-                                          -0.92,
-                                          0,
-                                          -1,
-                                          -0.38,
-                                          -0.92,
-                                          -0.71,
-                                          -0.71,
-                                          -0.92,
-                                          -0.38,
-                                          -1,
-                                          0,
-                                          -0.92,
-                                          0.38,
-                                          -0.71,
-                                          0.71,
-                                          -0.38,
-                                          0.92,
-                                          0,
-                                          1,
-                                          0.38,
-                                          0.92,
-                                          0.71,
-                                          0.71,
-                                          0.92,
-                                          0.38,
-                                          1,
-                                          0
-                                        ],
-                                        "@spine": [
-                                          1.5,
-                                          0,
-                                          0,
-                                          2.5,
-                                          0,
-                                          0
-                                        ]
-                                      }
-                                    }
-                                  }
-                                },
-                                {
-                                  "Transform": {
-                                    "@translation": [
-                                      2,
+                                "-geometry": {
+                                  "Extrusion": {
+                                    "@creaseAngle": 0.785,
+                                    "@crossSection": [
+                                      1,
                                       0,
+                                      0.92,
+                                      -0.38,
+                                      0.71,
+                                      -0.71,
+                                      0.38,
+                                      -0.92,
+                                      0,
+                                      -1,
+                                      -0.38,
+                                      -0.92,
+                                      -0.71,
+                                      -0.71,
+                                      -0.92,
+                                      -0.38,
+                                      -1,
+                                      0,
+                                      -0.92,
+                                      0.38,
+                                      -0.71,
+                                      0.71,
+                                      -0.38,
+                                      0.92,
+                                      0,
+                                      1,
+                                      0.38,
+                                      0.92,
+                                      0.71,
+                                      0.71,
+                                      0.92,
+                                      0.38,
+                                      1,
                                       0
                                     ],
-                                    "-children": [
-                                      {
-                                        "Shape": {
-                                          "-appearance": {
-                                            "Appearance": {
-                                              "-material": {
-                                                "Material": {
-                                                  "@DEF": "Process2000ProcessMaterialLightBlue",
-                                                  "@diffuseColor": [
-                                                    1,
-                                                    1,
-                                                    1
-                                                  ]
-                                                }
-                                              }
-                                            }
-                                          },
-                                          "-geometry": {
-                                            "Text": {
-                                              "@DEF": "Process2000ProcessRightString",
-                                              "@string": [
-                                                "r"
+                                    "@spine": [
+                                      -2.5,
+                                      0,
+                                      0,
+                                      -1.5,
+                                      0,
+                                      0
+                                    ]
+                                  }
+                                }
+                              }
+                            },
+                            {
+                              "#comment": "<Transform translation=\"-2.5 0 0\"> <Shape> <Text DEF=\"LeftString\" string='\"l\"'/> </Shape> </Transform> <StringSensor DEF=\"LeftSensor\" enabled=\"false\"/> <TouchSensor DEF=\"LeftTouch\" enabled=\"true\"/>"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "#comment": "right"
+                      },
+                      {
+                        "Transform": {
+                          "@scale": [
+                            0.5,
+                            0.5,
+                            0.5
+                          ],
+                          "-children": [
+                            {
+                              "Shape": {
+                                "-appearance": {
+                                  "Appearance": {
+                                    "-material": {
+                                      "Material": {
+                                        "@diffuseColor": [
+                                          0,
+                                          0.7,
+                                          1
+                                        ],
+                                        "@transparency": 0.5
+                                      }
+                                    }
+                                  }
+                                },
+                                "-geometry": {
+                                  "Extrusion": {
+                                    "@creaseAngle": 0.785,
+                                    "@crossSection": [
+                                      1,
+                                      0,
+                                      0.92,
+                                      -0.38,
+                                      0.71,
+                                      -0.71,
+                                      0.38,
+                                      -0.92,
+                                      0,
+                                      -1,
+                                      -0.38,
+                                      -0.92,
+                                      -0.71,
+                                      -0.71,
+                                      -0.92,
+                                      -0.38,
+                                      -1,
+                                      0,
+                                      -0.92,
+                                      0.38,
+                                      -0.71,
+                                      0.71,
+                                      -0.38,
+                                      0.92,
+                                      0,
+                                      1,
+                                      0.38,
+                                      0.92,
+                                      0.71,
+                                      0.71,
+                                      0.92,
+                                      0.38,
+                                      1,
+                                      0
+                                    ],
+                                    "@spine": [
+                                      1.5,
+                                      0,
+                                      0,
+                                      2.5,
+                                      0,
+                                      0
+                                    ]
+                                  }
+                                }
+                              }
+                            },
+                            {
+                              "Transform": {
+                                "@translation": [
+                                  2,
+                                  0,
+                                  0
+                                ],
+                                "-children": [
+                                  {
+                                    "Shape": {
+                                      "-appearance": {
+                                        "Appearance": {
+                                          "-material": {
+                                            "Material": {
+                                              "@DEF": "DECLProcess_INSTANCE1000_MaterialLightBlue",
+                                              "@diffuseColor": [
+                                                1,
+                                                1,
+                                                1
                                               ]
                                             }
                                           }
                                         }
-                                      }
-                                    ]
-                                  }
-                                },
-                                {
-                                  "StringSensor": {
-                                    "@DEF": "Process2000ProcessRightSensor",
-                                    "@enabled": false
-                                  }
-                                },
-                                {
-                                  "TouchSensor": {
-                                    "@description": "touch to activate",
-                                    "@DEF": "Process2000ProcessRightTouch"
-                                  }
-                                }
-                              ]
-                            }
-                          },
-                          {
-                            "#comment": "up"
-                          },
-                          {
-                            "Transform": {
-                              "@scale": [
-                                0.5,
-                                0.5,
-                                0.5
-                              ],
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@diffuseColor": [
-                                              0,
-                                              0.7,
-                                              1
-                                            ],
-                                            "@transparency": 0.5
-                                          }
+                                      },
+                                      "-geometry": {
+                                        "Text": {
+                                          "@DEF": "DECLProcess_INSTANCE1000_RightString",
+                                          "@string": [
+                                            "r"
+                                          ]
                                         }
                                       }
-                                    },
-                                    "-geometry": {
-                                      "Extrusion": {
-                                        "@creaseAngle": 0.785,
-                                        "@crossSection": [
-                                          1,
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "StringSensor": {
+                                "@DEF": "DECLProcess_INSTANCE1000_RightSensor",
+                                "@enabled": false
+                              }
+                            },
+                            {
+                              "TouchSensor": {
+                                "@description": "touch to activate",
+                                "@DEF": "DECLProcess_INSTANCE1000_RightTouch"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "#comment": "up"
+                      },
+                      {
+                        "Transform": {
+                          "@scale": [
+                            0.5,
+                            0.5,
+                            0.5
+                          ],
+                          "-children": [
+                            {
+                              "Shape": {
+                                "-appearance": {
+                                  "Appearance": {
+                                    "-material": {
+                                      "Material": {
+                                        "@diffuseColor": [
                                           0,
-                                          0.92,
-                                          -0.38,
-                                          0.71,
-                                          -0.71,
-                                          0.38,
-                                          -0.92,
-                                          0,
-                                          -1,
-                                          -0.38,
-                                          -0.92,
-                                          -0.71,
-                                          -0.71,
-                                          -0.92,
-                                          -0.38,
-                                          -1,
-                                          0,
-                                          -0.92,
-                                          0.38,
-                                          -0.71,
-                                          0.71,
-                                          -0.38,
-                                          0.92,
-                                          0,
-                                          1,
-                                          0.38,
-                                          0.92,
-                                          0.71,
-                                          0.71,
-                                          0.92,
-                                          0.38,
-                                          1,
-                                          0
+                                          0.7,
+                                          1
                                         ],
-                                        "@spine": [
-                                          0,
-                                          1.5,
-                                          0,
-                                          0,
-                                          2.5,
-                                          0
-                                        ]
+                                        "@transparency": 0.5
                                       }
                                     }
                                   }
                                 },
-                                {
-                                  "Transform": {
-                                    "@translation": [
-                                      -0.5,
-                                      2,
+                                "-geometry": {
+                                  "Extrusion": {
+                                    "@creaseAngle": 0.785,
+                                    "@crossSection": [
+                                      1,
+                                      0,
+                                      0.92,
+                                      -0.38,
+                                      0.71,
+                                      -0.71,
+                                      0.38,
+                                      -0.92,
+                                      0,
+                                      -1,
+                                      -0.38,
+                                      -0.92,
+                                      -0.71,
+                                      -0.71,
+                                      -0.92,
+                                      -0.38,
+                                      -1,
+                                      0,
+                                      -0.92,
+                                      0.38,
+                                      -0.71,
+                                      0.71,
+                                      -0.38,
+                                      0.92,
+                                      0,
+                                      1,
+                                      0.38,
+                                      0.92,
+                                      0.71,
+                                      0.71,
+                                      0.92,
+                                      0.38,
+                                      1,
                                       0
                                     ],
-                                    "-children": [
-                                      {
-                                        "Shape": {
-                                          "-appearance": {
-                                            "Appearance": {
-                                              "-material": {
-                                                "Material": {
-                                                  "@USE": "Process2000ProcessMaterialLightBlue"
-                                                }
-                                              }
-                                            }
-                                          },
-                                          "-geometry": {
-                                            "Text": {
-                                              "@DEF": "Process2000ProcessUpString",
-                                              "@string": [
-                                                "u"
-                                              ]
-                                            }
-                                          }
-                                        }
-                                      }
+                                    "@spine": [
+                                      0,
+                                      1.5,
+                                      0,
+                                      0,
+                                      2.5,
+                                      0
                                     ]
                                   }
-                                },
-                                {
-                                  "StringSensor": {
-                                    "@DEF": "Process2000ProcessUpSensor",
-                                    "@enabled": false
-                                  }
-                                },
-                                {
-                                  "TouchSensor": {
-                                    "@description": "touch to activate",
-                                    "@DEF": "Process2000ProcessUpTouch"
-                                  }
                                 }
-                              ]
-                            }
-                          },
-                          {
-                            "#comment": "down"
-                          },
-                          {
-                            "Transform": {
-                              "@scale": [
-                                0.5,
-                                0.5,
-                                0.5
-                              ],
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@diffuseColor": [
-                                              0.7,
-                                              1,
-                                              0
-                                            ],
-                                            "@transparency": 0.5
+                              }
+                            },
+                            {
+                              "Transform": {
+                                "@translation": [
+                                  -0.5,
+                                  2,
+                                  0
+                                ],
+                                "-children": [
+                                  {
+                                    "Shape": {
+                                      "-appearance": {
+                                        "Appearance": {
+                                          "-material": {
+                                            "Material": {
+                                              "@USE": "DECLProcess_INSTANCE1000_MaterialLightBlue"
+                                            }
                                           }
                                         }
+                                      },
+                                      "-geometry": {
+                                        "Text": {
+                                          "@DEF": "DECLProcess_INSTANCE1000_UpString",
+                                          "@string": [
+                                            "u"
+                                          ]
+                                        }
                                       }
-                                    },
-                                    "-geometry": {
-                                      "Extrusion": {
-                                        "@creaseAngle": 0.785,
-                                        "@crossSection": [
-                                          1,
-                                          0,
-                                          0.92,
-                                          -0.38,
-                                          0.71,
-                                          -0.71,
-                                          0.38,
-                                          -0.92,
-                                          0,
-                                          -1,
-                                          -0.38,
-                                          -0.92,
-                                          -0.71,
-                                          -0.71,
-                                          -0.92,
-                                          -0.38,
-                                          -1,
-                                          0,
-                                          -0.92,
-                                          0.38,
-                                          -0.71,
-                                          0.71,
-                                          -0.38,
-                                          0.92,
-                                          0,
-                                          1,
-                                          0.38,
-                                          0.92,
-                                          0.71,
-                                          0.71,
-                                          0.92,
-                                          0.38,
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "StringSensor": {
+                                "@DEF": "DECLProcess_INSTANCE1000_UpSensor",
+                                "@enabled": false
+                              }
+                            },
+                            {
+                              "TouchSensor": {
+                                "@description": "touch to activate",
+                                "@DEF": "DECLProcess_INSTANCE1000_UpTouch"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "#comment": "down"
+                      },
+                      {
+                        "Transform": {
+                          "@scale": [
+                            0.5,
+                            0.5,
+                            0.5
+                          ],
+                          "-children": [
+                            {
+                              "Shape": {
+                                "-appearance": {
+                                  "Appearance": {
+                                    "-material": {
+                                      "Material": {
+                                        "@diffuseColor": [
+                                          0.7,
                                           1,
                                           0
                                         ],
-                                        "@spine": [
+                                        "@transparency": 0.5
+                                      }
+                                    }
+                                  }
+                                },
+                                "-geometry": {
+                                  "Extrusion": {
+                                    "@creaseAngle": 0.785,
+                                    "@crossSection": [
+                                      1,
+                                      0,
+                                      0.92,
+                                      -0.38,
+                                      0.71,
+                                      -0.71,
+                                      0.38,
+                                      -0.92,
+                                      0,
+                                      -1,
+                                      -0.38,
+                                      -0.92,
+                                      -0.71,
+                                      -0.71,
+                                      -0.92,
+                                      -0.38,
+                                      -1,
+                                      0,
+                                      -0.92,
+                                      0.38,
+                                      -0.71,
+                                      0.71,
+                                      -0.38,
+                                      0.92,
+                                      0,
+                                      1,
+                                      0.38,
+                                      0.92,
+                                      0.71,
+                                      0.71,
+                                      0.92,
+                                      0.38,
+                                      1,
+                                      0
+                                    ],
+                                    "@spine": [
+                                      0,
+                                      -2.5,
+                                      0,
+                                      0,
+                                      -1.5,
+                                      0
+                                    ]
+                                  }
+                                }
+                              }
+                            },
+                            {
+                              "#comment": "<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "#comment": "center"
+                      },
+                      {
+                        "Transform": {
+                          "-children": [
+                            {
+                              "Shape": {
+                                "-appearance": {
+                                  "Appearance": {
+                                    "-material": {
+                                      "Material": {
+                                        "@diffuseColor": [
+                                          1,
                                           0,
-                                          -2.5,
-                                          0,
-                                          0,
-                                          -1.5,
-                                          0
+                                          0.7
                                         ]
                                       }
                                     }
                                   }
                                 },
-                                {
-                                  "#comment": "<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>"
+                                "-geometry": {
+                                  "Sphere": {}
                                 }
-                              ]
-                            }
-                          },
-                          {
-                            "#comment": "center"
-                          },
-                          {
-                            "Transform": {
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@diffuseColor": [
-                                              1,
-                                              0,
-                                              0.7
-                                            ]
+                              }
+                            },
+                            {
+                              "Transform": {
+                                "@scale": [
+                                  0.5,
+                                  0.5,
+                                  0.5
+                                ],
+                                "@translation": [
+                                  -0.5,
+                                  0,
+                                  1
+                                ],
+                                "-children": [
+                                  {
+                                    "Shape": {
+                                      "-appearance": {
+                                        "Appearance": {
+                                          "-material": {
+                                            "Material": {
+                                              "@USE": "DECLProcess_INSTANCE1000_MaterialLightBlue"
+                                            }
                                           }
                                         }
+                                      },
+                                      "-geometry": {
+                                        "Text": {
+                                          "@DEF": "DECLProcess_INSTANCE1000_CenterString"
+                                        }
                                       }
-                                    },
-                                    "-geometry": {
-                                      "Sphere": {}
                                     }
                                   }
-                                },
-                                {
-                                  "Transform": {
-                                    "@scale": [
-                                      0.5,
-                                      0.5,
-                                      0.5
-                                    ],
-                                    "@translation": [
-                                      -0.5,
-                                      0,
-                                      1
-                                    ],
-                                    "-children": [
-                                      {
-                                        "Shape": {
-                                          "-appearance": {
-                                            "Appearance": {
-                                              "-material": {
-                                                "Material": {
-                                                  "@USE": "Process2000ProcessMaterialLightBlue"
-                                                }
-                                              }
-                                            }
-                                          },
-                                          "-geometry": {
-                                            "Text": {
-                                              "@DEF": "Process2000ProcessCenterString"
-                                            }
-                                          }
-                                        }
-                                      }
-                                    ]
-                                  }
-                                },
-                                {
-                                  "StringSensor": {
-                                    "@DEF": "Process2000ProcessCenterSensor",
-                                    "@enabled": false
-                                  }
-                                },
-                                {
-                                  "TouchSensor": {
-                                    "@description": "touch to activate",
-                                    "@DEF": "Process2000ProcessCenterTouch"
-                                  }
-                                }
-                              ]
+                                ]
+                              }
+                            },
+                            {
+                              "StringSensor": {
+                                "@DEF": "DECLProcess_INSTANCE1000_CenterSensor",
+                                "@enabled": false
+                              }
+                            },
+                            {
+                              "TouchSensor": {
+                                "@description": "touch to activate",
+                                "@DEF": "DECLProcess_INSTANCE1000_CenterTouch"
+                              }
                             }
-                          }
-                        ]
+                          ]
+                        }
                       }
-                    },
-                    {
-                      "Script": {
-                        "@DEF": "Process2000ProcessRightSingleToMultiString",
-                        "field": [
-                          {
-                            "@name": "set_rightstring",
-                            "@accessType": "inputOnly",
-                            "@type": "SFString"
-                          },
-                          {
-                            "@name": "rightlines",
-                            "@accessType": "outputOnly",
-                            "@type": "MFString"
-                          }
-                        ],
-                        "#sourceText": [
-                          "ecmascript:",
-                          "",
-                          "function initialize() {",
-                          "\trightlines = new MFString(\"\");",
-                          "}",
-                          "",
-                          "function set_rightstring(rightstr) {",
-                          "\trightlines = new MFString(rightstr);",
-                          "}"
-                        ]
+                    ]
+                  }
+                },
+                {
+                  "Script": {
+                    "@DEF": "DECLProcess_INSTANCE1000_RightSingleToMultiString",
+                    "field": [
+                      {
+                        "@name": "set_rightstring",
+                        "@accessType": "inputOnly",
+                        "@type": "SFString"
+                      },
+                      {
+                        "@name": "rightlines",
+                        "@accessType": "outputOnly",
+                        "@type": "MFString"
                       }
-                    },
-                    {
-                      "Script": {
-                        "@DEF": "Process2000ProcessUpSingleToMultiString",
-                        "field": [
-                          {
-                            "@name": "set_upstring",
-                            "@accessType": "inputOnly",
-                            "@type": "SFString"
-                          },
-                          {
-                            "@name": "uplines",
-                            "@accessType": "outputOnly",
-                            "@type": "MFString"
-                          }
-                        ],
-                        "#sourceText": [
-                          "ecmascript:",
-                          "",
-                          "function initialize() {",
-                          "\tuplines = new MFString(\"\");",
-                          "}",
-                          "",
-                          "function set_upstring(upstr) {",
-                          "\tuplines = new MFString(upstr);",
-                          "}"
-                        ]
+                    ],
+                    "#sourceText": [
+                      "ecmascript:",
+                      "",
+                      "function initialize() {",
+                      "\trightlines = new MFString(\"\");",
+                      "}",
+                      "",
+                      "function set_rightstring(rightstr) {",
+                      "\trightlines = new MFString(rightstr);",
+                      "}"
+                    ]
+                  }
+                },
+                {
+                  "Script": {
+                    "@DEF": "DECLProcess_INSTANCE1000_UpSingleToMultiString",
+                    "field": [
+                      {
+                        "@name": "set_upstring",
+                        "@accessType": "inputOnly",
+                        "@type": "SFString"
+                      },
+                      {
+                        "@name": "uplines",
+                        "@accessType": "outputOnly",
+                        "@type": "MFString"
                       }
-                    },
-                    {
-                      "Script": {
-                        "@DEF": "Process2000ProcessCenterSingleToMultiString",
-                        "field": [
-                          {
-                            "@name": "set_centerstring",
-                            "@accessType": "inputOnly",
-                            "@type": "SFString"
-                          },
-                          {
-                            "@name": "centerlines",
-                            "@accessType": "outputOnly",
-                            "@type": "MFString"
-                          }
-                        ],
-                        "#sourceText": [
-                          "ecmascript:",
-                          "",
-                          "function initialize() {",
-                          "\tcenterlines = new MFString(\"\");",
-                          "}",
-                          "",
-                          "function set_centerstring(centerstr) {",
-                          "\tcenterlines = new MFString(centerstr);",
-                          "}"
-                        ]
+                    ],
+                    "#sourceText": [
+                      "ecmascript:",
+                      "",
+                      "function initialize() {",
+                      "\tuplines = new MFString(\"\");",
+                      "}",
+                      "",
+                      "function set_upstring(upstr) {",
+                      "\tuplines = new MFString(upstr);",
+                      "}"
+                    ]
+                  }
+                },
+                {
+                  "Script": {
+                    "@DEF": "DECLProcess_INSTANCE1000_CenterSingleToMultiString",
+                    "field": [
+                      {
+                        "@name": "set_centerstring",
+                        "@accessType": "inputOnly",
+                        "@type": "SFString"
+                      },
+                      {
+                        "@name": "centerlines",
+                        "@accessType": "outputOnly",
+                        "@type": "MFString"
                       }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromField": "enteredText",
-                        "@fromNode": "Process2000ProcessCenterSensor",
-                        "@toField": "set_centerstring",
-                        "@toNode": "Process2000ProcessCenterSingleToMultiString"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromField": "centerlines",
-                        "@fromNode": "Process2000ProcessCenterSingleToMultiString",
-                        "@toField": "set_string",
-                        "@toNode": "Process2000ProcessCenterString"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromField": "isOver",
-                        "@fromNode": "Process2000ProcessCenterTouch",
-                        "@toField": "set_enabled",
-                        "@toNode": "Process2000ProcessCenterSensor"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromField": "enteredText",
-                        "@fromNode": "Process2000ProcessRightSensor",
-                        "@toField": "set_rightstring",
-                        "@toNode": "Process2000ProcessRightSingleToMultiString"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromField": "rightlines",
-                        "@fromNode": "Process2000ProcessRightSingleToMultiString",
-                        "@toField": "set_string",
-                        "@toNode": "Process2000ProcessRightString"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromField": "isOver",
-                        "@fromNode": "Process2000ProcessRightTouch",
-                        "@toField": "set_enabled",
-                        "@toNode": "Process2000ProcessRightSensor"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromField": "enteredText",
-                        "@fromNode": "Process2000ProcessUpSensor",
-                        "@toField": "set_upstring",
-                        "@toNode": "Process2000ProcessUpSingleToMultiString"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromField": "uplines",
-                        "@fromNode": "Process2000ProcessUpSingleToMultiString",
-                        "@toField": "set_string",
-                        "@toNode": "Process2000ProcessUpString"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromField": "isOver",
-                        "@fromNode": "Process2000ProcessUpTouch",
-                        "@toField": "set_enabled",
-                        "@toNode": "Process2000ProcessUpSensor"
-                      }
-                    }
-                  ],
-                  "@DEF": "Process20002000"
+                    ],
+                    "#sourceText": [
+                      "ecmascript:",
+                      "",
+                      "function initialize() {",
+                      "\tcenterlines = new MFString(\"\");",
+                      "}",
+                      "",
+                      "function set_centerstring(centerstr) {",
+                      "\tcenterlines = new MFString(centerstr);",
+                      "}"
+                    ]
+                  }
+                },
+                {
+                  "ROUTE": {
+                    "@fromNode": "DECLProcess_INSTANCE1000_CenterSensor",
+                    "@fromField": "enteredText",
+                    "@toNode": "DECLProcess_INSTANCE1000_CenterSingleToMultiString",
+                    "@toField": "set_centerstring"
+                  }
+                },
+                {
+                  "ROUTE": {
+                    "@fromNode": "DECLProcess_INSTANCE1000_CenterSingleToMultiString",
+                    "@fromField": "centerlines",
+                    "@toNode": "DECLProcess_INSTANCE1000_CenterString",
+                    "@toField": "set_string"
+                  }
+                },
+                {
+                  "ROUTE": {
+                    "@fromNode": "DECLProcess_INSTANCE1000_CenterTouch",
+                    "@fromField": "isOver",
+                    "@toNode": "DECLProcess_INSTANCE1000_CenterSensor",
+                    "@toField": "set_enabled"
+                  }
+                },
+                {
+                  "ROUTE": {
+                    "@fromNode": "DECLProcess_INSTANCE1000_RightSensor",
+                    "@fromField": "enteredText",
+                    "@toNode": "DECLProcess_INSTANCE1000_RightSingleToMultiString",
+                    "@toField": "set_rightstring"
+                  }
+                },
+                {
+                  "ROUTE": {
+                    "@fromNode": "DECLProcess_INSTANCE1000_RightSingleToMultiString",
+                    "@fromField": "rightlines",
+                    "@toNode": "DECLProcess_INSTANCE1000_RightString",
+                    "@toField": "set_string"
+                  }
+                },
+                {
+                  "ROUTE": {
+                    "@fromNode": "DECLProcess_INSTANCE1000_RightTouch",
+                    "@fromField": "isOver",
+                    "@toNode": "DECLProcess_INSTANCE1000_RightSensor",
+                    "@toField": "set_enabled"
+                  }
+                },
+                {
+                  "ROUTE": {
+                    "@fromNode": "DECLProcess_INSTANCE1000_UpSensor",
+                    "@fromField": "enteredText",
+                    "@toNode": "DECLProcess_INSTANCE1000_UpSingleToMultiString",
+                    "@toField": "set_upstring"
+                  }
+                },
+                {
+                  "ROUTE": {
+                    "@fromNode": "DECLProcess_INSTANCE1000_UpSingleToMultiString",
+                    "@fromField": "uplines",
+                    "@toNode": "DECLProcess_INSTANCE1000_UpString",
+                    "@toField": "set_string"
+                  }
+                },
+                {
+                  "ROUTE": {
+                    "@fromNode": "DECLProcess_INSTANCE1000_UpTouch",
+                    "@fromField": "isOver",
+                    "@toNode": "DECLProcess_INSTANCE1000_UpSensor",
+                    "@toField": "set_enabled"
+                  }
                 }
-              }
+              ]
             ]
           }
         },
@@ -1434,673 +1424,668 @@
               0
             ],
             "-children": [
-              {
-                "Group": {
-                  "-children": [
-                    {
-                      "Group": {
-                        "-children": [
-                          {
-                            "#comment": "left"
-                          },
-                          {
-                            "Transform": {
-                              "@scale": [
-                                0.5,
-                                0.5,
-                                0.5
-                              ],
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@diffuseColor": [
-                                              0.7,
-                                              1,
-                                              0
-                                            ],
-                                            "@transparency": 0.5
-                                          }
-                                        }
-                                      }
-                                    },
-                                    "-geometry": {
-                                      "Extrusion": {
-                                        "@creaseAngle": 0.785,
-                                        "@crossSection": [
-                                          1,
-                                          0,
-                                          0.92,
-                                          -0.38,
-                                          0.71,
-                                          -0.71,
-                                          0.38,
-                                          -0.92,
-                                          0,
-                                          -1,
-                                          -0.38,
-                                          -0.92,
-                                          -0.71,
-                                          -0.71,
-                                          -0.92,
-                                          -0.38,
-                                          -1,
-                                          0,
-                                          -0.92,
-                                          0.38,
-                                          -0.71,
-                                          0.71,
-                                          -0.38,
-                                          0.92,
-                                          0,
-                                          1,
-                                          0.38,
-                                          0.92,
-                                          0.71,
-                                          0.71,
-                                          0.92,
-                                          0.38,
+              [
+                {
+                  "Group": {
+                    "-children": [
+                      {
+                        "#comment": "left"
+                      },
+                      {
+                        "Transform": {
+                          "@scale": [
+                            0.5,
+                            0.5,
+                            0.5
+                          ],
+                          "-children": [
+                            {
+                              "Shape": {
+                                "-appearance": {
+                                  "Appearance": {
+                                    "-material": {
+                                      "Material": {
+                                        "@diffuseColor": [
+                                          0.7,
                                           1,
                                           0
                                         ],
-                                        "@spine": [
-                                          -2.5,
-                                          0,
-                                          0,
-                                          -1.5,
-                                          0,
-                                          0
-                                        ]
+                                        "@transparency": 0.5
                                       }
                                     }
                                   }
                                 },
-                                {
-                                  "#comment": "<Transform translation=\"-2.5 0 0\"> <Shape> <Text DEF=\"LeftString\" string='\"l\"'/> </Shape> </Transform> <StringSensor DEF=\"LeftSensor\" enabled=\"false\"/> <TouchSensor DEF=\"LeftTouch\" enabled=\"true\"/>"
-                                }
-                              ]
-                            }
-                          },
-                          {
-                            "#comment": "right"
-                          },
-                          {
-                            "Transform": {
-                              "@scale": [
-                                0.5,
-                                0.5,
-                                0.5
-                              ],
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@diffuseColor": [
-                                              0,
-                                              0.7,
-                                              1
-                                            ],
-                                            "@transparency": 0.5
-                                          }
-                                        }
-                                      }
-                                    },
-                                    "-geometry": {
-                                      "Extrusion": {
-                                        "@creaseAngle": 0.785,
-                                        "@crossSection": [
-                                          1,
-                                          0,
-                                          0.92,
-                                          -0.38,
-                                          0.71,
-                                          -0.71,
-                                          0.38,
-                                          -0.92,
-                                          0,
-                                          -1,
-                                          -0.38,
-                                          -0.92,
-                                          -0.71,
-                                          -0.71,
-                                          -0.92,
-                                          -0.38,
-                                          -1,
-                                          0,
-                                          -0.92,
-                                          0.38,
-                                          -0.71,
-                                          0.71,
-                                          -0.38,
-                                          0.92,
-                                          0,
-                                          1,
-                                          0.38,
-                                          0.92,
-                                          0.71,
-                                          0.71,
-                                          0.92,
-                                          0.38,
-                                          1,
-                                          0
-                                        ],
-                                        "@spine": [
-                                          1.5,
-                                          0,
-                                          0,
-                                          2.5,
-                                          0,
-                                          0
-                                        ]
-                                      }
-                                    }
-                                  }
-                                },
-                                {
-                                  "Transform": {
-                                    "@translation": [
-                                      2,
+                                "-geometry": {
+                                  "Extrusion": {
+                                    "@creaseAngle": 0.785,
+                                    "@crossSection": [
+                                      1,
                                       0,
+                                      0.92,
+                                      -0.38,
+                                      0.71,
+                                      -0.71,
+                                      0.38,
+                                      -0.92,
+                                      0,
+                                      -1,
+                                      -0.38,
+                                      -0.92,
+                                      -0.71,
+                                      -0.71,
+                                      -0.92,
+                                      -0.38,
+                                      -1,
+                                      0,
+                                      -0.92,
+                                      0.38,
+                                      -0.71,
+                                      0.71,
+                                      -0.38,
+                                      0.92,
+                                      0,
+                                      1,
+                                      0.38,
+                                      0.92,
+                                      0.71,
+                                      0.71,
+                                      0.92,
+                                      0.38,
+                                      1,
                                       0
                                     ],
-                                    "-children": [
-                                      {
-                                        "Shape": {
-                                          "-appearance": {
-                                            "Appearance": {
-                                              "-material": {
-                                                "Material": {
-                                                  "@DEF": "Process3000ProcessMaterialLightBlue",
-                                                  "@diffuseColor": [
-                                                    1,
-                                                    1,
-                                                    1
-                                                  ]
-                                                }
-                                              }
-                                            }
-                                          },
-                                          "-geometry": {
-                                            "Text": {
-                                              "@DEF": "Process3000ProcessRightString",
-                                              "@string": [
-                                                "r"
+                                    "@spine": [
+                                      -2.5,
+                                      0,
+                                      0,
+                                      -1.5,
+                                      0,
+                                      0
+                                    ]
+                                  }
+                                }
+                              }
+                            },
+                            {
+                              "#comment": "<Transform translation=\"-2.5 0 0\"> <Shape> <Text DEF=\"LeftString\" string='\"l\"'/> </Shape> </Transform> <StringSensor DEF=\"LeftSensor\" enabled=\"false\"/> <TouchSensor DEF=\"LeftTouch\" enabled=\"true\"/>"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "#comment": "right"
+                      },
+                      {
+                        "Transform": {
+                          "@scale": [
+                            0.5,
+                            0.5,
+                            0.5
+                          ],
+                          "-children": [
+                            {
+                              "Shape": {
+                                "-appearance": {
+                                  "Appearance": {
+                                    "-material": {
+                                      "Material": {
+                                        "@diffuseColor": [
+                                          0,
+                                          0.7,
+                                          1
+                                        ],
+                                        "@transparency": 0.5
+                                      }
+                                    }
+                                  }
+                                },
+                                "-geometry": {
+                                  "Extrusion": {
+                                    "@creaseAngle": 0.785,
+                                    "@crossSection": [
+                                      1,
+                                      0,
+                                      0.92,
+                                      -0.38,
+                                      0.71,
+                                      -0.71,
+                                      0.38,
+                                      -0.92,
+                                      0,
+                                      -1,
+                                      -0.38,
+                                      -0.92,
+                                      -0.71,
+                                      -0.71,
+                                      -0.92,
+                                      -0.38,
+                                      -1,
+                                      0,
+                                      -0.92,
+                                      0.38,
+                                      -0.71,
+                                      0.71,
+                                      -0.38,
+                                      0.92,
+                                      0,
+                                      1,
+                                      0.38,
+                                      0.92,
+                                      0.71,
+                                      0.71,
+                                      0.92,
+                                      0.38,
+                                      1,
+                                      0
+                                    ],
+                                    "@spine": [
+                                      1.5,
+                                      0,
+                                      0,
+                                      2.5,
+                                      0,
+                                      0
+                                    ]
+                                  }
+                                }
+                              }
+                            },
+                            {
+                              "Transform": {
+                                "@translation": [
+                                  2,
+                                  0,
+                                  0
+                                ],
+                                "-children": [
+                                  {
+                                    "Shape": {
+                                      "-appearance": {
+                                        "Appearance": {
+                                          "-material": {
+                                            "Material": {
+                                              "@DEF": "DECLProcess_INSTANCE2000_MaterialLightBlue",
+                                              "@diffuseColor": [
+                                                1,
+                                                1,
+                                                1
                                               ]
                                             }
                                           }
                                         }
-                                      }
-                                    ]
-                                  }
-                                },
-                                {
-                                  "StringSensor": {
-                                    "@DEF": "Process3000ProcessRightSensor",
-                                    "@enabled": false
-                                  }
-                                },
-                                {
-                                  "TouchSensor": {
-                                    "@description": "touch to activate",
-                                    "@DEF": "Process3000ProcessRightTouch"
-                                  }
-                                }
-                              ]
-                            }
-                          },
-                          {
-                            "#comment": "up"
-                          },
-                          {
-                            "Transform": {
-                              "@scale": [
-                                0.5,
-                                0.5,
-                                0.5
-                              ],
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@diffuseColor": [
-                                              0,
-                                              0.7,
-                                              1
-                                            ],
-                                            "@transparency": 0.5
-                                          }
+                                      },
+                                      "-geometry": {
+                                        "Text": {
+                                          "@DEF": "DECLProcess_INSTANCE2000_RightString",
+                                          "@string": [
+                                            "r"
+                                          ]
                                         }
                                       }
-                                    },
-                                    "-geometry": {
-                                      "Extrusion": {
-                                        "@creaseAngle": 0.785,
-                                        "@crossSection": [
-                                          1,
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "StringSensor": {
+                                "@DEF": "DECLProcess_INSTANCE2000_RightSensor",
+                                "@enabled": false
+                              }
+                            },
+                            {
+                              "TouchSensor": {
+                                "@description": "touch to activate",
+                                "@DEF": "DECLProcess_INSTANCE2000_RightTouch"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "#comment": "up"
+                      },
+                      {
+                        "Transform": {
+                          "@scale": [
+                            0.5,
+                            0.5,
+                            0.5
+                          ],
+                          "-children": [
+                            {
+                              "Shape": {
+                                "-appearance": {
+                                  "Appearance": {
+                                    "-material": {
+                                      "Material": {
+                                        "@diffuseColor": [
                                           0,
-                                          0.92,
-                                          -0.38,
-                                          0.71,
-                                          -0.71,
-                                          0.38,
-                                          -0.92,
-                                          0,
-                                          -1,
-                                          -0.38,
-                                          -0.92,
-                                          -0.71,
-                                          -0.71,
-                                          -0.92,
-                                          -0.38,
-                                          -1,
-                                          0,
-                                          -0.92,
-                                          0.38,
-                                          -0.71,
-                                          0.71,
-                                          -0.38,
-                                          0.92,
-                                          0,
-                                          1,
-                                          0.38,
-                                          0.92,
-                                          0.71,
-                                          0.71,
-                                          0.92,
-                                          0.38,
-                                          1,
-                                          0
+                                          0.7,
+                                          1
                                         ],
-                                        "@spine": [
-                                          0,
-                                          1.5,
-                                          0,
-                                          0,
-                                          2.5,
-                                          0
-                                        ]
+                                        "@transparency": 0.5
                                       }
                                     }
                                   }
                                 },
-                                {
-                                  "Transform": {
-                                    "@translation": [
-                                      -0.5,
-                                      2,
+                                "-geometry": {
+                                  "Extrusion": {
+                                    "@creaseAngle": 0.785,
+                                    "@crossSection": [
+                                      1,
+                                      0,
+                                      0.92,
+                                      -0.38,
+                                      0.71,
+                                      -0.71,
+                                      0.38,
+                                      -0.92,
+                                      0,
+                                      -1,
+                                      -0.38,
+                                      -0.92,
+                                      -0.71,
+                                      -0.71,
+                                      -0.92,
+                                      -0.38,
+                                      -1,
+                                      0,
+                                      -0.92,
+                                      0.38,
+                                      -0.71,
+                                      0.71,
+                                      -0.38,
+                                      0.92,
+                                      0,
+                                      1,
+                                      0.38,
+                                      0.92,
+                                      0.71,
+                                      0.71,
+                                      0.92,
+                                      0.38,
+                                      1,
                                       0
                                     ],
-                                    "-children": [
-                                      {
-                                        "Shape": {
-                                          "-appearance": {
-                                            "Appearance": {
-                                              "-material": {
-                                                "Material": {
-                                                  "@USE": "Process3000ProcessMaterialLightBlue"
-                                                }
-                                              }
-                                            }
-                                          },
-                                          "-geometry": {
-                                            "Text": {
-                                              "@DEF": "Process3000ProcessUpString",
-                                              "@string": [
-                                                "u"
-                                              ]
-                                            }
-                                          }
-                                        }
-                                      }
+                                    "@spine": [
+                                      0,
+                                      1.5,
+                                      0,
+                                      0,
+                                      2.5,
+                                      0
                                     ]
                                   }
-                                },
-                                {
-                                  "StringSensor": {
-                                    "@DEF": "Process3000ProcessUpSensor",
-                                    "@enabled": false
-                                  }
-                                },
-                                {
-                                  "TouchSensor": {
-                                    "@description": "touch to activate",
-                                    "@DEF": "Process3000ProcessUpTouch"
-                                  }
                                 }
-                              ]
-                            }
-                          },
-                          {
-                            "#comment": "down"
-                          },
-                          {
-                            "Transform": {
-                              "@scale": [
-                                0.5,
-                                0.5,
-                                0.5
-                              ],
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@diffuseColor": [
-                                              0.7,
-                                              1,
-                                              0
-                                            ],
-                                            "@transparency": 0.5
+                              }
+                            },
+                            {
+                              "Transform": {
+                                "@translation": [
+                                  -0.5,
+                                  2,
+                                  0
+                                ],
+                                "-children": [
+                                  {
+                                    "Shape": {
+                                      "-appearance": {
+                                        "Appearance": {
+                                          "-material": {
+                                            "Material": {
+                                              "@USE": "DECLProcess_INSTANCE2000_MaterialLightBlue"
+                                            }
                                           }
                                         }
+                                      },
+                                      "-geometry": {
+                                        "Text": {
+                                          "@DEF": "DECLProcess_INSTANCE2000_UpString",
+                                          "@string": [
+                                            "u"
+                                          ]
+                                        }
                                       }
-                                    },
-                                    "-geometry": {
-                                      "Extrusion": {
-                                        "@creaseAngle": 0.785,
-                                        "@crossSection": [
-                                          1,
-                                          0,
-                                          0.92,
-                                          -0.38,
-                                          0.71,
-                                          -0.71,
-                                          0.38,
-                                          -0.92,
-                                          0,
-                                          -1,
-                                          -0.38,
-                                          -0.92,
-                                          -0.71,
-                                          -0.71,
-                                          -0.92,
-                                          -0.38,
-                                          -1,
-                                          0,
-                                          -0.92,
-                                          0.38,
-                                          -0.71,
-                                          0.71,
-                                          -0.38,
-                                          0.92,
-                                          0,
-                                          1,
-                                          0.38,
-                                          0.92,
-                                          0.71,
-                                          0.71,
-                                          0.92,
-                                          0.38,
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "StringSensor": {
+                                "@DEF": "DECLProcess_INSTANCE2000_UpSensor",
+                                "@enabled": false
+                              }
+                            },
+                            {
+                              "TouchSensor": {
+                                "@description": "touch to activate",
+                                "@DEF": "DECLProcess_INSTANCE2000_UpTouch"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "#comment": "down"
+                      },
+                      {
+                        "Transform": {
+                          "@scale": [
+                            0.5,
+                            0.5,
+                            0.5
+                          ],
+                          "-children": [
+                            {
+                              "Shape": {
+                                "-appearance": {
+                                  "Appearance": {
+                                    "-material": {
+                                      "Material": {
+                                        "@diffuseColor": [
+                                          0.7,
                                           1,
                                           0
                                         ],
-                                        "@spine": [
+                                        "@transparency": 0.5
+                                      }
+                                    }
+                                  }
+                                },
+                                "-geometry": {
+                                  "Extrusion": {
+                                    "@creaseAngle": 0.785,
+                                    "@crossSection": [
+                                      1,
+                                      0,
+                                      0.92,
+                                      -0.38,
+                                      0.71,
+                                      -0.71,
+                                      0.38,
+                                      -0.92,
+                                      0,
+                                      -1,
+                                      -0.38,
+                                      -0.92,
+                                      -0.71,
+                                      -0.71,
+                                      -0.92,
+                                      -0.38,
+                                      -1,
+                                      0,
+                                      -0.92,
+                                      0.38,
+                                      -0.71,
+                                      0.71,
+                                      -0.38,
+                                      0.92,
+                                      0,
+                                      1,
+                                      0.38,
+                                      0.92,
+                                      0.71,
+                                      0.71,
+                                      0.92,
+                                      0.38,
+                                      1,
+                                      0
+                                    ],
+                                    "@spine": [
+                                      0,
+                                      -2.5,
+                                      0,
+                                      0,
+                                      -1.5,
+                                      0
+                                    ]
+                                  }
+                                }
+                              }
+                            },
+                            {
+                              "#comment": "<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "#comment": "center"
+                      },
+                      {
+                        "Transform": {
+                          "-children": [
+                            {
+                              "Shape": {
+                                "-appearance": {
+                                  "Appearance": {
+                                    "-material": {
+                                      "Material": {
+                                        "@diffuseColor": [
+                                          1,
                                           0,
-                                          -2.5,
-                                          0,
-                                          0,
-                                          -1.5,
-                                          0
+                                          0.7
                                         ]
                                       }
                                     }
                                   }
                                 },
-                                {
-                                  "#comment": "<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>"
+                                "-geometry": {
+                                  "Sphere": {}
                                 }
-                              ]
-                            }
-                          },
-                          {
-                            "#comment": "center"
-                          },
-                          {
-                            "Transform": {
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@diffuseColor": [
-                                              1,
-                                              0,
-                                              0.7
-                                            ]
+                              }
+                            },
+                            {
+                              "Transform": {
+                                "@scale": [
+                                  0.5,
+                                  0.5,
+                                  0.5
+                                ],
+                                "@translation": [
+                                  -0.5,
+                                  0,
+                                  1
+                                ],
+                                "-children": [
+                                  {
+                                    "Shape": {
+                                      "-appearance": {
+                                        "Appearance": {
+                                          "-material": {
+                                            "Material": {
+                                              "@USE": "DECLProcess_INSTANCE2000_MaterialLightBlue"
+                                            }
                                           }
                                         }
+                                      },
+                                      "-geometry": {
+                                        "Text": {
+                                          "@DEF": "DECLProcess_INSTANCE2000_CenterString"
+                                        }
                                       }
-                                    },
-                                    "-geometry": {
-                                      "Sphere": {}
                                     }
                                   }
-                                },
-                                {
-                                  "Transform": {
-                                    "@scale": [
-                                      0.5,
-                                      0.5,
-                                      0.5
-                                    ],
-                                    "@translation": [
-                                      -0.5,
-                                      0,
-                                      1
-                                    ],
-                                    "-children": [
-                                      {
-                                        "Shape": {
-                                          "-appearance": {
-                                            "Appearance": {
-                                              "-material": {
-                                                "Material": {
-                                                  "@USE": "Process3000ProcessMaterialLightBlue"
-                                                }
-                                              }
-                                            }
-                                          },
-                                          "-geometry": {
-                                            "Text": {
-                                              "@DEF": "Process3000ProcessCenterString"
-                                            }
-                                          }
-                                        }
-                                      }
-                                    ]
-                                  }
-                                },
-                                {
-                                  "StringSensor": {
-                                    "@DEF": "Process3000ProcessCenterSensor",
-                                    "@enabled": false
-                                  }
-                                },
-                                {
-                                  "TouchSensor": {
-                                    "@description": "touch to activate",
-                                    "@DEF": "Process3000ProcessCenterTouch"
-                                  }
-                                }
-                              ]
+                                ]
+                              }
+                            },
+                            {
+                              "StringSensor": {
+                                "@DEF": "DECLProcess_INSTANCE2000_CenterSensor",
+                                "@enabled": false
+                              }
+                            },
+                            {
+                              "TouchSensor": {
+                                "@description": "touch to activate",
+                                "@DEF": "DECLProcess_INSTANCE2000_CenterTouch"
+                              }
                             }
-                          }
-                        ]
+                          ]
+                        }
                       }
-                    },
-                    {
-                      "Script": {
-                        "@DEF": "Process3000ProcessRightSingleToMultiString",
-                        "field": [
-                          {
-                            "@name": "set_rightstring",
-                            "@accessType": "inputOnly",
-                            "@type": "SFString"
-                          },
-                          {
-                            "@name": "rightlines",
-                            "@accessType": "outputOnly",
-                            "@type": "MFString"
-                          }
-                        ],
-                        "#sourceText": [
-                          "ecmascript:",
-                          "",
-                          "function initialize() {",
-                          "\trightlines = new MFString(\"\");",
-                          "}",
-                          "",
-                          "function set_rightstring(rightstr) {",
-                          "\trightlines = new MFString(rightstr);",
-                          "}"
-                        ]
+                    ]
+                  }
+                },
+                {
+                  "Script": {
+                    "@DEF": "DECLProcess_INSTANCE2000_RightSingleToMultiString",
+                    "field": [
+                      {
+                        "@name": "set_rightstring",
+                        "@accessType": "inputOnly",
+                        "@type": "SFString"
+                      },
+                      {
+                        "@name": "rightlines",
+                        "@accessType": "outputOnly",
+                        "@type": "MFString"
                       }
-                    },
-                    {
-                      "Script": {
-                        "@DEF": "Process3000ProcessUpSingleToMultiString",
-                        "field": [
-                          {
-                            "@name": "set_upstring",
-                            "@accessType": "inputOnly",
-                            "@type": "SFString"
-                          },
-                          {
-                            "@name": "uplines",
-                            "@accessType": "outputOnly",
-                            "@type": "MFString"
-                          }
-                        ],
-                        "#sourceText": [
-                          "ecmascript:",
-                          "",
-                          "function initialize() {",
-                          "\tuplines = new MFString(\"\");",
-                          "}",
-                          "",
-                          "function set_upstring(upstr) {",
-                          "\tuplines = new MFString(upstr);",
-                          "}"
-                        ]
+                    ],
+                    "#sourceText": [
+                      "ecmascript:",
+                      "",
+                      "function initialize() {",
+                      "\trightlines = new MFString(\"\");",
+                      "}",
+                      "",
+                      "function set_rightstring(rightstr) {",
+                      "\trightlines = new MFString(rightstr);",
+                      "}"
+                    ]
+                  }
+                },
+                {
+                  "Script": {
+                    "@DEF": "DECLProcess_INSTANCE2000_UpSingleToMultiString",
+                    "field": [
+                      {
+                        "@name": "set_upstring",
+                        "@accessType": "inputOnly",
+                        "@type": "SFString"
+                      },
+                      {
+                        "@name": "uplines",
+                        "@accessType": "outputOnly",
+                        "@type": "MFString"
                       }
-                    },
-                    {
-                      "Script": {
-                        "@DEF": "Process3000ProcessCenterSingleToMultiString",
-                        "field": [
-                          {
-                            "@name": "set_centerstring",
-                            "@accessType": "inputOnly",
-                            "@type": "SFString"
-                          },
-                          {
-                            "@name": "centerlines",
-                            "@accessType": "outputOnly",
-                            "@type": "MFString"
-                          }
-                        ],
-                        "#sourceText": [
-                          "ecmascript:",
-                          "",
-                          "function initialize() {",
-                          "\tcenterlines = new MFString(\"\");",
-                          "}",
-                          "",
-                          "function set_centerstring(centerstr) {",
-                          "\tcenterlines = new MFString(centerstr);",
-                          "}"
-                        ]
+                    ],
+                    "#sourceText": [
+                      "ecmascript:",
+                      "",
+                      "function initialize() {",
+                      "\tuplines = new MFString(\"\");",
+                      "}",
+                      "",
+                      "function set_upstring(upstr) {",
+                      "\tuplines = new MFString(upstr);",
+                      "}"
+                    ]
+                  }
+                },
+                {
+                  "Script": {
+                    "@DEF": "DECLProcess_INSTANCE2000_CenterSingleToMultiString",
+                    "field": [
+                      {
+                        "@name": "set_centerstring",
+                        "@accessType": "inputOnly",
+                        "@type": "SFString"
+                      },
+                      {
+                        "@name": "centerlines",
+                        "@accessType": "outputOnly",
+                        "@type": "MFString"
                       }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromField": "enteredText",
-                        "@fromNode": "Process3000ProcessCenterSensor",
-                        "@toField": "set_centerstring",
-                        "@toNode": "Process3000ProcessCenterSingleToMultiString"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromField": "centerlines",
-                        "@fromNode": "Process3000ProcessCenterSingleToMultiString",
-                        "@toField": "set_string",
-                        "@toNode": "Process3000ProcessCenterString"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromField": "isOver",
-                        "@fromNode": "Process3000ProcessCenterTouch",
-                        "@toField": "set_enabled",
-                        "@toNode": "Process3000ProcessCenterSensor"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromField": "enteredText",
-                        "@fromNode": "Process3000ProcessRightSensor",
-                        "@toField": "set_rightstring",
-                        "@toNode": "Process3000ProcessRightSingleToMultiString"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromField": "rightlines",
-                        "@fromNode": "Process3000ProcessRightSingleToMultiString",
-                        "@toField": "set_string",
-                        "@toNode": "Process3000ProcessRightString"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromField": "isOver",
-                        "@fromNode": "Process3000ProcessRightTouch",
-                        "@toField": "set_enabled",
-                        "@toNode": "Process3000ProcessRightSensor"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromField": "enteredText",
-                        "@fromNode": "Process3000ProcessUpSensor",
-                        "@toField": "set_upstring",
-                        "@toNode": "Process3000ProcessUpSingleToMultiString"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromField": "uplines",
-                        "@fromNode": "Process3000ProcessUpSingleToMultiString",
-                        "@toField": "set_string",
-                        "@toNode": "Process3000ProcessUpString"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromField": "isOver",
-                        "@fromNode": "Process3000ProcessUpTouch",
-                        "@toField": "set_enabled",
-                        "@toNode": "Process3000ProcessUpSensor"
-                      }
-                    }
-                  ],
-                  "@DEF": "Process30003000"
+                    ],
+                    "#sourceText": [
+                      "ecmascript:",
+                      "",
+                      "function initialize() {",
+                      "\tcenterlines = new MFString(\"\");",
+                      "}",
+                      "",
+                      "function set_centerstring(centerstr) {",
+                      "\tcenterlines = new MFString(centerstr);",
+                      "}"
+                    ]
+                  }
+                },
+                {
+                  "ROUTE": {
+                    "@fromNode": "DECLProcess_INSTANCE2000_CenterSensor",
+                    "@fromField": "enteredText",
+                    "@toNode": "DECLProcess_INSTANCE2000_CenterSingleToMultiString",
+                    "@toField": "set_centerstring"
+                  }
+                },
+                {
+                  "ROUTE": {
+                    "@fromNode": "DECLProcess_INSTANCE2000_CenterSingleToMultiString",
+                    "@fromField": "centerlines",
+                    "@toNode": "DECLProcess_INSTANCE2000_CenterString",
+                    "@toField": "set_string"
+                  }
+                },
+                {
+                  "ROUTE": {
+                    "@fromNode": "DECLProcess_INSTANCE2000_CenterTouch",
+                    "@fromField": "isOver",
+                    "@toNode": "DECLProcess_INSTANCE2000_CenterSensor",
+                    "@toField": "set_enabled"
+                  }
+                },
+                {
+                  "ROUTE": {
+                    "@fromNode": "DECLProcess_INSTANCE2000_RightSensor",
+                    "@fromField": "enteredText",
+                    "@toNode": "DECLProcess_INSTANCE2000_RightSingleToMultiString",
+                    "@toField": "set_rightstring"
+                  }
+                },
+                {
+                  "ROUTE": {
+                    "@fromNode": "DECLProcess_INSTANCE2000_RightSingleToMultiString",
+                    "@fromField": "rightlines",
+                    "@toNode": "DECLProcess_INSTANCE2000_RightString",
+                    "@toField": "set_string"
+                  }
+                },
+                {
+                  "ROUTE": {
+                    "@fromNode": "DECLProcess_INSTANCE2000_RightTouch",
+                    "@fromField": "isOver",
+                    "@toNode": "DECLProcess_INSTANCE2000_RightSensor",
+                    "@toField": "set_enabled"
+                  }
+                },
+                {
+                  "ROUTE": {
+                    "@fromNode": "DECLProcess_INSTANCE2000_UpSensor",
+                    "@fromField": "enteredText",
+                    "@toNode": "DECLProcess_INSTANCE2000_UpSingleToMultiString",
+                    "@toField": "set_upstring"
+                  }
+                },
+                {
+                  "ROUTE": {
+                    "@fromNode": "DECLProcess_INSTANCE2000_UpSingleToMultiString",
+                    "@fromField": "uplines",
+                    "@toNode": "DECLProcess_INSTANCE2000_UpString",
+                    "@toField": "set_string"
+                  }
+                },
+                {
+                  "ROUTE": {
+                    "@fromNode": "DECLProcess_INSTANCE2000_UpTouch",
+                    "@fromField": "isOver",
+                    "@toNode": "DECLProcess_INSTANCE2000_UpSensor",
+                    "@toField": "set_enabled"
+                  }
                 }
-              }
+              ]
             ]
           }
         }
