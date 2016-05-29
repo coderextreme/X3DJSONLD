@@ -1,9 +1,18 @@
-#!/bin/sh -x
+#!/bin/sh
 
-# for i in for.json
-for i in ArchPrototype.json ObliqueStrategies.json  NancyPrototypes.json for.json rubikOnFire.json bubbles.json rubik.json pp3.json qq3.json cobweb.json force.json
+mkdir -p ppp
+for i in box.json ArchPrototype.json ObliqueStrategies.json  NancyPrototypes.json for.json rubikOnFire.json bubbles.json rubik.json pp3.json qq3.json cobweb.json force.json
+do
+	git add $i
+	echo "=========================$i====================="
+	read me
+	node PPP.js $i > ppp/`basename $i`
+	git add ppp/`basename $i`
+done
+for i in `find examples/X3dForWebAuthors/Chapter14-Prototypes examples/Vrml2.0Sourcebook/Chapter31-Prototypes examples/Basic/UniversalMediaMaterials -type f -name '*json' | xargs grep -ilw ProtoInstance`
 do
 	echo "=========================$i====================="
-	// read me
-	node PPP.js $i > `basename $i .json`s.json
+	mkdir -p ppp/`dirname $i`
+	node PPP.js $i > ppp/`dirname $i`/`basename $i`
+	git add ppp/`dirname $i`/`basename $i`
 done
