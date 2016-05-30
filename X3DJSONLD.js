@@ -55,9 +55,11 @@ function processURLs(localArray, path) {
 				}
 			}
 		}
-		var hash = localArray[url].lastIndexOf("#") ;
-		if (hash >= 0) {
-			localArray[url] = localArray[url].substring(0, hash);
+		var h = localArray[url].lastIndexOf("#") ;
+		var hash = "";
+		if (h >= 0) {
+			hash = localArray[url].substring(h);
+			localArray[url] = localArray[url].substring(0, h);
 		}
 		var x3d = localArray[url].lastIndexOf(".x3d") ;
 		if (x3d === localArray[url].length - 4) {
@@ -249,10 +251,11 @@ function ConvertObject(key, object, element, path) {
 			}
 		} else if (key === 'Inline') {
 			var localArray = object[key]["@url"];
-			loadURLs(path, localArray, function(data, path) {
-				// console.error("Read", data);
+			console.error("Loading", localArray, "into", key);
+			loadURLs(path, localArray, function(json, path) {
+				console.error("Read", json);
 				try {
-					var json = JSON.parse(data); 
+					console.error("Loading", json, "into inline");
 					var child = document.createDocumentFragment();
 					ConvertToX3DOM(json, "-children", child, path);
 					element.appendChild(child);
@@ -260,7 +263,7 @@ function ConvertObject(key, object, element, path) {
 				} catch(e) {
 					// if JSON parse failed, it might be XML or WRL
 					var child = CreateElement(key, x3djsonNS);
-					console.error("Reloading", object[key]["@url"].join('","').replace(/\.json/g, '.x3d').split(/","/));
+					// console.error("Reloading", object[key]["@url"].join('","').replace(/\.json/g, '.x3d').split(/","/));
 					ConvertToX3DOM(object[key], key, child, path);
 					element.appendChild(child);
 					element.appendChild(document.createTextNode("\n"));
