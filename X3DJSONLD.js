@@ -99,7 +99,7 @@ function loadURLs(loadpath, urls, loadedCallback) {
 
 					if (protocol === "http") {
 						// console.error("Loading HTTP URL", url);
-						if (typeof $ !== 'undefined') {
+						if (typeof $ !== 'undefined' && typeof $.get === 'function') {
 							$.get(url, function(data) {
 								loadedCallback(data, url);
 							});
@@ -117,7 +117,7 @@ function loadURLs(loadpath, urls, loadedCallback) {
 						}
 					} else if (protocol === "https") {
 						// console.error("Loading HTTPS URL", url);
-						if (typeof $ !== 'undefined') {
+						if (typeof $ !== 'undefined' && typeof $.get === 'function') {
 							$.get(url, function(data) {
 								loadedCallback(data, url);
 							});
@@ -142,13 +142,13 @@ function loadURLs(loadpath, urls, loadedCallback) {
 						} else {
 							console.error("File doesn't exist or is not available,", url);
 						}
-					} else if (typeof $ !== 'undefined') {
+					} else if (typeof $ !== 'undefined' && typeof $.get === 'function') {
 						// console.error("Loading Relative URL", url);
 						$.get(url, function(data) {
 							loadedCallback(data, url);
 						});
 					} else {
-						console.error("Didn't load", url, ".  No JQuery or file system");
+						console.error("Didn't load", url, ".  No JQuery $.get() or file system");
 					}
 				})(url);
 			} catch (e) {
@@ -249,7 +249,7 @@ function ConvertObject(key, object, element, path) {
 			}
 		} else if (key === 'Inline') {
 			var localArray = object[key]["@url"];
-			loadURLs(path, localArray, function(data) {
+			loadURLs(path, localArray, function(data, path) {
 				// console.error("Read", data);
 				try {
 					var json = JSON.parse(data); 
@@ -260,7 +260,7 @@ function ConvertObject(key, object, element, path) {
 				} catch(e) {
 					// if JSON parse failed, it might be XML or WRL
 					var child = CreateElement(key, x3djsonNS);
-					console.error("Reloading", object[key]["@url"]);
+					console.error("Reloading", object[key]["@url"].join('","').replace(/\.json/g, '.x3d').split(/","/));
 					ConvertToX3DOM(object[key], key, child, path);
 					element.appendChild(child);
 					element.appendChild(document.createTextNode("\n"));

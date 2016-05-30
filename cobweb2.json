@@ -8,7 +8,7 @@
         "meta": [
           {
             "@name":"title",
-            "@content":"geo.x3d"
+            "@content":"cobweb2.x3d"
           },
           {
             "@name":"creator",
@@ -24,7 +24,7 @@
           },
           {
             "@name":"identifier",
-            "@content":"http://coderextreme.net/X3DJSONLD/geo.x3d"
+            "@content":"http://coderextreme.net/X3DJSONLD/cobweb2.x3d"
           },
           {
             "@name":"translated",

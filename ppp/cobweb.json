@@ -276,7 +276,7 @@
               }
             ]
           },
-          "@DEF": "DECLBubble_bubbleA"
+          "@DEF": "DECLBubble_bubbleA_DECLBubble_bubbleA"
         },
         {
           "Transform": {
@@ -455,7 +455,7 @@
               }
             ]
           },
-          "@DEF": "DECLBubble_bubbleB"
+          "@DEF": "DECLBubble_bubbleB_DECLBubble_bubbleB"
         },
         {
           "Transform": {
@@ -634,7 +634,7 @@
               }
             ]
           },
-          "@DEF": "DECLBubble_bubbleC"
+          "@DEF": "DECLBubble_bubbleC_DECLBubble_bubbleC"
         },
         {
           "Transform": {
@@ -813,7 +813,7 @@
               }
             ]
           },
-          "@DEF": "DECLBubble_bubbleD"
+          "@DEF": "DECLBubble_bubbleD_DECLBubble_bubbleD"
         }
       ]
     }

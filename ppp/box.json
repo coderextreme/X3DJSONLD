@@ -44,16 +44,22 @@
                     {
                       "Shape": {
                         "-geometry": {
-                          "Cylinder": {}
+                          "Box": {
+                            "@size": [
+                              1,
+                              1,
+                              1
+                            ]
+                          }
                         },
                         "-appearance": {
                           "Appearance": {
                             "-material": {
                               "Material": {
                                 "@diffuseColor": [
+                                  0,
                                   1,
-                                  1,
-                                  1
+                                  0
                                 ]
                               }
                             }
@@ -68,7 +74,7 @@
                     0
                   ]
                 },
-                "@DEF": "DECLthree_INSTANCE3000_DECLanyShape_INSTANCE4000"
+                "@DEF": "DECLthree_INSTANCE3000_DECLanyShape_INSTANCE4000_DECLthree_INSTANCE3000_DECLanyShape_INSTANCE4000"
               },
               {
                 "Transform": {
@@ -76,16 +82,22 @@
                     {
                       "Shape": {
                         "-geometry": {
-                          "Cylinder": {}
+                          "Box": {
+                            "@size": [
+                              1,
+                              1,
+                              1
+                            ]
+                          }
                         },
                         "-appearance": {
                           "Appearance": {
                             "-material": {
                               "Material": {
                                 "@diffuseColor": [
+                                  0,
                                   1,
-                                  1,
-                                  1
+                                  0
                                 ]
                               }
                             }
@@ -100,7 +112,7 @@
                     0
                   ]
                 },
-                "@DEF": "DECLthree_INSTANCE3000_DECLanyShape_INSTANCE5000"
+                "@DEF": "DECLthree_INSTANCE3000_DECLanyShape_INSTANCE5000_DECLthree_INSTANCE3000_DECLanyShape_INSTANCE5000"
               },
               {
                 "Transform": {
@@ -108,16 +120,22 @@
                     {
                       "Shape": {
                         "-geometry": {
-                          "Cylinder": {}
+                          "Box": {
+                            "@size": [
+                              1,
+                              1,
+                              1
+                            ]
+                          }
                         },
                         "-appearance": {
                           "Appearance": {
                             "-material": {
                               "Material": {
                                 "@diffuseColor": [
+                                  0,
                                   1,
-                                  1,
-                                  1
+                                  0
                                 ]
                               }
                             }
@@ -132,11 +150,11 @@
                     0
                   ]
                 },
-                "@DEF": "DECLthree_INSTANCE3000_DECLanyShape_INSTANCE6000"
+                "@DEF": "DECLthree_INSTANCE3000_DECLanyShape_INSTANCE6000_DECLthree_INSTANCE3000_DECLanyShape_INSTANCE6000"
               }
             ]
           },
-          "@DEF": "DECLthree_INSTANCE3000"
+          "@DEF": "DECLthree_INSTANCE3000_DECLthree_INSTANCE3000"
         }
       ]
     }
