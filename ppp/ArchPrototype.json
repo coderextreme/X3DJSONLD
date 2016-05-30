@@ -587,7 +587,7 @@
           "Inline": {
             "@DEF": "CoordinateAxes",
             "@url": [
-              "CoordinateAxes.x3d"
+              "CoordinateAxes.json"
             ]
           }
         }

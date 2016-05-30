@@ -148,11 +148,11 @@ function setEnv(scope, protoField, newobject, nodeField, type, newdef) {
 	}
 	// set another reference
 	envField[scope+protoField][envField[scope+protoField].length] = [ newobject, nodeField, type, newdef];
-	out("setconnenv", envField[scope+protoField].length, scope, protoField, JSON.stringify(newobject), nodeField, type, newdef);
+	// out("setconnenv", envField[scope+protoField].length, scope, protoField, JSON.stringify(newobject), nodeField, type, newdef);
 }
 
 function getEnv(scope, protoField) {
-	out(">>>>>>", scope, protoField, JSON.stringify(envField[scope+protoField]));
+	// out(">>>>>>", scope, protoField, JSON.stringify(envField[scope+protoField]));
 	return envField[scope+protoField];
 }
 
@@ -169,7 +169,7 @@ function setConnectFields(object, p, newobject) {
 		if (f) {
 			var field = getScope(f["@protoField"]);
 			var objectfield = f["@nodeField"];
-			out("Node field is", objectfield);
+			// out("Node field is", objectfield);
 			var type_scope = setValueFromInterface(field, newobject, objectfield);
 			var type = undefined;
 			if (typeof type_scope == 'undefined') {
@@ -180,15 +180,15 @@ function setConnectFields(object, p, newobject) {
 			}
 			setEnv(scope, field, newobject, objectfield, type, newdef);
 			for (var s in scopes) {
-				out("setconn", scopes[s], field, JSON.stringify(newobject), objectfield, type, newdef);
+				// out("setconn", scopes[s], field, JSON.stringify(newobject), objectfield, type, newdef);
 				if (typeof protoField[scopes[s]+field] === 'undefined') {
 					protoField[scopes[s]+field] = [];
 				}
 				// set another reference
-				out("SCFNO", JSON.stringify(newobject));
-				out("SCFOF", JSON.stringify(objectfield));
-				out("SCFTY", JSON.stringify(type));
-				out("SCFDF", JSON.stringify(newdef));
+				// out("SCFNO", JSON.stringify(newobject));
+				// out("SCFOF", JSON.stringify(objectfield));
+				// out("SCFTY", JSON.stringify(type));
+				// out("SCFDF", JSON.stringify(newdef));
 				protoField[scopes[s]+field][protoField[scopes[s]+field].length] = [ newobject, objectfield, type, newdef];
 			}
 		}
@@ -249,8 +249,8 @@ function extractConnectedDef(scope, node) {
 }
 
 function setObjectValues(scope, field, fieldOrNode, value) {
-	out("\t\tSOVSI", scope, field, fieldOrNode, JSON.stringify(value));
-	out("resolve", scope, field, fieldOrNode, value);
+	// out("\t\tSOVSI", scope, field, fieldOrNode, JSON.stringify(value));
+	// out("resolve", scope, field, fieldOrNode, value);
 	// find prototype up the scope stream
 	for(var i = 0; i < scopeLength(); i++) {
 		var parentScope = upScope(i);
@@ -258,13 +258,13 @@ function setObjectValues(scope, field, fieldOrNode, value) {
 			break;
 		}
 		var envs = getEnv(parentScope, field);
-		out(i, parentScope, field, JSON.stringify(envs), JSON.stringify(value));
+		// out(i, parentScope, field, JSON.stringify(envs), JSON.stringify(value));
 		for (var e in envs) {
 			var obj = envs[e];
-			out("newobject", JSON.stringify(obj[0]));
-			out("nodeField", JSON.stringify(obj[1]));
-			out("type", JSON.stringify(obj[2]));
-			out("newdef", JSON.stringify(obj[3]));
+			// out("newobject", JSON.stringify(obj[0]));
+			// out("nodeField", JSON.stringify(obj[1]));
+			// out("type", JSON.stringify(obj[2]));
+			// out("newdef", JSON.stringify(obj[3]));
 			if (typeof obj !== 'undefined') {
 				setObjectValue(parentScope, obj[1], obj, fieldOrNode, value);
 			}
@@ -273,27 +273,27 @@ function setObjectValues(scope, field, fieldOrNode, value) {
 	for (var sf in scriptField[scope+field]) {
 		var obj = scriptField[scope+field][sf];
 		if (typeof obj !== 'undefined') {
-			out("\t\t\tfoundscriptvalue", scope, field, JSON.stringify(obj), fieldOrNode, JSON.stringify(value));
+			// out("\t\t\tfoundscriptvalue", scope, field, JSON.stringify(obj), fieldOrNode, JSON.stringify(value));
 			setObjectValue(scope, field, obj, fieldOrNode, value);
 		} else {
-			out("\t\t\tscriptundef", scope, field);
+			// out("\t\t\tscriptundef", scope, field);
 		}
 	}
 	// branch out across children of a proto declare
 	for (var pf in protoField[scope+field]) {
 		var obj = protoField[scope+field][pf];
 		if (typeof obj !== 'undefined') {
-			out("\t\t\tfoundprotovalue", scope, field, JSON.stringify(obj), fieldOrNode, JSON.stringify(value));
+			// out("\t\t\tfoundprotovalue", scope, field, JSON.stringify(obj), fieldOrNode, JSON.stringify(value));
 			setObjectValue(scope, field, obj, fieldOrNode, value);
 		} else {
-			out("\t\t\tprotoundef", scope, field);
+			// out("\t\t\tprotoundef", scope, field);
 		}
 	}
-	out("\t\tSOVSO", scope, field, fieldOrNode, JSON.stringify(value));
+	// out("\t\tSOVSO", scope, field, fieldOrNode, JSON.stringify(value));
 }
 
 function setObjectValue(scope, field, obj, fieldOrNode, value) {
-	out("\t\t\t\tSOV", scope, field, obj, fieldOrNode, value);
+	// out("\t\t\t\tSOV", scope, field, obj, fieldOrNode, value);
 	if (Array.isArray(value) && typeof obj[2] !== 'undefined') {
 		// and some SF fields are arrays, so we have to explicitly test for SFNode
 		if (obj[2] === "SFNode") {
@@ -313,21 +313,21 @@ function setObjectValue(scope, field, obj, fieldOrNode, value) {
 	} else {
 		prefix = "";
 	}
-	out("\t\t\t\tSOVobjI", JSON.stringify(obj));
-	out("\t\t\t\tSOVobj0I", JSON.stringify(obj[0]));
-	out("\t\t\t\tSOVobj1I", JSON.stringify(obj[1]));
-	out("\t\t\t\tSOVobj2I", JSON.stringify(obj[2]));
-	out("\t\t\t\tSOVobj3I", JSON.stringify(obj[3]));
-	out("\t\t\t\tSOVlsI", JSON.stringify(obj[0][prefix+obj[1]]));
-	out("\t\t\t\tSOVrsI", JSON.stringify(value));
+	// out("\t\t\t\tSOVobjI", JSON.stringify(obj));
+	// out("\t\t\t\tSOVobj0I", JSON.stringify(obj[0]));
+	// out("\t\t\t\tSOVobj1I", JSON.stringify(obj[1]));
+	// out("\t\t\t\tSOVobj2I", JSON.stringify(obj[2]));
+	// out("\t\t\t\tSOVobj3I", JSON.stringify(obj[3]));
+	// out("\t\t\t\tSOVlsI", JSON.stringify(obj[0][prefix+obj[1]]));
+	// out("\t\t\t\tSOVrsI", JSON.stringify(value));
 	obj[0][prefix+obj[1]] = value;// JSON.parse(JSON.stringify(value));
-	out("\t\t\t\tSOVvalueO", JSON.stringify(value));
-	out("\t\t\t\tSOVobj3O", JSON.stringify(obj[3]));
-	out("\t\t\t\tSOVobj2O", JSON.stringify(obj[2]));
-	out("\t\t\t\tSOVobj1O", JSON.stringify(obj[1]));
-	out("\t\t\t\tSOVobj0O", JSON.stringify(obj[0]));
-	out("\t\t\t\tSOVobjO", JSON.stringify(obj));
-	out("\t\t\t\tsetresult", obj[0], "[", prefix, obj[1], "]", '=', value, 'alt', fieldOrNode);
+	// out("\t\t\t\tSOVvalueO", JSON.stringify(value));
+	// out("\t\t\t\tSOVobj3O", JSON.stringify(obj[3]));
+	// out("\t\t\t\tSOVobj2O", JSON.stringify(obj[2]));
+	// out("\t\t\t\tSOVobj1O", JSON.stringify(obj[1]));
+	// out("\t\t\t\tSOVobj0O", JSON.stringify(obj[0]));
+	// out("\t\t\t\tSOVobjO", JSON.stringify(obj));
+	// out("\t\t\t\tsetresult", obj[0], "[", prefix, obj[1], "]", '=', value, 'alt', fieldOrNode);
 }
 
 function zap(field, object) {
