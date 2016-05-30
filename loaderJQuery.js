@@ -48,16 +48,8 @@ function setVersion(version) {
 		});
 	}
 
-        function loadX3DOM(selector, json, url) {
-	    $(selector).empty();
-	    var xml = new LOG();
-	    if ($('#prototype').is(':checked')) {
-
-		// Expand Protos
-		// json = externPrototypeExpander(url, json);
-		json = prototypeExpander(url, json, "");
-		console.log("JSON IS NOW", json);
-
+	function loadScripts(json) {
+	    if ($('#scripting').is(':checked')) {
 		// Now generate JavaScript code for Scripts and Routes
 		var classes = new LOG();
 		var routecode = new LOG();
@@ -66,7 +58,7 @@ function setVersion(version) {
 		routecode.log("}");
 
 		if (typeof intervalId !== 'undefined') {
-			console.log("Interval", intervalId, "cleared");
+			// console.log("Interval", intervalId, "cleared");
 			clearInterval(intervalId);
 		} else {
 			console.log("intervalId undefined");
@@ -106,10 +98,19 @@ function setVersion(version) {
 		} catch (e) {
 			console.error(e);
 		}
-
-	        $('textarea#json').val(JSON.stringify(json, null, 2));
-	
 		intervalId = setInterval(runRoutes, 100);
+	    }
+	}
+
+        function loadX3DOM(selector, json, url) {
+	    $(selector).empty();
+	    var xml = new LOG();
+	    if ($('#prototype').is(':checked')) {
+		// Expand Protos
+		// json = externPrototypeExpander(url, json);
+		json = prototypeExpander(url, json, "");
+		// console.log("JSON IS NOW", json);
+	        $('textarea#json').val(JSON.stringify(json, null, 2));
 	    }
 	    var NS = $('#namespace option:selected').text();
 	    if (NS === "none") {
@@ -117,8 +118,8 @@ function setVersion(version) {
 	    } else {
 		replaceX3DJSON(selector, json, url, xml, NS);  // Cobweb if not XHTML NS
 	    }
-			
 	    updateXML(xml);
+	    loadScripts(json);
         }
 
 	function loadSubscene(selector, url) {
@@ -231,7 +232,7 @@ function setVersion(version) {
 	function convertXMLToJSON() {
 	    var xmlString = $('textarea#xml').val();
 	    $.post("/convert", xmlString, function(json) {
-		console.log('JSON', json);
+		// console.log('JSON', json);
 		$('textarea#json').val(JSON.stringify(json, null, 2));
 		replaceX3DJSON("#x3domjson", JSON.parse($("textarea#json").val()), "flipper.json");  // does not load flipper.json
 		x3dom.reload();
@@ -239,7 +240,7 @@ function setVersion(version) {
 /*
 	    $.get("X3dToJson.xslt", function(xslt) {
 		var xmlString = $('textarea#xml').val();
-		console.log("VAL", xmlString);
+		// console.log("VAL", xmlString);
 		var demo = { xslt: xslt};
 
 		// code for regular browsers
@@ -253,7 +254,7 @@ function setVersion(version) {
 		    demo.xml.async = false;
 		    demo.xml.loadXML(xmlString);
 		}
-		console.log("PARSED XML", demo.xml);
+		// console.log("PARSED XML", demo.xml);
 
 		// code for regular browsers
 		if (document.implementation && document.implementation.createDocument)
@@ -267,7 +268,7 @@ function setVersion(version) {
 		    result = demo.xml.transformNode(demo.xslt);
 		}
 
-		console.log('JSON', result);
+		// console.log('JSON', result);
 		loadX3DXSLT(result, 'flipper.json'); // does not load flipper.json
 	    }, "xml");
 */

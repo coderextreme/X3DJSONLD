@@ -62,9 +62,9 @@
                   "Transform": {
                     "@DEF": "DECLnode_nodeA_transform",
                     "@translation": [
-                      -50,
-                      -50,
-                      -50
+                      50,
+                      50,
+                      50
                     ],
                     "-children": [
                       {

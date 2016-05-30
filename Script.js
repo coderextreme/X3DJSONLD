@@ -173,7 +173,6 @@ function valueExpand(type, flat) {
 		}
 	}
 	if (type.indexOf("MF") === 0) {
-		console.error("/*", type, "*/");
 		// collapse into nested arrays for scripting
 		var num = 0; // this will cause an error below if not set
 		if (type.indexOf("MFRotation") === 0) {
@@ -193,6 +192,7 @@ function valueExpand(type, flat) {
 		} else if (type.indexOf("MFMatrix4") === 0) {
 			num = 16;
 		} else {
+			console.error("/*", type, "*/");
 			if (flat === 'NULL') {
 				return JSON.stringify(null);
 			} else {

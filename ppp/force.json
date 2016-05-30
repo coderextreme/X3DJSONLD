@@ -77,9 +77,9 @@
                   "Transform": {
                     "@DEF": "DECLnode_nodeA_transform",
                     "@translation": [
-                      0,
-                      0,
-                      0
+                      50,
+                      50,
+                      -50
                     ],
                     "-children": [
                       {
@@ -259,7 +259,7 @@
                     "@translation": [
                       50,
                       50,
-                      50
+                      -50
                     ],
                     "-children": [
                       {
@@ -437,8 +437,8 @@
                   "Transform": {
                     "@DEF": "DECLnode_nodeC_transform",
                     "@translation": [
-                      -50,
-                      -50,
+                      50,
+                      50,
                       -50
                     ],
                     "-children": [
@@ -912,14 +912,14 @@
                       "                }"
                     ],
                     "@set_endA": [
-                      0,
-                      0,
-                      0
+                      50,
+                      50,
+                      50
                     ],
                     "@set_endB": [
                       50,
                       50,
-                      50
+                      -50
                     ]
                   }
                 },
@@ -1052,13 +1052,13 @@
                       "                }"
                     ],
                     "@set_endA": [
-                      0,
-                      0,
-                      0
+                      50,
+                      50,
+                      50
                     ],
                     "@set_endB": [
-                      -50,
-                      -50,
+                      50,
+                      50,
                       -50
                     ]
                   }

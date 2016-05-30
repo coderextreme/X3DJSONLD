@@ -70,9 +70,9 @@ process.stdin.on('end', function() {
 	var code = classes.join('\n')
 		.replace(/&lt;/g, '<')
 		.replace(/&gt;/g, '>')
-	console.error(code);
+	//console.error(code);
 	var route = routecode.join('\n');
-	console.error(route);
+	//console.error(route);
 	eval(code);
 	//setInterval(function() {
 		eval(route);
