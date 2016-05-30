@@ -251,11 +251,11 @@ function ConvertObject(key, object, element, path) {
 			}
 		} else if (key === 'Inline') {
 			var localArray = object[key]["@url"];
-			console.error("Loading", localArray, "into", key);
+			// console.error("Loading", localArray, "into", key);
 			loadURLs(path, localArray, function(json, path) {
-				console.error("Read", json);
+				// console.error("Read", json);
 				try {
-					console.error("Loading", json, "into inline");
+					// console.error("Loading", json, "into inline");
 					var child = document.createDocumentFragment();
 					ConvertToX3DOM(json, "-children", child, path);
 					element.appendChild(child);
