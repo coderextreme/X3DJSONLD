@@ -3724,12 +3724,11 @@
                         {
                             "type": "number",
                             "default": 0
-                        },
-                        {
-                            "type": "number"
                         }
                     ],
-                    "additionalItems": true
+                    "additionalItems": {
+                        "type": "number"
+                    }
                 },
                 "-metadata": {
                     "$ref": "#/definitions/-metadata"
@@ -5763,7 +5762,7 @@
             },
             "additionalProperties": false
         },
-        "IntergerTrigger": {
+        "IntegerTrigger": {
             "type": "object",
             "properties": {
                 "@DEF": {
@@ -9509,7 +9508,17 @@
                     "$ref": "#/definitions/IS"
                 },
                 "-children": {
-                    "$ref": "#/definitions/-allNodes"
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "#comment": {
+                                "type": "string"
+                            }
+                        },
+                        "additionalProperties": false
+                    }
                 },
                 "-metadata": {
                     "$ref": "#/definitions/-metadata"
@@ -9905,14 +9914,15 @@
                             "minimum": -1,
                             "maximum": 1,
                             "default": 1
+                        },
+                        {
+                            "type": "number",
+                            "minimum": -1,
+                            "maximum": 1,
+                            "default": 0
                         }
                     ],
-                    "additionalItems": {
-                        "type": "number",
-                        "minimum": -1,
-                        "maximum": 1,
-                        "default": 0
-                    }
+                    "additionalItems": false
                 },
                 "@fixed": {
                     "type": "boolean",
@@ -10054,12 +10064,13 @@
                         {
                             "type": "number",
                             "default": -9.81
+                        },
+                        {
+                            "type": "number",
+                            "default": 0
                         }
                     ],
-                    "additionalItems": {
-                        "type": "number",
-                        "default": 0
-                    }
+                    "additionalItems": false
                 },
                 "@iterations": {
                     "type": "integer",
@@ -10691,10 +10702,13 @@
                     "$ref": "#/definitions/@bboxSize"
                 },
                 "@data": {
-                    "type": "integer",
-                    "minimum": 0,
-                    "maximum": 255,
-                    "default": 0
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 255
+                    }
                 },
                 "@dataLength": {
                     "type": "integer",
@@ -10894,14 +10908,15 @@
                             "minimum": -1,
                             "maximum": 1,
                             "default": 1
+                        },
+                        {
+                            "type": "number",
+                            "minimum": -1,
+                            "maximum": 1,
+                            "default": 0
                         }
                     ],
-                    "additionalItems": {
-                        "type": "number",
-                        "minimum": -1,
-                        "maximum": 1,
-                        "default": 0
-                    }
+                    "additionalItems": false
                 },
                 "@forceOutput": {
                     "type": "array",
@@ -10987,14 +11002,15 @@
                             "minimum": -1,
                             "maximum": 1,
                             "default": 1
+                        },
+                        {
+                            "type": "number",
+                            "minimum": -1,
+                            "maximum": 1,
+                            "default": 0
                         }
                     ],
-                    "additionalItems": {
-                        "type": "number",
-                        "minimum": -1,
-                        "maximum": 1,
-                        "default": 0
-                    }
+                    "additionalItems": false
                 },
                 "@forceOutput": {
                     "type": "array",
@@ -11017,7 +11033,6 @@
                 "@minSeparation": {
                     "type": "number",
                     "minimum": 0,
-                    "maximum": 0,
                     "default": 0
                 },
                 "@sliderForce": {
@@ -11079,14 +11094,15 @@
                             "minimum": -1,
                             "maximum": 1,
                             "default": 0
+                        },
+                        {
+                            "type": "number",
+                            "minimum": -1,
+                            "maximum": 1,
+                            "default": 1
                         }
                     ],
-                    "additionalItems": {
-                        "type": "number",
-                        "minimum": -1,
-                        "maximum": 1,
-                        "default": 1
-                    }
+                    "additionalItems": false
                 },
                 "@intensity": {
                     "type": "number",
@@ -11221,12 +11237,13 @@
                             "minimum": -1,
                             "maximum": 1,
                             "default": 0
+                        },
+                        {
+                            "type": "number",
+                            "default": 0
                         }
                     ],
-                    "additionalItems": {
-                        "type": "number",
-                        "default": 0
-                    }
+                    "additionalItems": false
                 },
                 "-metadata": {
                     "$ref": "#/definitions/-metadata"
@@ -11419,13 +11436,14 @@
                             "type": "number",
                             "minimum": 0,
                             "default": 0
+                        },
+                        {
+                            "type": "number",
+                            "minimum": 0,
+                            "default": 0
                         }
                     ],
-                    "additionalItems": {
-                        "type": "number",
-                        "minimum": 0,
-                        "default": 0
-                    }
+                    "additionalItems": false
                 },
                 "@beamWidth": {
                     "type": "number",
@@ -11464,12 +11482,13 @@
                         {
                             "type": "number",
                             "default": 0
+                        },
+                        {
+                            "type": "number",
+                            "default": -1
                         }
                     ],
-                    "additionalItems": {
-                        "type": "number",
-                        "default": -1
-                    }
+                    "additionalItems": false
                 },
                 "@global": {
                     "type": "boolean",
@@ -12422,14 +12441,15 @@
                             "minimum": 0,
                             "maximum": 1,
                             "default": 1
+                        },
+                        {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 1,
+                            "default": 0
                         }
                     ],
-                    "additionalItems": {
-                        "type": "number",
-                        "minimum": 0,
-                        "maximum": 1,
-                        "default": 0
-                    }
+                    "additionalItems": false
                 },
                 "@enabled": {
                     "type": "boolean",
@@ -12457,14 +12477,15 @@
                             "minimum": 0,
                             "maximum": 1,
                             "default": 0
+                        },
+                        {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 1,
+                            "default": 0
                         }
                     ],
-                    "additionalItems": {
-                        "type": "number",
-                        "minimum": 0,
-                        "maximum": 1,
-                        "default": 0
-                    }
+                    "additionalItems": false
                 },
                 "-metadata": {
                     "$ref": "#/definitions/-metadata"
@@ -13325,14 +13346,15 @@
                             "minimum": -1,
                             "maximum": 1,
                             "default": 1
+                        },
+                        {
+                            "type": "number",
+                            "minimum": -1,
+                            "maximum": 1,
+                            "default": 0
                         }
                     ],
-                    "additionalItems": {
-                        "type": "number",
-                        "minimum": -1,
-                        "maximum": 1,
-                        "default": 0
-                    }
+                    "additionalItems": false
                 },
                 "@axis2": {
                     "type": "array",
@@ -13350,14 +13372,15 @@
                             "minimum": -1,
                             "maximum": 1,
                             "default": 1
+                        },
+                        {
+                            "type": "number",
+                            "minimum": -1,
+                            "maximum": 1,
+                            "default": 0
                         }
                     ],
-                    "additionalItems": {
-                        "type": "number",
-                        "minimum": -1,
-                        "maximum": 1,
-                        "default": 0
-                    }
+                    "additionalItems": false
                 },
                 "@forceOutput": {
                     "type": "array",
@@ -13622,14 +13645,15 @@
                             "minimum": 0,
                             "maximum": 1,
                             "default": 0
+                        },
+                        {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 1,
+                            "default": 1
                         }
                     ],
-                    "additionalItems": {
-                        "type": "number",
-                        "minimum": 0,
-                        "maximum": 1,
-                        "default": 1
-                    }
+                    "additionalItems": false
                 },
                 "-children": {
                     "$ref": "#/definitions/-children"
@@ -13777,14 +13801,15 @@
                             "minimum": -1,
                             "maximum": 1,
                             "default": 1
+                        },
+                        {
+                            "type": "number",
+                            "minimum": -1,
+                            "maximum": 1,
+                            "default": 0
                         }
                     ],
-                    "additionalItems": {
-                        "type": "number",
-                        "minimum": -1,
-                        "maximum": 1,
-                        "default": 0
-                    }
+                    "additionalItems": false
                 },
                 "@internal": {
                     "type": "boolean",
@@ -13917,14 +13942,15 @@
                             "minimum": -1,
                             "maximum": 1,
                             "default": 1
+                        },
+                        {
+                            "type": "number",
+                            "minimum": -1,
+                            "maximum": 1,
+                            "default": 0
                         }
                     ],
-                    "additionalItems": {
-                        "type": "number",
-                        "minimum": -1,
-                        "maximum": 1,
-                        "default": 0
-                    }
+                    "additionalItems": false
                 },
                 "@enabled": {
                     "type": "boolean",
@@ -14094,9 +14120,6 @@
                         "type": "string"
                     },
                     "@value": {},
-                    "-value": {
-                        "$ref": "#/definitions/-oneNode"
-                    },
                     "-children": {
                         "$ref": "#/definitions/-allNodes"
                     }
@@ -14181,7 +14204,7 @@
                         "additionalProperties": false
                     }
                 },
-                "-children": {
+                "Th": {
                     "type": "array",
                     "items": {
                         "type": "object",
@@ -14650,15 +14673,10 @@
             ]
         },
         "-allNodes": {
-            "description": "List of X3D nodes",
+            "description": "Any X3D node",
             "type": "array",
             "minItems": 1,
             "items": {
-                "$ref": "#/definitions/-oneNode"
-            }
-        },
-        "-oneNode": {
-                "description": "Any X3D node",
                 "type": "object",
                 "properties": {
                     "#comment": {
@@ -14959,7 +14977,7 @@
                         "$ref": "#/definitions/IntegerSequencer"
                     },
                     "IntegerTrigger": {
-                        "$ref": "#/definitions/IntergerTrigger"
+                        "$ref": "#/definitions/IntegerTrigger"
                     },
                     "IsoSurfaceVolumeData": {
                         "$ref": "#/definitions/IsoSurfaceVolumeData"
@@ -15377,6 +15395,7 @@
                     }
                 },
                 "additionalProperties": false
+            }
         },
         "-appearance": {
             "description": "SF X3DAppearance content",
@@ -15590,7 +15609,7 @@
                     "$ref": "#/definitions/IntegerSequencer"
                 },
                 "IntegerTrigger": {
-                    "$ref": "#/definitions/IntergerTrigger"
+                    "$ref": "#/definitions/IntegerTrigger"
                 },
                 "IsoSurfaceVolumeData": {
                     "$ref": "#/definitions/IsoSurfaceVolumeData"
@@ -15951,7 +15970,7 @@
                         "$ref": "#/definitions/IntegerSequencer"
                     },
                     "IntegerTrigger": {
-                        "$ref": "#/definitions/IntergerTrigger"
+                        "$ref": "#/definitions/IntegerTrigger"
                     },
                     "IsoSurfaceVolumeData": {
                         "$ref": "#/definitions/IsoSurfaceVolumeData"
