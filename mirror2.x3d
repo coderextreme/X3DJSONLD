@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
-<X3D profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd' xmlns:xsd='http://www.web3d.org/specifications/x3d-namespace'>
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
       <Scene>
         <Viewpoint position='0 5 100' description='Switch background and cubemap texture'/>
 	<Background DEF="background" leftUrl='"cubemap/all_probes/beach_cross/beach_left.png" "http://coderextreme.net/cubemap/all_probes/beach_cross/beach_left.png"' rightUrl='"cubemap/all_probes/beach_cross/beach_right.png" "http://coderextreme.net/cubemap/all_probes/beach_cross/beach_right.png"' frontUrl='"cubemap/all_probes/beach_cross/beach_front.png" "http://coderextreme.net/cubemap/all_probes/beach_cross/beach_front.png"' backUrl='"cubemap/all_probes/beach_cross/beach_back.png" "http://coderextreme.net/cubemap/all_probes/beach_cross/beach_back.png"' topUrl='"cubemap/all_probes/beach_cross/beach_top.png" "http://coderextreme.net/cubemap/all_probes/beach_cross/beach_top.png"' bottomUrl='"cubemap/all_probes/beach_cross/beach_bottom.png" "http://coderextreme.net/cubemap/all_probes/beach_cross/beach_bottom.png"'></Background> 
@@ -24,88 +24,9 @@
 		  <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/>
                   <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/>
                   <field name='power' accessType='inputOutput' type='SFFloat' value='2'/>
-                  <ShaderPart type='VERTEX' containerField="parts">
-/*
-The MIT License (MIT)
-Copyright (c) 2011 Authors of J3D. All rights reserved.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the Software), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-*/
-attribute vec3 position;
-attribute vec3 normal;
-attribute vec2 texcoord;
-
-uniform mat4 modelViewProjectionMatrix;
-uniform mat4 modelViewMatrix;
-uniform mat4 modelViewMatrixInverse;
-uniform mat4 normalMatrix;
-
-varying vec3 r;
-varying vec3 tr;
-varying vec3 tg;
-varying vec3 tb;
-varying float rfac;
-
-uniform vec3 chromaticDispersion;
-uniform float bias;
-uniform float scale;
-uniform float power;
-
-
-void main()
-{
-    vec4 eye = vec4(modelViewMatrixInverse * vec4(0,0,0,1));
-    vec3 fragEyeVector = position - eye.xyz;
-                            
-    vec3 i = normalize(fragEyeVector);
-    r = reflect(i, normal);
-    tr = refract(i, normal, chromaticDispersion.x);
-    tg = refract(i, normal, chromaticDispersion.y);
-    tb = refract(i, normal, chromaticDispersion.z);
-    rfac = bias + scale * pow(0.5+0.5*dot(i, normal), power);
-
-    gl_Position = modelViewProjectionMatrix*vec4(position, 1);
-}
+                  <ShaderPart url='"x3dom.vs"' type='VERTEX'>
                   </ShaderPart>
-                  <ShaderPart type='FRAGMENT' containerField="parts">
-/*
-The MIT License (MIT)
-Copyright (c) 2011 Authors of J3D. All rights reserved.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the Software), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-*/
-#ifdef GL_ES
-  precision highp float;
-#endif
-
-uniform samplerCube background;
-
-varying vec3 r;
-varying vec3 tr;
-varying vec3 tg;
-varying vec3 tb;
-varying float rfac;
-
-void main()
-{
-    vec4 tcol = vec4(1.0);
-
-    vec4 rcol = textureCube(background, r);
-    tcol.r = textureCube(background, tr).r;
-    tcol.g = textureCube(background, tg).g;
-    tcol.b = textureCube(background, tb).b;
-
-    gl_FragColor = mix(tcol, rcol, rfac);
-}
-
+                  <ShaderPart url='"bubbles.fs"' type='FRAGMENT'>
                   </ShaderPart>
                 </ComposedShader>
             </Appearance>

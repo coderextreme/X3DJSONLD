@@ -1,8 +1,9 @@
 { "X3D": {
+    "encoding":"UTF-8",
     "@profile":"Full",
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "@id":"x3dele",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "Scene": {
         "-children":[
           { "#comment":"Viewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views'/"
@@ -73,9 +74,9 @@
               "@DEF":"RandomTourTime",
               "field": [
                 {
-                  "@name":"set_fraction",
+                  "@name":"set_cycle",
                   "@accessType":"inputOnly",
-                  "@type":"SFFloat"
+                  "@type":"SFTime"
                 },
                 {
                   "@name":"val",
@@ -99,7 +100,7 @@
               "#sourceText":[
 "ecmascript:",
 "",
-"               function set_fraction(value) {",
+"               function set_cycle(value) {",
 "                        var cartesianMult = -150;  // -150 if cartesian, 1 if geo",
 "                        var ov = val;",
 "                        Browser.print('old '+ov);",
@@ -122,7 +123,7 @@
               "@fromNode":"TourTime",
               "@fromField":"cycleTime",
               "@toNode":"RandomTourTime",
-              "@toField":"set_fraction"
+              "@toField":"set_cycle"
             }
           },
           { "ROUTE":

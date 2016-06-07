@@ -1,7 +1,9 @@
 { "X3D": {
+    "encoding":"UTF-8",
     "@profile":"Immersive",
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
           {
@@ -26,11 +28,15 @@
           },
           {
             "@name":"translated",
-            "@content":"24 February 2016"
+            "@content":"17 April 2016"
           },
           {
             "@name":"generator",
             "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
           }
         ]
     },
@@ -121,7 +127,6 @@
             {
               "@DEF":"ts",
               "@cycleInterval":2,
-              "@description":"Make the dolphin move",
               "@loop":true
             }
           },

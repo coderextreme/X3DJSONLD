@@ -1,7 +1,9 @@
 { "X3D": {
+    "encoding":"UTF-8",
     "@profile":"Immersive",
-    "@version":3.3,
+    "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
           {
@@ -107,6 +109,18 @@
           {
             "@name":"license",
             "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"17 April 2016"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
           }
         ]
     },
@@ -114,7 +128,6 @@
         "-children":[
           { "NavigationInfo":
             {
-              "@type":["NONE"]
             }
           },
           { "Background":
@@ -135,11 +148,11 @@
                 },
                 { "Shape":
                   {
-                    "-geometry":[
+                    "-geometry":
                       { "Text":
                         {
-                          "@string":["Oblique Strategies","","(Over One Hundred Worthwhile Dilemmas)","","by,Brian,Eno,and,Peter,Schmidt"],
-                          "-fontStyle":[
+                          "@string":["Oblique Strategies","","(Over One Hundred Worthwhile Dilemmas)","","by Brian Eno and Peter Schmidt"],
+                          "-fontStyle":
                             { "FontStyle":
                               {
                                 "@DEF":"MessageFont",
@@ -148,23 +161,19 @@
                                 "@style":"BOLD"
                               }
                             }
-                          ]
                         }
-                      }
-                    ],
-                    "-appearance":[
+                      },
+                    "-appearance":
                       { "Appearance":
                         {
-                          "-material":[
+                          "-material":
                             { "Material":
                               {
                                 "@diffuseColor":[1,1,1]
                               }
                             }
-                          ]
                         }
                       }
-                    ]
                   }
                 },
                 { "Transform":
@@ -174,25 +183,23 @@
                       { "Shape":
                         {
                           "@DEF":"HeadlineClickSurface",
-                          "-geometry":[
+                          "-geometry":
                             { "IndexedFaceSet":
                               {
                                 "@coordIndex":[0,1,2,3,-1],
                                 "@solid":false,
-                                "-coord":[
+                                "-coord":
                                   { "Coordinate":
                                     {
                                       "@point":[1,1,0,1,-1,0,-1,-1,0,-1,1,0]
                                     }
                                   }
-                                ]
                               }
-                            }
-                          ],
-                          "-appearance":[
+                            },
+                          "-appearance":
                             { "Appearance":
                               {
-                                "-material":[
+                                "-material":
                                   { "Material":
                                     {
                                       "@ambientIntensity":0.245763,
@@ -202,10 +209,8 @@
                                       "@transparency":0.8
                                     }
                                   }
-                                ]
                               }
                             }
-                          ]
                         }
                       }
                     ]
@@ -217,7 +222,13 @@
           { "Script":
             {
               "@DEF":"TextScript",
-              "@url":["ObliqueStrategiesScript.js","http://coderextreme.net/X3DJSONLD/ObliqueStrategiesScript.js","http://X3dGraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategiesScript.js"],
+              "@url":["./ObliqueStrategiesScript.js"],
+              "-children":[
+                { "#comment":"initialize() method includes unit test to printAllStrategies() to console"
+                },
+                { "#comment":"TODO insert field definitions here (index string_changed previous next random) and then animate!"
+                }
+              ],
               "field": [
                 {
                   "@name":"index",
@@ -266,12 +277,6 @@
                   "@type":"SFBool",
                   "@value":true
                 }
-              ],
-              "-children":[
-                { "#comment":"initialize() method includes unit test to printAllStrategies() to console"
-                },
-                { "#comment":"TODO insert field definitions here (index string_changed previous next random) and then animate!"
-                }
               ]
             }
           },
@@ -283,11 +288,11 @@
               "-children":[
                 { "Shape":
                   {
-                    "-geometry":[
+                    "-geometry":
                       { "Text":
                         {
                           "@DEF":"CardText",
-                          "-fontStyle":[
+                          "-fontStyle":
                             { "FontStyle":
                               {
                                 "@family":["SANS"],
@@ -295,23 +300,19 @@
                                 "@style":"BOLD"
                               }
                             }
-                          ]
                         }
-                      }
-                    ],
-                    "-appearance":[
+                      },
+                    "-appearance":
                       { "Appearance":
                         {
-                          "-material":[
+                          "-material":
                             { "Material":
                               {
                                 "@diffuseColor":[1,1,1]
                               }
                             }
-                          ]
                         }
                       }
-                    ]
                   }
                 },
                 { "ROUTE":
@@ -339,15 +340,14 @@
                       { "#comment":"%20 is space character used in uri/url encoding"
                       }
                     ],
-                    "-source":[
+                    "-source":
                       { "AudioClip":
                         {
                           "@DEF":"TextToSpeechAudioClip",
                           "@description":"sends strategy text google translate",
-                          "@url":["http://translate.google.com/translate_tts?tl=en&q=Feed%20the%20recording%20back%20out%20of%20the%20medium","translate_tts_mp3FileFormatNotSupported.wav","http://X3dGraphics.com/examples/X3dForAdvancedModeling/Inspiration/translate_tts_mp3FileFormatNotSupported.wav"]
+                          "@url":["http://translate.google.com/translate_tts?tl=en&q=Feed%20the%20recording%20back%20out%20of%20the%20medium","translate_tts_mp3FileFormatNotSupported.wav"]
                         }
                       }
-                    ]
                   }
                 },
                 { "ROUTE":
@@ -390,34 +390,30 @@
                 },
                 { "Shape":
                   {
-                    "-geometry":[
+                    "-geometry":
                       { "Text":
                         {
                           "@string":["previous"],
-                          "-fontStyle":[
+                          "-fontStyle":
                             { "FontStyle":
                               {
                                 "@USE":"MessageFont"
                               }
                             }
-                          ]
                         }
-                      }
-                    ],
-                    "-appearance":[
+                      },
+                    "-appearance":
                       { "Appearance":
                         {
                           "@DEF":"InterfaceAppearance",
-                          "-material":[
+                          "-material":
                             { "Material":
                               {
                                 "@diffuseColor":[1,0,0.6]
                               }
                             }
-                          ]
                         }
                       }
-                    ]
                   }
                 },
                 { "Transform":
@@ -431,34 +427,30 @@
                             { "#comment":"support Selectable Text with a scalable IFS"
                             }
                           ],
-                          "-geometry":[
+                          "-geometry":
                             { "IndexedFaceSet":
                               {
                                 "@coordIndex":[0,1,2,3,-1],
                                 "@solid":false,
-                                "-coord":[
+                                "-coord":
                                   { "Coordinate":
                                     {
                                       "@point":[1,1,0,1,-1,0,-1,-1,0,-1,1,0]
                                     }
                                   }
-                                ]
                               }
-                            }
-                          ],
-                          "-appearance":[
+                            },
+                          "-appearance":
                             { "Appearance":
                               {
-                                "-material":[
+                                "-material":
                                   { "Material":
                                     {
                                       "@transparency":1
                                     }
                                   }
-                                ]
                               }
                             }
-                          ]
                         }
                       }
                     ]
@@ -488,27 +480,24 @@
                 },
                 { "Shape":
                   {
-                    "-geometry":[
+                    "-geometry":
                       { "Text":
                         {
                           "@string":["next"],
-                          "-fontStyle":[
+                          "-fontStyle":
                             { "FontStyle":
                               {
                                 "@USE":"MessageFont"
                               }
                             }
-                          ]
                         }
-                      }
-                    ],
-                    "-appearance":[
+                      },
+                    "-appearance":
                       { "Appearance":
                         {
                           "@USE":"InterfaceAppearance"
                         }
                       }
-                    ]
                   }
                 },
                 { "Transform":
@@ -546,27 +535,24 @@
                 },
                 { "Shape":
                   {
-                    "-geometry":[
+                    "-geometry":
                       { "Text":
                         {
                           "@string":["random"],
-                          "-fontStyle":[
+                          "-fontStyle":
                             { "FontStyle":
                               {
                                 "@USE":"MessageFont"
                               }
                             }
-                          ]
                         }
-                      }
-                    ],
-                    "-appearance":[
+                      },
+                    "-appearance":
                       { "Appearance":
                         {
                           "@USE":"InterfaceAppearance"
                         }
                       }
-                    ]
                   }
                 },
                 { "Transform":
@@ -606,27 +592,24 @@
                       },
                       { "Shape":
                         {
-                          "-geometry":[
+                          "-geometry":
                             { "Text":
                               {
                                 "@string":["speech"],
-                                "-fontStyle":[
+                                "-fontStyle":
                                   { "FontStyle":
                                     {
                                       "@USE":"MessageFont"
                                     }
                                   }
-                                ]
                               }
-                            }
-                          ],
-                          "-appearance":[
+                            },
+                          "-appearance":
                             { "Appearance":
                               {
                                 "@USE":"InterfaceAppearance"
                               }
                             }
-                          ]
                         }
                       },
                       { "Transform":

@@ -1,7 +1,9 @@
 { "X3D": {
+    "encoding":"UTF-8",
     "@profile":"Immersive",
-    "@version":"4.0",
-    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-4.0.xsd",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
           {
@@ -30,7 +32,7 @@
           },
           {
             "@name":"translated",
-            "@content":"24 February 2016"
+            "@content":"17 April 2016"
           },
           {
             "@name":"generator",
@@ -82,7 +84,7 @@
                     "@DEF":"MoveCylinder",
                     "field": [
                       {
-                        "@name":"set_fraction",
+                        "@name":"set_cycle",
                         "@accessType":"inputOnly",
                         "@type":"SFTime"
                       },
@@ -96,7 +98,7 @@
                     "#sourceText":[
 "ecmascript:",
 "",
-"                function set_fraction(value) {",
+"                function set_cycle(value) {",
 "                        Browser.print(value);",
 "                        var endA = new SFVec3f(spine[0][0]*Math.random()*2, spine[0][1]*Math.random()*2, spine[0][2]*Math.random()*2);",
 "                        var endB = new SFVec3f(spine[1][0]*Math.random()*2, spine[1][1]*Math.random()*2, spine[1][2]*Math.random()*2);",
@@ -113,7 +115,7 @@
                     "@fromNode":"TourTime",
                     "@fromField":"cycleTime",
                     "@toNode":"MoveCylinder",
-                    "@toField":"set_fraction"
+                    "@toField":"set_cycle"
                   }
                 },
                 { "ROUTE":

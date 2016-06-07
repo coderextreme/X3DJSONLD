@@ -1,0 +1,296 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "Scene": {
+        "-children":[
+          { "NavigationInfo":
+            {
+            }
+          },
+          { "Background":
+            {
+              "@backUrl":["cubemap/all_probes/uffizi_cross/uffizi_back.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_back.png"],
+              "@bottomUrl":["cubemap/all_probes/uffizi_cross/uffizi_bottom.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_bottom.png"],
+              "@frontUrl":["cubemap/all_probes/uffizi_cross/uffizi_front.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_front.png"],
+              "@leftUrl":["cubemap/all_probes/uffizi_cross/uffizi_left.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_left.png"],
+              "@rightUrl":["cubemap/all_probes/uffizi_cross/uffizi_right.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_right.png"],
+              "@topUrl":["cubemap/all_probes/uffizi_cross/uffizi_top.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_top.png"]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@position":[0,0,40],
+              "@description":"Transparent rose"
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"Rose01",
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@DEF":"_01_-_Default",
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.7,0.7,0.7],
+                                "@specularColor":[0.5,0.5,0.5]
+                              }
+                            },
+                          "-texture":
+                            { "ComposedCubeMapTexture":
+                              {
+                                "-back":
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["cubemap/all_probes/uffizi_cross/uffizi_back.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_back.png"]
+                                    }
+                                  },
+                                "-bottom":
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["cubemap/all_probes/uffizi_cross/uffizi_bottom.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_bottom.png"]
+                                    }
+                                  },
+                                "-front":
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["cubemap/all_probes/uffizi_cross/uffizi_front.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_front.png"]
+                                    }
+                                  },
+                                "-left":
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["cubemap/all_probes/uffizi_cross/uffizi_left.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_left.png"]
+                                    }
+                                  },
+                                "-right":
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["cubemap/all_probes/uffizi_cross/uffizi_right.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_right.png"]
+                                    }
+                                  },
+                                "-top":
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["cubemap/all_probes/uffizi_cross/uffizi_top.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_top.png"]
+                                    }
+                                  }
+                              }
+                            },
+                          "-shaders":[
+                            { "ComposedShader":
+                              {
+                                "@DEF":"ComposedShader",
+                                "@language":"GLSL",
+                                "field": [
+                                  {
+                                    "@name":"cubeMap",
+                                    "@type":"SFInt32",
+                                    "@accessType":"inputOutput",
+                                    "@value":0
+                                  },
+                                  {
+                                    "@name":"chromaticDispersion",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFVec3f",
+                                    "@value":[0.98,1.0,1.033]
+                                  },
+                                  {
+                                    "@name":"bias",
+                                    "@type":"SFFloat",
+                                    "@accessType":"inputOutput",
+                                    "@value":0.5
+                                  },
+                                  {
+                                    "@name":"scale",
+                                    "@type":"SFFloat",
+                                    "@accessType":"inputOutput",
+                                    "@value":0.5
+                                  },
+                                  {
+                                    "@name":"power",
+                                    "@type":"SFFloat",
+                                    "@accessType":"inputOutput",
+                                    "@value":2
+                                  }
+                                ],
+                                "-parts":[
+                                  { "ShaderPart":
+                                    {
+                                      "@url":["x3dom.vs"],
+                                      "@type":"VERTEX"
+                                    }
+                                  },
+                                  { "ShaderPart":
+                                    {
+                                      "@url":["bubbles.fs"],
+                                      "@type":"FRAGMENT"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                    "-children":[
+                      { "#comment":"Sphere/"
+                      }
+                    ],
+                    "-geometry":
+                      { "IndexedFaceSet":
+                        {
+                          "@DEF":"Orbit",
+                          "-coord":
+                            { "Coordinate":
+                              {
+                                "@DEF":"OrbitCoordinates"
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Script":
+            {
+              "@DEF":"OrbitScript",
+              "field": [
+                {
+                  "@name":"set_fraction",
+                  "@accessType":"inputOnly",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"coordinates",
+                  "@accessType":"inputOutput",
+                  "@type":"MFVec3f"
+                },
+                {
+                  "@name":"coordIndexes",
+                  "@accessType":"inputOutput",
+                  "@type":"MFInt32"
+                }
+              ],
+              "#sourceText":[
+"ecmascript:",
+"",
+"var e = 5;",
+"var f = 5;",
+"var g = 5;",
+"var h = 5;",
+"",
+"function initialize() {",
+"     resolution = 100;",
+"     updateCoordinates(resolution);",
+"     if (typeof coordIndexes == 'undefined' || coordIndexes == null) {",
+"     \tcoordIndexes = new MFInt32();",
+"     }",
+"     ci = 0;",
+"     for ( i = 0; i < resolution-1; i++) {",
+"     \tfor ( j = 0; j < resolution-1; j++) {",
+"\t     coordIndexes[ci] = i*resolution+j;",
+"\t     coordIndexes[ci+1] = i*resolution+j+1;",
+"\t     coordIndexes[ci+2] = (i+1)*resolution+j+1;",
+"\t     coordIndexes[ci+3] = (i+1)*resolution+j;",
+"\t     coordIndexes[ci+4] = -1;",
+"\t     ci += 5;",
+"\t}",
+"    }",
+"}",
+"",
+"function updateCoordinates(resolution) {",
+"     theta = 0.0;",
+"     phi = 0.0;",
+"     delta = (2 * 3.141592653) / (resolution-1);",
+"     if (typeof coordinates == 'undefined' || coordinates == null) {",
+"     \tcoordinates = new MFVec3f();",
+"     }",
+"     for ( i = 0; i < resolution; i++) {",
+"     \tfor ( j = 0; j < resolution; j++) {",
+"\t\trho = e + f * Math.cos(g * theta) * Math.cos(h * phi);",
+"\t\tcoordinates[i*resolution+j] = new SFVec3f();",
+"\t\tcoordinates[i*resolution+j][0] = rho * Math.cos(phi) * Math.cos(theta);",
+"\t\tcoordinates[i*resolution+j][1] = rho * Math.cos(phi) * Math.sin(theta);",
+"\t\tcoordinates[i*resolution+j][2] = rho * Math.sin(phi);",
+"\t\ttheta += delta;",
+"\t}",
+"\tphi += delta;",
+"     }",
+"}",
+"",
+"function set_fraction(fraction, eventTime) {",
+"\tchoice = Math.floor(Math.random() * 4);",
+"\tswitch (choice) {",
+"\tcase 0:",
+"\t\te += Math.floor(Math.random() * 2) * 2 - 1;",
+"\t\tbreak;",
+"\tcase 1:",
+"\t\tf += Math.floor(Math.random() * 2) * 2 - 1;",
+"\t\tbreak;",
+"\tcase 2:",
+"\t\tg += Math.floor(Math.random() * 2) * 2 - 1;",
+"\t\tbreak;",
+"\tcase 3:",
+"\t\th += Math.floor(Math.random() * 2) * 2 - 1;",
+"\t\tbreak;",
+"\t}",
+"\tif (f < 1) {",
+"\t\tf = 10;",
+"\t}",
+"\tif (g < 1) {",
+"\t\tg = 4;",
+"\t}",
+"\tif (h < 1) {",
+"\t\th = 4;",
+"\t}",
+"\tresolution = 100;",
+"\tupdateCoordinates(resolution);",
+"}"
+]
+            }
+          },
+          { "TimeSensor":
+            {
+              "@DEF":"Clock",
+              "@cycleInterval":16,
+              "@loop":true
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"coordIndexes",
+              "@fromNode":"OrbitScript",
+              "@toField":"set_coordIndex",
+              "@toNode":"Orbit"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"coordinates",
+              "@fromNode":"OrbitScript",
+              "@toField":"set_point",
+              "@toNode":"OrbitCoordinates"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"fraction_changed",
+              "@fromNode":"Clock",
+              "@toField":"set_fraction",
+              "@toNode":"OrbitScript"
+            }
+          }
+        ]
+    }
+  }
+}

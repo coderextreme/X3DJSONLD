@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance'>
+    <head>
+        <meta name='creator' content='John W Carlson'/>
+        <meta name='created' content='December 13 2015'/>
+        <meta name='title' content='text.x3d'/>
+        <meta name='identifier' content='http://coderextreme.net/X3DJSONLD/text.x3d'/>
+        <meta name='description' content='test text'/>
+        <meta name='generator' content='Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit'/>
+    </head>
+    <Scene>
+                    <Transform>            
+                        <Shape>
+                            <Text string='"Node\"\"\""'>
+                                <FontStyle family='"SERIF"' justify='"MIDDLE" "MIDDLE"' size="5"/>
+                            </Text>
+                            <Appearance>
+                                <Material diffuseColor='0 0 1'/>
+                            </Appearance>
+                        </Shape> 
+                    </Transform>               
+    </Scene>
+</X3D>

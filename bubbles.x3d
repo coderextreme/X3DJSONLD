@@ -1,32 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
-<X3D profile='Immersive' version='3.3' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd' id='x3dele' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance'>
+<X3D profile='Immersive' version='3.3' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance'>
     <Scene>
         <NavigationInfo type='"ANY" "WALK" "EXAMINE" "FLY" "LOOKAT"'></NavigationInfo>
         <Viewpoint DEF='Tour' description='Tour Views'/>
         <Viewpoint position='0 0 4' description='sphere in road'></Viewpoint>
-        <Background backUrl='"cubemap/BK.png" "http://coderextreme.net/X3DJSONLD/cubemap/BK.png"' bottomUrl='"cubemap/BT.png" "http://coderextreme.net/X3DJSONLD/cubemap/BT.png"' frontUrl='"cubemap/FR.png" "http://coderextreme.net/X3DJSONLD/cubemap/FR.png"' leftUrl='"cubemap/LF.png" "http://coderextreme.net/X3DJSONLD/cubemap/LF.png"' rightUrl='"cubemap/RT.png" "http://coderextreme.net/X3DJSONLD/cubemap/RT.png"' topUrl='"cubemap/TP.png" "http://coderextreme.net/X3DJSONLD/cubemap/TP.png"'></Background>
+        <Background backUrl='"cubemap/all_probes/uffizi_cross/uffizi_back.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_back.png"' bottomUrl='"cubemap/all_probes/uffizi_cross/uffizi_bottom.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_bottom.png"' frontUrl='"cubemap/all_probes/uffizi_cross/uffizi_front.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_front.png"' leftUrl='"cubemap/all_probes/uffizi_cross/uffizi_left.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_left.png"' rightUrl='"cubemap/all_probes/uffizi_cross/uffizi_right.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_right.png"' topUrl='"cubemap/all_probes/uffizi_cross/uffizi_top.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_top.png"'></Background>
         <Transform DEF='Rose01'>
             <Shape>
                 <Sphere/>
                 <Appearance DEF='_01_-_Default'>
                     <Material diffuseColor='0.7 0.7 0.7' specularColor='0.5 0.5 0.5'></Material>
 		    <ComposedCubeMapTexture containerField='texture'>
-		    <ImageTexture url='"cubemap/BK.png" "http://coderextreme.net/X3DJSONLD/cubemap/BK.png"' containerField='back'/>
-		    <ImageTexture url='"cubemap/BT.png" "http://coderextreme.net/X3DJSONLD/cubemap/BT.png"' containerField='bottom'/>
-		    <ImageTexture url='"cubemap/FR.png" "http://coderextreme.net/X3DJSONLD/cubemap/FR.png"' containerField='front'/>
-		    <ImageTexture url='"cubemap/LF.png" "http://coderextreme.net/X3DJSONLD/cubemap/LF.png"' containerField='left'/>
-		    <ImageTexture url='"cubemap/RT.png" "http://coderextreme.net/X3DJSONLD/cubemap/RT.png"' containerField='right'/>
-		    <ImageTexture url='"cubemap/TP.png" "http://coderextreme.net/X3DJSONLD/cubemap/TP.png"' containerField='top'/>
+		    <ImageTexture url='"cubemap/all_probes/uffizi_cross/uffizi_back.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_back.png"' containerField='back'/>
+		    <ImageTexture url='"cubemap/all_probes/uffizi_cross/uffizi_bottom.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_bottom.png"' containerField='bottom'/>
+		    <ImageTexture url='"cubemap/all_probes/uffizi_cross/uffizi_front.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_front.png"' containerField='front'/>
+		    <ImageTexture url='"cubemap/all_probes/uffizi_cross/uffizi_left.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_left.png"' containerField='left'/>
+		    <ImageTexture url='"cubemap/all_probes/uffizi_cross/uffizi_right.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_right.png"' containerField='right'/>
+		    <ImageTexture url='"cubemap/all_probes/uffizi_cross/uffizi_top.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_top.png"' containerField='top'/>
 		    </ComposedCubeMapTexture>
 		    <ComposedShader DEF='ComposedShader' containerField='shaders' language='GLSL'>
-		    <field name='cube' accessType='inputOutput' type='SFInt32' value='0'/>
-		    <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'/>
-		    <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/>
-		    <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/>
-		    <field name='power' accessType='inputOutput' type='SFFloat' value='2'/>
-		    <ShaderPart url='"bubbles.vs" "http://coderextreme.net/X3DJSONLD/bubbles.vs"' containerField='parts'/>
-		    <ShaderPart url='"bubbles.fs" "http://coderextreme.net/X3DJSONLD/bubbles.fs"' containerField='parts' type='FRAGMENT'/>
+		    <field name='cubeMap' accessType='inputOutput' type='SFInt32' value='0'/>
+                    <field name='chromaticDispersion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'/>
+                    <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/>
+                    <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/>
+                    <field name='power' accessType='inputOutput' type='SFFloat' value='2'/>
+		    <ShaderPart url='"x3dom.vs"' containerField='parts' type='VERTEX'>
+		    </ShaderPart>
+		    <ShaderPart url='"bubbles.fs"' containerField='parts' type='FRAGMENT'>
+		    </ShaderPart>
 		    </ComposedShader>
                 </Appearance>
             </Shape>
@@ -35,13 +37,13 @@
         <PositionInterpolator DEF='TourPosition' key='0 1' keyValue='0 0 10 0 0 -10'></PositionInterpolator>
         <OrientationInterpolator DEF='TourOrientation' key='0 1' keyValue='0 1 0 0 0 1 0 3.1416'></OrientationInterpolator>
         <Script DEF='RandomTourTime'>
-            <field name='set_fraction' accessType='inputOnly' type='SFTime'/>
+            <field name='set_cycle' accessType='inputOnly' type='SFTime'/>
             <field name='lastKey' accessType='inputOutput' type='SFFloat' value='0'/>
             <field name='orientations' accessType='inputOutput' type='MFRotation' value='0 1 0 0 0 1 0 -1.57 0 1 0 3.14 0 1 0 1.57 0 1 0 0 1 0 0 -1.57 0 1 0 0 1 0 0 1.57 0 1 0 0'></field>
             <field name='positions' accessType='inputOutput' type='MFVec3f' value='0 0 10 -10 0 0 0 0 -10 10 0 0 0 0 10 0 10 0 0 0 10 0 -10 0 0 0 10'></field>
             <field name='position' accessType='outputOnly' type='MFVec3f'/>
             <field name='orientation' accessType='outputOnly' type='MFRotation'/><![CDATA[ecmascript:
-               function set_fraction(value) {
+               function set_cycle(value) {
                         //var positions = [[0, 0, 10], [-10, 0, 0], [0, 0, -10], [10, 0, 0], [0, 0, 10], [0, 10, 0], [0, 0, 10], [0, -10, 0], [0, 0, 10]];
                         //var orientations = [[0, 1, 0, 0], [0, 1, 0, -1.57], [0, 1, 0, 3.14], [0, 1, 0, 1.57], [0, 1, 0, 0] [1, 0, 0, -1.57], [0, 1, 0, 0], [1, 0, 0, 1.57], [0, 1, 0, 0]];
                         //Browser.println(lastKey);
@@ -49,7 +51,7 @@
                         // Browser.println(ov);      
                         //Browser.println(positions.length);                  
                         do {
-                            lastKey = Math.round(Math.random()*positions.length);
+                            lastKey = Math.round(Math.random()*(positions.length-1));
                         } while (lastKey === ov);
                         // Browser.println(lastKey);
                         var vc = lastKey;
@@ -66,9 +68,9 @@
                         position[1] = new SFVec3f(positions[vc][0],positions[vc][1],positions[vc][2]);
                     // }
                }]]></Script>
-        <ROUTE fromNode='TourTime' fromField='cycleTime' toNode='RandomTourTime' toField='set_fraction'/>
-        <ROUTE fromNode='RandomTourTime' fromField='orientation_changed' toNode='TourOrientation' toField='keyValue'/>
-        <ROUTE fromNode='RandomTourTime' fromField='position_changed' toNode='TourPosition' toField='keyValue'/>
+        <ROUTE fromNode='TourTime' fromField='cycleTime' toNode='RandomTourTime' toField='set_cycle'/>
+        <ROUTE fromNode='RandomTourTime' fromField='orientation' toNode='TourOrientation' toField='keyValue'/>
+        <ROUTE fromNode='RandomTourTime' fromField='position' toNode='TourPosition' toField='keyValue'/>
         <ROUTE fromNode='TourTime' fromField='fraction_changed' toNode='TourOrientation' toField='set_fraction'/>
         <ROUTE fromNode='TourOrientation' fromField='value_changed' toNode='Tour' toField='set_orientation'/>
         <ROUTE fromNode='TourTime' fromField='fraction_changed' toNode='TourPosition' toField='set_fraction'/>
