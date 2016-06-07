@@ -6,7 +6,7 @@
 
 var fs = require('fs');
 var xmldom = require('xmldom');
-var X3DJSONLD = require('./X3DJSONLD');
+var X3DJSONLD = require('./X3DJSONLD.js');
 
 function fixXML(xmlstr) {
 	// get rid of self-closing tags

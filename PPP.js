@@ -4,7 +4,7 @@
 var xmldom = require('xmldom');
 var fs = require("fs");
 
-var X3DJSONLD = require('./X3DJSONLD');
+var X3DJSONLD = require('./X3DJSONLD.js');
 var loadURLs = X3DJSONLD.loadURLs;
 var PE = require('./PrototypeExpander')
 PE.setLoadURLs(loadURLs);
