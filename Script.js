@@ -112,21 +112,25 @@ function processRoute(route, routecode, package) {
 	var toNode = route["@toNode"];
 	var toField = route["@toField"];
 	if (typeof package.find(toNode) === 'undefined') {
-		routecode.log('	if (!$(".'+toNode+'")) console.error("undefined '+toNode+'");');
+		routecode.log('	if (!$("[DEF='+toNode+'], [USE='+toNode+']")) console.error("undefined '+toNode+'");');
 		if (toField.indexOf("set_") === 0) {
-			var  to = '$(".'+toNode+'").attr("'+toField.substr(4)+'",';
+			var  to = '$("[DEF='+toNode+'], [USE='+toNode+']").attr("'+toField.substr(4)+'",';
 		} else {
-			var  to = '$(".'+toNode+'").attr("'+toField+'",';
+			var  to = '$("[DEF='+toNode+'], [USE='+toNode+']").attr("'+toField+'",';
 		}
 	} else {
-		var  to = 'X3DJSON.Object_' +toNode+'.'+toField+'(';
+		if (toField.indexOf("set_") == 0) {
+			var  to = 'X3DJSON.Object_' +toNode+'.'+toField+'(';
+		} else {
+			var  to = 'X3DJSON.Object_' +toNode+'.set_'+toField+'(';
+		}
 	}
 	if (typeof package.find(fromNode) === 'undefined') {
-		routecode.log('	if (!$(".'+fromNode+'")) console.error("undefined '+fromNode+'");');
+		routecode.log('	if (!$("[DEF='+fromNode+'], [USE='+fromNode+']")) console.error("undefined '+fromNode+'");');
 		if (fromField.indexOf("_changed") > 0) {
-			var  from = '$(".'+fromNode+'").attr("'+fromField.substr(0, fromField.length-8)+'")';
+			var  from = '$("[DEF='+fromNode+'], [USE='+fromNode+']").attr("'+fromField.substr(0, fromField.length-8)+'")';
 		} else {
-			var  from = '$(".'+fromNode+'").attr("'+fromField+'")';
+			var  from = '$("[DEF='+fromNode+'], [USE='+fromNode+']").attr("'+fromField+'")';
 		}
 	} else {
 		var field = 'X3DJSON.Object_'+fromNode+'.'+fromField;
@@ -169,7 +173,6 @@ function valueExpand(type, flat) {
 		}
 	}
 	if (type.indexOf("MF") === 0) {
-		console.error("/*", type, "*/");
 		// collapse into nested arrays for scripting
 		var num = 0; // this will cause an error below if not set
 		if (type.indexOf("MFRotation") === 0) {
@@ -189,6 +192,7 @@ function valueExpand(type, flat) {
 		} else if (type.indexOf("MFMatrix4") === 0) {
 			num = 16;
 		} else {
+			console.error("/*", type, "*/");
 			if (flat === 'NULL') {
 				return JSON.stringify(null);
 			} else {
@@ -333,7 +337,7 @@ function processSource(lines, classes, package) {
 			body = body.replace(/\svar\s+this\./g,  " var ");
 
 			// replace constructors with arrays
-			body = body.replace(/new (MF[A-Za-z0-9]+|SFMatrix[A-Za-z0-9]+|SFVec[234][df]|SFRotation|SFColor)[ 	]*\(([^;]*)\)[ 	]*;/g, 'Browser.stringToArray\([$2]\);');
+			body = body.replace(/new (MF[A-Za-z0-9]+|SFMatrix[A-Za-z0-9]+|SFVec[234][df]|SFRotation|SFColor)[ 	]*\(([^;]*)\)[ 	]*;/g, "Browser.stringToArray\('$1',[$2]\);");
 
 			//body = body.replace(/&amp;/g, '&');
 			//body = body.replace(/&lt;/g, '<');

@@ -1,23 +1,19 @@
-#!/bin/sh -x
-node PPP.js examples/X3dForWebAuthors/KelpForestExhibit/KelpForestMain.json
-read me
-node PPP.js for.json > fors.json
-read me
-node PPP.js rubikOnFire.json > rubikOnFires.json
-read me
-node PPP.js bubbles.json > bubbless.json 
-read me
-node PPP.js ArchPrototype.json > ArchPrototypes.json 
-read me
-node PPP.js ObliqueStrategies.json > ObliqueStrategiess.json 
-read me
-node PPP.js rubik.json > rubiks.json
-read me
-node PPP.js pp3.json > pp3s.json
-read me
-node PPP.js qq3.json > qq3s.json
-read me
-node PPP.js cobweb.json > cobwebs.json 
-read me
-node PPP.js force.json > forces.json
-read me
+#!/bin/sh
+
+mkdir -p ppp
+for i in box.json ArchPrototype.json NancyPrototypes.json for.json rubikOnFire.json bubbles.json rubik.json pp3.json qq3.json cobweb.json force.json
+do
+	echo "=========================$i====================="
+	node PPP.js $i > ppp/`basename $i`
+done
+SCRIPTS=`find examples/X3dForWebAuthors/Chapter14-Prototypes examples/Vrml2.0Sourcebook/Chapter31-Prototypes examples/Basic/UniversalMediaMaterials -type f -name '*json' | xargs grep -lw Script`
+SCRIPTS=`echo $SCRIPTS | sed 's/ /|/g'`
+echo $SCRIPTS
+# for i in examples/Vrml2.0Sourcebook/Chapter31-Prototypes/Figure31.9SpinGroupPrototype.json
+for i in `find examples/X3dForWebAuthors/Chapter14-Prototypes examples/Vrml2.0Sourcebook/Chapter31-Prototypes examples/Basic/UniversalMediaMaterials -type f -name '*json' | xargs grep -lw ProtoInstance | egrep -v $SCRIPTS`
+do
+	echo "=========================$i====================="
+	mkdir -p ppp/`dirname $i`
+	# node PPP.js $i
+	node PPP.js $i > ppp/`dirname $i`/`basename $i`
+done

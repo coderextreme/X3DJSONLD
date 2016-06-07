@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "http://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-4.0.xsd' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance'>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance'>
     <head>
         <meta name='creator' content='John W Carlson'/>
         <meta name='created' content='December 13 2015'/>
@@ -41,20 +41,20 @@
                 <Script DEF='MoveBall'>
                     <field name='translation' accessType='inputOutput' type='SFVec3f' value='50 50 0'/>
                     <field name='old' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
-                    <field name='set_location' accessType='inputOnly' type='SFTime'/>
+                    <field name='set_cycle' accessType='inputOnly' type='SFTime'/>
                     <field name='keyValue' accessType='outputOnly' type='MFVec3f'/>
 <![CDATA[
 ecmascript:
-					function set_location(value) {
+					function set_cycle(value) {
                                                 old = translation;
 						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
                                                 keyValue = new MFVec3f(old, translation);
-						Browser.println(translation);
+						// Browser.println(translation);
 					}
 ]]>
                 </Script>
                 <TimeSensor DEF='nodeClock' cycleInterval='3' loop='true'></TimeSensor>
-                <ROUTE fromNode='nodeClock' fromField='cycleTime' toNode='MoveBall' toField='set_location'/>
+                <ROUTE fromNode='nodeClock' fromField='cycleTime' toNode='MoveBall' toField='set_cycle'/>
                 <ROUTE fromNode='nodeClock' fromField='fraction_changed' toNode='NodePosition' toField='set_fraction'/>
                 <ROUTE fromNode='MoveBall' fromField='keyValue' toNode='NodePosition' toField='keyValue'/>
                 <ROUTE fromNode='NodePosition' fromField='value_changed' toNode='transform' toField='set_translation'/>
@@ -140,16 +140,27 @@ ecmascript:
             <field accessType="inputOutput" name="counter" value="0" type="SFInt32"/>
             <field accessType="outputOnly" name="node_changed" type="SFNode"/>
             <field accessType="inputOnly" name="add_node" value="0" type="SFBool"/>
-            <field name="ModifiableNode" type="SFNode" accessType="initializeOnly">
+            <field id="MN" name="ModifiableNode" type="SFNode" accessType="initializeOnly">
                 <Transform USE="HoldsContent"/>
             </field>
 	<![CDATA[
 ecmascript:
 	function add_node(value) {
-                Browser.print('hey ', counter);
+                // Browser.print('hey ', counter);
                 counter = counter++;
-		node_changed = Browser.createX3DFromString('{ "ProtoInstance": { "@name":"node", "@DEF":"node'+counter+'", "fieldValue": [ { "@name":"position", "@value":[0.0,0.0,0.0]}]}}');
-                ModifiableNode.children[ModifiableNode.children.length] = node_changed[0];
+		Browser.appendTo(Browser.getDocument().getElementById("MN"),
+			{ "ProtoInstance":
+				{ "@name":"node",
+				  "@DEF":"node'+counter+'",
+				  "fieldValue": [
+					{
+						 "@name":"position",
+						 "@value":[0.0,0.0,0.0]
+					}
+				  ]
+				}
+			});
+                
         }
 	]]>
         </Script>

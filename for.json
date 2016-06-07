@@ -1,7 +1,9 @@
 { "X3D": {
+    "encoding":"UTF-8",
     "@profile":"Immersive",
-    "@version":"4.0",
-    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-4.0.xsd",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
           {
@@ -30,7 +32,7 @@
           },
           {
             "@name":"translated",
-            "@content":"24 February 2016"
+            "@content":"17 April 2016"
           },
           {
             "@name":"generator",
@@ -73,6 +75,14 @@
                         "-children":[
                           { "Shape":
                             {
+                              "-children":[
+                                { "#comment":"comment before Sphere"
+                                },
+                                { "#comment":"comment after Sphere"
+                                },
+                                { "#comment":"comment after Appearance"
+                                }
+                              ],
                               "-geometry":
                                 { "Sphere":
                                   {
@@ -81,6 +91,12 @@
                               "-appearance":
                                 { "Appearance":
                                   {
+                                    "-children":[
+                                      { "#comment":"comment before Material"
+                                      },
+                                      { "#comment":"comment after Material"
+                                      }
+                                    ],
                                     "-material":
                                       { "Material":
                                         {
@@ -118,7 +134,7 @@
                             "@value":[0,0,0]
                           },
                           {
-                            "@name":"set_location",
+                            "@name":"set_cycle",
                             "@accessType":"inputOnly",
                             "@type":"SFTime"
                           },
@@ -130,11 +146,11 @@
                         ],
                         "#sourceText":[
 "ecmascript:",
-"\t\t\t\t\tfunction set_location(value) {",
+"\t\t\t\t\tfunction set_cycle(value) {",
 "                                                old = translation;",
 "\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
 "                                                keyValue = new MFVec3f(old, translation);",
-"\t\t\t\t\t\tBrowser.println(translation);",
+"\t\t\t\t\t\t// Browser.println(translation);",
 "\t\t\t\t\t}"
 ]
                       }
@@ -151,7 +167,7 @@
                         "@fromNode":"nodeClock",
                         "@fromField":"cycleTime",
                         "@toNode":"MoveBall",
-                        "@toField":"set_location"
+                        "@toField":"set_cycle"
                       }
                     },
                     { "ROUTE":
@@ -209,7 +225,7 @@
                               "@DEF":"extrusion",
                               "@creaseAngle":0.785,
                               "@crossSection":[1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00],
-                              "@spine":[0,-50,0,0,50,0]
+                              "@spine":[0,-50,0,0,0,0,0,50,0]
                             }
                           },
                         "-appearance":
@@ -233,7 +249,7 @@
                             "@name":"spine",
                             "@accessType":"inputOutput",
                             "@type":"MFVec3f",
-                            "@value":[0,-50,0,0,50,0]
+                            "@value":[0,-50,0,0,0,0,0,50,0]
                           },
                           {
                             "@name":"set_endA",
@@ -262,7 +278,7 @@
 "ecmascript:",
 "",
 "                function set_endA(value) {",
-"\t\t    if (typeof spine === 'undefined') {",
+"\t\t    if (typeof spine === \"undefined\") {",
 "\t\t        spine = new MFVec3f(value, value);",
 "\t\t    } else {",
 "\t\t        spine = new MFVec3f(value, spine[1]);",
@@ -270,7 +286,7 @@
 "                }",
 "                ",
 "                function set_endB(value) {",
-"\t\t    if (typeof spine === 'undefined') {",
+"\t\t    if (typeof spine === \"undefined\") {",
 "\t\t        spine = new MFVec3f(value, value);",
 "\t\t    } else {",
 "\t\t        spine = new MFVec3f(spine[0], value);",

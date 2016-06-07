@@ -1,8 +1,9 @@
 { "X3D": {
+    "encoding":"UTF-8",
     "@profile":"Immersive",
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "@id":"x3dele",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
           {
@@ -39,7 +40,7 @@
           },
           {
             "@name":"translated",
-            "@content":"24 February 2016"
+            "@content":"17 April 2016"
           },
           {
             "@name":"generator",
@@ -158,7 +159,6 @@
                                 },
                                 { "StringSensor":
                                   {
-                                    "@description":"touch to activate",
                                     "@DEF":"RightSensor",
                                     "@enabled":false
                                   }
@@ -233,7 +233,6 @@
                                 },
                                 { "StringSensor":
                                   {
-                                    "@description":"touch to activate",
                                     "@DEF":"UpSensor",
                                     "@enabled":false
                                   }
@@ -277,7 +276,7 @@
                                       }
                                   }
                                 },
-                                { "#comment":"<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor description='touch to activate' DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>"
+                                { "#comment":"<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>"
                                 }
                               ]
                             }
@@ -338,7 +337,6 @@
                                 },
                                 { "StringSensor":
                                   {
-                                    "@description":"touch to activate",
                                     "@DEF":"CenterSensor",
                                     "@enabled":false
                                   }

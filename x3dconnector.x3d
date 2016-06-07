@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd">
+<Scene>
+	<Viewpoint position='0 0 5' description="Only Viewpoint" orientation='0 0 1 0' />
+	<Background skyColor='0.4 0.4 0.4'/>
+	<Transform DEF='G1'>
+		<Shape>
+			<Appearance><Material diffuseColor='0.7 0.2 0.2'></Material></Appearance>
+			<Sphere radius='.1'/>
+		</Shape>
+		<PlaneSensor description="Grab to move" DEF='PS1'/>
+		<ROUTE fromNode='PS1' fromField='translation_changed' toNode='G1' toField='translation' />
+	</Transform>              
+        
+	<Transform DEF='G2' translation='1 -1 .01'>
+		<Shape>
+			<Appearance><Material diffuseColor='0.2 0.7 0.2'></Material></Appearance>
+			<Sphere radius='.1'/>
+		</Shape>
+		<PlaneSensor description="Grab to move" DEF='PS2'/>
+		<ROUTE fromNode='PS2' fromField='translation_changed' toNode='G2' toField='translation' />
+	</Transform>
+	<Transform DEF='C0' >
+	<Transform DEF='C1' >
+	<Transform DEF='C2' >
+		<Shape>
+			<Appearance><Material diffuseColor='0.2 0.7 0.7' transparency='.5'/></Appearance>
+			<Cylinder radius='.05'/>
+		</Shape>
+	</Transform>
+    </Transform>
+    </Transform>
+    <Script DEF='S1'>
+        <field accessType='initializeOnly' name='startnode' type='SFNode'>
+            <Transform USE='G1'/>
+        </field>
+        <field accessType='initializeOnly' name='endnode' type='SFNode'>
+            <Transform USE='G2'/>
+        </field>
+        <field accessType='inputOnly' name='set_startpoint' type='SFVec3f' />
+        <field accessType='inputOnly' name='set_endpoint' type='SFVec3f' />
+        <field accessType='outputOnly' name='translation' type='SFVec3f' />
+        <field accessType='outputOnly' name='rotation' type='SFRotation' />
+        <field accessType='outputOnly' name='scale' type='SFVec3f' />
+        <![CDATA[ecmascript:
+        function recompute(startpoint,endpoint){
+            var dif = endpoint.subtract(startpoint);
+            var dist = dif.length()*.5;
+            var dif2 = dif.multiply(.5);
+            var norm = dif.normalize();
+            var trans = startpoint.add(dif2);
+            scale = new SFVec3f(1.0,dist,1.0);
+            translation = trans;
+            rotation = new SFRotation(new SFVec3f(0.0,1.0,0.0),norm);
+            //Browser.print('norm='+norm.toString());
+            //Browser.print('rotation='+rotation.toString());
+        }
+        function initialize(){
+            recompute(startnode.translation,endnode.translation);
+        }
+        function set_startpoint(val,t){
+            recompute(val,endnode.translation);
+        }
+        function set_endpoint(val,t){
+            recompute(startnode.translation,val);
+        }
+        ]]>
+    </Script>
+    <ROUTE fromNode='G1' fromField='translation' toNode='S1' toField='set_startpoint'/>
+    <ROUTE fromNode='G2' fromField='translation' toNode='S1' toField='set_endpoint'/>
+    <ROUTE fromNode='S1' fromField='translation' toNode='C0' toField='translation'/>
+    <ROUTE fromNode='S1' fromField='rotation' toNode='C2' toField='rotation'/>
+    <ROUTE fromNode='S1' fromField='scale' toNode='C2' toField='scale'/>
+
+</Scene>
+</X3D>
