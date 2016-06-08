@@ -8,8 +8,11 @@ var scopecount = 0;
 var defdefined = {};
 var privatescope = [];
 var defs = {};
+var fs;
 
-var fs = require('fs');
+if (typeof require === 'function') {
+	fs = require('fs');
+}
 
 function lowout(string) {
 	if (typeof process !== 'undefined') {
