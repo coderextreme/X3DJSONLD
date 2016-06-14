@@ -122,10 +122,14 @@ function setVersion(version) {
 	    loadScripts(json);
         }
 
-	function loadSubscene(selector, url) {
+	function appendInline(element, url) {
                 $.getJSON(url, function(json) {
-                        ConvertToX3DOM(json, "", document.querySelector(selector), url);
+                        ConvertToX3DOM(json["X3D"]["Scene"], "Scene", element, url);
                 }).fail(function(jqXHR, textStatus, errorThrown) { alert('getJSON request failed! ' + textStatus + ' ' + errorThrown); });
+	}
+
+	function loadInline(selector, url) {
+		appendInline(document.querySelector(selector), url);
         }
 
         /*
