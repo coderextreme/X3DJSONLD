@@ -1,1 +1,1 @@
-module.exports.examples = "/Users/johncarlson/Downloads/www.web3d.org/x3d/content/examples/";
+module.exports.examples = "C:/www.web3d.org/x3d/content/examples/";
