@@ -5,6 +5,7 @@
   "dependencies": {
     "express": "*",
     "xml2js": "*",
+    "java": "*",
     "xmldom": "*"
   },
   "scripts": {
