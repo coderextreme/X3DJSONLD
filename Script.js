@@ -56,6 +56,14 @@ function zapSource(object) {
 
 function processScripts(object, classes, package, routecode) {
 	if (typeof package === 'undefined') {
+		/*
+		classes.log("function SFRotation(a, b, c, d) { return [a, b, c, d]};");
+		classes.log("function MFRotation(a, b, c, d) { return []};");
+		classes.log("function SFVec3f(a, b, c) { return [a, b, c]};");
+		classes.log("function MFVec3f() { return []};");
+		classes.log("function MFVec2f() { return []};");
+		classes.log("function MFString() { return []};");
+		*/
 		classes.log('var X3DJSON = {};');
 		routecode.log("if (typeof $ === 'undefined') {");
 		routecode.log("	   $ = function(selector) { return {");
@@ -334,6 +342,7 @@ function processSource(lines, classes, package) {
 			}
 
 			// now take this this. of var decls in body
+			body = body.replace(/\.this\./g,  "");
 			body = body.replace(/\svar\s+this\./g,  " var ");
 
 			// replace constructors with arrays
