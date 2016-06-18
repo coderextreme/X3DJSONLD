@@ -72,7 +72,7 @@ process.stdin.on('end', function() {
 		.replace(/&gt;/g, '>')
 	console.error(code);
 	route = routecode.join('\n');
-	console.error(route);
+	// console.error(route);
 	eval(code);
 	//setInterval(function() {
 		eval(route);

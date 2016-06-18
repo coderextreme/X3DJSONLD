@@ -18,12 +18,12 @@ function setVersion(version) {
 			// DISPLAY XML in X3DOM
 			$('#x3domxml').empty();
 			// Do this inner HTML so we can sneak script tag past JQuery (BAD BAD TODO)
-			$('#x3domxml').get()[0].innerHTML = xml.join("\n");
+			$('#x3domxml').get()[0].innerHTML = xml.join("\n").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
 	    	        $('textarea#xml').val(xml.join("\n"));
 		} else {
-			$('#x3domxml').get()[0].innerHTML = $('textarea#xml').val();
+			$('#x3domxml').get()[0].innerHTML = $('textarea#xml').val().replace(/&lt;/g, "<").replace(/&gt;/g, ">");
 		}
-		var content = $('textarea#xml').val();
+		var content = $('textarea#xml').val().replace(/&lt;/g, "<").replace(/&gt;/g, ">");
 		var cobwebWindow = document.getElementById("cobwebframe").contentWindow ;
 		var cobwebEle = cobwebWindow.document.getElementsByTagName("X3D")[0];
 		if (typeof cobwebWindow.X3D !== 'undefined') {
