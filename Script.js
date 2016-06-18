@@ -346,7 +346,7 @@ function processSource(lines, classes, package) {
 			body = body.replace(/\svar\s+this\./g,  " var ");
 
 			// replace constructors with arrays
-			body = body.replace(/new (MF[A-Za-z0-9]+|SFMatrix[A-Za-z0-9]+|SFVec[234][df]|SFRotation|SFColor)[ 	]*\(([^;]*)\)[ 	]*;/g, "Browser.stringToArray\('$1',[$2]\);");
+			body = body.replace(/new (MF[A-Za-z0-9]+|SFMatrix[A-Za-z0-9]+|SFVec[234][df]|SFRotation|SFColor)[ 	]*\(([^;()]*)\)[ 	]*;/g, "Browser.stringToArray\('$1',[$2]\);");
 
 			//body = body.replace(/&amp;/g, '&');
 			//body = body.replace(/&lt;/g, '<');
