@@ -441,53 +441,57 @@ function handleProtoInstance(file, object, p) {
 	} else {
 		// console.error("Copying ProtoBody", name);
 		var obj = protos[name]['ProtoBody']['-children'];
-		// if there's only one object as a child, grab it
-		if (Object.keys(obj).length === 1) {
-			obj = obj[0];
-		}
 		instance = JSON.parse(JSON.stringify(obj));
 	}
-	if (!Array.isArray(instance)) {
-		if (typeof use !== 'undefined') {
-			var q;
-			for (q in instance) {
-				// console.error("USE is ", use, "q is", q, "instance q is", instance[q]);
-				if (q === "Group" || q == "Transform") {
-					if (typeof instance[q] === 'object' && !Array.isArray(instance[q])) {
-						instance[q]["@USE"] = getScope(use);  // there will be at least DEF with this USE
-					} else {
-						console.error("USE is Failed");
-					}
-				}
-			}
-		}
-		if (typeof def !== 'undefined') {
-			instance["@DEF"] = getScope(def);
-		}
-	}
 
-	// We need def to make this instance unique
 	var newobject = realPrototypeExpander(file, instance);
 
-/*
-	if (!Array.isArray(newobject)) {
+	// newobject is an array
+	while (Array.isArray(newobject) &&Object.keys(newobject).length === 1) {
+		newobject = newobject[0];
+	}
+
+	var firstobj = newobject;
+	while (Array.isArray(firstobj)) {
+		// we only want to render the first node, no matter how deep it is
+		firstobj = firstobj[0];
+	}
+	if (!Array.isArray(firstobj)) {
 		if (typeof use !== 'undefined') {
 			var q;
-			for (q in newobject) {
+			for (q in firstobj) {
+				// console.error("USE is ", use, "q is", q, "firstobj q is", firstobj[q]);
 				if (q === "Group" || q == "Transform") {
-					if (typeof newobject[q] === 'object' && !Array.isArray(newobject[q])) {
-						newobject[q]["@USE"] = "FOOBAR"+getScope(use);  // there will be at least DEF with this USE
+					if (typeof firstobj[q] === 'object' && !Array.isArray(firstobj[q])) {
+						firstobj[q]["@USE"] = getScope(use);  // there will be at least DEF with this USE
 					} else {
 						console.error("USE is Failed");
 					}
 				}
 			}
 		}
-		if (typeof def !== 'undefined') {
-			newobject["@DEF"] = getScope(def);
+		if (Object.keys(firstobj).length === 1) {
+			for (var key in firstobj) {
+				var k = key;
+			}
+			// We need def to make this firstobj unique
+			var def2  = firstobj[k]["@DEF"];
+			if (typeof def2 !== 'undefined') {
+				def = def2;
+			}
+			if (typeof def !== 'undefined') {
+				firstobj[k]["@DEF"] = getScope(def);
+			}
+		} else {
+			var def2  = firstobj["@DEF"];
+			if (typeof def2 !== 'undefined') {
+				def = def2;
+			}
+			if (typeof def !== 'undefined') {
+				firstobj["@DEF"] = getScope(def);
+			}
 		}
 	}
-*/
 
 	var fieldValue = object[p]["fieldValue"];
 	for (var field in fieldValue) {

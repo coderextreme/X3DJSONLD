@@ -1234,8 +1234,7 @@
                                         }
                                       }
                                     ]
-                                  },
-                                  "@DEF": "DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_sacroiliac_FIELDchildren_DECLSegment_hanim_pelvis_DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_sacroiliac_FIELDchildren_DECLSegment_hanim_pelvis"
+                                  }
                                 },
                                 {
                                   "Transform": {
@@ -1666,8 +1665,7 @@
                                               }
                                             }
                                           ]
-                                        },
-                                        "@DEF": "DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_sacroiliac_FIELDchildren_DECLJoint_hanim_l_hip_FIELDchildren_DECLSegment_hanim_l_thigh_DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_sacroiliac_FIELDchildren_DECLJoint_hanim_l_hip_FIELDchildren_DECLSegment_hanim_l_thigh"
+                                        }
                                       },
                                       {
                                         "Transform": {
@@ -2263,8 +2261,7 @@
                                                     }
                                                   }
                                                 ]
-                                              },
-                                              "@DEF": "DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_sacroiliac_FIELDchildren_DECLJoint_hanim_l_hip_FIELDchildren_DECLJoint_hanim_l_knee_FIELDchildren_DECLSegment_hanim_l_calf_DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_sacroiliac_FIELDchildren_DECLJoint_hanim_l_hip_FIELDchildren_DECLJoint_hanim_l_knee_FIELDchildren_DECLSegment_hanim_l_calf"
+                                              }
                                             },
                                             {
                                               "Transform": {
@@ -2894,20 +2891,16 @@
                                                           }
                                                         }
                                                       ]
-                                                    },
-                                                    "@DEF": "DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_sacroiliac_FIELDchildren_DECLJoint_hanim_l_hip_FIELDchildren_DECLJoint_hanim_l_knee_FIELDchildren_DECLJoint_hanim_l_ankle_FIELDchildren_DECLSegment_hanim_l_hindfoot_DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_sacroiliac_FIELDchildren_DECLJoint_hanim_l_hip_FIELDchildren_DECLJoint_hanim_l_knee_FIELDchildren_DECLJoint_hanim_l_ankle_FIELDchildren_DECLSegment_hanim_l_hindfoot"
+                                                    }
                                                   }
                                                 ]
-                                              },
-                                              "@DEF": "DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_sacroiliac_FIELDchildren_DECLJoint_hanim_l_hip_FIELDchildren_DECLJoint_hanim_l_knee_FIELDchildren_DECLJoint_hanim_l_ankle_DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_sacroiliac_FIELDchildren_DECLJoint_hanim_l_hip_FIELDchildren_DECLJoint_hanim_l_knee_FIELDchildren_DECLJoint_hanim_l_ankle"
+                                              }
                                             }
                                           ]
-                                        },
-                                        "@DEF": "DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_sacroiliac_FIELDchildren_DECLJoint_hanim_l_hip_FIELDchildren_DECLJoint_hanim_l_knee_DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_sacroiliac_FIELDchildren_DECLJoint_hanim_l_hip_FIELDchildren_DECLJoint_hanim_l_knee"
+                                        }
                                       }
                                     ]
-                                  },
-                                  "@DEF": "DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_sacroiliac_FIELDchildren_DECLJoint_hanim_l_hip_DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_sacroiliac_FIELDchildren_DECLJoint_hanim_l_hip"
+                                  }
                                 },
                                 {
                                   "Transform": {
@@ -3327,8 +3320,7 @@
                                               }
                                             }
                                           ]
-                                        },
-                                        "@DEF": "DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_sacroiliac_FIELDchildren_DECLJoint_hanim_r_hip_FIELDchildren_DECLSegment_hanim_r_thigh_DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_sacroiliac_FIELDchildren_DECLJoint_hanim_r_hip_FIELDchildren_DECLSegment_hanim_r_thigh"
+                                        }
                                       },
                                       {
                                         "Transform": {
@@ -3924,8 +3916,7 @@
                                                     }
                                                   }
                                                 ]
-                                              },
-                                              "@DEF": "DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_sacroiliac_FIELDchildren_DECLJoint_hanim_r_hip_FIELDchildren_DECLJoint_hanim_r_knee_FIELDchildren_DECLSegment_hanim_r_calf_DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_sacroiliac_FIELDchildren_DECLJoint_hanim_r_hip_FIELDchildren_DECLJoint_hanim_r_knee_FIELDchildren_DECLSegment_hanim_r_calf"
+                                              }
                                             },
                                             {
                                               "Transform": {
@@ -4554,24 +4545,19 @@
                                                           }
                                                         }
                                                       ]
-                                                    },
-                                                    "@DEF": "DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_sacroiliac_FIELDchildren_DECLJoint_hanim_r_hip_FIELDchildren_DECLJoint_hanim_r_knee_FIELDchildren_DECLJoint_hanim_r_ankle_FIELDchildren_DECLSegment_hanim_r_hindfoot_DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_sacroiliac_FIELDchildren_DECLJoint_hanim_r_hip_FIELDchildren_DECLJoint_hanim_r_knee_FIELDchildren_DECLJoint_hanim_r_ankle_FIELDchildren_DECLSegment_hanim_r_hindfoot"
+                                                    }
                                                   }
                                                 ]
-                                              },
-                                              "@DEF": "DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_sacroiliac_FIELDchildren_DECLJoint_hanim_r_hip_FIELDchildren_DECLJoint_hanim_r_knee_FIELDchildren_DECLJoint_hanim_r_ankle_DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_sacroiliac_FIELDchildren_DECLJoint_hanim_r_hip_FIELDchildren_DECLJoint_hanim_r_knee_FIELDchildren_DECLJoint_hanim_r_ankle"
+                                              }
                                             }
                                           ]
-                                        },
-                                        "@DEF": "DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_sacroiliac_FIELDchildren_DECLJoint_hanim_r_hip_FIELDchildren_DECLJoint_hanim_r_knee_DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_sacroiliac_FIELDchildren_DECLJoint_hanim_r_hip_FIELDchildren_DECLJoint_hanim_r_knee"
+                                        }
                                       }
                                     ]
-                                  },
-                                  "@DEF": "DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_sacroiliac_FIELDchildren_DECLJoint_hanim_r_hip_DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_sacroiliac_FIELDchildren_DECLJoint_hanim_r_hip"
+                                  }
                                 }
                               ]
-                            },
-                            "@DEF": "DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_sacroiliac_DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_sacroiliac"
+                            }
                           },
                           {
                             "Transform": {
@@ -6800,8 +6786,7 @@
                                         }
                                       }
                                     ]
-                                  },
-                                  "@DEF": "DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_vl1_FIELDchildren_DECLSegment_hanim_c7_DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_vl1_FIELDchildren_DECLSegment_hanim_c7"
+                                  }
                                 },
                                 {
                                   "Transform": {
@@ -7140,8 +7125,7 @@
                                               }
                                             }
                                           ]
-                                        },
-                                        "@DEF": "DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_vl1_FIELDchildren_DECLJoint_hanim_l_shoulder_FIELDchildren_DECLSegment_hanim_l_upperarm_DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_vl1_FIELDchildren_DECLJoint_hanim_l_shoulder_FIELDchildren_DECLSegment_hanim_l_upperarm"
+                                        }
                                       },
                                       {
                                         "Transform": {
@@ -7441,8 +7425,7 @@
                                                     }
                                                   }
                                                 ]
-                                              },
-                                              "@DEF": "DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_vl1_FIELDchildren_DECLJoint_hanim_l_shoulder_FIELDchildren_DECLJoint_hanim_l_elbow_FIELDchildren_DECLSegment_hanim_l_forearm_DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_vl1_FIELDchildren_DECLJoint_hanim_l_shoulder_FIELDchildren_DECLJoint_hanim_l_elbow_FIELDchildren_DECLSegment_hanim_l_forearm"
+                                              }
                                             },
                                             {
                                               "Transform": {
@@ -8061,20 +8044,16 @@
                                                           }
                                                         }
                                                       ]
-                                                    },
-                                                    "@DEF": "DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_vl1_FIELDchildren_DECLJoint_hanim_l_shoulder_FIELDchildren_DECLJoint_hanim_l_elbow_FIELDchildren_DECLJoint_hanim_l_wrist_FIELDchildren_DECLSegment_hanim_l_hand_DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_vl1_FIELDchildren_DECLJoint_hanim_l_shoulder_FIELDchildren_DECLJoint_hanim_l_elbow_FIELDchildren_DECLJoint_hanim_l_wrist_FIELDchildren_DECLSegment_hanim_l_hand"
+                                                    }
                                                   }
                                                 ]
-                                              },
-                                              "@DEF": "DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_vl1_FIELDchildren_DECLJoint_hanim_l_shoulder_FIELDchildren_DECLJoint_hanim_l_elbow_FIELDchildren_DECLJoint_hanim_l_wrist_DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_vl1_FIELDchildren_DECLJoint_hanim_l_shoulder_FIELDchildren_DECLJoint_hanim_l_elbow_FIELDchildren_DECLJoint_hanim_l_wrist"
+                                              }
                                             }
                                           ]
-                                        },
-                                        "@DEF": "DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_vl1_FIELDchildren_DECLJoint_hanim_l_shoulder_FIELDchildren_DECLJoint_hanim_l_elbow_DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_vl1_FIELDchildren_DECLJoint_hanim_l_shoulder_FIELDchildren_DECLJoint_hanim_l_elbow"
+                                        }
                                       }
                                     ]
-                                  },
-                                  "@DEF": "DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_vl1_FIELDchildren_DECLJoint_hanim_l_shoulder_DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_vl1_FIELDchildren_DECLJoint_hanim_l_shoulder"
+                                  }
                                 },
                                 {
                                   "Transform": {
@@ -8473,8 +8452,7 @@
                                               }
                                             }
                                           ]
-                                        },
-                                        "@DEF": "DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_vl1_FIELDchildren_DECLJoint_hanim_r_shoulder_FIELDchildren_DECLSegment_hanim_r_upperarm_DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_vl1_FIELDchildren_DECLJoint_hanim_r_shoulder_FIELDchildren_DECLSegment_hanim_r_upperarm"
+                                        }
                                       },
                                       {
                                         "Transform": {
@@ -8840,8 +8818,7 @@
                                                     }
                                                   }
                                                 ]
-                                              },
-                                              "@DEF": "DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_vl1_FIELDchildren_DECLJoint_hanim_r_shoulder_FIELDchildren_DECLJoint_hanim_r_elbow_FIELDchildren_DECLSegment_hanim_r_forearm_DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_vl1_FIELDchildren_DECLJoint_hanim_r_shoulder_FIELDchildren_DECLJoint_hanim_r_elbow_FIELDchildren_DECLSegment_hanim_r_forearm"
+                                              }
                                             },
                                             {
                                               "Transform": {
@@ -9455,20 +9432,16 @@
                                                           }
                                                         }
                                                       ]
-                                                    },
-                                                    "@DEF": "DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_vl1_FIELDchildren_DECLJoint_hanim_r_shoulder_FIELDchildren_DECLJoint_hanim_r_elbow_FIELDchildren_DECLJoint_hanim_r_wrist_FIELDchildren_DECLSegment_hanim_r_hand_DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_vl1_FIELDchildren_DECLJoint_hanim_r_shoulder_FIELDchildren_DECLJoint_hanim_r_elbow_FIELDchildren_DECLJoint_hanim_r_wrist_FIELDchildren_DECLSegment_hanim_r_hand"
+                                                    }
                                                   }
                                                 ]
-                                              },
-                                              "@DEF": "DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_vl1_FIELDchildren_DECLJoint_hanim_r_shoulder_FIELDchildren_DECLJoint_hanim_r_elbow_FIELDchildren_DECLJoint_hanim_r_wrist_DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_vl1_FIELDchildren_DECLJoint_hanim_r_shoulder_FIELDchildren_DECLJoint_hanim_r_elbow_FIELDchildren_DECLJoint_hanim_r_wrist"
+                                              }
                                             }
                                           ]
-                                        },
-                                        "@DEF": "DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_vl1_FIELDchildren_DECLJoint_hanim_r_shoulder_FIELDchildren_DECLJoint_hanim_r_elbow_DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_vl1_FIELDchildren_DECLJoint_hanim_r_shoulder_FIELDchildren_DECLJoint_hanim_r_elbow"
+                                        }
                                       }
                                     ]
-                                  },
-                                  "@DEF": "DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_vl1_FIELDchildren_DECLJoint_hanim_r_shoulder_DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_vl1_FIELDchildren_DECLJoint_hanim_r_shoulder"
+                                  }
                                 },
                                 {
                                   "Transform": {
@@ -9713,8 +9686,7 @@
                                               }
                                             }
                                           ]
-                                        },
-                                        "@DEF": "DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_vl1_FIELDchildren_DECLJoint_hanim_vc4_FIELDchildren_DECLSegment_hanim_c4_DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_vl1_FIELDchildren_DECLJoint_hanim_vc4_FIELDchildren_DECLSegment_hanim_c4"
+                                        }
                                       },
                                       {
                                         "Transform": {
@@ -13874,24 +13846,19 @@
                                                     }
                                                   }
                                                 ]
-                                              },
-                                              "@DEF": "DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_vl1_FIELDchildren_DECLJoint_hanim_vc4_FIELDchildren_DECLJoint_hanim_skullbase_FIELDchildren_DECLSegment_hanim_skull_DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_vl1_FIELDchildren_DECLJoint_hanim_vc4_FIELDchildren_DECLJoint_hanim_skullbase_FIELDchildren_DECLSegment_hanim_skull"
+                                              }
                                             }
                                           ]
-                                        },
-                                        "@DEF": "DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_vl1_FIELDchildren_DECLJoint_hanim_vc4_FIELDchildren_DECLJoint_hanim_skullbase_DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_vl1_FIELDchildren_DECLJoint_hanim_vc4_FIELDchildren_DECLJoint_hanim_skullbase"
+                                        }
                                       }
                                     ]
-                                  },
-                                  "@DEF": "DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_vl1_FIELDchildren_DECLJoint_hanim_vc4_DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_vl1_FIELDchildren_DECLJoint_hanim_vc4"
+                                  }
                                 }
                               ]
-                            },
-                            "@DEF": "DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_vl1_DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_vl1"
+                            }
                           }
                         ]
-                      },
-                      "@DEF": "DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot"
+                      }
                     },
                     {
                       "Group": {}
@@ -13974,8 +13941,7 @@
                 }
               }
             ]
-          },
-          "@DEF": "DECLHumanoid_Humanoid_DECLHumanoid_Humanoid"
+          }
         },
         {
           "WorldInfo": {

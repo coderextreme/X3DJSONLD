@@ -435,7 +435,8 @@
                           }
                         }
                       }
-                    }
+                    },
+                    "@DEF": "DECLcylinder_linkA"
                   }
                 },
                 {

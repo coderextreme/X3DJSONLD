@@ -68,13 +68,13 @@
                       }
                     }
                   ],
+                  "@DEF": "DECLthree_INSTANCE3000_DECLanyShape_INSTANCE4000",
                   "@translation": [
                     0,
                     0,
                     0
                   ]
-                },
-                "@DEF": "DECLthree_INSTANCE3000_DECLanyShape_INSTANCE4000_DECLthree_INSTANCE3000_DECLanyShape_INSTANCE4000"
+                }
               },
               {
                 "Transform": {
@@ -106,13 +106,13 @@
                       }
                     }
                   ],
+                  "@DEF": "DECLthree_INSTANCE3000_DECLanyShape_INSTANCE5000",
                   "@translation": [
                     2,
                     0,
                     0
                   ]
-                },
-                "@DEF": "DECLthree_INSTANCE3000_DECLanyShape_INSTANCE5000_DECLthree_INSTANCE3000_DECLanyShape_INSTANCE5000"
+                }
               },
               {
                 "Transform": {
@@ -144,17 +144,17 @@
                       }
                     }
                   ],
+                  "@DEF": "DECLthree_INSTANCE3000_DECLanyShape_INSTANCE6000",
                   "@translation": [
                     -2,
                     0,
                     0
                   ]
-                },
-                "@DEF": "DECLthree_INSTANCE3000_DECLanyShape_INSTANCE6000_DECLthree_INSTANCE3000_DECLanyShape_INSTANCE6000"
+                }
               }
-            ]
-          },
-          "@DEF": "DECLthree_INSTANCE3000_DECLthree_INSTANCE3000"
+            ],
+            "@DEF": "DECLthree_INSTANCE3000"
+          }
         }
       ]
     }
