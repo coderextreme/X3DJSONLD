@@ -857,7 +857,8 @@
                           }
                         }
                       }
-                    }
+                    },
+                    "@DEF": "DECLcylinder_linkA"
                   }
                 },
                 {
@@ -997,7 +998,8 @@
                           }
                         }
                       }
-                    }
+                    },
+                    "@DEF": "DECLcylinder_linkB"
                   }
                 },
                 {
@@ -1137,7 +1139,8 @@
                           }
                         }
                       }
-                    }
+                    },
+                    "@DEF": "DECLcylinder_linkC"
                   }
                 },
                 {

@@ -227,11 +227,15 @@ function CreateElement(key, x3djsonNS) {
 function CDATACreateFunction(document, element, str) {
 	// for script nodes
 	var open = document.createTextNode('<![CDATA[');
-	var child = document.createTextNode(str.replace(/\&lt;/g, '<').replace(/&gt;/g, '>'));
+	var child = document.createTextNode(str.replace(/\&lt;/g, '<').replace(/\&gt;/g, '>').replace(/\&amp;/g, '&'));
 	var close = document.createTextNode(']]>');
 	element.appendChild(open);
 	element.appendChild(child);
 	element.appendChild(close);
+	/*
+	var child = document.createCDATASection(str);
+	element.appendChild(child);
+	*/
 }
 
 function setCDATACreateFunction(fnc) {
@@ -414,6 +418,10 @@ function fixXML(xmlstr) {
 	do {
 		xmlstr2 = xmlstr;
 		xmlstr = xmlstr2.replace(/(<!\[CDATA\[(.|\n)*)&gt;((.|\n)*\]\]>)/gi, "$1>$3");
+	} while (xmlstr !== xmlstr2);
+	do {
+		xmlstr2 = xmlstr;
+		xmlstr = xmlstr2.replace(/(<!\[CDATA\[(.|\n)*)&amp;((.|\n)*\]\]>)/gi, "$1&$3");
 	} while (xmlstr !== xmlstr2);
 	return xmlstr;
 }
