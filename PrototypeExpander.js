@@ -36,6 +36,10 @@ function getDef(def) {
 	return defs[def];
 }
 
+function getField(scope, field) {
+	return scope+"_"+field;
+}
+
 function getScope(def) {
 	var scope;
 	if (def) {
@@ -105,22 +109,21 @@ function setScriptFields(objectp, def) {
 			}
 		}
 		var type_scope = setValueFromInterface(field, f, objectfield);
-		if (typeof type_scope == 'undefined') {
-			scopes = [ scope ];
-		} else {
-			scopes = [ scope, type_scope[1] ];
+		setScriptField(scope, field, f, objectfield, type, def);
+		if (typeof type_scope !== 'undefined') {
+			setScriptField(type_scope[1], field, f, objectfield, type, def);
 		}
 
-		for (var s in scopes) {
-			// console.error("setscript", scopes[s], field, f, objectfield, type, def);
-			if (typeof scriptField[scopes[s]+field] === 'undefined') {
-				scriptField[scopes[s]+field] = [];
-			}
-			// set another reference
-			scriptField[scopes[s]+field][scriptField[scopes[s]+field].length] = [ f, objectfield, type, def];
-		}
 	}
 				
+}
+
+function setScriptField(scope, field, f, objectfield, type, def) {
+	if (typeof scriptField[getField(scope,field)] === 'undefined') {
+		scriptField[getField(scope,field)] = [];
+	}
+	// set another reference
+	scriptField[getField(scope,field)][scriptField[getField(scope,field)].length] = [ f, objectfield, type, def];
 }
 
 function setEnv(scope, protoField, newobject, nodeField, type, newdef) {
@@ -128,24 +131,32 @@ function setEnv(scope, protoField, newobject, nodeField, type, newdef) {
 	if (typeof fieldname_field_scope !== 'undefined') {
 		scope = fieldname_field_scope[2];
 	}
-	if (typeof envField[scope+protoField] === 'undefined') {
-		envField[scope+protoField] = [];
+	if (typeof envField[getField(scope,protoField)] === 'undefined') {
+		envField[getField(scope,protoField)] = [];
 	}
 	// set another reference
-	envField[scope+protoField][envField[scope+protoField].length] = [ newobject, nodeField, type, newdef];
-	// console.error("setconnenv", envField[scope+protoField].length, scope, protoField, JSON.stringify(newobject), nodeField, type, newdef);
+	envField[getField(scope,protoField)][envField[getField(scope,protoField)].length] = [ newobject, nodeField, type, newdef];
+	// console.error("setconnenv", envField[getField(scope,protoField)].length, scope, protoField, JSON.stringify(newobject), nodeField, type, newdef);
 }
 
 function getEnv(scope, protoField) {
-	// console.error(">>>>>>", scope, protoField, JSON.stringify(envField[scope+protoField]));
-	return envField[scope+protoField];
+	// console.error(">>>>>>", scope, protoField, JSON.stringify(envField[getField(scope,protoField)]));
+	return envField[getField(scope,protoField)];
+}
+
+function setConnectField(scope, field, newobject, objectfield, type, newdef) {
+	console.error("setconn", scope, field, JSON.stringify(newobject), type, newdef);
+	if (typeof protoField[getField(scope,field)] === 'undefined') {
+		protoField[getField(scope,field)] = [];
+	}
+	protoField[getField(scope,field)][protoField[getField(scope,field)].length] = [ newobject, objectfield, type, newdef];
 }
 
 // In the ProtoBody (for the instance)
 // p === "IS"
 function setConnectFields(object, p, newobject) {
 	var def = object["@DEF"]; // at same level as IS
-	newdef = saveDef(def);
+	var newdef = saveDef(def);
 	var connect = object[p]["connect"];
 	var scope = getScope();
 	for (var cfield in connect) {
@@ -157,24 +168,14 @@ function setConnectFields(object, p, newobject) {
 			// console.error("Node field is", objectfield);
 			var type_scope = setValueFromInterface(field, newobject, objectfield);
 			var type = undefined;
-			if (typeof type_scope == 'undefined') {
-				scopes = [ scope ];
-			} else {
-				scopes = [ scope, type_scope[1] ];
+			if (typeof type_scope !== 'undefined') {
 				type = type_scope[0];
-			}
-			setEnv(scope, field, newobject, objectfield, type, newdef);
-			for (var s in scopes) {
-				// console.error("setconn", scopes[s], field, JSON.stringify(newobject), objectfield, type, newdef);
-				if (typeof protoField[scopes[s]+field] === 'undefined') {
-					protoField[scopes[s]+field] = [];
-				}
-				// set another reference
-				// console.error("SCFNO", JSON.stringify(newobject));
-				// console.error("SCFOF", JSON.stringify(objectfield));
-				// console.error("SCFTY", JSON.stringify(type));
-				// console.error("SCFDF", JSON.stringify(newdef));
-				protoField[scopes[s]+field][protoField[scopes[s]+field].length] = [ newobject, objectfield, type, newdef];
+				setEnv(scope, field, newobject, objectfield, type, newdef);
+				setConnectField(scope, field, newobject, objectfield, type, newdef);
+				setConnectField(type_scope[1], field, newobject, objectfield, type, newdef);
+			} else {
+				setEnv(scope, field, newobject, objectfield, type, newdef);
+				setConnectField(scope, field, newobject, objectfield, type, newdef);
 			}
 		}
 	}
@@ -186,7 +187,7 @@ function getInterface(field) {
 		if (!scope) {
 			break;
 		}
-		var fieldname_field_scope = interfaceField[scope+field];
+		var fieldname_field_scope = interfaceField[getField(scope,field)];
 		//console.error("getinter", scope, field, fieldnamefield);
 		if (fieldname_field_scope) {
 			return fieldname_field_scope;
@@ -197,38 +198,47 @@ function getInterface(field) {
 
 function setInterface(field, fieldname) {
 	var scope = getScope();
-	interfaceField[scope+field["@name"]] = [fieldname, field, scope];
+	interfaceField[getField(scope,field["@name"])] = [fieldname, field, scope];
 	// console.error("setinter", scope, field["@name"], fieldname, field[fieldname]);
 }
 
 function clearScope(field, object) {
 	var scope = getScope();
-	delete scriptField[scope+field];
-	delete protoField[scope+field];
+	delete scriptField[getField(scope,field)];
+	delete protoField[getField(scope,field)];
 	zap(field, object);
 }
 
 function extractConnectedDef(scope, node) {
 	var defobj;
-	for (var sf in scriptField[scope+node]) {
-		var obj = scriptField[scope+node][sf];
+	for (var sf in scriptField[getField(scope,node)]) {
+		var obj = scriptField[getField(scope,node)][sf];
 		if (typeof obj !== 'undefined') {
 			defobj = [obj[3], obj[1]];
-			// console.error("def1 is", defobj);
+			console.error("def1 is", defobj);
 		}
 	}
 	if (typeof defobj === 'undefined') {
-		for (var pf in protoField[scope+node]) {
-			var obj = protoField[scope+node][pf];
+		for (var pf in protoField[getField(scope,node)]) {
+			var obj = protoField[getField(scope,node)][pf];
 			if (typeof obj !== 'undefined') {
 				defobj = [obj[3], obj[1]];
-				// console.error("def2 is", defobj);
+				console.error("def2 is", defobj);
+			}
+		}
+	}
+	if (typeof defobj === 'undefined') {
+		for (var pf in protoField[getField(scope,"__DEF_FIELD__")]) {
+			var obj = protoField[getField(scope,"__DEF_FIELD__")][pf];
+			if (typeof obj !== 'undefined') {
+				defobj = [obj[3], node];
+				console.error("def3 is", defobj);
 			}
 		}
 	}
 	if (typeof defobj === 'undefined') {
 		defobj = [scope, node];
-		// console.error("def3 is", defobj);
+		console.error("def4 is", defobj);
 	}
 	return defobj;
 }
@@ -256,8 +266,8 @@ function setObjectValues(scope, field, fieldOrNode, value) {
 			}
 		}
 	}
-	for (var sf in scriptField[scope+field]) {
-		var obj = scriptField[scope+field][sf];
+	for (var sf in scriptField[getField(scope,field)]) {
+		var obj = scriptField[getField(scope,field)][sf];
 		if (typeof obj !== 'undefined') {
 			// console.error("\t\t\tfoundscriptvalue", scope, field, JSON.stringify(obj), fieldOrNode, JSON.stringify(value));
 			setObjectValue(scope, field, obj, fieldOrNode, value);
@@ -266,8 +276,8 @@ function setObjectValues(scope, field, fieldOrNode, value) {
 		}
 	}
 	// branch out across children of a proto declare
-	for (var pf in protoField[scope+field]) {
-		var obj = protoField[scope+field][pf];
+	for (var pf in protoField[getField(scope,field)]) {
+		var obj = protoField[getField(scope,field)][pf];
 		if (typeof obj !== 'undefined') {
 			// console.error("\t\t\tfoundprotovalue", scope, field, JSON.stringify(obj), fieldOrNode, JSON.stringify(value));
 			setObjectValue(scope, field, obj, fieldOrNode, value);
@@ -363,6 +373,8 @@ function prototypeExpander(file, object) {
 
 	object = realPrototypeExpander(file, object);
 	// zapIs(object);
+	console.error("SCRIPTS", JSON.stringify(scriptField));
+	console.error("PROTOS", JSON.stringify(protoField, null, 2));
 	return object;
 }
 
@@ -387,6 +399,7 @@ function handleProtoDeclare(file, object, p) {
 	var def = object[p]["@DEF"];
 	protos[name] = object[p];
 	saveDef(def);
+	// don't need to save def
 	if (typeof object[p]["@appinfo"] !== 'undefined') {
 		protos[name]["@appinfo"] = object[p]["@appinfo"];
 	}
@@ -434,32 +447,30 @@ function handleProtoInstance(file, object, p) {
 	} else {
 		// first appearance of def is left alone
 	}
-	saveDef(def);
+	var newdef = saveDef(def);
 	pushScope(def);
 	if (typeof protos[name] === 'undefined' ||  typeof protos[name]['ProtoBody'] === 'undefined') {
 		console.error("ProtoBody undefined for", name);
 	} else {
 		// console.error("Copying ProtoBody", name);
 		var obj = protos[name]['ProtoBody']['-children'];
+		// var bodydef = protos[name]['ProtoBody']["@DEF"];
 		instance = JSON.parse(JSON.stringify(obj));
 	}
 
-	var newobject = realPrototypeExpander(file, instance);
-
-	// newobject is an array
-	while (Array.isArray(newobject) &&Object.keys(newobject).length === 1) {
-		newobject = newobject[0];
+	// instance is an array
+	while (Array.isArray(instance) &&Object.keys(instance).length === 1) {
+		instance = instance[0];
 	}
 
-	var firstobj = newobject;
+	var firstobj = instance;
 	while (Array.isArray(firstobj)) {
-		// we only want to render the first node, no matter how deep it is
+		// we only the DEF of the first node 
 		firstobj = firstobj[0];
 	}
 	if (!Array.isArray(firstobj)) {
 		if (typeof use !== 'undefined') {
-			var q;
-			for (q in firstobj) {
+			for (var q in firstobj) {
 				// console.error("USE is ", use, "q is", q, "firstobj q is", firstobj[q]);
 				if (q === "Group" || q == "Transform") {
 					if (typeof firstobj[q] === 'object' && !Array.isArray(firstobj[q])) {
@@ -470,28 +481,15 @@ function handleProtoInstance(file, object, p) {
 				}
 			}
 		}
-		if (Object.keys(firstobj).length === 1) {
-			for (var key in firstobj) {
-				var k = key;
-			}
-			// We need def to make this firstobj unique
-			var def2  = firstobj[k]["@DEF"];
-			if (typeof def2 !== 'undefined') {
-				def = def2;
-			}
-			if (typeof def !== 'undefined') {
-				firstobj[k]["@DEF"] = getScope(def);
-			}
-		} else {
-			var def2  = firstobj["@DEF"];
-			if (typeof def2 !== 'undefined') {
-				def = def2;
-			}
-			if (typeof def !== 'undefined') {
-				firstobj["@DEF"] = getScope(def);
-			}
-		}
+
 	}
+	/*
+	if (typeof bodydef !== 'undefined') {
+		saveDef(bodydef);
+		pushScope(bodydef);
+	}
+	*/
+	var newobject = realPrototypeExpander(file, instance);
 
 	var fieldValue = object[p]["fieldValue"];
 	for (var field in fieldValue) {
@@ -517,6 +515,11 @@ function handleProtoInstance(file, object, p) {
 		// clearScope(fieldname, newobject);
 	}
 
+	/*
+	if (typeof bodydef !== 'undefined') {
+		popScope();
+	}
+	*/
 	popScope();
 	popScope();
 	return newobject;
@@ -562,6 +565,10 @@ function realPrototypeExpander(file, object) {
 				newobject[p] = object[p];
 			} else if (plc === '@def') {
 				newobject[p] = saveDef(object[p]);
+				if (typeof process != 'undefined') {
+					process.stderr.write("d3 ");
+				}
+				setConnectField(getScope(), "__DEF_FIELD__", newobject, object[p], "SFString", newobject[p]);
 			} else if (plc === '@use') {
 				newobject[p] = getScope(object[p]);
 				// console.error("USE is2 ", object[p], newobject);
