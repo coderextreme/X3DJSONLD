@@ -397,8 +397,7 @@
                         ]
                       }
                     }
-                  ],
-                  "@DEF": "DECLProcess_INSTANCE"
+                  ]
                 }
               }
             ]
@@ -724,8 +723,7 @@
                         ]
                       }
                     }
-                  ],
-                  "@DEF": "DECLProcess_INSTANCE1000"
+                  ]
                 }
               }
             ]
@@ -1056,8 +1054,7 @@
                         ]
                       }
                     }
-                  ],
-                  "@DEF": "DECLProcess_INSTANCE2000"
+                  ]
                 }
               }
             ]

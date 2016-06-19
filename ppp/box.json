@@ -68,7 +68,6 @@
                       }
                     }
                   ],
-                  "@DEF": "DECLthree_INSTANCE3000_DECLanyShape_INSTANCE4000",
                   "@translation": [
                     0,
                     0,
@@ -106,7 +105,6 @@
                       }
                     }
                   ],
-                  "@DEF": "DECLthree_INSTANCE3000_DECLanyShape_INSTANCE5000",
                   "@translation": [
                     2,
                     0,
@@ -144,7 +142,6 @@
                       }
                     }
                   ],
-                  "@DEF": "DECLthree_INSTANCE3000_DECLanyShape_INSTANCE6000",
                   "@translation": [
                     -2,
                     0,
@@ -152,8 +149,7 @@
                   ]
                 }
               }
-            ],
-            "@DEF": "DECLthree_INSTANCE3000"
+            ]
           }
         }
       ]
