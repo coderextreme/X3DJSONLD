@@ -56,26 +56,26 @@ function zapSource(object) {
 
 function processScripts(object, classes, package, routecode) {
 	if (typeof package === 'undefined') {
-		/*
 		classes.log("function SFRotation(a, b, c, d) { return [a, b, c, d]};");
 		classes.log("function MFRotation(a, b, c, d) { return []};");
 		classes.log("function SFVec3f(a, b, c) { return [a, b, c]};");
 		classes.log("function MFVec3f() { return []};");
 		classes.log("function MFVec2f() { return []};");
 		classes.log("function MFString() { return []};");
-		*/
 		classes.log('var X3DJSON = {};');
 		routecode.log("if (typeof $ === 'undefined') {");
 		routecode.log("	   $ = function(selector) { return {");
 		routecode.log("		attr : function(attr, value) {");
 		routecode.log("			if (arguments.length > 1) {");
 		routecode.log("				this[attr] = value;");
-		routecode.log("				Browser.print('set '+ attr+ '='+ value);");
+		routecode.log("				/* Browser.print('set '+ attr+ '='+ value); */");
 		routecode.log("			} else {");
-		routecode.log("				Browser.print('get '+ attr+'='+this[attr]); }");
+		routecode.log("				/* Browser.print('get '+ attr+'='+this[attr]); */");
 		routecode.log("				return(this[attr]);");
 		routecode.log("			}");
-		routecode.log("}}}");
+		routecode.log("         }");
+		routecode.log("    }}");
+		routecode.log("}");
 	}
 	package = package || new Script();
 	var p;

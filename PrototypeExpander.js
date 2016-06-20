@@ -145,7 +145,7 @@ function getEnv(scope, protoField) {
 }
 
 function setConnectField(scope, field, newobject, objectfield, type, newdef) {
-	console.error("setconn", scope, field, JSON.stringify(newobject), type, newdef);
+	// console.error("setconn", scope, field, JSON.stringify(newobject), type, newdef);
 	if (typeof protoField[getField(scope,field)] === 'undefined') {
 		protoField[getField(scope,field)] = [];
 	}
@@ -215,7 +215,7 @@ function extractConnectedDef(scope, node) {
 		var obj = scriptField[getField(scope,node)][sf];
 		if (typeof obj !== 'undefined') {
 			defobj = [obj[3], obj[1]];
-			console.error("def1 is", defobj);
+			// console.error("def1 is", defobj);
 		}
 	}
 	if (typeof defobj === 'undefined') {
@@ -223,7 +223,7 @@ function extractConnectedDef(scope, node) {
 			var obj = protoField[getField(scope,node)][pf];
 			if (typeof obj !== 'undefined') {
 				defobj = [obj[3], obj[1]];
-				console.error("def2 is", defobj);
+				// console.error("def2 is", defobj);
 			}
 		}
 	}
@@ -232,13 +232,13 @@ function extractConnectedDef(scope, node) {
 			var obj = protoField[getField(scope,"__DEF_FIELD__")][pf];
 			if (typeof obj !== 'undefined') {
 				defobj = [obj[3], node];
-				console.error("def3 is", defobj);
+				// console.error("def3 is", defobj);
 			}
 		}
 	}
 	if (typeof defobj === 'undefined') {
 		defobj = [scope, node];
-		console.error("def4 is", defobj);
+		// console.error("def4 is", defobj);
 	}
 	return defobj;
 }
@@ -259,8 +259,8 @@ function setObjectValues(scope, field, fieldOrNode, value) {
 			// console.error("newobject", JSON.stringify(obj[0]));
 			// console.error("nodeField", JSON.stringify(obj[1]));
 			// console.error("type", JSON.stringify(obj[2]));
-			console.error("newdef", JSON.stringify(obj[3]));
-			console.error("parentscope", JSON.stringify(parentScope));
+			// console.error("newdef", JSON.stringify(obj[3]));
+			// console.error("parentscope", JSON.stringify(parentScope));
 			if (typeof obj !== 'undefined' && obj[3].indexOf(parentScope) === obj[3].lastIndexOf(parentScope)) {
 				setObjectValue(parentScope, obj[1], obj, fieldOrNode, value);
 			}
@@ -373,8 +373,8 @@ function prototypeExpander(file, object) {
 
 	object = realPrototypeExpander(file, object);
 	// zapIs(object);
-	console.error("SCRIPTS", JSON.stringify(scriptField));
-	console.error("PROTOS", JSON.stringify(protoField, null, 2));
+	// console.error("SCRIPTS", JSON.stringify(scriptField));
+	// console.error("PROTOS", JSON.stringify(protoField, null, 2));
 	return object;
 }
 
@@ -565,9 +565,11 @@ function realPrototypeExpander(file, object) {
 				newobject[p] = object[p];
 			} else if (plc === '@def') {
 				newobject[p] = saveDef(object[p]);
+				/*
 				if (typeof process != 'undefined') {
 					process.stderr.write("d3 ");
 				}
+				*/
 				setConnectField(getScope(), "__DEF_FIELD__", newobject, object[p], "SFString", newobject[p]);
 			} else if (plc === '@use') {
 				newobject[p] = getScope(object[p]);
