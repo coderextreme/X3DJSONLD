@@ -401,12 +401,7 @@
                         "-children": [
                           {
                             "Group": {
-                              "-children": [
-                                {
-                                  "#comment": "initialization nodes (if any) go here"
-                                }
-                              ],
-                              "@children": "HudContent"
+                              "-children": "HudContent"
                             }
                           },
                           {
