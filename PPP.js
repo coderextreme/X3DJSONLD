@@ -7,9 +7,11 @@ var fs = require("fs");
 var X3DJSONLD = require('./X3DJSONLD.js');
 var loadURLs = X3DJSONLD.loadURLs;
 var PE = require('./PrototypeExpander')
+var FL = require('./Flattener')
 PE.setLoadURLs(loadURLs);
 var prototypeExpander = PE.prototypeExpander;
 var externPrototypeExpander = PE.externPrototypeExpander;
+var flattener = FL.flattener;
 
 var Script = require('./Script');
 
@@ -58,6 +60,7 @@ process.stdin.on('end', function() {
 	// var object = JSON.parse(content);
 	object = externPrototypeExpander(file, object);
 	object = prototypeExpander(file, object, "");
+	object = flattener(object);
 	console.log(JSON.stringify(object, null, 2));
 
 	var classes = new LOG();

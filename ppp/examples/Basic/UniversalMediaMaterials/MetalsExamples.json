@@ -1,0 +1,4204 @@
+{
+  "X3D": {
+    "encoding": "UTF-8",
+    "@profile": "Immersive",
+    "@version": "3.0",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "MetalsExamples.x3d"
+        },
+        {
+          "@name": "description",
+          "@content": "Example ExternProtoDeclare/ProtoInstance usage of X3D/VRML materials, originally converted from SGI's Open Inventor material examples."
+        },
+        {
+          "@name": "creator",
+          "@content": "David Roussel"
+        },
+        {
+          "@name": "translator",
+          "@content": "James Harney, Don Brutzman NPS"
+        },
+        {
+          "@name": "created",
+          "@content": "7 April 2002"
+        },
+        {
+          "@name": "modified",
+          "@content": "19 March 2009"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://vrmlstuff.free.fr/materials"
+        },
+        {
+          "@name": "subject",
+          "@content": "Universal Media Material Library"
+        },
+        {
+          "@name": "identifier",
+          "@content": "http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/MetalsExamples.x3d"
+        },
+        {
+          "@name": "generator",
+          "@content": "Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+        },
+        {
+          "@name": "license",
+          "@content": "../license.html"
+        },
+        {
+          "@name": "translated",
+          "@content": "28 March 2016"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+        },
+        {
+          "@name": "warning",
+          "@content": "An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+          "Group": {
+            "-children": [
+              {
+                "NavigationInfo": {
+                  "@headlight": false,
+                  "@type": [
+                    "EXAMINE"
+                  ]
+                }
+              },
+              {
+                "Viewpoint": {
+                  "@DEF": "Front",
+                  "@description": "Front view",
+                  "@position": [
+                    0,
+                    0,
+                    12
+                  ]
+                }
+              },
+              {
+                "Viewpoint": {
+                  "@DEF": "PersRight",
+                  "@description": "Low Right",
+                  "@orientation": [
+                    0.74291,
+                    0.30772,
+                    0.59447,
+                    1.2171
+                  ],
+                  "@position": [
+                    6.9282,
+                    -6.9282,
+                    6.9282
+                  ]
+                }
+              },
+              {
+                "Viewpoint": {
+                  "@DEF": "PersLeft",
+                  "@description": "Low Left",
+                  "@orientation": [
+                    0.74291,
+                    -0.30772,
+                    -0.59447,
+                    1.2171
+                  ],
+                  "@position": [
+                    -6.9282,
+                    -6.9282,
+                    6.9282
+                  ]
+                }
+              },
+              {
+                "Viewpoint": {
+                  "@DEF": "Back",
+                  "@description": "Back view",
+                  "@orientation": [
+                    0,
+                    1,
+                    0,
+                    3.1416
+                  ],
+                  "@position": [
+                    0,
+                    0,
+                    -12
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@DEF": "Close_travel",
+                  "-children": [
+                    {
+                      "PositionInterpolator": {
+                        "@DEF": "Close_Mover",
+                        "@key": [
+                          0,
+                          0.25,
+                          0.5,
+                          0.75,
+                          1
+                        ],
+                        "@keyValue": [
+                          0,
+                          2.5,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          -2.5,
+                          0,
+                          0,
+                          0,
+                          0,
+                          0,
+                          2.5,
+                          0
+                        ]
+                      }
+                    },
+                    {
+                      "TimeSensor": {
+                        "@DEF": "Close_Time",
+                        "@cycleInterval": 12,
+                        "@loop": true
+                      }
+                    },
+                    {
+                      "Viewpoint": {
+                        "@DEF": "Close",
+                        "@description": "Close Front",
+                        "@position": [
+                          0,
+                          0,
+                          6
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "DirectionalLight": {
+                  "@direction": [
+                    1,
+                    -1,
+                    -1
+                  ]
+                }
+              },
+              {
+                "DirectionalLight": {
+                  "@direction": [
+                    0,
+                    1,
+                    -0.5
+                  ],
+                  "@intensity": 0.5
+                }
+              },
+              {
+                "Anchor": {
+                  "@description": "Back to front view",
+                  "@url": [
+                    "#Front"
+                  ],
+                  "-children": [
+                    {
+                      "Transform": {
+                        "@translation": [
+                          0,
+                          0,
+                          -0.5
+                        ],
+                        "-children": [
+                          {
+                            "Inline": {
+                              "@url": [
+                                "gridBack.x3d",
+                                "http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d",
+                                "gridBack.wrl",
+                                "http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.wrl"
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Viewpoint": {
+                  "@DEF": "View00",
+                  "@description": "Metal00",
+                  "@position": [
+                    -3.75,
+                    3.75,
+                    3
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    -3.75,
+                    3.75,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "Anchor": {
+                        "@description": "Metal00 view",
+                        "@url": [
+                          "#View00"
+                        ],
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@ambientIntensity": 0.022727,
+                                      "@diffuseColor": [
+                                        0.314286,
+                                        0.218111,
+                                        0
+                                      ],
+                                      "@shininess": 0.660606,
+                                      "@specularColor": [
+                                        1,
+                                        0.887979,
+                                        0
+                                      ]
+                                    }
+                                  }
+                                }
+                              },
+                              "-geometry": {
+                                "Sphere": {
+                                  "@DEF": "Ball",
+                                  "@radius": 0.5
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Transform": {
+                        "@translation": [
+                          0,
+                          0.3,
+                          0.5
+                        ],
+                        "-children": [
+                          {
+                            "Anchor": {
+                              "@description": "Metal00",
+                              "@parameter": [
+                                "target=_source"
+                              ],
+                              "@url": [
+                                "MetalsPrototypes.html#ProtoDeclare_Metal00",
+                                "http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/MetalsPrototypes.html#ProtoDeclare_Metal00"
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@DEF": "TextMat",
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "-geometry": {
+                                      "Text": {
+                                        "@string": [
+                                          "Metal00"
+                                        ],
+                                        "-fontStyle": {
+                                          "FontStyle": {
+                                            "@DEF": "Style",
+                                            "@family": [
+                                              "SANS"
+                                            ],
+                                            "@justify": [
+                                              "MIDDLE",
+                                              "MIDDLE"
+                                            ],
+                                            "@size": 0.3,
+                                            "@style": "BOLD"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Viewpoint": {
+                  "@DEF": "View01",
+                  "@description": "Metal01",
+                  "@position": [
+                    -2.25,
+                    3.75,
+                    3
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    -2.25,
+                    3.75,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "Anchor": {
+                        "@description": "Metal01 view",
+                        "@url": [
+                          "#View01"
+                        ],
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@ambientIntensity": 0.022727,
+                                      "@diffuseColor": [
+                                        0.314286,
+                                        0.218111,
+                                        0
+                                      ],
+                                      "@shininess": 0.132653,
+                                      "@specularColor": [
+                                        0.729592,
+                                        0.647862,
+                                        0
+                                      ]
+                                    }
+                                  }
+                                }
+                              },
+                              "-geometry": {
+                                "Sphere": {
+                                  "@USE": "Ball"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Transform": {
+                        "@translation": [
+                          0,
+                          0.3,
+                          0.5
+                        ],
+                        "-children": [
+                          {
+                            "Anchor": {
+                              "@description": "Metal01",
+                              "@parameter": [
+                                "target=_source"
+                              ],
+                              "@url": [
+                                "MetalsPrototypes.html#ProtoDeclare_Metal01",
+                                "http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/MetalsPrototypes.html#ProtoDeclare_Metal01"
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@USE": "TextMat"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "-geometry": {
+                                      "Text": {
+                                        "@string": [
+                                          "Metal01"
+                                        ],
+                                        "-fontStyle": {
+                                          "FontStyle": {
+                                            "@USE": "Style"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Viewpoint": {
+                  "@DEF": "View02",
+                  "@description": "Metal02",
+                  "@position": [
+                    -0.75,
+                    3.75,
+                    3
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    -0.75,
+                    3.75,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "Anchor": {
+                        "@description": "Metal02 view",
+                        "@url": [
+                          "#View02"
+                        ],
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@ambientIntensity": 0.268293,
+                                      "@diffuseColor": [
+                                        0.49697,
+                                        0.344891,
+                                        0
+                                      ],
+                                      "@shininess": 0.927273,
+                                      "@specularColor": [
+                                        1,
+                                        0.887978,
+                                        0
+                                      ]
+                                    }
+                                  }
+                                }
+                              },
+                              "-geometry": {
+                                "Sphere": {
+                                  "@USE": "Ball"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Transform": {
+                        "@translation": [
+                          0,
+                          0.3,
+                          0.5
+                        ],
+                        "-children": [
+                          {
+                            "Anchor": {
+                              "@description": "Metal02",
+                              "@parameter": [
+                                "target=_source"
+                              ],
+                              "@url": [
+                                "MetalsPrototypes.html#ProtoDeclare_Metal02",
+                                "http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/MetalsPrototypes.html#ProtoDeclare_Metal02"
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@USE": "TextMat"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "-geometry": {
+                                      "Text": {
+                                        "@string": [
+                                          "Metal02"
+                                        ],
+                                        "-fontStyle": {
+                                          "FontStyle": {
+                                            "@USE": "Style"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Viewpoint": {
+                  "@DEF": "View03",
+                  "@description": "Metal03",
+                  "@position": [
+                    0.75,
+                    3.75,
+                    3
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    0.75,
+                    3.75,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "Anchor": {
+                        "@description": "Metal03 view",
+                        "@url": [
+                          "#View03"
+                        ],
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@ambientIntensity": 0.022727,
+                                      "@diffuseColor": [
+                                        0.314286,
+                                        0.218111,
+                                        0
+                                      ],
+                                      "@shininess": 0.030612,
+                                      "@specularColor": [
+                                        0.540816,
+                                        0.480233,
+                                        0
+                                      ]
+                                    }
+                                  }
+                                }
+                              },
+                              "-geometry": {
+                                "Sphere": {
+                                  "@USE": "Ball"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Transform": {
+                        "@translation": [
+                          0,
+                          0.3,
+                          0.5
+                        ],
+                        "-children": [
+                          {
+                            "Anchor": {
+                              "@description": "Metal03",
+                              "@parameter": [
+                                "target=_source"
+                              ],
+                              "@url": [
+                                "MetalsPrototypes.html#ProtoDeclare_Metal03",
+                                "http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/MetalsPrototypes.html#ProtoDeclare_Metal03"
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@USE": "TextMat"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "-geometry": {
+                                      "Text": {
+                                        "@string": [
+                                          "Metal03"
+                                        ],
+                                        "-fontStyle": {
+                                          "FontStyle": {
+                                            "@USE": "Style"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Viewpoint": {
+                  "@DEF": "View04",
+                  "@description": "Metal04",
+                  "@position": [
+                    2.25,
+                    3.75,
+                    3
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    2.25,
+                    3.75,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "Anchor": {
+                        "@description": "Metal04 view",
+                        "@url": [
+                          "#View04"
+                        ],
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@ambientIntensity": 0.256,
+                                      "@diffuseColor": [
+                                        0.029158,
+                                        0.026292,
+                                        0.026964
+                                      ],
+                                      "@shininess": 0.061224,
+                                      "@specularColor": [
+                                        0.938776,
+                                        0.055032,
+                                        0.055032
+                                      ]
+                                    }
+                                  }
+                                }
+                              },
+                              "-geometry": {
+                                "Sphere": {
+                                  "@USE": "Ball"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Transform": {
+                        "@translation": [
+                          0,
+                          0.3,
+                          0.5
+                        ],
+                        "-children": [
+                          {
+                            "Anchor": {
+                              "@description": "Metal04",
+                              "@parameter": [
+                                "target=_source"
+                              ],
+                              "@url": [
+                                "MetalsPrototypes.html#ProtoDeclare_Metal04",
+                                "http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/MetalsPrototypes.html#ProtoDeclare_Metal04"
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@USE": "TextMat"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "-geometry": {
+                                      "Text": {
+                                        "@string": [
+                                          "Metal04"
+                                        ],
+                                        "-fontStyle": {
+                                          "FontStyle": {
+                                            "@USE": "Style"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Viewpoint": {
+                  "@DEF": "View05",
+                  "@description": "Metal05",
+                  "@position": [
+                    3.75,
+                    3.75,
+                    3
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    3.75,
+                    3.75,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "Anchor": {
+                        "@description": "Metal05 view",
+                        "@url": [
+                          "#View05"
+                        ],
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@ambientIntensity": 0.256,
+                                      "@diffuseColor": [
+                                        0.029158,
+                                        0.026292,
+                                        0.026964
+                                      ],
+                                      "@shininess": 0.061224,
+                                      "@specularColor": [
+                                        0.641609,
+                                        0.976208,
+                                        0.979592
+                                      ]
+                                    }
+                                  }
+                                }
+                              },
+                              "-geometry": {
+                                "Sphere": {
+                                  "@USE": "Ball"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Transform": {
+                        "@translation": [
+                          0,
+                          0.3,
+                          0.5
+                        ],
+                        "-children": [
+                          {
+                            "Anchor": {
+                              "@description": "Metal05",
+                              "@parameter": [
+                                "target=_source"
+                              ],
+                              "@url": [
+                                "MetalsPrototypes.html#ProtoDeclare_Metal05",
+                                "http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/MetalsPrototypes.html#ProtoDeclare_Metal05"
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@USE": "TextMat"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "-geometry": {
+                                      "Text": {
+                                        "@string": [
+                                          "Metal05"
+                                        ],
+                                        "-fontStyle": {
+                                          "FontStyle": {
+                                            "@USE": "Style"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Viewpoint": {
+                  "@DEF": "View06",
+                  "@description": "Metal06",
+                  "@position": [
+                    -3.75,
+                    2.25,
+                    3
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    -3.75,
+                    2.25,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "Anchor": {
+                        "@description": "Metal06 view",
+                        "@url": [
+                          "#View06"
+                        ],
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@ambientIntensity": 0.022727,
+                                      "@diffuseColor": [
+                                        0.314286,
+                                        0.074365,
+                                        0
+                                      ],
+                                      "@shininess": 0.357143,
+                                      "@specularColor": [
+                                        0.780612,
+                                        0.691177,
+                                        0.397036
+                                      ]
+                                    }
+                                  }
+                                }
+                              },
+                              "-geometry": {
+                                "Sphere": {
+                                  "@USE": "Ball"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Transform": {
+                        "@translation": [
+                          0,
+                          0.3,
+                          0.5
+                        ],
+                        "-children": [
+                          {
+                            "Anchor": {
+                              "@description": "Metal06",
+                              "@parameter": [
+                                "target=_source"
+                              ],
+                              "@url": [
+                                "MetalsPrototypes.html#ProtoDeclare_Metal06",
+                                "http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/MetalsPrototypes.html#ProtoDeclare_Metal06"
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@USE": "TextMat"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "-geometry": {
+                                      "Text": {
+                                        "@string": [
+                                          "Metal06"
+                                        ],
+                                        "-fontStyle": {
+                                          "FontStyle": {
+                                            "@USE": "Style"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Viewpoint": {
+                  "@DEF": "View07",
+                  "@description": "Metal07",
+                  "@position": [
+                    -2.25,
+                    2.25,
+                    3
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    -2.25,
+                    2.25,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "Anchor": {
+                        "@description": "Metal07 view",
+                        "@url": [
+                          "#View07"
+                        ],
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@ambientIntensity": 0.240001,
+                                      "@diffuseColor": [
+                                        0.454545,
+                                        0.107552,
+                                        0
+                                      ],
+                                      "@shininess": 0.927273,
+                                      "@specularColor": [
+                                        0.951515,
+                                        0.729659,
+                                        0
+                                      ]
+                                    }
+                                  }
+                                }
+                              },
+                              "-geometry": {
+                                "Sphere": {
+                                  "@USE": "Ball"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Transform": {
+                        "@translation": [
+                          0,
+                          0.3,
+                          0.5
+                        ],
+                        "-children": [
+                          {
+                            "Anchor": {
+                              "@description": "Metal07",
+                              "@parameter": [
+                                "target=_source"
+                              ],
+                              "@url": [
+                                "MetalsPrototypes.html#ProtoDeclare_Metal07",
+                                "http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/MetalsPrototypes.html#ProtoDeclare_Metal07"
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@USE": "TextMat"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "-geometry": {
+                                      "Text": {
+                                        "@string": [
+                                          "Metal07"
+                                        ],
+                                        "-fontStyle": {
+                                          "FontStyle": {
+                                            "@USE": "Style"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Viewpoint": {
+                  "@DEF": "View08",
+                  "@description": "Metal08",
+                  "@position": [
+                    -0.75,
+                    2.25,
+                    3
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    -0.75,
+                    2.25,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "Anchor": {
+                        "@description": "Metal08 view",
+                        "@url": [
+                          "#View08"
+                        ],
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@ambientIntensity": 0.022727,
+                                      "@diffuseColor": [
+                                        0.314286,
+                                        0.074365,
+                                        0
+                                      ],
+                                      "@shininess": 0.107143,
+                                      "@specularColor": [
+                                        0.780612,
+                                        0.598604,
+                                        0
+                                      ]
+                                    }
+                                  }
+                                }
+                              },
+                              "-geometry": {
+                                "Sphere": {
+                                  "@USE": "Ball"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Transform": {
+                        "@translation": [
+                          0,
+                          0.3,
+                          0.5
+                        ],
+                        "-children": [
+                          {
+                            "Anchor": {
+                              "@description": "Metal08",
+                              "@parameter": [
+                                "target=_source"
+                              ],
+                              "@url": [
+                                "MetalsPrototypes.html#ProtoDeclare_Metal08",
+                                "http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/MetalsPrototypes.html#ProtoDeclare_Metal08"
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@USE": "TextMat"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "-geometry": {
+                                      "Text": {
+                                        "@string": [
+                                          "Metal08"
+                                        ],
+                                        "-fontStyle": {
+                                          "FontStyle": {
+                                            "@USE": "Style"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Viewpoint": {
+                  "@DEF": "View09",
+                  "@description": "Metal09",
+                  "@position": [
+                    0.75,
+                    2.25,
+                    3
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    0.75,
+                    2.25,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "Anchor": {
+                        "@description": "Metal09 view",
+                        "@url": [
+                          "#View09"
+                        ],
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@ambientIntensity": 0.022727,
+                                      "@diffuseColor": [
+                                        0.314286,
+                                        0.074365,
+                                        0
+                                      ],
+                                      "@shininess": 0.048485,
+                                      "@specularColor": [
+                                        1,
+                                        0.766841,
+                                        0
+                                      ]
+                                    }
+                                  }
+                                }
+                              },
+                              "-geometry": {
+                                "Sphere": {
+                                  "@USE": "Ball"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Transform": {
+                        "@translation": [
+                          0,
+                          0.3,
+                          0.5
+                        ],
+                        "-children": [
+                          {
+                            "Anchor": {
+                              "@description": "Metal09",
+                              "@parameter": [
+                                "target=_source"
+                              ],
+                              "@url": [
+                                "MetalsPrototypes.html#ProtoDeclare_Metal09",
+                                "http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/MetalsPrototypes.html#ProtoDeclare_Metal09"
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@USE": "TextMat"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "-geometry": {
+                                      "Text": {
+                                        "@string": [
+                                          "Metal09"
+                                        ],
+                                        "-fontStyle": {
+                                          "FontStyle": {
+                                            "@USE": "Style"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Viewpoint": {
+                  "@DEF": "View10",
+                  "@description": "Metal10",
+                  "@position": [
+                    2.25,
+                    2.25,
+                    3
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    2.25,
+                    2.25,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "Anchor": {
+                        "@description": "Metal10 view",
+                        "@url": [
+                          "#View10"
+                        ],
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@ambientIntensity": 0.022727,
+                                      "@diffuseColor": [
+                                        0.314286,
+                                        0.074365,
+                                        0
+                                      ],
+                                      "@shininess": 0.040816,
+                                      "@specularColor": [
+                                        0.760204,
+                                        0.582954,
+                                        0
+                                      ]
+                                    }
+                                  }
+                                }
+                              },
+                              "-geometry": {
+                                "Sphere": {
+                                  "@USE": "Ball"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Transform": {
+                        "@translation": [
+                          0,
+                          0.3,
+                          0.5
+                        ],
+                        "-children": [
+                          {
+                            "Anchor": {
+                              "@description": "Metal10",
+                              "@parameter": [
+                                "target=_source"
+                              ],
+                              "@url": [
+                                "MetalsPrototypes.html#ProtoDeclare_Metal10",
+                                "http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/MetalsPrototypes.html#ProtoDeclare_Metal10"
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@USE": "TextMat"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "-geometry": {
+                                      "Text": {
+                                        "@string": [
+                                          "Metal10"
+                                        ],
+                                        "-fontStyle": {
+                                          "FontStyle": {
+                                            "@USE": "Style"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Viewpoint": {
+                  "@DEF": "View11",
+                  "@description": "Metal11",
+                  "@position": [
+                    3.75,
+                    2.25,
+                    3
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    3.75,
+                    2.25,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "Anchor": {
+                        "@description": "Metal11 view",
+                        "@url": [
+                          "#View11"
+                        ],
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@ambientIntensity": 0.022727,
+                                      "@diffuseColor": [
+                                        0.314286,
+                                        0.074365,
+                                        0
+                                      ],
+                                      "@shininess": 0.107143,
+                                      "@specularColor": [
+                                        0.780612,
+                                        0.691177,
+                                        0.397036
+                                      ]
+                                    }
+                                  }
+                                }
+                              },
+                              "-geometry": {
+                                "Sphere": {
+                                  "@USE": "Ball"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Transform": {
+                        "@translation": [
+                          0,
+                          0.3,
+                          0.5
+                        ],
+                        "-children": [
+                          {
+                            "Anchor": {
+                              "@description": "Metal11",
+                              "@parameter": [
+                                "target=_source"
+                              ],
+                              "@url": [
+                                "MetalsPrototypes.html#ProtoDeclare_Metal1",
+                                "http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/MetalsPrototypes.html#ProtoDeclare_Metal11"
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@USE": "TextMat"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "-geometry": {
+                                      "Text": {
+                                        "@string": [
+                                          "Metal11"
+                                        ],
+                                        "-fontStyle": {
+                                          "FontStyle": {
+                                            "@USE": "Style"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Viewpoint": {
+                  "@DEF": "View12",
+                  "@description": "Metal12",
+                  "@position": [
+                    -3.75,
+                    0.75,
+                    3
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    -3.75,
+                    0.75,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "Anchor": {
+                        "@description": "Metal12 view",
+                        "@url": [
+                          "#View12"
+                        ],
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@ambientIntensity": 0.25641,
+                                      "@diffuseColor": [
+                                        0.222308,
+                                        0.15428,
+                                        0
+                                      ],
+                                      "@shininess": 0.163265,
+                                      "@specularColor": [
+                                        0.714286,
+                                        0.696627,
+                                        0.55665
+                                      ]
+                                    }
+                                  }
+                                }
+                              },
+                              "-geometry": {
+                                "Sphere": {
+                                  "@USE": "Ball"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Transform": {
+                        "@translation": [
+                          0,
+                          0.3,
+                          0.5
+                        ],
+                        "-children": [
+                          {
+                            "Anchor": {
+                              "@description": "Metal12",
+                              "@parameter": [
+                                "target=_source"
+                              ],
+                              "@url": [
+                                "MetalsPrototypes.html#ProtoDeclare_Metal2",
+                                "http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/MetalsPrototypes.html#ProtoDeclare_Metal12"
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@USE": "TextMat"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "-geometry": {
+                                      "Text": {
+                                        "@string": [
+                                          "Metal12"
+                                        ],
+                                        "-fontStyle": {
+                                          "FontStyle": {
+                                            "@USE": "Style"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Viewpoint": {
+                  "@DEF": "View13",
+                  "@description": "Metal13",
+                  "@position": [
+                    -2.25,
+                    0.75,
+                    3
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    -2.25,
+                    0.75,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "Anchor": {
+                        "@description": "Metal13 view",
+                        "@url": [
+                          "#View13"
+                        ],
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@ambientIntensity": 0.25641,
+                                      "@diffuseColor": [
+                                        0.222308,
+                                        0.15428,
+                                        0
+                                      ],
+                                      "@shininess": 0.204082,
+                                      "@specularColor": [
+                                        0.882653,
+                                        0.860832,
+                                        0.687861
+                                      ]
+                                    }
+                                  }
+                                }
+                              },
+                              "-geometry": {
+                                "Sphere": {
+                                  "@USE": "Ball"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Transform": {
+                        "@translation": [
+                          0,
+                          0.3,
+                          0.5
+                        ],
+                        "-children": [
+                          {
+                            "Anchor": {
+                              "@description": "Metal13",
+                              "@parameter": [
+                                "target=_source"
+                              ],
+                              "@url": [
+                                "MetalsPrototypes.html#ProtoDeclare_Metal13",
+                                "http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/MetalsPrototypes.html#ProtoDeclare_Metal13"
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@USE": "TextMat"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "-geometry": {
+                                      "Text": {
+                                        "@string": [
+                                          "Metal13"
+                                        ],
+                                        "-fontStyle": {
+                                          "FontStyle": {
+                                            "@USE": "Style"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Viewpoint": {
+                  "@DEF": "View14",
+                  "@description": "Metal14",
+                  "@position": [
+                    -0.75,
+                    0.75,
+                    3
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    -0.75,
+                    0.75,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "Anchor": {
+                        "@description": "Metal14 view",
+                        "@url": [
+                          "#View14"
+                        ],
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@ambientIntensity": 0.25,
+                                      "@diffuseColor": [
+                                        0.315152,
+                                        0.07457,
+                                        0
+                                      ],
+                                      "@shininess": 0.036364,
+                                      "@specularColor": [
+                                        0.508861,
+                                        0.684007,
+                                        0.326263
+                                      ]
+                                    }
+                                  }
+                                }
+                              },
+                              "-geometry": {
+                                "Sphere": {
+                                  "@USE": "Ball"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Transform": {
+                        "@translation": [
+                          0,
+                          0.3,
+                          0.5
+                        ],
+                        "-children": [
+                          {
+                            "Anchor": {
+                              "@description": "Metal14",
+                              "@parameter": [
+                                "target=_source"
+                              ],
+                              "@url": [
+                                "MetalsPrototypes.html#ProtoDeclare_Metal14",
+                                "http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/MetalsPrototypes.html#ProtoDeclare_Metal14"
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@USE": "TextMat"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "-geometry": {
+                                      "Text": {
+                                        "@string": [
+                                          "Metal14"
+                                        ],
+                                        "-fontStyle": {
+                                          "FontStyle": {
+                                            "@USE": "Style"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Viewpoint": {
+                  "@DEF": "View15",
+                  "@description": "Metal15",
+                  "@position": [
+                    0.75,
+                    0.75,
+                    3
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    0.75,
+                    0.75,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "Anchor": {
+                        "@description": "Metal15 view",
+                        "@url": [
+                          "#View15"
+                        ],
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@ambientIntensity": 0.25,
+                                      "@diffuseColor": [
+                                        0.384722,
+                                        0.266993,
+                                        0
+                                      ],
+                                      "@shininess": 0.066667,
+                                      "@specularColor": [
+                                        0.757576,
+                                        0.738847,
+                                        0.590386
+                                      ]
+                                    }
+                                  }
+                                }
+                              },
+                              "-geometry": {
+                                "Sphere": {
+                                  "@USE": "Ball"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Transform": {
+                        "@translation": [
+                          0,
+                          0.3,
+                          0.5
+                        ],
+                        "-children": [
+                          {
+                            "Anchor": {
+                              "@description": "Metal15",
+                              "@parameter": [
+                                "target=_source"
+                              ],
+                              "@url": [
+                                "MetalsPrototypes.html#ProtoDeclare_Metal15",
+                                "http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/MetalsPrototypes.html#ProtoDeclare_Metal15"
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@USE": "TextMat"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "-geometry": {
+                                      "Text": {
+                                        "@string": [
+                                          "Metal15"
+                                        ],
+                                        "-fontStyle": {
+                                          "FontStyle": {
+                                            "@USE": "Style"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Viewpoint": {
+                  "@DEF": "View16",
+                  "@description": "Metal16",
+                  "@position": [
+                    2.25,
+                    0.75,
+                    3
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    2.25,
+                    0.75,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "Anchor": {
+                        "@description": "Metal16 view",
+                        "@url": [
+                          "#View16"
+                        ],
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@ambientIntensity": 0.25641,
+                                      "@diffuseColor": [
+                                        0.222308,
+                                        0.15428,
+                                        0
+                                      ],
+                                      "@shininess": 0.020408,
+                                      "@specularColor": [
+                                        0.678571,
+                                        0.661796,
+                                        0.528818
+                                      ]
+                                    }
+                                  }
+                                }
+                              },
+                              "-geometry": {
+                                "Sphere": {
+                                  "@USE": "Ball"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Transform": {
+                        "@translation": [
+                          0,
+                          0.3,
+                          0.5
+                        ],
+                        "-children": [
+                          {
+                            "Anchor": {
+                              "@description": "Metal16",
+                              "@parameter": [
+                                "target=_source"
+                              ],
+                              "@url": [
+                                "MetalsPrototypes.html#ProtoDeclare_Metal6",
+                                "http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/MetalsPrototypes.html#ProtoDeclare_Metal16"
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@USE": "TextMat"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "-geometry": {
+                                      "Text": {
+                                        "@string": [
+                                          "Metal16"
+                                        ],
+                                        "-fontStyle": {
+                                          "FontStyle": {
+                                            "@USE": "Style"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Viewpoint": {
+                  "@DEF": "View17",
+                  "@description": "Metal17",
+                  "@position": [
+                    3.75,
+                    0.75,
+                    3
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    3.75,
+                    0.75,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "Anchor": {
+                        "@description": "Metal17 view",
+                        "@url": [
+                          "#View17"
+                        ],
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@ambientIntensity": 0.256,
+                                      "@diffuseColor": [
+                                        0.029158,
+                                        0.026292,
+                                        0.026964
+                                      ],
+                                      "@shininess": 0.061224,
+                                      "@specularColor": [
+                                        0.641609,
+                                        0.651044,
+                                        0.979592
+                                      ]
+                                    }
+                                  }
+                                }
+                              },
+                              "-geometry": {
+                                "Sphere": {
+                                  "@USE": "Ball"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Transform": {
+                        "@translation": [
+                          0,
+                          0.3,
+                          0.5
+                        ],
+                        "-children": [
+                          {
+                            "Anchor": {
+                              "@description": "Metal17",
+                              "@parameter": [
+                                "target=_source"
+                              ],
+                              "@url": [
+                                "MetalsPrototypes.html#ProtoDeclare_Metal17",
+                                "http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/MetalsPrototypes.html#ProtoDeclare_Metal17"
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@USE": "TextMat"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "-geometry": {
+                                      "Text": {
+                                        "@string": [
+                                          "Metal17"
+                                        ],
+                                        "-fontStyle": {
+                                          "FontStyle": {
+                                            "@USE": "Style"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Viewpoint": {
+                  "@DEF": "View18",
+                  "@description": "Metal18",
+                  "@position": [
+                    -3.75,
+                    -0.75,
+                    3
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    -3.75,
+                    -0.75,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "Anchor": {
+                        "@description": "Metal18 view",
+                        "@url": [
+                          "#View18"
+                        ],
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@ambientIntensity": 0,
+                                      "@diffuseColor": [
+                                        0,
+                                        0,
+                                        0
+                                      ],
+                                      "@shininess": 0.557576,
+                                      "@specularColor": [
+                                        1,
+                                        0.991559,
+                                        0.963793
+                                      ]
+                                    }
+                                  }
+                                }
+                              },
+                              "-geometry": {
+                                "Sphere": {
+                                  "@USE": "Ball"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Transform": {
+                        "@translation": [
+                          0,
+                          0.3,
+                          0.5
+                        ],
+                        "-children": [
+                          {
+                            "Anchor": {
+                              "@description": "Metal18",
+                              "@parameter": [
+                                "target=_source"
+                              ],
+                              "@url": [
+                                "MetalsPrototypes.html#ProtoDeclare_Metal18",
+                                "http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/MetalsPrototypes.html#ProtoDeclare_Metal18"
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@USE": "TextMat"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "-geometry": {
+                                      "Text": {
+                                        "@string": [
+                                          "Metal18"
+                                        ],
+                                        "-fontStyle": {
+                                          "FontStyle": {
+                                            "@USE": "Style"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Viewpoint": {
+                  "@DEF": "View19",
+                  "@description": "Metal19",
+                  "@position": [
+                    -2.25,
+                    -0.75,
+                    3
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    -2.25,
+                    -0.75,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "Anchor": {
+                        "@description": "Metal19 view",
+                        "@url": [
+                          "#View19"
+                        ],
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@ambientIntensity": 0.25,
+                                      "@diffuseColor": [
+                                        0.081104,
+                                        0,
+                                        0.079592
+                                      ],
+                                      "@shininess": 0.654545,
+                                      "@specularColor": [
+                                        0.963636,
+                                        0.955501,
+                                        0.928746
+                                      ]
+                                    }
+                                  }
+                                }
+                              },
+                              "-geometry": {
+                                "Sphere": {
+                                  "@USE": "Ball"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Transform": {
+                        "@translation": [
+                          0,
+                          0.3,
+                          0.5
+                        ],
+                        "-children": [
+                          {
+                            "Anchor": {
+                              "@description": "Metal19",
+                              "@parameter": [
+                                "target=_source"
+                              ],
+                              "@url": [
+                                "MetalsPrototypes.html#ProtoDeclare_Metal19",
+                                "http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/MetalsPrototypes.html#ProtoDeclare_Metal19"
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@USE": "TextMat"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "-geometry": {
+                                      "Text": {
+                                        "@string": [
+                                          "Metal19"
+                                        ],
+                                        "-fontStyle": {
+                                          "FontStyle": {
+                                            "@USE": "Style"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Viewpoint": {
+                  "@DEF": "View20",
+                  "@description": "Metal20",
+                  "@position": [
+                    -0.75,
+                    -0.75,
+                    3
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    -0.75,
+                    -0.75,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "Anchor": {
+                        "@description": "Metal20 view",
+                        "@url": [
+                          "#View20"
+                        ],
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@ambientIntensity": 0.249999,
+                                      "@diffuseColor": [
+                                        0,
+                                        0,
+                                        0.04254
+                                      ],
+                                      "@shininess": 0.102041,
+                                      "@specularColor": [
+                                        0.632653,
+                                        0.627312,
+                                        0.609747
+                                      ]
+                                    }
+                                  }
+                                }
+                              },
+                              "-geometry": {
+                                "Sphere": {
+                                  "@USE": "Ball"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Transform": {
+                        "@translation": [
+                          0,
+                          0.3,
+                          0.5
+                        ],
+                        "-children": [
+                          {
+                            "Anchor": {
+                              "@description": "Metal20",
+                              "@parameter": [
+                                "target=_source"
+                              ],
+                              "@url": [
+                                "MetalsPrototypes.html#ProtoDeclare_Metal20",
+                                "http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/MetalsPrototypes.html#ProtoDeclare_Metal20"
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@USE": "TextMat"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "-geometry": {
+                                      "Text": {
+                                        "@string": [
+                                          "Metal20"
+                                        ],
+                                        "-fontStyle": {
+                                          "FontStyle": {
+                                            "@USE": "Style"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Viewpoint": {
+                  "@DEF": "View21",
+                  "@description": "Metal21",
+                  "@position": [
+                    0.75,
+                    -0.75,
+                    3
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    0.75,
+                    -0.75,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "Anchor": {
+                        "@description": "Metal21 view",
+                        "@url": [
+                          "#View21"
+                        ],
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@ambientIntensity": 0.249999,
+                                      "@diffuseColor": [
+                                        0,
+                                        0,
+                                        0.04254
+                                      ],
+                                      "@shininess": 0.056122,
+                                      "@specularColor": [
+                                        0.632653,
+                                        0.627312,
+                                        0.609747
+                                      ]
+                                    }
+                                  }
+                                }
+                              },
+                              "-geometry": {
+                                "Sphere": {
+                                  "@USE": "Ball"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Transform": {
+                        "@translation": [
+                          0,
+                          0.3,
+                          0.5
+                        ],
+                        "-children": [
+                          {
+                            "Anchor": {
+                              "@description": "Metal21",
+                              "@parameter": [
+                                "target=_source"
+                              ],
+                              "@url": [
+                                "MetalsPrototypes.html#ProtoDeclare_Metal21",
+                                "http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/MetalsPrototypes.html#ProtoDeclare_Metal21"
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@USE": "TextMat"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "-geometry": {
+                                      "Text": {
+                                        "@string": [
+                                          "Metal21"
+                                        ],
+                                        "-fontStyle": {
+                                          "FontStyle": {
+                                            "@USE": "Style"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Viewpoint": {
+                  "@DEF": "View22",
+                  "@description": "Metal22",
+                  "@position": [
+                    2.25,
+                    -0.75,
+                    3
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    2.25,
+                    -0.75,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "Anchor": {
+                        "@description": "Metal22 view",
+                        "@url": [
+                          "#View22"
+                        ],
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@ambientIntensity": 0.249999,
+                                      "@diffuseColor": [
+                                        0,
+                                        0,
+                                        0.04254
+                                      ],
+                                      "@shininess": 0.056122,
+                                      "@specularColor": [
+                                        0.821429,
+                                        0.814494,
+                                        0.791687
+                                      ]
+                                    }
+                                  }
+                                }
+                              },
+                              "-geometry": {
+                                "Sphere": {
+                                  "@USE": "Ball"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Transform": {
+                        "@translation": [
+                          0,
+                          0.3,
+                          0.5
+                        ],
+                        "-children": [
+                          {
+                            "Anchor": {
+                              "@description": "Metal22",
+                              "@parameter": [
+                                "target=_source"
+                              ],
+                              "@url": [
+                                "MetalsPrototypes.html#ProtoDeclare_Metal2",
+                                "http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/MetalsPrototypes.html#ProtoDeclare_Metal22"
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@USE": "TextMat"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "-geometry": {
+                                      "Text": {
+                                        "@string": [
+                                          "Metal22"
+                                        ],
+                                        "-fontStyle": {
+                                          "FontStyle": {
+                                            "@USE": "Style"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Viewpoint": {
+                  "@DEF": "View23",
+                  "@description": "Metal23",
+                  "@position": [
+                    3.75,
+                    -0.75,
+                    3
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    3.75,
+                    -0.75,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "Anchor": {
+                        "@description": "Metal23 view",
+                        "@url": [
+                          "#View23"
+                        ],
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@ambientIntensity": 0,
+                                      "@diffuseColor": [
+                                        0,
+                                        0,
+                                        0
+                                      ],
+                                      "@shininess": 0.056122,
+                                      "@specularColor": [
+                                        0.918367,
+                                        0.910614,
+                                        0.885116
+                                      ]
+                                    }
+                                  }
+                                }
+                              },
+                              "-geometry": {
+                                "Sphere": {
+                                  "@USE": "Ball"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Transform": {
+                        "@translation": [
+                          0,
+                          0.3,
+                          0.5
+                        ],
+                        "-children": [
+                          {
+                            "Anchor": {
+                              "@description": "Metal23",
+                              "@parameter": [
+                                "target=_source"
+                              ],
+                              "@url": [
+                                "MetalsPrototypes.html#ProtoDeclare_Metal3",
+                                "http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/MetalsPrototypes.html#ProtoDeclare_Metal23"
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@USE": "TextMat"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "-geometry": {
+                                      "Text": {
+                                        "@string": [
+                                          "Metal23"
+                                        ],
+                                        "-fontStyle": {
+                                          "FontStyle": {
+                                            "@USE": "Style"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Viewpoint": {
+                  "@DEF": "View24",
+                  "@description": "Metal24",
+                  "@position": [
+                    -3.75,
+                    -2.25,
+                    3
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    -3.75,
+                    -2.25,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "Anchor": {
+                        "@description": "Metal24 view",
+                        "@url": [
+                          "#View24"
+                        ],
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@ambientIntensity": 0.256,
+                                      "@diffuseColor": [
+                                        0.155308,
+                                        0.150902,
+                                        0.151742
+                                      ],
+                                      "@shininess": 0.102041,
+                                      "@specularColor": [
+                                        0.528268,
+                                        0.524391,
+                                        0.524455
+                                      ]
+                                    }
+                                  }
+                                }
+                              },
+                              "-geometry": {
+                                "Sphere": {
+                                  "@USE": "Ball"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Transform": {
+                        "@translation": [
+                          0,
+                          0.3,
+                          0.5
+                        ],
+                        "-children": [
+                          {
+                            "Anchor": {
+                              "@description": "Metal24",
+                              "@parameter": [
+                                "target=_source"
+                              ],
+                              "@url": [
+                                "MetalsPrototypes.html#ProtoDeclare_Metal24",
+                                "http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/MetalsPrototypes.html#ProtoDeclare_Metal24"
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@USE": "TextMat"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "-geometry": {
+                                      "Text": {
+                                        "@string": [
+                                          "Metal24"
+                                        ],
+                                        "-fontStyle": {
+                                          "FontStyle": {
+                                            "@USE": "Style"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Viewpoint": {
+                  "@DEF": "View25",
+                  "@description": "Metal25",
+                  "@position": [
+                    -2.25,
+                    -2.25,
+                    3
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    -2.25,
+                    -2.25,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "Anchor": {
+                        "@description": "Metal25 view",
+                        "@url": [
+                          "#View25"
+                        ],
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@ambientIntensity": 0,
+                                      "@diffuseColor": [
+                                        0,
+                                        0,
+                                        0
+                                      ],
+                                      "@shininess": 0.056122,
+                                      "@specularColor": [
+                                        0.44898,
+                                        0.445189,
+                                        0.432723
+                                      ]
+                                    }
+                                  }
+                                }
+                              },
+                              "-geometry": {
+                                "Sphere": {
+                                  "@USE": "Ball"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Transform": {
+                        "@translation": [
+                          0,
+                          0.3,
+                          0.5
+                        ],
+                        "-children": [
+                          {
+                            "Anchor": {
+                              "@description": "Metal25",
+                              "@parameter": [
+                                "target=_source"
+                              ],
+                              "@url": [
+                                "MetalsPrototypes.html#ProtoDeclare_Metal25",
+                                "http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/MetalsPrototypes.html#ProtoDeclare_Metal25"
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@USE": "TextMat"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "-geometry": {
+                                      "Text": {
+                                        "@string": [
+                                          "Metal25"
+                                        ],
+                                        "-fontStyle": {
+                                          "FontStyle": {
+                                            "@USE": "Style"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Viewpoint": {
+                  "@DEF": "View26",
+                  "@description": "Metal26",
+                  "@position": [
+                    -0.75,
+                    -2.25,
+                    3
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    -0.75,
+                    -2.25,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "Anchor": {
+                        "@description": "Metal26 view",
+                        "@url": [
+                          "#View26"
+                        ],
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@ambientIntensity": 0,
+                                      "@diffuseColor": [
+                                        0,
+                                        0,
+                                        0
+                                      ],
+                                      "@shininess": 0.102041,
+                                      "@specularColor": [
+                                        0.780612,
+                                        0.774022,
+                                        0.752349
+                                      ]
+                                    }
+                                  }
+                                }
+                              },
+                              "-geometry": {
+                                "Sphere": {
+                                  "@USE": "Ball"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Transform": {
+                        "@translation": [
+                          0,
+                          0.3,
+                          0.5
+                        ],
+                        "-children": [
+                          {
+                            "Anchor": {
+                              "@description": "Metal26",
+                              "@parameter": [
+                                "target=_source"
+                              ],
+                              "@url": [
+                                "MetalsPrototypes.html#ProtoDeclare_Metal26",
+                                "http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/MetalsPrototypes.html#ProtoDeclare_Metal26"
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@USE": "TextMat"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "-geometry": {
+                                      "Text": {
+                                        "@string": [
+                                          "Metal26"
+                                        ],
+                                        "-fontStyle": {
+                                          "FontStyle": {
+                                            "@USE": "Style"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Viewpoint": {
+                  "@DEF": "View27",
+                  "@description": "Metal27",
+                  "@position": [
+                    0.75,
+                    -2.25,
+                    3
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    0.75,
+                    -2.25,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "Anchor": {
+                        "@description": "Metal27 view",
+                        "@url": [
+                          "#View27"
+                        ],
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@ambientIntensity": 1,
+                                      "@diffuseColor": [
+                                        0.557827,
+                                        0.571796,
+                                        0.571797
+                                      ],
+                                      "@shininess": 0.236364,
+                                      "@specularColor": [
+                                        0.708205,
+                                        0.480594,
+                                        0.458724
+                                      ]
+                                    }
+                                  }
+                                }
+                              },
+                              "-geometry": {
+                                "Sphere": {
+                                  "@USE": "Ball"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Transform": {
+                        "@translation": [
+                          0,
+                          0.3,
+                          0.5
+                        ],
+                        "-children": [
+                          {
+                            "Anchor": {
+                              "@description": "Metal27",
+                              "@parameter": [
+                                "target=_source"
+                              ],
+                              "@url": [
+                                "MetalsPrototypes.html#ProtoDeclare_Metal27",
+                                "http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/MetalsPrototypes.html#ProtoDeclare_Metal27"
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@USE": "TextMat"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "-geometry": {
+                                      "Text": {
+                                        "@string": [
+                                          "Metal27"
+                                        ],
+                                        "-fontStyle": {
+                                          "FontStyle": {
+                                            "@USE": "Style"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Viewpoint": {
+                  "@DEF": "View28",
+                  "@description": "Metal28",
+                  "@position": [
+                    2.25,
+                    -2.25,
+                    3
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    2.25,
+                    -2.25,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "Anchor": {
+                        "@description": "Metal28 view",
+                        "@url": [
+                          "#View28"
+                        ],
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@ambientIntensity": 1,
+                                      "@diffuseColor": [
+                                        0.412673,
+                                        0.455048,
+                                        0.472727
+                                      ],
+                                      "@shininess": 0.127273,
+                                      "@specularColor": [
+                                        0.420602,
+                                        0.431402,
+                                        0.454545
+                                      ]
+                                    }
+                                  }
+                                }
+                              },
+                              "-geometry": {
+                                "Sphere": {
+                                  "@USE": "Ball"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Transform": {
+                        "@translation": [
+                          0,
+                          0.3,
+                          0.5
+                        ],
+                        "-children": [
+                          {
+                            "Anchor": {
+                              "@description": "Metal28",
+                              "@parameter": [
+                                "target=_source"
+                              ],
+                              "@url": [
+                                "MetalsPrototypes.html#ProtoDeclare_Metal28",
+                                "http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/MetalsPrototypes.html#ProtoDeclare_Metal28"
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@USE": "TextMat"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "-geometry": {
+                                      "Text": {
+                                        "@string": [
+                                          "Metal28"
+                                        ],
+                                        "-fontStyle": {
+                                          "FontStyle": {
+                                            "@USE": "Style"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Viewpoint": {
+                  "@DEF": "View29",
+                  "@description": "Metal29",
+                  "@position": [
+                    3.75,
+                    -2.25,
+                    3
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    3.75,
+                    -2.25,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "Anchor": {
+                        "@description": "Metal29 view",
+                        "@url": [
+                          "#View29"
+                        ],
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@ambientIntensity": 0.234375,
+                                      "@diffuseColor": [
+                                        0.566681,
+                                        0.580872,
+                                        0.580874
+                                      ],
+                                      "@shininess": 0.168182,
+                                      "@specularColor": [
+                                        0.673937,
+                                        0.45734,
+                                        0.436528
+                                      ]
+                                    }
+                                  }
+                                }
+                              },
+                              "-geometry": {
+                                "Sphere": {
+                                  "@USE": "Ball"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Transform": {
+                        "@translation": [
+                          0,
+                          0.3,
+                          0.5
+                        ],
+                        "-children": [
+                          {
+                            "Anchor": {
+                              "@description": "Metal29",
+                              "@parameter": [
+                                "target=_source"
+                              ],
+                              "@url": [
+                                "MetalsPrototypes.html#ProtoDeclare_Metal29",
+                                "http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/MetalsPrototypes.html#ProtoDeclare_Metal29"
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@USE": "TextMat"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "-geometry": {
+                                      "Text": {
+                                        "@string": [
+                                          "Metal29"
+                                        ],
+                                        "-fontStyle": {
+                                          "FontStyle": {
+                                            "@USE": "Style"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Viewpoint": {
+                  "@DEF": "View30",
+                  "@description": "Metal30",
+                  "@position": [
+                    -3.75,
+                    -3.75,
+                    3
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    -3.75,
+                    -3.75,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "Anchor": {
+                        "@description": "Metal30 view",
+                        "@url": [
+                          "#View30"
+                        ],
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@ambientIntensity": 0.256,
+                                      "@diffuseColor": [
+                                        0.372322,
+                                        0.371574,
+                                        0.373173
+                                      ],
+                                      "@shininess": 0.127551,
+                                      "@specularColor": [
+                                        0.890909,
+                                        0.887832,
+                                        0.890909
+                                      ]
+                                    }
+                                  }
+                                }
+                              },
+                              "-geometry": {
+                                "Sphere": {
+                                  "@USE": "Ball"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Transform": {
+                        "@translation": [
+                          0,
+                          0.3,
+                          0.5
+                        ],
+                        "-children": [
+                          {
+                            "Anchor": {
+                              "@description": "Metal30",
+                              "@parameter": [
+                                "target=_source"
+                              ],
+                              "@url": [
+                                "MetalsPrototypes.html#ProtoDeclare_Metal30",
+                                "http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/MetalsPrototypes.html#ProtoDeclare_Metal30"
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@USE": "TextMat"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "-geometry": {
+                                      "Text": {
+                                        "@string": [
+                                          "Metal30"
+                                        ],
+                                        "-fontStyle": {
+                                          "FontStyle": {
+                                            "@USE": "Style"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Viewpoint": {
+                  "@DEF": "View31",
+                  "@description": "Metal31",
+                  "@position": [
+                    -2.25,
+                    -3.75,
+                    3
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    -2.25,
+                    -3.75,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "Anchor": {
+                        "@description": "Metal31 view",
+                        "@url": [
+                          "#View31"
+                        ],
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@ambientIntensity": 0.256,
+                                      "@diffuseColor": [
+                                        0.372322,
+                                        0.371574,
+                                        0.373173
+                                      ],
+                                      "@shininess": 0.127551,
+                                      "@specularColor": [
+                                        0.556122,
+                                        0.554201,
+                                        0.556122
+                                      ]
+                                    }
+                                  }
+                                }
+                              },
+                              "-geometry": {
+                                "Sphere": {
+                                  "@USE": "Ball"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Transform": {
+                        "@translation": [
+                          0,
+                          0.3,
+                          0.5
+                        ],
+                        "-children": [
+                          {
+                            "Anchor": {
+                              "@description": "Metal31",
+                              "@parameter": [
+                                "target=_source"
+                              ],
+                              "@url": [
+                                "MetalsPrototypes.html#ProtoDeclare_Metal31",
+                                "http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/MetalsPrototypes.html#ProtoDeclare_Metal31"
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@USE": "TextMat"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "-geometry": {
+                                      "Text": {
+                                        "@string": [
+                                          "Metal31"
+                                        ],
+                                        "-fontStyle": {
+                                          "FontStyle": {
+                                            "@USE": "Style"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Viewpoint": {
+                  "@DEF": "View32",
+                  "@description": "Metal32",
+                  "@position": [
+                    -0.75,
+                    -3.75,
+                    3
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    -0.75,
+                    -3.75,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "Anchor": {
+                        "@description": "Metal32 view",
+                        "@url": [
+                          "#View32"
+                        ],
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@ambientIntensity": 0.113208,
+                                      "@diffuseColor": [
+                                        0.697737,
+                                        0.696336,
+                                        0.699331
+                                      ],
+                                      "@shininess": 1,
+                                      "@specularColor": [
+                                        0.227785,
+                                        0.227345,
+                                        0.227393
+                                      ]
+                                    }
+                                  }
+                                }
+                              },
+                              "-geometry": {
+                                "Sphere": {
+                                  "@USE": "Ball"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Transform": {
+                        "@translation": [
+                          0,
+                          0.3,
+                          0.5
+                        ],
+                        "-children": [
+                          {
+                            "Anchor": {
+                              "@description": "Metal32",
+                              "@parameter": [
+                                "target=_source"
+                              ],
+                              "@url": [
+                                "MetalsPrototypes.html#ProtoDeclare_Metal32",
+                                "http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/MetalsPrototypes.html#ProtoDeclare_Metal32"
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@USE": "TextMat"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "-geometry": {
+                                      "Text": {
+                                        "@string": [
+                                          "Metal32"
+                                        ],
+                                        "-fontStyle": {
+                                          "FontStyle": {
+                                            "@USE": "Style"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Viewpoint": {
+                  "@DEF": "View33",
+                  "@description": "Metal33",
+                  "@position": [
+                    0.75,
+                    -3.75,
+                    3
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    0.75,
+                    -3.75,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "Anchor": {
+                        "@description": "Metal33 view",
+                        "@url": [
+                          "#View33"
+                        ],
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@ambientIntensity": 0.625,
+                                      "@diffuseColor": [
+                                        0.4,
+                                        0.4,
+                                        0.4
+                                      ],
+                                      "@shininess": 0.6,
+                                      "@specularColor": [
+                                        0.774597,
+                                        0.774597,
+                                        0.774597
+                                      ]
+                                    }
+                                  }
+                                }
+                              },
+                              "-geometry": {
+                                "Sphere": {
+                                  "@USE": "Ball"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Transform": {
+                        "@translation": [
+                          0,
+                          0.3,
+                          0.5
+                        ],
+                        "-children": [
+                          {
+                            "Anchor": {
+                              "@description": "Metal33",
+                              "@parameter": [
+                                "target=_source"
+                              ],
+                              "@url": [
+                                "MetalsPrototypes.html#ProtoDeclare_Metal33",
+                                "http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/MetalsPrototypes.html#ProtoDeclare_Metal33"
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@USE": "TextMat"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "-geometry": {
+                                      "Text": {
+                                        "@string": [
+                                          "Metal33"
+                                        ],
+                                        "-fontStyle": {
+                                          "FontStyle": {
+                                            "@USE": "Style"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Viewpoint": {
+                  "@DEF": "View34",
+                  "@description": "Metal34",
+                  "@position": [
+                    2.25,
+                    -3.75,
+                    3
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    2.25,
+                    -3.75,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "Anchor": {
+                        "@description": "Metal34 view",
+                        "@url": [
+                          "#View34"
+                        ],
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@ambientIntensity": 0.833333,
+                                      "@diffuseColor": [
+                                        0.2775,
+                                        0.2775,
+                                        0.2775
+                                      ],
+                                      "@shininess": 0.7,
+                                      "@specularColor": [
+                                        0.773911,
+                                        0.773911,
+                                        0.773911
+                                      ]
+                                    }
+                                  }
+                                }
+                              },
+                              "-geometry": {
+                                "Sphere": {
+                                  "@USE": "Ball"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Transform": {
+                        "@translation": [
+                          0,
+                          0.3,
+                          0.5
+                        ],
+                        "-children": [
+                          {
+                            "Anchor": {
+                              "@description": "Metal34",
+                              "@parameter": [
+                                "target=_source"
+                              ],
+                              "@url": [
+                                "MetalsPrototypes.html#ProtoDeclare_Metal34",
+                                "http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/MetalsPrototypes.html#ProtoDeclare_Metal34"
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@USE": "TextMat"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "-geometry": {
+                                      "Text": {
+                                        "@string": [
+                                          "Metal34"
+                                        ],
+                                        "-fontStyle": {
+                                          "FontStyle": {
+                                            "@USE": "Style"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "Close_Time",
+            "@fromField": "fraction_changed",
+            "@toNode": "Close_Mover",
+            "@toField": "set_fraction"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "Close_Mover",
+            "@fromField": "value_changed",
+            "@toNode": "Close_travel",
+            "@toField": "set_translation"
+          }
+        }
+      ]
+    }
+  }
+}
