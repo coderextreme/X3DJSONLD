@@ -9,22 +9,32 @@ function flattener(object) {
 			var isArray = false;
 		}
 		for (var p in object) {
-			var ind = parseInt(p);
 			var possibleArray = flattener(object[p]);
-			if (Array.isArray(object) && Array.isArray(possibleArray)) {
-				for (var q in possibleArray) {
-					var ind = parseInt(p)+parseInt(offset)+parseInt(q);
-					// console.log(ind, '=1', possibleArray[q]);
-					newobject[ind] = possibleArray[q];
+			if (isArray) {
+				var ind = parseInt(p);
+				if (Array.isArray(possibleArray)) {
+					for (var q in possibleArray) {
+						ind = parseInt(p)+parseInt(offset)+parseInt(q);
+						// console.log(ind, '=1', possibleArray[q]);
+						newobject[ind] = possibleArray[q];
+					}
+					offset += parseInt(q);
+				} else {
+					ind = parseInt(p)+parseInt(offset);
+					// console.log(ind, '=2', possibleArray);
+					newobject[ind] = possibleArray;
 				}
-				offset += parseInt(q);
-			} else if (isArray) {
-				var ind = parseInt(p)+parseInt(offset);
-				// console.log(ind, '=2', possibleArray);
-				newobject[ind] = possibleArray;
 			} else {
 				// console.log(p, '=3', possibleArray);
-				newobject[p] = possibleArray;
+				if (Array.isArray(possibleArray)) {
+					if (p === '-geometry' || p === '-material' || p === '-appearance') {
+						newobject[p] = possibleArray[0];
+					} else {
+						newobject[p] = possibleArray;
+					}
+				} else {
+					newobject[p] = possibleArray;
+				}
 			}
 		}
 		return newobject;
