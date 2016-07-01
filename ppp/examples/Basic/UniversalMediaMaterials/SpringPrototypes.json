@@ -1,0 +1,162 @@
+{
+  "X3D": {
+    "encoding": "UTF-8",
+    "@profile": "Immersive",
+    "@version": "3.0",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "SpringPrototypes.x3d"
+        },
+        {
+          "@name": "description",
+          "@content": "Prototype declarations defining values for X3D/VRML materials, originally converted from SGI's Open Inventor material examples."
+        },
+        {
+          "@name": "creator",
+          "@content": "David Roussel"
+        },
+        {
+          "@name": "translator",
+          "@content": "James Harney, Don Brutzman NPS"
+        },
+        {
+          "@name": "created",
+          "@content": "7 April 2002"
+        },
+        {
+          "@name": "modified",
+          "@content": "6 January 2009"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://vrmlstuff.free.fr/materials"
+        },
+        {
+          "@name": "subject",
+          "@content": "Universal Media Material Library"
+        },
+        {
+          "@name": "identifier",
+          "@content": "http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/SpringPrototypes.x3d"
+        },
+        {
+          "@name": "generator",
+          "@content": "Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+        },
+        {
+          "@name": "license",
+          "@content": "../license.html"
+        },
+        {
+          "@name": "translated",
+          "@content": "28 March 2016"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+        },
+        {
+          "@name": "warning",
+          "@content": "An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+          "Anchor": {
+            "@description": "click for examples",
+            "@parameter": [
+              "target=_blank"
+            ],
+            "@url": [
+              "SpringExamples.x3d",
+              "http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/SpringExamples.x3d",
+              "SpringExamples.wrl",
+              "http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/SpringExamples.wrl"
+            ],
+            "-children": [
+              {
+                "Shape": {
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            0.8,
+                            0.4,
+                            0
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  "-geometry": {
+                    "Text": {
+                      "@string": [
+                        "SpringExamples.x3d",
+                        "is a Materials Prototype declaration file.",
+                        "",
+                        "For an example scene using these node,",
+                        "click this text and view",
+                        "SpringExamples.x3d"
+                      ],
+                      "-fontStyle": {
+                        "FontStyle": {
+                          "@justify": [
+                            "MIDDLE",
+                            "MIDDLE"
+                          ],
+                          "@size": 0.8
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

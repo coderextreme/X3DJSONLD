@@ -109,6 +109,7 @@ function setVersion(version) {
 		// Expand Protos
 		// json = externPrototypeExpander(url, json);
 		json = prototypeExpander(url, json, "");
+		json = flattener(json);
 		// console.log("JSON IS NOW", json);
 	        $('textarea#json').val(JSON.stringify(json, null, 2));
 	    }

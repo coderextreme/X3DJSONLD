@@ -1,0 +1,199 @@
+{
+  "X3D": {
+    "encoding": "UTF-8",
+    "@profile": "Immersive",
+    "@version": "3.3",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "MaterialModulator.x3d"
+        },
+        {
+          "@name": "description",
+          "@content": "Mimic a Material node and modulate fields as an animation effect"
+        },
+        {
+          "@name": "hint",
+          "@content": "try changing the modulation script so that it goes from [0 ... 1] and then [1 ... 0] alternating, rather than abruptly shifting from 1 immediately back to 0."
+        },
+        {
+          "@name": "creator",
+          "@content": "Don Brutzman"
+        },
+        {
+          "@name": "created",
+          "@content": "10 March 2008"
+        },
+        {
+          "@name": "modified",
+          "@content": "28 November 2014"
+        },
+        {
+          "@name": "subject",
+          "@content": "X3D prototype requiring Script inputOutput fields"
+        },
+        {
+          "@name": "Image",
+          "@content": "MaterialModulator.png"
+        },
+        {
+          "@name": "identifier",
+          "@content": "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14-Prototypes/MaterialModulator.x3d"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+        },
+        {
+          "@name": "license",
+          "@content": "../license.html"
+        },
+        {
+          "@name": "translated",
+          "@content": "27 March 2016"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+        },
+        {
+          "@name": "warning",
+          "@content": "An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        {},
+        {
+          "#comment": "Rendered geometry follows prototype declaration"
+        },
+        {
+          "Shape": {
+            "-geometry": {
+              "Sphere": {}
+            },
+            "-appearance": {
+              "Appearance": {
+                "-material": [
+                  {
+                    "Material": {
+                      "@DEF": "DECLMaterialModulator_INSTANCE_MaterialNode",
+                      "@diffuseColor": [
+                        0.5,
+                        0.1,
+                        0.1
+                      ],
+                      "@emissiveColor": [
+                        0,
+                        0,
+                        0
+                      ],
+                      "@specularColor": [
+                        0,
+                        0,
+                        0
+                      ],
+                      "@transparency": 0,
+                      "@shininess": 0.2,
+                      "@ambientIntensity": 0.2
+                    }
+                  },
+                  {
+                    "#comment": "Only first node (the node type) is renderable, others are along for the ride"
+                  },
+                  {
+                    "Script": {
+                      "@DEF": "DECLMaterialModulator_INSTANCE_MaterialModulatorScript",
+                      "field": [
+                        {
+                          "@name": "enabled",
+                          "@accessType": "inputOutput",
+                          "@type": "SFBool",
+                          "@value": true
+                        },
+                        {
+                          "@name": "diffuseColor",
+                          "@accessType": "inputOutput",
+                          "@type": "SFColor",
+                          "@value": [
+                            0.5,
+                            0.1,
+                            0.1
+                          ]
+                        },
+                        {
+                          "@name": "newColor",
+                          "@accessType": "outputOnly",
+                          "@type": "SFColor"
+                        },
+                        {
+                          "@name": "clockTrigger",
+                          "@accessType": "inputOnly",
+                          "@type": "SFTime"
+                        }
+                      ],
+                      "@value": [
+                        0.8,
+                        0.8,
+                        0.8
+                      ],
+                      "#sourceText": [
+                        "ecmascript:",
+                        "function initialize ()",
+                        "{",
+                        "    newColor = diffuseColor; // start with correct color",
+                        "}",
+                        "",
+                        "function clockTrigger (timeValue)",
+                        "{",
+                        "    if (!enabled) return;",
+                        "    red   = newColor.r;",
+                        "    green = newColor.g;",
+                        "    blue  = newColor.b;",
+                        "    ",
+                        "    // note different modulation rates for each color component, % is modulus operator",
+                        "    newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1);   ",
+                        "    Browser.print ('diffuseColor=(' + red +',' + green + ',' + blue + ') newColor=' + newColor.toString() + '\\');",
+                        "}"
+                      ]
+                    }
+                  },
+                  {
+                    "#comment": "Clock tickles Script to wake up and compute a new value"
+                  },
+                  {
+                    "ROUTE": {
+                      "@fromNode": "DECLMaterialModulator_INSTANCE_MaterialModulatorScript",
+                      "@fromField": "newColor",
+                      "@toNode": "DECLMaterialModulator_INSTANCE_MaterialNode",
+                      "@toField": "diffuseColor"
+                    }
+                  },
+                  {
+                    "TimeSensor": {
+                      "@DEF": "DECLMaterialModulator_INSTANCE_ModulationClock",
+                      "@cycleInterval": 0.1,
+                      "@loop": true
+                    }
+                  },
+                  {
+                    "ROUTE": {
+                      "@fromNode": "DECLMaterialModulator_INSTANCE_ModulationClock",
+                      "@fromField": "cycleTime",
+                      "@toNode": "DECLMaterialModulator_INSTANCE_MaterialModulatorScript",
+                      "@toField": "clockTrigger"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

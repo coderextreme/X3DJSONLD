@@ -1,0 +1,147 @@
+{
+  "X3D": {
+    "encoding": "UTF-8",
+    "@profile": "Immersive",
+    "@version": "3.3",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "ArtDecoPrototypesExcerpt.x3d"
+        },
+        {
+          "@name": "description",
+          "@content": "Prototype declarations defining values for X3D/VRML materials, originally converted from SGI's Open Inventor material examples. Excerpted from original."
+        },
+        {
+          "@name": "creator",
+          "@content": "David Roussel"
+        },
+        {
+          "@name": "translator",
+          "@content": "James Harney, Don Brutzman NPS"
+        },
+        {
+          "@name": "created",
+          "@content": "7 April 2002"
+        },
+        {
+          "@name": "modified",
+          "@content": "27 March 2009"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://vrmlstuff.free.fr/materials"
+        },
+        {
+          "@name": "subject",
+          "@content": "Universal Media Material Library"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d"
+        },
+        {
+          "@name": "identifier",
+          "@content": "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14-Prototypes/ArtDecoPrototypesExcerpt.x3d"
+        },
+        {
+          "@name": "generator",
+          "@content": "Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+        },
+        {
+          "@name": "license",
+          "@content": "../license.html"
+        },
+        {
+          "@name": "translated",
+          "@content": "27 March 2016"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+        },
+        {
+          "@name": "warning",
+          "@content": "An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        {
+          "#comment": "note some url addresses changed to reference local excerpt"
+        },
+        {},
+        {},
+        {},
+        {
+          "Anchor": {
+            "@description": "ArtDecoPrototypeExample",
+            "@parameter": [
+              "target=_blank"
+            ],
+            "@url": [
+              "ArtDecoExamplesExcerpt.x3d",
+              "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14-Prototypes/ArtDecoPrototypesExcerpt.x3d"
+            ],
+            "-children": [
+              {
+                "Shape": {
+                  "-appearance": {
+                    "Appearance": {
+                      "-children": [
+                        {
+                          "#comment": "replace Material node with a corresponding Prototype"
+                        }
+                      ],
+                      "-material": {
+                        "Material": {
+                          "@ambientIntensity": 0.25,
+                          "@diffuseColor": [
+                            0.282435,
+                            0.085159,
+                            0.134462
+                          ],
+                          "@shininess": 0.127273,
+                          "@specularColor": [
+                            0.276305,
+                            0.11431,
+                            0.139857
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  "-geometry": {
+                    "Text": {
+                      "@string": [
+                        "ArtDecoPrototypesExcerpt.x3d",
+                        "is a Materials Prototype declaration file.",
+                        "",
+                        "For an example scene using these nodes,",
+                        "click this text and view",
+                        "ArtDecoExamplesExcerpt.x3d"
+                      ],
+                      "-fontStyle": {
+                        "FontStyle": {
+                          "@justify": [
+                            "MIDDLE",
+                            "MIDDLE"
+                          ],
+                          "@size": 0.8
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
