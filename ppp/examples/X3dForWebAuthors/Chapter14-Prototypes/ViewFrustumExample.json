@@ -389,9 +389,11 @@
               }
             ],
             "@value": false,
-            "-children": {
-              "#comment": "NULL node, ProtoInstance must provide"
-            },
+            "-children": [
+              {
+                "#comment": "NULL node, ProtoInstance must provide"
+              }
+            ],
             "#sourceText": [
               "// Description: Perform geometric computations for ViewFrustum prototype",
               "// Filename:    ViewFrustumPrototypeScript.js",

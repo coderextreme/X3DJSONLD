@@ -77,41 +77,88 @@ function setValueFromInterface(field, object, objectfield) {
 	if (typeof fieldname_field_scope != 'undefined' && typeof fieldname_field_scope[0] != 'undefined') {
 		prefix = fieldname_field_scope[0].substr(0,1);
 	}
+	if (prefix === '@' && objectfield === 'children') {
+		prefix = '-';
+	}
+	if (prefix === '-' && objectfield === 'value') {
+		prefix = "@";
+	}
 	objectfield = prefix+objectfield;
 	if (typeof fieldname_field_scope != 'undefined' && typeof fieldname_field_scope[1] != 'undefined' && typeof fieldname_field_scope[0] != 'undefined' && typeof fieldname_field_scope[1][fieldname_field_scope[0]] != 'undefined') {
 		// just grab the one value out of the interface.  We may want more later for typechecking
 		var value = fieldname_field_scope[1][fieldname_field_scope[0]];
-		if (Array.isArray(value) && fieldname_field_scope[1]["@type"] === "SFNode") {
+		if (Array.isArray(value) && fieldname_field_scope[1]["@type"] === "SFNode" && objectfield !== '-children') {
 			// and some SF fields are arrays, so we have to explicitly test for SFNode
 			// can't shove an array into an SFNode, so take the first element, per Roy Walmsley
 			console.error("SFNode is array, reducing", value);
 			value = value[0];
 			// console.error("SFNode array[0]=", value);
 		}
-		object[objectfield] = value
+		if (!Array.isArray(value) && objectfield === '-children') {
+			objectfield = "@value";
+		}
+		object[objectfield] = value;
 		return [fieldname_field_scope[1]["@type"], fieldname_field_scope[2]];
 	}
 	return undefined;
+}
+
+function getObjectField(f, type) {
+	var objectfield = "value";
+	if (type.indexOf("FNode") === 1) {
+		objectfield = "children";
+	}
+	for (var a in f) {
+		if ( a === '@value' || a === '-children') {
+			// console.error("===========attribute", a);
+			objectfield = a.substr(1);
+		}
+	}
+	return objectfield;
+}
+
+function findFieldByName(fields, objectfield) {
+	for (var field in fields) {
+		var f = fields[field];
+		var fieldname = f["@name"];
+		if (fieldname === objectfield) {
+			// console.error("Found", fieldname);
+			return f;
+		}
+	}
+	throw "Can't find "+objectfield;
+}
+
+function getScriptFieldFieldTypeFieldByNameAttribute(fields, objectfield) {
+	// console.error("Searching", fields);
+	var f = findFieldByName(fields, objectfield)
+	var fieldname = f["@name"];
+	var type = f["@type"];
+	var objectfield = getObjectField(f, type);
+	return [ f, fieldname, type, objectfield];
+}
+
+function getScriptFieldFieldTypeField(fields, field) {
+	var f = fields[field];
+	var fieldname = f["@name"];
+	var type = f["@type"];
+	var objectfield = getObjectField(f, type);
+	return [ f, fieldname, type, objectfield];
 }
 
 function setScriptFields(objectp, def) {
 	var fields  = objectp["field"];
 	var scope = getScope();
 	for (var field in fields) {
-		var f = fields[field];
-		var field = f["@name"];
-		var type = f["@type"];
-		var objectfield = "value";
-		for (var a in f) {
-			if ( a === '@value' || a === '-children') {
-				// console.error("===========attribute", a);
-				objectfield = a.substr(1);
-			}
-		}
-		var type_scope = setValueFromInterface(field, f, objectfield);
-		setScriptField(scope, field, f, objectfield, type, def);
+		var field_name_field_type_objectfield_name = getScriptFieldFieldTypeField(fields, field);
+		var f = field_name_field_type_objectfield_name[0];
+		var fieldname = field_name_field_type_objectfield_name[1];
+		var type = field_name_field_type_objectfield_name[2];
+		var objectfield = field_name_field_type_objectfield_name[3];
+		var type_scope = setValueFromInterface(fieldname, f, objectfield);
+		setScriptField(scope, fieldname, f, objectfield, type, def);
 		if (typeof type_scope !== 'undefined') {
-			setScriptField(type_scope[1], field, f, objectfield, type, def);
+			setScriptField(type_scope[1], fieldname, f, objectfield, type, def);
 		}
 
 	}
@@ -119,6 +166,9 @@ function setScriptFields(objectp, def) {
 }
 
 function setScriptField(scope, field, f, objectfield, type, def) {
+	if (field === 'NavigationInfoNode') {
+		// console.error("setScriptField", scope, field, f, objectfield, type, def);
+	}
 	if (typeof scriptField[getField(scope,field)] === 'undefined') {
 		scriptField[getField(scope,field)] = [];
 	}
@@ -181,6 +231,38 @@ function setConnectFields(object, p, newobject) {
 	}
 }
 
+function setScriptConnectFields(object, p, newobject, scriptFields) {
+	var def = object["@DEF"]; // at same level as IS
+	var newdef = saveDef(def);
+	var connect = object[p]["connect"];
+	var scope = getScope();
+	newobject["field"] = scriptFields;
+	for (var cfield in connect) {
+		var f = connect[cfield];
+		if (f) {
+			var field = getScope(f["@protoField"]);
+			var objectfield = f["@nodeField"];
+			// console.error("Connect field", field, objectfield);
+			var field_name_field_type_objectfield_name = getScriptFieldFieldTypeFieldByNameAttribute(newobject["field"], objectfield);
+			var f = field_name_field_type_objectfield_name[0];
+			var fieldname = field_name_field_type_objectfield_name[1];
+			var type = field_name_field_type_objectfield_name[2];
+			var objectfield = field_name_field_type_objectfield_name[3];
+			// console.error("Node field is", objectfield);
+			var type_scope = setValueFromInterface(field, newobject, objectfield);
+			if (typeof type_scope !== 'undefined') {
+				type = type_scope[0];
+				// setEnv(scope, field, newobject, objectfield, type, newdef);
+				setScriptField(scope, field, f, objectfield, type, def);
+				setScriptField(type_scope[1], field, f, objectfield, type, def);
+			} else {
+				// setEnv(scope, field, newobject, objectfield, type, newdef);
+				setScriptField(scope, field, f, objectfield, type, def);
+			}
+		}
+	}
+}
+
 function getInterface(field) {
 	for(var i = 0; i < scopeLength(); i++) {
 		var scope = upScope(i);
@@ -214,8 +296,8 @@ function extractConnectedDef(scope, node) {
 	for (var sf in scriptField[getField(scope,node)]) {
 		var obj = scriptField[getField(scope,node)][sf];
 		if (typeof obj !== 'undefined') {
-			defobj = [obj[3], obj[1]];
-			// console.error("def1 is", defobj);
+			defobj = [getField(scope, obj[3]), obj[0]["@name"]];
+			console.error("def1 is", defobj);
 		}
 	}
 	if (typeof defobj === 'undefined') {
@@ -244,8 +326,38 @@ function extractConnectedDef(scope, node) {
 }
 
 function setObjectValues(scope, field, fieldOrNode, value) {
-	// console.error("\t\tSOVSI", scope, field, fieldOrNode, JSON.stringify(value));
-	// console.error("resolve", scope, field, fieldOrNode, value);
+	console.error("resolve", scope, field, fieldOrNode, JSON.stringify(value));
+	var foundOther = false;
+	// branch out across children of a proto declare
+	for (var pf in protoField[getField(scope,field)]) {
+		var obj = protoField[getField(scope,field)][pf];
+		if (typeof obj !== 'undefined') {
+			console.error("\t\tfoundprotovalue", scope, field, JSON.stringify(obj), fieldOrNode, JSON.stringify(value));
+			setObjectValue(scope, field, obj, fieldOrNode, value);
+			foundOther = true;
+			// console.error("\t\tresultprotovalue", JSON.stringify(obj));
+		} else {
+			// console.error("protoundef", scope, field);
+		}
+	}
+
+	// look for script fields
+	for (var sf in scriptField[getField(scope,field)]) {
+		var obj = scriptField[getField(scope,field)][sf];
+		if (typeof obj !== 'undefined') {
+			console.error("\t\tfoundscriptvalue", scope, field, JSON.stringify(obj), fieldOrNode, JSON.stringify(value));
+			setObjectValue(scope, field, obj, fieldOrNode, value);
+			foundOther = true;
+			// console.error("\t\tresultscriptvalue", JSON.stringify(obj));
+		} else {
+			// console.error("scriptundef", scope, field);
+		}
+	}
+
+	if (foundOther) {
+		return;
+	}
+
 	// find prototype up the scope stream
 	for(var i = 0; i < scopeLength(); i++) {
 		var parentScope = upScope(i);
@@ -262,34 +374,16 @@ function setObjectValues(scope, field, fieldOrNode, value) {
 			// console.error("newdef", JSON.stringify(obj[3]));
 			// console.error("parentscope", JSON.stringify(parentScope));
 			if (typeof obj !== 'undefined' && obj[3].indexOf(parentScope) === obj[3].lastIndexOf(parentScope)) {
+				console.error("\t\tfoundenvvalue", parentScope, obj[1], JSON.stringify(obj), fieldOrNode, JSON.stringify(value));
 				setObjectValue(parentScope, obj[1], obj, fieldOrNode, value);
+				// console.error("\t\tresultenvvalue", JSON.stringify(obj));
 			}
 		}
 	}
-	for (var sf in scriptField[getField(scope,field)]) {
-		var obj = scriptField[getField(scope,field)][sf];
-		if (typeof obj !== 'undefined') {
-			// console.error("\t\t\tfoundscriptvalue", scope, field, JSON.stringify(obj), fieldOrNode, JSON.stringify(value));
-			setObjectValue(scope, field, obj, fieldOrNode, value);
-		} else {
-			// console.error("\t\t\tscriptundef", scope, field);
-		}
-	}
-	// branch out across children of a proto declare
-	for (var pf in protoField[getField(scope,field)]) {
-		var obj = protoField[getField(scope,field)][pf];
-		if (typeof obj !== 'undefined') {
-			// console.error("\t\t\tfoundprotovalue", scope, field, JSON.stringify(obj), fieldOrNode, JSON.stringify(value));
-			setObjectValue(scope, field, obj, fieldOrNode, value);
-		} else {
-			// console.error("\t\t\tprotoundef", scope, field);
-		}
-	}
-	// console.error("\t\tSOVSO", scope, field, fieldOrNode, JSON.stringify(value));
 }
 
 function setObjectValue(scope, field, obj, fieldOrNode, value) {
-	// console.error("\t\t\t\tSOV", scope, field, obj, fieldOrNode, value);
+	// console.error("SOV", scope, field, obj, fieldOrNode, value);
 	if (Array.isArray(value) && typeof obj[2] !== 'undefined') {
 		// and some SF fields are arrays, so we have to explicitly test for SFNode
 		if (obj[2] === "SFNode") {
@@ -309,21 +403,27 @@ function setObjectValue(scope, field, obj, fieldOrNode, value) {
 	} else {
 		prefix = "";
 	}
-	// console.error("\t\t\t\tSOVobjI", JSON.stringify(obj));
-	// console.error("\t\t\t\tSOVobj0I", JSON.stringify(obj[0]));
-	// console.error("\t\t\t\tSOVobj1I", JSON.stringify(obj[1]));
-	// console.error("\t\t\t\tSOVobj2I", JSON.stringify(obj[2]));
-	// console.error("\t\t\t\tSOVobj3I", JSON.stringify(obj[3]));
-	// console.error("\t\t\t\tSOVlsI", JSON.stringify(obj[0][prefix+obj[1]]));
-	// console.error("\t\t\t\tSOVrsI", JSON.stringify(value));
+	if (prefix === '@' && obj[1] === 'children') {
+		prefix = '-';
+	}
+	if (prefix === '-' && obj[1] === 'value') {
+		prefix = "@";
+	}
+	// console.error("SOVobjI", JSON.stringify(obj));
+	// console.error("SOVobj0I", JSON.stringify(obj[0]));
+	// console.error("SOVobj1I", JSON.stringify(obj[1]));
+	// console.error("SOVobj2I", JSON.stringify(obj[2]));
+	// console.error("SOVobj3I", JSON.stringify(obj[3]));
+	// console.error("SOVlsI", JSON.stringify(obj[0][prefix+obj[1]]));
+	// console.error("SOVrsI", JSON.stringify(value));
 	obj[0][prefix+obj[1]] = value;// JSON.parse(JSON.stringify(value));
-	// console.error("\t\t\t\tSOVvalueO", JSON.stringify(value));
-	// console.error("\t\t\t\tSOVobj3O", JSON.stringify(obj[3]));
-	// console.error("\t\t\t\tSOVobj2O", JSON.stringify(obj[2]));
-	// console.error("\t\t\t\tSOVobj1O", JSON.stringify(obj[1]));
-	// console.error("\t\t\t\tSOVobj0O", JSON.stringify(obj[0]));
-	// console.error("\t\t\t\tSOVobjO", JSON.stringify(obj));
-	// console.error("\t\t\t\tsetresult", obj[0], "[", prefix, obj[1], "]", '=', value, 'alt', fieldOrNode);
+	// console.error("SOVvalueO", JSON.stringify(value));
+	// console.error("SOVobj3O", JSON.stringify(obj[3]));
+	// console.error("SOVobj2O", JSON.stringify(obj[2]));
+	// console.error("SOVobj1O", JSON.stringify(obj[1]));
+	// console.error("SOVobj0O", JSON.stringify(obj[0]));
+	// console.error("SOVobjO", JSON.stringify(obj));
+	// console.error("setresult", obj[0], "[", prefix, obj[1], "]", '=', value, 'alt', fieldOrNode);
 }
 
 function zap(field, object) {
@@ -371,7 +471,7 @@ function prototypeExpander(file, object) {
 	privatescope = [];
 	defs = {};
 
-	object = realPrototypeExpander(file, object);
+	object = realPrototypeExpander(file, object, false);
 	// zapIs(object);
 	// console.error("SCRIPTS", JSON.stringify(scriptField));
 	// console.error("PROTOS", JSON.stringify(protoField, null, 2));
@@ -389,7 +489,7 @@ function handleScript(file, object, p) {
 			delete object[p]["@url"];
 		}
 	});
-	var newobject = realPrototypeExpander(file, object[p]);
+	var newobject = realPrototypeExpander(file, object[p], object[p]["field"]);
 	newobject["@DEF"] = getScope(def);
 	return newobject;
 }
@@ -408,7 +508,7 @@ function handleProtoDeclare(file, object, p) {
 	}
 	pushScope("DECL"+name);
 	names[def] = name;
-	realPrototypeExpander(file, object[p]);
+	realPrototypeExpander(file, object[p], false);
 	popScope();
 	return object;
 }
@@ -489,7 +589,7 @@ function handleProtoInstance(file, object, p) {
 		pushScope(bodydef);
 	}
 	*/
-	var newobject = realPrototypeExpander(file, instance);
+	var newobject = realPrototypeExpander(file, instance, false);
 
 	var fieldValue = object[p]["fieldValue"];
 	for (var field in fieldValue) {
@@ -504,7 +604,7 @@ function handleProtoInstance(file, object, p) {
 			fieldOrNode = nv;
 			value = fv[fieldOrNode];
 			pushScope("FIELD"+protoField);
-			value = realPrototypeExpander(file, value);
+			value = realPrototypeExpander(file, value, false);
 			popScope();
 			getInterface(protoField);
 			setObjectValues(getScope(),
@@ -525,7 +625,7 @@ function handleProtoInstance(file, object, p) {
 	return newobject;
 }
 
-function realPrototypeExpander(file, object) {
+function realPrototypeExpander(file, object, scriptFields) {
 	if (typeof object === "object") {
 		if (Array.isArray(object)) {
 			var newobject = [];
@@ -541,18 +641,22 @@ function realPrototypeExpander(file, object) {
 			} else if (plc === 'protointerface') {
 				handleProtoInterface(file, object, p);
 			} else if (plc === 'protobody') {
-				realPrototypeExpander(file, object[p]);
+				realPrototypeExpander(file, object[p], scriptFields);
 			} else if (plc === 'protoinstance') {
 				newobject = handleProtoInstance(file, object, p);
 			} else if (plc === 'connect') {
-				realPrototypeExpander(file, object[p]);
+				realPrototypeExpander(file, object[p], scriptFields);
 			} else if (plc === 'fieldvalue') {
-				realPrototypeExpander(file, object[p]);
+				realPrototypeExpander(file, object[p], scriptFields);
 			} else if (plc === 'field') {
-				newobject[p] = realPrototypeExpander(file, object[p]);
+				newobject[p] = realPrototypeExpander(file, object[p], scriptFields);
 			} else if (plc === 'is') {
-				setConnectFields(object, p, newobject)
-				realPrototypeExpander(file, object[p]);
+				if (scriptFields) {
+					setScriptConnectFields(object, p, newobject, scriptFields);
+				} else {
+					setConnectFields(object, p, newobject);
+				}
+				realPrototypeExpander(file, object[p], scriptFields);
 			} else if (plc === 'route') {
 				newobject[p] = {};
 				var envFrom = extractConnectedDef(getScope(object[p]["@fromNode"]), object[p]["@fromField"]);
@@ -575,7 +679,7 @@ function realPrototypeExpander(file, object) {
 				newobject[p] = getScope(object[p]);
 				// console.error("USE is2 ", object[p], newobject);
 			} else {
-				newobject[p] = realPrototypeExpander(file, object[p]);
+				newobject[p] = realPrototypeExpander(file, object[p], scriptFields);
 			}
 		}
 		return newobject;
