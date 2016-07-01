@@ -27,9 +27,12 @@ function flattener(object) {
 			} else {
 				// console.log(p, '=3', possibleArray);
 				if (Array.isArray(possibleArray)) {
+				/*
 					if (p === '-geometry' || p === '-material' || p === '-appearance') {
 						newobject[p] = possibleArray[0];
-					} else {
+					} else
+					*/
+					{
 						newobject[p] = possibleArray;
 					}
 				} else {
