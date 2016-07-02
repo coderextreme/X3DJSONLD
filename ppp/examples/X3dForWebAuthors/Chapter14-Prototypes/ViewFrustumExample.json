@@ -306,19 +306,23 @@
                 "@name": "ViewpointNode",
                 "@accessType": "initializeOnly",
                 "@type": "SFNode",
-                "-children": {
-                  "#comment": "prefer empty description to prevent entry in player's ViewpointList"
-                }
+                "-children": [
+                  {
+                    "#comment": "prefer empty description to prevent entry in player's ViewpointList"
+                  }
+                ]
               },
               {
                 "@name": "NavigationInfoNode",
                 "@accessType": "initializeOnly",
                 "@type": "SFNode",
-                "-children": {
-                  "NavigationInfo": {
-                    "@visibilityLimit": 15
+                "-children": [
+                  {
+                    "NavigationInfo": {
+                      "@visibilityLimit": 15
+                    }
                   }
-                }
+                ]
               },
               {
                 "@name": "FrustumCoordinate",
