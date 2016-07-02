@@ -384,98 +384,7 @@
             ]
           }
         },
-        {
-          "Group": {
-            "-children": [
-              {
-                "Transform": {
-                  "@DEF": "DECLHUD_Hud_HudContainer",
-                  "-children": [
-                    {
-                      "Transform": {
-                        "@translation": [
-                          -0.8,
-                          1,
-                          -3
-                        ],
-                        "-children": [
-                          {
-                            "Group": {
-                              "-children": "HudContent"
-                            }
-                          },
-                          {
-                            "Transform": {
-                              "@translation": [
-                                0,
-                                0.3,
-                                -0.1
-                              ],
-                              "-children": [
-                                {
-                                  "Shape": {
-                                    "-appearance": {
-                                      "Appearance": {
-                                        "-material": {
-                                          "Material": {
-                                            "@diffuseColor": [
-                                              1,
-                                              1,
-                                              0
-                                            ]
-                                          }
-                                        }
-                                      }
-                                    },
-                                    "-geometry": {
-                                      "Box": {
-                                        "@size": [
-                                          1.5,
-                                          0.4,
-                                          0.1
-                                        ]
-                                      }
-                                    }
-                                  }
-                                }
-                              ]
-                            }
-                          }
-                        ]
-                      }
-                    }
-                  ]
-                }
-              },
-              {
-                "ProximitySensor": {
-                  "@DEF": "DECLHUD_Hud_HereIAm",
-                  "@size": [
-                    1000,
-                    1000,
-                    1000
-                  ]
-                }
-              },
-              {
-                "ROUTE": {
-                  "@fromNode": "DECLHUD_Hud_HereIAm",
-                  "@fromField": "orientation_changed",
-                  "@toNode": "DECLHUD_Hud_HudContainer",
-                  "@toField": "rotation"
-                }
-              },
-              {
-                "ROUTE": {
-                  "@fromNode": "DECLHUD_Hud_HereIAm",
-                  "@fromField": "position_changed",
-                  "@toNode": "DECLHUD_Hud_HudContainer",
-                  "@toField": "translation"
-                }
-              }
-            ]
-          }
-        },
+        {},
         {
           "Script": {
             "@DEF": "Convert",
@@ -536,7 +445,7 @@
         },
         {
           "ROUTE": {
-            "@fromNode": "DECLHUD_Hud_HereIAm",
+            "@fromNode": "DECLHUD_Hud",
             "@fromField": "position_changed",
             "@toNode": "Convert",
             "@toField": "sfVec3f"
@@ -544,7 +453,7 @@
         },
         {
           "ROUTE": {
-            "@fromNode": "DECLHUD_Hud_HereIAm",
+            "@fromNode": "DECLHUD_Hud",
             "@fromField": "orientation_changed",
             "@toNode": "Convert",
             "@toField": "sfRotation"
