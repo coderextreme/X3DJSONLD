@@ -1,44 +1,47 @@
-function flattener(object) {
-	if (typeof object === "object") {
-		var offset = 0;
-		if (Array.isArray(object)) {
-			var newobject = [];
-			var isArray = true;
+function flattenerArray(object, parentArray) {
+	var newobject = [];
+	var offset = 0;
+	for (var p in object) {
+		var possibleArray = flattener(object[p], newobject, object.length);
+		if (Array.isArray(possibleArray)) {
+			for (var q in possibleArray) {
+				newobject[parseInt(p)+offset+parseInt(q)] = possibleArray[q];
+			}
+			offset += possibleArray.length-1;
 		} else {
-			var newobject = {};
-			var isArray = false;
+			newobject[parseInt(p)+offset] = possibleArray;
 		}
-		for (var p in object) {
-			var possibleArray = flattener(object[p]);
-			if (isArray) {
-				var ind = parseInt(p);
-				if (Array.isArray(possibleArray)) {
-					for (var q in possibleArray) {
-						ind = parseInt(p)+parseInt(offset)+parseInt(q);
-						// console.log(ind, '=1', possibleArray[q]);
-						newobject[ind] = possibleArray[q];
-					}
-					offset += parseInt(q);
-				} else {
-					ind = parseInt(p)+parseInt(offset);
-					// console.log(ind, '=2', possibleArray);
-					newobject[ind] = possibleArray;
+	}
+	return newobject;
+}
+
+function flattenerObject(object, parentArray, arrayLen) {
+	var newobject = {};
+	for (var p in object) {
+		var possibleArray = flattener(object[p], parentArray, arrayLen);
+		if (Array.isArray(possibleArray)) {
+			if (p === '-geometry' || p === '-material' || p === '-appearance') {
+				newobject[p] = possibleArray[0];
+				// handle extra nodes brought in from proto
+				for (var i = 1; i < possibleArray.length; i++) {
+					parentArray[arrayLen+i-1] = possibleArray[i];
 				}
 			} else {
-				// console.log(p, '=3', possibleArray);
-				if (Array.isArray(possibleArray)) {
-				/*
-					if (p === '-geometry' || p === '-material' || p === '-appearance') {
-						newobject[p] = possibleArray[0];
-					} else
-					*/
-					{
-						newobject[p] = possibleArray;
-					}
-				} else {
-					newobject[p] = possibleArray;
-				}
+				newobject[p] = possibleArray;
 			}
+		} else {
+			newobject[p] = possibleArray;
+		}
+	}
+	return newobject;
+}
+
+function flattener(object, parentArray, arrayLen) {
+	if (typeof object === "object") {
+		if (Array.isArray(object)) {
+			var newobject = flattenerArray(object, parentArray);
+		} else {
+			var newobject = flattenerObject(object, parentArray, arrayLen);
 		}
 		return newobject;
 	} else {
@@ -49,5 +52,6 @@ function flattener(object) {
 if (typeof module === 'object')  {
         module.exports.flattener = flattener;
 }
-// console.log(JSON.stringify(flattener(["0",["1", "2", ["3", "4"], "5"], "6"])));
-// console.log(JSON.stringify(flattener({"0":7,"8":["1", "2", ["3", "4"], "5"], "6":9})));
+// console.error(JSON.stringify(flattener([["1"], "2"])));
+// console.error(JSON.stringify(flattener(["0",["1", "2", ["3", "4"], "5"], "6"])));
+// console.error(JSON.stringify(flattener({"0":7,"8":["1", "2", ["3", "4"], "5"], "6":9})));
