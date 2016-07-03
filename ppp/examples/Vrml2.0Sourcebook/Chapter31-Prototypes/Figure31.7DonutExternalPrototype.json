@@ -94,145 +94,14 @@
             "-children": [
               {
                 "Shape": {
-                  "-geometry": [
-                    {
-                      "Extrusion": {
-                        "@DEF": "DECLDonut_INSTANCE_DonutExtrusion",
-                        "@beginCap": false,
-                        "@creaseAngle": 1.57,
-                        "@endCap": false
-                      }
-                    },
-                    {
-                      "#comment": "Donut maker creates torus on initialization - external script. Modified script to add endpoints matching startpoints."
-                    },
-                    {
-                      "Script": {
-                        "@DEF": "DECLDonut_INSTANCE_DonutMakerInternalScript",
-                        "field": [
-                          {
-                            "@name": "crossSectionRadius",
-                            "@accessType": "initializeOnly",
-                            "@type": "SFFloat",
-                            "@value": 1
-                          },
-                          {
-                            "@name": "spineRadius",
-                            "@accessType": "initializeOnly",
-                            "@type": "SFFloat",
-                            "@value": 2
-                          },
-                          {
-                            "@name": "crossSectionResolution",
-                            "@accessType": "initializeOnly",
-                            "@type": "SFInt32",
-                            "@value": 16
-                          },
-                          {
-                            "@name": "spineResolution",
-                            "@accessType": "initializeOnly",
-                            "@type": "SFInt32",
-                            "@value": 16
-                          },
-                          {
-                            "@name": "set_crossSectionRadius",
-                            "@accessType": "inputOnly",
-                            "@type": "SFFloat"
-                          },
-                          {
-                            "@name": "set_spineRadius",
-                            "@accessType": "inputOnly",
-                            "@type": "SFFloat"
-                          },
-                          {
-                            "@name": "crossSection_changed",
-                            "@accessType": "outputOnly",
-                            "@type": "MFVec2f"
-                          },
-                          {
-                            "@name": "spine_changed",
-                            "@accessType": "outputOnly",
-                            "@type": "MFVec3f"
-                          }
-                        ],
-                        "@value": 16,
-                        "#sourceText": [
-                          "ecmascript:",
-                          "",
-                          "function initialize( ) {",
-                          "    generateCrossSection( );",
-                          "    generateSpine( );",
-                          "}",
-                          "",
-                          "function set_crossSectionRadius( csr, ts )",
-                          "{",
-                          "    crossSectionRadius = csr;",
-                          "//  Browser.print ('crossSectionRadius =' + crossSectionRadius);",
-                          "    generateCrossSection( );",
-                          "}",
-                          "",
-                          "function set_spineRadius( sr, ts )",
-                          "{",
-                          "    spineRadius = sr;",
-                          "//  Browser.print ('spineRadius =' + spineRadius);",
-                          "    generateSpine( );",
-                          "}",
-                          "",
-                          "function generateCrossSection( )",
-                          "{",
-                          "    newCrossSection = new MFVec2f(); // temporary hold variable",
-                          "    angle = 0.0;",
-                          "    delta = 6.28 / crossSectionResolution;",
-                          "    for ( i = 0; i <= crossSectionResolution + 1; i++ ) {",
-                          "        newCrossSection[i][0] =  crossSectionRadius * Math.cos( angle );",
-                          "        newCrossSection[i][1] = -crossSectionRadius * Math.sin( angle );",
-                          "        angle += delta;",
-                          "    }",
-                          "    // make ends meet",
-                          "    newCrossSection[crossSectionResolution + 1][0] = newCrossSection[0][0];",
-                          "    newCrossSection[crossSectionResolution + 1][1] = newCrossSection[0][1];",
-                          "",
-                          "    crossSection_changed = newCrossSection;",
-                          "}",
-                          "",
-                          "function generateSpine( )",
-                          "{",
-                          "    newSpine = new MFVec3f(); // temporary hold variable",
-                          "    angle = 0.0;",
-                          "    delta = (2 * 3.141592653) / spineResolution;",
-                          "    for ( i = 0; i <= spineResolution; i++ ) {",
-                          "        newSpine[i][0] = spineRadius * Math.cos( angle );",
-                          "        newSpine[i][1] = 0.0;",
-                          "        newSpine[i][2] = -spineRadius * Math.sin( angle );",
-                          "        angle += delta;",
-                          "    }",
-                          "    // make ends meet",
-                          "    newSpine[spineResolution + 1][0] = newSpine[0][0];",
-                          "    newSpine[spineResolution + 1][1] = 0.0;",
-                          "    newSpine[spineResolution + 1][2] = newSpine[0][2];",
-                          "",
-                          "    spine_changed = newSpine;",
-                          "}"
-                        ]
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromNode": "DECLDonut_INSTANCE_DonutMakerInternalScript",
-                        "@fromField": "spine_changed",
-                        "@toNode": "DECLDonut_INSTANCE_DonutExtrusion",
-                        "@toField": "set_spine"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromNode": "DECLDonut_INSTANCE_DonutMakerInternalScript",
-                        "@fromField": "crossSection_changed",
-                        "@toNode": "DECLDonut_INSTANCE_DonutExtrusion",
-                        "@toField": "set_crossSection"
-                      }
+                  "-geometry": {
+                    "Extrusion": {
+                      "@DEF": "DECLDonut_INSTANCE_DonutExtrusion",
+                      "@beginCap": false,
+                      "@creaseAngle": 1.57,
+                      "@endCap": false
                     }
-                  ],
+                  },
                   "-appearance": {
                     "Appearance": {
                       "@DEF": "DECLLightOak_INSTANCE1000_LightOakAppearance",
@@ -279,6 +148,135 @@
                     }
                   }
                 }
+              },
+              {
+                "#comment": "Donut maker creates torus on initialization - external script. Modified script to add endpoints matching startpoints."
+              },
+              {
+                "Script": {
+                  "@DEF": "DECLDonut_INSTANCE_DonutMakerInternalScript",
+                  "field": [
+                    {
+                      "@name": "crossSectionRadius",
+                      "@accessType": "initializeOnly",
+                      "@type": "SFFloat",
+                      "@value": 1
+                    },
+                    {
+                      "@name": "spineRadius",
+                      "@accessType": "initializeOnly",
+                      "@type": "SFFloat",
+                      "@value": 2
+                    },
+                    {
+                      "@name": "crossSectionResolution",
+                      "@accessType": "initializeOnly",
+                      "@type": "SFInt32",
+                      "@value": 16
+                    },
+                    {
+                      "@name": "spineResolution",
+                      "@accessType": "initializeOnly",
+                      "@type": "SFInt32",
+                      "@value": 16
+                    },
+                    {
+                      "@name": "set_crossSectionRadius",
+                      "@accessType": "inputOnly",
+                      "@type": "SFFloat"
+                    },
+                    {
+                      "@name": "set_spineRadius",
+                      "@accessType": "inputOnly",
+                      "@type": "SFFloat"
+                    },
+                    {
+                      "@name": "crossSection_changed",
+                      "@accessType": "outputOnly",
+                      "@type": "MFVec2f"
+                    },
+                    {
+                      "@name": "spine_changed",
+                      "@accessType": "outputOnly",
+                      "@type": "MFVec3f"
+                    }
+                  ],
+                  "@value": 16,
+                  "#sourceText": [
+                    "ecmascript:",
+                    "",
+                    "function initialize( ) {",
+                    "    generateCrossSection( );",
+                    "    generateSpine( );",
+                    "}",
+                    "",
+                    "function set_crossSectionRadius( csr, ts )",
+                    "{",
+                    "    crossSectionRadius = csr;",
+                    "//  Browser.print ('crossSectionRadius =' + crossSectionRadius);",
+                    "    generateCrossSection( );",
+                    "}",
+                    "",
+                    "function set_spineRadius( sr, ts )",
+                    "{",
+                    "    spineRadius = sr;",
+                    "//  Browser.print ('spineRadius =' + spineRadius);",
+                    "    generateSpine( );",
+                    "}",
+                    "",
+                    "function generateCrossSection( )",
+                    "{",
+                    "    newCrossSection = new MFVec2f(); // temporary hold variable",
+                    "    angle = 0.0;",
+                    "    delta = 6.28 / crossSectionResolution;",
+                    "    for ( i = 0; i <= crossSectionResolution + 1; i++ ) {",
+                    "        newCrossSection[i][0] =  crossSectionRadius * Math.cos( angle );",
+                    "        newCrossSection[i][1] = -crossSectionRadius * Math.sin( angle );",
+                    "        angle += delta;",
+                    "    }",
+                    "    // make ends meet",
+                    "    newCrossSection[crossSectionResolution + 1][0] = newCrossSection[0][0];",
+                    "    newCrossSection[crossSectionResolution + 1][1] = newCrossSection[0][1];",
+                    "",
+                    "    crossSection_changed = newCrossSection;",
+                    "}",
+                    "",
+                    "function generateSpine( )",
+                    "{",
+                    "    newSpine = new MFVec3f(); // temporary hold variable",
+                    "    angle = 0.0;",
+                    "    delta = (2 * 3.141592653) / spineResolution;",
+                    "    for ( i = 0; i <= spineResolution; i++ ) {",
+                    "        newSpine[i][0] = spineRadius * Math.cos( angle );",
+                    "        newSpine[i][1] = 0.0;",
+                    "        newSpine[i][2] = -spineRadius * Math.sin( angle );",
+                    "        angle += delta;",
+                    "    }",
+                    "    // make ends meet",
+                    "    newSpine[spineResolution + 1][0] = newSpine[0][0];",
+                    "    newSpine[spineResolution + 1][1] = 0.0;",
+                    "    newSpine[spineResolution + 1][2] = newSpine[0][2];",
+                    "",
+                    "    spine_changed = newSpine;",
+                    "}"
+                  ]
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromNode": "DECLDonut_INSTANCE_DonutMakerInternalScript",
+                  "@fromField": "spine_changed",
+                  "@toNode": "DECLDonut_INSTANCE_DonutExtrusion",
+                  "@toField": "set_spine"
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromNode": "DECLDonut_INSTANCE_DonutMakerInternalScript",
+                  "@fromField": "crossSection_changed",
+                  "@toNode": "DECLDonut_INSTANCE_DonutExtrusion",
+                  "@toField": "set_crossSection"
+                }
               }
             ]
           }
@@ -322,145 +320,14 @@
             "-children": [
               {
                 "Shape": {
-                  "-geometry": [
-                    {
-                      "Extrusion": {
-                        "@DEF": "DECLDonut_SpecialtyOfTheHouse_DonutExtrusion",
-                        "@beginCap": false,
-                        "@creaseAngle": 1.57,
-                        "@endCap": false
-                      }
-                    },
-                    {
-                      "#comment": "Donut maker creates torus on initialization - external script. Modified script to add endpoints matching startpoints."
-                    },
-                    {
-                      "Script": {
-                        "@DEF": "DECLDonut_SpecialtyOfTheHouse_DonutMakerInternalScript",
-                        "field": [
-                          {
-                            "@name": "crossSectionRadius",
-                            "@accessType": "initializeOnly",
-                            "@type": "SFFloat",
-                            "@value": 0.5
-                          },
-                          {
-                            "@name": "spineRadius",
-                            "@accessType": "initializeOnly",
-                            "@type": "SFFloat",
-                            "@value": 2
-                          },
-                          {
-                            "@name": "crossSectionResolution",
-                            "@accessType": "initializeOnly",
-                            "@type": "SFInt32",
-                            "@value": 16
-                          },
-                          {
-                            "@name": "spineResolution",
-                            "@accessType": "initializeOnly",
-                            "@type": "SFInt32",
-                            "@value": 16
-                          },
-                          {
-                            "@name": "set_crossSectionRadius",
-                            "@accessType": "inputOnly",
-                            "@type": "SFFloat"
-                          },
-                          {
-                            "@name": "set_spineRadius",
-                            "@accessType": "inputOnly",
-                            "@type": "SFFloat"
-                          },
-                          {
-                            "@name": "crossSection_changed",
-                            "@accessType": "outputOnly",
-                            "@type": "MFVec2f"
-                          },
-                          {
-                            "@name": "spine_changed",
-                            "@accessType": "outputOnly",
-                            "@type": "MFVec3f"
-                          }
-                        ],
-                        "@value": 16,
-                        "#sourceText": [
-                          "ecmascript:",
-                          "",
-                          "function initialize( ) {",
-                          "    generateCrossSection( );",
-                          "    generateSpine( );",
-                          "}",
-                          "",
-                          "function set_crossSectionRadius( csr, ts )",
-                          "{",
-                          "    crossSectionRadius = csr;",
-                          "//  Browser.print ('crossSectionRadius =' + crossSectionRadius);",
-                          "    generateCrossSection( );",
-                          "}",
-                          "",
-                          "function set_spineRadius( sr, ts )",
-                          "{",
-                          "    spineRadius = sr;",
-                          "//  Browser.print ('spineRadius =' + spineRadius);",
-                          "    generateSpine( );",
-                          "}",
-                          "",
-                          "function generateCrossSection( )",
-                          "{",
-                          "    newCrossSection = new MFVec2f(); // temporary hold variable",
-                          "    angle = 0.0;",
-                          "    delta = 6.28 / crossSectionResolution;",
-                          "    for ( i = 0; i <= crossSectionResolution + 1; i++ ) {",
-                          "        newCrossSection[i][0] =  crossSectionRadius * Math.cos( angle );",
-                          "        newCrossSection[i][1] = -crossSectionRadius * Math.sin( angle );",
-                          "        angle += delta;",
-                          "    }",
-                          "    // make ends meet",
-                          "    newCrossSection[crossSectionResolution + 1][0] = newCrossSection[0][0];",
-                          "    newCrossSection[crossSectionResolution + 1][1] = newCrossSection[0][1];",
-                          "",
-                          "    crossSection_changed = newCrossSection;",
-                          "}",
-                          "",
-                          "function generateSpine( )",
-                          "{",
-                          "    newSpine = new MFVec3f(); // temporary hold variable",
-                          "    angle = 0.0;",
-                          "    delta = (2 * 3.141592653) / spineResolution;",
-                          "    for ( i = 0; i <= spineResolution; i++ ) {",
-                          "        newSpine[i][0] = spineRadius * Math.cos( angle );",
-                          "        newSpine[i][1] = 0.0;",
-                          "        newSpine[i][2] = -spineRadius * Math.sin( angle );",
-                          "        angle += delta;",
-                          "    }",
-                          "    // make ends meet",
-                          "    newSpine[spineResolution + 1][0] = newSpine[0][0];",
-                          "    newSpine[spineResolution + 1][1] = 0.0;",
-                          "    newSpine[spineResolution + 1][2] = newSpine[0][2];",
-                          "",
-                          "    spine_changed = newSpine;",
-                          "}"
-                        ]
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromNode": "DECLDonut_SpecialtyOfTheHouse_DonutMakerInternalScript",
-                        "@fromField": "spine_changed",
-                        "@toNode": "DECLDonut_SpecialtyOfTheHouse_DonutExtrusion",
-                        "@toField": "set_spine"
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromNode": "DECLDonut_SpecialtyOfTheHouse_DonutMakerInternalScript",
-                        "@fromField": "crossSection_changed",
-                        "@toNode": "DECLDonut_SpecialtyOfTheHouse_DonutExtrusion",
-                        "@toField": "set_crossSection"
-                      }
+                  "-geometry": {
+                    "Extrusion": {
+                      "@DEF": "DECLDonut_SpecialtyOfTheHouse_DonutExtrusion",
+                      "@beginCap": false,
+                      "@creaseAngle": 1.57,
+                      "@endCap": false
                     }
-                  ],
+                  },
                   "-appearance": {
                     "Appearance": {
                       "-texture": {
@@ -479,6 +346,135 @@
                 "TouchSensor": {
                   "@DEF": "StopSizeChanges",
                   "@description": "touch to stop size changes"
+                }
+              },
+              {
+                "#comment": "Donut maker creates torus on initialization - external script. Modified script to add endpoints matching startpoints."
+              },
+              {
+                "Script": {
+                  "@DEF": "DECLDonut_SpecialtyOfTheHouse_DonutMakerInternalScript",
+                  "field": [
+                    {
+                      "@name": "crossSectionRadius",
+                      "@accessType": "initializeOnly",
+                      "@type": "SFFloat",
+                      "@value": 0.5
+                    },
+                    {
+                      "@name": "spineRadius",
+                      "@accessType": "initializeOnly",
+                      "@type": "SFFloat",
+                      "@value": 2
+                    },
+                    {
+                      "@name": "crossSectionResolution",
+                      "@accessType": "initializeOnly",
+                      "@type": "SFInt32",
+                      "@value": 16
+                    },
+                    {
+                      "@name": "spineResolution",
+                      "@accessType": "initializeOnly",
+                      "@type": "SFInt32",
+                      "@value": 16
+                    },
+                    {
+                      "@name": "set_crossSectionRadius",
+                      "@accessType": "inputOnly",
+                      "@type": "SFFloat"
+                    },
+                    {
+                      "@name": "set_spineRadius",
+                      "@accessType": "inputOnly",
+                      "@type": "SFFloat"
+                    },
+                    {
+                      "@name": "crossSection_changed",
+                      "@accessType": "outputOnly",
+                      "@type": "MFVec2f"
+                    },
+                    {
+                      "@name": "spine_changed",
+                      "@accessType": "outputOnly",
+                      "@type": "MFVec3f"
+                    }
+                  ],
+                  "@value": 16,
+                  "#sourceText": [
+                    "ecmascript:",
+                    "",
+                    "function initialize( ) {",
+                    "    generateCrossSection( );",
+                    "    generateSpine( );",
+                    "}",
+                    "",
+                    "function set_crossSectionRadius( csr, ts )",
+                    "{",
+                    "    crossSectionRadius = csr;",
+                    "//  Browser.print ('crossSectionRadius =' + crossSectionRadius);",
+                    "    generateCrossSection( );",
+                    "}",
+                    "",
+                    "function set_spineRadius( sr, ts )",
+                    "{",
+                    "    spineRadius = sr;",
+                    "//  Browser.print ('spineRadius =' + spineRadius);",
+                    "    generateSpine( );",
+                    "}",
+                    "",
+                    "function generateCrossSection( )",
+                    "{",
+                    "    newCrossSection = new MFVec2f(); // temporary hold variable",
+                    "    angle = 0.0;",
+                    "    delta = 6.28 / crossSectionResolution;",
+                    "    for ( i = 0; i <= crossSectionResolution + 1; i++ ) {",
+                    "        newCrossSection[i][0] =  crossSectionRadius * Math.cos( angle );",
+                    "        newCrossSection[i][1] = -crossSectionRadius * Math.sin( angle );",
+                    "        angle += delta;",
+                    "    }",
+                    "    // make ends meet",
+                    "    newCrossSection[crossSectionResolution + 1][0] = newCrossSection[0][0];",
+                    "    newCrossSection[crossSectionResolution + 1][1] = newCrossSection[0][1];",
+                    "",
+                    "    crossSection_changed = newCrossSection;",
+                    "}",
+                    "",
+                    "function generateSpine( )",
+                    "{",
+                    "    newSpine = new MFVec3f(); // temporary hold variable",
+                    "    angle = 0.0;",
+                    "    delta = (2 * 3.141592653) / spineResolution;",
+                    "    for ( i = 0; i <= spineResolution; i++ ) {",
+                    "        newSpine[i][0] = spineRadius * Math.cos( angle );",
+                    "        newSpine[i][1] = 0.0;",
+                    "        newSpine[i][2] = -spineRadius * Math.sin( angle );",
+                    "        angle += delta;",
+                    "    }",
+                    "    // make ends meet",
+                    "    newSpine[spineResolution + 1][0] = newSpine[0][0];",
+                    "    newSpine[spineResolution + 1][1] = 0.0;",
+                    "    newSpine[spineResolution + 1][2] = newSpine[0][2];",
+                    "",
+                    "    spine_changed = newSpine;",
+                    "}"
+                  ]
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromNode": "DECLDonut_SpecialtyOfTheHouse_DonutMakerInternalScript",
+                  "@fromField": "spine_changed",
+                  "@toNode": "DECLDonut_SpecialtyOfTheHouse_DonutExtrusion",
+                  "@toField": "set_spine"
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromNode": "DECLDonut_SpecialtyOfTheHouse_DonutMakerInternalScript",
+                  "@fromField": "crossSection_changed",
+                  "@toNode": "DECLDonut_SpecialtyOfTheHouse_DonutExtrusion",
+                  "@toField": "set_crossSection"
                 }
               }
             ]
