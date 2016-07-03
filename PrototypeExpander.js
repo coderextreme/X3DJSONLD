@@ -156,8 +156,10 @@ function setScriptFields(objectp, def) {
 		var type = field_name_field_type_objectfield_name[2];
 		var objectfield = field_name_field_type_objectfield_name[3];
 		var type_scope = setValueFromInterface(fieldname, f, objectfield);
+		console.error("SSF1", scope, fieldname, f, objectfield, type, def);
 		setScriptField(scope, fieldname, f, objectfield, type, def);
 		if (typeof type_scope !== 'undefined') {
+			console.error("SSF2", type_scope[1], fieldname, f, objectfield, type, def);
 			setScriptField(type_scope[1], fieldname, f, objectfield, type, def);
 		}
 
@@ -166,9 +168,6 @@ function setScriptFields(objectp, def) {
 }
 
 function setScriptField(scope, field, f, objectfield, type, def) {
-	if (field === 'NavigationInfoNode') {
-		// console.error("setScriptField", scope, field, f, objectfield, type, def);
-	}
 	if (typeof scriptField[getField(scope,field)] === 'undefined') {
 		scriptField[getField(scope,field)] = [];
 	}
@@ -253,10 +252,13 @@ function setScriptConnectFields(object, p, newobject, scriptFields) {
 			if (typeof type_scope !== 'undefined') {
 				type = type_scope[0];
 				// setEnv(scope, field, newobject, objectfield, type, newdef);
+				console.error("SSF3", scope, field, f, objectfield, type, def);
 				setScriptField(scope, field, f, objectfield, type, def);
+				console.error("SSF4", type_scope[1], field, f, objectfield, type, def);
 				setScriptField(type_scope[1], field, f, objectfield, type, def);
 			} else {
 				// setEnv(scope, field, newobject, objectfield, type, newdef);
+				console.error("SSF5", scope, field, f, objectfield, type, def);
 				setScriptField(scope, field, f, objectfield, type, def);
 			}
 		}
@@ -326,13 +328,13 @@ function extractConnectedDef(scope, node) {
 }
 
 function setObjectValues(scope, field, fieldOrNode, value) {
-	console.error("resolve", scope, field, fieldOrNode, JSON.stringify(value));
+	// console.error("resolve", scope, field, fieldOrNode, JSON.stringify(value));
 	var foundOther = false;
 	// branch out across children of a proto declare
 	for (var pf in protoField[getField(scope,field)]) {
 		var obj = protoField[getField(scope,field)][pf];
 		if (typeof obj !== 'undefined') {
-			console.error("\t\tfoundprotovalue", scope, field, JSON.stringify(obj), fieldOrNode, JSON.stringify(value));
+			// console.error("\t\tfoundprotovalue", scope, field, JSON.stringify(obj), fieldOrNode, JSON.stringify(value));
 			setObjectValue(scope, field, obj, fieldOrNode, value);
 			foundOther = true;
 			// console.error("\t\tresultprotovalue", JSON.stringify(obj));
@@ -345,7 +347,7 @@ function setObjectValues(scope, field, fieldOrNode, value) {
 	for (var sf in scriptField[getField(scope,field)]) {
 		var obj = scriptField[getField(scope,field)][sf];
 		if (typeof obj !== 'undefined') {
-			console.error("\t\tfoundscriptvalue", scope, field, JSON.stringify(obj), fieldOrNode, JSON.stringify(value));
+			// console.error("\t\tfoundscriptvalue", scope, field, JSON.stringify(obj), fieldOrNode, JSON.stringify(value));
 			setObjectValue(scope, field, obj, fieldOrNode, value);
 			foundOther = true;
 			// console.error("\t\tresultscriptvalue", JSON.stringify(obj));
@@ -374,7 +376,7 @@ function setObjectValues(scope, field, fieldOrNode, value) {
 			// console.error("newdef", JSON.stringify(obj[3]));
 			// console.error("parentscope", JSON.stringify(parentScope));
 			if (typeof obj !== 'undefined' && obj[3].indexOf(parentScope) === obj[3].lastIndexOf(parentScope)) {
-				console.error("\t\tfoundenvvalue", parentScope, obj[1], JSON.stringify(obj), fieldOrNode, JSON.stringify(value));
+				// console.error("\t\tfoundenvvalue", parentScope, obj[1], JSON.stringify(obj), fieldOrNode, JSON.stringify(value));
 				setObjectValue(parentScope, obj[1], obj, fieldOrNode, value);
 				// console.error("\t\tresultenvvalue", JSON.stringify(obj));
 			}
@@ -408,6 +410,9 @@ function setObjectValue(scope, field, obj, fieldOrNode, value) {
 	}
 	if (prefix === '-' && obj[1] === 'value') {
 		prefix = "@";
+	}
+	if (!Array.isArray(value) && obj[1] === 'children') {
+		value = [value];
 	}
 	// console.error("SOVobjI", JSON.stringify(obj));
 	// console.error("SOVobj0I", JSON.stringify(obj[0]));
