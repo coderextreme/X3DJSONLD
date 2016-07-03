@@ -49,7 +49,7 @@
         },
         {
           "@name": "translated",
-          "@content": "28 March 2016"
+          "@content": "02 July 2016"
         },
         {
           "@name": "generator",
@@ -108,6 +108,9 @@
                       "-children": [
                         {
                           "#comment": "textureTransform field IS exposed through the Prototype field interface with same name"
+                        },
+                        {
+                          "#comment": "Note that each prototype declaration has independent scope, and so DEF/USE is not possible for sharing. DEF remains a good way to identify the image file however."
                         }
                       ],
                       "-textureTransform": {
@@ -138,7 +141,7 @@
                       },
                       "-texture": {
                         "ImageTexture": {
-                          "@DEF": "DECLLightOak_INSTANCE1000_wood_g2",
+                          "@DEF": "DECLLightOak_INSTANCE1000_wood_g_scope2",
                           "@url": [
                             "../Chapter17-Textures/wood_g.jpg",
                             "http://www.web3d.org/x3d/content/examples/Vrml2.0Sourcebook/Chapter17-Textures/wood_g.jpg"

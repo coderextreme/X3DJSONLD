@@ -73,11 +73,15 @@ process.stdin.on('end', function() {
 	var code = classes.join('\n')
 		.replace(/&lt;/g, '<')
 		.replace(/&gt;/g, '>')
-	// console.error(code);
-	route = routecode.join('\n');
-	// console.error(route);
-	eval(code);
-	//setInterval(function() {
-		eval(route);
-	//}, 500);
+	var route = routecode.join('\n');
+	try {
+		eval(code);
+		//setInterval(function() {
+			eval(route);
+		//}, 500);
+	} catch (e) {
+		console.error(code);
+		console.error(route);
+		console.error(e);
+	}
 // });

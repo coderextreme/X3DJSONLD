@@ -11,9 +11,6 @@ if (typeof Browser === 'undefined') {
 		println : function(string) { if (typeof console !== 'undefined' && typeof string !== 'undefined') console.error(string); },
 		stringToArray : function(clazz, obj) {
 			if (typeof obj === 'object') {
-				if (clazz === 'SFRotation') {
-					return [0.0,0.0,0.0,0.0];
-				}
 				return obj;
 			} else {
 				return JSON.parse('['+obj+']');
