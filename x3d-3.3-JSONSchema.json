@@ -3538,6 +3538,25 @@
             },
             "additionalProperties": false
         },
+        "EXPORT": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "@AS": {
+                        "type": "string"
+                    },
+                    "@localDEF": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "@localDEF"
+                ],
+                "additionalProperties": false
+            }
+        },
         "ExternProtoDeclare": {
             "type": "object",
             "properties": {
@@ -5282,6 +5301,29 @@
             },
             "additionalProperties": false
         },
+        "IMPORT": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "@AS": {
+                        "type": "string"
+                    },
+                    "@importedDEF": {
+                        "type": "string"
+                    },
+                    "@inlineDEF": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "@importedDEF",
+                    "@inlineDEF"
+                ],
+                "additionalProperties": false
+            }
+        },
         "IndexedFaceSet": {
             "type": "object",
             "properties": {
@@ -5926,7 +5968,9 @@
                 "@DEF": {
                     "type": "string"
                 },
-                "@USE": {},
+                "@USE": {
+                    "type": "string"
+                },
                 "IS": {
                     "$ref": "#/definitions/IS"
                 },
@@ -10245,48 +10289,6 @@
             "properties": {
                 "-children": {
                     "$ref": "#/definitions/-children"
-                },
-                "EXPORT": {
-                    "type": "array",
-                    "minItems": 1,
-                    "items": {
-                        "type": "object",
-                        "properties": {
-                            "@AS": {
-                                "type": "string"
-                            },
-                            "@localDEF": {
-                                "type": "string"
-                            }
-                        },
-                        "required": [
-                            "@localDEF"
-                        ],
-                        "additionalProperties": false
-                    }
-                },
-                "IMPORT": {
-                    "type": "array",
-                    "minItems": 1,
-                    "items": {
-                        "type": "object",
-                        "properties": {
-                            "@AS": {
-                                "type": "string"
-                            },
-                            "@importedDEF": {
-                                "type": "string"
-                            },
-                            "@inlineDEF": {
-                                "type": "string"
-                            }
-                        },
-                        "required": [
-                            "@importedDEF",
-                            "@inlineDEF"
-                        ],
-                        "additionalProperties": false
-                    }
                 }
             },
             "additionalProperties": false
@@ -14204,7 +14206,7 @@
                         "additionalProperties": false
                     }
                 },
-                "Th": {
+                "-children": {
                     "type": "array",
                     "items": {
                         "type": "object",
@@ -15392,6 +15394,12 @@
                     },
                     "ExternProtoDeclare": {
                         "$ref": "#/definitions/ExternProtoDeclare"
+                    },
+                    "IMPORT": {
+                        "$ref": "#/definitions/IMPORT"
+                    },
+                    "EXPORT": {
+                        "$ref": "#/definitions/EXPORT"
                     }
                 },
                 "additionalProperties": false
@@ -16178,6 +16186,12 @@
                     },
                     "ExternProtoDeclare": {
                         "$ref": "#/definitions/ExternProtoDeclare"
+                    },
+                    "IMPORT": {
+                        "$ref": "#/definitions/IMPORT"
+                    },
+                    "EXPORT": {
+                        "$ref": "#/definitions/EXPORT"
                     }
                 },
                 "additionalProperties": false
@@ -16263,6 +16277,12 @@
                     },
                     "ROUTE": {
                         "$ref": "#/definitions/ROUTE"
+                    },
+                    "IMPORT": {
+                        "$ref": "#/definitions/IMPORT"
+                    },
+                    "EXPORT": {
+                        "$ref": "#/definitions/EXPORT"
                     }
                 },
                 "additionalProperties": false

@@ -1,3 +1,43 @@
+var SFNodes = {
+"-appearance" : 1,
+"-body" : 1,
+"-child" : 1,
+"-collidable" : 1,
+"-collider" : 1,
+"-color" : 1,
+"-composableRenderStyle" : 1,
+"-coord" : 1,
+"-emitter" : 1,
+"-fillProperties" : 1,
+"-fogCoord" : 1,
+"-fontStyle" : 1,
+"-geometry" : 1,
+"-geoOrigin" : 1,
+"-layout" : 1,
+"-lineProperties" : 1,
+"-massDensityModel" : 1,
+"-material" : 1,
+"-metadata" : 1,
+"-normal" : 1,
+"-nurbsCurve" : 1,
+"-nurbsCurve2D" : 1,
+"-pickingGeometry" : 1,
+"-renderStyle" : 1,
+"-shape" : 1,
+"-source" : 1,
+"-texCoord" : 1,
+"-texCoordNurbs" : 1,
+"-texCoordRamp" : 1,
+"-texture" : 1,
+"-texture2D" : 1,
+"-texture2DMulti" : 1,
+"-texture3D" : 1,
+"-textureProperties" : 1,
+"-textureTransform" : 1,
+"-transferFunction" : 1,
+"-viewport" : 1
+};
+
 function flattenerArray(object, parentArray) {
 	var newobject = [];
 	var offset = 0;
@@ -20,7 +60,8 @@ function flattenerObject(object, parentArray, arrayLen) {
 	for (var p in object) {
 		var possibleArray = flattener(object[p], parentArray, arrayLen);
 		if (Array.isArray(possibleArray)) {
-			if (p === '-geometry' || p === '-material' || p === '-appearance') {
+			if (SFNodes[p]) {
+				// SFNodes should only have one child
 				newobject[p] = possibleArray[0];
 				// handle extra nodes brought in from proto
 				for (var i = 1; i < possibleArray.length; i++) {
