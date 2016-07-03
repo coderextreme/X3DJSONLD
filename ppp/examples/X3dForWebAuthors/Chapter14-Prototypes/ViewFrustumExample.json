@@ -331,7 +331,7 @@
                 "-children": [
                   {
                     "Coordinate": {
-                      "@USE": "FrustumCoordinate"
+                      "@USE": "DECLViewFrustum_INSTANCE_FrustumCoordinate"
                     }
                   }
                 ]
@@ -343,7 +343,7 @@
                 "-children": [
                   {
                     "Extrusion": {
-                      "@USE": "FrustumExtrusion"
+                      "@USE": "DECLViewFrustum_INSTANCE_FrustumExtrusion"
                     }
                   }
                 ]

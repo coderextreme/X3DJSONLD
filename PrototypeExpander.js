@@ -146,8 +146,7 @@ function getScriptFieldFieldTypeField(fields, field) {
 	return [ f, fieldname, type, objectfield];
 }
 
-function setScriptFields(objectp, def) {
-	var fields  = objectp["field"];
+function setScriptFields(fields, def) {
 	var scope = getScope();
 	for (var field in fields) {
 		var field_name_field_type_objectfield_name = getScriptFieldFieldTypeField(fields, field);
@@ -230,12 +229,12 @@ function setConnectFields(object, p, newobject) {
 	}
 }
 
-function setScriptConnectFields(object, p, newobject, scriptFields) {
-	var def = object["@DEF"]; // at same level as IS
-	var newdef = saveDef(def);
+function setScriptConnectFields(file, object, p, newobject) {
 	var connect = object[p]["connect"];
 	var scope = getScope();
-	newobject["field"] = scriptFields;
+	var def = object["@DEF"];
+	newobject["field"] = realPrototypeExpander(file, object["field"], true);
+	var newdef = newobject["@DEF"]; // at same level as IS
 	for (var cfield in connect) {
 		var f = connect[cfield];
 		if (f) {
@@ -298,8 +297,10 @@ function extractConnectedDef(scope, node) {
 	for (var sf in scriptField[getField(scope,node)]) {
 		var obj = scriptField[getField(scope,node)][sf];
 		if (typeof obj !== 'undefined') {
-			defobj = [getField(scope, obj[3]), obj[0]["@name"]];
-			console.error("def1 is", defobj);
+			if (typeof obj[3] !== 'undefined') {
+				defobj = [getField(scope, obj[3]), obj[0]["@name"]];
+				console.error("def5 is", defobj);
+			}
 		}
 	}
 	if (typeof defobj === 'undefined') {
@@ -307,7 +308,7 @@ function extractConnectedDef(scope, node) {
 			var obj = protoField[getField(scope,node)][pf];
 			if (typeof obj !== 'undefined') {
 				defobj = [obj[3], obj[1]];
-				// console.error("def2 is", defobj);
+				console.error("def2 is", defobj);
 			}
 		}
 	}
@@ -316,13 +317,13 @@ function extractConnectedDef(scope, node) {
 			var obj = protoField[getField(scope,"__DEF_FIELD__")][pf];
 			if (typeof obj !== 'undefined') {
 				defobj = [obj[3], node];
-				// console.error("def3 is", defobj);
+				console.error("def3 is", defobj);
 			}
 		}
 	}
 	if (typeof defobj === 'undefined') {
 		defobj = [scope, node];
-		// console.error("def4 is", defobj);
+		console.error("def4 is", defobj);
 	}
 	return defobj;
 }
@@ -477,26 +478,23 @@ function prototypeExpander(file, object) {
 	defs = {};
 
 	object = realPrototypeExpander(file, object, false);
-	// zapIs(object);
+	zapIs(object);
 	// console.error("SCRIPTS", JSON.stringify(scriptField));
 	// console.error("PROTOS", JSON.stringify(protoField, null, 2));
 	return object;
 }
 
-function handleScript(file, object, p) {
-	var def  = object[p]["@DEF"];
-	var newdef = saveDef(def);
-	setScriptFields(object[p], newdef);
-	var url  = object[p]["@url"];
+function handleScript(file, object, p, newobject) {
+	newobject[p] = realPrototypeExpander(file, object[p], true);
+	console.error("DEF is", newobject[p]["@DEF"]);
+	setScriptFields(newobject[p]["field"], newobject[p]["DEF"]);
+	var url  = newobject[p]["@url"];
 	loadURLs(file, url, function(data, fileExt) {
 		if (typeof data !== 'undefined') {
-			object[p]["#sourceText"] = data.split(/\r?\n/);
-			delete object[p]["@url"];
+			newobject[p]["#sourceText"] = data.split(/\r?\n/);
+			delete newobject[p]["@url"];
 		}
 	});
-	var newobject = realPrototypeExpander(file, object[p], object[p]["field"]);
-	newobject["@DEF"] = getScope(def);
-	return newobject;
 }
 
 function handleProtoDeclare(file, object, p) {
@@ -576,7 +574,6 @@ function handleProtoInstance(file, object, p) {
 	if (!Array.isArray(firstobj)) {
 		if (typeof use !== 'undefined') {
 			for (var q in firstobj) {
-				// console.error("USE is ", use, "q is", q, "firstobj q is", firstobj[q]);
 				if (q === "Group" || q == "Transform") {
 					if (typeof firstobj[q] === 'object' && !Array.isArray(firstobj[q])) {
 						firstobj[q]["@USE"] = getScope(use);  // there will be at least DEF with this USE
@@ -630,7 +627,7 @@ function handleProtoInstance(file, object, p) {
 	return newobject;
 }
 
-function realPrototypeExpander(file, object, scriptFields) {
+function realPrototypeExpander(file, object, inScript) {
 	if (typeof object === "object") {
 		if (Array.isArray(object)) {
 			var newobject = [];
@@ -640,28 +637,34 @@ function realPrototypeExpander(file, object, scriptFields) {
 		for (var p in object) {
 			var plc = p.toLowerCase();
 			if (plc === 'script') {
-				newobject[p] = handleScript(file, object, p);
+				handleScript(file, object, p, newobject);
 			} else if (plc === 'protodeclare') {
 				handleProtoDeclare(file, object, p);
 			} else if (plc === 'protointerface') {
 				handleProtoInterface(file, object, p);
 			} else if (plc === 'protobody') {
-				realPrototypeExpander(file, object[p], scriptFields);
+				realPrototypeExpander(file, object[p], inScript);
 			} else if (plc === 'protoinstance') {
 				newobject = handleProtoInstance(file, object, p);
 			} else if (plc === 'connect') {
-				realPrototypeExpander(file, object[p], scriptFields);
+				realPrototypeExpander(file, object[p], inScript);
 			} else if (plc === 'fieldvalue') {
-				realPrototypeExpander(file, object[p], scriptFields);
+				realPrototypeExpander(file, object[p], inScript);
 			} else if (plc === 'field') {
-				newobject[p] = realPrototypeExpander(file, object[p], scriptFields);
+				newobject[p] = realPrototypeExpander(file, object[p], inScript);
+			} else if (plc === '@value') {
+				newobject[p] = realPrototypeExpander(file, object[p], inScript);
+				console.error("@value is ", newobject[p]);
+			} else if (plc === '-children') {
+				newobject[p] = realPrototypeExpander(file, object[p], inScript);
+				console.error("-children is ", newobject[p]);
 			} else if (plc === 'is') {
-				if (scriptFields) {
-					setScriptConnectFields(object, p, newobject, scriptFields);
+				if (inScript) {
+					setScriptConnectFields(file, object, p, newobject);
 				} else {
 					setConnectFields(object, p, newobject);
 				}
-				realPrototypeExpander(file, object[p], scriptFields);
+				realPrototypeExpander(file, object[p], inScript);
 			} else if (plc === 'route') {
 				newobject[p] = {};
 				var envFrom = extractConnectedDef(getScope(object[p]["@fromNode"]), object[p]["@fromField"]);
@@ -682,9 +685,9 @@ function realPrototypeExpander(file, object, scriptFields) {
 				setConnectField(getScope(), "__DEF_FIELD__", newobject, object[p], "SFString", newobject[p]);
 			} else if (plc === '@use') {
 				newobject[p] = getScope(object[p]);
-				// console.error("USE is2 ", object[p], newobject);
+				console.error("USE for", object[p], "is", newobject[p]);
 			} else {
-				newobject[p] = realPrototypeExpander(file, object[p], scriptFields);
+				newobject[p] = realPrototypeExpander(file, object[p], inScript);
 			}
 		}
 		return newobject;
