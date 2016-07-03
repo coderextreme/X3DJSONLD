@@ -1,0 +1,179 @@
+{
+  "X3D": {
+    "encoding": "UTF-8",
+    "@profile": "Immersive",
+    "@version": "3.3",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "MaterialModulatorPrototypeExpanded.x3d"
+        },
+        {
+          "@name": "description",
+          "@content": "Mimic a Material node and modulate fields as an animation effect, providing example for expansion of a MaterialModulator ProtoInstance as regular nodes"
+        },
+        {
+          "@name": "creator",
+          "@content": "Don Brutzman"
+        },
+        {
+          "@name": "created",
+          "@content": "2 July 2016"
+        },
+        {
+          "@name": "modified",
+          "@content": "2 July 2016"
+        },
+        {
+          "@name": "subject",
+          "@content": "X3D prototype expansion requiring Script inputOutput fields"
+        },
+        {
+          "@name": "Image",
+          "@content": "MaterialModulator.png"
+        },
+        {
+          "@name": "identifier",
+          "@content": "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14-Prototypes/MaterialModulatorPrototypeExpanded.x3d"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+        },
+        {
+          "@name": "license",
+          "@content": "../license.html"
+        },
+        {
+          "@name": "translated",
+          "@content": "02 July 2016"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+        },
+        {
+          "@name": "warning",
+          "@content": "An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        {
+          "Shape": {
+            "-geometry": {
+              "Sphere": {}
+            },
+            "-appearance": {
+              "Appearance": {
+                "-material": {
+                  "Material": {
+                    "@DEF": "MaterialModulatorNodeExpanded1",
+                    "-children": [
+                      {
+                        "#comment": "no children nodes found, no follow-on nodes appear here"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "Switch": {
+            "@DEF": "HideAdditionalPrototypeBodyNodesExpanded1",
+            "@whichChoice": -1,
+            "-children": [
+              {
+                "#comment": "Only first node (the node type) of the prototype is renderable, others follow here when Switch is first allowed"
+              },
+              {
+                "Script": {
+                  "@DEF": "MaterialModulatorScriptExpanded1",
+                  "field": [
+                    {
+                      "@name": "enabled",
+                      "@accessType": "inputOutput",
+                      "@type": "SFBool",
+                      "@value": true
+                    },
+                    {
+                      "@name": "diffuseColor",
+                      "@accessType": "inputOutput",
+                      "@type": "SFColor",
+                      "@value": [
+                        0.8,
+                        0.8,
+                        0.8
+                      ]
+                    },
+                    {
+                      "@name": "newColor",
+                      "@accessType": "outputOnly",
+                      "@type": "SFColor"
+                    },
+                    {
+                      "@name": "clockTrigger",
+                      "@accessType": "inputOnly",
+                      "@type": "SFTime"
+                    }
+                  ],
+                  "#sourceText": [
+                    "ecmascript:",
+                    "function initialize ()",
+                    "{",
+                    "    newColor = diffuseColor; // start with correct color",
+                    "}",
+                    "",
+                    "function clockTrigger (timeValue)",
+                    "{",
+                    "    if (!enabled) return;",
+                    "    red   = newColor.r;",
+                    "    green = newColor.g;",
+                    "    blue  = newColor.b;",
+                    "    ",
+                    "    // note different modulation rates for each color component, % is modulus operator",
+                    "    newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1);   ",
+                    "    Browser.print ('diffuseColor=(' + red +',' + green + ',' + blue + ') newColor=' + newColor.toString() + '\\');",
+                    "}"
+                  ]
+                }
+              },
+              {
+                "#comment": "Clock tickles Script to wake up and compute a new value"
+              },
+              {
+                "ROUTE": {
+                  "@fromNode": "MaterialModulatorScriptExpanded1",
+                  "@fromField": "newColor",
+                  "@toNode": "MaterialModulatorNodeExpanded1",
+                  "@toField": "diffuseColor"
+                }
+              },
+              {
+                "TimeSensor": {
+                  "@DEF": "ModulationClockExpanded1",
+                  "@cycleInterval": 0.1,
+                  "@loop": true
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromNode": "ModulationClockExpanded1",
+                  "@fromField": "cycleTime",
+                  "@toNode": "MaterialModulatorScriptExpanded1",
+                  "@toField": "clockTrigger"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

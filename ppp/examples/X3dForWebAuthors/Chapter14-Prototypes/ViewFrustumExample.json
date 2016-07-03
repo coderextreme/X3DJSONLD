@@ -25,7 +25,7 @@
         },
         {
           "@name": "modified",
-          "@content": "23 December 2010"
+          "@content": "1 July 2016"
         },
         {
           "@name": "reference",
@@ -48,6 +48,10 @@
           "@content": "ViewpointCalculator.png"
         },
         {
+          "@name": "Image",
+          "@content": "ViewpointCalculatorComposed.png"
+        },
+        {
           "@name": "subject",
           "@content": "view culling frustum"
         },
@@ -65,7 +69,7 @@
         },
         {
           "@name": "translated",
-          "@content": "27 March 2016"
+          "@content": "01 July 2016"
         },
         {
           "@name": "generator",

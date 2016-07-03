@@ -56,12 +56,12 @@ function zapSource(object) {
 
 function processScripts(object, classes, package, routecode) {
 	if (typeof package === 'undefined') {
-		classes.log("function SFRotation(a, b, c, d) { return [a, b, c, d]};");
-		classes.log("function MFRotation(a, b, c, d) { return []};");
-		classes.log("function SFVec3f(a, b, c) { return [a, b, c]};");
-		classes.log("function MFVec3f() { return []};");
-		classes.log("function MFVec2f() { return []};");
-		classes.log("function MFString() { return []};");
+		classes.log("function SFRotation() { return Array.prototype.slice.call(arguments, 0); };");
+		classes.log("function MFRotation() { return Array.prototype.slice.call(arguments, 0); };");
+		classes.log("function SFVec3f() { return Array.prototype.slice.call(arguments, 0); };");
+		classes.log("function MFVec3f() { return Array.prototype.slice.call(arguments, 0); };");
+		classes.log("function MFVec2f() { return Array.prototype.slice.call(arguments, 0); };");
+		classes.log("function MFString() { return Array.prototype.slice.call(arguments, 0); };");
 		classes.log('var X3DJSON = {};');
 		routecode.log("if (typeof $ === 'undefined') {");
 		routecode.log("	   $ = function(selector) { return {");
@@ -94,8 +94,8 @@ function processScripts(object, classes, package, routecode) {
 				registerFields(object[p]['field'], classes, script);
 				processSource(object[p]['#sourceText'], classes, script);
 				processFields(object[p]['field'], classes, script);
-				// zap original source because we don't need it
 				processScripts(object[p], classes, script, routecode);
+				// zap original source because we don't need it
 				// delete object[p]['#sourceText'];
 			} else if (p.toLowerCase() === 'route') {
 				processRoute(object[p], routecode, package);
@@ -294,12 +294,12 @@ function processFields(fields, classes, package) {
 		}
 	}
 	classes.log('};');
-	classes.log('X3DJSON.Object_'+package.name + ' = new X3DJSON.'+package.name+'();');
+	classes.log('X3DJSON.Object_'+package.name + ' = new X3DJSON["'+package.name+'"]();');
 	classes.log('if (typeof X3DJSON.Object_'+package.name + '.initialize === "function") X3DJSON.Object_'+package.name + '.initialize();');
 }
 
 function processSource(lines, classes, package) {
-	classes.log('X3DJSON.'+package.name +  ' = function() {');
+	classes.log('X3DJSON["'+package.name +  '"] = function() {');
 	if (typeof lines !== 'undefined') {
 		for (var l in lines) {
 			lines[l] = lines[l].replace(/[\n\r]/g, "").replace(/\/\/(.*)function/g, '//$1functino');
@@ -346,7 +346,7 @@ function processSource(lines, classes, package) {
 			body = body.replace(/\svar\s+this\./g,  " var ");
 
 			// replace constructors with arrays
-			body = body.replace(/new (MF[A-Za-z0-9]+|SFMatrix[A-Za-z0-9]+|SFVec[234][df]|SFRotation|SFColor)[ 	]*\(([^;()]*)\)[ 	]*;/g, "Browser.stringToArray\('$1',[$2]\);");
+			// body = body.replace(/new (MF[A-Za-z0-9]+|SFMatrix[A-Za-z0-9]+|SFVec[234][df]|SFRotation|SFColor)[ 	]*\(([^;()]*)\)[ 	]*;/g, "Browser.stringToArray\('$1',[$2]\);");
 
 			//body = body.replace(/&amp;/g, '&');
 			//body = body.replace(/&lt;/g, '<');

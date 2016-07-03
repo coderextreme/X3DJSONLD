@@ -28,7 +28,7 @@ function saveDef(def) {
 	defs[def] = getScope();
 	var d = getScope(def);
 	// console.error("DEF SAVED", d, defs[def]);
-	return d
+	return d;
 }
 
 function getDef(def) {
@@ -155,10 +155,10 @@ function setScriptFields(fields, def) {
 		var type = field_name_field_type_objectfield_name[2];
 		var objectfield = field_name_field_type_objectfield_name[3];
 		var type_scope = setValueFromInterface(fieldname, f, objectfield);
-		console.error("SSF1", scope, fieldname, f, objectfield, type, def);
+		// console.error("SSF1", scope, fieldname, f, objectfield, type, def);
 		setScriptField(scope, fieldname, f, objectfield, type, def);
 		if (typeof type_scope !== 'undefined') {
-			console.error("SSF2", type_scope[1], fieldname, f, objectfield, type, def);
+			// console.error("SSF2", type_scope[1], fieldname, f, objectfield, type, def);
 			setScriptField(type_scope[1], fieldname, f, objectfield, type, def);
 		}
 
@@ -251,13 +251,13 @@ function setScriptConnectFields(file, object, p, newobject) {
 			if (typeof type_scope !== 'undefined') {
 				type = type_scope[0];
 				// setEnv(scope, field, newobject, objectfield, type, newdef);
-				console.error("SSF3", scope, field, f, objectfield, type, def);
+				// console.error("SSF3", scope, field, f, objectfield, type, def);
 				setScriptField(scope, field, f, objectfield, type, def);
-				console.error("SSF4", type_scope[1], field, f, objectfield, type, def);
+				// console.error("SSF4", type_scope[1], field, f, objectfield, type, def);
 				setScriptField(type_scope[1], field, f, objectfield, type, def);
 			} else {
 				// setEnv(scope, field, newobject, objectfield, type, newdef);
-				console.error("SSF5", scope, field, f, objectfield, type, def);
+				// console.error("SSF5", scope, field, f, objectfield, type, def);
 				setScriptField(scope, field, f, objectfield, type, def);
 			}
 		}
@@ -299,7 +299,7 @@ function extractConnectedDef(scope, node) {
 		if (typeof obj !== 'undefined') {
 			if (typeof obj[3] !== 'undefined') {
 				defobj = [getField(scope, obj[3]), obj[0]["@name"]];
-				console.error("def5 is", defobj);
+				// console.error("def5 is", defobj);
 			}
 		}
 	}
@@ -308,7 +308,7 @@ function extractConnectedDef(scope, node) {
 			var obj = protoField[getField(scope,node)][pf];
 			if (typeof obj !== 'undefined') {
 				defobj = [obj[3], obj[1]];
-				console.error("def2 is", defobj);
+				// console.error("def2 is", defobj);
 			}
 		}
 	}
@@ -317,13 +317,13 @@ function extractConnectedDef(scope, node) {
 			var obj = protoField[getField(scope,"__DEF_FIELD__")][pf];
 			if (typeof obj !== 'undefined') {
 				defobj = [obj[3], node];
-				console.error("def3 is", defobj);
+				// console.error("def3 is", defobj);
 			}
 		}
 	}
 	if (typeof defobj === 'undefined') {
 		defobj = [scope, node];
-		console.error("def4 is", defobj);
+		// console.error("def4 is", defobj);
 	}
 	return defobj;
 }
@@ -486,7 +486,7 @@ function prototypeExpander(file, object) {
 
 function handleScript(file, object, p, newobject) {
 	newobject[p] = realPrototypeExpander(file, object[p], true);
-	console.error("DEF is", newobject[p]["@DEF"]);
+	// console.error("DEF is", newobject[p]["@DEF"]);
 	setScriptFields(newobject[p]["field"], newobject[p]["DEF"]);
 	var url  = newobject[p]["@url"];
 	loadURLs(file, url, function(data, fileExt) {
@@ -654,10 +654,10 @@ function realPrototypeExpander(file, object, inScript) {
 				newobject[p] = realPrototypeExpander(file, object[p], inScript);
 			} else if (plc === '@value') {
 				newobject[p] = realPrototypeExpander(file, object[p], inScript);
-				console.error("@value is ", newobject[p]);
+				// console.error("@value is ", newobject[p]);
 			} else if (plc === '-children') {
 				newobject[p] = realPrototypeExpander(file, object[p], inScript);
-				console.error("-children is ", newobject[p]);
+				// console.error("-children is ", newobject[p]);
 			} else if (plc === 'is') {
 				if (inScript) {
 					setScriptConnectFields(file, object, p, newobject);
@@ -685,7 +685,7 @@ function realPrototypeExpander(file, object, inScript) {
 				setConnectField(getScope(), "__DEF_FIELD__", newobject, object[p], "SFString", newobject[p]);
 			} else if (plc === '@use') {
 				newobject[p] = getScope(object[p]);
-				console.error("USE for", object[p], "is", newobject[p]);
+				// console.error("USE for", object[p], "is", newobject[p]);
 			} else {
 				newobject[p] = realPrototypeExpander(file, object[p], inScript);
 			}
