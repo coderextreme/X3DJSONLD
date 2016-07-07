@@ -6062,9 +6062,9 @@
                                 {
                                     "type": "string",
                                     "enum": [
-                                        "\"LEFT\"",
-                                        "\"CENTER\"",
-                                        "\"RIGHT\""
+                                        "LEFT",
+                                        "CENTER",
+                                        "RIGHT"
                                     ],
                                     "default": "CENTER"
                                 }
@@ -14018,7 +14018,17 @@
             "type": "object",
             "properties": {
                 "@profile": {
-                    "type": "string"
+                    "type": "string",
+                    "enum": [
+                        "Core",
+                        "Interchange",
+                        "CADInterchange",
+                        "Interactive",
+                        "Immersive",
+                        "MedicalInterchange",
+                        "MPEG4Interactive",
+                        "Full"
+                    ]
                 },
                 "@version": {
                     "type": "string",
