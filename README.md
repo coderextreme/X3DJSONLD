@@ -10,7 +10,7 @@ git clone https://github.com/coderextreme/X3DJSONLD
 cd X3DJSONLD
 ```
 
-* If you want to use node as your web server, download and install node.js (npm comes with it). You may wish to use python's SimpleHTTPServer or other.  If you use another server, you will need to create a symbolic link or junction in the local folder called examples that points to the folder found in config.js
+* If you want to use node as your web server, download and install node.js (npm comes with it). You may wish to use python's SimpleHTTPServer or other.  If you use another server, you will need to create a symbolic link or junction in the local folder called examples that points to the folder found in config.js.  You can download examples from here: http://www.web3d.org/x3d/content/examples/X3dExampleArchivesJsonScenes.zip
 
 * Either add link (in UNIX) junction (Windows) or edit config.js for node.js, and start a web server
 ```
