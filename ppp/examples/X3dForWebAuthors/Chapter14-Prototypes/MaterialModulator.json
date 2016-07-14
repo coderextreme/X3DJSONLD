@@ -139,11 +139,6 @@
                 "@type": "SFTime"
               }
             ],
-            "@value": [
-              0.8,
-              0.8,
-              0.8
-            ],
             "#sourceText": [
               "ecmascript:",
               "function initialize ()",

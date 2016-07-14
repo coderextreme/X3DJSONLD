@@ -249,7 +249,6 @@
                 "@type": "MFInt32"
               }
             ],
-            "@value": false,
             "#sourceText": [
               "// ArchPrototypeScript.js",
               "",
