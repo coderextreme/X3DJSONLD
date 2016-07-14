@@ -106,84 +106,97 @@
           }
         },
         {
-          "#comment": "Only first node (the node type) is renderable, others are along for the ride"
-        },
-        {
-          "Script": {
-            "@DEF": "DECLMaterialModulator_INSTANCE_MaterialModulatorScript",
-            "field": [
+          "Switch": {
+            "@whichChoice": -1,
+            "-children": [
               {
-                "@name": "enabled",
-                "@accessType": "inputOutput",
-                "@type": "SFBool",
-                "@value": true
-              },
-              {
-                "@name": "diffuseColor",
-                "@accessType": "inputOutput",
-                "@type": "SFColor",
-                "@value": [
-                  0.5,
-                  0.1,
-                  0.1
-                ]
-              },
-              {
-                "@name": "newColor",
-                "@accessType": "outputOnly",
-                "@type": "SFColor"
-              },
-              {
-                "@name": "clockTrigger",
-                "@accessType": "inputOnly",
-                "@type": "SFTime"
+                "Group": {
+                  "-children": [
+                    {
+                      "#comment": "Only first node (the node type) is renderable, others are along for the ride"
+                    },
+                    {
+                      "Script": {
+                        "@DEF": "DECLMaterialModulator_INSTANCE_MaterialModulatorScript",
+                        "field": [
+                          {
+                            "@name": "enabled",
+                            "@accessType": "inputOutput",
+                            "@type": "SFBool",
+                            "@value": true
+                          },
+                          {
+                            "@name": "diffuseColor",
+                            "@accessType": "inputOutput",
+                            "@type": "SFColor",
+                            "@value": [
+                              0.5,
+                              0.1,
+                              0.1
+                            ]
+                          },
+                          {
+                            "@name": "newColor",
+                            "@accessType": "outputOnly",
+                            "@type": "SFColor"
+                          },
+                          {
+                            "@name": "clockTrigger",
+                            "@accessType": "inputOnly",
+                            "@type": "SFTime"
+                          }
+                        ],
+                        "#sourceText": [
+                          "ecmascript:",
+                          "function initialize ()",
+                          "{",
+                          "    newColor = diffuseColor; // start with correct color",
+                          "}",
+                          "",
+                          "function clockTrigger (timeValue)",
+                          "{",
+                          "    if (!enabled) return;",
+                          "    red   = newColor.r;",
+                          "    green = newColor.g;",
+                          "    blue  = newColor.b;",
+                          "    ",
+                          "    // note different modulation rates for each color component, % is modulus operator",
+                          "    newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1);   ",
+                          "    Browser.print ('diffuseColor=(' + red +',' + green + ',' + blue + ') newColor=' + newColor.toString() + '\\');",
+                          "}"
+                        ]
+                      }
+                    },
+                    {
+                      "#comment": "Clock tickles Script to wake up and compute a new value"
+                    },
+                    {
+                      "ROUTE": {
+                        "@fromNode": "DECLMaterialModulator_INSTANCE_MaterialModulatorScript",
+                        "@fromField": "newColor",
+                        "@toNode": "DECLMaterialModulator_INSTANCE_MaterialNode",
+                        "@toField": "diffuseColor"
+                      }
+                    },
+                    {
+                      "TimeSensor": {
+                        "@DEF": "DECLMaterialModulator_INSTANCE_ModulationClock",
+                        "@cycleInterval": 0.1,
+                        "@loop": true
+                      }
+                    },
+                    {
+                      "ROUTE": {
+                        "@fromNode": "DECLMaterialModulator_INSTANCE_ModulationClock",
+                        "@fromField": "cycleTime",
+                        "@toNode": "DECLMaterialModulator_INSTANCE_MaterialModulatorScript",
+                        "@toField": "clockTrigger"
+                      }
+                    }
+                  ]
+                }
               }
-            ],
-            "#sourceText": [
-              "ecmascript:",
-              "function initialize ()",
-              "{",
-              "    newColor = diffuseColor; // start with correct color",
-              "}",
-              "",
-              "function clockTrigger (timeValue)",
-              "{",
-              "    if (!enabled) return;",
-              "    red   = newColor.r;",
-              "    green = newColor.g;",
-              "    blue  = newColor.b;",
-              "    ",
-              "    // note different modulation rates for each color component, % is modulus operator",
-              "    newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1);   ",
-              "    Browser.print ('diffuseColor=(' + red +',' + green + ',' + blue + ') newColor=' + newColor.toString() + '\\');",
-              "}"
             ]
-          }
-        },
-        {
-          "#comment": "Clock tickles Script to wake up and compute a new value"
-        },
-        {
-          "ROUTE": {
-            "@fromNode": "DECLMaterialModulator_INSTANCE_MaterialModulatorScript",
-            "@fromField": "newColor",
-            "@toNode": "DECLMaterialModulator_INSTANCE_MaterialNode",
-            "@toField": "diffuseColor"
-          }
-        },
-        {
-          "TimeSensor": {
-            "@DEF": "DECLMaterialModulator_INSTANCE_ModulationClock",
-            "@cycleInterval": 0.1,
-            "@loop": true
-          }
-        },
-        {
-          "ROUTE": {
-            "@fromNode": "DECLMaterialModulator_INSTANCE_ModulationClock",
-            "@fromField": "cycleTime",
-            "@toNode": "DECLMaterialModulator_INSTANCE_MaterialModulatorScript",
-            "@toField": "clockTrigger"
           }
         }
       ]

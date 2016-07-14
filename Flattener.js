@@ -64,8 +64,21 @@ function flattenerObject(object, parentArray, arrayLen) {
 				// SFNodes should only have one child
 				newobject[p] = possibleArray[0];
 				// handle extra nodes brought in from proto
-				for (var i = 1; i < possibleArray.length; i++) {
-					parentArray[arrayLen+i-1] = possibleArray[i];
+				if (possibleArray.length > 1) {
+					parentArray[arrayLen] = { "Switch" : {
+								"@whichChoice": -1,
+								"-children" : [
+									{"Group" : {
+									"-children" : [
+									]
+									}
+									}
+								]
+								}
+								};
+					for (var i = 1; i < possibleArray.length; i++) {
+						parentArray[arrayLen]["Switch"]["-children"][0]["Group"]["-children"][i-1] = possibleArray[i];
+					}
 				}
 			} else {
 				newobject[p] = possibleArray;
