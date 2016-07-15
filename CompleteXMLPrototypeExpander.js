@@ -80,5 +80,5 @@ for (var arg in process.argv) {
 	var xml = [];
 	loadX3DJS(object, file, xml);
 	var newfile = "ppp/"+file.substr(0, file.lastIndexOf("."))+".x3d";
-	fs.writeFileSync(newfile, xml.join("\n"));
+	fs.writeFileSync(newfile, xml.join("\r\n"));
 }
