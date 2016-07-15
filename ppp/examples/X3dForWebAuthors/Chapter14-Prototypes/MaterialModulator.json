@@ -53,7 +53,7 @@
         },
         {
           "@name": "translated",
-          "@content": "01 July 2016"
+          "@content": "14 July 2016"
         },
         {
           "@name": "generator",
@@ -69,131 +69,249 @@
       "-children": [
         {},
         {
-          "#comment": "Rendered geometry follows prototype declaration"
+          "#comment": "Rendered geometry for the ProtoInstance now follows prototype declaration"
         },
         {
-          "Shape": {
-            "-geometry": {
-              "Sphere": {}
-            },
-            "-appearance": {
-              "Appearance": {
-                "-material": {
-                  "Material": {
-                    "@DEF": "DECLMaterialModulator_INSTANCE_MaterialNode",
-                    "@diffuseColor": [
-                      0.5,
-                      0.1,
-                      0.1
-                    ],
-                    "@emissiveColor": [
-                      0,
-                      0,
-                      0
-                    ],
-                    "@specularColor": [
-                      0,
-                      0,
-                      0
-                    ],
-                    "@transparency": 0,
-                    "@shininess": 0.2,
-                    "@ambientIntensity": 0.2
-                  }
-                }
-              }
-            }
-          }
-        },
-        {
-          "Switch": {
-            "@whichChoice": -1,
+          "Transform": {
+            "@translation": [
+              0,
+              1,
+              0
+            ],
             "-children": [
               {
-                "Group": {
+                "Shape": {
+                  "-geometry": {
+                    "Sphere": {}
+                  },
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@DEF": "DECLMaterialModulator_MaterialModulatorInstance_MaterialNode",
+                          "@diffuseColor": [
+                            0.5,
+                            0.1,
+                            0.1
+                          ],
+                          "@emissiveColor": [
+                            0,
+                            0,
+                            0
+                          ],
+                          "@specularColor": [
+                            0,
+                            0,
+                            0
+                          ],
+                          "@transparency": 0,
+                          "@shininess": 0.2,
+                          "@ambientIntensity": 0.2
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "Switch": {
+                  "@whichChoice": -1,
                   "-children": [
                     {
-                      "#comment": "Only first node (the node type) is renderable, others are along for the ride"
-                    },
-                    {
-                      "Script": {
-                        "@DEF": "DECLMaterialModulator_INSTANCE_MaterialModulatorScript",
-                        "field": [
+                      "Group": {
+                        "-children": [
                           {
-                            "@name": "enabled",
-                            "@accessType": "inputOutput",
-                            "@type": "SFBool",
-                            "@value": true
+                            "#comment": "Only first node (the node type) is renderable, others are along for the ride"
                           },
                           {
-                            "@name": "diffuseColor",
-                            "@accessType": "inputOutput",
-                            "@type": "SFColor",
-                            "@value": [
-                              0.5,
-                              0.1,
-                              0.1
-                            ]
+                            "Script": {
+                              "@DEF": "DECLMaterialModulator_MaterialModulatorInstance_MaterialModulatorScript",
+                              "field": [
+                                {
+                                  "@name": "enabled",
+                                  "@accessType": "inputOutput",
+                                  "@type": "SFBool",
+                                  "@value": true
+                                },
+                                {
+                                  "@name": "diffuseColor",
+                                  "@accessType": "inputOutput",
+                                  "@type": "SFColor",
+                                  "@value": [
+                                    0.5,
+                                    0.1,
+                                    0.1
+                                  ]
+                                },
+                                {
+                                  "@name": "newColor",
+                                  "@accessType": "outputOnly",
+                                  "@type": "SFColor"
+                                },
+                                {
+                                  "@name": "clockTrigger",
+                                  "@accessType": "inputOnly",
+                                  "@type": "SFTime"
+                                }
+                              ],
+                              "#sourceText": [
+                                "ecmascript:",
+                                "function initialize ()",
+                                "{",
+                                "    newColor = diffuseColor; // start with correct color",
+                                "}",
+                                "",
+                                "function clockTrigger (timeValue)",
+                                "{",
+                                "    if (!enabled) return;",
+                                "    red   = newColor.r;",
+                                "    green = newColor.g;",
+                                "    blue  = newColor.b;",
+                                "    ",
+                                "    // note different modulation rates for each color component, % is modulus operator",
+                                "    newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1);",
+                                "\tif (enabled)",
+                                "\t{",
+                                "\t\tBrowser.print ('diffuseColor=(' + red +',' + green + ',' + blue + ') newColor=' + newColor.toString() + '\\');",
+                                "\t}",
+                                "}"
+                              ]
+                            }
                           },
                           {
-                            "@name": "newColor",
-                            "@accessType": "outputOnly",
-                            "@type": "SFColor"
+                            "#comment": "Clock tickles Script to wake up and compute a new value"
                           },
                           {
-                            "@name": "clockTrigger",
-                            "@accessType": "inputOnly",
-                            "@type": "SFTime"
+                            "ROUTE": {
+                              "@fromNode": "DECLMaterialModulator_MaterialModulatorInstance_MaterialModulatorScript",
+                              "@fromField": "newColor",
+                              "@toNode": "DECLMaterialModulator_MaterialModulatorInstance_MaterialNode",
+                              "@toField": "diffuseColor"
+                            }
+                          },
+                          {
+                            "TimeSensor": {
+                              "@DEF": "DECLMaterialModulator_MaterialModulatorInstance_ModulationClock",
+                              "@cycleInterval": 0.1,
+                              "@loop": true,
+                              "@enabled": true
+                            }
+                          },
+                          {
+                            "ROUTE": {
+                              "@fromNode": "DECLMaterialModulator_MaterialModulatorInstance_ModulationClock",
+                              "@fromField": "cycleTime",
+                              "@toNode": "DECLMaterialModulator_MaterialModulatorInstance_MaterialModulatorScript",
+                              "@toField": "clockTrigger"
+                            }
                           }
-                        ],
-                        "#sourceText": [
-                          "ecmascript:",
-                          "function initialize ()",
-                          "{",
-                          "    newColor = diffuseColor; // start with correct color",
-                          "}",
-                          "",
-                          "function clockTrigger (timeValue)",
-                          "{",
-                          "    if (!enabled) return;",
-                          "    red   = newColor.r;",
-                          "    green = newColor.g;",
-                          "    blue  = newColor.b;",
-                          "    ",
-                          "    // note different modulation rates for each color component, % is modulus operator",
-                          "    newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1);   ",
-                          "    Browser.print ('diffuseColor=(' + red +',' + green + ',' + blue + ') newColor=' + newColor.toString() + '\\');",
-                          "}"
                         ]
-                      }
-                    },
-                    {
-                      "#comment": "Clock tickles Script to wake up and compute a new value"
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromNode": "DECLMaterialModulator_INSTANCE_MaterialModulatorScript",
-                        "@fromField": "newColor",
-                        "@toNode": "DECLMaterialModulator_INSTANCE_MaterialNode",
-                        "@toField": "diffuseColor"
-                      }
-                    },
-                    {
-                      "TimeSensor": {
-                        "@DEF": "DECLMaterialModulator_INSTANCE_ModulationClock",
-                        "@cycleInterval": 0.1,
-                        "@loop": true
-                      }
-                    },
-                    {
-                      "ROUTE": {
-                        "@fromNode": "DECLMaterialModulator_INSTANCE_ModulationClock",
-                        "@fromField": "cycleTime",
-                        "@toNode": "DECLMaterialModulator_INSTANCE_MaterialModulatorScript",
-                        "@toField": "clockTrigger"
                       }
                     }
                   ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "#comment": "Selectable Text design pattern has transparent Box and TouchSensor description as a tooltip"
+        },
+        {
+          "Transform": {
+            "@translation": [
+              0,
+              -2,
+              0
+            ],
+            "-children": [
+              {
+                "Shape": {
+                  "-geometry": {
+                    "Text": {
+                      "@string": [
+                        "enable/disable",
+                        "MaterialModulator"
+                      ],
+                      "-fontStyle": {
+                        "FontStyle": {
+                          "@family": [
+                            "SANS"
+                          ],
+                          "@justify": [
+                            "MIDDLE",
+                            "MIDDLE"
+                          ],
+                          "@style": "BOLD"
+                        }
+                      }
+                    }
+                  },
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            0.9,
+                            0.9,
+                            0.9
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "Shape": {
+                  "-geometry": {
+                    "Box": {
+                      "@size": [
+                        8,
+                        2,
+                        0.001
+                      ]
+                    }
+                  },
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@transparency": 1
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "#comment": "Toggle text to enable/disable MaterialModulator"
+              },
+              {
+                "TouchSensor": {
+                  "@DEF": "TouchTextInterface",
+                  "@description": "Select to enable/disable MaterialModulator"
+                }
+              },
+              {
+                "BooleanToggle": {
+                  "@DEF": "EventToggler"
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromNode": "TouchTextInterface",
+                  "@fromField": "isActive",
+                  "@toNode": "EventToggler",
+                  "@toField": "set_boolean"
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromNode": "EventToggler",
+                  "@fromField": "toggle",
+                  "@toNode": "DECLMaterialModulator_MaterialModulatorInstance_MaterialModulatorScript",
+                  "@toField": "enabled"
                 }
               }
             ]

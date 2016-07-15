@@ -84,7 +84,21 @@ function flattenerObject(object, parentArray, arrayLen) {
 				newobject[p] = possibleArray;
 			}
 		} else {
-			newobject[p] = possibleArray;
+			if (SFNodes[p]) {
+				if (typeof possibleArray === 'object' && possibleArray["#comment"]) {
+					if (newobject["-children"]) {
+						newobject[p] = {};
+						newobject["-children"].push(possibleArray);
+					} else {
+						newobject[p] = {};
+						newobject["-children"] = [ possibleArray ];
+					}
+				} else {
+					newobject[p] = possibleArray;
+				}
+			} else {
+				newobject[p] = possibleArray;
+			}
 		}
 	}
 	return newobject;
