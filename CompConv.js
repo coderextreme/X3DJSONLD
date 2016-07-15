@@ -79,6 +79,6 @@ for (var arg in process.argv) {
 	object = flattener(object);
 	var xml = [];
 	loadX3DJS(object, file, xml);
-	var newfile = "ppp/"+file.substr(0, file.lastIndexOf("."))+"Expanded.x3d";
+	var newfile = "ppp/"+file.substr(0, file.lastIndexOf("."))+".x3d";
 	fs.writeFileSync(newfile, xml.join("\n"));
 }

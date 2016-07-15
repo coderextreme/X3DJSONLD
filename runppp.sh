@@ -1,7 +1,7 @@
 #!/bin/sh
 
 mkdir -p ppp
-for i in box.json ArchPrototype.json NancyPrototypes.json for.json rubikOnFire.json bubbles.json rubik.json pp3.json qq3.json cobweb.json force.json
+for i in box.json ArchPrototype.json NancyPrototypes.json for.json rubikOnFire.json bubbles.json rubik.json pp3.json qq3.json cobweb.json force.json rubikFurnace.json
 do
 	echo "=========================$i=====================" 1>&2
 	node PPP.js $i > ppp/`basename $i`
