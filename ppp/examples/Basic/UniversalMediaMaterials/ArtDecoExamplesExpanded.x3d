@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "http://www.web3d.org/specifications/x3d-3.0.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.0" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.0.xsd"><head><meta name="title" content="ArtDecoExamples.x3d"></meta>
+<meta name="description" content="Example ExternProtoDeclare/ProtoInstance usage of X3D/VRML materials, originally converted from SGI's Open Inventor material examples."></meta>
+<meta name="creator" content="David Roussel"></meta>
+<meta name="translator" content="James Harney, Don Brutzman NPS"></meta>
+<meta name="created" content="7 April 2002"></meta>
+<meta name="modified" content="19 March 2009"></meta>
+<meta name="reference" content="http://vrmlstuff.free.fr/materials"></meta>
+<meta name="subject" content="Universal Media Material Library"></meta>
+<meta name="identifier" content="http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoExamples.x3d"></meta>
+<meta name="generator" content="Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"></meta>
+<meta name="license" content="../license.html"></meta>
+</head>
+<Scene><Group><NavigationInfo headlight="false"></NavigationInfo>
+<Viewpoint DEF="Front" description="Front view" position="0 0 12"></Viewpoint>
+<Viewpoint DEF="PersRight" description="Low Right" orientation="0.74291 0.30772 0.59447 1.2171" position="6.9282 -6.9282 6.9282"></Viewpoint>
+<Viewpoint DEF="PersLeft" description="Low Left" orientation="0.74291 -0.30772 -0.59447 1.2171" position="-6.9282 -6.9282 6.9282"></Viewpoint>
+<Viewpoint DEF="Back" description="Back view" orientation="0 1 0 3.1416" position="0 0 -12"></Viewpoint>
+<Transform DEF="Close_travel"><PositionInterpolator DEF="Close_Mover" key="0 0.25 0.5 0.75 1" keyValue="0 2.5 0 0 0 0 0 -2.5 0 0 0 0 0 2.5 0"></PositionInterpolator>
+<TimeSensor DEF="Close_Time" cycleInterval="12" loop="true"></TimeSensor>
+<Viewpoint DEF="Close" description="Close Front" position="0 0 6"></Viewpoint>
+</Transform>
+<DirectionalLight direction="1 -1 -1"></DirectionalLight>
+<DirectionalLight direction="0 1 -0.5" intensity="0.5"></DirectionalLight>
+<Anchor description="Back to front view" url="&quot;&quot;"><Transform translation="0 0 -0.5">
+
+</Transform>
+</Anchor>
+<Viewpoint DEF="View00" description="ArtDeco00" position="-3.75 3.75 3"></Viewpoint>
+<Transform translation="-3.75 3.75 0"><Anchor description="ArtDeco00 view" url="&quot;&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" ambientIntensity="0.25" diffuseColor="0.282435 0.085159 0.134462" shininess="0.127273" specularColor="0.276305 0.11431 0.139857"></Material>
+</Appearance>
+<Sphere containerField="geometry" DEF="Ball" radius="0.5"></Sphere>
+</Shape>
+</Anchor>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco" parameter="&quot;target=_source&quot;" url="&quot;examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" DEF="TextMat" diffuseColor="1 1 1"></Material>
+</Appearance>
+<Text containerField="geometry" string="&quot;ArtDeco00&quot;"><FontStyle containerField="fontStyle" DEF="Style" family="&quot;SANS&quot;" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" size="0.3" style="BOLD"></FontStyle>
+</Text>
+</Shape>
+</Anchor>
+</Transform>
+</Transform>
+<Viewpoint DEF="View01" description="ArtDeco01" position="-2.25 3.75 3"></Viewpoint>
+<Transform translation="-2.25 3.75 0"><Anchor description="ArtDeco01 view" url="&quot;&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" ambientIntensity="0.254777" diffuseColor="0.685208 0.134679 0.332385" shininess="0.071429" specularColor="0.122449 0.050035 0.050035"></Material>
+</Appearance>
+<Sphere containerField="geometry" USE="Ball"></Sphere>
+</Shape>
+</Anchor>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco01" parameter="&quot;target=_source&quot;" url="&quot;examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+</Appearance>
+<Text containerField="geometry" string="&quot;ArtDeco01&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
+</Text>
+</Shape>
+</Anchor>
+</Transform>
+</Transform>
+<Viewpoint DEF="View02" description="ArtDeco02" position="-0.75 3.75 3"></Viewpoint>
+<Transform translation="-0.75 3.75 0"><Anchor description="ArtDeco02 view" url="&quot;&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" ambientIntensity="1" diffuseColor="0.536861 0.0529 0.245479" shininess="0.832432" specularColor="0.805292 0.765198 0.747416"></Material>
+</Appearance>
+<Sphere containerField="geometry" USE="Ball"></Sphere>
+</Shape>
+</Anchor>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco02" parameter="&quot;target=_source&quot;" url="&quot;examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+</Appearance>
+<Text containerField="geometry" string="&quot;ArtDeco02&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
+</Text>
+</Shape>
+</Anchor>
+</Transform>
+</Transform>
+<Viewpoint DEF="View03" description="ArtDeco03" position="0.75 3.75 3"></Viewpoint>
+<Transform translation="0.75 3.75 0"><Anchor description="ArtDeco03 view" url="&quot;&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" ambientIntensity="0.248649" diffuseColor="1 0.452381 0.40339" shininess="0.902703" specularColor="0.686486 0.396903 0.419275"></Material>
+</Appearance>
+<Sphere containerField="geometry" USE="Ball"></Sphere>
+</Shape>
+</Anchor>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco03" parameter="&quot;target=_source&quot;" url="&quot;examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+</Appearance>
+<Text containerField="geometry" string="&quot;ArtDeco03&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
+</Text>
+</Shape>
+</Anchor>
+</Transform>
+</Transform>
+<Viewpoint DEF="View04" description="ArtDeco04" position="2.25 3.75 3"></Viewpoint>
+<Transform translation="2.25 3.75 0"><Anchor description="ArtDeco04 view" url="&quot;&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" ambientIntensity="0.25" diffuseColor="0.748016 0.298362 0.342624" shininess="0.69697" specularColor="0.345455 0.345455 0.345455"></Material>
+</Appearance>
+<Sphere containerField="geometry" USE="Ball"></Sphere>
+</Shape>
+</Anchor>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco04" parameter="&quot;target=_source&quot;" url="&quot;examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+</Appearance>
+<Text containerField="geometry" string="&quot;ArtDeco04&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
+</Text>
+</Shape>
+</Anchor>
+</Transform>
+</Transform>
+<Viewpoint DEF="View05" description="ArtDeco05" position="3.75 3.75 3"></Viewpoint>
+<Transform translation="3.75 3.75 0"><Anchor description="ArtDeco05 view" url="&quot;&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" ambientIntensity="0.24359" diffuseColor="0.945455 0.318988 0.321717" shininess="0.018182" specularColor="0.072727 0.021705 0.010732"></Material>
+</Appearance>
+<Sphere containerField="geometry" USE="Ball"></Sphere>
+</Shape>
+</Anchor>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco05" parameter="&quot;target=_source&quot;" url="&quot;examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+</Appearance>
+<Text containerField="geometry" string="&quot;ArtDeco05&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
+</Text>
+</Shape>
+</Anchor>
+</Transform>
+</Transform>
+<Viewpoint DEF="View06" description="ArtDeco06" position="-3.75 2.25 3"></Viewpoint>
+<Transform translation="-3.75 2.25 0"><Anchor description="ArtDeco06 view" url="&quot;&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" ambientIntensity="0.25946" diffuseColor="0.228655 0.195513 0.425484" shininess="0.542553" specularColor="0.324504 0.404255 0.404255"></Material>
+</Appearance>
+<Sphere containerField="geometry" USE="Ball"></Sphere>
+</Shape>
+</Anchor>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco06" parameter="&quot;target=_source&quot;" url="&quot;examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+</Appearance>
+<Text containerField="geometry" string="&quot;ArtDeco06&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
+</Text>
+</Shape>
+</Anchor>
+</Transform>
+</Transform>
+<Viewpoint DEF="View07" description="ArtDeco07" position="-2.25 2.25 3"></Viewpoint>
+<Transform translation="-2.25 2.25 0"><Anchor description="ArtDeco07 view" url="&quot;&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" ambientIntensity="0.333333" diffuseColor="0.200348 0.100857 0.320833" shininess="0.133333" specularColor="0.311358 0.387879 0.387879"></Material>
+</Appearance>
+<Sphere containerField="geometry" USE="Ball"></Sphere>
+</Shape>
+</Anchor>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco07" parameter="&quot;target=_source&quot;" url="&quot;examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+</Appearance>
+<Text containerField="geometry" string="&quot;ArtDeco07&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
+</Text>
+</Shape>
+</Anchor>
+</Transform>
+</Transform>
+<Viewpoint DEF="View08" description="ArtDeco08" position="-0.75 2.25 3"></Viewpoint>
+<Transform translation="-0.75 2.25 0"><Anchor description="ArtDeco08 view" url="&quot;&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" ambientIntensity="0.242424" diffuseColor="0.330519 0.3389 0.6" shininess="0.787879" specularColor="0.290909 0.290909 0.290909"></Material>
+</Appearance>
+<Sphere containerField="geometry" USE="Ball"></Sphere>
+</Shape>
+</Anchor>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco08" parameter="&quot;target=_source&quot;" url="&quot;examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+</Appearance>
+<Text containerField="geometry" string="&quot;ArtDeco08&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
+</Text>
+</Shape>
+</Anchor>
+</Transform>
+</Transform>
+<Viewpoint DEF="View09" description="ArtDeco09" position="0.75 2.25 3"></Viewpoint>
+<Transform translation="0.75 2.25 0"><Anchor description="ArtDeco09 view" url="&quot;&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" ambientIntensity="0.333333" diffuseColor="0.237059 0.096273 0.215625" shininess="0.133333" specularColor="0.311358 0.387879 0.387879"></Material>
+</Appearance>
+<Sphere containerField="geometry" USE="Ball"></Sphere>
+</Shape>
+</Anchor>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco09" parameter="&quot;target=_source&quot;" url="&quot;examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+</Appearance>
+<Text containerField="geometry" string="&quot;ArtDeco09&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
+</Text>
+</Shape>
+</Anchor>
+</Transform>
+</Transform>
+<Viewpoint DEF="View10" description="ArtDeco10" position="2.25 2.25 3"></Viewpoint>
+<Transform translation="2.25 2.25 0"><Anchor description="ArtDeco10 view" url="&quot;&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" ambientIntensity="0.242425" diffuseColor="0.304 0.09025 0.207364" shininess="0.072727" specularColor="0.6665 0.579046 0.830303"></Material>
+</Appearance>
+<Sphere containerField="geometry" USE="Ball"></Sphere>
+</Shape>
+</Anchor>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco10" parameter="&quot;target=_source&quot;" url="&quot;examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+</Appearance>
+<Text containerField="geometry" string="&quot;ArtDeco10&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
+</Text>
+</Shape>
+</Anchor>
+</Transform>
+</Transform>
+<Viewpoint DEF="View11" description="ArtDeco11" position="3.75 2.25 3"></Viewpoint>
+<Transform translation="3.75 2.25 0"><Anchor description="ArtDeco11 view" url="&quot;&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" ambientIntensity="0.258928" diffuseColor="0.335631 0.207672 0.238304" emissiveColor="0.010638 0.010638 0.010638" shininess="0.021277" specularColor="0.198631 0.075403 0.138803"></Material>
+</Appearance>
+<Sphere containerField="geometry" USE="Ball"></Sphere>
+</Shape>
+</Anchor>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco11" parameter="&quot;target=_source&quot;" url="&quot;examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+</Appearance>
+<Text containerField="geometry" string="&quot;ArtDeco11&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
+</Text>
+</Shape>
+</Anchor>
+</Transform>
+</Transform>
+<Viewpoint DEF="View12" description="ArtDeco12" position="-3.75 0.75 3"></Viewpoint>
+<Transform translation="-3.75 0.75 0"><Anchor description="ArtDeco12 view" url="&quot;&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" ambientIntensity="0.240838" diffuseColor="0.876873 0.14715 0.00856" shininess="0.076531" specularColor="0.193878 0.029416 0.029416"></Material>
+</Appearance>
+<Sphere containerField="geometry" USE="Ball"></Sphere>
+</Shape>
+</Anchor>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco12" parameter="&quot;target=_source&quot;" url="&quot;examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+</Appearance>
+<Text containerField="geometry" string="&quot;ArtDeco12&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
+</Text>
+</Shape>
+</Anchor>
+</Transform>
+</Transform>
+<Viewpoint DEF="View13" description="ArtDeco13" position="-2.25 0.75 3"></Viewpoint>
+<Transform translation="-2.25 0.75 0"><Anchor description="ArtDeco13 view" url="&quot;&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" ambientIntensity="0.25" diffuseColor="0.794445 0.249425 0" shininess="0.551515" specularColor="0.62904 0.194211 0.033663"></Material>
+</Appearance>
+<Sphere containerField="geometry" USE="Ball"></Sphere>
+</Shape>
+</Anchor>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco13" parameter="&quot;target=_source&quot;" url="&quot;examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+</Appearance>
+<Text containerField="geometry" string="&quot;ArtDeco13&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
+</Text>
+</Shape>
+</Anchor>
+</Transform>
+</Transform>
+<Viewpoint DEF="View14" description="ArtDeco14" position="-0.75 0.75 3"></Viewpoint>
+<Transform translation="-0.75 0.75 0"><Anchor description="ArtDeco14 view" url="&quot;&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" ambientIntensity="0.25" diffuseColor="0.510609 0.17264 0.059872" shininess="0.933333" specularColor="0.533333 0.533333 0.533333"></Material>
+</Appearance>
+<Sphere containerField="geometry" USE="Ball"></Sphere>
+</Shape>
+</Anchor>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco14" parameter="&quot;target=_source&quot;" url="&quot;examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+</Appearance>
+<Text containerField="geometry" string="&quot;ArtDeco14&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
+</Text>
+</Shape>
+</Anchor>
+</Transform>
+</Transform>
+<Viewpoint DEF="View15" description="ArtDeco15" position="0.75 0.75 3"></Viewpoint>
+<Transform translation="0.75 0.75 0"><Anchor description="ArtDeco15 view" url="&quot;&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" ambientIntensity="0.255814" diffuseColor="0.914894 0.444404 0.348914" shininess="0.12766" specularColor="0.345745 0.143066 0"></Material>
+</Appearance>
+<Sphere containerField="geometry" USE="Ball"></Sphere>
+</Shape>
+</Anchor>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco15" parameter="&quot;target=_source&quot;" url="&quot;examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+</Appearance>
+<Text containerField="geometry" string="&quot;ArtDeco15&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
+</Text>
+</Shape>
+</Anchor>
+</Transform>
+</Transform>
+<Viewpoint DEF="View16" description="ArtDeco16" position="2.25 0.75 3"></Viewpoint>
+<Transform translation="2.25 0.75 0"><Anchor description="ArtDeco16 view" url="&quot;&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" ambientIntensity="0.240838" diffuseColor="0.876873 0.323147 0.199564" shininess="0.80102" specularColor="0.816327 0.278677 0.278677"></Material>
+</Appearance>
+<Sphere containerField="geometry" USE="Ball"></Sphere>
+</Shape>
+</Anchor>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco16" parameter="&quot;target=_source&quot;" url="&quot;examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+</Appearance>
+<Text containerField="geometry" string="&quot;ArtDeco16&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
+</Text>
+</Shape>
+</Anchor>
+</Transform>
+</Transform>
+<Viewpoint DEF="View17" description="ArtDeco17" position="3.75 0.75 3"></Viewpoint>
+<Transform translation="3.75 0.75 0"><Anchor description="ArtDeco17 view" url="&quot;&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" ambientIntensity="0.242424" diffuseColor="0.515625 0.315496 0.252441" shininess="0.933333" specularColor="0.533333 0.533333 0.533333"></Material>
+</Appearance>
+<Sphere containerField="geometry" USE="Ball"></Sphere>
+</Shape>
+</Anchor>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco17" parameter="&quot;target=_source&quot;" url="&quot;examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+</Appearance>
+<Text containerField="geometry" string="&quot;ArtDeco17&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
+</Text>
+</Shape>
+</Anchor>
+</Transform>
+</Transform>
+<Viewpoint DEF="View18" description="ArtDeco18" position="-3.75 -0.75 3"></Viewpoint>
+<Transform translation="-3.75 -0.75 0"><Anchor description="ArtDeco18 view" url="&quot;&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" ambientIntensity="0.264706" diffuseColor="0 0.346939 0.253624" shininess="0.316327" specularColor="0 0.311074 0.357143"></Material>
+</Appearance>
+<Sphere containerField="geometry" USE="Ball"></Sphere>
+</Shape>
+</Anchor>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco18" parameter="&quot;target=_source&quot;" url="&quot;examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+</Appearance>
+<Text containerField="geometry" string="&quot;ArtDeco18&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
+</Text>
+</Shape>
+</Anchor>
+</Transform>
+</Transform>
+<Viewpoint DEF="View19" description="ArtDeco19" position="-2.25 -0.75 3"></Viewpoint>
+<Transform translation="-2.25 -0.75 0"><Anchor description="ArtDeco19 view" url="&quot;&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" ambientIntensity="0.259259" diffuseColor="0 0.251004 0.239248" shininess="0.060606" specularColor="0.177935 0.249369 0.229278"></Material>
+</Appearance>
+<Sphere containerField="geometry" USE="Ball"></Sphere>
+</Shape>
+</Anchor>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco19" parameter="&quot;target=_source&quot;" url="&quot;examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+</Appearance>
+<Text containerField="geometry" string="&quot;ArtDeco19&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
+</Text>
+</Shape>
+</Anchor>
+</Transform>
+</Transform>
+<Viewpoint DEF="View20" description="ArtDeco20" position="-0.75 -0.75 3"></Viewpoint>
+<Transform translation="-0.75 -0.75 0"><Anchor description="ArtDeco20 view" url="&quot;&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" ambientIntensity="0.24" diffuseColor="0.228298 0.385771 0.186794" shininess="0.393939" specularColor="0.200464 0.300145 0.293518"></Material>
+</Appearance>
+<Sphere containerField="geometry" USE="Ball"></Sphere>
+</Shape>
+</Anchor>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco20" parameter="&quot;target=_source&quot;" url="&quot;examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+</Appearance>
+<Text containerField="geometry" string="&quot;ArtDeco20&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
+</Text>
+</Shape>
+</Anchor>
+</Transform>
+</Transform>
+<Viewpoint DEF="View21" description="ArtDeco21" position="0.75 -0.75 3"></Viewpoint>
+<Transform translation="0.75 -0.75 0"><Anchor description="ArtDeco21 view" url="&quot;&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" ambientIntensity="0.25" diffuseColor="0.315389 0.544 0.258052" shininess="0.509389" specularColor="0.456 0.456 0.456"></Material>
+</Appearance>
+<Sphere containerField="geometry" USE="Ball"></Sphere>
+</Shape>
+</Anchor>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco21" parameter="&quot;target=_source&quot;" url="&quot;examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+</Appearance>
+<Text containerField="geometry" string="&quot;ArtDeco21&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
+</Text>
+</Shape>
+</Anchor>
+</Transform>
+</Transform>
+<Viewpoint DEF="View22" description="ArtDeco22" position="2.25 -0.75 3"></Viewpoint>
+<Transform translation="2.25 -0.75 0"><Anchor description="ArtDeco22 view" url="&quot;&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" ambientIntensity="0.246032" diffuseColor="0.251104 0.312562 0.201724" shininess="0.086735" specularColor="0.209184 0.113842 0.111328"></Material>
+</Appearance>
+<Sphere containerField="geometry" USE="Ball"></Sphere>
+</Shape>
+</Anchor>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco22" parameter="&quot;target=_source&quot;" url="&quot;examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+</Appearance>
+<Text containerField="geometry" string="&quot;ArtDeco22&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
+</Text>
+</Shape>
+</Anchor>
+</Transform>
+</Transform>
+<Viewpoint DEF="View23" description="ArtDeco23" position="3.75 -0.75 3"></Viewpoint>
+<Transform translation="3.75 -0.75 0"><Anchor description="ArtDeco23 view" url="&quot;&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" ambientIntensity="0.242424" diffuseColor="0.392348 0.456 0.417708" shininess="0.933333" specularColor="0.533333 0.533333 0.533333"></Material>
+</Appearance>
+<Sphere containerField="geometry" USE="Ball"></Sphere>
+</Shape>
+</Anchor>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco23" parameter="&quot;target=_source&quot;" url="&quot;examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+</Appearance>
+<Text containerField="geometry" string="&quot;ArtDeco23&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
+</Text>
+</Shape>
+</Anchor>
+</Transform>
+</Transform>
+<Viewpoint DEF="View24" description="ArtDeco24" position="-3.75 -2.25 3"></Viewpoint>
+<Transform translation="-3.75 -2.25 0"><Anchor description="ArtDeco24 view" url="&quot;&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" ambientIntensity="0.253968" diffuseColor="1 0.854922 0" shininess="1" specularColor="0.872449 0.247119 0.254214"></Material>
+</Appearance>
+<Sphere containerField="geometry" USE="Ball"></Sphere>
+</Shape>
+</Anchor>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco24" parameter="&quot;target=_source&quot;" url="&quot;examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+</Appearance>
+<Text containerField="geometry" string="&quot;ArtDeco24&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
+</Text>
+</Shape>
+</Anchor>
+</Transform>
+</Transform>
+<Viewpoint DEF="View25" description="ArtDeco25" position="-2.25 -2.25 3"></Viewpoint>
+<Transform translation="-2.25 -2.25 0"><Anchor description="ArtDeco25 view" url="&quot;&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" ambientIntensity="0.25641" diffuseColor="0.795918 0.505869 0.093315" shininess="0.397959" specularColor="0.923469 0.428866 0.006369"></Material>
+</Appearance>
+<Sphere containerField="geometry" USE="Ball"></Sphere>
+</Shape>
+</Anchor>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco25" parameter="&quot;target=_source&quot;" url="&quot;examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+</Appearance>
+<Text containerField="geometry" string="&quot;ArtDeco25&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
+</Text>
+</Shape>
+</Anchor>
+</Transform>
+</Transform>
+<Viewpoint DEF="View26" description="ArtDeco26" position="-0.75 -2.25 3"></Viewpoint>
+<Transform translation="-0.75 -2.25 0"><Anchor description="ArtDeco26 view" url="&quot;&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" ambientIntensity="1" diffuseColor="0.331633 0.296582 0.279057" shininess="0.096939" specularColor="0.311224 0.25183 0.133042"></Material>
+</Appearance>
+<Sphere containerField="geometry" USE="Ball"></Sphere>
+</Shape>
+</Anchor>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco26" parameter="&quot;target=_source&quot;" url="&quot;examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+</Appearance>
+<Text containerField="geometry" string="&quot;ArtDeco26&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
+</Text>
+</Shape>
+</Anchor>
+</Transform>
+</Transform>
+<Viewpoint DEF="View27" description="ArtDeco27" position="0.75 -2.25 3"></Viewpoint>
+<Transform translation="0.75 -2.25 0"><Anchor description="ArtDeco27 view" url="&quot;&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" ambientIntensity="0.263158" diffuseColor="0.345455 0.163262 0.122622" shininess="0.048649" specularColor="0.212121 0.107475 0"></Material>
+</Appearance>
+<Sphere containerField="geometry" USE="Ball"></Sphere>
+</Shape>
+</Anchor>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco27" parameter="&quot;target=_source&quot;" url="&quot;examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+</Appearance>
+<Text containerField="geometry" string="&quot;ArtDeco27&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
+</Text>
+</Shape>
+</Anchor>
+</Transform>
+</Transform>
+<Viewpoint DEF="View28" description="ArtDeco28" position="2.25 -2.25 3"></Viewpoint>
+<Transform translation="2.25 -2.25 0"><Anchor description="ArtDeco28 view" url="&quot;&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" ambientIntensity="0.240506" diffuseColor="0.277281 0.104336 0.0799" shininess="0.09697" specularColor="0.305587 0.141916 0.270572"></Material>
+</Appearance>
+<Sphere containerField="geometry" USE="Ball"></Sphere>
+</Shape>
+</Anchor>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco28" parameter="&quot;target=_source&quot;" url="&quot;examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+</Appearance>
+<Text containerField="geometry" string="&quot;ArtDeco28&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
+</Text>
+</Shape>
+</Anchor>
+</Transform>
+</Transform>
+<Viewpoint DEF="View29" description="ArtDeco29" position="3.75 -2.25 3"></Viewpoint>
+<Transform translation="3.75 -2.25 0"><Anchor description="ArtDeco29 view" url="&quot;&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" ambientIntensity="0.215686" diffuseColor="0.087034 0.025888 0" shininess="0.045918" specularColor="0.224138 0.104091 0.104091"></Material>
+</Appearance>
+<Sphere containerField="geometry" USE="Ball"></Sphere>
+</Shape>
+</Anchor>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco29" parameter="&quot;target=_source&quot;" url="&quot;examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+</Appearance>
+<Text containerField="geometry" string="&quot;ArtDeco29&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
+</Text>
+</Shape>
+</Anchor>
+</Transform>
+</Transform>
+<Viewpoint DEF="View30" description="ArtDeco30" position="-3.75 -3.75 3"></Viewpoint>
+<Transform translation="-3.75 -3.75 0"><Anchor description="ArtDeco30 view" url="&quot;&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" ambientIntensity="0" diffuseColor="0 0 0" shininess="0.081633" specularColor="0.293243 0.297387 0.290421"></Material>
+</Appearance>
+<Sphere containerField="geometry" USE="Ball"></Sphere>
+</Shape>
+</Anchor>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco30" parameter="&quot;target=_source&quot;" url="&quot;examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+</Appearance>
+<Text containerField="geometry" string="&quot;ArtDeco30&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
+</Text>
+</Shape>
+</Anchor>
+</Transform>
+</Transform>
+<Viewpoint DEF="View31" description="ArtDeco31" position="-2.25 -3.75 3"></Viewpoint>
+<Transform translation="-2.25 -3.75 0"><Anchor description="ArtDeco31 view" url="&quot;&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" ambientIntensity="0.25641" diffuseColor="0.236364 0.236364 0.236364" shininess="0.054546" specularColor="0.29697 0.245839 0.295962"></Material>
+</Appearance>
+<Sphere containerField="geometry" USE="Ball"></Sphere>
+</Shape>
+</Anchor>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco31" parameter="&quot;target=_source&quot;" url="&quot;examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+</Appearance>
+<Text containerField="geometry" string="&quot;ArtDeco31&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
+</Text>
+</Shape>
+</Anchor>
+</Transform>
+</Transform>
+<Viewpoint DEF="View32" description="ArtDeco32" position="-0.75 -3.75 3"></Viewpoint>
+<Transform translation="-0.75 -3.75 0"><Anchor description="ArtDeco32 view" url="&quot;&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" ambientIntensity="0.242424" diffuseColor="0.38087 0.382957 0.417708" shininess="0.933333" specularColor="0.533333 0.533333 0.533333"></Material>
+</Appearance>
+<Sphere containerField="geometry" USE="Ball"></Sphere>
+</Shape>
+</Anchor>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco32" parameter="&quot;target=_source&quot;" url="&quot;examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+</Appearance>
+<Text containerField="geometry" string="&quot;ArtDeco32&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
+</Text>
+</Shape>
+</Anchor>
+</Transform>
+</Transform>
+<Viewpoint DEF="View33" description="ArtDeco33" position="0.75 -3.75 3"></Viewpoint>
+<Transform translation="0.75 -3.75 0"><Anchor description="ArtDeco33 view" url="&quot;&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" ambientIntensity="0.230089" diffuseColor="0.610811 0.610811 0.610811" shininess="0.897297" specularColor="0.767568 0.756757 0.764964"></Material>
+</Appearance>
+<Sphere containerField="geometry" USE="Ball"></Sphere>
+</Shape>
+</Anchor>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco33" parameter="&quot;target=_source&quot;" url="&quot;examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+</Appearance>
+<Text containerField="geometry" string="&quot;ArtDeco33&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
+</Text>
+</Shape>
+</Anchor>
+</Transform>
+</Transform>
+<Viewpoint DEF="View34" description="ArtDeco34" position="2.25 -3.75 3"></Viewpoint>
+<Transform translation="2.25 -3.75 0"><Anchor description="ArtDeco34 view" url="&quot;&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" ambientIntensity="0.25" shininess="0" specularColor="0.2 0.2 0.2"></Material>
+</Appearance>
+<Sphere containerField="geometry" USE="Ball"></Sphere>
+</Shape>
+</Anchor>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco34" parameter="&quot;target=_source&quot;" url="&quot;examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="TextMat"></Material>
+</Appearance>
+<Text containerField="geometry" string="&quot;ArtDeco34&quot;"><FontStyle containerField="fontStyle" USE="Style"></FontStyle>
+</Text>
+</Shape>
+</Anchor>
+</Transform>
+</Transform>
+</Group>
+<ROUTE fromNode="Close_Time" fromField="fraction_changed" toNode="Close_Mover" toField="set_fraction"></ROUTE>
+<ROUTE fromNode="Close_Mover" fromField="value_changed" toNode="Close_travel" toField="set_translation"></ROUTE>
+</Scene>
+</X3D>
