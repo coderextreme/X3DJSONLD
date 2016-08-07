@@ -49,7 +49,7 @@
         },
         {
           "@name": "translated",
-          "@content": "02 July 2016"
+          "@content": "15 July 2016"
         },
         {
           "@name": "generator",
@@ -84,11 +84,12 @@
                       "-children": [
                         {
                           "#comment": "textureTransform field IS exposed through the Prototype field interface with same name"
+                        },
+                        {
+                          "#comment": "NULL node as child"
                         }
                       ],
-                      "-textureTransform": {
-                        "#comment": "NULL node as child"
-                      },
+                      "-textureTransform": {},
                       "-material": {
                         "Material": {
                           "@diffuseColor": [

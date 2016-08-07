@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd"><head><meta name="title" content="HudKelpForest.x3d"></meta>
+<meta name="description" content="Demonstrates use of a ProximitySensor in building a HUD"></meta>
+<meta name="creator" content="Leonard Daly and Don Brutzman"></meta>
+<meta name="created" content="15 July 2006"></meta>
+<meta name="modified" content="4 July 2016"></meta>
+<meta name="reference" content="http://X3dGraphics.com"></meta>
+<meta name="reference" content="http://www.web3d.org/x3d/content/examples/X3dResources.html"></meta>
+<meta name="rights" content="Copyright 2006, Daly Realism and Don Brutzman"></meta>
+<meta name="subject" content="X3D book, X3D graphics, X3D-Edit, http://www.x3dGraphics.com"></meta>
+<meta name="identifier" content="http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14-Prototypes/HudKelpForest.x3d"></meta>
+<meta name="generator" content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"></meta>
+<meta name="license" content="../license.html"></meta>
+</head>
+<Scene><Background backUrl="&quot;examples/Basic/UniversalMediaPanoramas/horizon_3_back.jpg&quot; &quot;examples/X3dForWebAuthors/Chapter14-Prototypes/horizon_3_back.jpg&quot; &quot;examples/X3dForWebAuthors/Chapter14-Prototypes/../../Basic/UniversalMediaPanoramas/horizon_3_back.jpg&quot; &quot;http://www.web3d.org/WorkingGroups/media/textures/panoramas/horizon_3_back.jpg&quot; &quot;http://www.web3d.org/x3d/content/examples/UniversalMediaPanoramas/horizon_3_back.jpg&quot; &quot;http://www.web3dmedia.com/UniversalMedia/textures/panoramas/horizon_3_back.jpg&quot; &quot;http://www.officetowers.com/UniversalMedia/textures/panoramas/horizon_3_back.jpg&quot; &quot;http://geometrek.com/UniversalMedia/textures/panoramas/horizon_3_back.jpg&quot; &quot;http://www.sc.ehu.es/ccwgamoa/UniversalMedia/textures/panoramas/horizon_3_back.jpg&quot;" bottomUrl="&quot;examples/Basic/UniversalMediaPanoramas/horizon_3_bottom.jpg&quot; &quot;examples/X3dForWebAuthors/Chapter14-Prototypes/horizon_3_bottom.jpg&quot; &quot;examples/X3dForWebAuthors/Chapter14-Prototypes/../../Basic/UniversalMediaPanoramas/horizon_3_bottom.jpg&quot; &quot;http://www.web3d.org/WorkingGroups/media/textures/panoramas/horizon_3_bottom.jpg&quot; &quot;http://www.web3d.org/x3d/content/examples/UniversalMediaPanoramas/horizon_3_bottom.jpg&quot; &quot;http://www.web3dmedia.com/UniversalMedia/textures/panoramas/horizon_3_bottom.jpg&quot; &quot;http://www.officetowers.com/UniversalMedia/textures/panoramas/horizon_3_bottom.jpg&quot; &quot;http://geometrek.com/UniversalMedia/textures/panoramas/horizon_3_bottom.jpg&quot; &quot;http://www.sc.ehu.es/ccwgamoa/UniversalMedia/textures/panoramas/horizon_3_bottom.jpg&quot;" frontUrl="&quot;examples/Basic/UniversalMediaPanoramas/horizon_3_front.jpg&quot; &quot;examples/X3dForWebAuthors/Chapter14-Prototypes/horizon_3_front.jpg&quot; &quot;examples/X3dForWebAuthors/Chapter14-Prototypes/../../Basic/UniversalMediaPanoramas/horizon_3_front.jpg&quot; &quot;http://www.web3d.org/WorkingGroups/media/textures/panoramas/horizon_3_front.jpg&quot; &quot;http://www.web3d.org/x3d/content/examples/UniversalMediaPanoramas/horizon_3_front.jpg&quot; &quot;http://www.web3dmedia.com/UniversalMedia/textures/panoramas/horizon_3_front.jpg&quot; &quot;http://www.officetowers.com/UniversalMedia/textures/panoramas/horizon_3_front.jpg&quot; &quot;http://geometrek.com/UniversalMedia/textures/panoramas/horizon_3_front.jpg&quot; &quot;http://www.sc.ehu.es/ccwgamoa/UniversalMedia/textures/panoramas/horizon_3_front.jpg&quot;" groundAngle="1.309 1.5707" groundColor="0.1 0.1 0 0.4 0.25 0.2 0.6 0.6 0.6" leftUrl="&quot;examples/Basic/UniversalMediaPanoramas/horizon_3_left.jpg&quot; &quot;examples/X3dForWebAuthors/Chapter14-Prototypes/horizon_3_left.jpg&quot; &quot;examples/X3dForWebAuthors/Chapter14-Prototypes/../../Basic/UniversalMediaPanoramas/horizon_3_left.jpg&quot; &quot;http://www.web3d.org/WorkingGroups/media/textures/panoramas/horizon_3_left.jpg&quot; &quot;http://www.web3d.org/x3d/content/examples/UniversalMediaPanoramas/horizon_3_left.jpg&quot; &quot;http://www.web3dmedia.com/UniversalMedia/textures/panoramas/horizon_3_left.jpg&quot; &quot;http://www.officetowers.com/UniversalMedia/textures/panoramas/horizon_3_left.jpg&quot; &quot;http://geometrek.com/UniversalMedia/textures/panoramas/horizon_3_left.jpg&quot; &quot;http://www.sc.ehu.es/ccwgamoa/UniversalMedia/textures/panoramas/horizon_3_left.jpg&quot;" rightUrl="&quot;examples/Basic/UniversalMediaPanoramas/horizon_3_right.jpg&quot; &quot;examples/X3dForWebAuthors/Chapter14-Prototypes/horizon_3_right.jpg&quot; &quot;examples/X3dForWebAuthors/Chapter14-Prototypes/../../Basic/UniversalMediaPanoramas/horizon_3_right.jpg&quot; &quot;http://www.web3d.org/WorkingGroups/media/textures/panoramas/horizon_3_right.jpg&quot; &quot;http://www.web3d.org/x3d/content/examples/UniversalMediaPanoramas/horizon_3_right.jpg&quot; &quot;http://www.web3dmedia.com/UniversalMedia/textures/panoramas/horizon_3_right.jpg&quot; &quot;http://www.officetowers.com/UniversalMedia/textures/panoramas/horizon_3_right.jpg&quot; &quot;http://geometrek.com/UniversalMedia/textures/panoramas/horizon_3_right.jpg&quot; &quot;http://www.sc.ehu.es/ccwgamoa/UniversalMedia/textures/panoramas/horizon_3_right.jpg&quot;" skyAngle="1.309 1.5707" skyColor="0 0.5 1 0 0 1 0 0 1" topUrl="&quot;examples/Basic/UniversalMediaPanoramas/horizon_3_top.jpg&quot; &quot;examples/X3dForWebAuthors/Chapter14-Prototypes/horizon_3_top.jpg&quot; &quot;examples/X3dForWebAuthors/Chapter14-Prototypes/../../Basic/UniversalMediaPanoramas/horizon_3_top.jpg&quot; &quot;http://www.web3d.org/WorkingGroups/media/textures/panoramas/horizon_3_top.jpg&quot; &quot;http://www.web3d.org/x3d/content/examples/UniversalMediaPanoramas/horizon_3_top.jpg&quot; &quot;http://www.web3dmedia.com/UniversalMedia/textures/panoramas/horizon_3_top.jpg&quot; &quot;http://www.officetowers.com/UniversalMedia/textures/panoramas/horizon_3_top.jpg&quot; &quot;http://geometrek.com/UniversalMedia/textures/panoramas/horizon_3_top.jpg&quot; &quot;http://www.sc.ehu.es/ccwgamoa/UniversalMedia/textures/panoramas/horizon_3_top.jpg&quot;"></Background>
+<Switch whichChoice="-1"><Transform DEF="HudContent" translation="-0.7 0.3 0.1"><Transform translation="0 -0.2 0"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0 0"></Material>
+</Appearance>
+<Text containerField="geometry" string="&quot;Position: &quot;"><FontStyle containerField="fontStyle" family="&quot;SANS SERIF&quot;" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" size="0.1" style="PLAIN"></FontStyle>
+</Text>
+</Shape>
+</Transform>
+<Transform translation="0 -0.4 0"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0 0"></Material>
+</Appearance>
+<Text containerField="geometry" string="&quot;Orientation: &quot;"><FontStyle containerField="fontStyle" family="&quot;SANS SERIF&quot;" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" size="0.1" style="PLAIN"></FontStyle>
+</Text>
+</Shape>
+</Transform>
+<Transform translation="0.5 -0.2 0"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0 1"></Material>
+</Appearance>
+<Text containerField="geometry" string="&quot;&quot;"><FontStyle containerField="fontStyle" family="&quot;SANS SERIF&quot;" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" size="0.1" style="PLAIN"></FontStyle>
+</Text>
+</Shape>
+</Transform>
+<Transform translation="0.5 -0.4 0"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0.8 0"></Material>
+</Appearance>
+<Text containerField="geometry" string="&quot;&quot;"><FontStyle containerField="fontStyle" family="&quot;SANS SERIF&quot;" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" size="0.1" style="PLAIN"></FontStyle>
+</Text>
+</Shape>
+</Transform>
+</Transform>
+</Switch>
+<Group><Transform DEF="DECLHUD_Hud_HudContainer"><Transform translation="-0.8 1 -3"><Group><!--initialization nodes (if any) go here--></Group>
+</Transform>
+</Transform>
+<ProximitySensor DEF="DECLHUD_Hud_HereIAm" size="10000000 10000000 10000000"></ProximitySensor>
+<ROUTE fromNode="DECLHUD_Hud_HereIAm" fromField="orientation_changed" toNode="DECLHUD_Hud_HudContainer" toField="rotation"></ROUTE>
+<ROUTE fromNode="DECLHUD_Hud_HereIAm" fromField="position_changed" toNode="DECLHUD_Hud_HudContainer" toField="translation"></ROUTE>
+</Group>
+<Script DEF="Convert"><field name="sfVec3f" accessType="inputOnly" type="SFVec3f"></field>
+<field name="sfRotation" accessType="inputOnly" type="SFRotation"></field>
+<field name="sfVec3fString" accessType="outputOnly" type="MFString"></field>
+<field name="sfRotationString" accessType="outputOnly" type="MFString"></field>
+<![CDATA[// Description: Script that converts typed values
+// Filename:    HudKelpForestScriptConvert.js
+// Author:      Leonard Daly
+// Identifier:  http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14-Prototypes/HudKelpForestScriptConvert.js
+// Reference:   http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14-Prototypes/HudKelpForest.x3d
+// Created:     1 January 1999
+// Revised:     10 October 2015
+// Reference:   http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Scripts
+// License:     ../license.html
+
+function setDigits (v, p) {
+  return Math.floor (v*p + 0.5) / p;
+}
+
+function sfVec3f (value) {
+  var x = setDigits (value[0], 100);
+  var y = setDigits (value[1], 100);
+  var z = setDigits (value[2], 100);
+  sfVec3fString = new MFString (x + '  ' + y + '  ' + z);
+}
+
+function sfRotation (value) {
+  var x = setDigits (value[0], 100);
+  var y = setDigits (value[1], 100);
+  var z = setDigits (value[2], 100);
+  var r = setDigits (value[3], 1000);
+  sfRotationString = new MFString (x + '  ' + y + '  ' + z + '  ' + r);
+}
+
+]]></Script>
+<ROUTE fromNode="DECLHUD_Hud_HereIAm" fromField="position_changed" toNode="Convert" toField="sfVec3f"></ROUTE>
+<ROUTE fromNode="DECLHUD_Hud_HereIAm" fromField="orientation_changed" toNode="Convert" toField="sfRotation"></ROUTE>
+<ROUTE fromNode="Convert" fromField="sfVec3fString" toNode="DECLTextString_TopLine" toField="string"></ROUTE>
+<ROUTE fromNode="Convert" fromField="sfRotationString" toNode="DECLTextString_BottomLine" toField="string"></ROUTE>
+
+
+</Scene>
+</X3D>
