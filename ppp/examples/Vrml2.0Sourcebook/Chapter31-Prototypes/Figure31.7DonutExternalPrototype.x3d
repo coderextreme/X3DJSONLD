@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "http://www.web3d.org/specifications/x3d-3.0.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.0" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.0.xsd"><head><meta name="title" content="Figure31.7DonutExternalPrototype.x3d"></meta>
+<meta name="creator" content="Figure 31.7, The VRML 2.0 Sourcebook, Copyright [1997] By Andrea L. Ames, David R. Nadeau, and John L. Moreland"></meta>
+<meta name="reference" content="http://www.wiley.com/legacy/compbooks/vrml2sbk/ch31/31fig07.htm"></meta>
+<meta name="translator" content="Don Brutzman"></meta>
+<meta name="created" content="22 November 2000"></meta>
+<meta name="modified" content="25 March 2012"></meta>
+<meta name="description" content="A donut shape built using the Donut geometry node and the LightOak appearance node. Also see Figures 30.5 and 31.6 for comparison."></meta>
+<meta name="identifier" content="http://www.web3d.org/x3d/content/examples/Vrml2.0Sourcebook/Chapter31-Prototypes/Figure31.7DonutExternalPrototype.x3d"></meta>
+<meta name="generator" content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"></meta>
+<meta name="license" content="../../license.html"></meta>
+</head>
+<Scene><Viewpoint description="Click to pick a size" orientation="1 0 0 -0.52" position="0 7 12"></Viewpoint>
+<!--Donut instances from prototypes--><Transform translation="0 2 0"><Shape><Extrusion containerField="geometry" DEF="DECLDonut_INSTANCE_DonutExtrusion" beginCap="false" creaseAngle="1.57" endCap="false"></Extrusion>
+<Appearance containerField="appearance" DEF="DECLLightOak_INSTANCE1000_LightOakAppearance"><!--textureTransform field IS exposed through the Prototype field interface with same name--><!--Note that each prototype declaration has independent scope, and so DEF/USE is not possible for sharing. DEF remains a good way to identify the image file however.--><TextureTransform containerField="textureTransform" center="0 5" rotation="0.758" scale="2 0.5" translation="0.5 0"></TextureTransform>
+<Material containerField="material" diffuseColor="1 0.65 0.53"></Material>
+<ImageTexture containerField="texture" DEF="DECLLightOak_INSTANCE1000_wood_g_scope2" url="&quot;examples/Vrml2.0Sourcebook/Chapter31-Prototypes/../Chapter17-Textures/wood_g.jpg&quot; &quot;http://www.web3d.org/x3d/content/examples/Vrml2.0Sourcebook/Chapter17-Textures/wood_g.jpg&quot;"></ImageTexture>
+</Appearance>
+</Shape>
+<Switch whichChoice="-1"><Group><!--Donut maker creates torus on initialization - external script. Modified script to add endpoints matching startpoints.--><Script DEF="DECLDonut_INSTANCE_DonutMakerInternalScript"><field name="crossSectionRadius" accessType="initializeOnly" type="SFFloat" value="1"></field>
+<field name="spineRadius" accessType="initializeOnly" type="SFFloat" value="2"></field>
+<field name="crossSectionResolution" accessType="initializeOnly" type="SFInt32" value="16"></field>
+<field name="spineResolution" accessType="initializeOnly" type="SFInt32" value="16"></field>
+<field name="set_crossSectionRadius" accessType="inputOnly" type="SFFloat"></field>
+<field name="set_spineRadius" accessType="inputOnly" type="SFFloat"></field>
+<field name="crossSection_changed" accessType="outputOnly" type="MFVec2f"></field>
+<field name="spine_changed" accessType="outputOnly" type="MFVec3f"></field>
+<![CDATA[ecmascript:
+
+function initialize( ) {
+    generateCrossSection( );
+    generateSpine( );
+}
+
+function set_crossSectionRadius( csr, ts )
+{
+    crossSectionRadius = csr;
+//  Browser.print ('crossSectionRadius =' + crossSectionRadius);
+    generateCrossSection( );
+}
+
+function set_spineRadius( sr, ts )
+{
+    spineRadius = sr;
+//  Browser.print ('spineRadius =' + spineRadius);
+    generateSpine( );
+}
+
+function generateCrossSection( )
+{
+    newCrossSection = new MFVec2f(); // temporary hold variable
+    angle = 0.0;
+    delta = 6.28 / crossSectionResolution;
+    for ( i = 0; i &lt;= crossSectionResolution + 1; i++ ) {
+        newCrossSection[i][0] =  crossSectionRadius * Math.cos( angle );
+        newCrossSection[i][1] = -crossSectionRadius * Math.sin( angle );
+        angle += delta;
+    }
+    // make ends meet
+    newCrossSection[crossSectionResolution + 1][0] = newCrossSection[0][0];
+    newCrossSection[crossSectionResolution + 1][1] = newCrossSection[0][1];
+
+    crossSection_changed = newCrossSection;
+}
+
+function generateSpine( )
+{
+    newSpine = new MFVec3f(); // temporary hold variable
+    angle = 0.0;
+    delta = (2 * 3.141592653) / spineResolution;
+    for ( i = 0; i &lt;= spineResolution; i++ ) {
+        newSpine[i][0] = spineRadius * Math.cos( angle );
+        newSpine[i][1] = 0.0;
+        newSpine[i][2] = -spineRadius * Math.sin( angle );
+        angle += delta;
+    }
+    // make ends meet
+    newSpine[spineResolution + 1][0] = newSpine[0][0];
+    newSpine[spineResolution + 1][1] = 0.0;
+    newSpine[spineResolution + 1][2] = newSpine[0][2];
+
+    spine_changed = newSpine;
+}
+]]></Script>
+<ROUTE fromNode="DECLDonut_INSTANCE_DonutMakerInternalScript" fromField="spine_changed" toNode="DECLDonut_INSTANCE_DonutExtrusion" toField="set_spine"></ROUTE>
+<ROUTE fromNode="DECLDonut_INSTANCE_DonutMakerInternalScript" fromField="crossSection_changed" toNode="DECLDonut_INSTANCE_DonutExtrusion" toField="set_crossSection"></ROUTE>
+</Group>
+</Switch>
+</Transform>
+<!--Hmmm, what size donut do you really want?--><TimeSensor DEF="Clock" cycleInterval="10" loop="true"></TimeSensor>
+<ScalarInterpolator DEF="DonutThickness" key="0 0.4 0.5 0.9 1" keyValue="0.75 1.25 1.25 0.75 0.75"></ScalarInterpolator>
+<Transform translation="0 -2 0"><Shape><Extrusion containerField="geometry" DEF="DECLDonut_SpecialtyOfTheHouse_DonutExtrusion" beginCap="false" creaseAngle="1.57" endCap="false"></Extrusion>
+<Appearance containerField="appearance"><ImageTexture containerField="texture" url="&quot;examples/Vrml2.0Sourcebook/Chapter31-Prototypes/../Chapter17-Textures/icing.jpg&quot; &quot;http://www.web3d.org/x3d/content/examples/Vrml2.0Sourcebook/Chapter17-Textures/icing.jpg&quot;"></ImageTexture>
+</Appearance>
+</Shape>
+<TouchSensor DEF="StopSizeChanges" description="touch to stop size changes"></TouchSensor>
+<Switch whichChoice="-1"><Group><!--Donut maker creates torus on initialization - external script. Modified script to add endpoints matching startpoints.--><Script DEF="DECLDonut_SpecialtyOfTheHouse_DonutMakerInternalScript"><field name="crossSectionRadius" accessType="initializeOnly" type="SFFloat" value="0.5"></field>
+<field name="spineRadius" accessType="initializeOnly" type="SFFloat" value="2"></field>
+<field name="crossSectionResolution" accessType="initializeOnly" type="SFInt32" value="16"></field>
+<field name="spineResolution" accessType="initializeOnly" type="SFInt32" value="16"></field>
+<field name="set_crossSectionRadius" accessType="inputOnly" type="SFFloat"></field>
+<field name="set_spineRadius" accessType="inputOnly" type="SFFloat"></field>
+<field name="crossSection_changed" accessType="outputOnly" type="MFVec2f"></field>
+<field name="spine_changed" accessType="outputOnly" type="MFVec3f"></field>
+<![CDATA[ecmascript:
+
+function initialize( ) {
+    generateCrossSection( );
+    generateSpine( );
+}
+
+function set_crossSectionRadius( csr, ts )
+{
+    crossSectionRadius = csr;
+//  Browser.print ('crossSectionRadius =' + crossSectionRadius);
+    generateCrossSection( );
+}
+
+function set_spineRadius( sr, ts )
+{
+    spineRadius = sr;
+//  Browser.print ('spineRadius =' + spineRadius);
+    generateSpine( );
+}
+
+function generateCrossSection( )
+{
+    newCrossSection = new MFVec2f(); // temporary hold variable
+    angle = 0.0;
+    delta = 6.28 / crossSectionResolution;
+    for ( i = 0; i &lt;= crossSectionResolution + 1; i++ ) {
+        newCrossSection[i][0] =  crossSectionRadius * Math.cos( angle );
+        newCrossSection[i][1] = -crossSectionRadius * Math.sin( angle );
+        angle += delta;
+    }
+    // make ends meet
+    newCrossSection[crossSectionResolution + 1][0] = newCrossSection[0][0];
+    newCrossSection[crossSectionResolution + 1][1] = newCrossSection[0][1];
+
+    crossSection_changed = newCrossSection;
+}
+
+function generateSpine( )
+{
+    newSpine = new MFVec3f(); // temporary hold variable
+    angle = 0.0;
+    delta = (2 * 3.141592653) / spineResolution;
+    for ( i = 0; i &lt;= spineResolution; i++ ) {
+        newSpine[i][0] = spineRadius * Math.cos( angle );
+        newSpine[i][1] = 0.0;
+        newSpine[i][2] = -spineRadius * Math.sin( angle );
+        angle += delta;
+    }
+    // make ends meet
+    newSpine[spineResolution + 1][0] = newSpine[0][0];
+    newSpine[spineResolution + 1][1] = 0.0;
+    newSpine[spineResolution + 1][2] = newSpine[0][2];
+
+    spine_changed = newSpine;
+}
+]]></Script>
+<ROUTE fromNode="DECLDonut_SpecialtyOfTheHouse_DonutMakerInternalScript" fromField="spine_changed" toNode="DECLDonut_SpecialtyOfTheHouse_DonutExtrusion" toField="set_spine"></ROUTE>
+<ROUTE fromNode="DECLDonut_SpecialtyOfTheHouse_DonutMakerInternalScript" fromField="crossSection_changed" toNode="DECLDonut_SpecialtyOfTheHouse_DonutExtrusion" toField="set_crossSection"></ROUTE>
+</Group>
+</Switch>
+</Transform>
+<ROUTE fromNode="Clock" fromField="fraction_changed" toNode="DonutThickness" toField="set_fraction"></ROUTE>
+<ROUTE fromNode="DonutThickness" fromField="value_changed" toNode="DECLDonut_SpecialtyOfTheHouse_DonutMakerInternalScript" toField="set_crossSectionRadius"></ROUTE>
+<ROUTE fromNode="StopSizeChanges" fromField="touchTime" toNode="Clock" toField="stopTime"></ROUTE>
+</Scene>
+</X3D>

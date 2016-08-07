@@ -69,7 +69,7 @@
         },
         {
           "@name": "translated",
-          "@content": "01 July 2016"
+          "@content": "15 July 2016"
         },
         {
           "@name": "generator",
@@ -394,12 +394,6 @@
                 "@accessType": "initializeOnly",
                 "@type": "SFBool",
                 "@value": true
-              }
-            ],
-            "@value": false,
-            "-children": [
-              {
-                "#comment": "NULL node, ProtoInstance must provide"
               }
             ],
             "#sourceText": [

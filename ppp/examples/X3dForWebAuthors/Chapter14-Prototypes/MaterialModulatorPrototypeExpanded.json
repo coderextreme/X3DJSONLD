@@ -13,11 +13,11 @@
         },
         {
           "@name": "description",
-          "@content": "Mimic a Material node and modulate fields as an animation effect, providing example for expansion of a MaterialModulator ProtoInstance as regular nodes"
+          "@content": "Provide example for expansion of a MaterialModulator ProtoInstance as regular nodes. MaterialModulator mimics a Material node and modulate fields as an animation effect."
         },
         {
           "@name": "creator",
-          "@content": "Don Brutzman"
+          "@content": "Don Brutzman, John Carlson, Roy Walmsley"
         },
         {
           "@name": "created",
@@ -25,7 +25,7 @@
         },
         {
           "@name": "modified",
-          "@content": "2 July 2016"
+          "@content": "7 July 2016"
         },
         {
           "@name": "subject",
@@ -34,6 +34,38 @@
         {
           "@name": "Image",
           "@content": "MaterialModulator.png"
+        },
+        {
+          "@name": "reference",
+          "@content": "MaterialModulator.x3d"
+        },
+        {
+          "@name": "reference",
+          "@content": "JSON prototype expander https://github.com/coderextreme/X3DJSONLD"
+        },
+        {
+          "@name": "TODO",
+          "@content": "Create corresponding web page describing Prototype Expander design."
+        },
+        {
+          "@name": "TODO",
+          "@content": "Create stylesheet converter matching this Prototype Expander design pattern."
+        },
+        {
+          "@name": "TODO",
+          "@content": "Add external ROUTEs to original example as a further test case for Prototype Expander design."
+        },
+        {
+          "@name": "reference",
+          "@content": "X3D Tooltips: ProtoBody http://www.web3d.org/x3d/content/X3dTooltips.html#ProtoBody"
+        },
+        {
+          "@name": "reference",
+          "@content": "4.4.4.3 PROTO definition semantics http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/concepts.html#PROTOdefinitionsemantics"
+        },
+        {
+          "@name": "reference",
+          "@content": "[x3d-public] Prototype Expander, Question on design of instance expansions: http://web3d.org/pipermail/x3d-public_web3d.org/2016-July/004982.html"
         },
         {
           "@name": "identifier",
@@ -49,7 +81,7 @@
         },
         {
           "@name": "translated",
-          "@content": "02 July 2016"
+          "@content": "15 July 2016"
         },
         {
           "@name": "generator",
@@ -70,12 +102,17 @@
             },
             "-appearance": {
               "Appearance": {
+                "-children": [
+                  {
+                    "#comment": "Prototype Expander design note: only first node (the node type) of the prototype is substituted here."
+                  }
+                ],
                 "-material": {
                   "Material": {
                     "@DEF": "MaterialModulatorNodeExpanded1",
                     "-children": [
                       {
-                        "#comment": "no children nodes found, no follow-on nodes appear here"
+                        "#comment": "Prototype Expander design note: no children nodes found in originally defined initial ProtoBody node, so no contained child nodes appear here"
                       }
                     ]
                   }
@@ -85,89 +122,100 @@
           }
         },
         {
+          "#comment": "Prototype Expander design note: only first node (the node type) of the prototype is renderable above. when Switch is first allowed"
+        },
+        {
           "Switch": {
             "@DEF": "HideAdditionalPrototypeBodyNodesExpanded1",
             "@whichChoice": -1,
             "-children": [
               {
-                "#comment": "Only first node (the node type) of the prototype is renderable, others follow here when Switch is first allowed"
+                "#comment": "Prototype Expander design note: all children inside a Switch continue to receive/send events."
               },
               {
-                "Script": {
-                  "@DEF": "MaterialModulatorScriptExpanded1",
-                  "field": [
+                "Group": {
+                  "-children": [
                     {
-                      "@name": "enabled",
-                      "@accessType": "inputOutput",
-                      "@type": "SFBool",
-                      "@value": true
+                      "#comment": "Prototype Expander design note: additional follow-on nodes from the original ProtoBody are placed here."
                     },
                     {
-                      "@name": "diffuseColor",
-                      "@accessType": "inputOutput",
-                      "@type": "SFColor",
-                      "@value": [
-                        0.8,
-                        0.8,
-                        0.8
-                      ]
+                      "Script": {
+                        "@DEF": "MaterialModulatorScriptExpanded1",
+                        "field": [
+                          {
+                            "@name": "enabled",
+                            "@accessType": "inputOutput",
+                            "@type": "SFBool",
+                            "@value": true
+                          },
+                          {
+                            "@name": "diffuseColor",
+                            "@accessType": "inputOutput",
+                            "@type": "SFColor",
+                            "@value": [
+                              0.8,
+                              0.8,
+                              0.8
+                            ]
+                          },
+                          {
+                            "@name": "newColor",
+                            "@accessType": "outputOnly",
+                            "@type": "SFColor"
+                          },
+                          {
+                            "@name": "clockTrigger",
+                            "@accessType": "inputOnly",
+                            "@type": "SFTime"
+                          }
+                        ],
+                        "#sourceText": [
+                          "ecmascript:",
+                          "function initialize ()",
+                          "{",
+                          "    newColor = diffuseColor; // start with correct color",
+                          "}",
+                          "function clockTrigger (timeValue)",
+                          "{",
+                          "    if (!enabled) return;",
+                          "    red   = newColor.r;",
+                          "    green = newColor.g;",
+                          "    blue  = newColor.b;",
+                          "    ",
+                          "    // note different modulation rates for each color component, % is modulus operator",
+                          "    newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1);   ",
+                          "    Browser.print ('diffuseColor=(' + red +',' + green + ',' + blue + ') newColor=' + newColor.toString() + '\\');",
+                          "}"
+                        ]
+                      }
                     },
                     {
-                      "@name": "newColor",
-                      "@accessType": "outputOnly",
-                      "@type": "SFColor"
+                      "#comment": "Clock tickles Script to wake up and compute a new value"
                     },
                     {
-                      "@name": "clockTrigger",
-                      "@accessType": "inputOnly",
-                      "@type": "SFTime"
+                      "ROUTE": {
+                        "@fromNode": "MaterialModulatorScriptExpanded1",
+                        "@fromField": "newColor",
+                        "@toNode": "MaterialModulatorNodeExpanded1",
+                        "@toField": "diffuseColor"
+                      }
+                    },
+                    {
+                      "TimeSensor": {
+                        "@DEF": "ModulationClockExpanded1",
+                        "@cycleInterval": 0.1,
+                        "@loop": true
+                      }
+                    },
+                    {
+                      "ROUTE": {
+                        "@fromNode": "ModulationClockExpanded1",
+                        "@fromField": "cycleTime",
+                        "@toNode": "MaterialModulatorScriptExpanded1",
+                        "@toField": "clockTrigger"
+                      }
                     }
-                  ],
-                  "#sourceText": [
-                    "ecmascript:",
-                    "function initialize ()",
-                    "{",
-                    "    newColor = diffuseColor; // start with correct color",
-                    "}",
-                    "",
-                    "function clockTrigger (timeValue)",
-                    "{",
-                    "    if (!enabled) return;",
-                    "    red   = newColor.r;",
-                    "    green = newColor.g;",
-                    "    blue  = newColor.b;",
-                    "    ",
-                    "    // note different modulation rates for each color component, % is modulus operator",
-                    "    newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1);   ",
-                    "    Browser.print ('diffuseColor=(' + red +',' + green + ',' + blue + ') newColor=' + newColor.toString() + '\\');",
-                    "}"
                   ]
-                }
-              },
-              {
-                "#comment": "Clock tickles Script to wake up and compute a new value"
-              },
-              {
-                "ROUTE": {
-                  "@fromNode": "MaterialModulatorScriptExpanded1",
-                  "@fromField": "newColor",
-                  "@toNode": "MaterialModulatorNodeExpanded1",
-                  "@toField": "diffuseColor"
-                }
-              },
-              {
-                "TimeSensor": {
-                  "@DEF": "ModulationClockExpanded1",
-                  "@cycleInterval": 0.1,
-                  "@loop": true
-                }
-              },
-              {
-                "ROUTE": {
-                  "@fromNode": "ModulationClockExpanded1",
-                  "@fromField": "cycleTime",
-                  "@toNode": "MaterialModulatorScriptExpanded1",
-                  "@toField": "clockTrigger"
                 }
               }
             ]

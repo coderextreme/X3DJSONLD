@@ -29,7 +29,7 @@
         },
         {
           "@name": "translated",
-          "@content": "17 April 2016"
+          "@content": "15 July 2016"
         },
         {
           "@name": "generator",
@@ -179,8 +179,6 @@
                   "#sourceText": [
                     "ecmascript:",
                     "function initialize() {",
-                    "    translation = new SFVec3f(0,0,0);",
-                    "    scale = new SFVec3f(1,1,1);",
                     "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);",
                     "",
                     "    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);",
@@ -347,8 +345,6 @@
                   "#sourceText": [
                     "ecmascript:",
                     "function initialize() {",
-                    "    translation = new SFVec3f(0,0,0);",
-                    "    scale = new SFVec3f(1,1,1);",
                     "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);",
                     "",
                     "    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);",
@@ -515,8 +511,6 @@
                   "#sourceText": [
                     "ecmascript:",
                     "function initialize() {",
-                    "    translation = new SFVec3f(0,0,0);",
-                    "    scale = new SFVec3f(1,1,1);",
                     "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);",
                     "",
                     "    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);",
@@ -683,8 +677,6 @@
                   "#sourceText": [
                     "ecmascript:",
                     "function initialize() {",
-                    "    translation = new SFVec3f(0,0,0);",
-                    "    scale = new SFVec3f(1,1,1);",
                     "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);",
                     "",
                     "    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);",

@@ -53,7 +53,7 @@
         },
         {
           "@name": "translated",
-          "@content": "17 April 2016"
+          "@content": "15 July 2016"
         },
         {
           "@name": "generator",
@@ -249,7 +249,6 @@
                 "@type": "MFInt32"
               }
             ],
-            "@value": false,
             "#sourceText": [
               "// ArchPrototypeScript.js",
               "",
@@ -574,7 +573,7 @@
           "Inline": {
             "@DEF": "CoordinateAxes",
             "@url": [
-              "./CoordinateAxes.json"
+              "CoordinateAxes.x3d"
             ]
           }
         }

@@ -67,7 +67,7 @@ for (var f in files) {
 		var output = [];
 		loadX3DJS(json, "foo.json", output);
 		var newfile = files[f].substr(0, files[f].lastIndexOf("."))+"-roundtrip.x3d";
-		fs.writeFileSync(newfile, output.join("\n"));
+		fs.writeFileSync(newfile, output.join("\r\n"));
 		process.stdout.write(newfile);
 		process.stdout.write('\0');
 	} catch (e) {
