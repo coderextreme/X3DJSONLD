@@ -247,7 +247,7 @@ function setScriptConnectFields(file, object, p, newobject) {
 			var type = field_name_field_type_objectfield_name[2];
 			var objectfield = field_name_field_type_objectfield_name[3];
 			// console.error("Node field is", objectfield);
-			var type_scope = setValueFromInterface(field, newobject, objectfield);
+			var type_scope = setValueFromInterface(field, f, objectfield);
 			if (typeof type_scope !== 'undefined') {
 				type = type_scope[0];
 				// setEnv(scope, field, newobject, objectfield, type, newdef);
