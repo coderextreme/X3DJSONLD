@@ -49,7 +49,7 @@
         },
         {
           "@name": "translated",
-          "@content": "02 July 2016"
+          "@content": "15 July 2016"
         },
         {
           "@name": "generator",
@@ -109,11 +109,12 @@
                         },
                         {
                           "#comment": "Note that each prototype declaration has independent scope, and so DEF/USE is not possible for sharing. DEF remains a good way to identify the image file however."
+                        },
+                        {
+                          "#comment": "NULL node as child"
                         }
                       ],
-                      "-textureTransform": {
-                        "#comment": "NULL node as child"
-                      },
+                      "-textureTransform": {},
                       "-material": {
                         "Material": {
                           "@diffuseColor": [
