@@ -12,18 +12,16 @@
     <style type="text/css">
     
     X3D {
-        background:#000;
-        width: 300px;
-        height:150px;
+        background: #000;
+        width:  300px;
+        height: 150px;
     }
     
     </style>
 </head>
 <body>
-	<X3D cache='false' >
+	<X3D >
 	           <p>Your browser may not support all features required by Cobweb!</p>
-		   <Scene>
-		   </Scene>
 	</X3D>
 
 </body>
@@ -45,7 +43,7 @@
 		var mybrowser = X3D.getBrowser(el);
 		//var myscene = mybrowser.createScene(); //probably not needed
 		//myx3d = $('Scene')[0];
-		var myx3d = document.querySelector('Scene');
+		//var myx3d = document.querySelector('Scene');
 		mybrowser.importDocument(json_element); //now also attached x3dnode property to each node element
 	});
 	
