@@ -102,7 +102,21 @@ function setVersion(version) {
 	    }
 	}
 
-        function loadX3DOM(selector, json, url) {
+	function loadCobweb(element) {
+		var cobwebWindow = document.getElementById("cobwebjsonframe").contentWindow ;
+		var cobwebEle = cobwebWindow.document.getElementsByTagName("X3D")[0];
+		if (typeof cobwebWindow.X3D !== 'undefined') {
+			var browser = cobwebWindow.X3D.getBrowser(cobwebEle);
+			var myscene = browser.createScene();
+			var myx3d = element.querySelector('Scene');
+			if (!myx3d) {
+				throw new Error("Cannot find scene");
+			}
+			browser.importDocument(myx3d);
+		}
+	}
+
+        function loadX3D(selector, json, url) {
 	    $(selector).empty();
 	    var xml = new LOG();
 	    if ($('#prototype').is(':checked')) {
@@ -171,11 +185,12 @@ function setVersion(version) {
 			elementSetAttribute(element, "xmlns:xsd", 'http://www.w3.org/2001/XMLSchema-instance');
 			$(selector).empty();
 			$(selector).append(element);
+			loadCobweb(element);
 		}
 	}
 
 	function updateX3DOM() {
-		loadX3DOM("#x3domjson", JSON.parse($('textarea#json').val()), "flipper.json"); // does not load flipper.json
+		loadX3D("#x3domjson", JSON.parse($('textarea#json').val()), "flipper.json"); // does not load flipper.json
 	}
 
 	function loadX3DJSON(selector, url) {
@@ -211,7 +226,7 @@ function setVersion(version) {
 		}
 		$.getJSON(url, function(json) {
 			$('textarea#json').val(JSON.stringify(json, null, 2));
-			loadX3DOM(selector, JSON.parse($('textarea#json').val()), url);
+			loadX3D(selector, JSON.parse($('textarea#json').val()), url);
 		})
 		.fail(function(jqXHR, textStatus, errorThrown) { alert('getJSON request failed! ' + textStatus + ' ' + errorThrown); });
 	}
