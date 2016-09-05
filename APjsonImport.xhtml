@@ -145,16 +145,16 @@ Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text <br />
 </table>
 </body>
     <script type="text/javascript" src="X3DJSONLD.js"></script>
-    <script type="text/javascript" src="PrototypeExpander.js"></script>
+    <!--script type="text/javascript" src="PrototypeExpander.js"></script>
     <script type="text/javascript" src="Flattener.js"></script>
     <script type="text/javascript" src="Script.js"></script>
-    <script type="text/javascript" src="loaderJQuery.js"></script>
-    <script type="text/javascript" src="box_json.js"></script>
+    <script type="text/javascript" src="loaderJQuery.js"></script-->
+    <script type="text/javascript" src="test_json.js"></script>
     
     <script type="text/javascript">
     	
 	var xml, NS;
-	var json_element = loadX3DJS(box_json, "box.json", xml, NS);
+	var json_element = loadX3DJS(test_json, "./ExtrusionHeart.json", xml, "");
 	//import to cobweb
 	console.log(json_element, xml);
 	
