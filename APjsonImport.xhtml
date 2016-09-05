@@ -133,7 +133,7 @@ Use Namespace: <select id="namespace">
 <td>
 Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text <br />
 <textarea id="json" rows="15" cols="80"></textarea><br />
-<div id="x3domjson"></div>
+<!--div id="x3domjson"></div-->
 <!--iframe  id='cobwebjsonframe' src="cobwebjsonframe.html"></iframe-->
 	<X3D cache='false' url='"flipper.x3d"'>
 	           <p>Your browser may not support all features required by Cobweb!</p>
@@ -149,9 +149,15 @@ Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text <br />
     <script type="text/javascript" src="Flattener.js"></script>
     <script type="text/javascript" src="Script.js"></script>
     <script type="text/javascript" src="loaderJQuery.js"></script>
+    <script type="text/javascript" src="box_json.js"></script>
+    
     <script type="text/javascript">
-	$(document).ready(function() {
-		loadX3DJSON('#x3domjson','flipper.json'); // does load flipper.json
-	});
+    	
+	
+	var element = loadX3DJS(box_json, "box.json", xml, NS);
+	
+	
+	
     </script>
+    
 </html>
