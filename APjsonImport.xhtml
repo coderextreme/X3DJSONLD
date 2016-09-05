@@ -7,6 +7,8 @@
     <script type="text/javascript" src="www.x3dom.org/download/1.7.1/x3dom-full.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/ajv/3.8.5/ajv.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/create3000/cobweb/master/stable/1/1.26/cobweb.css"/>
+    <script type="text/javascript" src="https://cdn.rawgit.com/create3000/cobweb/master/stable/1/1.26/cobweb.js"></script>
     <style type="text/css">
     X3D {
         background:#000;
@@ -126,10 +128,12 @@ Use Namespace: <select id="namespace">
 </td>
 </tr>
 <tr>
+<td>
 Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text <br>
 <textarea id="json" rows="15" cols="80"></textarea><br>
 <div id="x3domjson"></div>
-<iframe  id='cobwebjsonframe' src="cobwebjsonframe.html"></iframe>
+<!--iframe  id='cobwebjsonframe' src="cobwebjsonframe.html"></iframe-->
+
 </td>
 </tr>
 </table>
