@@ -103,16 +103,19 @@ function setVersion(version) {
 	}
 
 	function loadCobweb(element) {
-		var cobwebWindow = document.getElementById("cobwebjsonframe").contentWindow ;
-		var cobwebEle = cobwebWindow.document.getElementsByTagName("X3D")[0];
-		if (typeof cobwebWindow.X3D !== 'undefined') {
-			var browser = cobwebWindow.X3D.getBrowser(cobwebEle);
-			var myscene = browser.createScene();
-			var myx3d = element.querySelector('Scene');
-			if (!myx3d) {
-				throw new Error("Cannot find scene");
+		var frame = document.getElementById("cobwebjsonframe");
+		if (frame != null) {
+			var cobwebWindow = frame.contentWindow;
+			var cobwebEle = cobwebWindow.document.getElementsByTagName("X3D")[0];
+			if (typeof cobwebWindow.X3D !== 'undefined') {
+				var browser = cobwebWindow.X3D.getBrowser(cobwebEle);
+				var myscene = browser.createScene();
+				var myx3d = element.querySelector('Scene');
+				if (!myx3d) {
+					throw new Error("Cannot find scene");
+				}
+				browser.importDocument(myx3d);
 			}
-			browser.importDocument(myx3d);
 		}
 	}
 
