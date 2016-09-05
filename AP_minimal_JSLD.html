@@ -1,0 +1,51 @@
+<html >
+<head>
+    <title>X3D JSON Loader</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!--script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/ajv/3.8.5/ajv.min.js"></script-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/create3000/cobweb/master/stable/1/1.26/cobweb.css"/>
+    <!--script type="text/javascript" src="https://cdn.rawgit.com/create3000/cobweb/master/stable/1/1.26/cobweb.js"></script-->
+    <script type="text/javascript" src="https://raw.githubusercontent.com/andreasplesch/cobweb_dom/master/cobweb/APcobweb.1.26.js"></script>
+    
+    <style type="text/css">
+    
+    X3D {
+        background: #000;
+        width:  300px;
+        height: 150px;
+    }
+    
+    </style>
+</head>
+<body>
+	<X3D >
+	           <p>Your browser may not support all features required by Cobweb!</p>
+	</X3D>
+
+</body>
+    <script type="text/javascript" src="X3DJSONLD.js"></script>
+    <script type="text/javascript" src="test_json.js"></script>
+    
+    <script type="text/javascript">
+    	
+	var xml, NS;
+	var json_element = loadX3DJS(test_json, "./ExtrusionHeart.json", xml, "");
+	
+	console.log(json_element, xml);
+	
+	//import to cobweb
+	
+	X3D(function(el){
+	// el is provided by cobweb, and is X3D element
+	
+		var mybrowser = X3D.getBrowser(el);
+		//var myscene = mybrowser.createScene(); //probably not needed
+		//myx3d = $('Scene')[0];
+		//var myx3d = document.querySelector('Scene');
+		mybrowser.importDocument(json_element); //now also attached x3dnode property to each node element
+	});
+	
+    </script>
+    
+</html>
