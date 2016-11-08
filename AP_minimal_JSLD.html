@@ -10,7 +10,7 @@
     
     <style type="text/css">
     
-    X3D {
+    X3DCanvas {
         background: #000;
         width:  300px;
         height: 150px;
@@ -33,9 +33,9 @@
     <script type="text/javascript">
     	
 	var xml, NS;
-	var json_element = loadX3DJS(test_json, "./ExtrusionHeart.json", xml, "");
+	var json_dom = loadX3DJS(test_json, "./ExtrusionHeart.json", xml, "");
 	
-	console.log(json_element, xml);
+	console.log(json_dom, xml);
 	
 	//import to cobweb
 	
@@ -46,7 +46,7 @@
 		//var myscene = mybrowser.createScene(); //probably not needed
 		//myx3d = $('Scene')[0];
 		//var myx3d = document.querySelector('Scene');
-		mybrowser.importDocument(json_element); //now also attached x3dnode property to each node element
+		mybrowser.importDocument(json_dom); //now also attached x3dnode property to each node element
 	});
 	
     </script>
