@@ -24,14 +24,9 @@ function setVersion(version) {
 			$('#x3domxml').get()[0].innerHTML = $('textarea#xml').val().replace(/&lt;/g, "<").replace(/&gt;/g, ">");
 		}
 		var content = $('textarea#xml').val().replace(/&lt;/g, "<").replace(/&gt;/g, ">");
-		var cobwebWindow = document.getElementById("cobwebframe").contentWindow ;
-		var cobwebEle = cobwebWindow.document.getElementsByTagName("X3D")[0];
-		if (typeof cobwebWindow.X3D !== 'undefined') {
-			var browser = cobwebWindow.X3D.getBrowser(cobwebEle);
-			browser.replaceWorld(browser.createX3DFromString(content));
-		} else {
-			console.error("Cobweb disabled temporarily.  May work on next load");
-		}
+
+		loadCobwebXML(content);
+
 	        x3dom.reload();
         }
 
@@ -102,26 +97,34 @@ function setVersion(version) {
 	    }
 	}
 
-	function loadCobweb(element) {
-		var frame = document.getElementById("cobwebjsonframe");
-		if (frame != null) {
-			var cobwebWindow = frame.contentWindow;
-			var cobwebEle = cobwebWindow.document.getElementsByTagName("X3D")[0];
-			if (typeof cobwebWindow.X3D !== 'undefined') {
-				var browser = cobwebWindow.X3D.getBrowser(cobwebEle);
-				var myscene = browser.createScene();
-				var myx3d = element.querySelector('Scene');
-				if (!myx3d) {
-					throw new Error("Cannot find scene");
-				}
-				browser.importDocument(myx3d);
-			}
+	function loadCobwebXML(content) {
+	/*
+		var cobwebEle = document.getElementsByTagName("X3DCanvas")[0];
+		if (typeof X3D !== 'undefined') {
+			var browser = X3D.getBrowser(cobwebEle);
+			browser.replaceWorld(browser.createX3DFromString(content));
+		} else {
+			console.error("Cobweb disabled temporarily.  May work on next load");
 		}
+	*/
+		X3D(function(el) {
+			var browser = X3D.getBrowser(el);
+			browser.replaceWorld(browser.createX3DFromString(content));
+		});
+	}
+
+	function loadCobwebDOM(element) {
+		X3D(function(el) {
+			var browser = X3D.getBrowser(el);
+			var importedScene = browser.importDocument(element);
+			browser.replaceWorld(importedScene);
+		});
 	}
 
         function loadX3D(selector, json, url) {
 	    $(selector).empty();
 	    var xml = new LOG();
+	    var python = new LOG();
 	    if ($('#prototype').is(':checked')) {
 		// Expand Protos
 		// json = externPrototypeExpander(url, json);
@@ -132,9 +135,9 @@ function setVersion(version) {
 	    }
 	    var NS = $('#namespace option:selected').text();
 	    if (NS === "none") {
-		replaceX3DJSON(selector, json, url, xml); // X3DOM
+		replaceX3DJSON(selector, json, url, xml, python); // X3DOM
 	    } else {
-		replaceX3DJSON(selector, json, url, xml, NS);  // Cobweb if not XHTML NS
+		replaceX3DJSON(selector, json, url, xml, python, NS);  // Cobweb if not XHTML NS
 	    }
 	    updateXML(xml);
 	    loadScripts(json);
@@ -160,8 +163,8 @@ function setVersion(version) {
          * xml (array or LOG, must have push function which takes a string) -- xml output (optional)
          * NS -- XML namespace (optional)
          */
-	function appendX3DJSON2Selector(selector, json, url, xml, NS) {
-		var element = loadX3DJS(json, url, xml, NS);  // Cobweb if not XHTML NS
+	function appendX3DJSON2Selector(selector, json, url, xml, python, NS) {
+		var element = loadX3DJS(json, url, xml, python, NS);  // Cobweb if not XHTML NS
 		elementSetAttribute(element, "xmlns:xsd", 'http://www.w3.org/2001/XMLSchema-instance');
 		document.querySelector(selector).appendChild(element);
 		x3dom.reload();
@@ -175,20 +178,21 @@ function setVersion(version) {
 	 * selector (string) -- css selector
          * json (json object) -- json to convert to DOM
          * xml (array or LOG, must have push function which takes a string) -- xml output (optional)
+         * xml (array or LOG, must have push function which takes a string) -- python output (optional)
          * NS -- XML namespace (optional)
          */
-	function replaceX3DJSON(selector, json, url, xml, NS) {
+	function replaceX3DJSON(selector, json, url, xml, python, NS) {
 		// check against schema
 		var version = json.X3D["@version"];
 		setVersion(version);  // loads schema.  TODO.  Only load when version changes
 		var valid = validate(json);
 		if (valid || confirm(JSON.stringify(validate.errors))) {
 
-			var element = loadX3DJS(json, url, xml, NS);  // Cobweb if not XHTML NS
+			var element = loadX3DJS(json, url, xml, python, NS);  // Cobweb if not XHTML NS
 			elementSetAttribute(element, "xmlns:xsd", 'http://www.w3.org/2001/XMLSchema-instance');
 			$(selector).empty();
 			$(selector).append(element);
-			loadCobweb(element);
+			loadCobwebDOM(element);
 		}
 	}
 
