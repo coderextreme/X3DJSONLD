@@ -1,0 +1,82 @@
+.around { 
+    position: relative; 
+    width: 610px; 
+    height: 250px;  
+    margin: 20px 0; 
+    background: #037CA9; 
+    border-radius: 50% / 10%; 
+    color: black; 
+    text-align: center; 
+    text-indent: .1em;
+    background-image:linear-gradient(0deg, whitesmoke 0%, honeydew 40%, honeydew 60%, whitesmoke 100%);
+
+} 
+
+.around:before { 
+    content: ''; 
+    position: absolute; 
+    top: 10%; bottom: 10%; 
+    right: -5%; 
+    left: -5%; 
+    background: inherit; 
+    border-radius: 5% / 50%; 
+}	
+.around2 { 
+    position: relative; 
+    width: 590px; 
+    height: 200px;  
+    margin: 20px 0; 
+    background: #037CA9; 
+    border-radius: 50% / 10%; 
+    color: black; 
+    text-align: center; 
+    text-indent: .1em;
+    background-image:linear-gradient(0deg, whitesmoke 0%, honeydew 40%, honeydew 60%, whitesmoke 100%);
+} 
+
+.around2:before { 
+    content: ''; 
+    position: absolute; 
+    top: 10%; bottom: 10%; 
+    right: -5%; 
+    left: -5%; 
+    background: inherit; 
+    border-radius: 5% / 50%; 
+}
+.around3 { 
+    position: relative; 
+    width: 210px; 
+    height: 25px;  
+    margin: 20px 0; 
+    background: #037CA9; 
+    border-radius: 50% / 10%; 
+    color: black; 
+    text-align: center; 
+    text-indent: .1em;
+    background-image:linear-gradient(0deg, whitesmoke 0%, honeydew 40%, honeydew 60%, whitesmoke 100%);
+
+} 
+
+.around3:before { 
+    content: ''; 
+    position: absolute; 
+    top: 10%; bottom: 10%; 
+    right: -5%; 
+    left: -5%; 
+    background: inherit; 
+    border-radius: 5% / 50%; 
+}
+.outersection {
+    float: left;
+    padding: 40px;
+    //background-image:linear-gradient(0deg, transparent 15%, mintcream 25%, transparent 35%, mintcream 45%, transparent 55%, transparent 75%);
+}	
+a {
+	color: #0000ff;
+}
+body {
+	 color: black;
+    background-color: #dddddd;
+    background-image:linear-gradient(0deg, transparent 15%, mintcream 25%, transparent 35%, mintcream 45%, transparent 55%, transparent 75%);
+    //background-image:linear-gradient(90deg, transparent 0%, mintcream 100px, transparent 450px,transparent 450px, mintcream 1350px, transparent 1500px, transparent 1800px, mintcream 1500px, transparent 2400px);
+}

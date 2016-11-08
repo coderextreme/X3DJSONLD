@@ -1,13 +1,11 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
 <head>
     <title>X3D JSON Loader</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
     <link rel="stylesheet" type="text/css" href="www.x3dom.org/download/1.7.1/x3dom.css"></link>
-    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/create3000/cobweb/master/stable/2/2.3/cobweb.css"/>
-    <script type="text/javascript" src="https://cdn.rawgit.com/create3000/cobweb/master/stable/2/2.3/cobweb.js"></script>
+   <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/create3000/cobweb/master/stable/2/2.3/cobweb.css"/>
+   <script type="text/javascript" src="https://cdn.rawgit.com/create3000/cobweb/master/stable/2/2.3/cobweb.min.js"></script>
     <script type="text/javascript" src="www.x3dom.org/download/1.7.1/x3dom-full.js"></script>
-
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/ajv/3.8.5/ajv.min.js"></script>
     <style type="text/css">
@@ -44,12 +42,17 @@ a:active {
     color: blue;
 }
     </style>
+    <link href="alex.css" rel="stylesheet">  
+
 </head>
 <body>
-<table>
-<tr>
-<td>
-<select id="file">
+    <section class="artikel">
+      <nobr>
+      <header></header>
+      <section class="outersection">
+            <nobr>
+        <section>
+<select id="file" class="around3">
 <option>box.json</option>
 <option>abox.json</option>
 <option>ppp/box.json</option>
@@ -119,26 +122,15 @@ a:active {
 <option>rubikOnFire.json</option>
 <option>ppp/rubikOnFire.json</option>
 </select>
-</td>
-<td>
-<input type="text" onchange="filter(event)"></input>
-Use Prototype Expander? <input id="prototype" type="checkbox" checked="true"></input>
-Use JSON Scripts? <input id="scripting" type="checkbox"></input>
-Use Namespace: <select id="namespace">
-<option>http://www.web3d.org/specifications/x3d</option>
-<option>http://www.w3.org/1999/xhtml</option> <!-- X3DOM XML -->
-<option>http://www.x3dom.org/x3dom</option>
-<option>http://www.web3d.org/specifications/x3d-namespace</option>  <!-- COBWEB -->
-<option>none</option> <!-- X3DOM HTML -->
-</select>
-</td>
-</tr>
-<tr>
-<td>
-Click <a onclick='updateXML();'>here</a> to load X3D XML into Cobweb and XML X3DOM viewer. Does not convert to JSON.<br>
+<br><br><br><br><br>
+        </section>
+        <section>
+          <header>Click <a onclick='updateXML();'>here</a> to load X3D XML into Cobweb and XML X3DOM viewer. Does not convert to JSON.</header>
+        </section>
+        <section class="around">
 	    
-<textarea id="xml" rows="15" cols="80"></textarea><br>
-    <div id="x3domxml"></div>
+<textarea id="xml" rows="15" cols="80" class="around2"></textarea><br>
+<div id="x3domxml"></div>
     <X3DCanvas id='cobwebxml' cache='false' url='"flipper.x3d"'>
            <p>Your browser may not support all features required by Cobweb!</p>
 	   <X3D>
@@ -146,11 +138,28 @@ Click <a onclick='updateXML();'>here</a> to load X3D XML into Cobweb and XML X3D
 	   </Scene>
 	   </X3D>
     </X3DCanvas>
-</td>
-<td>
-Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into JSON X3DOM viewer and convert to XML (and display).<br>
-<textarea id="json" rows="15" cols="80"></textarea><br>
-    <div id="x3domjson"></div>
+          <footer></footer>
+        </section>
+      </section>
+      <section  class="outersection">
+        <section>
+<input type="text" onchange="filter(event)"></input><br>
+Use Prototype Expander? <input id="prototype" type="checkbox" checked="true"></input><br>
+Use JSON Scripts? <input id="scripting" type="checkbox"></input><br>
+Use Namespace: <select id="namespace" class="around3">
+<option>http://www.web3d.org/specifications/x3d</option>
+<option>http://www.w3.org/1999/xhtml</option> <!-- X3DOM XML -->
+<option>http://www.x3dom.org/x3dom</option>
+<option>http://www.web3d.org/specifications/x3d-namespace</option>  <!-- COBWEB -->
+<option>none</option> <!-- X3DOM HTML -->
+</select><br>
+        </section>
+        <section>
+          <header>Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into JSON X3DOM viewer and convert to XML (and display).</header>
+        </section>
+        <section class="around">
+<textarea id="json" rows="15" cols="80" class="around2"></textarea><br>
+<div id="x3domjson"></div>
     <X3DCanvas id='cobwebjson' cache='false' url='"flipper.x3d"'>
            <p>Your browser may not support all features required by Cobweb!</p>
 	   <X3D>
@@ -158,16 +167,22 @@ Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into JSON X3DOM
 	   </Scene>
 	   </X3D>
     </X3DCanvas>
-</td>
-</tr>
-</table>
+          <footer></footer>
+        </section>
+              </nobr>
+      </section>
+      <footer></footer>
+      </nobr>
+    </section>
+
+
 </body>
-    <script type="text/javascript" src="X3DJSONLD.js"></script>
-    <script type="text/javascript" src="PrototypeExpander.js"></script>
-    <script type="text/javascript" src="Flattener.js"></script>
-    <script type="text/javascript" src="Script.js"></script>
-    <script type="text/javascript" src="loaderJQuery.js"></script>
-    <script type="text/javascript">
+    <script  src="X3DJSONLD.js"></script>
+    <script  src="PrototypeExpander.js"></script>
+    <script  src="Flattener.js"></script>
+    <script  src="Script.js"></script>
+    <script  src="loaderJQuery.js"></script>
+    <script>
 	$(document).ready(function() {
 		loadX3DJSON('#x3domjson','flipper.json'); // does load flipper.json
 	});
