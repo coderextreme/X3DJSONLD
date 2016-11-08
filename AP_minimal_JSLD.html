@@ -46,6 +46,7 @@
 		$.getJSON("./ExtrusionHeart.json", importIntoCobweb);
 		
 		function importIntoCobweb(json) {
+			var xml;
 			var jsonDOM = loadX3DJS(json, "./", xml, ""); //path is for finding inlines
 			var importedScene = mybrowser.importDocument(jsonDOM); //now also attached x3dnode property to each node element
 			mybrowser.replaceWorld(importedScene);
