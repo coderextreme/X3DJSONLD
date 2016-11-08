@@ -67,9 +67,12 @@ Main function for loading JSON
 	return element
 ```
 
-* function loadX3DJS(selector, json)
+* function loadX3DJS(json, file, xml, python, NS)
 
-selector is the CSS selector for the singleton node to append to.  json is X3DJSON to load
+json is X3DJSON to load.  file is filename of input (used to find neighbors). xml is xml output, python is python output
+
+
+returns element
 ```
 	set element to the value of querying for selector
 	if element is null
@@ -84,5 +87,5 @@ selector is the CSS selector for the singleton node to append to.  json is X3DJS
 selector is the CSS selector for the singleton node to append to.   url is a link to the JSON URL to load
 ```
 retrieve the value from url into json.  Fail on any ajax error
-	call loadX3DJS with selector = selector and json = json
+	call loadX3DJS with json = json
 ```

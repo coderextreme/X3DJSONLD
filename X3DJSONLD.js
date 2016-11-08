@@ -429,10 +429,11 @@ function fixXML(xmlstr) {
  * json - the JSON to convert to XML and DOM
  * path - the path of the JSON file
  * xml - the output xml string array (optional)
+ * python - the output python string array (optional)
  * NS - a namespace for cobweb (optional) -- stripped out
  * returns an element - the element to append or insert into the DOM
  */
-function loadX3DJS(json, path, xml, NS) {
+function loadX3DJS(json, path, xml, python, NS) {
 	var version = json.X3D["@version"];
 	x3djsonNS = NS;
 	var child = CreateElement('X3D', NS);
@@ -447,7 +448,48 @@ function loadX3DJS(json, path, xml, NS) {
 		xmlstr = fixXML(xmlstr);
 		xml.push(xmlstr);
 	}
+	if (typeof python !== 'undefined' && typeof python.push === 'function') {
+		var pythonstr = "import X3Dpackage\n";
+		pythonstr += "element0 = X3D()\n";
+		pythonstr += PythonSerializer.serializeToString(child, 0);
+		python.push(pythonstr);
+
+	}
 	return child;
+}
+
+var PythonSerializer = {};
+PythonSerializer.serializeToString = function(element, pre) {
+	pre = pre || 0;
+	var str = "";
+	for (var cn in element.childNodes) {
+		var node = element.childNodes[cn];
+		if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 1) {
+			str += "element"+pre+cn+" = "+node.nodeName+"()\n";
+			str += PythonSerializer.serializeToString(node, ""+pre+cn);
+			str += "element"+pre+".add_children(element"+pre+cn+")\n";
+		}
+	}
+	for (var a in element.attributes) {
+		var attrs = element.attributes;
+		try {
+			parseInt(a);
+			if (attrs.hasOwnProperty(a) && attrs[a].nodeType == 2) {
+				var method = "set_"+attrs[a].nodeName.replace(/:/, "_");
+				if (typeof attrs[a].nodeValue === 'string') {
+					if (attrs[a].nodeValue.indexOf('"') >= 0) {
+						str += "element"+pre+"."+method+"('"+attrs[a].nodeValue+"')\n";
+					} else {
+						str += "element"+pre+"."+method+'("'+attrs[a].nodeValue+'")\n';
+					}
+				} else {
+					str += "element"+pre+"."+method+"("+attrs[a].nodeValue+")\n";
+				}
+			}
+		} catch (e) {
+		}
+	}
+	return str;
 }
 
 if (typeof module === 'object')  {
@@ -459,6 +501,7 @@ if (typeof module === 'object')  {
 		getEncoding : getEncoding,
 		setCDATACreateFunction : setCDATACreateFunction,
 		loadURLs : loadURLs,
+		PythonSerializer : PythonSerializer,
 		setDocument : function(doc) {
 			document = doc;
 		}
