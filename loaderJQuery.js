@@ -141,6 +141,7 @@ function setVersion(version) {
 	    }
 	    updateXML(xml);
 	    loadScripts(json);
+	    $('textarea#python').val(python.join("\n"));
         }
 
 	function appendInline(element, url) {
