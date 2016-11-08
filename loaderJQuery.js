@@ -98,6 +98,7 @@ function setVersion(version) {
 	}
 
 	function loadCobwebXML(content) {
+	/*
 		var cobwebEle = document.getElementsByTagName("X3DCanvas")[0];
 		if (typeof X3D !== 'undefined') {
 			var browser = X3D.getBrowser(cobwebEle);
@@ -105,6 +106,11 @@ function setVersion(version) {
 		} else {
 			console.error("Cobweb disabled temporarily.  May work on next load");
 		}
+	*/
+		X3D(function(el) {
+			var browser = X3D.getBrowser(el);
+			browser.replaceWorld(browser.createX3DFromString(content));
+		});
 	}
 
 	function loadCobwebDOM(element) {
@@ -172,6 +178,7 @@ function setVersion(version) {
 	 * selector (string) -- css selector
          * json (json object) -- json to convert to DOM
          * xml (array or LOG, must have push function which takes a string) -- xml output (optional)
+         * xml (array or LOG, must have push function which takes a string) -- python output (optional)
          * NS -- XML namespace (optional)
          */
 	function replaceX3DJSON(selector, json, url, xml, python, NS) {
