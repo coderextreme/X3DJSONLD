@@ -42,20 +42,22 @@
 		//myx3d = $('Scene')[0];
 		//var myx3d = document.querySelector('Scene');
 		//better to use with $.getJSON and callback which does import
-		//$,getJSON("./extrudedHeart.json", importIntoCobweb)
-		//function importIntoCobweb(json) {
-		//  var jsonDOM = loadX3DJS(json, "./", xml, ""); //path is for finding inlines
-		//  var importedScene = mybrowser.importDocument(json_dom); //now also attached x3dnode property to each node element
-		//  mybrowser.replaceWorld(importedScene);
-		//}
-		var xml, NS; //test_json.js makes test_json json object = extruded Heart
 		
-		var json_dom = loadX3DJS(test_json, "./", xml, ""); //path is for finding inlines
+		$.getJSON("./extrudedHeart.json", importIntoCobweb);
+		
+		function importIntoCobweb(json) {
+			var jsonDOM = loadX3DJS(json, "./", xml, ""); //path is for finding inlines
+			var importedScene = mybrowser.importDocument(jsonDOM); //now also attached x3dnode property to each node element
+			mybrowser.replaceWorld(importedScene);
+		}
+// 		var xml, NS; //test_json.js makes test_json json object = extruded Heart
+		
+// 		var json_dom = loadX3DJS(test_json, "./", xml, ""); //path is for finding inlines
 
-		console.log(json_dom, xml);
+// 		console.log(json_dom, xml);
 	
-		var importedScene = mybrowser.importDocument(json_dom); //now also attached x3dnode property to each node element
-		mybrowser.replaceWorld(importedScene);
+// 		var importedScene = mybrowser.importDocument(json_dom); //now also attached x3dnode property to each node element
+// 		mybrowser.replaceWorld(importedScene);
 	});
 	
     </script>
