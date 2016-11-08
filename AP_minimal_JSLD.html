@@ -43,7 +43,7 @@
 		//var myx3d = document.querySelector('Scene');
 		//better to use with $.getJSON and callback which does import
 		
-		$.getJSON("./extrudedHeart.json", importIntoCobweb);
+		$.getJSON("./ExtrusionHeart.json", importIntoCobweb);
 		
 		function importIntoCobweb(json) {
 			var jsonDOM = loadX3DJS(json, "./", xml, ""); //path is for finding inlines
