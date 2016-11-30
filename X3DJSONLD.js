@@ -449,25 +449,77 @@ function loadX3DJS(json, path, xml, python, NS) {
 		xml.push(xmlstr);
 	}
 	if (typeof python !== 'undefined' && typeof python.push === 'function') {
-		var pythonstr = "import X3Dpackage\n";
-		pythonstr += "element0 = X3D()\n";
-		pythonstr += PythonSerializer.serializeToString(child, 0);
+		var pythonstr = PythonSerializer.serializeToString(child, 0);
 		python.push(pythonstr);
 
 	}
 	return child;
 }
 
+var mapToMethod = {
+	"X3D" : {
+		"head": "setHead",
+		"Scene" : "setScene"
+	},
+	"head" : {
+		"meta": "addMeta"
+	},
+	"Scene" : "addChildren",
+	"Transform" : "addChildren",
+	"Group" : "addChildren",
+	"Shape" : {
+		"Sphere": "setGeometry",
+		"Cylinder": "setGeometry",
+		"Extrusion": "setGeometry",
+		"Appearance": "setAppearance"
+	},
+	"ProtoInterface" : {
+		"field" : "addField"
+	},
+	"Script" : {
+		"field" : "addField"
+	},
+	"field" : "addChildren",
+	"IS" : "addConnect"
+};
+
 var PythonSerializer = {};
 PythonSerializer.serializeToString = function(element, pre) {
 	pre = pre || 0;
 	var str = "";
+	if (pre === 0) {
+		str += "from jnius import autoclass\n";
+		str += "from X3Dautoclass import *\n";
+		str += "X3DObject = autoclass('org.web3d.x3d.java.Core.X3DObject')\n";
+		str += "element0 = X3DObject()\n";
+        }
 	for (var cn in element.childNodes) {
 		var node = element.childNodes[cn];
 		if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 1) {
-			str += "element"+pre+cn+" = "+node.nodeName+"()\n";
+			str += "element"+pre+cn+" = "+node.nodeName+"Object()\n";
 			str += PythonSerializer.serializeToString(node, ""+pre+cn);
-			str += "element"+pre+".add_children(element"+pre+cn+")\n";
+			var addpre = ".set";
+			if (cn > 0) {
+				addpre = ".add";
+			}
+			var method = node.nodeName.replace(/:/, "_").
+					replace(/(.*)/, function (l) {
+						// console.error("Looking up "+element.nodeName+" "+node.nodeName);
+
+						var method = l;
+						if (typeof mapToMethod[element.nodeName] === 'object') {
+					        	if (typeof mapToMethod[element.nodeName][node.nodeName] === 'string') {
+								addpre = ".";
+								method = mapToMethod[element.nodeName][node.nodeName];
+							}
+					        } else if (typeof mapToMethod[element.nodeName] === 'string') {
+							addpre = ".";
+							method = mapToMethod[element.nodeName];
+						}
+						// console.error("Found "+method);
+						return method;
+					});
+			str += "element"+pre+addpre+method+"(element"+pre+cn+")\n";
 		}
 	}
 	for (var a in element.attributes) {
@@ -475,10 +527,16 @@ PythonSerializer.serializeToString = function(element, pre) {
 		try {
 			parseInt(a);
 			if (attrs.hasOwnProperty(a) && attrs[a].nodeType == 2) {
-				var method = "set_"+attrs[a].nodeName.replace(/:/, "_");
+				var method = attrs[a].nodeName.replace(/:/, "_");
+				method = "set"+method.charAt(0).toUpperCase() + method.slice(1);
+
 				if (typeof attrs[a].nodeValue === 'string') {
-					if (attrs[a].nodeValue.indexOf('"') >= 0) {
+					if (attrs[a].nodeValue.indexOf('"') === 0) {
+						str += "element"+pre+"."+method+"(["+attrs[a].nodeValue.split('" "').join('","')+"])\n";
+					} else if (attrs[a].nodeValue.indexOf('"') > 0) {
 						str += "element"+pre+"."+method+"('"+attrs[a].nodeValue+"')\n";
+					} else if (attrs[a].nodeValue.match(/((\+|-)?(0|[1-9][0-9]*)?(\.[0-9]*)?((E|e)(\+|-)?[0-9]+)?| |,)*/)) {
+						str += "element"+pre+"."+method+"(["+attrs[a].nodeValue.split(' ').join(',')+"])\n";
 					} else {
 						str += "element"+pre+"."+method+'("'+attrs[a].nodeValue+'")\n';
 					}

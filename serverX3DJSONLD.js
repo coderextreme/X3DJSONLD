@@ -34,9 +34,7 @@ function loadX3DJS(json, path, xml, python) {
 	xml.push(xmlstr);
 
 
-	var pythonstr = "import X3Dpackage\n";
-	pythonstr += "element0 = X3D()\n";
-	pythonstr += PythonSerializer.serializeToString(element);
+	var pythonstr = PythonSerializer.serializeToString(element);
 	python.push(pythonstr);
 
 }
