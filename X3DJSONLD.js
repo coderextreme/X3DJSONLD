@@ -535,7 +535,7 @@ PythonSerializer.serializeToString = function(element, pre) {
 						str += "element"+pre+"."+method+"(["+attrs[a].nodeValue.split('" "').join('","')+"])\n";
 					} else if (attrs[a].nodeValue.indexOf('"') > 0) {
 						str += "element"+pre+"."+method+"('"+attrs[a].nodeValue+"')\n";
-					} else if (attrs[a].nodeValue.match(/((\+|-)?(0|[1-9][0-9]*)?(\.[0-9]*)?((E|e)(\+|-)?[0-9]+)?| |,)*/)) {
+					} else if (attrs[a].nodeValue.match(/^((\+|-)?([0-9]+\.?|\.[0-9]+|[0-9]+\.[0-9]+)((E|e)(\+|-)?[0-9]+)?| |,)*$/)) {
 						str += "element"+pre+"."+method+"(["+attrs[a].nodeValue.split(' ').join(',')+"])\n";
 					} else {
 						str += "element"+pre+"."+method+'("'+attrs[a].nodeValue+'")\n';
