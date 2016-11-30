@@ -469,9 +469,30 @@ var mapToMethod = {
 	"Group" : "addChildren",
 	"Shape" : {
 		"Sphere": "setGeometry",
+		"Text": "setGeometry",
+		"Sphere": "setGeometry",
 		"Cylinder": "setGeometry",
 		"Extrusion": "setGeometry",
-		"Appearance": "setAppearance"
+		"Cone": "setGeometry",
+		"Appearance": "setAppearance",
+		"IndexedFaceSet": "setGeometry"
+	},
+	"Appearance" : {
+		"ComposedCubeMapTexture": "setTexture"
+	},
+	"IndexedFaceSet" : {
+		"Coordinate": "setCoord"
+	},
+	"ComposedShader" : {
+		"field" : "addField",
+		"Shaders" : "addParts"
+	},
+	"Shader" : {
+		"field" : "addField"
+	},
+	"ProtoBody" : "setChildren",
+	"ProtoDeclare" : {
+		"ProtoBody" : "setProtoBody"
 	},
 	"ProtoInterface" : {
 		"field" : "addField"
@@ -484,65 +505,93 @@ var mapToMethod = {
 };
 
 var PythonSerializer = {};
-PythonSerializer.serializeToString = function(element, pre) {
-	pre = pre || 0;
+PythonSerializer.serializeToString = function(element, n, grandparent, gn) {
+	n = n || 0;
 	var str = "";
-	if (pre === 0) {
+	if (n === 0) {
 		str += "from jnius import autoclass\n";
 		str += "from X3Dautoclass import *\n";
-		str += "X3DObject = autoclass('org.web3d.x3d.java.Core.X3DObject')\n";
-		str += "element0 = X3DObject()\n";
+		str += element.nodeName+n+" = "+element.nodeName+"Object()\n";
         }
 	for (var cn in element.childNodes) {
 		var node = element.childNodes[cn];
 		if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 1) {
-			str += "element"+pre+cn+" = "+node.nodeName+"Object()\n";
-			str += PythonSerializer.serializeToString(node, ""+pre+cn);
+			str += node.nodeName+n+cn+" = "+node.nodeName+"Object()\n";
+			str += PythonSerializer.serializeToString(node, ""+n+cn, element, ""+n);
 			var addpre = ".set";
 			if (cn > 0) {
 				addpre = ".add";
 			}
-			var method = node.nodeName.replace(/:/, "_").
-					replace(/(.*)/, function (l) {
-						// console.error("Looking up "+element.nodeName+" "+node.nodeName);
 
-						var method = l;
-						if (typeof mapToMethod[element.nodeName] === 'object') {
-					        	if (typeof mapToMethod[element.nodeName][node.nodeName] === 'string') {
-								addpre = ".";
-								method = mapToMethod[element.nodeName][node.nodeName];
-							}
-					        } else if (typeof mapToMethod[element.nodeName] === 'string') {
-							addpre = ".";
-							method = mapToMethod[element.nodeName];
-						}
-						// console.error("Found "+method);
-						return method;
-					});
-			str += "element"+pre+addpre+method+"(element"+pre+cn+")\n";
+			var method = node.nodeName;
+			if (typeof mapToMethod[element.nodeName] === 'object') {
+		        	if (typeof mapToMethod[element.nodeName][node.nodeName] === 'string') {
+					addpre = ".";
+					method = mapToMethod[element.nodeName][node.nodeName];
+				}
+		        } else if (typeof mapToMethod[element.nodeName] === 'string') {
+				addpre = ".";
+				method = mapToMethod[element.nodeName];
+			}
+			if (element.nodeName == 'ComposedCubeMapTexture' && node.nodeName == 'ImageTexture') {
+			} else if (element.nodeName == 'TextureBackground' && node.nodeName == 'ImageTexture') {
+			} else {
+				str += element.nodeName+n+addpre+method+"("+node.nodeName+n+cn+")\n";
+			}
 		}
 	}
+	node = element;
 	for (var a in element.attributes) {
 		var attrs = element.attributes;
 		try {
 			parseInt(a);
 			if (attrs.hasOwnProperty(a) && attrs[a].nodeType == 2) {
-				var method = attrs[a].nodeName.replace(/:/, "_");
-				method = "set"+method.charAt(0).toUpperCase() + method.slice(1);
-
-				if (typeof attrs[a].nodeValue === 'string') {
-					if (attrs[a].nodeValue.indexOf('"') === 0) {
-						str += "element"+pre+"."+method+"(["+attrs[a].nodeValue.split('" "').join('","')+"])\n";
-					} else if (attrs[a].nodeValue.indexOf('"') > 0) {
-						str += "element"+pre+"."+method+"('"+attrs[a].nodeValue+"')\n";
-					} else if (attrs[a].nodeValue.match(/^((\+|-)?([0-9]+\.?|\.[0-9]+|[0-9]+\.[0-9]+)((E|e)(\+|-)?[0-9]+)?| |,)*$/)) {
-						str += "element"+pre+"."+method+"(["+attrs[a].nodeValue.split(' ').join(',')+"])\n";
-					} else {
-						str += "element"+pre+"."+method+'("'+attrs[a].nodeValue+'")\n';
-					}
-				} else {
-					str += "element"+pre+"."+method+"("+attrs[a].nodeValue+")\n";
+				var method = attrs[a].nodeName;
+				if (method == "xmlns:xsd" || method == "xsd:noNamespaceSchemaLocation") {
+					continue;
 				}
+				if (method == 'containerField') {
+					method = attrs[a].nodeValue;
+					method = "set"+method.charAt(0).toUpperCase() + method.slice(1);
+					str += grandparent.nodeName+gn+"."+method+"(";
+					str += element.nodeName+n;
+				} else {
+					method = "set"+method.charAt(0).toUpperCase() + method.slice(1);
+					if (attrs[a].nodeValue == 'NULL' && method == "setValue") {
+						method = "setChildren";
+						str += element.nodeName+n+"."+method+"(";
+						str += "None";
+					} else if (typeof attrs[a].nodeValue === 'string') {
+						str += element.nodeName+n+"."+method+"(";
+						if (method == 'setVersion') {
+							str += '"'+attrs[a].nodeValue+'"';
+						} else if (attrs[a].nodeValue == 'true') {
+							str += "True";
+						} else if (attrs[a].nodeValue == 'false') {
+							str += "False";
+						} else if (method == 'setValue') {
+							if (attrs[a].nodeValue.indexOf('"') >= 0) {
+								str += "'"+attrs[a].nodeValue+"'";
+							} else {
+								str += '"'+attrs[a].nodeValue+'"';
+							}
+						} else if (attrs[a].nodeValue.indexOf('"') === 0) {
+							str += "["+attrs[a].nodeValue.split('" "').join('","')+"]";
+						} else if (attrs[a].nodeValue.indexOf('"') > 0) {
+							str += "'"+attrs[a].nodeValue+"'";
+						} else if (attrs[a].nodeValue.match(/^((\+|-)?([0-9]+\.?|\.[0-9]+|[0-9]+\.[0-9]+)((E|e)(\+|-)?[0-9]+)?)*$/)) {
+							str += attrs[a].nodeValue;
+						} else if (attrs[a].nodeValue.match(/^((\+|-)?([0-9]+\.?|\.[0-9]+|[0-9]+\.[0-9]+)((E|e)(\+|-)?[0-9]+)?| |,)*$/)) {
+							str += "["+attrs[a].nodeValue.split(' ').join(',')+"]";
+						} else {
+							str += '"'+attrs[a].nodeValue+'"';
+						}
+					} else {
+						str += element.nodeName+n+"."+method+"(";
+						str += +attrs[a].nodeValue;
+					}
+				}
+				str += ")\n";
 			}
 		} catch (e) {
 		}
