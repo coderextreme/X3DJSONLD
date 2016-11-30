@@ -1,2 +1,3 @@
 #!/bin/sh
-${1-node} json2x3d.js abox.json ArchHalf.json ArchPrototype.json arc.json box.json bubbles.json cobweb.json CoordinateAxes.json ExtrusionHeart.json flipper.json flowers2.json flowers4.json flowers7.json force.json for.json geobubbles.json geo.json IcosahedronSubdivisionLevel5.json mirror2.json mirror.json NancyNativeTags.json NancyPrototypes.json ObliqueStrategies.json pp3.json qq3.json rubikFurnace.json rubik.json rubikOnFire.json
+${1-node} json2x3d.js cobweb.json ArchHalf.json ExtrusionHeart.json flowers2.json geobubbles.json IcosahedronSubdivisionLevel5.json pp3.json qq3.json
+# abox.json  flipper.json ArchPrototype.json CoordinateAxes.json arc.json box.json for.json force.json flowers4.json flowers7.json bubbles.json geo.json mirror2.json mirror.json NancyNativeTags.json rubikFurnace.json rubik.json rubikOnFire.json ObliqueStrategies.json NancyPrototypes.json
