@@ -720,16 +720,16 @@ PythonSerializer.serializeToString = function(element, n, grandparent, gn) {
 						str += element.nodeName+n+"."+method+"(";
 						if (method == 'setVersion') {
 							str += '"'+attrs[a].nodeValue+'"';
-						} else if (attrs[a].nodeValue == 'true') {
-							str += "True";
-						} else if (attrs[a].nodeValue == 'false') {
-							str += "False";
 						} else if (method == 'setValue') {
 							if (attrs[a].nodeValue.indexOf('"') >= 0) {
 								str += "'"+attrs[a].nodeValue+"'";
 							} else {
 								str += '"'+attrs[a].nodeValue+'"';
 							}
+						} else if (attrs[a].nodeValue == 'true') {
+							str += "True";
+						} else if (attrs[a].nodeValue == 'false') {
+							str += "False";
 						} else if (attrs[a].nodeValue.indexOf('"') === 0) {
 							str += "["+attrs[a].nodeValue.split('" "').join('","')+"]";
 						} else if (attrs[a].nodeValue.indexOf('"') > 0) {
