@@ -462,26 +462,171 @@ var mapToMethod = {
 		"Scene" : "setScene"
 	},
 	"head" : {
-		"meta": "addMeta"
+		"meta": "addMeta",
+		"component": "setComponent"
 	},
 	"Scene" : "addChildren",
-	"Transform" : "addChildren",
+	"LODObject" : {
+		"Group": 'addChildren',
+		"Shape": 'addChildren',
+		"Transform": 'addChildren',
+		"WorldInfo": 'addChildren'
+	},
+	"StaticGroup" : {
+		"Shape": "addChildren",
+	},
+	"Switch" : {
+		"Group": "addChildren",
+		"Sound": "addChildren",
+		"Shape": "addChildren",
+		"Transform": "addChildren",
+		"ColorInterpolator": "addChildren",
+		"CoordinateInterpolator": "addChildren",
+		"NormalInterpolator": "addChildren",
+		"OrientationInterpolator": "addChildren",
+		"PositionInterpolator": "addChildren",
+		"ScalarInterpolator": "addChildren"
+	},
+	"Transform" : {
+		"Anchor": "addChildren",
+		"Billboard": "addChildren",
+		"BooleanTrigger": "addChildren",
+		"BooleanToggle": "addChildren",
+		"BooleanFilter": "addChildren",
+		"Collision": "addChildren",
+		"ColorInterpolator": "addChildren",
+		"CoordinateInterpolator": "addChildren",
+		"CylinderSensor": "addChildren",
+		"DirectionalLight": "addChildren",
+		"Group": "addChildren",
+		"IngeterTrigger": "addChildren",
+		"NavigationInfo": "addChildren",
+		"OrientationInterpolator": "addChildren",
+		"PlaneSensor": "addChildren",
+		"PointLight": "addChildren",
+		"PositionInterpolator": "addChildren",
+		"ProtoInstance": "addChildren",
+		"ProximitySensor": "addChildren",
+		"ROUTE": "addChildren",
+		"ScalarInterpolator": "addChildren",
+		"Script": "addChildren",
+		"Shape": "addChildren",
+		"Sound": "addChildren",
+		"Switch": "addChildren",
+		"SphereSensor": "addChildren",
+		"SpotLight": "addChildren",
+		"StringSensor": "addChildren",
+		"TimeSensor": "addChildren",
+		"TimeTrigger": "addChildren",
+		"TouchSensor": "addChildren",
+		"Transform": "addChildren",
+		"Viewpoint": "addChildren",
+		"VisibilitySensor": "addChildren",
+		"IS": "setIS"
+	},
 	"Group" : "addChildren",
+	"Sound" : {
+		"AudioClip": "setSource",
+		"MovieTexture": "setSource"
+	},
+	'LoadSensorObject' : {
+		'AudioClip' : "addWatchList"
+	},
 	"Shape" : {
 		"Sphere": "setGeometry",
+		"Box": "setGeometry",
+		"ElevationGrid": "setGeometry",
 		"Text": "setGeometry",
 		"Sphere": "setGeometry",
 		"Cylinder": "setGeometry",
 		"Extrusion": "setGeometry",
 		"Cone": "setGeometry",
 		"Appearance": "setAppearance",
-		"IndexedFaceSet": "setGeometry"
+		"IndexedFaceSet": "setGeometry",
+		"IndexedLineSet": "setGeometry",
+		"PointSet": "setGeometry",
+		"Arc2D": "setGeometry",
+		"ArcClose2D": "setGeometry",
+		"Circle2D": "setGeometry",
+		"Disk2D": "setGeometry",
+		"Polyline2D": "setGeometry",
+		"Polypoint2D": "setGeometry",
+		"Rectangle2D": "setGeometry",
+		"TriangleSet2D": "setGeometry",
+		"ProtoInstance": "setGeometry"
 	},
 	"Appearance" : {
-		"ComposedCubeMapTexture": "setTexture"
+		"FillProperties": "addFillProperties",
+		"ComposedCubeMapTexture": "setTexture",
+		"ImageTexture": "setTexture",
+		"PixelTexture": "setTexture",
+		"MovieTexture": "setTexture",
+		"Material": "setMaterial",
+		"TwoSidedMaterial": "setMaterial",
+		"TextureTransform": "setTextureTransform",
+		"IS": "setIS"
+	},
+	"ElevationGrid" : {
+		 "TextureCoordinate": "setTexCoord"
+        },
+	"IndexedQuadSetObject": {
+		"Coordinate": "setCoord",
+        },
+	"QuadSetObject": {
+		"Coordinate": "setCoord",
 	},
 	"IndexedFaceSet" : {
+		"Coordinate": "setCoord",
+		"TextureCoordinate": "setTexCoord",
+		"Color": "setColor",
+		"Normal": "setNormal"
+	},
+	"IndexedLineSet" : {
+		"Coordinate": "setCoord",
+		"Color": "setColor"
+	},
+	"PointSet" : {
+		"Coordinate": "setCoord",
+		"Color": "setColor"
+	},
+	"IndexedTriangleFanSetObject" : {
 		"Coordinate": "setCoord"
+	},
+	"IndexedTriangleSetObject" : {
+		"Coordinate": "setCoord"
+	},
+	"IndexedTriangleStripSetObject" : {
+		"Coordinate": "setCoord"
+	},
+	"LineSetObject" : {
+		"Coordinate": "setCoord"
+	},
+	"TriangleFanSetObject" : {
+		"Coordinate": "setCoord"
+	},
+	"TriangleSetObject" : {
+		"Coordinate": "setCoord"
+	},
+	"TriangleStripSetObject" : {
+		"Coordinate": "setCoord"
+	},
+	"Anchor" : {
+		"Transform": "addChildren",
+		"Group": "addChildren",
+		"Shape": "addChildren"
+	},
+	"Billboard" : {
+		"Switch": "addChildren",
+		"Transform": "addChildren",
+		"ProtoInstance": "addChildren",
+		"Shape": "addChildren"
+	},
+	"Collision" : {
+		"TimeSensor": "addChildren",
+		"Collision": "addChildren",
+		"Transform": "addChildren",
+		"PositionInterpolator": "addChildren",
+		"Shape": "addChildren"
 	},
 	"ComposedShader" : {
 		"field" : "addField",
@@ -494,14 +639,24 @@ var mapToMethod = {
 	"ProtoDeclare" : {
 		"ProtoBody" : "setProtoBody"
 	},
+	"ExternProtoDeclare" : {
+		"field" : "addField"
+	},
 	"ProtoInterface" : {
 		"field" : "addField"
 	},
+	"ProtoInstance" : {
+		"fieldValue" : "addFieldValue"
+	},
 	"Script" : {
-		"field" : "addField"
+		"field" : "addField",
+		"IS": "setIS"
 	},
 	"field" : "addChildren",
-	"IS" : "addConnect"
+	"fieldValue" : "addChildren",
+	"IS" : {
+		"connect": "addConnect",
+	}
 };
 
 var PythonSerializer = {};
@@ -580,7 +735,11 @@ PythonSerializer.serializeToString = function(element, n, grandparent, gn) {
 						} else if (attrs[a].nodeValue.indexOf('"') > 0) {
 							str += "'"+attrs[a].nodeValue+"'";
 						} else if (attrs[a].nodeValue.match(/^((\+|-)?([0-9]+\.?|\.[0-9]+|[0-9]+\.[0-9]+)((E|e)(\+|-)?[0-9]+)?)*$/)) {
-							str += attrs[a].nodeValue;
+							if (method.match(/^set[^F]*ndex$/)) {
+								str += "["+attrs[a].nodeValue+"]";
+							} else {
+								str += attrs[a].nodeValue;
+							}
 						} else if (attrs[a].nodeValue.match(/^((\+|-)?([0-9]+\.?|\.[0-9]+|[0-9]+\.[0-9]+)((E|e)(\+|-)?[0-9]+)?| |,)*$/)) {
 							str += "["+attrs[a].nodeValue.split(' ').join(',')+"]";
 						} else {
