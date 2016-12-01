@@ -41,7 +41,8 @@ function clockTrigger (timeValue)
     
     // note different modulation rates for each color component, % is modulus operator
     newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1);   
-    Browser.print ('diffuseColor=(' + red +',' + green + ',' + blue + ') newColor=' + newColor.toString() + '\');
+    Browser.print ('diffuseColor=(' + red +',' + green + ',' + blue + ') newColor=' + newColor.toString() + '
+');
 }
 ]]></Script>
 <!--Clock tickles Script to wake up and compute a new value--><ROUTE fromNode="MaterialModulatorScriptExpanded1" fromField="newColor" toNode="MaterialModulatorNodeExpanded1" toField="diffuseColor"></ROUTE>

@@ -37,7 +37,8 @@ function clockTrigger (timeValue)
     newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1);
 	if (enabled)
 	{
-		Browser.print ('diffuseColor=(' + red +',' + green + ',' + blue + ') newColor=' + newColor.toString() + '\');
+		Browser.print ('diffuseColor=(' + red +',' + green + ',' + blue + ') newColor=' + newColor.toString() + '
+');
 	}
 }
 ]]></Script>
