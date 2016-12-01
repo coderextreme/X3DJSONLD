@@ -108,14 +108,14 @@ function setVersion(version) {
 		}
 	*/
 		X3D(function(el) {
-			var browser = X3D.getBrowser(el);
+			var browser = X3D.getBrowser(el[0]);
 			browser.replaceWorld(browser.createX3DFromString(content));
 		});
 	}
 
 	function loadCobwebDOM(element) {
 		X3D(function(el) {
-			var browser = X3D.getBrowser(el);
+			var browser = X3D.getBrowser(el[1]);
 			var importedScene = browser.importDocument(element);
 			browser.replaceWorld(importedScene);
 		});
