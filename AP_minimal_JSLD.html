@@ -30,12 +30,12 @@
     
     <script type="text/javascript">
     
-	$.getJSON("Library/Examples/gears.json", importIntoCobweb);
+	$.getJSON("Library/Examples/Gears/gears.json", importIntoCobweb);
 
 	function importIntoCobweb(json) {
 		var xml = [];
 		var python = [];
-		var jsonDOM = loadX3DJS(json, "Library/Examples/gears.json", xml, python, ""); //path is for finding inlines
+		var jsonDOM = loadX3DJS(json, "Library/Examples/Gears/gears.json", xml, python, ""); //path is for finding inlines
 		loadCobwebDOM(jsonDOM);
 	}
 	    
