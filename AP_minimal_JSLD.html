@@ -26,7 +26,7 @@
 
 </body>
     <script type="text/javascript" src="X3DJSONLD.js"></script>
-    <script type="text/javascript" src="loaderJQuery.js"></script>
+    <!--script type="text/javascript" src="loaderJQuery.js"></script-->
     
     <script type="text/javascript">
     
@@ -35,8 +35,17 @@
 	function importIntoCobweb(json) {
 		var xml = [];
 		var python = [];
-		var jsonDOM = loadX3DJS(json, "ExtrusionHeart.json", xml, python, ""); //path is for finding inlines
+		var jsonDOM = loadX3DJS(json, "Library/Examples/gears.json", xml, python, ""); //path is for finding inlines
 		loadCobwebDOM(jsonDOM);
 	}
+	    
+    	function loadCobwebDOM(element) {
+		X3D(function(el) {
+			var browser = X3D.getBrowser(el[0]);
+			var importedScene = browser.importDocument(element);
+			browser.replaceWorld(importedScene);
+		});
+	}
+
     </script>
 </html>
