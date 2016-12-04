@@ -29,8 +29,10 @@
     <!--script type="text/javascript" src="loaderJQuery.js"></script-->
     
     <script type="text/javascript">
+	    
+    	var url = "http://www.web3d.org/x3d/content/examples/Basic/ScriptConformance/TouchSensorIsOverEventECMAScript.json";
     
-	$.getJSON("Library/Examples/Gears/gears.json", importIntoCobweb);
+	$.getJSON(url, importIntoCobweb);
 
 	function importIntoCobweb(json) {
 		var xml = [];
