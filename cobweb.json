@@ -98,6 +98,7 @@
                           { "Script":
                             {
                               "@DEF":"bounce",
+			      "@type" : "application/x-vrmlscript",
                               "field": [
                                 {
                                   "@name":"scale",
