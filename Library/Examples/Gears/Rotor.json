@@ -177,6 +177,7 @@
                     { "Script":
                       {
                         "@DEF":"Rotor",
+			"@type" : "application/x-vrmlscript",
                         "field": [
                           {
                             "@name":"set_axis",

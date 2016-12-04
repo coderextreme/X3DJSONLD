@@ -183,6 +183,7 @@
                     { "Script":
                       {
                         "@directOutput":true,
+			"@type" : "application/x-vrmlscript",
                         "field": [
                           {
                             "@name":"teeth",
