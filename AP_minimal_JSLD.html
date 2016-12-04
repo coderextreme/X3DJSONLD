@@ -30,14 +30,14 @@
     
     <script type="text/javascript">
 	    
-    	var url = "http://www.web3d.org/x3d/content/examples/Basic/ScriptConformance/TouchSensorIsOverEventECMAScript.json";
+    	var url = "TouchSensorIsOverEventECMAScript.json";
     
 	$.getJSON(url, importIntoCobweb);
 
 	function importIntoCobweb(json) {
 		var xml = [];
 		var python = [];
-		var jsonDOM = loadX3DJS(json, "Library/Examples/Gears/gears.json", xml, python, ""); //path is for finding inlines
+		var jsonDOM = loadX3DJS(json, "./", xml, python, ""); //path is for finding inlines
 		loadCobwebDOM(jsonDOM);
 	}
 	    
