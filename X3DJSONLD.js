@@ -223,16 +223,23 @@ function CreateElement(key, x3djsonNS) {
 
 function CDATACreateFunction(document, element, str) {
 	// for script nodes
+	/*
 	var open = document.createTextNode('<![CDATA[');
 	var child = document.createTextNode(str.replace(/\&lt;/g, '<').replace(/\&gt;/g, '>').replace(/\&amp;/g, '&'));
 	var close = document.createTextNode(']]>');
 	element.appendChild(open);
 	element.appendChild(child);
 	element.appendChild(close);
+	*/
 	/*
 	var child = document.createCDATASection(str);
 	element.appendChild(child);
 	*/
+	var domParser = new DOMParser();
+	var cdataStr = '<script> <![CDATA[ ' + str + ' ]]> </script>'; // has to be wrapped into an element
+	var scriptDoc = domParser .parseFromString (cdataStr, 'application/xml');
+	var cdata = scriptDoc .children[0] .childNodes[1]; // space after script is childNode[0]
+	element .appendChild(cdata);
 }
 
 function setCDATACreateFunction(fnc) {
