@@ -231,10 +231,14 @@ function CDATACreateFunction(document, element, str) {
 	element.appendChild(child);
 	element.appendChild(close);
 	*/
-	///*
+	/*
 	var child = document.createCDATASection(str);
 	element.appendChild(child);
-	//*/
+	*/
+	var domParser = new DOMParser();
+	var scriptDoc = domParser .parseFromString ('<![CDATA['+str+']]>', 'application/xml');
+	var cdata = scriptDoc .children[0] .childNodes[0];
+	element.appendChild(cdata);
 }
 
 function setCDATACreateFunction(fnc) {
