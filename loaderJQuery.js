@@ -124,7 +124,6 @@ function setVersion(version) {
         function loadX3D(selector, json, url) {
 	    $(selector).empty();
 	    var xml = new LOG();
-	    var python = new LOG();
 	    if ($('#prototype').is(':checked')) {
 		// Expand Protos
 		// json = externPrototypeExpander(url, json);
@@ -134,14 +133,16 @@ function setVersion(version) {
 	        $('textarea#json').val(JSON.stringify(json, null, 2));
 	    }
 	    var NS = $('#namespace option:selected').text();
+	    var child;
 	    if (NS === "none") {
-		replaceX3DJSON(selector, json, url, xml, python); // X3DOM
+		child = replaceX3DJSON(selector, json, url, xml); // X3DOM
 	    } else {
-		replaceX3DJSON(selector, json, url, xml, python, NS);  // Cobweb if not XHTML NS
+		child = replaceX3DJSON(selector, json, url, xml, NS);  // Cobweb if not XHTML NS
 	    }
 	    updateXML(xml);
 	    loadScripts(json);
-	    $('textarea#python').val(python.join("\n"));
+	    var python = PythonSerializer.serializeToString(child);
+	    $('textarea#python').val(python);
         }
 
 	function appendInline(element, url) {
@@ -161,14 +162,17 @@ function setVersion(version) {
          *
 	 * selector (string) -- css selector
          * json (json object) -- json to convert to DOM
+	 * url -- name of path/filename json loaded from
          * xml (array or LOG, must have push function which takes a string) -- xml output (optional)
          * NS -- XML namespace (optional)
+	 * returns element loaded
          */
-	function appendX3DJSON2Selector(selector, json, url, xml, python, NS) {
-		var element = loadX3DJS(json, url, xml, python, NS);  // Cobweb if not XHTML NS
+	function appendX3DJSON2Selector(selector, json, url, xml, NS) {
+		var element = loadX3DJS(json, url, xml, NS);  // Cobweb if not XHTML NS
 		elementSetAttribute(element, "xmlns:xsd", 'http://www.w3.org/2001/XMLSchema-instance');
 		document.querySelector(selector).appendChild(element);
 		x3dom.reload();
+		return element;
 	}
 
         /*
@@ -178,22 +182,24 @@ function setVersion(version) {
          *
 	 * selector (string) -- css selector
          * json (json object) -- json to convert to DOM
+	 * url -- name of path/filename json loaded from
          * xml (array or LOG, must have push function which takes a string) -- xml output (optional)
-         * xml (array or LOG, must have push function which takes a string) -- python output (optional)
          * NS -- XML namespace (optional)
+	 * returns element loaded
          */
-	function replaceX3DJSON(selector, json, url, xml, python, NS) {
+	function replaceX3DJSON(selector, json, url, xml, NS) {
 		// check against schema
 		var version = json.X3D["@version"];
 		setVersion(version);  // loads schema.  TODO.  Only load when version changes
 		var valid = validate(json);
 		if (valid || confirm(JSON.stringify(validate.errors))) {
 
-			var element = loadX3DJS(json, url, xml, python, NS);  // Cobweb if not XHTML NS
+			var element = loadX3DJS(json, url, xml, NS);  // Cobweb if not XHTML NS
 			elementSetAttribute(element, "xmlns:xsd", 'http://www.w3.org/2001/XMLSchema-instance');
 			$(selector).empty();
 			$(selector).append(element);
 			loadCobwebDOM(element);
+			return element;
 		}
 	}
 

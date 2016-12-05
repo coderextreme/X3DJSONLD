@@ -4,6 +4,11 @@
 var fs = require("fs");
 
 var X3DJSONLD = require('./X3DJSONLD.js');
+X3DJSONLD.setCDATACreateFunction(function(document, element, str) {
+	// for script nodes
+	var child = document.createCDATASection(str);
+	element.appendChild(child);
+});
 var loadURLs = X3DJSONLD.loadURLs;
 var Browser = X3DJSONLD.Browser;
 
@@ -33,8 +38,7 @@ function ProcessJSON(json, file) {
 		console.log(JSON.stringify(json, null, 2));
 
 		var xml = [];
-		var python = [];
-		loadX3DJS(json, file, xml, python);
+		loadX3DJS(json, file, xml);
 		// console.error(xml.join("\n"));
 
 		var classes = new LOG();
