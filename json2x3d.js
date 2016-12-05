@@ -12,44 +12,8 @@ var XMLSerializer = new xmldom.XMLSerializer();
 
 var X3DJSONLD = require('./X3DJSONLD.js');
 var ConvertToX3DOM = X3DJSONLD.ConvertToX3DOM;
-var PythonSerializer = require('./PythonSerializer.js');
 
-var fixXML = require('./fixXML.js');
-
-function serializeDOM(json, element) {
-	var version = json.X3D["@version"];
-	var xml = '<?xml version="1.0" encoding="'+json.X3D["encoding"]+'"?>\n';
-	xml += '<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D '+version+'//EN" "http://www.web3d.org/specifications/x3d-'+version+'.dtd">\n';
-	xml += XMLSerializer.serializeToString(element);
-	xml = fixXML(xml);
-	return xml;
-}
-
-function loadX3DJS(json, path, xml) {
-        if (typeof json === 'undefined') {
-		console.error('json undefined.  Look in', path, 'for hints');
-	}
-	var version = json.X3D["@version"];
-	var docType = DOMImplementation.createDocumentType("X3D", 'ISO//Web3D//DTD X3D '+version+'//EN" "http://www.web3d.org/specifications/x3d-'+version+'.dtd', null);
-	var document = DOMImplementation.createDocument(null, "X3D", docType);
-        X3DJSONLD.setDocument(document);
-	X3DJSONLD.setCDATACreateFunction(function(document, element, str) {
-		// for script nodes
-		var child = document.createCDATASection(str);
-		element.appendChild(child);
-	});
-	var element = document.getElementsByTagNameNS(null, "X3D")[0];
-	element.setAttribute("xmlns:xsd", 'http://www.w3.org/2001/XMLSchema-instance');
-
-	ConvertToX3DOM(json, "", element, path);
-
-	if (typeof xml !== 'undefined' && typeof xml.push === 'function') {
-		xml.push(serializeDOM(json, element));
-	}
-
-	return element;
-
-}
+var loadX3DJS = require('./serverX3DJSONLD');
 
 process.argv.shift();
 process.argv.shift();
@@ -62,13 +26,6 @@ for (var f in files) {
 		var json = JSON.parse(fs.readFileSync(file).toString());
 		var xml = [];
 		var element = loadX3DJS(json, file, xml);
-		var python = PythonSerializer.serializeToString(element);
-
-		var pyfile = "";
-		pyfile += file.substr(0, file.lastIndexOf("."))+".py";
-		fs.writeFileSync(pyfile, python);
-		process.stdout.write(pyfile);
-		process.stdout.write('\0');
 
 		var newfile = "";
 		newfile += file.substr(0, file.lastIndexOf("."))+"-roundtrip.x3d";
