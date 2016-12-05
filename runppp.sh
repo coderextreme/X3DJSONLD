@@ -3,8 +3,9 @@
 mkdir -p ppp
 for i in box.json ArchPrototype.json NancyPrototypes.json for.json rubikOnFire.json bubbles.json rubik.json pp3.json qq3.json cobweb.json force.json rubikFurnace.json
 do
-	echo "=========================$i=====================" 1>&2
+	echo "=========================$i=====================PPP" 1>&2
 	node PPP.js $i > ppp/`basename $i`
+	echo "=========================$i=====================CompleteXMLPrototypeExpander" 1>&2
 	node CompleteXMLPrototypeExpander.js `basename $i .json`.x3d
 done
 SCRIPTS=`find examples/X3dForWebAuthors/Chapter14-Prototypes examples/Vrml2.0Sourcebook/Chapter31-Prototypes examples/Basic/UniversalMediaMaterials -type f -name '*json' | xargs grep -lw Script`
@@ -15,7 +16,9 @@ do
 	echo "=========================$i=====================" 1>&2
 	mkdir -p ppp/`dirname $i`
 	# node PPP.js $i
+	echo "=========================$i=====================PPP" 1>&2
 	node PPP.js $i > ppp/`dirname $i`/`basename $i`
+	echo "=========================$i=====================CompleteXMLPrototypeExpander" 1>&2
 	node CompleteXMLPrototypeExpander.js `dirname $i`/`basename $i .json`.x3d
 	#if [ $i == examples/X3dForWebAuthors/Chapter14-Prototypes/ViewFrustumExample.json ]
 	#then

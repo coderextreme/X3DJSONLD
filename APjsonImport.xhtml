@@ -151,13 +151,13 @@ Use Namespace: <select id="namespace">
     
     <script type="text/javascript">
     	
-	var xml = [], python = [], NS;
+	var xml = [], NS;
 	if ($('#prototype').is(':checked')) {
 		test_json = prototypeExpander("ExtrusionHeart.json", test_json, "");
 		test_json = flattener(test_json);
 	        $('textarea#json').val(JSON.stringify(test_json, null, 2));
 	}
-	var json_element = loadX3DJS(test_json, "ExtrusionHeart.json", xml, python, "");
+	var json_element = loadX3DJS(test_json, "ExtrusionHeart.json", xml, "");
 	console.log(json_element, xml);
 	
 	X3D(function(el){

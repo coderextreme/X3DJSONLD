@@ -37,8 +37,7 @@
 
 	function importIntoCobweb(json) {
 		var xml = [];
-		var python = [];
-		var jsonDOM = loadX3DJS(json, "./", xml, python, ""); //path is for finding inlines
+		var jsonDOM = loadX3DJS(json, "./", xml, ""); //path is for finding inlines
 		loadCobwebDOM(jsonDOM);
 	}
 	    

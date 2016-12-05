@@ -5,17 +5,27 @@
 // Convert X3D JSON to XML
 
 var fs = require('fs');
-var X3DJSONLD = require('./X3DJSONLD.js');
-var ConvertToX3DOM = X3DJSONLD.ConvertToX3DOM;
-var PythonSerializer = X3DJSONLD.PythonSerializer;
 
 var xmldom = require('xmldom');
 var DOMImplementation = new xmldom.DOMImplementation();
 var XMLSerializer = new xmldom.XMLSerializer();
 
+var X3DJSONLD = require('./X3DJSONLD.js');
+var ConvertToX3DOM = X3DJSONLD.ConvertToX3DOM;
+var PythonSerializer = require('./PythonSerializer.js');
+
 var fixXML = require('./fixXML.js');
 
-function loadX3DJS(json, path, xml, python) {
+function serializeDOM(json, element) {
+	var version = json.X3D["@version"];
+	var xml = '<?xml version="1.0" encoding="'+json.X3D["encoding"]+'"?>\n';
+	xml += '<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D '+version+'//EN" "http://www.web3d.org/specifications/x3d-'+version+'.dtd">\n';
+	xml += XMLSerializer.serializeToString(element);
+	xml = fixXML(xml);
+	return xml;
+}
+
+function loadX3DJS(json, path, xml) {
         if (typeof json === 'undefined') {
 		console.error('json undefined.  Look in', path, 'for hints');
 	}
@@ -33,14 +43,11 @@ function loadX3DJS(json, path, xml, python) {
 
 	ConvertToX3DOM(json, "", element, path);
 
-	var xmlstr = XMLSerializer.serializeToString(element);
-	xmlstr = fixXML(xmlstr);
-	xml.push('<?xml version="1.0" encoding="'+X3DJSONLD.getEncoding()+'"?>');
-	xml.push('<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D '+version+'//EN" "http://www.web3d.org/specifications/x3d-'+version+'.dtd">');
-	xml.push(xmlstr);
+	if (typeof xml !== 'undefined' && typeof xml.push === 'function') {
+		xml.push(serializeDOM(json, element));
+	}
 
-	var pythonstr = PythonSerializer.serializeToString(element);
-	python.push(pythonstr);
+	return element;
 
 }
 
@@ -54,12 +61,12 @@ for (var f in files) {
 		var file = file.substr(0, file.lastIndexOf("."))+".json";
 		var json = JSON.parse(fs.readFileSync(file).toString());
 		var xml = [];
-		var python = [];
-		loadX3DJS(json, file, xml, python);
+		var element = loadX3DJS(json, file, xml);
+		var python = PythonSerializer.serializeToString(element);
 
 		var pyfile = "";
 		pyfile += file.substr(0, file.lastIndexOf("."))+".py";
-		fs.writeFileSync(pyfile, python.join("\r\n"));
+		fs.writeFileSync(pyfile, python);
 		process.stdout.write(pyfile);
 		process.stdout.write('\0');
 

@@ -3,8 +3,14 @@
 var fs = require("fs");
 
 var X3DJSONLD = require('./X3DJSONLD.js');
+X3DJSONLD.setCDATACreateFunction(function(document, element, str) {
+	// for script nodes
+	var child = document.createCDATASection(str);
+	element.appendChild(child);
+});
 var Browser = X3DJSONLD.Browser;
 var loadURLs = X3DJSONLD.loadURLs;
+var PythonSerializer = require('./PythonSerializer.js');
 
 var PE = require('./PrototypeExpander')
 PE.setLoadURLs(loadURLs);
@@ -30,12 +36,12 @@ function ProcessJSON(json, file) {
 		json = flattener(json);
 
 		var xml = [];
-		var python = [];
-		loadX3DJS(json, file, xml, python);
+		var element = loadX3DJS(json, file, xml);
+		var python = PythonSerializer.serializeToString(element);
 
 		var pyfile = "ppp/";
 		pyfile += file.substr(0, file.lastIndexOf("."))+".py";
-		fs.writeFileSync(pyfile, python.join("\r\n"));
+		fs.writeFileSync(pyfile, python);
 		process.stdout.write(pyfile);
 		process.stdout.write('\0');
 
