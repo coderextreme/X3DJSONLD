@@ -34,7 +34,7 @@ function eventsProcessed ()
 {
 	var keyValue = interpolator .keyValue;
 
-	for (var i = 0; i &lt; 4; ++ i)
+	for (var i = 0; i < 4; ++ i)
 		keyValue [i] = new SFRotation (axis, angle + 2 * Math .PI / 4 * i);
 	
 	keyValue [4] = keyValue [0];
@@ -66,7 +66,7 @@ function eventsProcessed ()
 {
 	var keyValue = interpolator .keyValue;
 
-	for (var i = 0; i &lt; 4; ++ i)
+	for (var i = 0; i < 4; ++ i)
 		keyValue [i] = new SFRotation (axis, angle + 2 * Math .PI / 4 * i);
 	
 	keyValue [4] = keyValue [0];
@@ -98,7 +98,7 @@ function eventsProcessed ()
 {
 	var keyValue = interpolator .keyValue;
 
-	for (var i = 0; i &lt; 4; ++ i)
+	for (var i = 0; i < 4; ++ i)
 		keyValue [i] = new SFRotation (axis, angle + 2 * Math .PI / 4 * i);
 	
 	keyValue [4] = keyValue [0];
@@ -155,7 +155,7 @@ function eventsProcessed ()
 
 	// Generate front face indices
 
-	for (var i = 0; i &lt; teeth; ++ i)
+	for (var i = 0; i < teeth; ++ i)
 	{
 		var index = i * 3;
 
@@ -169,7 +169,7 @@ function eventsProcessed ()
 
 	// Generate front face points
 
-	for (var i = 0; i &lt; teeth + 1; ++ i)
+	for (var i = 0; i < teeth + 1; ++ i)
 	{
 		var angle = i * 2 * Math .PI / teeth;
 
@@ -187,7 +187,7 @@ function eventsProcessed ()
 
 	// Generate front sides of teeth indices
 
-	for (var i = 0; i &lt; teeth; ++ i)
+	for (var i = 0; i < teeth; ++ i)
 	{
 		var index = i * 4;
 
@@ -200,7 +200,7 @@ function eventsProcessed ()
 
 	// Generate front sides of teeth points
 
-	for (var i = 0; i &lt; teeth; ++ i)
+	for (var i = 0; i < teeth; ++ i)
 	{
 		var angle = i * 2 * Math .PI / teeth;
 
@@ -213,7 +213,7 @@ function eventsProcessed ()
 
 	// Generate back face indices
 
-	for (var i = 0; i &lt; teeth; ++ i)
+	for (var i = 0; i < teeth; ++ i)
 	{
 		var index = i * 3;
 
@@ -227,7 +227,7 @@ function eventsProcessed ()
 
 	// Generate back face points
 
-	for (var i = 0; i &lt; teeth + 1; ++ i)
+	for (var i = 0; i < teeth + 1; ++ i)
 	{
 		var angle = i * 2 * Math .PI / teeth;
 
@@ -241,7 +241,7 @@ function eventsProcessed ()
 
 	// Generate back sides of teeth indices
 
-	for (var i = 0; i &lt; teeth; ++ i)
+	for (var i = 0; i < teeth; ++ i)
 	{
 		var index = i * 4;
 
@@ -254,7 +254,7 @@ function eventsProcessed ()
 
 	// Generate front sides of teeth points
 
-	for (var i = 0; i &lt; teeth; ++ i)
+	for (var i = 0; i < teeth; ++ i)
 	{
 		var angle = i * 2 * Math .PI / teeth;
 
@@ -267,7 +267,7 @@ function eventsProcessed ()
 
 	// Generate outward faces of teeth indices
 
-	for (var i = 0; i &lt; teeth * 4; ++ i)
+	for (var i = 0; i < teeth * 4; ++ i)
 	{
 		var index = i * 2;
 
@@ -283,7 +283,7 @@ function eventsProcessed ()
 
 	// Generate outward faces of teeth points
 
-	for (var i = 0; i &lt; teeth; ++ i)
+	for (var i = 0; i < teeth; ++ i)
 	{
 	   var angle = i * 2 * Math .PI / teeth;
 
@@ -303,7 +303,7 @@ function eventsProcessed ()
 
 	// Generate inside radius cylinder points
 
-	for (var i = 0; i &lt; teeth; ++ i)
+	for (var i = 0; i < teeth; ++ i)
 	{
 		var index = i * 2;
 
@@ -319,7 +319,7 @@ function eventsProcessed ()
 
 	// Generate inside radius cylinder indices
 
-	for (var i = 0; i &lt; teeth + 1; ++ i)
+	for (var i = 0; i < teeth + 1; ++ i)
 	{
 		var angle = i * 2 * Math .PI / teeth;
 		points [points .length] = new SFRotation (0, 0, 1, angle) .multVec (vectorb0);
@@ -386,7 +386,7 @@ function eventsProcessed ()
 
 	// Generate front face indices
 
-	for (var i = 0; i &lt; teeth; ++ i)
+	for (var i = 0; i < teeth; ++ i)
 	{
 		var index = i * 3;
 
@@ -400,7 +400,7 @@ function eventsProcessed ()
 
 	// Generate front face points
 
-	for (var i = 0; i &lt; teeth + 1; ++ i)
+	for (var i = 0; i < teeth + 1; ++ i)
 	{
 		var angle = i * 2 * Math .PI / teeth;
 
@@ -418,7 +418,7 @@ function eventsProcessed ()
 
 	// Generate front sides of teeth indices
 
-	for (var i = 0; i &lt; teeth; ++ i)
+	for (var i = 0; i < teeth; ++ i)
 	{
 		var index = i * 4;
 
@@ -431,7 +431,7 @@ function eventsProcessed ()
 
 	// Generate front sides of teeth points
 
-	for (var i = 0; i &lt; teeth; ++ i)
+	for (var i = 0; i < teeth; ++ i)
 	{
 		var angle = i * 2 * Math .PI / teeth;
 
@@ -444,7 +444,7 @@ function eventsProcessed ()
 
 	// Generate back face indices
 
-	for (var i = 0; i &lt; teeth; ++ i)
+	for (var i = 0; i < teeth; ++ i)
 	{
 		var index = i * 3;
 
@@ -458,7 +458,7 @@ function eventsProcessed ()
 
 	// Generate back face points
 
-	for (var i = 0; i &lt; teeth + 1; ++ i)
+	for (var i = 0; i < teeth + 1; ++ i)
 	{
 		var angle = i * 2 * Math .PI / teeth;
 
@@ -472,7 +472,7 @@ function eventsProcessed ()
 
 	// Generate back sides of teeth indices
 
-	for (var i = 0; i &lt; teeth; ++ i)
+	for (var i = 0; i < teeth; ++ i)
 	{
 		var index = i * 4;
 
@@ -485,7 +485,7 @@ function eventsProcessed ()
 
 	// Generate front sides of teeth points
 
-	for (var i = 0; i &lt; teeth; ++ i)
+	for (var i = 0; i < teeth; ++ i)
 	{
 		var angle = i * 2 * Math .PI / teeth;
 
@@ -498,7 +498,7 @@ function eventsProcessed ()
 
 	// Generate outward faces of teeth indices
 
-	for (var i = 0; i &lt; teeth * 4; ++ i)
+	for (var i = 0; i < teeth * 4; ++ i)
 	{
 		var index = i * 2;
 
@@ -514,7 +514,7 @@ function eventsProcessed ()
 
 	// Generate outward faces of teeth points
 
-	for (var i = 0; i &lt; teeth; ++ i)
+	for (var i = 0; i < teeth; ++ i)
 	{
 	   var angle = i * 2 * Math .PI / teeth;
 
@@ -534,7 +534,7 @@ function eventsProcessed ()
 
 	// Generate inside radius cylinder points
 
-	for (var i = 0; i &lt; teeth; ++ i)
+	for (var i = 0; i < teeth; ++ i)
 	{
 		var index = i * 2;
 
@@ -550,7 +550,7 @@ function eventsProcessed ()
 
 	// Generate inside radius cylinder indices
 
-	for (var i = 0; i &lt; teeth + 1; ++ i)
+	for (var i = 0; i < teeth + 1; ++ i)
 	{
 		var angle = i * 2 * Math .PI / teeth;
 		points [points .length] = new SFRotation (0, 0, 1, angle) .multVec (vectorb0);
@@ -617,7 +617,7 @@ function eventsProcessed ()
 
 	// Generate front face indices
 
-	for (var i = 0; i &lt; teeth; ++ i)
+	for (var i = 0; i < teeth; ++ i)
 	{
 		var index = i * 3;
 
@@ -631,7 +631,7 @@ function eventsProcessed ()
 
 	// Generate front face points
 
-	for (var i = 0; i &lt; teeth + 1; ++ i)
+	for (var i = 0; i < teeth + 1; ++ i)
 	{
 		var angle = i * 2 * Math .PI / teeth;
 
@@ -649,7 +649,7 @@ function eventsProcessed ()
 
 	// Generate front sides of teeth indices
 
-	for (var i = 0; i &lt; teeth; ++ i)
+	for (var i = 0; i < teeth; ++ i)
 	{
 		var index = i * 4;
 
@@ -662,7 +662,7 @@ function eventsProcessed ()
 
 	// Generate front sides of teeth points
 
-	for (var i = 0; i &lt; teeth; ++ i)
+	for (var i = 0; i < teeth; ++ i)
 	{
 		var angle = i * 2 * Math .PI / teeth;
 
@@ -675,7 +675,7 @@ function eventsProcessed ()
 
 	// Generate back face indices
 
-	for (var i = 0; i &lt; teeth; ++ i)
+	for (var i = 0; i < teeth; ++ i)
 	{
 		var index = i * 3;
 
@@ -689,7 +689,7 @@ function eventsProcessed ()
 
 	// Generate back face points
 
-	for (var i = 0; i &lt; teeth + 1; ++ i)
+	for (var i = 0; i < teeth + 1; ++ i)
 	{
 		var angle = i * 2 * Math .PI / teeth;
 
@@ -703,7 +703,7 @@ function eventsProcessed ()
 
 	// Generate back sides of teeth indices
 
-	for (var i = 0; i &lt; teeth; ++ i)
+	for (var i = 0; i < teeth; ++ i)
 	{
 		var index = i * 4;
 
@@ -716,7 +716,7 @@ function eventsProcessed ()
 
 	// Generate front sides of teeth points
 
-	for (var i = 0; i &lt; teeth; ++ i)
+	for (var i = 0; i < teeth; ++ i)
 	{
 		var angle = i * 2 * Math .PI / teeth;
 
@@ -729,7 +729,7 @@ function eventsProcessed ()
 
 	// Generate outward faces of teeth indices
 
-	for (var i = 0; i &lt; teeth * 4; ++ i)
+	for (var i = 0; i < teeth * 4; ++ i)
 	{
 		var index = i * 2;
 
@@ -745,7 +745,7 @@ function eventsProcessed ()
 
 	// Generate outward faces of teeth points
 
-	for (var i = 0; i &lt; teeth; ++ i)
+	for (var i = 0; i < teeth; ++ i)
 	{
 	   var angle = i * 2 * Math .PI / teeth;
 
@@ -765,7 +765,7 @@ function eventsProcessed ()
 
 	// Generate inside radius cylinder points
 
-	for (var i = 0; i &lt; teeth; ++ i)
+	for (var i = 0; i < teeth; ++ i)
 	{
 		var index = i * 2;
 
@@ -781,7 +781,7 @@ function eventsProcessed ()
 
 	// Generate inside radius cylinder indices
 
-	for (var i = 0; i &lt; teeth + 1; ++ i)
+	for (var i = 0; i < teeth + 1; ++ i)
 	{
 		var angle = i * 2 * Math .PI / teeth;
 		points [points .length] = new SFRotation (0, 0, 1, angle) .multVec (vectorb0);

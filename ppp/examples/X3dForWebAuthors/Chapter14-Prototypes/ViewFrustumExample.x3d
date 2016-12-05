@@ -68,10 +68,10 @@ function floatArrayToString (inputArray) // overcome irregular .toString() suppo
 {
     var outputString = '';
     var i;
-    for (i=0; i &lt; inputArray.length; i++)
+    for (i=0; i < inputArray.length; i++)
     {
         outputString += inputArray[i].toString();
-        if (i &lt; inputArray.length - 1) 
+        if (i < inputArray.length - 1) 
         {
             outputString += ' '; // no extra space at end
         }
@@ -99,7 +99,7 @@ function initialize ()
 
     Browser.print ('[' + scriptName + '] ' + 'trace=' + trace + '\n');
 
-    if ((ViewpointNode == null) &amp;&amp; (NavigationInfoNode == null))
+    if ((ViewpointNode == null) && (NavigationInfoNode == null))
     {
         Browser.print ('[' + scriptName + '] ' + 'Viewpoint and NavigationInfo nodes both missing, using default values\n');
     }
@@ -117,9 +117,9 @@ function initialize ()
         if (trace) 
         {
             Browser.print ('[' + scriptName + '] ' + 'input  ' +
-            '&lt;Viewpoint position="'        + ViewpointNode.position.toString() + '"' +
+            '<Viewpoint position="'        + ViewpointNode.position.toString() + '"' +
                    ' orientation="'        + ViewpointNode.orientation.toString() + '"' +
-                   ' fieldOfView="'        + ViewpointNode.fieldOfView.toString() + '"' + '/>\n');
+                   ' fieldOfView="'        + ViewpointNode.fieldOfView.toString() + '"' + '></Viewpoint>\n');
        }
         position_changed    = ViewpointNode.position;
         orientation_changed = ViewpointNode.orientation_changed;
@@ -141,9 +141,9 @@ function initialize ()
         if (trace)
         {
             Browser.print ('[' + scriptName + '] ' + 'input  ' +
-            '&lt;NavigationInfo avatarSize="' +
+            '<NavigationInfo avatarSize="' +
                 floatArrayToString (NavigationInfoNode.avatarSize) + '"' +
-            ' visibilityLimit="' + NavigationInfoNode.visibilityLimit.toString() + '"/>\n');
+            ' visibilityLimit="' + NavigationInfoNode.visibilityLimit.toString() + '"></NavigationInfo>\n');
         }
         nearClipPlaneDistance = NavigationInfoNode.avatarSize[0];
          farClipPlaneDistance = NavigationInfoNode.visibilityLimit;
@@ -176,9 +176,9 @@ function initialize ()
     if (trace) 
     {
         Browser.print ('[' + scriptName + '] ' + 'output ' +
-        '&lt;Extrusion DEF="FrustumExtrusion"' +
+        '<Extrusion DEF="FrustumExtrusion"' +
                ' spine="' + floatArrayToString (spine_changed) + '"' +
-               ' scale="' + floatArrayToString (scale_changed) + '"' + '/>\n');  // default crossSection used
+               ' scale="' + floatArrayToString (scale_changed) + '"' + '></Extrusion>\n');  // default crossSection used
     }
     point_changed = new MFVec3f (
       new SFVec3f ( nearHalfWidth,  aspectRatio * nearHalfWidth, nearClipPlaneDistance),
@@ -192,8 +192,8 @@ function initialize ()
     if (trace) 
     {
         Browser.print ('[' + scriptName + '] ' + 'output ' +
-        '&lt;Coordinate DEF="FrustumCoordinate"' +
-               ' point="' + floatArrayToString (point_changed) + '"' + '/>\n');
+        '<Coordinate DEF="FrustumCoordinate"' +
+               ' point="' + floatArrayToString (point_changed) + '"' + '></Coordinate>\n');
     }
     set_visible (visible);
 }
