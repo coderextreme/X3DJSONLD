@@ -36,7 +36,7 @@
           },
           {
             "@name":"translated",
-            "@content":"30 November 2016"
+            "@content":"05 December 2016"
           },
           {
             "@name":"generator",
@@ -183,7 +183,6 @@
                     { "Script":
                       {
                         "@directOutput":true,
-			"@type" : "application/x-vrmlscript",
                         "field": [
                           {
                             "@name":"teeth",

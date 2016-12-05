@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"30 November 2016"
+            "@content":"05 December 2016"
           },
           {
             "@name":"generator",
@@ -177,7 +177,6 @@
                     { "Script":
                       {
                         "@DEF":"Rotor",
-			"@type" : "application/x-vrmlscript",
                         "field": [
                           {
                             "@name":"set_axis",
