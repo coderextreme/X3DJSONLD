@@ -53,7 +53,7 @@
         },
         {
           "@name": "translated",
-          "@content": "08 November 2016"
+          "@content": "05 December 2016"
         },
         {
           "@name": "generator",
@@ -172,7 +172,7 @@
                                 "    newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1);",
                                 "\tif (enabled)",
                                 "\t{",
-                                "\t\tBrowser.print ('diffuseColor=(' + red +',' + green + ',' + blue + ') newColor=' + newColor.toString() + '\\');",
+                                "\t\tBrowser.print ('diffuseColor=(' + red +',' + green + ',' + blue + ') newColor=' + newColor.toString() + '\n');",
                                 "\t}",
                                 "}"
                               ]
