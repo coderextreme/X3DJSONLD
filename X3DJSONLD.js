@@ -455,7 +455,6 @@ if (typeof module === 'object')  {
 		loadX3DJS : loadX3DJS,
 		Browser : Browser,
 		ConvertToX3DOM : ConvertToX3DOM,
-		fixXML : fixXML,
 		setCDATACreateFunction : setCDATACreateFunction,
 		loadURLs : loadURLs,
 		setDocument : function(doc) {
