@@ -52,7 +52,7 @@ function generateCrossSection( )
     newCrossSection = new MFVec2f(); // temporary hold variable
     angle = 0.0;
     delta = 6.28 / crossSectionResolution;
-    for ( i = 0; i &lt;= crossSectionResolution + 1; i++ ) {
+    for ( i = 0; i <= crossSectionResolution + 1; i++ ) {
         newCrossSection[i][0] =  crossSectionRadius * Math.cos( angle );
         newCrossSection[i][1] = -crossSectionRadius * Math.sin( angle );
         angle += delta;
@@ -69,7 +69,7 @@ function generateSpine( )
     newSpine = new MFVec3f(); // temporary hold variable
     angle = 0.0;
     delta = (2 * 3.141592653) / spineResolution;
-    for ( i = 0; i &lt;= spineResolution; i++ ) {
+    for ( i = 0; i <= spineResolution; i++ ) {
         newSpine[i][0] = spineRadius * Math.cos( angle );
         newSpine[i][1] = 0.0;
         newSpine[i][2] = -spineRadius * Math.sin( angle );
@@ -129,7 +129,7 @@ function generateCrossSection( )
     newCrossSection = new MFVec2f(); // temporary hold variable
     angle = 0.0;
     delta = 6.28 / crossSectionResolution;
-    for ( i = 0; i &lt;= crossSectionResolution + 1; i++ ) {
+    for ( i = 0; i <= crossSectionResolution + 1; i++ ) {
         newCrossSection[i][0] =  crossSectionRadius * Math.cos( angle );
         newCrossSection[i][1] = -crossSectionRadius * Math.sin( angle );
         angle += delta;
@@ -146,7 +146,7 @@ function generateSpine( )
     newSpine = new MFVec3f(); // temporary hold variable
     angle = 0.0;
     delta = (2 * 3.141592653) / spineResolution;
-    for ( i = 0; i &lt;= spineResolution; i++ ) {
+    for ( i = 0; i <= spineResolution; i++ ) {
         newSpine[i][0] = spineRadius * Math.cos( angle );
         newSpine[i][1] = 0.0;
         newSpine[i][2] = -spineRadius * Math.sin( angle );

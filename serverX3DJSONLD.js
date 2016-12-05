@@ -9,7 +9,7 @@ var ConvertToX3DOM = X3DJSONLD.ConvertToX3DOM;
 
 function fixXML(xmlstr) {
 	// get rid of self-closing tags
-	xmlstr = xmlstr.replace(/(<[ \t]*)([A-Za-z0-9]+)([^>]*)\/>/g, "$1$2$3></$2>");
+	xmlstr = xmlstr.replace(/(<)([A-Za-z0-9]+)([^>]*)\/>/g, "$1$2$3></$2>");
 	// strip out namespace
 	xmlstr = xmlstr.replace(/xmlns="[^"]*"/g, "");
 

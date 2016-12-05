@@ -83,8 +83,8 @@ function initialize () {
 
     if (depth != 3){
     
-	for (d = 0; d &lt;69; d++) {                        
-            for (e = 0; e &lt;3; e++) {       
+	for (d = 0; d <69; d++) {                        
+            for (e = 0; e <3; e++) {       
                 if (e == 2){
 		    p[a] = depth;
  		} 
@@ -117,35 +117,35 @@ function initialize () {
 
     if (archHalf == true){  
     
-        for (k = 0; k &lt; 33; k++) {       
+        for (k = 0; k < 33; k++) {       
             i[k] = 0;
 	}
         
-	for (k = 68; k &lt;87; k++) {       
+	for (k = 68; k <87; k++) {       
             i[k] = null;
 	}
 
-	for (k = 108; k &lt;141; k++) {        
+	for (k = 108; k <141; k++) {        
             i[k] = null;
 	}
 
-	for (k = 176; k &lt;195; k++) {        
+	for (k = 176; k <195; k++) {        
             i[k] = null;
 	}
 
-	for (k = 216; k &lt;370; k++) {          
+	for (k = 216; k <370; k++) {          
             i[k] = null;
 	}
 
-	for (k = 526; k &lt;560; k++) {       
+	for (k = 526; k <560; k++) {       
             i[k] = null;
 	}
 
-	for (k = 596; k &lt;610; k++) {       
+	for (k = 596; k <610; k++) {       
             i[k] = null;
 	}
 
-	for (k = 626; k &lt;635; k++) {        
+	for (k = 626; k <635; k++) {        
             i[k] = null;
 	}
         
@@ -163,11 +163,11 @@ function initialize () {
 
     if (onlyIntrados == true){     
 
-        for (m = 0; m &lt;215; m++) {       
+        for (m = 0; m <215; m++) {       
             i[m] = null;
 	}
 
-	for ( m = 526; m &lt;650; m++) {         
+	for ( m = 526; m <650; m++) {         
             i[m] = null;
 	}
     }
@@ -175,18 +175,18 @@ function initialize () {
 
     if (archFilled == true){     
 
-	for (g = 78; g &lt;107; g++) {       
+	for (g = 78; g <107; g++) {       
             i[g] = null;
 	}
 	i[32] = 156; i[66] = 156;   i[140] = 157; i[174] = 157;
 
 	i[68] = 0; i[69] = 156; i[70] = 157; i[71] = 63; i[72] = -1;      i[73] = 62; i[74] = 156; i[75] = 157; i[76] = 125; i[77] = -1;
 
-	for ( g = 176; g &lt;215; g++) {       
+	for ( g = 176; g <215; g++) {       
             i[g] = null;
 	}
 
-	for ( g = 526; g &lt;650; g++) {         
+	for ( g = 526; g <650; g++) {         
             i[g] = null;
 	}
     }
@@ -194,11 +194,11 @@ function initialize () {
 
     if (archHalfFilled == true){     
 
-	for (t = 0; t &lt;33; t++) {       
+	for (t = 0; t <33; t++) {       
             i[t] = null;
 	}
 
-	for (t = 78; t &lt;141; t++) {       
+	for (t = 78; t <141; t++) {       
             i[t] = null;
 	}
 
@@ -206,11 +206,11 @@ function initialize () {
 
 	i[68] = 31; i[69] = 156; i[70] = 157; i[71] = 94; i[72] = -1;      i[73] = 62; i[74] = 156; i[75] = 157; i[76] = 125; i[77] = -1;
 
-	for ( t = 176; t &lt;370; t++) {       
+	for ( t = 176; t <370; t++) {       
             i[t] = null;
 	}
 
-	for ( t = 526; t &lt;650; t++) {         
+	for ( t = 526; t <650; t++) {         
             i[t] = null;
 	}
     }
@@ -218,47 +218,47 @@ function initialize () {
 
     if (lintel == true){  
    
-	for (r = 0; r &lt;67; r++) {       
+	for (r = 0; r <67; r++) {       
             i[r] = 0;
 	}
 
-	for (r = 73; r &lt;77; r++) {       
+	for (r = 73; r <77; r++) {       
             i[r] = 0;
 	}
 
-	for (r = 98; r &lt;102; r++) {       
+	for (r = 98; r <102; r++) {       
             i[r] = 0;
 	}
 		
-	for (r = 108; r &lt;175; r++) {       
+	for (r = 108; r <175; r++) {       
             i[r] = 0;
 	}
 
-	for (r = 181; r &lt;185; r++) {        
+	for (r = 181; r <185; r++) {        
             i[r] = 0;
 		}
 
-	for (r = 206; r &lt;210; r++) {        
+	for (r = 206; r <210; r++) {        
             i[r] = 0;
 	}
 
-	for (r = 216; r &lt;525; r++) {          
+	for (r = 216; r <525; r++) {          
             i[r] = 0;
 	}
 
-	for (r = 541; r &lt;545; r++) {       
+	for (r = 541; r <545; r++) {       
             i[r] = 0;
 	}
 
-	for (r = 576; r &lt;580; r++) {       
+	for (r = 576; r <580; r++) {       
             i[r] = 0;
 	}
 
-	for (r = 626; r &lt;630; r++) {       
+	for (r = 626; r <630; r++) {       
             i[r] = 0;
 	}
 
-	for (r = 646; r &lt;650; r++) {       
+	for (r = 646; r <650; r++) {       
             i[r] = 0;
 	}
 
