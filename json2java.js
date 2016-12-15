@@ -11,11 +11,8 @@ var DOMImplementation = new xmldom.DOMImplementation();
 
 var X3DJSONLD = require('./X3DJSONLD.js');
 var ConvertToX3DOM = X3DJSONLD.ConvertToX3DOM;
-
 var loadX3DJS = require('./serverX3DJSONLD');
-
-var PythonSerializer = require('./PythonSerializer.js');
-
+var JavaSerializer = require('./JavaSerializer.js');
 
 process.argv.shift();
 process.argv.shift();
@@ -27,12 +24,12 @@ for (var f in files) {
 		var file = file.substr(0, file.lastIndexOf("."))+".json";
 		var json = JSON.parse(fs.readFileSync(file).toString());
 		var element = loadX3DJS(json, file);
-		var python = PythonSerializer.serializeToString(element);
+		var java = JavaSerializer.serializeToString(element, file.substr(0, file.lastIndexOf(".")));
 
-		var pyfile = "";
-		pyfile += file.substr(0, file.lastIndexOf("."))+".py";
-		fs.writeFileSync(pyfile, python);
-		process.stdout.write(pyfile);
+		var javafile = "";
+		javafile += file.substr(0, file.lastIndexOf("."))+".java";
+		fs.writeFileSync(javafile, java);
+		process.stdout.write(javafile);
 		process.stdout.write('\0');
 	} catch (e) {
 		console.error("Error reading", file, e);
