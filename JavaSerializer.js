@@ -8,14 +8,33 @@ var mapToMethod = {
 		"component": "setComponent"
 	},
 	"Scene" : "addChildren",
-	"LODObject" : {
+	"GeoLOD" : {
+		"Group": 'addChildren',
+		"Shape": 'addChildren'
+	},
+	"LOD" : {
 		"Group": 'addChildren',
 		"Shape": 'addChildren',
 		"Transform": 'addChildren',
+		"Billboard": 'addChildren',
 		"WorldInfo": 'addChildren'
 	},
 	"StaticGroup" : {
-		"Shape": "addChildren",
+		"Shape": "addChildren"
+	},
+	"CADLayer" : {
+		"CADAssembly": "addChildren"
+	},
+	"CADAssembly" : {
+		"CADPart": "addChildren",
+		"Transform": "addChildren"
+	},
+	"CADPart" : {
+		"CADFace": "addChildren",
+		"Transform": "addChildren"
+	},
+	"CADFace" : {
+		"Transform": "addChildren",
 	},
 	"Switch" : {
 		"Group": "addChildren",
@@ -30,6 +49,45 @@ var mapToMethod = {
 		"ScalarInterpolator": "addChildren"
 	},
 	"Transform" : {
+		"Anchor": "addChildren",
+		"Billboard": "addChildren",
+		"BooleanTrigger": "addChildren",
+		"BooleanToggle": "addChildren",
+		"BooleanFilter": "addChildren",
+		"CADAssembly": "addChildren",
+		"CADFace": "addChildren",
+		"Collision": "addChildren",
+		"ColorInterpolator": "addChildren",
+		"CoordinateInterpolator": "addChildren",
+		"CylinderSensor": "addChildren",
+		"DirectionalLight": "addChildren",
+		"Group": "addChildren",
+		"IngeterTrigger": "addChildren",
+		"NavigationInfo": "addChildren",
+		"OrientationInterpolator": "addChildren",
+		"PlaneSensor": "addChildren",
+		"PointLight": "addChildren",
+		"PositionInterpolator": "addChildren",
+		"ProtoInstance": "addChildren",
+		"ProximitySensor": "addChildren",
+		"ROUTE": "addChildren",
+		"ScalarInterpolator": "addChildren",
+		"Script": "addChildren",
+		"Shape": "addChildren",
+		"Sound": "addChildren",
+		"Switch": "addChildren",
+		"SphereSensor": "addChildren",
+		"SpotLight": "addChildren",
+		"StringSensor": "addChildren",
+		"TimeSensor": "addChildren",
+		"TimeTrigger": "addChildren",
+		"TouchSensor": "addChildren",
+		"Transform": "addChildren",
+		"Viewpoint": "addChildren",
+		"VisibilitySensor": "addChildren",
+		"IS": "setIS"
+	},
+	"Group" : {
 		"Anchor": "addChildren",
 		"Billboard": "addChildren",
 		"BooleanTrigger": "addChildren",
@@ -64,20 +122,22 @@ var mapToMethod = {
 		"Transform": "addChildren",
 		"Viewpoint": "addChildren",
 		"VisibilitySensor": "addChildren",
-		"IS": "setIS"
+		"WorldInfo": "addChildren",
+		"IS": "setIS",
+		"MetadataString": "setMetadata"
 	},
-	"Group" : "addChildren",
 	"Sound" : {
 		"AudioClip": "setSource",
 		"MovieTexture": "setSource"
 	},
-	'LoadSensorObject' : {
+	'LoadSensor' : {
 		'AudioClip' : "addWatchList"
 	},
 	"Shape" : {
 		"Sphere": "setGeometry",
 		"Box": "setGeometry",
 		"ElevationGrid": "setGeometry",
+		"GeoElevationGrid": "setGeometry",
 		"Text": "setGeometry",
 		"Sphere": "setGeometry",
 		"Cylinder": "setGeometry",
@@ -85,6 +145,8 @@ var mapToMethod = {
 		"Cone": "setGeometry",
 		"Appearance": "setAppearance",
 		"IndexedFaceSet": "setGeometry",
+		"IndexedQuadSet": "setGeometry",
+		"IndexedTriangleSet": "setGeometry",
 		"IndexedLineSet": "setGeometry",
 		"PointSet": "setGeometry",
 		"Arc2D": "setGeometry",
@@ -125,10 +187,10 @@ var mapToMethod = {
 	"ElevationGrid" : {
 		 "TextureCoordinate": "setTexCoord"
         },
-	"IndexedQuadSetObject": {
+	"IndexedQuadSet": {
 		"Coordinate": "setCoord",
         },
-	"QuadSetObject": {
+	"QuadSet": {
 		"Coordinate": "setCoord",
 	},
 	"IndexedFaceSet" : {
@@ -145,25 +207,25 @@ var mapToMethod = {
 		"Coordinate": "setCoord",
 		"Color": "setColor"
 	},
-	"IndexedTriangleFanSetObject" : {
+	"IndexedTriangleFanSet" : {
 		"Coordinate": "setCoord"
 	},
-	"IndexedTriangleSetObject" : {
+	"IndexedTriangleSet" : {
 		"Coordinate": "setCoord"
 	},
-	"IndexedTriangleStripSetObject" : {
+	"IndexedTriangleStripSet" : {
 		"Coordinate": "setCoord"
 	},
-	"LineSetObject" : {
+	"LineSet" : {
 		"Coordinate": "setCoord"
 	},
-	"TriangleFanSetObject" : {
+	"TriangleFanSet" : {
 		"Coordinate": "setCoord"
 	},
-	"TriangleSetObject" : {
+	"TriangleSet" : {
 		"Coordinate": "setCoord"
 	},
-	"TriangleStripSetObject" : {
+	"TriangleStripSet" : {
 		"Coordinate": "setCoord"
 	},
 	"Anchor" : {
@@ -174,6 +236,7 @@ var mapToMethod = {
 	"Billboard" : {
 		"Switch": "addChildren",
 		"Transform": "addChildren",
+		"Group": "addChildren",
 		"ProtoInstance": "addChildren",
 		"Shape": "addChildren"
 	},
@@ -219,7 +282,16 @@ var mapToMethod = {
 
 var JavaSerializer = {};
 JavaSerializer.serializeToString = function(element, clazz) {
-	var str = "import org.web3d.x3d.java.*;\n";
+	var str = "";
+	var pc = clazz.replace(/-/g, "$")
+	var c = pc.lastIndexOf("/");
+	var clz = pc.substr(c+1);
+	var pkg = pc.substr(0, c).replace(/\//g, ".").trim();
+
+	if (pkg.length > 0) {
+		str += "package "+pkg+";\n";
+	}
+	str += "import org.web3d.x3d.java.*;\n";
 	str += "import org.web3d.x3d.java.CADGeometry.*;\n";
 	str += "import org.web3d.x3d.java.Core.*;\n";
 	str += "import org.web3d.x3d.java.CubeMapTexturing.*;\n";
@@ -292,7 +364,7 @@ JavaSerializer.serializeToString = function(element, clazz) {
 	str += "import org.web3d.x3d.sai.Texturing.*;\n";
 	str += "import org.web3d.x3d.sai.Time.*;\n";
 	str += "import org.web3d.x3d.sai.VolumeRendering.*;\n";
-	str += "class "+clazz+" {\n";
+	str += "class "+clz+" {\n";
 	str += "	public static void main(String[] args) {\n";
 	str += JavaSerializer.subSerializeToString(element);
 	str += "	}\n";
@@ -356,7 +428,7 @@ JavaSerializer.subSerializeToString = function(element, n, grandparent, gn) {
 						str += "null";
 					} else if (typeof attrs[a].nodeValue === 'string') {
 						str += "		"+element.nodeName+n+"."+method+"(";
-						if (method == 'setVersion') {
+						if (method == 'setVersion' || method == 'setAddress') {
 							str += '"'+attrs[a].nodeValue+'"';
 						} else if (method == 'setValue') {
 							if (attrs[a].nodeValue.indexOf('"') >= 0) {
@@ -372,25 +444,58 @@ JavaSerializer.subSerializeToString = function(element, n, grandparent, gn) {
 							str += "new String[] {"+attrs[a].nodeValue.split('" "').join('","')+"}";
 						} else if (attrs[a].nodeValue.indexOf('"') > 0) {
 							str += '"'+attrs[a].nodeValue.replace(/\\?"/g, "&quot;")+'"';
-						} else if (attrs[a].nodeValue.match(/^((\+|-)?([0-9]+\.?|\.[0-9]+|[0-9]+\.[0-9]+)((E|e)(\+|-)?[0-9]+)?)*$/)) {
+						} else if (attrs[a].nodeValue.match(/^(\+|-)?([0-9]+\.?|\.[0-9]+|[0-9]+\.[0-9]+)((E|e)(\+|-)?[0-9]+)?$/)) {
 							if (method.match(/^set[^F]*ndex$/)) {
 								str += "{"+attrs[a].nodeValue+"}";
 							} else {
-								if (element.nodeName == 'component' && method == 'setLevel') {
+								if ((element.nodeName == 'component' && method == 'setLevel') ||
+								method == 'setWhichChoice'){
 									str += attrs[a].nodeValue;
 								} else {
 									str += attrs[a].nodeValue+"f";
 								}
 							}
 						} else if (attrs[a].nodeValue.indexOf(".") >= 0 && attrs[a].nodeValue.match(/^((\+|-)?([0-9]+\.?|\.[0-9]+|[0-9]+\.[0-9]+)((E|e)(\+|-)?[0-9]+)?| |,)*$/)) {
-							if ((element.nodeName == 'GeoPositionInterpolator' && method == 'setKeyValue') || (element.nodeName == 'GeoViewpoint' && method == 'setPosition')) {
+							if ((element.nodeName == 'GeoPositionInterpolator' && method == 'setKeyValue') ||
+							(element.nodeName == 'GeoLocation' && method == 'setGeoCoords') ||
+							(element.nodeName == 'GeoViewpoint' && method == 'setPosition') ||
+							(element.nodeName == 'GeoLOD' && method == 'setCenter')
+							) {
 								str += "new double[] {"+attrs[a].nodeValue.split(' ').join('d,')+"d}";
 							} else {
 								str += "new float[] {"+attrs[a].nodeValue.split(' ').join('f,')+"f}";
 							}
 						} else if (attrs[a].nodeValue.match(/^((\+|-)?([0-9]+)((E|e)(\+|-)?[0-9]+)?| |,)*$/)) {
-							if (method == 'setDiffuseColor' || method == 'setSize' || method == 'setPosition' || method == 'setKeyValue' || method == 'setDirection' || method == 'setTranslation' || method == 'setOrientation' || method == 'setSpecularColor'|| method == 'setSpine' || method == 'setMinPosition' || method == 'setMaxPosition' || method == 'setCenter' || method == 'setPoint' || method == 'setScale') {
-								if ((element.nodeName == 'GeoPositionInterpolator' && method == 'setKeyValue') || (element.nodeName == 'GeoViewpoint' && method == 'setPosition')) {
+							if (method == 'setDiffuseColor' ||
+							method == 'setSkyColor' ||
+							method == 'setGroundColor' ||
+							method == 'setColor' ||
+							method == 'setEmissiveColor' ||
+							method == 'setSize' ||
+							method == 'setPosition' ||
+							method == 'setPlane' ||
+							method == 'setKeyValue' ||
+							method == 'setDirection' ||
+							method == 'setRotation' ||
+							method == 'setTranslation' ||
+							method == 'setScale' ||
+							method == 'setOrientation' ||
+							method == 'setSpecularColor' ||
+							method == 'setCrossSection' ||
+							method == 'setSpine' ||
+							method == 'setMinPosition' ||
+							method == 'setMaxPosition' ||
+							method == 'setAxisOfRotation' ||
+							method == 'setCenterOfRotation' ||
+							method == 'setCenter' ||
+							method == 'setVector' ||
+							method == 'setPoint' ||
+							method == 'setScale' ||
+							method == 'setLocation') {
+								if ((element.nodeName == 'GeoPositionInterpolator' && method == 'setKeyValue') ||
+							(element.nodeName == 'GeoLocation' && method == 'setGeoCoords') ||
+								(element.nodeName == 'GeoViewpoint' && method == 'setPosition') ||
+							(element.nodeName == 'GeoLOD' && method == 'setCenter')) {
 									str += "new double[] {"+attrs[a].nodeValue.split(' ').join(',')+"}";
 								} else {
 									str += "new float[] {"+attrs[a].nodeValue.split(' ').join(',')+"}";
@@ -403,7 +508,7 @@ JavaSerializer.subSerializeToString = function(element, n, grandparent, gn) {
 						}
 					} else {
 						str += "		"+element.nodeName+n+"."+method+"(";
-						if (attrs[a].nodeValue.indexOf(".") >= 0 && attrs[a].nodeValue.match(/^((\+|-)?([0-9]+\.?|\.[0-9]+|[0-9]+\.[0-9]+)((E|e)(\+|-)?[0-9]+)?)*$/)) {
+						if (attrs[a].nodeValue.indexOf(".") >= 0 && attrs[a].nodeValue.match(/^(\+|-)?([0-9]+\.|\.[0-9]+|[0-9]+\.[0-9]+)((E|e)(\+|-)?[0-9]+)?$/)) {
 							str += attrs[a].nodeValue+"f";
 						} else {
 							str += attrs[a].nodeValue;
