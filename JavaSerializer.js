@@ -106,8 +106,22 @@ var mapToMethod = {
 		"Material": "setMaterial",
 		"TwoSidedMaterial": "setMaterial",
 		"TextureTransform": "setTextureTransform",
+		"ComposedShader": "addShaders",
 		"IS": "setIS"
 	},
+	"HAnimHumanoid" : {
+		 "HAnimJoint": "addJoints",
+		 "HAnimSegment": "addSegments",
+		 "HAnimViewpoint": "addViewpoints"
+        },
+	"HAnimJoint" : {
+		 "HAnimJoint": "addChildren",
+		 "HAnimSegment": "addChildren"
+        },
+	"HAnimSegment" : {
+		 "Shape": "addChildren",
+		 "Transform": "addChildren"
+        },
 	"ElevationGrid" : {
 		 "TextureCoordinate": "setTexCoord"
         },
@@ -167,12 +181,14 @@ var mapToMethod = {
 		"TimeSensor": "addChildren",
 		"Collision": "addChildren",
 		"Transform": "addChildren",
+		"Group": "addChildren",
 		"PositionInterpolator": "addChildren",
 		"Shape": "addChildren"
 	},
 	"ComposedShader" : {
 		"field" : "addField",
-		"Shaders" : "addParts"
+		"Shaders" : "addParts",
+		"ShaderPart" : "addParts"
 	},
 	"Shader" : {
 		"field" : "addField"
@@ -311,6 +327,7 @@ JavaSerializer.subSerializeToString = function(element, n, grandparent, gn) {
 			}
 			if (element.nodeName == 'ComposedCubeMapTexture' && node.nodeName == 'ImageTexture') {
 			} else if (element.nodeName == 'TextureBackground' && node.nodeName == 'ImageTexture') {
+			} else if (element.nodeName == 'HAnimHumanoid' && node.nodeName == 'Viewpoint') {
 			} else {
 				str += "		"+element.nodeName+n+addpre+method+"("+node.nodeName+n+cn+");\n";
 			}
@@ -336,7 +353,7 @@ JavaSerializer.subSerializeToString = function(element, n, grandparent, gn) {
 					if (attrs[a].nodeValue == 'NULL' && method == "setValue") {
 						method = "setChildren";
 						str += "		"+element.nodeName+n+"."+method+"(";
-						str += "None";
+						str += "null";
 					} else if (typeof attrs[a].nodeValue === 'string') {
 						str += "		"+element.nodeName+n+"."+method+"(";
 						if (method == 'setVersion') {
@@ -359,18 +376,38 @@ JavaSerializer.subSerializeToString = function(element, n, grandparent, gn) {
 							if (method.match(/^set[^F]*ndex$/)) {
 								str += "{"+attrs[a].nodeValue+"}";
 							} else {
-								str += attrs[a].nodeValue;
+								if (element.nodeName == 'component' && method == 'setLevel') {
+									str += attrs[a].nodeValue;
+								} else {
+									str += attrs[a].nodeValue+"f";
+								}
 							}
 						} else if (attrs[a].nodeValue.indexOf(".") >= 0 && attrs[a].nodeValue.match(/^((\+|-)?([0-9]+\.?|\.[0-9]+|[0-9]+\.[0-9]+)((E|e)(\+|-)?[0-9]+)?| |,)*$/)) {
-							str += "new float[] {"+attrs[a].nodeValue.split(' ').join('f,')+"f}";
+							if ((element.nodeName == 'GeoPositionInterpolator' && method == 'setKeyValue') || (element.nodeName == 'GeoViewpoint' && method == 'setPosition')) {
+								str += "new double[] {"+attrs[a].nodeValue.split(' ').join('d,')+"d}";
+							} else {
+								str += "new float[] {"+attrs[a].nodeValue.split(' ').join('f,')+"f}";
+							}
 						} else if (attrs[a].nodeValue.match(/^((\+|-)?([0-9]+)((E|e)(\+|-)?[0-9]+)?| |,)*$/)) {
-							str += "new int[] {"+attrs[a].nodeValue.split(' ').join(',')+"}";
+							if (method == 'setDiffuseColor' || method == 'setSize' || method == 'setPosition' || method == 'setKeyValue' || method == 'setDirection' || method == 'setTranslation' || method == 'setOrientation' || method == 'setSpecularColor'|| method == 'setSpine' || method == 'setMinPosition' || method == 'setMaxPosition' || method == 'setCenter' || method == 'setPoint' || method == 'setScale') {
+								if ((element.nodeName == 'GeoPositionInterpolator' && method == 'setKeyValue') || (element.nodeName == 'GeoViewpoint' && method == 'setPosition')) {
+									str += "new double[] {"+attrs[a].nodeValue.split(' ').join(',')+"}";
+								} else {
+									str += "new float[] {"+attrs[a].nodeValue.split(' ').join(',')+"}";
+								}
+							} else {
+								str += "new int[] {"+attrs[a].nodeValue.split(' ').join(',')+"}";
+							}
 						} else {
 							str += '"'+attrs[a].nodeValue+'"';
 						}
 					} else {
 						str += "		"+element.nodeName+n+"."+method+"(";
-						str += +attrs[a].nodeValue;
+						if (attrs[a].nodeValue.indexOf(".") >= 0 && attrs[a].nodeValue.match(/^((\+|-)?([0-9]+\.?|\.[0-9]+|[0-9]+\.[0-9]+)((E|e)(\+|-)?[0-9]+)?)*$/)) {
+							str += attrs[a].nodeValue+"f";
+						} else {
+							str += attrs[a].nodeValue;
+						}
 					}
 				}
 				str += ");\n";
