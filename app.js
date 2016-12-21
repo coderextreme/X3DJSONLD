@@ -10,7 +10,6 @@ var X3DJSONLD = require('./X3DJSONLD.js');
 var loadURLs = X3DJSONLD.loadURLs;
 var PE = require('./PrototypeExpander')
 PE.setLoadURLs(loadURLs);
-var prototypeExpander = PE.prototypeExpander;
 var externPrototypeExpander = PE.externPrototypeExpander;
 
 //var runsaxon = require('./allsaxon');
