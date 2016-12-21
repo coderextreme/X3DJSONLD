@@ -19,10 +19,10 @@ for (var f in files) {
 		var xml = [];
 		var element = loadX3DJS(json, file, xml);
 
-		var newfile = "";
-		newfile += file.substr(0, file.lastIndexOf("."))+"-roundtrip.x3d";
-		fs.writeFileSync(newfile, xml.join("\r\n"));
-		process.stdout.write(newfile);
+		var outfile = "";
+		outfile += file.substr(0, file.lastIndexOf("."))+"-roundtrip.x3d";
+		fs.writeFileSync(outfile, xml.join("\r\n"));
+		process.stdout.write(outfile);
 		process.stdout.write('\0');
 	} catch (e) {
 		console.error("Error reading", file, e);

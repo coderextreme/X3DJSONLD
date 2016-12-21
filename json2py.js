@@ -21,10 +21,10 @@ for (var f in files) {
 		var element = loadX3DJS(json, file);
 		var python = PythonSerializer.serializeToString(element);
 
-		var pyfile = "";
-		pyfile += file.substr(0, file.lastIndexOf("."))+".py";
-		fs.writeFileSync(pyfile, python);
-		process.stdout.write(pyfile);
+		var outfile = "";
+		outfile += file.substr(0, file.lastIndexOf("."))+".py";
+		fs.writeFileSync(outfile, python);
+		process.stdout.write(outfile);
 		process.stdout.write('\0');
 	} catch (e) {
 		console.error("Error reading", file, e);
