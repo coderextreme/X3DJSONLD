@@ -5,14 +5,6 @@
 // Convert X3D JSON to XML
 
 var fs = require('fs');
-
-var xmldom = require('xmldom');
-var DOMImplementation = new xmldom.DOMImplementation();
-var XMLSerializer = new xmldom.XMLSerializer();
-
-var X3DJSONLD = require('./X3DJSONLD.js');
-var ConvertToX3DOM = X3DJSONLD.ConvertToX3DOM;
-
 var loadX3DJS = require('./serverX3DJSONLD');
 
 process.argv.shift();
