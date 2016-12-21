@@ -20,10 +20,10 @@ for (var f in files) {
 		var element = loadX3DJS(json, file);
 		var java = JavaSerializer.serializeToString(element, file.substr(0, file.lastIndexOf(".")));
 
-		var javafile = "";
-		javafile += file.substr(0, file.lastIndexOf("."))+".java";
-		fs.writeFileSync(javafile, java);
-		process.stdout.write(javafile);
+		var outfile = "";
+		outfile += file.substr(0, file.lastIndexOf("."))+".java";
+		fs.writeFileSync(outfile, java);
+		process.stdout.write(outfile);
 		process.stdout.write('\0');
 	} catch (e) {
 		console.error("Error reading", file, e);
