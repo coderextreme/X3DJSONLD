@@ -37,18 +37,11 @@ function ProcessJSON(json, file) {
 
 		var xml = [];
 		var element = loadX3DJS(json, file, xml);
-		var python = PythonSerializer.serializeToString(element);
 
-		var pyfile = "ppp/";
-		pyfile += file.substr(0, file.lastIndexOf("."))+".py";
-		fs.writeFileSync(pyfile, python);
-		process.stdout.write(pyfile);
-		process.stdout.write('\0');
-
-		var newfile = "ppp/";
-		newfile += file.substr(0, file.lastIndexOf("."))+".x3d";
-		fs.writeFileSync(newfile, xml.join("\r\n"));
-		process.stdout.write(newfile);
+		var outfile = "ppp/";
+		outfile += file.substr(0, file.lastIndexOf("."))+".x3d";
+		fs.writeFileSync(outfile, xml.join("\r\n"));
+		process.stdout.write(outfile);
 		process.stdout.write('\0');
 }
 
