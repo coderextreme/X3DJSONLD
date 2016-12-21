@@ -1,3 +1,4 @@
+// I am fairly sure this file converts X3D XML to JSON but not X3D JSON (almost)
 var fs = require('fs');
 var xml2js = require('xml2js');
 
