@@ -8,7 +8,6 @@ var fs = require('fs');
 var loadX3DJS = require('./serverX3DJSONLD');
 var PythonSerializer = require('./PythonSerializer.js');
 
-
 process.argv.shift();
 process.argv.shift();
 

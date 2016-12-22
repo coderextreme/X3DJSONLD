@@ -6,6 +6,7 @@
 
 var fs = require('fs');
 var loadX3DJS = require('./serverX3DJSONLD');
+var DOMSerializer = require('./DOMSerializer.js');
 
 process.argv.shift();
 process.argv.shift();
@@ -16,12 +17,12 @@ for (var f in files) {
 	try {
 		var file = file.substr(0, file.lastIndexOf("."))+".json";
 		var json = JSON.parse(fs.readFileSync(file).toString());
-		var xml = [];
-		var element = loadX3DJS(json, file, xml);
+		var element = loadX3DJS(json, file);
+		var xml = DOMSerializer.serializeToString(json, element);
 
 		var outfile = "";
 		outfile += file.substr(0, file.lastIndexOf("."))+"-roundtrip.x3d";
-		fs.writeFileSync(outfile, xml.join("\r\n"));
+		fs.writeFileSync(outfile, xml);
 		process.stdout.write(outfile);
 		process.stdout.write('\0');
 	} catch (e) {
