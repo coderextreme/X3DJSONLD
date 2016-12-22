@@ -30,9 +30,3 @@ for (var f in files) {
 		console.trace();
 	}
 }
-
-if (typeof module === 'object')  {
-	module.exports = {
-		loadX3DJS : loadX3DJS,
-	};
-}
