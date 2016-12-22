@@ -39,9 +39,9 @@ function serializeDOM(json, element) {
 	return xml;
 }
 
-DOMSerializer = {};
-DOMSerializer.serializeToString(json, element) {
-	var str = serializeDOM(json, element));
+var DOMSerializer = {};
+DOMSerializer.serializeToString = function (json, element) {
+	var str = serializeDOM(json, element);
 	return str;
 }
 
