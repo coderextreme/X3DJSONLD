@@ -1,3 +1,4 @@
+#!/bin/sh
 javac -cp saxon9B.jar RunSaxon.java
 
 rm *Canonical*
