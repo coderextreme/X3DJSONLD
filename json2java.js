@@ -18,11 +18,11 @@ for (var f in files) {
 		var file = file.substr(0, file.lastIndexOf("."))+".json";
 		var json = JSON.parse(fs.readFileSync(file).toString());
 		var element = loadX3DJS(json, file);
-		var java = JavaSerializer.serializeToString(element, file.substr(0, file.lastIndexOf(".")));
+		var str = JavaSerializer.serializeToString(element, file.substr(0, file.lastIndexOf(".")));
 
 		var outfile = "";
 		outfile += file.substr(0, file.lastIndexOf("."))+".java";
-		fs.writeFileSync(outfile, java);
+		fs.writeFileSync(outfile, str);
 		process.stdout.write(outfile);
 		process.stdout.write('\0');
 	} catch (e) {
