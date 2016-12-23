@@ -8,7 +8,7 @@
         "-children":[
           { "NavigationInfo":
             {
-              "@type":["ANY","WALK","EXAMINE","FLY","LOOKAT"]
+              "@type":["EXAMINE"]
             }
           },
           { "Viewpoint":
