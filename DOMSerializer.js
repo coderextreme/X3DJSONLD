@@ -2,7 +2,6 @@
 "use strict";
 
 var xmldom = require('xmldom');
-var DOMImplementation = new xmldom.DOMImplementation();
 var XMLSerializer = new xmldom.XMLSerializer();
 
 function fixXML(xmlstr) {
