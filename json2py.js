@@ -18,11 +18,11 @@ for (var f in files) {
 		var file = file.substr(0, file.lastIndexOf("."))+".json";
 		var json = JSON.parse(fs.readFileSync(file).toString());
 		var element = loadX3DJS(json, file);
-		var python = PythonSerializer.serializeToString(element);
+		var str = PythonSerializer.serializeToString(element);
 
 		var outfile = "";
 		outfile += file.substr(0, file.lastIndexOf("."))+".py";
-		fs.writeFileSync(outfile, python);
+		fs.writeFileSync(outfile, str);
 		process.stdout.write(outfile);
 		process.stdout.write('\0');
 	} catch (e) {
