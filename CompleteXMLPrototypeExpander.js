@@ -10,7 +10,6 @@ X3DJSONLD.setCDATACreateFunction(function(document, element, str) {
 });
 var Browser = X3DJSONLD.Browser;
 var loadURLs = X3DJSONLD.loadURLs;
-var PythonSerializer = require('./PythonSerializer.js');
 
 var PE = require('./PrototypeExpander')
 PE.setLoadURLs(loadURLs);
