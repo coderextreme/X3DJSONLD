@@ -46,11 +46,7 @@
         {
           "NavigationInfo": {
             "@type": [
-              "ANY",
-              "WALK",
-              "EXAMINE",
-              "FLY",
-              "LOOKAT"
+              "EXAMINE"
             ]
           }
         },
