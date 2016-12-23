@@ -21,6 +21,7 @@ var FL = require('./Flattener')
 var flattener = FL.flattener;
 
 var loadX3DJS = require('./serverX3DJSONLD');
+var DOMSerializer = require('./DOMSerializer.js');
 
 
 // Convert from XML to JSON
@@ -35,12 +36,11 @@ function ProcessJSON(json, file) {
 		json = prototypeExpander(file, json, "");
 		json = flattener(json);
 
-		var xml = [];
-		var element = loadX3DJS(json, file, xml);
+		var element = loadX3DJS(json, file);
+		var str = DOMSerializer.serializeToString(json, element);
 
-		var outfile = "ppp/";
-		outfile += file.substr(0, file.lastIndexOf("."))+".x3d";
-		fs.writeFileSync(outfile, xml.join("\r\n"));
+		var outfile = "ppp/"+file.substr(0, file.lastIndexOf("."))+".x3d";
+		fs.writeFileSync(outfile, str);
 		process.stdout.write(outfile);
 		process.stdout.write('\0');
 }
