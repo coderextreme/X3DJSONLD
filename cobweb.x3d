@@ -6,7 +6,7 @@
 <meta name="generator" content="X3D-Edit, https://savage.nps.edu/X3D-Edit"></meta>
 <meta name="identifier" content="http://coderextreme.net/X3DJSONLD/cobweb.x3d"></meta>
 </head>
-<Scene><NavigationInfo type="&quot;ANY&quot; &quot;WALK&quot; &quot;EXAMINE&quot; &quot;FLY&quot; &quot;LOOKAT&quot;"></NavigationInfo>
+<Scene><NavigationInfo type="&quot;EXAMINE&quot;"></NavigationInfo>
 <Viewpoint position="0 0 4" orientation="1 0 0 0" description="Bubbles in action"></Viewpoint>
 <Background backUrl="&quot;cubemap/BK.png&quot; &quot;http://coderextreme.net/X3DJSONLD/cubemap/BK.png&quot;" bottomUrl="&quot;cubemap/BT.png&quot; &quot;http://coderextreme.net/X3DJSONLD/cubemap/BT.png&quot;" frontUrl="&quot;cubemap/FR.png&quot; &quot;http://coderextreme.net/X3DJSONLD/cubemap/FR.png&quot;" leftUrl="&quot;cubemap/LF.png&quot; &quot;http://coderextreme.net/X3DJSONLD/cubemap/LF.png&quot;" rightUrl="&quot;cubemap/RT.png&quot; &quot;http://coderextreme.net/X3DJSONLD/cubemap/RT.png&quot;" topUrl="&quot;cubemap/TP.png&quot; &quot;http://coderextreme.net/X3DJSONLD/cubemap/TP.png&quot;"></Background>
 <ProtoDeclare name="Bubble"><ProtoBody><Transform DEF="transform"><Shape><Sphere containerField="geometry" radius="0.25"></Sphere>

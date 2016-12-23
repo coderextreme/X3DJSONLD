@@ -37,9 +37,7 @@ function ProcessJSON(json, file) {
 		json = flattener(json);
 		console.log(JSON.stringify(json, null, 2));
 
-		var xml = [];
-		loadX3DJS(json, file, xml);
-		// console.error(xml.join("\n"));
+		loadX3DJS(json, file);
 
 		var classes = new LOG();
 		var routecode = new LOG();
