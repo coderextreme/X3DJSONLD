@@ -20,8 +20,7 @@ for (var f in files) {
 		var element = loadX3DJS(json, file);
 		var str = DOMSerializer.serializeToString(json, element);
 
-		var outfile = "";
-		outfile += file.substr(0, file.lastIndexOf("."))+"-roundtrip.x3d";
+		var outfile = file.substr(0, file.lastIndexOf("."))+"-roundtrip.x3d";
 		fs.writeFileSync(outfile, str);
 		process.stdout.write(outfile);
 		process.stdout.write('\0');

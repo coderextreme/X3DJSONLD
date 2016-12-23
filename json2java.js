@@ -20,8 +20,7 @@ for (var f in files) {
 		var element = loadX3DJS(json, file);
 		var str = JavaSerializer.serializeToString(element, file.substr(0, file.lastIndexOf(".")));
 
-		var outfile = "";
-		outfile += file.substr(0, file.lastIndexOf("."))+".java";
+		var outfile = file.substr(0, file.lastIndexOf("."))+".java";
 		fs.writeFileSync(outfile, str);
 		process.stdout.write(outfile);
 		process.stdout.write('\0');

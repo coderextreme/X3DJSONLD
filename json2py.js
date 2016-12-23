@@ -20,8 +20,7 @@ for (var f in files) {
 		var element = loadX3DJS(json, file);
 		var str = PythonSerializer.serializeToString(element);
 
-		var outfile = "";
-		outfile += file.substr(0, file.lastIndexOf("."))+".py";
+		var outfile = file.substr(0, file.lastIndexOf("."))+".py";
 		fs.writeFileSync(outfile, str);
 		process.stdout.write(outfile);
 		process.stdout.write('\0');
