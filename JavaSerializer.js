@@ -1,270 +1,102 @@
-var mapToMethod = {
-	"X3D" : {
-		"head": "setHead",
-		"Scene" : "setScene"
-	},
-	"head" : {
-		"meta": "addMeta",
-		"component": "setComponent"
-	},
-	"Scene" : "addChildren",
-	"GeoLOD" : {
-		"Group": 'addChildren',
-		"Shape": 'addChildren'
-	},
-	"LOD" : {
-		"Group": 'addChildren',
-		"Shape": 'addChildren',
-		"Transform": 'addChildren',
-		"Billboard": 'addChildren',
-		"WorldInfo": 'addChildren'
-	},
-	"StaticGroup" : {
-		"Shape": "addChildren"
-	},
-	"CADLayer" : {
-		"CADAssembly": "addChildren"
-	},
-	"CADAssembly" : {
-		"CADPart": "addChildren",
-		"Transform": "addChildren"
-	},
+var mapToMethod = require('./mapToMethod.js');
+var fieldTypes = require('./fieldTypes.js');
+var mapToMethod2 = {
+        "Scene" : {
+                "ROUTE" : "addChildren",
+                "IMPORT" : "addChildren",
+                "EXPORT" : "addChildren",
+                "ProtoDeclare" : "addChildren",
+                "ExternProtoDeclare" : "addChildren"
+        },
 	"CADPart" : {
-		"CADFace": "addChildren",
 		"Transform": "addChildren"
 	},
-	"CADFace" : {
-		"Transform": "addChildren",
+	"Billboard" : {
+                "ROUTE" : "addChildren"
+	},
+	"Anchor" : {
+                "ROUTE" : "addChildren"
 	},
 	"Switch" : {
-		"Group": "addChildren",
-		"Sound": "addChildren",
-		"Shape": "addChildren",
-		"Transform": "addChildren",
-		"ColorInterpolator": "addChildren",
-		"CoordinateInterpolator": "addChildren",
-		"NormalInterpolator": "addChildren",
-		"OrientationInterpolator": "addChildren",
-		"PositionInterpolator": "addChildren",
-		"ScalarInterpolator": "addChildren"
+                "ROUTE" : "addChildren"
 	},
 	"Transform" : {
-		"Anchor": "addChildren",
-		"Billboard": "addChildren",
-		"BooleanTrigger": "addChildren",
-		"BooleanToggle": "addChildren",
-		"BooleanFilter": "addChildren",
-		"CADAssembly": "addChildren",
-		"CADFace": "addChildren",
-		"Collision": "addChildren",
-		"ColorInterpolator": "addChildren",
-		"CoordinateInterpolator": "addChildren",
-		"CylinderSensor": "addChildren",
-		"DirectionalLight": "addChildren",
-		"Group": "addChildren",
-		"IngeterTrigger": "addChildren",
-		"LOD": "addChildren",
-		"NavigationInfo": "addChildren",
-		"OrientationInterpolator": "addChildren",
-		"PlaneSensor": "addChildren",
-		"PointLight": "addChildren",
-		"PositionInterpolator": "addChildren",
 		"ProtoInstance": "addChildren",
-		"ProximitySensor": "addChildren",
 		"ROUTE": "addChildren",
-		"ScalarInterpolator": "addChildren",
-		"Script": "addChildren",
-		"Shape": "addChildren",
-		"Sound": "addChildren",
-		"Switch": "addChildren",
-		"SphereSensor": "addChildren",
-		"SpotLight": "addChildren",
-		"StringSensor": "addChildren",
-		"TimeSensor": "addChildren",
-		"TimeTrigger": "addChildren",
-		"TouchSensor": "addChildren",
-		"Transform": "addChildren",
-		"Viewpoint": "addChildren",
-		"VisibilitySensor": "addChildren",
-		"IS": "setIS"
-	},
-	"ViewpointGroup" : {
-		"Viewpoint": "addChildren"
+		"IS": "setIS",
+                "ExternProtoDeclare" : "addChildren",
+                "IMPORT" : "addChildren",
 	},
 	"Group" : {
-		"Anchor": "addChildren",
-		"Background": "addChildren",
-		"Billboard": "addChildren",
-		"BooleanTrigger": "addChildren",
-		"BooleanToggle": "addChildren",
-		"BooleanFilter": "addChildren",
-		"Collision": "addChildren",
-		"ColorInterpolator": "addChildren",
-		"CoordinateInterpolator": "addChildren",
-		"CylinderSensor": "addChildren",
-		"DirectionalLight": "addChildren",
-		"Group": "addChildren",
-		"IngeterTrigger": "addChildren",
-		"LOD": "addChildren",
-		"NavigationInfo": "addChildren",
-		"OrientationInterpolator": "addChildren",
-		"PlaneSensor": "addChildren",
-		"PointLight": "addChildren",
-		"PositionInterpolator": "addChildren",
 		"ProtoInstance": "addChildren",
-		"ProximitySensor": "addChildren",
+		"ExternProtoDeclare": "addChildren",
+		"ProtoDeclare": "addChildren",
 		"ROUTE": "addChildren",
-		"ScalarInterpolator": "addChildren",
-		"Script": "addChildren",
-		"Shape": "addChildren",
-		"Sound": "addChildren",
-		"Switch": "addChildren",
-		"SphereSensor": "addChildren",
-		"SpotLight": "addChildren",
-		"StringSensor": "addChildren",
-		"TimeSensor": "addChildren",
-		"TimeTrigger": "addChildren",
-		"TouchSensor": "addChildren",
-		"Transform": "addChildren",
-		"Viewpoint": "addChildren",
-		"VisibilitySensor": "addChildren",
-		"WorldInfo": "addChildren",
-		"IS": "setIS",
-		"MetadataString": "setMetadata"
-	},
-	"Sound" : {
-		"AudioClip": "setSource",
-		"MovieTexture": "setSource"
-	},
-	'LoadSensor' : {
-		'AudioClip' : "addWatchList"
-	},
-	"Shape" : {
-		"Sphere": "setGeometry",
-		"Box": "setGeometry",
-		"ElevationGrid": "setGeometry",
-		"GeoElevationGrid": "setGeometry",
-		"Text": "setGeometry",
-		"Sphere": "setGeometry",
-		"Cylinder": "setGeometry",
-		"Extrusion": "setGeometry",
-		"Cone": "setGeometry",
-		"Appearance": "setAppearance",
-		"IndexedFaceSet": "setGeometry",
-		"IndexedQuadSet": "setGeometry",
-		"IndexedTriangleSet": "setGeometry",
-		"IndexedLineSet": "setGeometry",
-		"PointSet": "setGeometry",
-		"Arc2D": "setGeometry",
-		"ArcClose2D": "setGeometry",
-		"Circle2D": "setGeometry",
-		"Disk2D": "setGeometry",
-		"Polyline2D": "setGeometry",
-		"Polypoint2D": "setGeometry",
-		"Rectangle2D": "setGeometry",
-		"TriangleSet2D": "setGeometry",
-		"ProtoInstance": "setGeometry"
-	},
-	"Appearance" : {
-		"FillProperties": "addFillProperties",
-		"ComposedCubeMapTexture": "setTexture",
-		"ImageTexture": "setTexture",
-		"PixelTexture": "setTexture",
-		"MovieTexture": "setTexture",
-		"Material": "setMaterial",
-		"TwoSidedMaterial": "setMaterial",
-		"TextureTransform": "setTextureTransform",
-		"ComposedShader": "addShaders",
 		"IS": "setIS"
 	},
-	"HAnimHumanoid" : {
-		 "HAnimJoint": "addJoints",
-		 "HAnimSegment": "addSegments",
-		 "HAnimViewpoint": "addViewpoints"
-        },
+	"Shape" : {
+		"ProtoInstance": "setGeometry"
+	},
+	"ImageTexture" : {
+		"IS": "setIS"
+	},
+	"Material" : {
+		"IS": "setIS"
+	},
+	"Appearance" : {
+		"FillProperties": "setFillProperties",
+		"LineProperties": "setLineProperties",
+		"ProtoInstance": "setProtoInstance",
+		"TextureTransform": "setTextureTransform",
+		"MultiTextureTransform": "setTextureTransform",
+		"IS": "setIS"
+	},
 	"HAnimJoint" : {
-		 "HAnimJoint": "addChildren",
-		 "HAnimSegment": "addChildren"
+		"Transform" : "addChildren"
+	},
+	"HAnimHumanoid" : {
+		 "HAnimViewpoint": "addViewpoints",
+		 "Coordinate": "setSkinCoord"
         },
-	"HAnimSegment" : {
-		 "Shape": "addChildren",
-		 "Transform": "addChildren"
+	"GeoElevationGrid" : {
+		 "TextureCoordinate": "setTexCoord",
+		"GeoOrigin" : "setGeoOrigin"
         },
 	"ElevationGrid" : {
 		 "TextureCoordinate": "setTexCoord"
         },
-	"IndexedQuadSet": {
-		"Coordinate": "setCoord",
-        },
-	"QuadSet": {
-		"Coordinate": "setCoord",
-	},
-	"IndexedFaceSet" : {
-		"Coordinate": "setCoord",
-		"TextureCoordinate": "setTexCoord",
-		"Color": "setColor",
-		"Normal": "setNormal"
-	},
-	"IndexedLineSet" : {
-		"Coordinate": "setCoord",
-		"Color": "setColor"
-	},
-	"PointSet" : {
-		"Coordinate": "setCoord",
-		"Color": "setColor"
-	},
-	"IndexedTriangleFanSet" : {
-		"Coordinate": "setCoord"
-	},
 	"IndexedTriangleSet" : {
-		"Coordinate": "setCoord"
+		"TextureCoordinateGenerator": "setTexCoord",
+        },
+	"IndexedTriangleFanSet" : {
+		"TextureCoordinate": "setTexCoord",
+        },
+	"IndexedFaceSet" : {
+		"TextureCoordinate": "setTexCoord",
+		"MultiTextureCoordinate": "setTexCoord"
 	},
-	"IndexedTriangleStripSet" : {
-		"Coordinate": "setCoord"
+	"MultiTextureTransform" : {
+		"TextureTransform": "addTextureTransform"
 	},
-	"LineSet" : {
-		"Coordinate": "setCoord"
+	"MultiTextureCoordinate" : {
+		"TextureCoordinate": "addTexCoord"
 	},
-	"TriangleFanSet" : {
-		"Coordinate": "setCoord"
-	},
-	"TriangleSet" : {
-		"Coordinate": "setCoord"
-	},
-	"TriangleStripSet" : {
-		"Coordinate": "setCoord"
-	},
-	"Anchor" : {
-		"Transform": "addChildren",
-		"Group": "addChildren",
-		"Shape": "addChildren"
-	},
-	"Billboard" : {
-		"Switch": "addChildren",
-		"Transform": "addChildren",
-		"Group": "addChildren",
-		"ProtoInstance": "addChildren",
-		"Shape": "addChildren"
-	},
-	"Collision" : {
-		"TimeSensor": "addChildren",
-		"Collision": "addChildren",
-		"Transform": "addChildren",
-		"Group": "addChildren",
-		"PositionInterpolator": "addChildren",
-		"Shape": "addChildren"
+	"IndexedQuadSet" : {
+		"TextureCoordinate": "setTexCoord"
 	},
 	"ComposedShader" : {
 		"field" : "addField",
 		"Shaders" : "addParts",
 		"ShaderPart" : "addParts"
 	},
-	"Shader" : {
-		"field" : "addField"
-	},
-	"ProtoBody" : "setChildren",
+        "ProtoBody" : {
+                "ROUTE" : "addChildren",
+                "ProtoDeclare" : "addChildren"
+        },
 	"ProtoDeclare" : {
-		"ProtoBody" : "setProtoBody"
+		"ProtoBody" : "setProtoBody",
+		"ProtoInterface" : "setProtoInterface",
+		"field" : "addField"
 	},
 	"ExternProtoDeclare" : {
 		"field" : "addField"
@@ -279,15 +111,108 @@ var mapToMethod = {
 		"field" : "addField",
 		"IS": "setIS"
 	},
-	"field" : "addChildren",
-	"fieldValue" : "addChildren",
-	"IS" : {
-		"connect": "addConnect",
+        "Text" : {
+                "FontStyle" : "setFontStyle",
+		"IS": "setIS"
+        },
+        "GeoLOD" : {
+		"Shape" : "addRootNode",
+		"WorldInfo" : "addRootNode",
+		"GeoOrigin" : "setGeoOrigin"
+        },
+        "GeoPositionInterpolator" : {
+		"GeoOrigin" : "setGeoOrigin"
+        },
+        "GeoTransform" : {
+		"GeoOrigin" : "setGeoOrigin"
+        },
+        "GeoCoordinate" : {
+		"GeoOrigin" : "setGeoOrigin"
+        },
+        "GeoTouchSensor" : {
+		"GeoOrigin" : "setGeoOrigin"
+        },
+        "GeoViewpoint" : {
+		"GeoOrigin" : "setGeoOrigin"
+        },
+        "GeoLocation" : {
+                "ROUTE" : "addChildren",
+		"GeoOrigin" : "setGeoOrigin",
+                "ExternProtoDeclare" : "addChildren"
+        },
+        "NurbsTrimmedSurface" : {
+		"Coordinate" : "setControlPoint",
+		"Contour2D" : "addTrimmingContour"
+	},
+        "NurbsPatchSurface" : {
+		"Coordinate" : "setControlPoint"
+	},
+        "NurbsCurve" : {
+		"Coordinate" : "setControlPoint"
+	},
+        "NurbsPositionInterpolator" : {
+		"Coordinate" : "setControlPoint"
+	},
+        "IsoSurfaceVolumeData" : {
+		"CartoonVolumeStyle" : "addRenderStyle"
+	},
+        "SegmentedVolumeData" : {
+		"OpacityMapVolumeStyle" : "addRenderStyle",
+		"ToneMappedVolumeStyle" : "addRenderStyle"
+	},
+        "VolumeData" : {
+		"ToneMappedVolumeStyle" : "setRenderStyle",
+		"BlendedVolumeStyle" : "setRenderStyle",
+		"ComposedVolumeStyle" : "setRenderStyle",
+		"CartoonVolumeStyle" : "setRenderStyle",
+		"ProjectionVolumeStyle" : "setRenderStyle",
+		"EdgeEnhancementVolumeStyle" : "setRenderStyle",
+		"ShadedVolumeStyle" : "setRenderStyle",
+		"SilhouetteEnhancementVolumeStyle" : "setRenderStyle"
+	},
+        "BlendedVolumeStyle" : {
+		"ToneMappedVolumeStyle" : "setRenderStyle",
+		"ComposedVolumeStyle" : "setRenderStyle"
+	},
+        "ComposedVolumeStyle" : {
+		"BlendedVolumeStyle" : "addRenderStyle",
+		"CartoonVolumeStyle" : "addRenderStyle",
+		"OpacityMapVolumeStyle" : "addRenderStyle",
+		"BoundaryEnhancementVolumeStyle" : "addRenderStyle",
+		"EdgeEnhancementVolumeStyle" : "addRenderStyle",
+		"ToneMappedVolumeStyle" : "addRenderStyle",
+		"SilhouetteEnhancementVolumeStyle" : "addRenderStyle"
+	},
+        "RigidBody" : {
+		"Sphere" : "setMaSSDensityModel",
+		"Box" : "setMaSSDensityModel"
+	},
+	"MetadataSet" : {
+		"ProtoInstance" : "setMetadata"
 	}
 };
 
+Object.assign(mapToMethod, {
+});
+
+for (map in mapToMethod2) {
+        Object.assign(mapToMethod[map], mapToMethod2[map]);
+}
+
+
 var JavaSerializer = {};
-JavaSerializer.serializeToString = function(element, clazz) {
+JavaSerializer.serializeToString = function(json, element, clazz) {
+	/*
+	for (var a in element.attributes) {
+		var attrs = element.attributes;
+		var attributeName = attrs[a].nodeName;
+		if (attributeName === "version" && attrs[a].nodeValue !== "3.3") {
+			console.log(clazz, attrs[a].nodeValue);
+			return;
+		}
+	}
+	*/
+
 	var str = "";
 	var pc = clazz.replace(/-|\./g, "$")
 	var c = pc.lastIndexOf("/");
@@ -378,7 +303,7 @@ JavaSerializer.serializeToString = function(element, clazz) {
 	str += "}\n";
 	return str;
 }
-JavaSerializer.subSerializeToString = function(element, n, grandparent, gn) {
+JavaSerializer.subSerializeToString = function(element, n) {
 	n = n || 0;
 	var str = "";
 	if (n === 0) {
@@ -387,8 +312,8 @@ JavaSerializer.subSerializeToString = function(element, n, grandparent, gn) {
 	for (var cn in element.childNodes) {
 		var node = element.childNodes[cn];
 		if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 1) {
-			str += "		"+node.nodeName+"Object "+node.nodeName+n+''+cn+" = new "+node.nodeName+"Object();\n";
-			str += JavaSerializer.subSerializeToString(node, n+''+cn, element, ""+n);
+			str += "		"+node.nodeName+"Object "+node.nodeName+n+'_'+cn+" = new "+node.nodeName+"Object();\n";
+			str += JavaSerializer.subSerializeToString(node, n+'_'+cn, element, ""+n);
 			var addpre = ".set";
 			if (cn > 0 && node.nodeName !== 'IS') {
 				addpre = ".add";
@@ -408,7 +333,7 @@ JavaSerializer.subSerializeToString = function(element, n, grandparent, gn) {
 			} else if (element.nodeName == 'TextureBackground' && node.nodeName == 'ImageTexture') {
 			} else if (element.nodeName == 'HAnimHumanoid' && node.nodeName == 'Viewpoint') {
 			} else {
-				str += "		"+element.nodeName+n+addpre+method+"("+node.nodeName+n+''+cn+");\n";
+				str += "		"+element.nodeName+n+addpre+method+"("+node.nodeName+n+'_'+cn+");\n";
 			}
 		}
 	}
@@ -419,121 +344,68 @@ JavaSerializer.subSerializeToString = function(element, n, grandparent, gn) {
 			parseInt(a);
 			if (attrs.hasOwnProperty(a) && attrs[a].nodeType == 2) {
 				var method = attrs[a].nodeName;
-				if (method == "xmlns:xsd" || method == "xsd:noNamespaceSchemaLocation") {
+				var attr = method;
+				var attrType = fieldTypes[element.nodeName][attr];
+				if (method == "xmlns:xsd" || method == "xsd:noNamespaceSchemaLocation" || method == 'containerField') {
 					continue;
 				}
-				if (method == 'containerField') {
-					method = attrs[a].nodeValue;
-					method = "set"+method.charAt(0).toUpperCase() + method.slice(1);
-					str += "		"+grandparent.nodeName+gn+"."+method+"(";
-					str += element.nodeName+n;
+				method = "set"+method.charAt(0).toUpperCase() + method.slice(1);
+				str += "		"+element.nodeName+n+"."+method+"(";
+				if (attrs[a].nodeValue == 'NULL') {
+					str += "null";
+				} else if (attrType === "SFString") {
+					str += '"'+attrs[a].nodeValue.replace(/\\?"/g, "&quot;")+'"';
+				} else if (attrType === "SFInt32") {
+					str += attrs[a].nodeValue;
+				} else if (attrType === "SFFloat") {
+					str += attrs[a].nodeValue+"f";
+				} else if (attrType === "SFDouble") {
+					str += attrs[a].nodeValue+"d";
+				} else if (attrType === "SFBool") {
+					str += attrs[a].nodeValue
+				} else if (attrType === "MFString") {
+					str += "new String[] {"+attrs[a].nodeValue.split('" "').join('","')+"}";
+				} else if (
+					attrType === "MFInt32"||
+					attrType === "MFImage"||
+					attrType === "SFImage") {
+					str += "new int[] {"+attrs[a].nodeValue.split(' ').join(',')+"}";
+				} else if (
+					attrType === "SFColor"||
+					attrType === "MFColor"||
+					attrType === "SFColorRGBA"||
+					attrType === "MFColorRGBA"||
+					attrType === "SFVec2f"||
+					attrType === "SFVec3f"||
+					attrType === "SFVec4f"||
+					attrType === "MFVec2f"||
+					attrType === "MFVec3f"||
+					attrType === "MFVec4f"||
+					attrType === "SFMatrix3f"||
+					attrType === "SFMatrix4f"|
+					attrType === "MFMatrix3f"||
+					attrType === "MFMatrix4f"|
+					attrType === "SFRotation"|
+					attrType === "MFRotation"|
+					attrType === "MFFloat") {
+					str += "new float[] {"+attrs[a].nodeValue.split(' ').join('f,')+"f}";
+				} else if (
+					attrType === "SFVec2d"||
+					attrType === "SFVec3d"||
+					attrType === "SFVec4d"|
+					attrType === "MFVec2d"||
+					attrType === "MFVec3d"||
+					attrType === "MFVec4d"|
+					attrType === "SFMatrix3d"||
+					attrType === "SFMatrix4d"|
+					attrType === "MFMatrix3d"||
+					attrType === "MFMatrix4d"|
+					attrType === "MFDouble") {
+					str += "new double[] {"+attrs[a].nodeValue.split(' ').join('d,')+"d}";
+				} else if (attrType === "MFBool") {
+					str += "new boolean[] {"+attrs[a].nodeValue.split(' ').join(',')+"}";
 				} else {
-					method = "set"+method.charAt(0).toUpperCase() + method.slice(1);
-					if (attrs[a].nodeValue == 'NULL' && method == "setValue") {
-						method = "setChildren";
-						str += "		"+element.nodeName+n+"."+method+"(";
-						str += "null";
-					} else if (typeof attrs[a].nodeValue === 'string') {
-						str += "		"+element.nodeName+n+"."+method+"(";
-						if (method == 'setVersion' || method == 'setAddress') {
-							str += '"'+attrs[a].nodeValue+'"';
-						} else if (method == 'setValue') {
-							if (attrs[a].nodeValue.indexOf('"') >= 0) {
-								str += '"'+attrs[a].nodeValue.replace(/\\?"/g, "&quot;")+'"';
-							} else {
-								str += '"'+attrs[a].nodeValue+'"';
-							}
-						} else if (attrs[a].nodeValue == 'true') {
-							str += "true";
-						} else if (attrs[a].nodeValue == 'false') {
-							str += "false";
-						} else if (attrs[a].nodeValue.indexOf('"') === 0) {
-							str += "new String[] {"+attrs[a].nodeValue.split('" "').join('","')+"}";
-						} else if (attrs[a].nodeValue.indexOf('"') > 0) {
-							str += '"'+attrs[a].nodeValue.replace(/\\?"/g, "&quot;")+'"';
-						} else if (attrs[a].nodeValue.match(/^(\+|-)?([0-9]+\.?|\.[0-9]+|[0-9]+\.[0-9]+)((E|e)(\+|-)?[0-9]+)?$/)) {
-							if (method.match(/^set[^F]*ndex$/)) {
-								str += "{"+attrs[a].nodeValue+"}";
-							} else {
-								if ((element.nodeName == 'component' && method == 'setLevel') ||
-								method === 'setWhichChoice' ||
-								method === 'setXDimension' ||
-								method === 'setZDimension'
-								){
-									str += attrs[a].nodeValue;
-								} else if (method === 'setSkyAngle' || method === 'setGroundAngle' || method === 'setLength' || method === 'setRange') {
-									// single value float array
-									str += "new float[] {"+attrs[a].nodeValue+"f}";
-								} else {
-									str += attrs[a].nodeValue+"f";
-								}
-							}
-						} else if (attrs[a].nodeValue.indexOf(".") >= 0 && attrs[a].nodeValue.match(/^((\+|-)?([0-9]+\.?|\.[0-9]+|[0-9]+\.[0-9]+)((E|e)(\+|-)?[0-9]+)?| |,)*$/)) {
-							if ((element.nodeName == 'GeoPositionInterpolator' && method == 'setKeyValue') ||
-							(element.nodeName == 'SpotLight' && method == 'setAttenuation') ||
-							(element.nodeName == 'GeoLocation' && method == 'setGeoCoords') ||
-							(element.nodeName == 'GeoElevationGrid' && method == 'setHeight') ||
-							(element.nodeName == 'GeoViewpoint' && method == 'setPosition') ||
-							(element.nodeName == 'GeoLOD' && method == 'setCenter')
-							) {
-								str += "new double[] {"+attrs[a].nodeValue.split(' ').join('d,')+"d}";
-							} else {
-								str += "new float[] {"+attrs[a].nodeValue.split(' ').join('f,')+"f}";
-							}
-						} else if (attrs[a].nodeValue.match(/^((\+|-)?([0-9]+)((E|e)(\+|-)?[0-9]+)?| |,)*$/)) {
-							if (method == 'setDiffuseColor' ||
-							method == 'setSkyColor' ||
-							method == 'setGroundColor' ||
-							method == 'setColor' ||
-							method == 'setEmissiveColor' ||
-							method == 'setSize' ||
-							method == 'setPosition' ||
-							method == 'setOffset' ||
-							method == 'setPlane' ||
-							method == 'setKeyValue' ||
-							method == 'setDirection' ||
-							method == 'setRotation' ||
-							method == 'setTranslation' ||
-							method == 'setScale' ||
-							method == 'setBboxSize' ||
-							method == 'setBboxCenter' ||
-							method == 'setOrientation' ||
-							method == 'setScaleOrientation' ||
-							method == 'setSpecularColor' ||
-							method == 'setCrossSection' ||
-							method == 'setSpine' ||
-							method == 'setMinPosition' ||
-							method == 'setMaxPosition' ||
-							method == 'setAxisOfRotation' ||
-							method == 'setCenterOfRotation' ||
-							method == 'setCenter' ||
-							method == 'setVector' ||
-							method == 'setPoint' ||
-							method == 'setScale' ||
-							method == 'setLocation') {
-								if ((element.nodeName == 'GeoPositionInterpolator' && method == 'setKeyValue') ||
-							(element.nodeName == 'GeoLocation' && method == 'setGeoCoords') ||
-							(element.nodeName == 'GeoViewpoint' && method == 'setPosition') ||
-							(element.nodeName == 'GeoElevationGrid' && method == 'setHeight') ||
-							(element.nodeName == 'GeoLOD' && method == 'setCenter')) {
-									str += "new double[] {"+attrs[a].nodeValue.split(' ').join(',')+"}";
-								} else {
-									str += "new float[] {"+attrs[a].nodeValue.split(' ').join(',')+"}";
-								}
-							} else {
-								str += "new int[] {"+attrs[a].nodeValue.split(' ').join(',')+"}";
-							}
-						} else {
-							str += '"'+attrs[a].nodeValue+'"';
-						}
-					} else {
-						str += "		"+element.nodeName+n+"."+method+"(";
-						if (attrs[a].nodeValue.indexOf(".") >= 0 && attrs[a].nodeValue.match(/^(\+|-)?([0-9]+\.|\.[0-9]+|[0-9]+\.[0-9]+)((E|e)(\+|-)?[0-9]+)?$/)) {
-							str += attrs[a].nodeValue+"f";
-						} else {
-							str += attrs[a].nodeValue;
-						}
-					}
+					str += attrs[a].nodeValue;
 				}
 				str += ");\n";
 			}

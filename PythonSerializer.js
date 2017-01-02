@@ -202,7 +202,7 @@ var mapToMethod = {
 };
 
 var PythonSerializer = {};
-PythonSerializer.serializeToString = function(element, n, grandparent, gn) {
+PythonSerializer.serializeToString = function(json, element, n, grandparent, gn) {
 	n = n || 0;
 	var str = "";
 	if (n === 0) {
@@ -214,7 +214,7 @@ PythonSerializer.serializeToString = function(element, n, grandparent, gn) {
 		var node = element.childNodes[cn];
 		if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 1) {
 			str += node.nodeName+n+cn+" = "+node.nodeName+"Object()\n";
-			str += PythonSerializer.serializeToString(node, ""+n+cn, element, ""+n);
+			str += PythonSerializer.serializeToString(json, node, ""+n+cn, element, ""+n);
 			var addpre = ".set";
 			if (cn > 0) {
 				addpre = ".add";

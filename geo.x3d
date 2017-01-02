@@ -2,7 +2,7 @@
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D profile='Immersive' version='3.3' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance'>
     <Scene>
-        <NavigationInfo type='"ANY" "WALK" "EXAMINE" "FLY" "LOOKAT"'/>
+        <NavigationInfo type='"EXAMINE"'/>
         <Viewpoint DEF='Tour' description='Tour Views'/>
         <Viewpoint position='0 0 4' description='sphere in road'/>
         <Background backUrl='"bBK.png" "http://coderextreme.net/bug/bBK.png"' bottomUrl='"bBT.png" "http://coderextreme.net/bug/bBT.png"' frontUrl='"bFR.png" "http://coderextreme.net/bug/bFR.png"' leftUrl='"bLF.png" "http://coderextreme.net/bug/bLF.png"' rightUrl='"bRT.png" "http://coderextreme.net/bug/bRT.png"' topUrl='"bTP.png" "http://coderextreme.net/bug/bTP.png"'/>

@@ -1,151 +1,130 @@
-{
-  "X3D": {
-    "encoding": "UTF-8",
-    "@profile": "Immersive",
-    "@version": "3.3",
-    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
-      "meta": [
-        {
-          "@name": "title",
-          "@content": "HeadsUpDisplayPrototype.x3d"
-        },
-        {
-          "@name": "description",
-          "@content": "Demonstrates use of a ProximitySensor in building a Heads Up Display (HUD)"
-        },
-        {
-          "@name": "documentation",
-          "@content": "A simple heads-up display (HUD) Prototype manages the display of a HUD and maintains its position on the screen. Changes to fieldOfView (in Viewpoint node) will change screen position Fields: hudSize Size of HUD (initializeOnly - SFVec3f) default=\"1 1 .01\" hudColor Color of HUD (inputOutput - SFColor) default=\"1 1 1\" screenOffset Offset of HUD. This field positions the HUD on the display screen (inputOutput - SFVec3f) default=\"0 0 0\" children Geometry to be placed on the HUD. Origin is center of HUD. (inputOutput - MFNode) default = [] position_changed Current viewer location (outputOnly - SFVec3f) orientation_changed Current viewer orientation (outputOnly - SFRotation)"
-        },
-        {
-          "@name": "creator",
-          "@content": "Leonard Daly and Don Brutzman"
-        },
-        {
-          "@name": "created",
-          "@content": "15 July 2006"
-        },
-        {
-          "@name": "modified",
-          "@content": "10 January 2014"
-        },
-        {
-          "@name": "reference",
-          "@content": "HeadsUpDisplayExample.x3d"
-        },
-        {
-          "@name": "reference",
-          "@content": "http://X3dGraphics.com"
-        },
-        {
-          "@name": "reference",
-          "@content": "http://www.web3d.org/x3d/content/examples/X3dResources.html"
-        },
-        {
-          "@name": "rights",
-          "@content": "Copyright 2006, Daly Realism and Don Brutzman"
-        },
-        {
-          "@name": "subject",
-          "@content": "X3D book, X3D graphics, X3D-Edit, http://www.x3dGraphics.com"
-        },
-        {
-          "@name": "identifier",
-          "@content": "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14-Prototypes/HeadsUpDisplayPrototype.x3d"
-        },
-        {
-          "@name": "generator",
-          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
-        },
-        {
-          "@name": "license",
-          "@content": "../license.html"
-        },
-        {
-          "@name": "translated",
-          "@content": "22 December 2016"
-        },
-        {
-          "@name": "generator",
-          "@content": "X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
-        },
-        {
-          "@name": "warning",
-          "@content": "An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
-        }
-      ]
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"HeadsUpDisplayPrototype.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Demonstrates use of a ProximitySensor in building a Heads Up Display (HUD)"
+          },
+          {
+            "@name":"documentation",
+            "@content":"A simple heads-up display (HUD) Prototype manages the display of a HUD and maintains its position on the screen. Changes to fieldOfView (in Viewpoint node) will change screen position Fields: hudSize Size of HUD (initializeOnly - SFVec3f) default=\"1 1 .01\" hudColor Color of HUD (inputOutput - SFColor) default=\"1 1 1\" screenOffset Offset of HUD. This field positions the HUD on the display screen (inputOutput - SFVec3f) default=\"0 0 0\" children Geometry to be placed on the HUD. Origin is center of HUD. (inputOutput - MFNode) default = [] position_changed Current viewer location (outputOnly - SFVec3f) orientation_changed Current viewer orientation (outputOnly - SFRotation)"
+          },
+          {
+            "@name":"creator",
+            "@content":"Leonard Daly and Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"15 July 2006"
+          },
+          {
+            "@name":"modified",
+            "@content":"10 January 2014"
+          },
+          {
+            "@name":"reference",
+            "@content":"HeadsUpDisplayExample.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://X3dGraphics.com"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/X3dResources.html"
+          },
+          {
+            "@name":"rights",
+            "@content":"Copyright 2006, Daly Realism and Don Brutzman"
+          },
+          {
+            "@name":"subject",
+            "@content":"X3D book, X3D graphics, X3D-Edit, http://www.x3dGraphics.com"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14-Prototypes/HeadsUpDisplayPrototype.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"02 January 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
     },
     "Scene": {
-      "-children": [
-        {},
-        {
-          "Viewpoint": {
-            "@description": "Heads-up display (HUD)"
-          }
-        },
-        {
-          "#comment": "ProtoDeclare is the \"cookie cutter\" template, ProtoInstance creates an actual occurrence"
-        },
-        {
-          "#comment": "Example use is in separate scene"
-        },
-        {
-          "Anchor": {
-            "@description": "HeadsUpDisplay Example",
-            "@parameter": [
-              "target=_blank"
-            ],
-            "@url": [
-              "HeadsUpDisplayExample.x3d",
-              "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14-Prototypes/HeadsUpDisplayExample.x3d",
-              "HeadsUpDisplayExample.wrl",
-              "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14-Prototypes/HeadsUpDisplayExample.wrl"
-            ],
-            "-children": [
-              {
-                "Shape": {
-                  "-appearance": {
-                    "Appearance": {
-                      "-material": {
-                        "Material": {
-                          "@diffuseColor": [
-                            0.8,
-                            0.4,
-                            0
-                          ]
+        "-children":[
+          { "Viewpoint":
+            {
+              "@description":"Heads-up display (HUD)"
+            }
+          },
+          { "#comment":"ProtoDeclare is the \"cookie cutter\" template, ProtoInstance creates an actual occurrence"
+          },
+          { "#comment":"Example use is in separate scene"
+          },
+          { "Anchor":
+            {
+              "@description":"HeadsUpDisplay Example",
+              "@parameter":["target=_blank"],
+              "@url":["examples/X3dForWebAuthors/Chapter14-Prototypes/HeadsUpDisplayExample.json","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14-Prototypes/HeadsUpDisplayExample.json","examples/X3dForWebAuthors/Chapter14-Prototypes/HeadsUpDisplayExample.json","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14-Prototypes/HeadsUpDisplayExample.json"],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.8,0.4,0]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["HeadsUpDisplayExample.x3d","is a Prototype declaration file.","","For an example scene using this node,","click this text and view","HeadsUpDisplayExample.x3d"],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@justify":["MIDDLE","MIDDLE"],
+                                "@size":0.8
+                              }
+                            }
                         }
                       }
-                    }
-                  },
-                  "-geometry": {
-                    "Text": {
-                      "@string": [
-                        "HeadsUpDisplayExample.x3d",
-                        "is a Prototype declaration file.",
-                        "",
-                        "For an example scene using this node,",
-                        "click this text and view",
-                        "HeadsUpDisplayExample.x3d"
-                      ],
-                      "-fontStyle": {
-                        "FontStyle": {
-                          "@justify": [
-                            "MIDDLE",
-                            "MIDDLE"
-                          ],
-                          "@size": 0.8
-                        }
-                      }
-                    }
                   }
                 }
-              }
-            ]
+              ]
+            }
           }
-        }
-      ]
+        ]
     }
   }
 }
