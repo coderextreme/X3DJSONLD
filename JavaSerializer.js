@@ -63,6 +63,7 @@ var mapToMethod = {
 		"DirectionalLight": "addChildren",
 		"Group": "addChildren",
 		"IngeterTrigger": "addChildren",
+		"LOD": "addChildren",
 		"NavigationInfo": "addChildren",
 		"OrientationInterpolator": "addChildren",
 		"PlaneSensor": "addChildren",
@@ -87,8 +88,12 @@ var mapToMethod = {
 		"VisibilitySensor": "addChildren",
 		"IS": "setIS"
 	},
+	"ViewpointGroup" : {
+		"Viewpoint": "addChildren"
+	},
 	"Group" : {
 		"Anchor": "addChildren",
+		"Background": "addChildren",
 		"Billboard": "addChildren",
 		"BooleanTrigger": "addChildren",
 		"BooleanToggle": "addChildren",
@@ -100,6 +105,7 @@ var mapToMethod = {
 		"DirectionalLight": "addChildren",
 		"Group": "addChildren",
 		"IngeterTrigger": "addChildren",
+		"LOD": "addChildren",
 		"NavigationInfo": "addChildren",
 		"OrientationInterpolator": "addChildren",
 		"PlaneSensor": "addChildren",
@@ -283,9 +289,10 @@ var mapToMethod = {
 var JavaSerializer = {};
 JavaSerializer.serializeToString = function(element, clazz) {
 	var str = "";
-	var pc = clazz.replace(/-/g, "$")
+	var pc = clazz.replace(/-|\./g, "$")
 	var c = pc.lastIndexOf("/");
 	var clz = pc.substr(c+1);
+	var clz = clz.replace(/^([0-9].*|default)/, "_$1")
 	var pkg = pc.substr(0, c).replace(/\//g, ".").trim();
 
 	if (pkg.length > 0) {
@@ -380,10 +387,10 @@ JavaSerializer.subSerializeToString = function(element, n, grandparent, gn) {
 	for (var cn in element.childNodes) {
 		var node = element.childNodes[cn];
 		if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 1) {
-			str += "		"+node.nodeName+"Object "+node.nodeName+n+cn+" = new "+node.nodeName+"Object();\n";
-			str += JavaSerializer.subSerializeToString(node, ""+n+cn, element, ""+n);
+			str += "		"+node.nodeName+"Object "+node.nodeName+n+''+cn+" = new "+node.nodeName+"Object();\n";
+			str += JavaSerializer.subSerializeToString(node, n+''+cn, element, ""+n);
 			var addpre = ".set";
-			if (cn > 0) {
+			if (cn > 0 && node.nodeName !== 'IS') {
 				addpre = ".add";
 			}
 
@@ -401,7 +408,7 @@ JavaSerializer.subSerializeToString = function(element, n, grandparent, gn) {
 			} else if (element.nodeName == 'TextureBackground' && node.nodeName == 'ImageTexture') {
 			} else if (element.nodeName == 'HAnimHumanoid' && node.nodeName == 'Viewpoint') {
 			} else {
-				str += "		"+element.nodeName+n+addpre+method+"("+node.nodeName+n+cn+");\n";
+				str += "		"+element.nodeName+n+addpre+method+"("+node.nodeName+n+''+cn+");\n";
 			}
 		}
 	}
@@ -449,15 +456,23 @@ JavaSerializer.subSerializeToString = function(element, n, grandparent, gn) {
 								str += "{"+attrs[a].nodeValue+"}";
 							} else {
 								if ((element.nodeName == 'component' && method == 'setLevel') ||
-								method == 'setWhichChoice'){
+								method === 'setWhichChoice' ||
+								method === 'setXDimension' ||
+								method === 'setZDimension'
+								){
 									str += attrs[a].nodeValue;
+								} else if (method === 'setSkyAngle' || method === 'setGroundAngle' || method === 'setLength' || method === 'setRange') {
+									// single value float array
+									str += "new float[] {"+attrs[a].nodeValue+"f}";
 								} else {
 									str += attrs[a].nodeValue+"f";
 								}
 							}
 						} else if (attrs[a].nodeValue.indexOf(".") >= 0 && attrs[a].nodeValue.match(/^((\+|-)?([0-9]+\.?|\.[0-9]+|[0-9]+\.[0-9]+)((E|e)(\+|-)?[0-9]+)?| |,)*$/)) {
 							if ((element.nodeName == 'GeoPositionInterpolator' && method == 'setKeyValue') ||
+							(element.nodeName == 'SpotLight' && method == 'setAttenuation') ||
 							(element.nodeName == 'GeoLocation' && method == 'setGeoCoords') ||
+							(element.nodeName == 'GeoElevationGrid' && method == 'setHeight') ||
 							(element.nodeName == 'GeoViewpoint' && method == 'setPosition') ||
 							(element.nodeName == 'GeoLOD' && method == 'setCenter')
 							) {
@@ -473,13 +488,17 @@ JavaSerializer.subSerializeToString = function(element, n, grandparent, gn) {
 							method == 'setEmissiveColor' ||
 							method == 'setSize' ||
 							method == 'setPosition' ||
+							method == 'setOffset' ||
 							method == 'setPlane' ||
 							method == 'setKeyValue' ||
 							method == 'setDirection' ||
 							method == 'setRotation' ||
 							method == 'setTranslation' ||
 							method == 'setScale' ||
+							method == 'setBboxSize' ||
+							method == 'setBboxCenter' ||
 							method == 'setOrientation' ||
+							method == 'setScaleOrientation' ||
 							method == 'setSpecularColor' ||
 							method == 'setCrossSection' ||
 							method == 'setSpine' ||
@@ -494,7 +513,8 @@ JavaSerializer.subSerializeToString = function(element, n, grandparent, gn) {
 							method == 'setLocation') {
 								if ((element.nodeName == 'GeoPositionInterpolator' && method == 'setKeyValue') ||
 							(element.nodeName == 'GeoLocation' && method == 'setGeoCoords') ||
-								(element.nodeName == 'GeoViewpoint' && method == 'setPosition') ||
+							(element.nodeName == 'GeoViewpoint' && method == 'setPosition') ||
+							(element.nodeName == 'GeoElevationGrid' && method == 'setHeight') ||
 							(element.nodeName == 'GeoLOD' && method == 'setCenter')) {
 									str += "new double[] {"+attrs[a].nodeValue.split(' ').join(',')+"}";
 								} else {
