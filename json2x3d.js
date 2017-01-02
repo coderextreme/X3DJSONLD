@@ -1,31 +1,7 @@
 "use strict";
 
-// 'http://www.web3d.org/specifications/x3d-namespace'
+// Convert X3D JSON to X3D XML
 
-// Convert X3D JSON to XML
+var convertJSON = require('./convertJSON.js');
 
-var fs = require('fs');
-var loadX3DJS = require('./serverX3DJSONLD');
-var DOMSerializer = require('./DOMSerializer.js');
-
-process.argv.shift();
-process.argv.shift();
-
-var files = process.argv;
-for (var f in files) {
-	var file = files[f];
-	try {
-		var file = file.substr(0, file.lastIndexOf("."))+".json";
-		var json = JSON.parse(fs.readFileSync(file).toString());
-		var element = loadX3DJS(json, file);
-		var str = DOMSerializer.serializeToString(json, element);
-
-		var outfile = file.substr(0, file.lastIndexOf("."))+"-roundtrip.x3d";
-		fs.writeFileSync(outfile, str);
-		process.stdout.write(outfile);
-		process.stdout.write('\0');
-	} catch (e) {
-		console.error("Error reading", file, e);
-		console.trace();
-	}
-}
+convertJSON('./DOMSerializer.js', "-roundtrip.x3d");
