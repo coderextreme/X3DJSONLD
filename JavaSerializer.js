@@ -51,11 +51,9 @@ let mapToMethod2 = {
 	},
 	"HAnimHumanoid" : {
 		 "HAnimViewpoint": "addViewpoints",
-		 "Coordinate": "setSkinCoord"
         },
 	"ComposedShader" : {
 		"field" : "addField",
-		"ShaderPart" : "addParts"
 	},
         "ProtoBody" : {
                 "ROUTE" : "addChildren",
