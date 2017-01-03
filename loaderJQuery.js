@@ -141,7 +141,7 @@ function setVersion(version) {
 	    }
 	    updateXML(xml);
 	    loadScripts(json);
-	    var python = PythonSerializer.serializeToString(child);
+	    var python = PythonSerializer.serializeToString(json, child);
 	    $('textarea#python').val(python);
         }
 
