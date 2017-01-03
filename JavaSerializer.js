@@ -1,6 +1,6 @@
-var mapToMethod = require('./mapToMethod.js');
-var fieldTypes = require('./fieldTypes.js');
-var mapToMethod2 = {
+let mapToMethod = require('./mapToMethod.js');
+let fieldTypes = require('./fieldTypes.js');
+let mapToMethod2 = {
         "Scene" : {
                 "ROUTE" : "addChildren",
                 "IMPORT" : "addChildren",
@@ -46,7 +46,6 @@ var mapToMethod2 = {
 	"Appearance" : {
 		"FillProperties": "setFillProperties",
 		"LineProperties": "setLineProperties",
-		"ProtoInstance": "setProtoInstance",
 		"TextureTransform": "setTextureTransform",
 		"MultiTextureTransform": "setTextureTransform",
 		"IS": "setIS"
@@ -184,8 +183,8 @@ var mapToMethod2 = {
 		"SilhouetteEnhancementVolumeStyle" : "addRenderStyle"
 	},
         "RigidBody" : {
-		"Sphere" : "setMaSSDensityModel",
-		"Box" : "setMaSSDensityModel"
+		"Sphere" : "setMassDensityModel",
+		"Box" : "setMassDensityModel"
 	},
 	"MetadataSet" : {
 		"ProtoInstance" : "setMetadata"
@@ -200,12 +199,12 @@ for (map in mapToMethod2) {
 }
 
 
-var JavaSerializer = {};
+let JavaSerializer = {};
 JavaSerializer.serializeToString = function(json, element, clazz) {
 	/*
-	for (var a in element.attributes) {
-		var attrs = element.attributes;
-		var attributeName = attrs[a].nodeName;
+	for (let a in element.attributes) {
+		let attrs = element.attributes;
+		let attributeName = attrs[a].nodeName;
 		if (attributeName === "version" && attrs[a].nodeValue !== "3.3") {
 			console.log(clazz, attrs[a].nodeValue);
 			return;
@@ -213,12 +212,12 @@ JavaSerializer.serializeToString = function(json, element, clazz) {
 	}
 	*/
 
-	var str = "";
-	var pc = clazz.replace(/-|\./g, "$")
-	var c = pc.lastIndexOf("/");
-	var clz = pc.substr(c+1);
-	var clz = clz.replace(/^([0-9].*|default)/, "_$1")
-	var pkg = pc.substr(0, c).replace(/\//g, ".").trim();
+	let str = "";
+	let pc = clazz.replace(/-|\./g, "$")
+	let c = pc.lastIndexOf("/");
+	let clz = pc.substr(c+1);
+	clz = clz.replace(/^([0-9].*|default)/, "_$1")
+	let pkg = pc.substr(0, c).replace(/\//g, ".").trim();
 
 	if (pkg.length > 0) {
 		str += "package "+pkg+";\n";
@@ -303,109 +302,135 @@ JavaSerializer.serializeToString = function(json, element, clazz) {
 	str += "}\n";
 	return str;
 }
-JavaSerializer.subSerializeToString = function(element, n) {
-	n = n || 0;
-	var str = "";
-	if (n === 0) {
-		str += "		"+element.nodeName+"Object "+element.nodeName+n+" = new "+element.nodeName+"Object();\n";
-        }
-	for (var cn in element.childNodes) {
-		var node = element.childNodes[cn];
-		if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 1) {
-			str += "		"+node.nodeName+"Object "+node.nodeName+n+'_'+cn+" = new "+node.nodeName+"Object();\n";
-			str += JavaSerializer.subSerializeToString(node, n+'_'+cn, element, ""+n);
-			var addpre = ".set";
-			if (cn > 0 && node.nodeName !== 'IS') {
-				addpre = ".add";
-			}
 
-			var method = node.nodeName;
-			if (typeof mapToMethod[element.nodeName] === 'object') {
-		        	if (typeof mapToMethod[element.nodeName][node.nodeName] === 'string') {
-					addpre = ".";
-					method = mapToMethod[element.nodeName][node.nodeName];
-				}
-		        } else if (typeof mapToMethod[element.nodeName] === 'string') {
-				addpre = ".";
-				method = mapToMethod[element.nodeName];
-			}
-			if (element.nodeName == 'ComposedCubeMapTexture' && node.nodeName == 'ImageTexture') {
-			} else if (element.nodeName == 'TextureBackground' && node.nodeName == 'ImageTexture') {
-			} else if (element.nodeName == 'HAnimHumanoid' && node.nodeName == 'Viewpoint') {
-			} else {
-				str += "		"+element.nodeName+n+addpre+method+"("+node.nodeName+n+'_'+cn+");\n";
-			}
-		}
+function printParentChild(element, n, node, cn) {
+	let addpre = ".set";
+	if (cn > 0 && node.nodeName !== 'IS') {
+		addpre = ".add";
 	}
-	node = element;
-	for (var a in element.attributes) {
-		var attrs = element.attributes;
+
+	let method = node.nodeName;
+	if (typeof mapToMethod[element.nodeName] === 'object') {
+		if (typeof mapToMethod[element.nodeName][node.nodeName] === 'string') {
+			addpre = ".";
+			method = mapToMethod[element.nodeName][node.nodeName];
+		}
+	} else if (typeof mapToMethod[element.nodeName] === 'string') {
+		addpre = ".";
+		method = mapToMethod[element.nodeName];
+	}
+	let cf = false;
+	for (let a in node.attributes) {
+		let attrs = node.attributes;
 		try {
 			parseInt(a);
 			if (attrs.hasOwnProperty(a) && attrs[a].nodeType == 2) {
-				var method = attrs[a].nodeName;
-				var attr = method;
-				var attrType = fieldTypes[element.nodeName][attr];
-				if (method == "xmlns:xsd" || method == "xsd:noNamespaceSchemaLocation" || method == 'containerField') {
+				let cfmethod = attrs[a].nodeName;
+				if (cfmethod === 'containerField') {
+					cf = true;
+				}
+			}
+		} catch (e) {
+			console.log(e);
+		}
+	}
+	if (!cf) {
+		return "		"+element.nodeName+n+addpre+method+"("+node.nodeName+n+'_'+cn+");\n";
+	} else {
+		return "";
+	}
+}
+
+JavaSerializer.subSerializeToString = function(element, n, grandparent, gn) {
+	n = n || 0;
+	let str = "";
+	if (n === 0) {
+		str += "		"+element.nodeName+"Object "+element.nodeName+n+" = new "+element.nodeName+"Object();\n";
+        }
+	for (let cn in element.childNodes) {
+		let node = element.childNodes[cn];
+		if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 1) {
+			str += "		"+node.nodeName+"Object "+node.nodeName+n+'_'+cn+" = new "+node.nodeName+"Object();\n";
+			str += JavaSerializer.subSerializeToString(node, n+'_'+cn, element, ""+n);
+			str += printParentChild(element, n, node, cn);
+		}
+	}
+	for (let a in element.attributes) {
+		let attrs = element.attributes;
+		try {
+			parseInt(a);
+			if (attrs.hasOwnProperty(a) && attrs[a].nodeType == 2) {
+				let attr = attrs[a].nodeName;
+				let attrType = fieldTypes[element.nodeName][attr];
+				if (attr == "xmlns:xsd" || attr == "xsd:noNamespaceSchemaLocation") {
 					continue;
 				}
-				method = "set"+method.charAt(0).toUpperCase() + method.slice(1);
-				str += "		"+element.nodeName+n+"."+method+"(";
-				if (attrs[a].nodeValue == 'NULL') {
-					str += "null";
-				} else if (attrType === "SFString") {
-					str += '"'+attrs[a].nodeValue.replace(/\\?"/g, "&quot;")+'"';
-				} else if (attrType === "SFInt32") {
-					str += attrs[a].nodeValue;
-				} else if (attrType === "SFFloat") {
-					str += attrs[a].nodeValue+"f";
-				} else if (attrType === "SFDouble") {
-					str += attrs[a].nodeValue+"d";
-				} else if (attrType === "SFBool") {
-					str += attrs[a].nodeValue
-				} else if (attrType === "MFString") {
-					str += "new String[] {"+attrs[a].nodeValue.split('" "').join('","')+"}";
-				} else if (
-					attrType === "MFInt32"||
-					attrType === "MFImage"||
-					attrType === "SFImage") {
-					str += "new int[] {"+attrs[a].nodeValue.split(' ').join(',')+"}";
-				} else if (
-					attrType === "SFColor"||
-					attrType === "MFColor"||
-					attrType === "SFColorRGBA"||
-					attrType === "MFColorRGBA"||
-					attrType === "SFVec2f"||
-					attrType === "SFVec3f"||
-					attrType === "SFVec4f"||
-					attrType === "MFVec2f"||
-					attrType === "MFVec3f"||
-					attrType === "MFVec4f"||
-					attrType === "SFMatrix3f"||
-					attrType === "SFMatrix4f"|
-					attrType === "MFMatrix3f"||
-					attrType === "MFMatrix4f"|
-					attrType === "SFRotation"|
-					attrType === "MFRotation"|
-					attrType === "MFFloat") {
-					str += "new float[] {"+attrs[a].nodeValue.split(' ').join('f,')+"f}";
-				} else if (
-					attrType === "SFVec2d"||
-					attrType === "SFVec3d"||
-					attrType === "SFVec4d"|
-					attrType === "MFVec2d"||
-					attrType === "MFVec3d"||
-					attrType === "MFVec4d"|
-					attrType === "SFMatrix3d"||
-					attrType === "SFMatrix4d"|
-					attrType === "MFMatrix3d"||
-					attrType === "MFMatrix4d"|
-					attrType === "MFDouble") {
-					str += "new double[] {"+attrs[a].nodeValue.split(' ').join('d,')+"d}";
-				} else if (attrType === "MFBool") {
-					str += "new boolean[] {"+attrs[a].nodeValue.split(' ').join(',')+"}";
+				if (attr === 'containerField') {
+					let method = attrs[a].nodeValue;
+					method = "set"+method.charAt(0).toUpperCase() + method.slice(1);
+					str += "		"+grandparent.nodeName+gn+"."+method+"(";
+					str += element.nodeName+n;
+					console.log(grandparent.nodeName+gn+"."+method+"("+element.nodeName+n+")");
 				} else {
-					str += attrs[a].nodeValue;
+					let method = attr;
+					method = "set"+method.charAt(0).toUpperCase() + method.slice(1);
+					str += "		"+element.nodeName+n+"."+method+"(";
+					if (attrs[a].nodeValue == 'NULL') {
+						str += "null";
+					} else if (attrType === "SFString") {
+						str += '"'+attrs[a].nodeValue.replace(/\\?"/g, "&quot;")+'"';
+					} else if (attrType === "SFInt32") {
+						str += attrs[a].nodeValue;
+					} else if (attrType === "SFFloat") {
+						str += attrs[a].nodeValue+"f";
+					} else if (attrType === "SFDouble") {
+						str += attrs[a].nodeValue+"d";
+					} else if (attrType === "SFBool") {
+						str += attrs[a].nodeValue
+					} else if (attrType === "MFString") {
+						str += "new String[] {"+attrs[a].nodeValue.split('" "').join('","')+"}";
+					} else if (
+						attrType === "MFInt32"||
+						attrType === "MFImage"||
+						attrType === "SFImage") {
+						str += "new int[] {"+attrs[a].nodeValue.split(' ').join(',')+"}";
+					} else if (
+						attrType === "SFColor"||
+						attrType === "MFColor"||
+						attrType === "SFColorRGBA"||
+						attrType === "MFColorRGBA"||
+						attrType === "SFVec2f"||
+						attrType === "SFVec3f"||
+						attrType === "SFVec4f"||
+						attrType === "MFVec2f"||
+						attrType === "MFVec3f"||
+						attrType === "MFVec4f"||
+						attrType === "SFMatrix3f"||
+						attrType === "SFMatrix4f"|
+						attrType === "MFMatrix3f"||
+						attrType === "MFMatrix4f"|
+						attrType === "SFRotation"|
+						attrType === "MFRotation"|
+						attrType === "MFFloat") {
+						str += "new float[] {"+attrs[a].nodeValue.split(' ').join('f,')+"f}";
+					} else if (
+						attrType === "SFVec2d"||
+						attrType === "SFVec3d"||
+						attrType === "SFVec4d"|
+						attrType === "MFVec2d"||
+						attrType === "MFVec3d"||
+						attrType === "MFVec4d"|
+						attrType === "SFMatrix3d"||
+						attrType === "SFMatrix4d"|
+						attrType === "MFMatrix3d"||
+						attrType === "MFMatrix4d"|
+						attrType === "MFDouble") {
+						str += "new double[] {"+attrs[a].nodeValue.split(' ').join('d,')+"d}";
+					} else if (attrType === "MFBool") {
+						str += "new boolean[] {"+attrs[a].nodeValue.split(' ').join(',')+"}";
+					} else {
+						str += attrs[a].nodeValue;
+					}
 				}
 				str += ");\n";
 			}
