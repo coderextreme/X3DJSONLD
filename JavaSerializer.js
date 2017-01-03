@@ -186,6 +186,23 @@ let mapToMethod2 = {
 		"Sphere" : "setMassDensityModel",
 		"Box" : "setMassDensityModel"
 	},
+	"LoadSensor" : {
+		"X3DUrlObject" : "addWatchList",
+		"ShaderPart" : "addWatchList",
+		"ImageTexture" : "addWatchList",
+		"MovieTexture" : "addWatchList",
+		"AudioClip" : "addWatchList",
+		"DISEntityTypeMapping" : "addWatchList",
+		"X3DScriptNode" : "addWatchList",
+		"Script" : "addWatchList",
+		"GeoMetadata" : "addWatchList",
+		"ImageTexture3D" : "addWatchList",
+		"Inline" : "addWatchList",
+		"ShaderProgram" : "addWatchList",
+		"Anchor" : "addWatchList",
+		"PackagedShader" : "addWatchList",
+		"ImageCubeMapTexture" : "addWatchList",
+	},
 	"MetadataSet" : {
 		"ProtoInstance" : "setMetadata"
 	}
@@ -361,7 +378,6 @@ JavaSerializer.subSerializeToString = function(element, n, grandparent, gn) {
 			parseInt(a);
 			if (attrs.hasOwnProperty(a) && attrs[a].nodeType == 2) {
 				let attr = attrs[a].nodeName;
-				let attrType = fieldTypes[element.nodeName][attr];
 				if (attr == "xmlns:xsd" || attr == "xsd:noNamespaceSchemaLocation") {
 					continue;
 				}
@@ -373,6 +389,7 @@ JavaSerializer.subSerializeToString = function(element, n, grandparent, gn) {
 					console.log(grandparent.nodeName+gn+"."+method+"("+element.nodeName+n+")");
 				} else {
 					let method = attr;
+					let attrType = fieldTypes[element.nodeName][attr];
 					method = "set"+method.charAt(0).toUpperCase() + method.slice(1);
 					str += "		"+element.nodeName+n+"."+method+"(";
 					if (attrs[a].nodeValue == 'NULL') {
