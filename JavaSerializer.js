@@ -44,10 +44,6 @@ let mapToMethod2 = {
 		"IS": "setIS"
 	},
 	"Appearance" : {
-		"FillProperties": "setFillProperties",
-		"LineProperties": "setLineProperties",
-		"TextureTransform": "setTextureTransform",
-		"MultiTextureTransform": "setTextureTransform",
 		"IS": "setIS"
 	},
 	"HAnimJoint" : {
@@ -57,152 +53,25 @@ let mapToMethod2 = {
 		 "HAnimViewpoint": "addViewpoints",
 		 "Coordinate": "setSkinCoord"
         },
-	"GeoElevationGrid" : {
-		 "TextureCoordinate": "setTexCoord",
-		"GeoOrigin" : "setGeoOrigin"
-        },
-	"ElevationGrid" : {
-		 "TextureCoordinate": "setTexCoord"
-        },
-	"IndexedTriangleSet" : {
-		"TextureCoordinateGenerator": "setTexCoord",
-        },
-	"IndexedTriangleFanSet" : {
-		"TextureCoordinate": "setTexCoord",
-        },
-	"IndexedFaceSet" : {
-		"TextureCoordinate": "setTexCoord",
-		"MultiTextureCoordinate": "setTexCoord"
-	},
-	"MultiTextureTransform" : {
-		"TextureTransform": "addTextureTransform"
-	},
-	"MultiTextureCoordinate" : {
-		"TextureCoordinate": "addTexCoord"
-	},
-	"IndexedQuadSet" : {
-		"TextureCoordinate": "setTexCoord"
-	},
 	"ComposedShader" : {
 		"field" : "addField",
-		"Shaders" : "addParts",
 		"ShaderPart" : "addParts"
 	},
         "ProtoBody" : {
                 "ROUTE" : "addChildren",
                 "ProtoDeclare" : "addChildren"
         },
-	"ProtoDeclare" : {
-		"ProtoBody" : "setProtoBody",
-		"ProtoInterface" : "setProtoInterface",
-		"field" : "addField"
-	},
-	"ExternProtoDeclare" : {
-		"field" : "addField"
-	},
-	"ProtoInterface" : {
-		"field" : "addField"
-	},
-	"ProtoInstance" : {
-		"fieldValue" : "addFieldValue"
-	},
 	"Script" : {
 		"field" : "addField",
 		"IS": "setIS"
 	},
         "Text" : {
-                "FontStyle" : "setFontStyle",
 		"IS": "setIS"
-        },
-        "GeoLOD" : {
-		"Shape" : "addRootNode",
-		"WorldInfo" : "addRootNode",
-		"GeoOrigin" : "setGeoOrigin"
-        },
-        "GeoPositionInterpolator" : {
-		"GeoOrigin" : "setGeoOrigin"
-        },
-        "GeoTransform" : {
-		"GeoOrigin" : "setGeoOrigin"
-        },
-        "GeoCoordinate" : {
-		"GeoOrigin" : "setGeoOrigin"
-        },
-        "GeoTouchSensor" : {
-		"GeoOrigin" : "setGeoOrigin"
-        },
-        "GeoViewpoint" : {
-		"GeoOrigin" : "setGeoOrigin"
         },
         "GeoLocation" : {
                 "ROUTE" : "addChildren",
-		"GeoOrigin" : "setGeoOrigin",
                 "ExternProtoDeclare" : "addChildren"
         },
-        "NurbsTrimmedSurface" : {
-		"Coordinate" : "setControlPoint",
-		"Contour2D" : "addTrimmingContour"
-	},
-        "NurbsPatchSurface" : {
-		"Coordinate" : "setControlPoint"
-	},
-        "NurbsCurve" : {
-		"Coordinate" : "setControlPoint"
-	},
-        "NurbsPositionInterpolator" : {
-		"Coordinate" : "setControlPoint"
-	},
-        "IsoSurfaceVolumeData" : {
-		"CartoonVolumeStyle" : "addRenderStyle"
-	},
-        "SegmentedVolumeData" : {
-		"OpacityMapVolumeStyle" : "addRenderStyle",
-		"ToneMappedVolumeStyle" : "addRenderStyle"
-	},
-        "VolumeData" : {
-		"ToneMappedVolumeStyle" : "setRenderStyle",
-		"BlendedVolumeStyle" : "setRenderStyle",
-		"ComposedVolumeStyle" : "setRenderStyle",
-		"CartoonVolumeStyle" : "setRenderStyle",
-		"ProjectionVolumeStyle" : "setRenderStyle",
-		"EdgeEnhancementVolumeStyle" : "setRenderStyle",
-		"ShadedVolumeStyle" : "setRenderStyle",
-		"SilhouetteEnhancementVolumeStyle" : "setRenderStyle"
-	},
-        "BlendedVolumeStyle" : {
-		"ToneMappedVolumeStyle" : "setRenderStyle",
-		"ComposedVolumeStyle" : "setRenderStyle"
-	},
-        "ComposedVolumeStyle" : {
-		"BlendedVolumeStyle" : "addRenderStyle",
-		"CartoonVolumeStyle" : "addRenderStyle",
-		"OpacityMapVolumeStyle" : "addRenderStyle",
-		"BoundaryEnhancementVolumeStyle" : "addRenderStyle",
-		"EdgeEnhancementVolumeStyle" : "addRenderStyle",
-		"ToneMappedVolumeStyle" : "addRenderStyle",
-		"SilhouetteEnhancementVolumeStyle" : "addRenderStyle"
-	},
-        "RigidBody" : {
-		"Sphere" : "setMassDensityModel",
-		"Box" : "setMassDensityModel"
-	},
-	"LoadSensor" : {
-		"X3DUrlObject" : "addWatchList",
-		"ShaderPart" : "addWatchList",
-		"ImageTexture" : "addWatchList",
-		"MovieTexture" : "addWatchList",
-		"AudioClip" : "addWatchList",
-		"DISEntityTypeMapping" : "addWatchList",
-		"X3DScriptNode" : "addWatchList",
-		"Script" : "addWatchList",
-		"GeoMetadata" : "addWatchList",
-		"ImageTexture3D" : "addWatchList",
-		"Inline" : "addWatchList",
-		"ShaderProgram" : "addWatchList",
-		"Anchor" : "addWatchList",
-		"PackagedShader" : "addWatchList",
-		"ImageCubeMapTexture" : "addWatchList",
-	},
 	"MetadataSet" : {
 		"ProtoInstance" : "setMetadata"
 	}
