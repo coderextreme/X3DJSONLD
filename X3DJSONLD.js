@@ -163,8 +163,6 @@ var x3djsonNS;
 
 // Load X3D JSON into web page
 
-var containerFields = [];
-
 
 function elementSetAttribute(element, key, value) {
 	if (key === 'SON schema') {
@@ -180,21 +178,19 @@ function elementSetAttribute(element, key, value) {
 
 function ConvertChildren(parentkey, object, element, path) {
 	var key;
-	containerFields.unshift(parentkey.substr(1));
 
 	for (key in object) {
 		if (typeof object[key] === 'object') {
 			if (isNaN(parseInt(key))) {
-				ConvertObject(key, object, element, path);
+				ConvertObject(key, object, element, path, parentkey.substr(1));
 			} else {
-				ConvertToX3DOM(object[key], key, element, path);
+				ConvertToX3DOM(object[key], key, element, path, parentkey.substr(1));
 			}
 		}
 	}
-	containerFields.shift();
 }
 
-function CreateElement(key, x3djsonNS) {
+function CreateElement(key, x3djsonNS, containerField) {
 	var child = null;
 	if (typeof x3djsonNS === 'undefined') {
 		child = document.createElement(key);
@@ -205,8 +201,8 @@ function CreateElement(key, x3djsonNS) {
 			child = document.createElement(key);
 		}
 	}
-	if (containerFields.length > 1 && containerFields[0] !== 'children' && containerFields[0] !== 'shaders') {
-		child.setAttribute('containerField', containerFields[0]);
+	if (typeof containerField !== 'undefined') {
+		child.setAttribute('containerField', containerField);
 	}
 	return child;
 }
@@ -236,7 +232,7 @@ function setCDATACreateFunction(fnc) {
 	CDATACreateFunction = fnc;
 }
 
-function ConvertObject(key, object, element, path) {
+function ConvertObject(key, object, element, path, containerField) {
 	if (object !== null && typeof object[key] === 'object') {
 		if (key.substr(0,1) === '@') {
 			ConvertToX3DOM(object[key], key, element, path);
@@ -260,7 +256,7 @@ function ConvertObject(key, object, element, path) {
 					element.appendChild(document.createTextNode("\n"));
 				} catch(e) {
 					// if JSON parse failed, it might be XML or WRL
-					var child = CreateElement(key, x3djsonNS);
+					var child = CreateElement(key, x3djsonNS, containerField);
 					// console.error("Reloading", object[key]["@url"].join('","').replace(/\.json/g, '.x3d').split(/","/));
 					ConvertToX3DOM(object[key], key, child, path);
 					element.appendChild(child);
@@ -281,14 +277,14 @@ function ConvertObject(key, object, element, path) {
 						}
 					}
 					if (typeof object[key][childkey] === 'object') {
-						var child = CreateElement(key, x3djsonNS);
+						var child = CreateElement(key, x3djsonNS, containerField);
 						ConvertToX3DOM(object[key][childkey], childkey, child, path);
 						element.appendChild(child);
 						element.appendChild(document.createTextNode("\n"));
 					}
 				}
 			} else {
-				var child = CreateElement(key, x3djsonNS);
+				var child = CreateElement(key, x3djsonNS, containerField);
 				ConvertToX3DOM(object[key], key, child, path);
 				element.appendChild(child);
 				element.appendChild(document.createTextNode("\n"));
@@ -315,7 +311,7 @@ function JSONStringToXML(str) {
 	return str;
 }
 
-function ConvertToX3DOM(object, parentkey, element, path) {
+function ConvertToX3DOM(object, parentkey, element, path, containerField) {
 	var key;
 	var localArray = [];
 	var isArray = false;
