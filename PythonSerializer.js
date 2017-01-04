@@ -14155,7 +14155,7 @@ function printParentChild(element, n, node, cn) {
 		}
 	}
 	if (!cf) {
-		return element.nodeName+n+addpre+method+"("+node.nodeName+n+'_'+cn+");\n";
+		return element.nodeName+n+addpre+method+"("+node.nodeName+n+'_'+cn+")\n";
 	} else {
 		return "";
 	}
@@ -14164,6 +14164,7 @@ function printParentChild(element, n, node, cn) {
 var PythonSerializer = {};
 
 PythonSerializer.serializeToString = function(json, element, file) {
+	console.log(file);
 	var str = "";
 	str += "from jnius import autoclass\n";
 	str += "from X3Dautoclass import *\n";
@@ -14198,7 +14199,6 @@ PythonSerializer.subSerializeToString = function(element, n, grandparent, gn) {
 					method = "set"+method.charAt(0).toUpperCase() + method.slice(1);
 					str += grandparent.nodeName+gn+"."+method+"(";
 					str += element.nodeName+n;
-					console.log(grandparent.nodeName+gn+"."+method+"("+element.nodeName+n+")");
 				} else {
 					let method = attr;
 					let attrType = fieldTypes[element.nodeName][attr];
@@ -14215,7 +14215,13 @@ PythonSerializer.subSerializeToString = function(element, n, grandparent, gn) {
 					} else if (attrType === "SFDouble") {
 						str += attrs[a].nodeValue;
 					} else if (attrType === "SFBool") {
-						str += attrs[a].nodeValue
+						if (attrs[a].nodeValue === 'true') {
+							str += "True"
+						} else if (attrs[a].nodeValue === 'false') {
+							str += "False"
+						} else {
+							str += attrs[a].nodeValue;
+						}
 					} else if (attrType === "MFString") {
 						str += "["+attrs[a].nodeValue.split('" "').join('","')+"]";
 					} else if (
@@ -14256,12 +14262,12 @@ PythonSerializer.subSerializeToString = function(element, n, grandparent, gn) {
 						attrType === "MFDouble") {
 						str += "["+attrs[a].nodeValue.split(' ').join(',')+"]";
 					} else if (attrType === "MFBool") {
-						str += "["+attrs[a].nodeValue.split(' ').join(',')+"]";
+						str += "["+attrs[a].nodeValue.title().split(' ').join(',')+"]";
 					} else {
 						str += attrs[a].nodeValue;
 					}
 				}
-				str += ");\n";
+				str += ")\n";
 			}
 		} catch (e) {
 		}
