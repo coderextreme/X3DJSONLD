@@ -5,7 +5,7 @@ for i in `ls *.java | grep -v RunSaxon.java` `find examples/ -name '*.java'`
 do
 	CLASS=`dirname $i`/`basename $i .java` 
 	CLASS=`echo $CLASS | sed 's/^[\.\/]*//'`
-	echo $CLASS
+	echo $CLASS 1>&2
 	if javac $i && java $CLASS
 	then
 		tar -rf GoodJava.tar $i
