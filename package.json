@@ -6,7 +6,8 @@
     "express": "*",
     "xml2js": "*",
     "java": "*",
-    "xmldom": "*"
+    "xmldom": "*",
+    "node-mkdirp": "*"
   },
   "scripts": {
     "start": "node app.js",

@@ -97,10 +97,10 @@ JavaSerializer.serializeToString = function(json, element, clazz) {
 	*/
 
 	let str = "";
-	let pc = clazz.replace(/-|\./g, "$")
+	let pc = clazz.replace(/-|\.| /g, "$")
 	let c = pc.lastIndexOf("/");
 	let clz = pc.substr(c+1);
-	clz = clz.replace(/^([0-9].*|default)/, "_$1")
+	clz = clz.replace(/^([0-9].*|default$)/, "_$1")
 	let pkg = pc.substr(0, c).replace(/\//g, ".").trim();
 
 	if (pkg.length > 0) {
@@ -253,7 +253,6 @@ JavaSerializer.subSerializeToString = function(element, n, grandparent, gn) {
 					method = "set"+method.charAt(0).toUpperCase() + method.slice(1);
 					str += "		"+grandparent.nodeName+gn+"."+method+"(";
 					str += element.nodeName+n;
-					console.log(grandparent.nodeName+gn+"."+method+"("+element.nodeName+n+")");
 				} else {
 					let method = attr;
 					let attrType = fieldTypes[element.nodeName][attr];
