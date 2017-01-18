@@ -2,6 +2,9 @@
 
 // Convert X3D JSON to X3D XML
 
+process.argv.shift();
+process.argv.shift();
+
 var convertJSON = require('./convertJSON.js');
 
-convertJSON('./DOMSerializer.js', "-roundtrip.x3d");
+convertJSON('./DOMSerializer.js', ".x3d");
