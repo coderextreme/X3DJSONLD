@@ -213,8 +213,7 @@ function recompute (value)
 <ROUTE fromNode="DECLViewFrustum_INSTANCE_GeometryComputationScript" fromField="spine_changed" toNode="DECLViewFrustum_INSTANCE_FrustumExtrusion" toField="set_spine"></ROUTE>
 <ROUTE fromNode="DECLViewFrustum_INSTANCE_GeometryComputationScript" fromField="scale_changed" toNode="DECLViewFrustum_INSTANCE_FrustumExtrusion" toField="set_scale"></ROUTE>
 <ROUTE fromNode="DECLViewFrustum_INSTANCE_GeometryComputationScript" fromField="point_changed" toNode="DECLViewFrustum_INSTANCE_FrustumCoordinate" toField="point"></ROUTE>
-<!--Visualization assists-->
-<Transform scale="5 5 5">
+<!--Visualization assists--><Transform scale="5 5 5">
 </Transform>
 </Scene>
 </X3D>

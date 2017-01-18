@@ -5,7 +5,7 @@
 <meta name="creator" content="David Roussel"></meta>
 <meta name="translator" content="James Harney, Don Brutzman NPS"></meta>
 <meta name="created" content="7 April 2002"></meta>
-<meta name="modified" content="19 March 2009"></meta>
+<meta name="modified" content="20 September 2016"></meta>
 <meta name="reference" content="http://vrmlstuff.free.fr/materials"></meta>
 <meta name="subject" content="Universal Media Material Library"></meta>
 <meta name="identifier" content="http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoExamples.x3d"></meta>
@@ -33,7 +33,7 @@
 <Sphere containerField="geometry" DEF="Ball" radius="0.5"></Sphere>
 </Shape>
 </Anchor>
-<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco" parameter="&quot;target=_source&quot;" url="&quot;examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" DEF="TextMat" diffuseColor="1 1 1"></Material>
+<Transform translation="0 0.3 0.5"><Anchor description="ArtDeco00" parameter="&quot;target=_source&quot;" url="&quot;examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" DEF="TextMat" diffuseColor="1 1 1"></Material>
 </Appearance>
 <Text containerField="geometry" string="&quot;ArtDeco00&quot;"><FontStyle containerField="fontStyle" DEF="Style" family="&quot;SANS&quot;" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" size="0.3" style="BOLD"></FontStyle>
 </Text>

@@ -4,14 +4,16 @@
 <meta name="description" content="Provide example for expansion of a MaterialModulator ProtoInstance as regular nodes. MaterialModulator mimics a Material node and modulate fields as an animation effect."></meta>
 <meta name="creator" content="Don Brutzman, John Carlson, Roy Walmsley"></meta>
 <meta name="created" content="2 July 2016"></meta>
-<meta name="modified" content="7 July 2016"></meta>
-<meta name="subject" content="X3D prototype expansion requiring Script inputOutput fields"></meta>
+<meta name="modified" content="28 August 2016"></meta>
+<meta name="subject" content="X3D prototype expander, IS/connect, Script inputOutput field"></meta>
 <meta name="Image" content="MaterialModulator.png"></meta>
 <meta name="reference" content="MaterialModulator.x3d"></meta>
 <meta name="reference" content="JSON prototype expander https://github.com/coderextreme/X3DJSONLD"></meta>
 <meta name="TODO" content="Create corresponding web page describing Prototype Expander design."></meta>
 <meta name="TODO" content="Create stylesheet converter matching this Prototype Expander design pattern."></meta>
 <meta name="TODO" content="Add external ROUTEs to original example as a further test case for Prototype Expander design."></meta>
+<meta name="reference" content="https://github.com/coderextreme/X3DJSONLD/blob/master/PrototypeExpander.js"></meta>
+<meta name="reference" content="https://github.com/coderextreme/X3DJSONLD/blob/master/ServerPrototypeExpander.js"></meta>
 <meta name="reference" content="X3D Tooltips: ProtoBody http://www.web3d.org/x3d/content/X3dTooltips.html#ProtoBody"></meta>
 <meta name="reference" content="4.4.4.3 PROTO definition semantics http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/concepts.html#PROTOdefinitionsemantics"></meta>
 <meta name="reference" content="[x3d-public] Prototype Expander, Question on design of instance expansions: http://web3d.org/pipermail/x3d-public_web3d.org/2016-July/004982.html"></meta>
@@ -20,11 +22,11 @@
 <meta name="license" content="../license.html"></meta>
 </head>
 <Scene><Shape><Sphere containerField="geometry"></Sphere>
-<Appearance containerField="appearance"><!--Prototype Expander design note: only first node (the node type) of the prototype is substituted here.--><Material containerField="material" DEF="MaterialModulatorNodeExpanded1"><!--Prototype Expander design note: no children nodes found in originally defined initial ProtoBody node, so no contained child nodes appear here--></Material>
+<Appearance containerField="appearance"><!--Prototype Expander design note: only first node (the node type) of the prototype is substituted here.--><Material containerField="material" DEF="MaterialModulatorNodeExpanded1" diffuseColor="0.5 0.1 0.1"><!--Prototype Expander design note: no children nodes found in originally defined initial ProtoBody node, so no contained child nodes appear here--></Material>
 </Appearance>
 </Shape>
 <!--Prototype Expander design note: only first node (the node type) of the prototype is renderable above. when Switch is first allowed--><Switch DEF="HideAdditionalPrototypeBodyNodesExpanded1" whichChoice="-1"><!--Prototype Expander design note: all children inside a Switch continue to receive/send events.--><Group><!--Prototype Expander design note: additional follow-on nodes from the original ProtoBody are placed here.--><Script DEF="MaterialModulatorScriptExpanded1"><field name="enabled" accessType="inputOutput" type="SFBool" value="true"></field>
-<field name="diffuseColor" accessType="inputOutput" type="SFColor" value="0.8 0.8 0.8"></field>
+<field name="diffuseColor" accessType="inputOutput" type="SFColor" value="0.5 0.1 0.1"></field>
 <field name="newColor" accessType="outputOnly" type="SFColor"></field>
 <field name="clockTrigger" accessType="inputOnly" type="SFTime"></field>
 <![CDATA[ecmascript:

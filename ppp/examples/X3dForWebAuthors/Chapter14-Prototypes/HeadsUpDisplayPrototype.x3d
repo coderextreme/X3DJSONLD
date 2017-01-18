@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd"><head><meta name="title" content="HeadsUpDisplayPrototype.x3d"></meta>
-<meta name="description" content="Demonstrates use of a ProximitySensor in building a Heads Up Display (HUD)"></meta>
-<meta name="documentation" content="A simple heads-up display (HUD) Prototype manages the display of a HUD and maintains its position on the screen. Changes to fieldOfView (in Viewpoint node) will change screen position Fields: hudSize Size of HUD (initializeOnly - SFVec3f) default=\&quot;1 1 .01\&quot; hudColor Color of HUD (inputOutput - SFColor) default=\&quot;1 1 1\&quot; screenOffset Offset of HUD. This field positions the HUD on the display screen (inputOutput - SFVec3f) default=\&quot;0 0 0\&quot; children Geometry to be placed on the HUD. Origin is center of HUD. (inputOutput - MFNode) default = [] position_changed Current viewer location (outputOnly - SFVec3f) orientation_changed Current viewer orientation (outputOnly - SFRotation)"></meta>
+<meta name="description" content="Reusable Prototype definition that applies a ProximitySensor for a simple HeadsUpDisplay (HUD) prototype that maintains a stable position for its children on the screen."></meta>
 <meta name="creator" content="Leonard Daly and Don Brutzman"></meta>
 <meta name="created" content="15 July 2006"></meta>
-<meta name="modified" content="10 January 2014"></meta>
+<meta name="modified" content="24 October 2016"></meta>
 <meta name="reference" content="HeadsUpDisplayExample.x3d"></meta>
 <meta name="reference" content="http://X3dGraphics.com"></meta>
 <meta name="reference" content="http://www.web3d.org/x3d/content/examples/X3dResources.html"></meta>
