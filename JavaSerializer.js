@@ -182,6 +182,7 @@ JavaSerializer.serializeToString = function(json, element, clazz) {
 	str += "public class "+clz+" {\n";
 	str += "	public static void main(String[] args) {\n";
 	str += JavaSerializer.subSerializeToString(element);
+	str += "	X3D0.toFileJSON(\"JSON.json\");\n";
 	str += "	}\n";
 	str += "}\n";
 	return str;

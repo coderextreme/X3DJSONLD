@@ -18,8 +18,8 @@
 <field name="bias" accessType="inputOutput" type="SFFloat" value="0.5"></field>
 <field name="scale" accessType="inputOutput" type="SFFloat" value="0.5"></field>
 <field name="power" accessType="inputOutput" type="SFFloat" value="2"></field>
-<ShaderPart containerField="parts" url="&quot;x3dom.vs&quot;" type="VERTEX"></ShaderPart>
-<ShaderPart containerField="parts" url="&quot;bubbles.fs&quot;" type="FRAGMENT"></ShaderPart>
+<ShaderPart url="&quot;x3dom.vs&quot;" type="VERTEX"></ShaderPart>
+<ShaderPart url="&quot;bubbles.fs&quot;" type="FRAGMENT"></ShaderPart>
 </ComposedShader>
 </Appearance>
 </Shape>

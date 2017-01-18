@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd"><head><meta name="title" content="HeadsUpDisplayExample.x3d"></meta>
-<meta name="description" content="Demonstrates use of a ProximitySensor in building a Heads Up Display (HUD)"></meta>
-<meta name="documentation" content="A simple heads-up display (HUD) Prototype manages the display of a HUD and maintains its position on the screen. Changes to fieldOfView (in Viewpoint node) will change screen position Fields: hudSize Size of HUD (initializeOnly - SFVec3f) default=\&quot;1 1 .01\&quot; hudColor Color of HUD (inputOutput - SFColor) default=\&quot;1 1 1\&quot; screenOffset Offset of HUD. This field positions the HUD on the display screen (inputOutput - SFVec3f) default=\&quot;0 0 0\&quot; hudGeometry Geometry to be placed on the HUD. Origin is center of HUD. (inputOutput - MFNode) default = [] position_changed Current viewer location (outputOnly - SFVec3f) orientation_changed Current viewer orientation (outputOnly - SFRotation)"></meta>
+<meta name="description" content="Prototype definition that demonstrates use of a simple HeadsUpDisplay (HUD) prototype that maintains a stable position for its children on the screen."></meta>
 <meta name="creator" content="Leonard Daly and Don Brutzman"></meta>
 <meta name="created" content="15 July 2006"></meta>
-<meta name="modified" content="10 January 2014"></meta>
+<meta name="modified" content="24 October 2016"></meta>
 <meta name="reference" content="HeadsUpDisplayPrototype.x3d"></meta>
 <meta name="reference" content="http://X3dGraphics.com"></meta>
 <meta name="reference" content="http://www.web3d.org/x3d/content/examples/X3dResources.html"></meta>
@@ -31,7 +30,7 @@
  
 --><Background DEF="SandyShallowBottom" groundAngle="0.05 1.52 1.56 1.5707" groundColor="0.2 0.2 0 0.3 0.3 0 0.5 0.5 0.3 0.1 0.3 0.4 0 0.2 0.4" skyAngle="0.04 0.05 0.1 1.309 1.57" skyColor="0.8 0.8 0.2 0.8 0.8 0.2 0.1 0.1 0.6 0.1 0.1 0.6 0.1 0.25 0.8 0.6 0.6 0.9"></Background>
 <Viewpoint description="Heads-up display (HUD)"></Viewpoint>
-<!--ProtoDeclare is the "cookie cutter" template, ProtoInstance creates an actual occurrence--><Group><Transform DEF="DECLHeadsUpDisplay_HeadsUpDisplay_HudContainer"><Transform translation="-0.75 1 -5"><Group><Shape><Text containerField="geometry" string="&quot;HUD text stays fixed&quot; &quot;while user navigates&quot;"><FontStyle containerField="fontStyle" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" size="0.3"></FontStyle>
+<!--ProtoDeclare is the "cookie cutter" template, ProtoInstance creates an actual occurrence--><Group><Transform DEF="DECLHeadsUpDisplay_HeadsUpDisplayInstance_HudContainer"><Transform translation="-0.75 1 -5"><Group><Shape><Text containerField="geometry" string="&quot;HUD text stays fixed&quot; &quot;while user navigates&quot;"><FontStyle containerField="fontStyle" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" size="0.3"></FontStyle>
 </Text>
 <Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.894118 0.819608 1"></Material>
 </Appearance>
@@ -39,11 +38,9 @@
 </Group>
 </Transform>
 </Transform>
-<ProximitySensor DEF="DECLHeadsUpDisplay_HeadsUpDisplay_HereIAm" size="10000000 10000000 10000000"></ProximitySensor>
-<ROUTE fromNode="DECLHeadsUpDisplay_HeadsUpDisplay_HereIAm" fromField="orientation_changed" toNode="DECLHeadsUpDisplay_HeadsUpDisplay_HudContainer" toField="rotation"></ROUTE>
-<ROUTE fromNode="DECLHeadsUpDisplay_HeadsUpDisplay_HereIAm" fromField="position_changed" toNode="DECLHeadsUpDisplay_HeadsUpDisplay_HudContainer" toField="translation"></ROUTE>
+<ProximitySensor DEF="DECLHeadsUpDisplay_HeadsUpDisplayInstance_HereIAm" size="10000000 10000000 10000000"></ProximitySensor>
+<ROUTE fromNode="DECLHeadsUpDisplay_HeadsUpDisplayInstance_HereIAm" fromField="orientation_changed" toNode="DECLHeadsUpDisplay_HeadsUpDisplayInstance_HudContainer" toField="rotation"></ROUTE>
+<ROUTE fromNode="DECLHeadsUpDisplay_HeadsUpDisplayInstance_HereIAm" fromField="position_changed" toNode="DECLHeadsUpDisplay_HeadsUpDisplayInstance_HudContainer" toField="translation"></ROUTE>
 </Group>
-
-
 </Scene>
 </X3D>
