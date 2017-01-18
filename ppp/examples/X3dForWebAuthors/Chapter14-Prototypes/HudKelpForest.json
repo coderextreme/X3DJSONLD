@@ -1,593 +1,424 @@
-{
-  "X3D": {
-    "encoding": "UTF-8",
-    "@profile": "Immersive",
-    "@version": "3.3",
-    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
-      "meta": [
-        {
-          "@name": "title",
-          "@content": "HudKelpForest.x3d"
-        },
-        {
-          "@name": "description",
-          "@content": "Demonstrates use of a ProximitySensor in building a HUD, with display values showing current view location."
-        },
-        {
-          "@name": "creator",
-          "@content": "Leonard Daly and Don Brutzman"
-        },
-        {
-          "@name": "created",
-          "@content": "15 July 2006"
-        },
-        {
-          "@name": "modified",
-          "@content": "24 October 2016"
-        },
-        {
-          "@name": "Image",
-          "@content": "HudKelpForestScreenshot.png"
-        },
-        {
-          "@name": "reference",
-          "@content": "http://X3dGraphics.com"
-        },
-        {
-          "@name": "reference",
-          "@content": "http://www.web3d.org/x3d/content/examples/X3dResources.html"
-        },
-        {
-          "@name": "rights",
-          "@content": "Copyright 2006, Daly Realism and Don Brutzman"
-        },
-        {
-          "@name": "subject",
-          "@content": "X3D book, X3D graphics, X3D-Edit, http://www.x3dGraphics.com"
-        },
-        {
-          "@name": "identifier",
-          "@content": "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14-Prototypes/HudKelpForest.x3d"
-        },
-        {
-          "@name": "generator",
-          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
-        },
-        {
-          "@name": "license",
-          "@content": "../license.html"
-        },
-        {
-          "@name": "translated",
-          "@content": "17 January 2017"
-        },
-        {
-          "@name": "generator",
-          "@content": "X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
-        },
-        {
-          "@name": "warning",
-          "@content": "An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
-        }
-      ]
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"HudKelpForest.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Demonstrates use of a ProximitySensor in building a HUD, with display values showing current view location."
+          },
+          {
+            "@name":"creator",
+            "@content":"Leonard Daly and Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"15 July 2006"
+          },
+          {
+            "@name":"modified",
+            "@content":"24 October 2016"
+          },
+          {
+            "@name":"Image",
+            "@content":"HudKelpForestScreenshot.png"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://X3dGraphics.com"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/X3dResources.html"
+          },
+          {
+            "@name":"rights",
+            "@content":"Copyright 2006, Daly Realism and Don Brutzman"
+          },
+          {
+            "@name":"subject",
+            "@content":"X3D book, X3D graphics, X3D-Edit, http://www.x3dGraphics.com"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14-Prototypes/HudKelpForest.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"18 January 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
     },
     "Scene": {
-      "-children": [
-        {},
-        {},
-        {
-          "Background": {
-            "@backUrl": [
-              "urn:web3d:media:textures/panoramas/horizon_3_back.jpg",
-              "horizon_3_back.jpg",
-              "../../Basic/UniversalMediaPanoramas/horizon_3_back.jpg",
-              "http://www.web3d.org/WorkingGroups/media/textures/panoramas/horizon_3_back.jpg",
-              "http://www.web3d.org/x3d/content/examples/UniversalMediaPanoramas/horizon_3_back.jpg",
-              "http://www.web3dmedia.com/UniversalMedia/textures/panoramas/horizon_3_back.jpg",
-              "http://www.officetowers.com/UniversalMedia/textures/panoramas/horizon_3_back.jpg",
-              "http://geometrek.com/UniversalMedia/textures/panoramas/horizon_3_back.jpg",
-              "http://www.sc.ehu.es/ccwgamoa/UniversalMedia/textures/panoramas/horizon_3_back.jpg"
-            ],
-            "@bottomUrl": [
-              "urn:web3d:media:textures/panoramas/horizon_3_bottom.jpg",
-              "horizon_3_bottom.jpg",
-              "../../Basic/UniversalMediaPanoramas/horizon_3_bottom.jpg",
-              "http://www.web3d.org/WorkingGroups/media/textures/panoramas/horizon_3_bottom.jpg",
-              "http://www.web3d.org/x3d/content/examples/UniversalMediaPanoramas/horizon_3_bottom.jpg",
-              "http://www.web3dmedia.com/UniversalMedia/textures/panoramas/horizon_3_bottom.jpg",
-              "http://www.officetowers.com/UniversalMedia/textures/panoramas/horizon_3_bottom.jpg",
-              "http://geometrek.com/UniversalMedia/textures/panoramas/horizon_3_bottom.jpg",
-              "http://www.sc.ehu.es/ccwgamoa/UniversalMedia/textures/panoramas/horizon_3_bottom.jpg"
-            ],
-            "@frontUrl": [
-              "urn:web3d:media:textures/panoramas/horizon_3_front.jpg",
-              "horizon_3_front.jpg",
-              "../../Basic/UniversalMediaPanoramas/horizon_3_front.jpg",
-              "http://www.web3d.org/WorkingGroups/media/textures/panoramas/horizon_3_front.jpg",
-              "http://www.web3d.org/x3d/content/examples/UniversalMediaPanoramas/horizon_3_front.jpg",
-              "http://www.web3dmedia.com/UniversalMedia/textures/panoramas/horizon_3_front.jpg",
-              "http://www.officetowers.com/UniversalMedia/textures/panoramas/horizon_3_front.jpg",
-              "http://geometrek.com/UniversalMedia/textures/panoramas/horizon_3_front.jpg",
-              "http://www.sc.ehu.es/ccwgamoa/UniversalMedia/textures/panoramas/horizon_3_front.jpg"
-            ],
-            "@groundAngle": [
-              1.309,
-              1.5707
-            ],
-            "@groundColor": [
-              0.1,
-              0.1,
-              0,
-              0.4,
-              0.25,
-              0.2,
-              0.6,
-              0.6,
-              0.6
-            ],
-            "@leftUrl": [
-              "urn:web3d:media:textures/panoramas/horizon_3_left.jpg",
-              "horizon_3_left.jpg",
-              "../../Basic/UniversalMediaPanoramas/horizon_3_left.jpg",
-              "http://www.web3d.org/WorkingGroups/media/textures/panoramas/horizon_3_left.jpg",
-              "http://www.web3d.org/x3d/content/examples/UniversalMediaPanoramas/horizon_3_left.jpg",
-              "http://www.web3dmedia.com/UniversalMedia/textures/panoramas/horizon_3_left.jpg",
-              "http://www.officetowers.com/UniversalMedia/textures/panoramas/horizon_3_left.jpg",
-              "http://geometrek.com/UniversalMedia/textures/panoramas/horizon_3_left.jpg",
-              "http://www.sc.ehu.es/ccwgamoa/UniversalMedia/textures/panoramas/horizon_3_left.jpg"
-            ],
-            "@rightUrl": [
-              "urn:web3d:media:textures/panoramas/horizon_3_right.jpg",
-              "horizon_3_right.jpg",
-              "../../Basic/UniversalMediaPanoramas/horizon_3_right.jpg",
-              "http://www.web3d.org/WorkingGroups/media/textures/panoramas/horizon_3_right.jpg",
-              "http://www.web3d.org/x3d/content/examples/UniversalMediaPanoramas/horizon_3_right.jpg",
-              "http://www.web3dmedia.com/UniversalMedia/textures/panoramas/horizon_3_right.jpg",
-              "http://www.officetowers.com/UniversalMedia/textures/panoramas/horizon_3_right.jpg",
-              "http://geometrek.com/UniversalMedia/textures/panoramas/horizon_3_right.jpg",
-              "http://www.sc.ehu.es/ccwgamoa/UniversalMedia/textures/panoramas/horizon_3_right.jpg"
-            ],
-            "@skyAngle": [
-              1.309,
-              1.5707
-            ],
-            "@skyColor": [
-              0,
-              0.5,
-              1,
-              0,
-              0,
-              1,
-              0,
-              0,
-              1
-            ],
-            "@topUrl": [
-              "urn:web3d:media:textures/panoramas/horizon_3_top.jpg",
-              "horizon_3_top.jpg",
-              "../../Basic/UniversalMediaPanoramas/horizon_3_top.jpg",
-              "http://www.web3d.org/WorkingGroups/media/textures/panoramas/horizon_3_top.jpg",
-              "http://www.web3d.org/x3d/content/examples/UniversalMediaPanoramas/horizon_3_top.jpg",
-              "http://www.web3dmedia.com/UniversalMedia/textures/panoramas/horizon_3_top.jpg",
-              "http://www.officetowers.com/UniversalMedia/textures/panoramas/horizon_3_top.jpg",
-              "http://geometrek.com/UniversalMedia/textures/panoramas/horizon_3_top.jpg",
-              "http://www.sc.ehu.es/ccwgamoa/UniversalMedia/textures/panoramas/horizon_3_top.jpg"
-            ]
-          }
-        },
-        {
-          "Switch": {
-            "@whichChoice": -1,
-            "-children": [
-              {
-                "Transform": {
-                  "@DEF": "HudContent",
-                  "@translation": [
-                    -0.5,
-                    -0.5,
-                    0.1
-                  ],
-                  "-children": [
-                    {
-                      "Transform": {
-                        "@translation": [
-                          -0.07,
-                          -0.2,
-                          0
-                        ],
-                        "-children": [
-                          {
-                            "Shape": {
-                              "-appearance": {
-                                "Appearance": {
-                                  "-material": {
-                                    "Material": {
-                                      "@diffuseColor": [
-                                        0,
-                                        0,
-                                        0
-                                      ]
-                                    }
-                                  }
-                                }
-                              },
-                              "-geometry": {
-                                "Text": {
-                                  "-fontStyle": {
-                                    "FontStyle": {
-                                      "@family": [
-                                        "SANS SERIF"
-                                      ],
-                                      "@justify": [
-                                        "MIDDLE",
-                                        "MIDDLE"
-                                      ],
-                                      "@size": 0.1,
-                                      "@style": "PLAIN"
+        "-children":[
+          { "Background":
+            {
+              "@backUrl":["examples/Basic/UniversalMediaPanoramas/horizon_3_back.jpg","examples/X3dForWebAuthors/Chapter14-Prototypes/horizon_3_back.jpg","examples/X3dForWebAuthors/Chapter14-Prototypes/../../Basic/UniversalMediaPanoramas/horizon_3_back.jpg","http://www.web3d.org/WorkingGroups/media/textures/panoramas/horizon_3_back.jpg","http://www.web3d.org/x3d/content/examples/UniversalMediaPanoramas/horizon_3_back.jpg","http://www.web3dmedia.com/UniversalMedia/textures/panoramas/horizon_3_back.jpg","http://www.officetowers.com/UniversalMedia/textures/panoramas/horizon_3_back.jpg","http://geometrek.com/UniversalMedia/textures/panoramas/horizon_3_back.jpg","http://www.sc.ehu.es/ccwgamoa/UniversalMedia/textures/panoramas/horizon_3_back.jpg"],
+              "@bottomUrl":["examples/Basic/UniversalMediaPanoramas/horizon_3_bottom.jpg","examples/X3dForWebAuthors/Chapter14-Prototypes/horizon_3_bottom.jpg","examples/X3dForWebAuthors/Chapter14-Prototypes/../../Basic/UniversalMediaPanoramas/horizon_3_bottom.jpg","http://www.web3d.org/WorkingGroups/media/textures/panoramas/horizon_3_bottom.jpg","http://www.web3d.org/x3d/content/examples/UniversalMediaPanoramas/horizon_3_bottom.jpg","http://www.web3dmedia.com/UniversalMedia/textures/panoramas/horizon_3_bottom.jpg","http://www.officetowers.com/UniversalMedia/textures/panoramas/horizon_3_bottom.jpg","http://geometrek.com/UniversalMedia/textures/panoramas/horizon_3_bottom.jpg","http://www.sc.ehu.es/ccwgamoa/UniversalMedia/textures/panoramas/horizon_3_bottom.jpg"],
+              "@frontUrl":["examples/Basic/UniversalMediaPanoramas/horizon_3_front.jpg","examples/X3dForWebAuthors/Chapter14-Prototypes/horizon_3_front.jpg","examples/X3dForWebAuthors/Chapter14-Prototypes/../../Basic/UniversalMediaPanoramas/horizon_3_front.jpg","http://www.web3d.org/WorkingGroups/media/textures/panoramas/horizon_3_front.jpg","http://www.web3d.org/x3d/content/examples/UniversalMediaPanoramas/horizon_3_front.jpg","http://www.web3dmedia.com/UniversalMedia/textures/panoramas/horizon_3_front.jpg","http://www.officetowers.com/UniversalMedia/textures/panoramas/horizon_3_front.jpg","http://geometrek.com/UniversalMedia/textures/panoramas/horizon_3_front.jpg","http://www.sc.ehu.es/ccwgamoa/UniversalMedia/textures/panoramas/horizon_3_front.jpg"],
+              "@groundAngle":[1.309,1.5707],
+              "@groundColor":[0.1,0.1,0,0.4,0.25,0.2,0.6,0.6,0.6],
+              "@leftUrl":["examples/Basic/UniversalMediaPanoramas/horizon_3_left.jpg","examples/X3dForWebAuthors/Chapter14-Prototypes/horizon_3_left.jpg","examples/X3dForWebAuthors/Chapter14-Prototypes/../../Basic/UniversalMediaPanoramas/horizon_3_left.jpg","http://www.web3d.org/WorkingGroups/media/textures/panoramas/horizon_3_left.jpg","http://www.web3d.org/x3d/content/examples/UniversalMediaPanoramas/horizon_3_left.jpg","http://www.web3dmedia.com/UniversalMedia/textures/panoramas/horizon_3_left.jpg","http://www.officetowers.com/UniversalMedia/textures/panoramas/horizon_3_left.jpg","http://geometrek.com/UniversalMedia/textures/panoramas/horizon_3_left.jpg","http://www.sc.ehu.es/ccwgamoa/UniversalMedia/textures/panoramas/horizon_3_left.jpg"],
+              "@rightUrl":["examples/Basic/UniversalMediaPanoramas/horizon_3_right.jpg","examples/X3dForWebAuthors/Chapter14-Prototypes/horizon_3_right.jpg","examples/X3dForWebAuthors/Chapter14-Prototypes/../../Basic/UniversalMediaPanoramas/horizon_3_right.jpg","http://www.web3d.org/WorkingGroups/media/textures/panoramas/horizon_3_right.jpg","http://www.web3d.org/x3d/content/examples/UniversalMediaPanoramas/horizon_3_right.jpg","http://www.web3dmedia.com/UniversalMedia/textures/panoramas/horizon_3_right.jpg","http://www.officetowers.com/UniversalMedia/textures/panoramas/horizon_3_right.jpg","http://geometrek.com/UniversalMedia/textures/panoramas/horizon_3_right.jpg","http://www.sc.ehu.es/ccwgamoa/UniversalMedia/textures/panoramas/horizon_3_right.jpg"],
+              "@skyAngle":[1.309,1.5707],
+              "@skyColor":[0,0.5,1,0,0,1,0,0,1],
+              "@topUrl":["examples/Basic/UniversalMediaPanoramas/horizon_3_top.jpg","examples/X3dForWebAuthors/Chapter14-Prototypes/horizon_3_top.jpg","examples/X3dForWebAuthors/Chapter14-Prototypes/../../Basic/UniversalMediaPanoramas/horizon_3_top.jpg","http://www.web3d.org/WorkingGroups/media/textures/panoramas/horizon_3_top.jpg","http://www.web3d.org/x3d/content/examples/UniversalMediaPanoramas/horizon_3_top.jpg","http://www.web3dmedia.com/UniversalMedia/textures/panoramas/horizon_3_top.jpg","http://www.officetowers.com/UniversalMedia/textures/panoramas/horizon_3_top.jpg","http://geometrek.com/UniversalMedia/textures/panoramas/horizon_3_top.jpg","http://www.sc.ehu.es/ccwgamoa/UniversalMedia/textures/panoramas/horizon_3_top.jpg"]
+            }
+          },
+          { "Switch":
+            {
+              "@whichChoice":-1,
+              "-children":[
+                { "Transform":
+                  {
+                    "@DEF":"HudContent",
+                    "@translation":[-0.5,-0.5,0.1],
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@translation":[-0.07,-0.2,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0,0,0]
+                                          }
+                                        }
                                     }
                                   },
-                                  "@string": [
-                                    "Position: "
-                                  ]
-                                }
-                              }
-                            }
-                          }
-                        ]
-                      }
-                    },
-                    {
-                      "Transform": {
-                        "@translation": [
-                          -0.13,
-                          -0.3,
-                          0
-                        ],
-                        "-children": [
-                          {
-                            "Shape": {
-                              "-appearance": {
-                                "Appearance": {
-                                  "-material": {
-                                    "Material": {
-                                      "@diffuseColor": [
-                                        0,
-                                        0,
-                                        0
-                                      ]
+                                "-geometry":
+                                  { "Text":
+                                    {
+                                      "@string":["Position: "],
+                                      "-fontStyle":
+                                        { "FontStyle":
+                                          {
+                                            "@family":["SANS SERIF"],
+                                            "@justify":["MIDDLE","MIDDLE"],
+                                            "@size":0.1
+                                          }
+                                        }
                                     }
                                   }
-                                }
-                              },
-                              "-geometry": {
-                                "Text": {
-                                  "-fontStyle": {
-                                    "FontStyle": {
-                                      "@family": [
-                                        "SANS SERIF"
-                                      ],
-                                      "@justify": [
-                                        "MIDDLE",
-                                        "MIDDLE"
-                                      ],
-                                      "@size": 0.1,
-                                      "@style": "PLAIN"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[-0.13,-0.3,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0,0,0]
+                                          }
+                                        }
                                     }
                                   },
-                                  "@string": [
-                                    "Orientation: "
-                                  ]
-                                }
-                              }
-                            }
-                          }
-                        ]
-                      }
-                    },
-                    {
-                      "Transform": {
-                        "@translation": [
-                          0.5,
-                          -0.2,
-                          0
-                        ],
-                        "-children": [
-                          {
-                            "Shape": {
-                              "-appearance": {
-                                "Appearance": {
-                                  "-material": {
-                                    "Material": {
-                                      "@diffuseColor": [
-                                        0,
-                                        0,
-                                        1
-                                      ]
+                                "-geometry":
+                                  { "Text":
+                                    {
+                                      "@string":["Orientation: "],
+                                      "-fontStyle":
+                                        { "FontStyle":
+                                          {
+                                            "@family":["SANS SERIF"],
+                                            "@justify":["MIDDLE","MIDDLE"],
+                                            "@size":0.1
+                                          }
+                                        }
                                     }
                                   }
-                                }
-                              },
-                              "-geometry": {
-                                "Text": {
-                                  "-fontStyle": {
-                                    "FontStyle": {
-                                      "@family": [
-                                        "SANS SERIF"
-                                      ],
-                                      "@justify": [
-                                        "MIDDLE",
-                                        "MIDDLE"
-                                      ],
-                                      "@size": 0.1,
-                                      "@style": "PLAIN"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0.5,-0.2,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0,0,1]
+                                          }
+                                        }
                                     }
                                   },
-                                  "@string": [
-                                    ""
-                                  ]
-                                }
-                              }
-                            }
-                          }
-                        ]
-                      }
-                    },
-                    {
-                      "Transform": {
-                        "@translation": [
-                          0.5,
-                          -0.3,
-                          0
-                        ],
-                        "-children": [
-                          {
-                            "Shape": {
-                              "-appearance": {
-                                "Appearance": {
-                                  "-material": {
-                                    "Material": {
-                                      "@diffuseColor": [
-                                        0.1,
-                                        0.7,
-                                        0.1
-                                      ]
+                                "-geometry":
+                                  { "Text":
+                                    {
+                                      "@string":[""],
+                                      "-fontStyle":
+                                        { "FontStyle":
+                                          {
+                                            "@family":["SANS SERIF"],
+                                            "@justify":["MIDDLE","MIDDLE"],
+                                            "@size":0.1
+                                          }
+                                        }
                                     }
                                   }
-                                }
-                              },
-                              "-geometry": {
-                                "Text": {
-                                  "-fontStyle": {
-                                    "FontStyle": {
-                                      "@family": [
-                                        "SANS SERIF"
-                                      ],
-                                      "@justify": [
-                                        "MIDDLE",
-                                        "MIDDLE"
-                                      ],
-                                      "@size": 0.1,
-                                      "@style": "PLAIN"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0.5,-0.3,0],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.1,0.7,0.1]
+                                          }
+                                        }
                                     }
                                   },
-                                  "@string": [
-                                    "0 1 0 0"
-                                  ]
-                                }
-                              }
-                            }
-                          }
-                        ]
-                      }
-                    },
-                    {
-                      "Transform": {
-                        "@translation": [
-                          0.27,
-                          -0.25,
-                          -0.1
-                        ],
-                        "-children": [
-                          {
-                            "Shape": {
-                              "-geometry": {
-                                "Box": {
-                                  "@size": [
-                                    1.4,
-                                    0.25,
-                                    0.01
-                                  ]
-                                }
-                              },
-                              "-appearance": {
-                                "Appearance": {
-                                  "-material": {
-                                    "Material": {
-                                      "@diffuseColor": [
-                                        0.9,
-                                        0.9,
-                                        0.9
-                                      ],
-                                      "@transparency": 0.5
+                                "-geometry":
+                                  { "Text":
+                                    {
+                                      "@string":["0 1 0 0"],
+                                      "-fontStyle":
+                                        { "FontStyle":
+                                          {
+                                            "@family":["SANS SERIF"],
+                                            "@justify":["MIDDLE","MIDDLE"],
+                                            "@size":0.1
+                                          }
+                                        }
                                     }
                                   }
-                                }
                               }
                             }
-                          }
-                        ]
-                      }
-                    }
-                  ]
-                }
-              }
-            ]
-          }
-        },
-        {
-          "Group": {
-            "-children": [
-              {
-                "Transform": {
-                  "@DEF": "DECLHeadsUpDisplay_HeadsUpDisplayInstance_HudContainer",
-                  "-children": [
-                    {
-                      "Transform": {
-                        "@translation": [
-                          0.2,
-                          0.5,
-                          -2
-                        ],
-                        "-children": [
-                          {
-                            "Group": {
-                              "-children": [
-                                {
-                                  "Transform": {
-                                    "@USE": "HudContent"
+                          ]
+                        }
+                      },
+                      { "Transform":
+                        {
+                          "@translation":[0.27,-0.25,-0.1],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "-geometry":
+                                  { "Box":
+                                    {
+                                      "@size":[1.4,0.25,0.01]
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.9,0.9,0.9],
+                                            "@transparency":0.5
+                                          }
+                                        }
+                                    }
                                   }
-                                }
-                              ]
+                              }
                             }
-                          }
-                        ]
+                          ]
+                        }
                       }
-                    }
-                  ]
+                    ]
+                  }
                 }
-              },
-              {
-                "ProximitySensor": {
-                  "@DEF": "DECLHeadsUpDisplay_HeadsUpDisplayInstance_HereIAm",
-                  "@size": [
-                    10000000,
-                    10000000,
-                    10000000
-                  ]
+              ]
+            }
+          },
+          { "Group":
+            {
+              "-children":[
+                { "Transform":
+                  {
+                    "@DEF":"DECLHeadsUpDisplay_HeadsUpDisplayInstance_HudContainer",
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@translation":[0.2,0.5,-2],
+                          "-children":[
+                            { "Group":
+                              {
+                                "-children":[
+                                  { "Transform":
+                                    {
+                                      "@USE":"HudContent"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "ProximitySensor":
+                  {
+                    "@DEF":"DECLHeadsUpDisplay_HeadsUpDisplayInstance_HereIAm",
+                    "@size":[10000000,10000000,10000000]
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode":"DECLHeadsUpDisplay_HeadsUpDisplayInstance_HereIAm",
+                    "@fromField":"orientation_changed",
+                    "@toNode":"DECLHeadsUpDisplay_HeadsUpDisplayInstance_HudContainer",
+                    "@toField":"rotation"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode":"DECLHeadsUpDisplay_HeadsUpDisplayInstance_HereIAm",
+                    "@fromField":"position_changed",
+                    "@toNode":"DECLHeadsUpDisplay_HeadsUpDisplayInstance_HudContainer",
+                    "@toField":"translation"
+                  }
                 }
-              },
-              {
-                "ROUTE": {
-                  "@fromNode": "DECLHeadsUpDisplay_HeadsUpDisplayInstance_HereIAm",
-                  "@fromField": "orientation_changed",
-                  "@toNode": "DECLHeadsUpDisplay_HeadsUpDisplayInstance_HudContainer",
-                  "@toField": "rotation"
+              ]
+            }
+          },
+          { "Script":
+            {
+              "@DEF":"ConvertValueScript",
+              "field": [
+                {
+                  "@name":"sfVec3f",
+                  "@accessType":"inputOnly",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"sfRotation",
+                  "@accessType":"inputOnly",
+                  "@type":"SFRotation"
+                },
+                {
+                  "@name":"sfVec3fString",
+                  "@accessType":"outputOnly",
+                  "@type":"MFString"
+                },
+                {
+                  "@name":"sfRotationString",
+                  "@accessType":"outputOnly",
+                  "@type":"MFString"
                 }
-              },
-              {
-                "ROUTE": {
-                  "@fromNode": "DECLHeadsUpDisplay_HeadsUpDisplayInstance_HereIAm",
-                  "@fromField": "position_changed",
-                  "@toNode": "DECLHeadsUpDisplay_HeadsUpDisplayInstance_HudContainer",
-                  "@toField": "translation"
-                }
-              }
-            ]
+              ],
+              "#sourceText":[
+"// Description: Script that converts typed values",
+"// Filename:    HudKelpForestScriptConvert.js",
+"// Author:      Leonard Daly",
+"// Identifier:  http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14-Prototypes/HudKelpForestScriptConvert.js",
+"// Reference:   http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14-Prototypes/HudKelpForest.x3d",
+"// Created:     1 January 1999",
+"// Revised:     10 October 2015",
+"// Reference:   http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Scripts",
+"// License:     ../license.html",
+"",
+"function setDigits (v, p) {",
+"  return Math.floor (v*p + 0.5) / p;",
+"}",
+"",
+"function sfVec3f (value) {",
+"  var x = setDigits (value[0], 100);",
+"  var y = setDigits (value[1], 100);",
+"  var z = setDigits (value[2], 100);",
+"  sfVec3fString = new MFString (x + '  ' + y + '  ' + z);",
+"}",
+"",
+"function sfRotation (value) {",
+"  var x = setDigits (value[0], 100);",
+"  var y = setDigits (value[1], 100);",
+"  var z = setDigits (value[2], 100);",
+"  var r = setDigits (value[3], 1000);",
+"  sfRotationString = new MFString (x + '  ' + y + '  ' + z + '  ' + r);",
+"}"
+]
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"DECLHeadsUpDisplay_HeadsUpDisplayInstance_HereIAm",
+              "@fromField":"position_changed",
+              "@toNode":"ConvertValueScript",
+              "@toField":"sfVec3f"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"DECLHeadsUpDisplay_HeadsUpDisplayInstance_HereIAm",
+              "@fromField":"orientation_changed",
+              "@toNode":"ConvertValueScript",
+              "@toField":"sfRotation"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"ConvertValueScript",
+              "@fromField":"sfVec3fString",
+              "@toNode":"DECLTextString_TopLine",
+              "@toField":"string"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"ConvertValueScript",
+              "@fromField":"sfRotationString",
+              "@toNode":"DECLTextString_BottomLine",
+              "@toField":"string"
+            }
           }
-        },
-        {
-          "Script": {
-            "@DEF": "ConvertValueScript",
-            "field": [
-              {
-                "@name": "sfVec3f",
-                "@accessType": "inputOnly",
-                "@type": "SFVec3f"
-              },
-              {
-                "@name": "sfRotation",
-                "@accessType": "inputOnly",
-                "@type": "SFRotation"
-              },
-              {
-                "@name": "sfVec3fString",
-                "@accessType": "outputOnly",
-                "@type": "MFString"
-              },
-              {
-                "@name": "sfRotationString",
-                "@accessType": "outputOnly",
-                "@type": "MFString"
-              }
-            ],
-            "#sourceText": [
-              "// Description: Script that converts typed values",
-              "// Filename:    HudKelpForestScriptConvert.js",
-              "// Author:      Leonard Daly",
-              "// Identifier:  http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14-Prototypes/HudKelpForestScriptConvert.js",
-              "// Reference:   http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14-Prototypes/HudKelpForest.x3d",
-              "// Created:     1 January 1999",
-              "// Revised:     10 October 2015",
-              "// Reference:   http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Scripts",
-              "// License:     ../license.html",
-              "",
-              "function setDigits (v, p) {",
-              "  return Math.floor (v*p + 0.5) / p;",
-              "}",
-              "",
-              "function sfVec3f (value) {",
-              "  var x = setDigits (value[0], 100);",
-              "  var y = setDigits (value[1], 100);",
-              "  var z = setDigits (value[2], 100);",
-              "  sfVec3fString = new MFString (x + '  ' + y + '  ' + z);",
-              "}",
-              "",
-              "function sfRotation (value) {",
-              "  var x = setDigits (value[0], 100);",
-              "  var y = setDigits (value[1], 100);",
-              "  var z = setDigits (value[2], 100);",
-              "  var r = setDigits (value[3], 1000);",
-              "  sfRotationString = new MFString (x + '  ' + y + '  ' + z + '  ' + r);",
-              "}",
-              ""
-            ]
-          }
-        },
-        {
-          "ROUTE": {
-            "@fromNode": "DECLHeadsUpDisplay_HeadsUpDisplayInstance_HereIAm",
-            "@fromField": "position_changed",
-            "@toNode": "ConvertValueScript",
-            "@toField": "sfVec3f"
-          }
-        },
-        {
-          "ROUTE": {
-            "@fromNode": "DECLHeadsUpDisplay_HeadsUpDisplayInstance_HereIAm",
-            "@fromField": "orientation_changed",
-            "@toNode": "ConvertValueScript",
-            "@toField": "sfRotation"
-          }
-        },
-        {
-          "ROUTE": {
-            "@fromNode": "ConvertValueScript",
-            "@fromField": "sfVec3fString",
-            "@toNode": "DECLTextString_TopLine",
-            "@toField": "string"
-          }
-        },
-        {
-          "ROUTE": {
-            "@fromNode": "ConvertValueScript",
-            "@fromField": "sfRotationString",
-            "@toNode": "DECLTextString_BottomLine",
-            "@toField": "string"
-          }
-        },
-        {
-          "Inline": {
-            "@url": [
-              "../KelpForestExhibit/KelpForestMain.x3d",
-              "http://X3dGraphics.com/examples/X3dForWebAuthors/KelpForestExhibit/KelpForestMain.x3d",
-              "../KelpForestExhibit//KelpForestMain.wrl",
-              "http://X3dGraphics.com/examples/X3dForWebAuthors/KelpForestExhibit/KelpForestMain.wrl"
-            ]
-          }
-        }
-      ]
+        ]
     }
   }
 }
