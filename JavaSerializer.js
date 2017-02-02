@@ -238,6 +238,9 @@ JavaSerializer.subSerializeToString = function(element, n, grandparent, gn) {
 			str += "		"+node.nodeName+"Object "+node.nodeName+n+'_'+cn+" = new "+node.nodeName+"Object();\n";
 			str += JavaSerializer.subSerializeToString(node, n+'_'+cn, element, ""+n);
 			str += printParentChild(element, n, node, cn);
+		} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 8) {
+			str += "		CommentsBlock commentsBlock"+n+'_'+cn+" = new CommentsBlock(\""+node.nodeValue.replace(/"/g, '\\"')+"\");\n";
+			str += "		"+element.nodeName+n+".addComments(commentsBlock"+n+'_'+cn+");\n";
 		}
 	}
 	for (let a in element.attributes) {
@@ -272,7 +275,7 @@ JavaSerializer.subSerializeToString = function(element, n, grandparent, gn) {
 					} else if (attrType === "SFBool") {
 						str += attrs[a].nodeValue
 					} else if (attrType === "MFString") {
-						str += "new String[] {"+attrs[a].nodeValue.split('" "').join('","')+"}";
+						str += "new String[] {\""+attrs[a].nodeValue.split('" "').join('","').replace(/"/g, '\\"')+"\"}";
 					} else if (
 						attrType === "MFInt32"||
 						attrType === "MFImage"||
