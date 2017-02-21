@@ -106,43 +106,43 @@ JavaSerializer.serializeToString = function(json, element, clazz) {
 	if (pkg.length > 0) {
 		str += "package "+pkg+";\n";
 	}
-	str += "import org.web3d.x3d.java.*;\n";
-	str += "import org.web3d.x3d.java.CADGeometry.*;\n";
-	str += "import org.web3d.x3d.java.Core.*;\n";
-	str += "import org.web3d.x3d.java.CubeMapTexturing.*;\n";
-	str += "import org.web3d.x3d.java.DIS.*;\n";
-	str += "import org.web3d.x3d.java.EnvironmentalEffects.*;\n";
-	str += "import org.web3d.x3d.java.EnvironmentalSensor.*;\n";
-	str += "import org.web3d.x3d.java.EventUtilities.*;\n";
-	str += "import org.web3d.x3d.java.Followers.*;\n";
-	str += "import org.web3d.x3d.java.Geometry2D.*;\n";
-	str += "import org.web3d.x3d.java.Geometry3D.*;\n";
-	str += "import org.web3d.x3d.java.Geospatial.*;\n";
-	str += "import org.web3d.x3d.java.Grouping.*;\n";
-	str += "import org.web3d.x3d.java.HAnim.*;\n";
-	str += "import org.web3d.x3d.java.Interpolation.*;\n";
-	str += "import org.web3d.x3d.java.KeyDeviceSensor.*;\n";
-	str += "import org.web3d.x3d.java.Layering.*;\n";
-	str += "import org.web3d.x3d.java.Layout.*;\n";
-	str += "import org.web3d.x3d.java.Lighting.*;\n";
-	str += "import org.web3d.x3d.java.NURBS.*;\n";
-	str += "import org.web3d.x3d.java.Navigation.*;\n";
-	str += "import org.web3d.x3d.java.Networking.*;\n";
-	str += "import org.web3d.x3d.java.ParticleSystems.*;\n";
-	str += "import org.web3d.x3d.java.Picking.*;\n";
-	str += "import org.web3d.x3d.java.PointingDeviceSensor.*;\n";
-	str += "import org.web3d.x3d.java.Rendering.*;\n";
-	str += "import org.web3d.x3d.java.RigidBodyPhysics.*;\n";
-	str += "import org.web3d.x3d.java.Scripting.*;\n";
-	str += "import org.web3d.x3d.java.Shaders.*;\n";
-	str += "import org.web3d.x3d.java.Shape.*;\n";
-	str += "import org.web3d.x3d.java.Sound.*;\n";
-	str += "import org.web3d.x3d.java.Text.*;\n";
-	str += "import org.web3d.x3d.java.Texturing3D.*;\n";
-	str += "import org.web3d.x3d.java.Texturing.*;\n";
-	str += "import org.web3d.x3d.java.Time.*;\n";
-	str += "import org.web3d.x3d.java.VolumeRendering.*;\n";
-	str += "import org.web3d.x3d.java.fields.*;\n";
+	str += "import org.web3d.x3d.jsail.*;\n";
+	str += "import org.web3d.x3d.jsail.CADGeometry.*;\n";
+	str += "import org.web3d.x3d.jsail.Core.*;\n";
+	str += "import org.web3d.x3d.jsail.CubeMapTexturing.*;\n";
+	str += "import org.web3d.x3d.jsail.DIS.*;\n";
+	str += "import org.web3d.x3d.jsail.EnvironmentalEffects.*;\n";
+	str += "import org.web3d.x3d.jsail.EnvironmentalSensor.*;\n";
+	str += "import org.web3d.x3d.jsail.EventUtilities.*;\n";
+	str += "import org.web3d.x3d.jsail.Followers.*;\n";
+	str += "import org.web3d.x3d.jsail.Geometry2D.*;\n";
+	str += "import org.web3d.x3d.jsail.Geometry3D.*;\n";
+	str += "import org.web3d.x3d.jsail.Geospatial.*;\n";
+	str += "import org.web3d.x3d.jsail.Grouping.*;\n";
+	str += "import org.web3d.x3d.jsail.HAnim.*;\n";
+	str += "import org.web3d.x3d.jsail.Interpolation.*;\n";
+	str += "import org.web3d.x3d.jsail.KeyDeviceSensor.*;\n";
+	str += "import org.web3d.x3d.jsail.Layering.*;\n";
+	str += "import org.web3d.x3d.jsail.Layout.*;\n";
+	str += "import org.web3d.x3d.jsail.Lighting.*;\n";
+	str += "import org.web3d.x3d.jsail.NURBS.*;\n";
+	str += "import org.web3d.x3d.jsail.Navigation.*;\n";
+	str += "import org.web3d.x3d.jsail.Networking.*;\n";
+	str += "import org.web3d.x3d.jsail.ParticleSystems.*;\n";
+	str += "import org.web3d.x3d.jsail.Picking.*;\n";
+	str += "import org.web3d.x3d.jsail.PointingDeviceSensor.*;\n";
+	str += "import org.web3d.x3d.jsail.Rendering.*;\n";
+	str += "import org.web3d.x3d.jsail.RigidBodyPhysics.*;\n";
+	str += "import org.web3d.x3d.jsail.Scripting.*;\n";
+	str += "import org.web3d.x3d.jsail.Shaders.*;\n";
+	str += "import org.web3d.x3d.jsail.Shape.*;\n";
+	str += "import org.web3d.x3d.jsail.Sound.*;\n";
+	str += "import org.web3d.x3d.jsail.Text.*;\n";
+	str += "import org.web3d.x3d.jsail.Texturing3D.*;\n";
+	str += "import org.web3d.x3d.jsail.Texturing.*;\n";
+	str += "import org.web3d.x3d.jsail.Time.*;\n";
+	str += "import org.web3d.x3d.jsail.VolumeRendering.*;\n";
+	str += "import org.web3d.x3d.jsail.fields.*;\n";
 	str += "import org.web3d.x3d.sai.*;\n";
 	str += "import org.web3d.x3d.sai.CADGeometry.*;\n";
 	str += "import org.web3d.x3d.sai.Core.*;\n";
@@ -182,6 +182,14 @@ JavaSerializer.serializeToString = function(json, element, clazz) {
 	str += "public class "+clz+" {\n";
 	str += "	public static void main(String[] args) {\n";
 	str += JavaSerializer.subSerializeToString(element);
+        str += "        ConfigurationProperties.setShowDefaultAttributes(true);\n";
+        str += "        ConfigurationProperties.setIndentCharacter(ConfigurationProperties.indentCharacter_DEFAULT);\n";
+        str += "        ConfigurationProperties.setIndentIncrement(ConfigurationProperties.indentIncrement_DEFAULT);\n";
+        str += "        ConfigurationProperties.setX3dCanonicalForm();\n";
+        str += "        ConfigurationProperties.initialize();\n";
+
+	str += "	ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_nativeJava);\n";
+
 	str += "	X3D0.toFileJSON(\"JSON.json\");\n";
 	str += "	}\n";
 	str += "}\n";
@@ -241,6 +249,8 @@ JavaSerializer.subSerializeToString = function(element, n, grandparent, gn) {
 		} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 8) {
 			str += "		CommentsBlock commentsBlock"+n+'_'+cn+" = new CommentsBlock(\""+node.nodeValue.replace(/"/g, '\\"')+"\");\n";
 			str += "		"+element.nodeName+n+".addComments(commentsBlock"+n+'_'+cn+");\n";
+		} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 4) {
+			str += "		"+element.nodeName+n+'.setSourceCode("'+node.nodeValue.replace(/"/g, '\\"').split("\r\n").join('\\n\"+\n\"')+'");\n';
 		}
 	}
 	for (let a in element.attributes) {
@@ -260,10 +270,14 @@ JavaSerializer.subSerializeToString = function(element, n, grandparent, gn) {
 				} else {
 					let method = attr;
 					let attrType = fieldTypes[element.nodeName][attr];
-					method = "set"+method.charAt(0).toUpperCase() + method.slice(1);
+					if (attrs[a].nodeValue == 'NULL' && (attrType == "SFNode" || attrType == "MFNode")) {
+						method = "clearChildren";
+					} else {
+						method = "set"+method.charAt(0).toUpperCase() + method.slice(1);
+					}
 					str += "		"+element.nodeName+n+"."+method+"(";
 					if (attrs[a].nodeValue == 'NULL') {
-						str += "null";
+						str += "";
 					} else if (attrType === "SFString") {
 						str += '"'+attrs[a].nodeValue.replace(/\\?"/g, "&quot;")+'"';
 					} else if (attrType === "SFInt32") {
