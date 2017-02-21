@@ -2,6 +2,7 @@
 $servername = "localhost";
 $username = "census";
 $password = "census45.$$";
+$table = "census.link";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password);
@@ -12,7 +13,7 @@ if ($conn->connect_error) {
 } 
 echo "Connected successfully\n";
 
-$sql = "DROP TABLE census.link";
+$sql = "DROP TABLE ". $table;
 
 if ($conn->query($sql) === TRUE) {
     echo "Table link dropped successfully\n";
@@ -22,7 +23,7 @@ if ($conn->query($sql) === TRUE) {
 
 
 // sql to create table
-$sql = "CREATE TABLE census.link (
+$sql = "CREATE TABLE ".$table." (
 parent INT, 
 child INT NOT NULL, 
 type VARCHAR(60) NOT NULL,
