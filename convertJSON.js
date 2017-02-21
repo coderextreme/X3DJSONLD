@@ -29,7 +29,7 @@ function convertJSON(req, ext, basefile) {
 		if (file.match(/node_modules|package.json|JSONSchema/)) {
 			continue;
 		}
-		console.log(file);
+		console.error(file);
 		try {  
 			var basefile = file.substr(0, file.lastIndexOf("."));
 			var file = basefile+".json";
@@ -58,7 +58,7 @@ function convertJSON(req, ext, basefile) {
 				fs.writeFileSync(outfile, str);
 			}
 		} catch (e) {
-			console.log("Error reading", file, e);
+			console.error("Error reading", file, e);
 		}
 	}
 }
