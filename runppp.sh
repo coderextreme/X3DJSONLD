@@ -8,10 +8,10 @@ do
 	echo "=========================$i=====================CompleteXMLPrototypeExpander" 1>&2
 	node CompleteXMLPrototypeExpander.js `basename $i .json`.x3d
 done
-SCRIPTS=`find examples/X3dForWebAuthors/Chapter14-Prototypes examples/Vrml2.0Sourcebook/Chapter31-Prototypes examples/Basic/UniversalMediaMaterials -type f -name '*json' | xargs grep -lw Script`
+SCRIPTS=`find www_web3d_org/ -type f -name '*.json' | xargs grep -lw Script`
 SCRIPTS=`echo $SCRIPTS | sed 's/ /|/g'`
 # echo $SCRIPTS
-for i in `find examples/X3dForWebAuthors/Chapter14-Prototypes examples/Vrml2.0Sourcebook/Chapter31-Prototypes examples/Basic/UniversalMediaMaterials Library/Examples/Gears -type f -name '*json'` # | xargs grep -lw ProtoInstance | egrep -v $SCRIPTS`
+for i in `find www_web3d_org/ Library -type f -name '*json' | xargs grep -lw ProtoInstance | egrep -v $SCRIPTS`
 do
 	echo "=========================$i=====================" 1>&2
 	mkdir -p ppp/`dirname $i`
@@ -20,8 +20,4 @@ do
 	node PPP.js $i > ppp/`dirname $i`/`basename $i`
 	echo "=========================$i=====================CompleteXMLPrototypeExpander" 1>&2
 	node CompleteXMLPrototypeExpander.js `dirname $i`/`basename $i .json`.x3d
-	#if [ $i == examples/X3dForWebAuthors/Chapter14-Prototypes/ViewFrustumExample.json ]
-	#then
-	#	read me
-	#fi
 done

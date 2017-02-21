@@ -2,6 +2,24 @@ var fs = require('fs');
 var mkdirp = require('node-mkdirp');
 var loadX3DJS = require('./serverX3DJSONLD');
 
+var validate = {};
+
+var Ajv = require('ajv');
+var ajv = Ajv({ allErrors:true});
+
+ajv.addFormat("uri", /^(?:[a-z][a-z0-9+\-.]*:)?(?:\/?\/(?:(?:[a-z0-9\-._~!$&'()*+,;=:]|%[0-9a-f]{2})*@)?(?:\[(?:(?:(?:(?:[0-9a-f]{1,4}:){6}|::(?:[0-9a-f]{1,4}:){5}|(?:[0-9a-f]{1,4})?::(?:[0-9a-f]{1,4}:){4}|(?:(?:[0-9a-f]{1,4}:){0,1}[0-9a-f]{1,4})?::(?:[0-9a-f]{1,4}:){3}|(?:(?:[0-9a-f]{1,4}:){0,2}[0-9a-f]{1,4})?::(?:[0-9a-f]{1,4}:){2}|(?:(?:[0-9a-f]{1,4}:){0,3}[0-9a-f]{1,4})?::[0-9a-f]{1,4}:|(?:(?:[0-9a-f]{1,4}:){0,4}[0-9a-f]{1,4})?::)(?:[0-9a-f]{1,4}:[0-9a-f]{1,4}|(?:(?:25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d\d?))|(?:(?:[0-9a-f]{1,4}:){0,5}[0-9a-f]{1,4})?::[0-9a-f]{1,4}|(?:(?:[0-9a-f]{1,4}:){0,6}[0-9a-f]{1,4})?::)|[Vv][0-9a-f]+\.[a-z0-9\-._~!$&'()*+,;=:]+)\]|(?:(?:25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d\d?)|(?:[a-z0-9\-._~!$&'()*+,;=]|%[0-9a-f]{2})*)(?::\d*)?(?:\/(?:[a-z0-9\-._~!$&'()*+,;=:@]|%[0-9a-f]{2})*)*|\/(?:(?:[a-z0-9\-._~!$&'()*+,;=:@]|%[0-9a-f]{2})+(?:\/(?:[a-z0-9\-._~!$&'()*+,;=:@]|%[0-9a-f]{2})*)*)?|(?:[a-z0-9\-._~!$&'()*+,;=:@]|%[0-9a-f]{2})+(?:\/(?:[a-z0-9\-._~!$&'()*+,;=:@]|%[0-9a-f]{2})*)*)?(?:\?(?:[a-z0-9\-._~!$&'()*+,;=:@\/?]|%[0-9a-f]{2})*)?(?:\#(?:[a-z0-9\-._~!$&'()*+,;=:@\/?]|%[0-9a-f]{2})*)?$/i);
+function setVersion(version) {
+	var versions = { "3.0":true,"3.1":true,"3.2":true,"3.3":true,"3.4":true }
+	if (!versions[version]) {
+		console.error("Can only validate version 3.0-3.4 presently. Switching version to 3.3.");
+		version = "3.3";
+	}
+	if (!validate[version]) {
+		var schema = fs.readFileSync("x3d-"+version+"-JSONSchema.json").toString();
+		validate[version] = ajv.compile(JSON.parse(schema));
+	}
+}
+
 function convertJSON(req, ext, basefile) {
 	var serializer = require(req);
 
@@ -17,6 +35,14 @@ function convertJSON(req, ext, basefile) {
 			var file = basefile+".json";
 			var str = fs.readFileSync(file).toString();
 			var json = JSON.parse(str);
+			var version = json.X3D["@version"];
+			setVersion(version);  // loads schema.  TODO.  Only load when version changes
+			var valid = validate[version](json);
+			if (!valid) {
+				throw JSON.stringify(validate[version].errors);
+			}
+				
+
 			var element = loadX3DJS(json, file);
 			// filename conversion goes here.
 			basefile = basefile.replace(/-|\.| /g, "_")
