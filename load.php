@@ -38,7 +38,7 @@ if ($conn->query($sql) === TRUE) {
     echo "Error creating table: " . $conn->error. "\n";
 }
 
-$link = $conn->prepare("INSERT INTO census.link (parent, child, type, name, length, value) VALUES (?, ?, ?, ?, ?, ?)");
+$link = $conn->prepare("INSERT INTO ".$table." (parent, child, type, name, length, value) VALUES (?, ?, ?, ?, ?, ?)");
 
 
 function insertLink($link, $pid, $cid, $type, $name, $value) {
