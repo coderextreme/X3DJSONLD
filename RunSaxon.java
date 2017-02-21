@@ -40,7 +40,10 @@ protected static class ExitException extends SecurityException
 						out = out.substring(out.lastIndexOf("www.web3d.org"));
 					}
 					out = out.substring(0, out.lastIndexOf("."))+".json";
+					System.err.println("WRITING "+out);
+					File.mkdirs(out.substring(0, out.lastIndexOf("/")));
 					net.sf.saxon.Transform.main(new String[] {
+
 								"-warnings:recover",
 								"-o",
 								out,
