@@ -35,10 +35,15 @@ protected static class ExitException extends SecurityException
 			for (int a = 0; a < args.length; a++) {
 				try {
 					System.err.println("BEGIN "+args[a]);
+														     String out = args[a];
+					if (out.lastIndexOf("www.web3d.org") >= 0) {
+						out = out.substring(out.lastIndexOf("www.web3d.org"));
+					}
+					out = out.substring(0, out.lastIndexOf("."))+".json";
 					net.sf.saxon.Transform.main(new String[] {
 								"-warnings:recover",
 								"-o",
-								args[a].substring(0, args[a].lastIndexOf("."))+".json",
+								out,
 								args[a],
 								"X3dToJson.xslt" });
 					// -t  #timing -c # compiled
