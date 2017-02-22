@@ -179,7 +179,7 @@ JavaSerializer.serializeToString = function(json, element, clazz) {
 	str += "public class "+clz+" {\n";
 	str += "	public static void main(String[] args) {\n";
 	str += JavaSerializer.subSerializeToString(element);
-        str += "        ConfigurationProperties.setShowDefaultAttributes(true);\n";
+        str += ";\n        ConfigurationProperties.setShowDefaultAttributes(true);\n";
         str += "        ConfigurationProperties.setIndentCharacter(ConfigurationProperties.indentCharacter_DEFAULT);\n";
         str += "        ConfigurationProperties.setIndentIncrement(ConfigurationProperties.indentIncrement_DEFAULT);\n";
         str += "        ConfigurationProperties.setX3dCanonicalForm();\n";
@@ -218,6 +218,7 @@ function printParentChild(element, n, node, cn) {
 				let cfmethod = attrs[a].nodeName;
 				if (cfmethod === 'containerField') {
 					cf = true;
+					method = attrs[a].nodeValue;
 				}
 			}
 		} catch (e) {
@@ -225,9 +226,10 @@ function printParentChild(element, n, node, cn) {
 		}
 	}
 	if (!cf) {
-		return "		"+element.nodeName+n+addpre+method+"("+node.nodeName+n+'_'+cn+");\n";
+		return "\t".repeat(n)+addpre+method+"(";
 	} else {
-		return "";
+		method = "set"+method.charAt(0).toUpperCase() + method.slice(1);
+		return "\t".repeat(n)+"."+method+"(";
 	}
 }
 
@@ -235,19 +237,19 @@ JavaSerializer.subSerializeToString = function(element, n, grandparent, gn) {
 	n = n || 0;
 	let str = "";
 	if (n === 0) {
-		str += "		"+element.nodeName+"Object "+element.nodeName+n+" = new "+element.nodeName+"Object();\n";
+		str += "\t".repeat(n)+element.nodeName+"Object "+element.nodeName+n+" = new "+element.nodeName+"Object()\n";
         }
 	for (let cn in element.childNodes) {
 		let node = element.childNodes[cn];
 		if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 1) {
-			str += "		"+node.nodeName+"Object "+node.nodeName+n+'_'+cn+" = new "+node.nodeName+"Object();\n";
-			str += JavaSerializer.subSerializeToString(node, n+'_'+cn, element, ""+n);
 			str += printParentChild(element, n, node, cn);
+			str += 'new '+node.nodeName+'Object()\n';
+			str += JavaSerializer.subSerializeToString(node, n+1, element, n);
+			str += "\t".repeat(n)+")\n";
 		} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 8) {
-			str += "		CommentsBlock commentsBlock"+n+'_'+cn+" = new CommentsBlock(\""+node.nodeValue.replace(/"/g, '\\"')+"\");\n";
-			str += "		"+element.nodeName+n+".addComments(commentsBlock"+n+'_'+cn+");\n";
+			str += "\t".repeat(n)+'.addComments(new CommentsBlock("'+node.nodeValue.replace(/"/g, '\\"')+'"))\n';
 		} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 4) {
-			str += "		"+element.nodeName+n+'.setSourceCode("'+node.nodeValue.replace(/"/g, '\\"').replace(/\\n'/, "\\n'").split("\r\n").join('\\n\"+\n\"')+'");\n';
+			str += "\t".repeat(n)+'.setSourceCode("'+node.nodeValue.replace(/"/g, '\\"').replace(/\\n'/, "\\n'").split("\r\n").join('\\n\"+\n\"')+'")\n';
 		}
 	}
 	let fieldAttrType = "";
@@ -275,10 +277,8 @@ JavaSerializer.subSerializeToString = function(element, n, grandparent, gn) {
 					continue;
 				}
 				if (attr === 'containerField') {
-					let method = attrs[a].nodeValue;
-					method = "set"+method.charAt(0).toUpperCase() + method.slice(1);
-					str += "		"+grandparent.nodeName+gn+"."+method+"(";
-					str += element.nodeName+n;
+					/*
+					*/
 				} else {
 					let method = attr;
 					// look at object model
@@ -293,7 +293,7 @@ JavaSerializer.subSerializeToString = function(element, n, grandparent, gn) {
 					} else {
 						method = "set"+method.charAt(0).toUpperCase() + method.slice(1);
 					}
-					str += "		"+element.nodeName+n+"."+method+"(";
+					str += "\t".repeat(n)+"."+method+"(";
 					if (attrs[a].nodeValue === 'NULL') {
 						str += "";
 					} else if (attrType === "SFString") {
@@ -350,8 +350,8 @@ JavaSerializer.subSerializeToString = function(element, n, grandparent, gn) {
 					} else {
 						str += attrs[a].nodeValue;
 					}
+					str += ")\n";
 				}
-				str += ");\n";
 			}
 		} catch (e) {
 			console.error(e);
