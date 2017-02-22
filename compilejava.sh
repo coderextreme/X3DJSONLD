@@ -18,7 +18,8 @@ do
 		else
 			echo diff -w $BASE.json $CLASS.new.json 1>&2
 			diff -w $BASE.json $CLASS.new.json > $CLASS.diff
-			jar -uMf DiffJSON.zip $CLASS.diff
+			jar -uMf DiffJSON.zip $BASE.json $CLASS.new.json $CLASS.diff
+			
 		fi
 	else
 		jar -uMf BadJava.zip $i
