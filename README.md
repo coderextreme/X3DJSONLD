@@ -31,7 +31,7 @@ You should not put up index.html from the X3D JSON Loader found here https://git
 
 https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet
 
-In particular, I am choosing tags, attribute names, and attributes right out of the JSON and XML without limited filtering or checking (just checking JSON schema, which may be ignored).    You should validate any JSON or XML being loaded into the X3D JSON Loader (yes I know it’s problematic).  In particular, if you store XML or JSON from untrusted sources and display them in the Loader, it’s likely you will get an XSS attack.  Please sanitize all input from untrusted source and make sure it’s valid.  We don’t currently have XML Schema or XML Schematron for JSON data yet.  We do have JSON schema, but it doesn't test scripts.
+In particular, I am choosing tags, attribute names, and attributes right out of the JSON and XML with limited filtering or checking (just checking JSON schema, which may be ignored).    You should validate any JSON or XML being loaded into the X3D JSON Loader (yes I know it’s problematic).  In particular, if you store XML or JSON from untrusted sources and display them in the Loader, it’s likely you will get an XSS attack.  Please sanitize all input from untrusted source and make sure it’s valid.  We don’t currently have XML Schema or XML Schematron for JSON data yet.  We do have JSON schema, but it doesn't test scripts.
 
 It’s in the license that I will not be liable for damages.  Please use my software with care.  I am not a security researcher.
 
