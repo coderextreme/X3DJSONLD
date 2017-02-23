@@ -307,7 +307,7 @@ JavaSerializer.subSerializeToString = function(element, n, grandparent, gn) {
 					} else if (attrType === "SFBool") {
 						str += attrs[a].nodeValue
 					} else if (attrType === "MFString") {
-						str += "new String[] {\""+attrs[a].nodeValue.split('" "').join('","').replace(/"/g, '\\"')+"\"}";
+						str += 'new String[] {'+attrs[a].nodeValue.split('" "').join('","')+'}';
 					} else if (
 						attrType === "MFInt32"||
 						attrType === "MFImage"||
