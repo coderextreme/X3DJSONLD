@@ -237,19 +237,6 @@ JavaSerializer.subSerializeToString = function(element, n, grandparent, gn) {
 	if (n === 0) {
 		str += "		"+element.nodeName+"Object "+element.nodeName+n+" = new "+element.nodeName+"Object();\n";
         }
-	for (let cn in element.childNodes) {
-		let node = element.childNodes[cn];
-		if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 1) {
-			str += "		"+node.nodeName+"Object "+node.nodeName+n+'_'+cn+" = new "+node.nodeName+"Object();\n";
-			str += JavaSerializer.subSerializeToString(node, n+'_'+cn, element, ""+n);
-			str += printParentChild(element, n, node, cn);
-		} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 8) {
-			str += "		CommentsBlock commentsBlock"+n+'_'+cn+" = new CommentsBlock(\""+node.nodeValue.replace(/"/g, '\\"')+"\");\n";
-			str += "		"+element.nodeName+n+".addComments(commentsBlock"+n+'_'+cn+");\n";
-		} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 4) {
-			str += "		"+element.nodeName+n+'.setSourceCode("'+node.nodeValue.replace(/"/g, '\\"').replace(/\\n'/, "\\n'").split("\r\n").join('\\n\"+\n\"')+'");\n';
-		}
-	}
 	let fieldAttrType = "";
 	for (let a in element.attributes) {
 		let attrs = element.attributes;
@@ -357,6 +344,19 @@ JavaSerializer.subSerializeToString = function(element, n, grandparent, gn) {
 			console.error(e);
 		}
 		attrType = "";
+	}
+	for (let cn in element.childNodes) {
+		let node = element.childNodes[cn];
+		if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 1) {
+			str += "		"+node.nodeName+"Object "+node.nodeName+n+'_'+cn+" = new "+node.nodeName+"Object();\n";
+			str += JavaSerializer.subSerializeToString(node, n+'_'+cn, element, ""+n);
+			str += printParentChild(element, n, node, cn);
+		} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 8) {
+			str += "		CommentsBlock commentsBlock"+n+'_'+cn+" = new CommentsBlock(\""+node.nodeValue.replace(/"/g, '\\"')+"\");\n";
+			str += "		"+element.nodeName+n+".addComments(commentsBlock"+n+'_'+cn+");\n";
+		} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 4) {
+			str += "		"+element.nodeName+n+'.setSourceCode("'+node.nodeValue.split("\r\n").map(function(x) { return x.replace(/"/g, '\\"'); }).join('\\n\"+\n\"')+'");\n';
+		}
 	}
 	return str;
 }
