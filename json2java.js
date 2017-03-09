@@ -7,4 +7,4 @@ process.argv.shift();
 
 var convertJSON = require('./convertJSON.js');
 
-convertJSON('./JavaSerializer.js', ".java");
+convertJSON({'./JavaSerializer.js': ".java"});

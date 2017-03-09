@@ -20,8 +20,7 @@ function setVersion(version) {
 	}
 }
 
-function convertJSON(req, ext, basefile) {
-	var serializer = require(req);
+function convertJSON(options) {
 
 	var files = process.argv;
 	for (var f in files) {
@@ -52,16 +51,18 @@ function convertJSON(req, ext, basefile) {
 				var outfile = basefile+".json";
 				fs.writeFileSync(outfile, str);
 			}
-			str = serializer.serializeToString(json, element, basefile)
-			if (typeof str !== 'undefined') {
-				var outfile = basefile+ext;
-				fs.writeFileSync(outfile, str);
+			for (var ser in options) {
+				var serializer = require(ser);
+				str = serializer.serializeToString(json, element, basefile)
+				if (typeof str !== 'undefined') {
+					var outfile = basefile+options[ser];
+					fs.writeFileSync(outfile, str);
+				}
 			}
 		} catch (e) {
 			console.error("Error reading", file, e);
 		}
 	}
 }
-
 
 module.exports = convertJSON;
