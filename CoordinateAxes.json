@@ -10,18 +10,23 @@
             {
               "@DEF":"DoNotCollideWithVisualizationWidget",
               "-children":[
-                { "#comment":"Invoke CoordinateAxes in other scenes as an Inline child inside a scaling Transform node, at the topmost level of the scene graph."
+                {
+                  "#comment":"Invoke CoordinateAxes in other scenes as an Inline child inside a scaling Transform node, at the topmost level of the scene graph."
                 },
-                { "#comment":"This NavigationInfo allows examine mode and will be overridden by any parent scene."
+                {
+                  "#comment":"This NavigationInfo allows examine mode and will be overridden by any parent scene."
                 },
-                { "#comment":"Each arrow goes from +1m to -1m to allow linear scaling to fit a scene"
+                {
+                  "#comment":"Each arrow goes from +1m to -1m to allow linear scaling to fit a scene"
                 },
-                { "#comment":"Note each label rotates about the scene's vertical Y axis for consistency, enabling local orientation by user"
+                {
+                  "#comment":"Note each label rotates about the scene's vertical Y axis for consistency, enabling local orientation by user"
                 },
                 { "Group":
                   {
                     "-children":[
-                      { "#comment":"Vertical Y arrow and label"
+                      {
+                        "#comment":"Vertical Y arrow and label"
                       },
                       { "Group":
                         {
@@ -132,7 +137,8 @@
                   {
                     "@rotation":[0,0,1,-1.57079],
                     "-children":[
-                      { "#comment":"Horizontal X arrow and label"
+                      {
+                        "#comment":"Horizontal X arrow and label"
                       },
                       { "Group":
                         {
@@ -195,7 +201,8 @@
                                 "@rotation":[0,0,1,1.57079],
                                 "@translation":[0.072,1.1,0],
                                 "-children":[
-                                  { "#comment":"note label rotated back to original coordinate frame"
+                                  {
+                                    "#comment":"note label rotated back to original coordinate frame"
                                   },
                                   { "Billboard":
                                     {
@@ -238,7 +245,8 @@
                   {
                     "@rotation":[1,0,0,1.57079],
                     "-children":[
-                      { "#comment":"Perpendicular Z arrow and label, note right-hand rule"
+                      {
+                        "#comment":"Perpendicular Z arrow and label, note right-hand rule"
                       },
                       { "Group":
                         {
@@ -301,7 +309,8 @@
                                 "@rotation":[1,0,0,-1.57079],
                                 "@translation":[0,1.1,0.072],
                                 "-children":[
-                                  { "#comment":"note label rotated back to original coordinate frame"
+                                  {
+                                    "#comment":"note label rotated back to original coordinate frame"
                                   },
                                   { "Billboard":
                                     {

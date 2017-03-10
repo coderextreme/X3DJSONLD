@@ -56,15 +56,15 @@ function processURLs(localArray, path) {
 		var hash = "";
 		if (h >= 0) {
 			hash = localArray[url].substring(h);
-			localArray[url] = localArray[url].substring(0, h);
+			// localArray[url] = localArray[url].substring(0, h);
 		}
 		var x3d = localArray[url].lastIndexOf(".x3d") ;
 		if (x3d === localArray[url].length - 4) {
-			localArray[url] = localArray[url].substring(0, x3d)+".json";
+			localArray[url] = localArray[url].substring(0, x3d)+".json" + hash;
 		}
 		var wrl = localArray[url].lastIndexOf(".wrl") ;
 		if (wrl === localArray[url].length - 4) {
-			localArray[url] = localArray[url].substring(0, wrl)+".json";
+			localArray[url] = localArray[url].substring(0, wrl)+".json" + hash;
 		}
 			
         }
@@ -134,12 +134,12 @@ function loadURLs(loadpath, urls, loadedCallback) {
 						}
 					} else if (typeof fs !== 'undefined' && protocol.indexOf("http") !== 0) {
 						// should be async, but out of memory
-						if (fs.statSync(url).isFile()) {
+						try {
 							// console.error("Loading FILE URL", url);
 							var data = fs.readFileSync(url);
 							loadedCallback(data.toString(), url);
-						} else {
-							console.error("File doesn't exist or is not available,", url);
+						} catch (e) {
+							throw(e+ " File doesn't exist or is not available, "+ url);
 						}
 					} else if (typeof $ !== 'undefined' && typeof $.get === 'function') {
 						// console.error("Loading Relative URL", url);
@@ -151,7 +151,7 @@ function loadURLs(loadpath, urls, loadedCallback) {
 					}
 				})(url);
 			} catch (e) {
-				console.error(e);
+			 	throw(e);
 			}
 		}
 	}

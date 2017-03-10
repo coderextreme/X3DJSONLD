@@ -125,7 +125,8 @@
                               {
                                 "@language":"GLSL",
                                 "-children":[
-                                  { "#comment":"http://hypertextbook.com/facts/2005/JustinChe.shtml"
+                                  {
+                                    "#comment":"http://hypertextbook.com/facts/2005/JustinChe.shtml"
                                   }
                                 ],
                                 "field": [

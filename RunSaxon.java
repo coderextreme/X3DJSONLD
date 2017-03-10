@@ -1,3 +1,5 @@
+import java.io.*;
+
 class RunSaxon {
 protected static class ExitException extends SecurityException 
     {
@@ -41,7 +43,10 @@ protected static class ExitException extends SecurityException
 					}
 					out = out.substring(0, out.lastIndexOf("."))+".json";
 					System.err.println("WRITING "+out);
-					File.mkdirs(out.substring(0, out.lastIndexOf("/")));
+					if (out.lastIndexOf("/") > 0) {
+						File dir = new File(out.substring(0, out.lastIndexOf("/")));
+						dir.mkdirs();
+					}
 					net.sf.saxon.Transform.main(new String[] {
 
 								"-warnings:recover",
