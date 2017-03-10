@@ -119,10 +119,14 @@ function compare(obj1, p1, obj2, p2) {
 		
 }
 
-var json = fs.readFileSync(files[0]);
-var result = JSON.parse(json);
-var jsonrt = fs.readFileSync(files[1]);
-var resultrt = JSON.parse(jsonrt);
-if (!compare(result, '', resultrt, '')) {
-	console.log("Different");
+try {
+	var json = fs.readFileSync(files[0]);
+	var result = JSON.parse(json);
+	var jsonrt = fs.readFileSync(files[1]);
+	var resultrt = JSON.parse(jsonrt);
+	if (!compare(result, '', resultrt, '')) {
+		console.log("Different");
+	}
+} catch (e) {
+	console.log(e, files[1]);
 }

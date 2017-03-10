@@ -8,16 +8,16 @@ for i in `ls *.java | grep -v RunSaxon.java` `find www_web3d_org/ -name '*.java'
 do
 	BASE=`dirname $i`/`basename $i .java` 
 	CLASS=`echo $BASE | sed 's/^[\.\/]*//'`
-	echo $CLASS.java 1>&2
-	echo $CLASS.java 2>&1
+	# echo $CLASS.java 1>&2
+	# echo $CLASS.java 2>&1
 	if javac $i && java $CLASS $CLASS.new.json
 	then
-		if [ -z "`diff -w $BASE.json $CLASS.new.json`" ]
+		if [ -z "`node jsondiff.js $BASE.json $CLASS.new.json`" ]
 		then
 			jar -uMf GoodJava.zip $i
 		else
-			echo diff -w $BASE.json $CLASS.new.json 1>&2
-			diff -w $BASE.json $CLASS.new.json > $CLASS.diff
+			echo node jsondiff.js $BASE.json $CLASS.new.json 1>&2
+			node jsondiff.js $BASE.json $CLASS.new.json | tee $CLASS.diff
 			jar -uMf DiffJSON.zip $BASE.json $CLASS.new.json $CLASS.diff
 			
 		fi
