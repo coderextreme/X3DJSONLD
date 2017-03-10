@@ -353,7 +353,7 @@ JavaSerializer.subSerializeToString = function(element, n, grandparent, gn) {
 					} else if (attrType === "SFDouble") {
 						str += attrs[a].nodeValue+"d";
 					} else if (attrType === "SFBool") {
-						str += attrs[a].nodeValue
+						str += attrs[a].nodeValue;
 					} else if (attrType === "MFString") {
 						str += 'new String[] {'+attrs[a].nodeValue.replace(/&quot;/g, '"').split(/" "/).join('","')+'}';
 					} else if (
