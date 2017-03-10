@@ -45,8 +45,10 @@ function convertJSON(options) {
 			var element = loadX3DJS(json, file);
 			// filename conversion goes here.
 			basefile = basefile.replace(/-|\.| /g, "_")
+			// handle filenames with leading zeros and java keywords
+			basefile = basefile.replace(/^(.*[\\\/])([0-9].*|default|switch|for)$/, "$1_$2")
 			mkdirp(basefile.substr(0, basefile.lastIndexOf("/")));
-			basefile = basefile.replace(/^(.*[\\\/])([0-9][^\\\/]*|default)$/, "$1_$2")
+
 			if (typeof str !== 'undefined') {
 				var outfile = basefile+".json";
 				fs.writeFileSync(outfile, str);
