@@ -1,47 +1,8 @@
 let mapToMethod = require('./mapToMethod.js');
 let fieldTypes = require('./fieldTypes.js');
 let mapToMethod2 = {
-        "Scene" : {
-                "ROUTE" : "addChild",
-                "IMPORT" : "addChild",
-                "EXPORT" : "addChild",
-                "ProtoDeclare" : "addChild",
-                "ExternProtoDeclare" : "addChild"
-        },
-	"Billboard" : {
-                "ROUTE" : "addChild"
-	},
-	"Anchor" : {
-                "ROUTE" : "addChild"
-	},
-	"Switch" : {
-                "ROUTE" : "addChild"
-	},
-	"Transform" : {
-		"ProtoInstance": "addChild",
-		"ROUTE": "addChild",
-		"IS": "setIS",
-                "ExternProtoDeclare" : "addChild",
-                "IMPORT" : "addChild",
-	},
-	"Group" : {
-		"ProtoInstance": "addChild",
-		"ExternProtoDeclare": "addChild",
-		"ProtoDeclare": "addChild",
-		"ROUTE": "addChild",
-		"IS": "setIS"
-	},
 	"Shape" : {
 		"ProtoInstance": "setGeometry"
-	},
-	"ImageTexture" : {
-		"IS": "setIS"
-	},
-	"Material" : {
-		"IS": "setIS"
-	},
-	"Appearance" : {
-		"IS": "setIS"
 	},
 	"HAnimJoint" : {
 		"Transform" : "addChild"
@@ -52,23 +13,120 @@ let mapToMethod2 = {
 	"ComposedShader" : {
 		"field" : "addField",
 	},
-        "ProtoBody" : {
-                "ROUTE" : "addChild",
-                "ProtoDeclare" : "addChild"
-        },
 	"Script" : {
 		"field" : "addField",
-		"IS": "setIS"
 	},
-        "Text" : {
-		"IS": "setIS"
-        },
-        "GeoLocation" : {
-                "ROUTE" : "addChild",
-                "ExternProtoDeclare" : "addChild"
-        },
 	"MetadataSet" : {
 		"ProtoInstance" : "setMetadata"
+	},
+	"X3DGroupingNode" : {
+		"IS" : "setIS"
+	},
+	"CADAssembly" : {
+		"IS" : "setIS"
+	},
+	"Billboard" : {
+		"IS" : "setIS"
+	},
+	"GeoLocation" : {
+		"IS" : "setIS"
+	},
+	"X3DViewportNode" : {
+		"IS" : "setIS"
+	},
+	"LayoutLayer" : {
+		"IS" : "setIS"
+	},
+	"Scene" : {
+		"IS" : "setIS"
+	},
+	"LOD" : {
+		"IS" : "setIS"
+	},
+	"Disk2D" : {
+		"IS" : "setIS"
+	},
+	"Anchor" : {
+		"IS" : "setIS"
+	},
+	"Group" : {
+		"IS" : "setIS"
+	},
+	"Viewport" : {
+		"IS" : "setIS"
+	},
+	"GeoTransform" : {
+		"IS" : "setIS"
+	},
+	"ScreenGroup" : {
+		"IS" : "setIS"
+	},
+	"EspduTransform" : {
+		"IS" : "setIS"
+	},
+	"PickableGroup" : {
+		"IS" : "setIS"
+	},
+	"HAnimHumanoid" : {
+		"IS" : "addSkin"
+	},
+	"X3DPickSensorNode" : {
+		"IS" : "addPickedGeometry"
+	},
+	"VolumePickSensor" : {
+		"IS" : "addPickedGeometry"
+	},
+	"Layer" : {
+		"IS" : "setIS"
+	},
+	"StaticGroup" : {
+		"IS" : "setIS"
+	},
+	"PointPickSensor" : {
+		"IS" : "addPickedGeometry"
+	},
+	"LayoutGroup" : {
+		"IS" : "setIS"
+	},
+	"HAnimSite" : {
+		"IS" : "setIS"
+	},
+	"field" : {
+		"IS" : "setIS"
+	},
+	"Transform" : {
+		"IS" : "setIS"
+	},
+	"ProtoBody" : {
+		"IS" : "setIS"
+	},
+	"Collision" : {
+		"IS" : "setIS"
+	},
+	"PrimitivePickSensor" : {
+		"IS" : "addPickedGeometry"
+	},
+	"CADLayer" : {
+		"IS" : "setIS"
+	},
+	"fieldValue" : {
+		"IS" : "setIS"
+	},
+	"GeoLOD" : {
+		"IS" : "setIS",
+		"IS" : "addRootNode"
+	},
+	"LinePickSensor" : {
+		"IS" : "addPickedGeometry"
+	},
+	"GeoMetadata" : {
+		"IS" : "addData"
+	},
+	"Switch" : {
+		"IS" : "setIS"
+	},
+	"HAnimSegment" : {
+		"IS" : "setIS"
 	}
 };
 
