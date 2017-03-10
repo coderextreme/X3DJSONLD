@@ -96,9 +96,12 @@ JavaSerializer.serializeToString = function(json, element, clazz) {
 	let str = "";
 	let pc = clazz.replace(/-|\.| /g, "$")
 	let c = pc.lastIndexOf("/");
+	if (pc.lastIndexOf("\\") > c) {
+		c = pc.lastIndexOf("\\");
+	}
 	let clz = pc.substr(c+1);
 	clz = clz.replace(/^([0-9].*|default$)/, "_$1")
-	let pkg = pc.substr(0, c).replace(/\//g, ".").trim();
+	let pkg = pc.substr(0, c).replace(/[\/\\]/g, ".").trim();
 
 	if (pkg.length > 0) {
 		str += "package "+pkg+";\n";
@@ -284,7 +287,7 @@ JavaSerializer.subSerializeToString = function(element, n, grandparent, gn) {
 					if (attrs[a].nodeValue === 'NULL') {
 						str += "";
 					} else if (attrType === "SFString") {
-						str += '"'+attrs[a].nodeValue.replace(/\\?"/g, "&quot;")+'"';
+						str += '"'+attrs[a].nodeValue.replace(/\\?"/g, "\\\"")+'"';
 					} else if (attrType === "SFInt32") {
 						str += attrs[a].nodeValue;
 					} else if (attrType === "SFFloat") {
@@ -294,7 +297,7 @@ JavaSerializer.subSerializeToString = function(element, n, grandparent, gn) {
 					} else if (attrType === "SFBool") {
 						str += attrs[a].nodeValue
 					} else if (attrType === "MFString") {
-						str += 'new String[] {'+attrs[a].nodeValue.split('" "').join('","')+'}';
+						str += 'new String[] {'+attrs[a].nodeValue.replace(/&quot;/g, '"').split(/" "/).join('","')+'}';
 					} else if (
 						attrType === "MFInt32"||
 						attrType === "MFImage"||

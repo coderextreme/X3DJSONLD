@@ -52,7 +52,7 @@
           },
           {
             "@name":"translated",
-            "@content":"21 February 2017"
+            "@content":"09 March 2017"
           },
           {
             "@name":"generator",
@@ -80,21 +80,29 @@
           { "Shape":
             {
               "-children":[
-                { "#comment":"Empty string \"\" means to skip a line"
+                {
+                  "#comment":"Empty string \"\" means to skip a line"
                 },
-                { "#comment":"The ampersand escape characters are based on XML rules"
+                {
+                  "#comment":"The ampersand escape characters are based on XML rules"
                 },
-                { "#comment":"apostrophe ' is &apos; and needs to be escaped in single-quote delimiters used for string='value' attribute"
+                {
+                  "#comment":"apostrophe ' is &apos; and needs to be escaped in single-quote delimiters used for string='value' attribute"
                 },
-                { "#comment":"ampersand & is &amp; and needs to be escaped"
+                {
+                  "#comment":"ampersand & is &amp; and needs to be escaped"
                 },
-                { "#comment":"quotation \" is &quot; and isn't needed if single-quote delimiters used for string='value' attribute"
+                {
+                  "#comment":"quotation \" is &quot; and isn't needed if single-quote delimiters used for string='value' attribute"
                 },
-                { "#comment":"quotation \" can be used as part of X3D string if escaped with backslash: \""
+                {
+                  "#comment":"quotation \" can be used as part of X3D string if escaped with backslash: \\""
                 },
-                { "#comment":"backslash is used as escape character for \" (and itself) in X3D"
+                {
+                  "#comment":"backslash is used as escape character for \" (and itself) in X3D"
                 },
-                { "#comment":"character entities are listed in HTML specification and are good for any XML"
+                {
+                  "#comment":"character entities are listed in HTML specification and are good for any XML"
                 }
               ],
               "-geometry":

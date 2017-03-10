@@ -112,7 +112,7 @@
           },
           {
             "@name":"translated",
-            "@content":"21 February 2017"
+            "@content":"09 March 2017"
           },
           {
             "@name":"generator",
@@ -224,9 +224,11 @@
               "@DEF":"TextScript",
               "@url":["./ObliqueStrategiesScript.js"],
               "-children":[
-                { "#comment":"initialize() method includes unit test to printAllStrategies() to console"
+                {
+                  "#comment":"initialize() method includes unit test to printAllStrategies() to console"
                 },
-                { "#comment":"TODO insert field definitions here (index string_changed previous next random) and then animate!"
+                {
+                  "#comment":"TODO insert field definitions here (index string_changed previous next random) and then animate!"
                 }
               ],
               "field": [
@@ -331,13 +333,17 @@
                     "@minBack":20,
                     "@minFront":20,
                     "-children":[
-                      { "#comment":"Make sure the sound source AudioClip is audible at the user location"
+                      {
+                        "#comment":"Make sure the sound source AudioClip is audible at the user location"
                       },
-                      { "#comment":"Not all X3D players seem to use the .mp3"
+                      {
+                        "#comment":"Not all X3D players seem to use the .mp3"
                       },
-                      { "#comment":"&#38; is ampersand character, avoids escaping problems and inconsistencies in browsers and X3D players"
+                      {
+                        "#comment":"&#38; is ampersand character, avoids escaping problems and inconsistencies in browsers and X3D players"
                       },
-                      { "#comment":"%20 is space character used in uri/url encoding"
+                      {
+                        "#comment":"%20 is space character used in uri/url encoding"
                       }
                     ],
                     "-source":
@@ -424,7 +430,8 @@
                         {
                           "@DEF":"TransparentClickSurface",
                           "-children":[
-                            { "#comment":"support Selectable Text with a scalable IFS"
+                            {
+                              "#comment":"support Selectable Text with a scalable IFS"
                             }
                           ],
                           "-geometry":

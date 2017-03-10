@@ -40,7 +40,7 @@
           },
           {
             "@name":"translated",
-            "@content":"21 February 2017"
+            "@content":"09 March 2017"
           },
           {
             "@name":"generator",
@@ -62,7 +62,8 @@
                     { "Group":
                       {
                         "-children":[
-                          { "#comment":"left"
+                          {
+                            "#comment":"left"
                           },
                           { "Transform":
                             {
@@ -95,7 +96,8 @@
                               ]
                             }
                           },
-                          { "#comment":"right"
+                          {
+                            "#comment":"right"
                           },
                           { "Transform":
                             {
@@ -128,7 +130,8 @@
                               ]
                             }
                           },
-                          { "#comment":"up"
+                          {
+                            "#comment":"up"
                           },
                           { "Transform":
                             {
@@ -160,7 +163,8 @@
                               ]
                             }
                           },
-                          { "#comment":"down"
+                          {
+                            "#comment":"down"
                           },
                           { "Transform":
                             {

@@ -141,7 +141,8 @@
                         }
                       },
                     "-children":[
-                      { "#comment":"Sphere/"
+                      {
+                        "#comment":"Sphere/"
                       }
                     ],
                     "-geometry":

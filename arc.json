@@ -240,7 +240,8 @@
               }
             }
           },
-          { "#comment":"from doug sanden"
+          {
+            "#comment":"from doug sanden"
           },
           { "ProtoDeclare":
             {

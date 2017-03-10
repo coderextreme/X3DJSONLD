@@ -14179,7 +14179,7 @@ function printParentChild(element, n, node, cn) {
 var PythonSerializer = {};
 
 PythonSerializer.serializeToString = function(json, element, file) {
-	console.error(file);
+	// console.error(file);
 	var str = "";
 	str += "from jnius import autoclass\n";
 	str += "from X3Dautoclass import *\n";

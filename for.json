@@ -32,7 +32,7 @@
           },
           {
             "@name":"translated",
-            "@content":"21 February 2017"
+            "@content":"09 March 2017"
           },
           {
             "@name":"generator",
@@ -76,11 +76,14 @@
                           { "Shape":
                             {
                               "-children":[
-                                { "#comment":"comment before Sphere"
+                                {
+                                  "#comment":"comment before Sphere"
                                 },
-                                { "#comment":"comment after Sphere"
+                                {
+                                  "#comment":"comment after Sphere"
                                 },
-                                { "#comment":"comment after Appearance"
+                                {
+                                  "#comment":"comment after Appearance"
                                 }
                               ],
                               "-geometry":
@@ -92,9 +95,11 @@
                                 { "Appearance":
                                   {
                                     "-children":[
-                                      { "#comment":"comment before Material"
+                                      {
+                                        "#comment":"comment before Material"
                                       },
-                                      { "#comment":"comment after Material"
+                                      {
+                                        "#comment":"comment after Material"
                                       }
                                     ],
                                     "-material":

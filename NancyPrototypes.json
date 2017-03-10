@@ -52,7 +52,7 @@
           },
           {
             "@name":"translated",
-            "@content":"21 February 2017"
+            "@content":"09 March 2017"
           },
           {
             "@name":"generator",
@@ -108,7 +108,8 @@
               "@documentation":"http://H-Anim.org/Specifications/H-Anim2001/part1/Humanoid.html",
               "ProtoInterface": {
                   "-children":[
-                    { "#comment":"H-Anim v1.1 field definitions"
+                    {
+                      "#comment":"H-Anim v1.1 field definitions"
                     }
                   ],
                   "field": [
@@ -706,7 +707,8 @@
               }
             }
           },
-          { "#comment":"Start scene graph."
+          {
+            "#comment":"Start scene graph."
           },
           { "ProtoInstance":
             {
