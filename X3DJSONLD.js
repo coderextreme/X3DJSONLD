@@ -66,6 +66,10 @@ function processURLs(localArray, path) {
 		if (wrl === localArray[url].length - 4) {
 			localArray[url] = localArray[url].substring(0, wrl)+".json" + hash;
 		}
+		var wrz = localArray[url].lastIndexOf(".wrz") ;
+		if (wrz === localArray[url].length - 4) {
+			localArray[url] = localArray[url].substring(0, wrz)+".json" + hash;
+		}
 			
         }
 	// console.error("Processed URLs", localArray.join(" "));
