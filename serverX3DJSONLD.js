@@ -17,7 +17,7 @@ function loadX3DJS(json, path) {
 	X3DJSONLD.setDocument(document);
 	X3DJSONLD.setCDATACreateFunction(function(document, element, str) {
 		// for script nodes
-		var child = document.createCDATASection(str.replace(/'([^'\r]*)\r*\n([^']*)'/g, "'$1\\n$2'"));
+		var child = document.createCDATASection(str.replace(/'([^'\r]*)\r?\n([^']*)'/g, "'$1\\\\n$2'"));
 		element.appendChild(child);
 	});
 

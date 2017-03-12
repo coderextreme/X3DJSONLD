@@ -10,13 +10,13 @@ do
 	CLASS=`echo $BASE | sed 's/^[\.\/]*//'`
 	# echo $CLASS.java 1>&2
 	# echo $CLASS.java 2>&1
-	if javac $i && java $CLASS $CLASS.new.json
+	if javac $i && java $CLASS
 	then
 		if [ -z "`node jsondiff.js $BASE.json $CLASS.new.json`" ]
 		then
 			jar -uMf GoodJava.zip $i
 		else
-			echo node jsondiff.js $BASE.json $CLASS.new.json 1>&2
+			echo node jsondiff.js $BASE.json $CLASS.new.json 2>&1
 			node jsondiff.js $BASE.json $CLASS.new.json | tee $CLASS.diff
 			jar -uMf DiffJSON.zip $BASE.json $CLASS.new.json $CLASS.diff
 			
