@@ -258,7 +258,7 @@ JavaSerializer.serializeToString = function(json, element, clazz) {
 	str += "	ConfigurationProperties.setDeleteIntermediateFiles(false);\n";
 	str += JavaSerializer.subSerializeToString(element);
 
-	str += "	.toFileJSON(\""+clz+".new.json\");\n";
+	str += "	.toFileJSON(\""+clazz+".new.json\");\n";
 	str += "	}\n";
 	str += "}\n";
 	return str;
