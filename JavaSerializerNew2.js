@@ -8,9 +8,6 @@ let mapToMethod2 = {
 	"HAnimJoint" : {
 		"Transform" : "addChild"
 	},
-	"HAnimHumanoid" : {
-		 "HAnimViewpoint": "addViewpoints",
-        },
 	"ComposedShader" : {
 		"field" : "addField",
 	},
@@ -69,7 +66,10 @@ let mapToMethod2 = {
 		"IS" : "setIS"
 	},
 	"HAnimHumanoid" : {
-		"IS" : "addSkin"
+		"IS" : "appendSkin",
+		"HAnimSite": "appendViewpoints",
+		"HAnimSegment": "appendSegments",
+		"Group" : "appendSkeleton"
 	},
 	"X3DPickSensorNode" : {
 		"IS" : "addPickedGeometry"
@@ -336,7 +336,7 @@ JavaSerializer.subSerializeToString = function(element, n, mapToMethod, fieldTyp
 					} else if (attrType === "SFBool") {
 						str += attrs[a].nodeValue;
 					} else if (attrType === "MFString") {
-						str += 'new String[] {'+attrs[a].nodeValue.replace(/&quot;/g, '"').split(/" "/).join('","')+'}';
+						str += 'new String[] {'+attrs[a].nodeValue.replace(/\\\\\\\\"/g, '\\"').replace(/\\\\"/g, '\\"').split(/" "/).join('","')+'}';
 					} else if (
 						attrType === "MFInt32"||
 						attrType === "MFImage"||
