@@ -12,7 +12,7 @@ var PE = require('./PrototypeExpander')
 PE.setLoadURLs(loadURLs);
 var externPrototypeExpander = PE.externPrototypeExpander;
 
-//var runsaxon = require('./allsaxon');
+var runAndSend = require('./runAndSend');
 
 fs.symlink(
 path.resolve(config.examples),
@@ -25,17 +25,6 @@ path.resolve(__dirname + "/examples"),
   }
 );
 
-function runAndSend(infile) {
-	//runsaxon([infile]);
-	var outfile = infile.substr(0, infile.lastIndexOf("."))+".json";
-	var content = fs.readFileSync(outfile);
-	var json = JSON.parse(content.toString());
-	json = externPrototypeExpander(outfile, json);
-	fs.unlink(outfile);
-	console.log('sending back', json);
-	return json;
-}
-
 var infl = 0;
 app.post("/convert", function(req, res, next) {
 	var buf = '';
@@ -45,6 +34,7 @@ app.post("/convert", function(req, res, next) {
 		console.log("converting ", buf);
 		fs.writeFileSync(infile, buf);
 		var json = runAndSend(infile);
+		json = externPrototypeExpander(infile, json);
 		fs.unlink(infile);
 		res.send(json);
 	});
@@ -75,9 +65,32 @@ function magic(path, type) {
     });
 }
 
+function processX3d(req, res, next) {
+	var url = req._parsedUrl.pathname.substr(1);
+	console.log(url);
+	var hash = url.indexOf("#");
+	var file = url;
+	if (hash > 0) {
+	       file = url.substring(0, hash);
+	}
+	try {
+		console.log("Calling converter on "+file);
+		var json = runAndSend(file);
+		console.log("Calling expander on "+url);
+               	json = externPrototypeExpander(url, json);
+              	res.header("Content-Type", "text/json");
+                res.send(json);
+	} catch (e) {
+        	console.log(e);
+	}
+        next();
+}
+
+app.get("*.x3d#*", processX3d);
+app.get("*.x3d", processX3d);
+
 magic("*.vs", "text/plain");//"x-shader/x-vertex");
 magic("*.fs", "text/plain");//"x-shader/x-fragment");
-magic("*.x3d", "model/x3d+xml");
 magic("*.html", "text/html");
 magic("*.xslt", "text/xsl");
 magic("*.xhtml", "application/xhtml+xml");
@@ -91,24 +104,32 @@ magic("*.mpg", "video/mp4");
 magic("*.swf", "application/x-shockwave-flash");
 
 app.get("*.json", function(req, res, next) {
-       var url = req._parsedUrl.pathname.substr(1);
-       console.log(url);
-       fs.readFile(url, function(err, data) {
-	       console.log("Calling expander");
-               if (err) {
-                       console.error(err);
-               } else {
-                       try {
-                               var json = JSON.parse(data.toString());
-                               json = externPrototypeExpander(url, json);
-                               res.header("Content-Type", "text/json");
-                               res.send(json);
-                       } catch (e) {
-                               console.log(e);
-                       }
-               }
-               next();
-       });
+	var url = req._parsedUrl.pathname.substr(1);
+	console.log(url);
+	var file = url;
+	var hash = url.indexOf("#");
+	if (hash > 0) {
+		file = url.substring(0, hash);
+	}
+	var json = {};
+	try {
+		var data = fs.readFileSync(file);
+		json = JSON.parse(data.toString());
+	} catch (e) {
+		console.log(e+" "+file);
+		try {
+			file = file.substr(0, file.lastIndexOf("."))+".x3d";
+			json = runAndSend(file);
+		} catch (e) {
+			console.log(e+" "+file);
+		}
+	}
+	console.log(url);
+	console.log("Calling expander");
+        json = externPrototypeExpander(url, json);
+        res.header("Content-Type", "text/json");
+        res.send(json);
+        next();
 });
 
 

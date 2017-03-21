@@ -26,7 +26,6 @@ if (typeof Browser === 'undefined') {
 }
 
 function processURLs(localArray, path) {
-	/*
 	var url;
 	// No longer need to split
 	for (url in localArray) {
@@ -53,16 +52,19 @@ function processURLs(localArray, path) {
 				}
 			}
 		}
+		// for server side
 		var h = localArray[url].lastIndexOf("#") ;
 		var hash = "";
 		if (h >= 0) {
 			hash = localArray[url].substring(h);
-			// localArray[url] = localArray[url].substring(0, h);
+			localArray[url] = localArray[url].substring(0, h);
 		}
+/*
 		var x3d = localArray[url].lastIndexOf(".x3d") ;
 		if (x3d === localArray[url].length - 4) {
 			localArray[url] = localArray[url].substring(0, x3d)+".json" + hash;
 		}
+*/
 		var wrl = localArray[url].lastIndexOf(".wrl") ;
 		if (wrl === localArray[url].length - 4) {
 			localArray[url] = localArray[url].substring(0, wrl)+".json" + hash;
@@ -74,7 +76,6 @@ function processURLs(localArray, path) {
 			
         }
 	// console.error("Processed URLs", localArray.join(" "));
-	*/
 	return localArray;
 }
 
@@ -82,8 +83,9 @@ if (typeof require === 'function') {
 	var fs = require("fs");
 	var http = require("http");
 	var https = require("https");
+	var runAndSend = require("./runAndSend");
 }
-
+	
 function loadURLs(loadpath, urls, loadedCallback) {
 	if (typeof urls !== 'undefined') {
 		urls = processURLs(urls, loadpath);
@@ -140,15 +142,25 @@ function loadURLs(loadpath, urls, loadedCallback) {
 						}
 					} else if (typeof fs !== 'undefined' && protocol.indexOf("http") !== 0) {
 						// should be async, but out of memory
+						console.error("Loading FILE URL", url);
+						console.log('reading 1 ', url);
+						var hash = url.indexOf("#");
+						if (hash > 0) {
+							url = url.substring(0, hash);
+						}
 						try {
-							// console.error("Loading FILE URL", url);
 							var data = fs.readFileSync(url);
 							loadedCallback(data.toString(), url);
 						} catch (e) {
-							throw(e+ " File doesn't exist or is not available, "+ url);
+							var filename = url;
+							filename = filename.substring(0, filename.lastIndexOf("."))+".x3d";
+							console.error("converting "+filename);
+							var json = runAndSend(filename);
+							data = JSON.stringify(json);
+							loadedCallback(data.toString(), filename);
 						}
 					} else if (typeof $ !== 'undefined' && typeof $.get === 'function') {
-						// console.error("Loading Relative URL", url);
+						console.error("Loading Relative URL", url);
 						$.get(url, function(data) {
 							loadedCallback(data, url);
 						});
@@ -249,7 +261,6 @@ function ConvertObject(key, object, element, path, containerField) {
 				var child = document.createComment(CommentStringToXML(object[key][c]));
 				element.appendChild(child);
 			}
-		/*
 		} else if (key === 'Inline') {
 			var localArray = object[key]["@url"];
 			// console.error("Loading", localArray, "into", key);
@@ -270,7 +281,6 @@ function ConvertObject(key, object, element, path, containerField) {
 					element.appendChild(document.createTextNode("\n"));
 				}
 			});
-		*/
 		} else if (key === '#sourceText') {
 			CDATACreateFunction(document, element, object[key].join("\r\n")+"\r\n");
 		} else {

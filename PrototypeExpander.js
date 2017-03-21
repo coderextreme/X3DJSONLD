@@ -703,7 +703,7 @@ function searchForProtoDeclare(object, name) {
 	if (typeof object === "object") {
 		for (p in object) {
 			if (p === 'ProtoDeclare') {
-				// console.error("looked at", object[p]["@name"], "for", name);
+				console.error("looked at", object[p]["@name"], "for", name);
 				if (object[p]["@name"] === name) {
 					found = object;
 				}
@@ -723,12 +723,30 @@ function searchForProtoDeclare(object, name) {
 	return found;
 }
 
+var runAndSend;
+if (typeof require !== 'undefined') {
+	runAndSend = require("./runAndSend");
+}
+	
+
 function loadedProto(data, name, protoname, appinfo, description, filename) {
 	if (typeof data !== 'undefined') {
 		// console.error("searching for", name, "in", data.toString());
 		try {
 			def = null;
-			var newobj = searchForProtoDeclare(JSON.parse(data), protoname);
+			var json = {};
+			try {
+				json = JSON.parse(data);
+			} catch (e) {
+				console.error("Failed to parse JSON from "+filename);
+				console.error("calling run and send", filename.endsWith(".x3d"),  typeof runAndSend);
+				if (filename.endsWith(".x3d") && (typeof runAndSend === "function")) {
+					console.error("converting "+filename);
+					json = runAndSend(filename);
+				}
+				console.error("finished converting", filename);
+			}
+			var newobj = searchForProtoDeclare(json, protoname);
 			if (typeof newobj === 'undefined') {
 				newobj = def;
 			}
