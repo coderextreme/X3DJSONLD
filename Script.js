@@ -148,7 +148,7 @@ function processRoute(route, routecode, package) {
 			var from =  'typeof '+field+'_changed === "function" ? '+field+'_changed() : '+field+'_changed';
 		}
 	}
-	routecode.log('\t'+to+from+');');
+	routecode.log('\t'+to+from+', __eventTime);');
 }
 
 function valueExpand(type, flat) {

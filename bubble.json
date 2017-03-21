@@ -8,7 +8,7 @@
         "meta": [
           {
             "@name":"title",
-            "@content":"cobweb.x3d"
+            "@content":"bubble.x3d"
           },
           {
             "@name":"creator",
@@ -24,7 +24,7 @@
           },
           {
             "@name":"identifier",
-            "@content":"http://coderextreme.net/X3DJSONLD/cobweb.x3d"
+            "@content":"http://coderextreme.net/X3DJSONLD/bubble.x3d"
           },
           {
             "@name":"translated",
@@ -51,17 +51,7 @@
             {
               "@position":[0,0,4],
               "@orientation":[1,0,0,0],
-              "@description":"Bubbles in action"
-            }
-          },
-          { "Background":
-            {
-              "@backUrl":["cubemap/BK.png","http://coderextreme.net/X3DJSONLD/cubemap/BK.png"],
-              "@bottomUrl":["cubemap/BT.png","http://coderextreme.net/X3DJSONLD/cubemap/BT.png"],
-              "@frontUrl":["cubemap/FR.png","http://coderextreme.net/X3DJSONLD/cubemap/FR.png"],
-              "@leftUrl":["cubemap/LF.png","http://coderextreme.net/X3DJSONLD/cubemap/LF.png"],
-              "@rightUrl":["cubemap/RT.png","http://coderextreme.net/X3DJSONLD/cubemap/RT.png"],
-              "@topUrl":["cubemap/TP.png","http://coderextreme.net/X3DJSONLD/cubemap/TP.png"]
+              "@description":"Bubble in action"
             }
           },
           { "ProtoDeclare":
@@ -210,24 +200,6 @@
             {
               "@name":"Bubble",
               "@DEF":"bubbleA"
-            }
-          },
-          { "ProtoInstance":
-            {
-              "@name":"Bubble",
-              "@DEF":"bubbleB"
-            }
-          },
-          { "ProtoInstance":
-            {
-              "@name":"Bubble",
-              "@DEF":"bubbleC"
-            }
-          },
-          { "ProtoInstance":
-            {
-              "@name":"Bubble",
-              "@DEF":"bubbleD"
             }
           }
         ]

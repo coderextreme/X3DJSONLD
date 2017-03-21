@@ -97,6 +97,7 @@ a:active {
 <option>ppp/NancyPrototypes.json</option>
 <option>ObliqueStrategies.json</option>
 <option>arc.json</option>
+<option>bubble.json</option>
 <option>bubbles.json</option>
 <option>cobweb.json</option>
 <option>ppp/cobweb.json</option>
@@ -124,7 +125,7 @@ a:active {
 <td>
 <input type="text" onchange="filter(event)"></input>
 Use Prototype Expander? <input id="prototype" type="checkbox" checked="true"></input>
-Use JSON Scripts? <input id="scripting" type="checkbox"></input>
+Use JSON Scripts? <input id="scripting" type="checkbox" checked="true"></input>
 Use Namespace: <select id="namespace">
 <option>http://www.web3d.org/specifications/x3d</option>
 <option>http://www.w3.org/1999/xhtml</option> <!-- X3DOM XML -->
@@ -140,7 +141,7 @@ Click <a onclick='updateXML();'>here</a> to load X3D XML into Cobweb and XML X3D
 	    
 <textarea id="xml" rows="15" cols="80"></textarea><br>
     <div id="x3domxml"></div>
-    <X3DCanvas id='cobwebxml' cache='false' url='"flipper.x3d"'>
+    <X3DCanvas id='cobwebxml' cache='false' url='"cobweb.x3d"'>
            <p>Your browser may not support all features required by Cobweb!</p>
 	   <X3D>
 	   <Scene>
@@ -152,7 +153,7 @@ Click <a onclick='updateXML();'>here</a> to load X3D XML into Cobweb and XML X3D
 Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into JSON X3DOM viewer and convert to XML (and display).<br>
 <textarea id="json" rows="15" cols="80"></textarea><br>
     <div id="x3domjson"></div>
-    <X3DCanvas id='cobwebjson' cache='false' url='"flipper.x3d"'>
+    <X3DCanvas id='cobwebjson' cache='false' url='"cobweb.x3d"'>
            <p>Your browser may not support all features required by Cobweb!</p>
 	   <X3D>
 	   <Scene>
@@ -176,7 +177,7 @@ Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into JSON X3DOM
     <script type="text/javascript" src="loaderJQuery.js"></script>
     <script type="text/javascript">
 	$(document).ready(function() {
-		loadX3DJSON('#x3domjson','flipper.json'); // does load flipper.json
+		loadX3DJSON('#x3domjson','cobweb.json'); // does load cobweb.json
 	});
     </script>
 </html>
