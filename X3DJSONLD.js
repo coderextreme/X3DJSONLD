@@ -26,6 +26,7 @@ if (typeof Browser === 'undefined') {
 }
 
 function processURLs(localArray, path) {
+	/*
 	var url;
 	// No longer need to split
 	for (url in localArray) {
@@ -73,6 +74,7 @@ function processURLs(localArray, path) {
 			
         }
 	// console.error("Processed URLs", localArray.join(" "));
+	*/
 	return localArray;
 }
 
@@ -247,6 +249,7 @@ function ConvertObject(key, object, element, path, containerField) {
 				var child = document.createComment(CommentStringToXML(object[key][c]));
 				element.appendChild(child);
 			}
+		/*
 		} else if (key === 'Inline') {
 			var localArray = object[key]["@url"];
 			// console.error("Loading", localArray, "into", key);
@@ -267,6 +270,7 @@ function ConvertObject(key, object, element, path, containerField) {
 					element.appendChild(document.createTextNode("\n"));
 				}
 			});
+		*/
 		} else if (key === '#sourceText') {
 			CDATACreateFunction(document, element, object[key].join("\r\n")+"\r\n");
 		} else {
@@ -301,7 +305,7 @@ function CommentStringToXML(str) {
 	str = str.replace(/[\u0080-\uFFFF]/g, 
 		function (v) {return '&#'+v.charCodeAt()+';';}
 	);
-	str = str.replace(/\\"/g, '"');
+	str = str.replace(/\\/g, "\\\\").replace(/\\"/g, '\\\"');
 	return str;
 }
 
@@ -311,7 +315,7 @@ function JSONStringToXML(str) {
 	);
 	// replace  \'s first
 	str = str.replace(/\\/g, '\\\\');
-	str = str.replace(/"/g, '\\"');
+	str = str.replace(/\\"/g, '\\\"');
 	return str;
 }
 
