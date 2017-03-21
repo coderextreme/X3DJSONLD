@@ -1,5 +1,3 @@
-let mapToMethod = require('./mapToMethod.js');
-let fieldTypes = require('./fieldTypes.js');
 let mapToMethod2 = {
 	"Shape" : {
 		"ProtoInstance": "setGeometry"
@@ -139,132 +137,136 @@ let mapToMethod2 = {
 	}
 };
 
-Object.assign(mapToMethod, {
-});
-
-for (map in mapToMethod2) {
-        Object.assign(mapToMethod[map], mapToMethod2[map]);
+function JavaSerializer() {
 }
 
+JavaSerializer.prototype = {
+	serializeToString : function(json, element, clazz, mapToMethod, fieldTypes) {
+		Object.assign(mapToMethod, {
+		});
 
-let JavaSerializer = {};
-JavaSerializer.serializeToString = function(json, element, clazz) {
-	/*
-	for (let a in element.attributes) {
-		let attrs = element.attributes;
-		let attributeName = attrs[a].nodeName;
-		if (attributeName === "version" && attrs[a].nodeValue !== "3.3") {
-			console.log(clazz, attrs[a].nodeValue);
-			return;
+		for (map in mapToMethod2) {
+			Object.assign(mapToMethod[map], mapToMethod2[map]);
 		}
+
+		/*
+		for (let a in element.attributes) {
+			let attrs = element.attributes;
+			let attributeName = attrs[a].nodeName;
+			if (attributeName === "version" && attrs[a].nodeValue !== "3.3") {
+				console.log(clazz, attrs[a].nodeValue);
+				return;
+			}
+		}
+		*/
+
+		let str = "";
+		let pc = clazz.replace(/-|\.| /g, "$");
+		let c = pc.lastIndexOf("/");
+		if (pc.lastIndexOf("\\") > c) {
+			c = pc.lastIndexOf("\\");
+		}
+		let clz = pc.substr(c+1);
+		clz = clz.replace(/^([0-9].*|default$)/, "_$1")
+		let pkg = pc.substr(0, c).replace(/[\/\\]/g, ".").trim();
+
+		if (pkg.length > 0) {
+			str += "package "+pkg+";\n";
+		}
+		str += "import org.web3d.x3d.jsail.*;\n";
+		str += "import org.web3d.x3d.jsail.CADGeometry.*;\n";
+		str += "import org.web3d.x3d.jsail.Core.*;\n";
+		str += "import org.web3d.x3d.jsail.CubeMapTexturing.*;\n";
+		str += "import org.web3d.x3d.jsail.DIS.*;\n";
+		str += "import org.web3d.x3d.jsail.EnvironmentalEffects.*;\n";
+		str += "import org.web3d.x3d.jsail.EnvironmentalSensor.*;\n";
+		str += "import org.web3d.x3d.jsail.EventUtilities.*;\n";
+		str += "import org.web3d.x3d.jsail.Followers.*;\n";
+		str += "import org.web3d.x3d.jsail.Geometry2D.*;\n";
+		str += "import org.web3d.x3d.jsail.Geometry3D.*;\n";
+		str += "import org.web3d.x3d.jsail.Geospatial.*;\n";
+		str += "import org.web3d.x3d.jsail.Grouping.*;\n";
+		str += "import org.web3d.x3d.jsail.HAnim.*;\n";
+		str += "import org.web3d.x3d.jsail.Interpolation.*;\n";
+		str += "import org.web3d.x3d.jsail.KeyDeviceSensor.*;\n";
+		str += "import org.web3d.x3d.jsail.Layering.*;\n";
+		str += "import org.web3d.x3d.jsail.Layout.*;\n";
+		str += "import org.web3d.x3d.jsail.Lighting.*;\n";
+		str += "import org.web3d.x3d.jsail.NURBS.*;\n";
+		str += "import org.web3d.x3d.jsail.Navigation.*;\n";
+		str += "import org.web3d.x3d.jsail.Networking.*;\n";
+		str += "import org.web3d.x3d.jsail.ParticleSystems.*;\n";
+		str += "import org.web3d.x3d.jsail.Picking.*;\n";
+		str += "import org.web3d.x3d.jsail.PointingDeviceSensor.*;\n";
+		str += "import org.web3d.x3d.jsail.Rendering.*;\n";
+		str += "import org.web3d.x3d.jsail.RigidBodyPhysics.*;\n";
+		str += "import org.web3d.x3d.jsail.Scripting.*;\n";
+		str += "import org.web3d.x3d.jsail.Shaders.*;\n";
+		str += "import org.web3d.x3d.jsail.Shape.*;\n";
+		str += "import org.web3d.x3d.jsail.Sound.*;\n";
+		str += "import org.web3d.x3d.jsail.Text.*;\n";
+		str += "import org.web3d.x3d.jsail.Texturing3D.*;\n";
+		str += "import org.web3d.x3d.jsail.Texturing.*;\n";
+		str += "import org.web3d.x3d.jsail.Time.*;\n";
+		str += "import org.web3d.x3d.jsail.VolumeRendering.*;\n";
+		str += "import org.web3d.x3d.jsail.fields.*;\n";
+		str += "import org.web3d.x3d.sai.*;\n";
+		str += "import org.web3d.x3d.sai.CADGeometry.*;\n";
+		str += "import org.web3d.x3d.sai.Core.*;\n";
+		str += "import org.web3d.x3d.sai.CubeMapTexturing.*;\n";
+		str += "import org.web3d.x3d.sai.DIS.*;\n";
+		str += "import org.web3d.x3d.sai.EnvironmentalEffects.*;\n";
+		str += "import org.web3d.x3d.sai.EnvironmentalSensor.*;\n";
+		str += "import org.web3d.x3d.sai.EventUtilities.*;\n";
+		str += "import org.web3d.x3d.sai.Followers.*;\n";
+		str += "import org.web3d.x3d.sai.Geometry2D.*;\n";
+		str += "import org.web3d.x3d.sai.Geometry3D.*;\n";
+		str += "import org.web3d.x3d.sai.Geospatial.*;\n";
+		str += "import org.web3d.x3d.sai.Grouping.*;\n";
+		str += "import org.web3d.x3d.sai.HAnim.*;\n";
+		str += "import org.web3d.x3d.sai.Interpolation.*;\n";
+		str += "import org.web3d.x3d.sai.KeyDeviceSensor.*;\n";
+		str += "import org.web3d.x3d.sai.Layering.*;\n";
+		str += "import org.web3d.x3d.sai.Layout.*;\n";
+		str += "import org.web3d.x3d.sai.Lighting.*;\n";
+		str += "import org.web3d.x3d.sai.NURBS.*;\n";
+		str += "import org.web3d.x3d.sai.Navigation.*;\n";
+		str += "import org.web3d.x3d.sai.Networking.*;\n";
+		str += "import org.web3d.x3d.sai.ParticleSystems.*;\n";
+		str += "import org.web3d.x3d.sai.Picking.*;\n";
+		str += "import org.web3d.x3d.sai.PointingDeviceSensor.*;\n";
+		str += "import org.web3d.x3d.sai.Rendering.*;\n";
+		str += "import org.web3d.x3d.sai.RigidBodyPhysics.*;\n";
+		str += "import org.web3d.x3d.sai.Scripting.*;\n";
+		str += "import org.web3d.x3d.sai.Shaders.*;\n";
+		str += "import org.web3d.x3d.sai.Shape.*;\n";
+		str += "import org.web3d.x3d.sai.Sound.*;\n";
+		str += "import org.web3d.x3d.sai.Text.*;\n";
+		str += "import org.web3d.x3d.sai.Texturing3D.*;\n";
+		str += "import org.web3d.x3d.sai.Texturing.*;\n";
+		str += "import org.web3d.x3d.sai.Time.*;\n";
+		str += "import org.web3d.x3d.sai.VolumeRendering.*;\n";
+		str += "public class "+clz+" {\n";
+		str += "	public static void main(String[] args) {\n";
+		str += "        ConfigurationProperties.setShowDefaultAttributes(true);\n";
+		str += "        ConfigurationProperties.setIndentCharacter(ConfigurationProperties.indentCharacter_DEFAULT);\n";
+		str += "        ConfigurationProperties.setIndentIncrement(ConfigurationProperties.indentIncrement_DEFAULT);\n";
+		str += "        ConfigurationProperties.setX3dCanonicalForm();\n";
+		str += "        ConfigurationProperties.initialize();\n";
+
+		str += "	ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_nativeJava);\n";
+		str += "	ConfigurationProperties.setDeleteIntermediateFiles(false);\n";
+		str += "	new "+element.nodeName+"Object()\n";
+		str += JavaSerializer.subSerializeToString(element, 1, mapToMethod, fieldTypes);
+
+		str += "	.toFileJSON(\""+clazz+".new.json\");\n";
+		str += "	}\n";
+		str += "}\n";
+		return str;
 	}
-	*/
-
-	let str = "";
-	let pc = clazz.replace(/-|\.| /g, "$");
-	let c = pc.lastIndexOf("/");
-	if (pc.lastIndexOf("\\") > c) {
-		c = pc.lastIndexOf("\\");
-	}
-	let clz = pc.substr(c+1);
-	clz = clz.replace(/^([0-9].*|default$)/, "_$1")
-	let pkg = pc.substr(0, c).replace(/[\/\\]/g, ".").trim();
-
-	if (pkg.length > 0) {
-		str += "package "+pkg+";\n";
-	}
-	str += "import org.web3d.x3d.jsail.*;\n";
-	str += "import org.web3d.x3d.jsail.CADGeometry.*;\n";
-	str += "import org.web3d.x3d.jsail.Core.*;\n";
-	str += "import org.web3d.x3d.jsail.CubeMapTexturing.*;\n";
-	str += "import org.web3d.x3d.jsail.DIS.*;\n";
-	str += "import org.web3d.x3d.jsail.EnvironmentalEffects.*;\n";
-	str += "import org.web3d.x3d.jsail.EnvironmentalSensor.*;\n";
-	str += "import org.web3d.x3d.jsail.EventUtilities.*;\n";
-	str += "import org.web3d.x3d.jsail.Followers.*;\n";
-	str += "import org.web3d.x3d.jsail.Geometry2D.*;\n";
-	str += "import org.web3d.x3d.jsail.Geometry3D.*;\n";
-	str += "import org.web3d.x3d.jsail.Geospatial.*;\n";
-	str += "import org.web3d.x3d.jsail.Grouping.*;\n";
-	str += "import org.web3d.x3d.jsail.HAnim.*;\n";
-	str += "import org.web3d.x3d.jsail.Interpolation.*;\n";
-	str += "import org.web3d.x3d.jsail.KeyDeviceSensor.*;\n";
-	str += "import org.web3d.x3d.jsail.Layering.*;\n";
-	str += "import org.web3d.x3d.jsail.Layout.*;\n";
-	str += "import org.web3d.x3d.jsail.Lighting.*;\n";
-	str += "import org.web3d.x3d.jsail.NURBS.*;\n";
-	str += "import org.web3d.x3d.jsail.Navigation.*;\n";
-	str += "import org.web3d.x3d.jsail.Networking.*;\n";
-	str += "import org.web3d.x3d.jsail.ParticleSystems.*;\n";
-	str += "import org.web3d.x3d.jsail.Picking.*;\n";
-	str += "import org.web3d.x3d.jsail.PointingDeviceSensor.*;\n";
-	str += "import org.web3d.x3d.jsail.Rendering.*;\n";
-	str += "import org.web3d.x3d.jsail.RigidBodyPhysics.*;\n";
-	str += "import org.web3d.x3d.jsail.Scripting.*;\n";
-	str += "import org.web3d.x3d.jsail.Shaders.*;\n";
-	str += "import org.web3d.x3d.jsail.Shape.*;\n";
-	str += "import org.web3d.x3d.jsail.Sound.*;\n";
-	str += "import org.web3d.x3d.jsail.Text.*;\n";
-	str += "import org.web3d.x3d.jsail.Texturing3D.*;\n";
-	str += "import org.web3d.x3d.jsail.Texturing.*;\n";
-	str += "import org.web3d.x3d.jsail.Time.*;\n";
-	str += "import org.web3d.x3d.jsail.VolumeRendering.*;\n";
-	str += "import org.web3d.x3d.jsail.fields.*;\n";
-	str += "import org.web3d.x3d.sai.*;\n";
-	str += "import org.web3d.x3d.sai.CADGeometry.*;\n";
-	str += "import org.web3d.x3d.sai.Core.*;\n";
-	str += "import org.web3d.x3d.sai.CubeMapTexturing.*;\n";
-	str += "import org.web3d.x3d.sai.DIS.*;\n";
-	str += "import org.web3d.x3d.sai.EnvironmentalEffects.*;\n";
-	str += "import org.web3d.x3d.sai.EnvironmentalSensor.*;\n";
-	str += "import org.web3d.x3d.sai.EventUtilities.*;\n";
-	str += "import org.web3d.x3d.sai.Followers.*;\n";
-	str += "import org.web3d.x3d.sai.Geometry2D.*;\n";
-	str += "import org.web3d.x3d.sai.Geometry3D.*;\n";
-	str += "import org.web3d.x3d.sai.Geospatial.*;\n";
-	str += "import org.web3d.x3d.sai.Grouping.*;\n";
-	str += "import org.web3d.x3d.sai.HAnim.*;\n";
-	str += "import org.web3d.x3d.sai.Interpolation.*;\n";
-	str += "import org.web3d.x3d.sai.KeyDeviceSensor.*;\n";
-	str += "import org.web3d.x3d.sai.Layering.*;\n";
-	str += "import org.web3d.x3d.sai.Layout.*;\n";
-	str += "import org.web3d.x3d.sai.Lighting.*;\n";
-	str += "import org.web3d.x3d.sai.NURBS.*;\n";
-	str += "import org.web3d.x3d.sai.Navigation.*;\n";
-	str += "import org.web3d.x3d.sai.Networking.*;\n";
-	str += "import org.web3d.x3d.sai.ParticleSystems.*;\n";
-	str += "import org.web3d.x3d.sai.Picking.*;\n";
-	str += "import org.web3d.x3d.sai.PointingDeviceSensor.*;\n";
-	str += "import org.web3d.x3d.sai.Rendering.*;\n";
-	str += "import org.web3d.x3d.sai.RigidBodyPhysics.*;\n";
-	str += "import org.web3d.x3d.sai.Scripting.*;\n";
-	str += "import org.web3d.x3d.sai.Shaders.*;\n";
-	str += "import org.web3d.x3d.sai.Shape.*;\n";
-	str += "import org.web3d.x3d.sai.Sound.*;\n";
-	str += "import org.web3d.x3d.sai.Text.*;\n";
-	str += "import org.web3d.x3d.sai.Texturing3D.*;\n";
-	str += "import org.web3d.x3d.sai.Texturing.*;\n";
-	str += "import org.web3d.x3d.sai.Time.*;\n";
-	str += "import org.web3d.x3d.sai.VolumeRendering.*;\n";
-	str += "public class "+clz+" {\n";
-	str += "	public static void main(String[] args) {\n";
-        str += "        ConfigurationProperties.setShowDefaultAttributes(true);\n";
-        str += "        ConfigurationProperties.setIndentCharacter(ConfigurationProperties.indentCharacter_DEFAULT);\n";
-        str += "        ConfigurationProperties.setIndentIncrement(ConfigurationProperties.indentIncrement_DEFAULT);\n";
-        str += "        ConfigurationProperties.setX3dCanonicalForm();\n";
-        str += "        ConfigurationProperties.initialize();\n";
-
-	str += "	ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_nativeJava);\n";
-	str += "	ConfigurationProperties.setDeleteIntermediateFiles(false);\n";
-	str += JavaSerializer.subSerializeToString(element);
-
-	str += "	.toFileJSON(\""+clazz+".new.json\");\n";
-	str += "	}\n";
-	str += "}\n";
-	return str;
 }
 
-function printParentChild(element, n, node, cn) {
+function printParentChild(element, n, node, cn, mapToMethod) {
 	let addpre = ".set";
 	if (cn > 0 && node.nodeName !== 'IS') {
 		addpre = ".add";
@@ -283,12 +285,8 @@ function printParentChild(element, n, node, cn) {
 	return "\t".repeat(n)+addpre+method+"(";
 }
 
-JavaSerializer.subSerializeToString = function(element, n) {
-	n = n || 0;
+JavaSerializer.subSerializeToString = function(element, n, mapToMethod, fieldTypes) {
 	let str = "";
-	if (n === 0) {
-		str += "new "+element.nodeName+"Object()\n";
-        }
 	let fieldAttrType = "";
 	for (let a in element.attributes) {
 		let attrs = element.attributes;
@@ -395,9 +393,9 @@ JavaSerializer.subSerializeToString = function(element, n) {
 	for (let cn in element.childNodes) {
 		let node = element.childNodes[cn];
 		if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 1) {
-			str += printParentChild(element, n, node, cn);
+			str += printParentChild(element, n, node, cn, mapToMethod);
 			str += "new "+node.nodeName+"Object()\n";
-			str += JavaSerializer.subSerializeToString(node, n+1);
+			str += JavaSerializer.subSerializeToString(node, n+1, mapToMethod, fieldTypes);
 			str += "\t".repeat(n)+")\n";
 		} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 8) {
 			str += "\t".repeat(n)+".addComments(new CommentsBlock(\""+node.nodeValue.replace(/"/g, '\\"')+"\"))\n";
@@ -409,4 +407,6 @@ JavaSerializer.subSerializeToString = function(element, n) {
 }
 
 
-module.exports = JavaSerializer;
+if (typeof module === 'object')  {
+	module.exports = JavaSerializer;
+}

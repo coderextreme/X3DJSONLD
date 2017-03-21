@@ -38,10 +38,12 @@ function serializeDOM(json, element) {
 	return xml;
 }
 
-var DOMSerializer = {};
-DOMSerializer.serializeToString = function (json, element) {
-	var str = serializeDOM(json, element);
-	return str;
+function DOMSerializer() {};
+DOMSerializer.prototype = {
+	serializeToString : function (json, element) {
+		var str = serializeDOM(json, element);
+		return str;
+	}
 }
 
 if (typeof module === 'object')  {

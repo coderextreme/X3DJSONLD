@@ -1,4 +1,4 @@
-module.exports = {"X3DNode" : {
+var fieldTypes = {"X3DNode" : {
 	"metadata" : "SFNode",
 	"DEF" : "SFString",
 	"USE" : "SFString",
@@ -3813,3 +3813,5 @@ module.exports = {"X3DNode" : {
 	"class" : "SFString",
 },
 };
+
+module.exports = fieldTypes;
