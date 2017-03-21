@@ -1185,8 +1185,9 @@ POSSIBILITY OF SUCH DAMAGE.
       <xsl:param name="inputString"><xsl:text></xsl:text></xsl:param> <!-- already normalized white space -->
       <xsl:param name="inputType"><xsl:text>false</xsl:text></xsl:param>
 
-      <!-- debug
-      <xsl:message>
+      <!-- debug (also use trace messages below) -->
+      <xsl:variable name="debugTrace" select="false()"/><!-- true() false() -->
+      <xsl:variable name="debugMessage">
           <xsl:text>[local-name()=</xsl:text>
           <xsl:value-of select="local-name()"/>
 		  <xsl:if test="self::comment()">
@@ -1198,22 +1199,22 @@ POSSIBILITY OF SUCH DAMAGE.
           <xsl:text>[inputType=</xsl:text>
           <xsl:value-of select="$inputType"/>
           <xsl:text>]</xsl:text>
-      </xsl:message> -->
+      </xsl:variable>
       
       <!--  escaped quote " within an SFString value requires a preceding backslash \ in JSON encoding. -->
       <!--  must be careful not to escape "delimiting" "quotes" in MFString array. -->
       <xsl:choose>
         <!-- no quote, all done -->
-        <xsl:when test="not(contains($inputString,'&quot;'))">
-          <!-- <xsl:message><xsl:text>[1]</xsl:text></xsl:message> -->
+        <xsl:when test="not(contains($inputString,'&quot;')) and not(contains($inputString,'\'))">
+          <xsl:if test="$debugTrace"><xsl:message><xsl:text>[1]</xsl:text><xsl:value-of select="$debugMessage"/></xsl:message></xsl:if>
           <xsl:value-of select="$inputString"/>
         </xsl:when>
         <!-- comment: XML-escaped \&amp;quot; (before regular \&quot;) needs to be handled -->
         <xsl:when test="self::comment() and contains($inputString,'\&amp;quot;') and 
                        (string-length(substring-before($inputString,'&quot;')) > string-length(substring-before($inputString,'\&amp;quot;')))">
-          <!--  <xsl:message><xsl:text>[1.5]</xsl:text></xsl:message> -->
-          <xsl:value-of select="substring-before($inputString,'\&amp;quot;')"/>
-          <xsl:text>\\\"</xsl:text>
+          <xsl:if test="$debugTrace"><xsl:message><xsl:text>[1.5]</xsl:text><xsl:value-of select="$debugMessage"/></xsl:message></xsl:if>
+          <xsl:value-of select="substring-before($inputString,'\\&amp;quot;')"/>
+          <xsl:text disable-output-escaping="yes">\\\"</xsl:text>
           <xsl:call-template name="escape-quotes-recurse">
               <xsl:with-param name="inputString" select="substring-after($inputString,'\&amp;quot;')"/>
               <xsl:with-param name="inputType"   select="$inputType"/>
@@ -1222,7 +1223,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <!-- comment: XML-escaped &amp;quot; (before regular &quot;) needs to be handled -->
         <xsl:when test="self::comment() and contains($inputString,'&amp;quot;') and 
                        (string-length(substring-before($inputString,'&quot;')) > string-length(substring-before($inputString,'&amp;quot;')))">
-          <!-- <xsl:message><xsl:text>[1.6]</xsl:text></xsl:message> -->
+          <xsl:if test="$debugTrace"><xsl:message><xsl:text>[1.6]</xsl:text><xsl:value-of select="$debugMessage"/></xsl:message></xsl:if>
           <xsl:value-of select="substring-before($inputString,'&amp;quot;')"/>
           <xsl:text>"</xsl:text>
           <xsl:call-template name="escape-quotes-recurse">
@@ -1233,19 +1234,41 @@ POSSIBILITY OF SUCH DAMAGE.
         <!-- comment: escaped quote needs to be left alone -->
         <xsl:when test="self::comment() and contains($inputString,'\&quot;') and 
                        (string-length(substring-before($inputString,'&quot;')) -1 > string-length(substring-before($inputString,'\&quot;')))">
-          <!-- <xsl:message><xsl:text>[2]</xsl:text></xsl:message> -->
+          <xsl:if test="$debugTrace"><xsl:message><xsl:text>[2]</xsl:text><xsl:value-of select="$debugMessage"/></xsl:message></xsl:if>
           <xsl:value-of select="substring-before($inputString,'\&quot;')"/>
-          <xsl:text>\\\"</xsl:text>
+          <xsl:text disable-output-escaping="yes">\\\"</xsl:text>
           <xsl:call-template name="escape-quotes-recurse">
               <xsl:with-param name="inputString" select="substring-after($inputString,'\&quot;')"/>
               <xsl:with-param name="inputType"   select="$inputType"/>
           </xsl:call-template>
         </xsl:when>
+        <!-- comment: backslash (no following quotes ") needs to be escaped -->
+        <xsl:when test="self::comment() and contains($inputString,'\') and 
+                       (not(contains($inputString,'&quot;')))">
+          <xsl:if test="$debugTrace"><xsl:message><xsl:text>[2.3 \ to \\]</xsl:text><xsl:value-of select="$debugMessage"/></xsl:message></xsl:if>
+          <xsl:value-of select="substring-before($inputString,'\')"/>
+          <xsl:text disable-output-escaping="yes">\\</xsl:text>
+          <xsl:call-template name="escape-quotes-recurse">
+              <xsl:with-param name="inputString" select="substring-after($inputString,'\')"/>
+              <xsl:with-param name="inputType"   select="$inputType"/>
+          </xsl:call-template>
+        </xsl:when>
+        <!-- comment: backslash (preceding ") needs to be escaped -->
+        <xsl:when test="self::comment() and contains($inputString,'\') and 
+                       (string-length(substring-before($inputString,'&quot;')) > string-length(substring-before($inputString,'\')))">
+          <xsl:if test="$debugTrace"><xsl:message><xsl:text>[2.4 \ to \\]</xsl:text><xsl:value-of select="$debugMessage"/></xsl:message></xsl:if>
+          <xsl:value-of select="substring-before($inputString,'\')"/>
+          <xsl:text disable-output-escaping="yes">\\</xsl:text>
+          <xsl:call-template name="escape-quotes-recurse">
+              <xsl:with-param name="inputString" select="substring-after($inputString,'\')"/>
+              <xsl:with-param name="inputType"   select="$inputType"/>
+          </xsl:call-template>
+        </xsl:when>
         <!-- comment: unescaped quote needs \ escape character inserted, no quote delimiter remaining -->
         <xsl:when test="self::comment() and contains($inputString,'&quot;')">
-          <!-- <xsl:message><xsl:text>[2]</xsl:text></xsl:message> -->
+          <xsl:if test="$debugTrace"><xsl:message><xsl:text>[2.5 " to \"]</xsl:text><xsl:value-of select="$debugMessage"/></xsl:message></xsl:if>
           <xsl:value-of select="substring-before($inputString,'&quot;')"/>
-          <xsl:text>\"</xsl:text>
+          <xsl:text disable-output-escaping="yes">\"</xsl:text>
           <xsl:call-template name="escape-quotes-recurse">
               <xsl:with-param name="inputString" select="substring-after($inputString,'&quot;')"/>
               <xsl:with-param name="inputType"   select="$inputType"/>
@@ -1253,8 +1276,8 @@ POSSIBILITY OF SUCH DAMAGE.
         </xsl:when>
         <!-- SFString with quoted value -->
         <xsl:when test="($inputType = 'SFString') and starts-with($inputString,'&quot;')">
-          <!-- <xsl:message><xsl:text>[3]</xsl:text></xsl:message> -->
-          <xsl:text>\"</xsl:text>
+          <xsl:if test="$debugTrace"><xsl:message><xsl:text>[3]</xsl:text><xsl:value-of select="$debugMessage"/></xsl:message></xsl:if>
+          <xsl:text disable-output-escaping="yes">\"</xsl:text>
           <xsl:call-template name="escape-quotes-recurse">
               <xsl:with-param name="inputString" select="substring($inputString,2,string-length($inputString) - 1)"/>
               <xsl:with-param name="inputType"   select="$inputType"/>
@@ -1262,7 +1285,7 @@ POSSIBILITY OF SUCH DAMAGE.
         </xsl:when>
         <!-- SFString or MFString containing empty string "" -->
         <xsl:when test="starts-with($inputString,'&quot;&quot;')">
-          <!-- <xsl:message><xsl:text>[3.5]</xsl:text></xsl:message> -->
+          <xsl:if test="$debugTrace"><xsl:message><xsl:text>[3.5]</xsl:text><xsl:value-of select="$debugMessage"/></xsl:message></xsl:if>
           <xsl:text>""</xsl:text>
 		  <xsl:if test="(string-length(normalize-space(substring($inputString,3))) > 0)">
 			<xsl:text>,</xsl:text>
@@ -1275,12 +1298,12 @@ POSSIBILITY OF SUCH DAMAGE.
 			  <xsl:message>
 				  <xsl:text>Error: malformed SFString value has "" empty string followed by extra characters: </xsl:text>
 			      <xsl:value-of select="substring($inputString,3)"/>
-			  </xsl:message>
+			  <xsl:value-of select="$debugMessage"/></xsl:message>
 		  </xsl:if>
         </xsl:when>
         <!-- starting and ending quotes indicate outer delimeters of MFString array -->
         <xsl:when test="starts-with($inputString,'&quot;') and ends-with($inputString,'&quot;') and not(ends-with($inputString,'\&quot;'))">
-          <!-- <xsl:message><xsl:text>[4]</xsl:text></xsl:message> -->
+          <xsl:if test="$debugTrace"><xsl:message><xsl:text>[4]</xsl:text><xsl:value-of select="$debugMessage"/></xsl:message></xsl:if>
           <xsl:text>"</xsl:text>
           <xsl:call-template name="escape-quotes-recurse">
               <xsl:with-param name="inputString" select="substring($inputString,2,string-length($inputString) - 2)"/>
@@ -1290,9 +1313,9 @@ POSSIBILITY OF SUCH DAMAGE.
         </xsl:when>
         <!-- strings: skip past escaped quote character \" (a literal value, not a delimiter) then recurse to process remainder -->
         <xsl:when test="contains($inputString,'\&quot;') and (string-length(substring-before($inputString,'&quot;')) > string-length(substring-before($inputString,'\&quot;')))">
-          <!-- <xsl:message><xsl:text>[5]</xsl:text></xsl:message> -->
+          <xsl:if test="$debugTrace"><xsl:message><xsl:text>[5]</xsl:text><xsl:value-of select="$debugMessage"/></xsl:message></xsl:if>
           <xsl:value-of select="substring-before($inputString,'\&quot;')"/>
-          <xsl:text>\"</xsl:text>
+          <xsl:text disable-output-escaping="yes">\\\"</xsl:text>
           <xsl:call-template name="escape-quotes-recurse">
               <xsl:with-param name="inputString" select="substring-after($inputString,'\&quot;')"/>
               <xsl:with-param name="inputType"   select="$inputType"/>
@@ -1300,7 +1323,7 @@ POSSIBILITY OF SUCH DAMAGE.
         </xsl:when>
         <!-- MFString value next contains quotes delimiter between SFString array elements, but check no preceding unescaped quote -->
         <xsl:when test="($inputType = 'MFString') and contains($inputString,'&quot; &quot;') and (string-length(substring-before($inputString,'&quot;')) >= string-length(substring-before($inputString,'&quot; &quot;')))">
-          <!-- <xsl:message><xsl:text>[6]</xsl:text></xsl:message> -->
+          <xsl:if test="$debugTrace"><xsl:message><xsl:text>[6]</xsl:text><xsl:value-of select="$debugMessage"/></xsl:message></xsl:if>
           <xsl:value-of select="substring-before($inputString,'&quot; &quot;')"/>
           <xsl:text>" "</xsl:text>          
           <xsl:call-template name="escape-quotes-recurse">
@@ -1310,9 +1333,9 @@ POSSIBILITY OF SUCH DAMAGE.
         </xsl:when>
         <!-- unescaped quote needs \ escape character inserted, occurs before quotes delimiter -->
         <xsl:when test="($inputType = 'MFString') and contains($inputString,'&quot; &quot;') and (string-length(substring-before($inputString,'&quot; &quot;')) > string-length(substring-before($inputString,'&quot;')))">
-          <!-- <xsl:message><xsl:text>[7]</xsl:text></xsl:message> -->
+          <xsl:if test="$debugTrace"><xsl:message><xsl:text>[7]</xsl:text><xsl:value-of select="$debugMessage"/></xsl:message></xsl:if>
           <xsl:value-of select="substring-before($inputString,'&quot;')"/>
-          <xsl:text>\"</xsl:text>
+          <xsl:text disable-output-escaping="yes">\"</xsl:text>
           <xsl:call-template name="escape-quotes-recurse">
               <xsl:with-param name="inputString" select="substring-after($inputString,'&quot;')"/>
               <xsl:with-param name="inputType"   select="$inputType"/>
@@ -1320,9 +1343,9 @@ POSSIBILITY OF SUCH DAMAGE.
         </xsl:when>
         <!-- unescaped quote needs \ escape character inserted, no quote delimiter remaining -->
         <xsl:when test="contains($inputString,'&quot;')">
-          <!-- <xsl:message><xsl:text>[8]</xsl:text></xsl:message> -->
+          <xsl:if test="$debugTrace"><xsl:message><xsl:text>[8]</xsl:text><xsl:value-of select="$debugMessage"/></xsl:message></xsl:if>
           <xsl:value-of select="substring-before($inputString,'&quot;')"/>
-          <xsl:text>\"</xsl:text>
+          <xsl:text disable-output-escaping="yes">\"</xsl:text>
           <xsl:call-template name="escape-quotes-recurse">
               <xsl:with-param name="inputString" select="substring-after($inputString,'&quot;')"/>
               <xsl:with-param name="inputType"   select="$inputType"/>
@@ -1330,7 +1353,7 @@ POSSIBILITY OF SUCH DAMAGE.
         </xsl:when>
         <!-- remaining case: all done -->
         <xsl:otherwise>
-          <!-- <xsl:message><xsl:text>[9]</xsl:text></xsl:message> -->
+          <xsl:if test="$debugTrace"><xsl:message><xsl:text>[9]</xsl:text><xsl:value-of select="$debugMessage"/></xsl:message></xsl:if>
           <xsl:value-of select="$inputString"/>
         </xsl:otherwise>
       </xsl:choose>
@@ -1377,7 +1400,7 @@ POSSIBILITY OF SUCH DAMAGE.
 		  <xsl:choose>
 			  <!-- double backslash is already escaped, pass it through -->
 			  <xsl:when test="($nextChar = '\') and ($remainder[1] = '\')">
-				<xsl:text>\\</xsl:text>
+				<xsl:text disable-output-escaping="yes">\\</xsl:text>
 				<xsl:call-template name="escape-backslash-characters-recurse">
 				  <xsl:with-param name="inputString" select="substring($remainder,2)"/>
 				</xsl:call-template>
@@ -1387,14 +1410,14 @@ POSSIBILITY OF SUCH DAMAGE.
 			  <!-- http://www.w3schools.com/js/js_strings.asp -->
 			  <xsl:when test="($nextChar = '&quot;') or ($nextChar = '\') or ($nextChar = '/') or
                               ($nextChar = 'n') or ($nextChar = 'r') or ($nextChar = 't') or ($nextChar = 'b') or ($nextChar = 'f')">
-				  <xsl:text>\</xsl:text>
+				  <xsl:text disable-output-escaping="yes">\</xsl:text>
 				  <xsl:value-of select="$nextChar"/>
 				<xsl:call-template name="escape-backslash-characters-recurse">
 				  <xsl:with-param name="inputString" select="$remainder"/>
 				</xsl:call-template>
 			  </xsl:when>
 			  <xsl:when test='($nextChar = "&apos;")'>
-				  <xsl:text>\</xsl:text>
+				  <xsl:text disable-output-escaping="yes">\</xsl:text>
 				  <xsl:value-of select="$nextChar"/>
 				<xsl:call-template name="escape-backslash-characters-recurse">
 				  <xsl:with-param name="inputString" select="$remainder"/>
@@ -1402,7 +1425,7 @@ POSSIBILITY OF SUCH DAMAGE.
 			  </xsl:when>
 			  <xsl:when test="(normalize-space($nextChar) = ' ') or (normalize-space($nextChar) = '')">
                          <!-- or ($nextChar = '&amp;') start of character entity -->
-				  <xsl:text>\\</xsl:text>
+				  <xsl:text disable-output-escaping="yes">\\</xsl:text>
 				  <xsl:value-of select="$nextChar"/>
 				<xsl:call-template name="escape-backslash-characters-recurse">
 				  <xsl:with-param name="inputString" select="$remainder"/>
@@ -1411,7 +1434,7 @@ POSSIBILITY OF SUCH DAMAGE.
 			  <!-- TODO are more thorough checks needed? https://tools.ietf.org/html/rfc7159#section-7 -->
 			  <!-- TODO any special handling needed for ($nextChar = '\&apos;') ? -->
 			  <xsl:otherwise> <!-- allow this backslash character to escape whatever follows -->
-				  <xsl:text>\</xsl:text>
+				  <xsl:text disable-output-escaping="yes">\</xsl:text>
 				  <xsl:value-of select="$nextChar"/>
 				<xsl:call-template name="escape-backslash-characters-recurse">
 				  <xsl:with-param name="inputString" select="$remainder"/>
@@ -1499,7 +1522,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <!-- strings: skip past escaped quote character \" (a literal value, not a delimiter) then recurse to process first unescaped quote character " -->
         <xsl:when test="contains($inputString,'\\&quot;') and (string-length(substring-before($inputString,'&quot;')) > string-length(substring-before($inputString,'\\&quot;')))">
           <xsl:value-of select="substring-before($inputString,'\&quot;')"/>
-          <xsl:text>\&quot;</xsl:text>
+          <xsl:text disable-output-escaping="yes">\\\&quot;</xsl:text>
           <xsl:call-template name="insert-commas-recurse">
             <xsl:with-param name="inputString" select="substring-after($inputString,'\&quot;')"/>
             <xsl:with-param name="inputType"   select="$inputType"/>
