@@ -115,7 +115,7 @@ let mapToMethod2 = {
 	},
 	"GeoLOD" : {
 		"IS" : "setIS",
-		"IS" : "addRootNode"
+		"IS" : "appendRootNode"
 	},
 	"LinePickSensor" : {
 		"IS" : "addPickedGeometry"
