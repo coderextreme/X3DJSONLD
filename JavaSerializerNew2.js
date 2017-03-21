@@ -129,9 +129,6 @@ let mapToMethod2 = {
 	"HAnimSegment" : {
 		"IS" : "setIS"
 	},
-	"HAnimHumanoid" : {
-		"HAnimJoint" : "addJoints"
-	},
 	"GeoLOD" : {
 		"GeoOrigin" : "setGeoOrigin"
 	}
