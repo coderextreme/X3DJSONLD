@@ -1,5 +1,5 @@
 #!/bin/sh
-export CLASSPATH="saxon9B.jar;."
+export CLASSPATH="saxon9he.jar;."
 javac RunSaxon.java
 
 rm *Canonical*

@@ -52,7 +52,7 @@
           },
           {
             "@name":"translated",
-            "@content":"20 March 2017"
+            "@content":"21 March 2017"
           },
           {
             "@name":"generator",
@@ -96,7 +96,7 @@
                   "#comment":"quotation \" is &quot; and isn't needed if single-quote delimiters used for string='value' attribute"
                 },
                 {
-                  "#comment":"quotation \" can be used as part of X3D string if escaped with backslash: \\""
+                  "#comment":"quotation \" can be used as part of X3D string if escaped with backslash: \\\""
                 },
                 {
                   "#comment":"backslash is used as escape character for \" (and itself) in X3D"
@@ -109,7 +109,7 @@
                 { "Text":
                   {
                     "@DEF":"DefaultText",
-                    "@string":["Character entity substitutions:","empty string \"\" skips a line:","","apostrophe ' is &apos;","ampersand & is &amp;","quote mark \" is &quot;","backslash \\ is X3D escape character","double backslash \\\\ is X3D backslash \\ character","Pi Π is &#928; XML character entity"],
+                    "@string":["Character entity substitutions:","empty string \\\\\"\\\\\" skips a line:","","apostrophe ' is &apos;","ampersand & is &amp;","quote mark \\\\\" is &quot;","backslash \\ is X3D escape character","double backslash \\\\ is X3D backslash \\ character","Pi Π is &#928; XML character entity"],
                     "-fontStyle":
                       { "FontStyle":
                         {

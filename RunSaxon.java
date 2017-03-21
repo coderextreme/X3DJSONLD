@@ -6,7 +6,7 @@ protected static class ExitException extends SecurityException
         public final int status;
         public ExitException(int status) 
         {
-            super("There is no escape!");
+            super("There is no escape! "+status);
             this.status = status;
         }
     }
@@ -35,9 +35,9 @@ protected static class ExitException extends SecurityException
 		try {
 			System.setSecurityManager(new NoExitSecurityManager());
 			for (int a = 0; a < args.length; a++) {
+				System.err.println("BEGIN "+args[a]);
+				String out = args[a];
 				try {
-					System.err.println("BEGIN "+args[a]);
-														     String out = args[a];
 					if (out.lastIndexOf("www.web3d.org") >= 0) {
 						out = out.substring(out.lastIndexOf("www.web3d.org"));
 					}
@@ -50,14 +50,13 @@ protected static class ExitException extends SecurityException
 					net.sf.saxon.Transform.main(new String[] {
 
 								"-warnings:recover",
-								"-o",
-								out,
-								args[a],
-								"X3dToJson.xslt" });
+								"-o:"+out,
+								"-s:"+args[a],
+								"-xsl:X3dToJson.xslt" });
 					// -t  #timing -c # compiled
 					System.err.println("END "+args[a]);
 				} catch (Throwable e) {
-					System.err.println("FATAL "+args[a]);
+					System.err.println("FATAL "+args[a]+" > "+out);
 					System.err.println(e.getMessage());
 				}
 			}
