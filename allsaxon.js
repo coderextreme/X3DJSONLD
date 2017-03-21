@@ -9,4 +9,6 @@ function translate(infiles) {
 	java.callStaticMethodSync("RunSaxon", "main", infiles);
 }
 
-module.exports = translate;
+if (typeof module === 'object')  {
+	module.exports = translate;
+}

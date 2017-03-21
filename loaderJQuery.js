@@ -51,7 +51,7 @@ function setVersion(version) {
 		routecode.log("var __eventTime = 0;");
 		routecode.log("function runRoutes() {");
 		processScripts(json, classes, undefined, routecode);
-		routecode.log("__eventTime += 100;");
+		routecode.log("__eventTime += 1000 / 60;");
 		routecode.log("}");
 
 		if (typeof intervalId !== 'undefined') {
@@ -97,7 +97,7 @@ function setVersion(version) {
 		} catch (e) {
 			console.error(e);
 		}
-		intervalId = setInterval(runRoutes, 100);
+		intervalId = setInterval(runRoutes, 1000 / 60 );
 	    }
 	}
 

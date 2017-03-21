@@ -1,4 +1,6 @@
 import java.io.*;
+import java.net.*;
+import javax.net.ssl.*;
 
 class RunSaxon {
 protected static class ExitException extends SecurityException 
@@ -35,9 +37,61 @@ protected static class ExitException extends SecurityException
 		try {
 			System.setSecurityManager(new NoExitSecurityManager());
 			for (int a = 0; a < args.length; a++) {
-				System.err.println("BEGIN "+args[a]);
-				String out = args[a];
+				String source = args[a];
+				System.err.println("BEGIN "+source);
+				String out = "";
 				try {
+					if (source.startsWith("http")) {
+
+						// Create a new trust manager that trust all certificates
+						TrustManager[] trustAllCerts = new TrustManager[]{
+						    new X509TrustManager() {
+							public java.security.cert.X509Certificate[] getAcceptedIssuers() {
+							    return null;
+							}
+							public void checkClientTrusted(
+							    java.security.cert.X509Certificate[] certs, String authType) {
+							}
+							public void checkServerTrusted(
+							    java.security.cert.X509Certificate[] certs, String authType) {
+							}
+						    }
+						};
+
+						// Activate the new trust manager
+						try {
+						    SSLContext sc = SSLContext.getInstance("SSL");
+						    sc.init(null, trustAllCerts, new java.security.SecureRandom());
+						    HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory());
+						} catch (Exception e) {
+						}
+						
+
+						URL u = new URL(source);
+						if (source.lastIndexOf("savage.nps.edu") >= 0) {
+							source = "examples"+source.substring(source.lastIndexOf("savage.nps.edu")+14);
+						}
+						BufferedReader br = null;
+						PrintWriter bw = null;
+						try {
+							br = new BufferedReader(new InputStreamReader(u.openStream()));
+							bw = new PrintWriter(new FileWriter(source));
+							String line = null;
+							while ((line = br.readLine()) != null) {
+								bw.println(line);
+							}
+						} catch (IOException ioe) {
+							ioe.printStackTrace();
+						} finally {
+							if (br != null) {
+								br.close();
+							}
+							if (bw != null) {
+								bw.close();
+							}
+						}
+					}
+					out = source;
 					if (out.lastIndexOf("www.web3d.org") >= 0) {
 						out = out.substring(out.lastIndexOf("www.web3d.org"));
 					}
@@ -51,12 +105,12 @@ protected static class ExitException extends SecurityException
 
 								"-warnings:recover",
 								"-o:"+out,
-								"-s:"+args[a],
+								"-s:"+source,
 								"-xsl:X3dToJson.xslt" });
 					// -t  #timing -c # compiled
-					System.err.println("END "+args[a]);
+					System.err.println("END "+source);
 				} catch (Throwable e) {
-					System.err.println("FATAL "+args[a]+" > "+out);
+					System.err.println("FATAL "+source+" > "+out);
 					System.err.println(e.getMessage());
 				}
 			}

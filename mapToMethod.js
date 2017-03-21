@@ -21410,4 +21410,6 @@ var mapToMethod = {"X3DNode" : {
 },
 };
 
-module.exports = mapToMethod;
+if (typeof module === 'object')  {
+	module.exports = mapToMethod;
+}

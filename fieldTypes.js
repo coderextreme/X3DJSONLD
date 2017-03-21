@@ -3814,4 +3814,6 @@ var fieldTypes = {"X3DNode" : {
 },
 };
 
-module.exports = fieldTypes;
+if (typeof module === 'object')  {
+	module.exports = fieldTypes;
+}
