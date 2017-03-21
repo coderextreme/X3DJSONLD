@@ -145,8 +145,9 @@ function setVersion(version) {
 	    }
 	    updateXML(xml);
 	    loadScripts(json);
-	    var python = PythonSerializer.serializeToString(json, child);
-	    $('textarea#python').val(python);
+	    var jserial = new JavaSerializer();
+	    var java = jserial.serializeToString(json, child, url, mapToMethod, fieldTypes);
+	    $('textarea#java').val(java);
         }
 
 	function appendInline(element, url) {

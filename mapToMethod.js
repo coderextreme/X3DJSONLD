@@ -1,4 +1,4 @@
-module.exports = {"X3DNode" : {
+var mapToMethod = {"X3DNode" : {
 	"X3DMetadataObject" : "setMetadata",
 	"MetadataInteger" : "setMetadata",
 	"MetadataDouble" : "setMetadata",
@@ -21409,3 +21409,5 @@ module.exports = {"X3DNode" : {
 	"X3DNode" : "addField",
 },
 };
+
+module.exports = mapToMethod;

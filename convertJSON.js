@@ -1,6 +1,8 @@
 var fs = require('fs');
 var mkdirp = require('node-mkdirp');
 var loadX3DJS = require('./serverX3DJSONLD');
+let mapToMethod = require('./mapToMethod.js');
+let fieldTypes = require('./fieldTypes.js');
 
 var validate = {};
 
@@ -55,7 +57,7 @@ function convertJSON(options) {
 			}
 			for (var ser in options) {
 				var serializer = require(ser);
-				str = serializer.serializeToString(json, element, basefile)
+				str = new serializer().serializeToString(json, element, basefile, mapToMethod, fieldTypes)
 				if (typeof str !== 'undefined') {
 					var outfile = basefile+options[ser];
 					fs.writeFileSync(outfile, str);

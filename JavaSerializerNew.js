@@ -1,5 +1,3 @@
-let mapToMethod = require('./mapToMethod.js');
-let fieldTypes = require('./fieldTypes.js');
 let mapToMethod2 = {
         "Scene" : {
                 "ROUTE" : "addChild",
@@ -72,16 +70,15 @@ let mapToMethod2 = {
 	}
 };
 
-Object.assign(mapToMethod, {
-});
-
-for (map in mapToMethod2) {
-        Object.assign(mapToMethod[map], mapToMethod2[map]);
-}
-
-
 let JavaSerializer = {};
-JavaSerializer.serializeToString = function(json, element, clazz) {
+JavaSerializer.serializeToString = function(json, element, clazz, mapToMethod, fieldTypes) {
+	Object.assign(mapToMethod, {
+	});
+
+	for (map in mapToMethod2) {
+		Object.assign(mapToMethod[map], mapToMethod2[map]);
+	}
+
 	/*
 	for (let a in element.attributes) {
 		let attrs = element.attributes;
@@ -178,7 +175,7 @@ JavaSerializer.serializeToString = function(json, element, clazz) {
 	str += "import org.web3d.x3d.sai.VolumeRendering.*;\n";
 	str += "public class "+clz+" {\n";
 	str += "	public static void main(String[] args) {\n";
-	str += JavaSerializer.subSerializeToString(element);
+	str += JavaSerializer.subSerializeToString(element, 0, mapToMethod, fieldTypes);
         str += ";\n        ConfigurationProperties.setShowDefaultAttributes(true);\n";
         str += "        ConfigurationProperties.setIndentCharacter(ConfigurationProperties.indentCharacter_DEFAULT);\n";
         str += "        ConfigurationProperties.setIndentIncrement(ConfigurationProperties.indentIncrement_DEFAULT);\n";
@@ -193,7 +190,7 @@ JavaSerializer.serializeToString = function(json, element, clazz) {
 	return str;
 }
 
-function printParentChild(element, n, node, cn) {
+function printParentChild(element, n, node, cn, mapToMethod) {
 	let addpre = ".set";
 	if (cn > 0 && node.nodeName !== 'IS') {
 		addpre = ".add";
@@ -233,7 +230,7 @@ function printParentChild(element, n, node, cn) {
 	}
 }
 
-JavaSerializer.subSerializeToString = function(element, n, grandparent, gn) {
+JavaSerializer.subSerializeToString = function(element, n, mapToMethod, fieldTypes, grandparent, gn) {
 	n = n || 0;
 	let str = "";
 	if (n === 0) {
@@ -242,9 +239,9 @@ JavaSerializer.subSerializeToString = function(element, n, grandparent, gn) {
 	for (let cn in element.childNodes) {
 		let node = element.childNodes[cn];
 		if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 1) {
-			str += printParentChild(element, n, node, cn);
+			str += printParentChild(element, n, node, cn, mapToMethod);
 			str += 'new '+node.nodeName+'Object()\n';
-			str += JavaSerializer.subSerializeToString(node, n+1, element, n);
+			str += JavaSerializer.subSerializeToString(node, n+1, mapToMethod, fieldTypes, element, n);
 			str += "\t".repeat(n)+")\n";
 		} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 8) {
 			str += "\t".repeat(n)+'.addComments(new CommentsBlock("'+node.nodeValue.replace(/"/g, '\\"')+'"))\n';
