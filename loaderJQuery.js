@@ -48,8 +48,10 @@ function setVersion(version) {
 		// Now generate JavaScript code for Scripts and Routes
 		var classes = new LOG();
 		var routecode = new LOG();
+		routecode.log("var __eventTime = 0;");
 		routecode.log("function runRoutes() {");
 		processScripts(json, classes, undefined, routecode);
+		routecode.log("__eventTime += 100;");
 		routecode.log("}");
 
 		if (typeof intervalId !== 'undefined') {
@@ -81,6 +83,7 @@ function setVersion(version) {
 
 		// console.log(scripts.text);
 		try {
+			console.log(scripts.text);
 			// TODO eval is evil
 			eval(scripts.text);
 		} catch (e) {
@@ -88,6 +91,7 @@ function setVersion(version) {
 		}
 		// console.log(routes.text);
 		try {
+			console.log(routes.text);
 			// TODO eval is evil
 			eval(routes.text);
 		} catch (e) {
