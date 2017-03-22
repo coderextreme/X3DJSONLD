@@ -1,0 +1,115 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "Scene": {
+        "-children":[
+          { "ProtoDeclare":
+            {
+              "@name":"anyShape",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"myShape",
+                      "@accessType":"inputOutput",
+                      "@type":"MFNode",
+                      "-children":[
+                        { "Shape":
+                          {
+                            "-geometry":
+                              { "Sphere":
+                                {
+                                }
+                              }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                      {
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"children",
+                                "@protoField":"myShape"
+                              }
+                            ]
+                        }
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"one",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"myShape",
+                      "@accessType":"inputOutput",
+                      "@type":"MFNode",
+                      "-children":[
+                        { "Shape":
+                          {
+                            "-geometry":
+                              { "Cylinder":
+                                {
+                                }
+                              }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                      {
+                        "-children":[
+                          { "ProtoInstance":
+                            {
+                              "@name":"anyShape"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"one",
+              "fieldValue": [
+                {
+                  "@name":"myShape",
+                  "-children":[
+                    { "Shape":
+                      {
+                        "-geometry":
+                          { "Box":
+                            {
+                              "@size":[1,1,1]
+                            }
+                          }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}
