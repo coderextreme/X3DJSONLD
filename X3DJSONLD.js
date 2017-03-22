@@ -142,8 +142,7 @@ function loadURLs(loadpath, urls, loadedCallback) {
 						}
 					} else if (typeof fs !== 'undefined' && protocol.indexOf("http") !== 0) {
 						// should be async, but out of memory
-						console.error("Loading FILE URL", url);
-						console.log('reading 1 ', url);
+						// console.error("Loading FILE URL", url);
 						var hash = url.indexOf("#");
 						if (hash > 0) {
 							url = url.substring(0, hash);
