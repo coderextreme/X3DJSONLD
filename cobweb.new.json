@@ -49,9 +49,9 @@
           },
           { "Viewpoint":
             {
-              "@position":[0,0,4],
+              "@description":"Bubbles in action",
               "@orientation":[1,0,0,0],
-              "@description":"Bubbles in action"
+              "@position":[0,0,4]
             }
           },
           { "Background":
@@ -75,12 +75,6 @@
                         "-children":[
                           { "Shape":
                             {
-                              "-geometry":
-                                { "Sphere":
-                                  {
-                                    "@radius":0.25
-                                  }
-                                },
                               "-appearance":
                                 { "Appearance":
                                   {
@@ -91,6 +85,12 @@
                                           "@transparency":0.2
                                         }
                                       }
+                                  }
+                                },
+                              "-geometry":
+                                { "Sphere":
+                                  {
+                                    "@radius":0.25
                                   }
                                 }
                             }
@@ -171,32 +171,32 @@
                           { "TimeSensor":
                             {
                               "@DEF":"bubbleClock",
-                              "@cycleInterval":10,
+                              "@cycleInterval":10.0,
                               "@loop":true
                             }
                           },
                           { "ROUTE":
                             {
-                              "@fromNode":"bounce",
                               "@fromField":"translation_changed",
-                              "@toNode":"transform",
-                              "@toField":"set_translation"
-                            }
-                          },
-                          { "ROUTE":
-                            {
                               "@fromNode":"bounce",
-                              "@fromField":"scale_changed",
-                              "@toNode":"transform",
-                              "@toField":"set_scale"
+                              "@toField":"set_translation",
+                              "@toNode":"transform"
                             }
                           },
                           { "ROUTE":
                             {
-                              "@fromNode":"bubbleClock",
+                              "@fromField":"scale_changed",
+                              "@fromNode":"bounce",
+                              "@toField":"set_scale",
+                              "@toNode":"transform"
+                            }
+                          },
+                          { "ROUTE":
+                            {
                               "@fromField":"fraction_changed",
-                              "@toNode":"bounce",
-                              "@toField":"set_fraction"
+                              "@fromNode":"bubbleClock",
+                              "@toField":"set_fraction",
+                              "@toNode":"bounce"
                             }
                           }
                         ]

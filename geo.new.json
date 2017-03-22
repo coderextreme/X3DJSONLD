@@ -1,0 +1,133 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "Scene": {
+        "-children":[
+          { "NavigationInfo":
+            {
+              "@type":["EXAMINE"]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@DEF":"Tour",
+              "@description":"Tour Views"
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"sphere in road",
+              "@position":[0,0,4]
+            }
+          },
+          { "Background":
+            {
+              "@backUrl":["bBK.png","http://coderextreme.net/bug/bBK.png"],
+              "@bottomUrl":["bBT.png","http://coderextreme.net/bug/bBT.png"],
+              "@frontUrl":["bFR.png","http://coderextreme.net/bug/bFR.png"],
+              "@leftUrl":["bLF.png","http://coderextreme.net/bug/bLF.png"],
+              "@rightUrl":["bRT.png","http://coderextreme.net/bug/bRT.png"],
+              "@topUrl":["bTP.png","http://coderextreme.net/bug/bTP.png"]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"Rose01",
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@DEF":"_01_-_Default",
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.7,0.7,0.7],
+                                "@specularColor":[0.5,0.5,0.5]
+                              }
+                            },
+                          "-shaders":[
+                            { "ComposedShader":
+                              {
+                                "@DEF":"ComposedShader",
+                                "@language":"GLSL",
+                                "-parts":[
+                                  { "ShaderPart":
+                                    {
+                                      "@type":"VERTEX",
+                                      "@url":["cobweb.vs"]
+                                    }
+                                  },
+                                  { "ShaderPart":
+                                    {
+                                      "@type":"FRAGMENT",
+                                      "@url":["bubbles.fs"]
+                                    }
+                                  }
+                                ],
+                                "field": [
+                                  {
+                                    "@name":"cubeMap",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFInt32",
+                                    "@value":0
+                                  },
+                                  {
+                                    "@name":"chromaticDispersion",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFVec3f",
+                                    "@value":[0.98,1,1.033]
+                                  },
+                                  {
+                                    "@name":"bias",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFFloat",
+                                    "@value":0.5
+                                  },
+                                  {
+                                    "@name":"scale",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFFloat",
+                                    "@value":0.5
+                                  },
+                                  {
+                                    "@name":"power",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFFloat",
+                                    "@value":2
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "-texture":
+                            { "ComposedCubeMapTexture":
+                              {
+                                "-texture":
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["bTP.png","http://coderextreme.net/bug/bTP.png"]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Sphere":
+                        {
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

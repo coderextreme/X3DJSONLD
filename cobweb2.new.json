@@ -8,7 +8,7 @@
         "meta": [
           {
             "@name":"title",
-            "@content":"cobweb.x3d"
+            "@content":"geo.x3d"
           },
           {
             "@name":"creator",
@@ -24,7 +24,15 @@
           },
           {
             "@name":"identifier",
-            "@content":"http://coderextreme.net/X3DJSONLD/cobweb.x3d"
+            "@content":"http://coderextreme.net/X3DJSONLD/geo.x3d"
+          },
+          {
+            "@name":"translated",
+            "@content":"13 March 2016"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
           },
           {
             "@name":"translated",
@@ -49,9 +57,9 @@
           },
           { "Viewpoint":
             {
-              "@position":[0,0,4],
+              "@description":"Bubbles in action",
               "@orientation":[1,0,0,0],
-              "@description":"Bubbles in action"
+              "@position":[0,0,4]
             }
           },
           { "Background":
@@ -75,12 +83,6 @@
                         "-children":[
                           { "Shape":
                             {
-                              "-geometry":
-                                { "Sphere":
-                                  {
-                                    "@radius":0.25
-                                  }
-                                },
                               "-appearance":
                                 { "Appearance":
                                   {
@@ -91,6 +93,12 @@
                                           "@transparency":0.2
                                         }
                                       }
+                                  }
+                                },
+                              "-geometry":
+                                { "Sphere":
+                                  {
+                                    "@radius":0.25
                                   }
                                 }
                             }
@@ -150,15 +158,24 @@
 "}",
 "",
 "function set_fraction(value) {",
+"    if (typeof translation === 'undefined') {\n\t\ttranslation = [0, 0, 0];",
+"    }",
+"    if (typeof velocity === 'undefined') {\n\t\tvelocity = [0, 0, 0];",
+"    }",
+"    if (typeof scalevel === 'undefined') {\n\t\tscalevel = [0, 0, 0];",
+"    }",
+"    if (typeof scale === 'undefined') {",
+"\t\tscale = [1, 1, 1];",
+"    }",
 "    translation = new SFVec3f(\ttranslation[0] + velocity[0], translation[1] + velocity[1], translation[2] + velocity[2]);",
 "    scale = new SFVec3f(scale[0] + scalvel[0], scale[1] + scalvel[1], scale[2] + scalvel[2]);",
-"    for (var j = 0; j < 3; j++) {",
+"    for (var j = 0; j &lt; 3; j++) {",
 "\t    // if you get to far away or too big, explode",
-"\t    if ( Math.abs(translation[j]) > 256) {",
+"\t    if ( Math.abs(translation[j]) &gt; 256) {",
 "\t\ttranslation[j] = 0;",
 "\t\tinitialize();",
 "\t    }",
-"\t    if (Math.abs(scale[j]) > 20) {",
+"\t    if (Math.abs(scale[j]) &gt; 20) {",
 "\t\tscale[j] = scale[j]/2;",
 "\t\ttranslation[j] = 0;",
 "\t\tinitialize();",
@@ -171,32 +188,48 @@
                           { "TimeSensor":
                             {
                               "@DEF":"bubbleClock",
-                              "@cycleInterval":10,
+                              "@cycleInterval":10.0,
                               "@loop":true
                             }
                           },
                           { "ROUTE":
                             {
-                              "@fromNode":"bounce",
                               "@fromField":"translation_changed",
-                              "@toNode":"transform",
-                              "@toField":"set_translation"
+                              "@fromNode":"transform",
+                              "@toField":"set_translation",
+                              "@toNode":"bounce"
                             }
                           },
                           { "ROUTE":
                             {
-                              "@fromNode":"bounce",
                               "@fromField":"scale_changed",
-                              "@toNode":"transform",
-                              "@toField":"set_scale"
+                              "@fromNode":"transform",
+                              "@toField":"set_scale",
+                              "@toNode":"bounce"
                             }
                           },
                           { "ROUTE":
                             {
-                              "@fromNode":"bubbleClock",
+                              "@fromField":"translation_changed",
+                              "@fromNode":"bounce",
+                              "@toField":"set_translation",
+                              "@toNode":"transform"
+                            }
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromField":"scale_changed",
+                              "@fromNode":"bounce",
+                              "@toField":"set_scale",
+                              "@toNode":"transform"
+                            }
+                          },
+                          { "ROUTE":
+                            {
                               "@fromField":"fraction_changed",
-                              "@toNode":"bounce",
-                              "@toField":"set_fraction"
+                              "@fromNode":"bubbleClock",
+                              "@toField":"set_fraction",
+                              "@toNode":"bounce"
                             }
                           }
                         ]
