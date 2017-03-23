@@ -24,16 +24,16 @@ function compare(obj1, p1, obj2, p2) {
 	} else if (typeof obj1 === 'string' && typeof obj2 === 'string') {
 		if (obj1.trim() === obj2.trim()) {
 		} else if (obj1.indexOf(" ") >= 0 || obj2.indexOf(" ") >= 0) {
-			var spl1 = obj1.split(/[ \n\r]+/);
-			var spl2 = obj2.split(/[ \n\r]+/);
+			var spl1 = obj1.split(/[ \t\n\r]+/);
+			var spl2 = obj2.split(/[ \t\n\r]+/);
 			//console.log("array1", spl1);
 			if (spl1.length === spl2.length) {
 				for (var i = 0; i < spl1.length; i++) {
 					if (myTrim(spl1[i]) != myTrim(spl2[i])) { 
 						var p1key = p1+'/'+i;
 						var p2key = p2+'/'+i;
-						var dsp1 = spl1[i].split(/[ \n\r]+/);
-						var dsp2 = spl2[i].split(/[ \n\r]+/);
+						var dsp1 = spl1[i].split(/[ \t\n\r]+/);
+						var dsp2 = spl2[i].split(/[ \t\n\r]+/);
 						// console.log("array2", dsp1);
 						for (var j = 0; j  < dsp1.length; j++) {
 							var dsp1key = p1key+'/'+j;
@@ -74,7 +74,7 @@ function compare(obj1, p1, obj2, p2) {
 				// both have key
 				var ret;
 				if (arrayKeys[key]) {
-					ret = compare(obj1[key].split(/[ \n\r]+/), p1key, obj2[key].split(/[ \n\r]+/), p2key);
+					ret = compare(obj1[key].split(/[ \t\n\r]+/), p1key, obj2[key].split(/[ \t\n\r]+/), p2key);
 				} else {
 					ret = compare(obj1[key], p1key, obj2[key], p2key);
 				}
