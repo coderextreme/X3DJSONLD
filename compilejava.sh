@@ -1,27 +1,21 @@
 #!/bin/sh
-jar -cMf GoodJava.zip RunSaxon.java
-jar -cMf BadJava.zip compilejava.sh runjson.sh
-jar -cMf DiffJSON.zip compilejava.sh runjson.sh
+jar -cMf GoodJSON.zip classpath
+jar -cMf DiffJSON.zip classpath
 X3DJSONLD=./../pythonSAI/
 export CLASSPATH=".;${X3DJSONLD}saxon9he.jar;${X3DJSONLD}jslint4java-2.0.5.jar;${X3DJSONLD}json-schema-validator-2.2.6-lib.jar;${X3DJSONLD}X3DJSAIL.3.3.classes.jar;${X3DJSONLD}X3DJAIL.3.3.full.jar;${CLASSPATH}"
-for i in `(ls *.java) | grep -v RunSaxon.java` `find www_web3d_org/ -name '*.java'`
-do
-	BASE=`dirname $i`/`basename $i .java` 
-	CLASS=`echo $BASE | sed 's/^[\.\/]*//'`
-	# echo $CLASS.java 1>&2
-	# echo $CLASS.java 2>&1
-	if javac $i && java $CLASS
+(ls *.java | grep -v RunSaxon; find www_web3d_org/ -name '*.java') | xargs -L 1 -P 8 javac
+
+(ls *.class | grep -v RunSaxon; find www_web3d_org/ -name '*.class') | sed 's/\.class$//' | xargs -L 1 -P 8 java
+for NEW in `find . -name '*.new.json'`
+	JSON=`dirname $NEW`/`basename $NEW .new.json`.json
+	DIFF=`dirname $NEW`/`basename $NEW .new.json`.diff
+	echo node jsondiff.js $JSON $NEW 2>&1
+	if [ -z "`node jsondiff.js $JSON $NEW`" ]
 	then
-		if [ -z "`node jsondiff.js $BASE.json $CLASS.new.json`" ]
-		then
-			jar -uMf GoodJava.zip $i
-		else
-			echo node jsondiff.js $BASE.json $CLASS.new.json 2>&1
-			node jsondiff.js $BASE.json $CLASS.new.json | tee $CLASS.diff
-			jar -uMf DiffJSON.zip $BASE.json $CLASS.new.json $CLASS.diff
-			
-		fi
+			jar -uMf GoodJSON.zip $NEW
 	else
-		jar -uMf BadJava.zip $i
+		node jsondiff.js $JSON $NEW | tee $DIFF
+		jar -uMf DiffJSON.zip $JSON $NEW $DIFF
+			
 	fi
 done
