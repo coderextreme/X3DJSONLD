@@ -100,7 +100,9 @@ magic("*.gif", "image/gif");
 magic("*.jpg", "image/jpeg");
 magic("*.jpeg", "image/jpeg");
 magic("*.png", "image/png");
-magic("*.mpg", "video/mp4");
+magic("*.mpg", "video/mpeg");
+magic("*.wav", "audio/wav");
+magic("*.mp3", "audio/mpeg3");
 magic("*.swf", "application/x-shockwave-flash");
 
 app.get("*.json", function(req, res, next) {
