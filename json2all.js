@@ -8,7 +8,7 @@ process.argv.shift();
 var convertJSON = require('./convertJSON.js');
 
 convertJSON({
-	'./JavaSerializerNew.js' : ".java",
+	'./JavaSerializerMethods.js' : ".java",
 	'./PythonSerializer.js': ".py",
 	'./DOMSerializer.js': ".x3d.new"
 });
