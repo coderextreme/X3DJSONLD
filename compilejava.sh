@@ -7,6 +7,7 @@ export CLASSPATH=".;${X3DJSONLD}saxon9he.jar;${X3DJSONLD}jslint4java-2.0.5.jar;$
 
 (ls *.class | grep -v RunSaxon; find www_web3d_org/ -name '*.class') | sed 's/\.class$//' | xargs -L 1 -P 8 java -d64 -Xss16m -Xmx4096M
 for NEW in `find . -name '*.new.json'`
+do
 	JSON=`dirname $NEW`/`basename $NEW .new.json`.json
 	DIFF=`dirname $NEW`/`basename $NEW .new.json`.diff
 	echo node jsondiff.js $JSON $NEW 2>&1

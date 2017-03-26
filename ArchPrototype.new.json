@@ -52,7 +52,7 @@
           },
           {
             "@name":"translated",
-            "@content":"23 March 2017"
+            "@content":"25 March 2017"
           },
           {
             "@name":"generator",
@@ -488,6 +488,12 @@
           },
           {
             "#comment":"Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare)"
+          },
+          { "Inline":
+            {
+              "@DEF":"CoordinateAxes",
+              "@url":["CoordinateAxes.x3d"]
+            }
           }
         ]
     }
