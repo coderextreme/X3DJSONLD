@@ -1,0 +1,140 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "Scene": {
+        "-children":[
+          { "Collision":
+            {
+              "@DEF":"DoNotCollideWithVisualizationWidget",
+              "-children":[
+                {
+                  "#comment":"Invoke CoordinateAxes in other scenes as an Inline child inside a scaling Transform node, at the topmost level of the scene graph."
+                },
+                {
+                  "#comment":"This NavigationInfo allows examine mode and will be overridden by any parent scene."
+                },
+                {
+                  "#comment":"Each arrow goes from +1m to -1m to allow linear scaling to fit a scene"
+                },
+                {
+                  "#comment":"Note each label rotates about the scene's vertical Y axis for consistency, enabling local orientation by user"
+                }
+              ],
+              "-proxy":
+                { "Transform":
+                  {
+                    "@rotation":[1,0,0,1.57079],
+                    "-children":[
+                      {
+                        "#comment":"Perpendicular Z arrow and label, note right-hand rule"
+                      },
+                      { "Group":
+                        {
+                          "-children":[
+                            { "Group":
+                              {
+                                "@DEF":"ArrowBlue",
+                                "-children":[
+                                  { "Shape":
+                                    {
+                                      "-appearance":
+                                        { "Appearance":
+                                          {
+                                            "@DEF":"Blue",
+                                            "-material":
+                                              { "Material":
+                                                {
+                                                  "@diffuseColor":[0.3,0.3,1],
+                                                  "@emissiveColor":[0.1,0.1,0.33]
+                                                }
+                                              }
+                                          }
+                                        },
+                                      "-geometry":
+                                        { "Cylinder":
+                                          {
+                                            "@USE":"ArrowCylinder"
+                                          }
+                                        }
+                                    }
+                                  },
+                                  { "Transform":
+                                    {
+                                      "@translation":[0,1,0],
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@USE":"Blue"
+                                                }
+                                              },
+                                            "-geometry":
+                                              { "Cone":
+                                                {
+                                                  "@USE":"ArrowCone"
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "Transform":
+                              {
+                                "@rotation":[1,0,0,-1.57079],
+                                "@translation":[0,1.1,0.072],
+                                "-children":[
+                                  {
+                                    "#comment":"note label rotated back to original coordinate frame"
+                                  },
+                                  { "Billboard":
+                                    {
+                                      "-children":[
+                                        { "Shape":
+                                          {
+                                            "-appearance":
+                                              { "Appearance":
+                                                {
+                                                  "@USE":"LABEL_APPEARANCE"
+                                                }
+                                              },
+                                            "-geometry":
+                                              { "Text":
+                                                {
+                                                  "@string":["Z"],
+                                                  "-fontStyle":
+                                                    { "FontStyle":
+                                                      {
+                                                        "@USE":"LABEL_FONT"
+                                                      }
+                                                    }
+                                                }
+                                              }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+            }
+          }
+        ]
+    }
+  }
+}
