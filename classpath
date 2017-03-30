@@ -1,2 +1,3 @@
+#!/bin/bash
 export X3DJSONLD=../pythonSAI/
 export CLASSPATH=".;${X3DJSONLD}saxon9he.jar;${X3DJSONLD}jslint4java-2.0.5.jar;${X3DJSONLD}json-schema-validator-2.2.6-lib.jar;${X3DJSONLD}X3DJSAIL.3.3.classes.jar;${X3DJSONLD}X3DJAIL.3.3.full.jar;${CLASSPATH}"

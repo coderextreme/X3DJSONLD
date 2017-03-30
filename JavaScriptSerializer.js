@@ -134,13 +134,13 @@ let mapToMethod2 = {
 	}
 };
 
-function JavaSerializer() {
+function JavaScriptSerializer() {
 }
 
 var code = [];
 var codeno = 0;
 
-JavaSerializer.prototype = {
+JavaScriptSerializer.prototype = {
 	serializeToString : function(json, element, clazz, mapToMethod, fieldTypes) {
 		code = [];
 		codeno = 0;
@@ -172,132 +172,37 @@ JavaSerializer.prototype = {
 		clz = clz.replace(/^([0-9].*|default$)/, "_$1")
 		let pkg = pc.substr(0, c).replace(/[\/\\]/g, ".").trim();
 
-		if (pkg.length > 0) {
-			str += "package "+pkg+";\n";
-		}
-		str += "import org.web3d.x3d.jsail.*;\n";
-		str += "import org.web3d.x3d.jsail.CADGeometry.*;\n";
-		str += "import org.web3d.x3d.jsail.Core.*;\n";
-		str += "import org.web3d.x3d.jsail.CubeMapTexturing.*;\n";
-		str += "import org.web3d.x3d.jsail.DIS.*;\n";
-		str += "import org.web3d.x3d.jsail.EnvironmentalEffects.*;\n";
-		str += "import org.web3d.x3d.jsail.EnvironmentalSensor.*;\n";
-		str += "import org.web3d.x3d.jsail.EventUtilities.*;\n";
-		str += "import org.web3d.x3d.jsail.Followers.*;\n";
-		str += "import org.web3d.x3d.jsail.Geometry2D.*;\n";
-		str += "import org.web3d.x3d.jsail.Geometry3D.*;\n";
-		str += "import org.web3d.x3d.jsail.Geospatial.*;\n";
-		str += "import org.web3d.x3d.jsail.Grouping.*;\n";
-		str += "import org.web3d.x3d.jsail.HAnim.*;\n";
-		str += "import org.web3d.x3d.jsail.Interpolation.*;\n";
-		str += "import org.web3d.x3d.jsail.KeyDeviceSensor.*;\n";
-		str += "import org.web3d.x3d.jsail.Layering.*;\n";
-		str += "import org.web3d.x3d.jsail.Layout.*;\n";
-		str += "import org.web3d.x3d.jsail.Lighting.*;\n";
-		str += "import org.web3d.x3d.jsail.NURBS.*;\n";
-		str += "import org.web3d.x3d.jsail.Navigation.*;\n";
-		str += "import org.web3d.x3d.jsail.Networking.*;\n";
-		str += "import org.web3d.x3d.jsail.ParticleSystems.*;\n";
-		str += "import org.web3d.x3d.jsail.Picking.*;\n";
-		str += "import org.web3d.x3d.jsail.PointingDeviceSensor.*;\n";
-		str += "import org.web3d.x3d.jsail.Rendering.*;\n";
-		str += "import org.web3d.x3d.jsail.RigidBodyPhysics.*;\n";
-		str += "import org.web3d.x3d.jsail.Scripting.*;\n";
-		str += "import org.web3d.x3d.jsail.Shaders.*;\n";
-		str += "import org.web3d.x3d.jsail.Shape.*;\n";
-		str += "import org.web3d.x3d.jsail.Sound.*;\n";
-		str += "import org.web3d.x3d.jsail.Text.*;\n";
-		str += "import org.web3d.x3d.jsail.Texturing3D.*;\n";
-		str += "import org.web3d.x3d.jsail.Texturing.*;\n";
-		str += "import org.web3d.x3d.jsail.Time.*;\n";
-		str += "import org.web3d.x3d.jsail.VolumeRendering.*;\n";
-		str += "import org.web3d.x3d.jsail.fields.*;\n";
-		str += "import org.web3d.x3d.sai.*;\n";
-		str += "import org.web3d.x3d.sai.CADGeometry.*;\n";
-		str += "import org.web3d.x3d.sai.Core.*;\n";
-		str += "import org.web3d.x3d.sai.CubeMapTexturing.*;\n";
-		str += "import org.web3d.x3d.sai.DIS.*;\n";
-		str += "import org.web3d.x3d.sai.EnvironmentalEffects.*;\n";
-		str += "import org.web3d.x3d.sai.EnvironmentalSensor.*;\n";
-		str += "import org.web3d.x3d.sai.EventUtilities.*;\n";
-		str += "import org.web3d.x3d.sai.Followers.*;\n";
-		str += "import org.web3d.x3d.sai.Geometry2D.*;\n";
-		str += "import org.web3d.x3d.sai.Geometry3D.*;\n";
-		str += "import org.web3d.x3d.sai.Geospatial.*;\n";
-		str += "import org.web3d.x3d.sai.Grouping.*;\n";
-		str += "import org.web3d.x3d.sai.HAnim.*;\n";
-		str += "import org.web3d.x3d.sai.Interpolation.*;\n";
-		str += "import org.web3d.x3d.sai.KeyDeviceSensor.*;\n";
-		str += "import org.web3d.x3d.sai.Layering.*;\n";
-		str += "import org.web3d.x3d.sai.Layout.*;\n";
-		str += "import org.web3d.x3d.sai.Lighting.*;\n";
-		str += "import org.web3d.x3d.sai.NURBS.*;\n";
-		str += "import org.web3d.x3d.sai.Navigation.*;\n";
-		str += "import org.web3d.x3d.sai.Networking.*;\n";
-		str += "import org.web3d.x3d.sai.ParticleSystems.*;\n";
-		str += "import org.web3d.x3d.sai.Picking.*;\n";
-		str += "import org.web3d.x3d.sai.PointingDeviceSensor.*;\n";
-		str += "import org.web3d.x3d.sai.Rendering.*;\n";
-		str += "import org.web3d.x3d.sai.RigidBodyPhysics.*;\n";
-		str += "import org.web3d.x3d.sai.Scripting.*;\n";
-		str += "import org.web3d.x3d.sai.Shaders.*;\n";
-		str += "import org.web3d.x3d.sai.Shape.*;\n";
-		str += "import org.web3d.x3d.sai.Sound.*;\n";
-		str += "import org.web3d.x3d.sai.Text.*;\n";
-		str += "import org.web3d.x3d.sai.Texturing3D.*;\n";
-		str += "import org.web3d.x3d.sai.Texturing.*;\n";
-		str += "import org.web3d.x3d.sai.Time.*;\n";
-		str += "import org.web3d.x3d.sai.VolumeRendering.*;\n";
-		str += "public class "+clz+" {\n";
-		str += "	public static void main(String[] args) {\n";
-		str += "        ConfigurationProperties.setShowDefaultAttributes(true);\n";
-		str += "        ConfigurationProperties.setIndentCharacter(ConfigurationProperties.indentCharacter_DEFAULT);\n";
-		str += "        ConfigurationProperties.setIndentIncrement(ConfigurationProperties.indentIncrement_DEFAULT);\n";
-		str += "        ConfigurationProperties.setX3dCanonicalForm();\n";
-		str += "        ConfigurationProperties.initialize();\n";
+		str += "load('X3Dautoclass.js');\n";
+		str += "var ConfigurationProperties = Packages.org.web3d.x3d.jsail.ConfigurationProperties;\n";
+		str += "ConfigurationProperties.showDefaultAttributes = true;\n";
+		str += "ConfigurationProperties.indentCharacter = ConfigurationProperties.indentCharacter_DEFAULT;\n";
+		str += "ConfigurationProperties.indentIncrement = ConfigurationProperties.indentIncrement_DEFAULT;\n";
+		str += "ConfigurationProperties.setX3dCanonicalForm();\n";
+		str += "ConfigurationProperties.initialize();\n";
 
-		str += "	ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_nativeJava);\n";
-		str += "	ConfigurationProperties.setDeleteIntermediateFiles(false);\n";
-		str += "new "+clz+"()."+element.nodeName+"_"+codeno+"()\n";
-		str += "	.toFileJSON(\""+clazz+".new.json\");\n";
+		str += "ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_nativeJava;\n";
+		str += "ConfigurationProperties.deleteIntermediateFiles = false;\n";
+		str += element.nodeName+"_"+codeno+"()\n";
+		str += "	.toFileX3D(\""+clazz+".new.x3d\");\n";
 		printMethod(element, mapToMethod, fieldTypes, codeno);
-		str += "	}\n";
 
 		for (var co in code) {
 			str += code[co];
 		}
-		str += "}\n";
 
 		return str;
 	}
 }
 
-function printSubArray(attrType, type, values,  co, j, trail) {
-	if (attrType.startsWith("MF")) {
-		var str = "new "+attrType+"Object()";
-		for (var i = 0; i < values.length; i += 840) {
-			var max = values.length;
-			if (i + 840 < max) {
-				max = i + 840;
-			}
-			codeno++;
-			code[co] = "private "+attrType+"Object "+attrType+co+"() {\n";
-			code[co] += "\treturn new "+attrType+"Object( new "+type+"[] {"+values.slice(i, max).join(j)+trail+"})\n";
-			code[co] += ";\n}\n";
-			str += ".append("+attrType+co+"())";
-			co = codeno;
-		}
-		return str;
-	} else {
-		return "new "+type+"[] {"+values.slice(i, max).join(j)+trail+"}";
-	}
+function printSubArray(type, values, j, trail) {
+	return 'Java.to(['+values.join(j)+trail+'], Java.type("'+type+'[]"))';
 }
 
 function printMethod(node, mapToMethod, fieldTypes, co) {
 	codeno++;
-	code[co] = "private "+node.nodeName+"Object "+node.nodeName+"_"+co+"() {\n";
+	code[co] = "function "+node.nodeName+"_"+co+"() {\n";
 	code[co] += "\treturn new "+node.nodeName+"Object()\n";
-	code[co] += JavaSerializer.subSerializeToString(node, mapToMethod, fieldTypes);
+	code[co] += JavaScriptSerializer.subSerializeToString(node, mapToMethod, fieldTypes);
 	code[co] += ";\n}\n";
 }
 
@@ -320,7 +225,7 @@ function printParentChild(element, node, cn, mapToMethod) {
 	return "\t"+addpre+method+"(";
 }
 
-JavaSerializer.subSerializeToString = function(element, mapToMethod, fieldTypes) {
+JavaScriptSerializer.subSerializeToString = function(element, mapToMethod, fieldTypes) {
 	let str = "";
 	let fieldAttrType = "";
 	for (let a in element.attributes) {
@@ -368,13 +273,13 @@ JavaSerializer.subSerializeToString = function(element, mapToMethod, fieldTypes)
 					} else if (attrType === "SFInt32") {
 						str += attrs[a].nodeValue;
 					} else if (attrType === "SFFloat") {
-						str += attrs[a].nodeValue+"f";
+						str += attrs[a].nodeValue;
 					} else if (attrType === "SFDouble") {
-						str += attrs[a].nodeValue+"d";
+						str += attrs[a].nodeValue;
 					} else if (attrType === "SFBool") {
 						str += attrs[a].nodeValue;
 					} else if (attrType === "MFString") {
-						str += printSubArray(attrType, "String",
+						str += printSubArray("java.lang.String",
 							attrs[a].nodeValue.
 								replace(/([^\\]| )\\\\( |[^\\"])/g, "$1\\\\$2").
 								replace(/([^\\]| )\\\\\\\\([^\\"]| )/g, "$1\\\\\\\\\\\\\\\\$2").
@@ -382,12 +287,12 @@ JavaSerializer.subSerializeToString = function(element, mapToMethod, fieldTypes)
 								replace(/\\\\"/g, '\\\\\\"').
 								replace(/&/g, "&amp;").
 								split(/" "/),
-							codeno, '","', '');
+							'","', '');
 					} else if (
 						attrType === "MFInt32"||
 						attrType === "MFImage"||
 						attrType === "SFImage") {
-						str += printSubArray(attrType, "int", attrs[a].nodeValue.split(' '), codeno, ',', '');
+						str += printSubArray("int", attrs[a].nodeValue.split(' '), ',', '');
 					} else if (
 						attrType === "SFColor"||
 						attrType === "MFColor"||
@@ -406,7 +311,7 @@ JavaSerializer.subSerializeToString = function(element, mapToMethod, fieldTypes)
 						attrType === "SFRotation"|
 						attrType === "MFRotation"|
 						attrType === "MFFloat") {
-						str += printSubArray(attrType, "float", attrs[a].nodeValue.split(' '), codeno, 'f,', 'f');
+						str += printSubArray("float", attrs[a].nodeValue.split(' '), ',', '');
 					} else if (
 						attrType === "SFVec2d"||
 						attrType === "SFVec3d"||
@@ -419,9 +324,9 @@ JavaSerializer.subSerializeToString = function(element, mapToMethod, fieldTypes)
 						attrType === "MFMatrix3d"||
 						attrType === "MFMatrix4d"|
 						attrType === "MFDouble") {
-						str += printSubArray(attrType, "double", attrs[a].nodeValue.split(' '), codeno, 'd,', 'd');
+						str += printSubArray("double", attrs[a].nodeValue.split(' '), ',', '');
 					} else if (attrType === "MFBool") {
-						str += printSubArray(attrType, "boolean", attrs[a].nodeValue.split(' '), codeno, ',', '');
+						str += printSubArray("boolean", attrs[a].nodeValue.split(' '), ',', '');
 					} else {
 						str += attrs[a].nodeValue;
 					}
@@ -450,5 +355,5 @@ JavaSerializer.subSerializeToString = function(element, mapToMethod, fieldTypes)
 
 
 if (typeof module === 'object')  {
-	module.exports = JavaSerializer;
+	module.exports = JavaScriptSerializer;
 }

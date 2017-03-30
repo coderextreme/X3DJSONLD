@@ -1,3 +1,4 @@
+#!/bin/bash
 sum=0
 while read err
 do
