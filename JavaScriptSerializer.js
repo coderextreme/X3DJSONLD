@@ -1,3 +1,5 @@
+"use strict";
+
 function JavaScriptSerializer () {
 };
 
@@ -107,6 +109,7 @@ JavaScriptSerializer.subSerializeToString = function(element, mapToMethod, field
 			console.error(e);
 		}
 	}
+	let attrType = "";
 	for (let a in element.attributes) {
 		let attrs = element.attributes;
 		try {
