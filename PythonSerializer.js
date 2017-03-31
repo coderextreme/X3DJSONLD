@@ -50,7 +50,7 @@ PythonSerializer.prototype = {
 		Object.assign(mapToMethod, {
 		});
 
-		for (map in mapToMethod2) {
+		for (let map in mapToMethod2) {
 			Object.assign(mapToMethod[map], mapToMethod2[map]);
 		}
 
