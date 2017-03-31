@@ -1,136 +1,7 @@
-let mapToMethod2 = {
-	"Shape" : {
-		"ProtoInstance": "setGeometry"
-	},
-	"HAnimJoint" : {
-		"Transform" : "addChild"
-	},
-	"HAnimHumanoid" : {
-		 "HAnimViewpoint": "addViewpoints",
-        },
-	"ComposedShader" : {
-		"field" : "addField",
-	},
-	"Script" : {
-		"field" : "addField",
-	},
-	"MetadataSet" : {
-		"ProtoInstance" : "setMetadata"
-	},
-	"X3DGroupingNode" : {
-		"IS" : "setIS"
-	},
-	"CADAssembly" : {
-		"IS" : "setIS"
-	},
-	"Billboard" : {
-		"IS" : "setIS"
-	},
-	"GeoLocation" : {
-		"IS" : "setIS"
-	},
-	"X3DViewportNode" : {
-		"IS" : "setIS"
-	},
-	"LayoutLayer" : {
-		"IS" : "setIS"
-	},
-	"Scene" : {
-		"IS" : "setIS"
-	},
-	"LOD" : {
-		"IS" : "setIS"
-	},
-	"Disk2D" : {
-		"IS" : "setIS"
-	},
-	"Anchor" : {
-		"IS" : "setIS"
-	},
-	"Group" : {
-		"IS" : "setIS"
-	},
-	"Viewport" : {
-		"IS" : "setIS"
-	},
-	"GeoTransform" : {
-		"IS" : "setIS"
-	},
-	"ScreenGroup" : {
-		"IS" : "setIS"
-	},
-	"EspduTransform" : {
-		"IS" : "setIS"
-	},
-	"PickableGroup" : {
-		"IS" : "setIS"
-	},
-	"HAnimHumanoid" : {
-		"IS" : "addSkin"
-	},
-	"X3DPickSensorNode" : {
-		"IS" : "addPickedGeometry"
-	},
-	"VolumePickSensor" : {
-		"IS" : "addPickedGeometry"
-	},
-	"Layer" : {
-		"IS" : "setIS"
-	},
-	"StaticGroup" : {
-		"IS" : "setIS"
-	},
-	"PointPickSensor" : {
-		"IS" : "addPickedGeometry"
-	},
-	"LayoutGroup" : {
-		"IS" : "setIS"
-	},
-	"HAnimSite" : {
-		"IS" : "setIS"
-	},
-	"field" : {
-		"IS" : "setIS"
-	},
-	"Transform" : {
-		"IS" : "setIS"
-	},
-	"ProtoBody" : {
-		"IS" : "setIS"
-	},
-	"Collision" : {
-		"IS" : "setIS"
-	},
-	"PrimitivePickSensor" : {
-		"IS" : "addPickedGeometry"
-	},
-	"CADLayer" : {
-		"IS" : "setIS"
-	},
-	"fieldValue" : {
-		"IS" : "setIS"
-	},
-	"GeoLOD" : {
-		"IS" : "setIS",
-		"IS" : "addRootNode"
-	},
-	"LinePickSensor" : {
-		"IS" : "addPickedGeometry"
-	},
-	"GeoMetadata" : {
-		"IS" : "addData"
-	},
-	"Switch" : {
-		"IS" : "setIS"
-	},
-	"HAnimSegment" : {
-		"IS" : "setIS"
-	}
+function JavaSerializer () {
 };
 
-
-let JavaSerializer = {};
-JavaSerializer.serializeToString = function(json, element, clazz, mapToMethod, fieldTypes) {
+JavaSerializer.serializeToString = function(json, element, clazz, mapToMethod, fieldTypes, mapToMethod2) {
 	Object.assign(mapToMethod, {
 	});
 
@@ -413,7 +284,7 @@ JavaSerializer.subSerializeToString = function(element, n, mapToMethod, fieldTyp
 			str += "		CommentsBlock commentsBlock"+n+'_'+cn+" = new CommentsBlock(\""+node.nodeValue.replace(/"/g, '\\"')+"\");\n";
 			str += "		"+element.nodeName+n+".addComments(commentsBlock"+n+'_'+cn+");\n";
 		} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 4) {
-			str += "		"+element.nodeName+n+'.setSourceCode("'+node.nodeValue.split("\r\n").map(function(x) { return x.replace(/"/g, '\\"'); }).join('\\n\"+\n\"')+'");\n';
+			str += "		"+element.nodeName+n+'.setSourceCode("'+node.nodeValue.split("\r\n").map(function(x) { return x.replace(/"/g, '\\\\"'); }).join('\\n\"+\n\"')+'");\n';
 		}
 	}
 	return str;

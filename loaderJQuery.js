@@ -146,7 +146,7 @@ function setVersion(version) {
 	    updateXML(xml);
 	    loadScripts(json);
 	    var jserial = new JavaSerializer();
-	    var java = jserial.serializeToString(json, child, url, mapToMethod, fieldTypes);
+	    var java = jserial.serializeToString(json, child, url, mapToMethod, fieldTypes, mapToMethod2);
 	    $('textarea#java').val(java);
         }
 

@@ -5,7 +5,7 @@ var code = [];
 var codeno = 0;
 
 JavaSerializer.prototype = {
-	serializeToString : function(json, element, clazz, mapToMethod, fieldTypes, mapToMethod2) {
+	serializeToString : function(json, element, clazz, mapToMethod, fieldTypes) {
 		code = [];
 		codeno = 0;
 		Object.assign(mapToMethod, {
@@ -217,12 +217,12 @@ JavaSerializer.subSerializeToString = function(element, mapToMethod, fieldTypes)
 					} else if (attrType === "SFBool") {
 						str += attrs[a].nodeValue;
 					} else if (attrType === "MFString") {
-						str += 'new String[] {'+attrs[a].nodeValue.replace(/([^\\]| )\\\\( |[^\\"])/g, "$1\\\\$2").replace(/([^\\]| )\\\\\\\\([^\\"]| )/g, "$1\\\\\\\\\\\\\\\\$2").replace(/\\\\\\\\"/g, '\\\\"').replace(/\\\\"/g, '\\\\\\"').replace(/&/g, "&amp;").split(/" "/).join('","')+'}';
+						str += ''+attrs[a].nodeValue.replace(/([^\\]| )\\\\( |[^\\"])/g, "$1\\\\$2").replace(/([^\\]| )\\\\\\\\([^\\"]| )/g, "$1\\\\\\\\\\\\\\\\$2").replace(/\\\\\\\\"/g, '\\\\"').replace(/\\\\"/g, '\\\\\\"').replace(/&/g, "&amp;").split(/" "/).join('","')+'';
 					} else if (
 						attrType === "MFInt32"||
 						attrType === "MFImage"||
 						attrType === "SFImage") {
-						str += "new int[] {"+attrs[a].nodeValue.split(' ').join(',')+"}";
+						str += ""+attrs[a].nodeValue.split(' ').join(',')+"";
 					} else if (
 						attrType === "SFColor"||
 						attrType === "MFColor"||
@@ -241,7 +241,7 @@ JavaSerializer.subSerializeToString = function(element, mapToMethod, fieldTypes)
 						attrType === "SFRotation"|
 						attrType === "MFRotation"|
 						attrType === "MFFloat") {
-						str += "new float[] {"+attrs[a].nodeValue.split(' ').join('f,')+"f}";
+						str += ""+attrs[a].nodeValue.split(' ').join('f,')+"f";
 					} else if (
 						attrType === "SFVec2d"||
 						attrType === "SFVec3d"||
@@ -254,9 +254,9 @@ JavaSerializer.subSerializeToString = function(element, mapToMethod, fieldTypes)
 						attrType === "MFMatrix3d"||
 						attrType === "MFMatrix4d"|
 						attrType === "MFDouble") {
-						str += "new double[] {"+attrs[a].nodeValue.split(' ').join('d,')+"d}";
+						str += ""+attrs[a].nodeValue.split(' ').join('d,')+"d";
 					} else if (attrType === "MFBool") {
-						str += "new boolean[] {"+attrs[a].nodeValue.split(' ').join(',')+"}";
+						str += ""+attrs[a].nodeValue.split(' ').join(',')+"";
 					} else {
 						str += attrs[a].nodeValue;
 					}
