@@ -1,4 +1,3 @@
-
 "use strict";
 
 var xmldom = require('xmldom');

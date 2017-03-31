@@ -1,3 +1,5 @@
+"use strict";
+
 function printParentChild(element, n, node, cn, mapToMethod) {
 	let addpre = ".set";
 	if (cn > 0 && node.nodeName !== 'IS') {

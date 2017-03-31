@@ -1,3 +1,5 @@
+"use strict";
+
 function JavaSerializer() {
 }
 
@@ -180,6 +182,7 @@ JavaSerializer.subSerializeToString = function(element, mapToMethod, fieldTypes)
 			console.error(e);
 		}
 	}
+	let attrType = "";
 	for (let a in element.attributes) {
 		let attrs = element.attributes;
 		try {
@@ -192,7 +195,7 @@ JavaSerializer.subSerializeToString = function(element, mapToMethod, fieldTypes)
 				if (attr !== 'containerField') {
 					let method = attr;
 					// look at object model
-					let attrType = fieldTypes[element.nodeName][attr];
+					attrType = fieldTypes[element.nodeName][attr];
 
 					// str += "attrType "+attrType+" FAT "+fieldAttrType+" "+attrs[a].nodeValue+"\n";
 					// but if it's NULL, look at the field type
