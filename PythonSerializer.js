@@ -11,10 +11,14 @@ function printParentChild(element, n, node, cn, mapToMethod) {
 		if (typeof mapToMethod[element.nodeName][node.nodeName] === 'string') {
 			addpre = ".";
 			method = mapToMethod[element.nodeName][node.nodeName];
+		} else {
+			method = method.charAt(0).toUpperCase() + method.slice(1);
 		}
 	} else if (typeof mapToMethod[element.nodeName] === 'string') {
 		addpre = ".";
 		method = mapToMethod[element.nodeName];
+	} else {
+		method = method.charAt(0).toUpperCase() + method.slice(1);
 	}
 	let cf = false;
 	for (let a in node.attributes) {
