@@ -1,0 +1,1709 @@
+{
+  "X3D": {
+    "encoding": "UTF-8",
+    "@profile": "Immersive",
+    "@version": "3.3",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "Scene": {
+      "-children": [
+        {
+          "Viewpoint": {
+            "@position": [
+              0,
+              0,
+              5
+            ],
+            "@description": "a moving graph"
+          }
+        },
+        {
+          "Background": {
+            "@skyColor": [
+              0.4,
+              0.4,
+              0.4
+            ]
+          }
+        },
+        {
+          "Transform": {
+            "@DEF": "cylinder1",
+            "-children": [
+              {
+                "Shape": {
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            0.2,
+                            0.7,
+                            0.7
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  "-geometry": {
+                    "Cylinder": {
+                      "@radius": 0.1
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Transform": {
+            "@DEF": "cylinder2",
+            "-children": [
+              {
+                "Shape": {
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            0.2,
+                            0.7,
+                            0.7
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  "-geometry": {
+                    "Cylinder": {
+                      "@radius": 0.1
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Transform": {
+            "@DEF": "cylinder3",
+            "-children": [
+              {
+                "Shape": {
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            0.2,
+                            0.7,
+                            0.7
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  "-geometry": {
+                    "Cylinder": {
+                      "@radius": 0.1
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {},
+        {
+          "#comment": "from doug sanden"
+        },
+        {},
+        {
+          "Transform": {
+            "@DEF": "DECLpoint_start_node",
+            "@translation": [
+              0,
+              0,
+              0
+            ],
+            "-children": [
+              {
+                "Shape": {
+                  "-geometry": {
+                    "Sphere": {
+                      "@radius": 0.1
+                    }
+                  },
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            1,
+                            0,
+                            0
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "PositionInterpolator": {
+                  "@DEF": "DECLpoint_start_PI1",
+                  "@key": [
+                    0,
+                    1
+                  ],
+                  "@keyValue": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    5,
+                    0
+                  ]
+                }
+              },
+              {
+                "Script": {
+                  "@DEF": "DECLpoint_start_MB1",
+                  "field": [
+                    {
+                      "@name": "translation",
+                      "@accessType": "inputOutput",
+                      "@type": "SFVec3f",
+                      "@value": [
+                        0,
+                        0,
+                        0
+                      ]
+                    },
+                    {
+                      "@name": "old",
+                      "@accessType": "inputOutput",
+                      "@type": "SFVec3f",
+                      "@value": [
+                        0,
+                        0,
+                        0
+                      ]
+                    },
+                    {
+                      "@name": "set_location",
+                      "@accessType": "inputOnly",
+                      "@type": "SFTime"
+                    },
+                    {
+                      "@name": "keyValue",
+                      "@accessType": "outputOnly",
+                      "@type": "MFVec3f"
+                    }
+                  ],
+                  "#sourceText": [
+                    "ecmascript:",
+                    "\t\tfunction set_location(value) {",
+                    "                    old = translation;",
+                    "\t\t    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);",
+                    "                    keyValue = new MFVec3f(old, translation);",
+                    "\t\t    // Browser.println(translation);",
+                    "\t\t}"
+                  ]
+                }
+              },
+              {
+                "TimeSensor": {
+                  "@DEF": "DECLpoint_start_CL1",
+                  "@cycleInterval": 3,
+                  "@loop": true
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromNode": "DECLpoint_start_CL1",
+                  "@fromField": "cycleTime",
+                  "@toNode": "DECLpoint_start_MB1",
+                  "@toField": "set_location"
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromNode": "DECLpoint_start_CL1",
+                  "@fromField": "fraction_changed",
+                  "@toNode": "DECLpoint_start_PI1",
+                  "@toField": "set_fraction"
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromNode": "DECLpoint_start_MB1",
+                  "@fromField": "keyValue",
+                  "@toNode": "DECLpoint_start_PI1",
+                  "@toField": "keyValue"
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromNode": "DECLpoint_start_PI1",
+                  "@fromField": "value_changed",
+                  "@toNode": "DECLpoint_start_node",
+                  "@toField": "set_translation"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Transform": {
+            "@DEF": "DECLpoint_end1_node",
+            "@translation": [
+              0,
+              0,
+              0
+            ],
+            "-children": [
+              {
+                "Shape": {
+                  "-geometry": {
+                    "Sphere": {
+                      "@radius": 0.1
+                    }
+                  },
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            1,
+                            0,
+                            0
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "PositionInterpolator": {
+                  "@DEF": "DECLpoint_end1_PI1",
+                  "@key": [
+                    0,
+                    1
+                  ],
+                  "@keyValue": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    5,
+                    0
+                  ]
+                }
+              },
+              {
+                "Script": {
+                  "@DEF": "DECLpoint_end1_MB1",
+                  "field": [
+                    {
+                      "@name": "translation",
+                      "@accessType": "inputOutput",
+                      "@type": "SFVec3f",
+                      "@value": [
+                        0,
+                        0,
+                        0
+                      ]
+                    },
+                    {
+                      "@name": "old",
+                      "@accessType": "inputOutput",
+                      "@type": "SFVec3f",
+                      "@value": [
+                        0,
+                        0,
+                        0
+                      ]
+                    },
+                    {
+                      "@name": "set_location",
+                      "@accessType": "inputOnly",
+                      "@type": "SFTime"
+                    },
+                    {
+                      "@name": "keyValue",
+                      "@accessType": "outputOnly",
+                      "@type": "MFVec3f"
+                    }
+                  ],
+                  "#sourceText": [
+                    "ecmascript:",
+                    "\t\tfunction set_location(value) {",
+                    "                    old = translation;",
+                    "\t\t    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);",
+                    "                    keyValue = new MFVec3f(old, translation);",
+                    "\t\t    // Browser.println(translation);",
+                    "\t\t}"
+                  ]
+                }
+              },
+              {
+                "TimeSensor": {
+                  "@DEF": "DECLpoint_end1_CL1",
+                  "@cycleInterval": 3,
+                  "@loop": true
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromNode": "DECLpoint_end1_CL1",
+                  "@fromField": "cycleTime",
+                  "@toNode": "DECLpoint_end1_MB1",
+                  "@toField": "set_location"
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromNode": "DECLpoint_end1_CL1",
+                  "@fromField": "fraction_changed",
+                  "@toNode": "DECLpoint_end1_PI1",
+                  "@toField": "set_fraction"
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromNode": "DECLpoint_end1_MB1",
+                  "@fromField": "keyValue",
+                  "@toNode": "DECLpoint_end1_PI1",
+                  "@toField": "keyValue"
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromNode": "DECLpoint_end1_PI1",
+                  "@fromField": "value_changed",
+                  "@toNode": "DECLpoint_end1_node",
+                  "@toField": "set_translation"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Transform": {
+            "@DEF": "DECLpoint_end2_node",
+            "@translation": [
+              0,
+              0,
+              0
+            ],
+            "-children": [
+              {
+                "Shape": {
+                  "-geometry": {
+                    "Sphere": {
+                      "@radius": 0.1
+                    }
+                  },
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            1,
+                            0,
+                            0
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "PositionInterpolator": {
+                  "@DEF": "DECLpoint_end2_PI1",
+                  "@key": [
+                    0,
+                    1
+                  ],
+                  "@keyValue": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    5,
+                    0
+                  ]
+                }
+              },
+              {
+                "Script": {
+                  "@DEF": "DECLpoint_end2_MB1",
+                  "field": [
+                    {
+                      "@name": "translation",
+                      "@accessType": "inputOutput",
+                      "@type": "SFVec3f",
+                      "@value": [
+                        0,
+                        0,
+                        0
+                      ]
+                    },
+                    {
+                      "@name": "old",
+                      "@accessType": "inputOutput",
+                      "@type": "SFVec3f",
+                      "@value": [
+                        0,
+                        0,
+                        0
+                      ]
+                    },
+                    {
+                      "@name": "set_location",
+                      "@accessType": "inputOnly",
+                      "@type": "SFTime"
+                    },
+                    {
+                      "@name": "keyValue",
+                      "@accessType": "outputOnly",
+                      "@type": "MFVec3f"
+                    }
+                  ],
+                  "#sourceText": [
+                    "ecmascript:",
+                    "\t\tfunction set_location(value) {",
+                    "                    old = translation;",
+                    "\t\t    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);",
+                    "                    keyValue = new MFVec3f(old, translation);",
+                    "\t\t    // Browser.println(translation);",
+                    "\t\t}"
+                  ]
+                }
+              },
+              {
+                "TimeSensor": {
+                  "@DEF": "DECLpoint_end2_CL1",
+                  "@cycleInterval": 3,
+                  "@loop": true
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromNode": "DECLpoint_end2_CL1",
+                  "@fromField": "cycleTime",
+                  "@toNode": "DECLpoint_end2_MB1",
+                  "@toField": "set_location"
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromNode": "DECLpoint_end2_CL1",
+                  "@fromField": "fraction_changed",
+                  "@toNode": "DECLpoint_end2_PI1",
+                  "@toField": "set_fraction"
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromNode": "DECLpoint_end2_MB1",
+                  "@fromField": "keyValue",
+                  "@toNode": "DECLpoint_end2_PI1",
+                  "@toField": "keyValue"
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromNode": "DECLpoint_end2_PI1",
+                  "@fromField": "value_changed",
+                  "@toNode": "DECLpoint_end2_node",
+                  "@toField": "set_translation"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Transform": {
+            "@DEF": "DECLpoint_end3_node",
+            "@translation": [
+              0,
+              0,
+              0
+            ],
+            "-children": [
+              {
+                "Shape": {
+                  "-geometry": {
+                    "Sphere": {
+                      "@radius": 0.1
+                    }
+                  },
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            1,
+                            0,
+                            0
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "PositionInterpolator": {
+                  "@DEF": "DECLpoint_end3_PI1",
+                  "@key": [
+                    0,
+                    1
+                  ],
+                  "@keyValue": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    5,
+                    0
+                  ]
+                }
+              },
+              {
+                "Script": {
+                  "@DEF": "DECLpoint_end3_MB1",
+                  "field": [
+                    {
+                      "@name": "translation",
+                      "@accessType": "inputOutput",
+                      "@type": "SFVec3f",
+                      "@value": [
+                        0,
+                        0,
+                        0
+                      ]
+                    },
+                    {
+                      "@name": "old",
+                      "@accessType": "inputOutput",
+                      "@type": "SFVec3f",
+                      "@value": [
+                        0,
+                        0,
+                        0
+                      ]
+                    },
+                    {
+                      "@name": "set_location",
+                      "@accessType": "inputOnly",
+                      "@type": "SFTime"
+                    },
+                    {
+                      "@name": "keyValue",
+                      "@accessType": "outputOnly",
+                      "@type": "MFVec3f"
+                    }
+                  ],
+                  "#sourceText": [
+                    "ecmascript:",
+                    "\t\tfunction set_location(value) {",
+                    "                    old = translation;",
+                    "\t\t    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);",
+                    "                    keyValue = new MFVec3f(old, translation);",
+                    "\t\t    // Browser.println(translation);",
+                    "\t\t}"
+                  ]
+                }
+              },
+              {
+                "TimeSensor": {
+                  "@DEF": "DECLpoint_end3_CL1",
+                  "@cycleInterval": 3,
+                  "@loop": true
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromNode": "DECLpoint_end3_CL1",
+                  "@fromField": "cycleTime",
+                  "@toNode": "DECLpoint_end3_MB1",
+                  "@toField": "set_location"
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromNode": "DECLpoint_end3_CL1",
+                  "@fromField": "fraction_changed",
+                  "@toNode": "DECLpoint_end3_PI1",
+                  "@toField": "set_fraction"
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromNode": "DECLpoint_end3_MB1",
+                  "@fromField": "keyValue",
+                  "@toNode": "DECLpoint_end3_PI1",
+                  "@toField": "keyValue"
+                }
+              },
+              {
+                "ROUTE": {
+                  "@fromNode": "DECLpoint_end3_PI1",
+                  "@fromField": "value_changed",
+                  "@toNode": "DECLpoint_end3_node",
+                  "@toField": "set_translation"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Script": {
+            "@DEF": "DECLx3dconnector_connector1_S1",
+            "field": [
+              {
+                "@name": "startnode",
+                "@accessType": "initializeOnly",
+                "@type": "SFNode",
+                "-children": [
+                  {
+                    "Transform": {
+                      "@DEF": "DECLx3dconnector_connector1_FIELDstartnode_DECLpoint_INSTANCE_node",
+                      "-children": [
+                        {
+                          "Shape": {
+                            "-geometry": {
+                              "Sphere": {
+                                "@radius": 0.1
+                              }
+                            },
+                            "-appearance": {
+                              "Appearance": {
+                                "-material": {
+                                  "Material": {
+                                    "@diffuseColor": [
+                                      1,
+                                      0,
+                                      0
+                                    ]
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "PositionInterpolator": {
+                            "@DEF": "DECLx3dconnector_connector1_FIELDstartnode_DECLpoint_INSTANCE_PI1",
+                            "@key": [
+                              0,
+                              1
+                            ],
+                            "@keyValue": [
+                              0,
+                              0,
+                              0,
+                              0,
+                              5,
+                              0
+                            ]
+                          }
+                        },
+                        {
+                          "Script": {
+                            "@DEF": "DECLx3dconnector_connector1_FIELDstartnode_DECLpoint_INSTANCE_MB1",
+                            "field": [
+                              {
+                                "@name": "translation",
+                                "@accessType": "inputOutput",
+                                "@type": "SFVec3f",
+                                "@value": [
+                                  50,
+                                  50,
+                                  0
+                                ]
+                              },
+                              {
+                                "@name": "old",
+                                "@accessType": "inputOutput",
+                                "@type": "SFVec3f",
+                                "@value": [
+                                  0,
+                                  0,
+                                  0
+                                ]
+                              },
+                              {
+                                "@name": "set_location",
+                                "@accessType": "inputOnly",
+                                "@type": "SFTime"
+                              },
+                              {
+                                "@name": "keyValue",
+                                "@accessType": "outputOnly",
+                                "@type": "MFVec3f"
+                              }
+                            ],
+                            "#sourceText": [
+                              "ecmascript:",
+                              "\t\tfunction set_location(value) {",
+                              "                    old = translation;",
+                              "\t\t    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);",
+                              "                    keyValue = new MFVec3f(old, translation);",
+                              "\t\t    // Browser.println(translation);",
+                              "\t\t}"
+                            ]
+                          }
+                        },
+                        {
+                          "TimeSensor": {
+                            "@DEF": "DECLx3dconnector_connector1_FIELDstartnode_DECLpoint_INSTANCE_CL1",
+                            "@cycleInterval": 3,
+                            "@loop": true
+                          }
+                        },
+                        {
+                          "ROUTE": {
+                            "@fromNode": "DECLx3dconnector_connector1_FIELDstartnode_DECLpoint_INSTANCE_CL1",
+                            "@fromField": "cycleTime",
+                            "@toNode": "DECLx3dconnector_connector1_FIELDstartnode_DECLpoint_INSTANCE_MB1",
+                            "@toField": "set_location"
+                          }
+                        },
+                        {
+                          "ROUTE": {
+                            "@fromNode": "DECLx3dconnector_connector1_FIELDstartnode_DECLpoint_INSTANCE_CL1",
+                            "@fromField": "fraction_changed",
+                            "@toNode": "DECLx3dconnector_connector1_FIELDstartnode_DECLpoint_INSTANCE_PI1",
+                            "@toField": "set_fraction"
+                          }
+                        },
+                        {
+                          "ROUTE": {
+                            "@fromNode": "DECLx3dconnector_connector1_FIELDstartnode_DECLpoint_INSTANCE_MB1",
+                            "@fromField": "keyValue",
+                            "@toNode": "DECLx3dconnector_connector1_FIELDstartnode_DECLpoint_INSTANCE_PI1",
+                            "@toField": "keyValue"
+                          }
+                        },
+                        {
+                          "ROUTE": {
+                            "@fromNode": "DECLx3dconnector_connector1_FIELDstartnode_DECLpoint_INSTANCE_PI1",
+                            "@fromField": "value_changed",
+                            "@toNode": "DECLx3dconnector_connector1_FIELDstartnode_DECLpoint_INSTANCE_node",
+                            "@toField": "set_translation"
+                          }
+                        }
+                      ],
+                      "@USE": "DECLpoint_start"
+                    }
+                  }
+                ]
+              },
+              {
+                "@name": "endnode",
+                "@accessType": "initializeOnly",
+                "@type": "SFNode",
+                "-children": [
+                  {
+                    "Transform": {
+                      "@DEF": "DECLx3dconnector_connector1_FIELDendnode_DECLpoint_INSTANCE1000_node",
+                      "-children": [
+                        {
+                          "Shape": {
+                            "-geometry": {
+                              "Sphere": {
+                                "@radius": 0.1
+                              }
+                            },
+                            "-appearance": {
+                              "Appearance": {
+                                "-material": {
+                                  "Material": {
+                                    "@diffuseColor": [
+                                      1,
+                                      0,
+                                      0
+                                    ]
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "PositionInterpolator": {
+                            "@DEF": "DECLx3dconnector_connector1_FIELDendnode_DECLpoint_INSTANCE1000_PI1",
+                            "@key": [
+                              0,
+                              1
+                            ],
+                            "@keyValue": [
+                              0,
+                              0,
+                              0,
+                              0,
+                              5,
+                              0
+                            ]
+                          }
+                        },
+                        {
+                          "Script": {
+                            "@DEF": "DECLx3dconnector_connector1_FIELDendnode_DECLpoint_INSTANCE1000_MB1",
+                            "field": [
+                              {
+                                "@name": "translation",
+                                "@accessType": "inputOutput",
+                                "@type": "SFVec3f",
+                                "@value": [
+                                  50,
+                                  50,
+                                  0
+                                ]
+                              },
+                              {
+                                "@name": "old",
+                                "@accessType": "inputOutput",
+                                "@type": "SFVec3f",
+                                "@value": [
+                                  0,
+                                  0,
+                                  0
+                                ]
+                              },
+                              {
+                                "@name": "set_location",
+                                "@accessType": "inputOnly",
+                                "@type": "SFTime"
+                              },
+                              {
+                                "@name": "keyValue",
+                                "@accessType": "outputOnly",
+                                "@type": "MFVec3f"
+                              }
+                            ],
+                            "#sourceText": [
+                              "ecmascript:",
+                              "\t\tfunction set_location(value) {",
+                              "                    old = translation;",
+                              "\t\t    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);",
+                              "                    keyValue = new MFVec3f(old, translation);",
+                              "\t\t    // Browser.println(translation);",
+                              "\t\t}"
+                            ]
+                          }
+                        },
+                        {
+                          "TimeSensor": {
+                            "@DEF": "DECLx3dconnector_connector1_FIELDendnode_DECLpoint_INSTANCE1000_CL1",
+                            "@cycleInterval": 3,
+                            "@loop": true
+                          }
+                        },
+                        {
+                          "ROUTE": {
+                            "@fromNode": "DECLx3dconnector_connector1_FIELDendnode_DECLpoint_INSTANCE1000_CL1",
+                            "@fromField": "cycleTime",
+                            "@toNode": "DECLx3dconnector_connector1_FIELDendnode_DECLpoint_INSTANCE1000_MB1",
+                            "@toField": "set_location"
+                          }
+                        },
+                        {
+                          "ROUTE": {
+                            "@fromNode": "DECLx3dconnector_connector1_FIELDendnode_DECLpoint_INSTANCE1000_CL1",
+                            "@fromField": "fraction_changed",
+                            "@toNode": "DECLx3dconnector_connector1_FIELDendnode_DECLpoint_INSTANCE1000_PI1",
+                            "@toField": "set_fraction"
+                          }
+                        },
+                        {
+                          "ROUTE": {
+                            "@fromNode": "DECLx3dconnector_connector1_FIELDendnode_DECLpoint_INSTANCE1000_MB1",
+                            "@fromField": "keyValue",
+                            "@toNode": "DECLx3dconnector_connector1_FIELDendnode_DECLpoint_INSTANCE1000_PI1",
+                            "@toField": "keyValue"
+                          }
+                        },
+                        {
+                          "ROUTE": {
+                            "@fromNode": "DECLx3dconnector_connector1_FIELDendnode_DECLpoint_INSTANCE1000_PI1",
+                            "@fromField": "value_changed",
+                            "@toNode": "DECLx3dconnector_connector1_FIELDendnode_DECLpoint_INSTANCE1000_node",
+                            "@toField": "set_translation"
+                          }
+                        }
+                      ],
+                      "@USE": "DECLpoint_end1"
+                    }
+                  }
+                ]
+              },
+              {
+                "@name": "connectornode",
+                "@accessType": "initializeOnly",
+                "@type": "SFNode",
+                "-children": [
+                  {
+                    "Transform": {
+                      "@USE": "cylinder1"
+                    }
+                  }
+                ]
+              },
+              {
+                "@name": "set_startpoint",
+                "@accessType": "inputOnly",
+                "@type": "SFVec3f"
+              },
+              {
+                "@name": "set_endpoint",
+                "@accessType": "inputOnly",
+                "@type": "SFVec3f"
+              }
+            ],
+            "#sourceText": [
+              "ecmascript:",
+              "            function recompute(startpoint,endpoint){",
+              "                var dif = endpoint.subtract(startpoint);",
+              "                var dist = dif.length()*.5;",
+              "                var dif2 = dif.multiply(.5);",
+              "                var norm = dif.normalize();",
+              "                var trans = startpoint.add(dif2);",
+              "                connectornode.scale = new SFVec3f(1.0,dist,1.0);",
+              "                connectornode.translation = trans;",
+              "                connectornode.rotation = new SFRotation(new SFVec3f(0.0,1.0,0.0),norm);",
+              "                //Browser.print('norm='+norm.toString());",
+              "                //Browser.print('rotation='+rotation.toString());",
+              "            }",
+              "            function initialize(){",
+              "                recompute(startnode.translation,endnode.translation);",
+              "            }",
+              "            function set_startpoint(val,t){",
+              "                recompute(val,endnode.translation);",
+              "            }",
+              "            function set_endpoint(val,t){",
+              "                recompute(startnode.translation,val);",
+              "            }"
+            ]
+          }
+        },
+        {
+          "Script": {
+            "@DEF": "DECLx3dconnector_connector2_S1",
+            "field": [
+              {
+                "@name": "startnode",
+                "@accessType": "initializeOnly",
+                "@type": "SFNode",
+                "-children": [
+                  {
+                    "Transform": {
+                      "@DEF": "DECLx3dconnector_connector2_FIELDstartnode_DECLpoint_INSTANCE2000_node",
+                      "-children": [
+                        {
+                          "Shape": {
+                            "-geometry": {
+                              "Sphere": {
+                                "@radius": 0.1
+                              }
+                            },
+                            "-appearance": {
+                              "Appearance": {
+                                "-material": {
+                                  "Material": {
+                                    "@diffuseColor": [
+                                      1,
+                                      0,
+                                      0
+                                    ]
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "PositionInterpolator": {
+                            "@DEF": "DECLx3dconnector_connector2_FIELDstartnode_DECLpoint_INSTANCE2000_PI1",
+                            "@key": [
+                              0,
+                              1
+                            ],
+                            "@keyValue": [
+                              0,
+                              0,
+                              0,
+                              0,
+                              5,
+                              0
+                            ]
+                          }
+                        },
+                        {
+                          "Script": {
+                            "@DEF": "DECLx3dconnector_connector2_FIELDstartnode_DECLpoint_INSTANCE2000_MB1",
+                            "field": [
+                              {
+                                "@name": "translation",
+                                "@accessType": "inputOutput",
+                                "@type": "SFVec3f",
+                                "@value": [
+                                  50,
+                                  50,
+                                  0
+                                ]
+                              },
+                              {
+                                "@name": "old",
+                                "@accessType": "inputOutput",
+                                "@type": "SFVec3f",
+                                "@value": [
+                                  0,
+                                  0,
+                                  0
+                                ]
+                              },
+                              {
+                                "@name": "set_location",
+                                "@accessType": "inputOnly",
+                                "@type": "SFTime"
+                              },
+                              {
+                                "@name": "keyValue",
+                                "@accessType": "outputOnly",
+                                "@type": "MFVec3f"
+                              }
+                            ],
+                            "#sourceText": [
+                              "ecmascript:",
+                              "\t\tfunction set_location(value) {",
+                              "                    old = translation;",
+                              "\t\t    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);",
+                              "                    keyValue = new MFVec3f(old, translation);",
+                              "\t\t    // Browser.println(translation);",
+                              "\t\t}"
+                            ]
+                          }
+                        },
+                        {
+                          "TimeSensor": {
+                            "@DEF": "DECLx3dconnector_connector2_FIELDstartnode_DECLpoint_INSTANCE2000_CL1",
+                            "@cycleInterval": 3,
+                            "@loop": true
+                          }
+                        },
+                        {
+                          "ROUTE": {
+                            "@fromNode": "DECLx3dconnector_connector2_FIELDstartnode_DECLpoint_INSTANCE2000_CL1",
+                            "@fromField": "cycleTime",
+                            "@toNode": "DECLx3dconnector_connector2_FIELDstartnode_DECLpoint_INSTANCE2000_MB1",
+                            "@toField": "set_location"
+                          }
+                        },
+                        {
+                          "ROUTE": {
+                            "@fromNode": "DECLx3dconnector_connector2_FIELDstartnode_DECLpoint_INSTANCE2000_CL1",
+                            "@fromField": "fraction_changed",
+                            "@toNode": "DECLx3dconnector_connector2_FIELDstartnode_DECLpoint_INSTANCE2000_PI1",
+                            "@toField": "set_fraction"
+                          }
+                        },
+                        {
+                          "ROUTE": {
+                            "@fromNode": "DECLx3dconnector_connector2_FIELDstartnode_DECLpoint_INSTANCE2000_MB1",
+                            "@fromField": "keyValue",
+                            "@toNode": "DECLx3dconnector_connector2_FIELDstartnode_DECLpoint_INSTANCE2000_PI1",
+                            "@toField": "keyValue"
+                          }
+                        },
+                        {
+                          "ROUTE": {
+                            "@fromNode": "DECLx3dconnector_connector2_FIELDstartnode_DECLpoint_INSTANCE2000_PI1",
+                            "@fromField": "value_changed",
+                            "@toNode": "DECLx3dconnector_connector2_FIELDstartnode_DECLpoint_INSTANCE2000_node",
+                            "@toField": "set_translation"
+                          }
+                        }
+                      ],
+                      "@USE": "DECLpoint_start"
+                    }
+                  }
+                ]
+              },
+              {
+                "@name": "endnode",
+                "@accessType": "initializeOnly",
+                "@type": "SFNode",
+                "-children": [
+                  {
+                    "Transform": {
+                      "@DEF": "DECLx3dconnector_connector2_FIELDendnode_DECLpoint_INSTANCE3000_node",
+                      "-children": [
+                        {
+                          "Shape": {
+                            "-geometry": {
+                              "Sphere": {
+                                "@radius": 0.1
+                              }
+                            },
+                            "-appearance": {
+                              "Appearance": {
+                                "-material": {
+                                  "Material": {
+                                    "@diffuseColor": [
+                                      1,
+                                      0,
+                                      0
+                                    ]
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "PositionInterpolator": {
+                            "@DEF": "DECLx3dconnector_connector2_FIELDendnode_DECLpoint_INSTANCE3000_PI1",
+                            "@key": [
+                              0,
+                              1
+                            ],
+                            "@keyValue": [
+                              0,
+                              0,
+                              0,
+                              0,
+                              5,
+                              0
+                            ]
+                          }
+                        },
+                        {
+                          "Script": {
+                            "@DEF": "DECLx3dconnector_connector2_FIELDendnode_DECLpoint_INSTANCE3000_MB1",
+                            "field": [
+                              {
+                                "@name": "translation",
+                                "@accessType": "inputOutput",
+                                "@type": "SFVec3f",
+                                "@value": [
+                                  50,
+                                  50,
+                                  0
+                                ]
+                              },
+                              {
+                                "@name": "old",
+                                "@accessType": "inputOutput",
+                                "@type": "SFVec3f",
+                                "@value": [
+                                  0,
+                                  0,
+                                  0
+                                ]
+                              },
+                              {
+                                "@name": "set_location",
+                                "@accessType": "inputOnly",
+                                "@type": "SFTime"
+                              },
+                              {
+                                "@name": "keyValue",
+                                "@accessType": "outputOnly",
+                                "@type": "MFVec3f"
+                              }
+                            ],
+                            "#sourceText": [
+                              "ecmascript:",
+                              "\t\tfunction set_location(value) {",
+                              "                    old = translation;",
+                              "\t\t    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);",
+                              "                    keyValue = new MFVec3f(old, translation);",
+                              "\t\t    // Browser.println(translation);",
+                              "\t\t}"
+                            ]
+                          }
+                        },
+                        {
+                          "TimeSensor": {
+                            "@DEF": "DECLx3dconnector_connector2_FIELDendnode_DECLpoint_INSTANCE3000_CL1",
+                            "@cycleInterval": 3,
+                            "@loop": true
+                          }
+                        },
+                        {
+                          "ROUTE": {
+                            "@fromNode": "DECLx3dconnector_connector2_FIELDendnode_DECLpoint_INSTANCE3000_CL1",
+                            "@fromField": "cycleTime",
+                            "@toNode": "DECLx3dconnector_connector2_FIELDendnode_DECLpoint_INSTANCE3000_MB1",
+                            "@toField": "set_location"
+                          }
+                        },
+                        {
+                          "ROUTE": {
+                            "@fromNode": "DECLx3dconnector_connector2_FIELDendnode_DECLpoint_INSTANCE3000_CL1",
+                            "@fromField": "fraction_changed",
+                            "@toNode": "DECLx3dconnector_connector2_FIELDendnode_DECLpoint_INSTANCE3000_PI1",
+                            "@toField": "set_fraction"
+                          }
+                        },
+                        {
+                          "ROUTE": {
+                            "@fromNode": "DECLx3dconnector_connector2_FIELDendnode_DECLpoint_INSTANCE3000_MB1",
+                            "@fromField": "keyValue",
+                            "@toNode": "DECLx3dconnector_connector2_FIELDendnode_DECLpoint_INSTANCE3000_PI1",
+                            "@toField": "keyValue"
+                          }
+                        },
+                        {
+                          "ROUTE": {
+                            "@fromNode": "DECLx3dconnector_connector2_FIELDendnode_DECLpoint_INSTANCE3000_PI1",
+                            "@fromField": "value_changed",
+                            "@toNode": "DECLx3dconnector_connector2_FIELDendnode_DECLpoint_INSTANCE3000_node",
+                            "@toField": "set_translation"
+                          }
+                        }
+                      ],
+                      "@USE": "DECLpoint_end2"
+                    }
+                  }
+                ]
+              },
+              {
+                "@name": "connectornode",
+                "@accessType": "initializeOnly",
+                "@type": "SFNode",
+                "-children": [
+                  {
+                    "Transform": {
+                      "@USE": "cylinder2"
+                    }
+                  }
+                ]
+              },
+              {
+                "@name": "set_startpoint",
+                "@accessType": "inputOnly",
+                "@type": "SFVec3f"
+              },
+              {
+                "@name": "set_endpoint",
+                "@accessType": "inputOnly",
+                "@type": "SFVec3f"
+              }
+            ],
+            "#sourceText": [
+              "ecmascript:",
+              "            function recompute(startpoint,endpoint){",
+              "                var dif = endpoint.subtract(startpoint);",
+              "                var dist = dif.length()*.5;",
+              "                var dif2 = dif.multiply(.5);",
+              "                var norm = dif.normalize();",
+              "                var trans = startpoint.add(dif2);",
+              "                connectornode.scale = new SFVec3f(1.0,dist,1.0);",
+              "                connectornode.translation = trans;",
+              "                connectornode.rotation = new SFRotation(new SFVec3f(0.0,1.0,0.0),norm);",
+              "                //Browser.print('norm='+norm.toString());",
+              "                //Browser.print('rotation='+rotation.toString());",
+              "            }",
+              "            function initialize(){",
+              "                recompute(startnode.translation,endnode.translation);",
+              "            }",
+              "            function set_startpoint(val,t){",
+              "                recompute(val,endnode.translation);",
+              "            }",
+              "            function set_endpoint(val,t){",
+              "                recompute(startnode.translation,val);",
+              "            }"
+            ]
+          }
+        },
+        {
+          "Script": {
+            "@DEF": "DECLx3dconnector_connector3_S1",
+            "field": [
+              {
+                "@name": "startnode",
+                "@accessType": "initializeOnly",
+                "@type": "SFNode",
+                "-children": [
+                  {
+                    "Transform": {
+                      "@DEF": "DECLx3dconnector_connector3_FIELDstartnode_DECLpoint_INSTANCE4000_node",
+                      "-children": [
+                        {
+                          "Shape": {
+                            "-geometry": {
+                              "Sphere": {
+                                "@radius": 0.1
+                              }
+                            },
+                            "-appearance": {
+                              "Appearance": {
+                                "-material": {
+                                  "Material": {
+                                    "@diffuseColor": [
+                                      1,
+                                      0,
+                                      0
+                                    ]
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "PositionInterpolator": {
+                            "@DEF": "DECLx3dconnector_connector3_FIELDstartnode_DECLpoint_INSTANCE4000_PI1",
+                            "@key": [
+                              0,
+                              1
+                            ],
+                            "@keyValue": [
+                              0,
+                              0,
+                              0,
+                              0,
+                              5,
+                              0
+                            ]
+                          }
+                        },
+                        {
+                          "Script": {
+                            "@DEF": "DECLx3dconnector_connector3_FIELDstartnode_DECLpoint_INSTANCE4000_MB1",
+                            "field": [
+                              {
+                                "@name": "translation",
+                                "@accessType": "inputOutput",
+                                "@type": "SFVec3f",
+                                "@value": [
+                                  50,
+                                  50,
+                                  0
+                                ]
+                              },
+                              {
+                                "@name": "old",
+                                "@accessType": "inputOutput",
+                                "@type": "SFVec3f",
+                                "@value": [
+                                  0,
+                                  0,
+                                  0
+                                ]
+                              },
+                              {
+                                "@name": "set_location",
+                                "@accessType": "inputOnly",
+                                "@type": "SFTime"
+                              },
+                              {
+                                "@name": "keyValue",
+                                "@accessType": "outputOnly",
+                                "@type": "MFVec3f"
+                              }
+                            ],
+                            "#sourceText": [
+                              "ecmascript:",
+                              "\t\tfunction set_location(value) {",
+                              "                    old = translation;",
+                              "\t\t    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);",
+                              "                    keyValue = new MFVec3f(old, translation);",
+                              "\t\t    // Browser.println(translation);",
+                              "\t\t}"
+                            ]
+                          }
+                        },
+                        {
+                          "TimeSensor": {
+                            "@DEF": "DECLx3dconnector_connector3_FIELDstartnode_DECLpoint_INSTANCE4000_CL1",
+                            "@cycleInterval": 3,
+                            "@loop": true
+                          }
+                        },
+                        {
+                          "ROUTE": {
+                            "@fromNode": "DECLx3dconnector_connector3_FIELDstartnode_DECLpoint_INSTANCE4000_CL1",
+                            "@fromField": "cycleTime",
+                            "@toNode": "DECLx3dconnector_connector3_FIELDstartnode_DECLpoint_INSTANCE4000_MB1",
+                            "@toField": "set_location"
+                          }
+                        },
+                        {
+                          "ROUTE": {
+                            "@fromNode": "DECLx3dconnector_connector3_FIELDstartnode_DECLpoint_INSTANCE4000_CL1",
+                            "@fromField": "fraction_changed",
+                            "@toNode": "DECLx3dconnector_connector3_FIELDstartnode_DECLpoint_INSTANCE4000_PI1",
+                            "@toField": "set_fraction"
+                          }
+                        },
+                        {
+                          "ROUTE": {
+                            "@fromNode": "DECLx3dconnector_connector3_FIELDstartnode_DECLpoint_INSTANCE4000_MB1",
+                            "@fromField": "keyValue",
+                            "@toNode": "DECLx3dconnector_connector3_FIELDstartnode_DECLpoint_INSTANCE4000_PI1",
+                            "@toField": "keyValue"
+                          }
+                        },
+                        {
+                          "ROUTE": {
+                            "@fromNode": "DECLx3dconnector_connector3_FIELDstartnode_DECLpoint_INSTANCE4000_PI1",
+                            "@fromField": "value_changed",
+                            "@toNode": "DECLx3dconnector_connector3_FIELDstartnode_DECLpoint_INSTANCE4000_node",
+                            "@toField": "set_translation"
+                          }
+                        }
+                      ],
+                      "@USE": "DECLpoint_start"
+                    }
+                  }
+                ]
+              },
+              {
+                "@name": "endnode",
+                "@accessType": "initializeOnly",
+                "@type": "SFNode",
+                "-children": [
+                  {
+                    "Transform": {
+                      "@DEF": "DECLx3dconnector_connector3_FIELDendnode_DECLpoint_INSTANCE5000_node",
+                      "-children": [
+                        {
+                          "Shape": {
+                            "-geometry": {
+                              "Sphere": {
+                                "@radius": 0.1
+                              }
+                            },
+                            "-appearance": {
+                              "Appearance": {
+                                "-material": {
+                                  "Material": {
+                                    "@diffuseColor": [
+                                      1,
+                                      0,
+                                      0
+                                    ]
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "PositionInterpolator": {
+                            "@DEF": "DECLx3dconnector_connector3_FIELDendnode_DECLpoint_INSTANCE5000_PI1",
+                            "@key": [
+                              0,
+                              1
+                            ],
+                            "@keyValue": [
+                              0,
+                              0,
+                              0,
+                              0,
+                              5,
+                              0
+                            ]
+                          }
+                        },
+                        {
+                          "Script": {
+                            "@DEF": "DECLx3dconnector_connector3_FIELDendnode_DECLpoint_INSTANCE5000_MB1",
+                            "field": [
+                              {
+                                "@name": "translation",
+                                "@accessType": "inputOutput",
+                                "@type": "SFVec3f",
+                                "@value": [
+                                  50,
+                                  50,
+                                  0
+                                ]
+                              },
+                              {
+                                "@name": "old",
+                                "@accessType": "inputOutput",
+                                "@type": "SFVec3f",
+                                "@value": [
+                                  0,
+                                  0,
+                                  0
+                                ]
+                              },
+                              {
+                                "@name": "set_location",
+                                "@accessType": "inputOnly",
+                                "@type": "SFTime"
+                              },
+                              {
+                                "@name": "keyValue",
+                                "@accessType": "outputOnly",
+                                "@type": "MFVec3f"
+                              }
+                            ],
+                            "#sourceText": [
+                              "ecmascript:",
+                              "\t\tfunction set_location(value) {",
+                              "                    old = translation;",
+                              "\t\t    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);",
+                              "                    keyValue = new MFVec3f(old, translation);",
+                              "\t\t    // Browser.println(translation);",
+                              "\t\t}"
+                            ]
+                          }
+                        },
+                        {
+                          "TimeSensor": {
+                            "@DEF": "DECLx3dconnector_connector3_FIELDendnode_DECLpoint_INSTANCE5000_CL1",
+                            "@cycleInterval": 3,
+                            "@loop": true
+                          }
+                        },
+                        {
+                          "ROUTE": {
+                            "@fromNode": "DECLx3dconnector_connector3_FIELDendnode_DECLpoint_INSTANCE5000_CL1",
+                            "@fromField": "cycleTime",
+                            "@toNode": "DECLx3dconnector_connector3_FIELDendnode_DECLpoint_INSTANCE5000_MB1",
+                            "@toField": "set_location"
+                          }
+                        },
+                        {
+                          "ROUTE": {
+                            "@fromNode": "DECLx3dconnector_connector3_FIELDendnode_DECLpoint_INSTANCE5000_CL1",
+                            "@fromField": "fraction_changed",
+                            "@toNode": "DECLx3dconnector_connector3_FIELDendnode_DECLpoint_INSTANCE5000_PI1",
+                            "@toField": "set_fraction"
+                          }
+                        },
+                        {
+                          "ROUTE": {
+                            "@fromNode": "DECLx3dconnector_connector3_FIELDendnode_DECLpoint_INSTANCE5000_MB1",
+                            "@fromField": "keyValue",
+                            "@toNode": "DECLx3dconnector_connector3_FIELDendnode_DECLpoint_INSTANCE5000_PI1",
+                            "@toField": "keyValue"
+                          }
+                        },
+                        {
+                          "ROUTE": {
+                            "@fromNode": "DECLx3dconnector_connector3_FIELDendnode_DECLpoint_INSTANCE5000_PI1",
+                            "@fromField": "value_changed",
+                            "@toNode": "DECLx3dconnector_connector3_FIELDendnode_DECLpoint_INSTANCE5000_node",
+                            "@toField": "set_translation"
+                          }
+                        }
+                      ],
+                      "@USE": "DECLpoint_end3"
+                    }
+                  }
+                ]
+              },
+              {
+                "@name": "connectornode",
+                "@accessType": "initializeOnly",
+                "@type": "SFNode",
+                "-children": [
+                  {
+                    "Transform": {
+                      "@USE": "cylinder3"
+                    }
+                  }
+                ]
+              },
+              {
+                "@name": "set_startpoint",
+                "@accessType": "inputOnly",
+                "@type": "SFVec3f"
+              },
+              {
+                "@name": "set_endpoint",
+                "@accessType": "inputOnly",
+                "@type": "SFVec3f"
+              }
+            ],
+            "#sourceText": [
+              "ecmascript:",
+              "            function recompute(startpoint,endpoint){",
+              "                var dif = endpoint.subtract(startpoint);",
+              "                var dist = dif.length()*.5;",
+              "                var dif2 = dif.multiply(.5);",
+              "                var norm = dif.normalize();",
+              "                var trans = startpoint.add(dif2);",
+              "                connectornode.scale = new SFVec3f(1.0,dist,1.0);",
+              "                connectornode.translation = trans;",
+              "                connectornode.rotation = new SFRotation(new SFVec3f(0.0,1.0,0.0),norm);",
+              "                //Browser.print('norm='+norm.toString());",
+              "                //Browser.print('rotation='+rotation.toString());",
+              "            }",
+              "            function initialize(){",
+              "                recompute(startnode.translation,endnode.translation);",
+              "            }",
+              "            function set_startpoint(val,t){",
+              "                recompute(val,endnode.translation);",
+              "            }",
+              "            function set_endpoint(val,t){",
+              "                recompute(startnode.translation,val);",
+              "            }"
+            ]
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "DECLpoint_start_node",
+            "@fromField": "translation",
+            "@toNode": "DECLx3dconnector_connector1_S1",
+            "@toField": "set_startpoint"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "DECLpoint_end1_node",
+            "@fromField": "translation",
+            "@toNode": "DECLx3dconnector_connector1_S1",
+            "@toField": "set_endpoint"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "DECLpoint_start_node",
+            "@fromField": "translation",
+            "@toNode": "DECLx3dconnector_connector2_S1",
+            "@toField": "set_startpoint"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "DECLpoint_end2_node",
+            "@fromField": "translation",
+            "@toNode": "DECLx3dconnector_connector2_S1",
+            "@toField": "set_endpoint"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "DECLpoint_start_node",
+            "@fromField": "translation",
+            "@toNode": "DECLx3dconnector_connector3_S1",
+            "@toField": "set_startpoint"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "DECLpoint_end3_node",
+            "@fromField": "translation",
+            "@toNode": "DECLx3dconnector_connector3_S1",
+            "@toField": "set_endpoint"
+          }
+        }
+      ]
+    }
+  }
+}
