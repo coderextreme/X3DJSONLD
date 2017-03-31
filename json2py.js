@@ -1,6 +1,6 @@
 "use strict";
 
-// Convert X3D JSON to JAVA
+// Convert X3D JSON to Python
 
 process.argv.shift();
 process.argv.shift();
