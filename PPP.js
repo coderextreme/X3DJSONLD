@@ -49,9 +49,11 @@ function ProcessJSON(json, file) {
 		var route = routecode.join('\n');
 		try {
 			eval(code);
+			var __eventTime = 0;
 			//setInterval(function() {
 				eval(route);
-			//}, 500);
+				__eventTime += 1000 / 60;
+			//}, 1000 / 60 );
 		} catch (e) {
 			console.error(code);
 			console.error(route);
