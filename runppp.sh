@@ -3,7 +3,7 @@ export CLASSPATH="saxon9he.jar;."
 javac RunSaxon.java
 
 mkdir -p ppp
-for i in `ls *.json | xargs grep -lw ProtoInstance`
+for i in `ls *.json | grep -v JSONSchema| grep -v package.json | xargs grep -lw ProtoInstance`
 do
 	echo "=========================$i=====================PPP" 1>&2
 	node PPP.js $i > ppp/`basename $i`
