@@ -13,9 +13,13 @@ let mapToMethod2 = {
 	},
 	"Script" : {
 		"field" : "addField",
+		"IS" : "setIS"
 	},
 	"MetadataSet" : {
 		"ProtoInstance" : "setMetadata"
+	},
+	"ProtoInstance" : {
+		"IS" : "setIS"
 	},
 	"X3DGroupingNode" : {
 		"IS" : "setIS"

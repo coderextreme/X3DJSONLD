@@ -168,12 +168,9 @@ function printMethod(node, mapToMethod, fieldTypes, co) {
 }
 
 function printParentChild(element, node, cn, mapToMethod) {
-	let addpre = ".set";
-	if (cn > 0 && node.nodeName !== 'IS') {
-		addpre = ".add";
-	}
-
+	let addpre = ".add";
 	let method = node.nodeName;
+
 	if (typeof mapToMethod[element.nodeName] === 'object') {
 		if (typeof mapToMethod[element.nodeName][node.nodeName] === 'string') {
 			addpre = ".";
@@ -186,6 +183,10 @@ function printParentChild(element, node, cn, mapToMethod) {
 		method = mapToMethod[element.nodeName];
 	} else {
 		method = method.charAt(0).toUpperCase() + method.slice(1);
+	}
+	if (node.nodeName === 'IS') {
+		addpre = ".set";
+		method = "IS";
 	}
 	return "\t"+addpre+method+"(";
 }
@@ -313,7 +314,16 @@ JavaSerializer.subSerializeToString = function(element, mapToMethod, fieldTypes)
 		} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 8) {
 			str += "\t.addComments(new CommentsBlock(\""+node.nodeValue.replace(/"/g, '\\"')+"\"))\n";
 		} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 4) {
-			str += "\t.setSourceCode(\""+node.nodeValue.split("\r\n").map(function(x) { return x.replace(/"/g, '\\\\"'); }).join('\\n\"+\n\"')+'")\n';
+			str += "\t.setSourceCode(\""+node.nodeValue.split("\r\n").map(function(x) {
+				return x.replace(/"/g, '\\"');
+				/*
+				return x.replace(/([^\\]| )\\\\( |[^\\"])/g, "$1\\\\$2").
+				replace(/([^\\]| )\\\\\\\\([^\\"]| )/g, "$1\\\\\\\\\\\\\\\\$2").
+				replace(/\\\\\\\\"/g, '\\\\"').
+				replace(/\\\\"/g, '\\\\\\"').
+				replace(/&/g, "&amp;");
+				*/
+				}).join('\\n\"+\n\"')+'")\n';
 		}
 	}
 	return str;
