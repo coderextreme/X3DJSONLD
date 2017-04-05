@@ -7,16 +7,9 @@ var code = [];
 var codeno = 0;
 
 JavaSerializer.prototype = {
-	serializeToString : function(json, element, clazz, mapToMethod, fieldTypes, mapToMethod2) {
+	serializeToString : function(json, element, clazz, mapToMethod, fieldTypes) {
 		code = [];
 		codeno = 0;
-		Object.assign(mapToMethod, {
-		});
-
-		for (let map in mapToMethod2) {
-			Object.assign(mapToMethod[map], mapToMethod2[map]);
-		}
-
 		/*
 		for (let a in element.attributes) {
 			let attrs = element.attributes;

@@ -5,6 +5,14 @@ let mapToMethod = require('./mapToMethod.js');
 let mapToMethod2 = require('./mapToMethod2.js');
 let fieldTypes = require('./fieldTypes.js');
 
+Object.assign(mapToMethod, {
+});
+
+for (let map in mapToMethod2) {
+	Object.assign(mapToMethod[map], mapToMethod2[map]);
+}
+
+
 var validate = {};
 
 var Ajv = require('ajv');
@@ -58,7 +66,7 @@ function convertJSON(options) {
 			}
 			for (var ser in options) {
 				var serializer = require(ser);
-				str = new serializer().serializeToString(json, element, basefile, mapToMethod, fieldTypes, mapToMethod2)
+				str = new serializer().serializeToString(json, element, basefile, mapToMethod, fieldTypes)
 				if (typeof str !== 'undefined') {
 					var outfile = basefile+options[ser];
 					fs.writeFileSync(outfile, str);

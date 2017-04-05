@@ -46,14 +46,7 @@ function PythonSerializer () {};
 
 PythonSerializer.prototype = {
 
-		serializeToString : function(json, element, file, mapToMethod, fieldTypes, mapToMethod2) {
-		Object.assign(mapToMethod, {
-		});
-
-		for (let map in mapToMethod2) {
-			Object.assign(mapToMethod[map], mapToMethod2[map]);
-		}
-
+		serializeToString : function(json, element, file, mapToMethod, fieldTypes) {
 		// console.error(file);
 		var str = "";
 		str += "from jnius import autoclass\n";

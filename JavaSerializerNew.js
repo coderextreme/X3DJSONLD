@@ -3,15 +3,13 @@
 function JavaSerializer() {
 }
 
+var code = [];
+var codeno = 0;
+
 JavaSerializer.prototype = {
-	serializeToString : function(json, element, clazz, mapToMethod, fieldTypes, mapToMethod2) {
-		Object.assign(mapToMethod, {
-		});
-
-		for (let map in mapToMethod2) {
-			Object.assign(mapToMethod[map], mapToMethod2[map]);
-		}
-
+	serializeToString : function(json, element, clazz, mapToMethod, fieldTypes) {
+		code = [];
+		codeno = 0;
 		/*
 		for (let a in element.attributes) {
 			let attrs = element.attributes;
@@ -110,6 +108,7 @@ JavaSerializer.prototype = {
 		str += "import org.web3d.x3d.sai.Time.*;\n";
 		str += "import org.web3d.x3d.sai.VolumeRendering.*;\n";
 		str += "public class "+clz+" {\n";
+		str += "	private static X3DObject x3dModel;\n";
 		str += "	public static void main(String[] args) {\n";
 		str += "        ConfigurationProperties.setShowDefaultAttributes(true);\n";
 		str += "        ConfigurationProperties.setIndentCharacter(ConfigurationProperties.indentCharacter_DEFAULT);\n";
@@ -119,19 +118,49 @@ JavaSerializer.prototype = {
 
 		str += "	ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_nativeJava);\n";
 		str += "	ConfigurationProperties.setDeleteIntermediateFiles(false);\n";
-		str += "	new "+element.nodeName+"Object()\n";
-		str += JavaSerializer.subSerializeToString(element, 1, mapToMethod, fieldTypes);
+		str += "	initialize();\n";
 
-		str += "	.toFileJSON(\""+clazz+".new.json\");\n";
+		str += "	x3dModel.toFileJSON(\""+clazz+".new.json\");\n";
 		str += "	}\n";
+		str += "	public static void initialize() {\n";
+		str += "		x3dModel = new "+element.nodeName+"Object()\n";
+		str += JavaSerializer.subSerializeToString(element, 1, mapToMethod, fieldTypes);
+		str += "	;\n}\n";
+		for (var co in code) {
+			str += code[co];
+		}
 		str += "}\n";
 		return str;
+	}
+}
+
+function printSubArray(attrType, type, values,  co, j, trail) {
+	if (attrType.startsWith("MF")) {
+		var str = "new "+attrType+"Object()";
+		for (var i = 0; i < values.length; i += 840) {
+			var max = values.length;
+			if (i + 840 < max) {
+				max = i + 840;
+			}
+			codeno++;
+			code[co] = "private static "+attrType+"Object "+attrType+co+"() {\n";
+			code[co] += "\treturn new "+attrType+"Object( new "+type+"[] {"+values.slice(i, max).join(j)+trail+"})\n";
+			code[co] += ";\n}\n";
+			str += ".append("+attrType+co+"())";
+			co = codeno;
+		}
+		return str;
+	} else {
+		return "new "+type+"[] {"+values.slice(i, max).join(j)+trail+"}";
 	}
 }
 
 function printParentChild(element, n, node, cn, mapToMethod) {
 	let addpre = ".set";
 	if (cn > 0 && node.nodeName !== 'IS') {
+		addpre = ".add";
+	}
+	if (node.nodeName === 'field') {
 		addpre = ".add";
 	}
 
@@ -151,6 +180,32 @@ function printParentChild(element, n, node, cn, mapToMethod) {
 	}
 	return "\t".repeat(n)+addpre+method+"(";
 }
+
+/*
+function printParentChild(element, node, cn, mapToMethod) {
+	let addpre = ".add";
+	let method = node.nodeName;
+
+	if (typeof mapToMethod[element.nodeName] === 'object') {
+		if (typeof mapToMethod[element.nodeName][node.nodeName] === 'string') {
+			addpre = ".";
+			method = mapToMethod[element.nodeName][node.nodeName];
+		} else {
+			method = method.charAt(0).toUpperCase() + method.slice(1);
+		}
+	} else if (typeof mapToMethod[element.nodeName] === 'string') {
+		addpre = ".";
+		method = mapToMethod[element.nodeName];
+	} else {
+		method = method.charAt(0).toUpperCase() + method.slice(1);
+	}
+	if (node.nodeName === 'IS') {
+		addpre = ".set";
+		method = "IS";
+	}
+	return "\t"+addpre+method+"(";
+}
+*/
 
 JavaSerializer.subSerializeToString = function(element, n, mapToMethod, fieldTypes) {
 	let str = "";
@@ -193,7 +248,7 @@ JavaSerializer.subSerializeToString = function(element, n, mapToMethod, fieldTyp
 					} else {
 						method = "set"+method.charAt(0).toUpperCase() + method.slice(1);
 					}
-					str += "\t".repeat(n)+"."+method+"(";
+					str += "\t".repeat(n)+'.'+method+"(";
 					if (attrs[a].nodeValue === 'NULL') {
 						str += "";
 					} else if (attrType === "SFString") {
@@ -207,12 +262,20 @@ JavaSerializer.subSerializeToString = function(element, n, mapToMethod, fieldTyp
 					} else if (attrType === "SFBool") {
 						str += attrs[a].nodeValue;
 					} else if (attrType === "MFString") {
-						str += 'new String[] {'+attrs[a].nodeValue.replace(/([^\\]| )\\\\( |[^\\"])/g, "$1\\\\$2").replace(/([^\\]| )\\\\\\\\([^\\"]| )/g, "$1\\\\\\\\\\\\\\\\$2").replace(/\\\\\\\\"/g, '\\\\"').replace(/\\\\"/g, '\\\\\\"').replace(/&/g, "&amp;").split(/" "/).join('","')+'}';
+						str += printSubArray(attrType, "String",
+							attrs[a].nodeValue.
+								replace(/([^\\]| )\\\\( |[^\\"])/g, "$1\\\\$2").
+								replace(/([^\\]| )\\\\\\\\([^\\"]| )/g, "$1\\\\\\\\\\\\\\\\$2").
+								replace(/\\\\\\\\"/g, '\\\\"').
+								replace(/\\\\"/g, '\\\\\\"').
+								replace(/&/g, "&amp;").
+								split(/" "/),
+							codeno, '","', '');
 					} else if (
 						attrType === "MFInt32"||
 						attrType === "MFImage"||
 						attrType === "SFImage") {
-						str += "new int[] {"+attrs[a].nodeValue.split(' ').join(',')+"}";
+						str += printSubArray(attrType, "int", attrs[a].nodeValue.split(' '), codeno, ',', '');
 					} else if (
 						attrType === "SFColor"||
 						attrType === "MFColor"||
@@ -231,7 +294,7 @@ JavaSerializer.subSerializeToString = function(element, n, mapToMethod, fieldTyp
 						attrType === "SFRotation"|
 						attrType === "MFRotation"|
 						attrType === "MFFloat") {
-						str += "new float[] {"+attrs[a].nodeValue.split(' ').join('f,')+"f}";
+						str += printSubArray(attrType, "float", attrs[a].nodeValue.split(' '), codeno, 'f,', 'f');
 					} else if (
 						attrType === "SFVec2d"||
 						attrType === "SFVec3d"||
@@ -244,9 +307,9 @@ JavaSerializer.subSerializeToString = function(element, n, mapToMethod, fieldTyp
 						attrType === "MFMatrix3d"||
 						attrType === "MFMatrix4d"|
 						attrType === "MFDouble") {
-						str += "new double[] {"+attrs[a].nodeValue.split(' ').join('d,')+"d}";
+						str += printSubArray(attrType, "double", attrs[a].nodeValue.split(' '), codeno, 'd,', 'd');
 					} else if (attrType === "MFBool") {
-						str += "new boolean[] {"+attrs[a].nodeValue.split(' ').join(',')+"}";
+						str += printSubArray(attrType, "boolean", attrs[a].nodeValue.split(' '), codeno, ',', '');
 					} else {
 						str += attrs[a].nodeValue;
 					}
@@ -268,7 +331,16 @@ JavaSerializer.subSerializeToString = function(element, n, mapToMethod, fieldTyp
 		} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 8) {
 			str += "\t".repeat(n)+".addComments(new CommentsBlock(\""+node.nodeValue.replace(/"/g, '\\"')+"\"))\n";
 		} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 4) {
-			str += "\t".repeat(n)+".setSourceCode(\""+node.nodeValue.split("\r\n").map(function(x) { return x.replace(/"/g, '\\\\"'); }).join('\\n\"+\n\"')+'")\n';
+			str += "\t".repeat(n)+".setSourceCode(\""+node.nodeValue.split("\r\n").map(function(x) {
+				return x.replace(/"/g, '\\"');
+				/*
+				return x.replace(/([^\\]| )\\\\( |[^\\"])/g, "$1\\\\$2").
+				replace(/([^\\]| )\\\\\\\\([^\\"]| )/g, "$1\\\\\\\\\\\\\\\\$2").
+				replace(/\\\\\\\\"/g, '\\\\"').
+				replace(/\\\\"/g, '\\\\\\"').
+				replace(/&/g, "&amp;");
+				*/
+				}).join('\\n\"+\n\"')+'")\n';
 		}
 	}
 	return str;

@@ -125,6 +125,13 @@ function setVersion(version) {
 		});
 	}
 
+	Object.assign(mapToMethod, {
+	});
+
+	for (let map in mapToMethod2) {
+		Object.assign(mapToMethod[map], mapToMethod2[map]);
+	}
+
         function loadX3D(selector, json, url) {
 	    $(selector).empty();
 	    var xml = new LOG();
@@ -146,7 +153,7 @@ function setVersion(version) {
 	    updateXML(xml);
 	    loadScripts(json);
 	    var jserial = new JavaSerializer();
-	    var java = jserial.serializeToString(json, child, url, mapToMethod, fieldTypes, mapToMethod2);
+	    var java = jserial.serializeToString(json, child, url, mapToMethod, fieldTypes);
 	    $('textarea#java').val(java);
         }
 
