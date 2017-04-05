@@ -3,14 +3,7 @@
 function JavaSerializer () {
 };
 
-JavaSerializer.serializeToString = function(json, element, clazz, mapToMethod, fieldTypes, mapToMethod2) {
-	Object.assign(mapToMethod, {
-	});
-
-	for (let map in mapToMethod2) {
-		Object.assign(mapToMethod[map], mapToMethod2[map]);
-	}
-
+JavaSerializer.serializeToString = function(json, element, clazz, mapToMethod, fieldTypes) {
 	/*
 	for (let a in element.attributes) {
 		let attrs = element.attributes;
