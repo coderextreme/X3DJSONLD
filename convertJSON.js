@@ -3,6 +3,7 @@ var mkdirp = require('node-mkdirp');
 var loadX3DJS = require('./serverX3DJSONLD');
 let mapToMethod = require('./mapToMethod.js');
 let mapToMethod2 = require('./mapToMethod2.js');
+let jsonlint = require('jsonlint');
 let fieldTypes = require('./fieldTypes.js');
 
 Object.assign(mapToMethod, {
@@ -47,7 +48,8 @@ function convertJSON(options) {
 			if (typeof str === 'undefined') {
 				throw("Read nothing, or possbile error");
 			}
-			var json = JSON.parse(str);
+			// var json = JSON.parse(str);
+			var json = jsonlint.parse(str);
 			var version = json.X3D["@version"];
 			version = setVersion(version);  // loads schema.
 			var valid = validate[version](json);
