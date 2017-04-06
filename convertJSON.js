@@ -44,26 +44,35 @@ function convertJSON(options) {
 			var basefile = file.substr(0, file.lastIndexOf("."));
 			var file = basefile+".json";
 			var str = fs.readFileSync(file).toString();
+			if (typeof str === 'undefined') {
+				throw("Read nothing, or possbile error");
+			}
 			var json = JSON.parse(str);
 			var version = json.X3D["@version"];
-			version = setVersion(version);  // loads schema.  TODO.  Only load when version changes
+			version = setVersion(version);  // loads schema.
 			var valid = validate[version](json);
 			if (!valid) {
-				throw JSON.stringify(validate[version].errors);
+				var errs = validate[version].errors;
+				var error = ""
+				for (var e in errs) {
+					error += "\r\n dataPath: " + errs[e].dataPath + "\r\n";
+					error += " message: " + errs[e].message + "\r\n";
+					error += " params: " + JSON.stringify(errs[e].params) + "\r\n";
+				}
+				throw error;
 			}
 				
 
 			var element = loadX3DJS(json, file);
 			// filename conversion goes here.
+			basefile = basefile.replace(/^[cC]:\/x3d-code\//g, "")
 			basefile = basefile.replace(/-|\.| /g, "_")
 			// handle filenames with leading zeros and java keywords
 			basefile = basefile.replace(/^(.*[\\\/])([0-9].*|default|switch|for)$/, "$1_$2")
 			mkdirp(basefile.substr(0, basefile.lastIndexOf("/")));
 
-			if (typeof str !== 'undefined') {
-				var outfile = basefile+".json";
-				fs.writeFileSync(outfile, str);
-			}
+			var outfile = basefile+".json";
+			fs.writeFileSync(outfile, str);
 			for (var ser in options) {
 				var serializer = require(ser);
 				str = new serializer().serializeToString(json, element, basefile, mapToMethod, fieldTypes)
