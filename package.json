@@ -8,6 +8,7 @@
     "java": "*",
     "xmldom": "*",
     "ajv": "*",
+    "jsonlint": "*",
     "node-mkdirp": "*"
   },
   "scripts": {
