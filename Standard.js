@@ -242,7 +242,7 @@ parseXML('extrusion.x3d');
 parseXML('flipper.x3d');
 parseXML('flowers2.x3d');
 parseXML('flowers4.x3d');
-parseXML('for.x3d');
+parseXML('fors.x3d');
 parseXML('forces.x3d');
 parseXML('geo.x3d');
 parseXML('geobubbles.x3d');
