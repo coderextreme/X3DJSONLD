@@ -92,9 +92,11 @@ protected static class ExitException extends SecurityException
 						}
 					}
 					out = source;
+					/*
 					if (out.lastIndexOf("www.web3d.org") >= 0) {
 						out = out.substring(out.lastIndexOf("www.web3d.org"));
 					}
+					*/
 					out = out.substring(0, out.lastIndexOf("."))+".json";
 					System.err.println("WRITING "+out);
 					if (out.lastIndexOf("/") > 0) {
