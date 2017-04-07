@@ -40,7 +40,7 @@ JavaScriptSerializer.prototype = {
 		str += "ConfigurationProperties.setX3dCanonicalForm();\n";
 		str += "ConfigurationProperties.initialize();\n";
 
-		str += "ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_nativeJava;\n";
+		str += "ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_saxon;\n";
 		str += "ConfigurationProperties.deleteIntermediateFiles = false;\n";
 		str += element.nodeName+"_"+codeno+"()\n";
 		str += "	.toFileX3D(\""+clazz+".new.x3d\");\n";
