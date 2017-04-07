@@ -116,7 +116,7 @@ JavaSerializer.prototype = {
 		str += "        ConfigurationProperties.setX3dCanonicalForm();\n";
 		str += "        ConfigurationProperties.initialize();\n";
 
-		str += "	ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_saxon);\n";
+		str += "	ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_nativeJava);\n";
 		str += "	ConfigurationProperties.setDeleteIntermediateFiles(false);\n";
 		str += "	initialize();\n";
 
