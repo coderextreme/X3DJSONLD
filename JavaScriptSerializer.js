@@ -42,7 +42,7 @@ JavaScriptSerializer.prototype = {
 
 		str += "ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_nativeJava;\n";
 		str += "ConfigurationProperties.deleteIntermediateFiles = false;\n";
-		str += "ConfigurationProperties.stripTrailingZeroes = false;\n";
+		str += "ConfigurationProperties.setStripTrailingZeroes(true);\n";
 		str += element.nodeName+"_"+codeno+"()\n";
 		str += "	.toFileX3D(\""+clazz+".new.x3d\");\n";
 		printMethod(element, mapToMethod, fieldTypes, codeno);
