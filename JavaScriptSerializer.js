@@ -43,13 +43,8 @@ JavaScriptSerializer.prototype = {
 		str += "ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_nativeJava;\n";
 		str += "ConfigurationProperties.deleteIntermediateFiles = false;\n";
 		str += "ConfigurationProperties.setStripTrailingZeroes(true);\n";
-		str += element.nodeName+"_"+codeno+"()\n";
+		str += printMethod(element, mapToMethod, fieldTypes, 1);
 		str += "	.toFileX3D(\""+clazz+".new.x3d\");\n";
-		printMethod(element, mapToMethod, fieldTypes, codeno);
-
-		for (var co in code) {
-			str += code[co];
-		}
 
 		return str;
 	}
@@ -59,15 +54,13 @@ function printSubArray(type, values, j, trail) {
 	return 'Java.to(['+values.join(j)+trail+'], Java.type("'+type+'[]"))';
 }
 
-function printMethod(node, mapToMethod, fieldTypes, co) {
-	codeno++;
-	code[co] = "function "+node.nodeName+"_"+co+"() {\n";
-	code[co] += "\treturn new "+node.nodeName+"Object()\n";
-	code[co] += JavaScriptSerializer.subSerializeToString(node, mapToMethod, fieldTypes);
-	code[co] += ";\n}\n";
+function printMethod(node, mapToMethod, fieldTypes, n) {
+	var str = "new "+node.nodeName+"Object()\n";
+	str += JavaScriptSerializer.subSerializeToString(node, mapToMethod, fieldTypes, n);
+	return str;
 }
 
-function printParentChild(element, node, cn, mapToMethod) {
+function printParentChild(element, node, cn, mapToMethod, n) {
 	let addpre = ".set";
 	if (cn > 0 && node.nodeName !== 'IS') {
 		addpre = ".add";
@@ -90,10 +83,10 @@ function printParentChild(element, node, cn, mapToMethod) {
 	} else {
 		method = method.charAt(0).toUpperCase() + method.slice(1);
 	}
-	return "\t"+addpre+method+"(";
+	return "  ".repeat(n)+addpre+method+"(";
 }
 
-JavaScriptSerializer.subSerializeToString = function(element, mapToMethod, fieldTypes) {
+JavaScriptSerializer.subSerializeToString = function(element, mapToMethod, fieldTypes, n) {
 	let str = "";
 	let fieldAttrType = "";
 	for (let a in element.attributes) {
@@ -134,7 +127,7 @@ JavaScriptSerializer.subSerializeToString = function(element, mapToMethod, field
 					} else {
 						method = "set"+method.charAt(0).toUpperCase() + method.slice(1);
 					}
-					str += "\t."+method+"(";
+					str += "  ".repeat(n)+"."+method+"(";
 					if (attrs[a].nodeValue === 'NULL') {
 						str += "";
 					} else if (attrType === "SFString") {
@@ -210,13 +203,13 @@ JavaScriptSerializer.subSerializeToString = function(element, mapToMethod, field
 	for (let cn in element.childNodes) {
 		let node = element.childNodes[cn];
 		if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 1) {
-			str += printParentChild(element, node, cn, mapToMethod);
-			str += node.nodeName+"_"+codeno+"())\n";
-			printMethod(node, mapToMethod, fieldTypes, codeno);
+			str += printParentChild(element, node, cn, mapToMethod, n);
+			str += printMethod(node, mapToMethod, fieldTypes, n+1);
+			str += "  ".repeat(n)+")\n";
 		} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 8) {
-			str += "\t.addComments(new CommentsBlock(\""+node.nodeValue.replace(/"/g, '\\"')+"\"))\n";
+			str += "  ".repeat(n)+".addComments(new CommentsBlock(\""+node.nodeValue.replace(/"/g, '\\"')+"\"))\n";
 		} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 4) {
-			str += "\t.setSourceCode(\""+node.nodeValue.split("\r\n").map(function(x) { return x.replace(/"/g, '\\"'); }).join('\\n\"+\n\"')+'")\n';
+			str += "  ".repeat(n)+".setSourceCode(\""+node.nodeValue.split("\r\n").map(function(x) { return x.replace(/"/g, '\\"'); }).join('\\n\"+\n\"')+'")\n';
 		}
 	}
 	return str;

@@ -61,7 +61,9 @@ function convertJSON(options) {
 					error += " message: " + errs[e].message + "\r\n";
 					error += " params: " + JSON.stringify(errs[e].params) + "\r\n";
 				}
-				throw error;
+				console.error("================================================================================");
+				console.error(file);
+				console.error(error);
 			}
 				
 
@@ -84,7 +86,7 @@ function convertJSON(options) {
 				}
 			}
 		} catch (e) {
-			console.error("===================================================================================");
+			console.error("================================================================================");
 			console.error(file);
 			console.error("Error reading", file, e);
 		}
