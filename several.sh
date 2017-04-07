@@ -14,11 +14,13 @@ python classes.py
 for NEW in `(ls "$@" | grep -v intermediate | grep -v new) | sed 's/\.x3d$/.new.json/'| sed 's/\/c\/x3d-code\/www.web3d.org/www_web3d_org/'`
 do
 	JSON=`dirname $NEW | sed 's/www_web3d_org/\/c\/x3d-code\/www.web3d.org/' `/`basename $NEW .new.json`.json
-	if [ -n "`node jsondiff.js $JSON $NEW`" ]
-	then
-		echo ================================================================================
-		echo node jsondiff.js $JSON $NEW
-		node jsondiff.js $JSON $NEW
+	if [ -e $NEW ]
+	then if [ -n "`node jsondiff.js $JSON $NEW`" ]
+		then
+			echo ================================================================================
+			echo node jsondiff.js $JSON $NEW
+			node jsondiff.js $JSON $NEW
+		fi
 	fi
 done
 
@@ -27,10 +29,13 @@ done
 for i in `(ls "$@" | grep -v intermediate | grep -v new) | sed 's/\.x3d$/.new.x3d/'| sed 's/\/c\/x3d-code\/www.web3d.org/www_web3d_org/'`
 do
 	X3D=`dirname $i | sed 's/www_web3d_org/\/c\/x3d-code\/www.web3d.org/' `/`basename $i .new.x3d`.X3d
-	if [ -n "`node xmldiff.js $X3D $i`" ]
+	if [ -e $i ]
 	then
-		echo ================================================================================
-		echo node xmldiff.js $X3D $i
-		node xmldiff.js $X3D $i
+		if [ -n "`node xmldiff.js $X3D $i`" ]
+		then
+			echo ================================================================================
+			echo node xmldiff.js $X3D $i
+			node xmldiff.js $X3D $i
+		fi
 	fi
 done
