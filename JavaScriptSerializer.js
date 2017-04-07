@@ -40,8 +40,9 @@ JavaScriptSerializer.prototype = {
 		str += "ConfigurationProperties.setX3dCanonicalForm();\n";
 		str += "ConfigurationProperties.initialize();\n";
 
-		str += "ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_saxon;\n";
+		str += "ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_nativeJava;\n";
 		str += "ConfigurationProperties.deleteIntermediateFiles = false;\n";
+		str += "ConfigurationProperties.stripTrailingZeroes = false;\n";
 		str += element.nodeName+"_"+codeno+"()\n";
 		str += "	.toFileX3D(\""+clazz+".new.x3d\");\n";
 		printMethod(element, mapToMethod, fieldTypes, codeno);
@@ -69,6 +70,9 @@ function printMethod(node, mapToMethod, fieldTypes, co) {
 function printParentChild(element, node, cn, mapToMethod) {
 	let addpre = ".set";
 	if (cn > 0 && node.nodeName !== 'IS') {
+		addpre = ".add";
+	}
+	if (node.nodeName === 'field') {
 		addpre = ".add";
 	}
 
