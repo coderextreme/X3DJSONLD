@@ -30,7 +30,7 @@ function setVersion(version) {
 	        x3dom.reload();
         }
 
-	function filter(event) {
+	function filterExisting(event) {
 		$.map($("#file option"), function(option, i) {
 			var text = $(option).text();
 			if (text.indexOf(event.target.value) >= 0) {
@@ -40,6 +40,15 @@ function setVersion(version) {
 				$(option).hide();
 				return false;
 			}
+		});
+	}
+
+	function filter(event) {
+		$('#file').children().remove().end();
+		$.getJSON("/files?"+event.target.value, function (data) {
+			$.each(data, function(i, opt) {
+				$('#file').append($("<option>", { value: opt, text: opt}));
+			});
 		});
 	}
 
@@ -152,7 +161,7 @@ function setVersion(version) {
 	    }
 	    updateXML(xml);
 	    loadScripts(json);
-	    var jserial = new JavaSerializer();
+	    var jserial = new JavaScriptSerializer();
 	    var java = jserial.serializeToString(json, child, url, mapToMethod, fieldTypes);
 	    $('textarea#java').val(java);
         }
