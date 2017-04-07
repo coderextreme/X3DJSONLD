@@ -8,6 +8,9 @@ function runAndSend(infile) {
 	if (outfile.lastIndexOf("savage.nps.edu") >= 0) {
 		outfile = "examples"+outfile.substring(outfile.lastIndexOf("savage.nps.edu")+14);
 	}
+	if (outfile.lastIndexOf("www.web3d.org") >= 0) {
+		outfile = outfile.substring(outfile.lastIndexOf("www.web3d.org"));
+	}
 	console.log('reading 2 ', outfile);
 	var content = fs.readFileSync(outfile);
 	var json = JSON.parse(content.toString());

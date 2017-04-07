@@ -9,7 +9,8 @@
     "xmldom": "*",
     "ajv": "*",
     "jsonlint": "*",
-    "node-mkdirp": "*"
+    "node-mkdirp": "*",
+    "glob": "*"
   },
   "scripts": {
     "start": "node app.js",

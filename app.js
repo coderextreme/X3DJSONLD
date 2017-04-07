@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var http = require('http').Server(app);
+var glob = require( 'glob' );  
 var config = require("./config");
 var port = process.env.PORT || 3000;
 var path = require('path');
@@ -46,6 +47,23 @@ app.get("/", function(req, res, next) {
 		res.header("Content-Type", "text/html");
 	 	res.send(data);
 		next();
+	});
+});
+
+app.get("/files", function(req, res, next) {
+	glob(__dirname+'/**/*.x3d', function( err, files ) {
+		if (err) return;
+		var test = req._parsedUrl.query;
+		var json = [];
+		files.forEach(function(file) {
+			if (new RegExp(test).test(file)) {
+				json.push(file.substr(__dirname.length));
+				console.log(file);
+			}
+
+		});
+              	res.header("Content-Type", "text/json");
+                res.send(json);
 	});
 });
 

@@ -3,7 +3,7 @@
 var xmldom = require('xmldom');
 var DOMImplementation = new xmldom.DOMImplementation();
 
-var X3DJSONLD = require('./X3DJSONLD.js');
+var X3DJSONLD = require('./newServerX3DJSONLD');
 var ConvertToX3DOM = X3DJSONLD.ConvertToX3DOM;
 
 function loadX3DJS(json, path) {
