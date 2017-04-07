@@ -110,7 +110,7 @@ JavaSerializer.serializeToString = function(json, element, clazz, mapToMethod, f
         str += "        ConfigurationProperties.setX3dCanonicalForm();\n";
         str += "        ConfigurationProperties.initialize();\n";
 
-	str += "	ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_nativeJava);\n";
+	str += "	ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_saxon);\n";
 
 	str += "	X3D0.toFileJSON(args[0]);\n";
 	str += "	}\n";
