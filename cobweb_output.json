@@ -1,0 +1,216 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"cobweb.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"John Carlson"
+          },
+          {
+            "@name":"description",
+            "@content":"Tour around a prismatic sphere"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://coderextreme.net/X3DJSONLD/cobweb.x3d"
+          },
+          {
+            "@name":"translated",
+            "@content":"15 February 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "NavigationInfo":
+            {
+              "@transitionType":["INEAR\""],
+              "@type":["XAMINE\""]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Bubbles in action",
+              "@orientation":[1,0,0,0],
+              "@position":[0,0,4]
+            }
+          },
+          { "Background":
+            {
+              "@backUrl":["ubemap/BK.png","http://coderextreme.net/X3DJSONLD/cubemap/BK.png\""],
+              "@bottomUrl":["ubemap/BT.png","http://coderextreme.net/X3DJSONLD/cubemap/BT.png\""],
+              "@frontUrl":["ubemap/FR.png","http://coderextreme.net/X3DJSONLD/cubemap/FR.png\""],
+              "@leftUrl":["ubemap/LF.png","http://coderextreme.net/X3DJSONLD/cubemap/LF.png\""],
+              "@rightUrl":["ubemap/RT.png","http://coderextreme.net/X3DJSONLD/cubemap/RT.png\""],
+              "@topUrl":["ubemap/TP.png","http://coderextreme.net/X3DJSONLD/cubemap/TP.png\""]
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"Bubble",
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                      {
+                        "@DEF":"transform",
+                        "-children":[
+                          { "Shape":
+                            {
+                              "-appearance":
+                                { "Appearance":
+                                  {
+                                    "-material":
+                                      { "Material":
+                                        {
+                                          "@diffuseColor":[1,0,0],
+                                          "@transparency":0.2
+                                        }
+                                      }
+                                  }
+                                },
+                              "-geometry":
+                                { "Sphere":
+                                  {
+                                    "@radius":0.25
+                                  }
+                                }
+                            }
+                          },
+                          { "Script":
+                            {
+                              "@DEF":"bounce",
+                              "field": [
+                                {
+                                  "@name":"scale",
+                                  "@accessType":"inputOutput",
+                                  "@type":"SFVec3f",
+                                  "@value":[1,1,1]
+                                },
+                                {
+                                  "@name":"translation",
+                                  "@accessType":"inputOutput",
+                                  "@type":"SFVec3f",
+                                  "@value":[0,0,0]
+                                },
+                                {
+                                  "@name":"velocity",
+                                  "@accessType":"inputOutput",
+                                  "@type":"SFVec3f",
+                                  "@value":[0,0,0]
+                                },
+                                {
+                                  "@name":"scalvel",
+                                  "@accessType":"inputOutput",
+                                  "@type":"SFVec3f",
+                                  "@value":[0,0,0]
+                                },
+                                {
+                                  "@name":"set_fraction",
+                                  "@accessType":"inputOnly",
+                                  "@type":"SFFloat"
+                                }
+                              ]
+                            }
+                          },
+                          { "TimeSensor":
+                            {
+                              "@DEF":"bubbleClock",
+                              "@cycleInterval":10.0,
+                              "@loop":true
+                            }
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromField":"translation_changed",
+                              "@fromNode":"transform",
+                              "@toField":"set_translation",
+                              "@toNode":"bounce"
+                            }
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromField":"scale_changed",
+                              "@fromNode":"transform",
+                              "@toField":"set_scale",
+                              "@toNode":"bounce"
+                            }
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromField":"translation_changed",
+                              "@fromNode":"bounce",
+                              "@toField":"set_translation",
+                              "@toNode":"transform"
+                            }
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromField":"scale_changed",
+                              "@fromNode":"bounce",
+                              "@toField":"set_scale",
+                              "@toNode":"transform"
+                            }
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromField":"fraction_changed",
+                              "@fromNode":"bubbleClock",
+                              "@toField":"set_fraction",
+                              "@toNode":"bounce"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"Bubble",
+              "@DEF":"bubbleA"
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"Bubble",
+              "@DEF":"bubbleB"
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"Bubble",
+              "@DEF":"bubbleC"
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"Bubble",
+              "@DEF":"bubbleD"
+            }
+          }
+        ]
+    }
+  }
+}
