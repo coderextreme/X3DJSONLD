@@ -39,6 +39,6 @@ If someone wants me to write a sanitizer for the X3D JSON Loader, I am willing t
 
 * Converting JSON files to X3D XML, Python and Java
 
-The script, runjson.sh provides the driving software for producing XML, Python and Java artifacts from JSON.  simply modify and run the script to suit.  You can change the Java Serializer or any other serializer in json2all.js.  There is a list of serializers there with corresponding file extensions.
+The script, serialize.sh provides the driving software for producing XML, Python and Java artifacts from JSON.  simply modify and run the script to suit.  You can change the Java Serializer or any other serializer in json2all.js.  There is a list of serializers there with corresponding file extensions.
 
 * Compiling and running Java, producing diffs of JSON input and output.   The Java serializer produces a program which produces JSON.  You can run the output from the serializer through the Java compiler and JVM with compilejava.sh.  This will compile the java, run it, and provide a diff with the original JSON (if any).  There are a coupld of output zips for collecting output results.

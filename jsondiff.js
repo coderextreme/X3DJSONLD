@@ -19,6 +19,7 @@ function myTrim(x) {
 }
 
 function compare(obj1, p1, obj2, p2) {
+	var str = "";
 	var finalret = true;
 	if (obj1 === obj2) {
 	} else if (typeof obj1 === 'string' && typeof obj2 === 'string') {
@@ -38,7 +39,10 @@ function compare(obj1, p1, obj2, p2) {
 						for (var j = 0; j  < dsp1.length; j++) {
 							var dsp1key = p1key+'/'+j;
 							var dsp2key = p2key+'/'+j;
-							var ret = compare(dsp1[j], p1key+"/"+j, dsp2[j], p2key+"/"+j);
+							let ret;
+							let s;
+							[ ret, str ] = compare(dsp1[j], p1key+"/"+j, dsp2[j], p2key+"/"+j);
+							str += s;
 							if (ret === false) {
 								finalret = false;
 							}
@@ -46,23 +50,23 @@ function compare(obj1, p1, obj2, p2) {
 					}
 				}
 			} else {
-				console.log("@1", p1, p2);
-				console.log("<", obj1);
-				console.log(">", obj2);
+				str += "@1 "+p1+" "+p2+"\n";
+				str += "< "+obj1+"\n";
+				str += "> "+obj2+"\n";
 				finalret = false;
 			}
 		} else if (parseFloat(obj1) == parseFloat(obj2)) {
 		} else {
-			console.log("@2", p1, p2);
-			console.log("<", obj1);
-			console.log(">", obj2);
+			str += "@2 "+p1+" "+p2+"\n";
+			str += "< "+obj1+"\n";
+			str += "> "+obj2+"\n";
 			finalret = false;
 		}
 		if (finalret === true) {
 			if (obj1 !== obj2) {
-				console.log("@3", p1, p2);
-				console.log("<", obj1);
-				console.log(">", obj2);
+				str += "@3 "+p1+" "+p2+"\n";
+				str += "< "+obj1+"\n";
+				str += "> "+obj2+"\n";
 				finalret = false;
 			}
 		}
@@ -74,9 +78,15 @@ function compare(obj1, p1, obj2, p2) {
 				// both have key
 				var ret;
 				if (arrayKeys[key]) {
-					ret = compare(obj1[key].split(/[ \t\n\r]+/), p1key, obj2[key].split(/[ \t\n\r]+/), p2key);
+					let ret;
+					let s;
+					[ ret, str ] = compare(obj1[key].split(/[ \t\n\r]+/), p1key, obj2[key].split(/[ \t\n\r]+/), p2key);
+					str += s;
 				} else {
-					ret = compare(obj1[key], p1key, obj2[key], p2key);
+					let ret;
+					let s;
+					[ ret, str ] = compare(obj1[key], p1key, obj2[key], p2key);
+					str += s;
 				}
 				if (ret === false) {
 					finalret = false;
@@ -84,11 +94,11 @@ function compare(obj1, p1, obj2, p2) {
 			} else {
 				// obj1 has key
 				if (key === 'containerField') {
-					console.log("@4", p1key);
-					console.log("<", obj1[key]);
+					str += "@4 "+p1key+"\n";
+					str += "< "+obj1[key]+"\n";
 				} else {
-					console.log("@5", p1key);
-					console.log("<", obj1[key]);
+					str += "@5 "+p1key+"\n";
+					str += "< "+obj1[key]+"\n";
 					finalret = false;
 				}
 			}
@@ -98,35 +108,52 @@ function compare(obj1, p1, obj2, p2) {
 			var p2key = p2+'/'+key;
 			if (typeof obj1[key] === 'undefined') {
 				if (key === 'containerField') {
-					console.log("@6", p2key);
-					console.log(">", obj2[key]);
+					str += "@6"+p2key+"\n";
+					str += ">"+obj2[key]+"\n";
 				} else {
-					console.log("@7", p2key);
-					console.log(">", obj2[key]);
+					str += "@7"+p2key+"\n";
+					str += ">"+obj2[key]+"\n";
 					finalret = false;
 				}
 			}
 		}
 	} else if (!(typeof obj1 === 'undefined' && typeof obj2 === 'undefined')) {
-		console.log("@8", p1, p2);
-		console.log("<", obj1);
-		console.log(">", obj2);
+		str += "@8 "+p1+p2+"\n";
+		str += "< "+obj1+"\n";
+		str += "> "+obj2+"\n";
 		finalret = false;
 	} else {
-		console.log('both undefined');
+		str += 'both undefined'+"\n";
 	}
-	return finalret;
+	return [ finalret, str ];
 		
 }
 
+var glob = require('glob');
 try {
-	var json = fs.readFileSync(files[0]);
-	var result = JSON.parse(json);
 	var jsonrt = fs.readFileSync(files[1]);
 	var resultrt = JSON.parse(jsonrt);
-	if (!compare(result, '', resultrt, '')) {
-		console.log("Different");
-	}
+	glob(files[0], function(err, filesglobs) {
+		if (err) {
+			console.log(err);
+		}
+		filesglobs.forEach(function(file) {
+			var json = fs.readFileSync(file);
+			var result = JSON.parse(json);
+			let ret = true;
+			let str = "";
+			[ ret, str ] = compare(result, '', resultrt, '');
+			if (!ret) {
+				console.log("================================================================================");
+				console.log("diff", files[0], files[1]);
+				console.log("Different");
+				/*
+			} else {
+				console.log("Same");
+				*/
+			}
+		});
+	});
 } catch (e) {
 	console.log(e, files[1]);
 }

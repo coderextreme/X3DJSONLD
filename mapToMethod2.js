@@ -70,10 +70,10 @@ let mapToMethod2 = {
 		"IS" : "setIS"
 	},
 	"HAnimHumanoid" : {
-		"IS" : "appendSkin",
-		"HAnimSite": "appendViewpoints",
-		"HAnimSegment": "appendSegments",
-		"Group" : "appendSkeleton"
+		"IS" : "addSkin",
+		"HAnimSite": "addViewpoints",
+		"HAnimSegment": "addSegments",
+		"Group" : "addSkeleton"
 	},
 	"X3DPickSensorNode" : {
 		"IS" : "addPickedGeometry"
@@ -119,7 +119,7 @@ let mapToMethod2 = {
 	},
 	"GeoLOD" : {
 		"IS" : "setIS",
-		"IS" : "appendRootNode"
+		"IS" : "addRootNode"
 	},
 	"LinePickSensor" : {
 		"IS" : "addPickedGeometry"
