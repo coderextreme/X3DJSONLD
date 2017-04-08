@@ -1,856 +1,1176 @@
-{ "X3D": {
-    "encoding":"UTF-8",
-    "@profile":"Immersive",
-    "@version":"3.3",
-    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+{
+  "X3D": {
+    "encoding": "UTF-8",
+    "@profile": "Immersive",
+    "@version": "3.3",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "Scene": {
-        "-children":[
-          { "NavigationInfo":
-            {
-              "@type":["EXAMINE"]
-            }
-          },
-          { "Viewpoint":
-            {
-              "@description":"Rubiks Cube on Fire",
-              "@position":[0,0,12]
-            }
-          },
-          { "Transform":
-            {
-              "-children":[
-                { "Transform":
-                  {
-                    "-children":[
-                      { "Transform":
-                        {
-                          "-children":[
-                            { "Transform":
-                              {
-                                "-children":[
-                                  { "Shape":
-                                    {
-                                      "-geometry":
-                                        { "Box":
-                                          {
-                                            "@size":[1,1,1]
-                                          }
-                                        },
-                                      "-appearance":
-                                        { "Appearance":
-                                          {
-                                            "-material":
-                                              { "Material":
-                                                {
-                                                  "@diffuseColor":[1,1,1]
-                                                }
-                                              }
-                                          }
-                                        }
-                                    }
-                                  }
-                                ]
-                              }
-                            },
-                            { "Transform":
-                              {
-                                "@translation":[2,0,0],
-                                "-children":[
-                                  { "Shape":
-                                    {
-                                      "-geometry":
-                                        { "Box":
-                                          {
-                                            "@size":[1,1,1]
-                                          }
-                                        },
-                                      "-appearance":
-                                        { "Appearance":
-                                          {
-                                            "-material":
-                                              { "Material":
-                                                {
-                                                  "@diffuseColor":[1,1,1]
-                                                }
-                                              }
-                                          }
-                                        }
-                                    }
-                                  }
-                                ]
-                              }
-                            },
-                            { "Transform":
-                              {
-                                "@translation":[-2,0,0],
-                                "-children":[
-                                  { "Shape":
-                                    {
-                                      "-geometry":
-                                        { "Box":
-                                          {
-                                            "@size":[1,1,1]
-                                          }
-                                        },
-                                      "-appearance":
-                                        { "Appearance":
-                                          {
-                                            "-material":
-                                              { "Material":
-                                                {
-                                                  "@diffuseColor":[1,1,1]
-                                                }
-                                              }
-                                          }
-                                        }
-                                    }
-                                  }
-                                ]
-                              }
-                            }
-                          ]
-                        }
-                      },
-                      { "Transform":
-                        {
-                          "@translation":[0,2,0],
-                          "-children":[
-                            { "Transform":
-                              {
-                                "-children":[
-                                  { "Shape":
-                                    {
-                                      "-geometry":
-                                        { "Box":
-                                          {
-                                            "@size":[1,1,1]
-                                          }
-                                        },
-                                      "-appearance":
-                                        { "Appearance":
-                                          {
-                                            "-material":
-                                              { "Material":
-                                                {
-                                                  "@diffuseColor":[1,1,1]
-                                                }
-                                              }
-                                          }
-                                        }
-                                    }
-                                  }
-                                ]
-                              }
-                            },
-                            { "Transform":
-                              {
-                                "@translation":[2,0,0],
-                                "-children":[
-                                  { "Shape":
-                                    {
-                                      "-geometry":
-                                        { "Box":
-                                          {
-                                            "@size":[1,1,1]
-                                          }
-                                        },
-                                      "-appearance":
-                                        { "Appearance":
-                                          {
-                                            "-material":
-                                              { "Material":
-                                                {
-                                                  "@diffuseColor":[1,1,1]
-                                                }
-                                              }
-                                          }
-                                        }
-                                    }
-                                  }
-                                ]
-                              }
-                            },
-                            { "Transform":
-                              {
-                                "@translation":[-2,0,0],
-                                "-children":[
-                                  { "Shape":
-                                    {
-                                      "-geometry":
-                                        { "Box":
-                                          {
-                                            "@size":[1,1,1]
-                                          }
-                                        },
-                                      "-appearance":
-                                        { "Appearance":
-                                          {
-                                            "-material":
-                                              { "Material":
-                                                {
-                                                  "@diffuseColor":[1,1,1]
-                                                }
-                                              }
-                                          }
-                                        }
-                                    }
-                                  }
-                                ]
-                              }
-                            }
-                          ]
-                        }
-                      },
-                      { "Transform":
-                        {
-                          "@translation":[0,-2,0],
-                          "-children":[
-                            { "Transform":
-                              {
-                                "-children":[
-                                  { "Shape":
-                                    {
-                                      "-geometry":
-                                        { "Box":
-                                          {
-                                            "@size":[1,1,1]
-                                          }
-                                        },
-                                      "-appearance":
-                                        { "Appearance":
-                                          {
-                                            "-material":
-                                              { "Material":
-                                                {
-                                                  "@diffuseColor":[1,1,1]
-                                                }
-                                              }
-                                          }
-                                        }
-                                    }
-                                  }
-                                ]
-                              }
-                            },
-                            { "Transform":
-                              {
-                                "@translation":[2,0,0],
-                                "-children":[
-                                  { "Shape":
-                                    {
-                                      "-geometry":
-                                        { "Box":
-                                          {
-                                            "@size":[1,1,1]
-                                          }
-                                        },
-                                      "-appearance":
-                                        { "Appearance":
-                                          {
-                                            "-material":
-                                              { "Material":
-                                                {
-                                                  "@diffuseColor":[1,1,1]
-                                                }
-                                              }
-                                          }
-                                        }
-                                    }
-                                  }
-                                ]
-                              }
-                            },
-                            { "Transform":
-                              {
-                                "@translation":[-2,0,0],
-                                "-children":[
-                                  { "Shape":
-                                    {
-                                      "-geometry":
-                                        { "Box":
-                                          {
-                                            "@size":[1,1,1]
-                                          }
-                                        },
-                                      "-appearance":
-                                        { "Appearance":
-                                          {
-                                            "-material":
-                                              { "Material":
-                                                {
-                                                  "@diffuseColor":[1,1,1]
-                                                }
-                                              }
-                                          }
-                                        }
-                                    }
-                                  }
-                                ]
-                              }
-                            }
-                          ]
-                        }
-                      }
-                    ]
-                  }
-                },
-                { "Transform":
-                  {
-                    "@translation":[0,0,2],
-                    "-children":[
-                      { "Transform":
-                        {
-                          "-children":[
-                            { "Transform":
-                              {
-                                "-children":[
-                                  { "Shape":
-                                    {
-                                      "-geometry":
-                                        { "Box":
-                                          {
-                                            "@size":[1,1,1]
-                                          }
-                                        },
-                                      "-appearance":
-                                        { "Appearance":
-                                          {
-                                            "-material":
-                                              { "Material":
-                                                {
-                                                  "@diffuseColor":[1,1,1]
-                                                }
-                                              }
-                                          }
-                                        }
-                                    }
-                                  }
-                                ]
-                              }
-                            },
-                            { "Transform":
-                              {
-                                "@translation":[2,0,0],
-                                "-children":[
-                                  { "Shape":
-                                    {
-                                      "-geometry":
-                                        { "Box":
-                                          {
-                                            "@size":[1,1,1]
-                                          }
-                                        },
-                                      "-appearance":
-                                        { "Appearance":
-                                          {
-                                            "-material":
-                                              { "Material":
-                                                {
-                                                  "@diffuseColor":[1,1,1]
-                                                }
-                                              }
-                                          }
-                                        }
-                                    }
-                                  }
-                                ]
-                              }
-                            },
-                            { "Transform":
-                              {
-                                "@translation":[-2,0,0],
-                                "-children":[
-                                  { "Shape":
-                                    {
-                                      "-geometry":
-                                        { "Box":
-                                          {
-                                            "@size":[1,1,1]
-                                          }
-                                        },
-                                      "-appearance":
-                                        { "Appearance":
-                                          {
-                                            "-material":
-                                              { "Material":
-                                                {
-                                                  "@diffuseColor":[1,1,1]
-                                                }
-                                              }
-                                          }
-                                        }
-                                    }
-                                  }
-                                ]
-                              }
-                            }
-                          ]
-                        }
-                      },
-                      { "Transform":
-                        {
-                          "@translation":[0,2,0],
-                          "-children":[
-                            { "Transform":
-                              {
-                                "-children":[
-                                  { "Shape":
-                                    {
-                                      "-geometry":
-                                        { "Box":
-                                          {
-                                            "@size":[1,1,1]
-                                          }
-                                        },
-                                      "-appearance":
-                                        { "Appearance":
-                                          {
-                                            "-material":
-                                              { "Material":
-                                                {
-                                                  "@diffuseColor":[1,1,1]
-                                                }
-                                              }
-                                          }
-                                        }
-                                    }
-                                  }
-                                ]
-                              }
-                            },
-                            { "Transform":
-                              {
-                                "@translation":[2,0,0],
-                                "-children":[
-                                  { "Shape":
-                                    {
-                                      "-geometry":
-                                        { "Box":
-                                          {
-                                            "@size":[1,1,1]
-                                          }
-                                        },
-                                      "-appearance":
-                                        { "Appearance":
-                                          {
-                                            "-material":
-                                              { "Material":
-                                                {
-                                                  "@diffuseColor":[1,1,1]
-                                                }
-                                              }
-                                          }
-                                        }
-                                    }
-                                  }
-                                ]
-                              }
-                            },
-                            { "Transform":
-                              {
-                                "@translation":[-2,0,0],
-                                "-children":[
-                                  { "Shape":
-                                    {
-                                      "-geometry":
-                                        { "Box":
-                                          {
-                                            "@size":[1,1,1]
-                                          }
-                                        },
-                                      "-appearance":
-                                        { "Appearance":
-                                          {
-                                            "-material":
-                                              { "Material":
-                                                {
-                                                  "@diffuseColor":[1,1,1]
-                                                }
-                                              }
-                                          }
-                                        }
-                                    }
-                                  }
-                                ]
-                              }
-                            }
-                          ]
-                        }
-                      },
-                      { "Transform":
-                        {
-                          "@translation":[0,-2,0],
-                          "-children":[
-                            { "Transform":
-                              {
-                                "-children":[
-                                  { "Shape":
-                                    {
-                                      "-geometry":
-                                        { "Box":
-                                          {
-                                            "@size":[1,1,1]
-                                          }
-                                        },
-                                      "-appearance":
-                                        { "Appearance":
-                                          {
-                                            "-material":
-                                              { "Material":
-                                                {
-                                                  "@diffuseColor":[1,1,1]
-                                                }
-                                              }
-                                          }
-                                        }
-                                    }
-                                  }
-                                ]
-                              }
-                            },
-                            { "Transform":
-                              {
-                                "@translation":[2,0,0],
-                                "-children":[
-                                  { "Shape":
-                                    {
-                                      "-geometry":
-                                        { "Box":
-                                          {
-                                            "@size":[1,1,1]
-                                          }
-                                        },
-                                      "-appearance":
-                                        { "Appearance":
-                                          {
-                                            "-material":
-                                              { "Material":
-                                                {
-                                                  "@diffuseColor":[1,1,1]
-                                                }
-                                              }
-                                          }
-                                        }
-                                    }
-                                  }
-                                ]
-                              }
-                            },
-                            { "Transform":
-                              {
-                                "@translation":[-2,0,0],
-                                "-children":[
-                                  { "Shape":
-                                    {
-                                      "-geometry":
-                                        { "Box":
-                                          {
-                                            "@size":[1,1,1]
-                                          }
-                                        },
-                                      "-appearance":
-                                        { "Appearance":
-                                          {
-                                            "-material":
-                                              { "Material":
-                                                {
-                                                  "@diffuseColor":[1,1,1]
-                                                }
-                                              }
-                                          }
-                                        }
-                                    }
-                                  }
-                                ]
-                              }
-                            }
-                          ]
-                        }
-                      }
-                    ]
-                  }
-                },
-                { "Transform":
-                  {
-                    "@translation":[0,0,-2],
-                    "-children":[
-                      { "Transform":
-                        {
-                          "-children":[
-                            { "Transform":
-                              {
-                                "-children":[
-                                  { "Shape":
-                                    {
-                                      "-geometry":
-                                        { "Box":
-                                          {
-                                            "@size":[1,1,1]
-                                          }
-                                        },
-                                      "-appearance":
-                                        { "Appearance":
-                                          {
-                                            "-material":
-                                              { "Material":
-                                                {
-                                                  "@diffuseColor":[1,1,1]
-                                                }
-                                              }
-                                          }
-                                        }
-                                    }
-                                  }
-                                ]
-                              }
-                            },
-                            { "Transform":
-                              {
-                                "@translation":[2,0,0],
-                                "-children":[
-                                  { "Shape":
-                                    {
-                                      "-geometry":
-                                        { "Box":
-                                          {
-                                            "@size":[1,1,1]
-                                          }
-                                        },
-                                      "-appearance":
-                                        { "Appearance":
-                                          {
-                                            "-material":
-                                              { "Material":
-                                                {
-                                                  "@diffuseColor":[1,1,1]
-                                                }
-                                              }
-                                          }
-                                        }
-                                    }
-                                  }
-                                ]
-                              }
-                            },
-                            { "Transform":
-                              {
-                                "@translation":[-2,0,0],
-                                "-children":[
-                                  { "Shape":
-                                    {
-                                      "-geometry":
-                                        { "Box":
-                                          {
-                                            "@size":[1,1,1]
-                                          }
-                                        },
-                                      "-appearance":
-                                        { "Appearance":
-                                          {
-                                            "-material":
-                                              { "Material":
-                                                {
-                                                  "@diffuseColor":[1,1,1]
-                                                }
-                                              }
-                                          }
-                                        }
-                                    }
-                                  }
-                                ]
-                              }
-                            }
-                          ]
-                        }
-                      },
-                      { "Transform":
-                        {
-                          "@translation":[0,2,0],
-                          "-children":[
-                            { "Transform":
-                              {
-                                "-children":[
-                                  { "Shape":
-                                    {
-                                      "-geometry":
-                                        { "Box":
-                                          {
-                                            "@size":[1,1,1]
-                                          }
-                                        },
-                                      "-appearance":
-                                        { "Appearance":
-                                          {
-                                            "-material":
-                                              { "Material":
-                                                {
-                                                  "@diffuseColor":[1,1,1]
-                                                }
-                                              }
-                                          }
-                                        }
-                                    }
-                                  }
-                                ]
-                              }
-                            },
-                            { "Transform":
-                              {
-                                "@translation":[2,0,0],
-                                "-children":[
-                                  { "Shape":
-                                    {
-                                      "-geometry":
-                                        { "Box":
-                                          {
-                                            "@size":[1,1,1]
-                                          }
-                                        },
-                                      "-appearance":
-                                        { "Appearance":
-                                          {
-                                            "-material":
-                                              { "Material":
-                                                {
-                                                  "@diffuseColor":[1,1,1]
-                                                }
-                                              }
-                                          }
-                                        }
-                                    }
-                                  }
-                                ]
-                              }
-                            },
-                            { "Transform":
-                              {
-                                "@translation":[-2,0,0],
-                                "-children":[
-                                  { "Shape":
-                                    {
-                                      "-geometry":
-                                        { "Box":
-                                          {
-                                            "@size":[1,1,1]
-                                          }
-                                        },
-                                      "-appearance":
-                                        { "Appearance":
-                                          {
-                                            "-material":
-                                              { "Material":
-                                                {
-                                                  "@diffuseColor":[1,1,1]
-                                                }
-                                              }
-                                          }
-                                        }
-                                    }
-                                  }
-                                ]
-                              }
-                            }
-                          ]
-                        }
-                      },
-                      { "Transform":
-                        {
-                          "@translation":[0,-2,0],
-                          "-children":[
-                            { "Transform":
-                              {
-                                "-children":[
-                                  { "Shape":
-                                    {
-                                      "-geometry":
-                                        { "Box":
-                                          {
-                                            "@size":[1,1,1]
-                                          }
-                                        },
-                                      "-appearance":
-                                        { "Appearance":
-                                          {
-                                            "-material":
-                                              { "Material":
-                                                {
-                                                  "@diffuseColor":[1,1,1]
-                                                }
-                                              }
-                                          }
-                                        }
-                                    }
-                                  }
-                                ]
-                              }
-                            },
-                            { "Transform":
-                              {
-                                "@translation":[2,0,0],
-                                "-children":[
-                                  { "Shape":
-                                    {
-                                      "-geometry":
-                                        { "Box":
-                                          {
-                                            "@size":[1,1,1]
-                                          }
-                                        },
-                                      "-appearance":
-                                        { "Appearance":
-                                          {
-                                            "-material":
-                                              { "Material":
-                                                {
-                                                  "@diffuseColor":[1,1,1]
-                                                }
-                                              }
-                                          }
-                                        }
-                                    }
-                                  }
-                                ]
-                              }
-                            },
-                            { "Transform":
-                              {
-                                "@translation":[-2,0,0],
-                                "-children":[
-                                  { "Shape":
-                                    {
-                                      "-geometry":
-                                        { "Box":
-                                          {
-                                            "@size":[1,1,1]
-                                          }
-                                        },
-                                      "-appearance":
-                                        { "Appearance":
-                                          {
-                                            "-material":
-                                              { "Material":
-                                                {
-                                                  "@diffuseColor":[1,1,1]
-                                                }
-                                              }
-                                          }
-                                        }
-                                    }
-                                  }
-                                ]
-                              }
-                            }
-                          ]
-                        }
-                      }
-                    ]
-                  }
-                }
-              ]
-            }
+      "-children": [
+        {
+          "NavigationInfo": {
+            "@type": [
+              "EXAMINE"
+            ]
           }
-        ]
+        },
+        {
+          "Viewpoint": {
+            "@description": "Rubiks Cube on Fire",
+            "@position": [
+              0,
+              0,
+              12
+            ]
+          }
+        },
+        {},
+        {},
+        {},
+        {},
+        {
+          "Transform": {
+            "@translation": [
+              0,
+              0,
+              0
+            ],
+            "-children": [
+              {
+                "Transform": {
+                  "-children": [
+                    {
+                      "Transform": {
+                        "-children": [
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Box": {
+                                        "@size": [
+                                          1,
+                                          1,
+                                          1
+                                        ]
+                                      }
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                0,
+                                0,
+                                0
+                              ]
+                            }
+                          },
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Box": {
+                                        "@size": [
+                                          1,
+                                          1,
+                                          1
+                                        ]
+                                      }
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                2,
+                                0,
+                                0
+                              ]
+                            }
+                          },
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Box": {
+                                        "@size": [
+                                          1,
+                                          1,
+                                          1
+                                        ]
+                                      }
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                -2,
+                                0,
+                                0
+                              ]
+                            }
+                          }
+                        ],
+                        "@translation": [
+                          0,
+                          0,
+                          0
+                        ]
+                      }
+                    },
+                    {
+                      "Transform": {
+                        "-children": [
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Box": {
+                                        "@size": [
+                                          1,
+                                          1,
+                                          1
+                                        ]
+                                      }
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                0,
+                                0,
+                                0
+                              ]
+                            }
+                          },
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Box": {
+                                        "@size": [
+                                          1,
+                                          1,
+                                          1
+                                        ]
+                                      }
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                2,
+                                0,
+                                0
+                              ]
+                            }
+                          },
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Box": {
+                                        "@size": [
+                                          1,
+                                          1,
+                                          1
+                                        ]
+                                      }
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                -2,
+                                0,
+                                0
+                              ]
+                            }
+                          }
+                        ],
+                        "@translation": [
+                          0,
+                          2,
+                          0
+                        ]
+                      }
+                    },
+                    {
+                      "Transform": {
+                        "-children": [
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Box": {
+                                        "@size": [
+                                          1,
+                                          1,
+                                          1
+                                        ]
+                                      }
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                0,
+                                0,
+                                0
+                              ]
+                            }
+                          },
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Box": {
+                                        "@size": [
+                                          1,
+                                          1,
+                                          1
+                                        ]
+                                      }
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                2,
+                                0,
+                                0
+                              ]
+                            }
+                          },
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Box": {
+                                        "@size": [
+                                          1,
+                                          1,
+                                          1
+                                        ]
+                                      }
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                -2,
+                                0,
+                                0
+                              ]
+                            }
+                          }
+                        ],
+                        "@translation": [
+                          0,
+                          -2,
+                          0
+                        ]
+                      }
+                    }
+                  ],
+                  "@translation": [
+                    0,
+                    0,
+                    0
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "-children": [
+                    {
+                      "Transform": {
+                        "-children": [
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Box": {
+                                        "@size": [
+                                          1,
+                                          1,
+                                          1
+                                        ]
+                                      }
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                0,
+                                0,
+                                0
+                              ]
+                            }
+                          },
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Box": {
+                                        "@size": [
+                                          1,
+                                          1,
+                                          1
+                                        ]
+                                      }
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                2,
+                                0,
+                                0
+                              ]
+                            }
+                          },
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Box": {
+                                        "@size": [
+                                          1,
+                                          1,
+                                          1
+                                        ]
+                                      }
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                -2,
+                                0,
+                                0
+                              ]
+                            }
+                          }
+                        ],
+                        "@translation": [
+                          0,
+                          0,
+                          0
+                        ]
+                      }
+                    },
+                    {
+                      "Transform": {
+                        "-children": [
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Box": {
+                                        "@size": [
+                                          1,
+                                          1,
+                                          1
+                                        ]
+                                      }
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                0,
+                                0,
+                                0
+                              ]
+                            }
+                          },
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Box": {
+                                        "@size": [
+                                          1,
+                                          1,
+                                          1
+                                        ]
+                                      }
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                2,
+                                0,
+                                0
+                              ]
+                            }
+                          },
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Box": {
+                                        "@size": [
+                                          1,
+                                          1,
+                                          1
+                                        ]
+                                      }
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                -2,
+                                0,
+                                0
+                              ]
+                            }
+                          }
+                        ],
+                        "@translation": [
+                          0,
+                          2,
+                          0
+                        ]
+                      }
+                    },
+                    {
+                      "Transform": {
+                        "-children": [
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Box": {
+                                        "@size": [
+                                          1,
+                                          1,
+                                          1
+                                        ]
+                                      }
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                0,
+                                0,
+                                0
+                              ]
+                            }
+                          },
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Box": {
+                                        "@size": [
+                                          1,
+                                          1,
+                                          1
+                                        ]
+                                      }
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                2,
+                                0,
+                                0
+                              ]
+                            }
+                          },
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Box": {
+                                        "@size": [
+                                          1,
+                                          1,
+                                          1
+                                        ]
+                                      }
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                -2,
+                                0,
+                                0
+                              ]
+                            }
+                          }
+                        ],
+                        "@translation": [
+                          0,
+                          -2,
+                          0
+                        ]
+                      }
+                    }
+                  ],
+                  "@translation": [
+                    0,
+                    0,
+                    2
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "-children": [
+                    {
+                      "Transform": {
+                        "-children": [
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Box": {
+                                        "@size": [
+                                          1,
+                                          1,
+                                          1
+                                        ]
+                                      }
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                0,
+                                0,
+                                0
+                              ]
+                            }
+                          },
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Box": {
+                                        "@size": [
+                                          1,
+                                          1,
+                                          1
+                                        ]
+                                      }
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                2,
+                                0,
+                                0
+                              ]
+                            }
+                          },
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Box": {
+                                        "@size": [
+                                          1,
+                                          1,
+                                          1
+                                        ]
+                                      }
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                -2,
+                                0,
+                                0
+                              ]
+                            }
+                          }
+                        ],
+                        "@translation": [
+                          0,
+                          0,
+                          0
+                        ]
+                      }
+                    },
+                    {
+                      "Transform": {
+                        "-children": [
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Box": {
+                                        "@size": [
+                                          1,
+                                          1,
+                                          1
+                                        ]
+                                      }
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                0,
+                                0,
+                                0
+                              ]
+                            }
+                          },
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Box": {
+                                        "@size": [
+                                          1,
+                                          1,
+                                          1
+                                        ]
+                                      }
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                2,
+                                0,
+                                0
+                              ]
+                            }
+                          },
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Box": {
+                                        "@size": [
+                                          1,
+                                          1,
+                                          1
+                                        ]
+                                      }
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                -2,
+                                0,
+                                0
+                              ]
+                            }
+                          }
+                        ],
+                        "@translation": [
+                          0,
+                          2,
+                          0
+                        ]
+                      }
+                    },
+                    {
+                      "Transform": {
+                        "-children": [
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Box": {
+                                        "@size": [
+                                          1,
+                                          1,
+                                          1
+                                        ]
+                                      }
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                0,
+                                0,
+                                0
+                              ]
+                            }
+                          },
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Box": {
+                                        "@size": [
+                                          1,
+                                          1,
+                                          1
+                                        ]
+                                      }
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                2,
+                                0,
+                                0
+                              ]
+                            }
+                          },
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-geometry": {
+                                      "Box": {
+                                        "@size": [
+                                          1,
+                                          1,
+                                          1
+                                        ]
+                                      }
+                                    },
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "@translation": [
+                                -2,
+                                0,
+                                0
+                              ]
+                            }
+                          }
+                        ],
+                        "@translation": [
+                          0,
+                          -2,
+                          0
+                        ]
+                      }
+                    }
+                  ],
+                  "@translation": [
+                    0,
+                    0,
+                    -2
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
     }
   }
 }
