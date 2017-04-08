@@ -1,4 +1,7 @@
 #!/bin/sh
+
+# convert files from X3D to JSON
+
 export CLASSPATH="saxon9he.jar;."
 javac RunSaxon.java
 

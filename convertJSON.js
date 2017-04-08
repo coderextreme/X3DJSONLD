@@ -1,6 +1,6 @@
 var fs = require('fs');
 var mkdirp = require('node-mkdirp');
-var loadX3DJS = require('./serverX3DJSONLD');
+var loadX3DJS = require('./serverX3DJSONLD.js');
 let mapToMethod = require('./mapToMethod.js');
 let mapToMethod2 = require('./mapToMethod2.js');
 let jsonlint = require('jsonlint');
