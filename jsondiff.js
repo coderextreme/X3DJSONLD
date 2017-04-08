@@ -41,7 +41,7 @@ function compare(obj1, p1, obj2, p2) {
 							var dsp2key = p2key+'/'+j;
 							let ret;
 							let s;
-							[ ret, str ] = compare(dsp1[j], p1key+"/"+j, dsp2[j], p2key+"/"+j);
+							[ ret, s ] = compare(dsp1[j], p1key+"/"+j, dsp2[j], p2key+"/"+j);
 							str += s;
 							if (ret === false) {
 								finalret = false;
@@ -76,18 +76,14 @@ function compare(obj1, p1, obj2, p2) {
 			var p2key = p2+'/'+key;
 			if (typeof obj2[key] !== 'undefined') {
 				// both have key
-				var ret;
+				let ret;
+				let s;
 				if (arrayKeys[key]) {
-					let ret;
-					let s;
-					[ ret, str ] = compare(obj1[key].split(/[ \t\n\r]+/), p1key, obj2[key].split(/[ \t\n\r]+/), p2key);
-					str += s;
+					[ ret, s ] = compare(obj1[key].split(/[ \t\n\r]+/), p1key, obj2[key].split(/[ \t\n\r]+/), p2key);
 				} else {
-					let ret;
-					let s;
-					[ ret, str ] = compare(obj1[key], p1key, obj2[key], p2key);
-					str += s;
+					[ ret, s ] = compare(obj1[key], p1key, obj2[key], p2key);
 				}
+				str += s;
 				if (ret === false) {
 					finalret = false;
 				}
@@ -140,12 +136,13 @@ try {
 		filesglobs.forEach(function(file) {
 			var json = fs.readFileSync(file);
 			var result = JSON.parse(json);
-			let ret = true;
-			let str = "";
+			let ret;
+			let str;
 			[ ret, str ] = compare(result, '', resultrt, '');
 			if (!ret) {
 				console.log("================================================================================");
 				console.log("diff", files[0], files[1]);
+				console.log(str);
 				console.log("Different");
 				/*
 			} else {
