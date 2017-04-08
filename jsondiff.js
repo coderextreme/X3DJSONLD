@@ -62,6 +62,7 @@ function compare(obj1, p1, obj2, p2) {
 			str += "> "+obj2+"\n";
 			finalret = false;
 		}
+		// this is a last gasp, and might be removed
 		if (finalret === true) {
 			if (obj1 !== obj2) {
 				str += "@3 "+p1+" "+p2+"\n";
