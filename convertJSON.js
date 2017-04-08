@@ -61,9 +61,7 @@ function convertJSON(options) {
 					error += " message: " + errs[e].message + "\r\n";
 					error += " params: " + JSON.stringify(errs[e].params) + "\r\n";
 				}
-				console.error("================================================================================");
-				console.error(file);
-				console.error(error);
+				throw(error);
 			}
 				
 
@@ -83,12 +81,14 @@ function convertJSON(options) {
 				if (typeof str !== 'undefined') {
 					var outfile = basefile+options[ser];
 					fs.writeFileSync(outfile, str);
+				} else {
+					throw("Wrote nothing, serializer returned nothing");
 				}
 			}
 		} catch (e) {
 			console.error("================================================================================");
 			console.error(file);
-			console.error("Error reading", file, e);
+			console.error("Error:", e);
 		}
 	}
 }

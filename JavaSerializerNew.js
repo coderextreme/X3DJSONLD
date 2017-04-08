@@ -34,6 +34,7 @@ JavaSerializer.prototype = {
 		if (pkg.length > 0) {
 			str += "package "+pkg+";\n";
 		}
+		// console.error(pkg, clz);
 		str += "import org.web3d.x3d.jsail.*;\n";
 		str += "import org.web3d.x3d.jsail.CADGeometry.*;\n";
 		str += "import org.web3d.x3d.jsail.Core.*;\n";
@@ -136,7 +137,7 @@ JavaSerializer.prototype = {
 
 function printSubArray(attrType, type, values,  co, j, trail) {
 	if (attrType.startsWith("MF")) {
-		var str = "new "+attrType+"Object()";
+		var str = "new "+attrType+"Object(";
 		for (var i = 0; i < values.length; i += 840) {
 			var max = values.length;
 			if (i + 840 < max) {
@@ -146,7 +147,11 @@ function printSubArray(attrType, type, values,  co, j, trail) {
 			code[co] = "private static "+attrType+"Object "+attrType+co+"() {\n";
 			code[co] += "\treturn new "+attrType+"Object( new "+type+"[] {"+values.slice(i, max).join(j)+trail+"})\n";
 			code[co] += ";\n}\n";
-			str += ".append("+attrType+co+"())";
+			if (i == 0) {
+				str += attrType+co+"())";
+			} else {
+				str += ".append("+attrType+co+"())";
+			}
 			co = codeno;
 		}
 		return str;
