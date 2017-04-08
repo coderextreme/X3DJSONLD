@@ -9,6 +9,7 @@ sh nonserialized.sh | wc
 sh compile.sh
 sh noncompiled.sh | wc
 sh execute.sh
+sh nonexecutedjs.sh | wc
 sh nonexecuted.sh | wc
 sh diffxml.sh
 sh diffjson.sh
