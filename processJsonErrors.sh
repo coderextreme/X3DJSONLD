@@ -1,14 +1,19 @@
 #!/bin/bash
+
+# process JSON files and look for error in JSON file so we won't report
+
 while read
 do
-	if [ "$REPLY" = "===================================================================================" ]
+	if [ "$REPLY" = "================================================================================" ]
 	then
 		read
-		if grep '"@name".*:.*"error"' $REPLY > /dev/null
+		FILE=${REPLY}
+		if egrep -l '"@name".*:.*"error"|"@name".*:.*"warning"' $FILE > /dev/null
 		then
-			echo ERROR VALUE FOUND $REPLY
+			test
 		else
-			echo ERROR VALUE NOT FOUND $REPLY
+			echo "$FILE"
 		fi
 	fi
 done
+

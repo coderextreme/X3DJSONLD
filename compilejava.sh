@@ -1,4 +1,7 @@
 #!/bin/sh
+
+# old way to compile java files and compare
+
 jar -cMf GoodJSON.zip classpath
 jar -cMf DiffJSON.zip classpath
 X3DJSONLD=./../pythonSAI/

@@ -1,4 +1,7 @@
 #!/bin/bash
+
+# old way of running files through nashorn
+
 . ./classpath
 
 cp /dev/null jsdiffs.txt
