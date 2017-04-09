@@ -299,6 +299,7 @@
 "                }",
 "                ",
 "                function set_spine(value) {",
+"\t\t    Browser.print('\n'+'\"');",
 "                    spine = value;",
 "                }"
 ]
