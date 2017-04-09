@@ -1,91 +1,74 @@
-let elements;
-
-function ply(line, comments) {
-	elements.push({
-		ply : "ply",
-		comments : comments
-	});
-}
-
-function format(line, comments) {
-	elements.push({
-		encoding : "json",
-		charset :  line[1],
-		version : line[2],
-		comments : comments
-	});
-}
-
-function comment(line, comments) {
-	elements.push({
-		comment : line.slice(1).join(" "),
-		comments : comments
-	});
-}
-
-function element(line, comments) {
-	elements.push({
-		type : line[1],
-		number : line[2],
-		property : [],
-		comments : comments
-	});
-}
-
-function property(line, comments) {
-	elements[elements.length-1].property.push({
-		name : line[line.length-1],
-		type : line.splice(1, line.length-2),
-		comments : comments
-	});
-}
-
-
-function end_header(line, comments) {
-	e = 0;
-	o = 0;
-	elements.push({
-		comments : comments
-	});
-}
-
-let e;
-let o;
-
-function values(line, comments) {
-	if (typeof line === 'undefined') {
-		return;
-	}
-	while (typeof elements[e].type === 'undefined' || o >= elements[e].number) {
-		e++;
-		o = 0;
-	}
-	// read through properties
-	elements[e][o] = {};
-	var properties = elements[e].property;
-	for (let p in  properties) {
-		if (properties[p].type[0] === 'list') {
-			for (let pr = 1; pr < line.length; pr++) {
-				elements[e][o][pr-1] = line[pr];
-			}
-		} else {
-			let pr = p;
-			elements[e][o][pr] = line[pr];
-		}
-	}
-	elements[e][o]["comments"] = comments;
-	o++;
-}
-
 function convertPlyToJson(file) {
-	elements = [];
+	let elements = [];
+	let e;
+	let o;
 	let dispatchTable = {
-		"ply": ply,
-		"format": format,
-		"comment": comment,
-		"element": element,
-		"property": property,
-		"end_header": end_header
+		values: function (line, comments) {
+			if (typeof line === 'undefined') {
+				return;
+			}
+			while (typeof elements[e].type === 'undefined' || o >= elements[e].number) {
+				e++;
+				o = 0;
+			}
+			// read through properties
+			elements[e][o] = {};
+			var properties = elements[e].property;
+			for (let p in  properties) {
+				if (properties[p].type[0] === 'list') {
+					for (let pr = 1; pr < line.length; pr++) {
+						elements[e][o][pr-1] = line[pr];
+					}
+				} else {
+					let pr = p;
+					elements[e][o][pr] = line[pr];
+				}
+			}
+			elements[e][o]["comments"] = comments;
+			o++;
+		},
+		ply : function (line, comments) {
+			elements.push({
+				ply : "ply",
+				comments : comments
+			});
+		},
+		format : function(line, comments) {
+			elements.push({
+				encoding : "json",
+				charset :  line[1],
+				version : line[2],
+				comments : comments
+			});
+		},
+		comment : function(line, comments) {
+			elements.push({
+				comment : line.slice(1).join(" "),
+				comments : comments
+			});
+		},
+		element : function(line, comments) {
+			elements.push({
+				type : line[1],
+				number : line[2],
+				property : [],
+				comments : comments
+			});
+		},
+		property : function(line, comments) {
+			elements[elements.length-1].property.push({
+				name : line[line.length-1],
+				type : line.splice(1, line.length-2),
+				comments : comments
+			});
+		},
+		end_header : function(line, comments) {
+			e = 0;
+			o = 0;
+			elements.push({
+				comments : comments
+			});
+		}
 	}
 	let unprocessed = file.trim().split(/[\r\n]+/g);
 	for (let u = 0; u < unprocessed.length; u++) {
@@ -96,7 +79,7 @@ function convertPlyToJson(file) {
 		if (typeof dispatchTable[line[0]] !== 'undefined') {
 			dispatchTable[line[0]](line, typeof comments === 'undefined' ? undefined :"{"+comments);
 		} else {
-			values(line, typeof comments === 'undefined' ? undefined :"{"+comments);
+			dispatchTable.values(line, typeof comments === 'undefined' ? undefined :"{"+comments);
 		}
 	}
 	// console.log(JSON.stringify(elements, null, 2));
@@ -143,6 +126,11 @@ function convertPlyToJson(file) {
 			  {
 				  "-geometry": transformToIFS(elements)
 			  }
+			},
+			{ "Shape":
+			  {
+				  "-geometry": transformToILS(elements)
+			  }
 			}
 		      ]
 		    }
@@ -154,67 +142,75 @@ function convertPlyToJson(file) {
 	return x3d;
 }
 
-function face(element, IFS) {
-	let array = [];
-	for (let o in element) {
-		try {
-			let index = parseInt(o);
-			if (!isNaN(index)) {
-				for (let vertex in element[index]) {
-					let iv = parseInt(vertex);
-					if (!isNaN(iv)) {
-						array.push(parseInt(element[index][iv]));
-					}
-				}
-				array.push(-1);
+function transformToILS(elements) {
+	let ILS = {};
+	coordIndex = [];
+	colorIndex = [];
+	point = [];
+	color = [];
+	let dispatchTable = {
+		edge : function(element, ILS) {
+			if (typeof ILS["IndexedLineSet"] === "undefined") {
+				ILS["IndexedLineSet" ] = {};
 			}
-		} catch (e) {
-			console.log(e);
-		}
-	}
-	if (typeof IFS["IndexedFaceSet"] === "undefined") {
-		IFS["IndexedFaceSet" ] = {};
-	}
-	IFS["IndexedFaceSet" ]["@colorIndex"] = array;
-	IFS["IndexedFaceSet" ]["@coordIndex"] = array;
-	return IFS;
-}
-
-function vertex(element, IFS) {
-	let point = [];
-	let color = [];
-	for (let o in element) {
-		try {
-			let index = parseInt(o);
-			if (!isNaN(index)) {
-				for (let p = 0; p < 3; p++) { 
-					point.push(parseFloat(element[index][p]));
-				}
-				for (let c = 3; c < 6; c++) { 
-					if (element.property[c].type[0] === 'uchar') {
-						color.push(parseFloat(element[index][c])/255.0);
-					} else {
-						color.push(parseInt(element[index][c]));
+			let array = [];
+			for (let o in element) {
+				try {
+					let index = parseInt(o);
+					if (!isNaN(index)) {
+						for (let iv = 0; iv < 2; iv++) {
+							array.push(parseInt(element[index][iv]));
+						}
+						array.push(-1);
+						for (let c = 2; c < 5; c++) { 
+							if (element.property[c].type[0] === 'uchar') {
+								color.push(parseFloat(element[index][c])/255.0);
+							} else {
+								color.push(parseInt(element[index][c]));
+							}
+						}
 					}
+				} catch (e) {
+					console.log(e);
 				}
 			}
-		} catch (e) {
-			console.log(e);
+			if (typeof ILS["IndexedLineSet"] === "undefined") {
+				ILS["IndexedLineSet" ] = {};
+			}
+			ILS["IndexedLineSet" ]["-color"] = { "Color" : { "@color" : color }};
+			ILS["IndexedLineSet" ]["@coordIndex"] = array;
+			ILS["IndexedLineSet" ]["@colorIndex"] = array;
+			return ILS;
+		},
+		vertex : function(element, ILS) {
+			let point = [];
+			for (let o in element) {
+				try {
+					let index = parseInt(o);
+					if (!isNaN(index)) {
+						for (let p = 0; p < 3; p++) { 
+							point.push(parseFloat(element[index][p]));
+						}
+					}
+				} catch (e) {
+					console.log(e);
+				}
+			}
+			if (typeof ILS["IndexedLineSet"] === "undefined") {
+				ILS["IndexedLineSet" ] = {};
+			}
+			ILS["IndexedLineSet" ]["-coord"] = { "Coordinate" : { "@point" : point }};
+			return ILS;
 		}
 	}
-	if (typeof IFS["IndexedFaceSet"] === "undefined") {
-		IFS["IndexedFaceSet" ] = {};
+	for (e in elements) {
+		console.log(elements[e]);
+		let table = dispatchTable[elements[e].type];
+		if (typeof table !== 'undefined') {
+			ILS = table(elements[e], ILS);
+		}
 	}
-	IFS["IndexedFaceSet" ]["-coord"] = { "Coordinate" : { "@point" : point }};
-	IFS["IndexedFaceSet" ]["-color"] = { "Color" : { "@color" : color }};
-	return IFS;
-}
-
-function edge(element, IFS) {
-	if (typeof IFS["IndexedFaceSet"] === "undefined") {
-		IFS["IndexedFaceSet" ] = {};
-	}
-	return IFS;
+	return ILS;
 }
 
 function transformToIFS(elements) {
@@ -224,9 +220,60 @@ function transformToIFS(elements) {
 	point = [];
 	color = [];
 	let dispatchTable = {
-		face: face,
-		vertex: vertex,
-		edge: edge,
+		face : function(element, IFS) {
+			let array = [];
+			for (let o in element) {
+				try {
+					let index = parseInt(o);
+					if (!isNaN(index)) {
+						for (let vertex in element[index]) {
+							let iv = parseInt(vertex);
+							if (!isNaN(iv)) {
+								array.push(parseInt(element[index][iv]));
+							}
+						}
+						array.push(-1);
+					}
+				} catch (e) {
+					console.log(e);
+				}
+			}
+			if (typeof IFS["IndexedFaceSet"] === "undefined") {
+				IFS["IndexedFaceSet" ] = {};
+			}
+			IFS["IndexedFaceSet" ]["@colorIndex"] = array;
+			IFS["IndexedFaceSet" ]["@coordIndex"] = array;
+			return IFS;
+		},
+		vertex : function(element, IFS) {
+			let point = [];
+			let color = [];
+			for (let o in element) {
+				try {
+					let index = parseInt(o);
+					if (!isNaN(index)) {
+						for (let p = 0; p < 3; p++) { 
+							point.push(parseFloat(element[index][p]));
+						}
+						for (let c = 3; c < 6; c++) { 
+							if (element.property[c].type[0] === 'uchar') {
+								color.push(parseFloat(element[index][c])/255.0);
+							} else {
+								color.push(parseInt(element[index][c]));
+							}
+						}
+					}
+				} catch (e) {
+					console.log(e);
+				}
+			}
+			if (typeof IFS["IndexedFaceSet"] === "undefined") {
+				IFS["IndexedFaceSet" ] = {};
+			}
+			IFS["IndexedFaceSet" ]["-coord"] = { "Coordinate" : { "@point" : point }};
+			IFS["IndexedFaceSet" ]["-color"] = { "Color" : { "@color" : color }};
+			return IFS;
+		}
 	};
 	for (e in elements) {
 		let table = dispatchTable[elements[e].type];
