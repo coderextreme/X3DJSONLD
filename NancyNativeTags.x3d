@@ -7,7 +7,7 @@
     <meta content='Cindy Ballreich' name='creator'/>
     <meta content='Tom Miller and Don Brutzman, NPS' name='translators'/>
     <meta content='9 July 2000' name='created'/>
-    <meta content='2 April 2016' name='modified'/>
+    <meta content='16 July 2016' name='modified'/>
     <meta content='need height, weight. not sure if we should ask a lady her age.' name='info'/>
     <meta content='Canonical H-Anim 1.1 specification example, using native X3D tags instead of ProtoDeclaration/ExternProtoDeclaration and ProtoInstance.' name='description'/>
     <meta content='http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/NancyNativeTags.x3d' name='identifier'/>
@@ -258,10 +258,12 @@
       <HAnimSegment USE='hanim_r_hand' containerField='segments'/>
       <HAnimSegment USE='hanim_c4' containerField='segments'/>
       <HAnimSegment USE='hanim_skull' containerField='segments'/>
-      <Viewpoint DEF='InclinedView' containerField='viewpoints' description='Inclined View' orientation='-0.113 0.993 0.0347 0.671' position='1.62 1.05 2.06'/>
-      <Viewpoint DEF='FrontView' containerField='viewpoints' description='Front View' position='0 0.854 2.57665'/>
-      <Viewpoint DEF='SideView' containerField='viewpoints' description='Side View' orientation='0 1 0 1.57079' position='2.5929 0.854 0'/>
-      <Viewpoint DEF='TopView' containerField='viewpoints' description='Top View' orientation='1 0 0 -1.57079' position='0 3.4495 0'/>
+      <HAnimSite containerField='viewpoints' name='NancyNativeTags_view'>
+        <Viewpoint DEF='InclinedView' description='Inclined View' orientation='-0.113 0.993 0.0347 0.671' position='1.62 1.05 2.06'/>
+        <Viewpoint DEF='FrontView' description='Front View' position='0 0.854 2.57665'/>
+        <Viewpoint DEF='SideView' description='Side View' orientation='0 1 0 1.57079' position='2.5929 0.854 0'/>
+        <Viewpoint DEF='TopView' description='Top View' orientation='1 0 0 -1.57079' position='0 3.4495 0'/>
+      </HAnimSite>
     </HAnimHumanoid>
     <WorldInfo info='"Copyright (c) 1997. 3Name3D / Yglesias Wallock Divekar, Inc."' title='Nancy - an H-Anim compliant avatar by 3Name3D'/>
     <NavigationInfo avatarSize='0.15 1.53 0.75' speed='0.5' type='"EXAMINE"'/>
