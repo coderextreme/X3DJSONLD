@@ -31,7 +31,7 @@
         },
         {
           "@name": "modified",
-          "@content": "2 April 2016"
+          "@content": "16 July 2016"
         },
         {
           "@name": "info",
@@ -13325,64 +13325,71 @@
             ],
             "-viewpoints": [
               {
-                "Viewpoint": {
-                  "@DEF": "InclinedView",
-                  "@description": "Inclined View",
-                  "@orientation": [
-                    -0.113,
-                    0.993,
-                    0.0347,
-                    0.671
-                  ],
-                  "@position": [
-                    1.62,
-                    1.05,
-                    2.06
-                  ]
-                }
-              },
-              {
-                "Viewpoint": {
-                  "@DEF": "FrontView",
-                  "@description": "Front View",
-                  "@position": [
-                    0,
-                    0.854,
-                    2.57665
-                  ]
-                }
-              },
-              {
-                "Viewpoint": {
-                  "@DEF": "SideView",
-                  "@description": "Side View",
-                  "@orientation": [
-                    0,
-                    1,
-                    0,
-                    1.57079
-                  ],
-                  "@position": [
-                    2.5929,
-                    0.854,
-                    0
-                  ]
-                }
-              },
-              {
-                "Viewpoint": {
-                  "@DEF": "TopView",
-                  "@description": "Top View",
-                  "@orientation": [
-                    1,
-                    0,
-                    0,
-                    -1.57079
-                  ],
-                  "@position": [
-                    0,
-                    3.4495,
-                    0
+                "HAnimSite": {
+                  "@name": "NancyNativeTags_view",
+                  "-children": [
+                    {
+                      "Viewpoint": {
+                        "@DEF": "InclinedView",
+                        "@description": "Inclined View",
+                        "@orientation": [
+                          -0.113,
+                          0.993,
+                          0.0347,
+                          0.671
+                        ],
+                        "@position": [
+                          1.62,
+                          1.05,
+                          2.06
+                        ]
+                      }
+                    },
+                    {
+                      "Viewpoint": {
+                        "@DEF": "FrontView",
+                        "@description": "Front View",
+                        "@position": [
+                          0,
+                          0.854,
+                          2.57665
+                        ]
+                      }
+                    },
+                    {
+                      "Viewpoint": {
+                        "@DEF": "SideView",
+                        "@description": "Side View",
+                        "@orientation": [
+                          0,
+                          1,
+                          0,
+                          1.57079
+                        ],
+                        "@position": [
+                          2.5929,
+                          0.854,
+                          0
+                        ]
+                      }
+                    },
+                    {
+                      "Viewpoint": {
+                        "@DEF": "TopView",
+                        "@description": "Top View",
+                        "@orientation": [
+                          1,
+                          0,
+                          0,
+                          -1.57079
+                        ],
+                        "@position": [
+                          0,
+                          3.4495,
+                          0
+                        ]
+                      }
+                    }
                   ]
                 }
               }

@@ -5,7 +5,7 @@
 <meta name="creator" content="Cindy Ballreich"></meta>
 <meta name="translators" content="Tom Miller and Don Brutzman, NPS"></meta>
 <meta name="created" content="9 July 2000"></meta>
-<meta name="modified" content="2 April 2016"></meta>
+<meta name="modified" content="16 July 2016"></meta>
 <meta name="info" content="need height, weight. not sure if we should ask a lady her age."></meta>
 <meta name="description" content="Canonical H-Anim 1.1 specification example, using native X3D tags instead of ProtoDeclaration/ExternProtoDeclaration and ProtoInstance."></meta>
 <meta name="identifier" content="http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/NancyNativeTags.x3d"></meta>
@@ -167,10 +167,11 @@
 <HAnimSegment USE="hanim_r_hand"></HAnimSegment>
 <HAnimSegment USE="hanim_c4"></HAnimSegment>
 <HAnimSegment USE="hanim_skull"></HAnimSegment>
-<Viewpoint DEF="InclinedView" description="Inclined View" orientation="-0.113 0.993 0.0347 0.671" position="1.62 1.05 2.06"></Viewpoint>
+<HAnimSite name="NancyNativeTags_view"><Viewpoint DEF="InclinedView" description="Inclined View" orientation="-0.113 0.993 0.0347 0.671" position="1.62 1.05 2.06"></Viewpoint>
 <Viewpoint DEF="FrontView" description="Front View" position="0 0.854 2.57665"></Viewpoint>
 <Viewpoint DEF="SideView" description="Side View" orientation="0 1 0 1.57079" position="2.5929 0.854 0"></Viewpoint>
 <Viewpoint DEF="TopView" description="Top View" orientation="1 0 0 -1.57079" position="0 3.4495 0"></Viewpoint>
+</HAnimSite>
 </HAnimHumanoid>
 <WorldInfo info="&quot;Copyright (c) 1997. 3Name3D / Yglesias Wallock Divekar, Inc.&quot;" title="Nancy - an H-Anim compliant avatar by 3Name3D"></WorldInfo>
 <NavigationInfo avatarSize="0.15 1.53 0.75" speed="0.5" type="&quot;EXAMINE&quot;"></NavigationInfo>
