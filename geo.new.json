@@ -58,8 +58,8 @@
                                 "-parts":[
                                   { "ShaderPart":
                                     {
-                                      "@url":["cobweb.vs"],
-                                      "@type":"VERTEX"
+                                      "@type":"VERTEX",
+                                      "@url":["cobweb.vs"]
                                     }
                                   },
                                   { "ShaderPart":
