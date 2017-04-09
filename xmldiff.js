@@ -52,26 +52,28 @@ function compare(obj1, p1, obj2, p2) {
 				}
 			} else {
 				str += "@1 "+p1+" "+p2+"\n";
-				str += "< "+obj1+"\n";
-				str += "> "+obj2+"\n";
+				str += "< "+JSON.stringify(obj1)+"\n";
+				str += "> "+JSON.stringify(obj2)+"\n";
 				finalret = false;
 			}
 		} else if (parseFloat(obj1) == parseFloat(obj2)) {
 		} else {
 			str += "@2 "+p1+" "+p2+"\n";
-			str += "< "+obj1+"\n";
-			str += "> "+obj2+"\n";
+			str += "< "+JSON.stringify(obj1)+"\n";
+			str += "> "+JSON.stringify(obj2)+"\n";
 			finalret = false;
 		}
 		// this is a last gasp, and might be removed
+		/*
 		if (finalret === true) {
 			if (obj1 !== obj2) {
 				str += "@3 "+p1+" "+p2+"\n";
-				str += "< "+obj1+"\n";
-				str += "> "+obj2+"\n";
+				str += "< "+JSON.stringify(obj1)+"\n";
+				str += "> "+JSON.stringify(obj2)+"\n";
 				finalret = false;
 			}
 		}
+		*/
 	} else if (typeof obj1 === 'object' && typeof obj2 === 'object') {
 		for (var key in obj1) {
 			var p1key = p1+'/'+key;
@@ -93,10 +95,10 @@ function compare(obj1, p1, obj2, p2) {
 				// obj1 has key
 				if (key === 'containerField') {
 					str += "@4 "+p1key+"\n";
-					str += "< "+obj1[key]+"\n";
+					str += "< "+JSON.stringify(obj1[key])+"\n";
 				} else {
 					str += "@5 "+p1key+"\n";
-					str += "< "+obj1[key]+"\n";
+					str += "< "+JSON.stringify(obj1[key])+"\n";
 					finalret = false;
 				}
 			}
@@ -107,18 +109,18 @@ function compare(obj1, p1, obj2, p2) {
 			if (typeof obj1[key] === 'undefined') {
 				if (key === 'containerField') {
 					str += "@6"+p2key+"\n";
-					str += ">"+obj2[key]+"\n";
+					str += ">"+JSON.stringify(obj2[key])+"\n";
 				} else {
 					str += "@7"+p2key+"\n";
-					str += ">"+obj2[key]+"\n";
+					str += ">"+JSON.stringify(obj2[key])+"\n";
 					finalret = false;
 				}
 			}
 		}
 	} else if (!(typeof obj1 === 'undefined' && typeof obj2 === 'undefined')) {
 		str += "@8 "+p1+p2+"\n";
-		str += "< "+obj1+"\n";
-		str += "> "+obj2+"\n";
+		str += "< "+JSON.stringify(obj1)+"\n";
+		str += "> "+JSON.stringify(obj2)+"\n";
 		finalret = false;
 	} else {
 		str += 'both undefined'+"\n";

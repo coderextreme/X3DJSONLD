@@ -3811,5 +3811,8 @@ var fieldTypes = {"X3DNode" : {
 	"DEF" : "SFString",
 	"USE" : "SFString",
 	"class" : "SFString",
-},
-};module.exports = fieldTypes;
+}
+};
+if (typeof module === 'object')  {
+	module.exports = fieldTypes;
+}

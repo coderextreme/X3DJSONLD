@@ -228,6 +228,31 @@ function setVersion(version) {
 		loadX3D("#x3domjson", JSON.parse($('textarea#json').val()), "flipper.json"); // does not load flipper.json
 	}
 
+	function updateFromStl() {
+		var json = convertStlToJson($('textarea#stl').val());
+	        $('textarea#json').val(JSON.stringify(json, null, 2));
+		updateX3DOM();
+	}
+
+	function updateFromPly() {
+		var json = convertPlyToJson($('textarea#ply').val());
+	        $('textarea#json').val(JSON.stringify(json, null, 2));
+		updateX3DOM();
+	}
+
+	function loadStl(selector, url) {
+		$.get(url, function(stl) {
+			$('textarea#stl').val(stl);
+		})
+		.fail(function(jqXHR, textStatus, errorThrown) { alert('getStl request failed! ' + textStatus + ' ' + errorThrown); });
+	}
+
+	function loadPly(selector, url) {
+		$.get(url, function(ply) {
+			$('textarea#ply').val(ply);
+		})
+		.fail(function(jqXHR, textStatus, errorThrown) { alert('getPly request failed! ' + textStatus + ' ' + errorThrown); });
+	}
 	function loadX3DJSON(selector, url) {
 		var slash = url.lastIndexOf("/");
 		if (slash >= 0) {

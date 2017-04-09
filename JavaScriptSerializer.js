@@ -209,7 +209,11 @@ JavaScriptSerializer.subSerializeToString = function(element, mapToMethod, field
 		} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 8) {
 			str += "  ".repeat(n)+".addComments(new CommentsBlock(\""+node.nodeValue.replace(/"/g, '\\"')+"\"))\n";
 		} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 4) {
-			str += "  ".repeat(n)+".setSourceCode(\""+node.nodeValue.split("\r\n").map(function(x) { return x.replace(/"/g, '\\"'); }).join('\\n\"+\n\"')+'")\n';
+			str += "  ".repeat(n)+".setSourceCode(\""+node.nodeValue.split("\r\n").map(function(x) {
+				return x.replace(/\\"/g, '\\\\"').
+					replace(/"/g, '\\"').
+					replace(/\\n/g, "\\\\n");
+			}).join('\\n\"+\n\"')+'")\n';
 		}
 	}
 	return str;
