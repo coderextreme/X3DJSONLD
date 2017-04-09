@@ -122,6 +122,8 @@ magic("*.mpg", "video/mpeg");
 magic("*.wav", "audio/wav");
 magic("*.mp3", "audio/mpeg3");
 magic("*.swf", "application/x-shockwave-flash");
+magic("*.ply", "application/octet-stream");
+magic("*.stl", "application/octet-stream");
 
 app.get("*.json", function(req, res, next) {
 	var url = req._parsedUrl.pathname.substr(1);

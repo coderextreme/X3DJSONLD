@@ -153,7 +153,7 @@ function printSubArray(attrType, type, values,  co, j, trail) {
 		}
 		return str;
 	} else {
-		return values.slice(i, max).join(j)+trail;
+		return "new "+type+"[] {"+values.slice(i, max).join(j)+trail+"}";
 	}
 }
 
@@ -334,7 +334,9 @@ JavaSerializer.subSerializeToString = function(element, n, mapToMethod, fieldTyp
 			str += "\t".repeat(n)+".addComments(new CommentsBlock(\""+node.nodeValue.replace(/"/g, '\\"')+"\"))\n";
 		} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 4) {
 			str += "\t".repeat(n)+".setSourceCode(\""+node.nodeValue.split("\r\n").map(function(x) {
-				return x.replace(/"/g, '\\"');
+				return x.replace(/\\"/g, '\\\\"').
+					replace(/"/g, '\\"').
+					replace(/\\n/g, "\\\\n");
 				/*
 				return x.replace(/([^\\]| )\\\\( |[^\\"])/g, "$1\\\\$2").
 				replace(/([^\\]| )\\\\\\\\([^\\"]| )/g, "$1\\\\\\\\\\\\\\\\$2").

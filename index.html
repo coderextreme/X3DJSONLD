@@ -203,6 +203,14 @@ Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into JSON X3DOM
 <td>
 <textarea id="java" rows="15" cols="80"></textarea><br>
 </td>
+<td>
+Click <a onclick='updateFromStl();'>here</a> to load STL text into JSON X3DOM viewer and convert to XML and JSON (and display).<br>
+<textarea id="stl" rows="15" cols="80"></textarea><br>
+</td>
+<td>
+Click <a onclick='updateFromPly();'>here</a> to load PLY text into JSON X3DOM viewer and convert to XML and JSON (and display).<br>
+<textarea id="ply" rows="15" cols="80"></textarea><br>
+</td>
 </tr>
 </table>
 </body>
@@ -214,10 +222,14 @@ Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into JSON X3DOM
     <script type="text/javascript" src="mapToMethod.js"></script>
     <script type="text/javascript" src="mapToMethod2.js"></script>
     <script type="text/javascript" src="fieldTypes.js"></script>
+    <script type="text/javascript" src="convertPlyToJson.js"></script>
+    <script type="text/javascript" src="convertStlToJson.js"></script>
     <script type="text/javascript" src="loaderJQuery.js"></script>
     <script type="text/javascript">
 	$(document).ready(function() {
 		loadX3DJSON('#x3domjson','cobweb.json'); // does load cobweb.json
+		loadPly('#ply','example.ply'); // does load example.ply
+		loadStl('#stl','example.stl'); // does load example.stl
 	});
     </script>
 </html>
