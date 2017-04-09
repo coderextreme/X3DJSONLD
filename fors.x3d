@@ -94,6 +94,7 @@ ecmascript:
                 }
                 
                 function set_spine(value) {
+		    Browser.print('\n'+'"');
                     spine = value;
                 }
 ]]>
