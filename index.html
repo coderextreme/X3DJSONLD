@@ -187,7 +187,8 @@ Click <a onclick='updateXML();'>here</a> to load X3D XML into Cobweb and XML X3D
     </X3DCanvas>
 </td>
 <td>
-Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into JSON X3DOM viewer and convert to XML (and display).<br>
+		
+Click <a onclick='updateStl(); return false;'>here</a> to load X3D JSON text into JSON X3DOM viewer and convert to XML (and display).<br>
 <textarea id="json" rows="15" cols="80"></textarea><br>
     <div id="x3domjson"></div>
     <X3DCanvas id='cobwebjson' cache='false' url='"cobweb.x3d"'>
@@ -224,12 +225,12 @@ Click <a onclick='updateFromPly();'>here</a> to load PLY text into JSON X3DOM vi
     <script type="text/javascript" src="fieldTypes.js"></script>
     <script type="text/javascript" src="convertPlyToJson.js"></script>
     <script type="text/javascript" src="convertStlToJson.js"></script>
+    <script type="text/javascript" src="convertJsonToStl.js"></script>
     <script type="text/javascript" src="loaderJQuery.js"></script>
     <script type="text/javascript">
 	$(document).ready(function() {
 		loadX3DJSON('#x3domjson','cobweb.json'); // does load cobweb.json
 		loadPly('#ply','example.ply'); // does load example.ply
-		loadStl('#stl','example.stl'); // does load example.stl
 	});
     </script>
 </html>

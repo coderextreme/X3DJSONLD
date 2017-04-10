@@ -105,15 +105,31 @@ function convertPlyToJson(file) {
 		  },
 		  {
 		    "@name":"created",
-		    "@content":"4 April 2017"
+		    "@content":"9 April 2017"
 		  },
 		  {
 		    "@name":"generator",
-		    "@content":"manual"
+		    "@content":"ConvertPlyToJson.js"
 		  },
 		  {
 		    "@name":"license",
 		    "@content":"../license.html"
+		  },
+		  {
+		    "@name":"identifier",
+		    "@content":"http://coderextreme.net/X3DJSONLD/template.json"
+		  },
+		  {
+		    "@name":"modified",
+		    "@content":"10 April 2017"
+		  },
+		  {
+		    "@name":"dummy",
+		    "@content":"b"
+		  },
+		  {
+		    "@name":"dummy",
+		    "@content":"a"
 		  }
 		]
 	    },

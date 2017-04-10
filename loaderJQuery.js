@@ -92,7 +92,7 @@ function setVersion(version) {
 
 		// console.log(scripts.text);
 		try {
-			console.log(scripts.text);
+			// console.log(scripts.text);
 			// TODO eval is evil
 			eval(scripts.text);
 		} catch (e) {
@@ -100,7 +100,7 @@ function setVersion(version) {
 		}
 		// console.log(routes.text);
 		try {
-			console.log(routes.text);
+			// console.log(routes.text);
 			// TODO eval is evil
 			eval(routes.text);
 		} catch (e) {
@@ -213,7 +213,14 @@ function setVersion(version) {
 		var version = json.X3D["@version"];
 		setVersion(version);  // loads schema.  TODO.  Only load when version changes
 		var valid = validate(json);
-		if (valid || confirm(JSON.stringify(validate.errors))) {
+			var errs = validate.errors;
+			var error = ""
+			for (var e in errs) {
+				error += "\r\n dataPath: " + errs[e].dataPath + "\r\n";
+				error += " message: " + errs[e].message + "\r\n";
+				error += " params: " + JSON.stringify(errs[e].params) + "\r\n";
+			}
+		if (valid || confirm(error)) {
 
 			var element = loadX3DJS(json, url, xml, NS);  // Cobweb if not XHTML NS
 			elementSetAttribute(element, "xmlns:xsd", 'http://www.w3.org/2001/XMLSchema-instance');
@@ -224,71 +231,77 @@ function setVersion(version) {
 		}
 	}
 
-	function updateX3DOM() {
-		loadX3D("#x3domjson", JSON.parse($('textarea#json').val()), "flipper.json"); // does not load flipper.json
-	}
+function updateX3DOM() {
+	loadX3D("#x3domjson", JSON.parse($('textarea#json').val()), "flipper.json"); // does not load flipper.json
+}
 
-	function updateFromStl() {
-		var json = convertStlToJson($('textarea#stl').val());
-	        $('textarea#json').val(JSON.stringify(json, null, 2));
-		updateX3DOM();
-	}
+function updateFromStl() {
+	var json = convertStlToJson($('textarea#stl').val());
+	$('textarea#json').val(JSON.stringify(json, null, 2));
+	updateX3DOM();
+}
 
-	function updateFromPly() {
-		var json = convertPlyToJson($('textarea#ply').val());
-	        $('textarea#json').val(JSON.stringify(json, null, 2));
-		updateX3DOM();
-	}
+function updateFromPly() {
+	var json = convertPlyToJson($('textarea#ply').val());
+	$('textarea#json').val(JSON.stringify(json, null, 2));
+	updateX3DOM();
+}
 
-	function loadStl(selector, url) {
-		$.get(url, function(stl) {
-			$('textarea#stl').val(stl);
-		})
-		.fail(function(jqXHR, textStatus, errorThrown) { alert('getStl request failed! ' + textStatus + ' ' + errorThrown); });
-	}
+function loadStl(selector, url) {
+	$.get(url, function(stl) {
+		$('textarea#stl').val(stl);
+	})
+	.fail(function(jqXHR, textStatus, errorThrown) { alert('getStl request failed! ' + textStatus + ' ' + errorThrown); });
+}
 
-	function loadPly(selector, url) {
-		$.get(url, function(ply) {
-			$('textarea#ply').val(ply);
-		})
-		.fail(function(jqXHR, textStatus, errorThrown) { alert('getPly request failed! ' + textStatus + ' ' + errorThrown); });
-	}
-	function loadX3DJSON(selector, url) {
-		var slash = url.lastIndexOf("/");
-		if (slash >= 0) {
-			// load the default viewpoint as an image
-			var dot = url.lastIndexOf(".");
+function loadPly(selector, url) {
+	$.get(url, function(ply) {
+		$('textarea#ply').val(ply);
+	})
+	.fail(function(jqXHR, textStatus, errorThrown) { alert('getPly request failed! ' + textStatus + ' ' + errorThrown); });
+}
+function loadX3DJSON(selector, url) {
+	var slash = url.lastIndexOf("/");
+	if (slash >= 0) {
+		// load the default viewpoint as an image
+		var dot = url.lastIndexOf(".");
 
-			var base = url.substr(0, slash);
-			var file = url.substr(slash, url.length - slash - 5); // .json
-			var png = base+"/_viewpoints"+file+".x3d._VP_Default_viewpoint.png";
-			$('#image').attr('src', png);
+		var base = url.substr(0, slash);
+		var file = url.substr(slash, url.length - slash - 5); // .json
+		var png = base+"/_viewpoints"+file+".x3d._VP_Default_viewpoint.png";
+		$('#image').attr('src', png);
 
 /*
-			// load an example movie
-			var mpg = base+file+"-movie.mpg";
-			var canvas = document.getElementById('canvas');
-			var ctx    = canvas.getContext('2d');
-			var video  = document.getElementById('video');
-			video.setAttribute('src', mpg);
-			video.addEventListener('play', function () {
-    				var $this = this; //cache
-    				(function loop() {
-        				if (!$this.paused && !$this.ended) {
-            					ctx.drawImage($this, 0, 0);
-            					canvas.parentNode._x3domNode.invalidateGLObject();
-            					setTimeout(loop, 1000 / 30); // drawing at 30fps
-        				}
-    				})();
-			}, 0);
-			video.play();
+		// load an example movie
+		var mpg = base+file+"-movie.mpg";
+		var canvas = document.getElementById('canvas');
+		var ctx    = canvas.getContext('2d');
+		var video  = document.getElementById('video');
+		video.setAttribute('src', mpg);
+		video.addEventListener('play', function () {
+			var $this = this; //cache
+			(function loop() {
+				if (!$this.paused && !$this.ended) {
+					ctx.drawImage($this, 0, 0);
+					canvas.parentNode._x3domNode.invalidateGLObject();
+					setTimeout(loop, 1000 / 30); // drawing at 30fps
+				}
+			})();
+		}, 0);
+		video.play();
 */
-		}
-		$.getJSON(url, function(json) {
-			$('textarea#json').val(JSON.stringify(json, null, 2));
-			loadX3D(selector, JSON.parse($('textarea#json').val()), url);
-		})
-		.fail(function(jqXHR, textStatus, errorThrown) { alert('getJSON request failed! ' + textStatus + ' ' + errorThrown); });
+	}
+	$.getJSON(url, function(json) {
+		$('textarea#json').val(JSON.stringify(json, null, 2));
+		updateStl();
+	})
+	.fail(function(jqXHR, textStatus, errorThrown) { alert('getJSON request failed! ' + textStatus + ' ' + errorThrown); });
+}
+
+	function updateStl(json) {
+		var stl = convertJsonToStl(JSON.parse($('textarea#json').val()));
+		$('textarea#stl').val(stl);
+		updateX3DOM();
 	}
 
 	function loadX3DXSLT(jsonAsXml, url) {

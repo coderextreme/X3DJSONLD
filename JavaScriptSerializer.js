@@ -116,7 +116,10 @@ JavaScriptSerializer.subSerializeToString = function(element, mapToMethod, field
 				if (attr !== 'containerField') {
 					let method = attr;
 					// look at object model
-					let attrType = fieldTypes[element.nodeName][attr];
+					let attrType = "SFString";
+					if (typeof fieldTypes[element.nodeName] !== 'undefined') {
+						attrType = fieldTypes[element.nodeName][attr];
+					}
 
 					// str += "attrType "+attrType+" FAT "+fieldAttrType+" "+attrs[a].nodeValue+"\n";
 					// but if it's NULL, look at the field type

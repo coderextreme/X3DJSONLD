@@ -1,38 +1,87 @@
 function convertStlToJson(file) {
-	let normals = [];
+	let IFS = {};
+	IFS.normalIndex = [];
+	IFS.vector = [];
+	IFS.ni = {};
+	IFS.coordIndex = [];
+	IFS.point = [];
+	IFS.ci = {};
+	IFS.colorIndex = [];
+	IFS.color = [];
+	IFS.co = {};
 	let dispatchTable = {
-		solid : function(line, normals) {
-			normals = [];
-			return normals;
+		solid : function(line, IFS) {
+			IFS.normalIndex = [];
+			IFS.vector = [];
+			IFS.ni = {};
+			IFS.coordIndex = [];
+			IFS.point = [];
+			IFS.ci = {};
+			IFS.colorIndex = [];
+			IFS.color = [];
+			IFS.co = {};
+			IFS = {};
+			IFS.normalIndex = [];
+			IFS.vector = [];
+			IFS.ni = {};
+			IFS.coordIndex = [];
+			IFS.point = [];
+			IFS.ci = {};
+			IFS.colorIndex = [];
+			IFS.color = [];
+			IFS.co = {};
+			return IFS;
 		},
-		facet : function(line, normals) {
-			normals.push({
-				0 : line[2],
-				1 : line[3],
-				2 : line[4],
-				vertex : []
-			});
-			return normals;
+		facet : function(line, IFS) {
+			line.shift();
+			line.shift();
+			let coords = line.join(" ");
+			let n = IFS.ni[coords];
+			if (typeof n === 'undefined') {
+				IFS.ni[coords] = IFS.vector.length;
+				n = IFS.ni[coords];
+				IFS.vector.push(coords);
+			}
+			IFS.normalIndex.push(n);
+			return IFS;
 		},
-		outer : function(line, normals) {
-			return normals;
+		outer : function(line, IFS) {
+			return IFS;
 		},
-		vertex : function(line, normals) {
-			normals[normals.length-1].vertex.push([
-				line[1],
-				line[2],
-				line[3]
-			]);
-			return normals;
+		vertex : function(line, IFS) {
+			line.shift();
+			let coords = line.join(" ");
+			let p = IFS.ci[coords];
+			if (typeof p === 'undefined') {
+				IFS.ci[coords] = IFS.point.length;
+				p = IFS.ci[coords];
+				IFS.point.push(coords);
+			}
+			IFS.coordIndex.push(p);
+
+			line = [ 0, 1, 0 ]
+			coords = line.join(" ");
+			c = IFS.co[coords];
+			if (typeof c === 'undefined') {
+				IFS.co[coords] = IFS.color.length;
+				c = IFS.co[coords];
+				IFS.color.push(coords);
+			}
+			IFS.colorIndex.push(c);
+			return IFS;
 		},
-		endloop : function(line, normals) {
-			return normals;
+		endloop : function(line, IFS) {
+			IFS.coordIndex.push(-1);
+			IFS.colorIndex.push(-1);
+			return IFS;
 		},
-		endfacet : function(line, normals) {
-			return normals;
+		endfacet : function(line, IFS) {
+			IFS.normalIndex.push(-1);
+			return IFS;
 		},
-		endsolid : function(line, normals) {
-			return normals;
+		endsolid : function(line, IFS) {
+			IFS["DEF"] = line[1];
+			return IFS;
 		}
 	}
 	let unprocessed = file.trim().split(/[\r\n]+/g);
@@ -40,7 +89,7 @@ function convertStlToJson(file) {
 		let command = unprocessed[u].trim();
 		let line = command.split(/ +/);
 		if (typeof dispatchTable[line[0]] !== 'undefined') {
-			normals = dispatchTable[line[0]](line, normals);
+			IFS = dispatchTable[line[0]](line, IFS);
 		}
 	}
 	var x3d = { "X3D": {
@@ -74,6 +123,18 @@ function convertStlToJson(file) {
 		  {
 		    "@name":"license",
 		    "@content":"../license.html"
+		  },
+		  {
+		    "@name":"modified",
+		    "@content":"10 April 2017"
+		  },
+		  {
+		    "@name":"dummy",
+		    "@content":"b"
+		  },
+		  {
+		    "@name":"dummy",
+		    "@content":"a"
 		  }
 		]
 	    },
@@ -84,20 +145,7 @@ function convertStlToJson(file) {
 		      "-children":[
 			{ "Shape":
 			  {
-				"-appearance": {
-				  "Appearance": {
-				    "-material": {
-				      "Material": {
-					"@diffuseColor": [
-					  0,
-					  1,
-					  0
-					]
-				      }
-				    }
-				  }
-				},
-				"-geometry": transformNormalsToIFS(normals)
+				"-geometry": transformNormalsToIFS(IFS)
 			  }
 			}
 		      ]
@@ -111,43 +159,18 @@ function convertStlToJson(file) {
 	return x3d;
 }
 
-function transformNormalsToIFS(normals) {
+function transformNormalsToIFS(json) {
 	let IFS = {};
 	IFS["IndexedFaceSet" ] = {};
-	let coordIndex = [];
-	let normalIndex = [];
-	let point = [];
-	let norm = [];
-	let vertices = 0;
-	let norms = 0;
-	let dispatchTable = {
-		handle: function(normal) {
-			for (let n in normal) {
-				let index = parseInt(n);
-				if (!isNaN(index)) {
-					norm.push(parseFloat(normal[index]));
-				}
-			}
-			normalIndex.push(norms++);
-			for (let v in normal.vertex) {
-				for (let p = 0; p < 3; p++) { 
-					point.push(parseFloat(normal.vertex[v][p]));
-				}
-				coordIndex.push(vertices++);
-			}
-			coordIndex.push(-1);
+	IFS["IndexedFaceSet" ]["@DEF"] = json.DEF;
+	IFS["IndexedFaceSet" ]["@coordIndex"] = json.coordIndex;
+	IFS["IndexedFaceSet" ]["-coord"] = { "Coordinate" : { "@point" : json.point.join(" ").split(" ").map(function(x) { return parseFloat(x); }) }};
 
-			return IFS;
-		}
-	};
-	for (n in normals) {
-		dispatchTable.handle(normals[n]);
-	}
-	normalIndex.push(-1);
-	IFS["IndexedFaceSet" ]["-coord"] = { "Coordinate" : { "@point" : point }};
-	IFS["IndexedFaceSet" ]["-normal"] = { "Normal" : { "@vector" : norm }};
-	IFS["IndexedFaceSet" ]["@normalIndex"] = normalIndex;
+	IFS["IndexedFaceSet" ]["-normal"] = { "Normal" : { "@vector" : json.vector.join(" ").split(" ").map(function(x) { return parseFloat(x); }) }};
+	IFS["IndexedFaceSet" ]["@normalIndex"] = json.normalIndex;
 	IFS["IndexedFaceSet" ]["@normalPerVertex"] = false;
-	IFS["IndexedFaceSet" ]["@coordIndex"] = coordIndex;
+
+	IFS["IndexedFaceSet" ]["-color"] = { "Color" : { "@color" : json.color.join(" ").split(" ").map(function(x) { return parseFloat(x); }) }};
+	IFS["IndexedFaceSet" ]["@colorIndex"] = json.colorIndex;
 	return IFS;
 }
