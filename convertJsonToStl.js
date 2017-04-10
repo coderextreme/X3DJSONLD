@@ -83,7 +83,7 @@ function toNormals(json, GeometryList) {
 				let f = 0;
 				Geometry.normalIndex = [];
 				for (let o = 0; o < obj.length; o++) {
-					if (obj[o] == -1 || normalPerVertex === false) {
+					if (obj[o] == -1 || Geometry.normalPerVertex === false) {
 						f++;
 					} else {
 						if (typeof Geometry.normalIndex[f] === 'undefined') {
@@ -140,7 +140,7 @@ function normalize(v) {
 function triangle_normal(a, b, c) {
 	let ba = [a[0] - b[0], a[1] - b[1], a[2] - b[2]];
 	let bc = [c[0] - b[0], c[1] - b[1], c[2] - b[2]];
-	abxac = vector_product(ba, bc);
+	baxbc = vector_product(ba, bc);
 	return normalize(baxbc);
 }
 
