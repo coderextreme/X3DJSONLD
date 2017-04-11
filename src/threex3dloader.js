@@ -19,6 +19,8 @@ var file = "ArchHalf.json";
 
 
 
+
+
 if (file.endsWith(".xml")) {
 	httpRequest.overrideMimeType('text/xml');
 } else {

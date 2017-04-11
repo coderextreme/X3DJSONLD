@@ -564,21 +564,7 @@ function renderX3D(THREE, x3d, scene, useImageTexture, useJson) {
 
     var getTree = function (x3d, useJson) {
 
-	function deltree(tree) {
-		if (typeof tree === 'object') {
-			delete tree.parent;
-			for (let t in tree) {
-				deltree(tree[t]);
-			}
-			try {
-				console.log(JSON.stringify(tree));
-			} catch (e) {
-				console.log(tree.string, tree.nodeType);
-			}
-		}
-	}
 	if (useJson) {
-		deltree(x3d);
 		console.log(x3d);
 		return x3d;
 	} else {
@@ -588,9 +574,7 @@ function renderX3D(THREE, x3d, scene, useImageTexture, useJson) {
 				parseChildren(x3d.documentElement.childNodes[i], tree);
 			}
 		}
-		deltree(tree);
 		console.log(tree);
-		console.log(JSON.stringify(tree));
 		return tree;
 	}
 
