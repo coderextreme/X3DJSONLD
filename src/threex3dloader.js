@@ -15,7 +15,7 @@ camera.lookAt(new THREE.Vector3(0, 0, 0));
 
 const httpRequest = new XMLHttpRequest();
 
-var file = "www_web3d_org/x3d/content/examples/Savage/AircraftFixedWing/Boeing_747_Tunisia/Boeing_747.new.json";
+var file = "ArchHalf.json";
 
 
 

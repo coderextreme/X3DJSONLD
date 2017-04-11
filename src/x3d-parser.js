@@ -522,11 +522,28 @@ function renderX3D(THREE, x3d, scene, useImageTexture, useJson) {
 
                 if ('imagetexture' === child.nodeType && useImageTexture) {
                     //var tex = THREE.ImageUtils.loadTexture("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABYSURBVDhPxc9BCsAgDERRj96j9WZpyI+CYxCKlL6VJfMXbfbSX8Ed8mOmAdMr8M5DNwVj2gJvaYqANXbBuoY0B4FbG1m7s592fh4Z7zx0GqCcog42vg7MHh1jhetTOqUmAAAAAElFTkSuQmCC");
-                    var tex = THREE.ImageUtils.loadTexture(child.url);
-                    tex.wrapS = THREE.RepeatWrapping;
-                    tex.wrapT = THREE.RepeatWrapping;
-
-                    parent.material.map = tex;
+		    var loader = new THREE.TextureLoader();
+		    if (typeof child.url === 'string') {
+			    var tex = THREE.ImageUtils.loadTexture(child.url);
+			    if (typeof tex !== 'undefined' && tex != null) {
+				    tex.wrapS = THREE.RepeatWrapping;
+				    tex.wrapT = THREE.RepeatWrapping;
+				    parent.material.map = tex;
+		            }
+		    } else if (typeof child.url === 'object') {
+			    var tex = THREE.ImageUtils.loadTexture(child.url[0]);
+			    if (typeof tex === 'undefined' && tex == null) {
+				    for (let u in child.url) {
+					    // todo don't allow overwrite
+			    		    var tex = THREE.ImageUtils.loadTexture(child.url[u]);
+					    if (typeof tex !== 'undefined' && tex !== null) {
+						    tex.wrapS = THREE.RepeatWrapping;
+						    tex.wrapT = THREE.RepeatWrapping;
+						    parent.material.map = tex;
+					    }
+				    }
+			    }
+	             }
                 }
 
             }
@@ -547,7 +564,22 @@ function renderX3D(THREE, x3d, scene, useImageTexture, useJson) {
 
     var getTree = function (x3d, useJson) {
 
+	function deltree(tree) {
+		if (typeof tree === 'object') {
+			delete tree.parent;
+			for (let t in tree) {
+				deltree(tree[t]);
+			}
+			try {
+				console.log(JSON.stringify(tree));
+			} catch (e) {
+				console.log(tree.string, tree.nodeType);
+			}
+		}
+	}
 	if (useJson) {
+		deltree(x3d);
+		console.log(x3d);
 		return x3d;
 	} else {
 		var tree = { 'string': 'Scene', children: [] };
@@ -556,7 +588,9 @@ function renderX3D(THREE, x3d, scene, useImageTexture, useJson) {
 				parseChildren(x3d.documentElement.childNodes[i], tree);
 			}
 		}
+		deltree(tree);
 		console.log(tree);
+		console.log(JSON.stringify(tree));
 		return tree;
 	}
 
