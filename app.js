@@ -110,6 +110,7 @@ app.get("*.x3d", processX3d);
 magic("*.vs", "text/plain");//"x-shader/x-vertex");
 magic("*.fs", "text/plain");//"x-shader/x-fragment");
 magic("*.html", "text/html");
+magic("*.xml", "text/xml");
 magic("*.xslt", "text/xsl");
 magic("*.xhtml", "application/xhtml+xml");
 magic("*.js", "text/javascript");

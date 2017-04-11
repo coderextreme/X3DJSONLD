@@ -15,7 +15,10 @@ camera.lookAt(new THREE.Vector3(0, 0, 0));
 
 const httpRequest = new XMLHttpRequest();
 
-var file = "sphere.json";
+var file = "www_web3d_org/x3d/content/examples/Savage/AircraftFixedWing/Boeing_747_Tunisia/Boeing_747.new.json";
+
+
+
 if (file.endsWith(".json")) {
 	httpRequest.overrideMimeType('text/json');
 } else {

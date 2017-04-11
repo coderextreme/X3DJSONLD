@@ -2,6 +2,21 @@ import java.io.*;
 import java.net.*;
 import javax.net.ssl.*;
 
+
+class MyTrustManager extends X509TrustManager {
+	public static void main(String args[]) {
+	}
+	public java.security.cert.X509Certificate[] getAcceptedIssuers() {
+	    return null;
+	}
+	public void checkClientTrusted(
+	    java.security.cert.X509Certificate[] certs, String authType) {
+	}
+	public void checkServerTrusted(
+	    java.security.cert.X509Certificate[] certs, String authType) {
+	}
+}
+
 class RunSaxon {
 protected static class ExitException extends SecurityException 
     {
@@ -45,17 +60,7 @@ protected static class ExitException extends SecurityException
 
 						// Create a new trust manager that trust all certificates
 						TrustManager[] trustAllCerts = new TrustManager[]{
-						    new X509TrustManager() {
-							public java.security.cert.X509Certificate[] getAcceptedIssuers() {
-							    return null;
-							}
-							public void checkClientTrusted(
-							    java.security.cert.X509Certificate[] certs, String authType) {
-							}
-							public void checkServerTrusted(
-							    java.security.cert.X509Certificate[] certs, String authType) {
-							}
-						    }
+							new MyTrustManager()
 						};
 
 						// Activate the new trust manager
