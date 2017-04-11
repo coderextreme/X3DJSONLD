@@ -44,7 +44,7 @@ function parseSubArray(attrType, numpersub, values) {
 	if (numpersub > 1 && attrType.startsWith("MF")) {
 		let newArrays = [];
 		for (let j = 0; j < values.length;) {
-			let newArray = {};
+			let newArray = [];
 			for (let i = 0; i < numpersub; i++) {
 				if (attrType === "MFString") {
 					newArray[i] = values[j++];
@@ -53,6 +53,25 @@ function parseSubArray(attrType, numpersub, values) {
 				}
 			}
 			newArrays.push(newArray);
+		}
+		return newArrays;
+	} else if (numpersub === 0) { // index
+		let newArrays = [];
+		let newArray = [];
+		let i = 0;
+		for (let j = 0; j < values.length;) {
+			if (values[j] == -1) {
+				newArrays.push(newArray);
+				newArray = [];
+				j++;
+				i = 0;
+			} else {
+				if (attrType === "MFString") {
+					newArray[i++] = values[j++];
+				} else {
+					newArray[i++] = parseFloat(values[j++]);
+				}
+			}
 		}
 		return newArrays;
 	} else {
@@ -99,8 +118,13 @@ function parseObject(setParent, name, fieldTypes, json, containerField) {
 					value = json[field];
 				} else if (attrType === "MFString") {
 					value = parseSubArray(attrType, 1, json[field]);
+				} else if (attrType === "MFInt32") {
+					if (attr.endsWith("Index")) {
+						value = parseSubArray(attrType, 0, json[field]);
+					} else {
+						value = parseSubArray(attrType, 1, json[field]);
+					}
 				} else if (
-					attrType === "MFInt32"||
 					attrType === "MFImage"||
 					attrType === "SFImage") {
 					value = parseSubArray(attrType, 1, json[field]);
@@ -158,6 +182,14 @@ function parseObject(setParent, name, fieldTypes, json, containerField) {
 					value = json[field];
 				}
 				obj[attr] = value;
+
+				// Now do something with the attribute
+				if (obj.DEF) {
+					obj.string += " DEF "+obj.DEF;
+				}
+				if (obj.USE) {
+					obj.string += " USE "+obj.USE;
+				}
 			}
 		} else if (field === "-children") {
 			let node = json[field];
@@ -49485,14 +49517,14 @@ camera.lookAt(new THREE.Vector3(0, 0, 0));
 
 const httpRequest = new XMLHttpRequest();
 
-var file = "www_web3d_org/x3d/content/examples/Savage/AircraftFixedWing/Boeing_747_Tunisia/Boeing_747.new.json";
+var file = "ArchHalf.json";
 
 
 
-if (file.endsWith(".json")) {
-	httpRequest.overrideMimeType('text/json');
-} else {
+if (file.endsWith(".xml")) {
 	httpRequest.overrideMimeType('text/xml');
+} else {
+	httpRequest.overrideMimeType('text/json');
 }
 
 httpRequest.onreadystatechange = () => {
@@ -50114,11 +50146,28 @@ function renderX3D(THREE, x3d, scene, useImageTexture, useJson) {
 
                 if ('imagetexture' === child.nodeType && useImageTexture) {
                     //var tex = THREE.ImageUtils.loadTexture("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABYSURBVDhPxc9BCsAgDERRj96j9WZpyI+CYxCKlL6VJfMXbfbSX8Ed8mOmAdMr8M5DNwVj2gJvaYqANXbBuoY0B4FbG1m7s592fh4Z7zx0GqCcog42vg7MHh1jhetTOqUmAAAAAElFTkSuQmCC");
-                    var tex = THREE.ImageUtils.loadTexture(child.url);
-                    tex.wrapS = THREE.RepeatWrapping;
-                    tex.wrapT = THREE.RepeatWrapping;
-
-                    parent.material.map = tex;
+		    var loader = new THREE.TextureLoader();
+		    if (typeof child.url === 'string') {
+			    var tex = THREE.ImageUtils.loadTexture(child.url);
+			    if (typeof tex !== 'undefined' && tex != null) {
+				    tex.wrapS = THREE.RepeatWrapping;
+				    tex.wrapT = THREE.RepeatWrapping;
+				    parent.material.map = tex;
+		            }
+		    } else if (typeof child.url === 'object') {
+			    var tex = THREE.ImageUtils.loadTexture(child.url[0]);
+			    if (typeof tex === 'undefined' && tex == null) {
+				    for (let u in child.url) {
+					    // todo don't allow overwrite
+			    		    var tex = THREE.ImageUtils.loadTexture(child.url[u]);
+					    if (typeof tex !== 'undefined' && tex !== null) {
+						    tex.wrapS = THREE.RepeatWrapping;
+						    tex.wrapT = THREE.RepeatWrapping;
+						    parent.material.map = tex;
+					    }
+				    }
+			    }
+	             }
                 }
 
             }
@@ -50139,7 +50188,22 @@ function renderX3D(THREE, x3d, scene, useImageTexture, useJson) {
 
     var getTree = function (x3d, useJson) {
 
+	function deltree(tree) {
+		if (typeof tree === 'object') {
+			delete tree.parent;
+			for (let t in tree) {
+				deltree(tree[t]);
+			}
+			try {
+				console.log(JSON.stringify(tree));
+			} catch (e) {
+				console.log(tree.string, tree.nodeType);
+			}
+		}
+	}
 	if (useJson) {
+		deltree(x3d);
+		console.log(x3d);
 		return x3d;
 	} else {
 		var tree = { 'string': 'Scene', children: [] };
@@ -50148,7 +50212,9 @@ function renderX3D(THREE, x3d, scene, useImageTexture, useJson) {
 				parseChildren(x3d.documentElement.childNodes[i], tree);
 			}
 		}
+		deltree(tree);
 		console.log(tree);
+		console.log(JSON.stringify(tree));
 		return tree;
 	}
 

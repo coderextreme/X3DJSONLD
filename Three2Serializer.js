@@ -43,7 +43,7 @@ function parseSubArray(attrType, numpersub, values) {
 	if (numpersub > 1 && attrType.startsWith("MF")) {
 		let newArrays = [];
 		for (let j = 0; j < values.length;) {
-			let newArray = {};
+			let newArray = [];
 			for (let i = 0; i < numpersub; i++) {
 				if (attrType === "MFString") {
 					newArray[i] = values[j++];
@@ -52,6 +52,25 @@ function parseSubArray(attrType, numpersub, values) {
 				}
 			}
 			newArrays.push(newArray);
+		}
+		return newArrays;
+	} else if (numpersub === 0) { // index
+		let newArrays = [];
+		let newArray = [];
+		let i = 0;
+		for (let j = 0; j < values.length;) {
+			if (values[j] == -1) {
+				newArrays.push(newArray);
+				newArray = [];
+				j++;
+				i = 0;
+			} else {
+				if (attrType === "MFString") {
+					newArray[i++] = values[j++];
+				} else {
+					newArray[i++] = parseFloat(values[j++]);
+				}
+			}
 		}
 		return newArrays;
 	} else {
@@ -98,8 +117,13 @@ function parseObject(setParent, name, fieldTypes, json, containerField) {
 					value = json[field];
 				} else if (attrType === "MFString") {
 					value = parseSubArray(attrType, 1, json[field]);
+				} else if (attrType === "MFInt32") {
+					if (attr.endsWith("Index")) {
+						value = parseSubArray(attrType, 0, json[field]);
+					} else {
+						value = parseSubArray(attrType, 1, json[field]);
+					}
 				} else if (
-					attrType === "MFInt32"||
 					attrType === "MFImage"||
 					attrType === "SFImage") {
 					value = parseSubArray(attrType, 1, json[field]);
@@ -157,6 +181,14 @@ function parseObject(setParent, name, fieldTypes, json, containerField) {
 					value = json[field];
 				}
 				obj[attr] = value;
+
+				// Now do something with the attribute
+				if (obj.DEF) {
+					obj.string += " DEF "+obj.DEF;
+				}
+				if (obj.USE) {
+					obj.string += " USE "+obj.USE;
+				}
 			}
 		} else if (field === "-children") {
 			let node = json[field];
@@ -188,7 +220,9 @@ function parseObject(setParent, name, fieldTypes, json, containerField) {
 			}
 		}
 	}
-	obj["children"] = children;
+	if (children.length > 0) {
+		obj["children"] = children;
+	}
 	return obj;
 }
 
