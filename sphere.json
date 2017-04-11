@@ -17,7 +17,7 @@
                           "-material":
                             { "Material":
                               {
-                                "@diffuseColor":[1,1,1]
+                                "@diffuseColor":[1,0,0]
                               }
                             }
                         }
@@ -26,6 +26,46 @@
                       { "Sphere":
                         {
 				"@radius":1
+                        }
+                      }
+                  }
+                },{ "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0,1,0]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Sphere":
+                        {
+				"@radius":2
+                        }
+                      }
+                  }
+                },{ "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0,0,1]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Sphere":
+                        {
+				"@radius":3
                         }
                       }
                   }
