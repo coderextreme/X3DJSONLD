@@ -19,10 +19,10 @@ var file = "www_web3d_org/x3d/content/examples/Savage/AircraftFixedWing/Boeing_7
 
 
 
-if (file.endsWith(".json")) {
-	httpRequest.overrideMimeType('text/json');
-} else {
+if (file.endsWith(".xml")) {
 	httpRequest.overrideMimeType('text/xml');
+} else {
+	httpRequest.overrideMimeType('text/json');
 }
 
 httpRequest.onreadystatechange = () => {
