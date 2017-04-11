@@ -100,7 +100,6 @@ ThreeSerializer.prototype = {
 			}
 		}
 		obj.children = [];
-		let retobj = obj;
 		for (let field in json) {
 			if (field.startsWith("@")) {
 				if (field == "@xmlns:xsd" || field == "@xsd:noNamespaceSchemaLocation") {
@@ -193,17 +192,6 @@ ThreeSerializer.prototype = {
 						value = json[field];
 					}
 					obj[attr] = value;
-
-					// Now do something with the attribute
-					if (obj.DEF) {
-						obj.string += " DEF "+obj.DEF;
-					}
-					if (obj.USE) {
-						obj.string += " USE "+obj.USE;
-					}
-					if (obj.point) {
-						obj.points = obj.point;
-					}
 				}
 			} else if (field === "#comment") {
 				obj.children.push("/*"+json[field]+"*/");
@@ -227,42 +215,26 @@ ThreeSerializer.prototype = {
 					let ct = container.nodeType || "-";
 					let nct = parseInt(ct.trim());
 					let ict = ct.startsWith("-") || !isNaN(nct); // illegal if true
-					/*
-					let ot =  obj.nodeType || "-";
-					let not = parseInt(ot.trim());
-					let iot =  ot.startsWith("-") || !isNaN(not); // illegal if true 
-					*/
-					/*
-					if (ict && iot) {
-						parentobj.children = parentobj.children.concat(container.children);
-						console.log("A", JSON.stringify(parentobj, null, 2));
-					} else
-					*/
 					if (ict) {
 						obj.children = obj.children.concat(container.children);
 						container.parent = obj;
-						// console.log("B", obj);
-					/*
-					} else if (iot) {
-						parentobj.children = parentobj.children.concat(container.children);
-						console.log("C", JSON.stringify(parentobj, null, 2));
-					*/
 					} else if (obj.nodeType) {
 						obj.children.push(container);
 						container.parent = obj;
-						// console.log("D", obj);
-					/*
-					} else {
-						obj.children.push(container);
-						container.parent = obj;
-						console.log("E", JSON.stringify(obj, null, 2));
-					*/
 					}
-					/*
-					console.log(ct, ict, ot, iot);
-					*/
 				}
 			}
+		}
+
+		// Now do something with the attribute
+		if (obj.DEF) {
+			obj.string += " DEF "+obj.DEF;
+		}
+		if (obj.USE) {
+			obj.string += " USE "+obj.USE;
+		}
+		if (obj.point) {
+			obj.points = obj.point;
 		}
 		return obj;
 	}
