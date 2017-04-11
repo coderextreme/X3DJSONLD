@@ -111,11 +111,6 @@ JavaSerializer.prototype = {
 		str += "public class "+clz+" {\n";
 		str += "	public static void main(String[] args) {\n";
 		str += "        ConfigurationProperties.setShowDefaultAttributes(true);\n";
-		str += "        ConfigurationProperties.setIndentCharacter(ConfigurationProperties.indentCharacter_DEFAULT);\n";
-		str += "        ConfigurationProperties.setIndentIncrement(ConfigurationProperties.indentIncrement_DEFAULT);\n";
-		str += "        ConfigurationProperties.setX3dCanonicalForm();\n";
-		str += "        ConfigurationProperties.initialize();\n";
-
 		str += "	ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_nativeJava);\n";
 		str += "	ConfigurationProperties.setDeleteIntermediateFiles(false);\n";
 		str += "	new "+clz+"().initialize().toFileJSON(\""+clazz+".new.json\");\n";

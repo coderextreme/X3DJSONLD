@@ -35,11 +35,6 @@ JavaScriptSerializer.prototype = {
 		str += "load('X3Dautoclass.js');\n";
 		str += "var ConfigurationProperties = Packages.org.web3d.x3d.jsail.ConfigurationProperties;\n";
 		str += "ConfigurationProperties.showDefaultAttributes = false;\n";
-		str += "ConfigurationProperties.indentCharacter = ConfigurationProperties.indentCharacter_DEFAULT;\n";
-		str += "ConfigurationProperties.indentIncrement = ConfigurationProperties.indentIncrement_DEFAULT;\n";
-		str += "ConfigurationProperties.setX3dCanonicalForm();\n";
-		str += "ConfigurationProperties.initialize();\n";
-
 		str += "ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_nativeJava;\n";
 		str += "ConfigurationProperties.deleteIntermediateFiles = false;\n";
 		str += "ConfigurationProperties.setStripTrailingZeroes(true);\n";
