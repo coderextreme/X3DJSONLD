@@ -77,7 +77,15 @@
                         "-children":[
                           { "ProtoInstance":
                             {
-                              "@name":"anyShape"
+                              "@name":"anyShape",
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"myShape",
+                                      "@protoField":"myShape"
+                                    }
+                                  ]
+                              }
                             }
                           }
                         ]

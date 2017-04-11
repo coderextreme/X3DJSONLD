@@ -198,7 +198,11 @@ function renderX3D(THREE, x3d, scene, useImageTexture, useJson) {
             parent.cameraPosition = { x: p.x, y: p.y, z: p.z };
 
             var r = data.orientation;
-            parent.cameraOrientation = { xyz: new THREE.Vector3(r.x, r.y, r.z), v: r.v };
+	    if (typeof r === 'undefined') {
+		    parent.cameraOrientation = { xyz: new THREE.Vector3(0, 0, 1), v: 0 };
+	    } else {
+		    parent.cameraOrientation = { xyz: new THREE.Vector3(r.x, r.y, r.z), v: r.v };
+	    }
 
             parent.cameraFieldOfView = data.fieldOfView;
 
@@ -547,7 +551,11 @@ function renderX3D(THREE, x3d, scene, useImageTexture, useJson) {
 		return x3d;
 	} else {
 		var tree = { 'string': 'Scene', children: [] };
-		parseChildren(x3d.documentElement.childNodes[1], tree);
+		for(let i = 0; i < x3d.documentElement.childNodes.length; i++) {
+			if (x3d.documentElement.childNodes[i].nodeName === "Scene") {
+				parseChildren(x3d.documentElement.childNodes[i], tree);
+			}
+		}
 		console.log(tree);
 		return tree;
 	}
@@ -565,11 +573,11 @@ function renderX3D(THREE, x3d, scene, useImageTexture, useJson) {
                     'children': []
                 };
                 parentResult.children.push(newChild);
-                for (var attributesCounter = 0; attributesCounter < currentNode.attributes.length; attributesCounter++) {
+                for (var attributesCounter = 0; currentNode.attributes != null && attributesCounter < currentNode.attributes.length; attributesCounter++) {
                     parseAttribute(newChild, currentNode.attributes[attributesCounter].name, currentNode.attributes[attributesCounter].value);
                 }
 
-                if (currentNode.childNodes.length > 0) {
+                if (currentNode.childNodes != null && currentNode.childNodes.length > 0) {
                     parseChildren(currentNode, newChild);
                 }
             }

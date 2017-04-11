@@ -6,14 +6,18 @@ function ThreeSerializer () {
 
 ThreeSerializer.prototype = {
 	serializeToString : function(json, element, clazz, mapToMethod, fieldTypes) {
-		let obj = printObject("Scene", fieldTypes, json["X3D"]["Scene"]);
-		console.log(JSON.stringify(obj, null, 2));
+		let obj = parseObject(false, "Scene", fieldTypes, json["X3D"]["Scene"]);
+		console.log(JSON.stringify(obj));
 		// dump after we find first scene
 		return JSON.stringify(obj, null, 2);
+	},
+	parseFromString : function(data) {
+		let fieldTypes = require('./fieldTypes.js');
+		return  parseObject(true, "Scene", fieldTypes, JSON.parse(data)["X3D"]["Scene"]);
 	}
 }
 
-function printSubObject(attrType, type, values) {
+function parseSubObject(attrType, type, values) {
 	if (attrType.startsWith("MF")) {
 		let newArray = [];
 		for (let j = 0; j < values.length;) {
@@ -35,7 +39,7 @@ function printSubObject(attrType, type, values) {
 	}
 }
 
-function printSubArray(attrType, numpersub, values) {
+function parseSubArray(attrType, numpersub, values) {
 	if (numpersub > 1 && attrType.startsWith("MF")) {
 		let newArrays = [];
 		for (let j = 0; j < values.length;) {
@@ -55,7 +59,7 @@ function printSubArray(attrType, numpersub, values) {
 	}
 }
 
-function printObject(name, fieldTypes, json, containerField) {
+function parseObject(setParent, name, fieldTypes, json, containerField) {
 	let obj = {};
 	let children = [];
 	obj["string"] = name;
@@ -93,62 +97,62 @@ function printObject(name, fieldTypes, json, containerField) {
 				} else if (attrType === "SFBool") {
 					value = json[field];
 				} else if (attrType === "MFString") {
-					value = printSubArray(attrType, 1, json[field]);
+					value = parseSubArray(attrType, 1, json[field]);
 				} else if (
 					attrType === "MFInt32"||
 					attrType === "MFImage"||
 					attrType === "SFImage") {
-					value = printSubArray(attrType, 1, json[field]);
+					value = parseSubArray(attrType, 1, json[field]);
 				} else if (
 					attrType === "SFColor"||
 					attrType === "MFColor") {
-					value = printSubObject(attrType, "rgb", json[field]);
+					value = parseSubObject(attrType, "rgb", json[field]);
 				} else if (
 					attrType === "SFColorRGBA"||
 					attrType === "MFColorRGBA") {
-					value = printSubObject(attrType, "rgba", json[field]);
+					value = parseSubObject(attrType, "rgba", json[field]);
 				} else if (
 					attrType === "SFVec2d"||
 					attrType === "MFVec2d"||
 					attrType === "SFVec2f"||
 					attrType === "MFVec2f") {
-					value = printSubObject(attrType, "xy", json[field]);
+					value = parseSubObject(attrType, "xy", json[field]);
 				} else if (
 					attrType === "SFVec3d"||
 					attrType === "MFVec3d"||
 					attrType === "SFVec3f"||
 					attrType === "MFVec3f") {
-					value = printSubObject(attrType, "xyz", json[field]);
+					value = parseSubObject(attrType, "xyz", json[field]);
 				} else if (
 					attrType === "SFVec4d"||
 					attrType === "MFVec4d"||
 					attrType === "SFVec4f"||
 					attrType === "MFVec4f") {
-					value = printSubObject(attrType, "xyzw", json[field]);
+					value = parseSubObject(attrType, "xyzw", json[field]);
 				} else if (
 					attrType === "SFRotation"||
 					attrType === "MFRotation") {
-					value = printSubObject(attrType, "xyzw", json[field]);
+					value = parseSubObject(attrType, "xyzw", json[field]);
 				} else if (
 					attrType === "SFMatrix3d"||
 					attrType === "MFMatrix3d"||
 					attrType === "SFMatrix3f"||
 					attrType === "MFMatrix3f") {
-					value = printSubArray(attrType, 9, json[field]);
+					value = parseSubArray(attrType, 9, json[field]);
 				} else if (
 					attrType === "SFMatrix4d"||
 					attrType === "MFMatrix4d"||
 					attrType === "SFMatrix4f"||
 					attrType === "MFMatrix4f") {
-					value = printSubArray(attrType, 16, json[field]);
+					value = parseSubArray(attrType, 16, json[field]);
 				} else if (
 					attrType === "MFFloat") {
-					value = printSubArray(attrType, 1, json[field]);
+					value = parseSubArray(attrType, 1, json[field]);
 				} else if (
 					attrType === "MFDouble") {
-					value = printSubArray(attrType, 1, json[field]);
+					value = parseSubArray(attrType, 1, json[field]);
 				} else if (attrType === "MFBool") {
-					value = printSubArray(attrType, 1, json[field]);
+					value = parseSubArray(attrType, 1, json[field]);
 				} else {
 					value = json[field];
 				}
@@ -156,27 +160,35 @@ function printObject(name, fieldTypes, json, containerField) {
 			}
 		} else if (field === "-children") {
 			let node = json[field];
-			children.push(printObject(field, fieldTypes, node, ""));
+			children.push(parseObject(setParent, field, fieldTypes, node, ""));
+			if (setParent) {
+				children[children.length-1].parent = obj;
+			}
 		} else if (field.startsWith("-")) {
 			// container field
 			let node = json[field];
-			let container = printObject(field, fieldTypes, node, containerField === "appearance" ? containerField : field.substr(1));
+			let container = parseObject(setParent, field, fieldTypes, node, containerField === "appearance" ? containerField : field.substr(1));
 			children.push(container);
+			if (setParent) {
+				children[children.length-1].parent = obj;
+			}
 		} else if (field === "#comment") {
-			children.push("/*"+json[field].replace(/"/g, '\\"')+"*/");
+			children.push("/*"+json[field]+"*/");
 		} else if (field === "#sourceText") {
 			children.push("<script>"+json[field].join("\r\n")+'</Script>');
 		} else {
 			// array
 			let node = json[field];
 			if (typeof node === 'object') {
-				obj = printObject(field, fieldTypes, node, containerField);
+				let tmpobj = obj;
+				obj = parseObject(setParent, field, fieldTypes, node, containerField);
+				if (setParent) {
+					obj.parent = tmpobj;
+				}
 			}
 		}
 	}
-	if (children.length > 0) {
-		obj["children"] = children;
-	}
+	obj["children"] = children;
 	return obj;
 }
 

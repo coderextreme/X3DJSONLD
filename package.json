@@ -7,6 +7,7 @@
     "xml2js": "*",
     "java": "*",
     "xmldom": "*",
+    "three": "*",
     "ajv": "*",
     "jsonlint": "*",
     "node-mkdirp": "*",
@@ -14,7 +15,8 @@
   },
   "scripts": {
     "start": "node app.js",
-    "results": "jar -cMf Expanded.zip *x3d *json Library/Examples/Gears/*.* examples/Vrml2.0Sourcebook/Chapter31-Prototypes/*.* examples/X3dForWebAuthors/Chapter14-Prototypes/*.* examples/Basic/UniversalMediaMaterials/*.* ppp"
+    "results": "jar -cMf Expanded.zip *x3d *json Library/Examples/Gears/*.* examples/Vrml2.0Sourcebook/Chapter31-Prototypes/*.* examples/X3dForWebAuthors/Chapter14-Prototypes/*.* examples/Basic/UniversalMediaMaterials/*.* ppp",
+    "browserify": "browserify src/threex3dloader.js > src/bundle.js"
 
   }
 }
