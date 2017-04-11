@@ -190,6 +190,9 @@ function parseObject(setParent, name, fieldTypes, json, containerField) {
 				if (obj.USE) {
 					obj.string += " USE "+obj.USE;
 				}
+				if (obj.point) {
+					obj.points = obj.point;
+				}
 			}
 		} else if (field === "-children") {
 			let node = json[field];
