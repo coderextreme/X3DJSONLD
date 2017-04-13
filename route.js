@@ -38,15 +38,15 @@ function test() {
 	let scenegraph = [ {d: { f: 7 , e: [1, 2, 3]}}, { c : [4]}]
 	important("Scenegraph originally "+stringify(scenegraph));
 	assert(scenegraph, [{"d":{"f":7,"e":[1,2,3]}},{"c":[4]}]);
-	var fromProxyObject = routeAndSet(scenegraph, "0/d/e", "0", scenegraph, "1", "c", 5);
+	var fromProxyObject = routeAndSet(scenegraph, "0/d/e", "0", scenegraph, "1", "c", 5, proxySetAction);
 	assert(scenegraph, [{"d":{"f":7,"e":[5,2,3]}},{"c":5}]);
 	setProxyField(scenegraph, fromProxyObject, 1, 8);  // NON-WATCHED
 	assert(scenegraph, [{"d":{"f":7,"e":[5,8,3]}},{"c":5}]);
-	fromProxyObject = routeAndSet(scenegraph, "0", "d", scenegraph, "", "1", 6);
+	fromProxyObject = routeAndSet(scenegraph, "0", "d", scenegraph, "", "1", 6, proxySetAction);
 	assert(scenegraph, [{"d":6},6]);
 	setProxyField(scenegraph, fromProxyObject, "d", 9); // WATCHED
 	assert(scenegraph, [{"d":9},9]);
-	fromProxyObject = routeAndSet(scenegraph, "0", "A", scenegraph, "0", "B", 10); // add fields
+	fromProxyObject = routeAndSet(scenegraph, "0", "A", scenegraph, "0", "B", 10, proxySetAction); // add fields
 	assert(scenegraph, [{"d":9,"B":10,"A":10},9]);
 	setProxyField(scenegraph, fromProxyObject, "A", [ "Test Goodbye!" ] ); // WATCHED
 	assert(scenegraph, [{"d":9,"B":["Test Goodbye!"],"A":["Test Goodbye!"]},9]);
@@ -63,7 +63,7 @@ function assert(modifiedScenegraph, goldenScenegraph) {
 	var mod = stringify(modifiedScenegraph);
 	var testcase = stringify(goldenScenegraph);
 	if (mod !== testcase) {
-		warning("Scenegraph "+mod+" != "+testcase);
+		fatal("Scenegraph "+mod+" != "+testcase);
 	} else {
 		log("Scenegraph "+mod+" == "+testcase);
 	}
@@ -79,10 +79,16 @@ function proxyWarning(fromScenegraph, fromNode, fromField,
 	var from = JWCPathLikeSelector(fromScenegraph, fromNode);
 	var to = JWCPathLikeSelector(toScenegraph, toNode);
 	if (fromScenegraph !== toScenegraph || from != to) {
-		warning("will set fromField "+stringify(from)+"["+property+"] = "+value+" but won't set "+stringify(to)+"["+toField+ "] = "+value+", but another proxy may.  The fromField will be set on the proxy object.");
+		warning("will set fromField "+stringify(from)+"["+property+"] = "+value+" but won't set "+stringify(to)+"["+toField+ "] = "+value+", but another proxy may.  The fromField will be set on the proxy object.  You may want to implement a multiproperty handler in your callback you pass to route()");
 	} else {
-		warning("Not setting to toNode "+stringify(to)+"["+toField+ "].  The fromField will be set on the proxy object.");
+		warning("Not setting to toNode "+stringify(to)+"["+toField+ "].  The fromField will be set on the proxy object.  You may want to implement a multiproperty handler in your callback you pass to route()");
 	}
+}
+
+/** override this function if you want a feature other than a fatal message
+ */
+function fatal(string) {
+	important("============ FATAL: "+string);
 }
 
 /** override this function if you want a feature other than a warning message
@@ -117,6 +123,14 @@ function stringify(json) {
  * Select an object to set a proxy on
  * scenegraph is a JavaScript object
  * selector is a / separated path of keys and indexes into the scenegraph
+ * Returns the object in the the scenegraph that has the fromField or toField
+ * of interest in it.
+ *
+ * A client may want to return a list of from this selector.  That is currently 
+ * not implemented.  I am not sure if those would be live objects in the main
+ * scenegraph or a whole new object.  It may be that JSON-LD (JSON linked
+ * data-- not this project) will solve this problem, but I haven't investigated
+ * it yet.  A solution is to provide several selectors, or wildcards.
  */
 function JWCPathLikeSelector(scenegraph, selector) {
 	log("Selector scenegraph: "+stringify(scenegraph)+
@@ -170,10 +184,26 @@ function proxySetAction(fromScenegraph, fromNode, fromField,
  * Nodes are selectors which can be used with JWCPathLikeSelector()
  * fromScenegraph and toScenegraph may be separate.  If they are the
  * same, be sure that fromField and toField are distinct, or else the
- * results may be undetermined.
+ * results may be undetermined.  The callback function is similar to
+ * the set function, with added parameters from the route call:
+ *	callback(
+ *		fromScenegraph, fromNode, fromField,
+ *		toScenegraph, toNode, toField,
+ *		property, value, target, receiver)
+ * You would use a callback function if you wanted to avoid warning messages
+ * or if you wanted to implement a multiple property handler for your proxy
+ * objects.
+ *
  */
 function route(fromScenegraph, fromNode, fromField,
-		toScenegraph, toNode, toField) {
+		toScenegraph, toNode, toField, callback) {
+	important("");
+	important("<ROUTE fromNode='"+ fromNode+ "' "+
+			  "fromField='"+fromField+ "' "+
+			  "toNode='"+ toNode+ "' "+
+			  "toField='"+ toField+ "' "+
+			"/>"
+		);
 	if (fromScenegraph === toScenegraph &&
 		fromNode.startsWith(toNode) &&
 		toNode.startsWith(fromNode) &&
@@ -186,10 +216,17 @@ function route(fromScenegraph, fromNode, fromField,
 	log("Selected to "+stringify(to)+ "["+ toField+ "]");
 	var fromProxyObject = new Proxy(from, {
 		set : function(target, property, value, receiver) {
-			proxySetAction(
-				fromScenegraph, fromNode, fromField,
-				toScenegraph, toNode, toField,
-				property, value, target)
+			if (typeof callback === 'function') {
+				callback(
+					fromScenegraph, fromNode, fromField,
+					toScenegraph, toNode, toField,
+					property, value, target, receiver)
+			} else {
+				proxySetAction(
+					fromScenegraph, fromNode, fromField,
+					toScenegraph, toNode, toField,
+					property, value, target)
+			}
 			return true;
 		}
 	});
@@ -226,19 +263,12 @@ function setField(scenegraph, node, field, value) {
  * same, be sure that fromField and toField are distinct, or else the
  * results may be undetermined.  The proxy field is set to value
  */
-function routeAndSet(fromScenegraph, fromNode, fromField, toScenegraph, toNode, toField, value) {
+function routeAndSet(fromScenegraph, fromNode, fromField, toScenegraph, toNode, toField, value, callback) {
 	log("---------ROUTE AND SET----------------------------------");
 	log("To Scenegraph before "+ stringify(toScenegraph));
-	important("");
-	important("<ROUTE fromNode='"+ fromNode+ "' "+
-			  "fromField='"+fromField+ "' "+
-			  "toNode='"+ toNode+ "' "+
-			  "toField='"+ toField+ "' "+
-			"/>"
-		);
 	log("From field before "+ stringify(getField(fromScenegraph, fromNode, fromField)));
 	log("To field before "+ stringify(getField(toScenegraph, toNode, toField)));
-	var fromProxyObject = route(fromScenegraph, fromNode, fromField, toScenegraph, toNode, toField);
+	var fromProxyObject = route(fromScenegraph, fromNode, fromField, toScenegraph, toNode, toField, callback);
 	setProxyField(fromScenegraph, fromProxyObject, fromField, value);
 	log("From field after "+ stringify(getField(fromScenegraph, fromNode, fromField)));
 	log("To field  after "+ stringify(getField(toScenegraph, toNode, toField)));
