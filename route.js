@@ -47,8 +47,12 @@ function test() {
 	// Create actionable fields in the fromScenegraph, that set
 	// fields in the toScenegraph
 	//
-	// path are JSON objects which follw a path down the scenegraph, one
-	// element at a time.
+	// path are MFStirngs which follw a path down the scenegraph, one
+	// element at a time.  The final SFSTring is thei field to modify.
+	//
+	// This does not handle script nodes yet (both getting and setting
+	// values, but could possibly be handled by modifying SetInternalField.
+	//
 	route(proxyAction,
 		fromScenegraph, '"0" "d" "e" "0"',
 		toScenegraph, '"1" "c"');
@@ -268,6 +272,13 @@ function setInternalField(scenegraph, selectorPath, value) {
 		value = value.replace(/\\\\/g, '\u005c');
 	}
 	debug("Index "+index+" is "+selector[index]);
+	/**
+	 * This is the code that has to change to call functions in X3D Scripts
+	 * fields.   For toField, I would check to make sure the LHS is a
+	 * function, and pass a value to the function (along with a timestamp),
+	 * for From Field, I would make sure value is a function, and call it
+	 * with a timestamp.
+	 */
 	if (typeof selectedValue === 'string') {
 	    var str = selectedValue.split('');
 		    info("Setting "+ stringify(higherValue) +
