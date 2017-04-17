@@ -215,6 +215,11 @@ function setInternalField(node, selectorField, value) {
 		debug("Index "+index+" is "+selector[index]);
 		debug("New Selected Value === "+selectedValue[selector[index]]);
 		selectedValue = selectedValue[selector[index]];
+		if (typeof selectedValue === 'undefined') {
+			// not sure how we got here, but let's bail
+			warning("I think we just wiped something out. "+selectorField+" is unavailable.");
+			return true;
+		}
 		debug("Now downselected selectedValue === "+selectedValue);
 	}
 	if (typeof value === 'string') {
@@ -303,6 +308,8 @@ function proxySetAction(fromNode, fromField, toNode, toField, property, value) {
 		warning("We don't need to set the same value twice!");
 	} else {
 		setInternalField(toNode, toProperty, value);
+		// set the proxy too
+		setField(toNode, toField, value);
 	}
 
 	return true;
