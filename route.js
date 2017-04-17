@@ -31,6 +31,41 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE
 
 
 test();
+test2();
+
+/**
+ * Override this to get rid of self-test code
+ * proxyAction should be paired with a node exclusively
+ */
+function test2() {
+	let fromNode = [ {d: { f: 7 , e: [1, 2, 3]}}, { c : [4]}]
+	let toNode = fromNode;
+	info("Node originally "+stringify(fromNode));
+	assert(fromNode, toNode);
+	let fromProxyAction = {};
+	let fromProxy = createProxy(fromProxyAction, fromNode);
+	let toProxyAction = {};
+	let toProxy = createProxy(toProxyAction, toNode);
+
+	// Create actionable fields in the fromNode, that set
+	// fields in the toNode
+	//
+	// fields are MFStrings which follow a path down the node, one
+	// element at a time.  The final SFSTring is thei field to modify.
+	//
+	// This does not handle script nodes yet (both getting and setting
+	// values, but could possibly be handled by modifying SetInternalField.
+	//
+	route(fromProxyAction, fromProxy, '"0" "d" "e" "0"', toProxy, '"1" "c"');
+	route(toProxyAction, toProxy, '"1" "c"', fromProxy, '"0"');
+	// no changes to node yet
+	assert(fromNode, [{"d":{"f":7,"e":[1,2,3]}},{"c":[4]}]);
+
+	setField(fromProxy, '"0" "d" "e" "0"', 5); 
+	assert(fromNode, [5,{"c":5}]);
+
+	info("Node finally "+stringify(fromNode));
+}
 
 /**
  * Override this to get rid of self-test code
@@ -266,6 +301,11 @@ function setInternalField(node, selectorField, value) {
 		debug("Index "+index+" is "+selector[index]);
 		debug("New Selected Value === "+selectedValue[selector[index]]);
 		selectedValue = selectedValue[selector[index]];
+		if (typeof selectedValue === 'undefined') {
+			// not sure how we got here, but let's bail
+			warning("I think we just wiped something out. "+selectorField+" is unavailable.");
+			return true;
+		}
 		debug("Now downselected selectedValue === "+selectedValue);
 	}
 	if (typeof value === 'string') {
@@ -354,6 +394,8 @@ function proxySetAction(fromNode, fromField, toNode, toField, property, value) {
 		warning("We don't need to set the same value twice!");
 	} else {
 		setInternalField(toNode, toProperty, value);
+		// set the proxy too
+		setField(toNode, toField, value);
 	}
 
 	return true;
