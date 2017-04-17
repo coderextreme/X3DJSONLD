@@ -132,7 +132,7 @@ function assert(modifiedNode, goldenNode) {
 		fatal("Node "+mod)
 		fatal("        != "+testcase);
 	} else {
-		debug("Node "+mod+" == "+testcase);
+		info("Node "+mod+" == "+testcase);
 		info("TEST PASSED");
 	}
 }
@@ -309,17 +309,20 @@ function setInternalField(node, selectorField, value) {
 
 function createProxy(proxyAction, fromNode) {
 	var proxy = new Proxy(proxyAction, {
+		get : function(target, property, receiver) {
+			return fromNode[property];
+		},
 		set : function(target, property, value, receiver) {
 			debug("Value set is "+value);
 			debug("property is "+ property);
 			for (let action in proxyAction) {
-				debug("	"+action+" "+typeof proxyAction[property]);
+				debug("	"+action+" "+typeof proxyAction[action]);
 			}
 			if (typeof proxyAction[property] === 'function') {
 				// set the toNode, act on the route
 				proxyAction[property](property, value);
 			} else {
-				warning("Failed to set value on toNode (no route)");
+				warning("Failed to set value on toNode (no route for "+property+")");
 			}
 			return setInternalField(fromNode, property, value);
 		}
