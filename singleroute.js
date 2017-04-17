@@ -137,11 +137,11 @@ function JsonToMFString(json) {
 */
 
 function PropertyToJson(string) {
-	return string;
 	/*
 	debug("property input "+string+" "+typeof string);
 	return string.split(/,/);
 	*/
+	return string;
 }
 
 /** override this function if you want a feature other than a raw message
