@@ -2,6 +2,13 @@ import java.io.*;
 import java.net.*;
 import javax.net.ssl.*;
 
+/**
+ * If an argument starts with a --, it is taken as a stylesheet for the
+ * If an argument starts with a -, it is taken as the new extension (beware)
+ * following files.
+ * Caveat emptor
+ */
+
 
 /*
 class MyTrustManager extends X509TrustManager {
@@ -52,10 +59,20 @@ protected static class ExitException extends SecurityException
 
 	public static void main(String args[]) {
 		try {
+			String stylesheet = "X3dToJson.xslt";
+			String extension = "json";
 			System.setSecurityManager(new NoExitSecurityManager());
 			for (int a = 0; a < args.length; a++) {
 				String source = args[a];
 				System.err.println("BEGIN "+source);
+				if (source.startsWith("--")) {
+					stylesheet = source.substring(2);
+					continue;
+				}
+				if (source.startsWith("-")) {
+					extension = source.substring(1);
+					continue;
+				}
 				String out = "";
 				try {
 					if (source.startsWith("http")) {
@@ -107,7 +124,7 @@ protected static class ExitException extends SecurityException
 					if ((out.startsWith("http://") || out.startsWith("https://")) && out.lastIndexOf("www.web3d.org") >= 0) {
 						out = out.substring(out.lastIndexOf("www.web3d.org"));
 					}
-					out = out.substring(0, out.lastIndexOf("."))+".json";
+					out = out.substring(0, out.lastIndexOf("."))+"."+extension;
 					System.err.println("WRITING "+out);
 					if (out.lastIndexOf("/") > 0) {
 						File dir = new File(out.substring(0, out.lastIndexOf("/")));
@@ -118,7 +135,7 @@ protected static class ExitException extends SecurityException
 								"-warnings:recover",
 								"-o:"+out,
 								"-s:"+source,
-								"-xsl:X3dToJson.xslt" });
+								"-xsl:"+stylesheet });
 					// -t  #timing -c # compiled
 					System.err.println("END "+source);
 				} catch (Throwable e) {
