@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Full" version="3.3" xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
+    <head>
+        <component name='EnvironmentalEffects' level='3'/>
+        <meta name='title' content='mirror.x3d'/>
+        <meta name='creator' content='John Carlson'/>
+        <meta name='generator' content='manual'/>
+        <meta name='identifier' content='http://coderextreme.net/X3DJSONLD/mirror.x3d'/>
+        <meta name='description' content='sphere with alternating backgrounds'/>
+    </head>
       <Scene>
         <Viewpoint position='0 5 100' description='Switch background and cubemap texture'/>
 	<TextureBackground>
@@ -31,9 +39,9 @@
 		  <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/>
                   <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/>
                   <field name='power' accessType='inputOutput' type='SFFloat' value='2'/>
-                  <ShaderPart url='"x3dom.vs"' type='VERTEX'>
+                  <ShaderPart url='"x3dom.vs" "http://coderextreme.net/X3DJSONLD/x3dom.vs"' type='VERTEX'>
                   </ShaderPart>
-                  <ShaderPart url='"bubbles.fs"' type='FRAGMENT'>
+                  <ShaderPart url='"bubbles.fs" "http://coderextreme.net/X3DJSONLD/bubbles.fs"' type='FRAGMENT'>
                   </ShaderPart>
                 </ComposedShader>
             </Appearance>
