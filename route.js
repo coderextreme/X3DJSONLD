@@ -249,6 +249,11 @@ function parse(selectorField) {
 	}
 }
 
+/**
+ * return a valid Property
+ *
+ * change this to do something else if you also change PropertyToJson()
+ */
 function MFStringToProperty(string) {
 	debug("MFString input "+string+" "+typeof string);
 	string = string.replace(/" "/g, ',');
@@ -264,6 +269,12 @@ function JsonToMFString(json) {
 }
 */
 
+/**
+ * convert a property to JSON
+ * 
+ * change this to return string if you also modify MFStringToProperty()
+ *
+ */
 function PropertyToJson(string) {
 	debug("property input "+string+" "+typeof string);
 	return string.split(/,/);
