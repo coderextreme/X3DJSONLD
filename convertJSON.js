@@ -61,7 +61,8 @@ function convertJSON(options) {
 					error += " message: " + errs[e].message + "\r\n";
 					error += " params: " + JSON.stringify(errs[e].params) + "\r\n";
 				}
-				throw(error);
+				console.error(error);
+				// throw(error);
 			}
 				
 

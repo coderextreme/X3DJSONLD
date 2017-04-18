@@ -9,9 +9,10 @@ var convertJSON = require('./convertJSON.js');
 
 convertJSON({
 	// './JSONSerializer.js' : ".x3d2json",
-	'./Three2Serializer.js' : ".three.js",
+	// './AframeSerializer.js' : ".aframe",
+	// './Three2Serializer.js' : ".three.js",
+	// './PythonSerializer.js': ".py",
 	'./JavaScriptSerializer.js' : ".sail.js",
 	'./JavaSerializer.js' : ".java",
-	'./PythonSerializer.js': ".py",
 	'./DOMSerializer.js': ".x3d.new"
 });
