@@ -3,6 +3,7 @@ import java.net.*;
 import javax.net.ssl.*;
 
 
+/*
 class MyTrustManager extends X509TrustManager {
 	public static void main(String args[]) {
 	}
@@ -16,6 +17,7 @@ class MyTrustManager extends X509TrustManager {
 	    java.security.cert.X509Certificate[] certs, String authType) {
 	}
 }
+*/
 
 class RunSaxon {
 protected static class ExitException extends SecurityException 
@@ -57,6 +59,7 @@ protected static class ExitException extends SecurityException
 				String out = "";
 				try {
 					if (source.startsWith("http")) {
+						/*
 
 						// Create a new trust manager that trust all certificates
 						TrustManager[] trustAllCerts = new TrustManager[]{
@@ -71,6 +74,7 @@ protected static class ExitException extends SecurityException
 						} catch (Exception e) {
 						}
 						
+						*/
 
 						URL u = new URL(source);
 						if (source.lastIndexOf("savage.nps.edu") >= 0) {
