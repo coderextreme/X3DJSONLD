@@ -36,9 +36,39 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE
  * fields are questionable, and may not work.
  **************************************************************************
  */
+/*
 test2();
 test3();
 test();
+*/
+test4();
+
+/**
+ * Override this to get rid of self-test code
+ * proxyAction should be paired with a node exclusively
+ *
+ * This test case implements chaining
+ */
+function test4() {
+	raw("================================================================================");
+	let fromNode = {"d":0,"f":0};
+	let toNode = {"a":0};
+	info("fromNode originally "+stringify(fromNode));
+	info("toNode originally "+stringify(toNode));
+	let fromProxyAction = {};
+	let fromProxy = createProxy(fromProxyAction, fromNode);
+	let toProxyAction = {};
+	let toProxy = createProxy(toProxyAction, toNode);
+
+	route(fromProxyAction, fromProxy, '"d"', toProxy, '"a"');
+	route(fromProxyAction, fromProxy, '"d"', fromProxy, '"f"');
+
+	setField(fromProxy, '"d"', 5);
+	assert(fromNode,{"d":5,"f":5});
+	assert(toNode,{"a":5});
+	assert(fromProxy,{"d":5});
+
+}
 
 /**
  * Override this to get rid of self-test code
@@ -405,12 +435,14 @@ function createProxy(proxyAction, fromNode) {
 		set : function(target, property, value, receiver) {
 			debug("Value set is "+value);
 			debug("property is "+ property);
-			for (let action in proxyAction) {
-				debug("	"+action+" "+typeof proxyAction[action]);
-			}
-			if (typeof proxyAction[property] === 'function') {
-				// set the toNode, act on the route
-				proxyAction[property](property, value);
+			if (typeof proxyAction[property] === 'object') {
+				for (let route in proxyAction[property]) {
+					// set the toNode, act on the route
+					debug("route"+route+" "+typeof proxyAction[property][route]);
+					if (typeof proxyAction[property][route] === 'function') {
+						proxyAction[property][route](property, value);
+					}
+				}
 			} else {
 				warning("Failed to set value on toNode (no route for "+property+")");
 			}
@@ -469,9 +501,12 @@ function route(proxyAction, fromNode, fromField, toNode, toField) {
 		fromField !== toField) {
 		warning("possible undetermined behavior, fromField "+fromField+" and toField "+toField+" overlap and the node are the same");
 	}
-	proxyAction[MFStringToProperty(fromField)] = function(property, value) {
+	if (typeof proxyAction[MFStringToProperty(fromField)] === 'undefined') {
+		proxyAction[MFStringToProperty(fromField)] = [];
+	}
+	proxyAction[MFStringToProperty(fromField)].push(function(property, value) {
 		return proxySetAction(fromNode, fromField,
 			toNode, toField,
 			property, value);
-	};
+	});
 }
