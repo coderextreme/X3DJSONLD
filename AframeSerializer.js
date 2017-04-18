@@ -186,8 +186,8 @@ AframeSerializer.prototype = {
 				element: { geometry : { primitive: "torus"}},
 			},
 			ImageTexture: {
-				element: parentElement,
-				url: { material : { src: value[0] }},  // get first URL.
+				element: "a-image",
+				url: { material : { src: value }},
 			},
 			Group: {
 				element: "a-entity"
@@ -226,7 +226,7 @@ AframeSerializer.prototype = {
 							components[component] = {};
 						}
 
-						if (typeof properties[property] === 'function' || typeof value !== 'undefined') {
+						if (typeof properties[property] === 'function' && typeof value !== 'undefined') {
 							// we only copy those attributes for one property, so the other properties don't get wiped out.
 							components[component][property] = properties[property](json, field, value);
 						} else {
@@ -329,7 +329,6 @@ AframeSerializer.prototype = {
 		let element;
 
 		let components = {};
-		let parentComponents = {};
 		let aframe = this.elementToComponentMap(name, "element", components, "geometry"); // we don't need JSON as these are hard-coded
 		console.log("Aframe is", aframe, "for", name);
 		if (typeof aframe === 'undefined') {
@@ -344,7 +343,11 @@ AframeSerializer.prototype = {
 		} else if (typeof aframe === 'object') {
 			// this is a primitive geometry
 			element = document.createElement("a-entity");
+		} else if (typeof aframe === 'object') {
+			element = document.createElement("P-entity");
 		}
+		// element.parentComponents = {};
+		element.components = components;
 		
 		if (typeof element === 'undefined') {
 			console.error("couldn't create element for ", name);
@@ -377,8 +380,9 @@ AframeSerializer.prototype = {
 					// let value = this.getValueFromJsonField(json, field, attrType);
 				*/
 					let value = json[field];
-					this.elementToComponentMap(name, attr, components, "geometry", json, field, value);
-					this.elementToComponentMap(name, attr, parentComponents, "material", json, field, value);
+					this.elementToComponentMap(name, attr, element.components, "geometry", json, field, value);
+					// we send material to parent.
+					this.elementToComponentMap(name, attr, element.components, "material", json, field, value);
 
 					element.setAttribute(attr, value);
 				/*
@@ -402,24 +406,27 @@ AframeSerializer.prototype = {
 						// skip the immediete child
 						for (let child = 0; child < children.length; child++) {
 							if (typeof children[child] !== 'undefined') {
-								// console.log("Append 1", children[child].nodeName, "parent", field);
 								element.appendChild(children[child]);
-								element.components = element.components.concat(children[child].parentComponents);
+								/*
+								if (element.components && children[child].parentComponents) {
+									element.components = Object.assign(element.commponents, children[child].parentComponents);
+								}
+								*/
 							}
-							// console.log("looping");
 						}
 					} else if (name) {
-						// console.log("Append 2", containerElement.nodeName, field);
 						element.appendChild(containerElement);
-						element.components = element.components.concat(containerElement.parentComponents);
+						/*
+						if (element.components && element.parentComponents) {
+							element.components = Object.assign(element.components, containerElement.parentComponents);
+						}
+						*/
 					}
 				}
 			}
 		}
 		// now add the collected components as attributes.
-		element.components = element.components.concat(element.parentComponents);
-		element.parentComponents = parentComponents; // STORE IT IN DOM (BAD)
-		this.componentsToAttributes(element, components);
+		this.componentsToAttributes(element, element.components);
 		return element;
 	}
 }
