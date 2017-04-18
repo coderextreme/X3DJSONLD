@@ -1,0 +1,96 @@
+        "XvlShell": {
+            "type": "object",
+            "properties": {
+                "@DEF": {
+                    "type": "string"
+                },
+                "@USE": {
+                    "type": "string"
+                },
+                "IS": {
+                    "$ref": "#/definitions/IS"
+                },
+                "@shellType": {
+                    "type": "string",
+                    "enum": [
+                        "POLYGON_MESH",
+                        "LATTICE_MESH"
+                    ]
+                },
+                "@numberOfDivisions": {
+                    "type": "integer"
+                },
+                "@vertexRound": {
+                    "type": "array",
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "@edgeBeginCoordIndex": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
+                "@edgeEndCoordIndex": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
+                "@edgeRound": {
+                    "type": "array",
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "@edgeBeginVector": {
+                    "type": "array",
+                    "minItems": 3,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "@edgeEndVector": {
+                    "type": "array",
+                    "minItems": 3,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "@faceCoordIndex": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
+                "@faceTexCoordIndex": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
+                "@faceEmpty": {
+                    "type": "array",
+                    "items": {
+                        "type": "boolean"
+                    }
+                },
+                "@faceHidden": {
+                    "type": "array",
+                    "items": {
+                        "type": "boolean"
+                    }
+                },
+                "-coord": {
+                    "$ref": "#/definitions/-coord"
+                },
+                "-texCoord": {
+                    "$ref": "#/definitions/-texCoord"
+                },
+                "-metadata": {
+                    "$ref": "#/definitions/-metadata"
+                }
+            },
+            "additionalProperties": false
+        },
