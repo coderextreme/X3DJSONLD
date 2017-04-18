@@ -11,7 +11,7 @@ ThreeSerializer.prototype = {
 		parentobj.string = "X3D";
 		let obj = this.parseObject(parentobj, "Scene", fieldTypes, json["X3D"]["Scene"]);
 		this.deltree(obj);
-		console.log(JSON.stringify(obj, null, 2));
+		// console.log(JSON.stringify(obj, null, 2));
 		// dump after we find first scene
 		return JSON.stringify(obj, null, 2);
 	},
