@@ -72,13 +72,17 @@ function magic(path, type) {
 	var url = req._parsedUrl.pathname.substr(1);
 	console.log(url);
 	fs.readFile(url, function(err, data) {
-		if (err) {
-			console.error(err);
-		} else {
-			res.header("Content-Type", type);
-			res.send(data);
+		try {
+			if (err) {
+				console.error(err);
+			} else {
+				res.header("Content-Type", type);
+				res.send(data);
+			}
+			next();
+		} catch (e) {
+			console.log(e);
 		}
-		next();
 	});
     });
 }
