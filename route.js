@@ -36,6 +36,9 @@ test2();
 /**
  * Override this to get rid of self-test code
  * proxyAction should be paired with a node exclusively
+ *
+ *
+ * This test case implements chaining
  */
 function test2() {
 	let fromNode = [ {d: { f: 7 , e: [1, 2, 3]}}, { c : [4]}]
@@ -70,6 +73,8 @@ function test2() {
 /**
  * Override this to get rid of self-test code
  * proxyAction should be paired with a node exclusively
+ *
+ * This test case does not implement chaining
  */
 function test() {
 	let fromNode = [ {d: { f: 7 , e: [1, 2, 3]}}, { c : [4]}]
