@@ -65,7 +65,7 @@ POSSIBILITY OF SUCH DAMAGE.
 <xsl:stylesheet version="2.0" exclude-result-prefixes="ds saxon"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
-                xmlns:saxon="http://icl.com/saxon" saxon:trace="no">
+				xmlns:saxon="http://saxon.sf.net/">
     <!--        
                 xmlns="http://www.w3.org/TR/xhtml1/strict"
                 xmlns:fn="http://www.w3.org/2005/xpath-functions" -->
@@ -78,7 +78,9 @@ POSSIBILITY OF SUCH DAMAGE.
     <xsl:param name="traceScripts" ><xsl:text>false</xsl:text></xsl:param>
 	<!-- TODO future feature: whether to apply changes to meta references, url file extensions, etc. -->
     <xsl:param name="updateContent" ><xsl:text>false</xsl:text></xsl:param>
-        
+    
+	<!-- saxon9he problem: fails due to line length, licensing issue: saxon:line-length="10000" -->
+	<!-- http://stackoverflow.com/questions/23084785/xslt-avoid-new-line-added-between-element-attributes/43301327#43301327 -->
     <xsl:output method="text" encoding="UTF-8"/> <!-- output methods: xml html text -->
     
     <!-- encodings references -->
@@ -298,9 +300,9 @@ POSSIBILITY OF SUCH DAMAGE.
 								<xsl:call-template name="print-indent"><xsl:with-param name="indent" select="$indent+2"/></xsl:call-template>
 								<xsl:text>{</xsl:text><xsl:text>&#10;</xsl:text>
 								<xsl:call-template name="print-indent"><xsl:with-param name="indent" select="$indent+4"/></xsl:call-template>
-								<xsl:text>"@name":"warning",</xsl:text><xsl:text>&#10;</xsl:text>
+								<xsl:text>"@name":"reference",</xsl:text><xsl:text>&#10;</xsl:text>
 								<xsl:call-template name="print-indent"><xsl:with-param name="indent" select="$indent+4"/></xsl:call-template>
-								<xsl:text>"@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"</xsl:text><xsl:text>&#10;</xsl:text>
+								<xsl:text>"@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"</xsl:text><xsl:text>&#10;</xsl:text>
 								<xsl:call-template name="print-indent"><xsl:with-param name="indent" select="$indent+2"/></xsl:call-template>
 								<xsl:text>}</xsl:text>
 						</xsl:if>
@@ -369,6 +371,10 @@ POSSIBILITY OF SUCH DAMAGE.
                         <xsl:when test="self::comment()">
                             <xsl:text>children</xsl:text>
                         </xsl:when>
+                        <xsl:when test="($parentName = 'Scene')">
+							<!-- TODO what about Metadata* nodes? -->
+                            <xsl:text>children</xsl:text>
+                        </xsl:when>
                         <xsl:when test="($elementName = 'ROUTE')">
                             <xsl:text>children</xsl:text>
                         </xsl:when>
@@ -385,6 +391,7 @@ POSSIBILITY OF SUCH DAMAGE.
                             <xsl:value-of select="@containerField"/>
                         </xsl:when>
                         <xsl:otherwise>
+							<!-- Note that this error condition occurs if DTD default attribute values are suppressed before invocation -->
                             <xsl:text>IllegalChildNodeFieldNameNotFound</xsl:text>
 							<xsl:message>
 								<xsl:text>Error: IllegalChildNodeFieldNameNotFound no containerField or field name found for the X3D JSON object. Check spelling of node.</xsl:text>
@@ -2597,7 +2604,20 @@ POSSIBILITY OF SUCH DAMAGE.
         
         <xsl:if test="$notDefaultValue or not($stripDefaultAttributes='true') or ((local-name()='name') and not(/AllX3dElementsAttributes)) or
                       ((local-name(..)='ROUTE') or (local-name(..)='field')   or (local-name(..)='fieldValue'))"> <!-- must haves -->
-            <xsl:value-of select="."/> <!-- return non-default value, empty otherwise if $stripDefaultAttributes=false -->
+			<!-- attribute precaution: normalized value is needed if line feeds (which break json rules) are contained -->
+			<xsl:choose>
+				<xsl:when test="not(contains(.,'\n'))">
+					<xsl:value-of select="."/> <!-- return non-default value, empty otherwise if $stripDefaultAttributes=false -->
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:message>
+						<xsl:text>normalizing: </xsl:text>
+						<xsl:value-of select="."/>
+					</xsl:message>
+					<xsl:variable   name="normalizedValue" select="normalize-space(string(.))"/>
+					<xsl:value-of select="$normalizedValue"/> <!-- return non-default value, empty otherwise if $stripDefaultAttributes=false -->
+				</xsl:otherwise>
+			</xsl:choose>			
         </xsl:if>
         
     </xsl:template> <!-- end name="not-default-attribute-value" -->
