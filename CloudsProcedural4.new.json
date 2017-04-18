@@ -51,8 +51,8 @@
             "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
           },
           {
-            "@name":"reference",
-            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
           }
         ]
     },
@@ -93,7 +93,7 @@
           },
           { "DirectionalLight":
             {
-              "@ambientIntensity":1,
+              "@ambientIntensity":1.0,
               "@direction":[-1,0,0],
               "@global":true
             }
@@ -122,12 +122,6 @@
                     "-children":[
                       { "Shape":
                         {
-                          "-geometry":
-                            { "Rectangle2D":
-                              {
-                                "@size":[77000,55000]
-                              }
-                            },
                           "-appearance":
                             { "Appearance":
                               {
@@ -137,6 +131,12 @@
                                       "@url":["ocean.png","https://savage.nps.edu/Savage/Environment/Atmosphere/ocean.png"]
                                     }
                                   }
+                              }
+                            },
+                          "-geometry":
+                            { "Rectangle2D":
+                              {
+                                "@size":[77000,55000]
                               }
                             }
                         }
@@ -608,7 +608,7 @@
                 },
                 { "DirectionalLight":
                   {
-                    "@ambientIntensity":1,
+                    "@ambientIntensity":1.0,
                     "@color":[1,0,0],
                     "@direction":[-1,-1,0],
                     "@global":true
