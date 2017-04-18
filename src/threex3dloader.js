@@ -15,7 +15,7 @@ camera.lookAt(new THREE.Vector3(0, 0, 0));
 
 const httpRequest = new XMLHttpRequest();
 
-var file = "ArchHalf.json";
+var file = "sphere.json";
 
 
 
