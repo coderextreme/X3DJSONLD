@@ -149,23 +149,27 @@ function transformIfsToNormals(GeometryList) {
 	let dispatchTable = {
 		handle: function(Geometry, face, output) {
 			// just pick a close vector for now, average later
-			let normal = triangle_normal( Geometry.point[Geometry.coordIndex[face][0]], Geometry.point[Geometry.coordIndex[face][1]], Geometry.point[Geometry.coordIndex[face][2]]);
-			console.log(normal);
-			output.push(["  facet normal",
-				typeof Geometry.normalIndex[face] === 'undefined' ? normal[0] : Geometry.vector[Geometry.normalIndex[face][0]][0] || normal[0],
-				typeof Geometry.normalIndex[face] === 'undefined' ? normal[1] : Geometry.vector[Geometry.normalIndex[face][0]][1] || normal[1],
-				typeof Geometry.normalIndex[face] === 'undefined' ? normal[2] : Geometry.vector[Geometry.normalIndex[face][0]][2] || normal[2]
-			    ].join(" "));
-			output.push("    outer loop");
-			for (let v in Geometry.coordIndex[face]) {
-				output.push(["      vertex",
-					Geometry.point[Geometry.coordIndex[face][v]][0],
-					Geometry.point[Geometry.coordIndex[face][v]][1],
-					Geometry.point[Geometry.coordIndex[face][v]][2]
-				       ].join(" "));
+			try {
+				let normal = triangle_normal( Geometry.point[Geometry.coordIndex[face][0]], Geometry.point[Geometry.coordIndex[face][1]], Geometry.point[Geometry.coordIndex[face][2]]);
+				console.log(normal);
+				output.push(["  facet normal",
+					typeof Geometry.normalIndex[face] === 'undefined' ? normal[0] : Geometry.vector[Geometry.normalIndex[face][0]][0] || normal[0],
+					typeof Geometry.normalIndex[face] === 'undefined' ? normal[1] : Geometry.vector[Geometry.normalIndex[face][0]][1] || normal[1],
+					typeof Geometry.normalIndex[face] === 'undefined' ? normal[2] : Geometry.vector[Geometry.normalIndex[face][0]][2] || normal[2]
+				    ].join(" "));
+				output.push("    outer loop");
+				for (let v in Geometry.coordIndex[face]) {
+					output.push(["      vertex",
+						Geometry.point[Geometry.coordIndex[face][v]][0],
+						Geometry.point[Geometry.coordIndex[face][v]][1],
+						Geometry.point[Geometry.coordIndex[face][v]][2]
+					       ].join(" "));
+				}
+				output.push("    endloop");
+				output.push("  endfacet");
+			} catch (e) {
+				console.error("Possible eror in geometry at coordIndex = ", face, Geometry);
 			}
-			output.push("    endloop");
-			output.push("  endfacet");
 		}
 	};
 	let output = [];
