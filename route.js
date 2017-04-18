@@ -30,9 +30,38 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE
 */
 
 
-test();
 test2();
+test3();
+test();
 
+/**
+ * Override this to get rid of self-test code
+ * proxyAction should be paired with a node exclusively
+ */
+function test3() {
+	raw("================================================================================");
+	let fromNode = {"d":0,"f":0};
+	let toNode = {"a":0};
+	info("fromNode originally "+stringify(fromNode));
+	info("toNode originally "+stringify(toNode));
+	let fromProxyAction = {};
+	let fromProxy = createProxy(fromProxyAction, fromNode);
+	let toProxyAction = {};
+	let toProxy = createProxy(toProxyAction, toNode);
+
+	route(fromProxyAction, fromProxy, '"d"', toProxy, '"a"');
+	route(toProxyAction, toProxy, '"a"', fromProxy, '"f"');
+
+	setField(fromProxy, '"d"', 5);
+	assert(fromNode,{"d":5,"f":5});
+	setField(fromProxy, '"f"', 6);
+	assert(fromNode,{"d":5,"f":6});
+
+	assert(toProxy,{"a":5});
+	assert(fromProxy,{"d":5});
+
+	assert(toNode,{"a":5});
+}
 /**
  * Override this to get rid of self-test code
  * proxyAction should be paired with a node exclusively
@@ -41,6 +70,7 @@ test2();
  * This test case implements chaining
  */
 function test2() {
+	raw("================================================================================");
 	let fromNode = [ {d: { f: 7 , e: [1, 2, 3]}}, { c : [4]}]
 	let toNode = fromNode;
 	info("Node originally "+stringify(fromNode));
@@ -77,6 +107,7 @@ function test2() {
  * This test case does not implement chaining
  */
 function test() {
+	raw("================================================================================");
 	let fromNode = [ {d: { f: 7 , e: [1, 2, 3]}}, { c : [4]}]
 	let toNode = fromNode;
 	info("Node originally "+stringify(fromNode));
@@ -93,15 +124,9 @@ function test() {
 	// This does not handle script nodes yet (both getting and setting
 	// values, but could possibly be handled by modifying SetInternalField.
 	//
-	route(proxyAction,
-		fromNode, '"0" "d" "e" "0"',
-		toNode, '"1" "c"');
-	route(proxyAction,
-		fromNode, '"0" "d"',
-		toNode, '"1"');
-	route(proxyAction,
-		fromNode, '"0" "A"',
-		toNode, '"0" "B"');
+	route(proxyAction, proxy, '"0" "d" "e" "0"', toNode, '"1" "c"');
+	route(proxyAction, proxy, '"0" "d"', toNode, '"1"');
+	route(proxyAction, proxy, '"0" "A"', toNode, '"0" "B"');
 	// no changes to node yet
 	assert(fromNode, [{"d":{"f":7,"e":[1,2,3]}},{"c":[4]}]);
 
