@@ -117,6 +117,7 @@ magic("*.js", "text/javascript");
 magic("*.css", "text/css");
 magic("*.gif", "image/gif");
 magic("*.jpg", "image/jpeg");
+magic("*.JPG", "image/jpeg");
 magic("*.jpeg", "image/jpeg");
 magic("*.png", "image/png");
 magic("*.mpg", "video/mpeg");
