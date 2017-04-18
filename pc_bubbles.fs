@@ -31,4 +31,3 @@ void main()
 
     gl_FragColor = ret * rfac + ref * (1.0 - rfac);
 }
-
