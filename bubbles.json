@@ -136,13 +136,13 @@
                                 "-parts":[
                                   { "ShaderPart":
                                     {
-                                      "@url":["x3dom.vs"],
+                                      "@url":["cobweb.vs","http://coderextreme.net/X3DJSONLD/cobweb.vs"],
                                       "@type":"VERTEX"
                                     }
                                   },
                                   { "ShaderPart":
                                     {
-                                      "@url":["bubbles.fs"],
+                                      "@url":["bubbles.fs","http://coderextreme.net/X3DJSONLD/bubbles.fs"],
                                       "@type":"FRAGMENT"
                                     }
                                   }
