@@ -30,6 +30,12 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE
 */
 
 
+/**
+ **************************************************************************
+ * NOTE:  Fields may not have commas.  Also, quotes in individual SFStrings in
+ * fields are questionable, and may not work.
+ **************************************************************************
+ */
 test2();
 test3();
 test();
@@ -64,6 +70,7 @@ function test3() {
 
 	assert(toNode,{"a":5});
 }
+
 /**
  * Override this to get rid of self-test code
  * proxyAction should be paired with a node exclusively
