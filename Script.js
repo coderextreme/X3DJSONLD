@@ -58,9 +58,18 @@ function processScripts(object, classes, package, routecode) {
 	if (typeof package === 'undefined') {
 		classes.log("function SFRotation() { return Array.prototype.slice.call(arguments, 0); };");
 		classes.log("function MFRotation() { return Array.prototype.slice.call(arguments, 0); };");
+		classes.log("function SFVec2d() { return Array.prototype.slice.call(arguments, 0); };");
+		classes.log("function SFVec2f() { return Array.prototype.slice.call(arguments, 0); };");
+		classes.log("function SFVec3d() { return Array.prototype.slice.call(arguments, 0); };");
 		classes.log("function SFVec3f() { return Array.prototype.slice.call(arguments, 0); };");
-		classes.log("function MFVec3f() { return Array.prototype.slice.call(arguments, 0); };");
+		classes.log("function SFVec4d() { return Array.prototype.slice.call(arguments, 0); };");
+		classes.log("function SFVec4f() { return Array.prototype.slice.call(arguments, 0); };");
+		classes.log("function SFVec2d() { return Array.prototype.slice.call(arguments, 0); };");
 		classes.log("function MFVec2f() { return Array.prototype.slice.call(arguments, 0); };");
+		classes.log("function MFVec3d() { return Array.prototype.slice.call(arguments, 0); };");
+		classes.log("function MFVec3f() { return Array.prototype.slice.call(arguments, 0); };");
+		classes.log("function MFVec4d() { return Array.prototype.slice.call(arguments, 0); };");
+		classes.log("function MFVec4f() { return Array.prototype.slice.call(arguments, 0); };");
 		classes.log("function MFString() { return Array.prototype.slice.call(arguments, 0); };");
 		classes.log('var X3DJSON = {};');
 		routecode.log("if (typeof $ === 'undefined') {");
