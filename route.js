@@ -36,18 +36,15 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE
  * fields are questionable, and may not work.
  **************************************************************************
  */
-/*
 test2();
 test3();
 test();
-*/
 test4();
 
 /**
  * Override this to get rid of self-test code
  * proxyAction should be paired with a node exclusively
  *
- * This test case implements chaining
  */
 function test4() {
 	raw("================================================================================");
