@@ -65,13 +65,13 @@
                                   { "ShaderPart":
                                     {
                                       "@type":"FRAGMENT",
-                                      "@url":["bubbles.fs"]
+                                      "@url":["pc_bubbles.fs"]
                                     }
                                   }
                                 ],
                                 "field": [
                                   {
-                                    "@name":"cubeMap",
+                                    "@name":"cube",
                                     "@accessType":"inputOutput",
                                     "@type":"SFInt32",
                                     "@value":0

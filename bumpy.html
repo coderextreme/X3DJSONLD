@@ -208,7 +208,7 @@ body {
                     <ImageTexture id="topShader" containerField="top" url='"cubemap/all_probes/beach_cross/beach_top.png"' ></ImageTexture>
                 </ComposedCubeMapTexture>
 		<ComposedShader DEF='ComposedShader' language="GLSL">
-                  <Uniform name='cubeMap' type='SFInt32' accessType='inputOutput' value='0'></Uniform>
+                  <Uniform name='cube' type='SFInt32' accessType='inputOutput' value='0'></Uniform>
 
                   <Uniform id='red' name='red' accessType='inputOutput' type='SFVec3f' value='0.98'></Uniform>
                   <Uniform id='green' name='green' accessType='inputOutput' type='SFVec3f' value='1.0'></Uniform>

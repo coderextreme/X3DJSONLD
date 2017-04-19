@@ -18,7 +18,7 @@
 		    <ImageTexture url='"cubemap/all_probes/uffizi_cross/uffizi_top.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_top.png"' containerField='top'/>
 	</ComposedCubeMapTexture>
         <ComposedShader DEF='ComposedShader' language="GLSL">
-                  <field name='cubeMap' type='SFInt32' accessType='inputOutput' value='0'/>
+                  <field name='cube' type='SFInt32' accessType='inputOutput' value='0'/>
 
                   <field name='chromaticDispersion' accessType='inputOutput' type='SFVec3f' value='0.98 1.0 1.033'/>
                   <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'/>
@@ -27,7 +27,7 @@
                   
                   <ShaderPart url='"x3dom.vs"' type='VERTEX'>
                   </ShaderPart>
-                  <ShaderPart url='"bubbles.fs"' type='FRAGMENT'>
+                  <ShaderPart url='"pc_bubbles.fs"' type='FRAGMENT'>
                   </ShaderPart>
                 </ComposedShader>
 		</Appearance>

@@ -20,14 +20,14 @@
 		    <ImageTexture url='"cubemap/all_probes/uffizi_cross/uffizi_top.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_top.png"' containerField='top'/>
 		    </ComposedCubeMapTexture>
 		    <ComposedShader DEF='ComposedShader' containerField='shaders' language='GLSL'>
-		    <field name='cubeMap' accessType='inputOutput' type='SFInt32' value='0'/>
+		    <field name='cube' accessType='inputOutput' type='SFInt32' value='0'/>
                     <field name='chromaticDispersion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'/>
                     <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/>
                     <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/>
                     <field name='power' accessType='inputOutput' type='SFFloat' value='2'/>
 		    <ShaderPart url='"cobweb.vs" "http://coderextreme.net/X3DJSONLD/cobweb.vs"' containerField='parts' type='VERTEX'>
 		    </ShaderPart>
-		    <ShaderPart url='"bubbles.fs" "http://coderextreme.net/X3DJSONLD/bubbles.fs"' containerField='parts' type='FRAGMENT'>
+		    <ShaderPart url='"pc_bubbles.fs" "http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"' containerField='parts' type='FRAGMENT'>
 		    </ShaderPart>
 		    </ComposedShader>
                 </Appearance>

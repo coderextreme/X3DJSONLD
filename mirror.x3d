@@ -41,7 +41,7 @@
                   <field name='power' accessType='inputOutput' type='SFFloat' value='2'/>
                   <ShaderPart url='"cobweb.vs" "http://coderextreme.net/X3DJSONLD/cobweb.vs"' type='VERTEX'>
                   </ShaderPart>
-                  <ShaderPart url='"bubbles.fs" "http://coderextreme.net/X3DJSONLD/bubbles.fs"' type='FRAGMENT'>
+                  <ShaderPart url='"pc_bubbles.fs" "http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"' type='FRAGMENT'>
                   </ShaderPart>
                 </ComposedShader>
             </Appearance>

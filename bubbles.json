@@ -103,7 +103,7 @@
                                 "@language":"GLSL",
                                 "field": [
                                   {
-                                    "@name":"cubeMap",
+                                    "@name":"cube",
                                     "@accessType":"inputOutput",
                                     "@type":"SFInt32",
                                     "@value":0
@@ -142,7 +142,7 @@
                                   },
                                   { "ShaderPart":
                                     {
-                                      "@url":["bubbles.fs","http://coderextreme.net/X3DJSONLD/bubbles.fs"],
+                                      "@url":["pc_bubbles.fs","http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"],
                                       "@type":"FRAGMENT"
                                     }
                                   }
