@@ -4,6 +4,42 @@
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
     "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"flowers7.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"John Carlson"
+          },
+          {
+            "@name":"generator",
+            "@content":"manual"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://coderextreme.net/X3DJSONLD/flowers7.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"a flower"
+          },
+          {
+            "@name":"translated",
+            "@content":"19 April 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
     "Scene": {
         "-children":[
           { "NavigationInfo":
@@ -469,8 +505,8 @@
 "\t} else if (choice == 3) {",
 "\t\td += Math.floor(Math.random() * 2) * 2 - 1;",
 "\t}",
-"\ttdelta += 0.5;",
-"\tpdelta += 0.5;",
+"\ttdelta = tdelta + 0.5;",
+"\tpdelta = pdelta + 0.5;",
 "\tif (a < 1) {",
 "\t\ta = 10;",
 "\t}",

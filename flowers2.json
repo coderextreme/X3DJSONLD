@@ -7,8 +7,8 @@
     "head": {
         "meta": [
           {
-            "@name":"filename",
-            "@content":"flowers2.x3d"
+            "@name":"flowers2.x3d",
+            "@content":"title"
           },
           {
             "@name":"author",

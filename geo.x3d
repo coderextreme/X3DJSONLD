@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D profile='Immersive' version='3.3' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance'>
+      <head>
+        <meta name='title' content='geo.x3d'/>
+        <meta name='creator' content='John Carlson'/>
+        <meta name='generator' content='manual'/>
+        <meta name='identifier' content='http://coderextreme.net/X3DJSONLD/geo.x3d'/>
+        <meta name='description' content='a sphere'/>      
+      </head>
     <Scene>
         <NavigationInfo type='"EXAMINE"'/>
         <Viewpoint DEF='Tour' description='Tour Views'/>
@@ -25,9 +32,9 @@
                         <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/>
                         <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/>
                         <field name='power' accessType='inputOutput' type='SFFloat' value='2'/>
-                        <ShaderPart url='"cobweb_bubbles.vs"' type="VERTEX" containerField='parts'>
+                        <ShaderPart url='"cobweb_bubbles.vs" "http://coderextreme.net/X3DJSONLD/cobweb_bubbles.vs"' type="VERTEX" containerField='parts'>
 			</ShaderPart>
-                        <ShaderPart url='"pc_bubbles.fs"' containerField='parts' type='FRAGMENT'>
+                        <ShaderPart url='"pc_bubbles.fs" "http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"' containerField='parts' type='FRAGMENT'>
 			</ShaderPart>
                     </ComposedShader>
                 </Appearance>
