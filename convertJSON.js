@@ -60,6 +60,7 @@ function convertJSON(options) {
 					error += "\r\n dataPath: " + errs[e].dataPath + "\r\n";
 					error += " message: " + errs[e].message + "\r\n";
 					error += " params: " + JSON.stringify(errs[e].params) + "\r\n";
+					error += " file: " + file + "\r\n";
 				}
 				console.error(error);
 				// throw(error);
