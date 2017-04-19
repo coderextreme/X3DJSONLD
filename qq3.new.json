@@ -47,8 +47,8 @@
             "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
           },
           {
-            "@name":"warning",
-            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+            "@name":"reference",
+            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
           }
         ]
     },
@@ -71,13 +71,13 @@
                               "-children":[
                                 { "Shape":
                                   {
+                                    "@DEF":"ShapeLeftDown",
                                     "-appearance":
                                       { "Appearance":
                                         {
                                           "-material":
                                             { "Material":
                                               {
-                                                "@DEF":"MaterialLeftDown",
                                                 "@diffuseColor":[0.7,1,0]
                                               }
                                             }
@@ -105,13 +105,13 @@
                               "-children":[
                                 { "Shape":
                                   {
+                                    "@DEF":"ShapeUpRight",
                                     "-appearance":
                                       { "Appearance":
                                         {
                                           "-material":
                                             { "Material":
                                               {
-                                                "@DEF":"MaterialUpRight",
                                                 "@diffuseColor":[0,0.7,1]
                                               }
                                             }
@@ -139,25 +139,7 @@
                               "-children":[
                                 { "Shape":
                                   {
-                                    "-appearance":
-                                      { "Appearance":
-                                        {
-                                          "-material":
-                                            { "Material":
-                                              {
-                                                "@USE":"MaterialUpRight"
-                                              }
-                                            }
-                                        }
-                                      },
-                                    "-geometry":
-                                      { "Extrusion":
-                                        {
-                                          "@creaseAngle":0.785,
-                                          "@crossSection":[1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0],
-                                          "@spine":[0,1.5,0,0,2.5,0]
-                                        }
-                                      }
+                                    "@USE":"ShapeUpRight"
                                   }
                                 }
                               ]
@@ -172,25 +154,7 @@
                               "-children":[
                                 { "Shape":
                                   {
-                                    "-appearance":
-                                      { "Appearance":
-                                        {
-                                          "-material":
-                                            { "Material":
-                                              {
-                                                "@USE":"MaterialLeftDown"
-                                              }
-                                            }
-                                        }
-                                      },
-                                    "-geometry":
-                                      { "Extrusion":
-                                        {
-                                          "@creaseAngle":0.785,
-                                          "@crossSection":[1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0],
-                                          "@spine":[0,-2.5,0,0,-1.5,0]
-                                        }
-                                      }
+                                    "@USE":"ShapeLeftDown"
                                   }
                                 }
                               ]
