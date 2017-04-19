@@ -12,7 +12,7 @@ THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED
   precision highp float;
 #endif
 
-uniform samplerCube background;
+uniform samplerCube cube
 
 varying vec3 r;
 varying vec3 tr;

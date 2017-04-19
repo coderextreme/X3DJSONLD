@@ -59,7 +59,7 @@
                                   { "ShaderPart":
                                     {
                                       "@type":"VERTEX",
-                                      "@url":["cobweb.vs"]
+                                      "@url":["cobweb_bubbles.vs"]
                                     }
                                   },
                                   { "ShaderPart":

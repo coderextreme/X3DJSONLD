@@ -34,7 +34,7 @@
           },
           {
             "@name":"translated",
-            "@content":"18 April 2017"
+            "@content":"19 April 2017"
           },
           {
             "@name":"generator",
@@ -179,7 +179,7 @@
                                     "@value":[0.98,1,1.033]
                                   },
                                   {
-                                    "@name":"background",
+                                    "@name":"cube",
                                     "@accessType":"inputOutput",
                                     "@type":"SFInt32",
                                     "@value":0
@@ -206,13 +206,13 @@
                                 "-parts":[
                                   { "ShaderPart":
                                     {
-                                      "@url":["cobweb.vs","http://coderextreme.net/X3DJSONLD/cobweb.vs"],
+                                      "@url":["cobweb_bubbles.vs","http://coderextreme.net/X3DJSONLD/cobweb_bubbles.vs"],
                                       "@type":"VERTEX"
                                     }
                                   },
                                   { "ShaderPart":
                                     {
-                                      "@url":["pc_bubbles.fs","http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"],
+                                      "@url":["mix.fs","http://coderextreme.net/X3DJSONLD/mix.fs"],
                                       "@type":"FRAGMENT"
                                     }
                                   }

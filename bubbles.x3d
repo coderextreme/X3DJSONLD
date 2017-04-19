@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D profile='Immersive' version='3.3' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance'>
-    <Scene>
+   <head>
+        <component name='EnvironmentalEffects' level='1'/>
+        <component name='EnvironmentalEffects' level='3'/>
+        <meta name='title' content='bubbles.x3d'/>
+        <meta name='creator' content='John Carlson'/>
+        <meta name='generator' content='manual'/>
+        <meta name='identifier' content='http://coderextreme.net/X3DJSONLD/bubbles.x3d'/>
+        <meta name='description' content='not sure what this is'/>      
+     </head>
+     <Scene>
         <NavigationInfo type='"EXAMINE"'></NavigationInfo>
         <Viewpoint DEF='Tour' description='Tour Views'/>
         <Viewpoint position='0 0 4' description='sphere in road'></Viewpoint>
@@ -25,7 +34,7 @@
                     <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/>
                     <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/>
                     <field name='power' accessType='inputOutput' type='SFFloat' value='2'/>
-		    <ShaderPart url='"cobweb.vs" "http://coderextreme.net/X3DJSONLD/cobweb.vs"' containerField='parts' type='VERTEX'>
+		    <ShaderPart url='"cobweb_bubbles.vs" "http://coderextreme.net/X3DJSONLD/cobweb_bubbles.vs"' containerField='parts' type='VERTEX'>
 		    </ShaderPart>
 		    <ShaderPart url='"pc_bubbles.fs" "http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"' containerField='parts' type='FRAGMENT'>
 		    </ShaderPart>

@@ -136,7 +136,7 @@
                                 "-parts":[
                                   { "ShaderPart":
                                     {
-                                      "@url":["cobweb.vs"],
+                                      "@url":["cobweb_bubbles.vs"],
                                       "@type":"VERTEX"
                                     }
                                   },
