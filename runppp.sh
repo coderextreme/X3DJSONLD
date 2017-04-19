@@ -2,7 +2,7 @@
 
 # run the proto preprocessor
 
-export CLASSPATH="saxon9he.jar;."
+. ./classpath
 javac RunSaxon.java
 
 mkdir -p ppp
