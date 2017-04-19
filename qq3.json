@@ -71,13 +71,13 @@
                               "-children":[
                                 { "Shape":
                                   {
+                                    "@DEF":"ShapeLeftDown",
                                     "-appearance":
                                       { "Appearance":
                                         {
                                           "-material":
                                             { "Material":
                                               {
-                                                "@DEF":"MaterialLeftDown",
                                                 "@diffuseColor":[0.7,1,0]
                                               }
                                             }
@@ -105,13 +105,13 @@
                               "-children":[
                                 { "Shape":
                                   {
+                                    "@DEF":"ShapeUpRight",
                                     "-appearance":
                                       { "Appearance":
                                         {
                                           "-material":
                                             { "Material":
                                               {
-                                                "@DEF":"MaterialUpRight",
                                                 "@diffuseColor":[0,0.7,1]
                                               }
                                             }
@@ -139,25 +139,7 @@
                               "-children":[
                                 { "Shape":
                                   {
-                                    "-appearance":
-                                      { "Appearance":
-                                        {
-                                          "-material":
-                                            { "Material":
-                                              {
-                                                "@USE":"MaterialUpRight"
-                                              }
-                                            }
-                                        }
-                                      },
-                                    "-geometry":
-                                      { "Extrusion":
-                                        {
-                                          "@spine":[0,1.5,0,0,2.5,0],
-                                          "@creaseAngle":0.785,
-                                          "@crossSection":[1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00]
-                                        }
-                                      }
+                                    "@USE":"ShapeUpRight"
                                   }
                                 }
                               ]
@@ -172,25 +154,7 @@
                               "-children":[
                                 { "Shape":
                                   {
-                                    "-appearance":
-                                      { "Appearance":
-                                        {
-                                          "-material":
-                                            { "Material":
-                                              {
-                                                "@USE":"MaterialLeftDown"
-                                              }
-                                            }
-                                        }
-                                      },
-                                    "-geometry":
-                                      { "Extrusion":
-                                        {
-                                          "@spine":[0,-2.5,0,0,-1.5,0],
-                                          "@creaseAngle":0.785,
-                                          "@crossSection":[1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00]
-                                        }
-                                      }
+                                    "@USE":"ShapeLeftDown"
                                   }
                                 }
                               ]

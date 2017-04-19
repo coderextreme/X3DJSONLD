@@ -17,38 +17,30 @@
                 <Group>
                     <!-- left -->
                     <Transform scale="0.5 0.5 0.5">
-                        <Shape>
+                        <Shape DEF="ShapeLeftDown">
                             <Appearance>
-                                <Material DEF="MaterialLeftDown" diffuseColor="0.7 1 0"/>
+                                <Material diffuseColor="0.7 1 0"/>
                             </Appearance>
-                            <Extrusion spine="-2.5 0 0, -1.5 0 0" creaseAngle="0.785" crossSection=" 1.00 0.00, 0.92 -0.38, 0.71 -0.71, 0.38 -0.92, 0.00 -1.00, -0.38 -0.92, -0.71 -0.71, -0.92 -0.38, -1.00 -0.00, -0.92 0.38, -0.71 0.71, -0.38 0.92, 0.00 1.00, 0.38 0.92, 0.71 0.71, 0.92 0.38, 1.00 0.00"/>
+                            <Extrusion spine="-2.5 0 0 -1.5 0 0" creaseAngle="0.785" crossSection="1.00 0.00 0.92 -0.38 0.71 -0.71 0.38 -0.92 0.00 -1.00 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1.00 -0.00 -0.92 0.38 -0.71 0.71 -0.38 0.92 0.00 1.00 0.38 0.92 0.71 0.71 0.92 0.38 1.00 0.00"/>
                         </Shape>
                     </Transform>
                     <!-- right -->
                     <Transform scale="0.5 0.5 0.5">
-                        <Shape>
+                        <Shape DEF="ShapeUpRight">
                             <Appearance>
-                                <Material DEF="MaterialUpRight" diffuseColor="0 0.7 1"/>
+                                <Material diffuseColor="0 0.7 1"/>
                             </Appearance>
-                            <Extrusion spine="1.5 0 0, 2.5 0 0" creaseAngle="0.785" crossSection=" 1.00 0.00, 0.92 -0.38, 0.71 -0.71, 0.38 -0.92, 0.00 -1.00, -0.38 -0.92, -0.71 -0.71, -0.92 -0.38, -1.00 -0.00, -0.92 0.38, -0.71 0.71, -0.38 0.92, 0.00 1.00, 0.38 0.92, 0.71 0.71, 0.92 0.38, 1.00 0.00"/>
+                            <Extrusion spine="1.5 0 0 2.5 0 0" creaseAngle="0.785" crossSection="1.00 0.00 0.92 -0.38 0.71 -0.71 0.38 -0.92 0.00 -1.00 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1.00 -0.00 -0.92 0.38 -0.71 0.71 -0.38 0.92 0.00 1.00 0.38 0.92 0.71 0.71 0.92 0.38 1.00 0.00"/>
                         </Shape>
                     </Transform>
                     <!-- up -->
                     <Transform scale="0.5 0.5 0.5">
-                        <Shape>
-                            <Appearance>
-                                <Material USE="MaterialUpRight"/>
-                            </Appearance>
-                            <Extrusion spine="0 1.5 0, 0 2.5 0" creaseAngle="0.785" crossSection=" 1.00 0.00, 0.92 -0.38, 0.71 -0.71, 0.38 -0.92, 0.00 -1.00, -0.38 -0.92, -0.71 -0.71, -0.92 -0.38, -1.00 -0.00, -0.92 0.38, -0.71 0.71, -0.38 0.92, 0.00 1.00, 0.38 0.92, 0.71 0.71, 0.92 0.38, 1.00 0.00"/>
+                        <Shape USE="ShapeUpRight">
                         </Shape>
                     </Transform>
                     <!-- down -->
                     <Transform scale="0.5 0.5 0.5">
-                        <Shape>
-                            <Appearance>
-                                <Material USE="MaterialLeftDown"/>
-                            </Appearance>
-                            <Extrusion spine="0 -2.5 0, 0 -1.5 0" creaseAngle="0.785" crossSection=" 1.00 0.00, 0.92 -0.38, 0.71 -0.71, 0.38 -0.92, 0.00 -1.00, -0.38 -0.92, -0.71 -0.71, -0.92 -0.38, -1.00 -0.00, -0.92 0.38, -0.71 0.71, -0.38 0.92, 0.00 1.00, 0.38 0.92, 0.71 0.71, 0.92 0.38, 1.00 0.00"/>
+                        <Shape USE="ShapeLeftDown">
                         </Shape>   
                     </Transform>
                 </Group>

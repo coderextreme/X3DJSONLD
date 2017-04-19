@@ -129,7 +129,11 @@ JavaScriptSerializer.subSerializeToString = function(element, mapToMethod, field
 					if (attrs[a].nodeValue === 'NULL') {
 						str += "";
 					} else if (attrType === "SFString") {
-						str += '"'+attrs[a].nodeValue.replace(/\\?"/g, "\\\"")+'"';
+						if (attr === "type") {
+							str += "fieldObject.TYPE_"+attrs[a].nodeValue.toUpperCase();
+						} else {
+							str += '"'+attrs[a].nodeValue.replace(/\n/g, '\\\\n').replace(/\\?"/g, "\\\"")+'"';
+						}
 					} else if (attrType === "SFInt32") {
 						str += attrs[a].nodeValue;
 					} else if (attrType === "SFFloat") {
