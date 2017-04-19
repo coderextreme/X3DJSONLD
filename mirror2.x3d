@@ -3,7 +3,7 @@
 <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
       <Scene>
         <Viewpoint position='0 5 100' description='Switch background and cubemap texture'/>
-	<Background DEF="background" leftUrl='"cubemap/all_probes/beach_cross/beach_left.png" "http://coderextreme.net/cubemap/all_probes/beach_cross/beach_left.png"' rightUrl='"cubemap/all_probes/beach_cross/beach_right.png" "http://coderextreme.net/cubemap/all_probes/beach_cross/beach_right.png"' frontUrl='"cubemap/all_probes/beach_cross/beach_front.png" "http://coderextreme.net/cubemap/all_probes/beach_cross/beach_front.png"' backUrl='"cubemap/all_probes/beach_cross/beach_back.png" "http://coderextreme.net/cubemap/all_probes/beach_cross/beach_back.png"' topUrl='"cubemap/all_probes/beach_cross/beach_top.png" "http://coderextreme.net/cubemap/all_probes/beach_cross/beach_top.png"' bottomUrl='"cubemap/all_probes/beach_cross/beach_bottom.png" "http://coderextreme.net/cubemap/all_probes/beach_cross/beach_bottom.png"'></Background> 
+	<Background DEF="cube" leftUrl='"cubemap/all_probes/beach_cross/beach_left.png" "http://coderextreme.net/cubemap/all_probes/beach_cross/beach_left.png"' rightUrl='"cubemap/all_probes/beach_cross/beach_right.png" "http://coderextreme.net/cubemap/all_probes/beach_cross/beach_right.png"' frontUrl='"cubemap/all_probes/beach_cross/beach_front.png" "http://coderextreme.net/cubemap/all_probes/beach_cross/beach_front.png"' backUrl='"cubemap/all_probes/beach_cross/beach_back.png" "http://coderextreme.net/cubemap/all_probes/beach_cross/beach_back.png"' topUrl='"cubemap/all_probes/beach_cross/beach_top.png" "http://coderextreme.net/cubemap/all_probes/beach_cross/beach_top.png"' bottomUrl='"cubemap/all_probes/beach_cross/beach_bottom.png" "http://coderextreme.net/cubemap/all_probes/beach_cross/beach_bottom.png"'></Background> 
         <Transform >
           <Shape>
             <Appearance>
@@ -20,13 +20,13 @@
                 <ComposedShader language='GLSL'>
 <!--http://hypertextbook.com/facts/2005/JustinChe.shtml-->
                   <field name='chromaticDispersion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'/>
-                  <field name='background' accessType='inputOutput' type='SFInt32' value='0'/>
+                  <field name='cube' accessType='inputOutput' type='SFInt32' value='0'/>
 		  <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/>
                   <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/>
                   <field name='power' accessType='inputOutput' type='SFFloat' value='2'/>
-                  <ShaderPart url='"cobweb.vs" "http://coderextreme.net/X3DJSONLD/cobweb.vs"' type='VERTEX'>
+                  <ShaderPart url='"cobweb_bubbles.vs" "http://coderextreme.net/X3DJSONLD/cobweb_bubbles.vs"' type='VERTEX'>
                   </ShaderPart>
-                  <ShaderPart url='"pc_bubbles.fs" "http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"' type='FRAGMENT'>
+                  <ShaderPart url='"mix.fs" "http://coderextreme.net/X3DJSONLD/mix.fs"' type='FRAGMENT'>
                   </ShaderPart>
                 </ComposedShader>
             </Appearance>
@@ -69,12 +69,12 @@ ecmascript:
 </Script> 
 	    <TimeSensor DEF="Clock" cycleInterval="45" loop='true'/>
             <ROUTE fromNode='Clock' fromField='fraction_changed' toNode='UrlSelector' toField='set_fraction'/> 
-	    <ROUTE fromNode='UrlSelector' fromField='front_changed' toNode='background' toField='frontUrl'/>
-	    <ROUTE fromNode='UrlSelector' fromField='back_changed' toNode='background' toField='backUrl'/>
-	    <ROUTE fromNode='UrlSelector' fromField='left_changed' toNode='background' toField='leftUrl'/>
-	    <ROUTE fromNode='UrlSelector' fromField='right_changed' toNode='background' toField='rightUrl'/>
-	    <ROUTE fromNode='UrlSelector' fromField='top_changed' toNode='background' toField='topUrl'/>
-	    <ROUTE fromNode='UrlSelector' fromField='bottom_changed' toNode='background' toField='bottomUrl'/>
+	    <ROUTE fromNode='UrlSelector' fromField='front_changed' toNode='cube' toField='frontUrl'/>
+	    <ROUTE fromNode='UrlSelector' fromField='back_changed' toNode='cube' toField='backUrl'/>
+	    <ROUTE fromNode='UrlSelector' fromField='left_changed' toNode='cube' toField='leftUrl'/>
+	    <ROUTE fromNode='UrlSelector' fromField='right_changed' toNode='cube' toField='rightUrl'/>
+	    <ROUTE fromNode='UrlSelector' fromField='top_changed' toNode='cube' toField='topUrl'/>
+	    <ROUTE fromNode='UrlSelector' fromField='bottom_changed' toNode='cube' toField='bottomUrl'/>
 	    <ROUTE fromNode='UrlSelector' fromField='front_changed' toNode='frontShader' toField='url'/>
 	    <ROUTE fromNode='UrlSelector' fromField='back_changed' toNode='backShader' toField='url'/>
 	    <ROUTE fromNode='UrlSelector' fromField='left_changed' toNode='leftShader' toField='url'/>

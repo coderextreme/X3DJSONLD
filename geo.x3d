@@ -25,7 +25,7 @@
                         <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/>
                         <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/>
                         <field name='power' accessType='inputOutput' type='SFFloat' value='2'/>
-                        <ShaderPart url='"cobweb.vs"' type="VERTEX" containerField='parts'>
+                        <ShaderPart url='"cobweb_bubbles.vs"' type="VERTEX" containerField='parts'>
 			</ShaderPart>
                         <ShaderPart url='"pc_bubbles.fs"' containerField='parts' type='FRAGMENT'>
 			</ShaderPart>

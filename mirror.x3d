@@ -35,13 +35,13 @@
                 <ComposedShader language='GLSL'>
 <!--http://hypertextbook.com/facts/2005/JustinChe.shtml-->
                   <field name='chromaticDispersion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'/>
-                  <field name='background' accessType='inputOutput' type='SFInt32' value='0'/>
+                  <field name='cube' accessType='inputOutput' type='SFInt32' value='0'/>
 		  <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/>
                   <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/>
                   <field name='power' accessType='inputOutput' type='SFFloat' value='2'/>
-                  <ShaderPart url='"cobweb.vs" "http://coderextreme.net/X3DJSONLD/cobweb.vs"' type='VERTEX'>
+                  <ShaderPart url='"cobweb_bubbles.vs" "http://coderextreme.net/X3DJSONLD/cobweb_bubbles.vs"' type='VERTEX'>
                   </ShaderPart>
-                  <ShaderPart url='"pc_bubbles.fs" "http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"' type='FRAGMENT'>
+                  <ShaderPart url='"mix.fs" "http://coderextreme.net/X3DJSONLD/mix.fs"' type='FRAGMENT'>
                   </ShaderPart>
                 </ComposedShader>
             </Appearance>
