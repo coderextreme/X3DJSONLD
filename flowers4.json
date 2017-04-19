@@ -91,7 +91,7 @@
                                 "@language":"GLSL",
                                 "field": [
                                   {
-                                    "@name":"cubeMap",
+                                    "@name":"cube",
                                     "@type":"SFInt32",
                                     "@accessType":"inputOutput",
                                     "@value":0
@@ -130,7 +130,7 @@
                                   },
                                   { "ShaderPart":
                                     {
-                                      "@url":["bubbles.fs"],
+                                      "@url":["pc_bubbles.fs"],
                                       "@type":"FRAGMENT"
                                     }
                                   }

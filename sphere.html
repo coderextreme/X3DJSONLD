@@ -169,7 +169,7 @@ body {
                     <ImageTexture id="topShader" containerField="top" url='"cubemap/all_probes/beach_cross/beach_top.png"' ></ImageTexture>
                 </ComposedCubeMapTexture>
 		<ComposedShader DEF='ComposedShader' language="GLSL">
-                  <Uniform name='cubeMap' type='SFInt32' accessType='inputOnly' value='0'></Uniform>
+                  <Uniform name='cube' type='SFInt32' accessType='inputOnly' value='0'></Uniform>
 
                   <Uniform name='chromaticDispersion' accessType='inputOnly' type='SFVec3f' value='0.98 1.0 1.033'></Uniform>
                   <Uniform name='bias' type='SFFloat' accessType='inputOnly' value='0.5'></Uniform>
@@ -290,7 +290,7 @@ void main()
 
 varying vec3 viewDirection;
 varying vec3 normalDirection;
-uniform samplerCube cubeMap;
+uniform samplerCube cube;
 uniform vec3 chromaticDispersion;
 
 void main()
@@ -301,12 +301,12 @@ void main()
     vec3 redDirection = refract(viewDirection, fragNormal, chromaticDispersion.x);
     vec3 greenDirection = refract(viewDirection, fragNormal, chromaticDispersion.y);
     vec3 blueDirection = refract(viewDirection, fragNormal, chromaticDispersion.z);
-    float red = textureCube(cubeMap, redDirection).r;
-    float green = textureCube(cubeMap, greenDirection).g;
-    float blue = textureCube(cubeMap, greenDirection).b;
+    float red = textureCube(cube, redDirection).r;
+    float green = textureCube(cube, greenDirection).g;
+    float blue = textureCube(cube, greenDirection).b;
     */
 
-    vec4 reflectedColor = textureCube(cubeMap, reflectedDirection);
+    vec4 reflectedColor = textureCube(cube, reflectedDirection);
     /*vec4 refractedColor = vec4(red, green, blue, 1.0);*/
     gl_FragColor = reflectedColor;
     /*gl_FragColor = refractedColor;*/
