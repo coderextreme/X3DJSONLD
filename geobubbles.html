@@ -30,19 +30,19 @@
         <NavigationInfo type='"ANY" "WALK" "EXAMINE" "FLY" "LOOKAT"'></NavigationInfo>
         <GeoViewpoint DEF='Tour' position='0 0 20000000' orientation='-1 0 0 1.5708' description='Tour Views'></GeoViewpoint>
 	
-        <Background backUrl='"cubemap/BK.png" "http://coderextreme.net/X3DJSONLD/cubemap/BK.png"' bottomUrl='"cubemap/BT.png" "http://coderextreme.net/X3DJSONLD/cubemap/BT.png"' frontUrl='"cubemap/FR.png" "http://coderextreme.net/X3DJSONLD/cubemap/FR.png"' leftUrl='"cubemap/LF.png" "http://coderextreme.net/X3DJSONLD/cubemap/LF.png"' rightUrl='"cubemap/RT.png" "http://coderextreme.net/X3DJSONLD/cubemap/RT.png"' topUrl='"cubemap/TP.png" "http://coderextreme.net/X3DJSONLD/cubemap/TP.png"'></Background>
+        <Background backUrl='"cubemap/all_probes/uffizi_cross/uffizi_back.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_back.png"' bottomUrl='"cubemap/all_probes/uffizi_cross/uffizi_bottom.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_bottom.png"' frontUrl='"cubemap/all_probes/uffizi_cross/uffizi_front.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_front.png"' leftUrl='"cubemap/all_probes/uffizi_cross/uffizi_left.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_left.png"' rightUrl='"cubemap/all_probes/uffizi_cross/uffizi_right.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_right.png"' topUrl='"cubemap/all_probes/uffizi_cross/uffizi_top.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_top.png"'></Background>
 	<Transform translation="0 0 0">
           <Shape DEF='bubble'>
             <Sphere solid="true" radius="6400000"></Sphere>
             <Appearance>
-                <Material diffuseColor="1 0 0"></Material>
+                <Material diffuseColor="1 0 0">
                     <ComposedCubeMapTexture containerField='texture'>
-                        <ImageTexture url='"cubemap/BK.png" "http://coderextreme.net/X3DJSONLD/cubemap/BK.png"' containerField='back'></ImageTexture>
-                        <ImageTexture url='"cubemap/BT.png" "http://coderextreme.net/X3DJSONLD/cubemap/BT.png"' containerField='bottom'></ImageTexture>
-                        <ImageTexture url='"cubemap/FR.png" "http://coderextreme.net/X3DJSONLD/cubemap/FR.png"' containerField='front'></ImageTexture>
-                        <ImageTexture url='"cubemap/LF.png" "http://coderextreme.net/X3DJSONLD/cubemap/LF.png"' containerField='left'></ImageTexture>
-                        <ImageTexture url='"cubemap/RT.png" "http://coderextreme.net/X3DJSONLD/cubemap/RT.png"' containerField='right'></ImageTexture>
-                        <ImageTexture url='"cubemap/TP.png" "http://coderextreme.net/X3DJSONLD/cubemap/TP.png"' containerField='top'></ImageTexture>
+			    <ImageTexture url='"cubemap/all_probes/uffizi_cross/uffizi_back.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_back.png"' containerField='back'/>
+			    <ImageTexture url='"cubemap/all_probes/uffizi_cross/uffizi_bottom.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_bottom.png"' containerField='bottom'/>
+			    <ImageTexture url='"cubemap/all_probes/uffizi_cross/uffizi_front.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_front.png"' containerField='front'/>
+			    <ImageTexture url='"cubemap/all_probes/uffizi_cross/uffizi_left.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_left.png"' containerField='left'/>
+			    <ImageTexture url='"cubemap/all_probes/uffizi_cross/uffizi_right.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_right.png"' containerField='right'/>
+			    <ImageTexture url='"cubemap/all_probes/uffizi_cross/uffizi_top.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_top.png"' containerField='top'/>
                     </ComposedCubeMapTexture>
                     <ComposedShader DEF='ComposedShader' containerField='shaders' language='GLSL'>
                         <field name='cube' accessType='inputOutput' type='SFInt32' value='0'></field>
@@ -50,9 +50,10 @@
                         <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field>
                         <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'></field>
                         <field name='power' accessType='inputOutput' type='SFFloat' value='2'></field>
-                        <ShaderPart url='"x3dom.vs" "http://coderextreme.net/X3DJSONLD/x3dom.vs"' containerField='parts'></ShaderPart>
+                        <ShaderPart url='"x3dom.vs" "http://coderextreme.net/X3DJSONLD/x3dom.vs"' containerField='parts' type='VERTEX'></ShaderPart>
                         <ShaderPart url='"pc_bubbles.fs" "http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
                     </ComposedShader>
+		</Material>
             </Appearance>
           </Shape>
 	</Transform>
