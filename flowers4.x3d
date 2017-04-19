@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
+      <head>
+        <meta name='title' content='flowers4.x3d'/>
+        <meta name='creator' content='John Carlson'/>
+        <meta name='generator' content='manual'/>
+        <meta name='identifier' content='http://coderextreme.net/X3DJSONLD/flowers4.x3d'/>
+        <meta name='description' content='an animated flower'/>      
+      </head>
   <Scene>
     <NavigationInfo type="&quot;EXAMINE&quot; &quot;ANY&quot;"/>
         <Background backUrl='"cubemap/all_probes/uffizi_cross/uffizi_back.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_back.png"' bottomUrl='"cubemap/all_probes/uffizi_cross/uffizi_bottom.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_bottom.png"' frontUrl='"cubemap/all_probes/uffizi_cross/uffizi_front.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_front.png"' leftUrl='"cubemap/all_probes/uffizi_cross/uffizi_left.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_left.png"' rightUrl='"cubemap/all_probes/uffizi_cross/uffizi_right.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_right.png"' topUrl='"cubemap/all_probes/uffizi_cross/uffizi_top.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_top.png"'></Background>
@@ -25,9 +32,9 @@
                   <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'/>
                   <field name='power' type='SFFloat' accessType='inputOutput' value='2'/>
                   
-                  <ShaderPart url='"x3dom.vs"' type='VERTEX'>
+                  <ShaderPart url='"x3dom.vs" "http://coderextreme.net/X3DJSONLD/x3dom.vs"' type='VERTEX'>
                   </ShaderPart>
-                  <ShaderPart url='"pc_bubbles.fs"' type='FRAGMENT'>
+                  <ShaderPart url='"pc_bubbles.fs" "http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"' type='FRAGMENT'>
                   </ShaderPart>
                 </ComposedShader>
 		</Appearance>

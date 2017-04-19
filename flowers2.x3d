@@ -3,7 +3,7 @@
 <X3D profile="Immersive" version="3.0"
   xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.0.xsd">
   <head>
-    <meta content="flowers2.x3d" name="filename"/>
+    <meta content="title" name="flowers2.x3d"/>
     <meta content="John Carlson" name="author"/>
     <meta content="John Carlson" name="transcriber"/>
     <meta content="23 January 2005" name="created"/>
