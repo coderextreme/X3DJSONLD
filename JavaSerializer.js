@@ -109,16 +109,17 @@ JavaSerializer.prototype = {
 		str += "import org.web3d.x3d.sai.Time.*;\n";
 		str += "import org.web3d.x3d.sai.VolumeRendering.*;\n";
 		str += "public class "+clz+" {\n";
-		str += "	public static void main(String[] args) {\n";
-		str += "        ConfigurationProperties.setShowDefaultAttributes(true);\n";
-		str += "	ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_nativeJava);\n";
-		str += "	ConfigurationProperties.setDeleteIntermediateFiles(false);\n";
-		str += "	new "+clz+"().initialize().toFileJSON(\""+clazz+".new.json\");\n";
-		str += "	}\n";
-		str += "	public "+element.nodeName+"Object initialize() {\n";
-		str += "		return new "+element.nodeName+"Object()\n";
-		str += JavaSerializer.subSerializeToString(element, 1, mapToMethod, fieldTypes);
-		str += "	;\n}\n";
+		str += "  public static void main(String[] args) {\n";
+		str += "    ConfigurationProperties.setShowDefaultAttributes(true);\n";
+		str += "    ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_nativeJava);\n";
+		str += "    ConfigurationProperties.setDeleteIntermediateFiles(false);\n";
+		str += "    new "+clz+"().initialize().toFileJSON(\""+clazz+".new.json\");\n";
+		str += "    }\n";
+		str += "    public "+element.nodeName+"Object initialize() {\n";
+		str += "      return new "+element.nodeName+"Object()";
+		str += JavaSerializer.subSerializeToString(element, 3, mapToMethod, fieldTypes);
+		str += "      ;\n";
+		str += "    }\n";
 		for (var co in code) {
 			str += code[co];
 		}
@@ -137,7 +138,7 @@ function printSubArray(attrType, type, values,  co, j, trail) {
 			}
 			codeno++;
 			code[co] = "private "+attrType+"Object "+attrType+co+"() {\n";
-			code[co] += "\treturn new "+attrType+"Object( new "+type+"[] {"+values.slice(i, max).join(j)+trail+"})\n";
+			code[co] += "  return new "+attrType+"Object( new "+type+"[] {"+values.slice(i, max).join(j)+trail+"})\n";
 			code[co] += ";\n}\n";
 			if (i == 0) {
 				str += attrType+co+"())";
@@ -175,34 +176,8 @@ function printParentChild(element, n, node, cn, mapToMethod) {
 	} else {
 		method = method.charAt(0).toUpperCase() + method.slice(1);
 	}
-	return "\t".repeat(n)+addpre+method+"(";
+	return "\n"+("  ".repeat(n))+addpre+method+"(";
 }
-
-/*
-function printParentChild(element, node, cn, mapToMethod) {
-	let addpre = ".add";
-	let method = node.nodeName;
-
-	if (typeof mapToMethod[element.nodeName] === 'object') {
-		if (typeof mapToMethod[element.nodeName][node.nodeName] === 'string') {
-			addpre = ".";
-			method = mapToMethod[element.nodeName][node.nodeName];
-		} else {
-			method = method.charAt(0).toUpperCase() + method.slice(1);
-		}
-	} else if (typeof mapToMethod[element.nodeName] === 'string') {
-		addpre = ".";
-		method = mapToMethod[element.nodeName];
-	} else {
-		method = method.charAt(0).toUpperCase() + method.slice(1);
-	}
-	if (node.nodeName === 'IS') {
-		addpre = ".set";
-		method = "IS";
-	}
-	return "\t"+addpre+method+"(";
-}
-*/
 
 JavaSerializer.subSerializeToString = function(element, n, mapToMethod, fieldTypes) {
 	let str = "";
@@ -245,7 +220,7 @@ JavaSerializer.subSerializeToString = function(element, n, mapToMethod, fieldTyp
 					} else {
 						method = "set"+method.charAt(0).toUpperCase() + method.slice(1);
 					}
-					str += "\t".repeat(n)+'.'+method+"(";
+					str += '.'+method+"(";
 					if (attrs[a].nodeValue === 'NULL') {
 						str += "";
 					} else if (attrType === "SFString") {
@@ -310,7 +285,7 @@ JavaSerializer.subSerializeToString = function(element, n, mapToMethod, fieldTyp
 					} else {
 						str += attrs[a].nodeValue;
 					}
-					str += ")\n";
+					str += ")";
 				}
 			}
 		} catch (e) {
@@ -322,13 +297,13 @@ JavaSerializer.subSerializeToString = function(element, n, mapToMethod, fieldTyp
 		let node = element.childNodes[cn];
 		if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 1) {
 			str += printParentChild(element, n, node, cn, mapToMethod);
-			str += "new "+node.nodeName+"Object()\n";
+			str += "new "+node.nodeName+"Object()";
 			str += JavaSerializer.subSerializeToString(node, n+1, mapToMethod, fieldTypes);
-			str += "\t".repeat(n)+")\n";
+			str += ")";
 		} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 8) {
-			str += "\t".repeat(n)+".addComments(new CommentsBlock(\""+node.nodeValue.replace(/"/g, '\\"')+"\"))\n";
+			str += "\n"+("  ".repeat(n))+".addComments(new CommentsBlock(\""+node.nodeValue.replace(/"/g, '\\"')+"\"))";
 		} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 4) {
-			str += "\t".repeat(n)+".setSourceCode(\""+node.nodeValue.split("\r\n").map(function(x) {
+			str += "\n"+("  ".repeat(n))+".setSourceCode(\""+node.nodeValue.split("\r\n").map(function(x) {
 				return x.replace(/\\"/g, '\\\\"').
 					replace(/"/g, '\\"').
 					replace(/\\n/g, "\\\\n");
@@ -339,7 +314,7 @@ JavaSerializer.subSerializeToString = function(element, n, mapToMethod, fieldTyp
 				replace(/\\\\"/g, '\\\\\\"').
 				replace(/&/g, "&amp;");
 				*/
-				}).join('\\n\"+\n\"')+'")\n';
+				}).join('\\n\"+\n\"')+'")';
 		}
 	}
 	return str;
