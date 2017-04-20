@@ -89,19 +89,19 @@ public class flowers7 {
       .setScene(new SceneObject()
         .addChild(new NavigationInfoObject())
         .addComments(new CommentsBlock("Images courtesy of Paul Debevec's Light Probe Image Gallery"))
-        .addChild(new BackgroundObject().setDEF("background").setLeftUrl(new MFStringObject(MFString0())).setRightUrl(new MFStringObject(MFString1())).setFrontUrl(new MFStringObject(MFString2())).setBackUrl(new MFStringObject(MFString3())).setTopUrl(new MFStringObject(MFString4())).setBottomUrl(new MFStringObject(MFString5())))
+        .addChild(new BackgroundObject().setDEF("background").setLeftUrl(new MFStringObject(new MFString0().getArray())).setRightUrl(new MFStringObject(new MFString1().getArray())).setFrontUrl(new MFStringObject(new MFString2().getArray())).setBackUrl(new MFStringObject(new MFString3().getArray())).setTopUrl(new MFStringObject(new MFString4().getArray())).setBottomUrl(new MFStringObject(new MFString5().getArray())))
         .addChild(new ViewpointObject().setPosition(new float[] {0f,0f,40f}).setDescription("Transparent rose"))
         .addChild(new TransformObject().setDEF("Rose01")
           .addChild(new ShapeObject()
             .setAppearance(new AppearanceObject().setDEF("_01_-_Default")
               .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0.7f,0.7f,0.7f}).setSpecularColor(new float[] {0.5f,0.5f,0.5f}))
               .setTexture(new ComposedCubeMapTextureObject()
-                .setTop(new ImageTextureObject().setDEF("backShader").setUrl(new MFStringObject(MFString6())))
-                .setTop(new ImageTextureObject().setDEF("bottomShader").setUrl(new MFStringObject(MFString7())))
-                .setTop(new ImageTextureObject().setDEF("frontShader").setUrl(new MFStringObject(MFString8())))
-                .setTop(new ImageTextureObject().setDEF("leftShader").setUrl(new MFStringObject(MFString9())))
-                .setTop(new ImageTextureObject().setDEF("rightShader").setUrl(new MFStringObject(MFString10())))
-                .setTop(new ImageTextureObject().setDEF("topShader").setUrl(new MFStringObject(MFString11()))))
+                .setTop(new ImageTextureObject().setDEF("backShader").setUrl(new MFStringObject(new MFString6().getArray())))
+                .setTop(new ImageTextureObject().setDEF("bottomShader").setUrl(new MFStringObject(new MFString7().getArray())))
+                .setTop(new ImageTextureObject().setDEF("frontShader").setUrl(new MFStringObject(new MFString8().getArray())))
+                .setTop(new ImageTextureObject().setDEF("leftShader").setUrl(new MFStringObject(new MFString9().getArray())))
+                .setTop(new ImageTextureObject().setDEF("rightShader").setUrl(new MFStringObject(new MFString10().getArray())))
+                .setTop(new ImageTextureObject().setDEF("topShader").setUrl(new MFStringObject(new MFString11().getArray()))))
               .addShaders(new ComposedShaderObject().setDEF("ComposedShader").setLanguage("GLSL")
                 .addField(new fieldObject().setName("cube").setType(fieldObject.TYPE_SFINT32).setAccessType("inputOutput").setValue("0"))
                 .addField(new fieldObject().setName("chromaticDispersion").setAccessType("inputOutput").setType(fieldObject.TYPE_SFVEC3F).setValue("0.98 1 1.033"))
@@ -114,8 +114,8 @@ public class flowers7 {
                 .addField(new fieldObject().setName("d").setType(fieldObject.TYPE_SFFLOAT).setAccessType("inputOutput").setValue("20"))
                 .addField(new fieldObject().setName("tdelta").setType(fieldObject.TYPE_SFFLOAT).setAccessType("inputOutput").setValue("0"))
                 .addField(new fieldObject().setName("pdelta").setType(fieldObject.TYPE_SFFLOAT).setAccessType("inputOutput").setValue("0"))
-                .addParts(new ShaderPartObject().setUrl(new MFStringObject(MFString12())).setType("VERTEX"))
-                .addParts(new ShaderPartObject().setUrl(new MFStringObject(MFString13())).setType("FRAGMENT"))))
+                .addParts(new ShaderPartObject().setUrl(new MFStringObject(new MFString12().getArray())).setType("VERTEX"))
+                .addParts(new ShaderPartObject().setUrl(new MFStringObject(new MFString13().getArray())).setType("FRAGMENT"))))
             .setGeometry(new SphereObject().setSolid(false).setRadius(20f))))
         .addChild(new ScriptObject().setDEF("UrlSelector").setDirectOutput(true)
           .addField(new fieldObject().setName("frontUrls").setType(fieldObject.TYPE_MFSTRING).setAccessType("initializeOnly").setValue("\"cubemap/all_probes/beach_cross/beach_front.png\" \"cubemap/all_probes/building_cross/building_front.png\" \"cubemap/all_probes/campus_cross/campus_front.png\" \"cubemap/all_probes/galileo_cross/galileo_front.png\" \"cubemap/all_probes/grace_cross/grace_front.png\" \"cubemap/all_probes/kitchen_cross/kitchen_front.png\" \"cubemap/all_probes/rnl_cross/rnl_front.png\" \"cubemap/all_probes/stpeters_cross/stpeters_front.png\" \"cubemap/all_probes/uffizi_cross/uffizi_front.png\""))
@@ -215,60 +215,74 @@ public class flowers7 {
         .addChild(new ROUTEObject().setFromNode("Animate").setFromField("pdelta").setToNode("ComposedShader").setToField("pdelta"))
         .addChild(new ROUTEObject().setFromNode("Animate").setFromField("tdelta").setToNode("ComposedShader").setToField("tdelta")))      ;
     }
-private MFStringObject MFString0() {
-  return new MFStringObject( new String[] {"cubemap/all_probes/beach_cross/beach_left.png"})
-;
+protected class MFString0 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"cubemap/all_probes/beach_cross/beach_left.png"});
+  }
 }
-private MFStringObject MFString1() {
-  return new MFStringObject( new String[] {"cubemap/all_probes/beach_cross/beach_right.png"})
-;
+protected class MFString1 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"cubemap/all_probes/beach_cross/beach_right.png"});
+  }
 }
-private MFStringObject MFString2() {
-  return new MFStringObject( new String[] {"cubemap/all_probes/beach_cross/beach_front.png"})
-;
+protected class MFString2 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"cubemap/all_probes/beach_cross/beach_front.png"});
+  }
 }
-private MFStringObject MFString3() {
-  return new MFStringObject( new String[] {"cubemap/all_probes/beach_cross/beach_back.png"})
-;
+protected class MFString3 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"cubemap/all_probes/beach_cross/beach_back.png"});
+  }
 }
-private MFStringObject MFString4() {
-  return new MFStringObject( new String[] {"cubemap/all_probes/beach_cross/beach_top.png"})
-;
+protected class MFString4 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"cubemap/all_probes/beach_cross/beach_top.png"});
+  }
 }
-private MFStringObject MFString5() {
-  return new MFStringObject( new String[] {"cubemap/all_probes/beach_cross/beach_bottom.png"})
-;
+protected class MFString5 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"cubemap/all_probes/beach_cross/beach_bottom.png"});
+  }
 }
-private MFStringObject MFString6() {
-  return new MFStringObject( new String[] {"cubemap/all_probes/beach_cross/beach_back.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_back.png"})
-;
+protected class MFString6 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"cubemap/all_probes/beach_cross/beach_back.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_back.png"});
+  }
 }
-private MFStringObject MFString7() {
-  return new MFStringObject( new String[] {"cubemap/all_probes/beach_cross/beach_bottom.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_bottom.png"})
-;
+protected class MFString7 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"cubemap/all_probes/beach_cross/beach_bottom.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_bottom.png"});
+  }
 }
-private MFStringObject MFString8() {
-  return new MFStringObject( new String[] {"cubemap/all_probes/beach_cross/beach_front.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_front.png"})
-;
+protected class MFString8 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"cubemap/all_probes/beach_cross/beach_front.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_front.png"});
+  }
 }
-private MFStringObject MFString9() {
-  return new MFStringObject( new String[] {"cubemap/all_probes/beach_cross/beach_left.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_left.png"})
-;
+protected class MFString9 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"cubemap/all_probes/beach_cross/beach_left.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_left.png"});
+  }
 }
-private MFStringObject MFString10() {
-  return new MFStringObject( new String[] {"cubemap/all_probes/beach_cross/beach_right.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_right.png"})
-;
+protected class MFString10 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"cubemap/all_probes/beach_cross/beach_right.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_right.png"});
+  }
 }
-private MFStringObject MFString11() {
-  return new MFStringObject( new String[] {"cubemap/all_probes/beach_cross/beach_top.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_top.png"})
-;
+protected class MFString11 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"cubemap/all_probes/beach_cross/beach_top.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_top.png"});
+  }
 }
-private MFStringObject MFString12() {
-  return new MFStringObject( new String[] {"x3dom_sphere.vs","http://coderextreme.net/X3DJSONLD/x3dom_sphere.vs"})
-;
+protected class MFString12 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"x3dom_sphere.vs","http://coderextreme.net/X3DJSONLD/x3dom_sphere.vs"});
+  }
 }
-private MFStringObject MFString13() {
-  return new MFStringObject( new String[] {"sphere.fs","http://coderextreme.net/X3DJSONLD/sphere.fs"})
-;
+protected class MFString13 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"sphere.fs","http://coderextreme.net/X3DJSONLD/sphere.fs"});
+  }
 }
 }

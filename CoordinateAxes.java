@@ -108,8 +108,8 @@ public class CoordinateAxes {
                 .addChild(new ShapeObject()
                   .setAppearance(new AppearanceObject().setDEF("LABEL_APPEARANCE")
                     .setMaterial(new MaterialObject().setDiffuseColor(new float[] {1f,1f,0.3f}).setEmissiveColor(new float[] {0.33f,0.33f,0.1f})))
-                  .setGeometry(new TextObject().setString(new MFStringObject(MFString0()))
-                    .setFontStyle(new FontStyleObject().setDEF("LABEL_FONT").setFamily(new MFStringObject(MFString1())).setJustify(new MFStringObject(MFString2())).setSize(0.2f)))))))
+                  .setGeometry(new TextObject().setString(new MFStringObject(new MFString0().getArray()))
+                    .setFontStyle(new FontStyleObject().setDEF("LABEL_FONT").setFamily(new MFStringObject(new MFString1().getArray())).setJustify(new MFStringObject(new MFString2().getArray())).setSize(0.2f)))))))
           .addChild(new TransformObject().setRotation(new float[] {0f,0f,1f,-1.57079f})
             .addComments(new CommentsBlock("Horizontal X arrow and label"))
             .addChild(new GroupObject()
@@ -127,7 +127,7 @@ public class CoordinateAxes {
                 .addChild(new BillboardObject()
                   .addChild(new ShapeObject()
                     .setAppearance(new AppearanceObject().setUSE("LABEL_APPEARANCE"))
-                    .setGeometry(new TextObject().setString(new MFStringObject(MFString3()))
+                    .setGeometry(new TextObject().setString(new MFStringObject(new MFString3().getArray()))
                       .setFontStyle(new FontStyleObject().setUSE("LABEL_FONT"))))))))
           .addChild(new TransformObject().setRotation(new float[] {1f,0f,0f,1.57079f})
             .addComments(new CommentsBlock("Perpendicular Z arrow and label, note right-hand rule"))
@@ -146,27 +146,32 @@ public class CoordinateAxes {
                 .addChild(new BillboardObject()
                   .addChild(new ShapeObject()
                     .setAppearance(new AppearanceObject().setUSE("LABEL_APPEARANCE"))
-                    .setGeometry(new TextObject().setString(new MFStringObject(MFString4()))
+                    .setGeometry(new TextObject().setString(new MFStringObject(new MFString4().getArray()))
                       .setFontStyle(new FontStyleObject().setUSE("LABEL_FONT"))))))))))      ;
     }
-private MFStringObject MFString0() {
-  return new MFStringObject( new String[] {"Y"})
-;
+protected class MFString0 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"Y"});
+  }
 }
-private MFStringObject MFString1() {
-  return new MFStringObject( new String[] {"SANS"})
-;
+protected class MFString1 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"SANS"});
+  }
 }
-private MFStringObject MFString2() {
-  return new MFStringObject( new String[] {"MIDDLE","MIDDLE"})
-;
+protected class MFString2 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"MIDDLE","MIDDLE"});
+  }
 }
-private MFStringObject MFString3() {
-  return new MFStringObject( new String[] {"X"})
-;
+protected class MFString3 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"X"});
+  }
 }
-private MFStringObject MFString4() {
-  return new MFStringObject( new String[] {"Z"})
-;
+protected class MFString4 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"Z"});
+  }
 }
 }

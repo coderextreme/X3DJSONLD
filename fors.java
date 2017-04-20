@@ -104,7 +104,7 @@ public class fors {
                   .addComments(new CommentsBlock("comment before Material"))
                   .addComments(new CommentsBlock("comment after Material"))
                   .setMaterial(new MaterialObject().setDiffuseColor(new float[] {1f,0f,0f})))))
-            .addChild(new PositionInterpolatorObject().setDEF("NodePosition").setKey(new MFFloatObject(MFFloat0())).setKeyValue(new MFVec3fObject(MFVec3f1())))
+            .addChild(new PositionInterpolatorObject().setDEF("NodePosition").setKey(new MFFloatObject(new MFFloat0().getArray())).setKeyValue(new MFVec3fObject(new MFVec3f1().getArray())))
             .addChild(new ScriptObject().setDEF("MoveBall")
               .addField(new fieldObject().setName("translation").setAccessType("inputOutput").setType(fieldObject.TYPE_SFVEC3F).setValue("50 50 0"))
               .addField(new fieldObject().setName("old").setAccessType("inputOutput").setType(fieldObject.TYPE_SFVEC3F).setValue("0 0 0"))
@@ -129,7 +129,7 @@ public class fors {
             .addField(new fieldObject().setName("positionB").setAccessType("inputOnly").setType(fieldObject.TYPE_SFVEC3F)))
           .setProtoBody(new ProtoBodyObject()
             .addChild(new ShapeObject()
-              .setGeometry(new ExtrusionObject().setDEF("extrusion").setCreaseAngle(0.785f).setCrossSection(new MFVec2fObject(MFVec2f2())).setSpine(new MFVec3fObject(MFVec3f3())))
+              .setGeometry(new ExtrusionObject().setDEF("extrusion").setCreaseAngle(0.785f).setCrossSection(new MFVec2fObject(new MFVec2f2().getArray())).setSpine(new MFVec3fObject(new MFVec3f3().getArray())))
               .setAppearance(new AppearanceObject()
                 .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0f,1f,0f}))))
             .addChild(new ScriptObject().setDEF("MoveCylinder")
@@ -174,20 +174,24 @@ public class fors {
         .addChild(new ROUTEObject().setFromNode("nodeA").setFromField("position").setToNode("linkA").setToField("positionA"))
         .addChild(new ROUTEObject().setFromNode("nodeB").setFromField("position").setToNode("linkA").setToField("positionB")))      ;
     }
-private MFFloatObject MFFloat0() {
-  return new MFFloatObject( new float[] {0f,1f})
-;
+protected class MFFloat0 {
+  protected MFFloatObject getArray() {
+    return new MFFloatObject(new float[] {0f,1f});
+  }
 }
-private MFVec3fObject MFVec3f1() {
-  return new MFVec3fObject( new float[] {0f,0f,0f,0f,5f,0f})
-;
+protected class MFVec3f1 {
+  protected MFVec3fObject getArray() {
+    return new MFVec3fObject(new float[] {0f,0f,0f,0f,5f,0f});
+  }
 }
-private MFVec2fObject MFVec2f2() {
-  return new MFVec2fObject( new float[] {1f,0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0f,-1f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1f,0f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0f,1f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1f,0f})
-;
+protected class MFVec2f2 {
+  protected MFVec2fObject getArray() {
+    return new MFVec2fObject(new float[] {1f,0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0f,-1f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1f,0f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0f,1f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1f,0f});
+  }
 }
-private MFVec3fObject MFVec3f3() {
-  return new MFVec3fObject( new float[] {0f,-50f,0f,0f,0f,0f,0f,50f,0f})
-;
+protected class MFVec3f3 {
+  protected MFVec3fObject getArray() {
+    return new MFVec3fObject(new float[] {0f,-50f,0f,0f,0f,0f,0f,50f,0f});
+  }
 }
 }

@@ -87,7 +87,7 @@ public class rubik {
         .addMeta(new metaObject().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/rubik.x3d"))
         .addMeta(new metaObject().setName("description").setContent("a kind of rubik cube with spheres")))
       .setScene(new SceneObject()
-        .addChild(new NavigationInfoObject().setType(new MFStringObject(MFString0())))
+        .addChild(new NavigationInfoObject().setType(new MFStringObject(new MFString0().getArray())))
         .addChild(new ViewpointObject().setDescription("Rubiks Cube").setPosition(new float[] {0f,0f,12f}))
         .addChild(new ProtoDeclareObject().setName("sphere")
           .setProtoInterface(new ProtoInterfaceObject()
@@ -142,8 +142,9 @@ public class rubik {
         .addChild(new ProtoInstanceObject().setName("twentyseven")
           .addFieldValue(new fieldValueObject().setName("ttranslation").setValue("0 0 0"))))      ;
     }
-private MFStringObject MFString0() {
-  return new MFStringObject( new String[] {"EXAMINE"})
-;
+protected class MFString0 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"EXAMINE"});
+  }
 }
 }

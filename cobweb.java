@@ -87,9 +87,9 @@ public class cobweb {
         .addMeta(new metaObject().setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new metaObject().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/cobweb.x3d")))
       .setScene(new SceneObject()
-        .addChild(new NavigationInfoObject().setType(new MFStringObject(MFString0())))
+        .addChild(new NavigationInfoObject().setType(new MFStringObject(new MFString0().getArray())))
         .addChild(new ViewpointObject().setPosition(new float[] {0f,0f,4f}).setOrientation(new float[] {1f,0f,0f,0f}).setDescription("Bubbles in action"))
-        .addChild(new BackgroundObject().setBackUrl(new MFStringObject(MFString1())).setBottomUrl(new MFStringObject(MFString2())).setFrontUrl(new MFStringObject(MFString3())).setLeftUrl(new MFStringObject(MFString4())).setRightUrl(new MFStringObject(MFString5())).setTopUrl(new MFStringObject(MFString6())))
+        .addChild(new BackgroundObject().setBackUrl(new MFStringObject(new MFString1().getArray())).setBottomUrl(new MFStringObject(new MFString2().getArray())).setFrontUrl(new MFStringObject(new MFString3().getArray())).setLeftUrl(new MFStringObject(new MFString4().getArray())).setRightUrl(new MFStringObject(new MFString5().getArray())).setTopUrl(new MFStringObject(new MFString6().getArray())))
         .addChild(new ProtoDeclareObject().setName("Bubble")
           .setProtoBody(new ProtoBodyObject()
             .addChild(new TransformObject().setDEF("transform")
@@ -148,32 +148,39 @@ public class cobweb {
         .addChild(new ProtoInstanceObject().setName("Bubble").setDEF("bubbleC"))
         .addChild(new ProtoInstanceObject().setName("Bubble").setDEF("bubbleD")))      ;
     }
-private MFStringObject MFString0() {
-  return new MFStringObject( new String[] {"EXAMINE"})
-;
+protected class MFString0 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"EXAMINE"});
+  }
 }
-private MFStringObject MFString1() {
-  return new MFStringObject( new String[] {"cubemap/BK.png","http://coderextreme.net/X3DJSONLD/cubemap/BK.png"})
-;
+protected class MFString1 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"cubemap/BK.png","http://coderextreme.net/X3DJSONLD/cubemap/BK.png"});
+  }
 }
-private MFStringObject MFString2() {
-  return new MFStringObject( new String[] {"cubemap/BT.png","http://coderextreme.net/X3DJSONLD/cubemap/BT.png"})
-;
+protected class MFString2 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"cubemap/BT.png","http://coderextreme.net/X3DJSONLD/cubemap/BT.png"});
+  }
 }
-private MFStringObject MFString3() {
-  return new MFStringObject( new String[] {"cubemap/FR.png","http://coderextreme.net/X3DJSONLD/cubemap/FR.png"})
-;
+protected class MFString3 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"cubemap/FR.png","http://coderextreme.net/X3DJSONLD/cubemap/FR.png"});
+  }
 }
-private MFStringObject MFString4() {
-  return new MFStringObject( new String[] {"cubemap/LF.png","http://coderextreme.net/X3DJSONLD/cubemap/LF.png"})
-;
+protected class MFString4 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"cubemap/LF.png","http://coderextreme.net/X3DJSONLD/cubemap/LF.png"});
+  }
 }
-private MFStringObject MFString5() {
-  return new MFStringObject( new String[] {"cubemap/RT.png","http://coderextreme.net/X3DJSONLD/cubemap/RT.png"})
-;
+protected class MFString5 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"cubemap/RT.png","http://coderextreme.net/X3DJSONLD/cubemap/RT.png"});
+  }
 }
-private MFStringObject MFString6() {
-  return new MFStringObject( new String[] {"cubemap/TP.png","http://coderextreme.net/X3DJSONLD/cubemap/TP.png"})
-;
+protected class MFString6 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"cubemap/TP.png","http://coderextreme.net/X3DJSONLD/cubemap/TP.png"});
+  }
 }
 }

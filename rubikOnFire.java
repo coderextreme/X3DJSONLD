@@ -87,7 +87,7 @@ public class rubikOnFire {
         .addMeta(new metaObject().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/rubikOnFire.x3d"))
         .addMeta(new metaObject().setName("description").setContent("a white rubik cube")))
       .setScene(new SceneObject()
-        .addChild(new NavigationInfoObject().setType(new MFStringObject(MFString0())))
+        .addChild(new NavigationInfoObject().setType(new MFStringObject(new MFString0().getArray())))
         .addChild(new ViewpointObject().setDescription("Rubiks Cube on Fire").setPosition(new float[] {0f,0f,12f}))
         .addChild(new ProtoDeclareObject().setName("anyShape")
           .setProtoInterface(new ProtoInterfaceObject()
@@ -171,8 +171,9 @@ public class rubikOnFire {
           .addFieldValue(new fieldValueObject().setName("myShape")
             .addChild(new BoxObject().setSize(new float[] {1f,1f,1f})))))      ;
     }
-private MFStringObject MFString0() {
-  return new MFStringObject( new String[] {"EXAMINE"})
-;
+protected class MFString0 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"EXAMINE"});
+  }
 }
 }

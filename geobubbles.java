@@ -91,14 +91,14 @@ public class geobubbles {
         .addComments(new CommentsBlock("Viewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views'/"))
         .addComments(new CommentsBlock("PositionInterpolator DEF='TourPosition' key='0 1' keyValue='-0.5 -0.5 4 -0.5 0.5 4'/"))
         .addChild(new GeoViewpointObject().setDEF("Tour").setPosition(new double[] {0d,0d,4d}).setOrientation(new float[] {1f,0f,0f,0f}).setDescription("Tour Views"))
-        .addChild(new BackgroundObject().setBackUrl(new MFStringObject(MFString0())).setBottomUrl(new MFStringObject(MFString1())).setFrontUrl(new MFStringObject(MFString2())).setLeftUrl(new MFStringObject(MFString3())).setRightUrl(new MFStringObject(MFString4())).setTopUrl(new MFStringObject(MFString5())))
+        .addChild(new BackgroundObject().setBackUrl(new MFStringObject(new MFString0().getArray())).setBottomUrl(new MFStringObject(new MFString1().getArray())).setFrontUrl(new MFStringObject(new MFString2().getArray())).setLeftUrl(new MFStringObject(new MFString3().getArray())).setRightUrl(new MFStringObject(new MFString4().getArray())).setTopUrl(new MFStringObject(new MFString5().getArray())))
         .addChild(new TransformObject()
           .addChild(new ShapeObject()
             .setGeometry(new SphereObject())
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0.7f,0.7f,0.7f}).setSpecularColor(new float[] {0.5f,0.5f,0.5f})))))
         .addChild(new TimeSensorObject().setDEF("TourTime").setCycleInterval(5).setLoop(true))
-        .addChild(new GeoPositionInterpolatorObject().setDEF("TourPosition").setKey(new MFFloatObject(MFFloat6())).setKeyValue(new MFVec3dObject(MFVec3d7())))
+        .addChild(new GeoPositionInterpolatorObject().setDEF("TourPosition").setKey(new MFFloatObject(new MFFloat6().getArray())).setKeyValue(new MFVec3dObject(new MFVec3d7().getArray())))
         .addChild(new ScriptObject().setDEF("RandomTourTime")
           .addField(new fieldObject().setName("set_cycle").setAccessType("inputOnly").setType(fieldObject.TYPE_SFTIME))
           .addField(new fieldObject().setName("val").setAccessType("inputOutput").setType(fieldObject.TYPE_SFFLOAT).setValue("0"))
@@ -127,36 +127,44 @@ public class geobubbles {
         .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("fraction_changed").setToNode("TourPosition").setToField("set_fraction"))
         .addChild(new ROUTEObject().setFromNode("TourPosition").setFromField("value_changed").setToNode("Tour").setToField("set_position")))      ;
     }
-private MFStringObject MFString0() {
-  return new MFStringObject( new String[] {"cubemap/BK.png","http://coderextreme.net/X3DJSONLD/cubemap/BK.png"})
-;
+protected class MFString0 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"cubemap/BK.png","http://coderextreme.net/X3DJSONLD/cubemap/BK.png"});
+  }
 }
-private MFStringObject MFString1() {
-  return new MFStringObject( new String[] {"cubemap/BT.png","http://coderextreme.net/X3DJSONLD/cubemap/BT.png"})
-;
+protected class MFString1 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"cubemap/BT.png","http://coderextreme.net/X3DJSONLD/cubemap/BT.png"});
+  }
 }
-private MFStringObject MFString2() {
-  return new MFStringObject( new String[] {"cubemap/FR.png","http://coderextreme.net/X3DJSONLD/cubemap/FR.png"})
-;
+protected class MFString2 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"cubemap/FR.png","http://coderextreme.net/X3DJSONLD/cubemap/FR.png"});
+  }
 }
-private MFStringObject MFString3() {
-  return new MFStringObject( new String[] {"cubemap/LF.png","http://coderextreme.net/X3DJSONLD/cubemap/LF.png"})
-;
+protected class MFString3 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"cubemap/LF.png","http://coderextreme.net/X3DJSONLD/cubemap/LF.png"});
+  }
 }
-private MFStringObject MFString4() {
-  return new MFStringObject( new String[] {"cubemap/RT.png","http://coderextreme.net/X3DJSONLD/cubemap/RT.png"})
-;
+protected class MFString4 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"cubemap/RT.png","http://coderextreme.net/X3DJSONLD/cubemap/RT.png"});
+  }
 }
-private MFStringObject MFString5() {
-  return new MFStringObject( new String[] {"cubemap/TP.png","http://coderextreme.net/X3DJSONLD/cubemap/TP.png"})
-;
+protected class MFString5 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"cubemap/TP.png","http://coderextreme.net/X3DJSONLD/cubemap/TP.png"});
+  }
 }
-private MFFloatObject MFFloat6() {
-  return new MFFloatObject( new float[] {0f,1f})
-;
+protected class MFFloat6 {
+  protected MFFloatObject getArray() {
+    return new MFFloatObject(new float[] {0f,1f});
+  }
 }
-private MFVec3dObject MFVec3d7() {
-  return new MFVec3dObject( new double[] {0.0015708d,0d,4d,0d,0.0015708d,4d})
-;
+protected class MFVec3d7 {
+  protected MFVec3dObject getArray() {
+    return new MFVec3dObject(new double[] {0.0015708d,0d,4d,0d,0.0015708d,4d});
+  }
 }
 }

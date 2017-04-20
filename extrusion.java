@@ -90,7 +90,7 @@ public class extrusion {
       .setScene(new SceneObject()
         .addChild(new GroupObject()
           .addChild(new ShapeObject()
-            .setGeometry(new ExtrusionObject().setDEF("extrusion").setSpine(new MFVec3fObject(MFVec3f0())).setCreaseAngle(0.785f).setCrossSection(new MFVec2fObject(MFVec2f1())))
+            .setGeometry(new ExtrusionObject().setDEF("extrusion").setSpine(new MFVec3fObject(new MFVec3f0().getArray())).setCreaseAngle(0.785f).setCrossSection(new MFVec2fObject(new MFVec2f1().getArray())))
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0f,1f,0f}))))
           .addChild(new TimeSensorObject().setDEF("TourTime").setLoop(true))
@@ -112,12 +112,14 @@ public class extrusion {
           .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("cycleTime").setToNode("MoveCylinder").setToField("set_cycle"))
           .addChild(new ROUTEObject().setFromNode("MoveCylinder").setFromField("spine").setToNode("extrusion").setToField("set_spine"))))      ;
     }
-private MFVec3fObject MFVec3f0() {
-  return new MFVec3fObject( new float[] {-50f,-50f,0f,50f,50f,0f})
-;
+protected class MFVec3f0 {
+  protected MFVec3fObject getArray() {
+    return new MFVec3fObject(new float[] {-50f,-50f,0f,50f,50f,0f});
+  }
 }
-private MFVec2fObject MFVec2f1() {
-  return new MFVec2fObject( new float[] {1f,0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0f,-1f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1f,0f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0f,1f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1f,0f})
-;
+protected class MFVec2f1 {
+  protected MFVec2fObject getArray() {
+    return new MFVec2fObject(new float[] {1f,0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0f,-1f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1f,0f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0f,1f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1f,0f});
+  }
 }
 }

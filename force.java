@@ -101,11 +101,11 @@ public class force {
                   .setMaterial(new MaterialObject().setDiffuseColor(new float[] {1f,0f,0f}))))
               .addChild(new TransformObject().setTranslation(new float[] {1f,0f,0f})
                 .addChild(new ShapeObject()
-                  .setGeometry(new TextObject().setString(new MFStringObject(MFString0()))
-                    .setFontStyle(new FontStyleObject().setJustify(new MFStringObject(MFString1())).setSize(5f)))
+                  .setGeometry(new TextObject().setString(new MFStringObject(new MFString0().getArray()))
+                    .setFontStyle(new FontStyleObject().setJustify(new MFStringObject(new MFString1().getArray())).setSize(5f)))
                   .setAppearance(new AppearanceObject()
                     .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0f,0f,1f}))))))
-            .addChild(new PositionInterpolatorObject().setDEF("NodePosition").setKey(new MFFloatObject(MFFloat2())).setKeyValue(new MFVec3fObject(MFVec3f3())))
+            .addChild(new PositionInterpolatorObject().setDEF("NodePosition").setKey(new MFFloatObject(new MFFloat2().getArray())).setKeyValue(new MFVec3fObject(new MFVec3f3().getArray())))
             .addChild(new ScriptObject().setDEF("MoveBall")
               .addField(new fieldObject().setName("translation").setAccessType("inputOutput").setType(fieldObject.TYPE_SFVEC3F).setValue("50 50 0"))
               .addField(new fieldObject().setName("old").setAccessType("inputOutput").setType(fieldObject.TYPE_SFVEC3F).setValue("0 0 0"))
@@ -130,7 +130,7 @@ public class force {
             .addField(new fieldObject().setName("positionB").setAccessType("inputOnly").setType(fieldObject.TYPE_SFVEC3F)))
           .setProtoBody(new ProtoBodyObject()
             .addChild(new ShapeObject()
-              .setGeometry(new ExtrusionObject().setDEF("extrusion").setCreaseAngle(0.785f).setCrossSection(new MFVec2fObject(MFVec2f4())).setSpine(new MFVec3fObject(MFVec3f5())))
+              .setGeometry(new ExtrusionObject().setDEF("extrusion").setCreaseAngle(0.785f).setCrossSection(new MFVec2fObject(new MFVec2f4().getArray())).setSpine(new MFVec3fObject(new MFVec3f5().getArray())))
               .setAppearance(new AppearanceObject()
                 .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0f,1f,0f}))))
             .addChild(new ScriptObject().setDEF("MoveCylinder")
@@ -215,28 +215,34 @@ public class force {
         .addChild(new ROUTEObject().setFromNode("nodeA").setFromField("position").setToNode("linkC").setToField("positionA"))
         .addChild(new ROUTEObject().setFromNode("nodeD").setFromField("position").setToNode("linkC").setToField("positionB")))      ;
     }
-private MFStringObject MFString0() {
-  return new MFStringObject( new String[] {"Node"})
-;
+protected class MFString0 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"Node"});
+  }
 }
-private MFStringObject MFString1() {
-  return new MFStringObject( new String[] {"MIDDLE","MIDDLE"})
-;
+protected class MFString1 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"MIDDLE","MIDDLE"});
+  }
 }
-private MFFloatObject MFFloat2() {
-  return new MFFloatObject( new float[] {0f,1f})
-;
+protected class MFFloat2 {
+  protected MFFloatObject getArray() {
+    return new MFFloatObject(new float[] {0f,1f});
+  }
 }
-private MFVec3fObject MFVec3f3() {
-  return new MFVec3fObject( new float[] {0f,0f,0f,0f,5f,0f})
-;
+protected class MFVec3f3 {
+  protected MFVec3fObject getArray() {
+    return new MFVec3fObject(new float[] {0f,0f,0f,0f,5f,0f});
+  }
 }
-private MFVec2fObject MFVec2f4() {
-  return new MFVec2fObject( new float[] {1f,0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0f,-1f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1f,0f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0f,1f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1f,0f})
-;
+protected class MFVec2f4 {
+  protected MFVec2fObject getArray() {
+    return new MFVec2fObject(new float[] {1f,0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0f,-1f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1f,0f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0f,1f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1f,0f});
+  }
 }
-private MFVec3fObject MFVec3f5() {
-  return new MFVec3fObject( new float[] {0f,-50f,0f,0f,50f,0f})
-;
+protected class MFVec3f5 {
+  protected MFVec3fObject getArray() {
+    return new MFVec3fObject(new float[] {0f,-50f,0f,0f,50f,0f});
+  }
 }
 }

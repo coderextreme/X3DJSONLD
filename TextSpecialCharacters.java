@@ -93,7 +93,7 @@ public class TextSpecialCharacters {
         .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new metaObject().setName("license").setContent("../license.html")))
       .setScene(new SceneObject()
-        .addChild(new BackgroundObject().setSkyColor(new MFColorObject(MFColor0())))
+        .addChild(new BackgroundObject().setSkyColor(new MFColorObject(new MFColor0().getArray())))
         .addChild(new ViewpointObject().setDescription("Default View").setPosition(new float[] {0f,0f,15f}))
         .addChild(new ShapeObject()
           .addComments(new CommentsBlock("Empty string \"\" means to skip a line"))
@@ -104,21 +104,24 @@ public class TextSpecialCharacters {
           .addComments(new CommentsBlock("quotation \" can be used as part of X3D string if escaped with backslash: \\\""))
           .addComments(new CommentsBlock("backslash is used as escape character for \" (and itself) in X3D"))
           .addComments(new CommentsBlock("character entities are listed in HTML specification and are good for any XML"))
-          .setGeometry(new TextObject().setDEF("DefaultText").setString(new MFStringObject(MFString1()))
-            .setFontStyle(new FontStyleObject().setDEF("CenteredFontStyle").setJustify(new MFStringObject(MFString2()))))
+          .setGeometry(new TextObject().setDEF("DefaultText").setString(new MFStringObject(new MFString1().getArray()))
+            .setFontStyle(new FontStyleObject().setDEF("CenteredFontStyle").setJustify(new MFStringObject(new MFString2().getArray()))))
           .setAppearance(new AppearanceObject()
             .setMaterial(new MaterialObject().setDEF("DefaultMaterial").setDiffuseColor(new float[] {0.2f,0.2f,0.2f})))))      ;
     }
-private MFColorObject MFColor0() {
-  return new MFColorObject( new float[] {1f,1f,1f})
-;
+protected class MFColor0 {
+  protected MFColorObject getArray() {
+    return new MFColorObject(new float[] {1f,1f,1f});
+  }
 }
-private MFStringObject MFString1() {
-  return new MFStringObject( new String[] {"Character entity substitutions:","empty string \\\"\\\" skips a line:","","apostrophe ' is &amp;apos;","ampersand &amp; is &amp;amp;","quote mark \\\" is &amp;quot;","backslash \\ is X3D escape character","double backslash \\\\\\\\ is X3D backslash \\ character","Pi &amp;#928; is &amp;#928; XML character entity"})
-;
+protected class MFString1 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"Character entity substitutions:","empty string \\\"\\\" skips a line:","","apostrophe ' is &amp;apos;","ampersand &amp; is &amp;amp;","quote mark \\\" is &amp;quot;","backslash \\ is X3D escape character","double backslash \\\\\\\\ is X3D backslash \\ character","Pi &amp;#928; is &amp;#928; XML character entity"});
+  }
 }
-private MFStringObject MFString2() {
-  return new MFStringObject( new String[] {"MIDDLE","MIDDLE"})
-;
+protected class MFString2 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"MIDDLE","MIDDLE"});
+  }
 }
 }
