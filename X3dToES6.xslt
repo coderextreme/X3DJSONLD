@@ -2511,161 +2511,161 @@ POSSIBILITY OF SUCH DAMAGE.
 
     <xsl:template name="list-component-imports">
 
-		<xsl:text>import from 'java.util';</xsl:text><xsl:text>&#10;</xsl:text>
+		<xsl:text>import * as java.util from 'java.util';</xsl:text><xsl:text>&#10;</xsl:text>
 		<xsl:if test="//comment() or //*[name()='X3D'] or //*[name()='Scene'] or //*[name()='head'] or //*[name()='field'] or //*[name()='fieldValue'] or 
 					  //*[name()='component'] or //*[name()='unit'] or //*[name()='meta'] or //*[name()='IS'] or //*[name()='connect'] or //*[name()='ROUTE'] or 
 					  //*[starts-with(local-name(),'Metadata')] or //*[contains(local-name(),'Proto')] or //*[name()='WorldInfo']">
-			<xsl:text>import from 'org.web3d.x3d.jsail.Core';</xsl:text>
+			<xsl:text>import * from 'org.web3d.x3d.jsail.Core';</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
 		<xsl:if test="//*[starts-with(local-name(),'CAD')] or //*[contains(local-name(),'QuadSet')]">
-			<xsl:text>import from 'org.web3d.x3d.jsail.CADGeometry';</xsl:text>
+			<xsl:text>import * from 'org.web3d.x3d.jsail.CADGeometry';</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
 		<xsl:if test="//*[contains(local-name(),'CubeMap')]">
-			<xsl:text>import from 'org.web3d.x3d.jsail.CubeMapTexturing';</xsl:text>
+			<xsl:text>import * from 'org.web3d.x3d.jsail.CubeMapTexturing';</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
 		<xsl:if test="//*[starts-with(local-name(),'DISEntity')] or //EspduTransform or //*[contains(local-name(),'Pdu')]">
-			<xsl:text>import from 'org.web3d.x3d.jsail.DIS';</xsl:text>
+			<xsl:text>import * from 'org.web3d.x3d.jsail.DIS';</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
 		<xsl:if test="//*[contains(local-name(),'Background')] or //*[contains(local-name(),'Fog')]">
-			<xsl:text>import from 'org.web3d.x3d.jsail.EnvironmentalEffects';</xsl:text>
+			<xsl:text>import * from 'org.web3d.x3d.jsail.EnvironmentalEffects';</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
 		<xsl:if test="//*[name()='ProximitySensor'] or //*[name()='TransformSensorObject'] or //*[name()='VisibilitySensor']">
-			<xsl:text>import from 'org.web3d.x3d.jsail.EnvironmentalSensor';</xsl:text>
+			<xsl:text>import * from 'org.web3d.x3d.jsail.EnvironmentalSensor';</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
 		<xsl:if test="//*[starts-with(local-name(),'Boolean')] or //*[contains(local-name(),'Sequencer')] or //*[contains(local-name(),'Trigger')]">
-			<xsl:text>import from 'org.web3d.x3d.jsail.EventUtilities';</xsl:text>
+			<xsl:text>import * from 'org.web3d.x3d.jsail.EventUtilities';</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
 		<xsl:if test="true()">
-			<xsl:text>import from 'org.web3d.x3d.jsail.fields';</xsl:text>
+			<xsl:text>import * from 'org.web3d.x3d.jsail.fields';</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
 		<xsl:if test="//*[contains(local-name(),'Chaser')] or //*[contains(local-name(),'Damper')]">
-			<xsl:text>import from 'org.web3d.x3d.jsail.Followers';</xsl:text>
+			<xsl:text>import * from 'org.web3d.x3d.jsail.Followers';</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
 		<xsl:if test="//*[contains(local-name(),'2D')]">
-			<xsl:text>import from 'org.web3d.x3d.jsail.Geometry2D';</xsl:text>
+			<xsl:text>import * from 'org.web3d.x3d.jsail.Geometry2D';</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
 		<xsl:if test="//*[name()='Box'] or //*[name()='Cone'] or //*[name()='Cylinder'] or //*[name()='ElevationGrid'] or
 					  //*[name()='Extrusion'] or //*[name()='IndexedFaceSet'] or //*[name()='Sphere']">
-			<xsl:text>import from 'org.web3d.x3d.jsail.Geometry3D';</xsl:text>
+			<xsl:text>import * from 'org.web3d.x3d.jsail.Geometry3D';</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
 		<xsl:if test="//*[starts-with(local-name(),'Geo')]">
-			<xsl:text>import from 'org.web3d.x3d.jsail.Geospatial';</xsl:text>
+			<xsl:text>import * from 'org.web3d.x3d.jsail.Geospatial';</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
 		<xsl:if test="//*[name()='Group'] or //*[name()='StaticGroup'] or //*[name()='Switch'] or //*[name()='Transform']">
-			<xsl:text>import from 'org.web3d.x3d.jsail.Grouping';</xsl:text>
+			<xsl:text>import * from 'org.web3d.x3d.jsail.Grouping';</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
 		<xsl:if test="//*[starts-with(local-name(),'HAnim')]">
-			<xsl:text>import from 'org.web3d.x3d.jsail.HAnim';</xsl:text>
+			<xsl:text>import * from 'org.web3d.x3d.jsail.HAnim';</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
 		<xsl:if test="//*[contains(local-name(),'Interpolator') and not(starts-with(local-name(),'NURBS'))] or //*[name()='EaseInEaseOut']">
-			<xsl:text>import from 'org.web3d.x3d.jsail.Interpolation';</xsl:text>
+			<xsl:text>import * from 'org.web3d.x3d.jsail.Interpolation';</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
 		<xsl:if test="//*[name()='KeySensor'] or //*[name()='StringSensor']">
-			<xsl:text>import from 'org.web3d.x3d.jsail.KeyDeviceSensor';</xsl:text>
+			<xsl:text>import * from 'org.web3d.x3d.jsail.KeyDeviceSensor';</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
 		<xsl:if test="//*[name()='Layer'] or //*[name()='LayerSet'] or //*[name()='Viewport']">
-			<xsl:text>import from 'org.web3d.x3d.jsail.Layering';</xsl:text>
+			<xsl:text>import * from 'org.web3d.x3d.jsail.Layering';</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
 		<xsl:if test="//*[starts-with(local-name(),'Layout')] or //*[starts-with(local-name(),'Screen')]">
-			<xsl:text>import from 'org.web3d.x3d.jsail.Layout';</xsl:text>
+			<xsl:text>import * from 'org.web3d.x3d.jsail.Layout';</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
 		<xsl:if test="//*[contains(local-name(),'Light')]">
-			<xsl:text>import from 'org.web3d.x3d.jsail.Lighting';</xsl:text>
+			<xsl:text>import * from 'org.web3d.x3d.jsail.Lighting';</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
 		<xsl:if test="//*[name()='Billboard'] or //*[name()='Collision'] or //*[name()='LOD'] or //*[name()='NavigationInfo'] or
 					  //*[contains(local-name(),'Viewpoint')]">
-			<xsl:text>import from 'org.web3d.x3d.jsail.Navigation';</xsl:text>
+			<xsl:text>import * from 'org.web3d.x3d.jsail.Navigation';</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
 		<xsl:if test="//*[name()='Anchor'] or //*[name()='IMPORT'] or //*[name()='EXPORT'] or //*[name()='Inline'] or //*[name()='LoadSensor']">
-			<xsl:text>import from 'org.web3d.x3d.jsail.Networking';</xsl:text>
+			<xsl:text>import * from 'org.web3d.x3d.jsail.Networking';</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
 		<xsl:if test="//*[starts-with(local-name(),'NURBS')] or //*[contains(local-name(),'Contour')] or //*[name()='CoordinateDouble']">
-			<xsl:text>import from 'org.web3d.x3d.jsail.NURBS';</xsl:text>
+			<xsl:text>import * from 'org.web3d.x3d.jsail.NURBS';</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
 		<xsl:if test="//*[contains(local-name(),'PhysicsModel')] or //*[contains(local-name(),'Emitter')] or //*[name()='ParticleSystem']">
-			<xsl:text>import from 'org.web3d.x3d.jsail.ParticleSystems';</xsl:text>
+			<xsl:text>import * from 'org.web3d.x3d.jsail.ParticleSystems';</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
 		<xsl:if test="//*[contains(local-name(),'Pick')]">
-			<xsl:text>import from 'org.web3d.x3d.jsail.Picking';</xsl:text>
+			<xsl:text>import * from 'org.web3d.x3d.jsail.Picking';</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
 		<xsl:if test="//*[name()='CylinderSensor'] or //*[name()='PlaneSensor'] or //*[name()='SphereSensor'] or //*[name()='TouchSensor']">
-			<xsl:text>import from 'org.web3d.x3d.jsail.PointingDeviceSensor';</xsl:text>
+			<xsl:text>import * from 'org.web3d.x3d.jsail.PointingDeviceSensor';</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
 		<xsl:if test="//*[name()='ClipPlane'] or //*[name()='Color'] or //*[name()='ColorRGA'] or //*[name()='Coordinate'] or
 					  //*[contains(local-name(),'LineSet')] or //*[contains(local-name(),'Triangle')] or //*[name()='Normal'] or 
 					  //*[name()='PointSet']">
-			<xsl:text>import from 'org.web3d.x3d.jsail.Rendering';</xsl:text>
+			<xsl:text>import * from 'org.web3d.x3d.jsail.Rendering';</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
 		<xsl:if test="//*[contains(local-name(),'Joint')] or //*[starts-with(local-name(),'Collidable')] or
 					  //*[name()='CollisionCollection'] or //*[name()='CollisionSensor'] or //*[name()='CollisionSpace'] or 
 					  //*[name()='Contact'] or //*[contains(local-name(),'RigidBody')]">
-			<xsl:text>import from 'org.web3d.x3d.jsail.RigidBodyPhysics';</xsl:text>
+			<xsl:text>import * from 'org.web3d.x3d.jsail.RigidBodyPhysics';</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
 		<xsl:if test="//*[name()='Script']">
-			<xsl:text>import from 'org.web3d.x3d.jsail.Scripting';</xsl:text>
+			<xsl:text>import * from 'org.web3d.x3d.jsail.Scripting';</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
 		<xsl:if test="//*[contains(local-name(),'Shader')] or //*[contains(local-name(),'VertexAttribute')]">
-			<xsl:text>import from 'org.web3d.x3d.jsail.Shaders';</xsl:text>
+			<xsl:text>import * from 'org.web3d.x3d.jsail.Shaders';</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
 		<xsl:if test="//*[name()='Appearance'] or //*[name()='FillProperties'] or //*[name()='LineProperties'] or //*[name()='Material'] or
 					  //*[name()='Shape'] or //*[name()='TwoSidedMaterial']">
-			<xsl:text>import from 'org.web3d.x3d.jsail.Shape';</xsl:text>
+			<xsl:text>import * from 'org.web3d.x3d.jsail.Shape';</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
 		<xsl:if test="//*[name()='AudioClip'] or //*[name()='Sound']">
-			<xsl:text>import from 'org.web3d.x3d.jsail.Sound';</xsl:text>
+			<xsl:text>import * from 'org.web3d.x3d.jsail.Sound';</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
 		<xsl:if test="//*[name()='FontStyle'] or //*[name()='Text']">
-			<xsl:text>import from 'org.web3d.x3d.jsail.Text';</xsl:text>
+			<xsl:text>import * from 'org.web3d.x3d.jsail.Text';</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
 		<xsl:if test="//*[contains(local-name(),'Texture') and not(contains(local-name(),'3D'))] or 
 					  //*[starts-with(local-name(),'MultiTexture')] or //*[name()='TextureCoordinateGenerator'] or
 					  //*[name()='TextureCoordinate'] or //*[name()='TextureProperties'] or //*[name()='TextureTransform']">
-			<xsl:text>import from 'org.web3d.x3d.jsail.Texturing';</xsl:text>
+			<xsl:text>import * from 'org.web3d.x3d.jsail.Texturing';</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
 		<xsl:if test="//*[contains(local-name(),'Texture3D')] or //*[name()='TextureCoordinate3D'] or //*[name()='TextureCoordinate4D'] or
 					  //*[name()='TextureTransform3D'] or //*[name()='TextureTransformMatrix3D']">
-			<xsl:text>import from 'org.web3d.x3d.jsail.Texturing3D';</xsl:text>
+			<xsl:text>import * from 'org.web3d.x3d.jsail.Texturing3D';</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
 		<xsl:if test="//*[name()='TimeSensor']">
-			<xsl:text>import from 'org.web3d.x3d.jsail.Time';</xsl:text>
+			<xsl:text>import * from 'org.web3d.x3d.jsail.Time';</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
 		<xsl:if test="//*[contains(local-name(),'Volume')]">
-			<xsl:text>import from 'org.web3d.x3d.jsail.VolumeRendering';</xsl:text>
+			<xsl:text>import * from 'org.web3d.x3d.jsail.VolumeRendering';</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
     </xsl:template>
