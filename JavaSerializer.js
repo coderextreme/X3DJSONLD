@@ -137,13 +137,15 @@ function printSubArray(attrType, type, values,  co, j, trail) {
 				max = i + 840;
 			}
 			codeno++;
-			code[co] = "private "+attrType+"Object "+attrType+co+"() {\n";
-			code[co] += "  return new "+attrType+"Object( new "+type+"[] {"+values.slice(i, max).join(j)+trail+"})\n";
-			code[co] += ";\n}\n";
+			code[co] = "protected class "+attrType+co+" {\n";
+			code[co] +=  "  protected "+attrType+"Object getArray() {\n";
+			code[co] += "    return new "+attrType+"Object(new "+type+"[] {"+values.slice(i, max).join(j)+trail+"});\n";
+			code[co] += "  }\n";
+			code[co] += "}\n";
 			if (i == 0) {
-				str += attrType+co+"())";
+				str += "new "+attrType+co+"().getArray())";
 			} else {
-				str += ".append("+attrType+co+"())";
+				str += ".append(new "+attrType+co+"().getArray())";
 			}
 			co = codeno;
 		}
@@ -176,7 +178,7 @@ function printParentChild(element, n, node, cn, mapToMethod) {
 	} else {
 		method = method.charAt(0).toUpperCase() + method.slice(1);
 	}
-	return "\n"+("  ".repeat(n))+addpre+method+"(";
+	return "\n"+("  ".repeat(n))+addpre+method;
 }
 
 JavaSerializer.subSerializeToString = function(element, n, mapToMethod, fieldTypes) {
@@ -224,7 +226,7 @@ JavaSerializer.subSerializeToString = function(element, n, mapToMethod, fieldTyp
 					if (attrs[a].nodeValue === 'NULL') {
 						str += "";
 					} else if (attrType === "SFString") {
-						if (attr === "type") {
+						if (attr === "type" && attrs[a].nodeValue !== "VERTEX" && attrs[a].nodeValue !== "FRAGMENT") {
 							str += "fieldObject.TYPE_"+attrs[a].nodeValue.toUpperCase();
 						} else {
 							str += '"'+attrs[a].nodeValue.replace(/\n/g, '\\\\n').replace(/\\?"/g, "\\\"")+'"';
@@ -301,6 +303,7 @@ JavaSerializer.subSerializeToString = function(element, n, mapToMethod, fieldTyp
 		let node = element.childNodes[cn];
 		if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 1) {
 			str += printParentChild(element, n, node, cn, mapToMethod);
+			str += "(";
 			str += "new "+node.nodeName+"Object()";
 			str += JavaSerializer.subSerializeToString(node, n+1, mapToMethod, fieldTypes);
 			str += ")";
