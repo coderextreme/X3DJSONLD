@@ -98,15 +98,15 @@ public class Teapot {
               .addChild(new ShapeObject()
                 .setAppearance(new AppearanceObject()
                   .setMaterial(new MaterialObject().setDEF("Black_mat").setDiffuseColor(new float[] {0f,0f,0f})))
-                .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(MFInt320().append(MFInt321()))).setCreaseAngle(0.524f)
+                .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(MFInt320()).append(MFInt321())).setCreaseAngle(0.524f)
                   .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(MFVec3f2()))))))
             .addChild(new TransformObject().setDEF("MooringBuoy")
               .addChild(new ShapeObject()
                 .setAppearance(new AppearanceObject()
                   .setMaterial(new MaterialObject().setDEF("default_mat").setAmbientIntensity(1f).setDiffuseColor(new float[] {0.50196f,0.50196f,0.50196f}).setShininess(1f))
                   .setTexture(new ImageTextureObject().setUrl(new MFStringObject(MFString3()))))
-                .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(MFInt324().append(MFInt325()).append(MFInt326()))).setCreaseAngle(1.047f).setTexCoordIndex(new MFInt32Object(MFInt327().append(MFInt328()).append(MFInt329())))
-                  .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(MFVec3f10().append(MFVec3f11()))))
+                .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(MFInt324()).append(MFInt325()).append(MFInt326())).setCreaseAngle(1.047f).setTexCoordIndex(new MFInt32Object(MFInt327()).append(MFInt328()).append(MFInt329()))
+                  .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(MFVec3f10()).append(MFVec3f11())))
                   .setTexCoord(new TextureCoordinateObject().setPoint(new MFVec2fObject(MFVec2f12())))))))))      ;
     }
 private MFInt32Object MFInt320() {

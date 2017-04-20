@@ -91,9 +91,9 @@ public class cube {
       .setScene(new SceneObject()
         .addChild(new GroupObject()
           .addChild(new ShapeObject()
-            .setGeometry(new IndexedFaceSetObject().setDEF("IndexedFaceSet").setCoordIndex(new MFInt32Object(MFInt320().append(MFInt321()).append(MFInt322()))).setNormalIndex(new MFInt32Object(MFInt323().append(MFInt324()))).setNormalPerVertex(false).setColorIndex(new MFInt32Object(MFInt325().append(MFInt326()).append(MFInt327())))
-              .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(MFVec3f8().append(MFVec3f9()))))
-              .setNormal(new NormalObject().setVector(new MFVec3fObject(MFVec3f10().append(MFVec3f11()).append(MFVec3f12()))))
+            .setGeometry(new IndexedFaceSetObject().setDEF("IndexedFaceSet").setCoordIndex(new MFInt32Object(MFInt320()).append(MFInt321()).append(MFInt322())).setNormalIndex(new MFInt32Object(MFInt323()).append(MFInt324())).setNormalPerVertex(false).setColorIndex(new MFInt32Object(MFInt325()).append(MFInt326()).append(MFInt327()))
+              .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(MFVec3f8()).append(MFVec3f9())))
+              .setNormal(new NormalObject().setVector(new MFVec3fObject(MFVec3f10()).append(MFVec3f11()).append(MFVec3f12())))
               .setColor(new ColorObject().setColor(new MFColorObject(MFColor13())))))))      ;
     }
 private MFInt32Object MFInt320() {

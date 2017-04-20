@@ -129,7 +129,7 @@ JavaScriptSerializer.subSerializeToString = function(element, mapToMethod, field
 					if (attrs[a].nodeValue === 'NULL') {
 						str += "";
 					} else if (attrType === "SFString") {
-						if (attr === "type") {
+						if (attr === "type" && attrs[a].nodeValue !== "VERTEX" && attrs[a].nodeValue !== "FRAGMENT") {
 							str += "fieldObject.TYPE_"+attrs[a].nodeValue.toUpperCase();
 						} else {
 							str += '"'+attrs[a].nodeValue.replace(/\n/g, '\\\\n').replace(/\\?"/g, "\\\"")+'"';
