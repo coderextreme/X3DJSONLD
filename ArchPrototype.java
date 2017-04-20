@@ -128,7 +128,7 @@ public class ArchPrototype {
                       .addConnect(new connectObject().setNodeField("diffuseColor").setProtoField("diffuseColor")))))))
             .addComments(new CommentsBlock("Subsequent nodes do not render, but still must be a valid X3D subgraph"))
             .addComments(new CommentsBlock("This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs"))
-            .addChild(new ScriptObject().setDEF("ArchPrototypeScript").setUrl(new MFStringObject(MFString0()))
+            .addChild(new ScriptObject().setDEF("ArchPrototypeScript").setUrl(new MFStringObject(new MFString0().getArray()))
               .addComments(new CommentsBlock("INPUT PARAMETERS"))
               .addComments(new CommentsBlock("General parameters"))
               .addComments(new CommentsBlock("Parameters to create to create shapes related to arch: put true to apply"))
@@ -175,8 +175,9 @@ public class ArchPrototype {
           .addFieldValue(new fieldValueObject().setName("pierHeight").setValue("2")))
         .addComments(new CommentsBlock("Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare)")))      ;
     }
-private MFStringObject MFString0() {
-  return new MFStringObject( new String[] {"./ArchPrototypeScript.js"})
-;
+protected class MFString0 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"./ArchPrototypeScript.js"});
+  }
 }
 }

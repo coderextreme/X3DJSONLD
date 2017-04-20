@@ -98,19 +98,19 @@ public class pp3 {
                 .addChild(new ShapeObject()
                   .setAppearance(new AppearanceObject()
                     .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0.7f,1f,0f}).setTransparency(0.5f)))
-                  .setGeometry(new ExtrusionObject().setCreaseAngle(0.785f).setCrossSection(new MFVec2fObject(MFVec2f0())).setSpine(new MFVec3fObject(MFVec3f1()))))
+                  .setGeometry(new ExtrusionObject().setCreaseAngle(0.785f).setCrossSection(new MFVec2fObject(new MFVec2f0().getArray())).setSpine(new MFVec3fObject(new MFVec3f1().getArray()))))
                 .addComments(new CommentsBlock("<Transform translation=\"-2.5 0 0\"> <Shape> <Text DEF=\"LeftString\" string='\"l\"'/> </Shape> </Transform> <StringSensor DEF=\"LeftSensor\" enabled=\"false\"/> <TouchSensor DEF=\"LeftTouch\" enabled=\"true\"/>")))
               .addComments(new CommentsBlock("right"))
               .addChild(new TransformObject().setScale(new float[] {0.5f,0.5f,0.5f})
                 .addChild(new ShapeObject()
                   .setAppearance(new AppearanceObject()
                     .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0f,0.7f,1f}).setTransparency(0.5f)))
-                  .setGeometry(new ExtrusionObject().setCreaseAngle(0.785f).setCrossSection(new MFVec2fObject(MFVec2f2())).setSpine(new MFVec3fObject(MFVec3f3()))))
+                  .setGeometry(new ExtrusionObject().setCreaseAngle(0.785f).setCrossSection(new MFVec2fObject(new MFVec2f2().getArray())).setSpine(new MFVec3fObject(new MFVec3f3().getArray()))))
                 .addChild(new TransformObject().setTranslation(new float[] {2f,0f,0f})
                   .addChild(new ShapeObject()
                     .setAppearance(new AppearanceObject()
                       .setMaterial(new MaterialObject().setDEF("MaterialLightBlue").setDiffuseColor(new float[] {1f,1f,1f})))
-                    .setGeometry(new TextObject().setDEF("RightString").setString(new MFStringObject(MFString4())))))
+                    .setGeometry(new TextObject().setDEF("RightString").setString(new MFStringObject(new MFString4().getArray())))))
                 .addChild(new StringSensorObject().setDEF("RightSensor").setEnabled(false))
                 .addChild(new TouchSensorObject().setDescription("touch to activate").setDEF("RightTouch")))
               .addComments(new CommentsBlock("up"))
@@ -118,12 +118,12 @@ public class pp3 {
                 .addChild(new ShapeObject()
                   .setAppearance(new AppearanceObject()
                     .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0f,0.7f,1f}).setTransparency(0.5f)))
-                  .setGeometry(new ExtrusionObject().setCreaseAngle(0.785f).setCrossSection(new MFVec2fObject(MFVec2f5())).setSpine(new MFVec3fObject(MFVec3f6()))))
+                  .setGeometry(new ExtrusionObject().setCreaseAngle(0.785f).setCrossSection(new MFVec2fObject(new MFVec2f5().getArray())).setSpine(new MFVec3fObject(new MFVec3f6().getArray()))))
                 .addChild(new TransformObject().setTranslation(new float[] {-0.5f,2f,0f})
                   .addChild(new ShapeObject()
                     .setAppearance(new AppearanceObject()
                       .setMaterial(new MaterialObject().setUSE("MaterialLightBlue")))
-                    .setGeometry(new TextObject().setDEF("UpString").setString(new MFStringObject(MFString7())))))
+                    .setGeometry(new TextObject().setDEF("UpString").setString(new MFStringObject(new MFString7().getArray())))))
                 .addChild(new StringSensorObject().setDEF("UpSensor").setEnabled(false))
                 .addChild(new TouchSensorObject().setDescription("touch to activate").setDEF("UpTouch")))
               .addComments(new CommentsBlock("down"))
@@ -131,7 +131,7 @@ public class pp3 {
                 .addChild(new ShapeObject()
                   .setAppearance(new AppearanceObject()
                     .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0.7f,1f,0f}).setTransparency(0.5f)))
-                  .setGeometry(new ExtrusionObject().setCreaseAngle(0.785f).setCrossSection(new MFVec2fObject(MFVec2f8())).setSpine(new MFVec3fObject(MFVec3f9()))))
+                  .setGeometry(new ExtrusionObject().setCreaseAngle(0.785f).setCrossSection(new MFVec2fObject(new MFVec2f8().getArray())).setSpine(new MFVec3fObject(new MFVec3f9().getArray()))))
                 .addComments(new CommentsBlock("<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>")))
               .addComments(new CommentsBlock("center"))
               .addChild(new TransformObject()
@@ -203,44 +203,54 @@ public class pp3 {
         .addChild(new TransformObject().setTranslation(new float[] {0f,2.5f,0f})
           .addChild(new ProtoInstanceObject().setName("Process"))))      ;
     }
-private MFVec2fObject MFVec2f0() {
-  return new MFVec2fObject( new float[] {1f,0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0f,-1f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1f,0f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0f,1f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1f,0f})
-;
+protected class MFVec2f0 {
+  protected MFVec2fObject getArray() {
+    return new MFVec2fObject(new float[] {1f,0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0f,-1f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1f,0f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0f,1f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1f,0f});
+  }
 }
-private MFVec3fObject MFVec3f1() {
-  return new MFVec3fObject( new float[] {-2.5f,0f,0f,-1.5f,0f,0f})
-;
+protected class MFVec3f1 {
+  protected MFVec3fObject getArray() {
+    return new MFVec3fObject(new float[] {-2.5f,0f,0f,-1.5f,0f,0f});
+  }
 }
-private MFVec2fObject MFVec2f2() {
-  return new MFVec2fObject( new float[] {1f,0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0f,-1f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1f,0f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0f,1f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1f,0f})
-;
+protected class MFVec2f2 {
+  protected MFVec2fObject getArray() {
+    return new MFVec2fObject(new float[] {1f,0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0f,-1f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1f,0f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0f,1f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1f,0f});
+  }
 }
-private MFVec3fObject MFVec3f3() {
-  return new MFVec3fObject( new float[] {1.5f,0f,0f,2.5f,0f,0f})
-;
+protected class MFVec3f3 {
+  protected MFVec3fObject getArray() {
+    return new MFVec3fObject(new float[] {1.5f,0f,0f,2.5f,0f,0f});
+  }
 }
-private MFStringObject MFString4() {
-  return new MFStringObject( new String[] {"r"})
-;
+protected class MFString4 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"r"});
+  }
 }
-private MFVec2fObject MFVec2f5() {
-  return new MFVec2fObject( new float[] {1f,0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0f,-1f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1f,0f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0f,1f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1f,0f})
-;
+protected class MFVec2f5 {
+  protected MFVec2fObject getArray() {
+    return new MFVec2fObject(new float[] {1f,0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0f,-1f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1f,0f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0f,1f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1f,0f});
+  }
 }
-private MFVec3fObject MFVec3f6() {
-  return new MFVec3fObject( new float[] {0f,1.5f,0f,0f,2.5f,0f})
-;
+protected class MFVec3f6 {
+  protected MFVec3fObject getArray() {
+    return new MFVec3fObject(new float[] {0f,1.5f,0f,0f,2.5f,0f});
+  }
 }
-private MFStringObject MFString7() {
-  return new MFStringObject( new String[] {"u"})
-;
+protected class MFString7 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"u"});
+  }
 }
-private MFVec2fObject MFVec2f8() {
-  return new MFVec2fObject( new float[] {1f,0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0f,-1f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1f,0f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0f,1f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1f,0f})
-;
+protected class MFVec2f8 {
+  protected MFVec2fObject getArray() {
+    return new MFVec2fObject(new float[] {1f,0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0f,-1f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1f,0f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0f,1f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1f,0f});
+  }
 }
-private MFVec3fObject MFVec3f9() {
-  return new MFVec3fObject( new float[] {0f,-2.5f,0f,0f,-1.5f,0f})
-;
+protected class MFVec3f9 {
+  protected MFVec3fObject getArray() {
+    return new MFVec3fObject(new float[] {0f,-2.5f,0f,0f,-1.5f,0f});
+  }
 }
 }

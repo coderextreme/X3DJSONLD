@@ -98,13 +98,13 @@ public class qq3 {
                 .addChild(new ShapeObject().setDEF("ShapeLeftDown")
                   .setAppearance(new AppearanceObject()
                     .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0.7f,1f,0f})))
-                  .setGeometry(new ExtrusionObject().setSpine(new MFVec3fObject(MFVec3f0())).setCreaseAngle(0.785f).setCrossSection(new MFVec2fObject(MFVec2f1())))))
+                  .setGeometry(new ExtrusionObject().setSpine(new MFVec3fObject(new MFVec3f0().getArray())).setCreaseAngle(0.785f).setCrossSection(new MFVec2fObject(new MFVec2f1().getArray())))))
               .addComments(new CommentsBlock("right"))
               .addChild(new TransformObject().setScale(new float[] {0.5f,0.5f,0.5f})
                 .addChild(new ShapeObject().setDEF("ShapeUpRight")
                   .setAppearance(new AppearanceObject()
                     .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0f,0.7f,1f})))
-                  .setGeometry(new ExtrusionObject().setSpine(new MFVec3fObject(MFVec3f2())).setCreaseAngle(0.785f).setCrossSection(new MFVec2fObject(MFVec2f3())))))
+                  .setGeometry(new ExtrusionObject().setSpine(new MFVec3fObject(new MFVec3f2().getArray())).setCreaseAngle(0.785f).setCrossSection(new MFVec2fObject(new MFVec2f3().getArray())))))
               .addComments(new CommentsBlock("up"))
               .addChild(new TransformObject().setScale(new float[] {0.5f,0.5f,0.5f})
                 .addChild(new ShapeObject().setUSE("ShapeUpRight")))
@@ -119,20 +119,24 @@ public class qq3 {
         .addChild(new TransformObject().setTranslation(new float[] {0f,2.5f,0f})
           .addChild(new ProtoInstanceObject().setName("Process"))))      ;
     }
-private MFVec3fObject MFVec3f0() {
-  return new MFVec3fObject( new float[] {-2.5f,0f,0f,-1.5f,0f,0f})
-;
+protected class MFVec3f0 {
+  protected MFVec3fObject getArray() {
+    return new MFVec3fObject(new float[] {-2.5f,0f,0f,-1.5f,0f,0f});
+  }
 }
-private MFVec2fObject MFVec2f1() {
-  return new MFVec2fObject( new float[] {1f,0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0f,-1f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1f,0f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0f,1f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1f,0f})
-;
+protected class MFVec2f1 {
+  protected MFVec2fObject getArray() {
+    return new MFVec2fObject(new float[] {1f,0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0f,-1f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1f,0f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0f,1f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1f,0f});
+  }
 }
-private MFVec3fObject MFVec3f2() {
-  return new MFVec3fObject( new float[] {1.5f,0f,0f,2.5f,0f,0f})
-;
+protected class MFVec3f2 {
+  protected MFVec3fObject getArray() {
+    return new MFVec3fObject(new float[] {1.5f,0f,0f,2.5f,0f,0f});
+  }
 }
-private MFVec2fObject MFVec2f3() {
-  return new MFVec2fObject( new float[] {1f,0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0f,-1f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1f,0f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0f,1f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1f,0f})
-;
+protected class MFVec2f3 {
+  protected MFVec2fObject getArray() {
+    return new MFVec2fObject(new float[] {1f,0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0f,-1f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1f,0f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0f,1f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1f,0f});
+  }
 }
 }

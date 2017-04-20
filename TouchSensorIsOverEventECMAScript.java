@@ -71,38 +71,52 @@ import org.web3d.x3d.sai.Texturing3D.*;
 import org.web3d.x3d.sai.Texturing.*;
 import org.web3d.x3d.sai.Time.*;
 import org.web3d.x3d.sai.VolumeRendering.*;
-public class text {
+public class TouchSensorIsOverEventECMAScript {
   public static void main(String[] args) {
     ConfigurationProperties.setShowDefaultAttributes(true);
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_nativeJava);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new text().initialize().toFileJSON("text.new.json");
+    new TouchSensorIsOverEventECMAScript().initialize().toFileJSON("TouchSensorIsOverEventECMAScript.new.json");
     }
     public X3DObject initialize() {
-      return new X3DObject().setProfile("Immersive").setVersion("3.3")
+      return new X3DObject().setProfile("Immersive").setVersion("3.1")
       .setHead(new headObject()
-        .addMeta(new metaObject().setName("creator").setContent("John W Carlson"))
-        .addMeta(new metaObject().setName("created").setContent("December 13 2015"))
-        .addMeta(new metaObject().setName("title").setContent("text.x3d"))
-        .addMeta(new metaObject().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/text.x3d"))
-        .addMeta(new metaObject().setName("description").setContent("test text"))
-        .addMeta(new metaObject().setName("generator").setContent("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit")))
+        .addMeta(new metaObject().setName("title").setContent("TouchSensorIsOverEventECMAScript.x3d"))
+        .addMeta(new metaObject().setName("description").setContent("This example demonstrates a scripted response to a TouchSensor isOver event by changing the color of a Box from blue to red"))
+        .addMeta(new metaObject().setName("creator").setContent("X3D Specification"))
+        .addMeta(new metaObject().setName("translated").setContent("23 February 2005"))
+        .addMeta(new metaObject().setName("modified").setContent("15 March 2008"))
+        .addMeta(new metaObject().setName("subject").setContent("X3D ECMAScript Script Authoring Interface (SAI)"))
+        .addMeta(new metaObject().setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/Basic/ScriptConformance/TouchSensorIsOverEventECMAScript.x3d"))
+        .addMeta(new metaObject().setName("reference").setContent("http://www.web3d.org/x3d/specifications/ISO-IEC-19777-1-X3DLanguageBindings-ECMAScript/Part1/examples.html#TouchSensorIsOverEvent"))
+        .addMeta(new metaObject().setName("generator").setContent("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"))
+        .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+        .addMeta(new metaObject().setName("license").setContent("../license.html")))
       .setScene(new SceneObject()
-        .addChild(new TransformObject()
+        .addChild(new GroupObject()
           .addChild(new ShapeObject()
-            .setGeometry(new TextObject().setString(new MFStringObject(new MFString0().getArray()))
-              .setFontStyle(new FontStyleObject().setJustify(new MFStringObject(new MFString1().getArray())).setSize(5f)))
             .setAppearance(new AppearanceObject()
-              .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0f,0f,1f}))))))      ;
+              .setMaterial(new MaterialObject().setDEF("MAT").setDiffuseColor(new float[] {0f,0f,1f})))
+            .setGeometry(new BoxObject()))
+          .addChild(new TouchSensorObject().setDEF("TS")))
+        .addChild(new ScriptObject().setDEF("SC")
+          .addField(new fieldObject().setName("isOver").setAccessType("inputOnly").setType(fieldObject.TYPE_SFBOOL))
+          .addField(new fieldObject().setName("diffuseColor_changed").setAccessType("outputOnly").setType(fieldObject.TYPE_SFCOLOR))
+          .setSourceCode("ecmascript:\n"+
+"\n"+
+"function isOver(val) \n"+
+"{ \n"+
+"    if (val == true) \n"+
+"    { \n"+
+"        diffuseColor_changed = new SFColor(1,0,0); \n"+
+"    } \n"+
+"    else \n"+
+"    { \n"+
+"        diffuseColor_changed = new SFColor(0,0,1);\n"+
+"    }\n"+
+"}\n"+
+""))
+        .addChild(new ROUTEObject().setFromField("isOver").setFromNode("TS").setToField("isOver").setToNode("SC"))
+        .addChild(new ROUTEObject().setFromField("diffuseColor_changed").setFromNode("SC").setToField("set_diffuseColor").setToNode("MAT")))      ;
     }
-protected class MFString0 {
-  protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"Node\\\"\\\"\\\""});
-  }
-}
-protected class MFString1 {
-  protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"MIDDLE","MIDDLE"});
-  }
-}
 }

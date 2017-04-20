@@ -87,7 +87,7 @@ public class Box {
         .addMeta(new metaObject().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/box.x3d"))
         .addMeta(new metaObject().setName("description").setContent("3 boxes")))
       .setScene(new SceneObject()
-        .addChild(new NavigationInfoObject().setType(new MFStringObject(MFString0())))
+        .addChild(new NavigationInfoObject().setType(new MFStringObject(new MFString0().getArray())))
         .addChild(new ViewpointObject().setDescription("Cubes on Fire").setPosition(new float[] {0f,0f,12f}))
         .addChild(new ProtoDeclareObject().setName("anyShape")
           .setProtoInterface(new ProtoInterfaceObject()
@@ -134,8 +134,9 @@ public class Box {
               .setAppearance(new AppearanceObject()
                 .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0f,1f,0f})))))))      ;
     }
-private MFStringObject MFString0() {
-  return new MFStringObject( new String[] {"EXAMINE"})
-;
+protected class MFString0 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"EXAMINE"});
+  }
 }
 }

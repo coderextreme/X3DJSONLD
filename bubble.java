@@ -87,7 +87,7 @@ public class bubble {
         .addMeta(new metaObject().setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new metaObject().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/bubble.x3d")))
       .setScene(new SceneObject()
-        .addChild(new NavigationInfoObject().setType(new MFStringObject(MFString0())))
+        .addChild(new NavigationInfoObject().setType(new MFStringObject(new MFString0().getArray())))
         .addChild(new ViewpointObject().setPosition(new float[] {0f,0f,4f}).setOrientation(new float[] {1f,0f,0f,0f}).setDescription("Bubble in action"))
         .addChild(new ProtoDeclareObject().setName("Bubble")
           .setProtoBody(new ProtoBodyObject()
@@ -144,8 +144,9 @@ public class bubble {
               .addChild(new ROUTEObject().setFromNode("bubbleClock").setFromField("fraction_changed").setToNode("bounce").setToField("set_fraction")))))
         .addChild(new ProtoInstanceObject().setName("Bubble").setDEF("bubbleA")))      ;
     }
-private MFStringObject MFString0() {
-  return new MFStringObject( new String[] {"EXAMINE"})
-;
+protected class MFString0 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"EXAMINE"});
+  }
 }
 }

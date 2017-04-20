@@ -107,7 +107,7 @@ public class flowers2 {
               .setGeometry(new IndexedFaceSetObject().setDEF("Orbit2").setCreaseAngle(1.57f)
                 .setCoord(new CoordinateObject().setDEF("OrbitCoordinates2")))))
           .addChild(new TimeSensorObject().setDEF("Clock").setCycleInterval(16).setLoop(true))
-          .addChild(new OrientationInterpolatorObject().setDEF("OrbitPath").setKey(new MFFloatObject(MFFloat0())).setKeyValue(new MFRotationObject(MFRotation1())))
+          .addChild(new OrientationInterpolatorObject().setDEF("OrbitPath").setKey(new MFFloatObject(new MFFloat0().getArray())).setKeyValue(new MFRotationObject(new MFRotation1().getArray())))
           .addChild(new ScriptObject().setDEF("OrbitScript")
             .addField(new fieldObject().setName("set_fraction").setAccessType("inputOnly").setType(fieldObject.TYPE_SFFLOAT))
             .addField(new fieldObject().setName("coordinates").setAccessType("outputOnly").setType(fieldObject.TYPE_MFVEC3F))
@@ -272,12 +272,14 @@ public class flowers2 {
         .addChild(new ROUTEObject().setFromField("value_changed").setFromNode("OrbitPath").setToField("set_rotation").setToNode("OrbitTransform"))
         .addChild(new ROUTEObject().setFromField("value_changed").setFromNode("OrbitPath").setToField("set_rotation").setToNode("OrbitTransform2")))      ;
     }
-private MFFloatObject MFFloat0() {
-  return new MFFloatObject( new float[] {0f,0.5f,1f})
-;
+protected class MFFloat0 {
+  protected MFFloatObject getArray() {
+    return new MFFloatObject(new float[] {0f,0.5f,1f});
+  }
 }
-private MFRotationObject MFRotation1() {
-  return new MFRotationObject( new float[] {1f,0f,0f,0f,1f,0f,0f,3.14f,1f,0f,0f,6.28f})
-;
+protected class MFRotation1 {
+  protected MFRotationObject getArray() {
+    return new MFRotationObject(new float[] {1f,0f,0f,0f,1f,0f,0f,3.14f,1f,0f,0f,6.28f});
+  }
 }
 }

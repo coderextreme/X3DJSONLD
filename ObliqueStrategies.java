@@ -109,21 +109,21 @@ public class ObliqueStrategies {
         .addMeta(new metaObject().setName("license").setContent("../license.html")))
       .setScene(new SceneObject()
         .addChild(new NavigationInfoObject())
-        .addChild(new BackgroundObject().setSkyColor(new MFColorObject(MFColor0())))
+        .addChild(new BackgroundObject().setSkyColor(new MFColorObject(new MFColor0().getArray())))
         .addChild(new TransformObject().setScale(new float[] {0.4f,0.4f,0.4f}).setTranslation(new float[] {0f,1f,0f})
           .addChild(new TouchSensorObject().setDEF("RandomTextClickedSensor").setDescription("Select to see a new strategy"))
           .addChild(new ShapeObject()
-            .setGeometry(new TextObject().setString(new MFStringObject(MFString1()))
-              .setFontStyle(new FontStyleObject().setDEF("MessageFont").setFamily(new MFStringObject(MFString2())).setJustify(new MFStringObject(MFString3())).setStyle("BOLD")))
+            .setGeometry(new TextObject().setString(new MFStringObject(new MFString1().getArray()))
+              .setFontStyle(new FontStyleObject().setDEF("MessageFont").setFamily(new MFStringObject(new MFString2().getArray())).setJustify(new MFStringObject(new MFString3().getArray())).setStyle("BOLD")))
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject().setDiffuseColor(new float[] {1f,1f,1f}))))
           .addChild(new TransformObject().setScale(new float[] {10f,3f,1f})
             .addChild(new ShapeObject().setDEF("HeadlineClickSurface")
-              .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(MFInt324())).setSolid(false)
-                .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(MFVec3f5()))))
+              .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt324().getArray())).setSolid(false)
+                .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f5().getArray()))))
               .setAppearance(new AppearanceObject()
                 .setMaterial(new MaterialObject().setAmbientIntensity(0.245763f).setDiffuseColor(new float[] {0.34773f,0.090909f,0.005289f}).setShininess(0.07f).setSpecularColor(new float[] {0.336735f,0.051091f,0.051091f}).setTransparency(0.8f))))))
-        .addChild(new ScriptObject().setDEF("TextScript").setUrl(new MFStringObject(MFString6()))
+        .addChild(new ScriptObject().setDEF("TextScript").setUrl(new MFStringObject(new MFString6().getArray()))
           .addComments(new CommentsBlock("initialize() method includes unit test to printAllStrategies() to console"))
           .addComments(new CommentsBlock("TODO insert field definitions here (index string_changed previous next random) and then animate!"))
           .addField(new fieldObject().setName("index").setAccessType("initializeOnly").setAppinfo("index for active strategy card, -1 means no selection").setType(fieldObject.TYPE_SFINT32).setValue("0"))
@@ -137,7 +137,7 @@ public class ObliqueStrategies {
         .addChild(new TransformObject().setDEF("CardTransform").setScale(new float[] {0.4f,0.4f,0.4f}).setTranslation(new float[] {0f,-1.5f,0f})
           .addChild(new ShapeObject()
             .setGeometry(new TextObject().setDEF("CardText")
-              .setFontStyle(new FontStyleObject().setFamily(new MFStringObject(MFString7())).setJustify(new MFStringObject(MFString8())).setStyle("BOLD")))
+              .setFontStyle(new FontStyleObject().setFamily(new MFStringObject(new MFString7().getArray())).setJustify(new MFStringObject(new MFString8().getArray())).setStyle("BOLD")))
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject().setDiffuseColor(new float[] {1f,1f,1f}))))
           .addChild(new ROUTEObject().setFromField("string_changed").setFromNode("TextScript").setToField("string").setToNode("CardText"))
@@ -146,29 +146,29 @@ public class ObliqueStrategies {
             .addComments(new CommentsBlock("Not all X3D players seem to use the .mp3"))
             .addComments(new CommentsBlock("&#38; is ampersand character, avoids escaping problems and inconsistencies in browsers and X3D players"))
             .addComments(new CommentsBlock("%20 is space character used in uri/url encoding"))
-            .setSource(new AudioClipObject().setDEF("TextToSpeechAudioClip").setDescription("sends strategy text google translate").setUrl(new MFStringObject(MFString9()))))
+            .setSource(new AudioClipObject().setDEF("TextToSpeechAudioClip").setDescription("sends strategy text google translate").setUrl(new MFStringObject(new MFString9().getArray()))))
           .addChild(new ROUTEObject().setFromField("textToSpeechUrl").setFromNode("TextScript").setToField("url").setToNode("TextToSpeechAudioClip"))
           .addChild(new ROUTEObject().setFromField("newCardTime").setFromNode("TextScript").setToField("startTime").setToNode("TextToSpeechAudioClip")))
         .addChild(new TransformObject().setScale(new float[] {0.4f,0.4f,0.4f}).setTranslation(new float[] {-3.2f,2.5f,0f})
           .addChild(new TouchSensorObject().setDEF("PreviousTextClickedSensor").setDescription("Select to see previous strategy"))
           .addChild(new ROUTEObject().setFromField("isActive").setFromNode("PreviousTextClickedSensor").setToField("selectPreviousCard").setToNode("TextScript"))
           .addChild(new ShapeObject()
-            .setGeometry(new TextObject().setString(new MFStringObject(MFString10()))
+            .setGeometry(new TextObject().setString(new MFStringObject(new MFString10().getArray()))
               .setFontStyle(new FontStyleObject().setUSE("MessageFont")))
             .setAppearance(new AppearanceObject().setDEF("InterfaceAppearance")
               .setMaterial(new MaterialObject().setDiffuseColor(new float[] {1f,0f,0.6f}))))
           .addChild(new TransformObject().setScale(new float[] {2f,0.6f,1f})
             .addChild(new ShapeObject().setDEF("TransparentClickSurface")
               .addComments(new CommentsBlock("support Selectable Text with a scalable IFS"))
-              .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(MFInt3211())).setSolid(false)
-                .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(MFVec3f12()))))
+              .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt3211().getArray())).setSolid(false)
+                .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f12().getArray()))))
               .setAppearance(new AppearanceObject()
                 .setMaterial(new MaterialObject().setTransparency(1f))))))
         .addChild(new TransformObject().setScale(new float[] {0.4f,0.4f,0.4f}).setTranslation(new float[] {3.5f,2.5f,0f})
           .addChild(new TouchSensorObject().setDEF("NextTextClickedSensor").setDescription("Select to see next strategy"))
           .addChild(new ROUTEObject().setFromField("isActive").setFromNode("NextTextClickedSensor").setToField("selectNextCard").setToNode("TextScript"))
           .addChild(new ShapeObject()
-            .setGeometry(new TextObject().setString(new MFStringObject(MFString13()))
+            .setGeometry(new TextObject().setString(new MFStringObject(new MFString13().getArray()))
               .setFontStyle(new FontStyleObject().setUSE("MessageFont")))
             .setAppearance(new AppearanceObject().setUSE("InterfaceAppearance")))
           .addChild(new TransformObject().setScale(new float[] {1.2f,0.6f,1f})
@@ -177,91 +177,109 @@ public class ObliqueStrategies {
           .addChild(new TouchSensorObject().setUSE("RandomTextClickedSensor"))
           .addChild(new ROUTEObject().setFromField("isActive").setFromNode("RandomTextClickedSensor").setToField("selectRandomCard").setToNode("TextScript"))
           .addChild(new ShapeObject()
-            .setGeometry(new TextObject().setString(new MFStringObject(MFString14()))
+            .setGeometry(new TextObject().setString(new MFStringObject(new MFString14().getArray()))
               .setFontStyle(new FontStyleObject().setUSE("MessageFont")))
             .setAppearance(new AppearanceObject().setUSE("InterfaceAppearance")))
           .addChild(new TransformObject().setScale(new float[] {1.8f,0.6f,1f})
             .addChild(new ShapeObject().setUSE("TransparentClickSurface"))))
         .addChild(new TransformObject().setScale(new float[] {0.4f,0.4f,0.4f}).setTranslation(new float[] {3.3f,-0.5f,0f})
-          .addChild(new AnchorObject().setDEF("TextToSpeechAnchor").setDescription("text to speech in browser").setParameter(new MFStringObject(MFString15())).setUrl(new MFStringObject(MFString16()))
+          .addChild(new AnchorObject().setDEF("TextToSpeechAnchor").setDescription("text to speech in browser").setParameter(new MFStringObject(new MFString15().getArray())).setUrl(new MFStringObject(new MFString16().getArray()))
             .addChild(new ROUTEObject().setFromField("textToSpeechUrl").setFromNode("TextScript").setToField("url").setToNode("TextToSpeechAnchor"))
             .addChild(new ShapeObject()
-              .setGeometry(new TextObject().setString(new MFStringObject(MFString17()))
+              .setGeometry(new TextObject().setString(new MFStringObject(new MFString17().getArray()))
                 .setFontStyle(new FontStyleObject().setUSE("MessageFont")))
               .setAppearance(new AppearanceObject().setUSE("InterfaceAppearance")))
             .addChild(new TransformObject().setScale(new float[] {1.8f,0.6f,1f})
               .addChild(new ShapeObject().setUSE("TransparentClickSurface"))))))      ;
     }
-private MFColorObject MFColor0() {
-  return new MFColorObject( new float[] {0.419608f,0.427451f,1f})
-;
+protected class MFColor0 {
+  protected MFColorObject getArray() {
+    return new MFColorObject(new float[] {0.419608f,0.427451f,1f});
+  }
 }
-private MFStringObject MFString1() {
-  return new MFStringObject( new String[] {"Oblique Strategies","","(Over One Hundred Worthwhile Dilemmas)","","by Brian Eno and Peter Schmidt"})
-;
+protected class MFString1 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"Oblique Strategies","","(Over One Hundred Worthwhile Dilemmas)","","by Brian Eno and Peter Schmidt"});
+  }
 }
-private MFStringObject MFString2() {
-  return new MFStringObject( new String[] {"SANS"})
-;
+protected class MFString2 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"SANS"});
+  }
 }
-private MFStringObject MFString3() {
-  return new MFStringObject( new String[] {"MIDDLE","MIDDLE"})
-;
+protected class MFString3 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"MIDDLE","MIDDLE"});
+  }
 }
-private MFInt32Object MFInt324() {
-  return new MFInt32Object( new int[] {0,1,2,3,-1})
-;
+protected class MFInt324 {
+  protected MFInt32Object getArray() {
+    return new MFInt32Object(new int[] {0,1,2,3,-1});
+  }
 }
-private MFVec3fObject MFVec3f5() {
-  return new MFVec3fObject( new float[] {1f,1f,0f,1f,-1f,0f,-1f,-1f,0f,-1f,1f,0f})
-;
+protected class MFVec3f5 {
+  protected MFVec3fObject getArray() {
+    return new MFVec3fObject(new float[] {1f,1f,0f,1f,-1f,0f,-1f,-1f,0f,-1f,1f,0f});
+  }
 }
-private MFStringObject MFString6() {
-  return new MFStringObject( new String[] {"./ObliqueStrategiesScript.js"})
-;
+protected class MFString6 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"./ObliqueStrategiesScript.js"});
+  }
 }
-private MFStringObject MFString7() {
-  return new MFStringObject( new String[] {"SANS"})
-;
+protected class MFString7 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"SANS"});
+  }
 }
-private MFStringObject MFString8() {
-  return new MFStringObject( new String[] {"MIDDLE","MIDDLE"})
-;
+protected class MFString8 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"MIDDLE","MIDDLE"});
+  }
 }
-private MFStringObject MFString9() {
-  return new MFStringObject( new String[] {"http://translate.google.com/translate_tts?tl=en&amp;q=Feed%20the%20recording%20back%20out%20of%20the%20medium","translate_tts_mp3FileFormatNotSupported.wav"})
-;
+protected class MFString9 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"http://translate.google.com/translate_tts?tl=en&amp;q=Feed%20the%20recording%20back%20out%20of%20the%20medium","translate_tts_mp3FileFormatNotSupported.wav"});
+  }
 }
-private MFStringObject MFString10() {
-  return new MFStringObject( new String[] {"previous"})
-;
+protected class MFString10 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"previous"});
+  }
 }
-private MFInt32Object MFInt3211() {
-  return new MFInt32Object( new int[] {0,1,2,3,-1})
-;
+protected class MFInt3211 {
+  protected MFInt32Object getArray() {
+    return new MFInt32Object(new int[] {0,1,2,3,-1});
+  }
 }
-private MFVec3fObject MFVec3f12() {
-  return new MFVec3fObject( new float[] {1f,1f,0f,1f,-1f,0f,-1f,-1f,0f,-1f,1f,0f})
-;
+protected class MFVec3f12 {
+  protected MFVec3fObject getArray() {
+    return new MFVec3fObject(new float[] {1f,1f,0f,1f,-1f,0f,-1f,-1f,0f,-1f,1f,0f});
+  }
 }
-private MFStringObject MFString13() {
-  return new MFStringObject( new String[] {"next"})
-;
+protected class MFString13 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"next"});
+  }
 }
-private MFStringObject MFString14() {
-  return new MFStringObject( new String[] {"random"})
-;
+protected class MFString14 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"random"});
+  }
 }
-private MFStringObject MFString15() {
-  return new MFStringObject( new String[] {"target=_blank"})
-;
+protected class MFString15 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"target=_blank"});
+  }
 }
-private MFStringObject MFString16() {
-  return new MFStringObject( new String[] {"http://translate.google.com/translate_tts?tl=en&amp;q=Overtly%20resist%20change"})
-;
+protected class MFString16 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"http://translate.google.com/translate_tts?tl=en&amp;q=Overtly%20resist%20change"});
+  }
 }
-private MFStringObject MFString17() {
-  return new MFStringObject( new String[] {"speech"})
-;
+protected class MFString17 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"speech"});
+  }
 }
 }

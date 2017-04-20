@@ -89,33 +89,33 @@ public class bubbles {
         .addMeta(new metaObject().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/bubbles.x3d"))
         .addMeta(new metaObject().setName("description").setContent("not sure what this is")))
       .setScene(new SceneObject()
-        .addChild(new NavigationInfoObject().setType(new MFStringObject(MFString0())))
+        .addChild(new NavigationInfoObject().setType(new MFStringObject(new MFString0().getArray())))
         .addChild(new ViewpointObject().setDEF("Tour").setDescription("Tour Views"))
         .addChild(new ViewpointObject().setPosition(new float[] {0f,0f,4f}).setDescription("sphere in road"))
-        .addChild(new BackgroundObject().setBackUrl(new MFStringObject(MFString1())).setBottomUrl(new MFStringObject(MFString2())).setFrontUrl(new MFStringObject(MFString3())).setLeftUrl(new MFStringObject(MFString4())).setRightUrl(new MFStringObject(MFString5())).setTopUrl(new MFStringObject(MFString6())))
+        .addChild(new BackgroundObject().setBackUrl(new MFStringObject(new MFString1().getArray())).setBottomUrl(new MFStringObject(new MFString2().getArray())).setFrontUrl(new MFStringObject(new MFString3().getArray())).setLeftUrl(new MFStringObject(new MFString4().getArray())).setRightUrl(new MFStringObject(new MFString5().getArray())).setTopUrl(new MFStringObject(new MFString6().getArray())))
         .addChild(new TransformObject().setDEF("Rose01")
           .addChild(new ShapeObject()
             .setGeometry(new SphereObject())
             .setAppearance(new AppearanceObject().setDEF("_01_-_Default")
               .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0.7f,0.7f,0.7f}).setSpecularColor(new float[] {0.5f,0.5f,0.5f}))
               .setTexture(new ComposedCubeMapTextureObject()
-                .setTop(new ImageTextureObject().setUrl(new MFStringObject(MFString7())))
-                .setTop(new ImageTextureObject().setUrl(new MFStringObject(MFString8())))
-                .setTop(new ImageTextureObject().setUrl(new MFStringObject(MFString9())))
-                .setTop(new ImageTextureObject().setUrl(new MFStringObject(MFString10())))
-                .setTop(new ImageTextureObject().setUrl(new MFStringObject(MFString11())))
-                .setTop(new ImageTextureObject().setUrl(new MFStringObject(MFString12()))))
+                .setTop(new ImageTextureObject().setUrl(new MFStringObject(new MFString7().getArray())))
+                .setTop(new ImageTextureObject().setUrl(new MFStringObject(new MFString8().getArray())))
+                .setTop(new ImageTextureObject().setUrl(new MFStringObject(new MFString9().getArray())))
+                .setTop(new ImageTextureObject().setUrl(new MFStringObject(new MFString10().getArray())))
+                .setTop(new ImageTextureObject().setUrl(new MFStringObject(new MFString11().getArray())))
+                .setTop(new ImageTextureObject().setUrl(new MFStringObject(new MFString12().getArray()))))
               .addShaders(new ComposedShaderObject().setDEF("ComposedShader").setLanguage("GLSL")
                 .addField(new fieldObject().setName("cube").setAccessType("inputOutput").setType(fieldObject.TYPE_SFINT32).setValue("0"))
                 .addField(new fieldObject().setName("chromaticDispersion").setAccessType("inputOutput").setType(fieldObject.TYPE_SFVEC3F).setValue("0.98 1 1.033"))
                 .addField(new fieldObject().setName("bias").setAccessType("inputOutput").setType(fieldObject.TYPE_SFFLOAT).setValue("0.5"))
                 .addField(new fieldObject().setName("scale").setAccessType("inputOutput").setType(fieldObject.TYPE_SFFLOAT).setValue("0.5"))
                 .addField(new fieldObject().setName("power").setAccessType("inputOutput").setType(fieldObject.TYPE_SFFLOAT).setValue("2"))
-                .addParts(new ShaderPartObject().setUrl(new MFStringObject(MFString13())).setType("VERTEX"))
-                .addParts(new ShaderPartObject().setUrl(new MFStringObject(MFString14())).setType("FRAGMENT"))))))
+                .addParts(new ShaderPartObject().setUrl(new MFStringObject(new MFString13().getArray())).setType("VERTEX"))
+                .addParts(new ShaderPartObject().setUrl(new MFStringObject(new MFString14().getArray())).setType("FRAGMENT"))))))
         .addChild(new TimeSensorObject().setDEF("TourTime").setCycleInterval(5).setLoop(true))
-        .addChild(new PositionInterpolatorObject().setDEF("TourPosition").setKey(new MFFloatObject(MFFloat15())).setKeyValue(new MFVec3fObject(MFVec3f16())))
-        .addChild(new OrientationInterpolatorObject().setDEF("TourOrientation").setKey(new MFFloatObject(MFFloat17())).setKeyValue(new MFRotationObject(MFRotation18())))
+        .addChild(new PositionInterpolatorObject().setDEF("TourPosition").setKey(new MFFloatObject(new MFFloat15().getArray())).setKeyValue(new MFVec3fObject(new MFVec3f16().getArray())))
+        .addChild(new OrientationInterpolatorObject().setDEF("TourOrientation").setKey(new MFFloatObject(new MFFloat17().getArray())).setKeyValue(new MFRotationObject(new MFRotation18().getArray())))
         .addChild(new ScriptObject().setDEF("RandomTourTime")
           .addField(new fieldObject().setName("set_cycle").setAccessType("inputOnly").setType(fieldObject.TYPE_SFTIME))
           .addField(new fieldObject().setName("lastKey").setAccessType("inputOutput").setType(fieldObject.TYPE_SFFLOAT).setValue("0"))
@@ -158,80 +158,99 @@ public class bubbles {
         .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("fraction_changed").setToNode("TourPosition").setToField("set_fraction"))
         .addChild(new ROUTEObject().setFromNode("TourPosition").setFromField("value_changed").setToNode("Tour").setToField("set_position")))      ;
     }
-private MFStringObject MFString0() {
-  return new MFStringObject( new String[] {"EXAMINE"})
-;
+protected class MFString0 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"EXAMINE"});
+  }
 }
-private MFStringObject MFString1() {
-  return new MFStringObject( new String[] {"cubemap/all_probes/uffizi_cross/uffizi_back.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_back.png"})
-;
+protected class MFString1 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"cubemap/all_probes/uffizi_cross/uffizi_back.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_back.png"});
+  }
 }
-private MFStringObject MFString2() {
-  return new MFStringObject( new String[] {"cubemap/all_probes/uffizi_cross/uffizi_bottom.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_bottom.png"})
-;
+protected class MFString2 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"cubemap/all_probes/uffizi_cross/uffizi_bottom.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_bottom.png"});
+  }
 }
-private MFStringObject MFString3() {
-  return new MFStringObject( new String[] {"cubemap/all_probes/uffizi_cross/uffizi_front.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_front.png"})
-;
+protected class MFString3 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"cubemap/all_probes/uffizi_cross/uffizi_front.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_front.png"});
+  }
 }
-private MFStringObject MFString4() {
-  return new MFStringObject( new String[] {"cubemap/all_probes/uffizi_cross/uffizi_left.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_left.png"})
-;
+protected class MFString4 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"cubemap/all_probes/uffizi_cross/uffizi_left.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_left.png"});
+  }
 }
-private MFStringObject MFString5() {
-  return new MFStringObject( new String[] {"cubemap/all_probes/uffizi_cross/uffizi_right.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_right.png"})
-;
+protected class MFString5 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"cubemap/all_probes/uffizi_cross/uffizi_right.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_right.png"});
+  }
 }
-private MFStringObject MFString6() {
-  return new MFStringObject( new String[] {"cubemap/all_probes/uffizi_cross/uffizi_top.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_top.png"})
-;
+protected class MFString6 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"cubemap/all_probes/uffizi_cross/uffizi_top.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_top.png"});
+  }
 }
-private MFStringObject MFString7() {
-  return new MFStringObject( new String[] {"cubemap/all_probes/uffizi_cross/uffizi_back.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_back.png"})
-;
+protected class MFString7 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"cubemap/all_probes/uffizi_cross/uffizi_back.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_back.png"});
+  }
 }
-private MFStringObject MFString8() {
-  return new MFStringObject( new String[] {"cubemap/all_probes/uffizi_cross/uffizi_bottom.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_bottom.png"})
-;
+protected class MFString8 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"cubemap/all_probes/uffizi_cross/uffizi_bottom.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_bottom.png"});
+  }
 }
-private MFStringObject MFString9() {
-  return new MFStringObject( new String[] {"cubemap/all_probes/uffizi_cross/uffizi_front.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_front.png"})
-;
+protected class MFString9 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"cubemap/all_probes/uffizi_cross/uffizi_front.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_front.png"});
+  }
 }
-private MFStringObject MFString10() {
-  return new MFStringObject( new String[] {"cubemap/all_probes/uffizi_cross/uffizi_left.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_left.png"})
-;
+protected class MFString10 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"cubemap/all_probes/uffizi_cross/uffizi_left.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_left.png"});
+  }
 }
-private MFStringObject MFString11() {
-  return new MFStringObject( new String[] {"cubemap/all_probes/uffizi_cross/uffizi_right.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_right.png"})
-;
+protected class MFString11 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"cubemap/all_probes/uffizi_cross/uffizi_right.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_right.png"});
+  }
 }
-private MFStringObject MFString12() {
-  return new MFStringObject( new String[] {"cubemap/all_probes/uffizi_cross/uffizi_top.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_top.png"})
-;
+protected class MFString12 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"cubemap/all_probes/uffizi_cross/uffizi_top.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_top.png"});
+  }
 }
-private MFStringObject MFString13() {
-  return new MFStringObject( new String[] {"cobweb_bubbles.vs","http://coderextreme.net/X3DJSONLD/cobweb_bubbles.vs"})
-;
+protected class MFString13 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"cobweb_bubbles.vs","http://coderextreme.net/X3DJSONLD/cobweb_bubbles.vs"});
+  }
 }
-private MFStringObject MFString14() {
-  return new MFStringObject( new String[] {"pc_bubbles.fs","http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"})
-;
+protected class MFString14 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"pc_bubbles.fs","http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"});
+  }
 }
-private MFFloatObject MFFloat15() {
-  return new MFFloatObject( new float[] {0f,1f})
-;
+protected class MFFloat15 {
+  protected MFFloatObject getArray() {
+    return new MFFloatObject(new float[] {0f,1f});
+  }
 }
-private MFVec3fObject MFVec3f16() {
-  return new MFVec3fObject( new float[] {0f,0f,10f,0f,0f,-10f})
-;
+protected class MFVec3f16 {
+  protected MFVec3fObject getArray() {
+    return new MFVec3fObject(new float[] {0f,0f,10f,0f,0f,-10f});
+  }
 }
-private MFFloatObject MFFloat17() {
-  return new MFFloatObject( new float[] {0f,1f})
-;
+protected class MFFloat17 {
+  protected MFFloatObject getArray() {
+    return new MFFloatObject(new float[] {0f,1f});
+  }
 }
-private MFRotationObject MFRotation18() {
-  return new MFRotationObject( new float[] {0f,1f,0f,0f,0f,1f,0f,3.1416f})
-;
+protected class MFRotation18 {
+  protected MFRotationObject getArray() {
+    return new MFRotationObject(new float[] {0f,1f,0f,0f,0f,1f,0f,3.1416f});
+  }
 }
 }

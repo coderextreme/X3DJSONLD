@@ -88,7 +88,7 @@ public class arc {
         .addMeta(new metaObject().setName("description").setContent("an attempt to implement an arc in a graph")))
       .setScene(new SceneObject()
         .addChild(new ViewpointObject().setPosition(new float[] {0f,0f,5f}).setDescription("a moving graph"))
-        .addChild(new BackgroundObject().setSkyColor(new MFColorObject(MFColor0())))
+        .addChild(new BackgroundObject().setSkyColor(new MFColorObject(new MFColor0().getArray())))
         .addChild(new TransformObject().setDEF("cylinder1")
           .addChild(new ShapeObject()
             .setAppearance(new AppearanceObject()
@@ -115,7 +115,7 @@ public class arc {
                 .setGeometry(new SphereObject().setRadius(0.1f))
                 .setAppearance(new AppearanceObject()
                   .setMaterial(new MaterialObject().setDiffuseColor(new float[] {1f,0f,0f}))))
-              .addChild(new PositionInterpolatorObject().setDEF("PI1").setKey(new MFFloatObject(MFFloat1())).setKeyValue(new MFVec3fObject(MFVec3f2())))
+              .addChild(new PositionInterpolatorObject().setDEF("PI1").setKey(new MFFloatObject(new MFFloat1().getArray())).setKeyValue(new MFVec3fObject(new MFVec3f2().getArray())))
               .addChild(new ScriptObject().setDEF("MB1")
                 .addField(new fieldObject().setName("translation").setAccessType("inputOutput").setType(fieldObject.TYPE_SFVEC3F).setValue("50 50 0"))
                 .addField(new fieldObject().setName("old").setAccessType("inputOutput").setType(fieldObject.TYPE_SFVEC3F).setValue("0 0 0"))
@@ -210,16 +210,19 @@ public class arc {
         .addChild(new ROUTEObject().setFromNode("start").setFromField("translation").setToNode("connector3").setToField("set_startpoint"))
         .addChild(new ROUTEObject().setFromNode("end3").setFromField("translation").setToNode("connector3").setToField("set_endpoint")))      ;
     }
-private MFColorObject MFColor0() {
-  return new MFColorObject( new float[] {0.4f,0.4f,0.4f})
-;
+protected class MFColor0 {
+  protected MFColorObject getArray() {
+    return new MFColorObject(new float[] {0.4f,0.4f,0.4f});
+  }
 }
-private MFFloatObject MFFloat1() {
-  return new MFFloatObject( new float[] {0f,1f})
-;
+protected class MFFloat1 {
+  protected MFFloatObject getArray() {
+    return new MFFloatObject(new float[] {0f,1f});
+  }
 }
-private MFVec3fObject MFVec3f2() {
-  return new MFVec3fObject( new float[] {0f,0f,0f,0f,5f,0f})
-;
+protected class MFVec3f2 {
+  protected MFVec3fObject getArray() {
+    return new MFVec3fObject(new float[] {0f,0f,0f,0f,5f,0f});
+  }
 }
 }

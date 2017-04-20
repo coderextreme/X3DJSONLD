@@ -88,7 +88,7 @@ public class x3dconnectorProto {
         .addMeta(new metaObject().setName("description").setContent("a generic proto to connect two objects")))
       .setScene(new SceneObject()
         .addChild(new ViewpointObject().setPosition(new float[] {0f,0f,5f}).setDescription("Only Viewpoint"))
-        .addChild(new BackgroundObject().setSkyColor(new MFColorObject(MFColor0())))
+        .addChild(new BackgroundObject().setSkyColor(new MFColorObject(new MFColor0().getArray())))
         .addChild(new TransformObject().setDEF("G1")
           .addChild(new ShapeObject()
             .setAppearance(new AppearanceObject()
@@ -203,8 +203,9 @@ public class x3dconnectorProto {
         .addChild(new ROUTEObject().setFromNode("G1").setFromField("translation").setToNode("connector3").setToField("set_startpoint"))
         .addChild(new ROUTEObject().setFromNode("G4").setFromField("translation").setToNode("connector3").setToField("set_endpoint")))      ;
     }
-private MFColorObject MFColor0() {
-  return new MFColorObject( new float[] {0.4f,0.4f,0.4f})
-;
+protected class MFColor0 {
+  protected MFColorObject getArray() {
+    return new MFColorObject(new float[] {0.4f,0.4f,0.4f});
+  }
 }
 }

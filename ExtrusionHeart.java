@@ -93,20 +93,23 @@ public class ExtrusionHeart {
         .addChild(new ViewpointObject().setDescription("Extrusion Heart").setOrientation(new float[] {1f,0f,0f,1.57f}).setPosition(new float[] {0f,-4f,0f}))
         .addChild(new TransformObject().setTranslation(new float[] {0f,-0.5f,0f})
           .addChild(new ShapeObject()
-            .setGeometry(new ExtrusionObject().setCreaseAngle(3.14159f).setCrossSection(new MFVec2fObject(MFVec2f0())).setScale(new MFVec2fObject(MFVec2f1())).setSolid(false).setSpine(new MFVec3fObject(MFVec3f2())))
+            .setGeometry(new ExtrusionObject().setCreaseAngle(3.14159f).setCrossSection(new MFVec2fObject(new MFVec2f0().getArray())).setScale(new MFVec2fObject(new MFVec2f1().getArray())).setSolid(false).setSpine(new MFVec3fObject(new MFVec3f2().getArray())))
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0.8f,0.3f,0.3f}))))))      ;
     }
-private MFVec2fObject MFVec2f0() {
-  return new MFVec2fObject( new float[] {0f,0.8f,0.2f,1f,0.7f,0.95f,1f,0.5f,0.8f,0f,0.5f,-0.3f,0f,-0.7f,-0.5f,-0.3f,-0.8f,0f,-1f,0.5f,-0.7f,0.95f,-0.2f,1f,0f,0.8f})
-;
+protected class MFVec2f0 {
+  protected MFVec2fObject getArray() {
+    return new MFVec2fObject(new float[] {0f,0.8f,0.2f,1f,0.7f,0.95f,1f,0.5f,0.8f,0f,0.5f,-0.3f,0f,-0.7f,-0.5f,-0.3f,-0.8f,0f,-1f,0.5f,-0.7f,0.95f,-0.2f,1f,0f,0.8f});
+  }
 }
-private MFVec2fObject MFVec2f1() {
-  return new MFVec2fObject( new float[] {0.01f,0.01f,0.8f,0.8f,1f,1f,0.8f,0.8f,0.01f,0.01f})
-;
+protected class MFVec2f1 {
+  protected MFVec2fObject getArray() {
+    return new MFVec2fObject(new float[] {0.01f,0.01f,0.8f,0.8f,1f,1f,0.8f,0.8f,0.01f,0.01f});
+  }
 }
-private MFVec3fObject MFVec3f2() {
-  return new MFVec3fObject( new float[] {0f,0f,0f,0f,0.1f,0f,0f,0.5f,0f,0f,0.9f,0f,0f,1f,0f})
-;
+protected class MFVec3f2 {
+  protected MFVec3fObject getArray() {
+    return new MFVec3fObject(new float[] {0f,0f,0f,0f,0.1f,0f,0f,0.5f,0f,0f,0.9f,0f,0f,1f,0f});
+  }
 }
 }
