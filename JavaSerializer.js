@@ -128,7 +128,7 @@ JavaSerializer.prototype = {
 	}
 }
 
-function printSubArray(attrType, type, values,  co, j, trail) {
+function printSubArray(attrType, type, values,  co, j, lead, trail) {
 	if (attrType.startsWith("MF")) {
 		var str = "new "+attrType+"Object(";
 		for (var i = 0; i < values.length; i += 840) {
@@ -139,7 +139,7 @@ function printSubArray(attrType, type, values,  co, j, trail) {
 			codeno++;
 			code[co] = "protected class "+attrType+co+" {\n";
 			code[co] +=  "  protected "+attrType+"Object getArray() {\n";
-			code[co] += "    return new "+attrType+"Object(new "+type+"[] {"+values.slice(i, max).join(j)+trail+"});\n";
+			code[co] += "    return new "+attrType+"Object(new "+type+"[] {"+lead+values.slice(i, max).join(j)+trail+"});\n";
 			code[co] += "  }\n";
 			code[co] += "}\n";
 			if (i == 0) {
@@ -151,7 +151,7 @@ function printSubArray(attrType, type, values,  co, j, trail) {
 		}
 		return str;
 	} else {
-		return "new "+type+"[] {"+values.slice(i, max).join(j)+trail+"}";
+		return "new "+type+"[] {"+lead+values.slice(i, max).join(j)+trail+"}";
 	}
 }
 
@@ -211,8 +211,10 @@ JavaSerializer.subSerializeToString = function(element, n, mapToMethod, fieldTyp
 				if (attr !== 'containerField') {
 					let method = attr;
 					// look at object model
-					attrType = fieldTypes[element.nodeName][attr];
-
+					let attrType = "SFString";
+					if (typeof fieldTypes[element.nodeName] !== 'undefined') {
+						attrType = fieldTypes[element.nodeName][attr];
+					}
 					// str += "attrType "+attrType+" FAT "+fieldAttrType+" "+attrs[a].nodeValue+"\n";
 					// but if it's NULL, look at the field type
 					if (attrs[a].nodeValue === 'NULL' &&
@@ -228,6 +230,22 @@ JavaSerializer.subSerializeToString = function(element, n, mapToMethod, fieldTyp
 					} else if (attrType === "SFString") {
 						if (attr === "type" && attrs[a].nodeValue !== "VERTEX" && attrs[a].nodeValue !== "FRAGMENT") {
 							str += "fieldObject.TYPE_"+attrs[a].nodeValue.toUpperCase();
+						} else if (attr === "accessType") {
+							str += "fieldObject.ACCESSTYPE_"+attrs[a].nodeValue.toUpperCase();
+						} else if (
+							attrs[a].nodeValue.indexOf("_changed") > 0 &&
+
+							((element.nodeName === 'field' ||
+							attr === "name") ||
+							attr === "fromField")) {
+							str += '"'+attrs[a].nodeValue.substring(0, attrs[a].nodeValue.indexOf("_changed")).replace(/\n/g, '\\\\n').replace(/\\?"/g, "\\\"")+'"';
+						} else if (
+							attrs[a].nodeValue.indexOf("set_") === 0 &&
+
+							((element.nodeName === 'field' &&
+							attr === "name") ||
+							attr === "toField")) {
+							str += '"'+attrs[a].nodeValue.substring(4).replace(/\n/g, '\\\\n').replace(/\\?"/g, "\\\"")+'"';
 						} else {
 							str += '"'+attrs[a].nodeValue.replace(/\n/g, '\\\\n').replace(/\\?"/g, "\\\"")+'"';
 						}
@@ -241,19 +259,23 @@ JavaSerializer.subSerializeToString = function(element, n, mapToMethod, fieldTyp
 						str += attrs[a].nodeValue;
 					} else if (attrType === "MFString") {
 						str += printSubArray(attrType, "String",
-							attrs[a].nodeValue.
-								replace(/([^\\]| )\\\\( |[^\\"])/g, "$1\\\\$2").
-								replace(/([^\\]| )\\\\\\\\([^\\"]| )/g, "$1\\\\\\\\\\\\\\\\$2").
-								replace(/\\\\\\\\"/g, '\\\\"').
-								replace(/\\\\"/g, '\\\\\\"').
-								replace(/&/g, "&amp;").
-								split(/" "/),
-							codeno, '","', '');
+							attrs[a].nodeValue.substring(1, attrs[a].nodeValue.length-1).split(/" "/).
+							map(function(x) {
+							return x.
+                                                               replace(/([^\\]| )\\\\( |[^\\"])/g, "$1\\\\$2").
+                                                               replace(/([^\\]| )\\\\\\\\([^\\"]| )/g, "$1\\\\\\\\\\\\\\\\$2").
+                                                               replace(/\\\\\\\\"/g, '\\\\"').
+                                                               replace(/\\\\"/g, '\\\\\\"').
+                                                               replace(/""/g, '\\"\\"').
+                                                               replace(/&quot;&quot;/g, '\\"\\"').
+                                                               replace(/&/g, "&amp;").
+							       replace(/\\n/g, '\\n');
+							}), codeno, '","', '"', '"');
 					} else if (
 						attrType === "MFInt32"||
 						attrType === "MFImage"||
 						attrType === "SFImage") {
-						str += printSubArray(attrType, "int", attrs[a].nodeValue.split(' '), codeno, ',', '');
+						str += printSubArray(attrType, "int", attrs[a].nodeValue.split(' '), codeno, ',', '', '');
 					} else if (
 						attrType === "SFColor"||
 						attrType === "MFColor"||
@@ -272,7 +294,7 @@ JavaSerializer.subSerializeToString = function(element, n, mapToMethod, fieldTyp
 						attrType === "SFRotation"|
 						attrType === "MFRotation"|
 						attrType === "MFFloat") {
-						str += printSubArray(attrType, "float", attrs[a].nodeValue.split(' '), codeno, 'f,', 'f');
+						str += printSubArray(attrType, "float", attrs[a].nodeValue.split(' '), codeno, 'f,', '', 'f');
 					} else if (
 						attrType === "SFVec2d"||
 						attrType === "SFVec3d"||
@@ -285,9 +307,9 @@ JavaSerializer.subSerializeToString = function(element, n, mapToMethod, fieldTyp
 						attrType === "MFMatrix3d"||
 						attrType === "MFMatrix4d"|
 						attrType === "MFDouble") {
-						str += printSubArray(attrType, "double", attrs[a].nodeValue.split(' '), codeno, 'd,', 'd');
+						str += printSubArray(attrType, "double", attrs[a].nodeValue.split(' '), codeno, 'd,', '', 'd');
 					} else if (attrType === "MFBool") {
-						str += printSubArray(attrType, "boolean", attrs[a].nodeValue.split(' '), codeno, ',', '');
+						str += printSubArray(attrType, "boolean", attrs[a].nodeValue.split(' '), codeno, ',', '', '');
 					} else {
 						str += attrs[a].nodeValue;
 					}
@@ -314,13 +336,6 @@ JavaSerializer.subSerializeToString = function(element, n, mapToMethod, fieldTyp
 				return x.replace(/\\"/g, '\\\\"').
 					replace(/"/g, '\\"').
 					replace(/\\n/g, "\\\\n");
-				/*
-				return x.replace(/([^\\]| )\\\\( |[^\\"])/g, "$1\\\\$2").
-				replace(/([^\\]| )\\\\\\\\([^\\"]| )/g, "$1\\\\\\\\\\\\\\\\$2").
-				replace(/\\\\\\\\"/g, '\\\\"').
-				replace(/\\\\"/g, '\\\\\\"').
-				replace(/&/g, "&amp;");
-				*/
 				}).join('\\n\"+\n\"')+'")';
 		}
 	}
