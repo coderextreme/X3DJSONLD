@@ -1,6 +1,5 @@
 "use strict";
 
-var parseString = require('xml2js').parseString;
 var fs = require('fs');
 
 process.argv.shift();
@@ -131,30 +130,40 @@ function compare(obj1, p1, obj2, p2) {
 
 var glob = require('glob');
 try {
-	var jsonrt = fs.readFileSync(files[1]);
-	var resultrt = JSON.parse(jsonrt);
-	glob(files[0], function(err, filesglobs) {
-		if (err) {
-			console.log(err);
-		}
-		filesglobs.forEach(function(file) {
-			var json = fs.readFileSync(file);
-			var result = JSON.parse(json);
-			let ret;
-			let str;
-			[ ret, str ] = compare(result, '', resultrt, '');
-			if (!ret) {
-				console.log("================================================================================");
-				console.log("diff", files[0], files[1]);
-				console.log(str);
-				console.log("Different");
-				/*
-			} else {
-				console.log("Same");
-				*/
+	try {
+		var jsonrt = fs.readFileSync(files[1]);
+		var resultrt = JSON.parse(jsonrt.toString());
+		glob(files[0], function(err, filesglobs) {
+			if (err) {
+				console.log(err);
 			}
+			filesglobs.forEach(function(file) {
+				try {
+					var json = fs.readFileSync(file);
+					var result = JSON.parse(json.toString());
+					let ret;
+					let str;
+					[ ret, str ] = compare(result, '', resultrt, '');
+					if (!ret) {
+						console.log("================================================================================");
+						console.log("diff", files[0], files[1]);
+						console.log(str);
+						console.log("Different");
+						/*
+					} else {
+						console.log("Same");
+						*/
+					}
+				} catch (l) {
+					console.log("================================================================================");
+					console.log("Error in a LEFT file", file, l);
+				}
+			});
 		});
-	});
+	} catch (r) {
+		console.log("================================================================================");
+		console.log("Error in RIGHT file", files[1], r);
+	}
 } catch (e) {
 	console.log(e, files[1]);
 }

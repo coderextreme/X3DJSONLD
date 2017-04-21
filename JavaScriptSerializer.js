@@ -45,8 +45,8 @@ JavaScriptSerializer.prototype = {
 	}
 }
 
-function printSubArray(type, values, j, trail) {
-	return 'Java.to(['+values.join(j)+trail+'], Java.type("'+type+'[]"))';
+function printSubArray(type, values, j, lead, trail) {
+	return 'Java.to(['+lead+values.join(j)+trail+'], Java.type("'+type+'[]"))';
 }
 
 function printMethod(node, mapToMethod, fieldTypes, n) {
@@ -131,6 +131,22 @@ JavaScriptSerializer.subSerializeToString = function(element, mapToMethod, field
 					} else if (attrType === "SFString") {
 						if (attr === "type" && attrs[a].nodeValue !== "VERTEX" && attrs[a].nodeValue !== "FRAGMENT") {
 							str += "fieldObject.TYPE_"+attrs[a].nodeValue.toUpperCase();
+						} else if (attr === "accessType") {
+							str += "fieldObject.ACCESSTYPE_"+attrs[a].nodeValue.toUpperCase();
+						} else if (
+							attrs[a].nodeValue.indexOf("_changed") > 0 &&
+
+							((element.nodeName === 'field' ||
+							attr === "name") ||
+							attr === "fromField")) {
+							str += '"'+attrs[a].nodeValue.substring(0, attrs[a].nodeValue.indexOf("_changed")).replace(/\n/g, '\\\\n').replace(/\\?"/g, "\\\"")+'"';
+						} else if (
+							attrs[a].nodeValue.indexOf("set_") === 0 &&
+
+							((element.nodeName === 'field' &&
+							attr === "name") ||
+							attr === "toField")) {
+							str += '"'+attrs[a].nodeValue.substring(4).replace(/\n/g, '\\\\n').replace(/\\?"/g, "\\\"")+'"';
 						} else {
 							str += '"'+attrs[a].nodeValue.replace(/\n/g, '\\\\n').replace(/\\?"/g, "\\\"")+'"';
 						}
@@ -144,19 +160,23 @@ JavaScriptSerializer.subSerializeToString = function(element, mapToMethod, field
 						str += attrs[a].nodeValue;
 					} else if (attrType === "MFString") {
 						str += printSubArray("java.lang.String",
-							attrs[a].nodeValue.
-								replace(/([^\\]| )\\\\( |[^\\"])/g, "$1\\\\$2").
-								replace(/([^\\]| )\\\\\\\\([^\\"]| )/g, "$1\\\\\\\\\\\\\\\\$2").
-								replace(/\\\\\\\\"/g, '\\\\"').
-								replace(/\\\\"/g, '\\\\\\"').
-								replace(/&/g, "&amp;").
-								split(/" "/),
-							'","', '');
+							attrs[a].nodeValue.substring(1, attrs[a].nodeValue.length-1).split(/" "/).
+							map(function(x) {
+							return x.
+                                                               replace(/([^\\]| )\\\\\\\\([^\\"]| )/g, "$1\\\\\\\\\\\\\\\\$2").
+                                                               replace(/([^\\])\\\\([^\\"])/g, "$1\\\\\\\\$2").
+                                                               replace(/\\\\\\\\"/g, '\\\\"').
+                                                               replace(/\\\\"/g, '\\\\\\"').
+                                                               replace(/""/g, '\\"\\"').
+                                                               replace(/&quot;&quot;/g, '\\"\\"').
+                                                               replace(/&/g, "&amp;").
+							       replace(/\\n/g, '\\n');
+							}), '","', '"', '"');
 					} else if (
 						attrType === "MFInt32"||
 						attrType === "MFImage"||
 						attrType === "SFImage") {
-						str += printSubArray("int", attrs[a].nodeValue.split(' '), ',', '');
+						str += printSubArray("int", attrs[a].nodeValue.split(' '), ',', '', '');
 					} else if (
 						attrType === "SFColor"||
 						attrType === "MFColor"||
@@ -175,7 +195,7 @@ JavaScriptSerializer.subSerializeToString = function(element, mapToMethod, field
 						attrType === "SFRotation"|
 						attrType === "MFRotation"|
 						attrType === "MFFloat") {
-						str += printSubArray("float", attrs[a].nodeValue.split(' '), ',', '');
+						str += printSubArray("float", attrs[a].nodeValue.split(' '), ',', '', '');
 					} else if (
 						attrType === "SFVec2d"||
 						attrType === "SFVec3d"||
@@ -188,9 +208,9 @@ JavaScriptSerializer.subSerializeToString = function(element, mapToMethod, field
 						attrType === "MFMatrix3d"||
 						attrType === "MFMatrix4d"|
 						attrType === "MFDouble") {
-						str += printSubArray("double", attrs[a].nodeValue.split(' '), ',', '');
+						str += printSubArray("double", attrs[a].nodeValue.split(' '), ',', '', '');
 					} else if (attrType === "MFBool") {
-						str += printSubArray("boolean", attrs[a].nodeValue.split(' '), ',', '');
+						str += printSubArray("boolean", attrs[a].nodeValue.split(' '), ',', '', '');
 					} else {
 						str += attrs[a].nodeValue;
 					}
