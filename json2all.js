@@ -8,11 +8,11 @@ process.argv.shift();
 var convertJSON = require('./convertJSON.js');
 
 convertJSON({
+	'./DOMSerializer.js': ".x3d.new",
 	// './JSONSerializer.js' : ".x3d2json",
 	// './AframeSerializer.js' : ".aframe",
 	// './Three2Serializer.js' : ".three.js",
 	// './PythonSerializer.js': ".py",
 	'./JavaScriptSerializer.js' : ".sail.js",
-	'./JavaSerializer.js' : ".java",
-	'./DOMSerializer.js': ".x3d.new"
+	'./JavaSerializer.js' : ".java"
 });

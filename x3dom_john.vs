@@ -23,7 +23,7 @@ varying vec3 tg;
 varying vec3 tb;
 varying float rfac;
 
-uniform vec3 chromaticDispersion;
+uniform vec3 chromaticDispertion;
 uniform float bias;
 uniform float scale;
 uniform float power;
@@ -36,9 +36,9 @@ void main()
                             
     vec3 i = normalize(fragEyeVector);
     r = reflect(i, normal);
-    tr = refract(i, normal, chromaticDispersion.x);
-    tg = refract(i, normal, chromaticDispersion.y);
-    tb = refract(i, normal, chromaticDispersion.z);
+    tr = refract(i, normal, chromaticDispertion.x);
+    tg = refract(i, normal, chromaticDispertion.y);
+    tb = refract(i, normal, chromaticDispertion.z);
     rfac = bias + scale * pow(0.5+0.5*dot(i, normal), power);
 
     gl_Position = modelViewProjectionMatrix*vec4(position, 1);

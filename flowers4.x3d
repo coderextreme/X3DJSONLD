@@ -32,7 +32,7 @@
                   <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'/>
                   <field name='power' type='SFFloat' accessType='inputOutput' value='2'/>
                   
-                  <ShaderPart url='"x3dom.vs" "http://coderextreme.net/X3DJSONLD/x3dom.vs"' type='VERTEX'>
+                  <ShaderPart url='"cobweb.vs" "http://coderextreme.net/X3DJSONLD/x3dom.vs"' type='VERTEX'>
                   </ShaderPart>
                   <ShaderPart url='"pc_bubbles.fs" "http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"' type='FRAGMENT'>
                   </ShaderPart>

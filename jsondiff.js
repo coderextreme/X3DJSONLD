@@ -1,6 +1,14 @@
 "use strict";
 
 var fs = require('fs');
+function parseString(string, callback) {
+	try {
+		var result = JSON.parse(string);
+		callback(false, result);
+	} catch (e) {
+		callback(e);
+	}
+}
 
 process.argv.shift();
 process.argv.shift();
@@ -117,10 +125,13 @@ function compare(obj1, p1, obj2, p2) {
 			}
 		}
 	} else if (!(typeof obj1 === 'undefined' && typeof obj2 === 'undefined')) {
-		str += "@8 "+p1+p2+"\n";
-		str += "< "+JSON.stringify(obj1)+"\n";
-		str += "> "+JSON.stringify(obj2)+"\n";
-		finalret = false;
+		if (parseFloat(obj1) == parseFloat(obj2)) {
+		} else {
+			str += "@8 "+p1+" "+p2+"\n";
+			str += "< "+JSON.stringify(obj1)+"\n";
+			str += "> "+JSON.stringify(obj2)+"\n";
+			finalret = false;
+		}
 	} else {
 		str += 'both undefined'+"\n";
 	}
@@ -130,23 +141,23 @@ function compare(obj1, p1, obj2, p2) {
 
 var glob = require('glob');
 try {
-	try {
-		var jsonrt = fs.readFileSync(files[1]);
-		var resultrt = JSON.parse(jsonrt.toString());
+	var right = fs.readFileSync(files[1]);
+	parseString(right, function(err, resultright) {
+		if (err) throw "RIGHT FILE "+err;
 		glob(files[0], function(err, filesglobs) {
 			if (err) {
 				console.log(err);
 			}
 			filesglobs.forEach(function(file) {
-				try {
-					var json = fs.readFileSync(file);
-					var result = JSON.parse(json.toString());
+				var left = fs.readFileSync(file);
+				parseString(left, function(err, resultleft) {
+					if (err) throw "LEFT FILE "+err;
 					let ret;
 					let str;
-					[ ret, str ] = compare(result, '', resultrt, '');
+					[ ret, str ] = compare(resultleft, '', resultright, '');
 					if (!ret) {
 						console.log("================================================================================");
-						console.log("diff", files[0], files[1]);
+						console.log("jsondiff.js", files[0], files[1]);
 						console.log(str);
 						console.log("Different");
 						/*
@@ -154,16 +165,11 @@ try {
 						console.log("Same");
 						*/
 					}
-				} catch (l) {
-					console.log("================================================================================");
-					console.log("Error in a LEFT file", file, l);
-				}
+					process.exit();
+				});
 			});
 		});
-	} catch (r) {
-		console.log("================================================================================");
-		console.log("Error in RIGHT file", files[1], r);
-	}
+	});
 } catch (e) {
-	console.log(e, files[1]);
+	console.log(e, files[0], files[1]);
 }

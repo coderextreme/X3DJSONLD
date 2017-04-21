@@ -11,7 +11,9 @@ function newVelocity(id) {
 function setup(id) {
 	crds[id] = [0, 0, 0];
     	var crd = document.getElementById(id);
-        crd.setAttribute("translation", crds[id].join(" "));
+	if (crd != null) {
+		crd.setAttribute("translation", crds[id].join(" "));
+	}
 	newVelocity(id);
 }
 

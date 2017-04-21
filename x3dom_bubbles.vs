@@ -12,8 +12,8 @@ attribute vec3 position;
 attribute vec3 normal;
 attribute vec2 texcoord;
 
-uniform mat4 matrix_viewProjection;
-uniform mat4 matrix_view;
+uniform mat4 projectionMatrix;
+uniform mat4 viewMatrix;
 
 uniform vec3 chromaticDispertion;
 uniform float bias;
@@ -28,20 +28,21 @@ varying float rfac;
 
 void main()
 {
+    mat4 viewProjectionMatrix = viewMatrix * projectionMatrix;
     mat3 mvm3=mat3(
-		matrix_view[0].x,
-		matrix_view[0].y,
-		matrix_view[0].z,
-		matrix_view[1].x,
-        matrix_view[1].y,
-		matrix_view[1].z,
-		matrix_view[2].x,
-		matrix_view[2].y,
-		matrix_view[2].z
+		viewMatrix[0].x,
+		viewMatrix[0].y,
+		viewMatrix[0].z,
+		viewMatrix[1].x,
+		viewMatrix[1].y,
+		viewMatrix[1].z,
+		viewMatrix[2].x,
+		viewMatrix[2].y,
+		viewMatrix[2].z
     );
     vec3 fragNormal = mvm3*normal;
-    gl_Position = matrix_viewProjection*vec4(position, 1.0);
-    vec3 incident = normalize((matrix_view * vec4(position, 1.0)).xyz);
+    gl_Position = viewProjectionMatrix*vec4(position, 1.0);
+    vec3 incident = normalize((viewMatrix * vec4(position, 1.0)).xyz);
 
     t = reflect(incident, fragNormal)*mvm3;
     tr = refract(incident, fragNormal, chromaticDispertion.x)*mvm3;
