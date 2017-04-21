@@ -11,7 +11,7 @@ uniform mat4 modelViewMatrix;
 uniform mat4 modelViewMatrixInverse;
 uniform mat4 normalMatrix;
 
-uniform vec3 chromaticDispersion;
+uniform vec3 chromaticDispertion;
 uniform float bias;
 uniform float scale;
 uniform float power;
@@ -82,9 +82,9 @@ void main()
     vec3 incident = normalize((modelViewMatrix * rose_position(position)).xyz);
 
     t = reflect(incident, fragNormal)*mvm3;
-    tr = refract(incident, fragNormal, chromaticDispersion.x)*mvm3;
-    tg = refract(incident, fragNormal, chromaticDispersion.y)*mvm3;
-    tb = refract(incident, fragNormal, chromaticDispersion.z)*mvm3;
+    tr = refract(incident, fragNormal, chromaticDispertion.x)*mvm3;
+    tg = refract(incident, fragNormal, chromaticDispertion.y)*mvm3;
+    tb = refract(incident, fragNormal, chromaticDispertion.z)*mvm3;
 
     rfac = bias + scale * pow(0.5+0.5*dot(incident, fragNormal), power);
 }

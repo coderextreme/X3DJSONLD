@@ -15,7 +15,7 @@ uniform mat4 normalMatrix;
 uniform mat4 viewMatrix; // world to view transformation
 uniform mat4 viewMatrixInverse; // view to world transformation
 
-uniform vec3 chromaticDispersion;
+uniform vec3 chromaticDispertion;
 uniform float bias;
 uniform float scale;
 uniform float power;

@@ -15,20 +15,19 @@ python classes.py
 (ls "$@" | grep -v intermediate | grep -v "\.new") | sed 's/\.x3d$/.json/' | xargs -P $PROCESSORS node json2all.js
 (ls "$@" | grep -v intermediate | grep -v "\.new") | sed 's/\.x3d$/.java/' | sed 's/\/c\/x3d-code\/www.web3d.org/www_web3d_org/' | xargs -L 1 -P $PROCESSORS javac -J-Xss16m -J-Xmx4096M
 (ls "$@" | grep -v intermediate | grep -v "\.new") | sed 's/\.x3d$//' | sed 's/^\.*\///' | sed 's/c\/x3d-code\/www.web3d.org/www_web3d_org/' | xargs -L 1 -P $PROCESSORS java -d64 -Xss16m -Xmx4096M
+
 for NEW in `(ls "$@" | grep -v intermediate | grep -v "\.new") | sed 's/\.x3d$/.new.json/'| sed 's/\/c\/x3d-code\/www.web3d.org/www_web3d_org/'`
 do
 	JSON=`dirname $NEW | sed 's/www_web3d_org/\/c\/x3d-code\/www.web3d.org/' `/`basename $NEW .new.json`.json
 	if [ -e $NEW ]
 	then if [ -n "`node jsondiff.js $JSON $NEW`" ]
 		then
-			echo ================================================================================
-			echo node jsondiff.js $JSON $NEW
 			node jsondiff.js $JSON $NEW
 		fi
 	fi
 done
 
-(ls "$@" | grep -v intermediate | grep -v "\.new") | sed "s/\.x3d$/.sail.js/" | sed 's/\/c\/x3d-code\/www.web3d.org/www_web3d_org/' | xargs -L 1 -P $PROCESSORS jjs -cp "${CLASSPATH}"
+(ls "$@" | grep -v intermediate | grep -v "\.new") | sed "s/\.x3d$/.sail.js/" | sed 's/\/c\/x3d-code\/www.web3d.org/www_web3d_org/' | xargs -L 1 -P $PROCESSORS jjs -cp "${NASHORN_CLASSPATH}"
 
 for i in `(ls "$@" | grep -v intermediate | grep -v "\.new") | sed 's/\.x3d$/.new.x3d/'| sed 's/\/c\/x3d-code\/www.web3d.org/www_web3d_org/'`
 do
@@ -37,9 +36,13 @@ do
 	then
 		if [ -n "`node xmldiff.js $X3D $i`" ]
 		then
-			echo ================================================================================
-			echo node xmldiff.js $X3D $i
 			node xmldiff.js $X3D $i
 		fi
 	fi
 done
+
+for i in `(ls "$@" | grep -v intermediate | grep -v "\.new") | sed 's/\.x3d$/.x3d.new/'| sed 's/\/c\/x3d-code\/www.web3d.org/www_web3d_org/'`
+do
+	node.exe xmldiff.js `dirname $i  | sed 's/.\/www_web3d_org/\/c\/x3d-code\/www.web3d.org/'`/`basename $i .x3d.new`.x3d $i
+done
+
