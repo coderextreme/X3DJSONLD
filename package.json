@@ -8,7 +8,7 @@
     "java": "*",
     "xmldom": "*",
     "three": "*",
-    "ajv": "*",
+    "ajv": "^4",
     "jsonlint": "*",
     "node-mkdirp": "*",
     "glob": "*"

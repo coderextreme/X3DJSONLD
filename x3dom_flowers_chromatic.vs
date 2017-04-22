@@ -79,10 +79,10 @@ void main()
 	jwc_ModelViewMatrix[2].y,
 	jwc_ModelViewMatrix[2].z
     );
-    vec3 fragNormal = mvm3*rose_normal(position);
     gl_Position = jwc_ModelViewProjectionMatrix * rose_position(position);
-    vec3 incident = normalize((jwc_ModelViewMatrix * rose_position(position)).xyz);
 
+    vec3 fragNormal = mvm3*rose_normal(position);
+    vec3 incident = normalize((jwc_ModelViewMatrix * rose_position(position)).xyz);
     t = reflect(incident, fragNormal)*mvm3;
     tr = refract(incident, fragNormal, chromaticDispertion.x)*mvm3;
     tg = refract(incident, fragNormal, chromaticDispertion.y)*mvm3;

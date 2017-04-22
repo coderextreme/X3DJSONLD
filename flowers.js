@@ -58,14 +58,19 @@ function updateCoordinates(resolution) {
 
 function animate() {
 	choice = Math.floor(Math.random() * 4);
-	if (choice == 0) {
+	switch (choice) {
+	case 0:
 		e += Math.floor(Math.random() * 2) * 2 - 1;
-	} else if (choice == 1) {
+		break;
+	case 1:
 		f += Math.floor(Math.random() * 2) * 2 - 1;
-	} else if (choice == 2) {
+		break;
+	case 2:
 		g += Math.floor(Math.random() * 2) * 2 - 1;
-	} else if (choice == 3) {
+		break;
+	case 3:
 		h += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
 	}
 	t += 0.5
 	p += 0.5;
@@ -80,7 +85,3 @@ function animate() {
 	}
 	updateCoordinates(resolution);
 }
-
-initialize();
-setInterval(animate, 1);
-// animate();

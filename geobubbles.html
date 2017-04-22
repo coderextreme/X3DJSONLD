@@ -15,6 +15,8 @@
 	}
     </style>
     <link rel="stylesheet" type="text/css" href="http://www.x3dom.org/download/1.7.1/x3dom.css"></link>
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/create3000/cobweb/master/stable/3/3.1/cobweb.css"/>
+    <script type="text/javascript" src="https://cdn.rawgit.com/create3000/cobweb/master/stable/3/3.1/cobweb.min.js"></script>
     <script type="text/javascript" src="http://www.x3dom.org/download/1.7.1/x3dom-full.js"></script>
 </head>
 <body>
@@ -44,7 +46,7 @@
 			    <ImageTexture url='"cubemap/all_probes/uffizi_cross/uffizi_right.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_right.png"' containerField='right'/>
 			    <ImageTexture url='"cubemap/all_probes/uffizi_cross/uffizi_top.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_top.png"' containerField='top'/>
                     </ComposedCubeMapTexture>
-                    <ComposedShader DEF='ComposedShader' containerField='shaders' language='GLSL'>
+                    <ComposedShader DEF='x3dom' containerField='shaders' language='GLSL'>
                         <field name='cube' accessType='inputOutput' type='SFInt32' value='0'></field>
                         <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'></field>
                         <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field>
@@ -57,13 +59,13 @@
             </Appearance>
           </Shape>
 	</Transform>
-	<Transform id="tr1" translation="0 0 0" scale="1 1 1">
+	<Transform DEF="tr1" translation="0 0 0" scale="1 1 1">
             <Shape USE="bubble"></Shape>
 	</Transform>
-	<Transform id="tr2" translation="0 0 0" scale="1 1 1">
+	<Transform DEF="tr2" translation="0 0 0" scale="1 1 1">
             <Shape USE="bubble"></Shape>
 	</Transform>
-	<Transform id="tr3" translation="0 0 0" scale="1 1 1">
+	<Transform DEF="tr3" translation="0 0 0" scale="1 1 1">
             <Shape USE="bubble"></Shape>
 	</Transform>
         <TimeSensor DEF='TourTime' cycleInterval='10' loop='true'></TimeSensor>
@@ -74,23 +76,6 @@
         <ROUTE fromNode='TourPosition' fromField='value_changed' toNode='Tour' toField='set_position'></ROUTE>
     </Scene>
 </X3D>
-<!--
-<script type="text/javascript">
-var value_changed = 0;
-var positions = [[10, 0, 90], [10, 0.0015708, 90]];
-var position_changed = '10 0 90 10 0.0015708 90';
-setInterval(function () {
-       var ov = value_changed;
-       do {
-           value_changed = Math.round(Math.random()*2);
-           var vc = value_changed;
-           positions[vc] = [0, 0,  Math.random()*360];
-       } while ( positions[ov][0] === positions[vc][0] && positions[ov][1] === positions[vc][1] && positions[ov][2] === positions[vc][2]);
-       position_changed = positions[ov].join(" ") + " " + positions[vc].join(" ");
-       document.getElementById("TourPosition").setAttribute("keyValue", position_changed);
-}, 5000);
-</script>
--->
 <script type="text/javascript" src="bounce.js"></script>
 </body>
 </html>

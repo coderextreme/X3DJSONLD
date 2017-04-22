@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"20 April 2017"
+            "@content":"21 April 2017"
           },
           {
             "@name":"generator",
@@ -143,7 +143,7 @@
                                     "@value":0
                                   },
                                   {
-                                    "@name":"chromaticDispersion",
+                                    "@name":"chromaticDispertion",
                                     "@accessType":"inputOutput",
                                     "@type":"SFVec3f",
                                     "@value":[0.98,1.0,1.033]

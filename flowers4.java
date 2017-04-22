@@ -101,21 +101,29 @@ public class flowers4 {
                 .setTop(new ImageTextureObject().setUrl(new MFStringObject(new MFString9().getArray())))
                 .setTop(new ImageTextureObject().setUrl(new MFStringObject(new MFString10().getArray())))
                 .setTop(new ImageTextureObject().setUrl(new MFStringObject(new MFString11().getArray()))))
-              .addShaders(new ComposedShaderObject().setDEF("ComposedShader").setLanguage("GLSL")
-                .addField(new fieldObject().setName("cube").setType(fieldObject.TYPE_SFINT32).setAccessType("inputOutput").setValue("0"))
-                .addField(new fieldObject().setName("chromaticDispersion").setAccessType("inputOutput").setType(fieldObject.TYPE_SFVEC3F).setValue("0.98 1 1.033"))
-                .addField(new fieldObject().setName("bias").setType(fieldObject.TYPE_SFFLOAT).setAccessType("inputOutput").setValue("0.5"))
-                .addField(new fieldObject().setName("scale").setType(fieldObject.TYPE_SFFLOAT).setAccessType("inputOutput").setValue("0.5"))
-                .addField(new fieldObject().setName("power").setType(fieldObject.TYPE_SFFLOAT).setAccessType("inputOutput").setValue("2"))
+              .addShaders(new ComposedShaderObject().setDEF("x3dom").setLanguage("GLSL")
+                .addField(new fieldObject().setName("cube").setType(fieldObject.TYPE_SFINT32).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
+                .addField(new fieldObject().setName("chromaticDispertion").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFVEC3F).setValue("0.98 1 1.033"))
+                .addField(new fieldObject().setName("bias").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
+                .addField(new fieldObject().setName("scale").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
+                .addField(new fieldObject().setName("power").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("2"))
                 .addParts(new ShaderPartObject().setUrl(new MFStringObject(new MFString12().getArray())).setType("VERTEX"))
                 .addParts(new ShaderPartObject().setUrl(new MFStringObject(new MFString13().getArray())).setType("FRAGMENT"))))
             .addComments(new CommentsBlock("Sphere/"))
             .setGeometry(new IndexedFaceSetObject().setDEF("Orbit")
-              .setCoord(new CoordinateObject().setDEF("OrbitCoordinates")))))
+              .setCoord(new CoordinateObject().setDEF("OrbitCoordinates"))
+              .addComposedShader(new ComposedShaderObject().setDEF("cobweb").setLanguage("GLSL")
+                .addField(new fieldObject().setName("cube").setType(fieldObject.TYPE_SFINT32).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
+                .addField(new fieldObject().setName("chromaticDispertion").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFVEC3F).setValue("0.98 1 1.033"))
+                .addField(new fieldObject().setName("bias").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
+                .addField(new fieldObject().setName("scale").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
+                .addField(new fieldObject().setName("power").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("2"))
+                .addParts(new ShaderPartObject().setUrl(new MFStringObject(new MFString14().getArray())).setType("VERTEX"))
+                .addParts(new ShaderPartObject().setUrl(new MFStringObject(new MFString15().getArray())).setType("FRAGMENT"))))))
         .addChild(new ScriptObject().setDEF("OrbitScript")
-          .addField(new fieldObject().setName("set_fraction").setAccessType("inputOnly").setType(fieldObject.TYPE_SFFLOAT))
-          .addField(new fieldObject().setName("coordinates").setAccessType("inputOutput").setType(fieldObject.TYPE_MFVEC3F))
-          .addField(new fieldObject().setName("coordIndexes").setAccessType("inputOutput").setType(fieldObject.TYPE_MFINT32))
+          .addField(new fieldObject().setName("fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setType(fieldObject.TYPE_SFFLOAT))
+          .addField(new fieldObject().setName("coordinates").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_MFVEC3F))
+          .addField(new fieldObject().setName("coordIndexes").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_MFINT32))
           .setSourceCode("ecmascript:\n"+
 "\n"+
 "var e = 5;\n"+
@@ -192,9 +200,9 @@ public class flowers4 {
 "}\n"+
 ""))
         .addChild(new TimeSensorObject().setDEF("Clock").setCycleInterval(16).setLoop(true))
-        .addChild(new ROUTEObject().setFromField("coordIndexes").setFromNode("OrbitScript").setToField("set_coordIndex").setToNode("Orbit"))
-        .addChild(new ROUTEObject().setFromField("coordinates").setFromNode("OrbitScript").setToField("set_point").setToNode("OrbitCoordinates"))
-        .addChild(new ROUTEObject().setFromField("fraction_changed").setFromNode("Clock").setToField("set_fraction").setToNode("OrbitScript")))      ;
+        .addChild(new ROUTEObject().setFromField("coordIndexes").setFromNode("OrbitScript").setToField("coordIndex").setToNode("Orbit"))
+        .addChild(new ROUTEObject().setFromField("coordinates").setFromNode("OrbitScript").setToField("point").setToNode("OrbitCoordinates"))
+        .addChild(new ROUTEObject().setFromField("fraction").setFromNode("Clock").setToField("fraction").setToNode("OrbitScript")))      ;
     }
 protected class MFString0 {
   protected MFStringObject getArray() {
@@ -262,6 +270,16 @@ protected class MFString12 {
   }
 }
 protected class MFString13 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"pc_bubbles.fs","http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"});
+  }
+}
+protected class MFString14 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new String[] {"cobweb.vs","http://coderextreme.net/X3DJSONLD/cobweb.vs"});
+  }
+}
+protected class MFString15 {
   protected MFStringObject getArray() {
     return new MFStringObject(new String[] {"pc_bubbles.fs","http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"});
   }

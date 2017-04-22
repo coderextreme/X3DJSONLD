@@ -24,23 +24,32 @@
 		    <ImageTexture url='"cubemap/all_probes/uffizi_cross/uffizi_right.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_right.png"' containerField='right'/>
 		    <ImageTexture url='"cubemap/all_probes/uffizi_cross/uffizi_top.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_top.png"' containerField='top'/>
 	</ComposedCubeMapTexture>
-        <ComposedShader DEF='ComposedShader' language="GLSL">
+		<ComposedShader DEF='x3dom' language="GLSL">
                   <field name='cube' type='SFInt32' accessType='inputOutput' value='0'/>
 
-                  <field name='chromaticDispersion' accessType='inputOutput' type='SFVec3f' value='0.98 1.0 1.033'/>
+                  <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1.0 1.033'/>
                   <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'/>
                   <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'/>
                   <field name='power' type='SFFloat' accessType='inputOutput' value='2'/>
                   
-                  <ShaderPart url='"cobweb.vs" "http://coderextreme.net/X3DJSONLD/x3dom.vs"' type='VERTEX'>
-                  </ShaderPart>
-                  <ShaderPart url='"pc_bubbles.fs" "http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"' type='FRAGMENT'>
-                  </ShaderPart>
+                  <ShaderPart url='"x3dom.vs" "http://coderextreme.net/X3DJSONLD/x3dom.vs"' type='VERTEX'></ShaderPart>
+                  <ShaderPart url='"pc_bubbles.fs" "http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"' type='FRAGMENT'></ShaderPart>
                 </ComposedShader>
 		</Appearance>
 		<!--Sphere/-->
                 <IndexedFaceSet DEF="Orbit" creaseAngle="0">
                   <Coordinate DEF="OrbitCoordinates"/>
+		<ComposedShader DEF='cobweb' language="GLSL">
+                  <field name='cube' type='SFInt32' accessType='inputOutput' value='0'/>
+
+                  <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1.0 1.033'/>
+                  <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'/>
+                  <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'/>
+                  <field name='power' type='SFFloat' accessType='inputOutput' value='2'/>
+                  
+                  <ShaderPart url='"cobweb.vs" "http://coderextreme.net/X3DJSONLD/cobweb.vs"' type='VERTEX'></ShaderPart>
+                  <ShaderPart url='"pc_bubbles.fs" "http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"' type='FRAGMENT'></ShaderPart>
+                </ComposedShader>
                 </IndexedFaceSet>
 	</Shape>
       </Transform>

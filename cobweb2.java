@@ -100,11 +100,11 @@ public class cobweb2 {
                 .setAppearance(new AppearanceObject()
                   .setMaterial(new MaterialObject().setDiffuseColor(new float[] {1f,0f,0f}).setTransparency(0.2f))))
               .addChild(new ScriptObject().setDEF("bounce")
-                .addField(new fieldObject().setName("scale").setAccessType("inputOutput").setType(fieldObject.TYPE_SFVEC3F).setValue("1 1 1"))
-                .addField(new fieldObject().setName("translation").setAccessType("inputOutput").setType(fieldObject.TYPE_SFVEC3F).setValue("0 0 0"))
-                .addField(new fieldObject().setName("velocity").setAccessType("inputOutput").setType(fieldObject.TYPE_SFVEC3F).setValue("0 0 0"))
-                .addField(new fieldObject().setName("scalvel").setAccessType("inputOutput").setType(fieldObject.TYPE_SFVEC3F).setValue("0 0 0"))
-                .addField(new fieldObject().setName("set_fraction").setAccessType("inputOnly").setType(fieldObject.TYPE_SFFLOAT))
+                .addField(new fieldObject().setName("scale").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFVEC3F).setValue("1 1 1"))
+                .addField(new fieldObject().setName("translation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFVEC3F).setValue("0 0 0"))
+                .addField(new fieldObject().setName("velocity").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFVEC3F).setValue("0 0 0"))
+                .addField(new fieldObject().setName("scalvel").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFVEC3F).setValue("0 0 0"))
+                .addField(new fieldObject().setName("fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setType(fieldObject.TYPE_SFFLOAT))
                 .setSourceCode("ecmascript:\n"+
 "function initialize() {\n"+
 "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\n"+
@@ -154,11 +154,11 @@ public class cobweb2 {
 "}\n"+
 ""))
               .addChild(new TimeSensorObject().setDEF("bubbleClock").setCycleInterval(10).setLoop(true))
-              .addChild(new ROUTEObject().setFromNode("transform").setFromField("translation_changed").setToNode("bounce").setToField("set_translation"))
-              .addChild(new ROUTEObject().setFromNode("transform").setFromField("scale_changed").setToNode("bounce").setToField("set_scale"))
-              .addChild(new ROUTEObject().setFromNode("bounce").setFromField("translation_changed").setToNode("transform").setToField("set_translation"))
-              .addChild(new ROUTEObject().setFromNode("bounce").setFromField("scale_changed").setToNode("transform").setToField("set_scale"))
-              .addChild(new ROUTEObject().setFromNode("bubbleClock").setFromField("fraction_changed").setToNode("bounce").setToField("set_fraction")))))
+              .addChild(new ROUTEObject().setFromNode("transform").setFromField("translation").setToNode("bounce").setToField("translation"))
+              .addChild(new ROUTEObject().setFromNode("transform").setFromField("scale").setToNode("bounce").setToField("scale"))
+              .addChild(new ROUTEObject().setFromNode("bounce").setFromField("translation").setToNode("transform").setToField("translation"))
+              .addChild(new ROUTEObject().setFromNode("bounce").setFromField("scale").setToNode("transform").setToField("scale"))
+              .addChild(new ROUTEObject().setFromNode("bubbleClock").setFromField("fraction").setToNode("bounce").setToField("fraction")))))
         .addChild(new ProtoInstanceObject().setName("Bubble").setDEF("bubbleA"))
         .addChild(new ProtoInstanceObject().setName("Bubble").setDEF("bubbleB"))
         .addChild(new ProtoInstanceObject().setName("Bubble").setDEF("bubbleC"))
