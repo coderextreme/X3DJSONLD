@@ -11,13 +11,14 @@
 	<Scene>
 		<NavigationInfo type="&quot;EXAMINE&quot; &quot;ANY&quot;"/>
 		<Background
-			backUrl='"cubemap/BK.png" "http://coderextreme.net/X3DJSONLD/cubemap/BK.png"'
-			bottomUrl='"cubemap/BT.png" "http://coderextreme.net/X3DJSONLD/cubemap/BT.png"'
-			frontUrl='"cubemap/FR.png" "http://coderextreme.net/X3DJSONLD/cubemap/FR.png"'
-			leftUrl='"cubemap/LF.png" "http://coderextreme.net/X3DJSONLD/cubemap/LF.png"' 
-			rightUrl='"cubemap/RT.png" "http://coderextreme.net/X3DJSONLD/cubemap/RT.png"'
-			topUrl='"cubemap/TP.png" "http://coderextreme.net/X3DJSONLD/cubemap/TP.png"' />
-		<Viewpoint position='0 0 20' />
+			backUrl='"cubemap/all_probes/stpeters_cross/stpeters_back.png" "cubemap/all_probes/stpeters_cross/stpeters_back.png"'
+			bottomUrl='"cubemap/all_probes/stpeters_cross/stpeters_bottom.png" "cubemap/all_probes/stpeters_cross/stpeters_bottom.png"'
+			frontUrl='"cubemap/all_probes/stpeters_cross/stpeters_front.png" "cubemap/all_probes/stpeters_cross/stpeters_front.png"'
+			leftUrl='"cubemap/all_probes/stpeters_cross/stpeters_left.png" "cubemap/all_probes/stpeters_cross/stpeters_left.png"'
+			rightUrl='"cubemap/all_probes/stpeters_cross/stpeters_right.png" "cubemap/all_probes/stpeters_cross/stpeters_right.png"'
+			topUrl='"cubemap/all_probes/stpeters_cross/stpeters_top.png" "cubemap/all_probes/stpeters_cross/stpeters_top.png"'
+			/>
+		<Viewpoint position='0 0 20' description="Look at the bubbles flying"/>
 		<ProtoDeclare name="Bubble">
 		<ProtoBody>
 		<Transform DEF="transform" translation="0 0 0">
@@ -25,12 +26,12 @@
 				<Appearance>
 					<Material diffuseColor=".7 .7 .7" specularColor=".5 .5 .5" />
 					<ComposedCubeMapTexture DEF="texture">
-						<ImageTexture url='"cubemap/BK.png" "http://coderextreme/X3DJSONLD/cubemap/BK.png"' containerField="back"/>
-						<ImageTexture url='"cubemap/BT.png" "http://coderextreme/X3DJSONLD/cubemap/BT.png"' containerField="bottom"/>
-						<ImageTexture url='"cubemap/FR.png" "http://coderextreme/X3DJSONLD/cubemap/FR.png"' containerField="front"/>
-						<ImageTexture url='"cubemap/LF.png" "http://coderextreme/X3DJSONLD/cubemap/LF.png"' containerField="left"/>
-						<ImageTexture url='"cubemap/RT.png" "http://coderextreme/X3DJSONLD/cubemap/RT.png"' containerField="right"/>
-						<ImageTexture url='"cubemap/TP.png" "http://coderextreme/X3DJSONLD/cubemap/TP.png"' containerField="top"/>
+						<ImageTexture url='"cubemap/all_probes/stpeters_cross/stpeters_back.png" "cubemap/all_probes/stpeters_cross/stpeters_back.png"' containerField="back"/>
+						<ImageTexture url='"cubemap/all_probes/stpeters_cross/stpeters_bottom.png" "cubemap/all_probes/stpeters_cross/stpeters_bottom.png"' containerField="bottom"/>
+						<ImageTexture url='"cubemap/all_probes/stpeters_cross/stpeters_front.png" "cubemap/all_probes/stpeters_cross/stpeters_front.png"' containerField="front"/>
+						<ImageTexture url='"cubemap/all_probes/stpeters_cross/stpeters_left.png" "cubemap/all_probes/stpeters_cross/stpeters_left.png"' containerField="left"/>
+						<ImageTexture url='"cubemap/all_probes/stpeters_cross/stpeters_right.png" "cubemap/all_probes/stpeters_cross/stpeters_right.png"' containerField="right"/>
+						<ImageTexture url='"cubemap/all_probes/stpeters_cross/stpeters_top.png" "cubemap/all_probes/stpeters_cross/stpeters_top.png"' containerField="top"/>
 					</ComposedCubeMapTexture>
 					<!--
 					<ComposedShader DEF='gl' language="GLSL">

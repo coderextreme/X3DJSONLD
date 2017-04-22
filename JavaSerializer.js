@@ -178,6 +178,20 @@ function printParentChild(element, n, node, cn, mapToMethod) {
 	} else {
 		method = method.charAt(0).toUpperCase() + method.slice(1);
 	}
+	for (let a in node.attributes) {
+		let attrs = node.attributes;
+		try {
+			parseInt(a);
+			if (attrs.hasOwnProperty(a) && attrs[a].nodeType == 2) {
+				let attr = attrs[a].nodeName;
+				if (attr === "containerField") {
+					method = "set"+attrs[a].nodeValue.charAt(0).toUpperCase() + attrs[a].nodeValue.slice(1);
+				}
+			}
+		} catch (e) {
+			console.error(e);
+		}
+	}
 	return "\n"+("  ".repeat(n))+addpre+method;
 }
 

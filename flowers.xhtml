@@ -1,0 +1,296 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml'>
+	<head>
+<meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge" />
+    <link rel="stylesheet" type="text/css" href="http://www.x3dom.org/download/dev/x3dom.css"></link>
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/create3000/cobweb/master/stable/3/3.1/cobweb.css"/>
+    <script type="text/javascript" src="https://cdn.rawgit.com/create3000/cobweb/master/stable/3/3.1/cobweb.min.js"></script>
+    <script type="text/javascript" src="http://www.x3dom.org/download/dev/x3dom-full.js"></script>
+		<style>
+		    X3D { width:800px; height: 450px; }
+		    X3DCanvas { width: 800px; height:450px;
+		    }
+		</style>
+	</head>
+	<body>
+	<h1 style="width:100%; text-align:center;">Flowers</h1>
+	<div style="display:table">
+	<div style="display:table-row">
+	<div style="display:table-cell">
+		 <h2>X3DOM</h2>
+	</div>
+	<div style="display:table-cell">
+	<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" showStat='false' showLog='false' width='800px' height='500px' backend='webgl'>
+	<head>
+		<meta name="title" content="bub.x3d"></meta>
+		<meta name="creator" content="John Carlson"></meta>
+		<meta name="description" content="3 prismatic spheres"></meta>
+		<meta name="generator" content="X3D-Edit, https://savage.nps.edu/X3D-Edit"></meta>
+		<meta name="identifier" content="http://coderextreme.net/X3DJSONLD/bub.x3d"></meta>
+	</head>
+	<Scene>
+		<NavigationInfo type="&quot;EXAMINE&quot; &quot;ANY&quot;"/>
+		<Background
+			backUrl='"cubemap/all_probes/stpeters_cross/stpeters_back.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_back.png"'
+			bottomUrl='"cubemap/all_probes/stpeters_cross/stpeters_bottom.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_bottom.png"'
+			frontUrl='"cubemap/all_probes/stpeters_cross/stpeters_front.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_front.png"'
+			leftUrl='"cubemap/all_probes/stpeters_cross/stpeters_left.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_left.png"'
+			rightUrl='"cubemap/all_probes/stpeters_cross/stpeters_right.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_right.png"'
+			topUrl='"cubemap/all_probes/stpeters_cross/stpeters_top.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_top.png"'
+		  />
+		<Transform id="tr1" translation="0 0 0">
+			<Shape>
+				<Appearance>
+				<Material diffuseColor=".7 .7 .7" specularColor=".5 .5 .5" />
+				<ComposedCubeMapTexture DEF="texture">
+					<ImageTexture url='"cubemap/all_probes/stpeters_cross/stpeters_back.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_back.png"' containerField="back"/>
+					<ImageTexture url='"cubemap/all_probes/stpeters_cross/stpeters_bottom.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_bottom.png"' containerField="bottom"/>
+					<ImageTexture url='"cubemap/all_probes/stpeters_cross/stpeters_front.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_front.png"' containerField="front"/>
+					<ImageTexture url='"cubemap/all_probes/stpeters_cross/stpeters_left.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_left.png"' containerField="left"/>
+					<ImageTexture url='"cubemap/all_probes/stpeters_cross/stpeters_right.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_right.png"' containerField="right"/>
+					<ImageTexture url='"cubemap/all_probes/stpeters_cross/stpeters_top.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_top.png"' containerField="top"/>
+				</ComposedCubeMapTexture>
+
+				<ComposedShader language="GLSL">
+				  <field name='xxxcube' type='SFInt32' accessType="inputOutput" value='0'/>
+				  <field name='cube' type='SFNode' accessType="inputOutput">
+					  <ComposedCubeMapTexture USE="texture"/>
+				  </field>
+
+				  <field name='chromaticDispertion' type='SFVec3f' accessType="inputOutput" value='0.98 1.0 1.033'/>
+				  <field name='bias' type='SFFloat' accessType="inputOutput" value='0.5'/>
+				  <field name='scale' type='SFFloat' accessType="inputOutput" value='0.5'/>
+				  <field name='power' type='SFFloat' accessType="inputOutput" value='2.0'/>
+				  <field class="a" name='a' type='SFFloat' accessType='inputOnly' value='0.5'></field>
+				  <field class="b" name='b' type='SFFloat' accessType='inputOnly' value='0.5'></field>
+				  <field class="c" name='c' type='SFFloat' accessType='inputOnly' value='3'></field>
+				  <field class="d" name='d' type='SFFloat' accessType='inputOnly' value='3'></field>
+				  <field class="tdelta" name='tdelta' type='SFFloat' accessType='inputOnly' value='0.5'></field>
+				  <field class="pdelta" name='pdelta' type='SFFloat' accessType='inputOnly' value='0.5'></field>
+				  
+				<ShaderPart url='"x3dom_flowers_chromatic.vs" "http://coderextreme.net/X3DJSONLD/x3dom.vs"' type="VERTEX">
+				</ShaderPart>
+				<ShaderPart url='"pc_bubbles.fs" "http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"' type='FRAGMENT'>
+				</ShaderPart>
+				</ComposedShader>
+				</Appearance>
+				<Sphere subdivision="512,512" solid="true" radius='20'></Sphere>
+			</Shape>
+		</Transform>
+		<Transform id="tr2" translation="0 0 0">
+			<Shape>
+				<Appearance>
+				<Material diffuseColor=".7 .7 .7" specularColor=".5 .5 .5" />
+				<ComposedCubeMapTexture>
+					<ImageTexture url='"cubemap/all_probes/stpeters_cross/stpeters_back.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_back.png"' containerField="back"/>
+					<ImageTexture url='"cubemap/all_probes/stpeters_cross/stpeters_bottom.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_bottom.png"' containerField="bottom"/>
+					<ImageTexture url='"cubemap/all_probes/stpeters_cross/stpeters_front.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_front.png"' containerField="front"/>
+					<ImageTexture url='"cubemap/all_probes/stpeters_cross/stpeters_left.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_left.png"' containerField="left"/>
+					<ImageTexture url='"cubemap/all_probes/stpeters_cross/stpeters_right.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_right.png"' containerField="right"/>
+					<ImageTexture url='"cubemap/all_probes/stpeters_cross/stpeters_top.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_top.png"' containerField="top"/>
+				</ComposedCubeMapTexture>
+
+				<ComposedShader language="GLSL">
+				  <field name='xxxcube' type='SFInt32' accessType="inputOutput" value='0'/>
+				  <field name='cube' type='SFNode' accessType="inputOutput">
+					  <ComposedCubeMapTexture USE="texture"/>
+				  </field>
+
+				  <field name='chromaticDispertion' type='SFVec3f' accessType="inputOutput" value='0.98 1.0 1.033'/>
+				  <field name='bias' type='SFFloat' accessType="inputOutput" value='0.5'/>
+				  <field name='scale' type='SFFloat' accessType="inputOutput" value='0.5'/>
+				  <field name='power' type='SFFloat' accessType="inputOutput" value='2.0'/>
+				  <field class="a" name='a' type='SFFloat' accessType='inputOnly' value='0.5'></field>
+				  <field class="b" name='b' type='SFFloat' accessType='inputOnly' value='0.5'></field>
+				  <field class="c" name='c' type='SFFloat' accessType='inputOnly' value='3'></field>
+				  <field class="d" name='d' type='SFFloat' accessType='inputOnly' value='3'></field>
+				  <field class="tdelta" name='tdelta' type='SFFloat' accessType='inputOnly' value='0.5'></field>
+				  <field class="pdelta" name='pdelta' type='SFFloat' accessType='inputOnly' value='0.5'></field>
+				  
+				<ShaderPart url='"x3dom_flowers_chromatic.vs" "http://coderextreme.net/X3DJSONLD/x3dom.vs"' type="VERTEX">
+				</ShaderPart>
+				<ShaderPart url='"pc_bubbles.fs" "http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"' type='FRAGMENT'>
+				</ShaderPart>
+				</ComposedShader>
+				</Appearance>
+				<Sphere subdivision="512,512" solid="true" radius='20'></Sphere>
+			</Shape>
+		</Transform>
+		<Transform id="tr3" translation="0 0 0">
+			<Shape>
+				<Appearance>
+				<Material diffuseColor=".7 .7 .7" specularColor=".5 .5 .5" />
+				<ComposedCubeMapTexture>
+					<ImageTexture url='"cubemap/all_probes/stpeters_cross/stpeters_back.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_back.png"' containerField="back"/>
+					<ImageTexture url='"cubemap/all_probes/stpeters_cross/stpeters_bottom.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_bottom.png"' containerField="bottom"/>
+					<ImageTexture url='"cubemap/all_probes/stpeters_cross/stpeters_front.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_front.png"' containerField="front"/>
+					<ImageTexture url='"cubemap/all_probes/stpeters_cross/stpeters_left.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_left.png"' containerField="left"/>
+					<ImageTexture url='"cubemap/all_probes/stpeters_cross/stpeters_right.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_right.png"' containerField="right"/>
+					<ImageTexture url='"cubemap/all_probes/stpeters_cross/stpeters_top.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_top.png"' containerField="top"/>
+				</ComposedCubeMapTexture>
+
+				<ComposedShader language="GLSL">
+				  <field name='xxxcube' type='SFInt32' accessType="inputOutput" value='0'/>
+				  <field name='cube' type='SFNode' accessType="inputOutput">
+					  <ComposedCubeMapTexture USE="texture"/>
+				  </field>
+
+				  <field name='chromaticDispertion' type='SFVec3f' accessType="inputOutput" value='0.98 1.0 1.033'/>
+				  <field name='bias' type='SFFloat' accessType="inputOutput" value='0.5'/>
+				  <field name='scale' type='SFFloat' accessType="inputOutput" value='0.5'/>
+				  <field name='power' type='SFFloat' accessType="inputOutput" value='2.0'/>
+				  <field class="a" name='a' type='SFFloat' accessType='inputOnly' value='0.5'></field>
+				  <field class="b" name='b' type='SFFloat' accessType='inputOnly' value='0.5'></field>
+				  <field class="c" name='c' type='SFFloat' accessType='inputOnly' value='3'></field>
+				  <field class="d" name='d' type='SFFloat' accessType='inputOnly' value='3'></field>
+				  <field class="tdelta" name='tdelta' type='SFFloat' accessType='inputOnly' value='0.5'></field>
+				  <field class="pdelta" name='pdelta' type='SFFloat' accessType='inputOnly' value='0.5'></field>
+				  
+				<ShaderPart url='"x3dom_flowers_chromatic.vs" "http://coderextreme.net/X3DJSONLD/x3dom_flowers_chromatic.vs"' type="VERTEX">
+				</ShaderPart>
+				<ShaderPart url='"pc_bubbles.fs" "http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"' type='FRAGMENT'>
+				</ShaderPart>
+				</ComposedShader>
+				</Appearance>
+				<Sphere subdivision="512,512" solid="true" radius='20'></Sphere>
+			</Shape>
+		</Transform>
+	</Scene>
+	</X3D>
+	</div>
+	</div>
+	<div style="display:table-row">
+	<div style="display:table-cell">
+		 <h2>Cobweb IFS</h2>
+	</div>
+	<div style="display:table-cell">
+	<X3DCanvas id="flowers" cache="false" url='"flowers.x3d""'>
+		 <p>Your browser may not support all features required by Cobweb!</p>
+	</X3DCanvas>
+	</div>
+	</div>
+	<div style="display:table-row">
+	<div style="display:table-cell">
+		 <h2>Cobweb Sphere</h2>
+	</div>
+	<div style="display:table-cell">
+	<X3DCanvas id="sphereflowers" cache="false" url='"sphereflowers.x3d""'>
+		 <p>Your browser may not support all features required by Cobweb!</p>
+	</X3DCanvas>
+	</div>
+	</div>
+	</div>
+	</body>
+	<script type="text/javascript">
+var crds = new Object();
+var velocity = new Object();
+
+function newVelocity(id) {
+	velocity[id] = new Array();
+        velocity[id][0] = Math.random() - 0.5;
+        velocity[id][1] = Math.random() - 0.5;
+        velocity[id][2] = Math.random() - 0.5;
+}
+
+function setup(id) {
+	crds[id] = [0, 0, 0];
+    	var crd = document.getElementById(id);
+	if (crd != null) {
+		crd.setAttribute("translation", crds[id].join(" "));
+	}
+	newVelocity(id);
+}
+
+function initialize() {
+	setup("tr1");
+	setup("tr2");
+	setup("tr3");
+}
+function setCoordinates(id) {
+    var crd = document.getElementById(id);
+    crds[id][0] = crds[id][0] + velocity[id][0];
+    crds[id][1] = crds[id][1] + velocity[id][1];
+    crds[id][2] = crds[id][2] + velocity[id][2];
+    for (var j = 0; j <= 2; j++) {
+	    if (Math.abs(crds[id][j]) > 10) {
+		setup(id);
+	    } else {
+		velocity[id][0] += Math.random() * 0.2 - 0.1;
+		velocity[id][1] += Math.random() * 0.2 - 0.1;
+		velocity[id][2] += Math.random() * 0.2 - 0.1;
+	    }
+    }
+    crd.setAttribute("translation", crds[id].join(" "));
+    animate_flowers(id);
+}
+
+function animate_flowers(tr) {
+	choice = Math.floor(Math.random() * 4);
+	switch (choice) {
+	case 0:
+		addValue(tr, "a", Math.random() * 0.2 - 0.1)
+		break;
+	case 1:
+		addValue(tr, "b", Math.random() * 0.2 - 0.1)
+		break;
+	case 2:
+		addValue(tr, "c", Math.random() * 2 - 1)
+		break;
+	case 3:
+		addValue(tr, "d", Math.random() * 2 - 1)
+		break;
+	}
+	addValue(tr, "tdelta", 0.5);
+	addValue(tr, "pdelta", 0.5);
+	if (getValue(tr, "a") > 1) {
+		setValue(tr, "a", 0.5);
+	}
+	if (getValue(tr, "b") > 1) {
+		setValue(tr, "b", 0.5);
+	}
+	if (getValue(tr, "c") < 1) {
+		setValue(tr, "c", 4);
+	}
+	if (getValue(tr, "d") < 1) {
+		setValue(tr, "d", 4);
+	}
+	if (getValue(tr, "c") > 10) {
+		setValue("c", 4);
+	}
+	if (getValue(tr, "d") > 10) {
+		setValue(tr, "d", 4);
+	}
+}
+
+function addValue(tr, name, value) {
+	var oldValue = getValue(tr, name) || 0;
+	if (!isNaN(oldValue) && !isNaN(value)) {
+		setValue(tr, name, parseFloat(oldValue) + parseFloat(value));
+	}
+}
+
+function getField(tr, clazz) {
+    var key = "#"+tr+" Shape Appearance ComposedShader ."+clazz;
+    var field = document.querySelector(key);
+    return field;
+}
+
+function getValue(tr, name) {
+    return getField(tr, name).getAttribute("value");
+}
+
+function setValue(tr, name, value) {
+    getField(tr, name).setAttribute("value", parseFloat(value));
+}
+
+function animate() {
+	setCoordinates("tr1");
+	setCoordinates("tr2");
+	setCoordinates("tr3");
+}
+
+initialize();
+setInterval(animate, 150);
+	</script>
+</html>

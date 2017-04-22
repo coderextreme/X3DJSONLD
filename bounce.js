@@ -37,6 +37,7 @@ function setCoordinates(id) {
 	    }
     }
     crd.setAttribute("translation", crds[id].join(" "));
+    animate_flowers(id);
 }
 
 function animate() {
