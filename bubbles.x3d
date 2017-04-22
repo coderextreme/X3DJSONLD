@@ -28,16 +28,23 @@
 		    <ImageTexture url='"cubemap/all_probes/uffizi_cross/uffizi_right.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_right.png"' containerField='right'/>
 		    <ImageTexture url='"cubemap/all_probes/uffizi_cross/uffizi_top.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_top.png"' containerField='top'/>
 		    </ComposedCubeMapTexture>
-		    <ComposedShader DEF='ComposedShader' containerField='shaders' language='GLSL'>
+		    <ComposedShader DEF="cobweb" containerField='shaders' language='GLSL'>
 		    <field name='cube' accessType='inputOutput' type='SFInt32' value='0'/>
-                    <field name='chromaticDispersion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'/>
+                    <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'/>
                     <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/>
                     <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/>
                     <field name='power' accessType='inputOutput' type='SFFloat' value='2'/>
-		    <ShaderPart url='"cobweb_bubbles.vs" "http://coderextreme.net/X3DJSONLD/cobweb_bubbles.vs"' containerField='parts' type='VERTEX'>
-		    </ShaderPart>
-		    <ShaderPart url='"pc_bubbles.fs" "http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"' containerField='parts' type='FRAGMENT'>
-		    </ShaderPart>
+		    <ShaderPart url='"cobweb.vs" "http://coderextreme.net/X3DJSONLD/cobweb.vs"' containerField='parts' type='VERTEX'></ShaderPart>
+		    <ShaderPart url='"pc_bubbles.fs" "http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
+		    </ComposedShader>
+		    <ComposedShader DEF="x3dom" containerField='shaders' language='GLSL'>
+		    <field name='cube' accessType='inputOutput' type='SFInt32' value='0'/>
+                    <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'/>
+                    <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/>
+                    <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/>
+                    <field name='power' accessType='inputOutput' type='SFFloat' value='2'/>
+		    <ShaderPart url='"x3dom.vs" "http://coderextreme.net/X3DJSONLD/x3dom.vs"' containerField='parts' type='VERTEX'></ShaderPart>
+		    <ShaderPart url='"pc_bubbles.fs" "http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
 		    </ComposedShader>
                 </Appearance>
             </Shape>

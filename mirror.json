@@ -34,7 +34,7 @@
           },
           {
             "@name":"translated",
-            "@content":"20 April 2017"
+            "@content":"21 April 2017"
           },
           {
             "@name":"generator",
@@ -165,6 +165,7 @@
                           "-shaders":[
                             { "ComposedShader":
                               {
+                                "@DEF":"x3dom",
                                 "@language":"GLSL",
                                 "-children":[
                                   {
@@ -173,7 +174,7 @@
                                 ],
                                 "field": [
                                   {
-                                    "@name":"chromaticDispersion",
+                                    "@name":"chromaticDispertion",
                                     "@accessType":"inputOutput",
                                     "@type":"SFVec3f",
                                     "@value":[0.98,1,1.033]
@@ -206,7 +207,64 @@
                                 "-parts":[
                                   { "ShaderPart":
                                     {
-                                      "@url":["cobweb_bubbles.vs","http://coderextreme.net/X3DJSONLD/cobweb_bubbles.vs"],
+                                      "@url":["x3dom.vs","http://coderextreme.net/X3DJSONLD/x3dom.vs"],
+                                      "@type":"VERTEX"
+                                    }
+                                  },
+                                  { "ShaderPart":
+                                    {
+                                      "@url":["mix.fs","http://coderextreme.net/X3DJSONLD/mix.fs"],
+                                      "@type":"FRAGMENT"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "ComposedShader":
+                              {
+                                "@DEF":"cobweb",
+                                "@language":"GLSL",
+                                "-children":[
+                                  {
+                                    "#comment":"http://hypertextbook.com/facts/2005/JustinChe.shtml"
+                                  }
+                                ],
+                                "field": [
+                                  {
+                                    "@name":"chromaticDispertion",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFVec3f",
+                                    "@value":[0.98,1,1.033]
+                                  },
+                                  {
+                                    "@name":"cube",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFInt32",
+                                    "@value":0
+                                  },
+                                  {
+                                    "@name":"bias",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFFloat",
+                                    "@value":0.5
+                                  },
+                                  {
+                                    "@name":"scale",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFFloat",
+                                    "@value":0.5
+                                  },
+                                  {
+                                    "@name":"power",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFFloat",
+                                    "@value":2
+                                  }
+                                ],
+                                "-parts":[
+                                  { "ShaderPart":
+                                    {
+                                      "@url":["cobweb.vs","http://coderextreme.net/X3DJSONLD/cobweb.vs"],
                                       "@type":"VERTEX"
                                     }
                                   },

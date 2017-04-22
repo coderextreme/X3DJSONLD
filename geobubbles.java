@@ -100,10 +100,10 @@ public class geobubbles {
         .addChild(new TimeSensorObject().setDEF("TourTime").setCycleInterval(5).setLoop(true))
         .addChild(new GeoPositionInterpolatorObject().setDEF("TourPosition").setKey(new MFFloatObject(new MFFloat6().getArray())).setKeyValue(new MFVec3dObject(new MFVec3d7().getArray())))
         .addChild(new ScriptObject().setDEF("RandomTourTime")
-          .addField(new fieldObject().setName("set_cycle").setAccessType("inputOnly").setType(fieldObject.TYPE_SFTIME))
-          .addField(new fieldObject().setName("val").setAccessType("inputOutput").setType(fieldObject.TYPE_SFFLOAT).setValue("0"))
-          .addField(new fieldObject().setName("positions").setAccessType("inputOutput").setType(fieldObject.TYPE_MFVEC3D).setValue("0.0015708 0 4 0 0.0015708 4"))
-          .addField(new fieldObject().setName("position").setAccessType("inputOutput").setType(fieldObject.TYPE_MFVEC3D).setValue("0.0015708 0 4 0 0.0015708 4"))
+          .addField(new fieldObject().setName("cycle").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setType(fieldObject.TYPE_SFTIME))
+          .addField(new fieldObject().setName("val").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFFLOAT).setValue("0"))
+          .addField(new fieldObject().setName("positions").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_MFVEC3D).setValue("0.0015708 0 4 0 0.0015708 4"))
+          .addField(new fieldObject().setName("position").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_MFVEC3D).setValue("0.0015708 0 4 0 0.0015708 4"))
           .setSourceCode("ecmascript:\n"+
 "\n"+
 "               function set_cycle(value) {\n"+
@@ -122,10 +122,10 @@ public class geobubbles {
 "                        position[1] = new SFVec3d(positions[vc][0],positions[vc][1],positions[vc][2]);\n"+
 "               }\n"+
 ""))
-        .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("cycleTime").setToNode("RandomTourTime").setToField("set_cycle"))
+        .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("cycleTime").setToNode("RandomTourTime").setToField("cycle"))
         .addChild(new ROUTEObject().setFromNode("RandomTourTime").setFromField("position").setToNode("TourPosition").setToField("keyValue"))
-        .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("fraction_changed").setToNode("TourPosition").setToField("set_fraction"))
-        .addChild(new ROUTEObject().setFromNode("TourPosition").setFromField("value_changed").setToNode("Tour").setToField("set_position")))      ;
+        .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("fraction").setToNode("TourPosition").setToField("fraction"))
+        .addChild(new ROUTEObject().setFromNode("TourPosition").setFromField("value").setToNode("Tour").setToField("position")))      ;
     }
 protected class MFString0 {
   protected MFStringObject getArray() {

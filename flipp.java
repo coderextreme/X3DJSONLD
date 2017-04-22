@@ -104,9 +104,9 @@ public class flipp {
         .addChild(new TimeSensorObject().setDEF("ts").setCycleInterval(2).setLoop(true))
         .addChild(new ScalarInterpolatorObject().setDEF("si").setKey(new MFFloatObject(new MFFloat9().getArray())).setKeyValue(new MFFloatObject(new MFFloat10().getArray())))
         .addChild(new CoordinateInterpolatorObject().setDEF("ci").setKey(new MFFloatObject(new MFFloat11().getArray())).setKeyValue(new MFVec3fObject(new MFVec3f12().getArray()).append(new MFVec3f13().getArray()).append(new MFVec3f14().getArray()).append(new MFVec3f15().getArray())))
-        .addChild(new ROUTEObject().setFromNode("ci").setFromField("value_changed").setToNode("pointList").setToField("set_point"))
-        .addChild(new ROUTEObject().setFromNode("si").setFromField("value_changed").setToNode("ci").setToField("set_fraction"))
-        .addChild(new ROUTEObject().setFromNode("ts").setFromField("fraction_changed").setToNode("si").setToField("set_fraction")))      ;
+        .addChild(new ROUTEObject().setFromNode("ci").setFromField("value").setToNode("pointList").setToField("point"))
+        .addChild(new ROUTEObject().setFromNode("si").setFromField("value").setToNode("ci").setToField("fraction"))
+        .addChild(new ROUTEObject().setFromNode("ts").setFromField("fraction").setToNode("si").setToField("fraction")))      ;
     }
 protected class MFFloat0 {
   protected MFFloatObject getArray() {

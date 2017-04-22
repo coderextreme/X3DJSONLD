@@ -101,7 +101,7 @@ public class TextSpecialCharacters {
           .addComments(new CommentsBlock("apostrophe ' is &apos; and needs to be escaped in single-quote delimiters used for string='value' attribute"))
           .addComments(new CommentsBlock("ampersand & is &amp; and needs to be escaped"))
           .addComments(new CommentsBlock("quotation \" is &quot; and isn't needed if single-quote delimiters used for string='value' attribute"))
-          .addComments(new CommentsBlock("quotation \" can be used as part of X3D string if escaped with backslash: \\\""))
+          .addComments(new CommentsBlock("quotation \" can be used as part of X3D string if escaped with backslash: \\""))
           .addComments(new CommentsBlock("backslash is used as escape character for \" (and itself) in X3D"))
           .addComments(new CommentsBlock("character entities are listed in HTML specification and are good for any XML"))
           .setGeometry(new TextObject().setDEF("DefaultText").setString(new MFStringObject(new MFString1().getArray()))
@@ -116,7 +116,7 @@ protected class MFColor0 {
 }
 protected class MFString1 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"Character entity substitutions:","empty string \\\"\\\" skips a line:","","apostrophe ' is &amp;apos;","ampersand &amp; is &amp;amp;","quote mark \\\" is &amp;quot;","backslash \\ is X3D escape character","double backslash \\\\\\\\ is X3D backslash \\ character","Pi &amp;#928; is &amp;#928; XML character entity"});
+    return new MFStringObject(new String[] {"Character entity substitutions:","empty string \\\"\\\" skips a line:","","apostrophe ' is &amp;apos;","ampersand &amp; is &amp;amp;","quote mark \\\" is &amp;quot;","backslash \\ is X3D escape character","double backslash \\\\ is X3D backslash \\ character","Pi Π is &amp;#928; XML character entity"});
   }
 }
 protected class MFString2 {

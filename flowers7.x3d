@@ -28,7 +28,7 @@
 		<ComposedShader DEF='ComposedShader' language="GLSL">
                   <field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field>
 
-                  <field name='chromaticDispersion' accessType='inputOutput' type='SFVec3f' value='0.98 1.0 1.033'></field>
+                  <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1.0 1.033'></field>
                   <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field>
                   <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field>
                   <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field>
@@ -38,10 +38,8 @@
                   <field name='d' type='SFFloat' accessType='inputOutput' value='20'></field>
                   <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
                   <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
-                  <ShaderPart url='"x3dom_sphere.vs" "http://coderextreme.net/X3DJSONLD/x3dom_sphere.vs"' containerField='parts' type='VERTEX'>
-</ShaderPart>
-		  <ShaderPart url='"sphere.fs" "http://coderextreme.net/X3DJSONLD/sphere.fs"' containerField='parts' type='FRAGMENT'>
-</ShaderPart>
+                  <ShaderPart url='"x3dom_sphere.vs" "http://coderextreme.net/X3DJSONLD/x3dom_sphere.vs"' containerField='parts' type='VERTEX'></ShaderPart>
+		  <ShaderPart url='"sphere.fs" "http://coderextreme.net/X3DJSONLD/sphere.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
                 </ComposedShader>
 		</Appearance>
 		<Sphere solid="false" radius='20'></Sphere>

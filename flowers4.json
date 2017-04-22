@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"20 April 2017"
+            "@content":"21 April 2017"
           },
           {
             "@name":"generator",
@@ -123,7 +123,7 @@
                           "-shaders":[
                             { "ComposedShader":
                               {
-                                "@DEF":"ComposedShader",
+                                "@DEF":"x3dom",
                                 "@language":"GLSL",
                                 "field": [
                                   {
@@ -133,7 +133,7 @@
                                     "@value":0
                                   },
                                   {
-                                    "@name":"chromaticDispersion",
+                                    "@name":"chromaticDispertion",
                                     "@accessType":"inputOutput",
                                     "@type":"SFVec3f",
                                     "@value":[0.98,1.0,1.033]
@@ -190,7 +190,61 @@
                               {
                                 "@DEF":"OrbitCoordinates"
                               }
+                            },
+                          "-shaders":[
+                            { "ComposedShader":
+                              {
+                                "@DEF":"cobweb",
+                                "@language":"GLSL",
+                                "field": [
+                                  {
+                                    "@name":"cube",
+                                    "@type":"SFInt32",
+                                    "@accessType":"inputOutput",
+                                    "@value":0
+                                  },
+                                  {
+                                    "@name":"chromaticDispertion",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFVec3f",
+                                    "@value":[0.98,1.0,1.033]
+                                  },
+                                  {
+                                    "@name":"bias",
+                                    "@type":"SFFloat",
+                                    "@accessType":"inputOutput",
+                                    "@value":0.5
+                                  },
+                                  {
+                                    "@name":"scale",
+                                    "@type":"SFFloat",
+                                    "@accessType":"inputOutput",
+                                    "@value":0.5
+                                  },
+                                  {
+                                    "@name":"power",
+                                    "@type":"SFFloat",
+                                    "@accessType":"inputOutput",
+                                    "@value":2
+                                  }
+                                ],
+                                "-parts":[
+                                  { "ShaderPart":
+                                    {
+                                      "@url":["cobweb.vs","http://coderextreme.net/X3DJSONLD/cobweb.vs"],
+                                      "@type":"VERTEX"
+                                    }
+                                  },
+                                  { "ShaderPart":
+                                    {
+                                      "@url":["pc_bubbles.fs","http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"],
+                                      "@type":"FRAGMENT"
+                                    }
+                                  }
+                                ]
+                              }
                             }
+                          ]
                         }
                       }
                   }

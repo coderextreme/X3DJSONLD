@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"20 April 2017"
+            "@content":"21 April 2017"
           },
           {
             "@name":"generator",
@@ -114,7 +114,7 @@
                                   "@value":[0,0,0]
                                 },
                                 {
-                                  "@name":"set_fraction",
+                                  "@name":"fraction",
                                   "@accessType":"inputOnly",
                                   "@type":"SFFloat"
                                 }
@@ -167,25 +167,25 @@
                           },
                           { "ROUTE":
                             {
-                              "@fromField":"translation_changed",
+                              "@fromField":"translation",
                               "@fromNode":"bounce",
-                              "@toField":"set_translation",
+                              "@toField":"translation",
                               "@toNode":"transform"
                             }
                           },
                           { "ROUTE":
                             {
-                              "@fromField":"scale_changed",
+                              "@fromField":"scale",
                               "@fromNode":"bounce",
-                              "@toField":"set_scale",
+                              "@toField":"scale",
                               "@toNode":"transform"
                             }
                           },
                           { "ROUTE":
                             {
-                              "@fromField":"fraction_changed",
+                              "@fromField":"fraction",
                               "@fromNode":"bubbleClock",
-                              "@toField":"set_fraction",
+                              "@toField":"fraction",
                               "@toNode":"bounce"
                             }
                           }

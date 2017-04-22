@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"20 April 2017"
+            "@content":"21 April 2017"
           },
           {
             "@name":"generator",
@@ -89,13 +89,13 @@
                           "-shaders":[
                             { "ComposedShader":
                               {
-                                "@DEF":"ComposedShader",
+                                "@DEF":"cobweb",
                                 "@language":"GLSL",
                                 "-parts":[
                                   { "ShaderPart":
                                     {
                                       "@type":"VERTEX",
-                                      "@url":["cobweb_bubbles.vs","http://coderextreme.net/X3DJSONLD/cobweb_bubbles.vs"]
+                                      "@url":["cobweb.vs","http://coderextreme.net/X3DJSONLD/cobweb.vs"]
                                     }
                                   },
                                   { "ShaderPart":
@@ -113,7 +113,59 @@
                                     "@value":0
                                   },
                                   {
-                                    "@name":"chromaticDispersion",
+                                    "@name":"chromaticDispertion",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFVec3f",
+                                    "@value":[0.98,1,1.033]
+                                  },
+                                  {
+                                    "@name":"bias",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFFloat",
+                                    "@value":0.5
+                                  },
+                                  {
+                                    "@name":"scale",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFFloat",
+                                    "@value":0.5
+                                  },
+                                  {
+                                    "@name":"power",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFFloat",
+                                    "@value":2.0
+                                  }
+                                ]
+                              }
+                            },
+                            { "ComposedShader":
+                              {
+                                "@DEF":"x3dom",
+                                "@language":"GLSL",
+                                "-parts":[
+                                  { "ShaderPart":
+                                    {
+                                      "@type":"VERTEX",
+                                      "@url":["x3dom.vs","http://coderextreme.net/X3DJSONLD/x3dom.vs"]
+                                    }
+                                  },
+                                  { "ShaderPart":
+                                    {
+                                      "@type":"FRAGMENT",
+                                      "@url":["pc_bubbles.fs","http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"]
+                                    }
+                                  }
+                                ],
+                                "field": [
+                                  {
+                                    "@name":"cube",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFInt32",
+                                    "@value":0
+                                  },
+                                  {
+                                    "@name":"chromaticDispertion",
                                     "@accessType":"inputOutput",
                                     "@type":"SFVec3f",
                                     "@value":[0.98,1,1.033]

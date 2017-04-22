@@ -40,7 +40,7 @@
           },
           {
             "@name":"translated",
-            "@content":"20 April 2017"
+            "@content":"21 April 2017"
           },
           {
             "@name":"generator",
@@ -365,7 +365,7 @@
                         "@DEF":"RightSingleToMultiString",
                         "field": [
                           {
-                            "@name":"set_rightstring",
+                            "@name":"rightstring",
                             "@accessType":"inputOnly",
                             "@type":"SFString"
                           },
@@ -393,7 +393,7 @@
                         "@DEF":"UpSingleToMultiString",
                         "field": [
                           {
-                            "@name":"set_upstring",
+                            "@name":"upstring",
                             "@accessType":"inputOnly",
                             "@type":"SFString"
                           },
@@ -421,7 +421,7 @@
                         "@DEF":"CenterSingleToMultiString",
                         "field": [
                           {
-                            "@name":"set_centerstring",
+                            "@name":"centerstring",
                             "@accessType":"inputOnly",
                             "@type":"SFString"
                           },
@@ -448,7 +448,7 @@
                       {
                         "@fromField":"enteredText",
                         "@fromNode":"CenterSensor",
-                        "@toField":"set_centerstring",
+                        "@toField":"centerstring",
                         "@toNode":"CenterSingleToMultiString"
                       }
                     },
@@ -456,7 +456,7 @@
                       {
                         "@fromField":"centerlines",
                         "@fromNode":"CenterSingleToMultiString",
-                        "@toField":"set_string",
+                        "@toField":"string",
                         "@toNode":"CenterString"
                       }
                     },
@@ -464,7 +464,7 @@
                       {
                         "@fromField":"isOver",
                         "@fromNode":"CenterTouch",
-                        "@toField":"set_enabled",
+                        "@toField":"enabled",
                         "@toNode":"CenterSensor"
                       }
                     },
@@ -472,7 +472,7 @@
                       {
                         "@fromField":"enteredText",
                         "@fromNode":"RightSensor",
-                        "@toField":"set_rightstring",
+                        "@toField":"rightstring",
                         "@toNode":"RightSingleToMultiString"
                       }
                     },
@@ -480,7 +480,7 @@
                       {
                         "@fromField":"rightlines",
                         "@fromNode":"RightSingleToMultiString",
-                        "@toField":"set_string",
+                        "@toField":"string",
                         "@toNode":"RightString"
                       }
                     },
@@ -488,7 +488,7 @@
                       {
                         "@fromField":"isOver",
                         "@fromNode":"RightTouch",
-                        "@toField":"set_enabled",
+                        "@toField":"enabled",
                         "@toNode":"RightSensor"
                       }
                     },
@@ -496,7 +496,7 @@
                       {
                         "@fromField":"enteredText",
                         "@fromNode":"UpSensor",
-                        "@toField":"set_upstring",
+                        "@toField":"upstring",
                         "@toNode":"UpSingleToMultiString"
                       }
                     },
@@ -504,7 +504,7 @@
                       {
                         "@fromField":"uplines",
                         "@fromNode":"UpSingleToMultiString",
-                        "@toField":"set_string",
+                        "@toField":"string",
                         "@toNode":"UpString"
                       }
                     },
@@ -512,7 +512,7 @@
                       {
                         "@fromField":"isOver",
                         "@fromNode":"UpTouch",
-                        "@toField":"set_enabled",
+                        "@toField":"enabled",
                         "@toNode":"UpSensor"
                       }
                     }
