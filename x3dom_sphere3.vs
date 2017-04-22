@@ -30,8 +30,14 @@ varying vec3 viewDirection; // direction in world space
     // in which the viewer is looking
 varying vec3 normalDirection; // normal vector in world space 
 
+varying vec3 t;
+varying vec3 tr;
+varying vec3 tg;
+varying vec3 tb;
+varying float rfac;
+
 vec3 cart2sphere(vec3 p) {
-     float r = sqrt(p.x*p.x + p.y*p.y + p.z*p.z);
+     float r = pow(p.x*p.x + p.y*p.y + p.z*p.z, 0.5);
      float theta = acos(p.y/r);
      float phi = atan(p.z, p.x);
      return vec3(r, theta, phi);
@@ -68,7 +74,21 @@ vec4 rose_position(vec3 p) {
 
 void main()
 {
-    vec4 positionInViewSpace = modelViewMatrix * rose_position(position);
+    mat4 jwc_ModelViewMatrix = modelViewMatrix;
+    mat4 jwc_ModelViewProjectionMatrix = modelViewProjectionMatrix;
+    mat3 mvm3=mat3(
+	jwc_ModelViewMatrix[0].x,
+	jwc_ModelViewMatrix[0].y,
+	jwc_ModelViewMatrix[0].z,
+	jwc_ModelViewMatrix[1].x,
+	jwc_ModelViewMatrix[1].y,
+	jwc_ModelViewMatrix[1].z,
+	jwc_ModelViewMatrix[2].x,
+	jwc_ModelViewMatrix[2].y,
+	jwc_ModelViewMatrix[2].z
+    );
+
+    vec4 positionInViewSpace = jwc_ModelViewMatrix * rose_position(position);
        // transformation of vertex from object coordinates 
        // to view coordinates
 
@@ -95,6 +115,13 @@ void main()
        // (multiplication of the vector from the left) of 
        // the inverse of viewMatrixInverse, which is viewMatrix
     
-    gl_Position = modelViewProjectionMatrix * rose_position(position);
-}
+    gl_Position = jwc_ModelViewProjectionMatrix * rose_position(position);
 
+    vec3 fragNormal = mvm3*rose_normal(position);
+    vec3 incident = normalize((jwc_ModelViewMatrix * rose_position(position)).xyz);
+    t = reflect(incident, fragNormal)*mvm3;
+    tr = refract(incident, fragNormal, chromaticDispertion.x)*mvm3;
+    tg = refract(incident, fragNormal, chromaticDispertion.y)*mvm3;
+    tb = refract(incident, fragNormal, chromaticDispertion.z)*mvm3;
+    rfac = bias + scale * pow(0.5+0.5*dot(incident, fragNormal), power);
+}

@@ -1,3 +1,7 @@
+#ifdef GL_ES
+  precision highp float;
+#endif
+
 /*
 The MIT License (MIT)
 Copyright (c) 2011 Authors of J3D. All rights reserved.
@@ -28,20 +32,22 @@ varying float rfac;
 
 void main()
 {
+    mat4 jwc_ModelViewMatrix = x3d_ModelViewMatrix;
+    mat4 jwc_ModelViewProjectionMatrix = x3d_ProjectionMatrix * x3d_ModelViewMatrix;
     mat3 mvm3=mat3(
-		x3d_ModelViewMatrix[0].x,
-		x3d_ModelViewMatrix[0].y,
-		x3d_ModelViewMatrix[0].z,
-		x3d_ModelViewMatrix[1].x,
-		x3d_ModelViewMatrix[1].y,
-		x3d_ModelViewMatrix[1].z,
-		x3d_ModelViewMatrix[2].x,
-		x3d_ModelViewMatrix[2].y,
-		x3d_ModelViewMatrix[2].z
+	jwc_ModelViewMatrix[0].x,
+	jwc_ModelViewMatrix[0].y,
+	jwc_ModelViewMatrix[0].z,
+	jwc_ModelViewMatrix[1].x,
+	jwc_ModelViewMatrix[1].y,
+	jwc_ModelViewMatrix[1].z,
+	jwc_ModelViewMatrix[2].x,
+	jwc_ModelViewMatrix[2].y,
+	jwc_ModelViewMatrix[2].z
     );
     vec3 fragNormal = mvm3*normal;
-    gl_Position = x3d_ProjectionMatrix*vec4(position, 1.0);
-    vec3 incident = normalize((x3d_ModelViewMatrix * vec4(position, 1.0)).xyz);
+    gl_Position = x3d_ProjectionMatrix * vec4(position, 1.0);
+    vec3 incident = normalize((jwc_ModelViewMatrix * vec4(position, 1.0)).xyz);
 
     t = reflect(incident, fragNormal)*mvm3;
     tr = refract(incident, fragNormal, chromaticDispertion.x)*mvm3;

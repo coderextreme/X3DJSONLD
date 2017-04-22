@@ -1,3 +1,7 @@
+#ifdef GL_ES
+  precision highp float;
+#endif
+
 /*
 The MIT License (MIT)
 Copyright (c) 2011 Authors of J3D. All rights reserved.
@@ -30,15 +34,15 @@ void main()
 {
     mat4 viewProjectionMatrix = viewMatrix * projectionMatrix;
     mat3 mvm3=mat3(
-		viewMatrix[0].x,
-		viewMatrix[0].y,
-		viewMatrix[0].z,
-		viewMatrix[1].x,
-		viewMatrix[1].y,
-		viewMatrix[1].z,
-		viewMatrix[2].x,
-		viewMatrix[2].y,
-		viewMatrix[2].z
+	viewMatrix[0].x,
+	viewMatrix[0].y,
+	viewMatrix[0].z,
+	viewMatrix[1].x,
+	viewMatrix[1].y,
+	viewMatrix[1].z,
+	viewMatrix[2].x,
+	viewMatrix[2].y,
+	viewMatrix[2].z
     );
     vec3 fragNormal = mvm3*normal;
     gl_Position = viewProjectionMatrix*vec4(position, 1.0);

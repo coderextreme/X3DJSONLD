@@ -20,6 +20,7 @@ body {
 <X3D profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd' xmlns:xsd='http://www.web3d.org/specifications/x3d-namespace'>
   <Scene>
     <NavigationInfo type="&quot;EXAMINE&quot; &quot;ANY&quot;"></NavigationInfo>
+<!-- Images courtesy of Paul Debevec's Light Probe Image Gallery -->
 	<Background id="background" leftUrl='"cubemap/all_probes/beach_cross/beach_left.png"' rightUrl='"cubemap/all_probes/beach_cross/beach_right.png"' frontUrl='"cubemap/all_probes/beach_cross/beach_front.png"' backUrl='"cubemap/all_probes/beach_cross/beach_back.png"' topUrl='"cubemap/all_probes/beach_cross/beach_top.png"' bottomUrl='"cubemap/all_probes/beach_cross/beach_bottom.png"'></Background> 
 	<Viewpoint position='0 0 40' description="Transparent rose" zNear='0' ></Viewpoint>
 	<Transform DEF='Rose01' >
@@ -35,22 +36,20 @@ body {
                     <ImageTexture id="topShader" containerField="top" url='"cubemap/all_probes/beach_cross/beach_top.png"' ></ImageTexture>
                 </ComposedCubeMapTexture>
 		<ComposedShader DEF='ComposedShader' language="GLSL">
-                  <field name='cube' type='SFInt32' accessType='inputOnly' value='0'></field>
+                  <Uniform name='cube' type='SFInt32' accessType='inputOutput' value='0'></Uniform>
 
-                  <field name='chromaticDispertion' accessType='inputOnly' type='SFVec3f' value='0.98 1.0 1.033'></field>
-                  <field name='bias' type='SFFloat' accessType='inputOnly' value='0.5'></field>
-                  <field name='scale' type='SFFloat' accessType='inputOnly' value='0.5'></field>
-                  <field name='power' type='SFFloat' accessType='inputOnly' value='2'></field>
-                  <field id="a" name='a' type='SFFloat' accessType='inputOnly' value='10'></field>
-                  <field id="b" name='b' type='SFFloat' accessType='inputOnly' value='1'></field>
-                  <field id="c" name='c' type='SFFloat' accessType='inputOnly' value='20'></field>
-                  <field id="d" name='d' type='SFFloat' accessType='inputOnly' value='20'></field>
-                  <field id="tdelta" name='tdelta' type='SFFloat' accessType='inputOnly' value='0'></field>
-                  <field id="pdelta" name='pdelta' type='SFFloat' accessType='inputOnly' value='0'></field>
-                  <ShaderPart url='"x3dom_sphere.vs" "http://coderextreme.net/X3DJSONLD/x3dom_sphere.vs"' containerField='parts' type='VERTEX'>
-</ShaderPart>
-		  <ShaderPart url='"sphere2.fs" "http://coderextreme.net/X3DJSONLD/sphere2.fs"' containerField='parts' type='FRAGMENT'>
-</ShaderPart>
+                  <Uniform name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1.0 1.033'></Uniform>
+                  <Uniform name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></Uniform>
+                  <Uniform name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></Uniform>
+                  <Uniform name='power' type='SFFloat' accessType='inputOutput' value='2'></Uniform>
+                  <Uniform id="a" name='a' type='SFFloat' accessType='inputOutput' value='10'></Uniform>
+                  <Uniform id="b" name='b' type='SFFloat' accessType='inputOutput' value='1'></Uniform>
+                  <Uniform id="c" name='c' type='SFFloat' accessType='inputOutput' value='20'></Uniform>
+                  <Uniform id="d" name='d' type='SFFloat' accessType='inputOutput' value='20'></Uniform>
+                  <Uniform id="tdelta" name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></Uniform>
+                  <Uniform id="pdelta" name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></Uniform>
+                  <ShaderPart url='"x3dom_sphere2.vs" "http://coderextreme.net/X3DJSONLD/x3dom_sphere2.vs"' containerField='parts' type='VERTEX'></ShaderPart>
+		  <ShaderPart url='"sphere2.fs" "http://coderextreme.net/X3DJSONLD/sphere2.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
                 </ComposedShader>
 		</Appearance>
 		<Sphere subdivision="512,512" solid="false" radius='20'></Sphere>
@@ -70,6 +69,7 @@ var rightUrls = ["cubemap/all_probes/beach_cross/beach_right.png","cubemap/all_p
 var topUrls = ["cubemap/all_probes/beach_cross/beach_top.png","cubemap/all_probes/building_cross/building_top.png","cubemap/all_probes/campus_cross/campus_top.png","cubemap/all_probes/galileo_cross/galileo_top.png","cubemap/all_probes/grace_cross/grace_top.png","cubemap/all_probes/kitchen_cross/kitchen_top.png","cubemap/all_probes/rnl_cross/rnl_top.png","cubemap/all_probes/stpeters_cross/stpeters_top.png","cubemap/all_probes/uffizi_cross/uffizi_top.png"];
 
 var bottomUrls = ["cubemap/all_probes/beach_cross/beach_bottom.png","cubemap/all_probes/building_cross/building_bottom.png","cubemap/all_probes/campus_cross/campus_bottom.png","cubemap/all_probes/galileo_cross/galileo_bottom.png","cubemap/all_probes/grace_cross/grace_bottom.png","cubemap/all_probes/kitchen_cross/kitchen_bottom.png","cubemap/all_probes/rnl_cross/rnl_bottom.png","cubemap/all_probes/stpeters_cross/stpeters_bottom.png","cubemap/all_probes/uffizi_cross/uffizi_bottom.png"];
+
 var old = -1;
 
 setInterval(function () {
@@ -94,7 +94,6 @@ setInterval(function () {
 		    document.querySelector("#background").setAttribute("bottomUrl",  bottomUrls[side]);
             }
         }, 10000);
-        
 </script> 
 <script type="text/javascript">
 var a = 5;
@@ -143,11 +142,9 @@ function animate() {
 	document.getElementById("d").setAttribute("d", d);
 	document.getElementById("pdelta").setAttribute("pdelta", pdelta);
 	document.getElementById("tdelta").setAttribute("tdelta", tdelta);
-    
 }
 
 setInterval(animate, 10000);
-
 </script>
 </body>
 </html>

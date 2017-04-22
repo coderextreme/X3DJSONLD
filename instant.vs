@@ -1,3 +1,7 @@
+#ifdef GL_ES
+  precision highp float;
+#endif
+
 /*
 The MIT License (MIT)
 Copyright (c) 2011 Authors of J3D. All rights reserved.
@@ -28,20 +32,22 @@ varying float rfac;
 
 void main()
 {
+    mat4 jwc_ModelViewMatrix = ir_ModelViewMatrix;
+    mat4 jwc_ModelViewProjectionMatrix = ir_ProjectionMatrix * ir_ModelViewMatrix;
     mat3 mvm3=mat3(
-        ir_ModelViewMatrix[0].x,
-        ir_ModelViewMatrix[0].y,
-        ir_ModelViewMatrix[0].z,
-        ir_ModelViewMatrix[1].x,
-        ir_ModelViewMatrix[1].y,
-        ir_ModelViewMatrix[1].z,
-        ir_ModelViewMatrix[2].x,
-        ir_ModelViewMatrix[2].y,
-        ir_ModelViewMatrix[2].z
+	jwc_ModelViewMatrix[0].x,
+	jwc_ModelViewMatrix[0].y,
+	jwc_ModelViewMatrix[0].z,
+	jwc_ModelViewMatrix[1].x,
+	jwc_ModelViewMatrix[1].y,
+	jwc_ModelViewMatrix[1].z,
+	jwc_ModelViewMatrix[2].x,
+	jwc_ModelViewMatrix[2].y,
+	jwc_ModelViewMatrix[2].z
     );
     vec3 fragNormal = mvm3*normal;
-    gl_Position = ir_ProjectionMatrix * ir_ModelViewMatrix*vec4(position, 1.0);
-    vec3 incident = normalize((ir_ModelViewMatrix * vec4(position, 1.0)).xyz);
+    gl_Position = jwc_ModelViewProjectionMatrix * vec4(position, 1.0);
+    vec3 incident = normalize((jwc_ModelViewMatrix * vec4(position, 1.0)).xyz);
 
     t = reflect(incident, fragNormal)*mvm3;
     tr = refract(incident, fragNormal, chromaticDispertion.x)*mvm3;
