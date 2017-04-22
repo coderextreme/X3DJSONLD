@@ -71,7 +71,7 @@ function animate_flowers(tr) {
 		setValue(tr, "d", 4);
 	}
 	if (getValue(tr, "c") > 10) {
-		setValue("c", 4);
+		setValue(tr, "c", 4);
 	}
 	if (getValue(tr, "d") > 10) {
 		setValue(tr, "d", 4);
@@ -86,7 +86,7 @@ function addValue(tr, name, value) {
 }
 
 function getField(tr, clazz) {
-    var key = "#"+tr+" Shape Appearance ComposedShader ."+clazz;
+    var key = "#"+tr+" Shape Appearance ComposedShader field[name=\""+clazz+"\"]";
     var field = document.querySelector(key);
     return field;
 }

@@ -2,21 +2,12 @@
   precision highp float;
 #endif
 
-vec4 ftransform() {
-	return vec4 (fw_ProjectionMatrix*fw_ModelViewMatrix*fw_Vertex);
-}
-#define gl_ModelViewProjectionMatrix (fw_ProjectionMatrix*fw_ModelViewMatrix)
-#define HEADLIGHT_LIGHT (MAX_LIGHTS-1)
-#define gl_NormalMatrix fw_NormalMatrix
-#define gl_ProjectionMatrix fw_ProjectionMatrix
-#define gl_ModelViewMatrix fw_ModelViewMatrix
-#define gl_Vertex fw_Vertex
-#define gl_Normal fw_Normal
-#define gl_LightSource fw_LightSource
-
 attribute vec3 position;
 attribute vec3 normal;
 attribute vec2 texcoord;
+
+uniform mat4 gl_ModelViewMatrix;
+uniform mat4 gl_ProjectionMatrix;
 
 uniform vec3 chromaticDispertion;
 uniform float bias;

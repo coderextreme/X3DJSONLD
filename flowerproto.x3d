@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd">
+    <head>
+        <meta name="title" content="flowerproto.x3d"></meta>
+        <meta name="creator" content="John Carlson"></meta>
+        <meta name="description" content="A flower proto with configurable shaders"></meta>
+        <meta name="generator" content="X3D-Edit, https://savage.nps.edu/X3D-Edit"></meta>
+        <meta name="identifier" content="http://coderextreme.net/X3DJSONLD/flowerproto.x3d"></meta>
+    </head>
+    <Scene>
+        <ProtoDeclare name="FlowerProto">
+	    <ProtoInterface>
+		<field accessType='inputOutput' name='vertex' type='MFString' value='"gl_flowers_chromatic.vs"'/>
+		<field accessType='inputOutput' name='fragment' type='MFString' value='"pc_flowers.fs"'/>
+	    </ProtoInterface>
+            <ProtoBody>
+                <Transform DEF="transform" translation="0 0 0">
+                    <Shape>
+                        <Appearance>
+                            <Material diffuseColor=".7 .7 .7"/>
+                            <ComposedCubeMapTexture DEF="texture">
+                                <ImageTexture url='"cubemap/all_probes/stpeters_cross/stpeters_back.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_back.png"' containerField="back"/>
+                                <ImageTexture url='"cubemap/all_probes/stpeters_cross/stpeters_bottom.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_bottom.png"' containerField="bottom"/>
+                                <ImageTexture url='"cubemap/all_probes/stpeters_cross/stpeters_front.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_front.png"' containerField="front"/>
+                                <ImageTexture url='"cubemap/all_probes/stpeters_cross/stpeters_left.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_left.png"' containerField="left"/>
+                                <ImageTexture url='"cubemap/all_probes/stpeters_cross/stpeters_right.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_right.png"' containerField="right"/>
+                                <ImageTexture url='"cubemap/all_probes/stpeters_cross/stpeters_top.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_top.png"' containerField="top"/>
+                            </ComposedCubeMapTexture>
+
+                            <ComposedShader DEF="shader" language="GLSL">
+                                <field name='cube' type='SFInt32' accessType="inputOutput" value='0'/>
+				<!--
+                                <field name='cube' type='SFNode' accessType="inputOutput">
+                                    <ComposedCubeMapTexture USE="texture"/>
+                                </field>
+				-->
+
+                                <field name='chromaticDispertion' type='SFVec3f' accessType="inputOutput" value='0.98 1.0 1.033'/>
+                                <field name='bias' type='SFFloat' accessType="inputOutput" value='10'/>
+                                <field name='scale' type='SFFloat' accessType="inputOutput" value='10'/>
+                                <field name='power' type='SFFloat' accessType="inputOutput" value='2.0'/>
+				<field name='a' type='SFFloat' accessType='inputOutput' value='3'>
+				</field>
+				<field name='b' type='SFFloat' accessType='inputOutput' value='1'>
+				</field>
+				<field name='c' type='SFFloat' accessType='inputOutput' value='3'>
+				</field>
+				<field name='d' type='SFFloat' accessType='inputOutput' value='3'>
+				</field>
+				<field name='tdelta' type='SFFloat' accessType='inputOutput' value='0.5'>
+				</field>
+				<field name='pdelta' type='SFFloat' accessType='inputOutput' value='0.5'>
+				</field>
+				  
+                                <ShaderPart type="VERTEX">
+					<IS>
+					<connect nodeField="url" protoField="vertex"/>
+					</IS>
+                                </ShaderPart>
+                                <ShaderPart type='FRAGMENT'>
+					<IS>
+					<connect nodeField="url" protoField="fragment"/>
+					</IS>
+                                </ShaderPart>
+                            </ComposedShader>
+		    </Appearance>
+		    <Sphere/>
+                </Shape>
+                <Script DEF="Bounce">
+                  <field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+                  <field name="velocity" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+                  <field name="set_fraction" accessType="inputOnly" type="SFTime"></field>
+		  <field name='a' type='SFFloat' accessType='inputOutput' value='0.5'></field>
+		  <field name='b' type='SFFloat' accessType='inputOutput' value='0.5'></field>
+		  <field name='c' type='SFFloat' accessType='inputOutput' value='3'></field>
+		  <field name='d' type='SFFloat' accessType='inputOutput' value='3'></field>
+		  <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0.5'></field>
+		  <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0.5'></field>
+<![CDATA[ecmascript:
+			function set_translation(value) {
+				translation = value;
+			}
+			function translation_changed() {
+				return translation;
+			}
+			function initialize() {
+			    translation = new SFVec3f(0, 0, 0);
+			    velocity = new SFVec3f(
+			    	Math.random() - 0.5,
+				Math.random() - 0.5,
+				Math.random() - 0.5);
+			}
+			function set_fraction() {
+			    translation = new SFVec3f(
+			    	translation[0] + velocity[0],
+				translation[1] + velocity[1],
+				translation[2] + velocity[2]);
+			    for (var j = 0; j <= 2; j++) {
+				    if (Math.abs(translation[j]) > 10) {
+					initialize();
+				    } else {
+					velocity[0] += Math.random() * 0.2 - 0.1;
+					velocity[1] += Math.random() * 0.2 - 0.1;
+					velocity[2] += Math.random() * 0.2 - 0.1;
+				    }
+			    }
+			    animate_flowers();
+			}
+
+			function animate_flowers(fraction, eventTime) {
+				choice = Math.floor(Math.random() * 4);
+				switch (choice) {
+				case 0:
+					a += Math.random() * 0.2 - 0.1;
+					break;
+				case 1:
+					b += Math.random() * 0.2 - 0.1;
+					break;
+				case 2:
+					c += Math.random() * 2 - 1;
+					break;
+				case 3:
+					d += Math.random() * 2 - 1;
+					break;
+				}
+				tdelta += 0.5;
+				pdelta += 0.5;
+				if (a > 1) {
+					a =  0.5;
+				}
+				if (b > 1) {
+					b =  0.5;
+				}
+				if (c < 1) {
+					c =  4;
+				}
+				if (d < 1) {
+					d =  4;
+				}
+				if (c > 10) {
+					c = 4;
+				}
+				if (d > 10) {
+					d = 4;
+				}
+			}
+
+]]>
+                </Script>
+                <TimeSensor DEF='TourTime' cycleInterval='0.150' loop='true'></TimeSensor>
+                <ROUTE fromNode="TourTime" fromField="cycleTime" toNode="Bounce" toField="set_fraction"></ROUTE>
+                <ROUTE fromNode="Bounce" fromField="translation_changed" toNode="transform" toField="set_translation"></ROUTE>
+                <ROUTE fromNode="Bounce" fromField="a" toNode="shader" toField="a"></ROUTE>
+                <ROUTE fromNode="Bounce" fromField="b" toNode="shader" toField="b"></ROUTE>
+                <ROUTE fromNode="Bounce" fromField="c" toNode="shader" toField="c"></ROUTE>
+                <ROUTE fromNode="Bounce" fromField="d" toNode="shader" toField="d"></ROUTE>
+                <ROUTE fromNode="Bounce" fromField="tdelta" toNode="shader" toField="tdelta"></ROUTE>
+                <ROUTE fromNode="Bounce" fromField="pdelta" toNode="shader" toField="pdelta"></ROUTE>
+                </Transform>
+            </ProtoBody>
+        </ProtoDeclare>        
+    </Scene>
+</X3D>

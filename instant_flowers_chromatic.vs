@@ -3,16 +3,16 @@
 #endif
 
 vec4 ftransform() {
-	return vec4 (fw_ProjectionMatrix*fw_ModelViewMatrix*fw_Vertex);
+	return vec4 (ir_ProjectionMatrix*ir_ModelViewMatrix*ir_Vertex);
 }
-#define gl_ModelViewProjectionMatrix (fw_ProjectionMatrix*fw_ModelViewMatrix)
+#define gl_ModelViewProjectionMatrix (ir_ProjectionMatrix*ir_ModelViewMatrix)
 #define HEADLIGHT_LIGHT (MAX_LIGHTS-1)
-#define gl_NormalMatrix fw_NormalMatrix
-#define gl_ProjectionMatrix fw_ProjectionMatrix
-#define gl_ModelViewMatrix fw_ModelViewMatrix
-#define gl_Vertex fw_Vertex
-#define gl_Normal fw_Normal
-#define gl_LightSource fw_LightSource
+#define gl_NormalMatrix ir_NormalMatrix
+#define gl_ProjectionMatrix ir_ProjectionMatrix
+#define gl_ModelViewMatrix ir_ModelViewMatrix
+#define gl_Vertex ir_Vertex
+#define gl_Normal ir_Normal
+#define gl_LightSource ir_LightSource
 
 attribute vec3 position;
 attribute vec3 normal;

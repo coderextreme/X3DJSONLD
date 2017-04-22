@@ -12,6 +12,18 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
+vec4 ftransform() {
+	return vec4 (ir_ProjectionMatrix*ir_ModelViewMatrix*ir_Vertex);
+}
+#define gl_ModelViewProjectionMatrix (ir_ProjectionMatrix*ir_ModelViewMatrix)
+#define HEADLIGHT_LIGHT (MAX_LIGHTS-1)
+#define gl_NormalMatrix ir_NormalMatrix
+#define gl_ProjectionMatrix ir_ProjectionMatrix
+#define gl_ModelViewMatrix ir_ModelViewMatrix
+#define gl_Vertex ir_Vertex
+#define gl_Normal ir_Normal
+#define gl_LightSource ir_LightSource
+
 attribute vec3 position;
 attribute vec3 normal;
 attribute vec2 texcoord;

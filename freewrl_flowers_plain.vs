@@ -73,23 +73,5 @@ vec4 rose_position(vec3 p) {
 
 void main()
 {
-    mat3 mvm3=mat3(
-	gl_ModelViewMatrix[0].x,
-	gl_ModelViewMatrix[0].y,
-	gl_ModelViewMatrix[0].z,
-	gl_ModelViewMatrix[1].x,
-	gl_ModelViewMatrix[1].y,
-	gl_ModelViewMatrix[1].z,
-	gl_ModelViewMatrix[2].x,
-	gl_ModelViewMatrix[2].y,
-	gl_ModelViewMatrix[2].z
-    );
-    vec3 fragNormal = mvm3*rose_normal(position);
     gl_Position = gl_ModelViewProjectionMatrix * rose_position(position);
-    vec3 incident = normalize((gl_ModelViewMatrix * rose_position(position)).xyz);
-    t = reflect(incident, fragNormal)*mvm3;
-    tr = refract(incident, fragNormal, chromaticDispertion.x)*mvm3;
-    tg = refract(incident, fragNormal, chromaticDispertion.y)*mvm3;
-    tb = refract(incident, fragNormal, chromaticDispertion.z)*mvm3;
-    rfac = bias + scale * pow(0.5+0.5*dot(incident, fragNormal), power);
 }
