@@ -1,6 +1,8 @@
 "use strict";
 
 var fs = require('fs');
+var jsonlint = require('jsonlint');
+
 function parseString(string, callback) {
 	try {
 		var result = JSON.parse(string);

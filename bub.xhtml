@@ -15,7 +15,12 @@
 	</head>
 	<body>
 		 <h1 style="width:100%; text-align:center;">Bubbles</h1>
+	<div style="display:table">
+	<div style="display:table-row">
+	<div style="display:table-cell">
 		 <h2>X3DOM</h2>
+	</div>
+	<div style="display:table-cell">
 	<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" showStat='false' showLog='false' width='800px' height='500px' backend='webgl'>
 	<head>
 		<meta name="title" content="bub.x3d"></meta>
@@ -27,23 +32,24 @@
 	<Scene>
 		<NavigationInfo type="&quot;EXAMINE&quot; &quot;ANY&quot;"/>
 		<Background
-			backUrl='"cubemap/BK.png" "http://coderextreme.net/X3DJSONLD/cubemap/BK.png"'
-			bottomUrl='"cubemap/BT.png" "http://coderextreme.net/X3DJSONLD/cubemap/BT.png"'
-			frontUrl='"cubemap/FR.png" "http://coderextreme.net/X3DJSONLD/cubemap/FR.png"'
-			leftUrl='"cubemap/LF.png" "http://coderextreme.net/X3DJSONLD/cubemap/LF.png"' 
-			rightUrl='"cubemap/RT.png" "http://coderextreme.net/X3DJSONLD/cubemap/RT.png"'
-			topUrl='"cubemap/TP.png" "http://coderextreme.net/X3DJSONLD/cubemap/TP.png"' />
-		<Transform id="tr1">
+			backUrl='"cubemap/all_probes/stpeters_cross/stpeters_back.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_back.png"'
+			bottomUrl='"cubemap/all_probes/stpeters_cross/stpeters_bottom.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_bottom.png"'
+			frontUrl='"cubemap/all_probes/stpeters_cross/stpeters_front.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_front.png"'
+			leftUrl='"cubemap/all_probes/stpeters_cross/stpeters_left.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_left.png"'
+			rightUrl='"cubemap/all_probes/stpeters_cross/stpeters_right.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_right.png"'
+			topUrl='"cubemap/all_probes/stpeters_cross/stpeters_top.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_top.png"'
+		  />
+		<Transform id="tr1" translation="0 0 0">
 			<Shape DEF="myShape">
 				<Appearance>
 				<Material diffuseColor=".7 .7 .7" specularColor=".5 .5 .5" />
 				<ComposedCubeMapTexture>
-					<ImageTexture url='"cubemap/BK.png" "http://coderextreme/X3DJSONLD/cubemap/BK.png"' containerField="back"/>
-					<ImageTexture url='"cubemap/BT.png" "http://coderextreme/X3DJSONLD/cubemap/BT.png"' containerField="bottom"/>
-					<ImageTexture url='"cubemap/FR.png" "http://coderextreme/X3DJSONLD/cubemap/FR.png"' containerField="front"/>
-					<ImageTexture url='"cubemap/LF.png" "http://coderextreme/X3DJSONLD/cubemap/LF.png"' containerField="left"/>
-					<ImageTexture url='"cubemap/RT.png" "http://coderextreme/X3DJSONLD/cubemap/RT.png"' containerField="right"/>
-					<ImageTexture url='"cubemap/TP.png" "http://coderextreme/X3DJSONLD/cubemap/TP.png"' containerField="top"/>
+					<ImageTexture url='"cubemap/all_probes/stpeters_cross/stpeters_back.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_back.png"' containerField="back"/>
+					<ImageTexture url='"cubemap/all_probes/stpeters_cross/stpeters_bottom.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_bottom.png"' containerField="bottom"/>
+					<ImageTexture url='"cubemap/all_probes/stpeters_cross/stpeters_front.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_front.png"' containerField="front"/>
+					<ImageTexture url='"cubemap/all_probes/stpeters_cross/stpeters_left.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_left.png"' containerField="left"/>
+					<ImageTexture url='"cubemap/all_probes/stpeters_cross/stpeters_right.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_right.png"' containerField="right"/>
+					<ImageTexture url='"cubemap/all_probes/stpeters_cross/stpeters_top.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_top.png"' containerField="top"/>
 				</ComposedCubeMapTexture>
 
 				<ComposedShader DEF='x3dom' language="GLSL">
@@ -73,10 +79,19 @@
 		</Transform>
 	</Scene>
 	</X3D>
+	</div>
+	</div>
+	<div style="display:table-row">
+	<div style="display:table-cell">
 		 <h2>Cobweb</h2>
+	</div>
+	<div style="display:table-cell">
 	<X3DCanvas id="bub" cache="false" url='"bub.x3d""'>
 		 <p>Your browser may not support all features required by Cobweb!</p>
 	</X3DCanvas>
+	</div>
+	</div>
+	</div>
 	</body>
 	<script type="text/javascript" src="bounce.js"></script>
 </html>

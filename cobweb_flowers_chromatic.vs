@@ -65,7 +65,7 @@ vec4 rose_position(vec3 p) {
 void main()
 {
     mat4 jwc_ModelViewMatrix = x3d_ModelViewMatrix;
-    mat4 jwc_ModelViewProjectionMatrix = x3d_ProjectionMatrix * x3d_ModelViewMatrix;
+    mat4 jwc_ModelViewProjectionMatrix = x3d_ModelViewMatrix * x3d_ProjectionMatrix;
     mat3 mvm3=mat3(
 	jwc_ModelViewMatrix[0].x,
 	jwc_ModelViewMatrix[0].y,
