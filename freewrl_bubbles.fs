@@ -22,12 +22,13 @@ varying float rfac;
 
 void main()
 {
-    vec4 ref = textureCube(x3d_CubeMapTexture, t);
+    vec4 ref = textureCube(fw_textureCoordGenType, t);
+
     vec4 ret = vec4(1.0);
 
-    ret.r = textureCube(x3d_CubeMapTexture, tr).r;
-    ret.g = textureCube(x3d_CubeMapTexture, tg).g;
-    ret.b = textureCube(x3d_CubeMapTexture, tb).b;
+    ret.r = textureCube(fw_textureCoordGenType, tr).r;
+    ret.g = textureCube(fw_textureCoordGenType, tg).g;
+    ret.b = textureCube(fw_textureCoordGenType, tb).b;
 
     gl_FragColor = ret * rfac + ref * (1.0 - rfac);
 }

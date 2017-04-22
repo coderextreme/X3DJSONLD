@@ -317,20 +317,24 @@ function ConvertObject(key, object, element, path, containerField) {
 }
 
 function CommentStringToXML(str) {
+	/*
 	str = str.replace(/[\u0080-\uFFFF]/g, 
 		function (v) {return '&#'+v.charCodeAt()+';';}
 	);
 	str = str.replace(/\\/g, "\\\\").replace(/\\"/g, '\\\"');
+	*/
 	return str;
 }
 
 function JSONStringToXML(str) {
+	/*
 	str = str.replace(/[\u0080-\uFFFF]/g, 
 		function (v) {return '&#'+v.charCodeAt()+';';}
 	);
 	// replace  \'s first
 	str = str.replace(/\\/g, '\\\\');
 	str = str.replace(/\\"/g, '\\\"');
+	*/
 	return str;
 }
 
@@ -424,6 +428,10 @@ function fixXML(xmlstr) {
 	// Fix CDATA sections
 	xmlstr = xmlstr.replace(/&lt;!\[CDATA\[/g, "<![CDATA[");
 	xmlstr = xmlstr.replace(/\]\]&gt;/g, "]]>");
+	xmlstr = xmlstr.replace(/[\u0080-\uFFFF]/g, 
+		function (v) {return '&#'+v.charCodeAt()+';';}
+	);
+	xmlstr = xmlstr.replace(/(\\)*&quot;/g, '\\\\&quot;');
 	do {
 		var xmlstr2 = xmlstr;
 		xmlstr = xmlstr2.replace(/(<!\[CDATA\[(.|\n)*)&lt;((.|\n)*\]\]>)/gi, "$1<$3");

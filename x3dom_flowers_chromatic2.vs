@@ -8,8 +8,6 @@ attribute vec2 texcoord;
 
 uniform mat4 modelViewProjectionMatrix;
 uniform mat4 modelViewMatrix;
-uniform mat4 modelViewMatrixInverse;
-uniform mat4 normalMatrix;
 
 uniform vec3 chromaticDispertion;
 uniform float bias;

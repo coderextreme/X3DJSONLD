@@ -12,7 +12,7 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
-uniform samplerCube cube
+uniform samplerCube cube;
 
 varying vec3 r;
 varying vec3 tr;
@@ -24,11 +24,14 @@ void main()
 {
     vec4 tcol = vec4(1.0);
 
-    vec4 rcol = textureCube(background, r);
-    tcol.r = textureCube(background, tr).r;
-    tcol.g = textureCube(background, tg).g;
-    tcol.b = textureCube(background, tb).b;
+    vec4 rcol = textureCube(cube, r);
+    tcol.r = textureCube(cube, tr).r;
+    tcol.g = textureCube(cube, tg).g;
+    tcol.b = textureCube(cube, tb).b;
 
     gl_FragColor = mix(tcol, rcol, rfac);
+    /*
+    gl_FragColor = tcol;
+    */
 }
 
