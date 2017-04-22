@@ -8,17 +8,11 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
-attribute vec3 position;
-attribute vec3 normal;
-attribute vec2 texcoord;
+#ifdef GL_ES
+  precision highp float;
+#endif
 
-uniform mat4 x3d_ModelViewMatrix;
-uniform mat4 x3d_ProjectionMatrix;
-
-uniform vec3 chromaticDispertion;
-uniform float bias;
-uniform float scale;
-uniform float power;
+uniform samplerCube x3d_CubeMapTexture;
 
 varying vec3 t;
 varying vec3 tr;
@@ -28,25 +22,12 @@ varying float rfac;
 
 void main()
 {
-    mat3 mvm3=mat3(
-        x3d_ModelViewMatrix[0].x,
-        x3d_ModelViewMatrix[0].y,
-        x3d_ModelViewMatrix[0].z,
-        x3d_ModelViewMatrix[1].x,
-        x3d_ModelViewMatrix[1].y,
-        x3d_ModelViewMatrix[1].z,
-        x3d_ModelViewMatrix[2].x,
-        x3d_ModelViewMatrix[2].y,
-        x3d_ModelViewMatrix[2].z
-    );
-    vec3 fragNormal = mvm3*normal;
-    gl_Position = x3d_ModelViewMatrix * x3d_ProjectionMatrix * vec4(position, 1.0);
-    vec3 incident = normalize((x3d_ModelViewMatrix * vec4(position, 1.0)).xyz);
+    vec4 ref = textureCube(x3d_CubeMapTexture, t);
+    vec4 ret = vec4(1.0);
 
-    t = reflect(incident, fragNormal)*mvm3;
-    tr = refract(incident, fragNormal, chromaticDispertion.x)*mvm3;
-    tg = refract(incident, fragNormal, chromaticDispertion.y)*mvm3;
-    tb = refract(incident, fragNormal, chromaticDispertion.z)*mvm3;
+    ret.r = textureCube(x3d_CubeMapTexture, tr).r;
+    ret.g = textureCube(x3d_CubeMapTexture, tg).g;
+    ret.b = textureCube(x3d_CubeMapTexture, tb).b;
 
-    rfac = bias + scale * pow(0.5+0.5*dot(incident, fragNormal), power);
+    gl_FragColor = ret * rfac + ref * (1.0 - rfac);
 }
