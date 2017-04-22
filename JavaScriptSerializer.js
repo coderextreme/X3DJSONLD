@@ -162,15 +162,21 @@ JavaScriptSerializer.subSerializeToString = function(element, mapToMethod, field
 						str += printSubArray("java.lang.String",
 							attrs[a].nodeValue.substring(1, attrs[a].nodeValue.length-1).split(/" "/).
 							map(function(x) {
-							return x.
-                                                               replace(/([^\\]| )\\\\\\\\([^\\"]| )/g, "$1\\\\\\\\\\\\\\\\$2").
-                                                               replace(/([^\\])\\\\([^\\"])/g, "$1\\\\\\\\$2").
-                                                               replace(/\\\\\\\\"/g, '\\\\"').
-                                                               replace(/\\\\"/g, '\\\\\\"').
-                                                               replace(/""/g, '\\"\\"').
-                                                               replace(/&quot;&quot;/g, '\\"\\"').
-                                                               replace(/&/g, "&amp;").
-							       replace(/\\n/g, '\\n');
+
+								let y = x.
+								       replace(/([^\\]| )\\\\\\\\([^\\"]| )/g, "$1\\\\\\\\\\\\\\\\$2").
+								       replace(/([^\\])\\\\([^\\"])/g, "$1\\\\\\\\$2").
+								       replace(/([^\\])\\([^\\"])/g, "$1\\\\$2").
+								       replace(/\\\\"/g, '\\\"').
+								       replace(/(\\)+([&"])/g, '\\\\\\\$2').
+								       replace(/""/g, '\\"\\"').
+								       replace(/&quot;&quot;/g, '\\"\\"').
+								       replace(/&/g, "&amp;").
+								       replace(/\\n/g, '\\n');
+								if (y !== x) {
+									console.error("JavaScript Replacing "+x+" with "+y);
+								}
+								return y;
 							}), '","', '"', '"');
 					} else if (
 						attrType === "MFInt32"||

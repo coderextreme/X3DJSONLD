@@ -261,15 +261,19 @@ JavaSerializer.subSerializeToString = function(element, n, mapToMethod, fieldTyp
 						str += printSubArray(attrType, "String",
 							attrs[a].nodeValue.substring(1, attrs[a].nodeValue.length-1).split(/" "/).
 							map(function(x) {
-							return x.
-                                                               replace(/([^\\]| )\\\\( |[^\\"])/g, "$1\\\\$2").
-                                                               replace(/([^\\]| )\\\\\\\\([^\\"]| )/g, "$1\\\\\\\\\\\\\\\\$2").
-                                                               replace(/\\\\\\\\"/g, '\\\\"').
-                                                               replace(/\\\\"/g, '\\\\\\"').
-                                                               replace(/""/g, '\\"\\"').
-                                                               replace(/&quot;&quot;/g, '\\"\\"').
-                                                               replace(/&/g, "&amp;").
-							       replace(/\\n/g, '\\n');
+								let y = x.
+								       replace(/([^\\]| )\\\\\\\\([^\\"]| )/g, "$1\\\\\\\\\\\\\\\\$2").
+								       replace(/([^\\])\\\\([^\\"])/g, "$1\\\\\\\\$2").
+								       replace(/([^\\])\\([^\\"])/g, "$1\\\\$2").
+								       replace(/(\\)+([&"])/g, '\\\\\\\$2').
+								       replace(/""/g, '\\"\\"').
+								       replace(/&quot;&quot;/g, '\\"\\"').
+								       replace(/&/g, "&amp;").
+								       replace(/\\n/g, '\\n');
+								if (y !== x) {
+									console.error("Java Replacing "+x+" with "+y);
+								}
+								return y;
 							}), codeno, '","', '"', '"');
 					} else if (
 						attrType === "MFInt32"||

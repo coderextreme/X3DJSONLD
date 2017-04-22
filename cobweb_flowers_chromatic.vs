@@ -6,8 +6,8 @@ attribute vec3 position;
 attribute vec3 normal;
 attribute vec2 texcoord;
 
-uniform mat4 modelViewProjectionMatrix;
-uniform mat4 modelViewMatrix;
+uniform mat4 x3d_ModelViewMatrix;
+uniform mat4 x3d_ProjectionMatrix;
 
 uniform vec3 chromaticDispertion;
 uniform float bias;
@@ -64,8 +64,8 @@ vec4 rose_position(vec3 p) {
 
 void main()
 {
-    mat4 jwc_ModelViewMatrix = modelViewMatrix;
-    mat4 jwc_ModelViewProjectionMatrix = modelViewProjectionMatrix;
+    mat4 jwc_ModelViewMatrix = x3d_ModelViewMatrix;
+    mat4 jwc_ModelViewProjectionMatrix = x3d_ProjectionMatrix * x3d_ModelViewMatrix;
     mat3 mvm3=mat3(
 	jwc_ModelViewMatrix[0].x,
 	jwc_ModelViewMatrix[0].y,

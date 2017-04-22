@@ -15,7 +15,7 @@
 	</head>
 	<body>
 		 <h1 style="width:100%; text-align:center;">Bubbles</h1>
-	X3DOM
+		 <h2>X3DOM</h2>
 	<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" showStat='false' showLog='false' width='800px' height='500px' backend='webgl'>
 	<head>
 		<meta name="title" content="bub.x3d"></meta>
@@ -26,21 +26,24 @@
 	</head>
 	<Scene>
 		<NavigationInfo type="&quot;EXAMINE&quot; &quot;ANY&quot;"/>
-		<Background backUrl='"cubemap/BK.png"' bottomUrl='"cubemap/BT.png"'
-		    frontUrl='"cubemap/FR.png"' leftUrl='"cubemap/LF.png"' 
-		    rightUrl='"cubemap/RT.png"' topUrl='"cubemap/TP.png"' />
-		<Viewpoint position='0 0 20' />
+		<Background
+			backUrl='"cubemap/BK.png" "http://coderextreme.net/X3DJSONLD/cubemap/BK.png"'
+			bottomUrl='"cubemap/BT.png" "http://coderextreme.net/X3DJSONLD/cubemap/BT.png"'
+			frontUrl='"cubemap/FR.png" "http://coderextreme.net/X3DJSONLD/cubemap/FR.png"'
+			leftUrl='"cubemap/LF.png" "http://coderextreme.net/X3DJSONLD/cubemap/LF.png"' 
+			rightUrl='"cubemap/RT.png" "http://coderextreme.net/X3DJSONLD/cubemap/RT.png"'
+			topUrl='"cubemap/TP.png" "http://coderextreme.net/X3DJSONLD/cubemap/TP.png"' />
 		<Transform id="tr1">
 			<Shape DEF="myShape">
 				<Appearance>
 				<Material diffuseColor=".7 .7 .7" specularColor=".5 .5 .5" />
 				<ComposedCubeMapTexture>
-					<ImageTexture url='"cubemap/BK.png"' containerField="back"/>
-					<ImageTexture url='"cubemap/BT.png"' containerField="bottom"/>
-					<ImageTexture url='"cubemap/FR.png"' containerField="front"/>
-					<ImageTexture url='"cubemap/LF.png"' containerField="left"/>
-					<ImageTexture url='"cubemap/RT.png"' containerField="right"/>
-					<ImageTexture url='"cubemap/TP.png"' containerField="top"/>
+					<ImageTexture url='"cubemap/BK.png" "http://coderextreme/X3DJSONLD/cubemap/BK.png"' containerField="back"/>
+					<ImageTexture url='"cubemap/BT.png" "http://coderextreme/X3DJSONLD/cubemap/BT.png"' containerField="bottom"/>
+					<ImageTexture url='"cubemap/FR.png" "http://coderextreme/X3DJSONLD/cubemap/FR.png"' containerField="front"/>
+					<ImageTexture url='"cubemap/LF.png" "http://coderextreme/X3DJSONLD/cubemap/LF.png"' containerField="left"/>
+					<ImageTexture url='"cubemap/RT.png" "http://coderextreme/X3DJSONLD/cubemap/RT.png"' containerField="right"/>
+					<ImageTexture url='"cubemap/TP.png" "http://coderextreme/X3DJSONLD/cubemap/TP.png"' containerField="top"/>
 				</ComposedCubeMapTexture>
 
 				<ComposedShader DEF='x3dom' language="GLSL">
@@ -51,10 +54,10 @@
 				  <field name='scale' type='SFFloat' accessType="inputOutput" value='0.5'/>
 				  <field name='power' type='SFFloat' accessType="inputOutput" value='2.0'/>
 				  
-				  <ShaderPart url='"x3dom.vs"' type='VERTEX'>
-				  </ShaderPart>
-				  <ShaderPart url='"pc_bubbles.fs"' type='FRAGMENT'>
-				  </ShaderPart>
+				<ShaderPart url='"x3dom.vs" "http://coderextreme.net/X3DJSONLD/x3dom.vs"' type="VERTEX">
+				</ShaderPart>
+				<ShaderPart url='"pc_bubbles.fs" "http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"' type='FRAGMENT'>
+				</ShaderPart>
 				</ComposedShader>
 				</Appearance>
 					<Sphere/>
@@ -70,10 +73,10 @@
 		</Transform>
 	</Scene>
 	</X3D>
-	Cobweb
-	<X3DCanvas profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd' url='"bub.x3d"'>
+		 <h2>Cobweb</h2>
+	<X3DCanvas id="bub" cache="false" url='"bub.x3d""'>
 		 <p>Your browser may not support all features required by Cobweb!</p>
 	</X3DCanvas>
 	</body>
-        <script type="text/javascript" src="bounce.js"></script>
+	<script type="text/javascript" src="bounce.js"></script>
 </html>
