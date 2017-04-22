@@ -1,3 +1,7 @@
+#ifdef GL_ES
+  precision highp float;
+#endif
+
 /*
 The MIT License (MIT)
 Copyright (c) 2011 Authors of J3D. All rights reserved.
@@ -28,20 +32,22 @@ varying float rfac;
 
 void main()
 {
+    mat4 jwc_ModelViewMatrix = matrix_view;
+    mat4 jwc_ModelViewProjectionMatrix = matrix_viewProjection;
     mat3 mvm3=mat3(
-		matrix_view[0].x,
-		matrix_view[0].y,
-		matrix_view[0].z,
-		matrix_view[1].x,
-        matrix_view[1].y,
-		matrix_view[1].z,
-		matrix_view[2].x,
-		matrix_view[2].y,
-		matrix_view[2].z
+	jwc_ModelViewMatrix[0].x,
+	jwc_ModelViewMatrix[0].y,
+	jwc_ModelViewMatrix[0].z,
+	jwc_ModelViewMatrix[1].x,
+	jwc_ModelViewMatrix[1].y,
+	jwc_ModelViewMatrix[1].z,
+	jwc_ModelViewMatrix[2].x,
+	jwc_ModelViewMatrix[2].y,
+	jwc_ModelViewMatrix[2].z
     );
     vec3 fragNormal = mvm3*normal;
-    gl_Position = matrix_viewProjection*vec4(position, 1.0);
-    vec3 incident = normalize((matrix_view * vec4(position, 1.0)).xyz);
+    gl_Position = jwc_ModelViewProjectionMatrix * vec4(position, 1.0);
+    vec3 incident = normalize((jwc_ModelViewMatrix * vec4(position, 1.0)).xyz);
 
     t = reflect(incident, fragNormal)*mvm3;
     tr = refract(incident, fragNormal, chromaticDispertion.x)*mvm3;
@@ -50,4 +56,3 @@ void main()
 
     rfac = bias + scale * pow(0.5+0.5*dot(incident, fragNormal), power);
 }
-

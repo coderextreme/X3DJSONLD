@@ -1,3 +1,7 @@
+#ifdef GL_ES
+  precision highp float;
+#endif
+
 /*
 The MIT License (MIT)
 Copyright (c) 2011 Authors of J3D. All rights reserved.

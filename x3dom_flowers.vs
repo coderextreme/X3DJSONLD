@@ -1,3 +1,7 @@
+#ifdef GL_ES
+  precision highp float;
+#endif
+
 attribute vec3 position;
 attribute vec3 normal;
 attribute vec2 texcoord;
@@ -7,9 +11,6 @@ uniform mat4 modelViewMatrix;
 uniform mat4 modelViewMatrixInverse;
 uniform mat4 normalMatrix;
 
-uniform float red;
-uniform float green;
-uniform float blue;
 uniform float bias;
 uniform float scale;
 uniform float power;
@@ -19,6 +20,9 @@ uniform float c;
 uniform float d;
 uniform float tdelta;
 uniform float pdelta;
+uniform float red;
+uniform float green;
+uniform float blue;
 
 varying vec3 t;
 varying vec3 tr;
@@ -45,9 +49,9 @@ vec3 rose_normal(vec3 p) {
      /* convert cartesian position to spherical coordinates */
      vec3 base = cart2sphere(p);
      /* add a little to phi */
-     vec3 td = base + vec3(0.0, 0.01, 0.0);
+     vec3 td = base + vec3(0.0, 0.0001, 0.0);
      /* add a little to theta */
-     vec3 pd = base + vec3(0.0, 0.0, 0.01);
+     vec3 pd = base + vec3(0.0, 0.0, 0.0001);
 
      /* convert back to cartesian coordinates */
      vec3 br = rose(base);
@@ -57,27 +61,34 @@ vec3 rose_normal(vec3 p) {
      return normalize(cross(bt - br, bp - br));
 }
 
+vec4 rose_position(vec3 p) {
+	return vec4(rose(cart2sphere(p)), 1.0);
+	/*return vec4(position, 1.0);*/
+}
+
 void main()
 {
+    mat4 jwc_ModelViewMatrix = modelViewMatrix;
+    mat4 jwc_ModelViewProjectionMatrix = modelViewProjectionMatrix;
     mat3 mvm3=mat3(
-		modelViewMatrix[0].x,
-		modelViewMatrix[0].y,
-		modelViewMatrix[0].z,
-		modelViewMatrix[1].x,
-		modelViewMatrix[1].y,
-		modelViewMatrix[1].z,
-		modelViewMatrix[2].x,
-		modelViewMatrix[2].y,
-		modelViewMatrix[2].z
+	jwc_ModelViewMatrix[0].x,
+	jwc_ModelViewMatrix[0].y,
+	jwc_ModelViewMatrix[0].z,
+	jwc_ModelViewMatrix[1].x,
+	jwc_ModelViewMatrix[1].y,
+	jwc_ModelViewMatrix[1].z,
+	jwc_ModelViewMatrix[2].x,
+	jwc_ModelViewMatrix[2].y,
+	jwc_ModelViewMatrix[2].z
     );
     vec3 fragNormal = mvm3*rose_normal(position);
-    gl_Position = modelViewProjectionMatrix*vec4(rose(cart2sphere(position)), 1.0);
-    vec3 incident = normalize((modelViewMatrix * vec4(rose(cart2sphere(position)), 1.0)).xyz);
+    gl_Position = jwc_ModelViewProjectionMatrix * rose_position(position);
+    vec3 incident = normalize((jwc_ModelViewMatrix * rose_position(position)).xyz);
 
     t = reflect(incident, fragNormal)*mvm3;
     tr = refract(incident, fragNormal, red)*mvm3;
-    tg = refract(incident, fragNormal, green)*mvm3;
-    tb = refract(incident, fragNormal, blue)*mvm3;
+    tg = refract(incident, fragNormal, blue)*mvm3;
+    tb = refract(incident, fragNormal, green)*mvm3;
 
     rfac = bias + scale * pow(0.5+0.5*dot(incident, fragNormal), power);
 }

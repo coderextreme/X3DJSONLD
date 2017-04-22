@@ -1,3 +1,6 @@
+#ifdef GL_ES
+  precision highp float;
+#endif
 
 attribute vec3 position;
 attribute vec3 normal;
@@ -67,10 +70,10 @@ void main()
                 matrix_view[2].y,
                 matrix_view[2].z
     );
-    vec3 fragNormal = mvm3*rose_normal(position);
     gl_Position = matrix_viewProjection*vec4(rose(cart2sphere(position)), 1.0);
     vec3 incident = normalize((matrix_view * vec4(rose(cart2sphere(position)), 1.0)).xyz);
 
+    vec3 fragNormal = mvm3*rose_normal(position);
     t = reflect(incident, fragNormal)*mvm3;
     tr = refract(incident, fragNormal, chromaticDispertion.x)*mvm3;
     tg = refract(incident, fragNormal, chromaticDispertion.y)*mvm3;

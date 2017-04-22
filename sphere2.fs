@@ -5,7 +5,10 @@
 varying vec3 viewDirection;
 varying vec3 normalDirection;
 uniform samplerCube cube;
-uniform vec3 chromaticDispertion
+uniform vec3 chromaticDispertion;
+uniform float bias;
+uniform float scale;
+uniform float power;
 
 void main()
 {
@@ -22,8 +25,9 @@ void main()
     
     
     vec4 reflectedColor = textureCube(cube, reflectedDirection);
-    /*vec4 reflectedColor = vec4(1.0, 0, 0, 1.0);*/
-    vec4 refractedColor = vec4(red, green, blue, 1.0);
     gl_FragColor = reflectedColor;
-    /*gl_FragColor = refractedColor;*/
+    /*
+    vec4 refractedColor = vec4(red, green, blue, 1.0);
+    gl_FragColor = refractedColor;
+    */
 }
