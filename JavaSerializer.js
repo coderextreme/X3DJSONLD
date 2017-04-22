@@ -238,42 +238,42 @@ JavaSerializer.subSerializeToString = function(element, n, mapToMethod, fieldTyp
 					} else {
 						method = "set"+method.charAt(0).toUpperCase() + method.slice(1);
 					}
-					str += '.'+method+"(";
+					let strval;
 					if (attrs[a].nodeValue === 'NULL') {
-						str += "";
+						strval = "";
 					} else if (attrType === "SFString") {
 						if (attr === "type" && attrs[a].nodeValue !== "VERTEX" && attrs[a].nodeValue !== "FRAGMENT") {
-							str += "fieldObject.TYPE_"+attrs[a].nodeValue.toUpperCase();
+							strval = "fieldObject.TYPE_"+attrs[a].nodeValue.toUpperCase();
 						} else if (attr === "accessType") {
-							str += "fieldObject.ACCESSTYPE_"+attrs[a].nodeValue.toUpperCase();
+							strval = "fieldObject.ACCESSTYPE_"+attrs[a].nodeValue.toUpperCase();
 						} else if (
 							attrs[a].nodeValue.indexOf("_changed") > 0 &&
 
 							((element.nodeName === 'field' ||
 							attr === "name") ||
 							attr === "fromField")) {
-							str += '"'+attrs[a].nodeValue.substring(0, attrs[a].nodeValue.indexOf("_changed")).replace(/\n/g, '\\\\n').replace(/\\?"/g, "\\\"")+'"';
+							strval = '"'+attrs[a].nodeValue.substring(0, attrs[a].nodeValue.indexOf("_changed")).replace(/\n/g, '\\\\n').replace(/\\?"/g, "\\\"")+'"';
 						} else if (
 							attrs[a].nodeValue.indexOf("set_") === 0 &&
 
 							((element.nodeName === 'field' &&
 							attr === "name") ||
 							attr === "toField")) {
-							str += '"'+attrs[a].nodeValue.substring(4).replace(/\n/g, '\\\\n').replace(/\\?"/g, "\\\"")+'"';
+							strval = '"'+attrs[a].nodeValue.substring(4).replace(/\n/g, '\\\\n').replace(/\\?"/g, "\\\"")+'"';
 						} else {
-							str += '"'+attrs[a].nodeValue.replace(/\n/g, '\\\\n').replace(/\\?"/g, "\\\"")+'"';
+							strval = '"'+attrs[a].nodeValue.replace(/\n/g, '\\\\n').replace(/\\?"/g, "\\\"")+'"';
 						}
 					} else if (attrType === "SFInt32") {
-						str += attrs[a].nodeValue;
+						strval = attrs[a].nodeValue;
 					} else if (attrType === "SFFloat") {
-						str += attrs[a].nodeValue+"f";
+						strval = attrs[a].nodeValue+"f";
 					} else if (attrType === "SFDouble") {
-						str += attrs[a].nodeValue+"d";
+						strval = attrs[a].nodeValue+"d";
 					} else if (attrType === "SFBool") {
-						str += attrs[a].nodeValue;
+						strval = attrs[a].nodeValue;
 					} else if (attrType === "MFString") {
-						str += printSubArray(attrType, "String",
-							attrs[a].nodeValue.substring(1, attrs[a].nodeValue.length-1).split(/" "/).
+						strval = printSubArray(attrType, "String",
+							attrs[a].nodeValue.substr(1, attrs[a].nodeValue.length-2).split(/" "/).
 							map(function(x) {
 								let y = x.
 								       replace(/([^\\]| )\\\\\\\\([^\\"]| )/g, "$1\\\\\\\\\\\\\\\\$2").
@@ -293,7 +293,7 @@ JavaSerializer.subSerializeToString = function(element, n, mapToMethod, fieldTyp
 						attrType === "MFInt32"||
 						attrType === "MFImage"||
 						attrType === "SFImage") {
-						str += printSubArray(attrType, "int", attrs[a].nodeValue.split(' '), codeno, ',', '', '');
+						strval = printSubArray(attrType, "int", attrs[a].nodeValue.split(' '), codeno, ',', '', '');
 					} else if (
 						attrType === "SFColor"||
 						attrType === "MFColor"||
@@ -312,7 +312,7 @@ JavaSerializer.subSerializeToString = function(element, n, mapToMethod, fieldTyp
 						attrType === "SFRotation"|
 						attrType === "MFRotation"|
 						attrType === "MFFloat") {
-						str += printSubArray(attrType, "float", attrs[a].nodeValue.split(' '), codeno, 'f,', '', 'f');
+						strval = printSubArray(attrType, "float", attrs[a].nodeValue.split(' '), codeno, 'f,', '', 'f');
 					} else if (
 						attrType === "SFVec2d"||
 						attrType === "SFVec3d"||
@@ -325,13 +325,19 @@ JavaSerializer.subSerializeToString = function(element, n, mapToMethod, fieldTyp
 						attrType === "MFMatrix3d"||
 						attrType === "MFMatrix4d"|
 						attrType === "MFDouble") {
-						str += printSubArray(attrType, "double", attrs[a].nodeValue.split(' '), codeno, 'd,', '', 'd');
+						strval = printSubArray(attrType, "double", attrs[a].nodeValue.split(' '), codeno, 'd,', '', 'd');
 					} else if (attrType === "MFBool") {
-						str += printSubArray(attrType, "boolean", attrs[a].nodeValue.split(' '), codeno, ',', '', '');
+						strval = printSubArray(attrType, "boolean", attrs[a].nodeValue.split(' '), codeno, ',', '', '');
 					} else {
-						str += attrs[a].nodeValue;
+						// strval = attrs[a].nodeValue;
+						// not found in field types
+						if (attr === "class") {
+							method = "setCssClass";
+						}
+						strval = '"'+attrs[a].nodeValue.replace(/\n/g, '\\\\n').replace(/\\?"/g, "\\\"")+'"';
 					}
-					str += ")";
+					
+					str += '.'+method+"("+strval+")";
 				}
 			}
 		} catch (e) {

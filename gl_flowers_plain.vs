@@ -2,21 +2,12 @@
   precision highp float;
 #endif
 
-vec4 ftransform() {
-	return vec4 (fw_ProjectionMatrix*fw_ModelViewMatrix*fw_Vertex);
-}
-#define gl_ModelViewProjectionMatrix (fw_ProjectionMatrix*fw_ModelViewMatrix)
-#define HEADLIGHT_LIGHT (MAX_LIGHTS-1)
-#define gl_NormalMatrix fw_NormalMatrix
-#define gl_ProjectionMatrix fw_ProjectionMatrix
-#define gl_ModelViewMatrix fw_ModelViewMatrix
-#define gl_Vertex fw_Vertex
-#define gl_Normal fw_Normal
-#define gl_LightSource fw_LightSource
-
 attribute vec3 position;
 attribute vec3 normal;
 attribute vec2 texcoord;
+
+uniform mat4 gl_ModelViewMatrix;
+uniform mat4 gl_ProjectionMatrix;
 
 uniform vec3 chromaticDispertion;
 uniform float bias;
@@ -73,23 +64,5 @@ vec4 rose_position(vec3 p) {
 
 void main()
 {
-    mat3 mvm3=mat3(
-	gl_ModelViewMatrix[0].x,
-	gl_ModelViewMatrix[0].y,
-	gl_ModelViewMatrix[0].z,
-	gl_ModelViewMatrix[1].x,
-	gl_ModelViewMatrix[1].y,
-	gl_ModelViewMatrix[1].z,
-	gl_ModelViewMatrix[2].x,
-	gl_ModelViewMatrix[2].y,
-	gl_ModelViewMatrix[2].z
-    );
-    vec3 fragNormal = mvm3*rose_normal(position);
     gl_Position = gl_ModelViewProjectionMatrix * rose_position(position);
-    vec3 incident = normalize((gl_ModelViewMatrix * rose_position(position)).xyz);
-    t = reflect(incident, fragNormal)*mvm3;
-    tr = refract(incident, fragNormal, chromaticDispertion.x)*mvm3;
-    tg = refract(incident, fragNormal, chromaticDispertion.y)*mvm3;
-    tb = refract(incident, fragNormal, chromaticDispertion.z)*mvm3;
-    rfac = bias + scale * pow(0.5+0.5*dot(incident, fragNormal), power);
 }
