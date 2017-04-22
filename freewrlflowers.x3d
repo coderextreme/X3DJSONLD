@@ -52,30 +52,6 @@
                                 <ShaderPart url='"freewrl_bubbles.fs" "http://coderextreme.net/X3DJSONLD/freewrl_bubbles.fs"' type='FRAGMENT'>
                                 </ShaderPart>
                             </ComposedShader>
-			    <!--
-                            <ComposedShader DEF="cobweb" language="GLSL">
-                                <field name='xxxcube' type='SFInt32' accessType="inputOutput" value='0'/>
-                                <field name='cube' type='SFNode' accessType="inputOutput">
-                                    <ComposedCubeMapTexture USE="texture"/>
-                                </field>
-
-                                <field name='chromaticDispertion' type='SFVec3f' accessType="inputOutput" value='0.98 1.0 1.033'/>
-                                <field name='bias' type='SFFloat' accessType="inputOutput" value='10'/>
-                                <field name='scale' type='SFFloat' accessType="inputOutput" value='10'/>
-                                <field name='power' type='SFFloat' accessType="inputOutput" value='2.0'/>
-				  <field name='a' type='SFFloat' accessType='inputOutput' value='0.5'></field>
-				  <field name='b' type='SFFloat' accessType='inputOutput' value='0.5'></field>
-				  <field name='c' type='SFFloat' accessType='inputOutput' value='3'></field>
-				  <field name='d' type='SFFloat' accessType='inputOutput' value='3'></field>
-				  <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0.5'></field>
-				  <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0.5'></field>
-				  
-                                <ShaderPart url='"cobweb_flowers_chromatic.vs" "http://coderextreme.net/X3DJSONLD/cobweb.vs"' type="VERTEX">
-                                </ShaderPart>
-                                <ShaderPart url='"pc_bubbles.fs" "http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"' type='FRAGMENT'>
-                                </ShaderPart>
-                            </ComposedShader>
-			    -->
                         </Appearance>
 			<Sphere/>
                     </Shape>

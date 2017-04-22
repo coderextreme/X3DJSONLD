@@ -71,31 +71,31 @@
 					  <field name='scale' type='SFFloat' accessType="inputOutput" value='0.5'/>
 					  <field name='power' type='SFFloat' accessType="inputOutput" value='2.0'/>
 
-					  <ShaderPart url='"instant.vs" "http://coderextreme.net/X3DJSONLD/instant.vs"' type='VERTEX'></ShaderPart>
-					  <ShaderPart url='"pc_bubbles.fs" "http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"' type='FRAGMENT'></ShaderPart>
-					</ComposedShader>
-					-->
-					<ComposedShader DEF='cobweb' language="GLSL">
-					  <field name='cube' type='SFNode' accessType="inputOutput">
-						  <ComposedCubeMapTexture USE="texture"/>
-					  </field>
-					  <field name='chromaticDispertion' type='SFVec3f' accessType="inputOutput" value='0.98 1.0 1.033'/>
-					  <field name='bias' type='SFFloat' accessType="inputOutput" value='0.5'/>
-					  <field name='scale' type='SFFloat' accessType="inputOutput" value='0.5'/>
-					  <field name='power' type='SFFloat' accessType="inputOutput" value='2.0'/>
-					  <ShaderPart url='"cobweb.vs" "http://coderextreme.net/X3DJSONLD/cobweb.vs"' type='VERTEX'>
-					  </ShaderPart>
-					  <ShaderPart url='"pc_bubbles.fs" "http://coderextreme.net/X3DJSONLD/pc.fs"' type='FRAGMENT'>
-					  </ShaderPart>
-					</ComposedShader>
-				</Appearance>
-				<Sphere/>
-				</Shape>
-		</Transform>
-		<Script DEF="Bounce">
-		    <field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
-		    <field name="velocity" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
-		   <field name="set_fraction" accessType="inputOnly" type="SFTime"></field>
+                              <ShaderPart url='"instant.vs" "http://coderextreme.net/X3DJSONLD/instant.vs"' type='VERTEX'></ShaderPart>
+                              <ShaderPart url='"pc_bubbles.fs" "http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"' type='FRAGMENT'></ShaderPart>
+                            </ComposedShader>
+                            -->
+                            <ComposedShader DEF='cobweb' language="GLSL">
+                                <field name='cube' type='SFNode' accessType="inputOutput">
+                                    <ComposedCubeMapTexture USE="texture"/>
+                                </field>
+                                <field name='chromaticDispertion' type='SFVec3f' accessType="inputOutput" value='0.98 1.0 1.033'/>
+                                <field name='bias' type='SFFloat' accessType="inputOutput" value='0.5'/>
+                                <field name='scale' type='SFFloat' accessType="inputOutput" value='0.5'/>
+                                <field name='power' type='SFFloat' accessType="inputOutput" value='2.0'/>
+                                <ShaderPart url='"cobweb.vs" "http://coderextreme.net/X3DJSONLD/cobweb.vs"' type='VERTEX'>
+                                </ShaderPart>
+                                <ShaderPart url='"pc_bubbles.fs" "http://coderextreme.net/X3DJSONLD/pc.fs"' type='FRAGMENT'>
+                                </ShaderPart>
+                            </ComposedShader>
+                        </Appearance>
+                        <Sphere/>
+                    </Shape>
+                </Transform>
+                <Script DEF="Bounce">
+                    <field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+                    <field name="velocity" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+                    <field name="set_fraction" accessType="inputOnly" type="SFTime"></field>
 <![CDATA[ecmascript:
 			function set_translation(value) {
 				translation = value;
@@ -126,14 +126,14 @@
 			    }
 			}
                ]]>
-		</Script>
-		<TimeSensor DEF='TourTime' cycleInterval='0.150' loop='true'></TimeSensor>
-		<ROUTE fromNode="TourTime" fromField="cycleTime" toNode="Bounce" toField="set_fraction"></ROUTE>
-		<ROUTE fromNode="Bounce" fromField="translation_changed" toNode="transform" toField="set_translation"></ROUTE>
-		</ProtoBody>
-		</ProtoDeclare>
-		<ProtoInstance name="Bubble"></ProtoInstance>
-		<ProtoInstance name="Bubble"></ProtoInstance>
-		<ProtoInstance name="Bubble"></ProtoInstance>
-	</Scene>
+                </Script>
+                <TimeSensor DEF='TourTime' cycleInterval='0.150' loop='true'></TimeSensor>
+                <ROUTE fromNode="TourTime" fromField="cycleTime" toNode="Bounce" toField="set_fraction"></ROUTE>
+                <ROUTE fromNode="Bounce" fromField="translation_changed" toNode="transform" toField="set_translation"></ROUTE>
+            </ProtoBody>
+        </ProtoDeclare>
+        <ProtoInstance name="Bubble"></ProtoInstance>
+        <ProtoInstance name="Bubble"></ProtoInstance>
+        <ProtoInstance name="Bubble"></ProtoInstance>
+    </Scene>
 </X3D>

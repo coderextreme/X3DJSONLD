@@ -1,63 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
-      <head>
+    <head>
         <meta name='title' content='flowers4.x3d'/>
         <meta name='creator' content='John Carlson'/>
         <meta name='generator' content='manual'/>
         <meta name='identifier' content='http://coderextreme.net/X3DJSONLD/flowers4.x3d'/>
         <meta name='description' content='an animated flower'/>      
-      </head>
-  <Scene>
-    <NavigationInfo type="&quot;EXAMINE&quot; &quot;ANY&quot;"/>
-        <Background backUrl='"cubemap/all_probes/uffizi_cross/uffizi_back.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_back.png"' bottomUrl='"cubemap/all_probes/uffizi_cross/uffizi_bottom.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_bottom.png"' frontUrl='"cubemap/all_probes/uffizi_cross/uffizi_front.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_front.png"' leftUrl='"cubemap/all_probes/uffizi_cross/uffizi_left.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_left.png"' rightUrl='"cubemap/all_probes/uffizi_cross/uffizi_right.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_right.png"' topUrl='"cubemap/all_probes/uffizi_cross/uffizi_top.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_top.png"'></Background>
-	<Viewpoint position='0 0 40' description="Transparent rose"/>
-	<Transform DEF='Rose01' >
-	<Shape>
-	<Appearance DEF='_01_-_Default' >
-        <Material diffuseColor=".7 .7 .7" specularColor=".5 .5 .5" />
-	<ComposedCubeMapTexture>
-		    <ImageTexture url='"cubemap/all_probes/uffizi_cross/uffizi_back.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_back.png"' containerField='back'/>
-		    <ImageTexture url='"cubemap/all_probes/uffizi_cross/uffizi_bottom.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_bottom.png"' containerField='bottom'/>
-		    <ImageTexture url='"cubemap/all_probes/uffizi_cross/uffizi_front.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_front.png"' containerField='front'/>
-		    <ImageTexture url='"cubemap/all_probes/uffizi_cross/uffizi_left.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_left.png"' containerField='left'/>
-		    <ImageTexture url='"cubemap/all_probes/uffizi_cross/uffizi_right.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_right.png"' containerField='right'/>
-		    <ImageTexture url='"cubemap/all_probes/uffizi_cross/uffizi_top.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_top.png"' containerField='top'/>
-	</ComposedCubeMapTexture>
-		<ComposedShader DEF='x3dom' language="GLSL">
-                  <field name='cube' type='SFInt32' accessType='inputOutput' value='0'/>
+    </head>
+    <Scene>
+        <NavigationInfo type="&quot;EXAMINE&quot; &quot;ANY&quot;"/>
+	<Background
+            backUrl='"cubemap/all_probes/stpeters_cross/stpeters_back.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_back.png"'
+            bottomUrl='"cubemap/all_probes/stpeters_cross/stpeters_bottom.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_bottom.png"'
+            frontUrl='"cubemap/all_probes/stpeters_cross/stpeters_front.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_front.png"'
+            leftUrl='"cubemap/all_probes/stpeters_cross/stpeters_left.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_left.png"'
+            rightUrl='"cubemap/all_probes/stpeters_cross/stpeters_right.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_right.png"'
+            topUrl='"cubemap/all_probes/stpeters_cross/stpeters_top.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_top.png"'
+		></Background>
+        <Transform DEF='transform' >
+            <Shape>
+                <Appearance>
+                    <Material diffuseColor=".7 .7 .7" specularColor=".5 .5 .5" />
+                    <ComposedCubeMapTexture>
+                                <ImageTexture url='"cubemap/all_probes/stpeters_cross/stpeters_back.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_back.png"' containerField="back"/>
+                                <ImageTexture url='"cubemap/all_probes/stpeters_cross/stpeters_bottom.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_bottom.png"' containerField="bottom"/>
+                                <ImageTexture url='"cubemap/all_probes/stpeters_cross/stpeters_front.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_front.png"' containerField="front"/>
+                                <ImageTexture url='"cubemap/all_probes/stpeters_cross/stpeters_left.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_left.png"' containerField="left"/>
+                                <ImageTexture url='"cubemap/all_probes/stpeters_cross/stpeters_right.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_right.png"' containerField="right"/>
+                                <ImageTexture url='"cubemap/all_probes/stpeters_cross/stpeters_top.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_top.png"' containerField="top"/>
+                    </ComposedCubeMapTexture>
+                    <ComposedShader DEF='shader' language="GLSL">
+                        <field name='cube' type='SFInt32' accessType='inputOutput' value='0'/>
 
-                  <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1.0 1.033'/>
-                  <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'/>
-                  <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'/>
-                  <field name='power' type='SFFloat' accessType='inputOutput' value='2'/>
+                        <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1.0 1.033'/>
+                        <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'/>
+                        <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'/>
+                        <field name='power' type='SFFloat' accessType='inputOutput' value='2'/>
                   
-                  <ShaderPart url='"x3dom.vs" "http://coderextreme.net/X3DJSONLD/x3dom.vs"' type='VERTEX'></ShaderPart>
-                  <ShaderPart url='"pc_bubbles.fs" "http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"' type='FRAGMENT'></ShaderPart>
-                </ComposedShader>
-		</Appearance>
-		<!--Sphere/-->
+                        <ShaderPart url='"x3dom.vs" "http://coderextreme.net/X3DJSONLD/x3dom.vs"' type='VERTEX'></ShaderPart>
+                        <ShaderPart url='"pc_bubbles.fs" "http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"' type='FRAGMENT'></ShaderPart>
+                    </ComposedShader>
+                </Appearance>
+		<!--
+                <Sphere>
+		-->
                 <IndexedFaceSet DEF="Orbit" creaseAngle="0">
-                  <Coordinate DEF="OrbitCoordinates"/>
-		<ComposedShader DEF='cobweb' language="GLSL">
-                  <field name='cube' type='SFInt32' accessType='inputOutput' value='0'/>
-
-                  <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1.0 1.033'/>
-                  <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'/>
-                  <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'/>
-                  <field name='power' type='SFFloat' accessType='inputOutput' value='2'/>
-                  
-                  <ShaderPart url='"cobweb.vs" "http://coderextreme.net/X3DJSONLD/cobweb.vs"' type='VERTEX'></ShaderPart>
-                  <ShaderPart url='"pc_bubbles.fs" "http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"' type='FRAGMENT'></ShaderPart>
-                </ComposedShader>
+                    <Coordinate DEF="OrbitCoordinates"/>
                 </IndexedFaceSet>
-	</Shape>
-      </Transform>
+            </Shape>
+        </Transform>
  
-    <Script DEF="OrbitScript">
-	<field accessType="inputOnly" name="set_fraction" type="SFFloat"/>
-	<field accessType="inputOutput" name="coordinates" type="MFVec3f"/>
-	<field accessType="inputOutput" name="coordIndexes" type="MFInt32"/>
+        <Script DEF="OrbitScript">
+            <field accessType="inputOnly" name="set_fraction" type="SFFloat"/>
+            <field accessType="inputOutput" name="coordinates" type="MFVec3f"/>
+            <field accessType="inputOutput" name="coordIndexes" type="MFInt32"/>
 <![CDATA[
 
 ecmascript:
@@ -135,12 +132,12 @@ function set_fraction(fraction, eventTime) {
 	updateCoordinates(resolution);
 }
       ]]></Script>
-    <TimeSensor DEF="Clock" cycleInterval="16" loop="true"/>
-    <ROUTE fromField="coordIndexes" fromNode="OrbitScript"
-      toField="set_coordIndex" toNode="Orbit"/>
-    <ROUTE fromField="coordinates" fromNode="OrbitScript"
-      toField="set_point" toNode="OrbitCoordinates"/>
-    <ROUTE fromField="fraction_changed" fromNode="Clock"
-      toField="set_fraction" toNode="OrbitScript"/>
+        <TimeSensor DEF="Clock" cycleInterval="16" loop="true"/>
+        <ROUTE fromField="coordIndexes" fromNode="OrbitScript"
+               toField="set_coordIndex" toNode="Orbit"/>
+        <ROUTE fromField="coordinates" fromNode="OrbitScript"
+               toField="set_point" toNode="OrbitCoordinates"/>
+        <ROUTE fromField="fraction_changed" fromNode="Clock"
+               toField="set_fraction" toNode="OrbitScript"/>
     </Scene>   
 </X3D>
