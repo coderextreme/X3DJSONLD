@@ -59,8 +59,8 @@
                   <field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
                   <field name="velocity" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
                   <field name="set_fraction" accessType="inputOnly" type="SFTime"></field>
-		  <field accessType="inputOutput" name="coordinates" type="MFVec3f" directOutput="true"/>
-		  <field accessType="inputOutput" name="coordIndexes" type="MFInt32" directOutput="true"/>
+		  <field accessType="inputOutput" name="coordinates" type="MFVec3f"/>
+		  <field accessType="inputOutput" name="coordIndexes" type="MFInt32"/>
 		  <field name='a' type='SFFloat' accessType='inputOutput' value='0.5'></field>
 		  <field name='b' type='SFFloat' accessType='inputOutput' value='0.5'></field>
 		  <field name='c' type='SFFloat' accessType='inputOutput' value='3'></field>

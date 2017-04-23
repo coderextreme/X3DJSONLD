@@ -41,12 +41,12 @@
 			  <field name='bias' type='SFFloat' accessType="inputOutput" value='0.5'/>
 			  <field name='scale' type='SFFloat' accessType="inputOutput" value='0.5'/>
 			  <field name='power' type='SFFloat' accessType="inputOutput" value='2.0'/>
-			  <field class="a" name='a' type='SFFloat' accessType='inputOnly' value='0.5'></field>
-			  <field class="b" name='b' type='SFFloat' accessType='inputOnly' value='0.5'></field>
-			  <field class="c" name='c' type='SFFloat' accessType='inputOnly' value='3'></field>
-			  <field class="d" name='d' type='SFFloat' accessType='inputOnly' value='3'></field>
-			  <field class="tdelta" name='tdelta' type='SFFloat' accessType='inputOnly' value='0.5'></field>
-			  <field class="pdelta" name='pdelta' type='SFFloat' accessType='inputOnly' value='0.5'></field>
+			  <field name='a' type='SFFloat' accessType='inputOnly' value='0.5'></field>
+			  <field name='b' type='SFFloat' accessType='inputOnly' value='0.5'></field>
+			  <field name='c' type='SFFloat' accessType='inputOnly' value='3'></field>
+			  <field name='d' type='SFFloat' accessType='inputOnly' value='3'></field>
+			  <field name='tdelta' type='SFFloat' accessType='inputOnly' value='0.5'></field>
+			  <field name='pdelta' type='SFFloat' accessType='inputOnly' value='0.5'></field>
 			  
 			<ShaderPart url='"x3dom_flowers_chromatic.vs" "http://coderextreme.net/X3DJSONLD/x3dom.vs"' type="VERTEX">
 			</ShaderPart>
@@ -80,12 +80,12 @@
 			  <field name='bias' type='SFFloat' accessType="inputOutput" value='0.5'/>
 			  <field name='scale' type='SFFloat' accessType="inputOutput" value='0.5'/>
 			  <field name='power' type='SFFloat' accessType="inputOutput" value='2.0'/>
-			  <field class="a" name='a' type='SFFloat' accessType='inputOnly' value='0.5'></field>
-			  <field class="b" name='b' type='SFFloat' accessType='inputOnly' value='0.5'></field>
-			  <field class="c" name='c' type='SFFloat' accessType='inputOnly' value='3'></field>
-			  <field class="d" name='d' type='SFFloat' accessType='inputOnly' value='3'></field>
-			  <field class="tdelta" name='tdelta' type='SFFloat' accessType='inputOnly' value='0.5'></field>
-			  <field class="pdelta" name='pdelta' type='SFFloat' accessType='inputOnly' value='0.5'></field>
+			  <field name='a' type='SFFloat' accessType='inputOnly' value='0.5'></field>
+			  <field name='b' type='SFFloat' accessType='inputOnly' value='0.5'></field>
+			  <field name='c' type='SFFloat' accessType='inputOnly' value='3'></field>
+			  <field name='d' type='SFFloat' accessType='inputOnly' value='3'></field>
+			  <field name='tdelta' type='SFFloat' accessType='inputOnly' value='0.5'></field>
+			  <field name='pdelta' type='SFFloat' accessType='inputOnly' value='0.5'></field>
 			  
 			<ShaderPart url='"x3dom_flowers_chromatic.vs" "http://coderextreme.net/X3DJSONLD/x3dom.vs"' type="VERTEX">
 			</ShaderPart>
@@ -119,12 +119,12 @@
 			  <field name='bias' type='SFFloat' accessType="inputOutput" value='0.5'/>
 			  <field name='scale' type='SFFloat' accessType="inputOutput" value='0.5'/>
 			  <field name='power' type='SFFloat' accessType="inputOutput" value='2.0'/>
-			  <field class="a" name='a' type='SFFloat' accessType='inputOnly' value='0.5'></field>
-			  <field class="b" name='b' type='SFFloat' accessType='inputOnly' value='0.5'></field>
-			  <field class="c" name='c' type='SFFloat' accessType='inputOnly' value='3'></field>
-			  <field class="d" name='d' type='SFFloat' accessType='inputOnly' value='3'></field>
-			  <field class="tdelta" name='tdelta' type='SFFloat' accessType='inputOnly' value='0.5'></field>
-			  <field class="pdelta" name='pdelta' type='SFFloat' accessType='inputOnly' value='0.5'></field>
+			  <field name='a' type='SFFloat' accessType='inputOnly' value='0.5'></field>
+			  <field name='b' type='SFFloat' accessType='inputOnly' value='0.5'></field>
+			  <field name='c' type='SFFloat' accessType='inputOnly' value='3'></field>
+			  <field name='d' type='SFFloat' accessType='inputOnly' value='3'></field>
+			  <field name='tdelta' type='SFFloat' accessType='inputOnly' value='0.5'></field>
+			  <field name='pdelta' type='SFFloat' accessType='inputOnly' value='0.5'></field>
 			  
 			<ShaderPart url='"x3dom_flowers_plain.vs" "http://coderextreme.net/X3DJSONLD/x3dom_flowers_plain.vs"' type="VERTEX">
 			</ShaderPart>
