@@ -27,6 +27,7 @@ if (typeof Browser === 'undefined') {
 
 function processURLs(localArray, path) {
 	var url;
+/*
 	// No longer need to split
 	for (url in localArray) {
 		if (localArray[url].indexOf("http://") === 0
@@ -59,12 +60,14 @@ function processURLs(localArray, path) {
 			hash = localArray[url].substring(h);
 			localArray[url] = localArray[url].substring(0, h);
 		}
+*/
 /*
 		var x3d = localArray[url].lastIndexOf(".x3d") ;
 		if (x3d === localArray[url].length - 4) {
 			localArray[url] = localArray[url].substring(0, x3d)+".json" + hash;
 		}
 */
+/*
 		var wrl = localArray[url].lastIndexOf(".wrl") ;
 		if (wrl === localArray[url].length - 4) {
 			localArray[url] = localArray[url].substring(0, wrl)+".json" + hash;
@@ -75,6 +78,7 @@ function processURLs(localArray, path) {
 		}
 			
         }
+*/
 	// console.error("Processed URLs", localArray.join(" "));
 	return localArray;
 }
@@ -219,27 +223,16 @@ function CreateElement(key, x3djsonNS, containerField) {
 		}
 	}
 	if (typeof containerField !== 'undefined') {
-		child.setAttribute('containerField', containerField);
+		elementSetAttribute(child, 'containerField', containerField);
 	}
 	return child;
 }
 
 function CDATACreateFunction(document, element, str) {
-	// for script nodes
-	/*
-	var open = document.createTextNode('<![CDATA[');
-	var child = document.createTextNode(str.replace(/\&lt;/g, '<').replace(/\&gt;/g, '>').replace(/\&amp;/g, '&'));
-	var close = document.createTextNode(']]>');
-	element.appendChild(open);
-	element.appendChild(child);
-	element.appendChild(close);
-	*/
-	/*
-	var child = document.createCDATASection(str);
-	element.appendChild(child);
-	*/
 	var domParser = new DOMParser();
-	var cdataStr = '<script> <![CDATA[ ' + str.replace(/'([^'\r]*)\n([^']*)'/g, "'$1\\n$2'") + ' ]]> </script>'; // has to be wrapped into an element
+	var cdataStr = '<script> <![CDATA[ ' + str
+		.replace(/'([^'\r]*)\\\\n([^']*)'/g, "'$1\\\\n$2'")
+		+ ' ]]> </script>'; // has to be wrapped into an element
 	var scriptDoc = domParser .parseFromString (cdataStr, 'application/xml');
 	var cdata = scriptDoc .children[0] .childNodes[1]; // space after script is childNode[0]
 	element .appendChild(cdata);
@@ -260,6 +253,7 @@ function ConvertObject(key, object, element, path, containerField) {
 				var child = document.createComment(CommentStringToXML(object[key][c]));
 				element.appendChild(child);
 			}
+			/*
 		} else if (key === 'Inline') {
 			var localArray = object[key]["@url"];
 			// console.error("Loading", localArray, "into", key);
@@ -280,6 +274,7 @@ function ConvertObject(key, object, element, path, containerField) {
 					element.appendChild(document.createTextNode("\n"));
 				}
 			});
+			*/
 		} else if (key === '#sourceText') {
 			CDATACreateFunction(document, element, object[key].join("\r\n")+"\r\n");
 		} else {
@@ -311,10 +306,40 @@ function ConvertObject(key, object, element, path, containerField) {
 }
 
 function CommentStringToXML(str) {
+	/*
+	str = str.replace(/[\u0080-\uFFFF]/g, 
+		function (v) {return '&#'+v.charCodeAt()+';';}
+	);
+	str = str.replace(/\\/g, "\\\\").replace(/\\"/g, '\\\"');
+	*/
+	return str;
+}
+
+function SFStringToXML(str) {
+	let y = str;
+	str = str.replace(/\\\\/g, '\\\\');
+	str = str.replace(/\\\\\\\\/g, '\\\\');
+	str = str.replace(/\\/g, '\\\\');
+	if (y !== str) {
+		console.log("X3DJSON [] replacing", y, "with", str);
+	}
 	return str;
 }
 
 function JSONStringToXML(str) {
+	/*
+	str = str.replace(/[\u0080-\uFFFF]/g, 
+		function (v) {return '&#'+v.charCodeAt()+';';}
+	);
+	// replace  \'s first
+	str = str.replace(/\\"/g, '\\\"');
+	*/
+	let y = str;
+	str = str.replace(/\\/g, '\\\\');
+	str = str.replace(/\n/g, '\\n');
+	if (y !== str) {
+		console.log("X3DJSON replacing", y, "with", str);
+	}
 	return str;
 }
 
@@ -375,7 +400,7 @@ function ConvertToX3DOM(object, parentkey, element, path, containerField) {
 			if (arrayOfStrings) {
 				arrayOfStrings = false;
 				for (var str in localArray) {
-					localArray[str] = JSONStringToXML(localArray[str]);
+					localArray[str] = SFStringToXML(localArray[str]);
 				}
                                 if (parentkey === '@url' || parentkey.indexOf("Url") === parentkey.length - 3) {
 					processURLs(localArray, path);
