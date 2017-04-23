@@ -24,11 +24,11 @@
           },
           {
             "@name":"description",
-            "@content":"a script test with embedded \n between single quotes"
+            "@content":"a script test with embedded between single quotes"
           },
           {
             "@name":"translated",
-            "@content":"21 April 2017"
+            "@content":"22 April 2017"
           },
           {
             "@name":"generator",

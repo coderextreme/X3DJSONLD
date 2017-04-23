@@ -8,7 +8,7 @@
         "meta": [
           {
             "@name":"title",
-            "@content":"bub.x3d"
+            "@content":"flowers.x3d"
           },
           {
             "@name":"creator",
@@ -16,7 +16,7 @@
           },
           {
             "@name":"description",
-            "@content":"3 prismatic spheres"
+            "@content":"5 or more prismatic flowers"
           },
           {
             "@name":"generator",
@@ -24,7 +24,7 @@
           },
           {
             "@name":"identifier",
-            "@content":"http://coderextreme.net/X3DJSONLD/bub.x3d"
+            "@content":"http://coderextreme.net/X3DJSONLD/flowers.x3d"
           },
           {
             "@name":"translated",
@@ -48,23 +48,17 @@
           },
           { "Background":
             {
-              "@backUrl":["cubemap/all_probes/stpeters_cross/stpeters_back.png","cubemap/all_probes/stpeters_cross/stpeters_back.png"],
-              "@bottomUrl":["cubemap/all_probes/stpeters_cross/stpeters_bottom.png","cubemap/all_probes/stpeters_cross/stpeters_bottom.png"],
-              "@frontUrl":["cubemap/all_probes/stpeters_cross/stpeters_front.png","cubemap/all_probes/stpeters_cross/stpeters_front.png"],
-              "@leftUrl":["cubemap/all_probes/stpeters_cross/stpeters_left.png","cubemap/all_probes/stpeters_cross/stpeters_left.png"],
-              "@rightUrl":["cubemap/all_probes/stpeters_cross/stpeters_right.png","cubemap/all_probes/stpeters_cross/stpeters_right.png"],
-              "@topUrl":["cubemap/all_probes/stpeters_cross/stpeters_top.png","cubemap/all_probes/stpeters_cross/stpeters_top.png"]
-            }
-          },
-          { "Viewpoint":
-            {
-              "@position":[0,0,20],
-              "@description":"Look at the bubbles flying"
+              "@backUrl":["cubemap/all_probes/stpeters_cross/stpeters_back.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_back.png"],
+              "@bottomUrl":["cubemap/all_probes/stpeters_cross/stpeters_bottom.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_bottom.png"],
+              "@frontUrl":["cubemap/all_probes/stpeters_cross/stpeters_front.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_front.png"],
+              "@leftUrl":["cubemap/all_probes/stpeters_cross/stpeters_left.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_left.png"],
+              "@rightUrl":["cubemap/all_probes/stpeters_cross/stpeters_right.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_right.png"],
+              "@topUrl":["cubemap/all_probes/stpeters_cross/stpeters_top.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_top.png"]
             }
           },
           { "ProtoDeclare":
             {
-              "@name":"Bubble",
+              "@name":"flower",
               "ProtoBody": {
                   "-children":[
                     { "Transform":
@@ -73,7 +67,6 @@
                         "-children":[
                           { "Shape":
                             {
-                              "@DEF":"myShape",
                               "-appearance":
                                 { "Appearance":
                                   {
@@ -91,52 +84,53 @@
                                           "-back":
                                             { "ImageTexture":
                                               {
-                                                "@url":["cubemap/all_probes/stpeters_cross/stpeters_back.png","cubemap/all_probes/stpeters_cross/stpeters_back.png"]
+                                                "@url":["cubemap/all_probes/stpeters_cross/stpeters_back.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_back.png"]
                                               }
                                             },
                                           "-bottom":
                                             { "ImageTexture":
                                               {
-                                                "@url":["cubemap/all_probes/stpeters_cross/stpeters_bottom.png","cubemap/all_probes/stpeters_cross/stpeters_bottom.png"]
+                                                "@url":["cubemap/all_probes/stpeters_cross/stpeters_bottom.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_bottom.png"]
                                               }
                                             },
                                           "-front":
                                             { "ImageTexture":
                                               {
-                                                "@url":["cubemap/all_probes/stpeters_cross/stpeters_front.png","cubemap/all_probes/stpeters_cross/stpeters_front.png"]
+                                                "@url":["cubemap/all_probes/stpeters_cross/stpeters_front.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_front.png"]
                                               }
                                             },
                                           "-left":
                                             { "ImageTexture":
                                               {
-                                                "@url":["cubemap/all_probes/stpeters_cross/stpeters_left.png","cubemap/all_probes/stpeters_cross/stpeters_left.png"]
+                                                "@url":["cubemap/all_probes/stpeters_cross/stpeters_left.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_left.png"]
                                               }
                                             },
                                           "-right":
                                             { "ImageTexture":
                                               {
-                                                "@url":["cubemap/all_probes/stpeters_cross/stpeters_right.png","cubemap/all_probes/stpeters_cross/stpeters_right.png"]
+                                                "@url":["cubemap/all_probes/stpeters_cross/stpeters_right.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_right.png"]
                                               }
                                             },
                                           "-top":
                                             { "ImageTexture":
                                               {
-                                                "@url":["cubemap/all_probes/stpeters_cross/stpeters_top.png","cubemap/all_probes/stpeters_cross/stpeters_top.png"]
+                                                "@url":["cubemap/all_probes/stpeters_cross/stpeters_top.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_top.png"]
                                               }
                                             }
                                         }
                                       },
-                                    "-children":[
-                                      {
-                                        "#comment":"<ComposedShader DEF='gl' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"gl.vs\" \"http://coderextreme.net/X3DJSONLD/gl.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"pc_bubbles.fs\" \"http://coderextreme.net/X3DJSONLD/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader> <ComposedShader DEF='freewrl' language=\"GLSL\"> <field name='fw_textureCoodGenType' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"freewrl.vs\" \"http://coderextreme.net/X3DJSONLD/freewrl.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"pc_bubbles.fs\" \"http://coderextreme.net/X3DJSONLD/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader> <ComposedShader DEF='x3dom' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"x3dom.vs\" \"http://coderextreme.net/X3DJSONLD/x3dom.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"pc_bubbles.fs\" \"http://coderextreme.net/X3DJSONLD/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader> <ComposedShader DEF='instant' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"instant.vs\" \"http://coderextreme.net/X3DJSONLD/instant.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"pc_bubbles.fs\" \"http://coderextreme.net/X3DJSONLD/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader>"
-                                      }
-                                    ],
                                     "-shaders":[
                                       { "ComposedShader":
                                         {
-                                          "@DEF":"cobweb",
+                                          "@DEF":"shader",
                                           "@language":"GLSL",
                                           "field": [
+                                            {
+                                              "@name":"xxxcube",
+                                              "@type":"SFInt32",
+                                              "@accessType":"inputOutput",
+                                              "@value":0
+                                            },
                                             {
                                               "@name":"cube",
                                               "@type":"SFNode",
@@ -159,13 +153,13 @@
                                               "@name":"bias",
                                               "@type":"SFFloat",
                                               "@accessType":"inputOutput",
-                                              "@value":0.5
+                                              "@value":10
                                             },
                                             {
                                               "@name":"scale",
                                               "@type":"SFFloat",
                                               "@accessType":"inputOutput",
-                                              "@value":0.5
+                                              "@value":10
                                             },
                                             {
                                               "@name":"power",
@@ -183,7 +177,7 @@
                                             },
                                             { "ShaderPart":
                                               {
-                                                "@url":["pc_bubbles.fs","http://coderextreme.net/X3DJSONLD/pc.fs"],
+                                                "@url":["pc_bubbles.fs","http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"],
                                                 "@type":"FRAGMENT"
                                               }
                                             }
@@ -194,8 +188,15 @@
                                   }
                                 },
                               "-geometry":
-                                { "Sphere":
+                                { "IndexedFaceSet":
                                   {
+                                    "@DEF":"Orbit",
+                                    "-coord":
+                                      { "Coordinate":
+                                        {
+                                          "@DEF":"OrbitCoordinates"
+                                        }
+                                      }
                                   }
                                 }
                             }
@@ -223,6 +224,52 @@
                             "@name":"set_fraction",
                             "@accessType":"inputOnly",
                             "@type":"SFTime"
+                          },
+                          {
+                            "@name":"coordinates",
+                            "@accessType":"inputOutput",
+                            "@type":"MFVec3f"
+                          },
+                          {
+                            "@name":"coordIndexes",
+                            "@accessType":"inputOutput",
+                            "@type":"MFInt32"
+                          },
+                          {
+                            "@name":"a",
+                            "@type":"SFFloat",
+                            "@accessType":"inputOutput",
+                            "@value":0.5
+                          },
+                          {
+                            "@name":"b",
+                            "@type":"SFFloat",
+                            "@accessType":"inputOutput",
+                            "@value":0.5
+                          },
+                          {
+                            "@name":"c",
+                            "@type":"SFFloat",
+                            "@accessType":"inputOutput",
+                            "@value":3
+                          },
+                          {
+                            "@name":"d",
+                            "@type":"SFFloat",
+                            "@accessType":"inputOutput",
+                            "@value":3
+                          },
+                          {
+                            "@name":"tdelta",
+                            "@type":"SFFloat",
+                            "@accessType":"inputOutput",
+                            "@value":0.5
+                          },
+                          {
+                            "@name":"pdelta",
+                            "@type":"SFFloat",
+                            "@accessType":"inputOutput",
+                            "@value":0.5
                           }
                         ],
                         "#sourceText":[
@@ -254,6 +301,84 @@
 "\t\t\t\t\tvelocity[2] += Math.random() * 0.2 - 0.1;",
 "\t\t\t\t    }",
 "\t\t\t    }",
+"\t\t\t    animate_flowers();",
+"\t\t\t}",
+"",
+"\t\t\tfunction initialize() {",
+"\t\t\t     resolution = 100;",
+"\t\t\t     updateCoordinates(resolution);",
+"\t\t\t     if (typeof coordIndexes == 'undefined' || coordIndexes == null) {",
+"\t\t\t\tcoordIndexes = new MFInt32();",
+"\t\t\t     }",
+"\t\t\t     ci = 0;",
+"\t\t\t     for ( i = 0; i < resolution-1; i++) {",
+"\t\t\t\tfor ( j = 0; j < resolution-1; j++) {",
+"\t\t\t\t     coordIndexes[ci] = i*resolution+j;",
+"\t\t\t\t     coordIndexes[ci+1] = i*resolution+j+1;",
+"\t\t\t\t     coordIndexes[ci+2] = (i+1)*resolution+j+1;",
+"\t\t\t\t     coordIndexes[ci+3] = (i+1)*resolution+j;",
+"\t\t\t\t     coordIndexes[ci+4] = -1;",
+"\t\t\t\t     ci += 5;",
+"\t\t\t\t}",
+"\t\t\t    }",
+"\t\t\t}",
+"",
+"\t\t\tfunction updateCoordinates(resolution) {",
+"\t\t\t     theta = 0.0;",
+"\t\t\t     phi = 0.0;",
+"\t\t\t     delta = (2 * 3.141592653) / (resolution-1);",
+"\t\t\t     if (typeof coordinates == 'undefined' || coordinates == null) {",
+"\t\t\t\tcoordinates = new MFVec3f();",
+"\t\t\t     }",
+"\t\t\t     for ( i = 0; i < resolution; i++) {",
+"\t\t\t\tfor ( j = 0; j < resolution; j++) {",
+"\t\t\t\t\trho = a + b * Math.cos(c * theta) * Math.cos(d * phi);",
+"\t\t\t\t\tcoordinates[i*resolution+j] = new SFVec3f();",
+"\t\t\t\t\tcoordinates[i*resolution+j][0] = rho * Math.cos(phi) * Math.cos(theta);",
+"\t\t\t\t\tcoordinates[i*resolution+j][1] = rho * Math.cos(phi) * Math.sin(theta);",
+"\t\t\t\t\tcoordinates[i*resolution+j][2] = rho * Math.sin(phi);",
+"\t\t\t\t\ttheta += delta;",
+"\t\t\t\t}",
+"\t\t\t\tphi += delta;",
+"\t\t\t     }",
+"\t\t\t}",
+"",
+"\t\t\tfunction animate_flowers(fraction, eventTime) {",
+"\t\t\t\tchoice = Math.floor(Math.random() * 4);",
+"\t\t\t\tswitch (choice) {",
+"\t\t\t\tcase 0:",
+"\t\t\t\t\ta += Math.random() * 0.2 - 0.1;",
+"\t\t\t\t\tbreak;",
+"\t\t\t\tcase 1:",
+"\t\t\t\t\tb += Math.random() * 0.2 - 0.1;",
+"\t\t\t\t\tbreak;",
+"\t\t\t\tcase 2:",
+"\t\t\t\t\tc += Math.random() * 2 - 1;",
+"\t\t\t\t\tbreak;",
+"\t\t\t\tcase 3:",
+"\t\t\t\t\td += Math.random() * 2 - 1;",
+"\t\t\t\t\tbreak;",
+"\t\t\t\t}",
+"\t\t\t\tif (a > 1) {",
+"\t\t\t\t\ta =  0.5;",
+"\t\t\t\t}",
+"\t\t\t\tif (b > 1) {",
+"\t\t\t\t\tb =  0.5;",
+"\t\t\t\t}",
+"\t\t\t\tif (c < 1) {",
+"\t\t\t\t\tc =  4;",
+"\t\t\t\t}",
+"\t\t\t\tif (d < 1) {",
+"\t\t\t\t\td =  4;",
+"\t\t\t\t}",
+"\t\t\t\tif (c > 10) {",
+"\t\t\t\t\tc = 4;",
+"\t\t\t\t}",
+"\t\t\t\tif (d > 10) {",
+"\t\t\t\t\td = 4;",
+"\t\t\t\t}",
+"\t\t\t\tresolution = 100;",
+"\t\t\t\tupdateCoordinates(resolution);",
 "\t\t\t}"
 ]
                       }
@@ -280,24 +405,46 @@
                         "@toNode":"transform",
                         "@toField":"set_translation"
                       }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"coordIndexes",
+                        "@fromNode":"Bounce",
+                        "@toField":"set_coordIndex",
+                        "@toNode":"Orbit"
+                      }
+                    },
+                    { "ROUTE":
+                      {
+                        "@fromField":"coordinates",
+                        "@fromNode":"Bounce",
+                        "@toField":"set_point",
+                        "@toNode":"OrbitCoordinates"
+                      }
                     }
                   ]
               }
             }
           },
-          { "ProtoInstance":
+          { "Transform":
             {
-              "@name":"Bubble"
-            }
-          },
-          { "ProtoInstance":
-            {
-              "@name":"Bubble"
-            }
-          },
-          { "ProtoInstance":
-            {
-              "@name":"Bubble"
+              "-children":[
+                { "ProtoInstance":
+                  {
+                    "@name":"flower"
+                  }
+                },
+                { "ProtoInstance":
+                  {
+                    "@name":"flower"
+                  }
+                },
+                { "ProtoInstance":
+                  {
+                    "@name":"flower"
+                  }
+                }
+              ]
             }
           }
         ]

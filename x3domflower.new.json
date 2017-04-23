@@ -1,0 +1,560 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"bub.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"John Carlson"
+          },
+          {
+            "@name":"description",
+            "@content":"3 prismatic spheres"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://coderextreme.net/X3DJSONLD/bub.x3d"
+          },
+          {
+            "@name":"translated",
+            "@content":"22 April 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "NavigationInfo":
+            {
+            }
+          },
+          { "Background":
+            {
+              "@backUrl":["cubemap/all_probes/stpeters_cross/stpeters_back.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_back.png"],
+              "@bottomUrl":["cubemap/all_probes/stpeters_cross/stpeters_bottom.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_bottom.png"],
+              "@frontUrl":["cubemap/all_probes/stpeters_cross/stpeters_front.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_front.png"],
+              "@leftUrl":["cubemap/all_probes/stpeters_cross/stpeters_left.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_left.png"],
+              "@rightUrl":["cubemap/all_probes/stpeters_cross/stpeters_right.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_right.png"],
+              "@topUrl":["cubemap/all_probes/stpeters_cross/stpeters_top.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_top.png"]
+            }
+          },
+          { "Transform":
+            {
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.7,0.7,0.7],
+                                "@specularColor":[0.5,0.5,0.5]
+                              }
+                            },
+                          "-shaders":[
+                            { "ComposedShader":
+                              {
+                                "@language":"GLSL",
+                                "-parts":[
+                                  { "ShaderPart":
+                                    {
+                                      "@type":"VERTEX",
+                                      "@url":["x3dom_flowers_chromatic.vs","http://coderextreme.net/X3DJSONLD/x3dom.vs"]
+                                    }
+                                  },
+                                  { "ShaderPart":
+                                    {
+                                      "@type":"FRAGMENT",
+                                      "@url":["pc_bubbles.fs","http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"]
+                                    }
+                                  }
+                                ],
+                                "field": [
+                                  {
+                                    "@name":"xxxcube",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFInt32",
+                                    "@value":0
+                                  },
+                                  {
+                                    "@name":"cube",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFNode",
+                                    "-children":[
+                                      { "ComposedCubeMapTexture":
+                                        {
+                                          "@USE":"texture"
+                                        }
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "@name":"chromaticDispertion",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFVec3f",
+                                    "@value":[0.98,1,1.033]
+                                  },
+                                  {
+                                    "@name":"bias",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFFloat",
+                                    "@value":0.5
+                                  },
+                                  {
+                                    "@name":"scale",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFFloat",
+                                    "@value":0.5
+                                  },
+                                  {
+                                    "@name":"power",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFFloat",
+                                    "@value":2.0
+                                  },
+                                  {
+                                    "@name":"a",
+                                    "@accessType":"inputOnly",
+                                    "@type":"SFFloat",
+                                    "@value":0.5
+                                  },
+                                  {
+                                    "@name":"b",
+                                    "@accessType":"inputOnly",
+                                    "@type":"SFFloat",
+                                    "@value":0.5
+                                  },
+                                  {
+                                    "@name":"c",
+                                    "@accessType":"inputOnly",
+                                    "@type":"SFFloat",
+                                    "@value":3.0
+                                  },
+                                  {
+                                    "@name":"d",
+                                    "@accessType":"inputOnly",
+                                    "@type":"SFFloat",
+                                    "@value":3.0
+                                  },
+                                  {
+                                    "@name":"tdelta",
+                                    "@accessType":"inputOnly",
+                                    "@type":"SFFloat",
+                                    "@value":0.5
+                                  },
+                                  {
+                                    "@name":"pdelta",
+                                    "@accessType":"inputOnly",
+                                    "@type":"SFFloat",
+                                    "@value":0.5
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "-texture":
+                            { "ComposedCubeMapTexture":
+                              {
+                                "@DEF":"texture",
+                                "-texture":
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["cubemap/all_probes/stpeters_cross/stpeters_back.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_back.png"]
+                                    }
+                                  },
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["cubemap/all_probes/stpeters_cross/stpeters_bottom.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_bottom.png"]
+                                    }
+                                  },
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["cubemap/all_probes/stpeters_cross/stpeters_front.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_front.png"]
+                                    }
+                                  },
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["cubemap/all_probes/stpeters_cross/stpeters_left.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_left.png"]
+                                    }
+                                  },
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["cubemap/all_probes/stpeters_cross/stpeters_right.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_right.png"]
+                                    }
+                                  },
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["cubemap/all_probes/stpeters_cross/stpeters_top.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_top.png"]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Sphere":
+                        {
+                          "@radius":20.0
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[-2,0,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.7,0.7,0.7],
+                                "@specularColor":[0.5,0.5,0.5]
+                              }
+                            },
+                          "-shaders":[
+                            { "ComposedShader":
+                              {
+                                "@language":"GLSL",
+                                "-parts":[
+                                  { "ShaderPart":
+                                    {
+                                      "@type":"VERTEX",
+                                      "@url":["x3dom_flowers_chromatic.vs","http://coderextreme.net/X3DJSONLD/x3dom.vs"]
+                                    }
+                                  },
+                                  { "ShaderPart":
+                                    {
+                                      "@type":"FRAGMENT",
+                                      "@url":["pc_bubbles.fs","http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"]
+                                    }
+                                  }
+                                ],
+                                "field": [
+                                  {
+                                    "@name":"xxxcube",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFInt32",
+                                    "@value":0
+                                  },
+                                  {
+                                    "@name":"cube",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFNode",
+                                    "-children":[
+                                      { "ComposedCubeMapTexture":
+                                        {
+                                          "@USE":"texture"
+                                        }
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "@name":"chromaticDispertion",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFVec3f",
+                                    "@value":[0.98,1,1.033]
+                                  },
+                                  {
+                                    "@name":"bias",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFFloat",
+                                    "@value":0.5
+                                  },
+                                  {
+                                    "@name":"scale",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFFloat",
+                                    "@value":0.5
+                                  },
+                                  {
+                                    "@name":"power",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFFloat",
+                                    "@value":2.0
+                                  },
+                                  {
+                                    "@name":"a",
+                                    "@accessType":"inputOnly",
+                                    "@type":"SFFloat",
+                                    "@value":0.5
+                                  },
+                                  {
+                                    "@name":"b",
+                                    "@accessType":"inputOnly",
+                                    "@type":"SFFloat",
+                                    "@value":0.5
+                                  },
+                                  {
+                                    "@name":"c",
+                                    "@accessType":"inputOnly",
+                                    "@type":"SFFloat",
+                                    "@value":3.0
+                                  },
+                                  {
+                                    "@name":"d",
+                                    "@accessType":"inputOnly",
+                                    "@type":"SFFloat",
+                                    "@value":3.0
+                                  },
+                                  {
+                                    "@name":"tdelta",
+                                    "@accessType":"inputOnly",
+                                    "@type":"SFFloat",
+                                    "@value":0.5
+                                  },
+                                  {
+                                    "@name":"pdelta",
+                                    "@accessType":"inputOnly",
+                                    "@type":"SFFloat",
+                                    "@value":0.5
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "-texture":
+                            { "ComposedCubeMapTexture":
+                              {
+                                "-texture":
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["cubemap/all_probes/stpeters_cross/stpeters_back.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_back.png"]
+                                    }
+                                  },
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["cubemap/all_probes/stpeters_cross/stpeters_bottom.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_bottom.png"]
+                                    }
+                                  },
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["cubemap/all_probes/stpeters_cross/stpeters_front.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_front.png"]
+                                    }
+                                  },
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["cubemap/all_probes/stpeters_cross/stpeters_left.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_left.png"]
+                                    }
+                                  },
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["cubemap/all_probes/stpeters_cross/stpeters_right.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_right.png"]
+                                    }
+                                  },
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["cubemap/all_probes/stpeters_cross/stpeters_top.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_top.png"]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Sphere":
+                        {
+                          "@radius":20.0
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[2,0,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.7,0.7,0.7],
+                                "@specularColor":[0.5,0.5,0.5]
+                              }
+                            },
+                          "-shaders":[
+                            { "ComposedShader":
+                              {
+                                "@language":"GLSL",
+                                "-parts":[
+                                  { "ShaderPart":
+                                    {
+                                      "@type":"VERTEX",
+                                      "@url":["x3dom_flowers_plain.vs","http://coderextreme.net/X3DJSONLD/x3dom_flowers_plain.vs"]
+                                    }
+                                  },
+                                  { "ShaderPart":
+                                    {
+                                      "@type":"FRAGMENT",
+                                      "@url":["plain.fs","http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"]
+                                    }
+                                  }
+                                ],
+                                "field": [
+                                  {
+                                    "@name":"xxxcube",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFInt32",
+                                    "@value":0
+                                  },
+                                  {
+                                    "@name":"cube",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFNode",
+                                    "-children":[
+                                      { "ComposedCubeMapTexture":
+                                        {
+                                          "@USE":"texture"
+                                        }
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "@name":"chromaticDispertion",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFVec3f",
+                                    "@value":[0.98,1,1.033]
+                                  },
+                                  {
+                                    "@name":"bias",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFFloat",
+                                    "@value":0.5
+                                  },
+                                  {
+                                    "@name":"scale",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFFloat",
+                                    "@value":0.5
+                                  },
+                                  {
+                                    "@name":"power",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFFloat",
+                                    "@value":2.0
+                                  },
+                                  {
+                                    "@name":"a",
+                                    "@accessType":"inputOnly",
+                                    "@type":"SFFloat",
+                                    "@value":0.5
+                                  },
+                                  {
+                                    "@name":"b",
+                                    "@accessType":"inputOnly",
+                                    "@type":"SFFloat",
+                                    "@value":0.5
+                                  },
+                                  {
+                                    "@name":"c",
+                                    "@accessType":"inputOnly",
+                                    "@type":"SFFloat",
+                                    "@value":3.0
+                                  },
+                                  {
+                                    "@name":"d",
+                                    "@accessType":"inputOnly",
+                                    "@type":"SFFloat",
+                                    "@value":3.0
+                                  },
+                                  {
+                                    "@name":"tdelta",
+                                    "@accessType":"inputOnly",
+                                    "@type":"SFFloat",
+                                    "@value":0.5
+                                  },
+                                  {
+                                    "@name":"pdelta",
+                                    "@accessType":"inputOnly",
+                                    "@type":"SFFloat",
+                                    "@value":0.5
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "-texture":
+                            { "ComposedCubeMapTexture":
+                              {
+                                "-texture":
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["cubemap/all_probes/stpeters_cross/stpeters_back.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_back.png"]
+                                    }
+                                  },
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["cubemap/all_probes/stpeters_cross/stpeters_bottom.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_bottom.png"]
+                                    }
+                                  },
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["cubemap/all_probes/stpeters_cross/stpeters_front.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_front.png"]
+                                    }
+                                  },
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["cubemap/all_probes/stpeters_cross/stpeters_left.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_left.png"]
+                                    }
+                                  },
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["cubemap/all_probes/stpeters_cross/stpeters_right.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_right.png"]
+                                    }
+                                  },
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["cubemap/all_probes/stpeters_cross/stpeters_top.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_top.png"]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Sphere":
+                        {
+                          "@radius":20.0
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

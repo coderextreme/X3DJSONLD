@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"21 April 2017"
+            "@content":"22 April 2017"
           },
           {
             "@name":"generator",
@@ -52,12 +52,12 @@
           { "Background":
             {
               "@DEF":"background",
-              "@leftUrl":["cubemap/all_probes/beach_cross/beach_left.png"],
-              "@rightUrl":["cubemap/all_probes/beach_cross/beach_right.png"],
-              "@frontUrl":["cubemap/all_probes/beach_cross/beach_front.png"],
-              "@backUrl":["cubemap/all_probes/beach_cross/beach_back.png"],
-              "@topUrl":["cubemap/all_probes/beach_cross/beach_top.png"],
-              "@bottomUrl":["cubemap/all_probes/beach_cross/beach_bottom.png"]
+              "@backUrl":["cubemap/all_probes/beach_cross/beach_back.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_back.png"],
+              "@bottomUrl":["cubemap/all_probes/beach_cross/beach_bottom.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_bottom.png"],
+              "@frontUrl":["cubemap/all_probes/beach_cross/beach_front.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_front.png"],
+              "@leftUrl":["cubemap/all_probes/beach_cross/beach_left.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_left.png"],
+              "@rightUrl":["cubemap/all_probes/beach_cross/beach_right.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_right.png"],
+              "@topUrl":["cubemap/all_probes/beach_cross/beach_top.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_top.png"]
             }
           },
           { "Viewpoint":
@@ -75,7 +75,6 @@
                     "-appearance":
                       { "Appearance":
                         {
-                          "@DEF":"_01_-_Default",
                           "-material":
                             { "Material":
                               {
@@ -130,10 +129,15 @@
                                   }
                               }
                             },
+                          "-children":[
+                            {
+                              "#comment":"<ComposedShader DEF='x3dom' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field> <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1.0 1.033'></field> <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field> <field name='a' type='SFFloat' accessType='inputOutput' value='10'></field> <field name='b' type='SFFloat' accessType='inputOutput' value='1'></field> <field name='c' type='SFFloat' accessType='inputOutput' value='20'></field> <field name='d' type='SFFloat' accessType='inputOutput' value='20'></field> <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <ShaderPart url='\"x3dom_sphere.vs\" \"http://coderextreme.net/X3DJSONLD/x3dom_sphere.vs\"' containerField='parts' type='VERTEX'></ShaderPart> <ShaderPart url='\"sphere.fs\" \"http://coderextreme.net/X3DJSONLD/sphere.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart> </ComposedShader>"
+                            }
+                          ],
                           "-shaders":[
                             { "ComposedShader":
                               {
-                                "@DEF":"ComposedShader",
+                                "@DEF":"cobweb",
                                 "@language":"GLSL",
                                 "field": [
                                   {
@@ -206,13 +210,13 @@
                                 "-parts":[
                                   { "ShaderPart":
                                     {
-                                      "@url":["x3dom_sphere.vs","http://coderextreme.net/X3DJSONLD/x3dom_sphere.vs"],
+                                      "@url":["cobweb_flowers_chromatic.vs","http://coderextreme.net/X3DJSONLD/cobweb_flowers_chromatic.vs"],
                                       "@type":"VERTEX"
                                     }
                                   },
                                   { "ShaderPart":
                                     {
-                                      "@url":["sphere.fs","http://coderextreme.net/X3DJSONLD/sphere.fs"],
+                                      "@url":["pc_flowers.fs","http://coderextreme.net/X3DJSONLD/pc_flowers.fs"],
                                       "@type":"FRAGMENT"
                                     }
                                   }
@@ -325,7 +329,6 @@
 "                side = 0;",
 "            }",
 "            if (side != old) {",
-"                    Browser.print(f+\" \"+side);",
 "                    old = side;",
 "                    front_changed[0] = frontUrls[side];",
 "                    back_changed[0] = backUrls[side];",
@@ -542,7 +545,7 @@
             {
               "@fromNode":"Animate",
               "@fromField":"a",
-              "@toNode":"ComposedShader",
+              "@toNode":"x3dom",
               "@toField":"a"
             }
           },
@@ -550,7 +553,7 @@
             {
               "@fromNode":"Animate",
               "@fromField":"b",
-              "@toNode":"ComposedShader",
+              "@toNode":"x3dom",
               "@toField":"b"
             }
           },
@@ -558,7 +561,7 @@
             {
               "@fromNode":"Animate",
               "@fromField":"c",
-              "@toNode":"ComposedShader",
+              "@toNode":"x3dom",
               "@toField":"c"
             }
           },
@@ -566,7 +569,7 @@
             {
               "@fromNode":"Animate",
               "@fromField":"d",
-              "@toNode":"ComposedShader",
+              "@toNode":"x3dom",
               "@toField":"d"
             }
           },
@@ -574,7 +577,7 @@
             {
               "@fromNode":"Animate",
               "@fromField":"pdelta",
-              "@toNode":"ComposedShader",
+              "@toNode":"x3dom",
               "@toField":"pdelta"
             }
           },
@@ -582,7 +585,55 @@
             {
               "@fromNode":"Animate",
               "@fromField":"tdelta",
-              "@toNode":"ComposedShader",
+              "@toNode":"x3dom",
+              "@toField":"tdelta"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"Animate",
+              "@fromField":"a",
+              "@toNode":"cobweb",
+              "@toField":"a"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"Animate",
+              "@fromField":"b",
+              "@toNode":"cobweb",
+              "@toField":"b"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"Animate",
+              "@fromField":"c",
+              "@toNode":"cobweb",
+              "@toField":"c"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"Animate",
+              "@fromField":"d",
+              "@toNode":"cobweb",
+              "@toField":"d"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"Animate",
+              "@fromField":"pdelta",
+              "@toNode":"cobweb",
+              "@toField":"pdelta"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromNode":"Animate",
+              "@fromField":"tdelta",
+              "@toNode":"cobweb",
               "@toField":"tdelta"
             }
           }
