@@ -229,10 +229,14 @@ function CreateElement(key, x3djsonNS, containerField) {
 }
 
 function CDATACreateFunction(document, element, str) {
+	let y = str
+		.replace(/'([^'\r]*)\n([^']*)'/g, "'$1\\n$2'")
+		.replace(/&lt;/g, "<")
+		.replace(/&gt;/g, ">")
+		.replace(/&amp;/g, "&")
+	;
 	var domParser = new DOMParser();
-	var cdataStr = '<script> <![CDATA[ ' + str
-		.replace(/'([^'\r]*)\\\\n([^']*)'/g, "'$1\\\\n$2'")
-		+ ' ]]> </script>'; // has to be wrapped into an element
+	var cdataStr = '<script> <![CDATA[ ' + y + ' ]]> </script>'; // has to be wrapped into an element
 	var scriptDoc = domParser .parseFromString (cdataStr, 'application/xml');
 	var cdata = scriptDoc .children[0] .childNodes[1]; // space after script is childNode[0]
 	element .appendChild(cdata);
@@ -306,12 +310,6 @@ function ConvertObject(key, object, element, path, containerField) {
 }
 
 function CommentStringToXML(str) {
-	/*
-	str = str.replace(/[\u0080-\uFFFF]/g, 
-		function (v) {return '&#'+v.charCodeAt()+';';}
-	);
-	str = str.replace(/\\/g, "\\\\").replace(/\\"/g, '\\\"');
-	*/
 	return str;
 }
 
@@ -327,13 +325,6 @@ function SFStringToXML(str) {
 }
 
 function JSONStringToXML(str) {
-	/*
-	str = str.replace(/[\u0080-\uFFFF]/g, 
-		function (v) {return '&#'+v.charCodeAt()+';';}
-	);
-	// replace  \'s first
-	str = str.replace(/\\"/g, '\\\"');
-	*/
 	let y = str;
 	str = str.replace(/\\/g, '\\\\');
 	str = str.replace(/\n/g, '\\n');

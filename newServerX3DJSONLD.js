@@ -223,27 +223,20 @@ function CreateElement(key, x3djsonNS, containerField) {
 		}
 	}
 	if (typeof containerField !== 'undefined') {
-		child.setAttribute('containerField', containerField);
+		elementSetAttribute(child, 'containerField', containerField);
 	}
 	return child;
 }
 
 function CDATACreateFunction(document, element, str) {
-	// for script nodes
-	/*
-	var open = document.createTextNode('<![CDATA[');
-	var child = document.createTextNode(str.replace(/\&lt;/g, '<').replace(/\&gt;/g, '>').replace(/\&amp;/g, '&'));
-	var close = document.createTextNode(']]>');
-	element.appendChild(open);
-	element.appendChild(child);
-	element.appendChild(close);
-	*/
-	/*
-	var child = document.createCDATASection(str);
-	element.appendChild(child);
-	*/
+	let y = str
+		.replace(/'([^'\r]*)\n([^']*)'/g, "'$1\\n$2'")
+		.replace(/&lt;/g, "<")
+		.replace(/&gt;/g, ">")
+		.replace(/&amp;/g, "&")
+	;
 	var domParser = new DOMParser();
-	var cdataStr = '<script> <![CDATA[ ' + str.replace(/'([^'\r]*)\n([^']*)'/g, "'$1\\n$2'") + ' ]]> </script>'; // has to be wrapped into an element
+	var cdataStr = '<script> <![CDATA[ ' + y + ' ]]> </script>'; // has to be wrapped into an element
 	var scriptDoc = domParser .parseFromString (cdataStr, 'application/xml');
 	var cdata = scriptDoc .children[0] .childNodes[1]; // space after script is childNode[0]
 	element .appendChild(cdata);
@@ -317,24 +310,27 @@ function ConvertObject(key, object, element, path, containerField) {
 }
 
 function CommentStringToXML(str) {
-	/*
-	str = str.replace(/[\u0080-\uFFFF]/g, 
-		function (v) {return '&#'+v.charCodeAt()+';';}
-	);
-	str = str.replace(/\\/g, "\\\\").replace(/\\"/g, '\\\"');
-	*/
+	return str;
+}
+
+function SFStringToXML(str) {
+	let y = str;
+	str = str.replace(/\\\\/g, '\\\\');
+	str = str.replace(/\\\\\\\\/g, '\\\\');
+	str = str.replace(/\\/g, '\\\\');
+	if (y !== str) {
+		console.log("X3DJSON [] replacing", y, "with", str);
+	}
 	return str;
 }
 
 function JSONStringToXML(str) {
-	/*
-	str = str.replace(/[\u0080-\uFFFF]/g, 
-		function (v) {return '&#'+v.charCodeAt()+';';}
-	);
-	// replace  \'s first
+	let y = str;
 	str = str.replace(/\\/g, '\\\\');
-	str = str.replace(/\\"/g, '\\\"');
-	*/
+	str = str.replace(/\n/g, '\\n');
+	if (y !== str) {
+		console.log("X3DJSON replacing", y, "with", str);
+	}
 	return str;
 }
 
@@ -395,7 +391,7 @@ function ConvertToX3DOM(object, parentkey, element, path, containerField) {
 			if (arrayOfStrings) {
 				arrayOfStrings = false;
 				for (var str in localArray) {
-					localArray[str] = JSONStringToXML(localArray[str]);
+					localArray[str] = SFStringToXML(localArray[str]);
 				}
                                 if (parentkey === '@url' || parentkey.indexOf("Url") === parentkey.length - 3) {
 					processURLs(localArray, path);
