@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"21 April 2017"
+            "@content":"22 April 2017"
           },
           {
             "@name":"generator",
@@ -196,6 +196,31 @@
                             { "ComposedCubeMapTexture":
                               {
                                 "-texture":
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["bBK.png","http://coderextreme.net/bug/bBK.png"]
+                                    }
+                                  },
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["bBT.png","http://coderextreme.net/bug/bBT.png"]
+                                    }
+                                  },
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["bFR.png","http://coderextreme.net/bug/bFR.png"]
+                                    }
+                                  },
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["bLF.png","http://coderextreme.net/bug/bLF.png"]
+                                    }
+                                  },
+                                  { "ImageTexture":
+                                    {
+                                      "@url":["bRT.png","http://coderextreme.net/bug/bRT.png"]
+                                    }
+                                  },
                                   { "ImageTexture":
                                     {
                                       "@url":["bTP.png","http://coderextreme.net/bug/bTP.png"]
