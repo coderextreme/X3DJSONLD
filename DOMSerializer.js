@@ -21,20 +21,6 @@ function fixXML(xmlstr) {
 		function (v) { return '&#'+v.charCodeAt()+';';}
 	);
 	xmlstr = xmlstr.replace(/(\\)+&quot;/g, '\\\&quot;');
-	xmlstr = xmlstr.replace(/(\\+)([^&\\])/g, '$1$1$2');
-	do {
-		var xmlstr2 = xmlstr;
-		xmlstr = xmlstr2.replace(/(<!\[CDATA\[(.|\n)*)&lt;((.|\n)*\]\]>)/gi, "$1<$3");
-	} while (xmlstr !== xmlstr2);
-	do {
-		xmlstr2 = xmlstr;
-		xmlstr = xmlstr2.replace(/(<!\[CDATA\[(.|\n)*)&gt;((.|\n)*\]\]>)/gi, "$1>$3");
-	} while (xmlstr !== xmlstr2);
-	/*
-	if (original !== xmlstr) {
-		console.error("XML replacing "+original+" with "+xmlstr);
-	}
-	*/
 	return xmlstr;
 }
 

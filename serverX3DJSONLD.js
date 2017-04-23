@@ -17,8 +17,19 @@ function loadX3DJS(json, path) {
 	X3DJSONLD.setDocument(document);
 	X3DJSONLD.setCDATACreateFunction(function(document, element, str) {
 		// for script nodes
-		// var child = document.createCDATASection(str);
-		var child = document.createCDATASection(str.replace(/'([^'\r]*)\n([^']*)'/g, "'$1\\n$2'"));
+		/*
+		var child = document.createCDATASection(str);
+		*/
+		let y = str
+			.replace(/'([^'\r]*)\n([^']*)'/g, "'$1\\n$2'")
+			.replace(/&lt;/g, "<")
+			.replace(/&gt;/g, ">")
+			.replace(/&amp;/g, "&")
+		;
+		var child = document.createCDATASection(y);
+		if (str !== y) {
+			// console.log("CDATA Replacing",str,"with",y);
+		}
 		element.appendChild(child);
 	});
 
