@@ -36,7 +36,7 @@
           },
           {
             "@name":"translated",
-            "@content":"21 April 2017"
+            "@content":"24 April 2017"
           },
           {
             "@name":"generator",
@@ -172,13 +172,13 @@
 "    }",
 "    translation = new SFVec3f(\ttranslation[0] + velocity[0], translation[1] + velocity[1], translation[2] + velocity[2]);",
 "    scale = new SFVec3f(scale[0] + scalvel[0], scale[1] + scalvel[1], scale[2] + scalvel[2]);",
-"    for (var j = 0; j &lt; 3; j++) {",
+"    for (var j = 0; j < 3; j++) {",
 "\t    // if you get to far away or too big, explode",
-"\t    if ( Math.abs(translation[j]) &gt; 256) {",
+"\t    if ( Math.abs(translation[j]) > 256) {",
 "\t\ttranslation[j] = 0;",
 "\t\tinitialize();",
 "\t    }",
-"\t    if (Math.abs(scale[j]) &gt; 20) {",
+"\t    if (Math.abs(scale[j]) > 20) {",
 "\t\tscale[j] = scale[j]/2;",
 "\t\ttranslation[j] = 0;",
 "\t\tinitialize();",

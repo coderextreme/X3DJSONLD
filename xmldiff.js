@@ -3,6 +3,8 @@
 var parseString = require('xml2js').parseString;
 var fs = require('fs');
 
+let program = process.argv[1];
+
 process.argv.shift();
 process.argv.shift();
 
@@ -151,7 +153,7 @@ try {
 					if (!ret) {
 						try {
 							console.log("================================================================================");
-							console.log("xmldiff.js", files[0], files[1]);
+							console.log(program, files[0], files[1]);
 							console.log(str);
 							console.log("Different");
 						} catch (e) {

@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"22 April 2017"
+            "@content":"24 April 2017"
           },
           {
             "@name":"generator",
@@ -376,8 +376,8 @@
 "\t\t\t\t\td += Math.random() * 2 - 1;",
 "\t\t\t\t\tbreak;",
 "\t\t\t\t}",
-"\t\t\t\ttdelta += 0.5;",
-"\t\t\t\tpdelta += 0.5;",
+"\t\t\t\ttdelta = tdelta + 0.5;",
+"\t\t\t\tpdelta = pdelta + 0.5;",
 "\t\t\t\tif (a > 1) {",
 "\t\t\t\t\ta =  0.5;",
 "\t\t\t\t}",

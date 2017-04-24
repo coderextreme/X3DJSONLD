@@ -154,8 +154,8 @@
 					d += Math.random() * 2 - 1;
 					break;
 				}
-				tdelta += 0.5;
-				pdelta += 0.5;
+				tdelta = tdelta + 0.5;
+				pdelta = pdelta + 0.5;
 				if (a > 1) {
 					a =  0.5;
 				}

@@ -12,6 +12,8 @@ function parseString(string, callback) {
 	}
 }
 
+let program = process.argv[1];
+
 process.argv.shift();
 process.argv.shift();
 
@@ -158,10 +160,14 @@ try {
 					let str;
 					[ ret, str ] = compare(resultleft, '', resultright, '');
 					if (!ret) {
-						console.log("================================================================================");
-						console.log("jsondiff.js", files[0], files[1]);
-						console.log(str);
-						console.log("Different");
+						try {
+							console.log("================================================================================");
+							console.log(program, files[0], files[1]);
+							console.log(str);
+							console.log("Different");
+						} catch (e) {
+							console.error("Quit pipe");
+						}
 						/*
 					} else {
 						console.log("Same");

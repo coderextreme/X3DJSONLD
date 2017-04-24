@@ -54,7 +54,7 @@
         <Script DEF="OrbitScript">
             <field accessType="inputOnly" name="set_fraction" type="SFFloat"/>
             <field accessType="inputOutput" name="coordinates" type="MFVec3f"/>
-            <field accessType="inputOutput" name="coordIndexes" type="MFInt32"/>
+            <field accessType="outputOnly" name="coordIndexes" type="MFInt32"/>
 <![CDATA[
 
 ecmascript:
