@@ -152,16 +152,16 @@ POSSIBILITY OF SUCH DAMAGE.
 				<xsl:when test="(string-length(normalize-space($className)) = 0)">
 					<xsl:text>NeedClassName</xsl:text>
 				</xsl:when>
-				<xsl:when test="contains(normalize-space($className),' ') or contains($className,'-') or
+				<xsl:when test="contains(normalize-space($className),' ')            or contains($className,'-') or
 								contains($className,'.') or contains($className,',') or contains($className,';')">
 					<xsl:message>
 						<xsl:text>className='</xsl:text>
 						<xsl:value-of select="$className"/>
-						<xsl:text>' has illegal character(s), newClassName='</xsl:text>
-						<xsl:value-of select="translate(normalize-space($className),' -.,;', '')"/>
+						<xsl:text>' has illegal character(s) ( -.,;) replaced with '_' underscore character. newClassName='</xsl:text>
+						<xsl:value-of select="translate(normalize-space($className),' -.,;', '_____')"/>
 						<xsl:text>'</xsl:text>
 					</xsl:message>
-					<xsl:value-of     select="translate(normalize-space($className),' -.,;', '')"/>
+					<xsl:value-of     select="translate(normalize-space($className),' -.,;', '_____')"/>
 				</xsl:when>
 				<xsl:otherwise>
 					<xsl:value-of select="$className"/>
@@ -197,6 +197,7 @@ POSSIBILITY OF SUCH DAMAGE.
 		<xsl:call-template name="javadoc">
 			<xsl:with-param name="newPackageName"><xsl:value-of select="$newPackageName"/></xsl:with-param>
 			<xsl:with-param name="newClassName"  ><xsl:value-of select="$newClassName"/></xsl:with-param>
+			<xsl:with-param name="className"     ><xsl:value-of select="normalize-space($className)"/></xsl:with-param><!-- orginal -->
 		</xsl:call-template>
 		
 		<xsl:text>public class </xsl:text>
@@ -275,6 +276,8 @@ POSSIBILITY OF SUCH DAMAGE.
 		if  (!exceptionResult.isEmpty() && !validationResult.isEmpty())
 			returnMessage += "\n*** ";
 		returnMessage += exceptionResult;
+		if  (exceptionResult.isEmpty() && !validationResult.isEmpty())
+			returnMessage = "\n" + returnMessage; // skip line before meta tags, etc.
 		returnMessage += validationResult;
 		return returnMessage;
 	}
@@ -287,7 +290,7 @@ POSSIBILITY OF SUCH DAMAGE.
 		]]></xsl:text><xsl:value-of select="$newClassName"/>
 		<xsl:text> testObject = new </xsl:text><xsl:value-of select="$newClassName"/><xsl:text>();
 		System.out.println ("</xsl:text>          <xsl:value-of select="$newClassName"/>
-		<xsl:text> self-validation test results: " + testObject.validateSelf());
+		<xsl:text> execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 </xsl:text>
@@ -312,6 +315,7 @@ POSSIBILITY OF SUCH DAMAGE.
     <xsl:template name="javadoc">
 		<xsl:param name="newPackageName"><xsl:text></xsl:text></xsl:param>
 		<xsl:param name="newClassName"	><xsl:text></xsl:text></xsl:param>
+		<xsl:param name="className"     ><xsl:value-of select="$className"/></xsl:param><!-- orginal name -->
 		
 		<xsl:variable name="sourceName">
 			<xsl:if test="(string-length($newClassName) > 0)">
@@ -328,31 +332,37 @@ POSSIBILITY OF SUCH DAMAGE.
 		</xsl:variable>
 		<xsl:variable name="archiveName">
 			<xsl:choose>
-				<xsl:when test="contains(//meta[@name='identifier'][0]/@content,'Basic')">
+				<xsl:when test="contains(//meta[@name='identifier'][1]/@content,'Basic')">
 					<xsl:text>Basic</xsl:text>
 				</xsl:when>
-				<xsl:when test="contains(//meta[@name='identifier'][0]/@content,'ConformanceNist')">
+				<xsl:when test="contains(//meta[@name='identifier'][1]/@content,'ConformanceNist')">
 					<xsl:text>ConformanceNist</xsl:text>
 				</xsl:when>
-				<xsl:when test="contains(//meta[@name='identifier'][0]/@content,'Savage')">
+				<xsl:when test="contains(//meta[@name='identifier'][1]/@content,'Savage')">
 					<xsl:text>Savage</xsl:text>
 				</xsl:when>
-				<xsl:when test="contains(//meta[@name='identifier'][0]/@content,'SavageDefense')">
+				<xsl:when test="contains(//meta[@name='identifier'][1]/@content,'SavageDefense')">
 					<xsl:text>SavageDefense</xsl:text>
 				</xsl:when>
-				<xsl:when test="contains(//meta[@name='identifier'][0]/@content,'Vrml2Sourcebook')">
+				<xsl:when test="contains(//meta[@name='identifier'][1]/@content,'Vrml2Sourcebook')">
 					<xsl:text>Vrml2Sourcebook</xsl:text>
 				</xsl:when>
-				<xsl:when test="contains(//meta[@name='identifier'][0]/@content,'X3dForWebAuthors')">
+				<xsl:when test="contains(//meta[@name='identifier'][1]/@content,'X3dForWebAuthors')">
 					<xsl:text>X3dForWebAuthors</xsl:text>
 				</xsl:when>
-				<xsl:when test="contains(//meta[@name='identifier'][0]/@content,'X3dForAdvancedModeling')">
+				<xsl:when test="contains(//meta[@name='identifier'][1]/@content,'X3dForAdvancedModeling')">
 					<xsl:text>X3dForAdvancedModeling</xsl:text>
 				</xsl:when>
+				<xsl:otherwise>
+					<!-- diagnostic
+					<xsl:message>
+						<xsl:text>Not part of an X3D Example Archive</xsl:text>
+					</xsl:message> -->
+				</xsl:otherwise>
 			</xsl:choose>
 		</xsl:variable>
 		<xsl:variable name="subdirectoryPath" 
-					select="substring-before(substring-after(//meta[@name='identifier'][0]/@content,$archiveName),
+					select="substring-before(substring-after(//meta[@name='identifier'][1]/@content,$archiveName),
 															 //meta[@name='title']/@content)"/>
 		<xsl:variable name="archiveRelativeDirectory">
 			<xsl:choose>
@@ -373,7 +383,7 @@ POSSIBILITY OF SUCH DAMAGE.
 		<!-- debug
 		<xsl:message>
 				<xsl:text>Scene identifier='</xsl:text>
-				<xsl:value-of select="//meta[@name='identifier'][0]/@content"/>
+				<xsl:value-of select="//meta[@name='identifier'][1]/@content"/>
 				<xsl:text>', $archiveName='</xsl:text>
 				<xsl:value-of select="$archiveName"/>
 				<xsl:text>', $subdirectoryPath='</xsl:text>
@@ -396,7 +406,11 @@ POSSIBILITY OF SUCH DAMAGE.
 		<xsl:variable name="description" select="string(//meta[@name='description'][1]/@content)"/>
 		<xsl:if test="(string-length($description) > 0)">
 			<xsl:text><![CDATA[<p> ]]></xsl:text>
-			<xsl:value-of select="$description"/>
+			<xsl:call-template name="escape-special-characters-to-html"><!-- but not backslash -->
+				<xsl:with-param name="inputString">
+					<xsl:value-of select="$description"/>
+				</xsl:with-param>
+			</xsl:call-template>
 			<!-- Ensure that simple topic sentence ends with period.
 			<xsl:if test="contains($description,'.') and not(ends-with(normalize-space($description),'.'))">
 				<xsl:text>.</xsl:text>
@@ -421,7 +435,7 @@ POSSIBILITY OF SUCH DAMAGE.
 			</xsl:choose>
 			<xsl:text> source, </xsl:text>
 			<xsl:variable name="sceneName" select="substring-before(normalize-space((//meta[@name='title']/@content)),'.x3d')"/>
-			<xsl:if test="not(starts-with($sceneName,'*'))"><!-- avoid fill-in prompts -->
+			<xsl:if test="(string-length($archiveName) > 0) and not(starts-with($sceneName,'*'))"><!-- avoid fill-in prompts -->
 <xsl:text><![CDATA[<a href="]]></xsl:text>
 <xsl:value-of select="$archiveRelativeDirectory"/>
 <xsl:value-of select="$sceneName"/>
@@ -443,8 +457,8 @@ POSSIBILITY OF SUCH DAMAGE.
 			<xsl:text><![CDATA[
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
-			<td style="text-align:center;">meta tags</td>
-			<td style="text-align:left;">]]></xsl:text>
+			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
+			<td style="text-align:left;   padding:10px 0px;">]]></xsl:text>
 				<xsl:if test="string-length(normalize-space(//meta[@name='title']/@content))">
 					<xsl:choose>
 						<xsl:when test="(string-length($archiveName) > 0)">
@@ -458,7 +472,7 @@ POSSIBILITY OF SUCH DAMAGE.
 						</xsl:otherwise>
 					</xsl:choose>
 				</xsl:if>
-				<xsl:text><![CDATA[ Scene Metadata </td>
+				<xsl:text disable-output-escaping="yes"><![CDATA[&nbsp; Document Metadata </td>
 		</tr>
 ]]></xsl:text>
 			<xsl:for-each select="//meta">
@@ -475,7 +489,7 @@ POSSIBILITY OF SUCH DAMAGE.
 				</xsl:variable>
 				<xsl:text><![CDATA[
 		<tr]]></xsl:text><xsl:value-of select="$fontStyle"/><xsl:text><![CDATA[>
-			<td style="text-align:right; vertical-align: text-top;"> ]]></xsl:text><xsl:value-of select="@name"/><xsl:text><![CDATA[ </td>
+			<td style="text-align:right; vertical-align: text-top;"> <i> ]]></xsl:text><xsl:value-of select="@name"/><xsl:text><![CDATA[ </i> </td>
 			<td> ]]></xsl:text>
 					<xsl:choose>
 						<xsl:when test="starts-with($contentValue,'http') and not(contains($contentValue,' '))">
@@ -553,8 +567,13 @@ POSSIBILITY OF SUCH DAMAGE.
 						</xsl:when>
 						<!-- contains space character or special prompt (newScene.x3d) so no relative link possible -->
 						<xsl:when test="contains($contentValue, ' ') or starts-with($contentValue, '*')">
-							<!-- plain text -->
-							<xsl:value-of select="$contentValue"/>
+							<!-- plain text, escaped for html -->
+							<xsl:call-template name="escape-special-characters-to-html">
+								<!-- TODO url escape instead -->
+								<xsl:with-param name="inputString">
+									<xsl:value-of select="$contentValue"/>
+								</xsl:with-param>
+							</xsl:call-template>
 						</xsl:when>
 						<!-- relative link -->
 						<xsl:when test="((@name='license') or (@name='title')   or (@name='accessRights') or (@name='specificationUrl') or
@@ -579,8 +598,13 @@ POSSIBILITY OF SUCH DAMAGE.
 <xsl:value-of select="$contentValue"/><xsl:text><![CDATA[</a>]]></xsl:text>								
 						</xsl:when>
 						<xsl:otherwise>
-							<!-- plain text -->
-							<xsl:value-of select="$contentValue"/>
+							<!-- plain text, escaped for html -->
+							<xsl:call-template name="escape-special-characters-to-html">
+								<!-- TODO url escape instead -->
+								<xsl:with-param name="inputString">
+									<xsl:value-of select="$contentValue"/>
+								</xsl:with-param>
+							</xsl:call-template>
 						</xsl:otherwise>
 					</xsl:choose>
 				<xsl:text><![CDATA[ </td>
@@ -588,8 +612,12 @@ POSSIBILITY OF SUCH DAMAGE.
 			</xsl:for-each>
 			
 		<xsl:if test="(count(//meta) > 0)">
-			<xsl:text><![CDATA[
-		<tr> <td colspan="2"> <hr> </td> </tr>]]></xsl:text>
+			<xsl:text disable-output-escaping="yes"><![CDATA[
+		<tr style="background-color:silver; border-color:silver;">
+			<td style="text-align:center;" colspan="2">  &nbsp; </td>
+		</tr>]]></xsl:text>
+			<!-- 
+		<tr> <td colspan="2"> <hr> </td> </tr> -->
 		</xsl:if>
 		<xsl:text><![CDATA[
 	</table>
@@ -698,8 +726,8 @@ POSSIBILITY OF SUCH DAMAGE.
 				</xsl:when>
 				<xsl:when test="($fieldName     = 'children')     or (local-name() = 'ROUTE') or 
 								(local-name()   = 'ProtoDeclare') or (local-name() = 'ExternProtoDeclare') or
-								(local-name(..) = 'ProtoBody')    or
-								(local-name()   = 'IMPORT')       or (local-name() = 'EXPORT')">
+								(local-name()   = 'IMPORT')       or (local-name() = 'EXPORT') or
+								(local-name(..) = 'ProtoBody')    or (local-name(..) = 'Scene')">
 					<xsl:text>.addChild(</xsl:text>
 					<xsl:apply-templates select="."/><!-- handle this node -->
 					<xsl:text>)</xsl:text>
@@ -2031,26 +2059,23 @@ POSSIBILITY OF SUCH DAMAGE.
         <!-- end if filtering of default attribute values -->
     </xsl:template>
 
-    <xsl:template name="escape-special-characters">
+    <xsl:template name="escape-special-characters-to-html">
         <xsl:param name="inputString"><xsl:text></xsl:text><!-- default value is empty --></xsl:param>
         <!-- debug:  <xsl:text>//######&#10;</xsl:text> -->
         <!-- debug:  <xsl:text>### inputString received: </xsl:text><xsl:value-of select="$inputString"/><xsl:text>&#10;</xsl:text> -->
-        <xsl:call-template name="escape-backslash-characters">
-            <xsl:with-param name="inputString">
-                <xsl:call-template name="escape-apostrophe-characters">
-                    <xsl:with-param name="inputString">
-                        <xsl:call-template name="escape-lessthan-characters">
-                            <xsl:with-param name="inputString">
-                                <!-- keep escape-ampersand-characters innermost so it doesn't get overzealous about escaped apostrophes or less-than characters -->
-                                <xsl:call-template name="escape-ampersand-characters">
-                                        <xsl:with-param name="inputString" select="$inputString"/>
-                                </xsl:call-template>
-                            </xsl:with-param>
-                        </xsl:call-template>
-                    </xsl:with-param>
-                </xsl:call-template>
-            </xsl:with-param>
-        </xsl:call-template>
+		<!-- don't escape apostrophes, that makes javadoc unhappy -->
+		<xsl:call-template name="escape-greaterthan-characters">
+			<xsl:with-param name="inputString">
+				<xsl:call-template name="escape-lessthan-characters">
+					<xsl:with-param name="inputString">
+						<!-- keep escape-ampersand-characters innermost so it doesn't get overzealous about escaped apostrophes or less-than characters -->
+						<xsl:call-template name="escape-ampersand-characters">
+								<xsl:with-param name="inputString" select="$inputString"/>
+						</xsl:call-template>
+					</xsl:with-param>
+				</xsl:call-template>
+			</xsl:with-param>
+		</xsl:call-template>
     </xsl:template>
 
     <xsl:template name="escape-lessthan-characters">
@@ -2073,6 +2098,26 @@ POSSIBILITY OF SUCH DAMAGE.
                 <xsl:text disable-output-escaping="no">lt;</xsl:text>
                 <xsl:call-template name="escape-lessthan-characters"> <!-- tail recursion -->
                     <xsl:with-param name="inputString" select="substring-after($inputString,'&#60;')"/>
+                </xsl:call-template>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="$inputString" disable-output-escaping="yes"/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+
+    <xsl:template name="escape-greaterthan-characters">
+        <xsl:param name="inputString"><xsl:text></xsl:text><!-- default value is empty --></xsl:param>
+        <!-- debug:  <xsl:text>//######&#10;</xsl:text> -->
+        <!-- debug:  <xsl:message><xsl:text>### inputString received: </xsl:text><xsl:value-of select="$inputString"/></xsl:message> -->
+        <xsl:choose>
+            <!-- &#62; is &gt; -->
+            <xsl:when test="contains($inputString,'&#62;')">
+                <xsl:value-of select="substring-before($inputString,'&#62;')" disable-output-escaping="yes"/>
+                <xsl:text disable-output-escaping="no">&amp;</xsl:text>
+                <xsl:text disable-output-escaping="no">gt;</xsl:text>
+                <xsl:call-template name="escape-greaterthan-characters"> <!-- tail recursion -->
+                    <xsl:with-param name="inputString" select="substring-after($inputString,'&#62;')"/>
                 </xsl:call-template>
             </xsl:when>
             <xsl:otherwise>

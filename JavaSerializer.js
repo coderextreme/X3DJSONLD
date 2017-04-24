@@ -1,5 +1,8 @@
 "use strict";
 
+const DOUBLE_SUFFIX = 'd';
+const FLOAT_SUFFIX = 'f';
+
 function JavaSerializer() {
 }
 
@@ -127,7 +130,7 @@ JavaSerializer.prototype = {
 		return str;
 	},
 
-	printSubArray : function (attrType, type, values,  co, j, lead, trail) {
+	printSubArray : function (attrType, type, values, co, j, lead, trail) {
 		if (attrType.startsWith("MF")) {
 			var str = "new "+attrType+"Object(";
 			for (var i = 0; i < values.length; i += 840) {
@@ -184,7 +187,11 @@ JavaSerializer.prototype = {
 				if (attrs.hasOwnProperty(a) && attrs[a].nodeType == 2) {
 					let attr = attrs[a].nodeName;
 					if (attr === "containerField") {
-						method = "set"+attrs[a].nodeValue.charAt(0).toUpperCase() + attrs[a].nodeValue.slice(1);
+						if (method === "setShaders") {
+							method = "addShaders"
+						} else {
+							method = "set"+attrs[a].nodeValue.charAt(0).toUpperCase() + attrs[a].nodeValue.slice(1);
+						}
 					}
 				}
 			} catch (e) {
@@ -245,6 +252,7 @@ JavaSerializer.prototype = {
 								strval = "fieldObject.TYPE_"+attrs[a].nodeValue.toUpperCase();
 							} else if (attr === "accessType") {
 								strval = "fieldObject.ACCESSTYPE_"+attrs[a].nodeValue.toUpperCase();
+							/*
 							} else if (
 								attrs[a].nodeValue.indexOf("_changed") > 0 &&
 
@@ -259,19 +267,27 @@ JavaSerializer.prototype = {
 								attr === "name") ||
 								attr === "toField")) {
 								strval = '"'+attrs[a].nodeValue.substr(4).replace(/\n/g, '\\\\n').replace(/\\?"/g, "\\\"")+'"';
+							*/
 							} else {
-								strval = '"'+attrs[a].nodeValue.replace(/\n/g, '\\\\n').replace(/\\?"/g, "\\\"")+'"';
+								strval = '"'+attrs[a].nodeValue.
+									replace(/\n/g, '\\\\n').
+									replace(/\\?"/g, "\\\"")
+									+'"';
 							}
 						} else if (attrType === "SFInt32") {
 							strval = attrs[a].nodeValue;
 						} else if (attrType === "SFFloat") {
-							strval = attrs[a].nodeValue+"f";
+							strval = attrs[a].nodeValue+FLOAT_SUFFIX;
 						} else if (attrType === "SFDouble") {
-							strval = attrs[a].nodeValue+"d";
+							strval = attrs[a].nodeValue+DOUBLE_SUFFIX;
 						} else if (attrType === "SFBool") {
 							strval = attrs[a].nodeValue;
+						} else if (attrType === "SFTime") {
+							strval = attrs[a].nodeValue+DOUBLE_SUFFIX;
+						} else if (attrType === "MFTime") {
+							strval = this.printSubArray(attrType, "double", attrs[a].nodeValue.split(' '), codeno, DOUBLE_SUFFIX+',', '', DOUBLE_SUFFIX);
 						} else if (attrType === "MFString") {
-							strval = this.printSubArray(attrType, "String",
+							strval = this.printSubArray(attrType, "java.lang.String",
 								attrs[a].nodeValue.substr(1, attrs[a].nodeValue.length-2).split(/" "/).
 								map(function(x) {
 									let y = x.
@@ -309,7 +325,7 @@ JavaSerializer.prototype = {
 							attrType === "SFRotation"|
 							attrType === "MFRotation"|
 							attrType === "MFFloat") {
-							strval = this.printSubArray(attrType, "float", attrs[a].nodeValue.split(' '), codeno, 'f,', '', 'f');
+							strval = this.printSubArray(attrType, "float", attrs[a].nodeValue.split(' '), codeno, FLOAT_SUFFIX+',', '', FLOAT_SUFFIX);
 						} else if (
 							attrType === "SFVec2d"||
 							attrType === "SFVec3d"||
@@ -322,7 +338,7 @@ JavaSerializer.prototype = {
 							attrType === "MFMatrix3d"||
 							attrType === "MFMatrix4d"|
 							attrType === "MFDouble") {
-							strval = this.printSubArray(attrType, "double", attrs[a].nodeValue.split(' '), codeno, 'd,', '', 'd');
+							strval = this.printSubArray(attrType, "double", attrs[a].nodeValue.split(' '), codeno, DOUBLE_SUFFIX+',', '', DOUBLE_SUFFIX);
 						} else if (attrType === "MFBool") {
 							strval = this.printSubArray(attrType, "boolean", attrs[a].nodeValue.split(' '), codeno, ',', '', '');
 						} else {
@@ -362,11 +378,23 @@ JavaSerializer.prototype = {
 			if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 1) {
 				str += this.printParentChild(element, node, cn, mapToMethod, n);
 				str += "(";
+				if (element.nodeName === "Appearance" && node.NodeName === "ComposedShader") {
+					str += "new X3DNode [] {";
+				}
 				str += "new "+node.nodeName+"Object()";
 				str += this.subSerializeToString(node, mapToMethod, fieldTypes, n+1);
+				if (element.nodeName === "Appearance" && node.NodeName === "ComposedShader") {
+					str += "}";
+				}
 				str += ")";
 			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 8) {
-				str += "\n"+("  ".repeat(n))+".addComments(new CommentsBlock(\""+node.nodeValue.replace(/"/g, '\\"').replace(/\\\\"$/, '\\\\\\\"')+"\"))";
+				let y = node.nodeValue.
+					replace(/\\/g, '\\\\').
+					replace(/"/g, '\\"');
+				str += "\n"+("  ".repeat(n))+".addComments(new CommentsBlock(\""+y+"\"))";
+				if (y !== node.nodeValue) {
+					console.error("Java Comment Replacing "+node.nodeValue+" with "+y);
+				}
 			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 4) {
 				str += "\n"+("  ".repeat(n))+".setSourceCode(\""+node.nodeValue.split("\r\n").map(function(x) {
 					return x.replace(/\\"/g, '\\\\"').
