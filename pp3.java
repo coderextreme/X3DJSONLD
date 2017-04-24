@@ -147,7 +147,7 @@ public class pp3 {
                 .addChild(new StringSensorObject().setDEF("CenterSensor").setEnabled(false))
                 .addChild(new TouchSensorObject().setDescription("touch to activate").setDEF("CenterTouch"))))
             .addChild(new ScriptObject().setDEF("RightSingleToMultiString")
-              .addField(new fieldObject().setName("rightstring").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setType(fieldObject.TYPE_SFSTRING))
+              .addField(new fieldObject().setName("set_rightstring").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setType(fieldObject.TYPE_SFSTRING))
               .addField(new fieldObject().setName("rightlines").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setType(fieldObject.TYPE_MFSTRING))
               .setSourceCode("ecmascript:\n"+
 "\n"+
@@ -160,7 +160,7 @@ public class pp3 {
 "}\n"+
 ""))
             .addChild(new ScriptObject().setDEF("UpSingleToMultiString")
-              .addField(new fieldObject().setName("upstring").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setType(fieldObject.TYPE_SFSTRING))
+              .addField(new fieldObject().setName("set_upstring").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setType(fieldObject.TYPE_SFSTRING))
               .addField(new fieldObject().setName("uplines").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setType(fieldObject.TYPE_MFSTRING))
               .setSourceCode("ecmascript:\n"+
 "\n"+
@@ -173,7 +173,7 @@ public class pp3 {
 "}\n"+
 ""))
             .addChild(new ScriptObject().setDEF("CenterSingleToMultiString")
-              .addField(new fieldObject().setName("centerstring").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setType(fieldObject.TYPE_SFSTRING))
+              .addField(new fieldObject().setName("set_centerstring").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setType(fieldObject.TYPE_SFSTRING))
               .addField(new fieldObject().setName("centerlines").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setType(fieldObject.TYPE_MFSTRING))
               .setSourceCode("ecmascript:\n"+
 "\n"+
@@ -185,15 +185,15 @@ public class pp3 {
 "	centerlines = new MFString(centerstr);\n"+
 "}\n"+
 ""))
-            .addChild(new ROUTEObject().setFromField("enteredText").setFromNode("CenterSensor").setToField("centerstring").setToNode("CenterSingleToMultiString"))
-            .addChild(new ROUTEObject().setFromField("centerlines").setFromNode("CenterSingleToMultiString").setToField("string").setToNode("CenterString"))
-            .addChild(new ROUTEObject().setFromField("isOver").setFromNode("CenterTouch").setToField("enabled").setToNode("CenterSensor"))
-            .addChild(new ROUTEObject().setFromField("enteredText").setFromNode("RightSensor").setToField("rightstring").setToNode("RightSingleToMultiString"))
-            .addChild(new ROUTEObject().setFromField("rightlines").setFromNode("RightSingleToMultiString").setToField("string").setToNode("RightString"))
-            .addChild(new ROUTEObject().setFromField("isOver").setFromNode("RightTouch").setToField("enabled").setToNode("RightSensor"))
-            .addChild(new ROUTEObject().setFromField("enteredText").setFromNode("UpSensor").setToField("upstring").setToNode("UpSingleToMultiString"))
-            .addChild(new ROUTEObject().setFromField("uplines").setFromNode("UpSingleToMultiString").setToField("string").setToNode("UpString"))
-            .addChild(new ROUTEObject().setFromField("isOver").setFromNode("UpTouch").setToField("enabled").setToNode("UpSensor"))))
+            .addChild(new ROUTEObject().setFromField("enteredText").setFromNode("CenterSensor").setToField("set_centerstring").setToNode("CenterSingleToMultiString"))
+            .addChild(new ROUTEObject().setFromField("centerlines").setFromNode("CenterSingleToMultiString").setToField("set_string").setToNode("CenterString"))
+            .addChild(new ROUTEObject().setFromField("isOver").setFromNode("CenterTouch").setToField("set_enabled").setToNode("CenterSensor"))
+            .addChild(new ROUTEObject().setFromField("enteredText").setFromNode("RightSensor").setToField("set_rightstring").setToNode("RightSingleToMultiString"))
+            .addChild(new ROUTEObject().setFromField("rightlines").setFromNode("RightSingleToMultiString").setToField("set_string").setToNode("RightString"))
+            .addChild(new ROUTEObject().setFromField("isOver").setFromNode("RightTouch").setToField("set_enabled").setToNode("RightSensor"))
+            .addChild(new ROUTEObject().setFromField("enteredText").setFromNode("UpSensor").setToField("set_upstring").setToNode("UpSingleToMultiString"))
+            .addChild(new ROUTEObject().setFromField("uplines").setFromNode("UpSingleToMultiString").setToField("set_string").setToNode("UpString"))
+            .addChild(new ROUTEObject().setFromField("isOver").setFromNode("UpTouch").setToField("set_enabled").setToNode("UpSensor"))))
         .addChild(new NavigationInfoObject())
         .addChild(new ViewpointObject().setDescription("Process pipes").setOrientation(new float[] {1f,0f,0f,-0.4f}).setPosition(new float[] {0f,5f,12f}))
         .addChild(new TransformObject().setTranslation(new float[] {0f,-2.5f,0f})
@@ -225,7 +225,7 @@ protected class MFVec3f3 {
 }
 protected class MFString4 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"r"});
+    return new MFStringObject(new java.lang.String[] {"r"});
   }
 }
 protected class MFVec2f5 {
@@ -240,7 +240,7 @@ protected class MFVec3f6 {
 }
 protected class MFString7 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"u"});
+    return new MFStringObject(new java.lang.String[] {"u"});
   }
 }
 protected class MFVec2f8 {

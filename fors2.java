@@ -109,7 +109,7 @@ public class fors2 {
             .addChild(new ScriptObject().setDEF("MoveBall")
               .addField(new fieldObject().setName("translation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFVEC3F).setValue("50 50 0"))
               .addField(new fieldObject().setName("old").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFVEC3F).setValue("0 0 0"))
-              .addField(new fieldObject().setName("cycle").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setType(fieldObject.TYPE_SFTIME))
+              .addField(new fieldObject().setName("set_cycle").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setType(fieldObject.TYPE_SFTIME))
               .addField(new fieldObject().setName("keyValue").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setType(fieldObject.TYPE_MFVEC3F))
               .setSourceCode("ecmascript:\n"+
 "					function set_cycle(value) {\n"+
@@ -119,11 +119,11 @@ public class fors2 {
 "						// Browser.println(translation);\n"+
 "					}\n"+
 ""))
-            .addChild(new TimeSensorObject().setDEF("nodeClock").setCycleInterval(3).setLoop(true))
-            .addChild(new ROUTEObject().setFromNode("nodeClock").setFromField("cycleTime").setToNode("MoveBall").setToField("cycle"))
-            .addChild(new ROUTEObject().setFromNode("nodeClock").setFromField("fraction").setToNode("NodePosition").setToField("fraction"))
+            .addChild(new TimeSensorObject().setDEF("nodeClock").setCycleInterval(3d).setLoop(true))
+            .addChild(new ROUTEObject().setFromNode("nodeClock").setFromField("cycleTime").setToNode("MoveBall").setToField("set_cycle"))
+            .addChild(new ROUTEObject().setFromNode("nodeClock").setFromField("fraction_changed").setToNode("NodePosition").setToField("set_fraction"))
             .addChild(new ROUTEObject().setFromNode("MoveBall").setFromField("keyValue").setToNode("NodePosition").setToField("keyValue"))
-            .addChild(new ROUTEObject().setFromNode("NodePosition").setFromField("value").setToNode("transform").setToField("translation"))))
+            .addChild(new ROUTEObject().setFromNode("NodePosition").setFromField("value_changed").setToNode("transform").setToField("set_translation"))))
         .addChild(new ProtoDeclareObject().setName("cylinder")
           .setProtoInterface(new ProtoInterfaceObject()
             .addField(new fieldObject().setName("positionA").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setType(fieldObject.TYPE_SFVEC3F))
@@ -135,8 +135,8 @@ public class fors2 {
                 .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0f,1f,0f}))))
             .addChild(new ScriptObject().setDEF("MoveCylinder")
               .addField(new fieldObject().setName("spine").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_MFVEC3F).setValue("0 -50 0 0 0 0 0 50 0"))
-              .addField(new fieldObject().setName("endA").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setType(fieldObject.TYPE_SFVEC3F))
-              .addField(new fieldObject().setName("endB").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setType(fieldObject.TYPE_SFVEC3F))
+              .addField(new fieldObject().setName("set_endA").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setType(fieldObject.TYPE_SFVEC3F))
+              .addField(new fieldObject().setName("set_endB").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setType(fieldObject.TYPE_SFVEC3F))
               .setIS(new ISObject()
                 .addConnect(new connectObject().setNodeField("set_endA").setProtoField("positionA"))
                 .addConnect(new connectObject().setNodeField("set_endB").setProtoField("positionB")))
@@ -164,7 +164,7 @@ public class fors2 {
 "                    spine = value;\n"+
 "                }\n"+
 ""))
-            .addChild(new ROUTEObject().setFromNode("MoveCylinder").setFromField("spine").setToNode("extrusion").setToField("spine"))))
+            .addChild(new ROUTEObject().setFromNode("MoveCylinder").setFromField("spine").setToNode("extrusion").setToField("set_spine"))))
         .addChild(new TransformObject().setScale(new float[] {0.1f,0.1f,0.1f})
           .addChild(new ProtoInstanceObject().setName("node").setDEF("nodeA")
             .addFieldValue(new fieldValueObject().setName("position").setValue("-50 -50 -50")))

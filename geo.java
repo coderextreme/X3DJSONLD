@@ -97,11 +97,11 @@ public class geo {
             .setAppearance(new AppearanceObject().setDEF("_01_-_Default")
               .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0.7f,0.7f,0.7f}).setSpecularColor(new float[] {0.5f,0.5f,0.5f}))
               .setTexture(new ComposedCubeMapTextureObject()
-                .setTop(new ImageTextureObject().setUrl(new MFStringObject(new MFString7().getArray())))
-                .setTop(new ImageTextureObject().setUrl(new MFStringObject(new MFString8().getArray())))
-                .setTop(new ImageTextureObject().setUrl(new MFStringObject(new MFString9().getArray())))
-                .setTop(new ImageTextureObject().setUrl(new MFStringObject(new MFString10().getArray())))
-                .setTop(new ImageTextureObject().setUrl(new MFStringObject(new MFString11().getArray())))
+                .setBack(new ImageTextureObject().setUrl(new MFStringObject(new MFString7().getArray())))
+                .setBottom(new ImageTextureObject().setUrl(new MFStringObject(new MFString8().getArray())))
+                .setFront(new ImageTextureObject().setUrl(new MFStringObject(new MFString9().getArray())))
+                .setLeft(new ImageTextureObject().setUrl(new MFStringObject(new MFString10().getArray())))
+                .setRight(new ImageTextureObject().setUrl(new MFStringObject(new MFString11().getArray())))
                 .setTop(new ImageTextureObject().setUrl(new MFStringObject(new MFString12().getArray()))))
               .addShaders(new ComposedShaderObject().setDEF("cobweb").setLanguage("GLSL")
                 .addField(new fieldObject().setName("cube").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFINT32).setValue("0"))
@@ -122,87 +122,87 @@ public class geo {
     }
 protected class MFString0 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"EXAMINE"});
+    return new MFStringObject(new java.lang.String[] {"EXAMINE"});
   }
 }
 protected class MFString1 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"bBK.png","http://coderextreme.net/bug/bBK.png"});
+    return new MFStringObject(new java.lang.String[] {"bBK.png","http://coderextreme.net/bug/bBK.png"});
   }
 }
 protected class MFString2 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"bBT.png","http://coderextreme.net/bug/bBT.png"});
+    return new MFStringObject(new java.lang.String[] {"bBT.png","http://coderextreme.net/bug/bBT.png"});
   }
 }
 protected class MFString3 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"bFR.png","http://coderextreme.net/bug/bFR.png"});
+    return new MFStringObject(new java.lang.String[] {"bFR.png","http://coderextreme.net/bug/bFR.png"});
   }
 }
 protected class MFString4 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"bLF.png","http://coderextreme.net/bug/bLF.png"});
+    return new MFStringObject(new java.lang.String[] {"bLF.png","http://coderextreme.net/bug/bLF.png"});
   }
 }
 protected class MFString5 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"bRT.png","http://coderextreme.net/bug/bRT.png"});
+    return new MFStringObject(new java.lang.String[] {"bRT.png","http://coderextreme.net/bug/bRT.png"});
   }
 }
 protected class MFString6 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"bTP.png","http://coderextreme.net/bug/bTP.png"});
+    return new MFStringObject(new java.lang.String[] {"bTP.png","http://coderextreme.net/bug/bTP.png"});
   }
 }
 protected class MFString7 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"bBK.png","http://coderextreme.net/bug/bBK.png"});
+    return new MFStringObject(new java.lang.String[] {"bBK.png","http://coderextreme.net/bug/bBK.png"});
   }
 }
 protected class MFString8 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"bBT.png","http://coderextreme.net/bug/bBT.png"});
+    return new MFStringObject(new java.lang.String[] {"bBT.png","http://coderextreme.net/bug/bBT.png"});
   }
 }
 protected class MFString9 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"bFR.png","http://coderextreme.net/bug/bFR.png"});
+    return new MFStringObject(new java.lang.String[] {"bFR.png","http://coderextreme.net/bug/bFR.png"});
   }
 }
 protected class MFString10 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"bLF.png","http://coderextreme.net/bug/bLF.png"});
+    return new MFStringObject(new java.lang.String[] {"bLF.png","http://coderextreme.net/bug/bLF.png"});
   }
 }
 protected class MFString11 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"bRT.png","http://coderextreme.net/bug/bRT.png"});
+    return new MFStringObject(new java.lang.String[] {"bRT.png","http://coderextreme.net/bug/bRT.png"});
   }
 }
 protected class MFString12 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"bTP.png","http://coderextreme.net/bug/bTP.png"});
+    return new MFStringObject(new java.lang.String[] {"bTP.png","http://coderextreme.net/bug/bTP.png"});
   }
 }
 protected class MFString13 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"cobweb.vs","http://coderextreme.net/X3DJSONLD/cobweb.vs"});
+    return new MFStringObject(new java.lang.String[] {"cobweb.vs","http://coderextreme.net/X3DJSONLD/cobweb.vs"});
   }
 }
 protected class MFString14 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"pc_bubbles.fs","http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"});
+    return new MFStringObject(new java.lang.String[] {"pc_bubbles.fs","http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"});
   }
 }
 protected class MFString15 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"x3dom.vs","http://coderextreme.net/X3DJSONLD/x3dom.vs"});
+    return new MFStringObject(new java.lang.String[] {"x3dom.vs","http://coderextreme.net/X3DJSONLD/x3dom.vs"});
   }
 }
 protected class MFString16 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"pc_bubbles.fs","http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"});
+    return new MFStringObject(new java.lang.String[] {"pc_bubbles.fs","http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"});
   }
 }
 }

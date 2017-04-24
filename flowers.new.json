@@ -216,7 +216,7 @@
                             "@value":[0,0,0]
                           },
                           {
-                            "@name":"fraction",
+                            "@name":"set_fraction",
                             "@accessType":"inputOnly",
                             "@type":"SFTime"
                           },
@@ -389,15 +389,15 @@
                       {
                         "@fromField":"cycleTime",
                         "@fromNode":"TourTime",
-                        "@toField":"fraction",
+                        "@toField":"set_fraction",
                         "@toNode":"Bounce"
                       }
                     },
                     { "ROUTE":
                       {
-                        "@fromField":"translation",
+                        "@fromField":"translation_changed",
                         "@fromNode":"Bounce",
-                        "@toField":"translation",
+                        "@toField":"set_translation",
                         "@toNode":"transform"
                       }
                     },
@@ -405,7 +405,7 @@
                       {
                         "@fromField":"coordIndexes",
                         "@fromNode":"Bounce",
-                        "@toField":"coordIndex",
+                        "@toField":"set_coordIndex",
                         "@toNode":"Orbit"
                       }
                     },
@@ -413,7 +413,7 @@
                       {
                         "@fromField":"coordinates",
                         "@fromNode":"Bounce",
-                        "@toField":"point",
+                        "@toField":"set_point",
                         "@toNode":"OrbitCoordinates"
                       }
                     }

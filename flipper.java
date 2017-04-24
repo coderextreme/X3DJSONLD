@@ -90,7 +90,7 @@ public class flipper {
         .addChild(new ViewpointObject().setDEF("cam0").setDescription("cam0 description").setPosition(new float[] {0f,0f,800f}))
         .addChild(new ViewpointObject().setDEF("cam1").setDescription("cam1 description").setPosition(new float[] {0f,0f,2000f}))
         .addChild(new ViewpointObject().setDEF("cam2").setDescription("cam2 description").setPosition(new float[] {0f,200f,1000f}))
-        .addChild(new BackgroundObject().setGroundAngle(new MFFloatObject(new MFFloat0().getArray())).setGroundColor(new MFColorObject(new MFColor1().getArray())).setSkyAngle(new MFFloatObject(new MFFloat2().getArray())).setSkyColor(new MFColorObject(new MFColor3().getArray())).setGroundTransparency(0.5 0.5 0.5 0.5).setSkyTransparency(0.5 0.5 0.5 0.5))
+        .addChild(new BackgroundObject().setGroundAngle(new MFFloatObject(new MFFloat0().getArray())).setGroundColor(new MFColorObject(new MFColor1().getArray())).setSkyAngle(new MFFloatObject(new MFFloat2().getArray())).setSkyColor(new MFColorObject(new MFColor3().getArray())).setGroundTransparency("0.5 0.5 0.5 0.5").setSkyTransparency("0.5 0.5 0.5 0.5"))
         .addChild(new NavigationInfoObject().setDEF("user01").setSpeed(50f))
         .addChild(new FogObject())
         .addChild(new TransformObject().setDEF("trans").setRotation(new float[] {1f,0f,0f,0.78f})
@@ -99,12 +99,12 @@ public class flipper {
               .setMaterial(new MaterialObject().setDEF("mat").setAmbientIntensity(0.508497f).setDiffuseColor(new float[] {0.337255f,0.4f,0.788235f}).setSpecularColor(new float[] {1f,1f,1f})))
             .setGeometry(new IndexedFaceSetObject().setCreaseAngle(2f).setCoordIndex(new MFInt32Object(new MFInt324().getArray()).append(new MFInt325().getArray()).append(new MFInt326().getArray()))
               .setCoord(new CoordinateObject().setDEF("pointList").setPoint(new MFVec3fObject(new MFVec3f7().getArray()).append(new MFVec3f8().getArray()))))))
-        .addChild(new TimeSensorObject().setDEF("ts").setCycleInterval(2).setLoop(true))
+        .addChild(new TimeSensorObject().setDEF("ts").setCycleInterval(2d).setLoop(true))
         .addChild(new ScalarInterpolatorObject().setDEF("si").setKey(new MFFloatObject(new MFFloat9().getArray())).setKeyValue(new MFFloatObject(new MFFloat10().getArray())))
         .addChild(new CoordinateInterpolatorObject().setDEF("ci").setKey(new MFFloatObject(new MFFloat11().getArray())).setKeyValue(new MFVec3fObject(new MFVec3f12().getArray()).append(new MFVec3f13().getArray()).append(new MFVec3f14().getArray()).append(new MFVec3f15().getArray())))
-        .addChild(new ROUTEObject().setFromNode("ci").setFromField("value").setToNode("pointList").setToField("point"))
-        .addChild(new ROUTEObject().setFromNode("si").setFromField("value").setToNode("ci").setToField("fraction"))
-        .addChild(new ROUTEObject().setFromNode("ts").setFromField("fraction").setToNode("si").setToField("fraction")))      ;
+        .addChild(new ROUTEObject().setFromNode("ci").setFromField("value_changed").setToNode("pointList").setToField("set_point"))
+        .addChild(new ROUTEObject().setFromNode("si").setFromField("value_changed").setToNode("ci").setToField("set_fraction"))
+        .addChild(new ROUTEObject().setFromNode("ts").setFromField("fraction_changed").setToNode("si").setToField("set_fraction")))      ;
     }
 protected class MFFloat0 {
   protected MFFloatObject getArray() {

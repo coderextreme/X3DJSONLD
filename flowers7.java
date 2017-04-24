@@ -89,31 +89,31 @@ public class flowers7 {
       .setScene(new SceneObject()
         .addChild(new NavigationInfoObject())
         .addComments(new CommentsBlock("Images courtesy of Paul Debevec's Light Probe Image Gallery"))
-        .addChild(new BackgroundObject().setDEF("background").setLeftUrl(new MFStringObject(new MFString0().getArray())).setRightUrl(new MFStringObject(new MFString1().getArray())).setFrontUrl(new MFStringObject(new MFString2().getArray())).setBackUrl(new MFStringObject(new MFString3().getArray())).setTopUrl(new MFStringObject(new MFString4().getArray())).setBottomUrl(new MFStringObject(new MFString5().getArray())))
+        .addChild(new BackgroundObject().setDEF("background").setBackUrl(new MFStringObject(new MFString0().getArray())).setBottomUrl(new MFStringObject(new MFString1().getArray())).setFrontUrl(new MFStringObject(new MFString2().getArray())).setLeftUrl(new MFStringObject(new MFString3().getArray())).setRightUrl(new MFStringObject(new MFString4().getArray())).setTopUrl(new MFStringObject(new MFString5().getArray())))
         .addChild(new ViewpointObject().setPosition(new float[] {0f,0f,40f}).setDescription("Transparent rose"))
         .addChild(new TransformObject().setDEF("Rose01")
           .addChild(new ShapeObject()
-            .setAppearance(new AppearanceObject().setDEF("_01_-_Default")
+            .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0.7f,0.7f,0.7f}).setSpecularColor(new float[] {0.5f,0.5f,0.5f}))
               .setTexture(new ComposedCubeMapTextureObject()
-                .setTop(new ImageTextureObject().setDEF("backShader").setUrl(new MFStringObject(new MFString6().getArray())))
-                .setTop(new ImageTextureObject().setDEF("bottomShader").setUrl(new MFStringObject(new MFString7().getArray())))
-                .setTop(new ImageTextureObject().setDEF("frontShader").setUrl(new MFStringObject(new MFString8().getArray())))
-                .setTop(new ImageTextureObject().setDEF("leftShader").setUrl(new MFStringObject(new MFString9().getArray())))
-                .setTop(new ImageTextureObject().setDEF("rightShader").setUrl(new MFStringObject(new MFString10().getArray())))
+                .setBack(new ImageTextureObject().setDEF("backShader").setUrl(new MFStringObject(new MFString6().getArray())))
+                .setBottom(new ImageTextureObject().setDEF("bottomShader").setUrl(new MFStringObject(new MFString7().getArray())))
+                .setFront(new ImageTextureObject().setDEF("frontShader").setUrl(new MFStringObject(new MFString8().getArray())))
+                .setLeft(new ImageTextureObject().setDEF("leftShader").setUrl(new MFStringObject(new MFString9().getArray())))
+                .setRight(new ImageTextureObject().setDEF("rightShader").setUrl(new MFStringObject(new MFString10().getArray())))
                 .setTop(new ImageTextureObject().setDEF("topShader").setUrl(new MFStringObject(new MFString11().getArray()))))
-              .addShaders(new ComposedShaderObject().setDEF("ComposedShader").setLanguage("GLSL")
-                .addField(new fieldObject().setName("cube").setType(fieldObject.TYPE_SFINT32).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
-                .addField(new fieldObject().setName("chromaticDispertion").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFVEC3F).setValue("0.98 1 1.033"))
-                .addField(new fieldObject().setName("bias").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
-                .addField(new fieldObject().setName("scale").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
-                .addField(new fieldObject().setName("power").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("2"))
-                .addField(new fieldObject().setName("a").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("10"))
-                .addField(new fieldObject().setName("b").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("1"))
-                .addField(new fieldObject().setName("c").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("20"))
-                .addField(new fieldObject().setName("d").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("20"))
-                .addField(new fieldObject().setName("tdelta").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
-                .addField(new fieldObject().setName("pdelta").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
+              .addShaders(new ComposedShaderObject().setDEF("cobweb").setLanguage("GLSL")
+                .addField(new fieldObject().setName("set_cube").setType(fieldObject.TYPE_SFINT32).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setValue("0"))
+                .addField(new fieldObject().setName("set_chromaticDispertion").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setType(fieldObject.TYPE_SFVEC3F).setValue("0.98 1 1.033"))
+                .addField(new fieldObject().setName("set_bias").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setValue("0.5"))
+                .addField(new fieldObject().setName("set_scale").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setValue("0.5"))
+                .addField(new fieldObject().setName("set_power").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setValue("2"))
+                .addField(new fieldObject().setName("set_a").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setValue("10"))
+                .addField(new fieldObject().setName("set_b").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setValue("1"))
+                .addField(new fieldObject().setName("set_c").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setValue("20"))
+                .addField(new fieldObject().setName("set_d").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setValue("20"))
+                .addField(new fieldObject().setName("set_tdelta").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setValue("0"))
+                .addField(new fieldObject().setName("set_pdelta").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setValue("0"))
                 .addParts(new ShaderPartObject().setUrl(new MFStringObject(new MFString12().getArray())).setType("VERTEX"))
                 .addParts(new ShaderPartObject().setUrl(new MFStringObject(new MFString13().getArray())).setType("FRAGMENT"))))
             .setGeometry(new SphereObject().setSolid(false).setRadius(20f))))
@@ -124,13 +124,13 @@ public class flowers7 {
           .addField(new fieldObject().setName("rightUrls").setType(fieldObject.TYPE_MFSTRING).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue("\"cubemap/all_probes/beach_cross/beach_right.png\" \"cubemap/all_probes/building_cross/building_right.png\" \"cubemap/all_probes/campus_cross/campus_right.png\" \"cubemap/all_probes/galileo_cross/galileo_right.png\" \"cubemap/all_probes/grace_cross/grace_right.png\" \"cubemap/all_probes/kitchen_cross/kitchen_right.png\" \"cubemap/all_probes/rnl_cross/rnl_right.png\" \"cubemap/all_probes/stpeters_cross/stpeters_right.png\" \"cubemap/all_probes/uffizi_cross/uffizi_right.png\""))
           .addField(new fieldObject().setName("topUrls").setType(fieldObject.TYPE_MFSTRING).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue("\"cubemap/all_probes/beach_cross/beach_top.png\" \"cubemap/all_probes/building_cross/building_top.png\" \"cubemap/all_probes/campus_cross/campus_top.png\" \"cubemap/all_probes/galileo_cross/galileo_top.png\" \"cubemap/all_probes/grace_cross/grace_top.png\" \"cubemap/all_probes/kitchen_cross/kitchen_top.png\" \"cubemap/all_probes/rnl_cross/rnl_top.png\" \"cubemap/all_probes/stpeters_cross/stpeters_top.png\" \"cubemap/all_probes/uffizi_cross/uffizi_top.png\""))
           .addField(new fieldObject().setName("bottomUrls").setType(fieldObject.TYPE_MFSTRING).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue("\"cubemap/all_probes/beach_cross/beach_bottom.png\" \"cubemap/all_probes/building_cross/building_bottom.png\" \"cubemap/all_probes/campus_cross/campus_bottom.png\" \"cubemap/all_probes/galileo_cross/galileo_bottom.png\" \"cubemap/all_probes/grace_cross/grace_bottom.png\" \"cubemap/all_probes/kitchen_cross/kitchen_bottom.png\" \"cubemap/all_probes/rnl_cross/rnl_bottom.png\" \"cubemap/all_probes/stpeters_cross/stpeters_bottom.png\" \"cubemap/all_probes/uffizi_cross/uffizi_bottom.png\""))
-          .addField(new fieldObject().setName("front").setType(fieldObject.TYPE_MFSTRING).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-          .addField(new fieldObject().setName("back").setType(fieldObject.TYPE_MFSTRING).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-          .addField(new fieldObject().setName("left").setType(fieldObject.TYPE_MFSTRING).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-          .addField(new fieldObject().setName("right").setType(fieldObject.TYPE_MFSTRING).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-          .addField(new fieldObject().setName("top").setType(fieldObject.TYPE_MFSTRING).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-          .addField(new fieldObject().setName("bottom").setType(fieldObject.TYPE_MFSTRING).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-          .addField(new fieldObject().setName("fraction").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
+          .addField(new fieldObject().setName("front_changed").setType(fieldObject.TYPE_MFSTRING).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
+          .addField(new fieldObject().setName("back_changed").setType(fieldObject.TYPE_MFSTRING).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
+          .addField(new fieldObject().setName("left_changed").setType(fieldObject.TYPE_MFSTRING).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
+          .addField(new fieldObject().setName("right_changed").setType(fieldObject.TYPE_MFSTRING).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
+          .addField(new fieldObject().setName("top_changed").setType(fieldObject.TYPE_MFSTRING).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
+          .addField(new fieldObject().setName("bottom_changed").setType(fieldObject.TYPE_MFSTRING).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
+          .addField(new fieldObject().setName("set_fraction").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
           .addField(new fieldObject().setName("old").setType(fieldObject.TYPE_SFINT32).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("-1"))
           .setSourceCode("ecmascript:\n"+
 "        function set_fraction( f, tm ) {\n"+
@@ -139,7 +139,6 @@ public class flowers7 {
 "                side = 0;\n"+
 "            }\n"+
 "            if (side != old) {\n"+
-"                    Browser.print(f+\" \"+side);\n"+
 "                    old = side;\n"+
 "                    front_changed[0] = frontUrls[side];\n"+
 "                    back_changed[0] = backUrls[side];\n"+
@@ -150,27 +149,28 @@ public class flowers7 {
 "            }\n"+
 "        }\n"+
 ""))
-        .addChild(new TimeSensorObject().setDEF("Clock").setCycleInterval(45).setLoop(true))
-        .addChild(new ROUTEObject().setFromNode("Clock").setFromField("fraction").setToNode("UrlSelector").setToField("fraction"))
-        .addChild(new ROUTEObject().setFromNode("UrlSelector").setFromField("front").setToNode("background").setToField("frontUrl"))
-        .addChild(new ROUTEObject().setFromNode("UrlSelector").setFromField("back").setToNode("background").setToField("backUrl"))
-        .addChild(new ROUTEObject().setFromNode("UrlSelector").setFromField("left").setToNode("background").setToField("leftUrl"))
-        .addChild(new ROUTEObject().setFromNode("UrlSelector").setFromField("right").setToNode("background").setToField("rightUrl"))
-        .addChild(new ROUTEObject().setFromNode("UrlSelector").setFromField("top").setToNode("background").setToField("topUrl"))
-        .addChild(new ROUTEObject().setFromNode("UrlSelector").setFromField("bottom").setToNode("background").setToField("bottomUrl"))
-        .addChild(new ROUTEObject().setFromNode("UrlSelector").setFromField("front").setToNode("frontShader").setToField("url"))
-        .addChild(new ROUTEObject().setFromNode("UrlSelector").setFromField("back").setToNode("backShader").setToField("url"))
-        .addChild(new ROUTEObject().setFromNode("UrlSelector").setFromField("left").setToNode("leftShader").setToField("url"))
-        .addChild(new ROUTEObject().setFromNode("UrlSelector").setFromField("right").setToNode("rightShader").setToField("url"))
-        .addChild(new ROUTEObject().setFromNode("UrlSelector").setFromField("top").setToNode("topShader").setToField("url"))
-        .addChild(new ROUTEObject().setFromNode("UrlSelector").setFromField("bottom").setToNode("bottomShader").setToField("url"))
+        .addChild(new TimeSensorObject().setDEF("Clock").setCycleInterval(45d).setLoop(true))
+        .addChild(new ROUTEObject().setFromNode("Clock").setFromField("fraction_changed").setToNode("UrlSelector").setToField("set_fraction"))
+        .addChild(new ROUTEObject().setFromNode("UrlSelector").setFromField("front_changed").setToNode("background").setToField("frontUrl"))
+        .addChild(new ROUTEObject().setFromNode("UrlSelector").setFromField("back_changed").setToNode("background").setToField("backUrl"))
+        .addChild(new ROUTEObject().setFromNode("UrlSelector").setFromField("left_changed").setToNode("background").setToField("leftUrl"))
+        .addChild(new ROUTEObject().setFromNode("UrlSelector").setFromField("right_changed").setToNode("background").setToField("rightUrl"))
+        .addChild(new ROUTEObject().setFromNode("UrlSelector").setFromField("top_changed").setToNode("background").setToField("topUrl"))
+        .addChild(new ROUTEObject().setFromNode("UrlSelector").setFromField("bottom_changed").setToNode("background").setToField("bottomUrl"))
+        .addChild(new ROUTEObject().setFromNode("UrlSelector").setFromField("front_changed").setToNode("frontShader").setToField("url"))
+        .addChild(new ROUTEObject().setFromNode("UrlSelector").setFromField("back_changed").setToNode("backShader").setToField("url"))
+        .addChild(new ROUTEObject().setFromNode("UrlSelector").setFromField("left_changed").setToNode("leftShader").setToField("url"))
+        .addChild(new ROUTEObject().setFromNode("UrlSelector").setFromField("right_changed").setToNode("rightShader").setToField("url"))
+        .addChild(new ROUTEObject().setFromNode("UrlSelector").setFromField("top_changed").setToNode("topShader").setToField("url"))
+        .addChild(new ROUTEObject().setFromNode("UrlSelector").setFromField("bottom_changed").setToNode("bottomShader").setToField("url"))
         .addChild(new ScriptObject().setDEF("Animate").setDirectOutput(true)
-          .addField(new fieldObject().setName("a").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("10"))
-          .addField(new fieldObject().setName("b").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("1"))
-          .addField(new fieldObject().setName("c").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("20"))
-          .addField(new fieldObject().setName("d").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("20"))
-          .addField(new fieldObject().setName("tdelta").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
-          .addField(new fieldObject().setName("pdelta").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
+          .addField(new fieldObject().setName("set_fraction").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
+          .addField(new fieldObject().setName("a").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setValue("10"))
+          .addField(new fieldObject().setName("b").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setValue("1"))
+          .addField(new fieldObject().setName("c").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setValue("20"))
+          .addField(new fieldObject().setName("d").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setValue("20"))
+          .addField(new fieldObject().setName("tdelta").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setValue("0"))
+          .addField(new fieldObject().setName("pdelta").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setValue("0"))
           .setSourceCode("ecmascript:\n"+
 "\n"+
 "function set_fraction() {\n"+
@@ -207,82 +207,81 @@ public class flowers7 {
 "	// console.log(a, b, c, d, tdelta, pdelta);\n"+
 "}\n"+
 ""))
-        .addChild(new ROUTEObject().setFromNode("Clock").setFromField("fraction").setToNode("Animate").setToField("fraction"))
-        .addChild(new ROUTEObject().setFromNode("Animate").setFromField("a").setToNode("ComposedShader").setToField("a"))
-        .addChild(new ROUTEObject().setFromNode("Animate").setFromField("b").setToNode("ComposedShader").setToField("b"))
-        .addChild(new ROUTEObject().setFromNode("Animate").setFromField("c").setToNode("ComposedShader").setToField("c"))
-        .addChild(new ROUTEObject().setFromNode("Animate").setFromField("d").setToNode("ComposedShader").setToField("d"))
-        .addChild(new ROUTEObject().setFromNode("Animate").setFromField("pdelta").setToNode("ComposedShader").setToField("pdelta"))
-        .addChild(new ROUTEObject().setFromNode("Animate").setFromField("tdelta").setToNode("ComposedShader").setToField("tdelta")))      ;
+        .addChild(new ROUTEObject().setFromNode("Animate").setFromField("a_changed").setToNode("cobweb").setToField("set_a"))
+        .addChild(new ROUTEObject().setFromNode("Animate").setFromField("b_changed").setToNode("cobweb").setToField("set_b"))
+        .addChild(new ROUTEObject().setFromNode("Animate").setFromField("c_changed").setToNode("cobweb").setToField("set_c"))
+        .addChild(new ROUTEObject().setFromNode("Animate").setFromField("d_changed").setToNode("cobweb").setToField("set_d"))
+        .addChild(new ROUTEObject().setFromNode("Animate").setFromField("pdelta_changed").setToNode("cobweb").setToField("set_pdelta"))
+        .addChild(new ROUTEObject().setFromNode("Animate").setFromField("tdelta_changed").setToNode("cobweb").setToField("set_tdelta")))      ;
     }
 protected class MFString0 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"cubemap/all_probes/beach_cross/beach_left.png"});
+    return new MFStringObject(new java.lang.String[] {"cubemap/all_probes/beach_cross/beach_back.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_back.png"});
   }
 }
 protected class MFString1 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"cubemap/all_probes/beach_cross/beach_right.png"});
+    return new MFStringObject(new java.lang.String[] {"cubemap/all_probes/beach_cross/beach_bottom.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_bottom.png"});
   }
 }
 protected class MFString2 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"cubemap/all_probes/beach_cross/beach_front.png"});
+    return new MFStringObject(new java.lang.String[] {"cubemap/all_probes/beach_cross/beach_front.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_front.png"});
   }
 }
 protected class MFString3 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"cubemap/all_probes/beach_cross/beach_back.png"});
+    return new MFStringObject(new java.lang.String[] {"cubemap/all_probes/beach_cross/beach_left.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_left.png"});
   }
 }
 protected class MFString4 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"cubemap/all_probes/beach_cross/beach_top.png"});
+    return new MFStringObject(new java.lang.String[] {"cubemap/all_probes/beach_cross/beach_right.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_right.png"});
   }
 }
 protected class MFString5 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"cubemap/all_probes/beach_cross/beach_bottom.png"});
+    return new MFStringObject(new java.lang.String[] {"cubemap/all_probes/beach_cross/beach_top.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_top.png"});
   }
 }
 protected class MFString6 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"cubemap/all_probes/beach_cross/beach_back.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_back.png"});
+    return new MFStringObject(new java.lang.String[] {"cubemap/all_probes/beach_cross/beach_back.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_back.png"});
   }
 }
 protected class MFString7 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"cubemap/all_probes/beach_cross/beach_bottom.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_bottom.png"});
+    return new MFStringObject(new java.lang.String[] {"cubemap/all_probes/beach_cross/beach_bottom.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_bottom.png"});
   }
 }
 protected class MFString8 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"cubemap/all_probes/beach_cross/beach_front.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_front.png"});
+    return new MFStringObject(new java.lang.String[] {"cubemap/all_probes/beach_cross/beach_front.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_front.png"});
   }
 }
 protected class MFString9 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"cubemap/all_probes/beach_cross/beach_left.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_left.png"});
+    return new MFStringObject(new java.lang.String[] {"cubemap/all_probes/beach_cross/beach_left.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_left.png"});
   }
 }
 protected class MFString10 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"cubemap/all_probes/beach_cross/beach_right.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_right.png"});
+    return new MFStringObject(new java.lang.String[] {"cubemap/all_probes/beach_cross/beach_right.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_right.png"});
   }
 }
 protected class MFString11 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"cubemap/all_probes/beach_cross/beach_top.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_top.png"});
+    return new MFStringObject(new java.lang.String[] {"cubemap/all_probes/beach_cross/beach_top.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_top.png"});
   }
 }
 protected class MFString12 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"x3dom_sphere.vs","http://coderextreme.net/X3DJSONLD/x3dom_sphere.vs"});
+    return new MFStringObject(new java.lang.String[] {"cobweb_flowers_input.vs","http://coderextreme.net/X3DJSONLD/cobweb_flowers_input.vs"});
   }
 }
 protected class MFString13 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"sphere.fs","http://coderextreme.net/X3DJSONLD/sphere.fs"});
+    return new MFStringObject(new java.lang.String[] {"pc_input_flowers.fs","http://coderextreme.net/X3DJSONLD/pc_input_flowers.fs"});
   }
 }
 }

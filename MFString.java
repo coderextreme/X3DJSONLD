@@ -92,7 +92,7 @@ public class MFString {
     }
 protected class MFString0 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"Locked","FIRE!..\"\"FIRE!"});
+    return new MFStringObject(new java.lang.String[] {"Locked","FIRE!..\"\"FIRE!"});
   }
 }
 }

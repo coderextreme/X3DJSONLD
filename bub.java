@@ -89,65 +89,35 @@ public class bub {
       .setScene(new SceneObject()
         .addChild(new NavigationInfoObject())
         .addChild(new BackgroundObject().setBackUrl(new MFStringObject(new MFString0().getArray())).setBottomUrl(new MFStringObject(new MFString1().getArray())).setFrontUrl(new MFStringObject(new MFString2().getArray())).setLeftUrl(new MFStringObject(new MFString3().getArray())).setRightUrl(new MFStringObject(new MFString4().getArray())).setTopUrl(new MFStringObject(new MFString5().getArray())))
-        .addChild(new ViewpointObject().setPosition(new float[] {0f,0f,20f}))
+        .addChild(new ViewpointObject().setPosition(new float[] {0f,0f,20f}).setDescription("Look at the bubbles flying"))
         .addChild(new ProtoDeclareObject().setName("Bubble")
           .setProtoBody(new ProtoBodyObject()
             .addChild(new TransformObject().setDEF("transform")
               .addChild(new ShapeObject().setDEF("myShape")
                 .setAppearance(new AppearanceObject()
                   .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0.7f,0.7f,0.7f}).setSpecularColor(new float[] {0.5f,0.5f,0.5f}))
-                  .setTexture(new ComposedCubeMapTextureObject()
-                    .setTop(new ImageTextureObject().setUrl(new MFStringObject(new MFString6().getArray())))
-                    .setTop(new ImageTextureObject().setUrl(new MFStringObject(new MFString7().getArray())))
-                    .setTop(new ImageTextureObject().setUrl(new MFStringObject(new MFString8().getArray())))
-                    .setTop(new ImageTextureObject().setUrl(new MFStringObject(new MFString9().getArray())))
-                    .setTop(new ImageTextureObject().setUrl(new MFStringObject(new MFString10().getArray())))
+                  .setTexture(new ComposedCubeMapTextureObject().setDEF("texture")
+                    .setBack(new ImageTextureObject().setUrl(new MFStringObject(new MFString6().getArray())))
+                    .setBottom(new ImageTextureObject().setUrl(new MFStringObject(new MFString7().getArray())))
+                    .setFront(new ImageTextureObject().setUrl(new MFStringObject(new MFString8().getArray())))
+                    .setLeft(new ImageTextureObject().setUrl(new MFStringObject(new MFString9().getArray())))
+                    .setRight(new ImageTextureObject().setUrl(new MFStringObject(new MFString10().getArray())))
                     .setTop(new ImageTextureObject().setUrl(new MFStringObject(new MFString11().getArray()))))
-                  .addShaders(new ComposedShaderObject().setDEF("gl").setLanguage("GLSL")
-                    .addField(new fieldObject().setName("cube").setType(fieldObject.TYPE_SFINT32).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
+                  .addComments(new CommentsBlock("<ComposedShader DEF='gl' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"gl.vs\" \"http://coderextreme.net/X3DJSONLD/gl.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"pc_bubbles.fs\" \"http://coderextreme.net/X3DJSONLD/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader> <ComposedShader DEF='freewrl' language=\"GLSL\"> <field name='fw_textureCoodGenType' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"freewrl.vs\" \"http://coderextreme.net/X3DJSONLD/freewrl.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"pc_bubbles.fs\" \"http://coderextreme.net/X3DJSONLD/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader> <ComposedShader DEF='x3dom' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"x3dom.vs\" \"http://coderextreme.net/X3DJSONLD/x3dom.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"pc_bubbles.fs\" \"http://coderextreme.net/X3DJSONLD/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader> <ComposedShader DEF='instant' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"instant.vs\" \"http://coderextreme.net/X3DJSONLD/instant.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"pc_bubbles.fs\" \"http://coderextreme.net/X3DJSONLD/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader>"))
+                  .addShaders(new ComposedShaderObject().setDEF("cobweb").setLanguage("GLSL")
+                    .addField(new fieldObject().setName("cube").setType(fieldObject.TYPE_SFNODE).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
+                      .addChild(new ComposedCubeMapTextureObject().setUSE("texture")))
                     .addField(new fieldObject().setName("chromaticDispertion").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.98 1 1.033"))
                     .addField(new fieldObject().setName("bias").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
                     .addField(new fieldObject().setName("scale").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
                     .addField(new fieldObject().setName("power").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("2"))
                     .addParts(new ShaderPartObject().setUrl(new MFStringObject(new MFString12().getArray())).setType("VERTEX"))
-                    .addParts(new ShaderPartObject().setUrl(new MFStringObject(new MFString13().getArray())).setType("FRAGMENT")))
-                  .addShaders(new ComposedShaderObject().setDEF("freewrl").setLanguage("GLSL")
-                    .addField(new fieldObject().setName("fw_textureCoodGenType").setType(fieldObject.TYPE_SFINT32).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
-                    .addField(new fieldObject().setName("chromaticDispertion").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.98 1 1.033"))
-                    .addField(new fieldObject().setName("bias").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
-                    .addField(new fieldObject().setName("scale").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
-                    .addField(new fieldObject().setName("power").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("2"))
-                    .addParts(new ShaderPartObject().setUrl(new MFStringObject(new MFString14().getArray())).setType("VERTEX"))
-                    .addParts(new ShaderPartObject().setUrl(new MFStringObject(new MFString15().getArray())).setType("FRAGMENT")))
-                  .addShaders(new ComposedShaderObject().setDEF("x3dom").setLanguage("GLSL")
-                    .addField(new fieldObject().setName("cube").setType(fieldObject.TYPE_SFINT32).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
-                    .addField(new fieldObject().setName("chromaticDispertion").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.98 1 1.033"))
-                    .addField(new fieldObject().setName("bias").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
-                    .addField(new fieldObject().setName("scale").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
-                    .addField(new fieldObject().setName("power").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("2"))
-                    .addParts(new ShaderPartObject().setUrl(new MFStringObject(new MFString16().getArray())).setType("VERTEX"))
-                    .addParts(new ShaderPartObject().setUrl(new MFStringObject(new MFString17().getArray())).setType("FRAGMENT")))
-                  .addShaders(new ComposedShaderObject().setDEF("instant").setLanguage("GLSL")
-                    .addField(new fieldObject().setName("cube").setType(fieldObject.TYPE_SFINT32).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
-                    .addField(new fieldObject().setName("chromaticDispertion").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.98 1 1.033"))
-                    .addField(new fieldObject().setName("bias").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
-                    .addField(new fieldObject().setName("scale").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
-                    .addField(new fieldObject().setName("power").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("2"))
-                    .addParts(new ShaderPartObject().setUrl(new MFStringObject(new MFString18().getArray())).setType("VERTEX"))
-                    .addParts(new ShaderPartObject().setUrl(new MFStringObject(new MFString19().getArray())).setType("FRAGMENT")))
-                  .addShaders(new ComposedShaderObject().setDEF("cobweb").setLanguage("GLSL")
-                    .addField(new fieldObject().setName("x3d_CubeMapTexture").setType(fieldObject.TYPE_SFINT32).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
-                    .addField(new fieldObject().setName("chromaticDispertion").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.98 1 1.033"))
-                    .addField(new fieldObject().setName("bias").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
-                    .addField(new fieldObject().setName("scale").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
-                    .addField(new fieldObject().setName("power").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("2"))
-                    .addParts(new ShaderPartObject().setUrl(new MFStringObject(new MFString20().getArray())).setType("VERTEX"))
-                    .addParts(new ShaderPartObject().setUrl(new MFStringObject(new MFString21().getArray())).setType("FRAGMENT"))))
+                    .addParts(new ShaderPartObject().setUrl(new MFStringObject(new MFString13().getArray())).setType("FRAGMENT"))))
                 .setGeometry(new SphereObject())))
             .addChild(new ScriptObject().setDEF("Bounce")
               .addField(new fieldObject().setName("translation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFVEC3F).setValue("0 0 0"))
               .addField(new fieldObject().setName("velocity").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFVEC3F).setValue("0 0 0"))
-              .addField(new fieldObject().setName("fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setType(fieldObject.TYPE_SFTIME))
+              .addField(new fieldObject().setName("set_fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setType(fieldObject.TYPE_SFTIME))
               .setSourceCode("ecmascript:\n"+
 "			function set_translation(value) {\n"+
 "				translation = value;\n"+
@@ -178,121 +148,81 @@ public class bub {
 "			    }\n"+
 "			}\n"+
 ""))
-            .addChild(new TimeSensorObject().setDEF("TourTime").setCycleInterval(0.15).setLoop(true))
-            .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("cycleTime").setToNode("Bounce").setToField("fraction"))
-            .addChild(new ROUTEObject().setFromNode("Bounce").setFromField("translation").setToNode("transform").setToField("translation"))))
+            .addChild(new TimeSensorObject().setDEF("TourTime").setCycleInterval(0.15d).setLoop(true))
+            .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("cycleTime").setToNode("Bounce").setToField("set_fraction"))
+            .addChild(new ROUTEObject().setFromNode("Bounce").setFromField("translation_changed").setToNode("transform").setToField("set_translation"))))
         .addChild(new ProtoInstanceObject().setName("Bubble"))
         .addChild(new ProtoInstanceObject().setName("Bubble"))
         .addChild(new ProtoInstanceObject().setName("Bubble")))      ;
     }
 protected class MFString0 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"cubemap/BK.png","http://coderextreme.net/X3DJSONLD/cubemap/BK.png"});
+    return new MFStringObject(new java.lang.String[] {"cubemap/all_probes/stpeters_cross/stpeters_back.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_back.png"});
   }
 }
 protected class MFString1 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"cubemap/BT.png","http://coderextreme.net/X3DJSONLD/cubemap/BT.png"});
+    return new MFStringObject(new java.lang.String[] {"cubemap/all_probes/stpeters_cross/stpeters_bottom.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_bottom.png"});
   }
 }
 protected class MFString2 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"cubemap/FR.png","http://coderextreme.net/X3DJSONLD/cubemap/FR.png"});
+    return new MFStringObject(new java.lang.String[] {"cubemap/all_probes/stpeters_cross/stpeters_front.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_front.png"});
   }
 }
 protected class MFString3 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"cubemap/LF.png","http://coderextreme.net/X3DJSONLD/cubemap/LF.png"});
+    return new MFStringObject(new java.lang.String[] {"cubemap/all_probes/stpeters_cross/stpeters_left.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_left.png"});
   }
 }
 protected class MFString4 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"cubemap/RT.png","http://coderextreme.net/X3DJSONLD/cubemap/RT.png"});
+    return new MFStringObject(new java.lang.String[] {"cubemap/all_probes/stpeters_cross/stpeters_right.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_right.png"});
   }
 }
 protected class MFString5 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"cubemap/TP.png","http://coderextreme.net/X3DJSONLD/cubemap/TP.png"});
+    return new MFStringObject(new java.lang.String[] {"cubemap/all_probes/stpeters_cross/stpeters_top.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_top.png"});
   }
 }
 protected class MFString6 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"cubemap/BK.png","http://coderextreme/X3DJSONLD/cubemap/BK.png"});
+    return new MFStringObject(new java.lang.String[] {"cubemap/all_probes/stpeters_cross/stpeters_back.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_back.png"});
   }
 }
 protected class MFString7 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"cubemap/BT.png","http://coderextreme/X3DJSONLD/cubemap/BT.png"});
+    return new MFStringObject(new java.lang.String[] {"cubemap/all_probes/stpeters_cross/stpeters_bottom.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_bottom.png"});
   }
 }
 protected class MFString8 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"cubemap/FR.png","http://coderextreme/X3DJSONLD/cubemap/FR.png"});
+    return new MFStringObject(new java.lang.String[] {"cubemap/all_probes/stpeters_cross/stpeters_front.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_front.png"});
   }
 }
 protected class MFString9 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"cubemap/LF.png","http://coderextreme/X3DJSONLD/cubemap/LF.png"});
+    return new MFStringObject(new java.lang.String[] {"cubemap/all_probes/stpeters_cross/stpeters_left.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_left.png"});
   }
 }
 protected class MFString10 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"cubemap/RT.png","http://coderextreme/X3DJSONLD/cubemap/RT.png"});
+    return new MFStringObject(new java.lang.String[] {"cubemap/all_probes/stpeters_cross/stpeters_right.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_right.png"});
   }
 }
 protected class MFString11 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"cubemap/TP.png","http://coderextreme/X3DJSONLD/cubemap/TP.png"});
+    return new MFStringObject(new java.lang.String[] {"cubemap/all_probes/stpeters_cross/stpeters_top.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_top.png"});
   }
 }
 protected class MFString12 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"gl.vs","http://coderextreme.net/X3DJSONLD/gl.vs"});
+    return new MFStringObject(new java.lang.String[] {"cobweb.vs","http://coderextreme.net/X3DJSONLD/cobweb.vs"});
   }
 }
 protected class MFString13 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"pc_bubbles.fs","http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"});
-  }
-}
-protected class MFString14 {
-  protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"freewrl.vs","http://coderextreme.net/X3DJSONLD/freewrl.vs"});
-  }
-}
-protected class MFString15 {
-  protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"pc_bubbles.fs","http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"});
-  }
-}
-protected class MFString16 {
-  protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"x3dom.vs","http://coderextreme.net/X3DJSONLD/x3dom.vs"});
-  }
-}
-protected class MFString17 {
-  protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"pc_bubbles.fs","http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"});
-  }
-}
-protected class MFString18 {
-  protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"instant.vs","http://coderextreme.net/X3DJSONLD/instant.vs"});
-  }
-}
-protected class MFString19 {
-  protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"pc_bubbles.fs","http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"});
-  }
-}
-protected class MFString20 {
-  protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"cobweb.vs","http://coderextreme.net/X3DJSONLD/cobweb.vs"});
-  }
-}
-protected class MFString21 {
-  protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"cobweb_bubbles.fs","http://coderextreme.net/X3DJSONLD/cobweb_bubbles.fs"});
+    return new MFStringObject(new java.lang.String[] {"pc_bubbles.fs","http://coderextreme.net/X3DJSONLD/pc.fs"});
   }
 }
 }

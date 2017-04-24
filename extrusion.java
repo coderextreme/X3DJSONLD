@@ -95,7 +95,7 @@ public class extrusion {
               .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0f,1f,0f}))))
           .addChild(new TimeSensorObject().setDEF("TourTime").setLoop(true))
           .addChild(new ScriptObject().setDEF("MoveCylinder")
-            .addField(new fieldObject().setName("cycle").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setType(fieldObject.TYPE_SFTIME))
+            .addField(new fieldObject().setName("set_cycle").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setType(fieldObject.TYPE_SFTIME))
             .addField(new fieldObject().setName("spine").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_MFVEC3F).setValue("-50 -50 0 50 50 0"))
             .setSourceCode("ecmascript:\n"+
 "\n"+
@@ -109,8 +109,8 @@ public class extrusion {
 "                    spine = value;\n"+
 "                }\n"+
 ""))
-          .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("cycleTime").setToNode("MoveCylinder").setToField("cycle"))
-          .addChild(new ROUTEObject().setFromNode("MoveCylinder").setFromField("spine").setToNode("extrusion").setToField("spine"))))      ;
+          .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("cycleTime").setToNode("MoveCylinder").setToField("set_cycle"))
+          .addChild(new ROUTEObject().setFromNode("MoveCylinder").setFromField("spine").setToNode("extrusion").setToField("set_spine"))))      ;
     }
 protected class MFVec3f0 {
   protected MFVec3fObject getArray() {

@@ -97,12 +97,12 @@ public class text {
     }
 protected class MFString0 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"Node\\\"\\\"\\\""});
+    return new MFStringObject(new java.lang.String[] {"Node\\\"\\\"\\\""});
   }
 }
 protected class MFString1 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"MIDDLE","MIDDLE"});
+    return new MFStringObject(new java.lang.String[] {"MIDDLE","MIDDLE"});
   }
 }
 }

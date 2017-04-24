@@ -127,7 +127,7 @@ public class ObliqueStrategies {
           .addComments(new CommentsBlock("initialize() method includes unit test to printAllStrategies() to console"))
           .addComments(new CommentsBlock("TODO insert field definitions here (index string_changed previous next random) and then animate!"))
           .addField(new fieldObject().setName("index").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setAppinfo("index for active strategy card, -1 means no selection").setType(fieldObject.TYPE_SFINT32).setValue("0"))
-          .addField(new fieldObject().setName("string").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setAppinfo("latest strategy card value").setType(fieldObject.TYPE_MFSTRING))
+          .addField(new fieldObject().setName("string_changed").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setAppinfo("latest strategy card value").setType(fieldObject.TYPE_MFSTRING))
           .addField(new fieldObject().setName("textToSpeechUrl").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setAppinfo("url to invoke Google Translate").setType(fieldObject.TYPE_MFSTRING))
           .addField(new fieldObject().setName("newCardTime").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setAppinfo("activate Sound node").setType(fieldObject.TYPE_SFTIME))
           .addField(new fieldObject().setName("selectPreviousCard").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setType(fieldObject.TYPE_SFBOOL))
@@ -140,7 +140,7 @@ public class ObliqueStrategies {
               .setFontStyle(new FontStyleObject().setFamily(new MFStringObject(new MFString7().getArray())).setJustify(new MFStringObject(new MFString8().getArray())).setStyle("BOLD")))
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject().setDiffuseColor(new float[] {1f,1f,1f}))))
-          .addChild(new ROUTEObject().setFromField("string").setFromNode("TextScript").setToField("string").setToNode("CardText"))
+          .addChild(new ROUTEObject().setFromField("string_changed").setFromNode("TextScript").setToField("string").setToNode("CardText"))
           .addChild(new SoundObject().setDEF("CardSoundSpatialization").setMaxBack(100f).setMaxFront(100f).setMinBack(20f).setMinFront(20f)
             .addComments(new CommentsBlock("Make sure the sound source AudioClip is audible at the user location"))
             .addComments(new CommentsBlock("Not all X3D players seem to use the .mp3"))
@@ -199,17 +199,17 @@ protected class MFColor0 {
 }
 protected class MFString1 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"Oblique Strategies","","(Over One Hundred Worthwhile Dilemmas)","","by Brian Eno and Peter Schmidt"});
+    return new MFStringObject(new java.lang.String[] {"Oblique Strategies","","(Over One Hundred Worthwhile Dilemmas)","","by Brian Eno and Peter Schmidt"});
   }
 }
 protected class MFString2 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"SANS"});
+    return new MFStringObject(new java.lang.String[] {"SANS"});
   }
 }
 protected class MFString3 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"MIDDLE","MIDDLE"});
+    return new MFStringObject(new java.lang.String[] {"MIDDLE","MIDDLE"});
   }
 }
 protected class MFInt324 {
@@ -224,27 +224,27 @@ protected class MFVec3f5 {
 }
 protected class MFString6 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"./ObliqueStrategiesScript.js"});
+    return new MFStringObject(new java.lang.String[] {"./ObliqueStrategiesScript.js"});
   }
 }
 protected class MFString7 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"SANS"});
+    return new MFStringObject(new java.lang.String[] {"SANS"});
   }
 }
 protected class MFString8 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"MIDDLE","MIDDLE"});
+    return new MFStringObject(new java.lang.String[] {"MIDDLE","MIDDLE"});
   }
 }
 protected class MFString9 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"http://translate.google.com/translate_tts?tl=en&amp;q=Feed%20the%20recording%20back%20out%20of%20the%20medium","translate_tts_mp3FileFormatNotSupported.wav"});
+    return new MFStringObject(new java.lang.String[] {"http://translate.google.com/translate_tts?tl=en&amp;q=Feed%20the%20recording%20back%20out%20of%20the%20medium","translate_tts_mp3FileFormatNotSupported.wav"});
   }
 }
 protected class MFString10 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"previous"});
+    return new MFStringObject(new java.lang.String[] {"previous"});
   }
 }
 protected class MFInt3211 {
@@ -259,27 +259,27 @@ protected class MFVec3f12 {
 }
 protected class MFString13 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"next"});
+    return new MFStringObject(new java.lang.String[] {"next"});
   }
 }
 protected class MFString14 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"random"});
+    return new MFStringObject(new java.lang.String[] {"random"});
   }
 }
 protected class MFString15 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"target=_blank"});
+    return new MFStringObject(new java.lang.String[] {"target=_blank"});
   }
 }
 protected class MFString16 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"http://translate.google.com/translate_tts?tl=en&amp;q=Overtly%20resist%20change"});
+    return new MFStringObject(new java.lang.String[] {"http://translate.google.com/translate_tts?tl=en&amp;q=Overtly%20resist%20change"});
   }
 }
 protected class MFString17 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"speech"});
+    return new MFStringObject(new java.lang.String[] {"speech"});
   }
 }
 }
