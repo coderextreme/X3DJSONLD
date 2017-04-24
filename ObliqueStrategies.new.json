@@ -232,7 +232,7 @@
                   "@value":0
                 },
                 {
-                  "@name":"string",
+                  "@name":"string_changed",
                   "@accessType":"outputOnly",
                   "@appinfo":"latest strategy card value",
                   "@type":"MFString"
@@ -319,7 +319,7 @@
                 },
                 { "ROUTE":
                   {
-                    "@fromField":"string",
+                    "@fromField":"string_changed",
                     "@fromNode":"TextScript",
                     "@toField":"string",
                     "@toNode":"CardText"

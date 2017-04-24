@@ -163,7 +163,7 @@ public class ArchPrototype {
                 .addConnect(new connectObject().setNodeField("lintel").setProtoField("lintel"))))
             .addChild(new ROUTEObject().setFromField("computedScale").setFromNode("ArchPrototypeScript").setToField("scale").setToNode("ArchTransform"))
             .addChild(new ROUTEObject().setFromField("pointOut").setFromNode("ArchPrototypeScript").setToField("point").setToNode("ArchChord"))
-            .addChild(new ROUTEObject().setFromField("indexOut").setFromNode("ArchPrototypeScript").setToField("coordIndex").setToNode("ArchIndex"))))
+            .addChild(new ROUTEObject().setFromField("indexOut").setFromNode("ArchPrototypeScript").setToField("set_coordIndex").setToNode("ArchIndex"))))
         .addChild(new ProtoInstanceObject().setName("ArchPrototype").setDEF("ArchInstance")
           .addFieldValue(new fieldValueObject().setName("diffuseColor").setValue("0.5 0.3 0.6"))
           .addFieldValue(new fieldValueObject().setName("emissiveColor").setValue("0.5 0.3 0.6"))
@@ -178,12 +178,12 @@ public class ArchPrototype {
     }
 protected class MFString0 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"./ArchPrototypeScript.js"});
+    return new MFStringObject(new java.lang.String[] {"./ArchPrototypeScript.js"});
   }
 }
 protected class MFString1 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"CoordinateAxes.x3d"});
+    return new MFStringObject(new java.lang.String[] {"CoordinateAxes.x3d"});
   }
 }
 }

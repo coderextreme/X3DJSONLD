@@ -32,39 +32,21 @@
                     <ImageTexture DEF="rightShader" containerField="right" url='"cubemap/all_probes/beach_cross/beach_right.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_right.png"' ></ImageTexture>
                     <ImageTexture DEF="topShader" containerField="top" url='"cubemap/all_probes/beach_cross/beach_top.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_top.png"' ></ImageTexture>
                 </ComposedCubeMapTexture>
-		<!--
-		<ComposedShader DEF='x3dom' language="GLSL">
-                  <field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field>
-
-                  <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1.0 1.033'></field>
-                  <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field>
-                  <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field>
-                  <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field>
-                  <field name='a' type='SFFloat' accessType='inputOutput' value='10'></field>
-                  <field name='b' type='SFFloat' accessType='inputOutput' value='1'></field>
-                  <field name='c' type='SFFloat' accessType='inputOutput' value='20'></field>
-                  <field name='d' type='SFFloat' accessType='inputOutput' value='20'></field>
-                  <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
-                  <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
-                  <ShaderPart url='"x3dom_sphere.vs" "http://coderextreme.net/X3DJSONLD/x3dom_sphere.vs"' containerField='parts' type='VERTEX'></ShaderPart>
-		  <ShaderPart url='"sphere.fs" "http://coderextreme.net/X3DJSONLD/sphere.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
-                </ComposedShader>
-		-->
 		<ComposedShader DEF='cobweb' language="GLSL">
-                  <field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field>
+                  <field name='set_cube' type='SFInt32' accessType='inputOnly' value='0'></field>
 
-                  <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1.0 1.033'></field>
-                  <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field>
-                  <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field>
-                  <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field>
-                  <field name='a' type='SFFloat' accessType='inputOutput' value='10'></field>
-                  <field name='b' type='SFFloat' accessType='inputOutput' value='1'></field>
-                  <field name='c' type='SFFloat' accessType='inputOutput' value='20'></field>
-                  <field name='d' type='SFFloat' accessType='inputOutput' value='20'></field>
-                  <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
-                  <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
-                  <ShaderPart url='"cobweb_flowers_chromatic.vs" "http://coderextreme.net/X3DJSONLD/cobweb_flowers_chromatic.vs"' containerField='parts' type='VERTEX'></ShaderPart>
-		  <ShaderPart url='"pc_flowers.fs" "http://coderextreme.net/X3DJSONLD/pc_flowers.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
+                  <field name='set_chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field>
+                  <field name='set_bias' type='SFFloat' accessType='inputOnly' value='0.5'></field>
+                  <field name='set_scale' type='SFFloat' accessType='inputOnly' value='0.5'></field>
+                  <field name='set_power' type='SFFloat' accessType='inputOnly' value='2'></field>
+                  <field name='set_a' type='SFFloat' accessType='inputOnly' value='10'></field>
+                  <field name='set_b' type='SFFloat' accessType='inputOnly' value='1'></field>
+                  <field name='set_c' type='SFFloat' accessType='inputOnly' value='20'></field>
+                  <field name='set_d' type='SFFloat' accessType='inputOnly' value='20'></field>
+                  <field name='set_tdelta' type='SFFloat' accessType='inputOnly' value='0'></field>
+                  <field name='set_pdelta' type='SFFloat' accessType='inputOnly' value='0'></field>
+                  <ShaderPart url='"cobweb_flowers_input.vs" "http://coderextreme.net/X3DJSONLD/cobweb_flowers_input.vs"' containerField='parts' type='VERTEX'></ShaderPart>
+		  <ShaderPart url='"pc_input_flowers.fs" "http://coderextreme.net/X3DJSONLD/pc_input_flowers.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
                 </ComposedShader>
 		</Appearance>
 		<Sphere solid="false" radius='20'></Sphere>
@@ -119,12 +101,13 @@ ecmascript:
             <ROUTE fromNode='UrlSelector' fromField='top_changed' toNode='topShader' toField='url'/>
             <ROUTE fromNode='UrlSelector' fromField='bottom_changed' toNode='bottomShader' toField='url'/>
           <Script DEF='Animate' directOutput='true'>
-                  <field name='a' type='SFFloat' accessType='inputOutput' value='10'></field>
-                  <field name='b' type='SFFloat' accessType='inputOutput' value='1'></field>
-                  <field name='c' type='SFFloat' accessType='inputOutput' value='20'></field>
-                  <field name='d' type='SFFloat' accessType='inputOutput' value='20'></field>
-                  <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
-                  <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
+                  <field name='set_fraction' type='SFFloat' accessType='inputOnly'></field>
+                  <field name='a' type='SFFloat' accessType='outputOnly' value='10'></field>
+                  <field name='b' type='SFFloat' accessType='outputOnly' value='1'></field>
+                  <field name='c' type='SFFloat' accessType='outputOnly' value='20'></field>
+                  <field name='d' type='SFFloat' accessType='outputOnly' value='20'></field>
+                  <field name='tdelta' type='SFFloat' accessType='outputOnly' value='0'></field>
+                  <field name='pdelta' type='SFFloat' accessType='outputOnly' value='0'></field>
 <![CDATA[
 ecmascript:
 
@@ -163,18 +146,11 @@ function set_fraction() {
 }
 ]]>
 </Script>
-            <ROUTE fromNode='Clock' fromField='fraction_changed' toNode='Animate' toField='set_fraction'/>
-            <ROUTE fromNode='Animate' fromField='a' toNode='x3dom' toField='a'/>
-            <ROUTE fromNode='Animate' fromField='b' toNode='x3dom' toField='b'/>
-            <ROUTE fromNode='Animate' fromField='c' toNode='x3dom' toField='c'/>
-            <ROUTE fromNode='Animate' fromField='d' toNode='x3dom' toField='d'/>
-            <ROUTE fromNode='Animate' fromField='pdelta' toNode='x3dom' toField='pdelta'/>
-            <ROUTE fromNode='Animate' fromField='tdelta' toNode='x3dom' toField='tdelta'/>
-            <ROUTE fromNode='Animate' fromField='a' toNode='cobweb' toField='a'/>
-            <ROUTE fromNode='Animate' fromField='b' toNode='cobweb' toField='b'/>
-            <ROUTE fromNode='Animate' fromField='c' toNode='cobweb' toField='c'/>
-            <ROUTE fromNode='Animate' fromField='d' toNode='cobweb' toField='d'/>
-            <ROUTE fromNode='Animate' fromField='pdelta' toNode='cobweb' toField='pdelta'/>
-            <ROUTE fromNode='Animate' fromField='tdelta' toNode='cobweb' toField='tdelta'/>
+            <ROUTE fromNode='Animate' fromField='a_changed' toNode='cobweb' toField='set_a'/>
+            <ROUTE fromNode='Animate' fromField='b_changed' toNode='cobweb' toField='set_b'/>
+            <ROUTE fromNode='Animate' fromField='c_changed' toNode='cobweb' toField='set_c'/>
+            <ROUTE fromNode='Animate' fromField='d_changed' toNode='cobweb' toField='set_d'/>
+            <ROUTE fromNode='Animate' fromField='pdelta_changed' toNode='cobweb' toField='set_pdelta'/>
+            <ROUTE fromNode='Animate' fromField='tdelta_changed' toNode='cobweb' toField='set_tdelta'/>
     </Scene>   
 </X3D>

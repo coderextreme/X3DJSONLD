@@ -106,10 +106,10 @@ public class flowers2 {
                 .setMaterial(new MaterialObject().setDiffuseColor(new float[] {1f,0.5f,0f}).setSpecularColor(new float[] {1f,0.5f,0f}).setTransparency(0.75f)))
               .setGeometry(new IndexedFaceSetObject().setDEF("Orbit2").setCreaseAngle(1.57f)
                 .setCoord(new CoordinateObject().setDEF("OrbitCoordinates2")))))
-          .addChild(new TimeSensorObject().setDEF("Clock").setCycleInterval(16).setLoop(true))
+          .addChild(new TimeSensorObject().setDEF("Clock").setCycleInterval(16d).setLoop(true))
           .addChild(new OrientationInterpolatorObject().setDEF("OrbitPath").setKey(new MFFloatObject(new MFFloat0().getArray())).setKeyValue(new MFRotationObject(new MFRotation1().getArray())))
           .addChild(new ScriptObject().setDEF("OrbitScript")
-            .addField(new fieldObject().setName("fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setType(fieldObject.TYPE_SFFLOAT))
+            .addField(new fieldObject().setName("set_fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setType(fieldObject.TYPE_SFFLOAT))
             .addField(new fieldObject().setName("coordinates").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setType(fieldObject.TYPE_MFVEC3F))
             .addField(new fieldObject().setName("coordIndexes").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setType(fieldObject.TYPE_MFINT32))
             .setSourceCode("ecmascript:\n"+
@@ -186,7 +186,7 @@ public class flowers2 {
 "}\n"+
 ""))
           .addChild(new ScriptObject().setDEF("OrbitScript2")
-            .addField(new fieldObject().setName("fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setType(fieldObject.TYPE_SFFLOAT))
+            .addField(new fieldObject().setName("set_fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setType(fieldObject.TYPE_SFFLOAT))
             .addField(new fieldObject().setName("coordinates").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setType(fieldObject.TYPE_MFVEC3F))
             .addField(new fieldObject().setName("coordIndexes").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setType(fieldObject.TYPE_MFINT32))
             .setSourceCode("ecmascript:\n"+
@@ -262,15 +262,15 @@ public class flowers2 {
 "	generateCoordinates(resolution);\n"+
 "}\n"+
 "")))
-        .addChild(new ROUTEObject().setFromField("coordIndexes").setFromNode("OrbitScript").setToField("coordIndex").setToNode("Orbit"))
-        .addChild(new ROUTEObject().setFromField("coordinates").setFromNode("OrbitScript").setToField("point").setToNode("OrbitCoordinates"))
-        .addChild(new ROUTEObject().setFromField("coordIndexes").setFromNode("OrbitScript2").setToField("coordIndex").setToNode("Orbit2"))
-        .addChild(new ROUTEObject().setFromField("coordinates").setFromNode("OrbitScript2").setToField("point").setToNode("OrbitCoordinates2"))
-        .addChild(new ROUTEObject().setFromField("fraction").setFromNode("Clock").setToField("fraction").setToNode("OrbitScript"))
-        .addChild(new ROUTEObject().setFromField("fraction").setFromNode("Clock").setToField("fraction").setToNode("OrbitScript2"))
-        .addChild(new ROUTEObject().setFromField("fraction").setFromNode("Clock").setToField("fraction").setToNode("OrbitPath"))
-        .addChild(new ROUTEObject().setFromField("value").setFromNode("OrbitPath").setToField("rotation").setToNode("OrbitTransform"))
-        .addChild(new ROUTEObject().setFromField("value").setFromNode("OrbitPath").setToField("rotation").setToNode("OrbitTransform2")))      ;
+        .addChild(new ROUTEObject().setFromField("coordIndexes").setFromNode("OrbitScript").setToField("set_coordIndex").setToNode("Orbit"))
+        .addChild(new ROUTEObject().setFromField("coordinates").setFromNode("OrbitScript").setToField("set_point").setToNode("OrbitCoordinates"))
+        .addChild(new ROUTEObject().setFromField("coordIndexes").setFromNode("OrbitScript2").setToField("set_coordIndex").setToNode("Orbit2"))
+        .addChild(new ROUTEObject().setFromField("coordinates").setFromNode("OrbitScript2").setToField("set_point").setToNode("OrbitCoordinates2"))
+        .addChild(new ROUTEObject().setFromField("fraction_changed").setFromNode("Clock").setToField("set_fraction").setToNode("OrbitScript"))
+        .addChild(new ROUTEObject().setFromField("fraction_changed").setFromNode("Clock").setToField("set_fraction").setToNode("OrbitScript2"))
+        .addChild(new ROUTEObject().setFromField("fraction_changed").setFromNode("Clock").setToField("set_fraction").setToNode("OrbitPath"))
+        .addChild(new ROUTEObject().setFromField("value_changed").setFromNode("OrbitPath").setToField("set_rotation").setToNode("OrbitTransform"))
+        .addChild(new ROUTEObject().setFromField("value_changed").setFromNode("OrbitPath").setToField("set_rotation").setToNode("OrbitTransform2")))      ;
     }
 protected class MFFloat0 {
   protected MFFloatObject getArray() {

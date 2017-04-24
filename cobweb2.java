@@ -104,7 +104,7 @@ public class cobweb2 {
                 .addField(new fieldObject().setName("translation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFVEC3F).setValue("0 0 0"))
                 .addField(new fieldObject().setName("velocity").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFVEC3F).setValue("0 0 0"))
                 .addField(new fieldObject().setName("scalvel").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFVEC3F).setValue("0 0 0"))
-                .addField(new fieldObject().setName("fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setType(fieldObject.TYPE_SFFLOAT))
+                .addField(new fieldObject().setName("set_fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setType(fieldObject.TYPE_SFFLOAT))
                 .setSourceCode("ecmascript:\n"+
 "function initialize() {\n"+
 "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\n"+
@@ -139,13 +139,13 @@ public class cobweb2 {
 "    }\n"+
 "    translation = new SFVec3f(	translation[0] + velocity[0], translation[1] + velocity[1], translation[2] + velocity[2]);\n"+
 "    scale = new SFVec3f(scale[0] + scalvel[0], scale[1] + scalvel[1], scale[2] + scalvel[2]);\n"+
-"    for (var j = 0; j &lt; 3; j++) {\n"+
+"    for (var j = 0; j < 3; j++) {\n"+
 "	    // if you get to far away or too big, explode\n"+
-"	    if ( Math.abs(translation[j]) &gt; 256) {\n"+
+"	    if ( Math.abs(translation[j]) > 256) {\n"+
 "		translation[j] = 0;\n"+
 "		initialize();\n"+
 "	    }\n"+
-"	    if (Math.abs(scale[j]) &gt; 20) {\n"+
+"	    if (Math.abs(scale[j]) > 20) {\n"+
 "		scale[j] = scale[j]/2;\n"+
 "		translation[j] = 0;\n"+
 "		initialize();\n"+
@@ -153,12 +153,12 @@ public class cobweb2 {
 "    }\n"+
 "}\n"+
 ""))
-              .addChild(new TimeSensorObject().setDEF("bubbleClock").setCycleInterval(10).setLoop(true))
-              .addChild(new ROUTEObject().setFromNode("transform").setFromField("translation").setToNode("bounce").setToField("translation"))
-              .addChild(new ROUTEObject().setFromNode("transform").setFromField("scale").setToNode("bounce").setToField("scale"))
-              .addChild(new ROUTEObject().setFromNode("bounce").setFromField("translation").setToNode("transform").setToField("translation"))
-              .addChild(new ROUTEObject().setFromNode("bounce").setFromField("scale").setToNode("transform").setToField("scale"))
-              .addChild(new ROUTEObject().setFromNode("bubbleClock").setFromField("fraction").setToNode("bounce").setToField("fraction")))))
+              .addChild(new TimeSensorObject().setDEF("bubbleClock").setCycleInterval(10d).setLoop(true))
+              .addChild(new ROUTEObject().setFromNode("transform").setFromField("translation_changed").setToNode("bounce").setToField("set_translation"))
+              .addChild(new ROUTEObject().setFromNode("transform").setFromField("scale_changed").setToNode("bounce").setToField("set_scale"))
+              .addChild(new ROUTEObject().setFromNode("bounce").setFromField("translation_changed").setToNode("transform").setToField("set_translation"))
+              .addChild(new ROUTEObject().setFromNode("bounce").setFromField("scale_changed").setToNode("transform").setToField("set_scale"))
+              .addChild(new ROUTEObject().setFromNode("bubbleClock").setFromField("fraction_changed").setToNode("bounce").setToField("set_fraction")))))
         .addChild(new ProtoInstanceObject().setName("Bubble").setDEF("bubbleA"))
         .addChild(new ProtoInstanceObject().setName("Bubble").setDEF("bubbleB"))
         .addChild(new ProtoInstanceObject().setName("Bubble").setDEF("bubbleC"))
@@ -166,37 +166,37 @@ public class cobweb2 {
     }
 protected class MFString0 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"EXAMINE"});
+    return new MFStringObject(new java.lang.String[] {"EXAMINE"});
   }
 }
 protected class MFString1 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"cubemap/BK.png","http://coderextreme.net/X3DJSONLD/cubemap/BK.png"});
+    return new MFStringObject(new java.lang.String[] {"cubemap/BK.png","http://coderextreme.net/X3DJSONLD/cubemap/BK.png"});
   }
 }
 protected class MFString2 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"cubemap/BT.png","http://coderextreme.net/X3DJSONLD/cubemap/BT.png"});
+    return new MFStringObject(new java.lang.String[] {"cubemap/BT.png","http://coderextreme.net/X3DJSONLD/cubemap/BT.png"});
   }
 }
 protected class MFString3 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"cubemap/FR.png","http://coderextreme.net/X3DJSONLD/cubemap/FR.png"});
+    return new MFStringObject(new java.lang.String[] {"cubemap/FR.png","http://coderextreme.net/X3DJSONLD/cubemap/FR.png"});
   }
 }
 protected class MFString4 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"cubemap/LF.png","http://coderextreme.net/X3DJSONLD/cubemap/LF.png"});
+    return new MFStringObject(new java.lang.String[] {"cubemap/LF.png","http://coderextreme.net/X3DJSONLD/cubemap/LF.png"});
   }
 }
 protected class MFString5 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"cubemap/RT.png","http://coderextreme.net/X3DJSONLD/cubemap/RT.png"});
+    return new MFStringObject(new java.lang.String[] {"cubemap/RT.png","http://coderextreme.net/X3DJSONLD/cubemap/RT.png"});
   }
 }
 protected class MFString6 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"cubemap/TP.png","http://coderextreme.net/X3DJSONLD/cubemap/TP.png"});
+    return new MFStringObject(new java.lang.String[] {"cubemap/TP.png","http://coderextreme.net/X3DJSONLD/cubemap/TP.png"});
   }
 }
 }

@@ -89,7 +89,7 @@
                     "@fromNode":"PS1",
                     "@fromField":"translation_changed",
                     "@toNode":"G1",
-                    "@toField":"translation"
+                    "@toField":"set_translation"
                   }
                 }
               ]
@@ -132,7 +132,7 @@
                     "@fromNode":"PS2",
                     "@fromField":"translation_changed",
                     "@toNode":"G2",
-                    "@toField":"translation"
+                    "@toField":"set_translation"
                   }
                 }
               ]
@@ -175,7 +175,7 @@
                     "@fromNode":"PS3",
                     "@fromField":"translation_changed",
                     "@toNode":"G3",
-                    "@toField":"translation"
+                    "@toField":"set_translation"
                   }
                 }
               ]
@@ -218,7 +218,7 @@
                     "@fromNode":"PS4",
                     "@fromField":"translation_changed",
                     "@toNode":"G4",
-                    "@toField":"translation"
+                    "@toField":"set_translation"
                   }
                 }
               ]
@@ -546,7 +546,7 @@
           { "ROUTE":
             {
               "@fromNode":"G1",
-              "@fromField":"translation",
+              "@fromField":"translation_changed",
               "@toNode":"connector1",
               "@toField":"set_startpoint"
             }
@@ -554,7 +554,7 @@
           { "ROUTE":
             {
               "@fromNode":"G2",
-              "@fromField":"translation",
+              "@fromField":"translation_changed",
               "@toNode":"connector1",
               "@toField":"set_endpoint"
             }
@@ -562,7 +562,7 @@
           { "ROUTE":
             {
               "@fromNode":"G1",
-              "@fromField":"translation",
+              "@fromField":"translation_changed",
               "@toNode":"connector2",
               "@toField":"set_startpoint"
             }
@@ -570,7 +570,7 @@
           { "ROUTE":
             {
               "@fromNode":"G3",
-              "@fromField":"translation",
+              "@fromField":"translation_changed",
               "@toNode":"connector2",
               "@toField":"set_endpoint"
             }
@@ -578,7 +578,7 @@
           { "ROUTE":
             {
               "@fromNode":"G1",
-              "@fromField":"translation",
+              "@fromField":"translation_changed",
               "@toNode":"connector3",
               "@toField":"set_startpoint"
             }
@@ -586,7 +586,7 @@
           { "ROUTE":
             {
               "@fromNode":"G4",
-              "@fromField":"translation",
+              "@fromField":"translation_changed",
               "@toNode":"connector3",
               "@toField":"set_endpoint"
             }

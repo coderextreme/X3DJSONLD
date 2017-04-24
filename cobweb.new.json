@@ -124,7 +124,7 @@
                                   "@value":[0,0,0]
                                 },
                                 {
-                                  "@name":"fraction",
+                                  "@name":"set_fraction",
                                   "@accessType":"inputOnly",
                                   "@type":"SFFloat"
                                 }
@@ -177,25 +177,25 @@
                           },
                           { "ROUTE":
                             {
-                              "@fromField":"translation",
+                              "@fromField":"translation_changed",
                               "@fromNode":"bounce",
-                              "@toField":"translation",
+                              "@toField":"set_translation",
                               "@toNode":"transform"
                             }
                           },
                           { "ROUTE":
                             {
-                              "@fromField":"scale",
+                              "@fromField":"scale_changed",
                               "@fromNode":"bounce",
-                              "@toField":"scale",
+                              "@toField":"set_scale",
                               "@toNode":"transform"
                             }
                           },
                           { "ROUTE":
                             {
-                              "@fromField":"fraction",
+                              "@fromField":"fraction_changed",
                               "@fromNode":"bubbleClock",
-                              "@toField":"fraction",
+                              "@toField":"set_fraction",
                               "@toNode":"bounce"
                             }
                           }

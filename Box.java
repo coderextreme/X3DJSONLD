@@ -136,7 +136,7 @@ public class Box {
     }
 protected class MFString0 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new String[] {"EXAMINE"});
+    return new MFStringObject(new java.lang.String[] {"EXAMINE"});
   }
 }
 }
