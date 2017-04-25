@@ -1874,7 +1874,7 @@ POSSIBILITY OF SUCH DAMAGE.
 					</xsl:when>
 					<xsl:when test="($attributeType = 'SFFloat')">
 						<xsl:value-of select="."/>
-						<xsl:text>f</xsl:text>
+						<xsl:text></xsl:text>
 					</xsl:when>
 					<xsl:when test="($attributeType = 'SFInt32') or ($attributeType = 'SFDouble') or ($attributeType = 'SFTime')">
 						<xsl:value-of select="."/>
@@ -2264,7 +2264,7 @@ POSSIBILITY OF SUCH DAMAGE.
 				<xsl:if test="not(contains($arrayString,'.')) and not(contains($arrayString,'E')) and not(contains($arrayString,'e'))">
 					<xsl:text>.0</xsl:text> <!-- necessary to append decimal point to integer value -->
 				</xsl:if>
-                <xsl:text>f</xsl:text><!-- indicate that this number is a float; added after exponential form also -->
+                <xsl:text></xsl:text><!-- indicate that this number is a float; added after exponential form also -->
             </xsl:when>
             <xsl:when test="contains($arrayString,',')">
 				<xsl:variable name="firstNumber">
@@ -2274,7 +2274,7 @@ POSSIBILITY OF SUCH DAMAGE.
 				<xsl:if test="not(contains($firstNumber,'.')) and not(contains($arrayString,'E')) and not(contains($arrayString,'e'))">
 					<xsl:text>.0</xsl:text> <!-- necessary to append decimal point to integer value -->
 				</xsl:if>
-                <xsl:text>f</xsl:text><!-- indicate that this number is a float -->
+                <xsl:text></xsl:text><!-- indicate that this number is a float -->
                 <xsl:text>,</xsl:text>
                 <xsl:call-template name="java-float-numbers"> <!-- tail recursion -->
                     <xsl:with-param name="inputString" select="substring-after($arrayString,',')"/>
@@ -2301,7 +2301,7 @@ POSSIBILITY OF SUCH DAMAGE.
 				<xsl:value-of select="$arrayString"/>
 				<xsl:if test="not(contains($arrayString,'.')) and not(contains($arrayString,'E')) and not(contains($arrayString,'e'))">
 					<xsl:text>.0</xsl:text> <!-- necessary to append decimal point to integer value -->
-					<!-- <xsl:text>d</xsl:text>no need to append d to indicate that this number is a double -->
+					<!-- <xsl:text></xsl:text>no need to append d to indicate that this number is a double -->
 				</xsl:if>
             </xsl:when>
             <xsl:when test="contains($arrayString,',')">
@@ -2312,7 +2312,7 @@ POSSIBILITY OF SUCH DAMAGE.
 				<xsl:if test="not(contains($firstNumber,'.')) and not(contains($arrayString,'E')) and not(contains($arrayString,'e'))">
 					<xsl:text>.0</xsl:text> <!-- necessary to append decimal point to integer value -->
 				</xsl:if>
-                <!-- <xsl:text>d</xsl:text>no need to append d to indicate that this number is a double -->
+                <!-- <xsl:text></xsl:text>no need to append d to indicate that this number is a double -->
                 <xsl:text>,</xsl:text>
                 <xsl:call-template name="java-double-numbers"> <!-- tail recursion -->
                     <xsl:with-param name="inputString" select="substring-after($arrayString,',')"/>
