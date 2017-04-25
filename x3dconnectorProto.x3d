@@ -17,7 +17,7 @@
 			<Sphere radius='.1'/>
 		</Shape>
 		<PlaneSensor description="Grab to move" DEF='PS1'/>
-		<ROUTE fromNode='PS1' fromField='translation_changed' toNode='G1' toField='translation' />
+		<ROUTE fromNode='PS1' fromField='translation_changed' toNode='G1' toField='set_translation' />
 	</Transform>              
         
 	<Transform DEF='G2' translation='1 -1 .01'>
@@ -26,7 +26,7 @@
 			<Sphere radius='.1'/>
 		</Shape>
 		<PlaneSensor description="Grab to move" DEF='PS2'/>
-		<ROUTE fromNode='PS2' fromField='translation_changed' toNode='G2' toField='translation' />
+		<ROUTE fromNode='PS2' fromField='translation_changed' toNode='G2' toField='set_translation' />
 	</Transform>
 	<Transform DEF='G3' translation='1 1 .01'>
 		<Shape>
@@ -34,7 +34,7 @@
 			<Sphere radius='.1'/>
 		</Shape>
 		<PlaneSensor description="Grab to move" DEF='PS3'/>
-		<ROUTE fromNode='PS3' fromField='translation_changed' toNode='G3' toField='translation' />
+		<ROUTE fromNode='PS3' fromField='translation_changed' toNode='G3' toField='set_translation' />
 	</Transform>
 	<Transform DEF='G4' translation='-1 1 .01'>
 		<Shape>
@@ -42,7 +42,7 @@
 			<Sphere radius='.1'/>
 		</Shape>
 		<PlaneSensor description="Grab to move" DEF='PS4'/>
-		<ROUTE fromNode='PS4' fromField='translation_changed' toNode='G4' toField='translation' />
+		<ROUTE fromNode='PS4' fromField='translation_changed' toNode='G4' toField='set_translation' />
 	</Transform>
 	<Transform DEF='C1' >
 		<Shape>
@@ -144,11 +144,11 @@
             <Transform USE='C3'/>
         </fieldValue>
     </ProtoInstance>
-    <ROUTE fromNode='G1' fromField='translation' toNode='connector1' toField='set_startpoint'/>
-    <ROUTE fromNode='G2' fromField='translation' toNode='connector1' toField='set_endpoint'/>
-    <ROUTE fromNode='G1' fromField='translation' toNode='connector2' toField='set_startpoint'/>
-    <ROUTE fromNode='G3' fromField='translation' toNode='connector2' toField='set_endpoint'/>
-    <ROUTE fromNode='G1' fromField='translation' toNode='connector3' toField='set_startpoint'/>
-    <ROUTE fromNode='G4' fromField='translation' toNode='connector3' toField='set_endpoint'/>
+    <ROUTE fromNode='G1' fromField='translation_changed' toNode='connector1' toField='set_startpoint'/>
+    <ROUTE fromNode='G2' fromField='translation_changed' toNode='connector1' toField='set_endpoint'/>
+    <ROUTE fromNode='G1' fromField='translation_changed' toNode='connector2' toField='set_startpoint'/>
+    <ROUTE fromNode='G3' fromField='translation_changed' toNode='connector2' toField='set_endpoint'/>
+    <ROUTE fromNode='G1' fromField='translation_changed' toNode='connector3' toField='set_startpoint'/>
+    <ROUTE fromNode='G4' fromField='translation_changed' toNode='connector3' toField='set_endpoint'/>
 </Scene>
 </X3D>

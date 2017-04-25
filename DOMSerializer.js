@@ -1,7 +1,9 @@
 "use strict";
 
-var xmldom = require('xmldom');
-var XMLSerializer = new xmldom.XMLSerializer();
+if (typeof require === 'function') {
+	var xmldom = require('xmldom');
+	var XMLSerializer = new xmldom.XMLSerializer();
+}
 
 function fixXML(xmlstr) {
 	let original = xmlstr;
