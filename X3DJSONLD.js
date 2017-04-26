@@ -27,6 +27,7 @@ if (typeof Browser === 'undefined') {
 
 function processURLs(localArray, path) {
 	var url;
+/*
 	// No longer need to split
 	for (url in localArray) {
 		if (localArray[url].indexOf("http://") === 0
@@ -59,12 +60,14 @@ function processURLs(localArray, path) {
 			hash = localArray[url].substring(h);
 			localArray[url] = localArray[url].substring(0, h);
 		}
+*/
 /*
 		var x3d = localArray[url].lastIndexOf(".x3d") ;
 		if (x3d === localArray[url].length - 4) {
 			localArray[url] = localArray[url].substring(0, x3d)+".json" + hash;
 		}
 */
+/*
 		var wrl = localArray[url].lastIndexOf(".wrl") ;
 		if (wrl === localArray[url].length - 4) {
 			localArray[url] = localArray[url].substring(0, wrl)+".json" + hash;
@@ -75,6 +78,7 @@ function processURLs(localArray, path) {
 		}
 			
         }
+*/
 	// console.error("Processed URLs", localArray.join(" "));
 	return localArray;
 }
@@ -253,6 +257,7 @@ function ConvertObject(key, object, element, path, containerField) {
 				var child = document.createComment(CommentStringToXML(object[key][c]));
 				element.appendChild(child);
 			}
+			/*
 		} else if (key === 'Inline') {
 			var localArray = object[key]["@url"];
 			// console.error("Loading", localArray, "into", key);
@@ -273,6 +278,7 @@ function ConvertObject(key, object, element, path, containerField) {
 					element.appendChild(document.createTextNode("\n"));
 				}
 			});
+			*/
 		} else if (key === '#sourceText') {
 			CDATACreateFunction(document, element, object[key].join("\r\n")+"\r\n");
 		} else {
@@ -421,7 +427,7 @@ function fixXML(xmlstr) {
 	xmlstr = xmlstr.replace(/[\u0080-\uFFFF]/g, 
 		function (v) {return '&#'+v.charCodeAt()+';';}
 	);
-	xmlstr = xmlstr.replace(/(\\+)&quot;/g, '\\&quot;');
+	xmlstr = xmlstr.replace(/ (\\+)&quot; /g, ' \\&quot; ');
 	do {
 		var xmlstr2 = xmlstr;
 		xmlstr = xmlstr2.replace(/(<!\[CDATA\[(.|\n)*)&lt;((.|\n)*\]\]>)/gi, "$1<$3");
