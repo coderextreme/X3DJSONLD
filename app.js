@@ -108,15 +108,15 @@ function processX3d(req, res, next) {
         next();
 }
 
+/*
 app.get("*.x3d#*", processX3d);
 app.get("*.x3d", processX3d);
+*/
 
 magic("*.vs", "text/plain");//"x-shader/x-vertex");
 magic("*.fs", "text/plain");//"x-shader/x-fragment");
 magic("*.html", "text/html");
-/*
 magic("*.x3d", "model/x3d+xml");
-*/
 magic("*.xml", "text/xml");
 magic("*.xslt", "text/xsl");
 magic("*.xhtml", "application/xhtml+xml");
