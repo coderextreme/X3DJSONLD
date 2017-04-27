@@ -392,12 +392,8 @@ function ConvertToX3DOM(object, parentkey, element, path, containerField) {
 				}
                                 if (parentkey === '@url' || parentkey.indexOf("Url") === parentkey.length - 3) {
 					// processURLs(localArray, path);
-					// console.error("Loading URL",'"'+localArray.join('" "')+'"');
-					elementSetAttribute(element, parentkey.substr(1),'"'+localArray.join('" "')+'"');
-                                } else {
-					// if string array
-					elementSetAttribute(element, parentkey.substr(1),'"'+localArray.join('" "')+'"');
 				}
+				elementSetAttribute(element, parentkey.substr(1),'"'+localArray.join('" "')+'"');
 			} else {
 				// if non string array
 				elementSetAttribute(element, parentkey.substr(1),localArray.join(" "));
@@ -424,7 +420,7 @@ function fixXML(xmlstr) {
 	xmlstr = xmlstr.replace(/[\u0080-\uFFFF]/g, 
 		function (v) {return '&#'+v.charCodeAt()+';';}
 	);
-	xmlstr = xmlstr.replace(/(\\*)&quot;/g, '&quot;');
+	xmlstr = xmlstr.replace(/(\\+)&quot;/g, '\\&quot;');
 	do {
 		var xmlstr2 = xmlstr;
 		xmlstr = xmlstr2.replace(/(<!\[CDATA\[(.|\n)*)&lt;((.|\n)*\]\]>)/gi, "$1<$3");
