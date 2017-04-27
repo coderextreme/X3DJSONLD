@@ -253,6 +253,7 @@ function ConvertObject(key, object, element, path, containerField) {
 				var child = document.createComment(CommentStringToXML(object[key][c]));
 				element.appendChild(child);
 			}
+		/*
 		} else if (key === 'Inline') {
 			var localArray = object[key]["@url"];
 			// console.error("Loading", localArray, "into", key);
@@ -273,6 +274,7 @@ function ConvertObject(key, object, element, path, containerField) {
 					element.appendChild(document.createTextNode("\n"));
 				}
 			});
+		*/
 		} else if (key === '#sourceText') {
 			CDATACreateFunction(document, element, object[key].join("\r\n")+"\r\n");
 		} else {
@@ -378,6 +380,7 @@ function ConvertToX3DOM(object, parentkey, element, path, containerField) {
 		} else if (typeof object[key] === 'undefined') {
 		} else {
 			console.error("Unknown type found in object "+typeof object[key]);
+			console.error(object);
 		}
 	}
 	if (isArray) {
@@ -388,13 +391,9 @@ function ConvertToX3DOM(object, parentkey, element, path, containerField) {
 					localArray[str] = SFStringToXML(localArray[str]);
 				}
                                 if (parentkey === '@url' || parentkey.indexOf("Url") === parentkey.length - 3) {
-					processURLs(localArray, path);
-					// console.error("Loading URL",'"'+localArray.join('" "')+'"');
-					elementSetAttribute(element, parentkey.substr(1),'"'+localArray.join('" "')+'"');
-                                } else {
-					// if string array
-					elementSetAttribute(element, parentkey.substr(1),'"'+localArray.join('" "')+'"');
+					// processURLs(localArray, path);
 				}
+				elementSetAttribute(element, parentkey.substr(1),'"'+localArray.join('" "')+'"');
 			} else {
 				// if non string array
 				elementSetAttribute(element, parentkey.substr(1),localArray.join(" "));
@@ -421,7 +420,7 @@ function fixXML(xmlstr) {
 	xmlstr = xmlstr.replace(/[\u0080-\uFFFF]/g, 
 		function (v) {return '&#'+v.charCodeAt()+';';}
 	);
-	xmlstr = xmlstr.replace(/(\\*)&quot;/g, '&quot;');
+	xmlstr = xmlstr.replace(/(\\+)&quot;/g, '\\&quot;');
 	do {
 		var xmlstr2 = xmlstr;
 		xmlstr = xmlstr2.replace(/(<!\[CDATA\[(.|\n)*)&lt;((.|\n)*\]\]>)/gi, "$1<$3");
