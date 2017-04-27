@@ -69,7 +69,10 @@ app.get("/files", function(req, res, next) {
 
 function magic(path, type) {
     app.get(path, function(req, res, next) {
-	var url = req._parsedUrl.pathname.substr(1);
+	var url = req._parsedUrl.pathname;
+	while (url.startsWith("/")) {
+		url = url.substr(1);
+	}
 	console.log(url);
 	fs.readFile(url, function(err, data) {
 		try {
