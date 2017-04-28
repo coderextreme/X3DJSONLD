@@ -1,34 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd"><Scene><Viewpoint position="0 0 5" description="Only Viewpoint"></Viewpoint>
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd"><head><meta name="title" content="x3dconnectorProto"></meta>
+<meta name="creator" content="Lost, Doug Sanden I think"></meta>
+<meta name="generator" content="manual"></meta>
+<meta name="identifier" content="http://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d"></meta>
+<meta name="description" content="a generic proto to connect two objects"></meta>
+</head>
+<Scene><Viewpoint position="0 0 5" description="Only Viewpoint"></Viewpoint>
 <Background skyColor="0.4 0.4 0.4"></Background>
 <Transform DEF="G1"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.7 0.2 0.2"></Material>
 </Appearance>
 <Sphere containerField="geometry" radius="0.1"></Sphere>
 </Shape>
 <PlaneSensor description="Grab to move" DEF="PS1"></PlaneSensor>
-<ROUTE fromNode="PS1" fromField="translation_changed" toNode="G1" toField="translation"></ROUTE>
+<ROUTE fromNode="PS1" fromField="translation_changed" toNode="G1" toField="set_translation"></ROUTE>
 </Transform>
 <Transform DEF="G2" translation="1 -1 0.01"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.2 0.7 0.2"></Material>
 </Appearance>
 <Sphere containerField="geometry" radius="0.1"></Sphere>
 </Shape>
 <PlaneSensor description="Grab to move" DEF="PS2"></PlaneSensor>
-<ROUTE fromNode="PS2" fromField="translation_changed" toNode="G2" toField="translation"></ROUTE>
+<ROUTE fromNode="PS2" fromField="translation_changed" toNode="G2" toField="set_translation"></ROUTE>
 </Transform>
 <Transform DEF="G3" translation="1 1 0.01"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.2 0.7 0.2"></Material>
 </Appearance>
 <Sphere containerField="geometry" radius="0.1"></Sphere>
 </Shape>
 <PlaneSensor description="Grab to move" DEF="PS3"></PlaneSensor>
-<ROUTE fromNode="PS3" fromField="translation_changed" toNode="G3" toField="translation"></ROUTE>
+<ROUTE fromNode="PS3" fromField="translation_changed" toNode="G3" toField="set_translation"></ROUTE>
 </Transform>
 <Transform DEF="G4" translation="-1 1 0.01"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.2 0.7 0.2"></Material>
 </Appearance>
 <Sphere containerField="geometry" radius="0.1"></Sphere>
 </Shape>
 <PlaneSensor description="Grab to move" DEF="PS4"></PlaneSensor>
-<ROUTE fromNode="PS4" fromField="translation_changed" toNode="G4" toField="translation"></ROUTE>
+<ROUTE fromNode="PS4" fromField="translation_changed" toNode="G4" toField="set_translation"></ROUTE>
 </Transform>
 <Transform DEF="C1"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.2 0.7 0.7" transparency="0.5"></Material>
 </Appearance>
@@ -138,11 +144,11 @@
                 recompute(startnode.translation,val);
             }
 ]]></Script>
-<ROUTE fromNode="G1" fromField="translation" toNode="DECLx3dconnector_connector1_S1" toField="set_startpoint"></ROUTE>
-<ROUTE fromNode="G2" fromField="translation" toNode="DECLx3dconnector_connector1_S1" toField="set_endpoint"></ROUTE>
-<ROUTE fromNode="G1" fromField="translation" toNode="DECLx3dconnector_connector2_S1" toField="set_startpoint"></ROUTE>
-<ROUTE fromNode="G3" fromField="translation" toNode="DECLx3dconnector_connector2_S1" toField="set_endpoint"></ROUTE>
-<ROUTE fromNode="G1" fromField="translation" toNode="DECLx3dconnector_connector3_S1" toField="set_startpoint"></ROUTE>
-<ROUTE fromNode="G4" fromField="translation" toNode="DECLx3dconnector_connector3_S1" toField="set_endpoint"></ROUTE>
+<ROUTE fromNode="G1" fromField="translation_changed" toNode="DECLx3dconnector_connector1_S1" toField="set_startpoint"></ROUTE>
+<ROUTE fromNode="G2" fromField="translation_changed" toNode="DECLx3dconnector_connector1_S1" toField="set_endpoint"></ROUTE>
+<ROUTE fromNode="G1" fromField="translation_changed" toNode="DECLx3dconnector_connector2_S1" toField="set_startpoint"></ROUTE>
+<ROUTE fromNode="G3" fromField="translation_changed" toNode="DECLx3dconnector_connector2_S1" toField="set_endpoint"></ROUTE>
+<ROUTE fromNode="G1" fromField="translation_changed" toNode="DECLx3dconnector_connector3_S1" toField="set_startpoint"></ROUTE>
+<ROUTE fromNode="G4" fromField="translation_changed" toNode="DECLx3dconnector_connector3_S1" toField="set_endpoint"></ROUTE>
 </Scene>
 </X3D>
