@@ -12,12 +12,12 @@ javac RunSaxon.java
 python classes.py
 
 (ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java RunSaxon
-(ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java RunSaxon --X3dToES6.xslt -sail.js
+(ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java RunSaxon --X3dToES5.xslt -sail.js
 (ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java RunSaxon --X3dToJava.xslt -java
 (ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS sh replaceclass.sh
 (ls "$@" | grep -v intermediate | grep -v "\.new") | sed 's/\.x3d$/.java/' | xargs -L 1 -P $PROCESSORS javac -J-Xss1g -J-Xmx4g
-(ls "$@" | grep -v intermediate | grep -v "\.new") | sed 's/\.x3d$//' | sed 's/^\.*\///' | xargs -L 1 -P $PROCESSORS java -d64 -Xss16m -Xmx4096M
-exit
+(ls "$@" | grep -v intermediate | grep -v "\.new") | sed 's/\.x3d$//' | sed 's/^\.*\///' | xargs -L 1 -P $PROCESSORS  sh runToError.sh # java -d64 -Xss1g -Xmx4g
+
 for NEW in `(ls "$@" | grep -v intermediate | grep -v "\.new") | sed 's/\.x3d$/.new.json/'| sed 's/\/c\/x3d-code\/www.web3d.org/www_web3d_org/'`
 do
 	JSON=`dirname $NEW | sed 's/www_web3d_org/\/c\/x3d-code\/www.web3d.org/' `/`basename $NEW .new.json`.json
@@ -31,7 +31,7 @@ do
 	fi
 done
 
-(ls "$@" | grep -v intermediate | grep -v "\.new") | sed "s/\.x3d$/.sail.js/" | sed 's/\/c\/x3d-code\/www.web3d.org/www_web3d_org/' | xargs -L 1 -P $PROCESSORS jjs -cp "${NASHORN_CLASSPATH}"
+(ls "$@" | grep -v intermediate | grep -v "\.new") | sed "s/\.x3d$/.sail.js/" | sed 's/\/c\/x3d-code\/www.web3d.org/www_web3d_org/' | xargs -L 1 -P $PROCESSORS jjs -J-Xss1g -J-Xmx4g -cp "${NASHORN_CLASSPATH}"
 
 for i in `(ls "$@" | grep -v intermediate | grep -v "\.new") | sed 's/\.x3d$/.new.x3d/'| sed 's/\/c\/x3d-code\/www.web3d.org/www_web3d_org/'`
 do

@@ -31,7 +31,7 @@
 			<!-- comment after Appearance -->
                     </Shape>  
                 </Transform>
-                <PositionInterpolator DEF="NodePosition" key="0 1" keyValue="0 0 0, 0 5 0"/>
+                <PositionInterpolator DEF="NodePosition" key="0 1" keyValue="0 0 0 0 5 0"/>
                 <Script DEF="MoveBall">
                     <field name="translation" accessType="inputOutput" type="SFVec3f" value="50 50 0"/>
                     <field name="old" accessType="inputOutput" type="SFVec3f" value="0 0 0"/>
@@ -61,13 +61,13 @@ ecmascript:
             </ProtoInterface>
             <ProtoBody>
                 <Shape>
-                    <Extrusion DEF="extrusion" creaseAngle="0.785" crossSection="1.00 0.00, 0.92 -0.38, 0.71 -0.71, 0.38 -0.92, 0.00 -1.00, -0.38 -0.92, -0.71 -0.71, -0.92 -0.38, -1.00 -0.00, -0.92 0.38, -0.71 0.71, -0.38 0.92, 0.00 1.00, 0.38 0.92, 0.71 0.71, 0.92 0.38, 1.00 0.00" spine="0 -50 0, 0 0 0, 0 50 0"/>
+                    <Extrusion DEF="extrusion" creaseAngle="0.785" crossSection="1.00 0.00 0.92 -0.38 0.71 -0.71 0.38 -0.92 0.00 -1.00 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1.00 -0.00 -0.92 0.38 -0.71 0.71 -0.38 0.92 0.00 1.00 0.38 0.92 0.71 0.71 0.92 0.38 1.00 0.00" spine="0 -50 0 0 0 0 0 50 0"/>
                     <Appearance>
                         <Material diffuseColor="0 1 0"/>
                     </Appearance>
                 </Shape>
                 <Script DEF="MoveCylinder">
-                    <field name="spine" accessType="inputOutput" type="MFVec3f" value="0 -50 0, 0 0 0, 0 50 0"/>
+                    <field name="spine" accessType="inputOutput" type="MFVec3f" value="0 -50 0 0 0 0 0 50 0"/>
                     <field name="set_endA" accessType="inputOnly" type="SFVec3f"/>
                     <field name="set_endB" accessType="inputOnly" type="SFVec3f"/>
                     <IS>

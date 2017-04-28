@@ -39,7 +39,7 @@
         </Shape>
       </Transform>
       <TimeSensor DEF="Clock" cycleInterval="16" loop="true"/>
-      <OrientationInterpolator DEF="OrbitPath" key="0.0, 0.50, 1.0" keyValue="1.0 0.0 0.0 0.0, 1.0 0.0 0.0 3.14, 1.0 0.0 0.0 6.28"/>
+      <OrientationInterpolator DEF="OrbitPath" key="0.0 0.50 1.0" keyValue="1.0 0.0 0.0 0.0 1.0 0.0 0.0 3.14 1.0 0.0 0.0 6.28"/>
       <Script DEF="OrbitScript">
         <field accessType="inputOnly" name="set_fraction" type="SFFloat"/>
         <field accessType="outputOnly" name="coordinates" type="MFVec3f"/>

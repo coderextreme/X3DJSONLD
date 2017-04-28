@@ -143,7 +143,7 @@ public class X3dHeaderPrototypeSyntaxExamples {
             .addComments(new CommentsBlock("alternative: Text string='\"\\\"\\\"\"'"))
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject())))
-          .setProxy(new GroupObject().setUSE("ExampleChildElement")))
+          .addChild(new GroupObject().setUSE("ExampleChildElement")))
         .addChild(new TransformObject().setTranslation(new float[] {0f,-2.5f,0f})
           .addChild(new ShapeObject()
             .setAppearance(new AppearanceObject()
