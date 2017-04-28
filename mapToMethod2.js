@@ -2,9 +2,6 @@ let mapToMethod2 = {
 	"Shape" : {
 		"ProtoInstance": "setGeometry"
 	},
-	"Appearance" : {
-		"ProtoInstance": "setMaterial"
-	},
 	"HAnimJoint" : {
 		"Transform" : "addChild"
 	},
