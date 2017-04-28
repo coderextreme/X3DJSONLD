@@ -478,7 +478,7 @@ public class NancyPrototypes {
           .addChild(new TransformObject()
             .addChild(new ProximitySensorObject().setDEF("HudProx").setCenter(new float[] {0f,20f,0f}).setSize(new float[] {500f,100f,500f})))
           .addChild(new CollisionObject().setDEF("HUD").setEnabled(false)
-            .addChild(new TransformObject().setDEF("HudXform")
+            .setProxy(new TransformObject().setDEF("HudXform")
               .addChild(new TransformObject().setScale(new float[] {0.012f,0.012f,0.012f}).setTranslation(new float[] {0.01107f,-0.025f,-0.08f})
                 .addChild(new TransformObject().setDEF("Stand_Text")
                   .addChild(new TouchSensorObject().setDEF("Stand_Touch").setDescription("click for behavior"))

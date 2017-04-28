@@ -189,14 +189,24 @@ JavaSerializer.prototype = {
 					if (attr === "containerField") {
 						if (method === "setShaders") {
 							method = "addShaders"
+							addpre = ".";
 						} else {
 							method = "set"+attrs[a].nodeValue.charAt(0).toUpperCase() + attrs[a].nodeValue.slice(1);
+							addpre = ".";
 						}
 					}
 				}
 			} catch (e) {
 				console.error(e);
 			}
+		}
+		if (method === "addChildren") {
+			method = "addChild";
+			addpre = ".";
+		}
+		if (node.nodeName === "IS") {
+			method = "setIS";
+			addpre = ".";
 		}
 		return "\n"+("  ".repeat(n))+addpre+method;
 	},

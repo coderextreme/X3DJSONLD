@@ -151,13 +151,18 @@ function transformIfsToNormals(GeometryList) {
 			// just pick a close vector for now, average later
 			try {
 				let normal = triangle_normal( Geometry.point[Geometry.coordIndex[face][0]], Geometry.point[Geometry.coordIndex[face][1]], Geometry.point[Geometry.coordIndex[face][2]]);
-				console.log(normal);
-				output.push(["  facet normal",
-					typeof Geometry.normalIndex[face] === 'undefined' ? normal[0] : Geometry.vector[Geometry.normalIndex[face][0]][0] || normal[0],
-					typeof Geometry.normalIndex[face] === 'undefined' ? normal[1] : Geometry.vector[Geometry.normalIndex[face][0]][1] || normal[1],
-					typeof Geometry.normalIndex[face] === 'undefined' ? normal[2] : Geometry.vector[Geometry.normalIndex[face][0]][2] || normal[2]
-				    ].join(" "));
-				output.push("    outer loop");
+				if (typeof Geometry.normalIndex === 'undefined' || typeof Geometry.normalIndex[face] === 'undefined') {
+					console.log(JSON.stringify(normal));
+					output.push(["  facet normal", normal[0], normal[1], normal[2] ].join(" "));
+					output.push("    outer loop");
+				} else {
+					output.push(["  facet normal",
+						Geometry.vector[Geometry.normalIndex[face][0]][0],
+						Geometry.vector[Geometry.normalIndex[face][0]][1],
+						Geometry.vector[Geometry.normalIndex[face][0]][2]
+					    ].join(" "));
+					output.push("    outer loop");
+				}
 				for (let v in Geometry.coordIndex[face]) {
 					output.push(["      vertex",
 						Geometry.point[Geometry.coordIndex[face][v]][0],

@@ -93,6 +93,14 @@ JavaScriptSerializer.prototype = {
 				console.error(e);
 			}
 		}
+		if (method === "addChildren") {
+			method = "addChild";
+			addpre = ".";
+		}
+		if (node.nodeName === "IS") {
+			method = "setIS";
+			addpre = ".";
+		}
 		return "\n"+("  ".repeat(n))+addpre+method;
 	},
 	subSerializeToString : function(element, mapToMethod, fieldTypes, n) {
