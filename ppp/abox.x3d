@@ -6,7 +6,7 @@
 <meta name="identifier" content="http://coderextreme.net/X3DJSONLD/abox.x3d"></meta>
 <meta name="description" content="a box"></meta>
 </head>
-<Scene><Transform><Transform><Shape><Box size="1 1 1"></Box>
+<Scene><Transform><Transform><Shape><Box containerField="geometry" size="1 1 1"></Box>
 </Shape>
 </Transform>
 </Transform>
