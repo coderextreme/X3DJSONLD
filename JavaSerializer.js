@@ -180,6 +180,10 @@ JavaSerializer.prototype = {
 		} else {
 			method = method.charAt(0).toUpperCase() + method.slice(1);
 		}
+		if (method === "setProxy") {
+			method = "addChild";
+			addpre = ".";
+		}
 		for (let a in node.attributes) {
 			let attrs = node.attributes;
 			try {
@@ -235,148 +239,146 @@ JavaSerializer.prototype = {
 				parseInt(a);
 				if (attrs.hasOwnProperty(a) && attrs[a].nodeType == 2) {
 					let attr = attrs[a].nodeName;
-					if (attr == "xmlns:xsd" || attr == "xsd:noNamespaceSchemaLocation") {
+					if (attr == "xmlns:xsd" || attr == "xsd:noNamespaceSchemaLocation" || attr === 'containerField') {
 						continue;
 					}
-					if (attr !== 'containerField') {
-						let method = attr;
-						// look at object model
-						let attrType = "SFString";
-						if (typeof fieldTypes[element.nodeName] !== 'undefined') {
-							attrType = fieldTypes[element.nodeName][attr];
-						}
-						// str += "attrType "+attrType+" FAT "+fieldAttrType+" "+attrs[a].nodeValue+"\n";
-						// but if it's NULL, look at the field type
-						if (attrs[a].nodeValue === 'NULL' &&
-						   (fieldAttrType === "SFNode"  ||
-						    fieldAttrType === "MFNode")) {
-							method = "clearChildren";
-						} else {
-							method = "set"+method.charAt(0).toUpperCase() + method.slice(1);
-						}
-						let strval;
-						if (attrs[a].nodeValue === 'NULL') {
-							strval = "";
-						} else if (attrType === "SFString") {
-							if (attr === "type" && attrs[a].nodeValue !== "VERTEX" && attrs[a].nodeValue !== "FRAGMENT") {
-								strval = "fieldObject.TYPE_"+attrs[a].nodeValue.toUpperCase();
-							} else if (attr === "accessType") {
-								strval = "fieldObject.ACCESSTYPE_"+attrs[a].nodeValue.toUpperCase();
-							/*
-							} else if (
-								attrs[a].nodeValue.indexOf("_changed") > 0 &&
-
-								((element.nodeName === 'field' ||
-								attr === "name") ||
-								attr === "fromField")) {
-								strval = '"'+attrs[a].nodeValue.substr(0, attrs[a].nodeValue.indexOf("_changed")).replace(/\n/g, '\\\\n').replace(/\\?"/g, "\\\"")+'"';
-							} else if (
-								attrs[a].nodeValue.indexOf("set_") === 0 &&
-
-								((element.nodeName === 'field' &&
-								attr === "name") ||
-								attr === "toField")) {
-								strval = '"'+attrs[a].nodeValue.substr(4).replace(/\n/g, '\\\\n').replace(/\\?"/g, "\\\"")+'"';
-							*/
-							} else {
-								strval = '"'+attrs[a].nodeValue.
-									replace(/\n/g, '\\\\n').
-									replace(/\\?"/g, "\\\"")
-									+'"';
-							}
-						} else if (attrType === "SFInt32") {
-							strval = attrs[a].nodeValue;
-						} else if (attrType === "SFFloat") {
-							strval = attrs[a].nodeValue+FLOAT_SUFFIX;
-						} else if (attrType === "SFDouble") {
-							strval = attrs[a].nodeValue+DOUBLE_SUFFIX;
-						} else if (attrType === "SFBool") {
-							strval = attrs[a].nodeValue;
-						} else if (attrType === "SFTime") {
-							strval = attrs[a].nodeValue+DOUBLE_SUFFIX;
-						} else if (attrType === "MFTime") {
-							strval = this.printSubArray(attrType, "double", attrs[a].nodeValue.split(' '), codeno, DOUBLE_SUFFIX+',', '', DOUBLE_SUFFIX);
-						} else if (attrType === "MFString") {
-							strval = this.printSubArray(attrType, "java.lang.String",
-								attrs[a].nodeValue.substr(1, attrs[a].nodeValue.length-2).split(/" "/).
-								map(function(x) {
-									let y = x.
-										replace(/(\\+)([^&\\"])/g, '$1$1$2').
-									       replace(/(\\)+([&"])/g, '\\\\\\\$2').
-									       replace(/""/g, '\\"\\"').
-									       replace(/&quot;&quot;/g, '\\"\\"').
-									       replace(/&/g, "&amp;").
-									       replace(/\\n/g, '\\n');
-									if (y !== x) {
-										console.error("Java Replacing "+x+" with "+y);
-									}
-									return y;
-								}), codeno, '","', '"', '"');
-						} else if (
-							attrType === "MFInt32"||
-							attrType === "MFImage"||
-							attrType === "SFImage") {
-							strval = this.printSubArray(attrType, "int", attrs[a].nodeValue.split(' '), codeno, ',', '', '');
-						} else if (
-							attrType === "SFColor"||
-							attrType === "MFColor"||
-							attrType === "SFColorRGBA"||
-							attrType === "MFColorRGBA"||
-							attrType === "SFVec2f"||
-							attrType === "SFVec3f"||
-							attrType === "SFVec4f"||
-							attrType === "MFVec2f"||
-							attrType === "MFVec3f"||
-							attrType === "MFVec4f"||
-							attrType === "SFMatrix3f"||
-							attrType === "SFMatrix4f"|
-							attrType === "MFMatrix3f"||
-							attrType === "MFMatrix4f"|
-							attrType === "SFRotation"|
-							attrType === "MFRotation"|
-							attrType === "MFFloat") {
-							strval = this.printSubArray(attrType, "float", attrs[a].nodeValue.split(' '), codeno, FLOAT_SUFFIX+',', '', FLOAT_SUFFIX);
-						} else if (
-							attrType === "SFVec2d"||
-							attrType === "SFVec3d"||
-							attrType === "SFVec4d"|
-							attrType === "MFVec2d"||
-							attrType === "MFVec3d"||
-							attrType === "MFVec4d"|
-							attrType === "SFMatrix3d"||
-							attrType === "SFMatrix4d"|
-							attrType === "MFMatrix3d"||
-							attrType === "MFMatrix4d"|
-							attrType === "MFDouble") {
-							strval = this.printSubArray(attrType, "double", attrs[a].nodeValue.split(' '), codeno, DOUBLE_SUFFIX+',', '', DOUBLE_SUFFIX);
-						} else if (attrType === "MFBool") {
-							strval = this.printSubArray(attrType, "boolean", attrs[a].nodeValue.split(' '), codeno, ',', '', '');
-						} else {
-							// strval = attrs[a].nodeValue;
-							// not found in field types
-							// Fixes for X3DOM
-							if (attr === "class") {
-								method = "setCssClass";
-							} else if (attr === "id") {
-								continue;
-							} else if (element.nodeName === "Sphere" && attr === "subdivision") {
-								continue;
-							} else if (element.nodeName === "X3D" && attr === "showStat") {
-								continue;
-							} else if (element.nodeName === "X3D" && attr === "showLog") {
-								continue;
-							} else if (element.nodeName === "X3D" && attr === "width") {
-								continue;
-							} else if (element.nodeName === "X3D" && attr === "height") {
-								continue;
-							} else if (element.nodeName === "X3D" && attr === "backend") {
-								continue;
-							}
-							strval = '"'+attrs[a].nodeValue.replace(/\n/g, '\\\\n').replace(/\\?"/g, "\\\"")+'"';
-						}
-						
-						str += '.'+method+"("+strval+")";
+					let method = attr;
+					// look at object model
+					let attrType = "SFString";
+					if (typeof fieldTypes[element.nodeName] !== 'undefined') {
+						attrType = fieldTypes[element.nodeName][attr];
 					}
+					// str += "attrType "+attrType+" FAT "+fieldAttrType+" "+attrs[a].nodeValue+"\n";
+					// but if it's NULL, look at the field type
+					if (attrs[a].nodeValue === 'NULL' &&
+					   (fieldAttrType === "SFNode"  ||
+					    fieldAttrType === "MFNode")) {
+						method = "clearChildren";
+					} else {
+						method = "set"+method.charAt(0).toUpperCase() + method.slice(1);
+					}
+					let strval;
+					if (attrs[a].nodeValue === 'NULL') {
+						strval = "";
+					} else if (attrType === "SFString") {
+						if (attr === "type" && attrs[a].nodeValue !== "VERTEX" && attrs[a].nodeValue !== "FRAGMENT") {
+							strval = "fieldObject.TYPE_"+attrs[a].nodeValue.toUpperCase();
+						} else if (attr === "accessType") {
+							strval = "fieldObject.ACCESSTYPE_"+attrs[a].nodeValue.toUpperCase();
+						/*
+						} else if (
+							attrs[a].nodeValue.indexOf("_changed") > 0 &&
+
+							((element.nodeName === 'field' ||
+							attr === "name") ||
+							attr === "fromField")) {
+							strval = '"'+attrs[a].nodeValue.substr(0, attrs[a].nodeValue.indexOf("_changed")).replace(/\n/g, '\\\\n').replace(/\\?"/g, "\\\"")+'"';
+						} else if (
+							attrs[a].nodeValue.indexOf("set_") === 0 &&
+
+							((element.nodeName === 'field' &&
+							attr === "name") ||
+							attr === "toField")) {
+							strval = '"'+attrs[a].nodeValue.substr(4).replace(/\n/g, '\\\\n').replace(/\\?"/g, "\\\"")+'"';
+						*/
+						} else {
+							strval = '"'+attrs[a].nodeValue.
+								replace(/\n/g, '\\\\n').
+								replace(/\\?"/g, "\\\"")
+								+'"';
+						}
+					} else if (attrType === "SFInt32") {
+						strval = attrs[a].nodeValue;
+					} else if (attrType === "SFFloat") {
+						strval = attrs[a].nodeValue+FLOAT_SUFFIX;
+					} else if (attrType === "SFDouble") {
+						strval = attrs[a].nodeValue+DOUBLE_SUFFIX;
+					} else if (attrType === "SFBool") {
+						strval = attrs[a].nodeValue;
+					} else if (attrType === "SFTime") {
+						strval = attrs[a].nodeValue+DOUBLE_SUFFIX;
+					} else if (attrType === "MFTime") {
+						strval = this.printSubArray(attrType, "double", attrs[a].nodeValue.split(' '), codeno, DOUBLE_SUFFIX+',', '', DOUBLE_SUFFIX);
+					} else if (attrType === "MFString") {
+						strval = this.printSubArray(attrType, "java.lang.String",
+							attrs[a].nodeValue.substr(1, attrs[a].nodeValue.length-2).split(/" "/).
+							map(function(x) {
+								let y = x.
+									replace(/(\\+)([^&\\"])/g, '$1$1$2').
+								       replace(/(\\)+([&"])/g, '\\\\\\\$2').
+								       replace(/""/g, '\\"\\"').
+								       replace(/&quot;&quot;/g, '\\"\\"').
+								       replace(/&/g, "&amp;").
+								       replace(/\\n/g, '\\n');
+								if (y !== x) {
+									console.error("Java Replacing "+x+" with "+y);
+								}
+								return y;
+							}), codeno, '","', '"', '"');
+					} else if (
+						attrType === "MFInt32"||
+						attrType === "MFImage"||
+						attrType === "SFImage") {
+						strval = this.printSubArray(attrType, "int", attrs[a].nodeValue.split(' '), codeno, ',', '', '');
+					} else if (
+						attrType === "SFColor"||
+						attrType === "MFColor"||
+						attrType === "SFColorRGBA"||
+						attrType === "MFColorRGBA"||
+						attrType === "SFVec2f"||
+						attrType === "SFVec3f"||
+						attrType === "SFVec4f"||
+						attrType === "MFVec2f"||
+						attrType === "MFVec3f"||
+						attrType === "MFVec4f"||
+						attrType === "SFMatrix3f"||
+						attrType === "SFMatrix4f"|
+						attrType === "MFMatrix3f"||
+						attrType === "MFMatrix4f"|
+						attrType === "SFRotation"|
+						attrType === "MFRotation"|
+						attrType === "MFFloat") {
+						strval = this.printSubArray(attrType, "float", attrs[a].nodeValue.split(' '), codeno, FLOAT_SUFFIX+',', '', FLOAT_SUFFIX);
+					} else if (
+						attrType === "SFVec2d"||
+						attrType === "SFVec3d"||
+						attrType === "SFVec4d"|
+						attrType === "MFVec2d"||
+						attrType === "MFVec3d"||
+						attrType === "MFVec4d"|
+						attrType === "SFMatrix3d"||
+						attrType === "SFMatrix4d"|
+						attrType === "MFMatrix3d"||
+						attrType === "MFMatrix4d"|
+						attrType === "MFDouble") {
+						strval = this.printSubArray(attrType, "double", attrs[a].nodeValue.split(' '), codeno, DOUBLE_SUFFIX+',', '', DOUBLE_SUFFIX);
+					} else if (attrType === "MFBool") {
+						strval = this.printSubArray(attrType, "boolean", attrs[a].nodeValue.split(' '), codeno, ',', '', '');
+					} else {
+						// strval = attrs[a].nodeValue;
+						// not found in field types
+						// Fixes for X3DOM
+						if (attr === "class") {
+							method = "setCssClass";
+						} else if (attr === "id") {
+							continue;
+						} else if (element.nodeName === "Sphere" && attr === "subdivision") {
+							continue;
+						} else if (element.nodeName === "X3D" && attr === "showStat") {
+							continue;
+						} else if (element.nodeName === "X3D" && attr === "showLog") {
+							continue;
+						} else if (element.nodeName === "X3D" && attr === "width") {
+							continue;
+						} else if (element.nodeName === "X3D" && attr === "height") {
+							continue;
+						} else if (element.nodeName === "X3D" && attr === "backend") {
+							continue;
+						}
+						strval = '"'+attrs[a].nodeValue.replace(/\n/g, '\\\\n').replace(/\\?"/g, "\\\"")+'"';
+					}
+					
+					str += '.'+method+"("+strval+")";
 				}
 			} catch (e) {
 				console.error(e);
