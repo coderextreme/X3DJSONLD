@@ -3836,6 +3836,9 @@
 					"$ref": "#/definitions/-commentRoute"
 				}
 			},
+			"required": [
+				"@name"
+			],
 			"additionalProperties": false
 		},
 		"Fog": {
@@ -6633,6 +6636,9 @@
 					"$ref": "#/definitions/-commentRoute"
 				}
 			},
+			"required": [
+				"@name"
+			],
 			"additionalProperties": false
 		},
 		"Matrix4VertexAttribute": {
@@ -6664,6 +6670,9 @@
 					"$ref": "#/definitions/-commentRoute"
 				}
 			},
+			"required": [
+				"@name"
+			],
 			"additionalProperties": false
 		},
 		"MetadataBoolean": {
@@ -10292,7 +10301,396 @@
 			"type": "object",
 			"properties": {
 				"-children": {
-					"$ref": "#/definitions/-children"
+					"description": "Root node content",
+					"type": "array",
+					"minItems": 1,
+					"items": {
+						"type": "object",
+						"properties": {
+							"#comment": {
+								"type": "string"
+							},
+							"ProtoInstance": {
+								"$ref": "#/definitions/ProtoInstance"
+							},
+							"Anchor": {
+								"$ref": "#/definitions/Anchor"
+							},
+							"AudioClip": {
+								"$ref": "#/definitions/AudioClip"
+							},
+							"Background": {
+								"$ref": "#/definitions/Background"
+							},
+							"Billboard": {
+								"$ref": "#/definitions/Billboard"
+							},
+							"BooleanFilter": {
+								"$ref": "#/definitions/BooleanFilter"
+							},
+							"BooleanSequencer": {
+								"$ref": "#/definitions/BooleanSequencer"
+							},
+							"BooleanToggle": {
+								"$ref": "#/definitions/BooleanToggle"
+							},
+							"BooleanTrigger": {
+								"$ref": "#/definitions/BooleanTrigger"
+							},
+							"CADAssembly": {
+								"$ref": "#/definitions/CADAssembly"
+							},
+							"CADFace": {
+								"$ref": "#/definitions/CADFace"
+							},
+							"CADLayer": {
+								"$ref": "#/definitions/CADLayer"
+							},
+							"CADPart": {
+								"$ref": "#/definitions/CADPart"
+							},
+							"ClipPlane": {
+								"$ref": "#/definitions/ClipPlane"
+							},
+							"CollidableOffset": {
+								"$ref": "#/definitions/CollidableOffset"
+							},
+							"CollidableShape": {
+								"$ref": "#/definitions/CollidableShape"
+							},
+							"Collision": {
+								"$ref": "#/definitions/Collision"
+							},
+							"CollisionSensor": {
+								"$ref": "#/definitions/CollisionSensor"
+							},
+							"ColorChaser": {
+								"$ref": "#/definitions/ColorChaser"
+							},
+							"ColorDamper": {
+								"$ref": "#/definitions/ColorDamper"
+							},
+							"ColorInterpolator": {
+								"$ref": "#/definitions/ColorInterpolator"
+							},
+							"CoordinateChaser": {
+								"$ref": "#/definitions/CoordinateChaser"
+							},
+							"CoordinateDamper": {
+								"$ref": "#/definitions/CoordinateDamper"
+							},
+							"CoordinateInterpolator": {
+								"$ref": "#/definitions/CoordinateInterpolator"
+							},
+							"CoordinateInterpolator2D": {
+								"$ref": "#/definitions/CoordinateInterpolator2D"
+							},
+							"CylinderSensor": {
+								"$ref": "#/definitions/CylinderSensor"
+							},
+							"DirectionalLight": {
+								"$ref": "#/definitions/DirectionalLight"
+							},
+							"DISEntityManager": {
+								"$ref": "#/definitions/DISEntityManager"
+							},
+							"DISEntityTypeMapping": {
+								"$ref": "#/definitions/DISEntityTypeMapping"
+							},
+							"EaseInEaseOut": {
+								"$ref": "#/definitions/EaseInEaseOut"
+							},
+							"EspduTransform": {
+								"$ref": "#/definitions/EspduTransform"
+							},
+							"Fog": {
+								"$ref": "#/definitions/Fog"
+							},
+							"GeoLocation": {
+								"$ref": "#/definitions/GeoLocation"
+							},
+							"GeoLOD": {
+								"$ref": "#/definitions/GeoLOD"
+							},
+							"GeoMetadata": {
+								"$ref": "#/definitions/GeoMetadata"
+							},
+							"GeoPositionInterpolator": {
+								"$ref": "#/definitions/GeoPositionInterpolator"
+							},
+							"GeoProximitySensor": {
+								"$ref": "#/definitions/GeoProximitySensor"
+							},
+							"GeoTouchSensor": {
+								"$ref": "#/definitions/GeoTouchSensor"
+							},
+							"GeoTransform": {
+								"$ref": "#/definitions/GeoTransform"
+							},
+							"GeoViewpoint": {
+								"$ref": "#/definitions/GeoViewpoint"
+							},
+							"Group": {
+								"$ref": "#/definitions/Group"
+							},
+							"HAnimHumanoid": {
+								"$ref": "#/definitions/HAnimHumanoid"
+							},
+							"HAnimJoint": {
+								"$ref": "#/definitions/HAnimJoint"
+							},
+							"HAnimSegment": {
+								"$ref": "#/definitions/HAnimSegment"
+							},
+							"HAnimSite": {
+								"$ref": "#/definitions/HAnimSite"
+							},
+							"Inline": {
+								"$ref": "#/definitions/Inline"
+							},
+							"IntegerSequencer": {
+								"$ref": "#/definitions/IntegerSequencer"
+							},
+							"IntegerTrigger": {
+								"$ref": "#/definitions/IntegerTrigger"
+							},
+							"IsoSurfaceVolumeData": {
+								"$ref": "#/definitions/IsoSurfaceVolumeData"
+							},
+							"KeySensor": {
+								"$ref": "#/definitions/KeySensor"
+							},
+							"LayerSet": {
+								"$ref": "#/definitions/LayerSet"
+							},
+							"Layout": {
+								"$ref": "#/definitions/Layout"
+							},
+							"LinePickSensor": {
+								"$ref": "#/definitions/LinePickSensor"
+							},
+							"LoadSensor": {
+								"$ref": "#/definitions/LoadSensor"
+							},
+							"LocalFog": {
+								"$ref": "#/definitions/LocalFog"
+							},
+							"LOD": {
+								"$ref": "#/definitions/LOD"
+							},
+							"MetadataBoolean": {
+								"$ref": "#/definitions/MetadataBoolean"
+							},
+							"MetadataDouble": {
+								"$ref": "#/definitions/MetadataDouble"
+							},
+							"MetadataFloat": {
+								"$ref": "#/definitions/MetadataFloat"
+							},
+							"MetadataInteger": {
+								"$ref": "#/definitions/MetadataInteger"
+							},
+							"MetadataSet": {
+								"$ref": "#/definitions/MetadataSet"
+							},
+							"MetadataString": {
+								"$ref": "#/definitions/MetadataString"
+							},
+							"NavigationInfo": {
+								"$ref": "#/definitions/NavigationInfo"
+							},
+							"NormalInterpolator": {
+								"$ref": "#/definitions/NormalInterpolator"
+							},
+							"NurbsOrientationInterpolator": {
+								"$ref": "#/definitions/NurbsOrientationInterpolator"
+							},
+							"NurbsPositionInterpolator": {
+								"$ref": "#/definitions/NurbsPositionInterpolator"
+							},
+							"NurbsSet": {
+								"$ref": "#/definitions/NurbsSet"
+							},
+							"NurbsSurfaceInterpolator": {
+								"$ref": "#/definitions/NurbsSurfaceInterpolator"
+							},
+							"OrientationChaser": {
+								"$ref": "#/definitions/OrientationChaser"
+							},
+							"OrientationDamper": {
+								"$ref": "#/definitions/OrientationDamper"
+							},
+							"OrientationInterpolator": {
+								"$ref": "#/definitions/OrientationInterpolator"
+							},
+							"OrthoViewpoint": {
+								"$ref": "#/definitions/OrthoViewpoint"
+							},
+							"ParticleSystem": {
+								"$ref": "#/definitions/ParticleSystem"
+							},
+							"PickableGroup": {
+								"$ref": "#/definitions/PickableGroup"
+							},
+							"PlaneSensor": {
+								"$ref": "#/definitions/PlaneSensor"
+							},
+							"PointLight": {
+								"$ref": "#/definitions/PointLight"
+							},
+							"PointPickSensor": {
+								"$ref": "#/definitions/PointPickSensor"
+							},
+							"PositionChaser": {
+								"$ref": "#/definitions/PositionChaser"
+							},
+							"PositionChaser2D": {
+								"$ref": "#/definitions/PositionChaser2D"
+							},
+							"PositionDamper": {
+								"$ref": "#/definitions/PositionDamper"
+							},
+							"PositionDamper2D": {
+								"$ref": "#/definitions/PositionDamper2D"
+							},
+							"PositionInterpolator": {
+								"$ref": "#/definitions/PositionInterpolator"
+							},
+							"PositionInterpolator2D": {
+								"$ref": "#/definitions/PositionInterpolator2D"
+							},
+							"PrimitivePickSensor": {
+								"$ref": "#/definitions/PrimitivePickSensor"
+							},
+							"ProximitySensor": {
+								"$ref": "#/definitions/ProximitySensor"
+							},
+							"ReceiverPdu": {
+								"$ref": "#/definitions/ReceiverPdu"
+							},
+							"RigidBodyCollection": {
+								"$ref": "#/definitions/RigidBodyCollection"
+							},
+							"ScalarChaser": {
+								"$ref": "#/definitions/ScalarChaser"
+							},
+							"ScalarDamper": {
+								"$ref": "#/definitions/ScalarDamper"
+							},
+							"ScalarInterpolator": {
+								"$ref": "#/definitions/ScalarInterpolator"
+							},
+							"ScreenGroup": {
+								"$ref": "#/definitions/ScreenGroup"
+							},
+							"Script": {
+								"$ref": "#/definitions/Script"
+							},
+							"SegmentedVolumeData": {
+								"$ref": "#/definitions/SegmentedVolumeData"
+							},
+							"Shape": {
+								"$ref": "#/definitions/Shape"
+							},
+							"SignalPdu": {
+								"$ref": "#/definitions/SignalPdu"
+							},
+							"Sound": {
+								"$ref": "#/definitions/Sound"
+							},
+							"SphereSensor": {
+								"$ref": "#/definitions/SphereSensor"
+							},
+							"SplinePositionInterpolator": {
+								"$ref": "#/definitions/SplinePositionInterpolator"
+							},
+							"SplinePositionInterpolator2D": {
+								"$ref": "#/definitions/SplinePositionInterpolator2D"
+							},
+							"SplineScalarInterpolator": {
+								"$ref": "#/definitions/SplineScalarInterpolator"
+							},
+							"SpotLight": {
+								"$ref": "#/definitions/SpotLight"
+							},
+							"SquadOrientationInterpolator": {
+								"$ref": "#/definitions/SquadOrientationInterpolator"
+							},
+							"StaticGroup": {
+								"$ref": "#/definitions/StaticGroup"
+							},
+							"StringSensor": {
+								"$ref": "#/definitions/StringSensor"
+							},
+							"Switch": {
+								"$ref": "#/definitions/Switch"
+							},
+							"TexCoordChaser2D": {
+								"$ref": "#/definitions/TexCoordChaser2D"
+							},
+							"TexCoordDamper2D": {
+								"$ref": "#/definitions/TexCoordDamper2D"
+							},
+							"TextureBackground": {
+								"$ref": "#/definitions/TextureBackground"
+							},
+							"TimeSensor": {
+								"$ref": "#/definitions/TimeSensor"
+							},
+							"TimeTrigger": {
+								"$ref": "#/definitions/TimeTrigger"
+							},
+							"TouchSensor": {
+								"$ref": "#/definitions/TouchSensor"
+							},
+							"Transform": {
+								"$ref": "#/definitions/Transform"
+							},
+							"TransformSensor": {
+								"$ref": "#/definitions/TransformSensor"
+							},
+							"TransmitterPdu": {
+								"$ref": "#/definitions/TransmitterPdu"
+							},
+							"Viewpoint": {
+								"$ref": "#/definitions/Viewpoint"
+							},
+							"ViewpointGroup": {
+								"$ref": "#/definitions/ViewpointGroup"
+							},
+							"Viewport": {
+								"$ref": "#/definitions/Viewport"
+							},
+							"VisibilitySensor": {
+								"$ref": "#/definitions/VisibilitySensor"
+							},
+							"VolumeData": {
+								"$ref": "#/definitions/VolumeData"
+							},
+							"VolumePickSensor": {
+								"$ref": "#/definitions/VolumePickSensor"
+							},
+							"WorldInfo": {
+								"$ref": "#/definitions/WorldInfo"
+							},
+							"ROUTE": {
+								"$ref": "#/definitions/ROUTE"
+							},
+							"ProtoDeclare": {
+								"$ref": "#/definitions/ProtoDeclare"
+							},
+							"ExternProtoDeclare": {
+								"$ref": "#/definitions/ExternProtoDeclare"
+							},
+							"IMPORT": {
+								"$ref": "#/definitions/IMPORT"
+							},
+							"EXPORT": {
+								"$ref": "#/definitions/EXPORT"
+							}
+						},
+						"additionalProperties": false
+					}
 				}
 			},
 			"additionalProperties": false
