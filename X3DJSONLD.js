@@ -27,6 +27,7 @@ if (typeof Browser === 'undefined') {
 
 function processURLs(localArray, path) {
 	var url;
+/*
 	// No longer need to split
 	for (url in localArray) {
 		if (localArray[url].indexOf("http://") === 0
@@ -59,12 +60,14 @@ function processURLs(localArray, path) {
 			hash = localArray[url].substring(h);
 			localArray[url] = localArray[url].substring(0, h);
 		}
+*/
 /*
 		var x3d = localArray[url].lastIndexOf(".x3d") ;
 		if (x3d === localArray[url].length - 4) {
 			localArray[url] = localArray[url].substring(0, x3d)+".json" + hash;
 		}
 */
+/*
 		var wrl = localArray[url].lastIndexOf(".wrl") ;
 		if (wrl === localArray[url].length - 4) {
 			localArray[url] = localArray[url].substring(0, wrl)+".json" + hash;
@@ -75,6 +78,7 @@ function processURLs(localArray, path) {
 		}
 			
         }
+*/
 	// console.error("Processed URLs", localArray.join(" "));
 	return localArray;
 }
@@ -280,6 +284,7 @@ function ConvertObject(key, object, element, path, containerField) {
 		} else {
 			if (key === 'connect' || key === 'fieldValue' || key === 'field' || key === 'meta' || key === 'component') {
 				for (var childkey in object[key]) {  // for each field
+					/*
 					if (key === 'meta') {
 						// console.error("Examining ", childkey, object[key].length);
 						if (parseInt(childkey) + 3 >= object[key].length) {
@@ -288,6 +293,7 @@ function ConvertObject(key, object, element, path, containerField) {
 							break;
 						}
 					}
+					*/
 					if (typeof object[key][childkey] === 'object') {
 						var child = CreateElement(key, x3djsonNS, containerField);
 						ConvertToX3DOM(object[key][childkey], childkey, child, path);
