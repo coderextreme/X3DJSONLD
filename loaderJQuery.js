@@ -247,15 +247,9 @@ function updateFromPly() {
 }
 
 function updateFromXml() {
-	var xml = "";
-	try {
-		xml = $('#xml').val();
-		var json = convertXmlToJson(xml);
-		updateFromJson(json);
-	} catch (e) {
-		alert("No validation done, depending on viewers "+e);
-	        loadXmlBrowsers(xml);
-	}
+	var xml = $('#xml').val();
+	var json = convertXmlToJson(xml);
+	updateFromJson(json);
 }
 
 function loadXml(url) {
@@ -398,9 +392,14 @@ function convertXmlToJson(xmlString) {
 		    result = demo.xml.transformNode(demo.xslt);
 		}
 
+		 try {
 		// console.log('JSON', result);
-		var json = JSON.parse(getXmlString(result));
-		updateFromJson(json);
+			var json = JSON.parse(getXmlString(result));
+			updateFromJson(json);
+		} catch (e) {
+			alert("No validation done, depending on viewers "+e);
+			loadXmlBrowsers(xmlString);
+		}
 	    }, "xml")
 	    .fail(function(jqXHR, textStatus, errorThrown) {
 	    	alert('Could not process stylesheet X3dToJson.xslt! ' + textStatus + ' ' + errorThrown);
