@@ -52,7 +52,27 @@
           },
           {
             "@name":"translated",
-            "@content":"28 April 2017"
+            "@content":"30 April 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          },
+          {
+            "@name":"translated",
+            "@content":"30 April 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3DJSONLD: https://github.com/coderextreme/X3DJSONLD"
+          },
+          {
+            "@name":"translated",
+            "@content":"30 April 2017"
           },
           {
             "@name":"generator",
