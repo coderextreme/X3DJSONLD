@@ -27,7 +27,6 @@ if (typeof Browser === 'undefined') {
 
 function processURLs(localArray, path) {
 	var url;
-/*
 	// No longer need to split
 	for (url in localArray) {
 		if (localArray[url].indexOf("http://") === 0
@@ -60,14 +59,12 @@ function processURLs(localArray, path) {
 			hash = localArray[url].substring(h);
 			localArray[url] = localArray[url].substring(0, h);
 		}
-*/
 /*
 		var x3d = localArray[url].lastIndexOf(".x3d") ;
 		if (x3d === localArray[url].length - 4) {
 			localArray[url] = localArray[url].substring(0, x3d)+".json" + hash;
 		}
 */
-/*
 		var wrl = localArray[url].lastIndexOf(".wrl") ;
 		if (wrl === localArray[url].length - 4) {
 			localArray[url] = localArray[url].substring(0, wrl)+".json" + hash;
@@ -78,7 +75,6 @@ function processURLs(localArray, path) {
 		}
 			
         }
-*/
 	// console.error("Processed URLs", localArray.join(" "));
 	return localArray;
 }
@@ -283,18 +279,37 @@ function ConvertObject(key, object, element, path, containerField) {
 			CDATACreateFunction(document, element, object[key].join("\r\n")+"\r\n");
 		} else {
 			if (key === 'connect' || key === 'fieldValue' || key === 'field' || key === 'meta' || key === 'component') {
+				if (key === 'meta') {
+					// Add meta information for X3DJSONLD
+					var months = [
+						"January",
+						"February",
+						"March",
+						"April",
+						"May",
+						"June",
+						"July",
+						"August",
+						"September",
+						"October",
+						"November",
+						"December"
+
+					];
+
+					var dt = new Date();
+					object[key][object[key].length] = {
+						"@name": "translated",
+						"@content": dt.getDate()+" "+ months[dt.getMonth()]+" "+dt.getFullYear()
+					};
+					object[key][object[key].length] = {
+						"@name": "generator",
+						"@content": "X3DJSONLD: https://github.com/coderextreme/X3DJSONLD"
+					};
+							
+				}
 				for (var childkey in object[key]) {  // for each field
-					/*
-					if (key === 'meta') {
-						// console.error("Examining ", childkey, object[key].length);
-						if (parseInt(childkey) + 3 >= object[key].length) {
-							// get rid of meta stuff added by stylesheet
-							// console.error("Bailing");
-							break;
-						}
-					}
-					*/
-					if (typeof object[key][childkey] === 'object') {
+					if (typeof object[key][childkey] === 'object' && object[key][childkey]["@name"] !== "reference") {
 						var child = CreateElement(key, x3djsonNS, containerField);
 						ConvertToX3DOM(object[key][childkey], childkey, child, path);
 						element.appendChild(child);
@@ -312,6 +327,7 @@ function ConvertObject(key, object, element, path, containerField) {
 }
 
 function CommentStringToXML(str) {
+	str = str.replace(/\\\\/g, '\\');
 	return str;
 }
 
@@ -320,8 +336,9 @@ function SFStringToXML(str) {
 	str = str.replace(/\\\\/g, '\\\\');
 	str = str.replace(/\\\\\\\\/g, '\\\\');
 	str = str.replace(/\\/g, '\\\\');
+	str = str.replace(/(\\+)"/g, '\\"');
 	if (y !== str) {
-		console.log("X3DJSON [] replacing", y, "with", str);
+		// console.log("X3DJSON [] replacing", y, "with", str);
 	}
 	return str;
 }
@@ -331,7 +348,7 @@ function JSONStringToXML(str) {
 	str = str.replace(/\\/g, '\\\\');
 	str = str.replace(/\n/g, '\\n');
 	if (y !== str) {
-		console.log("X3DJSON replacing", y, "with", str);
+		// console.log("X3DJSON replacing", y, "with", str);
 	}
 	return str;
 }
@@ -356,9 +373,11 @@ function ConvertToX3DOM(object, parentkey, element, path, containerField) {
 			} else if (typeof object[key] === 'boolean') {
 				localArray.push(object[key]);
 			} else if (typeof object[key] === 'object') {
+				/*
 				if (object[key] != null && typeof object[key].join === 'function') {
 					localArray.push(object[key].join(" "));
 				}
+				*/
 				ConvertToX3DOM(object[key], key, element, path);
 			} else if (typeof object[key] === 'undefined') {
 			} else {
@@ -426,7 +445,7 @@ function fixXML(xmlstr) {
 	xmlstr = xmlstr.replace(/[\u0080-\uFFFF]/g, 
 		function (v) {return '&#'+v.charCodeAt()+';';}
 	);
-	xmlstr = xmlstr.replace(/(\\+)&quot;/g, '\\&quot;');
+	// xmlstr = xmlstr.replace(/(\\+)&quot;/g, '\\&quot;');
 	do {
 		var xmlstr2 = xmlstr;
 		xmlstr = xmlstr2.replace(/(<!\[CDATA\[(.|\n)*)&lt;((.|\n)*\]\]>)/gi, "$1<$3");
