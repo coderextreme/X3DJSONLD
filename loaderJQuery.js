@@ -397,7 +397,7 @@ function convertXmlToJson(xmlString) {
 			updateFromJson(json);
 		} catch (e) {
 			alert("No validation done, JSON doesn't parse or load.  depending on viewers "+e);
-			loadXmlBrowsers(xmlString);
+			loadXmlBrowsers([xmlString]);
 		}
 	    }, "xml")
 	    .fail(function(jqXHR, textStatus, errorThrown) {
