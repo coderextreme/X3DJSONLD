@@ -5,18 +5,15 @@
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
     <link rel="stylesheet" type="text/css" href="https://www.x3dom.org/download/dev/x3dom.css"></link>
     <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/create3000/cobweb/master/stable/3/3.1/cobweb.css"/>
-    <script type="text/javascript" src="https://cdn.rawgit.com/create3000/cobweb/master/stable/3/3.1/cobweb.min.js"></script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/create3000/cobweb/master/stable/3/3.1/cobweb.js"></script>
     <script type="text/javascript" src="https://www.x3dom.org/download/dev/x3dom-full.js"></script>
-
+    <script type="text/javascript" language="javascript" src="Saxonce/Saxonce.nocache.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ajv/4.11.7/ajv.min.js"></script>
+    <script type="text/javascript" src="https://exificient.github.io/javascript/demo/exificient.js"></script>
+    <script type="text/javascript" src="https://exificient.github.io/javascript/demo/exificient-for-json.js"></script>
     <style type="text/css">
-    X3DCanvas {
-        background:#000;
-	width: 300px;
-	height:150px;
-    }
-    X3D {
+    X3DCanvas, X3D, #image {
         background:#000;
 	width: 300px;
 	height:150px;
@@ -51,6 +48,64 @@ a:active {
 <td>
 <select id="file">
 <option>src/Boeing-747.json</option>
+<option>example.stl</option>
+<option>example.ply</option>
+<option>abox.x3d</option>
+<option>arc.x3d</option>
+<option>ArchHalf.x3d</option>
+<option>ArchPrototype.x3d</option>
+<option>Box.x3d</option>
+<option>BoxManAnimationPanel.x3d</option>
+<option>browser.x3d</option>
+<option>bub.x3d</option>
+<option>bubble.x3d</option>
+<option>bubbles.x3d</option>
+<option>CloudsProcedural4.x3d</option>
+<option>cobweb.x3d</option>
+<option>cobweb2.x3d</option>
+<option>CoordinateAxes.x3d</option>
+<option>cube.x3d</option>
+<option>extrusion.x3d</option>
+<option>ExtrusionHeart.x3d</option>
+<option>flipp.x3d</option>
+<option>flipper.x3d</option>
+<option>flowerproto.x3d</option>
+<option>flowers.x3d</option>
+<option>flowers2.x3d</option>
+<option>flowers4.x3d</option>
+<option>flowers7.x3d</option>
+<option>force.x3d</option>
+<option>fors.x3d</option>
+<option>fors2.x3d</option>
+<option>freewrlflowers.x3d</option>
+<option>geo.x3d</option>
+<option>geobubbles.x3d</option>
+<option>gridBack.x3d</option>
+<option>IcosahedronSubdivisionLevel5.x3d</option>
+<option>john.x3d</option>
+<option>john2.x3d</option>
+<option>MFString.x3d</option>
+<option>mirror.x3d</option>
+<option>mirror2.x3d</option>
+<option>NancyNativeTags.x3d</option>
+<option>NancyPrototypes.x3d</option>
+<option>ObliqueStrategies.x3d</option>
+<option>plainflowers.x3d</option>
+<option>pp3.x3d</option>
+<option>qq3.x3d</option>
+<option>rubik.x3d</option>
+<option>rubikFurnace.x3d</option>
+<option>rubikOnFire.x3d</option>
+<option>sphere.x3d</option>
+<option>sphereflowers.x3d</option>
+<option>Teapot.x3d</option>
+<option>text.x3d</option>
+<option>TextSpecialCharacters.x3d</option>
+<option>x3dconnector.x3d</option>
+<option>x3dconnectorProto.x3d</option>
+<option>X3dHeaderPrototypeSyntaxExamples.x3d</option>
+<option>x3domflower.x3d</option>
+<option>src/Boeing-747.json</option>
 <option>bub.json</option>
 <option>TextSpecialCharacters.json</option>
 <option>src/Boeing-747.json</option>
@@ -67,7 +122,6 @@ a:active {
 <option>bubble.new.json</option>
 <option>cobweb.new.json</option>
 <option>cobweb2.new.json</option>
-<option>createElementNSworks.new.json</option>
 <option>ExtrusionHeart.new.json</option>
 <option>flipp.new.json</option>
 <option>geo.new.json</option>
@@ -126,7 +180,6 @@ a:active {
 <option>bubbles.json</option>
 <option>cobweb.json</option>
 <option>ppp/cobweb.json</option>
-<option>createElementNSworks.json</option>
 <option>extrusion.json</option>
 <option>flipper.json</option>
 <option>flowers4.json</option>
@@ -163,11 +216,21 @@ Use Namespace: <select id="namespace">
 </td>
 </tr>
 <tr>
+	<td>
+		Click <a onclick='updateFromXml(); return false;'>here</a> to load X3D XML into Cobweb and XML X3DOM viewer. Converts to JSON, but does not do a good job.<br>
+	</td>
+	<td>
+		Click <a onclick='updateFromJson();encodeJSON(); return false;'>here</a> to load X3D JSON text into JSON X3DOM viewer, convert to STL,  convert to EXI, and convert to XML (and display).<br>
+	</td>
+	<td>
+		Click <a onclick='decodeEXI4JSON();updateFromJson(); return false;'>here</a> to convert EXI to JSON, load X3D JSON and Display.
+	</td>
+</tr>
+<tr>
 <td>
-Click <a onclick='updateXML();'>here</a> to load X3D XML into Cobweb and XML X3DOM viewer. Does not convert to JSON.<br>
 	    
-<textarea id="xml" rows="15" cols="80"></textarea><br>
-    <div id="x3domxml"></div>
+	<textarea id="xml" rows="15" cols="80"></textarea><br>
+	<div id="x3domxml"></div>
     <X3DCanvas id='cobwebxml' cache='false' url='"cobweb.x3d"'>
            <p>Your browser may not support all features required by Cobweb!</p>
 	   <X3D>
@@ -178,9 +241,8 @@ Click <a onclick='updateXML();'>here</a> to load X3D XML into Cobweb and XML X3D
 </td>
 <td>
 		
-Click <a onclick='updateStl(); return false;'>here</a> to load X3D JSON text into JSON X3DOM viewer and convert to XML (and display).<br>
-<textarea id="json" rows="15" cols="80"></textarea><br>
-    <div id="x3domjson"></div>
+	<textarea id="json" rows="15" cols="80"></textarea><br>
+    	<div id="x3domjson"></div>
     <X3DCanvas id='cobwebjson' cache='false' url='"cobweb.x3d"'>
            <p>Your browser may not support all features required by Cobweb!</p>
 	   <X3D>
@@ -188,6 +250,11 @@ Click <a onclick='updateStl(); return false;'>here</a> to load X3D JSON text int
 	   </Scene>
 	   </X3D>
     </X3DCanvas>
+</td>
+<td>
+		<textarea id="exi" rows="15" cols="80"></textarea>
+		Standard Image<br></br>
+		<image height="150px" width="300px" id="image" src="">
 </td>
 </tr>
 <tr>
@@ -204,6 +271,8 @@ Click <a onclick='updateFromStl();'>here</a> to load STL text into JSON X3DOM vi
 Click <a onclick='updateFromPly();'>here</a> to load PLY text into JSON X3DOM viewer and convert to XML and JSON (and display).<br>
 <textarea id="ply" rows="15" cols="80"></textarea><br>
 </td>
+<td>
+</td>
 </tr>
 </table>
 </body>
@@ -219,10 +288,10 @@ Click <a onclick='updateFromPly();'>here</a> to load PLY text into JSON X3DOM vi
     <script type="text/javascript" src="convertStlToJson.js"></script>
     <script type="text/javascript" src="convertJsonToStl.js"></script>
     <script type="text/javascript" src="loaderJQuery.js"></script>
+    <script type="text/javascript" src="exi.js"></script>
     <script type="text/javascript">
 	$(document).ready(function() {
-		loadX3DJSON('#x3domjson','cobweb.json'); // does load cobweb.json
-		loadPly('#ply','example.ply'); // does load example.ply
+		loadJson('cobweb.json'); // does load cobweb.json
 	});
     </script>
 </html>

@@ -125,7 +125,7 @@ a:active {
 <br><br><br><br><br>
         </section>
         <section>
-          <header>Click <a onclick='updateXML();'>here</a> to load X3D XML into Cobweb and XML X3DOM viewer. Does not convert to JSON.</header>
+          <header>Click <a onclick='updateFromXml();'>here</a> to load X3D XML into Cobweb and XML X3DOM viewer. Does not convert to JSON.</header>
         </section>
         <section class="around">
 	    
@@ -155,7 +155,7 @@ Use Namespace: <select id="namespace" class="around3">
 </select><br>
         </section>
         <section>
-          <header>Click <a onclick='updateX3DOM();'>here</a> to load X3D JSON text into JSON X3DOM viewer and convert to XML (and display).</header>
+          <header>Click <a onclick='updateFromJson();'>here</a> to load X3D JSON text into JSON X3DOM viewer and convert to XML (and display).</header>
         </section>
         <section class="around">
 <textarea id="json" rows="15" cols="80" class="around2"></textarea><br>
@@ -188,7 +188,7 @@ Use Namespace: <select id="namespace" class="around3">
     <script type="text/javascript" src="loaderJQuery.js"></script>
     <script>
 	$(document).ready(function() {
-		loadX3DJSON('#x3domjson','flipper.json'); // does load flipper.json
+		loadJson('flipper.json'); // does load flipper.json
 	});
     </script>
 </html>

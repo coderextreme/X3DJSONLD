@@ -168,7 +168,7 @@ function loadURLs(loadpath, urls, loadedCallback) {
 					}
 				})(url);
 			} catch (e) {
-			 	throw(e);
+			 	console.error(e);
 			}
 		}
 	}
@@ -309,7 +309,7 @@ function ConvertObject(key, object, element, path, containerField) {
 							
 				}
 				for (var childkey in object[key]) {  // for each field
-					if (typeof object[key][childkey] === 'object' && object[key][childkey]["@name"] !== "reference") {
+					if (typeof object[key][childkey] === 'object') {
 						var child = CreateElement(key, x3djsonNS, containerField);
 						ConvertToX3DOM(object[key][childkey], childkey, child, path);
 						element.appendChild(child);
@@ -416,7 +416,7 @@ function ConvertToX3DOM(object, parentkey, element, path, containerField) {
 					localArray[str] = SFStringToXML(localArray[str]);
 				}
                                 if (parentkey === '@url' || parentkey.indexOf("Url") === parentkey.length - 3) {
-					// processURLs(localArray, path);
+					processURLs(localArray, path);
 				}
 				elementSetAttribute(element, parentkey.substr(1),'"'+localArray.join('" "')+'"');
 			} else {
@@ -482,13 +482,46 @@ function serializeDOM(json, element) {
  * returns an element - the element to append or insert into the DOM
  */
 function loadX3DJS(json, path, xml, NS) {
-	x3djsonNS = NS;
-	var child = CreateElement('X3D', NS);
-	ConvertToX3DOM(json, "", child, path);
-	if (typeof xml !== 'undefined' && typeof xml.push === 'function') {
-		xml.push(serializeDOM(json, child));
+	if (validateJson(json)) {
+		x3djsonNS = NS;
+		var child = CreateElement('X3D', NS);
+		ConvertToX3DOM(json, "", child, path);
+		if (typeof xml !== 'undefined' && typeof xml.push === 'function') {
+			xml.push(serializeDOM(json, child));
+		}
+		return child;
+	} else {
+		return null;
 	}
-	return child;
+}
+	
+var validate = function() { return true; }
+
+function setVersion(version) {
+	var versions = { "3.0":true,"3.1":true,"3.2":true,"3.3":true,"3.4":true }
+	if (!versions[version]) {
+		alert("Can only validate version 3.0-3.4 presently. Switching version to 3.3.");
+		version = "3.3";
+	}
+	$.getJSON("x3d-"+version+"-JSONSchema.json", function(schema) {
+		var ajv = Ajv({ allErrors:true});
+		ajv.addFormat("uri", /^(?:[a-z][a-z0-9+\-.]*:)?(?:\/?\/(?:(?:[a-z0-9\-._~!$&'()*+,;=:]|%[0-9a-f]{2})*@)?(?:\[(?:(?:(?:(?:[0-9a-f]{1,4}:){6}|::(?:[0-9a-f]{1,4}:){5}|(?:[0-9a-f]{1,4})?::(?:[0-9a-f]{1,4}:){4}|(?:(?:[0-9a-f]{1,4}:){0,1}[0-9a-f]{1,4})?::(?:[0-9a-f]{1,4}:){3}|(?:(?:[0-9a-f]{1,4}:){0,2}[0-9a-f]{1,4})?::(?:[0-9a-f]{1,4}:){2}|(?:(?:[0-9a-f]{1,4}:){0,3}[0-9a-f]{1,4})?::[0-9a-f]{1,4}:|(?:(?:[0-9a-f]{1,4}:){0,4}[0-9a-f]{1,4})?::)(?:[0-9a-f]{1,4}:[0-9a-f]{1,4}|(?:(?:25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d\d?))|(?:(?:[0-9a-f]{1,4}:){0,5}[0-9a-f]{1,4})?::[0-9a-f]{1,4}|(?:(?:[0-9a-f]{1,4}:){0,6}[0-9a-f]{1,4})?::)|[Vv][0-9a-f]+\.[a-z0-9\-._~!$&'()*+,;=:]+)\]|(?:(?:25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d\d?)|(?:[a-z0-9\-._~!$&'()*+,;=]|%[0-9a-f]{2})*)(?::\d*)?(?:\/(?:[a-z0-9\-._~!$&'()*+,;=:@]|%[0-9a-f]{2})*)*|\/(?:(?:[a-z0-9\-._~!$&'()*+,;=:@]|%[0-9a-f]{2})+(?:\/(?:[a-z0-9\-._~!$&'()*+,;=:@]|%[0-9a-f]{2})*)*)?|(?:[a-z0-9\-._~!$&'()*+,;=:@]|%[0-9a-f]{2})+(?:\/(?:[a-z0-9\-._~!$&'()*+,;=:@]|%[0-9a-f]{2})*)*)?(?:\?(?:[a-z0-9\-._~!$&'()*+,;=:@\/?]|%[0-9a-f]{2})*)?(?:\#(?:[a-z0-9\-._~!$&'()*+,;=:@\/?]|%[0-9a-f]{2})*)?$/i);
+		validate = ajv.compile(schema);
+	});
+}
+function validateJson(json) {
+	// check against schema
+	var version = json.X3D["@version"];
+	setVersion(version);  // loads schema.  TODO.  Only load when version changes
+	var valid = validate(json);
+	var errs = validate.errors;
+	var error = ""
+	for (var e in errs) {
+		error += "\r\n dataPath: " + errs[e].dataPath + "\r\n";
+		error += " message: " + errs[e].message + "\r\n";
+		error += " params: " + JSON.stringify(errs[e].params) + "\r\n";
+	}
+	return (valid || confirm(error));
 }
 
 if (typeof module === 'object')  {

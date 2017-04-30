@@ -31,7 +31,7 @@ app.post("/convert", function(req, res, next) {
 	var buf = '';
 	req.on('data', function(chunk){ buf += chunk; });
 	req.on('end', function(){
-		var infile = "/tmp/x3d"+(infl++)+".x3d";
+		var infile = __dirname+"/"+(infl++)+".x3d";
 		console.log("converting ", buf);
 		fs.writeFileSync(infile, buf);
 		var json = runAndSend(infile);

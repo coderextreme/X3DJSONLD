@@ -779,6 +779,7 @@ function externPrototypeExpander(file, object) {
 						var appinfo = obj["@appinfo"];
 						var description = obj["@description"];
 						// this is a single task
+						console.error("loading ", file, url);
 						loadURLs(file, url, function(data, u) {
 							var nameIndex = u.indexOf("#");
 							var protoname = name;

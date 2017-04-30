@@ -27,7 +27,6 @@ if (typeof Browser === 'undefined') {
 
 function processURLs(localArray, path) {
 	var url;
-/*
 	// No longer need to split
 	for (url in localArray) {
 		if (localArray[url].indexOf("http://") === 0
@@ -60,14 +59,12 @@ function processURLs(localArray, path) {
 			hash = localArray[url].substring(h);
 			localArray[url] = localArray[url].substring(0, h);
 		}
-*/
 /*
 		var x3d = localArray[url].lastIndexOf(".x3d") ;
 		if (x3d === localArray[url].length - 4) {
 			localArray[url] = localArray[url].substring(0, x3d)+".json" + hash;
 		}
 */
-/*
 		var wrl = localArray[url].lastIndexOf(".wrl") ;
 		if (wrl === localArray[url].length - 4) {
 			localArray[url] = localArray[url].substring(0, wrl)+".json" + hash;
@@ -78,7 +75,6 @@ function processURLs(localArray, path) {
 		}
 			
         }
-*/
 	// console.error("Processed URLs", localArray.join(" "));
 	return localArray;
 }
@@ -172,7 +168,7 @@ function loadURLs(loadpath, urls, loadedCallback) {
 					}
 				})(url);
 			} catch (e) {
-			 	throw(e);
+			 	console.error(e);
 			}
 		}
 	}
@@ -283,15 +279,36 @@ function ConvertObject(key, object, element, path, containerField) {
 			CDATACreateFunction(document, element, object[key].join("\r\n")+"\r\n");
 		} else {
 			if (key === 'connect' || key === 'fieldValue' || key === 'field' || key === 'meta' || key === 'component') {
+				if (key === 'meta') {
+					// Add meta information for X3DJSONLD
+					var months = [
+						"January",
+						"February",
+						"March",
+						"April",
+						"May",
+						"June",
+						"July",
+						"August",
+						"September",
+						"October",
+						"November",
+						"December"
+
+					];
+
+					var dt = new Date();
+					object[key][object[key].length] = {
+						"@name": "translated",
+						"@content": dt.getDate()+" "+ months[dt.getMonth()]+" "+dt.getFullYear()
+					};
+					object[key][object[key].length] = {
+						"@name": "generator",
+						"@content": "X3DJSONLD: https://github.com/coderextreme/X3DJSONLD"
+					};
+							
+				}
 				for (var childkey in object[key]) {  // for each field
-					if (key === 'meta') {
-						// console.error("Examining ", childkey, object[key].length);
-						if (parseInt(childkey) + 3 >= object[key].length) {
-							// get rid of meta stuff added by stylesheet
-							// console.error("Bailing");
-							break;
-						}
-					}
 					if (typeof object[key][childkey] === 'object') {
 						var child = CreateElement(key, x3djsonNS, containerField);
 						ConvertToX3DOM(object[key][childkey], childkey, child, path);
@@ -310,6 +327,7 @@ function ConvertObject(key, object, element, path, containerField) {
 }
 
 function CommentStringToXML(str) {
+	str = str.replace(/\\\\/g, '\\');
 	return str;
 }
 
@@ -318,8 +336,9 @@ function SFStringToXML(str) {
 	str = str.replace(/\\\\/g, '\\\\');
 	str = str.replace(/\\\\\\\\/g, '\\\\');
 	str = str.replace(/\\/g, '\\\\');
+	str = str.replace(/(\\+)"/g, '\\"');
 	if (y !== str) {
-		console.log("X3DJSON [] replacing", y, "with", str);
+		// console.log("X3DJSON [] replacing", y, "with", str);
 	}
 	return str;
 }
@@ -329,7 +348,7 @@ function JSONStringToXML(str) {
 	str = str.replace(/\\/g, '\\\\');
 	str = str.replace(/\n/g, '\\n');
 	if (y !== str) {
-		console.log("X3DJSON replacing", y, "with", str);
+		// console.log("X3DJSON replacing", y, "with", str);
 	}
 	return str;
 }
@@ -354,9 +373,11 @@ function ConvertToX3DOM(object, parentkey, element, path, containerField) {
 			} else if (typeof object[key] === 'boolean') {
 				localArray.push(object[key]);
 			} else if (typeof object[key] === 'object') {
+				/*
 				if (object[key] != null && typeof object[key].join === 'function') {
 					localArray.push(object[key].join(" "));
 				}
+				*/
 				ConvertToX3DOM(object[key], key, element, path);
 			} else if (typeof object[key] === 'undefined') {
 			} else {
@@ -395,7 +416,7 @@ function ConvertToX3DOM(object, parentkey, element, path, containerField) {
 					localArray[str] = SFStringToXML(localArray[str]);
 				}
                                 if (parentkey === '@url' || parentkey.indexOf("Url") === parentkey.length - 3) {
-					// processURLs(localArray, path);
+					processURLs(localArray, path);
 				}
 				elementSetAttribute(element, parentkey.substr(1),'"'+localArray.join('" "')+'"');
 			} else {
@@ -424,7 +445,7 @@ function fixXML(xmlstr) {
 	xmlstr = xmlstr.replace(/[\u0080-\uFFFF]/g, 
 		function (v) {return '&#'+v.charCodeAt()+';';}
 	);
-	xmlstr = xmlstr.replace(/(\\+)&quot;/g, '\\&quot;');
+	// xmlstr = xmlstr.replace(/(\\+)&quot;/g, '\\&quot;');
 	do {
 		var xmlstr2 = xmlstr;
 		xmlstr = xmlstr2.replace(/(<!\[CDATA\[(.|\n)*)&lt;((.|\n)*\]\]>)/gi, "$1<$3");
@@ -461,13 +482,46 @@ function serializeDOM(json, element) {
  * returns an element - the element to append or insert into the DOM
  */
 function loadX3DJS(json, path, xml, NS) {
-	x3djsonNS = NS;
-	var child = CreateElement('X3D', NS);
-	ConvertToX3DOM(json, "", child, path);
-	if (typeof xml !== 'undefined' && typeof xml.push === 'function') {
-		xml.push(serializeDOM(json, child));
+	if (validateJson(json)) {
+		x3djsonNS = NS;
+		var child = CreateElement('X3D', NS);
+		ConvertToX3DOM(json, "", child, path);
+		if (typeof xml !== 'undefined' && typeof xml.push === 'function') {
+			xml.push(serializeDOM(json, child));
+		}
+		return child;
+	} else {
+		return null;
 	}
-	return child;
+}
+	
+var validate = function() { return true; }
+
+function setVersion(version) {
+	var versions = { "3.0":true,"3.1":true,"3.2":true,"3.3":true,"3.4":true }
+	if (!versions[version]) {
+		alert("Can only validate version 3.0-3.4 presently. Switching version to 3.3.");
+		version = "3.3";
+	}
+	$.getJSON("x3d-"+version+"-JSONSchema.json", function(schema) {
+		var ajv = Ajv({ allErrors:true});
+		ajv.addFormat("uri", /^(?:[a-z][a-z0-9+\-.]*:)?(?:\/?\/(?:(?:[a-z0-9\-._~!$&'()*+,;=:]|%[0-9a-f]{2})*@)?(?:\[(?:(?:(?:(?:[0-9a-f]{1,4}:){6}|::(?:[0-9a-f]{1,4}:){5}|(?:[0-9a-f]{1,4})?::(?:[0-9a-f]{1,4}:){4}|(?:(?:[0-9a-f]{1,4}:){0,1}[0-9a-f]{1,4})?::(?:[0-9a-f]{1,4}:){3}|(?:(?:[0-9a-f]{1,4}:){0,2}[0-9a-f]{1,4})?::(?:[0-9a-f]{1,4}:){2}|(?:(?:[0-9a-f]{1,4}:){0,3}[0-9a-f]{1,4})?::[0-9a-f]{1,4}:|(?:(?:[0-9a-f]{1,4}:){0,4}[0-9a-f]{1,4})?::)(?:[0-9a-f]{1,4}:[0-9a-f]{1,4}|(?:(?:25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d\d?))|(?:(?:[0-9a-f]{1,4}:){0,5}[0-9a-f]{1,4})?::[0-9a-f]{1,4}|(?:(?:[0-9a-f]{1,4}:){0,6}[0-9a-f]{1,4})?::)|[Vv][0-9a-f]+\.[a-z0-9\-._~!$&'()*+,;=:]+)\]|(?:(?:25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d\d?)|(?:[a-z0-9\-._~!$&'()*+,;=]|%[0-9a-f]{2})*)(?::\d*)?(?:\/(?:[a-z0-9\-._~!$&'()*+,;=:@]|%[0-9a-f]{2})*)*|\/(?:(?:[a-z0-9\-._~!$&'()*+,;=:@]|%[0-9a-f]{2})+(?:\/(?:[a-z0-9\-._~!$&'()*+,;=:@]|%[0-9a-f]{2})*)*)?|(?:[a-z0-9\-._~!$&'()*+,;=:@]|%[0-9a-f]{2})+(?:\/(?:[a-z0-9\-._~!$&'()*+,;=:@]|%[0-9a-f]{2})*)*)?(?:\?(?:[a-z0-9\-._~!$&'()*+,;=:@\/?]|%[0-9a-f]{2})*)?(?:\#(?:[a-z0-9\-._~!$&'()*+,;=:@\/?]|%[0-9a-f]{2})*)?$/i);
+		validate = ajv.compile(schema);
+	});
+}
+function validateJson(json) {
+	// check against schema
+	var version = json.X3D["@version"];
+	setVersion(version);  // loads schema.  TODO.  Only load when version changes
+	var valid = validate(json);
+	var errs = validate.errors;
+	var error = ""
+	for (var e in errs) {
+		error += "\r\n dataPath: " + errs[e].dataPath + "\r\n";
+		error += " message: " + errs[e].message + "\r\n";
+		error += " params: " + JSON.stringify(errs[e].params) + "\r\n";
+	}
+	return (valid || confirm(error));
 }
 
 if (typeof module === 'object')  {
