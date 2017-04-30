@@ -181,9 +181,11 @@ function transformIfsToNormals(GeometryList) {
 	for (let g in GeometryList) {
 		let Geometry = GeometryList[g];
 		if (Geometry.recognize) {
-			output.unshift("solid "+Geometry.DEF);
-			for (n in Geometry.coordIndex) { // each face
-				dispatchTable.handle(Geometry, n, output);
+			output.push("solid "+Geometry.DEF);
+			if (typeof Geometry.coordIndex === 'object') {
+				for (n in Geometry.coordIndex) { // each face
+					dispatchTable.handle(Geometry, n, output);
+				}
 			}
 			output.push("endsolid "+Geometry.DEF);
 		}
