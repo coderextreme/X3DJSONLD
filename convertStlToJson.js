@@ -11,15 +11,6 @@ function convertStlToJson(file) {
 	IFS.co = {};
 	let dispatchTable = {
 		solid : function(line, IFS) {
-			IFS.normalIndex = [];
-			IFS.vector = [];
-			IFS.ni = {};
-			IFS.coordIndex = [];
-			IFS.point = [];
-			IFS.ci = {};
-			IFS.colorIndex = [];
-			IFS.color = [];
-			IFS.co = {};
 			IFS = {};
 			IFS.normalIndex = [];
 			IFS.vector = [];
