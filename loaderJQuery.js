@@ -359,40 +359,41 @@ function getXmlString(xml) {
 function convertXmlToJson(xmlString) {
     $.post("/convert", xmlString, function(json) {
 	updateFromJson(json);
-    }, "json");
-    /*
-    $.get("X3dToJson.xslt", function(xslt) {
-	// console.log("VAL", xmlString);
-	var demo = { xslt: xslt};
+    }, "json")
+    .fail(function(jqXHR, textStatus, errorThrown) {
+	    alert('convertXmlToJson request failed! ' + textStatus + ' ' + errorThrown);
+	    $.get("X3dToJson.xslt", function(xslt) {
+		// console.log("VAL", xmlString);
+		var demo = { xslt: xslt};
 
-	// code for regular browsers
-	if (window.DOMParser) {
-	    var parser = new DOMParser();
-	    demo.xml = parser.parseFromString(xmlString, "application/xml");
-	}
-	// code for IE
-	if (window.ActiveXObject) {
-	    demo.xml = new ActiveXObject("Microsoft.XMLDOM");
-	    demo.xml.async = false;
-	    demo.xml.loadXML(xmlString);
-	}
-	// console.log("PARSED XML", demo.xml);
+		// code for regular browsers
+		if (window.DOMParser) {
+		    var parser = new DOMParser();
+		    demo.xml = parser.parseFromString(xmlString, "application/xml");
+		}
+		// code for IE
+		if (window.ActiveXObject) {
+		    demo.xml = new ActiveXObject("Microsoft.XMLDOM");
+		    demo.xml.async = false;
+		    demo.xml.loadXML(xmlString);
+		}
+		// console.log("PARSED XML", demo.xml);
 
-	// code for regular browsers
-	if (document.implementation && document.implementation.createDocument)
-	{
-	    var xsltProcessor = Saxon.newXSLT20Processor();
-	    xsltProcessor.importStylesheet(demo.xslt);
-	    result = xsltProcessor.transformToFragment(demo.xml, document);
-	}
-	else if (window.ActiveXObject) {
-	    // code for IE
-	    result = demo.xml.transformNode(demo.xslt);
-	}
+		// code for regular browsers
+		if (document.implementation && document.implementation.createDocument)
+		{
+		    var xsltProcessor = Saxon.newXSLT20Processor();
+		    xsltProcessor.importStylesheet(demo.xslt);
+		    result = xsltProcessor.transformToFragment(demo.xml, document);
+		}
+		else if (window.ActiveXObject) {
+		    // code for IE
+		    result = demo.xml.transformNode(demo.xslt);
+		}
 
-	// console.log('JSON', result);
-	var json = JSON.parse(getXmlString(result));
-	updateFromJson(json);
-    }, "xml");
-    */
+		// console.log('JSON', result);
+		var json = JSON.parse(getXmlString(result));
+		updateFromJson(json);
+	    }, "xml");
+    });
 }
