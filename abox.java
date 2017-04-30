@@ -79,7 +79,9 @@ public class abox {
     new abox().initialize().toFileJSON("abox.new.json");
     }
     public X3DObject initialize() {
-      return new X3DObject().setProfile("Immersive").setVersion("3.3")
+ProtoInstanceObject ProtoInstance0 = null;
+ProtoInstanceObject ProtoInstance1 = null;
+      X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
       .setHead(new headObject()
         .addMeta(new metaObject().setName("title").setContent("abox.x3d"))
         .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
@@ -108,12 +110,14 @@ public class abox {
                 .setGeometry(new CylinderObject()))))
           .setProtoBody(new ProtoBodyObject()
             .addChild(new TransformObject()
-              .addChild(new ProtoInstanceObject().setName("anyShape")
+              .addChild(ProtoInstance0 = new ProtoInstanceObject().setName("anyShape")
                 .setIS(new ISObject()
                   .addConnect(new connectObject().setNodeField("myShape").setProtoField("myShape")))))))
-        .addChild(new ProtoInstanceObject().setName("one")
+        .addChild(ProtoInstance1 = new ProtoInstanceObject().setName("one")))      ;
+ProtoInstance1
           .addFieldValue(new fieldValueObject().setName("myShape")
             .addChild(new ShapeObject()
-              .setGeometry(new BoxObject().setSize(new float[] {1f,1f,1f}))))))      ;
+              .setGeometry(new BoxObject().setSize(new float[] {1f,1f,1f}))));
+    return X3D0;
     }
 }

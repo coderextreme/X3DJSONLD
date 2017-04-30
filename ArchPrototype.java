@@ -79,7 +79,8 @@ public class ArchPrototype {
     new ArchPrototype().initialize().toFileJSON("ArchPrototype.new.json");
     }
     public X3DObject initialize() {
-      return new X3DObject().setProfile("Immersive").setVersion("3.3")
+ProtoInstanceObject ProtoInstance0 = null;
+      X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
       .setHead(new headObject()
         .addMeta(new metaObject().setName("title").setContent("ArchPrototype.x3d"))
         .addMeta(new metaObject().setName("description").setContent("Create an arch. Can modify general parameters: clearSpanWidth, riseHeight, depth, topAbutmentHeight, pierWidth, pierHeight. See the reference file ArchModelingDiagrams.pdf to find further information. See also ArchPrototypeScript_more_readable.js."))
@@ -169,17 +170,26 @@ public class ArchPrototype {
             .addChild(new ROUTEObject().setFromField("computedScale").setFromNode("ArchPrototypeScript").setToField("scale").setToNode("ArchTransform"))
             .addChild(new ROUTEObject().setFromField("pointOut").setFromNode("ArchPrototypeScript").setToField("point").setToNode("ArchChord"))
             .addChild(new ROUTEObject().setFromField("indexOut").setFromNode("ArchPrototypeScript").setToField("set_coordIndex").setToNode("ArchIndex"))))
-        .addChild(new ProtoInstanceObject().setName("ArchPrototype").setDEF("ArchInstance")
-          .addFieldValue(new fieldValueObject().setName("diffuseColor").setValue("0.5 0.3 0.6"))
-          .addFieldValue(new fieldValueObject().setName("emissiveColor").setValue("0.5 0.3 0.6"))
-          .addFieldValue(new fieldValueObject().setName("clearSpanWidth").setValue("5"))
-          .addFieldValue(new fieldValueObject().setName("riseHeight").setValue("2.5"))
-          .addFieldValue(new fieldValueObject().setName("depth").setValue("2"))
-          .addFieldValue(new fieldValueObject().setName("topAbutmentHeight").setValue("0.6"))
-          .addFieldValue(new fieldValueObject().setName("pierWidth").setValue("1"))
-          .addFieldValue(new fieldValueObject().setName("pierHeight").setValue("2")))
+        .addChild(ProtoInstance0 = new ProtoInstanceObject().setName("ArchPrototype").setDEF("ArchInstance"))
         .addComments(new CommentsBlock("Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare)"))
         .addChild(new InlineObject().setDEF("CoordinateAxes").setUrl(new MFStringObject(new MFString1().getArray()))))      ;
+ProtoInstance0
+          .addFieldValue(new fieldValueObject().setName("diffuseColor").setValue("0.5 0.3 0.6"));
+ProtoInstance0
+          .addFieldValue(new fieldValueObject().setName("emissiveColor").setValue("0.5 0.3 0.6"));
+ProtoInstance0
+          .addFieldValue(new fieldValueObject().setName("clearSpanWidth").setValue("5"));
+ProtoInstance0
+          .addFieldValue(new fieldValueObject().setName("riseHeight").setValue("2.5"));
+ProtoInstance0
+          .addFieldValue(new fieldValueObject().setName("depth").setValue("2"));
+ProtoInstance0
+          .addFieldValue(new fieldValueObject().setName("topAbutmentHeight").setValue("0.6"));
+ProtoInstance0
+          .addFieldValue(new fieldValueObject().setName("pierWidth").setValue("1"));
+ProtoInstance0
+          .addFieldValue(new fieldValueObject().setName("pierHeight").setValue("2"));
+    return X3D0;
     }
 protected class MFString0 {
   protected MFStringObject getArray() {

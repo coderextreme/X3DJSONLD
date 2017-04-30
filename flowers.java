@@ -79,7 +79,10 @@ public class flowers {
     new flowers().initialize().toFileJSON("flowers.new.json");
     }
     public X3DObject initialize() {
-      return new X3DObject().setProfile("Immersive").setVersion("3.3")
+ProtoInstanceObject ProtoInstance0 = null;
+ProtoInstanceObject ProtoInstance1 = null;
+ProtoInstanceObject ProtoInstance2 = null;
+      X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
       .setHead(new headObject()
         .addMeta(new metaObject().setName("title").setContent("flowers.x3d"))
         .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
@@ -245,9 +248,10 @@ public class flowers {
             .addChild(new ROUTEObject().setFromField("coordIndexes").setFromNode("Bounce").setToField("set_coordIndex").setToNode("Orbit"))
             .addChild(new ROUTEObject().setFromField("coordinates").setFromNode("Bounce").setToField("set_point").setToNode("OrbitCoordinates"))))
         .addChild(new TransformObject()
-          .addChild(new ProtoInstanceObject().setName("flower"))
-          .addChild(new ProtoInstanceObject().setName("flower"))
-          .addChild(new ProtoInstanceObject().setName("flower"))))      ;
+          .addChild(ProtoInstance0 = new ProtoInstanceObject().setName("flower"))
+          .addChild(ProtoInstance1 = new ProtoInstanceObject().setName("flower"))
+          .addChild(ProtoInstance2 = new ProtoInstanceObject().setName("flower"))))      ;
+    return X3D0;
     }
 protected class MFString0 {
   protected MFStringObject getArray() {

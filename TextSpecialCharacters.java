@@ -79,7 +79,7 @@ public class TextSpecialCharacters {
     new TextSpecialCharacters().initialize().toFileJSON("TextSpecialCharacters.new.json");
     }
     public X3DObject initialize() {
-      return new X3DObject().setProfile("Immersive").setVersion("3.3")
+      X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
       .setHead(new headObject()
         .addMeta(new metaObject().setName("title").setContent("TextSpecialCharacters.x3d"))
         .addMeta(new metaObject().setName("description").setContent("Text node demonstration of quotation, apostrophe, ampersand and backslash characters using X3D MFString escaping for XML character entities"))
@@ -113,6 +113,7 @@ public class TextSpecialCharacters {
             .setFontStyle(new FontStyleObject().setDEF("CenteredFontStyle").setJustify(new MFStringObject(new MFString2().getArray()))))
           .setAppearance(new AppearanceObject()
             .setMaterial(new MaterialObject().setDEF("DefaultMaterial").setDiffuseColor(new float[] {0.2f,0.2f,0.2f})))))      ;
+    return X3D0;
     }
 protected class MFColor0 {
   protected MFColorObject getArray() {

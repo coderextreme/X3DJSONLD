@@ -79,7 +79,7 @@ public class BoxManAnimationPanel {
     new BoxManAnimationPanel().initialize().toFileJSON("BoxManAnimationPanel.new.json");
     }
     public X3DObject initialize() {
-      return new X3DObject().setProfile("Immersive").setVersion("3.3")
+      X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
       .setHead(new headObject()
         .addComponent(new componentObject().setName("H-Anim").setLevel(1))
         .addMeta(new metaObject().setName("title").setContent("BoxManAnimationPanel.x3d"))
@@ -1273,6 +1273,7 @@ public class BoxManAnimationPanel {
         .addChild(new ROUTEObject().setFromField("touchTime").setFromNode("Stop_Touch").setToField("set_stopTime").setToNode("JumpTimer"))
         .addChild(new ROUTEObject().setFromField("touchTime").setFromNode("Stop_Touch").setToField("set_stopTime").setToNode("KickTimer"))
         .addChild(new ROUTEObject().setFromField("touchTime").setFromNode("Stop_Touch").setToField("set_startTime").setToNode("StopTimer")))      ;
+    return X3D0;
     }
 protected class MFString0 {
   protected MFStringObject getArray() {

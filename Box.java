@@ -79,7 +79,11 @@ public class Box {
     new Box().initialize().toFileJSON("Box.new.json");
     }
     public X3DObject initialize() {
-      return new X3DObject().setProfile("Immersive").setVersion("3.3")
+ProtoInstanceObject ProtoInstance0 = null;
+ProtoInstanceObject ProtoInstance1 = null;
+ProtoInstanceObject ProtoInstance2 = null;
+ProtoInstanceObject ProtoInstance3 = null;
+      X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
       .setHead(new headObject()
         .addMeta(new metaObject().setName("title").setContent("box.x3d"))
         .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
@@ -119,25 +123,31 @@ public class Box {
             .addChild(new TransformObject()
               .setIS(new ISObject()
                 .addConnect(new connectObject().setNodeField("translation").setProtoField("ytranslation")))
-              .addChild(new ProtoInstanceObject().setName("anyShape")
-                .addFieldValue(new fieldValueObject().setName("xtranslation").setValue("0 0 0"))
+              .addChild(ProtoInstance0 = new ProtoInstanceObject().setName("anyShape")
                 .setIS(new ISObject()
                   .addConnect(new connectObject().setNodeField("myShape").setProtoField("myShape"))))
-              .addChild(new ProtoInstanceObject().setName("anyShape")
-                .addFieldValue(new fieldValueObject().setName("xtranslation").setValue("2 0 0"))
+              .addChild(ProtoInstance1 = new ProtoInstanceObject().setName("anyShape")
                 .setIS(new ISObject()
                   .addConnect(new connectObject().setNodeField("myShape").setProtoField("myShape"))))
-              .addChild(new ProtoInstanceObject().setName("anyShape")
-                .addFieldValue(new fieldValueObject().setName("xtranslation").setValue("-2 0 0"))
+              .addChild(ProtoInstance2 = new ProtoInstanceObject().setName("anyShape")
                 .setIS(new ISObject()
                   .addConnect(new connectObject().setNodeField("myShape").setProtoField("myShape")))))))
-        .addChild(new ProtoInstanceObject().setName("three")
-          .addFieldValue(new fieldValueObject().setName("ytranslation").setValue("0 0 0"))
+        .addChild(ProtoInstance3 = new ProtoInstanceObject().setName("three")))      ;
+ProtoInstance0
+                .addFieldValue(new fieldValueObject().setName("xtranslation").setValue("0 0 0"));
+ProtoInstance1
+                .addFieldValue(new fieldValueObject().setName("xtranslation").setValue("2 0 0"));
+ProtoInstance2
+                .addFieldValue(new fieldValueObject().setName("xtranslation").setValue("-2 0 0"));
+ProtoInstance3
+          .addFieldValue(new fieldValueObject().setName("ytranslation").setValue("0 0 0"));
+ProtoInstance3
           .addFieldValue(new fieldValueObject().setName("myShape")
             .addChild(new ShapeObject()
               .setGeometry(new BoxObject().setSize(new float[] {1f,1f,1f}))
               .setAppearance(new AppearanceObject()
-                .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0f,1f,0f})))))))      ;
+                .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0f,1f,0f})))));
+    return X3D0;
     }
 protected class MFString0 {
   protected MFStringObject getArray() {

@@ -4,15 +4,21 @@ const DOUBLE_SUFFIX = 'd';
 const FLOAT_SUFFIX = 'f';
 
 function JavaSerializer() {
+this.code = [];
+this.codeno = 0;
+this.precode = [];
+this.preno = 0;
+this.postcode = [];
 }
 
-var code = [];
-var codeno = 0;
 
 JavaSerializer.prototype = {
 	serializeToString : function(json, element, clazz, mapToMethod, fieldTypes) {
-		code = [];
-		codeno = 0;
+		this.code = [];
+		this.codeno = 0;
+		this.precode = [];
+		this.preno = 0;
+		this.postcode = [];
 		/*
 		for (let a in element.attributes) {
 			let attrs = element.attributes;
@@ -119,12 +125,24 @@ JavaSerializer.prototype = {
 		str += "    new "+clz+"().initialize().toFileJSON(\""+clazz+".new.json\");\n";
 		str += "    }\n";
 		str += "    public "+element.nodeName+"Object initialize() {\n";
-		str += "      return new "+element.nodeName+"Object()";
-		str += this.subSerializeToString(element, mapToMethod, fieldTypes, 3);
+
+		// we figure out body first and print it out later
+		var body = "      "+element.nodeName+"Object "+element.nodeName+0+" =  new "+element.nodeName+"Object()";
+		body += this.subSerializeToString(element, mapToMethod, fieldTypes, 3, []);
+		for (var po in this.precode) {
+			str += this.precode[po];
+		}
+		str += body;
 		str += "      ;\n";
+		for (var postno = 0;  postno < this.postcode.length; postno++) {
+			if (typeof this.postcode[postno] !== 'undefined') {
+				str += this.postcode[postno];
+			}
+		}
+		str += "    return "+element.nodeName+0+";\n";
 		str += "    }\n";
-		for (var co in code) {
-			str += code[co];
+		for (var co in this.code) {
+			str += this.code[co];
 		}
 		str += "}\n";
 		return str;
@@ -138,18 +156,18 @@ JavaSerializer.prototype = {
 				if (i + 840 < max) {
 					max = i + 840;
 				}
-				codeno++;
-				code[co] = "protected class "+attrType+co+" {\n";
-				code[co] +=  "  protected "+attrType+"Object getArray() {\n";
-				code[co] += "    return new "+attrType+"Object(new "+type+"[] {"+lead+values.slice(i, max).join(j)+trail+"});\n";
-				code[co] += "  }\n";
-				code[co] += "}\n";
+				this.codeno++;
+				this.code[co] = "protected class "+attrType+co+" {\n";
+				this.code[co] +=  "  protected "+attrType+"Object getArray() {\n";
+				this.code[co] += "    return new "+attrType+"Object(new "+type+"[] {"+lead+values.slice(i, max).join(j)+trail+"});\n";
+				this.code[co] += "  }\n";
+				this.code[co] += "}\n";
 				if (i == 0) {
 					str += "new "+attrType+co+"().getArray())";
 				} else {
 					str += ".append(new "+attrType+co+"().getArray())";
 				}
-				co = codeno;
+				co = this.codeno;
 			}
 			return str;
 		} else {
@@ -215,7 +233,7 @@ JavaSerializer.prototype = {
 		return "\n"+("  ".repeat(n))+addpre+method;
 	},
 
-	subSerializeToString : function(element, mapToMethod, fieldTypes, n) {
+	subSerializeToString : function(element, mapToMethod, fieldTypes, n, stack) {
 		let str = "";
 		let fieldAttrType = "";
 		for (let a in element.attributes) {
@@ -298,7 +316,7 @@ JavaSerializer.prototype = {
 					} else if (attrType === "SFTime") {
 						strval = attrs[a].nodeValue+DOUBLE_SUFFIX;
 					} else if (attrType === "MFTime") {
-						strval = this.printSubArray(attrType, "double", attrs[a].nodeValue.split(' '), codeno, DOUBLE_SUFFIX+',', '', DOUBLE_SUFFIX);
+						strval = this.printSubArray(attrType, "double", attrs[a].nodeValue.split(' '), this.codeno, DOUBLE_SUFFIX+',', '', DOUBLE_SUFFIX);
 					} else if (attrType === "MFString") {
 						strval = this.printSubArray(attrType, "java.lang.String",
 							attrs[a].nodeValue.substr(1, attrs[a].nodeValue.length-2).split(/" "/).
@@ -314,12 +332,12 @@ JavaSerializer.prototype = {
 									console.error("Java Replacing "+x+" with "+y);
 								}
 								return y;
-							}), codeno, '","', '"', '"');
+							}), this.codeno, '","', '"', '"');
 					} else if (
 						attrType === "MFInt32"||
 						attrType === "MFImage"||
 						attrType === "SFImage") {
-						strval = this.printSubArray(attrType, "int", attrs[a].nodeValue.split(' '), codeno, ',', '', '');
+						strval = this.printSubArray(attrType, "int", attrs[a].nodeValue.split(' '), this.codeno, ',', '', '');
 					} else if (
 						attrType === "SFColor"||
 						attrType === "MFColor"||
@@ -338,7 +356,7 @@ JavaSerializer.prototype = {
 						attrType === "SFRotation"|
 						attrType === "MFRotation"|
 						attrType === "MFFloat") {
-						strval = this.printSubArray(attrType, "float", attrs[a].nodeValue.split(' '), codeno, FLOAT_SUFFIX+',', '', FLOAT_SUFFIX);
+						strval = this.printSubArray(attrType, "float", attrs[a].nodeValue.split(' '), this.codeno, FLOAT_SUFFIX+',', '', FLOAT_SUFFIX);
 					} else if (
 						attrType === "SFVec2d"||
 						attrType === "SFVec3d"||
@@ -351,9 +369,9 @@ JavaSerializer.prototype = {
 						attrType === "MFMatrix3d"||
 						attrType === "MFMatrix4d"|
 						attrType === "MFDouble") {
-						strval = this.printSubArray(attrType, "double", attrs[a].nodeValue.split(' '), codeno, DOUBLE_SUFFIX+',', '', DOUBLE_SUFFIX);
+						strval = this.printSubArray(attrType, "double", attrs[a].nodeValue.split(' '), this.codeno, DOUBLE_SUFFIX+',', '', DOUBLE_SUFFIX);
 					} else if (attrType === "MFBool") {
-						strval = this.printSubArray(attrType, "boolean", attrs[a].nodeValue.split(' '), codeno, ',', '', '');
+						strval = this.printSubArray(attrType, "boolean", attrs[a].nodeValue.split(' '), this.codeno, ',', '', '');
 					} else {
 						// strval = attrs[a].nodeValue;
 						// not found in field types
@@ -388,17 +406,44 @@ JavaSerializer.prototype = {
 		for (let cn in element.childNodes) {
 			let node = element.childNodes[cn];
 			if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 1) {
-				str += this.printParentChild(element, node, cn, mapToMethod, n);
-				str += "(";
-				if (element.nodeName === "Appearance" && node.NodeName === "ComposedShader") {
-					str += "new X3DNode [] {";
+				if (node.nodeName === "ProtoInstance") {
+					stack.unshift(this.preno);
+					console.log("unshift", stack);
+					this.preno++;
+					this.precode[stack[0]] = node.nodeName+"Object "+node.nodeName+stack[0]+" = null;\n";
 				}
-				str += "new "+node.nodeName+"Object()";
-				str += this.subSerializeToString(node, mapToMethod, fieldTypes, n+1);
-				if (element.nodeName === "Appearance" && node.NodeName === "ComposedShader") {
-					str += "}";
+				if (element.nodeName === "ProtoInstance" && node.nodeName === "fieldValue") {
+					if (typeof this.postcode[stack[0]] === 'undefined') {
+						this.postcode[stack[0]] = "";
+					}
+					this.postcode[stack[0]] += element.nodeName+stack[0];
 				}
-				str += ")";
+				var ch = this.printParentChild(element, node, cn, mapToMethod, n);
+				ch += "(";
+				if (element.nodeName === "Appearance" && node.NodeName === "ComposedShader") {
+					ch += "new X3DNode [] {";
+				}
+				if (node.nodeName === "ProtoInstance") {
+					ch += node.nodeName+stack[0] + " = ";
+				}
+
+				ch += "new "+node.nodeName+"Object()";
+				ch += this.subSerializeToString(node, mapToMethod, fieldTypes, n+1, stack);
+				if (element.nodeName === "Appearance" && node.NodeName === "ComposedShader") {
+					ch += "}";
+				}
+				ch += ")";
+				if (element.nodeName === "ProtoInstance" && node.nodeName === "fieldValue") {
+					// ch goes to end of body
+					this.postcode[stack[0]] += ch+";\n";
+				} else {
+					// ch is attached to body
+					str += ch;
+				}
+				if (node.nodeName === "ProtoInstance") {
+					stack.shift();
+					console.log("shift", stack);
+				}
 			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 8) {
 				let y = node.nodeValue.
 					replace(/\\/g, '\\\\').

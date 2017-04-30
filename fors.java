@@ -79,7 +79,10 @@ public class fors {
     new fors().initialize().toFileJSON("fors.new.json");
     }
     public X3DObject initialize() {
-      return new X3DObject().setProfile("Immersive").setVersion("3.3")
+ProtoInstanceObject ProtoInstance0 = null;
+ProtoInstanceObject ProtoInstance1 = null;
+ProtoInstanceObject ProtoInstance2 = null;
+      X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
       .setHead(new headObject()
         .addMeta(new metaObject().setName("creator").setContent("John W Carlson"))
         .addMeta(new metaObject().setName("created").setContent("December 13 2015"))
@@ -168,15 +171,20 @@ public class fors {
 ""))
             .addChild(new ROUTEObject().setFromNode("MoveCylinder").setFromField("spine").setToNode("extrusion").setToField("set_spine"))))
         .addChild(new TransformObject().setScale(new float[] {0.1f,0.1f,0.1f})
-          .addChild(new ProtoInstanceObject().setName("node").setDEF("nodeA")
-            .addFieldValue(new fieldValueObject().setName("position").setValue("-50 -50 -50")))
-          .addChild(new ProtoInstanceObject().setName("node").setDEF("nodeB")
-            .addFieldValue(new fieldValueObject().setName("position").setValue("50 50 50")))
-          .addChild(new ProtoInstanceObject().setName("cylinder").setDEF("linkA")
-            .addFieldValue(new fieldValueObject().setName("positionA").setValue("0 0 0"))
-            .addFieldValue(new fieldValueObject().setName("positionB").setValue("50 50 50"))))
+          .addChild(ProtoInstance0 = new ProtoInstanceObject().setName("node").setDEF("nodeA"))
+          .addChild(ProtoInstance1 = new ProtoInstanceObject().setName("node").setDEF("nodeB"))
+          .addChild(ProtoInstance2 = new ProtoInstanceObject().setName("cylinder").setDEF("linkA")))
         .addChild(new ROUTEObject().setFromNode("nodeA").setFromField("position").setToNode("linkA").setToField("positionA"))
         .addChild(new ROUTEObject().setFromNode("nodeB").setFromField("position").setToNode("linkA").setToField("positionB")))      ;
+ProtoInstance0
+            .addFieldValue(new fieldValueObject().setName("position").setValue("-50 -50 -50"));
+ProtoInstance1
+            .addFieldValue(new fieldValueObject().setName("position").setValue("50 50 50"));
+ProtoInstance2
+            .addFieldValue(new fieldValueObject().setName("positionA").setValue("0 0 0"));
+ProtoInstance2
+            .addFieldValue(new fieldValueObject().setName("positionB").setValue("50 50 50"));
+    return X3D0;
     }
 protected class MFFloat0 {
   protected MFFloatObject getArray() {

@@ -79,7 +79,7 @@ public class x3dconnector {
     new x3dconnector().initialize().toFileJSON("x3dconnector.new.json");
     }
     public X3DObject initialize() {
-      return new X3DObject().setProfile("Immersive").setVersion("3.3")
+      X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
       .setHead(new headObject()
         .addMeta(new metaObject().setName("title").setContent("x3dconnectorProto"))
         .addMeta(new metaObject().setName("creator").setContent("Lost, Doug Sanden I think"))
@@ -153,6 +153,7 @@ public class x3dconnector {
         .addChild(new ROUTEObject().setFromNode("S1").setFromField("translation").setToNode("C0").setToField("translation"))
         .addChild(new ROUTEObject().setFromNode("S1").setFromField("rotation").setToNode("C2").setToField("rotation"))
         .addChild(new ROUTEObject().setFromNode("S1").setFromField("scale").setToNode("C2").setToField("scale")))      ;
+    return X3D0;
     }
 protected class MFColor0 {
   protected MFColorObject getArray() {

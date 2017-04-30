@@ -79,7 +79,7 @@ public class Teapot {
     new Teapot().initialize().toFileJSON("Teapot.new.json");
     }
     public X3DObject initialize() {
-      return new X3DObject().setProfile("Interchange").setVersion("3.0")
+      X3DObject X3D0 =  new X3DObject().setProfile("Interchange").setVersion("3.0")
       .setHead(new headObject()
         .addMeta(new metaObject().setName("title").setContent("MooringBuoy.x3d"))
         .addMeta(new metaObject().setName("description").setContent("A mooring buoy used in Naval Harbors"))
@@ -113,6 +113,7 @@ public class Teapot {
                 .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt324().getArray()).append(new MFInt325().getArray()).append(new MFInt326().getArray())).setCreaseAngle(1.047f).setTexCoordIndex(new MFInt32Object(new MFInt327().getArray()).append(new MFInt328().getArray()).append(new MFInt329().getArray()))
                   .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f10().getArray()).append(new MFVec3f11().getArray())))
                   .setTexCoord(new TextureCoordinateObject().setPoint(new MFVec2fObject(new MFVec2f12().getArray())))))))))      ;
+    return X3D0;
     }
 protected class MFInt320 {
   protected MFInt32Object getArray() {

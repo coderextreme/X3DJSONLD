@@ -79,7 +79,10 @@ public class x3dconnectorProto {
     new x3dconnectorProto().initialize().toFileJSON("x3dconnectorProto.new.json");
     }
     public X3DObject initialize() {
-      return new X3DObject().setProfile("Immersive").setVersion("3.3")
+ProtoInstanceObject ProtoInstance0 = null;
+ProtoInstanceObject ProtoInstance1 = null;
+ProtoInstanceObject ProtoInstance2 = null;
+      X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
       .setHead(new headObject()
         .addMeta(new metaObject().setName("title").setContent("x3dconnectorProto"))
         .addMeta(new metaObject().setName("creator").setContent("Lost, Doug Sanden I think"))
@@ -180,33 +183,43 @@ public class x3dconnectorProto {
 "                recompute(startnode.translation,val);\n"+
 "            }\n"+
 ""))))
-        .addChild(new ProtoInstanceObject().setName("x3dconnector").setDEF("connector1")
-          .addFieldValue(new fieldValueObject().setName("startnode")
-            .addChild(new TransformObject().setUSE("G1")))
-          .addFieldValue(new fieldValueObject().setName("endnode")
-            .addChild(new TransformObject().setUSE("G2")))
-          .addFieldValue(new fieldValueObject().setName("connectornode")
-            .addChild(new TransformObject().setUSE("C1"))))
-        .addChild(new ProtoInstanceObject().setName("x3dconnector").setDEF("connector2")
-          .addFieldValue(new fieldValueObject().setName("startnode")
-            .addChild(new TransformObject().setUSE("G1")))
-          .addFieldValue(new fieldValueObject().setName("endnode")
-            .addChild(new TransformObject().setUSE("G3")))
-          .addFieldValue(new fieldValueObject().setName("connectornode")
-            .addChild(new TransformObject().setUSE("C2"))))
-        .addChild(new ProtoInstanceObject().setName("x3dconnector").setDEF("connector3")
-          .addFieldValue(new fieldValueObject().setName("startnode")
-            .addChild(new TransformObject().setUSE("G1")))
-          .addFieldValue(new fieldValueObject().setName("endnode")
-            .addChild(new TransformObject().setUSE("G4")))
-          .addFieldValue(new fieldValueObject().setName("connectornode")
-            .addChild(new TransformObject().setUSE("C3"))))
+        .addChild(ProtoInstance0 = new ProtoInstanceObject().setName("x3dconnector").setDEF("connector1"))
+        .addChild(ProtoInstance1 = new ProtoInstanceObject().setName("x3dconnector").setDEF("connector2"))
+        .addChild(ProtoInstance2 = new ProtoInstanceObject().setName("x3dconnector").setDEF("connector3"))
         .addChild(new ROUTEObject().setFromNode("G1").setFromField("translation_changed").setToNode("connector1").setToField("set_startpoint"))
         .addChild(new ROUTEObject().setFromNode("G2").setFromField("translation_changed").setToNode("connector1").setToField("set_endpoint"))
         .addChild(new ROUTEObject().setFromNode("G1").setFromField("translation_changed").setToNode("connector2").setToField("set_startpoint"))
         .addChild(new ROUTEObject().setFromNode("G3").setFromField("translation_changed").setToNode("connector2").setToField("set_endpoint"))
         .addChild(new ROUTEObject().setFromNode("G1").setFromField("translation_changed").setToNode("connector3").setToField("set_startpoint"))
         .addChild(new ROUTEObject().setFromNode("G4").setFromField("translation_changed").setToNode("connector3").setToField("set_endpoint")))      ;
+ProtoInstance0
+          .addFieldValue(new fieldValueObject().setName("startnode")
+            .addChild(new TransformObject().setUSE("G1")));
+ProtoInstance0
+          .addFieldValue(new fieldValueObject().setName("endnode")
+            .addChild(new TransformObject().setUSE("G2")));
+ProtoInstance0
+          .addFieldValue(new fieldValueObject().setName("connectornode")
+            .addChild(new TransformObject().setUSE("C1")));
+ProtoInstance1
+          .addFieldValue(new fieldValueObject().setName("startnode")
+            .addChild(new TransformObject().setUSE("G1")));
+ProtoInstance1
+          .addFieldValue(new fieldValueObject().setName("endnode")
+            .addChild(new TransformObject().setUSE("G3")));
+ProtoInstance1
+          .addFieldValue(new fieldValueObject().setName("connectornode")
+            .addChild(new TransformObject().setUSE("C2")));
+ProtoInstance2
+          .addFieldValue(new fieldValueObject().setName("startnode")
+            .addChild(new TransformObject().setUSE("G1")));
+ProtoInstance2
+          .addFieldValue(new fieldValueObject().setName("endnode")
+            .addChild(new TransformObject().setUSE("G4")));
+ProtoInstance2
+          .addFieldValue(new fieldValueObject().setName("connectornode")
+            .addChild(new TransformObject().setUSE("C3")));
+    return X3D0;
     }
 protected class MFColor0 {
   protected MFColorObject getArray() {

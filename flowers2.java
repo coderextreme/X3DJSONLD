@@ -79,7 +79,7 @@ public class flowers2 {
     new flowers2().initialize().toFileJSON("flowers2.new.json");
     }
     public X3DObject initialize() {
-      return new X3DObject().setProfile("Immersive").setVersion("3.0")
+      X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.0")
       .setHead(new headObject()
         .addMeta(new metaObject().setName("flowers2.x3d").setContent("title"))
         .addMeta(new metaObject().setName("author").setContent("John Carlson"))
@@ -276,6 +276,7 @@ public class flowers2 {
         .addChild(new ROUTEObject().setFromField("fraction_changed").setFromNode("Clock").setToField("set_fraction").setToNode("OrbitPath"))
         .addChild(new ROUTEObject().setFromField("value_changed").setFromNode("OrbitPath").setToField("set_rotation").setToNode("OrbitTransform"))
         .addChild(new ROUTEObject().setFromField("value_changed").setFromNode("OrbitPath").setToField("set_rotation").setToNode("OrbitTransform2")))      ;
+    return X3D0;
     }
 protected class MFFloat0 {
   protected MFFloatObject getArray() {

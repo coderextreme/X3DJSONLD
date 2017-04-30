@@ -79,7 +79,14 @@ public class force {
     new force().initialize().toFileJSON("force.new.json");
     }
     public X3DObject initialize() {
-      return new X3DObject().setProfile("Immersive").setVersion("3.3")
+ProtoInstanceObject ProtoInstance0 = null;
+ProtoInstanceObject ProtoInstance1 = null;
+ProtoInstanceObject ProtoInstance2 = null;
+ProtoInstanceObject ProtoInstance3 = null;
+ProtoInstanceObject ProtoInstance4 = null;
+ProtoInstanceObject ProtoInstance5 = null;
+ProtoInstanceObject ProtoInstance6 = null;
+      X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
       .setHead(new headObject()
         .addMeta(new metaObject().setName("creator").setContent("John W Carlson"))
         .addMeta(new metaObject().setName("created").setContent("December 13 2015"))
@@ -170,23 +177,13 @@ public class force {
             .addChild(new ROUTEObject().setFromNode("MoveCylinder").setFromField("spine").setToNode("extrusion").setToField("set_spine"))))
         .addChild(new TransformObject().setDEF("HoldsContent").setScale(new float[] {0.1f,0.1f,0.1f})
           .addChild(new PlaneSensorObject().setDEF("clickGenerator").setMinPosition(new float[] {-50f,-50f}).setMaxPosition(new float[] {50f,50f}).setDescription("click on background to add nodes, click on nodes to add links"))
-          .addChild(new ProtoInstanceObject().setName("node").setDEF("nodeA")
-            .addFieldValue(new fieldValueObject().setName("position").setValue("0 0 0")))
-          .addChild(new ProtoInstanceObject().setName("node").setDEF("nodeB")
-            .addFieldValue(new fieldValueObject().setName("position").setValue("50 50 50")))
-          .addChild(new ProtoInstanceObject().setName("node").setDEF("nodeC")
-            .addFieldValue(new fieldValueObject().setName("position").setValue("-50 -50 -50")))
-          .addChild(new ProtoInstanceObject().setName("node").setDEF("nodeD")
-            .addFieldValue(new fieldValueObject().setName("position").setValue("50 50 -50")))
-          .addChild(new ProtoInstanceObject().setName("cylinder").setDEF("linkA")
-            .addFieldValue(new fieldValueObject().setName("positionA").setValue("0 0 0"))
-            .addFieldValue(new fieldValueObject().setName("positionB").setValue("50 50 50")))
-          .addChild(new ProtoInstanceObject().setName("cylinder").setDEF("linkB")
-            .addFieldValue(new fieldValueObject().setName("positionA").setValue("0 0 0"))
-            .addFieldValue(new fieldValueObject().setName("positionB").setValue("-50 -50 -50")))
-          .addChild(new ProtoInstanceObject().setName("cylinder").setDEF("linkC")
-            .addFieldValue(new fieldValueObject().setName("positionA").setValue("50 50 50"))
-            .addFieldValue(new fieldValueObject().setName("positionB").setValue("50 50 -50"))))
+          .addChild(ProtoInstance0 = new ProtoInstanceObject().setName("node").setDEF("nodeA"))
+          .addChild(ProtoInstance1 = new ProtoInstanceObject().setName("node").setDEF("nodeB"))
+          .addChild(ProtoInstance2 = new ProtoInstanceObject().setName("node").setDEF("nodeC"))
+          .addChild(ProtoInstance3 = new ProtoInstanceObject().setName("node").setDEF("nodeD"))
+          .addChild(ProtoInstance4 = new ProtoInstanceObject().setName("cylinder").setDEF("linkA"))
+          .addChild(ProtoInstance5 = new ProtoInstanceObject().setName("cylinder").setDEF("linkB"))
+          .addChild(ProtoInstance6 = new ProtoInstanceObject().setName("cylinder").setDEF("linkC")))
         .addChild(new ScriptObject().setDEF("clickHandler")
           .addField(new fieldObject().setName("counter").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0").setType(fieldObject.TYPE_SFINT32))
           .addField(new fieldObject().setName("node_changed").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setType(fieldObject.TYPE_SFNODE))
@@ -219,6 +216,19 @@ public class force {
         .addChild(new ROUTEObject().setFromNode("nodeC").setFromField("position").setToNode("linkB").setToField("positionB"))
         .addChild(new ROUTEObject().setFromNode("nodeA").setFromField("position").setToNode("linkC").setToField("positionA"))
         .addChild(new ROUTEObject().setFromNode("nodeD").setFromField("position").setToNode("linkC").setToField("positionB")))      ;
+ProtoInstance0
+            .addFieldValue(new fieldValueObject().setName("position").setValue("0 0 0"));
+ProtoInstance1
+            .addFieldValue(new fieldValueObject().setName("position").setValue("50 50 50"));
+ProtoInstance2
+            .addFieldValue(new fieldValueObject().setName("position").setValue("-50 -50 -50"));
+ProtoInstance3
+            .addFieldValue(new fieldValueObject().setName("position").setValue("50 50 -50"));
+ProtoInstance4
+            .addFieldValue(new fieldValueObject().setName("positionB").setValue("50 50 50"));
+ProtoInstance5
+            .addFieldValue(new fieldValueObject().setName("positionB").setValue("-50 -50 -50"));
+    return X3D0;
     }
 protected class MFString0 {
   protected MFStringObject getArray() {

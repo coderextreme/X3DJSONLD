@@ -79,7 +79,14 @@ public class plainflowers {
     new plainflowers().initialize().toFileJSON("plainflowers.new.json");
     }
     public X3DObject initialize() {
-      return new X3DObject().setProfile("Immersive").setVersion("3.3")
+ProtoInstanceObject ProtoInstance0 = null;
+ProtoInstanceObject ProtoInstance1 = null;
+ProtoInstanceObject ProtoInstance2 = null;
+ProtoInstanceObject ProtoInstance3 = null;
+ProtoInstanceObject ProtoInstance4 = null;
+ProtoInstanceObject ProtoInstance5 = null;
+ProtoInstanceObject ProtoInstance6 = null;
+      X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
       .setHead(new headObject()
         .addMeta(new metaObject().setName("title").setContent("sphereflowers.x3d"))
         .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
@@ -101,15 +108,18 @@ public class plainflowers {
           .addChild(new ProtoDeclareObject().setName("flower")
             .setProtoBody(new ProtoBodyObject()
               .addChild(new GroupObject()
-                .addChild(new ProtoInstanceObject().setName("FlowerProto")
-                  .addFieldValue(new fieldValueObject().setName("vertex").setValue("\"cobweb_flowers_plain.vs\""))
-                  .addFieldValue(new fieldValueObject().setName("fragment").setValue("\"plain.fs\""))))))
-          .addChild(new ProtoInstanceObject().setName("flower"))
-          .addChild(new ProtoInstanceObject().setName("flower"))
-          .addChild(new ProtoInstanceObject().setName("flower"))
-          .addChild(new ProtoInstanceObject().setName("flower"))
-          .addChild(new ProtoInstanceObject().setName("flower"))
-          .addChild(new ProtoInstanceObject().setName("flower"))))      ;
+                .addChild(ProtoInstance0 = new ProtoInstanceObject().setName("FlowerProto")))))
+          .addChild(ProtoInstance1 = new ProtoInstanceObject().setName("flower"))
+          .addChild(ProtoInstance2 = new ProtoInstanceObject().setName("flower"))
+          .addChild(ProtoInstance3 = new ProtoInstanceObject().setName("flower"))
+          .addChild(ProtoInstance4 = new ProtoInstanceObject().setName("flower"))
+          .addChild(ProtoInstance5 = new ProtoInstanceObject().setName("flower"))
+          .addChild(ProtoInstance6 = new ProtoInstanceObject().setName("flower"))))      ;
+ProtoInstance0
+                  .addFieldValue(new fieldValueObject().setName("vertex").setValue("\"cobweb_flowers_plain.vs\""));
+ProtoInstance0
+                  .addFieldValue(new fieldValueObject().setName("fragment").setValue("\"plain.fs\""));
+    return X3D0;
     }
 protected class MFString0 {
   protected MFStringObject getArray() {

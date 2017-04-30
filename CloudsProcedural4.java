@@ -79,7 +79,7 @@ public class CloudsProcedural4 {
     new CloudsProcedural4().initialize().toFileJSON("CloudsProcedural4.new.json");
     }
     public X3DObject initialize() {
-      return new X3DObject().setProfile("Immersive").setVersion("3.2")
+      X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.2")
       .setHead(new headObject()
         .addMeta(new metaObject().setName("title").setContent("CloudsProcedural4.x3d"))
         .addMeta(new metaObject().setName("description").setContent("X3D utilizing ecmascript to develop quasi volumetric 3D clouds from png image textured billboard nodes."))
@@ -506,6 +506,7 @@ public class CloudsProcedural4 {
 "}\n"+
 ""))
           .addChild(new DirectionalLightObject().setAmbientIntensity(1f).setColor(new float[] {1f,0f,0f}).setDirection(new float[] {-1f,-1f,0f}).setGlobal(true))))      ;
+    return X3D0;
     }
 protected class MFColor0 {
   protected MFColorObject getArray() {

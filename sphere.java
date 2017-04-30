@@ -79,7 +79,7 @@ public class sphere {
     new sphere().initialize().toFileJSON("sphere.new.json");
     }
     public X3DObject initialize() {
-      return new X3DObject().setProfile("Interchange").setVersion("3.3")
+      X3DObject X3D0 =  new X3DObject().setProfile("Interchange").setVersion("3.3")
       .setHead(new headObject()
         .addMeta(new metaObject().setName("title").setContent("sphere.x3d"))
         .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
@@ -97,5 +97,6 @@ public class sphere {
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject().setDiffuseColor(new float[] {1f,1f,1f})))
             .setGeometry(new SphereObject()))))      ;
+    return X3D0;
     }
 }

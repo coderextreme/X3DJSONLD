@@ -79,7 +79,7 @@ public class MFString {
     new MFString().initialize().toFileJSON("MFString.new.json");
     }
     public X3DObject initialize() {
-      return new X3DObject().setProfile("Immersive").setVersion("3.0")
+      X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.0")
       .setHead(new headObject()
         .addMeta(new metaObject().setName("title").setContent("MFString.x3d"))
         .addMeta(new metaObject().setName("created").setContent("21 April 20017"))
@@ -94,6 +94,7 @@ public class MFString {
             .setGeometry(new TextObject().setString(new MFStringObject(new MFString0().getArray())))
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0f,0.75f,0.18f}))))))      ;
+    return X3D0;
     }
 protected class MFString0 {
   protected MFStringObject getArray() {

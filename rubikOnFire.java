@@ -79,7 +79,17 @@ public class rubikOnFire {
     new rubikOnFire().initialize().toFileJSON("rubikOnFire.new.json");
     }
     public X3DObject initialize() {
-      return new X3DObject().setProfile("Immersive").setVersion("3.3")
+ProtoInstanceObject ProtoInstance0 = null;
+ProtoInstanceObject ProtoInstance1 = null;
+ProtoInstanceObject ProtoInstance2 = null;
+ProtoInstanceObject ProtoInstance3 = null;
+ProtoInstanceObject ProtoInstance4 = null;
+ProtoInstanceObject ProtoInstance5 = null;
+ProtoInstanceObject ProtoInstance6 = null;
+ProtoInstanceObject ProtoInstance7 = null;
+ProtoInstanceObject ProtoInstance8 = null;
+ProtoInstanceObject ProtoInstance9 = null;
+      X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
       .setHead(new headObject()
         .addMeta(new metaObject().setName("title").setContent("rubikOnFire.x3d"))
         .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
@@ -117,16 +127,13 @@ public class rubikOnFire {
             .addChild(new TransformObject()
               .setIS(new ISObject()
                 .addConnect(new connectObject().setNodeField("translation").setProtoField("ytranslation")))
-              .addChild(new ProtoInstanceObject().setName("anyShape")
-                .addFieldValue(new fieldValueObject().setName("xtranslation").setValue("0 0 0"))
+              .addChild(ProtoInstance0 = new ProtoInstanceObject().setName("anyShape")
                 .setIS(new ISObject()
                   .addConnect(new connectObject().setNodeField("myShape").setProtoField("myShape"))))
-              .addChild(new ProtoInstanceObject().setName("anyShape")
-                .addFieldValue(new fieldValueObject().setName("xtranslation").setValue("2 0 0"))
+              .addChild(ProtoInstance1 = new ProtoInstanceObject().setName("anyShape")
                 .setIS(new ISObject()
                   .addConnect(new connectObject().setNodeField("myShape").setProtoField("myShape"))))
-              .addChild(new ProtoInstanceObject().setName("anyShape")
-                .addFieldValue(new fieldValueObject().setName("xtranslation").setValue("-2 0 0"))
+              .addChild(ProtoInstance2 = new ProtoInstanceObject().setName("anyShape")
                 .setIS(new ISObject()
                   .addConnect(new connectObject().setNodeField("myShape").setProtoField("myShape")))))))
         .addChild(new ProtoDeclareObject().setName("nine")
@@ -138,16 +145,13 @@ public class rubikOnFire {
             .addChild(new TransformObject()
               .setIS(new ISObject()
                 .addConnect(new connectObject().setNodeField("translation").setProtoField("ztranslation")))
-              .addChild(new ProtoInstanceObject().setName("three")
-                .addFieldValue(new fieldValueObject().setName("ytranslation").setValue("0 0 0"))
+              .addChild(ProtoInstance3 = new ProtoInstanceObject().setName("three")
                 .setIS(new ISObject()
                   .addConnect(new connectObject().setNodeField("myShape").setProtoField("myShape"))))
-              .addChild(new ProtoInstanceObject().setName("three")
-                .addFieldValue(new fieldValueObject().setName("ytranslation").setValue("0 2 0"))
+              .addChild(ProtoInstance4 = new ProtoInstanceObject().setName("three")
                 .setIS(new ISObject()
                   .addConnect(new connectObject().setNodeField("myShape").setProtoField("myShape"))))
-              .addChild(new ProtoInstanceObject().setName("three")
-                .addFieldValue(new fieldValueObject().setName("ytranslation").setValue("0 -2 0"))
+              .addChild(ProtoInstance5 = new ProtoInstanceObject().setName("three")
                 .setIS(new ISObject()
                   .addConnect(new connectObject().setNodeField("myShape").setProtoField("myShape")))))))
         .addChild(new ProtoDeclareObject().setName("twentyseven")
@@ -159,22 +163,40 @@ public class rubikOnFire {
             .addChild(new TransformObject()
               .setIS(new ISObject()
                 .addConnect(new connectObject().setNodeField("translation").setProtoField("ttranslation")))
-              .addChild(new ProtoInstanceObject().setName("nine")
-                .addFieldValue(new fieldValueObject().setName("ztranslation").setValue("0 0 0"))
+              .addChild(ProtoInstance6 = new ProtoInstanceObject().setName("nine")
                 .setIS(new ISObject()
                   .addConnect(new connectObject().setNodeField("myShape").setProtoField("myShape"))))
-              .addChild(new ProtoInstanceObject().setName("nine")
-                .addFieldValue(new fieldValueObject().setName("ztranslation").setValue("0 0 2"))
+              .addChild(ProtoInstance7 = new ProtoInstanceObject().setName("nine")
                 .setIS(new ISObject()
                   .addConnect(new connectObject().setNodeField("myShape").setProtoField("myShape"))))
-              .addChild(new ProtoInstanceObject().setName("nine")
-                .addFieldValue(new fieldValueObject().setName("ztranslation").setValue("0 0 -2"))
+              .addChild(ProtoInstance8 = new ProtoInstanceObject().setName("nine")
                 .setIS(new ISObject()
                   .addConnect(new connectObject().setNodeField("myShape").setProtoField("myShape")))))))
-        .addChild(new ProtoInstanceObject().setName("twentyseven")
-          .addFieldValue(new fieldValueObject().setName("ttranslation").setValue("0 0 0"))
+        .addChild(ProtoInstance9 = new ProtoInstanceObject().setName("twentyseven")))      ;
+ProtoInstance0
+                .addFieldValue(new fieldValueObject().setName("xtranslation").setValue("0 0 0"));
+ProtoInstance1
+                .addFieldValue(new fieldValueObject().setName("xtranslation").setValue("2 0 0"));
+ProtoInstance2
+                .addFieldValue(new fieldValueObject().setName("xtranslation").setValue("-2 0 0"));
+ProtoInstance3
+                .addFieldValue(new fieldValueObject().setName("ytranslation").setValue("0 0 0"));
+ProtoInstance4
+                .addFieldValue(new fieldValueObject().setName("ytranslation").setValue("0 2 0"));
+ProtoInstance5
+                .addFieldValue(new fieldValueObject().setName("ytranslation").setValue("0 -2 0"));
+ProtoInstance6
+                .addFieldValue(new fieldValueObject().setName("ztranslation").setValue("0 0 0"));
+ProtoInstance7
+                .addFieldValue(new fieldValueObject().setName("ztranslation").setValue("0 0 2"));
+ProtoInstance8
+                .addFieldValue(new fieldValueObject().setName("ztranslation").setValue("0 0 -2"));
+ProtoInstance9
+          .addFieldValue(new fieldValueObject().setName("ttranslation").setValue("0 0 0"));
+ProtoInstance9
           .addFieldValue(new fieldValueObject().setName("myShape")
-            .addChild(new BoxObject().setSize(new float[] {1f,1f,1f})))))      ;
+            .addChild(new BoxObject().setSize(new float[] {1f,1f,1f})));
+    return X3D0;
     }
 protected class MFString0 {
   protected MFStringObject getArray() {

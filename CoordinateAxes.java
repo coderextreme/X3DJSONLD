@@ -79,7 +79,7 @@ public class CoordinateAxes {
     new CoordinateAxes().initialize().toFileJSON("CoordinateAxes.new.json");
     }
     public X3DObject initialize() {
-      return new X3DObject().setProfile("Immersive").setVersion("3.3")
+      X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
       .setHead(new headObject()
         .addMeta(new metaObject().setName("title").setContent("CoordinateAxis.x3d"))
         .addMeta(new metaObject().setName("creator").setContent("Unknown, see X3D Resources Archives"))
@@ -153,6 +153,7 @@ public class CoordinateAxes {
                     .setAppearance(new AppearanceObject().setUSE("LABEL_APPEARANCE"))
                     .setGeometry(new TextObject().setString(new MFStringObject(new MFString4().getArray()))
                       .setFontStyle(new FontStyleObject().setUSE("LABEL_FONT"))))))))))      ;
+    return X3D0;
     }
 protected class MFString0 {
   protected MFStringObject getArray() {

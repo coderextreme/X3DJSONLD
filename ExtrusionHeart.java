@@ -79,7 +79,7 @@ public class ExtrusionHeart {
     new ExtrusionHeart().initialize().toFileJSON("ExtrusionHeart.new.json");
     }
     public X3DObject initialize() {
-      return new X3DObject().setProfile("Immersive").setVersion("3.0")
+      X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.0")
       .setHead(new headObject()
         .addMeta(new metaObject().setName("title").setContent("ExtrusionHeart.x3d"))
         .addMeta(new metaObject().setName("description").setContent("Simple extrusion of a Valentine heart."))
@@ -101,6 +101,7 @@ public class ExtrusionHeart {
             .setGeometry(new ExtrusionObject().setCreaseAngle(3.14159f).setCrossSection(new MFVec2fObject(new MFVec2f0().getArray())).setScale(new MFVec2fObject(new MFVec2f1().getArray())).setSolid(false).setSpine(new MFVec3fObject(new MFVec3f2().getArray())))
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0.8f,0.3f,0.3f}))))))      ;
+    return X3D0;
     }
 protected class MFVec2f0 {
   protected MFVec2fObject getArray() {
