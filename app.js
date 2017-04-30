@@ -21,7 +21,7 @@ path.resolve(__dirname + "/examples"),
 'junction',
  function (err) {
         if (err) {
-                console.log( err.code === 'EEXIST' ? "listening on http://localhost:"+port+"\n" : err);
+                console.error( err.code === 'EEXIST' ? "listening on http://localhost:"+port+"\n" : err);
         }
   }
 );
@@ -32,7 +32,7 @@ app.post("/convert", function(req, res, next) {
 	req.on('data', function(chunk){ buf += chunk; });
 	req.on('end', function(){
 		var infile = __dirname+"/"+(infl++)+".x3d";
-		console.log("converting ", buf);
+		console.error("converting ", buf);
 		fs.writeFileSync(infile, buf);
 		var json = runAndSend(infile);
 		json = externPrototypeExpander(infile, json);
@@ -58,7 +58,7 @@ app.get("/files", function(req, res, next) {
 		files.forEach(function(file) {
 			if (new RegExp(test).test(file)) {
 				json.push(file.substr(__dirname.length));
-				console.log(file);
+				console.error(file);
 			}
 
 		});
@@ -73,7 +73,7 @@ function magic(path, type) {
 	while (url.startsWith("/")) {
 		url = url.substr(1);
 	}
-	console.log(url);
+	console.error(url);
 	fs.readFile(url, function(err, data) {
 		try {
 			if (err) {
@@ -84,7 +84,7 @@ function magic(path, type) {
 			}
 			next();
 		} catch (e) {
-			console.log(e);
+			console.error(e);
 		}
 	});
     });
@@ -92,21 +92,21 @@ function magic(path, type) {
 
 function processX3d(req, res, next) {
 	var url = req._parsedUrl.pathname.substr(1);
-	console.log(url);
+	console.error(url);
 	var hash = url.indexOf("#");
 	var file = url;
 	if (hash > 0) {
 	       file = url.substring(0, hash);
 	}
 	try {
-		console.log("Calling converter on "+file);
+		console.error("Calling converter on "+file);
 		var json = runAndSend(file);
-		console.log("Calling expander on "+url);
+		console.error("Calling expander on "+url);
                	json = externPrototypeExpander(url, json);
               	res.header("Content-Type", "text/json");
                 res.send(json);
 	} catch (e) {
-        	console.log(e);
+        	console.error(e);
 	}
         next();
 }
@@ -139,7 +139,7 @@ magic("*.stl", "application/octet-stream");
 
 app.get("*.json", function(req, res, next) {
 	var url = req._parsedUrl.pathname.substr(1);
-	console.log(url);
+	console.error(url);
 	var file = url;
 	var hash = url.indexOf("#");
 	if (hash > 0) {
@@ -150,16 +150,16 @@ app.get("*.json", function(req, res, next) {
 		var data = fs.readFileSync(file);
 		json = JSON.parse(data.toString());
 	} catch (e) {
-		console.log(e+" "+file);
+		console.error(e+" "+file);
 		try {
 			file = file.substr(0, file.lastIndexOf("."))+".x3d";
 			json = runAndSend(file);
 		} catch (e) {
-			console.log(e+" "+file);
+			console.error(e+" "+file);
 		}
 	}
-	console.log(url);
-	console.log("Calling expander");
+	console.error(url);
+	console.error("Calling expander");
         json = externPrototypeExpander(url, json);
         res.header("Content-Type", "text/json");
         res.send(json);

@@ -58,6 +58,7 @@ function processScripts(object, classes, package, routecode) {
 	if (typeof package === 'undefined') {
 		classes.log("function SFRotation() { return Array.prototype.slice.call(arguments, 0); };");
 		classes.log("function MFRotation() { return Array.prototype.slice.call(arguments, 0); };");
+		classes.log("function MFInt32() { return Array.prototype.slice.call(arguments, 0); };");
 		classes.log("function SFVec2d() { return Array.prototype.slice.call(arguments, 0); };");
 		classes.log("function SFVec2f() { return Array.prototype.slice.call(arguments, 0); };");
 		classes.log("function SFVec3d() { return Array.prototype.slice.call(arguments, 0); };");

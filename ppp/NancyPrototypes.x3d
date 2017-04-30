@@ -11,6 +11,11 @@
 <meta name="identifier" content="http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/NancyPrototypes.x3d"></meta>
 <meta name="generator" content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"></meta>
 <meta name="license" content="../license.html"></meta>
+<meta name="translated" content="30 April 2017"></meta>
+<meta name="generator" content="X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"></meta>
+<meta name="reference" content="X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"></meta>
+<meta name="translated" content="30 April 2017"></meta>
+<meta name="generator" content="X3DJSONLD: https://github.com/coderextreme/X3DJSONLD"></meta>
 </head>
 <Scene><!--Start scene graph.--><Transform DEF="DECLHumanoid_Humanoid_HumanoidTransform" translation="0 0 0" rotation="0 0 1 0" scale="1 1 1" scaleOrientation="0 0 1 0" center="0 0 0" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Group DEF="DECLHumanoid_Humanoid_HumanoidGroup1"><Transform DEF="DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_JointTransform" translation="0 0 0" rotation="0 0 1 0" scale="1 1 1" scaleOrientation="0 0 1 0" center="-0.00405 0.855 -0.000113" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Transform DEF="DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_sacroiliac_JointTransform" translation="0 0 0" rotation="0 0 1 0" scale="1 1 1" scaleOrientation="0 0 1 0" center="0 1.01 -0.0204" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Group DEF="DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_sacroiliac_FIELDchildren_DECLSegment_hanim_pelvis_SegmentGroup" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Shape><Appearance containerField="appearance"><Material containerField="material" DEF="DECLHumanoid_Humanoid_FIELDhumanoidBody_DECLJoint_hanim_HumanoidRoot_FIELDchildren_DECLJoint_hanim_sacroiliac_FIELDchildren_DECLSegment_hanim_pelvis_FIELDchildren_Pants_Color" ambientIntensity="0.25" diffuseColor="0.054 0.233 0.39"></Material>
 </Appearance>
