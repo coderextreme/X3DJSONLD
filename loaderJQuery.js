@@ -248,8 +248,7 @@ function updateFromPly() {
 
 function updateFromXml() {
 	var xml = $('#xml').val();
-	var json = convertXmlToJson(xml);
-	updateFromJson(json);
+	convertXmlToJson(xml);
 }
 
 function loadXml(url) {
@@ -397,7 +396,7 @@ function convertXmlToJson(xmlString) {
 			var json = JSON.parse(getXmlString(result));
 			updateFromJson(json);
 		} catch (e) {
-			alert("No validation done, depending on viewers "+e);
+			alert("No validation done, JSON doesn't parse or load.  depending on viewers "+e);
 			loadXmlBrowsers(xmlString);
 		}
 	    }, "xml")
