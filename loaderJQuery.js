@@ -394,6 +394,9 @@ function convertXmlToJson(xmlString) {
 		// console.log('JSON', result);
 		var json = JSON.parse(getXmlString(result));
 		updateFromJson(json);
-	    }, "xml");
+	    }, "xml")
+	    .fail(function(jqXHR, textStatus, errorThrown) {
+	    	alert('Could not process stylesheet X3dToJson.xslt! ' + textStatus + ' ' + errorThrown);
+	    });
     });
 }
