@@ -247,8 +247,15 @@ function updateFromPly() {
 }
 
 function updateFromXml() {
-	var json = convertXmlToJson($('#xml').val());
-	updateFromJson(json);
+	var xml = "";
+	try {
+		xml = $('#xml').val();
+		var json = convertXmlToJson(xml);
+		updateFromJson(json);
+	} catch (e) {
+		alert("No validation done, depending on viewers "+e);
+	        loadXmlBrowsers(xml);
+	}
 }
 
 function loadXml(url) {
