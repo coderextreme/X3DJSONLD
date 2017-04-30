@@ -44,7 +44,27 @@
           },
           {
             "@name":"translated",
-            "@content":"28 April 2017"
+            "@content":"30 April 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          },
+          {
+            "@name":"translated",
+            "@content":"30 April 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3DJSONLD: https://github.com/coderextreme/X3DJSONLD"
+          },
+          {
+            "@name":"translated",
+            "@content":"30 April 2017"
           },
           {
             "@name":"generator",
@@ -109,7 +129,7 @@
                     "-children":[
                       { "Inline":
                         {
-                          "@url":["MontereyBayLargeMesh.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.x3d","MontereyBayLargeMesh.wrl","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.wrl"]
+                          "@url":["MontereyBayLargeMesh.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.x3d","MontereyBayLargeMesh.json","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.json"]
                         }
                       }
                     ]
@@ -158,7 +178,7 @@
                     "-children":[
                       { "Inline":
                         {
-                          "@url":["Lighthouse.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.x3d","Lighthouse.wrl","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.wrl"]
+                          "@url":["Lighthouse.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.x3d","Lighthouse.json","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.json"]
                         }
                       }
                     ]
