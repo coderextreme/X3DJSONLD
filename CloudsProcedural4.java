@@ -89,7 +89,12 @@ public class CloudsProcedural4 {
         .addMeta(new metaObject().setName("identifier").setContent("https://savage.nps.edu/Savage/Environment/Atmosphere/CloudsProcedural4.x3d"))
         .addMeta(new metaObject().setName("generator").setContent("X3D-Edit, http://www.web3d.org/x3d/content/README.X3D-Edit.html"))
         .addMeta(new metaObject().setName("license").setContent("../../license.html"))
-        .addMeta(new metaObject().setName("TODO").setContent("fix links")))
+        .addMeta(new metaObject().setName("TODO").setContent("fix links"))
+        .addMeta(new metaObject().setName("translated").setContent("30 April 2017"))
+        .addMeta(new metaObject().setName("generator").setContent("X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"))
+        .addMeta(new metaObject().setName("reference").setContent("X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"))
+        .addMeta(new metaObject().setName("translated").setContent("30 April 2017"))
+        .addMeta(new metaObject().setName("generator").setContent("X3DJSONLD: https://github.com/coderextreme/X3DJSONLD")))
       .setScene(new SceneObject()
         .addComments(new CommentsBlock("A png image file for the cloud texture must be designated in the ecmascript node."))
         .addChild(new ViewpointObject().setDescription("Main").setJump(false).setOrientation(new float[] {0f,1f,0f,1.57f}).setPosition(new float[] {50000f,1000f,42000f}))
@@ -514,7 +519,7 @@ protected class MFColor1 {
 }
 protected class MFString2 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"MontereyBayLargeMesh.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.x3d","MontereyBayLargeMesh.wrl","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.wrl"});
+    return new MFStringObject(new java.lang.String[] {"MontereyBayLargeMesh.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.x3d","MontereyBayLargeMesh.json","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.json"});
   }
 }
 protected class MFString3 {
@@ -524,7 +529,7 @@ protected class MFString3 {
 }
 protected class MFString4 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"Lighthouse.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.x3d","Lighthouse.wrl","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.wrl"});
+    return new MFStringObject(new java.lang.String[] {"Lighthouse.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.x3d","Lighthouse.json","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.json"});
   }
 }
 }
