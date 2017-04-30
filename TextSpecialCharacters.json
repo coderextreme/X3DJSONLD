@@ -24,7 +24,7 @@
           },
           {
             "@name":"modified",
-            "@content":"20 March 2016"
+            "@content":"2 April 2017"
           },
           {
             "@name":"reference",
@@ -40,7 +40,7 @@
           },
           {
             "@name":"identifier",
-            "@content":"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter02-GeometryPrimitives/TextSpecialCharacters.x3d"
+            "@content":"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter02GeometryPrimitives/TextSpecialCharacters.x3d"
           },
           {
             "@name":"generator",
@@ -52,7 +52,7 @@
           },
           {
             "@name":"translated",
-            "@content":"28 April 2017"
+            "@content":"30 April 2017"
           },
           {
             "@name":"generator",
@@ -96,10 +96,10 @@
                   "#comment":"quotation \" is &quot; and isn't needed if single-quote delimiters used for string='value' attribute"
                 },
                 {
-                  "#comment":"quotation \" can be used as part of X3D string if escaped with backslash: \\\""
+                  "#comment":"quotation \" can be used within an X3D string if escaped with backslash \\\\ as \\\""
                 },
                 {
-                  "#comment":"backslash is used as escape character for \" (and itself) in X3D"
+                  "#comment":"backslash \\\\ is used as escape character for \" (and itself) in X3D"
                 },
                 {
                   "#comment":"character entities are listed in HTML specification and are good for any XML"
