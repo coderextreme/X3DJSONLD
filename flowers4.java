@@ -79,7 +79,7 @@ public class flowers4 {
     new flowers4().initialize().toFileJSON("flowers4.new.json");
     }
     public X3DObject initialize() {
-      return new X3DObject().setProfile("Immersive").setVersion("3.3")
+      X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
       .setHead(new headObject()
         .addMeta(new metaObject().setName("title").setContent("flowers4.x3d"))
         .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
@@ -199,6 +199,7 @@ public class flowers4 {
         .addChild(new ROUTEObject().setFromField("coordIndexes").setFromNode("OrbitScript").setToField("set_coordIndex").setToNode("Orbit"))
         .addChild(new ROUTEObject().setFromField("coordinates").setFromNode("OrbitScript").setToField("set_point").setToNode("OrbitCoordinates"))
         .addChild(new ROUTEObject().setFromField("fraction_changed").setFromNode("Clock").setToField("set_fraction").setToNode("OrbitScript")))      ;
+    return X3D0;
     }
 protected class MFString0 {
   protected MFStringObject getArray() {

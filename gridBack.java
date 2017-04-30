@@ -79,7 +79,7 @@ public class gridBack {
     new gridBack().initialize().toFileJSON("gridBack.new.json");
     }
     public X3DObject initialize() {
-      return new X3DObject().setProfile("Interchange").setVersion("3.0")
+      X3DObject X3D0 =  new X3DObject().setProfile("Interchange").setVersion("3.0")
       .setHead(new headObject()
         .addMeta(new metaObject().setName("title").setContent("gridBack.x3d"))
         .addMeta(new metaObject().setName("description").setContent("Checkerboard grid background for X3D/VRML materials selection."))
@@ -104,6 +104,7 @@ public class gridBack {
           .setGeometry(new IndexedFaceSetObject().setColorIndex(new MFInt32Object(new MFInt320().getArray())).setColorPerVertex(false).setCoordIndex(new MFInt32Object(new MFInt321().getArray())).setNormalPerVertex(false)
             .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f2().getArray())))
             .setColor(new ColorObject().setColor(new MFColorObject(new MFColor3().getArray()))))))      ;
+    return X3D0;
     }
 protected class MFInt320 {
   protected MFInt32Object getArray() {

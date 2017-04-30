@@ -79,7 +79,7 @@ public class bubbles {
     new bubbles().initialize().toFileJSON("bubbles.new.json");
     }
     public X3DObject initialize() {
-      return new X3DObject().setProfile("Immersive").setVersion("3.3")
+      X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
       .setHead(new headObject()
         .addComponent(new componentObject().setName("EnvironmentalEffects").setLevel(1))
         .addComponent(new componentObject().setName("EnvironmentalEffects").setLevel(3))
@@ -170,6 +170,7 @@ public class bubbles {
         .addChild(new ROUTEObject().setFromNode("TourOrientation").setFromField("value_changed").setToNode("Tour").setToField("set_orientation"))
         .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("fraction_changed").setToNode("TourPosition").setToField("set_fraction"))
         .addChild(new ROUTEObject().setFromNode("TourPosition").setFromField("value_changed").setToNode("Tour").setToField("set_position")))      ;
+    return X3D0;
     }
 protected class MFString0 {
   protected MFStringObject getArray() {

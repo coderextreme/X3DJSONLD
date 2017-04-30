@@ -79,7 +79,7 @@ public class flipp {
     new flipp().initialize().toFileJSON("flipp.new.json");
     }
     public X3DObject initialize() {
-      return new X3DObject().setProfile("Immersive").setVersion("3.3")
+      X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
       .setHead(new headObject()
         .addMeta(new metaObject().setName("generator").setContent("hand conversion from http://www.x3dom.org/x3dom/test/functional/flipper.html"))
         .addMeta(new metaObject().setName("title").setContent("flipp.x3d"))
@@ -112,6 +112,7 @@ public class flipp {
         .addChild(new ROUTEObject().setFromNode("ci").setFromField("value_changed").setToNode("pointList").setToField("set_point"))
         .addChild(new ROUTEObject().setFromNode("si").setFromField("value_changed").setToNode("ci").setToField("set_fraction"))
         .addChild(new ROUTEObject().setFromNode("ts").setFromField("fraction_changed").setToNode("si").setToField("set_fraction")))      ;
+    return X3D0;
     }
 protected class MFFloat0 {
   protected MFFloatObject getArray() {

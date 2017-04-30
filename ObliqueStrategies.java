@@ -79,7 +79,7 @@ public class ObliqueStrategies {
     new ObliqueStrategies().initialize().toFileJSON("ObliqueStrategies.new.json");
     }
     public X3DObject initialize() {
-      return new X3DObject().setProfile("Immersive").setVersion("3.3")
+      X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
       .setHead(new headObject()
         .addMeta(new metaObject().setName("title").setContent("ObliqueStrategies.x3d"))
         .addMeta(new metaObject().setName("description").setContent("Text scripting and animation example using Oblique Strategies card set by Brian Eno."))
@@ -196,6 +196,7 @@ public class ObliqueStrategies {
               .setAppearance(new AppearanceObject().setUSE("InterfaceAppearance")))
             .addChild(new TransformObject().setScale(new float[] {1.8f,0.6f,1f})
               .addChild(new ShapeObject().setUSE("TransparentClickSurface"))))))      ;
+    return X3D0;
     }
 protected class MFColor0 {
   protected MFColorObject getArray() {

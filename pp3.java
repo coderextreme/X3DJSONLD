@@ -79,7 +79,10 @@ public class pp3 {
     new pp3().initialize().toFileJSON("pp3.new.json");
     }
     public X3DObject initialize() {
-      return new X3DObject().setProfile("Immersive").setVersion("3.3")
+ProtoInstanceObject ProtoInstance0 = null;
+ProtoInstanceObject ProtoInstance1 = null;
+ProtoInstanceObject ProtoInstance2 = null;
+      X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
       .setHead(new headObject()
         .addMeta(new metaObject().setName("title").setContent("pp3.x3d"))
         .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
@@ -202,11 +205,12 @@ public class pp3 {
         .addChild(new NavigationInfoObject())
         .addChild(new ViewpointObject().setDescription("Process pipes").setOrientation(new float[] {1f,0f,0f,-0.4f}).setPosition(new float[] {0f,5f,12f}))
         .addChild(new TransformObject().setTranslation(new float[] {0f,-2.5f,0f})
-          .addChild(new ProtoInstanceObject().setName("Process")))
+          .addChild(ProtoInstance0 = new ProtoInstanceObject().setName("Process")))
         .addChild(new TransformObject()
-          .addChild(new ProtoInstanceObject().setName("Process")))
+          .addChild(ProtoInstance1 = new ProtoInstanceObject().setName("Process")))
         .addChild(new TransformObject().setTranslation(new float[] {0f,2.5f,0f})
-          .addChild(new ProtoInstanceObject().setName("Process"))))      ;
+          .addChild(ProtoInstance2 = new ProtoInstanceObject().setName("Process"))))      ;
+    return X3D0;
     }
 protected class MFVec2f0 {
   protected MFVec2fObject getArray() {

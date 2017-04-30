@@ -79,7 +79,7 @@ public class geobubbles {
     new geobubbles().initialize().toFileJSON("geobubbles.new.json");
     }
     public X3DObject initialize() {
-      return new X3DObject().setProfile("Immersive").setVersion("3.3")
+      X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
       .setHead(new headObject()
         .addComponent(new componentObject().setName("Geospatial").setLevel(1))
         .addMeta(new metaObject().setName("title").setContent("geobubbles.x3d"))
@@ -131,6 +131,7 @@ public class geobubbles {
         .addChild(new ROUTEObject().setFromNode("RandomTourTime").setFromField("position").setToNode("TourPosition").setToField("keyValue"))
         .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("fraction_changed").setToNode("TourPosition").setToField("set_fraction"))
         .addChild(new ROUTEObject().setFromNode("TourPosition").setFromField("value_changed").setToNode("Tour").setToField("set_position")))      ;
+    return X3D0;
     }
 protected class MFString0 {
   protected MFStringObject getArray() {

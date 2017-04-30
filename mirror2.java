@@ -79,7 +79,7 @@ public class mirror2 {
     new mirror2().initialize().toFileJSON("mirror2.new.json");
     }
     public X3DObject initialize() {
-      return new X3DObject().setProfile("Immersive").setVersion("3.3")
+      X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
       .setHead(new headObject()
         .addMeta(new metaObject().setName("title").setContent("mirro2.x3d"))
         .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
@@ -171,6 +171,7 @@ public class mirror2 {
           .addChild(new ROUTEObject().setFromNode("UrlSelector").setFromField("right_changed").setToNode("rightShader").setToField("url"))
           .addChild(new ROUTEObject().setFromNode("UrlSelector").setFromField("top_changed").setToNode("topShader").setToField("url"))
           .addChild(new ROUTEObject().setFromNode("UrlSelector").setFromField("bottom_changed").setToNode("bottomShader").setToField("url"))))      ;
+    return X3D0;
     }
 protected class MFString0 {
   protected MFStringObject getArray() {

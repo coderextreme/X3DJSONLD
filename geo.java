@@ -79,7 +79,7 @@ public class geo {
     new geo().initialize().toFileJSON("geo.new.json");
     }
     public X3DObject initialize() {
-      return new X3DObject().setProfile("Immersive").setVersion("3.3")
+      X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
       .setHead(new headObject()
         .addMeta(new metaObject().setName("title").setContent("geo.x3d"))
         .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
@@ -124,6 +124,7 @@ public class geo {
                 .addField(new fieldObject().setName("power").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFFLOAT).setValue("2"))
                 .addParts(new ShaderPartObject().setUrl(new MFStringObject(new MFString15().getArray())).setType("VERTEX"))
                 .addParts(new ShaderPartObject().setUrl(new MFStringObject(new MFString16().getArray())).setType("FRAGMENT")))))))      ;
+    return X3D0;
     }
 protected class MFString0 {
   protected MFStringObject getArray() {

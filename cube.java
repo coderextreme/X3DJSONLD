@@ -79,7 +79,7 @@ public class cube {
     new cube().initialize().toFileJSON("cube.new.json");
     }
     public X3DObject initialize() {
-      return new X3DObject().setProfile("Interchange").setVersion("3.3")
+      X3DObject X3D0 =  new X3DObject().setProfile("Interchange").setVersion("3.3")
       .setHead(new headObject()
         .addMeta(new metaObject().setName("title").setContent("cube.x3d"))
         .addMeta(new metaObject().setName("description").setContent("Template for an Indexed Face Set"))
@@ -100,6 +100,7 @@ public class cube {
               .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f8().getArray()).append(new MFVec3f9().getArray())))
               .setNormal(new NormalObject().setVector(new MFVec3fObject(new MFVec3f10().getArray()).append(new MFVec3f11().getArray()).append(new MFVec3f12().getArray())))
               .setColor(new ColorObject().setColor(new MFColorObject(new MFColor13().getArray())))))))      ;
+    return X3D0;
     }
 protected class MFInt320 {
   protected MFInt32Object getArray() {

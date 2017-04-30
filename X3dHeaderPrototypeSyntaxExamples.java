@@ -79,7 +79,11 @@ public class X3dHeaderPrototypeSyntaxExamples {
     new X3dHeaderPrototypeSyntaxExamples().initialize().toFileJSON("X3dHeaderPrototypeSyntaxExamples.new.json");
     }
     public X3DObject initialize() {
-      return new X3DObject().setProfile("Immersive").setVersion("3.2")
+ProtoInstanceObject ProtoInstance0 = null;
+ProtoInstanceObject ProtoInstance1 = null;
+ProtoInstanceObject ProtoInstance2 = null;
+ProtoInstanceObject ProtoInstance3 = null;
+      X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.2")
       .setHead(new headObject()
         .addComponent(new componentObject().setName("Geospatial").setLevel(1))
         .addComponent(new componentObject().setName("NURBS").setLevel(2))
@@ -112,7 +116,7 @@ public class X3dHeaderPrototypeSyntaxExamples {
         .addChild(new ProtoDeclareObject().setName("NewWorldInfoNode")
           .setProtoBody(new ProtoBodyObject()
             .addChild(new WorldInfoObject().setDEF("ExamplePrototypeBody"))))
-        .addChild(new ProtoInstanceObject().setName("NewWorldInfoNode"))
+        .addChild(ProtoInstance0 = new ProtoInstanceObject().setName("NewWorldInfoNode"))
         .addChild(new ProtoDeclareObject().setName("EmissiveMaterial")
           .setProtoInterface(new ProtoInterfaceObject()
             .addField(new fieldObject().setName("onlyColor").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFCOLOR).setValue("1 0 0")))
@@ -132,7 +136,7 @@ public class X3dHeaderPrototypeSyntaxExamples {
               .addChild(new GroupObject()
                 .setIS(new ISObject()
                   .addConnect(new connectObject().setNodeField("children").setProtoField("children")))))))
-        .addChild(new ProtoInstanceObject().setName("ShiftGroupUp2m"))
+        .addChild(ProtoInstance1 = new ProtoInstanceObject().setName("ShiftGroupUp2m"))
         .addComments(new CommentsBlock("===================="))
         .addChild(new ViewpointObject().setDEF("ExampleSingleElement").setDescription("Hello syntax"))
         .addChild(new GroupObject().setDEF("ExampleChildElement")
@@ -152,12 +156,10 @@ public class X3dHeaderPrototypeSyntaxExamples {
         .addChild(new TransformObject().setTranslation(new float[] {0f,-2.5f,0f})
           .addChild(new ShapeObject()
             .setAppearance(new AppearanceObject()
-              .setMaterial(new ProtoInstanceObject().setName("EmissiveMaterial")
-                .addFieldValue(new fieldValueObject().setName("onlyColor").setValue("0.2 0.6 0.6"))))
+              .setMaterial(ProtoInstance2 = new ProtoInstanceObject().setName("EmissiveMaterial")))
             .setGeometry(new TextObject().setString(new MFStringObject(new MFString2().getArray()))
               .setFontStyle(new FontStyleObject().setJustify(new MFStringObject(new MFString3().getArray())).setSize(0.6f)))))
-        .addChild(new ProtoInstanceObject().setName("ViewPositionOrientation")
-          .addFieldValue(new fieldValueObject().setName("enabled").setValue("true")))
+        .addChild(ProtoInstance3 = new ProtoInstanceObject().setName("ViewPositionOrientation"))
         .addChild(new TimeSensorObject().setDEF("Clock").setCycleInterval(4d).setLoop(true))
         .addChild(new OrientationInterpolatorObject().setDEF("Spinner").setKey(new MFFloatObject(new MFFloat4().getArray())).setKeyValue(new MFRotationObject(new MFRotation5().getArray())))
         .addChild(new ROUTEObject().setFromField("fraction_changed").setFromNode("Clock").setToField("set_fraction").setToNode("Spinner"))
@@ -167,6 +169,11 @@ public class X3dHeaderPrototypeSyntaxExamples {
         .addChild(new ROUTEObject().setFromField("fraction_changed").setFromNode("Clock").setToField("set_fraction").setToNode("StayInPlace"))
         .addChild(new ROUTEObject().setFromField("value_changed").setFromNode("StayInPlace").setToField("set_translation").setToNode("someInlineRoot"))
         .addChild(new IMPORTObject().setAS("someInlineRoot").setImportedDEF("someName").setInlineDEF("someInline")))      ;
+ProtoInstance2
+                .addFieldValue(new fieldValueObject().setName("onlyColor").setValue("0.2 0.6 0.6"));
+ProtoInstance3
+          .addFieldValue(new fieldValueObject().setName("enabled").setValue("true"));
+    return X3D0;
     }
 protected class MFString0 {
   protected MFStringObject getArray() {

@@ -79,7 +79,7 @@ public class extrusion {
     new extrusion().initialize().toFileJSON("extrusion.new.json");
     }
     public X3DObject initialize() {
-      return new X3DObject().setProfile("Immersive").setVersion("3.3")
+      X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
       .setHead(new headObject()
         .addMeta(new metaObject().setName("creator").setContent("John W Carlson"))
         .addMeta(new metaObject().setName("created").setContent("December 13 2015"))
@@ -116,6 +116,7 @@ public class extrusion {
 ""))
           .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("cycleTime").setToNode("MoveCylinder").setToField("set_cycle"))
           .addChild(new ROUTEObject().setFromNode("MoveCylinder").setFromField("spine").setToNode("extrusion").setToField("set_spine"))))      ;
+    return X3D0;
     }
 protected class MFVec3f0 {
   protected MFVec3fObject getArray() {

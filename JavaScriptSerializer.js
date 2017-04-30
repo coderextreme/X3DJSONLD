@@ -4,15 +4,21 @@ const DOUBLE_SUFFIX = '';
 const FLOAT_SUFFIX = '';
 
 function JavaScriptSerializer () {
+this.code = [];
+this.codeno = 0;
+this.precode = [];
+this.preno = 0;
+this.postcode = [];
 }
 
-var code = [];
-var codeno = 0;
 
 JavaScriptSerializer.prototype = {
 	serializeToString : function(json, element, clazz, mapToMethod, fieldTypes) {
-		code = [];
-		codeno = 0;
+		this.code = [];
+		this.codeno = 0;
+		this.precode = [];
+		this.preno = 0;
+		this.postcode = [];
 		/*
 		for (let a in element.attributes) {
 			let attrs = element.attributes;
@@ -40,10 +46,20 @@ JavaScriptSerializer.prototype = {
 		str += "ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_nativeJava;\n";
 		str += "ConfigurationProperties.deleteIntermediateFiles = false;\n";
 		str += "ConfigurationProperties.setStripTrailingZeroes(true);\n";
-		str += "      new "+element.nodeName+"Object()";
-		str += this.subSerializeToString(element, mapToMethod, fieldTypes, 3);
-
-		str += "        .toFileX3D(\""+clazz+".new.x3d\");\n";
+		// we figure out body first and print it out later
+		var body = "      var "+element.nodeName+0+" =  new "+element.nodeName+"Object()";
+		body += this.subSerializeToString(element, mapToMethod, fieldTypes, 3, []);
+		for (var po in this.precode) {
+			str += this.precode[po];
+		}
+		str += body;
+		str += "      ;\n";
+		for (var postno = 0;  postno < this.postcode.length; postno++) {
+			if (typeof this.postcode[postno] !== 'undefined') {
+				str += this.postcode[postno];
+			}
+		}
+		str += "    "+element.nodeName+0+".toFileX3D(\""+clazz+".new.x3d\");\n";
 
 		return str;
 	},
@@ -109,7 +125,7 @@ JavaScriptSerializer.prototype = {
 		}
 		return "\n"+("  ".repeat(n))+addpre+method;
 	},
-	subSerializeToString : function(element, mapToMethod, fieldTypes, n) {
+	subSerializeToString : function(element, mapToMethod, fieldTypes, n, stack) {
 		let str = "";
 		let fieldAttrType = "";
 		for (let a in element.attributes) {
@@ -192,7 +208,7 @@ JavaScriptSerializer.prototype = {
 					} else if (attrType === "SFTime") {
 						strval = attrs[a].nodeValue+DOUBLE_SUFFIX;
 					} else if (attrType === "MFTime") {
-						strval = this.printSubArray(attrType, "double", attrs[a].nodeValue.split(' '), codeno, DOUBLE_SUFFIX+',', '', DOUBLE_SUFFIX);
+						strval = this.printSubArray(attrType, "double", attrs[a].nodeValue.split(' '), this.codeno, DOUBLE_SUFFIX+',', '', DOUBLE_SUFFIX);
 					} else if (attrType === "MFString") {
 						strval = this.printSubArray(attrType, "java.lang.String",
 							attrs[a].nodeValue.substr(1, attrs[a].nodeValue.length-2).split(/" "/).
@@ -209,12 +225,12 @@ JavaScriptSerializer.prototype = {
 									console.error("JavaScript Replacing "+x+" with "+y);
 								}
 								return y;
-							}), codeno, '","', '"', '"');
+							}), this.codeno, '","', '"', '"');
 					} else if (
 						attrType === "MFInt32"||
 						attrType === "MFImage"||
 						attrType === "SFImage") {
-						strval = this.printSubArray(attrType, "int", attrs[a].nodeValue.split(' '), codeno, ',', '', '');
+						strval = this.printSubArray(attrType, "int", attrs[a].nodeValue.split(' '), this.codeno, ',', '', '');
 					} else if (
 						attrType === "SFColor"||
 						attrType === "MFColor"||
@@ -233,7 +249,7 @@ JavaScriptSerializer.prototype = {
 						attrType === "SFRotation"|
 						attrType === "MFRotation"|
 						attrType === "MFFloat") {
-						strval = this.printSubArray(attrType, "float", attrs[a].nodeValue.split(' '), codeno, FLOAT_SUFFIX+',', '', FLOAT_SUFFIX);
+						strval = this.printSubArray(attrType, "float", attrs[a].nodeValue.split(' '), this.codeno, FLOAT_SUFFIX+',', '', FLOAT_SUFFIX);
 					} else if (
 						attrType === "SFVec2d"||
 						attrType === "SFVec3d"||
@@ -246,9 +262,9 @@ JavaScriptSerializer.prototype = {
 						attrType === "MFMatrix3d"||
 						attrType === "MFMatrix4d"|
 						attrType === "MFDouble") {
-						strval = this.printSubArray(attrType, "double", attrs[a].nodeValue.split(' '), codeno, DOUBLE_SUFFIX+',', '', DOUBLE_SUFFIX);
+						strval = this.printSubArray(attrType, "double", attrs[a].nodeValue.split(' '), this.codeno, DOUBLE_SUFFIX+',', '', DOUBLE_SUFFIX);
 					} else if (attrType === "MFBool") {
-						strval = this.printSubArray(attrType, "boolean", attrs[a].nodeValue.split(' '), codeno, ',', '', '');
+						strval = this.printSubArray(attrType, "boolean", attrs[a].nodeValue.split(' '), this.codeno, ',', '', '');
 					} else {
 						// strval = attrs[a].nodeValue;
 						// not found in field types
@@ -283,17 +299,44 @@ JavaScriptSerializer.prototype = {
 		for (let cn in element.childNodes) {
 			let node = element.childNodes[cn];
 			if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 1) {
-				str += this.printParentChild(element, node, cn, mapToMethod, n);
-				str += "(";
-				if (element.nodeName === "Appearance" && node.NodeName === "ComposedShader") {
-					str += "[";
+				if (node.nodeName === "ProtoInstance") {
+					stack.unshift(this.preno);
+					console.log("unshift", stack);
+					this.preno++;
+					this.precode[stack[0]] = "var "+node.nodeName+stack[0]+" = null;\n";
 				}
-				str += "new "+node.nodeName+"Object()";
-				str += this.subSerializeToString(node, mapToMethod, fieldTypes, n+1);
-				if (element.nodeName === "Appearance" && node.NodeName === "ComposedShader") {
-					str += "]";
+				if (element.nodeName === "ProtoInstance" && node.nodeName === "fieldValue") {
+					if (typeof this.postcode[stack[0]] === 'undefined') {
+						this.postcode[stack[0]] = "";
+					}
+					this.postcode[stack[0]] += element.nodeName+stack[0];
 				}
-				str += ")";
+				var ch = this.printParentChild(element, node, cn, mapToMethod, n);
+				ch += "(";
+				if (element.nodeName === "Appearance" && node.NodeName === "ComposedShader") {
+					ch += "new X3DNode [] {";
+				}
+				if (node.nodeName === "ProtoInstance") {
+					ch += node.nodeName+stack[0] + " = ";
+				}
+
+				ch += "new "+node.nodeName+"Object()";
+				ch += this.subSerializeToString(node, mapToMethod, fieldTypes, n+1, stack);
+				if (element.nodeName === "Appearance" && node.NodeName === "ComposedShader") {
+					ch += "}";
+				}
+				ch += ")";
+				if (element.nodeName === "ProtoInstance" && node.nodeName === "fieldValue") {
+					// ch goes to end of body
+					this.postcode[stack[0]] += ch+";\n";
+				} else {
+					// ch is attached to body
+					str += ch;
+				}
+				if (node.nodeName === "ProtoInstance") {
+					stack.shift();
+					console.log("shift", stack);
+				}
 			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 8) {
 				let y = node.nodeValue.
 					replace(/\\/g, '\\\\').

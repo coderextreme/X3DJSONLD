@@ -79,7 +79,74 @@ public class NancyPrototypes {
     new NancyPrototypes().initialize().toFileJSON("NancyPrototypes.new.json");
     }
     public X3DObject initialize() {
-      return new X3DObject().setProfile("Immersive").setVersion("3.0")
+ProtoInstanceObject ProtoInstance0 = null;
+ProtoInstanceObject ProtoInstance1 = null;
+ProtoInstanceObject ProtoInstance2 = null;
+ProtoInstanceObject ProtoInstance3 = null;
+ProtoInstanceObject ProtoInstance4 = null;
+ProtoInstanceObject ProtoInstance5 = null;
+ProtoInstanceObject ProtoInstance6 = null;
+ProtoInstanceObject ProtoInstance7 = null;
+ProtoInstanceObject ProtoInstance8 = null;
+ProtoInstanceObject ProtoInstance9 = null;
+ProtoInstanceObject ProtoInstance10 = null;
+ProtoInstanceObject ProtoInstance11 = null;
+ProtoInstanceObject ProtoInstance12 = null;
+ProtoInstanceObject ProtoInstance13 = null;
+ProtoInstanceObject ProtoInstance14 = null;
+ProtoInstanceObject ProtoInstance15 = null;
+ProtoInstanceObject ProtoInstance16 = null;
+ProtoInstanceObject ProtoInstance17 = null;
+ProtoInstanceObject ProtoInstance18 = null;
+ProtoInstanceObject ProtoInstance19 = null;
+ProtoInstanceObject ProtoInstance20 = null;
+ProtoInstanceObject ProtoInstance21 = null;
+ProtoInstanceObject ProtoInstance22 = null;
+ProtoInstanceObject ProtoInstance23 = null;
+ProtoInstanceObject ProtoInstance24 = null;
+ProtoInstanceObject ProtoInstance25 = null;
+ProtoInstanceObject ProtoInstance26 = null;
+ProtoInstanceObject ProtoInstance27 = null;
+ProtoInstanceObject ProtoInstance28 = null;
+ProtoInstanceObject ProtoInstance29 = null;
+ProtoInstanceObject ProtoInstance30 = null;
+ProtoInstanceObject ProtoInstance31 = null;
+ProtoInstanceObject ProtoInstance32 = null;
+ProtoInstanceObject ProtoInstance33 = null;
+ProtoInstanceObject ProtoInstance34 = null;
+ProtoInstanceObject ProtoInstance35 = null;
+ProtoInstanceObject ProtoInstance36 = null;
+ProtoInstanceObject ProtoInstance37 = null;
+ProtoInstanceObject ProtoInstance38 = null;
+ProtoInstanceObject ProtoInstance39 = null;
+ProtoInstanceObject ProtoInstance40 = null;
+ProtoInstanceObject ProtoInstance41 = null;
+ProtoInstanceObject ProtoInstance42 = null;
+ProtoInstanceObject ProtoInstance43 = null;
+ProtoInstanceObject ProtoInstance44 = null;
+ProtoInstanceObject ProtoInstance45 = null;
+ProtoInstanceObject ProtoInstance46 = null;
+ProtoInstanceObject ProtoInstance47 = null;
+ProtoInstanceObject ProtoInstance48 = null;
+ProtoInstanceObject ProtoInstance49 = null;
+ProtoInstanceObject ProtoInstance50 = null;
+ProtoInstanceObject ProtoInstance51 = null;
+ProtoInstanceObject ProtoInstance52 = null;
+ProtoInstanceObject ProtoInstance53 = null;
+ProtoInstanceObject ProtoInstance54 = null;
+ProtoInstanceObject ProtoInstance55 = null;
+ProtoInstanceObject ProtoInstance56 = null;
+ProtoInstanceObject ProtoInstance57 = null;
+ProtoInstanceObject ProtoInstance58 = null;
+ProtoInstanceObject ProtoInstance59 = null;
+ProtoInstanceObject ProtoInstance60 = null;
+ProtoInstanceObject ProtoInstance61 = null;
+ProtoInstanceObject ProtoInstance62 = null;
+ProtoInstanceObject ProtoInstance63 = null;
+ProtoInstanceObject ProtoInstance64 = null;
+ProtoInstanceObject ProtoInstance65 = null;
+ProtoInstanceObject ProtoInstance66 = null;
+      X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.0")
       .setHead(new headObject()
         .addMeta(new metaObject().setName("title").setContent("NancyPrototypes.x3d"))
         .addMeta(new metaObject().setName("creator").setContent("Cindy Ballreich"))
@@ -226,257 +293,7 @@ public class NancyPrototypes {
                 .addConnect(new connectObject().setNodeField("addChildren").setProtoField("addChildren"))
                 .addConnect(new connectObject().setNodeField("removeChildren").setProtoField("removeChildren"))))))
         .addComments(new CommentsBlock("Start scene graph."))
-        .addChild(new ProtoInstanceObject().setName("Humanoid").setDEF("Humanoid")
-          .addFieldValue(new fieldValueObject().setName("name").setValue("nancy"))
-          .addFieldValue(new fieldValueObject().setName("version").setValue("1.1"))
-          .addFieldValue(new fieldValueObject().setName("info").setValue("\"humanoidVersion=Nancy V1.2b\" \"authorName=Cindy Ballreich\" \"authorEmail=cindy@ballreich.net\" \"copyright=1997 3Name3D / Yglesias Wallock Divekar Inc. all rights reserved.\" \"creationDate=Tue Dec 30 08:30:08 PST 1997\" \"usageRestrictions=Noncommercial usage is ok if 3Name3D name and logo <www.ballreich.net/vrml/h-anim/small_logo.gif> is present and proper credit is given.\""))
-          .addFieldValue(new fieldValueObject().setName("humanoidBody")
-            .addChild(new ProtoInstanceObject().setName("Joint").setDEF("hanim_HumanoidRoot")
-              .addFieldValue(new fieldValueObject().setName("name").setValue("HumanoidRoot"))
-              .addFieldValue(new fieldValueObject().setName("center").setValue("-0.00405 0.855 -0.000113"))
-              .addFieldValue(new fieldValueObject().setName("children")
-                .addChild(new ProtoInstanceObject().setName("Joint").setDEF("hanim_sacroiliac")
-                  .addFieldValue(new fieldValueObject().setName("name").setValue("sacroiliac"))
-                  .addFieldValue(new fieldValueObject().setName("center").setValue("0 1.01 -0.0204"))
-                  .addFieldValue(new fieldValueObject().setName("children")
-                    .addChild(new ProtoInstanceObject().setName("Segment").setDEF("hanim_pelvis")
-                      .addFieldValue(new fieldValueObject().setName("name").setValue("pelvis"))
-                      .addFieldValue(new fieldValueObject().setName("children")
-                        .addChild(new ShapeObject()
-                          .setAppearance(new AppearanceObject()
-                            .setMaterial(new MaterialObject().setDEF("Pants_Color").setAmbientIntensity(0.25f).setDiffuseColor(new float[] {0.054f,0.233f,0.39f})))
-                          .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt321().getArray())).setCreaseAngle(1.14f)
-                            .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f2().getArray())))))))
-                    .addChild(new ProtoInstanceObject().setName("Joint").setDEF("hanim_l_hip")
-                      .addFieldValue(new fieldValueObject().setName("name").setValue("l_hip"))
-                      .addFieldValue(new fieldValueObject().setName("center").setValue("0.122 0.888271 -0.0693267"))
-                      .addFieldValue(new fieldValueObject().setName("children")
-                        .addChild(new ProtoInstanceObject().setName("Segment").setDEF("hanim_l_thigh")
-                          .addFieldValue(new fieldValueObject().setName("name").setValue("l_thigh"))
-                          .addFieldValue(new fieldValueObject().setName("children")
-                            .addChild(new ShapeObject()
-                              .setAppearance(new AppearanceObject()
-                                .setMaterial(new MaterialObject().setUSE("Pants_Color")))
-                              .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt323().getArray())).setCreaseAngle(1.32f)
-                                .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f4().getArray())))))))
-                        .addChild(new ProtoInstanceObject().setName("Joint").setDEF("hanim_l_knee")
-                          .addFieldValue(new fieldValueObject().setName("name").setValue("l_knee"))
-                          .addFieldValue(new fieldValueObject().setName("center").setValue("0.0738 0.517 -0.0284"))
-                          .addFieldValue(new fieldValueObject().setName("children")
-                            .addChild(new ProtoInstanceObject().setName("Segment").setDEF("hanim_l_calf")
-                              .addFieldValue(new fieldValueObject().setName("name").setValue("l_calf"))
-                              .addFieldValue(new fieldValueObject().setName("children")
-                                .addChild(new ShapeObject()
-                                  .setAppearance(new AppearanceObject()
-                                    .setMaterial(new MaterialObject().setUSE("Pants_Color")))
-                                  .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt325().getArray())).setCreaseAngle(1.57f)
-                                    .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f6().getArray())))))))
-                            .addChild(new ProtoInstanceObject().setName("Joint").setDEF("hanim_l_ankle")
-                              .addFieldValue(new fieldValueObject().setName("name").setValue("l_ankle"))
-                              .addFieldValue(new fieldValueObject().setName("center").setValue("0.0645 0.0719 -0.048"))
-                              .addFieldValue(new fieldValueObject().setName("children")
-                                .addChild(new ProtoInstanceObject().setName("Segment").setDEF("hanim_l_hindfoot")
-                                  .addFieldValue(new fieldValueObject().setName("name").setValue("l_hindfoot"))
-                                  .addFieldValue(new fieldValueObject().setName("children")
-                                    .addChild(new ShapeObject()
-                                      .setAppearance(new AppearanceObject()
-                                        .setMaterial(new MaterialObject().setDEF("Shoe_Color").setAmbientIntensity(0.25f)))
-                                      .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt327().getArray())).setCreaseAngle(1.57f)
-                                        .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f8().getArray())))))))))))))
-                    .addChild(new ProtoInstanceObject().setName("Joint").setDEF("hanim_r_hip")
-                      .addFieldValue(new fieldValueObject().setName("name").setValue("r_hip"))
-                      .addFieldValue(new fieldValueObject().setName("center").setValue("-0.11 0.892362 -0.0732533"))
-                      .addFieldValue(new fieldValueObject().setName("children")
-                        .addChild(new ProtoInstanceObject().setName("Segment").setDEF("hanim_r_thigh")
-                          .addFieldValue(new fieldValueObject().setName("name").setValue("r_thigh"))
-                          .addFieldValue(new fieldValueObject().setName("children")
-                            .addChild(new ShapeObject()
-                              .setAppearance(new AppearanceObject()
-                                .setMaterial(new MaterialObject().setUSE("Pants_Color")))
-                              .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt329().getArray())).setCreaseAngle(1.61f)
-                                .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f10().getArray())))))))
-                        .addChild(new ProtoInstanceObject().setName("Joint").setDEF("hanim_r_knee")
-                          .addFieldValue(new fieldValueObject().setName("name").setValue("r_knee"))
-                          .addFieldValue(new fieldValueObject().setName("center").setValue("-0.0699 0.51 -0.0166"))
-                          .addFieldValue(new fieldValueObject().setName("children")
-                            .addChild(new ProtoInstanceObject().setName("Segment").setDEF("hanim_r_calf")
-                              .addFieldValue(new fieldValueObject().setName("name").setValue("r_calf"))
-                              .addFieldValue(new fieldValueObject().setName("children")
-                                .addChild(new ShapeObject()
-                                  .setAppearance(new AppearanceObject()
-                                    .setMaterial(new MaterialObject().setUSE("Pants_Color")))
-                                  .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt3211().getArray())).setCreaseAngle(1.57f)
-                                    .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f12().getArray())))))))
-                            .addChild(new ProtoInstanceObject().setName("Joint").setDEF("hanim_r_ankle")
-                              .addFieldValue(new fieldValueObject().setName("name").setValue("r_ankle"))
-                              .addFieldValue(new fieldValueObject().setName("center").setValue("-0.064 0.0753 -0.0412"))
-                              .addFieldValue(new fieldValueObject().setName("children")
-                                .addChild(new ProtoInstanceObject().setName("Segment").setDEF("hanim_r_hindfoot")
-                                  .addFieldValue(new fieldValueObject().setName("name").setValue("r_hindfoot"))
-                                  .addFieldValue(new fieldValueObject().setName("children")
-                                    .addChild(new ShapeObject()
-                                      .setAppearance(new AppearanceObject()
-                                        .setMaterial(new MaterialObject().setUSE("Shoe_Color")))
-                                      .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt3213().getArray())).setCreaseAngle(1.57f)
-                                        .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f14().getArray())))))))))))))))
-                .addChild(new ProtoInstanceObject().setName("Joint").setDEF("hanim_vl1")
-                  .addFieldValue(new fieldValueObject().setName("name").setValue("vl1"))
-                  .addFieldValue(new fieldValueObject().setName("center").setValue("-0.00405 1.07 -0.0275"))
-                  .addFieldValue(new fieldValueObject().setName("children")
-                    .addChild(new ProtoInstanceObject().setName("Segment").setDEF("hanim_c7")
-                      .addFieldValue(new fieldValueObject().setName("name").setValue("l1"))
-                      .addFieldValue(new fieldValueObject().setName("children")
-                        .addChild(new ShapeObject()
-                          .setAppearance(new AppearanceObject()
-                            .setMaterial(new MaterialObject().setDEF("Shirt_Color").setAmbientIntensity(0.25f).setDiffuseColor(new float[] {0.6f,0.0745f,0.1137f}))
-                            .setTexture(new ImageTextureObject().setDEF("small_logo_Tex").setUrl(new MFStringObject(new MFString15().getArray()))))
-                          .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt3216().getArray()).append(new MFInt3217().getArray())).setCreaseAngle(1.59f)
-                            .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f18().getArray())))
-                            .setTexCoord(new TextureCoordinateObject().setPoint(new MFVec2fObject(new MFVec2f19().getArray())))))))
-                    .addChild(new ProtoInstanceObject().setName("Joint").setDEF("hanim_l_shoulder")
-                      .addFieldValue(new fieldValueObject().setName("name").setValue("l_shoulder"))
-                      .addFieldValue(new fieldValueObject().setName("center").setValue("0.167 1.36 -0.0518"))
-                      .addFieldValue(new fieldValueObject().setName("children")
-                        .addChild(new ProtoInstanceObject().setName("Segment").setDEF("hanim_l_upperarm")
-                          .addFieldValue(new fieldValueObject().setName("name").setValue("l_upperarm"))
-                          .addFieldValue(new fieldValueObject().setName("children")
-                            .addChild(new TransformObject().setDEF("l_upperarm_adjust").setCenter(new float[] {0.182f,1.22f,-0.047f}).setRotation(new float[] {1f,0f,0f,0.119f}).setTranslation(new float[] {0f,0.0004203f,-0.01665f})
-                              .addChild(new ShapeObject()
-                                .setAppearance(new AppearanceObject()
-                                  .setMaterial(new MaterialObject().setDEF("Skin_Color").setAmbientIntensity(0.25f).setDiffuseColor(new float[] {0.749f,0.601f,0.462f})))
-                                .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt3220().getArray())).setCreaseAngle(1.65f)
-                                  .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f21().getArray()))))))))
-                        .addChild(new ProtoInstanceObject().setName("Joint").setDEF("hanim_l_elbow")
-                          .addFieldValue(new fieldValueObject().setName("name").setValue("l_elbow"))
-                          .addFieldValue(new fieldValueObject().setName("center").setValue("0.196 1.07 -0.0518"))
-                          .addFieldValue(new fieldValueObject().setName("children")
-                            .addChild(new ProtoInstanceObject().setName("Segment").setDEF("hanim_l_forearm")
-                              .addFieldValue(new fieldValueObject().setName("name").setValue("l_forearm"))
-                              .addFieldValue(new fieldValueObject().setName("children")
-                                .addChild(new TransformObject().setDEF("l_forearm_adjust").setCenter(new float[] {0.198f,0.961f,-0.0405f}).setRotation(new float[] {-1f,0f,0f,0.1f}).setTranslation(new float[] {0f,0.003724f,-0.0236f})
-                                  .addChild(new ShapeObject()
-                                    .setAppearance(new AppearanceObject()
-                                      .setMaterial(new MaterialObject().setUSE("Skin_Color")))
-                                    .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt3222().getArray())).setCreaseAngle(1.75f)
-                                      .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f23().getArray()))))))))
-                            .addChild(new ProtoInstanceObject().setName("Joint").setDEF("hanim_l_wrist")
-                              .addFieldValue(new fieldValueObject().setName("name").setValue("l_wrist"))
-                              .addFieldValue(new fieldValueObject().setName("center").setValue("0.213 0.811 -0.0338"))
-                              .addFieldValue(new fieldValueObject().setName("children")
-                                .addChild(new ProtoInstanceObject().setName("Segment").setDEF("hanim_l_hand")
-                                  .addFieldValue(new fieldValueObject().setName("name").setValue("l_hand"))
-                                  .addFieldValue(new fieldValueObject().setName("children")
-                                    .addChild(new TransformObject().setDEF("l_hand_adjust").setCenter(new float[] {0.213f,0.811f,-0.0338f}).setRotation(new float[] {-0.06361f,-0.9967f,0.04988f,1.333f}).setTranslation(new float[] {0f,0.005142f,-0.008662f})
-                                      .addChild(new ShapeObject()
-                                        .setAppearance(new AppearanceObject()
-                                          .setMaterial(new MaterialObject().setUSE("Skin_Color")))
-                                        .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt3224().getArray())).setCreaseAngle(1.48f)
-                                          .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f25().getArray()))))))))))))))
-                    .addChild(new ProtoInstanceObject().setName("Joint").setDEF("hanim_r_shoulder")
-                      .addFieldValue(new fieldValueObject().setName("name").setValue("r_shoulder"))
-                      .addFieldValue(new fieldValueObject().setName("center").setValue("-0.167 1.36 -0.0458"))
-                      .addFieldValue(new fieldValueObject().setName("children")
-                        .addChild(new ProtoInstanceObject().setName("Segment").setDEF("hanim_r_upperarm")
-                          .addFieldValue(new fieldValueObject().setName("name").setValue("r_upperarm"))
-                          .addFieldValue(new fieldValueObject().setName("children")
-                            .addChild(new TransformObject().setDEF("r_upperarm_adjust").setCenter(new float[] {-0.182f,1.22f,-0.047f}).setRotation(new float[] {1f,0f,0f,0.0836f}).setTranslation(new float[] {0f,0.000589f,-0.01169f})
-                              .addChild(new ShapeObject()
-                                .setAppearance(new AppearanceObject()
-                                  .setMaterial(new MaterialObject().setUSE("Skin_Color")))
-                                .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt3226().getArray())).setCreaseAngle(1.53f)
-                                  .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f27().getArray()))))))))
-                        .addChild(new ProtoInstanceObject().setName("Joint").setDEF("hanim_r_elbow")
-                          .addFieldValue(new fieldValueObject().setName("name").setValue("r_elbow"))
-                          .addFieldValue(new fieldValueObject().setName("center").setValue("-0.192 1.07 -0.0498"))
-                          .addFieldValue(new fieldValueObject().setName("children")
-                            .addChild(new ProtoInstanceObject().setName("Segment").setDEF("hanim_r_forearm")
-                              .addFieldValue(new fieldValueObject().setName("name").setValue("r_forearm"))
-                              .addFieldValue(new fieldValueObject().setName("children")
-                                .addChild(new TransformObject().setDEF("r_forearm_adjust").setCenter(new float[] {-0.198f,0.961f,-0.0397f}).setRotation(new float[] {-1f,0f,0f,0.1254f}).setTranslation(new float[] {0f,0.003466f,-0.01065f})
-                                  .addChild(new ShapeObject()
-                                    .setAppearance(new AppearanceObject()
-                                      .setMaterial(new MaterialObject().setUSE("Skin_Color")))
-                                    .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt3228().getArray())).setCreaseAngle(1.73f)
-                                      .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f29().getArray()))))))))
-                            .addChild(new ProtoInstanceObject().setName("Joint").setDEF("hanim_r_wrist")
-                              .addFieldValue(new fieldValueObject().setName("name").setValue("r_wrist"))
-                              .addFieldValue(new fieldValueObject().setName("center").setValue("-0.217 0.811 -0.0338"))
-                              .addFieldValue(new fieldValueObject().setName("children")
-                                .addChild(new ProtoInstanceObject().setName("Segment").setDEF("hanim_r_hand")
-                                  .addFieldValue(new fieldValueObject().setName("name").setValue("r_hand"))
-                                  .addFieldValue(new fieldValueObject().setName("children")
-                                    .addChild(new TransformObject().setDEF("r_hand_adjust").setCenter(new float[] {-0.217f,0.811f,-0.0338f}).setRotation(new float[] {-0.09024f,0.994f,-0.0624f,1.216f})
-                                      .addChild(new ShapeObject()
-                                        .setAppearance(new AppearanceObject()
-                                          .setMaterial(new MaterialObject().setUSE("Skin_Color")))
-                                        .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt3230().getArray())).setCreaseAngle(1.57f)
-                                          .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f31().getArray()))))))))))))))
-                    .addChild(new ProtoInstanceObject().setName("Joint").setDEF("hanim_vc4")
-                      .addFieldValue(new fieldValueObject().setName("name").setValue("vc4"))
-                      .addFieldValue(new fieldValueObject().setName("center").setValue("0 1.43 -0.0458"))
-                      .addFieldValue(new fieldValueObject().setName("children")
-                        .addChild(new ProtoInstanceObject().setName("Segment").setDEF("hanim_c4")
-                          .addFieldValue(new fieldValueObject().setName("name").setValue("c4"))
-                          .addFieldValue(new fieldValueObject().setName("children")
-                            .addChild(new ShapeObject()
-                              .setAppearance(new AppearanceObject()
-                                .setMaterial(new MaterialObject().setUSE("Skin_Color")))
-                              .setGeometry(new IndexedFaceSetObject().setDEF("neck").setCoordIndex(new MFInt32Object(new MFInt3232().getArray())).setCreaseAngle(1.91f)
-                                .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f33().getArray())))))))
-                        .addChild(new ProtoInstanceObject().setName("Joint").setDEF("hanim_skullbase")
-                          .addFieldValue(new fieldValueObject().setName("name").setValue("skullbase"))
-                          .addFieldValue(new fieldValueObject().setName("center").setValue("0 1.54 -0.0409"))
-                          .addFieldValue(new fieldValueObject().setName("children")
-                            .addChild(new ProtoInstanceObject().setName("Segment").setDEF("hanim_skull")
-                              .addFieldValue(new fieldValueObject().setName("name").setValue("skull"))
-                              .addFieldValue(new fieldValueObject().setName("children")
-                                .addChild(new ShapeObject()
-                                  .setAppearance(new AppearanceObject()
-                                    .setMaterial(new MaterialObject().setUSE("Skin_Color")))
-                                  .setGeometry(new IndexedFaceSetObject().setDEF("headIFS").setColorIndex(new MFInt32Object(new MFInt3234().getArray()).append(new MFInt3235().getArray())).setCoordIndex(new MFInt32Object(new MFInt3236().getArray()).append(new MFInt3237().getArray())).setCreaseAngle(0.7854f)
-                                    .setCoord(new CoordinateObject().setDEF("Face").setPoint(new MFVec3fObject(new MFVec3f38().getArray())))
-                                    .setColor(new ColorObject().setColor(new MFColorObject(new MFColor39().getArray())))))))))))))))
-            .addChild(new GroupObject()))
-          .addFieldValue(new fieldValueObject().setName("joints")
-            .addChild(new ProtoInstanceObject().setName("Joint").setUSE("hanim_HumanoidRoot"))
-            .addChild(new ProtoInstanceObject().setName("Joint").setUSE("hanim_sacroiliac"))
-            .addChild(new ProtoInstanceObject().setName("Joint").setUSE("hanim_l_hip"))
-            .addChild(new ProtoInstanceObject().setName("Joint").setUSE("hanim_l_knee"))
-            .addChild(new ProtoInstanceObject().setName("Joint").setUSE("hanim_l_ankle"))
-            .addChild(new ProtoInstanceObject().setName("Joint").setUSE("hanim_r_hip"))
-            .addChild(new ProtoInstanceObject().setName("Joint").setUSE("hanim_r_knee"))
-            .addChild(new ProtoInstanceObject().setName("Joint").setUSE("hanim_r_ankle"))
-            .addChild(new ProtoInstanceObject().setName("Joint").setUSE("hanim_vl1"))
-            .addChild(new ProtoInstanceObject().setName("Joint").setUSE("hanim_l_shoulder"))
-            .addChild(new ProtoInstanceObject().setName("Joint").setUSE("hanim_l_elbow"))
-            .addChild(new ProtoInstanceObject().setName("Joint").setUSE("hanim_l_wrist"))
-            .addChild(new ProtoInstanceObject().setName("Joint").setUSE("hanim_r_shoulder"))
-            .addChild(new ProtoInstanceObject().setName("Joint").setUSE("hanim_r_elbow"))
-            .addChild(new ProtoInstanceObject().setName("Joint").setUSE("hanim_r_wrist"))
-            .addChild(new ProtoInstanceObject().setName("Joint").setUSE("hanim_vc4"))
-            .addChild(new ProtoInstanceObject().setName("Joint").setUSE("hanim_skullbase")))
-          .addFieldValue(new fieldValueObject().setName("segments")
-            .addChild(new ProtoInstanceObject().setName("Segment").setUSE("hanim_pelvis"))
-            .addChild(new ProtoInstanceObject().setName("Segment").setUSE("hanim_l_thigh"))
-            .addChild(new ProtoInstanceObject().setName("Segment").setUSE("hanim_l_calf"))
-            .addChild(new ProtoInstanceObject().setName("Segment").setUSE("hanim_l_hindfoot"))
-            .addChild(new ProtoInstanceObject().setName("Segment").setUSE("hanim_r_thigh"))
-            .addChild(new ProtoInstanceObject().setName("Segment").setUSE("hanim_r_calf"))
-            .addChild(new ProtoInstanceObject().setName("Segment").setUSE("hanim_r_hindfoot"))
-            .addChild(new ProtoInstanceObject().setName("Segment").setUSE("hanim_c7"))
-            .addChild(new ProtoInstanceObject().setName("Segment").setUSE("hanim_l_upperarm"))
-            .addChild(new ProtoInstanceObject().setName("Segment").setUSE("hanim_l_forearm"))
-            .addChild(new ProtoInstanceObject().setName("Segment").setUSE("hanim_l_hand"))
-            .addChild(new ProtoInstanceObject().setName("Segment").setUSE("hanim_r_upperarm"))
-            .addChild(new ProtoInstanceObject().setName("Segment").setUSE("hanim_r_forearm"))
-            .addChild(new ProtoInstanceObject().setName("Segment").setUSE("hanim_r_hand"))
-            .addChild(new ProtoInstanceObject().setName("Segment").setUSE("hanim_c4"))
-            .addChild(new ProtoInstanceObject().setName("Segment").setUSE("hanim_skull")))
-          .addFieldValue(new fieldValueObject().setName("viewpoints")
-            .addChild(new ViewpointObject().setDEF("InclinedView").setDescription("Inclined View").setOrientation(new float[] {-0.113f,0.993f,0.0347f,0.671f}).setPosition(new float[] {1.62f,1.05f,2.06f}))
-            .addChild(new ViewpointObject().setDEF("FrontView").setDescription("Front View").setPosition(new float[] {0f,0.854f,2.57665f}))
-            .addChild(new ViewpointObject().setDEF("SideView").setDescription("Side View").setOrientation(new float[] {0f,1f,0f,1.57079f}).setPosition(new float[] {2.5929f,0.854f,0f}))
-            .addChild(new ViewpointObject().setDEF("TopView").setDescription("Top View").setOrientation(new float[] {1f,0f,0f,-1.57079f}).setPosition(new float[] {0f,3.4495f,0f}))))
+        .addChild(ProtoInstance0 = new ProtoInstanceObject().setName("Humanoid").setDEF("Humanoid"))
         .addChild(new WorldInfoObject().setInfo(new MFStringObject(new MFString40().getArray())).setTitle("Nancy - an H-Anim compliant avatar by 3Name3D"))
         .addChild(new NavigationInfoObject().setAvatarSize(new MFFloatObject(new MFFloat41().getArray())).setSpeed(0.5f).setType(new MFStringObject(new MFString42().getArray())))
         .addChild(new GroupObject().setDEF("Interface")
@@ -785,6 +602,347 @@ public class NancyPrototypes {
         .addChild(new ROUTEObject().setFromField("value_changed").setFromNode("upper_bodyRotInterp_Jump").setToField("set_rotation").setToNode("hanim_vl1"))
         .addChild(new ROUTEObject().setFromField("value_changed").setFromNode("whole_bodyRotInterp_Jump").setToField("set_rotation").setToNode("hanim_HumanoidRoot"))
         .addChild(new ROUTEObject().setFromField("value_changed").setFromNode("whole_bodyTranInterp_Jump").setToField("set_translation").setToNode("hanim_HumanoidRoot")))      ;
+ProtoInstance0
+          .addFieldValue(new fieldValueObject().setName("name").setValue("nancy"));
+ProtoInstance0
+          .addFieldValue(new fieldValueObject().setName("version").setValue("1.1"));
+ProtoInstance0
+          .addFieldValue(new fieldValueObject().setName("info").setValue("\"humanoidVersion=Nancy V1.2b\" \"authorName=Cindy Ballreich\" \"authorEmail=cindy@ballreich.net\" \"copyright=1997 3Name3D / Yglesias Wallock Divekar Inc. all rights reserved.\" \"creationDate=Tue Dec 30 08:30:08 PST 1997\" \"usageRestrictions=Noncommercial usage is ok if 3Name3D name and logo <www.ballreich.net/vrml/h-anim/small_logo.gif> is present and proper credit is given.\""));
+ProtoInstance0
+          .addFieldValue(new fieldValueObject().setName("humanoidBody")
+            .addChild(ProtoInstance1 = new ProtoInstanceObject().setName("Joint").setDEF("hanim_HumanoidRoot"))
+            .addChild(new GroupObject()));
+ProtoInstance0
+          .addFieldValue(new fieldValueObject().setName("joints")
+            .addChild(ProtoInstance34 = new ProtoInstanceObject().setName("Joint").setUSE("hanim_HumanoidRoot"))
+            .addChild(ProtoInstance35 = new ProtoInstanceObject().setName("Joint").setUSE("hanim_sacroiliac"))
+            .addChild(ProtoInstance36 = new ProtoInstanceObject().setName("Joint").setUSE("hanim_l_hip"))
+            .addChild(ProtoInstance37 = new ProtoInstanceObject().setName("Joint").setUSE("hanim_l_knee"))
+            .addChild(ProtoInstance38 = new ProtoInstanceObject().setName("Joint").setUSE("hanim_l_ankle"))
+            .addChild(ProtoInstance39 = new ProtoInstanceObject().setName("Joint").setUSE("hanim_r_hip"))
+            .addChild(ProtoInstance40 = new ProtoInstanceObject().setName("Joint").setUSE("hanim_r_knee"))
+            .addChild(ProtoInstance41 = new ProtoInstanceObject().setName("Joint").setUSE("hanim_r_ankle"))
+            .addChild(ProtoInstance42 = new ProtoInstanceObject().setName("Joint").setUSE("hanim_vl1"))
+            .addChild(ProtoInstance43 = new ProtoInstanceObject().setName("Joint").setUSE("hanim_l_shoulder"))
+            .addChild(ProtoInstance44 = new ProtoInstanceObject().setName("Joint").setUSE("hanim_l_elbow"))
+            .addChild(ProtoInstance45 = new ProtoInstanceObject().setName("Joint").setUSE("hanim_l_wrist"))
+            .addChild(ProtoInstance46 = new ProtoInstanceObject().setName("Joint").setUSE("hanim_r_shoulder"))
+            .addChild(ProtoInstance47 = new ProtoInstanceObject().setName("Joint").setUSE("hanim_r_elbow"))
+            .addChild(ProtoInstance48 = new ProtoInstanceObject().setName("Joint").setUSE("hanim_r_wrist"))
+            .addChild(ProtoInstance49 = new ProtoInstanceObject().setName("Joint").setUSE("hanim_vc4"))
+            .addChild(ProtoInstance50 = new ProtoInstanceObject().setName("Joint").setUSE("hanim_skullbase")));
+ProtoInstance0
+          .addFieldValue(new fieldValueObject().setName("segments")
+            .addChild(ProtoInstance51 = new ProtoInstanceObject().setName("Segment").setUSE("hanim_pelvis"))
+            .addChild(ProtoInstance52 = new ProtoInstanceObject().setName("Segment").setUSE("hanim_l_thigh"))
+            .addChild(ProtoInstance53 = new ProtoInstanceObject().setName("Segment").setUSE("hanim_l_calf"))
+            .addChild(ProtoInstance54 = new ProtoInstanceObject().setName("Segment").setUSE("hanim_l_hindfoot"))
+            .addChild(ProtoInstance55 = new ProtoInstanceObject().setName("Segment").setUSE("hanim_r_thigh"))
+            .addChild(ProtoInstance56 = new ProtoInstanceObject().setName("Segment").setUSE("hanim_r_calf"))
+            .addChild(ProtoInstance57 = new ProtoInstanceObject().setName("Segment").setUSE("hanim_r_hindfoot"))
+            .addChild(ProtoInstance58 = new ProtoInstanceObject().setName("Segment").setUSE("hanim_c7"))
+            .addChild(ProtoInstance59 = new ProtoInstanceObject().setName("Segment").setUSE("hanim_l_upperarm"))
+            .addChild(ProtoInstance60 = new ProtoInstanceObject().setName("Segment").setUSE("hanim_l_forearm"))
+            .addChild(ProtoInstance61 = new ProtoInstanceObject().setName("Segment").setUSE("hanim_l_hand"))
+            .addChild(ProtoInstance62 = new ProtoInstanceObject().setName("Segment").setUSE("hanim_r_upperarm"))
+            .addChild(ProtoInstance63 = new ProtoInstanceObject().setName("Segment").setUSE("hanim_r_forearm"))
+            .addChild(ProtoInstance64 = new ProtoInstanceObject().setName("Segment").setUSE("hanim_r_hand"))
+            .addChild(ProtoInstance65 = new ProtoInstanceObject().setName("Segment").setUSE("hanim_c4"))
+            .addChild(ProtoInstance66 = new ProtoInstanceObject().setName("Segment").setUSE("hanim_skull")));
+ProtoInstance0
+          .addFieldValue(new fieldValueObject().setName("viewpoints")
+            .addChild(new ViewpointObject().setDEF("InclinedView").setDescription("Inclined View").setOrientation(new float[] {-0.113f,0.993f,0.0347f,0.671f}).setPosition(new float[] {1.62f,1.05f,2.06f}))
+            .addChild(new ViewpointObject().setDEF("FrontView").setDescription("Front View").setPosition(new float[] {0f,0.854f,2.57665f}))
+            .addChild(new ViewpointObject().setDEF("SideView").setDescription("Side View").setOrientation(new float[] {0f,1f,0f,1.57079f}).setPosition(new float[] {2.5929f,0.854f,0f}))
+            .addChild(new ViewpointObject().setDEF("TopView").setDescription("Top View").setOrientation(new float[] {1f,0f,0f,-1.57079f}).setPosition(new float[] {0f,3.4495f,0f})));
+ProtoInstance1
+              .addFieldValue(new fieldValueObject().setName("name").setValue("HumanoidRoot"));
+ProtoInstance1
+              .addFieldValue(new fieldValueObject().setName("center").setValue("-0.00405 0.855 -0.000113"));
+ProtoInstance1
+              .addFieldValue(new fieldValueObject().setName("children")
+                .addChild(ProtoInstance2 = new ProtoInstanceObject().setName("Joint").setDEF("hanim_sacroiliac"))
+                .addChild(ProtoInstance16 = new ProtoInstanceObject().setName("Joint").setDEF("hanim_vl1")));
+ProtoInstance2
+                  .addFieldValue(new fieldValueObject().setName("name").setValue("sacroiliac"));
+ProtoInstance2
+                  .addFieldValue(new fieldValueObject().setName("center").setValue("0 1.01 -0.0204"));
+ProtoInstance2
+                  .addFieldValue(new fieldValueObject().setName("children")
+                    .addChild(ProtoInstance3 = new ProtoInstanceObject().setName("Segment").setDEF("hanim_pelvis"))
+                    .addChild(ProtoInstance4 = new ProtoInstanceObject().setName("Joint").setDEF("hanim_l_hip"))
+                    .addChild(ProtoInstance10 = new ProtoInstanceObject().setName("Joint").setDEF("hanim_r_hip")));
+ProtoInstance3
+                      .addFieldValue(new fieldValueObject().setName("name").setValue("pelvis"));
+ProtoInstance3
+                      .addFieldValue(new fieldValueObject().setName("children")
+                        .addChild(new ShapeObject()
+                          .setAppearance(new AppearanceObject()
+                            .setMaterial(new MaterialObject().setDEF("Pants_Color").setAmbientIntensity(0.25f).setDiffuseColor(new float[] {0.054f,0.233f,0.39f})))
+                          .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt321().getArray())).setCreaseAngle(1.14f)
+                            .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f2().getArray()))))));
+ProtoInstance4
+                      .addFieldValue(new fieldValueObject().setName("name").setValue("l_hip"));
+ProtoInstance4
+                      .addFieldValue(new fieldValueObject().setName("center").setValue("0.122 0.888271 -0.0693267"));
+ProtoInstance4
+                      .addFieldValue(new fieldValueObject().setName("children")
+                        .addChild(ProtoInstance5 = new ProtoInstanceObject().setName("Segment").setDEF("hanim_l_thigh"))
+                        .addChild(ProtoInstance6 = new ProtoInstanceObject().setName("Joint").setDEF("hanim_l_knee")));
+ProtoInstance5
+                          .addFieldValue(new fieldValueObject().setName("name").setValue("l_thigh"));
+ProtoInstance5
+                          .addFieldValue(new fieldValueObject().setName("children")
+                            .addChild(new ShapeObject()
+                              .setAppearance(new AppearanceObject()
+                                .setMaterial(new MaterialObject().setUSE("Pants_Color")))
+                              .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt323().getArray())).setCreaseAngle(1.32f)
+                                .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f4().getArray()))))));
+ProtoInstance6
+                          .addFieldValue(new fieldValueObject().setName("name").setValue("l_knee"));
+ProtoInstance6
+                          .addFieldValue(new fieldValueObject().setName("center").setValue("0.0738 0.517 -0.0284"));
+ProtoInstance6
+                          .addFieldValue(new fieldValueObject().setName("children")
+                            .addChild(ProtoInstance7 = new ProtoInstanceObject().setName("Segment").setDEF("hanim_l_calf"))
+                            .addChild(ProtoInstance8 = new ProtoInstanceObject().setName("Joint").setDEF("hanim_l_ankle")));
+ProtoInstance7
+                              .addFieldValue(new fieldValueObject().setName("name").setValue("l_calf"));
+ProtoInstance7
+                              .addFieldValue(new fieldValueObject().setName("children")
+                                .addChild(new ShapeObject()
+                                  .setAppearance(new AppearanceObject()
+                                    .setMaterial(new MaterialObject().setUSE("Pants_Color")))
+                                  .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt325().getArray())).setCreaseAngle(1.57f)
+                                    .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f6().getArray()))))));
+ProtoInstance8
+                              .addFieldValue(new fieldValueObject().setName("name").setValue("l_ankle"));
+ProtoInstance8
+                              .addFieldValue(new fieldValueObject().setName("center").setValue("0.0645 0.0719 -0.048"));
+ProtoInstance8
+                              .addFieldValue(new fieldValueObject().setName("children")
+                                .addChild(ProtoInstance9 = new ProtoInstanceObject().setName("Segment").setDEF("hanim_l_hindfoot")));
+ProtoInstance9
+                                  .addFieldValue(new fieldValueObject().setName("name").setValue("l_hindfoot"));
+ProtoInstance9
+                                  .addFieldValue(new fieldValueObject().setName("children")
+                                    .addChild(new ShapeObject()
+                                      .setAppearance(new AppearanceObject()
+                                        .setMaterial(new MaterialObject().setDEF("Shoe_Color").setAmbientIntensity(0.25f)))
+                                      .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt327().getArray())).setCreaseAngle(1.57f)
+                                        .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f8().getArray()))))));
+ProtoInstance10
+                      .addFieldValue(new fieldValueObject().setName("name").setValue("r_hip"));
+ProtoInstance10
+                      .addFieldValue(new fieldValueObject().setName("center").setValue("-0.11 0.892362 -0.0732533"));
+ProtoInstance10
+                      .addFieldValue(new fieldValueObject().setName("children")
+                        .addChild(ProtoInstance11 = new ProtoInstanceObject().setName("Segment").setDEF("hanim_r_thigh"))
+                        .addChild(ProtoInstance12 = new ProtoInstanceObject().setName("Joint").setDEF("hanim_r_knee")));
+ProtoInstance11
+                          .addFieldValue(new fieldValueObject().setName("name").setValue("r_thigh"));
+ProtoInstance11
+                          .addFieldValue(new fieldValueObject().setName("children")
+                            .addChild(new ShapeObject()
+                              .setAppearance(new AppearanceObject()
+                                .setMaterial(new MaterialObject().setUSE("Pants_Color")))
+                              .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt329().getArray())).setCreaseAngle(1.61f)
+                                .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f10().getArray()))))));
+ProtoInstance12
+                          .addFieldValue(new fieldValueObject().setName("name").setValue("r_knee"));
+ProtoInstance12
+                          .addFieldValue(new fieldValueObject().setName("center").setValue("-0.0699 0.51 -0.0166"));
+ProtoInstance12
+                          .addFieldValue(new fieldValueObject().setName("children")
+                            .addChild(ProtoInstance13 = new ProtoInstanceObject().setName("Segment").setDEF("hanim_r_calf"))
+                            .addChild(ProtoInstance14 = new ProtoInstanceObject().setName("Joint").setDEF("hanim_r_ankle")));
+ProtoInstance13
+                              .addFieldValue(new fieldValueObject().setName("name").setValue("r_calf"));
+ProtoInstance13
+                              .addFieldValue(new fieldValueObject().setName("children")
+                                .addChild(new ShapeObject()
+                                  .setAppearance(new AppearanceObject()
+                                    .setMaterial(new MaterialObject().setUSE("Pants_Color")))
+                                  .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt3211().getArray())).setCreaseAngle(1.57f)
+                                    .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f12().getArray()))))));
+ProtoInstance14
+                              .addFieldValue(new fieldValueObject().setName("name").setValue("r_ankle"));
+ProtoInstance14
+                              .addFieldValue(new fieldValueObject().setName("center").setValue("-0.064 0.0753 -0.0412"));
+ProtoInstance14
+                              .addFieldValue(new fieldValueObject().setName("children")
+                                .addChild(ProtoInstance15 = new ProtoInstanceObject().setName("Segment").setDEF("hanim_r_hindfoot")));
+ProtoInstance15
+                                  .addFieldValue(new fieldValueObject().setName("name").setValue("r_hindfoot"));
+ProtoInstance15
+                                  .addFieldValue(new fieldValueObject().setName("children")
+                                    .addChild(new ShapeObject()
+                                      .setAppearance(new AppearanceObject()
+                                        .setMaterial(new MaterialObject().setUSE("Shoe_Color")))
+                                      .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt3213().getArray())).setCreaseAngle(1.57f)
+                                        .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f14().getArray()))))));
+ProtoInstance16
+                  .addFieldValue(new fieldValueObject().setName("name").setValue("vl1"));
+ProtoInstance16
+                  .addFieldValue(new fieldValueObject().setName("center").setValue("-0.00405 1.07 -0.0275"));
+ProtoInstance16
+                  .addFieldValue(new fieldValueObject().setName("children")
+                    .addChild(ProtoInstance17 = new ProtoInstanceObject().setName("Segment").setDEF("hanim_c7"))
+                    .addChild(ProtoInstance18 = new ProtoInstanceObject().setName("Joint").setDEF("hanim_l_shoulder"))
+                    .addChild(ProtoInstance24 = new ProtoInstanceObject().setName("Joint").setDEF("hanim_r_shoulder"))
+                    .addChild(ProtoInstance30 = new ProtoInstanceObject().setName("Joint").setDEF("hanim_vc4")));
+ProtoInstance17
+                      .addFieldValue(new fieldValueObject().setName("name").setValue("l1"));
+ProtoInstance17
+                      .addFieldValue(new fieldValueObject().setName("children")
+                        .addChild(new ShapeObject()
+                          .setAppearance(new AppearanceObject()
+                            .setMaterial(new MaterialObject().setDEF("Shirt_Color").setAmbientIntensity(0.25f).setDiffuseColor(new float[] {0.6f,0.0745f,0.1137f}))
+                            .setTexture(new ImageTextureObject().setDEF("small_logo_Tex").setUrl(new MFStringObject(new MFString15().getArray()))))
+                          .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt3216().getArray()).append(new MFInt3217().getArray())).setCreaseAngle(1.59f)
+                            .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f18().getArray())))
+                            .setTexCoord(new TextureCoordinateObject().setPoint(new MFVec2fObject(new MFVec2f19().getArray()))))));
+ProtoInstance18
+                      .addFieldValue(new fieldValueObject().setName("name").setValue("l_shoulder"));
+ProtoInstance18
+                      .addFieldValue(new fieldValueObject().setName("center").setValue("0.167 1.36 -0.0518"));
+ProtoInstance18
+                      .addFieldValue(new fieldValueObject().setName("children")
+                        .addChild(ProtoInstance19 = new ProtoInstanceObject().setName("Segment").setDEF("hanim_l_upperarm"))
+                        .addChild(ProtoInstance20 = new ProtoInstanceObject().setName("Joint").setDEF("hanim_l_elbow")));
+ProtoInstance19
+                          .addFieldValue(new fieldValueObject().setName("name").setValue("l_upperarm"));
+ProtoInstance19
+                          .addFieldValue(new fieldValueObject().setName("children")
+                            .addChild(new TransformObject().setDEF("l_upperarm_adjust").setCenter(new float[] {0.182f,1.22f,-0.047f}).setRotation(new float[] {1f,0f,0f,0.119f}).setTranslation(new float[] {0f,0.0004203f,-0.01665f})
+                              .addChild(new ShapeObject()
+                                .setAppearance(new AppearanceObject()
+                                  .setMaterial(new MaterialObject().setDEF("Skin_Color").setAmbientIntensity(0.25f).setDiffuseColor(new float[] {0.749f,0.601f,0.462f})))
+                                .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt3220().getArray())).setCreaseAngle(1.65f)
+                                  .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f21().getArray())))))));
+ProtoInstance20
+                          .addFieldValue(new fieldValueObject().setName("name").setValue("l_elbow"));
+ProtoInstance20
+                          .addFieldValue(new fieldValueObject().setName("center").setValue("0.196 1.07 -0.0518"));
+ProtoInstance20
+                          .addFieldValue(new fieldValueObject().setName("children")
+                            .addChild(ProtoInstance21 = new ProtoInstanceObject().setName("Segment").setDEF("hanim_l_forearm"))
+                            .addChild(ProtoInstance22 = new ProtoInstanceObject().setName("Joint").setDEF("hanim_l_wrist")));
+ProtoInstance21
+                              .addFieldValue(new fieldValueObject().setName("name").setValue("l_forearm"));
+ProtoInstance21
+                              .addFieldValue(new fieldValueObject().setName("children")
+                                .addChild(new TransformObject().setDEF("l_forearm_adjust").setCenter(new float[] {0.198f,0.961f,-0.0405f}).setRotation(new float[] {-1f,0f,0f,0.1f}).setTranslation(new float[] {0f,0.003724f,-0.0236f})
+                                  .addChild(new ShapeObject()
+                                    .setAppearance(new AppearanceObject()
+                                      .setMaterial(new MaterialObject().setUSE("Skin_Color")))
+                                    .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt3222().getArray())).setCreaseAngle(1.75f)
+                                      .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f23().getArray())))))));
+ProtoInstance22
+                              .addFieldValue(new fieldValueObject().setName("name").setValue("l_wrist"));
+ProtoInstance22
+                              .addFieldValue(new fieldValueObject().setName("center").setValue("0.213 0.811 -0.0338"));
+ProtoInstance22
+                              .addFieldValue(new fieldValueObject().setName("children")
+                                .addChild(ProtoInstance23 = new ProtoInstanceObject().setName("Segment").setDEF("hanim_l_hand")));
+ProtoInstance23
+                                  .addFieldValue(new fieldValueObject().setName("name").setValue("l_hand"));
+ProtoInstance23
+                                  .addFieldValue(new fieldValueObject().setName("children")
+                                    .addChild(new TransformObject().setDEF("l_hand_adjust").setCenter(new float[] {0.213f,0.811f,-0.0338f}).setRotation(new float[] {-0.06361f,-0.9967f,0.04988f,1.333f}).setTranslation(new float[] {0f,0.005142f,-0.008662f})
+                                      .addChild(new ShapeObject()
+                                        .setAppearance(new AppearanceObject()
+                                          .setMaterial(new MaterialObject().setUSE("Skin_Color")))
+                                        .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt3224().getArray())).setCreaseAngle(1.48f)
+                                          .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f25().getArray())))))));
+ProtoInstance24
+                      .addFieldValue(new fieldValueObject().setName("name").setValue("r_shoulder"));
+ProtoInstance24
+                      .addFieldValue(new fieldValueObject().setName("center").setValue("-0.167 1.36 -0.0458"));
+ProtoInstance24
+                      .addFieldValue(new fieldValueObject().setName("children")
+                        .addChild(ProtoInstance25 = new ProtoInstanceObject().setName("Segment").setDEF("hanim_r_upperarm"))
+                        .addChild(ProtoInstance26 = new ProtoInstanceObject().setName("Joint").setDEF("hanim_r_elbow")));
+ProtoInstance25
+                          .addFieldValue(new fieldValueObject().setName("name").setValue("r_upperarm"));
+ProtoInstance25
+                          .addFieldValue(new fieldValueObject().setName("children")
+                            .addChild(new TransformObject().setDEF("r_upperarm_adjust").setCenter(new float[] {-0.182f,1.22f,-0.047f}).setRotation(new float[] {1f,0f,0f,0.0836f}).setTranslation(new float[] {0f,0.000589f,-0.01169f})
+                              .addChild(new ShapeObject()
+                                .setAppearance(new AppearanceObject()
+                                  .setMaterial(new MaterialObject().setUSE("Skin_Color")))
+                                .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt3226().getArray())).setCreaseAngle(1.53f)
+                                  .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f27().getArray())))))));
+ProtoInstance26
+                          .addFieldValue(new fieldValueObject().setName("name").setValue("r_elbow"));
+ProtoInstance26
+                          .addFieldValue(new fieldValueObject().setName("center").setValue("-0.192 1.07 -0.0498"));
+ProtoInstance26
+                          .addFieldValue(new fieldValueObject().setName("children")
+                            .addChild(ProtoInstance27 = new ProtoInstanceObject().setName("Segment").setDEF("hanim_r_forearm"))
+                            .addChild(ProtoInstance28 = new ProtoInstanceObject().setName("Joint").setDEF("hanim_r_wrist")));
+ProtoInstance27
+                              .addFieldValue(new fieldValueObject().setName("name").setValue("r_forearm"));
+ProtoInstance27
+                              .addFieldValue(new fieldValueObject().setName("children")
+                                .addChild(new TransformObject().setDEF("r_forearm_adjust").setCenter(new float[] {-0.198f,0.961f,-0.0397f}).setRotation(new float[] {-1f,0f,0f,0.1254f}).setTranslation(new float[] {0f,0.003466f,-0.01065f})
+                                  .addChild(new ShapeObject()
+                                    .setAppearance(new AppearanceObject()
+                                      .setMaterial(new MaterialObject().setUSE("Skin_Color")))
+                                    .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt3228().getArray())).setCreaseAngle(1.73f)
+                                      .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f29().getArray())))))));
+ProtoInstance28
+                              .addFieldValue(new fieldValueObject().setName("name").setValue("r_wrist"));
+ProtoInstance28
+                              .addFieldValue(new fieldValueObject().setName("center").setValue("-0.217 0.811 -0.0338"));
+ProtoInstance28
+                              .addFieldValue(new fieldValueObject().setName("children")
+                                .addChild(ProtoInstance29 = new ProtoInstanceObject().setName("Segment").setDEF("hanim_r_hand")));
+ProtoInstance29
+                                  .addFieldValue(new fieldValueObject().setName("name").setValue("r_hand"));
+ProtoInstance29
+                                  .addFieldValue(new fieldValueObject().setName("children")
+                                    .addChild(new TransformObject().setDEF("r_hand_adjust").setCenter(new float[] {-0.217f,0.811f,-0.0338f}).setRotation(new float[] {-0.09024f,0.994f,-0.0624f,1.216f})
+                                      .addChild(new ShapeObject()
+                                        .setAppearance(new AppearanceObject()
+                                          .setMaterial(new MaterialObject().setUSE("Skin_Color")))
+                                        .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt3230().getArray())).setCreaseAngle(1.57f)
+                                          .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f31().getArray())))))));
+ProtoInstance30
+                      .addFieldValue(new fieldValueObject().setName("name").setValue("vc4"));
+ProtoInstance30
+                      .addFieldValue(new fieldValueObject().setName("center").setValue("0 1.43 -0.0458"));
+ProtoInstance30
+                      .addFieldValue(new fieldValueObject().setName("children")
+                        .addChild(ProtoInstance31 = new ProtoInstanceObject().setName("Segment").setDEF("hanim_c4"))
+                        .addChild(ProtoInstance32 = new ProtoInstanceObject().setName("Joint").setDEF("hanim_skullbase")));
+ProtoInstance31
+                          .addFieldValue(new fieldValueObject().setName("name").setValue("c4"));
+ProtoInstance31
+                          .addFieldValue(new fieldValueObject().setName("children")
+                            .addChild(new ShapeObject()
+                              .setAppearance(new AppearanceObject()
+                                .setMaterial(new MaterialObject().setUSE("Skin_Color")))
+                              .setGeometry(new IndexedFaceSetObject().setDEF("neck").setCoordIndex(new MFInt32Object(new MFInt3232().getArray())).setCreaseAngle(1.91f)
+                                .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f33().getArray()))))));
+ProtoInstance32
+                          .addFieldValue(new fieldValueObject().setName("name").setValue("skullbase"));
+ProtoInstance32
+                          .addFieldValue(new fieldValueObject().setName("center").setValue("0 1.54 -0.0409"));
+ProtoInstance32
+                          .addFieldValue(new fieldValueObject().setName("children")
+                            .addChild(ProtoInstance33 = new ProtoInstanceObject().setName("Segment").setDEF("hanim_skull")));
+ProtoInstance33
+                              .addFieldValue(new fieldValueObject().setName("name").setValue("skull"));
+ProtoInstance33
+                              .addFieldValue(new fieldValueObject().setName("children")
+                                .addChild(new ShapeObject()
+                                  .setAppearance(new AppearanceObject()
+                                    .setMaterial(new MaterialObject().setUSE("Skin_Color")))
+                                  .setGeometry(new IndexedFaceSetObject().setDEF("headIFS").setColorIndex(new MFInt32Object(new MFInt3234().getArray()).append(new MFInt3235().getArray())).setCoordIndex(new MFInt32Object(new MFInt3236().getArray()).append(new MFInt3237().getArray())).setCreaseAngle(0.7854f)
+                                    .setCoord(new CoordinateObject().setDEF("Face").setPoint(new MFVec3fObject(new MFVec3f38().getArray())))
+                                    .setColor(new ColorObject().setColor(new MFColorObject(new MFColor39().getArray()))))));
+    return X3D0;
     }
 protected class MFString0 {
   protected MFStringObject getArray() {

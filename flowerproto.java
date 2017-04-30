@@ -79,7 +79,7 @@ public class flowerproto {
     new flowerproto().initialize().toFileJSON("flowerproto.new.json");
     }
     public X3DObject initialize() {
-      return new X3DObject().setProfile("Immersive").setVersion("3.3")
+      X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
       .setHead(new headObject()
         .addMeta(new metaObject().setName("title").setContent("flowerproto.x3d"))
         .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
@@ -216,6 +216,7 @@ public class flowerproto {
               .addChild(new ROUTEObject().setFromNode("Bounce").setFromField("d").setToNode("shader").setToField("d"))
               .addChild(new ROUTEObject().setFromNode("Bounce").setFromField("tdelta").setToNode("shader").setToField("tdelta"))
               .addChild(new ROUTEObject().setFromNode("Bounce").setFromField("pdelta").setToNode("shader").setToField("pdelta"))))))      ;
+    return X3D0;
     }
 protected class MFString0 {
   protected MFStringObject getArray() {

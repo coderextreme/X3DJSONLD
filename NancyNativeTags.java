@@ -79,7 +79,7 @@ public class NancyNativeTags {
     new NancyNativeTags().initialize().toFileJSON("NancyNativeTags.new.json");
     }
     public X3DObject initialize() {
-      return new X3DObject().setProfile("Immersive").setVersion("3.3")
+      X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
       .setHead(new headObject()
         .addComponent(new componentObject().setName("H-Anim").setLevel(1))
         .addMeta(new metaObject().setName("title").setContent("NancyNativeTags.x3d"))
@@ -567,6 +567,7 @@ public class NancyNativeTags {
         .addChild(new ROUTEObject().setFromField("value_changed").setFromNode("upper_bodyRotInterp_Jump").setToField("set_rotation").setToNode("hanim_vl1"))
         .addChild(new ROUTEObject().setFromField("value_changed").setFromNode("whole_bodyRotInterp_Jump").setToField("set_rotation").setToNode("hanim_HumanoidRoot"))
         .addChild(new ROUTEObject().setFromField("value_changed").setFromNode("whole_bodyTranInterp_Jump").setToField("set_translation").setToNode("hanim_HumanoidRoot")))      ;
+    return X3D0;
     }
 protected class MFString0 {
   protected MFStringObject getArray() {

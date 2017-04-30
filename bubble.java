@@ -79,7 +79,8 @@ public class bubble {
     new bubble().initialize().toFileJSON("bubble.new.json");
     }
     public X3DObject initialize() {
-      return new X3DObject().setProfile("Immersive").setVersion("3.3")
+ProtoInstanceObject ProtoInstance0 = null;
+      X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
       .setHead(new headObject()
         .addMeta(new metaObject().setName("title").setContent("bubble.x3d"))
         .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
@@ -147,7 +148,8 @@ public class bubble {
               .addChild(new ROUTEObject().setFromNode("bounce").setFromField("translation_changed").setToNode("transform").setToField("set_translation"))
               .addChild(new ROUTEObject().setFromNode("bounce").setFromField("scale_changed").setToNode("transform").setToField("set_scale"))
               .addChild(new ROUTEObject().setFromNode("bubbleClock").setFromField("fraction_changed").setToNode("bounce").setToField("set_fraction")))))
-        .addChild(new ProtoInstanceObject().setName("Bubble").setDEF("bubbleA")))      ;
+        .addChild(ProtoInstance0 = new ProtoInstanceObject().setName("Bubble").setDEF("bubbleA")))      ;
+    return X3D0;
     }
 protected class MFString0 {
   protected MFStringObject getArray() {

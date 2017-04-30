@@ -79,7 +79,7 @@ public class ArchHalf {
     new ArchHalf().initialize().toFileJSON("ArchHalf.new.json");
     }
     public X3DObject initialize() {
-      return new X3DObject().setProfile("Interchange").setVersion("3.3")
+      X3DObject X3D0 =  new X3DObject().setProfile("Interchange").setVersion("3.3")
       .setHead(new headObject()
         .addMeta(new metaObject().setName("title").setContent("ArchHalf.x3d"))
         .addMeta(new metaObject().setName("description").setContent("Create a half arch with parameters clearSpanWidth=4; riseHeight=2; depth=3; topAbutmentHeight=0.5; pierWidth=0.5; pierHeight=1. Parameter clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalf width. Modify them with Transform > scale or editing the IndexedFileSet node. See the reference file ArchModelingDiagrams.pdf and the ArchScript_more_readable.js script to find further information."))
@@ -103,6 +103,7 @@ public class ArchHalf {
             .setCoord(new CoordinateObject().setDEF("ArchChord").setPoint(new MFVec3fObject(new MFVec3f1().getArray()))))
           .setAppearance(new AppearanceObject()
             .setMaterial(new MaterialObject().setDEF("MaterialNode").setDiffuseColor(new float[] {1f,0.75f,0.25f})))))      ;
+    return X3D0;
     }
 protected class MFInt320 {
   protected MFInt32Object getArray() {

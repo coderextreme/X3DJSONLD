@@ -79,7 +79,7 @@ public class IcosahedronSubdivisionLevel5 {
     new IcosahedronSubdivisionLevel5().initialize().toFileJSON("IcosahedronSubdivisionLevel5.new.json");
     }
     public X3DObject initialize() {
-      return new X3DObject().setProfile("Interchange").setVersion("3.1")
+      X3DObject X3D0 =  new X3DObject().setProfile("Interchange").setVersion("3.1")
       .setHead(new headObject()
         .addMeta(new metaObject().setName("title").setContent("IcosahedronSubdivisionLevel5.x3d"))
         .addMeta(new metaObject().setName("reference").setContent("IcosahedronSubdivisionLevel5.ply"))
@@ -109,6 +109,7 @@ public class IcosahedronSubdivisionLevel5 {
             .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f99().getArray()).append(new MFVec3f100().getArray()).append(new MFVec3f101().getArray()).append(new MFVec3f102().getArray()).append(new MFVec3f103().getArray()).append(new MFVec3f104().getArray()).append(new MFVec3f105().getArray()).append(new MFVec3f106().getArray()).append(new MFVec3f107().getArray()).append(new MFVec3f108().getArray()).append(new MFVec3f109().getArray()).append(new MFVec3f110().getArray()).append(new MFVec3f111().getArray()).append(new MFVec3f112().getArray()).append(new MFVec3f113().getArray()).append(new MFVec3f114().getArray()).append(new MFVec3f115().getArray()).append(new MFVec3f116().getArray()).append(new MFVec3f117().getArray()).append(new MFVec3f118().getArray()).append(new MFVec3f119().getArray()).append(new MFVec3f120().getArray()).append(new MFVec3f121().getArray()).append(new MFVec3f122().getArray()).append(new MFVec3f123().getArray()).append(new MFVec3f124().getArray()).append(new MFVec3f125().getArray()).append(new MFVec3f126().getArray()).append(new MFVec3f127().getArray()).append(new MFVec3f128().getArray()).append(new MFVec3f129().getArray()).append(new MFVec3f130().getArray()).append(new MFVec3f131().getArray()).append(new MFVec3f132().getArray()).append(new MFVec3f133().getArray()).append(new MFVec3f134().getArray()).append(new MFVec3f135().getArray()))))
           .setAppearance(new AppearanceObject()
             .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0.2f,0.5f,0.8f})))))      ;
+    return X3D0;
     }
 protected class MFColor0 {
   protected MFColorObject getArray() {

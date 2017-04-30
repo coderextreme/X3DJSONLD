@@ -79,7 +79,7 @@ public class browser {
     new browser().initialize().toFileJSON("browser.new.json");
     }
     public X3DObject initialize() {
-      return new X3DObject().setProfile("Immersive").setVersion("3.3")
+      X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
       .setHead(new headObject()
         .addMeta(new metaObject().setName("title").setContent("browser.x3d"))
         .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
@@ -110,5 +110,6 @@ public class browser {
 "\n"+
 "}\n"+
 "")))      ;
+    return X3D0;
     }
 }

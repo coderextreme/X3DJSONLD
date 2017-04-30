@@ -79,7 +79,20 @@ public class arc {
     new arc().initialize().toFileJSON("arc.new.json");
     }
     public X3DObject initialize() {
-      return new X3DObject().setProfile("Immersive").setVersion("3.3")
+ProtoInstanceObject ProtoInstance0 = null;
+ProtoInstanceObject ProtoInstance1 = null;
+ProtoInstanceObject ProtoInstance2 = null;
+ProtoInstanceObject ProtoInstance3 = null;
+ProtoInstanceObject ProtoInstance4 = null;
+ProtoInstanceObject ProtoInstance5 = null;
+ProtoInstanceObject ProtoInstance6 = null;
+ProtoInstanceObject ProtoInstance7 = null;
+ProtoInstanceObject ProtoInstance8 = null;
+ProtoInstanceObject ProtoInstance9 = null;
+ProtoInstanceObject ProtoInstance10 = null;
+ProtoInstanceObject ProtoInstance11 = null;
+ProtoInstanceObject ProtoInstance12 = null;
+      X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
       .setHead(new headObject()
         .addMeta(new metaObject().setName("title").setContent("arc.x3d"))
         .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
@@ -183,37 +196,47 @@ public class arc {
 "                recompute(startnode.translation,val);\n"+
 "            }\n"+
 ""))))
-        .addChild(new ProtoInstanceObject().setName("point").setDEF("start"))
-        .addChild(new ProtoInstanceObject().setName("point").setDEF("end1"))
-        .addChild(new ProtoInstanceObject().setName("point").setDEF("end2"))
-        .addChild(new ProtoInstanceObject().setName("point").setDEF("end3"))
-        .addChild(new ProtoInstanceObject().setName("x3dconnector").setDEF("connector1")
-          .addFieldValue(new fieldValueObject().setName("startnode")
-            .addChild(new ProtoInstanceObject().setName("point").setUSE("start")))
-          .addFieldValue(new fieldValueObject().setName("endnode")
-            .addChild(new ProtoInstanceObject().setName("point").setUSE("end1")))
-          .addFieldValue(new fieldValueObject().setName("connectornode")
-            .addChild(new TransformObject().setUSE("cylinder1"))))
-        .addChild(new ProtoInstanceObject().setName("x3dconnector").setDEF("connector2")
-          .addFieldValue(new fieldValueObject().setName("startnode")
-            .addChild(new ProtoInstanceObject().setName("point").setUSE("start")))
-          .addFieldValue(new fieldValueObject().setName("endnode")
-            .addChild(new ProtoInstanceObject().setName("point").setUSE("end2")))
-          .addFieldValue(new fieldValueObject().setName("connectornode")
-            .addChild(new TransformObject().setUSE("cylinder2"))))
-        .addChild(new ProtoInstanceObject().setName("x3dconnector").setDEF("connector3")
-          .addFieldValue(new fieldValueObject().setName("startnode")
-            .addChild(new ProtoInstanceObject().setName("point").setUSE("start")))
-          .addFieldValue(new fieldValueObject().setName("endnode")
-            .addChild(new ProtoInstanceObject().setName("point").setUSE("end3")))
-          .addFieldValue(new fieldValueObject().setName("connectornode")
-            .addChild(new TransformObject().setUSE("cylinder3"))))
+        .addChild(ProtoInstance0 = new ProtoInstanceObject().setName("point").setDEF("start"))
+        .addChild(ProtoInstance1 = new ProtoInstanceObject().setName("point").setDEF("end1"))
+        .addChild(ProtoInstance2 = new ProtoInstanceObject().setName("point").setDEF("end2"))
+        .addChild(ProtoInstance3 = new ProtoInstanceObject().setName("point").setDEF("end3"))
+        .addChild(ProtoInstance4 = new ProtoInstanceObject().setName("x3dconnector").setDEF("connector1"))
+        .addChild(ProtoInstance7 = new ProtoInstanceObject().setName("x3dconnector").setDEF("connector2"))
+        .addChild(ProtoInstance10 = new ProtoInstanceObject().setName("x3dconnector").setDEF("connector3"))
         .addChild(new ROUTEObject().setFromNode("start").setFromField("translation").setToNode("connector1").setToField("set_startpoint"))
         .addChild(new ROUTEObject().setFromNode("end1").setFromField("translation").setToNode("connector1").setToField("set_endpoint"))
         .addChild(new ROUTEObject().setFromNode("start").setFromField("translation").setToNode("connector2").setToField("set_startpoint"))
         .addChild(new ROUTEObject().setFromNode("end2").setFromField("translation").setToNode("connector2").setToField("set_endpoint"))
         .addChild(new ROUTEObject().setFromNode("start").setFromField("translation").setToNode("connector3").setToField("set_startpoint"))
         .addChild(new ROUTEObject().setFromNode("end3").setFromField("translation").setToNode("connector3").setToField("set_endpoint")))      ;
+ProtoInstance4
+          .addFieldValue(new fieldValueObject().setName("startnode")
+            .addChild(ProtoInstance5 = new ProtoInstanceObject().setName("point").setUSE("start")));
+ProtoInstance4
+          .addFieldValue(new fieldValueObject().setName("endnode")
+            .addChild(ProtoInstance6 = new ProtoInstanceObject().setName("point").setUSE("end1")));
+ProtoInstance4
+          .addFieldValue(new fieldValueObject().setName("connectornode")
+            .addChild(new TransformObject().setUSE("cylinder1")));
+ProtoInstance7
+          .addFieldValue(new fieldValueObject().setName("startnode")
+            .addChild(ProtoInstance8 = new ProtoInstanceObject().setName("point").setUSE("start")));
+ProtoInstance7
+          .addFieldValue(new fieldValueObject().setName("endnode")
+            .addChild(ProtoInstance9 = new ProtoInstanceObject().setName("point").setUSE("end2")));
+ProtoInstance7
+          .addFieldValue(new fieldValueObject().setName("connectornode")
+            .addChild(new TransformObject().setUSE("cylinder2")));
+ProtoInstance10
+          .addFieldValue(new fieldValueObject().setName("startnode")
+            .addChild(ProtoInstance11 = new ProtoInstanceObject().setName("point").setUSE("start")));
+ProtoInstance10
+          .addFieldValue(new fieldValueObject().setName("endnode")
+            .addChild(ProtoInstance12 = new ProtoInstanceObject().setName("point").setUSE("end3")));
+ProtoInstance10
+          .addFieldValue(new fieldValueObject().setName("connectornode")
+            .addChild(new TransformObject().setUSE("cylinder3")));
+    return X3D0;
     }
 protected class MFColor0 {
   protected MFColorObject getArray() {
