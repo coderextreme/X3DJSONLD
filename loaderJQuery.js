@@ -232,6 +232,7 @@ function updateFromJson(json) {
 		json = JSON.parse($("#json").val());
 	}
 	$('#json').val(JSON.stringify(json, null, 2));
+	updateStl(json);
 	loadX3D("#x3domjson", json, "flipper.json"); // does not load flipper.json
 	return false;
 }

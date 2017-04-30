@@ -8,6 +8,7 @@ function convertJsonToStl(json) {
 	}
 }
 
+
 function toNormals(json, GeometryList) {
 	let Geometry = GeometryList.length === 0 ? null : GeometryList[GeometryList.length-1];
 	let dispatchTable = {
