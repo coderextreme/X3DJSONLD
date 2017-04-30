@@ -9,6 +9,13 @@ function convertStlToJson(file) {
 	IFS.colorIndex = [];
 	IFS.color = [];
 	IFS.co = {};
+	let Bbox = {};
+	Bbox.minx = 10000;
+	Bbox.miny = 10000;
+	Bbox.minz = 10000;
+	Bbox.maxx = -10000;
+	Bbox.maxy = -10000;
+	Bbox.maxz = -10000;
 	let dispatchTable = {
 		solid : function(line, IFS) {
 			IFS = {};
@@ -41,6 +48,25 @@ function convertStlToJson(file) {
 		},
 		vertex : function(line, IFS) {
 			line.shift();
+			// find bounding box
+			if (line[0] < Bbox.minx) {
+				Bbox.minx = parseFloat(line[0]);
+			}
+			if (line[0] > Bbox.maxx) {
+				Bbox.maxx = parseFloat(line[0]);
+			}
+			if (line[1] < Bbox.miny) {
+				Bbox.miny = parseFloat(line[1]);
+			}
+			if (line[1] > Bbox.maxy) {
+				Bbox.maxy = parseFloat(line[1]);
+			}
+			if (line[2] < Bbox.minz) {
+				Bbox.minz = parseFloat(line[2]);
+			}
+			if (line[2] > Bbox.maxz) {
+				Bbox.maxz = parseFloat(line[2]);
+			}
 			let coords = line.join(" ");
 			let p = IFS.ci[coords];
 			if (typeof p === 'undefined') {
@@ -96,6 +122,10 @@ function convertStlToJson(file) {
 		    "@content":"template.json"
 		  },
 		  {
+		    "@name":"identifier",
+		    "@content":"http://coderextreme.net/X3DJSONLD/template.json"
+		  },
+		  {
 		    "@name":"description",
 		    "@content":"Template for an Indexed Face Set"
 		  },
@@ -109,7 +139,7 @@ function convertStlToJson(file) {
 		  },
 		  {
 		    "@name":"generator",
-		    "@content":"manual"
+		    "@content":"convertStlToJson.js:  https://github.com/coderextreme/X3DJSONLD/convertStlToJson.js"
 		  },
 		  {
 		    "@name":"license",
@@ -117,25 +147,35 @@ function convertStlToJson(file) {
 		  },
 		  {
 		    "@name":"modified",
-		    "@content":"10 April 2017"
-		  },
-		  {
-		    "@name":"dummy",
-		    "@content":"b"
-		  },
-		  {
-		    "@name":"dummy",
-		    "@content":"a"
+		    "@content":"30 April 2017"
 		  }
 		]
 	    },
 	    "Scene": {
 		"-children":[
+			/*
+		  { "NavigationInfo": {
+			  	"@type" : [ "EXAMINE" ]
+		  	}
+		  },
+		  */
 		  { "Group":
 		    {
 		      "-children":[
 			{ "Shape":
 			  {
+				  /*
+				"@bboxCenter": [
+				  	(Bbox.maxx + Bbox.minx) / 2,
+				  	(Bbox.maxy + Bbox.miny) / 2,
+				  	(Bbox.maxz + Bbox.minz) / 2
+				],
+				"@bboxSize": [
+				  	(Bbox.maxx - Bbox.minx),
+				  	(Bbox.maxy - Bbox.miny),
+				  	(Bbox.maxz - Bbox.minz)
+				],
+				*/
 				"-geometry": transformNormalsToIFS(IFS)
 			  }
 			}
