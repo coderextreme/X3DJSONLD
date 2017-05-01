@@ -225,9 +225,17 @@ ProtoInstance2
 ProtoInstance3
             .addFieldValue(new fieldValueObject().setName("position").setValue("50 50 -50"));
 ProtoInstance4
+            .addFieldValue(new fieldValueObject().setName("positionA").setValue("0 0 0"));
+ProtoInstance4
             .addFieldValue(new fieldValueObject().setName("positionB").setValue("50 50 50"));
 ProtoInstance5
+            .addFieldValue(new fieldValueObject().setName("positionA").setValue("0 0 0"));
+ProtoInstance5
             .addFieldValue(new fieldValueObject().setName("positionB").setValue("-50 -50 -50"));
+ProtoInstance6
+            .addFieldValue(new fieldValueObject().setName("positionA").setValue("50 50 50"));
+ProtoInstance6
+            .addFieldValue(new fieldValueObject().setName("positionB").setValue("50 50 -50"));
     return X3D0;
     }
 protected class MFString0 {
