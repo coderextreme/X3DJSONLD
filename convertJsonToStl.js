@@ -203,7 +203,9 @@ function toNormals(json, LDNodeList, ParentNode) {
 				if (typeof ParentNode.kids === 'undefined') {
 					ParentNode.kids = [];
 				}
-				ParentNode.kids.push(LDNode);
+				if (ParentNode !== LDNode) {
+					ParentNode.kids.push(LDNode);
+				}
 			}
 		}
 		if (typeof fieldDispatchTable[obj] !== 'undefined') {

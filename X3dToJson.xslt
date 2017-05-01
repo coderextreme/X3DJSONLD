@@ -191,6 +191,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <xsl:variable name= "parentName" select="local-name(..)"/>
         
         <xsl:choose>
+		<xsl:when test="($elementName = 'div') or ($elementName = 'span') or ($elementName = 'ui') or ($elementName = 'li') or ($elementName = 'canvas')"></xsl:when>
             <!-- ============================================================================================ -->
 			<!-- scene-graph structure statements -->
             <xsl:when test="($elementName = 'X3D')       or ($elementName = 'head')       or ($elementName = 'Scene')     or
