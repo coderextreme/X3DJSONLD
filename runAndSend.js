@@ -2,7 +2,6 @@ var runsaxon = require('./allsaxon');
 var fs = require("fs");
 
 function runAndSend(infile) {
-	console.error('converting', infile);
 	runsaxon([infile]);
 	var outfile = infile.substr(0, infile.lastIndexOf("."))+".json";
 	if (outfile.lastIndexOf("savage.nps.edu") >= 0) {
@@ -11,9 +10,9 @@ function runAndSend(infile) {
 	if (outfile.lastIndexOf("www.web3d.org") >= 0) {
 		outfile = outfile.substring(outfile.lastIndexOf("www.web3d.org"));
 	}
-	console.error('reading 2 ', outfile);
-	var content = fs.readFileSync(outfile);
+	var content;
 	try {
+		content == fs.readFileSync(outfile);
 		content = content.toString();
 		content = JSON.parse(content);
 	} catch (e) {
