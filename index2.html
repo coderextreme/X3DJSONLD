@@ -6,9 +6,12 @@
     <link rel="stylesheet" type="text/css" href="https://www.x3dom.org/download/dev/x3dom.css"></link>
     <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/create3000/cobweb/master/stable/3/3.1/cobweb.css"/>
     <script type="text/javascript" src="https://cdn.rawgit.com/create3000/cobweb/master/stable/3/3.1/cobweb.js"></script>
-    <script type="text/javascript" src="https://www.x3dom.org/download/dev/x3dom-full.js"></script>
+    <script type="text/javascript" src="https://www.x3dom.org/download/dev/x3dom-full.debug.js"></script>
+    <!--
+    <script type="text/javascript" src="x3dom-full.debug.js"></script>
+    -->
     <script type="text/javascript" language="javascript" src="Saxonce/Saxonce.nocache.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ajv/5.0.1/ajv.min.js"></script>
     <script type="text/javascript" src="https://exificient.github.io/javascript/demo/exificient.js"></script>
     <script type="text/javascript" src="https://exificient.github.io/javascript/demo/exificient-for-json.js"></script>
@@ -15694,8 +15697,8 @@ Use Namespace: <select id="namespace">
 <option>http://www.web3d.org/specifications/x3d-namespace</option>  <!-- COBWEB -->
 <option>none</option> <!-- X3DOM HTML -->
 </select>
-</td>
-</tr>
+</td>
+</tr>
 <tr>
 	<td>
 		Click <a onclick='updateFromXml(); return false;'>here</a> to load X3D XML into Cobweb and XML X3DOM viewer. Converts to JSON, but does not do a good job.<br>
@@ -15707,72 +15710,73 @@ Use Namespace: <select id="namespace">
 		Click <a onclick='decodeEXI4JSON();updateFromJson(); return false;'>here</a> to convert EXI to JSON, load X3D JSON and Display.
 	</td>
 </tr>
-<tr>
-<td>
-	    
-	<textarea id="xml" rows="15" cols="80"></textarea><br>
-	<div id="x3domxml"></div>
-    <X3DCanvas id='cobwebxml' cache='false' url='"cobweb.x3d"'>
-           <p>Your browser may not support all features required by Cobweb!</p>
-	   <X3D>
-	   <Scene>
-	   </Scene>
-	   </X3D>
-    </X3DCanvas>
-</td>
-<td>
-		
-	<textarea id="json" rows="15" cols="80"></textarea><br>
-    	<div id="x3domjson"></div>
-    <X3DCanvas id='cobwebjson' cache='false' url='"cobweb.x3d"'>
-           <p>Your browser may not support all features required by Cobweb!</p>
-	   <X3D>
-	   <Scene>
-	   </Scene>
-	   </X3D>
-    </X3DCanvas>
-</td>
+<tr>
+<td>
+	    
+	<textarea id="xml" rows="15" cols="80"></textarea><br>
+	<div id="x3domxml"></div>
+    <X3DCanvas id='cobwebxml' cache='false'>
+           <p>Your browser may not support all features required by Cobweb!</p>
+	   <X3D>
+	   <Scene>
+	   </Scene>
+	   </X3D>
+    </X3DCanvas>
+</td>
+<td>
+		
+	<textarea id="json" rows="15" cols="80"></textarea><br>
+    	<div id="x3domjson"></div>
+    <X3DCanvas id='cobwebjson' cache='false'>
+           <p>Your browser may not support all features required by Cobweb!</p>
+	   <X3D>
+	   <Scene>
+	   </Scene>
+	   </X3D>
+    </X3DCanvas>
+</td>
 <td>
 		<textarea id="exi" rows="15" cols="80"></textarea>
 		Standard Image<br></br>
 		<image height="150px" width="300px" id="image" src="">
 </td>
-</tr>
-<tr>
-<td>
+</tr>
+<tr>
+<td>
 	<a href="X3Dautoclass.js">X3Dautoclass.js</a>
 	Save the link and copy the text below to a the file &quot;your_file_name.js&quot; and run with, copy X3DJSAIL.3.3.classes.jar and saxon9he.jar to the same folder and run:  $ jjs -cp &quot;X3DJSAIL.3.3.classes.jar;saxon9he.jar&quot; your_file_name.js .
-<textarea id="java" rows="15" cols="80"></textarea><br>
-</td>
+<textarea id="java" rows="15" cols="80"></textarea><br>
+</td>
+<td>
+	Click <a onclick='updateFromStl();'>here</a> to load STL text into JSON X3DOM viewer and convert to XML and JSON (and display).<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click <a id="dom">here</a> to capture a snapshot.
+<textarea id="stl" rows="15" cols="80"></textarea><br>
+</td>
+<td>
+Click <a onclick='updateFromPly();'>here</a> to load PLY text into JSON X3DOM viewer and convert to XML and JSON (and display).<br>
+<textarea id="ply" rows="15" cols="80"></textarea><br>
+</td>
 <td>
-Click <a onclick='updateFromStl();'>here</a> to load STL text into JSON X3DOM viewer and convert to XML and JSON (and display).<br>
-<textarea id="stl" rows="15" cols="80"></textarea><br>
 </td>
-<td>
-Click <a onclick='updateFromPly();'>here</a> to load PLY text into JSON X3DOM viewer and convert to XML and JSON (and display).<br>
-<textarea id="ply" rows="15" cols="80"></textarea><br>
-</td>
-<td>
-</td>
-</tr>
-</table>
-</body>
-    <script type="text/javascript" src="JavaScriptSerializer.js"></script>
-    <script type="text/javascript" src="X3DJSONLD.js"></script>
-    <script type="text/javascript" src="PrototypeExpander.js"></script>
-    <script type="text/javascript" src="Flattener.js"></script>
-    <script type="text/javascript" src="Script.js"></script>
-    <script type="text/javascript" src="mapToMethod.js"></script>
-    <script type="text/javascript" src="mapToMethod2.js"></script>
-    <script type="text/javascript" src="fieldTypes.js"></script>
-    <script type="text/javascript" src="convertPlyToJson.js"></script>
-    <script type="text/javascript" src="convertStlToJson.js"></script>
-    <script type="text/javascript" src="convertJsonToStl.js"></script>
-    <script type="text/javascript" src="loaderJQuery.js"></script>
+</tr>
+</table>
+</body>
+    <script type="text/javascript" src="JavaScriptSerializer.js"></script>
+    <script type="text/javascript" src="X3DJSONLD.js"></script>
+    <script type="text/javascript" src="PrototypeExpander.js"></script>
+    <script type="text/javascript" src="Flattener.js"></script>
+    <script type="text/javascript" src="Script.js"></script>
+    <script type="text/javascript" src="mapToMethod.js"></script>
+    <script type="text/javascript" src="mapToMethod2.js"></script>
+    <script type="text/javascript" src="fieldTypes.js"></script>
+    <script type="text/javascript" src="matrix.js"></script>
+    <script type="text/javascript" src="convertPlyToJson.js"></script>
+    <script type="text/javascript" src="convertStlToJson.js"></script>
+    <script type="text/javascript" src="convertJsonToStl.js"></script>
+    <script type="text/javascript" src="loaderJQuery.js"></script>
     <script type="text/javascript" src="exi.js"></script>
-    <script type="text/javascript">
-	$(document).ready(function() {
-		loadJson('cobweb.json'); // does load cobweb.json
-	});
-    </script>
-</html>
+    <script type="text/javascript">
+	$(document).ready(function() {
+		loadJson('cobweb.json'); // does load cobweb.json
+	});
+    </script>
+</html>

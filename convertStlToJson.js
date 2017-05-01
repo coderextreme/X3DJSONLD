@@ -18,16 +18,6 @@ function convertStlToJson(file) {
 	Bbox.maxz = -10000;
 	let dispatchTable = {
 		solid : function(line, IFS) {
-			IFS = {};
-			IFS.normalIndex = [];
-			IFS.vector = [];
-			IFS.ni = {};
-			IFS.coordIndex = [];
-			IFS.point = [];
-			IFS.ci = {};
-			IFS.colorIndex = [];
-			IFS.color = [];
-			IFS.co = {};
 			return IFS;
 		},
 		facet : function(line, IFS) {
@@ -97,7 +87,7 @@ function convertStlToJson(file) {
 			return IFS;
 		},
 		endsolid : function(line, IFS) {
-			IFS["DEF"] = line[1];
+			IFS["DEF"] = "IndexedFaceSet";
 			return IFS;
 		}
 	}

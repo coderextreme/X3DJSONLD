@@ -4,7 +4,10 @@ function convertJsonToStl(json) {
 	LDNodeList.push(LDNode);
 	LDNodeList = toNormals(json, LDNodeList, LDNode);
 	if (LDNodeList !== null) {
-		return transformLDNodesToTriangles(LDNodeList);
+		let transform = Matrix.translation(0,0,0);
+		let output = [];
+		transformLDNodesToTriangles(LDNodeList[0], output, transform);
+		return output.join("\r\n")+"\r\n";
 	} else {
 		return null;
 	}
@@ -15,7 +18,6 @@ function initializeLDNode(json, obj) {
 	let LDNode = {};
 	LDNode.USE = json[obj]["@USE"];
 	LDNode.DEF = json[obj]["@DEF"];
-	console.log("@DEF is", LDNode.DEF);
 	LDNode.nodeName = obj;
 	return LDNode;
 }
@@ -37,31 +39,50 @@ function toNormals(json, LDNodeList, ParentNode) {
 	let nodeDispatchTable = {
 		IndexedFaceSet : function(obj, LDNode) {
 			LDNode.normalPerVertex = true;
-			LDNode.recognize = true;
+			LDNode.kid = true;
+			LDNode.geometry = true;
 		},
 		IndexedTriangleSet : function(obj, LDNode) {
 			LDNode.normalPerVertex = true;
-			LDNode.recognize = true;
+			LDNode.kid = true;
+			LDNode.geometry = true;
 		},
 		IndexedTriangleStripSet : function(obj, LDNode) {
 			LDNode.normalPerVertex = true;
-			LDNode.recognize = true;
+			LDNode.kid = true;
+			LDNode.geometry = true;
 		},
 		IndexedTriangleFanSet : function(obj, LDNode) {
 			LDNode.normalPerVertex = true;
-			LDNode.recognize = true;
+			LDNode.kid = true;
+			LDNode.geometry = true;
 		},
 		IndexedLineSet : function(obj, LDNode) {
-			LDNode.recognize = false;
+			LDNode.geometry = false;
 		},
 		Normal : function(obj, LDNode) {
 			LDNode.child = "Normal";
 		},
 		Coordinate : function(obj, LDNode) {
 			LDNode.child = "Coordinate";
+		},
+		Transform : function(obj, LDNode) {
+			LDNode.kid = true;
 		}
 	}
 	let fieldDispatchTable = {
+		"@scale" : function(obj, LDNode) {
+			LDNode.scale = Matrix.scale(obj[0], obj[1], obj[2]);
+			console.log("Scaling", LDNode.scale);
+		},
+		"@rotation" : function(obj, LDNode) {
+			LDNode.quaternion = Matrix.quaternion(obj[0], obj[1], obj[2], obj[3]);
+			console.log("Rotating", LDNode.scale);
+		},
+		"@translation" : function(obj, LDNode) {
+			LDNode.translation = Matrix.translation(obj[0], obj[1], obj[2]);
+			console.log("Translating", LDNode.scale);
+		},
 		"@normalPerVertex" : function(obj, LDNode) {
 			LDNode.normalPerVertex = obj;
 		},
@@ -178,6 +199,12 @@ function toNormals(json, LDNodeList, ParentNode) {
 			if (LDNode.child) {
 				ParentNode[LDNode.child] = LDNode;
 			}
+			if (LDNode.kid) {
+				if (typeof ParentNode.kids === 'undefined') {
+					ParentNode.kids = [];
+				}
+				ParentNode.kids.push(LDNode);
+			}
 		}
 		if (typeof fieldDispatchTable[obj] !== 'undefined') {
 			fieldDispatchTable[obj](json[obj], LDNode);
@@ -205,8 +232,14 @@ function triangle_normal(a, b, c) {
 	return normalize(baxbc);
 }
 
-function IndexedTriangle(LDNode, output) {
+function printSFVec3f(prefix, x, y, z, output, transform) {
+	var finaltransform = transform.copy();
+	var point = finaltransform.matvecmult(new Matrix(x, y, z, 1))
+	output.push([prefix, point[0], point[1], point[2]].join(" "));
+}
+function IndexedTriangle(LDNode, output, transform) {
 	if (typeof LDNode.index === 'object') {
+		output.push("solid "+(LDNode.DEF || LDNode.nodeName));
 		for (var face in LDNode.index) { // each face
 			var f = LDNode.index[face];
 			// normalPerVertex == false
@@ -215,87 +248,106 @@ function IndexedTriangle(LDNode, output) {
 				let normal = triangle_normal(
 					LDNode.Coordinate.point[f[0]],
 					LDNode.Coordinate.point[f[1]],
-					LDNode.Coordinate.point[f[2]]);
-				console.log(JSON.stringify(normal));
-				output.push(["  facet normal",
+					LDNode.Coordinate.point[f[2]],
+					output,
+					transform);
+				printSFVec3f("  facet normal",
 					normal[0],
 					normal[1],
-					normal[2]
-				    ].join(" "));
-				output.push("    outer loop");
+					normal[2],
+					output,
+					transform);
 			} else {
-				output.push(["  facet normal",
+				printSFVec3f("  facet normal",
 					LDNode.Normal.vector[f[0]][0],
 					LDNode.Normal.vector[f[0]][1],
-					LDNode.Normal.vector[f[0]][2]
-				    ].join(" "));
-				output.push("    outer loop");
+					LDNode.Normal.vector[f[0]][2],
+					output,
+					transform);
 			}
+			output.push("    outer loop");
 			// v = 0, 1, 2
 			for (var v = 0; v < 3; v++) {
-				output.push(["      vertex",
+				printSFVec3f("      vertex",
 					LDNode.Coordinate.point[f[v]][0],
 					LDNode.Coordinate.point[f[v]][1],
-					LDNode.Coordinate.point[f[v]][2]
-				       ].join(" "));
+					LDNode.Coordinate.point[f[v]][2],
+					output,
+					transform);
 			}
 			output.push("    endloop");
 			output.push("  endfacet");
 		}
+		output.push("endsolid "+(LDNode.DEF || LDNode.nodeName));
 	}
 }
 
-function transformLDNodesToTriangles(LDNodeList) {
-	console.log("ENTER", LDNodeList);
+function transformLDNodesToTriangles(LDNode, output, parentTransform) {
 	let dispatchTable = {
-		IndexedFaceSet: function(LDNode, output) {
+		IndexedFaceSet: function(LDNode, output, transform) {
 			if (typeof LDNode.coordIndex === 'object') {
+				output.push("solid "+(LDNode.DEF || LDNode.nodeName));
 				for (var face in LDNode.coordIndex) { // each face
+					var f = LDNode.coordIndex[face];
 			// just pick a close vector for now, average later
-					let normal = triangle_normal(
-						LDNode.Coordinate.point[LDNode.coordIndex[face][0]],
-						LDNode.Coordinate.point[LDNode.coordIndex[face][1]],
-						LDNode.Coordinate.point[LDNode.coordIndex[face][2]]);
-					if (typeof LDNode === 'undefined' || typeof LDNode.normalIndex[face] === 'undefined') {
-						console.log(JSON.stringify(normal));
-						output.push(["  facet normal",
+					if (typeof LDNode.normalIndex === 'undefined') {
+						let normal = triangle_normal(
+							LDNode.Coordinate.point[f[0]] || [ 1, 0, 0 ],
+							LDNode.Coordinate.point[f[1]] || [ 0, 1, 0 ],
+							LDNode.Coordinate.point[f[2]] || [ 0, 0, 1 ]);
+						printSFVec3f("  facet normal",
 							normal[0],
 							normal[1],
-							normal[2]
-						    ].join(" "));
-						output.push("    outer loop");
+							normal[2],
+							output,
+							transform);
 					} else {
-						output.push(["  facet normal",
-							LDNode.Normal.vector[LDNode.normalIndex[face][0]][0],
-							LDNode.Normal.vector[LDNode.normalIndex[face][0]][1],
-							LDNode.Normal.vector[LDNode.normalIndex[face][0]][2]
-						    ].join(" "));
-						output.push("    outer loop");
+						var fn = LDNode.normalIndex[face];
+						printSFVec3f("  facet normal",
+							LDNode.Normal.vector[fn[0]][0] || 0, 
+							LDNode.Normal.vector[fn[0]][1] || 0,
+							LDNode.Normal.vector[fn[0]][2] || 1,
+							output,
+							transform);
 					}
-					for (let v in LDNode.coordIndex[face]) {
-						output.push(["      vertex",
-							LDNode.Coordinate.point[LDNode.coordIndex[face][v]][0],
-							LDNode.Coordinate.point[LDNode.coordIndex[face][v]][1],
-							LDNode.Coordinate.point[LDNode.coordIndex[face][v]][2]
-						       ].join(" "));
+					output.push("    outer loop");
+					for (let v in f) {
+						if (typeof LDNode.Coordinate.point[f[v]] !== 'undefined') {
+							printSFVec3f("      vertex",
+								LDNode.Coordinate.point[f[v]][0] || 0,
+								LDNode.Coordinate.point[f[v]][1] || 0,
+								LDNode.Coordinate.point[f[v]][2] || 1,
+								output,
+								transform);
+						}
 					}
 					output.push("    endloop");
 					output.push("  endfacet");
 				}
+				output.push("endsolid "+(LDNode.DEF || LDNode.nodeName));
 			}
 		},
 		IndexedTriangleSet: IndexedTriangle,
 		IndexedTriangleStripSet: IndexedTriangle,
 		IndexedTriangleFanSet: IndexedTriangle
 	};
-	let output = [];
-	for (let g in LDNodeList) {
-		let LDNode = LDNodeList[g];
-		if (LDNode.recognize) {
-			output.push("solid "+(LDNode.DEF || LDNode.nodeName));
-			dispatchTable[LDNode.nodeName](LDNode, output);
-			output.push("endsolid "+(LDNode.DEF || LDNode.nodeName));
+	for (let k in LDNode.kids) {
+		let CNode = LDNode.kids[k];
+
+		let transform = parentTransform.copy();
+		if (CNode.translation) {
+			transform = transform.matmatmult(CNode.translation);
 		}
+		if (CNode.quaternion) {
+			transform = transform.matmatmult(CNode.quaternion);
+		}
+		if (CNode.scale) {
+			transform = transform.matmatmult(CNode.scale);
+		}
+		// only print out geometry
+		if (CNode.geometry) {
+			dispatchTable[CNode.nodeName](CNode, output, transform);
+		}
+		transformLDNodesToTriangles(CNode, output, transform);
 	}
-	return output.join("\r\n")+"\r\n";
 }
