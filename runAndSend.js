@@ -13,9 +13,14 @@ function runAndSend(infile) {
 	}
 	console.error('reading 2 ', outfile);
 	var content = fs.readFileSync(outfile);
-	var json = JSON.parse(content.toString());
-	console.error('sending back', json);
-	return json;
+	try {
+		content = content.toString();
+		content = JSON.parse(content);
+	} catch (e) {
+		console.error(e);
+	}
+	console.error('sending back', content);
+	return content;
 }
 
 

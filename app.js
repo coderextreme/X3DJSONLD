@@ -42,7 +42,7 @@ app.post("/convert", function(req, res, next) {
 });
 
 app.get("/", function(req, res, next) {
-	fs.readFile("index.html", function(err, data) {
+	fs.readFile(__dirname+"/index.html", function(err, data) {
 		if (err) throw err;
 		res.header("Content-Type", "text/html");
 	 	res.send(data);
@@ -74,7 +74,7 @@ function magic(path, type) {
 		url = url.substr(1);
 	}
 	console.error(url);
-	fs.readFile(url, function(err, data) {
+	fs.readFile(__dirname+"/"+url, function(err, data) {
 		try {
 			if (err) {
 				console.error(err);
@@ -147,7 +147,7 @@ app.get("*.json", function(req, res, next) {
 	}
 	var json = {};
 	try {
-		var data = fs.readFileSync(file);
+		var data = fs.readFileSync(__dirname+"/"+file);
 		json = JSON.parse(data.toString());
 	} catch (e) {
 		console.error(e+" "+file);

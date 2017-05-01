@@ -465,8 +465,11 @@ function serializeDOM(json, element) {
 	var version = json.X3D["@version"];
 	var xml = '<?xml version="1.0" encoding="'+json.X3D["encoding"]+'"?>\n';
 	xml += '<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D '+version+'//EN" "http://www.web3d.org/specifications/x3d-'+version+'.dtd">\n';
-
-	xml += new XMLSerializer().serializeToString(element);
+	if (typeof element === 'string') {
+		xml += element;
+	} else {
+		xml += new XMLSerializer().serializeToString(element);
+	}
 
 	xml = fixXML(xml);
 	return xml;
