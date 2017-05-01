@@ -159,7 +159,7 @@ function loadX3D(selector, json, url) {
     } else {
 	    alert("Invalid JSON!");
     }
-    return xml;
+    return child;
 }
 
 function appendInline(element, url) {
@@ -192,7 +192,6 @@ function appendX3DJSON2Selector(selector, json, url, xml, NS) {
 	if (element != null) {
 		elementSetAttribute(element, "xmlns:xsd", 'http://www.w3.org/2001/XMLSchema-instance');
 		$(selector).append(element);
-		x3dom.reload();
 	}
 	return element;
 }
@@ -214,15 +213,23 @@ function replaceX3DJSON(selector, json, url, xml, NS) {
 	var element = loadX3DJS(json, url, xml, NS);  // Cobweb if not XHTML NS
 	if (element != null) {
 		elementSetAttribute(element, "xmlns:xsd", 'http://www.w3.org/2001/XMLSchema-instance');
+		// We have to do this stuff before the DOM hits X3DOM, or we get a mess.
 		if (typeof JavaScriptSerializer !== 'undefined') {
 			var jserial = new JavaScriptSerializer();
 			var java = jserial.serializeToString(json, element, url, mapToMethod, fieldTypes);
 			$('#java').val(java);
 		}
+		if (document.getElementById("dom") !== null) {
+			document.getElementById("dom").onclick = function() { return false; } 
+
+			document.getElementById("dom").onclick = function() {
+				// capture the display
+				convertXmlToJson(serializeDOM(json, element), updateStl);
+				return false;
+			}
+		}
 		$(selector+" X3D").remove();
-		// $(selector).empty();
 		$(selector).append(element);
-		// x3dom.reload();
 	}
 	return element;
 }
@@ -233,7 +240,7 @@ function updateFromJson(json) {
 	}
 	$('#json').val(JSON.stringify(json, null, 2));
 	updateStl(json);
-	loadX3D("#x3domjson", json, "flipper.json"); // does not load flipper.json
+	var element = loadX3D("#x3domjson", json, "flipper.json"); // does not load flipper.json
 	return false;
 }
 
@@ -249,14 +256,15 @@ function updateFromPly() {
 
 function updateFromXml() {
 	var xml = $('#xml').val();
-	convertXmlToJson(xml);
+	convertXmlToJson(xml, updateFromJson);
 }
 
 function loadXml(url) {
 	$.get(url, function(xml) {
-		xml = getXmlString(xml);
-		xml = fixXML(xml);  // apply patches to make it work nice with HTML
-		$('#xml').val(xml);
+		// hardcode version 3.3, UTF-8 for now
+		// var json = { "X3D" : {  "@version" : "3.3", "encoding" : "UTF-8" }};
+		// xml = serializeDOM(json, xml);
+		$('#xml').val(getXmlString(xml));
 		updateFromXml();
 	}, "xml")
 	.fail(function(jqXHR, textStatus, errorThrown) { alert('loadXml request failed! ' + textStatus + ' ' + errorThrown); });
@@ -312,7 +320,6 @@ function loadJson(url) {
 	$.getJSON(url, function(json) {
 		updateFromJson(json);
 		updateXml(json);
-		updateStl(json);
 	})
 	.fail(function(jqXHR, textStatus, errorThrown) { alert('getJSON request failed! ' + textStatus + ' ' + errorThrown); });
 }
@@ -357,10 +364,8 @@ function getXmlString(xml) {
   return xml;
 }
 
-function convertXmlToJson(xmlString) {
-    $.post("/convert", xmlString, function(json) {
-	updateFromJson(json);
-    }, "json")
+function convertXmlToJson(xmlString, callback) {
+    $.post("/convert", xmlString, callback, "json")
     .fail(function(jqXHR, textStatus, errorThrown) {
 	    alert('convertXmlToJson request failed! ' + textStatus + ' ' + errorThrown);
 	    $.get("X3dToJson.xslt", function(xslt) {
@@ -395,7 +400,7 @@ function convertXmlToJson(xmlString) {
 		 try {
 		// console.log('JSON', result);
 			var json = JSON.parse(getXmlString(result));
-			updateFromJson(json);
+			callback(json);
 		} catch (e) {
 			alert("No validation done, JSON doesn't parse or load.  depending on viewers "+e);
 			loadXmlBrowsers([xmlString]);
@@ -406,3 +411,4 @@ function convertXmlToJson(xmlString) {
 	    });
     });
 }
+
