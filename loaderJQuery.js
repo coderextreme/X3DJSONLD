@@ -122,18 +122,19 @@ for (let map in mapToMethod2) {
 	Object.assign(mapToMethod[map], mapToMethod2[map]);
 }
 
-function convertJsonToXml(json) {
+function convertJsonToXml(json, next) {
 	var NS = $('#namespace option:selected').text();
 	var xml = new LOG();
-	var element = loadX3DJS(json, "flipper.json", xml, NS); // does not load flipper.json
-	if (element != null) {
-		return xml;
-	} else {
-		return null;
-	}
+	loadX3DJS(json, "flipper.json", xml, NS, loadSchema, doValidate, function(element) {
+		if (element != null) {
+			next(xml);
+		} else {
+			next(null);
+		}
+	}); // does not load flipper.json
 }
 
-function loadX3D(selector, json, url) {
+function loadX3D(selector, json, url, next) {
     var xml = new LOG();
     if ($('#prototype').is(':checked')) {
 	// Expand Protos
@@ -144,30 +145,32 @@ function loadX3D(selector, json, url) {
 	$('#json').val(JSON.stringify(json, null, 2));
     }
     var NS = $('#namespace option:selected').text();
-    var child;
-    if (NS === "none") {
-	child = replaceX3DJSON(selector, json, url, xml); // X3DOM
-    } else {
-	child = replaceX3DJSON(selector, json, url, xml, NS);  // Cobweb if not XHTML NS
-    }
-    if (child != null) {
-	    loadCobwebDOM(child);
-	    loadXmlBrowsers(xml);
-	    if ($('#scripting').is(':checked')) {
-		loadScripts(json);
+    replaceX3DJSON(selector, json, url, xml, NS, function(child) {
+	    if (child != null) {
+		    loadCobwebDOM(child);
+		    loadXmlBrowsers(xml);
+		    if ($('#scripting').is(':checked')) {
+			loadScripts(json);
+		    }
+	    } else {
+		    alert("Unknown error returning no child element!");
 	    }
-    } else {
-	    alert("Invalid JSON!");
-    }
-    return child;
+    });
 }
 
+/**
+ * Load a JSON URL into an element
+ * elemnent -- element to add to
+ * url -- JSON url to add
+ */
 function appendInline(element, url) {
 	$.getJSON(url, function(json) {
 		// must validate here because we call an inner method.
-		if (validateJson(json)) {
+		loadSchema(json, doValidate, function() {
 			ConvertToX3DOM(json["X3D"]["Scene"], "Scene", element, url);
-		}
+		}, function(e) {
+			console.error(e);
+		});
 	}).fail(function(jqXHR, textStatus, errorThrown) { alert('getJSON request failed! ' + textStatus + ' ' + errorThrown); });
 }
 
@@ -185,15 +188,17 @@ function loadInline(selector, url) {
  * url -- name of path/filename json loaded from
  * xml (array or LOG, must have push function which takes a string) -- xml output (optional)
  * NS -- XML namespace (optional)
+ * next -- to return the element or null
  * returns element loaded
  */
-function appendX3DJSON2Selector(selector, json, url, xml, NS) {
-	var element = loadX3DJS(json, url, xml, NS);  // Cobweb if not XHTML NS
-	if (element != null) {
-		elementSetAttribute(element, "xmlns:xsd", 'http://www.w3.org/2001/XMLSchema-instance');
-		$(selector).append(element);
-	}
-	return element;
+function appendX3DJSON2Selector(selector, json, url, xml, NS, next) {
+	loadX3DJS(json, url, xml, NS, loadSchema, doValidate, function(element) {
+		if (element != null) {
+			elementSetAttribute(element, "xmlns:xsd", 'http://www.w3.org/2001/XMLSchema-instance');
+			$(selector).append(element);
+		}
+		next(element);
+	});  // Cobweb if not XHTML NS
 }
 
 /*
@@ -206,32 +211,34 @@ function appendX3DJSON2Selector(selector, json, url, xml, NS) {
  * url -- name of path/filename json loaded from
  * xml (array or LOG, must have push function which takes a string) -- xml output (optional)
  * NS -- XML namespace (optional)
+ * next -- to return the element or null
  * returns element loaded
  */
-function replaceX3DJSON(selector, json, url, xml, NS) {
+function replaceX3DJSON(selector, json, url, xml, NS, next) {
 
-	var element = loadX3DJS(json, url, xml, NS);  // Cobweb if not XHTML NS
-	if (element != null) {
-		elementSetAttribute(element, "xmlns:xsd", 'http://www.w3.org/2001/XMLSchema-instance');
-		// We have to do this stuff before the DOM hits X3DOM, or we get a mess.
-		if (typeof JavaScriptSerializer !== 'undefined') {
-			var jserial = new JavaScriptSerializer();
-			var java = jserial.serializeToString(json, element, url, mapToMethod, fieldTypes);
-			$('#java').val(java);
-		}
-		if (document.getElementById("dom") !== null) {
-			document.getElementById("dom").onclick = function() { return false; } 
-
-			document.getElementById("dom").onclick = function() {
-				// capture the display
-				convertXmlToJson(serializeDOM(json, element), updateStl);
-				return false;
+	loadX3DJS(json, url, xml, NS, loadSchema, doValidate, function(element) {
+		if (element != null) {
+			elementSetAttribute(element, "xmlns:xsd", 'http://www.w3.org/2001/XMLSchema-instance');
+			// We have to do this stuff before the DOM hits X3DOM, or we get a mess.
+			if (typeof JavaScriptSerializer !== 'undefined') {
+				var jserial = new JavaScriptSerializer();
+				var java = jserial.serializeToString(json, element, url, mapToMethod, fieldTypes);
+				$('#java').val(java);
 			}
+			if (document.getElementById("dom") !== null) {
+				document.getElementById("dom").onclick = function() { return false; } 
+
+				document.getElementById("dom").onclick = function() {
+					// capture the display
+					convertXmlToJson(serializeDOM(json, element), updateStl);
+					return false;
+				}
+			}
+			$(selector+" X3D").remove();
+			$(selector).append(element);
 		}
-		$(selector+" X3D").remove();
-		$(selector).append(element);
-	}
-	return element;
+		next(element);
+	});
 }
 
 function updateFromJson(json) {
@@ -240,8 +247,7 @@ function updateFromJson(json) {
 	}
 	$('#json').val(JSON.stringify(json, null, 2));
 	updateStl(json);
-	var element = loadX3D("#x3domjson", json, "flipper.json"); // does not load flipper.json
-	return false;
+	loadX3D("#x3domjson", json, "flipper.json"); // does not load flipper.json
 }
 
 function updateFromStl() {
@@ -326,17 +332,14 @@ function loadJson(url) {
 
 function updateXml(json) {
 	//  This step is an important validation step.
-	var xml = convertJsonToXml(json);
-	$('#xml').val(xml.join("\n"));
+	convertJsonToXml(json, function(xml) {
+		$('#xml').val(xml.join("\n"));
+	});
 }
 
 function updateStl(json) {
-	try {
-		var stl = convertJsonToStl(json);
-		$('#stl').val(stl);
-	} catch (e) {
-		alert(e);
-	}
+	var stl = convertJsonToStl(json);
+	$('#stl').val(stl);
 }
 
 
@@ -412,3 +415,82 @@ function convertXmlToJson(xmlString, callback) {
     });
 }
 
+var validate = function() { return true; }
+
+function doValidate(json, success, failure, e) {
+	var retval = false;
+	if (e) {
+		alert(e);
+	}
+	var version = json.X3D["@version"];
+	if (typeof validate[version] !== 'undefined') {
+		var valid = validate[version](json);
+		if (!valid) {
+			var errs = validate[version].errors;
+			var error = ""
+			for (var e in errs) {
+				error += "\r\n keyword: " + errs[e].keyword + "\r\n";
+				error += " dataPath: " + errs[e].dataPath + "\r\n";
+				error += " message: " + errs[e].message + "\r\n";
+				error += " params: " + JSON.stringify(errs[e].params) + "\r\n";
+			}
+		}
+		retval = (valid || confirm(error));
+	}
+	if (retval && typeof success == 'function') {
+		success();
+	} else if (typeof failure === 'function') {
+		failure(e);
+	} else {
+		console.error("User selected failure");
+	}
+}
+
+function loadSchema(json, doValidate, success, failure) {
+	var versions = { "3.0":true,"3.1":true,"3.2":true,"3.3":true,"3.4":true, "4.0":true }
+	var version = json.X3D["@version"];
+	if (!versions[version]) {
+		console.error("Can only validate version 3.0-4.0 presently. Switching version to 3.3.");
+		version = "3.3";
+	}
+        if (typeof validate[version] === 'undefined') {
+		var ajv = new Ajv({ allErrors:true});
+		ajv.addFormat("uri", /^(?:[a-z][a-z0-9+\-.]*:)?(?:\/?\/(?:(?:[a-z0-9\-._~!$&'()*+,;=:]|%[0-9a-f]{2})*@)?(?:\[(?:(?:(?:(?:[0-9a-f]{1,4}:){6}|::(?:[0-9a-f]{1,4}:){5}|(?:[0-9a-f]{1,4})?::(?:[0-9a-f]{1,4}:){4}|(?:(?:[0-9a-f]{1,4}:){0,1}[0-9a-f]{1,4})?::(?:[0-9a-f]{1,4}:){3}|(?:(?:[0-9a-f]{1,4}:){0,2}[0-9a-f]{1,4})?::(?:[0-9a-f]{1,4}:){2}|(?:(?:[0-9a-f]{1,4}:){0,3}[0-9a-f]{1,4})?::[0-9a-f]{1,4}:|(?:(?:[0-9a-f]{1,4}:){0,4}[0-9a-f]{1,4})?::)(?:[0-9a-f]{1,4}:[0-9a-f]{1,4}|(?:(?:25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d\d?))|(?:(?:[0-9a-f]{1,4}:){0,5}[0-9a-f]{1,4})?::[0-9a-f]{1,4}|(?:(?:[0-9a-f]{1,4}:){0,6}[0-9a-f]{1,4})?::)|[Vv][0-9a-f]+\.[a-z0-9\-._~!$&'()*+,;=:]+)\]|(?:(?:25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d\d?)|(?:[a-z0-9\-._~!$&'()*+,;=]|%[0-9a-f]{2})*)(?::\d*)?(?:\/(?:[a-z0-9\-._~!$&'()*+,;=:@]|%[0-9a-f]{2})*)*|\/(?:(?:[a-z0-9\-._~!$&'()*+,;=:@]|%[0-9a-f]{2})+(?:\/(?:[a-z0-9\-._~!$&'()*+,;=:@]|%[0-9a-f]{2})*)*)?|(?:[a-z0-9\-._~!$&'()*+,;=:@]|%[0-9a-f]{2})+(?:\/(?:[a-z0-9\-._~!$&'()*+,;=:@]|%[0-9a-f]{2})*)*)?(?:\?(?:[a-z0-9\-._~!$&'()*+,;=:@\/?]|%[0-9a-f]{2})*)?(?:\#(?:[a-z0-9\-._~!$&'()*+,;=:@\/?]|%[0-9a-f]{2})*)?$/i);
+
+		
+		$.getJSON('http://json-schema.org/draft-04/schema', function(metaschemajson) {
+		    // try {
+		      ajv.addMetaSchema(metaschemajson);
+		      console.log("MetaSchema added");
+		      $.getJSON("x3d-"+version+"-JSONSchema.json", function(schemajson) {
+			   // try {
+			      console.log("Schema received");
+			      ajv.addSchema(schemajson);
+			      console.log("Schema", version, "added");
+			      validate[version] = ajv.compile(schemajson);
+			      if (typeof validate[version] !== 'undefined') {
+				      console.log("Schema compiled");
+			      } else {
+				      console.log("Schema not compiled");
+			      }
+			      doValidate(json, success, undefined);
+			    // } catch (e) {
+			      // doValidate(json, undefined, failure, e);
+			    // }
+			}).fail(function(e) {
+			   doValidate(json, undefined, failure, e);
+			});
+		    // } catch (e) {
+		      // doValidate(json, undefined, failure, e);
+		    // }
+		}).fail(function(e) {
+		   doValidate(json, undefined, failure, e);
+		});
+	} else {
+		// try {
+		      doValidate(json, success, undefined);
+		// } catch (e) {
+		      // doValidate(json, undefined, failure, e);
+		// }
+	}
+}
