@@ -31,8 +31,10 @@ var LOG = Script.LOG;
 
 // Convert from XML to JSON
 var runsaxon = require('./allsaxon');
+
 process.argv.shift();
 process.argv.shift();
+
 runsaxon(process.argv);
 
 function ProcessJSON(json, file) {
@@ -42,7 +44,8 @@ function ProcessJSON(json, file) {
 		json = flattener(json);
 
 		var xml = new LOG();
-		loadX3DJS(json, file, xml, undefined, loadSchema, doValidate, function(element) {
+		var NS = "http://www.web3d.org/specifications/x3d";
+		loadX3DJS(json, file, xml, NS, loadSchema, doValidate, function(element) {
 			var str = serializer.serializeToString(json, element);
 			var outfile = "ppp/"+file.substr(0, file.lastIndexOf("."))+".x3d";
 			fs.writeFileSync(outfile, str);

@@ -35,10 +35,11 @@ function ProcessJSON(json, file) {
 		json = externPrototypeExpander(file, json);
 		json = prototypeExpander(file, json, "");
 		json = flattener(json);
-		console.log(JSON.stringify(json, null, 2));
+		fs.writeFileSync("ppp/"+file, JSON.stringify(json, null, 2));
 
 		var xml = new LOG();
-		loadX3DJS(json, file, xml, undefined, loadSchema, doValidate, function(element) {
+		var NS = "http://www.web3d.org/specifications/x3d";
+		loadX3DJS(json, file, xml, NS, loadSchema, doValidate, function(element) {
 			var classes = new LOG();
 			var routecode = new LOG();
 

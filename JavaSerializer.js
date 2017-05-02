@@ -171,7 +171,14 @@ JavaSerializer.prototype = {
 			}
 			return str;
 		} else {
-			return "new "+type+"[] {"+lead+values.slice(i, max).join(j)+trail+"}";
+			if (type === "int") {
+				for (var v in values) {
+					if (values[v] > 4200000000) {
+						values[v] = "0x"+parseInt(values[v]).toString(16).toUpperCase();
+					}
+				}
+			}
+			return "new "+type+"[] {"+lead+values.join(j)+trail+"}";
 		}
 	},
 
@@ -329,7 +336,7 @@ JavaSerializer.prototype = {
 								       replace(/&/g, "&amp;").
 								       replace(/\\n/g, '\\n');
 								if (y !== x) {
-									console.error("Java Replacing "+x+" with "+y);
+									// console.error("Java Replacing "+x+" with "+y);
 								}
 								return y;
 							}), this.codeno, '","', '"', '"');
@@ -448,7 +455,7 @@ JavaSerializer.prototype = {
 					replace(/"/g, '\\"');
 				str += "\n"+("  ".repeat(n))+".addComments(new CommentsBlock(\""+y+"\"))";
 				if (y !== node.nodeValue) {
-					console.error("Java Comment Replacing "+node.nodeValue+" with "+y);
+					// console.error("Java Comment Replacing "+node.nodeValue+" with "+y);
 				}
 			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 4) {
 				str += "\n"+("  ".repeat(n))+".setSourceCode(\""+node.nodeValue.split("\r\n").map(function(x) {

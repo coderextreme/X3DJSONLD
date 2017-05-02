@@ -486,7 +486,7 @@ function serializeDOM(json, element) {
  */
 function loadX3DJS(json, path, xml, NS, loadSchema, doValidate, callback) {
 	console.log("Invoking client side loader");
-	loadSchema(json, doValidate, function() {
+	loadSchema(json, path, doValidate, function() {
 		x3djsonNS = NS;
 		var child = CreateElement('X3D', NS);
 		ConvertToX3DOM(json, "", child, path);

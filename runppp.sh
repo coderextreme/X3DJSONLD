@@ -5,24 +5,27 @@
 . ./classpath
 javac RunSaxon.java
 
+EXAMPLES=/c/x3d-code/www.web3d.org/x3d/content/examples/
+find "$EXAMPLES" -name '*.json'
+
 mkdir -p ppp
-for i in `ls *.json | grep -v intermediate | grep -v "\.new" | grep -v JSONSchema| grep -v package.json | xargs grep -lw ProtoInstance`
-do
-	echo "=========================$i=====================PPP" 1>&2
-	node PPP.js $i > ppp/`basename $i`
-	echo "=========================$i=====================CompleteXMLPrototypeExpander" 1>&2
-	node CompleteXMLPrototypeExpander.js `basename $i .json`.x3d
-done
-SCRIPTS=`find www_web3d_org/ -type f -name '*.json' | grep -v intermediate | grep -v "\.new"  | xargs grep -lw Script`
+echo ===================CompleteXMLPrototypeExpander.js Local==========
+# ls *.x3d | grep -v intermediate | grep -v "\.new" | xargs grep -lw ProtoInstance | xargs node CompleteXMLPrototypeExpander.js
+echo ===================PPP.js Local===================================
+# ls *.json | grep -v intermediate | grep -v "\.new" | grep -v Schema | grep -v package.json | xargs grep -lw ProtoInstance | xargs node PPP.js
+
+
+SCRIPTS=`find "$EXAMPLES" -type f -name '*.json' | grep -v intermediate | grep -v "\.new"  | xargs grep -lw Script`
 SCRIPTS=`echo $SCRIPTS | sed 's/ /|/g'`
-# echo $SCRIPTS
-for i in `find Library www_web3d_org/ -type f -name '*json'| grep -v intermediate | grep -v "\.new"  | xargs grep -lw ProtoInstance | egrep -v $SCRIPTS`
+
+
+for i in `find Library "$EXAMPLES" -type f -name '*json'| grep -v intermediate | grep -v "\.new"  | xargs grep -lw ProtoInstance | egrep -v $SCRIPTS`
 do
-	echo "=========================$i=====================" 1>&2
 	mkdir -p ppp/`dirname $i`
-	# node PPP.js $i
-	echo "=========================$i=====================PPP" 1>&2
-	node PPP.js $i > ppp/`dirname $i`/`basename $i`
-	echo "=========================$i=====================CompleteXMLPrototypeExpander" 1>&2
-	node CompleteXMLPrototypeExpander.js `dirname $i`/`basename $i .json`.x3d
 done
+
+echo ===================CompleteXMLPrototypeExpander.js Examples=======
+find Library "$EXAMPLES" -type f -name '*.x3d'| grep -v intermediate | grep -v "\.new"  | xargs grep -lw ProtoInstance | egrep -v $SCRIPTS | xargs node CompleteXMLPrototypeExpander.js
+
+echo ===================PPP.js Examples================================
+find Library "$EXAMPLES" -type f -name '*json'| grep -v intermediate | grep -v "\.new"  | xargs grep -lw ProtoInstance | egrep -v $SCRIPTS| xargs node PPP.js

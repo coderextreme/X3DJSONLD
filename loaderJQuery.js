@@ -166,7 +166,7 @@ function loadX3D(selector, json, url, next) {
 function appendInline(element, url) {
 	$.getJSON(url, function(json) {
 		// must validate here because we call an inner method.
-		loadSchema(json, doValidate, function() {
+		loadSchema(json, url, doValidate, function() {
 			ConvertToX3DOM(json["X3D"]["Scene"], "Scene", element, url);
 		}, function(e) {
 			console.error(e);
@@ -419,7 +419,7 @@ function convertXmlToJson(xmlString, callback) {
 
 var validate = function() { return true; }
 
-function doValidate(json, success, failure, e) {
+function doValidate(json, file, success, failure, e) {
 	var retval = false;
 	if (e) {
 		alert(e);
@@ -435,6 +435,7 @@ function doValidate(json, success, failure, e) {
 				error += " dataPath: " + errs[e].dataPath + "\r\n";
 				error += " message: " + errs[e].message + "\r\n";
 				error += " params: " + JSON.stringify(errs[e].params) + "\r\n";
+				error += " file: " + file + "\r\n";
 			}
 		}
 		retval = (valid || confirm(error));
@@ -448,7 +449,7 @@ function doValidate(json, success, failure, e) {
 	}
 }
 
-function loadSchema(json, doValidate, success, failure) {
+function loadSchema(json, file, doValidate, success, failure) {
 	var versions = { "3.0":true,"3.1":true,"3.2":true,"3.3":true,"3.4":true, "4.0":true }
 	var version = json.X3D["@version"];
 	if (!versions[version]) {
@@ -475,24 +476,24 @@ function loadSchema(json, doValidate, success, failure) {
 			      } else {
 				      console.log("Schema not compiled");
 			      }
-			      doValidate(json, success, undefined);
+			      doValidate(json, file, success, undefined);
 			    // } catch (e) {
-			      // doValidate(json, undefined, failure, e);
+			      // doValidate(json, file, undefined, failure, e);
 			    // }
 			}).fail(function(e) {
-			   doValidate(json, undefined, failure, e);
+			   doValidate(json, file, undefined, failure, e);
 			});
 		    // } catch (e) {
-		      // doValidate(json, undefined, failure, e);
+		      // doValidate(json, file, undefined, failure, e);
 		    // }
 		}).fail(function(e) {
-		   doValidate(json, undefined, failure, e);
+		   doValidate(json, file, undefined, failure, e);
 		});
 	} else {
 		// try {
-		      doValidate(json, success, undefined);
+		      doValidate(json, file, success, undefined);
 		// } catch (e) {
-		      // doValidate(json, undefined, failure, e);
+		      // doValidate(json, file, undefined, failure, e);
 		// }
 	}
 }
