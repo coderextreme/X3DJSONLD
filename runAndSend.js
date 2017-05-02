@@ -13,8 +13,10 @@ function runAndSend(infile) {
 	var content;
 	try {
 		content == fs.readFileSync(outfile);
-		content = content.toString();
-		content = JSON.parse(content);
+		if (typeof content !== 'undefined') {
+			content = content.toString();
+			content = JSON.parse(content);
+		}
 	} catch (e) {
 		console.error(e);
 	}

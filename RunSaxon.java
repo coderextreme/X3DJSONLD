@@ -64,7 +64,6 @@ protected static class ExitException extends SecurityException
 			System.setSecurityManager(new NoExitSecurityManager());
 			for (int a = 0; a < args.length; a++) {
 				String source = args[a];
-				System.err.println("BEGIN "+source);
 				if (source.startsWith("--")) {
 					stylesheet = source.substring(2);
 					continue;
@@ -125,19 +124,25 @@ protected static class ExitException extends SecurityException
 						out = out.substring(out.lastIndexOf("www.web3d.org"));
 					}
 					out = out.substring(0, out.lastIndexOf("."))+"."+extension;
-					System.err.println("WRITING "+out);
-					if (out.lastIndexOf("/") > 0) {
-						File dir = new File(out.substring(0, out.lastIndexOf("/")));
-						dir.mkdirs();
-					}
-					net.sf.saxon.Transform.main(new String[] {
+					if (!new File(out).exists()) {
+						System.err.println("BEGIN "+source);
+						if (out.lastIndexOf("/") > 0) {
+							File dir = new File(out.substring(0, out.lastIndexOf("/")));
+							dir.mkdirs();
+						}
+						net.sf.saxon.Transform.main(new String[] {
 
-								"-warnings:recover",
-								"-o:"+out,
-								"-s:"+source,
-								"-xsl:"+stylesheet });
-					// -t  #timing -c # compiled
-					System.err.println("END "+source);
+									"-warnings:recover",
+									"-o:"+out,
+									"-s:"+source,
+									"-xsl:"+stylesheet });
+						// -t  #timing -c # compiled
+						System.err.println("END "+source);
+						System.out.println(out);
+					} else {
+						// System.err.println("EXISTS.  DELETE?   "+out);
+						System.out.println(out);
+					}
 				} catch (Throwable e) {
 					System.err.println("FATAL "+source+" > "+out);
 					System.err.println(e.getMessage());

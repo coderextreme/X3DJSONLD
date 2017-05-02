@@ -222,7 +222,7 @@ JavaScriptSerializer.prototype = {
 								       replace(/&/g, "&amp;").
 								       replace(/\\n/g, '\\n');
 								if (y !== x) {
-									console.error("JavaScript Replacing "+x+" with "+y);
+									// console.error("JavaScript Replacing "+x+" with "+y);
 								}
 								return y;
 							}), this.codeno, '","', '"', '"');
@@ -341,7 +341,7 @@ JavaScriptSerializer.prototype = {
 					replace(/"/g, '\\"');
 				str += "\n"+("  ".repeat(n))+".addComments(new CommentsBlock(\""+y+"\"))";
 				if (y !== node.nodeValue) {
-					console.error("Java Comment Replacing "+node.nodeValue+" with "+y);
+					// console.error("Java Comment Replacing "+node.nodeValue+" with "+y);
 				}
 			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 4) {
 				str += "\n"+("  ".repeat(n))+".setSourceCode(\""+node.nodeValue.split("\r\n").map(function(x) {
