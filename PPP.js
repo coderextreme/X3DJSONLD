@@ -12,6 +12,7 @@ X3DJSONLD.setCDATACreateFunction(function(document, element, str) {
 var loadURLs = X3DJSONLD.loadURLs;
 var Browser = X3DJSONLD.Browser;
 
+// Bring in prototype expander and script expander
 var PE = require('./PrototypeExpander')
 PE.setLoadURLs(loadURLs);
 var prototypeExpander = PE.prototypeExpander;
@@ -21,15 +22,14 @@ var FL = require('./Flattener')
 var flattener = FL.flattener;
 
 var Script = require('./Script');
+var LOG = Script.LOG;
 var processScripts = Script.processScripts;
 
+var convertJSON = require('./convertJSON.js');
+var loadX3DJS = convertJSON.loadX3DJS;
+var loadSchema = convertJSON.loadSchema;
+var doValidate = convertJSON.doValidate;
 
-
-// Bring in prototype expander and script expander
-
-var LOG = Script.LOG;
-
-var loadX3DJS = require("./serverX3DJSONLD");
 
 function ProcessJSON(json, file) {
 		json = externPrototypeExpander(file, json);
@@ -37,28 +37,29 @@ function ProcessJSON(json, file) {
 		json = flattener(json);
 		console.log(JSON.stringify(json, null, 2));
 
-		loadX3DJS(json, file);
+		var xml = new LOG();
+		loadX3DJS(json, file, xml, undefined, loadSchema, doValidate, function(element) {
+			var classes = new LOG();
+			var routecode = new LOG();
 
-		var classes = new LOG();
-		var routecode = new LOG();
-
-		processScripts(json, classes, undefined, routecode);
-		var code = classes.join('\n')
-			.replace(/&lt;/g, '<')
-			.replace(/&gt;/g, '>')
-		var route = routecode.join('\n');
-		try {
-			eval(code);
-			var __eventTime = 0;
-			//setInterval(function() {
-				eval(route);
-				__eventTime += 1000 / 60;
-			//}, 1000 / 60 );
-		} catch (e) {
-			console.error(code);
-			console.error(route);
-			console.error(e);
-		}
+			processScripts(json, classes, undefined, routecode);
+			var code = classes.join('\n')
+				.replace(/&lt;/g, '<')
+				.replace(/&gt;/g, '>')
+			var route = routecode.join('\n');
+			try {
+				eval(code);
+				var __eventTime = 0;
+				//setInterval(function() {
+					eval(route);
+					__eventTime += 1000 / 60;
+				//}, 1000 / 60 );
+			} catch (e) {
+				console.error(code);
+				console.error(route);
+				console.error(e);
+			}
+		});
 }
 
 /*

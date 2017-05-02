@@ -19,10 +19,15 @@ var externPrototypeExpander = PE.externPrototypeExpander;
 var FL = require('./Flattener')
 var flattener = FL.flattener;
 
-var loadX3DJS = require('./serverX3DJSONLD');
+var convertJSON = require('./convertJSON.js');
+var loadX3DJS = convertJSON.loadX3DJS;
+var loadSchema = convertJSON.loadSchema;
+var doValidate = convertJSON.doValidate;
 var DOMSerializer = require('./DOMSerializer.js');
 var serializer = new DOMSerializer();
 
+var Script = require('./Script');
+var LOG = Script.LOG;
 
 // Convert from XML to JSON
 var runsaxon = require('./allsaxon');
@@ -36,13 +41,14 @@ function ProcessJSON(json, file) {
 		json = prototypeExpander(file, json, "");
 		json = flattener(json);
 
-		var element = loadX3DJS(json, file);
-		var str = serializer.serializeToString(json, element);
-
-		var outfile = "ppp/"+file.substr(0, file.lastIndexOf("."))+".x3d";
-		fs.writeFileSync(outfile, str);
-		process.stdout.write(outfile);
-		process.stdout.write('\0');
+		var xml = new LOG();
+		loadX3DJS(json, file, xml, undefined, loadSchema, doValidate, function(element) {
+			var str = serializer.serializeToString(json, element);
+			var outfile = "ppp/"+file.substr(0, file.lastIndexOf("."))+".x3d";
+			fs.writeFileSync(outfile, str);
+			process.stdout.write(outfile);
+			process.stdout.write('\0');
+		});
 }
 
 var files = process.argv;
@@ -57,10 +63,4 @@ for (var f in files) {
 		console.error("Error reading", file, e);
 		console.trace();
 	}
-}
-
-if (typeof module === 'object')  {
-	module.exports = {
-		loadX3DJS : loadX3DJS,
-	};
 }

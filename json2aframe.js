@@ -5,6 +5,6 @@
 process.argv.shift();
 process.argv.shift();
 
-var convertJSON = require('./convertJSON.js');
+var convertJSON = require('./convertJSON.js').convertJSON;
 
 convertJSON({'./AframeSerializer.js': ".aframe"});
