@@ -369,7 +369,10 @@
                         },
                         "#sourceText":[
 "ecmascript:",
-"            function recompute(startpoint,endpoint){",
+"            function recompute(startpoint,endpoint) {",
+"\t        if (typeof endpoint === 'undefined') {",
+"\t\t\treturn;",
+"\t\t}",
 "                var dif = endpoint.subtract(startpoint);",
 "                var dist = dif.length()*.5;",
 "                var dif2 = dif.multiply(.5);",

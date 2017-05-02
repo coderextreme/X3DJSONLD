@@ -62,11 +62,16 @@ protected static class ExitException extends SecurityException
 			String stylesheet = "X3dToJson.xslt";
 			String extension = "json";
 			boolean overwrite = false;
+			boolean silent = false;
 			System.setSecurityManager(new NoExitSecurityManager());
 			for (int a = 0; a < args.length; a++) {
 				String source = args[a];
 				if (source.startsWith("---overwrite")) {
 					overwrite = true;
+					continue;
+				}
+				if (source.startsWith("---silent")) {
+					silent = true;
 					continue;
 				}
 				if (source.startsWith("--")) {
@@ -143,10 +148,14 @@ protected static class ExitException extends SecurityException
 									"-xsl:"+stylesheet });
 						// -t  #timing -c # compiled
 						System.err.println("END "+source);
-						System.out.println(out);
+						if (!silent) {
+							System.out.println(out);
+						}
 					} else {
 						// System.err.println("EXISTS.  DELETE?   "+out);
-						System.out.println(out);
+						if (!silent) {
+							System.out.println(out);
+						}
 					}
 				} catch (Throwable e) {
 					System.err.println("FATAL "+source+" > "+out);

@@ -56,9 +56,8 @@ function ProcessJSON(json, file) {
 					__eventTime += 1000 / 60;
 				//}, 1000 / 60 );
 			} catch (e) {
-				console.error(code);
-				console.error(route);
-				console.error(e);
+				fs.writeFileSync("ppp/"+file+".js", code+"\n"+route);
+				console.error("See ppp/"+file+".js", e);
 			}
 		});
 }

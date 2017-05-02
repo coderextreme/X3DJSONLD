@@ -34,7 +34,7 @@ app.post("/convert", function(req, res, next) {
 		var infile = __dirname+"/"+(infl++)+".x3d";
 		console.error("converting ", buf);
 		fs.writeFileSync(infile, buf);
-		var json = runAndSend(infile);
+		var json = runAndSend(['--silent', '---overwrite', infile]);
 		json = externPrototypeExpander(infile, json);
 		fs.unlink(infile);
 		res.send(json);
@@ -100,7 +100,7 @@ function processX3d(req, res, next) {
 	}
 	try {
 		console.error("Calling converter on "+file);
-		var json = runAndSend(file);
+		var json = runAndSend(['---silent', '---overwrite', file]);
 		console.error("Calling expander on "+url);
                	json = externPrototypeExpander(url, json);
               	res.header("Content-Type", "text/json");
@@ -153,7 +153,7 @@ app.get("*.json", function(req, res, next) {
 		console.error(e+" "+file);
 		try {
 			file = file.substr(0, file.lastIndexOf("."))+".x3d";
-			json = runAndSend(file);
+			json = runAndSend(['--silent', '---overwrite', file]);
 		} catch (e) {
 			console.error(e+" "+file);
 		}

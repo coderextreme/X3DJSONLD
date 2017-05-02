@@ -49,8 +49,7 @@ function ProcessJSON(json, file) {
 			var str = serializer.serializeToString(json, element);
 			var outfile = "ppp/"+file.substr(0, file.lastIndexOf("."))+".x3d";
 			fs.writeFileSync(outfile, str);
-			process.stdout.write(outfile);
-			process.stdout.write('\0');
+			console.log(outfile);
 		});
 }
 

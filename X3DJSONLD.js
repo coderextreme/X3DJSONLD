@@ -154,9 +154,11 @@ function loadURLs(loadpath, urls, loadedCallback) {
 							var filename = url;
 							filename = filename.substring(0, filename.lastIndexOf("."))+".x3d";
 							console.error("converting "+filename);
-							var json = runAndSend(filename);
-							data = JSON.stringify(json);
-							loadedCallback(data.toString(), filename);
+							if (typeof runAndSend === 'function') {
+								var json = runAndSend(['--silent', '--overwrite', filename]);
+								data = JSON.stringify(json);
+								loadedCallback(data, filename);
+							}
 						}
 					} else if (typeof $ !== 'undefined' && typeof $.get === 'function') {
 						console.error("Loading Relative URL", url);
