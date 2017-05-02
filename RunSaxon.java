@@ -113,6 +113,7 @@ protected static class ExitException extends SecurityException
 						PrintWriter bw = null;
 						try {
 							br = new BufferedReader(new InputStreamReader(u.openStream()));
+							System.err.println("Downloading URL to "+source);
 							bw = new PrintWriter(new FileWriter(source));
 							String line = null;
 							while ((line = br.readLine()) != null) {
@@ -134,7 +135,24 @@ protected static class ExitException extends SecurityException
 						out = out.substring(out.lastIndexOf("www.web3d.org"));
 					}
 					out = out.substring(0, out.lastIndexOf("."))+"."+extension;
-					if (overwrite || !new File(out).exists()) {
+					if (overwrite) {
+						System.err.println("BEGIN "+source);
+						if (out.lastIndexOf("/") > 0) {
+							File dir = new File(out.substring(0, out.lastIndexOf("/")));
+							dir.mkdirs();
+						}
+						net.sf.saxon.Transform.main(new String[] {
+
+									"-warnings:recover",
+									"-o:"+out,
+									"-s:"+source,
+									"-xsl:"+stylesheet });
+						// -t  #timing -c # compiled
+						System.err.println("END "+source);
+						if (!silent) {
+							System.out.println(out);
+						}
+					} else if (!new File(out).exists()) {
 						System.err.println("BEGIN "+source);
 						if (out.lastIndexOf("/") > 0) {
 							File dir = new File(out.substring(0, out.lastIndexOf("/")));
@@ -152,8 +170,8 @@ protected static class ExitException extends SecurityException
 							System.out.println(out);
 						}
 					} else {
-						// System.err.println("EXISTS.  DELETE?   "+out);
 						if (!silent) {
+							System.err.println("EXISTS.  DELETE?   "+out);
 							System.out.println(out);
 						}
 					}

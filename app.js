@@ -13,6 +13,9 @@ var PE = require('./PrototypeExpander')
 PE.setLoadURLs(loadURLs);
 var externPrototypeExpander = PE.externPrototypeExpander;
 
+var FL = require('./Flattener')
+var flattener = FL.flattener;
+
 var runAndSend = require('./runAndSend');
 
 fs.symlink(
@@ -26,32 +29,61 @@ path.resolve(__dirname + "/examples"),
   }
 );
 
-var infl = 0;
+function convertX3dToJson(res, infile, outfile, next) {
+	console.error("Calling converter on "+infile);
+	runAndSend(['---silent', infile], function(json) {
+		console.error("Calling extern proto expander");
+		json = externPrototypeExpander(outfile, json);
+		json = flattener(json);
+		// console.error("Json", json);
+		send(res, json, "text/json", next);
+	});
+}
+
+function send(res, data, type, next) {
+	console.error("Type", type);
+	try {
+		if (!type.startsWith("image/")) {
+			res.header("Content-Type", type);
+		}
+	} catch (e) {
+		console.error(e);
+	}
+	res.send(data);
+	next();
+}
+
+var filecount = 0;
 app.post("/convert", function(req, res, next) {
 	var buf = '';
 	req.on('data', function(chunk){ buf += chunk; });
 	req.on('end', function(){
-		var infile = __dirname+"/"+(infl++)+".x3d";
+		var infile = __dirname+"/"+(filecount)+".x3d";
+		var outfile = __dirname+"/"+(filecount)+".json";
+		filecount++;
 		console.error("converting ", buf);
-		fs.writeFileSync(infile, buf);
-		var json = runAndSend(['--silent', '---overwrite', infile]);
-		json = externPrototypeExpander(infile, json);
-		fs.unlink(infile);
-		res.send(json);
+		fs.writeFile(infile, buf, function(err) {
+			if (err) throw err;
+			convertX3dToJson(res, infile, outfile, function() {
+				console.error("Unlinking", infile);
+				fs.unlink(infile);
+				console.error("Unlinking", outfile);
+				fs.unlink(outfile);
+				next();
+			});
+		});
 	});
 });
 
 app.get("/", function(req, res, next) {
 	fs.readFile(__dirname+"/index.html", function(err, data) {
 		if (err) throw err;
-		res.header("Content-Type", "text/html");
-	 	res.send(data);
-		next();
+	 	send(res, data, "text/html", next);
 	});
 });
 
 app.get("/files", function(req, res, next) {
-	glob(__dirname+'/**/*.x3d', function( err, files ) {
+	glob(__dirname+'/**/*.json', function( err, files ) {
 		if (err) return;
 		var test = req._parsedUrl.query;
 		var json = [];
@@ -62,8 +94,7 @@ app.get("/files", function(req, res, next) {
 			}
 
 		});
-              	res.header("Content-Type", "text/json");
-                res.send(json);
+                send(res, json, "text/json", next);
 	});
 });
 
@@ -73,42 +104,26 @@ function magic(path, type) {
 	while (url.startsWith("/")) {
 		url = url.substr(1);
 	}
-	console.error(url);
-	fs.readFile(__dirname+"/"+url, function(err, data) {
-		try {
-			if (err) {
-				console.error(err);
-			} else {
-				res.header("Content-Type", type);
-				res.send(data);
-			}
-			next();
-		} catch (e) {
-			console.error(e);
-		}
-	});
+	console.error("Requested", url);
+	var data = fs.readFileSync(__dirname+"/"+url);
+	if (type.startsWith("image") || type.startsWith("audio") || type.startsWith("video")) {
+		send(res, data, type, next);
+	} else {
+		send(res, data.toString(), type, next);
+	}
     });
 }
 
 function processX3d(req, res, next) {
 	var url = req._parsedUrl.pathname.substr(1);
-	console.error(url);
+	console.error("X3D url", url);
 	var hash = url.indexOf("#");
-	var file = url;
+	var infile = url;
 	if (hash > 0) {
-	       file = url.substring(0, hash);
+	       infile = url.substring(0, hash);
 	}
-	try {
-		console.error("Calling converter on "+file);
-		var json = runAndSend(['---silent', '---overwrite', file]);
-		console.error("Calling expander on "+url);
-               	json = externPrototypeExpander(url, json);
-              	res.header("Content-Type", "text/json");
-                res.send(json);
-	} catch (e) {
-        	console.error(e);
-	}
-        next();
+	var outfile = file.substr(0, file.lastIndexOf("."))+".json";
+	convertX3dToJson(res, infile, outfile, next);
 }
 
 /*
@@ -139,31 +154,28 @@ magic("*.stl", "application/octet-stream");
 
 app.get("*.json", function(req, res, next) {
 	var url = req._parsedUrl.pathname.substr(1);
-	console.error(url);
+	console.error("Json URL", url);
 	var file = url;
 	var hash = url.indexOf("#");
 	if (hash > 0) {
 		file = url.substring(0, hash);
 	}
 	var json = {};
-	try {
-		var data = fs.readFileSync(__dirname+"/"+file);
-		json = JSON.parse(data.toString());
-	} catch (e) {
-		console.error(e+" "+file);
-		try {
-			file = file.substr(0, file.lastIndexOf("."))+".x3d";
-			json = runAndSend(['--silent', '---overwrite', file]);
-		} catch (e) {
-			console.error(e+" "+file);
-		}
+	var outfile = __dirname+"/"+file;
+	console.log("File exists ?", outfile);
+	if (fs.existsSync(outfile)) {
+		console.log("File exists, reading", outfile);
+		var data = fs.readFileSync(outfile);
+		var json = JSON.parse(data.toString());
+		console.error("Calling extern proto expander 2");
+		json = externPrototypeExpander(outfile, json);
+		json = flattener(json);
+                send(res, json, "text/json", next);
+	} else {
+		var infile = file.substr(0, file.lastIndexOf("."))+".x3d";
+		console.error("converting 2", infile, "to", outfile);
+		convertX3dToJson(res, infile, outfile, next);
 	}
-	console.error(url);
-	console.error("Calling expander");
-        json = externPrototypeExpander(url, json);
-        res.header("Content-Type", "text/json");
-        res.send(json);
-        next();
 });
 
 

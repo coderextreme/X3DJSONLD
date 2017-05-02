@@ -695,7 +695,7 @@ function realPrototypeExpander(file, object, inScript) {
 		return object;
 	}
 }
-var def = null;
+var founddef = null;
 
 function searchForProtoDeclare(object, name) {
 	var p;
@@ -705,11 +705,13 @@ function searchForProtoDeclare(object, name) {
 			if (p === 'ProtoDeclare') {
 				console.error("looked at", object[p]["@name"], "for", name);
 				if (object[p]["@name"] === name) {
+					console.log("Found equal names");
 					found = object;
 				}
 				// find the first one if none match
-				if (typeof found === 'undefined' && def === null) {
-					def = object;
+				if (typeof found === 'undefined' && founddef === null) {
+					console.log("First default found");
+					founddef = object;
 				}
 			}
 			if (typeof found === 'undefined') {
@@ -729,11 +731,27 @@ if (typeof require !== 'undefined') {
 }
 	
 
-function loadedProto(data, name, protoname, appinfo, description, filename) {
+function searchAndReplaceProto(filename, json, protoname, founddef, name, appinfo, description, objret) {
+	console.error("finished converting", filename);
+	var newobj = searchForProtoDeclare(json, protoname);
+	if (typeof newobj === 'undefined') {
+		newobj = founddef;
+	}
+	if (newobj === null || typeof newobj.ProtoDeclare === 'undefined') {
+		console.error("ProtoDeclare is still null or undefined in ", JSON.stringify(json));
+	} else {
+		newobj["ProtoDeclare"]["@name"] = name;
+		newobj["ProtoDeclare"]["@appinfo"] = appinfo;
+		newobj["ProtoDeclare"]["@description"] = description;
+	}
+	objret(newobj);
+}
+
+function loadedProto(data, name, protoname, appinfo, description, filename, objret) {
 	if (typeof data !== 'undefined') {
 		// console.error("searching for", name, "in", data.toString());
 		try {
-			def = null;
+			founddef = null;
 			var json = {};
 			try {
 				json = JSON.parse(data);
@@ -742,18 +760,13 @@ function loadedProto(data, name, protoname, appinfo, description, filename) {
 				console.error("calling run and send", filename.endsWith(".x3d"),  typeof runAndSend);
 				if (filename.endsWith(".x3d") && (typeof runAndSend === "function")) {
 					console.error("converting "+filename);
-					json = runAndSend(filename);
+					runAndSend([filename], function(json) {
+						console.log("got", json, "from run and send, searching for", protoname)
+						searchAndReplaceProto(filename, json, protoname, founddef, name, appinfo, description, objret);
+					});
+					console.error("async skip of run and sen "+filename);
 				}
-				console.error("finished converting", filename);
 			}
-			var newobj = searchForProtoDeclare(json, protoname);
-			if (typeof newobj === 'undefined') {
-				newobj = def;
-			}
-			newobj["ProtoDeclare"]["@name"] = name;
-			newobj["ProtoDeclare"]["@appinfo"] = appinfo;
-			newobj["ProtoDeclare"]["@description"] = description;
-			return newobj;
 		} catch (e) {
 			console.error("Failed to parse JSON in ", filename, e);
 		}
@@ -767,8 +780,8 @@ function externPrototypeExpander(file, object) {
 		} else {
 			var newobject = {};
 		}
-		// Wait for numreturn tasks to finish
-		var numreturn = Object.keys(object).length;
+		// Wait for expectedreturn tasks to finish
+		var expectedreturn = Object.keys(object).length;
 		function expand(done) {
 			for (var p in object) {
 				if (p === 'ExternProtoDeclare') {
@@ -786,8 +799,10 @@ function externPrototypeExpander(file, object) {
 							if (nameIndex >= 0) {
 								protoname = u.substring(nameIndex+1);
 							}
-							var newobject = loadedProto(data, name, protoname, appinfo, description, u);
-							done(p, newobject);
+							
+							loadedProto(data, name, protoname, appinfo, description, u, function(nuobject) {
+								done(p, nuobject);
+							});
 						});
 					}
 					load(p);
@@ -798,16 +813,20 @@ function externPrototypeExpander(file, object) {
 			}
 		}
 		expand(function (p, newobj) {
+			// console.log("Replacing", p);
 			if (p === "ExternProtoDeclare") {
 				newobject = newobj;
+				console.log("EPD", newobject);
 			} else {
 				newobject[p] = newobj;
 			}
 		});
-		while (numreturn > Object.keys(newobject).length+1) {
-			console.error(numreturn, '=', Object.keys(newobject).length);
+		while (expectedreturn > Object.keys(newobject).length+1); {  // when they are equal, we exit
+			// console.error(expectedreturn, '=', Object.keys(newobject).length);
 			setTimeout(function() {}, 50);
 		}
+		// console.log("Exited loop");
+
 		return newobject;
 	} else {
 		return object;
