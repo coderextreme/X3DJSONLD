@@ -85,8 +85,7 @@
                 }
                 
                 function set_spine(value) {
-		    Browser.print('
-'+'"');
+		    Browser.print('\n'+'"');
                     spine = value;
                 }
 ]]></Script>

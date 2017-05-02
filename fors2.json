@@ -303,8 +303,7 @@
 "                }",
 "                ",
 "                function set_spine(value) {",
-"\t\t    Browser.print('",
-"'+'\"');",
+"\t\t    Browser.print('\n'+'\"');",
 "                    spine = value;",
 "                }"
 ]

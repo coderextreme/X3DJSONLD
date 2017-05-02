@@ -162,6 +162,9 @@ ProtoInstanceObject ProtoInstance2 = null;
                 .addConnect(new connectObject().setNodeField("set_endpoint").setProtoField("set_endpoint")))
               .setSourceCode("ecmascript:\n"+
 "            function recompute(startpoint,endpoint){\n"+
+"	        if (typeof endpoint === 'undefined') {\n"+
+"			return;\n"+
+"		}\n"+
 "                var dif = endpoint.subtract(startpoint);\n"+
 "                var dist = dif.length()*.5;\n"+
 "                var dif2 = dif.multiply(.5);\n"+

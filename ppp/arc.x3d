@@ -173,7 +173,10 @@
 <field name="set_startpoint" accessType="inputOnly" type="SFVec3f"></field>
 <field name="set_endpoint" accessType="inputOnly" type="SFVec3f"></field>
 <![CDATA[ecmascript:
-            function recompute(startpoint,endpoint){
+            function recompute(startpoint,endpoint) {
+	        if (typeof endpoint === 'undefined') {
+			return;
+		}
                 var dif = endpoint.subtract(startpoint);
                 var dist = dif.length()*.5;
                 var dif2 = dif.multiply(.5);
@@ -248,7 +251,10 @@
 <field name="set_startpoint" accessType="inputOnly" type="SFVec3f"></field>
 <field name="set_endpoint" accessType="inputOnly" type="SFVec3f"></field>
 <![CDATA[ecmascript:
-            function recompute(startpoint,endpoint){
+            function recompute(startpoint,endpoint) {
+	        if (typeof endpoint === 'undefined') {
+			return;
+		}
                 var dif = endpoint.subtract(startpoint);
                 var dist = dif.length()*.5;
                 var dif2 = dif.multiply(.5);
@@ -323,7 +329,10 @@
 <field name="set_startpoint" accessType="inputOnly" type="SFVec3f"></field>
 <field name="set_endpoint" accessType="inputOnly" type="SFVec3f"></field>
 <![CDATA[ecmascript:
-            function recompute(startpoint,endpoint){
+            function recompute(startpoint,endpoint) {
+	        if (typeof endpoint === 'undefined') {
+			return;
+		}
                 var dif = endpoint.subtract(startpoint);
                 var dist = dif.length()*.5;
                 var dif2 = dif.multiply(.5);

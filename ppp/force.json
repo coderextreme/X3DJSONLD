@@ -1224,7 +1224,6 @@
               },
               {
                 "@name": "ModifiableNode",
-                "@id": "MN",
                 "@type": "SFNode",
                 "@accessType": "initializeOnly",
                 "-children": [

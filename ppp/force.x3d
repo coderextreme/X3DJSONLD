@@ -223,7 +223,7 @@
 <Script DEF="clickHandler"><field name="counter" accessType="inputOutput" value="0" type="SFInt32"></field>
 <field name="node_changed" accessType="outputOnly" type="SFNode"></field>
 <field name="add_node" accessType="inputOnly" value="0" type="SFBool"></field>
-<field name="ModifiableNode" id="MN" type="SFNode" accessType="initializeOnly"><Transform USE="HoldsContent"></Transform>
+<field name="ModifiableNode" type="SFNode" accessType="initializeOnly"><Transform USE="HoldsContent"></Transform>
 </field>
 <![CDATA[ecmascript:
 	function add_node(value) {

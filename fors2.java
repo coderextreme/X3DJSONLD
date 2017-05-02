@@ -167,8 +167,7 @@ ProtoInstanceObject ProtoInstance2 = null;
 "                }\n"+
 "                \n"+
 "                function set_spine(value) {\n"+
-"		    Browser.print('\n"+
-"'+'\"');\n"+
+"		    Browser.print('\\n'+'\"');\n"+
 "                    spine = value;\n"+
 "                }\n"+
 ""))

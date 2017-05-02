@@ -93,7 +93,10 @@ ecmascript:
                 <connect nodeField='set_endpoint' protoField='set_endpoint'/>
             </IS>
             <![CDATA[ecmascript:
-            function recompute(startpoint,endpoint){
+            function recompute(startpoint,endpoint) {
+	        if (typeof endpoint === 'undefined') {
+			return;
+		}
                 var dif = endpoint.subtract(startpoint);
                 var dist = dif.length()*.5;
                 var dif2 = dif.multiply(.5);

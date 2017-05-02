@@ -1,8 +1,12 @@
 var runsaxon = require('./allsaxon');
 var fs = require("fs");
 
-function runAndSend(infile) {
-	runsaxon([infile]);
+function runAndSend(args) {
+	runsaxon(args);
+	while (args[0].startsWith('-')) {
+		args.shift();
+	}
+	let infile = args[0];
 	var outfile = infile.substr(0, infile.lastIndexOf("."))+".json";
 	if (outfile.lastIndexOf("savage.nps.edu") >= 0) {
 		outfile = "examples"+outfile.substring(outfile.lastIndexOf("savage.nps.edu")+14);
