@@ -198,6 +198,8 @@ function appendX3DJSON2Selector(selector, json, url, xml, NS, next) {
 			$(selector).append(element);
 		}
 		next(element);
+	}, function(err) {
+		alert(err);
 	});  // Cobweb if not XHTML NS
 }
 

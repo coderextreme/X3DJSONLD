@@ -485,6 +485,7 @@ function serializeDOM(json, element) {
  * returns an element - the element to append or insert into the DOM
  */
 function loadX3DJS(json, path, xml, NS, loadSchema, doValidate, callback) {
+	console.log("Invoking client side loader");
 	loadSchema(json, doValidate, function() {
 		x3djsonNS = NS;
 		var child = CreateElement('X3D', NS);
@@ -492,6 +493,7 @@ function loadX3DJS(json, path, xml, NS, loadSchema, doValidate, callback) {
 		if (typeof xml !== 'undefined' && typeof xml.push === 'function') {
 			xml.push(serializeDOM(json, child));
 		}
+		console.log("Returning with", child);
 		callback(child);
 	}, function(e) {
 		console.error(e);
@@ -512,4 +514,3 @@ if (typeof module === 'object')  {
 
 	};
 }
-

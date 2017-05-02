@@ -408,7 +408,6 @@ JavaSerializer.prototype = {
 			if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 1) {
 				if (node.nodeName === "ProtoInstance") {
 					stack.unshift(this.preno);
-					console.log("unshift", stack);
 					this.preno++;
 					this.precode[stack[0]] = node.nodeName+"Object "+node.nodeName+stack[0]+" = null;\n";
 				}
@@ -442,7 +441,6 @@ JavaSerializer.prototype = {
 				}
 				if (node.nodeName === "ProtoInstance") {
 					stack.shift();
-					console.log("shift", stack);
 				}
 			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 8) {
 				let y = node.nodeValue.
