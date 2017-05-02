@@ -61,9 +61,14 @@ protected static class ExitException extends SecurityException
 		try {
 			String stylesheet = "X3dToJson.xslt";
 			String extension = "json";
+			boolean overwrite = false;
 			System.setSecurityManager(new NoExitSecurityManager());
 			for (int a = 0; a < args.length; a++) {
 				String source = args[a];
+				if (source.startsWith("---overwrite")) {
+					overwrite = true;
+					continue;
+				}
 				if (source.startsWith("--")) {
 					stylesheet = source.substring(2);
 					continue;
@@ -124,7 +129,7 @@ protected static class ExitException extends SecurityException
 						out = out.substring(out.lastIndexOf("www.web3d.org"));
 					}
 					out = out.substring(0, out.lastIndexOf("."))+"."+extension;
-					if (!new File(out).exists()) {
+					if (overwrite || !new File(out).exists()) {
 						System.err.println("BEGIN "+source);
 						if (out.lastIndexOf("/") > 0) {
 							File dir = new File(out.substring(0, out.lastIndexOf("/")));

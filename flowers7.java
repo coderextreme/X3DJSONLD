@@ -86,10 +86,10 @@ public class flowers7 {
         .addMeta(new metaObject().setName("generator").setContent("manual"))
         .addMeta(new metaObject().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/flowers7.x3d"))
         .addMeta(new metaObject().setName("description").setContent("a flower"))
-        .addMeta(new metaObject().setName("translated").setContent("30 April 2017"))
+        .addMeta(new metaObject().setName("translated").setContent("02 May 2017"))
         .addMeta(new metaObject().setName("generator").setContent("X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"))
         .addMeta(new metaObject().setName("reference").setContent("X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"))
-        .addMeta(new metaObject().setName("translated").setContent("30 April 2017"))
+        .addMeta(new metaObject().setName("translated").setContent("2 May 2017"))
         .addMeta(new metaObject().setName("generator").setContent("X3DJSONLD: https://github.com/coderextreme/X3DJSONLD")))
       .setScene(new SceneObject()
         .addChild(new NavigationInfoObject())
@@ -170,44 +170,74 @@ public class flowers7 {
         .addChild(new ROUTEObject().setFromNode("UrlSelector").setFromField("bottom_changed").setToNode("bottomShader").setToField("url"))
         .addChild(new ScriptObject().setDEF("Animate").setDirectOutput(true)
           .addField(new fieldObject().setName("set_fraction").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
-          .addField(new fieldObject().setName("a").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setValue("10"))
-          .addField(new fieldObject().setName("b").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setValue("1"))
-          .addField(new fieldObject().setName("c").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setValue("20"))
-          .addField(new fieldObject().setName("d").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setValue("20"))
-          .addField(new fieldObject().setName("tdelta").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setValue("0"))
-          .addField(new fieldObject().setName("pdelta").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setValue("0"))
+          .addField(new fieldObject().setName("a_changed").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setValue("10"))
+          .addField(new fieldObject().setName("b_changed").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setValue("1"))
+          .addField(new fieldObject().setName("c_changed").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setValue("20"))
+          .addField(new fieldObject().setName("d_changed").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setValue("20"))
+          .addField(new fieldObject().setName("tdelta_changed").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setValue("0"))
+          .addField(new fieldObject().setName("pdelta_changed").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setValue("0"))
+          .addField(new fieldObject().setName("set_a").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setValue("10"))
+          .addField(new fieldObject().setName("set_b").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setValue("1"))
+          .addField(new fieldObject().setName("set_c").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setValue("20"))
+          .addField(new fieldObject().setName("set_d").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setValue("20"))
+          .addField(new fieldObject().setName("set_tdelta").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setValue("0"))
+          .addField(new fieldObject().setName("set_pdelta").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setValue("0"))
           .setSourceCode("ecmascript:\n"+
+"\n"+
+"function set_a(value) {\n"+
+"	a = value;\n"+
+"}\n"+
+"\n"+
+"function set_b(value) {\n"+
+"	b = value;\n"+
+"}\n"+
+"\n"+
+"function set_c(value) {\n"+
+"	c = value;\n"+
+"}\n"+
+"\n"+
+"function set_d(value) {\n"+
+"	d = value;\n"+
+"}\n"+
+"\n"+
+"function set_tdelta(value) {\n"+
+"	tdelta = value;\n"+
+"}\n"+
+"\n"+
+"function set_tdelta(value) {\n"+
+"	tdelta = value;\n"+
+"}\n"+
 "\n"+
 "function set_fraction() {\n"+
 "	var choice = Math.floor(Math.random() * 4);\n"+
 "	if (choice == 0) {\n"+
-"		a += Math.floor(Math.random() * 2) * 2 - 1;\n"+
+"		set_a(a + Math.floor(Math.random() * 2) * 2 - 1);\n"+
 "	} else if (choice == 1) {\n"+
-"		b += Math.floor(Math.random() * 2) * 2 - 1;\n"+
+"		set_b(b + Math.floor(Math.random() * 2) * 2 - 1);\n"+
 "	} else if (choice == 2) {\n"+
-"		c += Math.floor(Math.random() * 2) * 2 - 1;\n"+
+"		set_c(c + Math.floor(Math.random() * 2) * 2 - 1);\n"+
 "	} else if (choice == 3) {\n"+
-"		d += Math.floor(Math.random() * 2) * 2 - 1;\n"+
+"		set_d(d + Math.floor(Math.random() * 2) * 2 - 1);\n"+
 "	}\n"+
-"	tdelta = tdelta + 0.5;\n"+
-"	pdelta = pdelta + 0.5;\n"+
+"	set_tdelta(tdelta + 0.5);\n"+
+"	set_pdelta(pdelta + 0.5);\n"+
 "	if (a < 1) {\n"+
-"		a = 10;\n"+
+"		set_a(10);\n"+
 "	}\n"+
 "	if (b < 1) {\n"+
-"		b = 4;\n"+
+"		set_b(10);\n"+
 "	}\n"+
 "	if (c < 1) {\n"+
-"		c = 4;\n"+
+"		set_c(4);\n"+
 "	}\n"+
 "	if (c > 20) {\n"+
-"		c = 4;\n"+
+"		set_c(4);\n"+
 "	}\n"+
 "	if (d < 1) {\n"+
-"		d = 4;\n"+
+"		set_d(4);\n"+
 "	}\n"+
 "	if (d > 20) {\n"+
-"		d = 4;\n"+
+"		set_d(4);\n"+
 "	}\n"+
 "	// console.log(a, b, c, d, tdelta, pdelta);\n"+
 "}\n"+

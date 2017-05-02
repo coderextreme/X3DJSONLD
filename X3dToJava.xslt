@@ -654,7 +654,7 @@ POSSIBILITY OF SUCH DAMAGE.
 			<xsl:for-each select="//meta[@name='creator']">
 				<xsl:if test="(string-length(@content) > 0)">
 					<xsl:text><![CDATA[
-	 * @author ]]></xsl:text><xsl:value-of select="@content"/>
+	* @author ]]></xsl:text><xsl:value-of select="@content"/>
 				</xsl:if>
 			</xsl:for-each>
 		<xsl:text>
@@ -771,6 +771,12 @@ POSSIBILITY OF SUCH DAMAGE.
 				<xsl:when test="(local-name(..) = 'Scene') and starts-with(local-name(), 'Metadata')">
 					<!-- addChild() method didn't work because of Java disambiguation difficulty between X3DChildNode and X3DMetadataNode -->
 					<xsl:text>.addMetadata(</xsl:text>
+					<xsl:apply-templates select="."/><!-- handle this node -->
+					<xsl:text>)</xsl:text>
+				</xsl:when>
+				<xsl:when test="(local-name(..) = 'IS') and (local-name() = 'connect')">
+					<!-- addChild() method didn't work because of Java disambiguation difficulty between X3DChildNode and X3DMetadataNode -->
+					<xsl:text>.addConnect(</xsl:text>
 					<xsl:apply-templates select="."/><!-- handle this node -->
 					<xsl:text>)</xsl:text>
 				</xsl:when>
@@ -3454,6 +3460,17 @@ POSSIBILITY OF SUCH DAMAGE.
 				<xsl:variable name="attributeType">
 					<xsl:call-template name="attribute-type"/>
 				</xsl:variable>
+				<xsl:variable name="tupleSize">
+					<xsl:call-template name="tuple-size">
+						<xsl:with-param name="type">
+							<xsl:value-of select="$attributeType"/>
+						</xsl:with-param>
+					</xsl:call-template>
+				</xsl:variable>
+				<xsl:variable name="embeddedSpaceCount" select="string-length(normalize-space(.)) - string-length(translate(.,' ',''))"/>
+				<xsl:variable name="numberOfValues"     select="($embeddedSpaceCount + 1)"/>
+				<xsl:variable name="numberOfTuples"     select="($numberOfValues div $tupleSize)"/>
+				
 				<xsl:variable name="dataObjectName">
 					<xsl:choose>
 						<xsl:when test="(string-length(normalize-space($DEF)) > 0)">
@@ -3490,8 +3507,30 @@ POSSIBILITY OF SUCH DAMAGE.
 					<xsl:value-of select="$attributeName"/>
 					<xsl:text> field, scene-graph level=</xsl:text>
 					<xsl:value-of select="$level"/>
-					<xsl:text>, element#</xsl:text>
+					<xsl:text>, element #</xsl:text>
 					<xsl:value-of select="$nodeNumber"/>
+					<xsl:text>, </xsl:text>
+					<xsl:value-of select="$numberOfValues"/>
+					<xsl:text> total </xsl:text>
+					<xsl:choose>
+						<xsl:when test="contains($attributeType,'String') or contains($attributeType,'Bool')">
+							<xsl:text>value</xsl:text>
+						</xsl:when>
+						<xsl:otherwise>
+							<xsl:text>number</xsl:text>
+						</xsl:otherwise>
+					</xsl:choose>
+					<xsl:if test="($numberOfValues > 1)">
+						<xsl:text>s</xsl:text>
+					</xsl:if>
+					<xsl:if test="($tupleSize > 1)">
+						<xsl:text> made up of </xsl:text>
+						<xsl:value-of select="$numberOfTuples"/>
+						<xsl:text> </xsl:text>
+						<xsl:value-of select="$tupleSize"/>
+						<xsl:text>-tuple </xsl:text>
+						<xsl:text>values</xsl:text>
+					</xsl:if>
 					<xsl:text> */</xsl:text>
 				</xsl:variable>
 

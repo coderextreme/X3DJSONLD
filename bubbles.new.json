@@ -38,7 +38,7 @@
           },
           {
             "@name":"translated",
-            "@content":"30 April 2017"
+            "@content":"02 May 2017"
           },
           {
             "@name":"generator",
@@ -50,7 +50,7 @@
           },
           {
             "@name":"translated",
-            "@content":"30 April 2017"
+            "@content":"2 May 2017"
           },
           {
             "@name":"generator",
@@ -58,7 +58,7 @@
           },
           {
             "@name":"translated",
-            "@content":"30 April 2017"
+            "@content":"02 May 2017"
           },
           {
             "@name":"generator",
@@ -225,32 +225,37 @@
                           "-texture":
                             { "ComposedCubeMapTexture":
                               {
-                                "-texture":
+                                "-back":
                                   { "ImageTexture":
                                     {
                                       "@url":["cubemap/all_probes/uffizi_cross/uffizi_back.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_back.png"]
                                     }
                                   },
+                                "-bottom":
                                   { "ImageTexture":
                                     {
                                       "@url":["cubemap/all_probes/uffizi_cross/uffizi_bottom.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_bottom.png"]
                                     }
                                   },
+                                "-front":
                                   { "ImageTexture":
                                     {
                                       "@url":["cubemap/all_probes/uffizi_cross/uffizi_front.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_front.png"]
                                     }
                                   },
+                                "-left":
                                   { "ImageTexture":
                                     {
                                       "@url":["cubemap/all_probes/uffizi_cross/uffizi_left.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_left.png"]
                                     }
                                   },
+                                "-right":
                                   { "ImageTexture":
                                     {
                                       "@url":["cubemap/all_probes/uffizi_cross/uffizi_right.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_right.png"]
                                     }
                                   },
+                                "-top":
                                   { "ImageTexture":
                                     {
                                       "@url":["cubemap/all_probes/uffizi_cross/uffizi_top.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_top.png"]

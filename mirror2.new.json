@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"30 April 2017"
+            "@content":"02 May 2017"
           },
           {
             "@name":"generator",
@@ -40,7 +40,7 @@
           },
           {
             "@name":"translated",
-            "@content":"30 April 2017"
+            "@content":"2 May 2017"
           },
           {
             "@name":"generator",
@@ -48,7 +48,7 @@
           },
           {
             "@name":"translated",
-            "@content":"30 April 2017"
+            "@content":"02 May 2017"
           },
           {
             "@name":"generator",
@@ -213,37 +213,42 @@
                           "-texture":
                             { "ComposedCubeMapTexture":
                               {
-                                "-texture":
+                                "-back":
                                   { "ImageTexture":
                                     {
                                       "@DEF":"backShader",
                                       "@url":["cubemap/all_probes/beach_cross/beach_back.png","http://coderextreme.net/cubemap/all_probes/beach_cross/beach_back.png"]
                                     }
                                   },
+                                "-bottom":
                                   { "ImageTexture":
                                     {
                                       "@DEF":"bottomShader",
                                       "@url":["cubemap/all_probes/beach_cross/beach_bottom.png","http://coderextreme.net/cubemap/all_probes/beach_cross/beach_bottom.png"]
                                     }
                                   },
+                                "-front":
                                   { "ImageTexture":
                                     {
                                       "@DEF":"frontShader",
                                       "@url":["cubemap/all_probes/beach_cross/beach_front.png","http://coderextreme.net/cubemap/all_probes/beach_cross/beach_front.png"]
                                     }
                                   },
+                                "-left":
                                   { "ImageTexture":
                                     {
                                       "@DEF":"leftShader",
                                       "@url":["cubemap/all_probes/beach_cross/beach_left.png","http://coderextreme.net/cubemap/all_probes/beach_cross/beach_left.png"]
                                     }
                                   },
+                                "-right":
                                   { "ImageTexture":
                                     {
                                       "@DEF":"rightShader",
                                       "@url":["cubemap/all_probes/beach_cross/beach_right.png","http://coderextreme.net/cubemap/all_probes/beach_cross/beach_right.png"]
                                     }
                                   },
+                                "-top":
                                   { "ImageTexture":
                                     {
                                       "@DEF":"topShader",
