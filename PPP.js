@@ -35,6 +35,7 @@ function ProcessJSON(json, file) {
 		json = externPrototypeExpander(file, json);
 		json = prototypeExpander(file, json, "");
 		json = flattener(json);
+		console.log("JSON", JSON.stringify(json));
 		fs.writeFileSync("ppp/"+file, JSON.stringify(json, null, 2));
 
 		var xml = new LOG();

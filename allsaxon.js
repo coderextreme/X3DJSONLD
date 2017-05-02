@@ -6,6 +6,7 @@ java.classpath.push("saxon9he.jar");
 java.classpath.push(".");
 
 function translate(infiles) {
+	console.log("Calling static java method", infiles);
 	java.callStaticMethodSync("RunSaxon", "main", infiles);
 }
 

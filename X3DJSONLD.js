@@ -26,6 +26,7 @@ if (typeof Browser === 'undefined') {
 }
 
 function processURLs(localArray, path) {
+	console.log("Process URLs", path, localArray);
 	var url;
 	// No longer need to split
 	for (url in localArray) {
@@ -105,7 +106,7 @@ function loadURLs(loadpath, urls, loadedCallback) {
 					}
 
 					if (protocol === "http") {
-						// console.error("Loading HTTP URL", url);
+						console.error("Loading HTTP URL", url);
 						if (typeof $ !== 'undefined' && typeof $.get === 'function') {
 							$.get(url, function(data) {
 								loadedCallback(data, url);
@@ -123,7 +124,7 @@ function loadURLs(loadpath, urls, loadedCallback) {
 					
 						}
 					} else if (protocol === "https") {
-						// console.error("Loading HTTPS URL", url);
+						console.error("Loading HTTPS URL", url);
 						if (typeof $ !== 'undefined' && typeof $.get === 'function') {
 							$.get(url, function(data) {
 								loadedCallback(data, url);
@@ -142,7 +143,7 @@ function loadURLs(loadpath, urls, loadedCallback) {
 						}
 					} else if (typeof fs !== 'undefined' && protocol.indexOf("http") !== 0) {
 						// should be async, but out of memory
-						// console.error("Loading FILE URL", url);
+						console.error("Loading FILE URL", url);
 						var hash = url.indexOf("#");
 						if (hash > 0) {
 							url = url.substring(0, hash);
@@ -155,9 +156,10 @@ function loadURLs(loadpath, urls, loadedCallback) {
 							filename = filename.substring(0, filename.lastIndexOf("."))+".x3d";
 							console.error("converting "+filename);
 							if (typeof runAndSend === 'function') {
-								var json = runAndSend(['--silent', '--overwrite', filename]);
-								data = JSON.stringify(json);
-								loadedCallback(data, filename);
+								runAndSend(['---silent', filename], function(json) {
+									data = JSON.stringify(json);
+									loadedCallback(data, filename);
+								});
 							}
 						}
 					} else if (typeof $ !== 'undefined' && typeof $.get === 'function') {
