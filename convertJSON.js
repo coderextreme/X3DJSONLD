@@ -44,7 +44,7 @@ function doValidate(json, success, failure, e) {
 				error += " params: " + JSON.stringify(errs[e].params) + "\r\n";
 			}
 		}
-		retval = (valid || confirm(error));
+		retval = valid;
 	}
 	if (retval && typeof success == 'function') {
 		success();
