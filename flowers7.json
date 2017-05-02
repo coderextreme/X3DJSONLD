@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"30 April 2017"
+            "@content":"02 May 2017"
           },
           {
             "@name":"generator",
@@ -458,75 +458,135 @@
                   "@accessType":"inputOnly"
                 },
                 {
-                  "@name":"a",
+                  "@name":"a_changed",
                   "@type":"SFFloat",
                   "@accessType":"outputOnly",
                   "@value":10
                 },
                 {
-                  "@name":"b",
+                  "@name":"b_changed",
                   "@type":"SFFloat",
                   "@accessType":"outputOnly",
                   "@value":1
                 },
                 {
-                  "@name":"c",
+                  "@name":"c_changed",
                   "@type":"SFFloat",
                   "@accessType":"outputOnly",
                   "@value":20
                 },
                 {
-                  "@name":"d",
+                  "@name":"d_changed",
                   "@type":"SFFloat",
                   "@accessType":"outputOnly",
                   "@value":20
                 },
                 {
-                  "@name":"tdelta",
+                  "@name":"tdelta_changed",
                   "@type":"SFFloat",
                   "@accessType":"outputOnly",
                   "@value":0
                 },
                 {
-                  "@name":"pdelta",
+                  "@name":"pdelta_changed",
                   "@type":"SFFloat",
                   "@accessType":"outputOnly",
+                  "@value":0
+                },
+                {
+                  "@name":"set_a",
+                  "@type":"SFFloat",
+                  "@accessType":"inputOnly",
+                  "@value":10
+                },
+                {
+                  "@name":"set_b",
+                  "@type":"SFFloat",
+                  "@accessType":"inputOnly",
+                  "@value":1
+                },
+                {
+                  "@name":"set_c",
+                  "@type":"SFFloat",
+                  "@accessType":"inputOnly",
+                  "@value":20
+                },
+                {
+                  "@name":"set_d",
+                  "@type":"SFFloat",
+                  "@accessType":"inputOnly",
+                  "@value":20
+                },
+                {
+                  "@name":"set_tdelta",
+                  "@type":"SFFloat",
+                  "@accessType":"inputOnly",
+                  "@value":0
+                },
+                {
+                  "@name":"set_pdelta",
+                  "@type":"SFFloat",
+                  "@accessType":"inputOnly",
                   "@value":0
                 }
               ],
               "#sourceText":[
 "ecmascript:",
 "",
+"function set_a(value) {",
+"\ta = value;",
+"}",
+"",
+"function set_b(value) {",
+"\tb = value;",
+"}",
+"",
+"function set_c(value) {",
+"\tc = value;",
+"}",
+"",
+"function set_d(value) {",
+"\td = value;",
+"}",
+"",
+"function set_tdelta(value) {",
+"\ttdelta = value;",
+"}",
+"",
+"function set_tdelta(value) {",
+"\ttdelta = value;",
+"}",
+"",
 "function set_fraction() {",
 "\tvar choice = Math.floor(Math.random() * 4);",
 "\tif (choice == 0) {",
-"\t\ta += Math.floor(Math.random() * 2) * 2 - 1;",
+"\t\tset_a(a + Math.floor(Math.random() * 2) * 2 - 1);",
 "\t} else if (choice == 1) {",
-"\t\tb += Math.floor(Math.random() * 2) * 2 - 1;",
+"\t\tset_b(b + Math.floor(Math.random() * 2) * 2 - 1);",
 "\t} else if (choice == 2) {",
-"\t\tc += Math.floor(Math.random() * 2) * 2 - 1;",
+"\t\tset_c(c + Math.floor(Math.random() * 2) * 2 - 1);",
 "\t} else if (choice == 3) {",
-"\t\td += Math.floor(Math.random() * 2) * 2 - 1;",
+"\t\tset_d(d + Math.floor(Math.random() * 2) * 2 - 1);",
 "\t}",
-"\ttdelta = tdelta + 0.5;",
-"\tpdelta = pdelta + 0.5;",
+"\tset_tdelta(tdelta + 0.5);",
+"\tset_pdelta(pdelta + 0.5);",
 "\tif (a < 1) {",
-"\t\ta = 10;",
+"\t\tset_a(10);",
 "\t}",
 "\tif (b < 1) {",
-"\t\tb = 4;",
+"\t\tset_b(10);",
 "\t}",
 "\tif (c < 1) {",
-"\t\tc = 4;",
+"\t\tset_c(4);",
 "\t}",
 "\tif (c > 20) {",
-"\t\tc = 4;",
+"\t\tset_c(4);",
 "\t}",
 "\tif (d < 1) {",
-"\t\td = 4;",
+"\t\tset_d(4);",
 "\t}",
 "\tif (d > 20) {",
-"\t\td = 4;",
+"\t\tset_d(4);",
 "\t}",
 "\t// console.log(a, b, c, d, tdelta, pdelta);",
 "}"

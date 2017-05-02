@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"30 April 2017"
+            "@content":"02 May 2017"
           },
           {
             "@name":"generator",
@@ -40,7 +40,7 @@
           },
           {
             "@name":"translated",
-            "@content":"30 April 2017"
+            "@content":"2 May 2017"
           },
           {
             "@name":"generator",
@@ -48,7 +48,7 @@
           },
           {
             "@name":"translated",
-            "@content":"30 April 2017"
+            "@content":"02 May 2017"
           },
           {
             "@name":"generator",
@@ -191,32 +191,37 @@
                                       { "ComposedCubeMapTexture":
                                         {
                                           "@DEF":"texture",
-                                          "-texture":
+                                          "-back":
                                             { "ImageTexture":
                                               {
                                                 "@url":["cubemap/all_probes/stpeters_cross/stpeters_back.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_back.png"]
                                               }
                                             },
+                                          "-bottom":
                                             { "ImageTexture":
                                               {
                                                 "@url":["cubemap/all_probes/stpeters_cross/stpeters_bottom.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_bottom.png"]
                                               }
                                             },
+                                          "-front":
                                             { "ImageTexture":
                                               {
                                                 "@url":["cubemap/all_probes/stpeters_cross/stpeters_front.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_front.png"]
                                               }
                                             },
+                                          "-left":
                                             { "ImageTexture":
                                               {
                                                 "@url":["cubemap/all_probes/stpeters_cross/stpeters_left.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_left.png"]
                                               }
                                             },
+                                          "-right":
                                             { "ImageTexture":
                                               {
                                                 "@url":["cubemap/all_probes/stpeters_cross/stpeters_right.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_right.png"]
                                               }
                                             },
+                                          "-top":
                                             { "ImageTexture":
                                               {
                                                 "@url":["cubemap/all_probes/stpeters_cross/stpeters_top.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_top.png"]

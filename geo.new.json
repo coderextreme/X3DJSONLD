@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"30 April 2017"
+            "@content":"02 May 2017"
           },
           {
             "@name":"generator",
@@ -40,7 +40,7 @@
           },
           {
             "@name":"translated",
-            "@content":"30 April 2017"
+            "@content":"2 May 2017"
           },
           {
             "@name":"generator",
@@ -48,7 +48,7 @@
           },
           {
             "@name":"translated",
-            "@content":"30 April 2017"
+            "@content":"02 May 2017"
           },
           {
             "@name":"generator",
@@ -215,32 +215,37 @@
                           "-texture":
                             { "ComposedCubeMapTexture":
                               {
-                                "-texture":
+                                "-back":
                                   { "ImageTexture":
                                     {
                                       "@url":["bBK.png","http://coderextreme.net/bug/bBK.png"]
                                     }
                                   },
+                                "-bottom":
                                   { "ImageTexture":
                                     {
                                       "@url":["bBT.png","http://coderextreme.net/bug/bBT.png"]
                                     }
                                   },
+                                "-front":
                                   { "ImageTexture":
                                     {
                                       "@url":["bFR.png","http://coderextreme.net/bug/bFR.png"]
                                     }
                                   },
+                                "-left":
                                   { "ImageTexture":
                                     {
                                       "@url":["bLF.png","http://coderextreme.net/bug/bLF.png"]
                                     }
                                   },
+                                "-right":
                                   { "ImageTexture":
                                     {
                                       "@url":["bRT.png","http://coderextreme.net/bug/bRT.png"]
                                     }
                                   },
+                                "-top":
                                   { "ImageTexture":
                                     {
                                       "@url":["bTP.png","http://coderextreme.net/bug/bTP.png"]

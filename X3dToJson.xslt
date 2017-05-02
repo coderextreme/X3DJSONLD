@@ -191,6 +191,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <xsl:variable name= "parentName" select="local-name(..)"/>
         
         <xsl:choose>
+		<!-- Drop the X3DOM elements -->
 		<xsl:when test="($elementName = 'div') or ($elementName = 'span') or ($elementName = 'ui') or ($elementName = 'li') or ($elementName = 'canvas')"></xsl:when>
             <!-- ============================================================================================ -->
 			<!-- scene-graph structure statements -->
@@ -775,7 +776,8 @@ POSSIBILITY OF SUCH DAMAGE.
             <xsl:if test="((string-length(../@USE) = 0) or (local-name()='USE') or (local-name()='name') or 
                            (local-name()='containerField') or (local-name()='class') or
                            (local-name(..)='X3D') and ((local-name()='profile') or (local-name()='version')))
-                           and not(/AllX3dElementsAttributes)">
+			   and not(/AllX3dElementsAttributes) and
+			   not(local-name(..) = 'X3D' and (local-name() = 'width' or local-name() = 'height' or local-name() = 'backend' or local-name() = 'showStat' or local-name() = 'showLog')) and not(local-name() = 'skyTransparency') and not(local-name() = 'groundTransparency') and not(local-name() = 'id') and not(local-name() = 'subdivision')"> <!-- This line are are X3DOM attributes -->
                 <xsl:text>&#10;</xsl:text>
                 <xsl:call-template name="print-indent"><xsl:with-param name="indent" select="$indent"/></xsl:call-template>
 
@@ -789,6 +791,7 @@ POSSIBILITY OF SUCH DAMAGE.
                     <xsl:call-template name="attribute-type"/>
                 </xsl:variable>
                 <xsl:choose>
+		    <!-- Strip out X3DOM attributes values -->
                     <!-- TODO optimize duplication of type checking which is present due to integration of rule attribute-type with original rules -->
                     <!-- deterministic rules first: use type information for normalizing text or numbers or booleans ========================= -->
                     <!-- single boolean -->
