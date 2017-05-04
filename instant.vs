@@ -18,6 +18,7 @@ attribute vec2 texcoord;
 
 uniform mat4 gl_ModelViewMatrix;
 uniform mat4 gl_ProjectionMatrix;
+uniform mat4 gl_ModelViewProjectionMatrix;
 
 uniform vec3 chromaticDispertion;
 
