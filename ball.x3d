@@ -75,6 +75,8 @@
 		  <ShaderPart url='"common.fs" "http://coderextreme.net/X3DJSONLD/common.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
                 </ComposedShader>
 		-->
+		<!--
+		-->
                 <ComposedShader language='GLSL'>
 		  <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'></field>
 		  <field name='cube' type='SFNode' accessType="inputOutput">
