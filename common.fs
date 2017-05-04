@@ -22,15 +22,15 @@ varying float rfac;
 
 void main()
 {
-    vec4 ref = textureCube(cube, t);
-    vec4 ret = vec4(1.0);
+    vec4 refracted = textureCube(cube, t);
+    vec4 reflected = vec4(1.0);
 
-    ret.r = textureCube(cube, tr).r;
-    ret.g = textureCube(cube, tg).g;
-    ret.b = textureCube(cube, tb).b;
+    reflected.r = textureCube(cube, tr).r;
+    reflected.g = textureCube(cube, tg).g;
+    reflected.b = textureCube(cube, tb).b;
 
-    gl_FragColor = ret * 0.5 + ref * 0.5;
+    gl_FragColor = reflected * 0.5 + refracted * 0.5;
     /*
-    gl_FragColor = ret * rfac + ref * (1.0 - rfac);
+    gl_FragColor = ret * rfac + refracted * (1.0 - rfac);
     */
 }
