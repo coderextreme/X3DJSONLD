@@ -1,0 +1,215 @@
+import org.web3d.x3d.jsail.*;
+import org.web3d.x3d.jsail.CADGeometry.*;
+import org.web3d.x3d.jsail.Core.*;
+import org.web3d.x3d.jsail.CubeMapTexturing.*;
+import org.web3d.x3d.jsail.DIS.*;
+import org.web3d.x3d.jsail.EnvironmentalEffects.*;
+import org.web3d.x3d.jsail.EnvironmentalSensor.*;
+import org.web3d.x3d.jsail.EventUtilities.*;
+import org.web3d.x3d.jsail.Followers.*;
+import org.web3d.x3d.jsail.Geometry2D.*;
+import org.web3d.x3d.jsail.Geometry3D.*;
+import org.web3d.x3d.jsail.Geospatial.*;
+import org.web3d.x3d.jsail.Grouping.*;
+import org.web3d.x3d.jsail.HAnim.*;
+import org.web3d.x3d.jsail.Interpolation.*;
+import org.web3d.x3d.jsail.KeyDeviceSensor.*;
+import org.web3d.x3d.jsail.Layering.*;
+import org.web3d.x3d.jsail.Layout.*;
+import org.web3d.x3d.jsail.Lighting.*;
+import org.web3d.x3d.jsail.NURBS.*;
+import org.web3d.x3d.jsail.Navigation.*;
+import org.web3d.x3d.jsail.Networking.*;
+import org.web3d.x3d.jsail.ParticleSystems.*;
+import org.web3d.x3d.jsail.Picking.*;
+import org.web3d.x3d.jsail.PointingDeviceSensor.*;
+import org.web3d.x3d.jsail.Rendering.*;
+import org.web3d.x3d.jsail.RigidBodyPhysics.*;
+import org.web3d.x3d.jsail.Scripting.*;
+import org.web3d.x3d.jsail.Shaders.*;
+import org.web3d.x3d.jsail.Shape.*;
+import org.web3d.x3d.jsail.Sound.*;
+import org.web3d.x3d.jsail.Text.*;
+import org.web3d.x3d.jsail.Texturing3D.*;
+import org.web3d.x3d.jsail.Texturing.*;
+import org.web3d.x3d.jsail.Time.*;
+import org.web3d.x3d.jsail.VolumeRendering.*;
+import org.web3d.x3d.jsail.fields.*;
+import org.web3d.x3d.sai.*;
+import org.web3d.x3d.sai.CADGeometry.*;
+import org.web3d.x3d.sai.Core.*;
+import org.web3d.x3d.sai.CubeMapTexturing.*;
+import org.web3d.x3d.sai.DIS.*;
+import org.web3d.x3d.sai.EnvironmentalEffects.*;
+import org.web3d.x3d.sai.EnvironmentalSensor.*;
+import org.web3d.x3d.sai.EventUtilities.*;
+import org.web3d.x3d.sai.Followers.*;
+import org.web3d.x3d.sai.Geometry2D.*;
+import org.web3d.x3d.sai.Geometry3D.*;
+import org.web3d.x3d.sai.Geospatial.*;
+import org.web3d.x3d.sai.Grouping.*;
+import org.web3d.x3d.sai.HAnim.*;
+import org.web3d.x3d.sai.Interpolation.*;
+import org.web3d.x3d.sai.KeyDeviceSensor.*;
+import org.web3d.x3d.sai.Layering.*;
+import org.web3d.x3d.sai.Layout.*;
+import org.web3d.x3d.sai.Lighting.*;
+import org.web3d.x3d.sai.NURBS.*;
+import org.web3d.x3d.sai.Navigation.*;
+import org.web3d.x3d.sai.Networking.*;
+import org.web3d.x3d.sai.ParticleSystems.*;
+import org.web3d.x3d.sai.Picking.*;
+import org.web3d.x3d.sai.PointingDeviceSensor.*;
+import org.web3d.x3d.sai.Rendering.*;
+import org.web3d.x3d.sai.RigidBodyPhysics.*;
+import org.web3d.x3d.sai.Scripting.*;
+import org.web3d.x3d.sai.Shaders.*;
+import org.web3d.x3d.sai.Shape.*;
+import org.web3d.x3d.sai.Sound.*;
+import org.web3d.x3d.sai.Text.*;
+import org.web3d.x3d.sai.Texturing3D.*;
+import org.web3d.x3d.sai.Texturing.*;
+import org.web3d.x3d.sai.Time.*;
+import org.web3d.x3d.sai.VolumeRendering.*;
+public class ball {
+  public static void main(String[] args) {
+    ConfigurationProperties.setShowDefaultAttributes(true);
+    ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_nativeJava);
+    ConfigurationProperties.setDeleteIntermediateFiles(false);
+    new ball().initialize().toFileJSON("ball.new.json");
+    }
+    public X3DObject initialize() {
+      X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
+      .setHead(new headObject()
+        .addComponent(new componentObject().setName("EnvironmentalEffects").setLevel(1))
+        .addComponent(new componentObject().setName("EnvironmentalEffects").setLevel(3))
+        .addMeta(new metaObject().setName("title").setContent("john2.x3d"))
+        .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
+        .addMeta(new metaObject().setName("generator").setContent("manual"))
+        .addMeta(new metaObject().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/john2.x3d"))
+        .addMeta(new metaObject().setName("description").setContent("my ugly mug"))
+        .addMeta(new metaObject().setName("translated").setContent("03 May 2017"))
+        .addMeta(new metaObject().setName("generator").setContent("X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"))
+        .addMeta(new metaObject().setName("reference").setContent("X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"))
+        .addMeta(new metaObject().setName("translated").setContent("3 May 2017"))
+        .addMeta(new metaObject().setName("generator").setContent("X3DJSONLD: https://github.com/coderextreme/X3DJSONLD")))
+      .setScene(new SceneObject()
+        .addChild(new NavigationInfoObject())
+        .addChild(new BackgroundObject().setBackUrl(new MFStringObject(new MFString0().getArray())).setBottomUrl(new MFStringObject(new MFString1().getArray())).setFrontUrl(new MFStringObject(new MFString2().getArray())).setLeftUrl(new MFStringObject(new MFString3().getArray())).setRightUrl(new MFStringObject(new MFString4().getArray())).setTopUrl(new MFStringObject(new MFString5().getArray())))
+        .addChild(new TransformObject().setScale(new float[] {180f,180f,180f})
+          .addChild(new ShapeObject()
+            .setAppearance(new AppearanceObject()
+              .setMaterial(new MaterialObject())
+              .setTexture(new ComposedCubeMapTextureObject().setDEF("texture")
+                .setLeft(new ImageTextureObject().setUrl(new MFStringObject(new MFString6().getArray())))
+                .setRight(new ImageTextureObject().setUrl(new MFStringObject(new MFString7().getArray())))
+                .setFront(new ImageTextureObject().setUrl(new MFStringObject(new MFString8().getArray())))
+                .setBack(new ImageTextureObject().setUrl(new MFStringObject(new MFString9().getArray())))
+                .setTop(new ImageTextureObject().setUrl(new MFStringObject(new MFString10().getArray())))
+                .setBottom(new ImageTextureObject().setUrl(new MFStringObject(new MFString11().getArray()))))
+              .addComments(new CommentsBlock("<ComposedShader language='GLSL'> <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'></field> <ShaderPart url='\"freewrl.vs\" \"http://coderextreme.net/X3DJSONLD/freewrl.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> <ShaderPart url='\"freewrl.fs\" \"http://coderextreme.net/X3DJSONLD/freewrl.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart> </ComposedShader>"))
+              .addComments(new CommentsBlock("<ComposedShader language='GLSL'> <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'></field> <field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture> </field> <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field> <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'></field> <field name='power' accessType='inputOutput' type='SFFloat' value='2'></field> <ShaderPart url='\"contact.vs\" \"http://coderextreme.net/X3DJSONLD/contact.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> <ShaderPart url='\"common.fs\" \"http://coderextreme.net/X3DJSONLD/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart> </ComposedShader>"))
+              .addComments(new CommentsBlock("<ComposedShader language='GLSL'> <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'></field> <field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture> </field> <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field> <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'></field> <field name='power' accessType='inputOutput' type='SFFloat' value='2'></field> <ShaderPart url='\"octaga.vs\" \"http://coderextreme.net/X3DJSONLD/octaga.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> <ShaderPart url='\"common.fs\" \"http://coderextreme.net/X3DJSONLD/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart> </ComposedShader>"))
+              .addComments(new CommentsBlock("<ComposedShader language='GLSL'> <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'></field> <field name='cube' accessType='initializeOnly' type='SFInt32' value='0'></field> <ShaderPart url='\"instant.vs\" \"http://coderextreme.net/X3DJSONLD/instant.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> <ShaderPart url='\"common.fs\" \"http://coderextreme.net/X3DJSONLD/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart> </ComposedShader>"))
+              .addShaders(new ComposedShaderObject().setLanguage("GLSL")
+                .addField(new fieldObject().setName("chromaticDispertion").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFVEC3F).setValue("0.98 1 1.033"))
+                .addField(new fieldObject().setName("cube").setType(fieldObject.TYPE_SFNODE).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
+                  .addChild(new ComposedCubeMapTextureObject().setUSE("texture")))
+                .addField(new fieldObject().setName("bias").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFFLOAT).setValue("0.5"))
+                .addField(new fieldObject().setName("scale").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFFLOAT).setValue("0.5"))
+                .addField(new fieldObject().setName("power").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFFLOAT).setValue("2"))
+                .addParts(new ShaderPartObject().setUrl(new MFStringObject(new MFString12().getArray())).setType("VERTEX"))
+                .addParts(new ShaderPartObject().setUrl(new MFStringObject(new MFString13().getArray())).setType("FRAGMENT")))
+              .addShaders(new ComposedShaderObject().setLanguage("GLSL")
+                .addField(new fieldObject().setName("chromaticDispertion").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setType(fieldObject.TYPE_SFVEC3F).setValue("0.98 1 1.033"))
+                .addField(new fieldObject().setName("cube").setType(fieldObject.TYPE_SFNODE).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
+                  .addChild(new ComposedCubeMapTextureObject().setUSE("texture")))
+                .addField(new fieldObject().setName("bias").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setType(fieldObject.TYPE_SFFLOAT).setValue("0.5"))
+                .addField(new fieldObject().setName("scale").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setType(fieldObject.TYPE_SFFLOAT).setValue("0.5"))
+                .addField(new fieldObject().setName("power").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setType(fieldObject.TYPE_SFFLOAT).setValue("2"))
+                .addParts(new ShaderPartObject().setUrl(new MFStringObject(new MFString14().getArray())).setType("VERTEX"))
+                .addParts(new ShaderPartObject().setUrl(new MFStringObject(new MFString15().getArray())).setType("FRAGMENT"))))
+            .setGeometry(new SphereObject().setRadius(0.01f)))))      ;
+    return X3D0;
+    }
+protected class MFString0 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new java.lang.String[] {"cubemap/all_probes/stpeters_cross/stpeters_back.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_back.png"});
+  }
+}
+protected class MFString1 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new java.lang.String[] {"cubemap/all_probes/stpeters_cross/stpeters_bottom.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_bottom.png"});
+  }
+}
+protected class MFString2 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new java.lang.String[] {"cubemap/all_probes/stpeters_cross/stpeters_front.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_front.png"});
+  }
+}
+protected class MFString3 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new java.lang.String[] {"cubemap/all_probes/stpeters_cross/stpeters_left.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_left.png"});
+  }
+}
+protected class MFString4 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new java.lang.String[] {"cubemap/all_probes/stpeters_cross/stpeters_right.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_right.png"});
+  }
+}
+protected class MFString5 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new java.lang.String[] {"cubemap/all_probes/stpeters_cross/stpeters_top.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_top.png"});
+  }
+}
+protected class MFString6 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new java.lang.String[] {"cubemap/all_probes/stpeters_cross/stpeters_left.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_left.png"});
+  }
+}
+protected class MFString7 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new java.lang.String[] {"cubemap/all_probes/stpeters_cross/stpeters_right.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_right.png"});
+  }
+}
+protected class MFString8 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new java.lang.String[] {"cubemap/all_probes/stpeters_cross/stpeters_front.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_front.png"});
+  }
+}
+protected class MFString9 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new java.lang.String[] {"cubemap/all_probes/stpeters_cross/stpeters_back.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_back.png"});
+  }
+}
+protected class MFString10 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new java.lang.String[] {"cubemap/all_probes/stpeters_cross/stpeters_top.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_top.png"});
+  }
+}
+protected class MFString11 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new java.lang.String[] {"cubemap/all_probes/stpeters_cross/stpeters_bottom.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_bottom.png"});
+  }
+}
+protected class MFString12 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new java.lang.String[] {"x3dom.vs","http://coderextreme.net/X3DJSONLD/x3dom.vs"});
+  }
+}
+protected class MFString13 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new java.lang.String[] {"common.fs","http://coderextreme.net/X3DJSONLD/common.fs"});
+  }
+}
+protected class MFString14 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new java.lang.String[] {"cobweb.vs","http://coderextreme.net/X3DJSONLD/cobweb.vs"});
+  }
+}
+protected class MFString15 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new java.lang.String[] {"common.fs","http://coderextreme.net/X3DJSONLD/common.fs"});
+  }
+}
+}

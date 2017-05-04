@@ -75,8 +75,9 @@ void main()
 	gl_ModelViewMatrix[2].y,
 	gl_ModelViewMatrix[2].z
     );
-    vec3 fragNormal = mvm3*rose_normal(position);
     gl_Position = gl_ModelViewProjectionMatrix * rose_position(position);
+
+    vec3 fragNormal = mvm3*rose_normal(position);
     vec3 incident = normalize((gl_ModelViewMatrix * rose_position(position)).xyz);
     t = reflect(incident, fragNormal)*mvm3;
     tr = refract(incident, fragNormal, chromaticDispertion.x)*mvm3;

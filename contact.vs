@@ -20,6 +20,9 @@ uniform mat4 gl_ModelViewMatrix;
 uniform mat4 gl_ProjectionMatrix;
 
 uniform vec3 chromaticDispertion;
+uniform float bias;
+uniform float scale;
+uniform float power;
 
 varying vec3 t;
 varying vec3 tr;
@@ -48,5 +51,5 @@ void main()
     tr = refract(incident, fragNormal, chromaticDispertion.x)*mvm3;
     tg = refract(incident, fragNormal, chromaticDispertion.y)*mvm3;
     tb = refract(incident, fragNormal, chromaticDispertion.z)*mvm3;
-    rfac = 0.5 + 0.5 * pow(0.5+0.5*dot(incident, fragNormal), 2.0);
+    rfac = bias + scale * pow(0.5+0.5*dot(incident, fragNormal), power);
 }

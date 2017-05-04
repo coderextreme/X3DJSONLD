@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance">
+      <head>
+	      <component name='EnvironmentalEffects' level='1'></component>
+	      <component name='EnvironmentalEffects' level='3'>></component>
+      <meta name='title' content='john2.x3d'></meta>
+      <meta name='creator' content='John Carlson'></meta>
+      <meta name='generator' content='manual'></meta>
+      <meta name='identifier' content='http://coderextreme.net/X3DJSONLD/john2.x3d'></meta>
+      <meta name='description' content='my ugly mug'></meta>
+     </head>
+     <Scene>
+     <NavigationInfo type="&quot;EXAMINE&quot; &quot;ANY&quot;"></NavigationInfo>
+	<Background
+		backUrl='"cubemap/all_probes/stpeters_cross/stpeters_back.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_back.png"'
+		bottomUrl='"cubemap/all_probes/stpeters_cross/stpeters_bottom.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_bottom.png"'
+		frontUrl='"cubemap/all_probes/stpeters_cross/stpeters_front.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_front.png"'
+		leftUrl='"cubemap/all_probes/stpeters_cross/stpeters_left.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_left.png"'
+		rightUrl='"cubemap/all_probes/stpeters_cross/stpeters_right.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_right.png"'
+		topUrl='"cubemap/all_probes/stpeters_cross/stpeters_top.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_top.png"'
+	  >
+	</Background>
+	<Transform scale="180 180 180">
+          <Shape>
+            <Appearance>
+	    <Material></Material>
+                <ComposedCubeMapTexture DEF="texture">
+			<ImageTexture containerField='left' url='"cubemap/all_probes/stpeters_cross/stpeters_left.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_left.png"'></ImageTexture>
+			<ImageTexture containerField='right' url='"cubemap/all_probes/stpeters_cross/stpeters_right.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_right.png"'></ImageTexture>
+			<ImageTexture containerField='front' url='"cubemap/all_probes/stpeters_cross/stpeters_front.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_front.png"'></ImageTexture>
+			<ImageTexture containerField='back' url='"cubemap/all_probes/stpeters_cross/stpeters_back.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_back.png"'></ImageTexture>
+			<ImageTexture containerField='top' url='"cubemap/all_probes/stpeters_cross/stpeters_top.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_top.png"'></ImageTexture>
+			<ImageTexture containerField='bottom' url='"cubemap/all_probes/stpeters_cross/stpeters_bottom.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_bottom.png"'></ImageTexture>
+                </ComposedCubeMapTexture>
+                
+		<!--
+                <ComposedShader language='GLSL'>
+		  <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'></field>
+		  <ShaderPart url='"freewrl.vs" "http://coderextreme.net/X3DJSONLD/freewrl.vs"' type="VERTEX" containerField='parts'></ShaderPart>
+		  <ShaderPart url='"freewrl.fs" "http://coderextreme.net/X3DJSONLD/freewrl.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
+                </ComposedShader>
+		-->
+		<!--
+                <ComposedShader language='GLSL'>
+		  <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'></field>
+		  <field name='cube' type='SFNode' accessType="inputOutput">
+			<ComposedCubeMapTexture USE="texture"></ComposedCubeMapTexture>
+		  </field>
+		  <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field>
+		  <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'></field>
+		  <field name='power' accessType='inputOutput' type='SFFloat' value='2'></field>
+		  <ShaderPart url='"contact.vs" "http://coderextreme.net/X3DJSONLD/contact.vs"' type="VERTEX" containerField='parts'></ShaderPart>
+		  <ShaderPart url='"common.fs" "http://coderextreme.net/X3DJSONLD/common.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
+                </ComposedShader>
+		-->
+		<!--
+                <ComposedShader language='GLSL'>
+		  <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'></field>
+		  <field name='cube' type='SFNode' accessType="inputOutput">
+			<ComposedCubeMapTexture USE="texture"></ComposedCubeMapTexture>
+		  </field>
+		  <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field>
+		  <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'></field>
+		  <field name='power' accessType='inputOutput' type='SFFloat' value='2'></field>
+		  <ShaderPart url='"octaga.vs" "http://coderextreme.net/X3DJSONLD/octaga.vs"' type="VERTEX" containerField='parts'></ShaderPart>
+		  <ShaderPart url='"common.fs" "http://coderextreme.net/X3DJSONLD/common.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
+                </ComposedShader>
+		-->
+		<!--
+                <ComposedShader language='GLSL'>
+		  <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'></field>
+		  <field name='cube' accessType='initializeOnly' type='SFInt32' value='0'></field>
+		  <ShaderPart url='"instant.vs" "http://coderextreme.net/X3DJSONLD/instant.vs"' type="VERTEX" containerField='parts'></ShaderPart>
+		  <ShaderPart url='"common.fs" "http://coderextreme.net/X3DJSONLD/common.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
+                </ComposedShader>
+		-->
+                <ComposedShader language='GLSL'>
+		  <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'></field>
+		  <field name='cube' type='SFNode' accessType="inputOutput">
+			<ComposedCubeMapTexture USE="texture"></ComposedCubeMapTexture>
+		  </field>
+		  <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field>
+		  <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'></field>
+		  <field name='power' accessType='inputOutput' type='SFFloat' value='2'></field>
+		  <ShaderPart url='"x3dom.vs" "http://coderextreme.net/X3DJSONLD/x3dom.vs"' type="VERTEX" containerField='parts'></ShaderPart>
+		  <ShaderPart url='"common.fs" "http://coderextreme.net/X3DJSONLD/common.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
+                </ComposedShader>
+                <ComposedShader language='GLSL'>
+		  <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'></field>
+		  <field name='cube' type='SFNode' accessType="initializeOnly">
+			<ComposedCubeMapTexture USE="texture"></ComposedCubeMapTexture>
+		  </field>
+		  <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'></field>
+		  <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'></field>
+		  <field name='power' accessType='initializeOnly' type='SFFloat' value='2'></field>
+		  <ShaderPart url='"cobweb.vs" "http://coderextreme.net/X3DJSONLD/cobweb.vs"' type="VERTEX" containerField='parts'></ShaderPart>
+		  <ShaderPart url='"common.fs" "http://coderextreme.net/X3DJSONLD/common.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
+                </ComposedShader>
+            </Appearance>
+	    <Sphere radius="0.01"></Sphere>
+          </Shape>
+	</Transform>
+      </Scene>
+</X3D>  
