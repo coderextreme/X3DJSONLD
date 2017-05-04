@@ -703,6 +703,21 @@ POSSIBILITY OF SUCH DAMAGE.
 			<xsl:with-param name="indent"><xsl:value-of select="$indent"/></xsl:with-param>
 		</xsl:call-template>
 		
+		<!-- handle contained source code, if any -->
+		<xsl:if test="((local-name() = 'Script') or (local-name() = 'ShaderPart') or (local-name() = 'ShaderProgram')) and
+					  (string-length(normalize-space(text())) > 0)"><!-- TODO restrict to immediate child? -->
+			<xsl:text>.setSourceCode(</xsl:text>
+			<xsl:text>&#10;</xsl:text>
+			<xsl:text>"&lt;![CDATA[" + "\n" +</xsl:text>
+			<xsl:text>&#10;</xsl:text>
+			<xsl:call-template name="stringify-text-lines">
+			  <xsl:with-param name="inputString" select="text()"/><!-- TODO restrict to immediate child? -->
+			</xsl:call-template>
+			<xsl:text> + "\n" + "]]&gt;"</xsl:text>
+			<xsl:text>&#10;</xsl:text>
+			<xsl:text>)</xsl:text>
+		</xsl:if>
+		
 		<!-- handle children
 		<xsl:if test="* | comment()">
 			<xsl:text>&#10;</xsl:text>
@@ -743,18 +758,64 @@ POSSIBILITY OF SUCH DAMAGE.
 					<!-- TODO fix: process digital signature element as a CommentsBlock
 					<xsl:apply-templates select="."/> -->
 				</xsl:when>
-				<xsl:when test="(local-name(..) = 'HAnimHumanoid') and (local-name() = 'HAnimJoint')">
+				<xsl:when test="(local-name(..) = 'Appearance') and (@containerField = 'shaders')">
+					<xsl:text>.addShaders(</xsl:text>
+					<xsl:apply-templates select="."/><!-- handle this node -->
+					<xsl:text>)</xsl:text>
+				</xsl:when>
+				<!-- TODO CollidableShape setShape method returns null, needs X3DJSAIL refinement and SAI spec variation -->
+				<xsl:when test="(local-name(..) = 'ComposedShader') and (@containerField = 'parts')">
+					<xsl:text>.addParts(</xsl:text>
+					<xsl:apply-templates select="."/><!-- handle this node -->
+					<xsl:text>)</xsl:text>
+				</xsl:when>
+				<xsl:when test="(local-name(..) = 'HAnimHumanoid') and (@containerField = 'joints')">
 					<xsl:text>.addJoints(</xsl:text>
 					<xsl:apply-templates select="."/><!-- handle this node -->
 					<xsl:text>)</xsl:text>
 				</xsl:when>
-				<xsl:when test="(local-name(..) = 'HAnimHumanoid') and (local-name() = 'HAnimSegment')">
+				<xsl:when test="(local-name(..) = 'HAnimHumanoid') and (@containerField = 'segments')">
 					<xsl:text>.addSegments(</xsl:text>
 					<xsl:apply-templates select="."/><!-- handle this node -->
 					<xsl:text>)</xsl:text>
 				</xsl:when>
-				<xsl:when test="(local-name(..) = 'HAnimHumanoid') and (local-name() = 'HAnimSite')">
+				<xsl:when test="(local-name(..) = 'HAnimHumanoid') and (@containerField = 'sites')">
 					<xsl:text>.addSites(</xsl:text>
+					<xsl:apply-templates select="."/><!-- handle this node -->
+					<xsl:text>)</xsl:text>
+				</xsl:when>
+				<xsl:when test="(local-name(..) = 'HAnimHumanoid') and (@containerField = 'skeleton')">
+					<xsl:text>.addSkeleton(</xsl:text>
+					<xsl:apply-templates select="."/><!-- handle this node -->
+					<xsl:text>)</xsl:text>
+				</xsl:when>
+				<xsl:when test="(local-name(..) = 'HAnimHumanoid') and (@containerField = 'skin')">
+					<xsl:text>.addSkin(</xsl:text>
+					<xsl:apply-templates select="."/><!-- handle this node -->
+					<xsl:text>)</xsl:text>
+				</xsl:when>
+				<xsl:when test="(local-name(..) = 'HAnimHumanoid') and (@containerField = 'skinCoord')">
+					<xsl:text>.setSkinCoord(</xsl:text>
+					<xsl:apply-templates select="."/><!-- handle this node -->
+					<xsl:text>)</xsl:text>
+				</xsl:when>
+				<xsl:when test="(local-name(..) = 'HAnimHumanoid') and (@containerField = 'skinNormal')">
+					<xsl:text>.setSkinNormal(</xsl:text>
+					<xsl:apply-templates select="."/><!-- handle this node -->
+					<xsl:text>)</xsl:text>
+				</xsl:when>
+				<xsl:when test="(local-name(..) = 'HAnimHumanoid') and (@containerField = 'viewpoints')">
+					<xsl:text>.addViewpoints(</xsl:text>
+					<xsl:apply-templates select="."/><!-- handle this node -->
+					<xsl:text>)</xsl:text>
+				</xsl:when>
+				<xsl:when test="(local-name(..) = 'LoadSensor') and (@containerField = 'watchList')">
+					<xsl:text>.addWatchList(</xsl:text>
+					<xsl:apply-templates select="."/><!-- handle this node -->
+					<xsl:text>)</xsl:text>
+				</xsl:when>
+				<xsl:when test="(local-name(..) = 'MetadataSet') and (@containerField = 'metadata')">
+					<xsl:text>.setMetadata(</xsl:text>
 					<xsl:apply-templates select="."/><!-- handle this node -->
 					<xsl:text>)</xsl:text>
 				</xsl:when>
@@ -763,8 +824,18 @@ POSSIBILITY OF SUCH DAMAGE.
 					<xsl:apply-templates select="."/><!-- handle this node -->
 					<xsl:text>)</xsl:text>
 				</xsl:when>
-				<xsl:when test="(local-name(..) = 'MetadataSet') and (@containerField = 'metadata')">
-					<xsl:text>.setMetadata(</xsl:text>
+				<xsl:when test="(local-name(..) = 'RigidBody') and (@containerField = 'geometry')">
+					<xsl:text>.addGeometry(</xsl:text>
+					<xsl:apply-templates select="."/><!-- handle this node -->
+					<xsl:text>)</xsl:text>
+				</xsl:when>
+				<xsl:when test="(local-name(..) = 'RigidBodyCollection') and (@containerField = 'bodies')">
+					<xsl:text>.addBodies(</xsl:text>
+					<xsl:apply-templates select="."/><!-- handle this node -->
+					<xsl:text>)</xsl:text>
+				</xsl:when>
+				<xsl:when test="(local-name(..) = 'RigidBodyCollection') and (@containerField = 'joints')">
+					<xsl:text>.addJoints(</xsl:text>
 					<xsl:apply-templates select="."/><!-- handle this node -->
 					<xsl:text>)</xsl:text>
 				</xsl:when>
@@ -1898,7 +1969,7 @@ POSSIBILITY OF SUCH DAMAGE.
 				<xsl:variable name="attributeName" select="local-name()"/>
 				<xsl:variable name="isLargeAttribute" 
 							  select="not($elementName = 'meta') and
-									 (string-length(.) > $attributeSplitSize) and not($attributeName = 'url')"/>
+									 (string-length(.) > $attributeSplitSize) and not($attributeName = 'url') and not(contains($attributeName,'Url'))"/>
 				<xsl:choose>
 					<xsl:when test="$isLargeAttribute">
 						<xsl:variable name="dataObjectName">
@@ -3455,7 +3526,7 @@ POSSIBILITY OF SUCH DAMAGE.
 			<xsl:variable name="attributeName" select="local-name()"/>
 			<xsl:variable name="isLargeAttribute" 
 						  select="not($elementName = 'meta') and
-								 (string-length(.) > $attributeSplitSize) and not($attributeName = 'url')"/>
+								 (string-length(.) > $attributeSplitSize) and not($attributeName = 'url') and not(contains($attributeName,'Url'))"/>
 			<xsl:if test="$isLargeAttribute">
 				<xsl:variable name="attributeType">
 					<xsl:call-template name="attribute-type"/>
@@ -3581,5 +3652,77 @@ POSSIBILITY OF SUCH DAMAGE.
 			</xsl:call-template>
 		</xsl:for-each>
 	</xsl:template>
+
+    <!-- print-indent keeps track of indenting level -->
+    <xsl:template name="stringify-text-lines">
+      <xsl:param name="inputString"><xsl:text></xsl:text><!-- default value is empty --></xsl:param>
+	  <xsl:param name="continuation"><xsl:text>false</xsl:text></xsl:param>
+
+      <xsl:if test="(string-length($inputString) > 0)">
+		<xsl:choose>
+			<!-- first special character encountered: \ which is escaped as \\ -->
+			<xsl:when test="contains($inputString,'\') and
+					((not(contains($inputString,'&quot;')) or contains(substring-before($inputString,'&quot;'),'\')) and
+					 (not(contains($inputString,'&#10;' )) or contains(substring-before($inputString,'&#10;'),'\')))">
+				<xsl:if test="not($continuation = 'true')">
+					<!-- debug <xsl:text>/* here 1 */ </xsl:text>-->
+					<xsl:text>"</xsl:text><!-- start java string -->
+				</xsl:if>
+				<xsl:if test="(string-length(substring-before($inputString,'\')) > 0)">
+					<xsl:value-of select="substring-before($inputString,'\')"/>
+				</xsl:if>
+				<xsl:text>\\</xsl:text><!-- escape contained backslash character -->
+				<!-- tail recursion -->
+				<xsl:call-template name="stringify-text-lines">
+				  <xsl:with-param name="inputString" select="substring-after($inputString,'\')"/>
+				  <xsl:with-param name="continuation"><xsl:text>true</xsl:text></xsl:with-param>
+				</xsl:call-template>
+			</xsl:when>
+			<!-- first special character encountered: " which is escaped as \" -->
+			<xsl:when test="contains($inputString,'&quot;') and
+					(not(contains($inputString,'&#10;')) or contains(substring-before($inputString,'&#10;'),'&quot;'))">
+				<xsl:if test="not($continuation = 'true')">
+					<!-- debug <xsl:text>/* here 2 */ </xsl:text>-->
+					<xsl:text>"</xsl:text><!-- start java string -->
+				</xsl:if>
+				<xsl:if test="(string-length(substring-before($inputString,'&quot;')) > 0)">
+					<xsl:value-of select="substring-before($inputString,'&quot;')"/>
+				</xsl:if>
+				<xsl:text>\"</xsl:text><!-- escape contained quote character -->
+				<!-- tail recursion -->
+				<xsl:call-template name="stringify-text-lines">
+				  <xsl:with-param name="inputString" select="substring-after($inputString,'&quot;')"/>
+				  <xsl:with-param name="continuation"><xsl:text>true</xsl:text></xsl:with-param>
+				</xsl:call-template>
+			</xsl:when>
+			<!-- first special character encountered: line feed, which breaks up the string -->
+			<xsl:when test="contains($inputString,'&#10;')">
+				<xsl:if test="not($continuation = 'true')">
+					<!-- debug <xsl:text>/* here 3 */ </xsl:text>-->
+					<xsl:text>"</xsl:text><!-- start java string -->
+				</xsl:if>
+				<xsl:if test="(string-length(substring-before($inputString,'&#10;')) > 0)">
+					<xsl:value-of select="substring-before($inputString,'&#10;')"/>
+					<xsl:text>"</xsl:text>
+					<xsl:text> + "</xsl:text>
+				</xsl:if>
+				<xsl:text>\n" + </xsl:text>
+				<xsl:text>&#10;</xsl:text>
+				<!-- tail recursion -->
+				<xsl:call-template name="stringify-text-lines">
+				  <xsl:with-param name="inputString" select="substring-after($inputString,'&#10;')"/>
+				</xsl:call-template>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:if test="not($continuation = 'true')">
+					<!-- debug <xsl:text>/* here 4 */ </xsl:text>-->
+					<xsl:text>"</xsl:text><!-- start java string -->
+				</xsl:if>
+				<xsl:value-of select="$inputString"/>
+				<xsl:text>"</xsl:text>
+			</xsl:otherwise>
+		</xsl:choose>
+      </xsl:if>
+    </xsl:template>
 
 </xsl:stylesheet>
