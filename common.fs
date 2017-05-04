@@ -30,7 +30,7 @@ void main()
     reflected.b = textureCube(cube, tb).b;
 
     gl_FragColor = reflected * 0.5 + refracted * (1.0 - 0.5);
-    /*
+    /*  IF there aren't normals, rfac isn't computed
     gl_FragColor = reflected * rfac + refracted * (1.0 - rfac);
     */
 }
