@@ -74,7 +74,6 @@
                 </ComposedShader>
 		-->
 		<!--
-		-->
                 <ComposedShader language='GLSL'>
 		  <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'></field>
 		  <field name='cube' accessType='initializeOnly' type='SFInt32' value='0'></field>
@@ -84,7 +83,9 @@
 		  <ShaderPart url='"instant.vs" "http://coderextreme.net/X3DJSONLD/instant.vs"' type="VERTEX" containerField='parts'></ShaderPart>
 		  <ShaderPart url='"common.fs" "http://coderextreme.net/X3DJSONLD/common.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
                 </ComposedShader>
+		-->
 		<!--
+		-->
                 <ComposedShader language='GLSL'>
 		  <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'></field>
 		  <field name='cube' type='SFNode' accessType="inputOutput">
@@ -107,7 +108,6 @@
 		  <ShaderPart url='"cobweb.vs" "http://coderextreme.net/X3DJSONLD/cobweb.vs"' type="VERTEX" containerField='parts'></ShaderPart>
 		  <ShaderPart USE="common"></ShaderPart>
                 </ComposedShader>
-		-->
             </Appearance>
           </Shape>
 	</Transform>
