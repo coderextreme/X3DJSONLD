@@ -1,7 +1,3 @@
-#ifdef GL_ES
-  precision highp float;
-#endif
-
 /*
 The MIT License (MIT)
 Copyright (c) 2011 Authors of J3D. All rights reserved.
@@ -11,26 +7,28 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-*/
-uniform samplerCube cube;
 
+Modified by Doug Sanden
+*/
+
+uniform vec3 chromaticDispertion;
+uniform float bias;
+uniform float scale;
+uniform float power;
 varying vec3 t;
 varying vec3 tr;
 varying vec3 tg;
 varying vec3 tb;
 varying float rfac;
-
 void main()
 {
-    vec4 refracted = textureCube(cube, t);
-    vec4 reflected = vec4(1.0);
-
-    reflected.r = textureCube(cube, tr).r;
-    reflected.g = textureCube(cube, tg).g;
-    reflected.b = textureCube(cube, tb).b;
-
-    gl_FragColor = reflected * 0.5 + refracted * 0.5;
-    /*
-    gl_FragColor = reflected * rfac + refracted * (1.0 - rfac);
-    */
+    vec3 fragNormal = (fw_ModelViewMatrix * vec4(fw_Normal,1.0)).xyz;
+    gl_Position = fw_ProjectionMatrix * fw_ModelViewMatrix * fw_Vertex;
+    vec3 incident = normalize((fw_ModelViewMatrix * fw_Vertex).xyz)*chromaticDispertion;
+    t = (vec4(reflect(incident, fragNormal),1.0)*fw_ModelViewMatrix).xyz;
+    tr = (vec4(refract(incident, fragNormal, chromaticDispertion.x),1.0)*fw_ModelViewMatrix).xyz;
+    tg = (vec4(refract(incident, fragNormal, chromaticDispertion.y),1.0)*fw_ModelViewMatrix).xyz;
+    tb = (vec4(refract(incident, fragNormal, chromaticDispertion.z),1.0)*fw_ModelViewMatrix).xyz;
+   
+    rfac = bias + scale * pow(0.5+0.5*dot(incident, fragNormal), power);    
 }
