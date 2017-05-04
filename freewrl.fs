@@ -14,5 +14,8 @@ void main()
     reflected.g = textureCube(fw_Texture_unit0, tg).g;
     reflected.b = textureCube(fw_Texture_unit0, tb).b;
 
+    gl_FragColor = reflected * 0.5 + refracted * (1.0 - 0.5);
+    /*  This can't figure out normals if there are none, so rfac is undefind
     gl_FragColor = reflected * rfac + refracted * (1.0 - rfac);
+    */
 }

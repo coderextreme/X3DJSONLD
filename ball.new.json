@@ -18,7 +18,7 @@
         "meta": [
           {
             "@name":"title",
-            "@content":"john2.x3d"
+            "@content":"ball.x3d"
           },
           {
             "@name":"creator",
@@ -30,15 +30,15 @@
           },
           {
             "@name":"identifier",
-            "@content":"http://coderextreme.net/X3DJSONLD/john2.x3d"
+            "@content":"http://coderextreme.net/X3DJSONLD/ball.x3d"
           },
           {
             "@name":"description",
-            "@content":"my ugly mug"
+            "@content":"a prismatic sphere"
           },
           {
             "@name":"translated",
-            "@content":"03 May 2017"
+            "@content":"04 May 2017"
           },
           {
             "@name":"generator",
@@ -50,7 +50,7 @@
           },
           {
             "@name":"translated",
-            "@content":"3 May 2017"
+            "@content":"4 May 2017"
           },
           {
             "@name":"generator",
@@ -58,7 +58,7 @@
           },
           {
             "@name":"translated",
-            "@content":"03 May 2017"
+            "@content":"04 May 2017"
           },
           {
             "@name":"generator",
@@ -74,6 +74,12 @@
         "-children":[
           { "NavigationInfo":
             {
+              "@type":["ANY","EXAMINE","FLY","LOOKAT"]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Tour Views"
             }
           },
           { "Background":
@@ -88,7 +94,6 @@
           },
           { "Transform":
             {
-              "@scale":[180,180,180],
               "-children":[
                 { "Shape":
                   {
@@ -113,6 +118,7 @@
                                   },
                                   { "ShaderPart":
                                     {
+                                      "@DEF":"common",
                                       "@type":"FRAGMENT",
                                       "@url":["common.fs","http://coderextreme.net/X3DJSONLD/common.fs"]
                                     }
@@ -170,8 +176,7 @@
                                   },
                                   { "ShaderPart":
                                     {
-                                      "@type":"FRAGMENT",
-                                      "@url":["common.fs","http://coderextreme.net/X3DJSONLD/common.fs"]
+                                      "@USE":"common"
                                     }
                                   }
                                 ],
@@ -260,16 +265,19 @@
                             },
                           "-children":[
                             {
-                              "#comment":"<ComposedShader language='GLSL'> <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'></field> <ShaderPart url='\"freewrl.vs\" \"http://coderextreme.net/X3DJSONLD/freewrl.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> <ShaderPart url='\"freewrl.fs\" \"http://coderextreme.net/X3DJSONLD/freewrl.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart> </ComposedShader>"
+                              "#comment":"<ProgramShader DEF='ProgramShader' containerField='shaders' language='GLSL'> <ShaderProgram url='\"freewrl.vs\" \"http://coderextreme.net/X3DJSONLD/freewrl.vs\"' containerField='programs' type='VERTEX'> <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'/> <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'/> <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'/> <field name='power' accessType='initializeOnly' type='SFFloat' value='2'/> </ShaderProgram> <ShaderProgram url='\"freewrl.fs\" \"http://coderextreme.net/X3DJSONLD/freewrl.fs\"' containerField='programs' type='FRAGMENT'/> </ProgramShader>"
                             },
                             {
-                              "#comment":"<ComposedShader language='GLSL'> <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'></field> <field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture> </field> <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field> <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'></field> <field name='power' accessType='inputOutput' type='SFFloat' value='2'></field> <ShaderPart url='\"contact.vs\" \"http://coderextreme.net/X3DJSONLD/contact.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> <ShaderPart url='\"common.fs\" \"http://coderextreme.net/X3DJSONLD/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart> </ComposedShader>"
+                              "#comment":"<ComposedShader language='GLSL'> <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'></field> <field name='fw_Texture_unit0' type='SFNode' accessType=\"initializeOnly\"> <ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture> </field> <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'></field> <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'></field> <field name='power' accessType='initializeOnly' type='SFFloat' value='2'></field> <ShaderPart url='\"contact.vs\" \"http://coderextreme.net/X3DJSONLD/contact.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> <ShaderPart url='\"common.fs\" \"http://coderextreme.net/X3DJSONLD/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart> </ComposedShader>"
                             },
                             {
                               "#comment":"<ComposedShader language='GLSL'> <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'></field> <field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture> </field> <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field> <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'></field> <field name='power' accessType='inputOutput' type='SFFloat' value='2'></field> <ShaderPart url='\"octaga.vs\" \"http://coderextreme.net/X3DJSONLD/octaga.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> <ShaderPart url='\"common.fs\" \"http://coderextreme.net/X3DJSONLD/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart> </ComposedShader>"
                             },
                             {
-                              "#comment":"<ComposedShader language='GLSL'> <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'></field> <field name='cube' accessType='initializeOnly' type='SFInt32' value='0'></field> <ShaderPart url='\"instant.vs\" \"http://coderextreme.net/X3DJSONLD/instant.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> <ShaderPart url='\"common.fs\" \"http://coderextreme.net/X3DJSONLD/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart> </ComposedShader>"
+                              "#comment":"<ComposedShader language='GLSL'> <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'></field> <field name='cube' accessType='initializeOnly' type='SFInt32' value='0'></field> <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'></field> <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'></field> <field name='power' accessType='initializeOnly' type='SFFloat' value='2'></field> <ShaderPart url='\"instant.vs\" \"http://coderextreme.net/X3DJSONLD/instant.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> <ShaderPart url='\"common.fs\" \"http://coderextreme.net/X3DJSONLD/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart> </ComposedShader>"
+                            },
+                            {
+                              "#comment":""
                             }
                           ]
                         }
@@ -277,7 +285,6 @@
                     "-geometry":
                       { "Sphere":
                         {
-                          "@radius":0.01
                         }
                       }
                   }
