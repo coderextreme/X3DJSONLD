@@ -12,12 +12,10 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
-attribute vec3 position;
-attribute vec3 normal;
-attribute vec2 texcoord;
-
 uniform mat4 x3d_ModelViewMatrix;
 uniform mat4 x3d_ProjectionMatrix;
+attribute vec3 x3d_Normal;
+attribute vec4 x3d_Vertex;
 
 uniform vec3 chromaticDispertion;
 uniform float bias;
@@ -32,7 +30,7 @@ varying float rfac;
 
 void main()
 {
-    mat4 x3d_ModelViewProjectionMatrix = x3d_ProjectionMatrix * x3d_ModelViewMatrix;
+    vec3 normal = x3d_Normal.xyz;
     mat3 mvm3=mat3(
 	x3d_ModelViewMatrix[0].x,
 	x3d_ModelViewMatrix[0].y,
@@ -44,10 +42,10 @@ void main()
 	x3d_ModelViewMatrix[2].y,
 	x3d_ModelViewMatrix[2].z
     );
-    gl_Position = x3d_ModelViewProjectionMatrix * vec4(position, 1.0);
 
     vec3 fragNormal = mvm3*normal;
-    vec3 incident = normalize((x3d_ModelViewMatrix * vec4(position, 1.0)).xyz);
+    gl_Position = x3d_ProjectionMatrix * x3d_ModelViewMatrix * x3d_Vertex;
+    vec3 incident = normalize((x3d_ModelViewMatrix * x3d_Vertex).xyz);
     t = reflect(incident, fragNormal)*mvm3;
     tr = refract(incident, fragNormal, chromaticDispertion.x)*mvm3;
     tg = refract(incident, fragNormal, chromaticDispertion.y)*mvm3;

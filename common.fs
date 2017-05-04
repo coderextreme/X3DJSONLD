@@ -31,6 +31,6 @@ void main()
 
     gl_FragColor = reflected * 0.5 + refracted * 0.5;
     /*
-    gl_FragColor = ret * rfac + refracted * (1.0 - rfac);
+    gl_FragColor = reflected * rfac + refracted * (1.0 - rfac);
     */
 }

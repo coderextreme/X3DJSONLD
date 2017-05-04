@@ -7,15 +7,12 @@ varying float rfac;
 
 void main()
 {
-    vec4 ref = textureCube(fw_Texture_unit0, t);
-    vec4 ret = vec4(1.0);
+    vec4 refracted = textureCube(fw_Texture_unit0, t);
+    vec4 reflected = vec4(1.0);
 
-    ret.r = textureCube(fw_Texture_unit0, tr).r;
-    ret.g = textureCube(fw_Texture_unit0, tg).g;
-    ret.b = textureCube(fw_Texture_unit0, tb).b;
+    reflected.r = textureCube(fw_Texture_unit0, tr).r;
+    reflected.g = textureCube(fw_Texture_unit0, tg).g;
+    reflected.b = textureCube(fw_Texture_unit0, tb).b;
 
-    gl_FragColor = ret * 0.5 + ref * 0.5;
-    /*
-    gl_FragColor = ret * rfac + ref * (1.0 - rfac);
-    */
-}                        
+    gl_FragColor = reflected * rfac + refracted * (1.0 - rfac);
+}

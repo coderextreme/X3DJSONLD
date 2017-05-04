@@ -43,9 +43,9 @@ void main()
 	modelViewMatrix[2].y,
 	modelViewMatrix[2].z
     );
-    gl_Position = modelViewProjectionMatrix * vec4(position, 1.0);
 
     vec3 fragNormal = mvm3*normal;
+    gl_Position = modelViewProjectionMatrix * vec4(position, 1.0);
     vec3 incident = normalize((modelViewMatrix * vec4(position, 1.0)).xyz);
     t = reflect(incident, fragNormal)*mvm3;
     tr = refract(incident, fragNormal, chromaticDispertion.x)*mvm3;
