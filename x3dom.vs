@@ -32,27 +32,25 @@ varying float rfac;
 
 void main()
 {
-    mat4 jwc_ModelViewMatrix = modelViewMatrix;
-    mat4 jwc_ModelViewProjectionMatrix = modelViewProjectionMatrix;
     mat3 mvm3=mat3(
-	jwc_ModelViewMatrix[0].x,
-	jwc_ModelViewMatrix[0].y,
-	jwc_ModelViewMatrix[0].z,
-	jwc_ModelViewMatrix[1].x,
-	jwc_ModelViewMatrix[1].y,
-	jwc_ModelViewMatrix[1].z,
-	jwc_ModelViewMatrix[2].x,
-	jwc_ModelViewMatrix[2].y,
-	jwc_ModelViewMatrix[2].z
+	modelViewMatrix[0].x,
+	modelViewMatrix[0].y,
+	modelViewMatrix[0].z,
+	modelViewMatrix[1].x,
+	modelViewMatrix[1].y,
+	modelViewMatrix[1].z,
+	modelViewMatrix[2].x,
+	modelViewMatrix[2].y,
+	modelViewMatrix[2].z
     );
-    gl_Position = jwc_ModelViewProjectionMatrix * vec4(position, 1.0);
+    gl_Position = modelViewProjectionMatrix * vec4(position, 1.0);
 
     vec3 fragNormal = mvm3*normal;
-    vec3 incident = normalize((jwc_ModelViewMatrix * vec4(position, 1.0)).xyz);
+    vec3 incident = normalize((modelViewMatrix * vec4(position, 1.0)).xyz);
     t = reflect(incident, fragNormal)*mvm3;
     tr = refract(incident, fragNormal, chromaticDispertion.x)*mvm3;
     tg = refract(incident, fragNormal, chromaticDispertion.y)*mvm3;
     tb = refract(incident, fragNormal, chromaticDispertion.z)*mvm3;
-
     rfac = bias + scale * pow(0.5+0.5*dot(incident, fragNormal), power);
 }
+

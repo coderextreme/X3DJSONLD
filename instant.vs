@@ -12,29 +12,14 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
-vec4 ftransform() {
-	return vec4 (ir_ProjectionMatrix*ir_ModelViewMatrix*ir_Vertex);
-}
-#define gl_ModelViewProjectionMatrix (ir_ProjectionMatrix*ir_ModelViewMatrix)
-#define HEADLIGHT_LIGHT (MAX_LIGHTS-1)
-#define gl_NormalMatrix ir_NormalMatrix
-#define gl_ProjectionMatrix ir_ProjectionMatrix
-#define gl_ModelViewMatrix ir_ModelViewMatrix
-#define gl_Vertex ir_Vertex
-#define gl_Normal ir_Normal
-#define gl_LightSource ir_LightSource
-
 attribute vec3 position;
 attribute vec3 normal;
 attribute vec2 texcoord;
 
-uniform mat4 ir_ModelViewMatrix;
-uniform mat4 ir_ProjectionMatrix;
+uniform mat4 gl_ModelViewMatrix;
+uniform mat4 gl_ProjectionMatrix;
 
 uniform vec3 chromaticDispertion;
-uniform float bias;
-uniform float scale;
-uniform float power;
 
 varying vec3 t;
 varying vec3 tr;
@@ -44,27 +29,24 @@ varying float rfac;
 
 void main()
 {
-    mat4 jwc_ModelViewMatrix = ir_ModelViewMatrix;
-    mat4 jwc_ModelViewProjectionMatrix = ir_ProjectionMatrix * ir_ModelViewMatrix;
     mat3 mvm3=mat3(
-	jwc_ModelViewMatrix[0].x,
-	jwc_ModelViewMatrix[0].y,
-	jwc_ModelViewMatrix[0].z,
-	jwc_ModelViewMatrix[1].x,
-	jwc_ModelViewMatrix[1].y,
-	jwc_ModelViewMatrix[1].z,
-	jwc_ModelViewMatrix[2].x,
-	jwc_ModelViewMatrix[2].y,
-	jwc_ModelViewMatrix[2].z
+	gl_ModelViewMatrix[0].x,
+	gl_ModelViewMatrix[0].y,
+	gl_ModelViewMatrix[0].z,
+	gl_ModelViewMatrix[1].x,
+	gl_ModelViewMatrix[1].y,
+	gl_ModelViewMatrix[1].z,
+	gl_ModelViewMatrix[2].x,
+	gl_ModelViewMatrix[2].y,
+	gl_ModelViewMatrix[2].z
     );
-    vec3 fragNormal = mvm3*normal;
-    gl_Position = jwc_ModelViewProjectionMatrix * vec4(position, 1.0);
-    vec3 incident = normalize((jwc_ModelViewMatrix * vec4(position, 1.0)).xyz);
+    gl_Position = gl_ModelViewProjectionMatrix * vec4(position, 1.0);
 
+    vec3 fragNormal = mvm3*normal;
+    vec3 incident = normalize((gl_ModelViewMatrix * vec4(position, 1.0)).xyz);
     t = reflect(incident, fragNormal)*mvm3;
     tr = refract(incident, fragNormal, chromaticDispertion.x)*mvm3;
     tg = refract(incident, fragNormal, chromaticDispertion.y)*mvm3;
     tb = refract(incident, fragNormal, chromaticDispertion.z)*mvm3;
-
-    rfac = bias + scale * pow(0.5+0.5*dot(incident, fragNormal), power);
+    rfac = 0.5 + 0.5 * pow(0.5+0.5*dot(incident, fragNormal), 2.0);
 }

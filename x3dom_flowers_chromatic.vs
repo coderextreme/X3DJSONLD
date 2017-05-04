@@ -64,23 +64,21 @@ vec4 rose_position(vec3 p) {
 
 void main()
 {
-    mat4 jwc_ModelViewMatrix = modelViewMatrix;
-    mat4 jwc_ModelViewProjectionMatrix = modelViewProjectionMatrix;
     mat3 mvm3=mat3(
-	jwc_ModelViewMatrix[0].x,
-	jwc_ModelViewMatrix[0].y,
-	jwc_ModelViewMatrix[0].z,
-	jwc_ModelViewMatrix[1].x,
-	jwc_ModelViewMatrix[1].y,
-	jwc_ModelViewMatrix[1].z,
-	jwc_ModelViewMatrix[2].x,
-	jwc_ModelViewMatrix[2].y,
-	jwc_ModelViewMatrix[2].z
+	modelViewMatrix[0].x,
+	modelViewMatrix[0].y,
+	modelViewMatrix[0].z,
+	modelViewMatrix[1].x,
+	modelViewMatrix[1].y,
+	modelViewMatrix[1].z,
+	modelViewMatrix[2].x,
+	modelViewMatrix[2].y,
+	modelViewMatrix[2].z
     );
-    gl_Position = jwc_ModelViewProjectionMatrix * rose_position(position);
+    gl_Position = modelViewProjectionMatrix * rose_position(position);
 
     vec3 fragNormal = mvm3*rose_normal(position);
-    vec3 incident = normalize((jwc_ModelViewMatrix * rose_position(position)).xyz);
+    vec3 incident = normalize((modelViewMatrix * rose_position(position)).xyz);
     t = reflect(incident, fragNormal)*mvm3;
     tr = refract(incident, fragNormal, chromaticDispertion.x)*mvm3;
     tg = refract(incident, fragNormal, chromaticDispertion.y)*mvm3;

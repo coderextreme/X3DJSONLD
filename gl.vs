@@ -16,9 +16,6 @@ attribute vec3 position;
 attribute vec3 normal;
 attribute vec2 texcoord;
 
-uniform mat4 gl_ModelViewMatrix;
-uniform mat4 gl_ProjectionMatrix;
-
 uniform vec3 chromaticDispertion;
 uniform float bias;
 uniform float scale;
@@ -43,14 +40,13 @@ void main()
 	gl_ModelViewMatrix[2].y,
 	gl_ModelViewMatrix[2].z
     );
-    vec3 fragNormal = mvm3*normal;
     gl_Position = gl_ModelViewProjectionMatrix * vec4(position, 1.0);
-    vec3 incident = normalize((gl_ModelViewMatrix * vec4(position, 1.0)).xyz);
 
+    vec3 fragNormal = mvm3*normal;
+    vec3 incident = normalize((gl_ModelViewMatrix * vec4(position, 1.0)).xyz);
     t = reflect(incident, fragNormal)*mvm3;
     tr = refract(incident, fragNormal, chromaticDispertion.x)*mvm3;
     tg = refract(incident, fragNormal, chromaticDispertion.y)*mvm3;
     tb = refract(incident, fragNormal, chromaticDispertion.z)*mvm3;
-
     rfac = bias + scale * pow(0.5+0.5*dot(incident, fragNormal), power);
 }
