@@ -8,7 +8,7 @@
       <meta name='creator' content='John Carlson'></meta>
       <meta name='generator' content='manual'></meta>
       <meta name='identifier' content='http://coderextreme.net/X3DJSONLD/ball.x3d'></meta>
-      <meta name='description' content='my ugly mug'></meta>
+      <meta name='description' content='a prismatic sphere'></meta>
      </head>
      <Scene>
         <NavigationInfo type='"ANY" "EXAMINE" "FLY" "LOOKAT"'/>
