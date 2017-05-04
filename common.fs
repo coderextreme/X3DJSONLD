@@ -29,8 +29,8 @@ void main()
     reflected.g = textureCube(cube, tg).g;
     reflected.b = textureCube(cube, tb).b;
 
-    gl_FragColor = reflected * 0.5 + refracted * 0.5;
     /*
-    gl_FragColor = reflected * rfac + refracted * (1.0 - rfac);
+    gl_FragColor = reflected * 0.5 + refracted * (1.0 - 0.5);
     */
+    gl_FragColor = reflected * rfac + refracted * (1.0 - rfac);
 }
