@@ -71,12 +71,12 @@ import org.web3d.x3d.sai.Texturing3D.*;
 import org.web3d.x3d.sai.Texturing.*;
 import org.web3d.x3d.sai.Time.*;
 import org.web3d.x3d.sai.VolumeRendering.*;
-public class plainflowers {
+public class glflowers {
   public static void main(String[] args) {
     ConfigurationProperties.setShowDefaultAttributes(true);
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_nativeJava);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new plainflowers().initialize().toFileJSON("plainflowers.new.json");
+    new glflowers().initialize().toFileJSON("glflowers.new.json");
     }
     public X3DObject initialize() {
 ProtoInstanceObject ProtoInstance0 = null;
@@ -104,7 +104,7 @@ ProtoInstanceObject ProtoInstance6 = null;
         .addChild(new GroupObject()
           .addChild(new ExternProtoDeclareObject().setName("FlowerProto").setUrl(new MFStringObject(new MFString6().getArray()))
             .addField(new fieldObject().setName("vertex").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_MFSTRING).setValue("\"gl_flowers_chromatic.vs\""))
-            .addField(new fieldObject().setName("fragment").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_MFSTRING).setValue("\"pc_flowers.fs\"")))
+            .addField(new fieldObject().setName("fragment").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_MFSTRING).setValue("\"common.fs\"")))
           .addChild(new ProtoDeclareObject().setName("flower")
             .setProtoBody(new ProtoBodyObject()
               .addChild(new GroupObject()
@@ -116,9 +116,9 @@ ProtoInstanceObject ProtoInstance6 = null;
           .addChild(ProtoInstance5 = new ProtoInstanceObject().setName("flower"))
           .addChild(ProtoInstance6 = new ProtoInstanceObject().setName("flower"))))      ;
 ProtoInstance0
-                  .addFieldValue(new fieldValueObject().setName("vertex").setValue("\"cobweb_flowers_plain.vs\""));
+                  .addFieldValue(new fieldValueObject().setName("vertex").setValue("\"gl_flowers_chromatic.vs\""));
 ProtoInstance0
-                  .addFieldValue(new fieldValueObject().setName("fragment").setValue("\"plain.fs\""));
+                  .addFieldValue(new fieldValueObject().setName("fragment").setValue("\"common.fs\""));
     return X3D0;
     }
 protected class MFString0 {

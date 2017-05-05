@@ -2,13 +2,6 @@
   precision highp float;
 #endif
 
-attribute vec3 position;
-attribute vec3 normal;
-attribute vec2 texcoord;
-
-uniform mat4 gl_ModelViewMatrix;
-uniform mat4 gl_ProjectionMatrix;
-
 uniform vec3 chromaticDispertion;
 uniform float bias;
 uniform float scale;
@@ -64,6 +57,8 @@ vec4 rose_position(vec3 p) {
 
 void main()
 {
+    vec3 position = gl_Vertex.xyz;
+
     mat3 mvm3=mat3(
 	gl_ModelViewMatrix[0].x,
 	gl_ModelViewMatrix[0].y,
@@ -75,7 +70,7 @@ void main()
 	gl_ModelViewMatrix[2].y,
 	gl_ModelViewMatrix[2].z
     );
-    gl_Position = gl_ModelViewProjectionMatrix * rose_position(position);
+    gl_Position = gl_ProjectionMatrix * gl_ModelViewMatrix * rose_position(position);
 
     vec3 fragNormal = mvm3*rose_normal(position);
     vec3 incident = normalize((gl_ModelViewMatrix * rose_position(position)).xyz);

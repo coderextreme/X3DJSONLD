@@ -52,15 +52,35 @@
           },
           {
             "@name":"translated",
-            "@content":"25 March 2017"
+            "@content":"05 May 2017"
           },
           {
             "@name":"generator",
             "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
           },
           {
-            "@name":"warning",
-            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+            "@name":"reference",
+            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          },
+          {
+            "@name":"translated",
+            "@content":"5 May 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3DJSONLD: https://github.com/coderextreme/X3DJSONLD"
+          },
+          {
+            "@name":"translated",
+            "@content":"05 May 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
           }
         ]
     },
@@ -91,21 +111,21 @@
                       "@accessType":"initializeOnly",
                       "@appinfo":"clearSpanWidth: clearSpanWidth must be double of riseHeight to obtain an half circumference",
                       "@type":"SFFloat",
-                      "@value":4
+                      "@value":4.0
                     },
                     {
                       "@name":"riseHeight",
                       "@accessType":"initializeOnly",
                       "@appinfo":"riseHeight: riseHeight must be half of clearSpanWidth to obtain an half circumference",
                       "@type":"SFFloat",
-                      "@value":2
+                      "@value":2.0
                     },
                     {
                       "@name":"depth",
                       "@accessType":"initializeOnly",
                       "@appinfo":"depth",
                       "@type":"SFFloat",
-                      "@value":3
+                      "@value":3.0
                     },
                     {
                       "@name":"topAbutmentHeight",
@@ -126,7 +146,7 @@
                       "@accessType":"initializeOnly",
                       "@appinfo":"pierHeight: pierHeight=0 means no pierHeight",
                       "@type":"SFFloat",
-                      "@value":1
+                      "@value":1.0
                     },
                     {
                       "@name":"archHalf",
@@ -140,7 +160,7 @@
                       "@accessType":"initializeOnly",
                       "@appinfo":"archHalfExtensionWidth: measure in meters, use only if archHalf=true, it is the width of the etension of the abutment of the archHalf. See the reference file ArchModelingDiagrams.pdf to find further information.",
                       "@type":"SFFloat",
-                      "@value":0
+                      "@value":0.0
                     },
                     {
                       "@name":"onlyIntrados",
@@ -257,7 +277,7 @@
                     { "Script":
                       {
                         "@DEF":"ArchPrototypeScript",
-                        "@url":["./ArchPrototypeScript.js"],
+                        "@url":["ArchPrototypeScript.js"],
                         "field": [
                           {
                             "@name":"clearSpanWidth",

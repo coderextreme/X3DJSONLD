@@ -2,10 +2,10 @@
 <!-- X3D Object Model X3DObjectModel-3.3.xml-->
 <!-- Online at http://www.web3d.org/specifications/X3DObjectModel-3.3.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 3.3 of X3D -->
-<!-- Generated 2017-04-23-07:00 15:16:44.689-07:00 -->
+<!-- Generated 2017-05-04-07:00 12:19:21.105-07:00 -->
 <X3DObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                 version="3.3"
-                xsd:noNamespaceSchemaLocation="../../specifications/x3dObjectModel.xsd">
+                xsd:noNamespaceSchemaLocation="x3dObjectModel.xsd">
    <SimpleTypeEnumerations>
       <SimpleType name="accessTypeNames"
                   baseType="SFString"
@@ -4342,7 +4342,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModel" minOccurs="0" maxOccurs="unbounded"/>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -4408,7 +4408,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="appearance"/>
+            <containerFieldDefault name="appearance"/>
             <ContentModel>
                <GroupContentModel name="AppearanceChildContentModel"
                                   minOccurs="0"
@@ -4456,7 +4456,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="geometry"/>
+            <containerFieldDefault name="geometry"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -4513,7 +4513,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="geometry"/>
+            <containerFieldDefault name="geometry"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -4602,7 +4602,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="source"/>
+            <containerFieldDefault name="source"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -4705,7 +4705,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -4761,7 +4761,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="joints"/>
+            <containerFieldDefault name="joints"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <GroupContentModel name="RigidJointNodeContentModel" minOccurs="0"/>
@@ -4824,7 +4824,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModel" minOccurs="0" maxOccurs="unbounded"/>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -4914,7 +4914,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="renderStyle"/>
+            <containerFieldDefault name="renderStyle"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <GroupContentModel name="Texture2DContentModel"/>
@@ -4950,7 +4950,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -4996,7 +4996,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -5029,7 +5029,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -5059,7 +5059,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -5109,7 +5109,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="renderStyle"/>
+            <containerFieldDefault name="renderStyle"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -5147,7 +5147,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="physics"/>
+            <containerFieldDefault name="physics"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <GroupContentModel name="GeometryContentModel"/>
@@ -5185,7 +5185,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="geometry"/>
+            <containerFieldDefault name="geometry"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -5245,7 +5245,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModel" minOccurs="0" maxOccurs="unbounded"/>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -5293,7 +5293,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="Shape"/>
@@ -5357,7 +5357,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModel" minOccurs="0" maxOccurs="unbounded"/>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -5432,7 +5432,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="CADFace"/>
@@ -5490,7 +5490,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="renderStyle"/>
+            <containerFieldDefault name="renderStyle"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <GroupContentModel name="Texture3DContentModel"/>
@@ -5525,7 +5525,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="geometry"/>
+            <containerFieldDefault name="geometry"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -5563,7 +5563,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -5622,7 +5622,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="CollidableOffset"/>
@@ -5684,7 +5684,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="Shape"/>
@@ -5756,7 +5756,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModel" minOccurs="0" maxOccurs="unbounded"/>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -5845,7 +5845,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="collider"/>
+            <containerFieldDefault name="collider"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="CollidableOffset"/>
@@ -5901,7 +5901,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="CollisionCollection"/>
@@ -5955,7 +5955,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="CollidableOffset"/>
@@ -5992,7 +5992,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="color"/>
+            <containerFieldDefault name="color"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -6045,7 +6045,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -6110,7 +6110,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -6152,7 +6152,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -6187,7 +6187,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="color"/>
+            <containerFieldDefault name="color"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -6245,7 +6245,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="texture"/>
+            <containerFieldDefault name="texture"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="ImageTexture"/>
@@ -6294,7 +6294,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="shaders"/>
+            <containerFieldDefault name="shaders"/>
             <ContentModel>
                <FieldDeclaration minOccurs="0" maxOccurs="unbounded"/>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -6350,7 +6350,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="texture"/>
+            <containerFieldDefault name="texture"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="TextureProperties"/>
@@ -6392,7 +6392,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="renderStyle"/>
+            <containerFieldDefault name="renderStyle"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <GroupContentModel name="VolumeRenderStyleContentModel"/>
@@ -6444,7 +6444,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="geometry"/>
+            <containerFieldDefault name="geometry"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -6512,7 +6512,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="emitter"/>
+            <containerFieldDefault name="emitter"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -6628,7 +6628,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="contacts"/>
+            <containerFieldDefault name="contacts"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="RigidBody"/>
@@ -6672,7 +6672,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="trimmingContour"/>
+            <containerFieldDefault name="trimmingContour"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="NurbsCurve2D"/>
@@ -6707,7 +6707,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -6736,7 +6736,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="coord"/>
+            <containerFieldDefault name="coord"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -6785,7 +6785,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -6846,7 +6846,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -6875,7 +6875,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="coord"/>
+            <containerFieldDefault name="coord"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -6913,7 +6913,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -6951,7 +6951,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -7005,7 +7005,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="geometry"/>
+            <containerFieldDefault name="geometry"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -7086,7 +7086,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -7151,7 +7151,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -7204,7 +7204,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="DISEntityTypeMapping"/>
@@ -7280,7 +7280,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="mapping"/>
+            <containerFieldDefault name="mapping"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -7322,7 +7322,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="geometry"/>
+            <containerFieldDefault name="geometry"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -7436,7 +7436,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="joints"/>
+            <containerFieldDefault name="joints"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <GroupContentModel name="RigidJointNodeContentModel" minOccurs="0"/>
@@ -7471,7 +7471,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -7521,7 +7521,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="renderStyle"/>
+            <containerFieldDefault name="renderStyle"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <GroupContentModel name="Texture3DContentModel"/>
@@ -7623,7 +7623,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="geometry"/>
+            <containerFieldDefault name="geometry"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="FloatVertexAttribute"/>
@@ -7975,7 +7975,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModel" minOccurs="0" maxOccurs="unbounded"/>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -8032,7 +8032,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="emitter"/>
+            <containerFieldDefault name="emitter"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -8105,7 +8105,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="geometry"/>
+            <containerFieldDefault name="geometry"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -8151,7 +8151,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="fillProperties"/>
+            <containerFieldDefault name="fillProperties"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -8191,7 +8191,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="attrib"/>
+            <containerFieldDefault name="attrib"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -8251,7 +8251,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -8284,7 +8284,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="fogCoord"/>
+            <containerFieldDefault name="fogCoord"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -8381,7 +8381,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="fontStyle"/>
+            <containerFieldDefault name="fontStyle"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -8418,7 +8418,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="physics"/>
+            <containerFieldDefault name="physics"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -8464,7 +8464,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="texture"/>
+            <containerFieldDefault name="texture"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="TextureProperties"/>
@@ -8505,7 +8505,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="coord"/>
+            <containerFieldDefault name="coord"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="GeoOrigin"/>
@@ -8614,7 +8614,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="geometry"/>
+            <containerFieldDefault name="geometry"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <GroupContentModel name="ColorNormalTexCoordContentModel" minOccurs="0"/>
@@ -8688,7 +8688,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModel" minOccurs="0" maxOccurs="unbounded"/>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -8770,7 +8770,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <GroupContentModel name="ChildContentModel" minOccurs="0" maxOccurs="unbounded"/>
@@ -8808,7 +8808,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="GeoCoordinate"/>
@@ -8861,7 +8861,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="geoOrigin"/>
+            <containerFieldDefault name="geoOrigin"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -8910,7 +8910,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="GeoOrigin"/>
@@ -8982,7 +8982,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="GeoOrigin"/>
@@ -9046,7 +9046,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="GeoOrigin"/>
@@ -9136,7 +9136,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModel" minOccurs="0" maxOccurs="unbounded"/>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -9229,7 +9229,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="GeoOrigin"/>
@@ -9288,7 +9288,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModel" minOccurs="0" maxOccurs="unbounded"/>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -9407,7 +9407,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="displacers"/>
+            <containerFieldDefault name="displacers"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -9511,7 +9511,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <GroupContentModel name="ChildContentModel" minOccurs="0" maxOccurs="unbounded"/>
@@ -9706,7 +9706,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="HAnimJoint"/>
@@ -9889,7 +9889,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModel" minOccurs="0" maxOccurs="unbounded"/>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -10066,7 +10066,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModel" minOccurs="0" maxOccurs="unbounded"/>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -10104,7 +10104,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="texture"/>
+            <containerFieldDefault name="texture"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="TextureProperties"/>
@@ -10154,7 +10154,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="texture"/>
+            <containerFieldDefault name="texture"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="TextureProperties"/>
@@ -10209,7 +10209,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="texture"/>
+            <containerFieldDefault name="texture"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="TextureProperties"/>
@@ -10333,7 +10333,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="geometry"/>
+            <containerFieldDefault name="geometry"/>
             <ContentModel>
                <GroupContentModel name="ComposedGeometryContentModel"
                                   minOccurs="0"
@@ -10401,7 +10401,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="geometry"/>
+            <containerFieldDefault name="geometry"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <GroupContentModel name="ColorCoordinateContentModel" minOccurs="0"/>
@@ -10491,7 +10491,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="geometry"/>
+            <containerFieldDefault name="geometry"/>
             <ContentModel>
                <GroupContentModel name="ComposedGeometryContentModel"
                                   minOccurs="0"
@@ -10582,7 +10582,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="geometry"/>
+            <containerFieldDefault name="geometry"/>
             <ContentModel>
                <GroupContentModel name="ComposedGeometryContentModel"
                                   minOccurs="0"
@@ -10673,7 +10673,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="geometry"/>
+            <containerFieldDefault name="geometry"/>
             <ContentModel>
                <GroupContentModel name="ComposedGeometryContentModel"
                                   minOccurs="0"
@@ -10764,7 +10764,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="geometry"/>
+            <containerFieldDefault name="geometry"/>
             <ContentModel>
                <GroupContentModel name="ComposedGeometryContentModel"
                                   minOccurs="0"
@@ -10815,7 +10815,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -10861,7 +10861,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -10895,7 +10895,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -10964,7 +10964,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <GroupContentModel name="Texture3DContentModel" minOccurs="0"/>
@@ -11011,7 +11011,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -11062,7 +11062,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="layers"/>
+            <containerFieldDefault name="layers"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <GroupContentModel name="ChildContentModel" minOccurs="0" maxOccurs="unbounded"/>
@@ -11104,7 +11104,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="Layer"/>
@@ -11223,7 +11223,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="layout"/>
+            <containerFieldDefault name="layout"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -11283,7 +11283,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <GroupContentModel name="LayoutGroupContentModel"/>
@@ -11340,7 +11340,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="layers"/>
+            <containerFieldDefault name="layers"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <GroupContentModel name="LayoutGroupContentModel"/>
@@ -11439,7 +11439,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <GroupContentModel name="PickSensorGroupingNodeContentModel"/>
@@ -11485,7 +11485,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="lineProperties"/>
+            <containerFieldDefault name="lineProperties"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -11536,7 +11536,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="geometry"/>
+            <containerFieldDefault name="geometry"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <GroupContentModel name="ColorCoordinateContentModel" minOccurs="0"/>
@@ -11586,7 +11586,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <GroupContentModel name="LoadSensorChildContentModel"
@@ -11641,7 +11641,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -11709,7 +11709,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModel" minOccurs="0" maxOccurs="unbounded"/>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -11787,7 +11787,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="material"/>
+            <containerFieldDefault name="material"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -11821,7 +11821,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="attrib"/>
+            <containerFieldDefault name="attrib"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -11855,7 +11855,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="attrib"/>
+            <containerFieldDefault name="attrib"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -11895,7 +11895,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="metadata"/>
+            <containerFieldDefault name="metadata"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -11935,7 +11935,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="metadata"/>
+            <containerFieldDefault name="metadata"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -11975,7 +11975,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="metadata"/>
+            <containerFieldDefault name="metadata"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -12015,7 +12015,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="metadata"/>
+            <containerFieldDefault name="metadata"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -12053,7 +12053,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="metadata"/>
+            <containerFieldDefault name="metadata"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0" maxOccurs="unbounded"/>
                <NodeContentModel name="ProtoInstance" minOccurs="0" maxOccurs="unbounded"/>
@@ -12094,7 +12094,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="metadata"/>
+            <containerFieldDefault name="metadata"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -12220,7 +12220,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="joints"/>
+            <containerFieldDefault name="joints"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <GroupContentModel name="RigidJointNodeContentModel" minOccurs="0"/>
@@ -12328,7 +12328,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="texture"/>
+            <containerFieldDefault name="texture"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -12415,7 +12415,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="texture"/>
+            <containerFieldDefault name="texture"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="ImageTexture"/>
@@ -12451,7 +12451,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="texCoord"/>
+            <containerFieldDefault name="texCoord"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="TextureCoordinate"/>
@@ -12486,7 +12486,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="textureTransform"/>
+            <containerFieldDefault name="textureTransform"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="TextureTransform"/>
@@ -12583,7 +12583,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -12616,7 +12616,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="normal"/>
+            <containerFieldDefault name="normal"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -12654,7 +12654,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -12705,7 +12705,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="geometry"/>
+            <containerFieldDefault name="geometry"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="Coordinate"/>
@@ -12758,7 +12758,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -12799,7 +12799,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="Coordinate"/>
@@ -12904,7 +12904,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="geometry"/>
+            <containerFieldDefault name="geometry"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="Coordinate"/>
@@ -12951,7 +12951,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="Coordinate"/>
@@ -13009,7 +13009,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="NurbsPatchSurface"/>
@@ -13073,7 +13073,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="Coordinate"/>
@@ -13122,7 +13122,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="geometry"/>
+            <containerFieldDefault name="geometry"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="ContourPolyline2D"/>
@@ -13172,7 +13172,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="geometry"/>
+            <containerFieldDefault name="geometry"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="ContourPolyline2D"/>
@@ -13230,7 +13230,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="texCoord"/>
+            <containerFieldDefault name="texCoord"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -13344,7 +13344,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="geometry"/>
+            <containerFieldDefault name="geometry"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="Contour2D"/>
@@ -13391,7 +13391,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="renderStyle"/>
+            <containerFieldDefault name="renderStyle"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <GroupContentModel name="TextureContentModel"/>
@@ -13442,7 +13442,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -13503,7 +13503,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -13541,7 +13541,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -13616,7 +13616,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -13661,7 +13661,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="shaders"/>
+            <containerFieldDefault name="shaders"/>
             <ContentModel>
                <FieldDeclaration minOccurs="0" maxOccurs="unbounded"/>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -13790,7 +13790,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <GroupContentModel name="ShapeChildContentModel" minOccurs="0"/>
@@ -13877,7 +13877,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModel" minOccurs="0" maxOccurs="unbounded"/>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -13931,7 +13931,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="texture"/>
+            <containerFieldDefault name="texture"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="TextureProperties"/>
@@ -13986,7 +13986,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="texture"/>
+            <containerFieldDefault name="texture"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="TextureProperties"/>
@@ -14059,7 +14059,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -14119,7 +14119,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="emitter"/>
+            <containerFieldDefault name="emitter"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -14196,7 +14196,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -14290,7 +14290,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <GroupContentModel name="PickSensorGroupingNodeContentModel"/>
@@ -14341,7 +14341,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="geometry"/>
+            <containerFieldDefault name="geometry"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <GroupContentModel name="ColorCoordinateContentModel" minOccurs="0"/>
@@ -14371,7 +14371,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="geometry"/>
+            <containerFieldDefault name="geometry"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -14440,7 +14440,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="emitter"/>
+            <containerFieldDefault name="emitter"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="Coordinate"/>
@@ -14472,7 +14472,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="geometry"/>
+            <containerFieldDefault name="geometry"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -14521,7 +14521,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -14570,7 +14570,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -14631,7 +14631,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -14692,7 +14692,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -14730,7 +14730,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -14768,7 +14768,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -14862,7 +14862,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <GroupContentModel name="PickSensorGroupingNodeContentModel"/>
@@ -14924,7 +14924,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="shaders"/>
+            <containerFieldDefault name="shaders"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="ShaderProgram"/>
@@ -14972,7 +14972,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="renderStyle"/>
+            <containerFieldDefault name="renderStyle"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -15010,7 +15010,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="fieldValue" minOccurs="0" maxOccurs="unbounded"/>
@@ -15071,7 +15071,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -15155,7 +15155,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="geometry"/>
+            <containerFieldDefault name="geometry"/>
             <ContentModel>
                <GroupContentModel name="ComposedGeometryContentModel"
                                   minOccurs="0"
@@ -15294,7 +15294,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -15331,7 +15331,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="geometry"/>
+            <containerFieldDefault name="geometry"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -15443,11 +15443,11 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="bodies">
+            <containerFieldDefault name="bodies">
                <enumeration value="body1"/>
                <enumeration value="body2"/>
                <enumeration value="bodies"/>
-            </containerField>
+            </containerFieldDefault>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <GroupContentModel name="RigidBodyContentModel" minOccurs="0"/>
@@ -15541,7 +15541,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <GroupContentModel name="RigidBodyCollectionContentModel" minOccurs="0"/>
@@ -15591,7 +15591,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -15652,7 +15652,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -15690,7 +15690,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -15787,7 +15787,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="fontStyle"/>
+            <containerFieldDefault name="fontStyle"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -15845,7 +15845,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModel" minOccurs="0" maxOccurs="unbounded"/>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -15888,7 +15888,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <FieldDeclaration minOccurs="0" maxOccurs="unbounded"/>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -15950,7 +15950,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <GroupContentModel name="Texture3DContentModel" minOccurs="0"/>
@@ -16014,7 +16014,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="renderStyle"/>
+            <containerFieldDefault name="renderStyle"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <GroupContentModel name="Texture3DContentModel"/>
@@ -16058,7 +16058,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="parts"/>
+            <containerFieldDefault name="parts"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <SourceText/>
@@ -16101,7 +16101,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="programs"/>
+            <containerFieldDefault name="programs"/>
             <ContentModel>
                <FieldDeclaration minOccurs="0" maxOccurs="unbounded"/>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -16154,7 +16154,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <GroupContentModel name="ShapeChildContentModel" minOccurs="0"/>
@@ -16288,7 +16288,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -16343,7 +16343,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="renderStyle"/>
+            <containerFieldDefault name="renderStyle"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <GroupContentModel name="Texture3DContentModel"/>
@@ -16424,7 +16424,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="joints"/>
+            <containerFieldDefault name="joints"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <GroupContentModel name="RigidJointNodeContentModel" minOccurs="0"/>
@@ -16502,7 +16502,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="joints"/>
+            <containerFieldDefault name="joints"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <GroupContentModel name="RigidJointNodeContentModel" minOccurs="0"/>
@@ -16582,7 +16582,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <GroupContentModel name="SoundChildContentModel" minOccurs="0"/>
@@ -16620,7 +16620,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="geometry"/>
+            <containerFieldDefault name="geometry"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -16679,7 +16679,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -16726,7 +16726,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -16773,7 +16773,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -16820,7 +16820,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -16915,7 +16915,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -16957,7 +16957,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -17000,7 +17000,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <GroupContentModel name="ChildContentModel" minOccurs="0" maxOccurs="unbounded"/>
@@ -17044,7 +17044,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -17107,7 +17107,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="emitter"/>
+            <containerFieldDefault name="emitter"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <GroupContentModel name="GeometryContentModel"/>
@@ -17172,7 +17172,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModel" minOccurs="0" maxOccurs="unbounded"/>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -17218,7 +17218,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -17275,7 +17275,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -17325,7 +17325,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="geometry"/>
+            <containerFieldDefault name="geometry"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <GroupContentModel name="TextChildContentModel"/>
@@ -17435,7 +17435,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <GroupContentModel name="TextureBackgroundChildContentModel"
@@ -17467,7 +17467,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="texCoord"/>
+            <containerFieldDefault name="texCoord"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -17496,7 +17496,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="texCoord"/>
+            <containerFieldDefault name="texCoord"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -17525,7 +17525,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="texCoord"/>
+            <containerFieldDefault name="texCoord"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -17571,7 +17571,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="texCoord"/>
+            <containerFieldDefault name="texCoord"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -17696,7 +17696,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="textureProperties"/>
+            <containerFieldDefault name="textureProperties"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -17740,7 +17740,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="textureTransform"/>
+            <containerFieldDefault name="textureTransform"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -17784,7 +17784,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="textureTransform"/>
+            <containerFieldDefault name="textureTransform"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -17816,7 +17816,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="textureTransform"/>
+            <containerFieldDefault name="textureTransform"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -17900,7 +17900,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -17930,7 +17930,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -17980,7 +17980,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="renderStyle"/>
+            <containerFieldDefault name="renderStyle"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <GroupContentModel name="Texture3DContentModel"/>
@@ -18034,7 +18034,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -18112,7 +18112,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModel" minOccurs="0" maxOccurs="unbounded"/>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -18171,7 +18171,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="Anchor"/>
@@ -18395,7 +18395,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -18482,7 +18482,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="geometry"/>
+            <containerFieldDefault name="geometry"/>
             <ContentModel>
                <GroupContentModel name="ComposedGeometryContentModel"
                                   minOccurs="0"
@@ -18568,7 +18568,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="geometry"/>
+            <containerFieldDefault name="geometry"/>
             <ContentModel>
                <GroupContentModel name="ComposedGeometryContentModel"
                                   minOccurs="0"
@@ -18604,7 +18604,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="geometry"/>
+            <containerFieldDefault name="geometry"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -18691,7 +18691,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="geometry"/>
+            <containerFieldDefault name="geometry"/>
             <ContentModel>
                <GroupContentModel name="ComposedGeometryContentModel"
                                   minOccurs="0"
@@ -18804,7 +18804,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="material"/>
+            <containerFieldDefault name="material"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -18894,7 +18894,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="joints"/>
+            <containerFieldDefault name="joints"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <GroupContentModel name="RigidJointNodeContentModel" minOccurs="0"/>
@@ -18974,7 +18974,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -19023,7 +19023,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="Viewpoint"/>
@@ -19092,7 +19092,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="viewport"/>
+            <containerFieldDefault name="viewport"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModel" minOccurs="0" maxOccurs="unbounded"/>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -19142,7 +19142,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -19197,7 +19197,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <GroupContentModel name="VolumeRenderStyleContentModel"/>
@@ -19273,7 +19273,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="emitter"/>
+            <containerFieldDefault name="emitter"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="Coordinate"/>
@@ -19369,7 +19369,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <GroupContentModel name="GeometryContentModel"/>
@@ -19426,7 +19426,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="physics"/>
+            <containerFieldDefault name="physics"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -19457,7 +19457,7 @@
                    accessType="inputOutput"
                    name="class"
                    inheritedFrom="globalAttributes"/>
-            <containerField name="children"/>
+            <containerFieldDefault name="children"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -19778,9 +19778,9 @@
                    name="children"
                    acceptableNodeTypes="X3DNode"/>
             <ContentModel>
-               <StatementContentModel name="LayerSet" minOccurs="0"/>
                <GroupContentModel name="SceneGraphFragmentWithPrototypeDeclarationsContentModel"
                                   maxOccurs="unbounded"/>
+               <StatementContentModel name="LayerSet" minOccurs="0"/>
             </ContentModel>
          </InterfaceDefinition>
       </Statement>
@@ -19854,9 +19854,9 @@
                    name="children"
                    acceptableNodeTypes="X3DChildNode|X3DMetadataObject|LayerSet"/>
             <ContentModel>
-               <StatementContentModel name="LayerSet" minOccurs="0"/>
                <GroupContentModel name="ChildContentModelCore"/>
                <GroupContentModel name="GroupingNodeChildContentModel"/>
+               <StatementContentModel name="LayerSet" minOccurs="0"/>
             </ContentModel>
          </InterfaceDefinition>
       </Statement>

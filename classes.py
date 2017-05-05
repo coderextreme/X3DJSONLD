@@ -19,13 +19,13 @@ class ClassPrinter:
         self.printed = False
 
 
-    def print(self):
+    def printClass(self):
         str = ""
         if self.printed:
             return str
         for parent in self.parents:
             try:
-                str += classes[parent].print()
+                str += classes[parent].printClass()
             except:
                 pass
         try:
@@ -71,7 +71,7 @@ for ft in fts:
     classes[ft['type']] = ClassPrinter(ft, "Object")
 
 for k,v in classes.items():
-    code += v.print()
+    code += v.printClass()
 
 f = open("X3Dautoclass.js", "w")
 f.write(code)

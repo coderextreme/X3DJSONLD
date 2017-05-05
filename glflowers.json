@@ -68,7 +68,7 @@
                         "@name":"vertex",
                         "@accessType":"inputOutput",
                         "@type":"MFString",
-                        "@value":["cobweb_flowers_chromatic.vs"]
+                        "@value":["gl_flowers_chromatic.vs"]
                       },
                       {
                         "@name":"fragment",
@@ -93,7 +93,7 @@
                                     "fieldValue": [
                                       {
                                         "@name":"vertex",
-                                        "@value":["cobweb_flowers_chromatic.vs"]
+                                        "@value":["gl_flowers_chromatic.vs"]
                                       },
                                       {
                                         "@name":"fragment",
