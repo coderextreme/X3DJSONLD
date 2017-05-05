@@ -20,15 +20,15 @@
         />
 	<Group>
 		<ExternProtoDeclare name="FlowerProto" url='"flowerproto.x3d#FlowerProto"'>
-			<field accessType='inputOutput' name='vertex' type='MFString' value='"gl_flowers_chromatic.vs"'/>
-			<field accessType='inputOutput' name='fragment' type='MFString' value='"pc_flowers.fs"'/>
+			<field accessType='inputOutput' name='vertex' type='MFString' value='"cobweb_flowers_chromatic.vs"'/>
+			<field accessType='inputOutput' name='fragment' type='MFString' value='"common.fs"'/>
 		</ExternProtoDeclare>
 		<ProtoDeclare name="flower">
 			<ProtoBody>
 				<Group>
 					<ProtoInstance name="FlowerProto">
 						<fieldValue name="vertex" value='"cobweb_flowers_chromatic.vs"'></fieldValue>
-						<fieldValue name="fragment" value='"pc_flowers.fs"'></fieldValue>
+						<fieldValue name="fragment" value='"common.fs"'></fieldValue>
 					</ProtoInstance>
 				</Group>
 			</ProtoBody>
