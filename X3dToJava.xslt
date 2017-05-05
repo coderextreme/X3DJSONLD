@@ -711,9 +711,9 @@ POSSIBILITY OF SUCH DAMAGE.
 			<xsl:text>"&lt;![CDATA[" + "\n" +</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 			<xsl:call-template name="stringify-text-lines">
-			  <xsl:with-param name="inputString" select="text()"/><!-- TODO restrict to immediate child? -->
+			  <xsl:with-param name="inputString" select="text()"/><!-- TODO restrict to immediate child? might be an issue if field has contained node content and further CDATA text-->
 			</xsl:call-template>
-			<xsl:text> + "\n" + "]]&gt;"</xsl:text>
+			<xsl:text> + "]]&gt;"</xsl:text><!-- end of CDATA block -->
 			<xsl:text>&#10;</xsl:text>
 			<xsl:text>)</xsl:text>
 		</xsl:if>
@@ -2331,9 +2331,9 @@ POSSIBILITY OF SUCH DAMAGE.
             </xsl:when>
             <xsl:otherwise>
                 <xsl:value-of select="substring-before($inputString,'&#10;')"/>
-                <xsl:text>"</xsl:text>
 				<!-- now handle remainder -->
 				<xsl:if test="(string-length(normalize-space(substring-after($inputString,'&#10;'))) > 0)">
+					<xsl:text>"</xsl:text>
 					<xsl:text>,</xsl:text><!-- string append operator -->
 					<xsl:text>&#10;</xsl:text>
 					<xsl:text>"</xsl:text>
@@ -3706,12 +3706,15 @@ POSSIBILITY OF SUCH DAMAGE.
 					<xsl:text>"</xsl:text>
 					<xsl:text> + "</xsl:text>
 				</xsl:if>
-				<xsl:text>\n" + </xsl:text>
-				<xsl:text>&#10;</xsl:text>
-				<!-- tail recursion -->
-				<xsl:call-template name="stringify-text-lines">
-				  <xsl:with-param name="inputString" select="substring-after($inputString,'&#10;')"/>
-				</xsl:call-template>
+				<xsl:text>\n"</xsl:text>
+				<xsl:if test="(string-length(normalize-space(substring-after($inputString,'&#10;'))) > 0)">
+					<xsl:text> + </xsl:text>
+					<xsl:text>&#10;</xsl:text>
+					<!-- tail recursion -->
+					<xsl:call-template name="stringify-text-lines">
+					  <xsl:with-param name="inputString" select="substring-after($inputString,'&#10;')"/>
+					</xsl:call-template>
+				</xsl:if>
 			</xsl:when>
 			<xsl:otherwise>
 				<xsl:if test="not($continuation = 'true')">

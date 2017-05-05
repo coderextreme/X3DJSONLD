@@ -93,18 +93,18 @@ ProtoInstanceObject ProtoInstance6 = null;
         .addMeta(new metaObject().setName("description").setContent("5 or more prismatic flowers"))
         .addMeta(new metaObject().setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new metaObject().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/sphereflowers.x3d"))
-        .addMeta(new metaObject().setName("translated").setContent("02 May 2017"))
+        .addMeta(new metaObject().setName("translated").setContent("05 May 2017"))
         .addMeta(new metaObject().setName("generator").setContent("X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"))
         .addMeta(new metaObject().setName("reference").setContent("X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"))
-        .addMeta(new metaObject().setName("translated").setContent("2 May 2017"))
+        .addMeta(new metaObject().setName("translated").setContent("5 May 2017"))
         .addMeta(new metaObject().setName("generator").setContent("X3DJSONLD: https://github.com/coderextreme/X3DJSONLD")))
       .setScene(new SceneObject()
         .addChild(new NavigationInfoObject())
         .addChild(new BackgroundObject().setBackUrl(new MFStringObject(new MFString0().getArray())).setBottomUrl(new MFStringObject(new MFString1().getArray())).setFrontUrl(new MFStringObject(new MFString2().getArray())).setLeftUrl(new MFStringObject(new MFString3().getArray())).setRightUrl(new MFStringObject(new MFString4().getArray())).setTopUrl(new MFStringObject(new MFString5().getArray())))
         .addChild(new GroupObject()
           .addChild(new ExternProtoDeclareObject().setName("FlowerProto").setUrl(new MFStringObject(new MFString6().getArray()))
-            .addField(new fieldObject().setName("vertex").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_MFSTRING).setValue("\"gl_flowers_chromatic.vs\""))
-            .addField(new fieldObject().setName("fragment").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_MFSTRING).setValue("\"pc_flowers.fs\"")))
+            .addField(new fieldObject().setName("vertex").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_MFSTRING).setValue("\"cobweb_flowers_chromatic.vs\""))
+            .addField(new fieldObject().setName("fragment").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_MFSTRING).setValue("\"common.fs\"")))
           .addChild(new ProtoDeclareObject().setName("flower")
             .setProtoBody(new ProtoBodyObject()
               .addChild(new GroupObject()
@@ -118,7 +118,7 @@ ProtoInstanceObject ProtoInstance6 = null;
 ProtoInstance0
                   .addFieldValue(new fieldValueObject().setName("vertex").setValue("\"cobweb_flowers_chromatic.vs\""));
 ProtoInstance0
-                  .addFieldValue(new fieldValueObject().setName("fragment").setValue("\"pc_flowers.fs\""));
+                  .addFieldValue(new fieldValueObject().setName("fragment").setValue("\"common.fs\""));
     return X3D0;
     }
 protected class MFString0 {

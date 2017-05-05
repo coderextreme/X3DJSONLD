@@ -82,6 +82,10 @@ public class freewrlflowers {
 ProtoInstanceObject ProtoInstance0 = null;
 ProtoInstanceObject ProtoInstance1 = null;
 ProtoInstanceObject ProtoInstance2 = null;
+ProtoInstanceObject ProtoInstance3 = null;
+ProtoInstanceObject ProtoInstance4 = null;
+ProtoInstanceObject ProtoInstance5 = null;
+ProtoInstanceObject ProtoInstance6 = null;
       X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
       .setHead(new headObject()
         .addMeta(new metaObject().setName("title").setContent("sphereflowers.x3d"))
@@ -89,177 +93,32 @@ ProtoInstanceObject ProtoInstance2 = null;
         .addMeta(new metaObject().setName("description").setContent("5 or more prismatic flowers"))
         .addMeta(new metaObject().setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new metaObject().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/sphereflowers.x3d"))
-        .addMeta(new metaObject().setName("translated").setContent("02 May 2017"))
+        .addMeta(new metaObject().setName("translated").setContent("05 May 2017"))
         .addMeta(new metaObject().setName("generator").setContent("X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"))
         .addMeta(new metaObject().setName("reference").setContent("X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"))
-        .addMeta(new metaObject().setName("translated").setContent("2 May 2017"))
+        .addMeta(new metaObject().setName("translated").setContent("5 May 2017"))
         .addMeta(new metaObject().setName("generator").setContent("X3DJSONLD: https://github.com/coderextreme/X3DJSONLD")))
       .setScene(new SceneObject()
         .addChild(new NavigationInfoObject())
         .addChild(new BackgroundObject().setBackUrl(new MFStringObject(new MFString0().getArray())).setBottomUrl(new MFStringObject(new MFString1().getArray())).setFrontUrl(new MFStringObject(new MFString2().getArray())).setLeftUrl(new MFStringObject(new MFString3().getArray())).setRightUrl(new MFStringObject(new MFString4().getArray())).setTopUrl(new MFStringObject(new MFString5().getArray())))
-        .addChild(new ProtoDeclareObject().setName("flower")
-          .setProtoBody(new ProtoBodyObject()
-            .addChild(new TransformObject().setDEF("transform")
-              .addChild(new ShapeObject()
-                .setAppearance(new AppearanceObject()
-                  .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0.7f,0.7f,0.7f}).setSpecularColor(new float[] {0.5f,0.5f,0.5f}))
-                  .setTexture(new ComposedCubeMapTextureObject().setDEF("texture")
-                    .setBack(new ImageTextureObject().setUrl(new MFStringObject(new MFString6().getArray())))
-                    .setBottom(new ImageTextureObject().setUrl(new MFStringObject(new MFString7().getArray())))
-                    .setFront(new ImageTextureObject().setUrl(new MFStringObject(new MFString8().getArray())))
-                    .setLeft(new ImageTextureObject().setUrl(new MFStringObject(new MFString9().getArray())))
-                    .setRight(new ImageTextureObject().setUrl(new MFStringObject(new MFString10().getArray())))
-                    .setTop(new ImageTextureObject().setUrl(new MFStringObject(new MFString11().getArray()))))
-                  .addShaders(new ComposedShaderObject().setDEF("shader").setLanguage("GLSL")
-                    .addField(new fieldObject().setName("fw_textureCoordGenType").setType(fieldObject.TYPE_SFINT32).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
-                    .addField(new fieldObject().setName("chromaticDispertion").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.98 1 1.033"))
-                    .addField(new fieldObject().setName("bias").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("10"))
-                    .addField(new fieldObject().setName("scale").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("10"))
-                    .addField(new fieldObject().setName("power").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("2"))
-                    .addField(new fieldObject().setName("a").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
-                    .addField(new fieldObject().setName("b").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
-                    .addField(new fieldObject().setName("c").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("3"))
-                    .addField(new fieldObject().setName("d").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("3"))
-                    .addField(new fieldObject().setName("tdelta").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
-                    .addField(new fieldObject().setName("pdelta").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
-                    .addParts(new ShaderPartObject().setUrl(new MFStringObject(new MFString12().getArray())).setType("VERTEX"))
-                    .addParts(new ShaderPartObject().setUrl(new MFStringObject(new MFString13().getArray())).setType("FRAGMENT"))))
-                .setGeometry(new SphereObject())))
-            .addChild(new ScriptObject().setDEF("Bounce")
-              .addField(new fieldObject().setName("translation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFVEC3F).setValue("0 0 0"))
-              .addField(new fieldObject().setName("velocity").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFVEC3F).setValue("0 0 0"))
-              .addField(new fieldObject().setName("set_fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setType(fieldObject.TYPE_SFTIME))
-              .addField(new fieldObject().setName("coordinates").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_MFVEC3F))
-              .addField(new fieldObject().setName("coordIndexes").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_MFINT32))
-              .addField(new fieldObject().setName("a").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
-              .addField(new fieldObject().setName("b").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
-              .addField(new fieldObject().setName("c").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("3"))
-              .addField(new fieldObject().setName("d").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("3"))
-              .addField(new fieldObject().setName("tdelta").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
-              .addField(new fieldObject().setName("pdelta").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
-              .setSourceCode("ecmascript:\n"+
-"			function set_translation(value) {\n"+
-"				translation = value;\n"+
-"			}\n"+
-"			function translation_changed() {\n"+
-"				return translation;\n"+
-"			}\n"+
-"			function initialize() {\n"+
-"			    translation = new SFVec3f(0, 0, 0);\n"+
-"			    velocity = new SFVec3f(\n"+
-"			    	Math.random() - 0.5,\n"+
-"				Math.random() - 0.5,\n"+
-"				Math.random() - 0.5);\n"+
-"			}\n"+
-"			function set_fraction() {\n"+
-"			    translation = new SFVec3f(\n"+
-"			    	translation[0] + velocity[0],\n"+
-"				translation[1] + velocity[1],\n"+
-"				translation[2] + velocity[2]);\n"+
-"			    for (var j = 0; j <= 2; j++) {\n"+
-"				    if (Math.abs(translation[j]) > 10) {\n"+
-"					initialize();\n"+
-"				    } else {\n"+
-"					velocity[0] += Math.random() * 0.2 - 0.1;\n"+
-"					velocity[1] += Math.random() * 0.2 - 0.1;\n"+
-"					velocity[2] += Math.random() * 0.2 - 0.1;\n"+
-"				    }\n"+
-"			    }\n"+
-"			    animate_flowers();\n"+
-"			}\n"+
-"\n"+
-"			function initialize() {\n"+
-"			     resolution = 100;\n"+
-"			     updateCoordinates(resolution);\n"+
-"			     if (typeof coordIndexes == 'undefined' || coordIndexes == null) {\n"+
-"				coordIndexes = new MFInt32();\n"+
-"			     }\n"+
-"			     ci = 0;\n"+
-"			     for ( i = 0; i < resolution-1; i++) {\n"+
-"				for ( j = 0; j < resolution-1; j++) {\n"+
-"				     coordIndexes[ci] = i*resolution+j;\n"+
-"				     coordIndexes[ci+1] = i*resolution+j+1;\n"+
-"				     coordIndexes[ci+2] = (i+1)*resolution+j+1;\n"+
-"				     coordIndexes[ci+3] = (i+1)*resolution+j;\n"+
-"				     coordIndexes[ci+4] = -1;\n"+
-"				     ci += 5;\n"+
-"				}\n"+
-"			    }\n"+
-"			}\n"+
-"\n"+
-"			function updateCoordinates(resolution) {\n"+
-"			     theta = 0.0;\n"+
-"			     phi = 0.0;\n"+
-"			     delta = (2 * 3.141592653) / (resolution-1);\n"+
-"			     if (typeof coordinates == 'undefined' || coordinates == null) {\n"+
-"				coordinates = new MFVec3f();\n"+
-"			     }\n"+
-"			     for ( i = 0; i < resolution; i++) {\n"+
-"				for ( j = 0; j < resolution; j++) {\n"+
-"					rho = a + b * Math.cos(c * theta) * Math.cos(d * phi);\n"+
-"					coordinates[i*resolution+j] = new SFVec3f();\n"+
-"					coordinates[i*resolution+j][0] = rho * Math.cos(phi) * Math.cos(theta);\n"+
-"					coordinates[i*resolution+j][1] = rho * Math.cos(phi) * Math.sin(theta);\n"+
-"					coordinates[i*resolution+j][2] = rho * Math.sin(phi);\n"+
-"					theta += delta;\n"+
-"				}\n"+
-"				phi += delta;\n"+
-"			     }\n"+
-"			}\n"+
-"\n"+
-"			function animate_flowers(fraction, eventTime) {\n"+
-"				choice = Math.floor(Math.random() * 4);\n"+
-"				switch (choice) {\n"+
-"				case 0:\n"+
-"					a += Math.random() * 0.2 - 0.1;\n"+
-"					break;\n"+
-"				case 1:\n"+
-"					b += Math.random() * 0.2 - 0.1;\n"+
-"					break;\n"+
-"				case 2:\n"+
-"					c += Math.random() * 2 - 1;\n"+
-"					break;\n"+
-"				case 3:\n"+
-"					d += Math.random() * 2 - 1;\n"+
-"					break;\n"+
-"				}\n"+
-"				tdelta = tdelta + 0.5;\n"+
-"				pdelta = pdelta + 0.5;\n"+
-"				if (a > 1) {\n"+
-"					a =  0.5;\n"+
-"				}\n"+
-"				if (b > 1) {\n"+
-"					b =  0.5;\n"+
-"				}\n"+
-"				if (c < 1) {\n"+
-"					c =  4;\n"+
-"				}\n"+
-"				if (d < 1) {\n"+
-"					d =  4;\n"+
-"				}\n"+
-"				if (c > 10) {\n"+
-"					c = 4;\n"+
-"				}\n"+
-"				if (d > 10) {\n"+
-"					d = 4;\n"+
-"				}\n"+
-"				resolution = 100;\n"+
-"				updateCoordinates(resolution);\n"+
-"			}\n"+
-""))
-            .addChild(new TimeSensorObject().setDEF("TourTime").setCycleInterval(0.15d).setLoop(true))
-            .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("cycleTime").setToNode("Bounce").setToField("set_fraction"))
-            .addChild(new ROUTEObject().setFromNode("Bounce").setFromField("translation_changed").setToNode("transform").setToField("set_translation"))
-            .addChild(new ROUTEObject().setFromNode("Bounce").setFromField("a").setToNode("shader").setToField("a"))
-            .addChild(new ROUTEObject().setFromNode("Bounce").setFromField("b").setToNode("shader").setToField("b"))
-            .addChild(new ROUTEObject().setFromNode("Bounce").setFromField("c").setToNode("shader").setToField("c"))
-            .addChild(new ROUTEObject().setFromNode("Bounce").setFromField("d").setToNode("shader").setToField("d"))
-            .addChild(new ROUTEObject().setFromNode("Bounce").setFromField("tdelta").setToNode("shader").setToField("tdelta"))
-            .addChild(new ROUTEObject().setFromNode("Bounce").setFromField("pdelta").setToNode("shader").setToField("pdelta"))))
-        .addChild(new TransformObject()
-          .addChild(ProtoInstance0 = new ProtoInstanceObject().setName("flower"))
+        .addChild(new GroupObject()
+          .addChild(new ExternProtoDeclareObject().setName("FlowerProto").setUrl(new MFStringObject(new MFString6().getArray()))
+            .addField(new fieldObject().setName("vertex").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_MFSTRING).setValue("\"freewrl_flowers_chromatic.vs\""))
+            .addField(new fieldObject().setName("fragment").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_MFSTRING).setValue("\"freewrl.fs\"")))
+          .addChild(new ProtoDeclareObject().setName("flower")
+            .setProtoBody(new ProtoBodyObject()
+              .addChild(new GroupObject()
+                .addChild(ProtoInstance0 = new ProtoInstanceObject().setName("FlowerProto")))))
           .addChild(ProtoInstance1 = new ProtoInstanceObject().setName("flower"))
-          .addChild(ProtoInstance2 = new ProtoInstanceObject().setName("flower"))))      ;
+          .addChild(ProtoInstance2 = new ProtoInstanceObject().setName("flower"))
+          .addChild(ProtoInstance3 = new ProtoInstanceObject().setName("flower"))
+          .addChild(ProtoInstance4 = new ProtoInstanceObject().setName("flower"))
+          .addChild(ProtoInstance5 = new ProtoInstanceObject().setName("flower"))
+          .addChild(ProtoInstance6 = new ProtoInstanceObject().setName("flower"))))      ;
+ProtoInstance0
+                  .addFieldValue(new fieldValueObject().setName("vertex").setValue("\"freewrl_flowers_chromatic.vs\""));
+ProtoInstance0
+                  .addFieldValue(new fieldValueObject().setName("fragment").setValue("\"freewrl.fs\""));
     return X3D0;
     }
 protected class MFString0 {
@@ -294,42 +153,7 @@ protected class MFString5 {
 }
 protected class MFString6 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"cubemap/all_probes/stpeters_cross/stpeters_back.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_back.png"});
-  }
-}
-protected class MFString7 {
-  protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"cubemap/all_probes/stpeters_cross/stpeters_bottom.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_bottom.png"});
-  }
-}
-protected class MFString8 {
-  protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"cubemap/all_probes/stpeters_cross/stpeters_front.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_front.png"});
-  }
-}
-protected class MFString9 {
-  protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"cubemap/all_probes/stpeters_cross/stpeters_left.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_left.png"});
-  }
-}
-protected class MFString10 {
-  protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"cubemap/all_probes/stpeters_cross/stpeters_right.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_right.png"});
-  }
-}
-protected class MFString11 {
-  protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"cubemap/all_probes/stpeters_cross/stpeters_top.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_top.png"});
-  }
-}
-protected class MFString12 {
-  protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"freewrl_flowers_chromatic.vs","http://coderextreme.net/X3DJSONLD/freewrl_flowers_chromatic.vs"});
-  }
-}
-protected class MFString13 {
-  protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"freewrl_bubbles.fs","http://coderextreme.net/X3DJSONLD/freewrl_bubbles.fs"});
+    return new MFStringObject(new java.lang.String[] {"flowerproto.x3d"});
   }
 }
 }

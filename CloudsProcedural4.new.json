@@ -44,7 +44,7 @@
           },
           {
             "@name":"translated",
-            "@content":"02 May 2017"
+            "@content":"05 May 2017"
           },
           {
             "@name":"generator",
@@ -56,7 +56,7 @@
           },
           {
             "@name":"translated",
-            "@content":"2 May 2017"
+            "@content":"5 May 2017"
           },
           {
             "@name":"generator",
@@ -64,7 +64,7 @@
           },
           {
             "@name":"translated",
-            "@content":"02 May 2017"
+            "@content":"05 May 2017"
           },
           {
             "@name":"generator",
@@ -129,7 +129,7 @@
                     "-children":[
                       { "Inline":
                         {
-                          "@url":["MontereyBayLargeMesh.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.x3d","MontereyBayLargeMesh.json","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.json"]
+                          "@url":["MontereyBayLargeMesh.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.x3d","MontereyBayLargeMesh.wrl","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.wrl"]
                         }
                       }
                     ]
@@ -178,7 +178,7 @@
                     "-children":[
                       { "Inline":
                         {
-                          "@url":["Lighthouse.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.x3d","Lighthouse.json","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.json"]
+                          "@url":["Lighthouse.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.x3d","Lighthouse.wrl","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.wrl"]
                         }
                       }
                     ]

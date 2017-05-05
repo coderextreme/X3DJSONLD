@@ -13,6 +13,6 @@ convertJSON({
 	// './JSONSerializer.js' : ".x3d2json",
 	// './AframeSerializer.js' : ".aframe",
 	// './Three2Serializer.js' : ".three.js",
-	// './PythonSerializer.js': ".py",
+	'./PythonSerializer.js': ".py",
 	'./JavaScriptSerializer.js' : ".sail.js"
 });
