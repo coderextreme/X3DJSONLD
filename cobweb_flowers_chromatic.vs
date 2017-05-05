@@ -2,12 +2,10 @@
   precision highp float;
 #endif
 
-attribute vec3 position;
-attribute vec3 normal;
-attribute vec2 texcoord;
-
 uniform mat4 x3d_ModelViewMatrix;
 uniform mat4 x3d_ProjectionMatrix;
+attribute vec3 x3d_Normal;
+attribute vec4 x3d_Vertex;
 
 uniform vec3 chromaticDispertion;
 uniform float bias;
@@ -64,23 +62,23 @@ vec4 rose_position(vec3 p) {
 
 void main()
 {
-    mat4 jwc_ModelViewMatrix = x3d_ModelViewMatrix;
-    mat4 jwc_ModelViewProjectionMatrix = x3d_ProjectionMatrix * x3d_ModelViewMatrix;
+    vec3 position = x3d_Vertex.xyz;
+
     mat3 mvm3=mat3(
-	jwc_ModelViewMatrix[0].x,
-	jwc_ModelViewMatrix[0].y,
-	jwc_ModelViewMatrix[0].z,
-	jwc_ModelViewMatrix[1].x,
-	jwc_ModelViewMatrix[1].y,
-	jwc_ModelViewMatrix[1].z,
-	jwc_ModelViewMatrix[2].x,
-	jwc_ModelViewMatrix[2].y,
-	jwc_ModelViewMatrix[2].z
+	x3d_ModelViewMatrix[0].x,
+	x3d_ModelViewMatrix[0].y,
+	x3d_ModelViewMatrix[0].z,
+	x3d_ModelViewMatrix[1].x,
+	x3d_ModelViewMatrix[1].y,
+	x3d_ModelViewMatrix[1].z,
+	x3d_ModelViewMatrix[2].x,
+	x3d_ModelViewMatrix[2].y,
+	x3d_ModelViewMatrix[2].z
     );
-    gl_Position = jwc_ModelViewProjectionMatrix * rose_position(position);
+    gl_Position = x3d_ProjectionMatrix * x3d_ModelViewMatrix * rose_position(position);
 
     vec3 fragNormal = mvm3*rose_normal(position);
-    vec3 incident = normalize((jwc_ModelViewMatrix * rose_position(position)).xyz);
+    vec3 incident = normalize((x3d_ModelViewMatrix * rose_position(position)).xyz);
     t = reflect(incident, fragNormal)*mvm3;
     tr = refract(incident, fragNormal, chromaticDispertion.x)*mvm3;
     tg = refract(incident, fragNormal, chromaticDispertion.y)*mvm3;

@@ -36,7 +36,9 @@ function setCoordinates(id) {
 		velocity[id][2] += Math.random() * 0.2 - 0.1;
 	    }
     }
-    crd.setAttribute("translation", crds[id].join(" "));
+    if (crd != null) {
+	crd.setAttribute("translation", crds[id].join(" "));
+    }
     animate_flowers(id);
 }
 
@@ -92,11 +94,21 @@ function getField(tr, clazz) {
 }
 
 function getValue(tr, name) {
-    return getField(tr, name).getAttribute("value");
+    var field = getField(tr, name);
+    if (field != null) {
+	    return field.getAttribute("value");
+    } else {
+	    return null;
+    }
 }
 
 function setValue(tr, name, value) {
-    getField(tr, name).setAttribute("value", parseFloat(value));
+    var field = getField(tr, name);
+    if (field != null) {
+    	field.setAttribute("value", parseFloat(value));
+    } else {
+        return null;
+    }
 }
 
 function animate() {
