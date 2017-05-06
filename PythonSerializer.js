@@ -6,9 +6,7 @@ const FLOAT_SUFFIX = '';
 function PythonSerializer () {
 this.code = [];
 this.codeno = 0;
-this.precode = [];
 this.preno = 0;
-this.postcode = [];
 }
 
 
@@ -16,27 +14,20 @@ PythonSerializer.prototype = {
 	serializeToString : function(json, element, clazz, mapToMethod, fieldTypes) {
 		this.code = [];
 		this.codeno = 0;
-		this.precode = [];
 		this.preno = 0;
-		this.postcode = [];
+		var stack = [];
 
 		var str = "";
 		str += "from jnius import autoclass\n";
 		str += "from X3Dautoclass import *\n";
 
-		var body = element.nodeName+0+" =  "+element.nodeName+"Object()";
-		body += this.subSerializeToString(element, mapToMethod, fieldTypes, 3, []);
-		for (var po in this.precode) {
-			str += this.precode[po];
-		}
-		str += body;
+		stack.unshift(this.preno);
+		this.preno++;
+		str += element.nodeName+stack[0]+" =  "+element.nodeName+"Object()";
+		str += this.subSerializeToString(element, mapToMethod, fieldTypes, 3, stack);
 		str += "\n";
-		for (var postno = 0;  postno < this.postcode.length; postno++) {
-			if (typeof this.postcode[postno] !== 'undefined') {
-				str += this.postcode[postno];
-			}
-		}
-		str += ""+element.nodeName+0+".toFileX3D(\""+clazz+".new.x3d\")\n";
+		str += ""+element.nodeName+stack[0]+".toFileX3D(\""+clazz+".new.x3d\")\n";
+		stack.shift();
 		return str;
 	},
 
@@ -45,7 +36,7 @@ PythonSerializer.prototype = {
 	},
 
 	printParentChild : function (element, node, cn, mapToMethod, n) {
-		let prepre = ".\\\n"+("  ".repeat(n));
+		let prepre = ".";
 		let addpre = "set";
 		if (cn > 0 && node.nodeName !== 'IS') {
 			addpre = "add";
@@ -279,59 +270,50 @@ PythonSerializer.prototype = {
 			}
 			attrType = "";
 		}
+		str += "\n";
 		for (let cn in element.childNodes) {
 			let node = element.childNodes[cn];
 			if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 1) {
-				if (node.nodeName === "ProtoInstance") {
-					stack.unshift(this.preno);
-					this.preno++;
-					this.precode[stack[0]] = ""+node.nodeName+stack[0]+" = None\n";
-				}
-				if (element.nodeName === "ProtoInstance" && node.nodeName === "fieldValue") {
-					if (typeof this.postcode[stack[0]] === 'undefined') {
-						this.postcode[stack[0]] = "";
-					}
-					this.postcode[stack[0]] += element.nodeName+stack[0];
-				}
-				var ch = this.printParentChild(element, node, cn, mapToMethod, n);
-				ch += "(";
+				var ch = "";
+				/*
 				if (element.nodeName === "Appearance" && node.NodeName === "ComposedShader") {
 					ch += "X3DNode [] {";
 				}
-				if (node.nodeName === "ProtoInstance") {
-					ch += node.nodeName+stack[0] + " = ";
-				}
+				*/
+				stack.unshift(this.preno);
+				this.preno++;
+				ch += node.nodeName+stack[0] + " = ";
 
 				ch += ""+node.nodeName+"Object()";
 				ch += this.subSerializeToString(node, mapToMethod, fieldTypes, n+1, stack);
+				/*
 				if (element.nodeName === "Appearance" && node.NodeName === "ComposedShader") {
 					ch += "}";
 				}
-				ch += ")";
-				if (element.nodeName === "ProtoInstance" && node.nodeName === "fieldValue") {
-					// ch goes to end of body
-					this.postcode[stack[0]] += ch+"\n";
-				} else {
-					// ch is attached to body
-					str += ch;
-				}
-				if (node.nodeName === "ProtoInstance") {
-					stack.shift();
-				}
+				*/
+				ch += element.nodeName+stack[1];
+				ch += this.printParentChild(element, node, cn, mapToMethod, n);
+				ch += "(";
+					ch += node.nodeName+stack[0];
+				ch += ")\n";
+				str += ch;
+				stack.shift();
 			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 8) {
 				let y = node.nodeValue.
 					replace(/\\/g, '\\\\').
 					replace(/"/g, '\\"');
-				str += ".\\\n"+("  ".repeat(n))+"addComments(CommentsBlock(\""+y+"\"))";
+				str += "\n"+element.nodeName+stack[0];
+				str += ".addComments(CommentsBlock(\""+y+"\"))\n";
 				if (y !== node.nodeValue) {
 					// console.error("Java Comment Replacing "+node.nodeValue+" with "+y);
 				}
 			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 4) {
-				str += ".\\\n"+("  ".repeat(n))+"setSourceCode(\""+node.nodeValue.split("\r\n").map(function(x) {
+				str += "\n"+element.nodeName+stack[0];
+				str += ".setSourceCode(\""+node.nodeValue.split("\r\n").map(function(x) {
 					return x.replace(/\\"/g, '\\\\"').
 						replace(/"/g, '\\"').
 						replace(/\\n/g, "\\\\n");
-					}).join('\\n\"+\n\"')+'")';
+					}).join('\\n\"+\n\"')+'")\n';
 			}
 		}
 		return str;
