@@ -45,31 +45,32 @@ PythonSerializer.prototype = {
 	},
 
 	printParentChild : function (element, node, cn, mapToMethod, n) {
-		let addpre = ".set";
+		let prepre = ".\\\n"+("  ".repeat(n));
+		let addpre = "set";
 		if (cn > 0 && node.nodeName !== 'IS') {
-			addpre = ".add";
+			addpre = "add";
 		}
 		if (node.nodeName === 'field') {
-			addpre = ".add";
+			addpre = "add";
 		}
 
 		let method = node.nodeName;
 		if (typeof mapToMethod[element.nodeName] === 'object') {
 			if (typeof mapToMethod[element.nodeName][node.nodeName] === 'string') {
-				addpre = ".";
+				addpre = "";
 				method = mapToMethod[element.nodeName][node.nodeName];
 			} else {
 				method = method.charAt(0).toUpperCase() + method.slice(1);
 			}
 		} else if (typeof mapToMethod[element.nodeName] === 'string') {
-			addpre = ".";
+			addpre = "";
 			method = mapToMethod[element.nodeName];
 		} else {
 			method = method.charAt(0).toUpperCase() + method.slice(1);
 		}
 		if (method === "setProxy") {
 			method = "addChild";
-			addpre = ".";
+			addpre = "";
 		}
 		for (let a in node.attributes) {
 			let attrs = node.attributes;
@@ -80,10 +81,10 @@ PythonSerializer.prototype = {
 					if (attr === "containerField") {
 						if (method === "setShaders") {
 							method = "addShaders"
-							addpre = ".";
+							addpre = "";
 						} else {
 							method = "set"+attrs[a].nodeValue.charAt(0).toUpperCase() + attrs[a].nodeValue.slice(1);
-							addpre = ".";
+							addpre = "";
 						}
 					}
 				}
@@ -93,13 +94,13 @@ PythonSerializer.prototype = {
 		}
 		if (method === "addChildren") {
 			method = "addChild";
-			addpre = ".";
+			addpre = "";
 		}
 		if (node.nodeName === "IS") {
 			method = "setIS";
-			addpre = ".";
+			addpre = "";
 		}
-		return ""+("".repeat(n))+addpre+method;
+		return prepre+addpre+method;
 	},
 	subSerializeToString : function(element, mapToMethod, fieldTypes, n, stack) {
 		let str = "";
@@ -321,12 +322,12 @@ PythonSerializer.prototype = {
 				let y = node.nodeValue.
 					replace(/\\/g, '\\\\').
 					replace(/"/g, '\\"');
-				str += ""+("".repeat(n))+".addComments(CommentsBlock(\""+y+"\"))";
+				str += ".\\\n"+("  ".repeat(n))+"addComments(CommentsBlock(\""+y+"\"))";
 				if (y !== node.nodeValue) {
 					// console.error("Java Comment Replacing "+node.nodeValue+" with "+y);
 				}
 			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 4) {
-				str += ""+("".repeat(n))+".setSourceCode(\""+node.nodeValue.split("\r\n").map(function(x) {
+				str += ".\\\n"+("  ".repeat(n))+"setSourceCode(\""+node.nodeValue.split("\r\n").map(function(x) {
 					return x.replace(/\\"/g, '\\\\"').
 						replace(/"/g, '\\"').
 						replace(/\\n/g, "\\\\n");

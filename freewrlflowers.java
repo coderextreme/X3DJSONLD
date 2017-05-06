@@ -103,8 +103,8 @@ ProtoInstanceObject ProtoInstance6 = null;
         .addChild(new BackgroundObject().setBackUrl(new MFStringObject(new MFString0().getArray())).setBottomUrl(new MFStringObject(new MFString1().getArray())).setFrontUrl(new MFStringObject(new MFString2().getArray())).setLeftUrl(new MFStringObject(new MFString3().getArray())).setRightUrl(new MFStringObject(new MFString4().getArray())).setTopUrl(new MFStringObject(new MFString5().getArray())))
         .addChild(new GroupObject()
           .addChild(new ExternProtoDeclareObject().setName("FlowerProto").setUrl(new MFStringObject(new MFString6().getArray()))
-            .addField(new fieldObject().setName("vertex").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_MFSTRING).setValue("\"freewrl_flowers_chromatic.vs\""))
-            .addField(new fieldObject().setName("fragment").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_MFSTRING).setValue("\"freewrl.fs\"")))
+            .addField(new fieldObject().setName("vertex").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_MFSTRING))
+            .addField(new fieldObject().setName("fragment").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_MFSTRING)))
           .addChild(new ProtoDeclareObject().setName("flower")
             .setProtoBody(new ProtoBodyObject()
               .addChild(new GroupObject()
@@ -153,7 +153,7 @@ protected class MFString5 {
 }
 protected class MFString6 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"flowerproto.x3d"});
+    return new MFStringObject(new java.lang.String[] {"flowerproto.x3d#FlowerProto"});
   }
 }
 }

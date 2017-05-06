@@ -69,31 +69,32 @@ JavaScriptSerializer.prototype = {
 	},
 
 	printParentChild : function (element, node, cn, mapToMethod, n) {
-		let addpre = ".set";
+		let prepre = "\n"+("  ".repeat(n))+"."
+		let addpre = "set";
 		if (cn > 0 && node.nodeName !== 'IS') {
-			addpre = ".add";
+			addpre = "add";
 		}
 		if (node.nodeName === 'field') {
-			addpre = ".add";
+			addpre = "add";
 		}
 
 		let method = node.nodeName;
 		if (typeof mapToMethod[element.nodeName] === 'object') {
 			if (typeof mapToMethod[element.nodeName][node.nodeName] === 'string') {
-				addpre = ".";
+				addpre = "";
 				method = mapToMethod[element.nodeName][node.nodeName];
 			} else {
 				method = method.charAt(0).toUpperCase() + method.slice(1);
 			}
 		} else if (typeof mapToMethod[element.nodeName] === 'string') {
-			addpre = ".";
+			addpre = "";
 			method = mapToMethod[element.nodeName];
 		} else {
 			method = method.charAt(0).toUpperCase() + method.slice(1);
 		}
 		if (method === "setProxy") {
 			method = "addChild";
-			addpre = ".";
+			addpre = "";
 		}
 		for (let a in node.attributes) {
 			let attrs = node.attributes;
@@ -104,10 +105,10 @@ JavaScriptSerializer.prototype = {
 					if (attr === "containerField") {
 						if (method === "setShaders") {
 							method = "addShaders"
-							addpre = ".";
+							addpre = "";
 						} else {
 							method = "set"+attrs[a].nodeValue.charAt(0).toUpperCase() + attrs[a].nodeValue.slice(1);
-							addpre = ".";
+							addpre = "";
 						}
 					}
 				}
@@ -117,13 +118,13 @@ JavaScriptSerializer.prototype = {
 		}
 		if (method === "addChildren") {
 			method = "addChild";
-			addpre = ".";
+			addpre = "";
 		}
 		if (node.nodeName === "IS") {
 			method = "setIS";
-			addpre = ".";
+			addpre = "";
 		}
-		return "\n"+("  ".repeat(n))+addpre+method;
+		return prepre+addpre+method;
 	},
 	subSerializeToString : function(element, mapToMethod, fieldTypes, n, stack) {
 		let str = "";
