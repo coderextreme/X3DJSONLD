@@ -225,12 +225,12 @@
               "ProtoInterface": {
                   "field": [
                     {
-                      "@name":"positionA",
+                      "@name":"set_positionA",
                       "@accessType":"inputOnly",
                       "@type":"SFVec3f"
                     },
                     {
-                      "@name":"positionB",
+                      "@name":"set_positionB",
                       "@accessType":"inputOnly",
                       "@type":"SFVec3f"
                     }
@@ -287,11 +287,11 @@
                             "connect": [
                               {
                                 "@nodeField":"set_endA",
-                                "@protoField":"positionA"
+                                "@protoField":"set_positionA"
                               },
                               {
                                 "@nodeField":"set_endB",
-                                "@protoField":"positionB"
+                                "@protoField":"set_positionB"
                               }
                             ]
                         },
@@ -399,11 +399,11 @@
                     "@DEF":"linkA",
                     "fieldValue": [
                       {
-                        "@name":"positionA",
+                        "@name":"set_positionA",
                         "@value":[0,0,0]
                       },
                       {
-                        "@name":"positionB",
+                        "@name":"set_positionB",
                         "@value":[50,50,50]
                       }
                     ]
@@ -415,11 +415,11 @@
                     "@DEF":"linkB",
                     "fieldValue": [
                       {
-                        "@name":"positionA",
+                        "@name":"set_positionA",
                         "@value":[0,0,0]
                       },
                       {
-                        "@name":"positionB",
+                        "@name":"set_positionB",
                         "@value":[-50,-50,-50]
                       }
                     ]
@@ -431,11 +431,11 @@
                     "@DEF":"linkC",
                     "fieldValue": [
                       {
-                        "@name":"positionA",
+                        "@name":"set_positionA",
                         "@value":[50,50,50]
                       },
                       {
-                        "@name":"positionB",
+                        "@name":"set_positionB",
                         "@value":[50,50,-50]
                       }
                     ]
@@ -462,7 +462,7 @@
                 {
                   "@name":"add_node",
                   "@accessType":"inputOnly",
-                  "@value":0,
+                  "@value":false,
                   "@type":"SFBool"
                 },
                 {
@@ -513,7 +513,7 @@
               "@fromNode":"nodeA",
               "@fromField":"position",
               "@toNode":"linkA",
-              "@toField":"positionA"
+              "@toField":"set_positionA"
             }
           },
           { "ROUTE":
@@ -521,7 +521,7 @@
               "@fromNode":"nodeB",
               "@fromField":"position",
               "@toNode":"linkA",
-              "@toField":"positionB"
+              "@toField":"set_positionB"
             }
           },
           { "ROUTE":
@@ -529,7 +529,7 @@
               "@fromNode":"nodeA",
               "@fromField":"position",
               "@toNode":"linkB",
-              "@toField":"positionA"
+              "@toField":"set_positionA"
             }
           },
           { "ROUTE":
@@ -537,7 +537,7 @@
               "@fromNode":"nodeC",
               "@fromField":"position",
               "@toNode":"linkB",
-              "@toField":"positionB"
+              "@toField":"set_positionB"
             }
           },
           { "ROUTE":
@@ -545,7 +545,7 @@
               "@fromNode":"nodeA",
               "@fromField":"position",
               "@toNode":"linkC",
-              "@toField":"positionA"
+              "@toField":"set_positionA"
             }
           },
           { "ROUTE":
@@ -553,7 +553,7 @@
               "@fromNode":"nodeD",
               "@fromField":"position",
               "@toNode":"linkC",
-              "@toField":"positionB"
+              "@toField":"set_positionB"
             }
           }
         ]
