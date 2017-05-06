@@ -1,5 +1,7 @@
 #!/bin/bash
 
+. ./classpath
+
 # Run examples through test process
 
 export PROCESSORS=1

@@ -67,14 +67,12 @@
                       {
                         "@name":"vertex",
                         "@accessType":"inputOutput",
-                        "@type":"MFString",
-                        "@value":["gl_flowers_chromatic.vs"]
+                        "@type":"MFString"
                       },
                       {
                         "@name":"fragment",
                         "@accessType":"inputOutput",
-                        "@type":"MFString",
-                        "@value":["pc_flowers.fs"]
+                        "@type":"MFString"
                       }
                     ]
                   }

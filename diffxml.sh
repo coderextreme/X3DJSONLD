@@ -1,5 +1,6 @@
 #!/bin/bash
 
+. ./classpath
 # way of comparing output from nashorn
 
 for i in `find . -name '*.new.x3d'`
