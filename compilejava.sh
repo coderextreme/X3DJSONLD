@@ -12,12 +12,12 @@ for NEW in `find . -name '*.new.json'`
 do
 	JSON=`dirname $NEW`/`basename $NEW .new.json`.json
 	DIFF=`dirname $NEW`/`basename $NEW .new.json`.diff
-	echo node jsondiff.js $JSON $NEW 2>&1
-	if [ -z "`node jsondiff.js $JSON $NEW`" ]
+	echo ${NODE} jsondiff.js $JSON $NEW 2>&1
+	if [ -z "`${NODE} jsondiff.js $JSON $NEW`" ]
 	then
 		jar -uMf GoodJSON.zip $NEW
 	else
-		node jsondiff.js $JSON $NEW | tee $DIFF
+		${NODE} jsondiff.js $JSON $NEW | tee $DIFF
 		jar -uMf DiffJSON.zip $JSON $NEW $DIFF
 			
 	fi

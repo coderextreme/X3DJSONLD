@@ -13,6 +13,6 @@ python classes.py
 for i in *.new.x3d `find www_web3d_org -name '*.new.x3d'`
 do
 	echo ================================================================================ | tee -a jsdiffs.txt
-	echo node xmldiff.js `dirname $i | sed 's/www_web3d_org\//\/c\/x3d-code\/www.web3d.org\//'`/`basename $i .new.x3d`.x3d $i | tee -a jsdiffs.txt
-	node xmldiff.js `dirname $i | sed 's/www_web3d_org\//\/c\/x3d-code\/www.web3d.org\//'`/`basename $i .new.x3d`.x3d $i | tee -a jsdiffs.txt
+	echo ${NODE} xmldiff.js `dirname $i | sed 's/www_web3d_org\//\/c\/x3d-code\/www.web3d.org\//'`/`basename $i .new.x3d`.x3d $i | tee -a jsdiffs.txt
+	${NODE} xmldiff.js `dirname $i | sed 's/www_web3d_org\//\/c\/x3d-code\/www.web3d.org\//'`/`basename $i .new.x3d`.x3d $i | tee -a jsdiffs.txt
 done
