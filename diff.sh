@@ -1,5 +1,7 @@
 #!/bin/bash
 
+. ./classpath
+
 
 for i in `find . -name '*.x3d.new'`
 do

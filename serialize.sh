@@ -1,5 +1,8 @@
 #!/bin/bash
 
+
+. ./classpath
+
 # serialize non-serialized files
 export PROCESSORS=${PROCESSORS-8}
 

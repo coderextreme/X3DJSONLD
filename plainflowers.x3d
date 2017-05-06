@@ -20,8 +20,8 @@
         />
 	<Group>
 		<ExternProtoDeclare name="FlowerProto" url='"flowerproto.x3d#FlowerProto"'>
-			<field accessType='inputOutput' name='vertex' type='MFString' value='"gl_flowers_chromatic.vs"'/>
-			<field accessType='inputOutput' name='fragment' type='MFString' value='"pc_flowers.fs"'/>
+			<field accessType='inputOutput' name='vertex' type='MFString'/>
+			<field accessType='inputOutput' name='fragment' type='MFString'/>
 		</ExternProtoDeclare>
 		<ProtoDeclare name="flower">
 			<ProtoBody>

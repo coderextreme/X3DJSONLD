@@ -96,21 +96,26 @@ PythonSerializer.prototype = {
 	subSerializeToString : function(element, mapToMethod, fieldTypes, n, stack) {
 		var str = "";
 		var fieldAttrType = "";
+		var attrType = "";
 		for (var a in element.attributes) {
 			var attrs = element.attributes;
 			try {
 				parseInt(a);
 				if (attrs.hasOwnProperty(a) && attrs[a].nodeType == 2) {
 					var attr = attrs[a].nodeName;
-					if (attr == "type") {
+					if (attr === "type") {
 						fieldAttrType = attrs[a].nodeValue;
+						var method = attr;
+						str += '.'+method+"("+strval+")";
+						method = "set"+method.charAt(0).toUpperCase() + method.slice(1);
 					}
 				}
 			} catch (e) {
 				console.error(e);
 			}
+			attrType = "";
 		}
-		var attrType = "";
+		attrType = "";
 		for (var a in element.attributes) {
 			var attrs = element.attributes;
 			try {
