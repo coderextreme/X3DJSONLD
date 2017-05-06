@@ -229,7 +229,7 @@ function CreateElement(key, x3djsonNS, containerField) {
 }
 
 function CDATACreateFunction(document, element, str) {
-	let y = str
+	var y = str
 		.replace(/'([^'\r]*)\n([^']*)'/g, "'$1\\n$2'")
 		.replace(/&lt;/g, "<")
 		.replace(/&gt;/g, ">")
@@ -336,7 +336,7 @@ function CommentStringToXML(str) {
 }
 
 function SFStringToXML(str) {
-	let y = str;
+	var y = str;
 	str = str.replace(/\\\\/g, '\\\\');
 	str = str.replace(/\\\\\\\\/g, '\\\\');
 	str = str.replace(/\\/g, '\\\\');
@@ -348,7 +348,7 @@ function SFStringToXML(str) {
 }
 
 function JSONStringToXML(str) {
-	let y = str;
+	var y = str;
 	str = str.replace(/\\/g, '\\\\');
 	str = str.replace(/\n/g, '\\n');
 	if (y !== str) {
@@ -420,7 +420,7 @@ function ConvertToX3DOM(object, parentkey, element, path, containerField) {
 					localArray[str] = SFStringToXML(localArray[str]);
 				}
                                 if (parentkey === '@url' || parentkey.indexOf("Url") === parentkey.length - 3) {
-					processURLs(localArray, path);
+					// processURLs(localArray, path);
 				}
 				elementSetAttribute(element, parentkey.substr(1),'"'+localArray.join('" "')+'"');
 			} else {

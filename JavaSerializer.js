@@ -20,9 +20,9 @@ JavaSerializer.prototype = {
 		this.preno = 0;
 		this.postcode = [];
 		/*
-		for (let a in element.attributes) {
-			let attrs = element.attributes;
-			let attributeName = attrs[a].nodeName;
+		for (var a in element.attributes) {
+			var attrs = element.attributes;
+			var attributeName = attrs[a].nodeName;
 			if (attributeName === "version" && attrs[a].nodeValue !== "3.3") {
 				console.log(clazz, attrs[a].nodeValue);
 				return;
@@ -30,15 +30,15 @@ JavaSerializer.prototype = {
 		}
 		*/
 
-		let str = "";
-		let pc = clazz.replace(/-|\.| /g, "$");
-		let c = pc.lastIndexOf("/");
+		var str = "";
+		var pc = clazz.replace(/-|\.| /g, "$");
+		var c = pc.lastIndexOf("/");
 		if (pc.lastIndexOf("\\") > c) {
 			c = pc.lastIndexOf("\\");
 		}
-		let clz = pc.substr(c+1);
+		var clz = pc.substr(c+1);
 		clz = clz.replace(/^([0-9].*|default$)/, "_$1")
-		let pkg = pc.substr(0, c).replace(/[\/\\]/g, ".").trim();
+		var pkg = pc.substr(0, c).replace(/[\/\\]/g, ".").trim();
 
 		if (pkg.length > 0) {
 			str += "package "+pkg+";\n";
@@ -183,8 +183,8 @@ JavaSerializer.prototype = {
 	},
 
 	printParentChild : function (element, node, cn, mapToMethod, n) {
-		let prepre = "\n"+("  ".repeat(n))+".";
-		let addpre = "set";
+		var prepre = "\n"+("  ".repeat(n))+".";
+		var addpre = "set";
 		if (cn > 0 && node.nodeName !== 'IS') {
 			addpre = "add";
 		}
@@ -192,7 +192,7 @@ JavaSerializer.prototype = {
 			addpre = "add";
 		}
 
-		let method = node.nodeName;
+		var method = node.nodeName;
 		if (typeof mapToMethod[element.nodeName] === 'object') {
 			if (typeof mapToMethod[element.nodeName][node.nodeName] === 'string') {
 				addpre = "";
@@ -210,12 +210,12 @@ JavaSerializer.prototype = {
 			method = "addChild";
 			addpre = "";
 		}
-		for (let a in node.attributes) {
-			let attrs = node.attributes;
+		for (var a in node.attributes) {
+			var attrs = node.attributes;
 			try {
 				parseInt(a);
 				if (attrs.hasOwnProperty(a) && attrs[a].nodeType == 2) {
-					let attr = attrs[a].nodeName;
+					var attr = attrs[a].nodeName;
 					if (attr === "containerField") {
 						if (method === "setShaders") {
 							method = "addShaders"
@@ -242,14 +242,14 @@ JavaSerializer.prototype = {
 	},
 
 	subSerializeToString : function(element, mapToMethod, fieldTypes, n, stack) {
-		let str = "";
-		let fieldAttrType = "";
-		for (let a in element.attributes) {
-			let attrs = element.attributes;
+		var str = "";
+		var fieldAttrType = "";
+		for (var a in element.attributes) {
+			var attrs = element.attributes;
 			try {
 				parseInt(a);
 				if (attrs.hasOwnProperty(a) && attrs[a].nodeType == 2) {
-					let attr = attrs[a].nodeName;
+					var attr = attrs[a].nodeName;
 					if (attr == "type") {
 						fieldAttrType = attrs[a].nodeValue;
 					}
@@ -258,19 +258,19 @@ JavaSerializer.prototype = {
 				console.error(e);
 			}
 		}
-		let attrType = "";
-		for (let a in element.attributes) {
-			let attrs = element.attributes;
+		var attrType = "";
+		for (var a in element.attributes) {
+			var attrs = element.attributes;
 			try {
 				parseInt(a);
 				if (attrs.hasOwnProperty(a) && attrs[a].nodeType == 2) {
-					let attr = attrs[a].nodeName;
+					var attr = attrs[a].nodeName;
 					if (attr == "xmlns:xsd" || attr == "xsd:noNamespaceSchemaLocation" || attr === 'containerField') {
 						continue;
 					}
-					let method = attr;
+					var method = attr;
 					// look at object model
-					let attrType = "SFString";
+					var attrType = "SFString";
 					if (typeof fieldTypes[element.nodeName] !== 'undefined') {
 						attrType = fieldTypes[element.nodeName][attr];
 					}
@@ -283,7 +283,7 @@ JavaSerializer.prototype = {
 					} else {
 						method = "set"+method.charAt(0).toUpperCase() + method.slice(1);
 					}
-					let strval;
+					var strval;
 					if (attrs[a].nodeValue === 'NULL') {
 						strval = "";
 					} else if (attrType === "SFString") {
@@ -329,7 +329,7 @@ JavaSerializer.prototype = {
 						strval = this.printSubArray(attrType, "java.lang.String",
 							attrs[a].nodeValue.substr(1, attrs[a].nodeValue.length-2).split(/" "/).
 							map(function(x) {
-								let y = x.
+								var y = x.
 									replace(/(\\+)([^&\\"])/g, '$1$1$2').
 								       replace(/(\\)+([&"])/g, '\\\\\\\$2').
 								       replace(/""/g, '\\"\\"').
@@ -411,8 +411,8 @@ JavaSerializer.prototype = {
 			}
 			attrType = "";
 		}
-		for (let cn in element.childNodes) {
-			let node = element.childNodes[cn];
+		for (var cn in element.childNodes) {
+			var node = element.childNodes[cn];
 			if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 1) {
 				if (node.nodeName === "ProtoInstance") {
 					stack.unshift(this.preno);
@@ -451,7 +451,7 @@ JavaSerializer.prototype = {
 					stack.shift();
 				}
 			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 8) {
-				let y = node.nodeValue.
+				var y = node.nodeValue.
 					replace(/\\/g, '\\\\').
 					replace(/"/g, '\\"');
 				str += "\n"+("  ".repeat(n))+".addComments(new CommentsBlock(\""+y+"\"))";

@@ -1,8 +1,8 @@
 function convertPlyToJson(file) {
-	let elements = [];
-	let e;
-	let o;
-	let dispatchTable = {
+	var elements = [];
+	var e;
+	var o;
+	var dispatchTable = {
 		values: function (line, comments) {
 			if (typeof line === 'undefined') {
 				return;
@@ -14,13 +14,13 @@ function convertPlyToJson(file) {
 			// read through properties
 			elements[e][o] = {};
 			var properties = elements[e].property;
-			for (let p in  properties) {
+			for (var p in  properties) {
 				if (properties[p].type[0] === 'list') {
-					for (let pr = 1; pr < line.length; pr++) {
+					for (var pr = 1; pr < line.length; pr++) {
 						elements[e][o][pr-1] = line[pr];
 					}
 				} else {
-					let pr = p;
+					var pr = p;
 					elements[e][o][pr] = line[pr];
 				}
 			}
@@ -70,12 +70,12 @@ function convertPlyToJson(file) {
 			});
 		}
 	}
-	let unprocessed = file.trim().split(/[\r\n]+/g);
-	for (let u = 0; u < unprocessed.length; u++) {
-		let processed = unprocessed[u].split(/[ \t]*{/);
-		let command = processed[0].trim();
-		let comments = processed[1];
-		let line = command.split(/ +/);
+	var unprocessed = file.trim().split(/[\r\n]+/g);
+	for (var u = 0; u < unprocessed.length; u++) {
+		var processed = unprocessed[u].split(/[ \t]*{/);
+		var command = processed[0].trim();
+		var comments = processed[1];
+		var line = command.split(/ +/);
 		if (typeof dispatchTable[line[0]] !== 'undefined') {
 			dispatchTable[line[0]](line, typeof comments === 'undefined' ? undefined :"{"+comments);
 		} else {
@@ -159,26 +159,26 @@ function convertPlyToJson(file) {
 }
 
 function transformToILS(elements) {
-	let ILS = {};
+	var ILS = {};
 	coordIndex = [];
 	colorIndex = [];
 	point = [];
 	color = [];
-	let dispatchTable = {
+	var dispatchTable = {
 		edge : function(element, ILS) {
 			if (typeof ILS["IndexedLineSet"] === "undefined") {
 				ILS["IndexedLineSet" ] = {};
 			}
-			let array = [];
-			for (let o in element) {
+			var array = [];
+			for (var o in element) {
 				try {
-					let index = parseInt(o);
+					var index = parseInt(o);
 					if (!isNaN(index)) {
-						for (let iv = 0; iv < 2; iv++) {
+						for (var iv = 0; iv < 2; iv++) {
 							array.push(parseInt(element[index][iv]));
 						}
 						array.push(-1);
-						for (let c = 2; c < 5; c++) { 
+						for (var c = 2; c < 5; c++) { 
 							if (element.property[c].type[0] === 'uchar') {
 								color.push(parseFloat(element[index][c])/255.0);
 							} else {
@@ -199,12 +199,12 @@ function transformToILS(elements) {
 			return ILS;
 		},
 		vertex : function(element, ILS) {
-			let point = [];
-			for (let o in element) {
+			var point = [];
+			for (var o in element) {
 				try {
-					let index = parseInt(o);
+					var index = parseInt(o);
 					if (!isNaN(index)) {
-						for (let p = 0; p < 3; p++) { 
+						for (var p = 0; p < 3; p++) { 
 							point.push(parseFloat(element[index][p]));
 						}
 					}
@@ -221,7 +221,7 @@ function transformToILS(elements) {
 	}
 	for (e in elements) {
 		console.log(elements[e]);
-		let table = dispatchTable[elements[e].type];
+		var table = dispatchTable[elements[e].type];
 		if (typeof table !== 'undefined') {
 			ILS = table(elements[e], ILS);
 		}
@@ -230,20 +230,20 @@ function transformToILS(elements) {
 }
 
 function transformToIFS(elements) {
-	let IFS = {};
+	var IFS = {};
 	coordIndex = [];
 	colorIndex = [];
 	point = [];
 	color = [];
-	let dispatchTable = {
+	var dispatchTable = {
 		face : function(element, IFS) {
-			let array = [];
-			for (let o in element) {
+			var array = [];
+			for (var o in element) {
 				try {
-					let index = parseInt(o);
+					var index = parseInt(o);
 					if (!isNaN(index)) {
-						for (let vertex in element[index]) {
-							let iv = parseInt(vertex);
+						for (var vertex in element[index]) {
+							var iv = parseInt(vertex);
 							if (!isNaN(iv)) {
 								array.push(parseInt(element[index][iv]));
 							}
@@ -262,16 +262,16 @@ function transformToIFS(elements) {
 			return IFS;
 		},
 		vertex : function(element, IFS) {
-			let point = [];
-			let color = [];
-			for (let o in element) {
+			var point = [];
+			var color = [];
+			for (var o in element) {
 				try {
-					let index = parseInt(o);
+					var index = parseInt(o);
 					if (!isNaN(index)) {
-						for (let p = 0; p < 3; p++) { 
+						for (var p = 0; p < 3; p++) { 
 							point.push(parseFloat(element[index][p]));
 						}
-						for (let c = 3; c < 6; c++) { 
+						for (var c = 3; c < 6; c++) { 
 							if (element.property[c].type[0] === 'uchar') {
 								color.push(parseFloat(element[index][c])/255.0);
 							} else {
@@ -292,7 +292,7 @@ function transformToIFS(elements) {
 		}
 	};
 	for (e in elements) {
-		let table = dispatchTable[elements[e].type];
+		var table = dispatchTable[elements[e].type];
 		if (typeof table !== 'undefined') {
 			IFS = table(elements[e], IFS);
 		}

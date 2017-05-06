@@ -7,7 +7,7 @@ function JSONSerializer () {
 
 JSONSerializer.prototype = {
 	serializeToString : function(json, element, clazz, mapToMethod, fieldTypes) {
-		let str = "";
+		var str = "";
 		str += '{';
 		str += printMethod(element, fieldTypes, "", 0);
 		str += '}\n';
@@ -23,9 +23,9 @@ function printSubArray(values, j, trail) {
 
 function printMethod(node, fieldTypes, par, n) {
 	var str = "";
-	let cf = false;
-	for (let a in node.attributes) {
-		let attrs = node.attributes;
+	var cf = false;
+	for (var a in node.attributes) {
+		var attrs = node.attributes;
 		try {
 			parseInt(a);
 			if (attrs.hasOwnProperty(a) && attrs[a].nodeType == 2) {
@@ -54,7 +54,7 @@ function printMethod(node, fieldTypes, par, n) {
 
 function printComment(node, par, n) {
 	var str = "";
-	let cf = false;
+	var cf = false;
 	if (par === "-children") {
 		cf = true;
 		str += '  '.repeat(n)+'{ "'+node.nodeName+'":';
@@ -70,7 +70,7 @@ function printComment(node, par, n) {
 
 function printSourceText(node, par, n) {
 	var str = "";
-	let cf = false;
+	var cf = false;
 	if (par === "-children") {
 		cf = true;
 		str += '  '.repeat(n)+'{ "#sourceText":';
@@ -85,13 +85,13 @@ function printSourceText(node, par, n) {
 }
 
 JSONSerializer.subSerializeToString = function(element, fieldTypes, n) {
-	let fieldAttrType = "";
-	for (let a in element.attributes) {
-		let attrs = element.attributes;
+	var fieldAttrType = "";
+	for (var a in element.attributes) {
+		var attrs = element.attributes;
 		try {
 			parseInt(a);
 			if (attrs.hasOwnProperty(a) && attrs[a].nodeType == 2) {
-				let attr = attrs[a].nodeName;
+				var attr = attrs[a].nodeName;
 				if (attr == "type") {
 					fieldAttrType = attrs[a].nodeValue;
 				}
@@ -100,20 +100,20 @@ JSONSerializer.subSerializeToString = function(element, fieldTypes, n) {
 			console.error(e);
 		}
 	}
-	let attrType = "";
-	let object = [];
-	for (let a in element.attributes) {
-		let attrs = element.attributes;
+	var attrType = "";
+	var object = [];
+	for (var a in element.attributes) {
+		var attrs = element.attributes;
 		try {
 			parseInt(a);
 			if (attrs.hasOwnProperty(a) && attrs[a].nodeType == 2) {
-				let attr = attrs[a].nodeName;
-				let method = attr;
+				var attr = attrs[a].nodeName;
+				var method = attr;
 				if (attr === 'containerField') {
 					continue;
 				}
 				// look at object model
-				let attrType = fieldTypes[element.nodeName][attr];
+				var attrType = fieldTypes[element.nodeName][attr];
 
 				if (attrs[a].nodeValue === 'NULL' &&
 				   (fieldAttrType === "SFNode"  ||
@@ -192,12 +192,12 @@ JSONSerializer.subSerializeToString = function(element, fieldTypes, n) {
 		}
 		attrType = "";
 	}
-	let childstr = "";
-	let children = {};
-	let par = "";
-	let childpar = false;
-	for (let cn in element.childNodes) {
-		let node = element.childNodes[cn];
+	var childstr = "";
+	var children = {};
+	var par = "";
+	var childpar = false;
+	for (var cn in element.childNodes) {
+		var node = element.childNodes[cn];
 		if ( typeof node.nodeName !== "undefined" &&
 		    node.nodeName !== "meta" &&
 		    node.nodeName !== "field" &&
@@ -210,12 +210,12 @@ JSONSerializer.subSerializeToString = function(element, fieldTypes, n) {
 		children[node.nodeName] = true;
 
 	}
-	let chilluns = [];
-	let chillins = [];
-	let pc = false;
-	let route = [];
-	for (let cn in element.childNodes) {
-		let node = element.childNodes[cn];
+	var chilluns = [];
+	var chillins = [];
+	var pc = false;
+	var route = [];
+	for (var cn in element.childNodes) {
+		var node = element.childNodes[cn];
 		if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 1) {
 			if (par !== node.nodeName && (
 				par === "meta" ||

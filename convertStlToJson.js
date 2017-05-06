@@ -1,5 +1,5 @@
 function convertStlToJson(file) {
-	let IFS = {};
+	var IFS = {};
 	IFS.normalIndex = [];
 	IFS.vector = [];
 	IFS.ni = {};
@@ -9,22 +9,22 @@ function convertStlToJson(file) {
 	IFS.colorIndex = [];
 	IFS.color = [];
 	IFS.co = {};
-	let Bbox = {};
+	var Bbox = {};
 	Bbox.minx = 10000;
 	Bbox.miny = 10000;
 	Bbox.minz = 10000;
 	Bbox.maxx = -10000;
 	Bbox.maxy = -10000;
 	Bbox.maxz = -10000;
-	let dispatchTable = {
+	var dispatchTable = {
 		solid : function(line, IFS) {
 			return IFS;
 		},
 		facet : function(line, IFS) {
 			line.shift();
 			line.shift();
-			let coords = line.join(" ");
-			let n = IFS.ni[coords];
+			var coords = line.join(" ");
+			var n = IFS.ni[coords];
 			if (typeof n === 'undefined') {
 				IFS.ni[coords] = IFS.vector.length;
 				n = IFS.ni[coords];
@@ -57,8 +57,8 @@ function convertStlToJson(file) {
 			if (line[2] > Bbox.maxz) {
 				Bbox.maxz = parseFloat(line[2]);
 			}
-			let coords = line.join(" ");
-			let p = IFS.ci[coords];
+			var coords = line.join(" ");
+			var p = IFS.ci[coords];
 			if (typeof p === 'undefined') {
 				IFS.ci[coords] = IFS.point.length;
 				p = IFS.ci[coords];
@@ -91,10 +91,10 @@ function convertStlToJson(file) {
 			return IFS;
 		}
 	}
-	let unprocessed = file.trim().split(/[\r\n]+/g);
-	for (let u = 0; u < unprocessed.length; u++) {
-		let command = unprocessed[u].trim();
-		let line = command.split(/ +/);
+	var unprocessed = file.trim().split(/[\r\n]+/g);
+	for (var u = 0; u < unprocessed.length; u++) {
+		var command = unprocessed[u].trim();
+		var line = command.split(/ +/);
 		if (typeof dispatchTable[line[0]] !== 'undefined') {
 			IFS = dispatchTable[line[0]](line, IFS);
 		}
@@ -181,7 +181,7 @@ function convertStlToJson(file) {
 }
 
 function transformNormalsToIFS(json) {
-	let IFS = {};
+	var IFS = {};
 	IFS["IndexedFaceSet" ] = {};
 	IFS["IndexedFaceSet" ]["@DEF"] = json.DEF;
 	IFS["IndexedFaceSet" ]["@coordIndex"] = json.coordIndex;

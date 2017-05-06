@@ -6,18 +6,18 @@ function ThreeSerializer () {
 
 ThreeSerializer.prototype = {
 	serializeToString : function(json, element, clazz, mapToMethod, fieldTypes) {
-		let parentobj = {};
+		var parentobj = {};
 		parentobj.children = [];
 		parentobj.string = "X3D";
-		let obj = this.parseObject(parentobj, "Scene", fieldTypes, json["X3D"]["Scene"]);
+		var obj = this.parseObject(parentobj, "Scene", fieldTypes, json["X3D"]["Scene"]);
 		this.deltree(obj);
 		// console.log(JSON.stringify(obj, null, 2));
 		// dump after we find first scene
 		return JSON.stringify(obj, null, 2);
 	},
 	parseFromString : function(data) {
-		let fieldTypes = require('./fieldTypes.js');
-		let parentobj = {};
+		var fieldTypes = require('./fieldTypes.js');
+		var parentobj = {};
 		parentobj.children = [];
 		parentobj.string = "X3D";
 		return  this.parseObject(parentobj, "Scene", fieldTypes, JSON.parse(data)["X3D"]["Scene"]);
@@ -25,17 +25,17 @@ ThreeSerializer.prototype = {
 	deltree : function (tree) {
 		if (typeof tree === 'object') {
 			delete tree.parent;
-			for (let t in tree) {
+			for (var t in tree) {
 				this.deltree(tree[t]);
 			}
 		}
 	},
 	parseSubObject : function(attrType, type, values) {
 		if (attrType.startsWith("MF")) {
-			let newArray = [];
-			for (let j = 0; j < values.length;) {
-				let newObject = {};
-				for (let letter in type) {
+			var newArray = [];
+			for (var j = 0; j < values.length;) {
+				var newObject = {};
+				for (var letter in type) {
 					newObject[type[letter]] = parseFloat(values[j++]);
 				}
 				newArray.push(newObject);
@@ -43,9 +43,9 @@ ThreeSerializer.prototype = {
 			return newArray;
 
 		} else {
-			let newObject = {};
-			let j = 0;
-			for (let letter in type) {
+			var newObject = {};
+			var j = 0;
+			for (var letter in type) {
 				newObject[type[letter]] = parseFloat(values[j++]);
 			}
 			return newObject;
@@ -53,10 +53,10 @@ ThreeSerializer.prototype = {
 	},
 	parseSubArray : function(attrType, numpersub, values) {
 		if (numpersub > 1 && attrType.startsWith("MF")) {
-			let newArrays = [];
-			for (let j = 0; j < values.length;) {
-				let newArray = [];
-				for (let i = 0; i < numpersub; i++) {
+			var newArrays = [];
+			for (var j = 0; j < values.length;) {
+				var newArray = [];
+				for (var i = 0; i < numpersub; i++) {
 					if (attrType === "MFString") {
 						newArray[i] = values[j++];
 					} else {
@@ -67,10 +67,10 @@ ThreeSerializer.prototype = {
 			}
 			return newArrays;
 		} else if (numpersub === 0) { // index
-			let newArrays = [];
-			let newArray = [];
-			let i = 0;
-			for (let j = 0; j < values.length;) {
+			var newArrays = [];
+			var newArray = [];
+			var i = 0;
+			for (var j = 0; j < values.length;) {
 				if (values[j] == -1) {
 					newArrays.push(newArray);
 					newArray = [];
@@ -90,7 +90,7 @@ ThreeSerializer.prototype = {
 		}
 	},
 	parseObject : function(parentobj, name, fieldTypes, json, containerField) {
-		let obj = {};
+		var obj = {};
 		obj.string = name;
 		if (name != "Scene") {
 			obj.string = name.toLowerCase();
@@ -100,20 +100,20 @@ ThreeSerializer.prototype = {
 			}
 		}
 		obj.children = [];
-		for (let field in json) {
+		for (var field in json) {
 			if (field.startsWith("@")) {
 				if (field == "@xmlns:xsd" || field == "@xsd:noNamespaceSchemaLocation") {
 					continue;
 				}
-				let attr = field.substr(1);
+				var attr = field.substr(1);
 				if (attr !== '@containerField') {
 					// look at object model
-					let attrType = "SFString";
+					var attrType = "SFString";
 					if (typeof fieldTypes[name] !== 'undefined') {
 						attrType = fieldTypes[name][attr];
 					}
 
-					let value = "";
+					var value = "";
 					if (json[field] === 'NULL') {
 						value = null;
 					} else if (attrType === "SFString") {
@@ -198,9 +198,9 @@ ThreeSerializer.prototype = {
 			} else if (field === "#sourceText") {
 				obj.children.push("<script>"+json[field].join("\r\n")+'</Script>');
 			} else {
-				let node = json[field];
+				var node = json[field];
 				if (typeof node === 'object') {
-					let cf = "";
+					var cf = "";
 					if (field === "-children") {
 						cf = "";
 					} else if (field.startsWith("-")) {
@@ -210,11 +210,11 @@ ThreeSerializer.prototype = {
 					} else {
 						cf = containerField;
 					}
-					let container = this.parseObject(obj, field, fieldTypes, node, cf);
+					var container = this.parseObject(obj, field, fieldTypes, node, cf);
 
-					let ct = container.nodeType || "-";
-					let nct = parseInt(ct.trim());
-					let ict = ct.startsWith("-") || !isNaN(nct); // illegal if true
+					var ct = container.nodeType || "-";
+					var nct = parseInt(ct.trim());
+					var ict = ct.startsWith("-") || !isNaN(nct); // illegal if true
 					if (ict) {
 						obj.children = obj.children.concat(container.children);
 						container.parent = obj;

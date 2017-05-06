@@ -1,18 +1,18 @@
 "use strict";
 
-let fs = require('fs');
-let mkdirp = require('node-mkdirp');
-let mapToMethod = require('./mapToMethod.js');
-let mapToMethod2 = require('./mapToMethod2.js');
-let jsonlint = require('jsonlint');
-let fieldTypes = require('./fieldTypes.js');
-let Ajv = require('ajv');
+var fs = require('fs');
+var mkdirp = require('node-mkdirp');
+var mapToMethod = require('./mapToMethod.js');
+var mapToMethod2 = require('./mapToMethod2.js');
+var jsonlint = require('jsonlint');
+var fieldTypes = require('./fieldTypes.js');
+var Ajv = require('ajv');
 
-let xmldom = require('xmldom');
-let DOMImplementation = new xmldom.DOMImplementation();
+var xmldom = require('xmldom');
+var DOMImplementation = new xmldom.DOMImplementation();
 
-let X3DJSONLD = require('./X3DJSONLD.js');
-let ConvertToX3DOM = X3DJSONLD.ConvertToX3DOM;
+var X3DJSONLD = require('./X3DJSONLD.js');
+var ConvertToX3DOM = X3DJSONLD.ConvertToX3DOM;
 
 var Script = require('./Script');
 var LOG = Script.LOG;
@@ -20,7 +20,7 @@ var LOG = Script.LOG;
 Object.assign(mapToMethod, {
 });
 
-for (let map in mapToMethod2) {
+for (var map in mapToMethod2) {
 	Object.assign(mapToMethod[map], mapToMethod2[map]);
 }
 
@@ -163,7 +163,7 @@ function loadX3DJS(json, path, xml, NS, loadSchema, doValidate, callback) {
 		/*
 		var child = document.createCDATASection(str);
 		*/
-		let y = str
+		var y = str
 			.replace(/'([^'\r]*)\n([^']*)'/g, "'$1\\n$2'")
 			.replace(/&lt;/g, "<")
 			.replace(/&gt;/g, ">")

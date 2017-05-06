@@ -6,10 +6,10 @@ function ThreeSerializer () {
 
 ThreeSerializer.prototype = {
 	serializeToString : function(json, element, clazz, mapToMethod, fieldTypes) {
-		for (let cn in element.childNodes) {
-			let node = element.childNodes[cn];
+		for (var cn in element.childNodes) {
+			var node = element.childNodes[cn];
 			if (node.nodeName === 'Scene') {
-				let obj = printObject(node, fieldTypes);
+				var obj = printObject(node, fieldTypes);
 				console.log(JSON.stringify(obj, null, 2));
 				// dump after we find first scene
 				return JSON.stringify(obj, null, 2);
@@ -20,10 +20,10 @@ ThreeSerializer.prototype = {
 
 function printSubObject(attrType, type, values) {
 	if (attrType.startsWith("MF")) {
-		let newArray = [];
-		for (let j = 0; j < values.length;) {
-			let newObject = {};
-			for (let letter in type) {
+		var newArray = [];
+		for (var j = 0; j < values.length;) {
+			var newObject = {};
+			for (var letter in type) {
 				newObject[type[letter]] = parseFloat(values[j++]);
 			}
 			newArray.push(newObject);
@@ -31,9 +31,9 @@ function printSubObject(attrType, type, values) {
 		return newArray;
 
 	} else {
-		let newObject = {};
-		let j = 0;
-		for (let letter in type) {
+		var newObject = {};
+		var j = 0;
+		for (var letter in type) {
 			newObject[type[letter]] = parseFloat(values[j++]);
 		}
 		return newObject;
@@ -42,10 +42,10 @@ function printSubObject(attrType, type, values) {
 
 function printSubArray(attrType, numpersub, values) {
 	if (numpersub > 1 && attrType.startsWith("MF")) {
-		let newArrays = [];
-		for (let j = 0; j < values.length;) {
-			let newArray = {};
-			for (let i = 0; i < numpersub; i++) {
+		var newArrays = [];
+		for (var j = 0; j < values.length;) {
+			var newArray = {};
+			for (var i = 0; i < numpersub; i++) {
 				if (attrType === "MFString") {
 					newArray[i] = values[j++];
 				} else {
@@ -61,19 +61,19 @@ function printSubArray(attrType, numpersub, values) {
 }
 
 function printObject(element, fieldTypes) {
-	let obj = {};
+	var obj = {};
 	obj["string"] = element.nodeName;
 	if (obj["string"] != "Scene") {
 		obj["nodeType"] = element.nodeName.toLowerCase();
 		obj["string"] = " "+obj["nodeType"];
 	}
-	let fieldAttrType = "";
-	for (let a in element.attributes) {
-		let attrs = element.attributes;
+	var fieldAttrType = "";
+	for (var a in element.attributes) {
+		var attrs = element.attributes;
 		try {
 			parseInt(a);
 			if (attrs.hasOwnProperty(a) && attrs[a].nodeType == 2) {
-				let attr = attrs[a].nodeName;
+				var attr = attrs[a].nodeName;
 				if (attr == "type") {
 					fieldAttrType = attrs[a].nodeValue;
 				} else if (attr == "containerField") {
@@ -84,24 +84,24 @@ function printObject(element, fieldTypes) {
 			console.error(e);
 		}
 	}
-	let attrType = "";
-	for (let a in element.attributes) {
-		let attrs = element.attributes;
+	var attrType = "";
+	for (var a in element.attributes) {
+		var attrs = element.attributes;
 		try {
 			parseInt(a);
 			if (attrs.hasOwnProperty(a) && attrs[a].nodeType == 2) {
-				let attr = attrs[a].nodeName;
+				var attr = attrs[a].nodeName;
 				if (attr == "xmlns:xsd" || attr == "xsd:noNamespaceSchemaLocation") {
 					continue;
 				}
 				if (attr !== 'containerField') {
 					// look at object model
-					let attrType = "SFString";
+					var attrType = "SFString";
 					if (typeof fieldTypes[element.nodeName] !== 'undefined') {
 						attrType = fieldTypes[element.nodeName][attr];
 					}
 
-					let value = "";
+					var value = "";
 					if (attrs[a].nodeValue === 'NULL') {
 						value = null;
 					} else if (attrType === "SFString") {
@@ -182,9 +182,9 @@ function printObject(element, fieldTypes) {
 		}
 		attrType = "";
 	}
-	let array = [];
-	for (let cn in element.childNodes) {
-		let node = element.childNodes[cn];
+	var array = [];
+	for (var cn in element.childNodes) {
+		var node = element.childNodes[cn];
 		if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 1) {
 			array.push(printObject(node, fieldTypes));
 		} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 8) {

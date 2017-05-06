@@ -48,14 +48,14 @@ test4();
  */
 function test4() {
 	raw("================================================================================");
-	let fromNode = {"d":0,"f":0};
-	let toNode = {"a":0};
+	var fromNode = {"d":0,"f":0};
+	var toNode = {"a":0};
 	info("fromNode originally "+stringify(fromNode));
 	info("toNode originally "+stringify(toNode));
-	let fromProxyAction = {};
-	let fromProxy = createProxy(fromProxyAction, fromNode);
-	let toProxyAction = {};
-	let toProxy = createProxy(toProxyAction, toNode);
+	var fromProxyAction = {};
+	var fromProxy = createProxy(fromProxyAction, fromNode);
+	var toProxyAction = {};
+	var toProxy = createProxy(toProxyAction, toNode);
 
 	route(fromProxyAction, fromProxy, '"d"', toProxy, '"a"');
 	route(fromProxyAction, fromProxy, '"d"', fromProxy, '"f"');
@@ -75,14 +75,14 @@ function test4() {
  */
 function test3() {
 	raw("================================================================================");
-	let fromNode = {"d":0,"f":0};
-	let toNode = {"a":0};
+	var fromNode = {"d":0,"f":0};
+	var toNode = {"a":0};
 	info("fromNode originally "+stringify(fromNode));
 	info("toNode originally "+stringify(toNode));
-	let fromProxyAction = {};
-	let fromProxy = createProxy(fromProxyAction, fromNode);
-	let toProxyAction = {};
-	let toProxy = createProxy(toProxyAction, toNode);
+	var fromProxyAction = {};
+	var fromProxy = createProxy(fromProxyAction, fromNode);
+	var toProxyAction = {};
+	var toProxy = createProxy(toProxyAction, toNode);
 
 	route(fromProxyAction, fromProxy, '"d"', toProxy, '"a"');
 	route(toProxyAction, toProxy, '"a"', fromProxy, '"f"');
@@ -107,14 +107,14 @@ function test3() {
  */
 function test2() {
 	raw("================================================================================");
-	let fromNode = [ {d: { f: 7 , e: [1, 2, 3]}}, { c : [4]}]
-	let toNode = fromNode;
+	var fromNode = [ {d: { f: 7 , e: [1, 2, 3]}}, { c : [4]}]
+	var toNode = fromNode;
 	info("Node originally "+stringify(fromNode));
 	assert(fromNode, toNode);
-	let fromProxyAction = {};
-	let fromProxy = createProxy(fromProxyAction, fromNode);
-	let toProxyAction = {};
-	let toProxy = createProxy(toProxyAction, toNode);
+	var fromProxyAction = {};
+	var fromProxy = createProxy(fromProxyAction, fromNode);
+	var toProxyAction = {};
+	var toProxy = createProxy(toProxyAction, toNode);
 
 	// Create actionable fields in the fromNode, that set
 	// fields in the toNode
@@ -144,12 +144,12 @@ function test2() {
  */
 function test() {
 	raw("================================================================================");
-	let fromNode = [ {d: { f: 7 , e: [1, 2, 3]}}, { c : [4]}]
-	let toNode = fromNode;
+	var fromNode = [ {d: { f: 7 , e: [1, 2, 3]}}, { c : [4]}]
+	var toNode = fromNode;
 	info("Node originally "+stringify(fromNode));
 	assert(fromNode, toNode);
-	let proxyAction = {};
-	let proxy = createProxy(proxyAction, fromNode);
+	var proxyAction = {};
+	var proxy = createProxy(proxyAction, fromNode);
 
 	// Create actionable fields in the fromNode, that set
 	// fields in the toNode
@@ -216,7 +216,7 @@ function test() {
 }
 
 function setField(proxy, fromField, value) {
-	let selector = MFStringToProperty(fromField);
+	var selector = MFStringToProperty(fromField);
 	raw("\n");
 	info("Storing "+fromField+" = "+selector+" = "+stringify(value)+" in Proxy");
 	proxy[selector] = value;
@@ -251,13 +251,13 @@ function stringify(selectorField) {
 		debug("selector output "+selectorField);
 		return selectorField;
 	/*
-		let indexes = parse(selectorField);
-		let selector = JSON.stringify(indexes);
+		var indexes = parse(selectorField);
+		var selector = JSON.stringify(indexes);
 		debug("selector output "+selector);
 		return selector;
 	*/
 	} else {
-		let selector = JSON.stringify(selectorField);
+		var selector = JSON.stringify(selectorField);
 		debug("selector output "+selector);
 		return selector;
 	}
@@ -269,7 +269,7 @@ function stringify(selectorField) {
 function parse(selectorField) {
 	debug("selector input "+selectorField);
 	if (typeof selectorField === 'string') {
-		let indexes = JSON.parse(selectorField);
+		var indexes = JSON.parse(selectorField);
 		return indexes;
 	} else {
 		return selectorField;
@@ -290,7 +290,7 @@ function MFStringToProperty(string) {
 
 /*
 function JsonToMFString(json) {
-	let str = stringify(json).split(/,/).join('" "')
+	var str = stringify(json).split(/,/).join('" "')
 	str = "'"+str.substr(1, str.length-2)+'"';
 	return str;
 }
@@ -363,11 +363,11 @@ function info(string) {
  */
 function setInternalField(node, selectorField, value) {
 	debug("Node before "+ stringify(node));
-	let skipDescendants = 0; // number of descendents to skip
-	let selectedValue = node;
-	let higherValue = selectedValue;
+	var skipDescendants = 0; // number of descendents to skip
+	var selectedValue = node;
+	var higherValue = selectedValue;
 	var selector  = PropertyToJson(selectorField);
-	let depth = (selector.length - skipDescendants);
+	var depth = (selector.length - skipDescendants);
 	debug("Trying to Set "+stringify(node)+stringify(selector)+" = "+
 		stringify(value));
 	for (var index = 0; index < depth - 1; index++) {
@@ -433,7 +433,7 @@ function createProxy(proxyAction, fromNode) {
 			debug("Value set is "+value);
 			debug("property is "+ property);
 			if (typeof proxyAction[property] === 'object') {
-				for (let route in proxyAction[property]) {
+				for (var route in proxyAction[property]) {
 					// set the toNode, act on the route
 					debug("route"+route+" "+typeof proxyAction[property][route]);
 					if (typeof proxyAction[property][route] === 'function') {
@@ -460,14 +460,14 @@ function createProxy(proxyAction, fromNode) {
  * want to affect the toNode.
  */
 function proxySetAction(fromNode, fromField, toNode, toField, property, value) {
-	let fromProperty = MFStringToProperty(fromField);
+	var fromProperty = MFStringToProperty(fromField);
 	if (fromProperty != property) {
 		fatal("from"+fromField+" out of sync with property "+property+".  Did you forget to set a route?");
 	}
 	debug("fromField is "+fromField);
 	debug("toField is "+toField);
 	debug("property is "+property);
-	let toProperty = MFStringToProperty(toField);
+	var toProperty = MFStringToProperty(toField);
 	debug("toProperty is "+toProperty);
 	if (toNode == fromNode && fromField == toField) {
 		warning("We don't need to set the same value twice!");

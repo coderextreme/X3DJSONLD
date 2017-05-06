@@ -12,7 +12,7 @@ AframeSerializer.prototype = {
 		var docType = DOMImplementation.createDocumentType("html");
 		var document = DOMImplementation.createDocument(null, "html", docType);
 		var aframeelement = document.getElementsByTagNameNS(null, "html")[0];
-		let x3d = this.parseObject(document, "body", fieldTypes, json);
+		var x3d = this.parseObject(document, "body", fieldTypes, json);
 		aframeelement.appendChild(x3d);
 		var xml = '<?xml version="1.0" encoding="'+json.X3D["encoding"]+'"?>\n';
 		xml += XMLSerializer.serializeToString(aframeelement);
@@ -23,10 +23,10 @@ AframeSerializer.prototype = {
 	parseSubObject : function(attrType, type, values) {
 		return values.join(" ");
 		if (attrType.startsWith("MF")) {
-			let newArray = [];
-			for (let j = 0; j < values.length;) {
-				let newObject = {};
-				for (let letter in type) {
+			var newArray = [];
+			for (var j = 0; j < values.length;) {
+				var newObject = {};
+				for (var letter in type) {
 					newObject[type[letter]] = parseFloat(values[j++]);
 				}
 				newArray.push(newObject);
@@ -34,9 +34,9 @@ AframeSerializer.prototype = {
 			return newArray;
 
 		} else {
-			let newObject = {};
-			let j = 0;
-			for (let letter in type) {
+			var newObject = {};
+			var j = 0;
+			for (var letter in type) {
 				newObject[type[letter]] = parseFloat(values[j++]);
 			}
 			return newObject;
@@ -45,10 +45,10 @@ AframeSerializer.prototype = {
 	parseSubArray : function(attrType, numpersub, values) {
 		return values.join(" ");
 		if (numpersub > 1 && attrType.startsWith("MF")) {
-			let newArrays = [];
-			for (let j = 0; j < values.length;) {
-				let newArray = [];
-				for (let i = 0; i < numpersub; i++) {
+			var newArrays = [];
+			for (var j = 0; j < values.length;) {
+				var newArray = [];
+				for (var i = 0; i < numpersub; i++) {
 					if (attrType === "MFString") {
 						newArray[i] = values[j++];
 					} else {
@@ -59,10 +59,10 @@ AframeSerializer.prototype = {
 			}
 			return newArrays;
 		} else if (numpersub === 0) { // index
-			let newArrays = [];
-			let newArray = [];
-			let i = 0;
-			for (let j = 0; j < values.length;) {
+			var newArrays = [];
+			var newArray = [];
+			var i = 0;
+			for (var j = 0; j < values.length;) {
 				if (values[j] == -1) {
 					newArrays.push(newArray);
 					newArray = [];
@@ -86,31 +86,31 @@ AframeSerializer.prototype = {
 		return JSON.parse(JSON.stringify(from));
 	},
 	componentsToAttributes : function(element, components) {
-		let componentCollector = {};
-		for (let component in components) {
+		var componentCollector = {};
+		for (var component in components) {
 			if (typeof componentCollector[component] === 'undefined') {
 				componentCollector[component] = [];
 			}
 			console.log("	component", component);
-			let properties = components[component];
-			let props = componentCollector[component];
-			for (let property in properties) {
+			var properties = components[component];
+			var props = componentCollector[component];
+			for (var property in properties) {
 				console.log("		property", property,properties[property]);
 				if (property !== "element") {
-					let p = property+": "+properties[property];
+					var p = property+": "+properties[property];
 					props.push(p);
 				}
 			}
 			console.log("Setting attribute",component,"to", props.join("; "));
 		}
-		for (let component in componentCollector) {
-			let props = componentCollector[component];
+		for (var component in componentCollector) {
+			var props = componentCollector[component];
 			element.setAttribute(component, props.join("; "));
 		}
 	},
 	elementToComponentMap(name, attr, components, component, json, field, value) {
 		console.log("value is", value);
-		let map = {
+		var map = {
 			/* name
 			 * 	attribute
 			 * 		component
@@ -211,16 +211,16 @@ AframeSerializer.prototype = {
 				element: "div"
 			},
 		};
-		let mapComponents;
+		var mapComponents;
 		if (typeof map[name] !== 'undefined') {
 			mapComponents = map[name][attr];
 			console.log("Found", name, attr, JSON.stringify(mapComponents));
 		}
 		if (typeof mapComponents === 'object' && typeof component !== 'undefined') {
-			for (let mapComponent in mapComponents) {
+			for (var mapComponent in mapComponents) {
 				console.log("map comp", mapComponent);
-				let properties = mapComponents[mapComponent];
-				for (let property in properties) {
+				var properties = mapComponents[mapComponent];
+				for (var property in properties) {
 					if (typeof components !== 'undefined') {
 						if (typeof components[component] === 'undefined') {
 							components[component] = {};
@@ -243,7 +243,7 @@ AframeSerializer.prototype = {
 		}
 	},
 	getValueFromJsonField(json, field, attrType) {
-		let value = "";
+		var value = "";
 		/*
 		if (json[field] === 'NULL') {
 			value = null;
@@ -326,10 +326,10 @@ AframeSerializer.prototype = {
 		return value;
 	},
 	parseObject : function(document, name, fieldTypes, json) {
-		let element;
+		var element;
 
-		let components = {};
-		let aframe = this.elementToComponentMap(name, "element", components, "geometry"); // we don't need JSON as these are hard-coded
+		var components = {};
+		var aframe = this.elementToComponentMap(name, "element", components, "geometry"); // we don't need JSON as these are hard-coded
 		console.log("Aframe is", aframe, "for", name);
 		if (typeof aframe === 'undefined') {
 			element = document.createElement(name+"U-a-entity");
@@ -354,9 +354,9 @@ AframeSerializer.prototype = {
 		} else {
 			// console.error("element ", name);
 		}
-		for (let field in json) {
+		for (var field in json) {
 			if (field.startsWith("@")) {
-				let attr = field.substr(1);
+				var attr = field.substr(1);
 				if ((attr === "profile" || attr === "version") && aframe.element === "div") {
 					continue;
 				}
@@ -372,14 +372,14 @@ AframeSerializer.prototype = {
 				/*
 				if (attr !== 'containerField') {
 					// look at object model
-					let attrType = "SFString";
+					var attrType = "SFString";
 					if (typeof fieldTypes[name] !== 'undefined') {
 						attrType = fieldTypes[name][attr];
 					}
 
-					// let value = this.getValueFromJsonField(json, field, attrType);
+					// var value = this.getValueFromJsonField(json, field, attrType);
 				*/
-					let value = json[field];
+					var value = json[field];
 					this.elementToComponentMap(name, attr, element.components, "geometry", json, field, value);
 					// we send material to parent.
 					this.elementToComponentMap(name, attr, element.components, "material", json, field, value);
@@ -394,17 +394,17 @@ AframeSerializer.prototype = {
 				element.appendChild(document.createCDATASection(json[field].join("\r\n").replace(/'([^'\r]*)\n([^']*)'/g, "'$1\\n$2'")));
 
 			} else {
-				let node = json[field];
+				var node = json[field];
 				if (typeof node === 'object') {
-					let containerElement = this.parseObject(document, field, fieldTypes, node);
+					var containerElement = this.parseObject(document, field, fieldTypes, node);
 
-					let ct = containerElement.nodeName || "-";
-					let nct = parseInt(ct.trim());
-					let ict = ct.startsWith("-") || !isNaN(nct); // illegal if true
+					var ct = containerElement.nodeName || "-";
+					var nct = parseInt(ct.trim());
+					var ict = ct.startsWith("-") || !isNaN(nct); // illegal if true
 					if (ict) {
-						let children = Array.prototype.slice.call(containerElement.childNodes);
+						var children = Array.prototype.slice.call(containerElement.childNodes);
 						// skip the immediete child
-						for (let child = 0; child < children.length; child++) {
+						for (var child = 0; child < children.length; child++) {
 							if (typeof children[child] !== 'undefined') {
 								element.appendChild(children[child]);
 								/*

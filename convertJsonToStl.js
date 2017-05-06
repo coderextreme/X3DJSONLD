@@ -1,11 +1,11 @@
 function convertJsonToStl(json) {
-	let LDNodeList = [];
-	let LDNode = initializeLDNode(json, "X3D");
+	var LDNodeList = [];
+	var LDNode = initializeLDNode(json, "X3D");
 	LDNodeList.push(LDNode);
 	LDNodeList = toNormals(json, LDNodeList, LDNode);
 	if (LDNodeList !== null) {
-		let transform = Matrix.translation(0,0,0);
-		let output = [];
+		var transform = Matrix.translation(0,0,0);
+		var output = [];
 		transformLDNodesToTriangles(LDNodeList[0], output, transform);
 		return output.join("\r\n")+"\r\n";
 	} else {
@@ -15,7 +15,7 @@ function convertJsonToStl(json) {
 
 
 function initializeLDNode(json, obj) {
-	let LDNode = {};
+	var LDNode = {};
 	LDNode.USE = json[obj]["@USE"];
 	LDNode.DEF = json[obj]["@DEF"];
 	LDNode.nodeName = obj;
@@ -24,7 +24,7 @@ function initializeLDNode(json, obj) {
 function findLDNodeInList(use, LDNodeList) {
 	if (typeof use !== 'undefined') {
 		for (var g in LDNodeList) {
-			let LDNode = LDNodeList[g];
+			var LDNode = LDNodeList[g];
 			if (LDNode.DEF === use) {
 				console.log("Found USE", use, "returning", LDNode);
 				return LDNode;
@@ -35,8 +35,8 @@ function findLDNodeInList(use, LDNodeList) {
 }
 
 function toNormals(json, LDNodeList, ParentNode) {
-	let LDNode = LDNodeList.length === 0 ? null : LDNodeList[LDNodeList.length-1];
-	let nodeDispatchTable = {
+	var LDNode = LDNodeList.length === 0 ? null : LDNodeList[LDNodeList.length-1];
+	var nodeDispatchTable = {
 		IndexedFaceSet : function(obj, LDNode) {
 			LDNode.normalPerVertex = true;
 			LDNode.kid = true;
@@ -70,7 +70,7 @@ function toNormals(json, LDNodeList, ParentNode) {
 			LDNode.kid = true;
 		}
 	}
-	let fieldDispatchTable = {
+	var fieldDispatchTable = {
 		"@scale" : function(obj, LDNode) {
 			LDNode.scale = Matrix.scale(obj[0], obj[1], obj[2]);
 			console.log("Scaling", LDNode.scale);
@@ -87,9 +87,9 @@ function toNormals(json, LDNodeList, ParentNode) {
 			LDNode.normalPerVertex = obj;
 		},
 		"@vector" : function(obj, LDNode) {
-			let len = obj.length / 3;
+			var len = obj.length / 3;
 			LDNode.vector = [];
-			for (let o = 0, off = -1; o < len; o++) {
+			for (var o = 0, off = -1; o < len; o++) {
 				if (typeof LDNode.vector[o] === 'undefined') {
 					LDNode.vector[o] = [];
 				}
@@ -99,9 +99,9 @@ function toNormals(json, LDNodeList, ParentNode) {
 			}
 		},
 		"@point" : function(obj, LDNode) {
-			let len = obj.length / 3;
+			var len = obj.length / 3;
 			LDNode.point = [];
-			for (let o = 0, off = -1; o < len; o++) {
+			for (var o = 0, off = -1; o < len; o++) {
 				if (typeof LDNode.point[o] === 'undefined') {
 					LDNode.point[o] = [];
 				}
@@ -111,9 +111,9 @@ function toNormals(json, LDNodeList, ParentNode) {
 			}
 		},
 		"@normalIndex" : function(obj, LDNode) {
-			let f = 0;
+			var f = 0;
 			LDNode.normalIndex = [];
-			for (let o = 0; o < obj.length; o++) {
+			for (var o = 0; o < obj.length; o++) {
 				if (obj[o] == -1 || LDNode.normalPerVertex === false) {
 					f++;
 				} else {
@@ -125,9 +125,9 @@ function toNormals(json, LDNodeList, ParentNode) {
 			}
 		},
 		"@coordIndex" : function(obj, LDNode) {
-			let f = 0;
+			var f = 0;
 			LDNode.coordIndex = [];
-			for (let o = 0; o < obj.length; o++) {
+			for (var o = 0; o < obj.length; o++) {
 				if (obj[o] == -1) {
 					f++;
 				} else {
@@ -140,10 +140,10 @@ function toNormals(json, LDNodeList, ParentNode) {
 		},
 		"@index" : function(obj, LDNode) {
 			LDNode.index = [];
-			let f = -1;
+			var f = -1;
 			switch(LDNode.nodeName) {
 			case 'IndexedTriangleSet':
-				for (let o = 0; o < obj.length; o++) {
+				for (var o = 0; o < obj.length; o++) {
 					if (o % 3 === 0) {
 						f++;
 					}
@@ -154,7 +154,7 @@ function toNormals(json, LDNodeList, ParentNode) {
 				}
 				break;
 			case 'IndexedTriangleStripSet':
-				for (let o = 2; o < obj.length; o++) {
+				for (var o = 2; o < obj.length; o++) {
 					if (obj[o] == -1) {
 						o += 3;
 						if (o >= obj.length) {
@@ -169,8 +169,8 @@ function toNormals(json, LDNodeList, ParentNode) {
 				}
 				break;
 			case 'IndexedTriangleFanSet':
-				let center = 0;
-				for (let o = 2; o < obj.length; o++) {
+				var center = 0;
+				for (var o = 2; o < obj.length; o++) {
 					if (obj[o] == -1) {
 						center = o+1;
 						o += 3;
@@ -188,9 +188,9 @@ function toNormals(json, LDNodeList, ParentNode) {
 			}
 		}
 	}
-	for (let obj in json) {
+	for (var obj in json) {
 		if (typeof nodeDispatchTable[obj] !== 'undefined') {
-			let LDNode = findLDNodeInList(json[obj]["@USE"], LDNodeList);
+			var LDNode = findLDNodeInList(json[obj]["@USE"], LDNodeList);
 			if (LDNode === null) {
 				LDNode = initializeLDNode(json, obj);
 				LDNodeList.push(LDNode);
@@ -223,13 +223,13 @@ function vector_product(u, v) {
 }
 
 function normalize(v) {
-	let norm = Math.sqrt(v[0]*v[0] + v[1]*v[1] + v[2]*v[2]);
+	var norm = Math.sqrt(v[0]*v[0] + v[1]*v[1] + v[2]*v[2]);
 	return [ v[0]/norm, v[1]/norm, v[2]/norm ];
 }
 
 function triangle_normal(a, b, c) {
-	let ba = [a[0] - b[0], a[1] - b[1], a[2] - b[2]];
-	let bc = [c[0] - b[0], c[1] - b[1], c[2] - b[2]];
+	var ba = [a[0] - b[0], a[1] - b[1], a[2] - b[2]];
+	var bc = [c[0] - b[0], c[1] - b[1], c[2] - b[2]];
 	baxbc = vector_product(ba, bc);
 	return normalize(baxbc);
 }
@@ -247,7 +247,7 @@ function IndexedTriangle(LDNode, output, transform) {
 			// normalPerVertex == false
 			if (typeof LDNode.Normal === 'undefined') {
 				// compute the normal for the face with 3 points
-				let normal = triangle_normal(
+				var normal = triangle_normal(
 					LDNode.Coordinate.point[f[0]],
 					LDNode.Coordinate.point[f[1]],
 					LDNode.Coordinate.point[f[2]],
@@ -285,7 +285,7 @@ function IndexedTriangle(LDNode, output, transform) {
 }
 
 function transformLDNodesToTriangles(LDNode, output, parentTransform) {
-	let dispatchTable = {
+	var dispatchTable = {
 		IndexedFaceSet: function(LDNode, output, transform) {
 			if (typeof LDNode.coordIndex === 'object') {
 				output.push("solid "+(LDNode.DEF || LDNode.nodeName));
@@ -293,7 +293,7 @@ function transformLDNodesToTriangles(LDNode, output, parentTransform) {
 					var f = LDNode.coordIndex[face];
 			// just pick a close vector for now, average later
 					if (typeof LDNode.normalIndex === 'undefined') {
-						let normal = triangle_normal(
+						var normal = triangle_normal(
 							LDNode.Coordinate.point[f[0]] || [ 1, 0, 0 ],
 							LDNode.Coordinate.point[f[1]] || [ 0, 1, 0 ],
 							LDNode.Coordinate.point[f[2]] || [ 0, 0, 1 ]);
@@ -313,7 +313,7 @@ function transformLDNodesToTriangles(LDNode, output, parentTransform) {
 							transform);
 					}
 					output.push("    outer loop");
-					for (let v in f) {
+					for (var v in f) {
 						if (typeof LDNode.Coordinate.point[f[v]] !== 'undefined') {
 							printSFVec3f("      vertex",
 								LDNode.Coordinate.point[f[v]][0] || 0,
@@ -333,10 +333,10 @@ function transformLDNodesToTriangles(LDNode, output, parentTransform) {
 		IndexedTriangleStripSet: IndexedTriangle,
 		IndexedTriangleFanSet: IndexedTriangle
 	};
-	for (let k in LDNode.kids) {
-		let CNode = LDNode.kids[k];
+	for (var k in LDNode.kids) {
+		var CNode = LDNode.kids[k];
 
-		let transform = parentTransform.copy();
+		var transform = parentTransform.copy();
 		if (CNode.translation) {
 			transform = transform.matmatmult(CNode.translation);
 		}
