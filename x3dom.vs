@@ -53,4 +53,3 @@ void main()
     tb = refract(incident, fragNormal, chromaticDispertion.z)*mvm3;
     rfac = bias + scale * pow(0.5+0.5*dot(incident, fragNormal), power);
 }
-

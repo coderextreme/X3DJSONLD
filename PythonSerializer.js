@@ -106,8 +106,33 @@ PythonSerializer.prototype = {
 					if (attr === "type") {
 						fieldAttrType = attrs[a].nodeValue;
 						var method = attr;
-						str += '.'+method+"("+strval+")";
+						if (element.nodeName === 'NavigationInfo' ) {
+							strval = this.printSubArray(attrType, "java.lang.String",
+								attrs[a].nodeValue.substr(1, attrs[a].nodeValue.length-2).split(/" "/).
+								map(function(x) {
+									var y = x.
+										replace(/(\\+)([^&\\"])/g, '$1$1$2').
+									       replace(/\\\\"/g, '\\\"').
+									       replace(/(\\)+([&"])/g, '\\\\\\\$2').
+									       replace(/""/g, '\\"\\"').
+									       replace(/&quot;&quot;/g, '\\"\\"').
+									       replace(/&/g, "&amp;").
+									       replace(/\\n/g, '\\n');
+									if (y !== x) {
+										// console.error("Python Replacing "+x+" with "+y);
+									}
+									return y;
+								}), this.codeno, '","', '"', '"');
+						} else if (attrs[a].nodeValue !== "VERTEX" && attrs[a].nodeValue !== "FRAGMENT") {
+							strval = "fieldObject.TYPE_"+attrs[a].nodeValue.toUpperCase();
+						} else {
+							strval = '"'+attrs[a].nodeValue.
+								replace(/\\n/g, '\\\\n').
+								replace(/\\?"/g, "\\\"")
+								+'"';
+						}
 						method = "set"+method.charAt(0).toUpperCase() + method.slice(1);
+						str += '.'+method+"("+strval+")";
 					}
 				}
 			} catch (e) {
@@ -122,7 +147,7 @@ PythonSerializer.prototype = {
 				parseInt(a);
 				if (attrs.hasOwnProperty(a) && attrs[a].nodeType == 2) {
 					var attr = attrs[a].nodeName;
-					if (attr == "xmlns:xsd" || attr == "xsd:noNamespaceSchemaLocation" || attr === 'containerField') {
+					if (attr === "xmlns:xsd" || attr === "xsd:noNamespaceSchemaLocation" || attr === 'containerField' || attr === 'type') {
 						continue;
 					}
 					var method = attr;
@@ -144,26 +169,8 @@ PythonSerializer.prototype = {
 					if (attrs[a].nodeValue === 'NULL') {
 						strval = "";
 					} else if (attrType === "SFString") {
-						if (attr === "type" && attrs[a].nodeValue !== "VERTEX" && attrs[a].nodeValue !== "FRAGMENT") {
-							strval = "fieldObject.TYPE_"+attrs[a].nodeValue.toUpperCase();
-						} else if (attr === "accessType") {
+						if (attr === "accessType") {
 							strval = "fieldObject.ACCESSTYPE_"+attrs[a].nodeValue.toUpperCase();
-						/*
-						} else if (
-							attrs[a].nodeValue.indexOf("_changed") > 0 &&
-
-							((element.nodeName === 'field' ||
-							attr === "name") ||
-							attr === "fromField")) {
-							strval = '"'+attrs[a].nodeValue.substr(0, attrs[a].nodeValue.indexOf("_changed")).replace(/\n/g, '\\\\n').replace(/\\?"/g, "\\\"")+'"';
-						} else if (
-							attrs[a].nodeValue.indexOf("set_") === 0 &&
-
-							((element.nodeName === 'field' &&
-							attr === "name") ||
-							attr === "toField")) {
-							strval = '"'+attrs[a].nodeValue.substr(4).replace(/\n/g, '\\\\n').replace(/\\?"/g, "\\\"")+'"';
-						*/
 						} else {
 							strval = '"'+attrs[a].nodeValue.
 								replace(/\\n/g, '\\\\n').
