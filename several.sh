@@ -11,7 +11,7 @@ export PROCESSORS=${PROCESSORS-8}
 javac RunSaxon.java
 python classes.py
 
-(ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java RunSaxon | xargs -P $PROCESSORS node json2all.js
+(ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java RunSaxon ---overwrite | xargs -P $PROCESSORS node json2all.js
 
 for i in `(ls "$@" | grep -v intermediate | grep -v "\.new") | sed 's/\.x3d$/.x3d.new/'| sed 's/\/c\/x3d-code\/www.web3d.org/www_web3d_org/'`
 do

@@ -520,7 +520,7 @@ protected class MFColor1 {
 }
 protected class MFString2 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"MontereyBayLargeMesh.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.x3d","MontereyBayLargeMesh.json","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.json"});
+    return new MFStringObject(new java.lang.String[] {"MontereyBayLargeMesh.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.x3d","MontereyBayLargeMesh.wrl","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.wrl"});
   }
 }
 protected class MFString3 {
@@ -530,7 +530,7 @@ protected class MFString3 {
 }
 protected class MFString4 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"Lighthouse.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.x3d","Lighthouse.json","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.json"});
+    return new MFStringObject(new java.lang.String[] {"Lighthouse.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.x3d","Lighthouse.wrl","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.wrl"});
   }
 }
 }

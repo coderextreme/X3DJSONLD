@@ -67,14 +67,12 @@
                       {
                         "@name":"vertex",
                         "@accessType":"inputOutput",
-                        "@type":"MFString",
-                        "@value":["freewrl_flowers_chromatic.vs"]
+                        "@type":"MFString"
                       },
                       {
                         "@name":"fragment",
                         "@accessType":"inputOutput",
-                        "@type":"MFString",
-                        "@value":["freewrl.fs"]
+                        "@type":"MFString"
                       }
                     ]
                   }
