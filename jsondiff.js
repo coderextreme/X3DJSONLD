@@ -12,7 +12,7 @@ function parseString(string, callback) {
 	}
 }
 
-let program = process.argv[1];
+var program = process.argv[1];
 
 process.argv.shift();
 process.argv.shift();
@@ -51,8 +51,8 @@ function compare(obj1, p1, obj2, p2) {
 						for (var j = 0; j  < dsp1.length; j++) {
 							var dsp1key = p1key+'/'+j;
 							var dsp2key = p2key+'/'+j;
-							let ret;
-							let s;
+							var ret;
+							var s;
 							[ ret, s ] = compare(dsp1[j], p1key+"/"+j, dsp2[j], p2key+"/"+j);
 							str += s;
 							if (ret === false) {
@@ -91,8 +91,8 @@ function compare(obj1, p1, obj2, p2) {
 			var p2key = p2+'/'+key;
 			if (typeof obj2[key] !== 'undefined') {
 				// both have key
-				let ret;
-				let s;
+				var ret;
+				var s;
 				if (arrayKeys[key]) {
 					[ ret, s ] = compare(obj1[key].split(/[ \t\n\r]+/), p1key, obj2[key].split(/[ \t\n\r]+/), p2key);
 				} else {
@@ -156,8 +156,8 @@ try {
 				var left = fs.readFileSync(file);
 				parseString(left, function(err, resultleft) {
 					if (err) throw "LEFT FILE "+err;
-					let ret;
-					let str;
+					var ret;
+					var str;
 					[ ret, str ] = compare(resultleft, '', resultright, '');
 					if (!ret) {
 						try {

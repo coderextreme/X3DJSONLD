@@ -6,7 +6,7 @@ if (typeof require === 'function') {
 }
 
 function fixXML(xmlstr) {
-	let original = xmlstr;
+	var original = xmlstr;
 	// get rid of self-closing tags
 	xmlstr = xmlstr.replace(/(<)([A-Za-z0-9]+)([^>]*)\/>/g, "$1$2$3></$2>");
 	// strip out namespace

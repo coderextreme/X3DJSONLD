@@ -118,7 +118,7 @@ function loadCobwebDOM(element) {
 Object.assign(mapToMethod, {
 });
 
-for (let map in mapToMethod2) {
+for (var map in mapToMethod2) {
 	Object.assign(mapToMethod[map], mapToMethod2[map]);
 }
 

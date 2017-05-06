@@ -1,4 +1,4 @@
-let mapToMethod2 = {
+var mapToMethod2 = {
 	"Shape" : {
 		"ProtoInstance": "setGeometry"
 	},

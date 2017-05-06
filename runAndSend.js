@@ -7,7 +7,7 @@ function runAndSend(args, callback) {
 	while (args[0].startsWith('-')) {
 		args.shift();
 	}
-	let infile = args[0];
+	var infile = args[0];
 	console.error("converted", infile);
 	var outfile = infile.substr(0, infile.lastIndexOf("."))+".json";
 	if (outfile.lastIndexOf("savage.nps.edu") >= 0) {

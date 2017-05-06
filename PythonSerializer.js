@@ -36,8 +36,8 @@ PythonSerializer.prototype = {
 	},
 
 	printParentChild : function (element, node, cn, mapToMethod, n) {
-		let prepre = ".";
-		let addpre = "set";
+		var prepre = ".";
+		var addpre = "set";
 		if (cn > 0 && node.nodeName !== 'IS') {
 			addpre = "add";
 		}
@@ -45,7 +45,7 @@ PythonSerializer.prototype = {
 			addpre = "add";
 		}
 
-		let method = node.nodeName;
+		var method = node.nodeName;
 		if (typeof mapToMethod[element.nodeName] === 'object') {
 			if (typeof mapToMethod[element.nodeName][node.nodeName] === 'string') {
 				addpre = "";
@@ -63,12 +63,12 @@ PythonSerializer.prototype = {
 			method = "addChild";
 			addpre = "";
 		}
-		for (let a in node.attributes) {
-			let attrs = node.attributes;
+		for (var a in node.attributes) {
+			var attrs = node.attributes;
 			try {
 				parseInt(a);
 				if (attrs.hasOwnProperty(a) && attrs[a].nodeType == 2) {
-					let attr = attrs[a].nodeName;
+					var attr = attrs[a].nodeName;
 					if (attr === "containerField") {
 						if (method === "setShaders") {
 							method = "addShaders"
@@ -94,14 +94,14 @@ PythonSerializer.prototype = {
 		return prepre+addpre+method;
 	},
 	subSerializeToString : function(element, mapToMethod, fieldTypes, n, stack) {
-		let str = "";
-		let fieldAttrType = "";
-		for (let a in element.attributes) {
-			let attrs = element.attributes;
+		var str = "";
+		var fieldAttrType = "";
+		for (var a in element.attributes) {
+			var attrs = element.attributes;
 			try {
 				parseInt(a);
 				if (attrs.hasOwnProperty(a) && attrs[a].nodeType == 2) {
-					let attr = attrs[a].nodeName;
+					var attr = attrs[a].nodeName;
 					if (attr == "type") {
 						fieldAttrType = attrs[a].nodeValue;
 					}
@@ -110,19 +110,19 @@ PythonSerializer.prototype = {
 				console.error(e);
 			}
 		}
-		let attrType = "";
-		for (let a in element.attributes) {
-			let attrs = element.attributes;
+		var attrType = "";
+		for (var a in element.attributes) {
+			var attrs = element.attributes;
 			try {
 				parseInt(a);
 				if (attrs.hasOwnProperty(a) && attrs[a].nodeType == 2) {
-					let attr = attrs[a].nodeName;
+					var attr = attrs[a].nodeName;
 					if (attr == "xmlns:xsd" || attr == "xsd:noNamespaceSchemaLocation" || attr === 'containerField') {
 						continue;
 					}
-					let method = attr;
+					var method = attr;
 					// look at object model
-					let attrType = "SFString";
+					var attrType = "SFString";
 					if (typeof fieldTypes[element.nodeName] !== 'undefined') {
 						attrType = fieldTypes[element.nodeName][attr];
 					}
@@ -135,7 +135,7 @@ PythonSerializer.prototype = {
 					} else {
 						method = "set"+method.charAt(0).toUpperCase() + method.slice(1);
 					}
-					let strval;
+					var strval;
 					if (attrs[a].nodeValue === 'NULL') {
 						strval = "";
 					} else if (attrType === "SFString") {
@@ -187,7 +187,7 @@ PythonSerializer.prototype = {
 						strval = this.printSubArray(attrType, "java.lang.String",
 							attrs[a].nodeValue.substr(1, attrs[a].nodeValue.length-2).split(/" "/).
 							map(function(x) {
-								let y = x.
+								var y = x.
 									replace(/(\\+)([^&\\"])/g, '$1$1$2').
 								       replace(/\\\\"/g, '\\\"').
 								       replace(/(\\)+([&"])/g, '\\\\\\\$2').
@@ -271,8 +271,8 @@ PythonSerializer.prototype = {
 			attrType = "";
 		}
 		str += "\n";
-		for (let cn in element.childNodes) {
-			let node = element.childNodes[cn];
+		for (var cn in element.childNodes) {
+			var node = element.childNodes[cn];
 			if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 1) {
 				var ch = "";
 				/*
@@ -299,7 +299,7 @@ PythonSerializer.prototype = {
 				str += ch;
 				stack.shift();
 			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 8) {
-				let y = node.nodeValue.
+				var y = node.nodeValue.
 					replace(/\\/g, '\\\\').
 					replace(/"/g, '\\"');
 				str += "\n"+element.nodeName+stack[0];
