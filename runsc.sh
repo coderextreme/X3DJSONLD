@@ -1,2 +1,2 @@
 #!/bin/sh
-node SchemaCheck.js
+${NODE} SchemaCheck.js

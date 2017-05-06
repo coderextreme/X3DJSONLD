@@ -29,11 +29,11 @@ for NEW in `(ls "$@" | grep -v intermediate | grep -v "\.new") | sed 's/\.x3d$/.
 do
 	JSON=`dirname $NEW | sed 's/www_web3d_org/\/c\/x3d-code\/www.web3d.org/' `/`basename $NEW .new.json`.json
 	if [ -e $NEW ]
-	then if [ -n "`node jsondiff.js $JSON $NEW`" ]
+	then if [ -n "`${NODE} jsondiff.js $JSON $NEW`" ]
 		then
 			echo ================================================================================
-			echo node jsondiff.js $JSON $NEW
-			node jsondiff.js $JSON $NEW
+			echo ${NODE} jsondiff.js $JSON $NEW
+			${NODE} jsondiff.js $JSON $NEW
 		fi
 	fi
 done
@@ -47,11 +47,11 @@ do
 	X3D=`dirname $i | sed 's/www_web3d_org/\/c\/x3d-code\/www.web3d.org/' `/`basename $i .new.x3d`.X3d
 	if [ -e $i ]
 	then
-		if [ -n "`node xmldiff.js $X3D $i`" ]
+		if [ -n "`${NODE} xmldiff.js $X3D $i`" ]
 		then
 			echo ================================================================================
-			echo node xmldiff.js $X3D $i
-			node xmldiff.js $X3D $i
+			echo ${NODE} xmldiff.js $X3D $i
+			${NODE} xmldiff.js $X3D $i
 		fi
 	fi
 done
