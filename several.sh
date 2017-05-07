@@ -11,15 +11,16 @@ export PROCESSORS=${PROCESSORS-8}
 javac RunSaxon.java
 python classes.py
 
-(ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java RunSaxon ---overwrite | xargs -P $PROCESSORS ${NODE} json2all.js
+(ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java RunSaxon ---overwrite ---silent| xargs -P $PROCESSORS ${NODE} json2all.js
 
 for i in `(ls "$@" | grep -v intermediate | grep -v "\.new") | sed 's/\.x3d$/.x3d.new/'| sed 's/\/c\/x3d-code\/www.web3d.org/www_web3d_org/'`
 do
 	${NODE} xmldiff.js `dirname $i  | sed 's/.\/www_web3d_org/\/c\/x3d-code\/www.web3d.org/'`/`basename $i .x3d.new`.x3d $i
 done
 
-(ls "$@" | grep -v intermediate | grep -v "\.new") | sed 's/\.x3d$/.java/' | sed 's/\/c\/x3d-code\/www.web3d.org/www_web3d_org/' | xargs -L 1 -P $PROCESSORS javac -J-Xss1g -J-Xmx4g
-(ls "$@" | grep -v intermediate | grep -v "\.new") | sed 's/\.x3d$//' | sed 's/^\.*\///' | sed 's/c\/x3d-code\/www.web3d.org/www_web3d_org/' | xargs -L 1 -P $PROCESSORS java -d64 -Xss1g -Xmx4g
+(ls "$@" | grep -v intermediate | grep -v "\.new") | sed 's/\.x3d$/.java/' | sed 's/\/c\/x3d-code\/www.web3d.org/www_web3d_org/' | xargs ls -d | xargs -L 1 -P $PROCESSORS javac -J-Xss1g -J-Xmx4g
+(ls "$@" | grep -v intermediate | grep -v "\.new") | sed 's/\.x3d$/.class/' | sed 's/\/c\/x3d-code\/www.web3d.org/www_web3d_org/' | xargs ls -d | sed 's/\.class$//' | sed 's/^\.*\///' | xargs -L 1 -P $PROCESSORS java -d64 -Xss1g -Xmx4g
+exit
 
 for NEW in `(ls "$@" | grep -v intermediate | grep -v "\.new") | sed 's/\.x3d$/.new.json/'| sed 's/\/c\/x3d-code\/www.web3d.org/www_web3d_org/'`
 do

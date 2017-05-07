@@ -12,6 +12,8 @@ var xmldom = require('xmldom');
 var DOMImplementation = new xmldom.DOMImplementation();
 
 var X3DJSONLD = require('./X3DJSONLD.js');
+
+var selectObjectFromJson = X3DJSONLD.selectObjectFromJson;
 var ConvertToX3DOM = X3DJSONLD.ConvertToX3DOM;
 
 var Script = require('./Script');
@@ -33,10 +35,27 @@ function doValidate(json, file, success, failure) {
 	if (typeof validate[version] !== 'undefined') {
 		var valid = validate[version](json);
 		if (!valid) {
+			console.error("================================================================================");
+			console.error("File:", file);
 			var errs = validate[version].errors;
 			for (var e in errs) {
 				error += "\r\n keyword: " + errs[e].keyword + "\r\n";
-				error += " dataPath: " + errs[e].dataPath + "\r\n";
+				var dataPath = errs[e].dataPath.replace(/^\./, "").replace(/[\.\[\]']+/g, " > ").replace(/ >[ \t]*$/, "");
+	
+				error += " dataPath: " + dataPath+ "\r\n";
+				var selectedObject = selectObjectFromJson(json, dataPath);
+				error += " value: " + JSON.stringify(selectedObject,
+					function(k, v) {
+					    var v2 = JSON.parse(JSON.stringify(v));
+					    if (typeof v2 === 'object') {
+						    for (var o in v2) {
+					    		if (typeof v2[o] === 'object') {
+								    v2[o] = "|elided|";
+							}
+					            }
+					    }
+					    return v2;
+					}) + "\r\n";
 				error += " message: " + errs[e].message + "\r\n";
 				error += " params: " + JSON.stringify(errs[e].params) + "\r\n";
 				error += " file: " + file + "\r\n";
@@ -186,7 +205,7 @@ function loadX3DJS(json, path, xml, NS, loadSchema, doValidate, callback) {
 	loadSchema(json, path, doValidate, function() {
 		callback(element);
 	}, function(e) {
-		console.error("Failed ", path, e);
+		console.error("Error: ", e);
 		callback(element); // TODO should not return element, but we are overriding
 	});
 }

@@ -505,6 +505,32 @@ function loadX3DJS(json, path, xml, NS, loadSchema, doValidate, callback) {
 	});
 }
 
+/**
+ * selectObjectFromJson() --  get an object in a node internally.
+ * The node is the javascript object tree to get an object out of.
+ * selectorField is a " > " separated list of properties in node.
+ *
+ */
+function selectObjectFromJson(node, selectorField) {
+	var skipDescendants = 0; // number of descendents to skip
+	var selectedValue = node;
+	var higherValue = selectedValue;
+	var selector  = selectorField.split(/ > /);
+	var depth = (selector.length - skipDescendants);
+	for (var index = 0; index < depth - 0; index++) {
+		higherValue = selectedValue;
+		selectedValue = selectedValue[selector[index]];
+		if (typeof selectedValue === 'undefined') {
+			// not sure how we got here, but let's bail
+			console.error("Error: I think we went down too far: "+selectorField+" is unavailable.");
+			return true;
+		}
+	}
+	return selectedValue;
+}
+
+module.exports = selectObjectFromJson;
+
 if (typeof module === 'object')  {
 	module.exports = {
 		loadX3DJS : loadX3DJS,
@@ -512,6 +538,7 @@ if (typeof module === 'object')  {
 		ConvertToX3DOM : ConvertToX3DOM,
 		setCDATACreateFunction : setCDATACreateFunction,
 		loadURLs : loadURLs,
+		selectObjectFromJson : selectObjectFromJson,
 		setDocument : function(doc) {
 			document = doc;
 		}

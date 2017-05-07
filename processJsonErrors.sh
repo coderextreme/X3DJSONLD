@@ -7,7 +7,7 @@ do
 	if [ "$REPLY" = "================================================================================" ]
 	then
 		read
-		FILE=${REPLY}
+		FILE=`echo ${REPLY} | sed 's/^File: //'`
 		if egrep -l '"@name".*:.*"error"|"@name".*:.*"warning"' $FILE > /dev/null
 		then
 			test
