@@ -124,6 +124,10 @@ class ClassPrinter:
             str += 'array",\n'
             if field["name"].endswith("url") or field["name"].endswith("Url"):
                 str += '\t\t\t\t\t"minItems" : 1,\n'
+            elif field["name"] == "ROUTE":
+                str += '\t\t\t\t\t"minItems" : 1,\n'
+            elif field["name"] == "Scene":
+                str += '\t\t\t\t\t"minItems" : 1,\n'
             elif field["type"] == "SFVec2f":
                 str += '\t\t\t\t\t"minItems" : 2,\n'
                 str += '\t\t\t\t\t"maxItems" : 2,\n'
@@ -290,17 +294,11 @@ class ClassPrinter:
             except:
                 pass
         str += '\t\t"'+self.name+'" : {\n'
-        if self.name == "meta" or self.name == 'component':
+        if self.name == "meta" or self.name == 'component' or self.name == 'connect' or self.name == 'unit':
             str += '\t\t\t"type" : "array",\n'
             str += '\t\t\t"items" : {\n'
         str += '\t\t\t"type" : "object",\n'
         str += '\t\t\t"properties" : {\n'
-        str += '\t\t\t\t"IS" : {\n'
-        str += '\t\t\t\t\t"$ref": "#/definitions/IS"\n'
-        str += '\t\t\t\t},\n'
-        str += '\t\t\t\t"#comment" : {\n'
-        str += '\t\t\t\t\t"type": "string"\n'
-        str += '\t\t\t\t},\n'
         if self.name == "X3D":
             str += '''\
                                 "@xsd:noNamespaceSchemaLocation": {
@@ -318,8 +316,68 @@ class ClassPrinter:
                                                 "UTF-32"
                                         ]
                                 },
-'''
+                                "-children": {
+                                        "type": "array",
+                                        "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                        "#comment": {
+                                                                "type": "string"
+                                                        }
+                                                },
+                                                "additionalProperties": false
+                                        }
+                                },
 
+'''
+        elif self.name == "head":
+            str += '''\
+                                "-children": {
+                                        "type": "array",
+                                        "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                        "#comment": {
+                                                                "type": "string"
+                                                        }
+                                                },
+                                                "additionalProperties": false
+                                        }
+                                },
+'''
+        elif self.name != "Anchor" and self.name != 'Billboard' and \
+             self.name != "CADAssembly" and self.name != 'CADPart' and \
+             self.name != "Collision" and self.name != 'Contour2D' and \
+             self.name != "EspduTransform" and self.name != 'EXPORT' and \
+             self.name != "ExternProtoDeclare" and self.name != 'GeneratedCubeMapTexture' and \
+             self.name != "GeoLocation" and self.name != 'GeoLOD' and \
+             self.name != "GeoTransform" and self.name != 'Group' and \
+             self.name != "HAnimJoint" and self.name != 'HAnimSegment' and \
+             self.name != "HAnimSite" and self.name != 'IMPORT' and \
+             self.name != "IS" and self.name != 'Layer' and \
+             self.name != "LayoutGroup" and self.name != 'LayoutLayer' and \
+             self.name != "LOD" and self.name != 'PickableGroup' and \
+             self.name != "ProtoBody" and self.name != 'ProtoDeclare' and \
+             self.name != "ProtoInstance" and self.name != 'ProtoInterface' and \
+             self.name != "ROUTE" and self.name != 'Scene' and \
+             self.name != "ScreenGroup" and self.name != 'StaticGroup' and \
+             self.name != "Switch" and self.name != 'Transform' and \
+             self.name != "ViewpointGroup" and self.name != 'Viewport' and \
+             self.name != "X3D" and self.name != 'field' and \
+             self.name != "fieldValue" and self.name != 'head' and \
+             self.name != "meta" and \
+             self.name != "unit" and self.name != 'component':
+            str += '''\
+                                "-children": {
+                                        "$ref": "#/definitions/-commentRoute"
+                                },
+'''
+#        else:
+#            str += '''\
+#				"-children": {
+#					"$ref": "#/definitions/-children"
+#				}
+#'''
         if self.node:
             fields = self.node.find_all("field")
             required = []
@@ -426,7 +484,7 @@ class ClassPrinter:
             str += '",\n\t\t\t\t\t"@'.join(required)
             str += '"\n\t\t\t\t],\n'
         str += '\t\t\t"additionalProperties": false\n'
-        if self.name == 'meta' or self.name == 'component':
+        if self.name == 'meta' or self.name == 'component' or self.name == 'connect' or self.name == 'unit':
             str += '\t\t}\n'
         str += '\t\t},\n'
         self.printed = True
@@ -447,6 +505,29 @@ code = '''{
         ],
         "additionalProperties": false,
         "definitions": {
+                "-commentRoute": {
+                        "description": "Comments and ROUTEs",
+                        "type": "array",
+                        "minItems": 1,
+                        "items": {
+                                "type": "object",
+                                "properties": {
+                                        "#comment": {
+                                                "type": "string"
+                                        },
+                                        "ROUTE": {
+                                                "$ref": "#/definitions/ROUTE"
+                                        },
+                                        "IMPORT": {
+                                                "$ref": "#/definitions/IMPORT"
+                                        },
+                                        "EXPORT": {
+                                                "$ref": "#/definitions/EXPORT"
+                                        }
+                                },
+                                "additionalProperties": false
+                        }
+                },
 '''
 
 
@@ -469,14 +550,14 @@ for aot in aots:
 cns = soup.find_all("ConcreteNode")
 for cn in cns:
     classes[cn['name']] = ClassPrinter(cn, { "X3DConcreteNode" : 1, "X3DChildNode" : 1 })
-#    classes["X3DConcreteNode"].children.append(cn["name"])
-#    classes["X3DChildNode"].children.append(cn["name"])
+    classes["X3DConcreteNode"].children.append(cn["name"])
+    classes["X3DChildNode"].children.append(cn["name"])
 
 sts = soup.find_all("Statement")
 for st in sts:
     classes[st['name']] = ClassPrinter(st, { "X3DConcreteStatement" : 1, "X3DChildNode" : 1 })
-#    classes["X3DConcreteStatement"].children.append(st["name"])
-#    classes["X3DChildNode"].children.append(st["name"])
+    classes["X3DConcreteStatement"].children.append(st["name"])
+    classes["X3DChildNode"].children.append(st["name"])
 
 for k,v in classes.items():
     v.findChildren()

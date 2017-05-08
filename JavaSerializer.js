@@ -262,7 +262,7 @@ JavaSerializer.prototype = {
 									return y;
 								}), this.codeno, '","', '"', '"');
 						} else if (attrs[a].nodeValue !== "VERTEX" && attrs[a].nodeValue !== "FRAGMENT") {
-							strval = "fieldObject.TYPE_"+attrs[a].nodeValue.toUpperCase();
+							strval = '"'+attrs[a].nodeValue+'"';
 						} else {
 							strval = '"'+attrs[a].nodeValue.
 								replace(/\\n/g, '\\\\n').

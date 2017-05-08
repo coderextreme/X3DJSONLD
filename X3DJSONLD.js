@@ -337,7 +337,7 @@ function CommentStringToXML(str) {
 
 function SFStringToXML(str) {
 	var y = str;
-	str = str.replace(/\\\\/g, '\\\\');
+	str = (""+str).replace(/\\\\/g, '\\\\');
 	str = str.replace(/\\\\\\\\/g, '\\\\');
 	str = str.replace(/\\/g, '\\\\');
 	str = str.replace(/(\\+)"/g, '\\"');
