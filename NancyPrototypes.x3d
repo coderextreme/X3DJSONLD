@@ -4,7 +4,7 @@
   <head>
     <meta content='NancyPrototypes.x3d' name='title'/>
     <meta content='Cindy Ballreich' name='creator'/>
-    <meta content='Tom Miller and Don Brutzman, NPS' name='translators'/>
+    <meta content='Tom Miller and Don Brutzman, NPS' name='translator'/>
     <meta content='9 July 2000' name='created'/>
     <meta content='19 January 2014' name='modified'/>
     <meta content='Canonical H-Anim 1.1 specification example, using ProtoDeclaration and ProtoInstance instead of native X3D tags. Prototype definitions are a compatible combination of version 1.0 and 2.0 prototype interfaces.' name='description'/>
