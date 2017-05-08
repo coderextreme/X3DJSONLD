@@ -119,11 +119,11 @@ function compare(obj1, p1, obj2, p2) {
 			var p2key = p2+'/'+key;
 			if (typeof obj1[key] === 'undefined') {
 				if (key === 'containerField') {
-					str += "@6"+p2key+"\n";
-					str += ">"+JSON.stringify(obj2[key])+"\n";
+					str += "@6 "+p2key+"\n";
+					str += "> "+JSON.stringify(obj2[key])+"\n";
 				} else {
-					str += "@7"+p2key+"\n";
-					str += ">"+JSON.stringify(obj2[key])+"\n";
+					str += "@7 "+p2key+"\n";
+					str += "> "+JSON.stringify(obj2[key])+"\n";
 					finalret = false;
 				}
 			}
