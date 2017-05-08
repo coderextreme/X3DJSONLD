@@ -28,16 +28,16 @@ for (var map in mapToMethod2) {
 
 var validate = function() { return false; }
 
-function doValidate(json, file, success, failure) {
+function doValidate(json, validated_version, file, success, failure) {
 	var retval = false;
 	var version = json.X3D["@version"];
 	var error = ""
-	if (typeof validate[version] !== 'undefined') {
-		var valid = validate[version](json);
+	if (typeof validated_version !== 'undefined') {
+		var valid = validated_version(json);
 		if (!valid) {
 			console.error("================================================================================");
 			console.error("File:", file);
-			var errs = validate[version].errors;
+			var errs = validated_version.errors;
 			for (var e in errs) {
 				error += "\r\n keyword: " + errs[e].keyword + "\r\n";
 				var dataPath = errs[e].dataPath.replace(/^\./, "").replace(/[\.\[\]']+/g, " > ").replace(/ >[ \t]*$/, "");
@@ -61,15 +61,16 @@ function doValidate(json, file, success, failure) {
 				error += " file: " + file + "\r\n";
 				error += " version: " + version + "\r\n";
 			}
+			failure(error);
+		} else {
+			if (typeof success == 'function') {
+				success();
+			} else {
+				failure("No success function");
+			}
 		}
-		retval = valid;
-	}
-	if (retval && typeof success == 'function') {
-		success();
-	} else if (typeof failure === 'function') {
-		failure(error);
 	} else {
-		console.error("User selected failure");
+		failure("Schema not loaded");
 	}
 }
 
@@ -80,25 +81,35 @@ function loadSchema(json, file, doValidate, success, failure) {
 		console.error("Can only validate version 3.0-4.0 presently. Switching version to 3.3.");
 		version = "3.3";
 	}
-        if (typeof validate[version] === 'undefined') {
+	var validated_version = validate[version];
+        if (typeof validated_version === 'undefined') {
 		var ajv = new Ajv({ allErrors:true});
 		ajv.addFormat("uri", /^(?:[a-z][a-z0-9+\-.]*:)?(?:\/?\/(?:(?:[a-z0-9\-._~!$&'()*+,;=:]|%[0-9a-f]{2})*@)?(?:\[(?:(?:(?:(?:[0-9a-f]{1,4}:){6}|::(?:[0-9a-f]{1,4}:){5}|(?:[0-9a-f]{1,4})?::(?:[0-9a-f]{1,4}:){4}|(?:(?:[0-9a-f]{1,4}:){0,1}[0-9a-f]{1,4})?::(?:[0-9a-f]{1,4}:){3}|(?:(?:[0-9a-f]{1,4}:){0,2}[0-9a-f]{1,4})?::(?:[0-9a-f]{1,4}:){2}|(?:(?:[0-9a-f]{1,4}:){0,3}[0-9a-f]{1,4})?::[0-9a-f]{1,4}:|(?:(?:[0-9a-f]{1,4}:){0,4}[0-9a-f]{1,4})?::)(?:[0-9a-f]{1,4}:[0-9a-f]{1,4}|(?:(?:25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d\d?))|(?:(?:[0-9a-f]{1,4}:){0,5}[0-9a-f]{1,4})?::[0-9a-f]{1,4}|(?:(?:[0-9a-f]{1,4}:){0,6}[0-9a-f]{1,4})?::)|[Vv][0-9a-f]+\.[a-z0-9\-._~!$&'()*+,;=:]+)\]|(?:(?:25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d\d?)|(?:[a-z0-9\-._~!$&'()*+,;=]|%[0-9a-f]{2})*)(?::\d*)?(?:\/(?:[a-z0-9\-._~!$&'()*+,;=:@]|%[0-9a-f]{2})*)*|\/(?:(?:[a-z0-9\-._~!$&'()*+,;=:@]|%[0-9a-f]{2})+(?:\/(?:[a-z0-9\-._~!$&'()*+,;=:@]|%[0-9a-f]{2})*)*)?|(?:[a-z0-9\-._~!$&'()*+,;=:@]|%[0-9a-f]{2})+(?:\/(?:[a-z0-9\-._~!$&'()*+,;=:@]|%[0-9a-f]{2})*)*)?(?:\?(?:[a-z0-9\-._~!$&'()*+,;=:@\/?]|%[0-9a-f]{2})*)?(?:\#(?:[a-z0-9\-._~!$&'()*+,;=:@\/?]|%[0-9a-f]{2})*)?$/i);
 
 		
+		console.error("Loading meta schema");
 		var metaschema = fs.readFileSync('draft-04-JSONSchema.json');
+		console.error("Parsing meta schema");
 		var metaschemajson = JSON.parse(metaschema.toString());
+		console.error("Adding meta schema");
 		ajv.addMetaSchema(metaschemajson);
+		console.error("Loading schema");
 		var schema = fs.readFileSync("x3d-"+version+"-JSONSchema.json");
+		console.error("Parsing schema");
 		var schemajson = JSON.parse(schema.toString());
+		console.error("Adding schema");
 		ajv.addSchema(schemajson);
-		console.log("Schema", version, "added");
-		validate[version] = ajv.compile(schemajson);
-		if (typeof validate[version] === 'undefined') {
+		console.error("Schema", version, "added");
+		validated_version = ajv.compile(schemajson);
+		validate[version] = validated_version;
+		if (typeof validated_version === 'undefined') {
 			console.error("Schema", version, "not compiled");
+		} else {
+			console.error("Schema", version, "compiled");
 		}
-		doValidate(json, file, success, failure);
+		doValidate(json, validated_version, file, success, failure);
 	} else {
-		doValidate(json, file, success, failure);
+		doValidate(json, validated_version, file, success, failure);
 	}
 }
 

@@ -419,16 +419,16 @@ function convertXmlToJson(xmlString, callback) {
 
 var validate = function() { return true; }
 
-function doValidate(json, file, success, failure, e) {
+function doValidate(json, validated_version, file, success, failure, e) {
 	var retval = false;
 	if (e) {
 		alert(e);
 	}
 	var version = json.X3D["@version"];
-	if (typeof validate[version] !== 'undefined') {
-		var valid = validate[version](json);
+	if (typeof validated_version !== 'undefined') {
+		var valid = validated_version(json);
 		if (!valid) {
-			var errs = validate[version].errors;
+			var errs = validated_version.errors;
 			var error = ""
 			for (var e in errs) {
 				error += "\r\n keyword: " + errs[e].keyword + "\r\n";
@@ -471,7 +471,8 @@ function loadSchema(json, file, doValidate, success, failure) {
 		console.error("Can only validate version 3.0-4.0 presently. Switching version to 3.3.");
 		version = "3.3";
 	}
-        if (typeof validate[version] === 'undefined') {
+	var validated_version = validate[version];
+        if (typeof validated_version === 'undefined') {
 		var ajv = new Ajv({ allErrors:true});
 		ajv.addFormat("uri", /^(?:[a-z][a-z0-9+\-.]*:)?(?:\/?\/(?:(?:[a-z0-9\-._~!$&'()*+,;=:]|%[0-9a-f]{2})*@)?(?:\[(?:(?:(?:(?:[0-9a-f]{1,4}:){6}|::(?:[0-9a-f]{1,4}:){5}|(?:[0-9a-f]{1,4})?::(?:[0-9a-f]{1,4}:){4}|(?:(?:[0-9a-f]{1,4}:){0,1}[0-9a-f]{1,4})?::(?:[0-9a-f]{1,4}:){3}|(?:(?:[0-9a-f]{1,4}:){0,2}[0-9a-f]{1,4})?::(?:[0-9a-f]{1,4}:){2}|(?:(?:[0-9a-f]{1,4}:){0,3}[0-9a-f]{1,4})?::[0-9a-f]{1,4}:|(?:(?:[0-9a-f]{1,4}:){0,4}[0-9a-f]{1,4})?::)(?:[0-9a-f]{1,4}:[0-9a-f]{1,4}|(?:(?:25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d\d?))|(?:(?:[0-9a-f]{1,4}:){0,5}[0-9a-f]{1,4})?::[0-9a-f]{1,4}|(?:(?:[0-9a-f]{1,4}:){0,6}[0-9a-f]{1,4})?::)|[Vv][0-9a-f]+\.[a-z0-9\-._~!$&'()*+,;=:]+)\]|(?:(?:25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d\d?)|(?:[a-z0-9\-._~!$&'()*+,;=]|%[0-9a-f]{2})*)(?::\d*)?(?:\/(?:[a-z0-9\-._~!$&'()*+,;=:@]|%[0-9a-f]{2})*)*|\/(?:(?:[a-z0-9\-._~!$&'()*+,;=:@]|%[0-9a-f]{2})+(?:\/(?:[a-z0-9\-._~!$&'()*+,;=:@]|%[0-9a-f]{2})*)*)?|(?:[a-z0-9\-._~!$&'()*+,;=:@]|%[0-9a-f]{2})+(?:\/(?:[a-z0-9\-._~!$&'()*+,;=:@]|%[0-9a-f]{2})*)*)?(?:\?(?:[a-z0-9\-._~!$&'()*+,;=:@\/?]|%[0-9a-f]{2})*)?(?:\#(?:[a-z0-9\-._~!$&'()*+,;=:@\/?]|%[0-9a-f]{2})*)?$/i);
 
@@ -485,30 +486,31 @@ function loadSchema(json, file, doValidate, success, failure) {
 			      console.log("Schema received");
 			      ajv.addSchema(schemajson);
 			      console.log("Schema", version, "added");
-			      validate[version] = ajv.compile(schemajson);
-			      if (typeof validate[version] !== 'undefined') {
+			      validated_version = ajv.compile(schemajson);
+			      validate[version] = validated_version;
+			      if (typeof validated_version !== 'undefined') {
 				      console.log("Schema compiled");
 			      } else {
 				      console.log("Schema not compiled");
 			      }
-			      doValidate(json, file, success, undefined);
+			      doValidate(json, validated_version, file, success, undefined);
 			    // } catch (e) {
-			      // doValidate(json, file, undefined, failure, e);
+			      // doValidate(json, validated_version, file, undefined, failure, e);
 			    // }
 			}).fail(function(e) {
-			   doValidate(json, file, undefined, failure, e);
+			   doValidate(json, validated_version, file, undefined, failure, e);
 			});
 		    // } catch (e) {
-		      // doValidate(json, file, undefined, failure, e);
+		      // doValidate(json, validated_version, file, undefined, failure, e);
 		    // }
 		}).fail(function(e) {
-		   doValidate(json, file, undefined, failure, e);
+		   doValidate(json, validated_version, file, undefined, failure, e);
 		});
 	} else {
 		// try {
-		      doValidate(json, file, success, undefined);
+		      doValidate(json, validated_version, file, success, undefined);
 		// } catch (e) {
-		      // doValidate(json, file, undefined, failure, e);
+		      // doValidate(json, validated_version, file, undefined, failure, e);
 		// }
 	}
 }
