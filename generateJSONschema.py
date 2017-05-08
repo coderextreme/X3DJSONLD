@@ -215,11 +215,11 @@ class ClassPrinter:
                 str += '{\n'
                 if field["name"].endswith("url") or field["name"].endswith("Url"):
                     str += '\t\t\t\t\t"format":"uri",\n'
-                    if enums != []:
-                        str += '\t\t\t\t\t\t"enum": [\n'
-                        str += '\t\t\t\t\t\t\t"'
-                        str += '",\n\t\t\t\t\t\t\t"'.join(enums)
-                        str += '"\n\t\t\t\t\t\t],\n'
+                if enums != []:
+                    str += '\t\t\t\t\t\t"enum": [\n'
+                    str += '\t\t\t\t\t\t\t"'
+                    str += '",\n\t\t\t\t\t\t\t"'.join(enums)
+                    str += '"\n\t\t\t\t\t\t],\n'
                 if firstValue is not None:
                     if field["type"] == "MFString":
                         str += '\t\t\t\t\t\t"default":"'+firstValue+'",\n'
