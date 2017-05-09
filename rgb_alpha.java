@@ -99,13 +99,13 @@ public class rgb_alpha {
         .addMeta(new metaObject().setName("generator").setContent("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"))
         .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new metaObject().setName("license").setContent("../../license.html"))
-        .addMeta(new metaObject().setName("translated").setContent("06 May 2017"))
+        .addMeta(new metaObject().setName("translated").setContent("08 May 2017"))
         .addMeta(new metaObject().setName("generator").setContent("X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"))
         .addMeta(new metaObject().setName("reference").setContent("X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"))
-        .addMeta(new metaObject().setName("translated").setContent("6 May 2017"))
+        .addMeta(new metaObject().setName("translated").setContent("8 May 2017"))
         .addMeta(new metaObject().setName("generator").setContent("X3DJSONLD: https://github.com/coderextreme/X3DJSONLD")))
       .setScene(new SceneObject()
-        .addChild(new NavigationInfoObject().setType(new MFStringObject(new MFString0().getArray())))
+        .addChild(new NavigationInfoObject().setType(new java.lang.String[] {"EXAMINE","WALK","FLY","ANY"}))
         .addChild(new GroupObject()
           .addChild(new TransformObject().setTranslation(new float[] {6.14221f,0.0694613f,-0.000999451f})
             .addChild(new ShapeObject()
@@ -133,9 +133,4 @@ public class rgb_alpha {
               .setGeometry(new CylinderObject())))))      ;
     return X3D0;
     }
-protected class MFString0 {
-  protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"EXAMINE","WALK","FLY","ANY"});
-  }
-}
 }

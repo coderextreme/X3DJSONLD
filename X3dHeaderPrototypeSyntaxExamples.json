@@ -70,7 +70,7 @@
           },
           {
             "@name":"translated",
-            "@content":"06 May 2017"
+            "@content":"08 May 2017"
           },
           {
             "@name":"generator",
@@ -294,12 +294,12 @@
                     "-geometry":
                       { "Text":
                         {
-                          "@string":["He said, \\\"Immel did it!\\\""]
+                          "@string":["He said, \"Immel did it!\""]
                         }
                       },
                     "-children":[
                       {
-                        "#comment":"alternative: Text string='\"\\\"\\\"\"'"
+                        "#comment":"alternative: Text string='\"He said, \\&quot;Immel did it!\\&quot;\"'"
                       }
                     ],
                     "-appearance":
@@ -411,6 +411,13 @@
               "@url":["someUrl.x3d","http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/someUrl.x3d"]
             }
           },
+          { "IMPORT":
+            {
+              "@AS":"someInlineRoot",
+              "@importedDEF":"someName",
+              "@inlineDEF":"someInline"
+            }
+          },
           { "PositionInterpolator":
             {
               "@DEF":"StayInPlace",
@@ -433,13 +440,6 @@
               "@toField":"set_translation",
               "@toNode":"someInlineRoot"
             }
-          }
-        ],
-        "IMPORT": [
-          {
-            "@AS":"someInlineRoot",
-            "@importedDEF":"someName",
-            "@inlineDEF":"someInline"
           }
         ]
     }

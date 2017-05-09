@@ -90,18 +90,18 @@ ProtoInstanceObject ProtoInstance3 = null;
         .addMeta(new metaObject().setName("generator").setContent("manual"))
         .addMeta(new metaObject().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/box.x3d"))
         .addMeta(new metaObject().setName("description").setContent("3 boxes"))
-        .addMeta(new metaObject().setName("translated").setContent("06 May 2017"))
+        .addMeta(new metaObject().setName("translated").setContent("08 May 2017"))
         .addMeta(new metaObject().setName("generator").setContent("X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"))
         .addMeta(new metaObject().setName("reference").setContent("X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"))
-        .addMeta(new metaObject().setName("translated").setContent("6 May 2017"))
+        .addMeta(new metaObject().setName("translated").setContent("8 May 2017"))
         .addMeta(new metaObject().setName("generator").setContent("X3DJSONLD: https://github.com/coderextreme/X3DJSONLD")))
       .setScene(new SceneObject()
-        .addChild(new NavigationInfoObject().setType(new MFStringObject(new MFString0().getArray())))
+        .addChild(new NavigationInfoObject().setType(new java.lang.String[] {"EXAMINE"}))
         .addChild(new ViewpointObject().setDescription("Cubes on Fire").setPosition(new float[] {0f,0f,12f}))
         .addChild(new ProtoDeclareObject().setName("anyShape")
           .setProtoInterface(new ProtoInterfaceObject()
-            .addField(new fieldObject().setName("xtranslation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFVEC3F).setValue("0 0 0"))
-            .addField(new fieldObject().setName("myShape").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_MFNODE)
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("xtranslation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setName("myShape").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
               .addChild(new ShapeObject()
                 .setGeometry(new SphereObject())
                 .setAppearance(new AppearanceObject()
@@ -113,8 +113,8 @@ ProtoInstanceObject ProtoInstance3 = null;
                 .addConnect(new connectObject().setNodeField("children").setProtoField("myShape"))))))
         .addChild(new ProtoDeclareObject().setName("three")
           .setProtoInterface(new ProtoInterfaceObject()
-            .addField(new fieldObject().setName("ytranslation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFVEC3F).setValue("0 0 0"))
-            .addField(new fieldObject().setName("myShape").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_MFNODE)
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("ytranslation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setName("myShape").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
               .addChild(new ShapeObject()
                 .setGeometry(new CylinderObject())
                 .setAppearance(new AppearanceObject()
@@ -149,9 +149,4 @@ ProtoInstance3
                 .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0f,1f,0f})))));
     return X3D0;
     }
-protected class MFString0 {
-  protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"EXAMINE"});
-  }
-}
 }

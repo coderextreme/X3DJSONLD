@@ -87,10 +87,10 @@ public class extrusion {
         .addMeta(new metaObject().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/force.x3d"))
         .addMeta(new metaObject().setName("description").setContent("beginnings of a force directed graph in 3D"))
         .addMeta(new metaObject().setName("generator").setContent("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit"))
-        .addMeta(new metaObject().setName("translated").setContent("06 May 2017"))
+        .addMeta(new metaObject().setName("translated").setContent("08 May 2017"))
         .addMeta(new metaObject().setName("generator").setContent("X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"))
         .addMeta(new metaObject().setName("reference").setContent("X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"))
-        .addMeta(new metaObject().setName("translated").setContent("6 May 2017"))
+        .addMeta(new metaObject().setName("translated").setContent("8 May 2017"))
         .addMeta(new metaObject().setName("generator").setContent("X3DJSONLD: https://github.com/coderextreme/X3DJSONLD")))
       .setScene(new SceneObject()
         .addChild(new GroupObject()
@@ -100,8 +100,8 @@ public class extrusion {
               .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0f,1f,0f}))))
           .addChild(new TimeSensorObject().setDEF("TourTime").setLoop(true))
           .addChild(new ScriptObject().setDEF("MoveCylinder")
-            .addField(new fieldObject().setName("set_cycle").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setType(fieldObject.TYPE_SFTIME))
-            .addField(new fieldObject().setName("spine").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_MFVEC3F).setValue("-50 -50 0 50 50 0"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFTIME).setName("set_cycle").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFVEC3F).setName("spine").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("-50 -50 0 50 50 0"))
             .setSourceCode("ecmascript:\n"+
 "\n"+
 "                function set_cycle(value) {\n"+

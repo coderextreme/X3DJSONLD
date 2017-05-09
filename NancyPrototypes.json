@@ -15,7 +15,7 @@
             "@content":"Cindy Ballreich"
           },
           {
-            "@name":"translators",
+            "@name":"translator",
             "@content":"Tom Miller and Don Brutzman, NPS"
           },
           {
@@ -52,7 +52,7 @@
           },
           {
             "@name":"translated",
-            "@content":"06 May 2017"
+            "@content":"08 May 2017"
           },
           {
             "@name":"generator",

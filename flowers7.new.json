@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"06 May 2017"
+            "@content":"08 May 2017"
           },
           {
             "@name":"generator",
@@ -40,7 +40,7 @@
           },
           {
             "@name":"translated",
-            "@content":"6 May 2017"
+            "@content":"8 May 2017"
           },
           {
             "@name":"generator",
@@ -48,7 +48,7 @@
           },
           {
             "@name":"translated",
-            "@content":"06 May 2017"
+            "@content":"08 May 2017"
           },
           {
             "@name":"generator",
@@ -126,67 +126,67 @@
                                     "@name":"set_cube",
                                     "@accessType":"inputOnly",
                                     "@type":"SFInt32",
-                                    "@value":"0"
+                                    "@value":0
                                   },
                                   {
                                     "@name":"set_chromaticDispertion",
                                     "@accessType":"initializeOnly",
                                     "@type":"SFVec3f",
-                                    "@value":"0.98 1 1.033"
+                                    "@value":[0.98,1,1.033]
                                   },
                                   {
                                     "@name":"set_bias",
                                     "@accessType":"inputOnly",
                                     "@type":"SFFloat",
-                                    "@value":"0.5"
+                                    "@value":0.5
                                   },
                                   {
                                     "@name":"set_scale",
                                     "@accessType":"inputOnly",
                                     "@type":"SFFloat",
-                                    "@value":"0.5"
+                                    "@value":0.5
                                   },
                                   {
                                     "@name":"set_power",
                                     "@accessType":"inputOnly",
                                     "@type":"SFFloat",
-                                    "@value":"2.0"
+                                    "@value":2.0
                                   },
                                   {
                                     "@name":"set_a",
                                     "@accessType":"inputOnly",
                                     "@type":"SFFloat",
-                                    "@value":"10.0"
+                                    "@value":10.0
                                   },
                                   {
                                     "@name":"set_b",
                                     "@accessType":"inputOnly",
                                     "@type":"SFFloat",
-                                    "@value":"1.0"
+                                    "@value":1.0
                                   },
                                   {
                                     "@name":"set_c",
                                     "@accessType":"inputOnly",
                                     "@type":"SFFloat",
-                                    "@value":"20.0"
+                                    "@value":20.0
                                   },
                                   {
                                     "@name":"set_d",
                                     "@accessType":"inputOnly",
                                     "@type":"SFFloat",
-                                    "@value":"20.0"
+                                    "@value":20.0
                                   },
                                   {
                                     "@name":"set_tdelta",
                                     "@accessType":"inputOnly",
                                     "@type":"SFFloat",
-                                    "@value":"0.0"
+                                    "@value":0.0
                                   },
                                   {
                                     "@name":"set_pdelta",
                                     "@accessType":"inputOnly",
                                     "@type":"SFFloat",
-                                    "@value":"0.0"
+                                    "@value":0.0
                                   }
                                 ]
                               }
@@ -262,37 +262,37 @@
                   "@name":"frontUrls",
                   "@accessType":"initializeOnly",
                   "@type":"MFString",
-                  "@value":"\"cubemap/all_probes/beach_cross/beach_front.png\" \"cubemap/all_probes/building_cross/building_front.png\" \"cubemap/all_probes/campus_cross/campus_front.png\" \"cubemap/all_probes/galileo_cross/galileo_front.png\" \"cubemap/all_probes/grace_cross/grace_front.png\" \"cubemap/all_probes/kitchen_cross/kitchen_front.png\" \"cubemap/all_probes/rnl_cross/rnl_front.png\" \"cubemap/all_probes/stpeters_cross/stpeters_front.png\" \"cubemap/all_probes/uffizi_cross/uffizi_front.png\""
+                  "@value":["cubemap/all_probes/beach_cross/beach_front.png","cubemap/all_probes/building_cross/building_front.png","cubemap/all_probes/campus_cross/campus_front.png","cubemap/all_probes/galileo_cross/galileo_front.png","cubemap/all_probes/grace_cross/grace_front.png","cubemap/all_probes/kitchen_cross/kitchen_front.png","cubemap/all_probes/rnl_cross/rnl_front.png","cubemap/all_probes/stpeters_cross/stpeters_front.png","cubemap/all_probes/uffizi_cross/uffizi_front.png"]
                 },
                 {
                   "@name":"backUrls",
                   "@accessType":"initializeOnly",
                   "@type":"MFString",
-                  "@value":"\"cubemap/all_probes/beach_cross/beach_back.png\" \"cubemap/all_probes/building_cross/building_back.png\" \"cubemap/all_probes/campus_cross/campus_back.png\" \"cubemap/all_probes/galileo_cross/galileo_back.png\" \"cubemap/all_probes/grace_cross/grace_back.png\" \"cubemap/all_probes/kitchen_cross/kitchen_back.png\" \"cubemap/all_probes/rnl_cross/rnl_back.png\" \"cubemap/all_probes/stpeters_cross/stpeters_back.png\" \"cubemap/all_probes/uffizi_cross/uffizi_back.png\""
+                  "@value":["cubemap/all_probes/beach_cross/beach_back.png","cubemap/all_probes/building_cross/building_back.png","cubemap/all_probes/campus_cross/campus_back.png","cubemap/all_probes/galileo_cross/galileo_back.png","cubemap/all_probes/grace_cross/grace_back.png","cubemap/all_probes/kitchen_cross/kitchen_back.png","cubemap/all_probes/rnl_cross/rnl_back.png","cubemap/all_probes/stpeters_cross/stpeters_back.png","cubemap/all_probes/uffizi_cross/uffizi_back.png"]
                 },
                 {
                   "@name":"leftUrls",
                   "@accessType":"initializeOnly",
                   "@type":"MFString",
-                  "@value":"\"cubemap/all_probes/beach_cross/beach_left.png\" \"cubemap/all_probes/building_cross/building_left.png\" \"cubemap/all_probes/campus_cross/campus_left.png\" \"cubemap/all_probes/galileo_cross/galileo_left.png\" \"cubemap/all_probes/grace_cross/grace_left.png\" \"cubemap/all_probes/kitchen_cross/kitchen_left.png\" \"cubemap/all_probes/rnl_cross/rnl_left.png\" \"cubemap/all_probes/stpeters_cross/stpeters_left.png\" \"cubemap/all_probes/uffizi_cross/uffizi_left.png\""
+                  "@value":["cubemap/all_probes/beach_cross/beach_left.png","cubemap/all_probes/building_cross/building_left.png","cubemap/all_probes/campus_cross/campus_left.png","cubemap/all_probes/galileo_cross/galileo_left.png","cubemap/all_probes/grace_cross/grace_left.png","cubemap/all_probes/kitchen_cross/kitchen_left.png","cubemap/all_probes/rnl_cross/rnl_left.png","cubemap/all_probes/stpeters_cross/stpeters_left.png","cubemap/all_probes/uffizi_cross/uffizi_left.png"]
                 },
                 {
                   "@name":"rightUrls",
                   "@accessType":"initializeOnly",
                   "@type":"MFString",
-                  "@value":"\"cubemap/all_probes/beach_cross/beach_right.png\" \"cubemap/all_probes/building_cross/building_right.png\" \"cubemap/all_probes/campus_cross/campus_right.png\" \"cubemap/all_probes/galileo_cross/galileo_right.png\" \"cubemap/all_probes/grace_cross/grace_right.png\" \"cubemap/all_probes/kitchen_cross/kitchen_right.png\" \"cubemap/all_probes/rnl_cross/rnl_right.png\" \"cubemap/all_probes/stpeters_cross/stpeters_right.png\" \"cubemap/all_probes/uffizi_cross/uffizi_right.png\""
+                  "@value":["cubemap/all_probes/beach_cross/beach_right.png","cubemap/all_probes/building_cross/building_right.png","cubemap/all_probes/campus_cross/campus_right.png","cubemap/all_probes/galileo_cross/galileo_right.png","cubemap/all_probes/grace_cross/grace_right.png","cubemap/all_probes/kitchen_cross/kitchen_right.png","cubemap/all_probes/rnl_cross/rnl_right.png","cubemap/all_probes/stpeters_cross/stpeters_right.png","cubemap/all_probes/uffizi_cross/uffizi_right.png"]
                 },
                 {
                   "@name":"topUrls",
                   "@accessType":"initializeOnly",
                   "@type":"MFString",
-                  "@value":"\"cubemap/all_probes/beach_cross/beach_top.png\" \"cubemap/all_probes/building_cross/building_top.png\" \"cubemap/all_probes/campus_cross/campus_top.png\" \"cubemap/all_probes/galileo_cross/galileo_top.png\" \"cubemap/all_probes/grace_cross/grace_top.png\" \"cubemap/all_probes/kitchen_cross/kitchen_top.png\" \"cubemap/all_probes/rnl_cross/rnl_top.png\" \"cubemap/all_probes/stpeters_cross/stpeters_top.png\" \"cubemap/all_probes/uffizi_cross/uffizi_top.png\""
+                  "@value":["cubemap/all_probes/beach_cross/beach_top.png","cubemap/all_probes/building_cross/building_top.png","cubemap/all_probes/campus_cross/campus_top.png","cubemap/all_probes/galileo_cross/galileo_top.png","cubemap/all_probes/grace_cross/grace_top.png","cubemap/all_probes/kitchen_cross/kitchen_top.png","cubemap/all_probes/rnl_cross/rnl_top.png","cubemap/all_probes/stpeters_cross/stpeters_top.png","cubemap/all_probes/uffizi_cross/uffizi_top.png"]
                 },
                 {
                   "@name":"bottomUrls",
                   "@accessType":"initializeOnly",
                   "@type":"MFString",
-                  "@value":"\"cubemap/all_probes/beach_cross/beach_bottom.png\" \"cubemap/all_probes/building_cross/building_bottom.png\" \"cubemap/all_probes/campus_cross/campus_bottom.png\" \"cubemap/all_probes/galileo_cross/galileo_bottom.png\" \"cubemap/all_probes/grace_cross/grace_bottom.png\" \"cubemap/all_probes/kitchen_cross/kitchen_bottom.png\" \"cubemap/all_probes/rnl_cross/rnl_bottom.png\" \"cubemap/all_probes/stpeters_cross/stpeters_bottom.png\" \"cubemap/all_probes/uffizi_cross/uffizi_bottom.png\""
+                  "@value":["cubemap/all_probes/beach_cross/beach_bottom.png","cubemap/all_probes/building_cross/building_bottom.png","cubemap/all_probes/campus_cross/campus_bottom.png","cubemap/all_probes/galileo_cross/galileo_bottom.png","cubemap/all_probes/grace_cross/grace_bottom.png","cubemap/all_probes/kitchen_cross/kitchen_bottom.png","cubemap/all_probes/rnl_cross/rnl_bottom.png","cubemap/all_probes/stpeters_cross/stpeters_bottom.png","cubemap/all_probes/uffizi_cross/uffizi_bottom.png"]
                 },
                 {
                   "@name":"front_changed",
@@ -333,7 +333,7 @@
                   "@name":"old",
                   "@accessType":"inputOutput",
                   "@type":"SFInt32",
-                  "@value":"-1"
+                  "@value":-1
                 }
               ],
               "#sourceText":[
@@ -481,73 +481,73 @@
                   "@name":"a_changed",
                   "@accessType":"outputOnly",
                   "@type":"SFFloat",
-                  "@value":"10.0"
+                  "@value":10.0
                 },
                 {
                   "@name":"b_changed",
                   "@accessType":"outputOnly",
                   "@type":"SFFloat",
-                  "@value":"1.0"
+                  "@value":1.0
                 },
                 {
                   "@name":"c_changed",
                   "@accessType":"outputOnly",
                   "@type":"SFFloat",
-                  "@value":"20.0"
+                  "@value":20.0
                 },
                 {
                   "@name":"d_changed",
                   "@accessType":"outputOnly",
                   "@type":"SFFloat",
-                  "@value":"20.0"
+                  "@value":20.0
                 },
                 {
                   "@name":"tdelta_changed",
                   "@accessType":"outputOnly",
                   "@type":"SFFloat",
-                  "@value":"0.0"
+                  "@value":0.0
                 },
                 {
                   "@name":"pdelta_changed",
                   "@accessType":"outputOnly",
                   "@type":"SFFloat",
-                  "@value":"0.0"
+                  "@value":0.0
                 },
                 {
                   "@name":"set_a",
                   "@accessType":"inputOnly",
                   "@type":"SFFloat",
-                  "@value":"10.0"
+                  "@value":10.0
                 },
                 {
                   "@name":"set_b",
                   "@accessType":"inputOnly",
                   "@type":"SFFloat",
-                  "@value":"1.0"
+                  "@value":1.0
                 },
                 {
                   "@name":"set_c",
                   "@accessType":"inputOnly",
                   "@type":"SFFloat",
-                  "@value":"20.0"
+                  "@value":20.0
                 },
                 {
                   "@name":"set_d",
                   "@accessType":"inputOnly",
                   "@type":"SFFloat",
-                  "@value":"20.0"
+                  "@value":20.0
                 },
                 {
                   "@name":"set_tdelta",
                   "@accessType":"inputOnly",
                   "@type":"SFFloat",
-                  "@value":"0.0"
+                  "@value":0.0
                 },
                 {
                   "@name":"set_pdelta",
                   "@accessType":"inputOnly",
                   "@type":"SFFloat",
-                  "@value":"0.0"
+                  "@value":0.0
                 }
               ],
               "#sourceText":[

@@ -70,7 +70,7 @@
           },
           {
             "@name":"translated",
-            "@content":"06 May 2017"
+            "@content":"08 May 2017"
           },
           {
             "@name":"generator",
@@ -82,7 +82,7 @@
           },
           {
             "@name":"translated",
-            "@content":"6 May 2017"
+            "@content":"8 May 2017"
           },
           {
             "@name":"generator",
@@ -90,7 +90,7 @@
           },
           {
             "@name":"translated",
-            "@content":"06 May 2017"
+            "@content":"09 May 2017"
           },
           {
             "@name":"generator",
@@ -331,7 +331,7 @@
                     "-geometry":
                       { "Text":
                         {
-                          "@string":["He said, \\\"Immel did it!\\\""]
+                          "@string":["He said, \"Immel did it!\""]
                         }
                       },
                     "-children":[
@@ -441,13 +441,13 @@
               "@toField":"set_translation",
               "@toNode":"someInlineRoot"
             }
-          }
-        ],
-        "IMPORT": [
-          {
-            "@AS":"someInlineRoot",
-            "@importedDEF":"someName",
-            "@inlineDEF":"someInline"
+          },
+          { "IMPORT":
+            {
+              "@AS":"someInlineRoot",
+              "@importedDEF":"someName",
+              "@inlineDEF":"someInline"
+            }
           }
         ]
     }

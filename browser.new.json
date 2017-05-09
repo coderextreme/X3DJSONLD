@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"06 May 2017"
+            "@content":"08 May 2017"
           },
           {
             "@name":"generator",
@@ -40,7 +40,7 @@
           },
           {
             "@name":"translated",
-            "@content":"6 May 2017"
+            "@content":"8 May 2017"
           },
           {
             "@name":"generator",
@@ -48,7 +48,7 @@
           },
           {
             "@name":"translated",
-            "@content":"06 May 2017"
+            "@content":"08 May 2017"
           },
           {
             "@name":"generator",
@@ -68,7 +68,7 @@
               "#sourceText":[
 "ecmascript:",
 "                function initialize() {",
-"\t\t    Browser.print('DUDES\n'+'\"DUDETTES');",
+"\t\t    Browser.print('DUDES\\n'+'\"DUDETTES');",
 "                }"
 ]
             }
@@ -83,8 +83,8 @@
 "function cumulustranslation() // These values designate the boundary location of the cloud",
 "{",
 "var xxx = ' '+' '+",
-"'\tTransform\t\t\n'+",
-"'    ' + '               \t\n';",
+"'\tTransform\t\t\\n'+",
+"'    ' + '               \t\\n';",
 "",
 "}"
 ]
