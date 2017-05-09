@@ -87,10 +87,10 @@ public class geobubbles {
         .addMeta(new metaObject().setName("generator").setContent("manual"))
         .addMeta(new metaObject().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/geobubbles.x3d"))
         .addMeta(new metaObject().setName("description").setContent("geo bubbles"))
-        .addMeta(new metaObject().setName("translated").setContent("06 May 2017"))
+        .addMeta(new metaObject().setName("translated").setContent("08 May 2017"))
         .addMeta(new metaObject().setName("generator").setContent("X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"))
         .addMeta(new metaObject().setName("reference").setContent("X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"))
-        .addMeta(new metaObject().setName("translated").setContent("6 May 2017"))
+        .addMeta(new metaObject().setName("translated").setContent("8 May 2017"))
         .addMeta(new metaObject().setName("generator").setContent("X3DJSONLD: https://github.com/coderextreme/X3DJSONLD")))
       .setScene(new SceneObject()
         .addComments(new CommentsBlock("Viewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views'/"))
@@ -105,10 +105,10 @@ public class geobubbles {
         .addChild(new TimeSensorObject().setDEF("TourTime").setCycleInterval(5d).setLoop(true))
         .addChild(new GeoPositionInterpolatorObject().setDEF("TourPosition").setKey(new MFFloatObject(new MFFloat6().getArray())).setKeyValue(new MFVec3dObject(new MFVec3d7().getArray())))
         .addChild(new ScriptObject().setDEF("RandomTourTime")
-          .addField(new fieldObject().setName("set_cycle").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setType(fieldObject.TYPE_SFTIME))
-          .addField(new fieldObject().setName("val").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFFLOAT).setValue("0"))
-          .addField(new fieldObject().setName("positions").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_MFVEC3D).setValue("0.0015708 0 4 0 0.0015708 4"))
-          .addField(new fieldObject().setName("position").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_MFVEC3D).setValue("0.0015708 0 4 0 0.0015708 4"))
+          .addField(new fieldObject().setType(fieldObject.TYPE_SFTIME).setName("set_cycle").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
+          .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("val").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
+          .addField(new fieldObject().setType(fieldObject.TYPE_MFVEC3D).setName("positions").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.0015708 0 4 0 0.0015708 4"))
+          .addField(new fieldObject().setType(fieldObject.TYPE_MFVEC3D).setName("position").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.0015708 0 4 0 0.0015708 4"))
           .setSourceCode("ecmascript:\n"+
 "\n"+
 "               function set_cycle(value) {\n"+

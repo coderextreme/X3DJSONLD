@@ -150,7 +150,7 @@ ProtoInstanceObject ProtoInstance66 = null;
       .setHead(new headObject()
         .addMeta(new metaObject().setName("title").setContent("NancyPrototypes.x3d"))
         .addMeta(new metaObject().setName("creator").setContent("Cindy Ballreich"))
-        .addMeta(new metaObject().setName("translators").setContent("Tom Miller and Don Brutzman, NPS"))
+        .addMeta(new metaObject().setName("translator").setContent("Tom Miller and Don Brutzman, NPS"))
         .addMeta(new metaObject().setName("created").setContent("9 July 2000"))
         .addMeta(new metaObject().setName("modified").setContent("19 January 2014"))
         .addMeta(new metaObject().setName("description").setContent("Canonical H-Anim 1.1 specification example, using ProtoDeclaration and ProtoInstance instead of native X3D tags. Prototype definitions are a compatible combination of version 1.0 and 2.0 prototype interfaces."))
@@ -159,41 +159,41 @@ ProtoInstanceObject ProtoInstance66 = null;
         .addMeta(new metaObject().setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/NancyPrototypes.x3d"))
         .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new metaObject().setName("license").setContent("../license.html"))
-        .addMeta(new metaObject().setName("translated").setContent("06 May 2017"))
+        .addMeta(new metaObject().setName("translated").setContent("08 May 2017"))
         .addMeta(new metaObject().setName("generator").setContent("X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"))
         .addMeta(new metaObject().setName("reference").setContent("X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"))
-        .addMeta(new metaObject().setName("translated").setContent("6 May 2017"))
+        .addMeta(new metaObject().setName("translated").setContent("8 May 2017"))
         .addMeta(new metaObject().setName("generator").setContent("X3DJSONLD: https://github.com/coderextreme/X3DJSONLD")))
       .setScene(new SceneObject()
         .addChild(new ProtoDeclareObject().setName("Displacer").setAppinfo("A Displacer can be used in three different ways: (a) identify the vertices corresponding to a particular feature on a Segment (b) represent a particular muscular action which displaces the vertices in various directions (linearly or radially) and (c) represent a complete configuration of the vertices in a Segment.").setDocumentation("http://H-Anim.org/Specifications/H-Anim2001/part1/Displacer.html")
           .setProtoInterface(new ProtoInterfaceObject()
-            .addField(new fieldObject().setName("name").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFSTRING))
-            .addField(new fieldObject().setName("coordIndex").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_MFINT32))
-            .addField(new fieldObject().setName("displacements").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_MFVEC3F)))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFSTRING).setName("name").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFINT32).setName("coordIndex").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFVEC3F).setName("displacements").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)))
           .setProtoBody(new ProtoBodyObject()
             .addChild(new WorldInfoObject().setInfo(new MFStringObject(new MFString0().getArray())))))
         .addChild(new ProtoDeclareObject().setName("Humanoid").setAppinfo("The Humanoid node serves as overall container for the Joint Segment Site and Viewpoint nodes which define the skeleton geometry and landmarks of the humanoid figure. Additionally the node provides a means for defining information about the author copyright and usage restrictions of the model.").setDocumentation("http://H-Anim.org/Specifications/H-Anim2001/part1/Humanoid.html")
           .setProtoInterface(new ProtoInterfaceObject()
             .addComments(new CommentsBlock("H-Anim v1.1 field definitions"))
-            .addField(new fieldObject().setName("name").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFSTRING))
-            .addField(new fieldObject().setName("version").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("legal values: 1.1 or 2.0").setType(fieldObject.TYPE_SFSTRING).setValue("1.1"))
-            .addField(new fieldObject().setName("humanoidVersion").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Version of the humanoid being modeled. Hint: H-anim version 2.0").setType(fieldObject.TYPE_SFSTRING))
-            .addField(new fieldObject().setName("info").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_MFSTRING))
-            .addField(new fieldObject().setName("translation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFVEC3F).setValue("0 0 0"))
-            .addField(new fieldObject().setName("rotation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFROTATION).setValue("0 0 1 0"))
-            .addField(new fieldObject().setName("center").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFVEC3F).setValue("0 0 0"))
-            .addField(new fieldObject().setName("scale").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFVEC3F).setValue("1 1 1"))
-            .addField(new fieldObject().setName("scaleOrientation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFROTATION).setValue("0 0 1 0"))
-            .addField(new fieldObject().setName("bboxCenter").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setType(fieldObject.TYPE_SFVEC3F).setValue("0 0 0"))
-            .addField(new fieldObject().setName("bboxSize").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setType(fieldObject.TYPE_SFVEC3F).setValue("-1 -1 -1"))
-            .addField(new fieldObject().setName("humanoidBody").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("H-Anim 1.1 field container for body geometry Hint: replaced by 2.0 skeleton").setDocumentation("http://H-Anim.org/Specifications/H-Anim1.1/#humanoid").setType(fieldObject.TYPE_MFNODE))
-            .addField(new fieldObject().setName("skeleton").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("H-Anim 2.0 field container for body geometry Hint: replaces 1.1 humanoidBody").setDocumentation("http://H-Anim.org/Specifications/H-Anim2001/part1/Humanoid.html").setType(fieldObject.TYPE_MFNODE))
-            .addField(new fieldObject().setName("joints").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Container field for Joint nodes").setType(fieldObject.TYPE_MFNODE))
-            .addField(new fieldObject().setName("segments").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Container field for Segment nodes").setType(fieldObject.TYPE_MFNODE))
-            .addField(new fieldObject().setName("sites").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Container field for Site nodes").setType(fieldObject.TYPE_MFNODE))
-            .addField(new fieldObject().setName("viewpoints").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Container field for Viewpoint nodes").setType(fieldObject.TYPE_MFNODE))
-            .addField(new fieldObject().setName("skinCoord").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Hint: H-anim version 2.0").setType(fieldObject.TYPE_SFNODE).clearChildren())
-            .addField(new fieldObject().setName("skinNormal").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Hint: H-anim version 2.0").setType(fieldObject.TYPE_SFNODE).clearChildren()))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFSTRING).setName("name").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFSTRING).setName("version").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("legal values: 1.1 or 2.0").setValue("1.1"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFSTRING).setName("humanoidVersion").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Version of the humanoid being modeled. Hint: H-anim version 2.0"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFSTRING).setName("info").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("translation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFROTATION).setName("rotation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 1 0"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("center").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("scale").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("1 1 1"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFROTATION).setName("scaleOrientation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 1 0"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("bboxCenter").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue("0 0 0"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("bboxSize").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue("-1 -1 -1"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setName("humanoidBody").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("H-Anim 1.1 field container for body geometry Hint: replaced by 2.0 skeleton").setDocumentation("http://H-Anim.org/Specifications/H-Anim1.1/#humanoid"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setName("skeleton").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("H-Anim 2.0 field container for body geometry Hint: replaces 1.1 humanoidBody").setDocumentation("http://H-Anim.org/Specifications/H-Anim2001/part1/Humanoid.html"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setName("joints").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Container field for Joint nodes"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setName("segments").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Container field for Segment nodes"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setName("sites").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Container field for Site nodes"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setName("viewpoints").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Container field for Viewpoint nodes"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFNODE).setName("skinCoord").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Hint: H-anim version 2.0").clearChildren())
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFNODE).setName("skinNormal").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Hint: H-anim version 2.0").clearChildren()))
           .setProtoBody(new ProtoBodyObject()
             .addChild(new TransformObject().setDEF("HumanoidTransform")
               .setIS(new ISObject()
@@ -215,23 +215,23 @@ ProtoInstanceObject ProtoInstance66 = null;
                   .addConnect(new connectObject().setNodeField("children").setProtoField("viewpoints")))))))
         .addChild(new ProtoDeclareObject().setName("Joint").setAppinfo("The Joint node is used as a building block to describe the articulations of the humanoid figure. Each articulation of the humanoid figure is represented by a Joint node each of which is organized into a hierarchy that describes the overall skeleton of the humanoid.").setDocumentation("http://H-Anim.org/Specifications/H-Anim2001/part1/Joint.html")
           .setProtoInterface(new ProtoInterfaceObject()
-            .addField(new fieldObject().setName("name").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFSTRING))
-            .addField(new fieldObject().setName("ulimit").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_MFFLOAT))
-            .addField(new fieldObject().setName("llimit").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_MFFLOAT))
-            .addField(new fieldObject().setName("limitOrientation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFROTATION).setValue("0 0 1 0"))
-            .addField(new fieldObject().setName("skinCoordIndex").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_MFINT32))
-            .addField(new fieldObject().setName("skinCoordWeight").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_MFFLOAT))
-            .addField(new fieldObject().setName("stiffness").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_MFFLOAT).setValue("0 0 0"))
-            .addField(new fieldObject().setName("translation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFVEC3F).setValue("0 0 0"))
-            .addField(new fieldObject().setName("rotation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFROTATION).setValue("0 0 1 0"))
-            .addField(new fieldObject().setName("scale").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFVEC3F).setValue("1 1 1"))
-            .addField(new fieldObject().setName("scaleOrientation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFROTATION).setValue("0 0 1 0"))
-            .addField(new fieldObject().setName("center").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFVEC3F).setValue("0 0 0"))
-            .addField(new fieldObject().setName("bboxCenter").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setType(fieldObject.TYPE_SFVEC3F).setValue("0 0 0"))
-            .addField(new fieldObject().setName("bboxSize").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setType(fieldObject.TYPE_SFVEC3F).setValue("-1 -1 -1"))
-            .addField(new fieldObject().setName("children").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_MFNODE))
-            .addField(new fieldObject().setName("addChildren").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setType(fieldObject.TYPE_MFNODE))
-            .addField(new fieldObject().setName("removeChildren").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setType(fieldObject.TYPE_MFNODE)))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFSTRING).setName("name").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFFLOAT).setName("ulimit").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFFLOAT).setName("llimit").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFROTATION).setName("limitOrientation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 1 0"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFINT32).setName("skinCoordIndex").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFFLOAT).setName("skinCoordWeight").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFFLOAT).setName("stiffness").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("translation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFROTATION).setName("rotation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 1 0"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("scale").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("1 1 1"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFROTATION).setName("scaleOrientation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 1 0"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("center").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("bboxCenter").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue("0 0 0"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("bboxSize").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue("-1 -1 -1"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setName("children").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setName("addChildren").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setName("removeChildren").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)))
           .setProtoBody(new ProtoBodyObject()
             .addChild(new TransformObject().setDEF("JointTransform")
               .setIS(new ISObject()
@@ -247,17 +247,17 @@ ProtoInstanceObject ProtoInstance66 = null;
                 .addConnect(new connectObject().setNodeField("removeChildren").setProtoField("removeChildren"))))))
         .addChild(new ProtoDeclareObject().setName("Segment").setAppinfo("The Segment node is used describe the attributes of the physical links between the joints of the humanoid figure. Each body part (pelvis thigh calf etc) of the humanoid figure is represented by a Segment node.").setDocumentation("http://H-Anim.org/Specifications/H-Anim2001/part1/Segment.html")
           .setProtoInterface(new ProtoInterfaceObject()
-            .addField(new fieldObject().setName("name").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFSTRING))
-            .addField(new fieldObject().setName("mass").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFFLOAT).setValue("0"))
-            .addField(new fieldObject().setName("centerOfMass").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFVEC3F).setValue("0 0 0"))
-            .addField(new fieldObject().setName("momentsOfInertia").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_MFFLOAT).setValue("0 0 0 0 0 0 0 0 0"))
-            .addField(new fieldObject().setName("bboxCenter").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setType(fieldObject.TYPE_SFVEC3F).setValue("0 0 0"))
-            .addField(new fieldObject().setName("bboxSize").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setType(fieldObject.TYPE_SFVEC3F).setValue("-1 -1 -1"))
-            .addField(new fieldObject().setName("children").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_MFNODE))
-            .addField(new fieldObject().setName("addChildren").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setType(fieldObject.TYPE_MFNODE))
-            .addField(new fieldObject().setName("removeChildren").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setType(fieldObject.TYPE_MFNODE))
-            .addField(new fieldObject().setName("coord").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("contains Coordinate nodes").setType(fieldObject.TYPE_SFNODE).clearChildren())
-            .addField(new fieldObject().setName("displacers").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("contains Displacer nodes").setType(fieldObject.TYPE_MFNODE)))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFSTRING).setName("name").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("mass").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("centerOfMass").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFFLOAT).setName("momentsOfInertia").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0 0 0 0 0 0 0"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("bboxCenter").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue("0 0 0"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("bboxSize").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue("-1 -1 -1"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setName("children").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setName("addChildren").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setName("removeChildren").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFNODE).setName("coord").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("contains Coordinate nodes").clearChildren())
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setName("displacers").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("contains Displacer nodes")))
           .setProtoBody(new ProtoBodyObject()
             .addChild(new GroupObject().setDEF("SegmentGroup")
               .setIS(new ISObject()
@@ -268,17 +268,17 @@ ProtoInstanceObject ProtoInstance66 = null;
                 .addConnect(new connectObject().setNodeField("removeChildren").setProtoField("removeChildren"))))))
         .addChild(new ProtoDeclareObject().setName("Site").setAppinfo("The Site node can be used for three purposes: (a) to define an \"end effector\" location which can be used by an inverse kinematics system (b) to define an attachment point for accessories such as jewelry and clothing and (c) to define a location for a virtual camera in the reference frame of a Segment node (such as a view \"through the eyes\" of the humanoid for use in multi-user worlds).").setDocumentation("http://H-Anim.org/Specifications/H-Anim2001/part1/Site.html")
           .setProtoInterface(new ProtoInterfaceObject()
-            .addField(new fieldObject().setName("name").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFSTRING))
-            .addField(new fieldObject().setName("translation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFVEC3F).setValue("0 0 0"))
-            .addField(new fieldObject().setName("rotation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFROTATION).setValue("0 0 1 0"))
-            .addField(new fieldObject().setName("scale").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFVEC3F).setValue("1 1 1"))
-            .addField(new fieldObject().setName("scaleOrientation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFROTATION).setValue("0 0 1 0"))
-            .addField(new fieldObject().setName("center").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFVEC3F).setValue("0 0 0"))
-            .addField(new fieldObject().setName("bboxCenter").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setType(fieldObject.TYPE_SFVEC3F).setValue("0 0 0"))
-            .addField(new fieldObject().setName("bboxSize").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setType(fieldObject.TYPE_SFVEC3F).setValue("-1 -1 -1"))
-            .addField(new fieldObject().setName("children").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_MFNODE))
-            .addField(new fieldObject().setName("addChildren").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setType(fieldObject.TYPE_MFNODE))
-            .addField(new fieldObject().setName("removeChildren").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setType(fieldObject.TYPE_MFNODE)))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFSTRING).setName("name").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("translation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFROTATION).setName("rotation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 1 0"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("scale").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("1 1 1"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFROTATION).setName("scaleOrientation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 1 0"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("center").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("bboxCenter").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue("0 0 0"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("bboxSize").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue("-1 -1 -1"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setName("children").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setName("addChildren").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setName("removeChildren").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)))
           .setProtoBody(new ProtoBodyObject()
             .addChild(new TransformObject().setDEF("SiteTransform")
               .setIS(new ISObject()
@@ -295,7 +295,7 @@ ProtoInstanceObject ProtoInstance66 = null;
         .addComments(new CommentsBlock("Start scene graph."))
         .addChild(ProtoInstance0 = new ProtoInstanceObject().setName("Humanoid").setDEF("Humanoid"))
         .addChild(new WorldInfoObject().setInfo(new MFStringObject(new MFString40().getArray())).setTitle("Nancy - an H-Anim compliant avatar by 3Name3D"))
-        .addChild(new NavigationInfoObject().setAvatarSize(new MFFloatObject(new MFFloat41().getArray())).setSpeed(0.5f).setType(new MFStringObject(new MFString42().getArray())))
+        .addChild(new NavigationInfoObject().setType(new java.lang.String[] {"EXAMINE"}).setAvatarSize(new MFFloatObject(new MFFloat41().getArray())).setSpeed(0.5f))
         .addChild(new GroupObject().setDEF("Interface")
           .addChild(new TransformObject()
             .addChild(new ProximitySensorObject().setDEF("HudProx").setCenter(new float[] {0f,20f,0f}).setSize(new float[] {500f,100f,500f})))
@@ -305,53 +305,53 @@ ProtoInstanceObject ProtoInstance66 = null;
                 .addChild(new TransformObject().setDEF("Stand_Text")
                   .addChild(new TouchSensorObject().setDEF("Stand_Touch").setDescription("click for behavior"))
                   .addChild(new ShapeObject().setDEF("Stand")
-                    .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt3243().getArray()))
-                      .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f44().getArray()))))
+                    .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt3242().getArray()))
+                      .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f43().getArray()))))
                     .setAppearance(new AppearanceObject()
                       .setMaterial(new MaterialObject().setDEF("text_color").setAmbientIntensity(0f).setDiffuseColor(new float[] {0f,0f,0f}).setEmissiveColor(new float[] {0.819f,0.521f,0.169f}))))
                   .addChild(new TransformObject().setScale(new float[] {84.89f,77.52f,77.52f}).setTranslation(new float[] {0.04092f,1.843f,3.826f})
                     .addChild(new ShapeObject().setDEF("Stand_Back")
-                      .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt3245().getArray()))
-                        .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f46().getArray()))))
+                      .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt3244().getArray()))
+                        .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f45().getArray()))))
                       .setAppearance(new AppearanceObject()
                         .setMaterial(new MaterialObject().setDEF("Clear").setAmbientIntensity(0f).setDiffuseColor(new float[] {0f,0f,0f}).setTransparency(1f))))))
                 .addChild(new TransformObject().setDEF("Walk_Text")
                   .addChild(new TouchSensorObject().setDEF("Walk_Touch").setDescription("click for behavior"))
                   .addChild(new ShapeObject().setDEF("WALK")
-                    .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt3247().getArray()))
-                      .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f48().getArray()))))
+                    .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt3246().getArray()))
+                      .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f47().getArray()))))
                     .setAppearance(new AppearanceObject()
                       .setMaterial(new MaterialObject().setUSE("text_color"))))
                   .addChild(new TransformObject().setScale(new float[] {81.3f,81.3f,81.31f}).setTranslation(new float[] {-0.0414f,1.941f,4.015f})
                     .addChild(new ShapeObject().setDEF("Walk_Back")
-                      .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt3249().getArray()))
-                        .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f50().getArray()))))
+                      .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt3248().getArray()))
+                        .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f49().getArray()))))
                       .setAppearance(new AppearanceObject()
                         .setMaterial(new MaterialObject().setUSE("Clear"))))))
                 .addChild(new TransformObject().setDEF("Run_Text")
                   .addChild(new TouchSensorObject().setDEF("Run_Touch").setDescription("click for behavior"))
                   .addChild(new ShapeObject().setDEF("Run")
-                    .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt3251().getArray()))
-                      .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f52().getArray()))))
+                    .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt3250().getArray()))
+                      .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f51().getArray()))))
                     .setAppearance(new AppearanceObject()
                       .setMaterial(new MaterialObject().setUSE("text_color"))))
                   .addChild(new TransformObject().setScale(new float[] {82.47f,82.47f,82.48f}).setTranslation(new float[] {-0.01579f,1.968f,4.074f})
                     .addChild(new ShapeObject().setDEF("Run_Back")
-                      .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt3253().getArray()))
-                        .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f54().getArray()))))
+                      .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt3252().getArray()))
+                        .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f53().getArray()))))
                       .setAppearance(new AppearanceObject()
                         .setMaterial(new MaterialObject().setUSE("Clear"))))))
                 .addChild(new TransformObject().setDEF("Jump_Text")
                   .addChild(new TouchSensorObject().setDEF("Jump_Touch").setDescription("click for behavior"))
                   .addChild(new ShapeObject().setDEF("Jump")
-                    .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt3255().getArray()))
-                      .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f56().getArray()))))
+                    .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt3254().getArray()))
+                      .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f55().getArray()))))
                     .setAppearance(new AppearanceObject()
                       .setMaterial(new MaterialObject().setUSE("text_color"))))
                   .addChild(new TransformObject().setScale(new float[] {83.79f,83.79f,83.79f}).setTranslation(new float[] {-0.008979f,1.99f,4.14f})
                     .addChild(new ShapeObject().setDEF("Jump_Back")
-                      .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt3257().getArray()))
-                        .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f58().getArray()))))
+                      .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt3256().getArray()))
+                        .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f57().getArray()))))
                       .setAppearance(new AppearanceObject()
                         .setMaterial(new MaterialObject().setUSE("Clear")))))))))
           .addChild(new TransformObject().setDEF("Floor").setScale(new float[] {1f,0.0125f,1f}).setTranslation(new float[] {0f,-0.0125f,0f})
@@ -361,84 +361,84 @@ ProtoInstanceObject ProtoInstance66 = null;
                 .setMaterial(new MaterialObject())))))
         .addChild(new GroupObject().setDEF("Animations")
           .addChild(new GroupObject().setDEF("Stand_Animation")
-            .addChild(new OrientationInterpolatorObject().setDEF("r_ankleRotInterp_Stand").setKey(new MFFloatObject(new MFFloat59().getArray())).setKeyValue(new MFRotationObject(new MFRotation60().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("r_kneeRotInterp_Stand").setKey(new MFFloatObject(new MFFloat61().getArray())).setKeyValue(new MFRotationObject(new MFRotation62().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("r_hipRotInterp_Stand").setKey(new MFFloatObject(new MFFloat63().getArray())).setKeyValue(new MFRotationObject(new MFRotation64().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("l_ankleRotInterp_Stand").setKey(new MFFloatObject(new MFFloat65().getArray())).setKeyValue(new MFRotationObject(new MFRotation66().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("l_kneeRotInterp_Stand").setKey(new MFFloatObject(new MFFloat67().getArray())).setKeyValue(new MFRotationObject(new MFRotation68().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("l_hipRotInterp_Stand").setKey(new MFFloatObject(new MFFloat69().getArray())).setKeyValue(new MFRotationObject(new MFRotation70().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("lower_bodyRotInterp_Stand").setKey(new MFFloatObject(new MFFloat71().getArray())).setKeyValue(new MFRotationObject(new MFRotation72().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("r_wristRotInterp_Stand").setKey(new MFFloatObject(new MFFloat73().getArray())).setKeyValue(new MFRotationObject(new MFRotation74().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("r_elbowRotInterp_Stand").setKey(new MFFloatObject(new MFFloat75().getArray())).setKeyValue(new MFRotationObject(new MFRotation76().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("r_shoulderRotInterp_Stand").setKey(new MFFloatObject(new MFFloat77().getArray())).setKeyValue(new MFRotationObject(new MFRotation78().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("l_wristRotInterp_Stand").setKey(new MFFloatObject(new MFFloat79().getArray())).setKeyValue(new MFRotationObject(new MFRotation80().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("l_elbowRotInterp_Stand").setKey(new MFFloatObject(new MFFloat81().getArray())).setKeyValue(new MFRotationObject(new MFRotation82().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("l_shoulderRotInterp_Stand").setKey(new MFFloatObject(new MFFloat83().getArray())).setKeyValue(new MFRotationObject(new MFRotation84().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("headRotInterp_Stand").setKey(new MFFloatObject(new MFFloat85().getArray())).setKeyValue(new MFRotationObject(new MFRotation86().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("neckRotInterp_Stand").setKey(new MFFloatObject(new MFFloat87().getArray())).setKeyValue(new MFRotationObject(new MFRotation88().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("upper_bodyRotInterp_Stand").setKey(new MFFloatObject(new MFFloat89().getArray())).setKeyValue(new MFRotationObject(new MFRotation90().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("whole_bodyRotInterp_Stand").setKey(new MFFloatObject(new MFFloat91().getArray())).setKeyValue(new MFRotationObject(new MFRotation92().getArray())))
-            .addChild(new PositionInterpolatorObject().setDEF("whole_bodyTranInterp_Stand").setKey(new MFFloatObject(new MFFloat93().getArray())).setKeyValue(new MFVec3fObject(new MFVec3f94().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("r_ankleRotInterp_Stand").setKey(new MFFloatObject(new MFFloat58().getArray())).setKeyValue(new MFRotationObject(new MFRotation59().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("r_kneeRotInterp_Stand").setKey(new MFFloatObject(new MFFloat60().getArray())).setKeyValue(new MFRotationObject(new MFRotation61().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("r_hipRotInterp_Stand").setKey(new MFFloatObject(new MFFloat62().getArray())).setKeyValue(new MFRotationObject(new MFRotation63().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("l_ankleRotInterp_Stand").setKey(new MFFloatObject(new MFFloat64().getArray())).setKeyValue(new MFRotationObject(new MFRotation65().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("l_kneeRotInterp_Stand").setKey(new MFFloatObject(new MFFloat66().getArray())).setKeyValue(new MFRotationObject(new MFRotation67().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("l_hipRotInterp_Stand").setKey(new MFFloatObject(new MFFloat68().getArray())).setKeyValue(new MFRotationObject(new MFRotation69().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("lower_bodyRotInterp_Stand").setKey(new MFFloatObject(new MFFloat70().getArray())).setKeyValue(new MFRotationObject(new MFRotation71().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("r_wristRotInterp_Stand").setKey(new MFFloatObject(new MFFloat72().getArray())).setKeyValue(new MFRotationObject(new MFRotation73().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("r_elbowRotInterp_Stand").setKey(new MFFloatObject(new MFFloat74().getArray())).setKeyValue(new MFRotationObject(new MFRotation75().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("r_shoulderRotInterp_Stand").setKey(new MFFloatObject(new MFFloat76().getArray())).setKeyValue(new MFRotationObject(new MFRotation77().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("l_wristRotInterp_Stand").setKey(new MFFloatObject(new MFFloat78().getArray())).setKeyValue(new MFRotationObject(new MFRotation79().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("l_elbowRotInterp_Stand").setKey(new MFFloatObject(new MFFloat80().getArray())).setKeyValue(new MFRotationObject(new MFRotation81().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("l_shoulderRotInterp_Stand").setKey(new MFFloatObject(new MFFloat82().getArray())).setKeyValue(new MFRotationObject(new MFRotation83().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("headRotInterp_Stand").setKey(new MFFloatObject(new MFFloat84().getArray())).setKeyValue(new MFRotationObject(new MFRotation85().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("neckRotInterp_Stand").setKey(new MFFloatObject(new MFFloat86().getArray())).setKeyValue(new MFRotationObject(new MFRotation87().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("upper_bodyRotInterp_Stand").setKey(new MFFloatObject(new MFFloat88().getArray())).setKeyValue(new MFRotationObject(new MFRotation89().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("whole_bodyRotInterp_Stand").setKey(new MFFloatObject(new MFFloat90().getArray())).setKeyValue(new MFRotationObject(new MFRotation91().getArray())))
+            .addChild(new PositionInterpolatorObject().setDEF("whole_bodyTranInterp_Stand").setKey(new MFFloatObject(new MFFloat92().getArray())).setKeyValue(new MFVec3fObject(new MFVec3f93().getArray())))
             .addChild(new TimeSensorObject().setDEF("Stand_Time").setCycleInterval(0.009999999776482582d)))
           .addChild(new GroupObject().setDEF("Walk_Animation")
-            .addChild(new OrientationInterpolatorObject().setDEF("r_ankleRotInterp_BasicWalk").setKey(new MFFloatObject(new MFFloat95().getArray())).setKeyValue(new MFRotationObject(new MFRotation96().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("r_kneeRotInterp_BasicWalk").setKey(new MFFloatObject(new MFFloat97().getArray())).setKeyValue(new MFRotationObject(new MFRotation98().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("r_hipRotInterp_BasicWalk").setKey(new MFFloatObject(new MFFloat99().getArray())).setKeyValue(new MFRotationObject(new MFRotation100().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("l_ankleRotInterp_BasicWalk").setKey(new MFFloatObject(new MFFloat101().getArray())).setKeyValue(new MFRotationObject(new MFRotation102().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("l_kneeRotInterp_BasicWalk").setKey(new MFFloatObject(new MFFloat103().getArray())).setKeyValue(new MFRotationObject(new MFRotation104().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("l_hipRotInterp_BasicWalk").setKey(new MFFloatObject(new MFFloat105().getArray())).setKeyValue(new MFRotationObject(new MFRotation106().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("lower_bodyRotInterp_BasicWalk").setKey(new MFFloatObject(new MFFloat107().getArray())).setKeyValue(new MFRotationObject(new MFRotation108().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("r_wristRotInterp_BasicWalk").setKey(new MFFloatObject(new MFFloat109().getArray())).setKeyValue(new MFRotationObject(new MFRotation110().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("r_elbowRotInterp_BasicWalk").setKey(new MFFloatObject(new MFFloat111().getArray())).setKeyValue(new MFRotationObject(new MFRotation112().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("r_shoulderRotInterp_BasicWalk").setKey(new MFFloatObject(new MFFloat113().getArray())).setKeyValue(new MFRotationObject(new MFRotation114().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("l_wristRotInterp_BasicWalk").setKey(new MFFloatObject(new MFFloat115().getArray())).setKeyValue(new MFRotationObject(new MFRotation116().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("l_elbowRotInterp_BasicWalk").setKey(new MFFloatObject(new MFFloat117().getArray())).setKeyValue(new MFRotationObject(new MFRotation118().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("l_shoulderRotInterp_BasicWalk").setKey(new MFFloatObject(new MFFloat119().getArray())).setKeyValue(new MFRotationObject(new MFRotation120().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("headRotInterp_BasicWalk").setKey(new MFFloatObject(new MFFloat121().getArray())).setKeyValue(new MFRotationObject(new MFRotation122().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("neckRotInterp_BasicWalk").setKey(new MFFloatObject(new MFFloat123().getArray())).setKeyValue(new MFRotationObject(new MFRotation124().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("upper_bodyRotInterp_BasicWalk").setKey(new MFFloatObject(new MFFloat125().getArray())).setKeyValue(new MFRotationObject(new MFRotation126().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("whole_bodyRotInterp_BasicWalk").setKey(new MFFloatObject(new MFFloat127().getArray())).setKeyValue(new MFRotationObject(new MFRotation128().getArray())))
-            .addChild(new PositionInterpolatorObject().setDEF("whole_bodyTranInterp_BasicWalk").setKey(new MFFloatObject(new MFFloat129().getArray())).setKeyValue(new MFVec3fObject(new MFVec3f130().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("r_ankleRotInterp_BasicWalk").setKey(new MFFloatObject(new MFFloat94().getArray())).setKeyValue(new MFRotationObject(new MFRotation95().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("r_kneeRotInterp_BasicWalk").setKey(new MFFloatObject(new MFFloat96().getArray())).setKeyValue(new MFRotationObject(new MFRotation97().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("r_hipRotInterp_BasicWalk").setKey(new MFFloatObject(new MFFloat98().getArray())).setKeyValue(new MFRotationObject(new MFRotation99().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("l_ankleRotInterp_BasicWalk").setKey(new MFFloatObject(new MFFloat100().getArray())).setKeyValue(new MFRotationObject(new MFRotation101().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("l_kneeRotInterp_BasicWalk").setKey(new MFFloatObject(new MFFloat102().getArray())).setKeyValue(new MFRotationObject(new MFRotation103().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("l_hipRotInterp_BasicWalk").setKey(new MFFloatObject(new MFFloat104().getArray())).setKeyValue(new MFRotationObject(new MFRotation105().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("lower_bodyRotInterp_BasicWalk").setKey(new MFFloatObject(new MFFloat106().getArray())).setKeyValue(new MFRotationObject(new MFRotation107().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("r_wristRotInterp_BasicWalk").setKey(new MFFloatObject(new MFFloat108().getArray())).setKeyValue(new MFRotationObject(new MFRotation109().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("r_elbowRotInterp_BasicWalk").setKey(new MFFloatObject(new MFFloat110().getArray())).setKeyValue(new MFRotationObject(new MFRotation111().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("r_shoulderRotInterp_BasicWalk").setKey(new MFFloatObject(new MFFloat112().getArray())).setKeyValue(new MFRotationObject(new MFRotation113().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("l_wristRotInterp_BasicWalk").setKey(new MFFloatObject(new MFFloat114().getArray())).setKeyValue(new MFRotationObject(new MFRotation115().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("l_elbowRotInterp_BasicWalk").setKey(new MFFloatObject(new MFFloat116().getArray())).setKeyValue(new MFRotationObject(new MFRotation117().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("l_shoulderRotInterp_BasicWalk").setKey(new MFFloatObject(new MFFloat118().getArray())).setKeyValue(new MFRotationObject(new MFRotation119().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("headRotInterp_BasicWalk").setKey(new MFFloatObject(new MFFloat120().getArray())).setKeyValue(new MFRotationObject(new MFRotation121().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("neckRotInterp_BasicWalk").setKey(new MFFloatObject(new MFFloat122().getArray())).setKeyValue(new MFRotationObject(new MFRotation123().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("upper_bodyRotInterp_BasicWalk").setKey(new MFFloatObject(new MFFloat124().getArray())).setKeyValue(new MFRotationObject(new MFRotation125().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("whole_bodyRotInterp_BasicWalk").setKey(new MFFloatObject(new MFFloat126().getArray())).setKeyValue(new MFRotationObject(new MFRotation127().getArray())))
+            .addChild(new PositionInterpolatorObject().setDEF("whole_bodyTranInterp_BasicWalk").setKey(new MFFloatObject(new MFFloat128().getArray())).setKeyValue(new MFVec3fObject(new MFVec3f129().getArray())))
             .addChild(new TimeSensorObject().setDEF("Walk_Time").setCycleInterval(2d).setLoop(true).setStartTime(-1d)))
           .addChild(new GroupObject().setDEF("Run_Animation")
-            .addChild(new OrientationInterpolatorObject().setDEF("r_ankleRotInterp_Run").setKey(new MFFloatObject(new MFFloat131().getArray())).setKeyValue(new MFRotationObject(new MFRotation132().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("r_kneeRotInterp_Run").setKey(new MFFloatObject(new MFFloat133().getArray())).setKeyValue(new MFRotationObject(new MFRotation134().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("r_hipRotInterp_Run").setKey(new MFFloatObject(new MFFloat135().getArray())).setKeyValue(new MFRotationObject(new MFRotation136().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("l_ankleRotInterp_Run").setKey(new MFFloatObject(new MFFloat137().getArray())).setKeyValue(new MFRotationObject(new MFRotation138().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("l_kneeRotInterp_Run").setKey(new MFFloatObject(new MFFloat139().getArray())).setKeyValue(new MFRotationObject(new MFRotation140().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("l_hipRotInterp_Run").setKey(new MFFloatObject(new MFFloat141().getArray())).setKeyValue(new MFRotationObject(new MFRotation142().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("lower_bodyRotInterp_Run").setKey(new MFFloatObject(new MFFloat143().getArray())).setKeyValue(new MFRotationObject(new MFRotation144().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("r_wristRotInterp_Run").setKey(new MFFloatObject(new MFFloat145().getArray())).setKeyValue(new MFRotationObject(new MFRotation146().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("r_elbowRotInterp_Run").setKey(new MFFloatObject(new MFFloat147().getArray())).setKeyValue(new MFRotationObject(new MFRotation148().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("r_shoulderRotInterp_Run").setKey(new MFFloatObject(new MFFloat149().getArray())).setKeyValue(new MFRotationObject(new MFRotation150().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("l_wristRotInterp_Run").setKey(new MFFloatObject(new MFFloat151().getArray())).setKeyValue(new MFRotationObject(new MFRotation152().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("l_elbowRotInterp_Run").setKey(new MFFloatObject(new MFFloat153().getArray())).setKeyValue(new MFRotationObject(new MFRotation154().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("l_shoulderRotInterp_Run").setKey(new MFFloatObject(new MFFloat155().getArray())).setKeyValue(new MFRotationObject(new MFRotation156().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("headRotInterp_Run").setKey(new MFFloatObject(new MFFloat157().getArray())).setKeyValue(new MFRotationObject(new MFRotation158().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("neckRotInterp_Run").setKey(new MFFloatObject(new MFFloat159().getArray())).setKeyValue(new MFRotationObject(new MFRotation160().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("upper_bodyRotInterp_Run").setKey(new MFFloatObject(new MFFloat161().getArray())).setKeyValue(new MFRotationObject(new MFRotation162().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("whole_bodyRotInterp_Run").setKey(new MFFloatObject(new MFFloat163().getArray())).setKeyValue(new MFRotationObject(new MFRotation164().getArray())))
-            .addChild(new PositionInterpolatorObject().setDEF("whole_bodyTranInterp_Run").setKey(new MFFloatObject(new MFFloat165().getArray())).setKeyValue(new MFVec3fObject(new MFVec3f166().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("r_ankleRotInterp_Run").setKey(new MFFloatObject(new MFFloat130().getArray())).setKeyValue(new MFRotationObject(new MFRotation131().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("r_kneeRotInterp_Run").setKey(new MFFloatObject(new MFFloat132().getArray())).setKeyValue(new MFRotationObject(new MFRotation133().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("r_hipRotInterp_Run").setKey(new MFFloatObject(new MFFloat134().getArray())).setKeyValue(new MFRotationObject(new MFRotation135().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("l_ankleRotInterp_Run").setKey(new MFFloatObject(new MFFloat136().getArray())).setKeyValue(new MFRotationObject(new MFRotation137().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("l_kneeRotInterp_Run").setKey(new MFFloatObject(new MFFloat138().getArray())).setKeyValue(new MFRotationObject(new MFRotation139().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("l_hipRotInterp_Run").setKey(new MFFloatObject(new MFFloat140().getArray())).setKeyValue(new MFRotationObject(new MFRotation141().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("lower_bodyRotInterp_Run").setKey(new MFFloatObject(new MFFloat142().getArray())).setKeyValue(new MFRotationObject(new MFRotation143().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("r_wristRotInterp_Run").setKey(new MFFloatObject(new MFFloat144().getArray())).setKeyValue(new MFRotationObject(new MFRotation145().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("r_elbowRotInterp_Run").setKey(new MFFloatObject(new MFFloat146().getArray())).setKeyValue(new MFRotationObject(new MFRotation147().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("r_shoulderRotInterp_Run").setKey(new MFFloatObject(new MFFloat148().getArray())).setKeyValue(new MFRotationObject(new MFRotation149().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("l_wristRotInterp_Run").setKey(new MFFloatObject(new MFFloat150().getArray())).setKeyValue(new MFRotationObject(new MFRotation151().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("l_elbowRotInterp_Run").setKey(new MFFloatObject(new MFFloat152().getArray())).setKeyValue(new MFRotationObject(new MFRotation153().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("l_shoulderRotInterp_Run").setKey(new MFFloatObject(new MFFloat154().getArray())).setKeyValue(new MFRotationObject(new MFRotation155().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("headRotInterp_Run").setKey(new MFFloatObject(new MFFloat156().getArray())).setKeyValue(new MFRotationObject(new MFRotation157().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("neckRotInterp_Run").setKey(new MFFloatObject(new MFFloat158().getArray())).setKeyValue(new MFRotationObject(new MFRotation159().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("upper_bodyRotInterp_Run").setKey(new MFFloatObject(new MFFloat160().getArray())).setKeyValue(new MFRotationObject(new MFRotation161().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("whole_bodyRotInterp_Run").setKey(new MFFloatObject(new MFFloat162().getArray())).setKeyValue(new MFRotationObject(new MFRotation163().getArray())))
+            .addChild(new PositionInterpolatorObject().setDEF("whole_bodyTranInterp_Run").setKey(new MFFloatObject(new MFFloat164().getArray())).setKeyValue(new MFVec3fObject(new MFVec3f165().getArray())))
             .addChild(new TimeSensorObject().setDEF("Run_Time").setLoop(true).setStartTime(-1d)))
           .addChild(new GroupObject().setDEF("Jump_Animation")
-            .addChild(new OrientationInterpolatorObject().setDEF("r_ankleRotInterp_Jump").setKey(new MFFloatObject(new MFFloat167().getArray())).setKeyValue(new MFRotationObject(new MFRotation168().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("r_kneeRotInterp_Jump").setKey(new MFFloatObject(new MFFloat169().getArray())).setKeyValue(new MFRotationObject(new MFRotation170().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("r_hipRotInterp_Jump").setKey(new MFFloatObject(new MFFloat171().getArray())).setKeyValue(new MFRotationObject(new MFRotation172().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("l_ankleRotInterp_Jump").setKey(new MFFloatObject(new MFFloat173().getArray())).setKeyValue(new MFRotationObject(new MFRotation174().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("l_kneeRotInterp_Jump").setKey(new MFFloatObject(new MFFloat175().getArray())).setKeyValue(new MFRotationObject(new MFRotation176().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("l_hipRotInterp_Jump").setKey(new MFFloatObject(new MFFloat177().getArray())).setKeyValue(new MFRotationObject(new MFRotation178().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("lower_bodyRotInterp_Jump").setKey(new MFFloatObject(new MFFloat179().getArray())).setKeyValue(new MFRotationObject(new MFRotation180().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("r_wristRotInterp_Jump").setKey(new MFFloatObject(new MFFloat181().getArray())).setKeyValue(new MFRotationObject(new MFRotation182().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("r_elbowRotInterp_Jump").setKey(new MFFloatObject(new MFFloat183().getArray())).setKeyValue(new MFRotationObject(new MFRotation184().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("r_shoulderRotInterp_Jump").setKey(new MFFloatObject(new MFFloat185().getArray())).setKeyValue(new MFRotationObject(new MFRotation186().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("l_wristRotInterp_Jump").setKey(new MFFloatObject(new MFFloat187().getArray())).setKeyValue(new MFRotationObject(new MFRotation188().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("l_elbowRotInterp_Jump").setKey(new MFFloatObject(new MFFloat189().getArray())).setKeyValue(new MFRotationObject(new MFRotation190().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("l_shoulderRotInterp_Jump").setKey(new MFFloatObject(new MFFloat191().getArray())).setKeyValue(new MFRotationObject(new MFRotation192().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("headRotInterp_Jump").setKey(new MFFloatObject(new MFFloat193().getArray())).setKeyValue(new MFRotationObject(new MFRotation194().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("neckRotInterp_Jump").setKey(new MFFloatObject(new MFFloat195().getArray())).setKeyValue(new MFRotationObject(new MFRotation196().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("upper_bodyRotInterp_Jump").setKey(new MFFloatObject(new MFFloat197().getArray())).setKeyValue(new MFRotationObject(new MFRotation198().getArray())))
-            .addChild(new OrientationInterpolatorObject().setDEF("whole_bodyRotInterp_Jump").setKey(new MFFloatObject(new MFFloat199().getArray())).setKeyValue(new MFRotationObject(new MFRotation200().getArray())))
-            .addChild(new PositionInterpolatorObject().setDEF("whole_bodyTranInterp_Jump").setKey(new MFFloatObject(new MFFloat201().getArray())).setKeyValue(new MFVec3fObject(new MFVec3f202().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("r_ankleRotInterp_Jump").setKey(new MFFloatObject(new MFFloat166().getArray())).setKeyValue(new MFRotationObject(new MFRotation167().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("r_kneeRotInterp_Jump").setKey(new MFFloatObject(new MFFloat168().getArray())).setKeyValue(new MFRotationObject(new MFRotation169().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("r_hipRotInterp_Jump").setKey(new MFFloatObject(new MFFloat170().getArray())).setKeyValue(new MFRotationObject(new MFRotation171().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("l_ankleRotInterp_Jump").setKey(new MFFloatObject(new MFFloat172().getArray())).setKeyValue(new MFRotationObject(new MFRotation173().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("l_kneeRotInterp_Jump").setKey(new MFFloatObject(new MFFloat174().getArray())).setKeyValue(new MFRotationObject(new MFRotation175().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("l_hipRotInterp_Jump").setKey(new MFFloatObject(new MFFloat176().getArray())).setKeyValue(new MFRotationObject(new MFRotation177().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("lower_bodyRotInterp_Jump").setKey(new MFFloatObject(new MFFloat178().getArray())).setKeyValue(new MFRotationObject(new MFRotation179().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("r_wristRotInterp_Jump").setKey(new MFFloatObject(new MFFloat180().getArray())).setKeyValue(new MFRotationObject(new MFRotation181().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("r_elbowRotInterp_Jump").setKey(new MFFloatObject(new MFFloat182().getArray())).setKeyValue(new MFRotationObject(new MFRotation183().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("r_shoulderRotInterp_Jump").setKey(new MFFloatObject(new MFFloat184().getArray())).setKeyValue(new MFRotationObject(new MFRotation185().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("l_wristRotInterp_Jump").setKey(new MFFloatObject(new MFFloat186().getArray())).setKeyValue(new MFRotationObject(new MFRotation187().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("l_elbowRotInterp_Jump").setKey(new MFFloatObject(new MFFloat188().getArray())).setKeyValue(new MFRotationObject(new MFRotation189().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("l_shoulderRotInterp_Jump").setKey(new MFFloatObject(new MFFloat190().getArray())).setKeyValue(new MFRotationObject(new MFRotation191().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("headRotInterp_Jump").setKey(new MFFloatObject(new MFFloat192().getArray())).setKeyValue(new MFRotationObject(new MFRotation193().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("neckRotInterp_Jump").setKey(new MFFloatObject(new MFFloat194().getArray())).setKeyValue(new MFRotationObject(new MFRotation195().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("upper_bodyRotInterp_Jump").setKey(new MFFloatObject(new MFFloat196().getArray())).setKeyValue(new MFRotationObject(new MFRotation197().getArray())))
+            .addChild(new OrientationInterpolatorObject().setDEF("whole_bodyRotInterp_Jump").setKey(new MFFloatObject(new MFFloat198().getArray())).setKeyValue(new MFRotationObject(new MFRotation199().getArray())))
+            .addChild(new PositionInterpolatorObject().setDEF("whole_bodyTranInterp_Jump").setKey(new MFFloatObject(new MFFloat200().getArray())).setKeyValue(new MFVec3fObject(new MFVec3f201().getArray())))
             .addChild(new TimeSensorObject().setDEF("Jump_Time").setCycleInterval(2d).setStartTime(-1d))))
         .addChild(new ROUTEObject().setFromField("position_changed").setFromNode("HudProx").setToField("set_translation").setToNode("HudXform"))
         .addChild(new ROUTEObject().setFromField("orientation_changed").setFromNode("HudProx").setToField("set_rotation").setToNode("HudXform"))
@@ -1154,807 +1154,802 @@ protected class MFFloat41 {
     return new MFFloatObject(new float[] {0.15f,1.53f,0.75f});
   }
 }
-protected class MFString42 {
-  protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"EXAMINE"});
-  }
-}
-protected class MFInt3243 {
+protected class MFInt3242 {
   protected MFInt32Object getArray() {
     return new MFInt32Object(new int[] {1,30,29,-1,1,29,2,-1,31,47,46,-1,31,46,32,-1,78,77,80,-1,78,80,79,-1,96,113,112,-1,96,112,95,-1,95,112,111,-1,95,111,94,-1,94,111,110,-1,94,110,93,-1,93,110,109,-1,93,109,108,-1,93,108,100,-1,107,99,100,-1,107,100,108,-1,107,106,99,-1,106,105,98,-1,106,98,99,-1,104,97,98,-1,104,98,105,-1,103,102,104,-1,104,102,101,-1,104,101,97,-1,101,96,97,-1,101,97,101,-1,101,101,96,-1,96,101,113,-1,113,101,114,-1,115,86,85,-1,115,85,116,-1,117,87,84,-1,117,84,118,-1,119,83,120,-1,121,88,82,-1,121,82,122,-1,123,89,81,-1,123,81,124,-1,125,90,126,-1,127,92,128,-1,129,91,130,-1,54,49,50,-1,54,50,55,-1,76,75,74,-1,76,74,54,-1,54,74,73,-1,54,73,49,-1,49,73,48,-1,48,73,62,-1,48,62,61,-1,48,61,60,-1,48,60,53,-1,53,60,59,-1,53,59,53,-1,53,59,58,-1,53,58,52,-1,52,58,57,-1,52,57,51,-1,56,51,57,-1,56,55,50,-1,56,50,51,-1,62,73,72,-1,62,72,63,-1,63,72,71,-1,63,71,64,-1,64,71,70,-1,64,70,69,-1,64,69,65,-1,65,69,68,-1,65,68,67,-1,65,67,66,-1,131,40,39,-1,131,39,132,-1,133,43,42,-1,133,42,134,-1,135,37,36,-1,135,36,136,-1,137,41,38,-1,137,38,138,-1,139,44,35,-1,139,35,140,-1,141,34,142,-1,143,45,33,-1,143,33,144,-1,145,16,15,-1,145,15,146,-1,147,14,148,-1,149,17,13,-1,149,13,150,-1,151,18,12,-1,151,12,152,-1,153,19,11,-1,153,11,154,-1,155,20,10,-1,155,10,156,-1,157,9,158,-1,159,21,8,-1,159,8,160,-1,161,22,7,-1,161,7,162,-1,163,23,164,-1,165,24,6,-1,165,6,166,-1,167,25,5,-1,167,5,168,-1,169,26,170,-1,171,27,4,-1,171,4,172,-1,173,28,3,-1,173,3,174,-1,175,0,176,-1});
   }
 }
-protected class MFVec3f44 {
+protected class MFVec3f43 {
   protected MFVec3fObject getArray() {
     return new MFVec3fObject(new float[] {-3.21f,-0.0154f,0f,-3.15f,-0.0154f,0f,-3.14f,-0.0467f,0f,-3.1f,-0.0601f,0f,-3.05f,-0.051f,0f,-3.04f,-0.0254f,0f,-3.05f,-0.00248f,0f,-3.1f,0.0122f,0f,-3.16f,0.03f,0f,-3.2f,0.0684f,0f,-3.2f,0.133f,0f,-3.16f,0.17f,0f,-3.1f,0.182f,0f,-3.04f,0.171f,0f,-3.01f,0.136f,0f,-3f,0.095f,0f,-3.05f,0.095f,0f,-3.06f,0.125f,0f,-3.1f,0.136f,0f,-3.14f,0.126f,0f,-3.15f,0.103f,0f,-3.14f,0.0815f,0f,-3.1f,0.0689f,0f,-3.04f,0.0512f,0f,-3f,0.0249f,0f,-2.99f,-0.0195f,0f,-3f,-0.0708f,0f,-3.05f,-0.104f,0f,-3.1f,-0.108f,0f,-3.16f,-0.0947f,0f,-3.2f,-0.0586f,0f,-2.86f,-0.102f,0f,-2.9f,-0.102f,0f,-2.94f,-0.0832f,0f,-2.94f,-0.0457f,0f,-2.94f,0.0645f,0f,-2.97f,0.0645f,0f,-2.97f,0.103f,0f,-2.94f,0.103f,0f,-2.94f,0.158f,0f,-2.89f,0.158f,0f,-2.89f,0.103f,0f,-2.86f,0.103f,0f,-2.86f,0.0645f,0f,-2.89f,0.0645f,0f,-2.89f,-0.0483f,0f,-2.88f,-0.0608f,0f,-2.86f,-0.0612f,0f,-2.71f,-0.000798f,0f,-2.71f,-0.0373f,0f,-2.74f,-0.0637f,0f,-2.77f,-0.0624f,0f,-2.78f,-0.0416f,0f,-2.77f,-0.0195f,0f,-2.71f,-0.0754f,0f,-2.74f,-0.103f,0f,-2.79f,-0.106f,0f,-2.82f,-0.0865f,0f,-2.84f,-0.0431f,0f,-2.82f,0.000177f,0f,-2.78f,0.0201f,0f,-2.73f,0.0275f,0f,-2.71f,0.0446f,0f,-2.72f,0.0614f,0f,-2.74f,0.0675f,0f,-2.77f,0.0573f,0f,-2.78f,0.039f,0f,-2.83f,0.039f,0f,-2.82f,0.0765f,0f,-2.78f,0.105f,0f,-2.74f,0.11f,0f,-2.71f,0.107f,0f,-2.67f,0.0849f,0f,-2.66f,0.0526f,0f,-2.66f,-0.0763f,0f,-2.65f,-0.101f,0f,-2.7f,-0.101f,0f,-2.61f,-0.101f,0f,-2.61f,0.103f,0f,-2.56f,0.103f,0f,-2.56f,0.0787f,0f,-2.52f,0.104f,0f,-2.47f,0.105f,0f,-2.43f,0.0743f,0f,-2.43f,0.038f,0f,-2.43f,-0.101f,0f,-2.48f,-0.101f,0f,-2.48f,0.0224f,0f,-2.49f,0.0514f,0f,-2.52f,0.0627f,0f,-2.54f,0.0505f,0f,-2.55f,0.02f,0f,-2.55f,-0.101f,0f,-2.33f,0.0279f,0f,-2.31f,0.0587f,0f,-2.27f,0.0589f,0f,-2.25f,0.0281f,0f,-2.25f,-0.0232f,0f,-2.27f,-0.0563f,0f,-2.31f,-0.057f,0f,-2.33f,-0.0245f,0f,-2.19f,0.175f,0f,-2.19f,-0.101f,0f,-2.25f,-0.101f,0f,-2.25f,-0.073f,0f,-2.26f,-0.0913f,0f,-2.31f,-0.108f,0f,-2.35f,-0.0915f,0f,-2.38f,-0.0424f,0f,-2.39f,0.0243f,0f,-2.37f,0.0809f,0f,-2.32f,0.108f,0f,-2.28f,0.106f,0f,-2.25f,0.0776f,0f,-2.25f,0.175f,0f,-2.48f,0.0224f,0f,-2.43f,0.038f,0f,-2.49f,0.0514f,0f,-2.43f,0.0743f,0f,-2.49f,0.0514f,0f,-2.47f,0.105f,0f,-2.52f,0.0627f,0f,-2.52f,0.104f,0f,-2.54f,0.0505f,0f,-2.56f,0.0787f,0f,-2.55f,0.02f,0f,-2.56f,0.0787f,0f,-2.61f,-0.101f,0f,-2.55f,0.02f,0f,-2.61f,-0.101f,0f,-2.56f,0.0787f,0f,-2.89f,0.103f,0f,-2.94f,0.103f,0f,-2.89f,0.0645f,0f,-2.89f,0.103f,0f,-2.94f,0.103f,0f,-2.94f,0.0645f,0f,-2.89f,0.0645f,0f,-2.94f,0.0645f,0f,-2.89f,-0.0483f,0f,-2.94f,-0.0457f,0f,-2.89f,-0.0483f,0f,-2.94f,-0.0832f,0f,-2.88f,-0.0608f,0f,-2.9f,-0.102f,0f,-3.06f,0.125f,0f,-3.01f,0.136f,0f,-3.06f,0.125f,0f,-3.04f,0.171f,0f,-3.1f,0.136f,0f,-3.1f,0.182f,0f,-3.14f,0.126f,0f,-3.16f,0.17f,0f,-3.15f,0.103f,0f,-3.2f,0.133f,0f,-3.14f,0.0815f,0f,-3.2f,0.0684f,0f,-3.14f,0.0815f,0f,-3.16f,0.03f,0f,-3.1f,0.0689f,0f,-3.1f,0.0122f,0f,-3.04f,0.0512f,0f,-3.05f,-0.00248f,0f,-3f,0.0249f,0f,-3.05f,-0.00248f,0f,-2.99f,-0.0195f,0f,-3.04f,-0.0254f,0f,-3f,-0.0708f,0f,-3.05f,-0.051f,0f,-3.05f,-0.104f,0f,-3.05f,-0.051f,0f,-3.1f,-0.108f,0f,-3.1f,-0.0601f,0f,-3.16f,-0.0947f,0f,-3.14f,-0.0467f,0f,-3.15f,-0.0154f,0f,-3.2f,-0.0586f,0f});
   }
 }
-protected class MFInt3245 {
+protected class MFInt3244 {
   protected MFInt32Object getArray() {
     return new MFInt32Object(new int[] {0,2,3,-1,2,0,1,-1});
   }
 }
-protected class MFVec3f46 {
+protected class MFVec3f45 {
   protected MFVec3fObject getArray() {
     return new MFVec3fObject(new float[] {-0.02572f,-0.02535f,-0.05f,-0.02578f,-0.02131f,-0.05f,-0.03871f,-0.02131f,-0.05f,-0.03877f,-0.02541f,-0.05f});
   }
 }
-protected class MFInt3247 {
+protected class MFInt3246 {
   protected MFInt32Object getArray() {
     return new MFInt32Object(new int[] {0,2,1,-1,3,2,0,-1,12,3,0,-1,4,3,12,-1,11,4,12,-1,5,4,11,-1,10,5,11,-1,6,5,10,-1,9,6,10,-1,7,6,9,-1,8,7,9,-1,15,14,13,-1,16,15,13,-1,19,18,17,-1,20,19,17,-1,27,20,17,-1,28,27,17,-1,26,20,27,-1,23,20,26,-1,21,20,23,-1,25,23,26,-1,22,21,23,-1,24,23,25,-1,29,30,31,-1,29,31,32,-1,33,34,35,-1,33,35,29,-1,29,35,36,-1,29,36,30,-1,30,36,37,-1,37,36,38,-1,37,38,39,-1,37,39,40,-1,37,40,41,-1,41,40,42,-1,41,42,41,-1,41,42,43,-1,41,43,44,-1,44,43,45,-1,44,45,46,-1,47,46,45,-1,47,32,31,-1,47,31,46,-1,38,36,48,-1,38,48,49,-1,49,48,50,-1,49,50,51,-1,51,50,52,-1,51,52,53,-1,51,53,54,-1,54,53,55,-1,54,55,56,-1,54,56,57,-1});
   }
 }
-protected class MFVec3f48 {
+protected class MFVec3f47 {
   protected MFVec3fObject getArray() {
     return new MFVec3fObject(new float[] {-1.88f,-0.101f,0f,-1.96f,0.175f,0f,-1.91f,0.175f,0f,-1.86f,-0.0195f,0f,-1.82f,0.175f,0f,-1.76f,0.175f,0f,-1.72f,-0.0195f,0f,-1.67f,0.175f,0f,-1.61f,0.175f,0f,-1.69f,-0.101f,0f,-1.75f,-0.101f,0f,-1.79f,0.111f,0f,-1.83f,-0.101f,0f,-1.38f,-0.101f,0f,-1.38f,0.175f,0f,-1.32f,0.175f,0f,-1.32f,-0.101f,0f,-1.27f,-0.101f,0f,-1.27f,0.175f,0f,-1.22f,0.175f,0f,-1.22f,0.0304f,0f,-1.16f,0.103f,0f,-1.09f,0.103f,0f,-1.16f,0.0272f,0f,-1.09f,-0.101f,0f,-1.15f,-0.101f,0f,-1.2f,-0.0141f,0f,-1.22f,-0.0363f,0f,-1.22f,-0.101f,0f,-1.48f,-0.0754f,0f,-1.48f,-0.0373f,0f,-1.51f,-0.0637f,0f,-1.51f,-0.103f,0f,-1.47f,-0.101f,0f,-1.42f,-0.101f,0f,-1.43f,-0.0763f,0f,-1.43f,0.0526f,0f,-1.48f,-0.000798f,0f,-1.48f,0.0446f,0f,-1.5f,0.0275f,0f,-1.55f,0.0201f,0f,-1.54f,-0.0195f,0f,-1.59f,0.000177f,0f,-1.61f,-0.0431f,0f,-1.55f,-0.0416f,0f,-1.59f,-0.0865f,0f,-1.54f,-0.0624f,0f,-1.56f,-0.106f,0f,-1.44f,0.0849f,0f,-1.49f,0.0614f,0f,-1.48f,0.107f,0f,-1.51f,0.0675f,0f,-1.52f,0.11f,0f,-1.55f,0.105f,0f,-1.54f,0.0573f,0f,-1.59f,0.0765f,0f,-1.6f,0.039f,0f,-1.55f,0.039f,0f});
   }
 }
-protected class MFInt3249 {
+protected class MFInt3248 {
   protected MFInt32Object getArray() {
     return new MFInt32Object(new int[] {1,3,0,-1,3,1,2,-1});
   }
 }
-protected class MFVec3f50 {
+protected class MFVec3f49 {
   protected MFVec3fObject getArray() {
     return new MFVec3fObject(new float[] {-0.02381f,-0.02541f,-0.05f,-0.0127f,-0.02541f,-0.05f,-0.01263f,-0.02139f,-0.05f,-0.02381f,-0.02146f,-0.05f});
   }
 }
-protected class MFInt3251 {
+protected class MFInt3250 {
   protected MFInt32Object getArray() {
     return new MFInt32Object(new int[] {24,26,25,-1,53,39,54,-1,17,1,0,-1,17,0,16,-1,0,14,16,-1,0,15,14,-1,14,13,22,-1,14,22,16,-1,13,12,21,-1,13,21,22,-1,12,6,21,-1,12,11,7,-1,12,7,6,-1,11,8,7,-1,10,8,11,-1,10,9,8,-1,6,5,21,-1,5,4,20,-1,5,20,21,-1,4,3,19,-1,4,19,20,-1,3,2,18,-1,3,18,19,-1,18,2,1,-1,18,1,17,-1,55,32,31,-1,55,31,56,-1,57,33,30,-1,57,30,58,-1,59,29,60,-1,61,34,28,-1,61,28,62,-1,63,35,27,-1,63,27,64,-1,65,36,66,-1,67,38,68,-1,69,37,70,-1,71,23,72,-1,73,48,47,-1,73,47,74,-1,75,49,46,-1,75,46,76,-1,77,45,78,-1,79,50,44,-1,79,44,80,-1,81,51,43,-1,81,43,82,-1,83,41,84,-1,85,40,86,-1,87,52,88,-1,89,42,90,-1});
   }
 }
-protected class MFVec3f52 {
+protected class MFVec3f51 {
   protected MFVec3fObject getArray() {
     return new MFVec3fObject(new float[] {-0.829f,-0.101f,0f,-0.829f,0.175f,0f,-0.662f,0.172f,0f,-0.622f,0.148f,0f,-0.607f,0.103f,0f,-0.62f,0.0501f,0f,-0.648f,0.0316f,0f,-0.615f,-0.0063f,0f,-0.611f,-0.0764f,0f,-0.601f,-0.101f,0f,-0.664f,-0.101f,0f,-0.671f,-0.0373f,0f,-0.68f,-0.00372f,0f,-0.712f,0.00648f,0f,-0.772f,0.00648f,0f,-0.772f,-0.101f,0f,-0.772f,0.0546f,0f,-0.772f,0.127f,0f,-0.703f,0.127f,0f,-0.673f,0.118f,0f,-0.663f,0.091f,0f,-0.674f,0.063f,0f,-0.705f,0.0546f,0f,-0.379f,0.103f,0f,-0.379f,-0.101f,0f,-0.432f,-0.101f,0f,-0.432f,-0.0764f,0f,-0.466f,-0.101f,0f,-0.518f,-0.102f,0f,-0.555f,-0.072f,0f,-0.56f,-0.0357f,0f,-0.56f,0.103f,0f,-0.506f,0.103f,0f,-0.506f,-0.0201f,0f,-0.5f,-0.0491f,0f,-0.472f,-0.0604f,0f,-0.443f,-0.0482f,0f,-0.433f,-0.0177f,0f,-0.433f,0.103f,0f,-0.331f,-0.101f,0f,-0.331f,0.103f,0f,-0.278f,0.103f,0f,-0.278f,0.0787f,0f,-0.244f,0.104f,0f,-0.192f,0.105f,0f,-0.154f,0.0743f,0f,-0.149f,0.038f,0f,-0.149f,-0.101f,0f,-0.203f,-0.101f,0f,-0.203f,0.0224f,0f,-0.209f,0.0514f,0f,-0.238f,0.0627f,0f,-0.266f,0.0505f,0f,-0.277f,0.02f,0f,-0.277f,-0.101f,0f,-0.506f,-0.0201f,0f,-0.56f,-0.0357f,0f,-0.5f,-0.0491f,0f,-0.555f,-0.072f,0f,-0.5f,-0.0491f,0f,-0.518f,-0.102f,0f,-0.472f,-0.0604f,0f,-0.466f,-0.101f,0f,-0.443f,-0.0482f,0f,-0.432f,-0.0764f,0f,-0.433f,-0.0177f,0f,-0.432f,-0.0764f,0f,-0.379f,0.103f,0f,-0.433f,-0.0177f,0f,-0.379f,0.103f,0f,-0.432f,-0.0764f,0f,-0.379f,-0.101f,0f,-0.432f,-0.0764f,0f,-0.203f,0.0224f,0f,-0.149f,0.038f,0f,-0.209f,0.0514f,0f,-0.154f,0.0743f,0f,-0.209f,0.0514f,0f,-0.192f,0.105f,0f,-0.238f,0.0627f,0f,-0.244f,0.104f,0f,-0.266f,0.0505f,0f,-0.278f,0.0787f,0f,-0.278f,0.0787f,0f,-0.331f,0.103f,0f,-0.277f,0.02f,0f,-0.331f,-0.101f,0f,-0.277f,0.02f,0f,-0.278f,0.0787f,0f,-0.277f,0.02f,0f,-0.331f,0.103f,0f});
   }
 }
-protected class MFInt3253 {
+protected class MFInt3252 {
   protected MFInt32Object getArray() {
     return new MFInt32Object(new int[] {0,2,3,-1,2,0,1,-1});
   }
 }
-protected class MFVec3f54 {
+protected class MFVec3f53 {
   protected MFVec3fObject getArray() {
     return new MFVec3fObject(new float[] {-0.01009f,-0.02534f,-0.05f,-0.001382f,-0.02541f,-0.05f,-0.001315f,-0.02146f,-0.05f,-0.01022f,-0.02146f,-0.05f});
   }
 }
-protected class MFInt3255 {
+protected class MFInt3254 {
   protected MFInt32Object getArray() {
     return new MFInt32Object(new int[] {1,0,14,-1,1,14,2,-1,16,15,18,-1,16,18,17,-1,64,65,66,-1,67,68,69,-1,67,69,70,-1,71,72,73,-1,71,73,74,-1,75,76,77,-1,78,79,80,-1,78,80,81,-1,82,83,84,-1,82,84,85,-1,86,87,88,-1,89,90,91,-1,92,93,94,-1,95,96,97,-1,98,7,6,-1,98,6,99,-1,100,8,5,-1,100,5,101,-1,102,9,4,-1,102,4,103,-1,104,10,105,-1,106,11,3,-1,106,3,107,-1,108,12,109,-1,110,13,111,-1,112,27,26,-1,112,26,113,-1,114,28,25,-1,114,25,115,-1,116,24,117,-1,118,29,23,-1,118,23,119,-1,120,30,22,-1,120,22,121,-1,122,31,123,-1,124,34,33,-1,124,33,125,-1,126,35,32,-1,126,32,127,-1,128,21,129,-1,130,36,20,-1,130,20,131,-1,132,37,19,-1,132,19,133,-1,134,38,135,-1,136,40,137,-1,138,39,139,-1,53,58,59,-1,53,59,54,-1,53,52,58,-1,52,51,57,-1,52,57,58,-1,51,50,56,-1,51,56,57,-1,50,49,56,-1,49,48,63,-1,49,63,56,-1,48,47,63,-1,63,47,46,-1,63,46,62,-1,62,46,45,-1,62,45,44,-1,62,44,61,-1,61,44,60,-1,54,59,60,-1,44,43,42,-1,60,44,42,-1,41,55,54,-1,41,54,60,-1,41,60,42,-1});
   }
 }
-protected class MFVec3f56 {
+protected class MFVec3f55 {
   protected MFVec3fObject getArray() {
     return new MFVec3fObject(new float[] {0.108f,0.00195f,0f,0.163f,0.00195f,0f,0.166f,-0.0473f,0f,0.194f,-0.0608f,0f,0.222f,-0.0492f,0f,0.228f,-0.017f,0f,0.228f,0.175f,0f,0.284f,0.175f,0f,0.284f,-0.02f,0f,0.271f,-0.0798f,0f,0.23f,-0.104f,0f,0.193f,-0.108f,0f,0.155f,-0.102f,0f,0.117f,-0.0714f,0f,0.108f,-0.0357f,0f,0.563f,-0.101f,0f,0.563f,0.103f,0f,0.615f,0.103f,0f,0.615f,0.0803f,0f,0.649f,0.105f,0f,0.696f,0.105f,0f,0.728f,0.0788f,0f,0.76f,0.104f,0f,0.811f,0.104f,0f,0.842f,0.081f,0f,0.853f,0.0416f,0f,0.853f,-0.101f,0f,0.799f,-0.101f,0f,0.799f,0.0305f,0f,0.79f,0.0544f,0f,0.767f,0.0616f,0f,0.743f,0.0507f,0f,0.734f,0.0228f,0f,0.734f,-0.101f,0f,0.681f,-0.101f,0f,0.681f,0.0301f,0f,0.673f,0.0532f,0f,0.65f,0.0611f,0f,0.626f,0.0506f,0f,0.617f,0.0224f,0f,0.617f,-0.101f,0f,0.9f,-0.182f,0f,0.9f,0.103f,0f,0.952f,0.103f,0f,0.952f,0.0751f,0f,0.968f,0.0934f,0f,1.01f,0.11f,0f,1.05f,0.103f,0f,1.07f,0.0796f,0f,1.1f,0.0251f,0f,1.1f,-0.0222f,0f,1.07f,-0.0788f,0f,1.03f,-0.106f,0f,0.988f,-0.103f,0f,0.953f,-0.0755f,0f,0.953f,-0.182f,0f,1.04f,-0.000177f,0f,1.03f,-0.0446f,0f,0.999f,-0.0603f,0f,0.966f,-0.0453f,0f,0.953f,-0.000177f,0f,0.963f,0.045f,0f,0.998f,0.063f,0f,1.03f,0.0462f,0f,0.515f,-0.101f,0f,0.462f,-0.0764f,0f,0.462f,-0.101f,0f,0.388f,-0.0201f,0f,0.388f,0.103f,0f,0.334f,0.103f,0f,0.334f,-0.0357f,0f,0.394f,-0.0491f,0f,0.388f,-0.0201f,0f,0.334f,-0.0357f,0f,0.339f,-0.072f,0f,0.394f,-0.0491f,0f,0.339f,-0.072f,0f,0.376f,-0.102f,0f,0.422f,-0.0604f,0f,0.394f,-0.0491f,0f,0.376f,-0.102f,0f,0.428f,-0.101f,0f,0.451f,-0.0482f,0f,0.422f,-0.0604f,0f,0.428f,-0.101f,0f,0.462f,-0.0764f,0f,0.461f,-0.0177f,0f,0.451f,-0.0482f,0f,0.462f,-0.0764f,0f,0.515f,0.103f,0f,0.461f,0.103f,0f,0.461f,-0.0177f,0f,0.515f,0.103f,0f,0.461f,-0.0177f,0f,0.462f,-0.0764f,0f,0.515f,-0.101f,0f,0.515f,0.103f,0f,0.462f,-0.0764f,0f,0.284f,-0.02f,0f,0.228f,-0.017f,0f,0.271f,-0.0798f,0f,0.222f,-0.0492f,0f,0.23f,-0.104f,0f,0.194f,-0.0608f,0f,0.193f,-0.108f,0f,0.194f,-0.0608f,0f,0.155f,-0.102f,0f,0.166f,-0.0473f,0f,0.117f,-0.0714f,0f,0.166f,-0.0473f,0f,0.108f,-0.0357f,0f,0.166f,-0.0473f,0f,0.799f,0.0305f,0f,0.853f,0.0416f,0f,0.79f,0.0544f,0f,0.842f,0.081f,0f,0.79f,0.0544f,0f,0.811f,0.104f,0f,0.767f,0.0616f,0f,0.76f,0.104f,0f,0.743f,0.0507f,0f,0.728f,0.0788f,0f,0.734f,0.0228f,0f,0.728f,0.0788f,0f,0.681f,0.0301f,0f,0.734f,0.0228f,0f,0.673f,0.0532f,0f,0.728f,0.0788f,0f,0.673f,0.0532f,0f,0.696f,0.105f,0f,0.65f,0.0611f,0f,0.649f,0.105f,0f,0.626f,0.0506f,0f,0.615f,0.0803f,0f,0.617f,0.0224f,0f,0.615f,0.0803f,0f,0.563f,-0.101f,0f,0.617f,0.0224f,0f,0.563f,-0.101f,0f,0.615f,0.0803f,0f});
   }
 }
-protected class MFInt3257 {
+protected class MFInt3256 {
   protected MFInt32Object getArray() {
     return new MFInt32Object(new int[] {0,2,3,-1,2,0,1,-1});
   }
 }
-protected class MFVec3f58 {
+protected class MFVec3f57 {
   protected MFVec3fObject getArray() {
     return new MFVec3fObject(new float[] {0.001296f,-0.02541f,-0.05f,0.01335f,-0.02527f,-0.05f,0.01328f,-0.02152f,-0.05f,0.001229f,-0.02146f,-0.05f});
   }
 }
-protected class MFFloat59 {
+protected class MFFloat58 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,1f});
   }
 }
-protected class MFRotation60 {
+protected class MFRotation59 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0f,0f,1f,0f,0f,0f,1f,0f});
   }
 }
-protected class MFFloat61 {
+protected class MFFloat60 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,1f});
   }
 }
-protected class MFRotation62 {
+protected class MFRotation61 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0f,0f,1f,0f,0f,0f,1f,0f});
   }
 }
-protected class MFFloat63 {
+protected class MFFloat62 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,1f});
   }
 }
-protected class MFRotation64 {
+protected class MFRotation63 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0f,0f,1f,0f,0f,0f,1f,0f});
   }
 }
-protected class MFFloat65 {
+protected class MFFloat64 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,1f});
   }
 }
-protected class MFRotation66 {
+protected class MFRotation65 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0f,0f,1f,0f,0f,0f,1f,0f});
   }
 }
-protected class MFFloat67 {
+protected class MFFloat66 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,1f});
   }
 }
-protected class MFRotation68 {
+protected class MFRotation67 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0f,0f,1f,0f,0f,0f,1f,0f});
   }
 }
-protected class MFFloat69 {
+protected class MFFloat68 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,1f});
   }
 }
-protected class MFRotation70 {
+protected class MFRotation69 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0f,0f,1f,0f,0f,0f,1f,0f});
   }
 }
-protected class MFFloat71 {
+protected class MFFloat70 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,1f});
   }
 }
-protected class MFRotation72 {
+protected class MFRotation71 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0f,0f,1f,0f,0f,0f,1f,0f});
   }
 }
-protected class MFFloat73 {
+protected class MFFloat72 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,1f});
   }
 }
-protected class MFRotation74 {
+protected class MFRotation73 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0f,0f,1f,0f,0f,0f,1f,0f});
   }
 }
-protected class MFFloat75 {
+protected class MFFloat74 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,1f});
   }
 }
-protected class MFRotation76 {
+protected class MFRotation75 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0f,0f,1f,0f,0f,0f,1f,0f});
   }
 }
-protected class MFFloat77 {
+protected class MFFloat76 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,1f});
   }
 }
-protected class MFRotation78 {
+protected class MFRotation77 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0f,0f,1f,0f,0f,0f,1f,0f});
   }
 }
-protected class MFFloat79 {
+protected class MFFloat78 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,1f});
   }
 }
-protected class MFRotation80 {
+protected class MFRotation79 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0f,0f,1f,0f,0f,0f,1f,0f});
   }
 }
-protected class MFFloat81 {
+protected class MFFloat80 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,1f});
   }
 }
-protected class MFRotation82 {
+protected class MFRotation81 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0f,0f,1f,0f,0f,0f,1f,0f});
   }
 }
-protected class MFFloat83 {
+protected class MFFloat82 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,1f});
   }
 }
-protected class MFRotation84 {
+protected class MFRotation83 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0f,0f,1f,0f,0f,0f,1f,0f});
   }
 }
-protected class MFFloat85 {
+protected class MFFloat84 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,1f});
   }
 }
-protected class MFRotation86 {
+protected class MFRotation85 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0f,0f,1f,0f,0f,0f,1f,0f});
   }
 }
-protected class MFFloat87 {
+protected class MFFloat86 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,1f});
   }
 }
-protected class MFRotation88 {
+protected class MFRotation87 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0f,0f,1f,0f,0f,0f,1f,0f});
   }
 }
-protected class MFFloat89 {
+protected class MFFloat88 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,1f});
   }
 }
-protected class MFRotation90 {
+protected class MFRotation89 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0f,0f,1f,0f,0f,0f,1f,0f});
   }
 }
-protected class MFFloat91 {
+protected class MFFloat90 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,1f});
   }
 }
-protected class MFRotation92 {
+protected class MFRotation91 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0f,0f,1f,0f,0f,0f,1f,0f});
   }
 }
-protected class MFFloat93 {
+protected class MFFloat92 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,1f});
   }
 }
-protected class MFVec3f94 {
+protected class MFVec3f93 {
   protected MFVec3fObject getArray() {
     return new MFVec3fObject(new float[] {0f,0f,0f,0f,0f,0f});
   }
 }
-protected class MFFloat95 {
+protected class MFFloat94 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.125f,0.2083f,0.375f,0.4583f,0.5f,0.6667f,0.75f,0.7917f,0.9167f,1f});
   }
 }
-protected class MFRotation96 {
+protected class MFRotation95 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0f,0f,1f,0f,-1f,0f,0f,0.3533f,-1f,0f,0f,0.1072f,1f,0f,0f,0.2612f,1f,0f,0f,0.1268f,-1f,0f,0f,0.01793f,-1f,0f,0f,0.05824f,-1f,0f,0f,0.2398f,-1f,0f,0f,0.35f,-1f,0f,0f,0.3322f,0f,0f,1f,0f});
   }
 }
-protected class MFFloat97 {
+protected class MFFloat96 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.125f,0.2083f,0.2917f,0.375f,0.5f,0.6667f,0.7917f,0.9167f,1f});
   }
 }
-protected class MFRotation98 {
+protected class MFRotation97 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {1f,0f,0f,0.8573f,1f,0f,0f,0.8926f,1f,0f,0f,0.5351f,1f,0f,0f,0.1756f,1f,0f,0f,0.1194f,1f,0f,0f,0.3153f,1f,0f,0f,0.09354f,1f,0f,0f,0.08558f,1f,0f,0f,0.2475f,1f,0f,0f,0.8573f});
   }
 }
-protected class MFFloat99 {
+protected class MFFloat98 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.125f,0.2083f,0.2917f,0.375f,0.5f,0.6667f,0.7917f,0.9167f,1f});
   }
 }
-protected class MFRotation100 {
+protected class MFRotation99 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {-0.5831f,0.03511f,0.8116f,0.1481f,-0.995f,0.02296f,0.09674f,0.4683f,-1f,0.00192f,0.007964f,0.4732f,-0.998f,-0.0158f,-0.06102f,0.5079f,-0.9911f,-0.03541f,-0.1286f,0.5419f,-0.9131f,-0.06243f,-0.403f,0.3361f,-0.4306f,-0.07962f,-0.899f,0.07038f,1f,0f,0f,0.2571f,0.9891f,-0.02805f,0.1444f,0.3879f,-0.5831f,0.03511f,0.8116f,0.1481f});
   }
 }
-protected class MFFloat101 {
+protected class MFFloat100 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.125f,0.2083f,0.375f,0.6667f,0.9167f,1f});
   }
 }
-protected class MFRotation102 {
+protected class MFRotation101 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {-1f,0f,0f,0.06714f,-1f,0f,0f,0.2152f,-1f,0f,0f,0.3184f,-1f,0f,0f,0.4717f,-1f,0f,0f,0.2912f,1f,0f,0f,0.1222f,-1f,0f,0f,0.06714f});
   }
 }
-protected class MFFloat103 {
+protected class MFFloat102 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.2083f,0.375f,0.5f,0.6667f,0.7917f,0.9167f,1f});
   }
 }
-protected class MFRotation104 {
+protected class MFRotation103 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {1f,0f,0f,0.3226f,1f,0f,0f,0.1556f,1f,0f,0f,0.08678f,1f,0f,0f,0.8751f,1f,0f,0f,1.131f,1f,0f,0f,0.09961f,1f,0f,0f,0.3942f,1f,0f,0f,0.3226f});
   }
 }
-protected class MFFloat105 {
+protected class MFFloat104 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.25f,0.375f,0.5f,0.6667f,0.7917f,0.9167f,1f});
   }
 }
-protected class MFRotation106 {
+protected class MFRotation105 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {-0.873f,0.06094f,0.484f,0.2865f,0.9963f,-0.01057f,0.08481f,0.2488f,0.9965f,0.01591f,-0.08222f,0.3836f,-0.7018f,-0.03223f,-0.7117f,0.1289f,-1f,0f,0f,0.5518f,-0.9964f,0.02231f,0.0817f,0.5351f,-0.9809f,0.04912f,0.1881f,0.5204f,-0.873f,0.06094f,0.484f,0.2865f});
   }
 }
-protected class MFFloat107 {
+protected class MFFloat106 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.5f,1f});
   }
 }
-protected class MFRotation108 {
+protected class MFRotation107 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0f,0f,-1f,0.1056f,0f,0f,1f,0.09018f,0f,0f,-1f,0.1056f});
   }
 }
-protected class MFFloat109 {
+protected class MFFloat108 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.375f,0.9167f,1f});
   }
 }
-protected class MFRotation110 {
+protected class MFRotation109 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {-0.8129f,0.4759f,-0.3357f,0.1346f,0.1533f,-0.9878f,0.02582f,0.3902f,-0.5701f,0.7604f,-0.311f,0.366f,-0.8129f,0.4759f,-0.3357f,0.1346f});
   }
 }
-protected class MFFloat111 {
+protected class MFFloat110 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.375f,0.9167f,1f});
   }
 }
-protected class MFRotation112 {
+protected class MFRotation111 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {-1f,0f,0f,0.411508f,-1f,0f,0f,0.0925011f,-1f,0f,0f,0.572568f,-1f,0f,0f,0.411508f});
   }
 }
-protected class MFFloat113 {
+protected class MFFloat112 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.375f,0.9167f,1f});
   }
 }
-protected class MFRotation114 {
+protected class MFRotation113 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {-1f,0f,0f,0.09346f,1f,0f,0f,0.3197f,-1f,0f,0f,0.1564f,-1f,0f,0f,0.09346f});
   }
 }
-protected class MFFloat115 {
+protected class MFFloat114 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.375f,0.9167f,1f});
   }
 }
-protected class MFRotation116 {
+protected class MFRotation115 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0f,-1f,0f,0.461076f,-0.330195f,-0.927451f,0.175516f,0.538852f,0.0327774f,-0.999314f,-0.0172185f,0.492033f,0f,-1f,0f,0.461076f});
   }
 }
-protected class MFFloat117 {
+protected class MFFloat116 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.375f,0.9167f,1f});
   }
 }
-protected class MFRotation118 {
+protected class MFRotation117 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {-1f,0f,0f,0.0659878f,-1f,0f,0f,0.488383f,-1f,0f,0f,0.0177536f,-1f,0f,0f,0.0659878f});
   }
 }
-protected class MFFloat119 {
+protected class MFFloat118 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.375f,0.9167f,1f});
   }
 }
-protected class MFRotation120 {
+protected class MFRotation119 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {1f,0f,0f,0.1189f,-1f,0f,0f,0.1861f,1f,0f,0f,0.3357f,1f,0f,0f,0.1189f});
   }
 }
-protected class MFFloat121 {
+protected class MFFloat120 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.375f,0.4167f,0.5f,0.5833f,0.6667f,0.75f,0.8333f,0.9167f,1f});
   }
 }
-protected class MFRotation122 {
+protected class MFRotation121 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0f,-1f,0f,0.08642f,0f,1f,0f,0.1825f,0f,1f,0f,0.1505f,0f,1f,0f,0.1053f,0f,1f,0f,0.04391f,0f,-1f,0f,0.03119f,0f,-1f,0f,0.07936f,0f,-1f,0f,0.1616f,0f,-1f,0f,0.155f,0f,-1f,0f,0.08642f});
   }
 }
-protected class MFFloat123 {
+protected class MFFloat122 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,1f});
   }
 }
-protected class MFRotation124 {
+protected class MFRotation123 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0f,0f,1f,0f,0f,0f,1f,0f});
   }
 }
-protected class MFFloat125 {
+protected class MFFloat124 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.2083f,0.375f,0.75f,0.8333f,1f});
   }
 }
-protected class MFRotation126 {
+protected class MFRotation125 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0f,1f,0f,0.0826f,-0.01972f,-0.5974f,0.8017f,0.08231f,0.009296f,-0.9648f,0.2627f,0.1734f,-0.01238f,0.9549f,-0.2968f,0.08732f,-0.008125f,0.9691f,-0.2463f,0.158f,0f,1f,0f,0.0826f});
   }
 }
-protected class MFFloat127 {
+protected class MFFloat126 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,1f});
   }
 }
-protected class MFRotation128 {
+protected class MFRotation127 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0f,0f,1f,0f,0f,0f,1f,0f});
   }
 }
-protected class MFFloat129 {
+protected class MFFloat128 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.04167f,0.125f,0.1667f,0.2083f,0.25f,0.2917f,0.375f,0.4583f,0.5f,0.5417f,0.5833f,0.625f,0.7083f,0.75f,0.7917f,0.875f,0.9167f,1f});
   }
 }
-protected class MFVec3f130 {
+protected class MFVec3f129 {
   protected MFVec3fObject getArray() {
     return new MFVec3fObject(new float[] {0f,-0.00928f,0f,0f,-0.003858f,0f,0f,-0.008847f,0f,0f,-0.01486f,0f,0f,-0.02641f,0f,0f,-0.03934f,0f,0f,-0.0502f,0f,0f,-0.07469f,0f,0f,-0.02732f,0f,0f,-0.01608f,0f,0f,-0.01129f,0f,0f,-0.005819f,0f,0f,-0.002004f,0f,0f,-0.002579f,0f,0f,-0.0143f,0f,0f,-0.03799f,0f,0f,-0.05648f,0f,0f,-0.045f,0f,0f,-0.00928f,0f});
   }
 }
-protected class MFFloat131 {
+protected class MFFloat130 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.4909f,0.7091f,0.8f,0.8182f,1f});
   }
 }
-protected class MFRotation132 {
+protected class MFRotation131 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {1f,0f,0f,0.2323f,-1f,0f,0f,0.07843f,-1f,0f,0f,0.09676f,-1f,0f,0f,0.3274f,-1f,0f,0f,0.3278f,1f,0f,0f,0.2323f});
   }
 }
-protected class MFFloat133 {
+protected class MFFloat132 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.03636f,0.2182f,0.4909f,0.7455f,1f});
   }
 }
-protected class MFRotation134 {
+protected class MFRotation133 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {1f,0f,0f,0.7004f,1f,0f,0f,1.011f,1f,0f,0f,1.892f,1f,0f,0f,1.188f,1f,0f,0f,0.3964f,1f,0f,0f,0.7004f});
   }
 }
-protected class MFFloat135 {
+protected class MFFloat134 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.2182f,0.4909f,0.7455f,1f});
   }
 }
-protected class MFRotation136 {
+protected class MFRotation135 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0.9999f,0.00293f,-0.00989f,0.402f,-1f,0.004977f,-0.00497f,0.5943f,-1f,0.003265f,-0.001752f,1.178f,-0.9999f,0.00815f,-0.01093f,0.3031f,0.9999f,0.00293f,-0.00989f,0.402f});
   }
 }
-protected class MFFloat137 {
+protected class MFFloat136 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.2182f,0.3091f,0.4909f,1f});
   }
 }
-protected class MFRotation138 {
+protected class MFRotation137 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {1f,0f,0f,0.03543f,-1f,0f,0f,0.1037f,-1f,0f,0f,0.4328f,1f,0f,0f,0.1929f,1f,0f,0f,0.03543f});
   }
 }
-protected class MFFloat139 {
+protected class MFFloat138 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.2182f,0.4909f,0.7455f,1f});
   }
 }
-protected class MFRotation140 {
+protected class MFRotation139 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {1f,0f,0f,1.108f,1f,0f,0f,0.4265f,1f,0f,0f,0.7052f,1f,0f,0f,2.179f,1f,0f,0f,1.108f});
   }
 }
-protected class MFFloat141 {
+protected class MFFloat140 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.2182f,0.4909f,0.7455f,1f});
   }
 }
-protected class MFRotation142 {
+protected class MFRotation141 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {-0.9986f,0.03354f,0.04001f,1.212f,-0.9889f,0.1328f,0.06696f,0.4025f,0.9894f,0.1453f,0.009351f,0.4114f,-0.9963f,0.07032f,0.05003f,0.7035f,-0.9986f,0.03354f,0.04001f,1.212f});
   }
 }
-protected class MFFloat143 {
+protected class MFFloat142 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,1f});
   }
 }
-protected class MFRotation144 {
+protected class MFRotation143 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0.9969f,-0.05444f,0.05596f,0.07687f,0.9969f,-0.05444f,0.05596f,0.07687f});
   }
 }
-protected class MFFloat145 {
+protected class MFFloat144 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,1f});
   }
 }
-protected class MFRotation146 {
+protected class MFRotation145 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {-0.917742f,-0.237244f,-0.318536f,0.214273f,-0.917742f,-0.237244f,-0.318536f,0.214273f});
   }
 }
-protected class MFFloat147 {
+protected class MFFloat146 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.2182f,0.4909f,0.7455f,1f});
   }
 }
-protected class MFRotation148 {
+protected class MFRotation147 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0.9353f,-0.2978f,-0.191f,4.222f,-0.9362f,0.2924f,-0.1952f,1.05f,0.9941f,-0.09719f,-0.04725f,4.512f,-0.9594f,0.2653f,0.09579f,1.525f,0.9353f,-0.2978f,-0.191f,4.222f});
   }
 }
-protected class MFFloat149 {
+protected class MFFloat148 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.2182f,0.4909f,0.7455f,1f});
   }
 }
-protected class MFRotation150 {
+protected class MFRotation149 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {-1f,0f,0f,0.6979f,0.9094f,0.2062f,-0.3613f,0.4157f,0.9637f,0.1537f,-0.2185f,1.353f,0.4864f,0.08841f,-0.8693f,0.1716f,-1f,0f,0f,0.6979f});
   }
 }
-protected class MFFloat151 {
+protected class MFFloat150 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,1f});
   }
 }
-protected class MFRotation152 {
+protected class MFRotation151 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {-0.0240995f,-0.999682f,0.00741506f,0.120409f,-0.0240995f,-0.999682f,0.00741506f,0.120409f});
   }
 }
-protected class MFFloat153 {
+protected class MFFloat152 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.2182f,0.4909f,0.7455f,1f});
   }
 }
-protected class MFRotation154 {
+protected class MFRotation153 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0.9985f,0.03887f,0.03802f,4.689f,-0.965f,-0.1889f,-0.1821f,1.415f,0.9758f,0.1563f,0.1529f,4.666f,-0.9956f,-0.0936f,0.009826f,1.126f,0.9985f,0.03887f,0.03802f,4.689f});
   }
 }
-protected class MFFloat155 {
+protected class MFFloat154 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.2182f,0.4909f,0.7455f,1f});
   }
 }
-protected class MFRotation156 {
+protected class MFRotation155 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0.9907f,-0.07264f,0.115f,1.135f,0.9291f,-0.1222f,0.349f,0.1695f,-0.9892f,0.1364f,-0.05394f,0.5112f,0.9942f,-0.0002052f,0.1073f,0.4975f,0.9907f,-0.07264f,0.115f,1.135f});
   }
 }
-protected class MFFloat157 {
+protected class MFFloat156 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.4909f,1f});
   }
 }
-protected class MFRotation158 {
+protected class MFRotation157 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0.6517f,-0.7559f,0.06211f,0.2508f,0.6467f,0.7527f,-0.1238f,0.2344f,0.6517f,-0.7559f,0.06211f,0.2508f});
   }
 }
-protected class MFFloat159 {
+protected class MFFloat158 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,1f});
   }
 }
-protected class MFRotation160 {
+protected class MFRotation159 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0f,0f,1f,0f,0f,0f,1f,0f});
   }
 }
-protected class MFFloat161 {
+protected class MFFloat160 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.2545f,0.4909f,0.7636f,1f});
   }
 }
-protected class MFRotation162 {
+protected class MFRotation161 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0.7651f,0.6382f,0.08586f,0.2712f,0.9999f,0.002845f,-0.01547f,0.3756f,0.7459f,-0.6505f,-0.1432f,0.2416f,0.9984f,0.05536f,-0.01154f,0.3488f,0.7651f,0.6382f,0.08586f,0.2712f});
   }
 }
-protected class MFFloat163 {
+protected class MFFloat162 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,1f});
   }
 }
-protected class MFRotation164 {
+protected class MFRotation163 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0f,0f,1f,0f,0f,0f,1f,0f});
   }
 }
-protected class MFFloat165 {
+protected class MFFloat164 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.2182f,0.2909f,0.3091f,0.7091f,0.8f,0.8182f,1f});
   }
 }
-protected class MFVec3f166 {
+protected class MFVec3f165 {
   protected MFVec3fObject getArray() {
     return new MFVec3fObject(new float[] {0f,-0.0351f,0f,0f,-0.0351f,0f,0f,-0.04087f,0f,0f,-0.04886f,0f,0f,-0.04051f,0f,0f,-0.03666f,0f,0f,-0.03666f,0f,0f,-0.0351f,0f});
   }
 }
-protected class MFFloat167 {
+protected class MFFloat166 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.28f,0.32f,0.36f,0.4f,0.44f,0.48f,0.64f,0.76f,0.84f,0.88f,0.92f,0.96f,1f});
   }
 }
-protected class MFRotation168 {
+protected class MFRotation167 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0f,0f,1f,0f,-1f,0f,0f,0.6735f,-1f,0f,0f,0.6735f,-1f,0f,0f,0.3527f,-1f,0f,0f,0.3038f,-1f,0f,0f,0.07964f,1f,0f,0f,0.3001f,1f,0f,0f,0.6509f,1f,0f,0f,0.3001f,-1f,0f,0f,0.2087f,-1f,0f,0f,0.3756f,-1f,0f,0f,0.3279f,-1f,0f,0f,0.1193f,0f,0f,1f,0f});
   }
 }
-protected class MFFloat169 {
+protected class MFFloat168 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.28f,0.32f,0.48f,0.64f,0.76f,0.88f,1f});
   }
 }
-protected class MFRotation170 {
+protected class MFRotation169 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0f,0f,1f,0f,1f,0f,0f,2.005f,1f,0f,0f,2.005f,0f,0f,1f,0f,1f,0f,0f,0.9507f,1f,0f,0f,0.5845f,1f,0f,0f,0.9054f,0f,0f,1f,0f});
   }
 }
-protected class MFFloat171 {
+protected class MFFloat170 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.28f,0.32f,0.36f,0.4f,0.44f,0.48f,0.64f,0.76f,0.88f,1f});
   }
 }
-protected class MFRotation172 {
+protected class MFRotation171 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0f,0f,1f,0f,1f,0f,0f,4.433f,1f,0f,0f,4.433f,1f,0f,0f,4.647f,-1f,0f,0f,0.8943f,-1f,0f,0f,0.3698f,0f,0f,1f,0f,-1f,0f,0f,0.4963f,-1f,0f,0f,0.3829f,-1f,0f,0f,0.5169f,0f,0f,1f,0f});
   }
 }
-protected class MFFloat173 {
+protected class MFFloat172 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.28f,0.32f,0.36f,0.4f,0.44f,0.48f,0.64f,0.76f,0.84f,0.88f,0.92f,0.96f,1f});
   }
 }
-protected class MFRotation174 {
+protected class MFRotation173 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0f,0f,1f,0f,-1f,0f,0f,0.625f,-1f,0f,0f,0.625f,-1f,0f,0f,0.3364f,-1f,0f,0f,0.2742f,-1f,0f,0f,0.05078f,1f,0f,0f,0.2833f,1f,0f,0f,0.6667f,1f,0f,0f,0.2833f,-1f,0f,0f,0.2108f,-1f,0f,0f,0.375f,-1f,0f,0f,0.3146f,-1f,0f,0f,0.1174f,0f,0f,1f,0f});
   }
 }
-protected class MFFloat175 {
+protected class MFFloat174 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.28f,0.32f,0.48f,0.64f,0.76f,0.88f,1f});
   }
 }
-protected class MFRotation176 {
+protected class MFRotation175 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0f,0f,1f,0f,1f,0f,0f,2.047f,1f,0f,0f,2.047f,0f,0f,1f,0f,1f,0f,0f,1.566f,1f,0f,0f,0.5913f,1f,0f,0f,0.9235f,0f,0f,1f,0f});
   }
 }
-protected class MFFloat177 {
+protected class MFFloat176 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.28f,0.32f,0.36f,0.4f,0.44f,0.48f,0.64f,0.76f,0.88f,1f});
   }
 }
-protected class MFRotation178 {
+protected class MFRotation177 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0f,0f,1f,0f,1f,0f,0f,4.349f,1f,0f,0f,4.349f,1f,0f,0f,4.615f,-1f,0f,0f,0.9136f,-1f,0f,0f,0.3614f,0f,0f,1f,0f,-1f,0f,0f,0.7869f,-1f,0f,0f,0.3918f,-1f,0f,0f,0.5433f,0f,0f,1f,0f});
   }
 }
-protected class MFFloat179 {
+protected class MFFloat178 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.28f,0.32f,0.48f,0.76f,1f});
   }
 }
-protected class MFRotation180 {
+protected class MFRotation179 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0f,0f,1f,0f,1f,0f,0f,0.1892f,1f,0f,0f,0.1892f,0f,0f,1f,0f,0f,0f,1f,0f,0f,0f,1f,0f});
   }
 }
-protected class MFFloat181 {
+protected class MFFloat180 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.28f,0.32f,0.64f,0.76f,1f});
   }
 }
-protected class MFRotation182 {
+protected class MFRotation181 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0f,0f,1f,0f,-0.0585279f,0.983903f,-0.168849f,1.85956f,-0.0585279f,0.983903f,-0.168849f,1.85956f,-0.00222418f,0.99801f,-0.0630095f,1.46072f,0f,1f,0f,0.497349f,0f,0f,1f,0f});
   }
 }
-protected class MFFloat183 {
+protected class MFFloat182 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.28f,0.32f,0.64f,0.76f,1f});
   }
 }
-protected class MFRotation184 {
+protected class MFRotation183 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0f,0f,1f,0f,-1f,0f,0f,0.04151f,-1f,0f,0f,0.04151f,-1f,0f,0f,0.5855f,-1f,0f,0f,0.5852f,0f,0f,1f,0f});
   }
 }
-protected class MFFloat185 {
+protected class MFFloat184 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.28f,0.32f,0.64f,0.76f,0.88f,1f});
   }
 }
-protected class MFRotation186 {
+protected class MFRotation185 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0f,0f,1f,0f,0.9992f,0.02042f,0.03558f,4.688f,0.9992f,0.02042f,0.03558f,4.688f,0.9989f,-0.04623f,0.005159f,4.079f,-0.8687f,-0.2525f,-0.4261f,1.501f,-0.941f,-0.2893f,-0.1754f,0.4788f,0f,0f,1f,0f});
   }
 }
-protected class MFFloat187 {
+protected class MFFloat186 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.28f,0.32f,0.64f,0.76f,0.88f,1f});
   }
 }
-protected class MFRotation188 {
+protected class MFRotation187 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0f,0f,1f,0f,0.0672928f,0.989475f,-0.128107f,4.15574f,0.0672928f,0.989475f,-0.128107f,4.15574f,0.00364942f,0.999901f,0.0135896f,4.5822f,0f,-1f,0f,0.655922f,-0.00050618f,-0.999999f,0.0012782f,1.28397f,0f,0f,1f,0f});
   }
 }
-protected class MFFloat189 {
+protected class MFFloat188 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.28f,0.32f,0.64f,0.76f,1f});
   }
 }
-protected class MFRotation190 {
+protected class MFRotation189 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0f,0f,1f,0f,-1f,0f,0f,0.1229f,-1f,0f,0f,0.1229f,-1f,0f,0f,0.5976f,-1f,0f,0f,0.3917f,0f,0f,1f,0f});
   }
 }
-protected class MFFloat191 {
+protected class MFFloat190 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.28f,0.32f,0.64f,0.76f,0.88f,1f});
   }
 }
-protected class MFRotation192 {
+protected class MFRotation191 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0f,0f,1f,0f,-0.9987f,0.02554f,0.04498f,1.57f,-0.9987f,0.02554f,0.04498f,1.57f,1f,0.0004113f,0.003055f,4.114f,-0.8413f,0.3238f,0.4329f,1.453f,-0.877f,0.4198f,0.2337f,0.6009f,0f,0f,1f,0f});
   }
 }
-protected class MFFloat193 {
+protected class MFFloat192 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.28f,0.32f,0.48f,0.76f,1f});
   }
 }
-protected class MFRotation194 {
+protected class MFRotation193 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0f,0f,1f,0f,-1f,0f,0f,0.5989f,-1f,0f,0f,0.5989f,-1f,0f,0f,0.3216f,1f,0f,0f,0.06503f,0f,0f,1f,0f});
   }
 }
-protected class MFFloat195 {
+protected class MFFloat194 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.28f,0.32f,0.48f,0.76f,1f});
   }
 }
-protected class MFRotation196 {
+protected class MFRotation195 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0f,0f,1f,0f,-1f,0f,0f,0.1942f,-1f,0f,0f,0.1942f,0f,0f,1f,0f,1f,0f,0f,0.2284f,0f,0f,1f,0f});
   }
 }
-protected class MFFloat197 {
+protected class MFFloat196 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.28f,0.32f,0.48f,0.76f,0.88f,1f});
   }
 }
-protected class MFRotation198 {
+protected class MFRotation197 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0f,0f,1f,0f,1f,0f,0f,1.038f,1f,0f,0f,1.038f,-1f,0f,0f,0.1057f,1f,0f,0f,0.2171f,1f,0f,0f,0.3465f,0f,0f,1f,0f});
   }
 }
-protected class MFFloat199 {
+protected class MFFloat198 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.28f,0.32f,0.48f,0.64f,0.76f,1f});
   }
 }
-protected class MFRotation200 {
+protected class MFRotation199 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0f,0f,1f,0f,1f,0f,0f,0.3273f,1f,0f,0f,0.3273f,0f,0f,1f,0f,0f,0f,1f,0f,0f,0f,1f,0f,0f,0f,1f,0f});
   }
 }
-protected class MFFloat201 {
+protected class MFFloat200 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.04f,0.08f,0.12f,0.16f,0.2f,0.24f,0.28f,0.32f,0.36f,0.4f,0.44f,0.48f,0.64f,0.76f,0.8f,0.84f,0.88f,0.92f,0.96f,1f});
   }
 }
-protected class MFVec3f202 {
+protected class MFVec3f201 {
   protected MFVec3fObject getArray() {
     return new MFVec3fObject(new float[] {0f,0f,0f,0f,-0.01264f,-0.01289f,0f,-0.04712f,-0.03738f,-0.0003345f,-0.1049f,-0.05353f,-0.0005712f,-0.1892f,-0.06561f,-0.0008233f,-0.286f,-0.06276f,-0.0009591f,-0.3795f,-0.05148f,-0.00106f,-0.4484f,-0.03656f,-0.00106f,-0.4484f,-0.03656f,-0.001122f,-0.3269f,-0.1499f,-0.0008616f,-0.13f,-0.06358f,-0.0005128f,-0.03123f,-0.05488f,0.0004779f,0.053f,0.02732f,0.0001728f,0.4148f,0.006873f,0f,0.03045f,0.02148f,0f,-0.01299f,-0.01057f,0f,-0.06932f,-0.01064f,0.0001365f,-0.1037f,-0.005059f,0.0001279f,-0.07198f,-0.007596f,0.000141f,-0.01626f,-0.004935f,0f,0f,0f});
   }

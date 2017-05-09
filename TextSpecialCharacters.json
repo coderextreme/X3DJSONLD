@@ -52,7 +52,7 @@
           },
           {
             "@name":"translated",
-            "@content":"06 May 2017"
+            "@content":"08 May 2017"
           },
           {
             "@name":"generator",
@@ -96,10 +96,10 @@
                   "#comment":"quotation \" is &quot; and isn't needed if single-quote delimiters used for string='value' attribute"
                 },
                 {
-                  "#comment":"quotation \" can be used within an X3D string if escaped with backslash \\\\ as \\\""
+                  "#comment":"quotation \" can be used within an X3D string if escaped with backslash \\ as \\\""
                 },
                 {
-                  "#comment":"backslash \\\\ is used as escape character for \" (and itself) in X3D"
+                  "#comment":"backslash \\ is used as escape character for \" (and itself) in X3D"
                 },
                 {
                   "#comment":"character entities are listed in HTML specification and are good for any XML"
@@ -109,7 +109,7 @@
                 { "Text":
                   {
                     "@DEF":"DefaultText",
-                    "@string":["Character entity substitutions:","empty string \\\\\"\\\\\" skips a line:","","apostrophe ' is &apos;","ampersand & is &amp;","quote mark \\\\\" is &quot;","backslash \\ is X3D escape character","double backslash \\\\ is X3D backslash \\ character","Pi Π is &#928; XML character entity"],
+                    "@string":["Character entity substitutions:","empty string \"\" skips a line:","","apostrophe ' is &apos;","ampersand & is &amp;","quote mark \" is &quot;","backslash \\ is X3D escape character","double backslash \\\\ is X3D backslash \\ character","Pi Π is &#928; XML character entity"],
                     "-fontStyle":
                       { "FontStyle":
                         {

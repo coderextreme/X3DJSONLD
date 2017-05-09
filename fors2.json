@@ -36,7 +36,7 @@
           },
           {
             "@name":"translated",
-            "@content":"06 May 2017"
+            "@content":"08 May 2017"
           },
           {
             "@name":"generator",
@@ -303,7 +303,7 @@
 "                }",
 "                ",
 "                function set_spine(value) {",
-"\t\t    Browser.print('\n'+'\"');",
+"\t\t    Browser.print('\\n'+'\"');",
 "                    spine = value;",
 "                }"
 ]

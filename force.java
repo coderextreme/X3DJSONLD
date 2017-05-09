@@ -94,15 +94,15 @@ ProtoInstanceObject ProtoInstance6 = null;
         .addMeta(new metaObject().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/force.x3d"))
         .addMeta(new metaObject().setName("description").setContent("beginnings of a force directed graph in 3D"))
         .addMeta(new metaObject().setName("generator").setContent("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit"))
-        .addMeta(new metaObject().setName("translated").setContent("06 May 2017"))
+        .addMeta(new metaObject().setName("translated").setContent("08 May 2017"))
         .addMeta(new metaObject().setName("generator").setContent("X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"))
         .addMeta(new metaObject().setName("reference").setContent("X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"))
-        .addMeta(new metaObject().setName("translated").setContent("6 May 2017"))
+        .addMeta(new metaObject().setName("translated").setContent("8 May 2017"))
         .addMeta(new metaObject().setName("generator").setContent("X3DJSONLD: https://github.com/coderextreme/X3DJSONLD")))
       .setScene(new SceneObject()
         .addChild(new ProtoDeclareObject().setName("node")
           .setProtoInterface(new ProtoInterfaceObject()
-            .addField(new fieldObject().setName("position").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFVEC3F).setValue("0 0 0")))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("position").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0")))
           .setProtoBody(new ProtoBodyObject()
             .addChild(new TransformObject().setDEF("transform")
               .setIS(new ISObject()
@@ -119,10 +119,10 @@ ProtoInstanceObject ProtoInstance6 = null;
                     .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0f,0f,1f}))))))
             .addChild(new PositionInterpolatorObject().setDEF("NodePosition").setKey(new MFFloatObject(new MFFloat2().getArray())).setKeyValue(new MFVec3fObject(new MFVec3f3().getArray())))
             .addChild(new ScriptObject().setDEF("MoveBall")
-              .addField(new fieldObject().setName("translation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFVEC3F).setValue("50 50 0"))
-              .addField(new fieldObject().setName("old").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_SFVEC3F).setValue("0 0 0"))
-              .addField(new fieldObject().setName("set_cycle").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setType(fieldObject.TYPE_SFTIME))
-              .addField(new fieldObject().setName("keyValue").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setType(fieldObject.TYPE_MFVEC3F))
+              .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("translation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("50 50 0"))
+              .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("old").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
+              .addField(new fieldObject().setType(fieldObject.TYPE_SFTIME).setName("set_cycle").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
+              .addField(new fieldObject().setType(fieldObject.TYPE_MFVEC3F).setName("keyValue").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
               .setSourceCode("ecmascript:\n"+
 "					function set_cycle(value) {\n"+
 "                                                old = translation;\n"+
@@ -138,20 +138,20 @@ ProtoInstanceObject ProtoInstance6 = null;
             .addChild(new ROUTEObject().setFromNode("NodePosition").setFromField("value_changed").setToNode("transform").setToField("set_translation"))))
         .addChild(new ProtoDeclareObject().setName("cylinder")
           .setProtoInterface(new ProtoInterfaceObject()
-            .addField(new fieldObject().setName("positionA").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setType(fieldObject.TYPE_SFVEC3F))
-            .addField(new fieldObject().setName("positionB").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setType(fieldObject.TYPE_SFVEC3F)))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("set_positionA").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("set_positionB").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)))
           .setProtoBody(new ProtoBodyObject()
             .addChild(new ShapeObject()
               .setGeometry(new ExtrusionObject().setDEF("extrusion").setCreaseAngle(0.785f).setCrossSection(new MFVec2fObject(new MFVec2f4().getArray())).setSpine(new MFVec3fObject(new MFVec3f5().getArray())))
               .setAppearance(new AppearanceObject()
                 .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0f,1f,0f}))))
             .addChild(new ScriptObject().setDEF("MoveCylinder")
-              .addField(new fieldObject().setName("spine").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setType(fieldObject.TYPE_MFVEC3F).setValue("0 -50 0 0 50 0"))
-              .addField(new fieldObject().setName("set_endA").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setType(fieldObject.TYPE_SFVEC3F))
-              .addField(new fieldObject().setName("set_endB").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setType(fieldObject.TYPE_SFVEC3F))
+              .addField(new fieldObject().setType(fieldObject.TYPE_MFVEC3F).setName("spine").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 -50 0 0 50 0"))
+              .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("set_endA").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
+              .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("set_endB").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
               .setIS(new ISObject()
-                .addConnect(new connectObject().setNodeField("set_endA").setProtoField("positionA"))
-                .addConnect(new connectObject().setNodeField("set_endB").setProtoField("positionB")))
+                .addConnect(new connectObject().setNodeField("set_endA").setProtoField("set_positionA"))
+                .addConnect(new connectObject().setNodeField("set_endB").setProtoField("set_positionB")))
               .setSourceCode("ecmascript:\n"+
 "\n"+
 "                function set_endA(value) {\n"+
@@ -185,10 +185,10 @@ ProtoInstanceObject ProtoInstance6 = null;
           .addChild(ProtoInstance5 = new ProtoInstanceObject().setName("cylinder").setDEF("linkB"))
           .addChild(ProtoInstance6 = new ProtoInstanceObject().setName("cylinder").setDEF("linkC")))
         .addChild(new ScriptObject().setDEF("clickHandler")
-          .addField(new fieldObject().setName("counter").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0").setType(fieldObject.TYPE_SFINT32))
-          .addField(new fieldObject().setName("node_changed").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setType(fieldObject.TYPE_SFNODE))
-          .addField(new fieldObject().setName("add_node").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setValue("0").setType(fieldObject.TYPE_SFBOOL))
-          .addField(new fieldObject().setName("ModifiableNode").setType(fieldObject.TYPE_SFNODE).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
+          .addField(new fieldObject().setType(fieldObject.TYPE_SFINT32).setName("counter").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
+          .addField(new fieldObject().setType(fieldObject.TYPE_SFNODE).setName("node_changed").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
+          .addField(new fieldObject().setType(fieldObject.TYPE_SFBOOL).setName("add_node").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setValue("false"))
+          .addField(new fieldObject().setType(fieldObject.TYPE_SFNODE).setName("ModifiableNode").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
             .addChild(new TransformObject().setUSE("HoldsContent")))
           .setSourceCode("ecmascript:\n"+
 "	function add_node(value) {\n"+
@@ -210,12 +210,12 @@ ProtoInstanceObject ProtoInstance6 = null;
 "        }\n"+
 ""))
         .addChild(new ROUTEObject().setFromNode("clickGenerator").setFromField("isActive").setToNode("clickHandler").setToField("add_node"))
-        .addChild(new ROUTEObject().setFromNode("nodeA").setFromField("position").setToNode("linkA").setToField("positionA"))
-        .addChild(new ROUTEObject().setFromNode("nodeB").setFromField("position").setToNode("linkA").setToField("positionB"))
-        .addChild(new ROUTEObject().setFromNode("nodeA").setFromField("position").setToNode("linkB").setToField("positionA"))
-        .addChild(new ROUTEObject().setFromNode("nodeC").setFromField("position").setToNode("linkB").setToField("positionB"))
-        .addChild(new ROUTEObject().setFromNode("nodeA").setFromField("position").setToNode("linkC").setToField("positionA"))
-        .addChild(new ROUTEObject().setFromNode("nodeD").setFromField("position").setToNode("linkC").setToField("positionB")))      ;
+        .addChild(new ROUTEObject().setFromNode("nodeA").setFromField("position").setToNode("linkA").setToField("set_positionA"))
+        .addChild(new ROUTEObject().setFromNode("nodeB").setFromField("position").setToNode("linkA").setToField("set_positionB"))
+        .addChild(new ROUTEObject().setFromNode("nodeA").setFromField("position").setToNode("linkB").setToField("set_positionA"))
+        .addChild(new ROUTEObject().setFromNode("nodeC").setFromField("position").setToNode("linkB").setToField("set_positionB"))
+        .addChild(new ROUTEObject().setFromNode("nodeA").setFromField("position").setToNode("linkC").setToField("set_positionA"))
+        .addChild(new ROUTEObject().setFromNode("nodeD").setFromField("position").setToNode("linkC").setToField("set_positionB")))      ;
 ProtoInstance0
             .addFieldValue(new fieldValueObject().setName("position").setValue("0 0 0"));
 ProtoInstance1
@@ -225,17 +225,17 @@ ProtoInstance2
 ProtoInstance3
             .addFieldValue(new fieldValueObject().setName("position").setValue("50 50 -50"));
 ProtoInstance4
-            .addFieldValue(new fieldValueObject().setName("positionA").setValue("0 0 0"));
+            .addFieldValue(new fieldValueObject().setName("set_positionA").setValue("0 0 0"));
 ProtoInstance4
-            .addFieldValue(new fieldValueObject().setName("positionB").setValue("50 50 50"));
+            .addFieldValue(new fieldValueObject().setName("set_positionB").setValue("50 50 50"));
 ProtoInstance5
-            .addFieldValue(new fieldValueObject().setName("positionA").setValue("0 0 0"));
+            .addFieldValue(new fieldValueObject().setName("set_positionA").setValue("0 0 0"));
 ProtoInstance5
-            .addFieldValue(new fieldValueObject().setName("positionB").setValue("-50 -50 -50"));
+            .addFieldValue(new fieldValueObject().setName("set_positionB").setValue("-50 -50 -50"));
 ProtoInstance6
-            .addFieldValue(new fieldValueObject().setName("positionA").setValue("50 50 50"));
+            .addFieldValue(new fieldValueObject().setName("set_positionA").setValue("50 50 50"));
 ProtoInstance6
-            .addFieldValue(new fieldValueObject().setName("positionB").setValue("50 50 -50"));
+            .addFieldValue(new fieldValueObject().setName("set_positionB").setValue("50 50 -50"));
     return X3D0;
     }
 protected class MFString0 {

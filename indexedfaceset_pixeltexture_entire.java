@@ -95,10 +95,10 @@ public class indexedfaceset_pixeltexture_entire {
         .addMeta(new metaObject().setName("generator").setContent("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"))
         .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new metaObject().setName("license").setContent("../../license.html"))
-        .addMeta(new metaObject().setName("translated").setContent("06 May 2017"))
+        .addMeta(new metaObject().setName("translated").setContent("08 May 2017"))
         .addMeta(new metaObject().setName("generator").setContent("X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"))
         .addMeta(new metaObject().setName("reference").setContent("X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"))
-        .addMeta(new metaObject().setName("translated").setContent("6 May 2017"))
+        .addMeta(new metaObject().setName("translated").setContent("8 May 2017"))
         .addMeta(new metaObject().setName("generator").setContent("X3DJSONLD: https://github.com/coderextreme/X3DJSONLD")))
       .setScene(new SceneObject()
         .addChild(new ViewpointObject().setDescription("Front View"))
@@ -107,26 +107,21 @@ public class indexedfaceset_pixeltexture_entire {
         .addChild(new ViewpointObject().setDescription("Bottom View").setOrientation(new float[] {1f,0f,0f,1.57f}).setPosition(new float[] {0f,-10f,0f}))
         .addChild(new ViewpointObject().setDescription("Right View").setOrientation(new float[] {0f,1f,0f,1.57f}).setPosition(new float[] {10f,0f,0f}))
         .addChild(new ViewpointObject().setDescription("Left View").setOrientation(new float[] {0f,1f,0f,-1.57f}).setPosition(new float[] {-10f,0f,0f}))
-        .addChild(new NavigationInfoObject().setType(new MFStringObject(new MFString0().getArray())))
+        .addChild(new NavigationInfoObject().setType(new java.lang.String[] {"EXAMINE","WALK","FLY","ANY"}))
         .addChild(new ShapeObject()
           .setAppearance(new AppearanceObject()
             .setMaterial(new MaterialObject())
             .setTexture(new PixelTextureObject().setImage(new int[] {2,2,4,0xFF0000FF,16711935,0xFFFFFFFF,0xFFFF00FF}).setRepeatS(false).setRepeatT(false)))
-          .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt321().getArray()))
-            .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f2().getArray()))))))      ;
+          .setGeometry(new IndexedFaceSetObject().setCoordIndex(new MFInt32Object(new MFInt320().getArray()))
+            .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new MFVec3f1().getArray()))))))      ;
     return X3D0;
     }
-protected class MFString0 {
-  protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"EXAMINE","WALK","FLY","ANY"});
-  }
-}
-protected class MFInt321 {
+protected class MFInt320 {
   protected MFInt32Object getArray() {
     return new MFInt32Object(new int[] {0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1});
   }
 }
-protected class MFVec3f2 {
+protected class MFVec3f1 {
   protected MFVec3fObject getArray() {
     return new MFVec3fObject(new float[] {-2f,1.5f,1f,-2f,-1.5f,1f,2f,1.5f,1f,2f,-1.5f,1f,2f,1.5f,-1f,2f,-1.5f,-1f,-2f,1.5f,-1f,-2f,-1.5f,-1f});
   }
