@@ -52,7 +52,7 @@ class ClassPrinter:
 
     def listChildren(self, fieldName, fieldType):
             str = ""
-            if not self.name.startswith("X3D") or self.name == "X3D":
+            if not self.name.startswith("X3D"):
                 str += '\t\t\t\t\t\t\t"' + self.name + '" : {\n'
                 str += '\t\t\t\t\t\t\t\t"$ref":"#/definitions/'+self.name+'"\n'
                 str += '\t\t\t\t\t\t\t},\n'
@@ -104,8 +104,64 @@ class ClassPrinter:
             str += 'number"\n'
         return str
 
-    def printTypeMinMaxDefaults(self, field):
-        str = '\t\t\t\t\t"type":"'
+    def printField(self, field):
+        str = '\t\t\t\t"@' + field["name"] + '" : {\n'
+        if not field["type"].startswith("MF"):
+            try:
+                str += '\t\t\t\t\t"maximum" : '+field["maxExclusive"] + ',\n'
+                str += '\t\t\t\t\t"exclusiveMaximum" : true,\n'
+            except:
+                pass
+            try:
+                str += '\t\t\t\t\t"maximum" : '+field["maxInclusive"] + ',\n'
+            except:
+                pass
+
+            try:
+                str += '\t\t\t\t\t"minimum" : '+field["minExclusive"] + ',\n'
+                str += '\t\t\t\t\t"exclusiveMinimum" : true,\n'
+            except:
+                pass
+
+            try:
+                str += '\t\t\t\t\t"minimum" : '+field["minInclusive"] + ',\n'
+            except:
+                pass
+
+            # enumerations
+            enumerations = field.find_all("enumeration")
+            enums = []
+            if enumerations is not None:
+                for enum in enumerations:
+                    enums.append(enum["value"])
+                if enums != []:
+                    str += '\t\t\t\t\t"enum": [\n'
+                    str += '\t\t\t\t\t\t"'
+                    str += '",\n\t\t\t\t\t\t"'.join(enums)
+                    str += '"\n\t\t\t\t\t],\n'
+
+
+            try:  # default value
+                if field["type"] == "SFString":
+                    str += '\t\t\t\t\t"default":'+'"'+field["default"]+'",\n'
+                elif field["type"] == "SFBool":
+                    str += '\t\t\t\t\t"default":'+field["default"]+',\n'
+                elif field["type"] == "SFDouble":
+                    str += '\t\t\t\t\t"default":'+field["default"]+',\n'
+                elif field["type"] == "SFTime":
+                    str += '\t\t\t\t\t"default":'+field["default"]+',\n'
+                elif field["type"] == "SFFloat":
+                    str += '\t\t\t\t\t"default":'+field["default"]+',\n'
+                elif field["type"] == "SFInt32":
+                    str += '\t\t\t\t\t"default":'+field["default"]+',\n'
+                elif field["type"] == "SFNode":
+                    str += '__TODO__"\n'
+                # don't need to specify default for array here
+                #else:
+                #   str += '\t\t\t\t\t"default":'+'['+field["default"].replace(' ',',')+'],\n'
+            except:
+                pass
+        str += '\t\t\t\t\t"type":"'
         if field["type"] == "SFBool":
             str += 'boolean"\n'
         elif field["type"] == "SFDouble":
@@ -269,7 +325,7 @@ class ClassPrinter:
                 str += '\t\t\t\t\t],\n'
                 str += '\t\t\t\t\t"additionalItems": '
                 if field['type'].startswith("SF"):
-                    str += 'false\n';
+                    str += 'false\n'
                 elif field['type'].startswith("MF"):
                     str += '{\n'
                     str += self.printTypeMinMax(field)
@@ -279,7 +335,8 @@ class ClassPrinter:
                                 str += '\t\t\t\t\t\t"default":"'+firstValue+'",\n'
                             else:
                                 str += '\t\t\t\t\t\t"default":'+firstValue+',\n'
-                    str += '\t\t\t\t\t}\n'
+                    str += '\t\t\t\t\t}'
+        str += '\t\t\t\t\t},\n'
         return str
 
     def printClass(self):
@@ -385,14 +442,14 @@ class ClassPrinter:
                 if not field["name"].startswith("X3D") or field["name"] == "X3D":
                     try:
                         if field["use"] == "required":
-                            required.append(field["name"]);
+                            required.append(field["name"])
                     except:
                         pass
 
                     if not field["name"].startswith("add") and not field["name"].startswith("remove"):
                         if field["type"] == "MFNode" or field["type"] == "SFNode":
                             try:
-                                if classes[field["name"]] != None:
+                                if classes[field["name"]] != None and field["name"] != "X3D":
                                     str += '\t\t\t\t"' + field["name"] + '" : {\n'
                                     str += '\t\t\t\t\t"$ref":"#/definitions/'+ field["name"] +'"\n'
                                     str += '\t\t\t\t},\n'
@@ -402,87 +459,36 @@ class ClassPrinter:
                                 str += '\t\t\t\t},\n'
                                 # container fields
                                 cf = '\t\t\t\t"-' + field["name"] + '" : {\n'
+                                if field["type"] == "MFNode":
+                                    cf += '\t\t\t\t\t"type": "array",\n'
+                                    cf += '\t\t\t\t\t"minItems": 1,\n'
+                                    cf += '\t\t\t\t\t"items": {\n'
+                                cf += '\t\t\t\t\t\t"type": "object",\n'
+                                cf += '\t\t\t\t\t\t"properties": {\n'
                                 acnts = field["acceptableNodeTypes"].split("|")
-                                cf += '\t\t\t\t\t"properties": {\n'
                                 for acnt in acnts:
                                     cf += classes[acnt].listChildren(field["name"], field["type"])
                                     #str += "___________PARENTS____________\n"
                                     #str += classes[acnt].listParents(field["name"], field["type"])
                                 if cf[-2] == ',':
                                      cf = cf[:-2] + '\n' # strip off comma
-                                cf += '\t\t\t\t\t},\n'
-                                cf += '\t\t\t\t\t"additionalProperties": false,\n'
-                                cf += self.printTypeMinMaxDefaults(field)
+                                cf += '\t\t\t\t\t\t},\n'
+                                cf += '\t\t\t\t\t\t"additionalProperties": false\n'
+                                if field["type"] == "MFNode":
+                                    cf += '\t\t\t\t\t}\n'
                                 cf += '\t\t\t\t},\n'
-                                containerFields.append(cf)
+                                containerFields[field["name"]] = cf
                         else:
-                            str += '\t\t\t\t"@' + field["name"] + '" : {\n'
-                            if not field["type"].startswith("MF"):
-                                try:
-                                    str += '\t\t\t\t\t"maximum" : '+field["maxExclusive"] + ',\n'
-                                    str += '\t\t\t\t\t"exclusiveMaximum" : true,\n'
-                                except:
-                                    pass
-                                try:
-                                    str += '\t\t\t\t\t"maximum" : '+field["maxInclusive"] + ',\n'
-                                except:
-                                    pass
-
-                                try:
-                                    str += '\t\t\t\t\t"minimum" : '+field["minExclusive"] + ',\n'
-                                    str += '\t\t\t\t\t"exclusiveMinimum" : true,\n'
-                                except:
-                                    pass
-
-                                try:
-                                    str += '\t\t\t\t\t"minimum" : '+field["minInclusive"] + ',\n'
-                                except:
-                                    pass
-
-                                # enumerations
-                                enumerations = field.find_all("enumeration")
-                                enums = []
-                                if enumerations is not None:
-                                    for enum in enumerations:
-                                        enums.append(enum["value"])
-                                    if enums != []:
-                                        str += '\t\t\t\t\t"enum": [\n'
-                                        str += '\t\t\t\t\t\t"'
-                                        str += '",\n\t\t\t\t\t\t"'.join(enums)
-                                        str += '"\n\t\t\t\t\t],\n'
-
-
-                                try:  # default value
-                                    if field["type"] == "SFString":
-                                        str += '\t\t\t\t\t"default":'+'"'+field["default"]+'",\n'
-                                    elif field["type"] == "SFBool":
-                                        str += '\t\t\t\t\t"default":'+field["default"]+',\n'
-                                    elif field["type"] == "SFDouble":
-                                        str += '\t\t\t\t\t"default":'+field["default"]+',\n'
-                                    elif field["type"] == "SFTime":
-                                        str += '\t\t\t\t\t"default":'+field["default"]+',\n'
-                                    elif field["type"] == "SFFloat":
-                                        str += '\t\t\t\t\t"default":'+field["default"]+',\n'
-                                    elif field["type"] == "SFInt32":
-                                        str += '\t\t\t\t\t"default":'+field["default"]+',\n'
-                                    elif field["type"] == "SFNode":
-                                        str += '__TODO__"\n'
-                                    # don't need to specify default for array here
-                                    #else:
-                                    #   str += '\t\t\t\t\t"default":'+'['+field["default"].replace(' ',',')+'],\n'
-                                except:
-                                    pass
-                            str += self.printTypeMinMaxDefaults(field)
-                            str += '\t\t\t\t},\n'
+                            str += self.printField(field)
             if str[-2] == ',':
                 str = str[:-2] + '\n' # strip off comma
 
         str += '\t\t\t},\n'
         if required != []:
-            str += '\t\t\t\t"required": [\n'
-            str += '\t\t\t\t\t"@'
-            str += '",\n\t\t\t\t\t"@'.join(required)
-            str += '"\n\t\t\t\t],\n'
+            str += '\t\t\t"required": [\n'
+            str += '\t\t\t\t"@'
+            str += '",\n\t\t\t\t"@'.join(required)
+            str += '"\n\t\t\t],\n'
         str += '\t\t\t"additionalProperties": false\n'
         if self.name == 'meta' or self.name == 'component' or self.name == 'connect' or self.name == 'unit':
             str += '\t\t}\n'
@@ -534,7 +540,7 @@ code = '''{
 soup = BeautifulSoup(open("X3DObjectModel-3.3.xml"), "xml")
 
 classes = {}
-containerFields = []
+containerFields = {}
 
 ants = soup.find_all("AbstractNodeType")
 for ant in ants:
@@ -568,8 +574,8 @@ for k,v in classes.items():
 for k,v in classes.items():
     code += v.printClass()
 
-for cf in containerFields:
-    code += cf
+for k,v in containerFields.items():
+    code += v
 
 if code[-2] == ',':
     code = code[:-2] + '\n' # strip off comma
