@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
+    <head>
+        <meta name='title' content='flowers4.x3d' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='creator' content='John Carlson' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='generator' content='manual' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='identifier' content='http://coderextreme.net/X3DJSONLD/flowers4.x3d' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='description' content='an animated flower' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='translated' content='08 May 2017' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='generator' content='X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='reference' content='X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='translated' content='8 May 2017' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='generator' content='X3DJSONLD: https://github.com/coderextreme/X3DJSONLD' dir='' http_equiv='' lang='' scheme=''/>
+    </head>
+    <Scene>
+        <NavigationInfo avatarSize='0.25 1.6 0.75' headlight='true' speed='1.0' transitionTime='1.0' transitionType='"LINEAR"' type='"EXAMINE" "ANY"' visibilityLimit='0.0' class=''/>
+        <Background backUrl='"cubemap/all_probes/stpeters_cross/stpeters_back.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_back.png"' bottomUrl='"cubemap/all_probes/stpeters_cross/stpeters_bottom.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_bottom.png"' frontUrl='"cubemap/all_probes/stpeters_cross/stpeters_front.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_front.png"' groundAngle='' leftUrl='"cubemap/all_probes/stpeters_cross/stpeters_left.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_left.png"' rightUrl='"cubemap/all_probes/stpeters_cross/stpeters_right.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_right.png"' skyAngle='' skyColor='0 0 0' topUrl='"cubemap/all_probes/stpeters_cross/stpeters_top.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_top.png"' transparency='0.0' class=''/>
+        <Transform DEF='transform' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
+            <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                <Appearance class=''>
+                    <Material ambientIntensity='0.2' diffuseColor='0.7 0.7 0.7' emissiveColor='0 0 0' shininess='0.2' specularColor='0.5 0.5 0.5' transparency='0.0' class=''/>
+                    <ComposedShader DEF='shader' language='GLSL' class=''>
+                        <ShaderPart type='VERTEX' url='"x3dom.vs" "http://coderextreme.net/X3DJSONLD/x3dom.vs"' class=''/>
+                        <ShaderPart type='FRAGMENT' url='"pc_bubbles.fs" "http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"' class=''/>
+                        <field name='cube' accessType='inputOutput' appinfo='' documentation='' type='SFInt32' value='0'/>
+                        <field name='chromaticDispertion' accessType='inputOutput' appinfo='' documentation='' type='SFVec3f' value='0.98 1 1.033'/>
+                        <field name='bias' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='0.5'/>
+                        <field name='scale' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='0.5'/>
+                        <field name='power' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='2.0'/>
+                    </ComposedShader>
+                    <ComposedCubeMapTexture class=''>
+                        <ImageTexture containerField='back' repeatS='true' repeatT='true' url='"cubemap/all_probes/stpeters_cross/stpeters_back.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_back.png"' class=''/>
+                        <ImageTexture containerField='bottom' repeatS='true' repeatT='true' url='"cubemap/all_probes/stpeters_cross/stpeters_bottom.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_bottom.png"' class=''/>
+                        <ImageTexture containerField='front' repeatS='true' repeatT='true' url='"cubemap/all_probes/stpeters_cross/stpeters_front.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_front.png"' class=''/>
+                        <ImageTexture containerField='left' repeatS='true' repeatT='true' url='"cubemap/all_probes/stpeters_cross/stpeters_left.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_left.png"' class=''/>
+                        <ImageTexture containerField='right' repeatS='true' repeatT='true' url='"cubemap/all_probes/stpeters_cross/stpeters_right.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_right.png"' class=''/>
+                        <ImageTexture containerField='top' repeatS='true' repeatT='true' url='"cubemap/all_probes/stpeters_cross/stpeters_top.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_top.png"' class=''/>
+                    </ComposedCubeMapTexture>
+                </Appearance>
+                <IndexedFaceSet DEF='Orbit' ccw='true' colorIndex='' colorPerVertex='true' convex='true' coordIndex='' creaseAngle='0.0' normalIndex='' normalPerVertex='true' solid='true' texCoordIndex='' class=''>
+                    <Coordinate DEF='OrbitCoordinates' class=''/>
+                </IndexedFaceSet>
+                <!-- <Sphere> -->
+            </Shape>
+        </Transform>
+        <Script DEF='OrbitScript' directOutput='false' mustEvaluate='false' url='' class=''>
+            <field name='set_fraction' accessType='inputOnly' appinfo='' documentation='' type='SFFloat' value=''/>
+            <field name='coordinates' accessType='inputOutput' appinfo='' documentation='' type='MFVec3f' value=''/>
+            <field name='coordIndexes' accessType='outputOnly' appinfo='' documentation='' type='MFInt32' value=''/>
+<![CDATA[
+ecmascript:
+
+var e = 5;
+var f = 5;
+var g = 5;
+var h = 5;
+
+function initialize() {
+     resolution = 100;
+     updateCoordinates(resolution);
+     if (typeof coordIndexes == 'undefined' || coordIndexes == null) {
+     	coordIndexes = new MFInt32();
+     }
+     ci = 0;
+     for ( i = 0; i < resolution-1; i++) {
+     	for ( j = 0; j < resolution-1; j++) {
+	     coordIndexes[ci] = i*resolution+j;
+	     coordIndexes[ci+1] = i*resolution+j+1;
+	     coordIndexes[ci+2] = (i+1)*resolution+j+1;
+	     coordIndexes[ci+3] = (i+1)*resolution+j;
+	     coordIndexes[ci+4] = -1;
+	     ci += 5;
+	}
+    }
+}
+
+function updateCoordinates(resolution) {
+     theta = 0.0;
+     phi = 0.0;
+     delta = (2 * 3.141592653) / (resolution-1);
+     if (typeof coordinates == 'undefined' || coordinates == null) {
+     	coordinates = new MFVec3f();
+     }
+     for ( i = 0; i < resolution; i++) {
+     	for ( j = 0; j < resolution; j++) {
+		rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);
+		coordinates[i*resolution+j] = new SFVec3f();
+		coordinates[i*resolution+j][0] = rho * Math.cos(phi) * Math.cos(theta);
+		coordinates[i*resolution+j][1] = rho * Math.cos(phi) * Math.sin(theta);
+		coordinates[i*resolution+j][2] = rho * Math.sin(phi);
+		theta += delta;
+	}
+	phi += delta;
+     }
+}
+
+function set_fraction(fraction, eventTime) {
+	choice = Math.floor(Math.random() * 4);
+	switch (choice) {
+	case 0:
+		e += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 1:
+		f += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 2:
+		g += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 3:
+		h += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	}
+	if (f < 1) {
+		f = 10;
+	}
+	if (g < 1) {
+		g = 4;
+	}
+	if (h < 1) {
+		h = 4;
+	}
+	resolution = 100;
+	updateCoordinates(resolution);
+}
+
+]]>
+        </Script>
+        <TimeSensor DEF='Clock' cycleInterval='16.0' enabled='true' loop='true' pauseTime='0.0' resumeTime='0.0' startTime='0.0' stopTime='0.0' class=''/>
+        <ROUTE fromField='coordIndexes' fromNode='OrbitScript' toField='set_coordIndex' toNode='Orbit'/>
+        <ROUTE fromField='coordinates' fromNode='OrbitScript' toField='set_point' toNode='OrbitCoordinates'/>
+        <ROUTE fromField='fraction_changed' fromNode='Clock' toField='set_fraction' toNode='OrbitScript'/>
+    </Scene>
+</X3D>

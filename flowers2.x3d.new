@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "http://www.web3d.org/specifications/x3d-3.0.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.0" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.0.xsd"><head><meta name="flowers2.x3d" content="title"></meta>
+<meta name="author" content="John Carlson"></meta>
+<meta name="transcriber" content="John Carlson"></meta>
+<meta name="created" content="23 January 2005"></meta>
+<meta name="modified" content="05 May 2017"></meta>
+<meta name="description" content="2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)"></meta>
+<meta name="url" content="http://coderextreme.net/x3d/flowers2.x3d"></meta>
+<meta name="generator" content="manually written"></meta>
+<meta name="translated" content="08 May 2017"></meta>
+<meta name="generator" content="X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"></meta>
+<meta name="reference" content="X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"></meta>
+<meta name="translated" content="8 May 2017"></meta>
+<meta name="generator" content="X3DJSONLD: https://github.com/coderextreme/X3DJSONLD"></meta>
+</head>
+<Scene><NavigationInfo></NavigationInfo>
+<Viewpoint description="Two mathematical orbitals" position="0 0 50"></Viewpoint>
+<Group><DirectionalLight direction="1 1 1"></DirectionalLight>
+<Transform DEF="OrbitTransform" translation="8 0 0"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0.5 1" specularColor="0 0.5 1"></Material>
+</Appearance>
+<IndexedFaceSet containerField="geometry" DEF="Orbit" creaseAngle="1.57"><Coordinate containerField="coord" DEF="OrbitCoordinates"></Coordinate>
+</IndexedFaceSet>
+</Shape>
+</Transform>
+<Transform DEF="OrbitTransform2" translation="-8 0 0"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 0.5 0" specularColor="1 0.5 0" transparency="0.75"></Material>
+</Appearance>
+<IndexedFaceSet containerField="geometry" DEF="Orbit2" creaseAngle="1.57"><Coordinate containerField="coord" DEF="OrbitCoordinates2"></Coordinate>
+</IndexedFaceSet>
+</Shape>
+</Transform>
+<TimeSensor DEF="Clock" cycleInterval="16" loop="true"></TimeSensor>
+<OrientationInterpolator DEF="OrbitPath" key="0 0.5 1" keyValue="1 0 0 0 1 0 0 3.14 1 0 0 6.28"></OrientationInterpolator>
+<Script DEF="OrbitScript"><field name="set_fraction" accessType="inputOnly" type="SFFloat"></field>
+<field name="coordinates" accessType="outputOnly" type="MFVec3f"></field>
+<field name="coordIndexes" accessType="outputOnly" type="MFInt32"></field>
+<![CDATA[ecmascript:
+
+var e = 5;
+var f = 5;
+var g = 5;
+var h = 5;
+
+function initialize() {
+     resolution = 100;
+     var localci = new MFInt32();
+     generateCoordinates(resolution);
+     ci = 0;
+     for ( i = 0; i < resolution-1; i++) {
+     	for ( j = 0; j < resolution-1; j++) {
+	     localci[ci] = i*resolution+j;
+	     localci[ci+1] = i*resolution+j+1;
+	     localci[ci+2] = (i+1)*resolution+j+1;
+	     localci[ci+3] = (i+1)*resolution+j;
+	     localci[ci+4] = -1;
+	     ci += 5;
+	}
+    }
+    coordIndexes = localci;
+}
+
+function generateCoordinates(resolution) {
+     theta = 0.0;
+     phi = 0.0;
+     delta = (2 * 3.141592653) / (resolution-1);
+     var localc = new MFVec3f();
+     for ( i = 0; i < resolution; i++) {
+     	for ( j = 0; j < resolution; j++) {
+		rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);
+		localc[i*resolution+j] = [];
+		localc[i*resolution+j][0] = rho * Math.cos(phi) * Math.cos(theta);
+		localc[i*resolution+j][1] = rho * Math.cos(phi) * Math.sin(theta);
+		localc[i*resolution+j][2] = rho * Math.sin(phi);
+		theta += delta;
+	}
+	phi += delta;
+     }
+     coordinates = localc;
+}
+
+function set_fraction(fraction, eventTime) {
+	choice = Math.floor(Math.random() * 4);
+	switch (choice) {
+	case 0:
+		e += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 1:
+		f += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 2:
+		g += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 3:
+		h += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	}
+	if (f < 1) {
+		f = 10;
+	}
+	if (g < 1) {
+		g = 4;
+	}
+	if (h < 1) {
+		h = 4;
+	}
+	resolution = 100;
+	generateCoordinates(resolution);
+}
+]]></Script>
+<Script DEF="OrbitScript2"><field name="set_fraction" accessType="inputOnly" type="SFFloat"></field>
+<field name="coordinates" accessType="outputOnly" type="MFVec3f"></field>
+<field name="coordIndexes" accessType="outputOnly" type="MFInt32"></field>
+<![CDATA[ecmascript:
+
+var e = 5;
+var f = 5;
+var g = 5;
+var h = 5;
+
+function initialize() {
+     resolution = 100;
+     var localci = new MFInt32();
+     generateCoordinates(resolution);
+     ci = 0;
+     for ( i = 0; i < resolution-1; i++) {
+     	for ( j = 0; j < resolution-1; j++) {
+	     localci[ci] = i*resolution+j;
+	     localci[ci+1] = i*resolution+j+1;
+	     localci[ci+2] = (i+1)*resolution+j+1;
+	     localci[ci+3] = (i+1)*resolution+j;
+	     localci[ci+4] = -1;
+	     ci += 5;
+	}
+    }
+    coordIndexes = localci;
+}
+
+function generateCoordinates(resolution) {
+     theta = 0.0;
+     phi = 0.0;
+     delta = (2 * 3.141592653) / (resolution-1);
+     var localc = new MFVec3f();
+     for ( i = 0; i < resolution; i++) {
+     	for ( j = 0; j < resolution; j++) {
+		rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);
+		localc[i*resolution+j] = new SFVec3f();
+		localc[i*resolution+j][0] = rho * Math.cos(phi) * Math.cos(theta);
+		localc[i*resolution+j][1] = rho * Math.cos(phi) * Math.sin(theta);
+		localc[i*resolution+j][2] = rho * Math.sin(phi);
+		theta += delta;
+	}
+	phi += delta;
+     }
+     coordinates = localc;
+}
+
+function set_fraction(fraction, eventTime) {
+	choice = Math.floor(Math.random() * 4);
+	switch (choice) {
+	case 0:
+		e += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 1:
+		f += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 2:
+		g += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 3:
+		h += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	}
+	if (f < 1) {
+		f = 10;
+	}
+	if (g < 1) {
+		g = 4;
+	}
+	if (h < 1) {
+		h = 4;
+	}
+	resolution = 100;
+	generateCoordinates(resolution);
+}
+]]></Script>
+</Group>
+<ROUTE fromField="coordIndexes" fromNode="OrbitScript" toField="set_coordIndex" toNode="Orbit"></ROUTE>
+<ROUTE fromField="coordinates" fromNode="OrbitScript" toField="set_point" toNode="OrbitCoordinates"></ROUTE>
+<ROUTE fromField="coordIndexes" fromNode="OrbitScript2" toField="set_coordIndex" toNode="Orbit2"></ROUTE>
+<ROUTE fromField="coordinates" fromNode="OrbitScript2" toField="set_point" toNode="OrbitCoordinates2"></ROUTE>
+<ROUTE fromField="fraction_changed" fromNode="Clock" toField="set_fraction" toNode="OrbitScript"></ROUTE>
+<ROUTE fromField="fraction_changed" fromNode="Clock" toField="set_fraction" toNode="OrbitScript2"></ROUTE>
+<ROUTE fromField="fraction_changed" fromNode="Clock" toField="set_fraction" toNode="OrbitPath"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="OrbitPath" toField="set_rotation" toNode="OrbitTransform"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="OrbitPath" toField="set_rotation" toNode="OrbitTransform2"></ROUTE>
+</Scene>
+</X3D>

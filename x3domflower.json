@@ -3,11 +3,6 @@
     "@profile":"Immersive",
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "@showStat":false,
-    "@showLog":false,
-    "@width":"800px",
-    "@height":"250px",
-    "@backend":"webgl",
     "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
@@ -33,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"08 May 2017"
+            "@content":"09 May 2017"
           },
           {
             "@name":"generator",
@@ -63,7 +58,6 @@
           },
           { "Transform":
             {
-              "@id":"tr1",
               "-children":[
                 { "Shape":
                   {
@@ -225,7 +219,6 @@
                     "-geometry":
                       { "Sphere":
                         {
-                          "@subdivision":[512,512],
                           "@radius":20
                         }
                       }
@@ -236,7 +229,6 @@
           },
           { "Transform":
             {
-              "@id":"tr2",
               "@translation":[-2,0,0],
               "-children":[
                 { "Shape":
@@ -398,7 +390,6 @@
                     "-geometry":
                       { "Sphere":
                         {
-                          "@subdivision":512,512,
                           "@radius":20
                         }
                       }
@@ -409,7 +400,6 @@
           },
           { "Transform":
             {
-              "@id":"tr3",
               "@translation":[2,0,0],
               "-children":[
                 { "Shape":
@@ -571,7 +561,6 @@
                     "-geometry":
                       { "Sphere":
                         {
-                          "@subdivision":512,512,
                           "@radius":20
                         }
                       }
