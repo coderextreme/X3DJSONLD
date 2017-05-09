@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd"><head><meta name="title" content="cobweb.x3d"></meta>
+<meta name="creator" content="John Carlson"></meta>
+<meta name="description" content="Tour around a prismatic sphere"></meta>
+<meta name="generator" content="X3D-Edit, https://savage.nps.edu/X3D-Edit"></meta>
+<meta name="identifier" content="http://coderextreme.net/X3DJSONLD/cobweb.x3d"></meta>
+<meta name="translated" content="08 May 2017"></meta>
+<meta name="generator" content="X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"></meta>
+<meta name="reference" content="X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"></meta>
+<meta name="translated" content="8 May 2017"></meta>
+<meta name="generator" content="X3DJSONLD: https://github.com/coderextreme/X3DJSONLD"></meta>
+</head>
+<Scene><NavigationInfo type="&quot;EXAMINE&quot;"></NavigationInfo>
+<Viewpoint position="0 0 4" orientation="1 0 0 0" description="Bubbles in action"></Viewpoint>
+<Background backUrl="&quot;cubemap/BK.png&quot; &quot;http://coderextreme.net/X3DJSONLD/cubemap/BK.png&quot;" bottomUrl="&quot;cubemap/BT.png&quot; &quot;http://coderextreme.net/X3DJSONLD/cubemap/BT.png&quot;" frontUrl="&quot;cubemap/FR.png&quot; &quot;http://coderextreme.net/X3DJSONLD/cubemap/FR.png&quot;" leftUrl="&quot;cubemap/LF.png&quot; &quot;http://coderextreme.net/X3DJSONLD/cubemap/LF.png&quot;" rightUrl="&quot;cubemap/RT.png&quot; &quot;http://coderextreme.net/X3DJSONLD/cubemap/RT.png&quot;" topUrl="&quot;cubemap/TP.png&quot; &quot;http://coderextreme.net/X3DJSONLD/cubemap/TP.png&quot;"></Background>
+<ProtoDeclare name="Bubble"><ProtoBody><Transform DEF="transform"><Shape><Sphere containerField="geometry" radius="0.25"></Sphere>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 0 0" transparency="0.2"></Material>
+</Appearance>
+</Shape>
+<Script DEF="bounce"><field name="scale" accessType="inputOutput" type="SFVec3f" value="1 1 1"></field>
+<field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+<field name="velocity" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+<field name="scalvel" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+<field name="set_fraction" accessType="inputOnly" type="SFFloat"></field>
+<![CDATA[ecmascript:
+function initialize() {
+    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
+
+    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);
+}
+
+function set_translation(value) {
+   translation = value;
+}
+
+function set_scale(value) {
+   scale = value;
+}
+
+function translation_changed() {
+	return translation;
+}
+
+function set_fraction(value) {
+    translation = new SFVec3f(	translation[0] + velocity[0], translation[1] + velocity[1], translation[2] + velocity[2]);
+    scale = new SFVec3f(scale[0] + scalvel[0], scale[1] + scalvel[1], scale[2] + scalvel[2]);
+    for (var j = 0; j < 3; j++) {
+	    // if you get to far away or too big, explode
+	    if ( Math.abs(translation[j]) > 256) {
+		translation[j] = 0;
+		initialize();
+	    }
+	    if (Math.abs(scale[j]) > 20) {
+		scale[j] = scale[j]/2;
+		translation[j] = 0;
+		initialize();
+	    }
+    }
+}
+]]></Script>
+<TimeSensor DEF="bubbleClock" cycleInterval="10" loop="true"></TimeSensor>
+<ROUTE fromNode="bounce" fromField="translation_changed" toNode="transform" toField="set_translation"></ROUTE>
+<ROUTE fromNode="bounce" fromField="scale_changed" toNode="transform" toField="set_scale"></ROUTE>
+<ROUTE fromNode="bubbleClock" fromField="fraction_changed" toNode="bounce" toField="set_fraction"></ROUTE>
+</Transform>
+</ProtoBody>
+</ProtoDeclare>
+<ProtoInstance name="Bubble" DEF="bubbleA"></ProtoInstance>
+<ProtoInstance name="Bubble" DEF="bubbleB"></ProtoInstance>
+<ProtoInstance name="Bubble" DEF="bubbleC"></ProtoInstance>
+<ProtoInstance name="Bubble" DEF="bubbleD"></ProtoInstance>
+</Scene>
+</X3D>

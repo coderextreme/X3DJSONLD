@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd"><head><meta name="creator" content="John W Carlson"></meta>
+<meta name="created" content="December 13 2015"></meta>
+<meta name="title" content="text.x3d"></meta>
+<meta name="identifier" content="http://coderextreme.net/X3DJSONLD/text.x3d"></meta>
+<meta name="description" content="test text"></meta>
+<meta name="generator" content="Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit"></meta>
+<meta name="translated" content="08 May 2017"></meta>
+<meta name="generator" content="X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"></meta>
+<meta name="reference" content="X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"></meta>
+<meta name="translated" content="8 May 2017"></meta>
+<meta name="generator" content="X3DJSONLD: https://github.com/coderextreme/X3DJSONLD"></meta>
+</head>
+<Scene><Transform><Shape><Text containerField="geometry" string="&quot;Node\&quot;\&quot;\&quot;&quot;"><FontStyle containerField="fontStyle" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" size="5"></FontStyle>
+</Text>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0 1"></Material>
+</Appearance>
+</Shape>
+</Transform>
+</Scene>
+</X3D>
