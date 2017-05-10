@@ -100,26 +100,26 @@ ProtoInstanceObject ProtoInstance3 = null;
         .addMeta(new metaObject().setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/X3dHeaderPrototypeSyntaxExamples.x3d"))
         .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new metaObject().setName("license").setContent("../license.html"))
-        .addMeta(new metaObject().setName("translated").setContent("08 May 2017"))
+        .addMeta(new metaObject().setName("translated").setContent("09 May 2017"))
         .addMeta(new metaObject().setName("generator").setContent("X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"))
         .addMeta(new metaObject().setName("reference").setContent("X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"))
-        .addMeta(new metaObject().setName("translated").setContent("8 May 2017"))
+        .addMeta(new metaObject().setName("translated").setContent("9 May 2017"))
         .addMeta(new metaObject().setName("generator").setContent("X3DJSONLD: https://github.com/coderextreme/X3DJSONLD")))
       .setScene(new SceneObject()
         .addChild(new ExternProtoDeclareObject().setName("ViewPositionOrientation").setUrl(new MFStringObject(new MFString0().getArray()))
-          .addField(new fieldObject().setType(fieldObject.TYPE_SFBOOL).setName("enabled").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT))
-          .addField(new fieldObject().setType(fieldObject.TYPE_SFBOOL).setName("traceEnabled").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY))
-          .addField(new fieldObject().setType(fieldObject.TYPE_SFBOOL).setName("set_traceEnabled").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
-          .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("position_changed").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-          .addField(new fieldObject().setType(fieldObject.TYPE_SFROTATION).setName("orientation_changed").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-          .addField(new fieldObject().setType(fieldObject.TYPE_MFSTRING).setName("outputViewpointString").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)))
+          .addField(new fieldObject().setType("SFBool").setName("enabled").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT))
+          .addField(new fieldObject().setType("SFBool").setName("traceEnabled").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY))
+          .addField(new fieldObject().setType("SFBool").setName("set_traceEnabled").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
+          .addField(new fieldObject().setType("SFVec3f").setName("position_changed").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
+          .addField(new fieldObject().setType("SFRotation").setName("orientation_changed").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
+          .addField(new fieldObject().setType("MFString").setName("outputViewpointString").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)))
         .addChild(new ProtoDeclareObject().setName("NewWorldInfoNode")
           .setProtoBody(new ProtoBodyObject()
             .addChild(new WorldInfoObject().setDEF("ExamplePrototypeBody"))))
         .addChild(ProtoInstance0 = new ProtoInstanceObject().setName("NewWorldInfoNode"))
         .addChild(new ProtoDeclareObject().setName("EmissiveMaterial")
           .setProtoInterface(new ProtoInterfaceObject()
-            .addField(new fieldObject().setType(fieldObject.TYPE_SFCOLOR).setName("onlyColor").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("1 0 0")))
+            .addField(new fieldObject().setType("SFColor").setName("onlyColor").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("1 0 0")))
           .setProtoBody(new ProtoBodyObject()
             .addComments(new CommentsBlock("Override default diffuseColor value 0.8 0.8 0.8"))
             .addChild(new MaterialObject().setDiffuseColor(new float[] {0f,0f,0f})
@@ -128,7 +128,7 @@ ProtoInstanceObject ProtoInstance3 = null;
                 .addConnect(new connectObject().setNodeField("emissiveColor").setProtoField("onlyColor"))))))
         .addChild(new ProtoDeclareObject().setName("ShiftGroupUp2m")
           .setProtoInterface(new ProtoInterfaceObject()
-            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setName("children").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
+            .addField(new fieldObject().setType("MFNode").setName("children").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
               .addChild(new GroupObject().setDEF("DefaultNodeValue").setBboxSize(new float[] {2f,2f,2f})
                 .addComments(new CommentsBlock("Authors need to override this node when creating the ProtoInstance fieldValue name=\"children\"")))))
           .setProtoBody(new ProtoBodyObject()
@@ -149,7 +149,7 @@ ProtoInstanceObject ProtoInstance3 = null;
         .addChild(new CollisionObject()
           .setProxy(new ShapeObject()
             .setGeometry(new TextObject().setString(new MFStringObject(new MFString1().getArray())))
-            .addComments(new CommentsBlock("alternative: Text string='\"\\\"\\\"\"'"))
+            .addComments(new CommentsBlock("alternative: Text string='\"He said, \\&quot;Immel did it!\\&quot;\"'"))
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject())))
           .addChild(new GroupObject().setUSE("ExampleChildElement")))
@@ -165,10 +165,10 @@ ProtoInstanceObject ProtoInstance3 = null;
         .addChild(new ROUTEObject().setFromField("fraction_changed").setFromNode("Clock").setToField("set_fraction").setToNode("Spinner"))
         .addChild(new ROUTEObject().setFromField("value_changed").setFromNode("Spinner").setToField("rotation").setToNode("TransformExampleUSE"))
         .addChild(new InlineObject().setDEF("someInline").setUrl(new MFStringObject(new MFString6().getArray())))
+        .addChild(new IMPORTObject().setAS("someInlineRoot").setImportedDEF("someName").setInlineDEF("someInline"))
         .addChild(new PositionInterpolatorObject().setDEF("StayInPlace").setKey(new MFFloatObject(new MFFloat7().getArray())).setKeyValue(new MFVec3fObject(new MFVec3f8().getArray())))
         .addChild(new ROUTEObject().setFromField("fraction_changed").setFromNode("Clock").setToField("set_fraction").setToNode("StayInPlace"))
-        .addChild(new ROUTEObject().setFromField("value_changed").setFromNode("StayInPlace").setToField("set_translation").setToNode("someInlineRoot"))
-        .addChild(new IMPORTObject().setAS("someInlineRoot").setImportedDEF("someName").setInlineDEF("someInline")))      ;
+        .addChild(new ROUTEObject().setFromField("value_changed").setFromNode("StayInPlace").setToField("set_translation").setToNode("someInlineRoot")))      ;
 ProtoInstance2
                 .addFieldValue(new fieldValueObject().setName("onlyColor").setValue("0.2 0.6 0.6"));
 ProtoInstance3
@@ -182,7 +182,7 @@ protected class MFString0 {
 }
 protected class MFString1 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"He said, \\\"Immel did it!\\\""});
+    return new MFStringObject(new java.lang.String[] {"He said, "Immel did it!""});
   }
 }
 protected class MFString2 {

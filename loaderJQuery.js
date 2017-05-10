@@ -442,7 +442,7 @@ function doValidate(json, validated_version, file, success, failure, e) {
 					    if (typeof v2 === 'object') {
 						    for (var o in v2) {
 					    		if (typeof v2[o] === 'object') {
-								    v2[o] = "|elided|";
+								    v2[o] = "|omitted|";
 							}
 					            }
 					    }

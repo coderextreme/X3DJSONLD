@@ -25,10 +25,10 @@ var ProtoInstance3 = null;
         .addMeta(new metaObject().setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/X3dHeaderPrototypeSyntaxExamples.x3d"))
         .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new metaObject().setName("license").setContent("../license.html"))
-        .addMeta(new metaObject().setName("translated").setContent("08 May 2017"))
+        .addMeta(new metaObject().setName("translated").setContent("09 May 2017"))
         .addMeta(new metaObject().setName("generator").setContent("X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"))
         .addMeta(new metaObject().setName("reference").setContent("X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"))
-        .addMeta(new metaObject().setName("translated").setContent("8 May 2017"))
+        .addMeta(new metaObject().setName("translated").setContent("9 May 2017"))
         .addMeta(new metaObject().setName("generator").setContent("X3DJSONLD: https://github.com/coderextreme/X3DJSONLD")))
       .setScene(new SceneObject()
         .addChild(new ExternProtoDeclareObject().setName("ViewPositionOrientation").setUrl(Java.to(["../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation","https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation","../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation","https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation"], Java.type("java.lang.String[]")))
@@ -73,8 +73,8 @@ var ProtoInstance3 = null;
           .addChild(new GroupObject().setUSE("ExampleChildElement")))
         .addChild(new CollisionObject()
           .setProxy(new ShapeObject()
-            .setGeometry(new TextObject().setString(Java.to(["He said, \\\"Immel did it!\\\""], Java.type("java.lang.String[]"))))
-            .addComments(new CommentsBlock("alternative: Text string='\"\\\"\\\"\"'"))
+            .setGeometry(new TextObject().setString(Java.to(["He said, "Immel did it!""], Java.type("java.lang.String[]"))))
+            .addComments(new CommentsBlock("alternative: Text string='\"He said, \\&quot;Immel did it!\\&quot;\"'"))
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject())))
           .addChild(new GroupObject().setUSE("ExampleChildElement")))
@@ -90,10 +90,10 @@ var ProtoInstance3 = null;
         .addChild(new ROUTEObject().setFromField("fraction_changed").setFromNode("Clock").setToField("set_fraction").setToNode("Spinner"))
         .addChild(new ROUTEObject().setFromField("value_changed").setFromNode("Spinner").setToField("rotation").setToNode("TransformExampleUSE"))
         .addChild(new InlineObject().setDEF("someInline").setUrl(Java.to(["someUrl.x3d","http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/someUrl.x3d"], Java.type("java.lang.String[]"))))
+        .addChild(new IMPORTObject().setAS("someInlineRoot").setImportedDEF("someName").setInlineDEF("someInline"))
         .addChild(new PositionInterpolatorObject().setDEF("StayInPlace").setKey(Java.to([0,1], Java.type("float[]"))).setKeyValue(Java.to([0,0,0,0,0,0], Java.type("float[]"))))
         .addChild(new ROUTEObject().setFromField("fraction_changed").setFromNode("Clock").setToField("set_fraction").setToNode("StayInPlace"))
-        .addChild(new ROUTEObject().setFromField("value_changed").setFromNode("StayInPlace").setToField("set_translation").setToNode("someInlineRoot"))
-        .addChild(new IMPORTObject().setAS("someInlineRoot").setImportedDEF("someName").setInlineDEF("someInline")))      ;
+        .addChild(new ROUTEObject().setFromField("value_changed").setFromNode("StayInPlace").setToField("set_translation").setToNode("someInlineRoot")))      ;
 ProtoInstance2
                 .addFieldValue(new fieldValueObject().setName("onlyColor").setValue("0.2 0.6 0.6"));
 ProtoInstance3

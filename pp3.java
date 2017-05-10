@@ -92,10 +92,10 @@ ProtoInstanceObject ProtoInstance2 = null;
         .addMeta(new metaObject().setName("description").setContent("A process pipeline between three spheres (try typing on spheres and blue"))
         .addMeta(new metaObject().setName("identifier").setContent("http://coderextreme.net/x3d/pp3.x3d"))
         .addMeta(new metaObject().setName("generator").setContent("manual"))
-        .addMeta(new metaObject().setName("translated").setContent("08 May 2017"))
+        .addMeta(new metaObject().setName("translated").setContent("09 May 2017"))
         .addMeta(new metaObject().setName("generator").setContent("X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"))
         .addMeta(new metaObject().setName("reference").setContent("X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"))
-        .addMeta(new metaObject().setName("translated").setContent("8 May 2017"))
+        .addMeta(new metaObject().setName("translated").setContent("9 May 2017"))
         .addMeta(new metaObject().setName("generator").setContent("X3DJSONLD: https://github.com/coderextreme/X3DJSONLD")))
       .setScene(new SceneObject()
         .addChild(new ProtoDeclareObject().setName("Process")
@@ -155,8 +155,8 @@ ProtoInstanceObject ProtoInstance2 = null;
                 .addChild(new StringSensorObject().setDEF("CenterSensor").setEnabled(false))
                 .addChild(new TouchSensorObject().setDescription("touch to activate").setDEF("CenterTouch"))))
             .addChild(new ScriptObject().setDEF("RightSingleToMultiString")
-              .addField(new fieldObject().setType(fieldObject.TYPE_SFSTRING).setName("set_rightstring").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
-              .addField(new fieldObject().setType(fieldObject.TYPE_MFSTRING).setName("rightlines").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
+              .addField(new fieldObject().setType("SFString").setName("set_rightstring").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
+              .addField(new fieldObject().setType("MFString").setName("rightlines").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
               .setSourceCode("ecmascript:\n"+
 "\n"+
 "function initialize() {\n"+
@@ -168,8 +168,8 @@ ProtoInstanceObject ProtoInstance2 = null;
 "}\n"+
 ""))
             .addChild(new ScriptObject().setDEF("UpSingleToMultiString")
-              .addField(new fieldObject().setType(fieldObject.TYPE_SFSTRING).setName("set_upstring").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
-              .addField(new fieldObject().setType(fieldObject.TYPE_MFSTRING).setName("uplines").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
+              .addField(new fieldObject().setType("SFString").setName("set_upstring").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
+              .addField(new fieldObject().setType("MFString").setName("uplines").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
               .setSourceCode("ecmascript:\n"+
 "\n"+
 "function initialize() {\n"+
@@ -181,8 +181,8 @@ ProtoInstanceObject ProtoInstance2 = null;
 "}\n"+
 ""))
             .addChild(new ScriptObject().setDEF("CenterSingleToMultiString")
-              .addField(new fieldObject().setType(fieldObject.TYPE_SFSTRING).setName("set_centerstring").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
-              .addField(new fieldObject().setType(fieldObject.TYPE_MFSTRING).setName("centerlines").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
+              .addField(new fieldObject().setType("SFString").setName("set_centerstring").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
+              .addField(new fieldObject().setType("MFString").setName("centerlines").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
               .setSourceCode("ecmascript:\n"+
 "\n"+
 "function initialize() {\n"+
