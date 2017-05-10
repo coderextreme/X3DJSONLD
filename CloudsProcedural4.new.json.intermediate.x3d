@@ -11,10 +11,10 @@
         <meta name='generator' content='X3D-Edit, http://www.web3d.org/x3d/content/README.X3D-Edit.html' dir='' http_equiv='' lang='' scheme=''/>
         <meta name='license' content='../../license.html' dir='' http_equiv='' lang='' scheme=''/>
         <meta name='TODO' content='fix links' dir='' http_equiv='' lang='' scheme=''/>
-        <meta name='translated' content='08 May 2017' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='translated' content='10 May 2017' dir='' http_equiv='' lang='' scheme=''/>
         <meta name='generator' content='X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html' dir='' http_equiv='' lang='' scheme=''/>
         <meta name='reference' content='X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding' dir='' http_equiv='' lang='' scheme=''/>
-        <meta name='translated' content='8 May 2017' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='translated' content='10 May 2017' dir='' http_equiv='' lang='' scheme=''/>
         <meta name='generator' content='X3DJSONLD: https://github.com/coderextreme/X3DJSONLD' dir='' http_equiv='' lang='' scheme=''/>
     </head>
     <Scene>
@@ -227,12 +227,12 @@ CloudStringF = new Array();
 
 		if (Y <= 30) //cloud shading and lighting control
   	{	
-	image = ' \"CloudTexture1_5.png\" \"https://savage.nps.edu/Savage/Environment/Spheretexture.png\" \n';
+	image = ' "CloudTexture1_5.png" "https://savage.nps.edu/Savage/Environment/Spheretexture.png" \n';
   	}
 
   		else
   	{	
-	image = ' \"CloudTexture1_4.png\" \"https://savage.nps.edu/Savage/Environment/Spheretexture.png\" \n';
+	image = ' "CloudTexture1_4.png" "https://savage.nps.edu/Savage/Environment/Spheretexture.png" \n';
   	}
 
 	
@@ -376,7 +376,7 @@ CloudStringF = new Array();
 		'			    material Material {			\n' +
 		'			    }					\n' +
  		'	                      texture ImageTexture {	        \n' +
-		'	                        url [\"cloudtexture3.png\" \"https://savage.nps.edu/Savage/Environment/cloudtexture1_4.png\" ] \n' +
+		'	                        url ["cloudtexture3.png" "https://savage.nps.edu/Savage/Environment/cloudtexture1_4.png" ] \n' +
 		'	                      }	                                \n' +
 		'	                    }	                                \n' +
 		'	                    geometry IndexedFaceSet {	        \n' +     // define type of geometry to texture

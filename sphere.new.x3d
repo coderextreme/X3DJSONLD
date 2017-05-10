@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D profile='Interchange' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
+    <head>
+        <meta name='title' content='sphere.x3d'/>
+        <meta name='creator' content='John Carlson'/>
+        <meta name='generator' content='manual'/>
+        <meta name='identifier' content='http://coderextreme.net/X3DJSONLD/sphere.x3d'/>
+        <meta name='description' content='a sphere'/>
+        <meta name='translated' content='10 May 2017'/>
+        <meta name='generator' content='X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html'/>
+        <meta name='reference' content='X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding'/>
+        <meta name='translated' content='10 May 2017'/>
+        <meta name='generator' content='X3DJSONLD: https://github.com/coderextreme/X3DJSONLD'/>
+    </head>
+    <Scene>
+        <Group>
+            <Shape>
+                <Appearance>
+                    <Material diffuseColor='1 1 1'/>
+                </Appearance>
+                <Sphere/>
+            </Shape>
+        </Group>
+    </Scene>
+</X3D>

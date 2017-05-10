@@ -7,10 +7,10 @@
 <meta name="creator" content="Yvonne Jung, metadata by John Carlson"></meta>
 <meta name="translated" content="13 March 2016"></meta>
 <meta name="generator" content="X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"></meta>
-<meta name="translated" content="08 May 2017"></meta>
+<meta name="translated" content="10 May 2017"></meta>
 <meta name="generator" content="X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"></meta>
 <meta name="reference" content="X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"></meta>
-<meta name="translated" content="8 May 2017"></meta>
+<meta name="translated" content="10 May 2017"></meta>
 <meta name="generator" content="X3DJSONLD: https://github.com/coderextreme/X3DJSONLD"></meta>
 </head>
 <Scene><Viewpoint DEF="cam0" description="cam0 description" position="0 0 800"></Viewpoint>

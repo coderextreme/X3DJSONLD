@@ -20,13 +20,13 @@ meta9 = metaObject().setName("license").setContent("../../license.html")
 head1.addMeta(meta9)
 meta10 = metaObject().setName("TODO").setContent("fix links")
 head1.addMeta(meta10)
-meta11 = metaObject().setName("translated").setContent("08 May 2017")
+meta11 = metaObject().setName("translated").setContent("10 May 2017")
 head1.addMeta(meta11)
 meta12 = metaObject().setName("generator").setContent("X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html")
 head1.addMeta(meta12)
 meta13 = metaObject().setName("reference").setContent("X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 head1.addMeta(meta13)
-meta14 = metaObject().setName("translated").setContent("8 May 2017")
+meta14 = metaObject().setName("translated").setContent("10 May 2017")
 head1.addMeta(meta14)
 meta15 = metaObject().setName("generator").setContent("X3DJSONLD: https://github.com/coderextreme/X3DJSONLD")
 head1.addMeta(meta15)
@@ -257,12 +257,12 @@ Script37.setSourceCode("ecmascript:\n"+
 "\n"+
 "		if (Y <= 30) //cloud shading and lighting control\n"+
 "  	{	\n"+
-"	image = ' \\\"CloudTexture1_5.png\\\" \\\"https://savage.nps.edu/Savage/Environment/Spheretexture.png\\\" \\n';\n"+
+"	image = ' \"CloudTexture1_5.png\" \"https://savage.nps.edu/Savage/Environment/Spheretexture.png\" \\n';\n"+
 "  	}\n"+
 "\n"+
 "  		else\n"+
 "  	{	\n"+
-"	image = ' \\\"CloudTexture1_4.png\\\" \\\"https://savage.nps.edu/Savage/Environment/Spheretexture.png\\\" \\n';\n"+
+"	image = ' \"CloudTexture1_4.png\" \"https://savage.nps.edu/Savage/Environment/Spheretexture.png\" \\n';\n"+
 "  	}\n"+
 "\n"+
 "	\n"+
@@ -406,7 +406,7 @@ Script37.setSourceCode("ecmascript:\n"+
 "		'			    material Material {			\\n' +\n"+
 "		'			    }					\\n' +\n"+
 " 		'	                      texture ImageTexture {	        \\n' +\n"+
-"		'	                        url [\\\"cloudtexture3.png\\\" \\\"https://savage.nps.edu/Savage/Environment/cloudtexture1_4.png\\\" ] \\n' +\n"+
+"		'	                        url [\"cloudtexture3.png\" \"https://savage.nps.edu/Savage/Environment/cloudtexture1_4.png\" ] \\n' +\n"+
 "		'	                      }	                                \\n' +\n"+
 "		'	                    }	                                \\n' +\n"+
 "		'	                    geometry IndexedFaceSet {	        \\n' +     // define type of geometry to texture\n"+

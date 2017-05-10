@@ -2,10 +2,10 @@
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "http://www.web3d.org/specifications/x3d-3.0.dtd">
 <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.0" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.0.xsd"><head><meta name="title" content="MFString.x3d"></meta>
 <meta name="created" content="21 April 20017"></meta>
-<meta name="translated" content="08 May 2017"></meta>
+<meta name="translated" content="10 May 2017"></meta>
 <meta name="generator" content="X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"></meta>
 <meta name="reference" content="X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"></meta>
-<meta name="translated" content="8 May 2017"></meta>
+<meta name="translated" content="10 May 2017"></meta>
 <meta name="generator" content="X3DJSONLD: https://github.com/coderextreme/X3DJSONLD"></meta>
 </head>
 <Scene><Group><Shape><Text containerField="geometry" string="&quot;Locked&quot; &quot;FIRE!..&quot;&quot;FIRE!&quot;"></Text>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
+    <head>
+        <component name='EnvironmentalEffects' level='1'/>
+        <component name='EnvironmentalEffects' level='3'/>
+        <meta name='title' content='bubbles.x3d'/>
+        <meta name='creator' content='John Carlson'/>
+        <meta name='generator' content='manual'/>
+        <meta name='identifier' content='http://coderextreme.net/X3DJSONLD/bubbles.x3d'/>
+        <meta name='description' content='not sure what this is'/>
+        <meta name='translated' content='10 May 2017'/>
+        <meta name='generator' content='X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html'/>
+        <meta name='reference' content='X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding'/>
+        <meta name='translated' content='10 May 2017'/>
+        <meta name='generator' content='X3DJSONLD: https://github.com/coderextreme/X3DJSONLD'/>
+    </head>
+    <Scene>
+        <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"EXAMINE"'/>
+        <Viewpoint DEF='Tour' description='Tour Views'/>
+        <Viewpoint description='sphere in road' position='0 0 4'/>
+        <Background backUrl='"cubemap/all_probes/uffizi_cross/uffizi_back.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_back.png"' bottomUrl='"cubemap/all_probes/uffizi_cross/uffizi_bottom.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_bottom.png"' frontUrl='"cubemap/all_probes/uffizi_cross/uffizi_front.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_front.png"' leftUrl='"cubemap/all_probes/uffizi_cross/uffizi_left.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_left.png"' rightUrl='"cubemap/all_probes/uffizi_cross/uffizi_right.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_right.png"' topUrl='"cubemap/all_probes/uffizi_cross/uffizi_top.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_top.png"'/>
+        <Transform DEF='Rose01'>
+            <Shape>
+                <Appearance DEF='_01_-_Default'>
+                    <Material diffuseColor='0.7 0.7 0.7' specularColor='0.5 0.5 0.5'/>
+                    <ComposedShader DEF='cobweb' language='GLSL'>
+                        <ShaderPart url='"cobweb.vs" "http://coderextreme.net/X3DJSONLD/cobweb.vs"'/>
+                        <ShaderPart type='FRAGMENT' url='"pc_bubbles.fs" "http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"'/>
+                        <field name='cube' accessType='inputOutput' type='SFInt32' value='0'/>
+                        <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'/>
+                        <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/>
+                        <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/>
+                        <field name='power' accessType='inputOutput' type='SFFloat' value='2.0'/>
+                    </ComposedShader>
+                    <ComposedShader DEF='x3dom' language='GLSL'>
+                        <ShaderPart url='"x3dom.vs" "http://coderextreme.net/X3DJSONLD/x3dom.vs"'/>
+                        <ShaderPart type='FRAGMENT' url='"pc_bubbles.fs" "http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"'/>
+                        <field name='cube' accessType='inputOutput' type='SFInt32' value='0'/>
+                        <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'/>
+                        <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/>
+                        <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/>
+                        <field name='power' accessType='inputOutput' type='SFFloat' value='2.0'/>
+                    </ComposedShader>
+                    <ComposedCubeMapTexture>
+                        <ImageTexture containerField='back' url='"cubemap/all_probes/uffizi_cross/uffizi_back.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_back.png"'/>
+                        <ImageTexture containerField='bottom' url='"cubemap/all_probes/uffizi_cross/uffizi_bottom.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_bottom.png"'/>
+                        <ImageTexture containerField='front' url='"cubemap/all_probes/uffizi_cross/uffizi_front.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_front.png"'/>
+                        <ImageTexture containerField='left' url='"cubemap/all_probes/uffizi_cross/uffizi_left.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_left.png"'/>
+                        <ImageTexture containerField='right' url='"cubemap/all_probes/uffizi_cross/uffizi_right.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_right.png"'/>
+                        <ImageTexture containerField='top' url='"cubemap/all_probes/uffizi_cross/uffizi_top.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_top.png"'/>
+                    </ComposedCubeMapTexture>
+                </Appearance>
+                <Sphere/>
+            </Shape>
+        </Transform>
+        <TimeSensor DEF='TourTime' cycleInterval='5.0' loop='true'/>
+        <PositionInterpolator DEF='TourPosition' key='0 1' keyValue='0 0 10 0 0 -10'/>
+        <OrientationInterpolator DEF='TourOrientation' key='0 1' keyValue='0 1 0 0 0 1 0 3.1416'/>
+        <Script DEF='RandomTourTime'>
+            <field name='set_cycle' accessType='inputOnly' type='SFTime'/>
+            <field name='lastKey' accessType='inputOutput' type='SFFloat' value='0.0'/>
+            <field name='orientations' accessType='inputOutput' type='MFRotation' value='0 1 0 0 0 1 0 -1.57 0 1 0 3.14 0 1 0 1.57 0 1 0 0 1 0 0 -1.57 0 1 0 0 1 0 0 1.57 0 1 0 0'/>
+            <field name='positions' accessType='inputOutput' type='MFVec3f' value='0 0 10 -10 0 0 0 0 -10 10 0 0 0 0 10 0 10 0 0 0 10 0 -10 0 0 0 10'/>
+            <field name='position' accessType='outputOnly' type='MFVec3f'/>
+            <field name='orientation' accessType='outputOnly' type='MFRotation'/>
+<![CDATA[
+ecmascript:
+               function set_cycle(value) {
+                        //var positions = [[0, 0, 10], [-10, 0, 0], [0, 0, -10], [10, 0, 0], [0, 0, 10], [0, 10, 0], [0, 0, 10], [0, -10, 0], [0, 0, 10]];
+                        //var orientations = [[0, 1, 0, 0], [0, 1, 0, -1.57], [0, 1, 0, 3.14], [0, 1, 0, 1.57], [0, 1, 0, 0] [1, 0, 0, -1.57], [0, 1, 0, 0], [1, 0, 0, 1.57], [0, 1, 0, 0]];
+                        //Browser.println(lastKey);
+                        var ov = lastKey;
+                        // Browser.println(ov);      
+                        //Browser.println(positions.length);                  
+                        do {
+                            lastKey = Math.round(Math.random()*(positions.length-1));
+                        } while (lastKey === ov);
+                        // Browser.println(lastKey);
+                        var vc = lastKey;
+                        
+                        // Browser.println(orientations[ov]);
+                        // Browser.println(orientations[vc]);
+                        orientation = new MFRotation();
+                        orientation[0] = new SFRotation(orientations[ov][0], orientations[ov][1], orientations[ov][2], orientations[ov][3]);
+                        orientation[1] = new SFRotation(orientations[vc][0], orientations[vc][1], orientations[vc][2], orientations[vc][3]);
+                        // Browser.println(positions[ov]);
+                        // Browser.println(positions[vc]);
+                        position = new MFVec3f();
+                        position[0] = new SFVec3f(positions[ov][0],positions[ov][1],positions[ov][2]);
+                        position[1] = new SFVec3f(positions[vc][0],positions[vc][1],positions[vc][2]);
+                    // }
+               }
+
+]]>
+        </Script>
+        <ROUTE fromField='cycleTime' fromNode='TourTime' toField='set_cycle' toNode='RandomTourTime'/>
+        <ROUTE fromField='orientation' fromNode='RandomTourTime' toField='keyValue' toNode='TourOrientation'/>
+        <ROUTE fromField='position' fromNode='RandomTourTime' toField='keyValue' toNode='TourPosition'/>
+        <ROUTE fromField='fraction_changed' fromNode='TourTime' toField='set_fraction' toNode='TourOrientation'/>
+        <ROUTE fromField='value_changed' fromNode='TourOrientation' toField='set_orientation' toNode='Tour'/>
+        <ROUTE fromField='fraction_changed' fromNode='TourTime' toField='set_fraction' toNode='TourPosition'/>
+        <ROUTE fromField='value_changed' fromNode='TourPosition' toField='set_position' toNode='Tour'/>
+    </Scene>
+</X3D>
