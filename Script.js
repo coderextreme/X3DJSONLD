@@ -1,5 +1,5 @@
 // X3D JSON Script expander
-packages = {};
+var packages = {};
 
 var LOG = function() {
 	this.array = [];
@@ -16,12 +16,12 @@ var LOG = function() {
 	return this;
 }
 
-function Script(package, name) {
+function Script(mypackage, name) {
 	// this.setters = {};
 	// this.getters = {};
 	this.fields = {};
 	this.functions = {};
-	if (typeof package === 'undefined' || package.name === "") {
+	if (typeof mypackage === 'undefined' || mypackage.name === "") {
 		if (typeof name === 'undefined') {
 			this.name = "";
 		} else {
@@ -29,9 +29,9 @@ function Script(package, name) {
 		}
 	} else {
 		if (typeof name === 'undefined') {
-			this.name = package.name;
+			this.name = mypackage.name;
 		} else {
-			this.name = package.name+'.'+name;
+			this.name = mypackage.name+'.'+name;
 		}
 	}
 	packages[this.name] = this;
@@ -54,8 +54,8 @@ function zapSource(object) {
 	}
 }
 
-function processScripts(object, classes, package, routecode) {
-	if (typeof package === 'undefined') {
+function processScripts(object, classes, mypackage, routecode) {
+	if (typeof mypackage === 'undefined') {
 		classes.log("function SFRotation() { return Array.prototype.slice.call(arguments, 0); };");
 		classes.log("function MFRotation() { return Array.prototype.slice.call(arguments, 0); };");
 		classes.log("function MFInt32() { return Array.prototype.slice.call(arguments, 0); };");
@@ -87,7 +87,7 @@ function processScripts(object, classes, package, routecode) {
 		routecode.log("    }}");
 		routecode.log("}");
 	}
-	package = package || new Script();
+	mypackage = mypackage || new Script();
 	var p;
 	if (typeof object === "object") {
 		for (p in object) {
@@ -99,7 +99,7 @@ function processScripts(object, classes, package, routecode) {
 				name = object[p]["@DEF"];
 			}
 			if (p.toLowerCase() === 'script') {
-				var script = new Script(package, name);
+				var script = new Script(mypackage, name);
 				// console.error("SCRIPT IS ",JSON.stringify(object[p]));
 				registerFields(object[p]['field'], classes, script);
 				processSource(object[p]['#sourceText'], classes, script);
@@ -108,7 +108,7 @@ function processScripts(object, classes, package, routecode) {
 				// zap original source because we don't need it
 				// delete object[p]['#sourceText'];
 			} else if (p.toLowerCase() === 'route') {
-				processRoute(object[p], routecode, package);
+				processRoute(object[p], routecode, mypackage);
 			} else if (p.toLowerCase() === '@use') {
 				var name = object["@USE"];
 				object["@USE"] = name;
@@ -118,18 +118,18 @@ function processScripts(object, classes, package, routecode) {
 				object["@DEF"] = name;
 				// object[p] is not an object
 			} else {
-				processScripts(object[p], classes, package, routecode);
+				processScripts(object[p], classes, mypackage, routecode);
 			}
 		}
 	}
 }
 
-function processRoute(route, routecode, package) {
+function processRoute(route, routecode, mypackage) {
 	var fromNode = route["@fromNode"];
 	var fromField = route["@fromField"];
 	var toNode = route["@toNode"];
 	var toField = route["@toField"];
-	if (typeof package.find(toNode) === 'undefined') {
+	if (typeof mypackage.find(toNode) === 'undefined') {
 		routecode.log('	if (!$("[DEF='+toNode+'], [USE='+toNode+']")) console.error("undefined '+toNode+'");');
 		if (toField.indexOf("set_") === 0) {
 			var  to = '$("[DEF='+toNode+'], [USE='+toNode+']").attr("'+toField.substr(4)+'",';
@@ -143,7 +143,7 @@ function processRoute(route, routecode, package) {
 			var  to = 'X3DJSON.Object_' +toNode+'.set_'+toField+'(';
 		}
 	}
-	if (typeof package.find(fromNode) === 'undefined') {
+	if (typeof mypackage.find(fromNode) === 'undefined') {
 		routecode.log('	if (!$("[DEF='+fromNode+'], [USE='+fromNode+']")) console.error("undefined '+fromNode+'");');
 		if (fromField.indexOf("_changed") > 0) {
 			var  from = '$("[DEF='+fromNode+'], [USE='+fromNode+']").attr("'+fromField.substr(0, fromField.length-8)+'")';
@@ -232,16 +232,16 @@ function valueExpand(type, flat) {
 		return JSON.stringify(flat);
 	}
 }
-function registerFields(fields, classes, package) {
+function registerFields(fields, classes, mypackage) {
 	var f;
 	for (f in fields) {
 		var object = fields[f];
 		var name = object["@name"];
-		package.fields[name] = object;
+		mypackage.fields[name] = object;
 	}
 }
 
-function processFields(fields, classes, package) {
+function processFields(fields, classes, mypackage) {
 	// console.error("0FIELDS IS "+JSON.stringify(fields));
 	var f;
 	var initializers = [];
@@ -265,15 +265,15 @@ function processFields(fields, classes, package) {
 			break;
 		case 'inputOutput':
 			// setters should be looked up by name
-			// package.setters[name] = object;
-			// package.getters[name] = object;
+			// mypackage.setters[name] = object;
+			// mypackage.getters[name] = object;
 			break;
 		case 'inputOnly':
 			// setters should be looked up by name
-			// package.setters[name] = object;
+			// mypackage.setters[name] = object;
 			break;
 		case 'outputOnly':
-			// package.getters[name] = object;
+			// mypackage.getters[name] = object;
 			break;
 		default:
 			break;
@@ -293,23 +293,23 @@ function processFields(fields, classes, package) {
 			console.error("--------------------------------------undefined field", v);
 		}
 		// Don't override existing functions
-		if (!package.functions[v]) {
+		if (!mypackage.functions[v]) {
 			classes.log(indent + "this." + v + ' = '+ values[v] + ';');
 		}
-		if (!package.functions['set_'+v]) {
+		if (!mypackage.functions['set_'+v]) {
 			classes.log(indent+ "this.set_" + v + ' = function (value) { if (value) this.' + v +  ' = (value.indexOf(",") >= 0 ? value.split(",") : value); };');
 		}
-		if (!package.functions[v+'_changed']) {
+		if (!mypackage.functions[v+'_changed']) {
 			classes.log(indent+ "this." + v + '_changed = function () { return this.' + v +  '; };');
 		}
 	}
 	classes.log('};');
-	classes.log('X3DJSON.Object_'+package.name + ' = new X3DJSON["'+package.name+'"]();');
-	classes.log('if (typeof X3DJSON.Object_'+package.name + '.initialize === "function") X3DJSON.Object_'+package.name + '.initialize();');
+	classes.log('X3DJSON.Object_'+mypackage.name + ' = new X3DJSON["'+mypackage.name+'"]();');
+	classes.log('if (typeof X3DJSON.Object_'+mypackage.name + '.initialize === "function") X3DJSON.Object_'+mypackage.name + '.initialize();');
 }
 
-function processSource(lines, classes, package) {
-	classes.log('X3DJSON["'+package.name +  '"] = function() {');
+function processSource(lines, classes, mypackage) {
+	classes.log('X3DJSON["'+mypackage.name +  '"] = function() {');
 	if (typeof lines !== 'undefined') {
 		for (var l in lines) {
 			lines[l] = lines[l].replace(/[\n\r]/g, "").replace(/\/\/(.*)function/g, '//$1functino');
@@ -332,7 +332,7 @@ function processSource(lines, classes, package) {
 				body : func.substr(sp, end+1),
 				trail : func.substr(end+1).trim()
 			};
-			package.functions[fxns[f-1].name] = fxns[f-1].body;
+			mypackage.functions[fxns[f-1].name] = fxns[f-1].body;
 		}
 
 		for (var f1 = 0; f1 < fxns.length; f1++) {
@@ -340,13 +340,13 @@ function processSource(lines, classes, package) {
 			var body = fxns[f1].body;
 			var trail = fxns[f1].rail;
 			// replace fields in body
-			for (var n in package.fields) {
+			for (var n in mypackage.fields) {
 				var pattern = '(\\b)('+n+')(\\b)';
 				body = body.replace(new RegExp(pattern, 'g'), "$1this.$2$3");
 			}
 
 			// replace function call names in body (not function declarations, see below)
-			for (var fv in package.functions) {
+			for (var fv in mypackage.functions) {
 				var pattern = '(\\b)('+fv+')(\\b)';
 				body = body.replace(new RegExp(pattern, 'g'), "$1this.$2$3");
 			}
