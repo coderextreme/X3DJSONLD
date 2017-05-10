@@ -25,6 +25,11 @@ if (typeof Browser === 'undefined') {
 	};
 }
 
+/**
+ * processURLs and make them more kosher for the X3DJSONLD user inteferface to
+ * deal with.  Pass an array of URLs and a path for the main JSON file you are
+ * loading.
+ */
 function processURLs(localArray, path) {
 	console.log("Process URLs", path, localArray);
 	var url;
@@ -87,6 +92,11 @@ if (typeof require === 'function') {
 	var runAndSend = require("./runAndSend");
 }
 	
+/**
+ * Use almost any method possible to load a set of URLs.  The loadpath is the
+ * original URL the main JSON got laoded from, Urls is the se of urls, and
+ * the loadedCallback returns the data and the URL it was loaded from.
+ */
 function loadURLs(loadpath, urls, loadedCallback) {
 	if (typeof urls !== 'undefined') {
 		urls = processURLs(urls, loadpath);
@@ -185,6 +195,10 @@ var x3djsonNS;
 // Load X3D JSON into web page
 
 
+/**
+ * Yet another way to set an attribute on an element.  does not allow you to
+ * set JSON schema or encoding.
+ */
 function elementSetAttribute(element, key, value) {
 	if (key === 'SON schema') {
 		// JSON Schema
@@ -197,6 +211,9 @@ function elementSetAttribute(element, key, value) {
 	}
 }
 
+/**
+ * converts children of object to DOM.
+ */
 function ConvertChildren(parentkey, object, element, path) {
 	var key;
 
@@ -211,6 +228,10 @@ function ConvertChildren(parentkey, object, element, path) {
 	}
 }
 
+/**
+ * a method to create and element with tagnam key to DOM in a namespace.  If
+ * containerField is set, then the containerField is set in the elemetn.
+ */
 function CreateElement(key, x3djsonNS, containerField) {
 	var child = null;
 	if (typeof x3djsonNS === 'undefined') {
@@ -228,6 +249,9 @@ function CreateElement(key, x3djsonNS, containerField) {
 	return child;
 }
 
+/**
+ * a way to create a CDATA function or script in HTML, by using a DOM parser.
+ */
 function CDATACreateFunction(document, element, str) {
 	var y = str
 		.replace(/'([^'\r]*)\n([^']*)'/g, "'$1\\n$2'")
@@ -242,10 +266,16 @@ function CDATACreateFunction(document, element, str) {
 	element .appendChild(cdata);
 }
 
+/**
+ * set the CDATA create function.
+ */
 function setCDATACreateFunction(fnc) {
 	CDATACreateFunction = fnc;
 }
 
+/**
+ * convert the object at object[key] to DOM.
+ */
 function ConvertObject(key, object, element, path, containerField) {
 	if (object !== null && typeof object[key] === 'object') {
 		if (key.substr(0,1) === '@') {
@@ -330,11 +360,17 @@ function ConvertObject(key, object, element, path, containerField) {
 	}
 }
 
+/**
+ * convert a comment string in JavaScript to XML.  Pass the string
+ */
 function CommentStringToXML(str) {
 	str = str.replace(/\\\\/g, '\\');
 	return str;
 }
 
+/**
+ * convert an SFString to XML.
+ */
 function SFStringToXML(str) {
 	var y = str;
 	str = (""+str).replace(/\\\\/g, '\\\\');
@@ -347,6 +383,9 @@ function SFStringToXML(str) {
 	return str;
 }
 
+/**
+ * convert a JSON String to XML.
+ */
 function JSONStringToXML(str) {
 	var y = str;
 	str = str.replace(/\\/g, '\\\\');
@@ -357,6 +396,14 @@ function JSONStringToXML(str) {
 	return str;
 }
 
+/**
+ * main routine for converting a JavaScript object to DOM.
+ * object is the object to convert.
+ * parentkey is the key of the object in the parent.
+ * element is the parent element.
+ * path is the path the JSON was loaded from.
+ * containerField is a possible containerField.
+ */
 function ConvertToX3DOM(object, parentkey, element, path, containerField) {
 	var key;
 	var localArray = [];
@@ -433,6 +480,10 @@ function ConvertToX3DOM(object, parentkey, element, path, containerField) {
 	return element;
 }
 
+/**
+ * fixXML
+ * Fix XML after it has been serialized.
+ */
 function fixXML(xmlstr) {
 	// get rid of self-closing tags
 	xmlstr = xmlstr.replace(/(<[ \t]*)([A-Za-z0-9]+)([^>]*)\/>/g, "$1$2$3></$2>");
@@ -465,6 +516,9 @@ function fixXML(xmlstr) {
 	return xmlstr;
 }
 
+/**
+ * Serialize an element to XML and add an XML header.
+ */
 function serializeDOM(json, element) {
 	var version = json.X3D["@version"];
 	var xml = '<?xml version="1.0" encoding="'+json.X3D["encoding"]+'"?>\n';
@@ -480,13 +534,14 @@ function serializeDOM(json, element) {
 }
 
 
-/*
- * Load X3D JSON into an element
- * json - the JSON to convert to XML and DOM
- * path - the path of the JSON file
- * xml - the output xml string array (optional)
- * NS - a namespace for cobweb (optional) -- stripped out
- * returns an element - the element to append or insert into the DOM
+/**
+ * Load X3D JSON into an element.
+ * json - the JSON to convert to XML and DOM.
+ * path - the path of the JSON file.
+ * xml - the output xml string array (optional).
+ * NS - a namespace for cobweb (optional) -- stripped out.
+ * returns an element in callback or null if error - the element
+ * to append or insert into the DOM.
  */
 function loadX3DJS(json, path, xml, NS, loadSchema, doValidate, callback) {
 	console.log("Invoking client side loader");
