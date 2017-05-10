@@ -13,7 +13,7 @@ var DOMImplementation = new xmldom.DOMImplementation();
 
 var X3DJSONLD = require('./X3DJSONLD.js');
 
-var selectObjectFromJson = X3DJSONLD.selectObjectFromJson;
+var selectObjectFromJSObj = X3DJSONLD.selectObjectFromJSObj;
 var ConvertToX3DOM = X3DJSONLD.ConvertToX3DOM;
 
 var Script = require('./Script');
@@ -43,7 +43,7 @@ function doValidate(json, validated_version, file, success, failure) {
 				var dataPath = errs[e].dataPath.replace(/^\./, "").replace(/[\.\[\]']+/g, " > ").replace(/ >[ \t]*$/, "");
 	
 				error += " dataPath: " + dataPath+ "\r\n";
-				var selectedObject = selectObjectFromJson(json, dataPath);
+				var selectedObject = selectObjectFromJSObj(json, dataPath);
 				error += " value: " + JSON.stringify(selectedObject,
 					function(k, v) {
 					    var v2 = JSON.parse(JSON.stringify(v));
