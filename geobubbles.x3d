@@ -46,6 +46,6 @@
         <ROUTE fromNode='TourTime' fromField='cycleTime' toNode='RandomTourTime' toField='set_cycle'/>
         <ROUTE fromNode='RandomTourTime' fromField='position' toNode='TourPosition' toField='keyValue'/>
         <ROUTE fromNode='TourTime' fromField='fraction_changed' toNode='TourPosition' toField='set_fraction'/>
-        <ROUTE fromNode='TourPosition' fromField='value_changed' toNode='Tour' toField='set_position'/>
+        <ROUTE fromNode='TourPosition' fromField='geovalue_changed' toNode='Tour' toField='set_position'/>
     </Scene>
 </X3D>
