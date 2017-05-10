@@ -435,7 +435,7 @@ function doValidate(json, validated_version, file, success, failure, e) {
 				var dataPath = errs[e].dataPath.replace(/^\./, "").replace(/[\.\[\]']+/g, " > ").replace(/ >[ \t]*$/, "");
 	
 				error += " dataPath: " + dataPath+ "\r\n";
-				var selectedObject = selectObjectFromJson(json, dataPath);
+				var selectedObject = selectObjectFromJSObj(json, dataPath);
 				error += " value: " + JSON.stringify(selectedObject,
 					function(k, v) {
 					    var v2 = JSON.parse(JSON.stringify(v));

@@ -16,8 +16,8 @@ if (typeof Browser === 'undefined') {
 				return JSON.parse('['+obj+']');
 			}
 		},
-		appendTo : function(element, json) {
-			 return ConvertToX3DOM(json, "", element, 'foo.json');
+		appendTo : function(element, jsobj) {
+			 return ConvertToX3DOM(jsobj, "", element, 'foo.json');
 		},
 		getDocument : function() {
 			return document;
@@ -166,8 +166,8 @@ function loadURLs(loadpath, urls, loadedCallback) {
 							filename = filename.substring(0, filename.lastIndexOf("."))+".x3d";
 							console.error("converting "+filename);
 							if (typeof runAndSend === 'function') {
-								runAndSend(['---silent', filename], function(json) {
-									data = JSON.stringify(json);
+								runAndSend(['---silent', filename], function(jsobj) {
+									data = JSON.stringify(jsobj);
 									loadedCallback(data, filename);
 								});
 							}
@@ -192,7 +192,7 @@ var x3djsonNS;
 
 // 'http://www.web3d.org/specifications/x3d-namespace'
 
-// Load X3D JSON into web page
+// Load X3D JavaScript object into web page
 
 
 /**
@@ -291,12 +291,12 @@ function ConvertObject(key, object, element, path, containerField) {
 		} else if (key === 'Inline') {
 			var localArray = object[key]["@url"];
 			// console.error("Loading", localArray, "into", key);
-			loadURLs(path, localArray, function(json, path) {
-				// console.error("Read", json);
+			loadURLs(path, localArray, function(jsobj, path) {
+				// console.error("Read", jsobj);
 				try {
-					// console.error("Loading", json, "into inline");
+					// console.error("Loading", jsobj, "into inline");
 					var child = document.createDocumentFragment();
-					ConvertToX3DOM(json, "-children", child, path);
+					ConvertToX3DOM(jsobj, "-children", child, path);
 					element.appendChild(child);
 					element.appendChild(document.createTextNode("\n"));
 				} catch(e) {
@@ -519,9 +519,9 @@ function fixXML(xmlstr) {
 /**
  * Serialize an element to XML and add an XML header.
  */
-function serializeDOM(json, element) {
-	var version = json.X3D["@version"];
-	var xml = '<?xml version="1.0" encoding="'+json.X3D["encoding"]+'"?>\n';
+function serializeDOM(jsobj, element) {
+	var version = jsobj.X3D["@version"];
+	var xml = '<?xml version="1.0" encoding="'+jsobj.X3D["encoding"]+'"?>\n';
 	xml += '<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D '+version+'//EN" "http://www.web3d.org/specifications/x3d-'+version+'.dtd">\n';
 	if (typeof element === 'string') {
 		xml += element;
@@ -536,21 +536,21 @@ function serializeDOM(json, element) {
 
 /**
  * Load X3D JSON into an element.
- * json - the JSON to convert to XML and DOM.
+ * jsobj - the JavaScript object to convert to XML and DOM.
  * path - the path of the JSON file.
  * xml - the output xml string array (optional).
  * NS - a namespace for cobweb (optional) -- stripped out.
  * returns an element in callback or null if error - the element
  * to append or insert into the DOM.
  */
-function loadX3DJS(json, path, xml, NS, loadSchema, doValidate, callback) {
+function loadX3DJS(jsobj, path, xml, NS, loadSchema, doValidate, callback) {
 	console.log("Invoking client side loader");
-	loadSchema(json, path, doValidate, function() {
+	loadSchema(jsobj, path, doValidate, function() {
 		x3djsonNS = NS;
 		var child = CreateElement('X3D', NS);
-		ConvertToX3DOM(json, "", child, path);
+		ConvertToX3DOM(jsobj, "", child, path);
 		if (typeof xml !== 'undefined' && typeof xml.push === 'function') {
-			xml.push(serializeDOM(json, child));
+			xml.push(serializeDOM(jsobj, child));
 		}
 		console.log("Returning with", child);
 		callback(child);
@@ -561,12 +561,12 @@ function loadX3DJS(json, path, xml, NS, loadSchema, doValidate, callback) {
 }
 
 /**
- * selectObjectFromJson() --  get an object in a node internally.
+ * selectObjectFromJSObj() --  get an object in a node internally.
  * The node is the javascript object tree to get an object out of.
  * selectorField is a " > " separated list of properties in node.
  *
  */
-function selectObjectFromJson(node, selectorField) {
+function selectObjectFromJSObj(node, selectorField) {
 	var skipDescendants = 0; // number of descendents to skip
 	var selectedValue = node;
 	var higherValue = selectedValue;
@@ -584,7 +584,7 @@ function selectObjectFromJson(node, selectorField) {
 	return selectedValue;
 }
 
-module.exports = selectObjectFromJson;
+module.exports = selectObjectFromJSObj;
 
 if (typeof module === 'object')  {
 	module.exports = {
@@ -593,7 +593,7 @@ if (typeof module === 'object')  {
 		ConvertToX3DOM : ConvertToX3DOM,
 		setCDATACreateFunction : setCDATACreateFunction,
 		loadURLs : loadURLs,
-		selectObjectFromJson : selectObjectFromJson,
+		selectObjectFromJSObj : selectObjectFromJSObj,
 		setDocument : function(doc) {
 			document = doc;
 		}
