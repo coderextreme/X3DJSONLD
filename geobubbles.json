@@ -34,7 +34,7 @@
           },
           {
             "@name":"translated",
-            "@content":"09 May 2017"
+            "@content":"10 May 2017"
           },
           {
             "@name":"generator",
@@ -189,7 +189,7 @@
           { "ROUTE":
             {
               "@fromNode":"TourPosition",
-              "@fromField":"value_changed",
+              "@fromField":"geovalue_changed",
               "@toNode":"Tour",
               "@toField":"set_position"
             }

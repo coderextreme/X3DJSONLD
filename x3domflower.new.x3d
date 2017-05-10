@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
+    <head>
+        <meta name='title' content='bub.x3d'/>
+        <meta name='creator' content='John Carlson'/>
+        <meta name='description' content='3 prismatic spheres'/>
+        <meta name='generator' content='X3D-Edit, https://savage.nps.edu/X3D-Edit'/>
+        <meta name='identifier' content='http://coderextreme.net/X3DJSONLD/bub.x3d'/>
+        <meta name='translated' content='10 May 2017'/>
+        <meta name='generator' content='X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html'/>
+        <meta name='reference' content='X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding'/>
+        <meta name='translated' content='10 May 2017'/>
+        <meta name='generator' content='X3DJSONLD: https://github.com/coderextreme/X3DJSONLD'/>
+    </head>
+    <Scene>
+        <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"EXAMINE" "ANY"'/>
+        <Background backUrl='"cubemap/all_probes/stpeters_cross/stpeters_back.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_back.png"' bottomUrl='"cubemap/all_probes/stpeters_cross/stpeters_bottom.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_bottom.png"' frontUrl='"cubemap/all_probes/stpeters_cross/stpeters_front.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_front.png"' leftUrl='"cubemap/all_probes/stpeters_cross/stpeters_left.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_left.png"' rightUrl='"cubemap/all_probes/stpeters_cross/stpeters_right.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_right.png"' topUrl='"cubemap/all_probes/stpeters_cross/stpeters_top.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_top.png"'/>
+        <Transform>
+            <Shape>
+                <Appearance>
+                    <Material diffuseColor='0.7 0.7 0.7' specularColor='0.5 0.5 0.5'/>
+                    <ComposedShader language='GLSL'>
+                        <ShaderPart url='"x3dom_flowers_chromatic.vs" "http://coderextreme.net/X3DJSONLD/x3dom.vs"'/>
+                        <ShaderPart type='FRAGMENT' url='"pc_bubbles.fs" "http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"'/>
+                        <field name='xxxcube' accessType='inputOutput' type='SFInt32' value='0'/>
+                        <field name='cube' accessType='inputOutput' type='SFNode'>
+                            <ComposedCubeMapTexture USE='texture'/>
+                        </field>
+                        <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'/>
+                        <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/>
+                        <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/>
+                        <field name='power' accessType='inputOutput' type='SFFloat' value='2.0'/>
+                        <field name='a' accessType='inputOnly' type='SFFloat' value='0.5'/>
+                        <field name='b' accessType='inputOnly' type='SFFloat' value='0.5'/>
+                        <field name='c' accessType='inputOnly' type='SFFloat' value='3.0'/>
+                        <field name='d' accessType='inputOnly' type='SFFloat' value='3.0'/>
+                        <field name='tdelta' accessType='inputOnly' type='SFFloat' value='0.5'/>
+                        <field name='pdelta' accessType='inputOnly' type='SFFloat' value='0.5'/>
+                    </ComposedShader>
+                    <ComposedCubeMapTexture DEF='texture'>
+                        <ImageTexture containerField='back' url='"cubemap/all_probes/stpeters_cross/stpeters_back.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_back.png"'/>
+                        <ImageTexture containerField='bottom' url='"cubemap/all_probes/stpeters_cross/stpeters_bottom.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_bottom.png"'/>
+                        <ImageTexture containerField='front' url='"cubemap/all_probes/stpeters_cross/stpeters_front.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_front.png"'/>
+                        <ImageTexture containerField='left' url='"cubemap/all_probes/stpeters_cross/stpeters_left.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_left.png"'/>
+                        <ImageTexture containerField='right' url='"cubemap/all_probes/stpeters_cross/stpeters_right.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_right.png"'/>
+                        <ImageTexture containerField='top' url='"cubemap/all_probes/stpeters_cross/stpeters_top.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_top.png"'/>
+                    </ComposedCubeMapTexture>
+                </Appearance>
+                <Sphere radius='20.0'/>
+            </Shape>
+        </Transform>
+        <Transform translation='-2 0 0'>
+            <Shape>
+                <Appearance>
+                    <Material diffuseColor='0.7 0.7 0.7' specularColor='0.5 0.5 0.5'/>
+                    <ComposedShader language='GLSL'>
+                        <ShaderPart url='"x3dom_flowers_chromatic.vs" "http://coderextreme.net/X3DJSONLD/x3dom.vs"'/>
+                        <ShaderPart type='FRAGMENT' url='"pc_bubbles.fs" "http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"'/>
+                        <field name='xxxcube' accessType='inputOutput' type='SFInt32' value='0'/>
+                        <field name='cube' accessType='inputOutput' type='SFNode'>
+                            <ComposedCubeMapTexture USE='texture'/>
+                        </field>
+                        <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'/>
+                        <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/>
+                        <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/>
+                        <field name='power' accessType='inputOutput' type='SFFloat' value='2.0'/>
+                        <field name='a' accessType='inputOnly' type='SFFloat' value='0.5'/>
+                        <field name='b' accessType='inputOnly' type='SFFloat' value='0.5'/>
+                        <field name='c' accessType='inputOnly' type='SFFloat' value='3.0'/>
+                        <field name='d' accessType='inputOnly' type='SFFloat' value='3.0'/>
+                        <field name='tdelta' accessType='inputOnly' type='SFFloat' value='0.5'/>
+                        <field name='pdelta' accessType='inputOnly' type='SFFloat' value='0.5'/>
+                    </ComposedShader>
+                    <ComposedCubeMapTexture>
+                        <ImageTexture containerField='back' url='"cubemap/all_probes/stpeters_cross/stpeters_back.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_back.png"'/>
+                        <ImageTexture containerField='bottom' url='"cubemap/all_probes/stpeters_cross/stpeters_bottom.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_bottom.png"'/>
+                        <ImageTexture containerField='front' url='"cubemap/all_probes/stpeters_cross/stpeters_front.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_front.png"'/>
+                        <ImageTexture containerField='left' url='"cubemap/all_probes/stpeters_cross/stpeters_left.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_left.png"'/>
+                        <ImageTexture containerField='right' url='"cubemap/all_probes/stpeters_cross/stpeters_right.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_right.png"'/>
+                        <ImageTexture containerField='top' url='"cubemap/all_probes/stpeters_cross/stpeters_top.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_top.png"'/>
+                    </ComposedCubeMapTexture>
+                </Appearance>
+                <Sphere radius='20.0'/>
+            </Shape>
+        </Transform>
+        <Transform translation='2 0 0'>
+            <Shape>
+                <Appearance>
+                    <Material diffuseColor='0.7 0.7 0.7' specularColor='0.5 0.5 0.5'/>
+                    <ComposedShader language='GLSL'>
+                        <ShaderPart url='"x3dom_flowers_plain.vs" "http://coderextreme.net/X3DJSONLD/x3dom_flowers_plain.vs"'/>
+                        <ShaderPart type='FRAGMENT' url='"plain.fs" "http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"'/>
+                        <field name='xxxcube' accessType='inputOutput' type='SFInt32' value='0'/>
+                        <field name='cube' accessType='inputOutput' type='SFNode'>
+                            <ComposedCubeMapTexture USE='texture'/>
+                        </field>
+                        <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'/>
+                        <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/>
+                        <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/>
+                        <field name='power' accessType='inputOutput' type='SFFloat' value='2.0'/>
+                        <field name='a' accessType='inputOnly' type='SFFloat' value='0.5'/>
+                        <field name='b' accessType='inputOnly' type='SFFloat' value='0.5'/>
+                        <field name='c' accessType='inputOnly' type='SFFloat' value='3.0'/>
+                        <field name='d' accessType='inputOnly' type='SFFloat' value='3.0'/>
+                        <field name='tdelta' accessType='inputOnly' type='SFFloat' value='0.5'/>
+                        <field name='pdelta' accessType='inputOnly' type='SFFloat' value='0.5'/>
+                    </ComposedShader>
+                    <ComposedCubeMapTexture>
+                        <ImageTexture containerField='back' url='"cubemap/all_probes/stpeters_cross/stpeters_back.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_back.png"'/>
+                        <ImageTexture containerField='bottom' url='"cubemap/all_probes/stpeters_cross/stpeters_bottom.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_bottom.png"'/>
+                        <ImageTexture containerField='front' url='"cubemap/all_probes/stpeters_cross/stpeters_front.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_front.png"'/>
+                        <ImageTexture containerField='left' url='"cubemap/all_probes/stpeters_cross/stpeters_left.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_left.png"'/>
+                        <ImageTexture containerField='right' url='"cubemap/all_probes/stpeters_cross/stpeters_right.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_right.png"'/>
+                        <ImageTexture containerField='top' url='"cubemap/all_probes/stpeters_cross/stpeters_top.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_top.png"'/>
+                    </ComposedCubeMapTexture>
+                </Appearance>
+                <Sphere radius='20.0'/>
+            </Shape>
+        </Transform>
+    </Scene>
+</X3D>
