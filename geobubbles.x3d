@@ -10,7 +10,7 @@
         <meta name='description' content='geo bubbles'/>      
     </head>
     <Scene><!--Viewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views'/--><!--PositionInterpolator DEF='TourPosition' key='0 1' keyValue='-0.5 -0.5 4 -0.5 0.5 4'/-->
-        <GeoViewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views' centerOfRotation='0 0 0' retainUserOffsets='false' containerField='children'></GeoViewpoint>
+        <GeoViewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views' retainUserOffsets='false' containerField='children'></GeoViewpoint>
         <Background backUrl='&quot;cubemap/BK.png&quot; &quot;http://coderextreme.net/X3DJSONLD/cubemap/BK.png&quot;' bottomUrl='&quot;cubemap/BT.png&quot; &quot;http://coderextreme.net/X3DJSONLD/cubemap/BT.png&quot;' frontUrl='&quot;cubemap/FR.png&quot; &quot;http://coderextreme.net/X3DJSONLD/cubemap/FR.png&quot;' leftUrl='&quot;cubemap/LF.png&quot; &quot;http://coderextreme.net/X3DJSONLD/cubemap/LF.png&quot;' rightUrl='&quot;cubemap/RT.png&quot; &quot;http://coderextreme.net/X3DJSONLD/cubemap/RT.png&quot;' topUrl='&quot;cubemap/TP.png&quot; &quot;http://coderextreme.net/X3DJSONLD/cubemap/TP.png&quot;'/>
         <Transform>
             <Shape>
