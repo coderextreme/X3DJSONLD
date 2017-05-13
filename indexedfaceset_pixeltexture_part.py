@@ -48,7 +48,7 @@ meta23 = metaObject().setName("generator").setContent("X3dToJson.xslt, http://ww
 head1.addMeta(meta23)
 meta24 = metaObject().setName("reference").setContent("X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 head1.addMeta(meta24)
-meta25 = metaObject().setName("translated").setContent("10 May 2017")
+meta25 = metaObject().setName("translated").setContent("12 May 2017")
 head1.addMeta(meta25)
 meta26 = metaObject().setName("generator").setContent("X3DJSONLD: https://github.com/coderextreme/X3DJSONLD")
 head1.addMeta(meta26)

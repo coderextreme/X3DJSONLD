@@ -18,7 +18,7 @@
 <meta name="translated" content="10 May 2017"></meta>
 <meta name="generator" content="X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"></meta>
 <meta name="reference" content="X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"></meta>
-<meta name="translated" content="10 May 2017"></meta>
+<meta name="translated" content="12 May 2017"></meta>
 <meta name="generator" content="X3DJSONLD: https://github.com/coderextreme/X3DJSONLD"></meta>
 </head>
 <Scene><ExternProtoDeclare name="ViewPositionOrientation" url="&quot;../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation&quot; &quot;https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation&quot; &quot;../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation&quot; &quot;https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation&quot;"><field name="enabled" accessType="inputOutput" type="SFBool"></field>

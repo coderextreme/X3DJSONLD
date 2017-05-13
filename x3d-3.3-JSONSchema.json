@@ -6703,6 +6703,9 @@
 					"$ref": "#/definitions/-commentRoute"
 				}
 			},
+			"required": [
+				"@name"
+			],
 			"additionalProperties": false
 		},
 		"MetadataDouble": {
@@ -6737,6 +6740,9 @@
 					"$ref": "#/definitions/-commentRoute"
 				}
 			},
+			"required": [
+				"@name"
+			],
 			"additionalProperties": false
 		},
 		"MetadataFloat": {
@@ -6771,6 +6777,9 @@
 					"$ref": "#/definitions/-commentRoute"
 				}
 			},
+			"required": [
+				"@name"
+			],
 			"additionalProperties": false
 		},
 		"MetadataInteger": {
@@ -6805,6 +6814,9 @@
 					"$ref": "#/definitions/-commentRoute"
 				}
 			},
+			"required": [
+				"@name"
+			],
 			"additionalProperties": false
 		},
 		"MetadataSet": {
@@ -6863,6 +6875,9 @@
 					"$ref": "#/definitions/-commentRoute"
 				}
 			},
+			"required": [
+				"@name"
+			],
 			"additionalProperties": false
 		},
 		"MetadataString": {
@@ -6897,6 +6912,9 @@
 					"$ref": "#/definitions/-commentRoute"
 				}
 			},
+			"required": [
+				"@name"
+			],
 			"additionalProperties": false
 		},
 		"MotorJoint": {
