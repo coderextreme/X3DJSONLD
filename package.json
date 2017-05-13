@@ -9,6 +9,7 @@
     "xmldom": "*",
     "three": "*",
     "ajv": "*",
+    "ajv-i18n": "*",
     "jsonlint": "*",
     "node-mkdirp": "*",
     "glob": "*"
