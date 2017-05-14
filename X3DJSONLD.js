@@ -584,8 +584,6 @@ function selectObjectFromJSObj(node, selectorField) {
 	return selectedValue;
 }
 
-module.exports = selectObjectFromJSObj;
-
 if (typeof module === 'object')  {
 	module.exports = {
 		loadX3DJS : loadX3DJS,
