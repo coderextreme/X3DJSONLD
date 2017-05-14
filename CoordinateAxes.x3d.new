@@ -5,10 +5,10 @@
 <meta name="generator" content="manual"></meta>
 <meta name="identifier" content="http://coderextreme.net/X3DJSONLD/CoordinateAxis.x3d"></meta>
 <meta name="description" content="a box"></meta>
-<meta name="translated" content="10 May 2017"></meta>
+<meta name="translated" content="14 May 2017"></meta>
 <meta name="generator" content="X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"></meta>
 <meta name="reference" content="X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"></meta>
-<meta name="translated" content="12 May 2017"></meta>
+<meta name="translated" content="14 May 2017"></meta>
 <meta name="generator" content="X3DJSONLD: https://github.com/coderextreme/X3DJSONLD"></meta>
 </head>
 <Scene><Collision DEF="DoNotCollideWithVisualizationWidget"><!--Invoke CoordinateAxes in other scenes as an Inline child inside a scaling Transform node, at the topmost level of the scene graph.--><!--This NavigationInfo allows examine mode and will be overridden by any parent scene.--><!--Each arrow goes from +1m to -1m to allow linear scaling to fit a scene--><!--Note each label rotates about the scene's vertical Y axis for consistency, enabling local orientation by user--><Group><!--Vertical Y arrow and label--><Group DEF="ArrowGreen"><Shape><Cylinder containerField="geometry" DEF="ArrowCylinder" radius="0.025" top="false"></Cylinder>

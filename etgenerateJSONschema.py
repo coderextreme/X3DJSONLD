@@ -455,10 +455,10 @@ class ClassPrinter:
                                     str += '\t\t\t\t},\n'
                             except:
                                 str += '\t\t\t\t"-' + field.get("name") + '" : {\n'
-                                str += '\t\t\t\t\t"$ref":"#/definitions/-'+ field.get("name") +'"\n'
+                                str += '\t\t\t\t\t"$ref":"#/definitions/-'+ field.get("acceptableNodeTypes") +'"\n'
                                 str += '\t\t\t\t},\n'
                                 # container fields
-                                cf = '\t\t\t\t"-' + field.get("name") + '" : {\n'
+                                cf = '\t\t\t\t"-' + field.get("acceptableNodeTypes") + '" : {\n'
                                 if field.get("type") == "MFNode":
                                     cf += '\t\t\t\t\t"type": "array",\n'
                                     cf += '\t\t\t\t\t"minItems": 1,\n'
@@ -477,7 +477,7 @@ class ClassPrinter:
                                 if field.get("type") == "MFNode":
                                     cf += '\t\t\t\t\t}\n'
                                 cf += '\t\t\t\t},\n'
-                                containerFields[field.get("name")] = cf
+                                containerFields[field.get("acceptableNodeTypes")] = cf
                         else:
                             str += self.printField(field)
             if str[-2] == ',':

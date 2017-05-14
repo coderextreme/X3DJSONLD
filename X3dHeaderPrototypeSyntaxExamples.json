@@ -1,8 +1,8 @@
 { "X3D": {
     "encoding":"UTF-8",
     "@profile":"Immersive",
-    "@version":"3.2",
-    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.2.xsd",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
     "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "component": [
@@ -42,7 +42,7 @@
           },
           {
             "@name":"modified",
-            "@content":"26 November 2015"
+            "@content":"7 May 2017"
           },
           {
             "@name":"creator",
@@ -70,7 +70,7 @@
           },
           {
             "@name":"translated",
-            "@content":"10 May 2017"
+            "@content":"14 May 2017"
           },
           {
             "@name":"generator",
@@ -291,17 +291,20 @@
               "-proxy":
                 { "Shape":
                   {
+                    "-children":[
+                      {
+                        "#comment":"note that Collision proxy Shape is not rendered"
+                      },
+                      {
+                        "#comment":"alternative: Text string='\"He said, \\&quot;Immel did it!\\&quot;\"'"
+                      }
+                    ],
                     "-geometry":
                       { "Text":
                         {
                           "@string":["He said, \"Immel did it!\""]
                         }
                       },
-                    "-children":[
-                      {
-                        "#comment":"alternative: Text string='\"He said, \\&quot;Immel did it!\\&quot;\"'"
-                      }
-                    ],
                     "-appearance":
                       { "Appearance":
                         {
