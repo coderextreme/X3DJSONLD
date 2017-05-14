@@ -39,11 +39,11 @@ function doValidate(json, validated_version, file, success, failure) {
 		if (!valid) {
 			console.error("================================================================================");
 			console.error("File:", file);
-			localize.en(validated_version.errors);
+			// localize.en(validated_version.errors);
 		        // error += ajv.errorsText(validated_version.errors, { separator: '\n'});
 			var errs = validated_version.errors;
 			for (var e in errs) {
-				error += "\r\n keyword: " + errs[e].keyword + "\r\n";
+				error = "\r\n keyword: " + errs[e].keyword + "\r\n";
 				var dataPath = errs[e].dataPath.replace(/^\./, "").replace(/[\.\[\]']+/g, " > ").replace(/ >[ \t]*$/, "");
 	
 				error += " dataPath: " + dataPath+ "\r\n";
@@ -64,8 +64,10 @@ function doValidate(json, validated_version, file, success, failure) {
 				error += " params: " + JSON.stringify(errs[e].params) + "\r\n";
 				error += " file: " + file + "\r\n";
 				error += " version: " + version + "\r\n";
+				console.log(error);
 			}
-			failure(error);
+			console.log("Done processing errors");
+			failure("Errors present");
 		} else {
 			if (typeof success == 'function') {
 				success();

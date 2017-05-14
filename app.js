@@ -131,6 +131,8 @@ app.get("*.x3d#*", processX3d);
 app.get("*.x3d", processX3d);
 */
 
+magic("*.gltf", "text/json");
+magic("*.glb", "application/octet-stream");
 magic("*.vs", "text/plain");//"x-shader/x-vertex");
 magic("*.fs", "text/plain");//"x-shader/x-fragment");
 magic("*.html", "text/html");

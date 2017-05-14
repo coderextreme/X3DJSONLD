@@ -5,12 +5,13 @@ function loadXmlBrowsers(xml) {
 	}
 	// DISPLAY XML in X3DOM
 	// Do this inner HTML so we can sneak script tag past JQuery (BAD BAD TODO)
-	xml = $('#xml').val().replace(/&lt;/g, "<").replace(/&gt;/g, ">");
-	$('#x3domxml').get()[0].innerHTML = xml;
-
-	loadCobwebXML(xml);
-
-	x3dom.reload();
+	xml = $('#xml').val();
+	if (typeof xml !== 'undefined') {
+		xml = xml.replace(/&lt;/g, "<").replace(/&gt;/g, ">");
+		$('#x3domxml').get()[0].innerHTML = xml;
+		loadCobwebXML(xml);
+		x3dom.reload();
+	}
 }
 
 function filterExisting(event) {
@@ -109,9 +110,13 @@ function loadCobwebXML(content) {
 
 function loadCobwebDOM(element) {
 	X3D(function(el) {
-		var browser = X3D.getBrowser(el[1]);
-		var importedScene = browser.importDocument(element);
-		browser.replaceWorld(importedScene);
+		if (typeof X3D.getBrowser !== 'undefined') {
+			var browser = X3D.getBrowser(el[1]);
+			if (typeof browser !== 'undefined' && typeof browser.importDocument !== 'undefined') {
+				var importedScene = browser.importDocument(element);
+				browser.replaceWorld(importedScene);
+			}
+		}
 	});
 }
 
