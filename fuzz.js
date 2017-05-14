@@ -32,7 +32,7 @@ function generateObject(schemajson, n, node) {
 			if (typeof minItems === 'undefined') {
 				minItems = 0;
 			}
-			var maxItems = schemajson.minItems;
+			var maxItems = schemajson.maxItems;
 			if (typeof maxItems === 'undefined') {
 				maxItems = 5;
 			}
