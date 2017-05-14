@@ -351,7 +351,7 @@ class ClassPrinter:
             except:
                 pass
         str += '\t\t"'+self.name+'" : {\n'
-        if self.name == "meta" or self.name == 'component' or self.name == 'connect' or self.name == 'unit' or self.name == 'field':
+        if self.name == "meta" or self.name == 'component' or self.name == 'connect' or self.name == 'unit' or self.name == 'field' or self.name == 'fieldValue':
             str += '\t\t\t"type" : "array",\n'
             str += '\t\t\t"items" : {\n'
         str += '\t\t\t"type" : "object",\n'
@@ -490,7 +490,7 @@ class ClassPrinter:
             str += '",\n\t\t\t\t"@'.join(required)
             str += '"\n\t\t\t],\n'
         str += '\t\t\t"additionalProperties": false\n'
-        if self.name == 'meta' or self.name == 'component' or self.name == 'connect' or self.name == 'unit' or self.name == 'field':
+        if self.name == 'meta' or self.name == 'component' or self.name == 'connect' or self.name == 'unit' or self.name == 'field' or self.name == 'fieldValue':
             str += '\t\t}\n'
         str += '\t\t},\n'
         self.printed = True
