@@ -11,10 +11,10 @@
 <meta name="identifier" content="http://X3dGraphics.com/examples/X3dForAdvancedModeling/Buildings/ArchPrototype.x3d"></meta>
 <meta name="generator" content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"></meta>
 <meta name="license" content="../license.html"></meta>
-<meta name="translated" content="10 May 2017"></meta>
+<meta name="translated" content="14 May 2017"></meta>
 <meta name="generator" content="X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"></meta>
 <meta name="reference" content="X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"></meta>
-<meta name="translated" content="12 May 2017"></meta>
+<meta name="translated" content="14 May 2017"></meta>
 <meta name="generator" content="X3DJSONLD: https://github.com/coderextreme/X3DJSONLD"></meta>
 </head>
 <Scene><ProtoDeclare name="ArchPrototype" appinfo="Create an arch. Can modify general parameters: clearSpanWidth, riseHeight, depth, topAbutmentHeight, pierWidth, pierHeight. - Possibility to create shapes related to an arch: ArchHalf; IntradosOnly; ArchFilled; ArchHalfFilled; Lintel. See the reference file ArchModelingDiagrams.pdf to find further information. See also ArchPrototypeScript_more_readable.js.js."><ProtoInterface><!--COLOR OF ARCH--><!--INPUT PARAMETERS--><!--General parameters: measures in meters--><!--Parameters to create to create shapes related to arch: put true to apply--><field name="diffuseColor" accessType="inputOutput" appinfo="color of arch" type="SFColor" value="0.2 0.8 0.8"></field>

@@ -6,10 +6,10 @@
 <meta name="identifier" content="http://coderextreme.net/X3DJSONLD/force.x3d"></meta>
 <meta name="description" content="beginnings of a force directed graph in 3D"></meta>
 <meta name="generator" content="Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit"></meta>
-<meta name="translated" content="10 May 2017"></meta>
+<meta name="translated" content="14 May 2017"></meta>
 <meta name="generator" content="X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"></meta>
 <meta name="reference" content="X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"></meta>
-<meta name="translated" content="12 May 2017"></meta>
+<meta name="translated" content="14 May 2017"></meta>
 <meta name="generator" content="X3DJSONLD: https://github.com/coderextreme/X3DJSONLD"></meta>
 </head>
 <Scene><Group><Shape><Extrusion containerField="geometry" DEF="extrusion" spine="-50 -50 0 50 50 0" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0"></Extrusion>
