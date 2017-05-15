@@ -27,7 +27,7 @@
 <script type="text/javascript">
 function validator() {
 	json = JSON.parse($("#json").val());
-	loadSchema(json, "<unknown>", doValidate, function() { // does not load flipper.json
+	loadSchema(json, "&lt;unknown&gt;", doValidate, function() { // does not load flipper.json
 		alert("Valid or user clicked OK");
 	}, function(e) {
 		alert(e);
