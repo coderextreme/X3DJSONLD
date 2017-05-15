@@ -12,7 +12,7 @@ meta5 = metaObject().setName("identifier").setContent("http://coderextreme.net/X
 head1.addMeta(meta5)
 meta6 = metaObject().setName("description").setContent("a white rubik cube")
 head1.addMeta(meta6)
-meta7 = metaObject().setName("translated").setContent("14 May 2017")
+meta7 = metaObject().setName("translated").setContent("15 May 2017")
 head1.addMeta(meta7)
 meta8 = metaObject().setName("generator").setContent("X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html")
 head1.addMeta(meta8)
