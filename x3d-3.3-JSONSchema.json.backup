@@ -1,5 +1,5 @@
 {
-	"$schema": "http://json-schema.org/draft-04/schema#",
+	"$schema": "https://json-schema.org/draft-04/schema#",
 	"title": "JSON Schema X3D V3.3",
 	"description": "Experimental JSON Schema for X3D V3.3 ",
 	"type": "object",
@@ -6703,6 +6703,9 @@
 					"$ref": "#/definitions/-commentRoute"
 				}
 			},
+			"required": [
+				"@name"
+			],
 			"additionalProperties": false
 		},
 		"MetadataDouble": {
@@ -6737,6 +6740,9 @@
 					"$ref": "#/definitions/-commentRoute"
 				}
 			},
+			"required": [
+				"@name"
+			],
 			"additionalProperties": false
 		},
 		"MetadataFloat": {
@@ -6771,6 +6777,9 @@
 					"$ref": "#/definitions/-commentRoute"
 				}
 			},
+			"required": [
+				"@name"
+			],
 			"additionalProperties": false
 		},
 		"MetadataInteger": {
@@ -6805,6 +6814,9 @@
 					"$ref": "#/definitions/-commentRoute"
 				}
 			},
+			"required": [
+				"@name"
+			],
 			"additionalProperties": false
 		},
 		"MetadataSet": {
@@ -6863,6 +6875,9 @@
 					"$ref": "#/definitions/-commentRoute"
 				}
 			},
+			"required": [
+				"@name"
+			],
 			"additionalProperties": false
 		},
 		"MetadataString": {
@@ -6897,6 +6912,9 @@
 					"$ref": "#/definitions/-commentRoute"
 				}
 			},
+			"required": [
+				"@name"
+			],
 			"additionalProperties": false
 		},
 		"MotorJoint": {
