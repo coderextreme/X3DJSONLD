@@ -124,6 +124,10 @@
         <fieldValue name='connectornode'>
             <Transform USE='C1'/>
         </fieldValue>
+        <fieldValue name='set_startpoint'>
+        </fieldValue>
+        <fieldValue name='set_endpoint'>
+        </fieldValue>
     </ProtoInstance>
     <ProtoInstance name='x3dconnector' DEF='connector2'>
         <fieldValue name='startnode'>
@@ -135,6 +139,10 @@
         <fieldValue name='connectornode'>
             <Transform USE='C2'/>
         </fieldValue>
+        <fieldValue name='set_startpoint'>
+        </fieldValue>
+        <fieldValue name='set_endpoint'>
+        </fieldValue>
     </ProtoInstance>
     <ProtoInstance name='x3dconnector' DEF='connector3'>
         <fieldValue name='startnode'>
@@ -145,6 +153,10 @@
         </fieldValue>
         <fieldValue name='connectornode'>
             <Transform USE='C3'/>
+        </fieldValue>
+        <fieldValue name='set_startpoint'>
+        </fieldValue>
+        <fieldValue name='set_endpoint'>
         </fieldValue>
     </ProtoInstance>
     <ROUTE fromNode='G1' fromField='translation_changed' toNode='connector1' toField='set_startpoint'/>
