@@ -436,10 +436,10 @@ function doValidate(json, validated_version, file, success, failure, e) {
 			var errs = validated_version.errors;
 			var error = ""
 			for (var e in errs) {
-				error += "\r\n keyword: " + errs[e].keyword + "\r\n";
+				error += "\n keyword: " + errs[e].keyword + "\n";
 				var dataPath = errs[e].dataPath.replace(/^\./, "").replace(/[\.\[\]']+/g, " > ").replace(/ >[ \t]*$/, "");
 	
-				error += " dataPath: " + dataPath+ "\r\n";
+				error += " dataPath: " + dataPath+ "\n";
 				var selectedObject = selectObjectFromJSObj(json, dataPath);
 				error += " value: " + JSON.stringify(selectedObject,
 					function(k, v) {
@@ -452,10 +452,10 @@ function doValidate(json, validated_version, file, success, failure, e) {
 					            }
 					    }
 					    return v2;
-					}) + "\r\n";
-				error += " message: " + errs[e].message + "\r\n";
-				error += " params: " + JSON.stringify(errs[e].params) + "\r\n";
-				error += " file: " + file + "\r\n";
+					}) + "\n";
+				error += " message: " + errs[e].message + "\n";
+				error += " params: " + JSON.stringify(errs[e].params) + "\n";
+				error += " file: " + file + "\n";
 			}
 		}
 		retval = (valid || confirm(error));
