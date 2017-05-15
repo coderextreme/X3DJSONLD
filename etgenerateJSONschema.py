@@ -15,7 +15,7 @@ def isString(obj):
 class ClassPrinter:
     def __init__(self, node, interface):
         self.parents = interface
-        self.children = []
+        self.children = {}
         self.printed = False
         if isString(node):
             self.name = node
@@ -42,31 +42,40 @@ class ClassPrinter:
         if self.node:
             inhers = self.node.iter("Inheritance")
             for inher in inhers:
-                classes[inher.get('baseType')].children.append(self.name)
+                classes[inher.get('baseType')].children[self.name] = self.name
     
             addinhers = self.node.iter("AdditionalInheritance")
             for addinher in addinhers:
-                classes[addinher.get('baseType')].children.append(self.name)
+                classes[addinher.get('baseType')].children[self.name] = self.name
 
             return self.children
 
-    def listChildren(self, fieldName, fieldType):
-            str = ""
-            if not self.name.startswith("X3D"):
-                str += '\t\t\t\t\t\t\t"' + self.name + '" : {\n'
-                str += '\t\t\t\t\t\t\t\t"$ref":"#/definitions/'+self.name+'"\n'
+    def printList(self, doList):
+        str = ""
+        for k,v in doList.items():
+            if not k.startswith("X3D"):
+                str += '\t\t\t\t\t\t\t"' + k + '" : {\n'
+                str += '\t\t\t\t\t\t\t\t"$ref":"#/definitions/'+k+'"\n'
                 str += '\t\t\t\t\t\t\t},\n'
-            for child in self.children:
-               str += classes[child].listChildren(fieldName, fieldType)
-            return str
+        return str
 
-    def listParents(self, fieldName, fieldType):
+    def listChildren(self, doList):
+            try:
+                if doList[self.name] == True:
+                    pass
+            except:
+                doList[self.name] = True
+            for k,v in self.children.items():
+               doList = classes[k].listChildren(doList)
+            return doList
+
+    def listParents(self):
             str = ""
             str += '\t\t\t\t\t\t\t"' + self.name + '" : {\n'
             str += '\t\t\t\t\t\t\t\t"$ref":"#/definitions/'+self.name+'"\n'
             str += '\t\t\t\t\t\t\t},\n'
             for parent in self.parents:
-               str += classes[parent].listParents(fieldName, fieldType)
+               str += classes[parent].listParents()
             return str
 
     def printTypeMinMax(self, field):
@@ -106,237 +115,248 @@ class ClassPrinter:
 
     def printField(self, field):
         str = '\t\t\t\t"@' + field.get("name") + '" : {\n'
-        if not field.get("type").startswith("MF"):
-            try:
-                str += '\t\t\t\t\t"maximum" : '+field.get("maxExclusive") + ',\n'
-                str += '\t\t\t\t\t"exclusiveMaximum" : true,\n'
-            except:
-                pass
-            try:
-                str += '\t\t\t\t\t"maximum" : '+field.get("maxInclusive") + ',\n'
-            except:
-                pass
+        if field.get("name") != "value" or  (self.name != 'field' and self.name != 'fieldValue'):
+            if not field.get("type").startswith("MF"):
+                try:
+                    str += '\t\t\t\t\t"maximum" : '+field.get("maxExclusive") + ',\n'
+                    str += '\t\t\t\t\t"exclusiveMaximum" : true,\n'
+                except:
+                    pass
+                try:
+                    str += '\t\t\t\t\t"maximum" : '+field.get("maxInclusive") + ',\n'
+                except:
+                    pass
 
-            try:
-                str += '\t\t\t\t\t"minimum" : '+field.get("minExclusive") + ',\n'
-                str += '\t\t\t\t\t"exclusiveMinimum" : true,\n'
-            except:
-                pass
+                try:
+                    str += '\t\t\t\t\t"minimum" : '+field.get("minExclusive") + ',\n'
+                    str += '\t\t\t\t\t"exclusiveMinimum" : true,\n'
+                except:
+                    pass
 
-            try:
-                str += '\t\t\t\t\t"minimum" : '+field.get("minInclusive") + ',\n'
-            except:
-                pass
+                try:
+                    str += '\t\t\t\t\t"minimum" : '+field.get("minInclusive") + ',\n'
+                except:
+                    pass
 
-            # enumerations
-            enumerations = field.iter("enumeration")
-            enums = []
-            if enumerations is not None:
-                for enum in enumerations:
-                    enums.append(enum.get("value"))
-                if enums != []:
-                    str += '\t\t\t\t\t"enum": [\n'
-                    str += '\t\t\t\t\t\t"'
-                    str += '",\n\t\t\t\t\t\t"'.join(enums)
-                    str += '"\n\t\t\t\t\t],\n'
+                # enumerations
+                enumerations = field.iter("enumeration")
+                enums = []
+                if enumerations is not None:
+                    for enum in enumerations:
+                        val = enum.get("value")
+                        if ' ' in val:
+                            val = '"'+val.replace('"', '\\"')+'"'
+                        elif not '"' in val:
+                            val = '"'+val+'"'
+                        enums.append(val)
+                    if enums != []:
+                        str += '\t\t\t\t\t"enum": [\n'
+                        str += '\t\t\t\t\t\t'
+                        str += ',\n\t\t\t\t\t\t'.join(enums)
+                        str += '\n\t\t\t\t\t],\n'
 
 
-            try:  # default value
-                if field.get("type") == "SFString":
-                    str += '\t\t\t\t\t"default":'+'"'+field.get("default")+'",\n'
-                elif field.get("type") == "SFBool":
-                    str += '\t\t\t\t\t"default":'+field.get("default")+',\n'
-                elif field.get("type") == "SFDouble":
-                    str += '\t\t\t\t\t"default":'+field.get("default")+',\n'
-                elif field.get("type") == "SFTime":
-                    str += '\t\t\t\t\t"default":'+field.get("default")+',\n'
-                elif field.get("type") == "SFFloat":
-                    str += '\t\t\t\t\t"default":'+field.get("default")+',\n'
-                elif field.get("type") == "SFInt32":
-                    str += '\t\t\t\t\t"default":'+field.get("default")+',\n'
-                elif field.get("type") == "SFNode":
-                    str += '__TODO__"\n'
-                # don't need to specify default for array here
-                #else:
-                #   str += '\t\t\t\t\t"default":'+'['+field.get("default").replace(' ',',')+'],\n'
-            except:
-                pass
-        str += '\t\t\t\t\t"type":"'
-        if field.get("type") == "SFBool":
-            str += 'boolean"\n'
-        elif field.get("type") == "SFDouble":
-            str += 'number"\n'
-        elif field.get("type") == "SFTime":
-            str += 'number"\n'
-        elif field.get("type") == "SFFloat":
-            str += 'number"\n'
-        elif field.get("type") == "SFInt32":
-            str += 'integer"\n'
-        elif field.get("type") == "SFNode":
-            str += 'object"\n'
-        elif field.get("type") == "SFString":
-            str += 'string"\n'
-        else:
-            str += 'array",\n'
-            if field.get("name").endswith("url") or field.get("name").endswith("Url"):
-                str += '\t\t\t\t\t"minItems" : 1,\n'
-            elif field.get("name") == "ROUTE":
-                str += '\t\t\t\t\t"minItems" : 1,\n'
-            elif field.get("name") == "Scene":
-                str += '\t\t\t\t\t"minItems" : 1,\n'
-            elif field.get("type") == "SFVec2f":
-                str += '\t\t\t\t\t"minItems" : 2,\n'
-                str += '\t\t\t\t\t"maxItems" : 2,\n'
-            elif field.get("type") == "MFVec2f":
-                str += '\t\t\t\t\t"minItems" : 2,\n'
-            elif field.get("type") == "SFVec3f":
-                str += '\t\t\t\t\t"minItems" : 3,\n'
-                str += '\t\t\t\t\t"maxItems" : 3,\n'
-            elif field.get("type") == "MFVec3f":
-                str += '\t\t\t\t\t"minItems" : 3,\n'
-            elif field.get("type") == "SFVec4f":
-                str += '\t\t\t\t\t"minItems" : 4,\n'
-                str += '\t\t\t\t\t"maxItems" : 4,\n'
-            elif field.get("type") == "MFVec4f":
-                str += '\t\t\t\t\t"minItems" : 4,\n'
-            elif field.get("type") == "SFVec2d":
-                str += '\t\t\t\t\t"minItems" : 2,\n'
-                str += '\t\t\t\t\t"maxItems" : 2,\n'
-            elif field.get("type") == "MFVec2d":
-                str += '\t\t\t\t\t"minItems" : 2,\n'
-            elif field.get("type") == "SFVec3d":
-                str += '\t\t\t\t\t"minItems" : 3,\n'
-                str += '\t\t\t\t\t"maxItems" : 3,\n'
-            elif field.get("type") == "MFVec3d":
-                str += '\t\t\t\t\t"minItems" : 3,\n'
-            elif field.get("type") == "SFVec4d":
-                str += '\t\t\t\t\t"minItems" : 4,\n'
-                str += '\t\t\t\t\t"maxItems" : 4,\n'
-            elif field.get("type") == "MFVec4d":
-                str += '\t\t\t\t\t"minItems" : 4,\n'
-            elif field.get("type") == "SFColor":
-                str += '\t\t\t\t\t"minItems" : 3,\n'
-                str += '\t\t\t\t\t"maxItems" : 3,\n'
-            elif field.get("type") == "MFColor":
-                str += '\t\t\t\t\t"minItems" : 3,\n'
-            elif field.get("type") == "SFColorRGBA":
-                str += '\t\t\t\t\t"minItems" : 4,\n'
-                str += '\t\t\t\t\t"maxItems" : 4,\n'
-            elif field.get("type") == "MFColorRGBA":
-                str += '\t\t\t\t\t"minItems" : 4,\n'
-            elif field.get("type") == "SFRotation":
-                str += '\t\t\t\t\t"minItems" : 4,\n'
-                str += '\t\t\t\t\t"maxItems" : 4,\n'
-            elif field.get("type") == "MFRotation":
-                str += '\t\t\t\t\t"minItems" : 4,\n'
+                try:  # default value
+                    if field.get("type") == "SFString":
+                        str += '\t\t\t\t\t"default":'+'"'+field.get("default")+'",\n'
+                    elif field.get("type") == "SFBool":
+                        str += '\t\t\t\t\t"default":'+field.get("default")+',\n'
+                    elif field.get("type") == "SFDouble":
+                        str += '\t\t\t\t\t"default":'+field.get("default")+',\n'
+                    elif field.get("type") == "SFTime":
+                        str += '\t\t\t\t\t"default":'+field.get("default")+',\n'
+                    elif field.get("type") == "SFFloat":
+                        str += '\t\t\t\t\t"default":'+field.get("default")+',\n'
+                    elif field.get("type") == "SFInt32":
+                        str += '\t\t\t\t\t"default":'+field.get("default")+',\n'
+                    elif field.get("type") == "SFNode":
+                        str += '__TODO__"\n'
+                    # don't need to specify default for array here
+                    #else:
+                    #   str += '\t\t\t\t\t"default":'+'['+field.get("default").replace(' ',',')+'],\n'
+                except:
+                    pass
+            str += '\t\t\t\t\t"type":"'
+            if field.get("type") == "SFBool":
+                str += 'boolean"\n'
+            elif field.get("type") == "SFDouble":
+                str += 'number"\n'
+            elif field.get("type") == "SFTime":
+                str += 'number"\n'
+            elif field.get("type") == "SFFloat":
+                str += 'number"\n'
+            elif field.get("type") == "SFInt32":
+                str += 'integer"\n'
+            elif field.get("type") == "SFNode":
+                str += 'object"\n'
+            elif field.get("type") == "SFString":
+                str += 'string"\n'
             else:
-                try:
-                    str += '\t\t\t\t\t"minItems" : '+field.get("minOccurs") + ',\n'
-                except:
-                    pass
-
-                try:
-                    str += '\t\t\t\t\t"maxItems" : '+field.get("maxOccurs") + ',\n'
-                except:
-                    pass
-
-            # enumerations
-            enumerations = field.iter("enumeration")
-            enums = []
-            if enumerations is not None:
-                for enum in enumerations:
-                    enums.append(enum.get("value").replace('"', '\\"'))
-
-            allTheSame = True
-            firstValue = None
-            str += '\t\t\t\t\t"items": '
-            try:
-                firstTime = True
-                if field.get("type") == "MFString":
-                    for item in field.get("default").substring(1, field.get("default").length-2).split('" "'):
-                        if firstTime:
-                            firstTime = False
-                            firstValue = item
-                        else:
-                            if firstValue != item:
-                                allTheSame = False
-
-                else:
-                    for item in field.get("default").split(' '):
-                        if firstTime:
-                            firstTime = False
-                            firstValue = item
-                        else:
-                            if firstValue != item:
-                                allTheSame = False
-            except:
-                pass
-            if allTheSame:  # or an exception was thrown
-                str += '{\n'
+                str += 'array",\n'
                 if field.get("name").endswith("url") or field.get("name").endswith("Url"):
-                    str += '\t\t\t\t\t"format":"uri",\n'
-                if enums != []:
-                    str += '\t\t\t\t\t\t"enum": [\n'
-                    str += '\t\t\t\t\t\t\t"'
-                    str += '",\n\t\t\t\t\t\t\t"'.join(enums)
-                    str += '"\n\t\t\t\t\t\t],\n'
-                if firstValue is not None:
-                    if field.get("type") == "MFString":
-                        str += '\t\t\t\t\t\t"default":"'+firstValue+'",\n'
-                    else:
-                        str += '\t\t\t\t\t\t"default":'+firstValue+',\n'
-                str += self.printTypeMinMax(field)
-                str += '\t\t\t\t\t}\n'
-            else:
-                firstTime = True
-                str += '[\n'
-                if field.get("type") == "MFString":
-                    for item in field.get("default").substring(1, field.get("default").length-2).split('" "'):
-                        if firstTime:
-                            firstTime = False
-                        else:
-                            str += ',\n'
-                        str += '\t\t\t\t\t{\n'
-                        if field.get("name").endswith("url") or field.get("name").endswith("Url"):
-                            str += '\t\t\t\t\t\t\t"format":"uri",\n'
-                        if enums != []:
-                            str += '\t\t\t\t\t\t"enum": [\n'
-                            str += '\t\t\t\t\t\t\t"'
-                            str += '",\n\t\t\t\t\t\t\t"'.join(enums)
-                            str += '"\n\t\t\t\t\t\t],\n'
-                        str += '\t\t\t\t\t\t\t"default":"'+item+'",\n'
-                        str += self.printTypeMinMax(field)
-                        str += '\t\t\t\t\t}'
+                    str += '\t\t\t\t\t"minItems" : 1,\n'
+                elif field.get("name") == "ROUTE":
+                    str += '\t\t\t\t\t"minItems" : 1,\n'
+                elif field.get("name") == "Scene":
+                    str += '\t\t\t\t\t"minItems" : 1,\n'
+                elif field.get("type") == "SFVec2f":
+                    str += '\t\t\t\t\t"minItems" : 2,\n'
+                    str += '\t\t\t\t\t"maxItems" : 2,\n'
+                elif field.get("type") == "MFVec2f":
+                    str += '\t\t\t\t\t"minItems" : 2,\n'
+                elif field.get("type") == "SFVec3f":
+                    str += '\t\t\t\t\t"minItems" : 3,\n'
+                    str += '\t\t\t\t\t"maxItems" : 3,\n'
+                elif field.get("type") == "MFVec3f":
+                    str += '\t\t\t\t\t"minItems" : 3,\n'
+                elif field.get("type") == "SFVec4f":
+                    str += '\t\t\t\t\t"minItems" : 4,\n'
+                    str += '\t\t\t\t\t"maxItems" : 4,\n'
+                elif field.get("type") == "MFVec4f":
+                    str += '\t\t\t\t\t"minItems" : 4,\n'
+                elif field.get("type") == "SFVec2d":
+                    str += '\t\t\t\t\t"minItems" : 2,\n'
+                    str += '\t\t\t\t\t"maxItems" : 2,\n'
+                elif field.get("type") == "MFVec2d":
+                    str += '\t\t\t\t\t"minItems" : 2,\n'
+                elif field.get("type") == "SFVec3d":
+                    str += '\t\t\t\t\t"minItems" : 3,\n'
+                    str += '\t\t\t\t\t"maxItems" : 3,\n'
+                elif field.get("type") == "MFVec3d":
+                    str += '\t\t\t\t\t"minItems" : 3,\n'
+                elif field.get("type") == "SFVec4d":
+                    str += '\t\t\t\t\t"minItems" : 4,\n'
+                    str += '\t\t\t\t\t"maxItems" : 4,\n'
+                elif field.get("type") == "MFVec4d":
+                    str += '\t\t\t\t\t"minItems" : 4,\n'
+                elif field.get("type") == "SFColor":
+                    str += '\t\t\t\t\t"minItems" : 3,\n'
+                    str += '\t\t\t\t\t"maxItems" : 3,\n'
+                elif field.get("type") == "MFColor":
+                    str += '\t\t\t\t\t"minItems" : 3,\n'
+                elif field.get("type") == "SFColorRGBA":
+                    str += '\t\t\t\t\t"minItems" : 4,\n'
+                    str += '\t\t\t\t\t"maxItems" : 4,\n'
+                elif field.get("type") == "MFColorRGBA":
+                    str += '\t\t\t\t\t"minItems" : 4,\n'
+                elif field.get("type") == "SFRotation":
+                    str += '\t\t\t\t\t"minItems" : 4,\n'
+                    str += '\t\t\t\t\t"maxItems" : 4,\n'
+                elif field.get("type") == "MFRotation":
+                    str += '\t\t\t\t\t"minItems" : 4,\n'
                 else:
-                    for item in field.get("default").split(' '):
-                        if firstTime:
-                            firstTime = False
-                        else:
-                            str += ',\n'
-                        str += '\t\t\t\t\t{\n'
-                        if enums != []:
-                            str += '\t\t\t\t\t\t"enum": [\n'
-                            str += '\t\t\t\t\t\t\t"'
-                            str += '",\n\t\t\t\t\t\t\t"'.join(enums)
-                            str += '"\n\t\t\t\t\t\t],\n'
-                        str += '\t\t\t\t\t\t"default":'+item+',\n'
-                        str += self.printTypeMinMax(field)
-                        str += '\t\t\t\t\t}\n'
-                str += '\t\t\t\t\t],\n'
-                str += '\t\t\t\t\t"additionalItems": '
-                if field.get('type').startswith("SF"):
-                    str += 'false\n'
-                elif field.get('type').startswith("MF"):
-                    str += '{\n'
-                    str += self.printTypeMinMax(field)
-                    if allTheSame:  # or an exception was thrown
-                        if firstValue is not None:
-                            if field.get("type") == "MFString":
-                                str += '\t\t\t\t\t\t"default":"'+firstValue+'",\n'
+                    try:
+                        str += '\t\t\t\t\t"minItems" : '+field.get("minOccurs") + ',\n'
+                    except:
+                        pass
+
+                    try:
+                        str += '\t\t\t\t\t"maxItems" : '+field.get("maxOccurs") + ',\n'
+                    except:
+                        pass
+
+                # enumerations
+                enumerations = field.iter("enumeration")
+                enums = []
+                if enumerations is not None:
+                    for enum in enumerations:
+                        val = enum.get("value")
+                        if ' ' in val:
+                            val = '"'+val.replace('"', '\\"')+'"'
+                        elif not '"' in val:
+                            val = '"'+val+'"'
+                        enums.append(val)
+
+                allTheSame = True
+                firstValue = None
+                str += '\t\t\t\t\t"items": '
+                try:
+                    firstTime = True
+                    if field.get("type") == "MFString":
+                        for item in field.get("default")[1:-1].split('" "'):
+                            if firstTime:
+                                firstTime = False
+                                firstValue = item
                             else:
-                                str += '\t\t\t\t\t\t"default":'+firstValue+',\n'
-                    str += '\t\t\t\t\t}'
-        str += '\t\t\t\t\t},\n'
+                                if firstValue != item:
+                                    allTheSame = False
+
+                    else:
+                        for item in field.get("default").split(' '):
+                            if firstTime:
+                                firstTime = False
+                                firstValue = item
+                            else:
+                                if firstValue != item:
+                                    allTheSame = False
+                except:
+                    pass
+                if allTheSame:  # or an exception was thrown
+                    str += '{\n'
+                    if field.get("name").endswith("url") or field.get("name").endswith("Url"):
+                        str += '\t\t\t\t\t"format":"uri",\n'
+                    if enums != []:
+                        str += '\t\t\t\t\t\t"enum": [\n'
+                        str += '\t\t\t\t\t\t\t'
+                        str += ',\n\t\t\t\t\t\t\t'.join(enums)
+                        str += '\n\t\t\t\t\t\t],\n'
+                    if firstValue is not None:
+                        if field.get("type") == "MFString":
+                            str += '\t\t\t\t\t\t"default":"'+firstValue+'",\n'
+                        else:
+                            str += '\t\t\t\t\t\t"default":'+firstValue+',\n'
+                    str += self.printTypeMinMax(field)
+                    str += '\t\t\t\t\t}\n'
+                else:
+                    firstTime = True
+                    str += '[\n'
+                    if field.get("type") == "MFString":
+                        for item in field.get("default")[1:-1].split('" "'):
+                            if firstTime:
+                                firstTime = False
+                            else:
+                                str += ',\n'
+                            str += '\t\t\t\t\t{\n'
+                            if field.get("name").endswith("url") or field.get("name").endswith("Url"):
+                                str += '\t\t\t\t\t\t\t"format":"uri",\n'
+                            if enums != []:
+                                str += '\t\t\t\t\t\t"enum": [\n'
+                                str += '\t\t\t\t\t\t\t'
+                                str += ',\n\t\t\t\t\t\t\t'.join(enums)
+                                str += '\n\t\t\t\t\t\t],\n'
+                            str += '\t\t\t\t\t\t\t"default":"'+item+'",\n'
+                            str += self.printTypeMinMax(field)
+                            str += '\t\t\t\t\t}'
+                    else:
+                        for item in field.get("default").split(' '):
+                            if firstTime:
+                                firstTime = False
+                            else:
+                                str += ',\n'
+                            str += '\t\t\t\t\t{\n'
+                            if enums != []:
+                                str += '\t\t\t\t\t\t"enum": [\n'
+                                str += '\t\t\t\t\t\t\t'
+                                str += ',\n\t\t\t\t\t\t\t'.join(enums)
+                                str += '\n\t\t\t\t\t\t],\n'
+                            str += '\t\t\t\t\t\t"default":'+item+',\n'
+                            str += self.printTypeMinMax(field)
+                            str += '\t\t\t\t\t}\n'
+                    str += '\t\t\t\t\t],\n'
+                    str += '\t\t\t\t\t"additionalItems": '
+                    if field.get('type').startswith("SF"):
+                        str += 'false\n'
+                    elif field.get('type').startswith("MF"):
+                        str += '{\n'
+                        str += self.printTypeMinMax(field)
+                        if allTheSame:  # or an exception was thrown
+                            if firstValue is not None:
+                                if field.get("type") == "MFString":
+                                    str += '\t\t\t\t\t\t"default":"'+firstValue+'",\n'
+                                else:
+                                    str += '\t\t\t\t\t\t"default":'+firstValue+',\n'
+                        str += '\t\t\t\t\t}'
+        str += '\t\t\t\t},\n'
         return str
 
     def printClass(self):
@@ -356,6 +376,9 @@ class ClassPrinter:
             str += '\t\t\t"items" : {\n'
         str += '\t\t\t"type" : "object",\n'
         str += '\t\t\t"properties" : {\n'
+        str += '\t\t\t\t"#comment": {\n'
+        str += '\t\t\t\t\t"type": "string"\n'
+        str += '\t\t\t\t},\n'
         if self.name == "X3D":
             str += '''\
                                 "@xsd:noNamespaceSchemaLocation": {
@@ -422,7 +445,7 @@ class ClassPrinter:
              self.name != "ViewpointGroup" and self.name != 'Viewport' and \
              self.name != "X3D" and self.name != 'field' and \
              self.name != "fieldValue" and self.name != 'head' and \
-             self.name != "meta" and \
+             self.name != "meta" and self.name != "CADLayer" and \
              self.name != "unit" and self.name != 'component':
             str += '''\
                                 "-children": {
@@ -438,6 +461,12 @@ class ClassPrinter:
         if self.node:
             fields = self.node.iter("field")
             required = []
+            str += '''\
+                                "IS": {
+                                        "$ref": "#/definitions/IS"
+                                },
+'''
+
             for field in fields:
                 if not field.get("name").startswith("X3D") or field.get("name") == "X3D":
                     try:
@@ -455,21 +484,26 @@ class ClassPrinter:
                                     str += '\t\t\t\t},\n'
                             except:
                                 str += '\t\t\t\t"-' + field.get("name") + '" : {\n'
-                                str += '\t\t\t\t\t"$ref":"#/definitions/-'+ field.get("acceptableNodeTypes") +'"\n'
+                                str += '\t\t\t\t\t"$ref":"#/definitions/-'+ field.get("acceptableNodeTypes") + field.get("type") +'"\n'
                                 str += '\t\t\t\t},\n'
                                 # container fields
-                                cf = '\t\t\t\t"-' + field.get("acceptableNodeTypes") + '" : {\n'
+                                cf = '\t\t\t\t"-' + field.get("acceptableNodeTypes") + field.get("type") + '" : {\n'
                                 if field.get("type") == "MFNode":
                                     cf += '\t\t\t\t\t"type": "array",\n'
                                     cf += '\t\t\t\t\t"minItems": 1,\n'
                                     cf += '\t\t\t\t\t"items": {\n'
                                 cf += '\t\t\t\t\t\t"type": "object",\n'
                                 cf += '\t\t\t\t\t\t"properties": {\n'
+                                cf += '\t\t\t\t\t\t\t"#comment": {\n'
+                                cf += '\t\t\t\t\t\t\t\t"type": "string"\n'
+                                cf += '\t\t\t\t\t\t\t},\n'
                                 acnts = field.get("acceptableNodeTypes").split("|")
+                                doList = {}
                                 for acnt in acnts:
-                                    cf += classes[acnt].listChildren(field.get("name"), field.get("type"))
+                                    doList = classes[acnt].listChildren(doList)
+                                cf += self.printList(doList)
                                     #str += "___________PARENTS____________\n"
-                                    #str += classes[acnt].listParents(field.get("name"), field.get("type"))
+                                    #str += classes[acnt].listParents()
                                 if cf[-2] == ',':
                                      cf = cf[:-2] + '\n' # strip off comma
                                 cf += '\t\t\t\t\t\t},\n'
@@ -477,7 +511,7 @@ class ClassPrinter:
                                 if field.get("type") == "MFNode":
                                     cf += '\t\t\t\t\t}\n'
                                 cf += '\t\t\t\t},\n'
-                                containerFields[field.get("acceptableNodeTypes")] = cf
+                                containerFields[field.get("acceptableNodeTypes") + field.get("type")] = cf
                         else:
                             str += self.printField(field)
             if str[-2] == ',':
@@ -556,14 +590,14 @@ for aot in aots:
 cns = soup.iter("ConcreteNode")
 for cn in cns:
     classes[cn.get('name')] = ClassPrinter(cn, { "X3DConcreteNode" : 1, "X3DChildNode" : 1 })
-    classes["X3DConcreteNode"].children.append(cn.get("name"))
-    classes["X3DChildNode"].children.append(cn.get("name"))
+    classes["X3DConcreteNode"].children[cn.get("name")] = cn.get("name")
+    classes["X3DChildNode"].children[cn.get("name")] = cn.get("name")
 
 sts = soup.iter("Statement")
 for st in sts:
     classes[st.get('name')] = ClassPrinter(st, { "X3DConcreteStatement" : 1, "X3DChildNode" : 1 })
-    classes["X3DConcreteStatement"].children.append(st.get("name"))
-    classes["X3DChildNode"].children.append(st.get("name"))
+    classes["X3DConcreteStatement"].children[st.get("name")] = st.get("name")
+    classes["X3DChildNode"].children[st.get("name")] = st.get("name")
 
 for k,v in classes.items():
     v.findChildren()
