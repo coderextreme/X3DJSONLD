@@ -204,6 +204,10 @@ ProtoInstance0
 ProtoInstance0
           .addFieldValue(new fieldValueObject().setName("connectornode")
             .addChild(new TransformObject().setUSE("C1")));
+ProtoInstance0
+          .addFieldValue(new fieldValueObject().setName("set_startpoint"));
+ProtoInstance0
+          .addFieldValue(new fieldValueObject().setName("set_endpoint"));
 ProtoInstance1
           .addFieldValue(new fieldValueObject().setName("startnode")
             .addChild(new TransformObject().setUSE("G1")));
@@ -213,6 +217,10 @@ ProtoInstance1
 ProtoInstance1
           .addFieldValue(new fieldValueObject().setName("connectornode")
             .addChild(new TransformObject().setUSE("C2")));
+ProtoInstance1
+          .addFieldValue(new fieldValueObject().setName("set_startpoint"));
+ProtoInstance1
+          .addFieldValue(new fieldValueObject().setName("set_endpoint"));
 ProtoInstance2
           .addFieldValue(new fieldValueObject().setName("startnode")
             .addChild(new TransformObject().setUSE("G1")));
@@ -222,6 +230,10 @@ ProtoInstance2
 ProtoInstance2
           .addFieldValue(new fieldValueObject().setName("connectornode")
             .addChild(new TransformObject().setUSE("C3")));
+ProtoInstance2
+          .addFieldValue(new fieldValueObject().setName("set_startpoint"));
+ProtoInstance2
+          .addFieldValue(new fieldValueObject().setName("set_endpoint"));
     return X3D0;
     }
 protected class MFColor0 {
