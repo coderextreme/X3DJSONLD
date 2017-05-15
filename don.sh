@@ -16,13 +16,17 @@ echo translating to json
 echo translating to ecmascript 5
 (ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java RunSaxon --X3dToES5.xslt -sail.js
 echo translating to java
-(ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java RunSaxon ---overwrite --X3dToJava.xslt -java
+(ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java RunSaxon --X3dToJava.xslt -java
 echo replacing NeedClassName
 (ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS sh replaceclass.sh
 echo compiling
 (ls "$@" | grep -v intermediate | grep -v "\.new") | sed 's/\.x3d$/.java/' | xargs -L 1 -P $PROCESSORS javac -J-Xss1g -J-Xmx4g
 echo running
-(ls "$@" | grep -v intermediate | grep -v "\.new") | sed 's/\.x3d$//' | sed 's/^\.*\///' | xargs -L 1 -P $PROCESSORS  java -d64 -Xss1g -Xmx4g # sh runToError.sh
+for i in `ls "$@" | grep -v intermediate | grep -v "\.new") | sed 's/\.x3d$//' | sed 's/^\.*\///'`
+do
+	pushd `dirname $i`
+	java -d64 -Xss1g -Xmx4g `basename $i` # sh runToError.sh
+done
 echo diffing
 for NEW in `(ls "$@" | grep -v intermediate | grep -v "\.new") | sed 's/\.x3d$/.new.json/'| sed 's/\/c\/x3d-code\/www.web3d.org/www_web3d_org/'`
 do
