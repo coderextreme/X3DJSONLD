@@ -4,8 +4,7 @@
     <title>X3D JSON Validator</title>
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ajv/5.0.1/ajv.min.js"></script>
-    <script type="text/javascript" src="JavaScriptSerializer.js"></script>
-    <script type="text/javascript" src="X3DJSONLD.js"></script>
+    <!--script type="text/javascript" src="JavaScriptSerializer.js"></script>
     <script type="text/javascript" src="PrototypeExpander.js"></script>
     <script type="text/javascript" src="Flattener.js"></script>
     <script type="text/javascript" src="Script.js"></script>
@@ -16,8 +15,9 @@
     <script type="text/javascript" src="convertPlyToJson.js"></script>
     <script type="text/javascript" src="convertStlToJson.js"></script>
     <script type="text/javascript" src="convertJsonToStl.js"></script>
+    <script type="text/javascript" src="exi.js"></script-->
+    <script type="text/javascript" src="X3DJSONLD.js"></script>
     <script type="text/javascript" src="loaderJQuery.js"></script>
-    <script type="text/javascript" src="exi.js"></script>
 </head>
 <body>
 	<h1>X3D JSON schema validator</h1><br>
@@ -26,12 +26,16 @@
 </body>
 <script type="text/javascript">
 function validator() {
-	json = JSON.parse($("#json").val());
-	loadSchema(json, "<unknown>", doValidate, function() { // does not load flipper.json
-		alert("Valid or user clicked OK");
-	}, function(e) {
-		alert(e);
-	});
+	try {
+		var json = JSON.parse($("#json").val());
+		loadSchema(json, "<unknown>", doValidate, function() { // does not load flipper.json
+			alert("Valid or user clicked OK");
+		}, function(e) {
+			alert(e);
+		});
+	} catch (je) {
+		alert(je);
+	}
 }
 </script>
 </html>

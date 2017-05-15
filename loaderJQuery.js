@@ -120,11 +120,15 @@ function loadCobwebDOM(element) {
 	});
 }
 
-Object.assign(mapToMethod, {
-});
+if (typeof mapToMethod !== 'undefined') {
+	Object.assign(mapToMethod, {
+	});
 
-for (var map in mapToMethod2) {
-	Object.assign(mapToMethod[map], mapToMethod2[map]);
+	if (typeof mapToMethod2 !== 'undefined') {
+		for (var map in mapToMethod2) {
+			Object.assign(mapToMethod[map], mapToMethod2[map]);
+		}
+	}
 }
 
 function convertJsonToXml(json, next) {
