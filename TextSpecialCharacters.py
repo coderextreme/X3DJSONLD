@@ -24,7 +24,7 @@ meta11 = metaObject().setName("generator").setContent("X3D-Edit 3.3, https://sav
 head1.addMeta(meta11)
 meta12 = metaObject().setName("license").setContent("../license.html")
 head1.addMeta(meta12)
-meta13 = metaObject().setName("translated").setContent("14 May 2017")
+meta13 = metaObject().setName("translated").setContent("15 May 2017")
 head1.addMeta(meta13)
 meta14 = metaObject().setName("generator").setContent("X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html")
 head1.addMeta(meta14)

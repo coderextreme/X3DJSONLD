@@ -50,7 +50,7 @@ meta23 = metaObject().setName("generator").setContent("Xj3D converter, http://ww
 head1.addMeta(meta23)
 meta24 = metaObject().setName("license").setContent("../../license.html")
 head1.addMeta(meta24)
-meta25 = metaObject().setName("translated").setContent("14 May 2017")
+meta25 = metaObject().setName("translated").setContent("15 May 2017")
 head1.addMeta(meta25)
 meta26 = metaObject().setName("generator").setContent("X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html")
 head1.addMeta(meta26)

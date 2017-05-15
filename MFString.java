@@ -83,7 +83,7 @@ public class MFString {
       .setHead(new headObject()
         .addMeta(new metaObject().setName("title").setContent("MFString.x3d"))
         .addMeta(new metaObject().setName("created").setContent("21 April 20017"))
-        .addMeta(new metaObject().setName("translated").setContent("14 May 2017"))
+        .addMeta(new metaObject().setName("translated").setContent("15 May 2017"))
         .addMeta(new metaObject().setName("generator").setContent("X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"))
         .addMeta(new metaObject().setName("reference").setContent("X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"))
         .addMeta(new metaObject().setName("translated").setContent("15 May 2017"))
