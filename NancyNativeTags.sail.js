@@ -20,7 +20,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addMeta(new metaObject().setName("translated").setContent("14 May 2017"))
         .addMeta(new metaObject().setName("generator").setContent("X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"))
         .addMeta(new metaObject().setName("reference").setContent("X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"))
-        .addMeta(new metaObject().setName("translated").setContent("14 May 2017"))
+        .addMeta(new metaObject().setName("translated").setContent("15 May 2017"))
         .addMeta(new metaObject().setName("generator").setContent("X3DJSONLD: https://github.com/coderextreme/X3DJSONLD")))
       .setScene(new SceneObject()
         .addChild(new HAnimHumanoidObject().setName("nancy").setDEF("Humanoid").setInfo(Java.to(["humanoidVersion=Nancy V1.2b","authorEmail=cindy@ballreich.net","authorName=Cindy Ballreich","copyright=1997 3Name3D / Yglesias Wallock Divekar Inc. all rights reserved.","creationDate=Tue Dec 30 08:30:08 PST 1997","gender=female","usageRestrictions=Noncommercial usage is ok if 3Name3D name and logo http://www.ballreich.net/vrml/h-anim/small_logo.gif is present and proper credit is given."], Java.type("java.lang.String[]"))).setVersion("2.0")

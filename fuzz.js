@@ -1,13 +1,13 @@
 var fs = require('fs');
 
-var schema = fs.readFileSync("x3d-5.0-JSONSchema.json");
+var schema = fs.readFileSync("x3d-3.3-JSONSchema.json");
 var root = JSON.parse(schema.toString());
 
-function generateObject(schemajson, n, node) {
+function generateObject(schemajson, n, node, force) {
 	// console.log(node);
 	var obj = undefined;
 	// console.log(schemajson);
-	if (n < Math.floor(Math.random() * 15) + 10) {
+	if (n < Math.floor(Math.random() * 15) + 10 || force) {
 		var ref = schemajson["$ref"];
 		var oneOf = schemajson.oneOf;
 		var type = schemajson.type;
@@ -15,14 +15,14 @@ function generateObject(schemajson, n, node) {
 		if (typeof ref !== 'undefined') {
 			var definition = ref.replace(/.*\//, "");
 			var def = root.definitions[definition];
-			obj =  generateObject(def, n+1, node+" > ref "+ref);
+			obj =  generateObject(def, n+1, node+" > ref "+ref, false);
 		} else if (typeof oneOf !== 'undefined') {
 			var index = Math.floor(oneOf.length * Math.random());
-			obj = generateObject(oneOf[index], n+1, node+" > oneof "+index);
+			obj = generateObject(oneOf[index], n+1, node+" > oneof "+index, true);
 		} else if (type === "object") {
 			obj = {};
 			for (var prop in schemajson.properties) {
-				obj[prop] = generateObject(schemajson.properties[prop], n+1, node+" > prop "+prop);
+				obj[prop] = generateObject(schemajson.properties[prop], n+1, node+" > prop "+prop, false);
 			}
 		} else if (type === "array") {
 			obj = [];
@@ -39,13 +39,11 @@ function generateObject(schemajson, n, node) {
 			for (var i = 0; i < maxItems; i++) {
 				var item;
 				if (typeof items[i] !== 'undefined') {
-					item = generateObject(items[i], n+1, node+" > items[] "+i);
+					item = generateObject(items[i], n+1, node+" > items[] "+i, true);
 				} else {
-					item = generateObject(items,    n+1, node+" > items "+i+" ~"+JSON.stringify(items)+"~");
+					item = generateObject(items,    n+1, node+" > items "+i+" ~"+JSON.stringify(items)+"~", true);
 				}
-				if (item != null) {
-					obj.push(item);
-				}
+				obj.push(item);
 			}
 		} else if (type === "string") {
 			var enumer = schemajson.enum;
@@ -86,7 +84,7 @@ function generateObject(schemajson, n, node) {
 				obj =  minimum;
 			} else if (typeof maximum !== 'undefined') {
 				obj =  maximum;
-			} else if (typeof schemajson.default!== 'undefined') {
+			} else if (typeof schemajson.default !== 'undefined') {
 				obj =  schemajson.default;
 			} else {
 				obj = 0;
@@ -98,7 +96,8 @@ function generateObject(schemajson, n, node) {
 			obj = [];
 			// console.log(type);
 			for (var index in schemajson) {
-				obj[index] = generateObject(schemajson[index], n+1, node+" > default "+i);
+				// console.error(schemajson[index]);
+				obj[index] = generateObject(schemajson[index], n+1, node+" > default "+i, true);
 			}
 		}
 	}
@@ -106,5 +105,5 @@ function generateObject(schemajson, n, node) {
 	return obj;
 }
 
-var obj = generateObject(root, 0, "$schema");
+var obj = generateObject(root, 0, "$schema", true);
 console.log(JSON.stringify(obj));
