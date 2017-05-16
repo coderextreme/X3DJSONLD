@@ -16,7 +16,7 @@ echo translating to json
 echo translating to ecmascript 5
 (ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java RunSaxon ---silent --X3dToES5.xslt -sail.js
 echo translating to java
-(ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java RunSaxon ---silent --X3dToJava.xslt -java
+(ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java RunSaxon ---overwrite ---silent --X3dToJava.xslt -java
 echo replacing NeedClassName
 (ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS sh replaceclass.sh
 echo compiling
