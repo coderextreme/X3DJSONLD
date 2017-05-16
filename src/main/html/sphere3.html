@@ -21,19 +21,19 @@ body {
   <Scene>
     <NavigationInfo type="&quot;EXAMINE&quot; &quot;ANY&quot;"></NavigationInfo>
 <!-- Images courtesy of Paul Debevec's Light Probe Image Gallery -->
-	<Background id="background" leftUrl='"cubemap/all_probes/beach_cross/beach_left.png"' rightUrl='"cubemap/all_probes/beach_cross/beach_right.png"' frontUrl='"cubemap/all_probes/beach_cross/beach_front.png"' backUrl='"cubemap/all_probes/beach_cross/beach_back.png"' topUrl='"cubemap/all_probes/beach_cross/beach_top.png"' bottomUrl='"cubemap/all_probes/beach_cross/beach_bottom.png"'></Background> 
+	<Background id="background" leftUrl='"images/all_probes/beach_cross/beach_left.png"' rightUrl='"images/all_probes/beach_cross/beach_right.png"' frontUrl='"images/all_probes/beach_cross/beach_front.png"' backUrl='"images/all_probes/beach_cross/beach_back.png"' topUrl='"images/all_probes/beach_cross/beach_top.png"' bottomUrl='"images/all_probes/beach_cross/beach_bottom.png"'></Background> 
 	<Viewpoint position='0 0 40' description="Transparent rose" zNear='0' ></Viewpoint>
 	<Transform DEF='Rose01' >
 	<Shape>
 	<Appearance DEF='_01_-_Default' >
         <Material diffuseColor=".7 .7 .7" specularColor=".5 .5 .5" ></Material>
                 <ComposedCubeMapTexture>
-                    <ImageTexture id="backShader" containerField="back" url='"cubemap/all_probes/beach_cross/beach_back.png"' ></ImageTexture>
-                    <ImageTexture id="bottomShader" containerField="bottom" url='"cubemap/all_probes/beach_cross/beach_bottom.png"' ></ImageTexture>
-                    <ImageTexture id="frontShader" containerField="front" url='"cubemap/all_probes/beach_cross/beach_front.png"' ></ImageTexture>
-                    <ImageTexture id="leftShader" containerField="left" url='"cubemap/all_probes/beach_cross/beach_left.png"' ></ImageTexture>
-                    <ImageTexture id="rightShader" containerField="right" url='"cubemap/all_probes/beach_cross/beach_right.png"' ></ImageTexture>
-                    <ImageTexture id="topShader" containerField="top" url='"cubemap/all_probes/beach_cross/beach_top.png"' ></ImageTexture>
+                    <ImageTexture id="backShader" containerField="back" url='"images/all_probes/beach_cross/beach_back.png"' ></ImageTexture>
+                    <ImageTexture id="bottomShader" containerField="bottom" url='"images/all_probes/beach_cross/beach_bottom.png"' ></ImageTexture>
+                    <ImageTexture id="frontShader" containerField="front" url='"images/all_probes/beach_cross/beach_front.png"' ></ImageTexture>
+                    <ImageTexture id="leftShader" containerField="left" url='"images/all_probes/beach_cross/beach_left.png"' ></ImageTexture>
+                    <ImageTexture id="rightShader" containerField="right" url='"images/all_probes/beach_cross/beach_right.png"' ></ImageTexture>
+                    <ImageTexture id="topShader" containerField="top" url='"images/all_probes/beach_cross/beach_top.png"' ></ImageTexture>
                 </ComposedCubeMapTexture>
 		<ComposedShader DEF='ComposedShader' language="GLSL">
                   <Uniform name='cube' type='SFInt32' accessType='inputOnly' value='0'></Uniform>
@@ -58,17 +58,17 @@ body {
     </Scene>   
 </X3D>
 <script type="text/javascript">
-var frontUrls = ["cubemap/all_probes/beach_cross/beach_front.png","cubemap/all_probes/building_cross/building_front.png","cubemap/all_probes/campus_cross/campus_front.png","cubemap/all_probes/galileo_cross/galileo_front.png","cubemap/all_probes/grace_cross/grace_front.png","cubemap/all_probes/kitchen_cross/kitchen_front.png","cubemap/all_probes/rnl_cross/rnl_front.png","cubemap/all_probes/stpeters_cross/stpeters_front.png","cubemap/all_probes/uffizi_cross/uffizi_front.png"];
+var frontUrls = ["images/all_probes/beach_cross/beach_front.png","images/all_probes/building_cross/building_front.png","images/all_probes/campus_cross/campus_front.png","images/all_probes/galileo_cross/galileo_front.png","images/all_probes/grace_cross/grace_front.png","images/all_probes/kitchen_cross/kitchen_front.png","images/all_probes/rnl_cross/rnl_front.png","images/all_probes/stpeters_cross/stpeters_front.png","images/all_probes/uffizi_cross/uffizi_front.png"];
 
-var backUrls = ["cubemap/all_probes/beach_cross/beach_back.png","cubemap/all_probes/building_cross/building_back.png","cubemap/all_probes/campus_cross/campus_back.png","cubemap/all_probes/galileo_cross/galileo_back.png","cubemap/all_probes/grace_cross/grace_back.png","cubemap/all_probes/kitchen_cross/kitchen_back.png","cubemap/all_probes/rnl_cross/rnl_back.png","cubemap/all_probes/stpeters_cross/stpeters_back.png","cubemap/all_probes/uffizi_cross/uffizi_back.png"];
+var backUrls = ["images/all_probes/beach_cross/beach_back.png","images/all_probes/building_cross/building_back.png","images/all_probes/campus_cross/campus_back.png","images/all_probes/galileo_cross/galileo_back.png","images/all_probes/grace_cross/grace_back.png","images/all_probes/kitchen_cross/kitchen_back.png","images/all_probes/rnl_cross/rnl_back.png","images/all_probes/stpeters_cross/stpeters_back.png","images/all_probes/uffizi_cross/uffizi_back.png"];
 
-var leftUrls = ["cubemap/all_probes/beach_cross/beach_left.png","cubemap/all_probes/building_cross/building_left.png","cubemap/all_probes/campus_cross/campus_left.png","cubemap/all_probes/galileo_cross/galileo_left.png","cubemap/all_probes/grace_cross/grace_left.png","cubemap/all_probes/kitchen_cross/kitchen_left.png","cubemap/all_probes/rnl_cross/rnl_left.png","cubemap/all_probes/stpeters_cross/stpeters_left.png","cubemap/all_probes/uffizi_cross/uffizi_left.png"];
+var leftUrls = ["images/all_probes/beach_cross/beach_left.png","images/all_probes/building_cross/building_left.png","images/all_probes/campus_cross/campus_left.png","images/all_probes/galileo_cross/galileo_left.png","images/all_probes/grace_cross/grace_left.png","images/all_probes/kitchen_cross/kitchen_left.png","images/all_probes/rnl_cross/rnl_left.png","images/all_probes/stpeters_cross/stpeters_left.png","images/all_probes/uffizi_cross/uffizi_left.png"];
 
-var rightUrls = ["cubemap/all_probes/beach_cross/beach_right.png","cubemap/all_probes/building_cross/building_right.png","cubemap/all_probes/campus_cross/campus_right.png","cubemap/all_probes/galileo_cross/galileo_right.png","cubemap/all_probes/grace_cross/grace_right.png","cubemap/all_probes/kitchen_cross/kitchen_right.png","cubemap/all_probes/rnl_cross/rnl_right.png","cubemap/all_probes/stpeters_cross/stpeters_right.png","cubemap/all_probes/uffizi_cross/uffizi_right.png"];
+var rightUrls = ["images/all_probes/beach_cross/beach_right.png","images/all_probes/building_cross/building_right.png","images/all_probes/campus_cross/campus_right.png","images/all_probes/galileo_cross/galileo_right.png","images/all_probes/grace_cross/grace_right.png","images/all_probes/kitchen_cross/kitchen_right.png","images/all_probes/rnl_cross/rnl_right.png","images/all_probes/stpeters_cross/stpeters_right.png","images/all_probes/uffizi_cross/uffizi_right.png"];
 
-var topUrls = ["cubemap/all_probes/beach_cross/beach_top.png","cubemap/all_probes/building_cross/building_top.png","cubemap/all_probes/campus_cross/campus_top.png","cubemap/all_probes/galileo_cross/galileo_top.png","cubemap/all_probes/grace_cross/grace_top.png","cubemap/all_probes/kitchen_cross/kitchen_top.png","cubemap/all_probes/rnl_cross/rnl_top.png","cubemap/all_probes/stpeters_cross/stpeters_top.png","cubemap/all_probes/uffizi_cross/uffizi_top.png"];
+var topUrls = ["images/all_probes/beach_cross/beach_top.png","images/all_probes/building_cross/building_top.png","images/all_probes/campus_cross/campus_top.png","images/all_probes/galileo_cross/galileo_top.png","images/all_probes/grace_cross/grace_top.png","images/all_probes/kitchen_cross/kitchen_top.png","images/all_probes/rnl_cross/rnl_top.png","images/all_probes/stpeters_cross/stpeters_top.png","images/all_probes/uffizi_cross/uffizi_top.png"];
 
-var bottomUrls = ["cubemap/all_probes/beach_cross/beach_bottom.png","cubemap/all_probes/building_cross/building_bottom.png","cubemap/all_probes/campus_cross/campus_bottom.png","cubemap/all_probes/galileo_cross/galileo_bottom.png","cubemap/all_probes/grace_cross/grace_bottom.png","cubemap/all_probes/kitchen_cross/kitchen_bottom.png","cubemap/all_probes/rnl_cross/rnl_bottom.png","cubemap/all_probes/stpeters_cross/stpeters_bottom.png","cubemap/all_probes/uffizi_cross/uffizi_bottom.png"];
+var bottomUrls = ["images/all_probes/beach_cross/beach_bottom.png","images/all_probes/building_cross/building_bottom.png","images/all_probes/campus_cross/campus_bottom.png","images/all_probes/galileo_cross/galileo_bottom.png","images/all_probes/grace_cross/grace_bottom.png","images/all_probes/kitchen_cross/kitchen_bottom.png","images/all_probes/rnl_cross/rnl_bottom.png","images/all_probes/stpeters_cross/stpeters_bottom.png","images/all_probes/uffizi_cross/uffizi_bottom.png"];
 
 var old = -1;
 
