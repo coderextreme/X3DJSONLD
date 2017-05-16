@@ -5,10 +5,16 @@
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
     "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
+        "component": [
+          {
+            "@name":"EnvironmentalEffects",
+            "@level":3
+          }
+        ],
         "meta": [
           {
             "@name":"title",
-            "@content":"mirro2.x3d"
+            "@content":"mirror.x3d"
           },
           {
             "@name":"creator",
@@ -20,11 +26,11 @@
           },
           {
             "@name":"identifier",
-            "@content":"http://coderextreme.net/X3DJSONLD/mirro2.x3d"
+            "@content":"http://coderextreme.net/X3DJSONLD/mirror.x3d"
           },
           {
             "@name":"description",
-            "@content":"a mirrored sphere"
+            "@content":"sphere with alternating backgrounds"
           },
           {
             "@name":"translated",
@@ -48,15 +54,50 @@
               "@position":[0,5,100]
             }
           },
-          { "Background":
+          { "TextureBackground":
             {
-              "@DEF":"cube",
-              "@backUrl":["cubemap/all_probes/beach_cross/beach_back.png","http://coderextreme.net/cubemap/all_probes/beach_cross/beach_back.png"],
-              "@bottomUrl":["cubemap/all_probes/beach_cross/beach_bottom.png","http://coderextreme.net/cubemap/all_probes/beach_cross/beach_bottom.png"],
-              "@frontUrl":["cubemap/all_probes/beach_cross/beach_front.png","http://coderextreme.net/cubemap/all_probes/beach_cross/beach_front.png"],
-              "@leftUrl":["cubemap/all_probes/beach_cross/beach_left.png","http://coderextreme.net/cubemap/all_probes/beach_cross/beach_left.png"],
-              "@rightUrl":["cubemap/all_probes/beach_cross/beach_right.png","http://coderextreme.net/cubemap/all_probes/beach_cross/beach_right.png"],
-              "@topUrl":["cubemap/all_probes/beach_cross/beach_top.png","http://coderextreme.net/cubemap/all_probes/beach_cross/beach_top.png"]
+              "-backTexture":
+                { "ImageTexture":
+                  {
+                    "@DEF":"backBack",
+                    "@url":["cubemap/all_probes/beach_cross/beach_back.png","http://coderextreme.net/cubemap/all_probes/beach_cross/beach_back.png"]
+                  }
+                },
+              "-bottomTexture":
+                { "ImageTexture":
+                  {
+                    "@DEF":"bottomBack",
+                    "@url":["cubemap/all_probes/beach_cross/beach_bottom.png","http://coderextreme.net/cubemap/all_probes/beach_cross/beach_bottom.png"]
+                  }
+                },
+              "-frontTexture":
+                { "ImageTexture":
+                  {
+                    "@DEF":"frontBack",
+                    "@url":["cubemap/all_probes/beach_cross/beach_front.png","http://coderextreme.net/cubemap/all_probes/beach_cross/beach_front.png"]
+                  }
+                },
+              "-leftTexture":
+                { "ImageTexture":
+                  {
+                    "@DEF":"leftBack",
+                    "@url":["cubemap/all_probes/beach_cross/beach_left.png","http://coderextreme.net/cubemap/all_probes/beach_cross/beach_left.png"]
+                  }
+                },
+              "-rightTexture":
+                { "ImageTexture":
+                  {
+                    "@DEF":"rightBack",
+                    "@url":["cubemap/all_probes/beach_cross/beach_right.png","http://coderextreme.net/cubemap/all_probes/beach_cross/beach_right.png"]
+                  }
+                },
+              "-topTexture":
+                { "ImageTexture":
+                  {
+                    "@DEF":"topBack",
+                    "@url":["cubemap/all_probes/beach_cross/beach_top.png","http://coderextreme.net/cubemap/all_probes/beach_cross/beach_top.png"]
+                  }
+                }
             }
           },
           { "Transform":
@@ -77,13 +118,13 @@
                           "-shaders":[
                             { "ComposedShader":
                               {
-                                "@DEF":"cobweb",
+                                "@DEF":"x3dom",
                                 "@language":"GLSL",
                                 "-parts":[
                                   { "ShaderPart":
                                     {
-                                      "@type":"VERTEX",
-                                      "@url":["cobweb.vs","http://coderextreme.net/X3DJSONLD/cobweb.vs"]
+                                      "@url":["x3dom.vs","http://coderextreme.net/X3DJSONLD/x3dom.vs"],
+                                      "@type":"VERTEX"
                                     }
                                   },
                                   { "ShaderPart":
@@ -134,13 +175,13 @@
                             },
                             { "ComposedShader":
                               {
-                                "@DEF":"x3dom",
+                                "@DEF":"cobweb",
                                 "@language":"GLSL",
                                 "-parts":[
                                   { "ShaderPart":
                                     {
-                                      "@type":"VERTEX",
-                                      "@url":["x3dom.vs","http://coderextreme.net/X3DJSONLD/x3dom.vs"]
+                                      "@url":["cobweb.vs","http://coderextreme.net/X3DJSONLD/cobweb.vs"],
+                                      "@type":"VERTEX"
                                     }
                                   },
                                   { "ShaderPart":
@@ -338,7 +379,7 @@
 "\t    \tside = 0;",
 "\t    }",
 "\t    if (side != old) {",
-"\t    \t    // Browser.print(f+\" \"+side);",
+"\t    \t    Browser.print(f+\" \"+side);",
 "\t    \t    old = side;",
 "\t\t    front_changed[0] = frontUrls[side];",
 "\t\t    back_changed[0] = backUrls[side];",
@@ -370,48 +411,48 @@
                   {
                     "@fromField":"front_changed",
                     "@fromNode":"UrlSelector",
-                    "@toField":"frontUrl",
-                    "@toNode":"cube"
+                    "@toField":"url",
+                    "@toNode":"frontBack"
                   }
                 },
                 { "ROUTE":
                   {
                     "@fromField":"back_changed",
                     "@fromNode":"UrlSelector",
-                    "@toField":"backUrl",
-                    "@toNode":"cube"
+                    "@toField":"url",
+                    "@toNode":"backBack"
                   }
                 },
                 { "ROUTE":
                   {
                     "@fromField":"left_changed",
                     "@fromNode":"UrlSelector",
-                    "@toField":"leftUrl",
-                    "@toNode":"cube"
+                    "@toField":"url",
+                    "@toNode":"leftBack"
                   }
                 },
                 { "ROUTE":
                   {
                     "@fromField":"right_changed",
                     "@fromNode":"UrlSelector",
-                    "@toField":"rightUrl",
-                    "@toNode":"cube"
+                    "@toField":"url",
+                    "@toNode":"rightBack"
                   }
                 },
                 { "ROUTE":
                   {
                     "@fromField":"top_changed",
                     "@fromNode":"UrlSelector",
-                    "@toField":"topUrl",
-                    "@toNode":"cube"
+                    "@toField":"url",
+                    "@toNode":"topBack"
                   }
                 },
                 { "ROUTE":
                   {
                     "@fromField":"bottom_changed",
                     "@fromNode":"UrlSelector",
-                    "@toField":"bottomUrl",
-                    "@toNode":"cube"
+                    "@toField":"url",
+                    "@toNode":"bottomBack"
                   }
                 },
                 { "ROUTE":

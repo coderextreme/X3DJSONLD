@@ -92,8 +92,8 @@
                                 "-parts":[
                                   { "ShaderPart":
                                     {
-                                      "@type":"VERTEX",
-                                      "@url":["x3dom.vs","http://coderextreme.net/X3DJSONLD/x3dom.vs"]
+                                      "@url":["x3dom.vs","http://coderextreme.net/X3DJSONLD/x3dom.vs"],
+                                      "@type":"VERTEX"
                                     }
                                   },
                                   { "ShaderPart":
@@ -150,8 +150,8 @@
                                 "-parts":[
                                   { "ShaderPart":
                                     {
-                                      "@type":"VERTEX",
-                                      "@url":["cobweb.vs","http://coderextreme.net/X3DJSONLD/cobweb.vs"]
+                                      "@url":["cobweb.vs","http://coderextreme.net/X3DJSONLD/cobweb.vs"],
+                                      "@type":"VERTEX"
                                     }
                                   },
                                   { "ShaderPart":
