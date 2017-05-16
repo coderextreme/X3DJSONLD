@@ -1,3 +1,4 @@
+package net.coderextreme.json;
 import org.web3d.x3d.jsail.*;
 import org.web3d.x3d.jsail.CADGeometry.*;
 import org.web3d.x3d.jsail.Core.*;
@@ -76,7 +77,7 @@ public class CameraExamples {
     ConfigurationProperties.setShowDefaultAttributes(true);
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_nativeJava);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new CameraExamples().initialize().toFileJSON("CameraExamples.new.json");
+    new CameraExamples().initialize().toFileJSON("../new/json/CameraExamples.new.json");
     }
     public X3DObject initialize() {
 ProtoInstanceObject ProtoInstance0 = null;

@@ -1,3 +1,4 @@
+package net.coderextreme.json;
 import org.web3d.x3d.jsail.*;
 import org.web3d.x3d.jsail.CADGeometry.*;
 import org.web3d.x3d.jsail.Core.*;
@@ -76,7 +77,7 @@ public class CameraShape {
     ConfigurationProperties.setShowDefaultAttributes(true);
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_nativeJava);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new CameraShape().initialize().toFileJSON("CameraShape.new.json");
+    new CameraShape().initialize().toFileJSON("../new/json/CameraShape.new.json");
     }
     public X3DObject initialize() {
       X3DObject X3D0 =  new X3DObject().setProfile("Interactive").setVersion("3.1")

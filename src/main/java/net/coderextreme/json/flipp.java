@@ -1,3 +1,4 @@
+package net.coderextreme.json;
 import org.web3d.x3d.jsail.*;
 import org.web3d.x3d.jsail.CADGeometry.*;
 import org.web3d.x3d.jsail.Core.*;
@@ -76,7 +77,7 @@ public class flipp {
     ConfigurationProperties.setShowDefaultAttributes(true);
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_nativeJava);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new flipp().initialize().toFileJSON("flipp.new.json");
+    new flipp().initialize().toFileJSON("../new/json/flipp.new.json");
     }
     public X3DObject initialize() {
       X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
