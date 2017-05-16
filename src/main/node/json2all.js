@@ -16,7 +16,7 @@ convertJSON([
 	},
 	{ 
 	serializer : './DOMSerializer.js',
-	folder : "../x3d/net/coderextreme/",
+	folder : "../new/",
 	extension : ".x3d.new",
 	},
 	{ 
