@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.2//EN" "http://www.web3d.org/specifications/x3d-3.2.dtd">
+<X3D xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.2" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.2.xsd">
+  <head>
+    <meta content="HelloWorldSigned.x3d" name="title"/>
+    <meta content="Simple X3D example with XML digital signature for author authentication, also used for example combined with encryption" name="description"/>
+    <meta content="2 July 2008" name="created"/>
+    <meta content="6 July 2008" name="modified"/>
+    <meta content="Don Brutzman, Mike Bailey" name="creator"/>
+    <meta content="X3dSecurityReadMe.html" name="reference"/>
+    <meta content="keystore/SelectSigningKeyPair.png" name="reference"/>
+    <meta content="keystore/PublicPrivatePair_certificateChain.cer" name="reference"/>
+    <meta content="http://www.web3d.org/x3d/content/examples/HelloWorld.x3d" name="reference"/>
+    <meta content="http://www.web3d.org/x3d/content/examples/Basic/Security/HelloWorldSignedEncryptedResult.xml" name="reference"/>
+    <meta content="http://www.web3d.org/x3d/content/examples/Basic/Security/HelloWorldSignedDecrypted.x3d" name="reference"/>
+    <meta content="http://www.web3d.org/x3d/content/examples/Basic/Security/HelloWorldSigned.x3d" name="identifier"/>
+    <meta content="X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit" name="generator"/>
+    <meta content="../license.html" name="license"/>
+    <meta content="X3D security, XML signature authentication, public private key pair, XML encryption, secret key" name="subject"/>
+  </head>
+  <Scene>
+    <!-- Example scene to illustrate X3D tags and attributes. -->
+    <Group bboxCenter="0 0 0" bboxSize="-1 -1 -1" containerField="children">
+      <Viewpoint centerOfRotation="0 -1 0" containerField="children" description="Hello world!" fieldOfView="0.7854" jump="true" orientation="0 0 1 0" position="0 -1 7"/>
+      <Transform bboxCenter="0 0 0" bboxSize="-1 -1 -1" center="0 0 0" containerField="children" rotation="0 1 0 3" scale="1 1 1" scaleOrientation="0 0 1 0" translation="0 0 0">
+        <Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1" containerField="children">
+          <Sphere containerField="geometry" radius="1" solid="true"/>
+          <Appearance containerField="appearance">
+            <Material ambientIntensity="0.2" containerField="material" diffuseColor="0 0.5 1" emissiveColor="0 0 0" shininess="0.2" specularColor="0 0 0" transparency="0"/>
+            <ImageTexture containerField="texture" repeatS="true" repeatT="true" url="&quot;../earth-topo.png&quot; &quot;../earth-topo.jpg&quot; &quot;../earth-topo-small.gif&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/earth-topo.png&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif&quot;"/>
+          </Appearance>
+        </Shape>
+      </Transform>
+      <Transform bboxCenter="0 0 0" bboxSize="-1 -1 -1" center="0 0 0" containerField="children" rotation="0 0 1 0" scale="1 1 1" scaleOrientation="0 0 1 0" translation="0 -2 0">
+        <Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1" containerField="children">
+          <Text containerField="geometry" maxExtent="0.0" solid="false" string="&quot;Hello&quot; &quot;world!&quot;">
+            <FontStyle containerField="fontStyle" family="&quot;SERIF&quot;" horizontal="true" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" leftToRight="true" size="1.0" spacing="1.0" style="PLAIN" topToBottom="true"/>
+          </Text>
+          <Appearance containerField="appearance">
+            <Material ambientIntensity="0.2" containerField="material" diffuseColor="0.1 0.5 1" emissiveColor="0 0 0" shininess="0.2" specularColor="0 0 0" transparency="0"/>
+          </Appearance>
+        </Shape>
+      </Transform>
+    </Group>
+  </Scene>
+<ds:Signature>
+<ds:SignedInfo>
+<ds:CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+<ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+<ds:Reference URI="#xpointer(/)">
+<ds:Transforms>
+<ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+<ds:Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments"/>
+</ds:Transforms>
+<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+<ds:DigestValue>nqV+sWdljdElfGSBXbMMjBZyUfs=</ds:DigestValue>
+</ds:Reference>
+</ds:SignedInfo>
+<ds:SignatureValue>
+T9q7zV6KZUfyAg3gGTpKkAYWtY0QZxy8JWm/T6SI8eH7mrfCADeco5heVyXmTdTScVokSL1KFp2O
+f96puB6Bo0BHG03AczpoxaBtcv1s8LvVBOukLXleKhpjrZ3vCuL2IyYP147KhKrXgRJMDfnYn7yp
+xstPVWPtnzuIbt6DeMH/GQrJYKIvI4Hoj7Y0Y2Jl1UyGrHf0zICyVGOfPivbKRxOMScyk/UWZE0Q
+tTLdsYM5tBrGVwZqf5ZXQKutS/nl7V/GnMPRtcRiqU63E9AVwfcR1UJu/XV/ZdEChGDSKke4RCjA
+SnN3XtG9wE+fWfuldJ/mG1wUa1lBDfj/Em1aaQ==
+</ds:SignatureValue>
+<ds:KeyInfo>
+<ds:X509Data>
+<ds:X509Certificate>
+MIIDvjCCAqYCAzOA3DANBgkqhkiG9w0BAQUFADCBozELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNh
+bGlmb3JuaWExETAPBgNVBAcTCE1vbnRlcmV5MSIwIAYDVQQKExlOYXZhbCBQb3N0Z3JhZHVhdGUg
+U2Nob29sMTAwLgYDVQQLEydTYXZhZ2UgUmVzZWFyY2ggR3JvdXAgLyBNT1ZFUyBJbnN0aXR1dGUx
+FjAUBgNVBAMTDVgzRC1FZGl0IHVzZXIwHhcNMDgwNzA0MTYxNDA3WhcNMTMwNjI4MTYxNDA3WjCB
+ozELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExETAPBgNVBAcTCE1vbnRlcmV5MSIw
+IAYDVQQKExlOYXZhbCBQb3N0Z3JhZHVhdGUgU2Nob29sMTAwLgYDVQQLEydTYXZhZ2UgUmVzZWFy
+Y2ggR3JvdXAgLyBNT1ZFUyBJbnN0aXR1dGUxFjAUBgNVBAMTDVgzRC1FZGl0IHVzZXIwggEiMA0G
+CSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCFIvV3Gbf0WB4vU0BO87YD8EBuKE6C1/mV4A5J1sfc
+BXQ5RalntS8j4hOU4toNh1CWa3TrHbYK6wTIMsmFW12FumUpQ9nbkRBGG3RA4cSclR193PJZ0bx5
+m7e+SP0li5RKDIyTybqDxjVC5UxM8O8Pt8DUCLSaMXAtDtBox+iG5lfjh7cg/O6S1bdS3WPrtL5g
+eXLXWz+6juALZkktFt8BwRlv3DcI5ku3Q5u385zZKGr+E9gmzTYvwa19mBnoS6T9JpgXK+zw8DRo
+IutNv/oH571o1vMw9neqeoHQjLcc9azJG7fTERX6VVlHl5YWRxM0g/0IMw6x3PVYbFcAAByRAgMB
+AAEwDQYJKoZIhvcNAQEFBQADggEBAFEisvXLNl6fRPXOeAB3JHvY8FYyOGqspkk18nLZVXS995Wh
+OZ/lGaPIQjYSxUDKuLR8gKGwUVeNREqQQsIc4pBfB4i1kOiJqD+zdSiYWUr7LQpc2V2wt2bQ2utQ
+/8++mbxrxiVRhBCXhzyGdT41Wzjui4KBs01ilkPz1YZVUZ4lZuZUCZbuJAAjFXScE1RDNmNZIeRd
+MmQ4/UGBxemsGmCZP2GcIQL8g4GvFJD42U7+nLJGQUJi4g4AWGxi9OT3LVjrTzh8P1122Kb/Xxf/
+7zs6+OHJt5CmTys7zJp2slRdO1o19btfrgWZRUbq0WF7mSVnjYvzMLMOo4IIkxzp7aw=
+</ds:X509Certificate>
+</ds:X509Data>
+<ds:KeyValue>
+<ds:RSAKeyValue>
+<ds:Modulus>
+hSL1dxm39FgeL1NATvO2A/BAbihOgtf5leAOSdbH3AV0OUWpZ7UvI+ITlOLaDYdQlmt06x22CusE
+yDLJhVtdhbplKUPZ25EQRht0QOHEnJUdfdzyWdG8eZu3vkj9JYuUSgyMk8m6g8Y1QuVMTPDvD7fA
+1Ai0mjFwLQ7QaMfohuZX44e3IPzuktW3Ut1j67S+YHly11s/uo7gC2ZJLRbfAcEZb9w3COZLt0Ob
+t/Oc2Shq/hPYJs02L8GtfZgZ6Euk/SaYFyvs8PA0aCLrTb/6B+e9aNbzMPZ3qnqB0Iy3HPWsyRu3
+0xEV+lVZR5eWFkcTNIP9CDMOsdz1WGxXAAAckQ==
+</ds:Modulus>
+<ds:Exponent>AQAB</ds:Exponent>
+</ds:RSAKeyValue>
+</ds:KeyValue>
+</ds:KeyInfo>
+</ds:Signature></X3D>

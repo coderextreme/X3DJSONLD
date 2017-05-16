@@ -1,0 +1,216 @@
+X3dJavaSpecificationChangesAndIssues.txt                             14 March 2017
+
+http://www.web3d.org/x3d/stylesheets/java/X3dJavaSpecificationChangesAndIssues.txt
+
+Terminology:
+- singleton array types are MFBool, MFInt32, MFDouble, MFFloat, MFString, MFNode
+  since each element in the array is a singleton value (as opposed to float[3] for MFColor, etc.)
+
+Once this implementation-based review is complete, issues will be discussed and
+entered into the Web3D Consortium Mantis Issues database.
+
+Feedback and discussion is always welcome.
+mailto:x3d-public@web3D.org
+http://www.web3d.org/x3d/content/examples/X3dResources.html#Feedback
+
+============================================================
+1. Specification errors
+============================================================
+
+B.1.3 Conventions
+http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/abstracts.html#Conventions
+
+change InvalidFieldValue to InvalidFieldValueException
+
+bullet list is more useful if alphabetic
+
+============================================================
+B.4 FieldInterfaces
+http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/abstracts.html#FieldInterfaces
+
+naming clarity: see updates to various parameter names to better indicate their purpose
+
+	value to newValue
+	value to destinationValue
+
+============================================================
+B.4.5 X3DField
+http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/abstracts.html#X3DField
+
+Interface methods need to be omitted for UserData, which is undefined anywhere else in the Abstract SAI or Java SAI specifications.
+    public void   setUserData(Object data);
+    public Object getUserData();
+
+============================================================
+B.4.6 MField
+
+indicate that index-dependent method may throw exception:
+
+    public void remove(int index);
+to
+    public boolean remove(int index)
+        throws ArrayIndexOutOfBoundsException;
+
+============================================================
+B.4.14 MFDouble
+http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/abstracts.html#MFDouble
+
+append and insertValue methods should take a singleton parameter like other singleton-type methods:
+
+    public void append(double[] value);
+to
+    public void append(double value);
+
+and
+    public void insertValue(double[] value);
+to
+    public void insertValue(double value);
+
+Similarly changes for MFFloat, MFInt32, MFString
+
+============================================================
+B.4.8 MFBool
+http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/abstracts.html#MFBool
+
+indicate that index-dependent methods may throw exception:
+
+    public boolean get1Value(int index);
+to
+    public boolean get1Value(int index)
+        throws ArrayIndexOutOfBoundsException;
+
+Similarly changes for
+	MFColor, MFColorRGBA, MFNode, MFRotation, MFString, MFTime, 
+	MFVec2d, MFVec2f, MFVec3d, MFVec3f
+
+============================================================
+B.4.17 SFImage
+http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/abstracts.html#SFImage
+
+Missing exception declarations? consider adding
+
+	throws InvalidFieldValueException;
+
+to get accessors
+
+============================================================
+B.4.18 MFImage
+http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/abstracts.html#SFImage
+
+Missing exceptions:
+
+============================================================
+2. Specification additions
+============================================================
+a. Missing matrix types.
+
+Need to add sections in B.4 Field interfaces:
+- SFMatrix3d, MFMatrix3d, SFMatrix3f and MFMatrix3f
+- SFMatrix4d, MFMatrix4d, SFMatrix4f and MFMatrix4f
+
+These will extend the following Service Interfaces, respectively.
+
+b. B.5.4 Matrix3
+http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/abstracts.html#Matrix3
+
+Matrix3 need to be an interface rather than class because multiple inheritance
+is not permissible in Java, types must already extend the X3DFieldImpl class.
+Also need to fix tabs on first two entries and append semicolons to the remaining entries.
+TODO: needs to be included in abstract interface definitions.
+TODO: remove constructor from specification interface.
+TODO: modify method, refactor into appropriate subclasses:
+    public void set(int row, int column)
+into
+    public void set(int row, int column, float newValue);
+and
+    public void set(int row, int column, double newValue);
+
+B.5.5 Matrix4
+http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/abstracts.html#Matrix
+
+Does Matrix4 need to be an interface or abstract class, rather than class?
+Also need to fix tabs on first two entries and append semicolons to the remaining entries.
+
+TODO: needs to be included in abstract interface definitions.
+TODO: remove constructor from specification interface.
+TODO: modify method, refactor into appropriate subclasses:
+    public void set(int row, int column)
+as above as described for Matrix3.
+
+Shared issues for Matrix3 and Matrix4:
+- TODO Data types for translation, scale fields:
+	change SFVec2f to SFVec3f, SFVec2d to SFVec3d
+- TODO Data types for rotation, scaleOrientation fields:
+	change SFVec3f, SFVec3d to SFRotation
+- TODO Matrix4 operator methods should return Matrix4 result, not Matrix3:
+	inverse(), transpose(), multiplyLeft, multiplyRight, multiplyRowVector, multiplyColVector
+- TODO 3d/3f/4d/4f typed methods need to be shifted to corresponding interfaces
+	SFMatrix3d, SFMatrix3f, SFMatrix4d, SFMatrix4f
+
+============================================================
+
+3. Specification concerns for consideration
+
+============================================================
+
+a. setValue() methods with size parameter have multiple failure modes at run time.
+
+Example:
+	public void setValue(int size, double[] newValue);
+
+- size might be too big,   thus need ArrayIndexOutOfBoundsException.
+- size might be too small, thus need ArrayIndexOutOfBoundsException.
+- size is artificial, the field array already has a length.
+- size is ambiguous:  size of X3D array (e.g. 3 SFColors in an MFColor) or size of java array (9 floats)?
+- need to check size of newValue if copying values back out to user program?
+
+Probably should be deprecated.  Relates to following issue as well.
+
+============================================================
+b. setValue() methods with no size parameter support more likely usage and also
+   are more reliable.
+
+Example:
+	public void setValue(double[] newValue);
+
+- Need to be included in specification API, likely as default.
+- Added as utility method in concretes library.
+
+============================================================
+c. B.5.4 Matrix3, B.5.5 Matrix4
+http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/abstracts.html#Matrix3
+http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/abstracts.html#Matrix4
+
+The following methods always take SFVec3f parameters, should there also be
+	SFVec3d methods for double-precision matrices?
+
+    public Matrix3 multiplyRowVector(SFVec3f vec)
+    public Matrix3 multiplyColVector(SFVec3f vec)
+
+============================================================
+d. Consider inserting new interface X3DMetadataNode
+
+following X3DMaterialNode:
+
+B.2.20.5 X3DMetadataNode
+http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/abstracts.html#X3DMetadataNode
+
+public interface X3DMetadataNode extends X3DNode {
+}
+
+Not yet clear how to add X3DMetadataNode for consistency while correctly integrating X3DMetadataObject
+
+============================================================
+3. SFNode/MFNode return types void
+
+Numerous interface return types are void, preventing a method from returning the
+current object from returning a copy of itself to permit method pipelining.
+
+Various utility methods have been added (typically named append* instead of add*)
+in order to circumvent this restriction.
+
+Need to consider changing SFNode/MFNode return signatures to support pipelining.
+Of note is that a method returning a null value is essentially the same as a
+void return, so no loss of functionality seems involved with this approach.
+
+============================================================

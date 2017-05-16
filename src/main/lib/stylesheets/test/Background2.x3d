@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D profile='Interchange' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
+  <head>
+    <meta content='Background2.x3d' name='title'/>
+    <meta content='Background example, sky above partially transparent mountain images above ground.' name='description'/>
+    <meta content='David R. Nadeau, John L. Moreland, Michael M. Heck' name='creator'/>
+    <meta content='Don Brutzman' name='translator'/>
+    <meta content='1 July 1998' name='created'/>
+    <meta content='2 February 2014' name='translated'/>
+    <meta content='8 February 2014' name='modified'/>
+    <meta content='originals/backs.wrl' name='reference'/>
+    <meta content='http://www.siggraph.org/s98' name='reference'/>
+    <meta content='http://www.siggraph.org/s98/conference/courses/18.html' name='reference'/>
+    <meta content='http://www.sdsc.edu/~moreland/courses/Siggraph98/vrml97/slides/mt0323.htm' name='reference'/>
+    <meta content='http://www.sdsc.edu/~moreland/courses/Siggraph98/vrml97/vrml97.htm' name='reference'/>
+    <meta content='http://www.web3d.org/x3d/content/examples/X3dResources.html' name='reference'/>
+    <meta content='http://www.web3d.org/x3d/content/examples/Vrml2.0Sourcebook/Siggraph98Course/Background2.x3d' name='identifier'/>
+    <meta content='Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html' name='generator'/>
+    <meta content='X3D-Edit, https://savage.nps.edu/X3D-Edit' name='generator'/>
+    <meta content='../license.html' name='license'/>
+  </head>
+  <Scene>
+    <Background backUrl='"mountns.png" "http://www.web3d.org/x3d/content/examples/Vrml2.0Sourcebook/Siggraph98Course/mountns.png"' frontUrl='"mountns.png" "http://www.web3d.org/x3d/content/examples/Vrml2.0Sourcebook/Siggraph98Course/mountns.png"' groundAngle='1.309 1.570796' groundColor='0.1 0.1 0.0 0.4 0.25 0.2 0.6 0.6 0.6' leftUrl='"mountns.png" "http://www.web3d.org/x3d/content/examples/Vrml2.0Sourcebook/Siggraph98Course/mountns.png"' rightUrl='"mountns.png" "http://www.web3d.org/x3d/content/examples/Vrml2.0Sourcebook/Siggraph98Course/mountns.png"' skyAngle='1.309 1.571' skyColor='0.0 0.2 0.7 0.0 0.5 1.0 1.0 1.0 1.0'/>
+  </Scene>
+</X3D>
