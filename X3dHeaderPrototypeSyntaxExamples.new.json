@@ -1,8 +1,8 @@
 { "X3D": {
     "encoding":"UTF-8",
     "@profile":"Immersive",
-    "@version":"3.2",
-    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.2.xsd",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
     "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "component": [
@@ -42,7 +42,7 @@
           },
           {
             "@name":"modified",
-            "@content":"26 November 2015"
+            "@content":"7 May 2017"
           },
           {
             "@name":"creator",
@@ -70,27 +70,7 @@
           },
           {
             "@name":"translated",
-            "@content":"08 May 2017"
-          },
-          {
-            "@name":"generator",
-            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
-          },
-          {
-            "@name":"reference",
-            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
-          },
-          {
-            "@name":"translated",
-            "@content":"8 May 2017"
-          },
-          {
-            "@name":"generator",
-            "@content":"X3DJSONLD: https://github.com/coderextreme/X3DJSONLD"
-          },
-          {
-            "@name":"translated",
-            "@content":"09 May 2017"
+            "@content":"16 May 2017"
           },
           {
             "@name":"generator",
@@ -336,7 +316,10 @@
                       },
                     "-children":[
                       {
-                        "#comment":"alternative: Text string='\"\\\"\\\"\"'"
+                        "#comment":"note that Collision proxy Shape is not rendered"
+                      },
+                      {
+                        "#comment":"alternative: Text string='\"He said, \\&quot;Immel did it!\\&quot;\"'"
                       }
                     ]
                   }
@@ -419,6 +402,13 @@
               "@url":["someUrl.x3d","http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/someUrl.x3d"]
             }
           },
+          { "IMPORT":
+            {
+              "@AS":"someInlineRoot",
+              "@importedDEF":"someName",
+              "@inlineDEF":"someInline"
+            }
+          },
           { "PositionInterpolator":
             {
               "@DEF":"StayInPlace",
@@ -440,13 +430,6 @@
               "@fromNode":"StayInPlace",
               "@toField":"set_translation",
               "@toNode":"someInlineRoot"
-            }
-          },
-          { "IMPORT":
-            {
-              "@AS":"someInlineRoot",
-              "@importedDEF":"someName",
-              "@inlineDEF":"someInline"
             }
           }
         ]

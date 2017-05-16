@@ -120,7 +120,7 @@ Shape55 = ShapeObject()
 Shape55.addComments(CommentsBlock("note that Collision proxy Shape is not rendered"))
 
 Shape55.addComments(CommentsBlock("alternative: Text string='\"He said, \\&quot;Immel did it!\\&quot;\"'"))
-Text56 = TextObject().setString(["He said, "Immel did it!""])
+Text56 = TextObject().setString(["He said, \"Immel did it!\""])
 Shape55.setGeometry(Text56)
 Appearance57 = AppearanceObject()
 Material58 = MaterialObject()

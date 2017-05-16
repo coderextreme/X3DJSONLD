@@ -48,27 +48,7 @@
           },
           {
             "@name":"translated",
-            "@content":"08 May 2017"
-          },
-          {
-            "@name":"generator",
-            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
-          },
-          {
-            "@name":"reference",
-            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
-          },
-          {
-            "@name":"translated",
-            "@content":"8 May 2017"
-          },
-          {
-            "@name":"generator",
-            "@content":"X3DJSONLD: https://github.com/coderextreme/X3DJSONLD"
-          },
-          {
-            "@name":"translated",
-            "@content":"09 May 2017"
+            "@content":"16 May 2017"
           },
           {
             "@name":"generator",
@@ -134,7 +114,7 @@
                     "-geometry":
                       { "Text":
                         {
-                          "@string":["I don't think so","" \"he said \"Hi""],
+                          "@string":["I don't think so","","he said \"Hi\""],
                           "-fontStyle":
                             { "FontStyle":
                               {
@@ -163,7 +143,7 @@
                     "-geometry":
                       { "Text":
                         {
-                          "@string":["I don't think so","" \"he said \"Hi""],
+                          "@string":["I don't think so","","he said \"Hi\""],
                           "-fontStyle":
                             { "FontStyle":
                               {

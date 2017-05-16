@@ -70,7 +70,7 @@ var ProtoInstance3 = null;
           .setProxy(new ShapeObject()
             .addComments(new CommentsBlock("note that Collision proxy Shape is not rendered"))
             .addComments(new CommentsBlock("alternative: Text string='\"He said, \\&quot;Immel did it!\\&quot;\"'"))
-            .setGeometry(new TextObject().setString(Java.to(["He said, "Immel did it!""], Java.type("java.lang.String[]"))))
+            .setGeometry(new TextObject().setString(Java.to(["He said, \"Immel did it!\""], Java.type("java.lang.String[]"))))
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject())))
           .addChild(new GroupObject().setUSE("ExampleChildElement")))

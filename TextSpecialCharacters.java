@@ -117,7 +117,7 @@ protected class MFColor0 {
 }
 protected class MFString1 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"Character entity substitutions:","empty string \"\" skips a line:","","apostrophe ' is &amp;apos;","ampersand &amp; is &amp;amp;","quote mark " is &amp;quot;","backslash \\\\ is X3D escape character","double backslash \\\\\\\\ is X3D backslash \\\\ character","Pi Π is &amp;#928; XML character entity"});
+    return new MFStringObject(new java.lang.String[] {"Character entity substitutions:","empty string \"\" skips a line:","","apostrophe ' is &amp;apos;","ampersand &amp; is &amp;amp;","quote mark \" is &amp;quot;","backslash \\ is X3D escape character","double backslash \\\\ is X3D backslash \\ character","Pi Π is &amp;#928; XML character entity"});
   }
 }
 protected class MFString2 {

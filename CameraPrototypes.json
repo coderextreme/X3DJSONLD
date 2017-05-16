@@ -64,7 +64,7 @@
           },
           {
             "@name":"translated",
-            "@content":"15 May 2017"
+            "@content":"16 May 2017"
           },
           {
             "@name":"generator",
@@ -831,7 +831,7 @@
 "                tracePrint ('          shotVector     delta=' + ViewpointNode.position.subtract(shots[i].moves[j].goalAimPoint).toString());",
 "                tracePrint ('          shotVector normalize=' + ViewpointNode.position.subtract(shots[i].moves[j].goalAimPoint).normalize().toString());",
 "                tracePrint ('               goalOrientation=' + shots[i].moves[j].goalOrientation.toString());",
-"                tracePrint ('      keyValueOrientation[k+1]=' + keyValueOrientation[k+1].toString() + '\\n');",
+"                tracePrint ('      keyValueOrientation[k+1]=' + keyValueOrientation[k+1].toString() + '\n');",
 "            }",
 "            k++; // update index to match latest key, keyValuePosition, keyValueOrientation",
 "",
@@ -1063,9 +1063,9 @@
 "    if (outputString == null) outputString = outputValue; // direct cast",
 "",
 "    if  (description.length > 0)",
-"         Browser.print ('[Camera: ' + description + '] ' + outputString + '\\n');",
+"         Browser.print ('[Camera: ' + description + '] ' + outputString + '\n');",
 "    else",
-"         Browser.print ('[Camera] ' + outputString + '\\n');",
+"         Browser.print ('[Camera] ' + outputString + '\n');",
 "}"
 ]
                       }
@@ -1456,9 +1456,9 @@
 "    if (outputString == null) outputString = outputValue; // direct cast",
 "",
 "    if  (description.length > 0)",
-"         Browser.print ('[CameraShot: ' + description + '] ' + outputString + '\\n');",
+"         Browser.print ('[CameraShot: ' + description + '] ' + outputString + '\n');",
 "    else",
-"         Browser.print ('[CameraShot] ' + outputString + '\\n');",
+"         Browser.print ('[CameraShot] ' + outputString + '\n');",
 "}"
 ]
                       }
@@ -1792,9 +1792,9 @@
 "    if (outputString == null) outputString = outputValue; // direct cast",
 "",
 "    if  (description.length > 0)",
-"         Browser.print ('[CameraMovement: ' + description + '] ' + outputString + '\\n');",
+"         Browser.print ('[CameraMovement: ' + description + '] ' + outputString + '\n');",
 "    else",
-"         Browser.print ('[CameraMovement] ' + outputString + '\\n');",
+"         Browser.print ('[CameraMovement] ' + outputString + '\n');",
 "}"
 ]
                       }
@@ -2074,9 +2074,9 @@
 "    if (outputString == null) outputString = outputValue; // direct cast",
 "",
 "    if  (description.length > 0)",
-"         Browser.print ('[OfflineRender: ' + description + '] ' + outputString + '\\n');",
+"         Browser.print ('[OfflineRender: ' + description + '] ' + outputString + '\n');",
 "    else",
-"         Browser.print ('[OfflineRender] ' + outputString + '\\n');",
+"         Browser.print ('[OfflineRender] ' + outputString + '\n');",
 "}"
 ]
                       }
