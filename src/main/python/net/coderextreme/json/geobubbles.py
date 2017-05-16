@@ -22,7 +22,7 @@ Scene8.addComments(CommentsBlock("Viewpoint DEF='Tour' position='0 0 4' orientat
 Scene8.addComments(CommentsBlock("PositionInterpolator DEF='TourPosition' key='0 1' keyValue='-0.5 -0.5 4 -0.5 0.5 4'/"))
 GeoViewpoint9 = GeoViewpointObject().setDEF("Tour").setPosition([0,0,4]).setOrientation([1,0,0,0]).setDescription("Tour Views")
 Scene8.addChild(GeoViewpoint9)
-Background10 = BackgroundObject().setBackUrl(["cubemap/BK.png","http://coderextreme.net/X3DJSONLD/cubemap/BK.png"]).setBottomUrl(["cubemap/BT.png","http://coderextreme.net/X3DJSONLD/cubemap/BT.png"]).setFrontUrl(["cubemap/FR.png","http://coderextreme.net/X3DJSONLD/cubemap/FR.png"]).setLeftUrl(["cubemap/LF.png","http://coderextreme.net/X3DJSONLD/cubemap/LF.png"]).setRightUrl(["cubemap/RT.png","http://coderextreme.net/X3DJSONLD/cubemap/RT.png"]).setTopUrl(["cubemap/TP.png","http://coderextreme.net/X3DJSONLD/cubemap/TP.png"])
+Background10 = BackgroundObject().setBackUrl(["images/BK.png","http://coderextreme.net/X3DJSONLD/images/BK.png"]).setBottomUrl(["images/BT.png","http://coderextreme.net/X3DJSONLD/images/BT.png"]).setFrontUrl(["images/FR.png","http://coderextreme.net/X3DJSONLD/images/FR.png"]).setLeftUrl(["images/LF.png","http://coderextreme.net/X3DJSONLD/images/LF.png"]).setRightUrl(["images/RT.png","http://coderextreme.net/X3DJSONLD/images/RT.png"]).setTopUrl(["images/TP.png","http://coderextreme.net/X3DJSONLD/images/TP.png"])
 Scene8.addChild(Background10)
 Transform11 = TransformObject()
 Shape12 = ShapeObject()
