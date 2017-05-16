@@ -11,8 +11,8 @@
     <Scene>
         <ProtoDeclare name='FlowerProto'>
             <ProtoInterface>
-                <field name='vertex' accessType='inputOutput' type='MFString' value='&quot;gl_flowers_chromatic.vs&quot;'/>
-                <field name='fragment' accessType='inputOutput' type='MFString' value='&quot;pc_flowers.fs&quot;'/>
+                <field name='vertex' accessType='inputOutput' type='MFString' value='"gl_flowers_chromatic.vs"'/>
+                <field name='fragment' accessType='inputOutput' type='MFString' value='"pc_flowers.fs"'/>
             </ProtoInterface>
             <ProtoBody>
                 <Transform DEF='transform'>
