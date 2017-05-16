@@ -104,12 +104,7 @@ public class CarDemoMain {
         .addMeta(new metaObject().setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/Basic/RigidBodyPhysics/CarDemoMain.x3d"))
         .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new metaObject().setName("generator").setContent("Xj3D converter, http://www.xj3d.org"))
-        .addMeta(new metaObject().setName("license").setContent("../../license.html"))
-        .addMeta(new metaObject().setName("translated").setContent("15 May 2017"))
-        .addMeta(new metaObject().setName("generator").setContent("X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"))
-        .addMeta(new metaObject().setName("reference").setContent("X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"))
-        .addMeta(new metaObject().setName("translated").setContent("15 May 2017"))
-        .addMeta(new metaObject().setName("generator").setContent("X3DJSONLD: https://github.com/coderextreme/X3DJSONLD")))
+        .addMeta(new metaObject().setName("license").setContent("../../license.html")))
       .setScene(new SceneObject()
         .addChild(new GroupObject()
           .addChild(new GroupObject().setDEF("CAR-CONTAINER")
@@ -1160,7 +1155,7 @@ protected class MFRotation51 {
 }
 protected class MFFloat52 {
   protected MFFloatObject getArray() {
-    return new MFFloatObject(new float[] {1.5712f,3.142f});
+    return new MFFloatObject(new float[] {1.5712f,3.1416f});
   }
 }
 protected class MFColor53 {

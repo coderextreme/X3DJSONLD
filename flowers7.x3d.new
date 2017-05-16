@@ -5,11 +5,6 @@
 <meta name="generator" content="manual"></meta>
 <meta name="identifier" content="http://coderextreme.net/X3DJSONLD/flowers7.x3d"></meta>
 <meta name="description" content="a flower"></meta>
-<meta name="translated" content="15 May 2017"></meta>
-<meta name="generator" content="X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"></meta>
-<meta name="reference" content="X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"></meta>
-<meta name="translated" content="15 May 2017"></meta>
-<meta name="generator" content="X3DJSONLD: https://github.com/coderextreme/X3DJSONLD"></meta>
 </head>
 <Scene><NavigationInfo></NavigationInfo>
 <!--Images courtesy of Paul Debevec's Light Probe Image Gallery--><Background DEF="background" backUrl="&quot;cubemap/all_probes/beach_cross/beach_back.png&quot; &quot;http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_back.png&quot;" bottomUrl="&quot;cubemap/all_probes/beach_cross/beach_bottom.png&quot; &quot;http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_bottom.png&quot;" frontUrl="&quot;cubemap/all_probes/beach_cross/beach_front.png&quot; &quot;http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_front.png&quot;" leftUrl="&quot;cubemap/all_probes/beach_cross/beach_left.png&quot; &quot;http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_left.png&quot;" rightUrl="&quot;cubemap/all_probes/beach_cross/beach_right.png&quot; &quot;http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_right.png&quot;" topUrl="&quot;cubemap/all_probes/beach_cross/beach_top.png&quot; &quot;http://coderextreme.net/X3DJSONLD/cubemap/all_probes/beach_cross/beach_top.png&quot;"></Background>

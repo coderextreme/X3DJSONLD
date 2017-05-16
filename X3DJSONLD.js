@@ -313,6 +313,7 @@ function ConvertObject(key, object, element, path, containerField) {
 			CDATACreateFunction(document, element, object[key].join("\r\n")+"\r\n");
 		} else {
 			if (key === 'connect' || key === 'fieldValue' || key === 'field' || key === 'meta' || key === 'component') {
+				/*
 				if (key === 'meta') {
 					// Add meta information for X3DJSONLD
 					var months = [
@@ -342,12 +343,15 @@ function ConvertObject(key, object, element, path, containerField) {
 					};
 							
 				}
+				*/
 				for (var childkey in object[key]) {  // for each field
-					if (typeof object[key][childkey] === 'object') {
-						var child = CreateElement(key, x3djsonNS, containerField);
-						ConvertToX3DOM(object[key][childkey], childkey, child, path);
-						element.appendChild(child);
-						element.appendChild(document.createTextNode("\n"));
+					if (key !== 'meta' || childkey < object[key].length - 3) {
+						if (typeof object[key][childkey] === 'object') {
+							var child = CreateElement(key, x3djsonNS, containerField);
+							ConvertToX3DOM(object[key][childkey], childkey, child, path);
+							element.appendChild(child);
+							element.appendChild(document.createTextNode("\n"));
+						}
 					}
 				}
 			} else {
