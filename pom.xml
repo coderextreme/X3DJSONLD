@@ -110,8 +110,8 @@
 				<configuration>
 					<transformationSets>
 						<transformationSet>
-							<dir>src/main/x3d</dir>
-							<stylesheet>src/main/xslt/X3dToJson.xslt</stylesheet>
+							<dir>src/main/orig</dir>
+							<stylesheet>src/main/lib/stylesheets/X3dToJson.xslt</stylesheet>
 							<outputDir>src/main/json</outputDir>
 							<fileMappers>
 								<fileMapper
@@ -121,8 +121,8 @@
 							</fileMappers>
 						</transformationSet>
 						<transformationSet>
-							<dir>src/main/x3d</dir>
-							<stylesheet>src/main/xslt/X3dToJava.xslt</stylesheet>
+							<dir>src/main/orig</dir>
+							<stylesheet>src/main/lib/stylesheets/X3dToJava.xslt</stylesheet>
 							<outputDir>src/main/java/net/x3djsonld</outputDir>
 							<fileMappers>
 								<fileMapper
