@@ -1,0 +1,208 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"bubble.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"John Carlson"
+          },
+          {
+            "@name":"description",
+            "@content":"Tour around a prismatic sphere"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://coderextreme.net/X3DJSONLD/bubble.x3d"
+          },
+          {
+            "@name":"translated",
+            "@content":"16 May 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "NavigationInfo":
+            {
+              "@type":["EXAMINE"]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Bubble in action",
+              "@orientation":[1,0,0,0],
+              "@position":[0,0,4]
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"Bubble",
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                      {
+                        "@DEF":"transform",
+                        "-children":[
+                          { "Shape":
+                            {
+                              "-appearance":
+                                { "Appearance":
+                                  {
+                                    "-material":
+                                      { "Material":
+                                        {
+                                          "@diffuseColor":[1,0,0],
+                                          "@transparency":0.2
+                                        }
+                                      }
+                                  }
+                                },
+                              "-geometry":
+                                { "Sphere":
+                                  {
+                                    "@radius":0.25
+                                  }
+                                }
+                            }
+                          },
+                          { "Script":
+                            {
+                              "@DEF":"bounce",
+                              "field": [
+                                {
+                                  "@name":"scale",
+                                  "@accessType":"inputOutput",
+                                  "@type":"SFVec3f",
+                                  "@value":[1,1,1]
+                                },
+                                {
+                                  "@name":"translation",
+                                  "@accessType":"inputOutput",
+                                  "@type":"SFVec3f",
+                                  "@value":[0,0,0]
+                                },
+                                {
+                                  "@name":"velocity",
+                                  "@accessType":"inputOutput",
+                                  "@type":"SFVec3f",
+                                  "@value":[0,0,0]
+                                },
+                                {
+                                  "@name":"scalvel",
+                                  "@accessType":"inputOutput",
+                                  "@type":"SFVec3f",
+                                  "@value":[0,0,0]
+                                },
+                                {
+                                  "@name":"set_fraction",
+                                  "@accessType":"inputOnly",
+                                  "@type":"SFFloat"
+                                }
+                              ],
+                              "#sourceText":[
+"ecmascript:",
+"function initialize() {",
+"    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);",
+"",
+"    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);",
+"}",
+"",
+"function set_translation(value) {",
+"   translation = value;",
+"}",
+"",
+"function set_scale(value) {",
+"   scale = value;",
+"}",
+"",
+"function translation_changed() {",
+"\treturn translation;",
+"}",
+"",
+"function set_fraction(value) {",
+"    translation = new SFVec3f(\ttranslation[0] + velocity[0], translation[1] + velocity[1], translation[2] + velocity[2]);",
+"    scale = new SFVec3f(scale[0] + scalvel[0], scale[1] + scalvel[1], scale[2] + scalvel[2]);",
+"    for (var j = 0; j < 3; j++) {",
+"\t    // if you get to far away or too big, explode",
+"\t    if ( Math.abs(translation[j]) > 256) {",
+"\t\ttranslation[j] = 0;",
+"\t\tinitialize();",
+"\t    }",
+"\t    if (Math.abs(scale[j]) > 20) {",
+"\t\tscale[j] = scale[j]/2;",
+"\t\ttranslation[j] = 0;",
+"\t\tinitialize();",
+"\t    }",
+"    }",
+"}"
+]
+                            }
+                          },
+                          { "TimeSensor":
+                            {
+                              "@DEF":"bubbleClock",
+                              "@cycleInterval":10.0,
+                              "@loop":true
+                            }
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromField":"translation_changed",
+                              "@fromNode":"bounce",
+                              "@toField":"set_translation",
+                              "@toNode":"transform"
+                            }
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromField":"scale_changed",
+                              "@fromNode":"bounce",
+                              "@toField":"set_scale",
+                              "@toNode":"transform"
+                            }
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromField":"fraction_changed",
+                              "@fromNode":"bubbleClock",
+                              "@toField":"set_fraction",
+                              "@toNode":"bounce"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"Bubble",
+              "@DEF":"bubbleA"
+            }
+          }
+        ]
+    }
+  }
+}
