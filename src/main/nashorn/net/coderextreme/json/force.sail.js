@@ -156,4 +156,4 @@ ProtoInstance6
             .addFieldValue(new fieldValueObject().setName("set_positionA").setValue("50 50 50"));
 ProtoInstance6
             .addFieldValue(new fieldValueObject().setName("set_positionB").setValue("50 50 -50"));
-    X3D0.toFileX3D("force.new.x3d");
+    X3D0.toFileX3D("../new/json/force.new.x3d");

@@ -116,4 +116,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
               .setAppearance(new AppearanceObject().setUSE("InterfaceAppearance")))
             .addChild(new TransformObject().setScale(Java.to([1.8,0.6,1], Java.type("float[]")))
               .addChild(new ShapeObject().setUSE("TransparentClickSurface"))))))      ;
-    X3D0.toFileX3D("ObliqueStrategies.new.x3d");
+    X3D0.toFileX3D("../new/json/ObliqueStrategies.new.x3d");

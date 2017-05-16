@@ -63,4 +63,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
               .addChild(new ShapeObject()
                 .setAppearance(new AppearanceObject().setUSE("CameraAppearance"))
                 .setGeometry(new IndexedFaceSetObject().setUSE("pSphere1_0Geo")))))))      ;
-    X3D0.toFileX3D("CameraShape.new.x3d");
+    X3D0.toFileX3D("../new/json/CameraShape.new.x3d");

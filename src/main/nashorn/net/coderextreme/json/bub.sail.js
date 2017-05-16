@@ -82,4 +82,4 @@ var ProtoInstance2 = null;
         .addChild(ProtoInstance0 = new ProtoInstanceObject().setName("Bubble"))
         .addChild(ProtoInstance1 = new ProtoInstanceObject().setName("Bubble"))
         .addChild(ProtoInstance2 = new ProtoInstanceObject().setName("Bubble")))      ;
-    X3D0.toFileX3D("bub.new.x3d");
+    X3D0.toFileX3D("../new/json/bub.new.x3d");

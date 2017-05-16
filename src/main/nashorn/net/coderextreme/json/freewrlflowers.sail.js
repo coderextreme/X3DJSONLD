@@ -39,4 +39,4 @@ ProtoInstance0
                   .addFieldValue(new fieldValueObject().setName("vertex").setValue("\"freewrl_flowers_chromatic.vs\""));
 ProtoInstance0
                   .addFieldValue(new fieldValueObject().setName("fragment").setValue("\"freewrl.fs\""));
-    X3D0.toFileX3D("freewrlflowers.new.x3d");
+    X3D0.toFileX3D("../new/json/freewrlflowers.new.x3d");

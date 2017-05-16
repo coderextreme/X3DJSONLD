@@ -52,4 +52,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                 .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("power").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue("2"))
                 .addParts(new ShaderPartObject().setType("VERTEX").setUrl(Java.to(["cobweb.vs","http://coderextreme.net/X3DJSONLD/cobweb.vs"], Java.type("java.lang.String[]"))))
                 .addParts(new ShaderPartObject().setUSE("common")))))))      ;
-    X3D0.toFileX3D("ball.new.x3d");
+    X3D0.toFileX3D("../new/json/ball.new.x3d");

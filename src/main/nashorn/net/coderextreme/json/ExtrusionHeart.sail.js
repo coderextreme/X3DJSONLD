@@ -21,4 +21,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .setGeometry(new ExtrusionObject().setCreaseAngle(3.14159).setCrossSection(Java.to([0,0.8,0.2,1,0.7,0.95,1,0.5,0.8,0,0.5,-0.3,0,-0.7,-0.5,-0.3,-0.8,0,-1,0.5,-0.7,0.95,-0.2,1,0,0.8], Java.type("float[]"))).setScale(Java.to([0.01,0.01,0.8,0.8,1,1,0.8,0.8,0.01,0.01], Java.type("float[]"))).setSolid(false).setSpine(Java.to([0,0,0,0,0.1,0,0,0.5,0,0,0.9,0,0,1,0], Java.type("float[]"))))
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject().setDiffuseColor(Java.to([0.8,0.3,0.3], Java.type("float[]"))))))))      ;
-    X3D0.toFileX3D("ExtrusionHeart.new.x3d");
+    X3D0.toFileX3D("../new/json/ExtrusionHeart.new.x3d");

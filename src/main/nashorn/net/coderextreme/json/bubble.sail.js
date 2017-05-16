@@ -69,4 +69,4 @@ var ProtoInstance0 = null;
               .addChild(new ROUTEObject().setFromNode("bounce").setFromField("scale_changed").setToNode("transform").setToField("set_scale"))
               .addChild(new ROUTEObject().setFromNode("bubbleClock").setFromField("fraction_changed").setToNode("bounce").setToField("set_fraction")))))
         .addChild(ProtoInstance0 = new ProtoInstanceObject().setName("Bubble").setDEF("bubbleA")))      ;
-    X3D0.toFileX3D("bubble.new.x3d");
+    X3D0.toFileX3D("../new/json/bubble.new.x3d");

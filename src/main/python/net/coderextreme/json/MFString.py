@@ -20,4 +20,4 @@ Group5.addChild(Shape6)
 Scene4.addChild(Group5)
 X3D0.setScene(Scene4)
 
-X3D0.toFileX3D("MFString.new.x3d")
+X3D0.toFileX3D("../new/json/MFString.new.x3d")

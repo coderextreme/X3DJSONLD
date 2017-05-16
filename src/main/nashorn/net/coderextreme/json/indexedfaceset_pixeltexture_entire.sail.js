@@ -34,4 +34,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .setTexture(new PixelTextureObject().setImage(Java.to([2,2,4,4278190335,16711935,4294967295,4294902015], Java.type("int[]"))).setRepeatS(false).setRepeatT(false)))
           .setGeometry(new IndexedFaceSetObject().setCoordIndex(Java.to([0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1], Java.type("int[]")))
             .setCoord(new CoordinateObject().setPoint(Java.to([-2,1.5,1,-2,-1.5,1,2,1.5,1,2,-1.5,1,2,1.5,-1,2,-1.5,-1,-2,1.5,-1,-2,-1.5,-1], Java.type("float[]")))))))      ;
-    X3D0.toFileX3D("indexedfaceset_pixeltexture_entire.new.x3d");
+    X3D0.toFileX3D("../new/json/indexedfaceset_pixeltexture_entire.new.x3d");

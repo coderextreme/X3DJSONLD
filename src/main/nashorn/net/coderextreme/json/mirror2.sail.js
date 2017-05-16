@@ -91,4 +91,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addChild(new ROUTEObject().setFromNode("UrlSelector").setFromField("right_changed").setToNode("rightShader").setToField("url"))
           .addChild(new ROUTEObject().setFromNode("UrlSelector").setFromField("top_changed").setToNode("topShader").setToField("url"))
           .addChild(new ROUTEObject().setFromNode("UrlSelector").setFromField("bottom_changed").setToNode("bottomShader").setToField("url"))))      ;
-    X3D0.toFileX3D("mirror2.new.x3d");
+    X3D0.toFileX3D("../new/json/mirror2.new.x3d");

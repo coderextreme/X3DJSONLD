@@ -168,4 +168,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addChild(new ROUTEObject().setFromNode("Animate").setFromField("d_changed").setToNode("cobweb").setToField("set_d"))
         .addChild(new ROUTEObject().setFromNode("Animate").setFromField("pdelta_changed").setToNode("cobweb").setToField("set_pdelta"))
         .addChild(new ROUTEObject().setFromNode("Animate").setFromField("tdelta_changed").setToNode("cobweb").setToField("set_tdelta")))      ;
-    X3D0.toFileX3D("flowers7.new.x3d");
+    X3D0.toFileX3D("../new/json/flowers7.new.x3d");

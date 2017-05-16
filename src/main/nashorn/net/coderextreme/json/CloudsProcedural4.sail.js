@@ -426,4 +426,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "}\n"+
 ""))
           .addChild(new DirectionalLightObject().setAmbientIntensity(1).setColor(Java.to([1,0,0], Java.type("float[]"))).setDirection(Java.to([-1,-1,0], Java.type("float[]"))).setGlobal(true))))      ;
-    X3D0.toFileX3D("CloudsProcedural4.new.x3d");
+    X3D0.toFileX3D("../new/json/CloudsProcedural4.new.x3d");

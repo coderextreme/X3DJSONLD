@@ -73,4 +73,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                     .setAppearance(new AppearanceObject().setUSE("LABEL_APPEARANCE"))
                     .setGeometry(new TextObject().setString(Java.to(["Z"], Java.type("java.lang.String[]")))
                       .setFontStyle(new FontStyleObject().setUSE("LABEL_FONT"))))))))))      ;
-    X3D0.toFileX3D("CoordinateAxes.new.x3d");
+    X3D0.toFileX3D("../new/json/CoordinateAxes.new.x3d");

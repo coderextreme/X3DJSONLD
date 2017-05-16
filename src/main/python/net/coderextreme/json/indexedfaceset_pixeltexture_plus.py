@@ -76,4 +76,4 @@ Shape30.setGeometry(IndexedFaceSet34)
 Scene22.addChild(Shape30)
 X3D0.setScene(Scene22)
 
-X3D0.toFileX3D("indexedfaceset_pixeltexture_plus.new.x3d")
+X3D0.toFileX3D("../new/json/indexedfaceset_pixeltexture_plus.new.x3d")

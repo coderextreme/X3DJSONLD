@@ -58,4 +58,4 @@ Shape16.setAppearance(Appearance19)
 Scene13.addChild(Shape16)
 X3D0.setScene(Scene13)
 
-X3D0.toFileX3D("TextSpecialCharacters.new.x3d")
+X3D0.toFileX3D("../new/json/TextSpecialCharacters.new.x3d")

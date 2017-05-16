@@ -873,4 +873,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                 .setFontStyle(new FontStyleObject().setJustify(Java.to(["MIDDLE","MIDDLE"], Java.type("java.lang.String[]")))))
               .setAppearance(new AppearanceObject()
                 .setMaterial(new MaterialObject().setDiffuseColor(Java.to([1,1,0.2], Java.type("float[]")))))))))      ;
-    X3D0.toFileX3D("CameraPrototypes.new.x3d");
+    X3D0.toFileX3D("../new/json/CameraPrototypes.new.x3d");

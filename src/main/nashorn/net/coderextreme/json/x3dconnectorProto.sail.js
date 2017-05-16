@@ -154,4 +154,4 @@ ProtoInstance2
           .addFieldValue(new fieldValueObject().setName("set_startpoint"));
 ProtoInstance2
           .addFieldValue(new fieldValueObject().setName("set_endpoint"));
-    X3D0.toFileX3D("x3dconnectorProto.new.x3d");
+    X3D0.toFileX3D("../new/json/x3dconnectorProto.new.x3d");

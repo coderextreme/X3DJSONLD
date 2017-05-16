@@ -816,4 +816,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addChild(new ROUTEObject().setFromField("chassisOrientation_reset").setFromNode("CAR-CONTROL-SCRIPT").setToField("resetOrientation").setToNode("CAMERA-CONTROL-SCRIPT"))
         .addChild(new ROUTEObject().setFromField("cameraTranslation").setFromNode("CAMERA-CONTROL-SCRIPT").setToField("translation").setToNode("CAMERA-TX"))
         .addChild(new ROUTEObject().setFromField("cameraRotation").setFromNode("CAMERA-CONTROL-SCRIPT").setToField("rotation").setToNode("CAMERA-TX")))      ;
-    X3D0.toFileX3D("CarDemoMain.new.x3d");
+    X3D0.toFileX3D("../new/json/CarDemoMain.new.x3d");

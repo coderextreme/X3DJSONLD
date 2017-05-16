@@ -2378,4 +2378,4 @@ ROUTE1177 = ROUTEObject().setFromField("touchTime").setFromNode("Stop_Touch").se
 Scene29.addChild(ROUTE1177)
 X3D0.setScene(Scene29)
 
-X3D0.toFileX3D("BoxManAnimationPanel.new.x3d")
+X3D0.toFileX3D("../new/json/BoxManAnimationPanel.new.x3d")

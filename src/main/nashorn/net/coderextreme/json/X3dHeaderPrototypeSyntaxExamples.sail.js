@@ -94,4 +94,4 @@ ProtoInstance2
                 .addFieldValue(new fieldValueObject().setName("onlyColor").setValue("0.2 0.6 0.6"));
 ProtoInstance3
           .addFieldValue(new fieldValueObject().setName("enabled").setValue("true"));
-    X3D0.toFileX3D("X3dHeaderPrototypeSyntaxExamples.new.x3d");
+    X3D0.toFileX3D("../new/json/X3dHeaderPrototypeSyntaxExamples.new.x3d");

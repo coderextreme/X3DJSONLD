@@ -76,4 +76,4 @@ var ProtoInstance3 = null;
         .addChild(ProtoInstance1 = new ProtoInstanceObject().setName("Bubble").setDEF("bubbleB"))
         .addChild(ProtoInstance2 = new ProtoInstanceObject().setName("Bubble").setDEF("bubbleC"))
         .addChild(ProtoInstance3 = new ProtoInstanceObject().setName("Bubble").setDEF("bubbleD")))      ;
-    X3D0.toFileX3D("cobweb.new.x3d");
+    X3D0.toFileX3D("../new/json/cobweb.new.x3d");

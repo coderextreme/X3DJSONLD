@@ -196,4 +196,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addChild(new ROUTEObject().setFromField("fraction_changed").setFromNode("Clock").setToField("set_fraction").setToNode("OrbitPath"))
         .addChild(new ROUTEObject().setFromField("value_changed").setFromNode("OrbitPath").setToField("set_rotation").setToNode("OrbitTransform"))
         .addChild(new ROUTEObject().setFromField("value_changed").setFromNode("OrbitPath").setToField("set_rotation").setToNode("OrbitTransform2")))      ;
-    X3D0.toFileX3D("flowers2.new.x3d");
+    X3D0.toFileX3D("../new/json/flowers2.new.x3d");

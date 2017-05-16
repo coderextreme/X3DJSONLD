@@ -56,4 +56,4 @@ ROUTE27 = ROUTEObject().setFromNode("ts").setFromField("fraction_changed").setTo
 Scene9.addChild(ROUTE27)
 X3D0.setScene(Scene9)
 
-X3D0.toFileX3D("flipp.new.x3d")
+X3D0.toFileX3D("../new/json/flipp.new.x3d")

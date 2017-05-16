@@ -116,4 +116,4 @@ ROUTE45 = ROUTEObject().setFromNode("S1").setFromField("scale").setToNode("C2").
 Scene7.addChild(ROUTE45)
 X3D0.setScene(Scene7)
 
-X3D0.toFileX3D("x3dconnector.new.x3d")
+X3D0.toFileX3D("../new/json/x3dconnector.new.x3d")

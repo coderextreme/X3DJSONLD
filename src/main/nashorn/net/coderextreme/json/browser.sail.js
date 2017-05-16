@@ -30,4 +30,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "\n"+
 "}\n"+
 "")))      ;
-    X3D0.toFileX3D("browser.new.x3d");
+    X3D0.toFileX3D("../new/json/browser.new.x3d");

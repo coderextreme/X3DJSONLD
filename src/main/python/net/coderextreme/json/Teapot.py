@@ -58,4 +58,4 @@ Transform13.addChild(Group14)
 Scene12.addChild(Transform13)
 X3D0.setScene(Scene12)
 
-X3D0.toFileX3D("Teapot.new.x3d")
+X3D0.toFileX3D("../new/json/Teapot.new.x3d")

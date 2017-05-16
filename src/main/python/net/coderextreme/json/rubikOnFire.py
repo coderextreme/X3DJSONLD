@@ -182,4 +182,4 @@ ProtoInstance87.addFieldValue(fieldValue89)
 Scene7.addChild(ProtoInstance87)
 X3D0.setScene(Scene7)
 
-X3D0.toFileX3D("rubikOnFire.new.x3d")
+X3D0.toFileX3D("../new/json/rubikOnFire.new.x3d")

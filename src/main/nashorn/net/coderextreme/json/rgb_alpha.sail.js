@@ -51,4 +51,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                 .setMaterial(new MaterialObject())
                 .setTexture(new PixelTextureObject().setUSE("RgbOpacityCheckerboard")))
               .setGeometry(new CylinderObject())))))      ;
-    X3D0.toFileX3D("rgb_alpha.new.x3d");
+    X3D0.toFileX3D("../new/json/rgb_alpha.new.x3d");

@@ -19,4 +19,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
               .setFontStyle(new FontStyleObject().setJustify(Java.to(["MIDDLE","MIDDLE"], Java.type("java.lang.String[]"))).setSize(5)))
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject().setDiffuseColor(Java.to([0,0,1], Java.type("float[]"))))))))      ;
-    X3D0.toFileX3D("text.new.x3d");
+    X3D0.toFileX3D("../new/json/text.new.x3d");

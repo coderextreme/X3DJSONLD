@@ -73,4 +73,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addChild(new ROUTEObject().setFromNode("S1").setFromField("translation").setToNode("C0").setToField("translation"))
         .addChild(new ROUTEObject().setFromNode("S1").setFromField("rotation").setToNode("C2").setToField("rotation"))
         .addChild(new ROUTEObject().setFromNode("S1").setFromField("scale").setToNode("C2").setToField("scale")))      ;
-    X3D0.toFileX3D("x3dconnector.new.x3d");
+    X3D0.toFileX3D("../new/json/x3dconnector.new.x3d");

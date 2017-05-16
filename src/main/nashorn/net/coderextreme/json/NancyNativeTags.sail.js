@@ -487,4 +487,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addChild(new ROUTEObject().setFromField("value_changed").setFromNode("upper_bodyRotInterp_Jump").setToField("set_rotation").setToNode("hanim_vl1"))
         .addChild(new ROUTEObject().setFromField("value_changed").setFromNode("whole_bodyRotInterp_Jump").setToField("set_rotation").setToNode("hanim_HumanoidRoot"))
         .addChild(new ROUTEObject().setFromField("value_changed").setFromNode("whole_bodyTranInterp_Jump").setToField("set_translation").setToNode("hanim_HumanoidRoot")))      ;
-    X3D0.toFileX3D("NancyNativeTags.new.x3d");
+    X3D0.toFileX3D("../new/json/NancyNativeTags.new.x3d");

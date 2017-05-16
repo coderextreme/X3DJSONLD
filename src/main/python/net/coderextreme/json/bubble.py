@@ -93,4 +93,4 @@ ProtoInstance27 = ProtoInstanceObject().setName("Bubble").setDEF("bubbleA")
 Scene7.addChild(ProtoInstance27)
 X3D0.setScene(Scene7)
 
-X3D0.toFileX3D("bubble.new.x3d")
+X3D0.toFileX3D("../new/json/bubble.new.x3d")

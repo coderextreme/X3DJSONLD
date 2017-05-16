@@ -106,4 +106,4 @@ ProtoInstance2
             .addFieldValue(new fieldValueObject().setName("positionA").setValue("0 0 0"));
 ProtoInstance2
             .addFieldValue(new fieldValueObject().setName("positionB").setValue("50 50 50"));
-    X3D0.toFileX3D("fors2.new.x3d");
+    X3D0.toFileX3D("../new/json/fors2.new.x3d");

@@ -42,4 +42,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .setColor(new ColorObject().setColor(Java.to([0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0], Java.type("float[]"))))
             .setCoord(new CoordinateObject().setPoint(Java.to([-2,1,1,-2,-1,1,2,1,1,2,-1,1,2,1,-1,2,-1,-1,-2,1,-1,-2,-1,-1], Java.type("float[]"))))
             .setTexCoord(new TextureCoordinateObject().setPoint(Java.to([-1,2,-1,-1,2,2,2,-1], Java.type("float[]")))))))      ;
-    X3D0.toFileX3D("indexedfaceset_pixeltexture_plus.new.x3d");
+    X3D0.toFileX3D("../new/json/indexedfaceset_pixeltexture_plus.new.x3d");
