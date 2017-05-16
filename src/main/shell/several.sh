@@ -9,9 +9,9 @@ export PROCESSORS=${PROCESSORS-8}
 
 python ../python/classes.py
 
-X3DTOOUTPUT='s/\/x3d\//\/new\/json\//' 
-X3DTODOMSER='s/\/x3d\//\/new\/x3d\//' 
-OUTPUTTOX3D='s/\/new\/json/\/x3d/'
+X3DTOOUTPUT='s/\/orig\//\/new\/json\//' 
+X3DTODOMSER='s/\/orig\//\/new\/x3d\//' 
+OUTPUTTOX3D='s/\/new\/json/\/orig/'
 DOMSERTOORG='s/\/new//'
 STYLESHEETDIR=../lib/stylesheets
 
@@ -23,7 +23,7 @@ do
 	${NODE} ${NODEDIR}/xmldiff.js `dirname $i | sed $DOMSERTOORG`/`basename $i .x3d.new`.x3d $i
 done
 
-for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.java/' -e 's/\/x3d\//\/java\/net\/coderextreme\/json\//' | xargs ls -d`
+for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.java/' -e 's/\/orig\//\/java\/net\/coderextreme\/json\//' | xargs ls -d`
 do
 	pushd `dirname $i` > /dev/null
 	echo
@@ -32,7 +32,7 @@ do
 	popd > /dev/null
 done
 
-for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.class/' -e 's/\/x3d\//\/java\/net\/coderextreme\/json\//' | xargs ls -d | sed 's/\.class$//' | sed -e 's/^..\/java\///'`
+for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.class/' -e 's/\/orig\//\/java\/net\/coderextreme\/json\//' | xargs ls -d | sed 's/\.class$//' | sed -e 's/^..\/java\///'`
 do
 	pushd ../java > /dev/null
 	echo
@@ -54,7 +54,7 @@ do
 done
 
 
-for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.sail.js/' -e 's/\/x3d\//\/nashorn\/net\/coderextreme\/json\//' | xargs ls -d | sed 's/\.class$//' | sed -e 's/^..\/java\///'`
+for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.sail.js/' -e 's/\/orig\//\/nashorn\/net\/coderextreme\/json\//' | xargs ls -d | sed 's/\.class$//' | sed -e 's/^..\/java\///'`
 do
 	pushd ../nashorn > /dev/null
 	echo
