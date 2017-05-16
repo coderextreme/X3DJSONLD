@@ -32,4 +32,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addChild(new ROUTEObject().setFromNode("ci").setFromField("value_changed").setToNode("pointList").setToField("set_point"))
         .addChild(new ROUTEObject().setFromNode("si").setFromField("value_changed").setToNode("ci").setToField("set_fraction"))
         .addChild(new ROUTEObject().setFromNode("ts").setFromField("fraction_changed").setToNode("si").setToField("set_fraction")))      ;
-    X3D0.toFileX3D("flipp.new.x3d");
+    X3D0.toFileX3D("../new/json/flipp.new.x3d");

@@ -78,4 +78,4 @@ Transform33.addChild(ProtoInstance34)
 Scene10.addChild(Transform33)
 X3D0.setScene(Scene10)
 
-X3D0.toFileX3D("qq3.new.x3d")
+X3D0.toFileX3D("../new/json/qq3.new.x3d")

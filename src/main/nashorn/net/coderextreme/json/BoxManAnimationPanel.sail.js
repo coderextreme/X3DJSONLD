@@ -1193,4 +1193,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addChild(new ROUTEObject().setFromField("touchTime").setFromNode("Stop_Touch").setToField("set_stopTime").setToNode("JumpTimer"))
         .addChild(new ROUTEObject().setFromField("touchTime").setFromNode("Stop_Touch").setToField("set_stopTime").setToNode("KickTimer"))
         .addChild(new ROUTEObject().setFromField("touchTime").setFromNode("Stop_Touch").setToField("set_startTime").setToNode("StopTimer")))      ;
-    X3D0.toFileX3D("BoxManAnimationPanel.new.x3d");
+    X3D0.toFileX3D("../new/json/BoxManAnimationPanel.new.x3d");

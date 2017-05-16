@@ -171,4 +171,4 @@ var ProtoInstance2 = null;
           .addChild(ProtoInstance0 = new ProtoInstanceObject().setName("flower"))
           .addChild(ProtoInstance1 = new ProtoInstanceObject().setName("flower"))
           .addChild(ProtoInstance2 = new ProtoInstanceObject().setName("flower"))))      ;
-    X3D0.toFileX3D("flowers.new.x3d");
+    X3D0.toFileX3D("../new/json/flowers.new.x3d");

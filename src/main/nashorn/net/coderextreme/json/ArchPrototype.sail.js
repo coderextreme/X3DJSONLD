@@ -109,4 +109,4 @@ ProtoInstance0
           .addFieldValue(new fieldValueObject().setName("pierWidth").setValue("1"));
 ProtoInstance0
           .addFieldValue(new fieldValueObject().setName("pierHeight").setValue("2"));
-    X3D0.toFileX3D("ArchPrototype.new.x3d");
+    X3D0.toFileX3D("../new/json/ArchPrototype.new.x3d");

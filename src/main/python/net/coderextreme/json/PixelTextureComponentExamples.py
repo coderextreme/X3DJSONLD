@@ -154,4 +154,4 @@ Transform69.addChild(Shape70)
 Scene15.addChild(Transform69)
 X3D0.setScene(Scene15)
 
-X3D0.toFileX3D("PixelTextureComponentExamples.new.x3d")
+X3D0.toFileX3D("../new/json/PixelTextureComponentExamples.new.x3d")

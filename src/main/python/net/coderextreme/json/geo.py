@@ -80,4 +80,4 @@ Transform12.addChild(Shape13)
 Scene7.addChild(Transform12)
 X3D0.setScene(Scene7)
 
-X3D0.toFileX3D("geo.new.x3d")
+X3D0.toFileX3D("../new/json/geo.new.x3d")

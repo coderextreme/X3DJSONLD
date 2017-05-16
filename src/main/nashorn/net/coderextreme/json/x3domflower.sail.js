@@ -98,4 +98,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                 .addParts(new ShaderPartObject().setType("VERTEX").setUrl(Java.to(["x3dom_flowers_plain.vs","http://coderextreme.net/X3DJSONLD/x3dom_flowers_plain.vs"], Java.type("java.lang.String[]"))))
                 .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(Java.to(["plain.fs","http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"], Java.type("java.lang.String[]"))))))
             .setGeometry(new SphereObject().setRadius(20)))))      ;
-    X3D0.toFileX3D("x3domflower.new.x3d");
+    X3D0.toFileX3D("../new/json/x3domflower.new.x3d");

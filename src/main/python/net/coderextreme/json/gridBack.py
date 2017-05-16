@@ -40,4 +40,4 @@ Shape14.setGeometry(IndexedFaceSet17)
 Scene13.addChild(Shape14)
 X3D0.setScene(Scene13)
 
-X3D0.toFileX3D("gridBack.new.x3d")
+X3D0.toFileX3D("../new/json/gridBack.new.x3d")

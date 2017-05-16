@@ -196,4 +196,4 @@ ProtoDeclare8.setProtoBody(ProtoBody12)
 Scene7.addChild(ProtoDeclare8)
 X3D0.setScene(Scene7)
 
-X3D0.toFileX3D("flowerproto.new.x3d")
+X3D0.toFileX3D("../new/json/flowerproto.new.x3d")

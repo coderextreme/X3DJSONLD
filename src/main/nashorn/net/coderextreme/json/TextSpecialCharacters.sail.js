@@ -33,4 +33,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .setFontStyle(new FontStyleObject().setDEF("CenteredFontStyle").setJustify(Java.to(["MIDDLE","MIDDLE"], Java.type("java.lang.String[]")))))
           .setAppearance(new AppearanceObject()
             .setMaterial(new MaterialObject().setDEF("DefaultMaterial").setDiffuseColor(Java.to([0.2,0.2,0.2], Java.type("float[]")))))))      ;
-    X3D0.toFileX3D("TextSpecialCharacters.new.x3d");
+    X3D0.toFileX3D("../new/json/TextSpecialCharacters.new.x3d");

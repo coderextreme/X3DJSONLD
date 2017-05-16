@@ -130,4 +130,4 @@ var ProtoInstance2 = null;
           .addChild(ProtoInstance1 = new ProtoInstanceObject().setName("Process")))
         .addChild(new TransformObject().setTranslation(Java.to([0,2.5,0], Java.type("float[]")))
           .addChild(ProtoInstance2 = new ProtoInstanceObject().setName("Process"))))      ;
-    X3D0.toFileX3D("pp3.new.x3d");
+    X3D0.toFileX3D("../new/json/pp3.new.x3d");

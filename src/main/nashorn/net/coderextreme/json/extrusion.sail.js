@@ -36,4 +36,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 ""))
           .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("cycleTime").setToNode("MoveCylinder").setToField("set_cycle"))
           .addChild(new ROUTEObject().setFromNode("MoveCylinder").setFromField("spine").setToNode("extrusion").setToField("set_spine"))))      ;
-    X3D0.toFileX3D("extrusion.new.x3d");
+    X3D0.toFileX3D("../new/json/extrusion.new.x3d");

@@ -33,4 +33,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .setGeometry(new TextObject().setString(Java.to(["I don't think so","","he said \"Hi\""], Java.type("java.lang.String[]")))
               .setFontStyle(new FontStyleObject().setUSE("testFontStyle")))
             .setAppearance(new AppearanceObject().setUSE("LightBlueAppearance")))))      ;
-    X3D0.toFileX3D("TextExamples.new.x3d");
+    X3D0.toFileX3D("../new/json/TextExamples.new.x3d");

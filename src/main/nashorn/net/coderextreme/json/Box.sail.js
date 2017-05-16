@@ -67,4 +67,4 @@ ProtoInstance3
               .setGeometry(new BoxObject().setSize(Java.to([1,1,1], Java.type("float[]"))))
               .setAppearance(new AppearanceObject()
                 .setMaterial(new MaterialObject().setDiffuseColor(Java.to([0,1,0], Java.type("float[]")))))));
-    X3D0.toFileX3D("Box.new.x3d");
+    X3D0.toFileX3D("../new/json/Box.new.x3d");

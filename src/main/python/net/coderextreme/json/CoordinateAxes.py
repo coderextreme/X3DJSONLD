@@ -138,4 +138,4 @@ Collision8.addChild(Transform43)
 Scene7.addChild(Collision8)
 X3D0.setScene(Scene7)
 
-X3D0.toFileX3D("CoordinateAxes.new.x3d")
+X3D0.toFileX3D("../new/json/CoordinateAxes.new.x3d")

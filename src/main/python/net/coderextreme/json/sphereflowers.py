@@ -52,4 +52,4 @@ Group10.addChild(ProtoInstance25)
 Scene7.addChild(Group10)
 X3D0.setScene(Scene7)
 
-X3D0.toFileX3D("sphereflowers.new.x3d")
+X3D0.toFileX3D("../new/json/sphereflowers.new.x3d")

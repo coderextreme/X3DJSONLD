@@ -157,4 +157,4 @@ Transform10.addChild(ROUTE66)
 Scene7.addChild(Transform10)
 X3D0.setScene(Scene7)
 
-X3D0.toFileX3D("mirror2.new.x3d")
+X3D0.toFileX3D("../new/json/mirror2.new.x3d")

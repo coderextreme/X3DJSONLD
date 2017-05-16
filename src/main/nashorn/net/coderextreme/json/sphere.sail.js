@@ -17,4 +17,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject().setDiffuseColor(Java.to([1,1,1], Java.type("float[]")))))
             .setGeometry(new SphereObject()))))      ;
-    X3D0.toFileX3D("sphere.new.x3d");
+    X3D0.toFileX3D("../new/json/sphere.new.x3d");

@@ -912,4 +912,4 @@ Anchor417.addChild(Transform418)
 Scene21.addChild(Anchor417)
 X3D0.setScene(Scene21)
 
-X3D0.toFileX3D("CameraExamples.new.x3d")
+X3D0.toFileX3D("../new/json/CameraExamples.new.x3d")

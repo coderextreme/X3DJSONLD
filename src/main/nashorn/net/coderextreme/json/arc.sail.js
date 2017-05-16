@@ -159,4 +159,4 @@ ProtoInstance10
 ProtoInstance10
           .addFieldValue(new fieldValueObject().setName("connectornode")
             .addChild(new TransformObject().setUSE("cylinder3")));
-    X3D0.toFileX3D("arc.new.x3d");
+    X3D0.toFileX3D("../new/json/arc.new.x3d");

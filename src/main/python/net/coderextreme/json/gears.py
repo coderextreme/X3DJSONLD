@@ -40,4 +40,4 @@ Group14.addChild(Shape15)
 Scene12.addChild(Group14)
 X3D0.setScene(Scene12)
 
-X3D0.toFileX3D("gears.new.x3d")
+X3D0.toFileX3D("../new/json/gears.new.x3d")

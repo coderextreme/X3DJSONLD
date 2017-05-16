@@ -44,4 +44,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                 .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("power").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("2"))
                 .addParts(new ShaderPartObject().setType("VERTEX").setUrl(Java.to(["x3dom.vs","http://coderextreme.net/X3DJSONLD/x3dom.vs"], Java.type("java.lang.String[]"))))
                 .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(Java.to(["pc_bubbles.fs","http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"], Java.type("java.lang.String[]")))))))))      ;
-    X3D0.toFileX3D("geo.new.x3d");
+    X3D0.toFileX3D("../new/json/geo.new.x3d");

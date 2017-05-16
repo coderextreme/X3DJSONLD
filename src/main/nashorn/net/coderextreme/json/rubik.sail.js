@@ -86,4 +86,4 @@ ProtoInstance8
                 .addFieldValue(new fieldValueObject().setName("ztranslation").setValue("0 0 -2"));
 ProtoInstance9
           .addFieldValue(new fieldValueObject().setName("ttranslation").setValue("0 0 0"));
-    X3D0.toFileX3D("rubik.new.x3d");
+    X3D0.toFileX3D("../new/json/rubik.new.x3d");

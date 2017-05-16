@@ -168,4 +168,4 @@ ROUTE77 = ROUTEObject().setFromField("value_changed").setFromNode("StayInPlace")
 Scene17.addChild(ROUTE77)
 X3D0.setScene(Scene17)
 
-X3D0.toFileX3D("X3dHeaderPrototypeSyntaxExamples.new.x3d")
+X3D0.toFileX3D("../new/json/X3dHeaderPrototypeSyntaxExamples.new.x3d")

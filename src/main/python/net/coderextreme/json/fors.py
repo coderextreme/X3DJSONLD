@@ -158,4 +158,4 @@ ROUTE57 = ROUTEObject().setFromNode("nodeB").setFromField("position").setToNode(
 Scene8.addChild(ROUTE57)
 X3D0.setScene(Scene8)
 
-X3D0.toFileX3D("fors.new.x3d")
+X3D0.toFileX3D("../new/json/fors.new.x3d")

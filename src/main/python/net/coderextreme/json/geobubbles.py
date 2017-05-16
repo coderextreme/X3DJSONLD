@@ -77,4 +77,4 @@ ROUTE26 = ROUTEObject().setFromNode("TourPosition").setFromField("geovalue_chang
 Scene8.addChild(ROUTE26)
 X3D0.setScene(Scene8)
 
-X3D0.toFileX3D("geobubbles.new.x3d")
+X3D0.toFileX3D("../new/json/geobubbles.new.x3d")

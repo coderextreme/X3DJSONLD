@@ -136,4 +136,4 @@ ConfigurationProperties.setStripTrailingZeroes(true);
               .addChild(new ROUTEObject().setFromNode("Bounce").setFromField("d").setToNode("shader").setToField("d"))
               .addChild(new ROUTEObject().setFromNode("Bounce").setFromField("tdelta").setToNode("shader").setToField("tdelta"))
               .addChild(new ROUTEObject().setFromNode("Bounce").setFromField("pdelta").setToNode("shader").setToField("pdelta"))))))      ;
-    X3D0.toFileX3D("flowerproto.new.x3d");
+    X3D0.toFileX3D("../new/json/flowerproto.new.x3d");

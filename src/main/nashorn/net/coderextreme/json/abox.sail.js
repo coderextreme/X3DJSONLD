@@ -38,4 +38,4 @@ ProtoInstance1
           .addFieldValue(new fieldValueObject().setName("myShape")
             .addChild(new ShapeObject()
               .setGeometry(new BoxObject().setSize(Java.to([1,1,1], Java.type("float[]"))))));
-    X3D0.toFileX3D("abox.new.x3d");
+    X3D0.toFileX3D("../new/json/abox.new.x3d");

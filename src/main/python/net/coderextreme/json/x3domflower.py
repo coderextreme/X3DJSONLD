@@ -188,4 +188,4 @@ Transform66.addChild(Shape67)
 Scene7.addChild(Transform66)
 X3D0.setScene(Scene7)
 
-X3D0.toFileX3D("x3domflower.new.x3d")
+X3D0.toFileX3D("../new/json/x3domflower.new.x3d")
