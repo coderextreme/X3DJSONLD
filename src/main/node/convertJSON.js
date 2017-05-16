@@ -21,11 +21,10 @@ var ConvertToX3DOM = X3DJSONLD.ConvertToX3DOM;
 var Script = require('./Script');
 var LOG = Script.LOG;
 
-Object.assign(mapToMethod, {
-});
-
-for (var map in mapToMethod2) {
-	Object.assign(mapToMethod[map], mapToMethod2[map]);
+for (var par in mapToMethod2) {
+	for (var child in mapToMethod2[par]) {
+		mapToMethod[par][child], mapToMethod2[par][child]);
+	}
 }
 
 var validate = function() { return false; }
