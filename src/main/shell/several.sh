@@ -1,5 +1,4 @@
-#!/bin/sh
-
+#!/bin/sh -x
 
 # Run the Test Suite
 
@@ -8,45 +7,61 @@ export PROCESSORS=${PROCESSORS-8}
 
 . ./classpath
 
-javac RunSaxon.java
-python classes.py
+python ../python/classes.py
 
-(ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java RunSaxon ---overwrite | xargs -P $PROCESSORS ${NODE} json2all.js
+X3DTOOUTPUT='s/\/x3d\//\/new\/json\//' 
 
-for i in `(ls "$@" | grep -v intermediate | grep -v "\.new") | sed 's/\.x3d$/.x3d.new/'| sed 's/\/c\/x3d-code\/www.web3d.org/www_web3d_org/'`
+
+(ls -d "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java net.coderextreme.RunSaxon ---overwrite ---silent --../xslt/X3dToJSON.xslt -json | xargs -P $PROCESSORS ${NODE} ${NODEDIR}/json2all.js
+
+for i in `(ls -d "$@" | grep -v intermediate | grep -v "\.new") | sed  -e 's/\.x3d$/.x3d.new/' -e $X3DTOOUTPUT`
 do
-	${NODE} xmldiff.js `dirname $i  | sed 's/.\/www_web3d_org/\/c\/x3d-code\/www.web3d.org/'`/`basename $i .x3d.new`.x3d $i
+	${NODE} ${NODEDIR}/xmldiff.js `dirname $i | sed 's/\/new\/json/\/x3d/'`/`basename $i .x3d.new`.x3d $i
 done
 
-(ls "$@" | grep -v intermediate | grep -v "\.new") | sed 's/\.x3d$/.java/' | sed 's/\/c\/x3d-code\/www.web3d.org/www_web3d_org/' | xargs ls -d | xargs -L 1 -P $PROCESSORS javac -J-Xss1g -J-Xmx4g
-(ls "$@" | grep -v intermediate | grep -v "\.new") | sed 's/\.x3d$/.class/' | sed 's/\/c\/x3d-code\/www.web3d.org/www_web3d_org/' | xargs ls -d | sed 's/\.class$//' | sed 's/^\.*\///' | xargs -L 1 -P $PROCESSORS java -d64 -Xss1g -Xmx4g
-
-for NEW in `(ls "$@" | grep -v intermediate | grep -v "\.new") | sed 's/\.x3d$/.new.json/'| sed 's/\/c\/x3d-code\/www.web3d.org/www_web3d_org/'`
+for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.java/' -e 's/\/x3d\//\/java\/net\/coderextreme\/json\//' | xargs ls -d`
 do
-	JSON=`dirname $NEW | sed 's/www_web3d_org/\/c\/x3d-code\/www.web3d.org/' `/`basename $NEW .new.json`.json
-	if [ -e $NEW ]
-	then if [ -n "`${NODE} jsondiff.js $JSON $NEW`" ]
-		then
-			${NODE} jsondiff.js $JSON $NEW
-		fi
-	fi
+	pushd `dirname $i` > /dev/null
+	echo
+	echo $i
+ 	javac -J-Xss1g -J-Xmx4g `basename $i`
+	popd > /dev/null
 done
 
-for i in `(ls "$@") | sed 's/\.x3d$/.new.json.intermediate.x3d/'| sed 's/\/c\/x3d-code\/www.web3d.org/www_web3d_org/'`
+for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.class/' -e 's/\/x3d\//\/java\/net\/coderextreme\/json\//' | xargs ls -d | sed 's/\.class$//' | sed -e 's/^..\/java\///'`
 do
-	${NODE} xmldiff.js `dirname $i  | sed 's/.\/www_web3d_org/\/c\/x3d-code\/www.web3d.org/'`/`basename $i .new.json.intermediate.x3d`.x3d $i
+	pushd ../java > /dev/null
+	echo
+	echo $i
+	java -d64 -Xss1g -Xmx4g $i # sh runToError.sh
+	popd > /dev/null
 done
 
-(ls "$@" | grep -v intermediate | grep -v "\.new") | sed "s/\.x3d$/.sail.js/" | sed 's/\/c\/x3d-code\/www.web3d.org/www_web3d_org/' | xargs -L 1 -P $PROCESSORS jjs -J-Xss1g -J-Xmx4g -cp "${NASHORN_CLASSPATH}"
 
-for i in `(ls "$@" | grep -v intermediate | grep -v "\.new") | sed 's/\.x3d$/.new.x3d/'| sed 's/\/c\/x3d-code\/www.web3d.org/www_web3d_org/'`
+for NEW in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.new.json/' -e $X3DTOOUTPUT`
 do
-	X3D=`dirname $i | sed 's/www_web3d_org/\/c\/x3d-code\/www.web3d.org/' `/`basename $i .new.x3d`.X3d
-	if [ -e $i ]
-	then
-		if [ -n "`${NODE} xmldiff.js $X3D $i`" ]
-		then
-			${NODE} xmldiff.js $X3D $i
-		fi
-	fi
+	JSON=`dirname $NEW | sed 's/\/new//' `/`basename $NEW .new.json`.json
+	${NODE} ${NODEDIR}/jsondiff.js $JSON $NEW
+done
+
+
+for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" |  sed -e 's/\.x3d$/.new.json.intermediate.x3d/' -e $X3DTOOUTPUT`
+do
+	${NODE} ${NODEDIR}/xmldiff.js `dirname $i  | sed 's/\/new\/json/\/x3d/'`/`basename $i .new.json.intermediate.x3d`.x3d $i
+done
+
+
+for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.sail.js/' -e 's/\/x3d\//\/nashorn\/net\/coderextreme\/json\//' | xargs ls -d | sed 's/\.class$//' | sed -e 's/^..\/java\///'`
+do
+	pushd ../nashorn > /dev/null
+	echo
+	echo $i
+	jjs -J-Xss1g -J-Xmx4g -cp "${NASHORN_CLASSPATH}" $i
+	popd > /dev/null
+done
+
+for NEW in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.new.x3d/' -e $X3DTOOUTPUT`
+do
+	X3D=`dirname $NEW | sed 's/\/new//' `/`basename $NEW .new.x3d`.x3d
+	${NODE} ${NODEDIR}/xmldiff.js $X3D $NEW
 done
