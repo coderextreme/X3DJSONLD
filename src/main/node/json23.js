@@ -7,4 +7,9 @@ process.argv.shift();
 
 var convertJSON = require('./convertJSON.js').convertJSON;
 
-convertJSON({'./Three2Serializer.js': ".three.js"});
+convertJSON([{ 
+	serializer : './Three2Serilizer.js',
+	folder : "../new/three/",
+	extension : ".three.js",
+	codeOutput : "",
+	}]);

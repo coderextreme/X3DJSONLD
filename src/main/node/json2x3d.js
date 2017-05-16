@@ -7,4 +7,8 @@ process.argv.shift();
 
 var convertJSON = require('./convertJSON.js').convertJSON;
 
-convertJSON({'./DOMSerializer.js': ".x3d.new"});
+convertJSON([{ 
+	serializer : './DOMSerializer.js',
+	folder : "../new/",
+	extension : ".x3d.new",
+	}]);

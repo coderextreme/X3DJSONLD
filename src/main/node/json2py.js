@@ -7,4 +7,9 @@ process.argv.shift();
 
 var convertJSON = require('./convertJSON.js').convertJSON;
 
-convertJSON({'./PythonSerializer.js': ".py"});
+convertJSON([{ 
+	serializer : './PythonSerializer.js',
+	folder : "../python/",
+	extension : ".py",
+	codeOutput : "../new/",
+	}]);

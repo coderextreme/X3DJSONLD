@@ -7,4 +7,9 @@ process.argv.shift();
 
 var convertJSON = require('./convertJSON.js').convertJSON;
 
-convertJSON({'./AframeSerializer.js': ".aframe"});
+convertJSON([{ 
+	serializer : './AframeSerilizer.js',
+	folder : "../new/aframe/",
+	extension : ".aframe",
+	codeOutput : "",
+	}]);
