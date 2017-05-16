@@ -140,7 +140,7 @@ ecmascript:
             <field accessType="inputOutput" name="counter" value="0" type="SFInt32"/>
             <field accessType="outputOnly" name="node_changed" type="SFNode"/>
             <field accessType="inputOnly" name="add_node" value="false" type="SFBool"/>
-            <field id="MN" name="ModifiableNode" type="SFNode" accessType="initializeOnly">
+            <field name="ModifiableNode" type="SFNode" accessType="inputOutput">
                 <Transform USE="HoldsContent"/>
             </field>
 	<![CDATA[
@@ -148,7 +148,7 @@ ecmascript:
 	function add_node(value) {
                 // Browser.print('hey ', counter);
                 counter = counter++;
-		Browser.appendTo(Browser.getDocument().getElementById("MN"),
+		Browser.appendTo(Browser.getDocument().querySelector("field [name=ModifiableNode]"),
 			{ "ProtoInstance":
 				{ "@name":"node",
 				  "@DEF":"node'+counter+'",
