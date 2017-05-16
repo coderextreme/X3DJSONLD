@@ -7,12 +7,27 @@ process.argv.shift();
 
 var convertJSON = require('./convertJSON.js').convertJSON;
 
-convertJSON({
-	'./JavaSerializer.js' : ".java",
-	'./DOMSerializer.js': ".x3d.new",
-	// './JSONSerializer.js' : ".x3d2json",
-	// './AframeSerializer.js' : ".aframe",
-	// './Three2Serializer.js' : ".three.js",
-	'./PythonSerializer.js': ".py",
-	'./JavaScriptSerializer.js' : ".sail.js"
-});
+convertJSON([
+	{ 
+	serializer : './JavaSerializer.js',
+	folder : "../java/net/coderextreme/",
+	extension : ".java",
+	codeOutput : "../new/",
+	},
+	{ 
+	serializer : './DOMSerializer.js',
+	folder : "../x3d/net/coderextreme/",
+	extension : ".x3d.new",
+	},
+	{ 
+	serializer : './JavaScriptSerializer.js',
+	folder : "../nashorn/net/coderextreme/",
+	extension : ".sail.js",
+	codeOutput : "../new/",
+	},
+	{ 
+	serializer : './PythonSerializer.js',
+	folder : "../python/net/coderextreme/",
+	extension : ".py",
+	codeOutput : "../new/",
+	}]);

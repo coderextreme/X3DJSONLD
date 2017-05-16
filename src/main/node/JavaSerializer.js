@@ -28,11 +28,7 @@ JavaSerializer.prototype = {
 		}
 		var clz = pc.substr(c+1);
 		clz = clz.replace(/^([0-9].*|default$)/, "_$1")
-		var pkg = pc.substr(0, c).replace(/[\/\\]/g, ".").trim();
-
-		if (pkg.length > 0) {
-			str += "package "+pkg+";\n";
-		}
+		str += "package net.coderextreme.json;\n";
 		// console.error(pkg, clz);
 		str += "import org.web3d.x3d.jsail.*;\n";
 		str += "import org.web3d.x3d.jsail.CADGeometry.*;\n";

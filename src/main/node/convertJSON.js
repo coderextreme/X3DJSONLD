@@ -23,7 +23,7 @@ var LOG = Script.LOG;
 
 for (var par in mapToMethod2) {
 	for (var child in mapToMethod2[par]) {
-		mapToMethod[par][child], mapToMethod2[par][child]);
+		mapToMethod[par][child] = mapToMethod2[par][child];
 	}
 }
 
@@ -93,7 +93,7 @@ function loadSchema(json, file, doValidate, success, failure) {
 		
 		try {
 			console.error("Loading meta schema");
-			var metaschema = fs.readFileSync('draft-04-JSONSchema.json');
+			var metaschema = fs.readFileSync('../schema/draft-04-JSONSchema.json');
 			console.error("Parsing meta schema");
 			var metaschemajson = JSON.parse(metaschema.toString());
 			console.error("Adding meta schema");
@@ -101,7 +101,7 @@ function loadSchema(json, file, doValidate, success, failure) {
 			console.error("Loading schema");
 		} catch (e) {
 		}
-		var schema = fs.readFileSync("x3d-"+version+"-JSONSchema.json");
+		var schema = fs.readFileSync("../schema/x3d-"+version+"-JSONSchema.json");
 		console.error("Parsing schema");
 		var schemajson = JSON.parse(schema.toString());
 		console.error("Adding schema");
@@ -157,18 +157,20 @@ function convertJSON(options) {
 			}
 			// filename conversion goes here.
 			basefile = basefile.replace(/^[cC]:\/x3d-code\//g, "")
-			basefile = basefile.replace(/-|\.| /g, "_")
+			basefile = basefile.replace(/-| /g, "_")
+			basefile = basefile.replace(/^\.\.\//g, "")
 			// handle filenames with leading zeros and java keywords
 			basefile = basefile.replace(/^(.*[\\\/])([0-9].*|default|switch|for)$/, "$1_$2")
-			mkdirp(basefile.substr(0, basefile.lastIndexOf("/")));
 
-			var outfile = basefile+".json";
-			fs.writeFileSync(outfile, str);
 			for (var ser in options) {
-				var serializer = require(ser);
-				str = new serializer().serializeToString(json, element, basefile, mapToMethod, fieldTypes)
+				var serializer = require(options[ser].serializer);
+				var co = options[ser].codeOutput+basefile;
+				console.log("Code output", co);
+				str = new serializer().serializeToString(json, element, co, mapToMethod, fieldTypes)
 				if (typeof str !== 'undefined') {
-					var outfile = basefile+options[ser];
+					var outfile = options[ser].folder+basefile+options[ser].extension
+					mkdirp(outfile.substr(0, outfile.lastIndexOf("/")));
+					console.log("Generated output", outfile);
 					fs.writeFileSync(outfile, str);
 				} else {
 					throw("Wrote nothing, serializer returned nothing");
