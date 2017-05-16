@@ -1,4 +1,4 @@
-#!/bin/sh -x
+#!/bin/sh
 
 # Run the Test Suite
 
@@ -10,14 +10,17 @@ export PROCESSORS=${PROCESSORS-8}
 python ../python/classes.py
 
 X3DTOOUTPUT='s/\/x3d\//\/new\/json\//' 
+X3DTODOMSER='s/\/x3d\//\/new\/x3d\//' 
 OUTPUTTOX3D='s/\/new\/json/\/x3d/'
+DOMSERTOORG='s/\/new//'
+STYLESHEETDIR=../lib/stylesheets
 
 
-(ls -d "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java net.coderextreme.RunSaxon ---overwrite ---silent --../xslt/X3dToJSON.xslt -json | xargs -P $PROCESSORS ${NODE} ${NODEDIR}/json2all.js
+(ls -d "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java net.coderextreme.RunSaxon ---overwrite --${STYLESHEETDIR}/X3dToJSON.xslt -json  | xargs -P $PROCESSORS ${NODE} ${NODEDIR}/json2all.js
 
-for i in `(ls -d "$@" | grep -v intermediate | grep -v "\.new") | sed  -e 's/\.x3d$/.x3d.new/' -e $X3DTOOUTPUT`
+for i in `(ls -d "$@" | grep -v intermediate | grep -v "\.new") | sed  -e 's/\.x3d$/.x3d.new/' -e $X3DTODOMSER`
 do
-	${NODE} ${NODEDIR}/xmldiff.js `dirname $i | sed $OUTPUTTOX3D`/`basename $i .x3d.new`.x3d $i
+	${NODE} ${NODEDIR}/xmldiff.js `dirname $i | sed $DOMSERTOORG`/`basename $i .x3d.new`.x3d $i
 done
 
 for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.java/' -e 's/\/x3d\//\/java\/net\/coderextreme\/json\//' | xargs ls -d`
@@ -38,10 +41,9 @@ do
 	popd > /dev/null
 done
 
-
 for NEW in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.new.json/' -e $X3DTOOUTPUT`
 do
-	JSON=`dirname $NEW | sed 's/\/new//' `/`basename $NEW .new.json`.json
+	JSON=`dirname $NEW | sed -e $DOMSERTOORG `/`basename $NEW .new.json`.json
 	${NODE} ${NODEDIR}/jsondiff.js $JSON $NEW
 done
 
