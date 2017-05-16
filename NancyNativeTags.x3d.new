@@ -11,11 +11,6 @@
 <meta name="identifier" content="http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/NancyNativeTags.x3d"></meta>
 <meta name="generator" content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"></meta>
 <meta name="license" content="../license.html"></meta>
-<meta name="translated" content="15 May 2017"></meta>
-<meta name="generator" content="X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"></meta>
-<meta name="reference" content="X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"></meta>
-<meta name="translated" content="15 May 2017"></meta>
-<meta name="generator" content="X3DJSONLD: https://github.com/coderextreme/X3DJSONLD"></meta>
 </head>
 <Scene><HAnimHumanoid name="nancy" DEF="Humanoid" info="&quot;humanoidVersion=Nancy V1.2b&quot; &quot;authorEmail=cindy@ballreich.net&quot; &quot;authorName=Cindy Ballreich&quot; &quot;copyright=1997 3Name3D / Yglesias Wallock Divekar Inc. all rights reserved.&quot; &quot;creationDate=Tue Dec 30 08:30:08 PST 1997&quot; &quot;gender=female&quot; &quot;usageRestrictions=Noncommercial usage is ok if 3Name3D name and logo http://www.ballreich.net/vrml/h-anim/small_logo.gif is present and proper credit is given.&quot;" version="2.0"><HAnimJoint name="HumanoidRoot" DEF="hanim_HumanoidRoot" center="-0.00405 0.855 -0.000113"><HAnimJoint name="sacroiliac" DEF="hanim_sacroiliac" center="0 1.01 -0.0204"><HAnimSegment name="pelvis" DEF="hanim_pelvis"><Shape><Appearance containerField="appearance"><Material containerField="material" DEF="Pants_Color" ambientIntensity="0.25" diffuseColor="0.054 0.233 0.39"></Material>
 </Appearance>

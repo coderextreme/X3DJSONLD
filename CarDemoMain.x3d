@@ -826,7 +826,7 @@ ecmascript:
     <Viewpoint description='Other position' position='0.0 2.0 10.0'/>
     <Viewpoint description='Top down view of starting position' orientation='1.0 0.0 0.0 -1.5712' position='-114.86 20.0 -66.1922'/>
     <Viewpoint DEF='CHASSIS-VIEW' description='Chassis starting position' position='0.0 0.0 0.0'/>
-    <Background skyAngle='1.5712 3.142' skyColor='0.0 1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0'/>
+    <Background skyAngle='1.5712 3.1416' skyColor='0.0 1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0'/>
     <NavigationInfo type='"NONE"'/>
     <Script DEF='CAMERA-CONTROL-SCRIPT' url='"originals/car/CameraControl.class" "http://www.web3d.org/x3d/content/examples/Basic/RigidBodyPhysics/originals/car/CameraControl.class"'>
       <field accessType='inputOnly' name='carPosition' type='SFVec3f'/>

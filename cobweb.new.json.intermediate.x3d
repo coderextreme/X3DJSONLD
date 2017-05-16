@@ -7,11 +7,6 @@
         <meta name='description' content='Tour around a prismatic sphere' dir='' http_equiv='' lang='' scheme=''/>
         <meta name='generator' content='X3D-Edit, https://savage.nps.edu/X3D-Edit' dir='' http_equiv='' lang='' scheme=''/>
         <meta name='identifier' content='http://coderextreme.net/X3DJSONLD/cobweb.x3d' dir='' http_equiv='' lang='' scheme=''/>
-        <meta name='translated' content='15 May 2017' dir='' http_equiv='' lang='' scheme=''/>
-        <meta name='generator' content='X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html' dir='' http_equiv='' lang='' scheme=''/>
-        <meta name='reference' content='X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding' dir='' http_equiv='' lang='' scheme=''/>
-        <meta name='translated' content='15 May 2017' dir='' http_equiv='' lang='' scheme=''/>
-        <meta name='generator' content='X3DJSONLD: https://github.com/coderextreme/X3DJSONLD' dir='' http_equiv='' lang='' scheme=''/>
     </head>
     <Scene>
         <NavigationInfo avatarSize='0.25 1.6 0.75' headlight='true' speed='1.0' transitionTime='1.0' transitionType='"LINEAR"' type='"EXAMINE"' visibilityLimit='0.0' class=''/>

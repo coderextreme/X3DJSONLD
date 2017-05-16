@@ -23,11 +23,6 @@
 <meta name="generator" content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"></meta>
 <meta name="generator" content="Xj3D converter, http://www.xj3d.org"></meta>
 <meta name="license" content="../../license.html"></meta>
-<meta name="translated" content="15 May 2017"></meta>
-<meta name="generator" content="X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"></meta>
-<meta name="reference" content="X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"></meta>
-<meta name="translated" content="15 May 2017"></meta>
-<meta name="generator" content="X3DJSONLD: https://github.com/coderextreme/X3DJSONLD"></meta>
 </head>
 <Scene><Group><Group DEF="CAR-CONTAINER"><Switch DEF="DEBUG-GEOM" whichChoice="0"><Group><Transform DEF="ACTIVE-SECTOR-INDICATOR"><Shape><Appearance containerField="appearance"><Material containerField="material" emissiveColor="1 1 0" transparency="0.5"></Material>
 </Appearance>
@@ -682,7 +677,7 @@ Browser.println('Physics Sector9');
 <Viewpoint description="Other position" position="0 2 10"></Viewpoint>
 <Viewpoint description="Top down view of starting position" orientation="1 0 0 -1.5712" position="-114.86 20 -66.1922"></Viewpoint>
 <Viewpoint DEF="CHASSIS-VIEW" description="Chassis starting position" position="0 0 0"></Viewpoint>
-<Background skyAngle="1.5712 3.142" skyColor="0 1 0 0 0 1 0 0 0"></Background>
+<Background skyAngle="1.5712 3.1416" skyColor="0 1 0 0 0 1 0 0 0"></Background>
 <NavigationInfo type="&quot;NONE&quot;"></NavigationInfo>
 <Script DEF="CAMERA-CONTROL-SCRIPT" url="&quot;originals/car/CameraControl.class&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/RigidBodyPhysics/originals/car/CameraControl.class&quot;"><field name="carPosition" accessType="inputOnly" type="SFVec3f"></field>
 <field name="resetPosition" accessType="inputOnly" type="SFVec3f"></field>

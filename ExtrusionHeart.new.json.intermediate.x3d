@@ -10,11 +10,6 @@
         <meta name='identifier' content='http://www.web3d.org/x3d/content/examples/Basic/course/ExtrusionHeart.x3d' dir='' http_equiv='' lang='' scheme=''/>
         <meta name='generator' content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' dir='' http_equiv='' lang='' scheme=''/>
         <meta name='license' content='../license.html' dir='' http_equiv='' lang='' scheme=''/>
-        <meta name='translated' content='15 May 2017' dir='' http_equiv='' lang='' scheme=''/>
-        <meta name='generator' content='X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html' dir='' http_equiv='' lang='' scheme=''/>
-        <meta name='reference' content='X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding' dir='' http_equiv='' lang='' scheme=''/>
-        <meta name='translated' content='15 May 2017' dir='' http_equiv='' lang='' scheme=''/>
-        <meta name='generator' content='X3DJSONLD: https://github.com/coderextreme/X3DJSONLD' dir='' http_equiv='' lang='' scheme=''/>
     </head>
     <Scene>
         <Viewpoint centerOfRotation='0 0 0' description='Extrusion Heart' fieldOfView='0.7854' jump='true' orientation='1 0 0 1.57' position='0 -4 0' retainUserOffsets='false' class=''/>
