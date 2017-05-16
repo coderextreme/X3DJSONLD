@@ -3,11 +3,11 @@ java.options.push("-Djava.awt.headless=true");
 java.options.push("-Xmx1000m");
 //java.options.push('-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005');
 java.classpath.push("saxon9he.jar");
-java.classpath.push("target");
+java.classpath.push("target/X3DJSONLD-1.0-SNAPSHOT.jar");
 
 function translate(infiles) {
 	console.log("Calling static java method", infiles);
-	java.callStaticMethodSync("RunSaxon", "main", infiles);
+	java.callStaticMethodSync("net.coderextreme.RunSaxon", "main", infiles);
 }
 
 if (typeof module === 'object')  {
