@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="36a748b4-da94-43f9-8c4d-c2e5301b9bfc" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ArchHalf.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ArchHalf.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ArchHalf.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ArchPrototype.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ArchPrototype.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ArchPrototype.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Box.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Box.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Box.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CloudsProcedural4.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CloudsProcedural4.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CloudsProcedural4.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CoordinateAxes.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CoordinateAxes.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CoordinateAxes.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ExtrusionHeart.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ExtrusionHeart.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ExtrusionHeart.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IcosahedronSubdivisionLevel5.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IcosahedronSubdivisionLevel5.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IcosahedronSubdivisionLevel5.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MFString.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MFString.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MFString.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ObliqueStrategies.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ObliqueStrategies.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ObliqueStrategies.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PixelTextureComponentExamples.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PixelTextureComponentExamples.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PixelTextureComponentExamples.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Table5_18PixelTexture.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Table5_18PixelTexture.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Table5_18PixelTexture.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Teapot.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Teapot.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Teapot.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TextExamples.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TextExamples.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TextExamples.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TextExamples.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TextExamples.sail.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TextExamples.x3d.new" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TextSpecialCharacters.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TextSpecialCharacters.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/X3dHeaderPrototypeSyntaxExamples.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/X3dHeaderPrototypeSyntaxExamples.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/abox.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/abox.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/abox.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ball.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ball.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ball.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/browser.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/browser.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/browser.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bub.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bub.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bub.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bubble.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bubble.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bubble.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bubbles.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bubbles.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bubbles.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cobweb.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cobweb.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cobweb.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cobweb2.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cobweb2.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cobweb2.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cube.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cube.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cube.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/extrusion.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/extrusion.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/extrusion.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/flipp.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/flipp.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/flipp.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/flipper.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/flipper.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/flipper.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/flowerproto.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/flowerproto.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/flowerproto.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/flowers.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/flowers.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/flowers.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/flowers2.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/flowers2.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/flowers2.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/flowers4.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/flowers4.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/flowers4.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/flowers7.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/flowers7.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/flowers7.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/freewrlflowers.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/freewrlflowers.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/freewrlflowers.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gears.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gears.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gears.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/geo.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/geo.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/geo.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/geobubbles.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/geobubbles.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/geobubbles.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/geobubbles.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/glflowers.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/glflowers.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/glflowers.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gridBack.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gridBack.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gridBack.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/indexedfaceset_pixeltexture_entire.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/indexedfaceset_pixeltexture_entire.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/indexedfaceset_pixeltexture_entire.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/indexedfaceset_pixeltexture_part.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/indexedfaceset_pixeltexture_part.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/indexedfaceset_pixeltexture_part.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/indexedfaceset_pixeltexture_plus.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/indexedfaceset_pixeltexture_plus.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/indexedfaceset_pixeltexture_plus.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/indexedfaceset_pixeltexture_whole.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/indexedfaceset_pixeltexture_whole.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/indexedfaceset_pixeltexture_whole.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/invalid.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/invalid.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/invalid.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/invalid.sail.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/invalid.x3d.new" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/john.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/john.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/john.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/john2.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/john2.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/john2.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/john3.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/john3.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/john3.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mirror.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mirror.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mirror.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mirror2.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mirror2.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mirror2.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plainflowers.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plainflowers.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plainflowers.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pp3.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pp3.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pp3.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/qq3.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/qq3.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/qq3.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/rgb_alpha.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/rgb_alpha.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/rgb_alpha.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/rubik.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/rubik.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/rubik.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/rubikFurnace.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/rubikFurnace.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/rubikFurnace.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/rubikOnFire.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/rubikOnFire.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/rubikOnFire.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sphere.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sphere.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sphere.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sphereflowers.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sphereflowers.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sphereflowers.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/text.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/text.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/text.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/text.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/text.sail.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/text.x3d.new" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/x3dconnector.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/x3dconnector.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/x3dconnector.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/x3domflower.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/x3domflower.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/x3domflower.new.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/x3domflowers.new.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/x3domflowers.new.json.intermediate.x3d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/x3domflowers.new.x3d" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/box.json" afterPath="$PROJECT_DIR$/box.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/etgenerateJSONschema.py" afterPath="$PROJECT_DIR$/etgenerateJSONschema.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/x3d-3.3-JSONSchema.json" afterPath="$PROJECT_DIR$/x3d-3.3-JSONSchema.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/x3d-3.3-JSONSchema.json.backup" afterPath="$PROJECT_DIR$/x3d-3.3-JSONSchema.json.backup" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/x3d-5.0-JSONSchema.json" afterPath="$PROJECT_DIR$/x3d-5.0-JSONSchema.json" />
+    </list>
+    <ignored path="X3DJSONLD.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="X3DJSONLD" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/etgenerateJSONschema.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="101" />
+    <option name="y" value="25" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="X3DJSONLD" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="X3DJSONLD" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="X3DJSONLD" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="36a748b4-da94-43f9-8c4d-c2e5301b9bfc" name="Default" comment="" />
+      <created>1494656141602</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1494656141602</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="101" y="25" width="1400" height="1000" extended-state="0" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/etgenerateJSONschema.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/etgenerateJSONschema.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/etgenerateJSONschema.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
