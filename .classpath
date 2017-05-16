@@ -3,5 +3,6 @@
 	<classpathentry kind="src" path="src/main/java"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="/JavaSceneAuthoringInterfaceLibrary/target/X3DJSAIL-3.3-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="saxon9he.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

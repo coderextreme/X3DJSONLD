@@ -61,7 +61,7 @@ protected static class ExitException extends SecurityException
 
 	public static void main(String args[]) {
 		try {
-			String stylesheet = "X3dToJson.xslt";
+			String stylesheet = "src/main/lib/stylesheets/X3dToJson.xslt";
 			String extension = "json";
 			boolean overwrite = false;
 			boolean silent = false;
@@ -136,7 +136,7 @@ protected static class ExitException extends SecurityException
 					if ((out.startsWith("http://") || out.startsWith("https://")) && out.lastIndexOf("www.web3d.org") >= 0) {
 						out = out.substring(out.lastIndexOf("www.web3d.org"));
 					}
-					out = out.substring(0, out.lastIndexOf("."))+"."+extension;
+					out = "out"+out.substring(out.indexOf("/"), out.lastIndexOf("."))+"."+extension;
 					if (overwrite) {
 						System.err.println("BEGIN "+source+" > "+extension);
 						if (out.lastIndexOf("/") > 0) {

@@ -112,7 +112,7 @@
 						<transformationSet>
 							<dir>src/main/orig</dir>
 							<stylesheet>src/main/lib/stylesheets/X3dToJson.xslt</stylesheet>
-							<outputDir>src/main/json</outputDir>
+							<outputDir>src/main/out</outputDir>
 							<fileMappers>
 								<fileMapper
 									implementation="org.codehaus.plexus.components.io.filemappers.FileExtensionMapper">
