@@ -2,32 +2,25 @@ var express = require('express');
 var app = express();
 var http = require('http').Server(app);
 var glob = require( 'glob' );  
-var config = require("./config");
+var config = require("./src/main/node/config");
 var port = process.env.PORT || 3000;
 var path = require('path');
 
 var fs = require("fs");
-var X3DJSONLD = require('./X3DJSONLD.js');
+var X3DJSONLD = require('./src/main/node/X3DJSONLD.js');
 var loadURLs = X3DJSONLD.loadURLs;
-var PE = require('./PrototypeExpander')
+var PE = require('./src/main/node/PrototypeExpander')
 PE.setLoadURLs(loadURLs);
 var externPrototypeExpander = PE.externPrototypeExpander;
 
-var FL = require('./Flattener')
+var FL = require('./src/main/node/Flattener')
 var flattener = FL.flattener;
 
-var runAndSend = require('./runAndSend');
+var runAndSend = require('./src/main/node/runAndSend');
 
-fs.symlink(
-path.resolve(config.examples),
-path.resolve(__dirname + "/examples"),
-'junction',
- function (err) {
-        if (err) {
-                console.error( err.code === 'EEXIST' ? "listening on http://localhost:"+port+"\n" : err);
-        }
-  }
-);
+app.use('/examples', express.static(config.examples));
+app.use(express.static('src/main/html'));
+app.use(express.static('src/main/node'));
 
 function convertX3dToJson(res, infile, outfile, next) {
 	console.error("Calling converter on "+infile);
