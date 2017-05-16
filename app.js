@@ -24,6 +24,7 @@ app.use(express.static('src/main/node'));
 app.use(express.static('src/main/json'));
 app.use(express.static('src/main/schema'));
 app.use(express.static('src/main/resources'));
+app.use(express.static('src/main/shaders'));
 
 function convertX3dToJson(res, infile, outfile, next) {
 	console.error("Calling converter on "+infile);
