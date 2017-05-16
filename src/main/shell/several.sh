@@ -9,12 +9,12 @@ export PROCESSORS=${PROCESSORS-8}
 
 python ../python/classes.py
 
-ORIGTOOUTPUT='s/\/orig\//\/new\/orig\//' 
-OUTPUTTOORIG='s/\/new\/orig/\/orig/'
+ORIGTOOUTPUT='s/\/orig\//\/out\//' 
+OUTPUTTOORIG='s/\/out/\/orig/'
 STYLESHEETDIR=../lib/stylesheets
 
 
-(ls -d "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java net.coderextreme.RunSaxon ---overwrite --${STYLESHEETDIR}/X3dToJSON.xslt -json  | xargs -P $PROCESSORS ${NODE} ${NODEDIR}/json2all.js
+(ls -d "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java net.coderextreme.RunSaxon ---overwrite --${STYLESHEETDIR}/X3dToJSON.xslt -json | xargs -P $PROCESSORS ${NODE} ${NODEDIR}/json2all.js
 
 for i in `(ls -d "$@" | grep -v intermediate | grep -v "\.new") | sed  -e 's/\.x3d$/.x3d.new/' -e $ORIGTOOUTPUT`
 do

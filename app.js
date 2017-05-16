@@ -21,10 +21,13 @@ var runAndSend = require('./src/main/node/runAndSend');
 app.use('/examples', express.static(config.examples));
 app.use(express.static('src/main/html'));
 app.use(express.static('src/main/node'));
-app.use(express.static('src/main/json'));
+app.use(express.static('src/main/orig'));
+app.use(express.static('src/main/new/orig'));
 app.use(express.static('src/main/schema'));
 app.use(express.static('src/main/resources'));
 app.use(express.static('src/main/shaders'));
+app.use(express.static('src/main/nashorn'));
+app.use(express.static('src/main/lib/stylesheets'));
 
 function convertX3dToJson(res, infile, outfile, next) {
 	console.error("Calling converter on "+infile);
