@@ -20,8 +20,8 @@
                 <ProtoBody>
                     <Group>
                         <ProtoInstance name='FlowerProto'>
-                            <fieldValue name='vertex' value='&quot;cobweb_flowers_plain.vs&quot;'/>
-                            <fieldValue name='fragment' value='&quot;plain.fs&quot;'/>
+                            <fieldValue name='vertex' value='"cobweb_flowers_plain.vs"'/>
+                            <fieldValue name='fragment' value='"plain.fs"'/>
                         </ProtoInstance>
                     </Group>
                 </ProtoBody>
