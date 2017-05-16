@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "http://www.web3d.org/specifications/x3d-3.0.dtd">
+<X3D profile='Interchange' version='3.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.0.xsd'>
+    <head>
+        <meta name='title' content='rgb_alpha.x3d' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='Image' content='rgb_alpha-front.jpg' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='Image' content='rgb_alpha-rear.jpg' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='Image' content='rgb_alpha-top.jpg' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='Image' content='rgb_alpha-bottom.jpg' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='reference' content='http://www.nist.gov/vrml.html' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='reference' content='http://www.itl.nist.gov/div897/ctg/vrml/vrml.html' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='creator' content='http://www.itl.nist.gov/div897/ctg/vrml/members.html' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='disclaimer' content='This file was provided by the National Institute of Standards and Technology, and is part of the X3D Conformance Test Suite, available at http://www.nist.gov/vrml.html The information contained within this file is provided for use in establishing conformance to the ISO VRML97 Specification. Conformance to this test does not imply recommendation or endorsement by the National Institute of Standards and Technology. This software can be redistributed and/or modified freely provided that any derivative works bear some notice that they are derived from it, and any modified versions bear some notice that they have been modified.' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='info' content='Correct definition and compliance of this conformance scene is maintained by the X3D Working Group, http://www.web3d.org/working-groups/x3d' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='translator' content='Michael Kass NIST, Don Brutzman NPS' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='translated' content='21 January 2001' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='modified' content='16 January 2011' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='description' content='Test browser ability to map a RGB plus alpha opacity to geometry. A checkerboard of four colored squares: lower left (red), lower right (transparent), uppser left (transparent) and upper right (red) map onto the faces of all geometry. For the sphere, the texture should cover the entire surface, and wrap counterclockwise from the back of the sphere. For the cone, the texture should wrap counterclockwise (from above) starting at the back of the cone. A circle cutout of the texture is applied right side up to the base of the cone when the cone is tilted toward the -z axis. For the cylinder, the texture should wrap counterclockwise (from above) starting at the back of the cylinder. A circle cutout of the texture is applied right side up to the top and bottom caps of the cylinder. For the box, the texture should be applied right side up in its entirety to each face of the box.' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='identifier' content='http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/PixelTexture/rgb_alpha.x3d' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='generator' content='Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='generator' content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='license' content='../../license.html' dir='' http_equiv='' lang='' scheme=''/>
+    </head>
+    <Scene>
+        <NavigationInfo avatarSize='0.25 1.6 0.75' headlight='true' speed='1.0' transitionTime='1.0' transitionType='"LINEAR"' type='"EXAMINE" "WALK" "FLY" "ANY"' visibilityLimit='0.0' class=''/>
+        <Group bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+            <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='6.14221 0.0694613 -9.99451E-4' class=''>
+                <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                    <Appearance class=''>
+                        <Material ambientIntensity='0.2' diffuseColor='0.8 0.8 0.8' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0' class=''/>
+                        <PixelTexture DEF='RgbOpacityCheckerboard' image='2 2 4 -16776961 -65536 -65536 -16776961' repeatS='true' repeatT='true' class=''/>
+                    </Appearance>
+                    <Box size='2 2 2' solid='true' class=''/>
+                </Shape>
+            </Transform>
+            <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='-4.85443 0.0694381 -0.00149918' class=''>
+                <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                    <Appearance class=''>
+                        <Material ambientIntensity='0.2' diffuseColor='0.8 0.8 0.8' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0' class=''/>
+                        <PixelTexture USE='RgbOpacityCheckerboard'/>
+                    </Appearance>
+                    <Sphere radius='1.0' solid='true' class=''/>
+                </Shape>
+            </Transform>
+            <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='-1.47341 0.036672 -0.00175095' class=''>
+                <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                    <Appearance class=''>
+                        <Material ambientIntensity='0.2' diffuseColor='0.8 0.8 0.8' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0' class=''/>
+                        <PixelTexture USE='RgbOpacityCheckerboard'/>
+                    </Appearance>
+                    <Cone bottom='true' bottomRadius='1.0' height='2.0' side='true' solid='true' class=''/>
+                </Shape>
+            </Transform>
+            <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='2.31094 0.0694206 -0.00187683' class=''>
+                <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                    <Appearance class=''>
+                        <Material ambientIntensity='0.2' diffuseColor='0.8 0.8 0.8' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0' class=''/>
+                        <PixelTexture USE='RgbOpacityCheckerboard'/>
+                    </Appearance>
+                    <Cylinder bottom='true' height='2.0' radius='1.0' side='true' solid='true' top='true' class=''/>
+                </Shape>
+            </Transform>
+        </Group>
+    </Scene>
+</X3D>
