@@ -25,12 +25,12 @@
           },
           { "Background":
             {
-              "@backUrl":["cubemap/all_probes/uffizi_cross/uffizi_back.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_back.png"],
-              "@bottomUrl":["cubemap/all_probes/uffizi_cross/uffizi_bottom.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_bottom.png"],
-              "@frontUrl":["cubemap/all_probes/uffizi_cross/uffizi_front.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_front.png"],
-              "@leftUrl":["cubemap/all_probes/uffizi_cross/uffizi_left.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_left.png"],
-              "@rightUrl":["cubemap/all_probes/uffizi_cross/uffizi_right.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_right.png"],
-              "@topUrl":["cubemap/all_probes/uffizi_cross/uffizi_top.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_top.png"]
+              "@backUrl":["images/all_probes/uffizi_cross/uffizi_back.png","http://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_back.png"],
+              "@bottomUrl":["images/all_probes/uffizi_cross/uffizi_bottom.png","http://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_bottom.png"],
+              "@frontUrl":["images/all_probes/uffizi_cross/uffizi_front.png","http://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_front.png"],
+              "@leftUrl":["images/all_probes/uffizi_cross/uffizi_left.png","http://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_left.png"],
+              "@rightUrl":["images/all_probes/uffizi_cross/uffizi_right.png","http://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_right.png"],
+              "@topUrl":["images/all_probes/uffizi_cross/uffizi_top.png","http://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_top.png"]
             }
           },
           { "Transform":
@@ -61,37 +61,37 @@
                                 "-back":
                                   { "ImageTexture":
                                     {
-                                      "@url":["cubemap/all_probes/uffizi_cross/uffizi_back.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_back.png"]
+                                      "@url":["images/all_probes/uffizi_cross/uffizi_back.png","http://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_back.png"]
                                     }
                                   },
                                 "-bottom":
                                   { "ImageTexture":
                                     {
-                                      "@url":["cubemap/all_probes/uffizi_cross/uffizi_bottom.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_bottom.png"]
+                                      "@url":["images/all_probes/uffizi_cross/uffizi_bottom.png","http://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_bottom.png"]
                                     }
                                   },
                                 "-front":
                                   { "ImageTexture":
                                     {
-                                      "@url":["cubemap/all_probes/uffizi_cross/uffizi_front.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_front.png"]
+                                      "@url":["images/all_probes/uffizi_cross/uffizi_front.png","http://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_front.png"]
                                     }
                                   },
                                 "-left":
                                   { "ImageTexture":
                                     {
-                                      "@url":["cubemap/all_probes/uffizi_cross/uffizi_left.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_left.png"]
+                                      "@url":["images/all_probes/uffizi_cross/uffizi_left.png","http://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_left.png"]
                                     }
                                   },
                                 "-right":
                                   { "ImageTexture":
                                     {
-                                      "@url":["cubemap/all_probes/uffizi_cross/uffizi_right.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_right.png"]
+                                      "@url":["images/all_probes/uffizi_cross/uffizi_right.png","http://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_right.png"]
                                     }
                                   },
                                 "-top":
                                   { "ImageTexture":
                                     {
-                                      "@url":["cubemap/all_probes/uffizi_cross/uffizi_top.png","http://coderextreme.net/X3DJSONLD/cubemap/all_probes/uffizi_cross/uffizi_top.png"]
+                                      "@url":["images/all_probes/uffizi_cross/uffizi_top.png","http://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_top.png"]
                                     }
                                   }
                               }
