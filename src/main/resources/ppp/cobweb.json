@@ -69,28 +69,28 @@
         {
           "Background": {
             "@backUrl": [
-              "cubemap/BK.png",
-              "http://coderextreme.net/X3DJSONLD/cubemap/BK.png"
+              "images/BK.png",
+              "http://coderextreme.net/X3DJSONLD/images/BK.png"
             ],
             "@bottomUrl": [
-              "cubemap/BT.png",
-              "http://coderextreme.net/X3DJSONLD/cubemap/BT.png"
+              "images/BT.png",
+              "http://coderextreme.net/X3DJSONLD/images/BT.png"
             ],
             "@frontUrl": [
-              "cubemap/FR.png",
-              "http://coderextreme.net/X3DJSONLD/cubemap/FR.png"
+              "images/FR.png",
+              "http://coderextreme.net/X3DJSONLD/images/FR.png"
             ],
             "@leftUrl": [
-              "cubemap/LF.png",
-              "http://coderextreme.net/X3DJSONLD/cubemap/LF.png"
+              "images/LF.png",
+              "http://coderextreme.net/X3DJSONLD/images/LF.png"
             ],
             "@rightUrl": [
-              "cubemap/RT.png",
-              "http://coderextreme.net/X3DJSONLD/cubemap/RT.png"
+              "images/RT.png",
+              "http://coderextreme.net/X3DJSONLD/images/RT.png"
             ],
             "@topUrl": [
-              "cubemap/TP.png",
-              "http://coderextreme.net/X3DJSONLD/cubemap/TP.png"
+              "images/TP.png",
+              "http://coderextreme.net/X3DJSONLD/images/TP.png"
             ]
           }
         },
