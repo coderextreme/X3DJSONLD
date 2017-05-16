@@ -1,3 +1,4 @@
+package net.coderextreme.json;
 import org.web3d.x3d.jsail.*;
 import org.web3d.x3d.jsail.CADGeometry.*;
 import org.web3d.x3d.jsail.Core.*;
@@ -76,7 +77,7 @@ public class rubikFurnace {
     ConfigurationProperties.setShowDefaultAttributes(true);
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_nativeJava);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new rubikFurnace().initialize().toFileJSON("rubikFurnace.new.json");
+    new rubikFurnace().initialize().toFileJSON("../new/json/rubikFurnace.new.json");
     }
     public X3DObject initialize() {
 ProtoInstanceObject ProtoInstance0 = null;

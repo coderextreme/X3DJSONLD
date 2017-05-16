@@ -1,3 +1,4 @@
+package net.coderextreme.json;
 import org.web3d.x3d.jsail.*;
 import org.web3d.x3d.jsail.CADGeometry.*;
 import org.web3d.x3d.jsail.Core.*;
@@ -76,7 +77,7 @@ public class IcosahedronSubdivisionLevel5 {
     ConfigurationProperties.setShowDefaultAttributes(true);
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_nativeJava);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new IcosahedronSubdivisionLevel5().initialize().toFileJSON("IcosahedronSubdivisionLevel5.new.json");
+    new IcosahedronSubdivisionLevel5().initialize().toFileJSON("../new/json/IcosahedronSubdivisionLevel5.new.json");
     }
     public X3DObject initialize() {
       X3DObject X3D0 =  new X3DObject().setProfile("Interchange").setVersion("3.1")

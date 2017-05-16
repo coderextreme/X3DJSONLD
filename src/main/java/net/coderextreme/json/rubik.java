@@ -1,3 +1,4 @@
+package net.coderextreme.json;
 import org.web3d.x3d.jsail.*;
 import org.web3d.x3d.jsail.CADGeometry.*;
 import org.web3d.x3d.jsail.Core.*;
@@ -76,7 +77,7 @@ public class rubik {
     ConfigurationProperties.setShowDefaultAttributes(true);
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_nativeJava);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new rubik().initialize().toFileJSON("rubik.new.json");
+    new rubik().initialize().toFileJSON("../new/json/rubik.new.json");
     }
     public X3DObject initialize() {
 ProtoInstanceObject ProtoInstance0 = null;

@@ -1,3 +1,4 @@
+package net.coderextreme.json;
 import org.web3d.x3d.jsail.*;
 import org.web3d.x3d.jsail.CADGeometry.*;
 import org.web3d.x3d.jsail.Core.*;
@@ -76,7 +77,7 @@ public class indexedfaceset_pixeltexture_entire {
     ConfigurationProperties.setShowDefaultAttributes(true);
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_nativeJava);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new indexedfaceset_pixeltexture_entire().initialize().toFileJSON("indexedfaceset_pixeltexture_entire.new.json");
+    new indexedfaceset_pixeltexture_entire().initialize().toFileJSON("../new/json/indexedfaceset_pixeltexture_entire.new.json");
     }
     public X3DObject initialize() {
       X3DObject X3D0 =  new X3DObject().setProfile("Interchange").setVersion("3.0")
