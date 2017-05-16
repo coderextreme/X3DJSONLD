@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "http://www.web3d.org/specifications/x3d-3.0.dtd">
+<X3D profile='Immersive' version='3.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.0.xsd'>
+    <head>
+        <meta name='title' content='TextExamples.x3d' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='description' content='Show different escape-character text examples for embedded quotation marks.' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='creator' content='Don Brutzman' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='created' content='7 April 2001' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='modified' content='26 April 2016' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='warning' content='Note that X3D Canonicalization (C14N) will scrub alternate XML character representations, be careful to check original encoding into version control.' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='warning' content='Usually this source document needs to be inspected and edited using a plain-text editor in order to see the differences in these XML-equivalent text representations.' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='identifier' content='http://www.web3d.org/x3d/content/examples/Basic/development/TextExamples.x3d' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='generator' content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='license' content='../license.html' dir='' http_equiv='' lang='' scheme=''/>
+    </head>
+    <Scene>
+        <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 2 0' class=''>
+            <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                <Appearance DEF='LightBlueAppearance' class=''>
+                    <Material ambientIntensity='0.2' diffuseColor='0.1 0.7 0.7' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0' class=''/>
+                </Appearance>
+                <Text length='' maxExtent='0.0' solid='false' string='"Compare special character escaping"' class=''>
+                    <FontStyle DEF='testFontStyle' family='"SERIF"' horizontal='true' justify='"MIDDLE" "MIDDLE"' language='' leftToRight='true' size='0.8' spacing='1.0' style='PLAIN' topToBottom='true' class=''/>
+                </Text>
+            </Shape>
+        </Transform>
+        <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='-3 0 0' class=''>
+            <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                <Appearance USE='LightBlueAppearance'/>
+                <Text length='' maxExtent='0.0' solid='false' string='"I don&apos;t think so" "" "he said \"Hi\""' class=''>
+                    <FontStyle USE='testFontStyle'/>
+                </Text>
+            </Shape>
+        </Transform>
+        <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='3 0 0' class=''>
+            <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                <Appearance USE='LightBlueAppearance'/>
+                <Text length='' maxExtent='0.0' solid='false' string='"I don&apos;t think so" "" "he said \"Hi\""' class=''>
+                    <FontStyle USE='testFontStyle'/>
+                </Text>
+            </Shape>
+        </Transform>
+    </Scene>
+</X3D>

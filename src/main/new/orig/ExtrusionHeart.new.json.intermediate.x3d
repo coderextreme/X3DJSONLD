@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "http://www.web3d.org/specifications/x3d-3.0.dtd">
+<X3D profile='Immersive' version='3.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.0.xsd'>
+    <head>
+        <meta name='title' content='ExtrusionHeart.x3d' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='description' content='Simple extrusion of a Valentine heart.' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='creator' content='Class participants in course Introduction to VRML/X3D.' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='created' content='14 February 2001' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='modified' content='27 November 2015' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='identifier' content='http://www.web3d.org/x3d/content/examples/Basic/course/ExtrusionHeart.x3d' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='generator' content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='license' content='../license.html' dir='' http_equiv='' lang='' scheme=''/>
+    </head>
+    <Scene>
+        <Viewpoint centerOfRotation='0 0 0' description='Extrusion Heart' fieldOfView='0.7854' jump='true' orientation='1 0 0 1.57' position='0 -4 0' retainUserOffsets='false' class=''/>
+        <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 -0.5 0' class=''>
+            <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                <Appearance class=''>
+                    <Material ambientIntensity='0.2' diffuseColor='0.8 0.3 0.3' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0' class=''/>
+                </Appearance>
+                <Extrusion beginCap='true' ccw='true' convex='true' creaseAngle='3.14159' crossSection='0 0.8 0.2 1 0.7 0.95 1 0.5 0.8 0 0.5 -0.3 0 -0.7 -0.5 -0.3 -0.8 0 -1 0.5 -0.7 0.95 -0.2 1 0 0.8' endCap='true' orientation='0 0 1 0' scale='0.01 0.01 0.8 0.8 1 1 0.8 0.8 0.01 0.01' solid='false' spine='0 0 0 0 0.1 0 0 0.5 0 0 0.9 0 0 1 0' class=''/>
+            </Shape>
+        </Transform>
+    </Scene>
+</X3D>
