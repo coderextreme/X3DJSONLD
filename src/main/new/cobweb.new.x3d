@@ -11,7 +11,7 @@
     <Scene>
         <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"EXAMINE"'/>
         <Viewpoint description='Bubbles in action' orientation='1 0 0 0' position='0 0 4'/>
-        <Background backUrl='"cubemap/BK.png" "http://coderextreme.net/X3DJSONLD/cubemap/BK.png"' bottomUrl='"cubemap/BT.png" "http://coderextreme.net/X3DJSONLD/cubemap/BT.png"' frontUrl='"cubemap/FR.png" "http://coderextreme.net/X3DJSONLD/cubemap/FR.png"' leftUrl='"cubemap/LF.png" "http://coderextreme.net/X3DJSONLD/cubemap/LF.png"' rightUrl='"cubemap/RT.png" "http://coderextreme.net/X3DJSONLD/cubemap/RT.png"' topUrl='"cubemap/TP.png" "http://coderextreme.net/X3DJSONLD/cubemap/TP.png"'/>
+        <Background backUrl='"images/BK.png" "http://coderextreme.net/X3DJSONLD/images/BK.png"' bottomUrl='"images/BT.png" "http://coderextreme.net/X3DJSONLD/images/BT.png"' frontUrl='"images/FR.png" "http://coderextreme.net/X3DJSONLD/images/FR.png"' leftUrl='"images/LF.png" "http://coderextreme.net/X3DJSONLD/images/LF.png"' rightUrl='"images/RT.png" "http://coderextreme.net/X3DJSONLD/images/RT.png"' topUrl='"images/TP.png" "http://coderextreme.net/X3DJSONLD/images/TP.png"'/>
         <ProtoDeclare name='Bubble'>
             <ProtoBody>
                 <Transform DEF='transform'>

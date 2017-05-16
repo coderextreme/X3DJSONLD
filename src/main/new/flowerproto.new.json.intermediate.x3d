@@ -50,12 +50,12 @@
                                 <!-- <field name='cube' type='SFNode' accessType="inputOutput"> <ComposedCubeMapTexture USE="texture"/> </field> -->
                             </ComposedShader>
                             <ComposedCubeMapTexture DEF='texture' class=''>
-                                <ImageTexture containerField='back' repeatS='true' repeatT='true' url='"cubemap/all_probes/stpeters_cross/stpeters_back.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_back.png"' class=''/>
-                                <ImageTexture containerField='bottom' repeatS='true' repeatT='true' url='"cubemap/all_probes/stpeters_cross/stpeters_bottom.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_bottom.png"' class=''/>
-                                <ImageTexture containerField='front' repeatS='true' repeatT='true' url='"cubemap/all_probes/stpeters_cross/stpeters_front.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_front.png"' class=''/>
-                                <ImageTexture containerField='left' repeatS='true' repeatT='true' url='"cubemap/all_probes/stpeters_cross/stpeters_left.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_left.png"' class=''/>
-                                <ImageTexture containerField='right' repeatS='true' repeatT='true' url='"cubemap/all_probes/stpeters_cross/stpeters_right.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_right.png"' class=''/>
-                                <ImageTexture containerField='top' repeatS='true' repeatT='true' url='"cubemap/all_probes/stpeters_cross/stpeters_top.png" "http://coderextreme.net/X3DJSONLD/cubemap/all_probes/stpeters_cross/stpeters_top.png"' class=''/>
+                                <ImageTexture containerField='back' repeatS='true' repeatT='true' url='"images/all_probes/stpeters_cross/stpeters_back.png" "http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"' class=''/>
+                                <ImageTexture containerField='bottom' repeatS='true' repeatT='true' url='"images/all_probes/stpeters_cross/stpeters_bottom.png" "http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"' class=''/>
+                                <ImageTexture containerField='front' repeatS='true' repeatT='true' url='"images/all_probes/stpeters_cross/stpeters_front.png" "http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"' class=''/>
+                                <ImageTexture containerField='left' repeatS='true' repeatT='true' url='"images/all_probes/stpeters_cross/stpeters_left.png" "http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"' class=''/>
+                                <ImageTexture containerField='right' repeatS='true' repeatT='true' url='"images/all_probes/stpeters_cross/stpeters_right.png" "http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"' class=''/>
+                                <ImageTexture containerField='top' repeatS='true' repeatT='true' url='"images/all_probes/stpeters_cross/stpeters_top.png" "http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"' class=''/>
                             </ComposedCubeMapTexture>
                         </Appearance>
                         <Sphere radius='1.0' solid='true' class=''/>
