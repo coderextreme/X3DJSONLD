@@ -19,13 +19,13 @@ class ClassPrinter:
         self.printed = False
         if isString(node):
             self.name = node
-            self.node = False
+            self.node = None
         else:
             self.name = node.get("name")
             self.node = node
 
     def findParents(self):
-        if self.node:
+        if self.node is not None:
             inhers = self.node.iter("Inheritance")
             for inher in inhers:
                 self.parents.update({ inher.get('baseType') : 1} )
@@ -39,7 +39,7 @@ class ClassPrinter:
             return self.parents
 
     def findChildren(self):
-        if self.node:
+        if self.node is not None:
             inhers = self.node.iter("Inheritance")
             for inher in inhers:
                 classes[inher.get('baseType')].children[self.name] = self.name
@@ -458,7 +458,7 @@ class ClassPrinter:
 #					"$ref": "#/definitions/-children"
 #				}
 #'''
-        if self.node:
+        if self.node is not None:
             fields = self.node.iter("field")
             required = []
             str += '''\
@@ -571,7 +571,7 @@ code = '''{
 '''
 
 
-soup = xml.etree.ElementTree.parse("X3DObjectModel-3.3.xml").getroot()
+soup = xml.etree.ElementTree.parse("../../specifications/X3DObjectModel-3.3.xml").getroot()
 
 classes = {}
 containerFields = {}
@@ -615,6 +615,6 @@ if code[-2] == ',':
     code = code[:-2] + '\n' # strip off comma
 code += '\t}\n}\n'
 
-f = open("x3d-5.0-JSONSchema.json", "w")
+f = open("../schema/x3d-5.0-JSONSchema.json", "w")
 f.write(code)
 f.close()
