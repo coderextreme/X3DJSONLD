@@ -178,7 +178,7 @@ protected class MFString0 {
 }
 protected class MFString1 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"He said, "Immel did it!""});
+    return new MFStringObject(new java.lang.String[] {"He said, \"Immel did it!\""});
   }
 }
 protected class MFString2 {

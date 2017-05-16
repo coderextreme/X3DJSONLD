@@ -206,6 +206,7 @@ function loadX3DJS(json, path, xml, NS, loadSchema, doValidate, callback) {
 		*/
 		var y = str
 			.replace(/'([^'\r]*)\n([^']*)'/g, "'$1\\n$2'")
+			.replace(/\\"/g, "\\\"")
 			.replace(/&lt;/g, "<")
 			.replace(/&gt;/g, ">")
 			.replace(/&amp;/g, "&")

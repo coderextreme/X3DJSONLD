@@ -4,7 +4,7 @@
 <meta name="creator" content="John Carlson"></meta>
 <meta name="generator" content="manual"></meta>
 <meta name="identifier" content="http://coderextreme.net/X3DJSONLD/browser.x3d"></meta>
-<meta name="description" content="a script test with embedded \\n between single quotes"></meta>
+<meta name="description" content="a script test with embedded \n between single quotes"></meta>
 </head>
 <Scene><Script DEF="Browser"><![CDATA[ecmascript:
                 function initialize() {

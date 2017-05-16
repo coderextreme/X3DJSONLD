@@ -332,14 +332,16 @@ JavaSerializer.prototype = {
 							attrs[a].nodeValue.substr(1, attrs[a].nodeValue.length-2).split(/" "/).
 							map(function(x) {
 								var y = x.
+									/*
 									replace(/(\\+)([^&\\"])/g, '$1$1$2').
 								       replace(/(\\)+([&"])/g, '\\\\\\\$2').
+								       */
 								       replace(/""/g, '\\"\\"').
 								       replace(/&quot;&quot;/g, '\\"\\"').
 								       replace(/&/g, "&amp;").
 								       replace(/\\n/g, '\\n');
 								if (y !== x) {
-									// console.error("Java Replacing "+x+" with "+y);
+									console.error("Java Replacing "+x+" with "+y);
 								}
 								return y;
 							}), this.codeno, '","', '"', '"');
@@ -462,7 +464,7 @@ JavaSerializer.prototype = {
 				}
 			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 4) {
 				str += "\n"+("  ".repeat(n))+".setSourceCode(\""+node.nodeValue.split("\r\n").map(function(x) {
-					return x.replace(/\\"/g, '\\\\"').
+					return x.
 						replace(/"/g, '\\"').
 						replace(/\\n/g, "\\\\n");
 					}).join('\\n\"+\n\"')+'")';

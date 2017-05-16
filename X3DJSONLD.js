@@ -255,6 +255,7 @@ function CreateElement(key, x3djsonNS, containerField) {
 function CDATACreateFunction(document, element, str) {
 	var y = str
 		.replace(/'([^'\r]*)\n([^']*)'/g, "'$1\\n$2'")
+		.replace(/\\"/g, "\\\"")
 		.replace(/&lt;/g, "<")
 		.replace(/&gt;/g, ">")
 		.replace(/&amp;/g, "&")
@@ -377,12 +378,15 @@ function CommentStringToXML(str) {
  */
 function SFStringToXML(str) {
 	var y = str;
+	/*
 	str = (""+str).replace(/\\\\/g, '\\\\');
 	str = str.replace(/\\\\\\\\/g, '\\\\');
-	str = str.replace(/\\/g, '\\\\');
 	str = str.replace(/(\\+)"/g, '\\"');
+	*/
+	str = str.replace(/\\/g, '\\\\');
+	str = str.replace(/"/g, '\\\"');
 	if (y !== str) {
-		// console.log("X3DJSON [] replacing", y, "with", str);
+		console.log("X3DJSONLD [] replacing", y, "with", str);
 	}
 	return str;
 }
@@ -392,10 +396,10 @@ function SFStringToXML(str) {
  */
 function JSONStringToXML(str) {
 	var y = str;
-	str = str.replace(/\\/g, '\\\\');
+	// str = str.replace(/\\/g, '\\\\');
 	str = str.replace(/\n/g, '\\n');
 	if (y !== str) {
-		// console.log("X3DJSON replacing", y, "with", str);
+		console.log("X3DJSONLD replacing", y, "with", str);
 	}
 	return str;
 }

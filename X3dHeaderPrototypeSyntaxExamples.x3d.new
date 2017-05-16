@@ -52,7 +52,7 @@
 </Group>
 <Transform DEF="TransformExampleUSE" rotation="0 1 0 0.78" translation="0 2.5 0"><Group USE="ExampleChildElement"></Group>
 </Transform>
-<Collision><Shape containerField="proxy"><!--note that Collision proxy Shape is not rendered--><!--alternative: Text string='"He said, \&quot;Immel did it!\&quot;"'--><Text containerField="geometry" string="&quot;He said, &quot;Immel did it!&quot;&quot;"></Text>
+<Collision><Shape containerField="proxy"><!--note that Collision proxy Shape is not rendered--><!--alternative: Text string='"He said, \&quot;Immel did it!\&quot;"'--><Text containerField="geometry" string="&quot;He said, \&quot;Immel did it!\&quot;&quot;"></Text>
 <Appearance containerField="appearance"><Material containerField="material"></Material>
 </Appearance>
 </Shape>

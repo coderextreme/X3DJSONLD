@@ -11,7 +11,7 @@
                 <Appearance>
                     <Material diffuseColor='0 0.75 0.18'/>
                 </Appearance>
-                <Text string='"Locked" "FIRE!..""FIRE!"'/>
+                <Text string='"Locked" "FIRE!..\"\"FIRE!"'/>
             </Shape>
         </Group>
     </Scene>

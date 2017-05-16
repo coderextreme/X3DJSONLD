@@ -48,7 +48,7 @@
           },
           {
             "@name":"translated",
-            "@content":"15 May 2017"
+            "@content":"16 May 2017"
           },
           {
             "@name":"generator",
@@ -108,7 +108,7 @@
                     "-geometry":
                       { "Text":
                         {
-                          "@string":["I don't think so","" \"he said \"Hi""],
+                          "@string":["I don't think so","","he said \"Hi\""],
                           "-fontStyle":
                             { "FontStyle":
                               {
@@ -137,7 +137,7 @@
                     "-geometry":
                       { "Text":
                         {
-                          "@string":["I don't think so","" \"he said \"Hi""],
+                          "@string":["I don't think so","","he said \"Hi\""],
                           "-fontStyle":
                             { "FontStyle":
                               {
