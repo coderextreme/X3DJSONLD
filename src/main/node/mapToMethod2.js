@@ -51,6 +51,9 @@ var mapToMethod2 = {
 	"Group" : {
 		"IS" : "setIS"
 	},
+	"RigidBody" : {
+		"CollidableShape" : "addGeometry"
+	},
 	"Viewport" : {
 		"IS" : "setIS"
 	},
