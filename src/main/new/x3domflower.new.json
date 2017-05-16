@@ -78,8 +78,8 @@
                                 "-parts":[
                                   { "ShaderPart":
                                     {
-                                      "@type":"VERTEX",
-                                      "@url":["x3dom_flowers_chromatic.vs","http://coderextreme.net/X3DJSONLD/x3dom.vs"]
+                                      "@url":["x3dom_flowers_chromatic.vs","http://coderextreme.net/X3DJSONLD/x3dom.vs"],
+                                      "@type":"VERTEX"
                                     }
                                   },
                                   { "ShaderPart":
@@ -250,8 +250,8 @@
                                 "-parts":[
                                   { "ShaderPart":
                                     {
-                                      "@type":"VERTEX",
-                                      "@url":["x3dom_flowers_chromatic.vs","http://coderextreme.net/X3DJSONLD/x3dom.vs"]
+                                      "@url":["x3dom_flowers_chromatic.vs","http://coderextreme.net/X3DJSONLD/x3dom.vs"],
+                                      "@type":"VERTEX"
                                     }
                                   },
                                   { "ShaderPart":
@@ -421,8 +421,8 @@
                                 "-parts":[
                                   { "ShaderPart":
                                     {
-                                      "@type":"VERTEX",
-                                      "@url":["x3dom_flowers_plain.vs","http://coderextreme.net/X3DJSONLD/x3dom_flowers_plain.vs"]
+                                      "@url":["x3dom_flowers_plain.vs","http://coderextreme.net/X3DJSONLD/x3dom_flowers_plain.vs"],
+                                      "@type":"VERTEX"
                                     }
                                   },
                                   { "ShaderPart":

@@ -90,8 +90,8 @@
                                 "-parts":[
                                   { "ShaderPart":
                                     {
-                                      "@type":"VERTEX",
-                                      "@url":["cobweb_flowers_input.vs","http://coderextreme.net/X3DJSONLD/cobweb_flowers_input.vs"]
+                                      "@url":["cobweb_flowers_input.vs","http://coderextreme.net/X3DJSONLD/cobweb_flowers_input.vs"],
+                                      "@type":"VERTEX"
                                     }
                                   },
                                   { "ShaderPart":
