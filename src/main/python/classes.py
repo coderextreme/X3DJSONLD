@@ -46,7 +46,7 @@ class ClassPrinter:
 code = ""
 code += 'CommentsBlock = Java.type("org.web3d.x3d.jsail.Core.CommentsBlock")\n'
 
-soup = BeautifulSoup(open("X3DObjectModel-3.3.xml"), "xml")
+soup = BeautifulSoup(open("../../specifications/X3DObjectModel-3.3.xml"), "xml")
 
 classes = {}
 
@@ -73,6 +73,6 @@ for ft in fts:
 for k,v in classes.items():
     code += v.printClass()
 
-f = open("X3Dautoclass.js", "w")
+f = open("../nashorn/X3Dautoclass.js", "w")
 f.write(code)
 f.close()
