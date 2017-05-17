@@ -34,14 +34,14 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                 .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("bias").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
                 .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("scale").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
                 .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("power").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("2"))
-                .addParts(new ShaderPartObject().setType("VERTEX").setUrl(Java.to(["shaders/cobweb.vs","https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"], Java.type("java.lang.String[]"))))
-                .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(Java.to(["shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"], Java.type("java.lang.String[]")))))
+                .addParts(new ShaderPartObject().setType("VERTEX").setUrl(Java.to(["./shaders/cobweb.vs","https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"], Java.type("java.lang.String[]"))))
+                .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(Java.to(["./shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"], Java.type("java.lang.String[]")))))
               .addShaders(new ComposedShaderObject().setDEF("x3dom").setLanguage("GLSL")
                 .addField(new fieldObject().setType(fieldObject.TYPE_SFINT32).setName("cube").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
                 .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("chromaticDispertion").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.98 1 1.033"))
                 .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("bias").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
                 .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("scale").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
                 .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("power").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("2"))
-                .addParts(new ShaderPartObject().setType("VERTEX").setUrl(Java.to(["shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs"], Java.type("java.lang.String[]"))))
-                .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(Java.to(["shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"], Java.type("java.lang.String[]")))))))))      ;
+                .addParts(new ShaderPartObject().setType("VERTEX").setUrl(Java.to(["./shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs"], Java.type("java.lang.String[]"))))
+                .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(Java.to(["./shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"], Java.type("java.lang.String[]")))))))))      ;
     X3D0.toFileX3D("../data/geo.new.x3d");

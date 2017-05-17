@@ -36,7 +36,7 @@ var ProtoInstance6 = null;
           .addChild(ProtoInstance5 = new ProtoInstanceObject().setName("flower"))
           .addChild(ProtoInstance6 = new ProtoInstanceObject().setName("flower"))))      ;
 ProtoInstance0
-                  .addFieldValue(new fieldValueObject().setName("vertex").setValue("\"shaders/gl_flowers_chromatic.vs\""));
+                  .addFieldValue(new fieldValueObject().setName("vertex").setValue("\"./shaders/gl_flowers_chromatic.vs\""));
 ProtoInstance0
-                  .addFieldValue(new fieldValueObject().setName("fragment").setValue("\"shaders/common.fs\""));
+                  .addFieldValue(new fieldValueObject().setName("fragment").setValue("\"./shaders/common.fs\""));
     X3D0.toFileX3D("../data/glflowers.new.x3d");

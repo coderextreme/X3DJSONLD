@@ -205,13 +205,13 @@
                                 "-parts":[
                                   { "ShaderPart":
                                     {
-                                      "@url":["shaders/cobweb_flowers_input.vs","https://coderextreme.net/X3DJSONLD/shaders/cobweb_flowers_input.vs"],
+                                      "@url":["./shaders/cobweb_flowers_input.vs","https://coderextreme.net/X3DJSONLD/shaders/cobweb_flowers_input.vs"],
                                       "@type":"VERTEX"
                                     }
                                   },
                                   { "ShaderPart":
                                     {
-                                      "@url":["shaders/pc_input_flowers.fs","https://coderextreme.net/X3DJSONLD/shaders/pc_input_flowers.fs"],
+                                      "@url":["./shaders/pc_input_flowers.fs","https://coderextreme.net/X3DJSONLD/shaders/pc_input_flowers.fs"],
                                       "@type":"FRAGMENT"
                                     }
                                   }

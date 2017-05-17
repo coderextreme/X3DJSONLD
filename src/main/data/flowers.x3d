@@ -44,9 +44,9 @@
                                 <field name='scale' type='SFFloat' accessType="inputOutput" value='10'/>
                                 <field name='power' type='SFFloat' accessType="inputOutput" value='2.0'/>
 				  
-                                <ShaderPart url='"shaders/cobweb.vs" "https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"' type="VERTEX">
+                                <ShaderPart url='"./shaders/cobweb.vs" "https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"' type="VERTEX">
                                 </ShaderPart>
-                                <ShaderPart url='"shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"' type='FRAGMENT'>
+                                <ShaderPart url='"./shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"' type='FRAGMENT'>
                                 </ShaderPart>
                             </ComposedShader>
                         </Appearance>

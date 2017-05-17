@@ -231,22 +231,22 @@ protected class MFString11 {
 }
 protected class MFString12 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"shaders/cobweb.vs","https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"});
+    return new MFStringObject(new java.lang.String[] {"./shaders/cobweb.vs","https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"});
   }
 }
 protected class MFString13 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"shaders/mix.fs","https://coderextreme.net/X3DJSONLD/shaders/mix.fs"});
+    return new MFStringObject(new java.lang.String[] {"./shaders/mix.fs","https://coderextreme.net/X3DJSONLD/shaders/mix.fs"});
   }
 }
 protected class MFString14 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs"});
+    return new MFStringObject(new java.lang.String[] {"./shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs"});
   }
 }
 protected class MFString15 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"shaders/mix.fs","https://coderextreme.net/X3DJSONLD/shaders/mix.fs"});
+    return new MFStringObject(new java.lang.String[] {"./shaders/mix.fs","https://coderextreme.net/X3DJSONLD/shaders/mix.fs"});
   }
 }
 }

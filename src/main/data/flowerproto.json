@@ -51,13 +51,13 @@
                       "@name":"vertex",
                       "@accessType":"inputOutput",
                       "@type":"MFString",
-                      "@value":["shaders/gl_flowers_chromatic.vs"]
+                      "@value":["./shaders/gl_flowers_chromatic.vs"]
                     },
                     {
                       "@name":"fragment",
                       "@accessType":"inputOutput",
                       "@type":"MFString",
-                      "@value":["shaders/pc_flowers.fs"]
+                      "@value":["./shaders/pc_flowers.fs"]
                     }
                   ]
               },

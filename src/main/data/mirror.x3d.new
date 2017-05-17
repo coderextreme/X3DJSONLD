@@ -28,16 +28,16 @@
 <field name="bias" accessType="inputOutput" type="SFFloat" value="0.5"></field>
 <field name="scale" accessType="inputOutput" type="SFFloat" value="0.5"></field>
 <field name="power" accessType="inputOutput" type="SFFloat" value="2"></field>
-<ShaderPart url="&quot;shaders/x3dom.vs&quot; &quot;https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs&quot;" type="VERTEX"></ShaderPart>
-<ShaderPart url="&quot;shaders/mix.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/shaders/mix.fs&quot;" type="FRAGMENT"></ShaderPart>
+<ShaderPart url="&quot;./shaders/x3dom.vs&quot; &quot;https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs&quot;" type="VERTEX"></ShaderPart>
+<ShaderPart url="&quot;./shaders/mix.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/shaders/mix.fs&quot;" type="FRAGMENT"></ShaderPart>
 </ComposedShader>
 <ComposedShader DEF="cobweb" language="GLSL"><!--http://hypertextbook.com/facts/2005/JustinChe.shtml--><field name="chromaticDispertion" accessType="inputOutput" type="SFVec3f" value="0.98 1 1.033"></field>
 <field name="cube" accessType="inputOutput" type="SFInt32" value="0"></field>
 <field name="bias" accessType="inputOutput" type="SFFloat" value="0.5"></field>
 <field name="scale" accessType="inputOutput" type="SFFloat" value="0.5"></field>
 <field name="power" accessType="inputOutput" type="SFFloat" value="2"></field>
-<ShaderPart url="&quot;shaders/cobweb.vs&quot; &quot;https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs&quot;" type="VERTEX"></ShaderPart>
-<ShaderPart url="&quot;shaders/mix.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/shaders/mix.fs&quot;" type="FRAGMENT"></ShaderPart>
+<ShaderPart url="&quot;./shaders/cobweb.vs&quot; &quot;https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs&quot;" type="VERTEX"></ShaderPart>
+<ShaderPart url="&quot;./shaders/mix.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/shaders/mix.fs&quot;" type="FRAGMENT"></ShaderPart>
 </ComposedShader>
 </Appearance>
 <Sphere containerField="geometry" radius="30"></Sphere>

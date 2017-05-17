@@ -36,7 +36,7 @@ var ProtoInstance6 = null;
           .addChild(ProtoInstance5 = new ProtoInstanceObject().setName("flower"))
           .addChild(ProtoInstance6 = new ProtoInstanceObject().setName("flower"))))      ;
 ProtoInstance0
-                  .addFieldValue(new fieldValueObject().setName("vertex").setValue("\"shaders/freewrl_flowers_chromatic.vs\""));
+                  .addFieldValue(new fieldValueObject().setName("vertex").setValue("\"./shaders/freewrl_flowers_chromatic.vs\""));
 ProtoInstance0
-                  .addFieldValue(new fieldValueObject().setName("fragment").setValue("\"shaders/freewrl.fs\""));
+                  .addFieldValue(new fieldValueObject().setName("fragment").setValue("\"./shaders/freewrl.fs\""));
     X3D0.toFileX3D("../data/freewrlflowers.new.x3d");
