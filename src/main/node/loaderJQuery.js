@@ -379,7 +379,7 @@ function convertXmlToJson(xmlString, callback) {
     $.post("/convert", xmlString, callback, "json")
     .fail(function(jqXHR, textStatus, errorThrown) {
 	    alert('convertXmlToJson request failed! ' + textStatus + ' ' + errorThrown);
-	    $.get("X3dToJson.xslt", function(xslt) {
+	    $.get("stylesheets/X3dToJson.xslt", function(xslt) {
 		// console.log("VAL", xmlString);
 		var demo = { xslt: xslt};
 
