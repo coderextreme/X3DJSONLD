@@ -96,7 +96,7 @@ Use JSON Scripts? <input id="scripting" type="checkbox" checked="true"></input>
 Use Namespace: <select id="namespace">
 <option>http://www.web3d.org/specifications/x3d</option>
 <option>http://www.w3.org/1999/xhtml</option> <!-- X3DOM XML -->
-<option>http://www.x3dom.org/x3dom</option>
+<option>https://www.x3dom.org/x3dom</option>
 <option>http://www.web3d.org/specifications/x3d-namespace</option>  <!-- COBWEB -->
 <option>none</option> <!-- X3DOM HTML -->
 </select>
@@ -163,20 +163,20 @@ Click <a onclick='updateFromPly();'>here</a> to load PLY text into JSON X3DOM vi
 </tr>
 </table>
 </body>
-    <script type="text/javascript" src="JavaScriptSerializer.js"></script>
-    <script type="text/javascript" src="X3DJSONLD.js"></script>
-    <script type="text/javascript" src="PrototypeExpander.js"></script>
-    <script type="text/javascript" src="Flattener.js"></script>
-    <script type="text/javascript" src="Script.js"></script>
-    <script type="text/javascript" src="mapToMethod.js"></script>
-    <script type="text/javascript" src="mapToMethod2.js"></script>
-    <script type="text/javascript" src="fieldTypes.js"></script>
-    <script type="text/javascript" src="matrix.js"></script>
-    <script type="text/javascript" src="convertPlyToJson.js"></script>
-    <script type="text/javascript" src="convertStlToJson.js"></script>
-    <script type="text/javascript" src="convertJsonToStl.js"></script>
-    <script type="text/javascript" src="loaderJQuery.js"></script>
-    <script type="text/javascript" src="exi.js"></script>
+    <script type="text/javascript" src="node/JavaScriptSerializer.js"></script>
+    <script type="text/javascript" src="node/X3DJSONLD.js"></script>
+    <script type="text/javascript" src="node/PrototypeExpander.js"></script>
+    <script type="text/javascript" src="node/Flattener.js"></script>
+    <script type="text/javascript" src="node/Script.js"></script>
+    <script type="text/javascript" src="node/mapToMethod.js"></script>
+    <script type="text/javascript" src="node/mapToMethod2.js"></script>
+    <script type="text/javascript" src="node/fieldTypes.js"></script>
+    <script type="text/javascript" src="node/matrix.js"></script>
+    <script type="text/javascript" src="node/convertPlyToJson.js"></script>
+    <script type="text/javascript" src="node/convertStlToJson.js"></script>
+    <script type="text/javascript" src="node/convertJsonToStl.js"></script>
+    <script type="text/javascript" src="node/loaderJQuery.js"></script>
+    <script type="text/javascript" src="node/exi.js"></script>
     <script type="text/javascript">
 	$(document).ready(function() {
 		loadJson('cobweb.json'); // does load cobweb.json
