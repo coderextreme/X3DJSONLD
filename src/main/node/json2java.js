@@ -11,5 +11,5 @@ convertJSON([{
 	serializer : './JavaSerializer.js',
 	folder : "../java/net/coderextreme/",
 	extension : ".java",
-	codeOutput : "../new/",
+	codeOutput : "../",
 	}]);

@@ -9,7 +9,7 @@ var convertJSON = require('./convertJSON.js').convertJSON;
 
 convertJSON([{ 
 	serializer : './AframeSerilizer.js',
-	folder : "../new/aframe/",
+	folder : "../aframe/",
 	extension : ".aframe",
 	codeOutput : "",
 	}]);

@@ -11,5 +11,5 @@ convertJSON([{
 	serializer : './PythonSerializer.js',
 	folder : "../python/",
 	extension : ".py",
-	codeOutput : "../new/",
+	codeOutput : "../",
 	}]);
