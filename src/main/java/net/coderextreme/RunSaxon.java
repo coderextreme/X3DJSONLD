@@ -65,6 +65,7 @@ protected static class ExitException extends SecurityException
 			String extension = "json";
 			boolean overwrite = false;
 			boolean silent = false;
+			String outdir = "./";
 			System.setSecurityManager(new NoExitSecurityManager());
 			for (int a = 0; a < args.length; a++) {
 				String source = args[a];
@@ -74,6 +75,10 @@ protected static class ExitException extends SecurityException
 				}
 				if (source.startsWith("---silent")) {
 					silent = true;
+					continue;
+				}
+				if (source.startsWith("---")) {
+					outdir = source.substring(3);
 					continue;
 				}
 				if (source.startsWith("--")) {
@@ -136,7 +141,7 @@ protected static class ExitException extends SecurityException
 					if ((out.startsWith("http://") || out.startsWith("https://")) && out.lastIndexOf("www.web3d.org") >= 0) {
 						out = out.substring(out.lastIndexOf("www.web3d.org"));
 					}
-					out = "../out"+out.substring(out.indexOf("/"), out.lastIndexOf("."))+"."+extension;
+					out = outdir+out.substring(out.indexOf("/")+1, out.lastIndexOf("."))+"."+extension;
 					if (overwrite) {
 						System.err.println("BEGIN "+source+" > "+extension);
 						if (out.lastIndexOf("/") > 0) {
@@ -179,7 +184,7 @@ protected static class ExitException extends SecurityException
 					}
 				} catch (Throwable e) {
 					System.err.println("FATAL "+source+" > "+out);
-					System.err.println(e.getMessage());
+					e.printStackTrace();
 				}
 			}
 			System.setSecurityManager(null); // or save and restore original

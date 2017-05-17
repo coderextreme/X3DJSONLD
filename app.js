@@ -22,7 +22,7 @@ app.use('/examples', express.static(config.examples));
 app.use(express.static('src/main/html'));
 app.use(express.static('src/main/node'));
 app.use(express.static('src/main/orig'));
-app.use(express.static('src/main/new/orig'));
+app.use(express.static('src/main/out'));
 app.use(express.static('src/main/schema'));
 app.use(express.static('src/main/resources'));
 app.use(express.static('src/main/shaders'));
@@ -31,7 +31,7 @@ app.use(express.static('src/main/lib/stylesheets'));
 
 function convertX3dToJson(res, infile, outfile, next) {
 	console.error("Calling converter on "+infile);
-	runAndSend(['---silent', infile], function(json) {
+	runAndSend(['---overwrite', infile], function(json) {
 		console.error("Calling extern proto expander");
 		json = externPrototypeExpander(outfile, json);
 		json = flattener(json);
