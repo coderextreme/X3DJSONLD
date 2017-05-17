@@ -6,7 +6,7 @@
 <meta name="created" content="23 January 2005"></meta>
 <meta name="modified" content="05 May 2017"></meta>
 <meta name="description" content="2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)"></meta>
-<meta name="url" content="http://coderextreme.net/x3d/flowers2.x3d"></meta>
+<meta name="url" content="https://coderextreme.net/x3d/flowers2.x3d"></meta>
 <meta name="generator" content="manually written"></meta>
 </head>
 <Scene><NavigationInfo></NavigationInfo>

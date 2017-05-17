@@ -9,7 +9,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addMeta(new metaObject().setName("title").setContent("CoordinateAxis.x3d"))
         .addMeta(new metaObject().setName("creator").setContent("Unknown, see X3D Resources Archives"))
         .addMeta(new metaObject().setName("generator").setContent("manual"))
-        .addMeta(new metaObject().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/CoordinateAxis.x3d"))
+        .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/CoordinateAxis.x3d"))
         .addMeta(new metaObject().setName("description").setContent("a box")))
       .setScene(new SceneObject()
         .addChild(new CollisionObject().setDEF("DoNotCollideWithVisualizationWidget")

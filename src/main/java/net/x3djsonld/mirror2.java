@@ -26,7 +26,7 @@ import org.web3d.x3d.jsail.Time.*;
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="http://coderextreme.net/X3DJSONLD/mirro2.x3d">mirro2.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/mirro2.x3d">mirro2.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -38,7 +38,7 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="http://coderextreme.net/X3DJSONLD/mirro2.x3d" target="_blank">http://coderextreme.net/X3DJSONLD/mirro2.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/mirro2.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/mirro2.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -76,22 +76,22 @@ public class mirror2
     .addMeta(new metaObject().setName("title").setContent("mirro2.x3d"))
     .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
     .addMeta(new metaObject().setName("generator").setContent("manual"))
-    .addMeta(new metaObject().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/mirro2.x3d"))
+    .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/mirro2.x3d"))
     .addMeta(new metaObject().setName("description").setContent("a mirrored sphere")))
   .setScene(new SceneObject()
     .addChild(new ViewpointObject().setDescription("Switch background and images texture").setPosition(0.0f,5.0f,100.0f))
-    .addChild(new BackgroundObject("cube").setBackUrl(new MFStringObject("\"images/all_probes/beach_cross/beach_back.png\" \"http://coderextreme.net/images/all_probes/beach_cross/beach_back.png\"")).setBottomUrl(new MFStringObject("\"images/all_probes/beach_cross/beach_bottom.png\" \"http://coderextreme.net/images/all_probes/beach_cross/beach_bottom.png\"")).setFrontUrl(new MFStringObject("\"images/all_probes/beach_cross/beach_front.png\" \"http://coderextreme.net/images/all_probes/beach_cross/beach_front.png\"")).setLeftUrl(new MFStringObject("\"images/all_probes/beach_cross/beach_left.png\" \"http://coderextreme.net/images/all_probes/beach_cross/beach_left.png\"")).setRightUrl(new MFStringObject("\"images/all_probes/beach_cross/beach_right.png\" \"http://coderextreme.net/images/all_probes/beach_cross/beach_right.png\"")).setTopUrl(new MFStringObject("\"images/all_probes/beach_cross/beach_top.png\" \"http://coderextreme.net/images/all_probes/beach_cross/beach_top.png\"")))
+    .addChild(new BackgroundObject("cube").setBackUrl(new MFStringObject("\"images/all_probes/beach_cross/beach_back.png\" \"https://coderextreme.net/images/all_probes/beach_cross/beach_back.png\"")).setBottomUrl(new MFStringObject("\"images/all_probes/beach_cross/beach_bottom.png\" \"https://coderextreme.net/images/all_probes/beach_cross/beach_bottom.png\"")).setFrontUrl(new MFStringObject("\"images/all_probes/beach_cross/beach_front.png\" \"https://coderextreme.net/images/all_probes/beach_cross/beach_front.png\"")).setLeftUrl(new MFStringObject("\"images/all_probes/beach_cross/beach_left.png\" \"https://coderextreme.net/images/all_probes/beach_cross/beach_left.png\"")).setRightUrl(new MFStringObject("\"images/all_probes/beach_cross/beach_right.png\" \"https://coderextreme.net/images/all_probes/beach_cross/beach_right.png\"")).setTopUrl(new MFStringObject("\"images/all_probes/beach_cross/beach_top.png\" \"https://coderextreme.net/images/all_probes/beach_cross/beach_top.png\"")))
     .addChild(new TransformObject()
       .addChild(new ShapeObject()
         .setAppearance(new AppearanceObject()
           .setMaterial(new MaterialObject().setSpecularColor(.5f,.5f,.5f).setDiffuseColor(.7f,.7f,.7f))
           .setTexture(new ComposedCubeMapTextureObject()
-            .setBack(new ImageTextureObject("backShader").setUrl(new MFStringObject("\"images/all_probes/beach_cross/beach_back.png\" \"http://coderextreme.net/images/all_probes/beach_cross/beach_back.png\"")))
-            .setBottom(new ImageTextureObject("bottomShader").setUrl(new MFStringObject("\"images/all_probes/beach_cross/beach_bottom.png\" \"http://coderextreme.net/images/all_probes/beach_cross/beach_bottom.png\"")))
-            .setFront(new ImageTextureObject("frontShader").setUrl(new MFStringObject("\"images/all_probes/beach_cross/beach_front.png\" \"http://coderextreme.net/images/all_probes/beach_cross/beach_front.png\"")))
-            .setLeft(new ImageTextureObject("leftShader").setUrl(new MFStringObject("\"images/all_probes/beach_cross/beach_left.png\" \"http://coderextreme.net/images/all_probes/beach_cross/beach_left.png\"")))
-            .setRight(new ImageTextureObject("rightShader").setUrl(new MFStringObject("\"images/all_probes/beach_cross/beach_right.png\" \"http://coderextreme.net/images/all_probes/beach_cross/beach_right.png\"")))
-            .setTop(new ImageTextureObject("topShader").setUrl(new MFStringObject("\"images/all_probes/beach_cross/beach_top.png\" \"http://coderextreme.net/images/all_probes/beach_cross/beach_top.png\""))))
+            .setBack(new ImageTextureObject("backShader").setUrl(new MFStringObject("\"images/all_probes/beach_cross/beach_back.png\" \"https://coderextreme.net/images/all_probes/beach_cross/beach_back.png\"")))
+            .setBottom(new ImageTextureObject("bottomShader").setUrl(new MFStringObject("\"images/all_probes/beach_cross/beach_bottom.png\" \"https://coderextreme.net/images/all_probes/beach_cross/beach_bottom.png\"")))
+            .setFront(new ImageTextureObject("frontShader").setUrl(new MFStringObject("\"images/all_probes/beach_cross/beach_front.png\" \"https://coderextreme.net/images/all_probes/beach_cross/beach_front.png\"")))
+            .setLeft(new ImageTextureObject("leftShader").setUrl(new MFStringObject("\"images/all_probes/beach_cross/beach_left.png\" \"https://coderextreme.net/images/all_probes/beach_cross/beach_left.png\"")))
+            .setRight(new ImageTextureObject("rightShader").setUrl(new MFStringObject("\"images/all_probes/beach_cross/beach_right.png\" \"https://coderextreme.net/images/all_probes/beach_cross/beach_right.png\"")))
+            .setTop(new ImageTextureObject("topShader").setUrl(new MFStringObject("\"images/all_probes/beach_cross/beach_top.png\" \"https://coderextreme.net/images/all_probes/beach_cross/beach_top.png\""))))
           .addShaders(new ComposedShaderObject("cobweb").setLanguage("GLSL")
             .addComments("http://hypertextbook.com/facts/2005/JustinChe.shtml")
             .addField(new fieldObject().setAccessType("inputOutput").setName("chromaticDispertion").setType("SFVec3f").setValue("0.98 1 1.033"))
@@ -99,8 +99,8 @@ public class mirror2
             .addField(new fieldObject().setAccessType("inputOutput").setName("bias").setType("SFFloat").setValue("0.5"))
             .addField(new fieldObject().setAccessType("inputOutput").setName("scale").setType("SFFloat").setValue("0.5"))
             .addField(new fieldObject().setAccessType("inputOutput").setName("power").setType("SFFloat").setValue("2"))
-            .addParts(new ShaderPartObject().setUrl(new MFStringObject("\"cobweb.vs\" \"http://coderextreme.net/X3DJSONLD/cobweb.vs\"")))
-            .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject("\"mix.fs\" \"http://coderextreme.net/X3DJSONLD/mix.fs\""))))
+            .addParts(new ShaderPartObject().setUrl(new MFStringObject("\"shaders/cobweb.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs\"")))
+            .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject("\"shaders/mix.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/mix.fs\""))))
           .addShaders(new ComposedShaderObject("x3dom").setLanguage("GLSL")
             .addComments("http://hypertextbook.com/facts/2005/JustinChe.shtml")
             .addField(new fieldObject().setAccessType("inputOutput").setName("chromaticDispertion").setType("SFVec3f").setValue("0.98 1 1.033"))
@@ -108,8 +108,8 @@ public class mirror2
             .addField(new fieldObject().setAccessType("inputOutput").setName("bias").setType("SFFloat").setValue("0.5"))
             .addField(new fieldObject().setAccessType("inputOutput").setName("scale").setType("SFFloat").setValue("0.5"))
             .addField(new fieldObject().setAccessType("inputOutput").setName("power").setType("SFFloat").setValue("2"))
-            .addParts(new ShaderPartObject().setUrl(new MFStringObject("\"x3dom.vs\" \"http://coderextreme.net/X3DJSONLD/x3dom.vs\"")))
-            .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject("\"mix.fs\" \"http://coderextreme.net/X3DJSONLD/mix.fs\"")))))
+            .addParts(new ShaderPartObject().setUrl(new MFStringObject("\"shaders/x3dom.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs\"")))
+            .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject("\"shaders/mix.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/mix.fs\"")))))
         .setGeometry(new SphereObject().setRadius(30f)))
       .addChild(new ScriptObject("UrlSelector").setDirectOutput(true).setSourceCode(
 "<![CDATA[" + "\n" +

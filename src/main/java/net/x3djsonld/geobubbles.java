@@ -25,7 +25,7 @@ import org.web3d.x3d.jsail.Time.*;
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="http://coderextreme.net/X3DJSONLD/geobubbles.x3d">geobubbles.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/geobubbles.x3d">geobubbles.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -37,7 +37,7 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="http://coderextreme.net/X3DJSONLD/geobubbles.x3d" target="_blank">http://coderextreme.net/X3DJSONLD/geobubbles.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/geobubbles.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/geobubbles.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -76,13 +76,13 @@ public class geobubbles
     .addMeta(new metaObject().setName("title").setContent("geobubbles.x3d"))
     .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
     .addMeta(new metaObject().setName("generator").setContent("manual"))
-    .addMeta(new metaObject().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/geobubbles.x3d"))
+    .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/geobubbles.x3d"))
     .addMeta(new metaObject().setName("description").setContent("geo bubbles")))
   .setScene(new SceneObject()
     .addComments("Viewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views'/")
     .addComments("PositionInterpolator DEF='TourPosition' key='0 1' keyValue='-0.5 -0.5 4 -0.5 0.5 4'/")
     .addChild(new GeoViewpointObject("Tour").setDescription("Tour Views").setPosition(0.0f,0.0f,4.0f).setOrientation(1.0f,0.0f,0.0f,0.0f))
-    .addChild(new BackgroundObject().setBackUrl(new MFStringObject("\"images/BK.png\" \"http://coderextreme.net/X3DJSONLD/images/BK.png\"")).setBottomUrl(new MFStringObject("\"images/BT.png\" \"http://coderextreme.net/X3DJSONLD/images/BT.png\"")).setFrontUrl(new MFStringObject("\"images/FR.png\" \"http://coderextreme.net/X3DJSONLD/images/FR.png\"")).setLeftUrl(new MFStringObject("\"images/LF.png\" \"http://coderextreme.net/X3DJSONLD/images/LF.png\"")).setRightUrl(new MFStringObject("\"images/RT.png\" \"http://coderextreme.net/X3DJSONLD/images/RT.png\"")).setTopUrl(new MFStringObject("\"images/TP.png\" \"http://coderextreme.net/X3DJSONLD/images/TP.png\"")))
+    .addChild(new BackgroundObject().setBackUrl(new MFStringObject("\"images/BK.png\" \"https://coderextreme.net/X3DJSONLD/images/BK.png\"")).setBottomUrl(new MFStringObject("\"images/BT.png\" \"https://coderextreme.net/X3DJSONLD/images/BT.png\"")).setFrontUrl(new MFStringObject("\"images/FR.png\" \"https://coderextreme.net/X3DJSONLD/images/FR.png\"")).setLeftUrl(new MFStringObject("\"images/LF.png\" \"https://coderextreme.net/X3DJSONLD/images/LF.png\"")).setRightUrl(new MFStringObject("\"images/RT.png\" \"https://coderextreme.net/X3DJSONLD/images/RT.png\"")).setTopUrl(new MFStringObject("\"images/TP.png\" \"https://coderextreme.net/X3DJSONLD/images/TP.png\"")))
     .addChild(new TransformObject()
       .addChild(new ShapeObject()
         .setGeometry(new SphereObject())

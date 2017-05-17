@@ -15,7 +15,7 @@ var ProtoInstance2 = null;
         .addMeta(new metaObject().setName("created").setContent("11 Jan 2015"))
         .addMeta(new metaObject().setName("modified").setContent("05 May 2017"))
         .addMeta(new metaObject().setName("description").setContent("12 extrusions to test prototype expander"))
-        .addMeta(new metaObject().setName("identifier").setContent("http://coderextreme.net/x3d/qq3.x3d"))
+        .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/x3d/qq3.x3d"))
         .addMeta(new metaObject().setName("generator").setContent("manual")))
       .setScene(new SceneObject()
         .addChild(new ProtoDeclareObject().setName("Process")

@@ -89,7 +89,7 @@ ProtoInstanceObject ProtoInstance2 = null;
         .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
         .addMeta(new metaObject().setName("description").setContent("3 prismatic spheres"))
         .addMeta(new metaObject().setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
-        .addMeta(new metaObject().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/bub.x3d")))
+        .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/bub.x3d")))
       .setScene(new SceneObject()
         .addChild(new NavigationInfoObject())
         .addChild(new BackgroundObject().setBackUrl(new MFStringObject(new MFString0().getArray())).setBottomUrl(new MFStringObject(new MFString1().getArray())).setFrontUrl(new MFStringObject(new MFString2().getArray())).setLeftUrl(new MFStringObject(new MFString3().getArray())).setRightUrl(new MFStringObject(new MFString4().getArray())).setTopUrl(new MFStringObject(new MFString5().getArray())))
@@ -107,7 +107,7 @@ ProtoInstanceObject ProtoInstance2 = null;
                     .setLeft(new ImageTextureObject().setUrl(new MFStringObject(new MFString9().getArray())))
                     .setRight(new ImageTextureObject().setUrl(new MFStringObject(new MFString10().getArray())))
                     .setTop(new ImageTextureObject().setUrl(new MFStringObject(new MFString11().getArray()))))
-                  .addComments(new CommentsBlock("<ComposedShader DEF='gl' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"gl.vs\" \"http://coderextreme.net/X3DJSONLD/gl.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"pc_bubbles.fs\" \"http://coderextreme.net/X3DJSONLD/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader> <ComposedShader DEF='freewrl' language=\"GLSL\"> <field name='fw_textureCoodGenType' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"freewrl.vs\" \"http://coderextreme.net/X3DJSONLD/freewrl.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"pc_bubbles.fs\" \"http://coderextreme.net/X3DJSONLD/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader> <ComposedShader DEF='x3dom' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"x3dom.vs\" \"http://coderextreme.net/X3DJSONLD/x3dom.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"pc_bubbles.fs\" \"http://coderextreme.net/X3DJSONLD/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader> <ComposedShader DEF='instant' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"instant.vs\" \"http://coderextreme.net/X3DJSONLD/instant.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"pc_bubbles.fs\" \"http://coderextreme.net/X3DJSONLD/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader>"))
+                  .addComments(new CommentsBlock("<ComposedShader DEF='gl' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"shaders/gl.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/gl.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader> <ComposedShader DEF='freewrl' language=\"GLSL\"> <field name='fw_textureCoodGenType' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/freewrl.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader> <ComposedShader DEF='x3dom' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"shaders/x3dom.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader> <ComposedShader DEF='instant' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"shaders/instant.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/instant.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader>"))
                   .addShaders(new ComposedShaderObject().setDEF("cobweb").setLanguage("GLSL")
                     .addField(new fieldObject().setType("SFNode").setName("cube").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
                       .addChild(new ComposedCubeMapTextureObject().setUSE("texture")))
@@ -162,72 +162,72 @@ ProtoInstanceObject ProtoInstance2 = null;
     }
 protected class MFString0 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"images/all_probes/stpeters_cross/stpeters_back.png","http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"});
+    return new MFStringObject(new java.lang.String[] {"images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"});
   }
 }
 protected class MFString1 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"images/all_probes/stpeters_cross/stpeters_bottom.png","http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"});
+    return new MFStringObject(new java.lang.String[] {"images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"});
   }
 }
 protected class MFString2 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"images/all_probes/stpeters_cross/stpeters_front.png","http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"});
+    return new MFStringObject(new java.lang.String[] {"images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"});
   }
 }
 protected class MFString3 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"images/all_probes/stpeters_cross/stpeters_left.png","http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"});
+    return new MFStringObject(new java.lang.String[] {"images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"});
   }
 }
 protected class MFString4 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"images/all_probes/stpeters_cross/stpeters_right.png","http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"});
+    return new MFStringObject(new java.lang.String[] {"images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"});
   }
 }
 protected class MFString5 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"images/all_probes/stpeters_cross/stpeters_top.png","http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"});
+    return new MFStringObject(new java.lang.String[] {"images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"});
   }
 }
 protected class MFString6 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"images/all_probes/stpeters_cross/stpeters_back.png","http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"});
+    return new MFStringObject(new java.lang.String[] {"images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"});
   }
 }
 protected class MFString7 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"images/all_probes/stpeters_cross/stpeters_bottom.png","http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"});
+    return new MFStringObject(new java.lang.String[] {"images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"});
   }
 }
 protected class MFString8 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"images/all_probes/stpeters_cross/stpeters_front.png","http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"});
+    return new MFStringObject(new java.lang.String[] {"images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"});
   }
 }
 protected class MFString9 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"images/all_probes/stpeters_cross/stpeters_left.png","http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"});
+    return new MFStringObject(new java.lang.String[] {"images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"});
   }
 }
 protected class MFString10 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"images/all_probes/stpeters_cross/stpeters_right.png","http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"});
+    return new MFStringObject(new java.lang.String[] {"images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"});
   }
 }
 protected class MFString11 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"images/all_probes/stpeters_cross/stpeters_top.png","http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"});
+    return new MFStringObject(new java.lang.String[] {"images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"});
   }
 }
 protected class MFString12 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"cobweb.vs","http://coderextreme.net/X3DJSONLD/cobweb.vs"});
+    return new MFStringObject(new java.lang.String[] {"shaders/cobweb.vs","https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"});
   }
 }
 protected class MFString13 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"pc_bubbles.fs","http://coderextreme.net/X3DJSONLD/pc.fs"});
+    return new MFStringObject(new java.lang.String[] {"shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/shaders/pc.fs"});
   }
 }
 }

@@ -13,7 +13,7 @@ var ProtoInstance3 = null;
         .addMeta(new metaObject().setName("title").setContent("box.x3d"))
         .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
         .addMeta(new metaObject().setName("generator").setContent("manual"))
-        .addMeta(new metaObject().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/box.x3d"))
+        .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/box.x3d"))
         .addMeta(new metaObject().setName("description").setContent("3 boxes")))
       .setScene(new SceneObject()
         .addChild(new NavigationInfoObject().setType(Java.to(["EXAMINE"], Java.type("java.lang.String[]"))))

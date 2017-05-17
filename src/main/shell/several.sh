@@ -14,7 +14,7 @@ OUTPUTTOORIG='s/\/out//'
 STYLESHEETDIR=../lib/stylesheets
 
 
-(ls -d "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java net.coderextreme.RunSaxon ---overwrite --${STYLESHEETDIR}/X3dToJSON.xslt -json | xargs -P $PROCESSORS ${NODE} ${NODEDIR}/json2all.js
+(ls -d "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java net.coderextreme.RunSaxon ---../out/ ---overwrite --${STYLESHEETDIR}/X3dToJSON.xslt -json | xargs -P $PROCESSORS ${NODE} ${NODEDIR}/json2all.js
 
 for i in `(ls -d "$@" | grep -v intermediate | grep -v "\.new") | sed  -e 's/\.x3d$/.x3d.new/' -e $ORIGTOOUTPUT`
 do

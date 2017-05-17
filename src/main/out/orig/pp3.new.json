@@ -32,7 +32,7 @@
           },
           {
             "@name":"identifier",
-            "@content":"http://coderextreme.net/x3d/pp3.x3d"
+            "@content":"https://coderextreme.net/x3d/pp3.x3d"
           },
           {
             "@name":"generator",
@@ -40,7 +40,7 @@
           },
           {
             "@name":"translated",
-            "@content":"16 May 2017"
+            "@content":"17 May 2017"
           },
           {
             "@name":"generator",

@@ -21,7 +21,7 @@ import org.web3d.x3d.jsail.Text.*;
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="http://coderextreme.net/X3DJSONLD/CoordinateAxis.x3d">CoordinateAxis.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/CoordinateAxis.x3d">CoordinateAxis.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -33,7 +33,7 @@ import org.web3d.x3d.jsail.Text.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="http://coderextreme.net/X3DJSONLD/CoordinateAxis.x3d" target="_blank">http://coderextreme.net/X3DJSONLD/CoordinateAxis.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/CoordinateAxis.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/CoordinateAxis.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -71,7 +71,7 @@ public class CoordinateAxes
     .addMeta(new metaObject().setName("title").setContent("CoordinateAxis.x3d"))
     .addMeta(new metaObject().setName("creator").setContent("Unknown, see X3D Resources Archives"))
     .addMeta(new metaObject().setName("generator").setContent("manual"))
-    .addMeta(new metaObject().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/CoordinateAxis.x3d"))
+    .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/CoordinateAxis.x3d"))
     .addMeta(new metaObject().setName("description").setContent("a box")))
   .setScene(new SceneObject()
     .addChild(new CollisionObject("DoNotCollideWithVisualizationWidget")

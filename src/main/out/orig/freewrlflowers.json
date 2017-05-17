@@ -24,11 +24,11 @@
           },
           {
             "@name":"identifier",
-            "@content":"http://coderextreme.net/X3DJSONLD/sphereflowers.x3d"
+            "@content":"https://coderextreme.net/X3DJSONLD/sphereflowers.x3d"
           },
           {
             "@name":"translated",
-            "@content":"16 May 2017"
+            "@content":"17 May 2017"
           },
           {
             "@name":"generator",
@@ -48,12 +48,12 @@
           },
           { "Background":
             {
-              "@backUrl":["images/all_probes/stpeters_cross/stpeters_back.png","http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"],
-              "@bottomUrl":["images/all_probes/stpeters_cross/stpeters_bottom.png","http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"],
-              "@frontUrl":["images/all_probes/stpeters_cross/stpeters_front.png","http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"],
-              "@leftUrl":["images/all_probes/stpeters_cross/stpeters_left.png","http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"],
-              "@rightUrl":["images/all_probes/stpeters_cross/stpeters_right.png","http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"],
-              "@topUrl":["images/all_probes/stpeters_cross/stpeters_top.png","http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"]
+              "@backUrl":["images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"],
+              "@bottomUrl":["images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"],
+              "@frontUrl":["images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"],
+              "@leftUrl":["images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"],
+              "@rightUrl":["images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"],
+              "@topUrl":["images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"]
             }
           },
           { "Group":
@@ -91,11 +91,11 @@
                                     "fieldValue": [
                                       {
                                         "@name":"vertex",
-                                        "@value":["freewrl_flowers_chromatic.vs"]
+                                        "@value":["shaders/freewrl_flowers_chromatic.vs"]
                                       },
                                       {
                                         "@name":"fragment",
-                                        "@value":["freewrl.fs"]
+                                        "@value":["shaders/freewrl.fs"]
                                       }
                                     ]
                                   }

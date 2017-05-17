@@ -12,7 +12,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addMeta(new metaObject().setName("created").setContent("4 April 2017"))
         .addMeta(new metaObject().setName("generator").setContent("manual"))
         .addMeta(new metaObject().setName("license").setContent("../license.html"))
-        .addMeta(new metaObject().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/cube.x3d")))
+        .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/cube.x3d")))
       .setScene(new SceneObject()
         .addChild(new GroupObject()
           .addChild(new ShapeObject()

@@ -27,7 +27,7 @@ import org.web3d.x3d.jsail.Time.*;
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="http://coderextreme.net/X3DJSONLD/flowers.x3d">flowers.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/flowers.x3d">flowers.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -43,7 +43,7 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="http://coderextreme.net/X3DJSONLD/flowers.x3d" target="_blank">http://coderextreme.net/X3DJSONLD/flowers.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/flowers.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/flowers.x3d</a> </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -78,10 +78,10 @@ public class flowers
     .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
     .addMeta(new metaObject().setName("description").setContent("5 or more prismatic flowers"))
     .addMeta(new metaObject().setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new metaObject().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/flowers.x3d")))
+    .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/flowers.x3d")))
   .setScene(new SceneObject()
     .addChild(new NavigationInfoObject())
-    .addChild(new BackgroundObject().setBackUrl(new MFStringObject("\"images/all_probes/stpeters_cross/stpeters_back.png\" \"http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png\"")).setBottomUrl(new MFStringObject("\"images/all_probes/stpeters_cross/stpeters_bottom.png\" \"http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png\"")).setFrontUrl(new MFStringObject("\"images/all_probes/stpeters_cross/stpeters_front.png\" \"http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png\"")).setLeftUrl(new MFStringObject("\"images/all_probes/stpeters_cross/stpeters_left.png\" \"http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png\"")).setRightUrl(new MFStringObject("\"images/all_probes/stpeters_cross/stpeters_right.png\" \"http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png\"")).setTopUrl(new MFStringObject("\"images/all_probes/stpeters_cross/stpeters_top.png\" \"http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png\"")))
+    .addChild(new BackgroundObject().setBackUrl(new MFStringObject("\"images/all_probes/stpeters_cross/stpeters_back.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png\"")).setBottomUrl(new MFStringObject("\"images/all_probes/stpeters_cross/stpeters_bottom.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png\"")).setFrontUrl(new MFStringObject("\"images/all_probes/stpeters_cross/stpeters_front.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png\"")).setLeftUrl(new MFStringObject("\"images/all_probes/stpeters_cross/stpeters_left.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png\"")).setRightUrl(new MFStringObject("\"images/all_probes/stpeters_cross/stpeters_right.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png\"")).setTopUrl(new MFStringObject("\"images/all_probes/stpeters_cross/stpeters_top.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png\"")))
     .addChild(new ProtoDeclareObject().setName("flower")
       .setProtoBody(new ProtoBodyObject()
         .addChild(new TransformObject("transform")
@@ -89,12 +89,12 @@ public class flowers
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject().setSpecularColor(.5f,.5f,.5f).setDiffuseColor(.7f,.7f,.7f))
               .setTexture(new ComposedCubeMapTextureObject("texture")
-                .setBack(new ImageTextureObject().setUrl(new MFStringObject("\"images/all_probes/stpeters_cross/stpeters_back.png\" \"http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png\"")))
-                .setBottom(new ImageTextureObject().setUrl(new MFStringObject("\"images/all_probes/stpeters_cross/stpeters_bottom.png\" \"http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png\"")))
-                .setFront(new ImageTextureObject().setUrl(new MFStringObject("\"images/all_probes/stpeters_cross/stpeters_front.png\" \"http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png\"")))
-                .setLeft(new ImageTextureObject().setUrl(new MFStringObject("\"images/all_probes/stpeters_cross/stpeters_left.png\" \"http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png\"")))
-                .setRight(new ImageTextureObject().setUrl(new MFStringObject("\"images/all_probes/stpeters_cross/stpeters_right.png\" \"http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png\"")))
-                .setTop(new ImageTextureObject().setUrl(new MFStringObject("\"images/all_probes/stpeters_cross/stpeters_top.png\" \"http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png\""))))
+                .setBack(new ImageTextureObject().setUrl(new MFStringObject("\"images/all_probes/stpeters_cross/stpeters_back.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png\"")))
+                .setBottom(new ImageTextureObject().setUrl(new MFStringObject("\"images/all_probes/stpeters_cross/stpeters_bottom.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png\"")))
+                .setFront(new ImageTextureObject().setUrl(new MFStringObject("\"images/all_probes/stpeters_cross/stpeters_front.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png\"")))
+                .setLeft(new ImageTextureObject().setUrl(new MFStringObject("\"images/all_probes/stpeters_cross/stpeters_left.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png\"")))
+                .setRight(new ImageTextureObject().setUrl(new MFStringObject("\"images/all_probes/stpeters_cross/stpeters_right.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png\"")))
+                .setTop(new ImageTextureObject().setUrl(new MFStringObject("\"images/all_probes/stpeters_cross/stpeters_top.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png\""))))
               .addShaders(new ComposedShaderObject("shader").setLanguage("GLSL")
                 .addField(new fieldObject().setAccessType("inputOutput").setName("xxxcube").setType("SFInt32").setValue("0"))
                 .addField(new fieldObject().setAccessType("inputOutput").setName("cube").setType("SFNode")
@@ -103,8 +103,8 @@ public class flowers
                 .addField(new fieldObject().setAccessType("inputOutput").setName("bias").setType("SFFloat").setValue("10"))
                 .addField(new fieldObject().setAccessType("inputOutput").setName("scale").setType("SFFloat").setValue("10"))
                 .addField(new fieldObject().setAccessType("inputOutput").setName("power").setType("SFFloat").setValue("2.0"))
-                .addParts(new ShaderPartObject().setUrl(new MFStringObject("\"cobweb.vs\" \"http://coderextreme.net/X3DJSONLD/cobweb.vs\"")))
-                .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject("\"pc_bubbles.fs\" \"http://coderextreme.net/X3DJSONLD/pc_bubbles.fs\"")))))
+                .addParts(new ShaderPartObject().setUrl(new MFStringObject("\"shaders/cobweb.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs\"")))
+                .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject("\"shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs\"")))))
             .setGeometry(new IndexedFaceSetObject("Orbit").setDEF("Orbit")
               .setCoord(new CoordinateObject("OrbitCoordinates")))))
         .addChild(new ScriptObject("Bounce").setSourceCode(

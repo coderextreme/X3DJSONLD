@@ -22,7 +22,7 @@ import org.web3d.x3d.jsail.Time.*;
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="http://coderextreme.net/X3DJSONLD/bubble.x3d">bubble.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/bubble.x3d">bubble.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -38,7 +38,7 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="http://coderextreme.net/X3DJSONLD/bubble.x3d" target="_blank">http://coderextreme.net/X3DJSONLD/bubble.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/bubble.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/bubble.x3d</a> </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -73,7 +73,7 @@ public class bubble
     .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
     .addMeta(new metaObject().setName("description").setContent("Tour around a prismatic sphere"))
     .addMeta(new metaObject().setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new metaObject().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/bubble.x3d")))
+    .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/bubble.x3d")))
   .setScene(new SceneObject()
     .addChild(new NavigationInfoObject().setType(new MFStringObject("\"EXAMINE\"")))
     .addChild(new ViewpointObject().setDescription("Bubble in action").setPosition(0.0f,0.0f,4.0f).setOrientation(1.0f,0.0f,0.0f,0.0f))

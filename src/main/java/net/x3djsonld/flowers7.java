@@ -26,7 +26,7 @@ import org.web3d.x3d.jsail.Time.*;
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="http://coderextreme.net/X3DJSONLD/flowers7.x3d">flowers7.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/flowers7.x3d">flowers7.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -38,7 +38,7 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="http://coderextreme.net/X3DJSONLD/flowers7.x3d" target="_blank">http://coderextreme.net/X3DJSONLD/flowers7.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/flowers7.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/flowers7.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -76,24 +76,24 @@ public class flowers7
     .addMeta(new metaObject().setName("title").setContent("flowers7.x3d"))
     .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
     .addMeta(new metaObject().setName("generator").setContent("manual"))
-    .addMeta(new metaObject().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/flowers7.x3d"))
+    .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/flowers7.x3d"))
     .addMeta(new metaObject().setName("description").setContent("a flower")))
   .setScene(new SceneObject()
     .addChild(new NavigationInfoObject())
     .addComments(" Images courtesy of Paul Debevec's Light Probe Image Gallery ")
-    .addChild(new BackgroundObject("background").setBackUrl(new MFStringObject("\"images/all_probes/beach_cross/beach_back.png\" \"http://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png\"")).setBottomUrl(new MFStringObject("\"images/all_probes/beach_cross/beach_bottom.png\" \"http://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png\"")).setFrontUrl(new MFStringObject("\"images/all_probes/beach_cross/beach_front.png\" \"http://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png\"")).setLeftUrl(new MFStringObject("\"images/all_probes/beach_cross/beach_left.png\" \"http://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png\"")).setRightUrl(new MFStringObject("\"images/all_probes/beach_cross/beach_right.png\" \"http://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png\"")).setTopUrl(new MFStringObject("\"images/all_probes/beach_cross/beach_top.png\" \"http://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png\"")))
+    .addChild(new BackgroundObject("background").setBackUrl(new MFStringObject("\"images/all_probes/beach_cross/beach_back.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png\"")).setBottomUrl(new MFStringObject("\"images/all_probes/beach_cross/beach_bottom.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png\"")).setFrontUrl(new MFStringObject("\"images/all_probes/beach_cross/beach_front.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png\"")).setLeftUrl(new MFStringObject("\"images/all_probes/beach_cross/beach_left.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png\"")).setRightUrl(new MFStringObject("\"images/all_probes/beach_cross/beach_right.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png\"")).setTopUrl(new MFStringObject("\"images/all_probes/beach_cross/beach_top.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png\"")))
     .addChild(new ViewpointObject().setDescription("Transparent rose").setPosition(0.0f,0.0f,40.0f))
     .addChild(new TransformObject("Rose01")
       .addChild(new ShapeObject()
         .setAppearance(new AppearanceObject()
           .setMaterial(new MaterialObject().setSpecularColor(.5f,.5f,.5f).setDiffuseColor(.7f,.7f,.7f))
           .setTexture(new ComposedCubeMapTextureObject()
-            .setBack(new ImageTextureObject("backShader").setUrl(new MFStringObject("\"images/all_probes/beach_cross/beach_back.png\" \"http://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png\"")))
-            .setBottom(new ImageTextureObject("bottomShader").setUrl(new MFStringObject("\"images/all_probes/beach_cross/beach_bottom.png\" \"http://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png\"")))
-            .setFront(new ImageTextureObject("frontShader").setUrl(new MFStringObject("\"images/all_probes/beach_cross/beach_front.png\" \"http://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png\"")))
-            .setLeft(new ImageTextureObject("leftShader").setUrl(new MFStringObject("\"images/all_probes/beach_cross/beach_left.png\" \"http://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png\"")))
-            .setRight(new ImageTextureObject("rightShader").setUrl(new MFStringObject("\"images/all_probes/beach_cross/beach_right.png\" \"http://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png\"")))
-            .setTop(new ImageTextureObject("topShader").setUrl(new MFStringObject("\"images/all_probes/beach_cross/beach_top.png\" \"http://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png\""))))
+            .setBack(new ImageTextureObject("backShader").setUrl(new MFStringObject("\"images/all_probes/beach_cross/beach_back.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png\"")))
+            .setBottom(new ImageTextureObject("bottomShader").setUrl(new MFStringObject("\"images/all_probes/beach_cross/beach_bottom.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png\"")))
+            .setFront(new ImageTextureObject("frontShader").setUrl(new MFStringObject("\"images/all_probes/beach_cross/beach_front.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png\"")))
+            .setLeft(new ImageTextureObject("leftShader").setUrl(new MFStringObject("\"images/all_probes/beach_cross/beach_left.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png\"")))
+            .setRight(new ImageTextureObject("rightShader").setUrl(new MFStringObject("\"images/all_probes/beach_cross/beach_right.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png\"")))
+            .setTop(new ImageTextureObject("topShader").setUrl(new MFStringObject("\"images/all_probes/beach_cross/beach_top.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png\""))))
           .addShaders(new ComposedShaderObject("cobweb").setLanguage("GLSL")
             .addField(new fieldObject().setAccessType("inputOnly").setName("set_cube").setType("SFInt32").setValue("0"))
             .addField(new fieldObject().setAccessType("initializeOnly").setName("set_chromaticDispertion").setType("SFVec3f").setValue("0.98 1.0 1.033"))
@@ -106,8 +106,8 @@ public class flowers7
             .addField(new fieldObject().setAccessType("inputOnly").setName("set_d").setType("SFFloat").setValue("20"))
             .addField(new fieldObject().setAccessType("inputOnly").setName("set_tdelta").setType("SFFloat").setValue("0"))
             .addField(new fieldObject().setAccessType("inputOnly").setName("set_pdelta").setType("SFFloat").setValue("0"))
-            .addParts(new ShaderPartObject().setUrl(new MFStringObject("\"cobweb_flowers_input.vs\" \"http://coderextreme.net/X3DJSONLD/cobweb_flowers_input.vs\"")))
-            .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject("\"pc_input_flowers.fs\" \"http://coderextreme.net/X3DJSONLD/pc_input_flowers.fs\"")))))
+            .addParts(new ShaderPartObject().setUrl(new MFStringObject("\"shaders/cobweb_flowers_input.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/cobweb_flowers_input.vs\"")))
+            .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject("\"shaders/pc_input_flowers.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/pc_input_flowers.fs\"")))))
         .setGeometry(new SphereObject().setRadius(20f).setSolid(false))))
     .addChild(new ScriptObject("UrlSelector").setDirectOutput(true).setSourceCode(
 "<![CDATA[" + "\n" +

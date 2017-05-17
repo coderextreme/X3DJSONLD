@@ -5,23 +5,23 @@
         <meta name='title' content='mirro2.x3d'/>
         <meta name='creator' content='John Carlson'/>
         <meta name='generator' content='manual'/>
-        <meta name='identifier' content='http://coderextreme.net/X3DJSONLD/mirro2.x3d'/>
+        <meta name='identifier' content='https://coderextreme.net/X3DJSONLD/mirro2.x3d'/>
         <meta name='description' content='a mirrored sphere'/>      
       </head>
       <Scene>
         <Viewpoint position='0 5 100' description='Switch background and images texture'/>
-	<Background DEF="cube" leftUrl='"images/all_probes/beach_cross/beach_left.png" "http://coderextreme.net/images/all_probes/beach_cross/beach_left.png"' rightUrl='"images/all_probes/beach_cross/beach_right.png" "http://coderextreme.net/images/all_probes/beach_cross/beach_right.png"' frontUrl='"images/all_probes/beach_cross/beach_front.png" "http://coderextreme.net/images/all_probes/beach_cross/beach_front.png"' backUrl='"images/all_probes/beach_cross/beach_back.png" "http://coderextreme.net/images/all_probes/beach_cross/beach_back.png"' topUrl='"images/all_probes/beach_cross/beach_top.png" "http://coderextreme.net/images/all_probes/beach_cross/beach_top.png"' bottomUrl='"images/all_probes/beach_cross/beach_bottom.png" "http://coderextreme.net/images/all_probes/beach_cross/beach_bottom.png"'></Background> 
+	<Background DEF="cube" leftUrl='"images/all_probes/beach_cross/beach_left.png" "https://coderextreme.net/images/all_probes/beach_cross/beach_left.png"' rightUrl='"images/all_probes/beach_cross/beach_right.png" "https://coderextreme.net/images/all_probes/beach_cross/beach_right.png"' frontUrl='"images/all_probes/beach_cross/beach_front.png" "https://coderextreme.net/images/all_probes/beach_cross/beach_front.png"' backUrl='"images/all_probes/beach_cross/beach_back.png" "https://coderextreme.net/images/all_probes/beach_cross/beach_back.png"' topUrl='"images/all_probes/beach_cross/beach_top.png" "https://coderextreme.net/images/all_probes/beach_cross/beach_top.png"' bottomUrl='"images/all_probes/beach_cross/beach_bottom.png" "https://coderextreme.net/images/all_probes/beach_cross/beach_bottom.png"'></Background> 
         <Transform >
           <Shape>
             <Appearance>
                 <Material diffuseColor=".7 .7 .7" specularColor=".5 .5 .5" />
                 <ComposedCubeMapTexture>
-                    <ImageTexture DEF="backShader" containerField="back" url='"images/all_probes/beach_cross/beach_back.png" "http://coderextreme.net/images/all_probes/beach_cross/beach_back.png"' />
-                    <ImageTexture DEF="bottomShader" containerField="bottom" url='"images/all_probes/beach_cross/beach_bottom.png" "http://coderextreme.net/images/all_probes/beach_cross/beach_bottom.png"' />
-                    <ImageTexture DEF="frontShader" containerField="front" url='"images/all_probes/beach_cross/beach_front.png" "http://coderextreme.net/images/all_probes/beach_cross/beach_front.png"' />
-                    <ImageTexture DEF="leftShader" containerField="left" url='"images/all_probes/beach_cross/beach_left.png" "http://coderextreme.net/images/all_probes/beach_cross/beach_left.png"' />
-                    <ImageTexture DEF="rightShader" containerField="right" url='"images/all_probes/beach_cross/beach_right.png" "http://coderextreme.net/images/all_probes/beach_cross/beach_right.png"' />
-                    <ImageTexture DEF="topShader" containerField="top" url='"images/all_probes/beach_cross/beach_top.png" "http://coderextreme.net/images/all_probes/beach_cross/beach_top.png"' />
+                    <ImageTexture DEF="backShader" containerField="back" url='"images/all_probes/beach_cross/beach_back.png" "https://coderextreme.net/images/all_probes/beach_cross/beach_back.png"' />
+                    <ImageTexture DEF="bottomShader" containerField="bottom" url='"images/all_probes/beach_cross/beach_bottom.png" "https://coderextreme.net/images/all_probes/beach_cross/beach_bottom.png"' />
+                    <ImageTexture DEF="frontShader" containerField="front" url='"images/all_probes/beach_cross/beach_front.png" "https://coderextreme.net/images/all_probes/beach_cross/beach_front.png"' />
+                    <ImageTexture DEF="leftShader" containerField="left" url='"images/all_probes/beach_cross/beach_left.png" "https://coderextreme.net/images/all_probes/beach_cross/beach_left.png"' />
+                    <ImageTexture DEF="rightShader" containerField="right" url='"images/all_probes/beach_cross/beach_right.png" "https://coderextreme.net/images/all_probes/beach_cross/beach_right.png"' />
+                    <ImageTexture DEF="topShader" containerField="top" url='"images/all_probes/beach_cross/beach_top.png" "https://coderextreme.net/images/all_probes/beach_cross/beach_top.png"' />
                 </ComposedCubeMapTexture>
                 
                 <ComposedShader DEF="cobweb" language='GLSL'>
@@ -31,8 +31,8 @@
 		  <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/>
                   <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/>
                   <field name='power' accessType='inputOutput' type='SFFloat' value='2'/>
-                  <ShaderPart url='"cobweb.vs" "http://coderextreme.net/X3DJSONLD/cobweb.vs"' type='VERTEX'></ShaderPart>
-                  <ShaderPart url='"mix.fs" "http://coderextreme.net/X3DJSONLD/mix.fs"' type='FRAGMENT'></ShaderPart>
+                  <ShaderPart url='"shaders/cobweb.vs" "https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"' type='VERTEX'></ShaderPart>
+                  <ShaderPart url='"shaders/mix.fs" "https://coderextreme.net/X3DJSONLD/shaders/mix.fs"' type='FRAGMENT'></ShaderPart>
                 </ComposedShader>
                 <ComposedShader DEF="x3dom" language='GLSL'>
 <!--http://hypertextbook.com/facts/2005/JustinChe.shtml-->
@@ -41,8 +41,8 @@
 		  <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/>
                   <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/>
                   <field name='power' accessType='inputOutput' type='SFFloat' value='2'/>
-                  <ShaderPart url='"x3dom.vs" "http://coderextreme.net/X3DJSONLD/x3dom.vs"' type='VERTEX'></ShaderPart>
-                  <ShaderPart url='"mix.fs" "http://coderextreme.net/X3DJSONLD/mix.fs"' type='FRAGMENT'></ShaderPart>
+                  <ShaderPart url='"shaders/x3dom.vs" "https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs"' type='VERTEX'></ShaderPart>
+                  <ShaderPart url='"shaders/mix.fs" "https://coderextreme.net/X3DJSONLD/shaders/mix.fs"' type='FRAGMENT'></ShaderPart>
                 </ComposedShader>
             </Appearance>
             <Sphere radius="30"></Sphere>

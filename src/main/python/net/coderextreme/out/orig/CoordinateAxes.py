@@ -8,7 +8,7 @@ meta3 = metaObject().setName("creator").setContent("Unknown, see X3D Resources A
 head1.addMeta(meta3)
 meta4 = metaObject().setName("generator").setContent("manual")
 head1.addMeta(meta4)
-meta5 = metaObject().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/CoordinateAxis.x3d")
+meta5 = metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/CoordinateAxis.x3d")
 head1.addMeta(meta5)
 meta6 = metaObject().setName("description").setContent("a box")
 head1.addMeta(meta6)

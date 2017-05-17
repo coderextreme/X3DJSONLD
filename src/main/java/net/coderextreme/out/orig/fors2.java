@@ -89,7 +89,7 @@ ProtoInstanceObject ProtoInstance2 = null;
         .addMeta(new metaObject().setName("created").setContent("December 13 2015"))
         .addMeta(new metaObject().setName("modified").setContent("April 18 2017"))
         .addMeta(new metaObject().setName("title").setContent("fors2.x3d"))
-        .addMeta(new metaObject().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/fors2.x3d"))
+        .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/fors2.x3d"))
         .addMeta(new metaObject().setName("description").setContent("beginnings of a force directed graph in 3D"))
         .addMeta(new metaObject().setName("generator").setContent("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit")))
       .setScene(new SceneObject()

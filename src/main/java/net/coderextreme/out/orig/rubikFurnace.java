@@ -95,7 +95,7 @@ ProtoInstanceObject ProtoInstance9 = null;
         .addMeta(new metaObject().setName("title").setContent("rubikFurnace.x3d"))
         .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
         .addMeta(new metaObject().setName("generator").setContent("manual"))
-        .addMeta(new metaObject().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/rubikFurnace.x3d"))
+        .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/rubikFurnace.x3d"))
         .addMeta(new metaObject().setName("description").setContent("a green rubik cube")))
       .setScene(new SceneObject()
         .addChild(new NavigationInfoObject().setType(new java.lang.String[] {"EXAMINE"}))

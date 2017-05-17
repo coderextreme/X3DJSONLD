@@ -90,7 +90,7 @@ ProtoInstanceObject ProtoInstance3 = null;
         .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
         .addMeta(new metaObject().setName("description").setContent("Tour around a prismatic sphere"))
         .addMeta(new metaObject().setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
-        .addMeta(new metaObject().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/cobweb.x3d")))
+        .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/cobweb.x3d")))
       .setScene(new SceneObject()
         .addChild(new NavigationInfoObject().setType(new java.lang.String[] {"EXAMINE"}))
         .addChild(new ViewpointObject().setPosition(new float[] {0f,0f,4f}).setOrientation(new float[] {1f,0f,0f,0f}).setDescription("Bubbles in action"))
@@ -156,32 +156,32 @@ ProtoInstanceObject ProtoInstance3 = null;
     }
 protected class MFString0 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"images/BK.png","http://coderextreme.net/X3DJSONLD/images/BK.png"});
+    return new MFStringObject(new java.lang.String[] {"images/BK.png","https://coderextreme.net/X3DJSONLD/images/BK.png"});
   }
 }
 protected class MFString1 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"images/BT.png","http://coderextreme.net/X3DJSONLD/images/BT.png"});
+    return new MFStringObject(new java.lang.String[] {"images/BT.png","https://coderextreme.net/X3DJSONLD/images/BT.png"});
   }
 }
 protected class MFString2 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"images/FR.png","http://coderextreme.net/X3DJSONLD/images/FR.png"});
+    return new MFStringObject(new java.lang.String[] {"images/FR.png","https://coderextreme.net/X3DJSONLD/images/FR.png"});
   }
 }
 protected class MFString3 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"images/LF.png","http://coderextreme.net/X3DJSONLD/images/LF.png"});
+    return new MFStringObject(new java.lang.String[] {"images/LF.png","https://coderextreme.net/X3DJSONLD/images/LF.png"});
   }
 }
 protected class MFString4 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"images/RT.png","http://coderextreme.net/X3DJSONLD/images/RT.png"});
+    return new MFStringObject(new java.lang.String[] {"images/RT.png","https://coderextreme.net/X3DJSONLD/images/RT.png"});
   }
 }
 protected class MFString5 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"images/TP.png","http://coderextreme.net/X3DJSONLD/images/TP.png"});
+    return new MFStringObject(new java.lang.String[] {"images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"});
   }
 }
 }

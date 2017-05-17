@@ -3,7 +3,7 @@
 <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd"><head><meta name="title" content="CoordinateAxis.x3d"></meta>
 <meta name="creator" content="Unknown, see X3D Resources Archives"></meta>
 <meta name="generator" content="manual"></meta>
-<meta name="identifier" content="http://coderextreme.net/X3DJSONLD/CoordinateAxis.x3d"></meta>
+<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/CoordinateAxis.x3d"></meta>
 <meta name="description" content="a box"></meta>
 </head>
 <Scene><Collision DEF="DoNotCollideWithVisualizationWidget"><!--Invoke CoordinateAxes in other scenes as an Inline child inside a scaling Transform node, at the topmost level of the scene graph.--><!--This NavigationInfo allows examine mode and will be overridden by any parent scene.--><!--Each arrow goes from +1m to -1m to allow linear scaling to fit a scene--><!--Note each label rotates about the scene's vertical Y axis for consistency, enabling local orientation by user--><Group><!--Vertical Y arrow and label--><Group DEF="ArrowGreen"><Shape><Cylinder containerField="geometry" DEF="ArrowCylinder" radius="0.025" top="false"></Cylinder>

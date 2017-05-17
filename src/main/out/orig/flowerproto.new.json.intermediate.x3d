@@ -6,13 +6,13 @@
         <meta name='creator' content='John Carlson' dir='' http_equiv='' lang='' scheme=''/>
         <meta name='description' content='A flower proto with configurable shaders' dir='' http_equiv='' lang='' scheme=''/>
         <meta name='generator' content='X3D-Edit, https://savage.nps.edu/X3D-Edit' dir='' http_equiv='' lang='' scheme=''/>
-        <meta name='identifier' content='http://coderextreme.net/X3DJSONLD/flowerproto.x3d' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='identifier' content='https://coderextreme.net/X3DJSONLD/flowerproto.x3d' dir='' http_equiv='' lang='' scheme=''/>
     </head>
     <Scene>
         <ProtoDeclare name='FlowerProto' appinfo='' documentation=''>
             <ProtoInterface>
-                <field name='vertex' accessType='inputOutput' appinfo='' documentation='' type='MFString' value='"gl_flowers_chromatic.vs"'/>
-                <field name='fragment' accessType='inputOutput' appinfo='' documentation='' type='MFString' value='"pc_flowers.fs"'/>
+                <field name='vertex' accessType='inputOutput' appinfo='' documentation='' type='MFString' value='"shaders/gl_flowers_chromatic.vs"'/>
+                <field name='fragment' accessType='inputOutput' appinfo='' documentation='' type='MFString' value='"shaders/pc_flowers.fs"'/>
             </ProtoInterface>
             <ProtoBody>
                 <Transform DEF='transform' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
@@ -50,12 +50,12 @@
                                 <!-- <field name='cube' type='SFNode' accessType="inputOutput"> <ComposedCubeMapTexture USE="texture"/> </field> -->
                             </ComposedShader>
                             <ComposedCubeMapTexture DEF='texture' class=''>
-                                <ImageTexture containerField='back' repeatS='true' repeatT='true' url='"images/all_probes/stpeters_cross/stpeters_back.png" "http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"' class=''/>
-                                <ImageTexture containerField='bottom' repeatS='true' repeatT='true' url='"images/all_probes/stpeters_cross/stpeters_bottom.png" "http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"' class=''/>
-                                <ImageTexture containerField='front' repeatS='true' repeatT='true' url='"images/all_probes/stpeters_cross/stpeters_front.png" "http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"' class=''/>
-                                <ImageTexture containerField='left' repeatS='true' repeatT='true' url='"images/all_probes/stpeters_cross/stpeters_left.png" "http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"' class=''/>
-                                <ImageTexture containerField='right' repeatS='true' repeatT='true' url='"images/all_probes/stpeters_cross/stpeters_right.png" "http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"' class=''/>
-                                <ImageTexture containerField='top' repeatS='true' repeatT='true' url='"images/all_probes/stpeters_cross/stpeters_top.png" "http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"' class=''/>
+                                <ImageTexture containerField='back' repeatS='true' repeatT='true' url='"images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"' class=''/>
+                                <ImageTexture containerField='bottom' repeatS='true' repeatT='true' url='"images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"' class=''/>
+                                <ImageTexture containerField='front' repeatS='true' repeatT='true' url='"images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"' class=''/>
+                                <ImageTexture containerField='left' repeatS='true' repeatT='true' url='"images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"' class=''/>
+                                <ImageTexture containerField='right' repeatS='true' repeatT='true' url='"images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"' class=''/>
+                                <ImageTexture containerField='top' repeatS='true' repeatT='true' url='"images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"' class=''/>
                             </ComposedCubeMapTexture>
                         </Appearance>
                         <Sphere radius='1.0' solid='true' class=''/>

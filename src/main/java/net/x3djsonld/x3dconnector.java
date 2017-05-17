@@ -23,7 +23,7 @@ import org.web3d.x3d.jsail.Shape.*;
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="http://coderextreme.net/X3DJSONLD/x3dconnectorProto">x3dconnectorProto</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/x3dconnectorProto">x3dconnectorProto</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -35,7 +35,7 @@ import org.web3d.x3d.jsail.Shape.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="http://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d" target="_blank">http://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -73,7 +73,7 @@ public class x3dconnector
     .addMeta(new metaObject().setName("title").setContent("x3dconnectorProto"))
     .addMeta(new metaObject().setName("creator").setContent("Lost, Doug Sanden I think"))
     .addMeta(new metaObject().setName("generator").setContent("manual"))
-    .addMeta(new metaObject().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d"))
+    .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d"))
     .addMeta(new metaObject().setName("description").setContent("a generic proto to connect two objects")))
   .setScene(new SceneObject()
     .addChild(new ViewpointObject().setDescription("Only Viewpoint").setPosition(0.0f,0.0f,5.0f))

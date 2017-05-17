@@ -9,7 +9,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addMeta(new metaObject().setName("title").setContent("x3dconnectorProto"))
         .addMeta(new metaObject().setName("creator").setContent("Lost, Doug Sanden I think"))
         .addMeta(new metaObject().setName("generator").setContent("manual"))
-        .addMeta(new metaObject().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d"))
+        .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d"))
         .addMeta(new metaObject().setName("description").setContent("a generic proto to connect two objects")))
       .setScene(new SceneObject()
         .addChild(new ViewpointObject().setPosition(Java.to([0,0,5], Java.type("float[]"))).setDescription("Only Viewpoint"))
