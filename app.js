@@ -18,6 +18,10 @@ var flattener = FL.flattener;
 
 var runAndSend = require('./src/main/node/runAndSend');
 
+
+var www = 'C:/x3d-code/';
+
+
 app.use('/examples', express.static(config.examples));
 app.use(express.static('src/main/html'));
 app.use(express.static('src/main/node'));
@@ -31,7 +35,7 @@ app.use(express.static('src/main/lib/stylesheets'));
 
 function convertX3dToJson(res, infile, outfile, next) {
 	console.error("Calling converter on "+infile);
-	runAndSend(['---overwrite', infile], function(json) {
+	runAndSend(['---overwrite', '---./', infile], function(json) {
 		console.error("Calling extern proto expander");
 		json = externPrototypeExpander(outfile, json);
 		json = flattener(json);
@@ -75,21 +79,29 @@ app.post("/convert", function(req, res, next) {
 	});
 });
 
-app.get("/", function(req, res, next) {
-	fs.readFile(__dirname+"/index.html", function(err, data) {
-		if (err) throw err;
-	 	send(res, data, "text/html", next);
-	});
+app.get("/www.web3d.org/*.x3d", function(req, res, next) {
+	var url = req._parsedUrl.pathname;
+	var hash = url.indexOf("#");
+	var infile = url;
+	if (hash > 0) {
+	       infile = url.substring(0, hash);
+	}
+	var infile = www + infile;
+	console.log("Proxy", infile);
+	console.error("=========== converting == ", infile);
+	var outfile = infile.substr(0, infile.lastIndexOf("."))+".json";
+	convertX3dToJson(res, infile, outfile, next);
 });
 
 app.get("/files", function(req, res, next) {
-	glob(__dirname+'/**/*.json', function( err, files ) {
+
+	glob(www+'/**/*.x3d', function( err, files ) {
 		if (err) return;
 		var test = req._parsedUrl.query;
 		var json = [];
 		files.forEach(function(file) {
 			if (new RegExp(test).test(file)) {
-				json.push(file.substr(__dirname.length));
+				json.push(file.substr(www.length, file.length-www.length));
 				console.error(file);
 			}
 
@@ -122,7 +134,9 @@ function processX3d(req, res, next) {
 	if (hash > 0) {
 	       infile = url.substring(0, hash);
 	}
-	var outfile = file.substr(0, file.lastIndexOf("."))+".json";
+	infile = www + "/" + infile;
+	console.error("=========== converting == ", infile);
+	var outfile = infile.substr(0, infile.lastIndexOf("."))+".json";
 	convertX3dToJson(res, infile, outfile, next);
 }
 
@@ -131,6 +145,15 @@ app.get("*.x3d#*", processX3d);
 app.get("*.x3d", processX3d);
 */
 
+magic("*.gif", "image/gif");
+magic("*.jpg", "image/jpeg");
+magic("*.JPG", "image/jpeg");
+magic("*.jpeg", "image/jpeg");
+magic("*.png", "image/png");
+magic("*.mpg", "video/mpeg");
+magic("*.wav", "audio/wav");
+magic("*.mp3", "audio/mpeg3");
+/*
 magic("*.gltf", "text/json");
 magic("*.glb", "application/octet-stream");
 magic("*.vs", "text/plain");//"x-shader/x-vertex");
@@ -142,17 +165,10 @@ magic("*.xslt", "text/xsl");
 magic("*.xhtml", "application/xhtml+xml");
 magic("*.js", "text/javascript");
 magic("*.css", "text/css");
-magic("*.gif", "image/gif");
-magic("*.jpg", "image/jpeg");
-magic("*.JPG", "image/jpeg");
-magic("*.jpeg", "image/jpeg");
-magic("*.png", "image/png");
-magic("*.mpg", "video/mpeg");
-magic("*.wav", "audio/wav");
-magic("*.mp3", "audio/mpeg3");
 magic("*.swf", "application/x-shockwave-flash");
 magic("*.ply", "application/octet-stream");
 magic("*.stl", "application/octet-stream");
+*/
 
 app.get("*.json", function(req, res, next) {
 	var url = req._parsedUrl.pathname.substr(1);
@@ -175,6 +191,7 @@ app.get("*.json", function(req, res, next) {
                 send(res, json, "text/json", next);
 	} else {
 		var infile = file.substr(0, file.lastIndexOf("."))+".x3d";
+		infile = www + "/" + infile;
 		console.error("converting 2", infile, "to", outfile);
 		convertX3dToJson(res, infile, outfile, next);
 	}

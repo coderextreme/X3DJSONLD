@@ -277,14 +277,11 @@ function updateFromXml() {
 }
 
 function loadXml(url) {
-	$.get(url, function(xml) {
-		// hardcode version 3.3, UTF-8 for now
-		// var json = { "X3D" : {  "@version" : "3.3", "encoding" : "UTF-8" }};
-		// xml = serializeDOM(json, xml);
-		$('#xml').val(getXmlString(xml));
-		updateFromXml();
-	}, "xml")
-	.fail(function(jqXHR, textStatus, errorThrown) { alert('loadXml request failed! ' + textStatus + ' ' + errorThrown); });
+	$.getJSON(url, function(json) {
+		updateFromJson(json);
+		updateXml(json);
+	})
+	.fail(function(jqXHR, textStatus, errorThrown) { alert('convert on server to JSON request failed! ' + textStatus + ' ' + errorThrown); });
 }
 
 function loadStl(url) {
@@ -354,7 +351,7 @@ function updateStl(json) {
 }
 
 
-$("select").change(function() {
+$("#file").change(function() {
 	var url = $('#file option:selected').text();
 	if (url.endsWith(".json")) {
 		loadJson(url);
