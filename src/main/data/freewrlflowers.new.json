@@ -91,11 +91,11 @@
                                     "fieldValue": [
                                       {
                                         "@name":"vertex",
-                                        "@value":["shaders/freewrl_flowers_chromatic.vs"]
+                                        "@value":["./shaders/freewrl_flowers_chromatic.vs"]
                                       },
                                       {
                                         "@name":"fragment",
-                                        "@value":["shaders/freewrl.fs"]
+                                        "@value":["./shaders/freewrl.fs"]
                                       }
                                     ]
                                   }

@@ -18,8 +18,8 @@
                         <Appearance>
                             <Material diffuseColor='0.7 0.7 0.7' specularColor='0.5 0.5 0.5'/>
                             <ComposedShader DEF='shader' language='GLSL'>
-                                <ShaderPart url='"shaders/cobweb.vs" "https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"'/>
-                                <ShaderPart type='FRAGMENT' url='"shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"'/>
+                                <ShaderPart url='"./shaders/cobweb.vs" "https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"'/>
+                                <ShaderPart type='FRAGMENT' url='"./shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"'/>
                                 <field name='xxxcube' accessType='inputOutput' type='SFInt32' value='0'/>
                                 <field name='cube' accessType='inputOutput' type='SFNode'>
                                     <ComposedCubeMapTexture USE='texture'/>
