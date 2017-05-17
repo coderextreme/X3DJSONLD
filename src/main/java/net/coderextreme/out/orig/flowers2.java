@@ -88,7 +88,7 @@ public class flowers2 {
         .addMeta(new metaObject().setName("created").setContent("23 January 2005"))
         .addMeta(new metaObject().setName("modified").setContent("05 May 2017"))
         .addMeta(new metaObject().setName("description").setContent("2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)"))
-        .addMeta(new metaObject().setName("url").setContent("http://coderextreme.net/x3d/flowers2.x3d"))
+        .addMeta(new metaObject().setName("url").setContent("https://coderextreme.net/x3d/flowers2.x3d"))
         .addMeta(new metaObject().setName("generator").setContent("manually written")))
       .setScene(new SceneObject()
         .addChild(new NavigationInfoObject())

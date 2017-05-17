@@ -87,7 +87,7 @@ public class bubbles {
         .addMeta(new metaObject().setName("title").setContent("bubbles.x3d"))
         .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
         .addMeta(new metaObject().setName("generator").setContent("manual"))
-        .addMeta(new metaObject().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/bubbles.x3d"))
+        .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/bubbles.x3d"))
         .addMeta(new metaObject().setName("description").setContent("not sure what this is")))
       .setScene(new SceneObject()
         .addChild(new NavigationInfoObject().setType(new java.lang.String[] {"EXAMINE"}))
@@ -170,82 +170,82 @@ public class bubbles {
     }
 protected class MFString0 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"images/all_probes/uffizi_cross/uffizi_back.png","http://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_back.png"});
+    return new MFStringObject(new java.lang.String[] {"images/all_probes/uffizi_cross/uffizi_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_back.png"});
   }
 }
 protected class MFString1 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"images/all_probes/uffizi_cross/uffizi_bottom.png","http://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_bottom.png"});
+    return new MFStringObject(new java.lang.String[] {"images/all_probes/uffizi_cross/uffizi_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_bottom.png"});
   }
 }
 protected class MFString2 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"images/all_probes/uffizi_cross/uffizi_front.png","http://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_front.png"});
+    return new MFStringObject(new java.lang.String[] {"images/all_probes/uffizi_cross/uffizi_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_front.png"});
   }
 }
 protected class MFString3 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"images/all_probes/uffizi_cross/uffizi_left.png","http://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_left.png"});
+    return new MFStringObject(new java.lang.String[] {"images/all_probes/uffizi_cross/uffizi_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_left.png"});
   }
 }
 protected class MFString4 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"images/all_probes/uffizi_cross/uffizi_right.png","http://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_right.png"});
+    return new MFStringObject(new java.lang.String[] {"images/all_probes/uffizi_cross/uffizi_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_right.png"});
   }
 }
 protected class MFString5 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"images/all_probes/uffizi_cross/uffizi_top.png","http://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_top.png"});
+    return new MFStringObject(new java.lang.String[] {"images/all_probes/uffizi_cross/uffizi_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_top.png"});
   }
 }
 protected class MFString6 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"images/all_probes/uffizi_cross/uffizi_back.png","http://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_back.png"});
+    return new MFStringObject(new java.lang.String[] {"images/all_probes/uffizi_cross/uffizi_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_back.png"});
   }
 }
 protected class MFString7 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"images/all_probes/uffizi_cross/uffizi_bottom.png","http://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_bottom.png"});
+    return new MFStringObject(new java.lang.String[] {"images/all_probes/uffizi_cross/uffizi_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_bottom.png"});
   }
 }
 protected class MFString8 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"images/all_probes/uffizi_cross/uffizi_front.png","http://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_front.png"});
+    return new MFStringObject(new java.lang.String[] {"images/all_probes/uffizi_cross/uffizi_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_front.png"});
   }
 }
 protected class MFString9 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"images/all_probes/uffizi_cross/uffizi_left.png","http://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_left.png"});
+    return new MFStringObject(new java.lang.String[] {"images/all_probes/uffizi_cross/uffizi_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_left.png"});
   }
 }
 protected class MFString10 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"images/all_probes/uffizi_cross/uffizi_right.png","http://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_right.png"});
+    return new MFStringObject(new java.lang.String[] {"images/all_probes/uffizi_cross/uffizi_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_right.png"});
   }
 }
 protected class MFString11 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"images/all_probes/uffizi_cross/uffizi_top.png","http://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_top.png"});
+    return new MFStringObject(new java.lang.String[] {"images/all_probes/uffizi_cross/uffizi_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_top.png"});
   }
 }
 protected class MFString12 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"cobweb.vs","http://coderextreme.net/X3DJSONLD/cobweb.vs"});
+    return new MFStringObject(new java.lang.String[] {"shaders/cobweb.vs","https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"});
   }
 }
 protected class MFString13 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"pc_bubbles.fs","http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"});
+    return new MFStringObject(new java.lang.String[] {"shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"});
   }
 }
 protected class MFString14 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"x3dom.vs","http://coderextreme.net/X3DJSONLD/x3dom.vs"});
+    return new MFStringObject(new java.lang.String[] {"shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs"});
   }
 }
 protected class MFString15 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"pc_bubbles.fs","http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"});
+    return new MFStringObject(new java.lang.String[] {"shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"});
   }
 }
 protected class MFFloat16 {

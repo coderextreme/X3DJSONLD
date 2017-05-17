@@ -27,11 +27,11 @@ import org.web3d.x3d.jsail.Text.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="http://coderextreme.net/X3DJSONLD/text.x3d">text.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/text.x3d">text.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="http://coderextreme.net/X3DJSONLD/text.x3d" target="_blank">http://coderextreme.net/X3DJSONLD/text.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/text.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/text.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -73,7 +73,7 @@ public class text
     .addMeta(new metaObject().setName("creator").setContent("John W Carlson"))
     .addMeta(new metaObject().setName("created").setContent("December 13 2015"))
     .addMeta(new metaObject().setName("title").setContent("text.x3d"))
-    .addMeta(new metaObject().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/text.x3d"))
+    .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/text.x3d"))
     .addMeta(new metaObject().setName("description").setContent("test text"))
     .addMeta(new metaObject().setName("generator").setContent("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit")))
   .setScene(new SceneObject()

@@ -6,13 +6,13 @@
         <meta name="creator" content="John Carlson"></meta>
         <meta name="description" content="A flower proto with configurable shaders"></meta>
         <meta name="generator" content="X3D-Edit, https://savage.nps.edu/X3D-Edit"></meta>
-        <meta name="identifier" content="http://coderextreme.net/X3DJSONLD/flowerproto.x3d"></meta>
+        <meta name="identifier" content="https://coderextreme.net/X3DJSONLD/flowerproto.x3d"></meta>
     </head>
     <Scene>
         <ProtoDeclare name="FlowerProto">
 	    <ProtoInterface>
-		<field accessType='inputOutput' name='vertex' type='MFString' value='"gl_flowers_chromatic.vs"'/>
-		<field accessType='inputOutput' name='fragment' type='MFString' value='"pc_flowers.fs"'/>
+		<field accessType='inputOutput' name='vertex' type='MFString' value='"shaders/gl_flowers_chromatic.vs"'/>
+		<field accessType='inputOutput' name='fragment' type='MFString' value='"shaders/pc_flowers.fs"'/>
 	    </ProtoInterface>
             <ProtoBody>
                 <Transform DEF="transform" translation="0 0 0">
@@ -20,12 +20,12 @@
                         <Appearance>
                             <Material diffuseColor=".7 .7 .7"/>
                             <ComposedCubeMapTexture DEF="texture">
-                                <ImageTexture url='"images/all_probes/stpeters_cross/stpeters_back.png" "http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"' containerField="back"/>
-                                <ImageTexture url='"images/all_probes/stpeters_cross/stpeters_bottom.png" "http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"' containerField="bottom"/>
-                                <ImageTexture url='"images/all_probes/stpeters_cross/stpeters_front.png" "http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"' containerField="front"/>
-                                <ImageTexture url='"images/all_probes/stpeters_cross/stpeters_left.png" "http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"' containerField="left"/>
-                                <ImageTexture url='"images/all_probes/stpeters_cross/stpeters_right.png" "http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"' containerField="right"/>
-                                <ImageTexture url='"images/all_probes/stpeters_cross/stpeters_top.png" "http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"' containerField="top"/>
+                                <ImageTexture url='"images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"' containerField="back"/>
+                                <ImageTexture url='"images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"' containerField="bottom"/>
+                                <ImageTexture url='"images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"' containerField="front"/>
+                                <ImageTexture url='"images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"' containerField="left"/>
+                                <ImageTexture url='"images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"' containerField="right"/>
+                                <ImageTexture url='"images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"' containerField="top"/>
                             </ComposedCubeMapTexture>
 
                             <ComposedShader DEF="shader" language="GLSL">

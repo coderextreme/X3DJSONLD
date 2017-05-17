@@ -5,26 +5,26 @@
         <meta name='title' content='geo.x3d'/>
         <meta name='creator' content='John Carlson'/>
         <meta name='generator' content='manual'/>
-        <meta name='identifier' content='http://coderextreme.net/X3DJSONLD/geo.x3d'/>
+        <meta name='identifier' content='https://coderextreme.net/X3DJSONLD/geo.x3d'/>
         <meta name='description' content='a sphere'/>      
       </head>
     <Scene>
         <NavigationInfo type='"EXAMINE"'/>
         <Viewpoint DEF='Tour' description='Tour Views'/>
         <Viewpoint position='0 0 4' description='sphere in road'/>
-        <Background backUrl='"bBK.png" "http://coderextreme.net/bug/bBK.png"' bottomUrl='"bBT.png" "http://coderextreme.net/bug/bBT.png"' frontUrl='"bFR.png" "http://coderextreme.net/bug/bFR.png"' leftUrl='"bLF.png" "http://coderextreme.net/bug/bLF.png"' rightUrl='"bRT.png" "http://coderextreme.net/bug/bRT.png"' topUrl='"bTP.png" "http://coderextreme.net/bug/bTP.png"'/>
+        <Background backUrl='"bBK.png" "https://coderextreme.net/bug/bBK.png"' bottomUrl='"bBT.png" "https://coderextreme.net/bug/bBT.png"' frontUrl='"bFR.png" "https://coderextreme.net/bug/bFR.png"' leftUrl='"bLF.png" "https://coderextreme.net/bug/bLF.png"' rightUrl='"bRT.png" "https://coderextreme.net/bug/bRT.png"' topUrl='"bTP.png" "https://coderextreme.net/bug/bTP.png"'/>
         <Transform DEF='Rose01'>
             <Shape>
                 <Sphere/>
                 <Appearance DEF='_01_-_Default'>
                     <Material diffuseColor='0.7 0.7 0.7' specularColor='0.5 0.5 0.5'/>
                     <ComposedCubeMapTexture containerField='texture'>
-                        <ImageTexture url='"bBK.png" "http://coderextreme.net/bug/bBK.png"' containerField='back'/>
-                        <ImageTexture url='"bBT.png" "http://coderextreme.net/bug/bBT.png"' containerField='bottom'/>
-                        <ImageTexture url='"bFR.png" "http://coderextreme.net/bug/bFR.png"' containerField='front'/>
-                        <ImageTexture url='"bLF.png" "http://coderextreme.net/bug/bLF.png"' containerField='left'/>
-                        <ImageTexture url='"bRT.png" "http://coderextreme.net/bug/bRT.png"' containerField='right'/>
-                        <ImageTexture url='"bTP.png" "http://coderextreme.net/bug/bTP.png"' containerField='top'/>
+                        <ImageTexture url='"bBK.png" "https://coderextreme.net/bug/bBK.png"' containerField='back'/>
+                        <ImageTexture url='"bBT.png" "https://coderextreme.net/bug/bBT.png"' containerField='bottom'/>
+                        <ImageTexture url='"bFR.png" "https://coderextreme.net/bug/bFR.png"' containerField='front'/>
+                        <ImageTexture url='"bLF.png" "https://coderextreme.net/bug/bLF.png"' containerField='left'/>
+                        <ImageTexture url='"bRT.png" "https://coderextreme.net/bug/bRT.png"' containerField='right'/>
+                        <ImageTexture url='"bTP.png" "https://coderextreme.net/bug/bTP.png"' containerField='top'/>
                     </ComposedCubeMapTexture>
                     <ComposedShader DEF='cobweb' containerField='shaders' language='GLSL'>
                         <field name='cube' accessType='inputOutput' type='SFInt32' value='0'/>
@@ -32,8 +32,8 @@
                         <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/>
                         <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/>
                         <field name='power' accessType='inputOutput' type='SFFloat' value='2'/>
-                        <ShaderPart url='"cobweb.vs" "http://coderextreme.net/X3DJSONLD/cobweb.vs"' type="VERTEX" containerField='parts'></ShaderPart>
-                        <ShaderPart url='"pc_bubbles.fs" "http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
+                        <ShaderPart url='"shaders/cobweb.vs" "https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"' type="VERTEX" containerField='parts'></ShaderPart>
+                        <ShaderPart url='"shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
                     </ComposedShader>
                     <ComposedShader DEF='x3dom' containerField='shaders' language='GLSL'>
                         <field name='cube' accessType='inputOutput' type='SFInt32' value='0'/>
@@ -41,8 +41,8 @@
                         <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/>
                         <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/>
                         <field name='power' accessType='inputOutput' type='SFFloat' value='2'/>
-                        <ShaderPart url='"x3dom.vs" "http://coderextreme.net/X3DJSONLD/x3dom.vs"' type="VERTEX" containerField='parts'></ShaderPart>
-                        <ShaderPart url='"pc_bubbles.fs" "http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
+                        <ShaderPart url='"shaders/x3dom.vs" "https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs"' type="VERTEX" containerField='parts'></ShaderPart>
+                        <ShaderPart url='"shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
                     </ComposedShader>
                 </Appearance>
             </Shape>

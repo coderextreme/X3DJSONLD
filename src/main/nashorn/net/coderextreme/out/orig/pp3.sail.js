@@ -15,7 +15,7 @@ var ProtoInstance2 = null;
         .addMeta(new metaObject().setName("created").setContent("5 May 2015"))
         .addMeta(new metaObject().setName("modified").setContent("05 May 2017"))
         .addMeta(new metaObject().setName("description").setContent("A process pipeline between three spheres (try typing on spheres and blue"))
-        .addMeta(new metaObject().setName("identifier").setContent("http://coderextreme.net/x3d/pp3.x3d"))
+        .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/x3d/pp3.x3d"))
         .addMeta(new metaObject().setName("generator").setContent("manual")))
       .setScene(new SceneObject()
         .addChild(new ProtoDeclareObject().setName("Process")

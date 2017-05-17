@@ -20,7 +20,7 @@
           },
           {
             "@name":"identifier",
-            "@content":"http://coderextreme.net/X3DJSONLD/geo.x3d"
+            "@content":"https://coderextreme.net/X3DJSONLD/geo.x3d"
           },
           {
             "@name":"description",
@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"16 May 2017"
+            "@content":"17 May 2017"
           },
           {
             "@name":"generator",
@@ -61,12 +61,12 @@
           },
           { "Background":
             {
-              "@backUrl":["bBK.png","http://coderextreme.net/bug/bBK.png"],
-              "@bottomUrl":["bBT.png","http://coderextreme.net/bug/bBT.png"],
-              "@frontUrl":["bFR.png","http://coderextreme.net/bug/bFR.png"],
-              "@leftUrl":["bLF.png","http://coderextreme.net/bug/bLF.png"],
-              "@rightUrl":["bRT.png","http://coderextreme.net/bug/bRT.png"],
-              "@topUrl":["bTP.png","http://coderextreme.net/bug/bTP.png"]
+              "@backUrl":["bBK.png","https://coderextreme.net/bug/bBK.png"],
+              "@bottomUrl":["bBT.png","https://coderextreme.net/bug/bBT.png"],
+              "@frontUrl":["bFR.png","https://coderextreme.net/bug/bFR.png"],
+              "@leftUrl":["bLF.png","https://coderextreme.net/bug/bLF.png"],
+              "@rightUrl":["bRT.png","https://coderextreme.net/bug/bRT.png"],
+              "@topUrl":["bTP.png","https://coderextreme.net/bug/bTP.png"]
             }
           },
           { "Transform":
@@ -97,37 +97,37 @@
                                 "-back":
                                   { "ImageTexture":
                                     {
-                                      "@url":["bBK.png","http://coderextreme.net/bug/bBK.png"]
+                                      "@url":["bBK.png","https://coderextreme.net/bug/bBK.png"]
                                     }
                                   },
                                 "-bottom":
                                   { "ImageTexture":
                                     {
-                                      "@url":["bBT.png","http://coderextreme.net/bug/bBT.png"]
+                                      "@url":["bBT.png","https://coderextreme.net/bug/bBT.png"]
                                     }
                                   },
                                 "-front":
                                   { "ImageTexture":
                                     {
-                                      "@url":["bFR.png","http://coderextreme.net/bug/bFR.png"]
+                                      "@url":["bFR.png","https://coderextreme.net/bug/bFR.png"]
                                     }
                                   },
                                 "-left":
                                   { "ImageTexture":
                                     {
-                                      "@url":["bLF.png","http://coderextreme.net/bug/bLF.png"]
+                                      "@url":["bLF.png","https://coderextreme.net/bug/bLF.png"]
                                     }
                                   },
                                 "-right":
                                   { "ImageTexture":
                                     {
-                                      "@url":["bRT.png","http://coderextreme.net/bug/bRT.png"]
+                                      "@url":["bRT.png","https://coderextreme.net/bug/bRT.png"]
                                     }
                                   },
                                 "-top":
                                   { "ImageTexture":
                                     {
-                                      "@url":["bTP.png","http://coderextreme.net/bug/bTP.png"]
+                                      "@url":["bTP.png","https://coderextreme.net/bug/bTP.png"]
                                     }
                                   }
                               }
@@ -172,13 +172,13 @@
                                 "-parts":[
                                   { "ShaderPart":
                                     {
-                                      "@url":["cobweb.vs","http://coderextreme.net/X3DJSONLD/cobweb.vs"],
+                                      "@url":["shaders/cobweb.vs","https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"],
                                       "@type":"VERTEX"
                                     }
                                   },
                                   { "ShaderPart":
                                     {
-                                      "@url":["pc_bubbles.fs","http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"],
+                                      "@url":["shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"],
                                       "@type":"FRAGMENT"
                                     }
                                   }
@@ -224,13 +224,13 @@
                                 "-parts":[
                                   { "ShaderPart":
                                     {
-                                      "@url":["x3dom.vs","http://coderextreme.net/X3DJSONLD/x3dom.vs"],
+                                      "@url":["shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs"],
                                       "@type":"VERTEX"
                                     }
                                   },
                                   { "ShaderPart":
                                     {
-                                      "@url":["pc_bubbles.fs","http://coderextreme.net/X3DJSONLD/pc_bubbles.fs"],
+                                      "@url":["shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"],
                                       "@type":"FRAGMENT"
                                     }
                                   }

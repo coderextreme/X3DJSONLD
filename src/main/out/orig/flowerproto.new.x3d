@@ -6,13 +6,13 @@
         <meta name='creator' content='John Carlson'/>
         <meta name='description' content='A flower proto with configurable shaders'/>
         <meta name='generator' content='X3D-Edit, https://savage.nps.edu/X3D-Edit'/>
-        <meta name='identifier' content='http://coderextreme.net/X3DJSONLD/flowerproto.x3d'/>
+        <meta name='identifier' content='https://coderextreme.net/X3DJSONLD/flowerproto.x3d'/>
     </head>
     <Scene>
         <ProtoDeclare name='FlowerProto'>
             <ProtoInterface>
-                <field name='vertex' accessType='inputOutput' type='MFString' value='"gl_flowers_chromatic.vs"'/>
-                <field name='fragment' accessType='inputOutput' type='MFString' value='"pc_flowers.fs"'/>
+                <field name='vertex' accessType='inputOutput' type='MFString' value='"shaders/gl_flowers_chromatic.vs"'/>
+                <field name='fragment' accessType='inputOutput' type='MFString' value='"shaders/pc_flowers.fs"'/>
             </ProtoInterface>
             <ProtoBody>
                 <Transform DEF='transform'>
@@ -50,12 +50,12 @@
                                 <!-- <field name='cube' type='SFNode' accessType="inputOutput"> <ComposedCubeMapTexture USE="texture"/> </field> -->
                             </ComposedShader>
                             <ComposedCubeMapTexture DEF='texture'>
-                                <ImageTexture containerField='back' url='"images/all_probes/stpeters_cross/stpeters_back.png" "http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"'/>
-                                <ImageTexture containerField='bottom' url='"images/all_probes/stpeters_cross/stpeters_bottom.png" "http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"'/>
-                                <ImageTexture containerField='front' url='"images/all_probes/stpeters_cross/stpeters_front.png" "http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"'/>
-                                <ImageTexture containerField='left' url='"images/all_probes/stpeters_cross/stpeters_left.png" "http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"'/>
-                                <ImageTexture containerField='right' url='"images/all_probes/stpeters_cross/stpeters_right.png" "http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"'/>
-                                <ImageTexture containerField='top' url='"images/all_probes/stpeters_cross/stpeters_top.png" "http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"'/>
+                                <ImageTexture containerField='back' url='"images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"'/>
+                                <ImageTexture containerField='bottom' url='"images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"'/>
+                                <ImageTexture containerField='front' url='"images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"'/>
+                                <ImageTexture containerField='left' url='"images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"'/>
+                                <ImageTexture containerField='right' url='"images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"'/>
+                                <ImageTexture containerField='top' url='"images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"'/>
                             </ComposedCubeMapTexture>
                         </Appearance>
                         <Sphere/>

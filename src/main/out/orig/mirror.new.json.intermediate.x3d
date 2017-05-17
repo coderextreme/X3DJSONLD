@@ -6,26 +6,26 @@
         <meta name='title' content='mirror.x3d' dir='' http_equiv='' lang='' scheme=''/>
         <meta name='creator' content='John Carlson' dir='' http_equiv='' lang='' scheme=''/>
         <meta name='generator' content='manual' dir='' http_equiv='' lang='' scheme=''/>
-        <meta name='identifier' content='http://coderextreme.net/X3DJSONLD/mirror.x3d' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='identifier' content='https://coderextreme.net/X3DJSONLD/mirror.x3d' dir='' http_equiv='' lang='' scheme=''/>
         <meta name='description' content='sphere with alternating backgrounds' dir='' http_equiv='' lang='' scheme=''/>
     </head>
     <Scene>
         <Viewpoint centerOfRotation='0 0 0' description='Switch background and images texture' fieldOfView='0.7854' jump='true' orientation='0 0 1 0' position='0 5 100' retainUserOffsets='false' class=''/>
         <TextureBackground groundAngle='' skyAngle='' skyColor='0 0 0' transparency='0.0' class=''>
-            <ImageTexture DEF='backBack' containerField='backTexture' repeatS='true' repeatT='true' url='"images/all_probes/beach_cross/beach_back.png" "http://coderextreme.net/images/all_probes/beach_cross/beach_back.png"' class=''/>
-            <ImageTexture DEF='bottomBack' containerField='bottomTexture' repeatS='true' repeatT='true' url='"images/all_probes/beach_cross/beach_bottom.png" "http://coderextreme.net/images/all_probes/beach_cross/beach_bottom.png"' class=''/>
-            <ImageTexture DEF='frontBack' containerField='frontTexture' repeatS='true' repeatT='true' url='"images/all_probes/beach_cross/beach_front.png" "http://coderextreme.net/images/all_probes/beach_cross/beach_front.png"' class=''/>
-            <ImageTexture DEF='leftBack' containerField='leftTexture' repeatS='true' repeatT='true' url='"images/all_probes/beach_cross/beach_left.png" "http://coderextreme.net/images/all_probes/beach_cross/beach_left.png"' class=''/>
-            <ImageTexture DEF='rightBack' containerField='rightTexture' repeatS='true' repeatT='true' url='"images/all_probes/beach_cross/beach_right.png" "http://coderextreme.net/images/all_probes/beach_cross/beach_right.png"' class=''/>
-            <ImageTexture DEF='topBack' containerField='topTexture' repeatS='true' repeatT='true' url='"images/all_probes/beach_cross/beach_top.png" "http://coderextreme.net/images/all_probes/beach_cross/beach_top.png"' class=''/>
+            <ImageTexture DEF='backBack' containerField='backTexture' repeatS='true' repeatT='true' url='"images/all_probes/beach_cross/beach_back.png" "https://coderextreme.net/images/all_probes/beach_cross/beach_back.png"' class=''/>
+            <ImageTexture DEF='bottomBack' containerField='bottomTexture' repeatS='true' repeatT='true' url='"images/all_probes/beach_cross/beach_bottom.png" "https://coderextreme.net/images/all_probes/beach_cross/beach_bottom.png"' class=''/>
+            <ImageTexture DEF='frontBack' containerField='frontTexture' repeatS='true' repeatT='true' url='"images/all_probes/beach_cross/beach_front.png" "https://coderextreme.net/images/all_probes/beach_cross/beach_front.png"' class=''/>
+            <ImageTexture DEF='leftBack' containerField='leftTexture' repeatS='true' repeatT='true' url='"images/all_probes/beach_cross/beach_left.png" "https://coderextreme.net/images/all_probes/beach_cross/beach_left.png"' class=''/>
+            <ImageTexture DEF='rightBack' containerField='rightTexture' repeatS='true' repeatT='true' url='"images/all_probes/beach_cross/beach_right.png" "https://coderextreme.net/images/all_probes/beach_cross/beach_right.png"' class=''/>
+            <ImageTexture DEF='topBack' containerField='topTexture' repeatS='true' repeatT='true' url='"images/all_probes/beach_cross/beach_top.png" "https://coderextreme.net/images/all_probes/beach_cross/beach_top.png"' class=''/>
         </TextureBackground>
         <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
             <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
                 <Appearance class=''>
                     <Material ambientIntensity='0.2' diffuseColor='0.7 0.7 0.7' emissiveColor='0 0 0' shininess='0.2' specularColor='0.5 0.5 0.5' transparency='0.0' class=''/>
                     <ComposedShader DEF='x3dom' language='GLSL' class=''>
-                        <ShaderPart type='VERTEX' url='"x3dom.vs" "http://coderextreme.net/X3DJSONLD/x3dom.vs"' class=''/>
-                        <ShaderPart type='FRAGMENT' url='"mix.fs" "http://coderextreme.net/X3DJSONLD/mix.fs"' class=''/>
+                        <ShaderPart type='VERTEX' url='"shaders/x3dom.vs" "https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs"' class=''/>
+                        <ShaderPart type='FRAGMENT' url='"shaders/mix.fs" "https://coderextreme.net/X3DJSONLD/shaders/mix.fs"' class=''/>
                         <field name='chromaticDispertion' accessType='inputOutput' appinfo='' documentation='' type='SFVec3f' value='0.98 1 1.033'/>
                         <field name='cube' accessType='inputOutput' appinfo='' documentation='' type='SFInt32' value='0'/>
                         <field name='bias' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='0.5'/>
@@ -34,8 +34,8 @@
                         <!-- http://hypertextbook.com/facts/2005/JustinChe.shtml -->
                     </ComposedShader>
                     <ComposedShader DEF='cobweb' language='GLSL' class=''>
-                        <ShaderPart type='VERTEX' url='"cobweb.vs" "http://coderextreme.net/X3DJSONLD/cobweb.vs"' class=''/>
-                        <ShaderPart type='FRAGMENT' url='"mix.fs" "http://coderextreme.net/X3DJSONLD/mix.fs"' class=''/>
+                        <ShaderPart type='VERTEX' url='"shaders/cobweb.vs" "https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"' class=''/>
+                        <ShaderPart type='FRAGMENT' url='"shaders/mix.fs" "https://coderextreme.net/X3DJSONLD/shaders/mix.fs"' class=''/>
                         <field name='chromaticDispertion' accessType='inputOutput' appinfo='' documentation='' type='SFVec3f' value='0.98 1 1.033'/>
                         <field name='cube' accessType='inputOutput' appinfo='' documentation='' type='SFInt32' value='0'/>
                         <field name='bias' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='0.5'/>
@@ -44,12 +44,12 @@
                         <!-- http://hypertextbook.com/facts/2005/JustinChe.shtml -->
                     </ComposedShader>
                     <ComposedCubeMapTexture class=''>
-                        <ImageTexture DEF='backShader' containerField='back' repeatS='true' repeatT='true' url='"images/all_probes/beach_cross/beach_back.png" "http://coderextreme.net/images/all_probes/beach_cross/beach_back.png"' class=''/>
-                        <ImageTexture DEF='bottomShader' containerField='bottom' repeatS='true' repeatT='true' url='"images/all_probes/beach_cross/beach_bottom.png" "http://coderextreme.net/images/all_probes/beach_cross/beach_bottom.png"' class=''/>
-                        <ImageTexture DEF='frontShader' containerField='front' repeatS='true' repeatT='true' url='"images/all_probes/beach_cross/beach_front.png" "http://coderextreme.net/images/all_probes/beach_cross/beach_front.png"' class=''/>
-                        <ImageTexture DEF='leftShader' containerField='left' repeatS='true' repeatT='true' url='"images/all_probes/beach_cross/beach_left.png" "http://coderextreme.net/images/all_probes/beach_cross/beach_left.png"' class=''/>
-                        <ImageTexture DEF='rightShader' containerField='right' repeatS='true' repeatT='true' url='"images/all_probes/beach_cross/beach_right.png" "http://coderextreme.net/images/all_probes/beach_cross/beach_right.png"' class=''/>
-                        <ImageTexture DEF='topShader' containerField='top' repeatS='true' repeatT='true' url='"images/all_probes/beach_cross/beach_top.png" "http://coderextreme.net/images/all_probes/beach_cross/beach_top.png"' class=''/>
+                        <ImageTexture DEF='backShader' containerField='back' repeatS='true' repeatT='true' url='"images/all_probes/beach_cross/beach_back.png" "https://coderextreme.net/images/all_probes/beach_cross/beach_back.png"' class=''/>
+                        <ImageTexture DEF='bottomShader' containerField='bottom' repeatS='true' repeatT='true' url='"images/all_probes/beach_cross/beach_bottom.png" "https://coderextreme.net/images/all_probes/beach_cross/beach_bottom.png"' class=''/>
+                        <ImageTexture DEF='frontShader' containerField='front' repeatS='true' repeatT='true' url='"images/all_probes/beach_cross/beach_front.png" "https://coderextreme.net/images/all_probes/beach_cross/beach_front.png"' class=''/>
+                        <ImageTexture DEF='leftShader' containerField='left' repeatS='true' repeatT='true' url='"images/all_probes/beach_cross/beach_left.png" "https://coderextreme.net/images/all_probes/beach_cross/beach_left.png"' class=''/>
+                        <ImageTexture DEF='rightShader' containerField='right' repeatS='true' repeatT='true' url='"images/all_probes/beach_cross/beach_right.png" "https://coderextreme.net/images/all_probes/beach_cross/beach_right.png"' class=''/>
+                        <ImageTexture DEF='topShader' containerField='top' repeatS='true' repeatT='true' url='"images/all_probes/beach_cross/beach_top.png" "https://coderextreme.net/images/all_probes/beach_cross/beach_top.png"' class=''/>
                     </ComposedCubeMapTexture>
                 </Appearance>
                 <Sphere radius='30.0' solid='true' class=''/>

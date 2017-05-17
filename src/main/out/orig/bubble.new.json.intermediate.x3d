@@ -6,7 +6,7 @@
         <meta name='creator' content='John Carlson' dir='' http_equiv='' lang='' scheme=''/>
         <meta name='description' content='Tour around a prismatic sphere' dir='' http_equiv='' lang='' scheme=''/>
         <meta name='generator' content='X3D-Edit, https://savage.nps.edu/X3D-Edit' dir='' http_equiv='' lang='' scheme=''/>
-        <meta name='identifier' content='http://coderextreme.net/X3DJSONLD/bubble.x3d' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='identifier' content='https://coderextreme.net/X3DJSONLD/bubble.x3d' dir='' http_equiv='' lang='' scheme=''/>
     </head>
     <Scene>
         <NavigationInfo avatarSize='0.25 1.6 0.75' headlight='true' speed='1.0' transitionTime='1.0' transitionType='"LINEAR"' type='"EXAMINE"' visibilityLimit='0.0' class=''/>

@@ -20,7 +20,7 @@ import org.web3d.x3d.jsail.Shape.*;
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="http://coderextreme.net/x3d/qq3.x3d">qq3.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/x3d/qq3.x3d">qq3.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -44,7 +44,7 @@ import org.web3d.x3d.jsail.Shape.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="http://coderextreme.net/x3d/qq3.x3d" target="_blank">http://coderextreme.net/x3d/qq3.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/x3d/qq3.x3d" target="_blank">https://coderextreme.net/x3d/qq3.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
@@ -85,7 +85,7 @@ public class qq3
     .addMeta(new metaObject().setName("created").setContent("11 Jan 2015"))
     .addMeta(new metaObject().setName("modified").setContent("05 May 2017"))
     .addMeta(new metaObject().setName("description").setContent("12 extrusions to test prototype expander"))
-    .addMeta(new metaObject().setName("identifier").setContent("http://coderextreme.net/x3d/qq3.x3d"))
+    .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/x3d/qq3.x3d"))
     .addMeta(new metaObject().setName("generator").setContent("manual")))
   .setScene(new SceneObject()
     .addChild(new ProtoDeclareObject().setName("Process")

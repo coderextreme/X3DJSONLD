@@ -9,7 +9,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addMeta(new metaObject().setName("title").setContent("sphere.x3d"))
         .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
         .addMeta(new metaObject().setName("generator").setContent("manual"))
-        .addMeta(new metaObject().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/sphere.x3d"))
+        .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/sphere.x3d"))
         .addMeta(new metaObject().setName("description").setContent("a sphere")))
       .setScene(new SceneObject()
         .addChild(new GroupObject()

@@ -10,7 +10,7 @@ meta4 = metaObject().setName("description").setContent("Tour around a prismatic 
 head1.addMeta(meta4)
 meta5 = metaObject().setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit")
 head1.addMeta(meta5)
-meta6 = metaObject().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/bubble.x3d")
+meta6 = metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/bubble.x3d")
 head1.addMeta(meta6)
 X3D0.setHead(head1)
 Scene7 = SceneObject()

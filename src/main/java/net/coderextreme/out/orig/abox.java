@@ -87,7 +87,7 @@ ProtoInstanceObject ProtoInstance1 = null;
         .addMeta(new metaObject().setName("title").setContent("abox.x3d"))
         .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
         .addMeta(new metaObject().setName("generator").setContent("manual"))
-        .addMeta(new metaObject().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/abox.x3d"))
+        .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/abox.x3d"))
         .addMeta(new metaObject().setName("description").setContent("a box")))
       .setScene(new SceneObject()
         .addChild(new ProtoDeclareObject().setName("anyShape")

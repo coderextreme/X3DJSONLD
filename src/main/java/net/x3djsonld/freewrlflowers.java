@@ -19,7 +19,7 @@ import org.web3d.x3d.jsail.Navigation.*;
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="http://coderextreme.net/X3DJSONLD/sphereflowers.x3d">sphereflowers.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/sphereflowers.x3d">sphereflowers.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -35,7 +35,7 @@ import org.web3d.x3d.jsail.Navigation.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="http://coderextreme.net/X3DJSONLD/sphereflowers.x3d" target="_blank">http://coderextreme.net/X3DJSONLD/sphereflowers.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/sphereflowers.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/sphereflowers.x3d</a> </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -70,10 +70,10 @@ public class freewrlflowers
     .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
     .addMeta(new metaObject().setName("description").setContent("5 or more prismatic flowers"))
     .addMeta(new metaObject().setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new metaObject().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/sphereflowers.x3d")))
+    .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/sphereflowers.x3d")))
   .setScene(new SceneObject()
     .addChild(new NavigationInfoObject())
-    .addChild(new BackgroundObject().setBackUrl(new MFStringObject("\"images/all_probes/stpeters_cross/stpeters_back.png\" \"http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png\"")).setBottomUrl(new MFStringObject("\"images/all_probes/stpeters_cross/stpeters_bottom.png\" \"http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png\"")).setFrontUrl(new MFStringObject("\"images/all_probes/stpeters_cross/stpeters_front.png\" \"http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png\"")).setLeftUrl(new MFStringObject("\"images/all_probes/stpeters_cross/stpeters_left.png\" \"http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png\"")).setRightUrl(new MFStringObject("\"images/all_probes/stpeters_cross/stpeters_right.png\" \"http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png\"")).setTopUrl(new MFStringObject("\"images/all_probes/stpeters_cross/stpeters_top.png\" \"http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png\"")))
+    .addChild(new BackgroundObject().setBackUrl(new MFStringObject("\"images/all_probes/stpeters_cross/stpeters_back.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png\"")).setBottomUrl(new MFStringObject("\"images/all_probes/stpeters_cross/stpeters_bottom.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png\"")).setFrontUrl(new MFStringObject("\"images/all_probes/stpeters_cross/stpeters_front.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png\"")).setLeftUrl(new MFStringObject("\"images/all_probes/stpeters_cross/stpeters_left.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png\"")).setRightUrl(new MFStringObject("\"images/all_probes/stpeters_cross/stpeters_right.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png\"")).setTopUrl(new MFStringObject("\"images/all_probes/stpeters_cross/stpeters_top.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png\"")))
     .addChild(new GroupObject()
       .addChild(new ExternProtoDeclareObject().setName("FlowerProto").setUrl(new MFStringObject("\"flowerproto.x3d#FlowerProto\""))
         .addField(new fieldObject().setAccessType("inputOutput").setName("vertex").setType("MFString"))
@@ -82,8 +82,8 @@ public class freewrlflowers
         .setProtoBody(new ProtoBodyObject()
           .addChild(new GroupObject()
             .addChild(new ProtoInstanceObject().setName("FlowerProto")
-              .addFieldValue(new fieldValueObject().setName("vertex").setValue("\"freewrl_flowers_chromatic.vs\""))
-              .addFieldValue(new fieldValueObject().setName("fragment").setValue("\"freewrl.fs\""))))))
+              .addFieldValue(new fieldValueObject().setName("vertex").setValue("\"shaders/freewrl_flowers_chromatic.vs\""))
+              .addFieldValue(new fieldValueObject().setName("fragment").setValue("\"shaders/freewrl.fs\""))))))
       .addChild(new ProtoInstanceObject().setName("flower"))
       .addChild(new ProtoInstanceObject().setName("flower"))
       .addChild(new ProtoInstanceObject().setName("flower"))

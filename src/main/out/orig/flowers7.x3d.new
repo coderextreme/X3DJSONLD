@@ -3,19 +3,19 @@
 <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd"><head><meta name="title" content="flowers7.x3d"></meta>
 <meta name="creator" content="John Carlson"></meta>
 <meta name="generator" content="manual"></meta>
-<meta name="identifier" content="http://coderextreme.net/X3DJSONLD/flowers7.x3d"></meta>
+<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/flowers7.x3d"></meta>
 <meta name="description" content="a flower"></meta>
 </head>
 <Scene><NavigationInfo></NavigationInfo>
-<!--Images courtesy of Paul Debevec's Light Probe Image Gallery--><Background DEF="background" backUrl="&quot;images/all_probes/beach_cross/beach_back.png&quot; &quot;http://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png&quot;" bottomUrl="&quot;images/all_probes/beach_cross/beach_bottom.png&quot; &quot;http://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png&quot;" frontUrl="&quot;images/all_probes/beach_cross/beach_front.png&quot; &quot;http://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png&quot;" leftUrl="&quot;images/all_probes/beach_cross/beach_left.png&quot; &quot;http://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png&quot;" rightUrl="&quot;images/all_probes/beach_cross/beach_right.png&quot; &quot;http://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png&quot;" topUrl="&quot;images/all_probes/beach_cross/beach_top.png&quot; &quot;http://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png&quot;"></Background>
+<!--Images courtesy of Paul Debevec's Light Probe Image Gallery--><Background DEF="background" backUrl="&quot;images/all_probes/beach_cross/beach_back.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png&quot;" bottomUrl="&quot;images/all_probes/beach_cross/beach_bottom.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png&quot;" frontUrl="&quot;images/all_probes/beach_cross/beach_front.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png&quot;" leftUrl="&quot;images/all_probes/beach_cross/beach_left.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png&quot;" rightUrl="&quot;images/all_probes/beach_cross/beach_right.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png&quot;" topUrl="&quot;images/all_probes/beach_cross/beach_top.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png&quot;"></Background>
 <Viewpoint position="0 0 40" description="Transparent rose"></Viewpoint>
 <Transform DEF="Rose01"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.7 0.7 0.7" specularColor="0.5 0.5 0.5"></Material>
-<ComposedCubeMapTexture containerField="texture"><ImageTexture containerField="back" DEF="backShader" url="&quot;images/all_probes/beach_cross/beach_back.png&quot; &quot;http://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png&quot;"></ImageTexture>
-<ImageTexture containerField="bottom" DEF="bottomShader" url="&quot;images/all_probes/beach_cross/beach_bottom.png&quot; &quot;http://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png&quot;"></ImageTexture>
-<ImageTexture containerField="front" DEF="frontShader" url="&quot;images/all_probes/beach_cross/beach_front.png&quot; &quot;http://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png&quot;"></ImageTexture>
-<ImageTexture containerField="left" DEF="leftShader" url="&quot;images/all_probes/beach_cross/beach_left.png&quot; &quot;http://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png&quot;"></ImageTexture>
-<ImageTexture containerField="right" DEF="rightShader" url="&quot;images/all_probes/beach_cross/beach_right.png&quot; &quot;http://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png&quot;"></ImageTexture>
-<ImageTexture containerField="top" DEF="topShader" url="&quot;images/all_probes/beach_cross/beach_top.png&quot; &quot;http://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png&quot;"></ImageTexture>
+<ComposedCubeMapTexture containerField="texture"><ImageTexture containerField="back" DEF="backShader" url="&quot;images/all_probes/beach_cross/beach_back.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png&quot;"></ImageTexture>
+<ImageTexture containerField="bottom" DEF="bottomShader" url="&quot;images/all_probes/beach_cross/beach_bottom.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png&quot;"></ImageTexture>
+<ImageTexture containerField="front" DEF="frontShader" url="&quot;images/all_probes/beach_cross/beach_front.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png&quot;"></ImageTexture>
+<ImageTexture containerField="left" DEF="leftShader" url="&quot;images/all_probes/beach_cross/beach_left.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png&quot;"></ImageTexture>
+<ImageTexture containerField="right" DEF="rightShader" url="&quot;images/all_probes/beach_cross/beach_right.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png&quot;"></ImageTexture>
+<ImageTexture containerField="top" DEF="topShader" url="&quot;images/all_probes/beach_cross/beach_top.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png&quot;"></ImageTexture>
 </ComposedCubeMapTexture>
 <ComposedShader DEF="cobweb" language="GLSL"><field name="set_cube" type="SFInt32" accessType="inputOnly" value="0"></field>
 <field name="set_chromaticDispertion" accessType="initializeOnly" type="SFVec3f" value="0.98 1 1.033"></field>
@@ -28,8 +28,8 @@
 <field name="set_d" type="SFFloat" accessType="inputOnly" value="20"></field>
 <field name="set_tdelta" type="SFFloat" accessType="inputOnly" value="0"></field>
 <field name="set_pdelta" type="SFFloat" accessType="inputOnly" value="0"></field>
-<ShaderPart url="&quot;cobweb_flowers_input.vs&quot; &quot;http://coderextreme.net/X3DJSONLD/cobweb_flowers_input.vs&quot;" type="VERTEX"></ShaderPart>
-<ShaderPart url="&quot;pc_input_flowers.fs&quot; &quot;http://coderextreme.net/X3DJSONLD/pc_input_flowers.fs&quot;" type="FRAGMENT"></ShaderPart>
+<ShaderPart url="&quot;shaders/cobweb_flowers_input.vs&quot; &quot;https://coderextreme.net/X3DJSONLD/shaders/cobweb_flowers_input.vs&quot;" type="VERTEX"></ShaderPart>
+<ShaderPart url="&quot;shaders/pc_input_flowers.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/shaders/pc_input_flowers.fs&quot;" type="FRAGMENT"></ShaderPart>
 </ComposedShader>
 </Appearance>
 <Sphere containerField="geometry" solid="false" radius="20"></Sphere>

@@ -24,7 +24,7 @@ import org.web3d.x3d.jsail.Time.*;
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="http://coderextreme.net/X3DJSONLD/flowerproto.x3d">flowerproto.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/flowerproto.x3d">flowerproto.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -40,7 +40,7 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="http://coderextreme.net/X3DJSONLD/flowerproto.x3d" target="_blank">http://coderextreme.net/X3DJSONLD/flowerproto.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/flowerproto.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/flowerproto.x3d</a> </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -75,24 +75,24 @@ public class flowerproto
     .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
     .addMeta(new metaObject().setName("description").setContent("A flower proto with configurable shaders"))
     .addMeta(new metaObject().setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new metaObject().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/flowerproto.x3d")))
+    .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/flowerproto.x3d")))
   .setScene(new SceneObject()
     .addChild(new ProtoDeclareObject().setName("FlowerProto")
       .setProtoInterface(new ProtoInterfaceObject()
-        .addField(new fieldObject().setAccessType("inputOutput").setName("vertex").setType("MFString").setValue("\"gl_flowers_chromatic.vs\""))
-        .addField(new fieldObject().setAccessType("inputOutput").setName("fragment").setType("MFString").setValue("\"pc_flowers.fs\"")))
+        .addField(new fieldObject().setAccessType("inputOutput").setName("vertex").setType("MFString").setValue("\"shaders/gl_flowers_chromatic.vs\""))
+        .addField(new fieldObject().setAccessType("inputOutput").setName("fragment").setType("MFString").setValue("\"shaders/pc_flowers.fs\"")))
       .setProtoBody(new ProtoBodyObject()
         .addChild(new TransformObject("transform")
           .addChild(new ShapeObject()
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject().setDiffuseColor(.7f,.7f,.7f))
               .setTexture(new ComposedCubeMapTextureObject("texture")
-                .setBack(new ImageTextureObject().setUrl(new MFStringObject("\"images/all_probes/stpeters_cross/stpeters_back.png\" \"http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png\"")))
-                .setBottom(new ImageTextureObject().setUrl(new MFStringObject("\"images/all_probes/stpeters_cross/stpeters_bottom.png\" \"http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png\"")))
-                .setFront(new ImageTextureObject().setUrl(new MFStringObject("\"images/all_probes/stpeters_cross/stpeters_front.png\" \"http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png\"")))
-                .setLeft(new ImageTextureObject().setUrl(new MFStringObject("\"images/all_probes/stpeters_cross/stpeters_left.png\" \"http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png\"")))
-                .setRight(new ImageTextureObject().setUrl(new MFStringObject("\"images/all_probes/stpeters_cross/stpeters_right.png\" \"http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png\"")))
-                .setTop(new ImageTextureObject().setUrl(new MFStringObject("\"images/all_probes/stpeters_cross/stpeters_top.png\" \"http://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png\""))))
+                .setBack(new ImageTextureObject().setUrl(new MFStringObject("\"images/all_probes/stpeters_cross/stpeters_back.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png\"")))
+                .setBottom(new ImageTextureObject().setUrl(new MFStringObject("\"images/all_probes/stpeters_cross/stpeters_bottom.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png\"")))
+                .setFront(new ImageTextureObject().setUrl(new MFStringObject("\"images/all_probes/stpeters_cross/stpeters_front.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png\"")))
+                .setLeft(new ImageTextureObject().setUrl(new MFStringObject("\"images/all_probes/stpeters_cross/stpeters_left.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png\"")))
+                .setRight(new ImageTextureObject().setUrl(new MFStringObject("\"images/all_probes/stpeters_cross/stpeters_right.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png\"")))
+                .setTop(new ImageTextureObject().setUrl(new MFStringObject("\"images/all_probes/stpeters_cross/stpeters_top.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png\""))))
               .addShaders(new ComposedShaderObject("shader").setLanguage("GLSL")
                 .addField(new fieldObject().setAccessType("inputOutput").setName("cube").setType("SFInt32").setValue("0"))
                 .addComments(new String[] {"",

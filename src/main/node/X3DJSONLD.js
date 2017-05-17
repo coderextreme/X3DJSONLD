@@ -99,7 +99,7 @@ if (typeof require === 'function') {
  */
 function loadURLs(loadpath, urls, loadedCallback) {
 	if (typeof urls !== 'undefined') {
-		urls = processURLs(urls, loadpath);
+		// urls = processURLs(urls, loadpath);
 		for (var u in urls) {
 			try {
 				var url = urls[u];
@@ -475,7 +475,7 @@ function ConvertToX3DOM(object, parentkey, element, path, containerField) {
 					localArray[str] = SFStringToXML(localArray[str]);
 				}
                                 if (parentkey === '@url' || parentkey.indexOf("Url") === parentkey.length - 3) {
-					processURLs(localArray, path);
+					// processURLs(localArray, path);
 				}
 				elementSetAttribute(element, parentkey.substr(1),'"'+localArray.join('" "')+'"');
 			} else {

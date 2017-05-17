@@ -20,7 +20,7 @@ import org.web3d.x3d.jsail.Shape.*;
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="http://coderextreme.net/X3DJSONLD/cube.x3d">cube.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/cube.x3d">cube.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -40,11 +40,11 @@ import org.web3d.x3d.jsail.Shape.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
-			<td> <a href="http://coderextreme.net/X3DJSONLD/../license.html">../license.html</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/../license.html">../license.html</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="http://coderextreme.net/X3DJSONLD/cube.x3d" target="_blank">http://coderextreme.net/X3DJSONLD/cube.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/cube.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/cube.x3d</a> </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -81,7 +81,7 @@ public class cube
     .addMeta(new metaObject().setName("created").setContent("4 April 2017"))
     .addMeta(new metaObject().setName("generator").setContent("manual"))
     .addMeta(new metaObject().setName("license").setContent("../license.html"))
-    .addMeta(new metaObject().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/cube.x3d")))
+    .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/cube.x3d")))
   .setScene(new SceneObject()
     .addChild(new GroupObject()
       .addChild(new ShapeObject()
