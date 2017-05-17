@@ -110,17 +110,20 @@ protected static class ExitException extends SecurityException
 						*/
 
 						URL u = new URL(source);
-						if (source.lastIndexOf("savage.nps.edu") >= 0) {
-							source = "examples"+source.substring(source.lastIndexOf("savage.nps.edu")+14);
-						}
-						if (source.lastIndexOf("www.web3d.org") >= 0) {
-							source = source.substring(source.lastIndexOf("www.web3d.org"));
+						if (source.indexOf("https://") == 0) {
+							source = "C:/x3d-code/"+source.substring(8);
+						} else if (source.indexOf("http://") == 0) {
+							source = "C:/x3d-code/"+source.substring(7);
 						}
 						BufferedReader br = null;
 						PrintWriter bw = null;
 						try {
 							br = new BufferedReader(new InputStreamReader(u.openStream()));
 							System.err.println("Downloading URL to "+source);
+							if (source.lastIndexOf("/") > 0) {
+								File dir = new File(source.substring(0, source.lastIndexOf("/")));
+								dir.mkdirs();
+							}
 							bw = new PrintWriter(new FileWriter(source));
 							String line = null;
 							while ((line = br.readLine()) != null) {
@@ -138,9 +141,6 @@ protected static class ExitException extends SecurityException
 						}
 					}
 					out = source;
-					if ((out.startsWith("http://") || out.startsWith("https://")) && out.lastIndexOf("www.web3d.org") >= 0) {
-						out = out.substring(out.lastIndexOf("www.web3d.org"));
-					}
 					out = outdir+out.substring(out.indexOf("/")+1, out.lastIndexOf("."))+"."+extension;
 					if (overwrite) {
 						System.err.println("BEGIN "+source+" > "+extension);
