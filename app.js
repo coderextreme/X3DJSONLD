@@ -23,6 +23,7 @@ var www = 'C:/x3d-code/';
 
 
 app.use('/examples', express.static(config.examples));
+app.use(express.static('src/main'));
 app.use(express.static('src/main/html'));
 app.use(express.static('src/main/node'));
 app.use(express.static('src/main/orig'));
