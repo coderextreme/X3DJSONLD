@@ -3,8 +3,8 @@
    <head>
       <title>Mirrored Sphere</title>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" ></meta>
-    <link rel="stylesheet" type="text/css" href="http://www.x3dom.org/download/dev/x3dom.css"></link>
-    <script type="text/javascript" src="http://www.x3dom.org/download/dev/x3dom-full.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://www.x3dom.org/download/dev/x3dom.css"></link>
+    <script type="text/javascript" src="https://www.x3dom.org/download/dev/x3dom-full.js"></script>
    <style>
 X3D {
 	width: 100%;
@@ -41,9 +41,9 @@ body {
                   <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field>
                   <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field>
                   <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field>
-                  <ShaderPart url='"x3dom.vs" "http://coderextreme.net/X3DJSONLD/x3dom.vs"' containerField='parts' type='VERTEX'>
+                  <ShaderPart url='"shaders/x3dom.vs" "https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs"' containerField='parts' type='VERTEX'>
 		  </ShaderPart>
-                  <ShaderPart containerField='parts' url='"pc_bubbles.fs"' type='FRAGMENT'>
+                  <ShaderPart containerField='parts' url='"shaders/pc_bubbles.fs"' type='FRAGMENT'>
 		  </ShaderPart>
                 </ComposedShader>
 		<ComposedShader DEF='cobweb' language="GLSL">
@@ -53,14 +53,14 @@ body {
                   <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field>
                   <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field>
                   <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field>
-                  <ShaderPart url='"cobweb.vs" "http://coderextreme.net/X3DJSONLD/cobweb.vs"' containerField='parts' type='VERTEX'>
+                  <ShaderPart url='"shaders/cobweb.vs" "https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"' containerField='parts' type='VERTEX'>
 		  </ShaderPart>
-                  <ShaderPart containerField='parts' url='"pc_bubbles.fs"' type='FRAGMENT'>
+                  <ShaderPart containerField='parts' url='"shaders/pc_bubbles.fs"' type='FRAGMENT'>
 		  </ShaderPart>
                 </ComposedShader>
 		</Appearance>
 		<!--Sphere radius='20'></Sphere-->
-                <IndexedFaceSet id="ifs" creaseAngle="1.57">
+                <IndexedFaceSet id="shaders/ifs" creaseAngle="1.57">
                   <Coordinate id="crd" point=""></Coordinate>
                 </IndexedFaceSet>
 	</Shape>
@@ -106,7 +106,7 @@ setInterval(function () {
         }, 10000);
 
 </script> 
-<script type="text/javascript" src="flowers.js"></script>
+<script type="text/javascript" src="node/flowers.js"></script>
 <script type="text/javascript">
 initialize();
 setInterval(animate, 1);

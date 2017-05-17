@@ -3,8 +3,8 @@
    <head>
       <title>Mirrored Sphere</title>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" ></meta>
-    <link rel="stylesheet" type="text/css" href="http://www.x3dom.org/download/dev/x3dom.css"></link>
-    <script type="text/javascript" src="http://www.x3dom.org/download/dev/x3dom-full.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://www.x3dom.org/download/dev/x3dom.css"></link>
+    <script type="text/javascript" src="https://www.x3dom.org/download/dev/x3dom-full.js"></script>
    <style>
 body {
 	margin:0px;
@@ -37,9 +37,9 @@ body {
 		  <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field>
                   <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'></field>
                   <field name='power' accessType='inputOutput' type='SFFloat' value='2'></field>
-                  <ShaderPart url='"x3dom_john.vs" "http://coderextreme.net/X3DJSONLD/x3dom_john.vs"' containerField='parts' type='VERTEX'>
+                  <ShaderPart url='"shaders/x3dom_john.vs" "https://coderextreme.net/X3DJSONLD/shaders/x3dom_john.vs"' containerField='parts' type='VERTEX'>
                   </ShaderPart>
-                  <ShaderPart url='"mix.fs" "http://coderextreme.net/X3DJSONLD/mix.fs"' type='FRAGMENT' containerField="parts">
+                  <ShaderPart url='"shaders/mix.fs" "https://coderextreme.net/X3DJSONLD/shaders/mix.fs"' type='FRAGMENT' containerField="parts">
                   </ShaderPart>
                 </ComposedShader>
             </Appearance>
