@@ -9,8 +9,8 @@ export PROCESSORS=${PROCESSORS-8}
 
 python ../python/classes.py
 
-ORIGTOOUTPUT='s/\/orig\//\/out\//' 
-OUTPUTTOORIG='s/\/out/\/orig/'
+ORIGTOOUTPUT='s/\/orig\//\/out\/orig\//' 
+OUTPUTTOORIG='s/\/out//'
 STYLESHEETDIR=../lib/stylesheets
 
 
@@ -21,7 +21,7 @@ do
 	${NODE} ${NODEDIR}/xmldiff.js `dirname $i | sed $OUTPUTTOORIG`/`basename $i .x3d.new`.x3d $i
 done
 
-for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.java/' -e 's/\/orig\//\/java\/net\/coderextreme\/orig\//' | xargs ls -d`
+for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.java/' -e 's/\/orig\//\/java\/net\/coderextreme\/out\/orig\//' | xargs ls -d`
 do
 	pushd `dirname $i` > /dev/null
 	echo
@@ -30,7 +30,7 @@ do
 	popd > /dev/null
 done
 
-for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.class/' -e 's/\/orig\//\/java\/net\/coderextreme\/orig\//' | xargs ls -d | sed 's/\.class$//' | sed -e 's/^..\/java\///'`
+for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.class/' -e 's/\/orig\//\/java\/net\/coderextreme\/out\/orig\//' | xargs ls -d | sed 's/\.class$//' | sed -e 's/^..\/java\///'`
 do
 	pushd ../java > /dev/null
 	echo
@@ -52,7 +52,7 @@ do
 done
 
 
-for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.sail.js/' -e 's/\/orig\//\/nashorn\/net\/coderextreme\/orig\//' | xargs ls -d | sed 's/\.class$//' | sed -e 's/^..\/java\///'`
+for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.sail.js/' -e 's/\/orig\//\/nashorn\/net\/coderextreme\/out\/orig\//' | xargs ls -d | sed 's/\.class$//' | sed -e 's/^..\/java\///'`
 do
 	pushd ../nashorn > /dev/null
 	echo

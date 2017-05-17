@@ -11,5 +11,5 @@ convertJSON([{
 	serializer : './JavaScriptSerializer.js',
 	folder : "../nashorn/net/coderextreme/",
 	extension : ".sail.js",
-	codeOutput : "../new/",
+	codeOutput : "../",
 	}]);

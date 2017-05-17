@@ -136,7 +136,7 @@ protected static class ExitException extends SecurityException
 					if ((out.startsWith("http://") || out.startsWith("https://")) && out.lastIndexOf("www.web3d.org") >= 0) {
 						out = out.substring(out.lastIndexOf("www.web3d.org"));
 					}
-					out = "out"+out.substring(out.indexOf("/"), out.lastIndexOf("."))+"."+extension;
+					out = "../out"+out.substring(out.indexOf("/"), out.lastIndexOf("."))+"."+extension;
 					if (overwrite) {
 						System.err.println("BEGIN "+source+" > "+extension);
 						if (out.lastIndexOf("/") > 0) {

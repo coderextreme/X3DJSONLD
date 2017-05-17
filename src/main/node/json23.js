@@ -9,7 +9,7 @@ var convertJSON = require('./convertJSON.js').convertJSON;
 
 convertJSON([{ 
 	serializer : './Three2Serilizer.js',
-	folder : "../new/three/",
+	folder : "../three/",
 	extension : ".three.js",
 	codeOutput : "",
 	}]);

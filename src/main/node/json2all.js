@@ -12,22 +12,22 @@ convertJSON([
 	serializer : './JavaSerializer.js',
 	folder : "../java/net/coderextreme/",
 	extension : ".java",
-	codeOutput : "../new/",
+	codeOutput : "../",
 	},
 	{ 
 	serializer : './DOMSerializer.js',
-	folder : "../new/",
+	folder : "../",
 	extension : ".x3d.new",
 	},
 	{ 
 	serializer : './JavaScriptSerializer.js',
 	folder : "../nashorn/net/coderextreme/",
 	extension : ".sail.js",
-	codeOutput : "../new/",
+	codeOutput : "../",
 	},
 	{ 
 	serializer : './PythonSerializer.js',
 	folder : "../python/net/coderextreme/",
 	extension : ".py",
-	codeOutput : "../new/",
+	codeOutput : "../",
 	}]);

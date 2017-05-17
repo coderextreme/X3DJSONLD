@@ -9,6 +9,6 @@ var convertJSON = require('./convertJSON.js').convertJSON;
 
 convertJSON([{ 
 	serializer : './DOMSerializer.js',
-	folder : "../new/",
+	folder : "../",
 	extension : ".x3d.new",
 	}]);
