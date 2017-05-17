@@ -18,8 +18,8 @@
                 <Appearance>
                     <Material diffuseColor='0.7 0.7 0.7' specularColor='0.5 0.5 0.5'/>
                     <ComposedShader DEF='cobweb' language='GLSL'>
-                        <ShaderPart url='"shaders/cobweb_flowers_input.vs" "https://coderextreme.net/X3DJSONLD/shaders/cobweb_flowers_input.vs"'/>
-                        <ShaderPart type='FRAGMENT' url='"shaders/pc_input_flowers.fs" "https://coderextreme.net/X3DJSONLD/shaders/pc_input_flowers.fs"'/>
+                        <ShaderPart url='"./shaders/cobweb_flowers_input.vs" "https://coderextreme.net/X3DJSONLD/shaders/cobweb_flowers_input.vs"'/>
+                        <ShaderPart type='FRAGMENT' url='"./shaders/pc_input_flowers.fs" "https://coderextreme.net/X3DJSONLD/shaders/pc_input_flowers.fs"'/>
                         <field name='set_cube' accessType='inputOnly' type='SFInt32' value='0'/>
                         <field name='set_chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'/>
                         <field name='set_bias' accessType='inputOnly' type='SFFloat' value='0.5'/>

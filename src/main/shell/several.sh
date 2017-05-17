@@ -10,57 +10,58 @@ export PROCESSORS=${PROCESSORS-8}
 python ../python/classes.py
 
 STYLESHEETDIR=../lib/stylesheets
+X3DTOJAVA='s/\/data\//\/java\/net\/coderextreme\/data\//' 
+X3DTONASH='s/\/data\//\/nashorn\/net\/coderextreme\/data\//' 
 
 
 (ls -d "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java net.coderextreme.RunSaxon ---../ ---overwrite --${STYLESHEETDIR}/X3dToJSON.xslt -json | xargs -P $PROCESSORS ${NODE} ${NODEDIR}/json2all.js
 
 for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed  -e 's/\.x3d$/.x3d.new/'`
 do
-	${NODE} ${NODEDIR}/xmldiff.js `dirname $i`/`basename $i .x3d.new`.x3d $i
+	X3D=`dirname $i`/`basename $i .x3d.new`.x3d 
+	${NODE} ${NODEDIR}/xmldiff.js $X3D $i
 done
 
-for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.java/' -e 's/\/data\//\/java\/net\/coderextreme\/data\//' | xargs ls -d`
+for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.java/' -e $X3DTOJAVA | xargs ls -d`
 do
-	pushd `dirname $i` > /dev/null
-	echo
+	pushd `dirname $i`
 	echo $i
  	javac -J-Xss1g -J-Xmx4g `basename $i`
-	popd > /dev/null
+	popd
 done
 
-for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.class/' -e 's/\/data\//\/java\/net\/coderextreme\/data\//' | xargs ls -d | sed 's/\.class$//'`
+for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.class/' -e $X3DTOJAVA | xargs ls -d | sed -e 's/\.class$//' -e 's/^\.\.\/java\///'`
 do
-	pushd ../java > /dev/null
-	echo
+	pushd ../java
 	echo $i
 	java -d64 -Xss1g -Xmx4g $i # sh runToError.sh
-	popd > /dev/null
+	popd
 done
 
-for NEW in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.new.json/'`
+for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.new.json/'`
 do
-	JSON=`dirname $NEW`/`basename $NEW .new.json`.json
-	${NODE} ${NODEDIR}/jsondiff.js $JSON $NEW
+	JSON=`dirname $i`/`basename $i .new.json`.json
+	${NODE} ${NODEDIR}/jsondiff.js $JSON $i
 done
 
 
 for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" |  sed -e 's/\.x3d$/.new.json.intermediate.x3d/'`
 do
-	${NODE} ${NODEDIR}/xmldiff.js `dirname $i`/`basename $i .new.json.intermediate.x3d`.x3d $i
+	X3D=`dirname $i`/`basename $i .new.json.intermediate.x3d`.x3d 
+	${NODE} ${NODEDIR}/xmldiff.js $X3D $i
 done
 
 
-for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.sail.js/' -e 's/\/data\//\/nashorn\/net\/coderextreme\/data\//' | xargs ls -d`
+for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.sail.js/' -e $X3DTONASH | xargs ls -d`
 do
-	pushd ../nashorn > /dev/null
-	echo
+	pushd ../nashorn
 	echo $i
 	jjs -J-Xss1g -J-Xmx4g -cp "${NASHORN_CLASSPATH}" $i
-	popd > /dev/null
+	popd
 done
 
-for NEW in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.new.x3d/'`
+for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.new.x3d/'`
 do
-	X3D=`dirname $NEW`/`basename $NEW .new.x3d`.x3d
-	${NODE} ${NODEDIR}/xmldiff.js $X3D $NEW
+	X3D=`dirname $i`/`basename $i .new.x3d`.x3d
+	${NODE} ${NODEDIR}/xmldiff.js $X3D $i
 done

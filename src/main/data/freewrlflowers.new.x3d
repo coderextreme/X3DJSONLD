@@ -20,8 +20,8 @@
                 <ProtoBody>
                     <Group>
                         <ProtoInstance name='FlowerProto'>
-                            <fieldValue name='vertex' value='"shaders/freewrl_flowers_chromatic.vs"'/>
-                            <fieldValue name='fragment' value='"shaders/freewrl.fs"'/>
+                            <fieldValue name='vertex' value='"./shaders/freewrl_flowers_chromatic.vs"'/>
+                            <fieldValue name='fragment' value='"./shaders/freewrl.fs"'/>
                         </ProtoInstance>
                     </Group>
                 </ProtoBody>

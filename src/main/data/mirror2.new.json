@@ -83,13 +83,13 @@
                                   { "ShaderPart":
                                     {
                                       "@type":"VERTEX",
-                                      "@url":["shaders/cobweb.vs","https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"]
+                                      "@url":["./shaders/cobweb.vs","https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"]
                                     }
                                   },
                                   { "ShaderPart":
                                     {
                                       "@type":"FRAGMENT",
-                                      "@url":["shaders/mix.fs","https://coderextreme.net/X3DJSONLD/shaders/mix.fs"]
+                                      "@url":["./shaders/mix.fs","https://coderextreme.net/X3DJSONLD/shaders/mix.fs"]
                                     }
                                   }
                                 ],
@@ -140,13 +140,13 @@
                                   { "ShaderPart":
                                     {
                                       "@type":"VERTEX",
-                                      "@url":["shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs"]
+                                      "@url":["./shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs"]
                                     }
                                   },
                                   { "ShaderPart":
                                     {
                                       "@type":"FRAGMENT",
-                                      "@url":["shaders/mix.fs","https://coderextreme.net/X3DJSONLD/shaders/mix.fs"]
+                                      "@url":["./shaders/mix.fs","https://coderextreme.net/X3DJSONLD/shaders/mix.fs"]
                                     }
                                   }
                                 ],

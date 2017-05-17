@@ -91,11 +91,11 @@
                                     "fieldValue": [
                                       {
                                         "@name":"vertex",
-                                        "@value":["shaders/gl_flowers_chromatic.vs"]
+                                        "@value":["./shaders/gl_flowers_chromatic.vs"]
                                       },
                                       {
                                         "@name":"fragment",
-                                        "@value":["shaders/common.fs"]
+                                        "@value":["./shaders/common.fs"]
                                       }
                                     ]
                                   }

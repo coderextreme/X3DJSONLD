@@ -11,8 +11,8 @@
     <Scene>
         <ProtoDeclare name='FlowerProto' appinfo='' documentation=''>
             <ProtoInterface>
-                <field name='vertex' accessType='inputOutput' appinfo='' documentation='' type='MFString' value='"shaders/gl_flowers_chromatic.vs"'/>
-                <field name='fragment' accessType='inputOutput' appinfo='' documentation='' type='MFString' value='"shaders/pc_flowers.fs"'/>
+                <field name='vertex' accessType='inputOutput' appinfo='' documentation='' type='MFString' value='"./shaders/gl_flowers_chromatic.vs"'/>
+                <field name='fragment' accessType='inputOutput' appinfo='' documentation='' type='MFString' value='"./shaders/pc_flowers.fs"'/>
             </ProtoInterface>
             <ProtoBody>
                 <Transform DEF='transform' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
