@@ -28,8 +28,8 @@
 <field name="set_d" type="SFFloat" accessType="inputOnly" value="20"></field>
 <field name="set_tdelta" type="SFFloat" accessType="inputOnly" value="0"></field>
 <field name="set_pdelta" type="SFFloat" accessType="inputOnly" value="0"></field>
-<ShaderPart url="&quot;shaders/cobweb_flowers_input.vs&quot; &quot;https://coderextreme.net/X3DJSONLD/shaders/cobweb_flowers_input.vs&quot;" type="VERTEX"></ShaderPart>
-<ShaderPart url="&quot;shaders/pc_input_flowers.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/shaders/pc_input_flowers.fs&quot;" type="FRAGMENT"></ShaderPart>
+<ShaderPart url="&quot;./shaders/cobweb_flowers_input.vs&quot; &quot;https://coderextreme.net/X3DJSONLD/shaders/cobweb_flowers_input.vs&quot;" type="VERTEX"></ShaderPart>
+<ShaderPart url="&quot;./shaders/pc_input_flowers.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/shaders/pc_input_flowers.fs&quot;" type="FRAGMENT"></ShaderPart>
 </ComposedShader>
 </Appearance>
 <Sphere containerField="geometry" solid="false" radius="20"></Sphere>

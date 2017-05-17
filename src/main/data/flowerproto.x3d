@@ -11,8 +11,8 @@
     <Scene>
         <ProtoDeclare name="FlowerProto">
 	    <ProtoInterface>
-		<field accessType='inputOutput' name='vertex' type='MFString' value='"shaders/gl_flowers_chromatic.vs"'/>
-		<field accessType='inputOutput' name='fragment' type='MFString' value='"shaders/pc_flowers.fs"'/>
+		<field accessType='inputOutput' name='vertex' type='MFString' value='"./shaders/gl_flowers_chromatic.vs"'/>
+		<field accessType='inputOutput' name='fragment' type='MFString' value='"./shaders/pc_flowers.fs"'/>
 	    </ProtoInterface>
             <ProtoBody>
                 <Transform DEF="transform" translation="0 0 0">

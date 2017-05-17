@@ -308,12 +308,12 @@ protected class MFString11 {
 }
 protected class MFString12 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"shaders/cobweb_flowers_input.vs","https://coderextreme.net/X3DJSONLD/shaders/cobweb_flowers_input.vs"});
+    return new MFStringObject(new java.lang.String[] {"./shaders/cobweb_flowers_input.vs","https://coderextreme.net/X3DJSONLD/shaders/cobweb_flowers_input.vs"});
   }
 }
 protected class MFString13 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"shaders/pc_input_flowers.fs","https://coderextreme.net/X3DJSONLD/shaders/pc_input_flowers.fs"});
+    return new MFStringObject(new java.lang.String[] {"./shaders/pc_input_flowers.fs","https://coderextreme.net/X3DJSONLD/shaders/pc_input_flowers.fs"});
   }
 }
 }

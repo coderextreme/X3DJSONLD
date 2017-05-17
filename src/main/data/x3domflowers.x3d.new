@@ -11,8 +11,8 @@
 <Group><ExternProtoDeclare name="FlowerProto" url="&quot;flowerproto.x3d#FlowerProto&quot;"><field name="vertex" accessType="inputOutput" type="MFString"></field>
 <field name="fragment" accessType="inputOutput" type="MFString"></field>
 </ExternProtoDeclare>
-<ProtoDeclare name="flower"><ProtoBody><Group><ProtoInstance name="FlowerProto"><fieldValue name="vertex" value="&quot;shaders/x3dom_flowers_chromatic.vs&quot;"></fieldValue>
-<fieldValue name="fragment" value="&quot;shaders/common.fs&quot;"></fieldValue>
+<ProtoDeclare name="flower"><ProtoBody><Group><ProtoInstance name="FlowerProto"><fieldValue name="vertex" value="&quot;./shaders/x3dom_flowers_chromatic.vs&quot;"></fieldValue>
+<fieldValue name="fragment" value="&quot;./shaders/common.fs&quot;"></fieldValue>
 </ProtoInstance>
 </Group>
 </ProtoBody>

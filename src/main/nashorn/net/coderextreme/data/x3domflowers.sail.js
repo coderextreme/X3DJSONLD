@@ -36,7 +36,7 @@ var ProtoInstance6 = null;
           .addChild(ProtoInstance5 = new ProtoInstanceObject().setName("flower"))
           .addChild(ProtoInstance6 = new ProtoInstanceObject().setName("flower"))))      ;
 ProtoInstance0
-                  .addFieldValue(new fieldValueObject().setName("vertex").setValue("\"shaders/x3dom_flowers_chromatic.vs\""));
+                  .addFieldValue(new fieldValueObject().setName("vertex").setValue("\"./shaders/x3dom_flowers_chromatic.vs\""));
 ProtoInstance0
-                  .addFieldValue(new fieldValueObject().setName("fragment").setValue("\"shaders/common.fs\""));
+                  .addFieldValue(new fieldValueObject().setName("fragment").setValue("\"./shaders/common.fs\""));
     X3D0.toFileX3D("../data/x3domflowers.new.x3d");

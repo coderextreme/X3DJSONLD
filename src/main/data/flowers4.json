@@ -153,13 +153,13 @@
                                 "-parts":[
                                   { "ShaderPart":
                                     {
-                                      "@url":["shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs"],
+                                      "@url":["./shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs"],
                                       "@type":"VERTEX"
                                     }
                                   },
                                   { "ShaderPart":
                                     {
-                                      "@url":["shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"],
+                                      "@url":["./shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"],
                                       "@type":"FRAGMENT"
                                     }
                                   }

@@ -6,8 +6,8 @@
 <meta name="generator" content="X3D-Edit, https://savage.nps.edu/X3D-Edit"></meta>
 <meta name="identifier" content="https://coderextreme.net/X3DJSONLD/flowerproto.x3d"></meta>
 </head>
-<Scene><ProtoDeclare name="FlowerProto"><ProtoInterface><field name="vertex" accessType="inputOutput" type="MFString" value="&quot;shaders/gl_flowers_chromatic.vs&quot;"></field>
-<field name="fragment" accessType="inputOutput" type="MFString" value="&quot;shaders/pc_flowers.fs&quot;"></field>
+<Scene><ProtoDeclare name="FlowerProto"><ProtoInterface><field name="vertex" accessType="inputOutput" type="MFString" value="&quot;./shaders/gl_flowers_chromatic.vs&quot;"></field>
+<field name="fragment" accessType="inputOutput" type="MFString" value="&quot;./shaders/pc_flowers.fs&quot;"></field>
 </ProtoInterface>
 <ProtoBody><Transform DEF="transform"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.7 0.7 0.7"></Material>
 <ComposedCubeMapTexture containerField="texture" DEF="texture"><ImageTexture containerField="back" url="&quot;images/all_probes/stpeters_cross/stpeters_back.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png&quot;"></ImageTexture>
