@@ -257,7 +257,7 @@
                     { "Script":
                       {
                         "@DEF":"ArchPrototypeScript",
-                        "@url":["ArchPrototypeScript.js"],
+                        "@url":["node/ArchPrototypeScript.js"],
                         "-children":[
                           {
                             "#comment":"INPUT PARAMETERS"
@@ -492,7 +492,7 @@
           { "Inline":
             {
               "@DEF":"CoordinateAxes",
-              "@url":["CoordinateAxes.x3d"]
+              "@url":["data/CoordinateAxes.x3d"]
             }
           }
         ]
