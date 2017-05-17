@@ -93,7 +93,7 @@ function loadSchema(json, file, doValidate, success, failure) {
 		
 		try {
 			console.error("Loading meta schema");
-			var metaschema = fs.readFileSync('../schema/draft-04-JSONSchema.json');
+			var metaschema = fs.readFileSync('schema/draft-04-JSONSchema.json');
 			console.error("Parsing meta schema");
 			var metaschemajson = JSON.parse(metaschema.toString());
 			console.error("Adding meta schema");
@@ -101,7 +101,7 @@ function loadSchema(json, file, doValidate, success, failure) {
 			console.error("Loading schema");
 		} catch (e) {
 		}
-		var schema = fs.readFileSync("../schema/x3d-"+version+"-JSONSchema.json");
+		var schema = fs.readFileSync("schema/x3d-"+version+"-JSONSchema.json");
 		console.error("Parsing schema");
 		var schemajson = JSON.parse(schema.toString());
 		console.error("Adding schema");
