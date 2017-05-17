@@ -31,7 +31,7 @@ if (typeof Browser === 'undefined') {
  * loading.
  */
 function processURLs(localArray, path) {
-	console.log("Process URLs", path, localArray);
+	// console.log("Process URLs", path, localArray);
 	var url;
 	// No longer need to split
 	for (url in localArray) {
@@ -99,7 +99,7 @@ if (typeof require === 'function') {
  */
 function loadURLs(loadpath, urls, loadedCallback) {
 	if (typeof urls !== 'undefined') {
-		// urls = processURLs(urls, loadpath);
+		urls = processURLs(urls, loadpath);
 		for (var u in urls) {
 			try {
 				var url = urls[u];

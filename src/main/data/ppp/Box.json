@@ -1,0 +1,190 @@
+{
+  "X3D": {
+    "encoding": "UTF-8",
+    "@profile": "Immersive",
+    "@version": "3.3",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "box.x3d"
+        },
+        {
+          "@name": "creator",
+          "@content": "John Carlson"
+        },
+        {
+          "@name": "generator",
+          "@content": "manual"
+        },
+        {
+          "@name": "identifier",
+          "@content": "https://coderextreme.net/X3DJSONLD/box.x3d"
+        },
+        {
+          "@name": "description",
+          "@content": "3 boxes"
+        },
+        {
+          "@name": "translated",
+          "@content": "17 May 2017"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+        },
+        {
+          "@name": "reference",
+          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        {
+          "NavigationInfo": {
+            "@type": [
+              "EXAMINE"
+            ]
+          }
+        },
+        {
+          "Viewpoint": {
+            "@description": "Cubes on Fire",
+            "@position": [
+              0,
+              0,
+              12
+            ]
+          }
+        },
+        {},
+        {},
+        {
+          "Transform": {
+            "@translation": [
+              0,
+              0,
+              0
+            ],
+            "-children": [
+              {
+                "Transform": {
+                  "-children": [
+                    {
+                      "Shape": {
+                        "-geometry": {
+                          "Box": {
+                            "@size": [
+                              1,
+                              1,
+                              1
+                            ]
+                          }
+                        },
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  0,
+                                  1,
+                                  0
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "@translation": [
+                    0,
+                    0,
+                    0
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "-children": [
+                    {
+                      "Shape": {
+                        "-geometry": {
+                          "Box": {
+                            "@size": [
+                              1,
+                              1,
+                              1
+                            ]
+                          }
+                        },
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  0,
+                                  1,
+                                  0
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "@translation": [
+                    2,
+                    0,
+                    0
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "-children": [
+                    {
+                      "Shape": {
+                        "-geometry": {
+                          "Box": {
+                            "@size": [
+                              1,
+                              1,
+                              1
+                            ]
+                          }
+                        },
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  0,
+                                  1,
+                                  0
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "@translation": [
+                    -2,
+                    0,
+                    0
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
