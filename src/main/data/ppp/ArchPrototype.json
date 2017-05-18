@@ -132,7 +132,7 @@
           "Script": {
             "@DEF": "DECLArchPrototype_ArchInstance_ArchPrototypeScript",
             "@url": [
-              "ArchPrototypeScript.js"
+              "node/ArchPrototypeScript.js"
             ],
             "-children": [
               {
@@ -285,7 +285,7 @@
           "Inline": {
             "@DEF": "CoordinateAxes",
             "@url": [
-              "CoordinateAxes.x3d"
+              "data/CoordinateAxes.x3d"
             ]
           }
         }
