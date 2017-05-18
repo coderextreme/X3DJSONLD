@@ -14,12 +14,12 @@
         <NavigationInfo type='"ANY" "EXAMINE" "FLY" "LOOKAT"'/>
         <Viewpoint description='Tour Views'/>
 	<Background
-		backUrl='"images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"'
-		bottomUrl='"images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"'
-		frontUrl='"images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"'
-		leftUrl='"images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"'
-		rightUrl='"images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"'
-		topUrl='"images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"'
+		backUrl='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"'
+		bottomUrl='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"'
+		frontUrl='"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"'
+		leftUrl='"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"'
+		rightUrl='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"'
+		topUrl='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"'
 	  >
 	</Background>
 	<Transform>
@@ -28,23 +28,23 @@
             <Appearance>
 		<Material/>
                 <ComposedCubeMapTexture DEF="texture">
-			<ImageTexture url='"images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"' containerField="back"/>
-			<ImageTexture url='"images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"' containerField="bottom"/>
-			<ImageTexture url='"images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"' containerField="front"/>
-			<ImageTexture url='"images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"' containerField="left"/>
-			<ImageTexture url='"images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"' containerField="right"/>
-			<ImageTexture url='"images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"' containerField="top"/>
+			<ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"' containerField="back"/>
+			<ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"' containerField="bottom"/>
+			<ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"' containerField="front"/>
+			<ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"' containerField="left"/>
+			<ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"' containerField="right"/>
+			<ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"' containerField="top"/>
                 </ComposedCubeMapTexture>
                 
 		<!--
                     <ProgramShader DEF='ProgramShader' containerField='shaders' language='GLSL'>
-                        <ShaderProgram url='"./shaders/freewrl.vs" "https://coderextreme.net/X3DJSONLD/shaders/freewrl.vs"' containerField='programs' type='VERTEX'>
+                        <ShaderProgram url='"../shaders/freewrl.vs" "https://coderextreme.net/X3DJSONLD/shaders/freewrl.vs"' containerField='programs' type='VERTEX'>
                         <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'/>
                         <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'/>
                         <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'/>
                         <field name='power' accessType='initializeOnly' type='SFFloat' value='2'/>
                         </ShaderProgram>
-                        <ShaderProgram url='"./shaders/freewrl.fs" "https://coderextreme.net/X3DJSONLD/shaders/freewrl.fs"' containerField='programs' type='FRAGMENT'/>
+                        <ShaderProgram url='"../shaders/freewrl.fs" "https://coderextreme.net/X3DJSONLD/shaders/freewrl.fs"' containerField='programs' type='FRAGMENT'/>
 		    </ProgramShader>
 		-->
 		<!--
@@ -56,8 +56,8 @@
 		  <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'></field>
 		  <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'></field>
 		  <field name='power' accessType='initializeOnly' type='SFFloat' value='2'></field>
-		  <ShaderPart url='"./shaders/contact.vs" "https://coderextreme.net/X3DJSONLD/shaders/contact.vs"' type="VERTEX" containerField='parts'></ShaderPart>
-		  <ShaderPart url='"./shaders/common.fs" "https://coderextreme.net/X3DJSONLD/shaders/common.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
+		  <ShaderPart url='"../shaders/contact.vs" "https://coderextreme.net/X3DJSONLD/shaders/contact.vs"' type="VERTEX" containerField='parts'></ShaderPart>
+		  <ShaderPart url='"../shaders/common.fs" "https://coderextreme.net/X3DJSONLD/shaders/common.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
                 </ComposedShader>
 		-->
 		<!--
@@ -69,8 +69,8 @@
 		  <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field>
 		  <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'></field>
 		  <field name='power' accessType='inputOutput' type='SFFloat' value='2'></field>
-		  <ShaderPart url='"./shaders/octaga.vs" "https://coderextreme.net/X3DJSONLD/shaders/octaga.vs"' type="VERTEX" containerField='parts'></ShaderPart>
-		  <ShaderPart url='"./shaders/common.fs" "https://coderextreme.net/X3DJSONLD/shaders/common.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
+		  <ShaderPart url='"../shaders/octaga.vs" "https://coderextreme.net/X3DJSONLD/shaders/octaga.vs"' type="VERTEX" containerField='parts'></ShaderPart>
+		  <ShaderPart url='"../shaders/common.fs" "https://coderextreme.net/X3DJSONLD/shaders/common.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
                 </ComposedShader>
 		-->
 		<!--
@@ -80,8 +80,8 @@
 		  <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'></field>
 		  <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'></field>
 		  <field name='power' accessType='initializeOnly' type='SFFloat' value='2'></field>
-		  <ShaderPart url='"./shaders/instant.vs" "https://coderextreme.net/X3DJSONLD/shaders/instant.vs"' type="VERTEX" containerField='parts'></ShaderPart>
-		  <ShaderPart url='"./shaders/common.fs" "https://coderextreme.net/X3DJSONLD/shaders/common.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
+		  <ShaderPart url='"../shaders/instant.vs" "https://coderextreme.net/X3DJSONLD/shaders/instant.vs"' type="VERTEX" containerField='parts'></ShaderPart>
+		  <ShaderPart url='"../shaders/common.fs" "https://coderextreme.net/X3DJSONLD/shaders/common.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
                 </ComposedShader>
 		-->
 		<!--
@@ -94,8 +94,8 @@
 		  <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field>
 		  <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'></field>
 		  <field name='power' accessType='inputOutput' type='SFFloat' value='2'></field>
-		  <ShaderPart url='"./shaders/x3dom.vs" "https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs"' type="VERTEX" containerField='parts'></ShaderPart>
-		  <ShaderPart DEF="common" url='"./shaders/common.fs" "https://coderextreme.net/X3DJSONLD/shaders/common.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
+		  <ShaderPart url='"../shaders/x3dom.vs" "https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs"' type="VERTEX" containerField='parts'></ShaderPart>
+		  <ShaderPart DEF="common" url='"../shaders/common.fs" "https://coderextreme.net/X3DJSONLD/shaders/common.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
                 </ComposedShader>
                 <ComposedShader language='GLSL'>
 		  <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'></field>
@@ -105,7 +105,7 @@
 		  <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'></field>
 		  <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'></field>
 		  <field name='power' accessType='initializeOnly' type='SFFloat' value='2'></field>
-		  <ShaderPart url='"./shaders/cobweb.vs" "https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"' type="VERTEX" containerField='parts'></ShaderPart>
+		  <ShaderPart url='"../shaders/cobweb.vs" "https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"' type="VERTEX" containerField='parts'></ShaderPart>
 		  <ShaderPart USE="common"></ShaderPart>
                 </ComposedShader>
             </Appearance>

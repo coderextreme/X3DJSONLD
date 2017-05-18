@@ -131,19 +131,19 @@ if (typeof mapToMethod !== 'undefined') {
 	}
 }
 
-function convertJsonToXml(json, next) {
+function convertJsonToXml(json, next, path) {
 	var NS = $('#namespace option:selected').text();
 	var xml = new LOG();
-	loadX3DJS(json, "flipper.json", xml, NS, loadSchema, doValidate, function(element) {
+	loadX3DJS(json, path, xml, NS, loadSchema, doValidate, function(element) {
 		if (element != null) {
 			next(xml);
 		} else {
 			next(null);
 		}
-	}); // does not load flipper.json
+	}); // does not load path
 }
 
-function loadX3D(selector, json, url, next) {
+function loadX3D(selector, json, url) {
     var xml = new LOG();
     if ($('#prototype').is(':checked')) {
 	// Expand Protos
@@ -241,7 +241,9 @@ function replaceX3DJSON(selector, json, url, xml, NS, next) {
 
 				document.getElementById("dom").onclick = function() {
 					// capture the display
-					convertXmlToJson(serializeDOM(json, element), updateStl);
+					convertXmlToJson(serializeDOM(json, element), function(json, path) {
+						updateStl(path);
+					}, url);
 					return false;
 				}
 			}
@@ -252,34 +254,35 @@ function replaceX3DJSON(selector, json, url, xml, NS, next) {
 	});
 }
 
-function updateFromJson(json) {
+function updateFromJson(json, path) {
 	if (typeof json === 'undefined') {
 		json = JSON.parse($("#json").val());
 	}
 	$('#json').val(JSON.stringify(json, null, 2));
 	updateStl(json);
-	loadX3D("#x3domjson", json, "flipper.json"); // does not load flipper.json
+	loadX3D("#x3domjson", json, path); // does not load path
 }
 
-function updateFromStl() {
+function updateFromStl(path) {
 	var json = convertStlToJson($('#stl').val());
-	updateFromJson(json);
+	updateFromJson(json, path);
 }
 
-function updateFromPly() {
+function updateFromPly(path) {
 	var json = convertPlyToJson($('#ply').val());
-	updateFromJson(json);
+	updateFromJson(json, path);
 }
 
-function updateFromXml() {
+function updateFromXml(path) {
 	var xml = $('#xml').val();
-	convertXmlToJson(xml, updateFromJson);
+	convertXmlToJson(xml, updateFromJson, path);
 }
 
 function loadXml(url) {
+	// gets converted to JSON on server
 	$.getJSON(url, function(json) {
-		updateFromJson(json);
-		updateXml(json);
+		updateFromJson(json, url);
+		updateXml(json, url);
 	})
 	.fail(function(jqXHR, textStatus, errorThrown) { alert('convert on server to JSON request failed! ' + textStatus + ' ' + errorThrown); });
 }
@@ -287,7 +290,7 @@ function loadXml(url) {
 function loadStl(url) {
 	$.get(url, function(stl) {
 		$('#stl').val(stl);
-		updateFromStl();
+		updateFromStl(url);
 	})
 	.fail(function(jqXHR, textStatus, errorThrown) { alert('loadStl request failed! ' + textStatus + ' ' + errorThrown); });
 }
@@ -295,20 +298,23 @@ function loadStl(url) {
 function loadPly(url) {
 	$.get(url, function(ply) {
 		$('#ply').val(ply);
-		updateFromPly();
+		updateFromPly(url);
 	})
 	.fail(function(jqXHR, textStatus, errorThrown) { alert('loadPly request failed! ' + textStatus + ' ' + errorThrown); });
 }
 
-function loadJson(url) {
+function loadImage(url) {
 	var slash = url.lastIndexOf("/");
+	console.log("Image URL attempt at", url, slash);
 	if (slash >= 0) {
 		// load the default viewpoint as an image
 		var dot = url.lastIndexOf(".");
 
 		var base = url.substr(0, slash);
-		var file = url.substr(slash, url.length - slash - 5); // .json
+		var ext = url.substr(dot);
+		var file = url.substr(slash, url.length - slash - ext.length);
 		var png = base+"/_viewpoints"+file+".x3d._VP_Default_viewpoint.png";
+		console.log("setting image src to", png)
 		$('#image').attr('src', png);
 
 /*
@@ -331,18 +337,20 @@ function loadJson(url) {
 		video.play();
 */
 	}
+}
+function loadJson(url) {
 	$.getJSON(url, function(json) {
-		updateFromJson(json);
-		updateXml(json);
+		updateFromJson(json, url);
+		updateXml(json, url);
 	})
 	.fail(function(jqXHR, textStatus, errorThrown) { alert('getJSON request failed! ' + textStatus + ' ' + errorThrown); });
 }
 
-function updateXml(json) {
+function updateXml(json, path) {
 	//  This step is an important validation step.
 	convertJsonToXml(json, function(xml) {
 		$('#xml').val(xml.join("\n"));
-	});
+	}, path);
 }
 
 function updateStl(json) {
@@ -366,6 +374,7 @@ $("#file").change(function() {
 	} else {
 		alert("Unknown extension on URL "+url);
 	}
+	loadImage(url); // load standard image
 });
 
 // get either JSON out of the stylesheet, or convert loaded XML file
@@ -375,8 +384,10 @@ function getXmlString(xml) {
   return xml;
 }
 
-function convertXmlToJson(xmlString, callback) {
-    $.post("/convert", xmlString, callback, "json")
+function convertXmlToJson(xmlString, callback, path) {
+    $.post("/convert", xmlString, function(json) {
+	    callback(json, path);
+    }, "json")
     .fail(function(jqXHR, textStatus, errorThrown) {
 	    alert('convertXmlToJson request failed! ' + textStatus + ' ' + errorThrown);
 	    $.get("stylesheets/X3dToJson.xslt", function(xslt) {
@@ -411,7 +422,7 @@ function convertXmlToJson(xmlString, callback) {
 		 try {
 		// console.log('JSON', result);
 			var json = JSON.parse(getXmlString(result));
-			callback(json);
+			callback(json, path);
 		} catch (e) {
 			alert("No validation done, JSON doesn't parse or load.  depending on viewers "+e);
 			loadXmlBrowsers([xmlString]);

@@ -3,6 +3,7 @@
 var fs = require('fs');
 var mkdirp = require('node-mkdirp');
 var mapToMethod = require('./mapToMethod.js');
+var config = require('./config.js');
 var mapToMethod2 = require('./mapToMethod2.js');
 var jsonlint = require('jsonlint');
 var fieldTypes = require('./fieldTypes.js');
@@ -156,7 +157,10 @@ function convertJSON(options) {
 				throw ("Null element returned from loadX3DJS()")
 			}
 			// filename conversion goes here.
-			basefile = basefile.replace(/^[cC]:\/x3d-code\//g, "")
+			var x3dcodeind = basefile.indexOf(config.x3dcode);
+			if (x3dcodeind === 0) {
+				basefile = basefile.substring(0, config.x3dcode.length);
+			}
 			basefile = basefile.replace(/-| /g, "_")
 			basefile = basefile.replace(/^\.\.\//g, "")
 			// handle filenames with leading zeros and java keywords

@@ -11,12 +11,12 @@
     <Scene>
         <NavigationInfo type='"EXAMINE" "ANY"'/>
         <Background
-            backUrl='"images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"'
-            bottomUrl='"images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"'
-            frontUrl='"images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"'
-            leftUrl='"images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"'
-            rightUrl='"images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"'
-            topUrl='"images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"'
+            backUrl='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"'
+            bottomUrl='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"'
+            frontUrl='"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"'
+            leftUrl='"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"'
+            rightUrl='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"'
+            topUrl='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"'
         />
 	<Group>
 		<ExternProtoDeclare name="FlowerProto" url='"flowerproto.x3d#FlowerProto"'>
@@ -27,8 +27,8 @@
 			<ProtoBody>
 				<Group>
 					<ProtoInstance name="FlowerProto">
-						<fieldValue name="vertex" value='"./shaders/freewrl_flowers_chromatic.vs"'></fieldValue>
-						<fieldValue name="fragment" value='"./shaders/freewrl.fs"'></fieldValue>
+						<fieldValue name="vertex" value='"../shaders/freewrl_flowers_chromatic.vs"'></fieldValue>
+						<fieldValue name="fragment" value='"../shaders/freewrl.fs"'></fieldValue>
 					</ProtoInstance>
 				</Group>
 			</ProtoBody>
