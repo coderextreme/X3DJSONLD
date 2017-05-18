@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"17 May 2017"
+            "@content":"18 May 2017"
           },
           {
             "@name":"generator",
@@ -52,12 +52,12 @@
           { "Background":
             {
               "@DEF":"background",
-              "@backUrl":["images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png"],
-              "@bottomUrl":["images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png"],
-              "@frontUrl":["images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png"],
-              "@leftUrl":["images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png"],
-              "@rightUrl":["images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png"],
-              "@topUrl":["images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png"]
+              "@backUrl":["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png"],
+              "@bottomUrl":["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png"],
+              "@frontUrl":["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png"],
+              "@leftUrl":["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png"],
+              "@rightUrl":["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png"],
+              "@topUrl":["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png"]
             }
           },
           { "Viewpoint":
@@ -89,42 +89,42 @@
                                   { "ImageTexture":
                                     {
                                       "@DEF":"backShader",
-                                      "@url":["images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png"]
+                                      "@url":["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png"]
                                     }
                                   },
                                 "-bottom":
                                   { "ImageTexture":
                                     {
                                       "@DEF":"bottomShader",
-                                      "@url":["images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png"]
+                                      "@url":["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png"]
                                     }
                                   },
                                 "-front":
                                   { "ImageTexture":
                                     {
                                       "@DEF":"frontShader",
-                                      "@url":["images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png"]
+                                      "@url":["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png"]
                                     }
                                   },
                                 "-left":
                                   { "ImageTexture":
                                     {
                                       "@DEF":"leftShader",
-                                      "@url":["images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png"]
+                                      "@url":["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png"]
                                     }
                                   },
                                 "-right":
                                   { "ImageTexture":
                                     {
                                       "@DEF":"rightShader",
-                                      "@url":["images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png"]
+                                      "@url":["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png"]
                                     }
                                   },
                                 "-top":
                                   { "ImageTexture":
                                     {
                                       "@DEF":"topShader",
-                                      "@url":["images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png"]
+                                      "@url":["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png"]
                                     }
                                   }
                               }
@@ -205,13 +205,13 @@
                                 "-parts":[
                                   { "ShaderPart":
                                     {
-                                      "@url":["./shaders/cobweb_flowers_input.vs","https://coderextreme.net/X3DJSONLD/shaders/cobweb_flowers_input.vs"],
+                                      "@url":["../shaders/cobweb_flowers_input.vs","https://coderextreme.net/X3DJSONLD/shaders/cobweb_flowers_input.vs"],
                                       "@type":"VERTEX"
                                     }
                                   },
                                   { "ShaderPart":
                                     {
-                                      "@url":["./shaders/pc_input_flowers.fs","https://coderextreme.net/X3DJSONLD/shaders/pc_input_flowers.fs"],
+                                      "@url":["../shaders/pc_input_flowers.fs","https://coderextreme.net/X3DJSONLD/shaders/pc_input_flowers.fs"],
                                       "@type":"FRAGMENT"
                                     }
                                   }
@@ -242,37 +242,37 @@
                   "@name":"frontUrls",
                   "@type":"MFString",
                   "@accessType":"initializeOnly",
-                  "@value":["images/all_probes/beach_cross/beach_front.png","images/all_probes/building_cross/building_front.png","images/all_probes/campus_cross/campus_front.png","images/all_probes/galileo_cross/galileo_front.png","images/all_probes/grace_cross/grace_front.png","images/all_probes/kitchen_cross/kitchen_front.png","images/all_probes/rnl_cross/rnl_front.png","images/all_probes/stpeters_cross/stpeters_front.png","images/all_probes/uffizi_cross/uffizi_front.png"]
+                  "@value":["../resources/images/all_probes/beach_cross/beach_front.png","../resources/images/all_probes/building_cross/building_front.png","../resources/images/all_probes/campus_cross/campus_front.png","../resources/images/all_probes/galileo_cross/galileo_front.png","../resources/images/all_probes/grace_cross/grace_front.png","../resources/images/all_probes/kitchen_cross/kitchen_front.png","../resources/images/all_probes/rnl_cross/rnl_front.png","../resources/images/all_probes/stpeters_cross/stpeters_front.png","../resources/images/all_probes/uffizi_cross/uffizi_front.png"]
                 },
                 {
                   "@name":"backUrls",
                   "@type":"MFString",
                   "@accessType":"initializeOnly",
-                  "@value":["images/all_probes/beach_cross/beach_back.png","images/all_probes/building_cross/building_back.png","images/all_probes/campus_cross/campus_back.png","images/all_probes/galileo_cross/galileo_back.png","images/all_probes/grace_cross/grace_back.png","images/all_probes/kitchen_cross/kitchen_back.png","images/all_probes/rnl_cross/rnl_back.png","images/all_probes/stpeters_cross/stpeters_back.png","images/all_probes/uffizi_cross/uffizi_back.png"]
+                  "@value":["../resources/images/all_probes/beach_cross/beach_back.png","../resources/images/all_probes/building_cross/building_back.png","../resources/images/all_probes/campus_cross/campus_back.png","../resources/images/all_probes/galileo_cross/galileo_back.png","../resources/images/all_probes/grace_cross/grace_back.png","../resources/images/all_probes/kitchen_cross/kitchen_back.png","../resources/images/all_probes/rnl_cross/rnl_back.png","../resources/images/all_probes/stpeters_cross/stpeters_back.png","../resources/images/all_probes/uffizi_cross/uffizi_back.png"]
                 },
                 {
                   "@name":"leftUrls",
                   "@type":"MFString",
                   "@accessType":"initializeOnly",
-                  "@value":["images/all_probes/beach_cross/beach_left.png","images/all_probes/building_cross/building_left.png","images/all_probes/campus_cross/campus_left.png","images/all_probes/galileo_cross/galileo_left.png","images/all_probes/grace_cross/grace_left.png","images/all_probes/kitchen_cross/kitchen_left.png","images/all_probes/rnl_cross/rnl_left.png","images/all_probes/stpeters_cross/stpeters_left.png","images/all_probes/uffizi_cross/uffizi_left.png"]
+                  "@value":["../resources/images/all_probes/beach_cross/beach_left.png","../resources/images/all_probes/building_cross/building_left.png","../resources/images/all_probes/campus_cross/campus_left.png","../resources/images/all_probes/galileo_cross/galileo_left.png","../resources/images/all_probes/grace_cross/grace_left.png","../resources/images/all_probes/kitchen_cross/kitchen_left.png","../resources/images/all_probes/rnl_cross/rnl_left.png","../resources/images/all_probes/stpeters_cross/stpeters_left.png","../resources/images/all_probes/uffizi_cross/uffizi_left.png"]
                 },
                 {
                   "@name":"rightUrls",
                   "@type":"MFString",
                   "@accessType":"initializeOnly",
-                  "@value":["images/all_probes/beach_cross/beach_right.png","images/all_probes/building_cross/building_right.png","images/all_probes/campus_cross/campus_right.png","images/all_probes/galileo_cross/galileo_right.png","images/all_probes/grace_cross/grace_right.png","images/all_probes/kitchen_cross/kitchen_right.png","images/all_probes/rnl_cross/rnl_right.png","images/all_probes/stpeters_cross/stpeters_right.png","images/all_probes/uffizi_cross/uffizi_right.png"]
+                  "@value":["../resources/images/all_probes/beach_cross/beach_right.png","../resources/images/all_probes/building_cross/building_right.png","../resources/images/all_probes/campus_cross/campus_right.png","../resources/images/all_probes/galileo_cross/galileo_right.png","../resources/images/all_probes/grace_cross/grace_right.png","../resources/images/all_probes/kitchen_cross/kitchen_right.png","../resources/images/all_probes/rnl_cross/rnl_right.png","../resources/images/all_probes/stpeters_cross/stpeters_right.png","../resources/images/all_probes/uffizi_cross/uffizi_right.png"]
                 },
                 {
                   "@name":"topUrls",
                   "@type":"MFString",
                   "@accessType":"initializeOnly",
-                  "@value":["images/all_probes/beach_cross/beach_top.png","images/all_probes/building_cross/building_top.png","images/all_probes/campus_cross/campus_top.png","images/all_probes/galileo_cross/galileo_top.png","images/all_probes/grace_cross/grace_top.png","images/all_probes/kitchen_cross/kitchen_top.png","images/all_probes/rnl_cross/rnl_top.png","images/all_probes/stpeters_cross/stpeters_top.png","images/all_probes/uffizi_cross/uffizi_top.png"]
+                  "@value":["../resources/images/all_probes/beach_cross/beach_top.png","../resources/images/all_probes/building_cross/building_top.png","../resources/images/all_probes/campus_cross/campus_top.png","../resources/images/all_probes/galileo_cross/galileo_top.png","../resources/images/all_probes/grace_cross/grace_top.png","../resources/images/all_probes/kitchen_cross/kitchen_top.png","../resources/images/all_probes/rnl_cross/rnl_top.png","../resources/images/all_probes/stpeters_cross/stpeters_top.png","../resources/images/all_probes/uffizi_cross/uffizi_top.png"]
                 },
                 {
                   "@name":"bottomUrls",
                   "@type":"MFString",
                   "@accessType":"initializeOnly",
-                  "@value":["images/all_probes/beach_cross/beach_bottom.png","images/all_probes/building_cross/building_bottom.png","images/all_probes/campus_cross/campus_bottom.png","images/all_probes/galileo_cross/galileo_bottom.png","images/all_probes/grace_cross/grace_bottom.png","images/all_probes/kitchen_cross/kitchen_bottom.png","images/all_probes/rnl_cross/rnl_bottom.png","images/all_probes/stpeters_cross/stpeters_bottom.png","images/all_probes/uffizi_cross/uffizi_bottom.png"]
+                  "@value":["../resources/images/all_probes/beach_cross/beach_bottom.png","../resources/images/all_probes/building_cross/building_bottom.png","../resources/images/all_probes/campus_cross/campus_bottom.png","../resources/images/all_probes/galileo_cross/galileo_bottom.png","../resources/images/all_probes/grace_cross/grace_bottom.png","../resources/images/all_probes/kitchen_cross/kitchen_bottom.png","../resources/images/all_probes/rnl_cross/rnl_bottom.png","../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","../resources/images/all_probes/uffizi_cross/uffizi_bottom.png"]
                 },
                 {
                   "@name":"front_changed",
