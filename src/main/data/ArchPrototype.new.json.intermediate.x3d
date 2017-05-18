@@ -57,7 +57,7 @@
                 </Transform>
                 <!-- Subsequent nodes do not render, but still must be a valid X3D subgraph -->
                 <!-- This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs -->
-                <Script DEF='ArchPrototypeScript' directOutput='false' mustEvaluate='false' url='"node/ArchPrototypeScript.js"' class=''>
+                <Script DEF='ArchPrototypeScript' directOutput='false' mustEvaluate='false' url='"../node/ArchPrototypeScript.js"' class=''>
                     <field name='clearSpanWidth' accessType='initializeOnly' appinfo='user or default input for clearSpanWidth parameter' documentation='' type='SFFloat' value=''/>
                     <field name='riseHeight' accessType='initializeOnly' appinfo='user or default input for riseHeight parameter' documentation='' type='SFFloat' value=''/>
                     <field name='depth' accessType='initializeOnly' appinfo='user or default input for depth parameter' documentation='' type='SFFloat' value=''/>
@@ -108,6 +108,6 @@
             <fieldValue name='pierHeight' value='2'/>
         </ProtoInstance>
         <!-- Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare) -->
-        <Inline DEF='CoordinateAxes' bboxCenter='0 0 0' bboxSize='-1 -1 -1' load='true' url='"data/CoordinateAxes.x3d"' class=''/>
+        <Inline DEF='CoordinateAxes' bboxCenter='0 0 0' bboxSize='-1 -1 -1' load='true' url='"CoordinateAxes.x3d"' class=''/>
     </Scene>
 </X3D>

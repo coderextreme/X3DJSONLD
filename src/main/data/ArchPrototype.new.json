@@ -52,7 +52,7 @@
           },
           {
             "@name":"translated",
-            "@content":"17 May 2017"
+            "@content":"18 May 2017"
           },
           {
             "@name":"generator",
@@ -257,7 +257,7 @@
                     { "Script":
                       {
                         "@DEF":"ArchPrototypeScript",
-                        "@url":["node/ArchPrototypeScript.js"],
+                        "@url":["../node/ArchPrototypeScript.js"],
                         "field": [
                           {
                             "@name":"clearSpanWidth",
@@ -492,7 +492,7 @@
           { "Inline":
             {
               "@DEF":"CoordinateAxes",
-              "@url":["data/CoordinateAxes.x3d"]
+              "@url":["CoordinateAxes.x3d"]
             }
           }
         ]
