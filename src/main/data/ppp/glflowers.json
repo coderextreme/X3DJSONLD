@@ -239,7 +239,7 @@
                                             "ShaderPart": {
                                               "@type": "VERTEX",
                                               "@url": [
-                                                "shaders/gl_flowers_chromatic.vs"
+                                                "./shaders/gl_flowers_chromatic.vs"
                                               ]
                                             }
                                           },
@@ -247,7 +247,7 @@
                                             "ShaderPart": {
                                               "@type": "FRAGMENT",
                                               "@url": [
-                                                "shaders/common.fs"
+                                                "./shaders/common.fs"
                                               ]
                                             }
                                           }
@@ -637,7 +637,7 @@
                                             "ShaderPart": {
                                               "@type": "VERTEX",
                                               "@url": [
-                                                "shaders/gl_flowers_chromatic.vs"
+                                                "./shaders/gl_flowers_chromatic.vs"
                                               ]
                                             }
                                           },
@@ -645,7 +645,7 @@
                                             "ShaderPart": {
                                               "@type": "FRAGMENT",
                                               "@url": [
-                                                "shaders/common.fs"
+                                                "./shaders/common.fs"
                                               ]
                                             }
                                           }
@@ -1035,7 +1035,7 @@
                                             "ShaderPart": {
                                               "@type": "VERTEX",
                                               "@url": [
-                                                "shaders/gl_flowers_chromatic.vs"
+                                                "./shaders/gl_flowers_chromatic.vs"
                                               ]
                                             }
                                           },
@@ -1043,7 +1043,7 @@
                                             "ShaderPart": {
                                               "@type": "FRAGMENT",
                                               "@url": [
-                                                "shaders/common.fs"
+                                                "./shaders/common.fs"
                                               ]
                                             }
                                           }
@@ -1433,7 +1433,7 @@
                                             "ShaderPart": {
                                               "@type": "VERTEX",
                                               "@url": [
-                                                "shaders/gl_flowers_chromatic.vs"
+                                                "./shaders/gl_flowers_chromatic.vs"
                                               ]
                                             }
                                           },
@@ -1441,7 +1441,7 @@
                                             "ShaderPart": {
                                               "@type": "FRAGMENT",
                                               "@url": [
-                                                "shaders/common.fs"
+                                                "./shaders/common.fs"
                                               ]
                                             }
                                           }
@@ -1831,7 +1831,7 @@
                                             "ShaderPart": {
                                               "@type": "VERTEX",
                                               "@url": [
-                                                "shaders/gl_flowers_chromatic.vs"
+                                                "./shaders/gl_flowers_chromatic.vs"
                                               ]
                                             }
                                           },
@@ -1839,7 +1839,7 @@
                                             "ShaderPart": {
                                               "@type": "FRAGMENT",
                                               "@url": [
-                                                "shaders/common.fs"
+                                                "./shaders/common.fs"
                                               ]
                                             }
                                           }
@@ -2229,7 +2229,7 @@
                                             "ShaderPart": {
                                               "@type": "VERTEX",
                                               "@url": [
-                                                "shaders/gl_flowers_chromatic.vs"
+                                                "./shaders/gl_flowers_chromatic.vs"
                                               ]
                                             }
                                           },
@@ -2237,7 +2237,7 @@
                                             "ShaderPart": {
                                               "@type": "FRAGMENT",
                                               "@url": [
-                                                "shaders/common.fs"
+                                                "./shaders/common.fs"
                                               ]
                                             }
                                           }

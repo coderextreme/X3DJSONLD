@@ -239,7 +239,7 @@
                                             "ShaderPart": {
                                               "@type": "VERTEX",
                                               "@url": [
-                                                "shaders/freewrl_flowers_chromatic.vs"
+                                                "./shaders/freewrl_flowers_chromatic.vs"
                                               ]
                                             }
                                           },
@@ -247,7 +247,7 @@
                                             "ShaderPart": {
                                               "@type": "FRAGMENT",
                                               "@url": [
-                                                "shaders/freewrl.fs"
+                                                "./shaders/freewrl.fs"
                                               ]
                                             }
                                           }
@@ -637,7 +637,7 @@
                                             "ShaderPart": {
                                               "@type": "VERTEX",
                                               "@url": [
-                                                "shaders/freewrl_flowers_chromatic.vs"
+                                                "./shaders/freewrl_flowers_chromatic.vs"
                                               ]
                                             }
                                           },
@@ -645,7 +645,7 @@
                                             "ShaderPart": {
                                               "@type": "FRAGMENT",
                                               "@url": [
-                                                "shaders/freewrl.fs"
+                                                "./shaders/freewrl.fs"
                                               ]
                                             }
                                           }
@@ -1035,7 +1035,7 @@
                                             "ShaderPart": {
                                               "@type": "VERTEX",
                                               "@url": [
-                                                "shaders/freewrl_flowers_chromatic.vs"
+                                                "./shaders/freewrl_flowers_chromatic.vs"
                                               ]
                                             }
                                           },
@@ -1043,7 +1043,7 @@
                                             "ShaderPart": {
                                               "@type": "FRAGMENT",
                                               "@url": [
-                                                "shaders/freewrl.fs"
+                                                "./shaders/freewrl.fs"
                                               ]
                                             }
                                           }
@@ -1433,7 +1433,7 @@
                                             "ShaderPart": {
                                               "@type": "VERTEX",
                                               "@url": [
-                                                "shaders/freewrl_flowers_chromatic.vs"
+                                                "./shaders/freewrl_flowers_chromatic.vs"
                                               ]
                                             }
                                           },
@@ -1441,7 +1441,7 @@
                                             "ShaderPart": {
                                               "@type": "FRAGMENT",
                                               "@url": [
-                                                "shaders/freewrl.fs"
+                                                "./shaders/freewrl.fs"
                                               ]
                                             }
                                           }
@@ -1831,7 +1831,7 @@
                                             "ShaderPart": {
                                               "@type": "VERTEX",
                                               "@url": [
-                                                "shaders/freewrl_flowers_chromatic.vs"
+                                                "./shaders/freewrl_flowers_chromatic.vs"
                                               ]
                                             }
                                           },
@@ -1839,7 +1839,7 @@
                                             "ShaderPart": {
                                               "@type": "FRAGMENT",
                                               "@url": [
-                                                "shaders/freewrl.fs"
+                                                "./shaders/freewrl.fs"
                                               ]
                                             }
                                           }
@@ -2229,7 +2229,7 @@
                                             "ShaderPart": {
                                               "@type": "VERTEX",
                                               "@url": [
-                                                "shaders/freewrl_flowers_chromatic.vs"
+                                                "./shaders/freewrl_flowers_chromatic.vs"
                                               ]
                                             }
                                           },
@@ -2237,7 +2237,7 @@
                                             "ShaderPart": {
                                               "@type": "FRAGMENT",
                                               "@url": [
-                                                "shaders/freewrl.fs"
+                                                "./shaders/freewrl.fs"
                                               ]
                                             }
                                           }

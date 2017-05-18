@@ -210,7 +210,7 @@
                                     {
                                       "ShaderPart": {
                                         "@url": [
-                                          "shaders/cobweb.vs",
+                                          "./shaders/cobweb.vs",
                                           "https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"
                                         ],
                                         "@type": "VERTEX"
@@ -219,7 +219,7 @@
                                     {
                                       "ShaderPart": {
                                         "@url": [
-                                          "shaders/pc_bubbles.fs",
+                                          "./shaders/pc_bubbles.fs",
                                           "https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"
                                         ],
                                         "@type": "FRAGMENT"
@@ -604,7 +604,7 @@
                                     {
                                       "ShaderPart": {
                                         "@url": [
-                                          "shaders/cobweb.vs",
+                                          "./shaders/cobweb.vs",
                                           "https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"
                                         ],
                                         "@type": "VERTEX"
@@ -613,7 +613,7 @@
                                     {
                                       "ShaderPart": {
                                         "@url": [
-                                          "shaders/pc_bubbles.fs",
+                                          "./shaders/pc_bubbles.fs",
                                           "https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"
                                         ],
                                         "@type": "FRAGMENT"
@@ -998,7 +998,7 @@
                                     {
                                       "ShaderPart": {
                                         "@url": [
-                                          "shaders/cobweb.vs",
+                                          "./shaders/cobweb.vs",
                                           "https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"
                                         ],
                                         "@type": "VERTEX"
@@ -1007,7 +1007,7 @@
                                     {
                                       "ShaderPart": {
                                         "@url": [
-                                          "shaders/pc_bubbles.fs",
+                                          "./shaders/pc_bubbles.fs",
                                           "https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"
                                         ],
                                         "@type": "FRAGMENT"
