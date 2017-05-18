@@ -94,7 +94,7 @@ ProtoBody30.addChild(Transform31)
 ProtoBody30.addComments(CommentsBlock("Subsequent nodes do not render, but still must be a valid X3D subgraph"))
 
 ProtoBody30.addComments(CommentsBlock("This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs"))
-Script40 = ScriptObject().setDEF("ArchPrototypeScript").setUrl(["ArchPrototypeScript.js"])
+Script40 = ScriptObject().setDEF("ArchPrototypeScript").setUrl(["node/ArchPrototypeScript.js"])
 
 Script40.addComments(CommentsBlock("INPUT PARAMETERS"))
 
@@ -188,7 +188,7 @@ ProtoInstance72.addFieldValue(fieldValue80)
 Scene13.addChild(ProtoInstance72)
 
 Scene13.addComments(CommentsBlock("Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare)"))
-Inline81 = InlineObject().setDEF("CoordinateAxes").setUrl(["CoordinateAxes.x3d"])
+Inline81 = InlineObject().setDEF("CoordinateAxes").setUrl(["data/CoordinateAxes.x3d"])
 Scene13.addChild(Inline81)
 X3D0.setScene(Scene13)
 
