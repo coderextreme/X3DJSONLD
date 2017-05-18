@@ -189,12 +189,12 @@ ProtoInstance0
     }
 protected class MFString0 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"ArchPrototypeScript.js"});
+    return new MFStringObject(new java.lang.String[] {"node/ArchPrototypeScript.js"});
   }
 }
 protected class MFString1 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"CoordinateAxes.x3d"});
+    return new MFStringObject(new java.lang.String[] {"data/CoordinateAxes.x3d"});
   }
 }
 }
