@@ -19,7 +19,7 @@
   },
   "scripts": {
     "start": "node app.js",
-    "postinstall": "mvn install",
+    "postinstall": "mvn install; pip install bs4; pip install lxml",
     "dont_use_browserify": "browserify src/main/node/threex3dloader.js > src/main/node/bundle.js"
   }
 }
