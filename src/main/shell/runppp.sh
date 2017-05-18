@@ -6,14 +6,13 @@
 
 EXAMPLES=/c/x3d-code/www.web3d.org/x3d/content/examples/
 
-pushd ../data
+pushd ..
 mkdir -p ppp
 echo ===================CompleteXMLPrototypeExpander.js Local==========
-ls *.x3d | grep -v intermediate | grep -v "\.new" | xargs grep -lw ProtoInstance | xargs ${NODE} ${NODEDIR}/CompleteXMLPrototypeExpander.js
+ls data/*.x3d | grep -v intermediate | grep -v "\.new" | xargs grep -lw ProtoInstance | xargs ${NODE} ${NODEDIR}/CompleteXMLPrototypeExpander.js
 echo ===================PPP.js Local===================================
-ls *.json | grep -v intermediate | grep -v "\.new" | grep -v Schema | grep -v package.json | xargs grep -lw ProtoInstance | xargs ${NODE} ${NODEDIR}/PPP.js
+ls data/*.json | grep -v intermediate | grep -v "\.new" | grep -v Schema | grep -v package.json | xargs grep -lw ProtoInstance | xargs ${NODE} ${NODEDIR}/PPP.js
 popd
-exit
 SCRIPTS=
 for i in `find "$EXAMPLES" -type f -name '*.json' -print0 | xargs -0 grep -lw ProtoInstance | grep -v " "`
 do
