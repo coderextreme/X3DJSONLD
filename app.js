@@ -22,8 +22,6 @@ var runAndSend = require('./src/main/node/runAndSend');
 var www = config.x3dcode;
 
 
-app.use('/examples', express.static(config.examples));
-// app.use("*.json", express.static(config.x3dcode));
 app.use(express.static('src/main'));
 app.use(express.static('src/main/html'));
 app.use(express.static('src/main/node'));
@@ -184,8 +182,8 @@ magic("*.stl", "application/octet-stream");
 magic("*.vs", "text/plain");//"x-shader/x-vertex");
 magic("*.fs", "text/plain");//"x-shader/x-fragment");
 magic("*.js", "text/javascript");
-magic("*.xhtml", "application/xhtml+xml");
-magic("*.html", "text/html");
+magic("/*.xhtml", "application/xhtml+xml");
+magic("/*.html", "text/html");
 magic("*.xslt", "text/xsl");
 magic("*.css", "text/css");
 magic("*.swf", "application/x-shockwave-flash");
