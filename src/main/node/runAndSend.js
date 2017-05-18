@@ -1,4 +1,5 @@
 var runsaxon = require('./allsaxon');
+var config = require('./config');
 var fs = require("fs");
 
 function runAndSend(args, callback) {
@@ -10,9 +11,9 @@ function runAndSend(args, callback) {
 	var infile = args[0];
 	console.error("converted", infile);
 	if (infile.startsWith("https://")) {
-		infile = "C:/x3d-code/"+infile.substr(8);
+		infile = config.x3dcode+infile.substr(8);
 	} else if (infile.startsWith("http://")) {
-		infile = "C:/x3d-code/"+infile.substr(7);
+		infile = config.x3dcode+infile.substr(7);
 	}
 	var outfile = infile.substr(0, infile.lastIndexOf("."))+".json";
 	var content;

@@ -19,10 +19,11 @@ var flattener = FL.flattener;
 var runAndSend = require('./src/main/node/runAndSend');
 
 
-var www = 'C:/x3d-code/';
+var www = config.x3dcode;
 
 
 app.use('/examples', express.static(config.examples));
+// app.use("*.json", express.static(config.x3dcode));
 app.use(express.static('src/main'));
 app.use(express.static('src/main/html'));
 app.use(express.static('src/main/node'));
@@ -87,7 +88,7 @@ app.get("/www.web3d.org/*.x3d", function(req, res, next) {
 	if (hash > 0) {
 	       infile = url.substring(0, hash);
 	}
-	var infile = www + infile;
+	var infile = www + "/" + infile;
 	console.log("Proxy", infile);
 	console.error("=========== converting == ", infile);
 	var outfile = infile.substr(0, infile.lastIndexOf("."))+".json";
@@ -95,19 +96,39 @@ app.get("/www.web3d.org/*.x3d", function(req, res, next) {
 });
 
 app.get("/files", function(req, res, next) {
+	var test = req._parsedUrl.query;
+	var json = [];
 
-	glob(www+'/**/*.x3d', function( err, files ) {
+	glob('src/main/ply/*.ply', function( err, files ) {
 		if (err) return;
-		var test = req._parsedUrl.query;
-		var json = [];
 		files.forEach(function(file) {
 			if (new RegExp(test).test(file)) {
-				json.push(file.substr(www.length, file.length-www.length));
+				json.push(file);
 				console.error(file);
 			}
 
 		});
-                send(res, json, "text/json", next);
+		glob('src/main/stl/*.stl', function( err, files ) {
+			if (err) return;
+			files.forEach(function(file) {
+				if (new RegExp(test).test(file)) {
+					json.push(file);
+					console.error(file);
+				}
+
+			});
+			glob(www+'/**/*.x3d', function( err, files ) {
+				if (err) return;
+				files.forEach(function(file) {
+					if (new RegExp(test).test(file)) {
+						json.push(file.substr(www.length, file.length-www.length));
+						console.error(file);
+					}
+
+				});
+				send(res, json, "text/json", next);
+			});
+		});
 	});
 });
 
@@ -118,7 +139,11 @@ function magic(path, type) {
 		url = url.substr(1);
 	}
 	console.error("Requested", url);
-	var data = fs.readFileSync(__dirname+"/"+url);
+	if (url.startsWith("www.web3d.org")) {
+		var data = fs.readFileSync(www + "/" + url);
+	} else {
+		var data = fs.readFileSync(__dirname+"/"+url);
+	}
 	if (type.startsWith("image") || type.startsWith("audio") || type.startsWith("video")) {
 		send(res, data, type, next);
 	} else {
@@ -154,21 +179,21 @@ magic("*.png", "image/png");
 magic("*.mpg", "video/mpeg");
 magic("*.wav", "audio/wav");
 magic("*.mp3", "audio/mpeg3");
+magic("*.ply", "application/octet-stream");
+magic("*.stl", "application/octet-stream");
+magic("*.vs", "text/plain");//"x-shader/x-vertex");
+magic("*.fs", "text/plain");//"x-shader/x-fragment");
+magic("*.js", "text/javascript");
+magic("*.xhtml", "application/xhtml+xml");
+magic("*.html", "text/html");
+magic("*.xslt", "text/xsl");
+magic("*.css", "text/css");
+magic("*.swf", "application/x-shockwave-flash");
 /*
 magic("*.gltf", "text/json");
 magic("*.glb", "application/octet-stream");
-magic("*.vs", "text/plain");//"x-shader/x-vertex");
-magic("*.fs", "text/plain");//"x-shader/x-fragment");
-magic("*.html", "text/html");
 magic("*.x3d", "model/x3d+xml");
 magic("*.xml", "text/xml");
-magic("*.xslt", "text/xsl");
-magic("*.xhtml", "application/xhtml+xml");
-magic("*.js", "text/javascript");
-magic("*.css", "text/css");
-magic("*.swf", "application/x-shockwave-flash");
-magic("*.ply", "application/octet-stream");
-magic("*.stl", "application/octet-stream");
 */
 
 app.get("*.json", function(req, res, next) {

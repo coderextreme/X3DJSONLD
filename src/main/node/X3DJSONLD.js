@@ -44,18 +44,49 @@ function processURLs(localArray, path) {
 			}
 
 		} else {
+			/*
 			var s = localArray[url].indexOf('/');
+			*/
 			var p = localArray[url].indexOf('#');
 			var pe = path.lastIndexOf('/');
-			var pc = path.substring(0, pe);
+			var pc = path;
+			if (pe >= 0) {
+				pc = path.substring(0, pe);
+			}
+			console.log("Processing 0 pc", pc);
+			console.log("Processing 1", localArray[url]);
+			/*
 			if (s != 0 && p != 0) {
+				console.log("Processing 1", localArray[url]);
 				if (localArray[url].indexOf(pc) != 0) {
 					 localArray[url] = pc+'/'+localArray[url];
 				}
+				console.log("Processing 2", localArray[url]);
 				if (localArray[url].indexOf('/') === 0) {
 					// no webroot absolute paths.  No /'s for cobweb shaders
 					localArray[url] = localArray[url].substring(1);
 				}
+				console.log("Processing 3", localArray[url]);
+			}
+			*/
+			while (localArray[url].startsWith("../")) {
+				localArray[url] = localArray[url].substr(3);
+				console.log("Processing 4", localArray[url]);
+				console.log("Processing 5 pc", pc);
+				var pe = pc.lastIndexOf('/');
+				if (pe >= 0) {
+					pc = pc.substring(0, pe);
+					console.log("Processing 6 pc", pc);
+				} else {
+					pc = "";
+				}
+			}
+			if (p == 0) {
+				localArray[url] = path+localArray[url];
+				console.log("Processing 7", localArray[url]);
+			} else {
+				localArray[url] = pc+"/"+localArray[url];
+				console.log("Processing 8", localArray[url]);
 			}
 		}
 		// for server side
@@ -288,10 +319,10 @@ function ConvertObject(key, object, element, path, containerField) {
 				var child = document.createComment(CommentStringToXML(object[key][c]));
 				element.appendChild(child);
 			}
-		/*
+			/*
 		} else if (key === 'Inline') {
 			var localArray = object[key]["@url"];
-			// console.error("Loading", localArray, "into", key);
+			console.log("Loading", localArray, "at", path, "into", key);
 			loadURLs(path, localArray, function(jsobj, path) {
 				// console.error("Read", jsobj);
 				try {
@@ -309,7 +340,7 @@ function ConvertObject(key, object, element, path, containerField) {
 					element.appendChild(document.createTextNode("\n"));
 				}
 			});
-		*/
+			*/
 		} else if (key === '#sourceText') {
 			CDATACreateFunction(document, element, object[key].join("\r\n")+"\r\n");
 		} else {
@@ -475,6 +506,7 @@ function ConvertToX3DOM(object, parentkey, element, path, containerField) {
 					localArray[str] = SFStringToXML(localArray[str]);
 				}
                                 if (parentkey === '@url' || parentkey.indexOf("Url") === parentkey.length - 3) {
+					console.log("Path is",path);
 					// processURLs(localArray, path);
 				}
 				elementSetAttribute(element, parentkey.substr(1),'"'+localArray.join('" "')+'"');
