@@ -38,22 +38,22 @@ function toNormals(json, LDNodeList, ParentNode) {
 	var LDNode = LDNodeList.length === 0 ? null : LDNodeList[LDNodeList.length-1];
 	var nodeDispatchTable = {
 		IndexedFaceSet : function(obj, LDNode) {
-			LDNode.normalPerVertex = true;
+			LDNode.normalPerVertex = obj["@normalPerVertex"];
 			LDNode.kid = true;
 			LDNode.geometry = true;
 		},
 		IndexedTriangleSet : function(obj, LDNode) {
-			LDNode.normalPerVertex = true;
+			LDNode.normalPerVertex = obj["@normalPerVertex"];
 			LDNode.kid = true;
 			LDNode.geometry = true;
 		},
 		IndexedTriangleStripSet : function(obj, LDNode) {
-			LDNode.normalPerVertex = true;
+			LDNode.normalPerVertex = obj["@normalPerVertex"];
 			LDNode.kid = true;
 			LDNode.geometry = true;
 		},
 		IndexedTriangleFanSet : function(obj, LDNode) {
-			LDNode.normalPerVertex = true;
+			LDNode.normalPerVertex = obj["@normalPerVertex"];
 			LDNode.kid = true;
 			LDNode.geometry = true;
 		},
@@ -114,13 +114,16 @@ function toNormals(json, LDNodeList, ParentNode) {
 			var f = 0;
 			LDNode.normalIndex = [];
 			for (var o = 0; o < obj.length; o++) {
-				if (obj[o] == -1 || LDNode.normalPerVertex === false) {
+				if (obj[o] == -1) {
 					f++;
-				} else {
-					if (typeof LDNode.normalIndex[f] === 'undefined') {
-						LDNode.normalIndex[f] = [];
-					}
-					LDNode.normalIndex[f].push(obj[o]);
+					continue;
+				}
+				if (typeof LDNode.normalIndex[f] === 'undefined') {
+					LDNode.normalIndex[f] = [];
+				}
+				LDNode.normalIndex[f].push(obj[o]);
+				if (LDNode.normalPerVertex === false) {
+					f++;
 				}
 			}
 		},
@@ -137,6 +140,7 @@ function toNormals(json, LDNodeList, ParentNode) {
 					LDNode.coordIndex[f].push(obj[o]);
 				}
 			}
+			console.log("coordindex", LDNode.coordIndex)
 		},
 		"@index" : function(obj, LDNode) {
 			LDNode.index = [];
@@ -288,6 +292,8 @@ function transformLDNodesToTriangles(LDNode, output, parentTransform) {
 	var dispatchTable = {
 		IndexedFaceSet: function(LDNode, output, transform) {
 			if (typeof LDNode.coordIndex === 'object') {
+				console.log("coordindex in transform", LDNode.coordIndex);
+				console.log("point in transform", LDNode.Coordinate.point);
 				output.push("solid "+(LDNode.DEF || LDNode.nodeName));
 				for (var face in LDNode.coordIndex) { // each face
 					var f = LDNode.coordIndex[face];
@@ -316,9 +322,9 @@ function transformLDNodesToTriangles(LDNode, output, parentTransform) {
 					for (var v in f) {
 						if (typeof LDNode.Coordinate.point[f[v]] !== 'undefined') {
 							printSFVec3f("      vertex",
-								LDNode.Coordinate.point[f[v]][0] || 0,
-								LDNode.Coordinate.point[f[v]][1] || 0,
-								LDNode.Coordinate.point[f[v]][2] || 1,
+								LDNode.Coordinate.point[f[v]][0],
+								LDNode.Coordinate.point[f[v]][1],
+								LDNode.Coordinate.point[f[v]][2],
 								output,
 								transform);
 						}

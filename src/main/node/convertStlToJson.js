@@ -83,7 +83,7 @@ function convertStlToJson(file) {
 			return IFS;
 		},
 		endfacet : function(line, IFS) {
-			IFS.normalIndex.push(-1);
+			// IFS.normalIndex.push(-1);
 			return IFS;
 		},
 		endsolid : function(line, IFS) {
