@@ -12,7 +12,7 @@ cd X3DJSONLD
 
 * If you want to use node.js as your web server, download and install node.js (npm comes with it). You can download examples from here: http://www.web3d.org/x3d/content/examples/X3dExampleArchivesJsonScenes.zip
 
-* Edit src/main/node/config.js for node.js, and start a web server
+* Edit src/main/node/config.js for node.js, put maven in your path, and start a web server
 ```
 npm install
 node app.js
@@ -44,14 +44,16 @@ The script, serialize.sh provides the driving software for producing XML, Python
 * Summary of shell scripts
 
 These have been tested recently:
+```
 several.sh -- run several x3d files through my conversion and compiling and running code.  Recommend that you put the files in src/main/data and use sh several.sh ../data/file1.x3d ../data/file2.x3d ...
 all.sh -- run all .x3d in /c/x3d-code/www.web3d.org/x3d/content/examples through my conversion and compiling and running code found in several.  Dangerous.  Puts files in strange places right now.
 local.sh  -- run src/main/data/*.x3d through several.sh
+```
 
-
-You will need to set up your classpath accordinly.  You can modify the file in src/main/shell/classpath to set your classpath.  You will probably have to build the project with Maven 3.  This is accomplished by running mvn install in the root folder, which will build any Java code found in src/main/java.  I use net/coderextreme/RunSaxon.java to process stylesheets.  Also, the website uses RunSaxon.java as well, so it would be good if you compiled it.  You may need to configure the classpath in src/main/node/allsaxon.js as well.
+You will need to set up your classpath accordinly.  You can modify the file in src/main/shell/classpath to set your classpath.  You will probably have to build the project with Maven 3.  This is accomplished by running putting maven's bin folder in your path and running mvn install in the root folder, which will build any Java code found in src/main/java.  I use net/coderextreme/RunSaxon.java to process stylesheets.  Also, the website uses RunSaxon.java as well, so it would be good if you compiled it.  You may need to configure the classpath in src/main/node/allsaxon.js as well.
 
 The following are legacy code, and may be updated.
+```
 combine.sh -- used to post process jsonerrors.txt
 compile.sh -- finish compiling code
 compilejava.sh -- compile java in local folder and create zips
@@ -83,3 +85,4 @@ serialize.sh -- convert JSON to various formats. Produces jsonerrors.txt
 sum.sh -- sum lines on standard input
 unknown.sh -- report on UNKNOWN routes from *.runerr.txt and *.runout.txt
 x3d2py.sh -- convert files from x3d to python
+```
