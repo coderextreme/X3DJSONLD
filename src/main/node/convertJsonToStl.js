@@ -300,9 +300,9 @@ function transformLDNodesToTriangles(LDNode, output, parentTransform) {
 			// just pick a close vector for now, average later
 					if (typeof LDNode.normalIndex === 'undefined') {
 						var normal = triangle_normal(
-							LDNode.Coordinate.point[f[0]] || [ 1, 0, 0 ],
-							LDNode.Coordinate.point[f[1]] || [ 0, 1, 0 ],
-							LDNode.Coordinate.point[f[2]] || [ 0, 0, 1 ]);
+							LDNode.Coordinate.point[f[0]],
+							LDNode.Coordinate.point[f[1]],
+							LDNode.Coordinate.point[f[2]]);
 						printSFVec3f("  facet normal",
 							normal[0],
 							normal[1],
@@ -312,9 +312,9 @@ function transformLDNodesToTriangles(LDNode, output, parentTransform) {
 					} else {
 						var fn = LDNode.normalIndex[face];
 						printSFVec3f("  facet normal",
-							LDNode.Normal.vector[fn[0]][0] || 0, 
-							LDNode.Normal.vector[fn[0]][1] || 0,
-							LDNode.Normal.vector[fn[0]][2] || 1,
+							LDNode.Normal.vector[fn[0]][0], 
+							LDNode.Normal.vector[fn[0]][1],
+							LDNode.Normal.vector[fn[0]][2],
 							output,
 							transform);
 					}
