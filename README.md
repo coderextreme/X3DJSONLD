@@ -10,20 +10,15 @@ git clone https://github.com/coderextreme/X3DJSONLD
 cd X3DJSONLD
 ```
 
-* If you want to use node as your web server, download and install node.js (npm comes with it). You may wish to use python's SimpleHTTPServer or other.  If you use another server, you will need to create a symbolic link or junction in the local folder called examples that points to the folder found in config.js.  You can download examples from here: http://www.web3d.org/x3d/content/examples/X3dExampleArchivesJsonScenes.zip
+* If you want to use node.js as your web server, download and install node.js (npm comes with it). You can download examples from here: http://www.web3d.org/x3d/content/examples/X3dExampleArchivesJsonScenes.zip
 
-* Either add link (in UNIX) junction (Windows) or edit config.js for node.js, and start a web server
+* Edit src/main/node/config.js for node.js, and start a web server
 ```
-ln -s ___existing_path_to_examples___ examples 
-python -m SimpleHTTPServer 3000
-
-or
-
 npm install
 node app.js
 ```
 Then go to http://localhost:3000 in your web browser and select a JSON file in
-the pulldown.  A link called examples to the configured folder will be created on the web servers root.  If you have examples linked to the X3D Resources examples, then you can try: http://localhost:3000/X3DExamplesViewer.html
+the pulldown.  You can try: http://localhost:3000/X3DExamplesViewer.html
 
 * WARNING
 
@@ -37,19 +32,26 @@ It’s in the license that I will not be liable for damages.  Please use my soft
 
 If someone wants me to write a sanitizer for the X3D JSON Loader, I am willing to for $$$.  I will need to run it by some security researchers.
 
-* Converting JSON files to X3D XML, Python and Java
+* Converting JSON files to X3D XML, Python, Java and Nashorn JavaScript
 
-The script, serialize.sh provides the driving software for producing XML, Python and Java artifacts from JSON.  simply modify and run the script to suit.  You can change the Java Serializer or any other serializer in json2all.js.  There is a list of serializers there with corresponding file extensions.
+The script, serialize.sh provides the driving software for producing XML, Python and Java, JavaScript artifacts from JSON.  simply modify and run the script to suit.  You can change the Java Serializer or any other serializer in json2all.js.  There is a list of serializers there with corresponding file extensions.
 
 * Compiling and running Java, producing diffs of JSON input and output.   The Java serializer produces a program which produces JSON.  You can run the output from the serializer through the Java compiler and JVM with compilejava.sh.  This will compile the java, run it, and provide a diff with the original JSON (if any).  There are a coupld of output zips for collecting output results.
 
-* also you can run "sh local.sh" or "sh donlocal.sh" for converting, running and diffing local files.
+* also you can run "sh local.sh" or converting, running and diffing local files found in src/main/data.
 
 
 * Summary of shell scripts
 
-all.sh -- run all .x3d in /c/x3d-code/www.web3d.org/x3d/content/examples through my conversion and compiling and running code.
-clean.sh -- clean up generated files.  Removes *.json
+These have been tested recently:
+several.sh -- run several x3d files through my conversion and compiling and running code.  Recommend that you put the files in src/main/data and use sh several.sh ../data/file1.x3d ../data/file2.x3d ...
+all.sh -- run all .x3d in /c/x3d-code/www.web3d.org/x3d/content/examples through my conversion and compiling and running code found in several.  Dangerous.  Puts files in strange places right now.
+local.sh  -- run src/main/data/*.x3d through several.sh
+
+
+You will need to set up your classpath accordinly.  You can modify the file in src/main/shell/classpath to set your classpath.  You will probably have to build the project with Maven 3.  This is accomplished by running mvn install in the root folder, which will build any Java code found in src/main/java.  I use net/coderextreme/RunSaxon.java to process stylesheets.  Also, the website uses RunSaxon.java as well, so it would be good if you compiled it.  You may need to configure the classpath in src/main/node/allsaxon.js as well.
+
+The following are legacy code, and may be updated.
 combine.sh -- used to post process jsonerrors.txt
 compile.sh -- finish compiling code
 compilejava.sh -- compile java in local folder and create zips
@@ -64,7 +66,6 @@ donall.sh -- run all .x3d in /c/x3d-code/www.web3d.org/x3d/content/examples thro
 donlocal.sh -- run *.x3d through don's conversion and compiling and running code.
 execute.sh -- finish executing code
 finish.sh -- finish conversion and compiling of files in /c/x3d-code/www.web3d.org/x3d/content/examples
-local.sh  -- run *.x3d through my conversion and compiling and running code.
 nashorn.sh -- a script to run nashorn javascript *.sail.js files
 noncompiled.sh -- report non-compiled code
 nonconverted.sh -- report non-converted code
@@ -79,7 +80,6 @@ runppp.sh -- run prototype expander and xml prototype expander
 runsc.sh -- run schema check for various things.
 runToError.sh -- create *.runerr.txt and *.runout.txt
 serialize.sh -- convert JSON to various formats. Produces jsonerrors.txt
-several.sh -- run several x3d files through my conversion and compiling and running code.
 sum.sh -- sum lines on standard input
 unknown.sh -- report on UNKNOWN routes from *.runerr.txt and *.runout.txt
 x3d2py.sh -- convert files from x3d to python
