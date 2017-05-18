@@ -354,8 +354,13 @@ function updateXml(json, path) {
 }
 
 function updateStl(json) {
-	var stl = convertJsonToStl(json);
-	$('#stl').val(stl);
+	try {
+		var stl = convertJsonToStl(json);
+		$('#stl').val(stl);
+	} catch (e) {
+		console.log(e);
+		alert("Problems converting Json to Stl. See console.")
+	}
 }
 
 
@@ -376,13 +381,6 @@ $("#file").change(function() {
 	}
 	loadImage(url); // load standard image
 });
-
-// get either JSON out of the stylesheet, or convert loaded XML file
-function getXmlString(xml) {
-  if (window.ActiveXObject) { return xml.xml; }
-  xml = new XMLSerializer().serializeToString(xml);
-  return xml;
-}
 
 function convertXmlToJson(xmlString, callback, path) {
     $.post("/convert", xmlString, function(json) {
@@ -421,10 +419,12 @@ function convertXmlToJson(xmlString, callback, path) {
 
 		 try {
 		// console.log('JSON', result);
-			var json = JSON.parse(getXmlString(result));
-			callback(json, path);
+			if (window.ActiveXObject) { return result.xml; }
+			var json = new XMLSerializer().serializeToString(xml);
+			var js = JSON.parse(json);
+			callback(js, path);
 		} catch (e) {
-			alert("No validation done, JSON doesn't parse or load.  depending on viewers "+e);
+			alert("No validation done, JSON doesn't parse or load.  depending on XML viewers "+e);
 			loadXmlBrowsers([xmlString]);
 		}
 	    }, "xml")
@@ -434,7 +434,7 @@ function convertXmlToJson(xmlString, callback, path) {
     });
 }
 
-var validate = function() { return true; }
+var validate = function() { return false; }
 
 function doValidate(json, validated_version, file, success, failure, e) {
 	var retval = false;

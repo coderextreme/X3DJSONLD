@@ -54,7 +54,7 @@ var ProtoInstance0 = null;
                       .addConnect(new connectObject().setNodeField("diffuseColor").setProtoField("diffuseColor")))))))
             .addComments(new CommentsBlock("Subsequent nodes do not render, but still must be a valid X3D subgraph"))
             .addComments(new CommentsBlock("This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs"))
-            .addChild(new ScriptObject().setDEF("ArchPrototypeScript").setUrl(Java.to(["node/ArchPrototypeScript.js"], Java.type("java.lang.String[]")))
+            .addChild(new ScriptObject().setDEF("ArchPrototypeScript").setUrl(Java.to(["../node/ArchPrototypeScript.js"], Java.type("java.lang.String[]")))
               .addComments(new CommentsBlock("INPUT PARAMETERS"))
               .addComments(new CommentsBlock("General parameters"))
               .addComments(new CommentsBlock("Parameters to create to create shapes related to arch: put true to apply"))
@@ -92,7 +92,7 @@ var ProtoInstance0 = null;
             .addChild(new ROUTEObject().setFromField("indexOut").setFromNode("ArchPrototypeScript").setToField("set_coordIndex").setToNode("ArchIndex"))))
         .addChild(ProtoInstance0 = new ProtoInstanceObject().setName("ArchPrototype").setDEF("ArchInstance"))
         .addComments(new CommentsBlock("Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare)"))
-        .addChild(new InlineObject().setDEF("CoordinateAxes").setUrl(Java.to(["data/CoordinateAxes.x3d"], Java.type("java.lang.String[]")))))      ;
+        .addChild(new InlineObject().setDEF("CoordinateAxes").setUrl(Java.to(["CoordinateAxes.x3d"], Java.type("java.lang.String[]")))))      ;
 ProtoInstance0
           .addFieldValue(new fieldValueObject().setName("diffuseColor").setValue("0.5 0.3 0.6"));
 ProtoInstance0
