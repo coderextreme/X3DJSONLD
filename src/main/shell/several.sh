@@ -29,7 +29,7 @@ do
  	javac -J-Xss1g -J-Xmx4g `basename $i`
 	popd
 done
-
+exit
 for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.class/' -e $X3DTOJAVA | xargs ls -d | sed -e 's/\.class$//' -e 's/^\.\.\/java\///'`
 do
 	pushd ../java
