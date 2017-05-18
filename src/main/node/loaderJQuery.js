@@ -255,12 +255,16 @@ function replaceX3DJSON(selector, json, url, xml, NS, next) {
 }
 
 function updateFromJson(json, path) {
-	if (typeof json === 'undefined') {
-		json = JSON.parse($("#json").val());
+	try {
+		if (typeof json === 'undefined') {
+				json = JSON.parse($("#json").val());
+		}
+		$('#json').val(JSON.stringify(json, null, 2));
+		updateStl(json);
+		loadX3D("#x3domjson", json, path); // does not load path
+	} catch (e) {
+		alert("JSON doesn't parse", e);
 	}
-	$('#json').val(JSON.stringify(json, null, 2));
-	updateStl(json);
-	loadX3D("#x3domjson", json, path); // does not load path
 }
 
 function updateFromStl(path) {
@@ -382,6 +386,13 @@ $("#file").change(function() {
 	loadImage(url); // load standard image
 });
 
+// get the JSON out of the stylesheet or convert loaded XML file
+function getXmlString(xml) {
+  if (window.ActiveXObject) { return xml.xml; }
+  xml = new XMLSerializer().serializeToString(xml);
+  return xml;
+}
+
 function convertXmlToJson(xmlString, callback, path) {
     $.post("/convert", xmlString, function(json) {
 	    callback(json, path);
@@ -419,12 +430,16 @@ function convertXmlToJson(xmlString, callback, path) {
 
 		 try {
 		// console.log('JSON', result);
-			if (window.ActiveXObject) { return result.xml; }
-			var json = new XMLSerializer().serializeToString(xml);
+			 // console.log(result);
+			var json = getXmlString(result);
+			 // put bad JSON in the JSON area
+			$('#json').val(json);
+			console.log("Result", json);
 			var js = JSON.parse(json);
+			console.log("Parsing Accomplished")
 			callback(js, path);
 		} catch (e) {
-			alert("No validation done, JSON doesn't parse or load.  depending on XML viewers "+e);
+			alert("No validation done, JSON doesn't parse or load.  depending on XML viewers. Works better if you use node.js as a web server and run the command node app.js from webroot after running npm install"+e);
 			loadXmlBrowsers([xmlString]);
 		}
 	    }, "xml")
