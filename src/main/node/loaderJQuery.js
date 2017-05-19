@@ -9,7 +9,7 @@ function loadXmlBrowsers(xml) {
 	if (typeof xml !== 'undefined') {
 		xml = xml.replace(/&lt;/g, "<").replace(/&gt;/g, ">");
 		$('#x3domxml').get()[0].innerHTML = xml;
-		loadCobwebXML(xml);
+		loadCobwebXML(xml, 1);
 		x3dom.reload();
 	}
 }
@@ -92,26 +92,17 @@ function loadScripts(json) {
     }
 }
 
-function loadCobwebXML(content) {
-/*
-	var cobwebEle = document.getElementsByTagName("X3DCanvas")[0];
-	if (typeof X3D !== 'undefined') {
-		var browser = X3D.getBrowser(cobwebEle);
-		browser.replaceWorld(browser.createX3DFromString(content));
-	} else {
-		console.error("Cobweb disabled temporarily.  May work on next load");
-	}
-*/
+function loadCobwebXML(content, browserNumber) {
 	X3D(function(el) {
-		var browser = X3D.getBrowser(el[0]);
+		var browser = X3D.getBrowser(el[browserNumber]);
 		browser.replaceWorld(browser.createX3DFromString(content));
 	});
 }
 
-function loadCobwebDOM(element) {
+function loadCobwebDOM(element, browserNumber) {
 	X3D(function(el) {
 		if (typeof X3D.getBrowser !== 'undefined') {
-			var browser = X3D.getBrowser(el[1]);
+			var browser = X3D.getBrowser(el[browserNumber]);
 			if (typeof browser !== 'undefined' && typeof browser.importDocument !== 'undefined') {
 				var importedScene = browser.importDocument(element);
 				browser.replaceWorld(importedScene);
@@ -156,7 +147,7 @@ function loadX3D(selector, json, url) {
     var NS = $('#namespace option:selected').text();
     replaceX3DJSON(selector, json, url, xml, NS, function(child) {
 	    if (child != null) {
-		    loadCobwebDOM(child);
+		    loadCobwebDOM(child, 0);
 		    loadXmlBrowsers(xml);
 		    if ($('#scripting').is(':checked')) {
 			loadScripts(json);
@@ -249,6 +240,7 @@ function replaceX3DJSON(selector, json, url, xml, NS, next) {
 			}
 			$(selector+" X3D").remove();
 			$(selector).append(element);
+			x3dom.reload();  // This may be necessary
 		}
 		next(element);
 	});

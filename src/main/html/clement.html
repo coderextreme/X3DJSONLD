@@ -24,19 +24,16 @@
 <body>
 <div id="x3domjson"></div>
 </body>
-    <script type="text/javascript" src="node/PythonSerializer.js"></script>
     <script type="text/javascript" src="node/X3DJSONLD.js"></script>
-    <!--script type="text/javascript" src="node/PrototypeExpander.js"></script>
-    <script type="text/javascript" src="node/Flattener.js"></script>
-    <script type="text/javascript" src="node/Script.js"></script-->
-    <script type="text/javascript" src="node/mapToMethod.js"></script>
-    <script type="text/javascript" src="node/mapToMethod2.js"></script>
-    <script type="text/javascript" src="node/fieldTypes.js"></script>
     <script type="text/javascript" src="node/loaderJQuery.js"></script>
     <script type="text/javascript">
 	function loadX3DJSON(selector, url) {
 		$.getJSON(url, function(json) {
-	    		replaceX3DJSON(selector, json, url, []);
+			replaceX3DJSON(selector, json, url, [], "", function(element) {
+				if (element === null) {
+					alert("failed to load", url);
+				}
+			});
 		})
 		.fail(function(jqXHR, textStatus, errorThrown) { alert('getJSON request failed! ' + textStatus + ' ' + errorThrown); });
 	}
