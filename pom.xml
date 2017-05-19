@@ -95,7 +95,7 @@
 					<fork>true</fork>
 				</configuration>
 			</plugin>
-			<!--plugin>
+			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>xml-maven-plugin</artifactId>
 				<version>1.0.1</version>
@@ -110,9 +110,9 @@
 				<configuration>
 					<transformationSets>
 						<transformationSet>
-							<dir>src/main/orig</dir>
+							<dir>src/main/data</dir>
 							<stylesheet>src/main/lib/stylesheets/X3dToJson.xslt</stylesheet>
-							<outputDir>src/main/out/orig</outputDir>
+							<outputDir>src/main/data</outputDir>
 							<fileMappers>
 								<fileMapper
 									implementation="org.codehaus.plexus.components.io.filemappers.FileExtensionMapper">
@@ -121,9 +121,9 @@
 							</fileMappers>
 						</transformationSet>
 						<transformationSet>
-							<dir>src/main/orig</dir>
+							<dir>src/main/data</dir>
 							<stylesheet>src/main/lib/stylesheets/X3dToJava.xslt</stylesheet>
-							<outputDir>src/main/java/net/x3djsonld</outputDir>
+							<outputDir>src/main/java/net/x3djsonld/data</outputDir>
 							<fileMappers>
 								<fileMapper
 									implementation="org.codehaus.plexus.components.io.filemappers.FileExtensionMapper">
@@ -133,7 +133,7 @@
 							<parameters>
 								<parameter>
 									<name>packageName</name>
-									<value>net.x3djsonld</value>
+									<value>net.x3djsonld.data</value>
 								</parameter>
 							</parameters>
 						</transformationSet>
@@ -146,7 +146,7 @@
 						<version>9.7.0-18</version>
 					</dependency>
 				</dependencies>
-			</plugin-->
+			</plugin>
 		</plugins>
 	</build>
 </project>
