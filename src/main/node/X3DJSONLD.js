@@ -521,6 +521,32 @@ function ConvertToX3DOM(object, parentkey, element, path, containerField) {
 }
 
 /**
+ * Load X3D JSON into an element.
+ * jsobj - the JavaScript object to convert to XML and DOM.
+ * path - the path of the JSON file.
+ * xml - the output xml string array (optional).
+ * NS - a namespace for cobweb (optional) -- stripped out.
+ * returns an element in callback or null if error - the element
+ * to append or insert into the DOM.
+ */
+function loadX3DJS(jsobj, path, xml, NS, loadSchema, doValidate, callback) {
+	console.log("Invoking client side loader");
+	loadSchema(jsobj, path, doValidate, function() {
+		x3djsonNS = NS;
+		var child = CreateElement('X3D', NS);
+		ConvertToX3DOM(jsobj, "", child, path);
+		if (typeof xml !== 'undefined' && typeof xml.push === 'function') {
+			xml.push(serializeDOM(jsobj, child));
+		}
+		console.log("Returning with", child);
+		callback(child);
+	}, function(e) {
+		console.error(e);
+		callback(null);
+	});
+}
+
+/**
  * fixXML
  * Fix XML after it has been serialized.
  */
@@ -573,32 +599,6 @@ function serializeDOM(jsobj, element) {
 	return xml;
 }
 
-
-/**
- * Load X3D JSON into an element.
- * jsobj - the JavaScript object to convert to XML and DOM.
- * path - the path of the JSON file.
- * xml - the output xml string array (optional).
- * NS - a namespace for cobweb (optional) -- stripped out.
- * returns an element in callback or null if error - the element
- * to append or insert into the DOM.
- */
-function loadX3DJS(jsobj, path, xml, NS, loadSchema, doValidate, callback) {
-	console.log("Invoking client side loader");
-	loadSchema(jsobj, path, doValidate, function() {
-		x3djsonNS = NS;
-		var child = CreateElement('X3D', NS);
-		ConvertToX3DOM(jsobj, "", child, path);
-		if (typeof xml !== 'undefined' && typeof xml.push === 'function') {
-			xml.push(serializeDOM(jsobj, child));
-		}
-		console.log("Returning with", child);
-		callback(child);
-	}, function(e) {
-		console.error(e);
-		callback(null);
-	});
-}
 
 /**
  * selectObjectFromJSObj() --  get an object in a node internally.

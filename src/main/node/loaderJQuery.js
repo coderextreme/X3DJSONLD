@@ -359,8 +359,10 @@ function updateXml(json, path) {
 
 function updateStl(json) {
 	try {
-		var stl = convertJsonToStl(json);
-		$('#stl').val(stl);
+		if (typeof convertJsonToStl === 'function') {
+			var stl = convertJsonToStl(json);
+			$('#stl').val(stl);
+		}
 	} catch (e) {
 		console.log(e);
 		alert("Problems converting Json to Stl. See console.")
