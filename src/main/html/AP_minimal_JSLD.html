@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/create3000/cobweb/master/stable/3/3.1/cobweb.css"/>
     <script type="text/javascript" src="https://cdn.rawgit.com/create3000/cobweb/master/stable/3/3.1/cobweb.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ajv/5.0.1/ajv.min.js"></script>
     <style type="text/css">
     
     X3DCanvas {
@@ -26,18 +27,19 @@
 
 </body>
     <script type="text/javascript" src="node/X3DJSONLD.js"></script>
-    <!--script type="text/javascript" src="node/loaderJQuery.js"></script-->
+    <script type="text/javascript" src="node/loaderJQuery.js"></script><!--for loadSchema and doValidate-->
     
     <script type="text/javascript">
 	    
-    	var url = "TouchSensorIsOverEventECMAScript.json";
+    	var url = "data/ball.json";
     
 	$.getJSON(url, importIntoCobweb);
 
 	function importIntoCobweb(json) {
 		var xml = [];
-		var jsonDOM = loadX3DJS(json, "./", xml, ""); //path is for finding inlines
-		loadCobwebDOM(jsonDOM);
+		loadX3DJS(json, url, xml, "", loadSchema, doValidate, function(jsDOM) {
+			loadCobwebDOM(jsDOM);
+		});
 	}
 	    
     	function loadCobwebDOM(element) {

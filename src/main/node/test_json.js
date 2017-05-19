@@ -2,99 +2,236 @@ test_json =
 { "X3D": {
     "encoding":"UTF-8",
     "@profile":"Immersive",
-    "@version":"3.0",
-    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
     "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
           {
             "@name":"title",
-            "@content":"ExtrusionHeart.x3d"
-          },
-          {
-            "@name":"description",
-            "@content":"Simple extrusion of a Valentine heart."
+            "@content":"cobweb.x3d"
           },
           {
             "@name":"creator",
-            "@content":"Class participants in course Introduction to VRML/X3D."
+            "@content":"John Carlson"
           },
           {
-            "@name":"created",
-            "@content":"14 February 2001"
-          },
-          {
-            "@name":"modified",
-            "@content":"27 November 2015"
-          },
-          {
-            "@name":"identifier",
-            "@content":"http://www.web3d.org/x3d/content/examples/Basic/course/ExtrusionHeart.x3d"
+            "@name":"description",
+            "@content":"Tour around a prismatic sphere"
           },
           {
             "@name":"generator",
-            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+            "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit"
           },
           {
-            "@name":"license",
-            "@content":"../license.html"
+            "@name":"identifier",
+            "@content":"https://coderextreme.net/X3DJSONLD/cobweb.x3d"
           },
           {
             "@name":"translated",
-            "@content":"15 July 2016"
+            "@content":"19 May 2017"
           },
           {
             "@name":"generator",
             "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
           },
           {
-            "@name":"warning",
-            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+            "@name":"reference",
+            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
           }
         ]
     },
     "Scene": {
         "-children":[
-          { "Viewpoint":
+          { "NavigationInfo":
             {
-              "@description":"Extrusion Heart",
-              "@orientation":[1,0,0,1.57],
-              "@position":[0,-4,0]
+              "@type":["EXAMINE"]
             }
           },
-          { "Transform":
+          { "Viewpoint":
             {
-              "@translation":[0,-0.5,0],
-              "-children":[
-                { "Shape":
-                  {
-                    "-geometry":
-                      { "Extrusion":
-                        {
-                          "@creaseAngle":3.14159,
-                          "@crossSection":[0,0.8,0.2,1,0.7,0.95,1,0.5,0.8,0,0.5,-0.3,0,-0.7,-0.5,-0.3,-0.8,0,-1,0.5,-0.7,0.95,-0.2,1,0,0.8],
-                          "@scale":[0.01,0.01,0.8,0.8,1,1,0.8,0.8,0.01,0.01],
-                          "@solid":false,
-                          "@spine":[0,0,0,0,0.1,0,0,0.5,0,0,0.9,0,0,1,0]
-                        }
-                      },
-                    "-appearance":
-                      { "Appearance":
-                        {
-                          "-material":
-                            { "Material":
-                              {
-                                "@diffuseColor":[0.8,0.3,0.3]
-                              }
+              "@position":[0,0,4],
+              "@orientation":[1,0,0,0],
+              "@description":"Bubbles in action"
+            }
+          },
+          { "Background":
+            {
+              "@backUrl":["../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/images/BK.png"],
+              "@bottomUrl":["../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/images/BT.png"],
+              "@frontUrl":["../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/images/FR.png"],
+              "@leftUrl":["../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/images/LF.png"],
+              "@rightUrl":["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/images/RT.png"],
+              "@topUrl":["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"]
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"Bubble",
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                      {
+                        "@DEF":"transform",
+                        "-children":[
+                          { "Shape":
+                            {
+                              "-geometry":
+                                { "Sphere":
+                                  {
+                                    "@radius":0.25
+                                  }
+                                },
+                              "-appearance":
+                                { "Appearance":
+                                  {
+                                    "-material":
+                                      { "Material":
+                                        {
+                                          "@diffuseColor":[1,0,0],
+                                          "@transparency":0.2
+                                        }
+                                      }
+                                  }
+                                }
                             }
-                        }
+                          },
+                          { "Script":
+                            {
+                              "@DEF":"bounce",
+                              "field": [
+                                {
+                                  "@name":"scale",
+                                  "@accessType":"inputOutput",
+                                  "@type":"SFVec3f",
+                                  "@value":[1,1,1]
+                                },
+                                {
+                                  "@name":"translation",
+                                  "@accessType":"inputOutput",
+                                  "@type":"SFVec3f",
+                                  "@value":[0,0,0]
+                                },
+                                {
+                                  "@name":"velocity",
+                                  "@accessType":"inputOutput",
+                                  "@type":"SFVec3f",
+                                  "@value":[0,0,0]
+                                },
+                                {
+                                  "@name":"scalvel",
+                                  "@accessType":"inputOutput",
+                                  "@type":"SFVec3f",
+                                  "@value":[0,0,0]
+                                },
+                                {
+                                  "@name":"set_fraction",
+                                  "@accessType":"inputOnly",
+                                  "@type":"SFFloat"
+                                }
+                              ],
+                              "#sourceText":[
+"ecmascript:",
+"function initialize() {",
+"    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);",
+"",
+"    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);",
+"}",
+"",
+"function set_translation(value) {",
+"   translation = value;",
+"}",
+"",
+"function set_scale(value) {",
+"   scale = value;",
+"}",
+"",
+"function translation_changed() {",
+"\treturn translation;",
+"}",
+"",
+"function set_fraction(value) {",
+"    translation = new SFVec3f(\ttranslation[0] + velocity[0], translation[1] + velocity[1], translation[2] + velocity[2]);",
+"    scale = new SFVec3f(scale[0] + scalvel[0], scale[1] + scalvel[1], scale[2] + scalvel[2]);",
+"    for (var j = 0; j < 3; j++) {",
+"\t    // if you get to far away or too big, explode",
+"\t    if ( Math.abs(translation[j]) > 256) {",
+"\t\ttranslation[j] = 0;",
+"\t\tinitialize();",
+"\t    }",
+"\t    if (Math.abs(scale[j]) > 20) {",
+"\t\tscale[j] = scale[j]/2;",
+"\t\ttranslation[j] = 0;",
+"\t\tinitialize();",
+"\t    }",
+"    }",
+"}"
+]
+                            }
+                          },
+                          { "TimeSensor":
+                            {
+                              "@DEF":"bubbleClock",
+                              "@cycleInterval":10,
+                              "@loop":true
+                            }
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromNode":"bounce",
+                              "@fromField":"translation_changed",
+                              "@toNode":"transform",
+                              "@toField":"set_translation"
+                            }
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromNode":"bounce",
+                              "@fromField":"scale_changed",
+                              "@toNode":"transform",
+                              "@toField":"set_scale"
+                            }
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromNode":"bubbleClock",
+                              "@fromField":"fraction_changed",
+                              "@toNode":"bounce",
+                              "@toField":"set_fraction"
+                            }
+                          }
+                        ]
                       }
-                  }
-                }
-              ]
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"Bubble",
+              "@DEF":"bubbleA"
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"Bubble",
+              "@DEF":"bubbleB"
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"Bubble",
+              "@DEF":"bubbleC"
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"Bubble",
+              "@DEF":"bubbleD"
             }
           }
         ]
     }
   }
-};
+}
