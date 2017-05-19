@@ -161,8 +161,8 @@ function convertJSON(options) {
 			if (x3dcodeind === 0) {
 				basefile = basefile.substring(0, config.x3dcode.length);
 			}
-			basefile = basefile.replace(/-| /g, "_")
 			basefile = basefile.replace(/^\.\.\//g, "")
+			basefile = basefile.replace(/-|\.| /g, "_")
 			// handle filenames with leading zeros and java keywords
 			basefile = basefile.replace(/^(.*[\\\/])([0-9].*|default|switch|for)$/, "$1_$2")
 
