@@ -92,7 +92,11 @@
         </Collision>
         <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 -2.5 0' class=''>
             <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
-                <Appearance class=''/>
+                <Appearance class=''>
+                    <ProtoInstance name='EmissiveMaterial' class=''>
+                        <fieldValue name='onlyColor' value='0.2 0.6 0.6'/>
+                    </ProtoInstance>
+                </Appearance>
                 <Text length='' maxExtent='0.0' solid='false' string='"X3D Header Prototype syntax examples" "(view console for EXTERNPROTO output)"' class=''>
                     <FontStyle family='"SERIF"' horizontal='true' justify='"MIDDLE" "MIDDLE"' language='' leftToRight='true' size='0.6' spacing='1.0' style='PLAIN' topToBottom='true' class=''/>
                 </Text>
