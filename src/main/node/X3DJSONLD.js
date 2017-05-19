@@ -506,7 +506,7 @@ function ConvertToX3DOM(object, parentkey, element, path, containerField) {
 					localArray[str] = SFStringToXML(localArray[str]);
 				}
                                 if (parentkey === '@url' || parentkey.indexOf("Url") === parentkey.length - 3) {
-					console.log("Path is",path);
+					// console.log("Path is",path);
 					// processURLs(localArray, path);
 				}
 				elementSetAttribute(element, parentkey.substr(1),'"'+localArray.join('" "')+'"');

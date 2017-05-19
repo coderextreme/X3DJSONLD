@@ -28,7 +28,7 @@ JavaSerializer.prototype = {
 		}
 		var clz = pc.substr(c+1);
 		clz = clz.replace(/^([0-9].*|default$)/, "_$1")
-		str += "package net.coderextreme.data;\n";
+		str += "package net.coderextreme"+clazz.substring(0, clazz.lastIndexOf('/')).replace(/^\.\./, "").replace(/\//g, '.')+";\n";
 		// console.error(pkg, clz);
 		str += "import org.web3d.x3d.jsail.*;\n";
 		str += "import org.web3d.x3d.jsail.CADGeometry.*;\n";
@@ -226,7 +226,6 @@ JavaSerializer.prototype = {
 		}
 		return prepre+addpre+method;
 	},
-
 	subSerializeToString : function(element, mapToMethod, fieldTypes, n, stack) {
 		var str = "";
 		var fieldAttrType = "";
