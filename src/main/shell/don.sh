@@ -15,8 +15,6 @@ echo translating to ecmascript 5
 (ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java net.coderextreme.RunSaxon ---overwrite ---silent --../lib/stylesheets/X3dToES5.xslt -sail.js ---../nashorn/net/x3djsonld/
 echo translating to java
 (ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java net.coderextreme.RunSaxon ---overwrite ---silent --../lib/stylesheets/X3dToJava.xslt -java ---../java/net/x3djsonld/
-# echo replacing NeedClassName
-# (ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS sh FixNeedClassName.sh
 echo compiling
 pushd ../java
 find ./net/x3djsonld/data -name '*.java' | xargs -L 1 -P $PROCESSORS javac -J-Xss1g -J-Xmx4g
