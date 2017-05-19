@@ -3,6 +3,5 @@
 # convert files from X3D to JSON
 
 . ./classpath
-javac RunSaxon.java
 
-sh nonconverted.sh | xargs -0 -P 8 java RunSaxon
+sh nonconverted.sh | xargs -P 8 java net.coderextreme.RunSaxon ---silent --../lib/stylesheets/X3dToJson.xslt ---../
