@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x 
 
 # process JSON files and look for error in JSON file so we won't report
 

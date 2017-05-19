@@ -336,7 +336,7 @@ JavaSerializer.prototype = {
 								       replace(/&/g, "&amp;").
 								       replace(/\\n/g, '\\n');
 								if (y !== x) {
-									console.error("Java Replacing "+x+" with "+y);
+									console.log("Java Replacing "+x+" with "+y);
 								}
 								return y;
 							}), this.codeno, '","', '"', '"');
@@ -453,7 +453,7 @@ JavaSerializer.prototype = {
 				var y = node.nodeValue.
 					replace(/\\/g, '\\\\').
 					replace(/"/g, '\\"');
-				str += "\n"+("  ".repeat(n))+".addComments(new CommentsBlock(\""+y+"\"))";
+				str += "\n"+("  ".repeat(n))+".addComments(new CommentsBlock(\""+y.split("\n").join('\\n\"+\n\"')+"\"))";
 				if (y !== node.nodeValue) {
 					// console.error("Java Comment Replacing "+node.nodeValue+" with "+y);
 				}

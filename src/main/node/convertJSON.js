@@ -64,9 +64,8 @@ function doValidate(json, validated_version, file, success, failure) {
 				error += " params: " + JSON.stringify(errs[e].params) + "\r\n";
 				error += " file: " + file + "\r\n";
 				error += " version: " + version + "\r\n";
-				console.log(error);
+				console.error(error);
 			}
-			console.log("Done processing errors");
 			failure("Errors present");
 		} else {
 			if (typeof success == 'function') {
@@ -93,30 +92,22 @@ function loadSchema(json, file, doValidate, success, failure) {
 
 		
 		try {
-			console.error("Loading meta schema");
 			var metaschema = fs.readFileSync('schema/draft-04-JSONSchema.json');
-			console.error("Parsing meta schema");
 			var metaschemajson = JSON.parse(metaschema.toString());
-			console.error("Adding meta schema");
 			ajv.addMetaSchema(metaschemajson);
-			console.error("Loading schema");
 		} catch (e) {
 		}
 		var schema = fs.readFileSync("schema/x3d-"+version+"-JSONSchema.json");
-		console.error("Parsing schema");
 		var schemajson = JSON.parse(schema.toString());
-		console.error("Adding schema");
 		try {
 			ajv.addSchema(schemajson);
-			console.error("Schema", version, "added");
+			console.log("Schema", version, "added");
 		} catch (e) {
 		}
 		validated_version = ajv.compile(schemajson);
 		validate[version] = validated_version;
 		if (typeof validated_version === 'undefined') {
 			console.error("Schema", version, "not compiled");
-		} else {
-			console.error("Schema", version, "compiled");
 		}
 		doValidate(json, validated_version, file, success, failure);
 	} else {
@@ -169,12 +160,10 @@ function convertJSON(options) {
 			for (var ser in options) {
 				var serializer = require(options[ser].serializer);
 				var co = options[ser].codeOutput+basefile;
-				console.log("Code output", co);
 				str = new serializer().serializeToString(json, element, co, mapToMethod, fieldTypes)
 				if (typeof str !== 'undefined') {
 					var outfile = options[ser].folder+basefile+options[ser].extension
 					mkdirp(outfile.substr(0, outfile.lastIndexOf("/")));
-					console.log("Generated output", outfile);
 					fs.writeFileSync(outfile, str);
 				} else {
 					throw("Wrote nothing, serializer returned nothing");
