@@ -37,7 +37,9 @@ function setCoordinates(id) {
 	    }
     }
     crd.setAttribute("translation", crds[id].join(" "));
-    animate_flowers(id);
+    if (typeof animate_flowers === 'function') {
+	    animate_flowers(id);
+    }
 }
 
 function animate() {
