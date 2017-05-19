@@ -196,7 +196,6 @@ magic("*.xml", "text/xml");
 
 app.get("*.json", function(req, res, next) {
 	var url = req._parsedUrl.pathname.substr(1);
-	console.error("Json URL", url);
 	var file = url;
 	var hash = url.indexOf("#");
 	if (hash > 0) {
@@ -204,19 +203,15 @@ app.get("*.json", function(req, res, next) {
 	}
 	var json = {};
 	var outfile = __dirname+"/"+file;
-	console.log("File exists ?", outfile);
 	if (fs.existsSync(outfile)) {
-		console.log("File exists, reading", outfile);
 		var data = fs.readFileSync(outfile);
 		var json = JSON.parse(data.toString());
-		console.error("Calling extern proto expander 2");
 		json = externPrototypeExpander(outfile, json);
 		json = flattener(json);
                 send(res, json, "text/json", next);
 	} else {
 		var infile = file.substr(0, file.lastIndexOf("."))+".x3d";
 		infile = www + "/" + infile;
-		console.error("converting 2", infile, "to", outfile);
 		convertX3dToJson(res, infile, outfile, next);
 	}
 });
