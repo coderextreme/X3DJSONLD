@@ -45,9 +45,11 @@ The script, serialize.sh provides the driving software for producing XML, Python
 
 These have been tested recently:
 ```
-several.sh -- run several x3d files through my conversion and compiling and running code.  Recommend that you put the files in src/main/data and use sh several.sh ../data/file1.x3d ../data/file2.x3d ...
+several.sh -- run several .x3d files through my conversion and compiling and running code.  Recommend that you put the files in src/main/data and use sh several.sh ../data/file1.x3d ../data/file2.x3d ...
 all.sh -- run all .x3d in /c/x3d-code/www.web3d.org/x3d/content/examples through my conversion and compiling and running code found in several.  Dangerous.  Puts files in strange places right now.
 local.sh  -- run src/main/data/*.x3d through several.sh
+don.sh -- run several .x3d files through don's conversion and compiling and running code.
+donlocal.sh -- run src/main/data/*.x3d through don.sh
 ```
 
 You will need to set up your classpath accordinly.  You can modify the file in src/main/shell/classpath to set your classpath.  You will probably have to build the project with Maven 3.  This is accomplished by running putting maven's bin folder in your path and running mvn install in the root folder, which will build any Java code found in src/main/java.  I use net/coderextreme/RunSaxon.java to process stylesheets.  Also, the website uses RunSaxon.java as well, so it would be good if you compiled it.  You may need to configure the classpath in src/main/node/allsaxon.js as well.
@@ -63,9 +65,7 @@ cp1252.sh -- list non-compiled files which are encoding cp1252
 diff.sh -- compare outputs to inputs
 diffjson.sh -- compare *.json to *.new.json
 diffxml.sh -- compare *.x3d to *.new.x3d
-don.sh -- run several x3d through don's conversion and compiling and running code.
 donall.sh -- run all .x3d in /c/x3d-code/www.web3d.org/x3d/content/examples through don's conversion and compiling and running code.
-donlocal.sh -- run *.x3d through don's conversion and compiling and running code.
 execute.sh -- finish executing code
 finish.sh -- finish conversion and compiling of files in /c/x3d-code/www.web3d.org/x3d/content/examples
 nashorn.sh -- a script to run nashorn javascript *.sail.js files
