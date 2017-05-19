@@ -121,22 +121,16 @@ ecmascript:
         </Script>
     </ProtoBody>
     </ProtoDeclare>
-    <ProtoInstance DEF='start' name='point'>
-    </ProtoInstance>
-    <ProtoInstance DEF='end1' name='point'>
-    </ProtoInstance>
-    <ProtoInstance DEF='end2' name='point'>
-    </ProtoInstance>
-    <ProtoInstance DEF='end3' name='point'>
-    </ProtoInstance>
+    <ProtoInstance DEF='start' name='point'/>
+    <ProtoInstance DEF='end1' name='point'/>
+    <ProtoInstance DEF='end2' name='point'/>
+    <ProtoInstance DEF='end3' name='point'/>
     <ProtoInstance name='x3dconnector' DEF='connector1'>
         <fieldValue name='startnode'>
-            <ProtoInstance USE='start' name='point'>
-            </ProtoInstance>
+		<ProtoInstance USE='start' name='point'/>
         </fieldValue>
         <fieldValue name='endnode'>
-            <ProtoInstance USE='end1' name='point'>
-            </ProtoInstance>
+		<ProtoInstance USE='end1' name='point'/>
         </fieldValue>
         <fieldValue name='connectornode'>
             <Transform USE='cylinder1'/>
@@ -144,12 +138,10 @@ ecmascript:
     </ProtoInstance>
     <ProtoInstance name='x3dconnector' DEF='connector2'>
         <fieldValue name='startnode'>
-            <ProtoInstance USE='start' name='point'>
-            </ProtoInstance>
+		<ProtoInstance USE='start' name='point'/>
         </fieldValue>
         <fieldValue name='endnode'>
-            <ProtoInstance USE='end2' name='point'>
-            </ProtoInstance>
+		<ProtoInstance USE='end2' name='point'/>
         </fieldValue>
         <fieldValue name='connectornode'>
             <Transform USE='cylinder2'/>
@@ -157,12 +149,10 @@ ecmascript:
     </ProtoInstance>
     <ProtoInstance name='x3dconnector' DEF='connector3'>
         <fieldValue name='startnode'>
-            <ProtoInstance USE='start' name='point'>
-            </ProtoInstance>
+		<ProtoInstance USE='start' name='point'/>
         </fieldValue>
         <fieldValue name='endnode'>
-            <ProtoInstance USE='end3' name='point'>
-            </ProtoInstance>
+		<ProtoInstance USE='end3' name='point'/>
         </fieldValue>
         <fieldValue name='connectornode'>
             <Transform USE='cylinder3'/>
