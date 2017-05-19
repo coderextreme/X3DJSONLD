@@ -112,11 +112,20 @@
 						<transformationSet>
 							<dir>src/main/data</dir>
 							<stylesheet>src/main/lib/stylesheets/X3dToJson.xslt</stylesheet>
+							<includes>
+								<include>**/*.x3d</include>
+							</includes>
+							<excludes>
+								<exclude>**/*.intermediate.x3d</exclude>
+								<exclude>**/*.new</exclude>
+								<exclude>**/*.new.x3d</exclude>
+								<exclude>**/*.json</exclude>
+							</excludes>
 							<outputDir>src/main/data</outputDir>
 							<fileMappers>
-								<fileMapper
-									implementation="org.codehaus.plexus.components.io.filemappers.FileExtensionMapper">
-									<targetExtension>.json</targetExtension>
+								<fileMapper implementation="org.codehaus.plexus.components.io.filemappers.RegExpFileMapper">
+								  <pattern>\.x3d$</pattern>
+								  <replacement>.json</replacement>
 								</fileMapper>
 							</fileMappers>
 						</transformationSet>
@@ -124,10 +133,19 @@
 							<dir>src/main/data</dir>
 							<stylesheet>src/main/lib/stylesheets/X3dToJava.xslt</stylesheet>
 							<outputDir>src/main/java/net/x3djsonld/data</outputDir>
+							<includes>
+								<include>**/*.x3d</include>
+							</includes>
+							<excludes>
+								<exclude>**/*.intermediate.x3d</exclude>
+								<exclude>**/*.new</exclude>
+								<exclude>**/*.new.x3d</exclude>
+								<exclude>**/*.json</exclude>
+							</excludes>
 							<fileMappers>
-								<fileMapper
-									implementation="org.codehaus.plexus.components.io.filemappers.FileExtensionMapper">
-									<targetExtension>.java</targetExtension>
+								<fileMapper implementation="org.codehaus.plexus.components.io.filemappers.RegExpFileMapper">
+								  <pattern>\.x3d$</pattern>
+								  <replacement>.java</replacement>
 								</fileMapper>
 							</fileMappers>
 							<parameters>
