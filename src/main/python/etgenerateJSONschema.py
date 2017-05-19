@@ -1,5 +1,4 @@
 import xml.etree.ElementTree
-import re
 import sys
 
 PY3 = sys.version_info[0] == 3
