@@ -5,7 +5,7 @@
    <meta name="creator"     content="Don Brutzman" />
    <meta name="creator"     content="John Carlson" />
    <meta name="created"     content="22 March 2017" />
-   <meta name="modified"     content="28 April 2017" />
+   <meta name="modified"    content="5 April 2017" />
    <meta name="description" content="XSLT stylesheet to create X3DJSAIL ES5 program from X3D source." />
    <meta name="reference"   content="X3DJSAIL, http://www.web3d.org/specifications/java/X3DJSAIL.html" />
    <meta name="url"         content="http://www.web3d.org/x3d/stylesheets/X3dToES5.xslt" />
@@ -172,13 +172,13 @@ POSSIBILITY OF SUCH DAMAGE.
 			</xsl:choose>
 		</xsl:variable>
 		
-		<xsl:if test="(string-length($newPackageName) > 0)">
+		<!--xsl:if test="(string-length($newPackageName) > 0)">
 			<xsl:text>package </xsl:text>
 			<xsl:value-of select="$newPackageName"/>
 			<xsl:text>;</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 			<xsl:text>&#10;</xsl:text>
-		</xsl:if>
+		</xsl:if-->
 
         <!-- Diagnostic
 		<xsl:message>
@@ -221,6 +221,7 @@ POSSIBILITY OF SUCH DAMAGE.
   initialize : function ()
   {
 ]]></xsl:text>
+
 		<!-- capture large attributes (if any) as data structures -->
 		<xsl:call-template name="expose-large-attributes">
 			<xsl:with-param name="childNodes" select="//Scene"/>
@@ -231,13 +232,13 @@ POSSIBILITY OF SUCH DAMAGE.
 
         <!-- xsl:call-template name="X3dDocument"/ -->
 		<xsl:apply-templates select="*"/>
-		
+
 		<xsl:text><![CDATA[  },
   // end of initialize() method
 ]]></xsl:text>
-		
+
 		<xsl:text><![CDATA[
-  
+
   /** Provide a shallow copy of the X3D model.
    * @return ]]></xsl:text><xsl:value-of select="$newClassName"/>
    <xsl:text disable-output-escaping="yes"><![CDATA[ model
@@ -252,13 +253,15 @@ POSSIBILITY OF SUCH DAMAGE.
    */
   validateSelf : function()
   {
-	var metaResult = "";
+	var       metaResult = "";
 	var validationResult = "";
-	var exceptionResult = "";
-	try {
+	var  exceptionResult = "";
+	try
+	{
 		this.initialize();
 		
-		if ((this.getX3dModel() == null) || (this.getX3dModel().getHead() == null)) {
+		if ((this.getX3dModel() == null) || (this.getX3dModel().getHead() == null))
+		{
 			validationResult = "empty scene, nothing to validate. " + this.x3dModel.validate();
 			return validationResult;
 		}
@@ -270,17 +273,21 @@ POSSIBILITY OF SUCH DAMAGE.
 				meta.getName().equals(metaObject.NAME_WARNING) ||
 				meta.getName().equals(metaObject.NAME_HINT) ||
 				meta.getName().equals(metaObject.NAME_INFO) ||
-				meta.getName().equals(metaObject.NAME_TODO)) {
+				meta.getName().equals(metaObject.NAME_TODO))
+			{
 				metaResult += meta.toStringX3D();
 			}
 		}
 		validationResult += this.x3dModel.validate(); // walk entire tree to validate correctness
-	} catch (e) {
+	}
+	catch (e)
+	{
 		exceptionResult = e; // report exception failures, if any
 	}
-	if  (metaResult === "" && exceptionResult === "" && validationResult === "") {
+	if  (metaResult === "" && exceptionResult === "" && validationResult === "")
 	     return "success";
-	} else {
+	else
+	{
 		var returnMessage = metaResult;
 		if  (exceptionResult !== "" && validationResult !== "")
 			returnMessage += "\n*** ";
@@ -303,6 +310,7 @@ POSSIBILITY OF SUCH DAMAGE.
 }
 </xsl:text><!-- class complete -->
 <xsl:text>new </xsl:text><xsl:value-of select="$newClassName"/><xsl:text>().main();</xsl:text>
+
 
     </xsl:template>
 
@@ -653,7 +661,7 @@ POSSIBILITY OF SUCH DAMAGE.
 			<xsl:for-each select="//meta[@name='creator']">
 				<xsl:if test="(string-length(@content) > 0)">
 					<xsl:text><![CDATA[
-	 * @author ]]></xsl:text><xsl:value-of select="@content"/>
+	* @author ]]></xsl:text><xsl:value-of select="@content"/>
 				</xsl:if>
 			</xsl:for-each>
 		<xsl:text>
@@ -702,6 +710,21 @@ POSSIBILITY OF SUCH DAMAGE.
 			<xsl:with-param name="indent"><xsl:value-of select="$indent"/></xsl:with-param>
 		</xsl:call-template>
 		
+		<!-- handle contained source code, if any -->
+		<xsl:if test="((local-name() = 'Script') or (local-name() = 'ShaderPart') or (local-name() = 'ShaderProgram')) and
+					  (string-length(normalize-space(text())) > 0)"><!-- TODO restrict to immediate child? -->
+			<xsl:text>.setSourceCode(</xsl:text>
+			<xsl:text>&#10;</xsl:text>
+			<xsl:text>"&lt;![CDATA[" + "\n" +</xsl:text>
+			<xsl:text>&#10;</xsl:text>
+			<xsl:call-template name="stringify-text-lines">
+			  <xsl:with-param name="inputString" select="text()"/><!-- TODO restrict to immediate child? might be an issue if field has contained node content and further CDATA text-->
+			</xsl:call-template>
+			<xsl:text> + "]]&gt;"</xsl:text><!-- end of CDATA block -->
+			<xsl:text>&#10;</xsl:text>
+			<xsl:text>)</xsl:text>
+		</xsl:if>
+		
 		<!-- handle children
 		<xsl:if test="* | comment()">
 			<xsl:text>&#10;</xsl:text>
@@ -742,23 +765,59 @@ POSSIBILITY OF SUCH DAMAGE.
 					<!-- TODO fix: process digital signature element as a CommentsBlock
 					<xsl:apply-templates select="."/> -->
 				</xsl:when>
-				<xsl:when test="(local-name(..) = 'HAnimHumanoid') and (local-name() = 'HAnimJoint')">
+				<xsl:when test="(local-name(..) = 'Appearance') and (@containerField = 'shaders')">
+					<xsl:text>.addShaders(</xsl:text>
+					<xsl:apply-templates select="."/><!-- handle this node -->
+					<xsl:text>)</xsl:text>
+				</xsl:when>
+				<!-- TODO CollidableShape setShape method returns null, needs X3DJSAIL refinement and SAI spec variation -->
+				<xsl:when test="(local-name(..) = 'ComposedShader') and (@containerField = 'parts')">
+					<xsl:text>.addParts(</xsl:text>
+					<xsl:apply-templates select="."/><!-- handle this node -->
+					<xsl:text>)</xsl:text>
+				</xsl:when>
+				<xsl:when test="(local-name(..) = 'HAnimHumanoid') and (@containerField = 'joints')">
 					<xsl:text>.addJoints(</xsl:text>
 					<xsl:apply-templates select="."/><!-- handle this node -->
 					<xsl:text>)</xsl:text>
 				</xsl:when>
-				<xsl:when test="(local-name(..) = 'HAnimHumanoid') and (local-name() = 'HAnimSegment')">
+				<xsl:when test="(local-name(..) = 'HAnimHumanoid') and (@containerField = 'segments')">
 					<xsl:text>.addSegments(</xsl:text>
 					<xsl:apply-templates select="."/><!-- handle this node -->
 					<xsl:text>)</xsl:text>
 				</xsl:when>
-				<xsl:when test="(local-name(..) = 'HAnimHumanoid') and (local-name() = 'HAnimSite')">
+				<xsl:when test="(local-name(..) = 'HAnimHumanoid') and (@containerField = 'sites')">
 					<xsl:text>.addSites(</xsl:text>
 					<xsl:apply-templates select="."/><!-- handle this node -->
 					<xsl:text>)</xsl:text>
 				</xsl:when>
-				<xsl:when test="(local-name(..) = 'MetadataSet') and (@containerField = 'value')">
-					<xsl:text>.addValue(</xsl:text>
+				<xsl:when test="(local-name(..) = 'HAnimHumanoid') and (@containerField = 'skeleton')">
+					<xsl:text>.addSkeleton(</xsl:text>
+					<xsl:apply-templates select="."/><!-- handle this node -->
+					<xsl:text>)</xsl:text>
+				</xsl:when>
+				<xsl:when test="(local-name(..) = 'HAnimHumanoid') and (@containerField = 'skin')">
+					<xsl:text>.addSkin(</xsl:text>
+					<xsl:apply-templates select="."/><!-- handle this node -->
+					<xsl:text>)</xsl:text>
+				</xsl:when>
+				<xsl:when test="(local-name(..) = 'HAnimHumanoid') and (@containerField = 'skinCoord')">
+					<xsl:text>.setSkinCoord(</xsl:text>
+					<xsl:apply-templates select="."/><!-- handle this node -->
+					<xsl:text>)</xsl:text>
+				</xsl:when>
+				<xsl:when test="(local-name(..) = 'HAnimHumanoid') and (@containerField = 'skinNormal')">
+					<xsl:text>.setSkinNormal(</xsl:text>
+					<xsl:apply-templates select="."/><!-- handle this node -->
+					<xsl:text>)</xsl:text>
+				</xsl:when>
+				<xsl:when test="(local-name(..) = 'HAnimHumanoid') and (@containerField = 'viewpoints')">
+					<xsl:text>.addViewpoints(</xsl:text>
+					<xsl:apply-templates select="."/><!-- handle this node -->
+					<xsl:text>)</xsl:text>
+				</xsl:when>
+				<xsl:when test="(local-name(..) = 'LoadSensor') and (@containerField = 'watchList')">
+					<xsl:text>.addWatchList(</xsl:text>
 					<xsl:apply-templates select="."/><!-- handle this node -->
 					<xsl:text>)</xsl:text>
 				</xsl:when>
@@ -767,9 +826,35 @@ POSSIBILITY OF SUCH DAMAGE.
 					<xsl:apply-templates select="."/><!-- handle this node -->
 					<xsl:text>)</xsl:text>
 				</xsl:when>
+				<xsl:when test="(local-name(..) = 'MetadataSet') and (@containerField = 'value')">
+					<xsl:text>.addValue(</xsl:text>
+					<xsl:apply-templates select="."/><!-- handle this node -->
+					<xsl:text>)</xsl:text>
+				</xsl:when>
+				<xsl:when test="(local-name(..) = 'RigidBody') and (@containerField = 'geometry')">
+					<xsl:text>.addGeometry(</xsl:text>
+					<xsl:apply-templates select="."/><!-- handle this node -->
+					<xsl:text>)</xsl:text>
+				</xsl:when>
+				<xsl:when test="(local-name(..) = 'RigidBodyCollection') and (@containerField = 'bodies')">
+					<xsl:text>.addBodies(</xsl:text>
+					<xsl:apply-templates select="."/><!-- handle this node -->
+					<xsl:text>)</xsl:text>
+				</xsl:when>
+				<xsl:when test="(local-name(..) = 'RigidBodyCollection') and (@containerField = 'joints')">
+					<xsl:text>.addJoints(</xsl:text>
+					<xsl:apply-templates select="."/><!-- handle this node -->
+					<xsl:text>)</xsl:text>
+				</xsl:when>
 				<xsl:when test="(local-name(..) = 'Scene') and starts-with(local-name(), 'Metadata')">
 					<!-- addChild() method didn't work because of ES5 disambiguation difficulty between X3DChildNode and X3DMetadataNode -->
 					<xsl:text>.addMetadata(</xsl:text>
+					<xsl:apply-templates select="."/><!-- handle this node -->
+					<xsl:text>)</xsl:text>
+				</xsl:when>
+				<xsl:when test="(local-name(..) = 'IS') and (local-name() = 'connect')">
+					<!-- addChild() method didn't work because of ES5 disambiguation difficulty between X3DChildNode and X3DMetadataNode -->
+					<xsl:text>.addConnect(</xsl:text>
 					<xsl:apply-templates select="."/><!-- handle this node -->
 					<xsl:text>)</xsl:text>
 				</xsl:when>
@@ -1891,7 +1976,7 @@ POSSIBILITY OF SUCH DAMAGE.
 				<xsl:variable name="attributeName" select="local-name()"/>
 				<xsl:variable name="isLargeAttribute" 
 							  select="not($elementName = 'meta') and
-									 (string-length(.) > $attributeSplitSize) and not($attributeName = 'url')"/>
+									 (string-length(.) > $attributeSplitSize) and not($attributeName = 'url') and not(contains($attributeName,'Url'))"/>
 				<xsl:choose>
 					<xsl:when test="$isLargeAttribute">
 						<xsl:variable name="dataObjectName">
@@ -2204,1026 +2289,1027 @@ POSSIBILITY OF SUCH DAMAGE.
         </xsl:choose>
     </xsl:template>
 
-    <xsl:template name="java-double-numbers">
-		<!-- TODO omit trailing zeroes -->
-        <xsl:param name="inputString"><xsl:text></xsl:text><!-- default value is empty --></xsl:param>
-        <!-- debug:  <xsl:text>//######&#10;</xsl:text> -->
-        <!-- debug:  <xsl:text>### inputString received: </xsl:text><xsl:value-of select="$inputString"/><xsl:text>&#10;</xsl:text> -->
-		<!-- change space characters to commas to support the recursion algorithm -->
-		<xsl:variable name="arrayString" select="translate(normalize-space($inputString),' ',',')"/>
-        <xsl:choose>
-            <xsl:when test="not(contains($arrayString,','))">
-				<!-- last number, all done -->
-				<xsl:value-of select="$arrayString"/>
-				<xsl:if test="not(contains($arrayString,'.')) and not(contains($arrayString,'E')) and not(contains($arrayString,'e'))">
-					<xsl:text>.0</xsl:text> <!-- necessary to append decimal point to integer value -->
-					<!-- <xsl:text></xsl:text>no need to append d to indicate that this number is a double -->
-				</xsl:if>
-            </xsl:when>
-            <xsl:when test="contains($arrayString,',')">
-				<xsl:variable name="firstNumber">
-					<xsl:value-of select="substring-before($arrayString,',')"/>
-				</xsl:variable>
-                <xsl:value-of select="$firstNumber"/>
-				<xsl:if test="not(contains($firstNumber,'.')) and not(contains($arrayString,'E')) and not(contains($arrayString,'e'))">
-					<xsl:text>.0</xsl:text> <!-- necessary to append decimal point to integer value -->
-				</xsl:if>
-                <!-- <xsl:text></xsl:text>no need to append d to indicate that this number is a double -->
-                <xsl:text>,</xsl:text>
-                <xsl:call-template name="java-double-numbers"> <!-- tail recursion -->
-                    <xsl:with-param name="inputString" select="substring-after($arrayString,',')"/>
-                </xsl:call-template>
-            </xsl:when>
-            <xsl:otherwise>
-				<!-- safety net, should be unreachable -->
-                <xsl:value-of select="$arrayString" disable-output-escaping="yes"/>
-            </xsl:otherwise>
-        </xsl:choose>
-    </xsl:template>
+<xsl:template name="java-double-numbers">
+	<!-- TODO omit trailing zeroes -->
+<xsl:param name="inputString"><xsl:text></xsl:text><!-- default value is empty --></xsl:param>
+<!-- debug:  <xsl:text>//######&#10;</xsl:text> -->
+<!-- debug:  <xsl:text>### inputString received: </xsl:text><xsl:value-of select="$inputString"/><xsl:text>&#10;</xsl:text> -->
+	<!-- change space characters to commas to support the recursion algorithm -->
+	<xsl:variable name="arrayString" select="translate(normalize-space($inputString),' ',',')"/>
+<xsl:choose>
+    <xsl:when test="not(contains($arrayString,','))">
+			<!-- last number, all done -->
+			<xsl:value-of select="$arrayString"/>
+			<xsl:if test="not(contains($arrayString,'.')) and not(contains($arrayString,'E')) and not(contains($arrayString,'e'))">
+				<xsl:text>.0</xsl:text> <!-- necessary to append decimal point to integer value -->
+				<!-- <xsl:text></xsl:text>no need to append d to indicate that this number is a double -->
+			</xsl:if>
+    </xsl:when>
+    <xsl:when test="contains($arrayString,',')">
+			<xsl:variable name="firstNumber">
+				<xsl:value-of select="substring-before($arrayString,',')"/>
+			</xsl:variable>
+	<xsl:value-of select="$firstNumber"/>
+			<xsl:if test="not(contains($firstNumber,'.')) and not(contains($arrayString,'E')) and not(contains($arrayString,'e'))">
+				<xsl:text>.0</xsl:text> <!-- necessary to append decimal point to integer value -->
+			</xsl:if>
+	<!-- <xsl:text></xsl:text>no need to append d to indicate that this number is a double -->
+	<xsl:text>,</xsl:text>
+	<xsl:call-template name="java-double-numbers"> <!-- tail recursion -->
+	    <xsl:with-param name="inputString" select="substring-after($arrayString,',')"/>
+	</xsl:call-template>
+    </xsl:when>
+    <xsl:otherwise>
+			<!-- safety net, should be unreachable -->
+	<xsl:value-of select="$arrayString" disable-output-escaping="yes"/>
+    </xsl:otherwise>
+</xsl:choose>
+</xsl:template>
 
-    <xsl:template name="java-create-array-from-multiline-string">
-		<!-- outer quotes provided by invoking code, this template splits a string value into comma-separated substrings -->
-        <xsl:param name="inputString"><xsl:text></xsl:text><!-- default value is empty --></xsl:param>
-        <!-- debug:  <xsl:text>//######&#10;</xsl:text> -->
-        <!-- debug:  <xsl:text>### inputString received: </xsl:text><xsl:value-of select="$inputString"/><xsl:text>&#10;</xsl:text> -->
-		<xsl:choose>
-            <xsl:when test="not(contains($inputString,'&#10;'))">
-				<!-- all done -->
-				<xsl:value-of select="$inputString"/>
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:value-of select="substring-before($inputString,'&#10;')"/>
-                <xsl:text>"</xsl:text>
-				<!-- now handle remainder -->
-				<xsl:if test="(string-length(normalize-space(substring-after($inputString,'&#10;'))) > 0)">
-					<xsl:text>,</xsl:text><!-- string append operator -->
-					<xsl:text>&#10;</xsl:text>
+<xsl:template name="java-create-array-from-multiline-string">
+	<!-- outer quotes provided by invoking code, this template splits a string value into comma-separated substrings -->
+<xsl:param name="inputString"><xsl:text></xsl:text><!-- default value is empty --></xsl:param>
+<!-- debug:  <xsl:text>//######&#10;</xsl:text> -->
+<!-- debug:  <xsl:text>### inputString received: </xsl:text><xsl:value-of select="$inputString"/><xsl:text>&#10;</xsl:text> -->
+	<xsl:choose>
+    <xsl:when test="not(contains($inputString,'&#10;'))">
+			<!-- all done -->
+			<xsl:value-of select="$inputString"/>
+    </xsl:when>
+    <xsl:otherwise>
+		<xsl:value-of select="substring-before($inputString,'&#10;')"/>
+			<xsl:text>"</xsl:text>
+			<!-- now handle remainder -->
+			<xsl:if test="(string-length(normalize-space(substring-after($inputString,'&#10;'))) > 0)">
+				<xsl:text>,</xsl:text><!-- string append operator -->
+				<xsl:text>&#10;</xsl:text>
+				<xsl:text>"</xsl:text>
+				<xsl:call-template name="java-create-array-from-multiline-string"> <!-- tail recursion -->
+					<xsl:with-param name="inputString" select="substring-after($inputString,'&#10;')"/>
+				</xsl:call-template>
+			</xsl:if>
+			<!-- if only whitespace remained, then all done -->
+    </xsl:otherwise>
+</xsl:choose>
+</xsl:template>
+
+<!-- ****** XML processing-instruction - TODO experimental.  what about DTDs? ******
+<xsl:template match="processing-instruction()">
+<xsl:copy> 
+   <xsl:apply-templates select="@*"/> 
+   <xsl:apply-templates/> 
+</xsl:copy>
+</xsl:template> -->
+
+<!-- ****** XML node - TODO experimental.  what about DTDs? ******
+<xsl:template match="node()">
+<xsl:copy> 
+   <xsl:apply-templates select="@*"/> 
+   <xsl:apply-templates/> 
+</xsl:copy>
+</xsl:template> -->
+
+<!-- ****** XML text ****** -->
+<!-- none expected, this is designed to catch errors -->
+<xsl:template match="text()[not(local-name(..)='Script')]">
+<!-- XML text is likely from digital signature nodes - try to swallow blank lines between tags and pass through other text here -->
+<xsl:if test="not(normalize-space(.) = '') and not(normalize-space(.) = ' ')">
+    <xsl:value-of select="." disable-output-escaping="yes"/>
+    <xsl:message>
+	<xsl:text>unexpected text found</xsl:text>
+	<xsl:value-of select="." disable-output-escaping="yes"/>
+    </xsl:message>
+</xsl:if>
+</xsl:template>
+
+<!-- ****** XML comments ****** -->
+<xsl:template match="comment()">
+	<xsl:choose>
+		<xsl:when test="ancestor::*">
+			<xsl:text>.addComments(</xsl:text>
+			<xsl:choose>
+				<!-- split into string array if needed -->
+				<xsl:when test="not(contains(.,'&#10;'))">
 					<xsl:text>"</xsl:text>
-					<xsl:call-template name="java-create-array-from-multiline-string"> <!-- tail recursion -->
-						<xsl:with-param name="inputString" select="substring-after($inputString,'&#10;')"/>
+								<xsl:call-template name="escape-quote-characters">
+									<xsl:with-param name="inputString">
+										<!-- must escape backslashes before quote characters to avoid side effects -->
+										<xsl:call-template name="escape-backslash-characters"> <!-- tail recursion -->
+											<xsl:with-param name="inputString">
+												<xsl:value-of select="."/>
+											</xsl:with-param>
+										</xsl:call-template>
+									</xsl:with-param>
+								</xsl:call-template>
+					<xsl:text>"</xsl:text>
+				</xsl:when>
+				<xsl:otherwise>
+					<!-- debug 
+					<xsl:message>
+						<xsl:text>Fstring: </xsl:text>
+						<xsl:value-of select="."/>
+					</xsl:message>
+					-->
+					<xsl:text>Java.to(["</xsl:text>
+						<xsl:call-template name="java-create-array-from-multiline-string">
+							<xsl:with-param name="inputString">
+								<xsl:call-template name="escape-quote-characters">
+									<xsl:with-param name="inputString">
+										<!-- must escape backslashes before quote characters to avoid side effects -->
+										<xsl:call-template name="escape-backslash-characters"> <!-- tail recursion -->
+											<xsl:with-param name="inputString">
+												<xsl:value-of select="."/>
+											</xsl:with-param>
+										</xsl:call-template>
+									</xsl:with-param>
+								</xsl:call-template>
+							</xsl:with-param>
+						</xsl:call-template>
+					<xsl:text>], Java.type("java.lang.String[]"))</xsl:text>
+				</xsl:otherwise>
+			</xsl:choose>
+			<xsl:text>)</xsl:text>
+		</xsl:when>
+		<xsl:otherwise>
+			<!-- at document root level -->
+			<!-- indent -->
+			<xsl:text>  </xsl:text>
+			<xsl:text>/* </xsl:text>
+			<xsl:value-of select="normalize-space(.)" disable-output-escaping="yes"/>
+			<xsl:text> */</xsl:text>
+			<xsl:text>&#10;</xsl:text>
+		</xsl:otherwise>
+	</xsl:choose>
+</xsl:template>
+
+<!-- ****** XML processing-instruction ****** -->
+<xsl:template match="processing-instruction()">
+<span title="XML processing instruction, hidden as a comment"><code><xsl:text>&lt;-- </xsl:text></code><xsl:value-of select="."/><code><xsl:text> --&gt;&#10;</xsl:text></code></span>
+</xsl:template>
+
+<xsl:template match="ds:*" >
+	<xsl:message>
+		<xsl:text>found ds:</xsl:text>
+		<xsl:value-of select="local-name()"/>
+	</xsl:message>
+<!-- indent -->
+<xsl:for-each select="ancestor::*">
+    <xsl:text>  </xsl:text>
+</xsl:for-each>
+	<xsl:text><![CDATA[<!--]]></xsl:text><xsl:text>&#10;</xsl:text>
+<!-- not working
+<xsl:copy>
+    <xsl:apply-templates select="@* | * | comment() | text()"/>
+</xsl:copy>
+<xsl:text>&#10;</xsl:text> -->      
+<xsl:text disable-output-escaping="yes">&lt;ds:</xsl:text>
+<xsl:value-of select="local-name()"/>
+<xsl:for-each select="@*">
+    <xsl:text> </xsl:text>
+    <xsl:value-of select="local-name()"/>
+    <xsl:text>='</xsl:text>
+    <xsl:value-of select="."/>
+    <xsl:text>'</xsl:text>
+</xsl:for-each>
+<!-- TODO validation problem
+<xsl:for-each select="ds:@*">
+    <xsl:text> </xsl:text>
+    <xsl:value-of select="local-name()"/>
+    <xsl:text>='</xsl:text>
+    <xsl:value-of select="."/>
+    <xsl:text>'</xsl:text>
+</xsl:for-each>
+-->
+<xsl:variable name="containsText" select="not(normalize-space(text()) = '') and not(normalize-space(text()) = ' ')"/>
+<xsl:choose>
+    <xsl:when test="* or comment() or $containsText">
+	<xsl:text disable-output-escaping="yes">&gt;</xsl:text>
+	<xsl:if test="not($containsText)">
+	    <xsl:text>&#10;</xsl:text>
+	</xsl:if>
+	<xsl:apply-templates select="comment()"/>
+	<xsl:value-of select="text()" disable-output-escaping="yes"/><!-- I18N -->
+	<!-- no mixed content likely -->
+	<xsl:apply-templates select="*"/>
+	<xsl:if test="not($containsText)">
+	    <!-- indent -->
+	    <xsl:for-each select="ancestor::*">
+		<xsl:text>  </xsl:text>
+	    </xsl:for-each>
+	</xsl:if>
+	<xsl:text disable-output-escaping="yes">&lt;/ds:</xsl:text>
+	<xsl:value-of select="local-name()"/>
+	<xsl:text disable-output-escaping="yes">&gt;</xsl:text>
+	<xsl:text>&#10;</xsl:text>
+    </xsl:when>
+    <xsl:otherwise>
+	<xsl:text disable-output-escaping="yes">/&gt;</xsl:text>
+	<xsl:text>&#10;</xsl:text>
+    </xsl:otherwise>
+</xsl:choose>
+	<xsl:text>&#10;</xsl:text><xsl:text><![CDATA[ -->]]></xsl:text>
+</xsl:template>
+
+<xsl:template name="list-component-imports">
+<xsl:text>load('X3Dautoclass.js');</xsl:text><xsl:text>&#10;</xsl:text>
+</xsl:template>
+
+<xsl:template name="tuple-size">
+	<xsl:param name="type"><xsl:text></xsl:text><!-- default value is empty --></xsl:param>
+	
+	<xsl:choose>
+		<xsl:when test="contains($type,'FBool')   or contains($type,'FInt32') or contains($type,'FFloat') or
+						contains($type,'FDouble') or contains($type,'FTime')  or contains($type,'FString') or
+						contains($type,'FImage')  or contains($type,'FNode')  or ($type = 'xs:string')">
+			<xsl:text>1</xsl:text>
+		</xsl:when>
+		<xsl:when test="contains($type,'FVec2')">
+			<xsl:text>2</xsl:text>
+		</xsl:when>
+		<xsl:when test="contains($type,'FVec3') or 
+						($type = 'SFColor') or ($type = 'MFColor')">
+			<xsl:text>3</xsl:text>
+		</xsl:when>
+		<xsl:when test=" contains($type,'FVec4') or contains($type,'FRotation') or
+						($type = 'SFColorRGBA')  or ($type = 'MFColorRGBA')">
+			<xsl:text>4</xsl:text>
+		</xsl:when>
+		<xsl:when test="contains($type,'Matrix3')">
+			<xsl:text>9</xsl:text>
+		</xsl:when>
+		<xsl:when test="contains($type,'Matrix4')">
+			<xsl:text>16</xsl:text>
+		</xsl:when>
+	</xsl:choose>
+</xsl:template>
+
+<xsl:template name="attribute-type"> <!-- rule to determine attribute type -->
+
+	<!-- Note:  these rules are adapted from X3dToVrml97.xslt so be sure to apply any updates in both stylesheets -->
+
+	<xsl:variable name="attributeName"       select="local-name()"/>
+	<xsl:variable name="parentElementName"   select="local-name(..)"/>
+	<xsl:variable name="normalizeSpaceValue" select="normalize-space(.)"/>
+	<xsl:variable name="localFieldType"      select="normalize-space(../@type)"/> <!-- locally defined field -->
+
+	<xsl:choose>
+	  <!-- SFString -->
+	  <xsl:when test="($localFieldType='SFString')          or
+		  ($attributeName='DEF')                or
+		  ($attributeName='USE')                or
+		  ($attributeName='containerField')     or
+		  ($attributeName='appinfo')            or
+		  ($attributeName='documentation')      or
+		  (starts-with($parentElementName,'field') and ($attributeName='value'))      or
+		  ($attributeName='name')               or
+		  ($attributeName='class')              or
+		  ($attributeName='description')        or
+		  ($attributeName='address')            or
+		  ($attributeName='language')           or
+		  ($attributeName='marking')            or
+		  ($attributeName='multicastAddress')   or
+		  ($attributeName='networkMode')        or
+		  ($attributeName='reference')          or
+				      (starts-with($parentElementName,'field')         and (($attributeName='accessType') or ($attributeName='type')       or ($attributeName='appinfo') or ($attributeName='documentation'))) or
+				      (starts-with($parentElementName,'meta')          and (($attributeName='content')    or ($attributeName='http-equiv') or ($attributeName='scheme')  or ($attributeName='dir') or ($attributeName='lang') or ($attributeName='xml:lang'))) or
+		  (($parentElementName='component')                and not($attributeName='level')) or
+		  (($parentElementName='unit')                     and not($attributeName='conversionFactor')) or
+				      ($parentElementName='ArcClose2D'                 and $attributeName='closureType') or
+				      ($parentElementName='BlendedVolumeStyle'         and (starts-with($attributeName,'weightFunction') or ($attributeName='magnificationFilter') or ($attributeName='minificationFilter') or ($attributeName='textureCompression'))) or
+		  (ends-with($parentElementName,'Fog')             and $attributeName='fogType') or
+				      ($parentElementName='HAnimHumanoid'              and $attributeName='version') or
+				      (ends-with($parentElementName,'FontStyle')       and $attributeName='style') or
+					  ($parentElementName='GeneratedCubeMapTexture'    and $attributeName='update') or
+					  ($parentElementName='ParticleSystem'             and $attributeName='geometryType') or
+					  (ends-with($parentElementName,'PickSensor')      and ($attributeName='intersectionType' or $attributeName='matchCriterion' or $attributeName='sortOrder')) or
+					  ($parentElementName='ProjectionVolumeStyle'      and $attributeName='type') or
+					  ($parentElementName='ShadedVolumeStyle'          and $attributeName='phaseFunction') or
+				      ($parentElementName='ShaderPart'                 and $attributeName='type') or
+				      ($parentElementName='ShaderProgram'              and $attributeName='type') or
+				      ($parentElementName='TextureCoordinateGenerator' and $attributeName='mode') or
+				      ($parentElementName='TextureProperties'          and (starts-with($attributeName,'boundaryMode') or ($attributeName='magnificationFilter') or ($attributeName='minificationFilter') or ($attributeName='textureCompression'))) or
+		  ($parentElementName='WorldInfo'                  and $attributeName='title') or
+		  ($parentElementName='XvlShell'                   and $attributeName='shellType')">
+		  <xsl:text>SFString</xsl:text>
+	  </xsl:when>
+	  <!-- Statements: xs:integer as SFInt32 - TODO schema/spec change? -->
+	  <xsl:when test="($localFieldType='SFInt32')           or 
+		  (($parentElementName='component')                and $attributeName='level')">
+		  <xsl:text>SFInt32</xsl:text>
+	  </xsl:when>
+	  <xsl:when test="($localFieldType='SFDouble')          or 
+		  ($parentElementName='unit'      and $attributeName='conversionFactor')">
+		  <xsl:text>SFDouble</xsl:text>
+	  </xsl:when>
+	  <!-- X3D statements (i.e. not nodes): xs:string (including X3D version attribute) -->
+	  <xsl:when test="($attributeName='class')       or
+		  ($parentElementName='X3D')     or ($parentElementName='ROUTE')   or ($parentElementName='meta')    or
+				      ($parentElementName='EXPORT')  or ($parentElementName='IMPORT')  or ($parentElementName='connect')">
+		  <!-- includes X3D version. field/fieldValue type logic handled separately -->
+		  <xsl:text>xs:string</xsl:text> 
+	  </xsl:when>
+	  <!-- MFString (some are also enumerations) -->
+	  <xsl:when test="
+				($localFieldType='MFString')   or 
+	    ($attributeName='url') or contains($attributeName,'Url') or
+				($attributeName='forceOutput') or
+				($attributeName='objectType')  or
+				($parentElementName='Anchor' and $attributeName='parameter') or
+				($parentElementName='CollisionCollection' and $attributeName='appliedParameters') or
+				($parentElementName='Contact' and $attributeName='appliedParameters') or
+				(ends-with($parentElementName,'FontStyle') and ($attributeName='family' or $attributeName='justify')) or
+				(starts-with($parentElementName,'Geo') and ($attributeName='geoSystem')) or
+				($parentElementName='GeoMetadata' and $attributeName='summary') or
+				($parentElementName='GeoViewpoint' and contains($attributeName,'navType')) or
+				($parentElementName='HAnimHumanoid' and $attributeName='info') or
+				($parentElementName='Layout' and ($attributeName='align' or $attributeName='offsetUnits' or $attributeName='scaleMode' or $attributeName='sizeUnits')) or
+				($parentElementName='MetadataString' and $attributeName='value') or
+				($parentElementName='MultiTexture' and ($attributeName='function' or $attributeName='mode' or $attributeName='source')) or
+				($parentElementName='NavigationInfo' and ($attributeName='type' or $attributeName='transitionType')) or
+				($parentElementName='Text' and $attributeName='string') or
+				($parentElementName='UniversalJoint' and $attributeName='forceOutput') or
+				($parentElementName='WorldInfo' and $attributeName='info')">
+		  <xsl:text>MFString</xsl:text>
+	  </xsl:when>
+	  <!-- SFBool -->
+	  <xsl:when test="
+				($localFieldType='SFBool')  or 
+	    ($attributeName='activate') or
+				($attributeName='ccw')      or
+				($attributeName='closed')   or
+				($attributeName='convex')   or
+				($attributeName='colorPerVertex') or
+				($attributeName='enabled')  or
+				($attributeName='global')   or
+				($attributeName='normalPerVertex') or
+				($attributeName='on')       or
+				($attributeName='loop')     or
+				($attributeName='normalizeVelocity') or
+				($attributeName='rtpHeaderExpected') or
+				($attributeName='solid') or
+				($attributeName='uClosed') or ($attributeName='vClosed') or
+				($parentElementName='AudioClip' and $attributeName='loop') or
+				($parentElementName='Collision' and $attributeName='enabled') or
+				($parentElementName='CollisionSpace' and $attributeName='useGeometry') or
+				($parentElementName='Cone' and ($attributeName='side' or $attributeName='bottom')) or
+				($parentElementName='Cylinder' and ($attributeName='side' or $attributeName='bottom' or $attributeName='top')) or
+				($parentElementName='CylinderSensor' and $attributeName='autoOffset') or
+				($parentElementName='EspduTransform' and ($attributeName='fired1' or $attributeName='fired2')) or
+				($parentElementName='Extrusion' and ($attributeName='beginCap' or $attributeName='endCap')) or
+				($parentElementName='FillProperties' and ($attributeName='filled' or $attributeName='hatched')) or
+				(ends-with($parentElementName,'FontStyle') and ($attributeName='horizontal' or $attributeName='leftToRight' or $attributeName='topToBottom')) or
+				($parentElementName='GeoInline' and $attributeName='load') or
+				($parentElementName='GeoOrigin' and $attributeName='rotateYUp') or
+				($parentElementName='GeoViewpoint' and $attributeName='headlight') or
+				($parentElementName='ImageTexture' and ($attributeName='repeatS' or $attributeName='repeatT')) or
+				($parentElementName='Inline' and ($attributeName='load')) or
+				(ends-with($parentElementName,'Layer') and ($attributeName='isPickable')) or
+				($parentElementName='LineProperties' and ($attributeName='applied')) or
+				($parentElementName='LOD' and ($attributeName='forceTransitions')) or
+				($parentElementName='MotorJoint' and $attributeName='autoCalc') or
+				($parentElementName='MovieTexture' and ($attributeName='repeatS' or $attributeName='repeatT' or $attributeName='loop')) or
+				($parentElementName='NurbsPatchSurface' and $attributeName='closedSurface') or
+				($parentElementName='ParticleSystem' and $attributeName='createParticles') or
+				($parentElementName='VolumeEmitter' and $attributeName='internal') or
+				($parentElementName='PickableGroup' and $attributeName='pickable') or
+				($parentElementName='PixelTexture' and ($attributeName='repeatS' or $attributeName='repeatT')) or
+				($parentElementName='NavigationInfo' and $attributeName='headlight') or
+				($parentElementName='PlaneSensor' and $attributeName='autoOffset') or
+				($parentElementName='RigidBody' and ($attributeName='autoDamp' or $attributeName='autoDisable' or $attributeName='fixed' or $attributeName='useFiniteRotation' or $attributeName='useGlobalGravity')) or
+				($parentElementName='RigidBodyCollection' and ($attributeName='autoDisable' or $attributeName='preferAccuracy')) or
+				($parentElementName='SphereSensor' and $attributeName='autoOffset') or
+				($parentElementName='StringSensor' and $attributeName='deletionAllowed') or
+				($parentElementName='Script' and ($attributeName='directOutput' or $attributeName='mustEvaluate')) or
+				($parentElementName='ShadedVolumeStyle' and ($attributeName='lighting' or $attributeName='shadows')) or
+				($parentElementName='Sound' and $attributeName='spatialize') or
+				($parentElementName='TextureProperties' and $attributeName='generateMipMaps') or
+				($parentElementName='TimeSensor' and $attributeName='loop') or
+				($parentElementName='TwoSidedMaterial' and $attributeName='separateBackColor') or
+				(ends-with($parentElementName,'Viewpoint') and ($attributeName='jump' or $attributeName='retainUserOffsets')) or
+				($parentElementName='VolumeEmitter' and $attributeName='internal')">
+		  <xsl:text>SFBool</xsl:text>
+	  </xsl:when>
+	  <!-- MFBool -->
+	  <xsl:when test="
+				($localFieldType='MFBool')  or 
+	    (contains($parentElementName,'BooleanSequencer') and $attributeName='keyValue') or
+				($parentElementName='CADLayer'                   and $attributeName='visible') or
+				($parentElementName='MetadataBoolean'            and $attributeName='value') or
+				($parentElementName='SegmentedVolumeData'        and $attributeName='segmentEnabled') or
+				($parentElementName='XvlShell'                   and ($attributeName='faceEmpty' or $attributeName='faceHidden'))">
+		  <xsl:text>MFBool</xsl:text>
+	  </xsl:when>
+	  <!-- SFColor -->
+	  <xsl:when test="
+				($localFieldType='SFColor')  or 
+	    ($parentElementName='CartoonVolumeStyle' and ($attributeName='orthogonalColor' or $attributeName='parallelColor')) or
+				($parentElementName='ColorChaser' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
+				($parentElementName='ColorDamper' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
+				(contains($parentElementName,'Light') and $attributeName='color') or
+				($parentElementName='FillProperties' and ($attributeName='hatchColor')) or
+				(contains($parentElementName,'Fog') and $attributeName='color') or
+				(contains($parentElementName,'Material') and contains($attributeName,'Color')) or
+				($parentElementName='MultiTexture' and $attributeName='color')">
+		  <xsl:text>SFColor</xsl:text>
+	  </xsl:when>
+	  <!-- SFColorRGBA -->
+	  <xsl:when test="
+				($localFieldType='SFColorRGBA')  or 
+	    ($parentElementName='EdgeEnhancementVolumeStyle' and $attributeName='edgeColor') or
+				($parentElementName='TextureProperties' and $attributeName='borderColor') or
+				($parentElementName='ToneMappedVolumeStyle' and ($attributeName='coolColor' or $attributeName='warmColor'))">
+		  <xsl:text>SFColorRGBA</xsl:text>
+	  </xsl:when>
+	  <!-- MFColor -->
+	  <xsl:when test="
+				(($localFieldType='MFColor')  or 
+	    $parentElementName='Color' and $attributeName='color') or
+				($parentElementName='ColorInterpolator' and $attributeName='keyValue') or
+				(ends-with($parentElementName,'Background') and ($attributeName='groundColor' or $attributeName='skyColor'))">
+		  <xsl:text>MFColor</xsl:text>
+	  </xsl:when>
+	  <!-- MFColorRGBA -->
+	  <xsl:when test="
+				($localFieldType='MFColorRGBA')  or 
+	    ($parentElementName='ColorRGBA' and $attributeName='color')">
+		  <xsl:text>MFColorRGBA</xsl:text>
+	  </xsl:when>
+	  <!-- SFImage -->
+	  <xsl:when test="
+				($localFieldType='SFImage')  or 
+	    ($parentElementName='PixelTexture' and $attributeName='image')">
+		  <xsl:text>SFImage</xsl:text>
+	  </xsl:when>
+	  <!-- no MFImage attributes -->
+	  <!-- SFDouble --> <!-- precedes SFFloat since some fields are different than usual -->
+	  <xsl:when test="
+				($localFieldType='SFDouble')  or 
+	    ($parentElementName='GeoElevationGrid' and (($attributeName='creaseAngle') or ($attributeName='xSpacing') or ($attributeName='zSpacing')))">
+		  <xsl:text>SFDouble</xsl:text>
+	  </xsl:when>
+	  <!-- MFDouble -->
+	  <xsl:when test="
+				($localFieldType='MFDouble')  or 
+	    ($parentElementName='GeoElevationGrid'   and $attributeName='height') or
+				($parentElementName='MetadataDouble'     and $attributeName='value')  or
+				(starts-with($parentElementName,'Nurbs') and (($attributeName='knot') or ($attributeName='weight') or contains($attributeName,'Knot')))">
+		  <xsl:text>MFDouble</xsl:text>
+	  </xsl:when>
+	  <!-- SFFloat -->
+	  <xsl:when test="
+				($localFieldType='SFFloat')  or 
+	    ($attributeName='ambientIntensity') or
+				($attributeName='intensity')        or
+				($attributeName='creaseAngle')      or
+	    ($attributeName='radius')           or ($attributeName='innerRadius') or ($attributeName='outerRadius') or
+	    ($attributeName='startAngle')       or ($attributeName='endAngle') or
+	    ($attributeName='tolerance')        or
+				($attributeName='transparency')     or
+				(starts-with($parentElementName,'Arc') and (contains($attributeName,'Angle') or $attributeName='radius')) or
+				($parentElementName='AudioClip' and $attributeName='pitch') or
+				($parentElementName='BlendedVolumeStyle' and starts-with($attributeName,'weightConstant')) or
+				($parentElementName='BoundaryEnhancementVolumeStyle' and (($attributeName='boundaryOpacity') or ($attributeName='opacityFactor') or ($attributeName='retainedOpacity'))) or
+				($parentElementName='Circle2D' and $attributeName='radius') or
+				($parentElementName='CollisionCollection' and ($attributeName='bounce' or $attributeName='minBounceSpeed' or $attributeName='softnessConstantForceMix' or $attributeName='softnessErrorCorrection')) or
+				($parentElementName='Cone' and ($attributeName='bottomRadius' or $attributeName='height')) or
+				($parentElementName='Contact' and ($attributeName='bounce' or $attributeName='depth' or $attributeName='minBounceSpeed' or $attributeName='softnessConstantForceMix' or $attributeName='softnessErrorCorrection')) or
+				($parentElementName='Cylinder' and ($attributeName='radius' or $attributeName='height')) or
+				($parentElementName='CylinderSensor' and ($attributeName='diskAngle' or $attributeName='maxAngle' or $attributeName='minAngle' or $attributeName='offset')) or
+				($parentElementName='Disk2D' and contains($attributeName,'Radius')) or
+				($parentElementName='DoubleAxisHingeJoint' and (starts-with($attributeName,'desiredAngularVelocity') or starts-with($attributeName,'max') or $attributeName='minAngle1' or starts-with($attributeName,'stop') or starts-with($attributeName,'suspension'))) or
+				($parentElementName='EdgeEnhancementVolumeStyle' and $attributeName='gradientThreshold') or
+				(contains($parentElementName,'ElevationGrid') and ($attributeName='xSpacing' or $attributeName='zSpacing')) or
+				(ends-with($parentElementName,'Emitter') and ($attributeName='angle' or $attributeName='speed' or $attributeName='variation' or $attributeName='mass' or $attributeName='surfaceArea')) or
+				($parentElementName='EspduTransform' and $attributeName='firingRange') or
+				(ends-with($parentElementName,'Fog') and $attributeName='visibilityRange') or
+				($parentElementName='FontStyle' and ($attributeName='size' or $attributeName='spacing')) or
+				($parentElementName='GeoElevationGrid' and $attributeName='yScale') or
+				($parentElementName='GeoLOD' and $attributeName='range') or
+				($parentElementName='GeoViewpoint' and $attributeName='speedFactor') or
+				($parentElementName='HAnimDisplacer' and $attributeName='weight') or
+				($parentElementName='HAnimSegment' and $attributeName='mass') or
+				($parentElementName='IsoSurfaceVolumeData' and ($attributeName='contourStepSize' or $attributeName='surfaceTolerance')) or
+				($parentElementName='LineProperties'   and ($attributeName='linewidthScaleFactor')) or
+				($parentElementName='Material'         and ($attributeName='ambientIntensity'     or $attributeName='shininess'     or $attributeName='transparency')) or
+				($parentElementName='ParticleSystem'   and ($attributeName='lifetimeVariation' or $attributeName='particleLifetime')) or
+				($parentElementName='TwoSidedMaterial' and ($attributeName='backAmbientIntensity' or $attributeName='backShininess' or $attributeName='backTransparency')) or
+				($parentElementName='MotorJoint'       and (starts-with($attributeName,'axis') or starts-with($attributeName,'stop'))) or
+				($parentElementName='MovieTexture'     and ($attributeName='pitch' or $attributeName='speed')) or
+				($parentElementName='MultiTexture'     and $attributeName='alpha') or
+				($parentElementName='NavigationInfo'   and ($attributeName='speed' or $attributeName='visibilityLimit' or $attributeName='transitionTime')) or
+				($parentElementName='NurbsSet' and $attributeName='tessellationScale') or
+				($parentElementName='PointLight' and $attributeName='radius') or
+				($parentElementName='ProjectionVolumeStyle' and $attributeName='intensityThreshold') or
+				($parentElementName='ReceiverPdu' and $attributeName='receivedPower') or
+				($parentElementName='RigidBody' and ($attributeName='angularDampingFactor' or starts-with($attributeName,'disable') or $attributeName='linearDampingFactor' or $attributeName='mass')) or
+				($parentElementName='RigidBodyCollection' and ($attributeName='constantForceMix' or $attributeName='contactSurfaceThickness' or starts-with($attributeName,'disable') or $attributeName='errorCorrection' or $attributeName='maxCorrectionSpeed')) or
+				($parentElementName='ScalarChaser' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
+				($parentElementName='ScalarDamper' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
+				($parentElementName='ScreenFontStyle' and ($attributeName='pointSize' or $attributeName='spacing')) or
+				($parentElementName='SilhouetteEnhancementVolumeStyle' and starts-with($attributeName,'silhouette')) or
+				($parentElementName='SingleAxisHingeJoint' and ($attributeName='maxAngle' or $attributeName='minAngle' or $attributeName='stopBounce' or $attributeName='stopErrorCorrection')) or
+				($parentElementName='SliderJoint' and ($attributeName='maxSeparation' or $attributeName='minSeparation' or $attributeName='sliderForce' or $attributeName='stopBounce' or $attributeName='stopErrorCorrection')) or
+				($parentElementName='SpotLight' and ($attributeName='radius' or $attributeName='cutOffAngle' or $attributeName='beamWidth')) or
+				($parentElementName='Sound' and ($attributeName='maxBack' or $attributeName='minBack' or $attributeName='maxFront' or $attributeName='minFront' or $attributeName='priority')) or
+				($parentElementName='Sphere' and $attributeName='radius') or
+				($parentElementName='Text' and $attributeName='maxExtent') or
+				($parentElementName='TextureProperties' and ($attributeName='anisotropicDegree' or $attributeName='texturePriority')) or
+				($parentElementName='TextureTransform' and $attributeName='rotation') or
+				($parentElementName='TransmitterPdu' and ($attributeName='power' or $attributeName='transmitFrequencyBandwidth')) or
+				($parentElementName='UniversalJoint' and starts-with($attributeName,'stop')) or
+				(contains($parentElementName,'Viewpoint') and $attributeName='fieldOfView') or
+				($parentElementName='WindPhysicsModel'    and ($attributeName='gustiness' or $attributeName='speed' or $attributeName='turbulence'))">
+		  <xsl:text>SFFloat</xsl:text>
+	  </xsl:when>
+	  <!-- MFFloat -->
+	  <xsl:when test="
+				($localFieldType='MFFloat')  or 
+	    ($attributeName='key')       or
+				(contains($parentElementName,'ElevationGrid') and $attributeName='height') or
+				(contains($parentElementName,'LOD') and $attributeName='range') or
+				(ends-with($parentElementName,'Background') and ($attributeName='groundAngle' or $attributeName='skyAngle')) or
+				($parentElementName='EspduTransform' and $attributeName='articulationParameterArray') or
+				($parentElementName='FloatVertexAttribute' and $attributeName='value') or
+				($parentElementName='FogCoordinate' and $attributeName='depth') or
+				($parentElementName='HAnimSisplacer' and $attributeName='weight') or
+				($parentElementName='HAnimJoint' and ($attributeName='llimit' or $attributeName='ulimit' or $attributeName='skinCoordWeight' or $attributeName='stiffness')) or
+				($parentElementName='HAnimSegment' and $attributeName='momentsOfInertia') or
+				($parentElementName='IsoSurfaceVolumeData' and $attributeName='surfaceValues') or
+				($parentElementName='Layout' and ($attributeName='offset' or $attributeName='size')) or
+				($parentElementName='MetadataFloat' and $attributeName='value') or
+				($parentElementName='NavigationInfo' and $attributeName='avatarSize') or
+				($parentElementName='NurbsTextureCoordinate' and $attributeName='weight') or
+				($parentElementName='ParticleSystem' and ($attributeName='colorKey' or $attributeName='texCoordKey')) or
+				($parentElementName='ScalarInterpolator' and $attributeName='keyValue') or
+				($parentElementName='SplineScalarInterpolator' and ($attributeName='keyValue' or $attributeName='keyVelocity')) or
+				($parentElementName='Text' and $attributeName='length') or
+				($parentElementName='TextureCoordinateGenerator' and $attributeName='parameter') or
+				($parentElementName='Viewport' and $attributeName='clipBoundary') or
+				($parentElementName='XvlShell' and ($attributeName='vertexRound' or $attributeName='edgeRound'))">
+		  <xsl:text>MFFloat</xsl:text>
+	  </xsl:when>
+	  <!-- SFTime -->
+	  <xsl:when test="
+				($localFieldType='SFTime')        or 
+	    ($parentElementName='TimeSensor') or
+	    ($attributeName='duration')       or
+	    ($attributeName='tau')            or
+	    ($attributeName='timestamp')      or
+	    ($attributeName='readInterval')   or
+	    ($attributeName='writeInterval')  or
+	    ($parentElementName='LoadSensor'     and $attributeName='timeOut')  or
+	    ($parentElementName='AudioClip'      and ends-with($attributeName,'Time'))  or
+	    ($parentElementName='EspduTransform' and ends-with($attributeName,'Time'))  or
+	    ($parentElementName='MovieTexture'   and ends-with($attributeName,'Time'))"> 
+		  <!-- TimeSensor loop & enabled are caught by SFBool tests, all other TimeSensorfields are SFTime -->
+		  <xsl:text>SFTime</xsl:text>
+	  </xsl:when>
+	  <!-- no MFTime -->
+	  <!-- SFVec2f -->
+	  <xsl:when test="
+				($localFieldType='SFVec2f')  or 
+	    ($parentElementName='CollisionCollection' and ($attributeName='frictionCoefficients' or $attributeName='slipFactors' or $attributeName='surfaceSpeed')) or
+				($parentElementName='Contact' and ($attributeName='frictionCoefficients' or $attributeName='slipCoefficients' or $attributeName='surfaceSpeed')) or
+				($parentElementName='ParticleSystem' and $attributeName='particleSize') or
+				($parentElementName='PlaneSensor' and ($attributeName='maxPosition' or $attributeName='minPosition')) or
+				($parentElementName='PositionChaser2D' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
+				($parentElementName='PositionDamper2D' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
+				($parentElementName='Rectangle2D' and ($attributeName='size')) or
+				($parentElementName='TextureTransform' and ($attributeName='center' or $attributeName='scale' or $attributeName='translation'))">
+		  <xsl:text>SFVec2f</xsl:text>
+	  </xsl:when>
+	  <!-- MFVec2f -->
+	  <xsl:when test="
+				($localFieldType='MFVec2f')  or 
+	    ($parentElementName='EaseInEaseOut' and $attributeName='easeInEaseOut') or
+				($parentElementName='Extrusion' and ($attributeName='crossSection' or $attributeName='scale')) or
+				(($parentElementName='CoordinateInterpolator2D' or $parentElementName='PositionInterpolator2D') and $attributeName='keyValue') or
+				(($parentElementName='ContourPolyline2D' or $parentElementName='Polypoint2D' or $parentElementName='TextureCoordinate') and $attributeName='point') or
+				(($parentElementName='NurbsTextureCoordinate') and $attributeName='controlPoint') or
+				(($parentElementName='Polyline2D') and $attributeName='lineSegments') or
+				(($parentElementName='SplinePositionInterpolator2D') and ($attributeName='keyValue' or $attributeName='keyVelocity')) or
+				($parentElementName='TexCoordChaser2D' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
+				($parentElementName='TexCoordDamper2D' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
+				(($parentElementName='TriangleSet2D') and $attributeName='vertices')">
+		  <xsl:text>MFVec2f</xsl:text>
+	  </xsl:when>
+	  <!-- MFVec2d -->
+	  <xsl:when test="
+				($localFieldType='MFVec2d')  or
+				(($parentElementName='ContourPolyline2D') or ($parentElementName='NurbsCurve2D') and $attributeName='controlPoint')">
+  <xsl:text>MFVec2d</xsl:text>
+	  </xsl:when>
+	   
+	  <!-- SFVec3d -->
+	  <xsl:when test="
+				($localFieldType='SFVec3d')  or 
+	    ($attributeName='geoCenter') or
+				($attributeName='geoCoords') or
+				($parentElementName='GeoElevationGrid'   and $attributeName='geoGridOrigin') or
+				($parentElementName='GeoLOD'             and $attributeName='center') or
+				($parentElementName='GeoProximitySensor' and $attributeName='center') or
+				($parentElementName='GeoViewpoint'       and ($attributeName='centerOfRotation' or $attributeName='position'))">
+		  <xsl:text>SFVec3d</xsl:text>
+	  </xsl:when>
+	  <!-- MFVec3d -->
+	  <xsl:when test="
+				($localFieldType='MFVec3d')  or 
+	    ($parentElementName='ContourPolyline2D'       and $attributeName='controlPoint') or
+				($parentElementName='CoordinateDouble'        and $attributeName='point') or
+				($parentElementName='GeoCoordinate'           and $attributeName='point') or
+				($parentElementName='GeoPositionInterpolator' and $attributeName='keyValue') or
+				($parentElementName='GeoViewpoint'            and contains($attributeName,'position'))">
+		  <xsl:text>MFVec3d</xsl:text>
+	  </xsl:when>
+	  <!-- SFVec3f -->
+	  <!-- note TextureTransform tests must precede these default checks -->
+	  <xsl:when test="
+				($localFieldType='SFVec3f')    or 
+	    ($attributeName='anchorPoint') or
+				($attributeName='bboxCenter')  or
+				($attributeName='bboxSize')    or
+				($attributeName='center')      or
+				($attributeName='scale')       or
+				($attributeName='translation') or
+				($parentElementName='Billboard' and $attributeName='axisOfRotation') or
+				($parentElementName='Box' and $attributeName='size') or
+				(ends-with($parentElementName,'Emitter') and ($attributeName='direction' or $attributeName='position')) or
+				($parentElementName='Contact' and ($attributeName='contactNormal' or $attributeName='frictionDirection' or $attributeName='position')) or
+				($parentElementName='DirectionalLight' and $attributeName='direction') or
+				($parentElementName='DoubleAxisHingeJoint' and ($attributeName='axis1' or $attributeName='axis2')) or
+				($parentElementName='EspduTransform' and (ends-with($attributeName,'Location') or $attributeName='linearVelocity' or $attributeName='linearAcceleration' or ends-with($attributeName,'Point'))) or
+				($parentElementName='ForcePhysicsModel' and $attributeName='force') or
+				($parentElementName='GeoProximitySensor' and $attributeName='size') or
+				(starts-with($parentElementName,'HAnim') and ($attributeName='center' or $attributeName='scale' or $attributeName='translation')) or
+				($parentElementName='HAnimSegment' and $attributeName='centerOfMass') or
+				(contains($parentElementName,'LOD') and $attributeName='center') or
+				($parentElementName='MotorJoint' and ($attributeName='motor1Axis' or $attributeName='motor2Axis' or $attributeName='motor3Axis')) or
+				($parentElementName='PlaneSensor' and $attributeName='offset') or
+				($parentElementName='PositionChaser' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
+				($parentElementName='PositionDamper' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
+				($parentElementName='ProximitySensor' and ($attributeName='center' or $attributeName='size')) or
+				($parentElementName='PointLight' and ($attributeName='attenuation' or $attributeName='location')) or
+				($parentElementName='RigidBody' and ($attributeName='angularVelocity' or $attributeName='centerOfMass' or $attributeName='finiteRotationAxis' or $attributeName='linearVelocity' or $attributeName='position')) or
+				($parentElementName='RigidBodyCollection' and ($attributeName='gravity')) or
+				($parentElementName='SingleAxisHingeJoint' and ($attributeName='axis')) or
+				($parentElementName='SliderJoint' and ($attributeName='axis')) or
+				($parentElementName='Sound' and ($attributeName='direction' or $attributeName='location')) or
+				($parentElementName='SpotLight' and ($attributeName='attenuation' or $attributeName='direction' or $attributeName='location')) or
+				($parentElementName='Transform' and ($attributeName='center' or $attributeName='scale' or $attributeName='translation')) or
+				($parentElementName='TransformSensor' and ($attributeName='size')) or
+				($parentElementName='TransmitterPdu' and (ends-with($attributeName,'Location'))) or
+				($parentElementName='UniversalJoint' and ($attributeName='axis1' or $attributeName='axis2')) or
+				(($parentElementName='Viewpoint' or $parentElementName='OrthoViewpoint') and ($attributeName='position' or $attributeName='centerOfRotation')) or
+				($parentElementName='ViewpointGroup'   and $attributeName='size') or
+				($parentElementName='VisibilitySensor' and $attributeName='size') or
+				(contains($parentElementName,'VolumeData') and $attributeName='dimensions') or
+				($parentElementName='WindPhysicsModel' and $attributeName='direction')">
+		  <xsl:text>SFVec3f</xsl:text>
+	  </xsl:when>
+	  <!-- MFVec3f -->
+	  <xsl:when test="
+				($localFieldType='MFVec3f')    or 
+	    ($parentElementName='CoordinateChaser' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
+				($parentElementName='CoordinateDamper' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
+				($parentElementName='CoordinateInterpolator'     and $attributeName='keyValue') or
+				($parentElementName='NormalInterpolator'         and $attributeName='keyValue') or
+				($parentElementName='PositionInterpolator'       and $attributeName='keyValue') or
+				($parentElementName='SplinePositionInterpolator' and ($attributeName='keyValue' or $attributeName='keyVelocity')) or
+				(contains($parentElementName,'Coordinate') and $attributeName='point') or
+				($parentElementName='Extrusion' and $attributeName='spine') or
+				($parentElementName='Normal' and $attributeName='vector') or
+				($parentElementName='HAnimDisplacer' and $attributeName='displacements') or
+				($parentElementName='XvlShell' and ($attributeName='edgeBeginVector' or $attributeName='edgeEndVector'))">
+		  <xsl:text>MFVec3f</xsl:text>
+	  </xsl:when>
+	  <!-- SFVec4f -->
+	  <xsl:when test="
+				($localFieldType='MFVec3f')    or 
+	    ($parentElementName='ClipPlane' and $attributeName='plane')">
+		  <xsl:text>SFVec4f</xsl:text>
+	  </xsl:when>
+	  <!-- SFRotation -->
+	  <!-- note TextureTransform tests must precede these default checks -->
+	  <xsl:when test="
+				($localFieldType='MFVec3f')    or 
+	    ($attributeName='rotation') or
+				($attributeName='scaleOrientation') or
+				(($parentElementName='CylinderSensor' or $parentElementName='PlaneSensor') and $attributeName='axisRotation') or
+				($parentElementName='OrientationChaser' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
+				($parentElementName='OrientationDamper' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
+				($parentElementName='RigidBody' and $attributeName='orientation') or
+				($parentElementName='SphereSensor' and $attributeName='offset') or
+				($parentElementName='Transform' and ($attributeName='rotation' or $attributeName='scaleOrientation')) or
+				(contains($parentElementName,'Viewpoint') and $attributeName='orientation') or
+				($parentElementName='HAnimJoint' and ($attributeName='limitOrientation' or $attributeName='rotation' or $attributeName='scaleOrientation')) or
+				($parentElementName='HAnimSite' and ($attributeName='rotation' or $attributeName='scaleOrientation'))">
+		  <xsl:text>SFRotation</xsl:text>
+	  </xsl:when>
+	  <!-- MFRotation -->
+	  <xsl:when test="
+				($localFieldType='MFVec3f')    or 
+	    ($parentElementName='Extrusion' and $attributeName='orientation') or
+				(ends-with($parentElementName,'OrientationInterpolator') and $attributeName='keyValue')">
+		  <xsl:text>MFRotation</xsl:text>
+	  </xsl:when>
+	  <!-- MFMatrix3f -->
+	  <xsl:when test="
+				($localFieldType='MFVec3f')    or 
+	    ($parentElementName='Matrix3VertexAttribute' and $attributeName='value')">
+		  <xsl:text>MFMatrix3f</xsl:text>
+	  </xsl:when>
+	  <!-- SFMatrix4f -->
+	  <xsl:when test="
+				($localFieldType='MFVec3f')    or 
+	    ($parentElementName='TextureTransformMatrix3D' and $attributeName='matrix')">
+		  <xsl:text>SFMatrix4f</xsl:text>
+	  </xsl:when>
+	  <!-- MFMatrix4f -->
+	  <xsl:when test="
+				(($localFieldType='MFVec3f')    or 
+	    $parentElementName='Matrix4VertexAttribute' and $attributeName='value')">
+		  <xsl:text>MFMatrix4f</xsl:text>
+	  </xsl:when>
+	  <!-- MFInt32 --> <!-- must precede MFInt32 -->
+	  <xsl:when test="
+				($localFieldType='MFVec3f')    or 
+	    ($attributeName='colorIndex') or
+				($attributeName='coordIndex') or
+				($attributeName='normalIndex') or
+				($attributeName='texCoordIndex') or
+				($attributeName='faceCoordIndex') or
+				($attributeName='faceTexCoordIndex') or
+				($attributeName='edgeBeginCoordIndex') or
+				($attributeName='edgeEndCoordIndex') or
+				($attributeName='fanCount') or
+				($attributeName='stripCount') or
+				($parentElementName='ContourPolyline2D' and $attributeName='index') or
+				($parentElementName='EspduTransform' and starts-with($attributeName,'articulationParameter') and ends-with($attributeName,'Array')) or
+				($parentElementName='HAnimJoint' and $attributeName='skinCoordIndex') or
+				(starts-with($parentElementName,'IndexedTriangle') and $attributeName='index') or
+				($parentElementName='IndexedQuadSet'               and $attributeName='index') or
+				($parentElementName='IntegerSequencer' and $attributeName='keyValue') or
+				($parentElementName='LayerSet' and ($attributeName='order')) or
+				($parentElementName='LineSet' and $attributeName='vertexCount') or
+				($parentElementName='MetadataInteger' and $attributeName='value') or
+				($parentElementName='SignalPdu' and $attributeName='data')">
+		  <xsl:text>MFInt32</xsl:text>
+	  </xsl:when>
+	  <!-- SFInt32 --> <!-- Note that other DIS attibutes must get tested before this, including MFInt32 -->
+	  <xsl:when test="
+	    ($localFieldType='MFVec3f')    or 
+	     ends-with($attributeName,'ID')             or
+	    ($attributeName='order')                    or
+				($attributeName='uOrder')                   or
+				($attributeName='vOrder')                   or
+				($attributeName='uDimension')               or
+				($attributeName='vDimension')               or
+				($parentElementName='DISEntityManager')     or
+				($parentElementName='DISEntityTypeMapping') or
+				($parentElementName='EspduTransform')       or
+				($parentElementName='SignalPdu')            or
+				($parentElementName='ReceiverPdu')          or
+				($parentElementName='TransmitterPdu')       or
+				($parentElementName='CartoonVolumeStyle' and $attributeName='colorSteps') or
+				($parentElementName='IntegerTrigger' and $attributeName='integerKey') or
+				(contains($parentElementName,'ElevationGrid') and ($attributeName='xDimension' or $attributeName='zDimension')) or
+				($parentElementName='FillProperties' and ($attributeName='hatchStyle')) or
+				($parentElementName='FloatVertexAttribute' and $attributeName='numComponents') or
+				($parentElementName='GeneratedCubeMapTexture' and $attributeName='size') or
+				($parentElementName='LayerSet' and ($attributeName='activeLayer')) or
+				($parentElementName='LineProperties' and ($attributeName='linetype')) or
+				($parentElementName='MotorJoint' and $attributeName='enabledAxe') or
+				($parentElementName='ParticleSystem' and $attributeName='maxParticles') or
+				($parentElementName='RigidBodyCollection' and $attributeName='iterations') or
+				($parentElementName='Switch' and $attributeName='whichChoice') or
+				($parentElementName='TextureProperties' and $attributeName='borderWidth') or
+				(starts-with($parentElementName,'Nurbs') and ($attributeName='order' or $attributeName='tessellation' or $attributeName='uTessellation' or $attributeName='vTessellation' or $attributeName='uTessellation' or $attributeName='dimension' or $attributeName='UDimension' or $attributeName='vDimension')) or
+				($parentElementName='XvlShell' and $attributeName='numberOfDivisions')">
+		  <xsl:text>SFInt32</xsl:text>
+	  </xsl:when>
+	  <xsl:otherwise>
+		  <xsl:choose>
+			<xsl:when test="($parentElementName='field')">
+				<xsl:value-of select="$localFieldType"/>
+			</xsl:when>
+			<!-- Other statement values require special handling, do not warn here -->
+			<xsl:when test="($parentElementName='field')          or ($parentElementName='fieldValue') or contains($parentElementName,'Proto') or
+			($parentElementName='meta')">
+				<xsl:text></xsl:text>
+			</xsl:when>
+			<xsl:when test="preceding::*[(local-name() = $parentElementName) and (starts-with($parentElementName,'Xvl'))]">
+				<!-- avoid repetitious warnings, no message.  TODO fix, test is not trapping properly. -->
+				<xsl:text></xsl:text>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:message>
+					  <xsl:text>*** warning: X3dToES5.xslt attribute type not found for </xsl:text>
+					  <xsl:value-of select="$parentElementName"/>
+					  <xsl:text> </xsl:text>
+					  <xsl:value-of select="$attributeName"/>
+				</xsl:message>
+			</xsl:otherwise>
+		  </xsl:choose>
+	  </xsl:otherwise>
+	</xsl:choose>
+
+</xsl:template>
+
+<!-- apply ES5 tying rules to array output according to X3D type -->
+<xsl:template name="output-attribute-value">
+	<xsl:param name="inputString"><xsl:text></xsl:text></xsl:param>
+	<xsl:param name="attributeType"><xsl:text></xsl:text></xsl:param>
+	<xsl:param name="indent"><xsl:text></xsl:text></xsl:param>
+	
+	<xsl:variable name="tupleSize">
+		<xsl:call-template name="tuple-size">
+			<xsl:with-param name="type">
+				<xsl:value-of select="$attributeType"/>
+			</xsl:with-param>
+		</xsl:call-template>
+	</xsl:variable>
+	<xsl:variable name="numbersPerGroup" select="($tupleSize * $tupleSplitSize)"/>
+	<xsl:variable name="embeddedSpaceCount" select="string-length(normalize-space(.)) - string-length(translate(.,' ',''))"/>
+	<xsl:variable name="isNumeric" select="(string-length(translate(.,'0123456789+-Ee. ','')) = 0)"/>
+		
+	<xsl:variable name="normalizedArray" select="normalize-space(translate(.,',',' '))"/>
+	<xsl:variable name="numberCount" select="1 + string-length(translate($normalizedArray,'0123456789+-Ee.',''))"/>
+	<xsl:variable name="tupleCount" select="($numberCount div $tupleSize)"/>
+	<xsl:variable name="numberArray" select="tokenize($normalizedArray,' ')"/>
+
+	<xsl:choose>
+		<xsl:when test="($attributeType = 'SFString') or ($attributeType = 'xs:string')">
+			<xsl:text>"</xsl:text>
+			<xsl:call-template name="escape-quote-characters">
+				<xsl:with-param name="inputString">
+					<!-- must escape backslashes before quote characters to avoid side effects -->
+					<xsl:call-template name="escape-backslash-characters"> <!-- tail recursion -->
+						<xsl:with-param name="inputString">
+							<xsl:value-of select="."/>
+						</xsl:with-param>
 					</xsl:call-template>
-				</xsl:if>
-				<!-- if only whitespace remained, then all done -->
-            </xsl:otherwise>
-        </xsl:choose>
-    </xsl:template>
-    
-    <!-- ****** XML processing-instruction - TODO experimental.  what about DTDs? ******
-    <xsl:template match="processing-instruction()">
-       <xsl:copy> 
-           <xsl:apply-templates select="@*"/> 
-           <xsl:apply-templates/> 
-       </xsl:copy>
-    </xsl:template> -->
-
-    <!-- ****** XML node - TODO experimental.  what about DTDs? ******
-    <xsl:template match="node()">
-       <xsl:copy> 
-           <xsl:apply-templates select="@*"/> 
-           <xsl:apply-templates/> 
-       </xsl:copy>
-    </xsl:template> -->
-
-    <!-- ****** XML text ****** -->
-    <!-- none expected, this is designed to catch errors -->
-    <xsl:template match="text()[not(local-name(..)='Script')]">
-      <!-- XML text is likely from digital signature nodes - try to swallow blank lines between tags and pass through other text here -->
-      <xsl:if test="not(normalize-space(.) = '') and not(normalize-space(.) = ' ')">
-            <xsl:value-of select="." disable-output-escaping="yes"/>
-            <xsl:message>
-                <xsl:text>unexpected text found</xsl:text>
-                <xsl:value-of select="." disable-output-escaping="yes"/>
-            </xsl:message>
-      </xsl:if>
-    </xsl:template>
-
-    <!-- ****** XML comments ****** -->
-    <xsl:template match="comment()">
-		<xsl:choose>
-			<xsl:when test="ancestor::*">
-				<xsl:text>.addComments(</xsl:text>
+				</xsl:with-param>
+			</xsl:call-template>
+			<xsl:text>"</xsl:text>
+		</xsl:when>
+		<xsl:when test="($attributeType = 'MFString')">
+			<!-- special handling to avoid unintended errors -->
+			<xsl:variable name="quotedValue">
 				<xsl:choose>
-					<!-- split into string array if needed -->
-					<xsl:when test="not(contains(.,'&#10;'))">
+					<xsl:when test="not(contains(.,'&quot;'))">
+						<!-- MFStringObject is forgiving, but this code block fixes the error and notifies authors of valid practice -->
+						<xsl:message>
+							<xsl:text>*** No quotation marks found in MFString array of individual SFString values, wrapped them.</xsl:text>
+							<xsl:text>&#10;</xsl:text>
+							<xsl:text>*** &lt;</xsl:text>
+							<xsl:value-of select="local-name(..)"/>
+							<xsl:text> DEF='</xsl:text>
+							<xsl:value-of select="../@DEF"/>
+							<xsl:text>' name='</xsl:text>
+							<xsl:value-of select="../@name"/>
+							<xsl:text>' </xsl:text>
+							<xsl:value-of select="local-name(.)"/>
+							<xsl:text>='</xsl:text>
+							<xsl:value-of select="."/>
+							<xsl:text>'/&gt;</xsl:text>
+						</xsl:message>
 						<xsl:text>"</xsl:text>
-									<xsl:call-template name="escape-quote-characters">
-										<xsl:with-param name="inputString">
-											<!-- must escape backslashes before quote characters to avoid side effects -->
-											<xsl:call-template name="escape-backslash-characters"> <!-- tail recursion -->
-												<xsl:with-param name="inputString">
-													<xsl:value-of select="."/>
-												</xsl:with-param>
-											</xsl:call-template>
-										</xsl:with-param>
-									</xsl:call-template>
+						<xsl:value-of select="."/>
 						<xsl:text>"</xsl:text>
 					</xsl:when>
 					<xsl:otherwise>
-						<!-- debug 
-						<xsl:message>
-							<xsl:text>Fstring: </xsl:text>
-							<xsl:value-of select="."/>
-						</xsl:message>
-						-->
-						<xsl:text>Java.to(["</xsl:text>
-							<xsl:call-template name="java-create-array-from-multiline-string">
-								<xsl:with-param name="inputString">
-									<xsl:call-template name="escape-quote-characters">
-										<xsl:with-param name="inputString">
-											<!-- must escape backslashes before quote characters to avoid side effects -->
-											<xsl:call-template name="escape-backslash-characters"> <!-- tail recursion -->
-												<xsl:with-param name="inputString">
-													<xsl:value-of select="."/>
-												</xsl:with-param>
-											</xsl:call-template>
-										</xsl:with-param>
-									</xsl:call-template>
-								</xsl:with-param>
-							</xsl:call-template>
-						<xsl:text>], Java.type("java.lang.String[]"))</xsl:text>
+						<xsl:value-of select="."/>
 					</xsl:otherwise>
 				</xsl:choose>
-				<xsl:text>)</xsl:text>
-			</xsl:when>
-			<xsl:otherwise>
-				<!-- at document root level -->
-				<!-- indent -->
-				<xsl:text>  </xsl:text>
-				<xsl:text>/* </xsl:text>
-				<xsl:value-of select="normalize-space(.)" disable-output-escaping="yes"/>
-				<xsl:text> */</xsl:text>
-				<xsl:text>&#10;</xsl:text>
-			</xsl:otherwise>
-		</xsl:choose>
-    </xsl:template>
-
-    <!-- ****** XML processing-instruction ****** -->
-    <xsl:template match="processing-instruction()">
-        <span title="XML processing instruction, hidden as a comment"><code><xsl:text>&lt;-- </xsl:text></code><xsl:value-of select="."/><code><xsl:text> --&gt;&#10;</xsl:text></code></span>
-    </xsl:template>
-	
-    <xsl:template match="ds:*" >
-		<xsl:message>
-			<xsl:text>found ds:</xsl:text>
-			<xsl:value-of select="local-name()"/>
-		</xsl:message>
-        <!-- indent -->
-        <xsl:for-each select="ancestor::*">
-            <xsl:text>  </xsl:text>
-        </xsl:for-each>
-		<xsl:text><![CDATA[<!--]]></xsl:text><xsl:text>&#10;</xsl:text>
-        <!-- not working
-        <xsl:copy>
-            <xsl:apply-templates select="@* | * | comment() | text()"/>
-        </xsl:copy>
-        <xsl:text>&#10;</xsl:text> -->      
-        <xsl:text disable-output-escaping="yes">&lt;ds:</xsl:text>
-        <xsl:value-of select="local-name()"/>
-        <xsl:for-each select="@*">
-            <xsl:text> </xsl:text>
-            <xsl:value-of select="local-name()"/>
-            <xsl:text>='</xsl:text>
-            <xsl:value-of select="."/>
-            <xsl:text>'</xsl:text>
-        </xsl:for-each>
-        <!-- TODO validation problem
-        <xsl:for-each select="ds:@*">
-            <xsl:text> </xsl:text>
-            <xsl:value-of select="local-name()"/>
-            <xsl:text>='</xsl:text>
-            <xsl:value-of select="."/>
-            <xsl:text>'</xsl:text>
-        </xsl:for-each>
-        -->
-        <xsl:variable name="containsText" select="not(normalize-space(text()) = '') and not(normalize-space(text()) = ' ')"/>
-        <xsl:choose>
-            <xsl:when test="* or comment() or $containsText">
-                <xsl:text disable-output-escaping="yes">&gt;</xsl:text>
-                <xsl:if test="not($containsText)">
-                    <xsl:text>&#10;</xsl:text>
-                </xsl:if>
-                <xsl:apply-templates select="comment()"/>
-                <xsl:value-of select="text()" disable-output-escaping="yes"/><!-- I18N -->
-                <!-- no mixed content likely -->
-                <xsl:apply-templates select="*"/>
-                <xsl:if test="not($containsText)">
-                    <!-- indent -->
-                    <xsl:for-each select="ancestor::*">
-                        <xsl:text>  </xsl:text>
-                    </xsl:for-each>
-                </xsl:if>
-                <xsl:text disable-output-escaping="yes">&lt;/ds:</xsl:text>
-                <xsl:value-of select="local-name()"/>
-                <xsl:text disable-output-escaping="yes">&gt;</xsl:text>
-                <xsl:text>&#10;</xsl:text>
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:text disable-output-escaping="yes">/&gt;</xsl:text>
-                <xsl:text>&#10;</xsl:text>
-            </xsl:otherwise>
-        </xsl:choose>
-		<xsl:text>&#10;</xsl:text><xsl:text><![CDATA[ -->]]></xsl:text>
-    </xsl:template>
-
-    <xsl:template name="list-component-imports">
-		<xsl:text>load('X3Dautoclass.js');</xsl:text><xsl:text>&#10;</xsl:text>
-    </xsl:template>
-	
-    <xsl:template name="tuple-size">
-		<xsl:param name="type"><xsl:text></xsl:text><!-- default value is empty --></xsl:param>
-		
-		<xsl:choose>
-			<xsl:when test="contains($type,'FBool')   or contains($type,'FInt32') or contains($type,'FFloat') or
-							contains($type,'FDouble') or contains($type,'FTime')  or contains($type,'FString') or
-							contains($type,'FImage')  or contains($type,'FNode')  or ($type = 'xs:string')">
-				<xsl:text>1</xsl:text>
-			</xsl:when>
-			<xsl:when test="contains($type,'FVec2')">
-				<xsl:text>2</xsl:text>
-			</xsl:when>
-			<xsl:when test="contains($type,'FVec3') or 
-							($type = 'SFColor') or ($type = 'MFColor')">
-				<xsl:text>3</xsl:text>
-			</xsl:when>
-			<xsl:when test=" contains($type,'FVec4') or contains($type,'FRotation') or
-							($type = 'SFColorRGBA')  or ($type = 'MFColorRGBA')">
-				<xsl:text>4</xsl:text>
-			</xsl:when>
-			<xsl:when test="contains($type,'Matrix3')">
-				<xsl:text>9</xsl:text>
-			</xsl:when>
-			<xsl:when test="contains($type,'Matrix4')">
-				<xsl:text>16</xsl:text>
-			</xsl:when>
-		</xsl:choose>
-    </xsl:template>
-	
-    <xsl:template name="attribute-type"> <!-- rule to determine attribute type -->
-	
-		<!-- Note:  these rules are adapted from X3dToVrml97.xslt so be sure to apply any updates in both stylesheets -->
-
-		<xsl:variable name="attributeName"       select="local-name()"/>
-		<xsl:variable name="parentElementName"   select="local-name(..)"/>
-		<xsl:variable name="normalizeSpaceValue" select="normalize-space(.)"/>
-		<xsl:variable name="localFieldType"      select="normalize-space(../@type)"/> <!-- locally defined field -->
-
-		<xsl:choose>
-		  <!-- SFString -->
-		  <xsl:when test="($localFieldType='SFString')          or
-                          ($attributeName='DEF')                or
-                          ($attributeName='USE')                or
-                          ($attributeName='containerField')     or
-                          ($attributeName='appinfo')            or
-                          ($attributeName='documentation')      or
-                          (starts-with($parentElementName,'field') and ($attributeName='value'))      or
-                          ($attributeName='name')               or
-                          ($attributeName='class')              or
-                          ($attributeName='description')        or
-                          ($attributeName='address')            or
-                          ($attributeName='language')           or
-                          ($attributeName='marking')            or
-                          ($attributeName='multicastAddress')   or
-                          ($attributeName='networkMode')        or
-                          ($attributeName='reference')          or
-					      (starts-with($parentElementName,'field')         and (($attributeName='accessType') or ($attributeName='type')       or ($attributeName='appinfo') or ($attributeName='documentation'))) or
-					      (starts-with($parentElementName,'meta')          and (($attributeName='content')    or ($attributeName='http-equiv') or ($attributeName='scheme')  or ($attributeName='dir') or ($attributeName='lang') or ($attributeName='xml:lang'))) or
-                          (($parentElementName='component')                and not($attributeName='level')) or
-                          (($parentElementName='unit')                     and not($attributeName='conversionFactor')) or
-					      ($parentElementName='ArcClose2D'                 and $attributeName='closureType') or
-					      ($parentElementName='BlendedVolumeStyle'         and (starts-with($attributeName,'weightFunction') or ($attributeName='magnificationFilter') or ($attributeName='minificationFilter') or ($attributeName='textureCompression'))) or
-                          (ends-with($parentElementName,'Fog')             and $attributeName='fogType') or
-					      ($parentElementName='HAnimHumanoid'              and $attributeName='version') or
-					      (ends-with($parentElementName,'FontStyle')       and $attributeName='style') or
-						  ($parentElementName='GeneratedCubeMapTexture'    and $attributeName='update') or
-						  ($parentElementName='ParticleSystem'             and $attributeName='geometryType') or
-						  (ends-with($parentElementName,'PickSensor')      and ($attributeName='intersectionType' or $attributeName='matchCriterion' or $attributeName='sortOrder')) or
-						  ($parentElementName='ProjectionVolumeStyle'      and $attributeName='type') or
-						  ($parentElementName='ShadedVolumeStyle'          and $attributeName='phaseFunction') or
-					      ($parentElementName='ShaderPart'                 and $attributeName='type') or
-					      ($parentElementName='ShaderProgram'              and $attributeName='type') or
-					      ($parentElementName='TextureCoordinateGenerator' and $attributeName='mode') or
-					      ($parentElementName='TextureProperties'          and (starts-with($attributeName,'boundaryMode') or ($attributeName='magnificationFilter') or ($attributeName='minificationFilter') or ($attributeName='textureCompression'))) or
-                          ($parentElementName='WorldInfo'                  and $attributeName='title') or
-                          ($parentElementName='XvlShell'                   and $attributeName='shellType')">
-			  <xsl:text>SFString</xsl:text>
-		  </xsl:when>
-		  <!-- Statements: xs:integer as SFInt32 - TODO schema/spec change? -->
-		  <xsl:when test="($localFieldType='SFInt32')           or 
-                          (($parentElementName='component')                and $attributeName='level')">
-			  <xsl:text>SFInt32</xsl:text>
-		  </xsl:when>
-		  <xsl:when test="($localFieldType='SFDouble')          or 
-                          ($parentElementName='unit'      and $attributeName='conversionFactor')">
-			  <xsl:text>SFDouble</xsl:text>
-		  </xsl:when>
-		  <!-- X3D statements (i.e. not nodes): xs:string (including X3D version attribute) -->
-		  <xsl:when test="($attributeName='class')       or
-                          ($parentElementName='X3D')     or ($parentElementName='ROUTE')   or ($parentElementName='meta')    or
-					      ($parentElementName='EXPORT')  or ($parentElementName='IMPORT')  or ($parentElementName='connect')">
-			  <!-- includes X3D version. field/fieldValue type logic handled separately -->
-			  <xsl:text>xs:string</xsl:text> 
-		  </xsl:when>
-		  <!-- MFString (some are also enumerations) -->
-		  <xsl:when test="
-					($localFieldType='MFString')   or 
-                    ($attributeName='url') or contains($attributeName,'Url') or
-					($attributeName='forceOutput') or
-					($attributeName='objectType')  or
-					($parentElementName='Anchor' and $attributeName='parameter') or
-					($parentElementName='CollisionCollection' and $attributeName='appliedParameters') or
-					($parentElementName='Contact' and $attributeName='appliedParameters') or
-					(ends-with($parentElementName,'FontStyle') and ($attributeName='family' or $attributeName='justify')) or
-					(starts-with($parentElementName,'Geo') and ($attributeName='geoSystem')) or
-					($parentElementName='GeoMetadata' and $attributeName='summary') or
-					($parentElementName='GeoViewpoint' and contains($attributeName,'navType')) or
-					($parentElementName='HAnimHumanoid' and $attributeName='info') or
-					($parentElementName='Layout' and ($attributeName='align' or $attributeName='offsetUnits' or $attributeName='scaleMode' or $attributeName='sizeUnits')) or
-					($parentElementName='MetadataString' and $attributeName='value') or
-					($parentElementName='MultiTexture' and ($attributeName='function' or $attributeName='mode' or $attributeName='source')) or
-					($parentElementName='NavigationInfo' and ($attributeName='type' or $attributeName='transitionType')) or
-					($parentElementName='Text' and $attributeName='string') or
-					($parentElementName='UniversalJoint' and $attributeName='forceOutput') or
-					($parentElementName='WorldInfo' and $attributeName='info')">
-			  <xsl:text>MFString</xsl:text>
-		  </xsl:when>
-		  <!-- SFBool -->
-		  <xsl:when test="
-					($localFieldType='SFBool')  or 
-                    ($attributeName='activate') or
-					($attributeName='ccw')      or
-					($attributeName='closed')   or
-					($attributeName='convex')   or
-					($attributeName='colorPerVertex') or
-					($attributeName='enabled')  or
-					($attributeName='global')   or
-					($attributeName='normalPerVertex') or
-					($attributeName='on')       or
-					($attributeName='loop')     or
-					($attributeName='normalizeVelocity') or
-					($attributeName='rtpHeaderExpected') or
-					($attributeName='solid') or
-					($attributeName='uClosed') or ($attributeName='vClosed') or
-					($parentElementName='AudioClip' and $attributeName='loop') or
-					($parentElementName='Collision' and $attributeName='enabled') or
-					($parentElementName='CollisionSpace' and $attributeName='useGeometry') or
-					($parentElementName='Cone' and ($attributeName='side' or $attributeName='bottom')) or
-					($parentElementName='Cylinder' and ($attributeName='side' or $attributeName='bottom' or $attributeName='top')) or
-					($parentElementName='CylinderSensor' and $attributeName='autoOffset') or
-					($parentElementName='EspduTransform' and ($attributeName='fired1' or $attributeName='fired2')) or
-					($parentElementName='Extrusion' and ($attributeName='beginCap' or $attributeName='endCap')) or
-					($parentElementName='FillProperties' and ($attributeName='filled' or $attributeName='hatched')) or
-					(ends-with($parentElementName,'FontStyle') and ($attributeName='horizontal' or $attributeName='leftToRight' or $attributeName='topToBottom')) or
-					($parentElementName='GeoInline' and $attributeName='load') or
-					($parentElementName='GeoOrigin' and $attributeName='rotateYUp') or
-					($parentElementName='GeoViewpoint' and $attributeName='headlight') or
-					($parentElementName='ImageTexture' and ($attributeName='repeatS' or $attributeName='repeatT')) or
-					($parentElementName='Inline' and ($attributeName='load')) or
-					(ends-with($parentElementName,'Layer') and ($attributeName='isPickable')) or
-					($parentElementName='LineProperties' and ($attributeName='applied')) or
-					($parentElementName='LOD' and ($attributeName='forceTransitions')) or
-					($parentElementName='MotorJoint' and $attributeName='autoCalc') or
-					($parentElementName='MovieTexture' and ($attributeName='repeatS' or $attributeName='repeatT' or $attributeName='loop')) or
-					($parentElementName='NurbsPatchSurface' and $attributeName='closedSurface') or
-					($parentElementName='ParticleSystem' and $attributeName='createParticles') or
-					($parentElementName='VolumeEmitter' and $attributeName='internal') or
-					($parentElementName='PickableGroup' and $attributeName='pickable') or
-					($parentElementName='PixelTexture' and ($attributeName='repeatS' or $attributeName='repeatT')) or
-					($parentElementName='NavigationInfo' and $attributeName='headlight') or
-					($parentElementName='PlaneSensor' and $attributeName='autoOffset') or
-					($parentElementName='RigidBody' and ($attributeName='autoDamp' or $attributeName='autoDisable' or $attributeName='fixed' or $attributeName='useFiniteRotation' or $attributeName='useGlobalGravity')) or
-					($parentElementName='RigidBodyCollection' and ($attributeName='autoDisable' or $attributeName='preferAccuracy')) or
-					($parentElementName='SphereSensor' and $attributeName='autoOffset') or
-					($parentElementName='StringSensor' and $attributeName='deletionAllowed') or
-					($parentElementName='Script' and ($attributeName='directOutput' or $attributeName='mustEvaluate')) or
-					($parentElementName='ShadedVolumeStyle' and ($attributeName='lighting' or $attributeName='shadows')) or
-					($parentElementName='Sound' and $attributeName='spatialize') or
-					($parentElementName='TextureProperties' and $attributeName='generateMipMaps') or
-					($parentElementName='TimeSensor' and $attributeName='loop') or
-					($parentElementName='TwoSidedMaterial' and $attributeName='separateBackColor') or
-					(ends-with($parentElementName,'Viewpoint') and ($attributeName='jump' or $attributeName='retainUserOffsets')) or
-					($parentElementName='VolumeEmitter' and $attributeName='internal')">
-			  <xsl:text>SFBool</xsl:text>
-		  </xsl:when>
-		  <!-- MFBool -->
-		  <xsl:when test="
-					($localFieldType='MFBool')  or 
-                    (contains($parentElementName,'BooleanSequencer') and $attributeName='keyValue') or
-					($parentElementName='CADLayer'                   and $attributeName='visible') or
-					($parentElementName='MetadataBoolean'            and $attributeName='value') or
-					($parentElementName='SegmentedVolumeData'        and $attributeName='segmentEnabled') or
-					($parentElementName='XvlShell'                   and ($attributeName='faceEmpty' or $attributeName='faceHidden'))">
-			  <xsl:text>MFBool</xsl:text>
-		  </xsl:when>
-		  <!-- SFColor -->
-		  <xsl:when test="
-					($localFieldType='SFColor')  or 
-                    ($parentElementName='CartoonVolumeStyle' and ($attributeName='orthogonalColor' or $attributeName='parallelColor')) or
-					($parentElementName='ColorChaser' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
-					($parentElementName='ColorDamper' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
-					(contains($parentElementName,'Light') and $attributeName='color') or
-					($parentElementName='FillProperties' and ($attributeName='hatchColor')) or
-					(contains($parentElementName,'Fog') and $attributeName='color') or
-					(contains($parentElementName,'Material') and contains($attributeName,'Color')) or
-					($parentElementName='MultiTexture' and $attributeName='color')">
-			  <xsl:text>SFColor</xsl:text>
-		  </xsl:when>
-		  <!-- SFColorRGBA -->
-		  <xsl:when test="
-					($localFieldType='SFColorRGBA')  or 
-                    ($parentElementName='EdgeEnhancementVolumeStyle' and $attributeName='edgeColor') or
-					($parentElementName='TextureProperties' and $attributeName='borderColor') or
-					($parentElementName='ToneMappedVolumeStyle' and ($attributeName='coolColor' or $attributeName='warmColor'))">
-			  <xsl:text>SFColorRGBA</xsl:text>
-		  </xsl:when>
-		  <!-- MFColor -->
-		  <xsl:when test="
-					(($localFieldType='MFColor')  or 
-                    $parentElementName='Color' and $attributeName='color') or
-					($parentElementName='ColorInterpolator' and $attributeName='keyValue') or
-					(ends-with($parentElementName,'Background') and ($attributeName='groundColor' or $attributeName='skyColor'))">
-			  <xsl:text>MFColor</xsl:text>
-		  </xsl:when>
-		  <!-- MFColorRGBA -->
-		  <xsl:when test="
-					($localFieldType='MFColorRGBA')  or 
-                    ($parentElementName='ColorRGBA' and $attributeName='color')">
-			  <xsl:text>MFColorRGBA</xsl:text>
-		  </xsl:when>
-		  <!-- SFImage -->
-		  <xsl:when test="
-					($localFieldType='SFImage')  or 
-                    ($parentElementName='PixelTexture' and $attributeName='image')">
-			  <xsl:text>SFImage</xsl:text>
-		  </xsl:when>
-		  <!-- no MFImage attributes -->
-		  <!-- SFDouble --> <!-- precedes SFFloat since some fields are different than usual -->
-		  <xsl:when test="
-					($localFieldType='SFDouble')  or 
-                    ($parentElementName='GeoElevationGrid' and (($attributeName='creaseAngle') or ($attributeName='xSpacing') or ($attributeName='zSpacing')))">
-			  <xsl:text>SFDouble</xsl:text>
-		  </xsl:when>
-		  <!-- MFDouble -->
-		  <xsl:when test="
-					($localFieldType='MFDouble')  or 
-                    ($parentElementName='GeoElevationGrid'   and $attributeName='height') or
-					($parentElementName='MetadataDouble'     and $attributeName='value')  or
-					(starts-with($parentElementName,'Nurbs') and (($attributeName='knot') or ($attributeName='weight') or contains($attributeName,'Knot')))">
-			  <xsl:text>MFDouble</xsl:text>
-		  </xsl:when>
-		  <!-- SFFloat -->
-		  <xsl:when test="
-					($localFieldType='SFFloat')  or 
-                    ($attributeName='ambientIntensity') or
-					($attributeName='intensity')        or
-					($attributeName='creaseAngle')      or
-                    ($attributeName='radius')           or ($attributeName='innerRadius') or ($attributeName='outerRadius') or
-                    ($attributeName='startAngle')       or ($attributeName='endAngle') or
-                    ($attributeName='tolerance')        or
-					($attributeName='transparency')     or
-					(starts-with($parentElementName,'Arc') and (contains($attributeName,'Angle') or $attributeName='radius')) or
-					($parentElementName='AudioClip' and $attributeName='pitch') or
-					($parentElementName='BlendedVolumeStyle' and starts-with($attributeName,'weightConstant')) or
-					($parentElementName='BoundaryEnhancementVolumeStyle' and (($attributeName='boundaryOpacity') or ($attributeName='opacityFactor') or ($attributeName='retainedOpacity'))) or
-					($parentElementName='Circle2D' and $attributeName='radius') or
-					($parentElementName='CollisionCollection' and ($attributeName='bounce' or $attributeName='minBounceSpeed' or $attributeName='softnessConstantForceMix' or $attributeName='softnessErrorCorrection')) or
-					($parentElementName='Cone' and ($attributeName='bottomRadius' or $attributeName='height')) or
-					($parentElementName='Contact' and ($attributeName='bounce' or $attributeName='depth' or $attributeName='minBounceSpeed' or $attributeName='softnessConstantForceMix' or $attributeName='softnessErrorCorrection')) or
-					($parentElementName='Cylinder' and ($attributeName='radius' or $attributeName='height')) or
-					($parentElementName='CylinderSensor' and ($attributeName='diskAngle' or $attributeName='maxAngle' or $attributeName='minAngle' or $attributeName='offset')) or
-					($parentElementName='Disk2D' and contains($attributeName,'Radius')) or
-					($parentElementName='DoubleAxisHingeJoint' and (starts-with($attributeName,'desiredAngularVelocity') or starts-with($attributeName,'max') or $attributeName='minAngle1' or starts-with($attributeName,'stop') or starts-with($attributeName,'suspension'))) or
-					($parentElementName='EdgeEnhancementVolumeStyle' and $attributeName='gradientThreshold') or
-					(contains($parentElementName,'ElevationGrid') and ($attributeName='xSpacing' or $attributeName='zSpacing')) or
-					(ends-with($parentElementName,'Emitter') and ($attributeName='angle' or $attributeName='speed' or $attributeName='variation' or $attributeName='mass' or $attributeName='surfaceArea')) or
-					($parentElementName='EspduTransform' and $attributeName='firingRange') or
-					(ends-with($parentElementName,'Fog') and $attributeName='visibilityRange') or
-					($parentElementName='FontStyle' and ($attributeName='size' or $attributeName='spacing')) or
-					($parentElementName='GeoElevationGrid' and $attributeName='yScale') or
-					($parentElementName='GeoLOD' and $attributeName='range') or
-					($parentElementName='GeoViewpoint' and $attributeName='speedFactor') or
-					($parentElementName='HAnimDisplacer' and $attributeName='weight') or
-					($parentElementName='HAnimSegment' and $attributeName='mass') or
-					($parentElementName='IsoSurfaceVolumeData' and ($attributeName='contourStepSize' or $attributeName='surfaceTolerance')) or
-					($parentElementName='LineProperties'   and ($attributeName='linewidthScaleFactor')) or
-					($parentElementName='Material'         and ($attributeName='ambientIntensity'     or $attributeName='shininess'     or $attributeName='transparency')) or
-					($parentElementName='ParticleSystem'   and ($attributeName='lifetimeVariation' or $attributeName='particleLifetime')) or
-					($parentElementName='TwoSidedMaterial' and ($attributeName='backAmbientIntensity' or $attributeName='backShininess' or $attributeName='backTransparency')) or
-					($parentElementName='MotorJoint'       and (starts-with($attributeName,'axis') or starts-with($attributeName,'stop'))) or
-					($parentElementName='MovieTexture'     and ($attributeName='pitch' or $attributeName='speed')) or
-					($parentElementName='MultiTexture'     and $attributeName='alpha') or
-					($parentElementName='NavigationInfo'   and ($attributeName='speed' or $attributeName='visibilityLimit' or $attributeName='transitionTime')) or
-					($parentElementName='NurbsSet' and $attributeName='tessellationScale') or
-					($parentElementName='PointLight' and $attributeName='radius') or
-					($parentElementName='ProjectionVolumeStyle' and $attributeName='intensityThreshold') or
-					($parentElementName='ReceiverPdu' and $attributeName='receivedPower') or
-					($parentElementName='RigidBody' and ($attributeName='angularDampingFactor' or starts-with($attributeName,'disable') or $attributeName='linearDampingFactor' or $attributeName='mass')) or
-					($parentElementName='RigidBodyCollection' and ($attributeName='constantForceMix' or $attributeName='contactSurfaceThickness' or starts-with($attributeName,'disable') or $attributeName='errorCorrection' or $attributeName='maxCorrectionSpeed')) or
-					($parentElementName='ScalarChaser' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
-					($parentElementName='ScalarDamper' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
-					($parentElementName='ScreenFontStyle' and ($attributeName='pointSize' or $attributeName='spacing')) or
-					($parentElementName='SilhouetteEnhancementVolumeStyle' and starts-with($attributeName,'silhouette')) or
-					($parentElementName='SingleAxisHingeJoint' and ($attributeName='maxAngle' or $attributeName='minAngle' or $attributeName='stopBounce' or $attributeName='stopErrorCorrection')) or
-					($parentElementName='SliderJoint' and ($attributeName='maxSeparation' or $attributeName='minSeparation' or $attributeName='sliderForce' or $attributeName='stopBounce' or $attributeName='stopErrorCorrection')) or
-					($parentElementName='SpotLight' and ($attributeName='radius' or $attributeName='cutOffAngle' or $attributeName='beamWidth')) or
-					($parentElementName='Sound' and ($attributeName='maxBack' or $attributeName='minBack' or $attributeName='maxFront' or $attributeName='minFront' or $attributeName='priority')) or
-					($parentElementName='Sphere' and $attributeName='radius') or
-					($parentElementName='Text' and $attributeName='maxExtent') or
-					($parentElementName='TextureProperties' and ($attributeName='anisotropicDegree' or $attributeName='texturePriority')) or
-					($parentElementName='TextureTransform' and $attributeName='rotation') or
-					($parentElementName='TransmitterPdu' and ($attributeName='power' or $attributeName='transmitFrequencyBandwidth')) or
-					($parentElementName='UniversalJoint' and starts-with($attributeName,'stop')) or
-					(contains($parentElementName,'Viewpoint') and $attributeName='fieldOfView') or
-					($parentElementName='WindPhysicsModel'    and ($attributeName='gustiness' or $attributeName='speed' or $attributeName='turbulence'))">
-			  <xsl:text>SFFloat</xsl:text>
-		  </xsl:when>
-		  <!-- MFFloat -->
-		  <xsl:when test="
-					($localFieldType='MFFloat')  or 
-                    ($attributeName='key')       or
-					(contains($parentElementName,'ElevationGrid') and $attributeName='height') or
-					(contains($parentElementName,'LOD') and $attributeName='range') or
-					(ends-with($parentElementName,'Background') and ($attributeName='groundAngle' or $attributeName='skyAngle')) or
-					($parentElementName='EspduTransform' and $attributeName='articulationParameterArray') or
-					($parentElementName='FloatVertexAttribute' and $attributeName='value') or
-					($parentElementName='FogCoordinate' and $attributeName='depth') or
-					($parentElementName='HAnimSisplacer' and $attributeName='weight') or
-					($parentElementName='HAnimJoint' and ($attributeName='llimit' or $attributeName='ulimit' or $attributeName='skinCoordWeight' or $attributeName='stiffness')) or
-					($parentElementName='HAnimSegment' and $attributeName='momentsOfInertia') or
-					($parentElementName='IsoSurfaceVolumeData' and $attributeName='surfaceValues') or
-					($parentElementName='Layout' and ($attributeName='offset' or $attributeName='size')) or
-					($parentElementName='MetadataFloat' and $attributeName='value') or
-					($parentElementName='NavigationInfo' and $attributeName='avatarSize') or
-					($parentElementName='NurbsTextureCoordinate' and $attributeName='weight') or
-					($parentElementName='ParticleSystem' and ($attributeName='colorKey' or $attributeName='texCoordKey')) or
-					($parentElementName='ScalarInterpolator' and $attributeName='keyValue') or
-					($parentElementName='SplineScalarInterpolator' and ($attributeName='keyValue' or $attributeName='keyVelocity')) or
-					($parentElementName='Text' and $attributeName='length') or
-					($parentElementName='TextureCoordinateGenerator' and $attributeName='parameter') or
-					($parentElementName='Viewport' and $attributeName='clipBoundary') or
-					($parentElementName='XvlShell' and ($attributeName='vertexRound' or $attributeName='edgeRound'))">
-			  <xsl:text>MFFloat</xsl:text>
-		  </xsl:when>
-		  <!-- SFTime -->
-		  <xsl:when test="
-					($localFieldType='SFTime')        or 
-                    ($parentElementName='TimeSensor') or
-                    ($attributeName='duration')       or
-                    ($attributeName='tau')            or
-                    ($attributeName='timestamp')      or
-                    ($attributeName='readInterval')   or
-                    ($attributeName='writeInterval')  or
-                    ($parentElementName='LoadSensor'     and $attributeName='timeOut')  or
-                    ($parentElementName='AudioClip'      and ends-with($attributeName,'Time'))  or
-                    ($parentElementName='EspduTransform' and ends-with($attributeName,'Time'))  or
-                    ($parentElementName='MovieTexture'   and ends-with($attributeName,'Time'))"> 
-			  <!-- TimeSensor loop & enabled are caught by SFBool tests, all other TimeSensorfields are SFTime -->
-			  <xsl:text>SFTime</xsl:text>
-		  </xsl:when>
-		  <!-- no MFTime -->
-		  <!-- SFVec2f -->
-		  <xsl:when test="
-					($localFieldType='SFVec2f')  or 
-                    ($parentElementName='CollisionCollection' and ($attributeName='frictionCoefficients' or $attributeName='slipFactors' or $attributeName='surfaceSpeed')) or
-					($parentElementName='Contact' and ($attributeName='frictionCoefficients' or $attributeName='slipCoefficients' or $attributeName='surfaceSpeed')) or
-					($parentElementName='ParticleSystem' and $attributeName='particleSize') or
-					($parentElementName='PlaneSensor' and ($attributeName='maxPosition' or $attributeName='minPosition')) or
-					($parentElementName='PositionChaser2D' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
-					($parentElementName='PositionDamper2D' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
-					($parentElementName='Rectangle2D' and ($attributeName='size')) or
-					($parentElementName='TextureTransform' and ($attributeName='center' or $attributeName='scale' or $attributeName='translation'))">
-			  <xsl:text>SFVec2f</xsl:text>
-		  </xsl:when>
-		  <!-- MFVec2f -->
-		  <xsl:when test="
-					($localFieldType='MFVec2f')  or 
-                    ($parentElementName='EaseInEaseOut' and $attributeName='easeInEaseOut') or
-					($parentElementName='Extrusion' and ($attributeName='crossSection' or $attributeName='scale')) or
-					(($parentElementName='CoordinateInterpolator2D' or $parentElementName='PositionInterpolator2D') and $attributeName='keyValue') or
-					(($parentElementName='ContourPolyline2D' or $parentElementName='Polypoint2D' or $parentElementName='TextureCoordinate') and $attributeName='point') or
-					(($parentElementName='NurbsTextureCoordinate') and $attributeName='controlPoint') or
-					(($parentElementName='Polyline2D') and $attributeName='lineSegments') or
-					(($parentElementName='SplinePositionInterpolator2D') and ($attributeName='keyValue' or $attributeName='keyVelocity')) or
-					($parentElementName='TexCoordChaser2D' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
-					($parentElementName='TexCoordDamper2D' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
-					(($parentElementName='TriangleSet2D') and $attributeName='vertices')">
-			  <xsl:text>MFVec2f</xsl:text>
-		  </xsl:when>
-		  <!-- MFVec2d -->
-		  <xsl:when test="
-					($localFieldType='MFVec2d')  or
-					(($parentElementName='ContourPolyline2D') or ($parentElementName='NurbsCurve2D') and $attributeName='controlPoint')">
-       	  <xsl:text>MFVec2d</xsl:text>
-		  </xsl:when>
-		   
-		  <!-- SFVec3d -->
-		  <xsl:when test="
-					($localFieldType='SFVec3d')  or 
-                    ($attributeName='geoCenter') or
-					($attributeName='geoCoords') or
-					($parentElementName='GeoElevationGrid'   and $attributeName='geoGridOrigin') or
-					($parentElementName='GeoLOD'             and $attributeName='center') or
-					($parentElementName='GeoProximitySensor' and $attributeName='center') or
-					($parentElementName='GeoViewpoint'       and ($attributeName='centerOfRotation' or $attributeName='position'))">
-			  <xsl:text>SFVec3d</xsl:text>
-		  </xsl:when>
-		  <!-- MFVec3d -->
-		  <xsl:when test="
-					($localFieldType='MFVec3d')  or 
-                    ($parentElementName='ContourPolyline2D'       and $attributeName='controlPoint') or
-					($parentElementName='CoordinateDouble'        and $attributeName='point') or
-					($parentElementName='GeoCoordinate'           and $attributeName='point') or
-					($parentElementName='GeoPositionInterpolator' and $attributeName='keyValue') or
-					($parentElementName='GeoViewpoint'            and contains($attributeName,'position'))">
-			  <xsl:text>MFVec3d</xsl:text>
-		  </xsl:when>
-		  <!-- SFVec3f -->
-		  <!-- note TextureTransform tests must precede these default checks -->
-		  <xsl:when test="
-					($localFieldType='SFVec3f')    or 
-                    ($attributeName='anchorPoint') or
-					($attributeName='bboxCenter')  or
-					($attributeName='bboxSize')    or
-					($attributeName='center')      or
-					($attributeName='scale')       or
-					($attributeName='translation') or
-					($parentElementName='Billboard' and $attributeName='axisOfRotation') or
-					($parentElementName='Box' and $attributeName='size') or
-					(ends-with($parentElementName,'Emitter') and ($attributeName='direction' or $attributeName='position')) or
-					($parentElementName='Contact' and ($attributeName='contactNormal' or $attributeName='frictionDirection' or $attributeName='position')) or
-					($parentElementName='DirectionalLight' and $attributeName='direction') or
-					($parentElementName='DoubleAxisHingeJoint' and ($attributeName='axis1' or $attributeName='axis2')) or
-					($parentElementName='EspduTransform' and (ends-with($attributeName,'Location') or $attributeName='linearVelocity' or $attributeName='linearAcceleration' or ends-with($attributeName,'Point'))) or
-					($parentElementName='ForcePhysicsModel' and $attributeName='force') or
-					($parentElementName='GeoProximitySensor' and $attributeName='size') or
-					(starts-with($parentElementName,'HAnim') and ($attributeName='center' or $attributeName='scale' or $attributeName='translation')) or
-					($parentElementName='HAnimSegment' and $attributeName='centerOfMass') or
-					(contains($parentElementName,'LOD') and $attributeName='center') or
-					($parentElementName='MotorJoint' and ($attributeName='motor1Axis' or $attributeName='motor2Axis' or $attributeName='motor3Axis')) or
-					($parentElementName='PlaneSensor' and $attributeName='offset') or
-					($parentElementName='PositionChaser' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
-					($parentElementName='PositionDamper' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
-					($parentElementName='ProximitySensor' and ($attributeName='center' or $attributeName='size')) or
-					($parentElementName='PointLight' and ($attributeName='attenuation' or $attributeName='location')) or
-					($parentElementName='RigidBody' and ($attributeName='angularVelocity' or $attributeName='centerOfMass' or $attributeName='finiteRotationAxis' or $attributeName='linearVelocity' or $attributeName='position')) or
-					($parentElementName='RigidBodyCollection' and ($attributeName='gravity')) or
-					($parentElementName='SingleAxisHingeJoint' and ($attributeName='axis')) or
-					($parentElementName='SliderJoint' and ($attributeName='axis')) or
-					($parentElementName='Sound' and ($attributeName='direction' or $attributeName='location')) or
-					($parentElementName='SpotLight' and ($attributeName='attenuation' or $attributeName='direction' or $attributeName='location')) or
-					($parentElementName='Transform' and ($attributeName='center' or $attributeName='scale' or $attributeName='translation')) or
-					($parentElementName='TransformSensor' and ($attributeName='size')) or
-					($parentElementName='TransmitterPdu' and (ends-with($attributeName,'Location'))) or
-					($parentElementName='UniversalJoint' and ($attributeName='axis1' or $attributeName='axis2')) or
-					(($parentElementName='Viewpoint' or $parentElementName='OrthoViewpoint') and ($attributeName='position' or $attributeName='centerOfRotation')) or
-					($parentElementName='ViewpointGroup'   and $attributeName='size') or
-					($parentElementName='VisibilitySensor' and $attributeName='size') or
-					(contains($parentElementName,'VolumeData') and $attributeName='dimensions') or
-					($parentElementName='WindPhysicsModel' and $attributeName='direction')">
-			  <xsl:text>SFVec3f</xsl:text>
-		  </xsl:when>
-		  <!-- MFVec3f -->
-		  <xsl:when test="
-					($localFieldType='MFVec3f')    or 
-                    ($parentElementName='CoordinateChaser' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
-					($parentElementName='CoordinateDamper' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
-					($parentElementName='CoordinateInterpolator'     and $attributeName='keyValue') or
-					($parentElementName='NormalInterpolator'         and $attributeName='keyValue') or
-					($parentElementName='PositionInterpolator'       and $attributeName='keyValue') or
-					($parentElementName='SplinePositionInterpolator' and ($attributeName='keyValue' or $attributeName='keyVelocity')) or
-					(contains($parentElementName,'Coordinate') and $attributeName='point') or
-					($parentElementName='Extrusion' and $attributeName='spine') or
-					($parentElementName='Normal' and $attributeName='vector') or
-					($parentElementName='HAnimDisplacer' and $attributeName='displacements') or
-					($parentElementName='XvlShell' and ($attributeName='edgeBeginVector' or $attributeName='edgeEndVector'))">
-			  <xsl:text>MFVec3f</xsl:text>
-		  </xsl:when>
-		  <!-- SFVec4f -->
-		  <xsl:when test="
-					($localFieldType='MFVec3f')    or 
-                    ($parentElementName='ClipPlane' and $attributeName='plane')">
-			  <xsl:text>SFVec4f</xsl:text>
-		  </xsl:when>
-		  <!-- SFRotation -->
-		  <!-- note TextureTransform tests must precede these default checks -->
-		  <xsl:when test="
-					($localFieldType='MFVec3f')    or 
-                    ($attributeName='rotation') or
-					($attributeName='scaleOrientation') or
-					(($parentElementName='CylinderSensor' or $parentElementName='PlaneSensor') and $attributeName='axisRotation') or
-					($parentElementName='OrientationChaser' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
-					($parentElementName='OrientationDamper' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
-					($parentElementName='RigidBody' and $attributeName='orientation') or
-					($parentElementName='SphereSensor' and $attributeName='offset') or
-					($parentElementName='Transform' and ($attributeName='rotation' or $attributeName='scaleOrientation')) or
-					(contains($parentElementName,'Viewpoint') and $attributeName='orientation') or
-					($parentElementName='HAnimJoint' and ($attributeName='limitOrientation' or $attributeName='rotation' or $attributeName='scaleOrientation')) or
-					($parentElementName='HAnimSite' and ($attributeName='rotation' or $attributeName='scaleOrientation'))">
-			  <xsl:text>SFRotation</xsl:text>
-		  </xsl:when>
-		  <!-- MFRotation -->
-		  <xsl:when test="
-					($localFieldType='MFVec3f')    or 
-                    ($parentElementName='Extrusion' and $attributeName='orientation') or
-					(ends-with($parentElementName,'OrientationInterpolator') and $attributeName='keyValue')">
-			  <xsl:text>MFRotation</xsl:text>
-		  </xsl:when>
-		  <!-- MFMatrix3f -->
-		  <xsl:when test="
-					($localFieldType='MFVec3f')    or 
-                    ($parentElementName='Matrix3VertexAttribute' and $attributeName='value')">
-			  <xsl:text>MFMatrix3f</xsl:text>
-		  </xsl:when>
-		  <!-- SFMatrix4f -->
-		  <xsl:when test="
-					($localFieldType='MFVec3f')    or 
-                    ($parentElementName='TextureTransformMatrix3D' and $attributeName='matrix')">
-			  <xsl:text>SFMatrix4f</xsl:text>
-		  </xsl:when>
-		  <!-- MFMatrix4f -->
-		  <xsl:when test="
-					(($localFieldType='MFVec3f')    or 
-                    $parentElementName='Matrix4VertexAttribute' and $attributeName='value')">
-			  <xsl:text>MFMatrix4f</xsl:text>
-		  </xsl:when>
-		  <!-- MFInt32 --> <!-- must precede MFInt32 -->
-		  <xsl:when test="
-					($localFieldType='MFVec3f')    or 
-                    ($attributeName='colorIndex') or
-					($attributeName='coordIndex') or
-					($attributeName='normalIndex') or
-					($attributeName='texCoordIndex') or
-					($attributeName='faceCoordIndex') or
-					($attributeName='faceTexCoordIndex') or
-					($attributeName='edgeBeginCoordIndex') or
-					($attributeName='edgeEndCoordIndex') or
-					($attributeName='fanCount') or
-					($attributeName='stripCount') or
-					($parentElementName='ContourPolyline2D' and $attributeName='index') or
-					($parentElementName='EspduTransform' and starts-with($attributeName,'articulationParameter') and ends-with($attributeName,'Array')) or
-					($parentElementName='HAnimJoint' and $attributeName='skinCoordIndex') or
-					(starts-with($parentElementName,'IndexedTriangle') and $attributeName='index') or
-					($parentElementName='IndexedQuadSet'               and $attributeName='index') or
-					($parentElementName='IntegerSequencer' and $attributeName='keyValue') or
-					($parentElementName='LayerSet' and ($attributeName='order')) or
-					($parentElementName='LineSet' and $attributeName='vertexCount') or
-					($parentElementName='MetadataInteger' and $attributeName='value') or
-					($parentElementName='SignalPdu' and $attributeName='data')">
-			  <xsl:text>MFInt32</xsl:text>
-		  </xsl:when>
-		  <!-- SFInt32 --> <!-- Note that other DIS attibutes must get tested before this, including MFInt32 -->
-		  <xsl:when test="
-                    ($localFieldType='MFVec3f')    or 
-                     ends-with($attributeName,'ID')             or
-                    ($attributeName='order')                    or
-					($attributeName='uOrder')                   or
-					($attributeName='vOrder')                   or
-					($attributeName='uDimension')               or
-					($attributeName='vDimension')               or
-					($parentElementName='DISEntityManager')     or
-					($parentElementName='DISEntityTypeMapping') or
-					($parentElementName='EspduTransform')       or
-					($parentElementName='SignalPdu')            or
-					($parentElementName='ReceiverPdu')          or
-					($parentElementName='TransmitterPdu')       or
-					($parentElementName='CartoonVolumeStyle' and $attributeName='colorSteps') or
-					($parentElementName='IntegerTrigger' and $attributeName='integerKey') or
-					(contains($parentElementName,'ElevationGrid') and ($attributeName='xDimension' or $attributeName='zDimension')) or
-					($parentElementName='FillProperties' and ($attributeName='hatchStyle')) or
-					($parentElementName='FloatVertexAttribute' and $attributeName='numComponents') or
-					($parentElementName='GeneratedCubeMapTexture' and $attributeName='size') or
-					($parentElementName='LayerSet' and ($attributeName='activeLayer')) or
-					($parentElementName='LineProperties' and ($attributeName='linetype')) or
-					($parentElementName='MotorJoint' and $attributeName='enabledAxe') or
-					($parentElementName='ParticleSystem' and $attributeName='maxParticles') or
-					($parentElementName='RigidBodyCollection' and $attributeName='iterations') or
-					($parentElementName='Switch' and $attributeName='whichChoice') or
-					($parentElementName='TextureProperties' and $attributeName='borderWidth') or
-					(starts-with($parentElementName,'Nurbs') and ($attributeName='order' or $attributeName='tessellation' or $attributeName='uTessellation' or $attributeName='vTessellation' or $attributeName='uTessellation' or $attributeName='dimension' or $attributeName='UDimension' or $attributeName='vDimension')) or
-					($parentElementName='XvlShell' and $attributeName='numberOfDivisions')">
-			  <xsl:text>SFInt32</xsl:text>
-		  </xsl:when>
-		  <xsl:otherwise>
-			  <xsl:choose>
-				<xsl:when test="($parentElementName='field')">
-					<xsl:value-of select="$localFieldType"/>
-				</xsl:when>
-				<!-- Other statement values require special handling, do not warn here -->
-				<xsl:when test="($parentElementName='field')          or ($parentElementName='fieldValue') or contains($parentElementName,'Proto') or
-                                ($parentElementName='meta')">
-					<xsl:text></xsl:text>
-				</xsl:when>
-				<xsl:when test="preceding::*[(local-name() = $parentElementName) and (starts-with($parentElementName,'Xvl'))]">
-					<!-- avoid repetitious warnings, no message.  TODO fix, test is not trapping properly. -->
-					<xsl:text></xsl:text>
-				</xsl:when>
-				<xsl:otherwise>
-					<xsl:message>
-						  <xsl:text>*** warning: X3dToES5.xslt attribute type not found for </xsl:text>
-						  <xsl:value-of select="$parentElementName"/>
-						  <xsl:text> </xsl:text>
-						  <xsl:value-of select="$attributeName"/>
-					</xsl:message>
-				</xsl:otherwise>
-			  </xsl:choose>
-		  </xsl:otherwise>
-		</xsl:choose>
-
-    </xsl:template>
-	
-	<!-- apply ES5 tying rules to array output according to X3D type -->
-	<xsl:template name="output-attribute-value">
-		<xsl:param name="inputString"><xsl:text></xsl:text></xsl:param>
-		<xsl:param name="attributeType"><xsl:text></xsl:text></xsl:param>
-		<xsl:param name="indent"><xsl:text></xsl:text></xsl:param>
-		
-		<xsl:variable name="tupleSize">
-			<xsl:call-template name="tuple-size">
-				<xsl:with-param name="type">
-					<xsl:value-of select="$attributeType"/>
+			</xsl:variable>
+			<xsl:text>new MFStringObject(</xsl:text>
+			<xsl:text>"</xsl:text>
+			<xsl:call-template name="escape-quote-characters">
+				<xsl:with-param name="inputString">
+					<!-- must escape backslashes before quote characters to avoid side effects -->
+					<xsl:call-template name="escape-backslash-characters"> <!-- tail recursion -->
+						<xsl:with-param name="inputString">
+							<xsl:value-of select="$quotedValue"/>
+						</xsl:with-param>
+					</xsl:call-template>
 				</xsl:with-param>
 			</xsl:call-template>
-		</xsl:variable>
-		<xsl:variable name="numbersPerGroup" select="($tupleSize * $tupleSplitSize)"/>
-		<xsl:variable name="embeddedSpaceCount" select="string-length(normalize-space(.)) - string-length(translate(.,' ',''))"/>
-		<xsl:variable name="isNumeric" select="(string-length(translate(.,'0123456789+-Ee. ','')) = 0)"/>
-			
-		<xsl:variable name="normalizedArray" select="normalize-space(translate(.,',',' '))"/>
-		<xsl:variable name="numberCount" select="1 + string-length(translate($normalizedArray,'0123456789+-Ee.',''))"/>
-		<xsl:variable name="tupleCount" select="($numberCount div $tupleSize)"/>
-		<xsl:variable name="numberArray" select="tokenize($normalizedArray,' ')"/>
+			<xsl:text>"</xsl:text>
+			<xsl:text>)</xsl:text>
+		</xsl:when>
+		<xsl:when test="($attributeType = 'SFBool')">
+			<xsl:value-of select="."/>
+		</xsl:when>
 
-		<xsl:choose>
-			<xsl:when test="($attributeType = 'SFString') or ($attributeType = 'xs:string')">
-				<xsl:text>"</xsl:text>
-				<xsl:call-template name="escape-quote-characters">
-					<xsl:with-param name="inputString">
-						<!-- must escape backslashes before quote characters to avoid side effects -->
-						<xsl:call-template name="escape-backslash-characters"> <!-- tail recursion -->
-							<xsl:with-param name="inputString">
-								<xsl:value-of select="."/>
-							</xsl:with-param>
-						</xsl:call-template>
-					</xsl:with-param>
-				</xsl:call-template>
-				<xsl:text>"</xsl:text>
-			</xsl:when>
-			<xsl:when test="($attributeType = 'MFString')">
-				<!-- special handling to avoid unintended errors -->
-				<xsl:variable name="quotedValue">
-					<xsl:choose>
-						<xsl:when test="not(contains(.,'&quot;'))">
-							<!-- MFStringObject is forgiving, but this code block fixes the error and notifies authors of valid practice -->
-							<xsl:message>
-								<xsl:text>*** No quotation marks found in MFString array of individual SFString values, wrapped them.</xsl:text>
+		<xsl:when test="($attributeType = 'MFBool')">
+			<xsl:text>Java.to([</xsl:text>
+			<xsl:value-of select="translate(normalize-space(.),' ',',')"/>
+			<xsl:text>], Java.type("boolean[]"))</xsl:text>
+		</xsl:when>
+		<xsl:when test="($attributeType = 'SFFloat')">
+			<xsl:value-of select="."/>
+			<xsl:text></xsl:text>
+		</xsl:when>
+		<xsl:when test="($attributeType = 'SFInt32') or ($attributeType = 'SFDouble') or ($attributeType = 'SFTime')">
+			<xsl:value-of select="."/>
+		</xsl:when>
+		<xsl:when test="($attributeType = 'MFInt32') or ($attributeType = 'SFImage')">
+			<xsl:text>Java.to([</xsl:text>
+			<xsl:value-of select="translate(normalize-space(.),' ',',')"/>
+			<xsl:text>], Java.type("int[]"))</xsl:text>
+		</xsl:when>
+		<xsl:when test="($attributeType = 'MFFloat')">
+			<xsl:text>Java.to([</xsl:text>
+			<xsl:call-template name="java-float-numbers">
+				<xsl:with-param name="inputString">
+					<xsl:value-of select="."/>
+				</xsl:with-param>
+				<xsl:with-param name="inputType" select="$attributeType"/>
+			</xsl:call-template>
+			<xsl:text>], Java.type("float[]"))</xsl:text>
+		</xsl:when>
+		<xsl:when test="($attributeType = 'MFDouble')">
+			<xsl:text>Java.to([</xsl:text>
+			<xsl:call-template name="java-double-numbers">
+				<xsl:with-param name="inputString">
+					<xsl:value-of select="."/>
+				</xsl:with-param>
+			</xsl:call-template>
+			<xsl:text>], Java.type("double[]"))</xsl:text>
+		</xsl:when>
+		<xsl:when test="($attributeType = 'SFVec2f') or ($attributeType = 'SFVec3f') or ($attributeType = 'SFVec4f') or
+						($attributeType = 'SFRotation') or starts-with($attributeType, 'SFColor')">
+			<xsl:call-template name="java-float-numbers">
+				<xsl:with-param name="inputString">
+					<xsl:value-of select="."/>
+				</xsl:with-param>
+				<xsl:with-param name="inputType" select="$attributeType"/>
+			</xsl:call-template>
+		</xsl:when>
+		<xsl:when test="($attributeType = 'SFVec2d') or ($attributeType = 'SFVec3d') or ($attributeType = 'SFVec4d')">
+			<xsl:call-template name="java-float-numbers">
+				<xsl:with-param name="inputString">
+					<xsl:value-of select="."/>
+				</xsl:with-param>
+				<xsl:with-param name="inputType" select="$attributeType"/>
+			</xsl:call-template>
+		</xsl:when>
+		<xsl:when test="starts-with($attributeType, 'MFColor') or ($attributeType = 'MFRotation') or
+						contains($attributeType,'MFVec2f') or contains($attributeType,'MFVec3f') or contains($attributeType,'MFVec4f') or
+						contains($attributeType,'Matrix3f') or contains($attributeType,'Matrix4f')">
+			<xsl:text>new </xsl:text>
+			<xsl:value-of select="$attributeType"/>
+			<xsl:text>Object(</xsl:text>
+			<xsl:choose>
+				<xsl:when test="($tupleCount > $tupleSplitSize)">
+					<xsl:message>
+						<xsl:text>[Large tuple found: </xsl:text>
+						<xsl:value-of select="local-name(..)"/>
+						<xsl:text> </xsl:text>
+						<xsl:value-of select="local-name(.)"/>
+						<xsl:text>, $tupleCount=</xsl:text>
+						<xsl:value-of select="$tupleCount"/>
+						<xsl:text>, $tupleSplitSize=</xsl:text>
+						<xsl:value-of select="$tupleSplitSize"/>
+						<xsl:text>, string-length=</xsl:text>
+						<xsl:value-of select="string-length(normalize-space(.))"/>
+						<xsl:text>]</xsl:text>
+					</xsl:message>
+					<xsl:text>)</xsl:text>
+					<xsl:text> /* splitting up long array to improve readability */</xsl:text>
+					<!-- couldn't figure out clean expression for group size = $numbersPerGroup, even partitions appear singly -->
+					<xsl:for-each-group select="$numberArray" group-adjacent="((position() mod ($numbersPerGroup)) != 0)">
+						<xsl:choose>
+							<xsl:when test="(count(current-group()) > 1)">
 								<xsl:text>&#10;</xsl:text>
-								<xsl:text>*** &lt;</xsl:text>
-								<xsl:value-of select="local-name(..)"/>
-								<xsl:text> DEF='</xsl:text>
-								<xsl:value-of select="../@DEF"/>
-								<xsl:text>' name='</xsl:text>
-								<xsl:value-of select="../@name"/>
-								<xsl:text>' </xsl:text>
-								<xsl:value-of select="local-name(.)"/>
-								<xsl:text>='</xsl:text>
-								<xsl:value-of select="."/>
-								<xsl:text>'/&gt;</xsl:text>
-							</xsl:message>
-							<xsl:text>"</xsl:text>
-							<xsl:value-of select="."/>
-							<xsl:text>"</xsl:text>
-						</xsl:when>
-						<xsl:otherwise>
-							<xsl:value-of select="."/>
-						</xsl:otherwise>
-					</xsl:choose>
-				</xsl:variable>
-				<xsl:text>new MFStringObject(</xsl:text>
-				<xsl:text>"</xsl:text>
-				<xsl:call-template name="escape-quote-characters">
-					<xsl:with-param name="inputString">
-						<!-- must escape backslashes before quote characters to avoid side effects -->
-						<xsl:call-template name="escape-backslash-characters"> <!-- tail recursion -->
-							<xsl:with-param name="inputString">
-								<xsl:value-of select="$quotedValue"/>
-							</xsl:with-param>
-						</xsl:call-template>
-					</xsl:with-param>
-				</xsl:call-template>
-				<xsl:text>"</xsl:text>
-				<xsl:text>)</xsl:text>
-			</xsl:when>
-			<xsl:when test="($attributeType = 'SFBool')">
-				<xsl:value-of select="."/>
-			</xsl:when>
-			<xsl:when test="($attributeType = 'MFBool')">
-				<xsl:text>Java.to([</xsl:text>
-				<xsl:value-of select="translate(normalize-space(.),' ',',')"/>
-				<xsl:text>], Java.type("boolean[]"))</xsl:text>
-			</xsl:when>
-			<xsl:when test="($attributeType = 'SFFloat')">
-				<xsl:value-of select="."/>
-				<xsl:text></xsl:text>
-			</xsl:when>
-			<xsl:when test="($attributeType = 'SFInt32') or ($attributeType = 'SFDouble') or ($attributeType = 'SFTime')">
-				<xsl:value-of select="."/>
-			</xsl:when>
-			<xsl:when test="($attributeType = 'MFInt32') or ($attributeType = 'SFImage')">
-				<xsl:text>Java.to([</xsl:text>
-				<xsl:value-of select="translate(normalize-space(.),' ',',')"/>
-				<xsl:text>], Java.type("int[]"))</xsl:text>
-			</xsl:when>
-			<xsl:when test="($attributeType = 'MFFloat')">
-				<xsl:text>Java.to([</xsl:text>
-				<xsl:call-template name="java-float-numbers">
-					<xsl:with-param name="inputString">
-						<xsl:value-of select="."/>
-					</xsl:with-param>
-					<xsl:with-param name="inputType" select="$attributeType"/>
-				</xsl:call-template>
-				<xsl:text>], Java.type("float[]"))</xsl:text>
-			</xsl:when>
-			<xsl:when test="($attributeType = 'MFDouble')">
-				<xsl:text>Java.to([</xsl:text>
-				<xsl:call-template name="java-double-numbers">
-					<xsl:with-param name="inputString">
-						<xsl:value-of select="."/>
-					</xsl:with-param>
-				</xsl:call-template>
-				<xsl:text>], Java.type("double[]"))</xsl:text>
-			</xsl:when>
-			<xsl:when test="($attributeType = 'SFVec2f') or ($attributeType = 'SFVec3f') or ($attributeType = 'SFVec4f') or
-							($attributeType = 'SFRotation') or starts-with($attributeType, 'SFColor')">
-				<xsl:call-template name="java-float-numbers">
-					<xsl:with-param name="inputString">
-						<xsl:value-of select="."/>
-					</xsl:with-param>
-					<xsl:with-param name="inputType" select="$attributeType"/>
-				</xsl:call-template>
-			</xsl:when>
-			<xsl:when test="($attributeType = 'SFVec2d') or ($attributeType = 'SFVec3d') or ($attributeType = 'SFVec4d')">
-				<xsl:call-template name="java-float-numbers">
-					<xsl:with-param name="inputString">
-						<xsl:value-of select="."/>
-					</xsl:with-param>
-					<xsl:with-param name="inputType" select="$attributeType"/>
-				</xsl:call-template>
-			</xsl:when>
-			<xsl:when test="starts-with($attributeType, 'MFColor') or ($attributeType = 'MFRotation') or
-							contains($attributeType,'MFVec2f') or contains($attributeType,'MFVec3f') or contains($attributeType,'MFVec4f') or
-							contains($attributeType,'Matrix3f') or contains($attributeType,'Matrix4f')">
-				<xsl:text>new </xsl:text>
-				<xsl:value-of select="$attributeType"/>
-				<xsl:text>Object(</xsl:text>
-				<xsl:choose>
-					<xsl:when test="($tupleCount > $tupleSplitSize)">
-						<xsl:message>
-							<xsl:text>[Large tuple found: </xsl:text>
-							<xsl:value-of select="local-name(..)"/>
-							<xsl:text> </xsl:text>
-							<xsl:value-of select="local-name(.)"/>
-							<xsl:text>, $tupleCount=</xsl:text>
-							<xsl:value-of select="$tupleCount"/>
-							<xsl:text>, $tupleSplitSize=</xsl:text>
-							<xsl:value-of select="$tupleSplitSize"/>
-							<xsl:text>, string-length=</xsl:text>
-							<xsl:value-of select="string-length(normalize-space(.))"/>
-							<xsl:text>]</xsl:text>
-						</xsl:message>
-						<xsl:text>)</xsl:text>
-						<xsl:text> /* splitting up long array to improve readability */</xsl:text>
-						<!-- couldn't figure out clean expression for group size = $numbersPerGroup, even partitions appear singly -->
-						<xsl:for-each-group select="$numberArray" group-adjacent="((position() mod ($numbersPerGroup)) != 0)">
-							<xsl:choose>
-								<xsl:when test="(count(current-group()) > 1)">
-									<xsl:text>&#10;</xsl:text>
-									<!-- TODO fix indent -->
-									<xsl:value-of select="$indent"/>
-									<xsl:text>.append(</xsl:text>
-									<xsl:text>new </xsl:text>
-									<xsl:value-of select="$attributeType"/>
-									<xsl:text>Object(</xsl:text>
-									<xsl:text>Java.to([</xsl:text>
-									<xsl:call-template name="java-float-numbers">
-										<xsl:with-param name="inputString">
-											<xsl:value-of select="current-group()"/>
-										</xsl:with-param>
-										<xsl:with-param name="inputType" select="$attributeType"/>
-									</xsl:call-template>
-								</xsl:when>
-								<xsl:otherwise>
-									<!-- last item in sequence for preceding current-group() appears singly -->
-									<xsl:text>,</xsl:text>
-									<xsl:call-template name="java-float-numbers">
-										<xsl:with-param name="inputString">
-											<xsl:value-of select="current-group()"/>
-										</xsl:with-param>
-										<xsl:with-param name="inputType" select="$attributeType"/>
-									</xsl:call-template>
-								</xsl:otherwise>
-							</xsl:choose>
-							<!-- close invocation when all done -->
-							<xsl:if test="(count(current-group()) = 1) or (count(current-group()) &lt; $numbersPerGroup - 1)">
-								<xsl:text>], Java.type("float[]"))</xsl:text>
+								<!-- TODO fix indent -->
+								<xsl:value-of select="$indent"/>
+								<xsl:text>.append(</xsl:text>
+								<xsl:text>new </xsl:text>
+								<xsl:value-of select="$attributeType"/>
+								<xsl:text>Object(</xsl:text>
+								<xsl:text>Java.to([</xsl:text>
+								<xsl:call-template name="java-float-numbers">
+									<xsl:with-param name="inputString">
+										<xsl:value-of select="current-group()"/>
+									</xsl:with-param>
+									<xsl:with-param name="inputType" select="$attributeType"/>
+								</xsl:call-template>
+							</xsl:when>
+							<xsl:otherwise>
+								<!-- last item in sequence for preceding current-group() appears singly -->
+								<xsl:text>,</xsl:text>
+								<xsl:call-template name="java-float-numbers">
+									<xsl:with-param name="inputString">
+										<xsl:value-of select="current-group()"/>
+									</xsl:with-param>
+									<xsl:with-param name="inputType" select="$attributeType"/>
+								</xsl:call-template>
+							</xsl:otherwise>
+						</xsl:choose>
+						<!-- close invocation when all done -->
+						<xsl:if test="(count(current-group()) = 1) or (count(current-group()) &lt; $numbersPerGroup - 1)">
+							<xsl:text>], Java.type("float[]"))</xsl:text>
 								<xsl:text>)</xsl:text>
 								<xsl:text>)</xsl:text>
 							</xsl:if>
@@ -3291,11 +3377,22 @@ POSSIBILITY OF SUCH DAMAGE.
 			<xsl:variable name="attributeName" select="local-name()"/>
 			<xsl:variable name="isLargeAttribute" 
 						  select="not($elementName = 'meta') and
-								 (string-length(.) > $attributeSplitSize) and not($attributeName = 'url')"/>
+								 (string-length(.) > $attributeSplitSize) and not($attributeName = 'url') and not(contains($attributeName,'Url'))"/>
 			<xsl:if test="$isLargeAttribute">
 				<xsl:variable name="attributeType">
 					<xsl:call-template name="attribute-type"/>
 				</xsl:variable>
+				<xsl:variable name="tupleSize">
+					<xsl:call-template name="tuple-size">
+						<xsl:with-param name="type">
+							<xsl:value-of select="$attributeType"/>
+						</xsl:with-param>
+					</xsl:call-template>
+				</xsl:variable>
+				<xsl:variable name="embeddedSpaceCount" select="string-length(normalize-space(.)) - string-length(translate(.,' ',''))"/>
+				<xsl:variable name="numberOfValues"     select="($embeddedSpaceCount + 1)"/>
+				<xsl:variable name="numberOfTuples"     select="($numberOfValues div $tupleSize)"/>
+				
 				<xsl:variable name="dataObjectName">
 					<xsl:choose>
 						<xsl:when test="(string-length(normalize-space($DEF)) > 0)">
@@ -3332,8 +3429,30 @@ POSSIBILITY OF SUCH DAMAGE.
 					<xsl:value-of select="$attributeName"/>
 					<xsl:text> field, scene-graph level=</xsl:text>
 					<xsl:value-of select="$level"/>
-					<xsl:text>, element#</xsl:text>
+					<xsl:text>, element #</xsl:text>
 					<xsl:value-of select="$nodeNumber"/>
+					<xsl:text>, </xsl:text>
+					<xsl:value-of select="$numberOfValues"/>
+					<xsl:text> total </xsl:text>
+					<xsl:choose>
+						<xsl:when test="contains($attributeType,'String') or contains($attributeType,'Bool')">
+							<xsl:text>value</xsl:text>
+						</xsl:when>
+						<xsl:otherwise>
+							<xsl:text>number</xsl:text>
+						</xsl:otherwise>
+					</xsl:choose>
+					<xsl:if test="($numberOfValues > 1)">
+						<xsl:text>s</xsl:text>
+					</xsl:if>
+					<xsl:if test="($tupleSize > 1)">
+						<xsl:text> made up of </xsl:text>
+						<xsl:value-of select="$numberOfTuples"/>
+						<xsl:text> </xsl:text>
+						<xsl:value-of select="$tupleSize"/>
+						<xsl:text>-tuple </xsl:text>
+						<xsl:text>values</xsl:text>
+					</xsl:if>
 					<xsl:text> */</xsl:text>
 				</xsl:variable>
 
@@ -3382,5 +3501,80 @@ POSSIBILITY OF SUCH DAMAGE.
 			</xsl:call-template>
 		</xsl:for-each>
 	</xsl:template>
+
+    <!-- print-indent keeps track of indenting level -->
+    <xsl:template name="stringify-text-lines">
+      <xsl:param name="inputString"><xsl:text></xsl:text><!-- default value is empty --></xsl:param>
+	  <xsl:param name="continuation"><xsl:text>false</xsl:text></xsl:param>
+
+      <xsl:if test="(string-length($inputString) > 0)">
+		<xsl:choose>
+			<!-- first special character encountered: \ which is escaped as \\ -->
+			<xsl:when test="contains($inputString,'\') and
+					((not(contains($inputString,'&quot;')) or contains(substring-before($inputString,'&quot;'),'\')) and
+					 (not(contains($inputString,'&#10;' )) or contains(substring-before($inputString,'&#10;'),'\')))">
+				<xsl:if test="not($continuation = 'true')">
+					<!-- debug <xsl:text>/* here 1 */ </xsl:text>-->
+					<xsl:text>"</xsl:text><!-- start java string -->
+				</xsl:if>
+				<xsl:if test="(string-length(substring-before($inputString,'\')) > 0)">
+					<xsl:value-of select="substring-before($inputString,'\')"/>
+				</xsl:if>
+				<xsl:text>\\</xsl:text><!-- escape contained backslash character -->
+				<!-- tail recursion -->
+				<xsl:call-template name="stringify-text-lines">
+				  <xsl:with-param name="inputString" select="substring-after($inputString,'\')"/>
+				  <xsl:with-param name="continuation"><xsl:text>true</xsl:text></xsl:with-param>
+				</xsl:call-template>
+			</xsl:when>
+			<!-- first special character encountered: " which is escaped as \" -->
+			<xsl:when test="contains($inputString,'&quot;') and
+					(not(contains($inputString,'&#10;')) or contains(substring-before($inputString,'&#10;'),'&quot;'))">
+				<xsl:if test="not($continuation = 'true')">
+					<!-- debug <xsl:text>/* here 2 */ </xsl:text>-->
+					<xsl:text>"</xsl:text><!-- start java string -->
+				</xsl:if>
+				<xsl:if test="(string-length(substring-before($inputString,'&quot;')) > 0)">
+					<xsl:value-of select="substring-before($inputString,'&quot;')"/>
+				</xsl:if>
+				<xsl:text>\"</xsl:text><!-- escape contained quote character -->
+				<!-- tail recursion -->
+				<xsl:call-template name="stringify-text-lines">
+				  <xsl:with-param name="inputString" select="substring-after($inputString,'&quot;')"/>
+				  <xsl:with-param name="continuation"><xsl:text>true</xsl:text></xsl:with-param>
+				</xsl:call-template>
+			</xsl:when>
+			<!-- first special character encountered: line feed, which breaks up the string -->
+			<xsl:when test="contains($inputString,'&#10;')">
+				<xsl:if test="not($continuation = 'true')">
+					<!-- debug <xsl:text>/* here 3 */ </xsl:text>-->
+					<xsl:text>"</xsl:text><!-- start java string -->
+				</xsl:if>
+				<xsl:if test="(string-length(substring-before($inputString,'&#10;')) > 0)">
+					<xsl:value-of select="substring-before($inputString,'&#10;')"/>
+					<xsl:text>"</xsl:text>
+					<xsl:text> + "</xsl:text>
+				</xsl:if>
+				<xsl:text>\n"</xsl:text>
+				<xsl:if test="(string-length(normalize-space(substring-after($inputString,'&#10;'))) > 0)">
+					<xsl:text> + </xsl:text>
+					<xsl:text>&#10;</xsl:text>
+					<!-- tail recursion -->
+					<xsl:call-template name="stringify-text-lines">
+					  <xsl:with-param name="inputString" select="substring-after($inputString,'&#10;')"/>
+					</xsl:call-template>
+				</xsl:if>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:if test="not($continuation = 'true')">
+					<!-- debug <xsl:text>/* here 4 */ </xsl:text>-->
+					<xsl:text>"</xsl:text><!-- start java string -->
+				</xsl:if>
+				<xsl:value-of select="$inputString"/>
+				<xsl:text>"</xsl:text>
+			</xsl:otherwise>
+		</xsl:choose>
+      </xsl:if>
+    </xsl:template>
 
 </xsl:stylesheet>
