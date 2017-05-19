@@ -335,6 +335,19 @@
                     "-appearance":
                       { "Appearance":
                         {
+                          "-children":[
+                            { "ProtoInstance":
+                              {
+                                "@name":"EmissiveMaterial",
+                                "fieldValue": [
+                                  {
+                                    "@name":"onlyColor",
+                                    "@value":[0.2,0.6,0.6]
+                                  }
+                                ]
+                              }
+                            }
+                          ]
                         }
                       },
                     "-geometry":

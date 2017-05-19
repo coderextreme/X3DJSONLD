@@ -12,9 +12,11 @@ python ../python/classes.py
 STYLESHEETDIR=../lib/stylesheets
 X3DTOJAVA='s/\/data\//\/java\/net\/coderextreme\/data\//' 
 X3DTONASH='s/\/data\//\/nashorn\/net\/coderextreme\/data\//' 
+OVERWRITE=
+# OVERWRITE=---overwrite
 
 
-(ls -d "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java net.coderextreme.RunSaxon ---../ ---overwrite --${STYLESHEETDIR}/X3dToJSON.xslt -json | xargs -P $PROCESSORS ${NODE} ${NODEDIR}/json2all.js
+(ls -d "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java net.coderextreme.RunSaxon ---../ ${OVERWRITE} --${STYLESHEETDIR}/X3dToJSON.xslt -json | xargs -P $PROCESSORS ${NODE} ${NODEDIR}/json2all.js
 
 for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed  -e 's/\.x3d$/.x3d.new/'`
 do
