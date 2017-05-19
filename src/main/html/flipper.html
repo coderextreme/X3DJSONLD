@@ -23,8 +23,8 @@
     </style>
 </head>
 <body>
-<div id="x3domjson"></div>
-    <X3DCanvas id='cobwebjson' cache='false' url='"flipper.x3d"'>
+    <div id="x3domjson"></div>
+    <X3DCanvas cache='false'>
            <p>Your browser may not support all features required by Cobweb!</p>
 	   <X3D>
 	   <Scene>
@@ -32,19 +32,18 @@
 	   </X3D>
     </X3DCanvas>
 </body>
-    <script type="text/javascript" src="node/PythonSerializer.js"></script>
     <script type="text/javascript" src="node/X3DJSONLD.js"></script>
-    <!--script type="text/javascript" src="node/PrototypeExpander.js"></script>
-    <script type="text/javascript" src="node/Flattener.js"></script>
-    <script type="text/javascript" src="node/Script.js"></script-->
-    <script type="text/javascript" src="node/mapToMethod.js"></script>
-    <script type="text/javascript" src="node/mapToMethod2.js"></script>
-    <script type="text/javascript" src="node/fieldTypes.js"></script>
     <script type="text/javascript" src="node/loaderJQuery.js"></script>
     <script type="text/javascript">
 	function loadX3DJSON(selector, url) {
 		$.getJSON(url, function(json) {
-	    		replaceX3DJSON(selector, json, url, []);
+			replaceX3DJSON(selector, json, url, [], "", function(element) {
+				if (element === null) {
+					alert("Couldn't load", url);
+				} else {
+		    			loadCobwebDOM(element, 0);
+				}
+			});
 		})
 		.fail(function(jqXHR, textStatus, errorThrown) { alert('getJSON request failed! ' + textStatus + ' ' + errorThrown); });
 	}
@@ -55,6 +54,6 @@
 		})
 		.fail(function(jqXHR, textStatus, errorThrown) { alert('getJSON request failed! ' + textStatus + ' ' + errorThrown); });
 	}
-	loadX3DJSON('#x3domjson','flipp.json');
+	loadX3DJSON('#x3domjson','data/flipp.json');
     </script>
 </html>

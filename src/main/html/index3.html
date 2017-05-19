@@ -123,13 +123,12 @@ a:active {
 <br><br><br><br><br>
         </section>
         <section>
-          <header>Click <a onclick='updateFromXml();'>here</a> to load X3D XML into Cobweb and XML X3DOM viewer. Does not convert to JSON.</header>
+          <header>Click <a onclick='updateFromJson();'>here</a> to load X3D JSON text into JSON X3DOM viewer and convert to XML (and display).</header>
         </section>
         <section class="around">
-	    
-<textarea id="xml" rows="15" cols="80" class="around2"></textarea><br>
-<div id="x3domxml"></div>
-    <X3DCanvas id='cobwebxml' cache='false' url='"flipper.x3d"'>
+<textarea id="json" rows="15" cols="80" class="around2"></textarea><br>
+<div id="x3domjson"></div>
+    <X3DCanvas id='cobwebjson' cache='false' url='"flipper.x3d"'>
            <p>Your browser may not support all features required by Cobweb!</p>
 	   <X3D>
 	   <Scene>
@@ -151,14 +150,14 @@ Use Namespace: <select id="namespace" class="around3">
 <option>http://www.web3d.org/specifications/x3d-namespace</option>  <!-- COBWEB -->
 <option>none</option> <!-- X3DOM HTML -->
 </select><br>
-        </section>
         <section>
-          <header>Click <a onclick='updateFromJson();'>here</a> to load X3D JSON text into JSON X3DOM viewer and convert to XML (and display).</header>
+          <header>Click <a onclick='updateFromXml();'>here</a> to load X3D XML into Cobweb and XML X3DOM viewer. Does not convert to JSON.</header>
         </section>
         <section class="around">
-<textarea id="json" rows="15" cols="80" class="around2"></textarea><br>
-<div id="x3domjson"></div>
-    <X3DCanvas id='cobwebjson' cache='false' url='"flipper.x3d"'>
+	    
+<textarea id="xml" rows="15" cols="80" class="around2"></textarea><br>
+<div id="x3domxml"></div>
+    <X3DCanvas id='cobwebxml' cache='false' url='"flipper.x3d"'>
            <p>Your browser may not support all features required by Cobweb!</p>
 	   <X3D>
 	   <Scene>
@@ -166,6 +165,7 @@ Use Namespace: <select id="namespace" class="around3">
 	   </X3D>
     </X3DCanvas>
           <footer></footer>
+        </section>
         </section>
               </nobr>
       </section>
