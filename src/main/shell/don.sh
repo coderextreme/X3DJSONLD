@@ -25,5 +25,5 @@ find ./net/x3djsonld/data -name '*.java' | sed -e 's/\.\///' -e 's/\.java$//' | 
 popd
 echo running jjs
 pushd ../nashorn
-find . -name '*.sail.js' | grep -v coderextreme | xargs -L 1 -P $PROCESSORS jjs -J-Xss1g -J-Xmx4g -cp "${NASHORN_CLASSPATH}"
+find ./net/x3djsonld/data -name '*.sail.js' | xargs -L 1 -P $PROCESSORS jjs -J-Xss1g -J-Xmx4g -cp "${NASHORN_CLASSPATH}"
 popd
