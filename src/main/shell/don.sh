@@ -10,18 +10,18 @@ export PROCESSORS=${PROCESSORS-8}
 python ../python/classes.py
 
 echo translating to json
-(ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java net.coderextreme.RunSaxon ---silent --../lib/stylesheets/X3dToJson.xslt ---../
+(ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java net.coderextreme.RunSaxon ---overwrite ---silent --../lib/stylesheets/X3dToJson.xslt ---../
 echo translating to ecmascript 5
 (ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java net.coderextreme.RunSaxon ---overwrite ---silent --../lib/stylesheets/X3dToES5.xslt -sail.js ---../nashorn/net/x3djsonld/
 echo translating to java
-(ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java net.coderextreme.RunSaxon ---silent --../lib/stylesheets/X3dToJava.xslt -java ---../java/net/x3djsonld/
-echo replacing NeedClassName
-(ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS sh FixNeedClassName.sh
+(ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java net.coderextreme.RunSaxon ---overwrite ---silent --../lib/stylesheets/X3dToJava.xslt -java ---../java/net/x3djsonld/
+# echo replacing NeedClassName
+# (ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS sh FixNeedClassName.sh
 echo compiling
-pushd ../java/net/x3djsonld/data
-find . -name '*.java' | xargs -L 1 -P $PROCESSORS javac -J-Xss1g -J-Xmx4g
+pushd ../java
+find ./net/x3djsonld/data -name '*.java' | xargs -L 1 -P $PROCESSORS javac -J-Xss1g -J-Xmx4g
 echo running java
-find . -name '*.java' | sed -e 's/\.\///' -e 's/\.java$//' | xargs -L 1 -P $PROCESSORS java -d64 -Xss1g -Xmx4g  # sh runToError.sh
+find ./net/x3djsonld/data -name '*.java' | sed -e 's/\.\///' -e 's/\.java$//' | xargs -L 1 -P $PROCESSORS java -d64 -Xss1g -Xmx4g  # sh runToError.sh
 popd
 echo running jjs
 pushd ../nashorn

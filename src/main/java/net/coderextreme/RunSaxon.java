@@ -149,11 +149,13 @@ protected static class ExitException extends SecurityException
 							dir.mkdirs();
 						}
 						net.sf.saxon.Transform.main(new String[] {
-
 									"-warnings:recover",
 									"-o:"+out,
 									"-s:"+source,
-									"-xsl:"+stylesheet });
+									"-xsl:"+stylesheet,
+									"packageName=net.x3djsonld.data",
+									"className="+out.substring(out.lastIndexOf("/")+1, out.lastIndexOf(".")).replace(".", "_")
+						});
 						// -t  #timing -c # compiled
 						System.err.println("END "+source);
 						if (!silent) {
@@ -166,11 +168,13 @@ protected static class ExitException extends SecurityException
 							dir.mkdirs();
 						}
 						net.sf.saxon.Transform.main(new String[] {
-
 									"-warnings:recover",
 									"-o:"+out,
 									"-s:"+source,
-									"-xsl:"+stylesheet });
+									"-xsl:"+stylesheet,
+									"packageName=net.x3djsonld.data",
+									"className="+out.substring(out.lastIndexOf("/")+1, out.lastIndexOf(".")).replace(".", "_")
+						});
 						// -t  #timing -c # compiled
 						System.err.println("END "+source);
 						if (!silent) {
