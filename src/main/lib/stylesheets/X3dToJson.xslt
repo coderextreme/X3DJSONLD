@@ -1419,6 +1419,25 @@ POSSIBILITY OF SUCH DAMAGE.
 			  <xsl:value-of select="$debugMessage"/></xsl:message>
 		  </xsl:if>
         </xsl:when>
+        <!-- SFString or MFString = empty string "" -->
+        <xsl:when test="$inputString = '&quot;&quot;'">
+          <xsl:if test="$debugTrace"><xsl:message><xsl:text>[e-q-r][3.55]</xsl:text><xsl:value-of select="$debugMessage"/></xsl:message></xsl:if>
+          <xsl:text>""</xsl:text>
+		  <xsl:if test="(string-length(normalize-space(substring($inputString,3))) > 0)">
+			<xsl:text>,</xsl:text>
+			<xsl:call-template name="escape-quotes-recurse">
+				<xsl:with-param name="inputString" select="substring($inputString,3)"/>
+				<xsl:with-param name="inputType"   select="$inputType"/>
+              			<xsl:with-param name="processedOuter"   select="$processedOuter"/>
+			</xsl:call-template>
+		  </xsl:if>
+		  <xsl:if test="($inputType = 'SFString')">
+			  <xsl:message>
+				  <xsl:text>Error: malformed SFString value has "" empty string followed by extra characters: </xsl:text>
+			      <xsl:value-of select="substring($inputString,3)"/>
+			  <xsl:value-of select="$debugMessage"/></xsl:message>
+		  </xsl:if>
+        </xsl:when>
         <!-- SFString or MFString containing empty string "" -->
         <xsl:when test="starts-with($inputString,'&quot;&quot;')">
           <xsl:if test="$debugTrace"><xsl:message><xsl:text>[e-q-r][3.6]</xsl:text><xsl:value-of select="$debugMessage"/></xsl:message></xsl:if>
