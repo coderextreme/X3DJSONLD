@@ -68,7 +68,7 @@
           },
           {
             "@name":"translated",
-            "@content":"19 May 2017"
+            "@content":"20 May 2017"
           },
           {
             "@name":"generator",
@@ -709,7 +709,7 @@
                                 "-geometry":
                                   { "Text":
                                     {
-                                      "@string":["Target Locked"," FIRE!..\"\"(Green Button)"]
+                                      "@string":["Target Locked"," FIRE!..","(Green Button)"]
                                     }
                                   },
                                 "-appearance":

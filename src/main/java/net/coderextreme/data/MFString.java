@@ -436,7 +436,7 @@ protected class MFString27 {
 }
 protected class MFString28 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"Target Locked"," FIRE!..\"\"(Green Button)"});
+    return new MFStringObject(new java.lang.String[] {"Target Locked"," FIRE!..","(Green Button)"});
   }
 }
 protected class MFFloat29 {
