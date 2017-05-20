@@ -46,7 +46,7 @@
         <ProtoInstance name='one'>
             <fieldValue name='myShape'>
                 <Shape>
-                    <Box size='1 1 1'/>
+                    <Box size='140 140 140'/>
                 </Shape>
             </fieldValue>
         </ProtoInstance>

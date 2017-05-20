@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"19 May 2017"
+            "@content":"20 May 2017"
           },
           {
             "@name":"generator",
@@ -143,7 +143,7 @@
                         "-geometry":
                           { "Box":
                             {
-                              "@size":[1,1,1]
+                              "@size":[140,140,140]
                             }
                           }
                       }

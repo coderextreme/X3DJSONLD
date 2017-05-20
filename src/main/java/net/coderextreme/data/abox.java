@@ -113,7 +113,7 @@ ProtoInstanceObject ProtoInstance1 = null;
 ProtoInstance1
           .addFieldValue(new fieldValueObject().setName("myShape")
             .addChild(new ShapeObject()
-              .setGeometry(new BoxObject().setSize(new float[] {1f,1f,1f}))));
+              .setGeometry(new BoxObject().setSize(new float[] {140f,140f,140f}))));
     return X3D0;
     }
 }

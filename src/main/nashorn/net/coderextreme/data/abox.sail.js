@@ -37,5 +37,5 @@ var ProtoInstance1 = null;
 ProtoInstance1
           .addFieldValue(new fieldValueObject().setName("myShape")
             .addChild(new ShapeObject()
-              .setGeometry(new BoxObject().setSize(Java.to([1,1,1], Java.type("float[]"))))));
+              .setGeometry(new BoxObject().setSize(Java.to([140,140,140], Java.type("float[]"))))));
     X3D0.toFileX3D("../data/abox.new.x3d");

@@ -92,12 +92,12 @@ function loadSchema(json, file, doValidate, success, failure) {
 
 		
 		try {
-			var metaschema = fs.readFileSync('schema/draft-04-JSONSchema.json');
+			var metaschema = fs.readFileSync('../schema/draft-04-JSONSchema.json');
 			var metaschemajson = JSON.parse(metaschema.toString());
 			ajv.addMetaSchema(metaschemajson);
 		} catch (e) {
 		}
-		var schema = fs.readFileSync("schema/x3d-"+version+"-JSONSchema.json");
+		var schema = fs.readFileSync("../schema/x3d-"+version+"-JSONSchema.json");
 		var schemajson = JSON.parse(schema.toString());
 		try {
 			ajv.addSchema(schemajson);
@@ -227,9 +227,36 @@ function loadX3DJS(json, path, xml, NS, loadSchema, doValidate, callback) {
 	});
 }
 
+/*
+ * replaceX3DJSON
+ * replace children of and element with DOM created from X3D JSON.
+ *	also, generate xml for inclusion elsewhere
+ *
+ * parent -- parent DOM element
+ * json (json object) -- json to convert to DOM
+ * url -- name of path/filename json loaded from
+ * xml (array or LOG, must have push function which takes a string) -- xml output (optional)
+ * NS -- XML namespace (optional)
+ * next -- to return the element or null
+ * returns element loaded
+ */
+function replaceX3DJSON(parent, json, url, xml, NS, next) {
+
+	loadX3DJS(json, url, xml, NS, loadSchema, doValidate, function(child) {
+		if (child != null) {
+			while (parent.firstChild) {
+			    parent.removeChild(parent.firstChild);
+			}
+			parent.appendChild(child);
+		}
+		next(child);
+	});
+}
+
 if (typeof module === 'object')  {
 	module.exports = {
 		loadX3DJS: loadX3DJS,
+		replaceX3DJSON: replaceX3DJSON,
 		convertJSON: convertJSON,
 		loadSchema: loadSchema,
 		doValidate: doValidate
