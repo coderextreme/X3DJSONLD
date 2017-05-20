@@ -179,7 +179,7 @@ function loadX3D(selector, json, url) {
  * elemnent -- element to add to
  * url -- JSON url to add
  */
-function appendInline(element, url) {
+function appendInline(element, url, next) {
 	$.getJSON(url, function(json) {
 		if (typeof prototypeExpander === 'function') {
 			json = prototypeExpander(url, json, "");
@@ -194,6 +194,7 @@ function appendInline(element, url) {
 		// must validate here because we call an inner method.
 		loadSchema(json, url, doValidate, function() {
 			ConvertToX3DOM(json["X3D"]["Scene"], "Scene", element, url);
+			next(element);
 		}, function(e) {
 			console.error(e);
 		});
@@ -201,8 +202,8 @@ function appendInline(element, url) {
 }
 
 
-function loadSubscene(selector, url) {
-	appendInline(document.querySelector(selector), url);
+function loadSubscene(selector, url, next) {
+	appendInline(document.querySelector(selector), url, next);
 }
 
 function loadInline(selector, url) {
