@@ -138,19 +138,35 @@ function loadX3D(selector, json, url) {
     var xml = new LOG();
     if ($('#prototype').is(':checked')) {
 	// Expand Protos
-	// json = externPrototypeExpander(url, json);
-	json = prototypeExpander(url, json, "");
-	json = flattener(json);
+	try {
+		// json = externPrototypeExpander(url, json);
+		json = prototypeExpander(url, json, "");
+		json = flattener(json);
+	} catch (e) {
+		alert("Problems with ProtoExpander", e);
+	}
 	// console.log("JSON IS NOW", json);
-	$('#json').val(JSON.stringify(json, null, 2));
+	try {
+		$('#json').val(JSON.stringify(json, null, 2));
+	} catch (e) {
+		alert("JSON isn't valid", e);
+	}
     }
     var NS = $('#namespace option:selected').text();
     replaceX3DJSON(selector, json, url, xml, NS, function(child) {
 	    if (child != null) {
-		    loadCobwebDOM(child, 0);
-		    loadXmlBrowsers(xml);
+		        try {
+			    loadCobwebDOM(child, 0);
+			    loadXmlBrowsers(xml);
+			} catch (e) {
+				alert("Problems with loading browsers", e);
+			}
 		    if ($('#scripting').is(':checked')) {
-			loadScripts(json);
+			try {
+				loadScripts(json);
+			} catch (e) {
+				alert("Problems with loading scripts", e);
+			}
 		    }
 	    } else {
 		    alert("Unknown error returning no child element!");
@@ -223,9 +239,13 @@ function replaceX3DJSON(selector, json, url, xml, NS, next) {
 			elementSetAttribute(element, "xmlns:xsd", 'http://www.w3.org/2001/XMLSchema-instance');
 			// We have to do this stuff before the DOM hits X3DOM, or we get a mess.
 			if (typeof JavaScriptSerializer !== 'undefined') {
-				var jserial = new JavaScriptSerializer();
-				var java = jserial.serializeToString(json, element, url, mapToMethod, fieldTypes);
-				$('#java').val(java);
+				try {
+					var jserial = new JavaScriptSerializer();
+					var java = jserial.serializeToString(json, element, url, mapToMethod, fieldTypes);
+					$('#java').val(java);
+				} catch (e) {
+					alert("Problems serializing to JavaScript", e);
+				}
 			}
 			if (document.getElementById("dom") !== null) {
 				document.getElementById("dom").onclick = function() { return false; } 
@@ -240,7 +260,12 @@ function replaceX3DJSON(selector, json, url, xml, NS, next) {
 			}
 			$(selector+" X3D").remove();
 			$(selector).append(element);
-			x3dom.reload();  // This may be necessary
+			try {
+				x3dom.reload();  // This may be necessary
+			} catch (e) {
+				console.log(e);
+				alert("Problem with x3dom.reload()", e);
+			}
 		}
 		next(element);
 	});
@@ -252,10 +277,19 @@ function updateFromJson(json, path) {
 				json = JSON.parse($("#json").val());
 		}
 		$('#json').val(JSON.stringify(json, null, 2));
-		updateStl(json);
-		loadX3D("#x3domjson", json, path); // does not load path
 	} catch (e) {
 		alert("JSON doesn't parse", e);
+	}
+	try {
+		updateStl(json);
+	} catch (e) {
+		alert("Problems updating Stl");
+	}
+	try {
+		loadX3D("#x3domjson", json, path); // does not load path
+	} catch (e) {
+		alert("Problems converting and loading JSON", e);
+		console.log(e);
 	}
 }
 

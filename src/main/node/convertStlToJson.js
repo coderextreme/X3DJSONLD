@@ -31,6 +31,8 @@ function convertStlToJson(file) {
 				IFS.vector.push(coords);
 			}
 			IFS.normalIndex.push(n);
+			// There is only one color
+			IFS.colorIndex.push(0);
 			return IFS;
 		},
 		outer : function(line, IFS) {
@@ -74,16 +76,16 @@ function convertStlToJson(file) {
 				c = IFS.co[coords];
 				IFS.color.push(coords);
 			}
-			IFS.colorIndex.push(c);
 			return IFS;
 		},
 		endloop : function(line, IFS) {
 			IFS.coordIndex.push(-1);
-			IFS.colorIndex.push(-1);
+			// IFS.colorIndex.push(-1);
 			return IFS;
 		},
 		endfacet : function(line, IFS) {
 			// IFS.normalIndex.push(-1);
+			// IFS.colorIndex.push(-1);
 			return IFS;
 		},
 		endsolid : function(line, IFS) {
@@ -189,9 +191,10 @@ function transformNormalsToIFS(json) {
 
 	IFS["IndexedFaceSet" ]["-normal"] = { "Normal" : { "@vector" : json.vector.join(" ").split(" ").map(function(x) { return parseFloat(x); }) }};
 	IFS["IndexedFaceSet" ]["@normalIndex"] = json.normalIndex;
+	IFS["IndexedFaceSet" ]["@colorIndex"] = json.colorIndex;
 	IFS["IndexedFaceSet" ]["@normalPerVertex"] = false;
+	IFS["IndexedFaceSet" ]["@colorPerVertex"] = false;
 
 	IFS["IndexedFaceSet" ]["-color"] = { "Color" : { "@color" : json.color.join(" ").split(" ").map(function(x) { return parseFloat(x); }) }};
-	IFS["IndexedFaceSet" ]["@colorIndex"] = json.colorIndex;
 	return IFS;
 }

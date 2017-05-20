@@ -193,9 +193,11 @@ function transformToILS(elements) {
 			if (typeof ILS["IndexedLineSet"] === "undefined") {
 				ILS["IndexedLineSet" ] = {};
 			}
-			ILS["IndexedLineSet" ]["-color"] = { "Color" : { "@color" : color }};
+			if (typeof color != 'undefined') {
+				ILS["IndexedLineSet" ]["-color"] = { "Color" : { "@color" : color }};
+				ILS["IndexedLineSet" ]["@colorIndex"] = array;
+			}
 			ILS["IndexedLineSet" ]["@coordIndex"] = array;
-			ILS["IndexedLineSet" ]["@colorIndex"] = array;
 			return ILS;
 		},
 		vertex : function(element, ILS) {
@@ -287,6 +289,10 @@ function transformToIFS(elements) {
 				IFS["IndexedFaceSet" ] = {};
 			}
 			IFS["IndexedFaceSet" ]["-coord"] = { "Coordinate" : { "@point" : point }};
+			// set colors if there aren't any
+			while (color.length < point.length) {
+				color.push(1);
+			}
 			IFS["IndexedFaceSet" ]["-color"] = { "Color" : { "@color" : color }};
 			return IFS;
 		}
