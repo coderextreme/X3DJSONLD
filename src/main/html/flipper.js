@@ -23,6 +23,7 @@ function loadSubscene(parent, url) {
 	json = flattener(json);
 	X3DJSONLD.ConvertToX3DOM(json["X3D"]["Scene"], "Scene", parent, url);
 	var str = serializer.serializeToString(json, parent);
+	console.log(str);
 }
 
 function loadX3DJSON(parent, url, next) {
