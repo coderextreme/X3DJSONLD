@@ -40,12 +40,12 @@
 	function loadX3DJSON(selector, url) {
 		$.getJSON(url, function(json) {
 			replaceX3DJSON(selector, json, url, [], "", function(element) {
-				// loading a subscene with X3DJSONLD does not work in Cobweb.
-				loadSubscene('Scene','data/abox.json');
 				if (element === null) {
 					alert("Couldn't load", url);
 				} else {
-		    			loadCobwebDOM(element, 0);
+					loadSubscene('Scene','data/abox.json', function(selected){
+		    				loadCobwebDOM(element, 0);
+					});
 				}
 			});
 		})
