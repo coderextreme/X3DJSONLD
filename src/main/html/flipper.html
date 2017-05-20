@@ -33,11 +33,15 @@
     </X3DCanvas>
 </body>
     <script type="text/javascript" src="node/X3DJSONLD.js"></script>
+    <script type="text/javascript" src="node/PrototypeExpander.js"></script>
+    <script type="text/javascript" src="node/Flattener.js"></script>
     <script type="text/javascript" src="node/loaderJQuery.js"></script>
     <script type="text/javascript">
 	function loadX3DJSON(selector, url) {
 		$.getJSON(url, function(json) {
 			replaceX3DJSON(selector, json, url, [], "", function(element) {
+				// loading a subscene with X3DJSONLD does not work in Cobweb.
+				loadSubscene('Scene','data/abox.json');
 				if (element === null) {
 					alert("Couldn't load", url);
 				} else {
@@ -48,9 +52,11 @@
 		.fail(function(jqXHR, textStatus, errorThrown) { alert('getJSON request failed! ' + textStatus + ' ' + errorThrown); });
 	}
 
-	function loadSubscene(id, url) {
+	function loadSubscene(selector, url) {
 		$.getJSON(url, function(json) {
-			ConvertToX3DOM(json, "", document.getElementById(id), url);
+			json = prototypeExpander(url, json, "");
+			json = flattener(json);
+			ConvertToX3DOM(json["X3D"]["Scene"], "Scene", document.querySelector(selector), url);
 		})
 		.fail(function(jqXHR, textStatus, errorThrown) { alert('getJSON request failed! ' + textStatus + ' ' + errorThrown); });
 	}
