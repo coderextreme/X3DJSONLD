@@ -37,19 +37,63 @@
     <script type="text/javascript" src="node/Flattener.js"></script>
     <script type="text/javascript" src="node/loaderJQuery.js"></script>
     <script type="text/javascript">
+// From: https://developers.google.com/web/fundamentals/getting-started/primers/promises
+function get(url) {
+  // Return a new promise.
+  return new Promise(function(resolve, reject) {
+    // Do the usual XHR stuff
+    var req = new XMLHttpRequest();
+    req.open('GET', url);
+
+    req.onload = function() {
+      // This is called even on 404 etc
+      // so check the status
+      if (req.status == 200) {
+        // Resolve the promise with the response text
+        resolve(req.response);
+      }
+      else {
+        // Otherwise reject with the status text
+        // which will hopefully be a meaningful error
+        reject(Error(req.statusText));
+      }
+    };
+
+    // Handle network errors
+    req.onerror = function() {
+      reject(Error("Network Error"));
+    };
+
+    // Make the request
+    req.send();
+  });
+}
+
+function getJSON(url) {
+  return get(url).then(JSON.parse);
+}
+// Done with include
+
 	function loadX3DJSON(selector, url) {
-		$.getJSON(url, function(json) {
-			replaceX3DJSON(selector, json, url, [], "", function(element) {
-				if (element === null) {
-					alert("Couldn't load", url);
-				} else {
-					loadSubscene('Scene','data/abox.json', function(selected){
-		    				loadCobwebDOM(element, 0);
-					});
-				}
+		getJSON(url).then(function(json) {
+			var parent = CreateElement('X3D');
+			return ConvertToX3DOM(json, "X3D", parent, url); // returns an element
+		}).then(function(element) {
+			$(selector+" X3D").remove();
+			$(selector).append(element); // add to X3DOM
+			loadCobwebDOM(element, 0); // loads into cobweb element 0 on page.
+			return element
+		}).then(function(element) {
+			getJSON('data/abox.json').then(function(subjson) {
+				subjson = prototypeExpander("data/abox.json", subjson, "");
+				subjson = flattener(subjson);
+				var sceneElement = ConvertToX3DOM(subjson["X3D"]["Scene"], "Scene", element.querySelector("Scene"), "data/abox.json");  // returns Scene element
+			}).catch(function() {
+				alert("Subscene Load failed");
 			});
-		})
-		.fail(function(jqXHR, textStatus, errorThrown) { alert('getJSON request failed! ' + textStatus + ' ' + errorThrown); });
+		}).catch(function() {
+			alert("Scene Load failed");
+		});
 	}
 	loadX3DJSON('#x3domjson','data/flipp.json');
     </script>
