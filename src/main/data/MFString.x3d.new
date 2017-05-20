@@ -109,7 +109,7 @@
 </Shape>
 <TouchSensor DEF="FireSensor" description="click to fire"></TouchSensor>
 </Transform>
-<Transform DEF="FireTextTransform" scale="0.06 0.06 0.06" translation="0.36 1.5 -10"><Shape><Text containerField="geometry" string="&quot;Target Locked&quot; &quot; FIRE!..\&quot;\&quot;(Green Button)&quot;"></Text>
+<Transform DEF="FireTextTransform" scale="0.06 0.06 0.06" translation="0.36 1.5 -10"><Shape><Text containerField="geometry" string="&quot;Target Locked&quot; &quot; FIRE!..&quot; &quot;(Green Button)&quot;"></Text>
 <Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0.75 0.18"></Material>
 </Appearance>
 </Shape>

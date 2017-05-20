@@ -122,7 +122,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
               .addChild(new TouchSensorObject().setDEF("FireSensor").setDescription("click to fire")))
             .addChild(new TransformObject().setDEF("FireTextTransform").setScale(Java.to([0.06,0.06,0.06], Java.type("float[]"))).setTranslation(Java.to([0.36,1.5,-10], Java.type("float[]")))
               .addChild(new ShapeObject()
-                .setGeometry(new TextObject().setString(Java.to(["Target Locked"," FIRE!..\"\"(Green Button)"], Java.type("java.lang.String[]"))))
+                .setGeometry(new TextObject().setString(Java.to(["Target Locked"," FIRE!..","(Green Button)"], Java.type("java.lang.String[]"))))
                 .setAppearance(new AppearanceObject()
                   .setMaterial(new MaterialObject().setDiffuseColor(Java.to([0,0.75,0.18], Java.type("float[]"))))))))
           .addChild(new ViewpointObject().setDescription("F16 Close Look-up").setOrientation(Java.to([-0.559,-0.827,-0.057,1.3534], Java.type("float[]"))).setPosition(Java.to([-28.7,19.9,17.4], Java.type("float[]"))))

@@ -170,7 +170,7 @@
                         <Appearance class=''>
                             <Material ambientIntensity='0.2' diffuseColor='0 0.75 0.18' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0' class=''/>
                         </Appearance>
-                        <Text length='' maxExtent='0.0' solid='false' string='"Target Locked" " FIRE!..""(Green Button)"' class=''/>
+                        <Text length='' maxExtent='0.0' solid='false' string='"Target Locked" " FIRE!.." "(Green Button)"' class=''/>
                     </Shape>
                 </Transform>
             </Transform>

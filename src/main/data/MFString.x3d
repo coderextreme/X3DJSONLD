@@ -167,7 +167,7 @@
         </Transform>
         <Transform DEF='FireTextTransform' scale='.06 .06 .06' translation='.36 1.5 -10'>
           <Shape>
-            <Text string='"Target Locked" "      FIRE!..""(Green Button)"'/>
+            <Text string='"Target Locked" "      FIRE!.." "(Green Button)"'/>
             <Appearance>
               <Material diffuseColor='0 .75 .18'/>
             </Appearance>
