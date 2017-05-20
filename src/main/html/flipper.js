@@ -9,6 +9,9 @@ var loadX3DJS = convertJSON.loadX3DJS;
 var loadSchema = convertJSON.loadSchema;
 var doValidate = convertJSON.doValidate;
 var replaceX3DJSON = convertJSON.replaceX3DJSON;
+var DOMSerializer = require('../node/DOMSerializer.js');
+var serializer = new DOMSerializer();
+
 
 var xmldom = require('xmldom');
 var DOMImplementation = new xmldom.DOMImplementation();
@@ -19,6 +22,7 @@ function loadSubscene(parent, url) {
 	json = prototypeExpander(url, json, "");
 	json = flattener(json);
 	X3DJSONLD.ConvertToX3DOM(json["X3D"]["Scene"], "Scene", parent, url);
+	var str = serializer.serializeToString(json, parent);
 }
 
 function loadX3DJSON(parent, url, next) {
