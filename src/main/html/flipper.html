@@ -51,15 +51,6 @@
 		})
 		.fail(function(jqXHR, textStatus, errorThrown) { alert('getJSON request failed! ' + textStatus + ' ' + errorThrown); });
 	}
-
-	function loadSubscene(selector, url) {
-		$.getJSON(url, function(json) {
-			json = prototypeExpander(url, json, "");
-			json = flattener(json);
-			ConvertToX3DOM(json["X3D"]["Scene"], "Scene", document.querySelector(selector), url);
-		})
-		.fail(function(jqXHR, textStatus, errorThrown) { alert('getJSON request failed! ' + textStatus + ' ' + errorThrown); });
-	}
 	loadX3DJSON('#x3domjson','data/flipp.json');
     </script>
 </html>

@@ -181,6 +181,16 @@ function loadX3D(selector, json, url) {
  */
 function appendInline(element, url) {
 	$.getJSON(url, function(json) {
+		if (typeof prototypeExpander === 'function') {
+			json = prototypeExpander(url, json, "");
+		} else {
+			console.error("Perhaps you need to include the PrototypeExpander.js?");
+		}
+		if (typeof flattener === 'function') {
+			json = flattener(json);
+		} else {
+			console.error("Perhaps you need to include the Flattener.js?");
+		}
 		// must validate here because we call an inner method.
 		loadSchema(json, url, doValidate, function() {
 			ConvertToX3DOM(json["X3D"]["Scene"], "Scene", element, url);
@@ -188,6 +198,11 @@ function appendInline(element, url) {
 			console.error(e);
 		});
 	}).fail(function(jqXHR, textStatus, errorThrown) { alert('getJSON request failed! ' + textStatus + ' ' + errorThrown); });
+}
+
+
+function loadSubscene(selector, url) {
+	appendInline(document.querySelector(selector), url);
 }
 
 function loadInline(selector, url) {
@@ -388,6 +403,8 @@ function updateStl(json) {
 		if (typeof convertJsonToStl === 'function') {
 			var stl = convertJsonToStl(json);
 			$('#stl').val(stl);
+		} else {
+			console.error("Perhaps you need to include convertJsonToStl.js?");
 		}
 	} catch (e) {
 		console.log(e);
