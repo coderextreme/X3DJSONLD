@@ -15,8 +15,6 @@ var Browser = X3DJSONLD.Browser;
 // Bring in prototype expander and script expander
 var PROTOS = require('./PrototypeExpander')
 PROTOS.setLoadURLs(loadURLs);
-var prototypeExpander = PROTOS.prototypeExpander;
-var externalPrototypeExpander = PROTOS.externalPrototypeExpander;
 
 var FL = require('./Flattener')
 var flattener = FL.flattener;
@@ -32,11 +30,17 @@ var doValidate = convertJSON.doValidate;
 
 
 function ProcessJSON(json, file) {
-		json = externalPrototypeExpander(file, json);
-		json = prototypeExpander(file, json, "");
+		json = PROTOS.externalPrototypeExpander(file, json);
+		json = PROTOS.prototypeExpander(file, json, "");
 		json = flattener(json);
 		console.log("JSON", JSON.stringify(json));
-		fs.writeFileSync("ppp/"+file, JSON.stringify(json, null, 2));
+		var outfile = "ppp/"+file;
+		try {
+			fs.mkdirSync(outfile.substring(0, outfile.lastIndexOf("/")));
+		} catch (e) {
+			console.error("Error creating ppp");
+		}
+		fs.writeFileSync(outfile, JSON.stringify(json, null, 2));
 
 		var xml = new LOG();
 		var NS = "http://www.web3d.org/specifications/x3d";
@@ -58,7 +62,7 @@ function ProcessJSON(json, file) {
 				//}, 1000 / 60 );
 			} catch (e) {
 				fs.writeFileSync("ppp/"+file+".js", code+"\n"+route);
-				console.error("See ppp/"+file+".js", e);
+				console.error("See ppp/"+file+".js for bad code", e);
 			}
 		});
 }
