@@ -109,6 +109,7 @@ protected static class ExitException extends SecurityException
 						
 						*/
 
+						System.err.println("URL is "+source);
 						URL u = new URL(source);
 						if (source.indexOf("https://") == 0) {
 							source = "C:/x3d-code/"+source.substring(8);
@@ -141,7 +142,7 @@ protected static class ExitException extends SecurityException
 						}
 					}
 					out = source;
-					out = outdir+out.substring(out.indexOf("/")+1, out.lastIndexOf("."))+"."+extension;
+					out = outdir+out.substring(0, out.lastIndexOf("."))+"."+extension;
 					if (overwrite) {
 						System.err.println("BEGIN "+source+" > "+extension);
 						if (out.lastIndexOf("/") > 0) {

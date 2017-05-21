@@ -13,10 +13,10 @@ var loadURLs = X3DJSONLD.loadURLs;
 var Browser = X3DJSONLD.Browser;
 
 // Bring in prototype expander and script expander
-var PE = require('./PrototypeExpander')
-PE.setLoadURLs(loadURLs);
-var prototypeExpander = PE.prototypeExpander;
-var externPrototypeExpander = PE.externPrototypeExpander;
+var PROTOS = require('./PrototypeExpander')
+PROTOS.setLoadURLs(loadURLs);
+var prototypeExpander = PROTOS.prototypeExpander;
+var externalPrototypeExpander = PROTOS.externalPrototypeExpander;
 
 var FL = require('./Flattener')
 var flattener = FL.flattener;
@@ -32,7 +32,7 @@ var doValidate = convertJSON.doValidate;
 
 
 function ProcessJSON(json, file) {
-		json = externPrototypeExpander(file, json);
+		json = externalPrototypeExpander(file, json);
 		json = prototypeExpander(file, json, "");
 		json = flattener(json);
 		console.log("JSON", JSON.stringify(json));

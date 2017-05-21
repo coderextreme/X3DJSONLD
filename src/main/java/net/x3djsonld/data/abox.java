@@ -94,7 +94,7 @@ public class abox
     .addChild(new ProtoInstanceObject().setName("one")
       .addFieldValue(new fieldValueObject().setName("myShape")
         .addChild(new ShapeObject()
-          .setGeometry(new BoxObject().setSize(1.0f,1.0f,1.0f))))));
+          .setGeometry(new BoxObject().setSize(140.0f,140.0f,140.0f))))));
   }
   // end of initialize() method
 
