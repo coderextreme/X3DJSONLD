@@ -241,7 +241,7 @@ JavaSerializer.prototype = {
 						var method = attr;
 						if (element.nodeName === 'NavigationInfo' ) {
 							strval = this.printSubArray(attrType, "java.lang.String",
-								attrs[a].nodeValue.substr(1, attrs[a].nodeValue.length-2).split(/" "/).
+								attrs[a].nodeValue.substr(1, attrs[a].nodeValue.length-2).split(/"[ ,]+"/).
 								map(function(x) {
 									var y = x.
 										replace(/(\\+)([^&\\"])/g, '$1$1$2').
@@ -324,7 +324,7 @@ JavaSerializer.prototype = {
 						strval = this.printSubArray(attrType, "double", attrs[a].nodeValue.split(' '), this.codeno, DOUBLE_SUFFIX+',', '', DOUBLE_SUFFIX);
 					} else if (attrType === "MFString") {
 						strval = this.printSubArray(attrType, "java.lang.String",
-							attrs[a].nodeValue.substr(1, attrs[a].nodeValue.length-2).split(/" "/).
+							attrs[a].nodeValue.substr(1, attrs[a].nodeValue.length-2).split(/"[ ,]+"/).
 							map(function(x) {
 								var y = x.
 									/*

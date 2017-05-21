@@ -115,7 +115,7 @@ function printObject(element, fieldTypes) {
 					} else if (attrType === "SFBool") {
 						value = attrs[a].nodeValue;
 					} else if (attrType === "MFString") {
-						value = printSubArray(attrType, 1, attrs[a].nodeValue.split(/" "/));
+						value = printSubArray(attrType, 1, attrs[a].nodeValue.split(/"[ ,]+"/));
 					} else if (
 						attrType === "MFInt32"||
 						attrType === "MFImage"||
