@@ -113,6 +113,18 @@ function loadCobwebDOM(element, browserNumber) {
 	});
 }
 
+function loadCobwebJS(jsobj, browserNumber) {
+	X3D(function(el) {
+		if (typeof X3D.getBrowser !== 'undefined') {
+			var browser = X3D.getBrowser(el[browserNumber]);
+			if (typeof browser !== 'undefined' && typeof browser.importDocument !== 'undefined') {
+				var importedScene = browser.importJS(jsobj);
+				browser.replaceWorld(importedScene);
+			}
+		}
+	});
+}
+
 if (typeof mapToMethod !== 'undefined') {
 	Object.assign(mapToMethod, {
 	});
@@ -159,7 +171,7 @@ function loadX3D(selector, json, url) {
     replaceX3DJSON(selector, json, url, xml, NS, function(child) {
 	    if (child != null) {
 		        try {
-			    loadCobwebDOM(child, 0);
+			    loadCobwebJS(json, 0);
 			    loadXmlBrowsers(xml);
 			} catch (e) {
 				alert("Problems with loading browsers", e);
