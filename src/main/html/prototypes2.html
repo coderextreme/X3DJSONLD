@@ -85,7 +85,7 @@ function getJSON(url) {
 			var parent = CreateElement('X3D');
 			json = protoExpander.prototypeExpander(url, json, "");
 			json = flattener(json);
-			loadCobweJS(json, 0); // loads into cobweb element 0 on page.
+			loadCobwebJS(json, 0); // loads into cobweb element 0 on page.
     			if ($('#scripting').is(':checked')) {
 				loadScripts(json);
 			}
