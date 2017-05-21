@@ -141,7 +141,7 @@ JSONSerializer.subSerializeToString = function(element, fieldTypes, n) {
 							replace(/\\\\\\\\"/g, '\\\\"').
 							replace(/\\\\"/g, '\\\\\\"').
 							replace(/&/g, "&amp;").
-							split(/" "/),
+							split(/"[ ,]+"/),
 						'","', '');
 				} else if (
 					attrType === "MFInt32"||
