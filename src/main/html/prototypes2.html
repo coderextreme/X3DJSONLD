@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+<head>
+    <title>JSON Loader</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+   <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/create3000/cobweb/master/stable/3/3.2/cobweb.css"/>
+   <script type="text/javascript" src="node/cobweb.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ajv/5.0.1/ajv.min.js"></script>
+    <style type="text/css">
+    X3DCanvas {
+        background:#000;
+	width: 900px;
+	height:450px;
+    }
+    X3D {
+        background:#000;
+	width: 900px;
+	height:450px;
+    }
+    </style>
+</head>
+<body>
+	<table>
+		<tr>
+			<td>
+				Cobweb
+			</td>
+			<td>
+			    <X3DCanvas cache='false'>
+				   <p>Your browser may not support all features required by Cobweb!</p>
+				   <X3D>
+				   <Scene>
+				   </Scene>
+				   </X3D>
+			    </X3DCanvas>
+			</td>
+		</tr>
+</body>
+    <script type="text/javascript" src="node/X3DJSONLD.js"></script>
+    <script type="text/javascript" src="node/Script.js"></script>
+    <script type="text/javascript" src="node/PrototypeExpander.js"></script>
+    <script type="text/javascript" src="node/Flattener.js"></script>
+    <script type="text/javascript" src="node/loaderJQuery.js"></script>
+    <script type="text/javascript">
+// From: https://developers.google.com/web/fundamentals/getting-started/primers/promises
+function get(url) {
+  // Return a new promise.
+  return new Promise(function(resolve, reject) {
+    // Do the usual XHR stuff
+    var req = new XMLHttpRequest();
+    req.open('GET', url);
+
+    req.onload = function() {
+      // This is called even on 404 etc
+      // so check the status
+      if (req.status == 200) {
+        // Resolve the promise with the response text
+        resolve(req.response);
+      }
+      else {
+        // Otherwise reject with the status text
+        // which will hopefully be a meaningful error
+        reject(Error(req.statusText));
+      }
+    };
+
+    // Handle network errors
+    req.onerror = function() {
+      reject(Error("Network Error"));
+    };
+
+    // Make the request
+    req.send();
+  });
+}
+
+function getJSON(url) {
+  return get(url).then(JSON.parse);
+}
+// Done with include
+
+	function loadX3DJSON(selector, url) {
+		getJSON(url).then(function(json) {
+			var parent = CreateElement('X3D');
+			json = protoExpander.prototypeExpander(url, json, "");
+			json = flattener(json);
+			loadCobweJS(json, 0); // loads into cobweb element 0 on page.
+    			if ($('#scripting').is(':checked')) {
+				loadScripts(json);
+			}
+			var url = 'data/asmallbox.json';
+			getJSON(url).then(function(subjson) {
+				subjson = protoExpander.prototypeExpander(url, subjson, "");
+				subjson = flattener(subjson);
+				for (var c in subjson["X3D"]["Scene"]["-children"]) {
+					json["X3D"]["Scene"]["-children"].push(subjson["X3D"]["Scene"]["-children"][c])
+				}
+				loadCobwebJS(json, 0); // reloads cobweb element 0 on page.
+			}).catch(function(err) {
+				console.log(err);
+				alert("Subscene Load failed");
+			});
+		}).catch(function(err) {
+			console.log(err);
+			alert("Scene Load failed");
+		});
+	}
+	$(document).ready(function() {
+		loadX3DJSON('#x3domjson','data/cobweb.json');
+	});
+    </script>
+</html>
