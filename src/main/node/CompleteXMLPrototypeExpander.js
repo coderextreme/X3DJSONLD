@@ -13,8 +13,6 @@ var loadURLs = X3DJSONLD.loadURLs;
 
 var PROTOS = require('./PrototypeExpander')
 PROTOS.setLoadURLs(loadURLs);
-var prototypeExpander = PROTOS.prototypeExpander;
-var externalPrototypeExpander = PROTOS.externalPrototypeExpander;
 
 var FL = require('./Flattener')
 var flattener = FL.flattener;
@@ -39,8 +37,8 @@ process.argv.shift();
 
 function ProcessJSON(json, file) {
 		// Run it through the prototype expander
-		json = externalPrototypeExpander(file, json);
-		json = prototypeExpander(file, json, "");
+		json = PROTOS.externalPrototypeExpander(file, json);
+		json = PROTOS.prototypeExpander(file, json, "");
 		json = flattener(json);
 
 		var xml = new LOG();
@@ -48,6 +46,11 @@ function ProcessJSON(json, file) {
 		loadX3DJS(json, file, xml, NS, loadSchema, doValidate, function(element) {
 			var str = serializer.serializeToString(json, element);
 			var outfile = "ppp/"+file.substr(0, file.lastIndexOf("."))+".x3d";
+			try {
+				fs.mkdirSync(outfile.substring(0, outfile.lastIndexOf("/")));
+			} catch (e) {
+				console.error("Error creating dir for "+outfile);
+			}
 			fs.writeFileSync(outfile, str);
 			console.log(outfile);
 		});
