@@ -128,16 +128,26 @@ app.get("/files", function(req, res, next) {
 				}
 
 			});
-			glob(www+'/**/*.x3d', function( err, files ) {
+			glob('src/main/Examples/**/*.json', function( err, files ) {
 				if (err) return;
 				files.forEach(function(file) {
 					if (new RegExp(test).test(file)) {
-						json.push(file.substr(www.length, file.length-www.length));
+						json.push(file);
 						console.log(file);
 					}
 
 				});
-				send(res, json, "text/json", next);
+				glob(www+'/**/*.x3d', function( err, files ) {
+					if (err) return;
+					files.forEach(function(file) {
+						if (new RegExp(test).test(file)) {
+							json.push(file.substr(www.length, file.length-www.length));
+							console.log(file);
+						}
+
+					});
+					send(res, json, "text/json", next);
+				});
 			});
 		});
 	});
