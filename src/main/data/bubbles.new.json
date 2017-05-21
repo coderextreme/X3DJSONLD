@@ -38,7 +38,7 @@
           },
           {
             "@name":"translated",
-            "@content":"19 May 2017"
+            "@content":"20 May 2017"
           },
           {
             "@name":"generator",
@@ -315,6 +315,8 @@
                 }
               ],
               "#sourceText":[
+"",
+"",
 "ecmascript:",
 "               function set_cycle(value) {",
 "                        //var positions = [[0, 0, 10], [-10, 0, 0], [0, 0, -10], [10, 0, 0], [0, 0, 10], [0, 10, 0], [0, 0, 10], [0, -10, 0], [0, 0, 10]];",

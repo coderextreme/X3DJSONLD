@@ -22,6 +22,8 @@
                 <field name='set_cycle' accessType='inputOnly' appinfo='' documentation='' type='SFTime' value=''/>
                 <field name='spine' accessType='inputOutput' appinfo='' documentation='' type='MFVec3f' value='-50 -50 0 50 50 0'/>
 <![CDATA[
+
+
 ecmascript:
 
                 function set_cycle(value) {

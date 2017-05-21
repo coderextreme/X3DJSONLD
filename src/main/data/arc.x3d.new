@@ -36,7 +36,9 @@
 <field name="old" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 <field name="set_location" accessType="inputOnly" type="SFTime"></field>
 <field name="keyValue" accessType="outputOnly" type="MFVec3f"></field>
-<![CDATA[ecmascript:
+<![CDATA[
+
+ecmascript:
 		function set_location(value) {
                     old = translation;
 		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
@@ -69,7 +71,8 @@
 <connect nodeField="set_startpoint" protoField="set_startpoint"></connect>
 <connect nodeField="set_endpoint" protoField="set_endpoint"></connect>
 </IS>
-<![CDATA[ecmascript:
+<![CDATA[
+            ecmascript:
             function recompute(startpoint,endpoint) {
 	        if (typeof endpoint === 'undefined') {
 			return;

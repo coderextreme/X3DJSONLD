@@ -50,6 +50,8 @@
                 </field>
                 <field name='Fog' accessType='initializeOnly' type='SFNode'/>
 <![CDATA[
+
+        
 ecmascript:
 
 

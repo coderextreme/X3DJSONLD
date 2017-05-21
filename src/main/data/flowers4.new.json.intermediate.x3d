@@ -44,6 +44,9 @@
             <field name='coordinates' accessType='inputOutput' appinfo='' documentation='' type='MFVec3f' value=''/>
             <field name='coordIndexes' accessType='outputOnly' appinfo='' documentation='' type='MFInt32' value=''/>
 <![CDATA[
+
+
+
 ecmascript:
 
 var e = 5;

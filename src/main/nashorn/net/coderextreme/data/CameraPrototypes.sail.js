@@ -141,7 +141,9 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                 .addConnect(new connectObject().setNodeField("totalDuration").setProtoField("totalDuration"))
                 .addConnect(new connectObject().setNodeField("offlineRender").setProtoField("offlineRender"))
                 .addConnect(new connectObject().setNodeField("traceEnabled").setProtoField("traceEnabled")))
-              .setSourceCode("ecmascript:\n"+
+              .setSourceCode("\n"+
+"          \n"+
+"ecmascript:\n"+
 "function initialize () // CameraScript\n"+
 "{\n"+
 "//  tracePrint ('initialize start...');\n"+
@@ -534,7 +536,9 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                 .addConnect(new connectObject().setNodeField("shotDuration").setProtoField("shotDuration"))
                 .addConnect(new connectObject().setNodeField("isActive").setProtoField("isActive"))
                 .addConnect(new connectObject().setNodeField("traceEnabled").setProtoField("traceEnabled")))
-              .setSourceCode("ecmascript:\n"+
+              .setSourceCode("\n"+
+"          \n"+
+"ecmascript:\n"+
 "function initialize () // CameraShotScript\n"+
 "{\n"+
 "//  tracePrint ('initialize start...');\n"+
@@ -674,7 +678,9 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                 .addConnect(new connectObject().setNodeField("goalFocusDistance").setProtoField("goalFocusDistance"))
                 .addConnect(new connectObject().setNodeField("isActive").setProtoField("isActive"))
                 .addConnect(new connectObject().setNodeField("traceEnabled").setProtoField("traceEnabled")))
-              .setSourceCode("ecmascript:\n"+
+              .setSourceCode("\n"+
+"          \n"+
+"ecmascript:\n"+
 "function initialize () // CameraMovementScript\n"+
 "{\n"+
 "//  tracePrint ('initialize start...');\n"+
@@ -808,7 +814,9 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                 .addConnect(new connectObject().setNodeField("movieFormat").setProtoField("movieFormat"))
                 .addConnect(new connectObject().setNodeField("imageFormat").setProtoField("imageFormat"))
                 .addConnect(new connectObject().setNodeField("traceEnabled").setProtoField("traceEnabled")))
-              .setSourceCode("ecmascript:\n"+
+              .setSourceCode("\n"+
+"          \n"+
+"ecmascript:\n"+
 "function initialize () // OfflineRenderScript\n"+
 "{\n"+
 "//  tracePrint ('initialize start...');\n"+

@@ -57,7 +57,9 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addField(new fieldObject().setType(fieldObject.TYPE_MFSTRING).setName("bottom_changed").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
           .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("set_fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
           .addField(new fieldObject().setType(fieldObject.TYPE_SFINT32).setName("old").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("-1"))
-          .setSourceCode("ecmascript:\n"+
+          .setSourceCode("\n"+
+"\n"+
+"ecmascript:\n"+
 "        function set_fraction( f, tm ) {\n"+
 "            var side = Math.floor(f*frontUrls.length);\n"+
 "            if (side > frontUrls.length-1) {\n"+
@@ -102,7 +104,9 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("set_d").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setValue("20"))
           .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("set_tdelta").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setValue("0"))
           .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("set_pdelta").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setValue("0"))
-          .setSourceCode("ecmascript:\n"+
+          .setSourceCode("\n"+
+"\n"+
+"ecmascript:\n"+
 "\n"+
 "function set_a(value) {\n"+
 "	a = value;\n"+

@@ -33,7 +33,8 @@
 <Script DEF="Bounce"><field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 <field name="velocity" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 <field name="set_fraction" accessType="inputOnly" type="SFTime"></field>
-<![CDATA[ecmascript:
+<![CDATA[
+ecmascript:
 			function set_translation(value) {
 				translation = value;
 			}

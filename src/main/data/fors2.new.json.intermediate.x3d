@@ -39,7 +39,8 @@
                     <field name='set_cycle' accessType='inputOnly' appinfo='' documentation='' type='SFTime' value=''/>
                     <field name='keyValue' accessType='outputOnly' appinfo='' documentation='' type='MFVec3f' value=''/>
 <![CDATA[
-ecmascript:
+
+ ecmascript:
 					function set_cycle(value) {
                                                 old = translation;
 						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
@@ -77,7 +78,8 @@ ecmascript:
                         <connect nodeField='set_endB' protoField='positionB'/>
                     </IS>
 <![CDATA[
-ecmascript:
+
+ ecmascript:
 
                 function set_endA(value) {
 		    if (typeof spine === "undefined") {

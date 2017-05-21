@@ -68,7 +68,8 @@
 <connect nodeField="set_startpoint" protoField="set_startpoint"></connect>
 <connect nodeField="set_endpoint" protoField="set_endpoint"></connect>
 </IS>
-<![CDATA[ecmascript:
+<![CDATA[
+            ecmascript:
             function recompute(startpoint,endpoint){
 	        if (typeof endpoint === 'undefined') {
 			return;

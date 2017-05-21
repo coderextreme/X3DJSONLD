@@ -156,7 +156,8 @@ ProtoInstanceObject ProtoInstance2 = null;
                 .addConnect(new connectObject().setNodeField("connectornode").setProtoField("connectornode"))
                 .addConnect(new connectObject().setNodeField("set_startpoint").setProtoField("set_startpoint"))
                 .addConnect(new connectObject().setNodeField("set_endpoint").setProtoField("set_endpoint")))
-              .setSourceCode("ecmascript:\n"+
+              .setSourceCode("\n"+
+"            ecmascript:\n"+
 "            function recompute(startpoint,endpoint){\n"+
 "	        if (typeof endpoint === 'undefined') {\n"+
 "			return;\n"+

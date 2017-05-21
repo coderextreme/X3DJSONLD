@@ -44,6 +44,9 @@
             <field name='coordinates' accessType='inputOutput' type='MFVec3f'/>
             <field name='coordIndexes' accessType='outputOnly' type='MFInt32'/>
 <![CDATA[
+
+
+
 ecmascript:
 
 var e = 5;

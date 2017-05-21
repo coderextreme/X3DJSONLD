@@ -22,7 +22,9 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addChild(new ScriptObject().setDEF("MoveCylinder")
             .addField(new fieldObject().setType(fieldObject.TYPE_SFTIME).setName("set_cycle").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
             .addField(new fieldObject().setType(fieldObject.TYPE_MFVEC3F).setName("spine").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("-50 -50 0 50 50 0"))
-            .setSourceCode("ecmascript:\n"+
+            .setSourceCode("\n"+
+"\n"+
+"ecmascript:\n"+
 "\n"+
 "                function set_cycle(value) {\n"+
 "                        Browser.print(value);\n"+

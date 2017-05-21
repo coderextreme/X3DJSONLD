@@ -33,7 +33,9 @@ Script15.addField(field16)
 field17 = fieldObject().setType(fieldObject.TYPE_MFVEC3F).setName("spine").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("-50 -50 0 50 50 0")
 Script15.addField(field17)
 
-Script15.setSourceCode("ecmascript:\n"+
+Script15.setSourceCode("\n"+
+"\n"+
+"ecmascript:\n"+
 "\n"+
 "                function set_cycle(value) {\n"+
 "                        Browser.print(value);\n"+

@@ -38,7 +38,8 @@
 <field name="translation" accessType="outputOnly" type="SFVec3f"></field>
 <field name="rotation" accessType="outputOnly" type="SFRotation"></field>
 <field name="scale" accessType="outputOnly" type="SFVec3f"></field>
-<![CDATA[ecmascript:
+<![CDATA[
+        ecmascript:
         function recompute(startpoint,endpoint){
             var dif = endpoint.subtract(startpoint);
             var dist = dif.length()*.5;

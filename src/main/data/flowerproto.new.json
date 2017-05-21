@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"19 May 2017"
+            "@content":"20 May 2017"
           },
           {
             "@name":"generator",
@@ -309,6 +309,9 @@
                                 }
                               ],
                               "#sourceText":[
+"",
+"",
+"",
 "ecmascript:",
 "\t\t\tfunction set_translation(value) {",
 "\t\t\t\ttranslation = value;",

@@ -16,7 +16,8 @@ X3D0.setHead(head1)
 Scene7 = SceneObject()
 Script8 = ScriptObject().setDEF("Browser")
 
-Script8.setSourceCode("ecmascript:\n"+
+Script8.setSourceCode("\n"+
+"ecmascript:\n"+
 "                function initialize() {\n"+
 "		    Browser.print('DUDES\\n'+'\"DUDETTES');\n"+
 "                }\n"+
@@ -24,7 +25,9 @@ Script8.setSourceCode("ecmascript:\n"+
 Scene7.addChild(Script8)
 Script9 = ScriptObject().setDEF("Clouds")
 
-Script9.setSourceCode("ecmascript:\n"+
+Script9.setSourceCode("\n"+
+"        \n"+
+"ecmascript:\n"+
 "\n"+
 "\n"+
 "function cumulustranslation() // These values designate the boundary location of the cloud\n"+

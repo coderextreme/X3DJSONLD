@@ -56,7 +56,8 @@
             <field name='rotation' accessType='outputOnly' appinfo='' documentation='' type='SFRotation' value=''/>
             <field name='scale' accessType='outputOnly' appinfo='' documentation='' type='SFVec3f' value=''/>
 <![CDATA[
-ecmascript:
+
+        ecmascript:
         function recompute(startpoint,endpoint){
             var dif = endpoint.subtract(startpoint);
             var dist = dif.length()*.5;

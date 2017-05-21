@@ -74,7 +74,8 @@ Script34.addField(field36)
 field37 = fieldObject().setType(fieldObject.TYPE_SFTIME).setName("set_fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
 Script34.addField(field37)
 
-Script34.setSourceCode("ecmascript:\n"+
+Script34.setSourceCode("\n"+
+"ecmascript:\n"+
 "			function set_translation(value) {\n"+
 "				translation = value;\n"+
 "			}\n"+

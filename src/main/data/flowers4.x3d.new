@@ -32,7 +32,10 @@
 <Script DEF="OrbitScript"><field name="set_fraction" accessType="inputOnly" type="SFFloat"></field>
 <field name="coordinates" accessType="inputOutput" type="MFVec3f"></field>
 <field name="coordIndexes" accessType="outputOnly" type="MFInt32"></field>
-<![CDATA[ecmascript:
+<![CDATA[
+
+
+ecmascript:
 
 var e = 5;
 var f = 5;

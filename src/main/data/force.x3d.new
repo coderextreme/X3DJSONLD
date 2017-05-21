@@ -27,7 +27,9 @@
 <field name="old" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 <field name="set_cycle" accessType="inputOnly" type="SFTime"></field>
 <field name="keyValue" accessType="outputOnly" type="MFVec3f"></field>
-<![CDATA[ecmascript:
+<![CDATA[
+
+ecmascript:
 					function set_cycle(value) {
                                                 old = translation;
 						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
@@ -55,7 +57,9 @@
 <IS><connect nodeField="set_endA" protoField="set_positionA"></connect>
 <connect nodeField="set_endB" protoField="set_positionB"></connect>
 </IS>
-<![CDATA[ecmascript:
+<![CDATA[
+
+ecmascript:
 
                 function set_endA(value) {
 		    if (typeof spine === 'undefined') {
@@ -104,7 +108,9 @@
 <field name="add_node" accessType="inputOnly" value="false" type="SFBool"></field>
 <field name="ModifiableNode" type="SFNode" accessType="inputOutput"><Transform USE="HoldsContent"></Transform>
 </field>
-<![CDATA[ecmascript:
+<![CDATA[
+	
+ecmascript:
 	function add_node(value) {
                 // Browser.print('hey ', counter);
                 counter = counter++;

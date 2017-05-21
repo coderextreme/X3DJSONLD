@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"19 May 2017"
+            "@content":"20 May 2017"
           },
           {
             "@name":"generator",
@@ -46,6 +46,9 @@
             {
               "@DEF":"Browser",
               "#sourceText":[
+"",
+"",
+"",
 "ecmascript:",
 "                function initialize() {",
 "\t\t    Browser.print('DUDES\n'+'\"DUDETTES');",
@@ -57,6 +60,10 @@
             {
               "@DEF":"Clouds",
               "#sourceText":[
+"",
+"",
+"",
+"        ",
 "ecmascript:",
 "",
 "",

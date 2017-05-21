@@ -89,13 +89,16 @@ public class browser {
         .addMeta(new metaObject().setName("description").setContent("a script test with embedded \n between single quotes")))
       .setScene(new SceneObject()
         .addChild(new ScriptObject().setDEF("Browser")
-          .setSourceCode("ecmascript:\n"+
+          .setSourceCode("\n"+
+"ecmascript:\n"+
 "                function initialize() {\n"+
 "		    Browser.print('DUDES\\n'+'\"DUDETTES');\n"+
 "                }\n"+
 ""))
         .addChild(new ScriptObject().setDEF("Clouds")
-          .setSourceCode("ecmascript:\n"+
+          .setSourceCode("\n"+
+"        \n"+
+"ecmascript:\n"+
 "\n"+
 "\n"+
 "function cumulustranslation() // These values designate the boundary location of the cloud\n"+

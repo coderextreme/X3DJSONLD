@@ -90,7 +90,8 @@ Script35.addField(field45)
 field46 = fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("pdelta").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5")
 Script35.addField(field46)
 
-Script35.setSourceCode("ecmascript:\n"+
+Script35.setSourceCode("\n"+
+"ecmascript:\n"+
 "			function set_translation(value) {\n"+
 "				translation = value;\n"+
 "			}\n"+
