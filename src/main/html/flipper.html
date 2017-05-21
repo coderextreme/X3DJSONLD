@@ -85,14 +85,16 @@ function getJSON(url) {
 			return element
 		}).then(function(element) {
 			getJSON('data/abox.json').then(function(subjson) {
-				subjson = prototypeExpander("data/abox.json", subjson, "");
+				subjson = protoExpander.prototypeExpander("data/abox.json", subjson, "");
 				subjson = flattener(subjson);
 				var sceneElement = ConvertToX3DOM(subjson["X3D"]["Scene"], "Scene", element.querySelector("Scene"), "data/abox.json");  // returns Scene element
-			}).catch(function() {
+			}).catch(function(err) {
 				alert("Subscene Load failed");
+				console.log(err);
 			});
-		}).catch(function() {
+		}).catch(function(err) {
 			alert("Scene Load failed");
+			console.log(err);
 		});
 	}
 	loadX3DJSON('#x3domjson','data/flipp.json');

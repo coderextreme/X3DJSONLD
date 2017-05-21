@@ -9,10 +9,9 @@ var path = require('path');
 var fs = require("fs");
 var X3DJSONLD = require('./src/main/node/X3DJSONLD.js');
 var loadURLs = X3DJSONLD.loadURLs;
-var PE = require('./src/main/node/PrototypeExpander')
-PE.setLoadURLs(loadURLs);
-var externPrototypeExpander = PE.externPrototypeExpander;
-
+var PROTOS = require('./src/main/node/PrototypeExpander')
+PROTOS.setLoadURLs(loadURLs);
+;
 var FL = require('./src/main/node/Flattener')
 var flattener = FL.flattener;
 
@@ -34,18 +33,18 @@ app.use(express.static('src/main/nashorn'));
 app.use(express.static('src/main/lib'));
 
 function convertX3dToJson(res, infile, outfile, next) {
-	console.error("Calling converter on "+infile);
-	runAndSend(['---overwrite', '---./', infile], function(json) {
-		console.error("Calling extern proto expander");
-		json = externPrototypeExpander(outfile, json);
+	console.log("Calling converter on "+infile);
+	runAndSend(['---overwrite', infile.startsWith("http") ? '---' : '---./', infile], function(json) {
+		console.log("Calling extern proto expander");
+		json = PROTOS.externalPrototypeExpander(outfile, json);
 		json = flattener(json);
-		// console.error("Json", json);
+		// console.log("Json", json);
 		send(res, json, "text/json", next);
 	});
 }
 
 function send(res, data, type, next) {
-	console.error("Type", type);
+	console.log("Type", type);
 	try {
 		if (!type.startsWith("image/")) {
 			res.header("Content-Type", type);
@@ -65,13 +64,13 @@ app.post("/convert", function(req, res, next) {
 		var infile = __dirname+"/"+(filecount)+".x3d";
 		var outfile = __dirname+"/"+(filecount)+".json";
 		filecount++;
-		console.error("converting ", buf);
+		console.log("converting ", buf);
 		fs.writeFile(infile, buf, function(err) {
 			if (err) throw err;
 			convertX3dToJson(res, infile, outfile, function() {
-				console.error("Unlinking", infile);
+				console.log("Unlinking", infile);
 				fs.unlink(infile);
-				console.error("Unlinking", outfile);
+				console.log("Unlinking", outfile);
 				fs.unlink(outfile);
 				next();
 			});
@@ -79,6 +78,20 @@ app.post("/convert", function(req, res, next) {
 	});
 });
 
+
+app.get("/X3dGraphics.com/*.x3d", function(req, res, next) {
+	var url = req._parsedUrl.pathname;
+	var hash = url.indexOf("#");
+	var infile = url;
+	if (hash > 0) {
+	       infile = url.substring(0, hash);
+	}
+	var infile = "http:/" + infile;
+	console.log("Proxy", infile);
+	console.log("=========== converting == ", infile);
+	var outfile = infile.substr(0, infile.lastIndexOf("."))+".json";
+	convertX3dToJson(res, infile, outfile, next);
+});
 app.get("/www.web3d.org/*.x3d", function(req, res, next) {
 	var url = req._parsedUrl.pathname;
 	var hash = url.indexOf("#");
@@ -88,7 +101,7 @@ app.get("/www.web3d.org/*.x3d", function(req, res, next) {
 	}
 	var infile = www + "/" + infile;
 	console.log("Proxy", infile);
-	console.error("=========== converting == ", infile);
+	console.log("=========== converting == ", infile);
 	var outfile = infile.substr(0, infile.lastIndexOf("."))+".json";
 	convertX3dToJson(res, infile, outfile, next);
 });
@@ -102,7 +115,7 @@ app.get("/files", function(req, res, next) {
 		files.forEach(function(file) {
 			if (new RegExp(test).test(file)) {
 				json.push(file);
-				console.error(file);
+				console.log(file);
 			}
 
 		});
@@ -111,7 +124,7 @@ app.get("/files", function(req, res, next) {
 			files.forEach(function(file) {
 				if (new RegExp(test).test(file)) {
 					json.push(file);
-					console.error(file);
+					console.log(file);
 				}
 
 			});
@@ -120,7 +133,7 @@ app.get("/files", function(req, res, next) {
 				files.forEach(function(file) {
 					if (new RegExp(test).test(file)) {
 						json.push(file.substr(www.length, file.length-www.length));
-						console.error(file);
+						console.log(file);
 					}
 
 				});
@@ -136,7 +149,7 @@ function magic(path, type) {
 	while (url.startsWith("/")) {
 		url = url.substr(1);
 	}
-	console.error("Requested", url);
+	console.log("Requested", url);
 	if (url.startsWith("www.web3d.org")) {
 		var data = fs.readFileSync(www + "/" + url);
 	} else {
@@ -152,14 +165,14 @@ function magic(path, type) {
 
 function processX3d(req, res, next) {
 	var url = req._parsedUrl.pathname.substr(1);
-	console.error("X3D url", url);
+	console.log("X3D url", url);
 	var hash = url.indexOf("#");
 	var infile = url;
 	if (hash > 0) {
 	       infile = url.substring(0, hash);
 	}
 	infile = www + "/" + infile;
-	console.error("=========== converting == ", infile);
+	console.log("=========== converting == ", infile);
 	var outfile = infile.substr(0, infile.lastIndexOf("."))+".json";
 	convertX3dToJson(res, infile, outfile, next);
 }
@@ -196,6 +209,7 @@ magic("*.xml", "text/xml");
 
 app.get("*.json", function(req, res, next) {
 	var url = req._parsedUrl.pathname.substr(1);
+	console.log("Requested JSON File", url);
 	var file = url;
 	var hash = url.indexOf("#");
 	if (hash > 0) {
@@ -206,7 +220,7 @@ app.get("*.json", function(req, res, next) {
 	if (fs.existsSync(outfile)) {
 		var data = fs.readFileSync(outfile);
 		var json = JSON.parse(data.toString());
-		json = externPrototypeExpander(outfile, json);
+		json = PROTOS.externalPrototypeExpander(outfile, json);
 		json = flattener(json);
                 send(res, json, "text/json", next);
 	} else {

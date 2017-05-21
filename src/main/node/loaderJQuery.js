@@ -1,3 +1,5 @@
+protoExpander.setLoadURLs(loadURLs);
+
 var intervalId;
 function loadXmlBrowsers(xml) {
 	if (typeof xml !== 'undefined') {
@@ -139,11 +141,12 @@ function loadX3D(selector, json, url) {
     if ($('#prototype').is(':checked')) {
 	// Expand Protos
 	try {
-		// json = externPrototypeExpander(url, json);
-		json = prototypeExpander(url, json, "");
+		// json = protoExpander.externalPrototypeExpander(url, json);
+		json = protoExpander.prototypeExpander(url, json, "");
 		json = flattener(json);
 	} catch (e) {
 		alert("Problems with ProtoExpander", e);
+		console.error(e);
 	}
 	// console.log("JSON IS NOW", json);
 	try {
@@ -160,12 +163,14 @@ function loadX3D(selector, json, url) {
 			    loadXmlBrowsers(xml);
 			} catch (e) {
 				alert("Problems with loading browsers", e);
+				console.error(e);
 			}
 		    if ($('#scripting').is(':checked')) {
 			try {
 				loadScripts(json);
 			} catch (e) {
 				alert("Problems with loading scripts", e);
+				console.error(e);
 			}
 		    }
 	    } else {
@@ -181,8 +186,9 @@ function loadX3D(selector, json, url) {
  */
 function appendInline(element, url, next) {
 	$.getJSON(url, function(json) {
-		if (typeof prototypeExpander === 'function') {
-			json = prototypeExpander(url, json, "");
+		if (typeof protoExpander !== 'undefined' && typeof protoExpander.prototypeExpander === 'function') {
+			// json = protoExpander.externalPrototypeExpander(url, json);
+			json = protoExpander.prototypeExpander(url, json, "");
 		} else {
 			console.error("Perhaps you need to include the PrototypeExpander.js?");
 		}
@@ -261,6 +267,7 @@ function replaceX3DJSON(selector, json, url, xml, NS, next) {
 					$('#java').val(java);
 				} catch (e) {
 					alert("Problems serializing to JavaScript", e);
+					console.error(e);
 				}
 			}
 			if (document.getElementById("dom") !== null) {
@@ -295,17 +302,19 @@ function updateFromJson(json, path) {
 		$('#json').val(JSON.stringify(json, null, 2));
 	} catch (e) {
 		alert("JSON doesn't parse", e);
+		console.error(e);
 	}
 	try {
 		updateStl(json);
 	} catch (e) {
 		alert("Problems updating Stl");
+		console.error(e);
 	}
 	try {
 		loadX3D("#x3domjson", json, path); // does not load path
 	} catch (e) {
 		alert("Problems converting and loading JSON", e);
-		console.log(e);
+		console.error(e);
 	}
 }
 
@@ -408,7 +417,7 @@ function updateStl(json) {
 			console.error("Perhaps you need to include convertJsonToStl.js?");
 		}
 	} catch (e) {
-		console.log(e);
+		console.error(e);
 		alert("Problems converting Json to Stl. See console.")
 	}
 }

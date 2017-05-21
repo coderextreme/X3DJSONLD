@@ -11,10 +11,10 @@ X3DJSONLD.setCDATACreateFunction(function(document, element, str) {
 var Browser = X3DJSONLD.Browser;
 var loadURLs = X3DJSONLD.loadURLs;
 
-var PE = require('./PrototypeExpander')
-PE.setLoadURLs(loadURLs);
-var prototypeExpander = PE.prototypeExpander;
-var externPrototypeExpander = PE.externPrototypeExpander;
+var PROTOS = require('./PrototypeExpander')
+PROTOS.setLoadURLs(loadURLs);
+var prototypeExpander = PROTOS.prototypeExpander;
+var externalPrototypeExpander = PROTOS.externalPrototypeExpander;
 
 var FL = require('./Flattener')
 var flattener = FL.flattener;
@@ -31,15 +31,15 @@ var LOG = Script.LOG;
 
 // Convert from XML to JSON
 var runsaxon = require('./allsaxon');
-
 process.argv.shift();
 process.argv.shift();
-
 runsaxon(process.argv);
+process.argv.shift(); // get rid of -- args
+process.argv.shift();
 
 function ProcessJSON(json, file) {
 		// Run it through the prototype expander
-		json = externPrototypeExpander(file, json);
+		json = externalPrototypeExpander(file, json);
 		json = prototypeExpander(file, json, "");
 		json = flattener(json);
 

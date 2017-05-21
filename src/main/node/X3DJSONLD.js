@@ -128,7 +128,7 @@ if (typeof require === 'function') {
  * original URL the main JSON got laoded from, Urls is the se of urls, and
  * the loadedCallback returns the data and the URL it was loaded from.
  */
-function loadURLs(loadpath, urls, loadedCallback) {
+function loadURLs(loadpath, urls, loadedCallback, protoexp, done, externProtoDeclare, obj) {
 	if (typeof urls !== 'undefined') {
 		urls = processURLs(urls, loadpath);
 		for (var u in urls) {
@@ -150,7 +150,7 @@ function loadURLs(loadpath, urls, loadedCallback) {
 						console.error("Loading HTTP URL", url);
 						if (typeof $ !== 'undefined' && typeof $.get === 'function') {
 							$.get(url, function(data) {
-								loadedCallback(data, url);
+								loadedCallback(data, url, protoexp, done, externProtoDeclare, obj);
 							});
 						} else {
 							http.get({ host: host, path: path}, function(res) {
@@ -159,7 +159,7 @@ function loadURLs(loadpath, urls, loadedCallback) {
 									data += d;
 								});
 								res.on('end', function() {
-									loadedCallback(data, url);
+									loadedCallback(data, url, protoexp, done, externProtoDeclare, obj);
 								});
 							});
 					
@@ -168,7 +168,7 @@ function loadURLs(loadpath, urls, loadedCallback) {
 						console.error("Loading HTTPS URL", url);
 						if (typeof $ !== 'undefined' && typeof $.get === 'function') {
 							$.get(url, function(data) {
-								loadedCallback(data, url);
+								loadedCallback(data, url, protoexp, done, externProtoDeclare, obj);
 							});
 						} else {
 							https.get({ host: host, path: path}, function(res) {
@@ -177,7 +177,7 @@ function loadURLs(loadpath, urls, loadedCallback) {
 									data += d;
 								});
 								res.on('end', function() {
-									loadedCallback(data, url);
+									loadedCallback(data, url, protoexp, done, externProtoDeclare, obj);
 								});
 							});
 					
@@ -191,7 +191,7 @@ function loadURLs(loadpath, urls, loadedCallback) {
 						}
 						try {
 							var data = fs.readFileSync(url);
-							loadedCallback(data.toString(), url);
+							loadedCallback(data.toString(), url, protoexp, done, externProtoDeclare, obj);
 						} catch (e) {
 							var filename = url;
 							filename = filename.substring(0, filename.lastIndexOf("."))+".x3d";
@@ -199,14 +199,14 @@ function loadURLs(loadpath, urls, loadedCallback) {
 							if (typeof runAndSend === 'function') {
 								runAndSend(['---silent', filename], function(jsobj) {
 									data = JSON.stringify(jsobj);
-									loadedCallback(data, filename);
+									loadedCallback(data, filename, protoexp, done, externProtoDeclare, obj);
 								});
 							}
 						}
 					} else if (typeof $ !== 'undefined' && typeof $.get === 'function') {
 						console.error("Loading Relative URL", url);
 						$.get(url, function(data) {
-							loadedCallback(data, url);
+							loadedCallback(data, url, protoexp, done, externProtoDeclare, obj);
 						});
 					} else {
 						console.error("Didn't load", url, ".  No JQuery $.get() or file system");
@@ -507,7 +507,7 @@ function ConvertToX3DOM(object, parentkey, element, path, containerField) {
 				}
                                 if (parentkey === '@url' || parentkey.indexOf("Url") === parentkey.length - 3) {
 					// console.log("Path is",path);
-					// processURLs(localArray, path);
+					processURLs(localArray, path);
 				}
 				elementSetAttribute(element, parentkey.substr(1),'"'+localArray.join('" "')+'"');
 			} else {

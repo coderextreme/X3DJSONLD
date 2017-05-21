@@ -23,16 +23,33 @@
     </style>
 </head>
 <body>
-    <div id="x3domjson"></div>
-    <X3DCanvas cache='false'>
-           <p>Your browser may not support all features required by Cobweb!</p>
-	   <X3D>
-	   <Scene>
-	   </Scene>
-	   </X3D>
-    </X3DCanvas>
+	Use VRMLScript in X3DOM? <input id="scripting" type="checkbox" checked="true"></input>
+	<table>
+		<tr>
+			<td>
+				Cobweb
+			</td>
+			<td>
+			    <X3DCanvas cache='false'>
+				   <p>Your browser may not support all features required by Cobweb!</p>
+				   <X3D>
+				   <Scene>
+				   </Scene>
+				   </X3D>
+			    </X3DCanvas>
+			</td>
+		</tr>
+			<td>
+				X3DOM
+			</td>
+			<td>
+    				<div id="x3domjson"></div>
+			</td>
+		<tr>
+		</tr>
 </body>
     <script type="text/javascript" src="node/X3DJSONLD.js"></script>
+    <script type="text/javascript" src="node/Script.js"></script>
     <script type="text/javascript" src="node/PrototypeExpander.js"></script>
     <script type="text/javascript" src="node/Flattener.js"></script>
     <script type="text/javascript" src="node/loaderJQuery.js"></script>
@@ -77,21 +94,28 @@ function getJSON(url) {
 	function loadX3DJSON(selector, url) {
 		getJSON(url).then(function(json) {
 			var parent = CreateElement('X3D');
-			return ConvertToX3DOM(json, "X3D", parent, url); // returns an element
-		}).then(function(element) {
+			json = protoExpander.prototypeExpander(url, json, "");
+			json = flattener(json);
+			var element = ConvertToX3DOM(json, "X3D", parent, url); // returns an element
 			$(selector+" X3D").remove();
 			$(selector).append(element); // add to X3DOM
 			loadCobwebDOM(element, 0); // loads into cobweb element 0 on page.
-			return element
+    			if ($('#scripting').is(':checked')) {
+				loadScripts(json);
+			}
+			return element;
 		}).then(function(element) {
-			getJSON('data/abox.json').then(function(subjson) {
-				subjson = prototypeExpander("data/abox.json", subjson, "");
+			var url = 'data/asmallbox.json';
+			getJSON(url).then(function(subjson) {
+				subjson = protoExpander.prototypeExpander(url, subjson, "");
 				subjson = flattener(subjson);
-				var sceneElement = ConvertToX3DOM(subjson["X3D"]["Scene"], "Scene", element.querySelector("Scene"), "data/abox.json");  // returns Scene element
-			}).catch(function() {
+				var sceneElement = ConvertToX3DOM(subjson["X3D"]["Scene"], "Scene", element.querySelector("Scene"), url);  // returns Scene element
+			}).catch(function(err) {
+				console.log(err);
 				alert("Subscene Load failed");
 			});
-		}).catch(function() {
+		}).catch(function(err) {
+			console.log(err);
 			alert("Scene Load failed");
 		});
 	}
