@@ -49,7 +49,9 @@
 <field name="bottom_changed" type="MFString" accessType="outputOnly"></field>
 <field name="set_fraction" type="SFFloat" accessType="inputOnly"></field>
 <field name="old" type="SFInt32" accessType="inputOutput" value="-1"></field>
-<![CDATA[ecmascript:
+<![CDATA[
+
+ecmascript:
         function set_fraction( f, tm ) {
             var side = Math.floor(f*frontUrls.length);
             if (side > frontUrls.length-1) {
@@ -93,7 +95,9 @@
 <field name="set_d" type="SFFloat" accessType="inputOnly" value="20"></field>
 <field name="set_tdelta" type="SFFloat" accessType="inputOnly" value="0"></field>
 <field name="set_pdelta" type="SFFloat" accessType="inputOnly" value="0"></field>
-<![CDATA[ecmascript:
+<![CDATA[
+
+ecmascript:
 
 function set_a(value) {
 	a = value;

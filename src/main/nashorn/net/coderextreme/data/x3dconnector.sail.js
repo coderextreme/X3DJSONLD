@@ -45,7 +45,8 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("translation").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
           .addField(new fieldObject().setType(fieldObject.TYPE_SFROTATION).setName("rotation").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
           .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("scale").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-          .setSourceCode("ecmascript:\n"+
+          .setSourceCode("\n"+
+"        ecmascript:\n"+
 "        function recompute(startpoint,endpoint){\n"+
 "            var dif = endpoint.subtract(startpoint);\n"+
 "            var dist = dif.length()*.5;\n"+

@@ -142,7 +142,8 @@ connect72 = connectObject().setNodeField("set_endpoint").setProtoField("set_endp
 IS67.addConnect(connect72)
 Script61.setIS(IS67)
 
-Script61.setSourceCode("ecmascript:\n"+
+Script61.setSourceCode("\n"+
+"            ecmascript:\n"+
 "            function recompute(startpoint,endpoint){\n"+
 "	        if (typeof endpoint === 'undefined') {\n"+
 "			return;\n"+

@@ -47,6 +47,7 @@
                     <field name='velocity' accessType='inputOutput' appinfo='' documentation='' type='SFVec3f' value='0 0 0'/>
                     <field name='set_fraction' accessType='inputOnly' appinfo='' documentation='' type='SFTime' value=''/>
 <![CDATA[
+
 ecmascript:
 			function set_translation(value) {
 				translation = value;

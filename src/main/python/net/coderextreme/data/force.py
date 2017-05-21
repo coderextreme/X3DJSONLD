@@ -60,7 +60,9 @@ Script27.addField(field30)
 field31 = fieldObject().setType(fieldObject.TYPE_MFVEC3F).setName("keyValue").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
 Script27.addField(field31)
 
-Script27.setSourceCode("ecmascript:\n"+
+Script27.setSourceCode("\n"+
+"\n"+
+"ecmascript:\n"+
 "					function set_cycle(value) {\n"+
 "                                                old = translation;\n"+
 "						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);\n"+
@@ -111,7 +113,9 @@ connect52 = connectObject().setNodeField("set_endB").setProtoField("set_position
 IS50.addConnect(connect52)
 Script46.setIS(IS50)
 
-Script46.setSourceCode("ecmascript:\n"+
+Script46.setSourceCode("\n"+
+"\n"+
+"ecmascript:\n"+
 "\n"+
 "                function set_endA(value) {\n"+
 "		    if (typeof spine === 'undefined') {\n"+
@@ -188,7 +192,9 @@ Transform78 = TransformObject().setUSE("HoldsContent")
 field77.addChild(Transform78)
 Script73.addField(field77)
 
-Script73.setSourceCode("ecmascript:\n"+
+Script73.setSourceCode("\n"+
+"	\n"+
+"ecmascript:\n"+
 "	function add_node(value) {\n"+
 "                // Browser.print('hey ', counter);\n"+
 "                counter = counter++;\n"+

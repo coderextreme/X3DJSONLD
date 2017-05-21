@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"19 May 2017"
+            "@content":"20 May 2017"
           },
           {
             "@name":"generator",
@@ -400,7 +400,8 @@
                             ]
                         },
                         "#sourceText":[
-"ecmascript:",
+"",
+"            ecmascript:",
 "            function recompute(startpoint,endpoint){",
 "\t        if (typeof endpoint === 'undefined') {",
 "\t\t\treturn;",

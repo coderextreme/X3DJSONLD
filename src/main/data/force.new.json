@@ -32,7 +32,7 @@
           },
           {
             "@name":"translated",
-            "@content":"19 May 2017"
+            "@content":"20 May 2017"
           },
           {
             "@name":"generator",
@@ -166,6 +166,10 @@
                           }
                         ],
                         "#sourceText":[
+"",
+"",
+"",
+"",
 "ecmascript:",
 "\t\t\t\t\tfunction set_cycle(value) {",
 "                                                old = translation;",
@@ -296,6 +300,10 @@
                             ]
                         },
                         "#sourceText":[
+"",
+"",
+"",
+"",
 "ecmascript:",
 "",
 "                function set_endA(value) {",
@@ -479,6 +487,10 @@
                 }
               ],
               "#sourceText":[
+"",
+"",
+"",
+"\t",
 "ecmascript:",
 "\tfunction add_node(value) {",
 "                // Browser.print('hey ', counter);",

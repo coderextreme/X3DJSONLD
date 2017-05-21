@@ -75,7 +75,9 @@ Script32.addField(field35)
 field37 = fieldObject().setType(fieldObject.TYPE_SFNODE).setName("Fog").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
 Script32.addField(field37)
 
-Script32.setSourceCode("ecmascript:\n"+
+Script32.setSourceCode("\n"+
+"        \n"+
+"ecmascript:\n"+
 "\n"+
 "\n"+
 "function cumulustranslation() // These values designate the boundary location of the cloud\n"+

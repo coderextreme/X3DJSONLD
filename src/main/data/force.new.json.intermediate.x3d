@@ -43,6 +43,8 @@
                     <field name='set_cycle' accessType='inputOnly' appinfo='' documentation='' type='SFTime' value=''/>
                     <field name='keyValue' accessType='outputOnly' appinfo='' documentation='' type='MFVec3f' value=''/>
 <![CDATA[
+
+
 ecmascript:
 					function set_cycle(value) {
                                                 old = translation;
@@ -81,6 +83,8 @@ ecmascript:
                         <connect nodeField='set_endB' protoField='set_positionB'/>
                     </IS>
 <![CDATA[
+
+
 ecmascript:
 
                 function set_endA(value) {
@@ -143,6 +147,8 @@ ecmascript:
                 <Transform USE='HoldsContent'/>
             </field>
 <![CDATA[
+
+	
 ecmascript:
 	function add_node(value) {
                 // Browser.print('hey ', counter);

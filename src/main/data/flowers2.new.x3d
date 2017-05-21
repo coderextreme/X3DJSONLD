@@ -43,6 +43,8 @@
                 <field name='coordinates' accessType='outputOnly' type='MFVec3f'/>
                 <field name='coordIndexes' accessType='outputOnly' type='MFInt32'/>
 <![CDATA[
+
+
 ecmascript:
 
 var e = 5;
@@ -123,6 +125,8 @@ function set_fraction(fraction, eventTime) {
                 <field name='coordinates' accessType='outputOnly' type='MFVec3f'/>
                 <field name='coordIndexes' accessType='outputOnly' type='MFInt32'/>
 <![CDATA[
+
+
 ecmascript:
 
 var e = 5;

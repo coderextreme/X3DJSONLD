@@ -107,7 +107,9 @@ Script38.addField(field51)
 field52 = fieldObject().setType(fieldObject.TYPE_SFINT32).setName("old").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("-1")
 Script38.addField(field52)
 
-Script38.setSourceCode("ecmascript:\n"+
+Script38.setSourceCode(" \n"+
+"\n"+
+"ecmascript:\n"+
 "        function set_fraction( f, tm ) {\n"+
 "	    var side = Math.floor(f*frontUrls.length);\n"+
 "	    if (side > frontUrls.length-1) {\n"+

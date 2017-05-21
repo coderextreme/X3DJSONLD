@@ -64,7 +64,7 @@
           },
           {
             "@name":"translated",
-            "@content":"19 May 2017"
+            "@content":"20 May 2017"
           },
           {
             "@name":"generator",
@@ -727,6 +727,8 @@
                             ]
                         },
                         "#sourceText":[
+"",
+"          ",
 "ecmascript:",
 "function initialize () // CameraScript",
 "{",
@@ -1367,6 +1369,8 @@
                             ]
                         },
                         "#sourceText":[
+"",
+"          ",
 "ecmascript:",
 "function initialize () // CameraShotScript",
 "{",
@@ -1706,6 +1710,8 @@
                             ]
                         },
                         "#sourceText":[
+"",
+"          ",
 "ecmascript:",
 "function initialize () // CameraMovementScript",
 "{",
@@ -2024,6 +2030,8 @@
                             ]
                         },
                         "#sourceText":[
+"",
+"          ",
 "ecmascript:",
 "function initialize () // OfflineRenderScript",
 "{",

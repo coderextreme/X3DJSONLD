@@ -11,6 +11,7 @@
     <Scene>
         <Script DEF='Browser' directOutput='false' mustEvaluate='false' url='' class=''>
 <![CDATA[
+
 ecmascript:
                 function initialize() {
 		    Browser.print('DUDES\n'+'"DUDETTES');
@@ -20,6 +21,8 @@ ecmascript:
         </Script>
         <Script DEF='Clouds' directOutput='false' mustEvaluate='false' url='' class=''>
 <![CDATA[
+
+        
 ecmascript:
 
 

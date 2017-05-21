@@ -60,6 +60,8 @@
             <field name='set_fraction' accessType='inputOnly' appinfo='' documentation='' type='SFFloat' value=''/>
             <field name='old' accessType='inputOutput' appinfo='' documentation='' type='SFInt32' value='-1'/>
 <![CDATA[
+
+
 ecmascript:
         function set_fraction( f, tm ) {
             var side = Math.floor(f*frontUrls.length);
@@ -108,6 +110,8 @@ ecmascript:
             <field name='set_tdelta' accessType='inputOnly' appinfo='' documentation='' type='SFFloat' value='0.0'/>
             <field name='set_pdelta' accessType='inputOnly' appinfo='' documentation='' type='SFFloat' value='0.0'/>
 <![CDATA[
+
+
 ecmascript:
 
 function set_a(value) {

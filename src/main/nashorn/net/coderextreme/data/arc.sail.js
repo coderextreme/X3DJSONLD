@@ -59,7 +59,9 @@ var ProtoInstance12 = null;
                 .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("old").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
                 .addField(new fieldObject().setType(fieldObject.TYPE_SFTIME).setName("set_location").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
                 .addField(new fieldObject().setType(fieldObject.TYPE_MFVEC3F).setName("keyValue").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-                .setSourceCode("ecmascript:\n"+
+                .setSourceCode("\n"+
+"\n"+
+"ecmascript:\n"+
 "		function set_location(value) {\n"+
 "                    old = translation;\n"+
 "		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);\n"+
@@ -93,7 +95,8 @@ var ProtoInstance12 = null;
                 .addConnect(new connectObject().setNodeField("connectornode").setProtoField("connectornode"))
                 .addConnect(new connectObject().setNodeField("set_startpoint").setProtoField("set_startpoint"))
                 .addConnect(new connectObject().setNodeField("set_endpoint").setProtoField("set_endpoint")))
-              .setSourceCode("ecmascript:\n"+
+              .setSourceCode("\n"+
+"            ecmascript:\n"+
 "            function recompute(startpoint,endpoint) {\n"+
 "	        if (typeof endpoint === 'undefined') {\n"+
 "			return;\n"+

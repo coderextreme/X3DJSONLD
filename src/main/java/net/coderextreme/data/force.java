@@ -119,7 +119,9 @@ ProtoInstanceObject ProtoInstance6 = null;
               .addField(new fieldObject().setType("SFVec3f").setName("old").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
               .addField(new fieldObject().setType("SFTime").setName("set_cycle").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
               .addField(new fieldObject().setType("MFVec3f").setName("keyValue").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-              .setSourceCode("ecmascript:\n"+
+              .setSourceCode("\n"+
+"\n"+
+"ecmascript:\n"+
 "					function set_cycle(value) {\n"+
 "                                                old = translation;\n"+
 "						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);\n"+
@@ -148,7 +150,9 @@ ProtoInstanceObject ProtoInstance6 = null;
               .setIS(new ISObject()
                 .addConnect(new connectObject().setNodeField("set_endA").setProtoField("set_positionA"))
                 .addConnect(new connectObject().setNodeField("set_endB").setProtoField("set_positionB")))
-              .setSourceCode("ecmascript:\n"+
+              .setSourceCode("\n"+
+"\n"+
+"ecmascript:\n"+
 "\n"+
 "                function set_endA(value) {\n"+
 "		    if (typeof spine === 'undefined') {\n"+
@@ -186,7 +190,9 @@ ProtoInstanceObject ProtoInstance6 = null;
           .addField(new fieldObject().setType("SFBool").setName("add_node").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setValue("false"))
           .addField(new fieldObject().setType("SFNode").setName("ModifiableNode").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
             .addChild(new TransformObject().setUSE("HoldsContent")))
-          .setSourceCode("ecmascript:\n"+
+          .setSourceCode("\n"+
+"	\n"+
+"ecmascript:\n"+
 "	function add_node(value) {\n"+
 "                // Browser.print('hey ', counter);\n"+
 "                counter = counter++;\n"+

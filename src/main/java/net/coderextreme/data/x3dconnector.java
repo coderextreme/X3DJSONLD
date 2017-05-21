@@ -121,7 +121,8 @@ public class x3dconnector {
           .addField(new fieldObject().setType("SFVec3f").setName("translation").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
           .addField(new fieldObject().setType("SFRotation").setName("rotation").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
           .addField(new fieldObject().setType("SFVec3f").setName("scale").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-          .setSourceCode("ecmascript:\n"+
+          .setSourceCode("\n"+
+"        ecmascript:\n"+
 "        function recompute(startpoint,endpoint){\n"+
 "            var dif = endpoint.subtract(startpoint);\n"+
 "            var dist = dif.length()*.5;\n"+
