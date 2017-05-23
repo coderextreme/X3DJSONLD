@@ -24,7 +24,6 @@
 </head>
 <body>
 	Use VRMLScript in X3DOM? <input id="scripting" type="checkbox" checked="true"></input>
-	<button onclick="x3dom.reload()">Click to reload X3DOM</button>
 	<table>
 		<tr>
 			<td>
@@ -55,45 +54,9 @@
     <script type="text/javascript" src="node/Flattener.js"></script>
     <script type="text/javascript" src="node/loaderJQuery.js"></script>
     <script type="text/javascript">
-// From: https://developers.google.com/web/fundamentals/getting-started/primers/promises
-function get(url) {
-  // Return a new promise.
-  return new Promise(function(resolve, reject) {
-    // Do the usual XHR stuff
-    var req = new XMLHttpRequest();
-    req.open('GET', url);
 
-    req.onload = function() {
-      // This is called even on 404 etc
-      // so check the status
-      if (req.status == 200) {
-        // Resolve the promise with the response text
-        resolve(req.response);
-      }
-      else {
-        // Otherwise reject with the status text
-        // which will hopefully be a meaningful error
-        reject(Error(req.statusText));
-      }
-    };
-
-    // Handle network errors
-    req.onerror = function() {
-      reject(Error("Network Error"));
-    };
-
-    // Make the request
-    req.send();
-  });
-}
-
-function getJSON(url) {
-  return get(url).then(JSON.parse);
-}
-// Done with include
-
-	function loadX3DJSON(selector, url) {
-		getJSON(url).then(function(json) {
+	function loadX3DJSON(selector, url, callback) {
+		$.getJSON(url, function(json) {
 			var parent = CreateElement('X3D');
 			json = protoExpander.prototypeExpander(url, json, "");
 			json = flattener(json);
@@ -104,25 +67,21 @@ function getJSON(url) {
     			if ($('#scripting').is(':checked')) {
 				loadScripts(json);
 			}
-			return element;
-		}).then(function(element) {
-			var url = 'data/asmallbox.json';
-			getJSON(url).then(function(subjson) {
-				subjson = protoExpander.prototypeExpander(url, subjson, "");
-				subjson = flattener(subjson);
-				var sceneElement = ConvertToX3DOM(subjson["X3D"]["Scene"], "Scene", element.querySelector("Scene"), url);  // returns Scene element
-				loadCobwebDOM(element, 0); // reloads cobweb element 0 on page.
-			}).catch(function(err) {
-				console.log(err);
-				alert("Subscene Load failed");
-			});
-		}).catch(function(err) {
-			console.log(err);
-			alert("Scene Load failed");
+			callback(element);
+		});
+	}
+	function loadSubscene(selector, url, element) {
+		$.getJSON(url, function(subjson) {
+			subjson = protoExpander.prototypeExpander(url, subjson, "");
+			subjson = flattener(subjson);
+			var sceneElement = ConvertToX3DOM(subjson["X3D"]["Scene"], "Scene", element.querySelector(selector), url);  // returns Scene element
+			loadCobwebDOM(element, 0); // loads into cobweb element 0 on page.
 		});
 	}
 	$(document).ready(function() {
-		loadX3DJSON('#x3domjson','data/cobweb.json');
+		loadX3DJSON('#x3domjson','data/cobweb.json', function(element) {
+			loadSubscene("Scene", 'data/asmallbox.json', element);
+		});
 	});
     </script>
 </html>
