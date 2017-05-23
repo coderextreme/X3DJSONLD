@@ -1,11 +1,9 @@
 #!/bin/bash
-export PYTHONSAI=/c/Users/coderextreme/pythonSAI
-export X3DJSONLD=/c/Users/coderextreme/X3DJSONLD
-export NASHORNPYTHONSAI=/Users/coderextreme/pythonSAI
+export X3DJSONLD=c:/Users/coderextreme/X3DJSONLD
 export NASHORNX3DJSONLD=/Users/coderextreme/X3DJSONLD
-export CLASSPATH="../../../target/classes;../../../saxon9he.jar;.;${PYTHONSAI}/X3DJSAIL.3.3.classes.jar;${X3DJSONLD}/saxon9he.jar;${X3DJSONLD}/target/X3DJSONLD-1.0-SNAPSHOT.jar;${X3DJSONLD}/target/classes"
+export CLASSPATH="${X3DJSONLD}/X3DJSAIL-3.3-SNAPSHOT.jar;${X3DJSONLD}/saxon9he.jar;${X3DJSONLD}/target/X3DJSONLD-1.0-SNAPSHOT.jar;${X3DJSONLD}/target/classes"
 # NASHORN DOES NOT TAKE C:
-export NASHORN_CLASSPATH=".;${NASHORNPYTHONSAI}/X3DJSAIL.3.3.classes.jar;${NASHORNX3DJSONLD}/saxon9he.jar;${NASHORNX3DJSONLD}/target/X3DJSONLD-1.0-SNAPSHOT.jar;${NASHORNX3DJSONLD}/src/main/nashorn"
+export NASHORN_CLASSPATH=".;${NASHORNX3DJSONLD}/X3DJSAIL-3.3-SNAPSHOT.jar;${NASHORNX3DJSONLD}/saxon9he.jar;${NASHORNX3DJSONLD}/target/X3DJSONLD-1.0-SNAPSHOT.jar;${NASHORNX3DJSONLD}/src/main/nashorn"
 export PYTHONPATH=/usr/bin:/c/Python27:/c/Python27/Scripts
 export PATH="${PYTHONPATH};${JAVA_HOME}/bin;${JAVA_HOME}/jre/bin/server;${PATH}"
 export PYTHON=python.exe
