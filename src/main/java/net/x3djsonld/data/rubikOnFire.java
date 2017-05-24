@@ -204,6 +204,11 @@ public class rubikOnFire
 	catch (Exception e)
 	{
 		exceptionResult = e.getMessage(); // report exception failures, if any
+	    if (exceptionResult == null)
+	    {
+			exceptionResult = "Exception caught but null message!";
+			e.printStackTrace();
+	    }
 	}
 	if  (metaResult.isEmpty() && exceptionResult.isEmpty() && validationResult.isEmpty())
 	     return "success";
@@ -225,6 +230,10 @@ public class rubikOnFire
     public static void main(String argv[])
     {
 		rubikOnFire testObject = new rubikOnFire();
-		System.out.println ("rubikOnFire execution self-validation test results: " + testObject.validateSelf());
+		System.out.print("rubikOnFire execution self-validation test results: ");
+		String validationResults = testObject.validateSelf();
+		if (validationResults.startsWith("<"))
+			System.out.println();
+		System.out.println(validationResults);
 	}
 }

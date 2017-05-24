@@ -89,7 +89,7 @@ abox_sail.prototype = {
     .addChild(new ProtoInstanceObject().setName("one")
       .addFieldValue(new fieldValueObject().setName("myShape")
         .addChild(new ShapeObject()
-          .setGeometry(new BoxObject().setSize(1.0,1.0,1.0))))));
+          .setGeometry(new BoxObject().setSize(140.0,140.0,140.0))))));
   },
   // end of initialize() method
 

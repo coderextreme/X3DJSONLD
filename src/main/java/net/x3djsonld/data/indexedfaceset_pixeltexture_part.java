@@ -212,6 +212,11 @@ public class indexedfaceset_pixeltexture_part
 	catch (Exception e)
 	{
 		exceptionResult = e.getMessage(); // report exception failures, if any
+	    if (exceptionResult == null)
+	    {
+			exceptionResult = "Exception caught but null message!";
+			e.printStackTrace();
+	    }
 	}
 	if  (metaResult.isEmpty() && exceptionResult.isEmpty() && validationResult.isEmpty())
 	     return "success";
@@ -233,6 +238,10 @@ public class indexedfaceset_pixeltexture_part
     public static void main(String argv[])
     {
 		indexedfaceset_pixeltexture_part testObject = new indexedfaceset_pixeltexture_part();
-		System.out.println ("indexedfaceset_pixeltexture_part execution self-validation test results: " + testObject.validateSelf());
+		System.out.print("indexedfaceset_pixeltexture_part execution self-validation test results: ");
+		String validationResults = testObject.validateSelf();
+		if (validationResults.startsWith("<"))
+			System.out.println();
+		System.out.println(validationResults);
 	}
 }

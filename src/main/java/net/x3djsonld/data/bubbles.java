@@ -207,6 +207,11 @@ public class bubbles
 	catch (Exception e)
 	{
 		exceptionResult = e.getMessage(); // report exception failures, if any
+	    if (exceptionResult == null)
+	    {
+			exceptionResult = "Exception caught but null message!";
+			e.printStackTrace();
+	    }
 	}
 	if  (metaResult.isEmpty() && exceptionResult.isEmpty() && validationResult.isEmpty())
 	     return "success";
@@ -228,6 +233,10 @@ public class bubbles
     public static void main(String argv[])
     {
 		bubbles testObject = new bubbles();
-		System.out.println ("bubbles execution self-validation test results: " + testObject.validateSelf());
+		System.out.print("bubbles execution self-validation test results: ");
+		String validationResults = testObject.validateSelf();
+		if (validationResults.startsWith("<"))
+			System.out.println();
+		System.out.println(validationResults);
 	}
 }

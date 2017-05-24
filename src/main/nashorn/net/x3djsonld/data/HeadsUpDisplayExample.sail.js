@@ -1,18 +1,9 @@
-package net.x3djsonld.data;
-
-import java.util.*;
-import org.web3d.x3d.jsail.Core.*;
-import org.web3d.x3d.jsail.EnvironmentalEffects.*;
-import org.web3d.x3d.jsail.fields.*;
-import org.web3d.x3d.jsail.Navigation.*;
-import org.web3d.x3d.jsail.Networking.*;
-import org.web3d.x3d.jsail.Shape.*;
-import org.web3d.x3d.jsail.Text.*;
+load('X3Dautoclass.js');
 
 // Javadoc annotations follow, see below for source.
 /**
  * <p> Prototype definition that demonstrates use of a simple HeadsUpDisplay (HUD) prototype that maintains a stable position for its children on the screen. </p>
- <p> Related links: <a href="../../../Chapter14Prototypes/HeadsUpDisplayExample.java">HeadsUpDisplayExample.java</a> source, <a href="../../../Chapter14Prototypes/HeadsUpDisplayExampleIndex.html" target="_top">HeadsUpDisplayExample catalog page</a>, <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="http://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: <a href="../../../Chapter14Prototypes/HeadsUpDisplayExample_sail.java">HeadsUpDisplayExample_sail.java</a> source, <a href="../../../Chapter14Prototypes/HeadsUpDisplayExampleIndex.html" target="_top">HeadsUpDisplayExample catalog page</a>, <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="http://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
@@ -80,25 +71,27 @@ import org.web3d.x3d.jsail.Text.*;
 		This program uses the
 		<a href="http://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>.
 		It has been produced using the 
-		<a href="http://www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">X3dToJava.xslt</a>
-		stylesheet to create Java source code from an <code>.x3d</code> scene.
+		<a href="http://www.web3d.org/x3d/stylesheets/X3dToES5.xslt" target="_blank">X3dToES5.xslt</a>
+		stylesheet to create ES5 source code from an <code>.x3d</code> scene.
 	</p>
 
 	* @author Leonard Daly and Don Brutzman
  */
 
-public class HeadsUpDisplayExample
-{
+function HeadsUpDisplayExample_sail
   /** Default constructor to create this object. */
-  public HeadsUpDisplayExample ()
+  ()
   {
-    initialize();
+    /** The initialized model object, created within initialize() method. */
+    this.x3dModel = {};
+    this.initialize();
+    return this;
   }
-	
+HeadsUpDisplayExample_sail.prototype = {
   /** Create and initialize the X3D model. */
-  public final void initialize()
+  initialize : function ()
   {
-  x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
+  this.x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
   .setHead(new headObject()
     .addMeta(new metaObject().setName("title").setContent("HeadsUpDisplayExample.x3d"))
     .addMeta(new metaObject().setName("description").setContent("Prototype definition that demonstrates use of a simple HeadsUpDisplay (HUD) prototype that maintains a stable position for its children on the screen."))
@@ -120,7 +113,7 @@ public class HeadsUpDisplayExample
       .addField(new fieldObject().setAccessType("inputOutput").setName("children").setType("MFNode").setAppinfo("X3D content positioned at HUD offset"))
       .addField(new fieldObject().setAccessType("outputOnly").setName("position_changed").setType("SFVec3f").setAppinfo("HUD position update (in world coordinates) relative to original location"))
       .addField(new fieldObject().setAccessType("outputOnly").setName("orientation_changed").setType("SFRotation").setAppinfo("HUD orientation update relative to original location")))
-    .addChild(new BackgroundObject("SandyShallowBottom").setSkyAngle(new float[] {0.04f,0.05f,0.1f,1.309f,1.570f}).setGroundAngle(new float[] {0.05f,1.52f,1.56f,1.5707f}).setGroundColor(new MFColorObject(new float[] {0.2f,0.2f,0.0f,0.3f,0.3f,0.0f,0.5f,0.5f,0.3f,0.1f,0.3f,0.4f,0.0f,0.2f,0.4f})).setSkyColor(new MFColorObject(new float[] {0.8f,0.8f,0.2f,0.8f,0.8f,0.2f,0.1f,0.1f,0.6f,0.1f,0.1f,0.6f,0.1f,0.25f,0.8f,0.6f,0.6f,0.9f})))
+    .addChild(new BackgroundObject("SandyShallowBottom").setSkyAngle(Java.to([0.04,0.05,0.1,1.309,1.570], Java.type("float[]"))).setGroundAngle(Java.to([0.05,1.52,1.56,1.5707], Java.type("float[]"))).setGroundColor(new MFColorObject(Java.to([0.2,0.2,0.0,0.3,0.3,0.0,0.5,0.5,0.3,0.1,0.3,0.4,0.0,0.2,0.4], Java.type("float[]")))).setSkyColor(new MFColorObject(Java.to([0.8,0.8,0.2,0.8,0.8,0.2,0.1,0.1,0.6,0.1,0.1,0.6,0.1,0.25,0.8,0.6,0.6,0.9], Java.type("float[]")))))
     .addChild(new ViewpointObject().setDescription("Heads-up display (HUD)"))
     .addComments(" ProtoDeclare is the \"cookie cutter\" template, ProtoInstance creates an actual occurrence ")
     .addChild(new ProtoInstanceObject("HeadsUpDisplayInstance", "HeadsUpDisplay").setDEF("HeadsUpDisplayInstance").setName("HeadsUpDisplay")
@@ -129,44 +122,43 @@ public class HeadsUpDisplayExample
       .addFieldValue(new fieldValueObject().setName("children")
         .addChild(new ShapeObject()
           .setGeometry(new TextObject().setString(new MFStringObject("\"HUD text stays fixed\" \"while user navigates\""))
-            .setFontStyle(new FontStyleObject().setJustify(new MFStringObject("\"MIDDLE\" \"MIDDLE\"")).setSize(0.3f)))
+            .setFontStyle(new FontStyleObject().setJustify(new MFStringObject("\"MIDDLE\" \"MIDDLE\"")).setSize(0.3)))
           .setAppearance(new AppearanceObject()
-            .setMaterial(new MaterialObject().setDiffuseColor(0.894118f,0.819608f,1.0f))))))
+            .setMaterial(new MaterialObject().setDiffuseColor(0.894118,0.819608,1.0))))))
     .addChild(new InlineObject().setUrl(new MFStringObject("\"../HelloWorld.x3d\" \"http://X3dGraphics.com/examples/X3dForWebAuthors/HelloWorld.x3d\" \"../HelloWorld.wrl\" \"http://X3dGraphics.com/examples/X3dForWebAuthors/HelloWorld.wrl\""))));
-  }
+  },
   // end of initialize() method
 
-  /** The initialized model object, created within initialize() method. */
-  private X3DObject x3dModel;
-  
+
   /** Provide a shallow copy of the X3D model.
-   * @return HeadsUpDisplayExample model
+   * @return HeadsUpDisplayExample_sail model
    */
-  public X3DObject getX3dModel()
+  getX3dModel : function()
   {	  
-	  return x3dModel;
-  }
+	  return this.x3dModel;
+  },
   
   /** Indicate X3DJSAIL validation results for this X3D model.
    * @return validation results plus exception information, if any
    */
-  public String validateSelf()
+  validateSelf : function()
   {
-	String       metaResult = new String();
-	String validationResult = new String();
-	String  exceptionResult = new String();
+	var       metaResult = "";
+	var validationResult = "";
+	var  exceptionResult = "";
 	try
 	{
-		initialize();
+		this.initialize();
 		
-		if ((getX3dModel() == null) || (getX3dModel().getHead() == null))
+		if ((this.getX3dModel() == null) || (this.getX3dModel().getHead() == null))
 		{
-			validationResult = "empty scene, nothing to validate. " + x3dModel.validate();
+			validationResult = "empty scene, nothing to validate. " + this.x3dModel.validate();
 			return validationResult;
 		}
 		// first list informational meta elements of interest
-		for (metaObject meta : getX3dModel().getHead().getMetaList())
-		{
+		var metaList = this.getX3dModel().getHead().getMetaList();
+		for (var m in metaList) {
+			meta = metaList[m];
 			if (meta.getName().equals(metaObject.NAME_ERROR) ||
 				meta.getName().equals(metaObject.NAME_WARNING) ||
 				meta.getName().equals(metaObject.NAME_HINT) ||
@@ -176,41 +168,33 @@ public class HeadsUpDisplayExample
 				metaResult += meta.toStringX3D();
 			}
 		}
-		validationResult += x3dModel.validate(); // walk entire tree to validate correctness
+		validationResult += this.x3dModel.validate(); // walk entire tree to validate correctness
 	}
-	catch (Exception e)
+	catch (e)
 	{
-		exceptionResult = e.getMessage(); // report exception failures, if any
-	    if (exceptionResult == null)
-	    {
-			exceptionResult = "Exception caught but null message!";
-			e.printStackTrace();
-	    }
+		exceptionResult = e; // report exception failures, if any
 	}
-	if  (metaResult.isEmpty() && exceptionResult.isEmpty() && validationResult.isEmpty())
+	if  (metaResult === "" && exceptionResult === "" && validationResult === "")
 	     return "success";
 	else
 	{
-		String returnMessage = metaResult;
-		if  (!exceptionResult.isEmpty() && !validationResult.isEmpty())
+		var returnMessage = metaResult;
+		if  (exceptionResult !== "" && validationResult !== "")
 			returnMessage += "\n*** ";
 		returnMessage += exceptionResult;
-		if  (exceptionResult.isEmpty() && !validationResult.isEmpty())
+		if  (exceptionResult === "" && validationResult !== "")
 			returnMessage = "\n" + returnMessage; // skip line before meta tags, etc.
 		returnMessage += validationResult;
 		return returnMessage;
 	}
-  }
+  },
     /** Default main() method provided for test purposes.
      * @param argv input parameters
      */
-    public static void main(String argv[])
+    main : function (argv)
     {
-		HeadsUpDisplayExample testObject = new HeadsUpDisplayExample();
-		System.out.print("HeadsUpDisplayExample execution self-validation test results: ");
-		String validationResults = testObject.validateSelf();
-		if (validationResults.startsWith("<"))
-			System.out.println();
-		System.out.println(validationResults);
+		var testObject = new HeadsUpDisplayExample_sail();
+		print ("HeadsUpDisplayExample_sail execution self-validation test results: " + testObject.validateSelf());
 	}
 }
+new HeadsUpDisplayExample_sail().main();

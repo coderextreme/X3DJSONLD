@@ -1,7 +1,7 @@
 #!/bin/bash
 export X3DJSONLD=c:/Users/coderextreme/X3DJSONLD
 export NASHORNX3DJSONLD=/Users/coderextreme/X3DJSONLD
-export CLASSPATH="${X3DJSONLD}/X3DJSAIL-3.3-SNAPSHOT.jar;${X3DJSONLD}/saxon9he.jar;${X3DJSONLD}/target/X3DJSONLD-1.0-SNAPSHOT.jar;${X3DJSONLD}/target/classes"
+export CLASSPATH=".;${X3DJSONLD}/X3DJSAIL-3.3-SNAPSHOT.jar;${X3DJSONLD}/saxon9he.jar;${X3DJSONLD}/target/X3DJSONLD-1.0-SNAPSHOT.jar;${X3DJSONLD}/target/classes"
 # NASHORN DOES NOT TAKE C:
 export NASHORN_CLASSPATH=".;${NASHORNX3DJSONLD}/X3DJSAIL-3.3-SNAPSHOT.jar;${NASHORNX3DJSONLD}/saxon9he.jar;${NASHORNX3DJSONLD}/target/X3DJSONLD-1.0-SNAPSHOT.jar;${NASHORNX3DJSONLD}/src/main/nashorn"
 export PYTHONPATH=/usr/bin:/c/Python27:/c/Python27/Scripts
