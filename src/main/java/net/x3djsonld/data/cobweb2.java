@@ -210,6 +210,11 @@ public class cobweb2
 	catch (Exception e)
 	{
 		exceptionResult = e.getMessage(); // report exception failures, if any
+	    if (exceptionResult == null)
+	    {
+			exceptionResult = "Exception caught but null message!";
+			e.printStackTrace();
+	    }
 	}
 	if  (metaResult.isEmpty() && exceptionResult.isEmpty() && validationResult.isEmpty())
 	     return "success";
@@ -231,6 +236,10 @@ public class cobweb2
     public static void main(String argv[])
     {
 		cobweb2 testObject = new cobweb2();
-		System.out.println ("cobweb2 execution self-validation test results: " + testObject.validateSelf());
+		System.out.print("cobweb2 execution self-validation test results: ");
+		String validationResults = testObject.validateSelf();
+		if (validationResults.startsWith("<"))
+			System.out.println();
+		System.out.println(validationResults);
 	}
 }

@@ -167,6 +167,11 @@ public class Box
 	catch (Exception e)
 	{
 		exceptionResult = e.getMessage(); // report exception failures, if any
+	    if (exceptionResult == null)
+	    {
+			exceptionResult = "Exception caught but null message!";
+			e.printStackTrace();
+	    }
 	}
 	if  (metaResult.isEmpty() && exceptionResult.isEmpty() && validationResult.isEmpty())
 	     return "success";
@@ -188,6 +193,10 @@ public class Box
     public static void main(String argv[])
     {
 		Box testObject = new Box();
-		System.out.println ("Box execution self-validation test results: " + testObject.validateSelf());
+		System.out.print("Box execution self-validation test results: ");
+		String validationResults = testObject.validateSelf();
+		if (validationResults.startsWith("<"))
+			System.out.println();
+		System.out.println(validationResults);
 	}
 }

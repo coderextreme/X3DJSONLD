@@ -259,6 +259,11 @@ public class ArchPrototype
 	catch (Exception e)
 	{
 		exceptionResult = e.getMessage(); // report exception failures, if any
+	    if (exceptionResult == null)
+	    {
+			exceptionResult = "Exception caught but null message!";
+			e.printStackTrace();
+	    }
 	}
 	if  (metaResult.isEmpty() && exceptionResult.isEmpty() && validationResult.isEmpty())
 	     return "success";
@@ -280,6 +285,10 @@ public class ArchPrototype
     public static void main(String argv[])
     {
 		ArchPrototype testObject = new ArchPrototype();
-		System.out.println ("ArchPrototype execution self-validation test results: " + testObject.validateSelf());
+		System.out.print("ArchPrototype execution self-validation test results: ");
+		String validationResults = testObject.validateSelf();
+		if (validationResults.startsWith("<"))
+			System.out.println();
+		System.out.println(validationResults);
 	}
 }
