@@ -530,7 +530,7 @@ class ClassPrinter:
         return str
 
 code = '''{
-        "$schema": "https://json-schema.org/draft-04/schema#",
+        "$schema": "http://json-schema.org/draft-04/schema#",
         "title": "JSON Schema X3D V3.3",
         "description": "Experimental JSON Schema for X3D V3.3 ",
         "type": "object",
