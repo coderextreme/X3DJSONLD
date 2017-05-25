@@ -25,7 +25,7 @@
     </head>
     <Scene>
         <!-- =============== Camera ============== -->
-        <ExternProtoDeclare name='Camera' appinfo='Camera node provides direct control of scene view to enable cinematic camera animation shot by shot and move by move along with still digital-photography settings for offline rendering of camera images' url='"../data/CameraPrototypes.x3d" "http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d" "../data/CameraPrototypes.json#Camera" "http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.json#Camera"'>
+        <ExternProtoDeclare name='Camera' appinfo='Camera node provides direct control of scene view to enable cinematic camera animation shot by shot and move by move along with still digital-photography settings for offline rendering of camera images' url='"CameraPrototypes.x3d#Camera" "http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#Camera" "CameraPrototypes.wrl#Camera" "http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#Camera"'>
             <field name='description' accessType='inputOutput' appinfo='Text description to be displayed for this Camera' type='SFString'/>
             <field name='position' accessType='inputOutput' appinfo='Camera position in local transformation frame, which is default prior to first CameraShot initialPosition getting activated' type='SFVec3f'/>
             <field name='orientation' accessType='inputOutput' appinfo='Camera rotation in local transformation frame, which is default prior to first CameraShot initialPosition getting activated' type='SFRotation'/>
@@ -52,7 +52,7 @@
             <!-- Viewpoint-related fields, NavigationInfo-related fields and Camera-unique fields -->
         </ExternProtoDeclare>
         <!-- =============== CameraShot ============== -->
-        <ExternProtoDeclare name='CameraShot' appinfo='CameraShot collects a specific set of CameraMovement animations that make up an individual shot' url='"../data/CameraPrototypes.x3d" "http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d" "../data/CameraPrototypes.json#CameraShot" "http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.json#CameraShot"'>
+        <ExternProtoDeclare name='CameraShot' appinfo='CameraShot collects a specific set of CameraMovement animations that make up an individual shot' url='"CameraPrototypes.x3d#CameraShot" "http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#CameraShot" "CameraPrototypes.wrl#CameraShot" "http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#CameraShot"'>
             <field name='description' accessType='inputOutput' appinfo='Text description to be displayed for this CameraShot' type='SFString'/>
             <field name='enabled' accessType='inputOutput' appinfo='Whether this CameraShot can be activated' type='SFBool'/>
             <field name='moves' accessType='inputOutput' appinfo='Set of CameraMovement nodes' type='MFNode'>
@@ -69,7 +69,7 @@
             <field name='traceEnabled' accessType='initializeOnly' appinfo='enable console output to trace script computations and prototype progress' type='SFBool'/>
         </ExternProtoDeclare>
         <!-- =============== CameraMovement ============== -->
-        <ExternProtoDeclare name='CameraMovement' appinfo='CameraMovement defines a single camera movement animation' url='"../data/CameraPrototypes.x3d" "http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d" "../data/CameraPrototypes.json#CameraMovement" "http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.json#CameraMovement"'>
+        <ExternProtoDeclare name='CameraMovement' appinfo='CameraMovement defines a single camera movement animation' url='"CameraPrototypes.x3d#CameraMovement" "http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#CameraMovement" "CameraPrototypes.wrl#CameraMovement" "http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#CameraMovement"'>
             <field name='description' accessType='inputOutput' appinfo='Text description to be displayed for this CameraMovement' type='SFString'/>
             <field name='enabled' accessType='inputOutput' appinfo='Whether this CameraMovement can be activated' type='SFBool'/>
             <field name='duration' accessType='inputOutput' appinfo='Duration in seconds for this move' type='SFFloat'/>
@@ -84,7 +84,7 @@
             <field name='traceEnabled' accessType='initializeOnly' appinfo='enable console output to trace script computations and prototype progress' type='SFBool'/>
         </ExternProtoDeclare>
         <!-- =============== OfflineRender ============== -->
-        <ExternProtoDeclare name='OfflineRender' appinfo='OfflineRender defines a parameters for offline rendering of Camera animation output to a movie file (or possibly a still shot)' url='"../data/CameraPrototypes.x3d" "http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d" "../data/CameraPrototypes.json#OfflineRender" "http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.json#OfflineRender"'>
+        <ExternProtoDeclare name='OfflineRender' appinfo='OfflineRender defines a parameters for offline rendering of Camera animation output to a movie file (or possibly a still shot)' url='"CameraPrototypes.x3d#OfflineRender" "http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#OfflineRender" "CameraPrototypes.wrl#OfflineRender" "http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#OfflineRender"'>
             <field name='description' accessType='inputOutput' appinfo='Text description to be displayed for this OfflineRender' type='SFString'/>
             <field name='enabled' accessType='inputOutput' appinfo='Whether this OfflineRender can be activated' type='SFBool'/>
             <field name='frameRate' accessType='inputOutput' appinfo='Frames per second recorded for this rendering' type='SFFloat'/>
@@ -305,7 +305,7 @@
                 <Shape>
                     <Appearance>
                         <Material/>
-                        <ImageTexture url='"../data/images/CameraMoveZoom.png" "http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveZoom.png"'/>
+                        <ImageTexture url='"images/CameraMoveZoom.png" "http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveZoom.png"'/>
                     </Appearance>
                     <Box/>
                 </Shape>
@@ -324,7 +324,7 @@
                 <Shape>
                     <Appearance>
                         <Material/>
-                        <ImageTexture url='"../data/images/CameraMoveDolly.png" "http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveDolly.png"'/>
+                        <ImageTexture url='"images/CameraMoveDolly.png" "http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveDolly.png"'/>
                     </Appearance>
                     <Box/>
                 </Shape>
@@ -343,7 +343,7 @@
                 <Shape>
                     <Appearance>
                         <Material/>
-                        <ImageTexture url='"../data/images/CameraMovePan.png" "http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMovePan.png"'/>
+                        <ImageTexture url='"images/CameraMovePan.png" "http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMovePan.png"'/>
                     </Appearance>
                     <Box/>
                 </Shape>
@@ -362,7 +362,7 @@
                 <Shape>
                     <Appearance>
                         <Material/>
-                        <ImageTexture url='"../data/images/CameraMoveBoom.png" "http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveBoom.png"'/>
+                        <ImageTexture url='"images/CameraMoveBoom.png" "http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveBoom.png"'/>
                     </Appearance>
                     <Box/>
                 </Shape>
@@ -381,7 +381,7 @@
                 <Shape>
                     <Appearance>
                         <Material/>
-                        <ImageTexture url='"../data/images/CameraMoveTilt.png" "http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveTilt.png"'/>
+                        <ImageTexture url='"images/CameraMoveTilt.png" "http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveTilt.png"'/>
                     </Appearance>
                     <Box/>
                 </Shape>
@@ -475,7 +475,7 @@
             <ROUTE fromField='orientation_changed' fromNode='Camera.AimPointTest' toField='rotation' toNode='CameraShapeTransform'/>
             <Transform DEF='CameraOffsetTransform' translation='0 0 0.25'>
                 <TouchSensor DEF='CameraShapeTouched'/>
-                <Inline DEF='CameraShape' url='"../data/CameraShape.x3d" "http://www.web3d.org/x3d/content/examples/Basic/development/CameraShape.x3d"'/>
+                <Inline DEF='CameraShape' url='"CameraShape.x3d" "http://www.web3d.org/x3d/content/examples/Basic/development/CameraShape.x3d"'/>
                 <Shape DEF='SightLine'>
                     <Appearance>
                         <Material emissiveColor='0.8 0.8 0.4'/>
@@ -486,7 +486,7 @@
                 </Shape>
             </Transform>
             <!-- Display frustum to show camera view within the scene, toggled by user selecting CameraShape -->
-            <ExternProtoDeclare name='ViewFrustum' appinfo='Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes' url='"/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d" "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d" "/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.json#ViewFrustum" "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.json#ViewFrustum"'>
+            <ExternProtoDeclare name='ViewFrustum' appinfo='Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes' url='"../../X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d#ViewFrustum" "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d#ViewFrustum" "../../X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.wrl#ViewFrustum" "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.wrl#ViewFrustum"'>
                 <field name='ViewpointNode' accessType='initializeOnly' appinfo='required: insert Viewpoint DEF or USE node for view of interest' type='SFNode'/>
                 <field name='NavigationInfoNode' accessType='initializeOnly' appinfo='required: insert NavigationInfo DEF or USE node of interest' type='SFNode'/>
                 <field name='visible' accessType='inputOutput' appinfo='whether or not frustum geometry is rendered' type='SFBool'/>
@@ -526,7 +526,7 @@
             </Shape>
         </Transform>
         <Transform scale='3 3 3' translation='0 0.25 0'>
-            <Inline DEF='CoordinateAxes' url='"/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d" "/Savage/Tools/Authoring/CoordinateAxes.x3d" "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d" "https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d" "/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.json" "/Savage/Tools/Authoring/CoordinateAxes.json" "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.json" "https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.json"'/>
+            <Inline DEF='CoordinateAxes' url='"../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d" "../../Savage/Tools/Authoring/CoordinateAxes.x3d" "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d" "https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d" "../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl" "../../Savage/Tools/Authoring/CoordinateAxes.wrl" "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl" "https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"'/>
         </Transform>
         <Transform DEF='MovingBoxTransform'>
             <PositionInterpolator DEF='BoxPath' key='0 0.25 0.5 0.75 1' keyValue='-5 1 5 45 1 5 45 1 -45 -5 1 -45 -5 1 5'/>
@@ -545,7 +545,7 @@
             </Shape>
         </Transform>
         <!-- ================ CrossHair visualization for center of screen ================ -->
-        <ExternProtoDeclare name='CrossHair' appinfo='CrossHair prototype provides a heads-up display (HUD) crosshair at the view center, which is useful for assessing NavigationInfo lookAt point' url='"/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.x3d" "https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.x3d" "/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.json#CrossHair" "https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.json#CrossHair"'>
+        <ExternProtoDeclare name='CrossHair' appinfo='CrossHair prototype provides a heads-up display (HUD) crosshair at the view center, which is useful for assessing NavigationInfo lookAt point' url='"../../Savage/Tools/HeadsUpDisplays/CrossHairPrototype.x3d#CrossHair" "https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.x3d#CrossHair" "../../Savage/Tools/HeadsUpDisplays/CrossHairPrototype.wrl#CrossHair" "https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.wrl#CrossHair"'>
             <field name='enabled' accessType='initializeOnly' appinfo='whether CrissHair orititype is enabled or not' type='SFBool'/>
             <field name='set_enabled' accessType='inputOnly' appinfo='control whether enabled/disabled' type='SFBool'/>
             <field name='markerColor' accessType='inputOutput' appinfo='color of CrossHair marker' type='SFColor'/>
@@ -563,7 +563,7 @@
         <ROUTE fromField='isBound' fromNode='Camera.AimPointTest' toField='set_enabled' toNode='CrossHairInstance'/>
         <!-- turn off CrossHairInstance when animated camera viewpoints are unbound <BooleanFilter DEF='NegateCrossHair'/> <ROUTE fromField='isBound' fromNode='Camera.SimpleShotsTest' toField='set_boolean' toNode='NegateCrossHair'/> <ROUTE fromField='isBound' fromNode='Camera.AimPointTest' toField='set_boolean' toNode='NegateCrossHair'/> <ROUTE fromField='inputNegate' fromNode='NegateCrossHair' toField='set_enabled' toNode='CrossHairInstance'/> -->
         <!-- =============== TODO Launch Prototype Example ============== -->
-        <Anchor description='launch CameraExample scene' parameter='"target=_blank"' url='"../data/CameraExample.x3d" "http://www.web3d.org/x3d/content/examples/Basic/development/CameraExample.x3d" "../data/CameraExample.json" "http://www.web3d.org/x3d/content/examples/Basic/development/CameraExample.json"'>
+        <Anchor description='launch CameraExample scene' parameter='"target=_blank"' url='"CameraExample.x3d" "http://www.web3d.org/x3d/content/examples/Basic/development/CameraExample.x3d" "CameraExample.wrl" "http://www.web3d.org/x3d/content/examples/Basic/development/CameraExample.wrl"'>
             <Transform translation='0 -3 0'>
                 <Shape>
                     <Appearance>
