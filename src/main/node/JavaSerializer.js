@@ -306,6 +306,9 @@ JavaSerializer.prototype = {
 							strval = "fieldObject.ACCESSTYPE_"+attrs[a].nodeValue.toUpperCase();
 						} else {
 							strval = '"'+attrs[a].nodeValue.
+								/*
+								replace(/\\/g, '\\\\').
+								*/
 								replace(/\\n/g, '\\\\n').
 								replace(/\\?"/g, "\\\"")
 								+'"';

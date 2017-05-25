@@ -6,7 +6,7 @@
         <meta name='creator' content='John Carlson'/>
         <meta name='generator' content='manual'/>
         <meta name='identifier' content='https://coderextreme.net/X3DJSONLD/browser.x3d'/>
-        <meta name='description' content='a script test with embedded \n between single quotes"'/>      
+        <meta name='description' content='a script test with embedded \n between single quotes, a double backslash \\\\ a backslash \\ and a closing quote "'/>      
       </head>
     <Scene>
 	    <Script DEF='Browser'>

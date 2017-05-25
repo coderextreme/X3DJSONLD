@@ -57,19 +57,29 @@ function loadScripts(json) {
 		delete X3DJSON;
 	}
 
+	/*
 	$("#scripts").remove();
 	var scripts = document.createElement('script');
+	*/
+	var scripts = {};
 	scripts.id = "scripts";
 	scripts.type = 'text/javascript';
 	scripts.text = classes.join("\n");
+	   /*
 	$('body').append(scripts);
+	*/
 
+	    /*
 	$("#routes").remove();
 	var routes =  document.createElement('script');
+	*/
+	var routes = {};
 	routes.id = "routes";
 	routes.type = 'text/javascript';
 	routes.text = routecode.join("\n");
+	    /*
 	$('body').append(routes);
+	*/
 
 	// When we zap the source, we prevent animation
 	// zapSource(json);

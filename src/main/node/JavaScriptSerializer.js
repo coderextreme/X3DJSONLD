@@ -196,6 +196,9 @@ JavaScriptSerializer.prototype = {
 							strval = "fieldObject.ACCESSTYPE_"+attrs[a].nodeValue.toUpperCase();
 						} else {
 							strval = '"'+attrs[a].nodeValue.
+								/*
+								replace(/\\/g, '\\\\').
+								*/
 								replace(/\\n/g, '\\\\n').
 								replace(/\\?"/g, "\\\"")
 								+'"';
@@ -350,7 +353,7 @@ JavaScriptSerializer.prototype = {
 					        replace(/\\/g, '\\\\').
 						replace(/"/g, '\\"')
 						/*
-						.replace(/\\n/g, "\\\\n")
+						replace(/\\n/g, "\\\\n")
 						*/
 					;
 					}).join('\\n\"+\n\"')+'")';

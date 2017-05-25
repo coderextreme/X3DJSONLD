@@ -39,7 +39,7 @@ function doValidate(json, validated_version, file, success, failure) {
 		if (!valid) {
 			console.error("================================================================================");
 			console.error("File:", file);
-			// localize.en(validated_version.errors);
+			localize.en(validated_version.errors);
 		        // error += ajv.errorsText(validated_version.errors, { separator: '\n'});
 			var errs = validated_version.errors;
 			for (var e in errs) {
@@ -148,11 +148,15 @@ function convertJSON(options) {
 				throw ("Null element returned from loadX3DJS()")
 			}
 			// filename conversion goes here.
+			/*
 			var x3dcodeind = basefile.indexOf(config.x3dcode);
 			if (x3dcodeind === 0) {
-				basefile = basefile.substring(0, config.x3dcode.length);
+				basefile = basefile.substring(config.x3dcode.length);
 			}
-			basefile = basefile.replace(/^\.\.\//g, "")
+			*/
+			console.log("basefile0", basefile);
+			basefile = basefile.replace(/^C:\//, "")
+			basefile = basefile.replace(/^\.\.\//, "")
 			basefile = basefile.replace(/-|\.| /g, "_")
 			// handle filenames with leading zeros and java keywords
 			basefile = basefile.replace(/^(.*[\\\/])([0-9].*|default|switch|for)$/, "$1_$2")
@@ -162,7 +166,9 @@ function convertJSON(options) {
 				var co = options[ser].codeOutput+basefile;
 				str = new serializer().serializeToString(json, element, co, mapToMethod, fieldTypes)
 				if (typeof str !== 'undefined') {
+					console.log("basefile", basefile);
 					var outfile = options[ser].folder+basefile+options[ser].extension
+					console.log("outfile", outfile);
 					mkdirp(outfile.substr(0, outfile.lastIndexOf("/")));
 					fs.writeFileSync(outfile, str);
 				} else {
@@ -198,17 +204,19 @@ function loadX3DJS(json, path, xml, NS, loadSchema, doValidate, callback) {
 		/*
 		var child = document.createCDATASection(str);
 		*/
-		var y = str
-			.replace(/'([^'\r]*)\n([^']*)'/g, "'$1\\n$2'")
-			.replace(/\\"/g, "\\\"")
-			.replace(/&lt;/g, "<")
-			.replace(/&gt;/g, ">")
-			.replace(/&amp;/g, "&")
-		;
+		var y = str.replace(/\\"/g, "\\\"")
+		.replace(/&lt;/g, "<")
+		.replace(/&gt;/g, ">")
+		.replace(/&amp;/g, "&");
+		do {
+			str = y;
+			y = str.replace(/'([^'\r\n]*)\n([^']*)'/g, "'$1\\n$2'");
+			if (str !== y) {
+				console.log("CDATA Replacing",str,"with",y);
+			}
+		} while (y != str);
+
 		var child = document.createCDATASection(y);
-		if (str !== y) {
-			// console.log("CDATA Replacing",str,"with",y);
-		}
 		element.appendChild(child);
 	});
 
