@@ -120,57 +120,57 @@ function printObject(element, fieldTypes) {
 						attrType === "MFInt32"||
 						attrType === "MFImage"||
 						attrType === "SFImage") {
-						value = printSubArray(attrType, 1, attrs[a].nodeValue.split(' '));
+						value = printSubArray(attrType, 1, attrs[a].nodeValue.split(/[ ,]+/));
 					} else if (
 						attrType === "SFColor"||
 						attrType === "MFColor") {
-						value = printSubObject(attrType, "rgb", attrs[a].nodeValue.split(' '));
+						value = printSubObject(attrType, "rgb", attrs[a].nodeValue.split(/[ ,]+/));
 					} else if (
 						attrType === "SFColorRGBA"||
 						attrType === "MFColorRGBA") {
-						value = printSubObject(attrType, "rgba", attrs[a].nodeValue.split(' '));
+						value = printSubObject(attrType, "rgba", attrs[a].nodeValue.split(/[ ,]+/));
 					} else if (
 						attrType === "SFVec2d"||
 						attrType === "MFVec2d"||
 						attrType === "SFVec2f"||
 						attrType === "MFVec2f") {
-						value = printSubObject(attrType, "xy", attrs[a].nodeValue.split(' '));
+						value = printSubObject(attrType, "xy", attrs[a].nodeValue.split(/[ ,]+/));
 					} else if (
 						attrType === "SFVec3d"||
 						attrType === "MFVec3d"||
 						attrType === "SFVec3f"||
 						attrType === "MFVec3f") {
-						value = printSubObject(attrType, "xyz", attrs[a].nodeValue.split(' '));
+						value = printSubObject(attrType, "xyz", attrs[a].nodeValue.split(/[ ,]+/));
 					} else if (
 						attrType === "SFVec4d"||
 						attrType === "MFVec4d"||
 						attrType === "SFVec4f"||
 						attrType === "MFVec4f") {
-						value = printSubObject(attrType, "xyzw", attrs[a].nodeValue.split(' '));
+						value = printSubObject(attrType, "xyzw", attrs[a].nodeValue.split(/[ ,]+/));
 					} else if (
 						attrType === "SFRotation"||
 						attrType === "MFRotation") {
-						value = printSubObject(attrType, "xyzw", attrs[a].nodeValue.split(' '));
+						value = printSubObject(attrType, "xyzw", attrs[a].nodeValue.split(/[ ,]+/));
 					} else if (
 						attrType === "SFMatrix3d"||
 						attrType === "MFMatrix3d"||
 						attrType === "SFMatrix3f"||
 						attrType === "MFMatrix3f") {
-						value = printSubArray(attrType, 9, attrs[a].nodeValue.split(' '));
+						value = printSubArray(attrType, 9, attrs[a].nodeValue.split(/[ ,]+/));
 					} else if (
 						attrType === "SFMatrix4d"||
 						attrType === "MFMatrix4d"||
 						attrType === "SFMatrix4f"||
 						attrType === "MFMatrix4f") {
-						value = printSubArray(attrType, 16, attrs[a].nodeValue.split(' '));
+						value = printSubArray(attrType, 16, attrs[a].nodeValue.split(/[ ,]+/));
 					} else if (
 						attrType === "MFFloat") {
-						value = printSubArray(attrType, 1, attrs[a].nodeValue.split(' '));
+						value = printSubArray(attrType, 1, attrs[a].nodeValue.split(/[ ,]+/));
 					} else if (
 						attrType === "MFDouble") {
-						value = printSubArray(attrType, 1, attrs[a].nodeValue.split(' '));
+						value = printSubArray(attrType, 1, attrs[a].nodeValue.split(/[ ,]+/));
 					} else if (attrType === "MFBool") {
-						value = printSubArray(attrType, 1, attrs[a].nodeValue.split(' '));
+						value = printSubArray(attrType, 1, attrs[a].nodeValue.split(/[ ,]+/));
 					} else {
 						value = attrs[a].nodeValue;
 					}
