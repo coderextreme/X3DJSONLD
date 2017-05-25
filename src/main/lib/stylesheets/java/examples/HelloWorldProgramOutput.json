@@ -46,7 +46,7 @@
           },
           {
             "@name":"modified",
-            "@content":"8 May 2017"
+            "@content":"22 May 2017"
           },
           {
             "@name":"generator",
@@ -106,7 +106,7 @@
           },
           {
             "@name":"translated",
-            "@content":"08 May 2017"
+            "@content":"22 May 2017"
           },
           {
             "@name":"generator",
@@ -312,13 +312,13 @@
                                   { "MetadataString":
                                     {
                                       "@name":"escapedQuotesTest1",
-                                      "@value":"\\"
+                                      "@value":["escaped quotation marks example 1: He said, \"Immel did it!\""]
                                     }
                                   },
                                   { "MetadataString":
                                     {
                                       "@name":"escapedQuotesTest2",
-                                      "@value":"\\"
+                                      "@value":["escaped quotation marks example 2: He said, \"Immel did it!\""]
                                     }
                                   }
                                 ]
@@ -332,10 +332,10 @@
                             },
                           "-children":[
                             {
-                              "#comment":"\\\\"
+                              "#comment":"escaped quotation marks example 3: He said, \\\"Immel did it!\\\""
                             },
                             {
-                              "#comment":"\\\\"
+                              "#comment":"escaped quotation marks example 4: He said, \\&quot;Immel did it!\\&quot;"
                             }
                           ]
                         }
@@ -432,7 +432,15 @@
                       }
                     ],
                     "#sourceText":[
-"\\"
+"",
+"",
+"ecmascript:",
+"",
+"function colorInput (eventValue) // Example source code",
+"{",
+"   colorsOutput = new MFColor(eventValue); // assigning value sends output event",
+"// Browser.print('colorInput=' + eventValue + ', colorsOutput=' + colorsOutput + '\n');",
+"}"
 ]
                   }
                 },
@@ -651,6 +659,19 @@
               "@url":["someOtherScene.x3d"]
             }
           },
+          { "IMPORT":
+            {
+              "@AS":"WorldInfoDEF2",
+              "@importedDEF":"WorldInfoDEF",
+              "@inlineDEF":"inlineSceneDef"
+            }
+          },
+          { "EXPORT":
+            {
+              "@AS":"WorldInfoDEF3",
+              "@localDEF":"WorldInfoDEF"
+            }
+          },
           { "ProtoDeclare":
             {
               "@name":"MaterialModulator",
@@ -668,37 +689,37 @@
                       "@name":"diffuseColor",
                       "@accessType":"inputOutput",
                       "@type":"SFColor",
-                      "@value":"0 0 0"
+                      "@value":[0,0,0]
                     },
                     {
                       "@name":"emissiveColor",
                       "@accessType":"inputOutput",
                       "@type":"SFColor",
-                      "@value":"0.05 0.05 0.5"
+                      "@value":[0.05,0.05,0.5]
                     },
                     {
                       "@name":"specularColor",
                       "@accessType":"inputOutput",
                       "@type":"SFColor",
-                      "@value":"0 0 0"
+                      "@value":[0,0,0]
                     },
                     {
                       "@name":"transparency",
                       "@accessType":"inputOutput",
                       "@type":"SFFloat",
-                      "@value":"0.0"
+                      "@value":0.0
                     },
                     {
                       "@name":"shininess",
                       "@accessType":"inputOutput",
                       "@type":"SFFloat",
-                      "@value":"0.0"
+                      "@value":0.0
                     },
                     {
                       "@name":"ambientIntensity",
                       "@accessType":"inputOutput",
                       "@type":"SFFloat",
-                      "@value":"0.0"
+                      "@value":0.0
                     }
                   ]
               },
@@ -778,7 +799,31 @@
                             ]
                         },
                         "#sourceText":[
-"\\"
+"",
+"",
+"ecmascript:",
+"function initialize ()",
+"{",
+"    newColor = diffuseColor; // start with correct color",
+"}",
+"function set_enabled (newValue)",
+"{",
+"\tenabled = newValue;",
+"}",
+"function clockTrigger (timeValue)",
+"{",
+"    if (!enabled) return;",
+"    red   = newColor.r;",
+"    green = newColor.g;",
+"    blue  = newColor.b;",
+"    ",
+"    // note different modulation rates for each color component, % is modulus operator",
+"    newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1);",
+"\tif (enabled)",
+"\t{",
+"\t\tBrowser.print ('diffuseColor=(' + red + ',' + green + ',' + blue + ') newColor=' + newColor.toString() + '\n');",
+"\t}",
+"}"
 ]
                       }
                     }
@@ -800,7 +845,7 @@
                         {
                           "@name":"findThisNameValue",
                           "@DEF":"FindableMetadataStringTest",
-                          "@value":"\"test case\""
+                          "@value":["test case"]
                         }
                       },
                     "-appearance":
@@ -915,19 +960,6 @@
                 }
               ]
             }
-          }
-        ],
-        "IMPORT": [
-          {
-            "@AS":"WorldInfoDEF2",
-            "@importedDEF":"WorldInfoDEF",
-            "@inlineDEF":"inlineSceneDef"
-          }
-        ],
-        "EXPORT": [
-          {
-            "@AS":"WorldInfoDEF3",
-            "@localDEF":"WorldInfoDEF"
           }
         ]
     }

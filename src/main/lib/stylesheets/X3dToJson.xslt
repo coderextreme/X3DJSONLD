@@ -728,7 +728,7 @@ POSSIBILITY OF SUCH DAMAGE.
             <xsl:variable name="fieldValueType1"   select="      //ProtoDeclare[@name = $protoInstanceName][1]/ProtoInterface/field[@name=$fieldValueName][1]/@type"/>
             <xsl:variable name="fieldValueType2"   select="//ExternProtoDeclare[@name = $protoInstanceName][1]               /field[@name=$fieldValueName][1]/@type"/>
             <!-- only one of these should be available -->
-            <xsl:variable name="fieldValueType"    select="concat($fieldValueType1,$fieldValueType2)"/>
+            <xsl:variable name="fieldValueType"    select="concat($fieldValueType1[1],$fieldValueType2[1])"/>
             <!-- debug ProtoInstance
             <xsl:if test="(string-length($protoInstanceName) > 0) and ($attributeName = 'value')">
                 <xsl:message>
@@ -815,9 +815,10 @@ POSSIBILITY OF SUCH DAMAGE.
                     <!-- TODO optimize duplication of type checking which is present due to integration of rule attribute-type with original rules -->
                     <!-- deterministic rules first: use type information for normalizing text or numbers or booleans ========================= -->
                     <!-- single boolean -->
-                    <xsl:when test="($attributeType = 'SFBool') or
-                                    ($normalizedValue='true') or ($normalizedValue='false') or 
-                                    ((local-name()='value') and ((../@type='SFBool') or (contains(local-name(../..),'Proto') and ($fieldValueType='SFBool'))))">
+                    <xsl:when test="not($attributeType = 'MFBool') and
+									(($attributeType = 'SFBool') or
+                                     ($normalizedValue='true') or ($normalizedValue='false') or 
+                                     ((local-name()='value') and ((../@type='SFBool') or (contains(local-name(../..),'Proto') and ($fieldValueType='SFBool')))))">
                         <xsl:value-of select="$normalizedValue"/>
                     </xsl:when>
                     <!-- boolean array -->
@@ -1403,10 +1404,34 @@ POSSIBILITY OF SUCH DAMAGE.
           <xsl:text>""</xsl:text>
 		  <xsl:if test="(string-length(normalize-space(substring($inputString,3))) > 0)">
 			<xsl:text>,</xsl:text>
-			<xsl:call-template name="escape-quote-characters-recurse">
-				<xsl:with-param name="inputString" select="substring($inputString,3)"/>
-				<xsl:with-param name="inputType"   select="$inputType"/>
-			</xsl:call-template>
+			<xsl:variable name="remainder" select="substring($inputString,3)"/>
+			<xsl:choose>
+				<xsl:when test="starts-with(normalize-space($remainder),'&quot;') and ends-with(normalize-space($remainder),'&quot;')">
+					<xsl:if test="$debugTrace"><xsl:message><xsl:text>[e-q-c-r][3.6]</xsl:text></xsl:message></xsl:if>
+					<xsl:text>"</xsl:text>
+					<xsl:variable name="remainder2" select="normalize-space(substring-after($remainder,'&quot;'))"/>
+					<xsl:call-template name="escape-quote-characters-recurse">
+						<xsl:with-param name="inputString" select="substring($remainder2,1,string-length($remainder2) - 1)"/>
+						<xsl:with-param name="inputType"   select="$inputType"/>
+					</xsl:call-template>
+					<xsl:text>"</xsl:text>
+				</xsl:when>
+				<xsl:when test="starts-with(normalize-space($remainder),'&quot;')">
+					<xsl:if test="$debugTrace"><xsl:message><xsl:text>[e-q-c-r][3.7]</xsl:text></xsl:message></xsl:if>
+					<xsl:text>"</xsl:text>
+					<xsl:call-template name="escape-quote-characters-recurse">
+						<xsl:with-param name="inputString" select="substring-after(substring($inputString,3),'&quot;')"/>
+						<xsl:with-param name="inputType"   select="$inputType"/>
+					</xsl:call-template>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:if test="$debugTrace"><xsl:message><xsl:text>[e-q-c-r][3.8]</xsl:text></xsl:message></xsl:if>
+					<xsl:call-template name="escape-quote-characters-recurse">
+						<xsl:with-param name="inputString" select="substring($inputString,3)"/>
+						<xsl:with-param name="inputType"   select="$inputType"/>
+					</xsl:call-template>
+				</xsl:otherwise>
+			</xsl:choose>
 		  </xsl:if>
 		  <xsl:if test="($inputType = 'SFString')">
 			  <xsl:message>

@@ -277,6 +277,11 @@ POSSIBILITY OF SUCH DAMAGE.
 	catch (Exception e)
 	{
 		exceptionResult = e.getMessage(); // report exception failures, if any
+	    if (exceptionResult == null)
+	    {
+			exceptionResult = "Exception caught but null message!";
+			e.printStackTrace();
+	    }
 	}
 	if  (metaResult.isEmpty() && exceptionResult.isEmpty() && validationResult.isEmpty())
 	     return "success";
@@ -299,11 +304,15 @@ POSSIBILITY OF SUCH DAMAGE.
     {
 		]]></xsl:text><xsl:value-of select="$newClassName"/>
 		<xsl:text> testObject = new </xsl:text><xsl:value-of select="$newClassName"/><xsl:text>();
-		System.out.println ("</xsl:text>          <xsl:value-of select="$newClassName"/>
-		<xsl:text> execution self-validation test results: " + testObject.validateSelf());
+		System.out.print("</xsl:text>          <xsl:value-of select="$newClassName"/>
+		<xsl:text disable-output-escaping="yes"><![CDATA[ execution self-validation test results: ");
+		String validationResults = testObject.validateSelf();
+		if (validationResults.startsWith("<"))
+			System.out.println();
+		System.out.println(validationResults);
 	}
 }
-</xsl:text><!-- class complete -->
+]]></xsl:text><!-- class complete -->
 
     </xsl:template>
 
@@ -766,6 +775,16 @@ POSSIBILITY OF SUCH DAMAGE.
 				<!-- TODO CollidableShape setShape method returns null, needs X3DJSAIL refinement and SAI spec variation -->
 				<xsl:when test="(local-name(..) = 'ComposedShader') and (@containerField = 'parts')">
 					<xsl:text>.addParts(</xsl:text>
+					<xsl:apply-templates select="."/><!-- handle this node -->
+					<xsl:text>)</xsl:text>
+				</xsl:when>
+				<xsl:when test="(local-name(.) = 'GeoOrigin')"><!-- must be first among these geospatial node tests -->
+					<xsl:text>.setGeoOrigin(</xsl:text>
+					<xsl:apply-templates select="."/><!-- handle this node -->
+					<xsl:text>)</xsl:text>
+				</xsl:when>
+				<xsl:when test="(local-name(..) = 'GeoLOD')"><!-- and (@containerField = 'rootNode') -->
+					<xsl:text>.addRootNode(</xsl:text>
 					<xsl:apply-templates select="."/><!-- handle this node -->
 					<xsl:text>)</xsl:text>
 				</xsl:when>

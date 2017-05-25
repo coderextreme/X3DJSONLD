@@ -1653,6 +1653,12 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 								</xsl:if>
 							</xsl:for-each>
 							
+							<xsl:if test="($name = 'ProtoInstance')">
+								<xsl:text>
+					      ProtoDeclareObject referenceProtoDeclare;
+					ExternProtoDeclareObject referenceExternProtoDeclare;
+								</xsl:text>
+							</xsl:if>
 							<xsl:if test="($name = 'field') or ($name = 'fieldValue')">
 								<xsl:text disable-output-escaping="yes"><![CDATA[
 	/** Default boolean value for this field type is an empty array. */
@@ -2111,7 +2117,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 
 		switch (fieldName)
 		{</xsl:text>
-								<xsl:for-each select="InterfaceDefinition/field[((@name = 'address') or contains(@name, 'Entities') or not(starts-with(@name,'add'))) and not(starts-with(@name,'remove'))]">
+								<xsl:for-each select="InterfaceDefinition/field"> <!-- [((@name = 'address') or contains(@name, 'Entities') or not(starts-with(@name,'add'))) and not(starts-with(@name,'remove'))] -->
 									<xsl:if test="position()=1">
 										<xsl:text>
 			// String constants for exact field type values matching X3D Schema definitions,
@@ -2159,11 +2165,23 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 </xsl:text>
 								<!-- now check special-case fields -->
 								<xsl:choose>
-									<xsl:when test="($name = 'Script') or ($name = 'ShaderProgram') or ($name = 'ComposedShader') or ($name = 'PackagedShader')">
+									<xsl:when test="($name = 'ProtoDeclare')  or ($name = 'ExternProtoDeclare') or ($name = 'Script') or 
+													($name = 'ShaderProgram') or ($name = 'ComposedShader')     or ($name = 'PackagedShader')">
 										<xsl:text>		// now check author-defined fields
-		fieldObject fromFieldObject = this.findFieldByName(fieldName);
-		if (fromFieldObject != null)
-			result = fromFieldObject.getType(); // found it!
+		fieldObject fieldDeclaration = this.findFieldByName(fieldName);
+		if (fieldDeclaration != null)
+			result = fieldDeclaration.getType(); // found it!
+</xsl:text>
+									</xsl:when>
+									<xsl:when test="($name = 'ProtoInstance')">
+										<xsl:text>		// now check author-defined fields
+		fieldObject fieldDeclaration = null;
+		if      (       hasProtoDeclare())
+			fieldDeclaration =       referenceProtoDeclare.findFieldByName(fieldName);
+		else if (hasExternProtoDeclare())
+			fieldDeclaration = referenceExternProtoDeclare.findFieldByName(fieldName);
+		if (fieldDeclaration != null)
+			result = fieldDeclaration.getType(); // found it!
 </xsl:text>
 									</xsl:when>
 								</xsl:choose>
@@ -2192,7 +2210,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 		String result; // set by following checks
 		switch (fieldName)
 		{</xsl:text>
-								<xsl:for-each select="InterfaceDefinition/field[((@name = 'address') or contains(@name, 'Entities') or not(starts-with(@name,'add'))) and not(starts-with(@name,'remove'))]">
+								<xsl:for-each select="InterfaceDefinition/field"><!-- [((@name = 'address') or contains(@name, 'Entities') or not(starts-with(@name,'add'))) and not(starts-with(@name,'remove'))] -->
 									<xsl:if test="position()=1">
 										<xsl:text>
 			// String constants for field accessType values matching X3D Schema definitions,
@@ -2225,26 +2243,24 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 </xsl:text>
 								<!-- now check special-case fields -->
 								<xsl:choose>
-									<xsl:when test="($name = 'Script') or ($name = 'ShaderProgram') or ($name = 'ComposedShader') or ($name = 'PackagedShader')">
+									<xsl:when test="($name = 'ProtoDeclare')  or ($name = 'ExternProtoDeclare') or ($name = 'Script') or 
+													($name = 'ShaderProgram') or ($name = 'ComposedShader')     or ($name = 'PackagedShader')">
 										<xsl:text>		// now check author-defined fields
-		fieldObject fromFieldObject = this.findFieldByName(fieldName);
-		if (fromFieldObject != null)
-			result = fromFieldObject.getAccessType(); // found it!
+		fieldObject fieldDeclaration = this.findFieldByName(fieldName);
+		if (fieldDeclaration != null)
+			result = fieldDeclaration.getAccessType(); // found it!
 </xsl:text>
 									</xsl:when>
 									<xsl:when test="($name = 'ProtoInstance')">
-										<xsl:text>		// now check corresponding prototype declaration fields
-		// not yet implemented
-</xsl:text>
-									<!--
 										<xsl:text>		// now check author-defined fields
-		// TODO must find ProtoDeclare and ExternProtoDeclare by name
-		
-		fieldObject fromFieldObject = this.findFieldByName(fieldName);
-		if (fromFieldObject != null)
-			result = fromFieldObject.getAccessType(); // found it!
+		fieldObject fieldDeclaration = null;
+		if      (       hasProtoDeclare())
+			fieldDeclaration =       referenceProtoDeclare.findFieldByName(fieldName);
+		else if (hasExternProtoDeclare())
+			fieldDeclaration = referenceExternProtoDeclare.findFieldByName(fieldName);
+		if (fieldDeclaration != null)
+			result = fieldDeclaration.getAccessType(); // found it!
 </xsl:text>
-									-->
 									</xsl:when>
 								</xsl:choose>
 
@@ -2530,7 +2546,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 										</xsl:when>
 										<xsl:when test="($name = 'ProtoInstance')">
 											<xsl:text disable-output-escaping="yes"><![CDATA[
-			fieldValueList = new ArrayList<>(); // instantiate
+		fieldValueList = new ArrayList<>(); // instantiate
 	]]></xsl:text>
 										</xsl:when>
 									</xsl:choose>
@@ -4216,57 +4232,62 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 										<xsl:text>&#10;</xsl:text>
 										<xsl:choose>
 											<xsl:when test="(($name = 'field') or ($name = 'fieldValue')) and (@name = 'value') and not($isX3dStatement = 'true')">
-												<xsl:text disable-output-escaping="yes"><![CDATA[// value alternatives
+												<xsl:text disable-output-escaping="yes"><![CDATA[
+		String valueType = getType();
+		// alternatives for return typed value
 		if ((valueArrayBoolean != null) && (valueArrayBoolean.length > 0))
 		{
-			if      (getType().equals(fieldObject.TYPE_SFBOOL)) return SFBoolObject.toString(valueArrayBoolean[0]);
-			else if (getType().equals(fieldObject.TYPE_MFBOOL)) return MFBoolObject.toString(valueArrayBoolean);
+			if      (valueType.equals(fieldObject.TYPE_SFBOOL)) return SFBoolObject.toString(valueArrayBoolean[0]);
+			else if (valueType.equals(fieldObject.TYPE_MFBOOL)) return MFBoolObject.toString(valueArrayBoolean);
 		}
 		else if ((valueArrayInteger != null) && (valueArrayInteger.length > 0))
 		{
-			if      (getType().equals(fieldObject.TYPE_SFINT32)) return SFInt32Object.toString(valueArrayInteger[0]);
-			else if (getType().equals(fieldObject.TYPE_MFINT32)) return MFInt32Object.toString(valueArrayInteger);
-			else if (getType().equals(fieldObject.TYPE_SFIMAGE)) return SFImageObject.toString(valueArrayInteger);
-			else if (getType().equals(fieldObject.TYPE_MFIMAGE)) return MFImageObject.toString(valueArrayInteger);
+			if      (valueType.equals(fieldObject.TYPE_SFINT32)) return SFInt32Object.toString(valueArrayInteger[0]);
+			else if (valueType.equals(fieldObject.TYPE_MFINT32)) return MFInt32Object.toString(valueArrayInteger);
+			else if (valueType.equals(fieldObject.TYPE_SFIMAGE)) return SFImageObject.toString(valueArrayInteger);
+			else if (valueType.equals(fieldObject.TYPE_MFIMAGE)) return MFImageObject.toString(valueArrayInteger);
 		}
 		else if ((valueArrayFloat != null) && (valueArrayFloat.length > 0))
 		{
-			if      (getType().equals(fieldObject.TYPE_SFFLOAT))     return SFFloatObject.toString(valueArrayFloat[0]);
-			else if (getType().equals(fieldObject.TYPE_MFFLOAT))     return MFFloatObject.toString(valueArrayFloat);
-			else if (getType().equals(fieldObject.TYPE_SFCOLOR))     return SFColorObject.toString(valueArrayFloat);
-			else if (getType().equals(fieldObject.TYPE_MFCOLOR))     return MFColorObject.toString(valueArrayFloat);
-			else if (getType().equals(fieldObject.TYPE_SFCOLORRGBA)) return SFColorRGBAObject.toString(valueArrayFloat);
-			else if (getType().equals(fieldObject.TYPE_MFCOLORRGBA)) return MFColorRGBAObject.toString(valueArrayFloat);
-			else if (getType().equals(fieldObject.TYPE_SFROTATION))  return SFRotationObject.toString(valueArrayFloat);
-			else if (getType().equals(fieldObject.TYPE_MFROTATION))  return MFRotationObject.toString(valueArrayFloat);
-			else if (getType().equals(fieldObject.TYPE_SFVEC2F))     return SFVec2fObject.toString(valueArrayFloat);
-			else if (getType().equals(fieldObject.TYPE_SFVEC3F))     return SFVec3fObject.toString(valueArrayFloat);
-			else if (getType().equals(fieldObject.TYPE_SFVEC4F))     return SFVec4fObject.toString(valueArrayFloat);
-			else if (getType().equals(fieldObject.TYPE_MFVEC2F))     return MFVec2fObject.toString(valueArrayFloat);
-			else if (getType().equals(fieldObject.TYPE_MFVEC3F))     return MFVec3fObject.toString(valueArrayFloat);
-			else if (getType().equals(fieldObject.TYPE_MFVEC4F))     return MFVec4fObject.toString(valueArrayFloat);
-			else if (getType().equals(fieldObject.TYPE_MFMATRIX3F))  return MFMatrix3fObject.toString(valueArrayFloat);
-			else if (getType().equals(fieldObject.TYPE_MFMATRIX4F))  return MFMatrix4fObject.toString(valueArrayFloat);
+			if      (valueType.equals(fieldObject.TYPE_SFFLOAT))     return SFFloatObject.toString(valueArrayFloat[0]);
+			else if (valueType.equals(fieldObject.TYPE_MFFLOAT))     return MFFloatObject.toString(valueArrayFloat);
+			else if (valueType.equals(fieldObject.TYPE_SFCOLOR))     return SFColorObject.toString(valueArrayFloat);
+			else if (valueType.equals(fieldObject.TYPE_MFCOLOR))     return MFColorObject.toString(valueArrayFloat);
+			else if (valueType.equals(fieldObject.TYPE_SFCOLORRGBA)) return SFColorRGBAObject.toString(valueArrayFloat);
+			else if (valueType.equals(fieldObject.TYPE_MFCOLORRGBA)) return MFColorRGBAObject.toString(valueArrayFloat);
+			else if (valueType.equals(fieldObject.TYPE_SFROTATION))  return SFRotationObject.toString(valueArrayFloat);
+			else if (valueType.equals(fieldObject.TYPE_MFROTATION))  return MFRotationObject.toString(valueArrayFloat);
+			else if (valueType.equals(fieldObject.TYPE_SFVEC2F))     return SFVec2fObject.toString(valueArrayFloat);
+			else if (valueType.equals(fieldObject.TYPE_SFVEC3F))     return SFVec3fObject.toString(valueArrayFloat);
+			else if (valueType.equals(fieldObject.TYPE_SFVEC4F))     return SFVec4fObject.toString(valueArrayFloat);
+			else if (valueType.equals(fieldObject.TYPE_MFVEC2F))     return MFVec2fObject.toString(valueArrayFloat);
+			else if (valueType.equals(fieldObject.TYPE_MFVEC3F))     return MFVec3fObject.toString(valueArrayFloat);
+			else if (valueType.equals(fieldObject.TYPE_MFVEC4F))     return MFVec4fObject.toString(valueArrayFloat);
+			else if (valueType.equals(fieldObject.TYPE_MFMATRIX3F))  return MFMatrix3fObject.toString(valueArrayFloat);
+			else if (valueType.equals(fieldObject.TYPE_MFMATRIX4F))  return MFMatrix4fObject.toString(valueArrayFloat);
 		}
 		else if ((valueArrayDouble != null) && (valueArrayDouble.length > 0))
 		{
-			if      (getType().equals(fieldObject.TYPE_SFDOUBLE))    return SFDoubleObject.toString(valueArrayDouble[0]);
-			else if (getType().equals(fieldObject.TYPE_MFDOUBLE))    return MFDoubleObject.toString(valueArrayDouble);
-			else if (getType().equals(fieldObject.TYPE_SFTIME))      return SFTimeObject.toString(valueArrayDouble[0]);
-			else if (getType().equals(fieldObject.TYPE_MFTIME))      return MFTimeObject.toString(valueArrayDouble);
-			else if (getType().equals(fieldObject.TYPE_SFVEC2D))     return SFVec2dObject.toString(valueArrayDouble);
-			else if (getType().equals(fieldObject.TYPE_SFVEC3D))     return SFVec3dObject.toString(valueArrayDouble);
-			else if (getType().equals(fieldObject.TYPE_SFVEC4D))     return SFVec4dObject.toString(valueArrayDouble);
-			else if (getType().equals(fieldObject.TYPE_MFVEC2D))     return MFVec2dObject.toString(valueArrayDouble);
-			else if (getType().equals(fieldObject.TYPE_MFVEC3D))     return MFVec3dObject.toString(valueArrayDouble);
-			else if (getType().equals(fieldObject.TYPE_MFVEC4D))     return MFVec4dObject.toString(valueArrayDouble);
-			else if (getType().equals(fieldObject.TYPE_MFMATRIX3D))  return MFMatrix3dObject.toString(valueArrayDouble);
-			else if (getType().equals(fieldObject.TYPE_MFMATRIX4D))  return MFMatrix4dObject.toString(valueArrayDouble);
+			if      (valueType.equals(fieldObject.TYPE_SFDOUBLE))    return SFDoubleObject.toString(valueArrayDouble[0]);
+			else if (valueType.equals(fieldObject.TYPE_MFDOUBLE))    return MFDoubleObject.toString(valueArrayDouble);
+			else if (valueType.equals(fieldObject.TYPE_SFTIME))      return SFTimeObject.toString(valueArrayDouble[0]);
+			else if (valueType.equals(fieldObject.TYPE_MFTIME))      return MFTimeObject.toString(valueArrayDouble);
+			else if (valueType.equals(fieldObject.TYPE_SFVEC2D))     return SFVec2dObject.toString(valueArrayDouble);
+			else if (valueType.equals(fieldObject.TYPE_SFVEC3D))     return SFVec3dObject.toString(valueArrayDouble);
+			else if (valueType.equals(fieldObject.TYPE_SFVEC4D))     return SFVec4dObject.toString(valueArrayDouble);
+			else if (valueType.equals(fieldObject.TYPE_MFVEC2D))     return MFVec2dObject.toString(valueArrayDouble);
+			else if (valueType.equals(fieldObject.TYPE_MFVEC3D))     return MFVec3dObject.toString(valueArrayDouble);
+			else if (valueType.equals(fieldObject.TYPE_MFVEC4D))     return MFVec4dObject.toString(valueArrayDouble);
+			else if (valueType.equals(fieldObject.TYPE_MFMATRIX3D))  return MFMatrix3dObject.toString(valueArrayDouble);
+			else if (valueType.equals(fieldObject.TYPE_MFMATRIX4D))  return MFMatrix4dObject.toString(valueArrayDouble);
 		}
 		else if (value != null)
 		{
-			if      (getType().equals(fieldObject.TYPE_SFSTRING)) return new SFStringObject(value).toString();
-			else if (getType().equals(fieldObject.TYPE_MFSTRING)) return new MFStringObject(value).toString();
+			if      (valueType.equals(fieldObject.TYPE_SFSTRING) ||
+					 valueType.equals(ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE)) // matches XML default; might not be connected yet
+				return new SFStringObject(value).toString();
+			else if (valueType.equals(fieldObject.TYPE_MFSTRING))
+				return new MFStringObject(value).toString();
 		}
 		// TODO error handling
 		if (value == null)
@@ -4465,9 +4486,6 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 								</xsl:choose>
 								<!-- value restrictions, if any -->
 								<xsl:choose>
-									<xsl:when test="(@name = 'GeoOrigin') or (@name = 'geoOrigin')">
-										<xsl:text>(deprecated node, optional) </xsl:text>
-									</xsl:when>
 									<xsl:when test="$isEnumerationType">
 										<xsl:text>(</xsl:text>
 										<xsl:value-of select="$enumerationValues"/>
@@ -5260,7 +5278,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 												<xsl:if test="($name = 'ProtoBody')">
 													<xsl:text>		if (primaryNode != null)
 		{
-			primaryNode.setParentObject(null);
+			primaryNode.setParentObject(null); // housekeeping, clear prior object
 		    primaryNode = null;
 		}
 </xsl:text>
@@ -5292,7 +5310,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 													<xsl:when test="($name = 'ExternProtoDeclare') and (@name = 'field')">
 		<!-- check to ensure that no value is present within field having parent ExternProtoDeclare -->
 		<xsl:text disable-output-escaping="yes"><![CDATA[			// No value is allowed within field having parent ExternProtoDeclare
-			if (!arrayElement.getValue().isEmpty() || !arrayElement.getChildren().isEmpty())
+			if ((!arrayElement.getValue().isEmpty() || !arrayElement.getChildren().isEmpty()) && arrayElement.hasChildrenElements())
 			{
 				String foundValue;
 				if (!arrayElement.getValue().isEmpty())
@@ -5307,10 +5325,10 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 ]]></xsl:text>
 													</xsl:when>
 												</xsl:choose>
+												<xsl:text>&#10;</xsl:text>
 												<xsl:text>			((X3DConcreteElement) arrayElement).setParentObject(this); // parentTest11</xsl:text>
 												<xsl:text>&#10;</xsl:text>
 												<xsl:text>		}</xsl:text>
-												<xsl:text>&#10;</xsl:text>
 											</xsl:when>
 											<xsl:when test="(@type = 'MFNode') and not(starts-with($javaType, $javaReferenceType)) and not($isX3dStatement = 'true')">
 												<xsl:value-of select="$newValueNullSetDEFAULT_VALUE"/>
@@ -5546,9 +5564,9 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 <xsl:text>		}</xsl:text>
 													<xsl:if test="not($isX3dStatement = 'true')">
 														<xsl:text>
-		if (</xsl:text><xsl:value-of select="$normalizedMemberObjectName"/><xsl:text>ProtoInstance != null) // housekeeping
+		if (</xsl:text><xsl:value-of select="$normalizedMemberObjectName"/><xsl:text>ProtoInstance != null)
 		{
-			</xsl:text><xsl:value-of select="$normalizedMemberObjectName"/><xsl:text>ProtoInstance.setParentObject(null);
+			</xsl:text><xsl:value-of select="$normalizedMemberObjectName"/><xsl:text>ProtoInstance.setParentObject(null); // housekeeping, clear prior object
 			</xsl:text><xsl:value-of select="$normalizedMemberObjectName"/><xsl:text>ProtoInstance = null;
 		}
 </xsl:text>
@@ -6822,7 +6840,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 												<xsl:text>&#10;</xsl:text>
 												<xsl:text>		{</xsl:text>
 												<xsl:text>&#10;</xsl:text>
-												<xsl:text>			primaryNode.setParentObject(null);</xsl:text>
+												<xsl:text>			primaryNode.setParentObject(null); // housekeeping, clear prior object</xsl:text>
 												<xsl:text>&#10;</xsl:text>
 												<xsl:text>			primaryNode = null; // clear from ProtoBody</xsl:text>
 												<xsl:text>&#10;</xsl:text>
@@ -6842,7 +6860,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 												<xsl:when test="($name = 'ExternProtoDeclare') and (@name = 'field')">
 		<!-- check to ensure that no value is present within field having parent ExternProtoDeclare -->
 		<xsl:text disable-output-escaping="yes"><![CDATA[		// No value is allowed within field having parent ExternProtoDeclare
-		if (!newValue.getValue().isEmpty() || !newValue.getChildren().isEmpty())
+		if ((!newValue.getValue().isEmpty() || !newValue.getChildren().isEmpty()) && newValue.hasChildrenElements())
 		{
 			String foundValue;
 			if (!newValue.getValue().isEmpty())
@@ -7084,7 +7102,7 @@ setAttribute method invocations).]]></xsl:text>
 		<xsl:text>&#10;</xsl:text>
 		<xsl:text>		{</xsl:text>
 		<xsl:text>&#10;</xsl:text>
-		<xsl:text>			primaryNode.setParentObject(null);</xsl:text>
+		<xsl:text>			primaryNode.setParentObject(null); // housekeeping, clear prior object</xsl:text>
 		<xsl:text>&#10;</xsl:text>
 		<xsl:text>			primaryNode = null; // clear from ProtoBody</xsl:text>
 		<xsl:text>&#10;</xsl:text>
@@ -7231,7 +7249,7 @@ setAttribute method invocations).
 	{
 		if (</xsl:text><xsl:value-of select="$normalizedMemberObjectName"/><xsl:text> != null)
 		{
-			((X3DConcreteElement) </xsl:text><xsl:value-of select="$normalizedMemberObjectName"/><xsl:text>).setParentObject(null);
+			((X3DConcreteElement) </xsl:text><xsl:value-of select="$normalizedMemberObjectName"/><xsl:text>).setParentObject(null); // housekeeping, clear prior object
 			</xsl:text><xsl:value-of select="$normalizedMemberObjectName"/><xsl:text> = null;
 		}
 		</xsl:text><xsl:value-of select="$normalizedMemberObjectName"/><xsl:text>ProtoInstance = newProtoInstanceNode;
@@ -7314,7 +7332,7 @@ setAttribute method invocations).
 	 <xsl:if test="($type='MFNode')">
 		 <xsl:text>array </xsl:text>
 	 </xsl:if>
-	 <xsl:text>is available.
+	 <xsl:text>or CommentsBlock is available.
 	 * @see #get</xsl:text><xsl:value-of select="$CamelCaseName"/>
 	 <xsl:if test="($isX3dStatement = 'true') and (@type='MFNode')">
 		 <xsl:text>List</xsl:text>
@@ -7475,7 +7493,7 @@ setAttribute method invocations).
 	public ]]></xsl:text><xsl:value-of select="$name"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ setIS(ISObject newValue)
 	{
 		if (IS != null)
-			IS.setParentObject(null);
+			IS.setParentObject(null); // housekeeping, clear prior object
 		IS = newValue;
 		IS.setParentObject(this);
 		return this;
@@ -7558,6 +7576,75 @@ all child nodes.
 	{
 		setContainerFieldOverride(containerFieldName);
 		return this;
+	}
+		 
+	/**
+	 * Determine whether a corresponding ProtoDeclare with same name is connected in this scene graph.
+	 * @see #hasExternProtoDeclare
+	 * @see #getProtoDeclare
+	 * @see #getExternProtoDeclare
+	 * @return {@link ProtoInstanceObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public boolean hasProtoDeclare ()
+	{
+		// check for corresponding declaration
+		if  (findAncestorSceneObject() == null)
+			 return false;
+		X3DConcreteElement matchingDeclaration = findAncestorSceneObject().findElementByNameValue(getName(), ProtoDeclareObject.NAME); 
+		if      ((matchingDeclaration != null) && (matchingDeclaration instanceof org.web3d.x3d.jsail.Core.ProtoDeclareObject))
+		{
+			 referenceProtoDeclare = (ProtoDeclareObject) matchingDeclaration;
+			 return true;
+		}
+		else return false;
+	}
+		 
+	/**
+	 * Determine whether a corresponding ExternProtoDeclare with same name is connected in this scene graph.
+	 * @see #hasProtoDeclare
+	 * @see #getProtoDeclare
+	 * @see #getExternProtoDeclare
+	 * @return {@link ProtoInstanceObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public boolean hasExternProtoDeclare ()
+	{
+		// check for corresponding declaration
+		if  (findAncestorSceneObject() == null)
+			 return false;
+		X3DConcreteElement matchingDeclaration = findAncestorSceneObject().findElementByNameValue(getName(), ExternProtoDeclareObject.NAME); 
+		if      ((matchingDeclaration != null) && (matchingDeclaration instanceof org.web3d.x3d.jsail.Core.ExternProtoDeclareObject))
+		{
+			 referenceExternProtoDeclare = (ExternProtoDeclareObject) matchingDeclaration;
+			 return true;
+		}
+		else return false;
+	}
+
+	/**
+	 * Provide corresponding ProtoDeclare with same name if connected in this scene graph.
+	 * @see #hasProtoDeclare
+	 * @see #hasExternProtoDeclare
+	 * @see #getExternProtoDeclare
+	 * @return {@link ProtoInstanceObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public ProtoDeclareObject getProtoDeclare ()
+	{
+		if  (hasProtoDeclare())
+			 return referenceProtoDeclare;
+		else return null;
+	}
+	/**
+	 * Provide corresponding ExternProtoDeclare with same name if connected in this scene graph.
+	 * @see #hasProtoDeclare
+	 * @see #hasExternProtoDeclare
+	 * @see #getProtoDeclare
+	 * @return {@link ProtoInstanceObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
+	 */
+	public ExternProtoDeclareObject getExternProtoDeclare ()
+	{
+		if  (hasExternProtoDeclare())
+			 return referenceExternProtoDeclare;
+		else return null;
 	}
 ]]></xsl:text>
 			</xsl:when>
@@ -7814,6 +7901,27 @@ all child nodes.
 -->
 						</xsl:choose>
 						
+						<xsl:if test="($name = 'field') or ($name = 'fieldValue')">
+										<xsl:text disable-output-escaping="yes"><![CDATA[
+	/**
+	 * Indicate whether a node or statement is found in inputOutput MFNode field <i>children</i>.
+	 * @return whether a node or statement is found; ignores CommentsBlock.
+	 * @see #getChildren()
+	 */
+	public boolean hasChildrenElements()
+	{
+		if (children.isEmpty())
+			return false; // nothing found
+		for (X3DNode node : children)
+		{
+			if (!(node instanceof CommentsBlock))
+				return true;
+		}
+		return false; // nothing but CommentsBlock found
+	}
+]]></xsl:text>
+						</xsl:if>
+						
 						<!-- commentsBlock -->
 						<xsl:if test="(not($hasChildrenField = 'true') and not(starts-with($name, 'X3DConcrete')) and not($isInterface = 'true') and not($isFieldInterface or $isException or $isServiceInterface) and
 									   not($name = 'ConfigurationProperties') and not($name = 'CommentsBlock'))">
@@ -7935,6 +8043,11 @@ setAttribute method invocations).
 					<xsl:text>(</xsl:text>
 					<xsl:value-of select="@name"/>
 					<xsl:text> != null)</xsl:text>
+					<xsl:if test="not($isX3dStatement = 'true')">
+						<xsl:text> || (</xsl:text>
+						<xsl:value-of select="@name"/>
+						<xsl:text>ProtoInstance != null)</xsl:text>
+					</xsl:if>
 				</xsl:when>
 				<xsl:otherwise><!-- (@type='MFNode') -->
 					<xsl:text>(!</xsl:text>
@@ -8456,6 +8569,11 @@ setAttribute method invocations).
 					<xsl:text>(</xsl:text>
 					<xsl:value-of select="@name"/>
 					<xsl:text> != null)</xsl:text>
+					<xsl:if test="not($isX3dStatement = 'true')">
+						<xsl:text> || (</xsl:text>
+						<xsl:value-of select="@name"/>
+						<xsl:text>ProtoInstance != null)</xsl:text>
+					</xsl:if>
 				</xsl:when>
 				<xsl:otherwise><!-- (@type='MFNode') -->
 					<xsl:text>(!</xsl:text>
@@ -9297,8 +9415,25 @@ setAttribute method invocations).
 									</xsl:when>
 								</xsl:choose>
 							</xsl:for-each>
+							<xsl:if test="($name = 'ProtoInstance')">
+								<xsl:text>
+		// ProtoInstance node can contain other DEF'ed nodes in any contained fieldValue
+		for (fieldValueObject fieldInitialization : getFieldValueList()) // MFNode
+		{
+			// not yet found, continue with depth-first search of current fieldValueList
+			for (X3DNode child : fieldInitialization.getChildren())
+			{
+				if (child instanceof X3DConcreteNode)
+				{
+					referenceNode = ((X3DConcreteNode) child).getNodeByDEF(DEFname);
+					if (referenceNode != null)
+						return referenceNode; // found in child
+				}
+			}
+		}</xsl:text>
+							</xsl:if>
 	<xsl:text disable-output-escaping="yes"><![CDATA[
-		return null; // not found, in this node or in chilren nodes
+		return null; // not found, in this node or in children nodes
 	}
 ]]></xsl:text>
 						</xsl:if>
@@ -9782,7 +9917,7 @@ setAttribute method invocations).
 		}
 		if (getFromField().isEmpty())
 		{
-			errorNotice = "ROUTE has no DEF value for source node since fromNode value is empty. ";
+			errorNotice = " ROUTE has no DEF value for source node since fromNode value is empty. ";
 			validationResult.append(errorNotice).append("\n");
 		}
 		else if (findAncestorProtoBody() != null) // look only within ProtoBody, if appropriate
@@ -9790,7 +9925,7 @@ setAttribute method invocations).
 			fromNodeObject = findAncestorProtoBody().getNodeByDEF(getFromNode());
 			if (fromNodeObject == null)
 			{
-				errorNotice = "ROUTE fromNode='" + getFromNode() + "' was not found within connected ProtoBody. ";
+				errorNotice = " ROUTE fromNode='" + getFromNode() + "' was not found within connected ProtoBody. ";
 				validationResult.append(errorNotice).append("\n");
 			}
 		}
@@ -9799,13 +9934,13 @@ setAttribute method invocations).
 			fromNodeObject = findAncestorSceneObject().getNodeByDEF(getFromNode());
 			if (fromNodeObject == null)
 			{
-				errorNotice = "ROUTE fromNode='" + getFromNode() + "' was not found in connected scene graph. ";
+				errorNotice = " ROUTE fromNode='" + getFromNode() + "' was not found in connected scene graph. ";
 				validationResult.append(errorNotice).append("\n");
 			}
 		}
 		if (getToField().isEmpty())
 		{
-			errorNotice = "ROUTE has no DEF value for target node since toNode value is empty. ";
+			errorNotice = " ROUTE has no DEF value for target node since toNode value is empty. ";
 			validationResult.append(errorNotice).append("\n");
 		}
 		else if (findAncestorProtoBody() != null) // look only within ProtoBody, if appropriate
@@ -9813,7 +9948,7 @@ setAttribute method invocations).
 			toNodeObject = findAncestorProtoBody().getNodeByDEF(getToNode());
 			if (toNodeObject == null)
 			{
-				errorNotice = "ROUTE toNode='" + getToNode() + "' was not found within connected ProtoBody. ";
+				errorNotice = " ROUTE toNode='" + getToNode() + "' was not found within connected ProtoBody. ";
 				validationResult.append(errorNotice).append("\n");
 			}
 		}
@@ -9822,13 +9957,13 @@ setAttribute method invocations).
 			toNodeObject = findAncestorSceneObject().getNodeByDEF(getToNode());
 			if (toNodeObject == null)
 			{
-				errorNotice = "ROUTE toNode='" + getToNode() + "' was not found in connected scene graph. ";
+				errorNotice = " ROUTE toNode='" + getToNode() + "' was not found in connected scene graph. ";
 				validationResult.append(errorNotice).append("\n");
 			}
 		}
 		if (fromNode.equals(toNode) && fromField.equals(toField)) // self-ROUTE check
 		{
-			errorNotice = "ROUTE source and destination are identical. ";
+			errorNotice = " ROUTE source and destination are identical. ";
 			validationResult.append(errorNotice).append("\n");
 		}
 		if (!errorNotice.isEmpty() || (fromNodeObject == null) || (toNodeObject == null))
@@ -9847,28 +9982,28 @@ setAttribute method invocations).
 			fromFieldAccessType = fromNodeObject.getAccessType(fromField);
 			  toFieldAccessType =   toNodeObject.getAccessType(  toField);
 										
-			ROUTE_description = " ROUTE details: FROM " + 
-				fromNode + "." + fromField + " (" + fromNodeType + "." + fromFieldType + "." + fromFieldAccessType + ") TO " +
-				  toNode + "." +   toField + " (" +   toNodeType + "." +   toFieldType + "." +   toFieldAccessType + ")";
+			ROUTE_description = "ROUTE details: FROM " + 
+				fromNode + "." + fromField + " [" + fromNodeType + "," + fromFieldType + "," + fromFieldAccessType + "] TO " +
+				  toNode + "." +   toField + " [" +   toNodeType + "," +   toFieldType + "," +   toFieldAccessType + "]";
 
 			if (!fromFieldType.equals(toFieldType))
 			{
-				errorNotice = "ROUTE has source-destination type mismatch, " + 
+				errorNotice = " ROUTE has source-destination type mismatch, " + 
 							   "fromField='" + fromField + "' source and toField='" + toField + "' destination have different types. ";
 			}
 			if (!fromFieldAccessType.equals(fieldObject.ACCESSTYPE_INPUTOUTPUT) &&
 				!fromFieldAccessType.equals(fieldObject.ACCESSTYPE_OUTPUTONLY))
 			{
-				errorNotice = "ROUTE fromField (source) event can only have accessType='inputOutput' or accessType='outputOnly'. ";
+				errorNotice = " ROUTE fromField (source) event can only have accessType='inputOutput' or accessType='outputOnly'. ";
 			}
 			if (  !toFieldAccessType.equals(fieldObject.ACCESSTYPE_INPUTOUTPUT) &&
 				  !toFieldAccessType.equals(fieldObject.ACCESSTYPE_INPUTONLY))
 			{
-				errorNotice = "ROUTE toField (destination) event can only have accessType='inputOutput' or accessType='inputOnly'. ";
+				errorNotice = " ROUTE toField (destination) event can only have accessType='inputOutput' or accessType='inputOnly'. ";
 			}
 			if (!errorNotice.isEmpty())
 			{
-				validationResult.append(ROUTE_description).append("\n").append(errorNotice).append("\n");
+				validationResult.append(errorNotice).append("\n").append(ROUTE_description).append("\n");
 				throw new InvalidFieldValueException(ROUTE_description + "\n" + errorNotice);
 			}
 		}]]></xsl:text>
@@ -10134,6 +10269,7 @@ setAttribute method invocations).
 			throw new InvalidFieldException(errorNotice);
 		}
 		fieldList.add(newField);
+		newField.setParentObject(this);
 		return this;
 	}
 	/**
@@ -10376,6 +10512,7 @@ setAttribute method invocations).
 			throw new InvalidFieldException(errorNotice);
 		}
 		fieldList.add(newField);
+		newField.setParentObject(this);
 		return this;
 	}
 		
@@ -10444,6 +10581,7 @@ setAttribute method invocations).
 			throw new InvalidFieldException(errorNotice);
 		}
 		fieldValueList.add(newFieldValue);
+		newFieldValue.setParentObject(this);
 		return this;
 	}
 	
@@ -10566,24 +10704,40 @@ setAttribute method invocations).
 							
 		if (getParentObject() == null)
 		{
-			 return ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE;
-		}
-		else prototypeName = ((ProtoInstanceObject) getParentObject()).getName();
-		fieldObject fieldDefinition = new fieldObject();
-
-		if ((findAncestorSceneObject() == null) &&
-			!ConfigurationProperties.isCreationConnectionValidationExceptionAllowed())
-		{
+			errorNotice = ConfigurationProperties.ERROR_NOT_CONNECTED_TO_SCENE_GRAPH + 
+							": fieldValue name='" + getName() + "' is not currently connected to a ProtoInstanceObject and thus getType() cannot be checked.";
+			validationResult.append(errorNotice).append("\n");
+							
 			if (!ConfigurationProperties.isCreationConnectionValidationExceptionAllowed())
 			{
-				errorNotice = ConfigurationProperties.ERROR_NOT_CONNECTED_TO_SCENE_GRAPH + 
-							": fieldValue name='" + getName() + "' is not currently connected to SceneObject scene graph and thus getType() cannot be checked.";
-				validationResult.append(errorNotice).append("\n");
+				 throw new InvalidProtoException(errorNotice); // report error
 			}
-			return fieldValueType;
+			else // can occur during object creation
+			{
+				return ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE;
+			}
 		}
-		X3DConcreteElement correspondingPrototype = findAncestorSceneObject().findElementByNameValue(prototypeName);
-		if      (correspondingPrototype == null)
+		else prototypeName = ((ProtoInstanceObject) getParentObject()).getName();
+
+		fieldObject fieldDefinition = new fieldObject();
+		SceneObject ancestorSceneObject = findAncestorSceneObject();
+		if (ancestorSceneObject == null)
+		{
+			errorNotice = "ProtoInstance name='" + prototypeName + "' with fieldValue  name='" + getName() + "' problem: " +
+						   ConfigurationProperties.ERROR_NOT_CONNECTED_TO_SCENE_GRAPH;
+			validationResult.append(errorNotice).append("\n");
+							
+			if (!ConfigurationProperties.isCreationConnectionValidationExceptionAllowed())
+			{
+				 throw new InvalidProtoException(errorNotice); // report error
+			}
+			else // can occur during object creation
+			{
+				return ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE;
+			}
+		}
+		X3DConcreteElement correspondingPrototype = ancestorSceneObject.findElementByNameValue(prototypeName);
+		if (correspondingPrototype == null)
 		{
 			errorNotice = "ProtoInstance name='" + prototypeName + "' does not have a corresponding " +
 						  "ProtoDeclare or ExternProtoDeclare name='" + name + "' definition";
