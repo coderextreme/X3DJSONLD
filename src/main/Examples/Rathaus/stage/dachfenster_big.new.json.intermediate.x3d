@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D profile='Full' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
+    <head>
+        <meta name='comment' content='World of Titania' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='created' content='Sun, 15 Mar 2015 09:33:53 GMT' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='creator' content='Holger Seelig' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='generator' content='Titania V0.7.6, http://titania.create3000.de' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='modified' content='Sun, 15 Mar 2015 09:33:53 GMT' dir='' http_equiv='' lang='' scheme=''/>
+    </head>
+    <Scene>
+        <WorldInfo info='"Created in Titania", "Packaged by CosmoPackage"' title='' class=''/>
+        <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
+            <Transform DEF='nurbsToPoly162' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
+                <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                    <Appearance class=''>
+                        <Material ambientIntensity='0.341818' diffuseColor='0.585106 0.0214792 0' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0' class=''/>
+                    </Appearance>
+                    <IndexedFaceSet DEF='nurbsToPoly162_0Geo' ccw='true' colorIndex='' colorPerVertex='true' convex='false' coordIndex='6 1 2 7 -1 0 4 5 3 -1 4 6 7 5 -1' creaseAngle='0.0' normalIndex='' normalPerVertex='true' solid='true' texCoordIndex='' class=''>
+                        <Coordinate DEF='nurbsToPoly162GeoPoints' point='-0.683 4.401 13.552 -0.681 4.401 15.434 0.678 4.959 15.432 0.675 4.959 13.55 -0.683 5.02 13.552 0.675 5.579 13.55 -0.681 5.02 15.434 0.678 5.579 15.432' class=''/>
+                    </IndexedFaceSet>
+                </Shape>
+                <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                    <Appearance class=''>
+                        <Material DEF='_1' ambientIntensity='0.2' diffuseColor='1 0.794631 0.389824' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0' class=''/>
+                    </Appearance>
+                    <IndexedFaceSet DEF='nurbsToPoly162_1Geo' ccw='true' colorIndex='' colorPerVertex='true' convex='false' coordIndex='1 6 4 0 -1' creaseAngle='0.0' normalIndex='' normalPerVertex='true' solid='true' texCoordIndex='' class=''>
+                        <Coordinate USE='nurbsToPoly162GeoPoints'/>
+                    </IndexedFaceSet>
+                </Shape>
+            </Transform>
+            <Transform DEF='nurbsToPoly154' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
+                <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                    <Appearance class=''>
+                        <Material DEF='_2' ambientIntensity='0.341818' diffuseColor='0.585106 0.0214792 0' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0' class=''/>
+                    </Appearance>
+                    <IndexedFaceSet DEF='nurbsToPoly154_0Geo' ccw='true' colorIndex='' colorPerVertex='true' convex='false' coordIndex='6 1 2 7 -1 0 4 5 3 -1 4 6 7 5 -1' creaseAngle='0.0' normalIndex='' normalPerVertex='true' solid='true' texCoordIndex='' class=''>
+                        <Coordinate DEF='nurbsToPoly154GeoPoints' point='1.165 6.286 14.27 1.165 6.286 14.637 2.222 6.72 14.636 2.222 6.72 14.269 1.165 6.768 14.27 2.222 7.203 14.269 1.165 6.768 14.637 2.222 7.203 14.636' class=''/>
+                    </IndexedFaceSet>
+                </Shape>
+            </Transform>
+            <Transform DEF='nurbsToPoly153' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
+                <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                    <Appearance class=''>
+                        <Material USE='_2'/>
+                    </Appearance>
+                    <IndexedFaceSet DEF='nurbsToPoly153_0Geo' ccw='true' colorIndex='' colorPerVertex='true' convex='false' coordIndex='6 1 2 7 -1 0 4 5 3 -1 4 6 7 5 -1' creaseAngle='0.0' normalIndex='' normalPerVertex='true' solid='true' texCoordIndex='' class=''>
+                        <Coordinate DEF='nurbsToPoly153GeoPoints' point='2.061 7.648 14.27 2.061 7.648 14.637 3.118 8.083 14.636 3.118 8.083 14.269 2.061 8.13 14.27 3.118 8.565 14.269 2.061 8.13 14.637 3.118 8.565 14.636' class=''/>
+                    </IndexedFaceSet>
+                </Shape>
+            </Transform>
+            <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
+                <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                    <Appearance class=''>
+                        <Material USE='_1'/>
+                    </Appearance>
+                    <IndexedFaceSet ccw='true' colorIndex='' colorPerVertex='true' convex='false' coordIndex='0 1 2 3 -1' creaseAngle='0.0' normalIndex='' normalPerVertex='true' solid='true' texCoordIndex='' class=''>
+                        <Coordinate point='1.165 6.768 14.27 1.165 6.286 14.27 1.165 6.286 14.637 1.165 6.768 14.637' class=''/>
+                    </IndexedFaceSet>
+                </Shape>
+            </Transform>
+            <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
+                <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                    <Appearance class=''>
+                        <Material USE='_1'/>
+                    </Appearance>
+                    <IndexedFaceSet ccw='true' colorIndex='' colorPerVertex='true' convex='false' coordIndex='0 1 2 3 -1' creaseAngle='0.0' normalIndex='' normalPerVertex='true' solid='true' texCoordIndex='' class=''>
+                        <Coordinate point='2.061 8.13 14.27 2.061 7.648 14.27 2.061 7.648 14.637 2.061 8.13 14.637' class=''/>
+                    </IndexedFaceSet>
+                </Shape>
+            </Transform>
+        </Transform>
+    </Scene>
+</X3D>
