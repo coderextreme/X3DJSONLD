@@ -211,7 +211,7 @@ JavaScriptSerializer.prototype = {
 					} else if (attrType === "SFTime") {
 						strval = attrs[a].nodeValue+DOUBLE_SUFFIX;
 					} else if (attrType === "MFTime") {
-						strval = this.printSubArray(attrType, "double", attrs[a].nodeValue.split(' '), this.codeno, DOUBLE_SUFFIX+',', '', DOUBLE_SUFFIX);
+						strval = this.printSubArray(attrType, "double", attrs[a].nodeValue.split(/[ ,]+/), this.codeno, DOUBLE_SUFFIX+',', '', DOUBLE_SUFFIX);
 					} else if (attrType === "MFString") {
 						strval = this.printSubArray(attrType, "java.lang.String",
 							attrs[a].nodeValue.substr(1, attrs[a].nodeValue.length-2).split(/"[ ,]+"/).
@@ -235,7 +235,7 @@ JavaScriptSerializer.prototype = {
 						attrType === "MFInt32"||
 						attrType === "MFImage"||
 						attrType === "SFImage") {
-						strval = this.printSubArray(attrType, "int", attrs[a].nodeValue.split(' '), this.codeno, ',', '', '');
+						strval = this.printSubArray(attrType, "int", attrs[a].nodeValue.split(/[ ,]+/), this.codeno, ',', '', '');
 					} else if (
 						attrType === "SFColor"||
 						attrType === "MFColor"||
@@ -254,7 +254,7 @@ JavaScriptSerializer.prototype = {
 						attrType === "SFRotation"|
 						attrType === "MFRotation"|
 						attrType === "MFFloat") {
-						strval = this.printSubArray(attrType, "float", attrs[a].nodeValue.split(' '), this.codeno, FLOAT_SUFFIX+',', '', FLOAT_SUFFIX);
+						strval = this.printSubArray(attrType, "float", attrs[a].nodeValue.split(/[ ,]+/), this.codeno, FLOAT_SUFFIX+',', '', FLOAT_SUFFIX);
 					} else if (
 						attrType === "SFVec2d"||
 						attrType === "SFVec3d"||
@@ -267,9 +267,9 @@ JavaScriptSerializer.prototype = {
 						attrType === "MFMatrix3d"||
 						attrType === "MFMatrix4d"|
 						attrType === "MFDouble") {
-						strval = this.printSubArray(attrType, "double", attrs[a].nodeValue.split(' '), this.codeno, DOUBLE_SUFFIX+',', '', DOUBLE_SUFFIX);
+						strval = this.printSubArray(attrType, "double", attrs[a].nodeValue.split(/[ ,]+/), this.codeno, DOUBLE_SUFFIX+',', '', DOUBLE_SUFFIX);
 					} else if (attrType === "MFBool") {
-						strval = this.printSubArray(attrType, "boolean", attrs[a].nodeValue.split(' '), this.codeno, ',', '', '');
+						strval = this.printSubArray(attrType, "boolean", attrs[a].nodeValue.split(/[ ,]+/), this.codeno, ',', '', '');
 					} else {
 						// strval = attrs[a].nodeValue;
 						// not found in field types
@@ -351,6 +351,7 @@ JavaScriptSerializer.prototype = {
 			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 4) {
 				str += "\n"+("  ".repeat(n))+".setSourceCode(\""+node.nodeValue.split("\r\n").map(function(x) {
 					return x.
+						replace(/\\/g, '\\\\').
 						replace(/"/g, '\\"').
 						replace(/\\n/g, "\\\\n");
 					}).join('\\n\"+\n\"')+'")';
