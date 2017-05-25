@@ -24,7 +24,7 @@
         <meta name='reference' content='http://stackoverflow.com/questions/9163988/download-mp3-from-google-translate-text-to-speech'/>
         <meta name='reference' content='http://www.greenbot.com/article/2105862/how-to-get-started-with-google-text-to-speech.html'/>
         <meta name='warning' content='under development, scene Sound/AudioClip triggering (or retrieved file format) not working'/>
-        <meta name='warning' content='BSContact error: Script node TextScript: parse error: line 15 " var strategy = [];'/>
+        <meta name='warning' content='BSContact error: Script node TextScript: parse error: line 15 &quot; var strategy = [];'/>
         <meta name='identifier' content='http://X3dGraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategies.x3d'/>
         <meta name='generator' content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit'/>
         <meta name='license' content='../license.html'/>

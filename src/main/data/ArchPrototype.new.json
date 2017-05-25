@@ -52,7 +52,7 @@
           },
           {
             "@name":"translated",
-            "@content":"20 May 2017"
+            "@content":"24 May 2017"
           },
           {
             "@name":"generator",
@@ -461,7 +461,7 @@
                 },
                 {
                   "@name":"clearSpanWidth",
-                  "@value":5
+                  "@value":5.0
                 },
                 {
                   "@name":"riseHeight",
@@ -469,7 +469,7 @@
                 },
                 {
                   "@name":"depth",
-                  "@value":2
+                  "@value":2.0
                 },
                 {
                   "@name":"topAbutmentHeight",
@@ -477,11 +477,11 @@
                 },
                 {
                   "@name":"pierWidth",
-                  "@value":1
+                  "@value":1.0
                 },
                 {
                   "@name":"pierHeight",
-                  "@value":2
+                  "@value":2.0
                 }
               ]
             }
