@@ -100,12 +100,12 @@
         <ProtoInstance DEF='ArchInstance' name='ArchPrototype'>
             <fieldValue name='diffuseColor' value='0.5 0.3 0.6'/>
             <fieldValue name='emissiveColor' value='0.5 0.3 0.6'/>
-            <fieldValue name='clearSpanWidth' value='5'/>
+            <fieldValue name='clearSpanWidth' value='5.0'/>
             <fieldValue name='riseHeight' value='2.5'/>
-            <fieldValue name='depth' value='2'/>
+            <fieldValue name='depth' value='2.0'/>
             <fieldValue name='topAbutmentHeight' value='0.6'/>
-            <fieldValue name='pierWidth' value='1'/>
-            <fieldValue name='pierHeight' value='2'/>
+            <fieldValue name='pierWidth' value='1.0'/>
+            <fieldValue name='pierHeight' value='2.0'/>
         </ProtoInstance>
         <!-- Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare) -->
         <Inline DEF='CoordinateAxes' url='"CoordinateAxes.x3d"'/>
