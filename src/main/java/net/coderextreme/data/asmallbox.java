@@ -72,43 +72,48 @@ import org.web3d.x3d.sai.Texturing3D.*;
 import org.web3d.x3d.sai.Texturing.*;
 import org.web3d.x3d.sai.Time.*;
 import org.web3d.x3d.sai.VolumeRendering.*;
-public class browser {
+public class asmallbox {
   public static void main(String[] args) {
     ConfigurationProperties.setShowDefaultAttributes(true);
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_nativeJava);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new browser().initialize().toFileJSON("../data/browser.new.json");
+    new asmallbox().initialize().toFileJSON("../data/asmallbox.new.json");
     }
     public X3DObject initialize() {
+ProtoInstanceObject ProtoInstance0 = null;
+ProtoInstanceObject ProtoInstance1 = null;
       X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
       .setHead(new headObject()
-        .addMeta(new metaObject().setName("title").setContent("browser.x3d"))
+        .addMeta(new metaObject().setName("title").setContent("abox.x3d"))
         .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
         .addMeta(new metaObject().setName("generator").setContent("manual"))
-        .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/browser.x3d"))
-        .addMeta(new metaObject().setName("description").setContent("a script test with embedded \\n between single quotes\"")))
+        .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/abox.x3d"))
+        .addMeta(new metaObject().setName("description").setContent("a box")))
       .setScene(new SceneObject()
-        .addChild(new ScriptObject().setDEF("Browser")
-          .setSourceCode("\n"+
-"ecmascript:\n"+
-"                function initialize() {\n"+
-"		    Browser.print('DUDES\\n'+'\"DUDETTES');\n"+
-"                }\n"+
-""))
-        .addChild(new ScriptObject().setDEF("Clouds")
-          .setSourceCode("\n"+
-"        \n"+
-"ecmascript:\n"+
-"\n"+
-"\n"+
-"function cumulustranslation() // These values designate the boundary location of the cloud\n"+
-"{\n"+
-"var xxx = ' '+' '+\n"+
-"'	Transform		\\n'+\n"+
-"'    ' + '               	\\n';\n"+
-"\n"+
-"}\n"+
-"")))      ;
+        .addChild(new ProtoDeclareObject().setName("anyShape")
+          .setProtoInterface(new ProtoInterfaceObject()
+            .addField(new fieldObject().setType("MFNode").setName("myShape").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
+              .addChild(new ShapeObject()
+                .setGeometry(new SphereObject()))))
+          .setProtoBody(new ProtoBodyObject()
+            .addChild(new TransformObject()
+              .setIS(new ISObject()
+                .addConnect(new connectObject().setNodeField("children").setProtoField("myShape"))))))
+        .addChild(new ProtoDeclareObject().setName("one")
+          .setProtoInterface(new ProtoInterfaceObject()
+            .addField(new fieldObject().setType("MFNode").setName("myShape").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
+              .addChild(new ShapeObject()
+                .setGeometry(new CylinderObject()))))
+          .setProtoBody(new ProtoBodyObject()
+            .addChild(new TransformObject()
+              .addChild(ProtoInstance0 = new ProtoInstanceObject().setName("anyShape")
+                .setIS(new ISObject()
+                  .addConnect(new connectObject().setNodeField("myShape").setProtoField("myShape")))))))
+        .addChild(ProtoInstance1 = new ProtoInstanceObject().setName("one")))      ;
+ProtoInstance1
+          .addFieldValue(new fieldValueObject().setName("myShape")
+            .addChild(new ShapeObject()
+              .setGeometry(new BoxObject().setSize(new float[] {0.125f,0.125f,0.125f}))));
     return X3D0;
     }
 }

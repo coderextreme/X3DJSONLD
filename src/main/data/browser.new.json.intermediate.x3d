@@ -6,7 +6,7 @@
         <meta name='creator' content='John Carlson' dir='' http_equiv='' lang='' scheme=''/>
         <meta name='generator' content='manual' dir='' http_equiv='' lang='' scheme=''/>
         <meta name='identifier' content='https://coderextreme.net/X3DJSONLD/browser.x3d' dir='' http_equiv='' lang='' scheme=''/>
-        <meta name='description' content='a script test with embedded \n between single quotes' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='description' content='a script test with embedded \n between single quotes&quot;' dir='' http_equiv='' lang='' scheme=''/>
     </head>
     <Scene>
         <Script DEF='Browser' directOutput='false' mustEvaluate='false' url='' class=''>
