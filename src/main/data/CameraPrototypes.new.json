@@ -64,7 +64,7 @@
           },
           {
             "@name":"translated",
-            "@content":"24 May 2017"
+            "@content":"25 May 2017"
           },
           {
             "@name":"generator",
@@ -878,8 +878,8 @@
 "",
 "    if (!animated) // output results",
 "    {",
-"        tracePrint ('<PositionInterpolator    DEF='CameraPositionInterpolator'    key='' + stripBrackets(CameraPI.key) + '' keyValue='' + stripBrackets(CameraPI.keyValue) + ''/>');",
-"        tracePrint ('<OrientationInterpolator DEF='CameraOrientationInterpolator' key='' + stripBrackets(CameraOI.key) + '' keyValue='' + stripBrackets(CameraOI.keyValue) + ''/>');",
+"        tracePrint ('<PositionInterpolator    DEF=\\'CameraPositionInterpolator\\'    key=\\'' + stripBrackets(CameraPI.key) + '\\' keyValue=\\'' + stripBrackets(CameraPI.keyValue) + '\\'/>');",
+"        tracePrint ('<OrientationInterpolator DEF=\\'CameraOrientationInterpolator\\' key=\\'' + stripBrackets(CameraOI.key) + '\\' keyValue=\\'' + stripBrackets(CameraOI.keyValue) + '\\'/>');",
 "    }",
 "    tracePrint ('checkShots() complete');",
 "}",
@@ -914,8 +914,8 @@
 "      if (animated) // output results",
 "      {",
 "        // TODO how to report or speed up response?  alwaysPrint ('  aimPoint=' + aimPoint.toString());",
-"        tracePrint ('  <PositionInterpolator    DEF='CameraPositionInterpolator'    key='' + stripBrackets(CameraPI.key) + '' keyValue='' + stripBrackets(CameraPI.keyValue) + ''/>');",
-"        tracePrint ('  <OrientationInterpolator DEF='CameraOrientationInterpolator' key='' + stripBrackets(CameraOI.key) + '' keyValue='' + stripBrackets(CameraOI.keyValue) + ''/>');",
+"        tracePrint ('  <PositionInterpolator    DEF=\\'CameraPositionInterpolator\\'    key=\\'' + stripBrackets(CameraPI.key) + '\\' keyValue=\\'' + stripBrackets(CameraPI.keyValue) + '\\'/>');",
+"        tracePrint ('  <OrientationInterpolator DEF=\\'CameraOrientationInterpolator\\' key=\\'' + stripBrackets(CameraOI.key) + '\\' keyValue=\\'' + stripBrackets(CameraOI.keyValue) + '\\'/>');",
 "      }",
 "   }",
 "   else if ((timestamp - priorTraceTime) >= 1.0) // 1 second trace interval",
@@ -926,8 +926,8 @@
 "      if (animated) // output results",
 "      {",
 "        // TODO how to report or speed up response?  alwaysPrint ('  aimPoint=' + aimPoint.toString());",
-"        tracePrint ('  <PositionInterpolator    DEF='CameraPositionInterpolator'    key='' + stripBrackets(CameraPI.key) + '' keyValue='' + stripBrackets(CameraPI.keyValue) + ''/>');",
-"        alwaysPrint ('  <OrientationInterpolator DEF='CameraOrientationInterpolator' key='' + stripBrackets(CameraOI.key) + '' keyValue='' + stripBrackets(CameraOI.keyValue) + ''/>');",
+"        tracePrint ('  <PositionInterpolator    DEF=\\'CameraPositionInterpolator\\'    key=\\'' + stripBrackets(CameraPI.key) + '\\' keyValue=\\'' + stripBrackets(CameraPI.keyValue) + '\\'/>');",
+"        alwaysPrint ('  <OrientationInterpolator DEF=\\'CameraOrientationInterpolator\\' key=\\'' + stripBrackets(CameraOI.key) + '\\' keyValue=\\'' + stripBrackets(CameraOI.keyValue) + '\\'/>');",
 "      }",
 "   }",
 "   if (eventValue == 0)",

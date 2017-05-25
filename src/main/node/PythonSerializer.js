@@ -173,7 +173,7 @@ PythonSerializer.prototype = {
 							strval = "fieldObject.ACCESSTYPE_"+attrs[a].nodeValue.toUpperCase();
 						} else {
 							strval = '"'+attrs[a].nodeValue.
-								replace(/\n/g, '\\\\n').
+								replace(/\\n/g, '\\\\n').
 								replace(/\\?"/g, "\\\"")
 								+'"';
 						}
@@ -200,11 +200,7 @@ PythonSerializer.prototype = {
 							attrs[a].nodeValue.substr(1, attrs[a].nodeValue.length-2).split(/"[ ,]+"/).
 							map(function(x) {
 								var y = x.
-									/*
-									replace(/(\\+)([^&\\"])/g, '$1$1$2').
 								       replace(/\\\\"/g, '\\\"').
-								       replace(/(\\)+([&"])/g, '\\\\\\\$2').
-								       */
 								       replace(/""/g, '\\"\\"').
 								       replace(/&quot;&quot;/g, '\\"\\"').
 								       replace(/&/g, "&amp;").
@@ -325,8 +321,12 @@ PythonSerializer.prototype = {
 				str += "\n"+element.nodeName+stack[0];
 				str += ".setSourceCode(\""+node.nodeValue.split("\r\n").map(function(x) {
 					return x.
-						replace(/"/g, '\\"').
-						replace(/\\n/g, "\\\\n");
+					        replace(/\\/g, '\\\\').
+						replace(/"/g, '\\"')
+						/*
+						.replace(/\\n/g, "\\\\n")
+						*/
+					;
 					}).join('\\n\"+\n\"')+'")\n';
 			}
 		}

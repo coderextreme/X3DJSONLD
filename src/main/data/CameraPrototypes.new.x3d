@@ -309,8 +309,8 @@ function checkShots (eventValue)
 
     if (!animated) // output results
     {
-        tracePrint ('<PositionInterpolator    DEF='CameraPositionInterpolator'    key='' + stripBrackets(CameraPI.key) + '' keyValue='' + stripBrackets(CameraPI.keyValue) + ''/>');
-        tracePrint ('<OrientationInterpolator DEF='CameraOrientationInterpolator' key='' + stripBrackets(CameraOI.key) + '' keyValue='' + stripBrackets(CameraOI.keyValue) + ''/>');
+        tracePrint ('<PositionInterpolator    DEF=\'CameraPositionInterpolator\'    key=\'' + stripBrackets(CameraPI.key) + '\' keyValue=\'' + stripBrackets(CameraPI.keyValue) + '\'/>');
+        tracePrint ('<OrientationInterpolator DEF=\'CameraOrientationInterpolator\' key=\'' + stripBrackets(CameraOI.key) + '\' keyValue=\'' + stripBrackets(CameraOI.keyValue) + '\'/>');
     }
     tracePrint ('checkShots() complete');
 }
@@ -345,8 +345,8 @@ function set_fraction (eventValue, timestamp) // input event received for inputO
       if (animated) // output results
       {
         // TODO how to report or speed up response?  alwaysPrint ('  aimPoint=' + aimPoint.toString());
-        tracePrint ('  <PositionInterpolator    DEF='CameraPositionInterpolator'    key='' + stripBrackets(CameraPI.key) + '' keyValue='' + stripBrackets(CameraPI.keyValue) + ''/>');
-        tracePrint ('  <OrientationInterpolator DEF='CameraOrientationInterpolator' key='' + stripBrackets(CameraOI.key) + '' keyValue='' + stripBrackets(CameraOI.keyValue) + ''/>');
+        tracePrint ('  <PositionInterpolator    DEF=\'CameraPositionInterpolator\'    key=\'' + stripBrackets(CameraPI.key) + '\' keyValue=\'' + stripBrackets(CameraPI.keyValue) + '\'/>');
+        tracePrint ('  <OrientationInterpolator DEF=\'CameraOrientationInterpolator\' key=\'' + stripBrackets(CameraOI.key) + '\' keyValue=\'' + stripBrackets(CameraOI.keyValue) + '\'/>');
       }
    }
    else if ((timestamp - priorTraceTime) >= 1.0) // 1 second trace interval
@@ -357,8 +357,8 @@ function set_fraction (eventValue, timestamp) // input event received for inputO
       if (animated) // output results
       {
         // TODO how to report or speed up response?  alwaysPrint ('  aimPoint=' + aimPoint.toString());
-        tracePrint ('  <PositionInterpolator    DEF='CameraPositionInterpolator'    key='' + stripBrackets(CameraPI.key) + '' keyValue='' + stripBrackets(CameraPI.keyValue) + ''/>');
-        alwaysPrint ('  <OrientationInterpolator DEF='CameraOrientationInterpolator' key='' + stripBrackets(CameraOI.key) + '' keyValue='' + stripBrackets(CameraOI.keyValue) + ''/>');
+        tracePrint ('  <PositionInterpolator    DEF=\'CameraPositionInterpolator\'    key=\'' + stripBrackets(CameraPI.key) + '\' keyValue=\'' + stripBrackets(CameraPI.keyValue) + '\'/>');
+        alwaysPrint ('  <OrientationInterpolator DEF=\'CameraOrientationInterpolator\' key=\'' + stripBrackets(CameraOI.key) + '\' keyValue=\'' + stripBrackets(CameraOI.keyValue) + '\'/>');
       }
    }
    if (eventValue == 0)
@@ -821,8 +821,8 @@ function alwaysPrint (outputValue)
                 <field name='set_startTime' accessType='inputOnly' appinfo='Begin render operation' type='SFTime'/>
                 <field name='progress' accessType='outputOnly' appinfo='Progress performing render operation (0..1)' type='SFFloat'/>
                 <field name='renderCompleteTime' accessType='outputOnly' appinfo='Render operation complete' type='SFTime'/>
-                <field name='movieFormat' accessType='initializeOnly' appinfo='Format of rendered output movie (mpeg mp4 etc.), use first supported format' type='MFString' value='"mpeg"'/>
-                <field name='imageFormat' accessType='initializeOnly' appinfo='Format of rendered output images (png jpeg gif tiff etc.) use first supported format' type='MFString' value='"png"'/>
+                <field name='movieFormat' accessType='initializeOnly' appinfo='Format of rendered output movie (mpeg mp4 etc.), use first supported format' type='MFString' value='&quot;mpeg&quot;'/>
+                <field name='imageFormat' accessType='initializeOnly' appinfo='Format of rendered output images (png jpeg gif tiff etc.) use first supported format' type='MFString' value='&quot;png&quot;'/>
                 <field name='traceEnabled' accessType='initializeOnly' appinfo='enable console output to trace script computations and prototype progress' type='SFBool' value='false'/>
                 <!-- TODO non-photorealistic rendering (NPR) parameters -->
             </ProtoInterface>

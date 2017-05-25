@@ -10,7 +10,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
         .addMeta(new metaObject().setName("generator").setContent("manual"))
         .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/browser.x3d"))
-        .addMeta(new metaObject().setName("description").setContent("a script test with embedded \n between single quotes")))
+        .addMeta(new metaObject().setName("description").setContent("a script test with embedded \\n between single quotes\"")))
       .setScene(new SceneObject()
         .addChild(new ScriptObject().setDEF("Browser")
           .setSourceCode("\n"+
