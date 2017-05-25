@@ -201,6 +201,7 @@ function appendInline(element, url, next) {
 		if (typeof protoExpander !== 'undefined' && typeof protoExpander.prototypeExpander === 'function') {
 			// json = protoExpander.externalPrototypeExpander(url, json);
 			json = protoExpander.prototypeExpander(url, json, "");
+			json = flattener(json);
 		} else {
 			console.error("Perhaps you need to include the PrototypeExpander.js?");
 		}
