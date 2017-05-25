@@ -17,7 +17,7 @@ no errors detected.
         <meta name='reference' content='http://www.web3d.org/specifications/java/X3DJSAIL.html'/>
         <meta name='generator' content='HelloWorldProgramOutput.java'/>
         <meta name='created' content='6 September 2016'/>
-        <meta name='modified' content='6 May 2017'/>
+        <meta name='modified' content='22 May 2017'/>
         <meta name='generator' content='X3D Java Scene Access Interface Library (X3DJSAIL)'/>
         <meta name='generator' content='http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java'/>
         <meta name='generator' content='Netbeans http://www.netbeans.org'/>
@@ -283,7 +283,7 @@ META "description" "Example HelloWorldProgram creates an X3D model using the X3D
 META "reference" "http://www.web3d.org/specifications/java/X3DJSAIL.html"
 META "generator" "HelloWorldProgramOutput.java"
 META "created" "6 September 2016"
-META "modified" "6 May 2017"
+META "modified" "22 May 2017"
 META "generator" "X3D Java Scene Access Interface Library (X3DJSAIL)"
 META "generator" "http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"
 META "generator" "Netbeans http://www.netbeans.org"
@@ -645,7 +645,7 @@ Sound {
 #META "reference" "http://www.web3d.org/specifications/java/X3DJSAIL.html"
 #META "generator" "HelloWorldProgramOutput.java"
 #META "created" "6 September 2016"
-#META "modified" "6 May 2017"
+#META "modified" "22 May 2017"
 #META "generator" "X3D Java Scene Access Interface Library (X3DJSAIL)"
 #META "generator" "http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"
 #META "generator" "Netbeans http://www.netbeans.org"
@@ -1045,7 +1045,7 @@ Reload and provide text output using Java DOM, which includes default attribute 
     <meta content='http://www.web3d.org/specifications/java/X3DJSAIL.html' name='reference'/>
     <meta content='HelloWorldProgramOutput.java' name='generator'/>
     <meta content='6 September 2016' name='created'/>
-    <meta content='6 May 2017' name='modified'/>
+    <meta content='22 May 2017' name='modified'/>
     <meta content='X3D Java Scene Access Interface Library (X3DJSAIL)' name='generator'/>
     <meta content='http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java' name='generator'/>
     <meta content='Netbeans http://www.netbeans.org' name='generator'/>
@@ -1304,4 +1304,4 @@ Test success: x3dLoader.loadX3DfromXML(HelloWorldProgramOutput.x3d), x3dLoader.g
 Test success: x3dLoader.toX3dObjectTree(domDocument), save HelloWorldProgramOutput.Reloaded.x3d
 x3dLoader validation result: no issues reported.
 ===========================================
-BUILD SUCCESSFUL (total time: 6 seconds)
+BUILD SUCCESSFUL (total time: 5 seconds)

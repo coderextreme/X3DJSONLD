@@ -49,7 +49,7 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 8 May 2017 </td>
+			<td> 22 May 2017 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
@@ -144,7 +144,7 @@ public class HelloWorldProgramOutput
     .addMeta(new metaObject().setName("reference").setContent("http://www.web3d.org/specifications/java/X3DJSAIL.html"))
     .addMeta(new metaObject().setName("generator").setContent("HelloWorldProgramOutput.java"))
     .addMeta(new metaObject().setName("created").setContent("6 September 2016"))
-    .addMeta(new metaObject().setName("modified").setContent("8 May 2017"))
+    .addMeta(new metaObject().setName("modified").setContent("22 May 2017"))
     .addMeta(new metaObject().setName("generator").setContent("X3D Java Scene Access Interface Library (X3DJSAIL)"))
     .addMeta(new metaObject().setName("generator").setContent("http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"))
     .addMeta(new metaObject().setName("generator").setContent("Netbeans http://www.netbeans.org"))
@@ -403,6 +403,11 @@ public class HelloWorldProgramOutput
 	catch (Exception e)
 	{
 		exceptionResult = e.getMessage(); // report exception failures, if any
+	    if (exceptionResult == null)
+	    {
+			exceptionResult = "Exception caught but null message!";
+			e.printStackTrace();
+	    }
 	}
 	if  (metaResult.isEmpty() && exceptionResult.isEmpty() && validationResult.isEmpty())
 	     return "success";
@@ -424,6 +429,10 @@ public class HelloWorldProgramOutput
     public static void main(String argv[])
     {
 		HelloWorldProgramOutput testObject = new HelloWorldProgramOutput();
-		System.out.println ("HelloWorldProgramOutput execution self-validation test results: " + testObject.validateSelf());
+		System.out.print("HelloWorldProgramOutput execution self-validation test results: ");
+		String validationResults = testObject.validateSelf();
+		if (validationResults.startsWith("<"))
+			System.out.println();
+		System.out.println(validationResults);
 	}
 }
