@@ -274,13 +274,17 @@ function CreateElement(key, x3djsonNS, containerField) {
  * a way to create a CDATA function or script in HTML, by using a DOM parser.
  */
 function CDATACreateFunction(document, element, str) {
-	var y = str
-		.replace(/'([^'\r]*)\n([^']*)'/g, "'$1\\n$2'")
-		.replace(/\\"/g, "\\\"")
+	var y = str.replace(/\\"/g, "\\\"")
 		.replace(/&lt;/g, "<")
 		.replace(/&gt;/g, ">")
-		.replace(/&amp;/g, "&")
-	;
+		.replace(/&amp;/g, "&");
+	do {
+		str = y;
+		y = str.replace(/'([^'\r\n]*)\n([^']*)'/g, "'$1\\n$2'");
+		if (str !== y) {
+			console.log("CDATA Replacing",str,"with",y);
+		}
+	} while (y != str);
 	var domParser = new DOMParser();
 	var cdataStr = '<script> <![CDATA[ ' + y + ' ]]> </script>'; // has to be wrapped into an element
 	var scriptDoc = domParser .parseFromString (cdataStr, 'application/xml');
@@ -417,7 +421,7 @@ function SFStringToXML(str) {
  */
 function JSONStringToXML(str) {
 	var y = str;
-	// str = str.replace(/\\/g, '\\\\');
+	str = str.replace(/\\/g, '\\\\');
 	str = str.replace(/\n/g, '\\n');
 	if (y !== str) {
 		console.log("X3DJSONLD replacing", y, "with", str);
