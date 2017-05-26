@@ -55,7 +55,7 @@ function zapSource(object) {
 }
 
 function processScripts(object, classes, mypackage, routecode) {
-	classes.log("var MFBool = x3dom.fields.MFBoolean;");
+	classes.log("var MFBool = x3dom.fields.MFBool;");
 	classes.log("var MFColor = x3dom.fields.MFColor;");
 	classes.log("var MFColorRGBA = x3dom.fields.MFColorRGBA;");
 	classes.log("var MFDouble = function() { return Array.prototype.slice.call(arguments, 0); };");
@@ -77,12 +77,15 @@ function processScripts(object, classes, mypackage, routecode) {
 	classes.log("var MFVec4d = function() { return Array.prototype.slice.call(arguments, 0); };");
 	classes.log("var MFVec4f = function() { return Array.prototype.slice.call(arguments, 0); };");
 
-	classes.log("var SFBool = function(val) { return (val || true); };");
+	classes.log("SFBool = Boolean;");
+
 	classes.log("var SFColor = x3dom.fields.SFColor;");
 	classes.log("var SFColorRGBA = x3dom.fields.SFColorRGBA;");
-	classes.log("var SFDouble = function(val) { return (val || 0.0); };");
-	classes.log("var SFFloat = function(val) { return (val || 0.0); };");
-	classes.log("var SFInt32 = function(val) { return (val || 0); };");
+
+	classes.log("SFDouble = Number;");
+	classes.log("SFFloat = Number;");
+	classes.log("SFInt32 = Number;");
+
 	classes.log("var SFImage = x3dom.fields.SFImage;");
 	classes.log("var SFMatrix3d = function() { return Array.prototype.slice.call(arguments, 0); };");
 	classes.log("var SFMatrix3f = function() { return Array.prototype.slice.call(arguments, 0); };");
@@ -90,8 +93,10 @@ function processScripts(object, classes, mypackage, routecode) {
 	classes.log("var SFMatrix4f = x3dom.fields.SFMatrix4f;");
 	classes.log("var SFNode = x3dom.fields.SFNode;");
 	classes.log("var SFRotation = x3dom.fields.SFRotation;");
-	classes.log("var SFString = function(val) { return (val || ''); };");
-	classes.log("var SFTime = function(val) { return (val || -1.0); };");
+
+	classes.log("SFString = String;");
+	classes.log("SFTime = Number;");
+
 	classes.log("var SFVec2d = function() { return Array.prototype.slice.call(arguments, 0); };");
 	classes.log("var SFVec2f = x3dom.fields.SFVec2f;");
 	classes.log("var SFVec3d = function() { return Array.prototype.slice.call(arguments, 0); };");
@@ -106,18 +111,26 @@ function processScripts(object, classes, mypackage, routecode) {
 	routecode.log("				attr : function(attr, value) {");
 	routecode.log("					if (arguments.length > 1) {");
 	routecode.log("						this[attr] = value;");
-		routecode.log("					console.log('set '+ attr+ '='+ value);");
+	routecode.log("						console.log('set '+ attr+ '='+ value);");
 	routecode.log("					} else {");
 	routecode.log("						console.log('get '+ attr+'='+this[attr]);");
 	routecode.log("						return(this[attr]);");
 	routecode.log("					}");
+	routecode.log("				},");
+	routecode.log("				getFieldValue : function(attr) {");
+	routecode.log("						console.log('get '+ attr+'='+this[attr]);");
+	routecode.log("						return(this[attr]);");
+	routecode.log("				},");
+	routecode.log("				setFieldValue : function(attr, value) {");
+	routecode.log("						this[attr] = value;");
+	routecode.log("						console.log('set '+ attr+ '='+ value);");
 	routecode.log("				}");
 	routecode.log("        		 };");
 	routecode.log("		} else {");
 	routecode.log("			if (!$(node)) {");
 	routecode.log("				console.error('undefined node',node);");
 	routecode.log("			} else {");
-	routecode.log("				var elements = $(\"[DEF='\"+node+\"'], [USE='\"+node+\"']\");");
+	routecode.log("				var elements = $(\"[DEF='\"+node+\"'], [USE='\"+node+\"']\")[0];");
 	routecode.log("				return elements;");
 	routecode.log("			}");
 	routecode.log("		}");
@@ -173,9 +186,9 @@ function processRoute(route, routecode, mypackage) {
 	var toField = route["@toField"];
 	if (typeof mypackage.find(toNode) === 'undefined') {
 		if (toField.indexOf("set_") === 0) {
-			var  to = 'X3DJSON._("'+toNode+'").attr("'+toField.substr(4)+'",';
+			var  to = 'X3DJSON._("'+toNode+'").setFieldValue("'+toField.substr(4)+'",';
 		} else {
-			var  to = 'X3DJSON._("'+toNode+'").attr("'+toField+'",';
+			var  to = 'X3DJSON._("'+toNode+'").setFieldValue("'+toField+'",';
 		}
 	} else {
 		if (toField.indexOf("set_") == 0) {
@@ -186,9 +199,9 @@ function processRoute(route, routecode, mypackage) {
 	}
 	if (typeof mypackage.find(fromNode) === 'undefined') {
 		if (fromField.indexOf("_changed") > 0) {
-			var  from = 'X3DJSON._("'+fromNode+'").attr("'+fromField.substr(0, fromField.length-8)+'")';
+			var  from = 'X3DJSON._("'+fromNode+'").getFieldValue("'+fromField.substr(0, fromField.length-8)+'")';
 		} else {
-			var  from = 'X3DJSON._("'+fromNode+'").attr("'+fromField+'")';
+			var  from = 'X3DJSON._("'+fromNode+'").getFieldValue("'+fromField+'")';
 		}
 	} else {
 		var field = 'X3DJSON.Obj.'+fromNode+'.'+fromField;
@@ -203,61 +216,53 @@ function processRoute(route, routecode, mypackage) {
 
 function valueExpand(type, flat) {
 	// console.error("TYPE IS "+type);
-	if (!flat) {
-		if (type === 'SFBool') {
-			return "false";
-		} else if (type === 'SFFloat') {
-			return 0.0;
-		} else if (type === 'SFInt32') {
-			return 0;
-		} else if (type === 'SFString'){
-			return "''";
-		} else if (type === 'SFTime'){
-			return 0;
-		} else if (type === 'SFNode') {
-			return "{}";
-		} else if (type === 'SFRotation'){
-			return "[]";
-		} else if (type === 'SFColor'){
-			return "[]";
-		} else if (type.indexOf('SFVec') === 0){
-			return "[]";
-		} else if (type.indexOf('SFMatrix') === 0){
-			return "[]";
-		} else if (type.indexOf('MF') === 0){
-			return "[]";
-		} else {
-			return "new "+type+"()";  // THIS WILL THROW AN ERROR IF you don't have a value for an outputOnly.  Fill in the type case above
-		}
+	var str = JSON.stringify(flat);
+	var num = 0; // this will cause an error below if not set
+	if (!str) {
+		flat = "";
+	} else if (type === 'SFBool') {
+		flat = str;
+	} else if (type === 'SFFloat') {
+		flat = str;
+	} else if (type === 'SFInt32') {
+		flat = str;
+	} else if (type === 'SFString'){
+		flat = str;
+	} else if (type === 'SFTime'){
+		flat = str;
+	} else if (type === 'SFNode') {
+		flat = str;
+	} else if (type === 'SFRotation'){
+		flat = str.substring(1, str.length-1);
+	} else if (type.indexOf('SFColor') === 0){
+		flat = str.substring(1, str.length-1);
+	} else if (type.indexOf('SFVec') === 0){
+		flat = str.substring(1, str.length-1);
+	} else if (type.indexOf('SFMatrix') === 0){
+		flat = str.substring(1, str.length-1);
+	} else if (type.indexOf("MFRotation") === 0) {
+		num = 4;
+	} else if (type.indexOf("MFColorRGBA") === 0) {
+		num = 4;
+	} else if (type.indexOf("MFColor") === 0) {
+		num = 3;
+	} else if (type.indexOf("MFVec2") === 0) {
+		num = 2;
+	} else if (type.indexOf("MFVec3") === 0) {
+		console.log("/* NUM is 3*/", "/*"+flat+"*/");
+		num = 3;
+	} else if (type.indexOf("MFVec4") === 0) {
+		num = 4;
+	} else if (type.indexOf("MFMatrix3") === 0) {
+		num = 9;
+	} else if (type.indexOf("MFMatrix4") === 0) {
+		num = 16;
+	} else if (flat !== null) {
+		flat = str.substring(1, str.length-1);
+		return "new "+type+"("+flat+")";  // THIS WILL THROW AN ERROR IF you don't have a value for an outputOnly.  Fill in the type case above
 	}
-	if (type.indexOf("MF") === 0) {
-		// collapse into nested arrays for scripting
-		var num = 0; // this will cause an error below if not set
-		if (type.indexOf("MFRotation") === 0) {
-			num = 4;
-		} else if (type.indexOf("MFColorRGBA") === 0) {
-			num = 4;
-		} else if (type.indexOf("MFColor") === 0) {
-			num = 3;
-		} else if (type.indexOf("MFVec2") === 0) {
-			num = 2;
-		} else if (type.indexOf("MFVec3") === 0) {
-			num = 3;
-		} else if (type.indexOf("MFVec4") === 0) {
-			num = 4;
-		} else if (type.indexOf("MFMatrix3") === 0) {
-			num = 9;
-		} else if (type.indexOf("MFMatrix4") === 0) {
-			num = 16;
-		} else {
-			console.error("/*", type, "*/");
-			if (flat === 'NULL') {
-				return JSON.stringify(null);
-			} else {
-				return JSON.stringify(flat);
-			}
-		}
 
+	if (flat !== null && num > 0) {
 		value = [];
 		var numvec = flat.length / num;
 		for (i = 0; i < numvec; i++) {
@@ -267,10 +272,9 @@ function valueExpand(type, flat) {
 			}
 			value.push(v);
 		}
-		return JSON.stringify(value);
-	} else {
-		return JSON.stringify(flat);
+		flat = JSON.stringify(value);
 	}
+	return "new "+type+"("+flat+")";
 }
 function registerFields(fields, classes, mypackage) {
 	var f;
@@ -334,12 +338,23 @@ function processFields(fields, classes, mypackage) {
 		}
 		// Don't override existing functions
 		if (!mypackage.functions[v]) {
-			classes.log(indent + "this." + v + ' = '+ values[v] + ';');
+			// Initialization
+			/*
+			if (typeof types[v] === 'undefined') {
+			*/
+				classes.log(indent + "this." + v + ' = '+values[v] + ';');
+			/*
+			} else {
+				classes.log(indent + "this." + v + ' = new '+types[v]+'('+values[v] + ');');
+			}
+			*/
 		}
 		if (!mypackage.functions['set_'+v]) {
+			// setter
 			classes.log(indent+ "this.set_" + v + ' = function (value) { if (value) this.' + v +  ' = (value.indexOf(",") >= 0 ? value.split(",") : value); };');
 		}
 		if (!mypackage.functions[v+'_changed']) {
+			// getter
 			classes.log(indent+ "this." + v + '_changed = function () { return this.' + v +  '; };');
 		}
 	}
@@ -374,7 +389,7 @@ function processSource(lines, classes, mypackage) {
 		for (var l in lines) {
 			lines[l] = lines[l].replace(/[\n\r]/g, "").replace(/\/\/(.*)function/g, '//$1functino');
 		}
-		var functions = lines.join("\n").replace(/Browser.println/g, "console.log").replace(/Browser.print/g, "console.log").split("function");
+		var functions = lines.join("\n").replace(/Browser.println/g, "console.error").replace(/Browser.print/g, "console.error").replace(/Browser.createVrmlFromString[^;]*;/g, "new MFNode();").split("function");
 		var f;
 
 		var fxns = [];
