@@ -52,7 +52,7 @@ function ProcessJSON(json, file) {
 				console.error("Error creating dir for "+outfile);
 			}
 			fs.writeFileSync(outfile, str);
-			console.log(outfile);
+			console.error("Processed XML", outfile);
 		});
 }
 

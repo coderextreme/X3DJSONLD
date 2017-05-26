@@ -82,7 +82,7 @@ function convertPlyToJson(file) {
 			dispatchTable.values(line, typeof comments === 'undefined' ? undefined :"{"+comments);
 		}
 	}
-	// console.log(JSON.stringify(elements, null, 2));
+	// console.error(JSON.stringify(elements, null, 2));
 	var x3d = { "X3D": {
 	    "encoding":"UTF-8",
 	    "@profile":"Interchange",
@@ -187,7 +187,7 @@ function transformToILS(elements) {
 						}
 					}
 				} catch (e) {
-					console.log(e);
+					console.error(e);
 				}
 			}
 			if (typeof ILS["IndexedLineSet"] === "undefined") {
@@ -211,7 +211,7 @@ function transformToILS(elements) {
 						}
 					}
 				} catch (e) {
-					console.log(e);
+					console.error(e);
 				}
 			}
 			if (typeof ILS["IndexedLineSet"] === "undefined") {
@@ -222,7 +222,7 @@ function transformToILS(elements) {
 		}
 	}
 	for (e in elements) {
-		console.log(elements[e]);
+		console.error(elements[e]);
 		var table = dispatchTable[elements[e].type];
 		if (typeof table !== 'undefined') {
 			ILS = table(elements[e], ILS);
@@ -253,7 +253,7 @@ function transformToIFS(elements) {
 						array.push(-1);
 					}
 				} catch (e) {
-					console.log(e);
+					console.error(e);
 				}
 			}
 			if (typeof IFS["IndexedFaceSet"] === "undefined") {
@@ -282,7 +282,7 @@ function transformToIFS(elements) {
 						}
 					}
 				} catch (e) {
-					console.log(e);
+					console.error(e);
 				}
 			}
 			if (typeof IFS["IndexedFaceSet"] === "undefined") {

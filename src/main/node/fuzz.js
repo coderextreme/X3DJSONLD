@@ -4,9 +4,9 @@ var schema = fs.readFileSync("x3d-3.3-JSONSchema.json");
 var root = JSON.parse(schema.toString());
 
 function generateObject(schemajson, n, node, force) {
-	// console.log(node);
+	// console.error(node);
 	var obj = undefined;
-	// console.log(schemajson);
+	// console.error(schemajson);
 	if (n < Math.floor(Math.random() * 15) + 10 || force) {
 		var ref = schemajson["$ref"];
 		var oneOf = schemajson.oneOf;
@@ -27,7 +27,7 @@ function generateObject(schemajson, n, node, force) {
 		} else if (type === "array") {
 			obj = [];
 			var items = schemajson.items;
-			// console.log("items", items);
+			// console.error("items", items);
 			var minItems = schemajson.minItems;
 			if (typeof minItems === 'undefined') {
 				minItems = 0;
@@ -47,7 +47,7 @@ function generateObject(schemajson, n, node, force) {
 			}
 		} else if (type === "string") {
 			var enumer = schemajson.enum;
-			// console.log("enum", enumer);
+			// console.error("enum", enumer);
 			if (typeof enumer !== 'undefined') {
 				obj = enumer[Math.floor(Math.random()*enumer.length)];
 			} else if (schemajson.format === 'uri') {
@@ -56,7 +56,7 @@ function generateObject(schemajson, n, node, force) {
 				obj =  "JWC WAS HERE";
 			}
 		} else if (type === "integer") {
-			// console.log("integer", schemajson.default);
+			// console.error("integer", schemajson.default);
 			var minimum = schemajson.minimum;
 			var maximum = schemajson.maximum;
 			if (typeof minimum !== 'undefined' &&
@@ -73,7 +73,7 @@ function generateObject(schemajson, n, node, force) {
 				obj =  0;
 			}
 		} else if (type === "number") {
-			// console.log("number", schemajson.default);
+			// console.error("number", schemajson.default);
 			var minimum = schemajson.minimum;
 			var maximum = schemajson.maximum;
 			if (typeof minimum !== 'undefined' &&
@@ -90,20 +90,20 @@ function generateObject(schemajson, n, node, force) {
 				obj = 0;
 			}
 		} else if (type === "boolean") {
-			// console.log("boolean");
+			// console.error("boolean");
 			obj =  Math.random() < 0.5 ? false : true;
 		} else {
 			obj = [];
-			// console.log(type);
+			// console.error(type);
 			for (var index in schemajson) {
 				// console.error(schemajson[index]);
 				obj[index] = generateObject(schemajson[index], n+1, node+" > default "+i, true);
 			}
 		}
 	}
-	// console.log(obj);
+	// console.error(obj);
 	return obj;
 }
 
 var obj = generateObject(root, 0, "$schema", true);
-console.log(JSON.stringify(obj));
+console.obj(JSON.stringify(obj));

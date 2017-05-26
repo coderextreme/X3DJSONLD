@@ -1,5 +1,5 @@
 var runsaxon = require('./allsaxon');
 process.argv.shift();
 process.argv.shift();
-console.log(process.argv);
+console.error("CONVERT ARGS", process.argv);
 runsaxon(process.argv);

@@ -16,7 +16,7 @@ AframeSerializer.prototype = {
 		aframeelement.appendChild(x3d);
 		var xml = '<?xml version="1.0" encoding="'+json.X3D["encoding"]+'"?>\n';
 		xml += XMLSerializer.serializeToString(aframeelement);
-		console.log(xml);
+		console.error(xml);
 		return xml;
 	},
 		/*
@@ -91,17 +91,17 @@ AframeSerializer.prototype = {
 			if (typeof componentCollector[component] === 'undefined') {
 				componentCollector[component] = [];
 			}
-			console.log("	component", component);
+			console.error("	component", component);
 			var properties = components[component];
 			var props = componentCollector[component];
 			for (var property in properties) {
-				console.log("		property", property,properties[property]);
+				console.error("		property", property,properties[property]);
 				if (property !== "element") {
 					var p = property+": "+properties[property];
 					props.push(p);
 				}
 			}
-			console.log("Setting attribute",component,"to", props.join("; "));
+			console.error("Setting attribute",component,"to", props.join("; "));
 		}
 		for (var component in componentCollector) {
 			var props = componentCollector[component];
@@ -109,7 +109,7 @@ AframeSerializer.prototype = {
 		}
 	},
 	elementToComponentMap(name, attr, components, component, json, field, value) {
-		console.log("value is", value);
+		console.error("value is", value);
 		var map = {
 			/* name
 			 * 	attribute
@@ -214,11 +214,11 @@ AframeSerializer.prototype = {
 		var mapComponents;
 		if (typeof map[name] !== 'undefined') {
 			mapComponents = map[name][attr];
-			console.log("Found", name, attr, JSON.stringify(mapComponents));
+			console.error("Found", name, attr, JSON.stringify(mapComponents));
 		}
 		if (typeof mapComponents === 'object' && typeof component !== 'undefined') {
 			for (var mapComponent in mapComponents) {
-				console.log("map comp", mapComponent);
+				console.error("map comp", mapComponent);
 				var properties = mapComponents[mapComponent];
 				for (var property in properties) {
 					if (typeof components !== 'undefined') {
@@ -232,9 +232,9 @@ AframeSerializer.prototype = {
 						} else {
 							components[component][property] = properties[property];
 						}
-						console.log("component value is ", components[component][property]);
+						console.error("component value is ", components[component][property]);
 					}
-					console.log("prop", property, "comps", JSON.stringify(components));
+					console.error("prop", property, "comps", JSON.stringify(components));
 				}
 			}
 			return map[name];
@@ -330,7 +330,7 @@ AframeSerializer.prototype = {
 
 		var components = {};
 		var aframe = this.elementToComponentMap(name, "element", components, "geometry"); // we don't need JSON as these are hard-coded
-		console.log("Aframe is", aframe, "for", name);
+		console.error("Aframe is", aframe, "for", name);
 		if (typeof aframe === 'undefined') {
 			element = document.createElement(name+"U-a-entity");
 			// this is an unimplemented node

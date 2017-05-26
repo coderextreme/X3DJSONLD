@@ -31,7 +31,7 @@ function Script(mypackage, name) {
 		if (typeof name === 'undefined') {
 			this.name = mypackage.name;
 		} else {
-			this.name = mypackage.name+'.'+name;
+			this.name = mypackage.name+'.'+(name.replace(/\./g, ":"));
 		}
 	}
 	packages[this.name] = this;
@@ -55,66 +55,80 @@ function zapSource(object) {
 }
 
 function processScripts(object, classes, mypackage, routecode) {
-	if (typeof mypackage === 'undefined') {
-		classes.log("var MFBool = x3dom.fields.MFBoolean;");
-		classes.log("var MFColor = x3dom.fields.MFColor;");
-		classes.log("var MFColorRGBA = x3dom.fields.MFColorRGBA");
-		classes.log("var MFDouble = function() { return Array.prototype.slice.call(arguments, 0); };");
-		classes.log("var MFFloat = x3dom.fields.MFFloat;");
-		classes.log("var MFImage = function() { return Array.prototype.slice.call(arguments, 0); };");
-		classes.log("var MFInt32 = x3dom.fields.MFInt32;");
-		classes.log("var MFMatrix3d = function() { return Array.prototype.slice.call(arguments, 0); };");
-		classes.log("var MFMatrix3f = function() { return Array.prototype.slice.call(arguments, 0); };");
-		classes.log("var MFMatrix4d = function() { return Array.prototype.slice.call(arguments, 0); };");
-		classes.log("var MFMatrix4f = function() { return Array.prototype.slice.call(arguments, 0); };");
-		classes.log("var MFNode = x3dom.fields.MFNode;");
-		classes.log("var MFRotation = x3dom.fields.MFRotation;");
-		classes.log("var MFString = x3dom.fields.MFString;");
-		classes.log("var MFTime = function() { return Array.prototype.slice.call(arguments, 0); };");
-		classes.log("var MFVec2d = function() { return Array.prototype.slice.call(arguments, 0); };");
-		classes.log("var MFVec2f = x3dom.fields.MFVec2f;");
-		classes.log("var MFVec3d = function() { return Array.prototype.slice.call(arguments, 0); };");
-		classes.log("var MFVec3f = x3dom.fields.MFVec3f;");
-		classes.log("var MFVec4d = function() { return Array.prototype.slice.call(arguments, 0); };");
-		classes.log("var MFVec4f = function() { return Array.prototype.slice.call(arguments, 0); };");
+	classes.log("var MFBool = x3dom.fields.MFBoolean;");
+	classes.log("var MFColor = x3dom.fields.MFColor;");
+	classes.log("var MFColorRGBA = x3dom.fields.MFColorRGBA;");
+	classes.log("var MFDouble = function() { return Array.prototype.slice.call(arguments, 0); };");
+	classes.log("var MFFloat = x3dom.fields.MFFloat;");
+	classes.log("var MFImage = function() { return Array.prototype.slice.call(arguments, 0); };");
+	classes.log("var MFInt32 = x3dom.fields.MFInt32;");
+	classes.log("var MFMatrix3d = function() { return Array.prototype.slice.call(arguments, 0); };");
+	classes.log("var MFMatrix3f = function() { return Array.prototype.slice.call(arguments, 0); };");
+	classes.log("var MFMatrix4d = function() { return Array.prototype.slice.call(arguments, 0); };");
+	classes.log("var MFMatrix4f = function() { return Array.prototype.slice.call(arguments, 0); };");
+	classes.log("var MFNode = x3dom.fields.MFNode;");
+	classes.log("var MFRotation = x3dom.fields.MFRotation;");
+	classes.log("var MFString = x3dom.fields.MFString;");
+	classes.log("var MFTime = function() { return Array.prototype.slice.call(arguments, 0); };");
+	classes.log("var MFVec2d = function() { return Array.prototype.slice.call(arguments, 0); };");
+	classes.log("var MFVec2f = x3dom.fields.MFVec2f;");
+	classes.log("var MFVec3d = function() { return Array.prototype.slice.call(arguments, 0); };");
+	classes.log("var MFVec3f = x3dom.fields.MFVec3f;");
+	classes.log("var MFVec4d = function() { return Array.prototype.slice.call(arguments, 0); };");
+	classes.log("var MFVec4f = function() { return Array.prototype.slice.call(arguments, 0); };");
 
-		classes.log("var SFBool = function(val) { return val || true; }");
-		classes.log("var SFColor = x3dom.fields.SFColor;");
-		classes.log("var SFColorRGBA = x3dom.fields.SFColorRGBA");
-		classes.log("var SFDouble = function(val) { return val || 0.0; }");
-		classes.log("var SFFloat = function(val) { return val || 0.0; }");
-		classes.log("var SFInt32 = function(val) { return val || 0; }");
-		classes.log("var SFImage = x3dom.fields.SFImage;");
-		classes.log("var SFMatrix3d = function() { return Array.prototype.slice.call(arguments, 0); };");
-		classes.log("var SFMatrix3f = function() { return Array.prototype.slice.call(arguments, 0); };");
-		classes.log("var SFMatrix4d = function() { return Array.prototype.slice.call(arguments, 0); };");
-		classes.log("var SFMatrix4f = x3dom.fields.SFMatrix4f;");
-		classes.log("var SFNode = x3dom.fields.SFNode;");
-		classes.log("var SFRotation = x3dom.fields.SFRotation;");
-		classes.log("var SFString = function(val) { return val || '' }");
-		classes.log("var SFTime = function(val) { return val || -1.0; }");
-		classes.log("var SFVec2d = function() { return Array.prototype.slice.call(arguments, 0); };");
-		classes.log("var SFVec2f = x3dom.fields.SFVec2f;");
-		classes.log("var SFVec3d = function() { return Array.prototype.slice.call(arguments, 0); };");
-		classes.log("var SFVec3f =  function() { return Array.prototype.slice.call(arguments, 0); };");
-		classes.log("var SFVec4d = function() { return Array.prototype.slice.call(arguments, 0); };");
-		classes.log("var SFvec4f = x3dom.fields.SFvec4f;");
+	classes.log("var SFBool = function(val) { return (val || true); };");
+	classes.log("var SFColor = x3dom.fields.SFColor;");
+	classes.log("var SFColorRGBA = x3dom.fields.SFColorRGBA;");
+	classes.log("var SFDouble = function(val) { return (val || 0.0); };");
+	classes.log("var SFFloat = function(val) { return (val || 0.0); };");
+	classes.log("var SFInt32 = function(val) { return (val || 0); };");
+	classes.log("var SFImage = x3dom.fields.SFImage;");
+	classes.log("var SFMatrix3d = function() { return Array.prototype.slice.call(arguments, 0); };");
+	classes.log("var SFMatrix3f = function() { return Array.prototype.slice.call(arguments, 0); };");
+	classes.log("var SFMatrix4d = function() { return Array.prototype.slice.call(arguments, 0); };");
+	classes.log("var SFMatrix4f = x3dom.fields.SFMatrix4f;");
+	classes.log("var SFNode = x3dom.fields.SFNode;");
+	classes.log("var SFRotation = x3dom.fields.SFRotation;");
+	classes.log("var SFString = function(val) { return (val || ''); };");
+	classes.log("var SFTime = function(val) { return (val || -1.0); };");
+	classes.log("var SFVec2d = function() { return Array.prototype.slice.call(arguments, 0); };");
+	classes.log("var SFVec2f = x3dom.fields.SFVec2f;");
+	classes.log("var SFVec3d = function() { return Array.prototype.slice.call(arguments, 0); };");
+	classes.log("var SFVec3f = x3dom.fields.SFVec3f;");
+	classes.log("var SFVec4d = function() { return Array.prototype.slice.call(arguments, 0); };");
+	classes.log("var SFvec4f = x3dom.fields.SFvec4f;");
 
-		classes.log('var X3DJSON = {};');
-		routecode.log("if (typeof $ === 'undefined') {");
-		routecode.log("	   $ = function(selector) { return {");
-		routecode.log("		attr : function(attr, value) {");
-		routecode.log("			if (arguments.length > 1) {");
-		routecode.log("				this[attr] = value;");
-		routecode.log("				/* Browser.print('set '+ attr+ '='+ value); */");
-		routecode.log("			} else {");
-		routecode.log("				/* Browser.print('get '+ attr+'='+this[attr]); */");
-		routecode.log("				return(this[attr]);");
-		routecode.log("			}");
-		routecode.log("         }");
-		routecode.log("    }}");
-		routecode.log("}");
-	}
+	classes.log('var X3DJSON = {};');
+	routecode.log("X3DJSON._ = function(node) {");
+	routecode.log("		if (typeof $ === 'undefined') {");
+	routecode.log("			return {");
+	routecode.log("				attr : function(attr, value) {");
+	routecode.log("					if (arguments.length > 1) {");
+	routecode.log("						this[attr] = value;");
+		routecode.log("					console.log('set '+ attr+ '='+ value);");
+	routecode.log("					} else {");
+	routecode.log("						console.log('get '+ attr+'='+this[attr]);");
+	routecode.log("						return(this[attr]);");
+	routecode.log("					}");
+	routecode.log("				}");
+	routecode.log("        		 };");
+	routecode.log("		} else {");
+	routecode.log("			if (!$(node)) {");
+	routecode.log("				console.error('undefined node',node);");
+	routecode.log("			} else {");
+	routecode.log("				var elements = $(\"[DEF='\"+node+\"'], [USE='\"+node+\"']\");");
+	routecode.log("				return elements;");
+	routecode.log("			}");
+	routecode.log("		}");
+	routecode.log("};");
+	routecode.log("var __eventTime = 0;");
+	routecode.log("X3DJSON.runRoutes = function() {");
+	realProcessScripts(object, classes, mypackage, routecode);
+	routecode.log("__eventTime += 1000 / 60;");
+	routecode.log("};");
+}
+function realProcessScripts(object, classes, mypackage, routecode) {
 	mypackage = mypackage || new Script();
 	var p;
 	if (typeof object === "object") {
@@ -132,7 +146,7 @@ function processScripts(object, classes, mypackage, routecode) {
 				registerFields(object[p]['field'], classes, script);
 				processSource(object[p]['#sourceText'], classes, script);
 				processFields(object[p]['field'], classes, script);
-				processScripts(object[p], classes, script, routecode);
+				realProcessScripts(object[p], classes, script, routecode);
 				// zap original source because we don't need it
 				// delete object[p]['#sourceText'];
 			} else if (p.toLowerCase() === 'route') {
@@ -146,7 +160,7 @@ function processScripts(object, classes, mypackage, routecode) {
 				object["@DEF"] = name;
 				// object[p] is not an object
 			} else {
-				processScripts(object[p], classes, mypackage, routecode);
+				realProcessScripts(object[p], classes, mypackage, routecode);
 			}
 		}
 	}
@@ -158,28 +172,26 @@ function processRoute(route, routecode, mypackage) {
 	var toNode = route["@toNode"];
 	var toField = route["@toField"];
 	if (typeof mypackage.find(toNode) === 'undefined') {
-		routecode.log('	if (!$("[DEF='+toNode+'], [USE='+toNode+']")) console.error("undefined '+toNode+'");');
 		if (toField.indexOf("set_") === 0) {
-			var  to = '$("[DEF='+toNode+'], [USE='+toNode+']").attr("'+toField.substr(4)+'",';
+			var  to = 'X3DJSON._("'+toNode+'").attr("'+toField.substr(4)+'",';
 		} else {
-			var  to = '$("[DEF='+toNode+'], [USE='+toNode+']").attr("'+toField+'",';
+			var  to = 'X3DJSON._("'+toNode+'").attr("'+toField+'",';
 		}
 	} else {
 		if (toField.indexOf("set_") == 0) {
-			var  to = 'X3DJSON.Object_' +toNode+'.'+toField+'(';
+			var  to = 'X3DJSON.Obj.' +toNode+'.'+toField+'(';
 		} else {
-			var  to = 'X3DJSON.Object_' +toNode+'.set_'+toField+'(';
+			var  to = 'X3DJSON.Obj.' +toNode+'.set_'+toField+'(';
 		}
 	}
 	if (typeof mypackage.find(fromNode) === 'undefined') {
-		routecode.log('	if (!$("[DEF='+fromNode+'], [USE='+fromNode+']")) console.error("undefined '+fromNode+'");');
 		if (fromField.indexOf("_changed") > 0) {
-			var  from = '$("[DEF='+fromNode+'], [USE='+fromNode+']").attr("'+fromField.substr(0, fromField.length-8)+'")';
+			var  from = 'X3DJSON._("'+fromNode+'").attr("'+fromField.substr(0, fromField.length-8)+'")';
 		} else {
-			var  from = '$("[DEF='+fromNode+'], [USE='+fromNode+']").attr("'+fromField+'")';
+			var  from = 'X3DJSON._("'+fromNode+'").attr("'+fromField+'")';
 		}
 	} else {
-		var field = 'X3DJSON.Object_'+fromNode+'.'+fromField;
+		var field = 'X3DJSON.Obj.'+fromNode+'.'+fromField;
 		if (fromField.indexOf("_changed") > 0) {
 			var from = 'typeof '+field+' === "function" ? '+field+'() : '+field
 		} else {
@@ -332,17 +344,37 @@ function processFields(fields, classes, mypackage) {
 		}
 	}
 	classes.log('};');
-	classes.log('X3DJSON.Object_'+mypackage.name + ' = new X3DJSON["'+mypackage.name+'"]();');
-	classes.log('if (typeof X3DJSON.Object_'+mypackage.name + '.initialize === "function") X3DJSON.Object_'+mypackage.name + '.initialize();');
+	classes.log(declareX3DJSON('Obj', mypackage));
+	classes.log(useX3DJSON('Obj', mypackage) + ' = new '+ useX3DJSON('Script', mypackage) +'();');
+	classes.log('if (typeof '+useX3DJSON('Obj', mypackage) + '.initialize === "function") '+useX3DJSON('Obj', mypackage) + '.initialize();');
+}
+
+function declareX3DJSON(type, mypackage) {
+	var hier = (type+":"+mypackage.name).split(/:/);
+	var str = "";
+	for (var h = 1; h < hier.length; h++) {
+		var sub = "X3DJSON['"+hier.slice(0, h).join("']['")+"']";
+		str += "if (typeof "+sub+" === 'undefined') {\n";
+		str += sub + " = {};\n";
+		str += "}\n";
+	}
+	return str;
+
+}
+function useX3DJSON(type, mypackage) {
+	var hier = (type+":"+mypackage.name).split(/:/);
+	str = "X3DJSON['"+hier.slice(0, hier.length).join("']['")+"']";
+	return str;
 }
 
 function processSource(lines, classes, mypackage) {
-	classes.log('X3DJSON["'+mypackage.name +  '"] = function() {');
+	classes.log(declareX3DJSON('Script', mypackage));
+	classes.log(useX3DJSON('Script', mypackage) +  ' = function() {');
 	if (typeof lines !== 'undefined') {
 		for (var l in lines) {
 			lines[l] = lines[l].replace(/[\n\r]/g, "").replace(/\/\/(.*)function/g, '//$1functino');
 		}
-		var functions = lines.join("\n").split("function");
+		var functions = lines.join("\n").replace(/Browser.println/g, "console.log").replace(/Browser.print/g, "console.log").split("function");
 		var f;
 
 		var fxns = [];
@@ -380,7 +412,7 @@ function processSource(lines, classes, mypackage) {
 			}
 
 			// now take this this. of var decls in body
-			body = body.replace(/\.this\./g,  "");
+			body = body.replace(/\.this/g,  "");
 			body = body.replace(/\svar\s+this\./g,  " var ");
 
 			// replace constructors with arrays

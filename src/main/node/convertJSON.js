@@ -101,7 +101,6 @@ function loadSchema(json, file, doValidate, success, failure) {
 		var schemajson = JSON.parse(schema.toString());
 		try {
 			ajv.addSchema(schemajson);
-			console.log("Schema", version, "added");
 		} catch (e) {
 		}
 		validated_version = ajv.compile(schemajson);
@@ -154,7 +153,7 @@ function convertJSON(options) {
 				basefile = basefile.substring(config.x3dcode.length);
 			}
 			*/
-			console.log("basefile0", basefile);
+			console.error("basefile0", basefile);
 			basefile = basefile.replace(/^C:\//, "")
 			basefile = basefile.replace(/^\.\.\//, "")
 			basefile = basefile.replace(/-|\.| /g, "_")
@@ -166,9 +165,9 @@ function convertJSON(options) {
 				var co = options[ser].codeOutput+basefile;
 				str = new serializer().serializeToString(json, element, co, mapToMethod, fieldTypes)
 				if (typeof str !== 'undefined') {
-					console.log("basefile", basefile);
+					console.error("basefile", basefile);
 					var outfile = options[ser].folder+basefile+options[ser].extension
-					console.log("outfile", outfile);
+					console.error("outfile", outfile);
 					mkdirp(outfile.substr(0, outfile.lastIndexOf("/")));
 					fs.writeFileSync(outfile, str);
 				} else {
@@ -212,7 +211,7 @@ function loadX3DJS(json, path, xml, NS, loadSchema, doValidate, callback) {
 			str = y;
 			y = str.replace(/'([^'\r\n]*)\n([^']*)'/g, "'$1\\n$2'");
 			if (str !== y) {
-				console.log("CDATA Replacing",str,"with",y);
+				console.error("CDATA Replacing",str,"with",y);
 			}
 		} while (y != str);
 
