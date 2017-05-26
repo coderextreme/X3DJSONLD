@@ -503,7 +503,7 @@ function ConvertToX3DOM(object, parentkey, element, path, containerField) {
 				}
                                 if (parentkey === '@url' || parentkey.indexOf("Url") === parentkey.length - 3) {
 					// console.error("Path is",path);
-					// processURLs(localArray, path);
+					processURLs(localArray, path);
 				}
 				elementSetAttribute(element, parentkey.substr(1),'"'+localArray.join('" "')+'"');
 			} else {
@@ -620,12 +620,17 @@ function selectObjectFromJSObj(node, selectorField) {
 	return selectedValue;
 }
 
+function setProcessURLs(func) {
+	processURLs = func;
+}
+
 if (typeof module === 'object')  {
 	module.exports = {
 		loadX3DJS : loadX3DJS,
 		Browser : Browser,
 		ConvertToX3DOM : ConvertToX3DOM,
 		setCDATACreateFunction : setCDATACreateFunction,
+		setProcessURLs : setProcessURLs,
 		loadURLs : loadURLs,
 		selectObjectFromJSObj : selectObjectFromJSObj,
 		setDocument : function(doc) {

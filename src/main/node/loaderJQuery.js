@@ -1,4 +1,5 @@
 protoExpander.setLoadURLs(loadURLs);
+setProcessURLs(function() {}); // do not modify URLs in GUI
 
 var intervalId;
 function loadXmlBrowsers(xml) {
@@ -43,14 +44,10 @@ function loadScripts(json) {
 	// Now generate JavaScript code for Scripts and Routes
 	var classes = new LOG();
 	var routecode = new LOG();
-	routecode.log("var __eventTime = 0;");
-	routecode.log("function runRoutes() {");
 	processScripts(json, classes, undefined, routecode);
-	routecode.log("__eventTime += 1000 / 60;");
-	routecode.log("}");
 
 	if (typeof intervalId !== 'undefined') {
-		console.log("Interval", intervalId, "cleared");
+		console.error("Interval", intervalId, "cleared");
 		clearInterval(intervalId);
 	}
 	if (typeof X3DJSON !== 'undefined') {
@@ -84,23 +81,16 @@ function loadScripts(json) {
 	// When we zap the source, we prevent animation
 	// zapSource(json);
 
-	// console.log(scripts.text);
+	// console.error(scripts.text);
 	try {
-		// console.log(scripts.text);
+		// console.error(scripts.text);
+		// console.error(routes.text);
 		// TODO eval is evil
-		eval(scripts.text);
+		eval(scripts.text+"\n"+routes.text);
 	} catch (e) {
 		console.error(e);
 	}
-	// console.log(routes.text);
-	try {
-		// console.log(routes.text);
-		// TODO eval is evil
-		eval(routes.text);
-	} catch (e) {
-		console.error(e);
-	}
-	intervalId = setInterval(runRoutes, 1000 / 60 );
+	intervalId = setInterval(X3DJSON.runRoutes, 1000 / 60 );
     }
 }
 
@@ -170,7 +160,7 @@ function loadX3D(selector, json, url) {
 		alert("Problems with ProtoExpander", e);
 		console.error(e);
 	}
-	// console.log("JSON IS NOW", json);
+	// console.error("JSON IS NOW", json);
 	try {
 		$('#json').val(JSON.stringify(json, null, 2));
 	} catch (e) {
@@ -309,7 +299,7 @@ function replaceX3DJSON(selector, json, url, xml, NS, next) {
 			try {
 				x3dom.reload();  // This may be necessary
 			} catch (e) {
-				console.log(e);
+				console.error(e);
 				alert("Problem with x3dom.reload()", e);
 			}
 		}
@@ -383,7 +373,7 @@ function loadPly(url) {
 
 function loadImage(url) {
 	var slash = url.lastIndexOf("/");
-	console.log("Image URL attempt at", url, slash);
+	console.error("Image URL attempt at", url, slash);
 	if (slash >= 0) {
 		// load the default viewpoint as an image
 		var dot = url.lastIndexOf(".");
@@ -392,7 +382,7 @@ function loadImage(url) {
 		var ext = url.substr(dot);
 		var file = url.substr(slash, url.length - slash - ext.length);
 		var png = base+"/_viewpoints"+file+".x3d._VP_Default_viewpoint.png";
-		console.log("setting image src to", png)
+		console.error("setting image src to", png)
 		$('#image').attr('src', png);
 
 /*
@@ -478,7 +468,7 @@ function convertXmlToJson(xmlString, callback, path) {
     .fail(function(jqXHR, textStatus, errorThrown) {
 	    alert('convertXmlToJson request failed! ' + textStatus + ' ' + errorThrown);
 	    $.get("stylesheets/X3dToJson.xslt", function(xslt) {
-		// console.log("VAL", xmlString);
+		// console.error("VAL", xmlString);
 		var demo = { xslt: xslt};
 
 		// code for regular browsers
@@ -492,7 +482,7 @@ function convertXmlToJson(xmlString, callback, path) {
 		    demo.xml.async = false;
 		    demo.xml.loadXML(xmlString);
 		}
-		// console.log("PARSED XML", demo.xml);
+		// console.error("PARSED XML", demo.xml);
 
 		// code for regular browsers
 		if (document.implementation && document.implementation.createDocument)
@@ -507,14 +497,14 @@ function convertXmlToJson(xmlString, callback, path) {
 		}
 
 		 try {
-		// console.log('JSON', result);
-			 // console.log(result);
+		// console.error('JSON', result);
+			 // console.error(result);
 			var json = getXmlString(result);
 			 // put bad JSON in the JSON area
 			$('#json').val(json);
-			console.log("Result", json);
+			console.error("Result", json);
 			var js = JSON.parse(json);
-			console.log("Parsing Accomplished")
+			console.error("Parsing Accomplished")
 			callback(js, path);
 		} catch (e) {
 			alert("No validation done, JSON doesn't parse or load.  depending on XML viewers. Works better if you use node.js as a web server and run the command node app.js from webroot after running npm install"+e);
@@ -590,18 +580,18 @@ function loadSchema(json, file, doValidate, success, failure) {
 		$.getJSON('schema/draft-04-JSONSchema.json', function(metaschemajson) {
 		    // try {
 		      ajv.addMetaSchema(metaschemajson);
-		      console.log("MetaSchema added");
+		      console.error("MetaSchema added");
 		      $.getJSON("schema/x3d-"+version+"-JSONSchema.json", function(schemajson) {
 			   // try {
-			      console.log("Schema received");
+			      console.error("Schema received");
 			      ajv.addSchema(schemajson);
-			      console.log("Schema", version, "added");
+			      console.error("Schema", version, "added");
 			      validated_version = ajv.compile(schemajson);
 			      validate[version] = validated_version;
 			      if (typeof validated_version !== 'undefined') {
-				      console.log("Schema compiled");
+				      console.error("Schema compiled");
 			      } else {
-				      console.log("Schema not compiled");
+				      console.error("Schema not compiled");
 			      }
 			      doValidate(json, validated_version, file, success, undefined);
 			    // } catch (e) {

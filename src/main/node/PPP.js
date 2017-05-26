@@ -28,6 +28,8 @@ var loadX3DJS = convertJSON.loadX3DJS;
 var loadSchema = convertJSON.loadSchema;
 var doValidate = convertJSON.doValidate;
 
+var x3dom = require('x3dom');
+
 
 function ProcessJSON(json, file) {
 		json = PROTOS.externalPrototypeExpander(file, json);
@@ -47,27 +49,9 @@ function ProcessJSON(json, file) {
 		loadX3DJS(json, file, xml, NS, loadSchema, doValidate, function(element) {
 			var classes = new LOG();
 			var routecode = new LOG();
+			console.error("OUTPUTTING", file);
 
-			classes.push("var x3dom = {};");
-			classes.push("x3dom.fields = {};");
-			classes.push("x3dom.fields.MFBool = function() { return Array.prototype.slice.call(arguments, 0); };");
-			classes.push("x3dom.fields.MFColor = function() { return Array.prototype.slice.call(arguments, 0); };");
-			classes.push("x3dom.fields.MFColorRGBA = function() { return Array.prototype.slice.call(arguments, 0); };");
-			classes.push("x3dom.fields.MFFloat = function() { return Array.prototype.slice.call(arguments, 0); };");
-			classes.push("x3dom.fields.MFInt32 = function() { return Array.prototype.slice.call(arguments, 0); };");
-			classes.push("x3dom.fields.MFNode = function() { return Array.prototype.slice.call(arguments, 0); };");
-			classes.push("x3dom.fields.MFRotation = function() { return Array.prototype.slice.call(arguments, 0); };");
-			classes.push("x3dom.fields.MFString = function() { return Array.prototype.slice.call(arguments, 0); };");
-			classes.push("x3dom.fields.MFVec2f = function() { return Array.prototype.slice.call(arguments, 0); };");
-			classes.push("x3dom.fields.MFVec3f = function() { return Array.prototype.slice.call(arguments, 0); };");
-			classes.push("x3dom.fields.SFColor = function() { return Array.prototype.slice.call(arguments, 0); };");
-			classes.push("x3dom.fields.SFColorRGBA = function() { return Array.prototype.slice.call(arguments, 0); };");
-			classes.push("x3dom.fields.SFImage = function() { return Array.prototype.slice.call(arguments, 0); };");
-			classes.push("x3dom.fields.SFMatrix4f = function() { return Array.prototype.slice.call(arguments, 0); };");
-			classes.push("x3dom.fields.SFRotation = function() { return Array.prototype.slice.call(arguments, 0); };");
-			classes.push("x3dom.fields.SFVec2f = function() { return Array.prototype.slice.call(arguments, 0); };");
-			classes.push("x3dom.fields.SFVec3f = function() { return Array.prototype.slice.call(arguments, 0); };");
-			classes.push("x3dom.fields.SFvec4f = function() { return Array.prototype.slice.call(arguments, 0); };");
+			classes.push("var x3dom = require('x3dom');");
 			processScripts(json, classes, undefined, routecode);
 			var code = classes.join('\n')
 				.replace(/&lt;/g, '<')
@@ -78,6 +62,7 @@ function ProcessJSON(json, file) {
 			console.log(totalcode);
 			try {
 				eval(totalcode);
+				fs.writeFileSync("ppp/"+file+".good.js", totalcode+"\n"+"intervalId = setInterval(X3DJSON.runRoutes, 1000 / 60 );");
 			} catch (e) {
 				fs.writeFileSync("ppp/"+file+".js", totalcode);
 				console.error("See ppp/"+file+".js for bad code", e);
