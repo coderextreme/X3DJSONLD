@@ -74,7 +74,7 @@
 			function translation_changed() {
 				return translation;
 			}
-			function initialize() {
+			function newBubble() {
 			    translation = new SFVec3f(0, 0, 0);
 			    velocity = new SFVec3f(
 			    	Math.random() - 0.5,
@@ -88,7 +88,7 @@
 				translation[2] + velocity[2]);
 			    for (var j = 0; j <= 2; j++) {
 				    if (Math.abs(translation[j]) > 10) {
-					initialize();
+					newBubble();
 				    } else {
 					velocity[0] += Math.random() * 0.2 - 0.1;
 					velocity[1] += Math.random() * 0.2 - 0.1;
@@ -99,6 +99,7 @@
 			}
 
 			function initialize() {
+			     newBubble();
 			     resolution = 100;
 			     updateCoordinates(resolution);
 			     if (typeof coordIndexes == 'undefined' || coordIndexes == null) {

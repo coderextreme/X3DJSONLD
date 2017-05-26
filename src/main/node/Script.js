@@ -56,22 +56,50 @@ function zapSource(object) {
 
 function processScripts(object, classes, mypackage, routecode) {
 	if (typeof mypackage === 'undefined') {
-		classes.log("function SFRotation() { return Array.prototype.slice.call(arguments, 0); };");
-		classes.log("function MFRotation() { return Array.prototype.slice.call(arguments, 0); };");
-		classes.log("function MFInt32() { return Array.prototype.slice.call(arguments, 0); };");
-		classes.log("function SFVec2d() { return Array.prototype.slice.call(arguments, 0); };");
-		classes.log("function SFVec2f() { return Array.prototype.slice.call(arguments, 0); };");
-		classes.log("function SFVec3d() { return Array.prototype.slice.call(arguments, 0); };");
-		classes.log("function SFVec3f() { return Array.prototype.slice.call(arguments, 0); };");
-		classes.log("function SFVec4d() { return Array.prototype.slice.call(arguments, 0); };");
-		classes.log("function SFVec4f() { return Array.prototype.slice.call(arguments, 0); };");
-		classes.log("function SFVec2d() { return Array.prototype.slice.call(arguments, 0); };");
-		classes.log("function MFVec2f() { return Array.prototype.slice.call(arguments, 0); };");
-		classes.log("function MFVec3d() { return Array.prototype.slice.call(arguments, 0); };");
-		classes.log("function MFVec3f() { return Array.prototype.slice.call(arguments, 0); };");
-		classes.log("function MFVec4d() { return Array.prototype.slice.call(arguments, 0); };");
-		classes.log("function MFVec4f() { return Array.prototype.slice.call(arguments, 0); };");
-		classes.log("function MFString() { return Array.prototype.slice.call(arguments, 0); };");
+		classes.log("var MFBool = x3dom.fields.MFBoolean;");
+		classes.log("var MFColor = x3dom.fields.MFColor;");
+		classes.log("var MFColorRGBA = x3dom.fields.MFColorRGBA");
+		classes.log("var MFDouble = function() { return Array.prototype.slice.call(arguments, 0); };");
+		classes.log("var MFFloat = x3dom.fields.MFFloat;");
+		classes.log("var MFImage = function() { return Array.prototype.slice.call(arguments, 0); };");
+		classes.log("var MFInt32 = x3dom.fields.MFInt32;");
+		classes.log("var MFMatrix3d = function() { return Array.prototype.slice.call(arguments, 0); };");
+		classes.log("var MFMatrix3f = function() { return Array.prototype.slice.call(arguments, 0); };");
+		classes.log("var MFMatrix4d = function() { return Array.prototype.slice.call(arguments, 0); };");
+		classes.log("var MFMatrix4f = function() { return Array.prototype.slice.call(arguments, 0); };");
+		classes.log("var MFNode = x3dom.fields.MFNode;");
+		classes.log("var MFRotation = x3dom.fields.MFRotation;");
+		classes.log("var MFString = x3dom.fields.MFString;");
+		classes.log("var MFTime = function() { return Array.prototype.slice.call(arguments, 0); };");
+		classes.log("var MFVec2d = function() { return Array.prototype.slice.call(arguments, 0); };");
+		classes.log("var MFVec2f = x3dom.fields.MFVec2f;");
+		classes.log("var MFVec3d = function() { return Array.prototype.slice.call(arguments, 0); };");
+		classes.log("var MFVec3f = x3dom.fields.MFVec3f;");
+		classes.log("var MFVec4d = function() { return Array.prototype.slice.call(arguments, 0); };");
+		classes.log("var MFVec4f = function() { return Array.prototype.slice.call(arguments, 0); };");
+
+		classes.log("var SFBool = function(val) { return val || true; }");
+		classes.log("var SFColor = x3dom.fields.SFColor;");
+		classes.log("var SFColorRGBA = x3dom.fields.SFColorRGBA");
+		classes.log("var SFDouble = function(val) { return val || 0.0; }");
+		classes.log("var SFFloat = function(val) { return val || 0.0; }");
+		classes.log("var SFInt32 = function(val) { return val || 0; }");
+		classes.log("var SFImage = x3dom.fields.SFImage;");
+		classes.log("var SFMatrix3d = function() { return Array.prototype.slice.call(arguments, 0); };");
+		classes.log("var SFMatrix3f = function() { return Array.prototype.slice.call(arguments, 0); };");
+		classes.log("var SFMatrix4d = function() { return Array.prototype.slice.call(arguments, 0); };");
+		classes.log("var SFMatrix4f = x3dom.fields.SFMatrix4f;");
+		classes.log("var SFNode = x3dom.fields.SFNode;");
+		classes.log("var SFRotation = x3dom.fields.SFRotation;");
+		classes.log("var SFString = function(val) { return val || '' }");
+		classes.log("var SFTime = function(val) { return val || -1.0; }");
+		classes.log("var SFVec2d = function() { return Array.prototype.slice.call(arguments, 0); };");
+		classes.log("var SFVec2f = x3dom.fields.SFVec2f;");
+		classes.log("var SFVec3d = function() { return Array.prototype.slice.call(arguments, 0); };");
+		classes.log("var SFVec3f =  function() { return Array.prototype.slice.call(arguments, 0); };");
+		classes.log("var SFVec4d = function() { return Array.prototype.slice.call(arguments, 0); };");
+		classes.log("var SFvec4f = x3dom.fields.SFvec4f;");
+
 		classes.log('var X3DJSON = {};');
 		routecode.log("if (typeof $ === 'undefined') {");
 		routecode.log("	   $ = function(selector) { return {");
