@@ -31,7 +31,7 @@ if (typeof Browser === 'undefined') {
  * loading.
  */
 function processURLs(localArray, path) {
-	// console.log("Process URLs", path, localArray);
+	// console.error("Process URLs", path, localArray);
 	var url;
 	// No longer need to split
 	for (url in localArray) {
@@ -184,13 +184,15 @@ function loadURLs(loadpath, urls, loadedCallback, protoexp, done, externProtoDec
 							loadedCallback(data.toString(), url, protoexp, done, externProtoDeclare, obj);
 						} catch (e) {
 							var filename = url;
-							filename = filename.substring(0, filename.lastIndexOf("."))+".x3d";
-							console.error("converting "+filename);
-							if (typeof runAndSend === 'function') {
-								runAndSend(['---silent', filename], function(jsobj) {
-									data = JSON.stringify(jsobj);
-									loadedCallback(data, filename, protoexp, done, externProtoDeclare, obj);
-								});
+							if (filename.endsWith(".json")) {
+								filename = filename.substring(0, filename.lastIndexOf("."))+".x3d";
+								console.error("converting possible X3D to JSON", filename);
+								if (typeof runAndSend === 'function') {
+									runAndSend(['---silent', filename], function(jsobj) {
+										data = JSON.stringify(jsobj);
+										loadedCallback(data, filename, protoexp, done, externProtoDeclare, obj);
+									});
+								}
 							}
 						}
 					} else if (typeof $ !== 'undefined' && typeof $.get === 'function') {
@@ -282,7 +284,7 @@ function CDATACreateFunction(document, element, str) {
 		str = y;
 		y = str.replace(/'([^'\r\n]*)\n([^']*)'/g, "'$1\\n$2'");
 		if (str !== y) {
-			console.log("CDATA Replacing",str,"with",y);
+			console.error("CDATA Replacing",str,"with",y);
 		}
 	} while (y != str);
 	var domParser = new DOMParser();
@@ -316,7 +318,7 @@ function ConvertObject(key, object, element, path, containerField) {
 			/*
 		} else if (key === 'Inline') {
 			var localArray = object[key]["@url"];
-			console.log("Loading", localArray, "at", path, "into", key);
+			console.error("Loading", localArray, "at", path, "into", key);
 			loadURLs(path, localArray, function(jsobj, path) {
 				// console.error("Read", jsobj);
 				try {
@@ -411,7 +413,7 @@ function SFStringToXML(str) {
 	str = str.replace(/\\/g, '\\\\');
 	str = str.replace(/"/g, '\\\"');
 	if (y !== str) {
-		console.log("X3DJSONLD [] replacing", y, "with", str);
+		console.error("X3DJSONLD [] replacing", y, "with", str);
 	}
 	return str;
 }
@@ -424,7 +426,7 @@ function JSONStringToXML(str) {
 	str = str.replace(/\\/g, '\\\\');
 	str = str.replace(/\n/g, '\\n');
 	if (y !== str) {
-		console.log("X3DJSONLD replacing", y, "with", str);
+		console.error("X3DJSONLD replacing", y, "with", str);
 	}
 	return str;
 }
@@ -500,8 +502,8 @@ function ConvertToX3DOM(object, parentkey, element, path, containerField) {
 					localArray[str] = SFStringToXML(localArray[str]);
 				}
                                 if (parentkey === '@url' || parentkey.indexOf("Url") === parentkey.length - 3) {
-					// console.log("Path is",path);
-					processURLs(localArray, path);
+					// console.error("Path is",path);
+					// processURLs(localArray, path);
 				}
 				elementSetAttribute(element, parentkey.substr(1),'"'+localArray.join('" "')+'"');
 			} else {
@@ -524,7 +526,7 @@ function ConvertToX3DOM(object, parentkey, element, path, containerField) {
  * to append or insert into the DOM.
  */
 function loadX3DJS(jsobj, path, xml, NS, loadSchema, doValidate, callback) {
-	console.log("Invoking client side loader");
+	console.error("Invoking client side loader");
 	loadSchema(jsobj, path, doValidate, function() {
 		x3djsonNS = NS;
 		var child = CreateElement('X3D', NS);
@@ -532,7 +534,7 @@ function loadX3DJS(jsobj, path, xml, NS, loadSchema, doValidate, callback) {
 		if (typeof xml !== 'undefined' && typeof xml.push === 'function') {
 			xml.push(serializeDOM(jsobj, child));
 		}
-		console.log("Returning with", child);
+		console.error("Returning with", child);
 		callback(child);
 	}, function(e) {
 		console.error(e);

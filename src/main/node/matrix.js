@@ -92,12 +92,3 @@ class Matrix extends Array {
 			parseFloat(this.row(3)) - parseFloat(that.row(3)));
 	}
 }
-
-console.log(Matrix.translation(2,3,4).mat())
-console.log(Matrix.scale(2,3,4).mat());
-console.log(Matrix.quaternion(2,3,4,5).mat());
-console.log(Matrix.scale(2,3,4).matmatmult(Matrix.translation(2,3,4)).mat());
-console.log(new Matrix(1, 2,3,4).dotprod(new Matrix(1,2,3,4)));
-console.log(new Matrix(1, 2,3,4).subtract(new Matrix(1,2,3,4)).vec());
-console.log(Matrix.quaternion(2,3,4,5).row(0).vec());
-console.log(Matrix.quaternion(2,3,4,5).col(0).vec());

@@ -10,7 +10,7 @@ ThreeSerializer.prototype = {
 			var node = element.childNodes[cn];
 			if (node.nodeName === 'Scene') {
 				var obj = printObject(node, fieldTypes);
-				console.log(JSON.stringify(obj, null, 2));
+				console.error(JSON.stringify(obj, null, 2));
 				// dump after we find first scene
 				return JSON.stringify(obj, null, 2);
 			}

@@ -697,12 +697,12 @@ PROTOS.prototype = {
 				if (p === 'ProtoDeclare') {
 					console.error("looked at", object[p]["@name"], "for", name);
 					if (object[p]["@name"] === name) {
-						console.log("Found equal names");
+						console.error("Found equal names");
 						found = object;
 					}
 					// find the first one if none match
 					if (typeof found === 'undefined' && this.founddef === null) {
-						console.log("First default found");
+						console.error("First default found");
 						this.founddef = object;
 					}
 				}
@@ -751,10 +751,10 @@ PROTOS.prototype = {
 					console.error("Failed to parse JSON from " + filename);
 					console.error("calling run and send", filename.endsWith(".x3d"), typeof runAndSend);
 					if (filename.endsWith(".x3d") && (typeof runAndSend === "function")) {
-						console.error("converting " + filename);
+						console.error("loadedProto converting " + filename);
 						var protoexp = this;
-						runAndSend([filename], function(json) {
-							console.log("got", json, "from run and send, searching for", protoname);
+						runAndSend(['---silent', filename], function(json) {
+							console.error("got", json, "from run and send, searching for", protoname);
 							protoexp.searchAndReplaceProto(filename, json, protoname, protoexp.founddef, obj, objret);
 						});
 						console.error("async skip of run and send " + filename);
@@ -809,10 +809,10 @@ PROTOS.prototype = {
 			// Wait for expectedreturn tasks to finish
 			var expectedreturn = Object.keys(object).length;
 			this.expand(file, object, function (p, newobj) {
-				// console.log("Replacing", p);
+				// console.error("Replacing", p);
 				if (p === "ExternProtoDeclare") {
 					newobject = newobj;
-					console.log("EPD", newobject);
+					console.error("EPD", newobject);
 				} else {
 					newobject[p] = newobj;
 				}
@@ -821,7 +821,7 @@ PROTOS.prototype = {
 				// console.error(expectedreturn, '=', Object.keys(newobject).length);
 				setTimeout(function () { }, 50);
 			}
-			// console.log("Exited loop");
+			// console.error("Exited loop");
 
 			return newobject;
 		} else {

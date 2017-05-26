@@ -33,7 +33,7 @@ function ProcessJSON(json, file) {
 		json = PROTOS.externalPrototypeExpander(file, json);
 		json = PROTOS.prototypeExpander(file, json, "");
 		json = flattener(json);
-		console.log("JSON", JSON.stringify(json));
+		// console.log("JSON", JSON.stringify(json));
 		var outfile = "ppp/"+file;
 		try {
 			fs.mkdirSync(outfile.substring(0, outfile.lastIndexOf("/")));
@@ -48,20 +48,38 @@ function ProcessJSON(json, file) {
 			var classes = new LOG();
 			var routecode = new LOG();
 
+			classes.push("var x3dom = {};");
+			classes.push("x3dom.fields = {};");
+			classes.push("x3dom.fields.MFBool = function() { return Array.prototype.slice.call(arguments, 0); };");
+			classes.push("x3dom.fields.MFColor = function() { return Array.prototype.slice.call(arguments, 0); };");
+			classes.push("x3dom.fields.MFColorRGBA = function() { return Array.prototype.slice.call(arguments, 0); };");
+			classes.push("x3dom.fields.MFFloat = function() { return Array.prototype.slice.call(arguments, 0); };");
+			classes.push("x3dom.fields.MFInt32 = function() { return Array.prototype.slice.call(arguments, 0); };");
+			classes.push("x3dom.fields.MFNode = function() { return Array.prototype.slice.call(arguments, 0); };");
+			classes.push("x3dom.fields.MFRotation = function() { return Array.prototype.slice.call(arguments, 0); };");
+			classes.push("x3dom.fields.MFString = function() { return Array.prototype.slice.call(arguments, 0); };");
+			classes.push("x3dom.fields.MFVec2f = function() { return Array.prototype.slice.call(arguments, 0); };");
+			classes.push("x3dom.fields.MFVec3f = function() { return Array.prototype.slice.call(arguments, 0); };");
+			classes.push("x3dom.fields.SFColor = function() { return Array.prototype.slice.call(arguments, 0); };");
+			classes.push("x3dom.fields.SFColorRGBA = function() { return Array.prototype.slice.call(arguments, 0); };");
+			classes.push("x3dom.fields.SFImage = function() { return Array.prototype.slice.call(arguments, 0); };");
+			classes.push("x3dom.fields.SFMatrix4f = function() { return Array.prototype.slice.call(arguments, 0); };");
+			classes.push("x3dom.fields.SFRotation = function() { return Array.prototype.slice.call(arguments, 0); };");
+			classes.push("x3dom.fields.SFVec2f = function() { return Array.prototype.slice.call(arguments, 0); };");
+			classes.push("x3dom.fields.SFVec3f = function() { return Array.prototype.slice.call(arguments, 0); };");
+			classes.push("x3dom.fields.SFvec4f = function() { return Array.prototype.slice.call(arguments, 0); };");
 			processScripts(json, classes, undefined, routecode);
 			var code = classes.join('\n')
 				.replace(/&lt;/g, '<')
 				.replace(/&gt;/g, '>')
+
 			var route = routecode.join('\n');
+			var totalcode = code+"\n"+route;
+			console.log(totalcode);
 			try {
-				eval(code);
-				var __eventTime = 0;
-				//setInterval(function() {
-					eval(route);
-					__eventTime += 1000 / 60;
-				//}, 1000 / 60 );
+				eval(totalcode);
 			} catch (e) {
-				fs.writeFileSync("ppp/"+file+".js", code+"\n"+route);
+				fs.writeFileSync("ppp/"+file+".js", totalcode);
 				console.error("See ppp/"+file+".js for bad code", e);
 			}
 		});

@@ -138,7 +138,7 @@ function proto(node, parent) {
 					var i = node[key][instance];
 					var pi = {};
 					pi[key] = JSON.parse(JSON.stringify(i));
-					console.log('pushing', pi);
+					console.error('pushing', pi);
 					parent.push(pi);
 					delete i;
 				} else {
@@ -176,7 +176,7 @@ function addChildren(node) {
 			}
 			for (var ind in children) {
 				if (key === 'Scene') {
-					// console.log('ind', ind, key);
+					// console.error('ind', ind, key);
 				}
 				for (var childkey in children[ind]) {
 					if (childkey.indexOf("@") === 0) {
@@ -192,7 +192,7 @@ function addChildren(node) {
 						// copy the objects
 						var newchild = {};
 						newchild[childkey] = children[ind][childkey];
-						// console.log('pushing', newchild);
+						// console.error('pushing', newchild);
 						node[key]["-children"].push(newchild);
 					}
 				}
@@ -211,8 +211,8 @@ function parseXML(xmlfile) {
 	var parser = new xml2js.Parser();
 	var data = fs.readFileSync(__dirname + '/'+xmlfile);
 	parser.parseString(data, function (err, result) {
-		console.log(xmlfile, 'parsing');
-		// console.log(JSON.stringify(result, null, 2));
+		console.error(xmlfile, 'parsing');
+		// console.error(JSON.stringify(result, null, 2));
 
 		handleObject(result);
 		zap(result);
@@ -225,7 +225,7 @@ function parseXML(xmlfile) {
 
 		var ext = xmlfile.lastIndexOf(".");
 		fs.writeFileSync(__dirname+'/'+xmlfile.substr(0, ext)+'.json2', JSON.stringify(result, null, 2));
-		console.log(xmlfile, 'parsed');
+		console.error(xmlfile, 'parsed');
 	});
 }
 

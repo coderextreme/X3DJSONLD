@@ -178,7 +178,7 @@ function convertStlToJson(file) {
 	    }
 	  }
 	};
-	console.log(x3d);
+	console.error(x3d);
 	return x3d;
 }
 
