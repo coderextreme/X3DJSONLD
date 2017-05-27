@@ -7,7 +7,7 @@ import org.web3d.x3d.jsail.Scripting.*;
 
 // Javadoc annotations follow, see below for source.
 /**
- * <p> a script test with embedded \n between single quotes. </p>
+ * <p> a script test with embedded \n between single quotes, a double backslash \\\\ a backslash \\ and a closing quote ". </p>
  <p> Related links: browser.java source, <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="http://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
@@ -33,7 +33,7 @@ import org.web3d.x3d.jsail.Scripting.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
-			<td> a script test with embedded \n between single quotes </td>
+			<td> a script test with embedded \n between single quotes, a double backslash \\\\ a backslash \\ and a closing quote " </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -68,7 +68,7 @@ public class browser
     .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
     .addMeta(new metaObject().setName("generator").setContent("manual"))
     .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/browser.x3d"))
-    .addMeta(new metaObject().setName("description").setContent("a script test with embedded \\n between single quotes")))
+    .addMeta(new metaObject().setName("description").setContent("a script test with embedded \\n between single quotes, a double backslash \\\\\\\\ a backslash \\\\ and a closing quote \"")))
   .setScene(new SceneObject()
     .addChild(new ScriptObject("Browser").setSourceCode(
 "<![CDATA[" + "\n" +

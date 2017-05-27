@@ -103,7 +103,7 @@ public class flowers4
             .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject("\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs\"")))))
         .addComments(new String[] {"",
 "                <Sphere>"})
-        .setGeometry(new IndexedFaceSetObject("Orbit").setDEF("Orbit")
+        .setGeometry(new IndexedFaceSetObject("Orbit").setDEF("Orbit").setConvex(false)
           .setCoord(new CoordinateObject("OrbitCoordinates")))))
     .addChild(new ScriptObject("OrbitScript").setSourceCode(
 "<![CDATA[" + "\n" +

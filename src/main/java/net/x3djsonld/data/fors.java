@@ -6,8 +6,10 @@ import org.web3d.x3d.jsail.fields.*;
 import org.web3d.x3d.jsail.Geometry3D.*;
 import org.web3d.x3d.jsail.Grouping.*;
 import org.web3d.x3d.jsail.Interpolation.*;
+import org.web3d.x3d.jsail.PointingDeviceSensor.*;
 import org.web3d.x3d.jsail.Scripting.*;
 import org.web3d.x3d.jsail.Shape.*;
+import org.web3d.x3d.jsail.Text.*;
 import org.web3d.x3d.jsail.Time.*;
 
 // Javadoc annotations follow, see below for source.
@@ -88,14 +90,15 @@ public class fors
           .setIS(new ISObject()
             .addConnect(new connectObject().setNodeField("translation").setProtoField("position")))
           .addChild(new ShapeObject()
-            .addComments(" comment before Sphere ")
             .setGeometry(new SphereObject())
-            .addComments(" comment after Sphere ")
             .setAppearance(new AppearanceObject()
-              .addComments(" comment before Material ")
-              .setMaterial(new MaterialObject().setDiffuseColor(1.0f,0.0f,0.0f))
-              .addComments(" comment after Material "))
-            .addComments(" comment after Appearance ")))
+              .setMaterial(new MaterialObject().setDiffuseColor(1.0f,0.0f,0.0f))))
+          .addChild(new TransformObject().setTranslation(1.0f,0.0f,0.0f)
+            .addChild(new ShapeObject()
+              .setGeometry(new TextObject().setString(new MFStringObject("\"Node\""))
+                .setFontStyle(new FontStyleObject().setJustify(new MFStringObject("\"MIDDLE\" \"MIDDLE\"")).setSize(5f)))
+              .setAppearance(new AppearanceObject()
+                .setMaterial(new MaterialObject().setDiffuseColor(0.0f,0.0f,1.0f))))))
         .addChild(new PositionInterpolatorObject("NodePosition").setKeyValue(new MFVec3fObject(new float[] {0.0f,0.0f,0.0f,0.0f,5.0f,0.0f})).setKey(new float[] {0.0f,1.0f}))
         .addChild(new ScriptObject("MoveBall").setSourceCode(
 "<![CDATA[" + "\n" +
@@ -120,11 +123,11 @@ public class fors
         .addChild(new ROUTEObject().setFromNode("NodePosition").setFromField("value_changed").setToNode("transform").setToField("set_translation"))))
     .addChild(new ProtoDeclareObject().setName("cylinder")
       .setProtoInterface(new ProtoInterfaceObject()
-        .addField(new fieldObject().setAccessType("inputOnly").setName("positionA").setType("SFVec3f"))
-        .addField(new fieldObject().setAccessType("inputOnly").setName("positionB").setType("SFVec3f")))
+        .addField(new fieldObject().setAccessType("inputOnly").setName("set_positionA").setType("SFVec3f"))
+        .addField(new fieldObject().setAccessType("inputOnly").setName("set_positionB").setType("SFVec3f")))
       .setProtoBody(new ProtoBodyObject()
         .addChild(new ShapeObject()
-          .setGeometry(new ExtrusionObject("extrusion").setSpine(new MFVec3fObject(new float[] {0.0f,-50.0f,0.0f,0.0f,0.0f,0.0f,0.0f,50.0f,0.0f})).setCreaseAngle(0.785f).setCrossSection(extrusion_6_33_crossSection))
+          .setGeometry(new ExtrusionObject("extrusion").setSpine(new MFVec3fObject(new float[] {0.0f,-50.0f,0.0f,0.0f,50.0f,0.0f})).setCreaseAngle(0.785f).setCrossSection(extrusion_6_39_crossSection))
           .setAppearance(new AppearanceObject()
             .setMaterial(new MaterialObject().setDiffuseColor(0.0f,1.0f,0.0f))))
         .addChild(new ScriptObject("MoveCylinder").setSourceCode(
@@ -134,7 +137,7 @@ public class fors
 "ecmascript:" + "\n" + 
 "\n" + 
 "                function set_endA(value) {" + "\n" + 
-"		    if (typeof spine === \"undefined\") {" + "\n" + 
+"		    if (typeof spine === 'undefined') {" + "\n" + 
 "		        spine = new MFVec3f(value, value);" + "\n" + 
 "		    } else {" + "\n" + 
 "		        spine = new MFVec3f(value, spine[1]);" + "\n" + 
@@ -142,7 +145,7 @@ public class fors
 "                }" + "\n" + 
 "                " + "\n" + 
 "                function set_endB(value) {" + "\n" + 
-"		    if (typeof spine === \"undefined\") {" + "\n" + 
+"		    if (typeof spine === 'undefined') {" + "\n" + 
 "		        spine = new MFVec3f(value, value);" + "\n" + 
 "		    } else {" + "\n" + 
 "		        spine = new MFVec3f(spine[0], value);" + "\n" + 
@@ -153,28 +156,29 @@ public class fors
 "                    spine = value;" + "\n" + 
 "                }" + "\n" + "]]>"
 )
-          .addField(new fieldObject().setAccessType("inputOutput").setName("spine").setType("MFVec3f").setValue("0 -50 0 0 0 0 0 50 0"))
+          .addField(new fieldObject().setAccessType("inputOutput").setName("spine").setType("MFVec3f").setValue("0 -50 0 0 50 0"))
           .addField(new fieldObject().setAccessType("inputOnly").setName("set_endA").setType("SFVec3f"))
           .addField(new fieldObject().setAccessType("inputOnly").setName("set_endB").setType("SFVec3f"))
           .setIS(new ISObject()
-            .addConnect(new connectObject().setNodeField("set_endA").setProtoField("positionA"))
-            .addConnect(new connectObject().setNodeField("set_endB").setProtoField("positionB"))))
+            .addConnect(new connectObject().setNodeField("set_endA").setProtoField("set_positionA"))
+            .addConnect(new connectObject().setNodeField("set_endB").setProtoField("set_positionB"))))
         .addChild(new ROUTEObject().setFromNode("MoveCylinder").setFromField("spine").setToNode("extrusion").setToField("set_spine"))))
-    .addChild(new TransformObject().setScale(0.1f,0.1f,0.1f)
+    .addChild(new TransformObject("HoldsContent").setScale(0.1f,0.1f,0.1f)
+      .addChild(new PlaneSensorObject("clickGenerator").setDescription("click on background to add nodes, click on nodes to add links").setMinPosition(-50.0f,-50.0f).setMaxPosition(50.0f,50.0f))
       .addChild(new ProtoInstanceObject("nodeA", "node").setDEF("nodeA").setName("node")
-        .addFieldValue(new fieldValueObject().setName("position").setValue("-50.0 -50.0 -50.0")))
+        .addFieldValue(new fieldValueObject().setName("position").setValue("0.0 0.0 0.0")))
       .addChild(new ProtoInstanceObject("nodeB", "node").setDEF("nodeB").setName("node")
         .addFieldValue(new fieldValueObject().setName("position").setValue("50.0 50.0 50.0")))
       .addChild(new ProtoInstanceObject("linkA", "cylinder").setDEF("linkA").setName("cylinder")
-        .addFieldValue(new fieldValueObject().setName("positionA").setValue("0 0 0"))
-        .addFieldValue(new fieldValueObject().setName("positionB").setValue("50 50 50"))))
-    .addChild(new ROUTEObject().setFromNode("nodeA").setFromField("position").setToNode("linkA").setToField("positionA"))
-    .addChild(new ROUTEObject().setFromNode("nodeB").setFromField("position").setToNode("linkA").setToField("positionB")));
+        .addFieldValue(new fieldValueObject().setName("set_positionA").setValue("0 0 0"))
+        .addFieldValue(new fieldValueObject().setName("set_positionB").setValue("50 50 50"))))
+    .addChild(new ROUTEObject().setFromNode("nodeA").setFromField("position").setToNode("linkA").setToField("set_positionA"))
+    .addChild(new ROUTEObject().setFromNode("nodeB").setFromField("position").setToNode("linkA").setToField("set_positionB")));
   }
   // end of initialize() method
 
-	/** Large attribute array: Extrusion DEF='extrusion' crossSection field, scene-graph level=6, element #33, 34 total numbers made up of 17 2-tuple values */
-	private MFVec2fObject extrusion_6_33_crossSection = new MFVec2fObject() /* splitting up long array to improve readability */
+	/** Large attribute array: Extrusion DEF='extrusion' crossSection field, scene-graph level=6, element #39, 34 total numbers made up of 17 2-tuple values */
+	private MFVec2fObject extrusion_6_39_crossSection = new MFVec2fObject() /* splitting up long array to improve readability */
 	.append(new MFVec2fObject(new float[] {1.00f,0.00f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0.00f,-1.00f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1.00f,-0.00f,-0.92f,0.38f}))
 	.append(new MFVec2fObject(new float[] {-0.71f,0.71f,-0.38f,0.92f,0.00f,1.00f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1.00f,0.00f}));
 

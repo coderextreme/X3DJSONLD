@@ -120,30 +120,46 @@ public class cobweb2
 "\n" + 
 "function set_fraction(value) {" + "\n" + 
 "    if (typeof translation === 'undefined') {" + "\n" + 
-"		translation = [0, 0, 0];" + "\n" + 
+"		translation = new SFVec3f(0, 0, 0);" + "\n" + 
 "    }" + "\n" + 
 "    if (typeof velocity === 'undefined') {" + "\n" + 
-"		velocity = [0, 0, 0];" + "\n" + 
+"		velocity = new SFVec3f(0, 0, 0);" + "\n" + 
 "    }" + "\n" + 
 "    if (typeof scalevel === 'undefined') {" + "\n" + 
-"		scalevel = [0, 0, 0];" + "\n" + 
+"		scalevel = new SFVec3f(0, 0, 0);" + "\n" + 
 "    }" + "\n" + 
 "    if (typeof scale === 'undefined') {" + "\n" + 
-"		scale = [1, 1, 1];" + "\n" + 
+"		scale = new SFVec3f(1, 1, 1);" + "\n" + 
 "    }" + "\n" + 
-"    translation = new SFVec3f(	translation[0] + velocity[0], translation[1] + velocity[1], translation[2] + velocity[2]);" + "\n" + 
-"    scale = new SFVec3f(scale[0] + scalvel[0], scale[1] + scalvel[1], scale[2] + scalvel[2]);" + "\n" + 
-"    for (var j = 0; j &lt; 3; j++) {" + "\n" + 
-"	    // if you get to far away or too big, explode" + "\n" + 
-"	    if ( Math.abs(translation[j]) &gt; 256) {" + "\n" + 
-"		translation[j] = 0;" + "\n" + 
-"		initialize();" + "\n" + 
-"	    }" + "\n" + 
-"	    if (Math.abs(scale[j]) &gt; 20) {" + "\n" + 
-"		scale[j] = scale[j]/2;" + "\n" + 
-"		translation[j] = 0;" + "\n" + 
-"		initialize();" + "\n" + 
-"	    }" + "\n" + 
+"    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);" + "\n" + 
+"    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);" + "\n" + 
+"    // if you get to far away or too big, explode" + "\n" + 
+"    if ( Math.abs(translation.x) &gt; 256) {" + "\n" + 
+"	translation.x = 0;" + "\n" + 
+"	initialize();" + "\n" + 
+"    }" + "\n" + 
+"    if ( Math.abs(translation.y) &gt; 256) {" + "\n" + 
+"	translation.y = 0;" + "\n" + 
+"	initialize();" + "\n" + 
+"    }" + "\n" + 
+"    if ( Math.abs(translation.z) &gt; 256) {" + "\n" + 
+"	translation.z = 0;" + "\n" + 
+"	initialize();" + "\n" + 
+"    }" + "\n" + 
+"    if (Math.abs(scale.x) &gt; 20) {" + "\n" + 
+"	scale.x = scale.x/20;" + "\n" + 
+"	translation.x = 0;" + "\n" + 
+"	initialize();" + "\n" + 
+"    }" + "\n" + 
+"    if (Math.abs(scale.y) &gt; 20) {" + "\n" + 
+"	scale.y = scale.y/20;" + "\n" + 
+"	translation.y = 0;" + "\n" + 
+"	initialize();" + "\n" + 
+"    }" + "\n" + 
+"    if (Math.abs(scale.z) &gt; 20) {" + "\n" + 
+"	scale.z = scale.z/20;" + "\n" + 
+"	translation.z = 0;" + "\n" + 
+"	initialize();" + "\n" + 
 "    }" + "\n" + 
 "}" + "]]>"
 )
@@ -153,8 +169,6 @@ public class cobweb2
             .addField(new fieldObject().setAccessType("inputOutput").setName("scalvel").setType("SFVec3f").setValue("0 0 0"))
             .addField(new fieldObject().setAccessType("inputOnly").setName("set_fraction").setType("SFFloat")))
           .addChild(new TimeSensorObject("bubbleClock").setCycleInterval(10).setLoop(true))
-          .addChild(new ROUTEObject().setFromNode("transform").setFromField("translation_changed").setToNode("bounce").setToField("set_translation"))
-          .addChild(new ROUTEObject().setFromNode("transform").setFromField("scale_changed").setToNode("bounce").setToField("set_scale"))
           .addChild(new ROUTEObject().setFromNode("bounce").setFromField("translation_changed").setToNode("transform").setToField("set_translation"))
           .addChild(new ROUTEObject().setFromNode("bounce").setFromField("scale_changed").setToNode("transform").setToField("set_scale"))
           .addChild(new ROUTEObject().setFromNode("bubbleClock").setFromField("fraction_changed").setToNode("bounce").setToField("set_fraction")))))
