@@ -747,6 +747,7 @@ PROTOS.prototype = {
 				var json = {};
 				try {
 					json = JSON.parse(data);
+					console.error("parsed JSON from " + filename);
 				} catch (e) {
 					console.error("Failed to parse JSON from " + filename);
 					console.error("calling run and send", filename.endsWith(".x3d"), typeof runAndSend);
@@ -783,7 +784,7 @@ PROTOS.prototype = {
 		var obj = object[p];
 		var url = obj["@url"];
 		// this is a single task
-		console.error("loading ", file, url);
+		console.error("loading External Prototype", file, url);
 		this.loadURLs(file, url, this.doLoad, this, done, p, obj);
 	},
 

@@ -38,7 +38,7 @@
           },
           {
             "@name":"translated",
-            "@content":"25 May 2017"
+            "@content":"26 May 2017"
           },
           {
             "@name":"generator",
@@ -88,6 +88,8 @@
                           "-material":
                             { "Material":
                               {
+                                "@diffuseColor":[0.7,0.7,0.7],
+                                "@specularColor":[0.5,0.5,0.5]
                               }
                             },
                           "-texture":

@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"25 May 2017"
+            "@content":"26 May 2017"
           },
           {
             "@name":"generator",
@@ -122,6 +122,69 @@
                                     "-shaders":[
                                       { "ComposedShader":
                                         {
+                                          "@language":"GLSL",
+                                          "field": [
+                                            {
+                                              "@name":"xxxcube",
+                                              "@type":"SFInt32",
+                                              "@accessType":"inputOutput",
+                                              "@value":0
+                                            },
+                                            {
+                                              "@name":"cube",
+                                              "@type":"SFNode",
+                                              "@accessType":"inputOutput",
+                                              "-children":[
+                                                { "ComposedCubeMapTexture":
+                                                  {
+                                                    "@USE":"texture"
+                                                  }
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "@name":"chromaticDispertion",
+                                              "@type":"SFVec3f",
+                                              "@accessType":"inputOutput",
+                                              "@value":[0.98,1.0,1.033]
+                                            },
+                                            {
+                                              "@name":"bias",
+                                              "@type":"SFFloat",
+                                              "@accessType":"inputOutput",
+                                              "@value":0.5
+                                            },
+                                            {
+                                              "@name":"scale",
+                                              "@type":"SFFloat",
+                                              "@accessType":"inputOutput",
+                                              "@value":0.5
+                                            },
+                                            {
+                                              "@name":"power",
+                                              "@type":"SFFloat",
+                                              "@accessType":"inputOutput",
+                                              "@value":2.0
+                                            }
+                                          ],
+                                          "-parts":[
+                                            { "ShaderPart":
+                                              {
+                                                "@url":["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs"],
+                                                "@type":"VERTEX"
+                                              }
+                                            },
+                                            { "ShaderPart":
+                                              {
+                                                "@url":["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"],
+                                                "@type":"FRAGMENT"
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      { "ComposedShader":
+                                        {
                                           "@DEF":"shader",
                                           "@language":"GLSL",
                                           "field": [
@@ -188,17 +251,15 @@
                                   }
                                 },
                               "-geometry":
-                                { "IndexedFaceSet":
+                                { "Sphere":
                                   {
-                                    "@DEF":"Orbit",
-                                    "-coord":
-                                      { "Coordinate":
-                                        {
-                                          "@DEF":"OrbitCoordinates"
-                                        }
-                                      }
                                   }
+                                },
+                              "-children":[
+                                {
+                                  "#comment":"<IndexedFaceSet convex=\"false\" DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>"
                                 }
+                              ]
                             }
                           }
                         ]
@@ -232,7 +293,7 @@
                           },
                           {
                             "@name":"coordIndexes",
-                            "@accessType":"inputOutput",
+                            "@accessType":"outputOnly",
                             "@type":"MFInt32"
                           },
                           {
@@ -275,13 +336,7 @@
                         "#sourceText":[
 "",
 "ecmascript:",
-"\t\t\tfunction set_translation(value) {",
-"\t\t\t\ttranslation = value;",
-"\t\t\t}",
-"\t\t\tfunction translation_changed() {",
-"\t\t\t\treturn translation;",
-"\t\t\t}",
-"\t\t\tfunction initialize() {",
+"\t\t\tfunction newBubble() {",
 "\t\t\t    translation = new SFVec3f(0, 0, 0);",
 "\t\t\t    velocity = new SFVec3f(",
 "\t\t\t    \tMath.random() - 0.5,",
@@ -290,57 +345,59 @@
 "\t\t\t}",
 "\t\t\tfunction set_fraction() {",
 "\t\t\t    translation = new SFVec3f(",
-"\t\t\t    \ttranslation[0] + velocity[0],",
-"\t\t\t\ttranslation[1] + velocity[1],",
-"\t\t\t\ttranslation[2] + velocity[2]);",
-"\t\t\t    for (var j = 0; j <= 2; j++) {",
-"\t\t\t\t    if (Math.abs(translation[j]) > 10) {",
-"\t\t\t\t\tinitialize();",
-"\t\t\t\t    } else {",
-"\t\t\t\t\tvelocity[0] += Math.random() * 0.2 - 0.1;",
-"\t\t\t\t\tvelocity[1] += Math.random() * 0.2 - 0.1;",
-"\t\t\t\t\tvelocity[2] += Math.random() * 0.2 - 0.1;",
-"\t\t\t\t    }",
+"\t\t\t    \ttranslation.x + velocity.x,",
+"\t\t\t\ttranslation.y + velocity.y,",
+"\t\t\t\ttranslation.z + velocity.z);",
+"\t\t\t    if (Math.abs(translation.x) > 10) {",
+"\t\t\t\t\tnewBubble();",
+"\t\t\t    } else if (Math.abs(translation.y) > 10) {",
+"\t\t\t\t\tnewBubble();",
+"\t\t\t    } else if (Math.abs(translation.z) > 10) {",
+"\t\t\t\t\tnewBubble();",
+"\t\t\t    } else {",
+"\t\t\t\t\tvelocity = new SFVec3f(",
+"\t\t\t\t\t\tvelocity.x + Math.random() * 0.2 - 0.1,",
+"\t\t\t\t\t\tvelocity.y + Math.random() * 0.2 - 0.1,",
+"\t\t\t\t\t\tvelocity.z + Math.random() * 0.2 - 0.1",
+"\t\t\t\t\t);",
 "\t\t\t    }",
 "\t\t\t    animate_flowers();",
 "\t\t\t}",
 "",
 "\t\t\tfunction initialize() {",
+"\t\t\t     newBubble();",
 "\t\t\t     resolution = 100;",
 "\t\t\t     updateCoordinates(resolution);",
-"\t\t\t     if (typeof coordIndexes == 'undefined' || coordIndexes == null) {",
-"\t\t\t\tcoordIndexes = new MFInt32();",
-"\t\t\t     }",
-"\t\t\t     ci = 0;",
+"\t\t\t     var cis = [];",
 "\t\t\t     for ( i = 0; i < resolution-1; i++) {",
 "\t\t\t\tfor ( j = 0; j < resolution-1; j++) {",
-"\t\t\t\t     coordIndexes[ci] = i*resolution+j;",
-"\t\t\t\t     coordIndexes[ci+1] = i*resolution+j+1;",
-"\t\t\t\t     coordIndexes[ci+2] = (i+1)*resolution+j+1;",
-"\t\t\t\t     coordIndexes[ci+3] = (i+1)*resolution+j;",
-"\t\t\t\t     coordIndexes[ci+4] = -1;",
-"\t\t\t\t     ci += 5;",
+"\t\t\t\t     cis.push(i*resolution+j);",
+"\t\t\t\t     cis.push(i*resolution+j+1);",
+"\t\t\t\t     cis.push((i+1)*resolution+j+1);",
+"\t\t\t\t     cis.push((i+1)*resolution+j);",
+"\t\t\t\t     cis.push(-1);",
 "\t\t\t\t}",
 "\t\t\t    }",
+"\t\t\t     coordIndexes = new MFInt32(cis);",
 "\t\t\t}",
 "",
 "\t\t\tfunction updateCoordinates(resolution) {",
 "\t\t\t     theta = 0.0;",
 "\t\t\t     phi = 0.0;",
 "\t\t\t     delta = (2 * 3.141592653) / (resolution-1);",
-"\t\t\t     if (typeof coordinates == 'undefined' || coordinates == null) {",
-"\t\t\t\tcoordinates = new MFVec3f();",
-"\t\t\t     }",
+"\t\t\t     var crds = [];",
 "\t\t\t     for ( i = 0; i < resolution; i++) {",
 "\t\t\t\tfor ( j = 0; j < resolution; j++) {",
 "\t\t\t\t\trho = a + b * Math.cos(c * theta) * Math.cos(d * phi);",
-"\t\t\t\t\tcoordinates[i*resolution+j] = new SFVec3f();",
-"\t\t\t\t\tcoordinates[i*resolution+j][0] = rho * Math.cos(phi) * Math.cos(theta);",
-"\t\t\t\t\tcoordinates[i*resolution+j][1] = rho * Math.cos(phi) * Math.sin(theta);",
-"\t\t\t\t\tcoordinates[i*resolution+j][2] = rho * Math.sin(phi);",
+"\t\t\t\t\tcrds.push(new SFVec3f(",
+"\t\t\t\t\t\trho * Math.cos(phi) * Math.cos(theta),",
+"\t\t\t\t\t\trho * Math.cos(phi) * Math.sin(theta),",
+"\t\t\t\t\t\trho * Math.sin(phi)",
+"\t\t\t\t\t));",
 "\t\t\t\t\ttheta += delta;",
 "\t\t\t\t}",
 "\t\t\t\tphi += delta;",
+"\t\t\t\tcoordinates = new MFVec3f(crds);",
 "\t\t\t     }",
 "\t\t\t}",
 "",
@@ -407,21 +464,8 @@
                         "@toField":"set_translation"
                       }
                     },
-                    { "ROUTE":
-                      {
-                        "@fromField":"coordIndexes",
-                        "@fromNode":"Bounce",
-                        "@toField":"set_coordIndex",
-                        "@toNode":"Orbit"
-                      }
-                    },
-                    { "ROUTE":
-                      {
-                        "@fromField":"coordinates",
-                        "@fromNode":"Bounce",
-                        "@toField":"set_point",
-                        "@toNode":"OrbitCoordinates"
-                      }
+                    {
+                      "#comment":"<ROUTE fromField=\"coordIndexes\" fromNode=\"Bounce\" toField=\"set_coordIndex\" toNode=\"Orbit\"/> <ROUTE fromField=\"coordinates\" fromNode=\"Bounce\" toField=\"set_point\" toNode=\"OrbitCoordinates\"/>"
                     }
                   ]
               }

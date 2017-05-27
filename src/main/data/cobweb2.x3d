@@ -27,49 +27,51 @@ function initialize() {
     scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);
 }
 
-function set_translation(value) {
-   translation = value;
-}
-
-function set_scale(value) {
-   scale = value;
-}
-
-function translation_changed() {
-	return translation;
-}
-
 function set_fraction(value) {
     if (typeof translation === 'undefined') {
-		translation = [0, 0, 0];
+		translation = new SFVec3f(0, 0, 0);
     }
     if (typeof velocity === 'undefined') {
-		velocity = [0, 0, 0];
+		velocity = new SFVec3f(0, 0, 0);
     }
     if (typeof scalevel === 'undefined') {
-		scalevel = [0, 0, 0];
+		scalevel = new SFVec3f(0, 0, 0);
     }
     if (typeof scale === 'undefined') {
-		scale = [1, 1, 1];
+		scale = new SFVec3f(1, 1, 1);
     }
-    translation = new SFVec3f(	translation[0] + velocity[0], translation[1] + velocity[1], translation[2] + velocity[2]);
-    scale = new SFVec3f(scale[0] + scalvel[0], scale[1] + scalvel[1], scale[2] + scalvel[2]);
-    for (var j = 0; j &lt; 3; j++) {
-	    // if you get to far away or too big, explode
-	    if ( Math.abs(translation[j]) &gt; 256) {
-		translation[j] = 0;
-		initialize();
-	    }
-	    if (Math.abs(scale[j]) &gt; 20) {
-		scale[j] = scale[j]/2;
-		translation[j] = 0;
-		initialize();
-	    }
+    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);
+    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);
+    // if you get to far away or too big, explode
+    if ( Math.abs(translation.x) &gt; 256) {
+	translation.x = 0;
+	initialize();
+    }
+    if ( Math.abs(translation.y) &gt; 256) {
+	translation.y = 0;
+	initialize();
+    }
+    if ( Math.abs(translation.z) &gt; 256) {
+	translation.z = 0;
+	initialize();
+    }
+    if (Math.abs(scale.x) &gt; 20) {
+	scale.x = scale.x/20;
+	translation.x = 0;
+	initialize();
+    }
+    if (Math.abs(scale.y) &gt; 20) {
+	scale.y = scale.y/20;
+	translation.y = 0;
+	initialize();
+    }
+    if (Math.abs(scale.z) &gt; 20) {
+	scale.z = scale.z/20;
+	translation.z = 0;
+	initialize();
     }
 }]]></Script>
 <TimeSensor DEF="bubbleClock" cycleInterval="10" loop="true"></TimeSensor>
-<ROUTE fromNode="transform" fromField="translation_changed" toNode="bounce" toField="set_translation"></ROUTE>
-<ROUTE fromNode="transform" fromField="scale_changed" toNode="bounce" toField="set_scale"></ROUTE>
 <ROUTE fromNode="bounce" fromField="translation_changed" toNode="transform" toField="set_translation"></ROUTE>
 <ROUTE fromNode="bounce" fromField="scale_changed" toNode="transform" toField="set_scale"></ROUTE>
 <ROUTE fromNode="bubbleClock" fromField="fraction_changed" toNode="bounce" toField="set_fraction"></ROUTE>

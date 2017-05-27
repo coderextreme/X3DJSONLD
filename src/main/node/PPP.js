@@ -28,15 +28,14 @@ var loadX3DJS = convertJSON.loadX3DJS;
 var loadSchema = convertJSON.loadSchema;
 var doValidate = convertJSON.doValidate;
 
-var x3dom = require('x3dom');
-
+var x3dom = require('./fields.js');
 
 function ProcessJSON(json, file) {
 		json = PROTOS.externalPrototypeExpander(file, json);
 		json = PROTOS.prototypeExpander(file, json, "");
 		json = flattener(json);
 		// console.log("JSON", JSON.stringify(json));
-		var outfile = "ppp/"+file;
+		var outfile = file.replace(/data/, "ppp");
 		try {
 			fs.mkdirSync(outfile.substring(0, outfile.lastIndexOf("/")));
 		} catch (e) {
@@ -49,23 +48,25 @@ function ProcessJSON(json, file) {
 		loadX3DJS(json, file, xml, NS, loadSchema, doValidate, function(element) {
 			var classes = new LOG();
 			var routecode = new LOG();
+			var loopItems = new LOG();
 			console.error("OUTPUTTING", file);
 
-			classes.push("var x3dom = require('x3dom');");
-			processScripts(json, classes, undefined, routecode);
+			classes.push("var x3dom = require('../node/fields.js');");
+			processScripts(json, classes, undefined, routecode, loopItems);
 			var code = classes.join('\n')
 				.replace(/&lt;/g, '<')
 				.replace(/&gt;/g, '>')
 
 			var route = routecode.join('\n');
-			var totalcode = code+"\n"+route;
+			var loop = loopItems.join('\n');
+			var totalcode = code+"\n"+route+"\n"+loop;
 			console.log(totalcode);
 			try {
 				eval(totalcode);
-				fs.writeFileSync("ppp/"+file+".good.js", totalcode+"\n"+"intervalId = setInterval(X3DJSON.runRoutes, 1000 / 60 );");
+				fs.writeFileSync(outfile+".good.js", totalcode);
 			} catch (e) {
-				fs.writeFileSync("ppp/"+file+".js", totalcode);
-				console.error("See ppp/"+file+".js for bad code", e);
+				fs.writeFileSync(outfile+".js", totalcode);
+				console.error("See "+outfile+".js for bad code", e);
 			}
 		});
 }

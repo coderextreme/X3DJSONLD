@@ -16,6 +16,16 @@
 <ImageTexture containerField="right" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_right.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png&quot;"></ImageTexture>
 <ImageTexture containerField="top" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_top.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png&quot;"></ImageTexture>
 </ComposedCubeMapTexture>
+<ComposedShader language="GLSL"><field name="xxxcube" type="SFInt32" accessType="inputOutput" value="0"></field>
+<field name="cube" type="SFNode" accessType="inputOutput"><ComposedCubeMapTexture USE="texture"></ComposedCubeMapTexture>
+</field>
+<field name="chromaticDispertion" type="SFVec3f" accessType="inputOutput" value="0.98 1 1.033"></field>
+<field name="bias" type="SFFloat" accessType="inputOutput" value="0.5"></field>
+<field name="scale" type="SFFloat" accessType="inputOutput" value="0.5"></field>
+<field name="power" type="SFFloat" accessType="inputOutput" value="2"></field>
+<ShaderPart url="&quot;../shaders/x3dom.vs&quot; &quot;https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs&quot;" type="VERTEX"></ShaderPart>
+<ShaderPart url="&quot;../shaders/pc_bubbles.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs&quot;" type="FRAGMENT"></ShaderPart>
+</ComposedShader>
 <ComposedShader DEF="shader" language="GLSL"><field name="xxxcube" type="SFInt32" accessType="inputOutput" value="0"></field>
 <field name="cube" type="SFNode" accessType="inputOutput"><ComposedCubeMapTexture USE="texture"></ComposedCubeMapTexture>
 </field>
@@ -27,15 +37,14 @@
 <ShaderPart url="&quot;../shaders/pc_bubbles.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs&quot;" type="FRAGMENT"></ShaderPart>
 </ComposedShader>
 </Appearance>
-<IndexedFaceSet containerField="geometry" DEF="Orbit"><Coordinate containerField="coord" DEF="OrbitCoordinates"></Coordinate>
-</IndexedFaceSet>
-</Shape>
+<Sphere containerField="geometry"></Sphere>
+<!--<IndexedFaceSet convex="false" DEF="Orbit" creaseAngle="0"> <Coordinate DEF="OrbitCoordinates"></Coordinate> </IndexedFaceSet>--></Shape>
 </Transform>
 <Script DEF="Bounce"><field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 <field name="velocity" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 <field name="set_fraction" accessType="inputOnly" type="SFTime"></field>
 <field name="coordinates" accessType="inputOutput" type="MFVec3f"></field>
-<field name="coordIndexes" accessType="inputOutput" type="MFInt32"></field>
+<field name="coordIndexes" accessType="outputOnly" type="MFInt32"></field>
 <field name="a" type="SFFloat" accessType="inputOutput" value="0.5"></field>
 <field name="b" type="SFFloat" accessType="inputOutput" value="0.5"></field>
 <field name="c" type="SFFloat" accessType="inputOutput" value="3"></field>
@@ -44,13 +53,7 @@
 <field name="pdelta" type="SFFloat" accessType="inputOutput" value="0.5"></field>
 <![CDATA[
 ecmascript:
-			function set_translation(value) {
-				translation = value;
-			}
-			function translation_changed() {
-				return translation;
-			}
-			function initialize() {
+			function newBubble() {
 			    translation = new SFVec3f(0, 0, 0);
 			    velocity = new SFVec3f(
 			    	Math.random() - 0.5,
@@ -59,57 +62,59 @@ ecmascript:
 			}
 			function set_fraction() {
 			    translation = new SFVec3f(
-			    	translation[0] + velocity[0],
-				translation[1] + velocity[1],
-				translation[2] + velocity[2]);
-			    for (var j = 0; j <= 2; j++) {
-				    if (Math.abs(translation[j]) > 10) {
-					initialize();
-				    } else {
-					velocity[0] += Math.random() * 0.2 - 0.1;
-					velocity[1] += Math.random() * 0.2 - 0.1;
-					velocity[2] += Math.random() * 0.2 - 0.1;
-				    }
+			    	translation.x + velocity.x,
+				translation.y + velocity.y,
+				translation.z + velocity.z);
+			    if (Math.abs(translation.x) > 10) {
+					newBubble();
+			    } else if (Math.abs(translation.y) > 10) {
+					newBubble();
+			    } else if (Math.abs(translation.z) > 10) {
+					newBubble();
+			    } else {
+					velocity = new SFVec3f(
+						velocity.x + Math.random() * 0.2 - 0.1,
+						velocity.y + Math.random() * 0.2 - 0.1,
+						velocity.z + Math.random() * 0.2 - 0.1
+					);
 			    }
 			    animate_flowers();
 			}
 
 			function initialize() {
+			     newBubble();
 			     resolution = 100;
 			     updateCoordinates(resolution);
-			     if (typeof coordIndexes == 'undefined' || coordIndexes == null) {
-				coordIndexes = new MFInt32();
-			     }
-			     ci = 0;
+			     var cis = [];
 			     for ( i = 0; i < resolution-1; i++) {
 				for ( j = 0; j < resolution-1; j++) {
-				     coordIndexes[ci] = i*resolution+j;
-				     coordIndexes[ci+1] = i*resolution+j+1;
-				     coordIndexes[ci+2] = (i+1)*resolution+j+1;
-				     coordIndexes[ci+3] = (i+1)*resolution+j;
-				     coordIndexes[ci+4] = -1;
-				     ci += 5;
+				     cis.push(i*resolution+j);
+				     cis.push(i*resolution+j+1);
+				     cis.push((i+1)*resolution+j+1);
+				     cis.push((i+1)*resolution+j);
+				     cis.push(-1);
 				}
 			    }
+			     coordIndexes = new MFInt32(cis);
 			}
 
 			function updateCoordinates(resolution) {
 			     theta = 0.0;
 			     phi = 0.0;
 			     delta = (2 * 3.141592653) / (resolution-1);
-			     if (typeof coordinates == 'undefined' || coordinates == null) {
-				coordinates = new MFVec3f();
-			     }
+			     var crds = [];
 			     for ( i = 0; i < resolution; i++) {
 				for ( j = 0; j < resolution; j++) {
 					rho = a + b * Math.cos(c * theta) * Math.cos(d * phi);
-					coordinates[i*resolution+j] = new SFVec3f();
-					coordinates[i*resolution+j][0] = rho * Math.cos(phi) * Math.cos(theta);
-					coordinates[i*resolution+j][1] = rho * Math.cos(phi) * Math.sin(theta);
-					coordinates[i*resolution+j][2] = rho * Math.sin(phi);
+					crds.push(new SFVec3f(
+						rho * Math.cos(phi) * Math.cos(theta),
+						rho * Math.cos(phi) * Math.sin(theta),
+						rho * Math.sin(phi)
+					));
 					theta += delta;
 				}
 				phi += delta;
+				coordinates = new MFVec3f(crds);
 			     }
 			}
 
@@ -154,9 +159,7 @@ ecmascript:
 <TimeSensor DEF="TourTime" cycleInterval="0.15" loop="true"></TimeSensor>
 <ROUTE fromNode="TourTime" fromField="cycleTime" toNode="Bounce" toField="set_fraction"></ROUTE>
 <ROUTE fromNode="Bounce" fromField="translation_changed" toNode="transform" toField="set_translation"></ROUTE>
-<ROUTE fromField="coordIndexes" fromNode="Bounce" toField="set_coordIndex" toNode="Orbit"></ROUTE>
-<ROUTE fromField="coordinates" fromNode="Bounce" toField="set_point" toNode="OrbitCoordinates"></ROUTE>
-</ProtoBody>
+<!--<ROUTE fromField="coordIndexes" fromNode="Bounce" toField="set_coordIndex" toNode="Orbit"></ROUTE> <ROUTE fromField="coordinates" fromNode="Bounce" toField="set_point" toNode="OrbitCoordinates"></ROUTE>--></ProtoBody>
 </ProtoDeclare>
 <Transform><ProtoInstance name="flower"></ProtoInstance>
 <ProtoInstance name="flower"></ProtoInstance>

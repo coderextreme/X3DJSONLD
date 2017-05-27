@@ -5,9 +5,10 @@
 . ./classpath
 
 EXAMPLES=/c/x3d-code/www.web3d.org/x3d/content/examples/
+# Now does scripts too!
+echo ===================PPP.js Local=================================== 1>&2
+ls ../data/*.json | grep -v intermediate | grep -v "\.new" | grep -v Schema | grep -v package.json | xargs ${NODE} ${NODEDIR}/PPP.js
 
-echo ===================PPP.js Local===================================
-ls ../data/*.json | grep -v intermediate | grep -v "\.new" | grep -v Schema | grep -v package.json | xargs grep -lw ProtoInstance | xargs ${NODE} ${NODEDIR}/PPP.js
 echo ===================CompleteXMLPrototypeExpander.js Local==========
 ls ../data/*.x3d | grep -v intermediate | grep -v "\.new" | xargs grep -lw ProtoInstance | xargs ${NODE} ${NODEDIR}/CompleteXMLPrototypeExpander.js ---../ --../lib/stylesheets/X3dToJson.xslt
 

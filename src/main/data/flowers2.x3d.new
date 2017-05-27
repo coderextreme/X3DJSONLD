@@ -14,7 +14,7 @@
 <Group><DirectionalLight direction="1 1 1"></DirectionalLight>
 <Transform DEF="OrbitTransform" translation="8 0 0"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0.5 1" specularColor="0 0.5 1"></Material>
 </Appearance>
-<IndexedFaceSet containerField="geometry" DEF="Orbit" creaseAngle="1.57"><Coordinate containerField="coord" DEF="OrbitCoordinates"></Coordinate>
+<IndexedFaceSet containerField="geometry" convex="false" DEF="Orbit" creaseAngle="1.57"><Coordinate containerField="coord" DEF="OrbitCoordinates"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </Transform>
@@ -42,15 +42,14 @@ function initialize() {
      resolution = 100;
      var localci = new MFInt32();
      generateCoordinates(resolution);
-     ci = 0;
+     var ci = 0;
      for ( i = 0; i < resolution-1; i++) {
      	for ( j = 0; j < resolution-1; j++) {
 	     localci[ci] = i*resolution+j;
-	     localci[ci+1] = i*resolution+j+1;
-	     localci[ci+2] = (i+1)*resolution+j+1;
-	     localci[ci+3] = (i+1)*resolution+j;
-	     localci[ci+4] = -1;
-	     ci += 5;
+	     localci[ci++] = i*resolution+j+1;
+	     localci[ci++] = (i+1)*resolution+j+1;
+	     localci[ci++] = (i+1)*resolution+j;
+	     localci[ci++] = -1;
 	}
     }
     coordIndexes = localci;
@@ -64,10 +63,11 @@ function generateCoordinates(resolution) {
      for ( i = 0; i < resolution; i++) {
      	for ( j = 0; j < resolution; j++) {
 		rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);
-		localc[i*resolution+j] = [];
-		localc[i*resolution+j][0] = rho * Math.cos(phi) * Math.cos(theta);
-		localc[i*resolution+j][1] = rho * Math.cos(phi) * Math.sin(theta);
-		localc[i*resolution+j][2] = rho * Math.sin(phi);
+		localc[i*resolution+j] = new SFVec3f(
+			rho * Math.cos(phi) * Math.cos(theta),
+			rho * Math.cos(phi) * Math.sin(theta),
+			rho * Math.sin(phi)
+		);
 		theta += delta;
 	}
 	phi += delta;
