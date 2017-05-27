@@ -60,12 +60,6 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                 .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("pdelta").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
                 .setSourceCode("\n"+
 "ecmascript:\n"+
-"			function set_translation(value) {\n"+
-"				translation = value;\n"+
-"			}\n"+
-"			function translation_changed() {\n"+
-"				return translation;\n"+
-"			}\n"+
 "			function initialize() {\n"+
 "			    translation = new SFVec3f(0, 0, 0);\n"+
 "			    velocity = new SFVec3f(\n"+
@@ -75,16 +69,20 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "			}\n"+
 "			function set_fraction() {\n"+
 "			    translation = new SFVec3f(\n"+
-"			    	translation[0] + velocity[0],\n"+
-"				translation[1] + velocity[1],\n"+
-"				translation[2] + velocity[2]);\n"+
+"			    	translation.x + velocity.x,\n"+
+"				translation.y + velocity.y,\n"+
+"				translation.z + velocity.z);\n"+
 "			    for (var j = 0; j <= 2; j++) {\n"+
-"				    if (Math.abs(translation[j]) > 10) {\n"+
+"				    if (Math.abs(translation.x) > 10) {\n"+
+"					initialize();\n"+
+"				    } else if (Math.abs(translation.y) > 10) {\n"+
+"					initialize();\n"+
+"				    } else if (Math.abs(translation.z) > 10) {\n"+
 "					initialize();\n"+
 "				    } else {\n"+
-"					velocity[0] += Math.random() * 0.2 - 0.1;\n"+
-"					velocity[1] += Math.random() * 0.2 - 0.1;\n"+
-"					velocity[2] += Math.random() * 0.2 - 0.1;\n"+
+"					velocity.x += Math.random() * 0.2 - 0.1;\n"+
+"					velocity.y += Math.random() * 0.2 - 0.1;\n"+
+"					velocity.z += Math.random() * 0.2 - 0.1;\n"+
 "				    }\n"+
 "			    }\n"+
 "			    animate_flowers();\n"+

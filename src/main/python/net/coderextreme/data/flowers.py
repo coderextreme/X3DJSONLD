@@ -39,7 +39,7 @@ ComposedCubeMapTexture16.setRight(ImageTexture21)
 ImageTexture22 = ImageTextureObject().setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"])
 ComposedCubeMapTexture16.setTop(ImageTexture22)
 Appearance14.setTexture(ComposedCubeMapTexture16)
-ComposedShader23 = ComposedShaderObject().setDEF("shader").setLanguage("GLSL")
+ComposedShader23 = ComposedShaderObject().setLanguage("GLSL")
 field24 = fieldObject().setType(fieldObject.TYPE_SFINT32).setName("xxxcube").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0")
 ComposedShader23.addField(field24)
 field25 = fieldObject().setType(fieldObject.TYPE_SFNODE).setName("cube").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
@@ -48,57 +48,71 @@ field25.addChild(ComposedCubeMapTexture26)
 ComposedShader23.addField(field25)
 field27 = fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("chromaticDispertion").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.98 1 1.033")
 ComposedShader23.addField(field27)
-field28 = fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("bias").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("10")
+field28 = fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("bias").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5")
 ComposedShader23.addField(field28)
-field29 = fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("scale").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("10")
+field29 = fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("scale").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5")
 ComposedShader23.addField(field29)
 field30 = fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("power").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("2")
 ComposedShader23.addField(field30)
-ShaderPart31 = ShaderPartObject().setType("VERTEX").setUrl(["../shaders/cobweb.vs","https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"])
+ShaderPart31 = ShaderPartObject().setType("VERTEX").setUrl(["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs"])
 ComposedShader23.addParts(ShaderPart31)
 ShaderPart32 = ShaderPartObject().setType("FRAGMENT").setUrl(["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"])
 ComposedShader23.addParts(ShaderPart32)
 Appearance14.addShaders(ComposedShader23)
+ComposedShader33 = ComposedShaderObject().setDEF("shader").setLanguage("GLSL")
+field34 = fieldObject().setType(fieldObject.TYPE_SFINT32).setName("xxxcube").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0")
+ComposedShader33.addField(field34)
+field35 = fieldObject().setType(fieldObject.TYPE_SFNODE).setName("cube").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
+ComposedCubeMapTexture36 = ComposedCubeMapTextureObject().setUSE("texture")
+field35.addChild(ComposedCubeMapTexture36)
+ComposedShader33.addField(field35)
+field37 = fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("chromaticDispertion").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.98 1 1.033")
+ComposedShader33.addField(field37)
+field38 = fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("bias").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("10")
+ComposedShader33.addField(field38)
+field39 = fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("scale").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("10")
+ComposedShader33.addField(field39)
+field40 = fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("power").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("2")
+ComposedShader33.addField(field40)
+ShaderPart41 = ShaderPartObject().setType("VERTEX").setUrl(["../shaders/cobweb.vs","https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"])
+ComposedShader33.addParts(ShaderPart41)
+ShaderPart42 = ShaderPartObject().setType("FRAGMENT").setUrl(["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"])
+ComposedShader33.addParts(ShaderPart42)
+Appearance14.addShaders(ComposedShader33)
 Shape13.setAppearance(Appearance14)
-IndexedFaceSet33 = IndexedFaceSetObject().setDEF("Orbit")
-Coordinate34 = CoordinateObject().setDEF("OrbitCoordinates")
-IndexedFaceSet33.setCoord(Coordinate34)
-Shape13.setGeometry(IndexedFaceSet33)
+Sphere43 = SphereObject()
+Shape13.setGeometry(Sphere43)
+
+Shape13.addComments(CommentsBlock("<IndexedFaceSet convex=\"false\" DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>"))
 Transform12.addChild(Shape13)
 ProtoBody11.addChild(Transform12)
-Script35 = ScriptObject().setDEF("Bounce")
-field36 = fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("translation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0")
-Script35.addField(field36)
-field37 = fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("velocity").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0")
-Script35.addField(field37)
-field38 = fieldObject().setType(fieldObject.TYPE_SFTIME).setName("set_fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
-Script35.addField(field38)
-field39 = fieldObject().setType(fieldObject.TYPE_MFVEC3F).setName("coordinates").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
-Script35.addField(field39)
-field40 = fieldObject().setType(fieldObject.TYPE_MFINT32).setName("coordIndexes").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
-Script35.addField(field40)
-field41 = fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("a").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5")
-Script35.addField(field41)
-field42 = fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("b").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5")
-Script35.addField(field42)
-field43 = fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("c").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("3")
-Script35.addField(field43)
-field44 = fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("d").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("3")
-Script35.addField(field44)
-field45 = fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("tdelta").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5")
-Script35.addField(field45)
-field46 = fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("pdelta").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5")
-Script35.addField(field46)
+Script44 = ScriptObject().setDEF("Bounce")
+field45 = fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("translation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0")
+Script44.addField(field45)
+field46 = fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("velocity").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0")
+Script44.addField(field46)
+field47 = fieldObject().setType(fieldObject.TYPE_SFTIME).setName("set_fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
+Script44.addField(field47)
+field48 = fieldObject().setType(fieldObject.TYPE_MFVEC3F).setName("coordinates").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
+Script44.addField(field48)
+field49 = fieldObject().setType(fieldObject.TYPE_MFINT32).setName("coordIndexes").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
+Script44.addField(field49)
+field50 = fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("a").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5")
+Script44.addField(field50)
+field51 = fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("b").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5")
+Script44.addField(field51)
+field52 = fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("c").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("3")
+Script44.addField(field52)
+field53 = fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("d").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("3")
+Script44.addField(field53)
+field54 = fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("tdelta").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5")
+Script44.addField(field54)
+field55 = fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("pdelta").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5")
+Script44.addField(field55)
 
-Script35.setSourceCode("\n"+
+Script44.setSourceCode("\n"+
 "ecmascript:\n"+
-"			function set_translation(value) {\n"+
-"				translation = value;\n"+
-"			}\n"+
-"			function translation_changed() {\n"+
-"				return translation;\n"+
-"			}\n"+
-"			function initialize() {\n"+
+"			function newBubble() {\n"+
 "			    translation = new SFVec3f(0, 0, 0);\n"+
 "			    velocity = new SFVec3f(\n"+
 "			    	Math.random() - 0.5,\n"+
@@ -107,57 +121,59 @@ Script35.setSourceCode("\n"+
 "			}\n"+
 "			function set_fraction() {\n"+
 "			    translation = new SFVec3f(\n"+
-"			    	translation[0] + velocity[0],\n"+
-"				translation[1] + velocity[1],\n"+
-"				translation[2] + velocity[2]);\n"+
-"			    for (var j = 0; j <= 2; j++) {\n"+
-"				    if (Math.abs(translation[j]) > 10) {\n"+
-"					initialize();\n"+
-"				    } else {\n"+
-"					velocity[0] += Math.random() * 0.2 - 0.1;\n"+
-"					velocity[1] += Math.random() * 0.2 - 0.1;\n"+
-"					velocity[2] += Math.random() * 0.2 - 0.1;\n"+
-"				    }\n"+
+"			    	translation.x + velocity.x,\n"+
+"				translation.y + velocity.y,\n"+
+"				translation.z + velocity.z);\n"+
+"			    if (Math.abs(translation.x) > 10) {\n"+
+"					newBubble();\n"+
+"			    } else if (Math.abs(translation.y) > 10) {\n"+
+"					newBubble();\n"+
+"			    } else if (Math.abs(translation.z) > 10) {\n"+
+"					newBubble();\n"+
+"			    } else {\n"+
+"					velocity = new SFVec3f(\n"+
+"						velocity.x + Math.random() * 0.2 - 0.1,\n"+
+"						velocity.y + Math.random() * 0.2 - 0.1,\n"+
+"						velocity.z + Math.random() * 0.2 - 0.1\n"+
+"					);\n"+
 "			    }\n"+
 "			    animate_flowers();\n"+
 "			}\n"+
 "\n"+
 "			function initialize() {\n"+
+"			     newBubble();\n"+
 "			     resolution = 100;\n"+
 "			     updateCoordinates(resolution);\n"+
-"			     if (typeof coordIndexes == 'undefined' || coordIndexes == null) {\n"+
-"				coordIndexes = new MFInt32();\n"+
-"			     }\n"+
-"			     ci = 0;\n"+
+"			     var cis = [];\n"+
 "			     for ( i = 0; i < resolution-1; i++) {\n"+
 "				for ( j = 0; j < resolution-1; j++) {\n"+
-"				     coordIndexes[ci] = i*resolution+j;\n"+
-"				     coordIndexes[ci+1] = i*resolution+j+1;\n"+
-"				     coordIndexes[ci+2] = (i+1)*resolution+j+1;\n"+
-"				     coordIndexes[ci+3] = (i+1)*resolution+j;\n"+
-"				     coordIndexes[ci+4] = -1;\n"+
-"				     ci += 5;\n"+
+"				     cis.push(i*resolution+j);\n"+
+"				     cis.push(i*resolution+j+1);\n"+
+"				     cis.push((i+1)*resolution+j+1);\n"+
+"				     cis.push((i+1)*resolution+j);\n"+
+"				     cis.push(-1);\n"+
 "				}\n"+
 "			    }\n"+
+"			     coordIndexes = new MFInt32(cis);\n"+
 "			}\n"+
 "\n"+
 "			function updateCoordinates(resolution) {\n"+
 "			     theta = 0.0;\n"+
 "			     phi = 0.0;\n"+
 "			     delta = (2 * 3.141592653) / (resolution-1);\n"+
-"			     if (typeof coordinates == 'undefined' || coordinates == null) {\n"+
-"				coordinates = new MFVec3f();\n"+
-"			     }\n"+
+"			     var crds = [];\n"+
 "			     for ( i = 0; i < resolution; i++) {\n"+
 "				for ( j = 0; j < resolution; j++) {\n"+
 "					rho = a + b * Math.cos(c * theta) * Math.cos(d * phi);\n"+
-"					coordinates[i*resolution+j] = new SFVec3f();\n"+
-"					coordinates[i*resolution+j][0] = rho * Math.cos(phi) * Math.cos(theta);\n"+
-"					coordinates[i*resolution+j][1] = rho * Math.cos(phi) * Math.sin(theta);\n"+
-"					coordinates[i*resolution+j][2] = rho * Math.sin(phi);\n"+
+"					crds.push(new SFVec3f(\n"+
+"						rho * Math.cos(phi) * Math.cos(theta),\n"+
+"						rho * Math.cos(phi) * Math.sin(theta),\n"+
+"						rho * Math.sin(phi)\n"+
+"					));\n"+
 "					theta += delta;\n"+
 "				}\n"+
 "				phi += delta;\n"+
+"				coordinates = new MFVec3f(crds);\n"+
 "			     }\n"+
 "			}\n"+
 "\n"+
@@ -199,27 +215,25 @@ Script35.setSourceCode("\n"+
 "				updateCoordinates(resolution);\n"+
 "			}\n"+
 "")
-ProtoBody11.addChild(Script35)
-TimeSensor47 = TimeSensorObject().setDEF("TourTime").setCycleInterval(0.15).setLoop(True)
-ProtoBody11.addChild(TimeSensor47)
-ROUTE48 = ROUTEObject().setFromNode("TourTime").setFromField("cycleTime").setToNode("Bounce").setToField("set_fraction")
-ProtoBody11.addChild(ROUTE48)
-ROUTE49 = ROUTEObject().setFromNode("Bounce").setFromField("translation_changed").setToNode("transform").setToField("set_translation")
-ProtoBody11.addChild(ROUTE49)
-ROUTE50 = ROUTEObject().setFromField("coordIndexes").setFromNode("Bounce").setToField("set_coordIndex").setToNode("Orbit")
-ProtoBody11.addChild(ROUTE50)
-ROUTE51 = ROUTEObject().setFromField("coordinates").setFromNode("Bounce").setToField("set_point").setToNode("OrbitCoordinates")
-ProtoBody11.addChild(ROUTE51)
+ProtoBody11.addChild(Script44)
+TimeSensor56 = TimeSensorObject().setDEF("TourTime").setCycleInterval(0.15).setLoop(True)
+ProtoBody11.addChild(TimeSensor56)
+ROUTE57 = ROUTEObject().setFromNode("TourTime").setFromField("cycleTime").setToNode("Bounce").setToField("set_fraction")
+ProtoBody11.addChild(ROUTE57)
+ROUTE58 = ROUTEObject().setFromNode("Bounce").setFromField("translation_changed").setToNode("transform").setToField("set_translation")
+ProtoBody11.addChild(ROUTE58)
+
+ProtoBody11.addComments(CommentsBlock("<ROUTE fromField=\"coordIndexes\" fromNode=\"Bounce\" toField=\"set_coordIndex\" toNode=\"Orbit\"/> <ROUTE fromField=\"coordinates\" fromNode=\"Bounce\" toField=\"set_point\" toNode=\"OrbitCoordinates\"/>"))
 ProtoDeclare10.setProtoBody(ProtoBody11)
 Scene7.addChild(ProtoDeclare10)
-Transform52 = TransformObject()
-ProtoInstance53 = ProtoInstanceObject().setName("flower")
-Transform52.addChild(ProtoInstance53)
-ProtoInstance54 = ProtoInstanceObject().setName("flower")
-Transform52.addChild(ProtoInstance54)
-ProtoInstance55 = ProtoInstanceObject().setName("flower")
-Transform52.addChild(ProtoInstance55)
-Scene7.addChild(Transform52)
+Transform59 = TransformObject()
+ProtoInstance60 = ProtoInstanceObject().setName("flower")
+Transform59.addChild(ProtoInstance60)
+ProtoInstance61 = ProtoInstanceObject().setName("flower")
+Transform59.addChild(ProtoInstance61)
+ProtoInstance62 = ProtoInstanceObject().setName("flower")
+Transform59.addChild(ProtoInstance62)
+Scene7.addChild(Transform59)
 X3D0.setScene(Scene7)
 
 X3D0.toFileX3D("../data/flowers.new.x3d")

@@ -33,7 +33,7 @@ Appearance17 = AppearanceObject()
 Material18 = MaterialObject().setDiffuseColor([0,0.5,1]).setSpecularColor([0,0.5,1])
 Appearance17.setMaterial(Material18)
 Shape16.setAppearance(Appearance17)
-IndexedFaceSet19 = IndexedFaceSetObject().setDEF("Orbit").setCreaseAngle(1.57)
+IndexedFaceSet19 = IndexedFaceSetObject().setConvex(False).setDEF("Orbit").setCreaseAngle(1.57)
 Coordinate20 = CoordinateObject().setDEF("OrbitCoordinates")
 IndexedFaceSet19.setCoord(Coordinate20)
 Shape16.setGeometry(IndexedFaceSet19)
@@ -76,15 +76,14 @@ Script29.setSourceCode("\n"+
 "     resolution = 100;\n"+
 "     var localci = new MFInt32();\n"+
 "     generateCoordinates(resolution);\n"+
-"     ci = 0;\n"+
+"     var ci = 0;\n"+
 "     for ( i = 0; i < resolution-1; i++) {\n"+
 "     	for ( j = 0; j < resolution-1; j++) {\n"+
 "	     localci[ci] = i*resolution+j;\n"+
-"	     localci[ci+1] = i*resolution+j+1;\n"+
-"	     localci[ci+2] = (i+1)*resolution+j+1;\n"+
-"	     localci[ci+3] = (i+1)*resolution+j;\n"+
-"	     localci[ci+4] = -1;\n"+
-"	     ci += 5;\n"+
+"	     localci[ci++] = i*resolution+j+1;\n"+
+"	     localci[ci++] = (i+1)*resolution+j+1;\n"+
+"	     localci[ci++] = (i+1)*resolution+j;\n"+
+"	     localci[ci++] = -1;\n"+
 "	}\n"+
 "    }\n"+
 "    coordIndexes = localci;\n"+
@@ -98,10 +97,11 @@ Script29.setSourceCode("\n"+
 "     for ( i = 0; i < resolution; i++) {\n"+
 "     	for ( j = 0; j < resolution; j++) {\n"+
 "		rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);\n"+
-"		localc[i*resolution+j] = [];\n"+
-"		localc[i*resolution+j][0] = rho * Math.cos(phi) * Math.cos(theta);\n"+
-"		localc[i*resolution+j][1] = rho * Math.cos(phi) * Math.sin(theta);\n"+
-"		localc[i*resolution+j][2] = rho * Math.sin(phi);\n"+
+"		localc[i*resolution+j] = new SFVec3f(\n"+
+"			rho * Math.cos(phi) * Math.cos(theta),\n"+
+"			rho * Math.cos(phi) * Math.sin(theta),\n"+
+"			rho * Math.sin(phi)\n"+
+"		);\n"+
 "		theta += delta;\n"+
 "	}\n"+
 "	phi += delta;\n"+
