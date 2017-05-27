@@ -1,0 +1,2470 @@
+{
+  "X3D": {
+    "encoding": "UTF-8",
+    "@profile": "Immersive",
+    "@version": "3.3",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "sphereflowers.x3d"
+        },
+        {
+          "@name": "creator",
+          "@content": "John Carlson"
+        },
+        {
+          "@name": "description",
+          "@content": "5 or more prismatic flowers"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3D-Edit, https://savage.nps.edu/X3D-Edit"
+        },
+        {
+          "@name": "identifier",
+          "@content": "https://coderextreme.net/X3DJSONLD/sphereflowers.x3d"
+        },
+        {
+          "@name": "translated",
+          "@content": "26 May 2017"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+        },
+        {
+          "@name": "reference",
+          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        {
+          "NavigationInfo": {}
+        },
+        {
+          "Background": {
+            "@backUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
+              "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"
+            ],
+            "@bottomUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
+              "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"
+            ],
+            "@frontUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
+              "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"
+            ],
+            "@leftUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
+              "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"
+            ],
+            "@rightUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
+              "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"
+            ],
+            "@topUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
+              "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"
+            ]
+          }
+        },
+        {
+          "Group": {
+            "-children": [
+              {},
+              {},
+              {
+                "Group": {
+                  "-children": [
+                    {
+                      "Transform": {
+                        "@DEF": "DECLflower_INSTANCE74000_DECLFlowerProto_INSTANCE75000_transform",
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@diffuseColor": [
+                                        0.7,
+                                        0.7,
+                                        0.7
+                                      ]
+                                    }
+                                  },
+                                  "-texture": {
+                                    "ComposedCubeMapTexture": {
+                                      "@DEF": "DECLflower_INSTANCE74000_DECLFlowerProto_INSTANCE75000_texture",
+                                      "-back": {
+                                        "ImageTexture": {
+                                          "@url": [
+                                            "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
+                                            "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"
+                                          ]
+                                        }
+                                      },
+                                      "-bottom": {
+                                        "ImageTexture": {
+                                          "@url": [
+                                            "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
+                                            "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"
+                                          ]
+                                        }
+                                      },
+                                      "-front": {
+                                        "ImageTexture": {
+                                          "@url": [
+                                            "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
+                                            "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"
+                                          ]
+                                        }
+                                      },
+                                      "-left": {
+                                        "ImageTexture": {
+                                          "@url": [
+                                            "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
+                                            "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"
+                                          ]
+                                        }
+                                      },
+                                      "-right": {
+                                        "ImageTexture": {
+                                          "@url": [
+                                            "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
+                                            "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"
+                                          ]
+                                        }
+                                      },
+                                      "-top": {
+                                        "ImageTexture": {
+                                          "@url": [
+                                            "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
+                                            "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"
+                                          ]
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "-shaders": [
+                                    {
+                                      "ComposedShader": {
+                                        "@DEF": "DECLflower_INSTANCE74000_DECLFlowerProto_INSTANCE75000_shader",
+                                        "@language": "GLSL",
+                                        "field": [
+                                          {
+                                            "@name": "cube",
+                                            "@type": "SFInt32",
+                                            "@accessType": "inputOutput",
+                                            "@value": 0
+                                          },
+                                          {
+                                            "@name": "chromaticDispertion",
+                                            "@type": "SFVec3f",
+                                            "@accessType": "inputOutput",
+                                            "@value": [
+                                              0.98,
+                                              1,
+                                              1.033
+                                            ]
+                                          },
+                                          {
+                                            "@name": "bias",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 10
+                                          },
+                                          {
+                                            "@name": "scale",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 10
+                                          },
+                                          {
+                                            "@name": "power",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 2
+                                          },
+                                          {
+                                            "@name": "a",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 3
+                                          },
+                                          {
+                                            "@name": "b",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 1
+                                          },
+                                          {
+                                            "@name": "c",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 3
+                                          },
+                                          {
+                                            "@name": "d",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 3
+                                          },
+                                          {
+                                            "@name": "tdelta",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 0.5
+                                          },
+                                          {
+                                            "@name": "pdelta",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 0.5
+                                          }
+                                        ],
+                                        "-children": [
+                                          {
+                                            "#comment": "<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>"
+                                          }
+                                        ],
+                                        "-parts": [
+                                          {
+                                            "ShaderPart": {
+                                              "@type": "VERTEX",
+                                              "@url": [
+                                                "../shaders/cobweb_flowers_plain.vs"
+                                              ]
+                                            }
+                                          },
+                                          {
+                                            "ShaderPart": {
+                                              "@type": "FRAGMENT",
+                                              "@url": [
+                                                "../shaders/plain.fs"
+                                              ]
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ]
+                                }
+                              },
+                              "-geometry": {
+                                "Sphere": {}
+                              }
+                            }
+                          },
+                          {
+                            "Script": {
+                              "@DEF": "DECLflower_INSTANCE74000_DECLFlowerProto_INSTANCE75000_Bounce",
+                              "field": [
+                                {
+                                  "@name": "translation",
+                                  "@accessType": "inputOutput",
+                                  "@type": "SFVec3f",
+                                  "@value": [
+                                    0,
+                                    0,
+                                    0
+                                  ]
+                                },
+                                {
+                                  "@name": "velocity",
+                                  "@accessType": "inputOutput",
+                                  "@type": "SFVec3f",
+                                  "@value": [
+                                    0,
+                                    0,
+                                    0
+                                  ]
+                                },
+                                {
+                                  "@name": "set_fraction",
+                                  "@accessType": "inputOnly",
+                                  "@type": "SFTime"
+                                },
+                                {
+                                  "@name": "a",
+                                  "@type": "SFFloat",
+                                  "@accessType": "inputOutput",
+                                  "@value": 0.5
+                                },
+                                {
+                                  "@name": "b",
+                                  "@type": "SFFloat",
+                                  "@accessType": "inputOutput",
+                                  "@value": 0.5
+                                },
+                                {
+                                  "@name": "c",
+                                  "@type": "SFFloat",
+                                  "@accessType": "inputOutput",
+                                  "@value": 3
+                                },
+                                {
+                                  "@name": "d",
+                                  "@type": "SFFloat",
+                                  "@accessType": "inputOutput",
+                                  "@value": 3
+                                },
+                                {
+                                  "@name": "tdelta",
+                                  "@type": "SFFloat",
+                                  "@accessType": "inputOutput",
+                                  "@value": 0.5
+                                },
+                                {
+                                  "@name": "pdelta",
+                                  "@type": "SFFloat",
+                                  "@accessType": "inputOutput",
+                                  "@value": 0.5
+                                }
+                              ],
+                              "#sourceText": [
+                                "",
+                                "ecmascript:",
+                                "\t\t\tfunction initialize() {",
+                                "\t\t\t    translation = new SFVec3f(0, 0, 0);",
+                                "\t\t\t    velocity = new SFVec3f(",
+                                "\t\t\t    \tMath.random() - 0.5,",
+                                "\t\t\t\tMath.random() - 0.5,",
+                                "\t\t\t\tMath.random() - 0.5);",
+                                "\t\t\t}",
+                                "\t\t\tfunction set_fraction() {",
+                                "\t\t\t    translation = new SFVec3f(",
+                                "\t\t\t    \ttranslation.x + velocity.x,",
+                                "\t\t\t\ttranslation.y + velocity.y,",
+                                "\t\t\t\ttranslation.z + velocity.z);",
+                                "\t\t\t    for (var j = 0; j <= 2; j++) {",
+                                "\t\t\t\t    if (Math.abs(translation.x) > 10) {",
+                                "\t\t\t\t\tinitialize();",
+                                "\t\t\t\t    } else if (Math.abs(translation.y) > 10) {",
+                                "\t\t\t\t\tinitialize();",
+                                "\t\t\t\t    } else if (Math.abs(translation.z) > 10) {",
+                                "\t\t\t\t\tinitialize();",
+                                "\t\t\t\t    } else {",
+                                "\t\t\t\t\tvelocity.x += Math.random() * 0.2 - 0.1;",
+                                "\t\t\t\t\tvelocity.y += Math.random() * 0.2 - 0.1;",
+                                "\t\t\t\t\tvelocity.z += Math.random() * 0.2 - 0.1;",
+                                "\t\t\t\t    }",
+                                "\t\t\t    }",
+                                "\t\t\t    animate_flowers();",
+                                "\t\t\t}",
+                                "",
+                                "\t\t\tfunction animate_flowers(fraction, eventTime) {",
+                                "\t\t\t\tchoice = Math.floor(Math.random() * 4);",
+                                "\t\t\t\tswitch (choice) {",
+                                "\t\t\t\tcase 0:",
+                                "\t\t\t\t\ta += Math.random() * 0.2 - 0.1;",
+                                "\t\t\t\t\tbreak;",
+                                "\t\t\t\tcase 1:",
+                                "\t\t\t\t\tb += Math.random() * 0.2 - 0.1;",
+                                "\t\t\t\t\tbreak;",
+                                "\t\t\t\tcase 2:",
+                                "\t\t\t\t\tc += Math.random() * 2 - 1;",
+                                "\t\t\t\t\tbreak;",
+                                "\t\t\t\tcase 3:",
+                                "\t\t\t\t\td += Math.random() * 2 - 1;",
+                                "\t\t\t\t\tbreak;",
+                                "\t\t\t\t}",
+                                "\t\t\t\ttdelta += 0.5;",
+                                "\t\t\t\tpdelta += 0.5;",
+                                "\t\t\t\tif (a > 1) {",
+                                "\t\t\t\t\ta =  0.5;",
+                                "\t\t\t\t}",
+                                "\t\t\t\tif (b > 1) {",
+                                "\t\t\t\t\tb =  0.5;",
+                                "\t\t\t\t}",
+                                "\t\t\t\tif (c < 1) {",
+                                "\t\t\t\t\tc =  4;",
+                                "\t\t\t\t}",
+                                "\t\t\t\tif (d < 1) {",
+                                "\t\t\t\t\td =  4;",
+                                "\t\t\t\t}",
+                                "\t\t\t\tif (c > 10) {",
+                                "\t\t\t\t\tc = 4;",
+                                "\t\t\t\t}",
+                                "\t\t\t\tif (d > 10) {",
+                                "\t\t\t\t\td = 4;",
+                                "\t\t\t\t}",
+                                "\t\t\t}"
+                              ]
+                            }
+                          },
+                          {
+                            "TimeSensor": {
+                              "@DEF": "DECLflower_INSTANCE74000_DECLFlowerProto_INSTANCE75000_TourTime",
+                              "@cycleInterval": 0.15,
+                              "@loop": true
+                            }
+                          },
+                          {
+                            "ROUTE": {
+                              "@fromNode": "DECLflower_INSTANCE74000_DECLFlowerProto_INSTANCE75000_TourTime",
+                              "@fromField": "cycleTime",
+                              "@toNode": "DECLflower_INSTANCE74000_DECLFlowerProto_INSTANCE75000_Bounce",
+                              "@toField": "set_fraction"
+                            }
+                          },
+                          {
+                            "ROUTE": {
+                              "@fromNode": "DECLflower_INSTANCE74000_DECLFlowerProto_INSTANCE75000_Bounce",
+                              "@fromField": "translation_changed",
+                              "@toNode": "DECLflower_INSTANCE74000_DECLFlowerProto_INSTANCE75000_transform",
+                              "@toField": "set_translation"
+                            }
+                          },
+                          {
+                            "ROUTE": {
+                              "@fromNode": "DECLflower_INSTANCE74000_DECLFlowerProto_INSTANCE75000_Bounce",
+                              "@fromField": "a",
+                              "@toNode": "DECLflower_INSTANCE74000_DECLFlowerProto_INSTANCE75000_shader",
+                              "@toField": "a"
+                            }
+                          },
+                          {
+                            "ROUTE": {
+                              "@fromNode": "DECLflower_INSTANCE74000_DECLFlowerProto_INSTANCE75000_Bounce",
+                              "@fromField": "b",
+                              "@toNode": "DECLflower_INSTANCE74000_DECLFlowerProto_INSTANCE75000_shader",
+                              "@toField": "b"
+                            }
+                          },
+                          {
+                            "ROUTE": {
+                              "@fromNode": "DECLflower_INSTANCE74000_DECLFlowerProto_INSTANCE75000_Bounce",
+                              "@fromField": "c",
+                              "@toNode": "DECLflower_INSTANCE74000_DECLFlowerProto_INSTANCE75000_shader",
+                              "@toField": "c"
+                            }
+                          },
+                          {
+                            "ROUTE": {
+                              "@fromNode": "DECLflower_INSTANCE74000_DECLFlowerProto_INSTANCE75000_Bounce",
+                              "@fromField": "d",
+                              "@toNode": "DECLflower_INSTANCE74000_DECLFlowerProto_INSTANCE75000_shader",
+                              "@toField": "d"
+                            }
+                          },
+                          {
+                            "ROUTE": {
+                              "@fromNode": "DECLflower_INSTANCE74000_DECLFlowerProto_INSTANCE75000_Bounce",
+                              "@fromField": "tdelta",
+                              "@toNode": "DECLflower_INSTANCE74000_DECLFlowerProto_INSTANCE75000_shader",
+                              "@toField": "tdelta"
+                            }
+                          },
+                          {
+                            "ROUTE": {
+                              "@fromNode": "DECLflower_INSTANCE74000_DECLFlowerProto_INSTANCE75000_Bounce",
+                              "@fromField": "pdelta",
+                              "@toNode": "DECLflower_INSTANCE74000_DECLFlowerProto_INSTANCE75000_shader",
+                              "@toField": "pdelta"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Group": {
+                  "-children": [
+                    {
+                      "Transform": {
+                        "@DEF": "DECLflower_INSTANCE76000_DECLFlowerProto_INSTANCE77000_transform",
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@diffuseColor": [
+                                        0.7,
+                                        0.7,
+                                        0.7
+                                      ]
+                                    }
+                                  },
+                                  "-texture": {
+                                    "ComposedCubeMapTexture": {
+                                      "@DEF": "DECLflower_INSTANCE76000_DECLFlowerProto_INSTANCE77000_texture",
+                                      "-back": {
+                                        "ImageTexture": {
+                                          "@url": [
+                                            "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
+                                            "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"
+                                          ]
+                                        }
+                                      },
+                                      "-bottom": {
+                                        "ImageTexture": {
+                                          "@url": [
+                                            "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
+                                            "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"
+                                          ]
+                                        }
+                                      },
+                                      "-front": {
+                                        "ImageTexture": {
+                                          "@url": [
+                                            "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
+                                            "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"
+                                          ]
+                                        }
+                                      },
+                                      "-left": {
+                                        "ImageTexture": {
+                                          "@url": [
+                                            "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
+                                            "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"
+                                          ]
+                                        }
+                                      },
+                                      "-right": {
+                                        "ImageTexture": {
+                                          "@url": [
+                                            "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
+                                            "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"
+                                          ]
+                                        }
+                                      },
+                                      "-top": {
+                                        "ImageTexture": {
+                                          "@url": [
+                                            "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
+                                            "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"
+                                          ]
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "-shaders": [
+                                    {
+                                      "ComposedShader": {
+                                        "@DEF": "DECLflower_INSTANCE76000_DECLFlowerProto_INSTANCE77000_shader",
+                                        "@language": "GLSL",
+                                        "field": [
+                                          {
+                                            "@name": "cube",
+                                            "@type": "SFInt32",
+                                            "@accessType": "inputOutput",
+                                            "@value": 0
+                                          },
+                                          {
+                                            "@name": "chromaticDispertion",
+                                            "@type": "SFVec3f",
+                                            "@accessType": "inputOutput",
+                                            "@value": [
+                                              0.98,
+                                              1,
+                                              1.033
+                                            ]
+                                          },
+                                          {
+                                            "@name": "bias",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 10
+                                          },
+                                          {
+                                            "@name": "scale",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 10
+                                          },
+                                          {
+                                            "@name": "power",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 2
+                                          },
+                                          {
+                                            "@name": "a",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 3
+                                          },
+                                          {
+                                            "@name": "b",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 1
+                                          },
+                                          {
+                                            "@name": "c",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 3
+                                          },
+                                          {
+                                            "@name": "d",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 3
+                                          },
+                                          {
+                                            "@name": "tdelta",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 0.5
+                                          },
+                                          {
+                                            "@name": "pdelta",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 0.5
+                                          }
+                                        ],
+                                        "-children": [
+                                          {
+                                            "#comment": "<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>"
+                                          }
+                                        ],
+                                        "-parts": [
+                                          {
+                                            "ShaderPart": {
+                                              "@type": "VERTEX",
+                                              "@url": [
+                                                "../shaders/cobweb_flowers_plain.vs"
+                                              ]
+                                            }
+                                          },
+                                          {
+                                            "ShaderPart": {
+                                              "@type": "FRAGMENT",
+                                              "@url": [
+                                                "../shaders/plain.fs"
+                                              ]
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ]
+                                }
+                              },
+                              "-geometry": {
+                                "Sphere": {}
+                              }
+                            }
+                          },
+                          {
+                            "Script": {
+                              "@DEF": "DECLflower_INSTANCE76000_DECLFlowerProto_INSTANCE77000_Bounce",
+                              "field": [
+                                {
+                                  "@name": "translation",
+                                  "@accessType": "inputOutput",
+                                  "@type": "SFVec3f",
+                                  "@value": [
+                                    0,
+                                    0,
+                                    0
+                                  ]
+                                },
+                                {
+                                  "@name": "velocity",
+                                  "@accessType": "inputOutput",
+                                  "@type": "SFVec3f",
+                                  "@value": [
+                                    0,
+                                    0,
+                                    0
+                                  ]
+                                },
+                                {
+                                  "@name": "set_fraction",
+                                  "@accessType": "inputOnly",
+                                  "@type": "SFTime"
+                                },
+                                {
+                                  "@name": "a",
+                                  "@type": "SFFloat",
+                                  "@accessType": "inputOutput",
+                                  "@value": 0.5
+                                },
+                                {
+                                  "@name": "b",
+                                  "@type": "SFFloat",
+                                  "@accessType": "inputOutput",
+                                  "@value": 0.5
+                                },
+                                {
+                                  "@name": "c",
+                                  "@type": "SFFloat",
+                                  "@accessType": "inputOutput",
+                                  "@value": 3
+                                },
+                                {
+                                  "@name": "d",
+                                  "@type": "SFFloat",
+                                  "@accessType": "inputOutput",
+                                  "@value": 3
+                                },
+                                {
+                                  "@name": "tdelta",
+                                  "@type": "SFFloat",
+                                  "@accessType": "inputOutput",
+                                  "@value": 0.5
+                                },
+                                {
+                                  "@name": "pdelta",
+                                  "@type": "SFFloat",
+                                  "@accessType": "inputOutput",
+                                  "@value": 0.5
+                                }
+                              ],
+                              "#sourceText": [
+                                "",
+                                "ecmascript:",
+                                "\t\t\tfunction initialize() {",
+                                "\t\t\t    translation = new SFVec3f(0, 0, 0);",
+                                "\t\t\t    velocity = new SFVec3f(",
+                                "\t\t\t    \tMath.random() - 0.5,",
+                                "\t\t\t\tMath.random() - 0.5,",
+                                "\t\t\t\tMath.random() - 0.5);",
+                                "\t\t\t}",
+                                "\t\t\tfunction set_fraction() {",
+                                "\t\t\t    translation = new SFVec3f(",
+                                "\t\t\t    \ttranslation.x + velocity.x,",
+                                "\t\t\t\ttranslation.y + velocity.y,",
+                                "\t\t\t\ttranslation.z + velocity.z);",
+                                "\t\t\t    for (var j = 0; j <= 2; j++) {",
+                                "\t\t\t\t    if (Math.abs(translation.x) > 10) {",
+                                "\t\t\t\t\tinitialize();",
+                                "\t\t\t\t    } else if (Math.abs(translation.y) > 10) {",
+                                "\t\t\t\t\tinitialize();",
+                                "\t\t\t\t    } else if (Math.abs(translation.z) > 10) {",
+                                "\t\t\t\t\tinitialize();",
+                                "\t\t\t\t    } else {",
+                                "\t\t\t\t\tvelocity.x += Math.random() * 0.2 - 0.1;",
+                                "\t\t\t\t\tvelocity.y += Math.random() * 0.2 - 0.1;",
+                                "\t\t\t\t\tvelocity.z += Math.random() * 0.2 - 0.1;",
+                                "\t\t\t\t    }",
+                                "\t\t\t    }",
+                                "\t\t\t    animate_flowers();",
+                                "\t\t\t}",
+                                "",
+                                "\t\t\tfunction animate_flowers(fraction, eventTime) {",
+                                "\t\t\t\tchoice = Math.floor(Math.random() * 4);",
+                                "\t\t\t\tswitch (choice) {",
+                                "\t\t\t\tcase 0:",
+                                "\t\t\t\t\ta += Math.random() * 0.2 - 0.1;",
+                                "\t\t\t\t\tbreak;",
+                                "\t\t\t\tcase 1:",
+                                "\t\t\t\t\tb += Math.random() * 0.2 - 0.1;",
+                                "\t\t\t\t\tbreak;",
+                                "\t\t\t\tcase 2:",
+                                "\t\t\t\t\tc += Math.random() * 2 - 1;",
+                                "\t\t\t\t\tbreak;",
+                                "\t\t\t\tcase 3:",
+                                "\t\t\t\t\td += Math.random() * 2 - 1;",
+                                "\t\t\t\t\tbreak;",
+                                "\t\t\t\t}",
+                                "\t\t\t\ttdelta += 0.5;",
+                                "\t\t\t\tpdelta += 0.5;",
+                                "\t\t\t\tif (a > 1) {",
+                                "\t\t\t\t\ta =  0.5;",
+                                "\t\t\t\t}",
+                                "\t\t\t\tif (b > 1) {",
+                                "\t\t\t\t\tb =  0.5;",
+                                "\t\t\t\t}",
+                                "\t\t\t\tif (c < 1) {",
+                                "\t\t\t\t\tc =  4;",
+                                "\t\t\t\t}",
+                                "\t\t\t\tif (d < 1) {",
+                                "\t\t\t\t\td =  4;",
+                                "\t\t\t\t}",
+                                "\t\t\t\tif (c > 10) {",
+                                "\t\t\t\t\tc = 4;",
+                                "\t\t\t\t}",
+                                "\t\t\t\tif (d > 10) {",
+                                "\t\t\t\t\td = 4;",
+                                "\t\t\t\t}",
+                                "\t\t\t}"
+                              ]
+                            }
+                          },
+                          {
+                            "TimeSensor": {
+                              "@DEF": "DECLflower_INSTANCE76000_DECLFlowerProto_INSTANCE77000_TourTime",
+                              "@cycleInterval": 0.15,
+                              "@loop": true
+                            }
+                          },
+                          {
+                            "ROUTE": {
+                              "@fromNode": "DECLflower_INSTANCE76000_DECLFlowerProto_INSTANCE77000_TourTime",
+                              "@fromField": "cycleTime",
+                              "@toNode": "DECLflower_INSTANCE76000_DECLFlowerProto_INSTANCE77000_Bounce",
+                              "@toField": "set_fraction"
+                            }
+                          },
+                          {
+                            "ROUTE": {
+                              "@fromNode": "DECLflower_INSTANCE76000_DECLFlowerProto_INSTANCE77000_Bounce",
+                              "@fromField": "translation_changed",
+                              "@toNode": "DECLflower_INSTANCE76000_DECLFlowerProto_INSTANCE77000_transform",
+                              "@toField": "set_translation"
+                            }
+                          },
+                          {
+                            "ROUTE": {
+                              "@fromNode": "DECLflower_INSTANCE76000_DECLFlowerProto_INSTANCE77000_Bounce",
+                              "@fromField": "a",
+                              "@toNode": "DECLflower_INSTANCE76000_DECLFlowerProto_INSTANCE77000_shader",
+                              "@toField": "a"
+                            }
+                          },
+                          {
+                            "ROUTE": {
+                              "@fromNode": "DECLflower_INSTANCE76000_DECLFlowerProto_INSTANCE77000_Bounce",
+                              "@fromField": "b",
+                              "@toNode": "DECLflower_INSTANCE76000_DECLFlowerProto_INSTANCE77000_shader",
+                              "@toField": "b"
+                            }
+                          },
+                          {
+                            "ROUTE": {
+                              "@fromNode": "DECLflower_INSTANCE76000_DECLFlowerProto_INSTANCE77000_Bounce",
+                              "@fromField": "c",
+                              "@toNode": "DECLflower_INSTANCE76000_DECLFlowerProto_INSTANCE77000_shader",
+                              "@toField": "c"
+                            }
+                          },
+                          {
+                            "ROUTE": {
+                              "@fromNode": "DECLflower_INSTANCE76000_DECLFlowerProto_INSTANCE77000_Bounce",
+                              "@fromField": "d",
+                              "@toNode": "DECLflower_INSTANCE76000_DECLFlowerProto_INSTANCE77000_shader",
+                              "@toField": "d"
+                            }
+                          },
+                          {
+                            "ROUTE": {
+                              "@fromNode": "DECLflower_INSTANCE76000_DECLFlowerProto_INSTANCE77000_Bounce",
+                              "@fromField": "tdelta",
+                              "@toNode": "DECLflower_INSTANCE76000_DECLFlowerProto_INSTANCE77000_shader",
+                              "@toField": "tdelta"
+                            }
+                          },
+                          {
+                            "ROUTE": {
+                              "@fromNode": "DECLflower_INSTANCE76000_DECLFlowerProto_INSTANCE77000_Bounce",
+                              "@fromField": "pdelta",
+                              "@toNode": "DECLflower_INSTANCE76000_DECLFlowerProto_INSTANCE77000_shader",
+                              "@toField": "pdelta"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Group": {
+                  "-children": [
+                    {
+                      "Transform": {
+                        "@DEF": "DECLflower_INSTANCE78000_DECLFlowerProto_INSTANCE79000_transform",
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@diffuseColor": [
+                                        0.7,
+                                        0.7,
+                                        0.7
+                                      ]
+                                    }
+                                  },
+                                  "-texture": {
+                                    "ComposedCubeMapTexture": {
+                                      "@DEF": "DECLflower_INSTANCE78000_DECLFlowerProto_INSTANCE79000_texture",
+                                      "-back": {
+                                        "ImageTexture": {
+                                          "@url": [
+                                            "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
+                                            "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"
+                                          ]
+                                        }
+                                      },
+                                      "-bottom": {
+                                        "ImageTexture": {
+                                          "@url": [
+                                            "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
+                                            "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"
+                                          ]
+                                        }
+                                      },
+                                      "-front": {
+                                        "ImageTexture": {
+                                          "@url": [
+                                            "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
+                                            "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"
+                                          ]
+                                        }
+                                      },
+                                      "-left": {
+                                        "ImageTexture": {
+                                          "@url": [
+                                            "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
+                                            "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"
+                                          ]
+                                        }
+                                      },
+                                      "-right": {
+                                        "ImageTexture": {
+                                          "@url": [
+                                            "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
+                                            "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"
+                                          ]
+                                        }
+                                      },
+                                      "-top": {
+                                        "ImageTexture": {
+                                          "@url": [
+                                            "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
+                                            "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"
+                                          ]
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "-shaders": [
+                                    {
+                                      "ComposedShader": {
+                                        "@DEF": "DECLflower_INSTANCE78000_DECLFlowerProto_INSTANCE79000_shader",
+                                        "@language": "GLSL",
+                                        "field": [
+                                          {
+                                            "@name": "cube",
+                                            "@type": "SFInt32",
+                                            "@accessType": "inputOutput",
+                                            "@value": 0
+                                          },
+                                          {
+                                            "@name": "chromaticDispertion",
+                                            "@type": "SFVec3f",
+                                            "@accessType": "inputOutput",
+                                            "@value": [
+                                              0.98,
+                                              1,
+                                              1.033
+                                            ]
+                                          },
+                                          {
+                                            "@name": "bias",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 10
+                                          },
+                                          {
+                                            "@name": "scale",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 10
+                                          },
+                                          {
+                                            "@name": "power",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 2
+                                          },
+                                          {
+                                            "@name": "a",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 3
+                                          },
+                                          {
+                                            "@name": "b",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 1
+                                          },
+                                          {
+                                            "@name": "c",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 3
+                                          },
+                                          {
+                                            "@name": "d",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 3
+                                          },
+                                          {
+                                            "@name": "tdelta",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 0.5
+                                          },
+                                          {
+                                            "@name": "pdelta",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 0.5
+                                          }
+                                        ],
+                                        "-children": [
+                                          {
+                                            "#comment": "<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>"
+                                          }
+                                        ],
+                                        "-parts": [
+                                          {
+                                            "ShaderPart": {
+                                              "@type": "VERTEX",
+                                              "@url": [
+                                                "../shaders/cobweb_flowers_plain.vs"
+                                              ]
+                                            }
+                                          },
+                                          {
+                                            "ShaderPart": {
+                                              "@type": "FRAGMENT",
+                                              "@url": [
+                                                "../shaders/plain.fs"
+                                              ]
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ]
+                                }
+                              },
+                              "-geometry": {
+                                "Sphere": {}
+                              }
+                            }
+                          },
+                          {
+                            "Script": {
+                              "@DEF": "DECLflower_INSTANCE78000_DECLFlowerProto_INSTANCE79000_Bounce",
+                              "field": [
+                                {
+                                  "@name": "translation",
+                                  "@accessType": "inputOutput",
+                                  "@type": "SFVec3f",
+                                  "@value": [
+                                    0,
+                                    0,
+                                    0
+                                  ]
+                                },
+                                {
+                                  "@name": "velocity",
+                                  "@accessType": "inputOutput",
+                                  "@type": "SFVec3f",
+                                  "@value": [
+                                    0,
+                                    0,
+                                    0
+                                  ]
+                                },
+                                {
+                                  "@name": "set_fraction",
+                                  "@accessType": "inputOnly",
+                                  "@type": "SFTime"
+                                },
+                                {
+                                  "@name": "a",
+                                  "@type": "SFFloat",
+                                  "@accessType": "inputOutput",
+                                  "@value": 0.5
+                                },
+                                {
+                                  "@name": "b",
+                                  "@type": "SFFloat",
+                                  "@accessType": "inputOutput",
+                                  "@value": 0.5
+                                },
+                                {
+                                  "@name": "c",
+                                  "@type": "SFFloat",
+                                  "@accessType": "inputOutput",
+                                  "@value": 3
+                                },
+                                {
+                                  "@name": "d",
+                                  "@type": "SFFloat",
+                                  "@accessType": "inputOutput",
+                                  "@value": 3
+                                },
+                                {
+                                  "@name": "tdelta",
+                                  "@type": "SFFloat",
+                                  "@accessType": "inputOutput",
+                                  "@value": 0.5
+                                },
+                                {
+                                  "@name": "pdelta",
+                                  "@type": "SFFloat",
+                                  "@accessType": "inputOutput",
+                                  "@value": 0.5
+                                }
+                              ],
+                              "#sourceText": [
+                                "",
+                                "ecmascript:",
+                                "\t\t\tfunction initialize() {",
+                                "\t\t\t    translation = new SFVec3f(0, 0, 0);",
+                                "\t\t\t    velocity = new SFVec3f(",
+                                "\t\t\t    \tMath.random() - 0.5,",
+                                "\t\t\t\tMath.random() - 0.5,",
+                                "\t\t\t\tMath.random() - 0.5);",
+                                "\t\t\t}",
+                                "\t\t\tfunction set_fraction() {",
+                                "\t\t\t    translation = new SFVec3f(",
+                                "\t\t\t    \ttranslation.x + velocity.x,",
+                                "\t\t\t\ttranslation.y + velocity.y,",
+                                "\t\t\t\ttranslation.z + velocity.z);",
+                                "\t\t\t    for (var j = 0; j <= 2; j++) {",
+                                "\t\t\t\t    if (Math.abs(translation.x) > 10) {",
+                                "\t\t\t\t\tinitialize();",
+                                "\t\t\t\t    } else if (Math.abs(translation.y) > 10) {",
+                                "\t\t\t\t\tinitialize();",
+                                "\t\t\t\t    } else if (Math.abs(translation.z) > 10) {",
+                                "\t\t\t\t\tinitialize();",
+                                "\t\t\t\t    } else {",
+                                "\t\t\t\t\tvelocity.x += Math.random() * 0.2 - 0.1;",
+                                "\t\t\t\t\tvelocity.y += Math.random() * 0.2 - 0.1;",
+                                "\t\t\t\t\tvelocity.z += Math.random() * 0.2 - 0.1;",
+                                "\t\t\t\t    }",
+                                "\t\t\t    }",
+                                "\t\t\t    animate_flowers();",
+                                "\t\t\t}",
+                                "",
+                                "\t\t\tfunction animate_flowers(fraction, eventTime) {",
+                                "\t\t\t\tchoice = Math.floor(Math.random() * 4);",
+                                "\t\t\t\tswitch (choice) {",
+                                "\t\t\t\tcase 0:",
+                                "\t\t\t\t\ta += Math.random() * 0.2 - 0.1;",
+                                "\t\t\t\t\tbreak;",
+                                "\t\t\t\tcase 1:",
+                                "\t\t\t\t\tb += Math.random() * 0.2 - 0.1;",
+                                "\t\t\t\t\tbreak;",
+                                "\t\t\t\tcase 2:",
+                                "\t\t\t\t\tc += Math.random() * 2 - 1;",
+                                "\t\t\t\t\tbreak;",
+                                "\t\t\t\tcase 3:",
+                                "\t\t\t\t\td += Math.random() * 2 - 1;",
+                                "\t\t\t\t\tbreak;",
+                                "\t\t\t\t}",
+                                "\t\t\t\ttdelta += 0.5;",
+                                "\t\t\t\tpdelta += 0.5;",
+                                "\t\t\t\tif (a > 1) {",
+                                "\t\t\t\t\ta =  0.5;",
+                                "\t\t\t\t}",
+                                "\t\t\t\tif (b > 1) {",
+                                "\t\t\t\t\tb =  0.5;",
+                                "\t\t\t\t}",
+                                "\t\t\t\tif (c < 1) {",
+                                "\t\t\t\t\tc =  4;",
+                                "\t\t\t\t}",
+                                "\t\t\t\tif (d < 1) {",
+                                "\t\t\t\t\td =  4;",
+                                "\t\t\t\t}",
+                                "\t\t\t\tif (c > 10) {",
+                                "\t\t\t\t\tc = 4;",
+                                "\t\t\t\t}",
+                                "\t\t\t\tif (d > 10) {",
+                                "\t\t\t\t\td = 4;",
+                                "\t\t\t\t}",
+                                "\t\t\t}"
+                              ]
+                            }
+                          },
+                          {
+                            "TimeSensor": {
+                              "@DEF": "DECLflower_INSTANCE78000_DECLFlowerProto_INSTANCE79000_TourTime",
+                              "@cycleInterval": 0.15,
+                              "@loop": true
+                            }
+                          },
+                          {
+                            "ROUTE": {
+                              "@fromNode": "DECLflower_INSTANCE78000_DECLFlowerProto_INSTANCE79000_TourTime",
+                              "@fromField": "cycleTime",
+                              "@toNode": "DECLflower_INSTANCE78000_DECLFlowerProto_INSTANCE79000_Bounce",
+                              "@toField": "set_fraction"
+                            }
+                          },
+                          {
+                            "ROUTE": {
+                              "@fromNode": "DECLflower_INSTANCE78000_DECLFlowerProto_INSTANCE79000_Bounce",
+                              "@fromField": "translation_changed",
+                              "@toNode": "DECLflower_INSTANCE78000_DECLFlowerProto_INSTANCE79000_transform",
+                              "@toField": "set_translation"
+                            }
+                          },
+                          {
+                            "ROUTE": {
+                              "@fromNode": "DECLflower_INSTANCE78000_DECLFlowerProto_INSTANCE79000_Bounce",
+                              "@fromField": "a",
+                              "@toNode": "DECLflower_INSTANCE78000_DECLFlowerProto_INSTANCE79000_shader",
+                              "@toField": "a"
+                            }
+                          },
+                          {
+                            "ROUTE": {
+                              "@fromNode": "DECLflower_INSTANCE78000_DECLFlowerProto_INSTANCE79000_Bounce",
+                              "@fromField": "b",
+                              "@toNode": "DECLflower_INSTANCE78000_DECLFlowerProto_INSTANCE79000_shader",
+                              "@toField": "b"
+                            }
+                          },
+                          {
+                            "ROUTE": {
+                              "@fromNode": "DECLflower_INSTANCE78000_DECLFlowerProto_INSTANCE79000_Bounce",
+                              "@fromField": "c",
+                              "@toNode": "DECLflower_INSTANCE78000_DECLFlowerProto_INSTANCE79000_shader",
+                              "@toField": "c"
+                            }
+                          },
+                          {
+                            "ROUTE": {
+                              "@fromNode": "DECLflower_INSTANCE78000_DECLFlowerProto_INSTANCE79000_Bounce",
+                              "@fromField": "d",
+                              "@toNode": "DECLflower_INSTANCE78000_DECLFlowerProto_INSTANCE79000_shader",
+                              "@toField": "d"
+                            }
+                          },
+                          {
+                            "ROUTE": {
+                              "@fromNode": "DECLflower_INSTANCE78000_DECLFlowerProto_INSTANCE79000_Bounce",
+                              "@fromField": "tdelta",
+                              "@toNode": "DECLflower_INSTANCE78000_DECLFlowerProto_INSTANCE79000_shader",
+                              "@toField": "tdelta"
+                            }
+                          },
+                          {
+                            "ROUTE": {
+                              "@fromNode": "DECLflower_INSTANCE78000_DECLFlowerProto_INSTANCE79000_Bounce",
+                              "@fromField": "pdelta",
+                              "@toNode": "DECLflower_INSTANCE78000_DECLFlowerProto_INSTANCE79000_shader",
+                              "@toField": "pdelta"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Group": {
+                  "-children": [
+                    {
+                      "Transform": {
+                        "@DEF": "DECLflower_INSTANCE80000_DECLFlowerProto_INSTANCE81000_transform",
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@diffuseColor": [
+                                        0.7,
+                                        0.7,
+                                        0.7
+                                      ]
+                                    }
+                                  },
+                                  "-texture": {
+                                    "ComposedCubeMapTexture": {
+                                      "@DEF": "DECLflower_INSTANCE80000_DECLFlowerProto_INSTANCE81000_texture",
+                                      "-back": {
+                                        "ImageTexture": {
+                                          "@url": [
+                                            "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
+                                            "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"
+                                          ]
+                                        }
+                                      },
+                                      "-bottom": {
+                                        "ImageTexture": {
+                                          "@url": [
+                                            "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
+                                            "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"
+                                          ]
+                                        }
+                                      },
+                                      "-front": {
+                                        "ImageTexture": {
+                                          "@url": [
+                                            "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
+                                            "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"
+                                          ]
+                                        }
+                                      },
+                                      "-left": {
+                                        "ImageTexture": {
+                                          "@url": [
+                                            "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
+                                            "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"
+                                          ]
+                                        }
+                                      },
+                                      "-right": {
+                                        "ImageTexture": {
+                                          "@url": [
+                                            "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
+                                            "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"
+                                          ]
+                                        }
+                                      },
+                                      "-top": {
+                                        "ImageTexture": {
+                                          "@url": [
+                                            "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
+                                            "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"
+                                          ]
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "-shaders": [
+                                    {
+                                      "ComposedShader": {
+                                        "@DEF": "DECLflower_INSTANCE80000_DECLFlowerProto_INSTANCE81000_shader",
+                                        "@language": "GLSL",
+                                        "field": [
+                                          {
+                                            "@name": "cube",
+                                            "@type": "SFInt32",
+                                            "@accessType": "inputOutput",
+                                            "@value": 0
+                                          },
+                                          {
+                                            "@name": "chromaticDispertion",
+                                            "@type": "SFVec3f",
+                                            "@accessType": "inputOutput",
+                                            "@value": [
+                                              0.98,
+                                              1,
+                                              1.033
+                                            ]
+                                          },
+                                          {
+                                            "@name": "bias",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 10
+                                          },
+                                          {
+                                            "@name": "scale",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 10
+                                          },
+                                          {
+                                            "@name": "power",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 2
+                                          },
+                                          {
+                                            "@name": "a",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 3
+                                          },
+                                          {
+                                            "@name": "b",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 1
+                                          },
+                                          {
+                                            "@name": "c",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 3
+                                          },
+                                          {
+                                            "@name": "d",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 3
+                                          },
+                                          {
+                                            "@name": "tdelta",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 0.5
+                                          },
+                                          {
+                                            "@name": "pdelta",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 0.5
+                                          }
+                                        ],
+                                        "-children": [
+                                          {
+                                            "#comment": "<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>"
+                                          }
+                                        ],
+                                        "-parts": [
+                                          {
+                                            "ShaderPart": {
+                                              "@type": "VERTEX",
+                                              "@url": [
+                                                "../shaders/cobweb_flowers_plain.vs"
+                                              ]
+                                            }
+                                          },
+                                          {
+                                            "ShaderPart": {
+                                              "@type": "FRAGMENT",
+                                              "@url": [
+                                                "../shaders/plain.fs"
+                                              ]
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ]
+                                }
+                              },
+                              "-geometry": {
+                                "Sphere": {}
+                              }
+                            }
+                          },
+                          {
+                            "Script": {
+                              "@DEF": "DECLflower_INSTANCE80000_DECLFlowerProto_INSTANCE81000_Bounce",
+                              "field": [
+                                {
+                                  "@name": "translation",
+                                  "@accessType": "inputOutput",
+                                  "@type": "SFVec3f",
+                                  "@value": [
+                                    0,
+                                    0,
+                                    0
+                                  ]
+                                },
+                                {
+                                  "@name": "velocity",
+                                  "@accessType": "inputOutput",
+                                  "@type": "SFVec3f",
+                                  "@value": [
+                                    0,
+                                    0,
+                                    0
+                                  ]
+                                },
+                                {
+                                  "@name": "set_fraction",
+                                  "@accessType": "inputOnly",
+                                  "@type": "SFTime"
+                                },
+                                {
+                                  "@name": "a",
+                                  "@type": "SFFloat",
+                                  "@accessType": "inputOutput",
+                                  "@value": 0.5
+                                },
+                                {
+                                  "@name": "b",
+                                  "@type": "SFFloat",
+                                  "@accessType": "inputOutput",
+                                  "@value": 0.5
+                                },
+                                {
+                                  "@name": "c",
+                                  "@type": "SFFloat",
+                                  "@accessType": "inputOutput",
+                                  "@value": 3
+                                },
+                                {
+                                  "@name": "d",
+                                  "@type": "SFFloat",
+                                  "@accessType": "inputOutput",
+                                  "@value": 3
+                                },
+                                {
+                                  "@name": "tdelta",
+                                  "@type": "SFFloat",
+                                  "@accessType": "inputOutput",
+                                  "@value": 0.5
+                                },
+                                {
+                                  "@name": "pdelta",
+                                  "@type": "SFFloat",
+                                  "@accessType": "inputOutput",
+                                  "@value": 0.5
+                                }
+                              ],
+                              "#sourceText": [
+                                "",
+                                "ecmascript:",
+                                "\t\t\tfunction initialize() {",
+                                "\t\t\t    translation = new SFVec3f(0, 0, 0);",
+                                "\t\t\t    velocity = new SFVec3f(",
+                                "\t\t\t    \tMath.random() - 0.5,",
+                                "\t\t\t\tMath.random() - 0.5,",
+                                "\t\t\t\tMath.random() - 0.5);",
+                                "\t\t\t}",
+                                "\t\t\tfunction set_fraction() {",
+                                "\t\t\t    translation = new SFVec3f(",
+                                "\t\t\t    \ttranslation.x + velocity.x,",
+                                "\t\t\t\ttranslation.y + velocity.y,",
+                                "\t\t\t\ttranslation.z + velocity.z);",
+                                "\t\t\t    for (var j = 0; j <= 2; j++) {",
+                                "\t\t\t\t    if (Math.abs(translation.x) > 10) {",
+                                "\t\t\t\t\tinitialize();",
+                                "\t\t\t\t    } else if (Math.abs(translation.y) > 10) {",
+                                "\t\t\t\t\tinitialize();",
+                                "\t\t\t\t    } else if (Math.abs(translation.z) > 10) {",
+                                "\t\t\t\t\tinitialize();",
+                                "\t\t\t\t    } else {",
+                                "\t\t\t\t\tvelocity.x += Math.random() * 0.2 - 0.1;",
+                                "\t\t\t\t\tvelocity.y += Math.random() * 0.2 - 0.1;",
+                                "\t\t\t\t\tvelocity.z += Math.random() * 0.2 - 0.1;",
+                                "\t\t\t\t    }",
+                                "\t\t\t    }",
+                                "\t\t\t    animate_flowers();",
+                                "\t\t\t}",
+                                "",
+                                "\t\t\tfunction animate_flowers(fraction, eventTime) {",
+                                "\t\t\t\tchoice = Math.floor(Math.random() * 4);",
+                                "\t\t\t\tswitch (choice) {",
+                                "\t\t\t\tcase 0:",
+                                "\t\t\t\t\ta += Math.random() * 0.2 - 0.1;",
+                                "\t\t\t\t\tbreak;",
+                                "\t\t\t\tcase 1:",
+                                "\t\t\t\t\tb += Math.random() * 0.2 - 0.1;",
+                                "\t\t\t\t\tbreak;",
+                                "\t\t\t\tcase 2:",
+                                "\t\t\t\t\tc += Math.random() * 2 - 1;",
+                                "\t\t\t\t\tbreak;",
+                                "\t\t\t\tcase 3:",
+                                "\t\t\t\t\td += Math.random() * 2 - 1;",
+                                "\t\t\t\t\tbreak;",
+                                "\t\t\t\t}",
+                                "\t\t\t\ttdelta += 0.5;",
+                                "\t\t\t\tpdelta += 0.5;",
+                                "\t\t\t\tif (a > 1) {",
+                                "\t\t\t\t\ta =  0.5;",
+                                "\t\t\t\t}",
+                                "\t\t\t\tif (b > 1) {",
+                                "\t\t\t\t\tb =  0.5;",
+                                "\t\t\t\t}",
+                                "\t\t\t\tif (c < 1) {",
+                                "\t\t\t\t\tc =  4;",
+                                "\t\t\t\t}",
+                                "\t\t\t\tif (d < 1) {",
+                                "\t\t\t\t\td =  4;",
+                                "\t\t\t\t}",
+                                "\t\t\t\tif (c > 10) {",
+                                "\t\t\t\t\tc = 4;",
+                                "\t\t\t\t}",
+                                "\t\t\t\tif (d > 10) {",
+                                "\t\t\t\t\td = 4;",
+                                "\t\t\t\t}",
+                                "\t\t\t}"
+                              ]
+                            }
+                          },
+                          {
+                            "TimeSensor": {
+                              "@DEF": "DECLflower_INSTANCE80000_DECLFlowerProto_INSTANCE81000_TourTime",
+                              "@cycleInterval": 0.15,
+                              "@loop": true
+                            }
+                          },
+                          {
+                            "ROUTE": {
+                              "@fromNode": "DECLflower_INSTANCE80000_DECLFlowerProto_INSTANCE81000_TourTime",
+                              "@fromField": "cycleTime",
+                              "@toNode": "DECLflower_INSTANCE80000_DECLFlowerProto_INSTANCE81000_Bounce",
+                              "@toField": "set_fraction"
+                            }
+                          },
+                          {
+                            "ROUTE": {
+                              "@fromNode": "DECLflower_INSTANCE80000_DECLFlowerProto_INSTANCE81000_Bounce",
+                              "@fromField": "translation_changed",
+                              "@toNode": "DECLflower_INSTANCE80000_DECLFlowerProto_INSTANCE81000_transform",
+                              "@toField": "set_translation"
+                            }
+                          },
+                          {
+                            "ROUTE": {
+                              "@fromNode": "DECLflower_INSTANCE80000_DECLFlowerProto_INSTANCE81000_Bounce",
+                              "@fromField": "a",
+                              "@toNode": "DECLflower_INSTANCE80000_DECLFlowerProto_INSTANCE81000_shader",
+                              "@toField": "a"
+                            }
+                          },
+                          {
+                            "ROUTE": {
+                              "@fromNode": "DECLflower_INSTANCE80000_DECLFlowerProto_INSTANCE81000_Bounce",
+                              "@fromField": "b",
+                              "@toNode": "DECLflower_INSTANCE80000_DECLFlowerProto_INSTANCE81000_shader",
+                              "@toField": "b"
+                            }
+                          },
+                          {
+                            "ROUTE": {
+                              "@fromNode": "DECLflower_INSTANCE80000_DECLFlowerProto_INSTANCE81000_Bounce",
+                              "@fromField": "c",
+                              "@toNode": "DECLflower_INSTANCE80000_DECLFlowerProto_INSTANCE81000_shader",
+                              "@toField": "c"
+                            }
+                          },
+                          {
+                            "ROUTE": {
+                              "@fromNode": "DECLflower_INSTANCE80000_DECLFlowerProto_INSTANCE81000_Bounce",
+                              "@fromField": "d",
+                              "@toNode": "DECLflower_INSTANCE80000_DECLFlowerProto_INSTANCE81000_shader",
+                              "@toField": "d"
+                            }
+                          },
+                          {
+                            "ROUTE": {
+                              "@fromNode": "DECLflower_INSTANCE80000_DECLFlowerProto_INSTANCE81000_Bounce",
+                              "@fromField": "tdelta",
+                              "@toNode": "DECLflower_INSTANCE80000_DECLFlowerProto_INSTANCE81000_shader",
+                              "@toField": "tdelta"
+                            }
+                          },
+                          {
+                            "ROUTE": {
+                              "@fromNode": "DECLflower_INSTANCE80000_DECLFlowerProto_INSTANCE81000_Bounce",
+                              "@fromField": "pdelta",
+                              "@toNode": "DECLflower_INSTANCE80000_DECLFlowerProto_INSTANCE81000_shader",
+                              "@toField": "pdelta"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Group": {
+                  "-children": [
+                    {
+                      "Transform": {
+                        "@DEF": "DECLflower_INSTANCE82000_DECLFlowerProto_INSTANCE83000_transform",
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@diffuseColor": [
+                                        0.7,
+                                        0.7,
+                                        0.7
+                                      ]
+                                    }
+                                  },
+                                  "-texture": {
+                                    "ComposedCubeMapTexture": {
+                                      "@DEF": "DECLflower_INSTANCE82000_DECLFlowerProto_INSTANCE83000_texture",
+                                      "-back": {
+                                        "ImageTexture": {
+                                          "@url": [
+                                            "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
+                                            "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"
+                                          ]
+                                        }
+                                      },
+                                      "-bottom": {
+                                        "ImageTexture": {
+                                          "@url": [
+                                            "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
+                                            "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"
+                                          ]
+                                        }
+                                      },
+                                      "-front": {
+                                        "ImageTexture": {
+                                          "@url": [
+                                            "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
+                                            "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"
+                                          ]
+                                        }
+                                      },
+                                      "-left": {
+                                        "ImageTexture": {
+                                          "@url": [
+                                            "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
+                                            "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"
+                                          ]
+                                        }
+                                      },
+                                      "-right": {
+                                        "ImageTexture": {
+                                          "@url": [
+                                            "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
+                                            "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"
+                                          ]
+                                        }
+                                      },
+                                      "-top": {
+                                        "ImageTexture": {
+                                          "@url": [
+                                            "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
+                                            "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"
+                                          ]
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "-shaders": [
+                                    {
+                                      "ComposedShader": {
+                                        "@DEF": "DECLflower_INSTANCE82000_DECLFlowerProto_INSTANCE83000_shader",
+                                        "@language": "GLSL",
+                                        "field": [
+                                          {
+                                            "@name": "cube",
+                                            "@type": "SFInt32",
+                                            "@accessType": "inputOutput",
+                                            "@value": 0
+                                          },
+                                          {
+                                            "@name": "chromaticDispertion",
+                                            "@type": "SFVec3f",
+                                            "@accessType": "inputOutput",
+                                            "@value": [
+                                              0.98,
+                                              1,
+                                              1.033
+                                            ]
+                                          },
+                                          {
+                                            "@name": "bias",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 10
+                                          },
+                                          {
+                                            "@name": "scale",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 10
+                                          },
+                                          {
+                                            "@name": "power",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 2
+                                          },
+                                          {
+                                            "@name": "a",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 3
+                                          },
+                                          {
+                                            "@name": "b",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 1
+                                          },
+                                          {
+                                            "@name": "c",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 3
+                                          },
+                                          {
+                                            "@name": "d",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 3
+                                          },
+                                          {
+                                            "@name": "tdelta",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 0.5
+                                          },
+                                          {
+                                            "@name": "pdelta",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 0.5
+                                          }
+                                        ],
+                                        "-children": [
+                                          {
+                                            "#comment": "<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>"
+                                          }
+                                        ],
+                                        "-parts": [
+                                          {
+                                            "ShaderPart": {
+                                              "@type": "VERTEX",
+                                              "@url": [
+                                                "../shaders/cobweb_flowers_plain.vs"
+                                              ]
+                                            }
+                                          },
+                                          {
+                                            "ShaderPart": {
+                                              "@type": "FRAGMENT",
+                                              "@url": [
+                                                "../shaders/plain.fs"
+                                              ]
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ]
+                                }
+                              },
+                              "-geometry": {
+                                "Sphere": {}
+                              }
+                            }
+                          },
+                          {
+                            "Script": {
+                              "@DEF": "DECLflower_INSTANCE82000_DECLFlowerProto_INSTANCE83000_Bounce",
+                              "field": [
+                                {
+                                  "@name": "translation",
+                                  "@accessType": "inputOutput",
+                                  "@type": "SFVec3f",
+                                  "@value": [
+                                    0,
+                                    0,
+                                    0
+                                  ]
+                                },
+                                {
+                                  "@name": "velocity",
+                                  "@accessType": "inputOutput",
+                                  "@type": "SFVec3f",
+                                  "@value": [
+                                    0,
+                                    0,
+                                    0
+                                  ]
+                                },
+                                {
+                                  "@name": "set_fraction",
+                                  "@accessType": "inputOnly",
+                                  "@type": "SFTime"
+                                },
+                                {
+                                  "@name": "a",
+                                  "@type": "SFFloat",
+                                  "@accessType": "inputOutput",
+                                  "@value": 0.5
+                                },
+                                {
+                                  "@name": "b",
+                                  "@type": "SFFloat",
+                                  "@accessType": "inputOutput",
+                                  "@value": 0.5
+                                },
+                                {
+                                  "@name": "c",
+                                  "@type": "SFFloat",
+                                  "@accessType": "inputOutput",
+                                  "@value": 3
+                                },
+                                {
+                                  "@name": "d",
+                                  "@type": "SFFloat",
+                                  "@accessType": "inputOutput",
+                                  "@value": 3
+                                },
+                                {
+                                  "@name": "tdelta",
+                                  "@type": "SFFloat",
+                                  "@accessType": "inputOutput",
+                                  "@value": 0.5
+                                },
+                                {
+                                  "@name": "pdelta",
+                                  "@type": "SFFloat",
+                                  "@accessType": "inputOutput",
+                                  "@value": 0.5
+                                }
+                              ],
+                              "#sourceText": [
+                                "",
+                                "ecmascript:",
+                                "\t\t\tfunction initialize() {",
+                                "\t\t\t    translation = new SFVec3f(0, 0, 0);",
+                                "\t\t\t    velocity = new SFVec3f(",
+                                "\t\t\t    \tMath.random() - 0.5,",
+                                "\t\t\t\tMath.random() - 0.5,",
+                                "\t\t\t\tMath.random() - 0.5);",
+                                "\t\t\t}",
+                                "\t\t\tfunction set_fraction() {",
+                                "\t\t\t    translation = new SFVec3f(",
+                                "\t\t\t    \ttranslation.x + velocity.x,",
+                                "\t\t\t\ttranslation.y + velocity.y,",
+                                "\t\t\t\ttranslation.z + velocity.z);",
+                                "\t\t\t    for (var j = 0; j <= 2; j++) {",
+                                "\t\t\t\t    if (Math.abs(translation.x) > 10) {",
+                                "\t\t\t\t\tinitialize();",
+                                "\t\t\t\t    } else if (Math.abs(translation.y) > 10) {",
+                                "\t\t\t\t\tinitialize();",
+                                "\t\t\t\t    } else if (Math.abs(translation.z) > 10) {",
+                                "\t\t\t\t\tinitialize();",
+                                "\t\t\t\t    } else {",
+                                "\t\t\t\t\tvelocity.x += Math.random() * 0.2 - 0.1;",
+                                "\t\t\t\t\tvelocity.y += Math.random() * 0.2 - 0.1;",
+                                "\t\t\t\t\tvelocity.z += Math.random() * 0.2 - 0.1;",
+                                "\t\t\t\t    }",
+                                "\t\t\t    }",
+                                "\t\t\t    animate_flowers();",
+                                "\t\t\t}",
+                                "",
+                                "\t\t\tfunction animate_flowers(fraction, eventTime) {",
+                                "\t\t\t\tchoice = Math.floor(Math.random() * 4);",
+                                "\t\t\t\tswitch (choice) {",
+                                "\t\t\t\tcase 0:",
+                                "\t\t\t\t\ta += Math.random() * 0.2 - 0.1;",
+                                "\t\t\t\t\tbreak;",
+                                "\t\t\t\tcase 1:",
+                                "\t\t\t\t\tb += Math.random() * 0.2 - 0.1;",
+                                "\t\t\t\t\tbreak;",
+                                "\t\t\t\tcase 2:",
+                                "\t\t\t\t\tc += Math.random() * 2 - 1;",
+                                "\t\t\t\t\tbreak;",
+                                "\t\t\t\tcase 3:",
+                                "\t\t\t\t\td += Math.random() * 2 - 1;",
+                                "\t\t\t\t\tbreak;",
+                                "\t\t\t\t}",
+                                "\t\t\t\ttdelta += 0.5;",
+                                "\t\t\t\tpdelta += 0.5;",
+                                "\t\t\t\tif (a > 1) {",
+                                "\t\t\t\t\ta =  0.5;",
+                                "\t\t\t\t}",
+                                "\t\t\t\tif (b > 1) {",
+                                "\t\t\t\t\tb =  0.5;",
+                                "\t\t\t\t}",
+                                "\t\t\t\tif (c < 1) {",
+                                "\t\t\t\t\tc =  4;",
+                                "\t\t\t\t}",
+                                "\t\t\t\tif (d < 1) {",
+                                "\t\t\t\t\td =  4;",
+                                "\t\t\t\t}",
+                                "\t\t\t\tif (c > 10) {",
+                                "\t\t\t\t\tc = 4;",
+                                "\t\t\t\t}",
+                                "\t\t\t\tif (d > 10) {",
+                                "\t\t\t\t\td = 4;",
+                                "\t\t\t\t}",
+                                "\t\t\t}"
+                              ]
+                            }
+                          },
+                          {
+                            "TimeSensor": {
+                              "@DEF": "DECLflower_INSTANCE82000_DECLFlowerProto_INSTANCE83000_TourTime",
+                              "@cycleInterval": 0.15,
+                              "@loop": true
+                            }
+                          },
+                          {
+                            "ROUTE": {
+                              "@fromNode": "DECLflower_INSTANCE82000_DECLFlowerProto_INSTANCE83000_TourTime",
+                              "@fromField": "cycleTime",
+                              "@toNode": "DECLflower_INSTANCE82000_DECLFlowerProto_INSTANCE83000_Bounce",
+                              "@toField": "set_fraction"
+                            }
+                          },
+                          {
+                            "ROUTE": {
+                              "@fromNode": "DECLflower_INSTANCE82000_DECLFlowerProto_INSTANCE83000_Bounce",
+                              "@fromField": "translation_changed",
+                              "@toNode": "DECLflower_INSTANCE82000_DECLFlowerProto_INSTANCE83000_transform",
+                              "@toField": "set_translation"
+                            }
+                          },
+                          {
+                            "ROUTE": {
+                              "@fromNode": "DECLflower_INSTANCE82000_DECLFlowerProto_INSTANCE83000_Bounce",
+                              "@fromField": "a",
+                              "@toNode": "DECLflower_INSTANCE82000_DECLFlowerProto_INSTANCE83000_shader",
+                              "@toField": "a"
+                            }
+                          },
+                          {
+                            "ROUTE": {
+                              "@fromNode": "DECLflower_INSTANCE82000_DECLFlowerProto_INSTANCE83000_Bounce",
+                              "@fromField": "b",
+                              "@toNode": "DECLflower_INSTANCE82000_DECLFlowerProto_INSTANCE83000_shader",
+                              "@toField": "b"
+                            }
+                          },
+                          {
+                            "ROUTE": {
+                              "@fromNode": "DECLflower_INSTANCE82000_DECLFlowerProto_INSTANCE83000_Bounce",
+                              "@fromField": "c",
+                              "@toNode": "DECLflower_INSTANCE82000_DECLFlowerProto_INSTANCE83000_shader",
+                              "@toField": "c"
+                            }
+                          },
+                          {
+                            "ROUTE": {
+                              "@fromNode": "DECLflower_INSTANCE82000_DECLFlowerProto_INSTANCE83000_Bounce",
+                              "@fromField": "d",
+                              "@toNode": "DECLflower_INSTANCE82000_DECLFlowerProto_INSTANCE83000_shader",
+                              "@toField": "d"
+                            }
+                          },
+                          {
+                            "ROUTE": {
+                              "@fromNode": "DECLflower_INSTANCE82000_DECLFlowerProto_INSTANCE83000_Bounce",
+                              "@fromField": "tdelta",
+                              "@toNode": "DECLflower_INSTANCE82000_DECLFlowerProto_INSTANCE83000_shader",
+                              "@toField": "tdelta"
+                            }
+                          },
+                          {
+                            "ROUTE": {
+                              "@fromNode": "DECLflower_INSTANCE82000_DECLFlowerProto_INSTANCE83000_Bounce",
+                              "@fromField": "pdelta",
+                              "@toNode": "DECLflower_INSTANCE82000_DECLFlowerProto_INSTANCE83000_shader",
+                              "@toField": "pdelta"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Group": {
+                  "-children": [
+                    {
+                      "Transform": {
+                        "@DEF": "DECLflower_INSTANCE84000_DECLFlowerProto_INSTANCE85000_transform",
+                        "-children": [
+                          {
+                            "Shape": {
+                              "-appearance": {
+                                "Appearance": {
+                                  "-material": {
+                                    "Material": {
+                                      "@diffuseColor": [
+                                        0.7,
+                                        0.7,
+                                        0.7
+                                      ]
+                                    }
+                                  },
+                                  "-texture": {
+                                    "ComposedCubeMapTexture": {
+                                      "@DEF": "DECLflower_INSTANCE84000_DECLFlowerProto_INSTANCE85000_texture",
+                                      "-back": {
+                                        "ImageTexture": {
+                                          "@url": [
+                                            "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
+                                            "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"
+                                          ]
+                                        }
+                                      },
+                                      "-bottom": {
+                                        "ImageTexture": {
+                                          "@url": [
+                                            "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
+                                            "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"
+                                          ]
+                                        }
+                                      },
+                                      "-front": {
+                                        "ImageTexture": {
+                                          "@url": [
+                                            "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
+                                            "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"
+                                          ]
+                                        }
+                                      },
+                                      "-left": {
+                                        "ImageTexture": {
+                                          "@url": [
+                                            "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
+                                            "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"
+                                          ]
+                                        }
+                                      },
+                                      "-right": {
+                                        "ImageTexture": {
+                                          "@url": [
+                                            "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
+                                            "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"
+                                          ]
+                                        }
+                                      },
+                                      "-top": {
+                                        "ImageTexture": {
+                                          "@url": [
+                                            "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
+                                            "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"
+                                          ]
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "-shaders": [
+                                    {
+                                      "ComposedShader": {
+                                        "@DEF": "DECLflower_INSTANCE84000_DECLFlowerProto_INSTANCE85000_shader",
+                                        "@language": "GLSL",
+                                        "field": [
+                                          {
+                                            "@name": "cube",
+                                            "@type": "SFInt32",
+                                            "@accessType": "inputOutput",
+                                            "@value": 0
+                                          },
+                                          {
+                                            "@name": "chromaticDispertion",
+                                            "@type": "SFVec3f",
+                                            "@accessType": "inputOutput",
+                                            "@value": [
+                                              0.98,
+                                              1,
+                                              1.033
+                                            ]
+                                          },
+                                          {
+                                            "@name": "bias",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 10
+                                          },
+                                          {
+                                            "@name": "scale",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 10
+                                          },
+                                          {
+                                            "@name": "power",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 2
+                                          },
+                                          {
+                                            "@name": "a",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 3
+                                          },
+                                          {
+                                            "@name": "b",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 1
+                                          },
+                                          {
+                                            "@name": "c",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 3
+                                          },
+                                          {
+                                            "@name": "d",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 3
+                                          },
+                                          {
+                                            "@name": "tdelta",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 0.5
+                                          },
+                                          {
+                                            "@name": "pdelta",
+                                            "@type": "SFFloat",
+                                            "@accessType": "inputOutput",
+                                            "@value": 0.5
+                                          }
+                                        ],
+                                        "-children": [
+                                          {
+                                            "#comment": "<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>"
+                                          }
+                                        ],
+                                        "-parts": [
+                                          {
+                                            "ShaderPart": {
+                                              "@type": "VERTEX",
+                                              "@url": [
+                                                "../shaders/cobweb_flowers_plain.vs"
+                                              ]
+                                            }
+                                          },
+                                          {
+                                            "ShaderPart": {
+                                              "@type": "FRAGMENT",
+                                              "@url": [
+                                                "../shaders/plain.fs"
+                                              ]
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ]
+                                }
+                              },
+                              "-geometry": {
+                                "Sphere": {}
+                              }
+                            }
+                          },
+                          {
+                            "Script": {
+                              "@DEF": "DECLflower_INSTANCE84000_DECLFlowerProto_INSTANCE85000_Bounce",
+                              "field": [
+                                {
+                                  "@name": "translation",
+                                  "@accessType": "inputOutput",
+                                  "@type": "SFVec3f",
+                                  "@value": [
+                                    0,
+                                    0,
+                                    0
+                                  ]
+                                },
+                                {
+                                  "@name": "velocity",
+                                  "@accessType": "inputOutput",
+                                  "@type": "SFVec3f",
+                                  "@value": [
+                                    0,
+                                    0,
+                                    0
+                                  ]
+                                },
+                                {
+                                  "@name": "set_fraction",
+                                  "@accessType": "inputOnly",
+                                  "@type": "SFTime"
+                                },
+                                {
+                                  "@name": "a",
+                                  "@type": "SFFloat",
+                                  "@accessType": "inputOutput",
+                                  "@value": 0.5
+                                },
+                                {
+                                  "@name": "b",
+                                  "@type": "SFFloat",
+                                  "@accessType": "inputOutput",
+                                  "@value": 0.5
+                                },
+                                {
+                                  "@name": "c",
+                                  "@type": "SFFloat",
+                                  "@accessType": "inputOutput",
+                                  "@value": 3
+                                },
+                                {
+                                  "@name": "d",
+                                  "@type": "SFFloat",
+                                  "@accessType": "inputOutput",
+                                  "@value": 3
+                                },
+                                {
+                                  "@name": "tdelta",
+                                  "@type": "SFFloat",
+                                  "@accessType": "inputOutput",
+                                  "@value": 0.5
+                                },
+                                {
+                                  "@name": "pdelta",
+                                  "@type": "SFFloat",
+                                  "@accessType": "inputOutput",
+                                  "@value": 0.5
+                                }
+                              ],
+                              "#sourceText": [
+                                "",
+                                "ecmascript:",
+                                "\t\t\tfunction initialize() {",
+                                "\t\t\t    translation = new SFVec3f(0, 0, 0);",
+                                "\t\t\t    velocity = new SFVec3f(",
+                                "\t\t\t    \tMath.random() - 0.5,",
+                                "\t\t\t\tMath.random() - 0.5,",
+                                "\t\t\t\tMath.random() - 0.5);",
+                                "\t\t\t}",
+                                "\t\t\tfunction set_fraction() {",
+                                "\t\t\t    translation = new SFVec3f(",
+                                "\t\t\t    \ttranslation.x + velocity.x,",
+                                "\t\t\t\ttranslation.y + velocity.y,",
+                                "\t\t\t\ttranslation.z + velocity.z);",
+                                "\t\t\t    for (var j = 0; j <= 2; j++) {",
+                                "\t\t\t\t    if (Math.abs(translation.x) > 10) {",
+                                "\t\t\t\t\tinitialize();",
+                                "\t\t\t\t    } else if (Math.abs(translation.y) > 10) {",
+                                "\t\t\t\t\tinitialize();",
+                                "\t\t\t\t    } else if (Math.abs(translation.z) > 10) {",
+                                "\t\t\t\t\tinitialize();",
+                                "\t\t\t\t    } else {",
+                                "\t\t\t\t\tvelocity.x += Math.random() * 0.2 - 0.1;",
+                                "\t\t\t\t\tvelocity.y += Math.random() * 0.2 - 0.1;",
+                                "\t\t\t\t\tvelocity.z += Math.random() * 0.2 - 0.1;",
+                                "\t\t\t\t    }",
+                                "\t\t\t    }",
+                                "\t\t\t    animate_flowers();",
+                                "\t\t\t}",
+                                "",
+                                "\t\t\tfunction animate_flowers(fraction, eventTime) {",
+                                "\t\t\t\tchoice = Math.floor(Math.random() * 4);",
+                                "\t\t\t\tswitch (choice) {",
+                                "\t\t\t\tcase 0:",
+                                "\t\t\t\t\ta += Math.random() * 0.2 - 0.1;",
+                                "\t\t\t\t\tbreak;",
+                                "\t\t\t\tcase 1:",
+                                "\t\t\t\t\tb += Math.random() * 0.2 - 0.1;",
+                                "\t\t\t\t\tbreak;",
+                                "\t\t\t\tcase 2:",
+                                "\t\t\t\t\tc += Math.random() * 2 - 1;",
+                                "\t\t\t\t\tbreak;",
+                                "\t\t\t\tcase 3:",
+                                "\t\t\t\t\td += Math.random() * 2 - 1;",
+                                "\t\t\t\t\tbreak;",
+                                "\t\t\t\t}",
+                                "\t\t\t\ttdelta += 0.5;",
+                                "\t\t\t\tpdelta += 0.5;",
+                                "\t\t\t\tif (a > 1) {",
+                                "\t\t\t\t\ta =  0.5;",
+                                "\t\t\t\t}",
+                                "\t\t\t\tif (b > 1) {",
+                                "\t\t\t\t\tb =  0.5;",
+                                "\t\t\t\t}",
+                                "\t\t\t\tif (c < 1) {",
+                                "\t\t\t\t\tc =  4;",
+                                "\t\t\t\t}",
+                                "\t\t\t\tif (d < 1) {",
+                                "\t\t\t\t\td =  4;",
+                                "\t\t\t\t}",
+                                "\t\t\t\tif (c > 10) {",
+                                "\t\t\t\t\tc = 4;",
+                                "\t\t\t\t}",
+                                "\t\t\t\tif (d > 10) {",
+                                "\t\t\t\t\td = 4;",
+                                "\t\t\t\t}",
+                                "\t\t\t}"
+                              ]
+                            }
+                          },
+                          {
+                            "TimeSensor": {
+                              "@DEF": "DECLflower_INSTANCE84000_DECLFlowerProto_INSTANCE85000_TourTime",
+                              "@cycleInterval": 0.15,
+                              "@loop": true
+                            }
+                          },
+                          {
+                            "ROUTE": {
+                              "@fromNode": "DECLflower_INSTANCE84000_DECLFlowerProto_INSTANCE85000_TourTime",
+                              "@fromField": "cycleTime",
+                              "@toNode": "DECLflower_INSTANCE84000_DECLFlowerProto_INSTANCE85000_Bounce",
+                              "@toField": "set_fraction"
+                            }
+                          },
+                          {
+                            "ROUTE": {
+                              "@fromNode": "DECLflower_INSTANCE84000_DECLFlowerProto_INSTANCE85000_Bounce",
+                              "@fromField": "translation_changed",
+                              "@toNode": "DECLflower_INSTANCE84000_DECLFlowerProto_INSTANCE85000_transform",
+                              "@toField": "set_translation"
+                            }
+                          },
+                          {
+                            "ROUTE": {
+                              "@fromNode": "DECLflower_INSTANCE84000_DECLFlowerProto_INSTANCE85000_Bounce",
+                              "@fromField": "a",
+                              "@toNode": "DECLflower_INSTANCE84000_DECLFlowerProto_INSTANCE85000_shader",
+                              "@toField": "a"
+                            }
+                          },
+                          {
+                            "ROUTE": {
+                              "@fromNode": "DECLflower_INSTANCE84000_DECLFlowerProto_INSTANCE85000_Bounce",
+                              "@fromField": "b",
+                              "@toNode": "DECLflower_INSTANCE84000_DECLFlowerProto_INSTANCE85000_shader",
+                              "@toField": "b"
+                            }
+                          },
+                          {
+                            "ROUTE": {
+                              "@fromNode": "DECLflower_INSTANCE84000_DECLFlowerProto_INSTANCE85000_Bounce",
+                              "@fromField": "c",
+                              "@toNode": "DECLflower_INSTANCE84000_DECLFlowerProto_INSTANCE85000_shader",
+                              "@toField": "c"
+                            }
+                          },
+                          {
+                            "ROUTE": {
+                              "@fromNode": "DECLflower_INSTANCE84000_DECLFlowerProto_INSTANCE85000_Bounce",
+                              "@fromField": "d",
+                              "@toNode": "DECLflower_INSTANCE84000_DECLFlowerProto_INSTANCE85000_shader",
+                              "@toField": "d"
+                            }
+                          },
+                          {
+                            "ROUTE": {
+                              "@fromNode": "DECLflower_INSTANCE84000_DECLFlowerProto_INSTANCE85000_Bounce",
+                              "@fromField": "tdelta",
+                              "@toNode": "DECLflower_INSTANCE84000_DECLFlowerProto_INSTANCE85000_shader",
+                              "@toField": "tdelta"
+                            }
+                          },
+                          {
+                            "ROUTE": {
+                              "@fromNode": "DECLflower_INSTANCE84000_DECLFlowerProto_INSTANCE85000_Bounce",
+                              "@fromField": "pdelta",
+                              "@toNode": "DECLflower_INSTANCE84000_DECLFlowerProto_INSTANCE85000_shader",
+                              "@toField": "pdelta"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

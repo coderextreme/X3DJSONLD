@@ -97,7 +97,7 @@ public class ball {
           .addChild(new ShapeObject()
             .setGeometry(new SphereObject())
             .setAppearance(new AppearanceObject()
-              .setMaterial(new MaterialObject())
+              .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0.7f,0.7f,0.7f}).setSpecularColor(new float[] {0.5f,0.5f,0.5f}))
               .setTexture(new ComposedCubeMapTextureObject().setDEF("texture")
                 .setBack(new ImageTextureObject().setUrl(new MFStringObject(new MFString6().getArray())))
                 .setBottom(new ImageTextureObject().setUrl(new MFStringObject(new MFString7().getArray())))

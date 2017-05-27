@@ -24,14 +24,15 @@ var ProtoInstance2 = null;
               .setIS(new ISObject()
                 .addConnect(new connectObject().setNodeField("translation").setProtoField("position")))
               .addChild(new ShapeObject()
-                .addComments(new CommentsBlock("comment before Sphere"))
-                .addComments(new CommentsBlock("comment after Sphere"))
-                .addComments(new CommentsBlock("comment after Appearance"))
                 .setGeometry(new SphereObject())
                 .setAppearance(new AppearanceObject()
-                  .addComments(new CommentsBlock("comment before Material"))
-                  .addComments(new CommentsBlock("comment after Material"))
-                  .setMaterial(new MaterialObject().setDiffuseColor(Java.to([1,0,0], Java.type("float[]")))))))
+                  .setMaterial(new MaterialObject().setDiffuseColor(Java.to([1,0,0], Java.type("float[]"))))))
+              .addChild(new TransformObject().setTranslation(Java.to([1,0,0], Java.type("float[]")))
+                .addChild(new ShapeObject()
+                  .setGeometry(new TextObject().setString(Java.to(["Node"], Java.type("java.lang.String[]")))
+                    .setFontStyle(new FontStyleObject().setJustify(Java.to(["MIDDLE","MIDDLE"], Java.type("java.lang.String[]"))).setSize(5)))
+                  .setAppearance(new AppearanceObject()
+                    .setMaterial(new MaterialObject().setDiffuseColor(Java.to([0,0,1], Java.type("float[]"))))))))
             .addChild(new PositionInterpolatorObject().setDEF("NodePosition").setKey(Java.to([0,1], Java.type("float[]"))).setKeyValue(Java.to([0,0,0,0,5,0], Java.type("float[]"))))
             .addChild(new ScriptObject().setDEF("MoveBall")
               .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("translation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("50 50 0"))
@@ -55,26 +56,26 @@ var ProtoInstance2 = null;
             .addChild(new ROUTEObject().setFromNode("NodePosition").setFromField("value_changed").setToNode("transform").setToField("set_translation"))))
         .addChild(new ProtoDeclareObject().setName("cylinder")
           .setProtoInterface(new ProtoInterfaceObject()
-            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("positionA").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
-            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("positionB").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("set_positionA").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("set_positionB").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)))
           .setProtoBody(new ProtoBodyObject()
             .addChild(new ShapeObject()
-              .setGeometry(new ExtrusionObject().setDEF("extrusion").setCreaseAngle(0.785).setCrossSection(Java.to([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0], Java.type("float[]"))).setSpine(Java.to([0,-50,0,0,0,0,0,50,0], Java.type("float[]"))))
+              .setGeometry(new ExtrusionObject().setDEF("extrusion").setCreaseAngle(0.785).setCrossSection(Java.to([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0], Java.type("float[]"))).setSpine(Java.to([0,-50,0,0,50,0], Java.type("float[]"))))
               .setAppearance(new AppearanceObject()
                 .setMaterial(new MaterialObject().setDiffuseColor(Java.to([0,1,0], Java.type("float[]"))))))
             .addChild(new ScriptObject().setDEF("MoveCylinder")
-              .addField(new fieldObject().setType(fieldObject.TYPE_MFVEC3F).setName("spine").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 -50 0 0 0 0 0 50 0"))
+              .addField(new fieldObject().setType(fieldObject.TYPE_MFVEC3F).setName("spine").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 -50 0 0 50 0"))
               .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("set_endA").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
               .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("set_endB").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
               .setIS(new ISObject()
-                .addConnect(new connectObject().setNodeField("set_endA").setProtoField("positionA"))
-                .addConnect(new connectObject().setNodeField("set_endB").setProtoField("positionB")))
+                .addConnect(new connectObject().setNodeField("set_endA").setProtoField("set_positionA"))
+                .addConnect(new connectObject().setNodeField("set_endB").setProtoField("set_positionB")))
               .setSourceCode("\n"+
 "\n"+
 "ecmascript:\n"+
 "\n"+
 "                function set_endA(value) {\n"+
-"		    if (typeof spine === \"undefined\") {\n"+
+"		    if (typeof spine === 'undefined') {\n"+
 "		        spine = new MFVec3f(value, value);\n"+
 "		    } else {\n"+
 "		        spine = new MFVec3f(value, spine[1]);\n"+
@@ -82,7 +83,7 @@ var ProtoInstance2 = null;
 "                }\n"+
 "                \n"+
 "                function set_endB(value) {\n"+
-"		    if (typeof spine === \"undefined\") {\n"+
+"		    if (typeof spine === 'undefined') {\n"+
 "		        spine = new MFVec3f(value, value);\n"+
 "		    } else {\n"+
 "		        spine = new MFVec3f(spine[0], value);\n"+
@@ -94,18 +95,19 @@ var ProtoInstance2 = null;
 "                }\n"+
 ""))
             .addChild(new ROUTEObject().setFromNode("MoveCylinder").setFromField("spine").setToNode("extrusion").setToField("set_spine"))))
-        .addChild(new TransformObject().setScale(Java.to([0.1,0.1,0.1], Java.type("float[]")))
+        .addChild(new TransformObject().setDEF("HoldsContent").setScale(Java.to([0.1,0.1,0.1], Java.type("float[]")))
+          .addChild(new PlaneSensorObject().setDEF("clickGenerator").setMinPosition(Java.to([-50,-50], Java.type("float[]"))).setMaxPosition(Java.to([50,50], Java.type("float[]"))).setDescription("click on background to add nodes, click on nodes to add links"))
           .addChild(ProtoInstance0 = new ProtoInstanceObject().setName("node").setDEF("nodeA"))
           .addChild(ProtoInstance1 = new ProtoInstanceObject().setName("node").setDEF("nodeB"))
           .addChild(ProtoInstance2 = new ProtoInstanceObject().setName("cylinder").setDEF("linkA")))
-        .addChild(new ROUTEObject().setFromNode("nodeA").setFromField("position").setToNode("linkA").setToField("positionA"))
-        .addChild(new ROUTEObject().setFromNode("nodeB").setFromField("position").setToNode("linkA").setToField("positionB")))      ;
+        .addChild(new ROUTEObject().setFromNode("nodeA").setFromField("position").setToNode("linkA").setToField("set_positionA"))
+        .addChild(new ROUTEObject().setFromNode("nodeB").setFromField("position").setToNode("linkA").setToField("set_positionB")))      ;
 ProtoInstance0
-            .addFieldValue(new fieldValueObject().setName("position").setValue("-50 -50 -50"));
+            .addFieldValue(new fieldValueObject().setName("position").setValue("0 0 0"));
 ProtoInstance1
             .addFieldValue(new fieldValueObject().setName("position").setValue("50 50 50"));
 ProtoInstance2
-            .addFieldValue(new fieldValueObject().setName("positionA").setValue("0 0 0"));
+            .addFieldValue(new fieldValueObject().setName("set_positionA").setValue("0 0 0"));
 ProtoInstance2
-            .addFieldValue(new fieldValueObject().setName("positionB").setValue("50 50 50"));
+            .addFieldValue(new fieldValueObject().setName("set_positionB").setValue("50 50 50"));
     X3D0.toFileX3D("../data/fors.new.x3d");

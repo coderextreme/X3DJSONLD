@@ -101,12 +101,6 @@ public class SFVec3f {
           .addField(new fieldObject().setType("SFTime").setName("set_fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
           .setSourceCode("\n"+
 "ecmascript:\n"+
-"			function set_translation(value) {\n"+
-"				translation = value;\n"+
-"			}\n"+
-"			function translation_changed() {\n"+
-"				return translation;\n"+
-"			}\n"+
 "			function newBubble() {\n"+
 "			    translation = new SFVec3f(0, 0, 0);\n"+
 "			    velocity = new SFVec3f(\n"+
@@ -116,20 +110,22 @@ public class SFVec3f {
 "			}\n"+
 "			function set_fraction() {\n"+
 "			    translation = new SFVec3f(\n"+
-"			    	translation[0] + velocity[0],\n"+
-"				translation[1] + velocity[1],\n"+
-"				translation[2] + velocity[2]);\n"+
-"			    for (var j = 0; j <= 2; j++) {\n"+
-"				    if (Math.abs(translation[j]) > 10) {\n"+
+"			    	translation.x + velocity.x,\n"+
+"				translation.y + velocity.y,\n"+
+"				translation.z + velocity.z);\n"+
+"				if (Math.abs(translation.x) > 10) {\n"+
 "					newBubble();\n"+
-"				    } else {\n"+
+"				} else if (Math.abs(translation.y) > 10) {\n"+
+"					newBubble();\n"+
+"				} else if (Math.abs(translation.z) > 10) {\n"+
+"					newBubble();\n"+
+"				} else {\n"+
 "					velocity = new SFVec3f(\n"+
-"						velocity[0] + Math.random() * 0.2 - 0.1,\n"+
-"						velocity[1] + Math.random() * 0.2 - 0.1,\n"+
-"						velocity[2] + Math.random() * 0.2 - 0.1\n"+
+"						velocity.x + Math.random() * 0.2 - 0.1,\n"+
+"						velocity.y + Math.random() * 0.2 - 0.1,\n"+
+"						velocity.z + Math.random() * 0.2 - 0.1\n"+
 "					);\n"+
-"				    }\n"+
-"			    }\n"+
+"				}\n"+
 "			}\n"+
 "\n"+
 "			function initialize() {\n"+

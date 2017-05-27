@@ -99,7 +99,7 @@ public class flowers2 {
             .addChild(new ShapeObject()
               .setAppearance(new AppearanceObject()
                 .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0f,0.5f,1f}).setSpecularColor(new float[] {0f,0.5f,1f})))
-              .setGeometry(new IndexedFaceSetObject().setDEF("Orbit").setCreaseAngle(1.57f)
+              .setGeometry(new IndexedFaceSetObject().setConvex(false).setDEF("Orbit").setCreaseAngle(1.57f)
                 .setCoord(new CoordinateObject().setDEF("OrbitCoordinates")))))
           .addChild(new TransformObject().setDEF("OrbitTransform2").setTranslation(new float[] {-8f,0f,0f})
             .addChild(new ShapeObject()
@@ -126,15 +126,14 @@ public class flowers2 {
 "     resolution = 100;\n"+
 "     var localci = new MFInt32();\n"+
 "     generateCoordinates(resolution);\n"+
-"     ci = 0;\n"+
+"     var ci = 0;\n"+
 "     for ( i = 0; i < resolution-1; i++) {\n"+
 "     	for ( j = 0; j < resolution-1; j++) {\n"+
 "	     localci[ci] = i*resolution+j;\n"+
-"	     localci[ci+1] = i*resolution+j+1;\n"+
-"	     localci[ci+2] = (i+1)*resolution+j+1;\n"+
-"	     localci[ci+3] = (i+1)*resolution+j;\n"+
-"	     localci[ci+4] = -1;\n"+
-"	     ci += 5;\n"+
+"	     localci[ci++] = i*resolution+j+1;\n"+
+"	     localci[ci++] = (i+1)*resolution+j+1;\n"+
+"	     localci[ci++] = (i+1)*resolution+j;\n"+
+"	     localci[ci++] = -1;\n"+
 "	}\n"+
 "    }\n"+
 "    coordIndexes = localci;\n"+
@@ -148,10 +147,11 @@ public class flowers2 {
 "     for ( i = 0; i < resolution; i++) {\n"+
 "     	for ( j = 0; j < resolution; j++) {\n"+
 "		rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);\n"+
-"		localc[i*resolution+j] = [];\n"+
-"		localc[i*resolution+j][0] = rho * Math.cos(phi) * Math.cos(theta);\n"+
-"		localc[i*resolution+j][1] = rho * Math.cos(phi) * Math.sin(theta);\n"+
-"		localc[i*resolution+j][2] = rho * Math.sin(phi);\n"+
+"		localc[i*resolution+j] = new SFVec3f(\n"+
+"			rho * Math.cos(phi) * Math.cos(theta),\n"+
+"			rho * Math.cos(phi) * Math.sin(theta),\n"+
+"			rho * Math.sin(phi)\n"+
+"		);\n"+
 "		theta += delta;\n"+
 "	}\n"+
 "	phi += delta;\n"+

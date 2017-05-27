@@ -149,7 +149,7 @@ protected class MFString5 {
 }
 protected class MFString6 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"data/flowerproto.x3d#FlowerProto"});
+    return new MFStringObject(new java.lang.String[] {"../data/flowerproto.x3d#FlowerProto"});
   }
 }
 }

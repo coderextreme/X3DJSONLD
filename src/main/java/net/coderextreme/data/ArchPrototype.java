@@ -194,7 +194,7 @@ protected class MFString0 {
 }
 protected class MFString1 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"CoordinateAxes.x3d"});
+    return new MFStringObject(new java.lang.String[] {"../data/CoordinateAxes.x3d"});
   }
 }
 }
