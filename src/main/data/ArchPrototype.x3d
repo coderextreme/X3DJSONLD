@@ -108,6 +108,6 @@
       <fieldValue name='pierHeight' value='2'/>
     </ProtoInstance>
     <!-- Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare) -->
-    <Inline DEF='CoordinateAxes' url='"CoordinateAxes.x3d"'/>
+    <Inline DEF='CoordinateAxes' url='"../data/CoordinateAxes.x3d"'/>
   </Scene>
 </X3D>

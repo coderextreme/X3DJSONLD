@@ -32,7 +32,7 @@
           },
           {
             "@name":"translated",
-            "@content":"25 May 2017"
+            "@content":"26 May 2017"
           },
           {
             "@name":"generator",
@@ -75,17 +75,6 @@
                         "-children":[
                           { "Shape":
                             {
-                              "-children":[
-                                {
-                                  "#comment":"comment before Sphere"
-                                },
-                                {
-                                  "#comment":"comment after Sphere"
-                                },
-                                {
-                                  "#comment":"comment after Appearance"
-                                }
-                              ],
                               "-geometry":
                                 { "Sphere":
                                   {
@@ -94,14 +83,6 @@
                               "-appearance":
                                 { "Appearance":
                                   {
-                                    "-children":[
-                                      {
-                                        "#comment":"comment before Material"
-                                      },
-                                      {
-                                        "#comment":"comment after Material"
-                                      }
-                                    ],
                                     "-material":
                                       { "Material":
                                         {
@@ -110,6 +91,41 @@
                                       }
                                   }
                                 }
+                            }
+                          },
+                          { "Transform":
+                            {
+                              "@translation":[1,0,0],
+                              "-children":[
+                                { "Shape":
+                                  {
+                                    "-geometry":
+                                      { "Text":
+                                        {
+                                          "@string":["Node"],
+                                          "-fontStyle":
+                                            { "FontStyle":
+                                              {
+                                                "@justify":["MIDDLE","MIDDLE"],
+                                                "@size":5
+                                              }
+                                            }
+                                        }
+                                      },
+                                    "-appearance":
+                                      { "Appearance":
+                                        {
+                                          "-material":
+                                            { "Material":
+                                              {
+                                                "@diffuseColor":[0,0,1]
+                                              }
+                                            }
+                                        }
+                                      }
+                                  }
+                                }
+                              ]
                             }
                           }
                         ]
@@ -211,12 +227,12 @@
               "ProtoInterface": {
                   "field": [
                     {
-                      "@name":"positionA",
+                      "@name":"set_positionA",
                       "@accessType":"inputOnly",
                       "@type":"SFVec3f"
                     },
                     {
-                      "@name":"positionB",
+                      "@name":"set_positionB",
                       "@accessType":"inputOnly",
                       "@type":"SFVec3f"
                     }
@@ -232,7 +248,7 @@
                               "@DEF":"extrusion",
                               "@creaseAngle":0.785,
                               "@crossSection":[1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00],
-                              "@spine":[0,-50,0,0,0,0,0,50,0]
+                              "@spine":[0,-50,0,0,50,0]
                             }
                           },
                         "-appearance":
@@ -256,7 +272,7 @@
                             "@name":"spine",
                             "@accessType":"inputOutput",
                             "@type":"MFVec3f",
-                            "@value":[0,-50,0,0,0,0,0,50,0]
+                            "@value":[0,-50,0,0,50,0]
                           },
                           {
                             "@name":"set_endA",
@@ -273,11 +289,11 @@
                             "connect": [
                               {
                                 "@nodeField":"set_endA",
-                                "@protoField":"positionA"
+                                "@protoField":"set_positionA"
                               },
                               {
                                 "@nodeField":"set_endB",
-                                "@protoField":"positionB"
+                                "@protoField":"set_positionB"
                               }
                             ]
                         },
@@ -287,7 +303,7 @@
 "ecmascript:",
 "",
 "                function set_endA(value) {",
-"\t\t    if (typeof spine === \"undefined\") {",
+"\t\t    if (typeof spine === 'undefined') {",
 "\t\t        spine = new MFVec3f(value, value);",
 "\t\t    } else {",
 "\t\t        spine = new MFVec3f(value, spine[1]);",
@@ -295,7 +311,7 @@
 "                }",
 "                ",
 "                function set_endB(value) {",
-"\t\t    if (typeof spine === \"undefined\") {",
+"\t\t    if (typeof spine === 'undefined') {",
 "\t\t        spine = new MFVec3f(value, value);",
 "\t\t    } else {",
 "\t\t        spine = new MFVec3f(spine[0], value);",
@@ -322,8 +338,17 @@
           },
           { "Transform":
             {
+              "@DEF":"HoldsContent",
               "@scale":[0.1,0.1,0.1],
               "-children":[
+                { "PlaneSensor":
+                  {
+                    "@DEF":"clickGenerator",
+                    "@minPosition":[-50,-50],
+                    "@maxPosition":[50,50],
+                    "@description":"click on background to add nodes, click on nodes to add links"
+                  }
+                },
                 { "ProtoInstance":
                   {
                     "@name":"node",
@@ -331,7 +356,7 @@
                     "fieldValue": [
                       {
                         "@name":"position",
-                        "@value":[-50.0,-50.0,-50.0]
+                        "@value":[0.0,0.0,0.0]
                       }
                     ]
                   }
@@ -354,11 +379,11 @@
                     "@DEF":"linkA",
                     "fieldValue": [
                       {
-                        "@name":"positionA",
+                        "@name":"set_positionA",
                         "@value":[0,0,0]
                       },
                       {
-                        "@name":"positionB",
+                        "@name":"set_positionB",
                         "@value":[50,50,50]
                       }
                     ]
@@ -372,7 +397,7 @@
               "@fromNode":"nodeA",
               "@fromField":"position",
               "@toNode":"linkA",
-              "@toField":"positionA"
+              "@toField":"set_positionA"
             }
           },
           { "ROUTE":
@@ -380,7 +405,7 @@
               "@fromNode":"nodeB",
               "@fromField":"position",
               "@toNode":"linkA",
-              "@toField":"positionB"
+              "@toField":"set_positionB"
             }
           }
         ]

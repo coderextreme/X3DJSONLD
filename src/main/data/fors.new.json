@@ -32,7 +32,7 @@
           },
           {
             "@name":"translated",
-            "@content":"25 May 2017"
+            "@content":"26 May 2017"
           },
           {
             "@name":"generator",
@@ -83,31 +83,47 @@
                                         {
                                           "@diffuseColor":[1,0,0]
                                         }
-                                      },
-                                    "-children":[
-                                      {
-                                        "#comment":"comment before Material"
-                                      },
-                                      {
-                                        "#comment":"comment after Material"
                                       }
-                                    ]
                                   }
                                 },
                               "-geometry":
                                 { "Sphere":
                                   {
                                   }
-                                },
+                                }
+                            }
+                          },
+                          { "Transform":
+                            {
+                              "@translation":[1,0,0],
                               "-children":[
-                                {
-                                  "#comment":"comment before Sphere"
-                                },
-                                {
-                                  "#comment":"comment after Sphere"
-                                },
-                                {
-                                  "#comment":"comment after Appearance"
+                                { "Shape":
+                                  {
+                                    "-appearance":
+                                      { "Appearance":
+                                        {
+                                          "-material":
+                                            { "Material":
+                                              {
+                                                "@diffuseColor":[0,0,1]
+                                              }
+                                            }
+                                        }
+                                      },
+                                    "-geometry":
+                                      { "Text":
+                                        {
+                                          "@string":["Node"],
+                                          "-fontStyle":
+                                            { "FontStyle":
+                                              {
+                                                "@justify":["MIDDLE","MIDDLE"],
+                                                "@size":5.0
+                                              }
+                                            }
+                                        }
+                                      }
+                                  }
                                 }
                               ]
                             }
@@ -213,12 +229,12 @@
               "ProtoInterface": {
                   "field": [
                     {
-                      "@name":"positionA",
+                      "@name":"set_positionA",
                       "@accessType":"inputOnly",
                       "@type":"SFVec3f"
                     },
                     {
-                      "@name":"positionB",
+                      "@name":"set_positionB",
                       "@accessType":"inputOnly",
                       "@type":"SFVec3f"
                     }
@@ -245,7 +261,7 @@
                               "@DEF":"extrusion",
                               "@creaseAngle":0.785,
                               "@crossSection":[1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0],
-                              "@spine":[0,-50,0,0,0,0,0,50,0]
+                              "@spine":[0,-50,0,0,50,0]
                             }
                           }
                       }
@@ -258,7 +274,7 @@
                             "@name":"spine",
                             "@accessType":"inputOutput",
                             "@type":"MFVec3f",
-                            "@value":[0,-50,0,0,0,0,0,50,0]
+                            "@value":[0,-50,0,0,50,0]
                           },
                           {
                             "@name":"set_endA",
@@ -275,11 +291,11 @@
                             "connect": [
                               {
                                 "@nodeField":"set_endA",
-                                "@protoField":"positionA"
+                                "@protoField":"set_positionA"
                               },
                               {
                                 "@nodeField":"set_endB",
-                                "@protoField":"positionB"
+                                "@protoField":"set_positionB"
                               }
                             ]
                         },
@@ -291,7 +307,7 @@
 "ecmascript:",
 "",
 "                function set_endA(value) {",
-"\t\t    if (typeof spine === \"undefined\") {",
+"\t\t    if (typeof spine === 'undefined') {",
 "\t\t        spine = new MFVec3f(value, value);",
 "\t\t    } else {",
 "\t\t        spine = new MFVec3f(value, spine[1]);",
@@ -299,7 +315,7 @@
 "                }",
 "                ",
 "                function set_endB(value) {",
-"\t\t    if (typeof spine === \"undefined\") {",
+"\t\t    if (typeof spine === 'undefined') {",
 "\t\t        spine = new MFVec3f(value, value);",
 "\t\t    } else {",
 "\t\t        spine = new MFVec3f(spine[0], value);",
@@ -326,8 +342,17 @@
           },
           { "Transform":
             {
+              "@DEF":"HoldsContent",
               "@scale":[0.1,0.1,0.1],
               "-children":[
+                { "PlaneSensor":
+                  {
+                    "@DEF":"clickGenerator",
+                    "@description":"click on background to add nodes, click on nodes to add links",
+                    "@maxPosition":[50,50],
+                    "@minPosition":[-50,-50]
+                  }
+                },
                 { "ProtoInstance":
                   {
                     "@name":"node",
@@ -335,7 +360,7 @@
                     "fieldValue": [
                       {
                         "@name":"position",
-                        "@value":[-50,-50,-50]
+                        "@value":[0,0,0]
                       }
                     ]
                   }
@@ -358,11 +383,11 @@
                     "@DEF":"linkA",
                     "fieldValue": [
                       {
-                        "@name":"positionA",
+                        "@name":"set_positionA",
                         "@value":[0,0,0]
                       },
                       {
-                        "@name":"positionB",
+                        "@name":"set_positionB",
                         "@value":[50,50,50]
                       }
                     ]
@@ -375,7 +400,7 @@
             {
               "@fromField":"position",
               "@fromNode":"nodeA",
-              "@toField":"positionA",
+              "@toField":"set_positionA",
               "@toNode":"linkA"
             }
           },
@@ -383,7 +408,7 @@
             {
               "@fromField":"position",
               "@fromNode":"nodeB",
-              "@toField":"positionB",
+              "@toField":"set_positionB",
               "@toNode":"linkA"
             }
           }

@@ -1,5 +1,5 @@
 protoExpander.setLoadURLs(loadURLs);
-setProcessURLs(function() {}); // do not modify URLs in GUI
+//  setProcessURLs(function() {}); // do modify URLs in GUI
 
 var intervalId;
 function loadXmlBrowsers(xml) {
@@ -44,7 +44,8 @@ function loadScripts(json) {
 	// Now generate JavaScript code for Scripts and Routes
 	var classes = new LOG();
 	var routecode = new LOG();
-	processScripts(json, classes, undefined, routecode);
+	var loopItems = new LOG();
+	processScripts(json, classes, undefined, routecode, loopItems);
 
 	if (typeof intervalId !== 'undefined') {
 		console.error("Interval", intervalId, "cleared");
@@ -78,18 +79,54 @@ function loadScripts(json) {
 	$('body').append(routes);
 	*/
 
+	var loop = {}
+	loop.id = "loop";
+	loop.type = "text/javascript";
+	loop.text =loopItems.join("\n");
 	// When we zap the source, we prevent animation
 	// zapSource(json);
 
-	// console.error(scripts.text);
+	var X3DJSON = {};
+	X3DJSON.nodeUtil = function(node, field, value) {
+			var element = document.querySelector("[DEF='"+node+"'], [name='"+field+"']");
+			if (element === null) {
+				console.error('unDEFed node',node);
+			} else if (arguments.length > 2) {
+				element.setAttribute(field, value);
+				console.log('set', node, '.', field, '=', value);
+				return element;
+			} else if (arguments.length > 1) {
+				var value = element.getAttribute(field);
+				if (element &&
+					element._x3domNode &&
+					element._x3domNode._vf &&
+					element._x3domNode._vf[field] &&
+					element._x3domNode._vf[field].setValueByStr) {
+					value = element._x3domNode._vf[field].setValueByStr(value);
+				}
+				console.log('get', node, '.', field,'=',value);
+				return value;
+			} else {
+				return element;
+			}
+	};
 	try {
-		// console.error(scripts.text);
-		// console.error(routes.text);
 		// TODO eval is evil
-		eval(scripts.text+"\n"+routes.text);
+		eval("var myjson = "+JSON.stringify(json, null, 2)+";\n"+scripts.text+"\n"+routes.text);
 	} catch (e) {
-		console.error(e);
+		console.error(scripts.text+"\n"+routes.text, e);
 	}
+	var __eventTime = 0;
+	X3DJSON.runRoutes = function() {
+		try {
+			// TODO eval is evil
+			eval(loop.text);
+			x3dom.reload();  // This may be necessary
+		} catch (e) {
+			console.error(loop.txt, e);
+		}
+		__eventTime += 1000 / 60;
+	};
 	intervalId = setInterval(X3DJSON.runRoutes, 1000 / 60 );
     }
 }

@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"25 May 2017"
+            "@content":"26 May 2017"
           },
           {
             "@name":"generator",
@@ -226,7 +226,7 @@
 "\t\tfunction set_location(value) {",
 "                    old = translation;",
 "\t\t    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);",
-"                    keyValue = new MFVec3f(old, translation);",
+"                    keyValue = new MFVec3f([old, translation]);",
 "\t\t    // Browser.println(translation);",
 "\t\t}"
 ]

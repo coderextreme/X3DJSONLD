@@ -9,39 +9,43 @@
         <meta name='description' content='a sphere'/>
     </head>
     <Scene>
-        <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"EXAMINE"'/>
+        <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"ANY" "EXAMINE" "FLY" "LOOKAT"'/>
         <Viewpoint DEF='Tour' description='Tour Views'/>
-        <Viewpoint description='sphere in road' position='0 0 4'/>
-        <Background backUrl='"bBK.png" "https://coderextreme.net/bug/bBK.png"' bottomUrl='"bBT.png" "https://coderextreme.net/bug/bBT.png"' frontUrl='"bFR.png" "https://coderextreme.net/bug/bFR.png"' leftUrl='"bLF.png" "https://coderextreme.net/bug/bLF.png"' rightUrl='"bRT.png" "https://coderextreme.net/bug/bRT.png"' topUrl='"bTP.png" "https://coderextreme.net/bug/bTP.png"'/>
-        <Transform DEF='Rose01'>
+        <!-- Viewpoint position='0 0 4' description='sphere in road'/ -->
+        <Background backUrl='"resources/images/bBK.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"' bottomUrl='"resources/images/bBT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"' frontUrl='"resources/images/bFR.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"' leftUrl='"resources/images/bLF.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"' rightUrl='"resources/images/bRT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"' topUrl='"resources/images/bTP.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"'/>
+        <Transform>
             <Shape>
-                <Appearance DEF='_01_-_Default'>
+                <Appearance>
                     <Material diffuseColor='0.7 0.7 0.7' specularColor='0.5 0.5 0.5'/>
-                    <ComposedShader DEF='cobweb' language='GLSL'>
-                        <ShaderPart url='"../shaders/cobweb.vs" "https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"'/>
-                        <ShaderPart type='FRAGMENT' url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"'/>
-                        <field name='cube' accessType='inputOutput' type='SFInt32' value='0'/>
-                        <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'/>
-                        <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/>
-                        <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/>
-                        <field name='power' accessType='inputOutput' type='SFFloat' value='2.0'/>
-                    </ComposedShader>
-                    <ComposedShader DEF='x3dom' language='GLSL'>
+                    <ComposedShader language='GLSL'>
                         <ShaderPart url='"../shaders/x3dom.vs" "https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs"'/>
-                        <ShaderPart type='FRAGMENT' url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"'/>
-                        <field name='cube' accessType='inputOutput' type='SFInt32' value='0'/>
+                        <ShaderPart DEF='common' type='FRAGMENT' url='"../shaders/common.fs" "https://coderextreme.net/X3DJSONLD/shaders/common.fs"'/>
                         <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'/>
+                        <field name='cube' accessType='inputOutput' type='SFNode'>
+                            <ComposedCubeMapTexture USE='texture'/>
+                        </field>
                         <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/>
                         <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/>
                         <field name='power' accessType='inputOutput' type='SFFloat' value='2.0'/>
                     </ComposedShader>
-                    <ComposedCubeMapTexture>
-                        <ImageTexture containerField='back' url='"bBK.png" "https://coderextreme.net/bug/bBK.png"'/>
-                        <ImageTexture containerField='bottom' url='"bBT.png" "https://coderextreme.net/bug/bBT.png"'/>
-                        <ImageTexture containerField='front' url='"bFR.png" "https://coderextreme.net/bug/bFR.png"'/>
-                        <ImageTexture containerField='left' url='"bLF.png" "https://coderextreme.net/bug/bLF.png"'/>
-                        <ImageTexture containerField='right' url='"bRT.png" "https://coderextreme.net/bug/bRT.png"'/>
-                        <ImageTexture containerField='top' url='"bTP.png" "https://coderextreme.net/bug/bTP.png"'/>
+                    <ComposedShader language='GLSL'>
+                        <ShaderPart url='"../shaders/cobweb.vs" "https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"'/>
+                        <ShaderPart USE='common'/>
+                        <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'/>
+                        <field name='cube' accessType='initializeOnly' type='SFNode'>
+                            <ComposedCubeMapTexture USE='texture'/>
+                        </field>
+                        <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'/>
+                        <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'/>
+                        <field name='power' accessType='initializeOnly' type='SFFloat' value='2.0'/>
+                    </ComposedShader>
+                    <ComposedCubeMapTexture DEF='texture'>
+                        <ImageTexture containerField='back' url='"resources/images/bBK.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"'/>
+                        <ImageTexture containerField='bottom' url='"resources/images/bBT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"'/>
+                        <ImageTexture containerField='front' url='"resources/images/bFR.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"'/>
+                        <ImageTexture containerField='left' url='"resources/images/bLF.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"'/>
+                        <ImageTexture containerField='right' url='"resources/images/bRT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"'/>
+                        <ImageTexture containerField='top' url='"resources/images/bTP.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"'/>
                     </ComposedCubeMapTexture>
                 </Appearance>
                 <Sphere/>

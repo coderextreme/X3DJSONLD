@@ -54,8 +54,8 @@ function zapSource(object) {
 	}
 }
 
-function processScripts(object, classes, mypackage, routecode) {
-	classes.log("var MFBool = x3dom.fields.MFBool;");
+function processScripts(object, classes, mypackage, routecode, loopItems) {
+	classes.log("var MFBool = x3dom.fields.MFBoolean;");
 	classes.log("var MFColor = x3dom.fields.MFColor;");
 	classes.log("var MFColorRGBA = x3dom.fields.MFColorRGBA;");
 	classes.log("var MFDouble = function() { return Array.prototype.slice.call(arguments, 0); };");
@@ -92,7 +92,7 @@ function processScripts(object, classes, mypackage, routecode) {
 	classes.log("var SFMatrix4d = function() { return Array.prototype.slice.call(arguments, 0); };");
 	classes.log("var SFMatrix4f = x3dom.fields.SFMatrix4f;");
 	classes.log("var SFNode = x3dom.fields.SFNode;");
-	classes.log("var SFRotation = x3dom.fields.SFRotation;");
+	classes.log("var SFRotation = x3dom.fields.Quaternion;");
 
 	classes.log("SFString = String;");
 	classes.log("SFTime = Number;");
@@ -104,44 +104,61 @@ function processScripts(object, classes, mypackage, routecode) {
 	classes.log("var SFVec4d = function() { return Array.prototype.slice.call(arguments, 0); };");
 	classes.log("var SFvec4f = x3dom.fields.SFvec4f;");
 
-	classes.log('var X3DJSON = {};');
-	routecode.log("X3DJSON._ = function(node) {");
-	routecode.log("		if (typeof $ === 'undefined') {");
-	routecode.log("			return {");
-	routecode.log("				attr : function(attr, value) {");
-	routecode.log("					if (arguments.length > 1) {");
-	routecode.log("						this[attr] = value;");
-	routecode.log("						console.log('set '+ attr+ '='+ value);");
-	routecode.log("					} else {");
-	routecode.log("						console.log('get '+ attr+'='+this[attr]);");
-	routecode.log("						return(this[attr]);");
-	routecode.log("					}");
-	routecode.log("				},");
-	routecode.log("				getFieldValue : function(attr) {");
-	routecode.log("						console.log('get '+ attr+'='+this[attr]);");
-	routecode.log("						return(this[attr]);");
-	routecode.log("				},");
-	routecode.log("				setFieldValue : function(attr, value) {");
-	routecode.log("						this[attr] = value;");
-	routecode.log("						console.log('set '+ attr+ '='+ value);");
-	routecode.log("				}");
-	routecode.log("        		 };");
-	routecode.log("		} else {");
-	routecode.log("			if (!$(node)) {");
-	routecode.log("				console.error('undefined node',node);");
-	routecode.log("			} else {");
-	routecode.log("				var elements = $(\"[DEF='\"+node+\"'], [USE='\"+node+\"']\")[0];");
-	routecode.log("				return elements;");
-	routecode.log("			}");
-	routecode.log("		}");
-	routecode.log("};");
-	routecode.log("var __eventTime = 0;");
-	routecode.log("X3DJSON.runRoutes = function() {");
-	realProcessScripts(object, classes, mypackage, routecode);
-	routecode.log("__eventTime += 1000 / 60;");
-	routecode.log("};");
+	classes.log("if (typeof document === 'undefined') {");
+	classes.log("	document = { querySelector : function() {;");
+	classes.log("		return {");
+	classes.log("			setAttribute : function(field, value) {");
+	classes.log("				this[field] = value;");
+	classes.log("				console.log('set '+ field+ '='+ value);");
+	classes.log("			},");	
+	classes.log("			getAttribute : function(field) {");
+	classes.log("				var value = this[field];");
+	classes.log("				console.log('get '+ field+ '='+ value);");
+	classes.log("			}");	
+	classes.log("		};");	
+	classes.log("	}};");
+	classes.log("}");
+	realProcessScripts(object, classes, mypackage, routecode, loopItems);
 }
-function realProcessScripts(object, classes, mypackage, routecode) {
+
+function processRoute(route, routecode, mypackage, loopItems) {
+	var fromNode = route["@fromNode"];
+	var fromField = route["@fromField"];
+	var toNode = route["@toNode"];
+	var toField = route["@toField"];
+
+	routecode.log(declareX3DJSON('ROUTE', fromNode+":"+fromField+":"+toNode+":"+toField+":FROM"));
+	routecode.log(useX3DJSON('ROUTE', fromNode+":"+fromField+":"+toNode+":"+toField+":FROM")+" = new MutationObserver(function(mutations) {");
+	routecode.log("		mutations.forEach(function(mutation) {");
+	routecode.log("			console.log(mutation, '"+fromField+"');");	
+	var from =			 "X3DJSON.nodeUtil('"+fromNode+"','"+fromField+"')";
+	var to = 			"X3DJSON.nodeUtil('"+toNode+"','"+toField+"',";
+	routecode.log("			"+to+from+", __eventTime);");
+	routecode.log("		});");	
+	routecode.log("});");	
+	routecode.log("var config = { attributes: true, childList: true, attributeFilter:['"+fromField+"'] };");	
+	routecode.log(useX3DJSON('ROUTE', fromNode+":"+fromField+":"+toNode+":"+toField+":FROM")+".observe(X3DJSON.nodeUtil('"+fromNode+"'), config);");
+
+	routecode.log(declareX3DJSON('ROUTE', fromNode+":"+fromField+":"+toNode+":"+toField+":TO"));
+	routecode.log(useX3DJSON('ROUTE', fromNode+":"+fromField+":"+toNode+":"+toField+":TO")+" = new MutationObserver(function(mutations) {");
+	routecode.log("		mutations.forEach(function(mutation) {");
+	routecode.log("			console.log(mutation, '"+toField+"');");	
+	var newPackage = new Script(mypackage, toNode);
+	var from =			"X3DJSON.nodeUtil('"+fromNode+"','"+fromField+"')"; 
+	var to = 			'if (typeof '+useX3DJSON('Obj', newPackage.name)+'.'+toField+' === "function") '+useX3DJSON('Obj', newPackage.name) + '.'+toField+'(';
+	routecode.log("			"+to+from+", __eventTime);");
+	routecode.log("		});");	
+	routecode.log("});");	
+	routecode.log("var config = { attributes: true, childList: true, attributeFilter:['"+toField+"'] };");	
+	routecode.log(useX3DJSON('ROUTE', fromNode+":"+fromField+":"+toNode+":"+toField+":TO")+".observe(X3DJSON.nodeUtil('"+toNode+"'), config);");
+	//if (toField === 'set_fraction') {
+		var from =			 "X3DJSON.nodeUtil('"+fromNode+"','"+fromField+"')";
+		var to = 			"X3DJSON.nodeUtil('"+toNode+"','"+toField+"',";
+		loopItems.log("			"+to+from+", __eventTime);");
+	//}
+}
+
+function realProcessScripts(object, classes, mypackage, routecode, loopItems) {
 	mypackage = mypackage || new Script();
 	var p;
 	if (typeof object === "object") {
@@ -157,13 +174,13 @@ function realProcessScripts(object, classes, mypackage, routecode) {
 				var script = new Script(mypackage, name);
 				// console.error("SCRIPT IS ",JSON.stringify(object[p]));
 				registerFields(object[p]['field'], classes, script);
-				processSource(object[p]['#sourceText'], classes, script);
 				processFields(object[p]['field'], classes, script);
-				realProcessScripts(object[p], classes, script, routecode);
+				processSource(object[p]['#sourceText'], classes, script);
+				realProcessScripts(object[p], classes, script, routecode, loopItems);
 				// zap original source because we don't need it
 				// delete object[p]['#sourceText'];
 			} else if (p.toLowerCase() === 'route') {
-				processRoute(object[p], routecode, mypackage);
+				processRoute(object[p], routecode, mypackage, loopItems);
 			} else if (p.toLowerCase() === '@use') {
 				var name = object["@USE"];
 				object["@USE"] = name;
@@ -173,45 +190,10 @@ function realProcessScripts(object, classes, mypackage, routecode) {
 				object["@DEF"] = name;
 				// object[p] is not an object
 			} else {
-				realProcessScripts(object[p], classes, mypackage, routecode);
+				realProcessScripts(object[p], classes, mypackage, routecode, loopItems);
 			}
 		}
 	}
-}
-
-function processRoute(route, routecode, mypackage) {
-	var fromNode = route["@fromNode"];
-	var fromField = route["@fromField"];
-	var toNode = route["@toNode"];
-	var toField = route["@toField"];
-	if (typeof mypackage.find(toNode) === 'undefined') {
-		if (toField.indexOf("set_") === 0) {
-			var  to = 'X3DJSON._("'+toNode+'").setFieldValue("'+toField.substr(4)+'",';
-		} else {
-			var  to = 'X3DJSON._("'+toNode+'").setFieldValue("'+toField+'",';
-		}
-	} else {
-		if (toField.indexOf("set_") == 0) {
-			var  to = 'X3DJSON.Obj.' +toNode+'.'+toField+'(';
-		} else {
-			var  to = 'X3DJSON.Obj.' +toNode+'.set_'+toField+'(';
-		}
-	}
-	if (typeof mypackage.find(fromNode) === 'undefined') {
-		if (fromField.indexOf("_changed") > 0) {
-			var  from = 'X3DJSON._("'+fromNode+'").getFieldValue("'+fromField.substr(0, fromField.length-8)+'")';
-		} else {
-			var  from = 'X3DJSON._("'+fromNode+'").getFieldValue("'+fromField+'")';
-		}
-	} else {
-		var field = 'X3DJSON.Obj.'+fromNode+'.'+fromField;
-		if (fromField.indexOf("_changed") > 0) {
-			var from = 'typeof '+field+' === "function" ? '+field+'() : '+field
-		} else {
-			var from =  'typeof '+field+'_changed === "function" ? '+field+'_changed() : '+field+'_changed';
-		}
-	}
-	routecode.log('\t'+to+from+', __eventTime);');
 }
 
 function valueExpand(type, flat) {
@@ -286,6 +268,8 @@ function registerFields(fields, classes, mypackage) {
 }
 
 function processFields(fields, classes, mypackage) {
+	classes.log(declareX3DJSON('Script', mypackage.name));
+	classes.log(useX3DJSON('Script', mypackage.name) +  ' = function() {');
 	// console.error("0FIELDS IS "+JSON.stringify(fields));
 	var f;
 	var initializers = [];
@@ -337,35 +321,28 @@ function processFields(fields, classes, mypackage) {
 			console.error("--------------------------------------undefined field", v);
 		}
 		// Don't override existing functions
-		if (!mypackage.functions[v]) {
-			// Initialization
-			/*
-			if (typeof types[v] === 'undefined') {
-			*/
-				classes.log(indent + "this." + v + ' = '+values[v] + ';');
-			/*
-			} else {
-				classes.log(indent + "this." + v + ' = new '+types[v]+'('+values[v] + ');');
-			}
-			*/
-		}
 		if (!mypackage.functions['set_'+v]) {
 			// setter
-			classes.log(indent+ "this.set_" + v + ' = function (value) { if (value) this.' + v +  ' = (value.indexOf(",") >= 0 ? value.split(",") : value); };');
+			classes.log(indent + "this.set_" + v + ' = function (value) {');
+			classes.log(indent.repeat(2) + "X3DJSON.nodeUtil('"+mypackage.name+"', '"+v+"', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));");
+			classes.log(indent + "};");
 		}
 		if (!mypackage.functions[v+'_changed']) {
 			// getter
-			classes.log(indent+ "this." + v + '_changed = function () { return this.' + v +  '; };');
+			classes.log(indent+ "this." + v + '_changed = function () {');
+			classes.log(indent.repeat(2) + "var value = X3DJSON.nodeUtil('"+mypackage.name+"', '"+v+"');");
+			classes.log(indent.repeat(2) + "return value;");
+			classes.log(indent+ "};");
+		}
+		if (!mypackage.functions[v]) {
+			// Initialization
+			classes.log(indent + "this.set_"+v+"("+values[v]+");");
 		}
 	}
-	classes.log('};');
-	classes.log(declareX3DJSON('Obj', mypackage));
-	classes.log(useX3DJSON('Obj', mypackage) + ' = new '+ useX3DJSON('Script', mypackage) +'();');
-	classes.log('if (typeof '+useX3DJSON('Obj', mypackage) + '.initialize === "function") '+useX3DJSON('Obj', mypackage) + '.initialize();');
 }
 
 function declareX3DJSON(type, mypackage) {
-	var hier = (type+":"+mypackage.name).split(/:/);
+	var hier = (type+":"+mypackage).split(/:/);
 	var str = "";
 	for (var h = 1; h < hier.length; h++) {
 		var sub = "X3DJSON['"+hier.slice(0, h).join("']['")+"']";
@@ -377,14 +354,12 @@ function declareX3DJSON(type, mypackage) {
 
 }
 function useX3DJSON(type, mypackage) {
-	var hier = (type+":"+mypackage.name).split(/:/);
-	str = "X3DJSON['"+hier.slice(0, hier.length).join("']['")+"']";
+	var hier = (type+":"+mypackage).split(/:/);
+	var str = "X3DJSON['"+hier.slice(0, hier.length).join("']['")+"']";
 	return str;
 }
 
 function processSource(lines, classes, mypackage) {
-	classes.log(declareX3DJSON('Script', mypackage));
-	classes.log(useX3DJSON('Script', mypackage) +  ' = function() {');
 	if (typeof lines !== 'undefined') {
 		for (var l in lines) {
 			lines[l] = lines[l].replace(/[\n\r]/g, "").replace(/\/\/(.*)function/g, '//$1functino');
@@ -416,8 +391,13 @@ function processSource(lines, classes, mypackage) {
 			var trail = fxns[f1].rail;
 			// replace fields in body
 			for (var n in mypackage.fields) {
-				var pattern = '(\\b)('+n+')(\\b)';
-				body = body.replace(new RegExp(pattern, 'g'), "$1this.$2$3");
+				var pattern = '(\\b)('+n+'[ \t\n\r]+)=([^=][^;]*);';
+				body = body.replace(new RegExp(pattern, 'g'), "$1this.set_$2($3);");
+				pattern = '(\\b)('+n+')[ \t]+([-\+\*\/\|\&\^])=([^;]*);';
+				body = body.replace(new RegExp(pattern, 'g'), "$1this.set_$2(this.$2_changed() $3 $4);");
+				pattern = "(\\b)("+n+")(\\b)";
+				body = body.replace(new RegExp(pattern, 'g'), "$1this.$2_changed()$3");
+		 
 			}
 
 			// replace function call names in body (not function declarations, see below)
@@ -440,6 +420,10 @@ function processSource(lines, classes, mypackage) {
 			classes.log(trail);
 		}
 	}
+	classes.log('};');
+	classes.log(declareX3DJSON('Obj', mypackage.name));
+	classes.log(useX3DJSON('Obj', mypackage.name) + ' = new '+ useX3DJSON('Script', mypackage.name) +'();');
+	classes.log('if (typeof '+useX3DJSON('Obj',mypackage.name)+'.initialize === "function") '+useX3DJSON('Obj', mypackage.name) + '.initialize();');
 }
 
 if (typeof module === 'object')  {

@@ -38,7 +38,7 @@
           },
           {
             "@name":"translated",
-            "@content":"25 May 2017"
+            "@content":"27 May 2017"
           },
           {
             "@name":"generator",
@@ -304,12 +304,17 @@
                   "@value":[0,0,10,-10,0,0,0,0,-10,10,0,0,0,0,10,0,10,0,0,0,10,0,-10,0,0,0,10]
                 },
                 {
-                  "@name":"position",
+                  "@name":"position_changed",
                   "@accessType":"outputOnly",
                   "@type":"MFVec3f"
                 },
                 {
-                  "@name":"orientation",
+                  "@name":"set_orientation",
+                  "@accessType":"inputOnly",
+                  "@type":"MFRotation"
+                },
+                {
+                  "@name":"orientation_changed",
                   "@accessType":"outputOnly",
                   "@type":"MFRotation"
                 }
@@ -317,30 +322,21 @@
               "#sourceText":[
 "",
 "",
-"ecmascript:",
+"",
+"\t    ecmascript:",
 "               function set_cycle(value) {",
-"                        //var positions = [[0, 0, 10], [-10, 0, 0], [0, 0, -10], [10, 0, 0], [0, 0, 10], [0, 10, 0], [0, 0, 10], [0, -10, 0], [0, 0, 10]];",
-"                        //var orientations = [[0, 1, 0, 0], [0, 1, 0, -1.57], [0, 1, 0, 3.14], [0, 1, 0, 1.57], [0, 1, 0, 0] [1, 0, 0, -1.57], [0, 1, 0, 0], [1, 0, 0, 1.57], [0, 1, 0, 0]];",
-"                        //Browser.println(lastKey);",
 "                        var ov = lastKey;",
-"                        // Browser.println(ov);      ",
-"                        //Browser.println(positions.length);                  ",
 "                        do {",
 "                            lastKey = Math.round(Math.random()*(positions.length-1));",
 "                        } while (lastKey === ov);",
-"                        // Browser.println(lastKey);",
 "                        var vc = lastKey;",
 "                        ",
-"                        // Browser.println(orientations[ov]);",
-"                        // Browser.println(orientations[vc]);",
-"                        orientation = new MFRotation();",
-"                        orientation[0] = new SFRotation(orientations[ov][0], orientations[ov][1], orientations[ov][2], orientations[ov][3]);",
-"                        orientation[1] = new SFRotation(orientations[vc][0], orientations[vc][1], orientations[vc][2], orientations[vc][3]);",
-"                        // Browser.println(positions[ov]);",
-"                        // Browser.println(positions[vc]);",
-"                        position = new MFVec3f();",
-"                        position[0] = new SFVec3f(positions[ov][0],positions[ov][1],positions[ov][2]);",
-"                        position[1] = new SFVec3f(positions[vc][0],positions[vc][1],positions[vc][2]);",
+"                        orientation_changed = new MFRotation();",
+"                        orientation_changed[0] = new SFRotation(orientations[ov].x, orientations[ov].y, orientations[ov].z, orientations[ov].w);",
+"                        orientation_changed[1] = new SFRotation(orientations[vc].x, orientations[vc].y, orientations[vc].z, orientations[vc].w);",
+"                        position_changed = new MFVec3f();",
+"                        position_changed[0] = new SFVec3f(positions[ov].x,positions[ov].y,positions[ov].z);",
+"                        position_changed[1] = new SFVec3f(positions[vc].x,positions[vc].y,positions[vc].z);",
 "                    // }",
 "               }"
 ]
@@ -348,7 +344,7 @@
           },
           { "ROUTE":
             {
-              "@fromField":"cycleTime",
+              "@fromField":"cycleTime_changed",
               "@fromNode":"TourTime",
               "@toField":"set_cycle",
               "@toNode":"RandomTourTime"
@@ -356,17 +352,17 @@
           },
           { "ROUTE":
             {
-              "@fromField":"orientation",
+              "@fromField":"orientation_changed",
               "@fromNode":"RandomTourTime",
-              "@toField":"keyValue",
+              "@toField":"set_keyValue",
               "@toNode":"TourOrientation"
             }
           },
           { "ROUTE":
             {
-              "@fromField":"position",
+              "@fromField":"position_changed",
               "@fromNode":"RandomTourTime",
-              "@toField":"keyValue",
+              "@toField":"set_keyValue",
               "@toNode":"TourPosition"
             }
           },

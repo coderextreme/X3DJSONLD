@@ -52,7 +52,7 @@
           },
           {
             "@name":"translated",
-            "@content":"25 May 2017"
+            "@content":"26 May 2017"
           },
           {
             "@name":"generator",
@@ -492,7 +492,7 @@
           { "Inline":
             {
               "@DEF":"CoordinateAxes",
-              "@url":["CoordinateAxes.x3d"]
+              "@url":["../data/CoordinateAxes.x3d"]
             }
           }
         ]

@@ -23,6 +23,7 @@ var www = config.x3dcode;
 
 app.use(express.static('src/main'));
 app.use(express.static('src/main/html'));
+app.use(express.static('src/main/data'));
 app.use(express.static('src/main/node'));
 app.use(express.static('src/main/orig'));
 app.use(express.static('src/main/out'));
@@ -86,7 +87,7 @@ app.get("/X3dGraphics.com/*.x3d", function(req, res, next) {
 	if (hash > 0) {
 	       infile = url.substring(0, hash);
 	}
-	var infile = "http:/" + infile;
+	infile = "http:/" + infile;
 	console.log("Proxy", infile);
 	console.log("=========== converting == ", infile);
 	var outfile = infile.substr(0, infile.lastIndexOf("."))+".json";
@@ -99,8 +100,19 @@ app.get("/www.web3d.org/*.x3d", function(req, res, next) {
 	if (hash > 0) {
 	       infile = url.substring(0, hash);
 	}
-	var infile = www + "/" + infile;
+	infile = www + "/" + infile;
 	console.log("Proxy", infile);
+	console.log("=========== converting == ", infile);
+	var outfile = infile.substr(0, infile.lastIndexOf("."))+".json";
+	convertX3dToJson(res, infile, outfile, next);
+});
+app.get("/data/*.x3d", function(req, res, next) {
+	var url = req._parsedUrl.pathname;
+	var hash = url.indexOf("#");
+	var infile = url;
+	if (hash > 0) {
+	       infile = url.substring(0, hash);
+	}
 	console.log("=========== converting == ", infile);
 	var outfile = infile.substr(0, infile.lastIndexOf("."))+".json";
 	convertX3dToJson(res, infile, outfile, next);

@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"25 May 2017"
+            "@content":"26 May 2017"
           },
           {
             "@name":"generator",
@@ -85,85 +85,184 @@
                           "-shaders":[
                             { "ComposedShader":
                               {
+                                "@DEF":"x3dom",
+                                "@language":"GLSL",
+                                "-parts":[
+                                  { "ShaderPart":
+                                    {
+                                      "@type":"VERTEX",
+                                      "@url":["../shaders/x3dom_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/shaders/x3dom_flowers_chromatic.vs"]
+                                    }
+                                  },
+                                  { "ShaderPart":
+                                    {
+                                      "@type":"FRAGMENT",
+                                      "@url":["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/shaders/common.fs"]
+                                    }
+                                  }
+                                ],
+                                "field": [
+                                  {
+                                    "@name":"cube",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFInt32",
+                                    "@value":0
+                                  },
+                                  {
+                                    "@name":"chromaticDispertion",
+                                    "@accessType":"initializeOnly",
+                                    "@type":"SFVec3f",
+                                    "@value":[0.98,1,1.033]
+                                  },
+                                  {
+                                    "@name":"bias",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFFloat",
+                                    "@value":0.5
+                                  },
+                                  {
+                                    "@name":"scale",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFFloat",
+                                    "@value":0.5
+                                  },
+                                  {
+                                    "@name":"power",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFFloat",
+                                    "@value":2.0
+                                  },
+                                  {
+                                    "@name":"a",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFFloat",
+                                    "@value":10.0
+                                  },
+                                  {
+                                    "@name":"b",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFFloat",
+                                    "@value":1.0
+                                  },
+                                  {
+                                    "@name":"c",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFFloat",
+                                    "@value":20.0
+                                  },
+                                  {
+                                    "@name":"d",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFFloat",
+                                    "@value":20.0
+                                  },
+                                  {
+                                    "@name":"tdelta",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFFloat",
+                                    "@value":0.0
+                                  },
+                                  {
+                                    "@name":"pdelta",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFFloat",
+                                    "@value":0.0
+                                  }
+                                ],
+                                "-children":[
+                                  {
+                                    "#comment":"field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field"
+                                  }
+                                ]
+                              }
+                            },
+                            { "ComposedShader":
+                              {
                                 "@DEF":"cobweb",
                                 "@language":"GLSL",
                                 "-parts":[
                                   { "ShaderPart":
                                     {
                                       "@type":"VERTEX",
-                                      "@url":["../shaders/cobweb_flowers_input.vs","https://coderextreme.net/X3DJSONLD/shaders/cobweb_flowers_input.vs"]
+                                      "@url":["../shaders/cobweb_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/shaders/cobweb_flowers_chromatic.vs"]
                                     }
                                   },
                                   { "ShaderPart":
                                     {
                                       "@type":"FRAGMENT",
-                                      "@url":["../shaders/pc_input_flowers.fs","https://coderextreme.net/X3DJSONLD/shaders/pc_input_flowers.fs"]
+                                      "@url":["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/shaders/common.fs"]
                                     }
                                   }
                                 ],
                                 "field": [
                                   {
-                                    "@name":"set_cube",
-                                    "@accessType":"inputOnly",
-                                    "@type":"SFInt32",
-                                    "@value":0
+                                    "@name":"cube",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFNode",
+                                    "-children":[
+                                      { "ComposedCubeMapTexture":
+                                        {
+                                          "@USE":"texture"
+                                        }
+                                      }
+                                    ]
                                   },
                                   {
-                                    "@name":"set_chromaticDispertion",
+                                    "@name":"chromaticDispertion",
                                     "@accessType":"initializeOnly",
                                     "@type":"SFVec3f",
                                     "@value":[0.98,1,1.033]
                                   },
                                   {
-                                    "@name":"set_bias",
+                                    "@name":"bias",
                                     "@accessType":"inputOnly",
                                     "@type":"SFFloat",
                                     "@value":0.5
                                   },
                                   {
-                                    "@name":"set_scale",
+                                    "@name":"scale",
                                     "@accessType":"inputOnly",
                                     "@type":"SFFloat",
                                     "@value":0.5
                                   },
                                   {
-                                    "@name":"set_power",
+                                    "@name":"power",
                                     "@accessType":"inputOnly",
                                     "@type":"SFFloat",
                                     "@value":2.0
                                   },
                                   {
-                                    "@name":"set_a",
+                                    "@name":"a",
                                     "@accessType":"inputOnly",
                                     "@type":"SFFloat",
                                     "@value":10.0
                                   },
                                   {
-                                    "@name":"set_b",
+                                    "@name":"b",
                                     "@accessType":"inputOnly",
                                     "@type":"SFFloat",
                                     "@value":1.0
                                   },
                                   {
-                                    "@name":"set_c",
+                                    "@name":"c",
                                     "@accessType":"inputOnly",
                                     "@type":"SFFloat",
                                     "@value":20.0
                                   },
                                   {
-                                    "@name":"set_d",
+                                    "@name":"d",
                                     "@accessType":"inputOnly",
                                     "@type":"SFFloat",
                                     "@value":20.0
                                   },
                                   {
-                                    "@name":"set_tdelta",
+                                    "@name":"tdelta",
                                     "@accessType":"inputOnly",
                                     "@type":"SFFloat",
                                     "@value":0.0
                                   },
                                   {
-                                    "@name":"set_pdelta",
+                                    "@name":"pdelta",
                                     "@accessType":"inputOnly",
                                     "@type":"SFFloat",
                                     "@value":0.0
@@ -175,6 +274,7 @@
                           "-texture":
                             { "ComposedCubeMapTexture":
                               {
+                                "@DEF":"texture",
                                 "-back":
                                   { "ImageTexture":
                                     {
@@ -224,7 +324,6 @@
                     "-geometry":
                       { "Sphere":
                         {
-                          "@radius":20.0,
                           "@solid":false
                         }
                       }
@@ -275,33 +374,33 @@
                   "@value":["../resources/images/all_probes/beach_cross/beach_bottom.png","../resources/images/all_probes/building_cross/building_bottom.png","../resources/images/all_probes/campus_cross/campus_bottom.png","../resources/images/all_probes/galileo_cross/galileo_bottom.png","../resources/images/all_probes/grace_cross/grace_bottom.png","../resources/images/all_probes/kitchen_cross/kitchen_bottom.png","../resources/images/all_probes/rnl_cross/rnl_bottom.png","../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","../resources/images/all_probes/uffizi_cross/uffizi_bottom.png"]
                 },
                 {
-                  "@name":"front_changed",
-                  "@accessType":"outputOnly",
+                  "@name":"front",
+                  "@accessType":"inputOutput",
                   "@type":"MFString"
                 },
                 {
-                  "@name":"back_changed",
-                  "@accessType":"outputOnly",
+                  "@name":"back",
+                  "@accessType":"inputOutput",
                   "@type":"MFString"
                 },
                 {
-                  "@name":"left_changed",
-                  "@accessType":"outputOnly",
+                  "@name":"left",
+                  "@accessType":"inputOutput",
                   "@type":"MFString"
                 },
                 {
-                  "@name":"right_changed",
-                  "@accessType":"outputOnly",
+                  "@name":"right",
+                  "@accessType":"inputOutput",
                   "@type":"MFString"
                 },
                 {
-                  "@name":"top_changed",
-                  "@accessType":"outputOnly",
+                  "@name":"top",
+                  "@accessType":"inputOutput",
                   "@type":"MFString"
                 },
                 {
-                  "@name":"bottom_changed",
-                  "@accessType":"outputOnly",
+                  "@name":"bottom",
+                  "@accessType":"inputOutput",
                   "@type":"MFString"
                 },
                 {
@@ -329,127 +428,19 @@
 "            }",
 "            if (side != old) {",
 "                    old = side;",
-"                    front_changed[0] = frontUrls[side];",
-"                    back_changed[0] = backUrls[side];",
-"                    left_changed[0] = leftUrls[side];",
-"                    right_changed[0] = rightUrls[side];",
-"                    top_changed[0] = topUrls[side];",
-"                    bottom_changed[0] = bottomUrls[side];",
+"                    front[0] = frontUrls[side];",
+"                    back[0] = backUrls[side];",
+"                    left[0] = leftUrls[side];",
+"                    right[0] = rightUrls[side];",
+"                    top[0] = topUrls[side];",
+"                    bottom[0] = bottomUrls[side];",
 "            }",
 "        }"
 ]
             }
           },
-          { "TimeSensor":
-            {
-              "@DEF":"Clock",
-              "@cycleInterval":45.0,
-              "@loop":true
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromField":"fraction_changed",
-              "@fromNode":"Clock",
-              "@toField":"set_fraction",
-              "@toNode":"UrlSelector"
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromField":"front_changed",
-              "@fromNode":"UrlSelector",
-              "@toField":"frontUrl",
-              "@toNode":"background"
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromField":"back_changed",
-              "@fromNode":"UrlSelector",
-              "@toField":"backUrl",
-              "@toNode":"background"
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromField":"left_changed",
-              "@fromNode":"UrlSelector",
-              "@toField":"leftUrl",
-              "@toNode":"background"
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromField":"right_changed",
-              "@fromNode":"UrlSelector",
-              "@toField":"rightUrl",
-              "@toNode":"background"
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromField":"top_changed",
-              "@fromNode":"UrlSelector",
-              "@toField":"topUrl",
-              "@toNode":"background"
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromField":"bottom_changed",
-              "@fromNode":"UrlSelector",
-              "@toField":"bottomUrl",
-              "@toNode":"background"
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromField":"front_changed",
-              "@fromNode":"UrlSelector",
-              "@toField":"url",
-              "@toNode":"frontShader"
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromField":"back_changed",
-              "@fromNode":"UrlSelector",
-              "@toField":"url",
-              "@toNode":"backShader"
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromField":"left_changed",
-              "@fromNode":"UrlSelector",
-              "@toField":"url",
-              "@toNode":"leftShader"
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromField":"right_changed",
-              "@fromNode":"UrlSelector",
-              "@toField":"url",
-              "@toNode":"rightShader"
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromField":"top_changed",
-              "@fromNode":"UrlSelector",
-              "@toField":"url",
-              "@toNode":"topShader"
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromField":"bottom_changed",
-              "@fromNode":"UrlSelector",
-              "@toField":"url",
-              "@toNode":"bottomShader"
-            }
+          {
+            "#comment":"<TimeSensor DEF=\"Clock\" cycleInterval=\"45\" loop='true'/> <ROUTE fromNode='Clock' fromField='fraction_changed' toNode='UrlSelector' toField='set_fraction'/> <ROUTE fromNode='UrlSelector' fromField='front' toNode='background' toField='frontUrl'/> <ROUTE fromNode='UrlSelector' fromField='back' toNode='background' toField='backUrl'/> <ROUTE fromNode='UrlSelector' fromField='left' toNode='background' toField='leftUrl'/> <ROUTE fromNode='UrlSelector' fromField='right' toNode='background' toField='rightUrl'/> <ROUTE fromNode='UrlSelector' fromField='top' toNode='background' toField='topUrl'/> <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='background' toField='bottomUrl'/> <ROUTE fromNode='UrlSelector' fromField='front' toNode='frontShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='back' toNode='backShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='left' toNode='leftShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='right' toNode='rightShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='top' toNode='topShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='bottomShader' toField='url'/>"
           },
           { "Script":
             {
@@ -462,74 +453,38 @@
                   "@type":"SFFloat"
                 },
                 {
-                  "@name":"a_changed",
-                  "@accessType":"outputOnly",
+                  "@name":"a",
+                  "@accessType":"inputOutput",
                   "@type":"SFFloat",
                   "@value":10.0
                 },
                 {
-                  "@name":"b_changed",
-                  "@accessType":"outputOnly",
+                  "@name":"b",
+                  "@accessType":"inputOutput",
                   "@type":"SFFloat",
                   "@value":1.0
                 },
                 {
-                  "@name":"c_changed",
-                  "@accessType":"outputOnly",
+                  "@name":"c",
+                  "@accessType":"inputOutput",
                   "@type":"SFFloat",
                   "@value":20.0
                 },
                 {
-                  "@name":"d_changed",
-                  "@accessType":"outputOnly",
+                  "@name":"d",
+                  "@accessType":"inputOutput",
                   "@type":"SFFloat",
                   "@value":20.0
                 },
                 {
-                  "@name":"tdelta_changed",
-                  "@accessType":"outputOnly",
+                  "@name":"tdelta",
+                  "@accessType":"inputOutput",
                   "@type":"SFFloat",
                   "@value":0.0
                 },
                 {
-                  "@name":"pdelta_changed",
-                  "@accessType":"outputOnly",
-                  "@type":"SFFloat",
-                  "@value":0.0
-                },
-                {
-                  "@name":"set_a",
-                  "@accessType":"inputOnly",
-                  "@type":"SFFloat",
-                  "@value":10.0
-                },
-                {
-                  "@name":"set_b",
-                  "@accessType":"inputOnly",
-                  "@type":"SFFloat",
-                  "@value":1.0
-                },
-                {
-                  "@name":"set_c",
-                  "@accessType":"inputOnly",
-                  "@type":"SFFloat",
-                  "@value":20.0
-                },
-                {
-                  "@name":"set_d",
-                  "@accessType":"inputOnly",
-                  "@type":"SFFloat",
-                  "@value":20.0
-                },
-                {
-                  "@name":"set_tdelta",
-                  "@accessType":"inputOnly",
-                  "@type":"SFFloat",
-                  "@value":0.0
-                },
-                {
-                  "@name":"set_pdelta",
-                  "@accessType":"inputOnly",
+                  "@name":"pdelta",
+                  "@accessType":"inputOutput",
                   "@type":"SFFloat",
                   "@value":0.0
                 }
@@ -539,114 +494,153 @@
 "",
 "",
 "",
+"",
 "ecmascript:",
-"",
-"function set_a(value) {",
-"\ta = value;",
-"}",
-"",
-"function set_b(value) {",
-"\tb = value;",
-"}",
-"",
-"function set_c(value) {",
-"\tc = value;",
-"}",
-"",
-"function set_d(value) {",
-"\td = value;",
-"}",
-"",
-"function set_tdelta(value) {",
-"\ttdelta = value;",
-"}",
-"",
-"function set_tdelta(value) {",
-"\ttdelta = value;",
-"}",
 "",
 "function set_fraction() {",
 "\tvar choice = Math.floor(Math.random() * 4);",
 "\tif (choice == 0) {",
-"\t\tset_a(a + Math.floor(Math.random() * 2) * 2 - 1);",
+"\t\ta = a + Math.floor(Math.random() * 2) * 2 - 1;",
 "\t} else if (choice == 1) {",
-"\t\tset_b(b + Math.floor(Math.random() * 2) * 2 - 1);",
+"\t\tb = b + Math.floor(Math.random() * 2) * 2 - 1;",
 "\t} else if (choice == 2) {",
-"\t\tset_c(c + Math.floor(Math.random() * 2) * 2 - 1);",
+"\t\tc = c + Math.floor(Math.random() * 2) * 2 - 1;",
 "\t} else if (choice == 3) {",
-"\t\tset_d(d + Math.floor(Math.random() * 2) * 2 - 1);",
+"\t\td = d + Math.floor(Math.random() * 2) * 2 - 1;",
 "\t}",
-"\tset_tdelta(tdelta + 0.5);",
-"\tset_pdelta(pdelta + 0.5);",
+"\ttdelta = tdelta + 0.5;",
+"\tpdelta = pdelta + 0.5;",
 "\tif (a < 1) {",
-"\t\tset_a(10);",
+"\t\ta = 10;",
 "\t}",
 "\tif (b < 1) {",
-"\t\tset_b(10);",
+"\t\tb = 10;",
 "\t}",
 "\tif (c < 1) {",
-"\t\tset_c(4);",
+"\t\tc = 4;",
 "\t}",
 "\tif (c > 20) {",
-"\t\tset_c(4);",
+"\t\tc = 4;",
 "\t}",
 "\tif (d < 1) {",
-"\t\tset_d(4);",
+"\t\td = 4;",
 "\t}",
 "\tif (d > 20) {",
-"\t\tset_d(4);",
+"\t\td = 4;",
 "\t}",
-"\t// console.log(a, b, c, d, tdelta, pdelta);",
 "}"
 ]
             }
           },
+          { "TimeSensor":
+            {
+              "@DEF":"TourTime",
+              "@cycleInterval":5.0,
+              "@loop":true
+            }
+          },
           { "ROUTE":
             {
-              "@fromField":"a_changed",
+              "@fromField":"fraction_changed",
+              "@fromNode":"TourTime",
+              "@toField":"set_fraction",
+              "@toNode":"Animate"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"a",
               "@fromNode":"Animate",
-              "@toField":"set_a",
+              "@toField":"a",
               "@toNode":"cobweb"
             }
           },
           { "ROUTE":
             {
-              "@fromField":"b_changed",
+              "@fromField":"b",
               "@fromNode":"Animate",
-              "@toField":"set_b",
+              "@toField":"b",
               "@toNode":"cobweb"
             }
           },
           { "ROUTE":
             {
-              "@fromField":"c_changed",
+              "@fromField":"c",
               "@fromNode":"Animate",
-              "@toField":"set_c",
+              "@toField":"c",
               "@toNode":"cobweb"
             }
           },
           { "ROUTE":
             {
-              "@fromField":"d_changed",
+              "@fromField":"d",
               "@fromNode":"Animate",
-              "@toField":"set_d",
+              "@toField":"d",
               "@toNode":"cobweb"
             }
           },
           { "ROUTE":
             {
-              "@fromField":"pdelta_changed",
+              "@fromField":"pdelta",
               "@fromNode":"Animate",
-              "@toField":"set_pdelta",
+              "@toField":"pdelta",
               "@toNode":"cobweb"
             }
           },
           { "ROUTE":
             {
-              "@fromField":"tdelta_changed",
+              "@fromField":"tdelta",
               "@fromNode":"Animate",
-              "@toField":"set_tdelta",
+              "@toField":"tdelta",
               "@toNode":"cobweb"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"a",
+              "@fromNode":"Animate",
+              "@toField":"a",
+              "@toNode":"x3dom"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"b",
+              "@fromNode":"Animate",
+              "@toField":"b",
+              "@toNode":"x3dom"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"c",
+              "@fromNode":"Animate",
+              "@toField":"c",
+              "@toNode":"x3dom"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"d",
+              "@fromNode":"Animate",
+              "@toField":"d",
+              "@toNode":"x3dom"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"pdelta",
+              "@fromNode":"Animate",
+              "@toField":"pdelta",
+              "@toNode":"x3dom"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"tdelta",
+              "@fromNode":"Animate",
+              "@toField":"tdelta",
+              "@toNode":"x3dom"
             }
           }
         ]
