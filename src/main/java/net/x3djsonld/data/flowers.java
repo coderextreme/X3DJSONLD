@@ -8,7 +8,6 @@ import org.web3d.x3d.jsail.fields.*;
 import org.web3d.x3d.jsail.Geometry3D.*;
 import org.web3d.x3d.jsail.Grouping.*;
 import org.web3d.x3d.jsail.Navigation.*;
-import org.web3d.x3d.jsail.Rendering.*;
 import org.web3d.x3d.jsail.Scripting.*;
 import org.web3d.x3d.jsail.Shaders.*;
 import org.web3d.x3d.jsail.Shape.*;
@@ -95,6 +94,16 @@ public class flowers
                 .setLeft(new ImageTextureObject().setUrl(new MFStringObject("\"../resources/images/all_probes/stpeters_cross/stpeters_left.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png\"")))
                 .setRight(new ImageTextureObject().setUrl(new MFStringObject("\"../resources/images/all_probes/stpeters_cross/stpeters_right.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png\"")))
                 .setTop(new ImageTextureObject().setUrl(new MFStringObject("\"../resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png\""))))
+              .addShaders(new ComposedShaderObject().setLanguage("GLSL")
+                .addField(new fieldObject().setAccessType("inputOutput").setName("xxxcube").setType("SFInt32").setValue("0"))
+                .addField(new fieldObject().setAccessType("inputOutput").setName("cube").setType("SFNode")
+                  .addChild(new ComposedCubeMapTextureObject().setUSE("texture")))
+                .addField(new fieldObject().setAccessType("inputOutput").setName("chromaticDispertion").setType("SFVec3f").setValue("0.98 1.0 1.033"))
+                .addField(new fieldObject().setAccessType("inputOutput").setName("bias").setType("SFFloat").setValue("0.5"))
+                .addField(new fieldObject().setAccessType("inputOutput").setName("scale").setType("SFFloat").setValue("0.5"))
+                .addField(new fieldObject().setAccessType("inputOutput").setName("power").setType("SFFloat").setValue("2.0"))
+                .addParts(new ShaderPartObject().setUrl(new MFStringObject("\"../shaders/x3dom.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs\"")))
+                .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject("\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs\""))))
               .addShaders(new ComposedShaderObject("shader").setLanguage("GLSL")
                 .addField(new fieldObject().setAccessType("inputOutput").setName("xxxcube").setType("SFInt32").setValue("0"))
                 .addField(new fieldObject().setAccessType("inputOutput").setName("cube").setType("SFNode")
@@ -105,8 +114,11 @@ public class flowers
                 .addField(new fieldObject().setAccessType("inputOutput").setName("power").setType("SFFloat").setValue("2.0"))
                 .addParts(new ShaderPartObject().setUrl(new MFStringObject("\"../shaders/cobweb.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs\"")))
                 .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject("\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs\"")))))
-            .setGeometry(new IndexedFaceSetObject("Orbit").setDEF("Orbit")
-              .setCoord(new CoordinateObject("OrbitCoordinates")))))
+            .setGeometry(new SphereObject())
+            .addComments(new String[] {"",
+"			<IndexedFaceSet convex=\"false\" DEF=\"Orbit\" creaseAngle=\"0\">",
+"			    <Coordinate DEF=\"OrbitCoordinates\"/>",
+"			</IndexedFaceSet>"})))
         .addChild(new ScriptObject("Bounce").setSourceCode(
 "<![CDATA[" + "\n" +
 "\n" + 
@@ -117,7 +129,7 @@ public class flowers
 "			function translation_changed() {" + "\n" + 
 "				return translation;" + "\n" + 
 "			}" + "\n" + 
-"			function initialize() {" + "\n" + 
+"			function newBubble() {" + "\n" + 
 "			    translation = new SFVec3f(0, 0, 0);" + "\n" + 
 "			    velocity = new SFVec3f(" + "\n" + 
 "			    	Math.random() - 0.5," + "\n" + 
@@ -126,36 +138,37 @@ public class flowers
 "			}" + "\n" + 
 "			function set_fraction() {" + "\n" + 
 "			    translation = new SFVec3f(" + "\n" + 
-"			    	translation[0] + velocity[0]," + "\n" + 
-"				translation[1] + velocity[1]," + "\n" + 
-"				translation[2] + velocity[2]);" + "\n" + 
-"			    for (var j = 0; j <= 2; j++) {" + "\n" + 
-"				    if (Math.abs(translation[j]) > 10) {" + "\n" + 
-"					initialize();" + "\n" + 
-"				    } else {" + "\n" + 
-"					velocity[0] += Math.random() * 0.2 - 0.1;" + "\n" + 
-"					velocity[1] += Math.random() * 0.2 - 0.1;" + "\n" + 
-"					velocity[2] += Math.random() * 0.2 - 0.1;" + "\n" + 
-"				    }" + "\n" + 
+"			    	translation.x + velocity.x," + "\n" + 
+"				translation.y + velocity.y," + "\n" + 
+"				translation.z + velocity.z);" + "\n" + 
+"			    if (Math.abs(translation.x) > 10) {" + "\n" + 
+"					newBubble();" + "\n" + 
+"			    } else if (Math.abs(translation.y) > 10) {" + "\n" + 
+"					newBubble();" + "\n" + 
+"			    } else if (Math.abs(translation.z) > 10) {" + "\n" + 
+"					newBubble();" + "\n" + 
+"			    } else {" + "\n" + 
+"					velocity = new SFVec3f(" + "\n" + 
+"						velocity.x + Math.random() * 0.2 - 0.1," + "\n" + 
+"						velocity.y + Math.random() * 0.2 - 0.1," + "\n" + 
+"						velocity.z + Math.random() * 0.2 - 0.1" + "\n" + 
+"					);" + "\n" + 
 "			    }" + "\n" + 
 "			    animate_flowers();" + "\n" + 
 "			}" + "\n" + 
 "\n" + 
 "			function initialize() {" + "\n" + 
+"			     newBubble();" + "\n" + 
 "			     resolution = 100;" + "\n" + 
 "			     updateCoordinates(resolution);" + "\n" + 
-"			     if (typeof coordIndexes == 'undefined' || coordIndexes == null) {" + "\n" + 
-"				coordIndexes = new MFInt32();" + "\n" + 
-"			     }" + "\n" + 
-"			     ci = 0;" + "\n" + 
+"			     coordIndexes = new MFInt32();" + "\n" + 
 "			     for ( i = 0; i < resolution-1; i++) {" + "\n" + 
 "				for ( j = 0; j < resolution-1; j++) {" + "\n" + 
-"				     coordIndexes[ci] = i*resolution+j;" + "\n" + 
-"				     coordIndexes[ci+1] = i*resolution+j+1;" + "\n" + 
-"				     coordIndexes[ci+2] = (i+1)*resolution+j+1;" + "\n" + 
-"				     coordIndexes[ci+3] = (i+1)*resolution+j;" + "\n" + 
-"				     coordIndexes[ci+4] = -1;" + "\n" + 
-"				     ci += 5;" + "\n" + 
+"				     coordIndexes.push(i*resolution+j);" + "\n" + 
+"				     coordIndexes.push(i*resolution+j+1);" + "\n" + 
+"				     coordIndexes.push((i+1)*resolution+j+1);" + "\n" + 
+"				     coordIndexes.push((i+1)*resolution+j);" + "\n" + 
+"				     coordIndexes.push(-1);" + "\n" + 
 "				}" + "\n" + 
 "			    }" + "\n" + 
 "			}" + "\n" + 
@@ -170,10 +183,11 @@ public class flowers
 "			     for ( i = 0; i < resolution; i++) {" + "\n" + 
 "				for ( j = 0; j < resolution; j++) {" + "\n" + 
 "					rho = a + b * Math.cos(c * theta) * Math.cos(d * phi);" + "\n" + 
-"					coordinates[i*resolution+j] = new SFVec3f();" + "\n" + 
-"					coordinates[i*resolution+j][0] = rho * Math.cos(phi) * Math.cos(theta);" + "\n" + 
-"					coordinates[i*resolution+j][1] = rho * Math.cos(phi) * Math.sin(theta);" + "\n" + 
-"					coordinates[i*resolution+j][2] = rho * Math.sin(phi);" + "\n" + 
+"					coordinates[i*resolution+j] = new SFVec3f(" + "\n" + 
+"						rho * Math.cos(phi) * Math.cos(theta)," + "\n" + 
+"						rho * Math.cos(phi) * Math.sin(theta)," + "\n" + 
+"						rho * Math.sin(phi)" + "\n" + 
+"					);" + "\n" + 
 "					theta += delta;" + "\n" + 
 "				}" + "\n" + 
 "				phi += delta;" + "\n" + 
@@ -222,7 +236,7 @@ public class flowers
           .addField(new fieldObject().setAccessType("inputOutput").setName("velocity").setType("SFVec3f").setValue("0 0 0"))
           .addField(new fieldObject().setAccessType("inputOnly").setName("set_fraction").setType("SFTime"))
           .addField(new fieldObject().setAccessType("inputOutput").setName("coordinates").setType("MFVec3f"))
-          .addField(new fieldObject().setAccessType("inputOutput").setName("coordIndexes").setType("MFInt32"))
+          .addField(new fieldObject().setAccessType("outputOnly").setName("coordIndexes").setType("MFInt32"))
           .addField(new fieldObject().setAccessType("inputOutput").setName("a").setType("SFFloat").setValue("0.5"))
           .addField(new fieldObject().setAccessType("inputOutput").setName("b").setType("SFFloat").setValue("0.5"))
           .addField(new fieldObject().setAccessType("inputOutput").setName("c").setType("SFFloat").setValue("3"))
@@ -232,8 +246,9 @@ public class flowers
         .addChild(new TimeSensorObject("TourTime").setCycleInterval(0.150).setLoop(true))
         .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("cycleTime").setToNode("Bounce").setToField("set_fraction"))
         .addChild(new ROUTEObject().setFromNode("Bounce").setFromField("translation_changed").setToNode("transform").setToField("set_translation"))
-        .addChild(new ROUTEObject().setFromNode("Bounce").setFromField("coordIndexes").setToNode("Orbit").setToField("set_coordIndex"))
-        .addChild(new ROUTEObject().setFromNode("Bounce").setFromField("coordinates").setToNode("OrbitCoordinates").setToField("set_point"))))
+        .addComments(new String[] {"",
+"		<ROUTE fromField=\"coordIndexes\" fromNode=\"Bounce\" toField=\"set_coordIndex\" toNode=\"Orbit\"/>",
+"		<ROUTE fromField=\"coordinates\" fromNode=\"Bounce\" toField=\"set_point\" toNode=\"OrbitCoordinates\"/>"})))
     .addChild(new TransformObject()
       .addChild(new ProtoInstanceObject().setName("flower"))
       .addChild(new ProtoInstanceObject().setName("flower"))

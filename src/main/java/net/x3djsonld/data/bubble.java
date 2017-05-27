@@ -107,20 +107,44 @@ public class bubble
 "}" + "\n" + 
 "\n" + 
 "function set_fraction(value) {" + "\n" + 
-"    translation = new SFVec3f(	translation[0] + velocity[0], translation[1] + velocity[1], translation[2] + velocity[2]);" + "\n" + 
-"    scale = new SFVec3f(scale[0] + scalvel[0], scale[1] + scalvel[1], scale[2] + scalvel[2]);" + "\n" + 
-"    for (var j = 0; j < 3; j++) {" + "\n" + 
-"	    // if you get to far away or too big, explode" + "\n" + 
-"	    if ( Math.abs(translation[j]) > 256) {" + "\n" + 
-"		translation[j] = 0;" + "\n" + 
+"	translation = new SFVec3f(" + "\n" + 
+"		translation.x + velocity.x," + "\n" + 
+"		translation.y + velocity.y," + "\n" + 
+"		translation.z + velocity.z);" + "\n" + 
+"	scale = new SFVec3f(" + "\n" + 
+"		scale.x + scalvel.x," + "\n" + 
+"		scale.y + scalvel.y," + "\n" + 
+"		scale.z + scalvel.z);" + "\n" + 
+"        // if you get to far away or too big, explode" + "\n" + 
+"        if ( Math.abs(translation.x) > 256) {" + "\n" + 
+"		translation.x = 0;" + "\n" + 
 "		initialize();" + "\n" + 
-"	    }" + "\n" + 
-"	    if (Math.abs(scale[j]) > 20) {" + "\n" + 
-"		scale[j] = scale[j]/2;" + "\n" + 
-"		translation[j] = 0;" + "\n" + 
+"	}" + "\n" + 
+"        if ( Math.abs(translation.y) > 256) {" + "\n" + 
+"		translation.y = 0;" + "\n" + 
 "		initialize();" + "\n" + 
-"	    }" + "\n" + 
-"    }" + "\n" + 
+"	}" + "\n" + 
+"        if ( Math.abs(translation.z) > 256) {" + "\n" + 
+"		translation.z = 0;" + "\n" + 
+"		initialize();" + "\n" + 
+"	}" + "\n" + 
+"	if (Math.abs(scale.x) > 20) {" + "\n" + 
+"		scale.x = scale.x/2;" + "\n" + 
+"		translation.x = 0;" + "\n" + 
+"		initialize();" + "\n" + 
+"	}" + "\n" + 
+"	if (Math.abs(scale.y) > 20) {" + "\n" + 
+"		scale.y = scale.y/2;" + "\n" + 
+"		translation.y = 0;" + "\n" + 
+"		initialize();" + "\n" + 
+"	}" + "\n" + 
+"	if (Math.abs(scale.z) > 20) {" + "\n" + 
+"		scale.z = scale.z/2;" + "\n" + 
+"		translation.z = 0;" + "\n" + 
+"		initialize();" + "\n" + 
+"	}" + "\n" + 
+"	set_translation(translation);" + "\n" + 
+"	set_scale(scale);" + "\n" + 
 "}" + "\n" + "]]>"
 )
             .addField(new fieldObject().setAccessType("inputOutput").setName("scale").setType("SFVec3f").setValue("1 1 1"))
