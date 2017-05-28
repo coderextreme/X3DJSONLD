@@ -102,7 +102,7 @@ function processScripts(object, classes, mypackage, routecode, loopItems) {
 	classes.log("var SFVec3d = function() { return Array.prototype.slice.call(arguments, 0); };");
 	classes.log("var SFVec3f = x3dom.fields.SFVec3f;");
 	classes.log("var SFVec4d = function() { return Array.prototype.slice.call(arguments, 0); };");
-	classes.log("var SFvec4f = x3dom.fields.SFvec4f;");
+	classes.log("var SFVec4f = x3dom.fields.SFVec4f;");
 
 	classes.log("if (typeof document === 'undefined') {");
 	classes.log("	document = { querySelector : function() {;");
