@@ -1,4 +1,6 @@
-protoExpander.setLoadURLs(loadURLs);
+if (typeof protoExpander !== 'undefined') {
+	protoExpander.setLoadURLs(loadURLs);
+}
 //  setProcessURLs(function() {}); // do modify URLs in GUI
 
 var intervalId;
