@@ -15,7 +15,7 @@ var xmldom = require('xmldom');
 var DOMImplementation = new xmldom.DOMImplementation();
 
 var X3DJSONLD = require('./X3DJSONLD.js');
-X3DJSONLD.setProcessURLs(function() {}); // do modify URLs on server
+X3DJSONLD.setProcessURLs(function(urls) { return urls}); // do not modify URLs on server
 
 var selectObjectFromJSObj = X3DJSONLD.selectObjectFromJSObj;
 var ConvertToX3DOM = X3DJSONLD.ConvertToX3DOM;

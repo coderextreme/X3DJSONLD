@@ -27,10 +27,18 @@ function fixXML(xmlstr) {
 }
 
 
-function serializeDOM(json, element) {
-	var version = json.X3D["@version"];
-	var xml = '<?xml version="1.0" encoding="'+json.X3D["encoding"]+'"?>\n';
-	xml += '<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D '+version+'//EN" "http://www.web3d.org/specifications/x3d-'+version+'.dtd">\n';
+function serializeDOM(json, element, appendDocType) {
+	var version = "3.3";
+	var encoding = "UTF-8";
+	if (typeof json !== 'undefined') {
+		version = json.X3D["@version"];
+		encoding = json.X3D["encoding"];
+	}
+	var xml = '';
+	if (appendDocType) {
+		xml += '<?xml version="1.0" encoding="'+encoding+'"?>\n';
+		xml += '<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D '+version+'//EN" "http://www.web3d.org/specifications/x3d-'+version+'.dtd">\n';
+	}
 	xml += XMLSerializer.serializeToString(element);
 	xml = fixXML(xml);
 	return xml;
@@ -39,7 +47,7 @@ function serializeDOM(json, element) {
 function DOMSerializer() {};
 DOMSerializer.prototype = {
 	serializeToString : function (json, element) {
-		var str = serializeDOM(json, element);
+		var str = serializeDOM(json, element, true);
 		return str;
 	}
 }

@@ -15,6 +15,11 @@ convertJSON([
 	codeOutput : "../",
 	},
 	{ 
+	serializer : './DOM2JSONSerializer.js',
+	folder : "../",
+	extension : ".json.new",
+	},
+	{ 
 	serializer : './DOMSerializer.js',
 	folder : "../",
 	extension : ".x3d.new",
