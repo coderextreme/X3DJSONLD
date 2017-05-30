@@ -504,10 +504,10 @@ function ConvertToX3DOM(object, parentkey, element, path, containerField) {
 					localArray[str] = SFStringToXML(localArray[str]);
 				}
                                 if (parentkey === '@url' || parentkey.indexOf("Url") === parentkey.length - 3) {
-					console.error("Load array  is",localArray);
-					console.error("Path is",path);
+					// console.error("Load array  is",localArray);
+					// console.error("Path is",path);
 					processURLs(localArray, path);
-					console.error("Processed Load array  is",localArray);
+					// console.error("Processed Load array  is",localArray);
 				}
 				elementSetAttribute(element, parentkey.substr(1),'"'+localArray.join('" "')+'"');
 			} else {
@@ -536,7 +536,7 @@ function loadX3DJS(jsobj, path, xml, NS, loadSchema, doValidate, callback) {
 		var child = CreateElement('X3D', NS);
 		ConvertToX3DOM(jsobj, "", child, path);
 		if (typeof xml !== 'undefined' && typeof xml.push === 'function') {
-			xml.push(serializeDOM(jsobj, child));
+			xml.push(serializeDOM(jsobj, child, true));
 		}
 		console.error("Returning with", child);
 		callback(child);
@@ -585,10 +585,18 @@ function fixXML(xmlstr) {
 /**
  * Serialize an element to XML and add an XML header.
  */
-function serializeDOM(jsobj, element) {
-	var version = jsobj.X3D["@version"];
-	var xml = '<?xml version="1.0" encoding="'+jsobj.X3D["encoding"]+'"?>\n';
-	xml += '<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D '+version+'//EN" "http://www.web3d.org/specifications/x3d-'+version+'.dtd">\n';
+function serializeDOM(json, element, appendDocType) {
+	var version = "3.3";
+	var encoding = "UTF-8";
+	if (typeof json !== 'undefined') {
+		version = json.X3D["@version"];
+		encoding = json.X3D["encoding"];
+	}
+	var xml = '';
+	if (appendDocType) {
+		xml += '<?xml version="1.0" encoding="'+encoding+'"?>\n';
+		xml += '<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D '+version+'//EN" "http://www.web3d.org/specifications/x3d-'+version+'.dtd">\n';
+	}
 	if (typeof element === 'string') {
 		xml += element;
 	} else {

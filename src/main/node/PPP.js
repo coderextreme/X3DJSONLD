@@ -34,7 +34,7 @@ function ProcessJSON(json, file) {
 		json = PROTOS.externalPrototypeExpander(file, json);
 		json = PROTOS.prototypeExpander(file, json, "");
 		json = flattener(json);
-		// console.log("JSON", JSON.stringify(json));
+		console.log(JSON.stringify(json));
 		var outfile = file.replace(/data/, "ppp");
 		try {
 			fs.mkdirSync(outfile.substring(0, outfile.lastIndexOf("/")));
@@ -52,6 +52,9 @@ function ProcessJSON(json, file) {
 			console.error("OUTPUTTING", file);
 
 			classes.push("var x3dom = require('../node/fields.js');");
+			classes.push("if (typeof X3DJSON === 'undefined') {");
+			classes.push("	var X3DJSON = {};");
+			classes.push("}");
 			processScripts(json, classes, undefined, routecode, loopItems);
 			var code = classes.join('\n')
 				.replace(/&lt;/g, '<')

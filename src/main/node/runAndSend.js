@@ -27,7 +27,7 @@ function runAndSend(args, callback) {
 			console.error("read", outfile);
 				// content = content.toString();
 				content = JSON.parse(content);
-				console.error('sending back', content);
+				console.error('sending back', JSON.stringify(content));
 				callback(content);
 			console.error("async read", outfile);
 		} else {

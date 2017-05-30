@@ -247,24 +247,24 @@ JavaScriptSerializer.prototype = {
 						attrType === "MFVec3f"||
 						attrType === "MFVec4f"||
 						attrType === "SFMatrix3f"||
-						attrType === "SFMatrix4f"|
+						attrType === "SFMatrix4f"||
 						attrType === "MFMatrix3f"||
-						attrType === "MFMatrix4f"|
-						attrType === "SFRotation"|
-						attrType === "MFRotation"|
+						attrType === "MFMatrix4f"||
+						attrType === "SFRotation"||
+						attrType === "MFRotation"||
 						attrType === "MFFloat") {
 						strval = this.printSubArray(attrType, "float", attrs[a].nodeValue.split(/[ ,]+/), this.codeno, FLOAT_SUFFIX+',', '', FLOAT_SUFFIX);
 					} else if (
 						attrType === "SFVec2d"||
 						attrType === "SFVec3d"||
-						attrType === "SFVec4d"|
+						attrType === "SFVec4d"||
 						attrType === "MFVec2d"||
 						attrType === "MFVec3d"||
-						attrType === "MFVec4d"|
+						attrType === "MFVec4d"||
 						attrType === "SFMatrix3d"||
-						attrType === "SFMatrix4d"|
+						attrType === "SFMatrix4d"||
 						attrType === "MFMatrix3d"||
-						attrType === "MFMatrix4d"|
+						attrType === "MFMatrix4d"||
 						attrType === "MFDouble") {
 						strval = this.printSubArray(attrType, "double", attrs[a].nodeValue.split(/[ ,]+/), this.codeno, DOUBLE_SUFFIX+',', '', DOUBLE_SUFFIX);
 					} else if (attrType === "MFBool") {
