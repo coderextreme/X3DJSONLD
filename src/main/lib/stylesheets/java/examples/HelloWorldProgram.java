@@ -195,6 +195,9 @@ public class HelloWorldProgram
 		System.out.println ("Reload and provide text output using Java DOM, which includes default attribute values");
 		testX3DLoaderObject();
 		System.out.println ("===========================================");
+		System.out.println ("Test toStringJSON()");
+		System.out.println (x3dModel.toStringJSON());
+		System.out.println ("===========================================");
 	}
 	
 	@SuppressWarnings("UnusedAssignment") // option to hide warnings when checking for allowable constructs during development
@@ -471,18 +474,25 @@ public class HelloWorldProgram
 		   // backslash is Java String escape character, &quot; is equivalent XML character entity for " quotation mark
 		   MetadataSetObject metadataStringsSet = new MetadataSetObject().setName("EscapedQuotationMarksMetadataSet");
 		   metadataStringsSet.addValue(new MetadataStringObject().setName("escapedQuotesTest1").setValue(
-								   "escaped quotation marks example 1: He said, \\\"Immel did it!\\\""));
+								   "escaped quotation marks example 1: He said, \"Immel did it!\""));
 		   metadataStringsSet.addValue(new MetadataStringObject().setName("escapedQuotesTest2").setValue(
-								   "escaped quotation marks example 2: He said, \\&quot;Immel did it!\\&quot;"));
+								   "escaped quotation marks example 2: He said, &quot;Immel did it!&quot;"));
 		   messageText.setMetadata(metadataStringsSet);
-		   messageText.addComments("escaped quotation marks example 3: He said, \\\"Immel did it!\\\"");  
-		   messageText.addComments("escaped quotation marks example 4: He said, \\&quot;Immel did it!\\&quot;");
+		   messageText.addComments("escaped quotation marks example 3: He said, \"Immel did it!\"");  
+		   messageText.addComments("escaped quotation marks example 4: He said, &quot;Immel did it!&quot;");
 			 
 		scene.addChildren(textTransform);
 //		scene.addChildren(new MFNode(shape1, textTransform)); // TODO alternate invocation syntax
 		textTransform.addChildren(textShape);
 		collisionObject.addComments("test containerField='proxy'")
-					   .setProxy(new ShapeObject("ProxyShape").setGeometry(new BoxObject()));
+			.setProxy(new ShapeObject("ProxyShape")
+			// test MFString alternatives, last one wins: MFStringObject single-string XML syntax, MFStringObject String[] array, String[] array
+			.setGeometry(new TextObject().setString(new MFStringObject("\"One, Two, Three\" \"\" \"He said, \"Immel did it!\"\"")))
+			.setGeometry(new TextObject().setString(new MFStringObject(new String [] {"One, Two, Three", "", "He said, \"Immel did it!\""})))
+			.setGeometry(new TextObject().setString(new String [] {"One, Two, Three", "", "He said, \"Immel did it!\""}))
+				.addComments(" alternative XML encoding: Text string='\"One, Two, Three\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"' ")
+				.addComments(" alternative Java source: .setString(new String [] {\"One, Two, Three\", \"\", \"He said, \\\"Immel did it!\\\"\"})")
+				.addComments(" reference: http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html "));
 		
 		textTransform.addChild(collisionObject);
 		

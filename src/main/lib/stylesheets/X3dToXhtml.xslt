@@ -1085,7 +1085,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         </xsl:when>
                         <xsl:when test="local-name()='Viewpoint'">
                             <xsl:text>Viewpoint_</xsl:text>
-                            <xsl:value-of select="(count(preceding::Viewpoint) + 1)"/><!-- position() of //Viewpoint -->
+                            <xsl:value-of select="(count(preceding::Viewpoint[string-length(@DEF) = 0]) + 1)"/><!-- position() of //Viewpoint -->
                         </xsl:when>
                     </xsl:choose>
                 </xsl:attribute>
@@ -3545,7 +3545,9 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     </i></b>
                     <xsl:text>: </xsl:text>
                     <xsl:for-each select="//Viewpoint">
-                        <xsl:sort select="@DEF" order="ascending" case-order="upper-first" data-type="text"/>
+						<!-- TODO get unnamed viewpoints to appear last -->
+                        <xsl:sort select="@DEF[string-length(.) > 0]" order="ascending" case-order="upper-first" data-type="text"/>
+                        <xsl:sort select="@DEF[string-length(.) = 0]" order="ascending" case-order="upper-first" data-type="text"/>
                         <xsl:text>&#10;</xsl:text>
                         <xsl:variable name="viewpointID">
                             <xsl:choose>

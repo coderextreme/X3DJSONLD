@@ -336,7 +336,7 @@ JavaSerializer.prototype = {
 								       */
 								       replace(/""/g, '\\"\\"').
 								       replace(/&quot;&quot;/g, '\\"\\"').
-								       replace(/&/g, "&amp;").
+								       // replace(/&/g, "&amp;").
 								       replace(/\\n/g, '\\n');
 								if (y !== x) {
 									console.log("Java Replacing "+x+" with "+y);

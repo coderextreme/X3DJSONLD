@@ -73,7 +73,7 @@ table.curvedEdges td, table.curvedEdges th { border-bottom:1px dotted black;padd
                <span title="meta 'created' provides date of initial version">&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">created</span>'&#160;<span class="attribute">content</span>='<span class="value">6 September 2016</span>'/&gt;
                </span><br />
 
-               <span title="meta 'modified' provides date of modified version">&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">modified</span>'&#160;<span class="attribute">content</span>='<span class="value">22 May 2017</span>'/&gt;
+               <span title="meta 'modified' provides date of modified version">&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">modified</span>'&#160;<span class="attribute">content</span>='<span class="value">29 May 2017</span>'/&gt;
                </span><br />
 
                <span title="meta 'generator' provides name of authoring tool or translation tool producing this
@@ -331,14 +331,14 @@ table.curvedEdges td, table.curvedEdges th { border-bottom:1px dotted black;padd
                            &lt;<span class="element">MetadataString</span>&#160;<span class="attribute">name</span>='<span class="value">escapedQuotesTest1</span>'&#160;<span class="attribute">containerField</span>='<span class="value">value</span>'&#160;<span class="attribute">value</span>='<span class="value">"escaped quotation marks example 1: He said, \"Immel did it!\""</span>'/&gt;
                            <br />
 
-                           &lt;<span class="element">MetadataString</span>&#160;<span class="attribute">name</span>='<span class="value">escapedQuotesTest2</span>'&#160;<span class="attribute">containerField</span>='<span class="value">value</span>'&#160;<span class="attribute">value</span>='<span class="value">"escaped quotation marks example 2: He said, \"Immel did it!\""</span>'/&gt;
+                           &lt;<span class="element">MetadataString</span>&#160;<span class="attribute">name</span>='<span class="value">escapedQuotesTest2</span>'&#160;<span class="attribute">containerField</span>='<span class="value">value</span>'&#160;<span class="attribute">value</span>='<span class="value">"escaped quotation marks example 2: He said, &amp;quot;Immel did it!&amp;quot;"</span>'/&gt;
                            
                         </div>&lt;/<span class="element">MetadataSet</span>&gt;
                         <br />
 
                         <span title="FontStyle defines the size, family, justification, and other styles used by Text nodes">&lt;<span class="element">FontStyle</span>&#160;<span class="attribute">justify</span>='<span class="value">"MIDDLE" "MIDDLE"</span>'/&gt;
-                        </span><br /><span title="XML comment">&lt;!-- escaped quotation marks example 3: He said, \"Immel did it!\" --&gt;</span>
-                        <br /><span title="XML comment">&lt;!-- escaped quotation marks example 4: He said, \&amp;quot;Immel did it!\&amp;quot; --&gt;</span>
+                        </span><br /><span title="XML comment">&lt;!-- escaped quotation marks example 3: He said, "Immel did it!" --&gt;</span>
+                        <br /><span title="XML comment">&lt;!-- escaped quotation marks example 4: He said, &amp;quot;Immel did it!&amp;quot; --&gt;</span>
                         
                      </div><span title="Text is a geometry primitive node">&lt;/<span class="element">Text</span>&gt;
                      </span>
@@ -353,8 +353,14 @@ table.curvedEdges td, table.curvedEdges th { border-bottom:1px dotted black;padd
                      <span title="Shape contains geometry and optional corresponding Appearance">&lt;<span class="element">Shape</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">ProxyShape</span>'&#160;<span class="attribute">containerField</span>='<span class="value">proxy</span>'&gt;
                      </span>
                      <div class="indent">
-                        <span title="Box is a geometry primitive node">&lt;<span class="element">Box</span>/&gt;
-                        </span>
+                        <span title="Text is a geometry primitive node">&lt;<span class="element">Text</span>&#160;<span class="attribute">string</span>='<span class="value">"One, Two, Three" "" "He said, \"Immel did it!\""</span>'/&gt;
+                        </span><br /><span title="XML comment">&lt;!-- alternative XML encoding: Text string='"One, Two, Three" "" "He said, \&amp;quot;Immel
+                           did it!\&amp;quot;"' --&gt;</span>
+                        <br /><span title="XML comment">&lt;!-- alternative Java source: .setString(new String [] {"One, Two, Three", "", "He
+                           said, \"Immel did it!\""}) --&gt;</span>
+                        <br /><span title="XML comment">&lt;!-- reference: http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html
+                           --&gt;</span>
+                        
                      </div><span title="Shape contains geometry and optional corresponding Appearance">&lt;/<span class="element">Shape</span>&gt;
                      </span>
                   </div><span title="Collision detects camera-to-object contact using current view and NavigationInfo avatarSize">&lt;/<span class="element">Collision</span>&gt;

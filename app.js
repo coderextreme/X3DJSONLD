@@ -22,7 +22,8 @@ var www = config.x3dcode;
 
 
 // app.use(express.static('src/main'));
-app.use(express.static('src/main/html'));
+// app.use(express.static('src/main/html'));
+app.use(express.static('/'));
 app.use(express.static('src/main/data'));
 app.use(express.static('src/main/node'));
 app.use(express.static('src/main/orig'));

@@ -9,7 +9,7 @@ META "description" "Example HelloWorldProgram creates an X3D model using the X3D
 META "reference" "http://www.web3d.org/specifications/java/X3DJSAIL.html"
 META "generator" "HelloWorldProgramOutput.java"
 META "created" "6 September 2016"
-META "modified" "22 May 2017"
+META "modified" "29 May 2017"
 META "generator" "X3D Java Scene Access Interface Library (X3DJSAIL)"
 META "generator" "http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"
 META "generator" "Netbeans http://www.netbeans.org"
@@ -48,9 +48,7 @@ DEF WorldInfoDEF WorldInfo {
 USE WorldInfoDEF
 USE WorldInfoDEF
 DEF scene.addChildMetadataObject MetadataString { 
- 
-  name "test"
-name "test"
+ name "test"
  }
 DEF scene.addChildLayerSetObjectTest LayerSet { 
  order [ 0 ]
@@ -118,26 +116,20 @@ DEF TextTransform Transform {
                  justify [ "MIDDLE" "MIDDLE" ]
                  }
              metadata MetadataSet { 
-                 
-                  name "EscapedQuotationMarksMetadataSet"
-                name "EscapedQuotationMarksMetadataSet"
+                 name "EscapedQuotationMarksMetadataSet"
                    value [
                   MetadataString { 
-                         
-                          name "escapedQuotesTest1"
-                        name "escapedQuotesTest1"
+                         name "escapedQuotesTest1"
                          value [ "escaped quotation marks example 1: He said, \"Immel did it!\"" ]
                          }
 MetadataString { 
-                         
-                          name "escapedQuotesTest2"
-                        name "escapedQuotesTest2"
-                         value [ "escaped quotation marks example 2: He said, \&quot;Immel did it!\&quot;" ]
+                         name "escapedQuotesTest2"
+                         value [ "escaped quotation marks example 2: He said, &quot;Immel did it!&quot;" ]
                          }
                   ]
                 }
-            # escaped quotation marks example 3: He said, \"Immel did it!\"
-            # escaped quotation marks example 4: He said, \&quot;Immel did it!\&quot;
+            # escaped quotation marks example 3: He said, "Immel did it!"
+            # escaped quotation marks example 4: He said, &quot;Immel did it!&quot;
                         }
         }
 Collision { 
@@ -145,9 +137,13 @@ Collision {
           # test containerField='proxy'
                           ]
          proxy DEF ProxyShape Shape { 
-              geometry Box { 
+              geometry Text { 
+                 string [ "One, Two, Three" "" "He said, \"Immel did it!\"" ]
                  }
-            }
+            #  alternative XML encoding: Text string='"One, Two, Three" "" "He said, \&quot;Immel did it!\&quot;"' 
+            #  alternative Java source: .setString(new String [] {"One, Two, Three", "", "He said, \"Immel did it!\""})
+            #  reference: http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html 
+                        }
         }
 # It's a beautiful world
         # ... for you!
@@ -195,11 +191,14 @@ ROUTE colorTypeConversionScript.colorsOutput TO GradualBackground.skyColor
           ]
 }
 PROTO ArtDeco01Material [
-  # [appinfo] "tooltip: ArtDeco01 prototype is a Material node"# ProtoInterface
-      inputOutput SFString description "ArtDeco01 prototype is a Material node"# [appinfo] "tooltip for descriptionField"
+   # [appinfo] "tooltip: ArtDeco01 prototype is a Material node"
+  # ProtoInterface
+      inputOutput SFString description "ArtDeco01 prototype is a Material node" # [appinfo] "tooltip for descriptionField"
     
       inputOutput SFBool enabled true] {
-# ProtoBody# Initial node of ProtoBody determines prototype node type
+
+  # ProtoBody
+  # Initial node of ProtoBody determines prototype node type
     Material { 
      ambientIntensity 0.25
      diffuseColor 0.282435 0.085159 0.134462
@@ -214,9 +213,9 @@ PROTO ArtDeco01Material [
      }
 }
 EXTERNPROTO ArtDeco02Material [
-  # [appinfo] "this is a different Material node"
+   # [appinfo] "this is a different Material node"
  url [ "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02" "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02" ]
-  inputOutput SFString description# [appinfo] "tooltip for descriptionField"
+  inputOutput SFString description # [appinfo] "tooltip for descriptionField"
 # [HelloWorldProgram diagnostic] ArtDeco02ExternProtoDeclare.getNodeType()="ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time, TODO X3DJSAIL needs to add further capability."
 ]
 # Tested ArtDeco01ProtoInstance, ArtDeco02ProtoInstance for improper node type when ProtoInstance is added in wrong place
@@ -251,9 +250,10 @@ DEF inlineSceneDef Inline {
 IMPORT inlineSceneDef.WorldInfoDEF AS WorldInfoDEF2 
 EXPORT WorldInfoDEF AS WorldInfoDEF3 
 PROTO MaterialModulator [
-  # [appinfo] "mimic a Material node and modulate fields as an animation effect"
+   # [appinfo] "mimic a Material node and modulate fields as an animation effect"
   # [documentation] "http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html"
- # ProtoInterface
+ 
+  # ProtoInterface
       inputOutput SFBool enabled true
       inputOutput SFColor diffuseColor 0 0 0
       inputOutput SFColor emissiveColor 0.05 0.05 0.5
@@ -261,7 +261,9 @@ PROTO MaterialModulator [
       inputOutput SFFloat transparency 0.0
       inputOutput SFFloat shininess 0.0
       inputOutput SFFloat ambientIntensity 0.0] {
-# ProtoBodyDEF MaterialNode Material { 
+
+  # ProtoBody
+  DEF MaterialNode Material { 
       ambientIntensity IS ambientIntensity
       diffuseColor IS diffuseColor
       emissiveColor IS emissiveColor
@@ -315,9 +317,7 @@ DEF DeclarativeGroupExample Group {
              height 0.1
              }
          metadata DEF FindableMetadataStringTest MetadataString { 
-             
-              name "findThisNameValue"
-            name "findThisNameValue"
+             name "findThisNameValue"
              value [ "test case" ]
              }
         }

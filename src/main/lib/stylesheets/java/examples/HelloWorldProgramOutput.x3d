@@ -10,7 +10,7 @@
         <meta name='reference' content='http://www.web3d.org/specifications/java/X3DJSAIL.html'/>
         <meta name='generator' content='HelloWorldProgramOutput.java'/>
         <meta name='created' content='6 September 2016'/>
-        <meta name='modified' content='22 May 2017'/>
+        <meta name='modified' content='29 May 2017'/>
         <meta name='generator' content='X3D Java Scene Access Interface Library (X3DJSAIL)'/>
         <meta name='generator' content='http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java'/>
         <meta name='generator' content='Netbeans http://www.netbeans.org'/>
@@ -71,17 +71,20 @@
                 <Text string='"X3D Java" "SAI Library" "X3DJSAIL"'>
                     <MetadataSet name='EscapedQuotationMarksMetadataSet'>
                         <MetadataString name='escapedQuotesTest1' containerField='value' value='"escaped quotation marks example 1: He said, \"Immel did it!\""'/>
-                        <MetadataString name='escapedQuotesTest2' containerField='value' value='"escaped quotation marks example 2: He said, \&quot;Immel did it!\&quot;"'/>
+                        <MetadataString name='escapedQuotesTest2' containerField='value' value='"escaped quotation marks example 2: He said, &amp;quot;Immel did it!&amp;quot;"'/>
                     </MetadataSet>
                     <FontStyle family='"SERIF"' justify='"MIDDLE" "MIDDLE"'/>
-                    <!-- escaped quotation marks example 3: He said, \"Immel did it!\" -->
-                    <!-- escaped quotation marks example 4: He said, \&quot;Immel did it!\&quot; -->
+                    <!-- escaped quotation marks example 3: He said, "Immel did it!" -->
+                    <!-- escaped quotation marks example 4: He said, &quot;Immel did it!&quot; -->
                 </Text>
             </Shape>
             <Collision>
                 <!-- test containerField='proxy' -->
                 <Shape DEF='ProxyShape' containerField='proxy'>
-                    <Box/>
+                    <Text string='"One, Two, Three" "" "He said, \"Immel did it!\""'/>
+                    <!-- alternative XML encoding: Text string='"One, Two, Three" "" "He said, \&quot;Immel did it!\&quot;"' -->
+                    <!-- alternative Java source: .setString(new String [] {"One, Two, Three", "", "He said, \"Immel did it!\""}) -->
+                    <!-- reference: http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html -->
                 </Shape>
             </Collision>
             <!-- It's a beautiful world -->

@@ -46,7 +46,7 @@
           },
           {
             "@name":"modified",
-            "@content":"22 May 2017"
+            "@content":"29 May 2017"
           },
           {
             "@name":"generator",
@@ -106,7 +106,7 @@
           },
           {
             "@name":"translated",
-            "@content":"22 May 2017"
+            "@content":"29 May 2017"
           },
           {
             "@name":"generator",
@@ -318,7 +318,7 @@
                                   { "MetadataString":
                                     {
                                       "@name":"escapedQuotesTest2",
-                                      "@value":["escaped quotation marks example 2: He said, \"Immel did it!\""]
+                                      "@value":["escaped quotation marks example 2: He said, &quot;Immel did it!&quot;"]
                                     }
                                   }
                                 ]
@@ -332,10 +332,10 @@
                             },
                           "-children":[
                             {
-                              "#comment":"escaped quotation marks example 3: He said, \\\"Immel did it!\\\""
+                              "#comment":"escaped quotation marks example 3: He said, \"Immel did it!\""
                             },
                             {
-                              "#comment":"escaped quotation marks example 4: He said, \\&quot;Immel did it!\\&quot;"
+                              "#comment":"escaped quotation marks example 4: He said, &quot;Immel did it!&quot;"
                             }
                           ]
                         }
@@ -354,10 +354,22 @@
                         {
                           "@DEF":"ProxyShape",
                           "-geometry":
-                            { "Box":
+                            { "Text":
                               {
+                                "@string":["One, Two, Three","","He said, \"Immel did it!\""]
                               }
+                            },
+                          "-children":[
+                            {
+                              "#comment":"alternative XML encoding: Text string='\"One, Two, Three\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"'"
+                            },
+                            {
+                              "#comment":"alternative Java source: .setString(new String [] {\"One, Two, Three\", \"\", \"He said, \\\"Immel did it!\\\"\"})"
+                            },
+                            {
+                              "#comment":"reference: http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html"
                             }
+                          ]
                         }
                       }
                   }

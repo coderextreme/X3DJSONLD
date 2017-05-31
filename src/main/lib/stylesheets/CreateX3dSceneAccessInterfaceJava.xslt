@@ -2943,8 +2943,65 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 
 	// TODO refactor XSLT conversion methods to re-use common code
 
+	/** Private method to read a file as a String
+	 * @see https://stackoverflow.com/questions/326390/how-do-i-create-a-java-string-from-the-contents-of-a-file
+	 * @return file contents
+	 */
+	private String readFile(String file) throws IOException
+	{
+		BufferedReader reader = new BufferedReader(new FileReader (file));
+		String         line = null;
+		StringBuilder  stringBuilder = new StringBuilder();
+		String         ls = System.getProperty("line.separator");
+
+		try {
+			while((line = reader.readLine()) != null)
+			{
+				stringBuilder.append(line);
+				stringBuilder.append(ls);
+			}
+			return stringBuilder.toString();
+		} 
+		finally
+		{
+			reader.close();
+		}
+	}
+
+	/**
+	 * Serialize scene graph using X3dToJson.xslt stylesheet to create a new JSON-encoding string.
+	 * @see X3DObject#toFileJSON(String)
+	 * @see <a href="http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding">X3D JSON Encoding</a>
+	 * @see <a href="http://www.web3d.org/x3d/stylesheets/X3dToJson.html">X3D to JSON Stylesheet Converter</a>
+	 * @return String containing result (if operation succeeds), empty otherwise
+	 */
+	public String toStringJSON()
+	{
+		String temporaryFileName = "temporaryJsonOutputFile.json";
+		
+		try
+		{
+			File     fileJSON = toFileJSON(temporaryFileName);
+
+			if  ((fileJSON != null) && fileJSON.exists())
+			{
+				String fileContents = readFile(temporaryFileName);
+				fileJSON.delete();
+				return fileContents;
+//				List<String> lines = Files.readAllLines(Paths.get(temporaryFileName));
+//				return String.join("\n",lines);
+			}
+		}
+		catch (Exception e)
+		{
+			// TODO consider throwing exception instead
+		}
+		return "";
+	}
+
 	/**
 	 * Serialize scene graph using X3dToJson.xslt stylesheet to create a new JSON-encoding X3D file with extension <i>json</i>.
+	 * @see X3DObject#toStringJSON()
 	 * @see X3DObject#toStringX3D()
 	 * @see X3DObject#toFileX3D(String)
 	 * @see X3DObject#toFileJava(String)
@@ -3562,6 +3619,157 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 				", unable to save result: " + saxonApiException);
 		}
 		return outputFilePath.toFile(); // success
+	}
+										
+  /** Provide thorough X3DJSAIL validation results for this X3D model.
+   * @return "success" or validation results plus exception information (if any)
+   */
+  public String validationReport()
+  {
+	String       metaResult = new String();
+	String validationResult = new String();
+	String  exceptionResult = new String();
+	try
+	{
+		initialize();
+										
+		if (getHead() != null)
+		{
+			// first list informational meta elements of interest
+			for (metaObject meta : getHead().getMetaList())
+			{
+				if (meta.getName().equals(metaObject.NAME_ERROR) ||
+					meta.getName().equals(metaObject.NAME_WARNING) ||
+					meta.getName().equals(metaObject.NAME_HINT) ||
+					meta.getName().equals(metaObject.NAME_INFO) ||
+					meta.getName().equals(metaObject.NAME_TODO))
+				{
+					metaResult += meta.toStringX3D();
+				}
+			}
+		}
+		validationResult += validate(); // walk entire tree to validate correctness
+	}
+	catch (Exception e)
+	{
+		exceptionResult = e.getMessage(); // report exception failures, if any
+	    if (exceptionResult == null)
+	    {
+			exceptionResult = "Exception caught but null message!";
+			e.printStackTrace();
+	    }
+	}
+	if  (metaResult.isEmpty() && exceptionResult.isEmpty() && validationResult.isEmpty())
+	     return "success";
+	else
+	{
+		if (!metaResult.isEmpty())
+			metaResult = "\n" + metaResult; // easier to read
+		String returnMessage = metaResult;
+		if  (!exceptionResult.isEmpty() && !validationResult.isEmpty())
+			returnMessage += "\n*** ";
+		returnMessage += exceptionResult;
+		if  (exceptionResult.isEmpty() && !validationResult.isEmpty())
+			returnMessage = "\n" + returnMessage; // skip line before meta tags, etc.
+		returnMessage += validationResult;
+		return returnMessage;
+	}
+  }
+										
+	/** Utility method for standalone programs that get created with X3dToJava.xslt stylesheet.
+	 * Invocation switches: -help -validate -x3d -x3dv -vrml -json -html -x3dom -cobweb [filename]
+	 * @param argv command-line arguments
+	 * @return result
+	 */
+	public String handleArguments(String[] argv)
+	{
+		String helpString = "Invocation switches: [-help -validate] [-x3d -x3dv -vrml -json -html -x3dom -cobweb [filename]]";
+		String fileName = new String();
+		File   newFile;
+										
+		if (argv.length == 2)
+			fileName = argv[1];
+		if ((argv.length == 0) || argv[0].toLowerCase().contains("help"))
+        {
+			return helpString;
+		}
+		else if (argv[0].toLowerCase().startsWith("valid"))
+		{
+			return validationReport();
+		}
+		else if (argv[0].toLowerCase().startsWith("x3dv") && !fileName.isEmpty())
+		{
+			newFile = toFileClassicVRML(fileName);
+			if  (newFile != null)
+				 return newFile.getAbsolutePath();
+			else return "file not saved";
+		}
+		else if (argv[0].toLowerCase().startsWith("x3dv"))
+		{
+			return toStringClassicVRML();
+		}
+		else if (argv[0].toLowerCase().startsWith("x3dom") && !fileName.isEmpty())
+		{
+			newFile = toFileX3DOM(fileName);
+			if  (newFile != null)
+				 return newFile.getAbsolutePath();
+			else return "file not saved";
+		}
+		else if (argv[0].toLowerCase().startsWith("x3d") && !fileName.isEmpty())
+		{
+			newFile = toFileX3D(fileName);
+			if  (newFile != null)
+				 return newFile.getAbsolutePath();
+			else return "file not saved";
+		}
+		else if (argv[0].toLowerCase().startsWith("x3d"))
+		{
+			return toStringX3D();
+		}
+		else if (argv[0].toLowerCase().startsWith("vrml") && !fileName.isEmpty())
+		{
+			newFile = toFileVRML97(fileName);
+			if  (newFile != null)
+				 return newFile.getAbsolutePath();
+			else return "file not saved";
+		}
+		else if (argv[0].toLowerCase().startsWith("vrml"))
+		{
+			return toStringVRML97();
+		}
+		else if (argv[0].toLowerCase().startsWith("json") && !fileName.isEmpty())
+		{
+			newFile = toFileJSON(fileName);
+			if  (newFile != null)
+				 return newFile.getAbsolutePath();
+			else return "file not saved";
+		}
+		else if (argv[0].toLowerCase().startsWith("json"))
+		{
+			return toStringJSON();
+		}
+		else if (argv[0].toLowerCase().startsWith("html") && !fileName.isEmpty())
+		{
+			newFile = toFileDocumentationHtml(fileName);
+			if  (newFile != null)
+				 return newFile.getAbsolutePath();
+			else return "file not saved";
+		}
+		else if (argv[0].toLowerCase().startsWith("html"))
+		{
+			return "TODO (not supported)";
+		}
+		else if (argv[0].toLowerCase().startsWith("cobweb") && !fileName.isEmpty())
+		{
+			newFile = toFileCobweb(fileName + ".x3d", fileName + ".html"); // TODO fix
+			if  (newFile != null)
+				 return newFile.getAbsolutePath();
+			else return "file not saved";
+		}
+		else // no valid switch found
+		{
+			return helpString;
+		}
 	}
 ]]></xsl:text>
 								</xsl:when>
@@ -8711,7 +8919,7 @@ setAttribute method invocations).
 		if (!getAppinfo().equals(APPINFO_DEFAULT_VALUE) || ConfigurationProperties.isShowDefaultAttributes())
 		{
 			stringClassicVRML.append(indent).append(indentCharacter).append(indentCharacter);
-			stringClassicVRML.append("# [appinfo] ").append("\"").append(SFStringObject.toString(getAppinfo())).append("\"");
+			stringClassicVRML.append(" # [appinfo] ").append("\"").append(SFStringObject.toString(getAppinfo())).append("\"");
 		}
 		if (!getDocumentation().equals(DOCUMENTATION_DEFAULT_VALUE) || ConfigurationProperties.isShowDefaultAttributes())
 		{
@@ -8722,6 +8930,7 @@ setAttribute method invocations).
 		// recursively iterate over child elements
 		if (ProtoInterface != null)
 		{
+			stringClassicVRML.append("\n").append(indent).append(indentCharacter).append(indentCharacter);
 			stringClassicVRML.append(ProtoInterface.toStringClassicVRML(level + indentIncrement));
 			for (fieldObject nextField : ProtoInterface.getFieldList())
 			{
@@ -8737,7 +8946,9 @@ setAttribute method invocations).
 					
 		if (ProtoBody != null)
 		{
+			stringClassicVRML.append("\n").append(indent).append(indentCharacter).append(indentCharacter);
 			stringClassicVRML.append(ProtoBody.toStringClassicVRML(level + indentIncrement));
+			stringClassicVRML.append("\n").append(indent).append(indentCharacter).append(indentCharacter);
 			for (X3DNode element : ProtoBody.getChildren())
 			{
 				stringClassicVRML.append(((X3DConcreteElement) element).toStringClassicVRML(level + indentIncrement));
@@ -8754,7 +8965,7 @@ setAttribute method invocations).
 		if (!getAppinfo().equals(APPINFO_DEFAULT_VALUE) || ConfigurationProperties.isShowDefaultAttributes())
 		{
 			stringClassicVRML.append(indent).append(indentCharacter).append(indentCharacter);
-			stringClassicVRML.append("# [appinfo] ").append("\"").append(SFStringObject.toString(getAppinfo())).append("\"");
+			stringClassicVRML.append(" # [appinfo] ").append("\"").append(SFStringObject.toString(getAppinfo())).append("\"");
 		}
 		if (!getDocumentation().equals(DOCUMENTATION_DEFAULT_VALUE) || ConfigurationProperties.isShowDefaultAttributes())
 		{
@@ -8858,7 +9069,7 @@ setAttribute method invocations).
 						<xsl:text disable-output-escaping="yes"><![CDATA[
 		if (!getAppinfo().equals(APPINFO_DEFAULT_VALUE) || ConfigurationProperties.isShowDefaultAttributes())
 		{
-			stringClassicVRML.append("# [appinfo] ").append("\"").append(SFStringObject.toString(getAppinfo())).append("\"").append("\n").append(indent);
+			stringClassicVRML.append(" # [appinfo] ").append("\"").append(SFStringObject.toString(getAppinfo())).append("\"").append("\n").append(indent);
 		}
 		if (!getDocumentation().equals(DOCUMENTATION_DEFAULT_VALUE) || ConfigurationProperties.isShowDefaultAttributes())
 		{
@@ -8875,23 +9086,7 @@ setAttribute method invocations).
 				<xsl:text disable-output-escaping="yes"><![CDATA[
 				boolean hasISconnect = (getIS() != null) && !getIS().getConnectList().isEmpty();]]></xsl:text>
 			</xsl:if>
-			<xsl:if test="(InterfaceDefinition/field[@name = 'name']) and not($name = 'ProtoInstance')">
-				<xsl:text>
-				if (!getName().equals(NAME_DEFAULT_VALUE))
-				{
-					stringClassicVRML.append("\n")</xsl:text>
-				<xsl:if test="not($isX3dStatement = 'true')">
-					<xsl:text>.append(indent).append(indentCharacter).append(indentCharacter)</xsl:text>
-				</xsl:if>
-				<xsl:text>.append("name ").append("\"").append(SFStringObject.toString(getName())).append("\"").append("\n")</xsl:text>
-				<xsl:if test="not($isX3dStatement = 'true')">
-					<xsl:text><![CDATA[.append(indent)]]></xsl:text>
-				</xsl:if>
-				<xsl:text>;
-				}
-				</xsl:text>
-			</xsl:if>
-				
+
 			<xsl:for-each select="InterfaceDefinition/field[not(contains(@type,'FNode')) and not(starts-with(@name,'set')) and not(ends-with(@name,'changed')) and not(@name = 'DEF') and not(@name = 'USE') and
                                                             ((@accessType='initializeOnly') or (@accessType='inputOutput'))]">
 				<xsl:variable name="fieldName" select="translate(@name,'-','_')"/><!-- handle http-equiv etc. -->
@@ -9314,7 +9509,8 @@ setAttribute method invocations).
 	<xsl:choose>
 		<xsl:when test="($name = 'X3D')">
 			<!-- TODO fix this hack more thoroughly, possibly via ConfigurationProperties or else by optional parameter in method signature -->
-			<xsl:text>.replace("#X3D V3.3 utf8","#VRML V2.0 utf8")
+			<xsl:text>
+		.replace("#X3D V3.3 utf8","#VRML V2.0 utf8")
 		.replace("#X3D V3.2 utf8","#VRML V2.0 utf8")
 		.replace("#X3D V3.1 utf8","#VRML V2.0 utf8")
 		.replace("#X3D V3.0 utf8","#VRML V2.0 utf8")
@@ -13547,8 +13743,8 @@ method invocations on the same node object).
 			<xsl:when test="(@type='MFString')">
 				<xsl:value-of select="$fieldName"/>
 				<xsl:text disable-output-escaping="yes"><![CDATA[ = new String[newValue.length];
-		for (int i=0; i < newValue.length; i++)
-			newValue[i] = cleanupUnescapedEnclosingQuotes(newValue[i]); // fill array
+//		for (int i=0; i < newValue.length; i++)
+//			newValue[i] = cleanupUnescapedEnclosingQuotes(newValue[i]); // fill array
 		]]></xsl:text>
 			</xsl:when>
 			<xsl:when test="(@type='SFTime')">
@@ -14903,8 +15099,13 @@ TODO: also MFColor.
 		</xsl:when>
 		<xsl:when test="(@type='MFString')">
 			<xsl:text>
-		return (new MFString</xsl:text><xsl:value-of select="$jsaiClassSuffix"/>
-			<xsl:text>(value)).toString().replaceAll("\",\"","\" \""); // removes intermediate commas between quotes</xsl:text>
+		String result = new String();
+		for (String eachValue : value)
+		{
+			// http://www.regexplanet.com/advanced/java/index.html
+			result += "\"" + eachValue.replaceAll("\"","\\\\\"") + "\" ";
+		}
+		return (result.trim());</xsl:text>
 		</xsl:when>
 		<xsl:when test="(@type='MFFloat') or contains(@type,'Rotation') or contains(@type, 'Color') or
 						 ends-with(@type,'2f') or ends-with(@type,'3f') or ends-with(@type,'4f')">
@@ -14960,11 +15161,11 @@ TODO: also MFColor.
 	public static String toStringX3D (String value)
 	{
 		return (new SFStringObject(value)).toString()
-				.replaceAll("&","&amp;")		// escape ampersands
+				.replaceAll("&","&amp;")	// escape ampersands
 				.replaceAll("<","&lt;")		// escape    less-than < signs
 				.replaceAll(">","&gt;")		// escape greater-than > signs in XML attributes
-				.replaceAll("'","&apos;")		// escape apostrophes since XML attributes in this output are delimited by apostrophes
-				.replaceAll("\"","\\&quot;");	// escape embedded quotation marks
+				.replaceAll("'","&apos;")	// escape apostrophes since XML attributes in this output are delimited by apostrophes
+				.replaceAll("\"","\\\"");	// escape embedded quotation marks
 	}
 
 	/**
@@ -14993,25 +15194,28 @@ TODO: also MFColor.
 	 */
 	public String toStringX3D ()
 	{
-		StringBuilder result = new StringBuilder();
+		// avoid StringBuilder since it clobbers \"
+		String result = new String();
 		for (int i = 0; i < MFString.length; i++)
 		{
 			// MFString[0] // trace
 			if (!MFString[i].startsWith("\""))
-				result.append("\"");
+				result += "\"";
 			// avoid SFStringObject.toStringX3D(MFString[i]) due to additional contrary handling of \" and &
+			// http://www.regexplanet.com/advanced/java/index.html
 			String escapedValue = MFString[i]
-	//			.replaceAll("&","&amp;")		// escape ampersands
+				.replaceAll("&","&amp;")	// escape ampersands
 				.replaceAll("<","&lt;")		// escape    less-than < signs
 				.replaceAll(">","&gt;")		// escape greater-than > signs in XML attributes
-				.replaceAll("'","&apos;");		// escape apostrophes since XML attributes in this output are delimited by apostrophes
-			result.append(escapedValue);	// apply escaping to each SFString value
+				.replaceAll("'","&apos;")	// escape apostrophes since XML attributes in this output are delimited by apostrophes
+				.replaceAll("\"","\\\\\"");	// escape embedded quotation marks
+			result += escapedValue;			// apply escaping to each SFString value
 			if (!MFString[i].startsWith("\""))
-				result.append("\"");
+				result += "\"";
 			if (i < MFString.length - 1)
-				result.append(" ");
+				result += " ";
 		}
-		return result.toString();
+		return result;
 	}
 ]]></xsl:text>
 	</xsl:if>
@@ -24481,6 +24685,9 @@ import org.web3d.x3d.sai.Texturing.*;
 					org.w3c.dom.Node currentAttributeNode = attributes.item(i);
 					String attributeName  = currentAttributeNode.getNodeName();
 					String attributeValue = currentAttributeNode.getNodeValue();
+					// http://www.regexplanet.com/advanced/java/index.html
+					attributeValue = attributeValue.replaceAll("\\\\\"","\""); // unescape XML quotes
+
 					// errorNotice prelude now gets predefined (in case needed later)
 					errorNotice = "<" + nodeName + " " + attributeName + "='" + attributeValue + "'/> exception: ";
 					
