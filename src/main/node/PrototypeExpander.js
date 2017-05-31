@@ -746,14 +746,15 @@ PROTOS.prototype = {
 				this.founddef = null;
 				var json = {};
 				try {
+					console.error("parsing ", data);
 					json = JSON.parse(data);
 					console.error("parsed JSON from " + filename);
+					protoexp.searchAndReplaceProto(filename, json, protoname, protoexp.founddef, obj, objret);
 				} catch (e) {
 					console.error("Failed to parse JSON from " + filename);
 					if (filename.endsWith(".x3d") && (typeof runAndSend === "function")) {
 						console.error("calling run and send");
 						console.error("loadedProto converting " + filename);
-						var protoexp = this;
 						runAndSend(['---silent', filename], function(json) {
 							console.error("got", json, "from run and send, searching for", protoname);
 							protoexp.searchAndReplaceProto(filename, json, protoname, protoexp.founddef, obj, objret);
