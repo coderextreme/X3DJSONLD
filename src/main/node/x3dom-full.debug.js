@@ -1,4 +1,4 @@
-/** X3DOM Runtime, http://www.x3dom.org/ 1.7.3-dev - b'4c8ab036e86d351f7c783e91dfc16a4d9688ac90' - b'Tue May 30 20:38:18 2017 -0400' *//*
+/** X3DOM Runtime, http://www.x3dom.org/ 1.7.3-dev - b'31ed2e5b0131374c1c341f1483ae4d99e3b5582c' - b'Tue May 30 23:53:40 2017 -0400' *//*
  * X3DOM JavaScript Library
  * http://www.x3dom.org
  *
@@ -20602,6 +20602,7 @@ x3dom.PROTOS.prototype = {
 				try {
 					json = JSON.parse(data);
 					console.error("parsed JSON from " + filename);
+					protoexp.searchAndReplaceProto(filename, json, protoname, protoexp.founddef, obj, objret);
 				} catch (e) {
 					console.error("Failed to parse JSON from " + filename);
 					if (filename.endsWith(".x3d") && (typeof runAndSend === "function")) {
