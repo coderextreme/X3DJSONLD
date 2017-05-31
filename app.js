@@ -145,6 +145,7 @@ app.get("/files", function(req, res, next) {
 				if (err) return;
 				files.forEach(function(file) {
 					if (new RegExp(test).test(file)) {
+						file = file.replace(/src\/main/, '..');
 						json.push(file);
 						console.error(file);
 					}

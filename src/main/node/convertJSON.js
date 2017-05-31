@@ -154,7 +154,7 @@ function convertJSON(options) {
 				basefile = basefile.substring(config.x3dcode.length);
 			}
 			*/
-			console.error("basefile0", basefile);
+			// console.error("basefile0", basefile);
 			basefile = basefile.replace(/^C:\//, "")
 			basefile = basefile.replace(/^\.\.\//, "")
 			basefile = basefile.replace(/-|\.| /g, "_")
@@ -166,9 +166,9 @@ function convertJSON(options) {
 				var co = options[ser].codeOutput+basefile;
 				str = new serializer().serializeToString(json, element, co, mapToMethod, fieldTypes)
 				if (typeof str !== 'undefined') {
-					console.error("basefile", basefile);
+					// console.error("basefile", basefile);
 					var outfile = options[ser].folder+basefile+options[ser].extension
-					console.error("outfile", outfile);
+					// console.error("outfile", outfile);
 					mkdirp(outfile.substr(0, outfile.lastIndexOf("/")));
 					fs.writeFileSync(outfile, str);
 				} else {
