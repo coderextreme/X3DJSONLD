@@ -121,6 +121,20 @@ function processScripts(object, classes, mypackage, routecode, loopItems) {
 	realProcessScripts(object, classes, mypackage, routecode, loopItems);
 }
 
+function doRoute(mypackage, fromNode, fromField, toNode, toField, log) {
+	var fromScript = mypackage.find(fromNode);
+	var from =			 "X3DJSON.nodeUtil('"+fromNode+"','"+fromField+"')";
+	if (typeof fromScript !== 'undefined') {
+		from = 'typeof '+useX3DJSON('Obj',fromScript.name)+'.'+fromField+' === "function" ? '+useX3DJSON('Obj', fromScript.name) + '.'+fromField+'() : '+useX3DJSON('Obj', fromScript.name) + '.'+fromField;
+	}
+	var to = 			"X3DJSON.nodeUtil('"+toNode+"','"+toField+"',";
+	var toScript = mypackage.find(toNode);
+	if (typeof toScript !== 'undefined') {
+		to = useX3DJSON('Obj', toScript.name) + '.'+toField+'(';
+	}
+	log.log("			"+to+from+", __eventTime);");
+}
+
 function processRoute(route, routecode, mypackage, loopItems) {
 	var fromNode = route["@fromNode"];
 	var fromField = route["@fromField"];
@@ -131,31 +145,34 @@ function processRoute(route, routecode, mypackage, loopItems) {
 	routecode.log(useX3DJSON('ROUTE', fromNode+":"+fromField+":"+toNode+":"+toField+":FROM")+" = new MutationObserver(function(mutations) {");
 	routecode.log("		mutations.forEach(function(mutation) {");
 	routecode.log("			console.log(mutation, '"+fromField+"');");	
-	var from =			 "X3DJSON.nodeUtil('"+fromNode+"','"+fromField+"')";
-	var to = 			"X3DJSON.nodeUtil('"+toNode+"','"+toField+"',";
-	routecode.log("			"+to+from+", __eventTime);");
+	doRoute(mypackage, fromNode, fromField, toNode, toField, routecode);
 	routecode.log("		});");	
 	routecode.log("});");	
 	routecode.log("var config = { attributes: true, childList: true, attributeFilter:['"+fromField+"'] };");	
-	routecode.log(useX3DJSON('ROUTE', fromNode+":"+fromField+":"+toNode+":"+toField+":FROM")+".observe(X3DJSON.nodeUtil('"+fromNode+"'), config);");
+	var fromScript = mypackage.find(fromNode);
+	if (typeof fromScript === 'undefined') {
+		// it's a real node
+		routecode.log(useX3DJSON('ROUTE', fromNode+":"+fromField+":"+toNode+":"+toField+":FROM")+".observe(X3DJSON.nodeUtil('"+fromNode+"'), config);");
+	}
 
+	/*
 	routecode.log(declareX3DJSON('ROUTE', fromNode+":"+fromField+":"+toNode+":"+toField+":TO"));
 	routecode.log(useX3DJSON('ROUTE', fromNode+":"+fromField+":"+toNode+":"+toField+":TO")+" = new MutationObserver(function(mutations) {");
 	routecode.log("		mutations.forEach(function(mutation) {");
 	routecode.log("			console.log(mutation, '"+toField+"');");	
-	var newPackage = new Script(mypackage, toNode);
-	var from =			"X3DJSON.nodeUtil('"+fromNode+"','"+fromField+"')"; 
-	var to = 			'if (typeof '+useX3DJSON('Obj', newPackage.name)+'.'+toField+' === "function") '+useX3DJSON('Obj', newPackage.name) + '.'+toField+'(';
-	routecode.log("			"+to+from+", __eventTime);");
+	doRoute(mypackage, fromNode, fromField, toNode, toField, routecode);
 	routecode.log("		});");	
 	routecode.log("});");	
 	routecode.log("var config = { attributes: true, childList: true, attributeFilter:['"+toField+"'] };");	
-	routecode.log(useX3DJSON('ROUTE', fromNode+":"+fromField+":"+toNode+":"+toField+":TO")+".observe(X3DJSON.nodeUtil('"+toNode+"'), config);");
-	//if (toField === 'set_fraction') {
-		var from =			 "X3DJSON.nodeUtil('"+fromNode+"','"+fromField+"')";
-		var to = 			"X3DJSON.nodeUtil('"+toNode+"','"+toField+"',";
-		loopItems.log("			"+to+from+", __eventTime);");
-	//}
+	var toScript = mypackage.find(toNode);
+	if (typeof toScript === 'undefined') {
+		// it's a real node
+		routecode.log(useX3DJSON('ROUTE', fromNode+":"+fromField+":"+toNode+":"+toField+":TO")+".observe(X3DJSON.nodeUtil('"+toNode+"'), config);");
+	}
+	*/
+
+
+	doRoute(mypackage, fromNode, fromField, toNode, toField, loopItems);
 }
 
 function realProcessScripts(object, classes, mypackage, routecode, loopItems) {
@@ -324,19 +341,19 @@ function processFields(fields, classes, mypackage) {
 		if (!mypackage.functions['set_'+v]) {
 			// setter
 			classes.log(indent + "this.set_" + v + ' = function (value) {');
-			classes.log(indent.repeat(2) + "X3DJSON.nodeUtil('"+mypackage.name+"', '"+v+"', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));");
+			classes.log(indent.repeat(2) + "this."+v+" = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);");
 			classes.log(indent + "};");
 		}
 		if (!mypackage.functions[v+'_changed']) {
 			// getter
 			classes.log(indent+ "this." + v + '_changed = function () {');
-			classes.log(indent.repeat(2) + "var value = X3DJSON.nodeUtil('"+mypackage.name+"', '"+v+"');");
+			classes.log(indent.repeat(2) + "var value = this."+v+";");
 			classes.log(indent.repeat(2) + "return value;");
 			classes.log(indent+ "};");
 		}
 		if (!mypackage.functions[v]) {
 			// Initialization
-			classes.log(indent + "this.set_"+v+"("+values[v]+");");
+			classes.log(indent + "this." + v + " = "+values[v]+";");
 		}
 	}
 }
@@ -391,12 +408,16 @@ function processSource(lines, classes, mypackage) {
 			var trail = fxns[f1].rail;
 			// replace fields in body
 			for (var n in mypackage.fields) {
+				var pattern = '(\\b)('+n+')(\\b)';
+				body = body.replace(new RegExp(pattern, 'g'), "$1this.$2$3");
+				/*
 				var pattern = '(\\b)('+n+'[ \t\n\r]+)=([^=][^;]*);';
 				body = body.replace(new RegExp(pattern, 'g'), "$1this.set_$2($3);");
 				pattern = '(\\b)('+n+')[ \t]+([-\+\*\/\|\&\^])=([^;]*);';
 				body = body.replace(new RegExp(pattern, 'g'), "$1this.set_$2(this.$2_changed() $3 $4);");
 				pattern = "(\\b)("+n+")(\\b)";
 				body = body.replace(new RegExp(pattern, 'g'), "$1this.$2_changed()$3");
+				*/
 		 
 			}
 
@@ -409,9 +430,6 @@ function processSource(lines, classes, mypackage) {
 			// now take this this. of var decls in body
 			body = body.replace(/\.this/g,  "");
 			body = body.replace(/\svar\s+this\./g,  " var ");
-
-			// replace constructors with arrays
-			// body = body.replace(/new (MF[A-Za-z0-9]+|SFMatrix[A-Za-z0-9]+|SFVec[234][df]|SFRotation|SFColor)[ 	]*\(([^;()]*)\)[ 	]*;/g, "Browser.stringToArray\('$1',[$2]\);");
 
 			//body = body.replace(/&amp;/g, '&');
 			//body = body.replace(/&lt;/g, '<');
