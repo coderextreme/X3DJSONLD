@@ -211,7 +211,7 @@ POSSIBILITY OF SUCH DAMAGE.
     initialize();
   }
 	
-  /** Create and initialize the X3D model. */
+  /** Create and initialize the X3D model for this object. */
   public final void initialize()
   {
 ]]></xsl:text>
@@ -234,7 +234,10 @@ POSSIBILITY OF SUCH DAMAGE.
   /** The initialized model object, created within initialize() method. */
   private X3DObject x3dModel;
   
-  /** Provide a shallow copy of the X3D model.
+  /** Provide a 
+   * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
+   * of the X3D model.
+   * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
    * @return ]]></xsl:text><xsl:value-of select="$newClassName"/>
    <xsl:text disable-output-escaping="yes"><![CDATA[ model
    */
@@ -242,73 +245,20 @@ POSSIBILITY OF SUCH DAMAGE.
   {	  
 	  return x3dModel;
   }
-  
-  /** Indicate X3DJSAIL validation results for this X3D model.
-   * @return validation results plus exception information, if any
-   */
-  public String validateSelf()
-  {
-	String       metaResult = new String();
-	String validationResult = new String();
-	String  exceptionResult = new String();
-	try
-	{
-		initialize();
-		
-		if ((getX3dModel() == null) || (getX3dModel().getHead() == null))
-		{
-			validationResult = "empty scene, nothing to validate. " + x3dModel.validate();
-			return validationResult;
-		}
-		// first list informational meta elements of interest
-		for (metaObject meta : getX3dModel().getHead().getMetaList())
-		{
-			if (meta.getName().equals(metaObject.NAME_ERROR) ||
-				meta.getName().equals(metaObject.NAME_WARNING) ||
-				meta.getName().equals(metaObject.NAME_HINT) ||
-				meta.getName().equals(metaObject.NAME_INFO) ||
-				meta.getName().equals(metaObject.NAME_TODO))
-			{
-				metaResult += meta.toStringX3D();
-			}
-		}
-		validationResult += x3dModel.validate(); // walk entire tree to validate correctness
-	}
-	catch (Exception e)
-	{
-		exceptionResult = e.getMessage(); // report exception failures, if any
-	    if (exceptionResult == null)
-	    {
-			exceptionResult = "Exception caught but null message!";
-			e.printStackTrace();
-	    }
-	}
-	if  (metaResult.isEmpty() && exceptionResult.isEmpty() && validationResult.isEmpty())
-	     return "success";
-	else
-	{
-		String returnMessage = metaResult;
-		if  (!exceptionResult.isEmpty() && !validationResult.isEmpty())
-			returnMessage += "\n*** ";
-		returnMessage += exceptionResult;
-		if  (exceptionResult.isEmpty() && !validationResult.isEmpty())
-			returnMessage = "\n" + returnMessage; // skip line before meta tags, etc.
-		returnMessage += validationResult;
-		return returnMessage;
-	}
-  }
+	   
     /** Default main() method provided for test purposes.
      * @param argv input parameters
+	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(argv)</a>
+	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#validationReport--">X3DObject.validationReport()</a>
      */
     public static void main(String argv[])
     {
-		]]></xsl:text><xsl:value-of select="$newClassName"/>
-		<xsl:text> testObject = new </xsl:text><xsl:value-of select="$newClassName"/><xsl:text>();
+		X3DObject exampleObject = new ]]></xsl:text><xsl:value-of select="$newClassName"/><xsl:text>().getX3dModel();
+		
+		exampleObject.handleArguments(argv);
 		System.out.print("</xsl:text>          <xsl:value-of select="$newClassName"/>
-		<xsl:text disable-output-escaping="yes"><![CDATA[ execution self-validation test results: ");
-		String validationResults = testObject.validateSelf();
-		if (validationResults.startsWith("<"))
-			System.out.println();
+		<xsl:text disable-output-escaping="yes"><![CDATA[ self-validation test results: ");
+		String validationResults = exampleObject.validationReport();
 		System.out.println(validationResults);
 	}
 }
@@ -475,7 +425,7 @@ POSSIBILITY OF SUCH DAMAGE.
 <xsl:text><![CDATA[<a href="http://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>]]></xsl:text>
 			<xsl:text>, </xsl:text>
 <xsl:text><![CDATA[<a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>]]></xsl:text>
-			<xsl:text> and </xsl:text>
+			<xsl:text>, and </xsl:text>
 <xsl:text><![CDATA[<a href="http://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>]]></xsl:text>
 			<xsl:text>.</xsl:text>
 			<xsl:text><![CDATA[ </p>]]></xsl:text>
@@ -657,7 +607,7 @@ POSSIBILITY OF SUCH DAMAGE.
 		<a href="http://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>.
 		It has been produced using the 
 		<a href="http://www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">X3dToJava.xslt</a>
-		stylesheet to create Java source code from an <code>.x3d</code> scene.
+		stylesheet to create Java source code from an <code>.x3d</code> model.
 	</p>
 ]]></xsl:text>
 			<xsl:for-each select="//meta[@name='creator']">
@@ -2142,12 +2092,13 @@ POSSIBILITY OF SUCH DAMAGE.
         <!-- debug:  <xsl:text>//######&#10;</xsl:text> -->
         <!-- debug:  <xsl:message><xsl:text>### inputString received: </xsl:text><xsl:value-of select="$inputString"/></xsl:message> -->
         <!-- debug: 
-        <xsl:variable name="apostrophe"><xsl:text disable-output-escaping="yes">'</xsl:text></xsl:variable>
-             <xsl:message>
-                    <xsl:text>$apostrophe</xsl:text>
-                    <xsl:text>=</xsl:text>
-                    <xsl:value-of select="$apostrophe" disable-output-escaping="yes"/>
-             </xsl:message> -->
+			<xsl:variable name="apostrophe"><xsl:text disable-output-escaping="yes">'</xsl:text></xsl:variable>
+			<xsl:message>
+				   <xsl:text>$apostrophe</xsl:text>
+				   <xsl:text>=</xsl:text>
+				   <xsl:value-of select="$apostrophe" disable-output-escaping="yes"/>
+			</xsl:message>
+		-->
         <xsl:choose>
             <xsl:when test="contains($inputString,'&quot;')">
                 <xsl:value-of select="substring-before($inputString,'&quot;')" disable-output-escaping="yes"/>
@@ -2245,7 +2196,8 @@ POSSIBILITY OF SUCH DAMAGE.
 				<xsl:text>### escape-backslash-characters inputString: </xsl:text>
 				<xsl:value-of select="$inputString"/>
 			</xsl:message>
-		</xsl:if> -->
+		</xsl:if>
+		-->
         <!-- \ = &#92; -->
 		<xsl:choose>
             <xsl:when test="contains($inputString,'\')">
@@ -2613,7 +2565,7 @@ POSSIBILITY OF SUCH DAMAGE.
 			<xsl:text>import org.web3d.x3d.jsail.Networking.*;</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
-		<xsl:if test="//*[starts-with(local-name(),'NURBS')] or //*[contains(local-name(),'Contour')] or //*[name()='CoordinateDouble']">
+		<xsl:if test="//*[starts-with(local-name(),'Nurbs')] or //*[contains(local-name(),'Contour')] or //*[name()='CoordinateDouble']">
 			<xsl:text>import org.web3d.x3d.jsail.NURBS.*;</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
@@ -3327,6 +3279,7 @@ POSSIBILITY OF SUCH DAMAGE.
 					<xsl:choose>
 						<xsl:when test="not(contains(.,'&quot;'))">
 							<!-- MFStringObject is forgiving, but this code block fixes the error and notifies authors of valid practice -->
+							<!-- unquoted MFString values were approved for X3D XML encoding in May 2017 -->
 							<xsl:message>
 								<xsl:text>*** No quotation marks found in MFString array of individual SFString values, wrapped them.</xsl:text>
 								<xsl:text>&#10;</xsl:text>

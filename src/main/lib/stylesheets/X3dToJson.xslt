@@ -1475,9 +1475,29 @@ POSSIBILITY OF SUCH DAMAGE.
               <xsl:with-param name="inputType"   select="$inputType"/>
           </xsl:call-template>
         </xsl:when>
+        <!-- pass through delimeter " " as "," -->
+        <xsl:when test="($inputType = 'MFString') and contains($inputString,'&quot; &quot;') and not(contains(substring-before($inputString,'&quot; &quot;'),'&quot;'))">
+          <xsl:if test="$debugTrace"><xsl:message><xsl:text>[e-q-c-r][7.1]</xsl:text><xsl:value-of select="$debugMessage"/></xsl:message></xsl:if>
+          <xsl:value-of select="substring-before($inputString,'&quot; &quot;')"/>
+          <xsl:text disable-output-escaping="yes">","</xsl:text>
+          <xsl:call-template name="escape-quote-characters-recurse">
+              <xsl:with-param name="inputString" select="substring-after($inputString,'&quot; &quot;')"/>
+              <xsl:with-param name="inputType"   select="$inputType"/>
+          </xsl:call-template>
+        </xsl:when>
+        <!-- pass through delimeter "," as "," -->
+        <xsl:when test="($inputType = 'MFString') and contains($inputString,'&quot;,&quot;') and not(contains(substring-before($inputString,'&quot;,&quot;'),'&quot;'))">
+          <xsl:if test="$debugTrace"><xsl:message><xsl:text>[e-q-c-r][7.2]</xsl:text><xsl:value-of select="$debugMessage"/></xsl:message></xsl:if>
+          <xsl:value-of select="substring-before($inputString,'&quot;,&quot;')"/>
+          <xsl:text disable-output-escaping="yes">","</xsl:text>
+          <xsl:call-template name="escape-quote-characters-recurse">
+              <xsl:with-param name="inputString" select="substring-after($inputString,'&quot;,&quot;')"/>
+              <xsl:with-param name="inputType"   select="$inputType"/>
+          </xsl:call-template>
+        </xsl:when>
         <!-- unescaped quote needs \ escape character inserted, occurs before quotes delimiter -->
         <xsl:when test="($inputType = 'MFString') and contains($inputString,'&quot; &quot;') and (string-length(substring-before($inputString,'&quot; &quot;')) > string-length(substring-before($inputString,'&quot;')))">
-          <xsl:if test="$debugTrace"><xsl:message><xsl:text>[e-q-c-r][7]</xsl:text><xsl:value-of select="$debugMessage"/></xsl:message></xsl:if>
+          <xsl:if test="$debugTrace"><xsl:message><xsl:text>[e-q-c-r][7.3]</xsl:text><xsl:value-of select="$debugMessage"/></xsl:message></xsl:if>
           <xsl:value-of select="substring-before($inputString,'&quot;')"/>
           <xsl:text disable-output-escaping="yes">\"</xsl:text>
           <xsl:call-template name="escape-quote-characters-recurse">

@@ -203,7 +203,7 @@ PythonSerializer.prototype = {
 								       replace(/\\\\"/g, '\\\"').
 								       replace(/""/g, '\\"\\"').
 								       replace(/&quot;&quot;/g, '\\"\\"').
-								       replace(/&/g, "&amp;").
+								       // replace(/&/g, "&amp;").
 								       replace(/\\n/g, '\\n');
 								if (y !== x) {
 									// console.error("Python Replacing "+x+" with "+y);
