@@ -150,7 +150,7 @@ app.get("/files", function(req, res, next) {
 					}
 
 				});
-				glob(www+'/**/*.x3d', function( err, files ) {
+				glob(www+'/**/*.json', function( err, files ) {
 					if (err) return;
 					files.forEach(function(file) {
 						if (new RegExp(test).test(file)) {
@@ -240,6 +240,9 @@ app.get("*.json", function(req, res, next) {
 	}
 	var json = {};
 	var outfile = __dirname+"/"+file;
+	if (outfile.indexOf("www.web3d.org") >= 0) {
+		outfile = www +"/"+file.substr(file.indexOf("www.web3d.org"));
+	}
 	/*
 	if (fs.existsSync(outfile)) {
 	*/
