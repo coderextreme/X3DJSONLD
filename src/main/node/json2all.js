@@ -14,11 +14,13 @@ convertJSON([
 	extension : ".java",
 	codeOutput : "../",
 	},
+	/*
 	{ 
 	serializer : './DOM2JSONSerializer.js',
 	folder : "../",
 	extension : ".json.new",
 	},
+	*/
 	{ 
 	serializer : './DOMSerializer.js',
 	folder : "../",

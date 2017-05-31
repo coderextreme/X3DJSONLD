@@ -1,4 +1,4 @@
-/** X3DOM Runtime, http://www.x3dom.org/ 1.7.3-dev - b'bf0084f7df2b6fd7ccbae28d0be95df25fc35ba2' - b'Tue May 30 19:28:29 2017 -0400' *//*
+/** X3DOM Runtime, http://www.x3dom.org/ 1.7.3-dev - b'4c8ab036e86d351f7c783e91dfc16a4d9688ac90' - b'Tue May 30 20:38:18 2017 -0400' *//*
  * X3DOM JavaScript Library
  * http://www.x3dom.org
  *
@@ -20241,7 +20241,7 @@ x3dom.PROTOS.prototype = {
 		var newobject = [];
 		var offset = 0;
 		for (var p in object) {
-			var possibleArray = flattener(object[p], newobject, object.length);
+			var possibleArray = this.flattener(object[p], newobject, object.length);
 			if (Array.isArray(possibleArray)) {
 				for (var q in possibleArray) {
 					newobject[parseInt(p)+offset+parseInt(q)] = possibleArray[q];
@@ -20257,10 +20257,10 @@ x3dom.PROTOS.prototype = {
 	flattenerObject : function(object, parentArray, arrayLen) {
 		var newobject = {};
 		for (var p in object) {
-			var possibleArray = flattener(object[p], parentArray, arrayLen);
+			var possibleArray = this.flattener(object[p], parentArray, arrayLen);
 			if (Array.isArray(possibleArray)) {
 				if (this.SFNodes[p]) {
-					// SFNodes should only have one child
+					// this.SFNodes should only have one child
 					newobject[p] = possibleArray[0];
 					// handle extra nodes brought in from proto
 					if (possibleArray.length > 1) {
@@ -20283,7 +20283,7 @@ x3dom.PROTOS.prototype = {
 					newobject[p] = possibleArray;
 				}
 			} else {
-				if (SFNodes[p]) {
+				if (this.SFNodes[p]) {
 					if (typeof possibleArray === 'object' && possibleArray["#comment"]) {
 						if (newobject["-children"]) {
 							newobject[p] = {};
@@ -20306,9 +20306,9 @@ x3dom.PROTOS.prototype = {
 	flattener : function(object, parentArray, arrayLen) {
 		if (typeof object === "object") {
 			if (Array.isArray(object)) {
-				var newobject = flattenerArray(object, parentArray);
+				var newobject = this.flattenerArray(object, parentArray);
 			} else {
-				var newobject = flattenerObject(object, parentArray, arrayLen);
+				var newobject = this.flattenerObject(object, parentArray, arrayLen);
 			}
 			return newobject;
 		} else {
@@ -20317,10 +20317,13 @@ x3dom.PROTOS.prototype = {
 	},
 
 	prototypeExpander: function (file, object) {
+		console.log("Pre proto expander", object);
 		object = this.realPrototypeExpander(file, object, false);
+		console.log("Post proto expander", object);
 		this.zapIs(object);
-		// console.error("SCRIPTS", JSON.stringify(this.scriptField));
-		// console.error("PROTOS", JSON.stringify(this.protoField, null, 2));
+		console.log("Post zap", object);
+		object = this.flattener(object);
+		console.log("Post flattener", object);
 		return object;
 	},
 
@@ -42588,8 +42591,9 @@ x3dom.registerNodeType(
 			    try {
 				    var json = JSON.parse(xhr.response);
 				    console.log("post parse", json);
-				    // json = x3dom.protoExpander.prototypeExpander(json);
-				    // console.log("post expander", json);
+			
+				    json = x3dom.protoExpander.prototypeExpander(xhr.responseURL, json);
+				    console.log("return from expander", json);
 				    var parser = new x3dom.JSONParser();
 				    xml = parser.parseJavaScript(json);
 				    console.log("post parser", xml);
