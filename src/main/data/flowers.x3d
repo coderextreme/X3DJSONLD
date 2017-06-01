@@ -67,12 +67,12 @@
                                 </ShaderPart>
                             </ComposedShader>
                         </Appearance>
-			<Sphere></Sphere>
 			<!--
+			<Sphere></Sphere>
+			-->
 			<IndexedFaceSet convex="false" DEF="Orbit" creaseAngle="0">
 			    <Coordinate DEF="OrbitCoordinates"/>
 			</IndexedFaceSet>
-			-->
                     </Shape>
                 </Transform>
                 <Script DEF="Bounce">
@@ -195,7 +195,7 @@
                 </Script>
                 <TimeSensor DEF='TourTime' cycleInterval='0.150' loop='true'></TimeSensor>
                 <ROUTE fromNode="TourTime" fromField="cycleTime" toNode="Bounce" toField="set_fraction"></ROUTE>
-                <ROUTE fromNode="Bounce" fromField="translation_changed" toNode="transform" toField="set_translation"></ROUTE>
+                <ROUTE fromNode="Bounce" fromField="translation" toNode="transform" toField="set_translation"></ROUTE>
 		<!--
 		<ROUTE fromField="coordIndexes" fromNode="Bounce" toField="set_coordIndex" toNode="Orbit"/>
 		<ROUTE fromField="coordinates" fromNode="Bounce" toField="set_point" toNode="OrbitCoordinates"/>
@@ -204,8 +204,10 @@
         </ProtoDeclare>        
         <Transform>
             <ProtoInstance name="flower"/>
+	    <!--
             <ProtoInstance name="flower"/>
             <ProtoInstance name="flower"/>
+	    -->
         </Transform>
     </Scene>
 </X3D>

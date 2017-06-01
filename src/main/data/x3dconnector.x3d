@@ -45,40 +45,46 @@
         <field accessType='initializeOnly' name='endnode' type='SFNode'>
             <Transform USE='G2'/>
         </field>
+        <field accessType='inputOutput' name='transnode' type='SFNode'>
+            <Transform USE='C0'/>
+        </field>
+        <field accessType='inputOutput' name='rotscalenode' type='SFNode'>
+            <Transform USE='C2'/>
+        </field>
         <field accessType='inputOnly' name='set_startpoint' type='SFVec3f' />
         <field accessType='inputOnly' name='set_endpoint' type='SFVec3f' />
-        <field accessType='outputOnly' name='translation' type='SFVec3f' />
-        <field accessType='outputOnly' name='rotation' type='SFRotation' />
-        <field accessType='outputOnly' name='scale' type='SFVec3f' />
         <![CDATA[ecmascript:
         function recompute(startpoint,endpoint){
             var dif = endpoint.subtract(startpoint);
-            var dist = dif.length()*.5;
-            var dif2 = dif.multiply(.5);
+            var dist = dif.length()*0.5;
+            var dif2 = dif.multiply(0.5);
             var norm = dif.normalize();
-            var trans = startpoint.add(dif2);
-            scale = new SFVec3f(1.0,dist,1.0);
-            translation = trans;
-            rotation = new SFRotation(new SFVec3f(0.0,1.0,0.0),norm);
-            //Browser.print('norm='+norm.toString());
-            //Browser.print('rotation='+rotation.toString());
-        }
+            var transl = startpoint.add(dif2);
+	    return {
+		    scale : new SFVec3f(1.0,dist,1.0),
+		    translation : transl,
+		    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)
+	    	    // rotation : new x3dom.fields.Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)
+	    };
+	}
+	function recompute_and_route(startpoint, endpoint) {
+	      var trafo = recompute(startpoint, endpoint);
+	      transnode.translation = trafo.translation;
+	      rotscalenode.rotation = trafo.rotation;
+	      rotscalenode.scale = trafo.scale;
+	}
         function initialize(){
-            recompute(startnode.translation,endnode.translation);
+            recompute_and_route(startnode.translation,endnode.translation);
         }
         function set_startpoint(val,t){
-            recompute(val,endnode.translation);
+            recompute_and_route(val,endnode.translation);
         }
         function set_endpoint(val,t){
-            recompute(startnode.translation,val);
+            recompute_and_route(startnode.translation,val);
         }
         ]]>
     </Script>
-    <ROUTE fromNode='G1' fromField='translation' toNode='S1' toField='set_startpoint'/>
-    <ROUTE fromNode='G2' fromField='translation' toNode='S1' toField='set_endpoint'/>
-    <ROUTE fromNode='S1' fromField='translation' toNode='C0' toField='translation'/>
-    <ROUTE fromNode='S1' fromField='rotation' toNode='C2' toField='rotation'/>
-    <ROUTE fromNode='S1' fromField='scale' toNode='C2' toField='scale'/>
-
+    <ROUTE fromNode='G1' fromField='translation_changed' toNode='S1' toField='set_startpoint'/>
+    <ROUTE fromNode='G2' fromField='translation_changed' toNode='S1' toField='set_endpoint'/>
 </Scene>
 </X3D>
