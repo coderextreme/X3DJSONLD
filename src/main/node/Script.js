@@ -118,6 +118,33 @@ function processScripts(object, classes, mypackage, routecode, loopItems) {
 	classes.log("		};");	
 	classes.log("	}};");
 	classes.log("}");
+	classes.log("X3DJSON.nodeUtil = function(node, field, value) {");
+	classes.log("		var selector = \"[DEF='\"+node+\"'], [name='\"+field+\"']\";");
+	classes.log("		var element = document.querySelector(selector);");
+	classes.log("		if (element === null) {");
+	classes.log("			console.error('unDEFed node',node);");
+	classes.log("		} else if (arguments.length > 2) {");
+	classes.log("			if (value && typeof value.toString === 'function') {");
+	classes.log("				value = value.toString();");
+	classes.log("			}");
+	classes.log("			$(selector).attr(field, value);");
+	classes.log("			// console.log('set', node, '.', field, '=', value);");
+	classes.log("			return element;");
+	classes.log("		} else if (arguments.length > 1) {");
+	classes.log("			value = $(selector).attr(field);");
+	classes.log("			if (element &&");
+	classes.log("				element._x3domNode &&");
+	classes.log("				element._x3domNode._vf &&");
+	classes.log("				element._x3domNode._vf[field] &&");
+	classes.log("				element._x3domNode._vf[field].setValueByStr) {");
+	classes.log("				value = element._x3domNode._vf[field].setValueByStr(value);");
+	classes.log("			}");
+	classes.log("			// console.log('get', node, '.', field,'=',value);");
+	classes.log("			return value;");
+	classes.log("		} else {");
+	classes.log("			return $(selector)[0];");
+	classes.log("		}");
+	classes.log("};");
 	realProcessScripts(object, classes, mypackage, routecode, loopItems);
 }
 
@@ -140,6 +167,10 @@ function processRoute(route, routecode, mypackage, loopItems) {
 	var fromField = route["@fromField"];
 	var toNode = route["@toNode"];
 	var toField = route["@toField"];
+
+	if (fromField.endsWith("_changed")) {
+		fromField = fromField.substring(0, fromField.length-8)
+	}
 
 	var fromScript = mypackage.find(fromNode);
 	var fromRoute = fromNode+":"+fromField+":"+toNode+":"+toField+":FROM";
@@ -189,9 +220,10 @@ function processRoute(route, routecode, mypackage, loopItems) {
 	*/
 
 
-	if (toField === 'set_fraction') {
+	// set routes that run every loop
+	// if (toField === 'set_fraction' || fromField.endsWith("_changed")) {
 		doRoute(mypackage, fromNode, fromField, toNode, toField, loopItems);
-	}
+	// }
 	// run the route once for initializeOnly
 	doRoute(mypackage, fromNode, fromField, toNode, toField, routecode);
 }
@@ -234,10 +266,19 @@ function realProcessScripts(object, classes, mypackage, routecode, loopItems) {
 	}
 }
 
-function valueExpand(type, flat) {
+function valueExpand(type, flat, children) {
 	// console.error("TYPE IS "+type);
 	var str = JSON.stringify(flat);
 	var num = 0; // this will cause an error below if not set
+	if (type === 'SFNode') {
+		if (typeof children !== 'undefined') {
+			var firstNode = children[0];
+			for (var key in firstNode) {
+				var USE = firstNode[key]["@USE"];
+			}
+			return "X3DJSON.nodeUtil('"+USE+"')";
+		}
+	}
 	if (!str) {
 		flat = "";
 	} else if (type === 'SFBool') {
@@ -250,7 +291,7 @@ function valueExpand(type, flat) {
 		flat = str;
 	} else if (type === 'SFTime'){
 		flat = str;
-	} else if (type === 'SFNode') {
+	} else if (type === 'SFNode'){
 		flat = str;
 	} else if (type === 'SFRotation'){
 		flat = str.substring(1, str.length-1);
@@ -325,7 +366,7 @@ function processFields(fields, classes, mypackage) {
 	classes.log("                        for (var route in action[property]) {");
 	classes.log("                                if (typeof action[property][route] === 'function') {");
 	classes.log("                                        action[property][route](property, value);");
-	classes.log("   		                     console.log('Set',property,'to', value);");
+	classes.log("   		                     // console.log('Set',property,'to', value);");
 	classes.log("                                }");
 	classes.log("                        }");
 	classes.log("                 }");
@@ -352,7 +393,7 @@ function processFields(fields, classes, mypackage) {
 		// console.error("NAME IS ",f, JSON.stringify(name));
 		types[name] = object["@type"];
 		// console.error("TYPE IS ",f, object["@type"]);
-		values[name] = valueExpand(types[name], object["@value"]);
+		values[name] = valueExpand(types[name], object["@value"], object["-children"]);
 		// console.error("VALUE IS ",f, object["@value"]);
 		switch(object['@accessType']) {
 		case 'initializeOnly':
@@ -459,8 +500,21 @@ function processSource(lines, classes, mypackage) {
 			var trail = fxns[f1].rail;
 			// replace fields in body
 			for (var n in mypackage.fields) {
-				var pattern = '(\\b)('+n+')(\\b)';
-				body = body.replace(new RegExp(pattern, 'g'), "$1this.proxy.$2$3");
+				var type = mypackage.fields[n]["@type"];
+				var children = mypackage.fields[n]["-children"];
+				if (type === "SFNode" && children) {
+					var firstNode = children[0];
+					for (var key in firstNode) {
+						var USE = firstNode[key]["@USE"];
+					}
+					var pattern = '(\\b)'+n+'[ \t\r\n]*\.?[ \t\r\n]*([A-Za-z0-9_$]+)?[ \t\r\n]*=([^;]*);';
+					body = body.replace(new RegExp(pattern, 'g'), "$1X3DJSON.nodeUtil('"+USE+"', '$2', $3);");
+					pattern = '(\\b)'+n+'[ \t\r\n]*\.?[ \t\r\n]*([A-Za-z0-9_$]+)?(\\b)';
+					body = body.replace(new RegExp(pattern, 'g'), "$1X3DJSON.nodeUtil('"+USE+"', '$2')$3");
+				} else {
+					var pattern = '(\\b)('+n+')(\\b)';
+					body = body.replace(new RegExp(pattern, 'g'), "$1this.proxy.$2$3");
+				}
 				/*
 				var pattern = '(\\b)('+n+'[ \t\n\r]+)=([^=][^;]*);';
 				body = body.replace(new RegExp(pattern, 'g'), "$1this.set_$2($3);");
@@ -498,7 +552,7 @@ function processSource(lines, classes, mypackage) {
 	classes.log(	proxyAction + " = {};");
 	classes.log(	useX3DJSON('Obj',mypackage.name)+".proxy = X3DJSON.createProxy("+
 			proxyAction+","+
-			useX3DJSON('Obj',mypackage.name)+")");
+			useX3DJSON('Obj',mypackage.name)+");");
 	classes.log("}");
 	classes.log('if (typeof '+useX3DJSON('Obj',mypackage.name)+'.initialize === "function") '+useX3DJSON('Obj', mypackage.name) + '.initialize();');
 }
