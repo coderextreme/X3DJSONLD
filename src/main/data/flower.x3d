@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "http://www.web3d.org/specifications/x3d-3.0.dtd">
+<X3D profile="Immersive" version="3.3"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.0.xsd">
+  <Scene>
+    <NavigationInfo type="&quot;EXAMINE&quot; &quot;ANY&quot;"/>
+    <DirectionalLight direction="0 -0.8 -0.2" intensity="0.5"/>
+    <Background skyColor='1.000 1.000 1.000'/>
+    <Viewpoint description="One mathematical orbital" position="0 0 50"/>
+
+		<Transform translation='0 -1 1' rotation='0 1 0 3.1415926' scale='1.5 1.5 1.5' >
+			<Shape>
+				<Appearance>
+					<Material transparency='0.1' diffuseColor='0.9 0.3 0.3' specularColor='0.8 0.8 0.8' shininess='0.145' />
+				</Appearance>
+				<IndexedFaceSet ccw="false" convex="false" coordIndex="0 1 2 -1" creaseAngle='0' DEF="ifs" solid='true'>
+					<Coordinate DEF="crd" point='0 0 1 0 1 0 1 0 0' />
+				</IndexedFaceSet>
+			</Shape>
+		</Transform>
+		<Script DEF="FlowerScript">
+        <field accessType="inputOnly" name="set_fraction" type="SFFloat"/>
+        <field accessType="outputOnly" name="coordinates" type="MFVec3f"/>
+	<field accessType="outputOnly" name="coordIndexes" type="MFInt32"/>
+<![CDATA[ecmascript:
+    
+var e = 5;
+var f = 5;
+var g = 5;
+var h = 5;
+var resolution = 150;
+var t = 0;
+var p = 0;
+
+function initialize() {
+     var localci = new Array();
+     var ci = 0;
+     var buf = [];
+     for (var i = 0; i < resolution-1; i++) {
+     	for (var j = 0; j < resolution-1; j++) {
+	     localci[ci] = i*resolution+j;
+	     localci[ci+1] = i*resolution+j+1;
+	     localci[ci+2] = (i+1)*resolution+j+1;
+	     localci[ci+3] = (i+1)*resolution+j;
+	     localci[ci+4] = -1;
+	     buf.push(localci[ci]);
+	     buf.push(localci[ci+1]);
+	     buf.push(localci[ci+3]);
+	     buf.push(localci[ci+4]);
+
+	     buf.push(localci[ci+1]);
+	     buf.push(localci[ci+2]);
+	     buf.push(localci[ci+3]);
+	     buf.push(localci[ci+4]);
+	     ci += 5;
+	}
+    }
+    updateCoordinates(resolution);
+    coordIndexes = new x3dom.fields.MFInt32(buf);
+}
+
+function updateCoordinates(resolution) {
+     theta = 0.0;
+     phi = 0.0;
+     delta = (2 * 3.141592653) / (resolution-1);
+     var buf = [];
+     for ( i = 0; i < resolution; i++) {
+     	for ( j = 0; j < resolution; j++) {
+		rho = e + f * Math.cos(g * theta + t) * Math.cos(h * phi + p);
+		var coord = new x3dom.fields.SFVec3f(
+			rho * Math.cos(phi) * Math.cos(theta),
+			rho * Math.cos(phi) * Math.sin(theta),
+			rho * Math.sin(phi)
+		);
+	     	buf.push(coord);
+		theta += delta;
+	}
+	phi += delta;
+     }
+     coordinates = new x3dom.fields.MFVec3f(buf);
+}
+
+function set_fraction() {
+	choice = Math.floor(Math.random() * 4);
+	switch (choice) {
+	case 0:
+		e += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 1:
+		f += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 2:
+		g += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 3:
+		h += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	}
+	t += 0.5;
+	p += 0.5;
+	if (f < 1) {
+		f = 10;
+	}
+	if (g < 1) {
+		g = 4;
+	}
+	if (h < 1) {
+		h = 4;
+	}
+	updateCoordinates(resolution);
+}
+]]></Script>
+    <TimeSensor DEF="Clock" cycleInterval="16" loop="true"/>
+    <ROUTE fromNode="FlowerScript" fromField="coordIndexes" toNode="ifs" toField="coordIndex"/>
+    <ROUTE fromNode="FlowerScript" fromField="coordinates" toNode="crd" toField="point"/>
+    <ROUTE fromNode="Clock" fromField="fraction_changed" toNode="FlowerScript" toField="set_fraction"/>
+  </Scene>
+</X3D>
