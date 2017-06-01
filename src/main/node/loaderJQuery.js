@@ -89,31 +89,6 @@ function loadScripts(json) {
 	// zapSource(json);
 
 	var X3DJSON = {};
-	X3DJSON.nodeUtil = function(node, field, value) {
-			var element = document.querySelector("[DEF='"+node+"'], [name='"+field+"']");
-			if (element === null) {
-				console.error('unDEFed node',node);
-			} else if (arguments.length > 2) {
-				element.setAttribute(field, value.toString());
-				console.log('set', node, '.', field, '=', value);
-				return element;
-			} else if (arguments.length > 1) {
-				var value = element.getFieldValue(field);
-				/*
-				if (element &&
-					element._x3domNode &&
-					element._x3domNode._vf &&
-					element._x3domNode._vf[field] &&
-					element._x3domNode._vf[field].setValueByStr) {
-					value = element._x3domNode._vf[field].setValueByStr(value);
-				}
-				*/
-				console.log('get', node, '.', field,'=',value);
-				return value;
-			} else {
-				return element;
-			}
-	};
 	try {
 		// TODO eval is evil
 		eval("var myjson = "+JSON.stringify(json, null, 2)+";\n"+scripts.text+"\n"+routes.text);

@@ -54,6 +54,7 @@
 					  <ShaderPart url='"../shaders/freewrl.vs" "https://coderextreme.net/X3DJSONLD/shaders/freewrl.vs"' type='VERTEX'></ShaderPart>
 					  <ShaderPart url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"' type='FRAGMENT'></ShaderPart>
 					</ComposedShader>
+					-->
 					<ComposedShader DEF='x3dom' language="GLSL">
 					  <field name='cube' type='SFInt32' accessType="inputOutput" value='0'/>
 					  <field name='chromaticDispertion' type='SFVec3f' accessType="inputOutput" value='0.98 1.0 1.033'/>
@@ -64,6 +65,7 @@
 					  <ShaderPart url='"../shaders/x3dom.vs" "https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs"' type='VERTEX'></ShaderPart>
 					  <ShaderPart url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"' type='FRAGMENT'></ShaderPart>
 					</ComposedShader>
+					<!--
 					<ComposedShader DEF='instant' language="GLSL">
 					  <field name='cube' type='SFInt32' accessType="inputOutput" value='0'/>
 					  <field name='chromaticDispertion' type='SFVec3f' accessType="inputOutput" value='0.98 1.0 1.033'/>
