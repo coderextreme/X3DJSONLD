@@ -72,7 +72,7 @@ function animate() {
 		h += Math.floor(Math.random() * 2) * 2 - 1;
 		break;
 	}
-	t += 0.5
+	t += 0.5;
 	p += 0.5;
 	if (f < 1) {
 		f = 10;
