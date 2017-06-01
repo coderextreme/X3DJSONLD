@@ -94,11 +94,12 @@ function loadScripts(json) {
 			if (element === null) {
 				console.error('unDEFed node',node);
 			} else if (arguments.length > 2) {
-				element.setAttribute(field, value);
+				element.setAttribute(field, value.toString());
 				console.log('set', node, '.', field, '=', value);
 				return element;
 			} else if (arguments.length > 1) {
-				var value = element.getAttribute(field);
+				var value = element.getFieldValue(field);
+				/*
 				if (element &&
 					element._x3domNode &&
 					element._x3domNode._vf &&
@@ -106,6 +107,7 @@ function loadScripts(json) {
 					element._x3domNode._vf[field].setValueByStr) {
 					value = element._x3domNode._vf[field].setValueByStr(value);
 				}
+				*/
 				console.log('get', node, '.', field,'=',value);
 				return value;
 			} else {

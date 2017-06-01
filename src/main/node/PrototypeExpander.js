@@ -474,7 +474,7 @@ PROTOS.prototype = {
 		return object;
 	},
 
-	readCode : function (data, fileExt) {
+	readCode : function (data, fileExt, protoexp, done, p, newobject) {
 		if (typeof data !== 'undefined') {
 			newobject[p]["#sourceText"] = data.split(/\r?\n/);
 			delete newobject[p]["@url"];
@@ -486,7 +486,7 @@ PROTOS.prototype = {
 		// console.error("DEF is", newobject[p]["@DEF"]);
 		this.setScriptFields(newobject[p]["field"], newobject[p]["@DEF"]);
 		var url = newobject[p]["@url"];
-		this.loadURLs(file, url, this.readCode, null, p, newobject);
+		this.loadURLs(file, url, this.readCode, null, function(){}, p, newobject);
 	},
 
 	handleProtoDeclare: function (file, object, p) {
