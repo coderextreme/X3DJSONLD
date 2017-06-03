@@ -10,8 +10,10 @@ export PROCESSORS=${PROCESSORS-8}
 python ../python/classes.py
 
 STYLESHEETDIR=../lib/stylesheets
-X3DTOJAVA='s/\/data\//\/java\/net\/coderextreme\/data\//' 
-X3DTONASH='s/\/data\//\/nashorn\/net\/coderextreme\/data\//' 
+DATATOJAVA='s/\/data\//\/java\/net\/coderextreme\/data\//' 
+DATATONASH='s/\/data\//\/nashorn\/net\/coderextreme\/data\//' 
+EXTOJAVA='s/\/Examples\//\/java\/net\/coderextreme\/Examples\//' 
+EXTONASH='s/\/Examples\//\/nashorn\/net\/coderextreme\/Examples\//' 
 ROOTTOJAVA='s/\/x3d_code\/www.web3d.org\//\/java\/net\/coderextreme\/x3d_code\/www_web3d_org\//' 
 ROOTTONASH='s/\/x3d_code\/www.web3d.org\//\/nashorn\/net\/coderextreme\/x3d_code\/www_web3d_org\//' 
 # OVERWRITE=
@@ -27,7 +29,7 @@ do
 	${NODE} ${NODEDIR}/xmldiff.js $X3D $i
 done
 
-for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.java/' -e 's/-/_/g' -e 's/^\/c/../' -e $X3DTOJAVA -e $ROOTTOJAVA | xargs ls -d`
+for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.java/' -e 's/-/_/g' -e 's/^\/c/../' -e $EXTOJAVA -e $DATATOJAVA -e $ROOTTOJAVA | xargs ls -d`
 do
 	pushd `dirname $i`
 	echo $i
@@ -35,7 +37,7 @@ do
 	popd
 done
 
-for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.class/' -e 's/-/_/g' -e 's/^\/c/../' -e $X3DTOJAVA -e $ROOTTOJAVA | xargs ls -d | sed -e 's/\.class$//' -e 's/^\.\.\/java\///'`
+for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.class/' -e 's/-/_/g' -e 's/^\/c/../' -e $EXTOJAVA -e $DATATOJAVA -e $ROOTTOJAVA | xargs ls -d | sed -e 's/\.class$//' -e 's/^\.\.\/java\///'`
 do
 	pushd ../java
 	echo $i
@@ -55,7 +57,7 @@ do
 	${NODE} ${NODEDIR}/xmldiff.js $X3D $i
 done
 
-for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.sail.js/' -e 's/-/_/g' -e 's/^\/c/../' -e $X3DTONASH -e $ROOTTONASH| xargs ls -d`
+for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.sail.js/' -e 's/-/_/g' -e 's/^\/c/../' -e $EXTONASH -e $DATATONASH -e $ROOTTONASH| xargs ls -d`
 do
 	pushd ../nashorn
 	echo $i

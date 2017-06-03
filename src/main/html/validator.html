@@ -6,11 +6,17 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ajv/5.1.4/ajv.min.js"></script>
     <script type="text/javascript" src="../node/X3DJSONLD.js"></script>
     <script type="text/javascript" src="../node/loaderJQuery.js"></script>
+    <script type="text/javascript" src="../node/ajv-i18n/localize/en/index.js"></script>
 </head>
 <body>
 	<h1>X3D JSON schema validator</h1><br></br>
 	If you paste nasties into this page, you will get nasties back.  I am not responsible for your misuse of this page.<br></br>
-	<a href="javascript:validator();">Click here to validate JSON in text area against X3D JSON Schema 3.3</a><br></br>
+	<a href="javascript:validator();">Click here to validate JSON in text area against X3D JSON Schema 3.3</a>
+	Language:
+	<select onchange="lang=this.value;loadLocalize(lang);">
+		<option>en</option>
+		<option>de</option>
+	</select><br></br>
 	<textarea id="json" name="json" rows="45" cols="80"></textarea><br></br>
 </body>
 <script type="text/javascript">
@@ -45,6 +51,39 @@ var getFirstBrowserLanguage = function () {
 
 
 
+
+var module = {};
+// From: https://stackoverflow.com/questions/950087/how-do-i-include-a-javascript-file-in-another-javascript-file
+function loadScript(url, callback)
+{
+    // Adding the script tag to the head as suggested before
+    var head = document.getElementsByTagName('head')[0];
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = url;
+
+    // Then bind the event to the callback function.
+    // There are several events for cross browser compatibility.
+    script.onreadystatechange = callback;
+    script.onload = callback;
+
+    // Fire the loading
+    head.appendChild(script);
+}
+
+var lang = getFirstBrowserLanguage();
+
+var localize;
+function loadLocalize(lang) {
+	loadScript("../node/ajv-i18n/localize/"+lang+"/index.js", function() {
+		localize = module.exports;
+	});
+}
+
+loadLocalize(lang);
+
+
+
 function validator() {
 	try {
 		var data = $("#json").val();
@@ -54,7 +93,7 @@ function validator() {
 					alert("Valid or user clicked OK");
 				}, function(e) {
 					alert(e);
-				}, getFirstBrowserLanguage());
+				});
 			});
 		} else {
 			var json = JSON.parse(data);

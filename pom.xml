@@ -117,6 +117,7 @@
 							</includes>
 							<excludes>
 								<exclude>**/*.intermediate.x3d</exclude>
+								<exclude>**/*.don.x3d</exclude>
 								<exclude>**/*.new</exclude>
 								<exclude>**/*.new.x3d</exclude>
 								<exclude>**/*.json</exclude>
@@ -138,6 +139,7 @@
 							</includes>
 							<excludes>
 								<exclude>**/*.intermediate.x3d</exclude>
+								<exclude>**/*.don.x3d</exclude>
 								<exclude>**/*.new</exclude>
 								<exclude>**/*.new.x3d</exclude>
 								<exclude>**/*.json</exclude>

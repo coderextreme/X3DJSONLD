@@ -25,7 +25,7 @@ var www = config.x3dcode;
 // app.use(express.static('src/main/html'));
 app.use(express.static('/'));
 app.use(express.static('src/main/data'));
-app.use(express.static('src/main/node'));
+// app.use(express.static('src/main/node'));
 app.use(express.static('src/main/orig'));
 app.use(express.static('src/main/out'));
 app.use(express.static('src/main/schema'));
@@ -46,6 +46,11 @@ function convertX3dToJson(res, infile, outfile, next) {
 }
 
 function send(res, data, type, next) {
+	sendNoNext(res, data, type);
+	next();
+}
+
+function sendNoNext(res, data, type) {
 	console.error("Type", type);
 	try {
 		if (!type.startsWith("image/")) {
@@ -55,7 +60,6 @@ function send(res, data, type, next) {
 		console.error(e);
 	}
 	res.send(data);
-	next();
 }
 
 var filecount = 0;
@@ -180,9 +184,9 @@ function magic(path, type) {
 		var data = fs.readFileSync(__dirname+"/"+url);
 	}
 	if (type.startsWith("image") || type.startsWith("audio") || type.startsWith("video")) {
-		send(res, data, type, next);
+		sendNoNext(res, data, type);
 	} else {
-		send(res, data.toString(), type, next);
+		sendNoNext(res, data.toString(), type);
 	}
     });
 }
@@ -224,12 +228,14 @@ magic("/*.html", "text/html");
 magic("*.xslt", "text/xsl");
 magic("*.css", "text/css");
 magic("*.swf", "application/x-shockwave-flash");
+magic("/**/schema/*.json", "text/json");
 /*
 magic("*.gltf", "text/json");
 magic("*.glb", "application/octet-stream");
 magic("*.x3d", "model/x3d+xml");
 magic("*.xml", "text/xml");
 */
+
 
 app.get("*.json", function(req, res, next) {
 	var url = req._parsedUrl.pathname.substr(1);
