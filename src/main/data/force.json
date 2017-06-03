@@ -32,7 +32,7 @@
           },
           {
             "@name":"translated",
-            "@content":"27 May 2017"
+            "@content":"03 June 2017"
           },
           {
             "@name":"generator",
@@ -468,18 +468,11 @@
                   "@accessType":"inputOnly",
                   "@value":false,
                   "@type":"SFBool"
-                },
+                }
+              ],
+              "-children":[
                 {
-                  "@name":"ModifiableNode",
-                  "@type":"SFNode",
-                  "@accessType":"inputOutput",
-                  "-children":[
-                    { "Transform":
-                      {
-                        "@USE":"HoldsContent"
-                      }
-                    }
-                  ]
+                  "#comment":"<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>"
                 }
               ],
               "#sourceText":[

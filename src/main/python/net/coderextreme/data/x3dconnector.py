@@ -69,52 +69,55 @@ field34 = fieldObject().setType(fieldObject.TYPE_SFNODE).setName("endnode").setA
 Transform35 = TransformObject().setUSE("G2")
 field34.addChild(Transform35)
 Script31.addField(field34)
-field36 = fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("set_startpoint").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
+field36 = fieldObject().setType(fieldObject.TYPE_SFNODE).setName("transnode").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
+Transform37 = TransformObject().setUSE("C0")
+field36.addChild(Transform37)
 Script31.addField(field36)
-field37 = fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("set_endpoint").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
-Script31.addField(field37)
-field38 = fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("translation").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
+field38 = fieldObject().setType(fieldObject.TYPE_SFNODE).setName("rotscalenode").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
+Transform39 = TransformObject().setUSE("C2")
+field38.addChild(Transform39)
 Script31.addField(field38)
-field39 = fieldObject().setType(fieldObject.TYPE_SFROTATION).setName("rotation").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
-Script31.addField(field39)
-field40 = fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("scale").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
+field40 = fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("set_startpoint").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
 Script31.addField(field40)
+field41 = fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("set_endpoint").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
+Script31.addField(field41)
 
 Script31.setSourceCode("\n"+
 "        ecmascript:\n"+
 "        function recompute(startpoint,endpoint){\n"+
 "            var dif = endpoint.subtract(startpoint);\n"+
-"            var dist = dif.length()*.5;\n"+
-"            var dif2 = dif.multiply(.5);\n"+
+"            var dist = dif.length()*0.5;\n"+
+"            var dif2 = dif.multiply(0.5);\n"+
 "            var norm = dif.normalize();\n"+
-"            var trans = startpoint.add(dif2);\n"+
-"            scale = new SFVec3f(1.0,dist,1.0);\n"+
-"            translation = trans;\n"+
-"            rotation = new SFRotation(new SFVec3f(0.0,1.0,0.0),norm);\n"+
-"            //Browser.print('norm='+norm.toString());\n"+
-"            //Browser.print('rotation='+rotation.toString());\n"+
-"        }\n"+
+"            var transl = startpoint.add(dif2);\n"+
+"	    return {\n"+
+"		    scale : new SFVec3f(1.0,dist,1.0),\n"+
+"		    translation : transl,\n"+
+"		    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)\n"+
+"	    	    // rotation : new x3dom.fields.Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)\n"+
+"	    };\n"+
+"	}\n"+
+"	function recompute_and_route(startpoint, endpoint) {\n"+
+"	      var trafo = recompute(startpoint, endpoint);\n"+
+"	      transnode.translation = trafo.translation;\n"+
+"	      rotscalenode.rotation = trafo.rotation;\n"+
+"	      rotscalenode.scale = trafo.scale;\n"+
+"	}\n"+
 "        function initialize(){\n"+
-"            recompute(startnode.translation,endnode.translation);\n"+
+"            recompute_and_route(startnode.translation,endnode.translation);\n"+
 "        }\n"+
 "        function set_startpoint(val,t){\n"+
-"            recompute(val,endnode.translation);\n"+
+"            recompute_and_route(val,endnode.translation);\n"+
 "        }\n"+
 "        function set_endpoint(val,t){\n"+
-"            recompute(startnode.translation,val);\n"+
+"            recompute_and_route(startnode.translation,val);\n"+
 "        }\n"+
 "")
 Scene7.addChild(Script31)
-ROUTE41 = ROUTEObject().setFromNode("G1").setFromField("translation").setToNode("S1").setToField("set_startpoint")
-Scene7.addChild(ROUTE41)
-ROUTE42 = ROUTEObject().setFromNode("G2").setFromField("translation").setToNode("S1").setToField("set_endpoint")
+ROUTE42 = ROUTEObject().setFromNode("G1").setFromField("translation_changed").setToNode("S1").setToField("set_startpoint")
 Scene7.addChild(ROUTE42)
-ROUTE43 = ROUTEObject().setFromNode("S1").setFromField("translation").setToNode("C0").setToField("translation")
+ROUTE43 = ROUTEObject().setFromNode("G2").setFromField("translation_changed").setToNode("S1").setToField("set_endpoint")
 Scene7.addChild(ROUTE43)
-ROUTE44 = ROUTEObject().setFromNode("S1").setFromField("rotation").setToNode("C2").setToField("rotation")
-Scene7.addChild(ROUTE44)
-ROUTE45 = ROUTEObject().setFromNode("S1").setFromField("scale").setToNode("C2").setToField("scale")
-Scene7.addChild(ROUTE45)
 X3D0.setScene(Scene7)
 
 X3D0.toFileX3D("../data/x3dconnector.new.x3d")

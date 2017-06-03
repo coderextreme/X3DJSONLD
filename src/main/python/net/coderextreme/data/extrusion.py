@@ -39,18 +39,15 @@ Script15.setSourceCode("\n"+
 "\n"+
 "                function set_cycle(value) {\n"+
 "                        Browser.print(value);\n"+
-"                        var endA = new SFVec3f(spine[0][0]*Math.random()*2, spine[0][1]*Math.random()*2, spine[0][2]*Math.random()*2);\n"+
-"                        var endB = new SFVec3f(spine[1][0]*Math.random()*2, spine[1][1]*Math.random()*2, spine[1][2]*Math.random()*2);\n"+
-"		        spine = new MFVec3f(endA, endB);\n"+
-"                }\n"+
-"                function set_spine(value) {\n"+
-"                    spine = value;\n"+
+"                        var endA = new SFVec3f(spine[0].x*Math.random()*2, spine[0].y*Math.random()*2, spine[0].z*Math.random()*2);\n"+
+"                        var endB = new SFVec3f(spine[1].x*Math.random()*2, spine[1].y*Math.random()*2, spine[1].z*Math.random()*2);\n"+
+"		        spine = new MFVec3f([endA, endB]);\n"+
 "                }\n"+
 "")
 Group9.addChild(Script15)
 ROUTE18 = ROUTEObject().setFromNode("TourTime").setFromField("cycleTime").setToNode("MoveCylinder").setToField("set_cycle")
 Group9.addChild(ROUTE18)
-ROUTE19 = ROUTEObject().setFromNode("MoveCylinder").setFromField("spine").setToNode("extrusion").setToField("set_spine")
+ROUTE19 = ROUTEObject().setFromNode("MoveCylinder").setFromField("spine_changed").setToNode("extrusion").setToField("spine")
 Group9.addChild(ROUTE19)
 Scene8.addChild(Group9)
 X3D0.setScene(Scene8)

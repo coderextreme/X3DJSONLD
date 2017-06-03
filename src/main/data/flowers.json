@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"26 May 2017"
+            "@content":"03 June 2017"
           },
           {
             "@name":"generator",
@@ -250,16 +250,24 @@
                                     ]
                                   }
                                 },
-                              "-geometry":
-                                { "Sphere":
-                                  {
-                                  }
-                                },
                               "-children":[
                                 {
-                                  "#comment":"<IndexedFaceSet convex=\"false\" DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>"
+                                  "#comment":"<Sphere></Sphere>"
                                 }
-                              ]
+                              ],
+                              "-geometry":
+                                { "IndexedFaceSet":
+                                  {
+                                    "@convex":false,
+                                    "@DEF":"Orbit",
+                                    "-coord":
+                                      { "Coordinate":
+                                        {
+                                          "@DEF":"OrbitCoordinates"
+                                        }
+                                      }
+                                  }
+                                }
                             }
                           }
                         ]
@@ -459,7 +467,7 @@
                     { "ROUTE":
                       {
                         "@fromNode":"Bounce",
-                        "@fromField":"translation_changed",
+                        "@fromField":"translation",
                         "@toNode":"transform",
                         "@toField":"set_translation"
                       }
@@ -479,15 +487,8 @@
                     "@name":"flower"
                   }
                 },
-                { "ProtoInstance":
-                  {
-                    "@name":"flower"
-                  }
-                },
-                { "ProtoInstance":
-                  {
-                    "@name":"flower"
-                  }
+                {
+                  "#comment":"<ProtoInstance name=\"flower\"/> <ProtoInstance name=\"flower\"/>"
                 }
               ]
             }

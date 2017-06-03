@@ -65,7 +65,7 @@ Script22.setSourceCode("\n"+
 "					function set_cycle(value) {\n"+
 "                                                old = translation;\n"+
 "						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);\n"+
-"                                                keyValue = new MFVec3f(old, translation);\n"+
+"                                                keyValue = new MFVec3f([old, translation]);\n"+
 "						// Browser.println(translation);\n"+
 "					}\n"+
 "")
@@ -117,17 +117,17 @@ Script41.setSourceCode("\n"+
 "\n"+
 "                function set_endA(value) {\n"+
 "		    if (typeof spine === \"undefined\") {\n"+
-"		        spine = new MFVec3f(value, value);\n"+
+"		        spine = new MFVec3f([value, value]);\n"+
 "		    } else {\n"+
-"		        spine = new MFVec3f(value, spine[1]);\n"+
+"		        spine = new MFVec3f([value, spine[1]]);\n"+
 "		    }\n"+
 "                }\n"+
 "                \n"+
 "                function set_endB(value) {\n"+
 "		    if (typeof spine === \"undefined\") {\n"+
-"		        spine = new MFVec3f(value, value);\n"+
+"		        spine = new MFVec3f([value, value]);\n"+
 "		    } else {\n"+
-"		        spine = new MFVec3f(spine[0], value);\n"+
+"		        spine = new MFVec3f([spine[0], value]);\n"+
 "		    }\n"+
 "                }\n"+
 "                \n"+

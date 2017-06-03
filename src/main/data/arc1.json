@@ -81,62 +81,6 @@
               ]
             }
           },
-          { "Transform":
-            {
-              "@DEF":"cylinder2",
-              "-children":[
-                { "Shape":
-                  {
-                    "-appearance":
-                      { "Appearance":
-                        {
-                          "-material":
-                            { "Material":
-                              {
-                                "@diffuseColor":[0.2,0.7,0.7]
-                              }
-                            }
-                        }
-                      },
-                    "-geometry":
-                      { "Cylinder":
-                        {
-                          "@radius":0.1
-                        }
-                      }
-                  }
-                }
-              ]
-            }
-          },
-          { "Transform":
-            {
-              "@DEF":"cylinder3",
-              "-children":[
-                { "Shape":
-                  {
-                    "-appearance":
-                      { "Appearance":
-                        {
-                          "-material":
-                            { "Material":
-                              {
-                                "@diffuseColor":[0.2,0.7,0.7]
-                              }
-                            }
-                        }
-                      },
-                    "-geometry":
-                      { "Cylinder":
-                        {
-                          "@radius":0.1
-                        }
-                      }
-                  }
-                }
-              ]
-            }
-          },
           { "ProtoDeclare":
             {
               "@name":"point",
@@ -420,19 +364,7 @@
           { "ProtoInstance":
             {
               "@name":"point",
-              "@DEF":"end1"
-            }
-          },
-          { "ProtoInstance":
-            {
-              "@name":"point",
-              "@DEF":"end2"
-            }
-          },
-          { "ProtoInstance":
-            {
-              "@name":"point",
-              "@DEF":"end3"
+              "@DEF":"end"
             }
           },
           { "ProtoInstance":
@@ -457,7 +389,7 @@
                     { "ProtoInstance":
                       {
                         "@name":"point",
-                        "@USE":"end1"
+                        "@USE":"end"
                       }
                     }
                   ]
@@ -475,86 +407,6 @@
               ]
             }
           },
-          { "ProtoInstance":
-            {
-              "@name":"x3dconnector",
-              "@DEF":"connector2",
-              "fieldValue": [
-                {
-                  "@name":"startnode",
-                  "-children":[
-                    { "ProtoInstance":
-                      {
-                        "@name":"point",
-                        "@USE":"start"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "@name":"endnode",
-                  "-children":[
-                    { "ProtoInstance":
-                      {
-                        "@name":"point",
-                        "@USE":"end2"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "@name":"connectornode",
-                  "-children":[
-                    { "Transform":
-                      {
-                        "@USE":"cylinder2"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          },
-          { "ProtoInstance":
-            {
-              "@name":"x3dconnector",
-              "@DEF":"connector3",
-              "fieldValue": [
-                {
-                  "@name":"startnode",
-                  "-children":[
-                    { "ProtoInstance":
-                      {
-                        "@name":"point",
-                        "@USE":"start"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "@name":"endnode",
-                  "-children":[
-                    { "ProtoInstance":
-                      {
-                        "@name":"point",
-                        "@USE":"end3"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "@name":"connectornode",
-                  "-children":[
-                    { "Transform":
-                      {
-                        "@USE":"cylinder3"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          },
           { "ROUTE":
             {
               "@fromNode":"start",
@@ -565,41 +417,9 @@
           },
           { "ROUTE":
             {
-              "@fromNode":"end1",
+              "@fromNode":"end",
               "@fromField":"translation",
               "@toNode":"connector1",
-              "@toField":"set_endpoint"
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromNode":"start",
-              "@fromField":"translation",
-              "@toNode":"connector2",
-              "@toField":"set_startpoint"
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromNode":"end2",
-              "@fromField":"translation",
-              "@toNode":"connector2",
-              "@toField":"set_endpoint"
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromNode":"start",
-              "@fromField":"translation",
-              "@toNode":"connector3",
-              "@toField":"set_startpoint"
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromNode":"end3",
-              "@fromField":"translation",
-              "@toNode":"connector3",
               "@toField":"set_endpoint"
             }
           }
