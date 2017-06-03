@@ -33,7 +33,7 @@ Appearance17 = AppearanceObject()
 Material18 = MaterialObject().setDiffuseColor([0,0.5,1]).setSpecularColor([0,0.5,1])
 Appearance17.setMaterial(Material18)
 Shape16.setAppearance(Appearance17)
-IndexedFaceSet19 = IndexedFaceSetObject().setConvex(False).setDEF("Orbit").setCreaseAngle(1.57)
+IndexedFaceSet19 = IndexedFaceSetObject().setConvex(False).setDEF("Orbit")
 Coordinate20 = CoordinateObject().setDEF("OrbitCoordinates")
 IndexedFaceSet19.setCoord(Coordinate20)
 Shape16.setGeometry(IndexedFaceSet19)
@@ -45,7 +45,7 @@ Appearance23 = AppearanceObject()
 Material24 = MaterialObject().setDiffuseColor([1,0.5,0]).setSpecularColor([1,0.5,0]).setTransparency(0.75)
 Appearance23.setMaterial(Material24)
 Shape22.setAppearance(Appearance23)
-IndexedFaceSet25 = IndexedFaceSetObject().setDEF("Orbit2").setCreaseAngle(1.57)
+IndexedFaceSet25 = IndexedFaceSetObject().setDEF("Orbit2")
 Coordinate26 = CoordinateObject().setDEF("OrbitCoordinates2")
 IndexedFaceSet25.setCoord(Coordinate26)
 Shape22.setGeometry(IndexedFaceSet25)
@@ -74,39 +74,38 @@ Script29.setSourceCode("\n"+
 "\n"+
 "function initialize() {\n"+
 "     resolution = 100;\n"+
-"     var localci = new MFInt32();\n"+
 "     generateCoordinates(resolution);\n"+
-"     var ci = 0;\n"+
+"     var localci = [];\n"+
 "     for ( i = 0; i < resolution-1; i++) {\n"+
 "     	for ( j = 0; j < resolution-1; j++) {\n"+
-"	     localci[ci] = i*resolution+j;\n"+
-"	     localci[ci++] = i*resolution+j+1;\n"+
-"	     localci[ci++] = (i+1)*resolution+j+1;\n"+
-"	     localci[ci++] = (i+1)*resolution+j;\n"+
-"	     localci[ci++] = -1;\n"+
+"	     localci.push(i*resolution+j);\n"+
+"	     localci.push(i*resolution+j+1);\n"+
+"	     localci.push((i+1)*resolution+j+1);\n"+
+"	     localci.push((i+1)*resolution+j);\n"+
+"	     localci.push(-1);\n"+
 "	}\n"+
 "    }\n"+
-"    coordIndexes = localci;\n"+
+"    coordIndexes = new MFInt32(localci);\n"+
 "}\n"+
 "\n"+
 "function generateCoordinates(resolution) {\n"+
 "     theta = 0.0;\n"+
 "     phi = 0.0;\n"+
 "     delta = (2 * 3.141592653) / (resolution-1);\n"+
-"     var localc = new MFVec3f();\n"+
+"     var localc = [];\n"+
 "     for ( i = 0; i < resolution; i++) {\n"+
 "     	for ( j = 0; j < resolution; j++) {\n"+
 "		rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);\n"+
-"		localc[i*resolution+j] = new SFVec3f(\n"+
+"		localc.push(new SFVec3f(\n"+
 "			rho * Math.cos(phi) * Math.cos(theta),\n"+
 "			rho * Math.cos(phi) * Math.sin(theta),\n"+
 "			rho * Math.sin(phi)\n"+
-"		);\n"+
+"		));\n"+
 "		theta += delta;\n"+
 "	}\n"+
 "	phi += delta;\n"+
 "     }\n"+
-"     coordinates = localc;\n"+
+"     coordinates = new MFVec3f(localc);\n"+
 "}\n"+
 "\n"+
 "function set_fraction(fraction, eventTime) {\n"+
@@ -158,39 +157,39 @@ Script33.setSourceCode("\n"+
 "\n"+
 "function initialize() {\n"+
 "     resolution = 100;\n"+
-"     var localci = new MFInt32();\n"+
 "     generateCoordinates(resolution);\n"+
-"     ci = 0;\n"+
+"     var localci = [];\n"+
 "     for ( i = 0; i < resolution-1; i++) {\n"+
 "     	for ( j = 0; j < resolution-1; j++) {\n"+
-"	     localci[ci] = i*resolution+j;\n"+
-"	     localci[ci+1] = i*resolution+j+1;\n"+
-"	     localci[ci+2] = (i+1)*resolution+j+1;\n"+
-"	     localci[ci+3] = (i+1)*resolution+j;\n"+
-"	     localci[ci+4] = -1;\n"+
-"	     ci += 5;\n"+
+"	     localci.push(i*resolution+j);\n"+
+"	     localci.push(i*resolution+j+1);\n"+
+"	     localci.push((i+1)*resolution+j+1);\n"+
+"	     localci.push((i+1)*resolution+j);\n"+
+"	     localci.push(-1);\n"+
 "	}\n"+
 "    }\n"+
-"    coordIndexes = localci;\n"+
+"    coordIndexes = new MFInt32(localci);\n"+
 "}\n"+
 "\n"+
 "function generateCoordinates(resolution) {\n"+
 "     theta = 0.0;\n"+
 "     phi = 0.0;\n"+
 "     delta = (2 * 3.141592653) / (resolution-1);\n"+
-"     var localc = new MFVec3f();\n"+
+"     var localc = [];\n"+
 "     for ( i = 0; i < resolution; i++) {\n"+
 "     	for ( j = 0; j < resolution; j++) {\n"+
 "		rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);\n"+
-"		localc[i*resolution+j] = new SFVec3f();\n"+
-"		localc[i*resolution+j][0] = rho * Math.cos(phi) * Math.cos(theta);\n"+
-"		localc[i*resolution+j][1] = rho * Math.cos(phi) * Math.sin(theta);\n"+
-"		localc[i*resolution+j][2] = rho * Math.sin(phi);\n"+
+"		localc.push(new SFVec3f(\n"+
+"			rho * Math.cos(phi) * Math.cos(theta),\n"+
+"			rho * Math.cos(phi) * Math.sin(theta),\n"+
+"			rho * Math.sin(phi)\n"+
+"		));\n"+
 "		theta += delta;\n"+
 "	}\n"+
 "	phi += delta;\n"+
 "     }\n"+
-"     coordinates = localc;\n"+
+"     \n"+
+"     coordinates = new MFVec3f(localc);\n"+
 "}\n"+
 "\n"+
 "function set_fraction(fraction, eventTime) {\n"+
@@ -224,23 +223,23 @@ Script33.setSourceCode("\n"+
 "")
 Group13.addChild(Script33)
 Scene10.addChild(Group13)
-ROUTE37 = ROUTEObject().setFromField("coordIndexes").setFromNode("OrbitScript").setToField("set_coordIndex").setToNode("Orbit")
+ROUTE37 = ROUTEObject().setFromField("coordIndexes").setFromNode("OrbitScript").setToField("coordIndex").setToNode("Orbit")
 Scene10.addChild(ROUTE37)
-ROUTE38 = ROUTEObject().setFromField("coordinates").setFromNode("OrbitScript").setToField("set_point").setToNode("OrbitCoordinates")
+ROUTE38 = ROUTEObject().setFromField("coordinates").setFromNode("OrbitScript").setToField("point").setToNode("OrbitCoordinates")
 Scene10.addChild(ROUTE38)
-ROUTE39 = ROUTEObject().setFromField("coordIndexes").setFromNode("OrbitScript2").setToField("set_coordIndex").setToNode("Orbit2")
+ROUTE39 = ROUTEObject().setFromField("fraction_changed").setFromNode("Clock").setToField("set_fraction").setToNode("OrbitScript")
 Scene10.addChild(ROUTE39)
-ROUTE40 = ROUTEObject().setFromField("coordinates").setFromNode("OrbitScript2").setToField("set_point").setToNode("OrbitCoordinates2")
+ROUTE40 = ROUTEObject().setFromField("coordIndexes").setFromNode("OrbitScript2").setToField("coordIndex").setToNode("Orbit2")
 Scene10.addChild(ROUTE40)
-ROUTE41 = ROUTEObject().setFromField("fraction_changed").setFromNode("Clock").setToField("set_fraction").setToNode("OrbitScript")
+ROUTE41 = ROUTEObject().setFromField("coordinates").setFromNode("OrbitScript2").setToField("point").setToNode("OrbitCoordinates2")
 Scene10.addChild(ROUTE41)
 ROUTE42 = ROUTEObject().setFromField("fraction_changed").setFromNode("Clock").setToField("set_fraction").setToNode("OrbitScript2")
 Scene10.addChild(ROUTE42)
 ROUTE43 = ROUTEObject().setFromField("fraction_changed").setFromNode("Clock").setToField("set_fraction").setToNode("OrbitPath")
 Scene10.addChild(ROUTE43)
-ROUTE44 = ROUTEObject().setFromField("value_changed").setFromNode("OrbitPath").setToField("set_rotation").setToNode("OrbitTransform")
+ROUTE44 = ROUTEObject().setFromField("value_changed").setFromNode("OrbitPath").setToField("rotation").setToNode("OrbitTransform")
 Scene10.addChild(ROUTE44)
-ROUTE45 = ROUTEObject().setFromField("value_changed").setFromNode("OrbitPath").setToField("set_rotation").setToNode("OrbitTransform2")
+ROUTE45 = ROUTEObject().setFromField("value_changed").setFromNode("OrbitPath").setToField("rotation").setToNode("OrbitTransform2")
 Scene10.addChild(ROUTE45)
 X3D0.setScene(Scene10)
 

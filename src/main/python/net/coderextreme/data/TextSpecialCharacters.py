@@ -47,7 +47,7 @@ Shape16.addComments(CommentsBlock("quotation \" can be used within an X3D string
 Shape16.addComments(CommentsBlock("backslash \\ is used as escape character for \" (and itself) in X3D"))
 
 Shape16.addComments(CommentsBlock("character entities are listed in HTML specification and are good for any XML"))
-Text17 = TextObject().setDEF("DefaultText").setString(["Character entity substitutions:","empty string \"\" skips a line:","","apostrophe ' is &amp;apos;","ampersand &amp; is &amp;amp;","quote mark \" is &amp;quot;","backslash \\ is X3D escape character","double backslash \\\\ is X3D backslash \\ character","Pi Π is &amp;#928; XML character entity"])
+Text17 = TextObject().setDEF("DefaultText").setString(["Character entity substitutions:","empty string \"\" skips a line:","","apostrophe ' is &apos;","ampersand & is &amp;","quote mark \" is &quot;","backslash \\ is X3D escape character","double backslash \\\\ is X3D backslash \\ character","Pi Π is &#928; XML character entity"])
 FontStyle18 = FontStyleObject().setDEF("CenteredFontStyle").setJustify(["MIDDLE","MIDDLE"])
 Text17.setFontStyle(FontStyle18)
 Shape16.setGeometry(Text17)

@@ -40,7 +40,7 @@
           },
           {
             "@name":"translated",
-            "@content":"26 May 2017"
+            "@content":"03 June 2017"
           },
           {
             "@name":"generator",
@@ -96,7 +96,6 @@
                               {
                                 "@convex":false,
                                 "@DEF":"Orbit",
-                                "@creaseAngle":1.57,
                                 "-coord":
                                   { "Coordinate":
                                     {
@@ -134,7 +133,6 @@
                             { "IndexedFaceSet":
                               {
                                 "@DEF":"Orbit2",
-                                "@creaseAngle":1.57,
                                 "-coord":
                                   { "Coordinate":
                                     {
@@ -194,39 +192,38 @@
 "",
 "function initialize() {",
 "     resolution = 100;",
-"     var localci = new MFInt32();",
 "     generateCoordinates(resolution);",
-"     var ci = 0;",
+"     var localci = [];",
 "     for ( i = 0; i < resolution-1; i++) {",
 "     \tfor ( j = 0; j < resolution-1; j++) {",
-"\t     localci[ci] = i*resolution+j;",
-"\t     localci[ci++] = i*resolution+j+1;",
-"\t     localci[ci++] = (i+1)*resolution+j+1;",
-"\t     localci[ci++] = (i+1)*resolution+j;",
-"\t     localci[ci++] = -1;",
+"\t     localci.push(i*resolution+j);",
+"\t     localci.push(i*resolution+j+1);",
+"\t     localci.push((i+1)*resolution+j+1);",
+"\t     localci.push((i+1)*resolution+j);",
+"\t     localci.push(-1);",
 "\t}",
 "    }",
-"    coordIndexes = localci;",
+"    coordIndexes = new MFInt32(localci);",
 "}",
 "",
 "function generateCoordinates(resolution) {",
 "     theta = 0.0;",
 "     phi = 0.0;",
 "     delta = (2 * 3.141592653) / (resolution-1);",
-"     var localc = new MFVec3f();",
+"     var localc = [];",
 "     for ( i = 0; i < resolution; i++) {",
 "     \tfor ( j = 0; j < resolution; j++) {",
 "\t\trho = e + f * Math.cos(g * theta) * Math.cos(h * phi);",
-"\t\tlocalc[i*resolution+j] = new SFVec3f(",
+"\t\tlocalc.push(new SFVec3f(",
 "\t\t\trho * Math.cos(phi) * Math.cos(theta),",
 "\t\t\trho * Math.cos(phi) * Math.sin(theta),",
 "\t\t\trho * Math.sin(phi)",
-"\t\t);",
+"\t\t));",
 "\t\ttheta += delta;",
 "\t}",
 "\tphi += delta;",
 "     }",
-"     coordinates = localc;",
+"     coordinates = new MFVec3f(localc);",
 "}",
 "",
 "function set_fraction(fraction, eventTime) {",
@@ -292,39 +289,39 @@
 "",
 "function initialize() {",
 "     resolution = 100;",
-"     var localci = new MFInt32();",
 "     generateCoordinates(resolution);",
-"     ci = 0;",
+"     var localci = [];",
 "     for ( i = 0; i < resolution-1; i++) {",
 "     \tfor ( j = 0; j < resolution-1; j++) {",
-"\t     localci[ci] = i*resolution+j;",
-"\t     localci[ci+1] = i*resolution+j+1;",
-"\t     localci[ci+2] = (i+1)*resolution+j+1;",
-"\t     localci[ci+3] = (i+1)*resolution+j;",
-"\t     localci[ci+4] = -1;",
-"\t     ci += 5;",
+"\t     localci.push(i*resolution+j);",
+"\t     localci.push(i*resolution+j+1);",
+"\t     localci.push((i+1)*resolution+j+1);",
+"\t     localci.push((i+1)*resolution+j);",
+"\t     localci.push(-1);",
 "\t}",
 "    }",
-"    coordIndexes = localci;",
+"    coordIndexes = new MFInt32(localci);",
 "}",
 "",
 "function generateCoordinates(resolution) {",
 "     theta = 0.0;",
 "     phi = 0.0;",
 "     delta = (2 * 3.141592653) / (resolution-1);",
-"     var localc = new MFVec3f();",
+"     var localc = [];",
 "     for ( i = 0; i < resolution; i++) {",
 "     \tfor ( j = 0; j < resolution; j++) {",
 "\t\trho = e + f * Math.cos(g * theta) * Math.cos(h * phi);",
-"\t\tlocalc[i*resolution+j] = new SFVec3f();",
-"\t\tlocalc[i*resolution+j][0] = rho * Math.cos(phi) * Math.cos(theta);",
-"\t\tlocalc[i*resolution+j][1] = rho * Math.cos(phi) * Math.sin(theta);",
-"\t\tlocalc[i*resolution+j][2] = rho * Math.sin(phi);",
+"\t\tlocalc.push(new SFVec3f(",
+"\t\t\trho * Math.cos(phi) * Math.cos(theta),",
+"\t\t\trho * Math.cos(phi) * Math.sin(theta),",
+"\t\t\trho * Math.sin(phi)",
+"\t\t));",
 "\t\ttheta += delta;",
 "\t}",
 "\tphi += delta;",
 "     }",
-"     coordinates = localc;",
+"     ",
+"     coordinates = new MFVec3f(localc);",
 "}",
 "",
 "function set_fraction(fraction, eventTime) {",
@@ -365,7 +362,7 @@
             {
               "@fromField":"coordIndexes",
               "@fromNode":"OrbitScript",
-              "@toField":"set_coordIndex",
+              "@toField":"coordIndex",
               "@toNode":"Orbit"
             }
           },
@@ -373,24 +370,8 @@
             {
               "@fromField":"coordinates",
               "@fromNode":"OrbitScript",
-              "@toField":"set_point",
+              "@toField":"point",
               "@toNode":"OrbitCoordinates"
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromField":"coordIndexes",
-              "@fromNode":"OrbitScript2",
-              "@toField":"set_coordIndex",
-              "@toNode":"Orbit2"
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromField":"coordinates",
-              "@fromNode":"OrbitScript2",
-              "@toField":"set_point",
-              "@toNode":"OrbitCoordinates2"
             }
           },
           { "ROUTE":
@@ -399,6 +380,22 @@
               "@fromNode":"Clock",
               "@toField":"set_fraction",
               "@toNode":"OrbitScript"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"coordIndexes",
+              "@fromNode":"OrbitScript2",
+              "@toField":"coordIndex",
+              "@toNode":"Orbit2"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"coordinates",
+              "@fromNode":"OrbitScript2",
+              "@toField":"point",
+              "@toNode":"OrbitCoordinates2"
             }
           },
           { "ROUTE":
@@ -421,7 +418,7 @@
             {
               "@fromField":"value_changed",
               "@fromNode":"OrbitPath",
-              "@toField":"set_rotation",
+              "@toField":"rotation",
               "@toNode":"OrbitTransform"
             }
           },
@@ -429,7 +426,7 @@
             {
               "@fromField":"value_changed",
               "@fromNode":"OrbitPath",
-              "@toField":"set_rotation",
+              "@toField":"rotation",
               "@toNode":"OrbitTransform2"
             }
           }
