@@ -3,9 +3,9 @@
 <head>
     <title>X3D JSON Validator</title>
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ajv/5.0.1/ajv.min.js"></script>
-    <script type="text/javascript" src="node/X3DJSONLD.js"></script>
-    <script type="text/javascript" src="node/loaderJQuery.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ajv/5.1.4/ajv.min.js"></script>
+    <script type="text/javascript" src="../node/X3DJSONLD.js"></script>
+    <script type="text/javascript" src="../node/loaderJQuery.js"></script>
 </head>
 <body>
 	<h1>X3D JSON schema validator</h1><br></br>
@@ -14,6 +14,37 @@
 	<textarea id="json" name="json" rows="45" cols="80"></textarea><br></br>
 </body>
 <script type="text/javascript">
+
+// https://stackoverflow.com/questions/1043339/javascript-for-detecting-browser-language-preference
+var getFirstBrowserLanguage = function () {
+    var nav = window.navigator,
+    browserLanguagePropertyKeys = ['language', 'browserLanguage', 'systemLanguage', 'userLanguage'],
+    i,
+    language;
+
+    // support for HTML 5.1 "navigator.languages"
+    if (Array.isArray(nav.languages)) {
+      for (i = 0; i < nav.languages.length; i++) {
+        language = nav.languages[i];
+        if (language && language.length) {
+          return language;
+        }
+      }
+    }
+
+    // support for other well known properties in browsers
+    for (i = 0; i < browserLanguagePropertyKeys.length; i++) {
+      language = nav[browserLanguagePropertyKeys[i]];
+      if (language && language.length) {
+        return language;
+      }
+    }
+
+    return null;
+  };
+
+
+
 function validator() {
 	try {
 		var data = $("#json").val();
@@ -23,7 +54,7 @@ function validator() {
 					alert("Valid or user clicked OK");
 				}, function(e) {
 					alert(e);
-				});
+				}, getFirstBrowserLanguage());
 			});
 		} else {
 			var json = JSON.parse(data);
