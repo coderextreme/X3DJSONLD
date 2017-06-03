@@ -3,6 +3,69 @@ if (typeof protoExpander !== 'undefined') {
 }
 //  setProcessURLs(function() {}); // do modify URLs in GUI
 
+// https://stackoverflow.com/questions/1043339/javascript-for-detecting-browser-language-preference
+var getFirstBrowserLanguage = function () {
+    var nav = window.navigator,
+    browserLanguagePropertyKeys = ['language', 'browserLanguage', 'systemLanguage', 'userLanguage'],
+    i,
+    language;
+
+    // support for HTML 5.1 "navigator.languages"
+    if (Array.isArray(nav.languages)) {
+      for (i = 0; i < nav.languages.length; i++) {
+        language = nav.languages[i];
+        if (language && language.length) {
+          return language;
+        }
+      }
+    }
+
+    // support for other well known properties in browsers
+    for (i = 0; i < browserLanguagePropertyKeys.length; i++) {
+      language = nav[browserLanguagePropertyKeys[i]];
+      if (language && language.length) {
+        return language;
+      }
+    }
+
+    return null;
+  };
+
+
+
+
+var module = {};
+// From: https://stackoverflow.com/questions/950087/how-do-i-include-a-javascript-file-in-another-javascript-file
+function loadScript(url, callback)
+{
+    // Adding the script tag to the head as suggested before
+    var head = document.getElementsByTagName('head')[0];
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = url;
+
+    // Then bind the event to the callback function.
+    // There are several events for cross browser compatibility.
+    script.onreadystatechange = callback;
+    script.onload = callback;
+
+    // Fire the loading
+    head.appendChild(script);
+}
+
+var lang = getFirstBrowserLanguage();
+
+var localize;
+function loadLocalize(lang) {
+	loadScript("../node/ajv-i18n/localize/"+lang+"/index.js", function() {
+		localize = module.exports;
+	});
+}
+
+loadLocalize(lang);
+
+
+
 var intervalId;
 function loadXmlBrowsers(xml) {
 	if (typeof xml !== 'undefined') {
@@ -550,6 +613,9 @@ function doValidate(json, validated_version, file, success, failure, e) {
 		var valid = validated_version(json);
 		if (!valid) {
 			var errs = validated_version.errors;
+			if (typeof localize === 'function') {
+				localize(validated_version.errors);
+			}
 			var error = ""
 			for (var e in errs) {
 				error += "\n keyword: " + errs[e].keyword + "\n";
@@ -615,23 +681,13 @@ function loadSchema(json, file, doValidate, success, failure) {
 				      console.error("Schema not compiled");
 			      }
 			      doValidate(json, validated_version, file, success, undefined);
-			    // } catch (e) {
-			      // doValidate(json, validated_version, file, undefined, failure, e);
-			    // }
 			}).fail(function(e) {
 			   doValidate(json, validated_version, file, undefined, failure, e);
 			});
-		    // } catch (e) {
-		      // doValidate(json, validated_version, file, undefined, failure, e);
-		    // }
 		}).fail(function(e) {
 		   doValidate(json, validated_version, file, undefined, failure, e);
 		});
 	} else {
-		// try {
-		      doValidate(json, validated_version, file, success, undefined);
-		// } catch (e) {
-		      // doValidate(json, validated_version, file, undefined, failure, e);
-		// }
+	      doValidate(json, validated_version, file, success, undefined);
 	}
 }
