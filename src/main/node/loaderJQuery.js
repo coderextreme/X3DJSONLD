@@ -77,7 +77,12 @@ function loadXmlBrowsers(xml) {
 	if (typeof xml !== 'undefined') {
 		xml = xml.replace(/&lt;/g, "<").replace(/&gt;/g, ">");
 		$('#x3domxml').get()[0].innerHTML = xml;
-		loadCobwebXML(xml, 1);
+		try {
+			loadCobwebXML(xml, 1);
+		} catch (e) {
+			alert("Problems with cobweb xml", e);
+			console.error(e);
+		}
 		x3dom.reload();
 	}
 }
@@ -112,10 +117,6 @@ function loadScripts(json) {
 	var loopItems = new LOG();
 	processScripts(json, classes, undefined, routecode, loopItems);
 
-	if (typeof intervalId !== 'undefined') {
-		console.error("Interval", intervalId, "cleared");
-		clearInterval(intervalId);
-	}
 	if (typeof X3DJSON !== 'undefined') {
 		delete X3DJSON;
 	}
@@ -151,24 +152,40 @@ function loadScripts(json) {
 	// When we zap the source, we prevent animation
 	// zapSource(json);
 
+	
+        // initialize scripts
 	var X3DJSON = {};
+	var __eventTime = 0;
+	var totalScript = "var myjson = "+JSON.stringify(json, null, 2)+";\n"+scripts.text;
 	try {
 		// TODO eval is evil
-		eval("var myjson = "+JSON.stringify(json, null, 2)+";\n"+scripts.text+"\n"+routes.text);
+		eval(totalScript);
 	} catch (e) {
-		console.error(scripts.text+"\n"+routes.text, e);
+		console.error(totalScript, e);
 	}
-	var __eventTime = 0;
+	 
+	// run initializers, initializeOnly routes, and eventHandler initialization, proxies
+	try {
+		// TODO eval is evil
+		eval(routes.text);
+	} catch (e) {
+		console.error(routes.text, e);
+	}
+	// event loop
 	X3DJSON.runRoutes = function() {
 		try {
 			// TODO eval is evil
 			eval(loop.text);
 			x3dom.reload();  // This may be necessary
 		} catch (e) {
-			console.error(loop.txt, e);
+			console.error(loop.text, e);
 		}
 		__eventTime += 1000 / 60;
 	};
+	if (typeof intervalId !== 'undefined') {
+		console.error("Interval", intervalId, "cleared");
+		clearInterval(intervalId);
+	}
 	intervalId = setInterval(X3DJSON.runRoutes, 1000 / 60 );
     }
 }
@@ -251,9 +268,14 @@ function loadX3D(selector, json, url) {
 	    if (child != null) {
 		        try {
 			    loadCobwebJS(json, 0);
+			} catch (e) {
+				alert("Problems with cobweb JSON", e);
+				console.error(e);
+			}
+		        try {
 			    loadXmlBrowsers(xml);
 			} catch (e) {
-				alert("Problems with loading browsers", e);
+				alert("Problems with loading xml browsers", e);
 				console.error(e);
 			}
 		    if ($('#scripting').is(':checked')) {
