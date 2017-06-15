@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"03 June 2017"
+            "@content":"15 June 2017"
           },
           {
             "@name":"generator",
@@ -124,6 +124,7 @@
                 { "PlaneSensor":
                   {
                     "@description":"Grab to move",
+                    "@offset":[1,-1,0.01],
                     "@DEF":"PS2"
                   }
                 },
@@ -253,12 +254,19 @@
 "            var dif2 = dif.multiply(0.5);",
 "            var norm = dif.normalize();",
 "            var transl = startpoint.add(dif2);",
-"\t    return {",
-"\t\t    scale : new SFVec3f(1.0,dist,1.0),",
-"\t\t    translation : transl,",
-"\t\t    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)",
-"\t    \t    // rotation : new x3dom.fields.Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)",
-"\t    };",
+"\t    if (typeof Quaternion !== 'undefined') {",
+"\t\t    return {",
+"\t\t\t    scale : new SFVec3f(1.0,dist,1.0),",
+"\t\t\t    translation : transl,",
+"\t\t\t    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)",
+"\t\t    };",
+"\t    } else {",
+"\t\t    return {",
+"\t\t\t    scale : new SFVec3f(1.0,dist,1.0),",
+"\t\t\t    translation : transl,",
+"\t\t\t    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)",
+"\t\t    };",
+"\t    }",
 "\t}",
 "\tfunction recompute_and_route(startpoint, endpoint) {",
 "\t      var trafo = recompute(startpoint, endpoint);",
