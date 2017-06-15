@@ -92,7 +92,7 @@ function processScripts(object, classes, mypackage, routecode, loopItems) {
 	classes.log("var SFMatrix4d = function() { return Array.prototype.slice.call(arguments, 0); };");
 	classes.log("var SFMatrix4f = x3dom.fields.SFMatrix4f;");
 	classes.log("var SFNode = x3dom.fields.SFNode;");
-	classes.log("var SFRotation = x3dom.fields.Quaternion;");
+	classes.log("var Quaternion = x3dom.fields.Quaternion;");
 
 	classes.log("SFString = String;");
 	classes.log("SFTime = Number;");
@@ -120,17 +120,25 @@ function processScripts(object, classes, mypackage, routecode, loopItems) {
 	classes.log("}");
 	classes.log("X3DJSON.nodeUtil = function(node, field, value) {");
 	classes.log("		var selector = \"[DEF='\"+node+\"'], [name='\"+field+\"']\";");
+	classes.log("		if (typeof field === 'undefined') {");
+	classes.log("			selector = \"[DEF='\"+node+\"']\";");
+	classes.log("		}");
 	classes.log("		var element = document.querySelector(selector);");
 	classes.log("		if (element === null) {");
 	classes.log("			console.error('unDEFed node',node);");
 	classes.log("		} else if (arguments.length > 2) {");
+	classes.log("			/*");
 	classes.log("			if (value && typeof value.toString === 'function') {");
 	classes.log("				value = value.toString();");
 	classes.log("			}");
 	classes.log("			$(selector).attr(field, value);");
 	classes.log("			// console.log('set', node, '.', field, '=', value);");
+	classes.log("			*/");
+	classes.log("			element.setFieldValue(field, value);");
 	classes.log("			return element;");
 	classes.log("		} else if (arguments.length > 1) {");
+	classes.log("			value = element.getFieldValue(field);");
+	classes.log("			/*");
 	classes.log("			value = $(selector).attr(field);");
 	classes.log("			if (element &&");
 	classes.log("				element._x3domNode &&");
@@ -139,6 +147,7 @@ function processScripts(object, classes, mypackage, routecode, loopItems) {
 	classes.log("				element._x3domNode._vf[field].setValueByStr) {");
 	classes.log("				value = element._x3domNode._vf[field].setValueByStr(value);");
 	classes.log("			}");
+	classes.log("			*/");
 	classes.log("			// console.log('get', node, '.', field,'=',value);");
 	classes.log("			return value;");
 	classes.log("		} else {");
@@ -150,16 +159,19 @@ function processScripts(object, classes, mypackage, routecode, loopItems) {
 
 function doRoute(mypackage, fromNode, fromField, toNode, toField, log) {
 	var fromScript = mypackage.find(fromNode);
-	var from =			 "X3DJSON.nodeUtil('"+fromNode+"','"+fromField+"')";
-	if (typeof fromScript !== 'undefined') {
-		from = 'typeof '+useX3DJSON('Obj',fromScript.name)+'.'+fromField+' === "function" ? '+useX3DJSON('Obj', fromScript.name) + '.'+fromField+'() : '+useX3DJSON('Obj', fromScript.name) + '.'+fromField;
-	}
-	var to = 			"X3DJSON.nodeUtil('"+toNode+"','"+toField+"',";
 	var toScript = mypackage.find(toNode);
-	if (typeof toScript !== 'undefined') {
-		to = useX3DJSON('Obj', toScript.name) + '.'+toField+'(';
+	// only add routes with scripts involved
+	if (typeof fromScript !== 'undefined' || typeof toScript !== 'undefined') {
+		var from =			 "X3DJSON.nodeUtil('"+fromNode+"','"+fromField+"')";
+		if (typeof fromScript !== 'undefined') {
+			from = 'typeof '+useX3DJSON('Obj',fromScript.name)+'.'+fromField+' === "function" ? '+useX3DJSON('Obj', fromScript.name) + '.'+fromField+'() : '+useX3DJSON('Obj', fromScript.name) + '.'+fromField;
+		}
+		var to = 			"X3DJSON.nodeUtil('"+toNode+"','"+toField+"',";
+		if (typeof toScript !== 'undefined') {
+			to = useX3DJSON('Obj', toScript.name) + '.'+toField+'(';
+		}
+		log.log("			"+to+from+", __eventTime);");
 	}
-	log.log("			"+to+from+", __eventTime);");
 }
 
 function processRoute(route, routecode, mypackage, loopItems) {
@@ -168,13 +180,19 @@ function processRoute(route, routecode, mypackage, loopItems) {
 	var toNode = route["@toNode"];
 	var toField = route["@toField"];
 
+	var changed = false;
 	if (fromField.endsWith("_changed")) {
 		fromField = fromField.substring(0, fromField.length-8)
+		changed = true;
 	}
 
 	var fromScript = mypackage.find(fromNode);
-	var fromRoute = fromNode+":"+fromField+":"+toNode+":"+toField+":FROM";
+	// var fromRoute = fromNode+":"+fromField+":"+toNode+":"+toField+":FROM";
 	if (typeof fromScript === 'undefined') {
+		routecode.log("X3DJSON.nodeUtil('"+fromNode+"').addEventListener('outputchange', function(event) {");
+		doRoute(mypackage, fromNode, fromField, toNode, toField, routecode);
+		routecode.log("}, false);");	
+		/*
 		routecode.log(declareX3DJSON('ROUTE', fromRoute));
 		routecode.log(useX3DJSON('ROUTE', fromRoute)+" = new MutationObserver(function(mutations) {");
 		routecode.log("		mutations.forEach(function(mutation) {");
@@ -189,6 +207,7 @@ function processRoute(route, routecode, mypackage, loopItems) {
 		} catch (e) {
 			console.error("Error creating observe", e);
 		}
+		*/
 	} else {
 		routecode.log(declareX3DJSON('Obj', fromScript.name+":"+"ACTION"));
 		var proxyAction = useX3DJSON('Obj', fromScript.name+":"+"ACTION");
@@ -203,25 +222,8 @@ function processRoute(route, routecode, mypackage, loopItems) {
 		// TODO Proxy code goes here
 	}
 
-	/*
-	routecode.log(declareX3DJSON('ROUTE', fromNode+":"+fromField+":"+toNode+":"+toField+":TO"));
-	routecode.log(useX3DJSON('ROUTE', fromNode+":"+fromField+":"+toNode+":"+toField+":TO")+" = new MutationObserver(function(mutations) {");
-	routecode.log("		mutations.forEach(function(mutation) {");
-	routecode.log("			console.log(mutation, '"+toField+"');");	
-	doRoute(mypackage, fromNode, fromField, toNode, toField, routecode);
-	routecode.log("		});");	
-	routecode.log("});");	
-	routecode.log("var config = { attributes: true, childList: true, attributeFilter:['"+toField+"'] };");	
-	var toScript = mypackage.find(toNode);
-	if (typeof toScript === 'undefined') {
-		// it's a real node
-		routecode.log(useX3DJSON('ROUTE', fromNode+":"+fromField+":"+toNode+":"+toField+":TO")+".observe(X3DJSON.nodeUtil('"+toNode+"'), config);");
-	}
-	*/
-
-
 	// set routes that run every loop
-	// if (toField === 'set_fraction' || fromField.endsWith("_changed")) {
+	// if (toField === 'set_fraction' || changed) {
 		doRoute(mypackage, fromNode, fromField, toNode, toField, loopItems);
 	// }
 	// run the route once for initializeOnly

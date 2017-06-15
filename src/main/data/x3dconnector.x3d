@@ -8,32 +8,32 @@
         <meta name='identifier' content='https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d'/>
         <meta name='description' content='a generic proto to connect two objects'/>
 </head>
-<Scene>
-	<Viewpoint position='0 0 5' description="Only Viewpoint" orientation='0 0 1 0' />
-	<Background skyColor='0.4 0.4 0.4'/>
-	<Transform DEF='G1'>
+  <Scene>
+	<Viewpoint position='0 0 5' description="Only Viewpoint" orientation='0 0 1 0'></Viewpoint>
+	<Background skyColor='0.4 0.4 0.4'></Background>
+	<Transform translation="0 0 0" DEF='G1'>
 		<Shape>
 			<Appearance><Material diffuseColor='0.7 0.2 0.2'></Material></Appearance>
-			<Sphere radius='.1'/>
+			<Sphere radius='.1'></Sphere>
 		</Shape>
-		<PlaneSensor description="Grab to move" DEF='PS1'/>
-		<ROUTE fromNode='PS1' fromField='translation_changed' toNode='G1' toField='translation' />
+		<PlaneSensor description="Grab to move" DEF='PS1'></PlaneSensor>
+		<ROUTE fromNode='PS1' fromField='translation_changed' toNode='G1' toField='translation' ></ROUTE>
 	</Transform>              
         
 	<Transform DEF='G2' translation='1 -1 .01'>
 		<Shape>
 			<Appearance><Material diffuseColor='0.2 0.7 0.2'></Material></Appearance>
-			<Sphere radius='.1'/>
+			<Sphere radius='.1'></Sphere>
 		</Shape>
-		<PlaneSensor description="Grab to move" DEF='PS2'/>
-		<ROUTE fromNode='PS2' fromField='translation_changed' toNode='G2' toField='translation' />
+		<PlaneSensor description="Grab to move" offset='1 -1 .01' DEF='PS2'></PlaneSensor>
+		<ROUTE fromNode='PS2' fromField='translation_changed' toNode='G2' toField='translation' ></ROUTE>
 	</Transform>
-	<Transform DEF='C0' >
-	<Transform DEF='C1' >
-	<Transform DEF='C2' >
+	<Transform translation="0 0 0" DEF='C0' >
+	<Transform translation="0 0 0" DEF='C1' >
+	<Transform translation="0 0 0" DEF='C2' >
 		<Shape>
-			<Appearance><Material diffuseColor='0.2 0.7 0.7' transparency='.5'/></Appearance>
-			<Cylinder radius='.05'/>
+			<Appearance><Material diffuseColor='0.2 0.7 0.7' transparency='.5'></Material></Appearance>
+			<Cylinder radius='.05'></Cylinder>
 		</Shape>
 	</Transform>
     </Transform>
@@ -60,12 +60,19 @@
             var dif2 = dif.multiply(0.5);
             var norm = dif.normalize();
             var transl = startpoint.add(dif2);
-	    return {
-		    scale : new SFVec3f(1.0,dist,1.0),
-		    translation : transl,
-		    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)
-	    	    // rotation : new x3dom.fields.Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)
-	    };
+	    if (typeof Quaternion !== 'undefined') {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl,
+			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)
+		    };
+	    } else {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl,
+			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)
+		    };
+	    }
 	}
 	function recompute_and_route(startpoint, endpoint) {
 	      var trafo = recompute(startpoint, endpoint);

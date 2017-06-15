@@ -467,6 +467,16 @@ PROTOS.prototype = {
 	},
 
 	prototypeExpander: function (file, object) {
+		this.protos = {};
+		this.names = {};
+		this.protoField = {};
+		this.scriptField = {};
+		this.interfaceField = {};
+		this.envField = {};
+		this.scopecount = 0;
+		this.privatescope = [];
+		this.defs = {};
+		this.founddef = null;
 		object = this.realPrototypeExpander(file, object, false);
 		this.zapIs(object);
 		// console.error("SCRIPTS", JSON.stringify(this.scriptField));
