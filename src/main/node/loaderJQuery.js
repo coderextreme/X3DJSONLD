@@ -109,13 +109,13 @@ function filter(event) {
 	});
 }
 
-function loadScripts(json) {
+function loadScripts(json, selector) {
     if ($('#scripting').is(':checked')) {
 	// Now generate JavaScript code for Scripts and Routes
 	var classes = new LOG();
 	var routecode = new LOG();
 	var loopItems = new LOG();
-	processScripts(json, classes, undefined, routecode, loopItems);
+	processScripts(json, classes, undefined, routecode, loopItems, selector);
 
 	if (typeof X3DJSON !== 'undefined') {
 		delete X3DJSON;
@@ -280,7 +280,8 @@ function loadX3D(selector, json, url) {
 			}
 		    if ($('#scripting').is(':checked')) {
 			try {
-				loadScripts(json);
+				loadScripts(json, "#x3domjson");
+				loadScripts(json, "#x3domxml");
 			} catch (e) {
 				alert("Problems with loading scripts", e);
 				console.error(e);

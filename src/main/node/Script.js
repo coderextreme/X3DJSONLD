@@ -54,7 +54,7 @@ function zapSource(object) {
 	}
 }
 
-function processScripts(object, classes, mypackage, routecode, loopItems) {
+function processScripts(object, classes, mypackage, routecode, loopItems, selector) {
 	classes.log("var MFBool = x3dom.fields.MFBoolean;");
 	classes.log("var MFColor = x3dom.fields.MFColor;");
 	classes.log("var MFColorRGBA = x3dom.fields.MFColorRGBA;");
@@ -119,9 +119,9 @@ function processScripts(object, classes, mypackage, routecode, loopItems) {
 	classes.log("	}};");
 	classes.log("}");
 	classes.log("X3DJSON.nodeUtil = function(node, field, value) {");
-	classes.log("		var selector = \"[DEF='\"+node+\"'], [name='\"+field+\"']\";");
+	classes.log("		var selector = \""+selector+" [DEF='\"+node+\"'], [name='\"+field+\"']\";");
 	classes.log("		if (typeof field === 'undefined') {");
-	classes.log("			selector = \"[DEF='\"+node+\"']\";");
+	classes.log("			selector = \""+selector+" [DEF='\"+node+\"']\";");
 	classes.log("		}");
 	classes.log("		var element = document.querySelector(selector);");
 	classes.log("		if (element === null) {");
