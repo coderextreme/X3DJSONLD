@@ -54,6 +54,10 @@ PROTOS.prototype = {
 			scope = this.privatescope.join("_");
 		}
 		// console.error("GET", [def], scope);
+		var decl = scope.lastIndexOf("DECL");
+		if (decl > 0) {
+			scope = scope.substring(decl);
+		}
 		return scope;
 	},
 
@@ -294,7 +298,7 @@ PROTOS.prototype = {
 
 	extractConnectedDef: function (scope, field) {
 		var defobj;
-		console.error("extracting def from script, proto, or otherwise:", scope, field);
+		console.error("extracting def from script, proto, or otherwise:", scope, field, this.getField(scope, field), this.getField(scope, "__DEF_FIELD__"), this.scriptField[this.getField(scope, field)], this.protoField[this.getField(scope, field)], this.protoField[this.getField(scope, "__DEF_FIELD__")]);
 		for (var sf in this.scriptField[this.getField(scope, field)]) {
 			// just grab first one, the others may be bad
 			if (typeof defobj === 'undefined') {
@@ -547,88 +551,102 @@ PROTOS.prototype = {
 			name = this.names[use];
 		}
 		var instance = {};
-		if (typeof def === 'undefined') {
+		if (typeof def === 'undefined' && typeof use === 'undefined') {
 			def = "INSTANCE";
 		}
-		if (this.getDef(def)) {
+		if (this.getDef(def) && typeof use === 'undefined') {
 			this.scopecount += 1000;
-			def += this.scopecount;
+			def += "" + this.scopecount;
 		} else {
 			// first appearance of def is left alone
 		}
-		var newdef = this.saveDef(def);
-		this.pushScope(def);
+		if (typeof def !== 'undefined') {
+			var newdef = this.saveDef(def);
+			this.pushScope(def);
+		}
+		var bodydef;
 		if (typeof this.protos[name] === 'undefined' || typeof this.protos[name]['ProtoBody'] === 'undefined') {
 			console.error("ProtoBody undefined for", name);
 		} else {
 			// console.error("Copying ProtoBody", name);
-			var obj = this.protos[name]['ProtoBody']['-children'];
-			// var bodydef = this.protos[name]['ProtoBody']["@DEF"];
-			instance = JSON.parse(JSON.stringify(obj));
-		}
-
-		// instance is an array
-		while (Array.isArray(instance) && Object.keys(instance).length === 1) {
-			instance = instance[0];
-		}
-
-		var firstobj = instance;
-		while (Array.isArray(firstobj)) {
-			// we only the DEF of the first node 
-			firstobj = firstobj[0];
-		}
-		if (!Array.isArray(firstobj)) {
-			if (typeof use !== 'undefined') {
-				for (var q in firstobj) {
-					if (q === "Group" || q == "Transform") {
-						if (typeof firstobj[q] === 'object' && !Array.isArray(firstobj[q])) {
-							firstobj[q]["@USE"] = this.getScope(use);  // there will be at least DEF with this USE
-						} else {
-							console.error("USE is Failed");
+			var children = this.protos[name]['ProtoBody']['-children'];
+			for (var child in children) {
+				var ch = children[child];
+				for (var objkey in ch) {
+					if (typeof bodydef === 'undefined') {
+						bodydef = ch[objkey]["@DEF"];
+						if (typeof use !== 'undefined') {
+							var iuse = this.saveDef(use);
+							this.pushScope(use);
 						}
 					}
 				}
 			}
-
+			instance = JSON.parse(JSON.stringify(children));
 		}
-		/*
-		if (typeof bodydef !== 'undefined') {
-			this.saveDef(bodydef);
-			this.pushScope(bodydef);
-		}
-		*/
-		var newobject = this.realPrototypeExpander(file, instance, false);
 
-		var fieldValue = object[p]["fieldValue"];
-		for (var field in fieldValue) {
-			var fv = fieldValue[field];
-			var protoField = fv["@name"];
-			var fieldOrNode = "@value";
-			var value = fv[fieldOrNode];
-			for (var nv in fv) {
-				if (nv === '@name') {
-					continue;
-				}
-				fieldOrNode = nv;
-				value = fv[fieldOrNode];
-				this.pushScope("FIELD" + protoField);
-				value = this.realPrototypeExpander(file, value, false);
-				this.popScope();
-				this.getInterface(protoField);
-				this.setObjectValues(this.getScope(),
-					protoField,
-					fieldOrNode,
-					value);
+		// instance is an array.  Get the first object, no matter how
+		// deep it is.
+		// TODO comments
+
+		var firstobj = instance;
+
+		while (Array.isArray(firstobj)) {
+			if (firstobj[0] === null || typeof firstobj[0] === 'undefined') {
+				break;
 			}
-			// this.clearScope(fieldname, newobject);
+			firstobj = firstobj[0];
 		}
 
-		/*
-		if (typeof bodydef !== 'undefined') {
+
+		if (typeof use !== 'undefined' && typeof firstobj === 'object') {
+			if (typeof bodydef !== 'undefined') {
+				var bdef = this.saveDef(bodydef);
+				this.pushScope(bodydef);
+			}
+			var newobject = {
+				"Group": {  // replace ProtoInstance with Group
+					"@USE" : this.getScope()
+				}
+			};
+			if (typeof bodydef !== 'undefined') {
+				this.popScope();
+			}
+
+		} else {
+			var newobject = this.realPrototypeExpander(file, instance, false);
+
+			var fieldValue = object[p]["fieldValue"];
+			for (var field in fieldValue) {
+				var fv = fieldValue[field];
+				var protoField = fv["@name"];
+				var fieldOrNode = "@value";
+				var value = fv[fieldOrNode];
+				for (var nv in fv) {
+					if (nv === '@name') {
+						continue;
+					}
+					fieldOrNode = nv;
+					value = fv[fieldOrNode];
+					this.pushScope("FIELD" + protoField);
+					value = this.realPrototypeExpander(file, value, false);
+					this.popScope();
+					this.getInterface(protoField);
+					this.setObjectValues(this.getScope(),
+						protoField,
+						fieldOrNode,
+						value);
+				}
+				// this.clearScope(fieldname, newobject);
+			}
+		}
+
+		if (typeof use !== 'undefined') {
 			this.popScope();
 		}
-		*/
-		this.popScope();
+		if (typeof def !== 'undefined') {
+			this.popScope();
+		}
 		this.popScope();
 		return newobject;
 	},

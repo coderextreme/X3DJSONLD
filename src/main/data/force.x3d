@@ -15,6 +15,7 @@
                 <field name='position' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
             </ProtoInterface>
             <ProtoBody>
+	      <Group>
                 <Transform DEF='transform'>
                     <IS>
                         <connect nodeField='translation' protoField='position'/>
@@ -58,6 +59,7 @@ ecmascript:
                 <ROUTE fromNode='nodeClock' fromField='fraction_changed' toNode='NodePosition' toField='set_fraction'/>
                 <ROUTE fromNode='MoveBall' fromField='keyValue' toNode='NodePosition' toField='keyValue'/>
                 <ROUTE fromNode='NodePosition' fromField='value_changed' toNode='transform' toField='set_translation'/>
+	      </Group>
             </ProtoBody>
         </ProtoDeclare>        
         <ProtoDeclare name='cylinder'>
@@ -66,6 +68,7 @@ ecmascript:
                 <field name='set_positionB' accessType='inputOnly' type='SFVec3f'/>
             </ProtoInterface>
             <ProtoBody>
+	      <Group>
                 <Shape>
                     <Extrusion DEF='extrusion' creaseAngle='0.785' crossSection='1.00 0.00 0.92 -0.38 0.71 -0.71 0.38 -0.92 0.00 -1.00 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1.00 -0.00 -0.92 0.38 -0.71 0.71 -0.38 0.92 0.00 1.00 0.38 0.92 0.71 0.71 0.92 0.38 1.00 0.00' spine='0 -50 0 0 50 0'/>
                     <Appearance>
@@ -107,6 +110,7 @@ ecmascript:
                 
                 <ROUTE fromNode='MoveCylinder' fromField='spine' toNode='extrusion' toField='set_spine'/>
                 
+	      </Group>
             </ProtoBody>
         </ProtoDeclare>
         <Transform  DEF="HoldsContent" scale='0.1 0.1 0.1'>
