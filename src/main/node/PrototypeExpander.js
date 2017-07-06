@@ -292,23 +292,27 @@ PROTOS.prototype = {
 		this.zap(field, object);
 	},
 
-	extractConnectedDef: function (scope, node) {
+	extractConnectedDef: function (scope, field) {
 		var defobj;
-		for (var sf in this.scriptField[this.getField(scope, node)]) {
-			var obj = this.scriptField[this.getField(scope, node)][sf];
-			if (typeof obj !== 'undefined') {
-				if (typeof obj[3] !== 'undefined') {
-					defobj = [this.getField(scope, obj[3]), obj[0]["@name"]];
-					// console.error("def5 is", defobj);
+		console.error("extracting def from script, proto, or otherwise:", scope, field);
+		for (var sf in this.scriptField[this.getField(scope, field)]) {
+			// just grab first one, the others may be bad
+			if (typeof defobj === 'undefined') {
+				var obj = this.scriptField[this.getField(scope, field)][sf];
+				if (typeof obj !== 'undefined') {
+					if (typeof obj[3] !== 'undefined') {
+						defobj = [this.getField(scope, obj[3]), obj[0]["@name"]];
+						console.error("def5 is", defobj);
+					}
 				}
 			}
 		}
 		if (typeof defobj === 'undefined') {
-			for (var pf in this.protoField[this.getField(scope, node)]) {
-				var obj2 = this.protoField[this.getField(scope, node)][pf];
+			for (var pf in this.protoField[this.getField(scope, field)]) {
+				var obj2 = this.protoField[this.getField(scope, field)][pf];
 				if (typeof obj2 !== 'undefined') {
 					defobj = [obj2[3], obj2[1]];
-					// console.error("def2 is", defobj);
+					console.error("def2 is", defobj);
 				}
 			}
 		}
@@ -316,14 +320,14 @@ PROTOS.prototype = {
 			for (var pf2 in this.protoField[this.getField(scope, "__DEF_FIELD__")]) {
 				var obj3 = this.protoField[this.getField(scope, "__DEF_FIELD__")][pf2];
 				if (typeof obj3 !== 'undefined') {
-					defobj = [obj3[3], node];
-					// console.error("def3 is", defobj);
+					defobj = [obj3[3], field];
+					console.error("def3 is", defobj);
 				}
 			}
 		}
 		if (typeof defobj === 'undefined') {
-			defobj = [scope, node];
-			// console.error("def4 is", defobj);
+			defobj = [scope, field];
+			console.error("def4 is", defobj);
 		}
 		return defobj;
 	},
