@@ -17,7 +17,9 @@ if (typeof Browser === 'undefined') {
 			}
 		},
 		appendTo : function(element, jsobj) {
-			 return ConvertToX3DOM(jsobj, "", element, 'foo.json');
+			 if (element != null) {
+				 return ConvertToX3DOM(jsobj, "", element, 'foo.json');
+		         }
 		},
 		getDocument : function() {
 			return document;
