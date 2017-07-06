@@ -19,7 +19,7 @@
 </Appearance>
 <Sphere containerField="geometry" radius="0.1"></Sphere>
 </Shape>
-<PlaneSensor description="Grab to move" DEF="PS2"></PlaneSensor>
+<PlaneSensor description="Grab to move" offset="1 -1 0.01" DEF="PS2"></PlaneSensor>
 <ROUTE fromNode="PS2" fromField="translation_changed" toNode="G2" toField="translation"></ROUTE>
 </Transform>
 <Transform DEF="C0"><Transform DEF="C1"><Transform DEF="C2"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.2 0.7 0.7" transparency="0.5"></Material>
@@ -33,39 +33,51 @@
 </field>
 <field name="endnode" accessType="initializeOnly" type="SFNode"><Transform USE="G2"></Transform>
 </field>
+<field name="transnode" accessType="inputOutput" type="SFNode"><Transform USE="C0"></Transform>
+</field>
+<field name="rotscalenode" accessType="inputOutput" type="SFNode"><Transform USE="C2"></Transform>
+</field>
 <field name="set_startpoint" accessType="inputOnly" type="SFVec3f"></field>
 <field name="set_endpoint" accessType="inputOnly" type="SFVec3f"></field>
-<field name="translation" accessType="outputOnly" type="SFVec3f"></field>
-<field name="rotation" accessType="outputOnly" type="SFRotation"></field>
-<field name="scale" accessType="outputOnly" type="SFVec3f"></field>
 <![CDATA[
         ecmascript:
         function recompute(startpoint,endpoint){
             var dif = endpoint.subtract(startpoint);
-            var dist = dif.length()*.5;
-            var dif2 = dif.multiply(.5);
+            var dist = dif.length()*0.5;
+            var dif2 = dif.multiply(0.5);
             var norm = dif.normalize();
-            var trans = startpoint.add(dif2);
-            scale = new SFVec3f(1.0,dist,1.0);
-            translation = trans;
-            rotation = new SFRotation(new SFVec3f(0.0,1.0,0.0),norm);
-            //Browser.print('norm='+norm.toString());
-            //Browser.print('rotation='+rotation.toString());
-        }
+            var transl = startpoint.add(dif2);
+	    if (typeof Quaternion !== 'undefined') {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl,
+			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)
+		    };
+	    } else {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl,
+			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)
+		    };
+	    }
+	}
+	function recompute_and_route(startpoint, endpoint) {
+	      var trafo = recompute(startpoint, endpoint);
+	      transnode.translation = trafo.translation;
+	      rotscalenode.rotation = trafo.rotation;
+	      rotscalenode.scale = trafo.scale;
+	}
         function initialize(){
-            recompute(startnode.translation,endnode.translation);
+            recompute_and_route(startnode.translation,endnode.translation);
         }
         function set_startpoint(val,t){
-            recompute(val,endnode.translation);
+            recompute_and_route(val,endnode.translation);
         }
         function set_endpoint(val,t){
-            recompute(startnode.translation,val);
+            recompute_and_route(startnode.translation,val);
         }
 ]]></Script>
-<ROUTE fromNode="G1" fromField="translation" toNode="S1" toField="set_startpoint"></ROUTE>
-<ROUTE fromNode="G2" fromField="translation" toNode="S1" toField="set_endpoint"></ROUTE>
-<ROUTE fromNode="S1" fromField="translation" toNode="C0" toField="translation"></ROUTE>
-<ROUTE fromNode="S1" fromField="rotation" toNode="C2" toField="rotation"></ROUTE>
-<ROUTE fromNode="S1" fromField="scale" toNode="C2" toField="scale"></ROUTE>
+<ROUTE fromNode="G1" fromField="translation_changed" toNode="S1" toField="set_startpoint"></ROUTE>
+<ROUTE fromNode="G2" fromField="translation_changed" toNode="S1" toField="set_endpoint"></ROUTE>
 </Scene>
 </X3D>

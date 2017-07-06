@@ -25,7 +25,7 @@
 			<Appearance><Material diffuseColor='0.2 0.7 0.2'></Material></Appearance>
 			<Sphere radius='.1'/>
 		</Shape>
-		<PlaneSensor description="Grab to move" DEF='PS2'/>
+		<PlaneSensor description="Grab to move"  offset='1 -1 .01' DEF='PS2'/>
 		<ROUTE fromNode='PS2' fromField='translation_changed' toNode='G2' toField='set_translation' />
 	</Transform>
 	<Transform DEF='G3' translation='1 1 .01'>
@@ -33,7 +33,7 @@
 			<Appearance><Material diffuseColor='0.2 0.7 0.2'></Material></Appearance>
 			<Sphere radius='.1'/>
 		</Shape>
-		<PlaneSensor description="Grab to move" DEF='PS3'/>
+		<PlaneSensor description="Grab to move" offset='1 1 .01' DEF='PS3'/>
 		<ROUTE fromNode='PS3' fromField='translation_changed' toNode='G3' toField='set_translation' />
 	</Transform>
 	<Transform DEF='G4' translation='-1 1 .01'>
@@ -41,33 +41,40 @@
 			<Appearance><Material diffuseColor='0.2 0.7 0.2'></Material></Appearance>
 			<Sphere radius='.1'/>
 		</Shape>
-		<PlaneSensor description="Grab to move" DEF='PS4'/>
+		<PlaneSensor description="Grab to move" offset='-1 1 .01' DEF='PS4'/>
 		<ROUTE fromNode='PS4' fromField='translation_changed' toNode='G4' toField='set_translation' />
 	</Transform>
-	<Transform DEF='C1' >
+	<Transform DEF='transC1' >
+	<Transform DEF='rotscaleC1' >
 		<Shape>
 			<Appearance><Material diffuseColor='0.2 0.7 0.7' transparency='.5'/></Appearance>
 			<Cylinder radius='.05'/>
 		</Shape>
-    </Transform>
-	<Transform DEF='C2' >
+        </Transform>
+        </Transform>
+	<Transform DEF='transC2' >
+	<Transform DEF='rotscaleC2' >
 		<Shape>
 			<Appearance><Material diffuseColor='0.2 0.7 0.7' transparency='.5'/></Appearance>
 			<Cylinder radius='.05'/>
 		</Shape>
-    </Transform>
-	<Transform DEF='C3' >
+        </Transform>
+        </Transform>
+	<Transform DEF='transC3' >
+	<Transform DEF='rotscaleC3' >
 		<Shape>
 			<Appearance><Material diffuseColor='0.2 0.7 0.7' transparency='.5'/></Appearance>
 			<Cylinder radius='.05'/>
 		</Shape>
-    </Transform>
+        </Transform>
+        </Transform>
     
     <ProtoDeclare name='x3dconnector'>
     <ProtoInterface>
         <field accessType='initializeOnly' name='startnode' type='SFNode'/>
         <field accessType='initializeOnly' name='endnode' type='SFNode'/>
-        <field accessType='initializeOnly' name='connectornode' type='SFNode'/>
+        <field accessType='initializeOnly' name='transnode' type='SFNode'/>
+        <field accessType='initializeOnly' name='rotscalenode' type='SFNode'/>
         <field accessType='inputOnly' name='set_startpoint' type='SFVec3f'/>
         <field accessType='inputOnly' name='set_endpoint' type='SFVec3f'/>
     </ProtoInterface>
@@ -75,13 +82,15 @@
         <Script DEF='S1'>
             <field accessType='initializeOnly' name='startnode' type='SFNode'/>
             <field accessType='initializeOnly' name='endnode' type='SFNode'/>
-            <field accessType='initializeOnly' name='connectornode' type='SFNode'/>
+            <field accessType='initializeOnly' name='transnode' type='SFNode'/>
+            <field accessType='initializeOnly' name='rotscalenode' type='SFNode'/>
             <field accessType='inputOnly' name='set_startpoint' type='SFVec3f'/>
             <field accessType='inputOnly' name='set_endpoint' type='SFVec3f'/>
             <IS>
                 <connect nodeField='startnode' protoField='startnode'/>
                 <connect nodeField='endnode' protoField='endnode'/>
-                <connect nodeField='connectornode' protoField='connectornode'/>
+                <connect nodeField='transnode' protoField='transnode'/>
+                <connect nodeField='rotscalenode' protoField='rotscalenode'/>
                 <connect nodeField='set_startpoint' protoField='set_startpoint'/>
                 <connect nodeField='set_endpoint' protoField='set_endpoint'/>
             </IS>
@@ -95,18 +104,25 @@
             var dif2 = dif.multiply(0.5);
             var norm = dif.normalize();
             var transl = startpoint.add(dif2);
-	    return {
-		    scale : new SFVec3f(1.0,dist,1.0),
-		    translation : transl,
-		    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)
-	    	    // rotation : new x3dom.fields.Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)
-	    };
+	    if (typeof Quaternion !== 'undefined') {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl,
+			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)
+		    };
+	    } else {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl,
+			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)
+		    };
+	    }
 	}
 	function recompute_and_route(startpoint, endpoint) {
 	      var trafo = recompute(startpoint, endpoint);
-	      connectornode.translation = trafo.translation;
-	      connectornode.rotation = trafo.rotation;
-	      connectornode.scale = trafo.scale;
+	      transnode.translation = trafo.translation;
+	      rotscalenode.rotation = trafo.rotation;
+	      rotscalenode.scale = trafo.scale;
 	}
         function initialize(){
             recompute_and_route(startnode.translation,endnode.translation);
@@ -128,8 +144,11 @@
         <fieldValue name='endnode'>
             <Transform USE='G2'/>
         </fieldValue>
-        <fieldValue name='connectornode'>
-            <Transform USE='C1'/>
+        <fieldValue name='transnode'>
+            <Transform USE='transC1'/>
+        </fieldValue>
+        <fieldValue name='rotscalenode'>
+            <Transform USE='rotscaleC1'/>
         </fieldValue>
         <fieldValue name='set_startpoint'>
         </fieldValue>
@@ -143,8 +162,11 @@
         <fieldValue name='endnode'>
             <Transform USE='G3'/>
         </fieldValue>
-        <fieldValue name='connectornode'>
-            <Transform USE='C2'/>
+        <fieldValue name='transnode'>
+            <Transform USE='transC2'/>
+        </fieldValue>
+        <fieldValue name='rotscalenode'>
+            <Transform USE='rotscaleC2'/>
         </fieldValue>
         <fieldValue name='set_startpoint'>
         </fieldValue>
@@ -158,8 +180,11 @@
         <fieldValue name='endnode'>
             <Transform USE='G4'/>
         </fieldValue>
-        <fieldValue name='connectornode'>
-            <Transform USE='C3'/>
+        <fieldValue name='transnode'>
+            <Transform USE='transC3'/>
+        </fieldValue>
+        <fieldValue name='rotscalenode'>
+            <Transform USE='rotscaleC3'/>
         </fieldValue>
         <fieldValue name='set_startpoint'>
         </fieldValue>
