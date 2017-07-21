@@ -49,6 +49,7 @@ X3DCanvas {
 			    old1 = translation1;
 			    translation1 = new x3dom.fields.SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
 			    PI1.setFieldValue("keyValue", new x3dom.fields.MFVec3f([old1, translation1]));
+			    console.log(PI1.getFieldValue("keyValue"));
 			}, 3000);
 
 </script>
@@ -69,6 +70,7 @@ X3DCanvas {
 			    old2 = translation2;
 			    translation2 = new x3dom.fields.SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
 			    PI2.setFieldValue("keyValue", new x3dom.fields.MFVec3f([old2, translation2]));
+			    console.log(PI2.getFieldValue("keyValue"));
 			}, 3000);
 
 </script>
