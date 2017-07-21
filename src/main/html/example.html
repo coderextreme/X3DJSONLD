@@ -48,7 +48,9 @@ X3DCanvas {
 			function () {
 			    old1 = translation1;
 			    translation1 = new x3dom.fields.SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
-			    PI1.setFieldValue("keyValue", new x3dom.fields.MFVec3f([old1, translation1]));
+			    var kv = new x3dom.fields.MFVec3f([old1, translation1]);
+			    console.log(kv);
+			    PI1.setFieldValue("keyValue", kv);
 			    console.log(PI1.getFieldValue("keyValue"));
 			}, 3000);
 
@@ -69,7 +71,9 @@ X3DCanvas {
 			function () {
 			    old2 = translation2;
 			    translation2 = new x3dom.fields.SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
-			    PI2.setFieldValue("keyValue", new x3dom.fields.MFVec3f([old2, translation2]));
+			    var kv = new x3dom.fields.MFVec3f([old2, translation2]);
+			    console.log(kv);
+			    PI2.setFieldValue("keyValue", kv);
 			    console.log(PI2.getFieldValue("keyValue"));
 			}, 3000);
 
