@@ -12,7 +12,7 @@
 	<Viewpoint position='0 0 5' description="Only Viewpoint" orientation='0 0 1 0' />
 	<Background skyColor='0.4 0.4 0.4'/>
 
-    <ProtoDeclare name="point">
+    <ProtoDeclare name='point'>
         <ProtoInterface>
             <field accessType='inputOutput' name='translation' type='SFVec3f' value="0 0 0"/>
         </ProtoInterface>
@@ -32,14 +32,14 @@
                     <field name='translation' accessType='inputOutput' type='SFVec3f' value='50 50 0'/>
                     <field name='old' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
                     <field name='set_location' accessType='inputOnly' type='SFTime'/>
-                    <field name='keyValue' accessType='outputOnly' type='MFVec3f'/>
+                    <field name='keyValue' accessType='inputOutput' type='MFVec3f' value="0 0 0 0 5 0"/>
 <![CDATA[
 ecmascript:
 		function set_location(value) {
                     old = translation;
 		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
                     keyValue = new MFVec3f([old, translation]);
-		    // Browser.println(translation);
+		    // Browser.println(keyValue);
 		}
 ]]>
                 </Script>
@@ -102,11 +102,16 @@ ecmascript:
 			    translation : transl,
 			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)
 		    };
-	    } else {
+	    } else if (typeof SFRotation !== 'undefined') {
 		    return {
 			    scale : new SFVec3f(1.0,dist,1.0),
 			    translation : transl,
 			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)
+		    };
+	    } else {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl
 		    };
 	    }
 	}
@@ -136,10 +141,10 @@ ecmascript:
     <ProtoInstance DEF='G4' name='point'/>
     <ProtoInstance name='x3dconnector' DEF='connector1'>
         <fieldValue name='startnode'>
-            <Transform USE='G1'/>
+            <ProtoInstance USE='G1'/>
         </fieldValue>
         <fieldValue name='endnode'>
-            <Transform USE='G2'/>
+            <ProtoInstance USE='G2'/>
         </fieldValue>
         <fieldValue name='set_startpoint'>
         </fieldValue>
@@ -148,10 +153,10 @@ ecmascript:
     </ProtoInstance>
     <ProtoInstance name='x3dconnector' DEF='connector2'>
         <fieldValue name='startnode'>
-            <Transform USE='G1'/>
+            <ProtoInstance USE='G1'/>
         </fieldValue>
         <fieldValue name='endnode'>
-            <Transform USE='G3'/>
+            <ProtoInstance USE='G3'/>
         </fieldValue>
         <fieldValue name='set_startpoint'>
         </fieldValue>
@@ -160,21 +165,21 @@ ecmascript:
     </ProtoInstance>
     <ProtoInstance name='x3dconnector' DEF='connector3'>
         <fieldValue name='startnode'>
-            <Transform USE='G1'/>
+            <ProtoInstance USE='G1'/>
         </fieldValue>
         <fieldValue name='endnode'>
-            <Transform USE='G4'/>
+            <ProtoInstance USE='G4'/>
         </fieldValue>
         <fieldValue name='set_startpoint'>
         </fieldValue>
         <fieldValue name='set_endpoint'>
         </fieldValue>
     </ProtoInstance>
-    <ROUTE fromNode='G1' fromField='translation_changed' toNode='connector1' toField='set_startpoint'/>
-    <ROUTE fromNode='G2' fromField='translation_changed' toNode='connector1' toField='set_endpoint'/>
-    <ROUTE fromNode='G1' fromField='translation_changed' toNode='connector2' toField='set_startpoint'/>
-    <ROUTE fromNode='G3' fromField='translation_changed' toNode='connector2' toField='set_endpoint'/>
-    <ROUTE fromNode='G1' fromField='translation_changed' toNode='connector3' toField='set_startpoint'/>
-    <ROUTE fromNode='G4' fromField='translation_changed' toNode='connector3' toField='set_endpoint'/>
+    <ROUTE fromNode='G1' fromField='translation' toNode='connector1' toField='set_startpoint'/>
+    <ROUTE fromNode='G2' fromField='translation' toNode='connector1' toField='set_endpoint'/>
+    <ROUTE fromNode='G1' fromField='translation' toNode='connector2' toField='set_startpoint'/>
+    <ROUTE fromNode='G3' fromField='translation' toNode='connector2' toField='set_endpoint'/>
+    <ROUTE fromNode='G1' fromField='translation' toNode='connector3' toField='set_startpoint'/>
+    <ROUTE fromNode='G4' fromField='translation' toNode='connector3' toField='set_endpoint'/>
 </Scene>
 </X3D>
