@@ -41,20 +41,6 @@ X3DCanvas {
 </Appearance>
 </Shape>
 <PositionInterpolator DEF="DECLpoint_G1_PI1" key="0 1" keyValue="0 0 0 0 5 0"></PositionInterpolator>
-<script>
-		setPositionInterpolator(PI) {
-			    var np = new x3dom.fields.SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
-			    var kv = PI.getFieldValue("keyValue");
-			    console.log("old", kv);
-			    kv[0] = kv[1];
-			    kv[1] = np;
-			    console.log("new", kv);
-			    PI.setFieldValue("keyValue", kv);
-			    kv = PI.getFieldValue("keyValue");
-			    console.log("retrieved", kv);
-	        }
-
-</script>
 <TimeSensor DEF="DECLpoint_G1_CL1" cycleInterval="3" loop="true"></TimeSensor>
 <ROUTE fromNode="DECLpoint_G1_CL1" fromField="fraction_changed" toNode="DECLpoint_G1_PI1" toField="set_fraction"></ROUTE>
 <ROUTE fromNode="DECLpoint_G1_PI1" fromField="value_changed" toNode="DECLpoint_G1_node" toField="set_translation"></ROUTE>
@@ -105,6 +91,17 @@ X3DCanvas {
       var endnodeTranslation = G2.getFieldValue('translation');
       var startnodeTranslation = G1.getFieldValue('translation');
       recompute_and_route(startnodeTranslation, endnodeTranslation);
+    }
+    function setPositionInterpolator(PI) {
+	var np = new x3dom.fields.SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
+	var kv = PI.getFieldValue("keyValue");
+	console.log("old", kv);
+	kv[0] = kv[1];
+	kv[1] = np;
+	console.log("new", kv);
+	PI.setFieldValue("keyValue", kv);
+	kv = PI.getFieldValue("keyValue");
+	console.log("retrieved", kv);
     }
     function set_startpoint(event) {
       var val = event.value;
