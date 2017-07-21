@@ -305,8 +305,11 @@ PROTOS.prototype = {
 				var obj = this.scriptField[this.getField(scope, field)][sf];
 				if (typeof obj !== 'undefined') {
 					if (typeof obj[3] !== 'undefined') {
-						defobj = [this.getField(scope, obj[3]), obj[0]["@name"]];
-						console.error("def5 is", defobj);
+						var f = this.getField(scope, obj[3]);
+						if (f.indexOf("DECL", 1) == -1) {
+							defobj = [f,  obj[0]["@name"]];
+							console.error("def5 is", defobj);
+						}
 					}
 				}
 			}
@@ -543,13 +546,14 @@ PROTOS.prototype = {
 
 	handleProtoInstance: function (file, object, p) {
 		var name = object[p]["@name"];
-		this.pushScope("DECL" + name);
 		var def = object[p]["@DEF"];
 		var use = object[p]["@USE"];
 		this.names[def] = name;
 		if (typeof name === 'undefined' && typeof use !== 'undefined') {
 			name = this.names[use];
 		}
+		this.pushScope("DECL" + name);
+
 		var instance = {};
 		if (typeof def === 'undefined' && typeof use === 'undefined') {
 			def = "INSTANCE";

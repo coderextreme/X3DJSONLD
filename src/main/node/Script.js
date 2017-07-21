@@ -157,6 +157,26 @@ function processScripts(object, classes, mypackage, routecode, loopItems, select
 	classes.log("			return $(selector)[0];");
 	classes.log("		}");
 	classes.log("};");
+	classes.log("X3DJSON.createProxy = function(action, scriptObject) {");
+	classes.log("	var proxy = new Proxy(scriptObject, {");
+	classes.log("		get: function(target, property, receiver) {");
+	classes.log("			return Reflect.get(target, property, receiver);");
+	classes.log("		},");
+	classes.log("		set: function(target, property, value, receiver) {");
+	classes.log("                 if (typeof action[property] === 'object') {");
+	classes.log("                        for (var route in action[property]) {");
+	classes.log("                                if (typeof action[property][route] === 'function') {");
+	classes.log("                                        action[property][route](property, value);");
+	classes.log("   		                     // console.log('Set',property,'to', value);");
+	classes.log("                                }");
+	classes.log("                        }");
+	classes.log("                 }");
+
+	classes.log("		      return Reflect.set(target, property, value, receiver);");
+	classes.log("		}");
+	classes.log("	});");
+	classes.log("	return proxy;");
+	classes.log("};");
 	realProcessScripts(object, classes, mypackage, routecode, loopItems);
 }
 
@@ -367,26 +387,6 @@ function registerFields(fields, classes, mypackage) {
 }
 
 function processFields(fields, classes, mypackage) {
-	classes.log("X3DJSON.createProxy = function(action, scriptObject) {");
-	classes.log("	var proxy = new Proxy(scriptObject, {");
-	classes.log("		get: function(target, property, receiver) {");
-	classes.log("			return Reflect.get(target, property, receiver);");
-	classes.log("		},");
-	classes.log("		set: function(target, property, value, receiver) {");
-	classes.log("                 if (typeof action[property] === 'object') {");
-	classes.log("                        for (var route in action[property]) {");
-	classes.log("                                if (typeof action[property][route] === 'function') {");
-	classes.log("                                        action[property][route](property, value);");
-	classes.log("   		                     // console.log('Set',property,'to', value);");
-	classes.log("                                }");
-	classes.log("                        }");
-	classes.log("                 }");
-
-	classes.log("		      return Reflect.set(target, property, value, receiver);");
-	classes.log("		}");
-	classes.log("	});");
-	classes.log("	return proxy;");
-	classes.log("};");
 	classes.log(declareX3DJSON('Script', mypackage.name));
 	classes.log(useX3DJSON('Script', mypackage.name) +  ' = function() {');
 
