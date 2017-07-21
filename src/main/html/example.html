@@ -42,13 +42,13 @@ X3DCanvas {
 </Shape>
 <PositionInterpolator DEF="DECLpoint_G1_PI1" key="0 1" keyValue="0 0 0 0 5 0"></PositionInterpolator>
 <script>
-	        old1 = new SFVec3f(0, 0, 0);
-	        translation1 = new SFVec3f(0, 0, 0);
+	        old1 = new x3dom.fields.SFVec3f(0, 0, 0);
+	        translation1 = new x3dom.fields.SFVec3f(0, 0, 0);
 		setInterval(
 			function () {
 			    old1 = translation1;
-			    translation1 = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
-			    PI1.setFieldValue("keyValue", new MFVec3f([old1, translation1]));
+			    translation1 = new x3dom.fields.SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
+			    PI1.setFieldValue("keyValue", new x3dom.fields.MFVec3f([old1, translation1]));
 			}, 3000);
 
 </script>
@@ -62,13 +62,13 @@ X3DCanvas {
 </Shape>
 <PositionInterpolator DEF="DECLpoint_G2_PI1" key="0 1" keyValue="0 0 0 0 5 0"></PositionInterpolator>
 <script>
-	        old2 = new SFVec3f(0, 0, 0);
-	        translation2 = new SFVec3f(0, 0, 0);
+	        old2 = new x3dom.fields.SFVec3f(0, 0, 0);
+	        translation2 = new x3dom.fields.SFVec3f(0, 0, 0);
 		setInterval(
 			function () {
 			    old2 = translation2;
-			    translation2 = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
-			    PI2.setFieldValue("keyValue", new MFVec3f([old2, translation2]));
+			    translation2 = new x3dom.fields.SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
+			    PI2.setFieldValue("keyValue", new x3dom.fields.MFVec3f([old2, translation2]));
 			}, 3000);
 
 </script>
