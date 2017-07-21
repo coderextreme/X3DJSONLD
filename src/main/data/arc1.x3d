@@ -120,10 +120,10 @@ ecmascript:
     <ProtoInstance DEF='end' name='point'/>
     <ProtoInstance name='x3dconnector' DEF='connector1'>
         <fieldValue name='startnode'>
-		<ProtoInstance USE='start' name='point'/>
+		<ProtoInstance USE='start'/>
         </fieldValue>
         <fieldValue name='endnode'>
-		<ProtoInstance USE='end' name='point'/>
+		<ProtoInstance USE='end'/>
         </fieldValue>
         <fieldValue name='connectornode'>
             <Transform USE='cylinder1'/>
