@@ -56,9 +56,9 @@ X3DCanvas {
 		}
 ]]></Script-->
 <TimeSensor DEF="DECLpoint_G1_CL1" cycleInterval="3" loop="true"></TimeSensor>
-<ROUTE fromNode="DECLpoint_G1_CL1" fromField="cycleTime" toNode="DECLpoint_G1_MB1" toField="set_location"></ROUTE>
+<!--ROUTE fromNode="DECLpoint_G1_CL1" fromField="cycleTime" toNode="DECLpoint_G1_MB1" toField="set_location"></ROUTE-->
 <ROUTE fromNode="DECLpoint_G1_CL1" fromField="fraction_changed" toNode="DECLpoint_G1_PI1" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="DECLpoint_G1_MB1" fromField="keyValue" toNode="DECLpoint_G1_PI1" toField="keyValue"></ROUTE>
+<!--ROUTE fromNode="DECLpoint_G1_MB1" fromField="keyValue" toNode="DECLpoint_G1_PI1" toField="keyValue"></ROUTE-->
 <ROUTE fromNode="DECLpoint_G1_PI1" fromField="value_changed" toNode="DECLpoint_G1_node" toField="set_translation"></ROUTE>
 </Transform>
 <Transform DEF="DECLpoint_G2_node" translation="0 0 0"><Shape><Sphere containerField="geometry" radius="0.1"></Sphere>
@@ -79,9 +79,9 @@ X3DCanvas {
 		}
 ]]></Script-->
 <TimeSensor DEF="DECLpoint_G2_CL1" cycleInterval="3" loop="true"></TimeSensor>
-<ROUTE fromNode="DECLpoint_G2_CL1" fromField="cycleTime" toNode="DECLpoint_G2_MB1" toField="set_location"></ROUTE>
+<!--ROUTE fromNode="DECLpoint_G2_CL1" fromField="cycleTime" toNode="DECLpoint_G2_MB1" toField="set_location"></ROUTE-->
 <ROUTE fromNode="DECLpoint_G2_CL1" fromField="fraction_changed" toNode="DECLpoint_G2_PI1" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="DECLpoint_G2_MB1" fromField="keyValue" toNode="DECLpoint_G2_PI1" toField="keyValue"></ROUTE>
+<!--ROUTE fromNode="DECLpoint_G2_MB1" fromField="keyValue" toNode="DECLpoint_G2_PI1" toField="keyValue"></ROUTE-->
 <ROUTE fromNode="DECLpoint_G2_PI1" fromField="value_changed" toNode="DECLpoint_G2_node" toField="set_translation"></ROUTE>
 </Transform>
 <Group><Transform DEF="DECLx3dconnector_connector1_trans"><Transform DEF="DECLx3dconnector_connector1_rotscale"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.2 0.7 0.7" transparency="0.5"></Material>
