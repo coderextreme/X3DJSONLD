@@ -41,27 +41,14 @@ X3DCanvas {
 </Appearance>
 </Shape>
 <PositionInterpolator DEF="DECLpoint_G1_PI1" key="0 1" keyValue="0 0 0 0 5 0"></PositionInterpolator>
-<!--
-<Script DEF="DECLpoint_G1_MB1"><field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
-<field name="old" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
-<field name="set_location" accessType="inputOnly" type="SFTime"></field>
-<field name="keyValue" accessType="inputOutput" type="MFVec3f" value="0 0 0 0 5 0"></field>
-<![CDATA[ecmascript:
-		function set_location(value) {
-                    old = translation;
-		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
-                    keyValue = new MFVec3f([old, translation]);
-		}
-]]></Script>
--->
 <script>
-	        old = new SFVec3f(0, 0, 0);
-	        translation = new SFVec3f(0, 0, 0);
+	        old1 = new SFVec3f(0, 0, 0);
+	        translation1 = new SFVec3f(0, 0, 0);
 		setInterval(
 			function () {
-			    old = translation;
-			    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
-			    PI1.keyValue.setFieldValue(new MFVec3f([old, translation]));
+			    old1 = translation1;
+			    translation1 = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
+			    PI1.setFieldValue("keyValue", new MFVec3f([old1, translation1]));
 			}, 3000);
 
 </script>
@@ -74,17 +61,17 @@ X3DCanvas {
 </Appearance>
 </Shape>
 <PositionInterpolator DEF="DECLpoint_G2_PI1" key="0 1" keyValue="0 0 0 0 5 0"></PositionInterpolator>
-<Script DEF="DECLpoint_G2_MB1"><field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
-<field name="old" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
-<field name="set_location" accessType="inputOnly" type="SFTime"></field>
-<field name="keyValue" accessType="inputOutput" type="MFVec3f" value="0 0 0 0 5 0"></field>
-<![CDATA[ecmascript:
-		function set_location(value) {
-                    old = translation;
-		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
-                    keyValue = new MFVec3f([old, translation]);
-		}
-]]></Script>
+<script>
+	        old2 = new SFVec3f(0, 0, 0);
+	        translation2 = new SFVec3f(0, 0, 0);
+		setInterval(
+			function () {
+			    old2 = translation2;
+			    translation2 = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
+			    PI2.setFieldValue("keyValue", new MFVec3f([old2, translation2]));
+			}, 3000);
+
+</script>
 <TimeSensor DEF="DECLpoint_G2_CL1" cycleInterval="3" loop="true"></TimeSensor>
 <ROUTE fromNode="DECLpoint_G2_CL1" fromField="cycleTime" toNode="DECLpoint_G2_MB1" toField="set_location"></ROUTE>
 <ROUTE fromNode="DECLpoint_G2_CL1" fromField="fraction_changed" toNode="DECLpoint_G2_PI1" toField="set_fraction"></ROUTE>
