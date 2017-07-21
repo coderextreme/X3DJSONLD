@@ -93,15 +93,10 @@ X3DCanvas {
       recompute_and_route(startnodeTranslation, endnodeTranslation);
     }
     function setPositionInterpolator(PI) {
-	var np = new x3dom.fields.SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
+	var translation = new x3dom.fields.SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
 	var kv = PI.getFieldValue("keyValue");
-	console.log("old", kv);
-	kv[0] = kv[1];
-	kv[1] = np;
-	console.log("new", kv);
+        kv = new MFVec3f([kv[1], translation]);
 	PI.setFieldValue("keyValue", kv);
-	kv = PI.getFieldValue("keyValue");
-	console.log("retrieved", kv);
     }
     function set_startpoint(event) {
       var val = event.value;
