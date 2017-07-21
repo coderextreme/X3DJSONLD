@@ -1792,46 +1792,51 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
             <xsl:when test="local-name()='meta'">
                 <xsl:apply-templates select="@name" />
                 <xsl:apply-templates select="@content" />
-                <xsl:apply-templates select="@*[local-name()!='name' and local-name()!='content']" />
+                <xsl:apply-templates select="@*[local-name()!='name' and local-name()!='content']"/><!-- safety net -->
             </xsl:when>
             <xsl:when test="local-name()='ROUTE'">
                 <xsl:apply-templates select="@fromNode"/>
                 <xsl:apply-templates select="@fromField"/>
                 <xsl:apply-templates select="@toNode"/>
                 <xsl:apply-templates select="@toField"/>
+                <xsl:apply-templates select="@*[local-name()!='fromNode' and local-name()!='fromField' and
+												local-name()!= '@toNode' and local-name()!=  'toField']"/><!-- safety net -->
             </xsl:when>
             <xsl:when test="local-name()='ElevationGrid' or local-name()='GeoElevationGrid'">
                 <xsl:apply-templates select="@DEF | @USE | @containerField "/>
                 <xsl:apply-templates select="@*[local-name()!='DEF' and local-name()!='USE' and local-name()!='containerField' and
-                                                local-name()!='height' and local-name()!='colorIndex']"/>
+                                                local-name()!='height' and local-name()!='colorIndex']"/><!-- safety net -->
                 <xsl:apply-templates select="@height"/>
                 <xsl:apply-templates select="@colorIndex"/>
             </xsl:when>
             <xsl:when test="local-name()='IndexedFaceSet' or local-name()='IndexedLineSet'">
                 <xsl:apply-templates select="@DEF | @USE | @containerField "/>
                 <xsl:apply-templates select="@*[local-name()!='DEF' and local-name()!='USE' and local-name()!='containerField' and
-                                                not(contains(local-name(), 'Index'))]"/>
+                                                not(contains(local-name(), 'Index'))]"/><!-- safety net -->
                 <xsl:apply-templates select="@*[contains(local-name(), 'Index')]"/>
             </xsl:when>
             <xsl:when test="local-name()='IMPORT'">
-                <xsl:apply-templates select="@InlineDEF"/>
-                <xsl:apply-templates select="@exportedDEF"/>
+                <xsl:apply-templates select="@inlineDEF"/>
+                <xsl:apply-templates select="@importedDEF"/>
                 <xsl:apply-templates select="@AS"/>
+                <xsl:apply-templates select="@*[local-name()!='inlineDEF' and local-name()!='importedDEF' and
+                                                local-name()!='AS']"/><!-- safety net -->
             </xsl:when>
             <xsl:when test="local-name()='EXPORT'">
                 <xsl:apply-templates select="@localDEF"/>
                 <xsl:apply-templates select="@AS"/>
+                <xsl:apply-templates select="@*[local-name()!='localDEF' and local-name()!='AS']"/><!-- safety net -->
             </xsl:when>
             <xsl:when test="contains(local-name(),'Proto')">
                 <xsl:apply-templates select="@name"/>
-                <xsl:apply-templates select="@DEF"/>
-                <xsl:apply-templates select="@*[(local-name()!='DEF') and (local-name()!='name')]"/>
+                <xsl:apply-templates select="@DEF | @USE"/>
+                <xsl:apply-templates select="@*[(local-name()!='DEF') and (local-name()!='USE') and (local-name()!='name')]"/><!-- safety net -->
             </xsl:when>
             <xsl:when test="local-name()='field' or local-name()='fieldValue'">
                 <xsl:apply-templates select="@name"/>
                 <xsl:apply-templates select="@type"/>
                 <xsl:apply-templates select="@value"/>
-                <xsl:apply-templates select="@*[(local-name()!='name') and (local-name()!='type') and (local-name()!='value') and (local-name()!='appinfo') and (local-name()!='documentation')]"/>
+                <xsl:apply-templates select="@*[(local-name()!='name') and (local-name()!='type') and (local-name()!='value') and (local-name()!='appinfo') and (local-name()!='documentation')]"/><!-- safety net -->
                 <xsl:if test="@appinfo">
                     <xsl:text disable-output-escaping="yes">&#10;&lt;br /&gt;&#10;</xsl:text>
                 </xsl:if>
