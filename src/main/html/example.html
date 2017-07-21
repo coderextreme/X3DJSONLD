@@ -42,17 +42,17 @@ X3DCanvas {
 </Shape>
 <PositionInterpolator DEF="DECLpoint_G1_PI1" key="0 1" keyValue="0 0 0 0 5 0"></PositionInterpolator>
 <script>
-	        old1 = new x3dom.fields.SFVec3f(0, 0, 0);
-	        translation1 = new x3dom.fields.SFVec3f(0, 0, 0);
-		setInterval(
-			function () {
-			    old1 = translation1;
-			    translation1 = new x3dom.fields.SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
-			    var kv = new x3dom.fields.MFVec3f([old1, translation1]);
-			    console.log(kv);
-			    PI1.setFieldValue("keyValue", kv);
-			    console.log(PI1.getFieldValue("keyValue"));
-			}, 3000);
+		setPositionInterpolator(PI) {
+			    var np = new x3dom.fields.SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
+			    var kv = PI.getFieldValue("keyValue");
+			    console.log("old", kv);
+			    kv[0] = kv[1];
+			    kv[1] = np;
+			    console.log("new", kv);
+			    PI.setFieldValue("keyValue", kv);
+			    kv = PI.getFieldValue("keyValue");
+			    console.log("retrieved", kv);
+	        }
 
 </script>
 <TimeSensor DEF="DECLpoint_G1_CL1" cycleInterval="3" loop="true"></TimeSensor>
@@ -64,24 +64,8 @@ X3DCanvas {
 </Appearance>
 </Shape>
 <PositionInterpolator DEF="DECLpoint_G2_PI1" key="0 1" keyValue="0 0 0 0 5 0"></PositionInterpolator>
-<script>
-	        old2 = new x3dom.fields.SFVec3f(0, 0, 0);
-	        translation2 = new x3dom.fields.SFVec3f(0, 0, 0);
-		setInterval(
-			function () {
-			    old2 = translation2;
-			    translation2 = new x3dom.fields.SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
-			    var kv = new x3dom.fields.MFVec3f([old2, translation2]);
-			    console.log(kv);
-			    PI2.setFieldValue("keyValue", kv);
-			    console.log(PI2.getFieldValue("keyValue"));
-			}, 3000);
-
-</script>
 <TimeSensor DEF="DECLpoint_G2_CL1" cycleInterval="3" loop="true"></TimeSensor>
-<ROUTE fromNode="DECLpoint_G2_CL1" fromField="cycleTime" toNode="DECLpoint_G2_MB1" toField="set_location"></ROUTE>
 <ROUTE fromNode="DECLpoint_G2_CL1" fromField="fraction_changed" toNode="DECLpoint_G2_PI1" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="DECLpoint_G2_MB1" fromField="keyValue" toNode="DECLpoint_G2_PI1" toField="keyValue"></ROUTE>
 <ROUTE fromNode="DECLpoint_G2_PI1" fromField="value_changed" toNode="DECLpoint_G2_node" toField="set_translation"></ROUTE>
 </Transform>
 <Group><Transform DEF="DECLx3dconnector_connector1_trans"><Transform DEF="DECLx3dconnector_connector1_rotscale"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.2 0.7 0.7" transparency="0.5"></Material>
@@ -110,6 +94,11 @@ X3DCanvas {
       PI2 = document.querySelector('[DEF="DECLpoint_G2_PI1"]');
       C0 = document.querySelector('[DEF="DECLx3dconnector_connector1_trans"]');
       C2 = document.querySelector('[DEF="DECLx3dconnector_connector1_rotscale"]');
+      setInterval(
+		function () {
+			setPositionInterpolator(PI1);
+			setPositionInterpolator(PI2);
+		}, 3000);
       //install listeners for 'routing'
       G1.addEventListener('outputchange', set_startpoint, false)
       G2.addEventListener('outputchange', set_endpoint, false)
