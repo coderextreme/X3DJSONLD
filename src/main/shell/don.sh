@@ -19,7 +19,13 @@ echo compiling
 pushd ../java
 find ./net/x3djsonld/data -name '*.java' | xargs -L 1 -P $PROCESSORS javac -J-Xss1g -J-Xmx4g
 echo running java
-find ./net/x3djsonld/data -name '*.java' | sed -e 's/\.\///' -e 's/\.java$//' | xargs -L 1 -P $PROCESSORS java -d64 -Xss1g -Xmx4g  # sh runToError.sh
+for i in `find ./net/x3djsonld/data -name '*.java' | sed -e 's/\.\///' -e 's/\.java$//'`
+do
+	# java -d64 -Xss1g -Xmx4g $i x3d ../data/$i.don.x3d # sh runToError.sh
+	mkdir ../data/`dirname $i`
+	java $i x3d ../data/$i.don.x3d # sh runToError.sh
+	${NODE} ${NODEDIR}/xmldiff.js ../data/`basename`$i ../data/$i.don.x3d 
+done
 popd
 echo running jjs
 pushd ../nashorn

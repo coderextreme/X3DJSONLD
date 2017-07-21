@@ -928,6 +928,30 @@ and
         <xmlvalidate failonerror="true" warn="true" lenient="true" file="test/ExtrusionHeart.svg"/>
     </target>
     
+    <target name="test.X3dToJson.CobwebExamples.xslt" depends="test.mkdir" description="Test X3dToJson.xslt stylesheet using default Ant xslt task" >
+        <echo message="====================================="/>
+        <echo message="translation input: test/BadJsonFromCobweb/Examples/Appartment/index.x3d"/>
+        <echo message="..expected output: test/BadJsonFromCobweb/Examples/Appartment/index.fixed.json"/>
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
+            <!-- <arg value="-t"/>  timing information -->
+            <arg value="-warnings:recover"/> <!-- recover after writing a warning message -->
+            <arg value="-expand:on"/>  <!-- force insertion of default attribute values found in DTD -->
+            <arg value="-o:test/BadJsonFromCobweb/Examples/Appartment/index.fixed.json"/> <!-- output-doc -->
+            <arg value="-s:test/BadJsonFromCobweb/Examples/Appartment/index.x3d"/>  <!-- source-doc -->
+            <arg value="-xsl:X3dToJson.xslt"/> <!-- style-doc -->
+        </java>
+        <echo>..error checking with jslint</echo>
+        <java classname="com.googlecode.jslint4java.cli.Main" classpath="${jslint.jar}" fork="${fork}">
+            <arg value="test/BadJsonFromCobweb/Examples/Appartment/index.fixed.json"/>
+        </java>
+        <echo>..error checking with json-schema-validator</echo>
+        <java jar="${json-schema-validator.jar}" fork="${fork}">
+            <arg value="../../specifications/x3d-3.3-JSONSchema.json"/>
+            <arg value="test/BadJsonFromCobweb/Examples/Appartment/index.fixed.json"/>
+        </java>
+        <echo message="====================================="/>
+    </target>
+    
     <target name="test.X3dToJson.xslt" depends="test.mkdir" description="Test X3dToJson.xslt stylesheet using default Ant xslt task" >
         <echo message="====================================="/>
         <echo message="translation input: test/HelloWorldProgramOutput.x3d"/>
@@ -935,7 +959,7 @@ and
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
             <!-- <arg value="-t"/>  timing information -->
             <arg value="-warnings:recover"/> <!-- recover after writing a warning message -->
-            <arg value="-expand:off"/>  <!-- suppress insertion of default attribute values found in DTD -->
+            <arg value="-expand:on"/>  <!-- force insertion of default attribute values found in DTD -->
             <arg value="-o:test/HelloWorldProgramOutput.json"/> <!-- output-doc -->
             <arg value="-s:test/HelloWorldProgramOutput.x3d"/>  <!-- source-doc -->
             <arg value="-xsl:X3dToJson.xslt"/> <!-- style-doc -->
@@ -967,7 +991,7 @@ and
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
             <!-- <arg value="-t"/>  timing information -->
             <arg value="-warnings:recover"/> <!-- recover after writing a warning message -->
-            <arg value="-expand:off"/>  <!-- suppress insertion of default attribute values found in DTD -->
+            <arg value="-expand:on"/>  <!-- force insertion of default attribute values found in DTD -->
             <arg value="-o:test/AllX3dElementsAttributes3.3.json"/> <!-- output-doc -->
             <arg value="-s:AllX3dElementsAttributes3.3.xml"/> <!-- source-doc -->
             <arg value="-xsl:X3dToJson.xslt"/> <!-- style-doc -->
@@ -983,7 +1007,7 @@ and
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
             <!-- <arg value="-t"/>  timing information -->
             <arg value="-warnings:recover"/> <!-- recover after writing a warning message -->
-            <arg value="-expand:off"/>  <!-- suppress insertion of default attribute values found in DTD -->
+            <arg value="-expand:on"/>  <!-- force insertion of default attribute values found in DTD -->
             <arg value="-o:test/HelloWorld.json"/> <!-- output-doc -->
             <arg value="-s:test/HelloWorld.x3d"/>  <!-- source-doc -->
             <arg value="-xsl:X3dToJson.xslt"/> <!-- style-doc -->
@@ -1003,7 +1027,7 @@ and
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
             <!-- <arg value="-t"/>  timing information -->
             <arg value="-warnings:recover"/> <!-- recover after writing a warning message -->
-            <arg value="-expand:off"/>  <!-- suppress insertion of default attribute values found in DTD -->
+            <arg value="-expand:on"/>  <!-- force insertion of default attribute values found in DTD -->
             <arg value="-o:test/TestJsonEncoding.json"/> <!-- output-doc -->
             <arg value="-s:${examples.dir}/Basic/development/TestJsonEncoding.x3d"/> <!-- source-doc -->
             <arg value="-xsl:X3dToJson.xslt"/> <!-- style-doc -->
@@ -1023,7 +1047,7 @@ and
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
             <!-- <arg value="-t"/>  timing information -->
             <arg value="-warnings:recover"/> <!-- recover after writing a warning message -->
-            <arg value="-expand:off"/>  <!-- suppress insertion of default attribute values found in DTD -->
+            <arg value="-expand:on"/>  <!-- force insertion of default attribute values found in DTD -->
             <arg value="-o:test/OrigamiCranes.json"/> <!-- output-doc -->
             <arg value="-s:${examples.dir}/X3dForAdvancedModeling/Animation/OrigamiCranes.x3d"/> <!-- source-doc -->
             <arg value="-xsl:X3dToJson.xslt"/> <!-- style-doc -->
@@ -1043,7 +1067,7 @@ and
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
             <!-- <arg value="-t"/>  timing information -->
             <arg value="-warnings:recover"/> <!-- recover after writing a warning message -->
-            <arg value="-expand:off"/>  <!-- suppress insertion of default attribute values found in DTD -->
+            <arg value="-expand:on"/>  <!-- force insertion of default attribute values found in DTD -->
             <arg value="-o:test/CubeWithLabeledSidesViewpointSequencer.json"/> <!-- output-doc -->
             <arg value="-s:${examples.dir}/X3dForAdvancedModeling/Animation/CubeWithLabeledSidesViewpointSequencer.x3d"/> <!-- source-doc -->
             <arg value="-xsl:X3dToJson.xslt"/> <!-- style-doc -->
@@ -1063,7 +1087,7 @@ and
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
             <!-- <arg value="-t"/>  timing information -->
             <arg value="-warnings:recover"/> <!-- recover after writing a warning message -->
-            <arg value="-expand:off"/>  <!-- suppress insertion of default attribute values found in DTD -->
+            <arg value="-expand:on"/>  <!-- force insertion of default attribute values found in DTD -->
             <arg value="-o:test/CadGeometryExternPrototypes.json"/> <!-- output-doc -->
             <arg value="-s:${examples.dir}/Basic/CAD/CadGeometryExternPrototypes.x3d"/> <!-- source-doc -->
             <arg value="-xsl:X3dToJson.xslt"/> <!-- style-doc -->
@@ -1083,7 +1107,7 @@ and
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
             <!-- <arg value="-t"/>  timing information -->
             <arg value="-warnings:recover"/> <!-- recover after writing a warning message -->
-            <arg value="-expand:off"/>  <!-- suppress insertion of default attribute values found in DTD -->
+            <arg value="-expand:on"/>  <!-- force insertion of default attribute values found in DTD -->
             <arg value="-o:test/CadGeometryPrototypes.json"/> <!-- output-doc -->
             <arg value="-s:${examples.dir}/Basic/CAD/CadGeometryPrototypes.x3d"/> <!-- source-doc -->
             <arg value="-xsl:X3dToJson.xslt"/> <!-- style-doc -->
@@ -1103,7 +1127,7 @@ and
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
             <!-- <arg value="-t"/>  timing information -->
             <arg value="-warnings:recover"/> <!-- recover after writing a warning message -->
-            <arg value="-expand:off"/>  <!-- suppress insertion of default attribute values found in DTD -->
+            <arg value="-expand:on"/>  <!-- force insertion of default attribute values found in DTD -->
             <arg value="-o:test/flowers4.json"/> <!-- output-doc -->
             <arg value="-s:test/flowers4.x3d"/>  <!-- source-doc -->
             <arg value="-xsl:X3dToJson.xslt"/> <!-- style-doc -->
@@ -1123,7 +1147,7 @@ and
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
             <!-- <arg value="-t"/>  timing information -->
             <arg value="-warnings:recover"/> <!-- recover after writing a warning message -->
-            <arg value="-expand:off"/>  <!-- suppress insertion of default attribute values found in DTD -->
+            <arg value="-expand:on"/>  <!-- force insertion of default attribute values found in DTD -->
             <arg value="-o:test/arc.json"/> <!-- output-doc -->
             <arg value="-s:test/arc.x3d"/>  <!-- source-doc -->
             <arg value="-xsl:X3dToJson.xslt"/> <!-- style-doc -->
