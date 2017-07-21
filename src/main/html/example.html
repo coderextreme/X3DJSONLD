@@ -95,7 +95,7 @@ X3DCanvas {
     function setPositionInterpolator(PI) {
 	var translation = new x3dom.fields.SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
 	var kv = PI.getFieldValue("keyValue");
-        kv = new x3dom.fieldsd.MFVec3f([kv[1], translation]);
+        kv = new x3dom.fields.MFVec3f([kv[1], translation]);
 	PI.setFieldValue("keyValue", kv);
     }
     function set_startpoint(event) {
