@@ -17,7 +17,7 @@ cd X3DJSONLD
 npm install
 node app.js
 ```
-Then go to http://localhost:3000 in your web browser and select a JSON file in
+Then go to http://localhost:3000/index.html in your web browser and select a JSON file in
 the pulldown.  You can try: http://localhost:3000/X3DExamplesViewer.html
 
 * WARNING
