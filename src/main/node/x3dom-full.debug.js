@@ -1,4 +1,4 @@
-/** X3DOM Runtime, http://www.x3dom.org/ 1.7.3-dev - b'639a02eaed631e85cbe6da83e75cade70bab0a10' - b'Fri Jul 21 15:55:26 2017 -0400' *//*
+/** X3DOM Runtime, http://www.x3dom.org/ 1.7.3-dev - b'326a4b5bd01a43f47e4875a57fef6916ba7df33b' - b'Sat Jul 22 02:17:48 2017 -0400' *//*
  * X3DOM JavaScript Library
  * http://www.x3dom.org
  *
@@ -18138,7 +18138,7 @@ x3dom.fields.MFVec3f.parse = function(str) {
 
 x3dom.fields.MFVec3f.prototype.copy = function()
 {
-    x3dom.fields.MFVec3f.copy(this);
+    return x3dom.fields.MFVec3f.copy(this);
 };
 
 x3dom.fields.MFVec3f.prototype.setValueByStr = function(str) {
