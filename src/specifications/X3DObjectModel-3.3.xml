@@ -2,7 +2,7 @@
 <!-- X3D Object Model X3DObjectModel-3.3.xml-->
 <!-- Online at http://www.web3d.org/specifications/X3DObjectModel-3.3.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 3.3 of X3D -->
-<!-- Generated 2017-05-04-07:00 12:19:21.105-07:00 -->
+<!-- Generated 2017-07-24-07:00 12:27:17.922-07:00 -->
 <X3DObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                 version="3.3"
                 xsd:noNamespaceSchemaLocation="x3dObjectModel.xsd">
@@ -1849,10 +1849,7 @@
          <InterfaceDefinition specificationUrl="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/core.html#X3DMetadataObject"
                               appinfo="Each node inheriting the X3DMetadataObject interface contains a single array of strictly typed values: MFBool, MFInt32, MFFloat, MFDouble, MFString, or MFNode, the latter having children that are all Metadata nodes.">
             <componentInfo name="Core" level="1"/>
-            <field type="SFString"
-                   accessType="inputOutput"
-                   name="name"
-                   use="required"/>
+            <field type="SFString" accessType="inputOutput" name="name"/>
             <field type="SFString" accessType="inputOutput" name="reference"/>
          </InterfaceDefinition>
       </AbstractObjectType>
@@ -2778,7 +2775,7 @@
       </AbstractNodeType>
       <AbstractNodeType name="X3DLightNode">
          <InterfaceDefinition specificationUrl="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/lighting.html#X3DLightNode"
-                              appinfo="Light nodes provide illumination for rendering geometry in the scene.">
+                              appinfo="Light nodes provide illumination for rendering geometry in the scene. Implementing nodes must include a global field with type SFBool and accessType inputOutput.">
             <componentInfo name="Lighting" level="1"/>
             <Inheritance baseType="X3DChildNode"/>
             <field type="SFFloat"
@@ -4072,10 +4069,7 @@
                    default="NULL"
                    acceptableNodeTypes="X3DMetadataObject"
                    inheritedFrom="X3DNode"/>
-            <field type="SFString"
-                   accessType="inputOutput"
-                   name="name"
-                   use="required"/>
+            <field type="SFString" accessType="inputOutput" name="name"/>
             <field type="SFString"
                    accessType="inputOutput"
                    name="DEF"
@@ -8170,7 +8164,6 @@
             <field type="SFString"
                    accessType="inputOutput"
                    name="name"
-                   use="required"
                    inheritedFrom="X3DVertexAttributeNode"/>
             <field type="SFInt32"
                    accessType="initializeOnly"
@@ -11806,7 +11799,6 @@
             <field type="SFString"
                    accessType="inputOutput"
                    name="name"
-                   use="required"
                    inheritedFrom="X3DVertexAttributeNode"/>
             <field type="MFMatrix3f" accessType="inputOutput" name="value"/>
             <field type="SFString"
@@ -11840,7 +11832,6 @@
             <field type="SFString"
                    accessType="inputOutput"
                    name="name"
-                   use="required"
                    inheritedFrom="X3DVertexAttributeNode"/>
             <field type="MFMatrix4f" accessType="inputOutput" name="value"/>
             <field type="SFString"
@@ -11876,7 +11867,6 @@
             <field type="SFString"
                    accessType="inputOutput"
                    name="name"
-                   use="required"
                    inheritedFrom="X3DMetadataObject"/>
             <field type="SFString"
                    accessType="inputOutput"
@@ -11916,7 +11906,6 @@
             <field type="SFString"
                    accessType="inputOutput"
                    name="name"
-                   use="required"
                    inheritedFrom="X3DMetadataObject"/>
             <field type="SFString"
                    accessType="inputOutput"
@@ -11956,7 +11945,6 @@
             <field type="SFString"
                    accessType="inputOutput"
                    name="name"
-                   use="required"
                    inheritedFrom="X3DMetadataObject"/>
             <field type="SFString"
                    accessType="inputOutput"
@@ -11996,7 +11984,6 @@
             <field type="SFString"
                    accessType="inputOutput"
                    name="name"
-                   use="required"
                    inheritedFrom="X3DMetadataObject"/>
             <field type="SFString"
                    accessType="inputOutput"
@@ -12032,10 +12019,7 @@
                    name="metadata"
                    default="NULL"
                    acceptableNodeTypes="X3DMetadataObject"/>
-            <field type="SFString"
-                   accessType="inputOutput"
-                   name="name"
-                   use="required"/>
+            <field type="SFString" accessType="inputOutput" name="name"/>
             <field type="SFString" accessType="inputOutput" name="reference"/>
             <field type="MFNode"
                    accessType="inputOutput"
@@ -12075,7 +12059,6 @@
             <field type="SFString"
                    accessType="inputOutput"
                    name="name"
-                   use="required"
                    inheritedFrom="X3DMetadataObject"/>
             <field type="SFString"
                    accessType="inputOutput"
