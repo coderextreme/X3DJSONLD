@@ -2860,17 +2860,21 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 		try // https://docs.oracle.com/javase/tutorial/jaxp/xslt/transformingXML.html
 		{
 /* TODO
-			// http://stackoverflow.com/questions/20389255/reading-a-resource-file-from-within-jar
-			// http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html#getResourceAsStream-java.lang.String-
-			String stylesheetJarPath = "stylesheets/" + ConfigurationProperties.STYLESHEET_htmlDocumentation;
+*/
+			// https://stackoverflow.com/questions/403256/how-do-i-read-a-resource-file-from-a-java-jar-file
+                        // https://stackoverflow.com/questions/20389255/reading-a-resource-file-from-within-jar
+			// https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html#getResourceAsStream-java.lang.String-
+                        // https://stackoverflow.com/questions/11501418/is-it-possible-to-create-a-file-object-from-inputstream
+                        // X3DJSAIL.3.3.full.jar
+			String stylesheetJarPath = "/stylesheets/" + ConfigurationProperties.STYLESHEET_htmlDocumentation;
 			InputStream stylesheetInputStream = getClass().getResourceAsStream(stylesheetJarPath);
 			
 			if (stylesheetInputStream == null)
 			{
 				errorNotice += "Stylesheet not found in jar: " + stylesheetJarPath + ", ";
 			}
-*/
-			File stylesheetFile = new File("../lib/stylesheets/", ConfigurationProperties.STYLESHEET_htmlDocumentation);
+                        // TODO class loader jar invocation not working :(   so bad hack: use local path instead
+			File stylesheetFile = new File("lib/stylesheets/", ConfigurationProperties.STYLESHEET_htmlDocumentation);
 			if (!stylesheetFile.exists())
 				errorNotice += "Stylesheet not found: " + stylesheetFile.getAbsolutePath() + ", ";
 										
@@ -3081,7 +3085,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 		String errorNotice = new String();
 		try // https://docs.oracle.com/javase/tutorial/jaxp/xslt/transformingXML.html
 		{
-			File stylesheetFile = new File("../lib/stylesheets/", ConfigurationProperties.STYLESHEET_JSON);
+			File stylesheetFile = new File("lib/stylesheets/", ConfigurationProperties.STYLESHEET_JSON);
 			if (!stylesheetFile.exists())
 				errorNotice += "Stylesheet not found: " + stylesheetFile.getAbsolutePath() + ", ";
 										
@@ -3185,10 +3189,16 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 	 */
 	public File toFileJava(String fileName, boolean includeWeb3dLicense)
 	{
+                String subdirectoryPath = new String();
+		if (fileName.contains("/"))
+		{
+			subdirectoryPath = fileName.substring(0,fileName.lastIndexOf("/")+1);
+                                fileName = fileName.substring(  fileName.lastIndexOf("/")+1);
+		}
 		if ((fileName == null || fileName.isEmpty()))
 		{
 			throw new X3DException("toFileJava(fileName) fileName not provided;" +
-				" be sure to end with extension \"" + FILE_EXTENSION_JSON + "\"");
+				" be sure to end with extension \"" + FILE_EXTENSION_JAVA + "\"");
 		}
 		if (!fileName.endsWith(FILE_EXTENSION_JAVA))
 		{
@@ -3208,7 +3218,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 
 		Path outputFilePath = Paths.get(fileName);
 		
-		String intermediateX3DFileName = fileName + ".intermediate.x3d";
+		String intermediateX3DFileName = subdirectoryPath + fileName + ".intermediate.x3d";
 		Path   intermediateX3DFilePath = Paths.get(intermediateX3DFileName);
 		
 		// http://docs.oracle.com/javase/8/docs/technotes/guides/intl/encoding.doc.html
@@ -3248,7 +3258,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 		String errorNotice = new String();
 		try // https://docs.oracle.com/javase/tutorial/jaxp/xslt/transformingXML.html
 		{
-			File stylesheetFile = new File("../lib/stylesheets/", ConfigurationProperties.STYLESHEET_JAVA);
+			File stylesheetFile = new File("lib/stylesheets/", ConfigurationProperties.STYLESHEET_JAVA);
 			if (!stylesheetFile.exists())
 				errorNotice += "Stylesheet not found: " + stylesheetFile.getAbsolutePath() + ", ";
 										
@@ -3396,7 +3406,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 		String errorNotice = new String();
 		try // https://docs.oracle.com/javase/tutorial/jaxp/xslt/transformingXML.html
 		{
-			File stylesheetFile = new File("../lib/stylesheets/", ConfigurationProperties.STYLESHEET_X3DOM);
+			File stylesheetFile = new File("lib/stylesheets/", ConfigurationProperties.STYLESHEET_X3DOM);
 			if (!stylesheetFile.exists())
 				errorNotice += "Stylesheet not found: " + stylesheetFile.getAbsolutePath() + ", ";
 										
@@ -3550,7 +3560,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 		String errorNotice = new String();
 		try // https://docs.oracle.com/javase/tutorial/jaxp/xslt/transformingXML.html
 		{
-			File stylesheetFile = new File("../lib/stylesheets/", ConfigurationProperties.STYLESHEET_X3DOM);
+			File stylesheetFile = new File("lib/stylesheets/", ConfigurationProperties.STYLESHEET_X3DOM);
 			if (!stylesheetFile.exists())
 				errorNotice += "Stylesheet not found: " + stylesheetFile.getAbsolutePath() + ", ";
 										
@@ -24140,8 +24150,9 @@ import org.web3d.x3d.sai.Texturing.*;
 		loadSuccess = (document != null);
 		return loadSuccess;
 	}
-	/**
-	 * @return the DOM document, if loaded
+	/**              
+	 * Provide DOM document version of externally loaded X3D file
+	 * @return the DOM document, if XML-encoded X3D file was successfully loaded
 	 */
 	public Document getDomDocument()
 	{
@@ -24917,6 +24928,7 @@ import org.web3d.x3d.sai.Texturing.*;
 		}
 	}
 	/**
+	 * Accessor method indicating whether DTD validation is performed when loading an X3D file
 	 * @return whether XML DTD validation is performed when loading an X3D file
 	 */
 	public boolean isDtdValidationPerformed()
@@ -24924,7 +24936,8 @@ import org.web3d.x3d.sai.Texturing.*;
 		return dtdValidate;
 	}
 	/**
-	 * @param newDtdValidationValue reconfigures documentBuilderFactory
+	 * Accessor method to set whether DTD validation is performed when loading an X3D file, reconfiguring documentBuilderFactory
+	 * @param newDtdValidationValue whether DTD validation is performed
 	 */
 	public void setDtdValidationPerformed(boolean newDtdValidationValue)
 	{
@@ -24932,6 +24945,7 @@ import org.web3d.x3d.sai.Texturing.*;
 		documentBuilderFactory.setValidating(dtdValidate || xsdValidate);
 	}
 	/**
+	 * Accessor method indicating whether DTD validation is performed when loading an X3D file
 	 * @return whether XML Schema validation is performed when loading an X3D file
 	 */
 	public boolean isXmlSchemaValidationPerformed()
@@ -24939,7 +24953,8 @@ import org.web3d.x3d.sai.Texturing.*;
 		return xsdValidate;
 	}
 	/**
-	 * @param newXmlSchemaValidationValue reconfigures documentBuilderFactory
+	 * Accessor method to set whether XML Schema validation is performed when loading an X3D file, reconfiguring documentBuilderFactory
+	 * @param newXmlSchemaValidationValue whether XML Schema validation is performed
 	 */
 	public void setXmlSchemaValidation(boolean newXmlSchemaValidationValue)
 	{
@@ -24947,6 +24962,7 @@ import org.web3d.x3d.sai.Texturing.*;
 		documentBuilderFactory.setValidating(dtdValidate || xsdValidate);
 	}
 	/**
+	 * Provide X3DJSAIL object tree if loading succeeds
 	 * @return X3D object tree if loading was successful, null otherwise
 	 */
 	public X3DConcreteElement getX3dObjectTree()
@@ -24955,7 +24971,8 @@ import org.web3d.x3d.sai.Texturing.*;
 	}
 
 	/**
-	 * @return validationResult log following loading and serialization
+	 * Accessor method to indicate whether loading was successful
+	 * @return whether loading was successful
 	 */
 	public boolean isLoadSuccessful()
 	{
@@ -24963,6 +24980,7 @@ import org.web3d.x3d.sai.Texturing.*;
 	}
 
 	/**
+	 * Provide detailed log of validation results following loading and serialization
 	 * @return validationResult log following loading and serialization
 	 */
 	public String getValidationResult()

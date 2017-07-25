@@ -204,8 +204,8 @@ b.error {color: #CC0000}]]>
 				<xsl:apply-templates select="@*[contains(local-name(), 'Index')]"/>
 			</xsl:when>
 			<xsl:when test="local-name()='IMPORT'">
-				<xsl:apply-templates select="@InlineDEF"/>
-				<xsl:apply-templates select="@exportedDEF"/>
+				<xsl:apply-templates select="@inlineDEF"/>
+				<xsl:apply-templates select="@importedDEF"/>
 				<xsl:apply-templates select="@AS"/>
 			</xsl:when>
 			<xsl:when test="local-name()='EXPORT'">
