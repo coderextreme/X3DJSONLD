@@ -12,10 +12,11 @@ def isString(obj):
 
 
 class ClassPrinter:
-    def __init__(self, node, interface):
+    def __init__(self, node, interface, hasIS):
         self.parents = interface
         self.children = {}
         self.printed = False
+        self.hasIS = hasIS
         if isString(node):
             self.name = node
             self.node = None
@@ -53,9 +54,9 @@ class ClassPrinter:
         str = ""
         for k,v in doList.items():
             if not k.startswith("X3D"):
-                str += '\t\t\t\t\t\t\t"' + k + '" : {\n'
-                str += '\t\t\t\t\t\t\t\t"$ref":"#/definitions/'+k+'"\n'
-                str += '\t\t\t\t\t\t\t},\n'
+                str += '\t\t\t\t\t\t\t\t"' + k + '" : {\n'
+                str += '\t\t\t\t\t\t\t\t\t"$ref":"#/definitions/'+k+'"\n'
+                str += '\t\t\t\t\t\t\t\t},\n'
         return str
 
     def listChildren(self, doList):
@@ -70,9 +71,9 @@ class ClassPrinter:
 
     def listParents(self):
             str = ""
-            str += '\t\t\t\t\t\t\t"' + self.name + '" : {\n'
-            str += '\t\t\t\t\t\t\t\t"$ref":"#/definitions/'+self.name+'"\n'
-            str += '\t\t\t\t\t\t\t},\n'
+            str += '\t\t\t\t\t\t\t\t"' + self.name + '" : {\n'
+            str += '\t\t\t\t\t\t\t\t\t"$ref":"#/definitions/'+self.name+'"\n'
+            str += '\t\t\t\t\t\t\t\t},\n'
             for parent in self.parents:
                str += classes[parent].listParents()
             return str
@@ -113,27 +114,27 @@ class ClassPrinter:
         return str
 
     def printField(self, field):
-        str = '\t\t\t\t"@' + field.get("name") + '" : {\n'
+        str = '\t\t\t\t\t"@' + field.get("name") + '" : {\n'
         if field.get("name") != "value" or  (self.name != 'field' and self.name != 'fieldValue'):
             if not field.get("type").startswith("MF"):
                 try:
-                    str += '\t\t\t\t\t"maximum" : '+field.get("maxExclusive") + ',\n'
-                    str += '\t\t\t\t\t"exclusiveMaximum" : true,\n'
+                    str += '\t\t\t\t\t\t"maximum" : '+field.get("maxExclusive") + ',\n'
+                    str += '\t\t\t\t\t\t"exclusiveMaximum" : true,\n'
                 except:
                     pass
                 try:
-                    str += '\t\t\t\t\t"maximum" : '+field.get("maxInclusive") + ',\n'
-                except:
-                    pass
-
-                try:
-                    str += '\t\t\t\t\t"minimum" : '+field.get("minExclusive") + ',\n'
-                    str += '\t\t\t\t\t"exclusiveMinimum" : true,\n'
+                    str += '\t\t\t\t\t\t"maximum" : '+field.get("maxInclusive") + ',\n'
                 except:
                     pass
 
                 try:
-                    str += '\t\t\t\t\t"minimum" : '+field.get("minInclusive") + ',\n'
+                    str += '\t\t\t\t\t\t"minimum" : '+field.get("minExclusive") + ',\n'
+                    str += '\t\t\t\t\t\t"exclusiveMinimum" : true,\n'
+                except:
+                    pass
+
+                try:
+                    str += '\t\t\t\t\t\t"minimum" : '+field.get("minInclusive") + ',\n'
                 except:
                     pass
 
@@ -149,25 +150,25 @@ class ClassPrinter:
                             val = '"'+val+'"'
                         enums.append(val)
                     if enums != []:
-                        str += '\t\t\t\t\t"enum": [\n'
-                        str += '\t\t\t\t\t\t'
-                        str += ',\n\t\t\t\t\t\t'.join(enums)
-                        str += '\n\t\t\t\t\t],\n'
+                        str += '\t\t\t\t\t\t"enum": [\n'
+                        str += '\t\t\t\t\t\t\t'
+                        str += ',\n\t\t\t\t\t\t\t'.join(enums)
+                        str += '\n\t\t\t\t\t\t],\n'
 
 
                 try:  # default value
                     if field.get("type") == "SFString":
-                        str += '\t\t\t\t\t"default":'+'"'+field.get("default")+'",\n'
+                        str += '\t\t\t\t\t\t"default":'+'"'+field.get("default")+'",\n'
                     elif field.get("type") == "SFBool":
-                        str += '\t\t\t\t\t"default":'+field.get("default")+',\n'
+                        str += '\t\t\t\t\t\t"default":'+field.get("default")+',\n'
                     elif field.get("type") == "SFDouble":
-                        str += '\t\t\t\t\t"default":'+field.get("default")+',\n'
+                        str += '\t\t\t\t\t\t"default":'+field.get("default")+',\n'
                     elif field.get("type") == "SFTime":
-                        str += '\t\t\t\t\t"default":'+field.get("default")+',\n'
+                        str += '\t\t\t\t\t\t"default":'+field.get("default")+',\n'
                     elif field.get("type") == "SFFloat":
-                        str += '\t\t\t\t\t"default":'+field.get("default")+',\n'
+                        str += '\t\t\t\t\t\t"default":'+field.get("default")+',\n'
                     elif field.get("type") == "SFInt32":
-                        str += '\t\t\t\t\t"default":'+field.get("default")+',\n'
+                        str += '\t\t\t\t\t\t"default":'+field.get("default")+',\n'
                     elif field.get("type") == "SFNode":
                         str += '__TODO__"\n'
                     # don't need to specify default for array here
@@ -175,7 +176,7 @@ class ClassPrinter:
                     #   str += '\t\t\t\t\t"default":'+'['+field.get("default").replace(' ',',')+'],\n'
                 except:
                     pass
-            str += '\t\t\t\t\t"type":"'
+            str += '\t\t\t\t\t\t"type":"'
             if field.get("type") == "SFBool":
                 str += 'boolean"\n'
             elif field.get("type") == "SFDouble":
@@ -193,64 +194,64 @@ class ClassPrinter:
             else:
                 str += 'array",\n'
                 if field.get("name").endswith("url") or field.get("name").endswith("Url"):
-                    str += '\t\t\t\t\t"minItems" : 1,\n'
+                    str += '\t\t\t\t\t\t"minItems" : 1,\n'
                 elif field.get("name") == "ROUTE":
-                    str += '\t\t\t\t\t"minItems" : 1,\n'
+                    str += '\t\t\t\t\t\t"minItems" : 1,\n'
                 elif field.get("name") == "Scene":
-                    str += '\t\t\t\t\t"minItems" : 1,\n'
+                    str += '\t\t\t\t\t\t"minItems" : 1,\n'
                 elif field.get("type") == "SFVec2f":
-                    str += '\t\t\t\t\t"minItems" : 2,\n'
-                    str += '\t\t\t\t\t"maxItems" : 2,\n'
+                    str += '\t\t\t\t\t\t"minItems" : 2,\n'
+                    str += '\t\t\t\t\t\t"maxItems" : 2,\n'
                 elif field.get("type") == "MFVec2f":
-                    str += '\t\t\t\t\t"minItems" : 2,\n'
+                    str += '\t\t\t\t\t\t"minItems" : 2,\n'
                 elif field.get("type") == "SFVec3f":
-                    str += '\t\t\t\t\t"minItems" : 3,\n'
-                    str += '\t\t\t\t\t"maxItems" : 3,\n'
+                    str += '\t\t\t\t\t\t"minItems" : 3,\n'
+                    str += '\t\t\t\t\t\t"maxItems" : 3,\n'
                 elif field.get("type") == "MFVec3f":
-                    str += '\t\t\t\t\t"minItems" : 3,\n'
+                    str += '\t\t\t\t\t\t"minItems" : 3,\n'
                 elif field.get("type") == "SFVec4f":
-                    str += '\t\t\t\t\t"minItems" : 4,\n'
-                    str += '\t\t\t\t\t"maxItems" : 4,\n'
+                    str += '\t\t\t\t\t\t"minItems" : 4,\n'
+                    str += '\t\t\t\t\t\t"maxItems" : 4,\n'
                 elif field.get("type") == "MFVec4f":
-                    str += '\t\t\t\t\t"minItems" : 4,\n'
+                    str += '\t\t\t\t\t\t"minItems" : 4,\n'
                 elif field.get("type") == "SFVec2d":
-                    str += '\t\t\t\t\t"minItems" : 2,\n'
-                    str += '\t\t\t\t\t"maxItems" : 2,\n'
+                    str += '\t\t\t\t\t\t"minItems" : 2,\n'
+                    str += '\t\t\t\t\t\t"maxItems" : 2,\n'
                 elif field.get("type") == "MFVec2d":
-                    str += '\t\t\t\t\t"minItems" : 2,\n'
+                    str += '\t\t\t\t\t\t"minItems" : 2,\n'
                 elif field.get("type") == "SFVec3d":
-                    str += '\t\t\t\t\t"minItems" : 3,\n'
-                    str += '\t\t\t\t\t"maxItems" : 3,\n'
+                    str += '\t\t\t\t\t\t"minItems" : 3,\n'
+                    str += '\t\t\t\t\t\t"maxItems" : 3,\n'
                 elif field.get("type") == "MFVec3d":
-                    str += '\t\t\t\t\t"minItems" : 3,\n'
+                    str += '\t\t\t\t\t\t"minItems" : 3,\n'
                 elif field.get("type") == "SFVec4d":
-                    str += '\t\t\t\t\t"minItems" : 4,\n'
-                    str += '\t\t\t\t\t"maxItems" : 4,\n'
+                    str += '\t\t\t\t\t\t"minItems" : 4,\n'
+                    str += '\t\t\t\t\t\t"maxItems" : 4,\n'
                 elif field.get("type") == "MFVec4d":
-                    str += '\t\t\t\t\t"minItems" : 4,\n'
+                    str += '\t\t\t\t\t\t"minItems" : 4,\n'
                 elif field.get("type") == "SFColor":
-                    str += '\t\t\t\t\t"minItems" : 3,\n'
-                    str += '\t\t\t\t\t"maxItems" : 3,\n'
+                    str += '\t\t\t\t\t\t"minItems" : 3,\n'
+                    str += '\t\t\t\t\t\t"maxItems" : 3,\n'
                 elif field.get("type") == "MFColor":
-                    str += '\t\t\t\t\t"minItems" : 3,\n'
+                    str += '\t\t\t\t\t\t"minItems" : 3,\n'
                 elif field.get("type") == "SFColorRGBA":
-                    str += '\t\t\t\t\t"minItems" : 4,\n'
-                    str += '\t\t\t\t\t"maxItems" : 4,\n'
+                    str += '\t\t\t\t\t\t"minItems" : 4,\n'
+                    str += '\t\t\t\t\t\t"maxItems" : 4,\n'
                 elif field.get("type") == "MFColorRGBA":
-                    str += '\t\t\t\t\t"minItems" : 4,\n'
+                    str += '\t\t\t\t\t\t"minItems" : 4,\n'
                 elif field.get("type") == "SFRotation":
-                    str += '\t\t\t\t\t"minItems" : 4,\n'
-                    str += '\t\t\t\t\t"maxItems" : 4,\n'
+                    str += '\t\t\t\t\t\t"minItems" : 4,\n'
+                    str += '\t\t\t\t\t\t"maxItems" : 4,\n'
                 elif field.get("type") == "MFRotation":
-                    str += '\t\t\t\t\t"minItems" : 4,\n'
+                    str += '\t\t\t\t\t\t"minItems" : 4,\n'
                 else:
                     try:
-                        str += '\t\t\t\t\t"minItems" : '+field.get("minOccurs") + ',\n'
+                        str += '\t\t\t\t\t\t"minItems" : '+field.get("minOccurs") + ',\n'
                     except:
                         pass
 
                     try:
-                        str += '\t\t\t\t\t"maxItems" : '+field.get("maxOccurs") + ',\n'
+                        str += '\t\t\t\t\t\t"maxItems" : '+field.get("maxOccurs") + ',\n'
                     except:
                         pass
 
@@ -268,7 +269,7 @@ class ClassPrinter:
 
                 allTheSame = True
                 firstValue = None
-                str += '\t\t\t\t\t"items": '
+                str += '\t\t\t\t\t\t"items": '
                 try:
                     firstTime = True
                     if field.get("type") == "MFString":
@@ -293,19 +294,19 @@ class ClassPrinter:
                 if allTheSame:  # or an exception was thrown
                     str += '{\n'
                     if field.get("name").endswith("url") or field.get("name").endswith("Url"):
-                        str += '\t\t\t\t\t"format":"uri",\n'
+                        str += '\t\t\t\t\t\t"format":"uri",\n'
                     if enums != []:
-                        str += '\t\t\t\t\t\t"enum": [\n'
-                        str += '\t\t\t\t\t\t\t'
-                        str += ',\n\t\t\t\t\t\t\t'.join(enums)
-                        str += '\n\t\t\t\t\t\t],\n'
+                        str += '\t\t\t\t\t\t\t"enum": [\n'
+                        str += '\t\t\t\t\t\t\t\t'
+                        str += ',\n\t\t\t\t\t\t\t\t'.join(enums)
+                        str += '\n\t\t\t\t\t\t\t],\n'
                     if firstValue is not None:
                         if field.get("type") == "MFString":
-                            str += '\t\t\t\t\t\t"default":"'+firstValue+'",\n'
+                            str += '\t\t\t\t\t\t\t"default":"'+firstValue+'",\n'
                         else:
-                            str += '\t\t\t\t\t\t"default":'+firstValue+',\n'
+                            str += '\t\t\t\t\t\t\t"default":'+firstValue+',\n'
                     str += self.printTypeMinMax(field)
-                    str += '\t\t\t\t\t}\n'
+                    str += '\t\t\t\t\t\t}\n'
                 else:
                     firstTime = True
                     str += '[\n'
@@ -315,34 +316,34 @@ class ClassPrinter:
                                 firstTime = False
                             else:
                                 str += ',\n'
-                            str += '\t\t\t\t\t{\n'
+                            str += '\t\t\t\t\t\t{\n'
                             if field.get("name").endswith("url") or field.get("name").endswith("Url"):
-                                str += '\t\t\t\t\t\t\t"format":"uri",\n'
+                                str += '\t\t\t\t\t\t\t\t"format":"uri",\n'
                             if enums != []:
-                                str += '\t\t\t\t\t\t"enum": [\n'
+                                str += '\t\t\t\t\t\t\t"enum": [\n'
                                 str += '\t\t\t\t\t\t\t'
-                                str += ',\n\t\t\t\t\t\t\t'.join(enums)
-                                str += '\n\t\t\t\t\t\t],\n'
-                            str += '\t\t\t\t\t\t\t"default":"'+item+'",\n'
+                                str += ',\n\t\t\t\t\t\t\t\t'.join(enums)
+                                str += '\n\t\t\t\t\t\t\t],\n'
+                            str += '\t\t\t\t\t\t\t\t"default":"'+item+'",\n'
                             str += self.printTypeMinMax(field)
-                            str += '\t\t\t\t\t}'
+                            str += '\t\t\t\t\t\t}'
                     else:
                         for item in field.get("default").split(' '):
                             if firstTime:
                                 firstTime = False
                             else:
                                 str += ',\n'
-                            str += '\t\t\t\t\t{\n'
+                            str += '\t\t\t\t\t\t{\n'
                             if enums != []:
-                                str += '\t\t\t\t\t\t"enum": [\n'
-                                str += '\t\t\t\t\t\t\t'
-                                str += ',\n\t\t\t\t\t\t\t'.join(enums)
-                                str += '\n\t\t\t\t\t\t],\n'
-                            str += '\t\t\t\t\t\t"default":'+item+',\n'
+                                str += '\t\t\t\t\t\t\t"enum": [\n'
+                                str += '\t\t\t\t\t\t\t\t'
+                                str += ',\n\t\t\t\t\t\t\t\t'.join(enums)
+                                str += '\n\t\t\t\t\t\t\t],\n'
+                            str += '\t\t\t\t\t\t\t"default":'+item+',\n'
                             str += self.printTypeMinMax(field)
-                            str += '\t\t\t\t\t}\n'
-                    str += '\t\t\t\t\t],\n'
-                    str += '\t\t\t\t\t"additionalItems": '
+                            str += '\t\t\t\t\t\t}\n'
+                    str += '\t\t\t\t\t\t],\n'
+                    str += '\t\t\t\t\t\t"additionalItems": '
                     if field.get('type').startswith("SF"):
                         str += 'false\n'
                     elif field.get('type').startswith("MF"):
@@ -351,11 +352,11 @@ class ClassPrinter:
                         if allTheSame:  # or an exception was thrown
                             if firstValue is not None:
                                 if field.get("type") == "MFString":
-                                    str += '\t\t\t\t\t\t"default":"'+firstValue+'",\n'
+                                    str += '\t\t\t\t\t\t\t"default":"'+firstValue+'",\n'
                                 else:
-                                    str += '\t\t\t\t\t\t"default":'+firstValue+',\n'
-                        str += '\t\t\t\t\t}'
-        str += '\t\t\t\t},\n'
+                                    str += '\t\t\t\t\t\t\t"default":'+firstValue+',\n'
+                        str += '\t\t\t\t\t\t}'
+        str += '\t\t\t\t\t},\n'
         return str
 
     def printClass(self):
@@ -373,11 +374,49 @@ class ClassPrinter:
         if self.name == "meta" or self.name == 'component' or self.name == 'connect' or self.name == 'unit' or self.name == 'field' or self.name == 'fieldValue':
             str += '\t\t\t"type" : "array",\n'
             str += '\t\t\t"items" : {\n'
-        str += '\t\t\t"type" : "object",\n'
-        str += '\t\t\t"properties" : {\n'
-        str += '\t\t\t\t"#comment": {\n'
-        str += '\t\t\t\t\t"type": "string"\n'
-        str += '\t\t\t\t},\n'
+        foundUse = False
+        foundChildren = False
+        if self.node is not None:
+            fields = self.node.iter("field")
+            for field in fields:
+                if field.get("name") == "USE":
+                    foundUse = True
+                if field.get("name") == "children":
+                    foundChildren = True
+        if foundUse:
+            str += '''\
+			"type": "object",
+			"oneOf": [
+				{
+					"type": "object",
+					"properties": {
+						"@USE": {
+							"type": "string"
+						}
+					},
+                                        "required": [
+                                            "@USE"
+                                        ],
+					"additionalProperties": false
+				},
+				{
+'''
+        str += '''\
+                                 "type": "object",
+                                 "properties": {
+'''
+
+        if self.name == "Script" or self.name == "ShaderProgram" or self.name == "ShaderPart":
+            str += '''\
+                                "#sourceText": {
+                                        "type": "array",
+                                        "minItems": 1,
+                                        "items": {
+                                                "type": "string"
+                                        }
+                                },
+'''
+
         if self.name == "X3D":
             str += '''\
                                 "@xsd:noNamespaceSchemaLocation": {
@@ -395,79 +434,63 @@ class ClassPrinter:
                                                 "UTF-32"
                                         ]
                                 },
-                                "-children": {
-                                        "type": "array",
-                                        "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                        "#comment": {
-                                                                "type": "string"
-                                                        }
-                                                },
-                                                "additionalProperties": false
-                                        }
-                                },
-
 '''
-        elif self.name == "head":
+#        if self.name != "Anchor" and self.name != 'Billboard' and \
+#             self.name != "CADAssembly" and self.name != 'CADPart' and \
+#             self.name != "Collision" and self.name != 'Contour2D' and \
+#             self.name != "EspduTransform" and self.name != 'EXPORT' and \
+#             self.name != "ExternProtoDeclare" and self.name != 'GeneratedCubeMapTexture' and \
+#             self.name != "GeoLocation" and self.name != 'GeoLOD' and \
+#             self.name != "GeoTransform" and self.name != 'Group' and \
+#             self.name != "HAnimJoint" and self.name != 'HAnimSegment' and \
+#             self.name != "HAnimSite" and self.name != 'IMPORT' and \
+#             self.name != "IS" and self.name != 'Layer' and \
+#             self.name != "LayoutGroup" and self.name != 'LayoutLayer' and \
+#             self.name != "LOD" and self.name != 'PickableGroup' and \
+#             self.name != "ProtoBody" and self.name != 'ProtoDeclare' and \
+#             self.name != "ProtoInstance" and self.name != 'ProtoInterface' and \
+#             self.name != "ROUTE" and self.name != 'Scene' and \
+#             self.name != "ScreenGroup" and self.name != 'StaticGroup' and \
+#             self.name != "Switch" and self.name != 'Transform' and \
+#             self.name != "ViewpointGroup" and self.name != 'Viewport' and \
+#             self.name != "X3D" and self.name != 'field' and \
+#             self.name != "fieldValue" and self.name != 'head' and \
+#             self.name != "meta" and self.name != "CADLayer" and \
+#             self.name != "unit" and self.name != 'component':
+        if self.name == 'ProtoInstance':
+            str += '''\
+				"-children": {
+					"type": "array",
+					"minItems": 1,
+					"items": {
+						"type": "object",
+						"properties": {
+							"#comment": {
+								"type": "string"
+							}
+						},
+						"additionalProperties": false
+					}
+				},
+'''
+        elif not foundChildren:
             str += '''\
                                 "-children": {
-                                        "type": "array",
-                                        "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                        "#comment": {
-                                                                "type": "string"
-                                                        }
-                                                },
-                                                "additionalProperties": false
-                                        }
+                                        "$ref": "#/definitions/-childrenStatements"
                                 },
 '''
-        elif self.name != "Anchor" and self.name != 'Billboard' and \
-             self.name != "CADAssembly" and self.name != 'CADPart' and \
-             self.name != "Collision" and self.name != 'Contour2D' and \
-             self.name != "EspduTransform" and self.name != 'EXPORT' and \
-             self.name != "ExternProtoDeclare" and self.name != 'GeneratedCubeMapTexture' and \
-             self.name != "GeoLocation" and self.name != 'GeoLOD' and \
-             self.name != "GeoTransform" and self.name != 'Group' and \
-             self.name != "HAnimJoint" and self.name != 'HAnimSegment' and \
-             self.name != "HAnimSite" and self.name != 'IMPORT' and \
-             self.name != "IS" and self.name != 'Layer' and \
-             self.name != "LayoutGroup" and self.name != 'LayoutLayer' and \
-             self.name != "LOD" and self.name != 'PickableGroup' and \
-             self.name != "ProtoBody" and self.name != 'ProtoDeclare' and \
-             self.name != "ProtoInstance" and self.name != 'ProtoInterface' and \
-             self.name != "ROUTE" and self.name != 'Scene' and \
-             self.name != "ScreenGroup" and self.name != 'StaticGroup' and \
-             self.name != "Switch" and self.name != 'Transform' and \
-             self.name != "ViewpointGroup" and self.name != 'Viewport' and \
-             self.name != "X3D" and self.name != 'field' and \
-             self.name != "fieldValue" and self.name != 'head' and \
-             self.name != "meta" and self.name != "CADLayer" and \
-             self.name != "unit" and self.name != 'component':
-            str += '''\
-                                "-children": {
-                                        "$ref": "#/definitions/-commentRoute"
-                                },
-'''
-#        else:
-#            str += '''\
-#				"-children": {
-#					"$ref": "#/definitions/-children"
-#				}
-#'''
         if self.node is not None:
             fields = self.node.iter("field")
             required = []
-            str += '''\
-                                "IS": {
-                                        "$ref": "#/definitions/IS"
-                                },
+            if self.hasIS:
+                str += '''\
+                                    "IS": {
+                                            "$ref": "#/definitions/IS"
+                                    },
 '''
 
             for field in fields:
-                if not field.get("name").startswith("X3D") or field.get("name") == "X3D":
+                if not field.get("name").startswith("X3D") or field.get("name") == "X3D" or field.get("name") == "USE":
                     try:
                         if field.get("use") == "required":
                             required.append(field.get("name"))
@@ -478,24 +501,25 @@ class ClassPrinter:
                         if field.get("type") == "MFNode" or field.get("type") == "SFNode":
                             try:
                                 if classes[field.get("name")] != None and field.get("name") != "X3D":
-                                    str += '\t\t\t\t"' + field.get("name") + '" : {\n'
-                                    str += '\t\t\t\t\t"$ref":"#/definitions/'+ field.get("name") +'"\n'
-                                    str += '\t\t\t\t},\n'
+                                    str += '\t\t\t\t\t"' + field.get("name") + '" : {\n'
+                                    str += '\t\t\t\t\t\t"$ref":"#/definitions/'+ field.get("name") +'"\n'
+                                    str += '\t\t\t\t\t},\n'
                             except:
-                                str += '\t\t\t\t"-' + field.get("name") + '" : {\n'
-                                str += '\t\t\t\t\t"$ref":"#/definitions/-'+ field.get("acceptableNodeTypes") + field.get("type") +'"\n'
-                                str += '\t\t\t\t},\n'
+                                str += '\t\t\t\t\t"-' + field.get("name") + '" : {\n'
+                                str += '\t\t\t\t\t\t"$ref":"#/definitions/-'+ field.get("acceptableNodeTypes") + field.get("type") +'"\n'
+                                str += '\t\t\t\t\t},\n'
                                 # container fields
-                                cf = '\t\t\t\t"-' + field.get("acceptableNodeTypes") + field.get("type") + '" : {\n'
+                                cf = '\t\t\t\t\t"-' + field.get("acceptableNodeTypes") + field.get("type") + '" : {\n'
                                 if field.get("type") == "MFNode":
-                                    cf += '\t\t\t\t\t"type": "array",\n'
-                                    cf += '\t\t\t\t\t"minItems": 1,\n'
-                                    cf += '\t\t\t\t\t"items": {\n'
-                                cf += '\t\t\t\t\t\t"type": "object",\n'
-                                cf += '\t\t\t\t\t\t"properties": {\n'
-                                cf += '\t\t\t\t\t\t\t"#comment": {\n'
-                                cf += '\t\t\t\t\t\t\t\t"type": "string"\n'
-                                cf += '\t\t\t\t\t\t\t},\n'
+                                    cf += '\t\t\t\t\t\t"type": "array",\n'
+                                    cf += '\t\t\t\t\t\t"minItems": 1,\n'
+                                    cf += '\t\t\t\t\t\t"items": {\n'
+                                cf += '\t\t\t\t\t\t\t"type": "object",\n'
+                                cf += '\t\t\t\t\t\t\t"properties": {\n'
+                                if field.get("type") == "MFNode":
+                                    cf += '\t\t\t\t\t\t\t\t"#comment": {\n'
+                                    cf += '\t\t\t\t\t\t\t\t\t"type": "string"\n'
+                                    cf += '\t\t\t\t\t\t\t\t},\n'
                                 acnts = field.get("acceptableNodeTypes").split("|")
                                 doList = {}
                                 for acnt in acnts:
@@ -505,26 +529,29 @@ class ClassPrinter:
                                     #str += classes[acnt].listParents()
                                 if cf[-2] == ',':
                                      cf = cf[:-2] + '\n' # strip off comma
-                                cf += '\t\t\t\t\t\t},\n'
-                                cf += '\t\t\t\t\t\t"additionalProperties": false\n'
+                                cf += '\t\t\t\t\t\t\t},\n'
+                                cf += '\t\t\t\t\t\t\t"additionalProperties": false\n'
                                 if field.get("type") == "MFNode":
-                                    cf += '\t\t\t\t\t}\n'
-                                cf += '\t\t\t\t},\n'
+                                    cf += '\t\t\t\t\t\t}\n'
+                                cf += '\t\t\t\t\t},\n'
                                 containerFields[field.get("acceptableNodeTypes") + field.get("type")] = cf
-                        else:
+                        elif field.get("name") != "USE":
                             str += self.printField(field)
             if str[-2] == ',':
                 str = str[:-2] + '\n' # strip off comma
 
-        str += '\t\t\t},\n'
+        str += '\t\t\t\t},\n'
         if required != []:
-            str += '\t\t\t"required": [\n'
-            str += '\t\t\t\t"@'
-            str += '",\n\t\t\t\t"@'.join(required)
-            str += '"\n\t\t\t],\n'
-        str += '\t\t\t"additionalProperties": false\n'
+            str += '\t\t\t\t"required": [\n'
+            str += '\t\t\t\t\t"@'
+            str += '",\n\t\t\t\t\t"@'.join(required)
+            str += '"\n\t\t\t\t],\n'
+        str += '\t\t\t\t"additionalProperties": false\n'
+        if foundUse:
+            str += '\t\t\t}\n'
+            str += '\t\t]\n'
         if self.name == 'meta' or self.name == 'component' or self.name == 'connect' or self.name == 'unit' or self.name == 'field' or self.name == 'fieldValue':
-            str += '\t\t}\n'
+            str += '\t\t\t}\n'
         str += '\t\t},\n'
         self.printed = True
         return str
@@ -544,7 +571,7 @@ code = '''{
         ],
         "additionalProperties": false,
         "definitions": {
-                "-commentRoute": {
+                "-childrenStatements": {
                         "description": "Comments and ROUTEs",
                         "type": "array",
                         "minItems": 1,
@@ -559,6 +586,12 @@ code = '''{
                                         },
                                         "IMPORT": {
                                                 "$ref": "#/definitions/IMPORT"
+                                        },
+                                        "ProtoDeclare": {
+                                                "$ref": "#/definitions/ProtoDeclare"
+                                        },
+                                        "ExternProtoDeclare": {
+                                                "$ref": "#/definitions/ExternProtoDeclare"
                                         },
                                         "EXPORT": {
                                                 "$ref": "#/definitions/EXPORT"
@@ -577,26 +610,29 @@ containerFields = {}
 
 ants = soup.iter("AbstractNodeType")
 for ant in ants:
-    classes[ant.get('name')] = ClassPrinter(ant, {})
+    classes[ant.get('name')] = ClassPrinter(ant, {}, True)
 
-classes["X3DConcreteNode"] = ClassPrinter("X3DConcreteNode", {})
-classes["X3DConcreteStatement"] = ClassPrinter("X3DConcreteStatement", {})
+classes["X3DConcreteNode"] = ClassPrinter("X3DConcreteNode", {}, True)
+classes["X3DConcreteStatement"] = ClassPrinter("X3DConcreteStatement", {}, False)
 
 aots = soup.iter("AbstractObjectType")
 for aot in aots:
-    classes[aot.get('name')] = ClassPrinter(aot, {})
+    classes[aot.get('name')] = ClassPrinter(aot, {}, False)
 
 cns = soup.iter("ConcreteNode")
 for cn in cns:
-    classes[cn.get('name')] = ClassPrinter(cn, { "X3DConcreteNode" : 1, "X3DChildNode" : 1 })
+    classes[cn.get('name')] = ClassPrinter(cn, { "X3DConcreteNode" : 1 }, True)
     classes["X3DConcreteNode"].children[cn.get("name")] = cn.get("name")
-    classes["X3DChildNode"].children[cn.get("name")] = cn.get("name")
+    # classes["X3DChildNode"].children[cn.get("name")] = cn.get("name")
 
 sts = soup.iter("Statement")
 for st in sts:
-    classes[st.get('name')] = ClassPrinter(st, { "X3DConcreteStatement" : 1, "X3DChildNode" : 1 })
+    if st.get("name") in ["ExternProtoDeclare", "ProtoDeclare", "IMPORT", "EXPORT", "ROUTE" ]:
+        classes[st.get('name')] = ClassPrinter(st, { "X3DConcreteStatement" : 1, "X3DChildNOde" : 1 }, False)
+        classes["X3DChildNode"].children[st.get("name")] = st.get("name")
+    else:
+        classes[st.get('name')] = ClassPrinter(st, { "X3DConcreteStatement" : 1 }, False)
     classes["X3DConcreteStatement"].children[st.get("name")] = st.get("name")
-    classes["X3DChildNode"].children[st.get("name")] = st.get("name")
 
 for k,v in classes.items():
     v.findChildren()
