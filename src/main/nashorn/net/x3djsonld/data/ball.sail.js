@@ -76,7 +76,7 @@ ball_sail.prototype = {
       .addChild(new ShapeObject()
         .setGeometry(new SphereObject())
         .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject())
+          .setMaterial(new MaterialObject().setSpecularColor(0.5,0.5,0.5).setDiffuseColor(0.7,0.7,0.7))
           .setTexture(new ComposedCubeMapTextureObject("texture")
             .setBack(new ImageTextureObject().setUrl(new MFStringObject("\"../resources/images/all_probes/stpeters_cross/stpeters_back.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png\"")))
             .setBottom(new ImageTextureObject().setUrl(new MFStringObject("\"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png\"")))

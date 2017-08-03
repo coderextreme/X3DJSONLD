@@ -3,11 +3,11 @@ load('X3Dautoclass.js');
 // Javadoc annotations follow, see below for source.
 /**
  * <p> an attempt to implement an arc in a graph. </p>
- <p> Related links: arc_sail.java source, <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="http://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: arc1_sail.java source, <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="http://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.arc_sail&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.arc1_sail&nbsp; Document Metadata </td>
 		</tr>
 
 		<tr>
@@ -46,7 +46,7 @@ load('X3Dautoclass.js');
 	* @author John Carlson
  */
 
-function arc_sail
+function arc1_sail
   /** Default constructor to create this object. */
   ()
   {
@@ -55,7 +55,7 @@ function arc_sail
     this.initialize();
     return this;
   }
-arc_sail.prototype = {
+arc1_sail.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
@@ -69,24 +69,11 @@ arc_sail.prototype = {
   .setScene(new SceneObject()
     .addChild(new ViewpointObject().setDescription("a moving graph").setPosition(0.0,0.0,5.0))
     .addChild(new BackgroundObject().setSkyColor(new MFColorObject(Java.to([0.4,0.4,0.4], Java.type("float[]")))))
-    .addChild(new TransformObject("trans1")
-      .addChild(new TransformObject("rotscale1")
-        .addChild(new ShapeObject()
-          .setAppearance(new AppearanceObject()
-            .setMaterial(new MaterialObject().setDiffuseColor(0.2,0.7,0.7)))
-          .setGeometry(new CylinderObject().setRadius(0.1)))))
-    .addChild(new TransformObject("trans2")
-      .addChild(new TransformObject("rotscale2")
-        .addChild(new ShapeObject()
-          .setAppearance(new AppearanceObject()
-            .setMaterial(new MaterialObject().setDiffuseColor(0.2,0.7,0.7)))
-          .setGeometry(new CylinderObject().setRadius(0.1)))))
-    .addChild(new TransformObject("trans3")
-      .addChild(new TransformObject("rotscale3")
-        .addChild(new ShapeObject()
-          .setAppearance(new AppearanceObject()
-            .setMaterial(new MaterialObject().setDiffuseColor(0.2,0.7,0.7)))
-          .setGeometry(new CylinderObject().setRadius(0.1)))))
+    .addChild(new TransformObject("cylinder1")
+      .addChild(new ShapeObject()
+        .setAppearance(new AppearanceObject()
+          .setMaterial(new MaterialObject().setDiffuseColor(0.2,0.7,0.7)))
+        .setGeometry(new CylinderObject().setRadius(0.1))))
     .addChild(new ProtoDeclareObject().setName("point")
       .setProtoInterface(new ProtoInterfaceObject()
         .addField(new fieldObject().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0")))
@@ -125,8 +112,7 @@ arc_sail.prototype = {
       .setProtoInterface(new ProtoInterfaceObject()
         .addField(new fieldObject().setAccessType("initializeOnly").setName("startnode").setType("SFNode"))
         .addField(new fieldObject().setAccessType("initializeOnly").setName("endnode").setType("SFNode"))
-        .addField(new fieldObject().setAccessType("initializeOnly").setName("transnode").setType("SFNode"))
-        .addField(new fieldObject().setAccessType("initializeOnly").setName("rotscalenode").setType("SFNode"))
+        .addField(new fieldObject().setAccessType("initializeOnly").setName("connectornode").setType("SFNode"))
         .addField(new fieldObject().setAccessType("inputOnly").setName("set_startpoint").setType("SFVec3f"))
         .addField(new fieldObject().setAccessType("inputOnly").setName("set_endpoint").setType("SFVec3f")))
       .setProtoBody(new ProtoBodyObject()
@@ -134,6 +120,7 @@ arc_sail.prototype = {
 "<![CDATA[" + "\n" +
 "\n" + 
 "            ecmascript:" + "\n" + 
+"            " + "\n" + 
 "        function recompute(startpoint,endpoint){" + "\n" + 
 "	    if (typeof endpoint === 'undefined') {" + "\n" + 
 "		return;" + "\n" + 
@@ -143,25 +130,18 @@ arc_sail.prototype = {
 "            var dif2 = dif.multiply(0.5);" + "\n" + 
 "            var norm = dif.normalize();" + "\n" + 
 "            var transl = startpoint.add(dif2);" + "\n" + 
-"	    if (typeof Quaternion !== 'undefined') {" + "\n" + 
-"		    return {" + "\n" + 
-"			    scale : new SFVec3f(1.0,dist,1.0)," + "\n" + 
-"			    translation : transl," + "\n" + 
-"			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)" + "\n" + 
-"		    };" + "\n" + 
-"	    } else {" + "\n" + 
-"		    return {" + "\n" + 
-"			    scale : new SFVec3f(1.0,dist,1.0)," + "\n" + 
-"			    translation : transl," + "\n" + 
-"			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)" + "\n" + 
-"		    };" + "\n" + 
-"	    }" + "\n" + 
+"	    return {" + "\n" + 
+"		    scale : new SFVec3f(1.0,dist,1.0)," + "\n" + 
+"		    translation : transl," + "\n" + 
+"		    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)" + "\n" + 
+"	    	    // rotation : new x3dom.fields.Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)" + "\n" + 
+"	    };" + "\n" + 
 "	}" + "\n" + 
 "	function recompute_and_route(startpoint, endpoint) {" + "\n" + 
 "	      var trafo = recompute(startpoint, endpoint);" + "\n" + 
-"	      transnode.translation = trafo.translation;" + "\n" + 
-"	      rotscalenode.rotation = trafo.rotation;" + "\n" + 
-"	      rotscalenode.scale = trafo.scale;" + "\n" + 
+"	      connectornode.translation = trafo.translation;" + "\n" + 
+"	      connectornode.rotation = trafo.rotation;" + "\n" + 
+"	      connectornode.scale = trafo.scale;" + "\n" + 
 "	}" + "\n" + 
 "        function initialize(){" + "\n" + 
 "            recompute_and_route(startnode.translation,endnode.translation);" + "\n" + 
@@ -175,60 +155,32 @@ arc_sail.prototype = {
 )
           .addField(new fieldObject().setAccessType("initializeOnly").setName("startnode").setType("SFNode"))
           .addField(new fieldObject().setAccessType("initializeOnly").setName("endnode").setType("SFNode"))
-          .addField(new fieldObject().setAccessType("initializeOnly").setName("transnode").setType("SFNode"))
-          .addField(new fieldObject().setAccessType("initializeOnly").setName("rotscalenode").setType("SFNode"))
+          .addField(new fieldObject().setAccessType("initializeOnly").setName("connectornode").setType("SFNode"))
           .addField(new fieldObject().setAccessType("inputOnly").setName("set_startpoint").setType("SFVec3f"))
           .addField(new fieldObject().setAccessType("inputOnly").setName("set_endpoint").setType("SFVec3f"))
           .setIS(new ISObject()
             .addConnect(new connectObject().setNodeField("startnode").setProtoField("startnode"))
             .addConnect(new connectObject().setNodeField("endnode").setProtoField("endnode"))
-            .addConnect(new connectObject().setNodeField("transnode").setProtoField("transnode"))
-            .addConnect(new connectObject().setNodeField("rotscalenode").setProtoField("rotscalenode"))
+            .addConnect(new connectObject().setNodeField("connectornode").setProtoField("connectornode"))
             .addConnect(new connectObject().setNodeField("set_startpoint").setProtoField("set_startpoint"))
             .addConnect(new connectObject().setNodeField("set_endpoint").setProtoField("set_endpoint"))))))
-    .addChild(new ProtoInstanceObject("G1", "point").setDEF("G1").setName("point"))
-    .addChild(new ProtoInstanceObject("G2", "point").setDEF("G2").setName("point"))
-    .addChild(new ProtoInstanceObject("G3", "point").setDEF("G3").setName("point"))
-    .addChild(new ProtoInstanceObject("G4", "point").setDEF("G4").setName("point"))
+    .addChild(new ProtoInstanceObject("start", "point").setDEF("start").setName("point"))
+    .addChild(new ProtoInstanceObject("end", "point").setDEF("end").setName("point"))
     .addChild(new ProtoInstanceObject("connector1", "x3dconnector").setDEF("connector1").setName("x3dconnector")
       .addFieldValue(new fieldValueObject().setName("startnode")
-        .addChild(new ProtoInstanceObject().setUSE("G1").setName("point")))
+        .addChild(new ProtoInstanceObject().setUSE("start").setName("point")))
       .addFieldValue(new fieldValueObject().setName("endnode")
-        .addChild(new ProtoInstanceObject().setUSE("G2").setName("point")))
-      .addFieldValue(new fieldValueObject().setName("transnode")
-        .addChild(new TransformObject().setUSE("trans1")))
-      .addFieldValue(new fieldValueObject().setName("rotscalenode")
-        .addChild(new TransformObject().setUSE("rotscale1"))))
-    .addChild(new ProtoInstanceObject("connector2", "x3dconnector").setDEF("connector2").setName("x3dconnector")
-      .addFieldValue(new fieldValueObject().setName("startnode")
-        .addChild(new ProtoInstanceObject().setUSE("G1").setName("point")))
-      .addFieldValue(new fieldValueObject().setName("endnode")
-        .addChild(new ProtoInstanceObject().setUSE("G3").setName("point")))
-      .addFieldValue(new fieldValueObject().setName("transnode")
-        .addChild(new TransformObject().setUSE("trans2")))
-      .addFieldValue(new fieldValueObject().setName("rotscalenode")
-        .addChild(new TransformObject().setUSE("rotscale2"))))
-    .addChild(new ProtoInstanceObject("connector3", "x3dconnector").setDEF("connector3").setName("x3dconnector")
-      .addFieldValue(new fieldValueObject().setName("startnode")
-        .addChild(new ProtoInstanceObject().setUSE("G1").setName("point")))
-      .addFieldValue(new fieldValueObject().setName("endnode")
-        .addChild(new ProtoInstanceObject().setUSE("G4").setName("point")))
-      .addFieldValue(new fieldValueObject().setName("transnode")
-        .addChild(new TransformObject().setUSE("trans3")))
-      .addFieldValue(new fieldValueObject().setName("rotscalenode")
-        .addChild(new TransformObject().setUSE("rotscale3"))))
-    .addChild(new ROUTEObject().setFromNode("G1").setFromField("translation_changed").setToNode("connector1").setToField("set_startpoint"))
-    .addChild(new ROUTEObject().setFromNode("G2").setFromField("translation_changed").setToNode("connector1").setToField("set_endpoint"))
-    .addChild(new ROUTEObject().setFromNode("G1").setFromField("translation_changed").setToNode("connector2").setToField("set_startpoint"))
-    .addChild(new ROUTEObject().setFromNode("G3").setFromField("translation_changed").setToNode("connector2").setToField("set_endpoint"))
-    .addChild(new ROUTEObject().setFromNode("G1").setFromField("translation_changed").setToNode("connector3").setToField("set_startpoint"))
-    .addChild(new ROUTEObject().setFromNode("G4").setFromField("translation_changed").setToNode("connector3").setToField("set_endpoint")));
+        .addChild(new ProtoInstanceObject().setUSE("end").setName("point")))
+      .addFieldValue(new fieldValueObject().setName("connectornode")
+        .addChild(new TransformObject().setUSE("cylinder1"))))
+    .addChild(new ROUTEObject().setFromNode("start").setFromField("translation").setToNode("connector1").setToField("set_startpoint"))
+    .addChild(new ROUTEObject().setFromNode("end").setFromField("translation").setToNode("connector1").setToField("set_endpoint")));
   },
   // end of initialize() method
 
 
   /** Provide a shallow copy of the X3D model.
-   * @return arc_sail model
+   * @return arc1_sail model
    */
   getX3dModel : function()
   {	  
@@ -290,8 +242,8 @@ arc_sail.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new arc_sail();
-		print ("arc_sail execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new arc1_sail();
+		print ("arc1_sail execution self-validation test results: " + testObject.validateSelf());
 	}
 }
-new arc_sail().main();
+new arc1_sail().main();

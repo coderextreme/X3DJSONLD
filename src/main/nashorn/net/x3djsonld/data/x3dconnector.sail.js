@@ -96,40 +96,45 @@ x3dconnector_sail.prototype = {
 "        ecmascript:" + "\n" + 
 "        function recompute(startpoint,endpoint){" + "\n" + 
 "            var dif = endpoint.subtract(startpoint);" + "\n" + 
-"            var dist = dif.length()*.5;" + "\n" + 
-"            var dif2 = dif.multiply(.5);" + "\n" + 
+"            var dist = dif.length()*0.5;" + "\n" + 
+"            var dif2 = dif.multiply(0.5);" + "\n" + 
 "            var norm = dif.normalize();" + "\n" + 
-"            var trans = startpoint.add(dif2);" + "\n" + 
-"            scale = new SFVec3f(1.0,dist,1.0);" + "\n" + 
-"            translation = trans;" + "\n" + 
-"            rotation = new SFRotation(new SFVec3f(0.0,1.0,0.0),norm);" + "\n" + 
-"            //Browser.print('norm='+norm.toString());" + "\n" + 
-"            //Browser.print('rotation='+rotation.toString());" + "\n" + 
-"        }" + "\n" + 
+"            var transl = startpoint.add(dif2);" + "\n" + 
+"	    return {" + "\n" + 
+"		    scale : new SFVec3f(1.0,dist,1.0)," + "\n" + 
+"		    translation : transl," + "\n" + 
+"		    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)" + "\n" + 
+"	    	    // rotation : new x3dom.fields.Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)" + "\n" + 
+"	    };" + "\n" + 
+"	}" + "\n" + 
+"	function recompute_and_route(startpoint, endpoint) {" + "\n" + 
+"	      var trafo = recompute(startpoint, endpoint);" + "\n" + 
+"	      transnode.translation = trafo.translation;" + "\n" + 
+"	      rotscalenode.rotation = trafo.rotation;" + "\n" + 
+"	      rotscalenode.scale = trafo.scale;" + "\n" + 
+"	}" + "\n" + 
 "        function initialize(){" + "\n" + 
-"            recompute(startnode.translation,endnode.translation);" + "\n" + 
+"            recompute_and_route(startnode.translation,endnode.translation);" + "\n" + 
 "        }" + "\n" + 
 "        function set_startpoint(val,t){" + "\n" + 
-"            recompute(val,endnode.translation);" + "\n" + 
+"            recompute_and_route(val,endnode.translation);" + "\n" + 
 "        }" + "\n" + 
 "        function set_endpoint(val,t){" + "\n" + 
-"            recompute(startnode.translation,val);" + "\n" + 
+"            recompute_and_route(startnode.translation,val);" + "\n" + 
 "        }" + "\n" + "]]>"
 )
       .addField(new fieldObject().setAccessType("initializeOnly").setName("startnode").setType("SFNode")
         .addChild(new TransformObject().setUSE("G1")))
       .addField(new fieldObject().setAccessType("initializeOnly").setName("endnode").setType("SFNode")
         .addChild(new TransformObject().setUSE("G2")))
+      .addField(new fieldObject().setAccessType("inputOutput").setName("transnode").setType("SFNode")
+        .addChild(new TransformObject().setUSE("C0")))
+      .addField(new fieldObject().setAccessType("inputOutput").setName("rotscalenode").setType("SFNode")
+        .addChild(new TransformObject().setUSE("C2")))
       .addField(new fieldObject().setAccessType("inputOnly").setName("set_startpoint").setType("SFVec3f"))
-      .addField(new fieldObject().setAccessType("inputOnly").setName("set_endpoint").setType("SFVec3f"))
-      .addField(new fieldObject().setAccessType("outputOnly").setName("translation").setType("SFVec3f"))
-      .addField(new fieldObject().setAccessType("outputOnly").setName("rotation").setType("SFRotation"))
-      .addField(new fieldObject().setAccessType("outputOnly").setName("scale").setType("SFVec3f")))
-    .addChild(new ROUTEObject().setFromNode("G1").setFromField("translation").setToNode("S1").setToField("set_startpoint"))
-    .addChild(new ROUTEObject().setFromNode("G2").setFromField("translation").setToNode("S1").setToField("set_endpoint"))
-    .addChild(new ROUTEObject().setFromNode("S1").setFromField("translation").setToNode("C0").setToField("translation"))
-    .addChild(new ROUTEObject().setFromNode("S1").setFromField("rotation").setToNode("C2").setToField("rotation"))
-    .addChild(new ROUTEObject().setFromNode("S1").setFromField("scale").setToNode("C2").setToField("scale")));
+      .addField(new fieldObject().setAccessType("inputOnly").setName("set_endpoint").setType("SFVec3f")))
+    .addChild(new ROUTEObject().setFromNode("G1").setFromField("translation_changed").setToNode("S1").setToField("set_startpoint"))
+    .addChild(new ROUTEObject().setFromNode("G2").setFromField("translation_changed").setToNode("S1").setToField("set_endpoint")));
   },
   // end of initialize() method
 

@@ -202,7 +202,7 @@ ArchPrototype_sail.prototype = {
       .addFieldValue(new fieldValueObject().setName("pierWidth").setValue("1"))
       .addFieldValue(new fieldValueObject().setName("pierHeight").setValue("2")))
     .addComments(" Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare) ")
-    .addChild(new InlineObject("CoordinateAxes").setUrl(new MFStringObject("\"CoordinateAxes.x3d\""))));
+    .addChild(new InlineObject("CoordinateAxes").setUrl(new MFStringObject("\"../data/CoordinateAxes.x3d\""))));
   },
   // end of initialize() method
 
