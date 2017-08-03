@@ -57,8 +57,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addField(new fieldObject().setType(fieldObject.TYPE_MFVEC3F).setName("position_changed").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
           .addField(new fieldObject().setType(fieldObject.TYPE_MFROTATION).setName("set_orientation").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
           .addField(new fieldObject().setType(fieldObject.TYPE_MFROTATION).setName("orientation_changed").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-          .setSourceCode("\n"+
-"	    ecmascript:\n"+
+          .setSourceCode("ecmascript:\n"+
 "               function set_cycle(value) {\n"+
 "                        var ov = lastKey;\n"+
 "                        do {\n"+

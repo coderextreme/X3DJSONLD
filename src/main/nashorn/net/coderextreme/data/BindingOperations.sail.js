@@ -83,9 +83,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .addField(new fieldObject().setType(fieldObject.TYPE_SFBOOL).setName("view3Bound").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
             .addField(new fieldObject().setType(fieldObject.TYPE_SFBOOL).setName("view4Bound").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
             .addField(new fieldObject().setType(fieldObject.TYPE_SFINT32).setName("priorInputvalue").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue("-1"))
-            .setSourceCode("\n"+
-"        \n"+
-"ecmascript:\n"+
+            .setSourceCode("ecmascript:\n"+
 "\n"+
 "function initialize ()\n"+
 "{\n"+

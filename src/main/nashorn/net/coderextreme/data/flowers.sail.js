@@ -5,8 +5,6 @@ ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_nativeJ
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
 var ProtoInstance0 = null;
-var ProtoInstance1 = null;
-var ProtoInstance2 = null;
       var X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
       .setHead(new headObject()
         .addMeta(new metaObject().setName("title").setContent("flowers.x3d"))
@@ -50,8 +48,9 @@ var ProtoInstance2 = null;
                     .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("power").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("2"))
                     .addParts(new ShaderPartObject().setType("VERTEX").setUrl(Java.to(["../shaders/cobweb.vs","https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"], Java.type("java.lang.String[]"))))
                     .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(Java.to(["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"], Java.type("java.lang.String[]"))))))
-                .setGeometry(new SphereObject())
-                .addComments(new CommentsBlock("<IndexedFaceSet convex=\"false\" DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>"))))
+                .addComments(new CommentsBlock("<Sphere></Sphere>"))
+                .setGeometry(new IndexedFaceSetObject().setConvex(false).setDEF("Orbit")
+                  .setCoord(new CoordinateObject().setDEF("OrbitCoordinates")))))
             .addChild(new ScriptObject().setDEF("Bounce")
               .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("translation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
               .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("velocity").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
@@ -64,8 +63,7 @@ var ProtoInstance2 = null;
               .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("d").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("3"))
               .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("tdelta").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
               .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("pdelta").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
-              .setSourceCode("\n"+
-"ecmascript:\n"+
+              .setSourceCode("ecmascript:\n"+
 "			function newBubble() {\n"+
 "			    translation = new SFVec3f(0, 0, 0);\n"+
 "			    velocity = new SFVec3f(\n"+
@@ -171,10 +169,9 @@ var ProtoInstance2 = null;
 ""))
             .addChild(new TimeSensorObject().setDEF("TourTime").setCycleInterval(0.15).setLoop(true))
             .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("cycleTime").setToNode("Bounce").setToField("set_fraction"))
-            .addChild(new ROUTEObject().setFromNode("Bounce").setFromField("translation_changed").setToNode("transform").setToField("set_translation"))
+            .addChild(new ROUTEObject().setFromNode("Bounce").setFromField("translation").setToNode("transform").setToField("set_translation"))
             .addComments(new CommentsBlock("<ROUTE fromField=\"coordIndexes\" fromNode=\"Bounce\" toField=\"set_coordIndex\" toNode=\"Orbit\"/> <ROUTE fromField=\"coordinates\" fromNode=\"Bounce\" toField=\"set_point\" toNode=\"OrbitCoordinates\"/>"))))
         .addChild(new TransformObject()
           .addChild(ProtoInstance0 = new ProtoInstanceObject().setName("flower"))
-          .addChild(ProtoInstance1 = new ProtoInstanceObject().setName("flower"))
-          .addChild(ProtoInstance2 = new ProtoInstanceObject().setName("flower"))))      ;
+          .addComments(new CommentsBlock("<ProtoInstance name=\"flower\"/> <ProtoInstance name=\"flower\"/>"))))      ;
     X3D0.toFileX3D("../data/flowers.new.x3d");

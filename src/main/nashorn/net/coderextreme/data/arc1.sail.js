@@ -9,14 +9,6 @@ var ProtoInstance1 = null;
 var ProtoInstance2 = null;
 var ProtoInstance3 = null;
 var ProtoInstance4 = null;
-var ProtoInstance5 = null;
-var ProtoInstance6 = null;
-var ProtoInstance7 = null;
-var ProtoInstance8 = null;
-var ProtoInstance9 = null;
-var ProtoInstance10 = null;
-var ProtoInstance11 = null;
-var ProtoInstance12 = null;
       var X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
       .setHead(new headObject()
         .addMeta(new metaObject().setName("title").setContent("x3dconnectorProto"))
@@ -132,45 +124,17 @@ var ProtoInstance12 = null;
 "")))))
         .addChild(ProtoInstance0 = new ProtoInstanceObject().setName("point").setDEF("G1"))
         .addChild(ProtoInstance1 = new ProtoInstanceObject().setName("point").setDEF("G2"))
-        .addChild(ProtoInstance2 = new ProtoInstanceObject().setName("point").setDEF("G3"))
-        .addChild(ProtoInstance3 = new ProtoInstanceObject().setName("point").setDEF("G4"))
-        .addChild(ProtoInstance4 = new ProtoInstanceObject().setName("x3dconnector").setDEF("connector1"))
-        .addChild(ProtoInstance7 = new ProtoInstanceObject().setName("x3dconnector").setDEF("connector2"))
-        .addChild(ProtoInstance10 = new ProtoInstanceObject().setName("x3dconnector").setDEF("connector3"))
+        .addChild(ProtoInstance2 = new ProtoInstanceObject().setName("x3dconnector").setDEF("connector1"))
         .addChild(new ROUTEObject().setFromNode("G1").setFromField("translation").setToNode("connector1").setToField("set_startpoint"))
-        .addChild(new ROUTEObject().setFromNode("G2").setFromField("translation").setToNode("connector1").setToField("set_endpoint"))
-        .addChild(new ROUTEObject().setFromNode("G1").setFromField("translation").setToNode("connector2").setToField("set_startpoint"))
-        .addChild(new ROUTEObject().setFromNode("G3").setFromField("translation").setToNode("connector2").setToField("set_endpoint"))
-        .addChild(new ROUTEObject().setFromNode("G1").setFromField("translation").setToNode("connector3").setToField("set_startpoint"))
-        .addChild(new ROUTEObject().setFromNode("G4").setFromField("translation").setToNode("connector3").setToField("set_endpoint")))      ;
-ProtoInstance4
+        .addChild(new ROUTEObject().setFromNode("G2").setFromField("translation").setToNode("connector1").setToField("set_endpoint")))      ;
+ProtoInstance2
           .addFieldValue(new fieldValueObject().setName("startnode")
-            .addChild(ProtoInstance5 = new ProtoInstanceObject().setUSE("G1")));
-ProtoInstance4
+            .addChild(ProtoInstance3 = new ProtoInstanceObject().setUSE("G1")));
+ProtoInstance2
           .addFieldValue(new fieldValueObject().setName("endnode")
-            .addChild(ProtoInstance6 = new ProtoInstanceObject().setUSE("G2")));
-ProtoInstance4
+            .addChild(ProtoInstance4 = new ProtoInstanceObject().setUSE("G2")));
+ProtoInstance2
           .addFieldValue(new fieldValueObject().setName("set_startpoint"));
-ProtoInstance4
+ProtoInstance2
           .addFieldValue(new fieldValueObject().setName("set_endpoint"));
-ProtoInstance7
-          .addFieldValue(new fieldValueObject().setName("startnode")
-            .addChild(ProtoInstance8 = new ProtoInstanceObject().setUSE("G1")));
-ProtoInstance7
-          .addFieldValue(new fieldValueObject().setName("endnode")
-            .addChild(ProtoInstance9 = new ProtoInstanceObject().setUSE("G3")));
-ProtoInstance7
-          .addFieldValue(new fieldValueObject().setName("set_startpoint"));
-ProtoInstance7
-          .addFieldValue(new fieldValueObject().setName("set_endpoint"));
-ProtoInstance10
-          .addFieldValue(new fieldValueObject().setName("startnode")
-            .addChild(ProtoInstance11 = new ProtoInstanceObject().setUSE("G1")));
-ProtoInstance10
-          .addFieldValue(new fieldValueObject().setName("endnode")
-            .addChild(ProtoInstance12 = new ProtoInstanceObject().setUSE("G4")));
-ProtoInstance10
-          .addFieldValue(new fieldValueObject().setName("set_startpoint"));
-ProtoInstance10
-          .addFieldValue(new fieldValueObject().setName("set_endpoint"));
-    X3D0.toFileX3D("../data/arc.new.x3d");
+    X3D0.toFileX3D("../data/arc1.new.x3d");
