@@ -1392,12 +1392,23 @@ POSSIBILITY OF SUCH DAMAGE.
           </xsl:call-template>
         </xsl:when>
         <!-- SFString or MFString containing escaped quotation mark \" -->
-        <xsl:when test="contains($inputString,'\&quot;') and (string-length(substring-before($inputString,'&quot;')) > string-length(substring-before($inputString,'\&quot;')))">
+        <xsl:when test="contains($inputString,'\&quot;') and (string-length(substring-before($inputString,'&quot;')) > string-length(substring-before($inputString,'\&quot;')))
+						and not(contains(substring-before($inputString,'&quot;'),'\\'))">
 			<xsl:if test="$debugTrace"><xsl:message><xsl:text>[e-q-c-r][3.4]</xsl:text><xsl:value-of select="$debugMessage"/></xsl:message></xsl:if>
 			<xsl:value-of select="substring-before($inputString,'\&quot;')"/>
 			<xsl:text>\"</xsl:text>
 			<xsl:call-template name="escape-quote-characters-recurse">
 				<xsl:with-param name="inputString" select="substring-after($inputString,'\&quot;')"/>
+				<xsl:with-param name="inputType"   select="$inputType"/>
+			</xsl:call-template>
+		</xsl:when>
+        <!-- SFString or MFString containing escaped backslash \\ -->
+        <xsl:when test="contains($inputString,'\\') and not(contains(substring-before($inputString,'\\'),'&quot;'))">
+			<xsl:if test="$debugTrace"><xsl:message><xsl:text>[e-q-c-r][3.5]</xsl:text><xsl:value-of select="$debugMessage"/></xsl:message></xsl:if>
+			<xsl:value-of select="substring-before($inputString,'\\')"/>
+			<xsl:text>\\</xsl:text>
+			<xsl:call-template name="escape-quote-characters-recurse">
+				<xsl:with-param name="inputString" select="substring-after($inputString,'\\')"/>
 				<xsl:with-param name="inputType"   select="$inputType"/>
 			</xsl:call-template>
 		</xsl:when>
