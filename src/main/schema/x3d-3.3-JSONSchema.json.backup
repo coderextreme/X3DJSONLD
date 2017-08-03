@@ -3539,23 +3539,19 @@
 			"additionalProperties": false
 		},
 		"EXPORT": {
-			"type": "array",
-			"minItems": 1,
-			"items": {
-				"type": "object",
-				"properties": {
-					"@AS": {
-						"type": "string"
-					},
-					"@localDEF": {
-						"type": "string"
-					}
+			"type": "object",
+			"properties": {
+				"@AS": {
+					"type": "string"
 				},
-				"required": [
-					"@localDEF"
-				],
-				"additionalProperties": false
-			}
+				"@localDEF": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"@localDEF"
+			],
+			"additionalProperties": false
 		},
 		"ExternProtoDeclare": {
 			"type": "object",
@@ -4762,36 +4758,50 @@
 		},
 		"Group": {
 			"type": "object",
-			"properties": {
-				"@DEF": {
-					"type": "string"
+			"oneOf": [
+				{
+					"type": "object",
+					"properties": {
+						"@DEF": {
+							"type": "string"
+						},
+						"IS": {
+							"$ref": "#/definitions/IS"
+						},
+						"@bboxCenter": {
+							"type": "array",
+							"minItems": 3,
+							"maxItems": 3,
+							"items": {
+								"type": "number",
+								"default": 0
+							}
+						},
+						"@bboxSize": {
+							"$ref": "#/definitions/@bboxSize"
+						},
+						"-children": {
+							"$ref": "#/definitions/-children"
+						},
+						"-metadata": {
+							"$ref": "#/definitions/-metadata"
+						}
+					},
+					"additionalProperties": false
 				},
-				"@USE": {
-					"type": "string"
-				},
-				"IS": {
-					"$ref": "#/definitions/IS"
-				},
-				"@bboxCenter": {
-					"type": "array",
-					"minItems": 3,
-					"maxItems": 3,
-					"items": {
-						"type": "number",
-						"default": 0
-					}
-				},
-				"@bboxSize": {
-					"$ref": "#/definitions/@bboxSize"
-				},
-				"-children": {
-					"$ref": "#/definitions/-children"
-				},
-				"-metadata": {
-					"$ref": "#/definitions/-metadata"
+				{
+					"type": "object",
+					"properties": {
+						"@USE": {
+							"type": "string"
+						}
+					},
+					"required": [
+						"@USE"
+					],
+					"additionalProperties": false
 				}
-			},
-			"additionalProperties": false
+			]
 		},
 		"HAnimDisplacer": {
 			"type": "object",
@@ -5305,27 +5315,23 @@
 			"additionalProperties": false
 		},
 		"IMPORT": {
-			"type": "array",
-			"minItems": 1,
-			"items": {
-				"type": "object",
-				"properties": {
-					"@AS": {
-						"type": "string"
-					},
-					"@importedDEF": {
-						"type": "string"
-					},
-					"@inlineDEF": {
-						"type": "string"
-					}
+			"type": "object",
+			"properties": {
+				"@AS": {
+					"type": "string"
 				},
-				"required": [
-					"@importedDEF",
-					"@inlineDEF"
-				],
-				"additionalProperties": false
-			}
+				"@importedDEF": {
+					"type": "string"
+				},
+				"@inlineDEF": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"@importedDEF",
+				"@inlineDEF"
+			],
+			"additionalProperties": false
 		},
 		"IndexedFaceSet": {
 			"type": "object",
@@ -6673,40 +6679,54 @@
 		},
 		"MetadataBoolean": {
 			"type": "object",
-			"properties": {
-				"@DEF": {
-					"type": "string"
+			"oneOf": [
+				{
+					"type": "object",
+					"properties": {
+						"@DEF": {
+							"type": "string"
+						},
+						"IS": {
+							"$ref": "#/definitions/IS"
+						},
+						"@name": {
+							"type": "string"
+						},
+						"@reference": {
+							"type": "string"
+						},
+						"@value": {
+							"type": "array",
+							"minItems": 1,
+							"items": {
+								"type": "boolean"
+							}
+						},
+						"-metadata": {
+							"$ref": "#/definitions/-metadata"
+						},
+						"-children": {
+							"$ref": "#/definitions/-commentRoute"
+						}
+					},
+					"required": [
+						"@name"
+					],
+					"additionalProperties": false
 				},
-				"@USE": {
-					"type": "string"
-				},
-				"IS": {
-					"$ref": "#/definitions/IS"
-				},
-				"@name": {
-					"type": "string"
-				},
-				"@reference": {
-					"type": "string"
-				},
-				"@value": {
-					"type": "array",
-					"minItems": 1,
-					"items": {
-						"type": "boolean"
-					}
-				},
-				"-metadata": {
-					"$ref": "#/definitions/-metadata"
-				},
-				"-children": {
-					"$ref": "#/definitions/-commentRoute"
+				{
+					"type": "object",
+					"properties": {
+						"@USE": {
+							"type": "string"
+						}
+					},
+					"required": [
+						"@USE"
+					],
+					"additionalProperties": false
 				}
-			},
-			"required": [
-				"@name"
-			],
-			"additionalProperties": false
+			]
 		},
 		"MetadataDouble": {
 			"type": "object",
@@ -9562,43 +9582,57 @@
 		},
 		"ProtoInstance": {
 			"type": "object",
-			"properties": {
-				"@DEF": {
-					"type": "string"
-				},
-				"@USE": {
-					"type": "string"
-				},
-				"@name": {
-					"type": "string"
-				},
-				"fieldValue": {
-					"$ref": "#/definitions/fieldValue"
-				},
-				"IS": {
-					"$ref": "#/definitions/IS"
-				},
-				"-children": {
-					"type": "array",
-					"minItems": 1,
-					"items": {
-						"type": "object",
-						"properties": {
-							"#comment": {
-								"type": "string"
+			"oneOf": [
+				{
+					"type": "object",
+					"properties": {
+						"@DEF": {
+							"type": "string"
+						},
+						"@name": {
+							"type": "string"
+						},
+						"fieldValue": {
+							"$ref": "#/definitions/fieldValue"
+						},
+						"IS": {
+							"$ref": "#/definitions/IS"
+						},
+						"-children": {
+							"type": "array",
+							"minItems": 1,
+							"items": {
+								"type": "object",
+								"properties": {
+									"#comment": {
+										"type": "string"
+									}
+								},
+								"additionalProperties": false
 							}
 						},
-						"additionalProperties": false
-					}
+						"-metadata": {
+							"$ref": "#/definitions/-metadata"
+						}
+					},
+					"required": [
+						"@name"
+					],
+					"additionalProperties": false
 				},
-				"-metadata": {
-					"$ref": "#/definitions/-metadata"
+				{
+					"type": "object",
+					"properties": {
+						"@USE": {
+							"type": "string"
+						}
+					},
+					"required": [
+						"@USE"
+					],
+					"additionalProperties": false
 				}
-			},
-			"required": [
-				"@name"
-			],
-			"additionalProperties": false
+			]
 		},
 		"ProtoInterface": {
 			"type": "object",
