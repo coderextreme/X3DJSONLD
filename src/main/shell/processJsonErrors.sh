@@ -2,18 +2,15 @@
 
 # process JSON files and look for error in JSON file so we won't report
 
+
 while read
 do
-	if [ "$REPLY" = "================================================================================" ]
+	FILE=`echo ${REPLY} | sed 's/^File: //'`
+	if egrep -l '"@name".*:.*"error"|"@name".*:.*"warning"' $FILE > /dev/null
 	then
-		read
-		FILE=`echo ${REPLY} | sed 's/^File: //'`
-		if egrep -l '"@name".*:.*"error"|"@name".*:.*"warning"' $FILE > /dev/null
-		then
-			test
-		else
-			echo "$FILE"
-		fi
+		test
+	else
+		echo "$FILE"
 	fi
 done
 
