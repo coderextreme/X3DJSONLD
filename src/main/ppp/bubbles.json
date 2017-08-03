@@ -39,7 +39,7 @@
         },
         {
           "@name": "translated",
-          "@content": "26 May 2017"
+          "@content": "03 June 2017"
         },
         {
           "@name": "generator",
@@ -451,18 +451,24 @@
                 ]
               },
               {
-                "@name": "position",
+                "@name": "position_changed",
                 "@accessType": "outputOnly",
                 "@type": "MFVec3f"
               },
               {
-                "@name": "orientation",
+                "@name": "set_orientation",
+                "@accessType": "inputOnly",
+                "@type": "MFRotation"
+              },
+              {
+                "@name": "orientation_changed",
                 "@accessType": "outputOnly",
                 "@type": "MFRotation"
               }
             ],
             "#sourceText": [
-              "ecmascript:",
+              "",
+              "\t    ecmascript:",
               "               function set_cycle(value) {",
               "                        var ov = lastKey;",
               "                        do {",
@@ -470,12 +476,12 @@
               "                        } while (lastKey === ov);",
               "                        var vc = lastKey;",
               "                        ",
-              "                        orientation = new MFRotation();",
-              "                        orientation[0] = new SFRotation(orientations[ov].x, orientations[ov].y, orientations[ov].z, orientations[ov].w);",
-              "                        orientation[1] = new SFRotation(orientations[vc].x, orientations[vc].y, orientations[vc].z, orientations[vc].w);",
-              "                        position = new MFVec3f();",
-              "                        position[0] = new SFVec3f(positions[ov].x,positions[ov].y,positions[ov].z);",
-              "                        position[1] = new SFVec3f(positions[vc].x,positions[vc].y,positions[vc].z);",
+              "                        orientation_changed = new MFRotation();",
+              "                        orientation_changed[0] = new SFRotation(orientations[ov].x, orientations[ov].y, orientations[ov].z, orientations[ov].w);",
+              "                        orientation_changed[1] = new SFRotation(orientations[vc].x, orientations[vc].y, orientations[vc].z, orientations[vc].w);",
+              "                        position_changed = new MFVec3f();",
+              "                        position_changed[0] = new SFVec3f(positions[ov].x,positions[ov].y,positions[ov].z);",
+              "                        position_changed[1] = new SFVec3f(positions[vc].x,positions[vc].y,positions[vc].z);",
               "                    // }",
               "               }"
             ]
@@ -484,7 +490,7 @@
         {
           "ROUTE": {
             "@fromNode": "TourTime",
-            "@fromField": "cycleTime",
+            "@fromField": "cycleTime_changed",
             "@toNode": "RandomTourTime",
             "@toField": "set_cycle"
           }
@@ -492,17 +498,17 @@
         {
           "ROUTE": {
             "@fromNode": "RandomTourTime",
-            "@fromField": "orientation",
+            "@fromField": "orientation_changed",
             "@toNode": "TourOrientation",
-            "@toField": "keyValue"
+            "@toField": "set_keyValue"
           }
         },
         {
           "ROUTE": {
             "@fromNode": "RandomTourTime",
-            "@fromField": "position",
+            "@fromField": "position_changed",
             "@toNode": "TourPosition",
-            "@toField": "keyValue"
+            "@toField": "set_keyValue"
           }
         },
         {

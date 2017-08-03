@@ -1,4 +1,7 @@
 var x3dom = require('../node/fields.js');
+if (typeof X3DJSON === 'undefined') {
+	var X3DJSON = {};
+}
 var MFBool = x3dom.fields.MFBoolean;
 var MFColor = x3dom.fields.MFColor;
 var MFColorRGBA = x3dom.fields.MFColorRGBA;
@@ -20,28 +23,27 @@ var MFVec3d = function() { return Array.prototype.slice.call(arguments, 0); };
 var MFVec3f = x3dom.fields.MFVec3f;
 var MFVec4d = function() { return Array.prototype.slice.call(arguments, 0); };
 var MFVec4f = function() { return Array.prototype.slice.call(arguments, 0); };
-SFBool = Boolean;
+var SFBool = Boolean;
 var SFColor = x3dom.fields.SFColor;
 var SFColorRGBA = x3dom.fields.SFColorRGBA;
-SFDouble = Number;
-SFFloat = Number;
-SFInt32 = Number;
+var SFDouble = Number;
+var SFFloat = Number;
+var SFInt32 = Number;
 var SFImage = x3dom.fields.SFImage;
 var SFMatrix3d = function() { return Array.prototype.slice.call(arguments, 0); };
 var SFMatrix3f = function() { return Array.prototype.slice.call(arguments, 0); };
 var SFMatrix4d = function() { return Array.prototype.slice.call(arguments, 0); };
 var SFMatrix4f = x3dom.fields.SFMatrix4f;
 var SFNode = x3dom.fields.SFNode;
-var SFRotation = x3dom.fields.Quaternion;
-SFString = String;
-SFTime = Number;
+var Quaternion = x3dom.fields.Quaternion;
+var SFString = String;
+var SFTime = Number;
 var SFVec2d = function() { return Array.prototype.slice.call(arguments, 0); };
 var SFVec2f = x3dom.fields.SFVec2f;
 var SFVec3d = function() { return Array.prototype.slice.call(arguments, 0); };
 var SFVec3f = x3dom.fields.SFVec3f;
 var SFVec4d = function() { return Array.prototype.slice.call(arguments, 0); };
-var SFvec4f = x3dom.fields.SFvec4f;
-var X3DJSON = {};
+var SFVec4f = x3dom.fields.SFVec4f;
 if (typeof document === 'undefined') {
 	document = { querySelector : function() {;
 		return {
@@ -57,20 +59,56 @@ if (typeof document === 'undefined') {
 	}};
 }
 X3DJSON.nodeUtil = function(node, field, value) {
-		var element = document.querySelector("[DEF='"+node+"'], [name='"+node+"']");
+		var selector = "undefined [DEF='"+node+"']";
+		var element = document.querySelector(selector);
 		if (element === null) {
 			console.error('unDEFed node',node);
 		} else if (arguments.length > 2) {
-			element.setAttribute(field, value);
-			console.log('set '+ field+ '='+ value);
+			/*
+			if (value && typeof value.toString === 'function') {
+				value = value.toString();
+			}
+			$(selector).attr(field, value);
+			// console.log('set', node, '.', field, '=', value);
+			*/
+			element.setFieldValue(field, value);
 			return element;
 		} else if (arguments.length > 1) {
-			var value = element.getAttribute(field)
-			console.log('get', field,'=',value);
+			value = element.getFieldValue(field);
+			/*
+			value = $(selector).attr(field);
+			if (element &&
+				element._x3domNode &&
+				element._x3domNode._vf &&
+				element._x3domNode._vf[field] &&
+				element._x3domNode._vf[field].setValueByStr) {
+				value = element._x3domNode._vf[field].setValueByStr(value);
+			}
+			*/
+			// console.log('get', node, '.', field,'=',value);
 			return value;
 		} else {
-			return element;
+			return $(selector)[0];
 		}
+};
+X3DJSON.createProxy = function(action, scriptObject) {
+	var proxy = new Proxy(scriptObject, {
+		get: function(target, property, receiver) {
+			return Reflect.get(target, property, receiver);
+		},
+		set: function(target, property, value, receiver) {
+                 if (typeof action[property] === 'object') {
+                        for (var route in action[property]) {
+                                if (typeof action[property][route] === 'function') {
+                                        action[property][route](property, value);
+   		                     // console.log('Set',property,'to', value);
+                                }
+                        }
+                 }
+		      return Reflect.set(target, property, value, receiver);
+		}
+	});
+	return proxy;
 };
 if (typeof X3DJSON['Script'] === 'undefined') {
 X3DJSON['Script'] = {};
@@ -78,26 +116,29 @@ X3DJSON['Script'] = {};
 
 X3DJSON['Script']['OrbitScript'] = function() {
 	this.set_fraction = function (value) {
-		X3DJSON.nodeUtil('OrbitScript', 'fraction', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+		this.proxy.fraction = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
 	this.fraction_changed = function () {
-		return X3DJSON.nodeUtil('OrbitScript', 'fraction');
+		var value = this.fraction;
+		return value;
 	};
-	this.set_fraction(undefined);
+	this.fraction = undefined;
 	this.set_coordinates = function (value) {
-		X3DJSON.nodeUtil('OrbitScript', 'coordinates', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+		this.proxy.coordinates = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
 	this.coordinates_changed = function () {
-		return X3DJSON.nodeUtil('OrbitScript', 'coordinates');
+		var value = this.coordinates;
+		return value;
 	};
-	this.set_coordinates(new MFVec3f());
+	this.coordinates = new MFVec3f();
 	this.set_coordIndexes = function (value) {
-		X3DJSON.nodeUtil('OrbitScript', 'coordIndexes', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+		this.proxy.coordIndexes = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
 	this.coordIndexes_changed = function () {
-		return X3DJSON.nodeUtil('OrbitScript', 'coordIndexes');
+		var value = this.coordIndexes;
+		return value;
 	};
-	this.set_coordIndexes(new MFInt32());
+	this.coordIndexes = new MFInt32();
 
 
 ecmascript:
@@ -110,19 +151,18 @@ var h = 5;
 
 	this.initialize = function () {
      resolution = 100;
-     var localci = new MFInt32();
      this.generateCoordinates(resolution);
-     var ci = 0;
+     var localci = [];
      for ( i = 0; i < resolution-1; i++) {
      	for ( j = 0; j < resolution-1; j++) {
-	     localci[ci] = i*resolution+j;
-	     localci[ci++] = i*resolution+j+1;
-	     localci[ci++] = (i+1)*resolution+j+1;
-	     localci[ci++] = (i+1)*resolution+j;
-	     localci[ci++] = -1;
+	     localci.push(i*resolution+j);
+	     localci.push(i*resolution+j+1);
+	     localci.push((i+1)*resolution+j+1);
+	     localci.push((i+1)*resolution+j);
+	     localci.push(-1);
 	}
     }
-    this.set_coordIndexes ( localci);
+    this.proxy.coordIndexes = new MFInt32(localci);
 }
 
 ;
@@ -131,20 +171,20 @@ var h = 5;
      theta = 0.0;
      phi = 0.0;
      delta = (2 * 3.141592653) / (resolution-1);
-     var localc = new MFVec3f();
+     var localc = [];
      for ( i = 0; i < resolution; i++) {
      	for ( j = 0; j < resolution; j++) {
 		rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);
-		localc[i*resolution+j] = new SFVec3f(
+		localc.push(new SFVec3f(
 			rho * Math.cos(phi) * Math.cos(theta),
 			rho * Math.cos(phi) * Math.sin(theta),
 			rho * Math.sin(phi)
-		);
+		));
 		theta += delta;
 	}
 	phi += delta;
      }
-     this.set_coordinates ( localc);
+     this.proxy.coordinates = new MFVec3f(localc);
 }
 
 ;
@@ -184,33 +224,66 @@ X3DJSON['Obj'] = {};
 }
 
 X3DJSON['Obj']['OrbitScript'] = new X3DJSON['Script']['OrbitScript']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['OrbitScript'] === 'undefined') {
+X3DJSON['Obj']['OrbitScript'] = {};
+}
+
+if (typeof X3DJSON['Obj']['OrbitScript']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['OrbitScript']['ACTION'] = {};
+X3DJSON['Obj']['OrbitScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['OrbitScript']['ACTION'],X3DJSON['Obj']['OrbitScript']);
+}
 if (typeof X3DJSON['Obj']['OrbitScript'].initialize === "function") X3DJSON['Obj']['OrbitScript'].initialize();
+X3DJSON.createProxy = function(action, scriptObject) {
+	var proxy = new Proxy(scriptObject, {
+		get: function(target, property, receiver) {
+			return Reflect.get(target, property, receiver);
+		},
+		set: function(target, property, value, receiver) {
+                 if (typeof action[property] === 'object') {
+                        for (var route in action[property]) {
+                                if (typeof action[property][route] === 'function') {
+                                        action[property][route](property, value);
+   		                     // console.log('Set',property,'to', value);
+                                }
+                        }
+                 }
+		      return Reflect.set(target, property, value, receiver);
+		}
+	});
+	return proxy;
+};
 if (typeof X3DJSON['Script'] === 'undefined') {
 X3DJSON['Script'] = {};
 }
 
 X3DJSON['Script']['OrbitScript2'] = function() {
 	this.set_fraction = function (value) {
-		X3DJSON.nodeUtil('OrbitScript2', 'fraction', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+		this.proxy.fraction = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
 	this.fraction_changed = function () {
-		return X3DJSON.nodeUtil('OrbitScript2', 'fraction');
+		var value = this.fraction;
+		return value;
 	};
-	this.set_fraction(undefined);
+	this.fraction = undefined;
 	this.set_coordinates = function (value) {
-		X3DJSON.nodeUtil('OrbitScript2', 'coordinates', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+		this.proxy.coordinates = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
 	this.coordinates_changed = function () {
-		return X3DJSON.nodeUtil('OrbitScript2', 'coordinates');
+		var value = this.coordinates;
+		return value;
 	};
-	this.set_coordinates(new MFVec3f());
+	this.coordinates = new MFVec3f();
 	this.set_coordIndexes = function (value) {
-		X3DJSON.nodeUtil('OrbitScript2', 'coordIndexes', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+		this.proxy.coordIndexes = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
 	this.coordIndexes_changed = function () {
-		return X3DJSON.nodeUtil('OrbitScript2', 'coordIndexes');
+		var value = this.coordIndexes;
+		return value;
 	};
-	this.set_coordIndexes(new MFInt32());
+	this.coordIndexes = new MFInt32();
 
 
 ecmascript:
@@ -223,20 +296,18 @@ var h = 5;
 
 	this.initialize = function () {
      resolution = 100;
-     var localci = new MFInt32();
      this.generateCoordinates(resolution);
-     ci = 0;
+     var localci = [];
      for ( i = 0; i < resolution-1; i++) {
      	for ( j = 0; j < resolution-1; j++) {
-	     localci[ci] = i*resolution+j;
-	     localci[ci+1] = i*resolution+j+1;
-	     localci[ci+2] = (i+1)*resolution+j+1;
-	     localci[ci+3] = (i+1)*resolution+j;
-	     localci[ci+4] = -1;
-	     ci += 5;
+	     localci.push(i*resolution+j);
+	     localci.push(i*resolution+j+1);
+	     localci.push((i+1)*resolution+j+1);
+	     localci.push((i+1)*resolution+j);
+	     localci.push(-1);
 	}
     }
-    this.set_coordIndexes ( localci);
+    this.proxy.coordIndexes = new MFInt32(localci);
 }
 
 ;
@@ -245,19 +316,21 @@ var h = 5;
      theta = 0.0;
      phi = 0.0;
      delta = (2 * 3.141592653) / (resolution-1);
-     var localc = new MFVec3f();
+     var localc = [];
      for ( i = 0; i < resolution; i++) {
      	for ( j = 0; j < resolution; j++) {
 		rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);
-		localc[i*resolution+j] = new SFVec3f();
-		localc[i*resolution+j][0] = rho * Math.cos(phi) * Math.cos(theta);
-		localc[i*resolution+j][1] = rho * Math.cos(phi) * Math.sin(theta);
-		localc[i*resolution+j][2] = rho * Math.sin(phi);
+		localc.push(new SFVec3f(
+			rho * Math.cos(phi) * Math.cos(theta),
+			rho * Math.cos(phi) * Math.sin(theta),
+			rho * Math.sin(phi)
+		));
 		theta += delta;
 	}
 	phi += delta;
      }
-     this.set_coordinates ( localc);
+     
+     this.proxy.coordinates = new MFVec3f(localc);
 }
 
 ;
@@ -297,439 +370,99 @@ X3DJSON['Obj'] = {};
 }
 
 X3DJSON['Obj']['OrbitScript2'] = new X3DJSON['Script']['OrbitScript2']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['OrbitScript2'] === 'undefined') {
+X3DJSON['Obj']['OrbitScript2'] = {};
+}
+
+if (typeof X3DJSON['Obj']['OrbitScript2']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['OrbitScript2']['ACTION'] = {};
+X3DJSON['Obj']['OrbitScript2'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['OrbitScript2']['ACTION'],X3DJSON['Obj']['OrbitScript2']);
+}
 if (typeof X3DJSON['Obj']['OrbitScript2'].initialize === "function") X3DJSON['Obj']['OrbitScript2'].initialize();
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['ROUTE']['OrbitScript'] === 'undefined') {
-X3DJSON['ROUTE']['OrbitScript'] = {};
-}
-if (typeof X3DJSON['ROUTE']['OrbitScript']['coordIndexes'] === 'undefined') {
-X3DJSON['ROUTE']['OrbitScript']['coordIndexes'] = {};
-}
-if (typeof X3DJSON['ROUTE']['OrbitScript']['coordIndexes']['Orbit'] === 'undefined') {
-X3DJSON['ROUTE']['OrbitScript']['coordIndexes']['Orbit'] = {};
-}
-if (typeof X3DJSON['ROUTE']['OrbitScript']['coordIndexes']['Orbit']['set_coordIndex'] === 'undefined') {
-X3DJSON['ROUTE']['OrbitScript']['coordIndexes']['Orbit']['set_coordIndex'] = {};
+if (typeof X3DJSON['Obj']['OrbitScript'] === 'undefined') {
+X3DJSON['Obj']['OrbitScript'] = {};
 }
 
-X3DJSON['ROUTE']['OrbitScript']['coordIndexes']['Orbit']['set_coordIndex']['FROM'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'coordIndexes');
-			X3DJSON.nodeUtil('Orbit','set_coordIndex',X3DJSON.nodeUtil('OrbitScript','coordIndexes'), __eventTime);
-		});
+if (typeof X3DJSON['Obj']['OrbitScript']['ACTION']['coordIndexes'] === 'undefined') {
+X3DJSON['Obj']['OrbitScript']['ACTION']['coordIndexes'] = [];
+}
+X3DJSON['Obj']['OrbitScript']['ACTION']['coordIndexes'].push(function(property, value) {
+		if (property === 'coordIndexes') {
+			X3DJSON.nodeUtil('Orbit','coordIndex',typeof X3DJSON['Obj']['OrbitScript'].coordIndexes === "function" ? X3DJSON['Obj']['OrbitScript'].coordIndexes() : X3DJSON['Obj']['OrbitScript'].coordIndexes, __eventTime);
+		}
 });
-var config = { attributes: true, childList: true, attributeFilter:['coordIndexes'] };
-X3DJSON['ROUTE']['OrbitScript']['coordIndexes']['Orbit']['set_coordIndex']['FROM'].observe(X3DJSON.nodeUtil('OrbitScript'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
+			X3DJSON.nodeUtil('Orbit','coordIndex',typeof X3DJSON['Obj']['OrbitScript'].coordIndexes === "function" ? X3DJSON['Obj']['OrbitScript'].coordIndexes() : X3DJSON['Obj']['OrbitScript'].coordIndexes, __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['ROUTE']['OrbitScript'] === 'undefined') {
-X3DJSON['ROUTE']['OrbitScript'] = {};
-}
-if (typeof X3DJSON['ROUTE']['OrbitScript']['coordIndexes'] === 'undefined') {
-X3DJSON['ROUTE']['OrbitScript']['coordIndexes'] = {};
-}
-if (typeof X3DJSON['ROUTE']['OrbitScript']['coordIndexes']['Orbit'] === 'undefined') {
-X3DJSON['ROUTE']['OrbitScript']['coordIndexes']['Orbit'] = {};
-}
-if (typeof X3DJSON['ROUTE']['OrbitScript']['coordIndexes']['Orbit']['set_coordIndex'] === 'undefined') {
-X3DJSON['ROUTE']['OrbitScript']['coordIndexes']['Orbit']['set_coordIndex'] = {};
+if (typeof X3DJSON['Obj']['OrbitScript'] === 'undefined') {
+X3DJSON['Obj']['OrbitScript'] = {};
 }
 
-X3DJSON['ROUTE']['OrbitScript']['coordIndexes']['Orbit']['set_coordIndex']['TO'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'set_coordIndex');
-			if (typeof X3DJSON['Obj']['Orbit'].set_coordIndex === "function") X3DJSON['Obj']['Orbit'].set_coordIndex(X3DJSON.nodeUtil('Orbit','set_coordIndex'), __eventTime);
-		});
+if (typeof X3DJSON['Obj']['OrbitScript']['ACTION']['coordinates'] === 'undefined') {
+X3DJSON['Obj']['OrbitScript']['ACTION']['coordinates'] = [];
+}
+X3DJSON['Obj']['OrbitScript']['ACTION']['coordinates'].push(function(property, value) {
+		if (property === 'coordinates') {
+			X3DJSON.nodeUtil('OrbitCoordinates','point',typeof X3DJSON['Obj']['OrbitScript'].coordinates === "function" ? X3DJSON['Obj']['OrbitScript'].coordinates() : X3DJSON['Obj']['OrbitScript'].coordinates, __eventTime);
+		}
 });
-var config = { attributes: true, childList: true, attributeFilter:['set_coordIndex'] };
-X3DJSON['ROUTE']['OrbitScript']['coordIndexes']['Orbit']['set_coordIndex']['TO'].observe(X3DJSON.nodeUtil('Orbit'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
+			X3DJSON.nodeUtil('OrbitCoordinates','point',typeof X3DJSON['Obj']['OrbitScript'].coordinates === "function" ? X3DJSON['Obj']['OrbitScript'].coordinates() : X3DJSON['Obj']['OrbitScript'].coordinates, __eventTime);
+X3DJSON.nodeUtil('Clock').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['OrbitScript'].set_fraction(X3DJSON.nodeUtil('Clock','fraction'), __eventTime);
+}, false);
+			X3DJSON['Obj']['OrbitScript'].set_fraction(X3DJSON.nodeUtil('Clock','fraction'), __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['ROUTE']['OrbitScript'] === 'undefined') {
-X3DJSON['ROUTE']['OrbitScript'] = {};
-}
-if (typeof X3DJSON['ROUTE']['OrbitScript']['coordinates'] === 'undefined') {
-X3DJSON['ROUTE']['OrbitScript']['coordinates'] = {};
-}
-if (typeof X3DJSON['ROUTE']['OrbitScript']['coordinates']['OrbitCoordinates'] === 'undefined') {
-X3DJSON['ROUTE']['OrbitScript']['coordinates']['OrbitCoordinates'] = {};
-}
-if (typeof X3DJSON['ROUTE']['OrbitScript']['coordinates']['OrbitCoordinates']['set_point'] === 'undefined') {
-X3DJSON['ROUTE']['OrbitScript']['coordinates']['OrbitCoordinates']['set_point'] = {};
+if (typeof X3DJSON['Obj']['OrbitScript2'] === 'undefined') {
+X3DJSON['Obj']['OrbitScript2'] = {};
 }
 
-X3DJSON['ROUTE']['OrbitScript']['coordinates']['OrbitCoordinates']['set_point']['FROM'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'coordinates');
-			X3DJSON.nodeUtil('OrbitCoordinates','set_point',X3DJSON.nodeUtil('OrbitScript','coordinates'), __eventTime);
-		});
+if (typeof X3DJSON['Obj']['OrbitScript2']['ACTION']['coordIndexes'] === 'undefined') {
+X3DJSON['Obj']['OrbitScript2']['ACTION']['coordIndexes'] = [];
+}
+X3DJSON['Obj']['OrbitScript2']['ACTION']['coordIndexes'].push(function(property, value) {
+		if (property === 'coordIndexes') {
+			X3DJSON.nodeUtil('Orbit2','coordIndex',typeof X3DJSON['Obj']['OrbitScript2'].coordIndexes === "function" ? X3DJSON['Obj']['OrbitScript2'].coordIndexes() : X3DJSON['Obj']['OrbitScript2'].coordIndexes, __eventTime);
+		}
 });
-var config = { attributes: true, childList: true, attributeFilter:['coordinates'] };
-X3DJSON['ROUTE']['OrbitScript']['coordinates']['OrbitCoordinates']['set_point']['FROM'].observe(X3DJSON.nodeUtil('OrbitScript'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
+			X3DJSON.nodeUtil('Orbit2','coordIndex',typeof X3DJSON['Obj']['OrbitScript2'].coordIndexes === "function" ? X3DJSON['Obj']['OrbitScript2'].coordIndexes() : X3DJSON['Obj']['OrbitScript2'].coordIndexes, __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['ROUTE']['OrbitScript'] === 'undefined') {
-X3DJSON['ROUTE']['OrbitScript'] = {};
-}
-if (typeof X3DJSON['ROUTE']['OrbitScript']['coordinates'] === 'undefined') {
-X3DJSON['ROUTE']['OrbitScript']['coordinates'] = {};
-}
-if (typeof X3DJSON['ROUTE']['OrbitScript']['coordinates']['OrbitCoordinates'] === 'undefined') {
-X3DJSON['ROUTE']['OrbitScript']['coordinates']['OrbitCoordinates'] = {};
-}
-if (typeof X3DJSON['ROUTE']['OrbitScript']['coordinates']['OrbitCoordinates']['set_point'] === 'undefined') {
-X3DJSON['ROUTE']['OrbitScript']['coordinates']['OrbitCoordinates']['set_point'] = {};
+if (typeof X3DJSON['Obj']['OrbitScript2'] === 'undefined') {
+X3DJSON['Obj']['OrbitScript2'] = {};
 }
 
-X3DJSON['ROUTE']['OrbitScript']['coordinates']['OrbitCoordinates']['set_point']['TO'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'set_point');
-			if (typeof X3DJSON['Obj']['OrbitCoordinates'].set_point === "function") X3DJSON['Obj']['OrbitCoordinates'].set_point(X3DJSON.nodeUtil('OrbitCoordinates','set_point'), __eventTime);
-		});
+if (typeof X3DJSON['Obj']['OrbitScript2']['ACTION']['coordinates'] === 'undefined') {
+X3DJSON['Obj']['OrbitScript2']['ACTION']['coordinates'] = [];
+}
+X3DJSON['Obj']['OrbitScript2']['ACTION']['coordinates'].push(function(property, value) {
+		if (property === 'coordinates') {
+			X3DJSON.nodeUtil('OrbitCoordinates2','point',typeof X3DJSON['Obj']['OrbitScript2'].coordinates === "function" ? X3DJSON['Obj']['OrbitScript2'].coordinates() : X3DJSON['Obj']['OrbitScript2'].coordinates, __eventTime);
+		}
 });
-var config = { attributes: true, childList: true, attributeFilter:['set_point'] };
-X3DJSON['ROUTE']['OrbitScript']['coordinates']['OrbitCoordinates']['set_point']['TO'].observe(X3DJSON.nodeUtil('OrbitCoordinates'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['OrbitScript2'] === 'undefined') {
-X3DJSON['ROUTE']['OrbitScript2'] = {};
-}
-if (typeof X3DJSON['ROUTE']['OrbitScript2']['coordIndexes'] === 'undefined') {
-X3DJSON['ROUTE']['OrbitScript2']['coordIndexes'] = {};
-}
-if (typeof X3DJSON['ROUTE']['OrbitScript2']['coordIndexes']['Orbit2'] === 'undefined') {
-X3DJSON['ROUTE']['OrbitScript2']['coordIndexes']['Orbit2'] = {};
-}
-if (typeof X3DJSON['ROUTE']['OrbitScript2']['coordIndexes']['Orbit2']['set_coordIndex'] === 'undefined') {
-X3DJSON['ROUTE']['OrbitScript2']['coordIndexes']['Orbit2']['set_coordIndex'] = {};
-}
-
-X3DJSON['ROUTE']['OrbitScript2']['coordIndexes']['Orbit2']['set_coordIndex']['FROM'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'coordIndexes');
-			X3DJSON.nodeUtil('Orbit2','set_coordIndex',X3DJSON.nodeUtil('OrbitScript2','coordIndexes'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['coordIndexes'] };
-X3DJSON['ROUTE']['OrbitScript2']['coordIndexes']['Orbit2']['set_coordIndex']['FROM'].observe(X3DJSON.nodeUtil('OrbitScript2'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['OrbitScript2'] === 'undefined') {
-X3DJSON['ROUTE']['OrbitScript2'] = {};
-}
-if (typeof X3DJSON['ROUTE']['OrbitScript2']['coordIndexes'] === 'undefined') {
-X3DJSON['ROUTE']['OrbitScript2']['coordIndexes'] = {};
-}
-if (typeof X3DJSON['ROUTE']['OrbitScript2']['coordIndexes']['Orbit2'] === 'undefined') {
-X3DJSON['ROUTE']['OrbitScript2']['coordIndexes']['Orbit2'] = {};
-}
-if (typeof X3DJSON['ROUTE']['OrbitScript2']['coordIndexes']['Orbit2']['set_coordIndex'] === 'undefined') {
-X3DJSON['ROUTE']['OrbitScript2']['coordIndexes']['Orbit2']['set_coordIndex'] = {};
-}
-
-X3DJSON['ROUTE']['OrbitScript2']['coordIndexes']['Orbit2']['set_coordIndex']['TO'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'set_coordIndex');
-			if (typeof X3DJSON['Obj']['Orbit2'].set_coordIndex === "function") X3DJSON['Obj']['Orbit2'].set_coordIndex(X3DJSON.nodeUtil('Orbit2','set_coordIndex'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['set_coordIndex'] };
-X3DJSON['ROUTE']['OrbitScript2']['coordIndexes']['Orbit2']['set_coordIndex']['TO'].observe(X3DJSON.nodeUtil('Orbit2'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['OrbitScript2'] === 'undefined') {
-X3DJSON['ROUTE']['OrbitScript2'] = {};
-}
-if (typeof X3DJSON['ROUTE']['OrbitScript2']['coordinates'] === 'undefined') {
-X3DJSON['ROUTE']['OrbitScript2']['coordinates'] = {};
-}
-if (typeof X3DJSON['ROUTE']['OrbitScript2']['coordinates']['OrbitCoordinates2'] === 'undefined') {
-X3DJSON['ROUTE']['OrbitScript2']['coordinates']['OrbitCoordinates2'] = {};
-}
-if (typeof X3DJSON['ROUTE']['OrbitScript2']['coordinates']['OrbitCoordinates2']['set_point'] === 'undefined') {
-X3DJSON['ROUTE']['OrbitScript2']['coordinates']['OrbitCoordinates2']['set_point'] = {};
-}
-
-X3DJSON['ROUTE']['OrbitScript2']['coordinates']['OrbitCoordinates2']['set_point']['FROM'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'coordinates');
-			X3DJSON.nodeUtil('OrbitCoordinates2','set_point',X3DJSON.nodeUtil('OrbitScript2','coordinates'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['coordinates'] };
-X3DJSON['ROUTE']['OrbitScript2']['coordinates']['OrbitCoordinates2']['set_point']['FROM'].observe(X3DJSON.nodeUtil('OrbitScript2'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['OrbitScript2'] === 'undefined') {
-X3DJSON['ROUTE']['OrbitScript2'] = {};
-}
-if (typeof X3DJSON['ROUTE']['OrbitScript2']['coordinates'] === 'undefined') {
-X3DJSON['ROUTE']['OrbitScript2']['coordinates'] = {};
-}
-if (typeof X3DJSON['ROUTE']['OrbitScript2']['coordinates']['OrbitCoordinates2'] === 'undefined') {
-X3DJSON['ROUTE']['OrbitScript2']['coordinates']['OrbitCoordinates2'] = {};
-}
-if (typeof X3DJSON['ROUTE']['OrbitScript2']['coordinates']['OrbitCoordinates2']['set_point'] === 'undefined') {
-X3DJSON['ROUTE']['OrbitScript2']['coordinates']['OrbitCoordinates2']['set_point'] = {};
-}
-
-X3DJSON['ROUTE']['OrbitScript2']['coordinates']['OrbitCoordinates2']['set_point']['TO'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'set_point');
-			if (typeof X3DJSON['Obj']['OrbitCoordinates2'].set_point === "function") X3DJSON['Obj']['OrbitCoordinates2'].set_point(X3DJSON.nodeUtil('OrbitCoordinates2','set_point'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['set_point'] };
-X3DJSON['ROUTE']['OrbitScript2']['coordinates']['OrbitCoordinates2']['set_point']['TO'].observe(X3DJSON.nodeUtil('OrbitCoordinates2'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['Clock'] === 'undefined') {
-X3DJSON['ROUTE']['Clock'] = {};
-}
-if (typeof X3DJSON['ROUTE']['Clock']['fraction_changed'] === 'undefined') {
-X3DJSON['ROUTE']['Clock']['fraction_changed'] = {};
-}
-if (typeof X3DJSON['ROUTE']['Clock']['fraction_changed']['OrbitScript'] === 'undefined') {
-X3DJSON['ROUTE']['Clock']['fraction_changed']['OrbitScript'] = {};
-}
-if (typeof X3DJSON['ROUTE']['Clock']['fraction_changed']['OrbitScript']['set_fraction'] === 'undefined') {
-X3DJSON['ROUTE']['Clock']['fraction_changed']['OrbitScript']['set_fraction'] = {};
-}
-
-X3DJSON['ROUTE']['Clock']['fraction_changed']['OrbitScript']['set_fraction']['FROM'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'fraction_changed');
-			X3DJSON.nodeUtil('OrbitScript','set_fraction',X3DJSON.nodeUtil('Clock','fraction_changed'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['fraction_changed'] };
-X3DJSON['ROUTE']['Clock']['fraction_changed']['OrbitScript']['set_fraction']['FROM'].observe(X3DJSON.nodeUtil('Clock'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['Clock'] === 'undefined') {
-X3DJSON['ROUTE']['Clock'] = {};
-}
-if (typeof X3DJSON['ROUTE']['Clock']['fraction_changed'] === 'undefined') {
-X3DJSON['ROUTE']['Clock']['fraction_changed'] = {};
-}
-if (typeof X3DJSON['ROUTE']['Clock']['fraction_changed']['OrbitScript'] === 'undefined') {
-X3DJSON['ROUTE']['Clock']['fraction_changed']['OrbitScript'] = {};
-}
-if (typeof X3DJSON['ROUTE']['Clock']['fraction_changed']['OrbitScript']['set_fraction'] === 'undefined') {
-X3DJSON['ROUTE']['Clock']['fraction_changed']['OrbitScript']['set_fraction'] = {};
-}
-
-X3DJSON['ROUTE']['Clock']['fraction_changed']['OrbitScript']['set_fraction']['TO'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'set_fraction');
-			if (typeof X3DJSON['Obj']['OrbitScript'].set_fraction === "function") X3DJSON['Obj']['OrbitScript'].set_fraction(X3DJSON.nodeUtil('OrbitScript','set_fraction'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['set_fraction'] };
-X3DJSON['ROUTE']['Clock']['fraction_changed']['OrbitScript']['set_fraction']['TO'].observe(X3DJSON.nodeUtil('OrbitScript'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['Clock'] === 'undefined') {
-X3DJSON['ROUTE']['Clock'] = {};
-}
-if (typeof X3DJSON['ROUTE']['Clock']['fraction_changed'] === 'undefined') {
-X3DJSON['ROUTE']['Clock']['fraction_changed'] = {};
-}
-if (typeof X3DJSON['ROUTE']['Clock']['fraction_changed']['OrbitScript2'] === 'undefined') {
-X3DJSON['ROUTE']['Clock']['fraction_changed']['OrbitScript2'] = {};
-}
-if (typeof X3DJSON['ROUTE']['Clock']['fraction_changed']['OrbitScript2']['set_fraction'] === 'undefined') {
-X3DJSON['ROUTE']['Clock']['fraction_changed']['OrbitScript2']['set_fraction'] = {};
-}
-
-X3DJSON['ROUTE']['Clock']['fraction_changed']['OrbitScript2']['set_fraction']['FROM'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'fraction_changed');
-			X3DJSON.nodeUtil('OrbitScript2','set_fraction',X3DJSON.nodeUtil('Clock','fraction_changed'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['fraction_changed'] };
-X3DJSON['ROUTE']['Clock']['fraction_changed']['OrbitScript2']['set_fraction']['FROM'].observe(X3DJSON.nodeUtil('Clock'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['Clock'] === 'undefined') {
-X3DJSON['ROUTE']['Clock'] = {};
-}
-if (typeof X3DJSON['ROUTE']['Clock']['fraction_changed'] === 'undefined') {
-X3DJSON['ROUTE']['Clock']['fraction_changed'] = {};
-}
-if (typeof X3DJSON['ROUTE']['Clock']['fraction_changed']['OrbitScript2'] === 'undefined') {
-X3DJSON['ROUTE']['Clock']['fraction_changed']['OrbitScript2'] = {};
-}
-if (typeof X3DJSON['ROUTE']['Clock']['fraction_changed']['OrbitScript2']['set_fraction'] === 'undefined') {
-X3DJSON['ROUTE']['Clock']['fraction_changed']['OrbitScript2']['set_fraction'] = {};
-}
-
-X3DJSON['ROUTE']['Clock']['fraction_changed']['OrbitScript2']['set_fraction']['TO'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'set_fraction');
-			if (typeof X3DJSON['Obj']['OrbitScript2'].set_fraction === "function") X3DJSON['Obj']['OrbitScript2'].set_fraction(X3DJSON.nodeUtil('OrbitScript2','set_fraction'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['set_fraction'] };
-X3DJSON['ROUTE']['Clock']['fraction_changed']['OrbitScript2']['set_fraction']['TO'].observe(X3DJSON.nodeUtil('OrbitScript2'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['Clock'] === 'undefined') {
-X3DJSON['ROUTE']['Clock'] = {};
-}
-if (typeof X3DJSON['ROUTE']['Clock']['fraction_changed'] === 'undefined') {
-X3DJSON['ROUTE']['Clock']['fraction_changed'] = {};
-}
-if (typeof X3DJSON['ROUTE']['Clock']['fraction_changed']['OrbitPath'] === 'undefined') {
-X3DJSON['ROUTE']['Clock']['fraction_changed']['OrbitPath'] = {};
-}
-if (typeof X3DJSON['ROUTE']['Clock']['fraction_changed']['OrbitPath']['set_fraction'] === 'undefined') {
-X3DJSON['ROUTE']['Clock']['fraction_changed']['OrbitPath']['set_fraction'] = {};
-}
-
-X3DJSON['ROUTE']['Clock']['fraction_changed']['OrbitPath']['set_fraction']['FROM'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'fraction_changed');
-			X3DJSON.nodeUtil('OrbitPath','set_fraction',X3DJSON.nodeUtil('Clock','fraction_changed'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['fraction_changed'] };
-X3DJSON['ROUTE']['Clock']['fraction_changed']['OrbitPath']['set_fraction']['FROM'].observe(X3DJSON.nodeUtil('Clock'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['Clock'] === 'undefined') {
-X3DJSON['ROUTE']['Clock'] = {};
-}
-if (typeof X3DJSON['ROUTE']['Clock']['fraction_changed'] === 'undefined') {
-X3DJSON['ROUTE']['Clock']['fraction_changed'] = {};
-}
-if (typeof X3DJSON['ROUTE']['Clock']['fraction_changed']['OrbitPath'] === 'undefined') {
-X3DJSON['ROUTE']['Clock']['fraction_changed']['OrbitPath'] = {};
-}
-if (typeof X3DJSON['ROUTE']['Clock']['fraction_changed']['OrbitPath']['set_fraction'] === 'undefined') {
-X3DJSON['ROUTE']['Clock']['fraction_changed']['OrbitPath']['set_fraction'] = {};
-}
-
-X3DJSON['ROUTE']['Clock']['fraction_changed']['OrbitPath']['set_fraction']['TO'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'set_fraction');
-			if (typeof X3DJSON['Obj']['OrbitPath'].set_fraction === "function") X3DJSON['Obj']['OrbitPath'].set_fraction(X3DJSON.nodeUtil('OrbitPath','set_fraction'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['set_fraction'] };
-X3DJSON['ROUTE']['Clock']['fraction_changed']['OrbitPath']['set_fraction']['TO'].observe(X3DJSON.nodeUtil('OrbitPath'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['OrbitPath'] === 'undefined') {
-X3DJSON['ROUTE']['OrbitPath'] = {};
-}
-if (typeof X3DJSON['ROUTE']['OrbitPath']['value_changed'] === 'undefined') {
-X3DJSON['ROUTE']['OrbitPath']['value_changed'] = {};
-}
-if (typeof X3DJSON['ROUTE']['OrbitPath']['value_changed']['OrbitTransform'] === 'undefined') {
-X3DJSON['ROUTE']['OrbitPath']['value_changed']['OrbitTransform'] = {};
-}
-if (typeof X3DJSON['ROUTE']['OrbitPath']['value_changed']['OrbitTransform']['set_rotation'] === 'undefined') {
-X3DJSON['ROUTE']['OrbitPath']['value_changed']['OrbitTransform']['set_rotation'] = {};
-}
-
-X3DJSON['ROUTE']['OrbitPath']['value_changed']['OrbitTransform']['set_rotation']['FROM'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'value_changed');
-			X3DJSON.nodeUtil('OrbitTransform','set_rotation',X3DJSON.nodeUtil('OrbitPath','value_changed'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['value_changed'] };
-X3DJSON['ROUTE']['OrbitPath']['value_changed']['OrbitTransform']['set_rotation']['FROM'].observe(X3DJSON.nodeUtil('OrbitPath'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['OrbitPath'] === 'undefined') {
-X3DJSON['ROUTE']['OrbitPath'] = {};
-}
-if (typeof X3DJSON['ROUTE']['OrbitPath']['value_changed'] === 'undefined') {
-X3DJSON['ROUTE']['OrbitPath']['value_changed'] = {};
-}
-if (typeof X3DJSON['ROUTE']['OrbitPath']['value_changed']['OrbitTransform'] === 'undefined') {
-X3DJSON['ROUTE']['OrbitPath']['value_changed']['OrbitTransform'] = {};
-}
-if (typeof X3DJSON['ROUTE']['OrbitPath']['value_changed']['OrbitTransform']['set_rotation'] === 'undefined') {
-X3DJSON['ROUTE']['OrbitPath']['value_changed']['OrbitTransform']['set_rotation'] = {};
-}
-
-X3DJSON['ROUTE']['OrbitPath']['value_changed']['OrbitTransform']['set_rotation']['TO'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'set_rotation');
-			if (typeof X3DJSON['Obj']['OrbitTransform'].set_rotation === "function") X3DJSON['Obj']['OrbitTransform'].set_rotation(X3DJSON.nodeUtil('OrbitTransform','set_rotation'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['set_rotation'] };
-X3DJSON['ROUTE']['OrbitPath']['value_changed']['OrbitTransform']['set_rotation']['TO'].observe(X3DJSON.nodeUtil('OrbitTransform'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['OrbitPath'] === 'undefined') {
-X3DJSON['ROUTE']['OrbitPath'] = {};
-}
-if (typeof X3DJSON['ROUTE']['OrbitPath']['value_changed'] === 'undefined') {
-X3DJSON['ROUTE']['OrbitPath']['value_changed'] = {};
-}
-if (typeof X3DJSON['ROUTE']['OrbitPath']['value_changed']['OrbitTransform2'] === 'undefined') {
-X3DJSON['ROUTE']['OrbitPath']['value_changed']['OrbitTransform2'] = {};
-}
-if (typeof X3DJSON['ROUTE']['OrbitPath']['value_changed']['OrbitTransform2']['set_rotation'] === 'undefined') {
-X3DJSON['ROUTE']['OrbitPath']['value_changed']['OrbitTransform2']['set_rotation'] = {};
-}
-
-X3DJSON['ROUTE']['OrbitPath']['value_changed']['OrbitTransform2']['set_rotation']['FROM'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'value_changed');
-			X3DJSON.nodeUtil('OrbitTransform2','set_rotation',X3DJSON.nodeUtil('OrbitPath','value_changed'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['value_changed'] };
-X3DJSON['ROUTE']['OrbitPath']['value_changed']['OrbitTransform2']['set_rotation']['FROM'].observe(X3DJSON.nodeUtil('OrbitPath'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['OrbitPath'] === 'undefined') {
-X3DJSON['ROUTE']['OrbitPath'] = {};
-}
-if (typeof X3DJSON['ROUTE']['OrbitPath']['value_changed'] === 'undefined') {
-X3DJSON['ROUTE']['OrbitPath']['value_changed'] = {};
-}
-if (typeof X3DJSON['ROUTE']['OrbitPath']['value_changed']['OrbitTransform2'] === 'undefined') {
-X3DJSON['ROUTE']['OrbitPath']['value_changed']['OrbitTransform2'] = {};
-}
-if (typeof X3DJSON['ROUTE']['OrbitPath']['value_changed']['OrbitTransform2']['set_rotation'] === 'undefined') {
-X3DJSON['ROUTE']['OrbitPath']['value_changed']['OrbitTransform2']['set_rotation'] = {};
-}
-
-X3DJSON['ROUTE']['OrbitPath']['value_changed']['OrbitTransform2']['set_rotation']['TO'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'set_rotation');
-			if (typeof X3DJSON['Obj']['OrbitTransform2'].set_rotation === "function") X3DJSON['Obj']['OrbitTransform2'].set_rotation(X3DJSON.nodeUtil('OrbitTransform2','set_rotation'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['set_rotation'] };
-X3DJSON['ROUTE']['OrbitPath']['value_changed']['OrbitTransform2']['set_rotation']['TO'].observe(X3DJSON.nodeUtil('OrbitTransform2'), config);
-			X3DJSON.nodeUtil('OrbitScript','set_fraction',X3DJSON.nodeUtil('Clock','fraction_changed'), __eventTime);
-			X3DJSON.nodeUtil('OrbitScript2','set_fraction',X3DJSON.nodeUtil('Clock','fraction_changed'), __eventTime);
-			X3DJSON.nodeUtil('OrbitPath','set_fraction',X3DJSON.nodeUtil('Clock','fraction_changed'), __eventTime);
+			X3DJSON.nodeUtil('OrbitCoordinates2','point',typeof X3DJSON['Obj']['OrbitScript2'].coordinates === "function" ? X3DJSON['Obj']['OrbitScript2'].coordinates() : X3DJSON['Obj']['OrbitScript2'].coordinates, __eventTime);
+X3DJSON.nodeUtil('Clock').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['OrbitScript2'].set_fraction(X3DJSON.nodeUtil('Clock','fraction'), __eventTime);
+}, false);
+			X3DJSON['Obj']['OrbitScript2'].set_fraction(X3DJSON.nodeUtil('Clock','fraction'), __eventTime);
+X3DJSON.nodeUtil('Clock').addEventListener('outputchange', function(event) {
+}, false);
+X3DJSON.nodeUtil('OrbitPath').addEventListener('outputchange', function(event) {
+}, false);
+X3DJSON.nodeUtil('OrbitPath').addEventListener('outputchange', function(event) {
+}, false);
+			X3DJSON.nodeUtil('Orbit','coordIndex',typeof X3DJSON['Obj']['OrbitScript'].coordIndexes === "function" ? X3DJSON['Obj']['OrbitScript'].coordIndexes() : X3DJSON['Obj']['OrbitScript'].coordIndexes, __eventTime);
+			X3DJSON.nodeUtil('OrbitCoordinates','point',typeof X3DJSON['Obj']['OrbitScript'].coordinates === "function" ? X3DJSON['Obj']['OrbitScript'].coordinates() : X3DJSON['Obj']['OrbitScript'].coordinates, __eventTime);
+			X3DJSON['Obj']['OrbitScript'].set_fraction(X3DJSON.nodeUtil('Clock','fraction'), __eventTime);
+			X3DJSON.nodeUtil('Orbit2','coordIndex',typeof X3DJSON['Obj']['OrbitScript2'].coordIndexes === "function" ? X3DJSON['Obj']['OrbitScript2'].coordIndexes() : X3DJSON['Obj']['OrbitScript2'].coordIndexes, __eventTime);
+			X3DJSON.nodeUtil('OrbitCoordinates2','point',typeof X3DJSON['Obj']['OrbitScript2'].coordinates === "function" ? X3DJSON['Obj']['OrbitScript2'].coordinates() : X3DJSON['Obj']['OrbitScript2'].coordinates, __eventTime);
+			X3DJSON['Obj']['OrbitScript2'].set_fraction(X3DJSON.nodeUtil('Clock','fraction'), __eventTime);

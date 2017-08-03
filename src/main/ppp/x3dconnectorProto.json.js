@@ -1,4 +1,7 @@
 var x3dom = require('../node/fields.js');
+if (typeof X3DJSON === 'undefined') {
+	var X3DJSON = {};
+}
 var MFBool = x3dom.fields.MFBoolean;
 var MFColor = x3dom.fields.MFColor;
 var MFColorRGBA = x3dom.fields.MFColorRGBA;
@@ -20,28 +23,27 @@ var MFVec3d = function() { return Array.prototype.slice.call(arguments, 0); };
 var MFVec3f = x3dom.fields.MFVec3f;
 var MFVec4d = function() { return Array.prototype.slice.call(arguments, 0); };
 var MFVec4f = function() { return Array.prototype.slice.call(arguments, 0); };
-SFBool = Boolean;
+var SFBool = Boolean;
 var SFColor = x3dom.fields.SFColor;
 var SFColorRGBA = x3dom.fields.SFColorRGBA;
-SFDouble = Number;
-SFFloat = Number;
-SFInt32 = Number;
+var SFDouble = Number;
+var SFFloat = Number;
+var SFInt32 = Number;
 var SFImage = x3dom.fields.SFImage;
 var SFMatrix3d = function() { return Array.prototype.slice.call(arguments, 0); };
 var SFMatrix3f = function() { return Array.prototype.slice.call(arguments, 0); };
 var SFMatrix4d = function() { return Array.prototype.slice.call(arguments, 0); };
 var SFMatrix4f = x3dom.fields.SFMatrix4f;
 var SFNode = x3dom.fields.SFNode;
-var SFRotation = x3dom.fields.Quaternion;
-SFString = String;
-SFTime = Number;
+var Quaternion = x3dom.fields.Quaternion;
+var SFString = String;
+var SFTime = Number;
 var SFVec2d = function() { return Array.prototype.slice.call(arguments, 0); };
 var SFVec2f = x3dom.fields.SFVec2f;
 var SFVec3d = function() { return Array.prototype.slice.call(arguments, 0); };
 var SFVec3f = x3dom.fields.SFVec3f;
 var SFVec4d = function() { return Array.prototype.slice.call(arguments, 0); };
-var SFvec4f = x3dom.fields.SFvec4f;
-var X3DJSON = {};
+var SFVec4f = x3dom.fields.SFVec4f;
 if (typeof document === 'undefined') {
 	document = { querySelector : function() {;
 		return {
@@ -57,741 +59,493 @@ if (typeof document === 'undefined') {
 	}};
 }
 X3DJSON.nodeUtil = function(node, field, value) {
-		var element = document.querySelector("[DEF='"+node+"'], [name='"+node+"']");
+		var selector = "undefined [DEF='"+node+"']";
+		var element = document.querySelector(selector);
 		if (element === null) {
 			console.error('unDEFed node',node);
 		} else if (arguments.length > 2) {
-			element.setAttribute(field, value);
-			console.log('set '+ field+ '='+ value);
+			/*
+			if (value && typeof value.toString === 'function') {
+				value = value.toString();
+			}
+			$(selector).attr(field, value);
+			// console.log('set', node, '.', field, '=', value);
+			*/
+			element.setFieldValue(field, value);
 			return element;
 		} else if (arguments.length > 1) {
-			var value = element.getAttribute(field)
-			console.log('get', field,'=',value);
+			value = element.getFieldValue(field);
+			/*
+			value = $(selector).attr(field);
+			if (element &&
+				element._x3domNode &&
+				element._x3domNode._vf &&
+				element._x3domNode._vf[field] &&
+				element._x3domNode._vf[field].setValueByStr) {
+				value = element._x3domNode._vf[field].setValueByStr(value);
+			}
+			*/
+			// console.log('get', node, '.', field,'=',value);
 			return value;
 		} else {
-			return element;
+			return $(selector)[0];
 		}
+};
+X3DJSON.createProxy = function(action, scriptObject) {
+	var proxy = new Proxy(scriptObject, {
+		get: function(target, property, receiver) {
+			return Reflect.get(target, property, receiver);
+		},
+		set: function(target, property, value, receiver) {
+                 if (typeof action[property] === 'object') {
+                        for (var route in action[property]) {
+                                if (typeof action[property][route] === 'function') {
+                                        action[property][route](property, value);
+   		                     // console.log('Set',property,'to', value);
+                                }
+                        }
+                 }
+		      return Reflect.set(target, property, value, receiver);
+		}
+	});
+	return proxy;
 };
 if (typeof X3DJSON['Script'] === 'undefined') {
 X3DJSON['Script'] = {};
 }
 
-X3DJSON['Script']['DECLx3dconnector_connector1387000_S1'] = function() {
+X3DJSON['Script']['DECLx3dconnector_connector1_S1'] = function() {
 	this.set_startnode = function (value) {
-		X3DJSON.nodeUtil('DECLx3dconnector_connector1387000_S1', 'startnode', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+		this.proxy.startnode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
 	this.startnode_changed = function () {
-		return X3DJSON.nodeUtil('DECLx3dconnector_connector1387000_S1', 'startnode');
+		var value = this.startnode;
+		return value;
 	};
-	this.set_startnode(new SFNode());
+	this.startnode = X3DJSON.nodeUtil('G1');
 	this.set_endnode = function (value) {
-		X3DJSON.nodeUtil('DECLx3dconnector_connector1387000_S1', 'endnode', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+		this.proxy.endnode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
 	this.endnode_changed = function () {
-		return X3DJSON.nodeUtil('DECLx3dconnector_connector1387000_S1', 'endnode');
+		var value = this.endnode;
+		return value;
 	};
-	this.set_endnode(new SFNode());
-	this.set_connectornode = function (value) {
-		X3DJSON.nodeUtil('DECLx3dconnector_connector1387000_S1', 'connectornode', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+	this.endnode = X3DJSON.nodeUtil('G2');
+	this.set_transnode = function (value) {
+		this.proxy.transnode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
-	this.connectornode_changed = function () {
-		return X3DJSON.nodeUtil('DECLx3dconnector_connector1387000_S1', 'connectornode');
+	this.transnode_changed = function () {
+		var value = this.transnode;
+		return value;
 	};
-	this.set_connectornode(new SFNode());
+	this.transnode = X3DJSON.nodeUtil('transC1');
+	this.set_rotscalenode = function (value) {
+		this.proxy.rotscalenode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+	};
+	this.rotscalenode_changed = function () {
+		var value = this.rotscalenode;
+		return value;
+	};
+	this.rotscalenode = X3DJSON.nodeUtil('rotscaleC1');
 	this.set_startpoint = function (value) {
-		X3DJSON.nodeUtil('DECLx3dconnector_connector1387000_S1', 'startpoint', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+		this.proxy.startpoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
 	this.startpoint_changed = function () {
-		return X3DJSON.nodeUtil('DECLx3dconnector_connector1387000_S1', 'startpoint');
+		var value = this.startpoint;
+		return value;
 	};
-	this.set_startpoint(undefined);
+	this.startpoint = undefined;
 	this.set_endpoint = function (value) {
-		X3DJSON.nodeUtil('DECLx3dconnector_connector1387000_S1', 'endpoint', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+		this.proxy.endpoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
 	this.endpoint_changed = function () {
-		return X3DJSON.nodeUtil('DECLx3dconnector_connector1387000_S1', 'endpoint');
+		var value = this.endpoint;
+		return value;
 	};
-	this.set_endpoint(undefined);
+	this.endpoint = undefined;
 
             ecmascript:
-            
+        
 	this.recompute = function (startpoint,endpoint){
-	        if (typeof endpoint === 'undefined') {
-			return;
-		}
-                var dif = endpoint.subtract(startpoint);
-                var dist = dif.length()*.5;
-                var dif2 = dif.multiply(.5);
-                var norm = dif.normalize();
-                var trans = startpoint.add(dif2);
-                this.connectornode_changed().scale = new SFVec3f(1.0,dist,1.0);
-                this.connectornode_changed().translation = trans;
-                this.connectornode_changed().rotation = new SFRotation(new SFVec3f(0.0,1.0,0.0),norm);
-                //console.error('norm='+norm.toString());
-                //console.error('rotation='+rotation.toString());
-            }
-         ;
+	    if (typeof endpoint === 'undefined') {
+		return;
+	    }
+            var dif = endpoint.subtract(startpoint);
+            var dist = dif.length()*0.5;
+            var dif2 = dif.multiply(0.5);
+            var norm = dif.normalize();
+            var transl = startpoint.add(dif2);
+	    if (typeof Quaternion !== 'undefined') {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl,
+			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)
+		    };
+	    } else {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl,
+			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)
+		    };
+	    }
+	}
+	;
+
+	this.recompute_and_route = function (startpoint, endpoint) {
+	      var trafo = this.recompute(startpoint, endpoint);
+	      X3DJSON.nodeUtil('transC1', 'translation',  trafo.translation);
+	      X3DJSON.nodeUtil('rotscaleC1', 'rotation',  trafo.rotation);
+	      X3DJSON.nodeUtil('rotscaleC1', 'scale',  trafo.scale);
+	}
+        ;
 
 	this.initialize = function (){
-                this.recompute(this.startnode_changed().translation,this.endnode_changed().translation);
-            }
-          ;
+            this.recompute_and_route(X3DJSON.nodeUtil('G1', 'translation'),X3DJSON.nodeUtil('G2', 'translation'));
+        }
+        ;
 
 	this.set_startpoint = function (val,t){
-                this.recompute(val,this.endnode_changed().translation);
-            }
-            ;
+            this.recompute_and_route(val,X3DJSON.nodeUtil('G2', 'translation'));
+        }
+        ;
 
 	this.set_endpoint = function (val,t){
-                this.recompute(this.startnode_changed().translation,val);
-            };
+            this.recompute_and_route(X3DJSON.nodeUtil('G1', 'translation'),val);
+        };
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
 
-X3DJSON['Obj']['DECLx3dconnector_connector1387000_S1'] = new X3DJSON['Script']['DECLx3dconnector_connector1387000_S1']();
-if (typeof X3DJSON['Obj']['DECLx3dconnector_connector1387000_S1'].initialize === "function") X3DJSON['Obj']['DECLx3dconnector_connector1387000_S1'].initialize();
+X3DJSON['Obj']['DECLx3dconnector_connector1_S1'] = new X3DJSON['Script']['DECLx3dconnector_connector1_S1']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['DECLx3dconnector_connector1_S1'] === 'undefined') {
+X3DJSON['Obj']['DECLx3dconnector_connector1_S1'] = {};
+}
+
+if (typeof X3DJSON['Obj']['DECLx3dconnector_connector1_S1']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['DECLx3dconnector_connector1_S1']['ACTION'] = {};
+X3DJSON['Obj']['DECLx3dconnector_connector1_S1'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['DECLx3dconnector_connector1_S1']['ACTION'],X3DJSON['Obj']['DECLx3dconnector_connector1_S1']);
+}
+if (typeof X3DJSON['Obj']['DECLx3dconnector_connector1_S1'].initialize === "function") X3DJSON['Obj']['DECLx3dconnector_connector1_S1'].initialize();
+X3DJSON.createProxy = function(action, scriptObject) {
+	var proxy = new Proxy(scriptObject, {
+		get: function(target, property, receiver) {
+			return Reflect.get(target, property, receiver);
+		},
+		set: function(target, property, value, receiver) {
+                 if (typeof action[property] === 'object') {
+                        for (var route in action[property]) {
+                                if (typeof action[property][route] === 'function') {
+                                        action[property][route](property, value);
+   		                     // console.log('Set',property,'to', value);
+                                }
+                        }
+                 }
+		      return Reflect.set(target, property, value, receiver);
+		}
+	});
+	return proxy;
+};
 if (typeof X3DJSON['Script'] === 'undefined') {
 X3DJSON['Script'] = {};
 }
 
-X3DJSON['Script']['DECLx3dconnector_connector2388000_S1'] = function() {
+X3DJSON['Script']['DECLx3dconnector_connector2_S1'] = function() {
 	this.set_startnode = function (value) {
-		X3DJSON.nodeUtil('DECLx3dconnector_connector2388000_S1', 'startnode', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+		this.proxy.startnode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
 	this.startnode_changed = function () {
-		return X3DJSON.nodeUtil('DECLx3dconnector_connector2388000_S1', 'startnode');
+		var value = this.startnode;
+		return value;
 	};
-	this.set_startnode(new SFNode());
+	this.startnode = X3DJSON.nodeUtil('G1');
 	this.set_endnode = function (value) {
-		X3DJSON.nodeUtil('DECLx3dconnector_connector2388000_S1', 'endnode', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+		this.proxy.endnode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
 	this.endnode_changed = function () {
-		return X3DJSON.nodeUtil('DECLx3dconnector_connector2388000_S1', 'endnode');
+		var value = this.endnode;
+		return value;
 	};
-	this.set_endnode(new SFNode());
-	this.set_connectornode = function (value) {
-		X3DJSON.nodeUtil('DECLx3dconnector_connector2388000_S1', 'connectornode', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+	this.endnode = X3DJSON.nodeUtil('G3');
+	this.set_transnode = function (value) {
+		this.proxy.transnode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
-	this.connectornode_changed = function () {
-		return X3DJSON.nodeUtil('DECLx3dconnector_connector2388000_S1', 'connectornode');
+	this.transnode_changed = function () {
+		var value = this.transnode;
+		return value;
 	};
-	this.set_connectornode(new SFNode());
+	this.transnode = X3DJSON.nodeUtil('transC2');
+	this.set_rotscalenode = function (value) {
+		this.proxy.rotscalenode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+	};
+	this.rotscalenode_changed = function () {
+		var value = this.rotscalenode;
+		return value;
+	};
+	this.rotscalenode = X3DJSON.nodeUtil('rotscaleC2');
 	this.set_startpoint = function (value) {
-		X3DJSON.nodeUtil('DECLx3dconnector_connector2388000_S1', 'startpoint', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+		this.proxy.startpoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
 	this.startpoint_changed = function () {
-		return X3DJSON.nodeUtil('DECLx3dconnector_connector2388000_S1', 'startpoint');
+		var value = this.startpoint;
+		return value;
 	};
-	this.set_startpoint(undefined);
+	this.startpoint = undefined;
 	this.set_endpoint = function (value) {
-		X3DJSON.nodeUtil('DECLx3dconnector_connector2388000_S1', 'endpoint', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+		this.proxy.endpoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
 	this.endpoint_changed = function () {
-		return X3DJSON.nodeUtil('DECLx3dconnector_connector2388000_S1', 'endpoint');
+		var value = this.endpoint;
+		return value;
 	};
-	this.set_endpoint(undefined);
+	this.endpoint = undefined;
 
             ecmascript:
-            
+        
 	this.recompute = function (startpoint,endpoint){
-	        if (typeof endpoint === 'undefined') {
-			return;
-		}
-                var dif = endpoint.subtract(startpoint);
-                var dist = dif.length()*.5;
-                var dif2 = dif.multiply(.5);
-                var norm = dif.normalize();
-                var trans = startpoint.add(dif2);
-                this.connectornode_changed().scale = new SFVec3f(1.0,dist,1.0);
-                this.connectornode_changed().translation = trans;
-                this.connectornode_changed().rotation = new SFRotation(new SFVec3f(0.0,1.0,0.0),norm);
-                //console.error('norm='+norm.toString());
-                //console.error('rotation='+rotation.toString());
-            }
-         ;
+	    if (typeof endpoint === 'undefined') {
+		return;
+	    }
+            var dif = endpoint.subtract(startpoint);
+            var dist = dif.length()*0.5;
+            var dif2 = dif.multiply(0.5);
+            var norm = dif.normalize();
+            var transl = startpoint.add(dif2);
+	    if (typeof Quaternion !== 'undefined') {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl,
+			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)
+		    };
+	    } else {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl,
+			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)
+		    };
+	    }
+	}
+	;
+
+	this.recompute_and_route = function (startpoint, endpoint) {
+	      var trafo = this.recompute(startpoint, endpoint);
+	      X3DJSON.nodeUtil('transC2', 'translation',  trafo.translation);
+	      X3DJSON.nodeUtil('rotscaleC2', 'rotation',  trafo.rotation);
+	      X3DJSON.nodeUtil('rotscaleC2', 'scale',  trafo.scale);
+	}
+        ;
 
 	this.initialize = function (){
-                this.recompute(this.startnode_changed().translation,this.endnode_changed().translation);
-            }
-          ;
+            this.recompute_and_route(X3DJSON.nodeUtil('G1', 'translation'),X3DJSON.nodeUtil('G3', 'translation'));
+        }
+        ;
 
 	this.set_startpoint = function (val,t){
-                this.recompute(val,this.endnode_changed().translation);
-            }
-            ;
+            this.recompute_and_route(val,X3DJSON.nodeUtil('G3', 'translation'));
+        }
+        ;
 
 	this.set_endpoint = function (val,t){
-                this.recompute(this.startnode_changed().translation,val);
-            };
+            this.recompute_and_route(X3DJSON.nodeUtil('G1', 'translation'),val);
+        };
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
 
-X3DJSON['Obj']['DECLx3dconnector_connector2388000_S1'] = new X3DJSON['Script']['DECLx3dconnector_connector2388000_S1']();
-if (typeof X3DJSON['Obj']['DECLx3dconnector_connector2388000_S1'].initialize === "function") X3DJSON['Obj']['DECLx3dconnector_connector2388000_S1'].initialize();
+X3DJSON['Obj']['DECLx3dconnector_connector2_S1'] = new X3DJSON['Script']['DECLx3dconnector_connector2_S1']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['DECLx3dconnector_connector2_S1'] === 'undefined') {
+X3DJSON['Obj']['DECLx3dconnector_connector2_S1'] = {};
+}
+
+if (typeof X3DJSON['Obj']['DECLx3dconnector_connector2_S1']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['DECLx3dconnector_connector2_S1']['ACTION'] = {};
+X3DJSON['Obj']['DECLx3dconnector_connector2_S1'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['DECLx3dconnector_connector2_S1']['ACTION'],X3DJSON['Obj']['DECLx3dconnector_connector2_S1']);
+}
+if (typeof X3DJSON['Obj']['DECLx3dconnector_connector2_S1'].initialize === "function") X3DJSON['Obj']['DECLx3dconnector_connector2_S1'].initialize();
+X3DJSON.createProxy = function(action, scriptObject) {
+	var proxy = new Proxy(scriptObject, {
+		get: function(target, property, receiver) {
+			return Reflect.get(target, property, receiver);
+		},
+		set: function(target, property, value, receiver) {
+                 if (typeof action[property] === 'object') {
+                        for (var route in action[property]) {
+                                if (typeof action[property][route] === 'function') {
+                                        action[property][route](property, value);
+   		                     // console.log('Set',property,'to', value);
+                                }
+                        }
+                 }
+		      return Reflect.set(target, property, value, receiver);
+		}
+	});
+	return proxy;
+};
 if (typeof X3DJSON['Script'] === 'undefined') {
 X3DJSON['Script'] = {};
 }
 
-X3DJSON['Script']['DECLx3dconnector_connector3389000_S1'] = function() {
+X3DJSON['Script']['DECLx3dconnector_connector3_S1'] = function() {
 	this.set_startnode = function (value) {
-		X3DJSON.nodeUtil('DECLx3dconnector_connector3389000_S1', 'startnode', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+		this.proxy.startnode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
 	this.startnode_changed = function () {
-		return X3DJSON.nodeUtil('DECLx3dconnector_connector3389000_S1', 'startnode');
+		var value = this.startnode;
+		return value;
 	};
-	this.set_startnode(new SFNode());
+	this.startnode = X3DJSON.nodeUtil('G1');
 	this.set_endnode = function (value) {
-		X3DJSON.nodeUtil('DECLx3dconnector_connector3389000_S1', 'endnode', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+		this.proxy.endnode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
 	this.endnode_changed = function () {
-		return X3DJSON.nodeUtil('DECLx3dconnector_connector3389000_S1', 'endnode');
+		var value = this.endnode;
+		return value;
 	};
-	this.set_endnode(new SFNode());
-	this.set_connectornode = function (value) {
-		X3DJSON.nodeUtil('DECLx3dconnector_connector3389000_S1', 'connectornode', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+	this.endnode = X3DJSON.nodeUtil('G4');
+	this.set_transnode = function (value) {
+		this.proxy.transnode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
-	this.connectornode_changed = function () {
-		return X3DJSON.nodeUtil('DECLx3dconnector_connector3389000_S1', 'connectornode');
+	this.transnode_changed = function () {
+		var value = this.transnode;
+		return value;
 	};
-	this.set_connectornode(new SFNode());
+	this.transnode = X3DJSON.nodeUtil('transC3');
+	this.set_rotscalenode = function (value) {
+		this.proxy.rotscalenode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+	};
+	this.rotscalenode_changed = function () {
+		var value = this.rotscalenode;
+		return value;
+	};
+	this.rotscalenode = X3DJSON.nodeUtil('rotscaleC3');
 	this.set_startpoint = function (value) {
-		X3DJSON.nodeUtil('DECLx3dconnector_connector3389000_S1', 'startpoint', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+		this.proxy.startpoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
 	this.startpoint_changed = function () {
-		return X3DJSON.nodeUtil('DECLx3dconnector_connector3389000_S1', 'startpoint');
+		var value = this.startpoint;
+		return value;
 	};
-	this.set_startpoint(undefined);
+	this.startpoint = undefined;
 	this.set_endpoint = function (value) {
-		X3DJSON.nodeUtil('DECLx3dconnector_connector3389000_S1', 'endpoint', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+		this.proxy.endpoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
 	this.endpoint_changed = function () {
-		return X3DJSON.nodeUtil('DECLx3dconnector_connector3389000_S1', 'endpoint');
+		var value = this.endpoint;
+		return value;
 	};
-	this.set_endpoint(undefined);
+	this.endpoint = undefined;
 
             ecmascript:
-            
+        
 	this.recompute = function (startpoint,endpoint){
-	        if (typeof endpoint === 'undefined') {
-			return;
-		}
-                var dif = endpoint.subtract(startpoint);
-                var dist = dif.length()*.5;
-                var dif2 = dif.multiply(.5);
-                var norm = dif.normalize();
-                var trans = startpoint.add(dif2);
-                this.connectornode_changed().scale = new SFVec3f(1.0,dist,1.0);
-                this.connectornode_changed().translation = trans;
-                this.connectornode_changed().rotation = new SFRotation(new SFVec3f(0.0,1.0,0.0),norm);
-                //console.error('norm='+norm.toString());
-                //console.error('rotation='+rotation.toString());
-            }
-         ;
+	    if (typeof endpoint === 'undefined') {
+		return;
+	    }
+            var dif = endpoint.subtract(startpoint);
+            var dist = dif.length()*0.5;
+            var dif2 = dif.multiply(0.5);
+            var norm = dif.normalize();
+            var transl = startpoint.add(dif2);
+	    if (typeof Quaternion !== 'undefined') {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl,
+			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)
+		    };
+	    } else {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl,
+			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)
+		    };
+	    }
+	}
+	;
+
+	this.recompute_and_route = function (startpoint, endpoint) {
+	      var trafo = this.recompute(startpoint, endpoint);
+	      X3DJSON.nodeUtil('transC3', 'translation',  trafo.translation);
+	      X3DJSON.nodeUtil('rotscaleC3', 'rotation',  trafo.rotation);
+	      X3DJSON.nodeUtil('rotscaleC3', 'scale',  trafo.scale);
+	}
+        ;
 
 	this.initialize = function (){
-                this.recompute(this.startnode_changed().translation,this.endnode_changed().translation);
-            }
-          ;
+            this.recompute_and_route(X3DJSON.nodeUtil('G1', 'translation'),X3DJSON.nodeUtil('G4', 'translation'));
+        }
+        ;
 
 	this.set_startpoint = function (val,t){
-                this.recompute(val,this.endnode_changed().translation);
-            }
-            ;
+            this.recompute_and_route(val,X3DJSON.nodeUtil('G4', 'translation'));
+        }
+        ;
 
 	this.set_endpoint = function (val,t){
-                this.recompute(this.startnode_changed().translation,val);
-            };
+            this.recompute_and_route(X3DJSON.nodeUtil('G1', 'translation'),val);
+        };
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
 
-X3DJSON['Obj']['DECLx3dconnector_connector3389000_S1'] = new X3DJSON['Script']['DECLx3dconnector_connector3389000_S1']();
-if (typeof X3DJSON['Obj']['DECLx3dconnector_connector3389000_S1'].initialize === "function") X3DJSON['Obj']['DECLx3dconnector_connector3389000_S1'].initialize();
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
+X3DJSON['Obj']['DECLx3dconnector_connector3_S1'] = new X3DJSON['Script']['DECLx3dconnector_connector3_S1']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['ROUTE']['PS1'] === 'undefined') {
-X3DJSON['ROUTE']['PS1'] = {};
-}
-if (typeof X3DJSON['ROUTE']['PS1']['translation_changed'] === 'undefined') {
-X3DJSON['ROUTE']['PS1']['translation_changed'] = {};
-}
-if (typeof X3DJSON['ROUTE']['PS1']['translation_changed']['G1'] === 'undefined') {
-X3DJSON['ROUTE']['PS1']['translation_changed']['G1'] = {};
-}
-if (typeof X3DJSON['ROUTE']['PS1']['translation_changed']['G1']['set_translation'] === 'undefined') {
-X3DJSON['ROUTE']['PS1']['translation_changed']['G1']['set_translation'] = {};
+if (typeof X3DJSON['Obj']['DECLx3dconnector_connector3_S1'] === 'undefined') {
+X3DJSON['Obj']['DECLx3dconnector_connector3_S1'] = {};
 }
 
-X3DJSON['ROUTE']['PS1']['translation_changed']['G1']['set_translation']['FROM'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'translation_changed');
-			X3DJSON.nodeUtil('G1','set_translation',X3DJSON.nodeUtil('PS1','translation_changed'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['translation_changed'] };
-X3DJSON['ROUTE']['PS1']['translation_changed']['G1']['set_translation']['FROM'].observe(X3DJSON.nodeUtil('PS1'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['PS1'] === 'undefined') {
-X3DJSON['ROUTE']['PS1'] = {};
-}
-if (typeof X3DJSON['ROUTE']['PS1']['translation_changed'] === 'undefined') {
-X3DJSON['ROUTE']['PS1']['translation_changed'] = {};
-}
-if (typeof X3DJSON['ROUTE']['PS1']['translation_changed']['G1'] === 'undefined') {
-X3DJSON['ROUTE']['PS1']['translation_changed']['G1'] = {};
-}
-if (typeof X3DJSON['ROUTE']['PS1']['translation_changed']['G1']['set_translation'] === 'undefined') {
-X3DJSON['ROUTE']['PS1']['translation_changed']['G1']['set_translation'] = {};
-}
-
-X3DJSON['ROUTE']['PS1']['translation_changed']['G1']['set_translation']['TO'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'set_translation');
-			if (typeof X3DJSON['Obj']['G1'].set_translation === "function") X3DJSON['Obj']['G1'].set_translation(X3DJSON.nodeUtil('G1','set_translation'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['set_translation'] };
-X3DJSON['ROUTE']['PS1']['translation_changed']['G1']['set_translation']['TO'].observe(X3DJSON.nodeUtil('G1'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['PS2'] === 'undefined') {
-X3DJSON['ROUTE']['PS2'] = {};
-}
-if (typeof X3DJSON['ROUTE']['PS2']['translation_changed'] === 'undefined') {
-X3DJSON['ROUTE']['PS2']['translation_changed'] = {};
-}
-if (typeof X3DJSON['ROUTE']['PS2']['translation_changed']['G2'] === 'undefined') {
-X3DJSON['ROUTE']['PS2']['translation_changed']['G2'] = {};
-}
-if (typeof X3DJSON['ROUTE']['PS2']['translation_changed']['G2']['set_translation'] === 'undefined') {
-X3DJSON['ROUTE']['PS2']['translation_changed']['G2']['set_translation'] = {};
-}
-
-X3DJSON['ROUTE']['PS2']['translation_changed']['G2']['set_translation']['FROM'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'translation_changed');
-			X3DJSON.nodeUtil('G2','set_translation',X3DJSON.nodeUtil('PS2','translation_changed'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['translation_changed'] };
-X3DJSON['ROUTE']['PS2']['translation_changed']['G2']['set_translation']['FROM'].observe(X3DJSON.nodeUtil('PS2'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['PS2'] === 'undefined') {
-X3DJSON['ROUTE']['PS2'] = {};
-}
-if (typeof X3DJSON['ROUTE']['PS2']['translation_changed'] === 'undefined') {
-X3DJSON['ROUTE']['PS2']['translation_changed'] = {};
-}
-if (typeof X3DJSON['ROUTE']['PS2']['translation_changed']['G2'] === 'undefined') {
-X3DJSON['ROUTE']['PS2']['translation_changed']['G2'] = {};
-}
-if (typeof X3DJSON['ROUTE']['PS2']['translation_changed']['G2']['set_translation'] === 'undefined') {
-X3DJSON['ROUTE']['PS2']['translation_changed']['G2']['set_translation'] = {};
-}
-
-X3DJSON['ROUTE']['PS2']['translation_changed']['G2']['set_translation']['TO'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'set_translation');
-			if (typeof X3DJSON['Obj']['G2'].set_translation === "function") X3DJSON['Obj']['G2'].set_translation(X3DJSON.nodeUtil('G2','set_translation'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['set_translation'] };
-X3DJSON['ROUTE']['PS2']['translation_changed']['G2']['set_translation']['TO'].observe(X3DJSON.nodeUtil('G2'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['PS3'] === 'undefined') {
-X3DJSON['ROUTE']['PS3'] = {};
-}
-if (typeof X3DJSON['ROUTE']['PS3']['translation_changed'] === 'undefined') {
-X3DJSON['ROUTE']['PS3']['translation_changed'] = {};
-}
-if (typeof X3DJSON['ROUTE']['PS3']['translation_changed']['G3'] === 'undefined') {
-X3DJSON['ROUTE']['PS3']['translation_changed']['G3'] = {};
-}
-if (typeof X3DJSON['ROUTE']['PS3']['translation_changed']['G3']['set_translation'] === 'undefined') {
-X3DJSON['ROUTE']['PS3']['translation_changed']['G3']['set_translation'] = {};
-}
-
-X3DJSON['ROUTE']['PS3']['translation_changed']['G3']['set_translation']['FROM'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'translation_changed');
-			X3DJSON.nodeUtil('G3','set_translation',X3DJSON.nodeUtil('PS3','translation_changed'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['translation_changed'] };
-X3DJSON['ROUTE']['PS3']['translation_changed']['G3']['set_translation']['FROM'].observe(X3DJSON.nodeUtil('PS3'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['PS3'] === 'undefined') {
-X3DJSON['ROUTE']['PS3'] = {};
-}
-if (typeof X3DJSON['ROUTE']['PS3']['translation_changed'] === 'undefined') {
-X3DJSON['ROUTE']['PS3']['translation_changed'] = {};
-}
-if (typeof X3DJSON['ROUTE']['PS3']['translation_changed']['G3'] === 'undefined') {
-X3DJSON['ROUTE']['PS3']['translation_changed']['G3'] = {};
-}
-if (typeof X3DJSON['ROUTE']['PS3']['translation_changed']['G3']['set_translation'] === 'undefined') {
-X3DJSON['ROUTE']['PS3']['translation_changed']['G3']['set_translation'] = {};
-}
-
-X3DJSON['ROUTE']['PS3']['translation_changed']['G3']['set_translation']['TO'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'set_translation');
-			if (typeof X3DJSON['Obj']['G3'].set_translation === "function") X3DJSON['Obj']['G3'].set_translation(X3DJSON.nodeUtil('G3','set_translation'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['set_translation'] };
-X3DJSON['ROUTE']['PS3']['translation_changed']['G3']['set_translation']['TO'].observe(X3DJSON.nodeUtil('G3'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['PS4'] === 'undefined') {
-X3DJSON['ROUTE']['PS4'] = {};
-}
-if (typeof X3DJSON['ROUTE']['PS4']['translation_changed'] === 'undefined') {
-X3DJSON['ROUTE']['PS4']['translation_changed'] = {};
-}
-if (typeof X3DJSON['ROUTE']['PS4']['translation_changed']['G4'] === 'undefined') {
-X3DJSON['ROUTE']['PS4']['translation_changed']['G4'] = {};
-}
-if (typeof X3DJSON['ROUTE']['PS4']['translation_changed']['G4']['set_translation'] === 'undefined') {
-X3DJSON['ROUTE']['PS4']['translation_changed']['G4']['set_translation'] = {};
-}
-
-X3DJSON['ROUTE']['PS4']['translation_changed']['G4']['set_translation']['FROM'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'translation_changed');
-			X3DJSON.nodeUtil('G4','set_translation',X3DJSON.nodeUtil('PS4','translation_changed'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['translation_changed'] };
-X3DJSON['ROUTE']['PS4']['translation_changed']['G4']['set_translation']['FROM'].observe(X3DJSON.nodeUtil('PS4'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['PS4'] === 'undefined') {
-X3DJSON['ROUTE']['PS4'] = {};
-}
-if (typeof X3DJSON['ROUTE']['PS4']['translation_changed'] === 'undefined') {
-X3DJSON['ROUTE']['PS4']['translation_changed'] = {};
-}
-if (typeof X3DJSON['ROUTE']['PS4']['translation_changed']['G4'] === 'undefined') {
-X3DJSON['ROUTE']['PS4']['translation_changed']['G4'] = {};
-}
-if (typeof X3DJSON['ROUTE']['PS4']['translation_changed']['G4']['set_translation'] === 'undefined') {
-X3DJSON['ROUTE']['PS4']['translation_changed']['G4']['set_translation'] = {};
-}
-
-X3DJSON['ROUTE']['PS4']['translation_changed']['G4']['set_translation']['TO'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'set_translation');
-			if (typeof X3DJSON['Obj']['G4'].set_translation === "function") X3DJSON['Obj']['G4'].set_translation(X3DJSON.nodeUtil('G4','set_translation'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['set_translation'] };
-X3DJSON['ROUTE']['PS4']['translation_changed']['G4']['set_translation']['TO'].observe(X3DJSON.nodeUtil('G4'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['G1'] === 'undefined') {
-X3DJSON['ROUTE']['G1'] = {};
-}
-if (typeof X3DJSON['ROUTE']['G1']['translation_changed'] === 'undefined') {
-X3DJSON['ROUTE']['G1']['translation_changed'] = {};
-}
-if (typeof X3DJSON['ROUTE']['G1']['translation_changed']['DECLx3dconnector_connector1_DECLx3dconnector_connector1_S1'] === 'undefined') {
-X3DJSON['ROUTE']['G1']['translation_changed']['DECLx3dconnector_connector1_DECLx3dconnector_connector1_S1'] = {};
-}
-if (typeof X3DJSON['ROUTE']['G1']['translation_changed']['DECLx3dconnector_connector1_DECLx3dconnector_connector1_S1']['set_startpoint'] === 'undefined') {
-X3DJSON['ROUTE']['G1']['translation_changed']['DECLx3dconnector_connector1_DECLx3dconnector_connector1_S1']['set_startpoint'] = {};
-}
-
-X3DJSON['ROUTE']['G1']['translation_changed']['DECLx3dconnector_connector1_DECLx3dconnector_connector1_S1']['set_startpoint']['FROM'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'translation_changed');
-			X3DJSON.nodeUtil('DECLx3dconnector_connector1_DECLx3dconnector_connector1_S1','set_startpoint',X3DJSON.nodeUtil('G1','translation_changed'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['translation_changed'] };
-X3DJSON['ROUTE']['G1']['translation_changed']['DECLx3dconnector_connector1_DECLx3dconnector_connector1_S1']['set_startpoint']['FROM'].observe(X3DJSON.nodeUtil('G1'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['G1'] === 'undefined') {
-X3DJSON['ROUTE']['G1'] = {};
-}
-if (typeof X3DJSON['ROUTE']['G1']['translation_changed'] === 'undefined') {
-X3DJSON['ROUTE']['G1']['translation_changed'] = {};
-}
-if (typeof X3DJSON['ROUTE']['G1']['translation_changed']['DECLx3dconnector_connector1_DECLx3dconnector_connector1_S1'] === 'undefined') {
-X3DJSON['ROUTE']['G1']['translation_changed']['DECLx3dconnector_connector1_DECLx3dconnector_connector1_S1'] = {};
-}
-if (typeof X3DJSON['ROUTE']['G1']['translation_changed']['DECLx3dconnector_connector1_DECLx3dconnector_connector1_S1']['set_startpoint'] === 'undefined') {
-X3DJSON['ROUTE']['G1']['translation_changed']['DECLx3dconnector_connector1_DECLx3dconnector_connector1_S1']['set_startpoint'] = {};
-}
-
-X3DJSON['ROUTE']['G1']['translation_changed']['DECLx3dconnector_connector1_DECLx3dconnector_connector1_S1']['set_startpoint']['TO'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'set_startpoint');
-			if (typeof X3DJSON['Obj']['DECLx3dconnector_connector1_DECLx3dconnector_connector1_S1'].set_startpoint === "function") X3DJSON['Obj']['DECLx3dconnector_connector1_DECLx3dconnector_connector1_S1'].set_startpoint(X3DJSON.nodeUtil('DECLx3dconnector_connector1_DECLx3dconnector_connector1_S1','set_startpoint'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['set_startpoint'] };
-X3DJSON['ROUTE']['G1']['translation_changed']['DECLx3dconnector_connector1_DECLx3dconnector_connector1_S1']['set_startpoint']['TO'].observe(X3DJSON.nodeUtil('DECLx3dconnector_connector1_DECLx3dconnector_connector1_S1'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['G2'] === 'undefined') {
-X3DJSON['ROUTE']['G2'] = {};
-}
-if (typeof X3DJSON['ROUTE']['G2']['translation_changed'] === 'undefined') {
-X3DJSON['ROUTE']['G2']['translation_changed'] = {};
-}
-if (typeof X3DJSON['ROUTE']['G2']['translation_changed']['DECLx3dconnector_connector1_DECLx3dconnector_connector1_S1'] === 'undefined') {
-X3DJSON['ROUTE']['G2']['translation_changed']['DECLx3dconnector_connector1_DECLx3dconnector_connector1_S1'] = {};
-}
-if (typeof X3DJSON['ROUTE']['G2']['translation_changed']['DECLx3dconnector_connector1_DECLx3dconnector_connector1_S1']['set_endpoint'] === 'undefined') {
-X3DJSON['ROUTE']['G2']['translation_changed']['DECLx3dconnector_connector1_DECLx3dconnector_connector1_S1']['set_endpoint'] = {};
-}
-
-X3DJSON['ROUTE']['G2']['translation_changed']['DECLx3dconnector_connector1_DECLx3dconnector_connector1_S1']['set_endpoint']['FROM'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'translation_changed');
-			X3DJSON.nodeUtil('DECLx3dconnector_connector1_DECLx3dconnector_connector1_S1','set_endpoint',X3DJSON.nodeUtil('G2','translation_changed'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['translation_changed'] };
-X3DJSON['ROUTE']['G2']['translation_changed']['DECLx3dconnector_connector1_DECLx3dconnector_connector1_S1']['set_endpoint']['FROM'].observe(X3DJSON.nodeUtil('G2'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['G2'] === 'undefined') {
-X3DJSON['ROUTE']['G2'] = {};
-}
-if (typeof X3DJSON['ROUTE']['G2']['translation_changed'] === 'undefined') {
-X3DJSON['ROUTE']['G2']['translation_changed'] = {};
-}
-if (typeof X3DJSON['ROUTE']['G2']['translation_changed']['DECLx3dconnector_connector1_DECLx3dconnector_connector1_S1'] === 'undefined') {
-X3DJSON['ROUTE']['G2']['translation_changed']['DECLx3dconnector_connector1_DECLx3dconnector_connector1_S1'] = {};
-}
-if (typeof X3DJSON['ROUTE']['G2']['translation_changed']['DECLx3dconnector_connector1_DECLx3dconnector_connector1_S1']['set_endpoint'] === 'undefined') {
-X3DJSON['ROUTE']['G2']['translation_changed']['DECLx3dconnector_connector1_DECLx3dconnector_connector1_S1']['set_endpoint'] = {};
-}
-
-X3DJSON['ROUTE']['G2']['translation_changed']['DECLx3dconnector_connector1_DECLx3dconnector_connector1_S1']['set_endpoint']['TO'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'set_endpoint');
-			if (typeof X3DJSON['Obj']['DECLx3dconnector_connector1_DECLx3dconnector_connector1_S1'].set_endpoint === "function") X3DJSON['Obj']['DECLx3dconnector_connector1_DECLx3dconnector_connector1_S1'].set_endpoint(X3DJSON.nodeUtil('DECLx3dconnector_connector1_DECLx3dconnector_connector1_S1','set_endpoint'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['set_endpoint'] };
-X3DJSON['ROUTE']['G2']['translation_changed']['DECLx3dconnector_connector1_DECLx3dconnector_connector1_S1']['set_endpoint']['TO'].observe(X3DJSON.nodeUtil('DECLx3dconnector_connector1_DECLx3dconnector_connector1_S1'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['G1'] === 'undefined') {
-X3DJSON['ROUTE']['G1'] = {};
-}
-if (typeof X3DJSON['ROUTE']['G1']['translation_changed'] === 'undefined') {
-X3DJSON['ROUTE']['G1']['translation_changed'] = {};
-}
-if (typeof X3DJSON['ROUTE']['G1']['translation_changed']['DECLx3dconnector_connector2_DECLx3dconnector_connector2_S1'] === 'undefined') {
-X3DJSON['ROUTE']['G1']['translation_changed']['DECLx3dconnector_connector2_DECLx3dconnector_connector2_S1'] = {};
-}
-if (typeof X3DJSON['ROUTE']['G1']['translation_changed']['DECLx3dconnector_connector2_DECLx3dconnector_connector2_S1']['set_startpoint'] === 'undefined') {
-X3DJSON['ROUTE']['G1']['translation_changed']['DECLx3dconnector_connector2_DECLx3dconnector_connector2_S1']['set_startpoint'] = {};
-}
-
-X3DJSON['ROUTE']['G1']['translation_changed']['DECLx3dconnector_connector2_DECLx3dconnector_connector2_S1']['set_startpoint']['FROM'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'translation_changed');
-			X3DJSON.nodeUtil('DECLx3dconnector_connector2_DECLx3dconnector_connector2_S1','set_startpoint',X3DJSON.nodeUtil('G1','translation_changed'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['translation_changed'] };
-X3DJSON['ROUTE']['G1']['translation_changed']['DECLx3dconnector_connector2_DECLx3dconnector_connector2_S1']['set_startpoint']['FROM'].observe(X3DJSON.nodeUtil('G1'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['G1'] === 'undefined') {
-X3DJSON['ROUTE']['G1'] = {};
-}
-if (typeof X3DJSON['ROUTE']['G1']['translation_changed'] === 'undefined') {
-X3DJSON['ROUTE']['G1']['translation_changed'] = {};
-}
-if (typeof X3DJSON['ROUTE']['G1']['translation_changed']['DECLx3dconnector_connector2_DECLx3dconnector_connector2_S1'] === 'undefined') {
-X3DJSON['ROUTE']['G1']['translation_changed']['DECLx3dconnector_connector2_DECLx3dconnector_connector2_S1'] = {};
-}
-if (typeof X3DJSON['ROUTE']['G1']['translation_changed']['DECLx3dconnector_connector2_DECLx3dconnector_connector2_S1']['set_startpoint'] === 'undefined') {
-X3DJSON['ROUTE']['G1']['translation_changed']['DECLx3dconnector_connector2_DECLx3dconnector_connector2_S1']['set_startpoint'] = {};
-}
-
-X3DJSON['ROUTE']['G1']['translation_changed']['DECLx3dconnector_connector2_DECLx3dconnector_connector2_S1']['set_startpoint']['TO'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'set_startpoint');
-			if (typeof X3DJSON['Obj']['DECLx3dconnector_connector2_DECLx3dconnector_connector2_S1'].set_startpoint === "function") X3DJSON['Obj']['DECLx3dconnector_connector2_DECLx3dconnector_connector2_S1'].set_startpoint(X3DJSON.nodeUtil('DECLx3dconnector_connector2_DECLx3dconnector_connector2_S1','set_startpoint'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['set_startpoint'] };
-X3DJSON['ROUTE']['G1']['translation_changed']['DECLx3dconnector_connector2_DECLx3dconnector_connector2_S1']['set_startpoint']['TO'].observe(X3DJSON.nodeUtil('DECLx3dconnector_connector2_DECLx3dconnector_connector2_S1'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['G3'] === 'undefined') {
-X3DJSON['ROUTE']['G3'] = {};
-}
-if (typeof X3DJSON['ROUTE']['G3']['translation_changed'] === 'undefined') {
-X3DJSON['ROUTE']['G3']['translation_changed'] = {};
-}
-if (typeof X3DJSON['ROUTE']['G3']['translation_changed']['DECLx3dconnector_connector2_DECLx3dconnector_connector2_S1'] === 'undefined') {
-X3DJSON['ROUTE']['G3']['translation_changed']['DECLx3dconnector_connector2_DECLx3dconnector_connector2_S1'] = {};
-}
-if (typeof X3DJSON['ROUTE']['G3']['translation_changed']['DECLx3dconnector_connector2_DECLx3dconnector_connector2_S1']['set_endpoint'] === 'undefined') {
-X3DJSON['ROUTE']['G3']['translation_changed']['DECLx3dconnector_connector2_DECLx3dconnector_connector2_S1']['set_endpoint'] = {};
-}
-
-X3DJSON['ROUTE']['G3']['translation_changed']['DECLx3dconnector_connector2_DECLx3dconnector_connector2_S1']['set_endpoint']['FROM'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'translation_changed');
-			X3DJSON.nodeUtil('DECLx3dconnector_connector2_DECLx3dconnector_connector2_S1','set_endpoint',X3DJSON.nodeUtil('G3','translation_changed'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['translation_changed'] };
-X3DJSON['ROUTE']['G3']['translation_changed']['DECLx3dconnector_connector2_DECLx3dconnector_connector2_S1']['set_endpoint']['FROM'].observe(X3DJSON.nodeUtil('G3'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['G3'] === 'undefined') {
-X3DJSON['ROUTE']['G3'] = {};
-}
-if (typeof X3DJSON['ROUTE']['G3']['translation_changed'] === 'undefined') {
-X3DJSON['ROUTE']['G3']['translation_changed'] = {};
-}
-if (typeof X3DJSON['ROUTE']['G3']['translation_changed']['DECLx3dconnector_connector2_DECLx3dconnector_connector2_S1'] === 'undefined') {
-X3DJSON['ROUTE']['G3']['translation_changed']['DECLx3dconnector_connector2_DECLx3dconnector_connector2_S1'] = {};
-}
-if (typeof X3DJSON['ROUTE']['G3']['translation_changed']['DECLx3dconnector_connector2_DECLx3dconnector_connector2_S1']['set_endpoint'] === 'undefined') {
-X3DJSON['ROUTE']['G3']['translation_changed']['DECLx3dconnector_connector2_DECLx3dconnector_connector2_S1']['set_endpoint'] = {};
-}
-
-X3DJSON['ROUTE']['G3']['translation_changed']['DECLx3dconnector_connector2_DECLx3dconnector_connector2_S1']['set_endpoint']['TO'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'set_endpoint');
-			if (typeof X3DJSON['Obj']['DECLx3dconnector_connector2_DECLx3dconnector_connector2_S1'].set_endpoint === "function") X3DJSON['Obj']['DECLx3dconnector_connector2_DECLx3dconnector_connector2_S1'].set_endpoint(X3DJSON.nodeUtil('DECLx3dconnector_connector2_DECLx3dconnector_connector2_S1','set_endpoint'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['set_endpoint'] };
-X3DJSON['ROUTE']['G3']['translation_changed']['DECLx3dconnector_connector2_DECLx3dconnector_connector2_S1']['set_endpoint']['TO'].observe(X3DJSON.nodeUtil('DECLx3dconnector_connector2_DECLx3dconnector_connector2_S1'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['G1'] === 'undefined') {
-X3DJSON['ROUTE']['G1'] = {};
-}
-if (typeof X3DJSON['ROUTE']['G1']['translation_changed'] === 'undefined') {
-X3DJSON['ROUTE']['G1']['translation_changed'] = {};
-}
-if (typeof X3DJSON['ROUTE']['G1']['translation_changed']['DECLx3dconnector_connector3_DECLx3dconnector_connector3_S1'] === 'undefined') {
-X3DJSON['ROUTE']['G1']['translation_changed']['DECLx3dconnector_connector3_DECLx3dconnector_connector3_S1'] = {};
-}
-if (typeof X3DJSON['ROUTE']['G1']['translation_changed']['DECLx3dconnector_connector3_DECLx3dconnector_connector3_S1']['set_startpoint'] === 'undefined') {
-X3DJSON['ROUTE']['G1']['translation_changed']['DECLx3dconnector_connector3_DECLx3dconnector_connector3_S1']['set_startpoint'] = {};
-}
-
-X3DJSON['ROUTE']['G1']['translation_changed']['DECLx3dconnector_connector3_DECLx3dconnector_connector3_S1']['set_startpoint']['FROM'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'translation_changed');
-			X3DJSON.nodeUtil('DECLx3dconnector_connector3_DECLx3dconnector_connector3_S1','set_startpoint',X3DJSON.nodeUtil('G1','translation_changed'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['translation_changed'] };
-X3DJSON['ROUTE']['G1']['translation_changed']['DECLx3dconnector_connector3_DECLx3dconnector_connector3_S1']['set_startpoint']['FROM'].observe(X3DJSON.nodeUtil('G1'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['G1'] === 'undefined') {
-X3DJSON['ROUTE']['G1'] = {};
-}
-if (typeof X3DJSON['ROUTE']['G1']['translation_changed'] === 'undefined') {
-X3DJSON['ROUTE']['G1']['translation_changed'] = {};
-}
-if (typeof X3DJSON['ROUTE']['G1']['translation_changed']['DECLx3dconnector_connector3_DECLx3dconnector_connector3_S1'] === 'undefined') {
-X3DJSON['ROUTE']['G1']['translation_changed']['DECLx3dconnector_connector3_DECLx3dconnector_connector3_S1'] = {};
-}
-if (typeof X3DJSON['ROUTE']['G1']['translation_changed']['DECLx3dconnector_connector3_DECLx3dconnector_connector3_S1']['set_startpoint'] === 'undefined') {
-X3DJSON['ROUTE']['G1']['translation_changed']['DECLx3dconnector_connector3_DECLx3dconnector_connector3_S1']['set_startpoint'] = {};
-}
-
-X3DJSON['ROUTE']['G1']['translation_changed']['DECLx3dconnector_connector3_DECLx3dconnector_connector3_S1']['set_startpoint']['TO'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'set_startpoint');
-			if (typeof X3DJSON['Obj']['DECLx3dconnector_connector3_DECLx3dconnector_connector3_S1'].set_startpoint === "function") X3DJSON['Obj']['DECLx3dconnector_connector3_DECLx3dconnector_connector3_S1'].set_startpoint(X3DJSON.nodeUtil('DECLx3dconnector_connector3_DECLx3dconnector_connector3_S1','set_startpoint'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['set_startpoint'] };
-X3DJSON['ROUTE']['G1']['translation_changed']['DECLx3dconnector_connector3_DECLx3dconnector_connector3_S1']['set_startpoint']['TO'].observe(X3DJSON.nodeUtil('DECLx3dconnector_connector3_DECLx3dconnector_connector3_S1'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['G4'] === 'undefined') {
-X3DJSON['ROUTE']['G4'] = {};
-}
-if (typeof X3DJSON['ROUTE']['G4']['translation_changed'] === 'undefined') {
-X3DJSON['ROUTE']['G4']['translation_changed'] = {};
-}
-if (typeof X3DJSON['ROUTE']['G4']['translation_changed']['DECLx3dconnector_connector3_DECLx3dconnector_connector3_S1'] === 'undefined') {
-X3DJSON['ROUTE']['G4']['translation_changed']['DECLx3dconnector_connector3_DECLx3dconnector_connector3_S1'] = {};
-}
-if (typeof X3DJSON['ROUTE']['G4']['translation_changed']['DECLx3dconnector_connector3_DECLx3dconnector_connector3_S1']['set_endpoint'] === 'undefined') {
-X3DJSON['ROUTE']['G4']['translation_changed']['DECLx3dconnector_connector3_DECLx3dconnector_connector3_S1']['set_endpoint'] = {};
-}
-
-X3DJSON['ROUTE']['G4']['translation_changed']['DECLx3dconnector_connector3_DECLx3dconnector_connector3_S1']['set_endpoint']['FROM'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'translation_changed');
-			X3DJSON.nodeUtil('DECLx3dconnector_connector3_DECLx3dconnector_connector3_S1','set_endpoint',X3DJSON.nodeUtil('G4','translation_changed'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['translation_changed'] };
-X3DJSON['ROUTE']['G4']['translation_changed']['DECLx3dconnector_connector3_DECLx3dconnector_connector3_S1']['set_endpoint']['FROM'].observe(X3DJSON.nodeUtil('G4'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['G4'] === 'undefined') {
-X3DJSON['ROUTE']['G4'] = {};
-}
-if (typeof X3DJSON['ROUTE']['G4']['translation_changed'] === 'undefined') {
-X3DJSON['ROUTE']['G4']['translation_changed'] = {};
-}
-if (typeof X3DJSON['ROUTE']['G4']['translation_changed']['DECLx3dconnector_connector3_DECLx3dconnector_connector3_S1'] === 'undefined') {
-X3DJSON['ROUTE']['G4']['translation_changed']['DECLx3dconnector_connector3_DECLx3dconnector_connector3_S1'] = {};
-}
-if (typeof X3DJSON['ROUTE']['G4']['translation_changed']['DECLx3dconnector_connector3_DECLx3dconnector_connector3_S1']['set_endpoint'] === 'undefined') {
-X3DJSON['ROUTE']['G4']['translation_changed']['DECLx3dconnector_connector3_DECLx3dconnector_connector3_S1']['set_endpoint'] = {};
-}
-
-X3DJSON['ROUTE']['G4']['translation_changed']['DECLx3dconnector_connector3_DECLx3dconnector_connector3_S1']['set_endpoint']['TO'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'set_endpoint');
-			if (typeof X3DJSON['Obj']['DECLx3dconnector_connector3_DECLx3dconnector_connector3_S1'].set_endpoint === "function") X3DJSON['Obj']['DECLx3dconnector_connector3_DECLx3dconnector_connector3_S1'].set_endpoint(X3DJSON.nodeUtil('DECLx3dconnector_connector3_DECLx3dconnector_connector3_S1','set_endpoint'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['set_endpoint'] };
-X3DJSON['ROUTE']['G4']['translation_changed']['DECLx3dconnector_connector3_DECLx3dconnector_connector3_S1']['set_endpoint']['TO'].observe(X3DJSON.nodeUtil('DECLx3dconnector_connector3_DECLx3dconnector_connector3_S1'), config);
+if (typeof X3DJSON['Obj']['DECLx3dconnector_connector3_S1']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['DECLx3dconnector_connector3_S1']['ACTION'] = {};
+X3DJSON['Obj']['DECLx3dconnector_connector3_S1'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['DECLx3dconnector_connector3_S1']['ACTION'],X3DJSON['Obj']['DECLx3dconnector_connector3_S1']);
+}
+if (typeof X3DJSON['Obj']['DECLx3dconnector_connector3_S1'].initialize === "function") X3DJSON['Obj']['DECLx3dconnector_connector3_S1'].initialize();
+X3DJSON.nodeUtil('PS1').addEventListener('outputchange', function(event) {
+}, false);
+X3DJSON.nodeUtil('PS2').addEventListener('outputchange', function(event) {
+}, false);
+X3DJSON.nodeUtil('PS3').addEventListener('outputchange', function(event) {
+}, false);
+X3DJSON.nodeUtil('PS4').addEventListener('outputchange', function(event) {
+}, false);
+X3DJSON.nodeUtil('G1').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['DECLx3dconnector_connector1_S1'].set_startpoint(X3DJSON.nodeUtil('G1','translation'), __eventTime);
+}, false);
+			X3DJSON['Obj']['DECLx3dconnector_connector1_S1'].set_startpoint(X3DJSON.nodeUtil('G1','translation'), __eventTime);
+X3DJSON.nodeUtil('G2').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['DECLx3dconnector_connector1_S1'].set_endpoint(X3DJSON.nodeUtil('G2','translation'), __eventTime);
+}, false);
+			X3DJSON['Obj']['DECLx3dconnector_connector1_S1'].set_endpoint(X3DJSON.nodeUtil('G2','translation'), __eventTime);
+X3DJSON.nodeUtil('G1').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['DECLx3dconnector_connector2_S1'].set_startpoint(X3DJSON.nodeUtil('G1','translation'), __eventTime);
+}, false);
+			X3DJSON['Obj']['DECLx3dconnector_connector2_S1'].set_startpoint(X3DJSON.nodeUtil('G1','translation'), __eventTime);
+X3DJSON.nodeUtil('G3').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['DECLx3dconnector_connector2_S1'].set_endpoint(X3DJSON.nodeUtil('G3','translation'), __eventTime);
+}, false);
+			X3DJSON['Obj']['DECLx3dconnector_connector2_S1'].set_endpoint(X3DJSON.nodeUtil('G3','translation'), __eventTime);
+X3DJSON.nodeUtil('G1').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['DECLx3dconnector_connector3_S1'].set_startpoint(X3DJSON.nodeUtil('G1','translation'), __eventTime);
+}, false);
+			X3DJSON['Obj']['DECLx3dconnector_connector3_S1'].set_startpoint(X3DJSON.nodeUtil('G1','translation'), __eventTime);
+X3DJSON.nodeUtil('G4').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['DECLx3dconnector_connector3_S1'].set_endpoint(X3DJSON.nodeUtil('G4','translation'), __eventTime);
+}, false);
+			X3DJSON['Obj']['DECLx3dconnector_connector3_S1'].set_endpoint(X3DJSON.nodeUtil('G4','translation'), __eventTime);
+			X3DJSON['Obj']['DECLx3dconnector_connector1_S1'].set_startpoint(X3DJSON.nodeUtil('G1','translation'), __eventTime);
+			X3DJSON['Obj']['DECLx3dconnector_connector1_S1'].set_endpoint(X3DJSON.nodeUtil('G2','translation'), __eventTime);
+			X3DJSON['Obj']['DECLx3dconnector_connector2_S1'].set_startpoint(X3DJSON.nodeUtil('G1','translation'), __eventTime);
+			X3DJSON['Obj']['DECLx3dconnector_connector2_S1'].set_endpoint(X3DJSON.nodeUtil('G3','translation'), __eventTime);
+			X3DJSON['Obj']['DECLx3dconnector_connector3_S1'].set_startpoint(X3DJSON.nodeUtil('G1','translation'), __eventTime);
+			X3DJSON['Obj']['DECLx3dconnector_connector3_S1'].set_endpoint(X3DJSON.nodeUtil('G4','translation'), __eventTime);

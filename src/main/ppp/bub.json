@@ -29,7 +29,7 @@
         },
         {
           "@name": "translated",
-          "@content": "26 May 2017"
+          "@content": "03 June 2017"
         },
         {
           "@name": "generator",
@@ -87,11 +87,11 @@
         {},
         {
           "Transform": {
-            "@DEF": "DECLBubble_INSTANCE19000_transform",
+            "@DEF": "DECLBubble_INSTANCE_transform",
             "-children": [
               {
                 "Shape": {
-                  "@DEF": "DECLBubble_INSTANCE19000_myShape",
+                  "@DEF": "DECLBubble_INSTANCE_myShape",
                   "-appearance": {
                     "Appearance": {
                       "-material": {
@@ -110,7 +110,7 @@
                       },
                       "-texture": {
                         "ComposedCubeMapTexture": {
-                          "@DEF": "DECLBubble_INSTANCE19000_texture",
+                          "@DEF": "DECLBubble_INSTANCE_texture",
                           "-back": {
                             "ImageTexture": {
                               "@url": [
@@ -163,13 +163,78 @@
                       },
                       "-children": [
                         {
-                          "#comment": "<ComposedShader DEF='gl' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"../shaders/gl.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/gl.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader> <ComposedShader DEF='freewrl' language=\"GLSL\"> <field name='fw_textureCoodGenType' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/freewrl.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader> <ComposedShader DEF='x3dom' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"../shaders/x3dom.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader> <ComposedShader DEF='instant' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"../shaders/instant.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/instant.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader>"
+                          "#comment": "<ComposedShader DEF='gl' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"../shaders/gl.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/gl.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader> <ComposedShader DEF='freewrl' language=\"GLSL\"> <field name='fw_textureCoodGenType' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/freewrl.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader>"
+                        },
+                        {
+                          "#comment": "<ComposedShader DEF='instant' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"../shaders/instant.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/instant.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader>"
                         }
                       ],
                       "-shaders": [
                         {
                           "ComposedShader": {
-                            "@DEF": "DECLBubble_INSTANCE19000_cobweb",
+                            "@DEF": "DECLBubble_INSTANCE_x3dom",
+                            "@language": "GLSL",
+                            "field": [
+                              {
+                                "@name": "cube",
+                                "@type": "SFInt32",
+                                "@accessType": "inputOutput",
+                                "@value": 0
+                              },
+                              {
+                                "@name": "chromaticDispertion",
+                                "@type": "SFVec3f",
+                                "@accessType": "inputOutput",
+                                "@value": [
+                                  0.98,
+                                  1,
+                                  1.033
+                                ]
+                              },
+                              {
+                                "@name": "bias",
+                                "@type": "SFFloat",
+                                "@accessType": "inputOutput",
+                                "@value": 0.5
+                              },
+                              {
+                                "@name": "scale",
+                                "@type": "SFFloat",
+                                "@accessType": "inputOutput",
+                                "@value": 0.5
+                              },
+                              {
+                                "@name": "power",
+                                "@type": "SFFloat",
+                                "@accessType": "inputOutput",
+                                "@value": 2
+                              }
+                            ],
+                            "-parts": [
+                              {
+                                "ShaderPart": {
+                                  "@url": [
+                                    "../shaders/x3dom.vs",
+                                    "https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs"
+                                  ],
+                                  "@type": "VERTEX"
+                                }
+                              },
+                              {
+                                "ShaderPart": {
+                                  "@url": [
+                                    "../shaders/pc_bubbles.fs",
+                                    "https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"
+                                  ],
+                                  "@type": "FRAGMENT"
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "ComposedShader": {
+                            "@DEF": "DECLBubble_INSTANCE_cobweb",
                             "@language": "GLSL",
                             "field": [
                               {
@@ -179,7 +244,7 @@
                                 "-children": [
                                   {
                                     "ComposedCubeMapTexture": {
-                                      "@USE": "DECLBubble_INSTANCE19000_texture"
+                                      "@USE": "DECLBubble_INSTANCE_texture"
                                     }
                                   }
                                 ]
@@ -244,98 +309,15 @@
                 }
               }
             ]
-          }
-        },
-        {
-          "Script": {
-            "@DEF": "DECLBubble_INSTANCE19000_Bounce",
-            "field": [
-              {
-                "@name": "translation",
-                "@accessType": "inputOutput",
-                "@type": "SFVec3f",
-                "@value": [
-                  0,
-                  0,
-                  0
-                ]
-              },
-              {
-                "@name": "velocity",
-                "@accessType": "inputOutput",
-                "@type": "SFVec3f",
-                "@value": [
-                  0,
-                  0,
-                  0
-                ]
-              },
-              {
-                "@name": "set_fraction",
-                "@accessType": "inputOnly",
-                "@type": "SFTime"
-              }
-            ],
-            "#sourceText": [
-              "",
-              "ecmascript:",
-              "\t\t\tfunction initialize() {",
-              "\t\t\t    translation = new SFVec3f(0, 0, 0);",
-              "\t\t\t    velocity = new SFVec3f(",
-              "\t\t\t    \tMath.random() - 0.5,",
-              "\t\t\t\tMath.random() - 0.5,",
-              "\t\t\t\tMath.random() - 0.5);",
-              "\t\t\t}",
-              "\t\t\tfunction set_fraction() {",
-              "\t\t\t    translation = new SFVec3f(",
-              "\t\t\t    \ttranslation.x + velocity.x,",
-              "\t\t\t\ttranslation.y + velocity.y,",
-              "\t\t\t\ttranslation.z + velocity.z);",
-              "\t\t\t    if (Math.abs(translation.x) > 10) {",
-              "\t\t\t\tinitialize();",
-              "\t\t\t    } else if (Math.abs(translation.y) > 10) {",
-              "\t\t\t\tinitialize();",
-              "\t\t\t    } else if (Math.abs(translation.z) > 10) {",
-              "\t\t\t\tinitialize();",
-              "\t\t\t    } else {",
-              "\t\t\t\tvelocity.x += Math.random() * 0.2 - 0.1;",
-              "\t\t\t\tvelocity.y += Math.random() * 0.2 - 0.1;",
-              "\t\t\t\tvelocity.z += Math.random() * 0.2 - 0.1;",
-              "\t\t\t    }",
-              "\t\t\t}"
-            ]
-          }
-        },
-        {
-          "TimeSensor": {
-            "@DEF": "DECLBubble_INSTANCE19000_TourTime",
-            "@cycleInterval": 0.15,
-            "@loop": true
-          }
-        },
-        {
-          "ROUTE": {
-            "@fromNode": "DECLBubble_INSTANCE19000_TourTime",
-            "@fromField": "cycleTime",
-            "@toNode": "DECLBubble_INSTANCE19000_Bounce",
-            "@toField": "set_fraction"
-          }
-        },
-        {
-          "ROUTE": {
-            "@fromNode": "DECLBubble_INSTANCE19000_Bounce",
-            "@fromField": "translation_changed",
-            "@toNode": "DECLBubble_INSTANCE19000_transform",
-            "@toField": "set_translation"
           }
         },
         {
           "Transform": {
-            "@DEF": "DECLBubble_INSTANCE20000_transform",
+            "@DEF": "DECLBubble_INSTANCE1000_transform",
             "-children": [
               {
                 "Shape": {
-                  "@DEF": "DECLBubble_INSTANCE20000_myShape",
+                  "@DEF": "DECLBubble_INSTANCE1000_myShape",
                   "-appearance": {
                     "Appearance": {
                       "-material": {
@@ -354,7 +336,7 @@
                       },
                       "-texture": {
                         "ComposedCubeMapTexture": {
-                          "@DEF": "DECLBubble_INSTANCE20000_texture",
+                          "@DEF": "DECLBubble_INSTANCE1000_texture",
                           "-back": {
                             "ImageTexture": {
                               "@url": [
@@ -407,13 +389,78 @@
                       },
                       "-children": [
                         {
-                          "#comment": "<ComposedShader DEF='gl' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"../shaders/gl.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/gl.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader> <ComposedShader DEF='freewrl' language=\"GLSL\"> <field name='fw_textureCoodGenType' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/freewrl.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader> <ComposedShader DEF='x3dom' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"../shaders/x3dom.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader> <ComposedShader DEF='instant' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"../shaders/instant.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/instant.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader>"
+                          "#comment": "<ComposedShader DEF='gl' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"../shaders/gl.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/gl.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader> <ComposedShader DEF='freewrl' language=\"GLSL\"> <field name='fw_textureCoodGenType' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/freewrl.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader>"
+                        },
+                        {
+                          "#comment": "<ComposedShader DEF='instant' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"../shaders/instant.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/instant.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader>"
                         }
                       ],
                       "-shaders": [
                         {
                           "ComposedShader": {
-                            "@DEF": "DECLBubble_INSTANCE20000_cobweb",
+                            "@DEF": "DECLBubble_INSTANCE1000_x3dom",
+                            "@language": "GLSL",
+                            "field": [
+                              {
+                                "@name": "cube",
+                                "@type": "SFInt32",
+                                "@accessType": "inputOutput",
+                                "@value": 0
+                              },
+                              {
+                                "@name": "chromaticDispertion",
+                                "@type": "SFVec3f",
+                                "@accessType": "inputOutput",
+                                "@value": [
+                                  0.98,
+                                  1,
+                                  1.033
+                                ]
+                              },
+                              {
+                                "@name": "bias",
+                                "@type": "SFFloat",
+                                "@accessType": "inputOutput",
+                                "@value": 0.5
+                              },
+                              {
+                                "@name": "scale",
+                                "@type": "SFFloat",
+                                "@accessType": "inputOutput",
+                                "@value": 0.5
+                              },
+                              {
+                                "@name": "power",
+                                "@type": "SFFloat",
+                                "@accessType": "inputOutput",
+                                "@value": 2
+                              }
+                            ],
+                            "-parts": [
+                              {
+                                "ShaderPart": {
+                                  "@url": [
+                                    "../shaders/x3dom.vs",
+                                    "https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs"
+                                  ],
+                                  "@type": "VERTEX"
+                                }
+                              },
+                              {
+                                "ShaderPart": {
+                                  "@url": [
+                                    "../shaders/pc_bubbles.fs",
+                                    "https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"
+                                  ],
+                                  "@type": "FRAGMENT"
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "ComposedShader": {
+                            "@DEF": "DECLBubble_INSTANCE1000_cobweb",
                             "@language": "GLSL",
                             "field": [
                               {
@@ -423,7 +470,7 @@
                                 "-children": [
                                   {
                                     "ComposedCubeMapTexture": {
-                                      "@USE": "DECLBubble_INSTANCE20000_texture"
+                                      "@USE": "DECLBubble_INSTANCE1000_texture"
                                     }
                                   }
                                 ]
@@ -488,98 +535,15 @@
                 }
               }
             ]
-          }
-        },
-        {
-          "Script": {
-            "@DEF": "DECLBubble_INSTANCE20000_Bounce",
-            "field": [
-              {
-                "@name": "translation",
-                "@accessType": "inputOutput",
-                "@type": "SFVec3f",
-                "@value": [
-                  0,
-                  0,
-                  0
-                ]
-              },
-              {
-                "@name": "velocity",
-                "@accessType": "inputOutput",
-                "@type": "SFVec3f",
-                "@value": [
-                  0,
-                  0,
-                  0
-                ]
-              },
-              {
-                "@name": "set_fraction",
-                "@accessType": "inputOnly",
-                "@type": "SFTime"
-              }
-            ],
-            "#sourceText": [
-              "",
-              "ecmascript:",
-              "\t\t\tfunction initialize() {",
-              "\t\t\t    translation = new SFVec3f(0, 0, 0);",
-              "\t\t\t    velocity = new SFVec3f(",
-              "\t\t\t    \tMath.random() - 0.5,",
-              "\t\t\t\tMath.random() - 0.5,",
-              "\t\t\t\tMath.random() - 0.5);",
-              "\t\t\t}",
-              "\t\t\tfunction set_fraction() {",
-              "\t\t\t    translation = new SFVec3f(",
-              "\t\t\t    \ttranslation.x + velocity.x,",
-              "\t\t\t\ttranslation.y + velocity.y,",
-              "\t\t\t\ttranslation.z + velocity.z);",
-              "\t\t\t    if (Math.abs(translation.x) > 10) {",
-              "\t\t\t\tinitialize();",
-              "\t\t\t    } else if (Math.abs(translation.y) > 10) {",
-              "\t\t\t\tinitialize();",
-              "\t\t\t    } else if (Math.abs(translation.z) > 10) {",
-              "\t\t\t\tinitialize();",
-              "\t\t\t    } else {",
-              "\t\t\t\tvelocity.x += Math.random() * 0.2 - 0.1;",
-              "\t\t\t\tvelocity.y += Math.random() * 0.2 - 0.1;",
-              "\t\t\t\tvelocity.z += Math.random() * 0.2 - 0.1;",
-              "\t\t\t    }",
-              "\t\t\t}"
-            ]
-          }
-        },
-        {
-          "TimeSensor": {
-            "@DEF": "DECLBubble_INSTANCE20000_TourTime",
-            "@cycleInterval": 0.15,
-            "@loop": true
-          }
-        },
-        {
-          "ROUTE": {
-            "@fromNode": "DECLBubble_INSTANCE20000_TourTime",
-            "@fromField": "cycleTime",
-            "@toNode": "DECLBubble_INSTANCE20000_Bounce",
-            "@toField": "set_fraction"
-          }
-        },
-        {
-          "ROUTE": {
-            "@fromNode": "DECLBubble_INSTANCE20000_Bounce",
-            "@fromField": "translation_changed",
-            "@toNode": "DECLBubble_INSTANCE20000_transform",
-            "@toField": "set_translation"
           }
         },
         {
           "Transform": {
-            "@DEF": "DECLBubble_INSTANCE21000_transform",
+            "@DEF": "DECLBubble_INSTANCE2000_transform",
             "-children": [
               {
                 "Shape": {
-                  "@DEF": "DECLBubble_INSTANCE21000_myShape",
+                  "@DEF": "DECLBubble_INSTANCE2000_myShape",
                   "-appearance": {
                     "Appearance": {
                       "-material": {
@@ -598,7 +562,7 @@
                       },
                       "-texture": {
                         "ComposedCubeMapTexture": {
-                          "@DEF": "DECLBubble_INSTANCE21000_texture",
+                          "@DEF": "DECLBubble_INSTANCE2000_texture",
                           "-back": {
                             "ImageTexture": {
                               "@url": [
@@ -651,13 +615,78 @@
                       },
                       "-children": [
                         {
-                          "#comment": "<ComposedShader DEF='gl' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"../shaders/gl.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/gl.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader> <ComposedShader DEF='freewrl' language=\"GLSL\"> <field name='fw_textureCoodGenType' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/freewrl.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader> <ComposedShader DEF='x3dom' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"../shaders/x3dom.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader> <ComposedShader DEF='instant' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"../shaders/instant.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/instant.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader>"
+                          "#comment": "<ComposedShader DEF='gl' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"../shaders/gl.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/gl.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader> <ComposedShader DEF='freewrl' language=\"GLSL\"> <field name='fw_textureCoodGenType' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/freewrl.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader>"
+                        },
+                        {
+                          "#comment": "<ComposedShader DEF='instant' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"../shaders/instant.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/instant.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader>"
                         }
                       ],
                       "-shaders": [
                         {
                           "ComposedShader": {
-                            "@DEF": "DECLBubble_INSTANCE21000_cobweb",
+                            "@DEF": "DECLBubble_INSTANCE2000_x3dom",
+                            "@language": "GLSL",
+                            "field": [
+                              {
+                                "@name": "cube",
+                                "@type": "SFInt32",
+                                "@accessType": "inputOutput",
+                                "@value": 0
+                              },
+                              {
+                                "@name": "chromaticDispertion",
+                                "@type": "SFVec3f",
+                                "@accessType": "inputOutput",
+                                "@value": [
+                                  0.98,
+                                  1,
+                                  1.033
+                                ]
+                              },
+                              {
+                                "@name": "bias",
+                                "@type": "SFFloat",
+                                "@accessType": "inputOutput",
+                                "@value": 0.5
+                              },
+                              {
+                                "@name": "scale",
+                                "@type": "SFFloat",
+                                "@accessType": "inputOutput",
+                                "@value": 0.5
+                              },
+                              {
+                                "@name": "power",
+                                "@type": "SFFloat",
+                                "@accessType": "inputOutput",
+                                "@value": 2
+                              }
+                            ],
+                            "-parts": [
+                              {
+                                "ShaderPart": {
+                                  "@url": [
+                                    "../shaders/x3dom.vs",
+                                    "https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs"
+                                  ],
+                                  "@type": "VERTEX"
+                                }
+                              },
+                              {
+                                "ShaderPart": {
+                                  "@url": [
+                                    "../shaders/pc_bubbles.fs",
+                                    "https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"
+                                  ],
+                                  "@type": "FRAGMENT"
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "ComposedShader": {
+                            "@DEF": "DECLBubble_INSTANCE2000_cobweb",
                             "@language": "GLSL",
                             "field": [
                               {
@@ -667,7 +696,7 @@
                                 "-children": [
                                   {
                                     "ComposedCubeMapTexture": {
-                                      "@USE": "DECLBubble_INSTANCE21000_texture"
+                                      "@USE": "DECLBubble_INSTANCE2000_texture"
                                     }
                                   }
                                 ]
@@ -732,89 +761,6 @@
                 }
               }
             ]
-          }
-        },
-        {
-          "Script": {
-            "@DEF": "DECLBubble_INSTANCE21000_Bounce",
-            "field": [
-              {
-                "@name": "translation",
-                "@accessType": "inputOutput",
-                "@type": "SFVec3f",
-                "@value": [
-                  0,
-                  0,
-                  0
-                ]
-              },
-              {
-                "@name": "velocity",
-                "@accessType": "inputOutput",
-                "@type": "SFVec3f",
-                "@value": [
-                  0,
-                  0,
-                  0
-                ]
-              },
-              {
-                "@name": "set_fraction",
-                "@accessType": "inputOnly",
-                "@type": "SFTime"
-              }
-            ],
-            "#sourceText": [
-              "",
-              "ecmascript:",
-              "\t\t\tfunction initialize() {",
-              "\t\t\t    translation = new SFVec3f(0, 0, 0);",
-              "\t\t\t    velocity = new SFVec3f(",
-              "\t\t\t    \tMath.random() - 0.5,",
-              "\t\t\t\tMath.random() - 0.5,",
-              "\t\t\t\tMath.random() - 0.5);",
-              "\t\t\t}",
-              "\t\t\tfunction set_fraction() {",
-              "\t\t\t    translation = new SFVec3f(",
-              "\t\t\t    \ttranslation.x + velocity.x,",
-              "\t\t\t\ttranslation.y + velocity.y,",
-              "\t\t\t\ttranslation.z + velocity.z);",
-              "\t\t\t    if (Math.abs(translation.x) > 10) {",
-              "\t\t\t\tinitialize();",
-              "\t\t\t    } else if (Math.abs(translation.y) > 10) {",
-              "\t\t\t\tinitialize();",
-              "\t\t\t    } else if (Math.abs(translation.z) > 10) {",
-              "\t\t\t\tinitialize();",
-              "\t\t\t    } else {",
-              "\t\t\t\tvelocity.x += Math.random() * 0.2 - 0.1;",
-              "\t\t\t\tvelocity.y += Math.random() * 0.2 - 0.1;",
-              "\t\t\t\tvelocity.z += Math.random() * 0.2 - 0.1;",
-              "\t\t\t    }",
-              "\t\t\t}"
-            ]
-          }
-        },
-        {
-          "TimeSensor": {
-            "@DEF": "DECLBubble_INSTANCE21000_TourTime",
-            "@cycleInterval": 0.15,
-            "@loop": true
-          }
-        },
-        {
-          "ROUTE": {
-            "@fromNode": "DECLBubble_INSTANCE21000_TourTime",
-            "@fromField": "cycleTime",
-            "@toNode": "DECLBubble_INSTANCE21000_Bounce",
-            "@toField": "set_fraction"
-          }
-        },
-        {
-          "ROUTE": {
-            "@fromNode": "DECLBubble_INSTANCE21000_Bounce",
-            "@fromField": "translation_changed",
-            "@toNode": "DECLBubble_INSTANCE21000_transform",
-            "@toField": "set_translation"
           }
         }
       ]

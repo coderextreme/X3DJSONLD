@@ -1,4 +1,7 @@
 var x3dom = require('../node/fields.js');
+if (typeof X3DJSON === 'undefined') {
+	var X3DJSON = {};
+}
 var MFBool = x3dom.fields.MFBoolean;
 var MFColor = x3dom.fields.MFColor;
 var MFColorRGBA = x3dom.fields.MFColorRGBA;
@@ -20,28 +23,27 @@ var MFVec3d = function() { return Array.prototype.slice.call(arguments, 0); };
 var MFVec3f = x3dom.fields.MFVec3f;
 var MFVec4d = function() { return Array.prototype.slice.call(arguments, 0); };
 var MFVec4f = function() { return Array.prototype.slice.call(arguments, 0); };
-SFBool = Boolean;
+var SFBool = Boolean;
 var SFColor = x3dom.fields.SFColor;
 var SFColorRGBA = x3dom.fields.SFColorRGBA;
-SFDouble = Number;
-SFFloat = Number;
-SFInt32 = Number;
+var SFDouble = Number;
+var SFFloat = Number;
+var SFInt32 = Number;
 var SFImage = x3dom.fields.SFImage;
 var SFMatrix3d = function() { return Array.prototype.slice.call(arguments, 0); };
 var SFMatrix3f = function() { return Array.prototype.slice.call(arguments, 0); };
 var SFMatrix4d = function() { return Array.prototype.slice.call(arguments, 0); };
 var SFMatrix4f = x3dom.fields.SFMatrix4f;
 var SFNode = x3dom.fields.SFNode;
-var SFRotation = x3dom.fields.Quaternion;
-SFString = String;
-SFTime = Number;
+var Quaternion = x3dom.fields.Quaternion;
+var SFString = String;
+var SFTime = Number;
 var SFVec2d = function() { return Array.prototype.slice.call(arguments, 0); };
 var SFVec2f = x3dom.fields.SFVec2f;
 var SFVec3d = function() { return Array.prototype.slice.call(arguments, 0); };
 var SFVec3f = x3dom.fields.SFVec3f;
 var SFVec4d = function() { return Array.prototype.slice.call(arguments, 0); };
-var SFvec4f = x3dom.fields.SFvec4f;
-var X3DJSON = {};
+var SFVec4f = x3dom.fields.SFVec4f;
 if (typeof document === 'undefined') {
 	document = { querySelector : function() {;
 		return {
@@ -57,20 +59,56 @@ if (typeof document === 'undefined') {
 	}};
 }
 X3DJSON.nodeUtil = function(node, field, value) {
-		var element = document.querySelector("[DEF='"+node+"'], [name='"+node+"']");
+		var selector = "undefined [DEF='"+node+"']";
+		var element = document.querySelector(selector);
 		if (element === null) {
 			console.error('unDEFed node',node);
 		} else if (arguments.length > 2) {
-			element.setAttribute(field, value);
-			console.log('set '+ field+ '='+ value);
+			/*
+			if (value && typeof value.toString === 'function') {
+				value = value.toString();
+			}
+			$(selector).attr(field, value);
+			// console.log('set', node, '.', field, '=', value);
+			*/
+			element.setFieldValue(field, value);
 			return element;
 		} else if (arguments.length > 1) {
-			var value = element.getAttribute(field)
-			console.log('get', field,'=',value);
+			value = element.getFieldValue(field);
+			/*
+			value = $(selector).attr(field);
+			if (element &&
+				element._x3domNode &&
+				element._x3domNode._vf &&
+				element._x3domNode._vf[field] &&
+				element._x3domNode._vf[field].setValueByStr) {
+				value = element._x3domNode._vf[field].setValueByStr(value);
+			}
+			*/
+			// console.log('get', node, '.', field,'=',value);
 			return value;
 		} else {
-			return element;
+			return $(selector)[0];
 		}
+};
+X3DJSON.createProxy = function(action, scriptObject) {
+	var proxy = new Proxy(scriptObject, {
+		get: function(target, property, receiver) {
+			return Reflect.get(target, property, receiver);
+		},
+		set: function(target, property, value, receiver) {
+                 if (typeof action[property] === 'object') {
+                        for (var route in action[property]) {
+                                if (typeof action[property][route] === 'function') {
+                                        action[property][route](property, value);
+   		                     // console.log('Set',property,'to', value);
+                                }
+                        }
+                 }
+		      return Reflect.set(target, property, value, receiver);
+		}
+	});
+	return proxy;
 };
 if (typeof X3DJSON['Script'] === 'undefined') {
 X3DJSON['Script'] = {};
@@ -78,26 +116,29 @@ X3DJSON['Script'] = {};
 
 X3DJSON['Script']['PixelScript'] = function() {
 	this.set_Cumulus = function (value) {
-		X3DJSON.nodeUtil('PixelScript', 'Cumulus', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+		this.proxy.Cumulus = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
 	this.Cumulus_changed = function () {
-		return X3DJSON.nodeUtil('PixelScript', 'Cumulus');
+		var value = this.Cumulus;
+		return value;
 	};
-	this.set_Cumulus(new SFNode());
+	this.Cumulus = X3DJSON.nodeUtil('Cumulus');
 	this.set_Cirrus = function (value) {
-		X3DJSON.nodeUtil('PixelScript', 'Cirrus', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+		this.proxy.Cirrus = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
 	this.Cirrus_changed = function () {
-		return X3DJSON.nodeUtil('PixelScript', 'Cirrus');
+		var value = this.Cirrus;
+		return value;
 	};
-	this.set_Cirrus(new SFNode());
+	this.Cirrus = X3DJSON.nodeUtil('Cirrus');
 	this.set_Fog = function (value) {
-		X3DJSON.nodeUtil('PixelScript', 'Fog', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+		this.proxy.Fog = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
 	this.Fog_changed = function () {
-		return X3DJSON.nodeUtil('PixelScript', 'Fog');
+		var value = this.Fog;
+		return value;
 	};
-	this.set_Fog(new SFNode());
+	this.Fog = new SFNode();
 
         
 ecmascript:
@@ -359,7 +400,7 @@ CloudString = CloudStringA + CloudStringG + CloudStringH;
 
 
 newNode = new MFNode();
-this.Cumulus_changed().children[i] = newNode[0];
+X3DJSON.nodeUtil('Cumulus', 'children')[i] = newNode[0];
 
 
    }
@@ -483,7 +524,7 @@ CloudString = CloudStringA + CloudStringG + CloudStringH;
 
 
 newNode = new MFNode();
-this.Cirrus_changed().children[i] = newNode[0];
+X3DJSON.nodeUtil('Cirrus', 'children')[i] = newNode[0];
 
   }
 
@@ -507,5 +548,16 @@ X3DJSON['Obj'] = {};
 }
 
 X3DJSON['Obj']['PixelScript'] = new X3DJSON['Script']['PixelScript']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['PixelScript'] === 'undefined') {
+X3DJSON['Obj']['PixelScript'] = {};
+}
+
+if (typeof X3DJSON['Obj']['PixelScript']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['PixelScript']['ACTION'] = {};
+X3DJSON['Obj']['PixelScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['PixelScript']['ACTION'],X3DJSON['Obj']['PixelScript']);
+}
 if (typeof X3DJSON['Obj']['PixelScript'].initialize === "function") X3DJSON['Obj']['PixelScript'].initialize();
 

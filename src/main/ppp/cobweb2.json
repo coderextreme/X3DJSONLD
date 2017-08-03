@@ -37,7 +37,7 @@
         },
         {
           "@name": "translated",
-          "@content": "26 May 2017"
+          "@content": "03 June 2017"
         },
         {
           "@name": "generator",
@@ -105,7 +105,7 @@
         {},
         {
           "Transform": {
-            "@DEF": "DECLBubble_bubbleA34000_transform",
+            "@DEF": "DECLBubble_bubbleA_transform",
             "-children": [
               {
                 "Shape": {
@@ -132,7 +132,7 @@
               },
               {
                 "Script": {
-                  "@DEF": "DECLBubble_bubbleA34000_bounce",
+                  "@DEF": "DECLBubble_bubbleA_bounce",
                   "field": [
                     {
                       "@name": "scale",
@@ -238,32 +238,32 @@
               },
               {
                 "TimeSensor": {
-                  "@DEF": "DECLBubble_bubbleA34000_bubbleClock",
+                  "@DEF": "DECLBubble_bubbleA_bubbleClock",
                   "@cycleInterval": 10,
                   "@loop": true
                 }
               },
               {
                 "ROUTE": {
-                  "@fromNode": "DECLBubble_bubbleA34000_bounce",
+                  "@fromNode": "DECLBubble_bubbleA_bounce",
                   "@fromField": "translation_changed",
-                  "@toNode": "DECLBubble_bubbleA34000_transform",
+                  "@toNode": "DECLBubble_bubbleA_transform",
                   "@toField": "set_translation"
                 }
               },
               {
                 "ROUTE": {
-                  "@fromNode": "DECLBubble_bubbleA34000_bounce",
+                  "@fromNode": "DECLBubble_bubbleA_bounce",
                   "@fromField": "scale_changed",
-                  "@toNode": "DECLBubble_bubbleA34000_transform",
+                  "@toNode": "DECLBubble_bubbleA_transform",
                   "@toField": "set_scale"
                 }
               },
               {
                 "ROUTE": {
-                  "@fromNode": "DECLBubble_bubbleA34000_bubbleClock",
+                  "@fromNode": "DECLBubble_bubbleA_bubbleClock",
                   "@fromField": "fraction_changed",
-                  "@toNode": "DECLBubble_bubbleA34000_bounce",
+                  "@toNode": "DECLBubble_bubbleA_bounce",
                   "@toField": "set_fraction"
                 }
               }
@@ -272,7 +272,7 @@
         },
         {
           "Transform": {
-            "@DEF": "DECLBubble_bubbleB35000_transform",
+            "@DEF": "DECLBubble_bubbleB_transform",
             "-children": [
               {
                 "Shape": {
@@ -299,7 +299,7 @@
               },
               {
                 "Script": {
-                  "@DEF": "DECLBubble_bubbleB35000_bounce",
+                  "@DEF": "DECLBubble_bubbleB_bounce",
                   "field": [
                     {
                       "@name": "scale",
@@ -405,32 +405,32 @@
               },
               {
                 "TimeSensor": {
-                  "@DEF": "DECLBubble_bubbleB35000_bubbleClock",
+                  "@DEF": "DECLBubble_bubbleB_bubbleClock",
                   "@cycleInterval": 10,
                   "@loop": true
                 }
               },
               {
                 "ROUTE": {
-                  "@fromNode": "DECLBubble_bubbleB35000_bounce",
+                  "@fromNode": "DECLBubble_bubbleB_bounce",
                   "@fromField": "translation_changed",
-                  "@toNode": "DECLBubble_bubbleB35000_transform",
+                  "@toNode": "DECLBubble_bubbleB_transform",
                   "@toField": "set_translation"
                 }
               },
               {
                 "ROUTE": {
-                  "@fromNode": "DECLBubble_bubbleB35000_bounce",
+                  "@fromNode": "DECLBubble_bubbleB_bounce",
                   "@fromField": "scale_changed",
-                  "@toNode": "DECLBubble_bubbleB35000_transform",
+                  "@toNode": "DECLBubble_bubbleB_transform",
                   "@toField": "set_scale"
                 }
               },
               {
                 "ROUTE": {
-                  "@fromNode": "DECLBubble_bubbleB35000_bubbleClock",
+                  "@fromNode": "DECLBubble_bubbleB_bubbleClock",
                   "@fromField": "fraction_changed",
-                  "@toNode": "DECLBubble_bubbleB35000_bounce",
+                  "@toNode": "DECLBubble_bubbleB_bounce",
                   "@toField": "set_fraction"
                 }
               }
@@ -439,7 +439,7 @@
         },
         {
           "Transform": {
-            "@DEF": "DECLBubble_bubbleC36000_transform",
+            "@DEF": "DECLBubble_bubbleC_transform",
             "-children": [
               {
                 "Shape": {
@@ -466,7 +466,7 @@
               },
               {
                 "Script": {
-                  "@DEF": "DECLBubble_bubbleC36000_bounce",
+                  "@DEF": "DECLBubble_bubbleC_bounce",
                   "field": [
                     {
                       "@name": "scale",
@@ -572,32 +572,32 @@
               },
               {
                 "TimeSensor": {
-                  "@DEF": "DECLBubble_bubbleC36000_bubbleClock",
+                  "@DEF": "DECLBubble_bubbleC_bubbleClock",
                   "@cycleInterval": 10,
                   "@loop": true
                 }
               },
               {
                 "ROUTE": {
-                  "@fromNode": "DECLBubble_bubbleC36000_bounce",
+                  "@fromNode": "DECLBubble_bubbleC_bounce",
                   "@fromField": "translation_changed",
-                  "@toNode": "DECLBubble_bubbleC36000_transform",
+                  "@toNode": "DECLBubble_bubbleC_transform",
                   "@toField": "set_translation"
                 }
               },
               {
                 "ROUTE": {
-                  "@fromNode": "DECLBubble_bubbleC36000_bounce",
+                  "@fromNode": "DECLBubble_bubbleC_bounce",
                   "@fromField": "scale_changed",
-                  "@toNode": "DECLBubble_bubbleC36000_transform",
+                  "@toNode": "DECLBubble_bubbleC_transform",
                   "@toField": "set_scale"
                 }
               },
               {
                 "ROUTE": {
-                  "@fromNode": "DECLBubble_bubbleC36000_bubbleClock",
+                  "@fromNode": "DECLBubble_bubbleC_bubbleClock",
                   "@fromField": "fraction_changed",
-                  "@toNode": "DECLBubble_bubbleC36000_bounce",
+                  "@toNode": "DECLBubble_bubbleC_bounce",
                   "@toField": "set_fraction"
                 }
               }
@@ -606,7 +606,7 @@
         },
         {
           "Transform": {
-            "@DEF": "DECLBubble_bubbleD37000_transform",
+            "@DEF": "DECLBubble_bubbleD_transform",
             "-children": [
               {
                 "Shape": {
@@ -633,7 +633,7 @@
               },
               {
                 "Script": {
-                  "@DEF": "DECLBubble_bubbleD37000_bounce",
+                  "@DEF": "DECLBubble_bubbleD_bounce",
                   "field": [
                     {
                       "@name": "scale",
@@ -739,32 +739,32 @@
               },
               {
                 "TimeSensor": {
-                  "@DEF": "DECLBubble_bubbleD37000_bubbleClock",
+                  "@DEF": "DECLBubble_bubbleD_bubbleClock",
                   "@cycleInterval": 10,
                   "@loop": true
                 }
               },
               {
                 "ROUTE": {
-                  "@fromNode": "DECLBubble_bubbleD37000_bounce",
+                  "@fromNode": "DECLBubble_bubbleD_bounce",
                   "@fromField": "translation_changed",
-                  "@toNode": "DECLBubble_bubbleD37000_transform",
+                  "@toNode": "DECLBubble_bubbleD_transform",
                   "@toField": "set_translation"
                 }
               },
               {
                 "ROUTE": {
-                  "@fromNode": "DECLBubble_bubbleD37000_bounce",
+                  "@fromNode": "DECLBubble_bubbleD_bounce",
                   "@fromField": "scale_changed",
-                  "@toNode": "DECLBubble_bubbleD37000_transform",
+                  "@toNode": "DECLBubble_bubbleD_transform",
                   "@toField": "set_scale"
                 }
               },
               {
                 "ROUTE": {
-                  "@fromNode": "DECLBubble_bubbleD37000_bubbleClock",
+                  "@fromNode": "DECLBubble_bubbleD_bubbleClock",
                   "@fromField": "fraction_changed",
-                  "@toNode": "DECLBubble_bubbleD37000_bounce",
+                  "@toNode": "DECLBubble_bubbleD_bounce",
                   "@toField": "set_fraction"
                 }
               }

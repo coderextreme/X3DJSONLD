@@ -29,7 +29,7 @@
         },
         {
           "@name": "translated",
-          "@content": "26 May 2017"
+          "@content": "03 June 2017"
         },
         {
           "@name": "generator",
@@ -80,7 +80,7 @@
             "-children": [
               {
                 "Transform": {
-                  "@DEF": "DECLflower_INSTANCE38000_transform",
+                  "@DEF": "DECLflower_INSTANCE_transform",
                   "-children": [
                     {
                       "Shape": {
@@ -102,7 +102,7 @@
                             },
                             "-texture": {
                               "ComposedCubeMapTexture": {
-                                "@DEF": "DECLflower_INSTANCE38000_texture",
+                                "@DEF": "DECLflower_INSTANCE_texture",
                                 "-back": {
                                   "ImageTexture": {
                                     "@url": [
@@ -171,7 +171,7 @@
                                       "-children": [
                                         {
                                           "ComposedCubeMapTexture": {
-                                            "@USE": "DECLflower_INSTANCE38000_texture"
+                                            "@USE": "DECLflower_INSTANCE_texture"
                                           }
                                         }
                                       ]
@@ -229,7 +229,7 @@
                               },
                               {
                                 "ComposedShader": {
-                                  "@DEF": "DECLflower_INSTANCE38000_shader",
+                                  "@DEF": "DECLflower_INSTANCE_shader",
                                   "@language": "GLSL",
                                   "field": [
                                     {
@@ -245,7 +245,7 @@
                                       "-children": [
                                         {
                                           "ComposedCubeMapTexture": {
-                                            "@USE": "DECLflower_INSTANCE38000_texture"
+                                            "@USE": "DECLflower_INSTANCE_texture"
                                           }
                                         }
                                       ]
@@ -304,14 +304,22 @@
                             ]
                           }
                         },
-                        "-geometry": {
-                          "Sphere": {}
-                        },
                         "-children": [
                           {
-                            "#comment": "<IndexedFaceSet convex=\"false\" DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>"
+                            "#comment": "<Sphere></Sphere>"
                           }
-                        ]
+                        ],
+                        "-geometry": {
+                          "IndexedFaceSet": {
+                            "@convex": false,
+                            "@DEF": "DECLflower_INSTANCE_Orbit",
+                            "-coord": {
+                              "Coordinate": {
+                                "@DEF": "DECLflower_INSTANCE_OrbitCoordinates"
+                              }
+                            }
+                          }
+                        }
                       }
                     }
                   ]
@@ -319,7 +327,7 @@
               },
               {
                 "Script": {
-                  "@DEF": "DECLflower_INSTANCE38000_Bounce",
+                  "@DEF": "DECLflower_INSTANCE_Bounce",
                   "field": [
                     {
                       "@name": "translation",
@@ -503,24 +511,24 @@
               },
               {
                 "TimeSensor": {
-                  "@DEF": "DECLflower_INSTANCE38000_TourTime",
+                  "@DEF": "DECLflower_INSTANCE_TourTime",
                   "@cycleInterval": 0.15,
                   "@loop": true
                 }
               },
               {
                 "ROUTE": {
-                  "@fromNode": "DECLflower_INSTANCE38000_TourTime",
+                  "@fromNode": "DECLflower_INSTANCE_TourTime",
                   "@fromField": "cycleTime",
-                  "@toNode": "DECLflower_INSTANCE38000_Bounce",
+                  "@toNode": "DECLflower_INSTANCE_Bounce",
                   "@toField": "set_fraction"
                 }
               },
               {
                 "ROUTE": {
-                  "@fromNode": "DECLflower_INSTANCE38000_Bounce",
-                  "@fromField": "translation_changed",
-                  "@toNode": "DECLflower_INSTANCE38000_transform",
+                  "@fromNode": "DECLflower_INSTANCE_Bounce",
+                  "@fromField": "translation",
+                  "@toNode": "DECLflower_INSTANCE_transform",
                   "@toField": "set_translation"
                 }
               },
@@ -528,902 +536,7 @@
                 "#comment": "<ROUTE fromField=\"coordIndexes\" fromNode=\"Bounce\" toField=\"set_coordIndex\" toNode=\"Orbit\"/> <ROUTE fromField=\"coordinates\" fromNode=\"Bounce\" toField=\"set_point\" toNode=\"OrbitCoordinates\"/>"
               },
               {
-                "Transform": {
-                  "@DEF": "DECLflower_INSTANCE39000_transform",
-                  "-children": [
-                    {
-                      "Shape": {
-                        "-appearance": {
-                          "Appearance": {
-                            "-material": {
-                              "Material": {
-                                "@diffuseColor": [
-                                  0.7,
-                                  0.7,
-                                  0.7
-                                ],
-                                "@specularColor": [
-                                  0.5,
-                                  0.5,
-                                  0.5
-                                ]
-                              }
-                            },
-                            "-texture": {
-                              "ComposedCubeMapTexture": {
-                                "@DEF": "DECLflower_INSTANCE39000_texture",
-                                "-back": {
-                                  "ImageTexture": {
-                                    "@url": [
-                                      "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
-                                      "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"
-                                    ]
-                                  }
-                                },
-                                "-bottom": {
-                                  "ImageTexture": {
-                                    "@url": [
-                                      "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
-                                      "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"
-                                    ]
-                                  }
-                                },
-                                "-front": {
-                                  "ImageTexture": {
-                                    "@url": [
-                                      "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
-                                      "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"
-                                    ]
-                                  }
-                                },
-                                "-left": {
-                                  "ImageTexture": {
-                                    "@url": [
-                                      "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
-                                      "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"
-                                    ]
-                                  }
-                                },
-                                "-right": {
-                                  "ImageTexture": {
-                                    "@url": [
-                                      "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
-                                      "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"
-                                    ]
-                                  }
-                                },
-                                "-top": {
-                                  "ImageTexture": {
-                                    "@url": [
-                                      "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
-                                      "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"
-                                    ]
-                                  }
-                                }
-                              }
-                            },
-                            "-shaders": [
-                              {
-                                "ComposedShader": {
-                                  "@language": "GLSL",
-                                  "field": [
-                                    {
-                                      "@name": "xxxcube",
-                                      "@type": "SFInt32",
-                                      "@accessType": "inputOutput",
-                                      "@value": 0
-                                    },
-                                    {
-                                      "@name": "cube",
-                                      "@type": "SFNode",
-                                      "@accessType": "inputOutput",
-                                      "-children": [
-                                        {
-                                          "ComposedCubeMapTexture": {
-                                            "@USE": "DECLflower_INSTANCE39000_texture"
-                                          }
-                                        }
-                                      ]
-                                    },
-                                    {
-                                      "@name": "chromaticDispertion",
-                                      "@type": "SFVec3f",
-                                      "@accessType": "inputOutput",
-                                      "@value": [
-                                        0.98,
-                                        1,
-                                        1.033
-                                      ]
-                                    },
-                                    {
-                                      "@name": "bias",
-                                      "@type": "SFFloat",
-                                      "@accessType": "inputOutput",
-                                      "@value": 0.5
-                                    },
-                                    {
-                                      "@name": "scale",
-                                      "@type": "SFFloat",
-                                      "@accessType": "inputOutput",
-                                      "@value": 0.5
-                                    },
-                                    {
-                                      "@name": "power",
-                                      "@type": "SFFloat",
-                                      "@accessType": "inputOutput",
-                                      "@value": 2
-                                    }
-                                  ],
-                                  "-parts": [
-                                    {
-                                      "ShaderPart": {
-                                        "@url": [
-                                          "../shaders/x3dom.vs",
-                                          "https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs"
-                                        ],
-                                        "@type": "VERTEX"
-                                      }
-                                    },
-                                    {
-                                      "ShaderPart": {
-                                        "@url": [
-                                          "../shaders/pc_bubbles.fs",
-                                          "https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"
-                                        ],
-                                        "@type": "FRAGMENT"
-                                      }
-                                    }
-                                  ]
-                                }
-                              },
-                              {
-                                "ComposedShader": {
-                                  "@DEF": "DECLflower_INSTANCE39000_shader",
-                                  "@language": "GLSL",
-                                  "field": [
-                                    {
-                                      "@name": "xxxcube",
-                                      "@type": "SFInt32",
-                                      "@accessType": "inputOutput",
-                                      "@value": 0
-                                    },
-                                    {
-                                      "@name": "cube",
-                                      "@type": "SFNode",
-                                      "@accessType": "inputOutput",
-                                      "-children": [
-                                        {
-                                          "ComposedCubeMapTexture": {
-                                            "@USE": "DECLflower_INSTANCE39000_texture"
-                                          }
-                                        }
-                                      ]
-                                    },
-                                    {
-                                      "@name": "chromaticDispertion",
-                                      "@type": "SFVec3f",
-                                      "@accessType": "inputOutput",
-                                      "@value": [
-                                        0.98,
-                                        1,
-                                        1.033
-                                      ]
-                                    },
-                                    {
-                                      "@name": "bias",
-                                      "@type": "SFFloat",
-                                      "@accessType": "inputOutput",
-                                      "@value": 10
-                                    },
-                                    {
-                                      "@name": "scale",
-                                      "@type": "SFFloat",
-                                      "@accessType": "inputOutput",
-                                      "@value": 10
-                                    },
-                                    {
-                                      "@name": "power",
-                                      "@type": "SFFloat",
-                                      "@accessType": "inputOutput",
-                                      "@value": 2
-                                    }
-                                  ],
-                                  "-parts": [
-                                    {
-                                      "ShaderPart": {
-                                        "@url": [
-                                          "../shaders/cobweb.vs",
-                                          "https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"
-                                        ],
-                                        "@type": "VERTEX"
-                                      }
-                                    },
-                                    {
-                                      "ShaderPart": {
-                                        "@url": [
-                                          "../shaders/pc_bubbles.fs",
-                                          "https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"
-                                        ],
-                                        "@type": "FRAGMENT"
-                                      }
-                                    }
-                                  ]
-                                }
-                              }
-                            ]
-                          }
-                        },
-                        "-geometry": {
-                          "Sphere": {}
-                        },
-                        "-children": [
-                          {
-                            "#comment": "<IndexedFaceSet convex=\"false\" DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>"
-                          }
-                        ]
-                      }
-                    }
-                  ]
-                }
-              },
-              {
-                "Script": {
-                  "@DEF": "DECLflower_INSTANCE39000_Bounce",
-                  "field": [
-                    {
-                      "@name": "translation",
-                      "@accessType": "inputOutput",
-                      "@type": "SFVec3f",
-                      "@value": [
-                        0,
-                        0,
-                        0
-                      ]
-                    },
-                    {
-                      "@name": "velocity",
-                      "@accessType": "inputOutput",
-                      "@type": "SFVec3f",
-                      "@value": [
-                        0,
-                        0,
-                        0
-                      ]
-                    },
-                    {
-                      "@name": "set_fraction",
-                      "@accessType": "inputOnly",
-                      "@type": "SFTime"
-                    },
-                    {
-                      "@name": "coordinates",
-                      "@accessType": "inputOutput",
-                      "@type": "MFVec3f"
-                    },
-                    {
-                      "@name": "coordIndexes",
-                      "@accessType": "outputOnly",
-                      "@type": "MFInt32"
-                    },
-                    {
-                      "@name": "a",
-                      "@type": "SFFloat",
-                      "@accessType": "inputOutput",
-                      "@value": 0.5
-                    },
-                    {
-                      "@name": "b",
-                      "@type": "SFFloat",
-                      "@accessType": "inputOutput",
-                      "@value": 0.5
-                    },
-                    {
-                      "@name": "c",
-                      "@type": "SFFloat",
-                      "@accessType": "inputOutput",
-                      "@value": 3
-                    },
-                    {
-                      "@name": "d",
-                      "@type": "SFFloat",
-                      "@accessType": "inputOutput",
-                      "@value": 3
-                    },
-                    {
-                      "@name": "tdelta",
-                      "@type": "SFFloat",
-                      "@accessType": "inputOutput",
-                      "@value": 0.5
-                    },
-                    {
-                      "@name": "pdelta",
-                      "@type": "SFFloat",
-                      "@accessType": "inputOutput",
-                      "@value": 0.5
-                    }
-                  ],
-                  "#sourceText": [
-                    "",
-                    "ecmascript:",
-                    "\t\t\tfunction newBubble() {",
-                    "\t\t\t    translation = new SFVec3f(0, 0, 0);",
-                    "\t\t\t    velocity = new SFVec3f(",
-                    "\t\t\t    \tMath.random() - 0.5,",
-                    "\t\t\t\tMath.random() - 0.5,",
-                    "\t\t\t\tMath.random() - 0.5);",
-                    "\t\t\t}",
-                    "\t\t\tfunction set_fraction() {",
-                    "\t\t\t    translation = new SFVec3f(",
-                    "\t\t\t    \ttranslation.x + velocity.x,",
-                    "\t\t\t\ttranslation.y + velocity.y,",
-                    "\t\t\t\ttranslation.z + velocity.z);",
-                    "\t\t\t    if (Math.abs(translation.x) > 10) {",
-                    "\t\t\t\t\tnewBubble();",
-                    "\t\t\t    } else if (Math.abs(translation.y) > 10) {",
-                    "\t\t\t\t\tnewBubble();",
-                    "\t\t\t    } else if (Math.abs(translation.z) > 10) {",
-                    "\t\t\t\t\tnewBubble();",
-                    "\t\t\t    } else {",
-                    "\t\t\t\t\tvelocity = new SFVec3f(",
-                    "\t\t\t\t\t\tvelocity.x + Math.random() * 0.2 - 0.1,",
-                    "\t\t\t\t\t\tvelocity.y + Math.random() * 0.2 - 0.1,",
-                    "\t\t\t\t\t\tvelocity.z + Math.random() * 0.2 - 0.1",
-                    "\t\t\t\t\t);",
-                    "\t\t\t    }",
-                    "\t\t\t    animate_flowers();",
-                    "\t\t\t}",
-                    "",
-                    "\t\t\tfunction initialize() {",
-                    "\t\t\t     newBubble();",
-                    "\t\t\t     resolution = 100;",
-                    "\t\t\t     updateCoordinates(resolution);",
-                    "\t\t\t     var cis = [];",
-                    "\t\t\t     for ( i = 0; i < resolution-1; i++) {",
-                    "\t\t\t\tfor ( j = 0; j < resolution-1; j++) {",
-                    "\t\t\t\t     cis.push(i*resolution+j);",
-                    "\t\t\t\t     cis.push(i*resolution+j+1);",
-                    "\t\t\t\t     cis.push((i+1)*resolution+j+1);",
-                    "\t\t\t\t     cis.push((i+1)*resolution+j);",
-                    "\t\t\t\t     cis.push(-1);",
-                    "\t\t\t\t}",
-                    "\t\t\t    }",
-                    "\t\t\t     coordIndexes = new MFInt32(cis);",
-                    "\t\t\t}",
-                    "",
-                    "\t\t\tfunction updateCoordinates(resolution) {",
-                    "\t\t\t     theta = 0.0;",
-                    "\t\t\t     phi = 0.0;",
-                    "\t\t\t     delta = (2 * 3.141592653) / (resolution-1);",
-                    "\t\t\t     var crds = [];",
-                    "\t\t\t     for ( i = 0; i < resolution; i++) {",
-                    "\t\t\t\tfor ( j = 0; j < resolution; j++) {",
-                    "\t\t\t\t\trho = a + b * Math.cos(c * theta) * Math.cos(d * phi);",
-                    "\t\t\t\t\tcrds.push(new SFVec3f(",
-                    "\t\t\t\t\t\trho * Math.cos(phi) * Math.cos(theta),",
-                    "\t\t\t\t\t\trho * Math.cos(phi) * Math.sin(theta),",
-                    "\t\t\t\t\t\trho * Math.sin(phi)",
-                    "\t\t\t\t\t));",
-                    "\t\t\t\t\ttheta += delta;",
-                    "\t\t\t\t}",
-                    "\t\t\t\tphi += delta;",
-                    "\t\t\t\tcoordinates = new MFVec3f(crds);",
-                    "\t\t\t     }",
-                    "\t\t\t}",
-                    "",
-                    "\t\t\tfunction animate_flowers(fraction, eventTime) {",
-                    "\t\t\t\tchoice = Math.floor(Math.random() * 4);",
-                    "\t\t\t\tswitch (choice) {",
-                    "\t\t\t\tcase 0:",
-                    "\t\t\t\t\ta += Math.random() * 0.2 - 0.1;",
-                    "\t\t\t\t\tbreak;",
-                    "\t\t\t\tcase 1:",
-                    "\t\t\t\t\tb += Math.random() * 0.2 - 0.1;",
-                    "\t\t\t\t\tbreak;",
-                    "\t\t\t\tcase 2:",
-                    "\t\t\t\t\tc += Math.random() * 2 - 1;",
-                    "\t\t\t\t\tbreak;",
-                    "\t\t\t\tcase 3:",
-                    "\t\t\t\t\td += Math.random() * 2 - 1;",
-                    "\t\t\t\t\tbreak;",
-                    "\t\t\t\t}",
-                    "\t\t\t\tif (a > 1) {",
-                    "\t\t\t\t\ta =  0.5;",
-                    "\t\t\t\t}",
-                    "\t\t\t\tif (b > 1) {",
-                    "\t\t\t\t\tb =  0.5;",
-                    "\t\t\t\t}",
-                    "\t\t\t\tif (c < 1) {",
-                    "\t\t\t\t\tc =  4;",
-                    "\t\t\t\t}",
-                    "\t\t\t\tif (d < 1) {",
-                    "\t\t\t\t\td =  4;",
-                    "\t\t\t\t}",
-                    "\t\t\t\tif (c > 10) {",
-                    "\t\t\t\t\tc = 4;",
-                    "\t\t\t\t}",
-                    "\t\t\t\tif (d > 10) {",
-                    "\t\t\t\t\td = 4;",
-                    "\t\t\t\t}",
-                    "\t\t\t\tresolution = 100;",
-                    "\t\t\t\tupdateCoordinates(resolution);",
-                    "\t\t\t}"
-                  ]
-                }
-              },
-              {
-                "TimeSensor": {
-                  "@DEF": "DECLflower_INSTANCE39000_TourTime",
-                  "@cycleInterval": 0.15,
-                  "@loop": true
-                }
-              },
-              {
-                "ROUTE": {
-                  "@fromNode": "DECLflower_INSTANCE39000_TourTime",
-                  "@fromField": "cycleTime",
-                  "@toNode": "DECLflower_INSTANCE39000_Bounce",
-                  "@toField": "set_fraction"
-                }
-              },
-              {
-                "ROUTE": {
-                  "@fromNode": "DECLflower_INSTANCE39000_Bounce",
-                  "@fromField": "translation_changed",
-                  "@toNode": "DECLflower_INSTANCE39000_transform",
-                  "@toField": "set_translation"
-                }
-              },
-              {
-                "#comment": "<ROUTE fromField=\"coordIndexes\" fromNode=\"Bounce\" toField=\"set_coordIndex\" toNode=\"Orbit\"/> <ROUTE fromField=\"coordinates\" fromNode=\"Bounce\" toField=\"set_point\" toNode=\"OrbitCoordinates\"/>"
-              },
-              {
-                "Transform": {
-                  "@DEF": "DECLflower_INSTANCE40000_transform",
-                  "-children": [
-                    {
-                      "Shape": {
-                        "-appearance": {
-                          "Appearance": {
-                            "-material": {
-                              "Material": {
-                                "@diffuseColor": [
-                                  0.7,
-                                  0.7,
-                                  0.7
-                                ],
-                                "@specularColor": [
-                                  0.5,
-                                  0.5,
-                                  0.5
-                                ]
-                              }
-                            },
-                            "-texture": {
-                              "ComposedCubeMapTexture": {
-                                "@DEF": "DECLflower_INSTANCE40000_texture",
-                                "-back": {
-                                  "ImageTexture": {
-                                    "@url": [
-                                      "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
-                                      "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"
-                                    ]
-                                  }
-                                },
-                                "-bottom": {
-                                  "ImageTexture": {
-                                    "@url": [
-                                      "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
-                                      "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"
-                                    ]
-                                  }
-                                },
-                                "-front": {
-                                  "ImageTexture": {
-                                    "@url": [
-                                      "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
-                                      "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"
-                                    ]
-                                  }
-                                },
-                                "-left": {
-                                  "ImageTexture": {
-                                    "@url": [
-                                      "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
-                                      "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"
-                                    ]
-                                  }
-                                },
-                                "-right": {
-                                  "ImageTexture": {
-                                    "@url": [
-                                      "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
-                                      "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"
-                                    ]
-                                  }
-                                },
-                                "-top": {
-                                  "ImageTexture": {
-                                    "@url": [
-                                      "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
-                                      "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"
-                                    ]
-                                  }
-                                }
-                              }
-                            },
-                            "-shaders": [
-                              {
-                                "ComposedShader": {
-                                  "@language": "GLSL",
-                                  "field": [
-                                    {
-                                      "@name": "xxxcube",
-                                      "@type": "SFInt32",
-                                      "@accessType": "inputOutput",
-                                      "@value": 0
-                                    },
-                                    {
-                                      "@name": "cube",
-                                      "@type": "SFNode",
-                                      "@accessType": "inputOutput",
-                                      "-children": [
-                                        {
-                                          "ComposedCubeMapTexture": {
-                                            "@USE": "DECLflower_INSTANCE40000_texture"
-                                          }
-                                        }
-                                      ]
-                                    },
-                                    {
-                                      "@name": "chromaticDispertion",
-                                      "@type": "SFVec3f",
-                                      "@accessType": "inputOutput",
-                                      "@value": [
-                                        0.98,
-                                        1,
-                                        1.033
-                                      ]
-                                    },
-                                    {
-                                      "@name": "bias",
-                                      "@type": "SFFloat",
-                                      "@accessType": "inputOutput",
-                                      "@value": 0.5
-                                    },
-                                    {
-                                      "@name": "scale",
-                                      "@type": "SFFloat",
-                                      "@accessType": "inputOutput",
-                                      "@value": 0.5
-                                    },
-                                    {
-                                      "@name": "power",
-                                      "@type": "SFFloat",
-                                      "@accessType": "inputOutput",
-                                      "@value": 2
-                                    }
-                                  ],
-                                  "-parts": [
-                                    {
-                                      "ShaderPart": {
-                                        "@url": [
-                                          "../shaders/x3dom.vs",
-                                          "https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs"
-                                        ],
-                                        "@type": "VERTEX"
-                                      }
-                                    },
-                                    {
-                                      "ShaderPart": {
-                                        "@url": [
-                                          "../shaders/pc_bubbles.fs",
-                                          "https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"
-                                        ],
-                                        "@type": "FRAGMENT"
-                                      }
-                                    }
-                                  ]
-                                }
-                              },
-                              {
-                                "ComposedShader": {
-                                  "@DEF": "DECLflower_INSTANCE40000_shader",
-                                  "@language": "GLSL",
-                                  "field": [
-                                    {
-                                      "@name": "xxxcube",
-                                      "@type": "SFInt32",
-                                      "@accessType": "inputOutput",
-                                      "@value": 0
-                                    },
-                                    {
-                                      "@name": "cube",
-                                      "@type": "SFNode",
-                                      "@accessType": "inputOutput",
-                                      "-children": [
-                                        {
-                                          "ComposedCubeMapTexture": {
-                                            "@USE": "DECLflower_INSTANCE40000_texture"
-                                          }
-                                        }
-                                      ]
-                                    },
-                                    {
-                                      "@name": "chromaticDispertion",
-                                      "@type": "SFVec3f",
-                                      "@accessType": "inputOutput",
-                                      "@value": [
-                                        0.98,
-                                        1,
-                                        1.033
-                                      ]
-                                    },
-                                    {
-                                      "@name": "bias",
-                                      "@type": "SFFloat",
-                                      "@accessType": "inputOutput",
-                                      "@value": 10
-                                    },
-                                    {
-                                      "@name": "scale",
-                                      "@type": "SFFloat",
-                                      "@accessType": "inputOutput",
-                                      "@value": 10
-                                    },
-                                    {
-                                      "@name": "power",
-                                      "@type": "SFFloat",
-                                      "@accessType": "inputOutput",
-                                      "@value": 2
-                                    }
-                                  ],
-                                  "-parts": [
-                                    {
-                                      "ShaderPart": {
-                                        "@url": [
-                                          "../shaders/cobweb.vs",
-                                          "https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"
-                                        ],
-                                        "@type": "VERTEX"
-                                      }
-                                    },
-                                    {
-                                      "ShaderPart": {
-                                        "@url": [
-                                          "../shaders/pc_bubbles.fs",
-                                          "https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"
-                                        ],
-                                        "@type": "FRAGMENT"
-                                      }
-                                    }
-                                  ]
-                                }
-                              }
-                            ]
-                          }
-                        },
-                        "-geometry": {
-                          "Sphere": {}
-                        },
-                        "-children": [
-                          {
-                            "#comment": "<IndexedFaceSet convex=\"false\" DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>"
-                          }
-                        ]
-                      }
-                    }
-                  ]
-                }
-              },
-              {
-                "Script": {
-                  "@DEF": "DECLflower_INSTANCE40000_Bounce",
-                  "field": [
-                    {
-                      "@name": "translation",
-                      "@accessType": "inputOutput",
-                      "@type": "SFVec3f",
-                      "@value": [
-                        0,
-                        0,
-                        0
-                      ]
-                    },
-                    {
-                      "@name": "velocity",
-                      "@accessType": "inputOutput",
-                      "@type": "SFVec3f",
-                      "@value": [
-                        0,
-                        0,
-                        0
-                      ]
-                    },
-                    {
-                      "@name": "set_fraction",
-                      "@accessType": "inputOnly",
-                      "@type": "SFTime"
-                    },
-                    {
-                      "@name": "coordinates",
-                      "@accessType": "inputOutput",
-                      "@type": "MFVec3f"
-                    },
-                    {
-                      "@name": "coordIndexes",
-                      "@accessType": "outputOnly",
-                      "@type": "MFInt32"
-                    },
-                    {
-                      "@name": "a",
-                      "@type": "SFFloat",
-                      "@accessType": "inputOutput",
-                      "@value": 0.5
-                    },
-                    {
-                      "@name": "b",
-                      "@type": "SFFloat",
-                      "@accessType": "inputOutput",
-                      "@value": 0.5
-                    },
-                    {
-                      "@name": "c",
-                      "@type": "SFFloat",
-                      "@accessType": "inputOutput",
-                      "@value": 3
-                    },
-                    {
-                      "@name": "d",
-                      "@type": "SFFloat",
-                      "@accessType": "inputOutput",
-                      "@value": 3
-                    },
-                    {
-                      "@name": "tdelta",
-                      "@type": "SFFloat",
-                      "@accessType": "inputOutput",
-                      "@value": 0.5
-                    },
-                    {
-                      "@name": "pdelta",
-                      "@type": "SFFloat",
-                      "@accessType": "inputOutput",
-                      "@value": 0.5
-                    }
-                  ],
-                  "#sourceText": [
-                    "",
-                    "ecmascript:",
-                    "\t\t\tfunction newBubble() {",
-                    "\t\t\t    translation = new SFVec3f(0, 0, 0);",
-                    "\t\t\t    velocity = new SFVec3f(",
-                    "\t\t\t    \tMath.random() - 0.5,",
-                    "\t\t\t\tMath.random() - 0.5,",
-                    "\t\t\t\tMath.random() - 0.5);",
-                    "\t\t\t}",
-                    "\t\t\tfunction set_fraction() {",
-                    "\t\t\t    translation = new SFVec3f(",
-                    "\t\t\t    \ttranslation.x + velocity.x,",
-                    "\t\t\t\ttranslation.y + velocity.y,",
-                    "\t\t\t\ttranslation.z + velocity.z);",
-                    "\t\t\t    if (Math.abs(translation.x) > 10) {",
-                    "\t\t\t\t\tnewBubble();",
-                    "\t\t\t    } else if (Math.abs(translation.y) > 10) {",
-                    "\t\t\t\t\tnewBubble();",
-                    "\t\t\t    } else if (Math.abs(translation.z) > 10) {",
-                    "\t\t\t\t\tnewBubble();",
-                    "\t\t\t    } else {",
-                    "\t\t\t\t\tvelocity = new SFVec3f(",
-                    "\t\t\t\t\t\tvelocity.x + Math.random() * 0.2 - 0.1,",
-                    "\t\t\t\t\t\tvelocity.y + Math.random() * 0.2 - 0.1,",
-                    "\t\t\t\t\t\tvelocity.z + Math.random() * 0.2 - 0.1",
-                    "\t\t\t\t\t);",
-                    "\t\t\t    }",
-                    "\t\t\t    animate_flowers();",
-                    "\t\t\t}",
-                    "",
-                    "\t\t\tfunction initialize() {",
-                    "\t\t\t     newBubble();",
-                    "\t\t\t     resolution = 100;",
-                    "\t\t\t     updateCoordinates(resolution);",
-                    "\t\t\t     var cis = [];",
-                    "\t\t\t     for ( i = 0; i < resolution-1; i++) {",
-                    "\t\t\t\tfor ( j = 0; j < resolution-1; j++) {",
-                    "\t\t\t\t     cis.push(i*resolution+j);",
-                    "\t\t\t\t     cis.push(i*resolution+j+1);",
-                    "\t\t\t\t     cis.push((i+1)*resolution+j+1);",
-                    "\t\t\t\t     cis.push((i+1)*resolution+j);",
-                    "\t\t\t\t     cis.push(-1);",
-                    "\t\t\t\t}",
-                    "\t\t\t    }",
-                    "\t\t\t     coordIndexes = new MFInt32(cis);",
-                    "\t\t\t}",
-                    "",
-                    "\t\t\tfunction updateCoordinates(resolution) {",
-                    "\t\t\t     theta = 0.0;",
-                    "\t\t\t     phi = 0.0;",
-                    "\t\t\t     delta = (2 * 3.141592653) / (resolution-1);",
-                    "\t\t\t     var crds = [];",
-                    "\t\t\t     for ( i = 0; i < resolution; i++) {",
-                    "\t\t\t\tfor ( j = 0; j < resolution; j++) {",
-                    "\t\t\t\t\trho = a + b * Math.cos(c * theta) * Math.cos(d * phi);",
-                    "\t\t\t\t\tcrds.push(new SFVec3f(",
-                    "\t\t\t\t\t\trho * Math.cos(phi) * Math.cos(theta),",
-                    "\t\t\t\t\t\trho * Math.cos(phi) * Math.sin(theta),",
-                    "\t\t\t\t\t\trho * Math.sin(phi)",
-                    "\t\t\t\t\t));",
-                    "\t\t\t\t\ttheta += delta;",
-                    "\t\t\t\t}",
-                    "\t\t\t\tphi += delta;",
-                    "\t\t\t\tcoordinates = new MFVec3f(crds);",
-                    "\t\t\t     }",
-                    "\t\t\t}",
-                    "",
-                    "\t\t\tfunction animate_flowers(fraction, eventTime) {",
-                    "\t\t\t\tchoice = Math.floor(Math.random() * 4);",
-                    "\t\t\t\tswitch (choice) {",
-                    "\t\t\t\tcase 0:",
-                    "\t\t\t\t\ta += Math.random() * 0.2 - 0.1;",
-                    "\t\t\t\t\tbreak;",
-                    "\t\t\t\tcase 1:",
-                    "\t\t\t\t\tb += Math.random() * 0.2 - 0.1;",
-                    "\t\t\t\t\tbreak;",
-                    "\t\t\t\tcase 2:",
-                    "\t\t\t\t\tc += Math.random() * 2 - 1;",
-                    "\t\t\t\t\tbreak;",
-                    "\t\t\t\tcase 3:",
-                    "\t\t\t\t\td += Math.random() * 2 - 1;",
-                    "\t\t\t\t\tbreak;",
-                    "\t\t\t\t}",
-                    "\t\t\t\tif (a > 1) {",
-                    "\t\t\t\t\ta =  0.5;",
-                    "\t\t\t\t}",
-                    "\t\t\t\tif (b > 1) {",
-                    "\t\t\t\t\tb =  0.5;",
-                    "\t\t\t\t}",
-                    "\t\t\t\tif (c < 1) {",
-                    "\t\t\t\t\tc =  4;",
-                    "\t\t\t\t}",
-                    "\t\t\t\tif (d < 1) {",
-                    "\t\t\t\t\td =  4;",
-                    "\t\t\t\t}",
-                    "\t\t\t\tif (c > 10) {",
-                    "\t\t\t\t\tc = 4;",
-                    "\t\t\t\t}",
-                    "\t\t\t\tif (d > 10) {",
-                    "\t\t\t\t\td = 4;",
-                    "\t\t\t\t}",
-                    "\t\t\t\tresolution = 100;",
-                    "\t\t\t\tupdateCoordinates(resolution);",
-                    "\t\t\t}"
-                  ]
-                }
-              },
-              {
-                "TimeSensor": {
-                  "@DEF": "DECLflower_INSTANCE40000_TourTime",
-                  "@cycleInterval": 0.15,
-                  "@loop": true
-                }
-              },
-              {
-                "ROUTE": {
-                  "@fromNode": "DECLflower_INSTANCE40000_TourTime",
-                  "@fromField": "cycleTime",
-                  "@toNode": "DECLflower_INSTANCE40000_Bounce",
-                  "@toField": "set_fraction"
-                }
-              },
-              {
-                "ROUTE": {
-                  "@fromNode": "DECLflower_INSTANCE40000_Bounce",
-                  "@fromField": "translation_changed",
-                  "@toNode": "DECLflower_INSTANCE40000_transform",
-                  "@toField": "set_translation"
-                }
-              },
-              {
-                "#comment": "<ROUTE fromField=\"coordIndexes\" fromNode=\"Bounce\" toField=\"set_coordIndex\" toNode=\"Orbit\"/> <ROUTE fromField=\"coordinates\" fromNode=\"Bounce\" toField=\"set_point\" toNode=\"OrbitCoordinates\"/>"
+                "#comment": "<ProtoInstance name=\"flower\"/> <ProtoInstance name=\"flower\"/>"
               }
             ]
           }

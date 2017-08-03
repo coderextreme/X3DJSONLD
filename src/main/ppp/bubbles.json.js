@@ -1,4 +1,7 @@
 var x3dom = require('../node/fields.js');
+if (typeof X3DJSON === 'undefined') {
+	var X3DJSON = {};
+}
 var MFBool = x3dom.fields.MFBoolean;
 var MFColor = x3dom.fields.MFColor;
 var MFColorRGBA = x3dom.fields.MFColorRGBA;
@@ -20,28 +23,27 @@ var MFVec3d = function() { return Array.prototype.slice.call(arguments, 0); };
 var MFVec3f = x3dom.fields.MFVec3f;
 var MFVec4d = function() { return Array.prototype.slice.call(arguments, 0); };
 var MFVec4f = function() { return Array.prototype.slice.call(arguments, 0); };
-SFBool = Boolean;
+var SFBool = Boolean;
 var SFColor = x3dom.fields.SFColor;
 var SFColorRGBA = x3dom.fields.SFColorRGBA;
-SFDouble = Number;
-SFFloat = Number;
-SFInt32 = Number;
+var SFDouble = Number;
+var SFFloat = Number;
+var SFInt32 = Number;
 var SFImage = x3dom.fields.SFImage;
 var SFMatrix3d = function() { return Array.prototype.slice.call(arguments, 0); };
 var SFMatrix3f = function() { return Array.prototype.slice.call(arguments, 0); };
 var SFMatrix4d = function() { return Array.prototype.slice.call(arguments, 0); };
 var SFMatrix4f = x3dom.fields.SFMatrix4f;
 var SFNode = x3dom.fields.SFNode;
-var SFRotation = x3dom.fields.Quaternion;
-SFString = String;
-SFTime = Number;
+var Quaternion = x3dom.fields.Quaternion;
+var SFString = String;
+var SFTime = Number;
 var SFVec2d = function() { return Array.prototype.slice.call(arguments, 0); };
 var SFVec2f = x3dom.fields.SFVec2f;
 var SFVec3d = function() { return Array.prototype.slice.call(arguments, 0); };
 var SFVec3f = x3dom.fields.SFVec3f;
 var SFVec4d = function() { return Array.prototype.slice.call(arguments, 0); };
-var SFvec4f = x3dom.fields.SFvec4f;
-var X3DJSON = {};
+var SFVec4f = x3dom.fields.SFVec4f;
 if (typeof document === 'undefined') {
 	document = { querySelector : function() {;
 		return {
@@ -57,20 +59,56 @@ if (typeof document === 'undefined') {
 	}};
 }
 X3DJSON.nodeUtil = function(node, field, value) {
-		var element = document.querySelector("[DEF='"+node+"'], [name='"+node+"']");
+		var selector = "undefined [DEF='"+node+"']";
+		var element = document.querySelector(selector);
 		if (element === null) {
 			console.error('unDEFed node',node);
 		} else if (arguments.length > 2) {
-			element.setAttribute(field, value);
-			console.log('set '+ field+ '='+ value);
+			/*
+			if (value && typeof value.toString === 'function') {
+				value = value.toString();
+			}
+			$(selector).attr(field, value);
+			// console.log('set', node, '.', field, '=', value);
+			*/
+			element.setFieldValue(field, value);
 			return element;
 		} else if (arguments.length > 1) {
-			var value = element.getAttribute(field)
-			console.log('get', field,'=',value);
+			value = element.getFieldValue(field);
+			/*
+			value = $(selector).attr(field);
+			if (element &&
+				element._x3domNode &&
+				element._x3domNode._vf &&
+				element._x3domNode._vf[field] &&
+				element._x3domNode._vf[field].setValueByStr) {
+				value = element._x3domNode._vf[field].setValueByStr(value);
+			}
+			*/
+			// console.log('get', node, '.', field,'=',value);
 			return value;
 		} else {
-			return element;
+			return $(selector)[0];
 		}
+};
+X3DJSON.createProxy = function(action, scriptObject) {
+	var proxy = new Proxy(scriptObject, {
+		get: function(target, property, receiver) {
+			return Reflect.get(target, property, receiver);
+		},
+		set: function(target, property, value, receiver) {
+                 if (typeof action[property] === 'object') {
+                        for (var route in action[property]) {
+                                if (typeof action[property][route] === 'function') {
+                                        action[property][route](property, value);
+   		                     // console.log('Set',property,'to', value);
+                                }
+                        }
+                 }
+		      return Reflect.set(target, property, value, receiver);
+		}
+	});
+	return proxy;
 };
 if (typeof X3DJSON['Script'] === 'undefined') {
 X3DJSON['Script'] = {};
@@ -78,62 +116,77 @@ X3DJSON['Script'] = {};
 
 X3DJSON['Script']['RandomTourTime'] = function() {
 	this.set_cycle = function (value) {
-		X3DJSON.nodeUtil('RandomTourTime', 'cycle', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+		this.proxy.cycle = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
 	this.cycle_changed = function () {
-		return X3DJSON.nodeUtil('RandomTourTime', 'cycle');
+		var value = this.cycle;
+		return value;
 	};
-	this.set_cycle(undefined);
+	this.cycle = undefined;
 	this.set_lastKey = function (value) {
-		X3DJSON.nodeUtil('RandomTourTime', 'lastKey', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+		this.proxy.lastKey = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
 	this.lastKey_changed = function () {
-		return X3DJSON.nodeUtil('RandomTourTime', 'lastKey');
+		var value = this.lastKey;
+		return value;
 	};
-	this.set_lastKey(new SFFloat(0));
+	this.lastKey = new SFFloat(0);
 	this.set_orientations = function (value) {
-		X3DJSON.nodeUtil('RandomTourTime', 'orientations', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+		this.proxy.orientations = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
 	this.orientations_changed = function () {
-		return X3DJSON.nodeUtil('RandomTourTime', 'orientations');
+		var value = this.orientations;
+		return value;
 	};
-	this.set_orientations(new MFRotation([[0,1,0,0],[0,1,0,-1.57],[0,1,0,3.14],[0,1,0,1.57],[0,1,0,0],[1,0,0,-1.57],[0,1,0,0],[1,0,0,1.57],[0,1,0,0]]));
+	this.orientations = new MFRotation([new SFRotation ( 0 , 1 , 0 , 0 ),new SFRotation ( 0 , 1 , 0 , -1.57 ),new SFRotation ( 0 , 1 , 0 , 3.14 ),new SFRotation ( 0 , 1 , 0 , 1.57 ),new SFRotation ( 0 , 1 , 0 , 0 ),new SFRotation ( 1 , 0 , 0 , -1.57 ),new SFRotation ( 0 , 1 , 0 , 0 ),new SFRotation ( 1 , 0 , 0 , 1.57 ),new SFRotation ( 0 , 1 , 0 , 0 )]);
 	this.set_positions = function (value) {
-		X3DJSON.nodeUtil('RandomTourTime', 'positions', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+		this.proxy.positions = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
 	this.positions_changed = function () {
-		return X3DJSON.nodeUtil('RandomTourTime', 'positions');
+		var value = this.positions;
+		return value;
 	};
-	this.set_positions(new MFVec3f([[0,0,10],[-10,0,0],[0,0,-10],[10,0,0],[0,0,10],[0,10,0],[0,0,10],[0,-10,0],[0,0,10]]));
+	this.positions = new MFVec3f([new SFVec3f ( 0 , 0 , 10 ),new SFVec3f ( -10 , 0 , 0 ),new SFVec3f ( 0 , 0 , -10 ),new SFVec3f ( 10 , 0 , 0 ),new SFVec3f ( 0 , 0 , 10 ),new SFVec3f ( 0 , 10 , 0 ),new SFVec3f ( 0 , 0 , 10 ),new SFVec3f ( 0 , -10 , 0 ),new SFVec3f ( 0 , 0 , 10 )]);
 	this.set_position = function (value) {
-		X3DJSON.nodeUtil('RandomTourTime', 'position', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+		this.proxy.position = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
 	this.position_changed = function () {
-		return X3DJSON.nodeUtil('RandomTourTime', 'position');
+		var value = this.position;
+		return value;
 	};
-	this.set_position(new MFVec3f());
+	this.position = undefined;
 	this.set_orientation = function (value) {
-		X3DJSON.nodeUtil('RandomTourTime', 'orientation', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+		this.proxy.orientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
 	this.orientation_changed = function () {
-		return X3DJSON.nodeUtil('RandomTourTime', 'orientation');
+		var value = this.orientation;
+		return value;
 	};
-	this.set_orientation(new MFRotation());
-ecmascript:
+	this.orientation = undefined;
+	this.set_orientation = function (value) {
+		this.proxy.orientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+	};
+	this.orientation_changed = function () {
+		var value = this.orientation;
+		return value;
+	};
+	this.orientation = undefined;
+
+	    ecmascript:
                
 	this.set_cycle = function (value) {
-                        var ov = this.lastKey_changed();
+                        var ov = this.proxy.lastKey;
                         do {
-                            this.set_lastKey ( Math.round(Math.random()*(this.positions_changed().length-1)));
-                        } while (this.lastKey_changed() === ov);
-                        var vc = this.lastKey_changed();
+                            this.proxy.lastKey = Math.round(Math.random()*(this.proxy.positions.length-1));
+                        } while (this.proxy.lastKey === ov);
+                        var vc = this.proxy.lastKey;
                         
-                        this.set_orientation ( new MFRotation());
-                        this.orientation_changed()[0] = new SFRotation(this.orientations_changed()[ov].x, this.orientations_changed()[ov].y, this.orientations_changed()[ov].z, this.orientations_changed()[ov].w);
-                        this.orientation_changed()[1] = new SFRotation(this.orientations_changed()[vc].x, this.orientations_changed()[vc].y, this.orientations_changed()[vc].z, this.orientations_changed()[vc].w);
-                        this.set_position ( new MFVec3f());
-                        this.position_changed()[0] = new SFVec3f(this.positions_changed()[ov].x,this.positions_changed()[ov].y,this.positions_changed()[ov].z);
-                        this.position_changed()[1] = new SFVec3f(this.positions_changed()[vc].x,this.positions_changed()[vc].y,this.positions_changed()[vc].z);
+                        this.proxy.orientation_changed = new MFRotation();
+                        this.proxy.orientation_changed[0] = new SFRotation(this.proxy.orientations[ov].x, this.proxy.orientations[ov].y, this.proxy.orientations[ov].z, this.proxy.orientations[ov].w);
+                        this.proxy.orientation_changed[1] = new SFRotation(this.proxy.orientations[vc].x, this.proxy.orientations[vc].y, this.proxy.orientations[vc].z, this.proxy.orientations[vc].w);
+                        this.proxy.position_changed = new MFVec3f();
+                        this.proxy.position_changed[0] = new SFVec3f(this.proxy.positions[ov].x,this.proxy.positions[ov].y,this.proxy.positions[ov].z);
+                        this.proxy.position_changed[1] = new SFVec3f(this.proxy.positions[vc].x,this.proxy.positions[vc].y,this.proxy.positions[vc].z);
                     // }
                };
 
@@ -143,342 +196,62 @@ X3DJSON['Obj'] = {};
 }
 
 X3DJSON['Obj']['RandomTourTime'] = new X3DJSON['Script']['RandomTourTime']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['RandomTourTime'] === 'undefined') {
+X3DJSON['Obj']['RandomTourTime'] = {};
+}
+
+if (typeof X3DJSON['Obj']['RandomTourTime']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['RandomTourTime']['ACTION'] = {};
+X3DJSON['Obj']['RandomTourTime'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['RandomTourTime']['ACTION'],X3DJSON['Obj']['RandomTourTime']);
+}
 if (typeof X3DJSON['Obj']['RandomTourTime'].initialize === "function") X3DJSON['Obj']['RandomTourTime'].initialize();
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
+X3DJSON.nodeUtil('TourTime').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['RandomTourTime'].set_cycle(X3DJSON.nodeUtil('TourTime','cycleTime'), __eventTime);
+}, false);
+			X3DJSON['Obj']['RandomTourTime'].set_cycle(X3DJSON.nodeUtil('TourTime','cycleTime'), __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['ROUTE']['TourTime'] === 'undefined') {
-X3DJSON['ROUTE']['TourTime'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TourTime']['cycleTime'] === 'undefined') {
-X3DJSON['ROUTE']['TourTime']['cycleTime'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TourTime']['cycleTime']['RandomTourTime'] === 'undefined') {
-X3DJSON['ROUTE']['TourTime']['cycleTime']['RandomTourTime'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TourTime']['cycleTime']['RandomTourTime']['set_cycle'] === 'undefined') {
-X3DJSON['ROUTE']['TourTime']['cycleTime']['RandomTourTime']['set_cycle'] = {};
+if (typeof X3DJSON['Obj']['RandomTourTime'] === 'undefined') {
+X3DJSON['Obj']['RandomTourTime'] = {};
 }
 
-X3DJSON['ROUTE']['TourTime']['cycleTime']['RandomTourTime']['set_cycle']['FROM'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'cycleTime');
-			X3DJSON.nodeUtil('RandomTourTime','set_cycle',X3DJSON.nodeUtil('TourTime','cycleTime'), __eventTime);
-		});
+if (typeof X3DJSON['Obj']['RandomTourTime']['ACTION']['orientation'] === 'undefined') {
+X3DJSON['Obj']['RandomTourTime']['ACTION']['orientation'] = [];
+}
+X3DJSON['Obj']['RandomTourTime']['ACTION']['orientation'].push(function(property, value) {
+		if (property === 'orientation') {
+			X3DJSON.nodeUtil('TourOrientation','keyValue',typeof X3DJSON['Obj']['RandomTourTime'].orientation_changed === "function" ? X3DJSON['Obj']['RandomTourTime'].orientation_changed() : X3DJSON['Obj']['RandomTourTime'].orientation, __eventTime);
+		}
 });
-var config = { attributes: true, childList: true, attributeFilter:['cycleTime'] };
-X3DJSON['ROUTE']['TourTime']['cycleTime']['RandomTourTime']['set_cycle']['FROM'].observe(X3DJSON.nodeUtil('TourTime'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
+			X3DJSON.nodeUtil('TourOrientation','keyValue',typeof X3DJSON['Obj']['RandomTourTime'].orientation_changed === "function" ? X3DJSON['Obj']['RandomTourTime'].orientation_changed() : X3DJSON['Obj']['RandomTourTime'].orientation, __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['ROUTE']['TourTime'] === 'undefined') {
-X3DJSON['ROUTE']['TourTime'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TourTime']['cycleTime'] === 'undefined') {
-X3DJSON['ROUTE']['TourTime']['cycleTime'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TourTime']['cycleTime']['RandomTourTime'] === 'undefined') {
-X3DJSON['ROUTE']['TourTime']['cycleTime']['RandomTourTime'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TourTime']['cycleTime']['RandomTourTime']['set_cycle'] === 'undefined') {
-X3DJSON['ROUTE']['TourTime']['cycleTime']['RandomTourTime']['set_cycle'] = {};
+if (typeof X3DJSON['Obj']['RandomTourTime'] === 'undefined') {
+X3DJSON['Obj']['RandomTourTime'] = {};
 }
 
-X3DJSON['ROUTE']['TourTime']['cycleTime']['RandomTourTime']['set_cycle']['TO'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'set_cycle');
-			if (typeof X3DJSON['Obj']['RandomTourTime'].set_cycle === "function") X3DJSON['Obj']['RandomTourTime'].set_cycle(X3DJSON.nodeUtil('RandomTourTime','set_cycle'), __eventTime);
-		});
+if (typeof X3DJSON['Obj']['RandomTourTime']['ACTION']['position'] === 'undefined') {
+X3DJSON['Obj']['RandomTourTime']['ACTION']['position'] = [];
+}
+X3DJSON['Obj']['RandomTourTime']['ACTION']['position'].push(function(property, value) {
+		if (property === 'position') {
+			X3DJSON.nodeUtil('TourPosition','keyValue',typeof X3DJSON['Obj']['RandomTourTime'].position_changed === "function" ? X3DJSON['Obj']['RandomTourTime'].position_changed() : X3DJSON['Obj']['RandomTourTime'].position, __eventTime);
+		}
 });
-var config = { attributes: true, childList: true, attributeFilter:['set_cycle'] };
-X3DJSON['ROUTE']['TourTime']['cycleTime']['RandomTourTime']['set_cycle']['TO'].observe(X3DJSON.nodeUtil('RandomTourTime'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['RandomTourTime'] === 'undefined') {
-X3DJSON['ROUTE']['RandomTourTime'] = {};
-}
-if (typeof X3DJSON['ROUTE']['RandomTourTime']['orientation'] === 'undefined') {
-X3DJSON['ROUTE']['RandomTourTime']['orientation'] = {};
-}
-if (typeof X3DJSON['ROUTE']['RandomTourTime']['orientation']['TourOrientation'] === 'undefined') {
-X3DJSON['ROUTE']['RandomTourTime']['orientation']['TourOrientation'] = {};
-}
-if (typeof X3DJSON['ROUTE']['RandomTourTime']['orientation']['TourOrientation']['keyValue'] === 'undefined') {
-X3DJSON['ROUTE']['RandomTourTime']['orientation']['TourOrientation']['keyValue'] = {};
-}
-
-X3DJSON['ROUTE']['RandomTourTime']['orientation']['TourOrientation']['keyValue']['FROM'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'orientation');
-			X3DJSON.nodeUtil('TourOrientation','keyValue',X3DJSON.nodeUtil('RandomTourTime','orientation'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['orientation'] };
-X3DJSON['ROUTE']['RandomTourTime']['orientation']['TourOrientation']['keyValue']['FROM'].observe(X3DJSON.nodeUtil('RandomTourTime'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['RandomTourTime'] === 'undefined') {
-X3DJSON['ROUTE']['RandomTourTime'] = {};
-}
-if (typeof X3DJSON['ROUTE']['RandomTourTime']['orientation'] === 'undefined') {
-X3DJSON['ROUTE']['RandomTourTime']['orientation'] = {};
-}
-if (typeof X3DJSON['ROUTE']['RandomTourTime']['orientation']['TourOrientation'] === 'undefined') {
-X3DJSON['ROUTE']['RandomTourTime']['orientation']['TourOrientation'] = {};
-}
-if (typeof X3DJSON['ROUTE']['RandomTourTime']['orientation']['TourOrientation']['keyValue'] === 'undefined') {
-X3DJSON['ROUTE']['RandomTourTime']['orientation']['TourOrientation']['keyValue'] = {};
-}
-
-X3DJSON['ROUTE']['RandomTourTime']['orientation']['TourOrientation']['keyValue']['TO'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'keyValue');
-			if (typeof X3DJSON['Obj']['TourOrientation'].keyValue === "function") X3DJSON['Obj']['TourOrientation'].keyValue(X3DJSON.nodeUtil('TourOrientation','keyValue'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['keyValue'] };
-X3DJSON['ROUTE']['RandomTourTime']['orientation']['TourOrientation']['keyValue']['TO'].observe(X3DJSON.nodeUtil('TourOrientation'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['RandomTourTime'] === 'undefined') {
-X3DJSON['ROUTE']['RandomTourTime'] = {};
-}
-if (typeof X3DJSON['ROUTE']['RandomTourTime']['position'] === 'undefined') {
-X3DJSON['ROUTE']['RandomTourTime']['position'] = {};
-}
-if (typeof X3DJSON['ROUTE']['RandomTourTime']['position']['TourPosition'] === 'undefined') {
-X3DJSON['ROUTE']['RandomTourTime']['position']['TourPosition'] = {};
-}
-if (typeof X3DJSON['ROUTE']['RandomTourTime']['position']['TourPosition']['keyValue'] === 'undefined') {
-X3DJSON['ROUTE']['RandomTourTime']['position']['TourPosition']['keyValue'] = {};
-}
-
-X3DJSON['ROUTE']['RandomTourTime']['position']['TourPosition']['keyValue']['FROM'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'position');
-			X3DJSON.nodeUtil('TourPosition','keyValue',X3DJSON.nodeUtil('RandomTourTime','position'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['position'] };
-X3DJSON['ROUTE']['RandomTourTime']['position']['TourPosition']['keyValue']['FROM'].observe(X3DJSON.nodeUtil('RandomTourTime'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['RandomTourTime'] === 'undefined') {
-X3DJSON['ROUTE']['RandomTourTime'] = {};
-}
-if (typeof X3DJSON['ROUTE']['RandomTourTime']['position'] === 'undefined') {
-X3DJSON['ROUTE']['RandomTourTime']['position'] = {};
-}
-if (typeof X3DJSON['ROUTE']['RandomTourTime']['position']['TourPosition'] === 'undefined') {
-X3DJSON['ROUTE']['RandomTourTime']['position']['TourPosition'] = {};
-}
-if (typeof X3DJSON['ROUTE']['RandomTourTime']['position']['TourPosition']['keyValue'] === 'undefined') {
-X3DJSON['ROUTE']['RandomTourTime']['position']['TourPosition']['keyValue'] = {};
-}
-
-X3DJSON['ROUTE']['RandomTourTime']['position']['TourPosition']['keyValue']['TO'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'keyValue');
-			if (typeof X3DJSON['Obj']['TourPosition'].keyValue === "function") X3DJSON['Obj']['TourPosition'].keyValue(X3DJSON.nodeUtil('TourPosition','keyValue'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['keyValue'] };
-X3DJSON['ROUTE']['RandomTourTime']['position']['TourPosition']['keyValue']['TO'].observe(X3DJSON.nodeUtil('TourPosition'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TourTime'] === 'undefined') {
-X3DJSON['ROUTE']['TourTime'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TourTime']['fraction_changed'] === 'undefined') {
-X3DJSON['ROUTE']['TourTime']['fraction_changed'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TourTime']['fraction_changed']['TourOrientation'] === 'undefined') {
-X3DJSON['ROUTE']['TourTime']['fraction_changed']['TourOrientation'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TourTime']['fraction_changed']['TourOrientation']['set_fraction'] === 'undefined') {
-X3DJSON['ROUTE']['TourTime']['fraction_changed']['TourOrientation']['set_fraction'] = {};
-}
-
-X3DJSON['ROUTE']['TourTime']['fraction_changed']['TourOrientation']['set_fraction']['FROM'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'fraction_changed');
-			X3DJSON.nodeUtil('TourOrientation','set_fraction',X3DJSON.nodeUtil('TourTime','fraction_changed'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['fraction_changed'] };
-X3DJSON['ROUTE']['TourTime']['fraction_changed']['TourOrientation']['set_fraction']['FROM'].observe(X3DJSON.nodeUtil('TourTime'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TourTime'] === 'undefined') {
-X3DJSON['ROUTE']['TourTime'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TourTime']['fraction_changed'] === 'undefined') {
-X3DJSON['ROUTE']['TourTime']['fraction_changed'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TourTime']['fraction_changed']['TourOrientation'] === 'undefined') {
-X3DJSON['ROUTE']['TourTime']['fraction_changed']['TourOrientation'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TourTime']['fraction_changed']['TourOrientation']['set_fraction'] === 'undefined') {
-X3DJSON['ROUTE']['TourTime']['fraction_changed']['TourOrientation']['set_fraction'] = {};
-}
-
-X3DJSON['ROUTE']['TourTime']['fraction_changed']['TourOrientation']['set_fraction']['TO'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'set_fraction');
-			if (typeof X3DJSON['Obj']['TourOrientation'].set_fraction === "function") X3DJSON['Obj']['TourOrientation'].set_fraction(X3DJSON.nodeUtil('TourOrientation','set_fraction'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['set_fraction'] };
-X3DJSON['ROUTE']['TourTime']['fraction_changed']['TourOrientation']['set_fraction']['TO'].observe(X3DJSON.nodeUtil('TourOrientation'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TourOrientation'] === 'undefined') {
-X3DJSON['ROUTE']['TourOrientation'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TourOrientation']['value_changed'] === 'undefined') {
-X3DJSON['ROUTE']['TourOrientation']['value_changed'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TourOrientation']['value_changed']['Tour'] === 'undefined') {
-X3DJSON['ROUTE']['TourOrientation']['value_changed']['Tour'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TourOrientation']['value_changed']['Tour']['set_orientation'] === 'undefined') {
-X3DJSON['ROUTE']['TourOrientation']['value_changed']['Tour']['set_orientation'] = {};
-}
-
-X3DJSON['ROUTE']['TourOrientation']['value_changed']['Tour']['set_orientation']['FROM'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'value_changed');
-			X3DJSON.nodeUtil('Tour','set_orientation',X3DJSON.nodeUtil('TourOrientation','value_changed'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['value_changed'] };
-X3DJSON['ROUTE']['TourOrientation']['value_changed']['Tour']['set_orientation']['FROM'].observe(X3DJSON.nodeUtil('TourOrientation'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TourOrientation'] === 'undefined') {
-X3DJSON['ROUTE']['TourOrientation'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TourOrientation']['value_changed'] === 'undefined') {
-X3DJSON['ROUTE']['TourOrientation']['value_changed'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TourOrientation']['value_changed']['Tour'] === 'undefined') {
-X3DJSON['ROUTE']['TourOrientation']['value_changed']['Tour'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TourOrientation']['value_changed']['Tour']['set_orientation'] === 'undefined') {
-X3DJSON['ROUTE']['TourOrientation']['value_changed']['Tour']['set_orientation'] = {};
-}
-
-X3DJSON['ROUTE']['TourOrientation']['value_changed']['Tour']['set_orientation']['TO'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'set_orientation');
-			if (typeof X3DJSON['Obj']['Tour'].set_orientation === "function") X3DJSON['Obj']['Tour'].set_orientation(X3DJSON.nodeUtil('Tour','set_orientation'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['set_orientation'] };
-X3DJSON['ROUTE']['TourOrientation']['value_changed']['Tour']['set_orientation']['TO'].observe(X3DJSON.nodeUtil('Tour'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TourTime'] === 'undefined') {
-X3DJSON['ROUTE']['TourTime'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TourTime']['fraction_changed'] === 'undefined') {
-X3DJSON['ROUTE']['TourTime']['fraction_changed'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TourTime']['fraction_changed']['TourPosition'] === 'undefined') {
-X3DJSON['ROUTE']['TourTime']['fraction_changed']['TourPosition'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TourTime']['fraction_changed']['TourPosition']['set_fraction'] === 'undefined') {
-X3DJSON['ROUTE']['TourTime']['fraction_changed']['TourPosition']['set_fraction'] = {};
-}
-
-X3DJSON['ROUTE']['TourTime']['fraction_changed']['TourPosition']['set_fraction']['FROM'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'fraction_changed');
-			X3DJSON.nodeUtil('TourPosition','set_fraction',X3DJSON.nodeUtil('TourTime','fraction_changed'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['fraction_changed'] };
-X3DJSON['ROUTE']['TourTime']['fraction_changed']['TourPosition']['set_fraction']['FROM'].observe(X3DJSON.nodeUtil('TourTime'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TourTime'] === 'undefined') {
-X3DJSON['ROUTE']['TourTime'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TourTime']['fraction_changed'] === 'undefined') {
-X3DJSON['ROUTE']['TourTime']['fraction_changed'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TourTime']['fraction_changed']['TourPosition'] === 'undefined') {
-X3DJSON['ROUTE']['TourTime']['fraction_changed']['TourPosition'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TourTime']['fraction_changed']['TourPosition']['set_fraction'] === 'undefined') {
-X3DJSON['ROUTE']['TourTime']['fraction_changed']['TourPosition']['set_fraction'] = {};
-}
-
-X3DJSON['ROUTE']['TourTime']['fraction_changed']['TourPosition']['set_fraction']['TO'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'set_fraction');
-			if (typeof X3DJSON['Obj']['TourPosition'].set_fraction === "function") X3DJSON['Obj']['TourPosition'].set_fraction(X3DJSON.nodeUtil('TourPosition','set_fraction'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['set_fraction'] };
-X3DJSON['ROUTE']['TourTime']['fraction_changed']['TourPosition']['set_fraction']['TO'].observe(X3DJSON.nodeUtil('TourPosition'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TourPosition'] === 'undefined') {
-X3DJSON['ROUTE']['TourPosition'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TourPosition']['value_changed'] === 'undefined') {
-X3DJSON['ROUTE']['TourPosition']['value_changed'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TourPosition']['value_changed']['Tour'] === 'undefined') {
-X3DJSON['ROUTE']['TourPosition']['value_changed']['Tour'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TourPosition']['value_changed']['Tour']['set_position'] === 'undefined') {
-X3DJSON['ROUTE']['TourPosition']['value_changed']['Tour']['set_position'] = {};
-}
-
-X3DJSON['ROUTE']['TourPosition']['value_changed']['Tour']['set_position']['FROM'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'value_changed');
-			X3DJSON.nodeUtil('Tour','set_position',X3DJSON.nodeUtil('TourPosition','value_changed'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['value_changed'] };
-X3DJSON['ROUTE']['TourPosition']['value_changed']['Tour']['set_position']['FROM'].observe(X3DJSON.nodeUtil('TourPosition'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TourPosition'] === 'undefined') {
-X3DJSON['ROUTE']['TourPosition'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TourPosition']['value_changed'] === 'undefined') {
-X3DJSON['ROUTE']['TourPosition']['value_changed'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TourPosition']['value_changed']['Tour'] === 'undefined') {
-X3DJSON['ROUTE']['TourPosition']['value_changed']['Tour'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TourPosition']['value_changed']['Tour']['set_position'] === 'undefined') {
-X3DJSON['ROUTE']['TourPosition']['value_changed']['Tour']['set_position'] = {};
-}
-
-X3DJSON['ROUTE']['TourPosition']['value_changed']['Tour']['set_position']['TO'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'set_position');
-			if (typeof X3DJSON['Obj']['Tour'].set_position === "function") X3DJSON['Obj']['Tour'].set_position(X3DJSON.nodeUtil('Tour','set_position'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['set_position'] };
-X3DJSON['ROUTE']['TourPosition']['value_changed']['Tour']['set_position']['TO'].observe(X3DJSON.nodeUtil('Tour'), config);
-			X3DJSON.nodeUtil('TourOrientation','set_fraction',X3DJSON.nodeUtil('TourTime','fraction_changed'), __eventTime);
-			X3DJSON.nodeUtil('TourPosition','set_fraction',X3DJSON.nodeUtil('TourTime','fraction_changed'), __eventTime);
+			X3DJSON.nodeUtil('TourPosition','keyValue',typeof X3DJSON['Obj']['RandomTourTime'].position_changed === "function" ? X3DJSON['Obj']['RandomTourTime'].position_changed() : X3DJSON['Obj']['RandomTourTime'].position, __eventTime);
+X3DJSON.nodeUtil('TourTime').addEventListener('outputchange', function(event) {
+}, false);
+X3DJSON.nodeUtil('TourOrientation').addEventListener('outputchange', function(event) {
+}, false);
+X3DJSON.nodeUtil('TourTime').addEventListener('outputchange', function(event) {
+}, false);
+X3DJSON.nodeUtil('TourPosition').addEventListener('outputchange', function(event) {
+}, false);
+			X3DJSON['Obj']['RandomTourTime'].set_cycle(X3DJSON.nodeUtil('TourTime','cycleTime'), __eventTime);
+			X3DJSON.nodeUtil('TourOrientation','keyValue',typeof X3DJSON['Obj']['RandomTourTime'].orientation_changed === "function" ? X3DJSON['Obj']['RandomTourTime'].orientation_changed() : X3DJSON['Obj']['RandomTourTime'].orientation, __eventTime);
+			X3DJSON.nodeUtil('TourPosition','keyValue',typeof X3DJSON['Obj']['RandomTourTime'].position_changed === "function" ? X3DJSON['Obj']['RandomTourTime'].position_changed() : X3DJSON['Obj']['RandomTourTime'].position, __eventTime);

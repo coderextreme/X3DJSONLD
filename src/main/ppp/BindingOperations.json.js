@@ -1,4 +1,7 @@
 var x3dom = require('../node/fields.js');
+if (typeof X3DJSON === 'undefined') {
+	var X3DJSON = {};
+}
 var MFBool = x3dom.fields.MFBoolean;
 var MFColor = x3dom.fields.MFColor;
 var MFColorRGBA = x3dom.fields.MFColorRGBA;
@@ -20,28 +23,27 @@ var MFVec3d = function() { return Array.prototype.slice.call(arguments, 0); };
 var MFVec3f = x3dom.fields.MFVec3f;
 var MFVec4d = function() { return Array.prototype.slice.call(arguments, 0); };
 var MFVec4f = function() { return Array.prototype.slice.call(arguments, 0); };
-SFBool = Boolean;
+var SFBool = Boolean;
 var SFColor = x3dom.fields.SFColor;
 var SFColorRGBA = x3dom.fields.SFColorRGBA;
-SFDouble = Number;
-SFFloat = Number;
-SFInt32 = Number;
+var SFDouble = Number;
+var SFFloat = Number;
+var SFInt32 = Number;
 var SFImage = x3dom.fields.SFImage;
 var SFMatrix3d = function() { return Array.prototype.slice.call(arguments, 0); };
 var SFMatrix3f = function() { return Array.prototype.slice.call(arguments, 0); };
 var SFMatrix4d = function() { return Array.prototype.slice.call(arguments, 0); };
 var SFMatrix4f = x3dom.fields.SFMatrix4f;
 var SFNode = x3dom.fields.SFNode;
-var SFRotation = x3dom.fields.Quaternion;
-SFString = String;
-SFTime = Number;
+var Quaternion = x3dom.fields.Quaternion;
+var SFString = String;
+var SFTime = Number;
 var SFVec2d = function() { return Array.prototype.slice.call(arguments, 0); };
 var SFVec2f = x3dom.fields.SFVec2f;
 var SFVec3d = function() { return Array.prototype.slice.call(arguments, 0); };
 var SFVec3f = x3dom.fields.SFVec3f;
 var SFVec4d = function() { return Array.prototype.slice.call(arguments, 0); };
-var SFvec4f = x3dom.fields.SFvec4f;
-var X3DJSON = {};
+var SFVec4f = x3dom.fields.SFVec4f;
 if (typeof document === 'undefined') {
 	document = { querySelector : function() {;
 		return {
@@ -57,20 +59,56 @@ if (typeof document === 'undefined') {
 	}};
 }
 X3DJSON.nodeUtil = function(node, field, value) {
-		var element = document.querySelector("[DEF='"+node+"'], [name='"+node+"']");
+		var selector = "undefined [DEF='"+node+"']";
+		var element = document.querySelector(selector);
 		if (element === null) {
 			console.error('unDEFed node',node);
 		} else if (arguments.length > 2) {
-			element.setAttribute(field, value);
-			console.log('set '+ field+ '='+ value);
+			/*
+			if (value && typeof value.toString === 'function') {
+				value = value.toString();
+			}
+			$(selector).attr(field, value);
+			// console.log('set', node, '.', field, '=', value);
+			*/
+			element.setFieldValue(field, value);
 			return element;
 		} else if (arguments.length > 1) {
-			var value = element.getAttribute(field)
-			console.log('get', field,'=',value);
+			value = element.getFieldValue(field);
+			/*
+			value = $(selector).attr(field);
+			if (element &&
+				element._x3domNode &&
+				element._x3domNode._vf &&
+				element._x3domNode._vf[field] &&
+				element._x3domNode._vf[field].setValueByStr) {
+				value = element._x3domNode._vf[field].setValueByStr(value);
+			}
+			*/
+			// console.log('get', node, '.', field,'=',value);
 			return value;
 		} else {
-			return element;
+			return $(selector)[0];
 		}
+};
+X3DJSON.createProxy = function(action, scriptObject) {
+	var proxy = new Proxy(scriptObject, {
+		get: function(target, property, receiver) {
+			return Reflect.get(target, property, receiver);
+		},
+		set: function(target, property, value, receiver) {
+                 if (typeof action[property] === 'object') {
+                        for (var route in action[property]) {
+                                if (typeof action[property][route] === 'function') {
+                                        action[property][route](property, value);
+   		                     // console.log('Set',property,'to', value);
+                                }
+                        }
+                 }
+		      return Reflect.set(target, property, value, receiver);
+		}
+	});
+	return proxy;
 };
 if (typeof X3DJSON['Script'] === 'undefined') {
 X3DJSON['Script'] = {};
@@ -78,82 +116,93 @@ X3DJSON['Script'] = {};
 
 X3DJSON['Script']['BindingSequencerEngine'] = function() {
 	this.set_timeEvent = function (value) {
-		X3DJSON.nodeUtil('BindingSequencerEngine', 'timeEvent', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+		this.proxy.timeEvent = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
 	this.timeEvent_changed = function () {
-		return X3DJSON.nodeUtil('BindingSequencerEngine', 'timeEvent');
+		var value = this.timeEvent;
+		return value;
 	};
-	this.set_timeEvent(undefined);
+	this.timeEvent = undefined;
 	this.set_bindView1 = function (value) {
-		X3DJSON.nodeUtil('BindingSequencerEngine', 'bindView1', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+		this.proxy.bindView1 = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
 	this.bindView1_changed = function () {
-		return X3DJSON.nodeUtil('BindingSequencerEngine', 'bindView1');
+		var value = this.bindView1;
+		return value;
 	};
-	this.set_bindView1(new SFBool());
+	this.bindView1 = new SFBool();
 	this.set_bindView2 = function (value) {
-		X3DJSON.nodeUtil('BindingSequencerEngine', 'bindView2', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+		this.proxy.bindView2 = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
 	this.bindView2_changed = function () {
-		return X3DJSON.nodeUtil('BindingSequencerEngine', 'bindView2');
+		var value = this.bindView2;
+		return value;
 	};
-	this.set_bindView2(new SFBool());
+	this.bindView2 = new SFBool();
 	this.set_bindView3 = function (value) {
-		X3DJSON.nodeUtil('BindingSequencerEngine', 'bindView3', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+		this.proxy.bindView3 = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
 	this.bindView3_changed = function () {
-		return X3DJSON.nodeUtil('BindingSequencerEngine', 'bindView3');
+		var value = this.bindView3;
+		return value;
 	};
-	this.set_bindView3(new SFBool());
+	this.bindView3 = new SFBool();
 	this.set_bindView4 = function (value) {
-		X3DJSON.nodeUtil('BindingSequencerEngine', 'bindView4', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+		this.proxy.bindView4 = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
 	this.bindView4_changed = function () {
-		return X3DJSON.nodeUtil('BindingSequencerEngine', 'bindView4');
+		var value = this.bindView4;
+		return value;
 	};
-	this.set_bindView4(new SFBool());
+	this.bindView4 = new SFBool();
 	this.set_bindView5 = function (value) {
-		X3DJSON.nodeUtil('BindingSequencerEngine', 'bindView5', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+		this.proxy.bindView5 = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
 	this.bindView5_changed = function () {
-		return X3DJSON.nodeUtil('BindingSequencerEngine', 'bindView5');
+		var value = this.bindView5;
+		return value;
 	};
-	this.set_bindView5(new SFBool());
+	this.bindView5 = new SFBool();
 	this.set_view1Bound = function (value) {
-		X3DJSON.nodeUtil('BindingSequencerEngine', 'view1Bound', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+		this.proxy.view1Bound = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
 	this.view1Bound_changed = function () {
-		return X3DJSON.nodeUtil('BindingSequencerEngine', 'view1Bound');
+		var value = this.view1Bound;
+		return value;
 	};
-	this.set_view1Bound(new SFBool());
+	this.view1Bound = new SFBool();
 	this.set_view2Bound = function (value) {
-		X3DJSON.nodeUtil('BindingSequencerEngine', 'view2Bound', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+		this.proxy.view2Bound = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
 	this.view2Bound_changed = function () {
-		return X3DJSON.nodeUtil('BindingSequencerEngine', 'view2Bound');
+		var value = this.view2Bound;
+		return value;
 	};
-	this.set_view2Bound(new SFBool());
+	this.view2Bound = new SFBool();
 	this.set_view3Bound = function (value) {
-		X3DJSON.nodeUtil('BindingSequencerEngine', 'view3Bound', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+		this.proxy.view3Bound = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
 	this.view3Bound_changed = function () {
-		return X3DJSON.nodeUtil('BindingSequencerEngine', 'view3Bound');
+		var value = this.view3Bound;
+		return value;
 	};
-	this.set_view3Bound(new SFBool());
+	this.view3Bound = new SFBool();
 	this.set_view4Bound = function (value) {
-		X3DJSON.nodeUtil('BindingSequencerEngine', 'view4Bound', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+		this.proxy.view4Bound = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
 	this.view4Bound_changed = function () {
-		return X3DJSON.nodeUtil('BindingSequencerEngine', 'view4Bound');
+		var value = this.view4Bound;
+		return value;
 	};
-	this.set_view4Bound(new SFBool());
+	this.view4Bound = new SFBool();
 	this.set_priorInputvalue = function (value) {
-		X3DJSON.nodeUtil('BindingSequencerEngine', 'priorInputvalue', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+		this.proxy.priorInputvalue = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
 	this.priorInputvalue_changed = function () {
-		return X3DJSON.nodeUtil('BindingSequencerEngine', 'priorInputvalue');
+		var value = this.priorInputvalue;
+		return value;
 	};
-	this.set_priorInputvalue(new SFInt32(-1));
+	this.priorInputvalue = new SFInt32(-1);
 
         
 ecmascript:
@@ -161,61 +210,61 @@ ecmascript:
 
 	this.initialize = function ()
 {
-    this.set_bindView5 ( true);
+    this.proxy.bindView5 = true;
     console.error ('Timing script initialized and ready for activation');
 }
 ;
 
 	this.set_timeEvent = function (inputValue)
 {
-    if (inputValue == this.priorInputvalue_changed())
+    if (inputValue == this.proxy.priorInputvalue)
     {
         return; // ignore repeated inputs
     }
     // new value provided
-    this.set_priorInputvalue ( inputValue);
+    this.proxy.priorInputvalue = inputValue;
     // console.error ('timeEvent inputValue=' + inputValue);
         
     // mimics user execution of Figure 4.1 steps t_0 through t_8
     if (inputValue == 0)
     {
         console.error ('=========== time t0');
-        this.set_bindView1 ( true);
+        this.proxy.bindView1 = true;
     }
     else if (inputValue == 1)
     {
         console.error ('=========== time t1');
-        this.set_bindView2 ( true);
+        this.proxy.bindView2 = true;
     }
     else if (inputValue == 2)
     {
         console.error ('=========== time t2');
-        this.set_bindView3 ( true);
+        this.proxy.bindView3 = true;
     }
     else if (inputValue == 3)
     {
         console.error ('=========== time t3');
-        this.set_bindView3 ( false);
+        this.proxy.bindView3 = false;
     }
     else if (inputValue == 4)
     {
         console.error ('=========== time t4');
-        this.set_bindView1 ( true);
+        this.proxy.bindView1 = true;
     }
     else if (inputValue == 5)
     {
         console.error ('=========== time t5');
-        this.set_bindView2 ( false);
+        this.proxy.bindView2 = false;
     }
     else if (inputValue == 6)
     {
         console.error ('=========== time t6');
-        this.set_bindView1 ( false);
+        this.proxy.bindView1 = false;
     }
     else if (inputValue == 7)
     {
         console.error ('=========== time t7');
-        this.set_bindView4 ( true);
+        this.proxy.bindView4 = true;
 
     }
     else if (inputValue == 8)
@@ -230,26 +279,26 @@ ecmascript:
 
 	this.view1Bound = function (inputValue)
 {
-    console.error (', this.view1Bound_changed() ' + (inputValue));
-    if (this.priorInputvalue_changed() == -1) console.error ('');
+    console.error (', this.proxy.view1Bound ' + (inputValue));
+    if (this.proxy.priorInputvalue == -1) console.error ('');
 }
 ;
 
 	this.view2Bound = function (inputValue)
 {
-    console.error (', this.view2Bound_changed() ' + (inputValue));
+    console.error (', this.proxy.view2Bound ' + (inputValue));
 }
 ;
 
 	this.view3Bound = function (inputValue)
 {
-    console.error (', this.view3Bound_changed() ' + (inputValue));
+    console.error (', this.proxy.view3Bound ' + (inputValue));
 }
 ;
 
 	this.view4Bound = function (inputValue)
 {
-    console.error (', this.view4Bound_changed() ' + (inputValue));
+    console.error (', this.proxy.view4Bound ' + (inputValue));
 }
 ;
 
@@ -264,581 +313,129 @@ X3DJSON['Obj'] = {};
 }
 
 X3DJSON['Obj']['BindingSequencerEngine'] = new X3DJSON['Script']['BindingSequencerEngine']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['BindingSequencerEngine'] === 'undefined') {
+X3DJSON['Obj']['BindingSequencerEngine'] = {};
+}
+
+if (typeof X3DJSON['Obj']['BindingSequencerEngine']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['BindingSequencerEngine']['ACTION'] = {};
+X3DJSON['Obj']['BindingSequencerEngine'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['BindingSequencerEngine']['ACTION'],X3DJSON['Obj']['BindingSequencerEngine']);
+}
 if (typeof X3DJSON['Obj']['BindingSequencerEngine'].initialize === "function") X3DJSON['Obj']['BindingSequencerEngine'].initialize();
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
+X3DJSON.nodeUtil('TextTouchSensor').addEventListener('outputchange', function(event) {
+}, false);
+X3DJSON.nodeUtil('Clock').addEventListener('outputchange', function(event) {
+}, false);
+X3DJSON.nodeUtil('TimingSequencer').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['BindingSequencerEngine'].set_timeEvent(X3DJSON.nodeUtil('TimingSequencer','value'), __eventTime);
+}, false);
+			X3DJSON['Obj']['BindingSequencerEngine'].set_timeEvent(X3DJSON.nodeUtil('TimingSequencer','value'), __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['ROUTE']['TextTouchSensor'] === 'undefined') {
-X3DJSON['ROUTE']['TextTouchSensor'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TextTouchSensor']['touchTime'] === 'undefined') {
-X3DJSON['ROUTE']['TextTouchSensor']['touchTime'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TextTouchSensor']['touchTime']['Clock'] === 'undefined') {
-X3DJSON['ROUTE']['TextTouchSensor']['touchTime']['Clock'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TextTouchSensor']['touchTime']['Clock']['set_startTime'] === 'undefined') {
-X3DJSON['ROUTE']['TextTouchSensor']['touchTime']['Clock']['set_startTime'] = {};
-}
-
-X3DJSON['ROUTE']['TextTouchSensor']['touchTime']['Clock']['set_startTime']['FROM'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'touchTime');
-			X3DJSON.nodeUtil('Clock','set_startTime',X3DJSON.nodeUtil('TextTouchSensor','touchTime'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['touchTime'] };
-X3DJSON['ROUTE']['TextTouchSensor']['touchTime']['Clock']['set_startTime']['FROM'].observe(X3DJSON.nodeUtil('TextTouchSensor'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TextTouchSensor'] === 'undefined') {
-X3DJSON['ROUTE']['TextTouchSensor'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TextTouchSensor']['touchTime'] === 'undefined') {
-X3DJSON['ROUTE']['TextTouchSensor']['touchTime'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TextTouchSensor']['touchTime']['Clock'] === 'undefined') {
-X3DJSON['ROUTE']['TextTouchSensor']['touchTime']['Clock'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TextTouchSensor']['touchTime']['Clock']['set_startTime'] === 'undefined') {
-X3DJSON['ROUTE']['TextTouchSensor']['touchTime']['Clock']['set_startTime'] = {};
+if (typeof X3DJSON['Obj']['BindingSequencerEngine'] === 'undefined') {
+X3DJSON['Obj']['BindingSequencerEngine'] = {};
 }
 
-X3DJSON['ROUTE']['TextTouchSensor']['touchTime']['Clock']['set_startTime']['TO'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'set_startTime');
-			if (typeof X3DJSON['Obj']['Clock'].set_startTime === "function") X3DJSON['Obj']['Clock'].set_startTime(X3DJSON.nodeUtil('Clock','set_startTime'), __eventTime);
-		});
+if (typeof X3DJSON['Obj']['BindingSequencerEngine']['ACTION']['bindView1'] === 'undefined') {
+X3DJSON['Obj']['BindingSequencerEngine']['ACTION']['bindView1'] = [];
+}
+X3DJSON['Obj']['BindingSequencerEngine']['ACTION']['bindView1'].push(function(property, value) {
+		if (property === 'bindView1') {
+			X3DJSON.nodeUtil('View1','bind',typeof X3DJSON['Obj']['BindingSequencerEngine'].bindView1 === "function" ? X3DJSON['Obj']['BindingSequencerEngine'].bindView1() : X3DJSON['Obj']['BindingSequencerEngine'].bindView1, __eventTime);
+		}
 });
-var config = { attributes: true, childList: true, attributeFilter:['set_startTime'] };
-X3DJSON['ROUTE']['TextTouchSensor']['touchTime']['Clock']['set_startTime']['TO'].observe(X3DJSON.nodeUtil('Clock'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
+			X3DJSON.nodeUtil('View1','bind',typeof X3DJSON['Obj']['BindingSequencerEngine'].bindView1 === "function" ? X3DJSON['Obj']['BindingSequencerEngine'].bindView1() : X3DJSON['Obj']['BindingSequencerEngine'].bindView1, __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['ROUTE']['Clock'] === 'undefined') {
-X3DJSON['ROUTE']['Clock'] = {};
-}
-if (typeof X3DJSON['ROUTE']['Clock']['fraction_changed'] === 'undefined') {
-X3DJSON['ROUTE']['Clock']['fraction_changed'] = {};
-}
-if (typeof X3DJSON['ROUTE']['Clock']['fraction_changed']['TimingSequencer'] === 'undefined') {
-X3DJSON['ROUTE']['Clock']['fraction_changed']['TimingSequencer'] = {};
-}
-if (typeof X3DJSON['ROUTE']['Clock']['fraction_changed']['TimingSequencer']['set_fraction'] === 'undefined') {
-X3DJSON['ROUTE']['Clock']['fraction_changed']['TimingSequencer']['set_fraction'] = {};
+if (typeof X3DJSON['Obj']['BindingSequencerEngine'] === 'undefined') {
+X3DJSON['Obj']['BindingSequencerEngine'] = {};
 }
 
-X3DJSON['ROUTE']['Clock']['fraction_changed']['TimingSequencer']['set_fraction']['FROM'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'fraction_changed');
-			X3DJSON.nodeUtil('TimingSequencer','set_fraction',X3DJSON.nodeUtil('Clock','fraction_changed'), __eventTime);
-		});
+if (typeof X3DJSON['Obj']['BindingSequencerEngine']['ACTION']['bindView2'] === 'undefined') {
+X3DJSON['Obj']['BindingSequencerEngine']['ACTION']['bindView2'] = [];
+}
+X3DJSON['Obj']['BindingSequencerEngine']['ACTION']['bindView2'].push(function(property, value) {
+		if (property === 'bindView2') {
+			X3DJSON.nodeUtil('View2','bind',typeof X3DJSON['Obj']['BindingSequencerEngine'].bindView2 === "function" ? X3DJSON['Obj']['BindingSequencerEngine'].bindView2() : X3DJSON['Obj']['BindingSequencerEngine'].bindView2, __eventTime);
+		}
 });
-var config = { attributes: true, childList: true, attributeFilter:['fraction_changed'] };
-X3DJSON['ROUTE']['Clock']['fraction_changed']['TimingSequencer']['set_fraction']['FROM'].observe(X3DJSON.nodeUtil('Clock'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
+			X3DJSON.nodeUtil('View2','bind',typeof X3DJSON['Obj']['BindingSequencerEngine'].bindView2 === "function" ? X3DJSON['Obj']['BindingSequencerEngine'].bindView2() : X3DJSON['Obj']['BindingSequencerEngine'].bindView2, __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['ROUTE']['Clock'] === 'undefined') {
-X3DJSON['ROUTE']['Clock'] = {};
-}
-if (typeof X3DJSON['ROUTE']['Clock']['fraction_changed'] === 'undefined') {
-X3DJSON['ROUTE']['Clock']['fraction_changed'] = {};
-}
-if (typeof X3DJSON['ROUTE']['Clock']['fraction_changed']['TimingSequencer'] === 'undefined') {
-X3DJSON['ROUTE']['Clock']['fraction_changed']['TimingSequencer'] = {};
-}
-if (typeof X3DJSON['ROUTE']['Clock']['fraction_changed']['TimingSequencer']['set_fraction'] === 'undefined') {
-X3DJSON['ROUTE']['Clock']['fraction_changed']['TimingSequencer']['set_fraction'] = {};
+if (typeof X3DJSON['Obj']['BindingSequencerEngine'] === 'undefined') {
+X3DJSON['Obj']['BindingSequencerEngine'] = {};
 }
 
-X3DJSON['ROUTE']['Clock']['fraction_changed']['TimingSequencer']['set_fraction']['TO'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'set_fraction');
-			if (typeof X3DJSON['Obj']['TimingSequencer'].set_fraction === "function") X3DJSON['Obj']['TimingSequencer'].set_fraction(X3DJSON.nodeUtil('TimingSequencer','set_fraction'), __eventTime);
-		});
+if (typeof X3DJSON['Obj']['BindingSequencerEngine']['ACTION']['bindView3'] === 'undefined') {
+X3DJSON['Obj']['BindingSequencerEngine']['ACTION']['bindView3'] = [];
+}
+X3DJSON['Obj']['BindingSequencerEngine']['ACTION']['bindView3'].push(function(property, value) {
+		if (property === 'bindView3') {
+			X3DJSON.nodeUtil('View3','bind',typeof X3DJSON['Obj']['BindingSequencerEngine'].bindView3 === "function" ? X3DJSON['Obj']['BindingSequencerEngine'].bindView3() : X3DJSON['Obj']['BindingSequencerEngine'].bindView3, __eventTime);
+		}
 });
-var config = { attributes: true, childList: true, attributeFilter:['set_fraction'] };
-X3DJSON['ROUTE']['Clock']['fraction_changed']['TimingSequencer']['set_fraction']['TO'].observe(X3DJSON.nodeUtil('TimingSequencer'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
+			X3DJSON.nodeUtil('View3','bind',typeof X3DJSON['Obj']['BindingSequencerEngine'].bindView3 === "function" ? X3DJSON['Obj']['BindingSequencerEngine'].bindView3() : X3DJSON['Obj']['BindingSequencerEngine'].bindView3, __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['ROUTE']['TimingSequencer'] === 'undefined') {
-X3DJSON['ROUTE']['TimingSequencer'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TimingSequencer']['value_changed'] === 'undefined') {
-X3DJSON['ROUTE']['TimingSequencer']['value_changed'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TimingSequencer']['value_changed']['BindingSequencerEngine'] === 'undefined') {
-X3DJSON['ROUTE']['TimingSequencer']['value_changed']['BindingSequencerEngine'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TimingSequencer']['value_changed']['BindingSequencerEngine']['set_timeEvent'] === 'undefined') {
-X3DJSON['ROUTE']['TimingSequencer']['value_changed']['BindingSequencerEngine']['set_timeEvent'] = {};
+if (typeof X3DJSON['Obj']['BindingSequencerEngine'] === 'undefined') {
+X3DJSON['Obj']['BindingSequencerEngine'] = {};
 }
 
-X3DJSON['ROUTE']['TimingSequencer']['value_changed']['BindingSequencerEngine']['set_timeEvent']['FROM'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'value_changed');
-			X3DJSON.nodeUtil('BindingSequencerEngine','set_timeEvent',X3DJSON.nodeUtil('TimingSequencer','value_changed'), __eventTime);
-		});
+if (typeof X3DJSON['Obj']['BindingSequencerEngine']['ACTION']['bindView4'] === 'undefined') {
+X3DJSON['Obj']['BindingSequencerEngine']['ACTION']['bindView4'] = [];
+}
+X3DJSON['Obj']['BindingSequencerEngine']['ACTION']['bindView4'].push(function(property, value) {
+		if (property === 'bindView4') {
+			X3DJSON.nodeUtil('View4','bind',typeof X3DJSON['Obj']['BindingSequencerEngine'].bindView4 === "function" ? X3DJSON['Obj']['BindingSequencerEngine'].bindView4() : X3DJSON['Obj']['BindingSequencerEngine'].bindView4, __eventTime);
+		}
 });
-var config = { attributes: true, childList: true, attributeFilter:['value_changed'] };
-X3DJSON['ROUTE']['TimingSequencer']['value_changed']['BindingSequencerEngine']['set_timeEvent']['FROM'].observe(X3DJSON.nodeUtil('TimingSequencer'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
+			X3DJSON.nodeUtil('View4','bind',typeof X3DJSON['Obj']['BindingSequencerEngine'].bindView4 === "function" ? X3DJSON['Obj']['BindingSequencerEngine'].bindView4() : X3DJSON['Obj']['BindingSequencerEngine'].bindView4, __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['ROUTE']['TimingSequencer'] === 'undefined') {
-X3DJSON['ROUTE']['TimingSequencer'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TimingSequencer']['value_changed'] === 'undefined') {
-X3DJSON['ROUTE']['TimingSequencer']['value_changed'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TimingSequencer']['value_changed']['BindingSequencerEngine'] === 'undefined') {
-X3DJSON['ROUTE']['TimingSequencer']['value_changed']['BindingSequencerEngine'] = {};
-}
-if (typeof X3DJSON['ROUTE']['TimingSequencer']['value_changed']['BindingSequencerEngine']['set_timeEvent'] === 'undefined') {
-X3DJSON['ROUTE']['TimingSequencer']['value_changed']['BindingSequencerEngine']['set_timeEvent'] = {};
+if (typeof X3DJSON['Obj']['BindingSequencerEngine'] === 'undefined') {
+X3DJSON['Obj']['BindingSequencerEngine'] = {};
 }
 
-X3DJSON['ROUTE']['TimingSequencer']['value_changed']['BindingSequencerEngine']['set_timeEvent']['TO'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'set_timeEvent');
-			if (typeof X3DJSON['Obj']['BindingSequencerEngine'].set_timeEvent === "function") X3DJSON['Obj']['BindingSequencerEngine'].set_timeEvent(X3DJSON.nodeUtil('BindingSequencerEngine','set_timeEvent'), __eventTime);
-		});
+if (typeof X3DJSON['Obj']['BindingSequencerEngine']['ACTION']['bindView5'] === 'undefined') {
+X3DJSON['Obj']['BindingSequencerEngine']['ACTION']['bindView5'] = [];
+}
+X3DJSON['Obj']['BindingSequencerEngine']['ACTION']['bindView5'].push(function(property, value) {
+		if (property === 'bindView5') {
+			X3DJSON.nodeUtil('ClickToAnimateView','bind',typeof X3DJSON['Obj']['BindingSequencerEngine'].bindView5 === "function" ? X3DJSON['Obj']['BindingSequencerEngine'].bindView5() : X3DJSON['Obj']['BindingSequencerEngine'].bindView5, __eventTime);
+		}
 });
-var config = { attributes: true, childList: true, attributeFilter:['set_timeEvent'] };
-X3DJSON['ROUTE']['TimingSequencer']['value_changed']['BindingSequencerEngine']['set_timeEvent']['TO'].observe(X3DJSON.nodeUtil('BindingSequencerEngine'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['BindingSequencerEngine'] === 'undefined') {
-X3DJSON['ROUTE']['BindingSequencerEngine'] = {};
-}
-if (typeof X3DJSON['ROUTE']['BindingSequencerEngine']['bindView1'] === 'undefined') {
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView1'] = {};
-}
-if (typeof X3DJSON['ROUTE']['BindingSequencerEngine']['bindView1']['View1'] === 'undefined') {
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView1']['View1'] = {};
-}
-if (typeof X3DJSON['ROUTE']['BindingSequencerEngine']['bindView1']['View1']['set_bind'] === 'undefined') {
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView1']['View1']['set_bind'] = {};
-}
-
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView1']['View1']['set_bind']['FROM'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'bindView1');
-			X3DJSON.nodeUtil('View1','set_bind',X3DJSON.nodeUtil('BindingSequencerEngine','bindView1'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['bindView1'] };
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView1']['View1']['set_bind']['FROM'].observe(X3DJSON.nodeUtil('BindingSequencerEngine'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['BindingSequencerEngine'] === 'undefined') {
-X3DJSON['ROUTE']['BindingSequencerEngine'] = {};
-}
-if (typeof X3DJSON['ROUTE']['BindingSequencerEngine']['bindView1'] === 'undefined') {
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView1'] = {};
-}
-if (typeof X3DJSON['ROUTE']['BindingSequencerEngine']['bindView1']['View1'] === 'undefined') {
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView1']['View1'] = {};
-}
-if (typeof X3DJSON['ROUTE']['BindingSequencerEngine']['bindView1']['View1']['set_bind'] === 'undefined') {
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView1']['View1']['set_bind'] = {};
-}
-
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView1']['View1']['set_bind']['TO'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'set_bind');
-			if (typeof X3DJSON['Obj']['View1'].set_bind === "function") X3DJSON['Obj']['View1'].set_bind(X3DJSON.nodeUtil('View1','set_bind'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['set_bind'] };
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView1']['View1']['set_bind']['TO'].observe(X3DJSON.nodeUtil('View1'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['BindingSequencerEngine'] === 'undefined') {
-X3DJSON['ROUTE']['BindingSequencerEngine'] = {};
-}
-if (typeof X3DJSON['ROUTE']['BindingSequencerEngine']['bindView2'] === 'undefined') {
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView2'] = {};
-}
-if (typeof X3DJSON['ROUTE']['BindingSequencerEngine']['bindView2']['View2'] === 'undefined') {
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView2']['View2'] = {};
-}
-if (typeof X3DJSON['ROUTE']['BindingSequencerEngine']['bindView2']['View2']['set_bind'] === 'undefined') {
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView2']['View2']['set_bind'] = {};
-}
-
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView2']['View2']['set_bind']['FROM'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'bindView2');
-			X3DJSON.nodeUtil('View2','set_bind',X3DJSON.nodeUtil('BindingSequencerEngine','bindView2'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['bindView2'] };
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView2']['View2']['set_bind']['FROM'].observe(X3DJSON.nodeUtil('BindingSequencerEngine'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['BindingSequencerEngine'] === 'undefined') {
-X3DJSON['ROUTE']['BindingSequencerEngine'] = {};
-}
-if (typeof X3DJSON['ROUTE']['BindingSequencerEngine']['bindView2'] === 'undefined') {
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView2'] = {};
-}
-if (typeof X3DJSON['ROUTE']['BindingSequencerEngine']['bindView2']['View2'] === 'undefined') {
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView2']['View2'] = {};
-}
-if (typeof X3DJSON['ROUTE']['BindingSequencerEngine']['bindView2']['View2']['set_bind'] === 'undefined') {
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView2']['View2']['set_bind'] = {};
-}
-
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView2']['View2']['set_bind']['TO'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'set_bind');
-			if (typeof X3DJSON['Obj']['View2'].set_bind === "function") X3DJSON['Obj']['View2'].set_bind(X3DJSON.nodeUtil('View2','set_bind'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['set_bind'] };
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView2']['View2']['set_bind']['TO'].observe(X3DJSON.nodeUtil('View2'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['BindingSequencerEngine'] === 'undefined') {
-X3DJSON['ROUTE']['BindingSequencerEngine'] = {};
-}
-if (typeof X3DJSON['ROUTE']['BindingSequencerEngine']['bindView3'] === 'undefined') {
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView3'] = {};
-}
-if (typeof X3DJSON['ROUTE']['BindingSequencerEngine']['bindView3']['View3'] === 'undefined') {
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView3']['View3'] = {};
-}
-if (typeof X3DJSON['ROUTE']['BindingSequencerEngine']['bindView3']['View3']['set_bind'] === 'undefined') {
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView3']['View3']['set_bind'] = {};
-}
-
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView3']['View3']['set_bind']['FROM'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'bindView3');
-			X3DJSON.nodeUtil('View3','set_bind',X3DJSON.nodeUtil('BindingSequencerEngine','bindView3'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['bindView3'] };
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView3']['View3']['set_bind']['FROM'].observe(X3DJSON.nodeUtil('BindingSequencerEngine'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['BindingSequencerEngine'] === 'undefined') {
-X3DJSON['ROUTE']['BindingSequencerEngine'] = {};
-}
-if (typeof X3DJSON['ROUTE']['BindingSequencerEngine']['bindView3'] === 'undefined') {
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView3'] = {};
-}
-if (typeof X3DJSON['ROUTE']['BindingSequencerEngine']['bindView3']['View3'] === 'undefined') {
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView3']['View3'] = {};
-}
-if (typeof X3DJSON['ROUTE']['BindingSequencerEngine']['bindView3']['View3']['set_bind'] === 'undefined') {
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView3']['View3']['set_bind'] = {};
-}
-
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView3']['View3']['set_bind']['TO'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'set_bind');
-			if (typeof X3DJSON['Obj']['View3'].set_bind === "function") X3DJSON['Obj']['View3'].set_bind(X3DJSON.nodeUtil('View3','set_bind'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['set_bind'] };
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView3']['View3']['set_bind']['TO'].observe(X3DJSON.nodeUtil('View3'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['BindingSequencerEngine'] === 'undefined') {
-X3DJSON['ROUTE']['BindingSequencerEngine'] = {};
-}
-if (typeof X3DJSON['ROUTE']['BindingSequencerEngine']['bindView4'] === 'undefined') {
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView4'] = {};
-}
-if (typeof X3DJSON['ROUTE']['BindingSequencerEngine']['bindView4']['View4'] === 'undefined') {
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView4']['View4'] = {};
-}
-if (typeof X3DJSON['ROUTE']['BindingSequencerEngine']['bindView4']['View4']['set_bind'] === 'undefined') {
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView4']['View4']['set_bind'] = {};
-}
-
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView4']['View4']['set_bind']['FROM'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'bindView4');
-			X3DJSON.nodeUtil('View4','set_bind',X3DJSON.nodeUtil('BindingSequencerEngine','bindView4'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['bindView4'] };
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView4']['View4']['set_bind']['FROM'].observe(X3DJSON.nodeUtil('BindingSequencerEngine'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['BindingSequencerEngine'] === 'undefined') {
-X3DJSON['ROUTE']['BindingSequencerEngine'] = {};
-}
-if (typeof X3DJSON['ROUTE']['BindingSequencerEngine']['bindView4'] === 'undefined') {
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView4'] = {};
-}
-if (typeof X3DJSON['ROUTE']['BindingSequencerEngine']['bindView4']['View4'] === 'undefined') {
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView4']['View4'] = {};
-}
-if (typeof X3DJSON['ROUTE']['BindingSequencerEngine']['bindView4']['View4']['set_bind'] === 'undefined') {
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView4']['View4']['set_bind'] = {};
-}
-
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView4']['View4']['set_bind']['TO'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'set_bind');
-			if (typeof X3DJSON['Obj']['View4'].set_bind === "function") X3DJSON['Obj']['View4'].set_bind(X3DJSON.nodeUtil('View4','set_bind'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['set_bind'] };
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView4']['View4']['set_bind']['TO'].observe(X3DJSON.nodeUtil('View4'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['BindingSequencerEngine'] === 'undefined') {
-X3DJSON['ROUTE']['BindingSequencerEngine'] = {};
-}
-if (typeof X3DJSON['ROUTE']['BindingSequencerEngine']['bindView5'] === 'undefined') {
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView5'] = {};
-}
-if (typeof X3DJSON['ROUTE']['BindingSequencerEngine']['bindView5']['ClickToAnimateView'] === 'undefined') {
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView5']['ClickToAnimateView'] = {};
-}
-if (typeof X3DJSON['ROUTE']['BindingSequencerEngine']['bindView5']['ClickToAnimateView']['set_bind'] === 'undefined') {
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView5']['ClickToAnimateView']['set_bind'] = {};
-}
-
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView5']['ClickToAnimateView']['set_bind']['FROM'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'bindView5');
-			X3DJSON.nodeUtil('ClickToAnimateView','set_bind',X3DJSON.nodeUtil('BindingSequencerEngine','bindView5'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['bindView5'] };
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView5']['ClickToAnimateView']['set_bind']['FROM'].observe(X3DJSON.nodeUtil('BindingSequencerEngine'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['BindingSequencerEngine'] === 'undefined') {
-X3DJSON['ROUTE']['BindingSequencerEngine'] = {};
-}
-if (typeof X3DJSON['ROUTE']['BindingSequencerEngine']['bindView5'] === 'undefined') {
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView5'] = {};
-}
-if (typeof X3DJSON['ROUTE']['BindingSequencerEngine']['bindView5']['ClickToAnimateView'] === 'undefined') {
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView5']['ClickToAnimateView'] = {};
-}
-if (typeof X3DJSON['ROUTE']['BindingSequencerEngine']['bindView5']['ClickToAnimateView']['set_bind'] === 'undefined') {
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView5']['ClickToAnimateView']['set_bind'] = {};
-}
-
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView5']['ClickToAnimateView']['set_bind']['TO'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'set_bind');
-			if (typeof X3DJSON['Obj']['ClickToAnimateView'].set_bind === "function") X3DJSON['Obj']['ClickToAnimateView'].set_bind(X3DJSON.nodeUtil('ClickToAnimateView','set_bind'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['set_bind'] };
-X3DJSON['ROUTE']['BindingSequencerEngine']['bindView5']['ClickToAnimateView']['set_bind']['TO'].observe(X3DJSON.nodeUtil('ClickToAnimateView'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['View1'] === 'undefined') {
-X3DJSON['ROUTE']['View1'] = {};
-}
-if (typeof X3DJSON['ROUTE']['View1']['isBound'] === 'undefined') {
-X3DJSON['ROUTE']['View1']['isBound'] = {};
-}
-if (typeof X3DJSON['ROUTE']['View1']['isBound']['BindingSequencerEngine'] === 'undefined') {
-X3DJSON['ROUTE']['View1']['isBound']['BindingSequencerEngine'] = {};
-}
-if (typeof X3DJSON['ROUTE']['View1']['isBound']['BindingSequencerEngine']['view1Bound'] === 'undefined') {
-X3DJSON['ROUTE']['View1']['isBound']['BindingSequencerEngine']['view1Bound'] = {};
-}
-
-X3DJSON['ROUTE']['View1']['isBound']['BindingSequencerEngine']['view1Bound']['FROM'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'isBound');
-			X3DJSON.nodeUtil('BindingSequencerEngine','view1Bound',X3DJSON.nodeUtil('View1','isBound'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['isBound'] };
-X3DJSON['ROUTE']['View1']['isBound']['BindingSequencerEngine']['view1Bound']['FROM'].observe(X3DJSON.nodeUtil('View1'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['View1'] === 'undefined') {
-X3DJSON['ROUTE']['View1'] = {};
-}
-if (typeof X3DJSON['ROUTE']['View1']['isBound'] === 'undefined') {
-X3DJSON['ROUTE']['View1']['isBound'] = {};
-}
-if (typeof X3DJSON['ROUTE']['View1']['isBound']['BindingSequencerEngine'] === 'undefined') {
-X3DJSON['ROUTE']['View1']['isBound']['BindingSequencerEngine'] = {};
-}
-if (typeof X3DJSON['ROUTE']['View1']['isBound']['BindingSequencerEngine']['view1Bound'] === 'undefined') {
-X3DJSON['ROUTE']['View1']['isBound']['BindingSequencerEngine']['view1Bound'] = {};
-}
-
-X3DJSON['ROUTE']['View1']['isBound']['BindingSequencerEngine']['view1Bound']['TO'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'view1Bound');
-			if (typeof X3DJSON['Obj']['BindingSequencerEngine'].view1Bound === "function") X3DJSON['Obj']['BindingSequencerEngine'].view1Bound(X3DJSON.nodeUtil('BindingSequencerEngine','view1Bound'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['view1Bound'] };
-X3DJSON['ROUTE']['View1']['isBound']['BindingSequencerEngine']['view1Bound']['TO'].observe(X3DJSON.nodeUtil('BindingSequencerEngine'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['View2'] === 'undefined') {
-X3DJSON['ROUTE']['View2'] = {};
-}
-if (typeof X3DJSON['ROUTE']['View2']['isBound'] === 'undefined') {
-X3DJSON['ROUTE']['View2']['isBound'] = {};
-}
-if (typeof X3DJSON['ROUTE']['View2']['isBound']['BindingSequencerEngine'] === 'undefined') {
-X3DJSON['ROUTE']['View2']['isBound']['BindingSequencerEngine'] = {};
-}
-if (typeof X3DJSON['ROUTE']['View2']['isBound']['BindingSequencerEngine']['view2Bound'] === 'undefined') {
-X3DJSON['ROUTE']['View2']['isBound']['BindingSequencerEngine']['view2Bound'] = {};
-}
-
-X3DJSON['ROUTE']['View2']['isBound']['BindingSequencerEngine']['view2Bound']['FROM'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'isBound');
-			X3DJSON.nodeUtil('BindingSequencerEngine','view2Bound',X3DJSON.nodeUtil('View2','isBound'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['isBound'] };
-X3DJSON['ROUTE']['View2']['isBound']['BindingSequencerEngine']['view2Bound']['FROM'].observe(X3DJSON.nodeUtil('View2'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['View2'] === 'undefined') {
-X3DJSON['ROUTE']['View2'] = {};
-}
-if (typeof X3DJSON['ROUTE']['View2']['isBound'] === 'undefined') {
-X3DJSON['ROUTE']['View2']['isBound'] = {};
-}
-if (typeof X3DJSON['ROUTE']['View2']['isBound']['BindingSequencerEngine'] === 'undefined') {
-X3DJSON['ROUTE']['View2']['isBound']['BindingSequencerEngine'] = {};
-}
-if (typeof X3DJSON['ROUTE']['View2']['isBound']['BindingSequencerEngine']['view2Bound'] === 'undefined') {
-X3DJSON['ROUTE']['View2']['isBound']['BindingSequencerEngine']['view2Bound'] = {};
-}
-
-X3DJSON['ROUTE']['View2']['isBound']['BindingSequencerEngine']['view2Bound']['TO'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'view2Bound');
-			if (typeof X3DJSON['Obj']['BindingSequencerEngine'].view2Bound === "function") X3DJSON['Obj']['BindingSequencerEngine'].view2Bound(X3DJSON.nodeUtil('BindingSequencerEngine','view2Bound'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['view2Bound'] };
-X3DJSON['ROUTE']['View2']['isBound']['BindingSequencerEngine']['view2Bound']['TO'].observe(X3DJSON.nodeUtil('BindingSequencerEngine'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['View3'] === 'undefined') {
-X3DJSON['ROUTE']['View3'] = {};
-}
-if (typeof X3DJSON['ROUTE']['View3']['isBound'] === 'undefined') {
-X3DJSON['ROUTE']['View3']['isBound'] = {};
-}
-if (typeof X3DJSON['ROUTE']['View3']['isBound']['BindingSequencerEngine'] === 'undefined') {
-X3DJSON['ROUTE']['View3']['isBound']['BindingSequencerEngine'] = {};
-}
-if (typeof X3DJSON['ROUTE']['View3']['isBound']['BindingSequencerEngine']['view3Bound'] === 'undefined') {
-X3DJSON['ROUTE']['View3']['isBound']['BindingSequencerEngine']['view3Bound'] = {};
-}
-
-X3DJSON['ROUTE']['View3']['isBound']['BindingSequencerEngine']['view3Bound']['FROM'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'isBound');
-			X3DJSON.nodeUtil('BindingSequencerEngine','view3Bound',X3DJSON.nodeUtil('View3','isBound'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['isBound'] };
-X3DJSON['ROUTE']['View3']['isBound']['BindingSequencerEngine']['view3Bound']['FROM'].observe(X3DJSON.nodeUtil('View3'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['View3'] === 'undefined') {
-X3DJSON['ROUTE']['View3'] = {};
-}
-if (typeof X3DJSON['ROUTE']['View3']['isBound'] === 'undefined') {
-X3DJSON['ROUTE']['View3']['isBound'] = {};
-}
-if (typeof X3DJSON['ROUTE']['View3']['isBound']['BindingSequencerEngine'] === 'undefined') {
-X3DJSON['ROUTE']['View3']['isBound']['BindingSequencerEngine'] = {};
-}
-if (typeof X3DJSON['ROUTE']['View3']['isBound']['BindingSequencerEngine']['view3Bound'] === 'undefined') {
-X3DJSON['ROUTE']['View3']['isBound']['BindingSequencerEngine']['view3Bound'] = {};
-}
-
-X3DJSON['ROUTE']['View3']['isBound']['BindingSequencerEngine']['view3Bound']['TO'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'view3Bound');
-			if (typeof X3DJSON['Obj']['BindingSequencerEngine'].view3Bound === "function") X3DJSON['Obj']['BindingSequencerEngine'].view3Bound(X3DJSON.nodeUtil('BindingSequencerEngine','view3Bound'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['view3Bound'] };
-X3DJSON['ROUTE']['View3']['isBound']['BindingSequencerEngine']['view3Bound']['TO'].observe(X3DJSON.nodeUtil('BindingSequencerEngine'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['View4'] === 'undefined') {
-X3DJSON['ROUTE']['View4'] = {};
-}
-if (typeof X3DJSON['ROUTE']['View4']['isBound'] === 'undefined') {
-X3DJSON['ROUTE']['View4']['isBound'] = {};
-}
-if (typeof X3DJSON['ROUTE']['View4']['isBound']['BindingSequencerEngine'] === 'undefined') {
-X3DJSON['ROUTE']['View4']['isBound']['BindingSequencerEngine'] = {};
-}
-if (typeof X3DJSON['ROUTE']['View4']['isBound']['BindingSequencerEngine']['view4Bound'] === 'undefined') {
-X3DJSON['ROUTE']['View4']['isBound']['BindingSequencerEngine']['view4Bound'] = {};
-}
-
-X3DJSON['ROUTE']['View4']['isBound']['BindingSequencerEngine']['view4Bound']['FROM'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'isBound');
-			X3DJSON.nodeUtil('BindingSequencerEngine','view4Bound',X3DJSON.nodeUtil('View4','isBound'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['isBound'] };
-X3DJSON['ROUTE']['View4']['isBound']['BindingSequencerEngine']['view4Bound']['FROM'].observe(X3DJSON.nodeUtil('View4'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['View4'] === 'undefined') {
-X3DJSON['ROUTE']['View4'] = {};
-}
-if (typeof X3DJSON['ROUTE']['View4']['isBound'] === 'undefined') {
-X3DJSON['ROUTE']['View4']['isBound'] = {};
-}
-if (typeof X3DJSON['ROUTE']['View4']['isBound']['BindingSequencerEngine'] === 'undefined') {
-X3DJSON['ROUTE']['View4']['isBound']['BindingSequencerEngine'] = {};
-}
-if (typeof X3DJSON['ROUTE']['View4']['isBound']['BindingSequencerEngine']['view4Bound'] === 'undefined') {
-X3DJSON['ROUTE']['View4']['isBound']['BindingSequencerEngine']['view4Bound'] = {};
-}
-
-X3DJSON['ROUTE']['View4']['isBound']['BindingSequencerEngine']['view4Bound']['TO'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'view4Bound');
-			if (typeof X3DJSON['Obj']['BindingSequencerEngine'].view4Bound === "function") X3DJSON['Obj']['BindingSequencerEngine'].view4Bound(X3DJSON.nodeUtil('BindingSequencerEngine','view4Bound'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['view4Bound'] };
-X3DJSON['ROUTE']['View4']['isBound']['BindingSequencerEngine']['view4Bound']['TO'].observe(X3DJSON.nodeUtil('BindingSequencerEngine'), config);
-			X3DJSON.nodeUtil('TimingSequencer','set_fraction',X3DJSON.nodeUtil('Clock','fraction_changed'), __eventTime);
+			X3DJSON.nodeUtil('ClickToAnimateView','bind',typeof X3DJSON['Obj']['BindingSequencerEngine'].bindView5 === "function" ? X3DJSON['Obj']['BindingSequencerEngine'].bindView5() : X3DJSON['Obj']['BindingSequencerEngine'].bindView5, __eventTime);
+X3DJSON.nodeUtil('View1').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['BindingSequencerEngine'].view1Bound(X3DJSON.nodeUtil('View1','isBound'), __eventTime);
+}, false);
+			X3DJSON['Obj']['BindingSequencerEngine'].view1Bound(X3DJSON.nodeUtil('View1','isBound'), __eventTime);
+X3DJSON.nodeUtil('View2').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['BindingSequencerEngine'].view2Bound(X3DJSON.nodeUtil('View2','isBound'), __eventTime);
+}, false);
+			X3DJSON['Obj']['BindingSequencerEngine'].view2Bound(X3DJSON.nodeUtil('View2','isBound'), __eventTime);
+X3DJSON.nodeUtil('View3').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['BindingSequencerEngine'].view3Bound(X3DJSON.nodeUtil('View3','isBound'), __eventTime);
+}, false);
+			X3DJSON['Obj']['BindingSequencerEngine'].view3Bound(X3DJSON.nodeUtil('View3','isBound'), __eventTime);
+X3DJSON.nodeUtil('View4').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['BindingSequencerEngine'].view4Bound(X3DJSON.nodeUtil('View4','isBound'), __eventTime);
+}, false);
+			X3DJSON['Obj']['BindingSequencerEngine'].view4Bound(X3DJSON.nodeUtil('View4','isBound'), __eventTime);
+			X3DJSON['Obj']['BindingSequencerEngine'].set_timeEvent(X3DJSON.nodeUtil('TimingSequencer','value'), __eventTime);
+			X3DJSON.nodeUtil('View1','bind',typeof X3DJSON['Obj']['BindingSequencerEngine'].bindView1 === "function" ? X3DJSON['Obj']['BindingSequencerEngine'].bindView1() : X3DJSON['Obj']['BindingSequencerEngine'].bindView1, __eventTime);
+			X3DJSON.nodeUtil('View2','bind',typeof X3DJSON['Obj']['BindingSequencerEngine'].bindView2 === "function" ? X3DJSON['Obj']['BindingSequencerEngine'].bindView2() : X3DJSON['Obj']['BindingSequencerEngine'].bindView2, __eventTime);
+			X3DJSON.nodeUtil('View3','bind',typeof X3DJSON['Obj']['BindingSequencerEngine'].bindView3 === "function" ? X3DJSON['Obj']['BindingSequencerEngine'].bindView3() : X3DJSON['Obj']['BindingSequencerEngine'].bindView3, __eventTime);
+			X3DJSON.nodeUtil('View4','bind',typeof X3DJSON['Obj']['BindingSequencerEngine'].bindView4 === "function" ? X3DJSON['Obj']['BindingSequencerEngine'].bindView4() : X3DJSON['Obj']['BindingSequencerEngine'].bindView4, __eventTime);
+			X3DJSON.nodeUtil('ClickToAnimateView','bind',typeof X3DJSON['Obj']['BindingSequencerEngine'].bindView5 === "function" ? X3DJSON['Obj']['BindingSequencerEngine'].bindView5() : X3DJSON['Obj']['BindingSequencerEngine'].bindView5, __eventTime);
+			X3DJSON['Obj']['BindingSequencerEngine'].view1Bound(X3DJSON.nodeUtil('View1','isBound'), __eventTime);
+			X3DJSON['Obj']['BindingSequencerEngine'].view2Bound(X3DJSON.nodeUtil('View2','isBound'), __eventTime);
+			X3DJSON['Obj']['BindingSequencerEngine'].view3Bound(X3DJSON.nodeUtil('View3','isBound'), __eventTime);
+			X3DJSON['Obj']['BindingSequencerEngine'].view4Bound(X3DJSON.nodeUtil('View4','isBound'), __eventTime);
