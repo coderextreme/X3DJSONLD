@@ -13,10 +13,11 @@
     "ajv-i18n": "*",
     "jsonlint": "*",
     "node-mkdirp": "*",
-    "glob": "*"
+    "glob": "*",
+    "jvm-npm": "0.1.1"
   },
   "devDependencies": {
-	  "jsdoc": "*"
+    "jsdoc": "*"
   },
   "scripts": {
     "start": "node app.js",
