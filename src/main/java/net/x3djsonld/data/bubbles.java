@@ -18,7 +18,7 @@ import org.web3d.x3d.jsail.Time.*;
 // Javadoc annotations follow, see below for source.
 /**
  * <p> not sure what this is. </p>
- <p> Related links: bubbles.java source, <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="http://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: bubbles.java source, <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="http://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
@@ -55,7 +55,7 @@ import org.web3d.x3d.jsail.Time.*;
 		<a href="http://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>.
 		It has been produced using the 
 		<a href="http://www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">X3dToJava.xslt</a>
-		stylesheet to create Java source code from an <code>.x3d</code> scene.
+		stylesheet to create Java source code from an <code>.x3d</code> model.
 	</p>
 
 	* @author John Carlson
@@ -69,7 +69,7 @@ public class bubbles
     initialize();
   }
 	
-  /** Create and initialize the X3D model. */
+  /** Create and initialize the X3D model for this object. */
   public final void initialize()
   {
   x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
@@ -119,30 +119,21 @@ public class bubbles
     .addChild(new OrientationInterpolatorObject("TourOrientation").setKey(new float[] {0.0f,1.0f}).setKeyValue(new MFRotationObject(new float[] {0.0f,1.0f,0.0f,0.0f,0.0f,1.0f,0.0f,3.1416f})))
     .addChild(new ScriptObject("RandomTourTime").setSourceCode(
 "<![CDATA[" + "\n" +
-"ecmascript:" + "\n" + 
+"\n" + 
+"	    ecmascript:" + "\n" + 
 "               function set_cycle(value) {" + "\n" + 
-"                        //var positions = [[0, 0, 10], [-10, 0, 0], [0, 0, -10], [10, 0, 0], [0, 0, 10], [0, 10, 0], [0, 0, 10], [0, -10, 0], [0, 0, 10]];" + "\n" + 
-"                        //var orientations = [[0, 1, 0, 0], [0, 1, 0, -1.57], [0, 1, 0, 3.14], [0, 1, 0, 1.57], [0, 1, 0, 0] [1, 0, 0, -1.57], [0, 1, 0, 0], [1, 0, 0, 1.57], [0, 1, 0, 0]];" + "\n" + 
-"                        //Browser.println(lastKey);" + "\n" + 
 "                        var ov = lastKey;" + "\n" + 
-"                        // Browser.println(ov);      " + "\n" + 
-"                        //Browser.println(positions.length);                  " + "\n" + 
 "                        do {" + "\n" + 
 "                            lastKey = Math.round(Math.random()*(positions.length-1));" + "\n" + 
 "                        } while (lastKey === ov);" + "\n" + 
-"                        // Browser.println(lastKey);" + "\n" + 
 "                        var vc = lastKey;" + "\n" + 
 "                        " + "\n" + 
-"                        // Browser.println(orientations[ov]);" + "\n" + 
-"                        // Browser.println(orientations[vc]);" + "\n" + 
-"                        orientation = new MFRotation();" + "\n" + 
-"                        orientation[0] = new SFRotation(orientations[ov][0], orientations[ov][1], orientations[ov][2], orientations[ov][3]);" + "\n" + 
-"                        orientation[1] = new SFRotation(orientations[vc][0], orientations[vc][1], orientations[vc][2], orientations[vc][3]);" + "\n" + 
-"                        // Browser.println(positions[ov]);" + "\n" + 
-"                        // Browser.println(positions[vc]);" + "\n" + 
-"                        position = new MFVec3f();" + "\n" + 
-"                        position[0] = new SFVec3f(positions[ov][0],positions[ov][1],positions[ov][2]);" + "\n" + 
-"                        position[1] = new SFVec3f(positions[vc][0],positions[vc][1],positions[vc][2]);" + "\n" + 
+"                        orientation_changed = new MFRotation();" + "\n" + 
+"                        orientation_changed[0] = new SFRotation(orientations[ov].x, orientations[ov].y, orientations[ov].z, orientations[ov].w);" + "\n" + 
+"                        orientation_changed[1] = new SFRotation(orientations[vc].x, orientations[vc].y, orientations[vc].z, orientations[vc].w);" + "\n" + 
+"                        position_changed = new MFVec3f();" + "\n" + 
+"                        position_changed[0] = new SFVec3f(positions[ov].x,positions[ov].y,positions[ov].z);" + "\n" + 
+"                        position_changed[1] = new SFVec3f(positions[vc].x,positions[vc].y,positions[vc].z);" + "\n" + 
 "                    // }" + "\n" + 
 "               }" + "]]>"
 )
@@ -150,11 +141,12 @@ public class bubbles
       .addField(new fieldObject().setAccessType("inputOutput").setName("lastKey").setType("SFFloat").setValue("0"))
       .addField(new fieldObject().setAccessType("inputOutput").setName("orientations").setType("MFRotation").setValue("0 1 0 0 0 1 0 -1.57 0 1 0 3.14 0 1 0 1.57 0 1 0 0 1 0 0 -1.57 0 1 0 0 1 0 0 1.57 0 1 0 0"))
       .addField(new fieldObject().setAccessType("inputOutput").setName("positions").setType("MFVec3f").setValue("0 0 10 -10 0 0 0 0 -10 10 0 0 0 0 10 0 10 0 0 0 10 0 -10 0 0 0 10"))
-      .addField(new fieldObject().setAccessType("outputOnly").setName("position").setType("MFVec3f"))
-      .addField(new fieldObject().setAccessType("outputOnly").setName("orientation").setType("MFRotation")))
-    .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("cycleTime").setToNode("RandomTourTime").setToField("set_cycle"))
-    .addChild(new ROUTEObject().setFromNode("RandomTourTime").setFromField("orientation").setToNode("TourOrientation").setToField("keyValue"))
-    .addChild(new ROUTEObject().setFromNode("RandomTourTime").setFromField("position").setToNode("TourPosition").setToField("keyValue"))
+      .addField(new fieldObject().setAccessType("outputOnly").setName("position_changed").setType("MFVec3f"))
+      .addField(new fieldObject().setAccessType("inputOnly").setName("set_orientation").setType("MFRotation"))
+      .addField(new fieldObject().setAccessType("outputOnly").setName("orientation_changed").setType("MFRotation")))
+    .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("cycleTime_changed").setToNode("RandomTourTime").setToField("set_cycle"))
+    .addChild(new ROUTEObject().setFromNode("RandomTourTime").setFromField("orientation_changed").setToNode("TourOrientation").setToField("set_keyValue"))
+    .addChild(new ROUTEObject().setFromNode("RandomTourTime").setFromField("position_changed").setToNode("TourPosition").setToField("set_keyValue"))
     .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("fraction_changed").setToNode("TourOrientation").setToField("set_fraction"))
     .addChild(new ROUTEObject().setFromNode("TourOrientation").setFromField("value_changed").setToNode("Tour").setToField("set_orientation"))
     .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("fraction_changed").setToNode("TourPosition").setToField("set_fraction"))
@@ -165,78 +157,29 @@ public class bubbles
   /** The initialized model object, created within initialize() method. */
   private X3DObject x3dModel;
   
-  /** Provide a shallow copy of the X3D model.
+  /** Provide a 
+   * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
+   * of the X3D model.
+   * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
    * @return bubbles model
    */
   public X3DObject getX3dModel()
   {	  
 	  return x3dModel;
   }
-  
-  /** Indicate X3DJSAIL validation results for this X3D model.
-   * @return validation results plus exception information, if any
-   */
-  public String validateSelf()
-  {
-	String       metaResult = new String();
-	String validationResult = new String();
-	String  exceptionResult = new String();
-	try
-	{
-		initialize();
-		
-		if ((getX3dModel() == null) || (getX3dModel().getHead() == null))
-		{
-			validationResult = "empty scene, nothing to validate. " + x3dModel.validate();
-			return validationResult;
-		}
-		// first list informational meta elements of interest
-		for (metaObject meta : getX3dModel().getHead().getMetaList())
-		{
-			if (meta.getName().equals(metaObject.NAME_ERROR) ||
-				meta.getName().equals(metaObject.NAME_WARNING) ||
-				meta.getName().equals(metaObject.NAME_HINT) ||
-				meta.getName().equals(metaObject.NAME_INFO) ||
-				meta.getName().equals(metaObject.NAME_TODO))
-			{
-				metaResult += meta.toStringX3D();
-			}
-		}
-		validationResult += x3dModel.validate(); // walk entire tree to validate correctness
-	}
-	catch (Exception e)
-	{
-		exceptionResult = e.getMessage(); // report exception failures, if any
-	    if (exceptionResult == null)
-	    {
-			exceptionResult = "Exception caught but null message!";
-			e.printStackTrace();
-	    }
-	}
-	if  (metaResult.isEmpty() && exceptionResult.isEmpty() && validationResult.isEmpty())
-	     return "success";
-	else
-	{
-		String returnMessage = metaResult;
-		if  (!exceptionResult.isEmpty() && !validationResult.isEmpty())
-			returnMessage += "\n*** ";
-		returnMessage += exceptionResult;
-		if  (exceptionResult.isEmpty() && !validationResult.isEmpty())
-			returnMessage = "\n" + returnMessage; // skip line before meta tags, etc.
-		returnMessage += validationResult;
-		return returnMessage;
-	}
-  }
+	   
     /** Default main() method provided for test purposes.
      * @param argv input parameters
+	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(argv)</a>
+	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#validationReport--">X3DObject.validationReport()</a>
      */
     public static void main(String argv[])
     {
-		bubbles testObject = new bubbles();
-		System.out.print("bubbles execution self-validation test results: ");
-		String validationResults = testObject.validateSelf();
-		if (validationResults.startsWith("<"))
-			System.out.println();
+		X3DObject exampleObject = new bubbles().getX3dModel();
+		
+		exampleObject.handleArguments(argv);
+		System.out.print("bubbles self-validation test results: ");
+		String validationResults = exampleObject.validationReport();
 		System.out.println(validationResults);
 	}
 }

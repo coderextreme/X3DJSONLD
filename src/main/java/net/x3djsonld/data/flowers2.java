@@ -16,7 +16,7 @@ import org.web3d.x3d.jsail.Time.*;
 // Javadoc annotations follow, see below for source.
 /**
  * <p> 2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi). </p>
- <p> Related links: flowers2.java source, <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="http://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: flowers2.java source, <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="http://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
@@ -65,7 +65,7 @@ import org.web3d.x3d.jsail.Time.*;
 		<a href="http://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>.
 		It has been produced using the 
 		<a href="http://www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">X3dToJava.xslt</a>
-		stylesheet to create Java source code from an <code>.x3d</code> scene.
+		stylesheet to create Java source code from an <code>.x3d</code> model.
 	</p>
 
  */
@@ -78,7 +78,7 @@ public class flowers2
     initialize();
   }
 	
-  /** Create and initialize the X3D model. */
+  /** Create and initialize the X3D model for this object. */
   public final void initialize()
   {
   x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.0")
@@ -100,13 +100,13 @@ public class flowers2
         .addChild(new ShapeObject()
           .setAppearance(new AppearanceObject()
             .setMaterial(new MaterialObject().setDiffuseColor(0.0f,0.5f,1.0f).setSpecularColor(0.0f,0.5f,1.0f)))
-          .setGeometry(new IndexedFaceSetObject("Orbit").setDEF("Orbit").setCreaseAngle(1.57f).setConvex(false)
+          .setGeometry(new IndexedFaceSetObject("Orbit").setDEF("Orbit").setConvex(false)
             .setCoord(new CoordinateObject("OrbitCoordinates")))))
       .addChild(new TransformObject("OrbitTransform2").setTranslation(-8.0f,0.0f,0.0f)
         .addChild(new ShapeObject()
           .setAppearance(new AppearanceObject()
             .setMaterial(new MaterialObject().setTransparency(0.75f).setDiffuseColor(1.0f,0.5f,0.0f).setSpecularColor(1.0f,0.5f,0.0f)))
-          .setGeometry(new IndexedFaceSetObject("Orbit2").setDEF("Orbit2").setCreaseAngle(1.57f)
+          .setGeometry(new IndexedFaceSetObject("Orbit2").setDEF("Orbit2")
             .setCoord(new CoordinateObject("OrbitCoordinates2")))))
       .addChild(new TimeSensorObject("Clock").setCycleInterval(16).setLoop(true))
       .addChild(new OrientationInterpolatorObject("OrbitPath").setKey(new float[] {0.0f,0.50f,1.0f}).setKeyValue(new MFRotationObject(new float[] {1.0f,0.0f,0.0f,0.0f,1.0f,0.0f,0.0f,3.14f,1.0f,0.0f,0.0f,6.28f})))
@@ -123,39 +123,38 @@ public class flowers2
 "\n" + 
 "function initialize() {" + "\n" + 
 "     resolution = 100;" + "\n" + 
-"     var localci = new MFInt32();" + "\n" + 
 "     generateCoordinates(resolution);" + "\n" + 
-"     var ci = 0;" + "\n" + 
+"     var localci = [];" + "\n" + 
 "     for ( i = 0; i < resolution-1; i++) {" + "\n" + 
 "     	for ( j = 0; j < resolution-1; j++) {" + "\n" + 
-"	     localci[ci] = i*resolution+j;" + "\n" + 
-"	     localci[ci++] = i*resolution+j+1;" + "\n" + 
-"	     localci[ci++] = (i+1)*resolution+j+1;" + "\n" + 
-"	     localci[ci++] = (i+1)*resolution+j;" + "\n" + 
-"	     localci[ci++] = -1;" + "\n" + 
+"	     localci.push(i*resolution+j);" + "\n" + 
+"	     localci.push(i*resolution+j+1);" + "\n" + 
+"	     localci.push((i+1)*resolution+j+1);" + "\n" + 
+"	     localci.push((i+1)*resolution+j);" + "\n" + 
+"	     localci.push(-1);" + "\n" + 
 "	}" + "\n" + 
 "    }" + "\n" + 
-"    coordIndexes = localci;" + "\n" + 
+"    coordIndexes = new MFInt32(localci);" + "\n" + 
 "}" + "\n" + 
 "\n" + 
 "function generateCoordinates(resolution) {" + "\n" + 
 "     theta = 0.0;" + "\n" + 
 "     phi = 0.0;" + "\n" + 
 "     delta = (2 * 3.141592653) / (resolution-1);" + "\n" + 
-"     var localc = new MFVec3f();" + "\n" + 
+"     var localc = [];" + "\n" + 
 "     for ( i = 0; i < resolution; i++) {" + "\n" + 
 "     	for ( j = 0; j < resolution; j++) {" + "\n" + 
 "		rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);" + "\n" + 
-"		localc[i*resolution+j] = new SFVec3f(" + "\n" + 
+"		localc.push(new SFVec3f(" + "\n" + 
 "			rho * Math.cos(phi) * Math.cos(theta)," + "\n" + 
 "			rho * Math.cos(phi) * Math.sin(theta)," + "\n" + 
 "			rho * Math.sin(phi)" + "\n" + 
-"		);" + "\n" + 
+"		));" + "\n" + 
 "		theta += delta;" + "\n" + 
 "	}" + "\n" + 
 "	phi += delta;" + "\n" + 
 "     }" + "\n" + 
-"     coordinates = localc;" + "\n" + 
+"     coordinates = new MFVec3f(localc);" + "\n" + 
 "}" + "\n" + 
 "\n" + 
 "function set_fraction(fraction, eventTime) {" + "\n" + 
@@ -203,39 +202,39 @@ public class flowers2
 "\n" + 
 "function initialize() {" + "\n" + 
 "     resolution = 100;" + "\n" + 
-"     var localci = new MFInt32();" + "\n" + 
 "     generateCoordinates(resolution);" + "\n" + 
-"     ci = 0;" + "\n" + 
+"     var localci = [];" + "\n" + 
 "     for ( i = 0; i < resolution-1; i++) {" + "\n" + 
 "     	for ( j = 0; j < resolution-1; j++) {" + "\n" + 
-"	     localci[ci] = i*resolution+j;" + "\n" + 
-"	     localci[ci+1] = i*resolution+j+1;" + "\n" + 
-"	     localci[ci+2] = (i+1)*resolution+j+1;" + "\n" + 
-"	     localci[ci+3] = (i+1)*resolution+j;" + "\n" + 
-"	     localci[ci+4] = -1;" + "\n" + 
-"	     ci += 5;" + "\n" + 
+"	     localci.push(i*resolution+j);" + "\n" + 
+"	     localci.push(i*resolution+j+1);" + "\n" + 
+"	     localci.push((i+1)*resolution+j+1);" + "\n" + 
+"	     localci.push((i+1)*resolution+j);" + "\n" + 
+"	     localci.push(-1);" + "\n" + 
 "	}" + "\n" + 
 "    }" + "\n" + 
-"    coordIndexes = localci;" + "\n" + 
+"    coordIndexes = new MFInt32(localci);" + "\n" + 
 "}" + "\n" + 
 "\n" + 
 "function generateCoordinates(resolution) {" + "\n" + 
 "     theta = 0.0;" + "\n" + 
 "     phi = 0.0;" + "\n" + 
 "     delta = (2 * 3.141592653) / (resolution-1);" + "\n" + 
-"     var localc = new MFVec3f();" + "\n" + 
+"     var localc = [];" + "\n" + 
 "     for ( i = 0; i < resolution; i++) {" + "\n" + 
 "     	for ( j = 0; j < resolution; j++) {" + "\n" + 
 "		rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);" + "\n" + 
-"		localc[i*resolution+j] = new SFVec3f();" + "\n" + 
-"		localc[i*resolution+j][0] = rho * Math.cos(phi) * Math.cos(theta);" + "\n" + 
-"		localc[i*resolution+j][1] = rho * Math.cos(phi) * Math.sin(theta);" + "\n" + 
-"		localc[i*resolution+j][2] = rho * Math.sin(phi);" + "\n" + 
+"		localc.push(new SFVec3f(" + "\n" + 
+"			rho * Math.cos(phi) * Math.cos(theta)," + "\n" + 
+"			rho * Math.cos(phi) * Math.sin(theta)," + "\n" + 
+"			rho * Math.sin(phi)" + "\n" + 
+"		));" + "\n" + 
 "		theta += delta;" + "\n" + 
 "	}" + "\n" + 
 "	phi += delta;" + "\n" + 
 "     }" + "\n" + 
-"     coordinates = localc;" + "\n" + 
+"     " + "\n" + 
+"     coordinates = new MFVec3f(localc);" + "\n" + 
 "}" + "\n" + 
 "\n" + 
 "function set_fraction(fraction, eventTime) {" + "\n" + 
@@ -270,93 +269,44 @@ public class flowers2
         .addField(new fieldObject().setAccessType("inputOnly").setName("set_fraction").setType("SFFloat"))
         .addField(new fieldObject().setAccessType("outputOnly").setName("coordinates").setType("MFVec3f"))
         .addField(new fieldObject().setAccessType("outputOnly").setName("coordIndexes").setType("MFInt32"))))
-    .addChild(new ROUTEObject().setFromNode("OrbitScript").setFromField("coordIndexes").setToNode("Orbit").setToField("set_coordIndex"))
-    .addChild(new ROUTEObject().setFromNode("OrbitScript").setFromField("coordinates").setToNode("OrbitCoordinates").setToField("set_point"))
-    .addChild(new ROUTEObject().setFromNode("OrbitScript2").setFromField("coordIndexes").setToNode("Orbit2").setToField("set_coordIndex"))
-    .addChild(new ROUTEObject().setFromNode("OrbitScript2").setFromField("coordinates").setToNode("OrbitCoordinates2").setToField("set_point"))
+    .addChild(new ROUTEObject().setFromNode("OrbitScript").setFromField("coordIndexes").setToNode("Orbit").setToField("coordIndex"))
+    .addChild(new ROUTEObject().setFromNode("OrbitScript").setFromField("coordinates").setToNode("OrbitCoordinates").setToField("point"))
     .addChild(new ROUTEObject().setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitScript").setToField("set_fraction"))
+    .addChild(new ROUTEObject().setFromNode("OrbitScript2").setFromField("coordIndexes").setToNode("Orbit2").setToField("coordIndex"))
+    .addChild(new ROUTEObject().setFromNode("OrbitScript2").setFromField("coordinates").setToNode("OrbitCoordinates2").setToField("point"))
     .addChild(new ROUTEObject().setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitScript2").setToField("set_fraction"))
     .addChild(new ROUTEObject().setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitPath").setToField("set_fraction"))
-    .addChild(new ROUTEObject().setFromNode("OrbitPath").setFromField("value_changed").setToNode("OrbitTransform").setToField("set_rotation"))
-    .addChild(new ROUTEObject().setFromNode("OrbitPath").setFromField("value_changed").setToNode("OrbitTransform2").setToField("set_rotation")));
+    .addChild(new ROUTEObject().setFromNode("OrbitPath").setFromField("value_changed").setToNode("OrbitTransform").setToField("rotation"))
+    .addChild(new ROUTEObject().setFromNode("OrbitPath").setFromField("value_changed").setToNode("OrbitTransform2").setToField("rotation")));
   }
   // end of initialize() method
 
   /** The initialized model object, created within initialize() method. */
   private X3DObject x3dModel;
   
-  /** Provide a shallow copy of the X3D model.
+  /** Provide a 
+   * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
+   * of the X3D model.
+   * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
    * @return flowers2 model
    */
   public X3DObject getX3dModel()
   {	  
 	  return x3dModel;
   }
-  
-  /** Indicate X3DJSAIL validation results for this X3D model.
-   * @return validation results plus exception information, if any
-   */
-  public String validateSelf()
-  {
-	String       metaResult = new String();
-	String validationResult = new String();
-	String  exceptionResult = new String();
-	try
-	{
-		initialize();
-		
-		if ((getX3dModel() == null) || (getX3dModel().getHead() == null))
-		{
-			validationResult = "empty scene, nothing to validate. " + x3dModel.validate();
-			return validationResult;
-		}
-		// first list informational meta elements of interest
-		for (metaObject meta : getX3dModel().getHead().getMetaList())
-		{
-			if (meta.getName().equals(metaObject.NAME_ERROR) ||
-				meta.getName().equals(metaObject.NAME_WARNING) ||
-				meta.getName().equals(metaObject.NAME_HINT) ||
-				meta.getName().equals(metaObject.NAME_INFO) ||
-				meta.getName().equals(metaObject.NAME_TODO))
-			{
-				metaResult += meta.toStringX3D();
-			}
-		}
-		validationResult += x3dModel.validate(); // walk entire tree to validate correctness
-	}
-	catch (Exception e)
-	{
-		exceptionResult = e.getMessage(); // report exception failures, if any
-	    if (exceptionResult == null)
-	    {
-			exceptionResult = "Exception caught but null message!";
-			e.printStackTrace();
-	    }
-	}
-	if  (metaResult.isEmpty() && exceptionResult.isEmpty() && validationResult.isEmpty())
-	     return "success";
-	else
-	{
-		String returnMessage = metaResult;
-		if  (!exceptionResult.isEmpty() && !validationResult.isEmpty())
-			returnMessage += "\n*** ";
-		returnMessage += exceptionResult;
-		if  (exceptionResult.isEmpty() && !validationResult.isEmpty())
-			returnMessage = "\n" + returnMessage; // skip line before meta tags, etc.
-		returnMessage += validationResult;
-		return returnMessage;
-	}
-  }
+	   
     /** Default main() method provided for test purposes.
      * @param argv input parameters
+	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(argv)</a>
+	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#validationReport--">X3DObject.validationReport()</a>
      */
     public static void main(String argv[])
     {
-		flowers2 testObject = new flowers2();
-		System.out.print("flowers2 execution self-validation test results: ");
-		String validationResults = testObject.validateSelf();
-		if (validationResults.startsWith("<"))
-			System.out.println();
+		X3DObject exampleObject = new flowers2().getX3dModel();
+		
+		exampleObject.handleArguments(argv);
+		System.out.print("flowers2 self-validation test results: ");
+		String validationResults = exampleObject.validationReport();
 		System.out.println(validationResults);
 	}
 }

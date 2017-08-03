@@ -17,7 +17,7 @@ import org.web3d.x3d.jsail.Time.*;
 // Javadoc annotations follow, see below for source.
 /**
  * <p> 3 prismatic spheres. </p>
- <p> Related links: bub.java source, <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="http://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: bub.java source, <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="http://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
@@ -54,7 +54,7 @@ import org.web3d.x3d.jsail.Time.*;
 		<a href="http://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>.
 		It has been produced using the 
 		<a href="http://www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">X3dToJava.xslt</a>
-		stylesheet to create Java source code from an <code>.x3d</code> scene.
+		stylesheet to create Java source code from an <code>.x3d</code> model.
 	</p>
 
 	* @author John Carlson
@@ -68,7 +68,7 @@ public class bub
     initialize();
   }
 	
-  /** Create and initialize the X3D model. */
+  /** Create and initialize the X3D model for this object. */
   public final void initialize()
   {
   x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
@@ -115,17 +115,16 @@ public class bub
 "",
 "					  <ShaderPart url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/freewrl.vs\"' type='VERTEX'></ShaderPart>",
 "					  <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart>",
-"					</ComposedShader>",
-"					<ComposedShader DEF='x3dom' language=\"GLSL\">",
-"					  <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/>",
-"					  <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/>",
-"					  <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/>",
-"					  <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/>",
-"					  <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/>",
-"",
-"					  <ShaderPart url='\"../shaders/x3dom.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs\"' type='VERTEX'></ShaderPart>",
-"					  <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart>",
-"					</ComposedShader>",
+"					</ComposedShader>"})
+              .addShaders(new ComposedShaderObject("x3dom").setLanguage("GLSL")
+                .addField(new fieldObject().setAccessType("inputOutput").setName("cube").setType("SFInt32").setValue("0"))
+                .addField(new fieldObject().setAccessType("inputOutput").setName("chromaticDispertion").setType("SFVec3f").setValue("0.98 1.0 1.033"))
+                .addField(new fieldObject().setAccessType("inputOutput").setName("bias").setType("SFFloat").setValue("0.5"))
+                .addField(new fieldObject().setAccessType("inputOutput").setName("scale").setType("SFFloat").setValue("0.5"))
+                .addField(new fieldObject().setAccessType("inputOutput").setName("power").setType("SFFloat").setValue("2.0"))
+                .addParts(new ShaderPartObject().setUrl(new MFStringObject("\"../shaders/x3dom.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs\"")))
+                .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject("\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs\""))))
+              .addComments(new String[] {"",
 "					<ComposedShader DEF='instant' language=\"GLSL\">",
 "					  <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/>",
 "					  <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/>",
@@ -150,12 +149,6 @@ public class bub
 "<![CDATA[" + "\n" +
 "\n" + 
 "ecmascript:" + "\n" + 
-"			function set_translation(value) {" + "\n" + 
-"				translation = value;" + "\n" + 
-"			}" + "\n" + 
-"			function translation_changed() {" + "\n" + 
-"				return translation;" + "\n" + 
-"			}" + "\n" + 
 "			function initialize() {" + "\n" + 
 "			    translation = new SFVec3f(0, 0, 0);" + "\n" + 
 "			    velocity = new SFVec3f(" + "\n" + 
@@ -196,78 +189,29 @@ public class bub
   /** The initialized model object, created within initialize() method. */
   private X3DObject x3dModel;
   
-  /** Provide a shallow copy of the X3D model.
+  /** Provide a 
+   * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
+   * of the X3D model.
+   * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
    * @return bub model
    */
   public X3DObject getX3dModel()
   {	  
 	  return x3dModel;
   }
-  
-  /** Indicate X3DJSAIL validation results for this X3D model.
-   * @return validation results plus exception information, if any
-   */
-  public String validateSelf()
-  {
-	String       metaResult = new String();
-	String validationResult = new String();
-	String  exceptionResult = new String();
-	try
-	{
-		initialize();
-		
-		if ((getX3dModel() == null) || (getX3dModel().getHead() == null))
-		{
-			validationResult = "empty scene, nothing to validate. " + x3dModel.validate();
-			return validationResult;
-		}
-		// first list informational meta elements of interest
-		for (metaObject meta : getX3dModel().getHead().getMetaList())
-		{
-			if (meta.getName().equals(metaObject.NAME_ERROR) ||
-				meta.getName().equals(metaObject.NAME_WARNING) ||
-				meta.getName().equals(metaObject.NAME_HINT) ||
-				meta.getName().equals(metaObject.NAME_INFO) ||
-				meta.getName().equals(metaObject.NAME_TODO))
-			{
-				metaResult += meta.toStringX3D();
-			}
-		}
-		validationResult += x3dModel.validate(); // walk entire tree to validate correctness
-	}
-	catch (Exception e)
-	{
-		exceptionResult = e.getMessage(); // report exception failures, if any
-	    if (exceptionResult == null)
-	    {
-			exceptionResult = "Exception caught but null message!";
-			e.printStackTrace();
-	    }
-	}
-	if  (metaResult.isEmpty() && exceptionResult.isEmpty() && validationResult.isEmpty())
-	     return "success";
-	else
-	{
-		String returnMessage = metaResult;
-		if  (!exceptionResult.isEmpty() && !validationResult.isEmpty())
-			returnMessage += "\n*** ";
-		returnMessage += exceptionResult;
-		if  (exceptionResult.isEmpty() && !validationResult.isEmpty())
-			returnMessage = "\n" + returnMessage; // skip line before meta tags, etc.
-		returnMessage += validationResult;
-		return returnMessage;
-	}
-  }
+	   
     /** Default main() method provided for test purposes.
      * @param argv input parameters
+	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(argv)</a>
+	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#validationReport--">X3DObject.validationReport()</a>
      */
     public static void main(String argv[])
     {
-		bub testObject = new bub();
-		System.out.print("bub execution self-validation test results: ");
-		String validationResults = testObject.validateSelf();
-		if (validationResults.startsWith("<"))
-			System.out.println();
+		X3DObject exampleObject = new bub().getX3dModel();
+		
+		exampleObject.handleArguments(argv);
+		System.out.print("bub self-validation test results: ");
+		String validationResults = exampleObject.validationReport();
 		System.out.println(validationResults);
 	}
 }
