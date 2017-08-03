@@ -241,7 +241,7 @@ protected class MFString8 {
 }
 protected class MFString9 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"http://translate.google.com/translate_tts?tl=en&amp;q=Feed%20the%20recording%20back%20out%20of%20the%20medium","translate_tts_mp3FileFormatNotSupported.wav"});
+    return new MFStringObject(new java.lang.String[] {"http://translate.google.com/translate_tts?tl=en&q=Feed%20the%20recording%20back%20out%20of%20the%20medium","translate_tts_mp3FileFormatNotSupported.wav"});
   }
 }
 protected class MFString10 {
@@ -276,7 +276,7 @@ protected class MFString15 {
 }
 protected class MFString16 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"http://translate.google.com/translate_tts?tl=en&amp;q=Overtly%20resist%20change"});
+    return new MFStringObject(new java.lang.String[] {"http://translate.google.com/translate_tts?tl=en&q=Overtly%20resist%20change"});
   }
 }
 protected class MFString17 {

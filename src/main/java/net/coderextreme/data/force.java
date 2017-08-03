@@ -100,28 +100,27 @@ ProtoInstanceObject ProtoInstance6 = null;
           .setProtoInterface(new ProtoInterfaceObject()
             .addField(new fieldObject().setType("SFVec3f").setName("position").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0")))
           .setProtoBody(new ProtoBodyObject()
-            .addChild(new TransformObject().setDEF("transform")
-              .setIS(new ISObject()
-                .addConnect(new connectObject().setNodeField("translation").setProtoField("position")))
-              .addChild(new ShapeObject()
-                .setGeometry(new SphereObject())
-                .setAppearance(new AppearanceObject()
-                  .setMaterial(new MaterialObject().setDiffuseColor(new float[] {1f,0f,0f}))))
-              .addChild(new TransformObject().setTranslation(new float[] {1f,0f,0f})
+            .addChild(new GroupObject()
+              .addChild(new TransformObject().setDEF("transform")
+                .setIS(new ISObject()
+                  .addConnect(new connectObject().setNodeField("translation").setProtoField("position")))
                 .addChild(new ShapeObject()
-                  .setGeometry(new TextObject().setString(new MFStringObject(new MFString0().getArray()))
-                    .setFontStyle(new FontStyleObject().setJustify(new MFStringObject(new MFString1().getArray())).setSize(5f)))
+                  .setGeometry(new SphereObject())
                   .setAppearance(new AppearanceObject()
-                    .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0f,0f,1f}))))))
-            .addChild(new PositionInterpolatorObject().setDEF("NodePosition").setKey(new MFFloatObject(new MFFloat2().getArray())).setKeyValue(new MFVec3fObject(new MFVec3f3().getArray())))
-            .addChild(new ScriptObject().setDEF("MoveBall")
-              .addField(new fieldObject().setType("SFVec3f").setName("translation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("50 50 0"))
-              .addField(new fieldObject().setType("SFVec3f").setName("old").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-              .addField(new fieldObject().setType("SFTime").setName("set_cycle").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
-              .addField(new fieldObject().setType("MFVec3f").setName("keyValue").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-              .setSourceCode("\n"+
-"\n"+
-"ecmascript:\n"+
+                    .setMaterial(new MaterialObject().setDiffuseColor(new float[] {1f,0f,0f}))))
+                .addChild(new TransformObject().setTranslation(new float[] {1f,0f,0f})
+                  .addChild(new ShapeObject()
+                    .setGeometry(new TextObject().setString(new MFStringObject(new MFString0().getArray()))
+                      .setFontStyle(new FontStyleObject().setJustify(new MFStringObject(new MFString1().getArray())).setSize(5f)))
+                    .setAppearance(new AppearanceObject()
+                      .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0f,0f,1f}))))))
+              .addChild(new PositionInterpolatorObject().setDEF("NodePosition").setKey(new MFFloatObject(new MFFloat2().getArray())).setKeyValue(new MFVec3fObject(new MFVec3f3().getArray())))
+              .addChild(new ScriptObject().setDEF("MoveBall")
+                .addField(new fieldObject().setType("SFVec3f").setName("translation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("50 50 0"))
+                .addField(new fieldObject().setType("SFVec3f").setName("old").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
+                .addField(new fieldObject().setType("SFTime").setName("set_cycle").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
+                .addField(new fieldObject().setType("MFVec3f").setName("keyValue").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
+                .setSourceCode("ecmascript:\n"+
 "					function set_cycle(value) {\n"+
 "                                                old = translation;\n"+
 "						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);\n"+
@@ -129,30 +128,29 @@ ProtoInstanceObject ProtoInstance6 = null;
 "						// Browser.println(translation);\n"+
 "					}\n"+
 ""))
-            .addChild(new TimeSensorObject().setDEF("nodeClock").setCycleInterval(3d).setLoop(true))
-            .addChild(new ROUTEObject().setFromNode("nodeClock").setFromField("cycleTime").setToNode("MoveBall").setToField("set_cycle"))
-            .addChild(new ROUTEObject().setFromNode("nodeClock").setFromField("fraction_changed").setToNode("NodePosition").setToField("set_fraction"))
-            .addChild(new ROUTEObject().setFromNode("MoveBall").setFromField("keyValue").setToNode("NodePosition").setToField("keyValue"))
-            .addChild(new ROUTEObject().setFromNode("NodePosition").setFromField("value_changed").setToNode("transform").setToField("set_translation"))))
+              .addChild(new TimeSensorObject().setDEF("nodeClock").setCycleInterval(3d).setLoop(true))
+              .addChild(new ROUTEObject().setFromNode("nodeClock").setFromField("cycleTime").setToNode("MoveBall").setToField("set_cycle"))
+              .addChild(new ROUTEObject().setFromNode("nodeClock").setFromField("fraction_changed").setToNode("NodePosition").setToField("set_fraction"))
+              .addChild(new ROUTEObject().setFromNode("MoveBall").setFromField("keyValue").setToNode("NodePosition").setToField("keyValue"))
+              .addChild(new ROUTEObject().setFromNode("NodePosition").setFromField("value_changed").setToNode("transform").setToField("set_translation")))))
         .addChild(new ProtoDeclareObject().setName("cylinder")
           .setProtoInterface(new ProtoInterfaceObject()
             .addField(new fieldObject().setType("SFVec3f").setName("set_positionA").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
             .addField(new fieldObject().setType("SFVec3f").setName("set_positionB").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)))
           .setProtoBody(new ProtoBodyObject()
-            .addChild(new ShapeObject()
-              .setGeometry(new ExtrusionObject().setDEF("extrusion").setCreaseAngle(0.785f).setCrossSection(new MFVec2fObject(new MFVec2f4().getArray())).setSpine(new MFVec3fObject(new MFVec3f5().getArray())))
-              .setAppearance(new AppearanceObject()
-                .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0f,1f,0f}))))
-            .addChild(new ScriptObject().setDEF("MoveCylinder")
-              .addField(new fieldObject().setType("MFVec3f").setName("spine").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 -50 0 0 50 0"))
-              .addField(new fieldObject().setType("SFVec3f").setName("set_endA").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
-              .addField(new fieldObject().setType("SFVec3f").setName("set_endB").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
-              .setIS(new ISObject()
-                .addConnect(new connectObject().setNodeField("set_endA").setProtoField("set_positionA"))
-                .addConnect(new connectObject().setNodeField("set_endB").setProtoField("set_positionB")))
-              .setSourceCode("\n"+
-"\n"+
-"ecmascript:\n"+
+            .addChild(new GroupObject()
+              .addChild(new ShapeObject()
+                .setGeometry(new ExtrusionObject().setDEF("extrusion").setCreaseAngle(0.785f).setCrossSection(new MFVec2fObject(new MFVec2f4().getArray())).setSpine(new MFVec3fObject(new MFVec3f5().getArray())))
+                .setAppearance(new AppearanceObject()
+                  .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0f,1f,0f}))))
+              .addChild(new ScriptObject().setDEF("MoveCylinder")
+                .addField(new fieldObject().setType("MFVec3f").setName("spine").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 -50 0 0 50 0"))
+                .addField(new fieldObject().setType("SFVec3f").setName("set_endA").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
+                .addField(new fieldObject().setType("SFVec3f").setName("set_endB").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
+                .setIS(new ISObject()
+                  .addConnect(new connectObject().setNodeField("set_endA").setProtoField("set_positionA"))
+                  .addConnect(new connectObject().setNodeField("set_endB").setProtoField("set_positionB")))
+                .setSourceCode("ecmascript:\n"+
 "\n"+
 "                function set_endA(value) {\n"+
 "		    if (typeof spine === 'undefined') {\n"+
@@ -174,7 +172,7 @@ ProtoInstanceObject ProtoInstance6 = null;
 "                    spine = value;\n"+
 "                }\n"+
 ""))
-            .addChild(new ROUTEObject().setFromNode("MoveCylinder").setFromField("spine").setToNode("extrusion").setToField("set_spine"))))
+              .addChild(new ROUTEObject().setFromNode("MoveCylinder").setFromField("spine").setToNode("extrusion").setToField("set_spine")))))
         .addChild(new TransformObject().setDEF("HoldsContent").setScale(new float[] {0.1f,0.1f,0.1f})
           .addChild(new PlaneSensorObject().setDEF("clickGenerator").setMinPosition(new float[] {-50f,-50f}).setMaxPosition(new float[] {50f,50f}).setDescription("click on background to add nodes, click on nodes to add links"))
           .addChild(ProtoInstance0 = new ProtoInstanceObject().setName("node").setDEF("nodeA"))
@@ -188,11 +186,8 @@ ProtoInstanceObject ProtoInstance6 = null;
           .addField(new fieldObject().setType("SFInt32").setName("counter").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
           .addField(new fieldObject().setType("SFNode").setName("node_changed").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
           .addField(new fieldObject().setType("SFBool").setName("add_node").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setValue("false"))
-          .addField(new fieldObject().setType("SFNode").setName("ModifiableNode").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
-            .addChild(new TransformObject().setUSE("HoldsContent")))
-          .setSourceCode("\n"+
-"	\n"+
-"ecmascript:\n"+
+          .addComments(new CommentsBlock("<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>"))
+          .setSourceCode("ecmascript:\n"+
 "	function add_node(value) {\n"+
 "                // Browser.print('hey ', counter);\n"+
 "                counter = counter++;\n"+

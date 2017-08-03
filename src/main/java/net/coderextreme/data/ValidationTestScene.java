@@ -72,59 +72,19 @@ import org.web3d.x3d.sai.Texturing3D.*;
 import org.web3d.x3d.sai.Texturing.*;
 import org.web3d.x3d.sai.Time.*;
 import org.web3d.x3d.sai.VolumeRendering.*;
-public class text {
+public class ValidationTestScene {
   public static void main(String[] args) {
     ConfigurationProperties.setShowDefaultAttributes(true);
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_nativeJava);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new text().initialize().toFileJSON("../data/text.new.json");
+    new ValidationTestScene().initialize().toFileJSON("../data/ValidationTestScene.new.json");
     }
     public X3DObject initialize() {
+ProtoInstanceObject ProtoInstance0 = null;
       X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
-      .setHead(new headObject()
-        .addMeta(new metaObject().setName("creator").setContent("John W Carlson"))
-        .addMeta(new metaObject().setName("created").setContent("December 13 2015"))
-        .addMeta(new metaObject().setName("title").setContent("text.x3d"))
-        .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/text.x3d"))
-        .addMeta(new metaObject().setName("description").setContent("test \\n text"))
-        .addMeta(new metaObject().setName("generator").setContent("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit")))
       .setScene(new SceneObject()
-        .addChild(new TransformObject()
-          .addChild(new ShapeObject()
-            .setGeometry(new TextObject().setString(new MFStringObject(new MFString0().getArray()))
-              .setFontStyle(new FontStyleObject()))
-            .setAppearance(new AppearanceObject()
-              .setMaterial(new MaterialObject())))
-          .addChild(new ShapeObject()
-            .setGeometry(new TextObject().setString(new MFStringObject(new MFString1().getArray()))
-              .setFontStyle(new FontStyleObject()))
-            .setAppearance(new AppearanceObject()
-              .setMaterial(new MaterialObject())))
-          .addChild(new ShapeObject()
-            .setGeometry(new TextObject().setString(new MFStringObject(new MFString2().getArray()))
-              .setFontStyle(new FontStyleObject()))
-            .setAppearance(new AppearanceObject()
-              .setMaterial(new MaterialObject())))
-          .addChild(new ScriptObject()
-            .addField(new fieldObject().setType("MFString").setName("frontUrls").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue("\"rnl_front.png\" \"uffizi_front.png\""))
-            .setSourceCode("ecmascript:\n"+
-"			    var me = '\"1\" \"\"2\" \"\\n3\"';\n"+
-""))))      ;
+        .addChild(new GroupObject()
+          .addChild(ProtoInstance0 = new ProtoInstanceObject().setName("myProto").setDEF("myProtoDefName"))))      ;
     return X3D0;
     }
-protected class MFString0 {
-  protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"Node\"\"\""});
-  }
-}
-protected class MFString1 {
-  protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"Node2","\\","\\\\","\\\\\\","Node2"});
-  }
-}
-protected class MFString2 {
-  protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"Node3 \\\\ \\","Node3\"\"\""});
-  }
-}
 }
