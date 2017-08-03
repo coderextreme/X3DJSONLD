@@ -116,10 +116,7 @@ public class flowers4 {
           .addField(new fieldObject().setType("SFFloat").setName("set_fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
           .addField(new fieldObject().setType("MFVec3f").setName("coordinates").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT))
           .addField(new fieldObject().setType("MFInt32").setName("coordIndexes").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-          .setSourceCode("\n"+
-"\n"+
-"\n"+
-"ecmascript:\n"+
+          .setSourceCode("ecmascript:\n"+
 "\n"+
 "var e = 5;\n"+
 "var f = 5;\n"+

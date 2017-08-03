@@ -159,9 +159,7 @@ public class BindingOperations {
             .addField(new fieldObject().setType("SFBool").setName("view3Bound").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
             .addField(new fieldObject().setType("SFBool").setName("view4Bound").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
             .addField(new fieldObject().setType("SFInt32").setName("priorInputvalue").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue("-1"))
-            .setSourceCode("\n"+
-"        \n"+
-"ecmascript:\n"+
+            .setSourceCode("ecmascript:\n"+
 "\n"+
 "function initialize ()\n"+
 "{\n"+

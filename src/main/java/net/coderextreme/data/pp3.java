@@ -153,8 +153,7 @@ ProtoInstanceObject ProtoInstance2 = null;
             .addChild(new ScriptObject().setDEF("RightSingleToMultiString")
               .addField(new fieldObject().setType("SFString").setName("set_rightstring").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
               .addField(new fieldObject().setType("MFString").setName("rightlines").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-              .setSourceCode("\n"+
-"ecmascript:\n"+
+              .setSourceCode("ecmascript:\n"+
 "\n"+
 "function initialize() {\n"+
 "	rightlines = new MFString(\"\");\n"+
@@ -167,8 +166,7 @@ ProtoInstanceObject ProtoInstance2 = null;
             .addChild(new ScriptObject().setDEF("UpSingleToMultiString")
               .addField(new fieldObject().setType("SFString").setName("set_upstring").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
               .addField(new fieldObject().setType("MFString").setName("uplines").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-              .setSourceCode("\n"+
-"ecmascript:\n"+
+              .setSourceCode("ecmascript:\n"+
 "\n"+
 "function initialize() {\n"+
 "	uplines = new MFString(\"\");\n"+
@@ -181,8 +179,7 @@ ProtoInstanceObject ProtoInstance2 = null;
             .addChild(new ScriptObject().setDEF("CenterSingleToMultiString")
               .addField(new fieldObject().setType("SFString").setName("set_centerstring").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
               .addField(new fieldObject().setType("MFString").setName("centerlines").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-              .setSourceCode("\n"+
-"ecmascript:\n"+
+              .setSourceCode("ecmascript:\n"+
 "\n"+
 "function initialize() {\n"+
 "	centerlines = new MFString(\"\");\n"+
