@@ -103,17 +103,16 @@ bub_sail.prototype = {
 "",
 "					  <ShaderPart url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/freewrl.vs\"' type='VERTEX'></ShaderPart>",
 "					  <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart>",
-"					</ComposedShader>",
-"					<ComposedShader DEF='x3dom' language=\"GLSL\">",
-"					  <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/>",
-"					  <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/>",
-"					  <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/>",
-"					  <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/>",
-"					  <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/>",
-"",
-"					  <ShaderPart url='\"../shaders/x3dom.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs\"' type='VERTEX'></ShaderPart>",
-"					  <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart>",
-"					</ComposedShader>",
+"					</ComposedShader>"], Java.type("java.lang.String[]")))
+              .addShaders(new ComposedShaderObject("x3dom").setLanguage("GLSL")
+                .addField(new fieldObject().setAccessType("inputOutput").setName("cube").setType("SFInt32").setValue("0"))
+                .addField(new fieldObject().setAccessType("inputOutput").setName("chromaticDispertion").setType("SFVec3f").setValue("0.98 1.0 1.033"))
+                .addField(new fieldObject().setAccessType("inputOutput").setName("bias").setType("SFFloat").setValue("0.5"))
+                .addField(new fieldObject().setAccessType("inputOutput").setName("scale").setType("SFFloat").setValue("0.5"))
+                .addField(new fieldObject().setAccessType("inputOutput").setName("power").setType("SFFloat").setValue("2.0"))
+                .addParts(new ShaderPartObject().setUrl(new MFStringObject("\"../shaders/x3dom.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs\"")))
+                .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject("\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs\""))))
+              .addComments(Java.to(["",
 "					<ComposedShader DEF='instant' language=\"GLSL\">",
 "					  <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/>",
 "					  <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/>",
@@ -138,12 +137,6 @@ bub_sail.prototype = {
 "<![CDATA[" + "\n" +
 "\n" + 
 "ecmascript:" + "\n" + 
-"			function set_translation(value) {" + "\n" + 
-"				translation = value;" + "\n" + 
-"			}" + "\n" + 
-"			function translation_changed() {" + "\n" + 
-"				return translation;" + "\n" + 
-"			}" + "\n" + 
 "			function initialize() {" + "\n" + 
 "			    translation = new SFVec3f(0, 0, 0);" + "\n" + 
 "			    velocity = new SFVec3f(" + "\n" + 
@@ -153,17 +146,19 @@ bub_sail.prototype = {
 "			}" + "\n" + 
 "			function set_fraction() {" + "\n" + 
 "			    translation = new SFVec3f(" + "\n" + 
-"			    	translation[0] + velocity[0]," + "\n" + 
-"				translation[1] + velocity[1]," + "\n" + 
-"				translation[2] + velocity[2]);" + "\n" + 
-"			    for (var j = 0; j <= 2; j++) {" + "\n" + 
-"				    if (Math.abs(translation[j]) > 10) {" + "\n" + 
-"					initialize();" + "\n" + 
-"				    } else {" + "\n" + 
-"					velocity[0] += Math.random() * 0.2 - 0.1;" + "\n" + 
-"					velocity[1] += Math.random() * 0.2 - 0.1;" + "\n" + 
-"					velocity[2] += Math.random() * 0.2 - 0.1;" + "\n" + 
-"				    }" + "\n" + 
+"			    	translation.x + velocity.x," + "\n" + 
+"				translation.y + velocity.y," + "\n" + 
+"				translation.z + velocity.z);" + "\n" + 
+"			    if (Math.abs(translation.x) > 10) {" + "\n" + 
+"				initialize();" + "\n" + 
+"			    } else if (Math.abs(translation.y) > 10) {" + "\n" + 
+"				initialize();" + "\n" + 
+"			    } else if (Math.abs(translation.z) > 10) {" + "\n" + 
+"				initialize();" + "\n" + 
+"			    } else {" + "\n" + 
+"				velocity.x += Math.random() * 0.2 - 0.1;" + "\n" + 
+"				velocity.y += Math.random() * 0.2 - 0.1;" + "\n" + 
+"				velocity.z += Math.random() * 0.2 - 0.1;" + "\n" + 
 "			    }" + "\n" + 
 "			}" + "\n" + "]]>"
 )

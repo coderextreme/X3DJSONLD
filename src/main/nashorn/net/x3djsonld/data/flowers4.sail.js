@@ -90,7 +90,7 @@ flowers4_sail.prototype = {
             .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject("\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs\"")))))
         .addComments(Java.to(["",
 "                <Sphere>"], Java.type("java.lang.String[]")))
-        .setGeometry(new IndexedFaceSetObject("Orbit").setDEF("Orbit")
+        .setGeometry(new IndexedFaceSetObject("Orbit").setDEF("Orbit").setConvex(false)
           .setCoord(new CoordinateObject("OrbitCoordinates")))))
     .addChild(new ScriptObject("OrbitScript").setSourceCode(
 "<![CDATA[" + "\n" +
@@ -107,40 +107,37 @@ flowers4_sail.prototype = {
 "function initialize() {" + "\n" + 
 "     resolution = 100;" + "\n" + 
 "     updateCoordinates(resolution);" + "\n" + 
-"     if (typeof coordIndexes == 'undefined' || coordIndexes == null) {" + "\n" + 
-"     	coordIndexes = new MFInt32();" + "\n" + 
-"     }" + "\n" + 
-"     ci = 0;" + "\n" + 
+"     var cis = [];" + "\n" + 
 "     for ( i = 0; i < resolution-1; i++) {" + "\n" + 
 "     	for ( j = 0; j < resolution-1; j++) {" + "\n" + 
-"	     coordIndexes[ci] = i*resolution+j;" + "\n" + 
-"	     coordIndexes[ci+1] = i*resolution+j+1;" + "\n" + 
-"	     coordIndexes[ci+2] = (i+1)*resolution+j+1;" + "\n" + 
-"	     coordIndexes[ci+3] = (i+1)*resolution+j;" + "\n" + 
-"	     coordIndexes[ci+4] = -1;" + "\n" + 
-"	     ci += 5;" + "\n" + 
+"	     cis.push(i*resolution+j);" + "\n" + 
+"	     cis.push(i*resolution+j+1);" + "\n" + 
+"	     cis.push((i+1)*resolution+j+1);" + "\n" + 
+"	     cis.push((i+1)*resolution+j);" + "\n" + 
+"	     cis.push(-1);" + "\n" + 
 "	}" + "\n" + 
 "    }" + "\n" + 
+"    coordIndexes = new MFInt32(cis);" + "\n" + 
 "}" + "\n" + 
 "\n" + 
 "function updateCoordinates(resolution) {" + "\n" + 
 "     theta = 0.0;" + "\n" + 
 "     phi = 0.0;" + "\n" + 
 "     delta = (2 * 3.141592653) / (resolution-1);" + "\n" + 
-"     if (typeof coordinates == 'undefined' || coordinates == null) {" + "\n" + 
-"     	coordinates = new MFVec3f();" + "\n" + 
-"     }" + "\n" + 
+"     var crds = [];" + "\n" + 
 "     for ( i = 0; i < resolution; i++) {" + "\n" + 
 "     	for ( j = 0; j < resolution; j++) {" + "\n" + 
 "		rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);" + "\n" + 
-"		coordinates[i*resolution+j] = new SFVec3f();" + "\n" + 
-"		coordinates[i*resolution+j][0] = rho * Math.cos(phi) * Math.cos(theta);" + "\n" + 
-"		coordinates[i*resolution+j][1] = rho * Math.cos(phi) * Math.sin(theta);" + "\n" + 
-"		coordinates[i*resolution+j][2] = rho * Math.sin(phi);" + "\n" + 
+"		crds.push(new SFVec3f(" + "\n" + 
+"			rho * Math.cos(phi) * Math.cos(theta)," + "\n" + 
+"			rho * Math.cos(phi) * Math.sin(theta)," + "\n" + 
+"			rho * Math.sin(phi)" + "\n" + 
+"		));" + "\n" + 
 "		theta += delta;" + "\n" + 
 "	}" + "\n" + 
 "	phi += delta;" + "\n" + 
 "     }" + "\n" + 
+"     coordinates = new MFVec3f(crds);" + "\n" + 
 "}" + "\n" + 
 "\n" + 
 "function set_fraction(fraction, eventTime) {" + "\n" + 

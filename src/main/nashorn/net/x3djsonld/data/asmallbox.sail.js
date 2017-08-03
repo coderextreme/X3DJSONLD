@@ -2,17 +2,17 @@ load('X3Dautoclass.js');
 
 // Javadoc annotations follow, see below for source.
 /**
- * <p> a script test with embedded \n between single quotes, a double backslash \\\\ a backslash \\ and a closing quote ". </p>
- <p> Related links: browser_sail.java source, <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="http://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ * <p> a box. </p>
+ <p> Related links: asmallbox_sail.java source, <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="http://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.browser_sail&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.asmallbox_sail&nbsp; Document Metadata </td>
 		</tr>
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/browser.x3d">browser.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/abox.x3d">abox.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -24,11 +24,11 @@ load('X3Dautoclass.js');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/browser.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/browser.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/abox.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/abox.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
-			<td> a script test with embedded \n between single quotes, a double backslash \\\\ a backslash \\ and a closing quote " </td>
+			<td> a box </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -46,7 +46,7 @@ load('X3Dautoclass.js');
 	* @author John Carlson
  */
 
-function browser_sail
+function asmallbox_sail
   /** Default constructor to create this object. */
   ()
   {
@@ -55,47 +55,47 @@ function browser_sail
     this.initialize();
     return this;
   }
-browser_sail.prototype = {
+asmallbox_sail.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
   this.x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
   .setHead(new headObject()
-    .addMeta(new metaObject().setName("title").setContent("browser.x3d"))
-    .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
-    .addMeta(new metaObject().setName("generator").setContent("manual"))
-    .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/browser.x3d"))
-    .addMeta(new metaObject().setName("description").setContent("a script test with embedded \\n between single quotes, a double backslash \\\\\\\\ a backslash \\\\ and a closing quote \"")))
+    .addMeta(new metaObject().setName("title").setContent("abox.x3d").setDir("").setHttp_equiv("").setLang("").setScheme(""))
+    .addMeta(new metaObject().setName("creator").setContent("John Carlson").setDir("").setHttp_equiv("").setLang("").setScheme(""))
+    .addMeta(new metaObject().setName("generator").setContent("manual").setDir("").setHttp_equiv("").setLang("").setScheme(""))
+    .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/abox.x3d").setDir("").setHttp_equiv("").setLang("").setScheme(""))
+    .addMeta(new metaObject().setName("description").setContent("a box").setDir("").setHttp_equiv("").setLang("").setScheme("")))
   .setScene(new SceneObject()
-    .addChild(new ScriptObject("Browser").setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
-"ecmascript:" + "\n" + 
-"                function initialize() {" + "\n" + 
-"		    Browser.print('DUDES\\n'+'\"DUDETTES');" + "\n" + 
-"                }" + "\n" + "]]>"
-))
-    .addChild(new ScriptObject("Clouds").setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
-"        " + "\n" + 
-"ecmascript:" + "\n" + 
-"\n" + 
-"\n" + 
-"function cumulustranslation() // These values designate the boundary location of the cloud" + "\n" + 
-"{" + "\n" + 
-"var xxx = ' '+' '+" + "\n" + 
-"'	Transform		\\n'+" + "\n" + 
-"'    ' + '               	\\n';" + "\n" + 
-"\n" + 
-"}" + "\n" + "]]>"
-)));
+    .addChild(new ProtoDeclareObject().setName("anyShape").setAppinfo("").setDocumentation("")
+      .setProtoInterface(new ProtoInterfaceObject()
+        .addField(new fieldObject().setAccessType("inputOutput").setName("myShape").setType("MFNode").setValue("").setAppinfo("").setDocumentation("")
+          .addChild(new ShapeObject()
+            .setGeometry(new SphereObject()))))
+      .setProtoBody(new ProtoBodyObject()
+        .addChild(new TransformObject()
+          .setIS(new ISObject()
+            .addConnect(new connectObject().setNodeField("children").setProtoField("myShape"))))))
+    .addChild(new ProtoDeclareObject().setName("one").setAppinfo("").setDocumentation("")
+      .setProtoInterface(new ProtoInterfaceObject()
+        .addField(new fieldObject().setAccessType("inputOutput").setName("myShape").setType("MFNode").setValue("").setAppinfo("").setDocumentation("")
+          .addChild(new ShapeObject()
+            .setGeometry(new CylinderObject()))))
+      .setProtoBody(new ProtoBodyObject()
+        .addChild(new TransformObject()
+          .addChild(new ProtoInstanceObject().setName("anyShape")
+            .setIS(new ISObject()
+              .addConnect(new connectObject().setNodeField("myShape").setProtoField("myShape")))))))
+    .addChild(new ProtoInstanceObject().setName("one")
+      .addFieldValue(new fieldValueObject().setName("myShape").setValue("")
+        .addChild(new ShapeObject()
+          .setGeometry(new BoxObject().setSize(0.125,0.125,0.125))))));
   },
   // end of initialize() method
 
 
   /** Provide a shallow copy of the X3D model.
-   * @return browser_sail model
+   * @return asmallbox_sail model
    */
   getX3dModel : function()
   {	  
@@ -157,8 +157,8 @@ browser_sail.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new browser_sail();
-		print ("browser_sail execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new asmallbox_sail();
+		print ("asmallbox_sail execution self-validation test results: " + testObject.validateSelf());
 	}
 }
-new browser_sail().main();
+new asmallbox_sail().main();

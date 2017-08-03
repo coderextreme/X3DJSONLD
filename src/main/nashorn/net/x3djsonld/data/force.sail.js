@@ -103,7 +103,7 @@ force_sail.prototype = {
 "					function set_cycle(value) {" + "\n" + 
 "                                                old = translation;" + "\n" + 
 "						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);" + "\n" + 
-"                                                keyValue = new MFVec3f(old, translation);" + "\n" + 
+"                                                keyValue = new MFVec3f([old, translation]);" + "\n" + 
 "						// Browser.println(translation);" + "\n" + 
 "					}" + "\n" + "]]>"
 )
@@ -133,17 +133,17 @@ force_sail.prototype = {
 "\n" + 
 "                function set_endA(value) {" + "\n" + 
 "		    if (typeof spine === 'undefined') {" + "\n" + 
-"		        spine = new MFVec3f(value, value);" + "\n" + 
+"		        spine = new MFVec3f([value, value]);" + "\n" + 
 "		    } else {" + "\n" + 
-"		        spine = new MFVec3f(value, spine[1]);" + "\n" + 
+"		        spine = new MFVec3f([value, spine[1]]);" + "\n" + 
 "		    }" + "\n" + 
 "                }" + "\n" + 
 "                " + "\n" + 
 "                function set_endB(value) {" + "\n" + 
 "		    if (typeof spine === 'undefined') {" + "\n" + 
-"		        spine = new MFVec3f(value, value);" + "\n" + 
+"		        spine = new MFVec3f([value, value]);" + "\n" + 
 "		    } else {" + "\n" + 
-"		        spine = new MFVec3f(spine[0], value);" + "\n" + 
+"		        spine = new MFVec3f([spine[0], value]);" + "\n" + 
 "		    }" + "\n" + 
 "                }" + "\n" + 
 "                " + "\n" + 
@@ -203,8 +203,10 @@ force_sail.prototype = {
       .addField(new fieldObject().setAccessType("inputOutput").setName("counter").setType("SFInt32").setValue("0"))
       .addField(new fieldObject().setAccessType("outputOnly").setName("node_changed").setType("SFNode"))
       .addField(new fieldObject().setAccessType("inputOnly").setName("add_node").setType("SFBool").setValue("false"))
-      .addField(new fieldObject().setAccessType("inputOutput").setName("ModifiableNode").setType("SFNode")
-        .addChild(new TransformObject().setUSE("HoldsContent"))))
+      .addComments(Java.to(["",
+"            <field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\">",
+"                <Transform USE=\"HoldsContent\"/>",
+"            </field>"], Java.type("java.lang.String[]"))))
     .addChild(new ROUTEObject().setFromNode("clickGenerator").setFromField("isActive").setToNode("clickHandler").setToField("add_node"))
     .addChild(new ROUTEObject().setFromNode("nodeA").setFromField("position").setToNode("linkA").setToField("set_positionA"))
     .addChild(new ROUTEObject().setFromNode("nodeB").setFromField("position").setToNode("linkA").setToField("set_positionB"))

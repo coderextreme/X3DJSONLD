@@ -124,30 +124,37 @@ x3dconnectorProto_sail.prototype = {
 "<![CDATA[" + "\n" +
 "\n" + 
 "            ecmascript:" + "\n" + 
-"            function recompute(startpoint,endpoint){" + "\n" + 
-"	        if (typeof endpoint === 'undefined') {" + "\n" + 
-"			return;" + "\n" + 
-"		}" + "\n" + 
-"                var dif = endpoint.subtract(startpoint);" + "\n" + 
-"                var dist = dif.length()*.5;" + "\n" + 
-"                var dif2 = dif.multiply(.5);" + "\n" + 
-"                var norm = dif.normalize();" + "\n" + 
-"                var trans = startpoint.add(dif2);" + "\n" + 
-"                connectornode.scale = new SFVec3f(1.0,dist,1.0);" + "\n" + 
-"                connectornode.translation = trans;" + "\n" + 
-"                connectornode.rotation = new SFRotation(new SFVec3f(0.0,1.0,0.0),norm);" + "\n" + 
-"                //Browser.print('norm='+norm.toString());" + "\n" + 
-"                //Browser.print('rotation='+rotation.toString());" + "\n" + 
-"            }" + "\n" + 
-"            function initialize(){" + "\n" + 
-"                recompute(startnode.translation,endnode.translation);" + "\n" + 
-"            }" + "\n" + 
-"            function set_startpoint(val,t){" + "\n" + 
-"                recompute(val,endnode.translation);" + "\n" + 
-"            }" + "\n" + 
-"            function set_endpoint(val,t){" + "\n" + 
-"                recompute(startnode.translation,val);" + "\n" + 
-"            }" + "\n" + "]]>"
+"        function recompute(startpoint,endpoint){" + "\n" + 
+"	    if (typeof endpoint === 'undefined') {" + "\n" + 
+"		return;" + "\n" + 
+"	    }" + "\n" + 
+"            var dif = endpoint.subtract(startpoint);" + "\n" + 
+"            var dist = dif.length()*0.5;" + "\n" + 
+"            var dif2 = dif.multiply(0.5);" + "\n" + 
+"            var norm = dif.normalize();" + "\n" + 
+"            var transl = startpoint.add(dif2);" + "\n" + 
+"	    return {" + "\n" + 
+"		    scale : new SFVec3f(1.0,dist,1.0)," + "\n" + 
+"		    translation : transl," + "\n" + 
+"		    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)" + "\n" + 
+"	    	    // rotation : new x3dom.fields.Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)" + "\n" + 
+"	    };" + "\n" + 
+"	}" + "\n" + 
+"	function recompute_and_route(startpoint, endpoint) {" + "\n" + 
+"	      var trafo = recompute(startpoint, endpoint);" + "\n" + 
+"	      connectornode.translation = trafo.translation;" + "\n" + 
+"	      connectornode.rotation = trafo.rotation;" + "\n" + 
+"	      connectornode.scale = trafo.scale;" + "\n" + 
+"	}" + "\n" + 
+"        function initialize(){" + "\n" + 
+"            recompute_and_route(startnode.translation,endnode.translation);" + "\n" + 
+"        }" + "\n" + 
+"        function set_startpoint(val,t){" + "\n" + 
+"            recompute_and_route(val,endnode.translation);" + "\n" + 
+"        }" + "\n" + 
+"        function set_endpoint(val,t){" + "\n" + 
+"            recompute_and_route(startnode.translation,val);" + "\n" + 
+"        }" + "\n" + "]]>"
 )
           .addField(new fieldObject().setAccessType("initializeOnly").setName("startnode").setType("SFNode"))
           .addField(new fieldObject().setAccessType("initializeOnly").setName("endnode").setType("SFNode"))
