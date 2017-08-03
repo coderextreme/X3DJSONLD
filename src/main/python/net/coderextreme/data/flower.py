@@ -30,8 +30,7 @@ Script12.addField(field14)
 field15 = fieldObject().setType(fieldObject.TYPE_MFINT32).setName("coordIndexes").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
 Script12.addField(field15)
 
-Script12.setSourceCode("\n"+
-"ecmascript:\n"+
+Script12.setSourceCode("ecmascript:\n"+
 "    \n"+
 "var e = 5;\n"+
 "var f = 5;\n"+

@@ -41,8 +41,7 @@ Script17.addField(field21)
 field22 = fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("set_fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
 Script17.addField(field22)
 
-Script17.setSourceCode("\n"+
-"ecmascript:\n"+
+Script17.setSourceCode("ecmascript:\n"+
 "function initialize() {\n"+
 "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\n"+
 "\n"+

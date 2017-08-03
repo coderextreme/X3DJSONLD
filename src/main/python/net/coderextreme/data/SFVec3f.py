@@ -36,8 +36,7 @@ Script13.addField(field17)
 field18 = fieldObject().setType(fieldObject.TYPE_SFTIME).setName("set_fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
 Script13.addField(field18)
 
-Script13.setSourceCode("\n"+
-"ecmascript:\n"+
+Script13.setSourceCode("ecmascript:\n"+
 "			function newBubble() {\n"+
 "			    translation = new SFVec3f(0, 0, 0);\n"+
 "			    velocity = new SFVec3f(\n"+

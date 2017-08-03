@@ -136,8 +136,7 @@ Script60.addField(field61)
 field62 = fieldObject().setType(fieldObject.TYPE_MFSTRING).setName("rightlines").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
 Script60.addField(field62)
 
-Script60.setSourceCode("\n"+
-"ecmascript:\n"+
+Script60.setSourceCode("ecmascript:\n"+
 "\n"+
 "function initialize() {\n"+
 "	rightlines = new MFString(\"\");\n"+
@@ -154,8 +153,7 @@ Script63.addField(field64)
 field65 = fieldObject().setType(fieldObject.TYPE_MFSTRING).setName("uplines").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
 Script63.addField(field65)
 
-Script63.setSourceCode("\n"+
-"ecmascript:\n"+
+Script63.setSourceCode("ecmascript:\n"+
 "\n"+
 "function initialize() {\n"+
 "	uplines = new MFString(\"\");\n"+
@@ -172,8 +170,7 @@ Script66.addField(field67)
 field68 = fieldObject().setType(fieldObject.TYPE_MFSTRING).setName("centerlines").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
 Script66.addField(field68)
 
-Script66.setSourceCode("\n"+
-"ecmascript:\n"+
+Script66.setSourceCode("ecmascript:\n"+
 "\n"+
 "function initialize() {\n"+
 "	centerlines = new MFString(\"\");\n"+

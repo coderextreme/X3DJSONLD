@@ -136,9 +136,7 @@ Script52.addField(field65)
 field66 = fieldObject().setType(fieldObject.TYPE_SFINT32).setName("old").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("-1")
 Script52.addField(field66)
 
-Script52.setSourceCode("\n"+
-"\n"+
-"ecmascript:\n"+
+Script52.setSourceCode("ecmascript:\n"+
 "        function set_fraction( f, tm ) {\n"+
 "            var side = Math.floor(f*frontUrls.length);\n"+
 "            if (side > frontUrls.length-1) {\n"+
@@ -174,10 +172,7 @@ Script67.addField(field73)
 field74 = fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("pdelta").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0")
 Script67.addField(field74)
 
-Script67.setSourceCode("\n"+
-"\n"+
-"\n"+
-"ecmascript:\n"+
+Script67.setSourceCode("ecmascript:\n"+
 "\n"+
 "function set_fraction() {\n"+
 "	var choice = Math.floor(Math.random() * 4);\n"+
