@@ -116,6 +116,10 @@ class ClassPrinter:
     def printField(self, field):
         str = '\t\t\t\t\t"@' + field.get("name") + '" : {\n'
         if field.get("name") != "value" or  (self.name != 'field' and self.name != 'fieldValue'):
+            #if field.get('additionalEnumerationValuesAllowed'):
+            #    str += '\t\t\t\t\t\t"oneOf": [\n'
+            #    str += '\t\t\t\t\t\t\t{ "type": "string" },\n'
+            #    str += '\t\t\t\t\t\t\t{\n'
             if not field.get("type").startswith("MF"):
                 try:
                     str += '\t\t\t\t\t\t"maximum" : '+field.get("maxExclusive") + ',\n'
@@ -356,6 +360,8 @@ class ClassPrinter:
                                 else:
                                     str += '\t\t\t\t\t\t\t"default":'+firstValue+',\n'
                         str += '\t\t\t\t\t\t}'
+            #if field.get('additionalEnumerationValuesAllowed'):
+            #    str += '}]'
         str += '\t\t\t\t\t},\n'
         return str
 
@@ -377,6 +383,7 @@ class ClassPrinter:
         foundUse = False
         foundChildren = False
         if self.node is not None:
+            foundFieldDeclaration = self.node.findall(".//FieldDeclaration");
             fields = self.node.iter("field")
             for field in fields:
                 if field.get("name") == "USE":
@@ -416,6 +423,14 @@ class ClassPrinter:
                                         }
                                 },
 '''
+        if foundFieldDeclaration:
+            str += '''\
+                                "field": {
+                                        "$ref": "#/definitions/field"
+                                },
+'''
+
+
 
         if self.name == "X3D":
             str += '''\
