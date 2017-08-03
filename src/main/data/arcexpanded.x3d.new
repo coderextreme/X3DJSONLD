@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd"><head><meta name="title" content="arc.x3d"></meta>
+<meta name="creator" content="John Carlson"></meta>
+<meta name="generator" content="manual"></meta>
+<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/arc.x3d"></meta>
+<meta name="description" content="an attempt to implement an arc in a graph"></meta>
+</head>
+<Scene><Viewpoint position="0 0 5" description="a moving graph"></Viewpoint>
+<Background skyColor="0.4 0.4 0.4"></Background>
+<Transform DEF="cylinder1"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.2 0.7 0.7"></Material>
+</Appearance>
+<Cylinder containerField="geometry" radius="0.1"></Cylinder>
+</Shape>
+</Transform>
+<!--from doug sanden--><Transform DEF="DECLpoint_start_node" translation="0 0 0"><Shape><Sphere containerField="geometry" radius="0.1"></Sphere>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 0 0"></Material>
+</Appearance>
+</Shape>
+<PositionInterpolator DEF="DECLpoint_start_PI1" key="0 1" keyValue="0 0 0 0 5 0"></PositionInterpolator>
+<Script DEF="DECLpoint_start_MB1"><field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+<field name="old" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+<field name="set_location" accessType="inputOnly" type="SFTime"></field>
+<field name="keyValue" accessType="outputOnly" type="MFVec3f"></field>
+<![CDATA[
+
+ecmascript:
+		function set_location(value) {
+                    old = translation;
+		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
+                    keyValue = new MFVec3f([old, translation]);
+		    // Browser.println(translation);
+		}
+]]></Script>
+<TimeSensor DEF="DECLpoint_start_CL1" cycleInterval="3" loop="true"></TimeSensor>
+<ROUTE fromNode="DECLpoint_start_CL1" fromField="cycleTime" toNode="DECLpoint_start_MB1" toField="set_location"></ROUTE>
+<ROUTE fromNode="DECLpoint_start_CL1" fromField="fraction_changed" toNode="DECLpoint_start_PI1" toField="set_fraction"></ROUTE>
+<ROUTE fromNode="DECLpoint_start_MB1" fromField="keyValue" toNode="DECLpoint_start_PI1" toField="keyValue"></ROUTE>
+<ROUTE fromNode="DECLpoint_start_PI1" fromField="value_changed" toNode="DECLpoint_start_node" toField="set_translation"></ROUTE>
+</Transform>
+<Transform DEF="DECLpoint_end_node" translation="0 0 0"><Shape><Sphere containerField="geometry" radius="0.1"></Sphere>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 0 0"></Material>
+</Appearance>
+</Shape>
+<PositionInterpolator DEF="DECLpoint_end_PI1" key="0 1" keyValue="0 0 0 0 5 0"></PositionInterpolator>
+<Script DEF="DECLpoint_end_MB1"><field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+<field name="old" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+<field name="set_location" accessType="inputOnly" type="SFTime"></field>
+<field name="keyValue" accessType="outputOnly" type="MFVec3f"></field>
+<![CDATA[
+
+ecmascript:
+		function set_location(value) {
+                    old = translation;
+		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
+                    keyValue = new MFVec3f([old, translation]);
+		    // Browser.println(translation);
+		}
+]]></Script>
+<TimeSensor DEF="DECLpoint_end_CL1" cycleInterval="3" loop="true"></TimeSensor>
+<ROUTE fromNode="DECLpoint_end_CL1" fromField="cycleTime" toNode="DECLpoint_end_MB1" toField="set_location"></ROUTE>
+<ROUTE fromNode="DECLpoint_end_CL1" fromField="fraction_changed" toNode="DECLpoint_end_PI1" toField="set_fraction"></ROUTE>
+<ROUTE fromNode="DECLpoint_end_MB1" fromField="keyValue" toNode="DECLpoint_end_PI1" toField="keyValue"></ROUTE>
+<ROUTE fromNode="DECLpoint_end_PI1" fromField="value_changed" toNode="DECLpoint_end_node" toField="set_translation"></ROUTE>
+</Transform>
+<Script DEF="DECLx3dconnector_connector1_S1"><field name="startnode" accessType="initializeOnly" type="SFNode"><Transform DEF="DECLx3dconnector_connector1_FIELDstartnode_DECLpoint_INSTANCE_node" USE="DECLpoint_start"><Shape><Sphere containerField="geometry" radius="0.1"></Sphere>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 0 0"></Material>
+</Appearance>
+</Shape>
+<PositionInterpolator DEF="DECLx3dconnector_connector1_FIELDstartnode_DECLpoint_INSTANCE_PI1" key="0 1" keyValue="0 0 0 0 5 0"></PositionInterpolator>
+<Script DEF="DECLx3dconnector_connector1_FIELDstartnode_DECLpoint_INSTANCE_MB1"><field name="translation" accessType="inputOutput" type="SFVec3f" value="50 50 0"></field>
+<field name="old" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+<field name="set_location" accessType="inputOnly" type="SFTime"></field>
+<field name="keyValue" accessType="outputOnly" type="MFVec3f"></field>
+<![CDATA[
+
+ecmascript:
+		function set_location(value) {
+                    old = translation;
+		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
+                    keyValue = new MFVec3f([old, translation]);
+		    // Browser.println(translation);
+		}
+]]></Script>
+<TimeSensor DEF="DECLx3dconnector_connector1_FIELDstartnode_DECLpoint_INSTANCE_CL1" cycleInterval="3" loop="true"></TimeSensor>
+<ROUTE fromNode="DECLx3dconnector_connector1_FIELDstartnode_DECLpoint_INSTANCE_CL1" fromField="cycleTime" toNode="DECLx3dconnector_connector1_FIELDstartnode_DECLpoint_INSTANCE_MB1" toField="set_location"></ROUTE>
+<ROUTE fromNode="DECLx3dconnector_connector1_FIELDstartnode_DECLpoint_INSTANCE_CL1" fromField="fraction_changed" toNode="DECLx3dconnector_connector1_FIELDstartnode_DECLpoint_INSTANCE_PI1" toField="set_fraction"></ROUTE>
+<ROUTE fromNode="DECLx3dconnector_connector1_FIELDstartnode_DECLpoint_INSTANCE_MB1" fromField="keyValue" toNode="DECLx3dconnector_connector1_FIELDstartnode_DECLpoint_INSTANCE_PI1" toField="keyValue"></ROUTE>
+<ROUTE fromNode="DECLx3dconnector_connector1_FIELDstartnode_DECLpoint_INSTANCE_PI1" fromField="value_changed" toNode="DECLx3dconnector_connector1_FIELDstartnode_DECLpoint_INSTANCE_node" toField="set_translation"></ROUTE>
+</Transform>
+</field>
+<field name="endnode" accessType="initializeOnly" type="SFNode"><Transform DEF="DECLx3dconnector_connector1_FIELDendnode_DECLpoint_INSTANCE1000_node" USE="DECLpoint_end"><Shape><Sphere containerField="geometry" radius="0.1"></Sphere>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 0 0"></Material>
+</Appearance>
+</Shape>
+<PositionInterpolator DEF="DECLx3dconnector_connector1_FIELDendnode_DECLpoint_INSTANCE1000_PI1" key="0 1" keyValue="0 0 0 0 5 0"></PositionInterpolator>
+<Script DEF="DECLx3dconnector_connector1_FIELDendnode_DECLpoint_INSTANCE1000_MB1"><field name="translation" accessType="inputOutput" type="SFVec3f" value="50 50 0"></field>
+<field name="old" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+<field name="set_location" accessType="inputOnly" type="SFTime"></field>
+<field name="keyValue" accessType="outputOnly" type="MFVec3f"></field>
+<![CDATA[
+
+ecmascript:
+		function set_location(value) {
+                    old = translation;
+		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
+                    keyValue = new MFVec3f([old, translation]);
+		    // Browser.println(translation);
+		}
+]]></Script>
+<TimeSensor DEF="DECLx3dconnector_connector1_FIELDendnode_DECLpoint_INSTANCE1000_CL1" cycleInterval="3" loop="true"></TimeSensor>
+<ROUTE fromNode="DECLx3dconnector_connector1_FIELDendnode_DECLpoint_INSTANCE1000_CL1" fromField="cycleTime" toNode="DECLx3dconnector_connector1_FIELDendnode_DECLpoint_INSTANCE1000_MB1" toField="set_location"></ROUTE>
+<ROUTE fromNode="DECLx3dconnector_connector1_FIELDendnode_DECLpoint_INSTANCE1000_CL1" fromField="fraction_changed" toNode="DECLx3dconnector_connector1_FIELDendnode_DECLpoint_INSTANCE1000_PI1" toField="set_fraction"></ROUTE>
+<ROUTE fromNode="DECLx3dconnector_connector1_FIELDendnode_DECLpoint_INSTANCE1000_MB1" fromField="keyValue" toNode="DECLx3dconnector_connector1_FIELDendnode_DECLpoint_INSTANCE1000_PI1" toField="keyValue"></ROUTE>
+<ROUTE fromNode="DECLx3dconnector_connector1_FIELDendnode_DECLpoint_INSTANCE1000_PI1" fromField="value_changed" toNode="DECLx3dconnector_connector1_FIELDendnode_DECLpoint_INSTANCE1000_node" toField="set_translation"></ROUTE>
+</Transform>
+</field>
+<field name="connectornode" accessType="initializeOnly" type="SFNode"><Transform USE="cylinder1"></Transform>
+</field>
+<field name="set_startpoint" accessType="inputOnly" type="SFVec3f"></field>
+<field name="set_endpoint" accessType="inputOnly" type="SFVec3f"></field>
+<![CDATA[
+            ecmascript:
+            
+        function recompute(startpoint,endpoint){
+	    if (typeof endpoint === 'undefined') {
+		return;
+	    }
+            var dif = endpoint.subtract(startpoint);
+            var dist = dif.length()*0.5;
+            var dif2 = dif.multiply(0.5);
+            var norm = dif.normalize();
+            var transl = startpoint.add(dif2);
+	    return {
+		    scale : new SFVec3f(1.0,dist,1.0),
+		    translation : transl,
+		    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)
+	    	    // rotation : new x3dom.fields.Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)
+	    };
+	}
+	function recompute_and_route(startpoint, endpoint) {
+	      var trafo = recompute(startpoint, endpoint);
+	      connectornode.translation = trafo.translation;
+	      connectornode.rotation = trafo.rotation;
+	      connectornode.scale = trafo.scale;
+	}
+        function initialize(){
+            recompute_and_route(startnode.translation,endnode.translation);
+        }
+        function set_startpoint(val,t){
+            recompute_and_route(val,endnode.translation);
+        }
+        function set_endpoint(val,t){
+            recompute_and_route(startnode.translation,val);
+        }
+]]></Script>
+<ROUTE fromNode="DECLpoint_start_DECLpoint_start_MB1" fromField="translation" toNode="DECLx3dconnector_connector1_DECLx3dconnector_connector1_S1" toField="set_startpoint"></ROUTE>
+<ROUTE fromNode="DECLpoint_end_DECLpoint_end_MB1" fromField="translation" toNode="DECLx3dconnector_connector1_DECLx3dconnector_connector1_S1" toField="set_endpoint"></ROUTE>
+</Scene>
+</X3D>
