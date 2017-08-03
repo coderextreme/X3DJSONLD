@@ -103,8 +103,7 @@ Script43.addField(field51)
 field52 = fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("pdelta").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5")
 Script43.addField(field52)
 
-Script43.setSourceCode("\n"+
-"ecmascript:\n"+
+Script43.setSourceCode("ecmascript:\n"+
 "			function initialize() {\n"+
 "			    translation = new SFVec3f(0, 0, 0);\n"+
 "			    velocity = new SFVec3f(\n"+

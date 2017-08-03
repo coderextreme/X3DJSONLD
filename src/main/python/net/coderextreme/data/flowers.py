@@ -112,8 +112,7 @@ Script45.addField(field55)
 field56 = fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("pdelta").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5")
 Script45.addField(field56)
 
-Script45.setSourceCode("\n"+
-"ecmascript:\n"+
+Script45.setSourceCode("ecmascript:\n"+
 "			function newBubble() {\n"+
 "			    translation = new SFVec3f(0, 0, 0);\n"+
 "			    velocity = new SFVec3f(\n"+

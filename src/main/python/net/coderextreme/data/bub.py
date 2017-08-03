@@ -92,8 +92,7 @@ Script42.addField(field44)
 field45 = fieldObject().setType(fieldObject.TYPE_SFTIME).setName("set_fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
 Script42.addField(field45)
 
-Script42.setSourceCode("\n"+
-"ecmascript:\n"+
+Script42.setSourceCode("ecmascript:\n"+
 "			function initialize() {\n"+
 "			    translation = new SFVec3f(0, 0, 0);\n"+
 "			    velocity = new SFVec3f(\n"+

@@ -70,10 +70,7 @@ Script31.addField(field33)
 field34 = fieldObject().setType(fieldObject.TYPE_MFINT32).setName("coordIndexes").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
 Script31.addField(field34)
 
-Script31.setSourceCode("\n"+
-"\n"+
-"\n"+
-"ecmascript:\n"+
+Script31.setSourceCode("ecmascript:\n"+
 "\n"+
 "var e = 5;\n"+
 "var f = 5;\n"+

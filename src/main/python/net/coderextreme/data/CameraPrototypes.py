@@ -270,9 +270,7 @@ connect125 = connectObject().setNodeField("traceEnabled").setProtoField("traceEn
 IS107.addConnect(connect125)
 Script70.setIS(IS107)
 
-Script70.setSourceCode("\n"+
-"          \n"+
-"ecmascript:\n"+
+Script70.setSourceCode("ecmascript:\n"+
 "function initialize () // CameraScript\n"+
 "{\n"+
 "//  tracePrint ('initialize start...');\n"+
@@ -718,9 +716,7 @@ connect174 = connectObject().setNodeField("traceEnabled").setProtoField("traceEn
 IS162.addConnect(connect174)
 Script146.setIS(IS162)
 
-Script146.setSourceCode("\n"+
-"          \n"+
-"ecmascript:\n"+
+Script146.setSourceCode("ecmascript:\n"+
 "function initialize () // CameraShotScript\n"+
 "{\n"+
 "//  tracePrint ('initialize start...');\n"+
@@ -907,9 +903,7 @@ connect215 = connectObject().setNodeField("traceEnabled").setProtoField("traceEn
 IS203.addConnect(connect215)
 Script190.setIS(IS203)
 
-Script190.setSourceCode("\n"+
-"          \n"+
-"ecmascript:\n"+
+Script190.setSourceCode("ecmascript:\n"+
 "function initialize () // CameraMovementScript\n"+
 "{\n"+
 "//  tracePrint ('initialize start...');\n"+
@@ -1087,9 +1081,7 @@ connect253 = connectObject().setNodeField("traceEnabled").setProtoField("traceEn
 IS242.addConnect(connect253)
 Script230.setIS(IS242)
 
-Script230.setSourceCode("\n"+
-"          \n"+
-"ecmascript:\n"+
+Script230.setSourceCode("ecmascript:\n"+
 "function initialize () // OfflineRenderScript\n"+
 "{\n"+
 "//  tracePrint ('initialize start...');\n"+

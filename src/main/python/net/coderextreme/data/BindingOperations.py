@@ -155,9 +155,7 @@ Script63.addField(field73)
 field74 = fieldObject().setType(fieldObject.TYPE_SFINT32).setName("priorInputvalue").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue("-1")
 Script63.addField(field74)
 
-Script63.setSourceCode("\n"+
-"        \n"+
-"ecmascript:\n"+
+Script63.setSourceCode("ecmascript:\n"+
 "\n"+
 "function initialize ()\n"+
 "{\n"+

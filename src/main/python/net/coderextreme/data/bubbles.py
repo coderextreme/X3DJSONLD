@@ -104,8 +104,7 @@ Script45.addField(field51)
 field52 = fieldObject().setType(fieldObject.TYPE_MFROTATION).setName("orientation_changed").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
 Script45.addField(field52)
 
-Script45.setSourceCode("\n"+
-"	    ecmascript:\n"+
+Script45.setSourceCode("ecmascript:\n"+
 "               function set_cycle(value) {\n"+
 "                        var ov = lastKey;\n"+
 "                        do {\n"+
