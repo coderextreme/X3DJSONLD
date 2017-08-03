@@ -29,7 +29,7 @@
         },
         {
           "@name": "translated",
-          "@content": "26 May 2017"
+          "@content": "06 July 2017"
         },
         {
           "@name": "generator",
@@ -99,7 +99,7 @@
                   "@fromNode": "PS1",
                   "@fromField": "translation_changed",
                   "@toNode": "G1",
-                  "@toField": "translation"
+                  "@toField": "set_translation"
                 }
               }
             ]
@@ -139,6 +139,11 @@
               {
                 "PlaneSensor": {
                   "@description": "Grab to move",
+                  "@offset": [
+                    1,
+                    -1,
+                    0.01
+                  ],
                   "@DEF": "PS2"
                 }
               },
@@ -147,7 +152,7 @@
                   "@fromNode": "PS2",
                   "@fromField": "translation_changed",
                   "@toNode": "G2",
-                  "@toField": "translation"
+                  "@toField": "set_translation"
                 }
               }
             ]
@@ -155,40 +160,33 @@
         },
         {
           "Transform": {
-            "@DEF": "C0",
+            "@DEF": "transC1",
             "-children": [
               {
                 "Transform": {
-                  "@DEF": "C1",
+                  "@DEF": "rotscaleC1",
                   "-children": [
                     {
-                      "Transform": {
-                        "@DEF": "C2",
-                        "-children": [
-                          {
-                            "Shape": {
-                              "-appearance": {
-                                "Appearance": {
-                                  "-material": {
-                                    "Material": {
-                                      "@diffuseColor": [
-                                        0.2,
-                                        0.7,
-                                        0.7
-                                      ],
-                                      "@transparency": 0.5
-                                    }
-                                  }
-                                }
-                              },
-                              "-geometry": {
-                                "Cylinder": {
-                                  "@radius": 0.05
-                                }
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  0.2,
+                                  0.7,
+                                  0.7
+                                ],
+                                "@transparency": 0.5
                               }
                             }
                           }
-                        ]
+                        },
+                        "-geometry": {
+                          "Cylinder": {
+                            "@radius": 0.05
+                          }
+                        }
                       }
                     }
                   ]
@@ -197,9 +195,10 @@
             ]
           }
         },
+        {},
         {
           "Script": {
-            "@DEF": "S1",
+            "@DEF": "DECLx3dconnector_connector1_S1",
             "field": [
               {
                 "@name": "startnode",
@@ -226,6 +225,30 @@
                 ]
               },
               {
+                "@name": "transnode",
+                "@accessType": "initializeOnly",
+                "@type": "SFNode",
+                "-children": [
+                  {
+                    "Transform": {
+                      "@USE": "transC1"
+                    }
+                  }
+                ]
+              },
+              {
+                "@name": "rotscalenode",
+                "@accessType": "initializeOnly",
+                "@type": "SFNode",
+                "-children": [
+                  {
+                    "Transform": {
+                      "@USE": "rotscaleC1"
+                    }
+                  }
+                ]
+              },
+              {
                 "@name": "set_startpoint",
                 "@accessType": "inputOnly",
                 "@type": "SFVec3f"
@@ -234,46 +257,48 @@
                 "@name": "set_endpoint",
                 "@accessType": "inputOnly",
                 "@type": "SFVec3f"
-              },
-              {
-                "@name": "translation",
-                "@accessType": "outputOnly",
-                "@type": "SFVec3f"
-              },
-              {
-                "@name": "rotation",
-                "@accessType": "outputOnly",
-                "@type": "SFRotation"
-              },
-              {
-                "@name": "scale",
-                "@accessType": "outputOnly",
-                "@type": "SFVec3f"
               }
             ],
             "#sourceText": [
               "",
-              "        ecmascript:",
+              "            ecmascript:",
               "        function recompute(startpoint,endpoint){",
+              "\t    if (typeof endpoint === 'undefined') {",
+              "\t\treturn;",
+              "\t    }",
               "            var dif = endpoint.subtract(startpoint);",
-              "            var dist = dif.length()*.5;",
-              "            var dif2 = dif.multiply(.5);",
+              "            var dist = dif.length()*0.5;",
+              "            var dif2 = dif.multiply(0.5);",
               "            var norm = dif.normalize();",
-              "            var trans = startpoint.add(dif2);",
-              "            scale = new SFVec3f(1.0,dist,1.0);",
-              "            translation = trans;",
-              "            rotation = new SFRotation(new SFVec3f(0.0,1.0,0.0),norm);",
-              "            //Browser.print('norm='+norm.toString());",
-              "            //Browser.print('rotation='+rotation.toString());",
-              "        }",
+              "            var transl = startpoint.add(dif2);",
+              "\t    if (typeof Quaternion !== 'undefined') {",
+              "\t\t    return {",
+              "\t\t\t    scale : new SFVec3f(1.0,dist,1.0),",
+              "\t\t\t    translation : transl,",
+              "\t\t\t    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)",
+              "\t\t    };",
+              "\t    } else {",
+              "\t\t    return {",
+              "\t\t\t    scale : new SFVec3f(1.0,dist,1.0),",
+              "\t\t\t    translation : transl,",
+              "\t\t\t    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)",
+              "\t\t    };",
+              "\t    }",
+              "\t}",
+              "\tfunction recompute_and_route(startpoint, endpoint) {",
+              "\t      var trafo = recompute(startpoint, endpoint);",
+              "\t      transnode.translation = trafo.translation;",
+              "\t      rotscalenode.rotation = trafo.rotation;",
+              "\t      rotscalenode.scale = trafo.scale;",
+              "\t}",
               "        function initialize(){",
-              "            recompute(startnode.translation,endnode.translation);",
+              "            recompute_and_route(startnode.translation,endnode.translation);",
               "        }",
               "        function set_startpoint(val,t){",
-              "            recompute(val,endnode.translation);",
+              "            recompute_and_route(val,endnode.translation);",
               "        }",
               "        function set_endpoint(val,t){",
-              "            recompute(startnode.translation,val);",
+              "            recompute_and_route(startnode.translation,val);",
               "        }"
             ]
           }
@@ -281,41 +306,17 @@
         {
           "ROUTE": {
             "@fromNode": "G1",
-            "@fromField": "translation",
-            "@toNode": "S1",
+            "@fromField": "translation_changed",
+            "@toNode": "DECLx3dconnector_connector1_S1",
             "@toField": "set_startpoint"
           }
         },
         {
           "ROUTE": {
             "@fromNode": "G2",
-            "@fromField": "translation",
-            "@toNode": "S1",
+            "@fromField": "translation_changed",
+            "@toNode": "DECLx3dconnector_connector1_S1",
             "@toField": "set_endpoint"
-          }
-        },
-        {
-          "ROUTE": {
-            "@fromNode": "S1",
-            "@fromField": "translation",
-            "@toNode": "C0",
-            "@toField": "translation"
-          }
-        },
-        {
-          "ROUTE": {
-            "@fromNode": "S1",
-            "@fromField": "rotation",
-            "@toNode": "C2",
-            "@toField": "rotation"
-          }
-        },
-        {
-          "ROUTE": {
-            "@fromNode": "S1",
-            "@fromField": "scale",
-            "@toNode": "C2",
-            "@toField": "scale"
           }
         }
       ]

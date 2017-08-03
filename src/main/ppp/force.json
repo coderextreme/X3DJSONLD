@@ -33,7 +33,7 @@
         },
         {
           "@name": "translated",
-          "@content": "26 May 2017"
+          "@content": "03 June 2017"
         },
         {
           "@name": "generator",
@@ -149,110 +149,6 @@
                 }
               },
               {
-                "PositionInterpolator": {
-                  "@DEF": "DECLnode_nodeA_NodePosition",
-                  "@key": [
-                    0,
-                    1
-                  ],
-                  "@keyValue": [
-                    0,
-                    0,
-                    0,
-                    0,
-                    5,
-                    0
-                  ]
-                }
-              },
-              {
-                "Script": {
-                  "@DEF": "DECLnode_nodeA_MoveBall",
-                  "field": [
-                    {
-                      "@name": "translation",
-                      "@accessType": "inputOutput",
-                      "@type": "SFVec3f",
-                      "@value": [
-                        50,
-                        50,
-                        0
-                      ]
-                    },
-                    {
-                      "@name": "old",
-                      "@accessType": "inputOutput",
-                      "@type": "SFVec3f",
-                      "@value": [
-                        0,
-                        0,
-                        0
-                      ]
-                    },
-                    {
-                      "@name": "set_cycle",
-                      "@accessType": "inputOnly",
-                      "@type": "SFTime"
-                    },
-                    {
-                      "@name": "keyValue",
-                      "@accessType": "outputOnly",
-                      "@type": "MFVec3f"
-                    }
-                  ],
-                  "#sourceText": [
-                    "",
-                    "",
-                    "ecmascript:",
-                    "\t\t\t\t\tfunction set_cycle(value) {",
-                    "                                                old = translation;",
-                    "\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
-                    "                                                keyValue = new MFVec3f(old, translation);",
-                    "\t\t\t\t\t\t// Browser.println(translation);",
-                    "\t\t\t\t\t}"
-                  ]
-                }
-              },
-              {
-                "TimeSensor": {
-                  "@DEF": "DECLnode_nodeA_nodeClock",
-                  "@cycleInterval": 3,
-                  "@loop": true
-                }
-              },
-              {
-                "ROUTE": {
-                  "@fromNode": "DECLnode_nodeA_nodeClock",
-                  "@fromField": "cycleTime",
-                  "@toNode": "DECLnode_nodeA_MoveBall",
-                  "@toField": "set_cycle"
-                }
-              },
-              {
-                "ROUTE": {
-                  "@fromNode": "DECLnode_nodeA_nodeClock",
-                  "@fromField": "fraction_changed",
-                  "@toNode": "DECLnode_nodeA_NodePosition",
-                  "@toField": "set_fraction"
-                }
-              },
-              {
-                "ROUTE": {
-                  "@fromNode": "DECLnode_nodeA_MoveBall",
-                  "@fromField": "keyValue",
-                  "@toNode": "DECLnode_nodeA_NodePosition",
-                  "@toField": "keyValue"
-                }
-              },
-              {
-                "ROUTE": {
-                  "@fromNode": "DECLnode_nodeA_NodePosition",
-                  "@fromField": "value_changed",
-                  "@toNode": "DECLnode_nodeA_transform",
-                  "@toField": "set_translation"
-                }
-              },
-              {
                 "Transform": {
                   "@DEF": "DECLnode_nodeB_transform",
                   "@translation": [
@@ -326,110 +222,6 @@
                       }
                     }
                   ]
-                }
-              },
-              {
-                "PositionInterpolator": {
-                  "@DEF": "DECLnode_nodeB_NodePosition",
-                  "@key": [
-                    0,
-                    1
-                  ],
-                  "@keyValue": [
-                    0,
-                    0,
-                    0,
-                    0,
-                    5,
-                    0
-                  ]
-                }
-              },
-              {
-                "Script": {
-                  "@DEF": "DECLnode_nodeB_MoveBall",
-                  "field": [
-                    {
-                      "@name": "translation",
-                      "@accessType": "inputOutput",
-                      "@type": "SFVec3f",
-                      "@value": [
-                        50,
-                        50,
-                        0
-                      ]
-                    },
-                    {
-                      "@name": "old",
-                      "@accessType": "inputOutput",
-                      "@type": "SFVec3f",
-                      "@value": [
-                        0,
-                        0,
-                        0
-                      ]
-                    },
-                    {
-                      "@name": "set_cycle",
-                      "@accessType": "inputOnly",
-                      "@type": "SFTime"
-                    },
-                    {
-                      "@name": "keyValue",
-                      "@accessType": "outputOnly",
-                      "@type": "MFVec3f"
-                    }
-                  ],
-                  "#sourceText": [
-                    "",
-                    "",
-                    "ecmascript:",
-                    "\t\t\t\t\tfunction set_cycle(value) {",
-                    "                                                old = translation;",
-                    "\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
-                    "                                                keyValue = new MFVec3f(old, translation);",
-                    "\t\t\t\t\t\t// Browser.println(translation);",
-                    "\t\t\t\t\t}"
-                  ]
-                }
-              },
-              {
-                "TimeSensor": {
-                  "@DEF": "DECLnode_nodeB_nodeClock",
-                  "@cycleInterval": 3,
-                  "@loop": true
-                }
-              },
-              {
-                "ROUTE": {
-                  "@fromNode": "DECLnode_nodeB_nodeClock",
-                  "@fromField": "cycleTime",
-                  "@toNode": "DECLnode_nodeB_MoveBall",
-                  "@toField": "set_cycle"
-                }
-              },
-              {
-                "ROUTE": {
-                  "@fromNode": "DECLnode_nodeB_nodeClock",
-                  "@fromField": "fraction_changed",
-                  "@toNode": "DECLnode_nodeB_NodePosition",
-                  "@toField": "set_fraction"
-                }
-              },
-              {
-                "ROUTE": {
-                  "@fromNode": "DECLnode_nodeB_MoveBall",
-                  "@fromField": "keyValue",
-                  "@toNode": "DECLnode_nodeB_NodePosition",
-                  "@toField": "keyValue"
-                }
-              },
-              {
-                "ROUTE": {
-                  "@fromNode": "DECLnode_nodeB_NodePosition",
-                  "@fromField": "value_changed",
-                  "@toNode": "DECLnode_nodeB_transform",
-                  "@toField": "set_translation"
                 }
               },
               {
@@ -509,110 +301,6 @@
                 }
               },
               {
-                "PositionInterpolator": {
-                  "@DEF": "DECLnode_nodeC_NodePosition",
-                  "@key": [
-                    0,
-                    1
-                  ],
-                  "@keyValue": [
-                    0,
-                    0,
-                    0,
-                    0,
-                    5,
-                    0
-                  ]
-                }
-              },
-              {
-                "Script": {
-                  "@DEF": "DECLnode_nodeC_MoveBall",
-                  "field": [
-                    {
-                      "@name": "translation",
-                      "@accessType": "inputOutput",
-                      "@type": "SFVec3f",
-                      "@value": [
-                        50,
-                        50,
-                        0
-                      ]
-                    },
-                    {
-                      "@name": "old",
-                      "@accessType": "inputOutput",
-                      "@type": "SFVec3f",
-                      "@value": [
-                        0,
-                        0,
-                        0
-                      ]
-                    },
-                    {
-                      "@name": "set_cycle",
-                      "@accessType": "inputOnly",
-                      "@type": "SFTime"
-                    },
-                    {
-                      "@name": "keyValue",
-                      "@accessType": "outputOnly",
-                      "@type": "MFVec3f"
-                    }
-                  ],
-                  "#sourceText": [
-                    "",
-                    "",
-                    "ecmascript:",
-                    "\t\t\t\t\tfunction set_cycle(value) {",
-                    "                                                old = translation;",
-                    "\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
-                    "                                                keyValue = new MFVec3f(old, translation);",
-                    "\t\t\t\t\t\t// Browser.println(translation);",
-                    "\t\t\t\t\t}"
-                  ]
-                }
-              },
-              {
-                "TimeSensor": {
-                  "@DEF": "DECLnode_nodeC_nodeClock",
-                  "@cycleInterval": 3,
-                  "@loop": true
-                }
-              },
-              {
-                "ROUTE": {
-                  "@fromNode": "DECLnode_nodeC_nodeClock",
-                  "@fromField": "cycleTime",
-                  "@toNode": "DECLnode_nodeC_MoveBall",
-                  "@toField": "set_cycle"
-                }
-              },
-              {
-                "ROUTE": {
-                  "@fromNode": "DECLnode_nodeC_nodeClock",
-                  "@fromField": "fraction_changed",
-                  "@toNode": "DECLnode_nodeC_NodePosition",
-                  "@toField": "set_fraction"
-                }
-              },
-              {
-                "ROUTE": {
-                  "@fromNode": "DECLnode_nodeC_MoveBall",
-                  "@fromField": "keyValue",
-                  "@toNode": "DECLnode_nodeC_NodePosition",
-                  "@toField": "keyValue"
-                }
-              },
-              {
-                "ROUTE": {
-                  "@fromNode": "DECLnode_nodeC_NodePosition",
-                  "@fromField": "value_changed",
-                  "@toNode": "DECLnode_nodeC_transform",
-                  "@toField": "set_translation"
-                }
-              },
-              {
                 "Transform": {
                   "@DEF": "DECLnode_nodeD_transform",
                   "@translation": [
@@ -689,110 +377,6 @@
                 }
               },
               {
-                "PositionInterpolator": {
-                  "@DEF": "DECLnode_nodeD_NodePosition",
-                  "@key": [
-                    0,
-                    1
-                  ],
-                  "@keyValue": [
-                    0,
-                    0,
-                    0,
-                    0,
-                    5,
-                    0
-                  ]
-                }
-              },
-              {
-                "Script": {
-                  "@DEF": "DECLnode_nodeD_MoveBall",
-                  "field": [
-                    {
-                      "@name": "translation",
-                      "@accessType": "inputOutput",
-                      "@type": "SFVec3f",
-                      "@value": [
-                        50,
-                        50,
-                        0
-                      ]
-                    },
-                    {
-                      "@name": "old",
-                      "@accessType": "inputOutput",
-                      "@type": "SFVec3f",
-                      "@value": [
-                        0,
-                        0,
-                        0
-                      ]
-                    },
-                    {
-                      "@name": "set_cycle",
-                      "@accessType": "inputOnly",
-                      "@type": "SFTime"
-                    },
-                    {
-                      "@name": "keyValue",
-                      "@accessType": "outputOnly",
-                      "@type": "MFVec3f"
-                    }
-                  ],
-                  "#sourceText": [
-                    "",
-                    "",
-                    "ecmascript:",
-                    "\t\t\t\t\tfunction set_cycle(value) {",
-                    "                                                old = translation;",
-                    "\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
-                    "                                                keyValue = new MFVec3f(old, translation);",
-                    "\t\t\t\t\t\t// Browser.println(translation);",
-                    "\t\t\t\t\t}"
-                  ]
-                }
-              },
-              {
-                "TimeSensor": {
-                  "@DEF": "DECLnode_nodeD_nodeClock",
-                  "@cycleInterval": 3,
-                  "@loop": true
-                }
-              },
-              {
-                "ROUTE": {
-                  "@fromNode": "DECLnode_nodeD_nodeClock",
-                  "@fromField": "cycleTime",
-                  "@toNode": "DECLnode_nodeD_MoveBall",
-                  "@toField": "set_cycle"
-                }
-              },
-              {
-                "ROUTE": {
-                  "@fromNode": "DECLnode_nodeD_nodeClock",
-                  "@fromField": "fraction_changed",
-                  "@toNode": "DECLnode_nodeD_NodePosition",
-                  "@toField": "set_fraction"
-                }
-              },
-              {
-                "ROUTE": {
-                  "@fromNode": "DECLnode_nodeD_MoveBall",
-                  "@fromField": "keyValue",
-                  "@toNode": "DECLnode_nodeD_NodePosition",
-                  "@toField": "keyValue"
-                }
-              },
-              {
-                "ROUTE": {
-                  "@fromNode": "DECLnode_nodeD_NodePosition",
-                  "@fromField": "value_changed",
-                  "@toNode": "DECLnode_nodeD_transform",
-                  "@toField": "set_translation"
-                }
-              },
-              {
                 "Shape": {
                   "-geometry": {
                     "Extrusion": {
@@ -857,79 +441,6 @@
                       }
                     }
                   }
-                }
-              },
-              {
-                "Script": {
-                  "@DEF": "DECLcylinder_linkA_MoveCylinder",
-                  "field": [
-                    {
-                      "@name": "spine",
-                      "@accessType": "inputOutput",
-                      "@type": "MFVec3f",
-                      "@value": [
-                        0,
-                        -50,
-                        0,
-                        0,
-                        50,
-                        0
-                      ]
-                    },
-                    {
-                      "@name": "set_endA",
-                      "@accessType": "inputOnly",
-                      "@type": "SFVec3f",
-                      "@value": [
-                        0,
-                        0,
-                        0
-                      ]
-                    },
-                    {
-                      "@name": "set_endB",
-                      "@accessType": "inputOnly",
-                      "@type": "SFVec3f",
-                      "@value": [
-                        50,
-                        50,
-                        50
-                      ]
-                    }
-                  ],
-                  "#sourceText": [
-                    "",
-                    "",
-                    "ecmascript:",
-                    "",
-                    "                function set_endA(value) {",
-                    "\t\t    if (typeof spine === 'undefined') {",
-                    "\t\t        spine = new MFVec3f(value, value);",
-                    "\t\t    } else {",
-                    "\t\t        spine = new MFVec3f(value, spine[1]);",
-                    "\t\t    }",
-                    "                }",
-                    "                ",
-                    "                function set_endB(value) {",
-                    "\t\t    if (typeof spine === 'undefined') {",
-                    "\t\t        spine = new MFVec3f(value, value);",
-                    "\t\t    } else {",
-                    "\t\t        spine = new MFVec3f(spine[0], value);",
-                    "\t\t    }",
-                    "                }",
-                    "                ",
-                    "                function set_spine(value) {",
-                    "                    spine = value;",
-                    "                }"
-                  ]
-                }
-              },
-              {
-                "ROUTE": {
-                  "@fromNode": "DECLcylinder_linkA_MoveCylinder",
-                  "@fromField": "spine",
-                  "@toNode": "DECLcylinder_linkA_extrusion",
-                  "@toField": "set_spine"
                 }
               },
               {
@@ -1000,79 +511,6 @@
                 }
               },
               {
-                "Script": {
-                  "@DEF": "DECLcylinder_linkB_MoveCylinder",
-                  "field": [
-                    {
-                      "@name": "spine",
-                      "@accessType": "inputOutput",
-                      "@type": "MFVec3f",
-                      "@value": [
-                        0,
-                        -50,
-                        0,
-                        0,
-                        50,
-                        0
-                      ]
-                    },
-                    {
-                      "@name": "set_endA",
-                      "@accessType": "inputOnly",
-                      "@type": "SFVec3f",
-                      "@value": [
-                        0,
-                        0,
-                        0
-                      ]
-                    },
-                    {
-                      "@name": "set_endB",
-                      "@accessType": "inputOnly",
-                      "@type": "SFVec3f",
-                      "@value": [
-                        -50,
-                        -50,
-                        -50
-                      ]
-                    }
-                  ],
-                  "#sourceText": [
-                    "",
-                    "",
-                    "ecmascript:",
-                    "",
-                    "                function set_endA(value) {",
-                    "\t\t    if (typeof spine === 'undefined') {",
-                    "\t\t        spine = new MFVec3f(value, value);",
-                    "\t\t    } else {",
-                    "\t\t        spine = new MFVec3f(value, spine[1]);",
-                    "\t\t    }",
-                    "                }",
-                    "                ",
-                    "                function set_endB(value) {",
-                    "\t\t    if (typeof spine === 'undefined') {",
-                    "\t\t        spine = new MFVec3f(value, value);",
-                    "\t\t    } else {",
-                    "\t\t        spine = new MFVec3f(spine[0], value);",
-                    "\t\t    }",
-                    "                }",
-                    "                ",
-                    "                function set_spine(value) {",
-                    "                    spine = value;",
-                    "                }"
-                  ]
-                }
-              },
-              {
-                "ROUTE": {
-                  "@fromNode": "DECLcylinder_linkB_MoveCylinder",
-                  "@fromField": "spine",
-                  "@toNode": "DECLcylinder_linkB_extrusion",
-                  "@toField": "set_spine"
-                }
-              },
-              {
                 "Shape": {
                   "-geometry": {
                     "Extrusion": {
@@ -1138,79 +576,6 @@
                     }
                   }
                 }
-              },
-              {
-                "Script": {
-                  "@DEF": "DECLcylinder_linkC_MoveCylinder",
-                  "field": [
-                    {
-                      "@name": "spine",
-                      "@accessType": "inputOutput",
-                      "@type": "MFVec3f",
-                      "@value": [
-                        0,
-                        -50,
-                        0,
-                        0,
-                        50,
-                        0
-                      ]
-                    },
-                    {
-                      "@name": "set_endA",
-                      "@accessType": "inputOnly",
-                      "@type": "SFVec3f",
-                      "@value": [
-                        50,
-                        50,
-                        50
-                      ]
-                    },
-                    {
-                      "@name": "set_endB",
-                      "@accessType": "inputOnly",
-                      "@type": "SFVec3f",
-                      "@value": [
-                        50,
-                        50,
-                        -50
-                      ]
-                    }
-                  ],
-                  "#sourceText": [
-                    "",
-                    "",
-                    "ecmascript:",
-                    "",
-                    "                function set_endA(value) {",
-                    "\t\t    if (typeof spine === 'undefined') {",
-                    "\t\t        spine = new MFVec3f(value, value);",
-                    "\t\t    } else {",
-                    "\t\t        spine = new MFVec3f(value, spine[1]);",
-                    "\t\t    }",
-                    "                }",
-                    "                ",
-                    "                function set_endB(value) {",
-                    "\t\t    if (typeof spine === 'undefined') {",
-                    "\t\t        spine = new MFVec3f(value, value);",
-                    "\t\t    } else {",
-                    "\t\t        spine = new MFVec3f(spine[0], value);",
-                    "\t\t    }",
-                    "                }",
-                    "                ",
-                    "                function set_spine(value) {",
-                    "                    spine = value;",
-                    "                }"
-                  ]
-                }
-              },
-              {
-                "ROUTE": {
-                  "@fromNode": "DECLcylinder_linkC_MoveCylinder",
-                  "@fromField": "spine",
-                  "@toNode": "DECLcylinder_linkC_extrusion",
-                  "@toField": "set_spine"
-                }
               }
             ]
           }
@@ -1235,18 +600,11 @@
                 "@accessType": "inputOnly",
                 "@value": false,
                 "@type": "SFBool"
-              },
+              }
+            ],
+            "-children": [
               {
-                "@name": "ModifiableNode",
-                "@type": "SFNode",
-                "@accessType": "inputOutput",
-                "-children": [
-                  {
-                    "Transform": {
-                      "@USE": "HoldsContent"
-                    }
-                  }
-                ]
+                "#comment": "<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>"
               }
             ],
             "#sourceText": [
@@ -1285,48 +643,48 @@
           "ROUTE": {
             "@fromNode": "DECLnode_nodeA_transform",
             "@fromField": "translation",
-            "@toNode": "DECLcylinder_linkA_MoveCylinder",
-            "@toField": "set_endA"
+            "@toNode": "DECLcylinder_linkA_extrusion",
+            "@toField": "set_positionA"
           }
         },
         {
           "ROUTE": {
             "@fromNode": "DECLnode_nodeB_transform",
             "@fromField": "translation",
-            "@toNode": "DECLcylinder_linkA_MoveCylinder",
-            "@toField": "set_endB"
+            "@toNode": "DECLcylinder_linkA_extrusion",
+            "@toField": "set_positionB"
           }
         },
         {
           "ROUTE": {
             "@fromNode": "DECLnode_nodeA_transform",
             "@fromField": "translation",
-            "@toNode": "DECLcylinder_linkB_MoveCylinder",
-            "@toField": "set_endA"
+            "@toNode": "DECLcylinder_linkB_extrusion",
+            "@toField": "set_positionA"
           }
         },
         {
           "ROUTE": {
             "@fromNode": "DECLnode_nodeC_transform",
             "@fromField": "translation",
-            "@toNode": "DECLcylinder_linkB_MoveCylinder",
-            "@toField": "set_endB"
+            "@toNode": "DECLcylinder_linkB_extrusion",
+            "@toField": "set_positionB"
           }
         },
         {
           "ROUTE": {
             "@fromNode": "DECLnode_nodeA_transform",
             "@fromField": "translation",
-            "@toNode": "DECLcylinder_linkC_MoveCylinder",
-            "@toField": "set_endA"
+            "@toNode": "DECLcylinder_linkC_extrusion",
+            "@toField": "set_positionA"
           }
         },
         {
           "ROUTE": {
             "@fromNode": "DECLnode_nodeD_transform",
             "@fromField": "translation",
-            "@toNode": "DECLcylinder_linkC_MoveCylinder",
-            "@toField": "set_endB"
+            "@toNode": "DECLcylinder_linkC_extrusion",
+            "@toField": "set_positionB"
           }
         }
       ]

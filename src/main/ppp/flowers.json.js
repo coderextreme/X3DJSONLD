@@ -1,4 +1,7 @@
 var x3dom = require('../node/fields.js');
+if (typeof X3DJSON === 'undefined') {
+	var X3DJSON = {};
+}
 var MFBool = x3dom.fields.MFBoolean;
 var MFColor = x3dom.fields.MFColor;
 var MFColorRGBA = x3dom.fields.MFColorRGBA;
@@ -20,28 +23,27 @@ var MFVec3d = function() { return Array.prototype.slice.call(arguments, 0); };
 var MFVec3f = x3dom.fields.MFVec3f;
 var MFVec4d = function() { return Array.prototype.slice.call(arguments, 0); };
 var MFVec4f = function() { return Array.prototype.slice.call(arguments, 0); };
-SFBool = Boolean;
+var SFBool = Boolean;
 var SFColor = x3dom.fields.SFColor;
 var SFColorRGBA = x3dom.fields.SFColorRGBA;
-SFDouble = Number;
-SFFloat = Number;
-SFInt32 = Number;
+var SFDouble = Number;
+var SFFloat = Number;
+var SFInt32 = Number;
 var SFImage = x3dom.fields.SFImage;
 var SFMatrix3d = function() { return Array.prototype.slice.call(arguments, 0); };
 var SFMatrix3f = function() { return Array.prototype.slice.call(arguments, 0); };
 var SFMatrix4d = function() { return Array.prototype.slice.call(arguments, 0); };
 var SFMatrix4f = x3dom.fields.SFMatrix4f;
 var SFNode = x3dom.fields.SFNode;
-var SFRotation = x3dom.fields.Quaternion;
-SFString = String;
-SFTime = Number;
+var Quaternion = x3dom.fields.Quaternion;
+var SFString = String;
+var SFTime = Number;
 var SFVec2d = function() { return Array.prototype.slice.call(arguments, 0); };
 var SFVec2f = x3dom.fields.SFVec2f;
 var SFVec3d = function() { return Array.prototype.slice.call(arguments, 0); };
 var SFVec3f = x3dom.fields.SFVec3f;
 var SFVec4d = function() { return Array.prototype.slice.call(arguments, 0); };
-var SFvec4f = x3dom.fields.SFvec4f;
-var X3DJSON = {};
+var SFVec4f = x3dom.fields.SFVec4f;
 if (typeof document === 'undefined') {
 	document = { querySelector : function() {;
 		return {
@@ -57,132 +59,179 @@ if (typeof document === 'undefined') {
 	}};
 }
 X3DJSON.nodeUtil = function(node, field, value) {
-		var element = document.querySelector("[DEF='"+node+"'], [name='"+node+"']");
+		var selector = "undefined [DEF='"+node+"']";
+		var element = document.querySelector(selector);
 		if (element === null) {
 			console.error('unDEFed node',node);
 		} else if (arguments.length > 2) {
-			element.setAttribute(field, value);
-			console.log('set '+ field+ '='+ value);
+			/*
+			if (value && typeof value.toString === 'function') {
+				value = value.toString();
+			}
+			$(selector).attr(field, value);
+			// console.log('set', node, '.', field, '=', value);
+			*/
+			element.setFieldValue(field, value);
 			return element;
 		} else if (arguments.length > 1) {
-			var value = element.getAttribute(field)
-			console.log('get', field,'=',value);
+			value = element.getFieldValue(field);
+			/*
+			value = $(selector).attr(field);
+			if (element &&
+				element._x3domNode &&
+				element._x3domNode._vf &&
+				element._x3domNode._vf[field] &&
+				element._x3domNode._vf[field].setValueByStr) {
+				value = element._x3domNode._vf[field].setValueByStr(value);
+			}
+			*/
+			// console.log('get', node, '.', field,'=',value);
 			return value;
 		} else {
-			return element;
+			return $(selector)[0];
 		}
 };
+X3DJSON.createProxy = function(action, scriptObject) {
+	var proxy = new Proxy(scriptObject, {
+		get: function(target, property, receiver) {
+			return Reflect.get(target, property, receiver);
+		},
+		set: function(target, property, value, receiver) {
+                 if (typeof action[property] === 'object') {
+                        for (var route in action[property]) {
+                                if (typeof action[property][route] === 'function') {
+                                        action[property][route](property, value);
+   		                     // console.log('Set',property,'to', value);
+                                }
+                        }
+                 }
+		      return Reflect.set(target, property, value, receiver);
+		}
+	});
+	return proxy;
+};
 if (typeof X3DJSON['Script'] === 'undefined') {
 X3DJSON['Script'] = {};
 }
 
-X3DJSON['Script']['DECLflower_INSTANCE38000_Bounce'] = function() {
+X3DJSON['Script']['DECLflower_INSTANCE_Bounce'] = function() {
 	this.set_translation = function (value) {
-		X3DJSON.nodeUtil('DECLflower_INSTANCE38000_Bounce', 'translation', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+		this.proxy.translation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
 	this.translation_changed = function () {
-		return X3DJSON.nodeUtil('DECLflower_INSTANCE38000_Bounce', 'translation');
+		var value = this.translation;
+		return value;
 	};
-	this.set_translation(new SFVec3f(0,0,0));
+	this.translation = new SFVec3f(0,0,0);
 	this.set_velocity = function (value) {
-		X3DJSON.nodeUtil('DECLflower_INSTANCE38000_Bounce', 'velocity', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+		this.proxy.velocity = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
 	this.velocity_changed = function () {
-		return X3DJSON.nodeUtil('DECLflower_INSTANCE38000_Bounce', 'velocity');
+		var value = this.velocity;
+		return value;
 	};
-	this.set_velocity(new SFVec3f(0,0,0));
+	this.velocity = new SFVec3f(0,0,0);
 	this.set_fraction = function (value) {
-		X3DJSON.nodeUtil('DECLflower_INSTANCE38000_Bounce', 'fraction', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+		this.proxy.fraction = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
 	this.fraction_changed = function () {
-		return X3DJSON.nodeUtil('DECLflower_INSTANCE38000_Bounce', 'fraction');
+		var value = this.fraction;
+		return value;
 	};
-	this.set_fraction(undefined);
+	this.fraction = undefined;
 	this.set_coordinates = function (value) {
-		X3DJSON.nodeUtil('DECLflower_INSTANCE38000_Bounce', 'coordinates', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+		this.proxy.coordinates = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
 	this.coordinates_changed = function () {
-		return X3DJSON.nodeUtil('DECLflower_INSTANCE38000_Bounce', 'coordinates');
+		var value = this.coordinates;
+		return value;
 	};
-	this.set_coordinates(new MFVec3f());
+	this.coordinates = new MFVec3f();
 	this.set_coordIndexes = function (value) {
-		X3DJSON.nodeUtil('DECLflower_INSTANCE38000_Bounce', 'coordIndexes', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+		this.proxy.coordIndexes = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
 	this.coordIndexes_changed = function () {
-		return X3DJSON.nodeUtil('DECLflower_INSTANCE38000_Bounce', 'coordIndexes');
+		var value = this.coordIndexes;
+		return value;
 	};
-	this.set_coordIndexes(new MFInt32());
+	this.coordIndexes = new MFInt32();
 	this.set_a = function (value) {
-		X3DJSON.nodeUtil('DECLflower_INSTANCE38000_Bounce', 'a', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+		this.proxy.a = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
 	this.a_changed = function () {
-		return X3DJSON.nodeUtil('DECLflower_INSTANCE38000_Bounce', 'a');
+		var value = this.a;
+		return value;
 	};
-	this.set_a(new SFFloat(0.5));
+	this.a = new SFFloat(0.5);
 	this.set_b = function (value) {
-		X3DJSON.nodeUtil('DECLflower_INSTANCE38000_Bounce', 'b', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+		this.proxy.b = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
 	this.b_changed = function () {
-		return X3DJSON.nodeUtil('DECLflower_INSTANCE38000_Bounce', 'b');
+		var value = this.b;
+		return value;
 	};
-	this.set_b(new SFFloat(0.5));
+	this.b = new SFFloat(0.5);
 	this.set_c = function (value) {
-		X3DJSON.nodeUtil('DECLflower_INSTANCE38000_Bounce', 'c', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+		this.proxy.c = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
 	this.c_changed = function () {
-		return X3DJSON.nodeUtil('DECLflower_INSTANCE38000_Bounce', 'c');
+		var value = this.c;
+		return value;
 	};
-	this.set_c(new SFFloat(3));
+	this.c = new SFFloat(3);
 	this.set_d = function (value) {
-		X3DJSON.nodeUtil('DECLflower_INSTANCE38000_Bounce', 'd', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+		this.proxy.d = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
 	this.d_changed = function () {
-		return X3DJSON.nodeUtil('DECLflower_INSTANCE38000_Bounce', 'd');
+		var value = this.d;
+		return value;
 	};
-	this.set_d(new SFFloat(3));
+	this.d = new SFFloat(3);
 	this.set_tdelta = function (value) {
-		X3DJSON.nodeUtil('DECLflower_INSTANCE38000_Bounce', 'tdelta', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+		this.proxy.tdelta = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
 	this.tdelta_changed = function () {
-		return X3DJSON.nodeUtil('DECLflower_INSTANCE38000_Bounce', 'tdelta');
+		var value = this.tdelta;
+		return value;
 	};
-	this.set_tdelta(new SFFloat(0.5));
+	this.tdelta = new SFFloat(0.5);
 	this.set_pdelta = function (value) {
-		X3DJSON.nodeUtil('DECLflower_INSTANCE38000_Bounce', 'pdelta', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
+		this.proxy.pdelta = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 	};
 	this.pdelta_changed = function () {
-		return X3DJSON.nodeUtil('DECLflower_INSTANCE38000_Bounce', 'pdelta');
+		var value = this.pdelta;
+		return value;
 	};
-	this.set_pdelta(new SFFloat(0.5));
+	this.pdelta = new SFFloat(0.5);
 
 ecmascript:
 			
 	this.newBubble = function () {
-			    this.set_translation ( new SFVec3f(0, 0, 0));
-			    this.set_velocity ( new SFVec3f(
+			    this.proxy.translation = new SFVec3f(0, 0, 0);
+			    this.proxy.velocity = new SFVec3f(
 			    	Math.random() - 0.5,
 				Math.random() - 0.5,
-				Math.random() - 0.5));
+				Math.random() - 0.5);
 			}
 			;
 
 	this.set_fraction = function () {
-			    this.set_translation ( new SFVec3f(
-			    	this.translation_changed().x + this.velocity_changed().x,
-				this.translation_changed().y + this.velocity_changed().y,
-				this.translation_changed().z + this.velocity_changed().z));
-			    if (Math.abs(this.translation_changed().x) > 10) {
+			    this.proxy.translation = new SFVec3f(
+			    	this.proxy.translation.x + this.proxy.velocity.x,
+				this.proxy.translation.y + this.proxy.velocity.y,
+				this.proxy.translation.z + this.proxy.velocity.z);
+			    if (Math.abs(this.proxy.translation.x) > 10) {
 					this.newBubble();
-			    } else if (Math.abs(this.translation_changed().y) > 10) {
+			    } else if (Math.abs(this.proxy.translation.y) > 10) {
 					this.newBubble();
-			    } else if (Math.abs(this.translation_changed().z) > 10) {
+			    } else if (Math.abs(this.proxy.translation.z) > 10) {
 					this.newBubble();
 			    } else {
-					this.set_velocity ( new SFVec3f(
-						this.velocity_changed().x + Math.random() * 0.2 - 0.1,
-						this.velocity_changed().y + Math.random() * 0.2 - 0.1,
-						this.velocity_changed().z + Math.random() * 0.2 - 0.1
-					));
+					this.proxy.velocity = new SFVec3f(
+						this.proxy.velocity.x + Math.random() * 0.2 - 0.1,
+						this.proxy.velocity.y + Math.random() * 0.2 - 0.1,
+						this.proxy.velocity.z + Math.random() * 0.2 - 0.1
+					);
 			    }
 			    this.animate_flowers();
 			}
@@ -203,7 +252,7 @@ ecmascript:
 				     cis.push(-1);
 				}
 			    }
-			     this.set_coordIndexes ( new MFInt32(cis));
+			     this.proxy.coordIndexes = new MFInt32(cis);
 			}
 
 			;
@@ -215,7 +264,7 @@ ecmascript:
 			     var crds = [];
 			     for ( i = 0; i < resolution; i++) {
 				for ( j = 0; j < resolution; j++) {
-					rho = this.a_changed() + this.b_changed() * Math.cos(this.c_changed() * theta) * Math.cos(this.d_changed() * phi);
+					rho = this.proxy.a + this.proxy.b * Math.cos(this.proxy.c * theta) * Math.cos(this.proxy.d * phi);
 					crds.push(new SFVec3f(
 						rho * Math.cos(phi) * Math.cos(theta),
 						rho * Math.cos(phi) * Math.sin(theta),
@@ -224,7 +273,7 @@ ecmascript:
 					theta += delta;
 				}
 				phi += delta;
-				this.set_coordinates ( new MFVec3f(crds));
+				this.proxy.coordinates = new MFVec3f(crds);
 			     }
 			}
 
@@ -234,35 +283,35 @@ ecmascript:
 				choice = Math.floor(Math.random() * 4);
 				switch (choice) {
 				case 0:
-					this.set_a(this.a_changed() +  Math.random() * 0.2 - 0.1);
+					this.proxy.a += Math.random() * 0.2 - 0.1;
 					break;
 				case 1:
-					this.set_b(this.b_changed() +  Math.random() * 0.2 - 0.1);
+					this.proxy.b += Math.random() * 0.2 - 0.1;
 					break;
 				case 2:
-					this.set_c(this.c_changed() +  Math.random() * 2 - 1);
+					this.proxy.c += Math.random() * 2 - 1;
 					break;
 				case 3:
-					this.set_d(this.d_changed() +  Math.random() * 2 - 1);
+					this.proxy.d += Math.random() * 2 - 1;
 					break;
 				}
-				if (this.a_changed() > 1) {
-					this.set_a (  0.5);
+				if (this.proxy.a > 1) {
+					this.proxy.a =  0.5;
 				}
-				if (this.b_changed() > 1) {
-					this.set_b (  0.5);
+				if (this.proxy.b > 1) {
+					this.proxy.b =  0.5;
 				}
-				if (this.c_changed() < 1) {
-					this.set_c (  4);
+				if (this.proxy.c < 1) {
+					this.proxy.c =  4;
 				}
-				if (this.d_changed() < 1) {
-					this.set_d (  4);
+				if (this.proxy.d < 1) {
+					this.proxy.d =  4;
 				}
-				if (this.c_changed() > 10) {
-					this.set_c ( 4);
+				if (this.proxy.c > 10) {
+					this.proxy.c = 4;
 				}
-				if (this.d_changed() > 10) {
-					this.set_d ( 4);
+				if (this.proxy.d > 10) {
+					this.proxy.d = 4;
 				}
 				resolution = 100;
 				this.updateCoordinates(resolution);
@@ -273,702 +322,38 @@ if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
 
-X3DJSON['Obj']['DECLflower_INSTANCE38000_Bounce'] = new X3DJSON['Script']['DECLflower_INSTANCE38000_Bounce']();
-if (typeof X3DJSON['Obj']['DECLflower_INSTANCE38000_Bounce'].initialize === "function") X3DJSON['Obj']['DECLflower_INSTANCE38000_Bounce'].initialize();
-if (typeof X3DJSON['Script'] === 'undefined') {
-X3DJSON['Script'] = {};
-}
-
-X3DJSON['Script']['DECLflower_INSTANCE39000_Bounce'] = function() {
-	this.set_translation = function (value) {
-		X3DJSON.nodeUtil('DECLflower_INSTANCE39000_Bounce', 'translation', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
-	};
-	this.translation_changed = function () {
-		return X3DJSON.nodeUtil('DECLflower_INSTANCE39000_Bounce', 'translation');
-	};
-	this.set_translation(new SFVec3f(0,0,0));
-	this.set_velocity = function (value) {
-		X3DJSON.nodeUtil('DECLflower_INSTANCE39000_Bounce', 'velocity', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
-	};
-	this.velocity_changed = function () {
-		return X3DJSON.nodeUtil('DECLflower_INSTANCE39000_Bounce', 'velocity');
-	};
-	this.set_velocity(new SFVec3f(0,0,0));
-	this.set_fraction = function (value) {
-		X3DJSON.nodeUtil('DECLflower_INSTANCE39000_Bounce', 'fraction', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
-	};
-	this.fraction_changed = function () {
-		return X3DJSON.nodeUtil('DECLflower_INSTANCE39000_Bounce', 'fraction');
-	};
-	this.set_fraction(undefined);
-	this.set_coordinates = function (value) {
-		X3DJSON.nodeUtil('DECLflower_INSTANCE39000_Bounce', 'coordinates', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
-	};
-	this.coordinates_changed = function () {
-		return X3DJSON.nodeUtil('DECLflower_INSTANCE39000_Bounce', 'coordinates');
-	};
-	this.set_coordinates(new MFVec3f());
-	this.set_coordIndexes = function (value) {
-		X3DJSON.nodeUtil('DECLflower_INSTANCE39000_Bounce', 'coordIndexes', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
-	};
-	this.coordIndexes_changed = function () {
-		return X3DJSON.nodeUtil('DECLflower_INSTANCE39000_Bounce', 'coordIndexes');
-	};
-	this.set_coordIndexes(new MFInt32());
-	this.set_a = function (value) {
-		X3DJSON.nodeUtil('DECLflower_INSTANCE39000_Bounce', 'a', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
-	};
-	this.a_changed = function () {
-		return X3DJSON.nodeUtil('DECLflower_INSTANCE39000_Bounce', 'a');
-	};
-	this.set_a(new SFFloat(0.5));
-	this.set_b = function (value) {
-		X3DJSON.nodeUtil('DECLflower_INSTANCE39000_Bounce', 'b', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
-	};
-	this.b_changed = function () {
-		return X3DJSON.nodeUtil('DECLflower_INSTANCE39000_Bounce', 'b');
-	};
-	this.set_b(new SFFloat(0.5));
-	this.set_c = function (value) {
-		X3DJSON.nodeUtil('DECLflower_INSTANCE39000_Bounce', 'c', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
-	};
-	this.c_changed = function () {
-		return X3DJSON.nodeUtil('DECLflower_INSTANCE39000_Bounce', 'c');
-	};
-	this.set_c(new SFFloat(3));
-	this.set_d = function (value) {
-		X3DJSON.nodeUtil('DECLflower_INSTANCE39000_Bounce', 'd', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
-	};
-	this.d_changed = function () {
-		return X3DJSON.nodeUtil('DECLflower_INSTANCE39000_Bounce', 'd');
-	};
-	this.set_d(new SFFloat(3));
-	this.set_tdelta = function (value) {
-		X3DJSON.nodeUtil('DECLflower_INSTANCE39000_Bounce', 'tdelta', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
-	};
-	this.tdelta_changed = function () {
-		return X3DJSON.nodeUtil('DECLflower_INSTANCE39000_Bounce', 'tdelta');
-	};
-	this.set_tdelta(new SFFloat(0.5));
-	this.set_pdelta = function (value) {
-		X3DJSON.nodeUtil('DECLflower_INSTANCE39000_Bounce', 'pdelta', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
-	};
-	this.pdelta_changed = function () {
-		return X3DJSON.nodeUtil('DECLflower_INSTANCE39000_Bounce', 'pdelta');
-	};
-	this.set_pdelta(new SFFloat(0.5));
-
-ecmascript:
-			
-	this.newBubble = function () {
-			    this.set_translation ( new SFVec3f(0, 0, 0));
-			    this.set_velocity ( new SFVec3f(
-			    	Math.random() - 0.5,
-				Math.random() - 0.5,
-				Math.random() - 0.5));
-			}
-			;
-
-	this.set_fraction = function () {
-			    this.set_translation ( new SFVec3f(
-			    	this.translation_changed().x + this.velocity_changed().x,
-				this.translation_changed().y + this.velocity_changed().y,
-				this.translation_changed().z + this.velocity_changed().z));
-			    if (Math.abs(this.translation_changed().x) > 10) {
-					this.newBubble();
-			    } else if (Math.abs(this.translation_changed().y) > 10) {
-					this.newBubble();
-			    } else if (Math.abs(this.translation_changed().z) > 10) {
-					this.newBubble();
-			    } else {
-					this.set_velocity ( new SFVec3f(
-						this.velocity_changed().x + Math.random() * 0.2 - 0.1,
-						this.velocity_changed().y + Math.random() * 0.2 - 0.1,
-						this.velocity_changed().z + Math.random() * 0.2 - 0.1
-					));
-			    }
-			    this.animate_flowers();
-			}
-
-			;
-
-	this.initialize = function () {
-			     this.newBubble();
-			     resolution = 100;
-			     this.updateCoordinates(resolution);
-			     var cis = [];
-			     for ( i = 0; i < resolution-1; i++) {
-				for ( j = 0; j < resolution-1; j++) {
-				     cis.push(i*resolution+j);
-				     cis.push(i*resolution+j+1);
-				     cis.push((i+1)*resolution+j+1);
-				     cis.push((i+1)*resolution+j);
-				     cis.push(-1);
-				}
-			    }
-			     this.set_coordIndexes ( new MFInt32(cis));
-			}
-
-			;
-
-	this.updateCoordinates = function (resolution) {
-			     theta = 0.0;
-			     phi = 0.0;
-			     delta = (2 * 3.141592653) / (resolution-1);
-			     var crds = [];
-			     for ( i = 0; i < resolution; i++) {
-				for ( j = 0; j < resolution; j++) {
-					rho = this.a_changed() + this.b_changed() * Math.cos(this.c_changed() * theta) * Math.cos(this.d_changed() * phi);
-					crds.push(new SFVec3f(
-						rho * Math.cos(phi) * Math.cos(theta),
-						rho * Math.cos(phi) * Math.sin(theta),
-						rho * Math.sin(phi)
-					));
-					theta += delta;
-				}
-				phi += delta;
-				this.set_coordinates ( new MFVec3f(crds));
-			     }
-			}
-
-			;
-
-	this.animate_flowers = function (fraction, eventTime) {
-				choice = Math.floor(Math.random() * 4);
-				switch (choice) {
-				case 0:
-					this.set_a(this.a_changed() +  Math.random() * 0.2 - 0.1);
-					break;
-				case 1:
-					this.set_b(this.b_changed() +  Math.random() * 0.2 - 0.1);
-					break;
-				case 2:
-					this.set_c(this.c_changed() +  Math.random() * 2 - 1);
-					break;
-				case 3:
-					this.set_d(this.d_changed() +  Math.random() * 2 - 1);
-					break;
-				}
-				if (this.a_changed() > 1) {
-					this.set_a (  0.5);
-				}
-				if (this.b_changed() > 1) {
-					this.set_b (  0.5);
-				}
-				if (this.c_changed() < 1) {
-					this.set_c (  4);
-				}
-				if (this.d_changed() < 1) {
-					this.set_d (  4);
-				}
-				if (this.c_changed() > 10) {
-					this.set_c ( 4);
-				}
-				if (this.d_changed() > 10) {
-					this.set_d ( 4);
-				}
-				resolution = 100;
-				this.updateCoordinates(resolution);
-			};
-
-};
+X3DJSON['Obj']['DECLflower_INSTANCE_Bounce'] = new X3DJSON['Script']['DECLflower_INSTANCE_Bounce']();
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
-
-X3DJSON['Obj']['DECLflower_INSTANCE39000_Bounce'] = new X3DJSON['Script']['DECLflower_INSTANCE39000_Bounce']();
-if (typeof X3DJSON['Obj']['DECLflower_INSTANCE39000_Bounce'].initialize === "function") X3DJSON['Obj']['DECLflower_INSTANCE39000_Bounce'].initialize();
-if (typeof X3DJSON['Script'] === 'undefined') {
-X3DJSON['Script'] = {};
+if (typeof X3DJSON['Obj']['DECLflower_INSTANCE_Bounce'] === 'undefined') {
+X3DJSON['Obj']['DECLflower_INSTANCE_Bounce'] = {};
 }
 
-X3DJSON['Script']['DECLflower_INSTANCE40000_Bounce'] = function() {
-	this.set_translation = function (value) {
-		X3DJSON.nodeUtil('DECLflower_INSTANCE40000_Bounce', 'translation', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
-	};
-	this.translation_changed = function () {
-		return X3DJSON.nodeUtil('DECLflower_INSTANCE40000_Bounce', 'translation');
-	};
-	this.set_translation(new SFVec3f(0,0,0));
-	this.set_velocity = function (value) {
-		X3DJSON.nodeUtil('DECLflower_INSTANCE40000_Bounce', 'velocity', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
-	};
-	this.velocity_changed = function () {
-		return X3DJSON.nodeUtil('DECLflower_INSTANCE40000_Bounce', 'velocity');
-	};
-	this.set_velocity(new SFVec3f(0,0,0));
-	this.set_fraction = function (value) {
-		X3DJSON.nodeUtil('DECLflower_INSTANCE40000_Bounce', 'fraction', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
-	};
-	this.fraction_changed = function () {
-		return X3DJSON.nodeUtil('DECLflower_INSTANCE40000_Bounce', 'fraction');
-	};
-	this.set_fraction(undefined);
-	this.set_coordinates = function (value) {
-		X3DJSON.nodeUtil('DECLflower_INSTANCE40000_Bounce', 'coordinates', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
-	};
-	this.coordinates_changed = function () {
-		return X3DJSON.nodeUtil('DECLflower_INSTANCE40000_Bounce', 'coordinates');
-	};
-	this.set_coordinates(new MFVec3f());
-	this.set_coordIndexes = function (value) {
-		X3DJSON.nodeUtil('DECLflower_INSTANCE40000_Bounce', 'coordIndexes', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
-	};
-	this.coordIndexes_changed = function () {
-		return X3DJSON.nodeUtil('DECLflower_INSTANCE40000_Bounce', 'coordIndexes');
-	};
-	this.set_coordIndexes(new MFInt32());
-	this.set_a = function (value) {
-		X3DJSON.nodeUtil('DECLflower_INSTANCE40000_Bounce', 'a', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
-	};
-	this.a_changed = function () {
-		return X3DJSON.nodeUtil('DECLflower_INSTANCE40000_Bounce', 'a');
-	};
-	this.set_a(new SFFloat(0.5));
-	this.set_b = function (value) {
-		X3DJSON.nodeUtil('DECLflower_INSTANCE40000_Bounce', 'b', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
-	};
-	this.b_changed = function () {
-		return X3DJSON.nodeUtil('DECLflower_INSTANCE40000_Bounce', 'b');
-	};
-	this.set_b(new SFFloat(0.5));
-	this.set_c = function (value) {
-		X3DJSON.nodeUtil('DECLflower_INSTANCE40000_Bounce', 'c', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
-	};
-	this.c_changed = function () {
-		return X3DJSON.nodeUtil('DECLflower_INSTANCE40000_Bounce', 'c');
-	};
-	this.set_c(new SFFloat(3));
-	this.set_d = function (value) {
-		X3DJSON.nodeUtil('DECLflower_INSTANCE40000_Bounce', 'd', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
-	};
-	this.d_changed = function () {
-		return X3DJSON.nodeUtil('DECLflower_INSTANCE40000_Bounce', 'd');
-	};
-	this.set_d(new SFFloat(3));
-	this.set_tdelta = function (value) {
-		X3DJSON.nodeUtil('DECLflower_INSTANCE40000_Bounce', 'tdelta', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
-	};
-	this.tdelta_changed = function () {
-		return X3DJSON.nodeUtil('DECLflower_INSTANCE40000_Bounce', 'tdelta');
-	};
-	this.set_tdelta(new SFFloat(0.5));
-	this.set_pdelta = function (value) {
-		X3DJSON.nodeUtil('DECLflower_INSTANCE40000_Bounce', 'pdelta', (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(',') : value));
-	};
-	this.pdelta_changed = function () {
-		return X3DJSON.nodeUtil('DECLflower_INSTANCE40000_Bounce', 'pdelta');
-	};
-	this.set_pdelta(new SFFloat(0.5));
-
-ecmascript:
-			
-	this.newBubble = function () {
-			    this.set_translation ( new SFVec3f(0, 0, 0));
-			    this.set_velocity ( new SFVec3f(
-			    	Math.random() - 0.5,
-				Math.random() - 0.5,
-				Math.random() - 0.5));
-			}
-			;
-
-	this.set_fraction = function () {
-			    this.set_translation ( new SFVec3f(
-			    	this.translation_changed().x + this.velocity_changed().x,
-				this.translation_changed().y + this.velocity_changed().y,
-				this.translation_changed().z + this.velocity_changed().z));
-			    if (Math.abs(this.translation_changed().x) > 10) {
-					this.newBubble();
-			    } else if (Math.abs(this.translation_changed().y) > 10) {
-					this.newBubble();
-			    } else if (Math.abs(this.translation_changed().z) > 10) {
-					this.newBubble();
-			    } else {
-					this.set_velocity ( new SFVec3f(
-						this.velocity_changed().x + Math.random() * 0.2 - 0.1,
-						this.velocity_changed().y + Math.random() * 0.2 - 0.1,
-						this.velocity_changed().z + Math.random() * 0.2 - 0.1
-					));
-			    }
-			    this.animate_flowers();
-			}
-
-			;
-
-	this.initialize = function () {
-			     this.newBubble();
-			     resolution = 100;
-			     this.updateCoordinates(resolution);
-			     var cis = [];
-			     for ( i = 0; i < resolution-1; i++) {
-				for ( j = 0; j < resolution-1; j++) {
-				     cis.push(i*resolution+j);
-				     cis.push(i*resolution+j+1);
-				     cis.push((i+1)*resolution+j+1);
-				     cis.push((i+1)*resolution+j);
-				     cis.push(-1);
-				}
-			    }
-			     this.set_coordIndexes ( new MFInt32(cis));
-			}
-
-			;
-
-	this.updateCoordinates = function (resolution) {
-			     theta = 0.0;
-			     phi = 0.0;
-			     delta = (2 * 3.141592653) / (resolution-1);
-			     var crds = [];
-			     for ( i = 0; i < resolution; i++) {
-				for ( j = 0; j < resolution; j++) {
-					rho = this.a_changed() + this.b_changed() * Math.cos(this.c_changed() * theta) * Math.cos(this.d_changed() * phi);
-					crds.push(new SFVec3f(
-						rho * Math.cos(phi) * Math.cos(theta),
-						rho * Math.cos(phi) * Math.sin(theta),
-						rho * Math.sin(phi)
-					));
-					theta += delta;
-				}
-				phi += delta;
-				this.set_coordinates ( new MFVec3f(crds));
-			     }
-			}
-
-			;
-
-	this.animate_flowers = function (fraction, eventTime) {
-				choice = Math.floor(Math.random() * 4);
-				switch (choice) {
-				case 0:
-					this.set_a(this.a_changed() +  Math.random() * 0.2 - 0.1);
-					break;
-				case 1:
-					this.set_b(this.b_changed() +  Math.random() * 0.2 - 0.1);
-					break;
-				case 2:
-					this.set_c(this.c_changed() +  Math.random() * 2 - 1);
-					break;
-				case 3:
-					this.set_d(this.d_changed() +  Math.random() * 2 - 1);
-					break;
-				}
-				if (this.a_changed() > 1) {
-					this.set_a (  0.5);
-				}
-				if (this.b_changed() > 1) {
-					this.set_b (  0.5);
-				}
-				if (this.c_changed() < 1) {
-					this.set_c (  4);
-				}
-				if (this.d_changed() < 1) {
-					this.set_d (  4);
-				}
-				if (this.c_changed() > 10) {
-					this.set_c ( 4);
-				}
-				if (this.d_changed() > 10) {
-					this.set_d ( 4);
-				}
-				resolution = 100;
-				this.updateCoordinates(resolution);
-			};
-
-};
+if (typeof X3DJSON['Obj']['DECLflower_INSTANCE_Bounce']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['DECLflower_INSTANCE_Bounce']['ACTION'] = {};
+X3DJSON['Obj']['DECLflower_INSTANCE_Bounce'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['DECLflower_INSTANCE_Bounce']['ACTION'],X3DJSON['Obj']['DECLflower_INSTANCE_Bounce']);
+}
+if (typeof X3DJSON['Obj']['DECLflower_INSTANCE_Bounce'].initialize === "function") X3DJSON['Obj']['DECLflower_INSTANCE_Bounce'].initialize();
+X3DJSON.nodeUtil('DECLflower_INSTANCE_TourTime').addEventListener('outputchange', function(event) {
+			X3DJSON['Obj']['DECLflower_INSTANCE_Bounce'].set_fraction(X3DJSON.nodeUtil('DECLflower_INSTANCE_TourTime','cycleTime'), __eventTime);
+}, false);
+			X3DJSON['Obj']['DECLflower_INSTANCE_Bounce'].set_fraction(X3DJSON.nodeUtil('DECLflower_INSTANCE_TourTime','cycleTime'), __eventTime);
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
-
-X3DJSON['Obj']['DECLflower_INSTANCE40000_Bounce'] = new X3DJSON['Script']['DECLflower_INSTANCE40000_Bounce']();
-if (typeof X3DJSON['Obj']['DECLflower_INSTANCE40000_Bounce'].initialize === "function") X3DJSON['Obj']['DECLflower_INSTANCE40000_Bounce'].initialize();
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['DECLflower_INSTANCE38000_TourTime'] === 'undefined') {
-X3DJSON['ROUTE']['DECLflower_INSTANCE38000_TourTime'] = {};
-}
-if (typeof X3DJSON['ROUTE']['DECLflower_INSTANCE38000_TourTime']['cycleTime'] === 'undefined') {
-X3DJSON['ROUTE']['DECLflower_INSTANCE38000_TourTime']['cycleTime'] = {};
-}
-if (typeof X3DJSON['ROUTE']['DECLflower_INSTANCE38000_TourTime']['cycleTime']['DECLflower_INSTANCE38000_Bounce'] === 'undefined') {
-X3DJSON['ROUTE']['DECLflower_INSTANCE38000_TourTime']['cycleTime']['DECLflower_INSTANCE38000_Bounce'] = {};
-}
-if (typeof X3DJSON['ROUTE']['DECLflower_INSTANCE38000_TourTime']['cycleTime']['DECLflower_INSTANCE38000_Bounce']['set_fraction'] === 'undefined') {
-X3DJSON['ROUTE']['DECLflower_INSTANCE38000_TourTime']['cycleTime']['DECLflower_INSTANCE38000_Bounce']['set_fraction'] = {};
+if (typeof X3DJSON['Obj']['DECLflower_INSTANCE_Bounce'] === 'undefined') {
+X3DJSON['Obj']['DECLflower_INSTANCE_Bounce'] = {};
 }
 
-X3DJSON['ROUTE']['DECLflower_INSTANCE38000_TourTime']['cycleTime']['DECLflower_INSTANCE38000_Bounce']['set_fraction']['FROM'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'cycleTime');
-			X3DJSON.nodeUtil('DECLflower_INSTANCE38000_Bounce','set_fraction',X3DJSON.nodeUtil('DECLflower_INSTANCE38000_TourTime','cycleTime'), __eventTime);
-		});
+if (typeof X3DJSON['Obj']['DECLflower_INSTANCE_Bounce']['ACTION']['translation'] === 'undefined') {
+X3DJSON['Obj']['DECLflower_INSTANCE_Bounce']['ACTION']['translation'] = [];
+}
+X3DJSON['Obj']['DECLflower_INSTANCE_Bounce']['ACTION']['translation'].push(function(property, value) {
+		if (property === 'translation') {
+			X3DJSON.nodeUtil('DECLflower_INSTANCE_transform','translation',typeof X3DJSON['Obj']['DECLflower_INSTANCE_Bounce'].translation === "function" ? X3DJSON['Obj']['DECLflower_INSTANCE_Bounce'].translation() : X3DJSON['Obj']['DECLflower_INSTANCE_Bounce'].translation, __eventTime);
+		}
 });
-var config = { attributes: true, childList: true, attributeFilter:['cycleTime'] };
-X3DJSON['ROUTE']['DECLflower_INSTANCE38000_TourTime']['cycleTime']['DECLflower_INSTANCE38000_Bounce']['set_fraction']['FROM'].observe(X3DJSON.nodeUtil('DECLflower_INSTANCE38000_TourTime'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['DECLflower_INSTANCE38000_TourTime'] === 'undefined') {
-X3DJSON['ROUTE']['DECLflower_INSTANCE38000_TourTime'] = {};
-}
-if (typeof X3DJSON['ROUTE']['DECLflower_INSTANCE38000_TourTime']['cycleTime'] === 'undefined') {
-X3DJSON['ROUTE']['DECLflower_INSTANCE38000_TourTime']['cycleTime'] = {};
-}
-if (typeof X3DJSON['ROUTE']['DECLflower_INSTANCE38000_TourTime']['cycleTime']['DECLflower_INSTANCE38000_Bounce'] === 'undefined') {
-X3DJSON['ROUTE']['DECLflower_INSTANCE38000_TourTime']['cycleTime']['DECLflower_INSTANCE38000_Bounce'] = {};
-}
-if (typeof X3DJSON['ROUTE']['DECLflower_INSTANCE38000_TourTime']['cycleTime']['DECLflower_INSTANCE38000_Bounce']['set_fraction'] === 'undefined') {
-X3DJSON['ROUTE']['DECLflower_INSTANCE38000_TourTime']['cycleTime']['DECLflower_INSTANCE38000_Bounce']['set_fraction'] = {};
-}
-
-X3DJSON['ROUTE']['DECLflower_INSTANCE38000_TourTime']['cycleTime']['DECLflower_INSTANCE38000_Bounce']['set_fraction']['TO'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'set_fraction');
-			if (typeof X3DJSON['Obj']['DECLflower_INSTANCE38000_Bounce'].set_fraction === "function") X3DJSON['Obj']['DECLflower_INSTANCE38000_Bounce'].set_fraction(X3DJSON.nodeUtil('DECLflower_INSTANCE38000_Bounce','set_fraction'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['set_fraction'] };
-X3DJSON['ROUTE']['DECLflower_INSTANCE38000_TourTime']['cycleTime']['DECLflower_INSTANCE38000_Bounce']['set_fraction']['TO'].observe(X3DJSON.nodeUtil('DECLflower_INSTANCE38000_Bounce'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['DECLflower_INSTANCE38000_Bounce'] === 'undefined') {
-X3DJSON['ROUTE']['DECLflower_INSTANCE38000_Bounce'] = {};
-}
-if (typeof X3DJSON['ROUTE']['DECLflower_INSTANCE38000_Bounce']['translation_changed'] === 'undefined') {
-X3DJSON['ROUTE']['DECLflower_INSTANCE38000_Bounce']['translation_changed'] = {};
-}
-if (typeof X3DJSON['ROUTE']['DECLflower_INSTANCE38000_Bounce']['translation_changed']['DECLflower_INSTANCE38000_transform'] === 'undefined') {
-X3DJSON['ROUTE']['DECLflower_INSTANCE38000_Bounce']['translation_changed']['DECLflower_INSTANCE38000_transform'] = {};
-}
-if (typeof X3DJSON['ROUTE']['DECLflower_INSTANCE38000_Bounce']['translation_changed']['DECLflower_INSTANCE38000_transform']['set_translation'] === 'undefined') {
-X3DJSON['ROUTE']['DECLflower_INSTANCE38000_Bounce']['translation_changed']['DECLflower_INSTANCE38000_transform']['set_translation'] = {};
-}
-
-X3DJSON['ROUTE']['DECLflower_INSTANCE38000_Bounce']['translation_changed']['DECLflower_INSTANCE38000_transform']['set_translation']['FROM'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'translation_changed');
-			X3DJSON.nodeUtil('DECLflower_INSTANCE38000_transform','set_translation',X3DJSON.nodeUtil('DECLflower_INSTANCE38000_Bounce','translation_changed'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['translation_changed'] };
-X3DJSON['ROUTE']['DECLflower_INSTANCE38000_Bounce']['translation_changed']['DECLflower_INSTANCE38000_transform']['set_translation']['FROM'].observe(X3DJSON.nodeUtil('DECLflower_INSTANCE38000_Bounce'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['DECLflower_INSTANCE38000_Bounce'] === 'undefined') {
-X3DJSON['ROUTE']['DECLflower_INSTANCE38000_Bounce'] = {};
-}
-if (typeof X3DJSON['ROUTE']['DECLflower_INSTANCE38000_Bounce']['translation_changed'] === 'undefined') {
-X3DJSON['ROUTE']['DECLflower_INSTANCE38000_Bounce']['translation_changed'] = {};
-}
-if (typeof X3DJSON['ROUTE']['DECLflower_INSTANCE38000_Bounce']['translation_changed']['DECLflower_INSTANCE38000_transform'] === 'undefined') {
-X3DJSON['ROUTE']['DECLflower_INSTANCE38000_Bounce']['translation_changed']['DECLflower_INSTANCE38000_transform'] = {};
-}
-if (typeof X3DJSON['ROUTE']['DECLflower_INSTANCE38000_Bounce']['translation_changed']['DECLflower_INSTANCE38000_transform']['set_translation'] === 'undefined') {
-X3DJSON['ROUTE']['DECLflower_INSTANCE38000_Bounce']['translation_changed']['DECLflower_INSTANCE38000_transform']['set_translation'] = {};
-}
-
-X3DJSON['ROUTE']['DECLflower_INSTANCE38000_Bounce']['translation_changed']['DECLflower_INSTANCE38000_transform']['set_translation']['TO'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'set_translation');
-			if (typeof X3DJSON['Obj']['DECLflower_INSTANCE38000_transform'].set_translation === "function") X3DJSON['Obj']['DECLflower_INSTANCE38000_transform'].set_translation(X3DJSON.nodeUtil('DECLflower_INSTANCE38000_transform','set_translation'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['set_translation'] };
-X3DJSON['ROUTE']['DECLflower_INSTANCE38000_Bounce']['translation_changed']['DECLflower_INSTANCE38000_transform']['set_translation']['TO'].observe(X3DJSON.nodeUtil('DECLflower_INSTANCE38000_transform'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['DECLflower_INSTANCE39000_TourTime'] === 'undefined') {
-X3DJSON['ROUTE']['DECLflower_INSTANCE39000_TourTime'] = {};
-}
-if (typeof X3DJSON['ROUTE']['DECLflower_INSTANCE39000_TourTime']['cycleTime'] === 'undefined') {
-X3DJSON['ROUTE']['DECLflower_INSTANCE39000_TourTime']['cycleTime'] = {};
-}
-if (typeof X3DJSON['ROUTE']['DECLflower_INSTANCE39000_TourTime']['cycleTime']['DECLflower_INSTANCE39000_Bounce'] === 'undefined') {
-X3DJSON['ROUTE']['DECLflower_INSTANCE39000_TourTime']['cycleTime']['DECLflower_INSTANCE39000_Bounce'] = {};
-}
-if (typeof X3DJSON['ROUTE']['DECLflower_INSTANCE39000_TourTime']['cycleTime']['DECLflower_INSTANCE39000_Bounce']['set_fraction'] === 'undefined') {
-X3DJSON['ROUTE']['DECLflower_INSTANCE39000_TourTime']['cycleTime']['DECLflower_INSTANCE39000_Bounce']['set_fraction'] = {};
-}
-
-X3DJSON['ROUTE']['DECLflower_INSTANCE39000_TourTime']['cycleTime']['DECLflower_INSTANCE39000_Bounce']['set_fraction']['FROM'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'cycleTime');
-			X3DJSON.nodeUtil('DECLflower_INSTANCE39000_Bounce','set_fraction',X3DJSON.nodeUtil('DECLflower_INSTANCE39000_TourTime','cycleTime'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['cycleTime'] };
-X3DJSON['ROUTE']['DECLflower_INSTANCE39000_TourTime']['cycleTime']['DECLflower_INSTANCE39000_Bounce']['set_fraction']['FROM'].observe(X3DJSON.nodeUtil('DECLflower_INSTANCE39000_TourTime'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['DECLflower_INSTANCE39000_TourTime'] === 'undefined') {
-X3DJSON['ROUTE']['DECLflower_INSTANCE39000_TourTime'] = {};
-}
-if (typeof X3DJSON['ROUTE']['DECLflower_INSTANCE39000_TourTime']['cycleTime'] === 'undefined') {
-X3DJSON['ROUTE']['DECLflower_INSTANCE39000_TourTime']['cycleTime'] = {};
-}
-if (typeof X3DJSON['ROUTE']['DECLflower_INSTANCE39000_TourTime']['cycleTime']['DECLflower_INSTANCE39000_Bounce'] === 'undefined') {
-X3DJSON['ROUTE']['DECLflower_INSTANCE39000_TourTime']['cycleTime']['DECLflower_INSTANCE39000_Bounce'] = {};
-}
-if (typeof X3DJSON['ROUTE']['DECLflower_INSTANCE39000_TourTime']['cycleTime']['DECLflower_INSTANCE39000_Bounce']['set_fraction'] === 'undefined') {
-X3DJSON['ROUTE']['DECLflower_INSTANCE39000_TourTime']['cycleTime']['DECLflower_INSTANCE39000_Bounce']['set_fraction'] = {};
-}
-
-X3DJSON['ROUTE']['DECLflower_INSTANCE39000_TourTime']['cycleTime']['DECLflower_INSTANCE39000_Bounce']['set_fraction']['TO'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'set_fraction');
-			if (typeof X3DJSON['Obj']['DECLflower_INSTANCE39000_Bounce'].set_fraction === "function") X3DJSON['Obj']['DECLflower_INSTANCE39000_Bounce'].set_fraction(X3DJSON.nodeUtil('DECLflower_INSTANCE39000_Bounce','set_fraction'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['set_fraction'] };
-X3DJSON['ROUTE']['DECLflower_INSTANCE39000_TourTime']['cycleTime']['DECLflower_INSTANCE39000_Bounce']['set_fraction']['TO'].observe(X3DJSON.nodeUtil('DECLflower_INSTANCE39000_Bounce'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['DECLflower_INSTANCE39000_Bounce'] === 'undefined') {
-X3DJSON['ROUTE']['DECLflower_INSTANCE39000_Bounce'] = {};
-}
-if (typeof X3DJSON['ROUTE']['DECLflower_INSTANCE39000_Bounce']['translation_changed'] === 'undefined') {
-X3DJSON['ROUTE']['DECLflower_INSTANCE39000_Bounce']['translation_changed'] = {};
-}
-if (typeof X3DJSON['ROUTE']['DECLflower_INSTANCE39000_Bounce']['translation_changed']['DECLflower_INSTANCE39000_transform'] === 'undefined') {
-X3DJSON['ROUTE']['DECLflower_INSTANCE39000_Bounce']['translation_changed']['DECLflower_INSTANCE39000_transform'] = {};
-}
-if (typeof X3DJSON['ROUTE']['DECLflower_INSTANCE39000_Bounce']['translation_changed']['DECLflower_INSTANCE39000_transform']['set_translation'] === 'undefined') {
-X3DJSON['ROUTE']['DECLflower_INSTANCE39000_Bounce']['translation_changed']['DECLflower_INSTANCE39000_transform']['set_translation'] = {};
-}
-
-X3DJSON['ROUTE']['DECLflower_INSTANCE39000_Bounce']['translation_changed']['DECLflower_INSTANCE39000_transform']['set_translation']['FROM'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'translation_changed');
-			X3DJSON.nodeUtil('DECLflower_INSTANCE39000_transform','set_translation',X3DJSON.nodeUtil('DECLflower_INSTANCE39000_Bounce','translation_changed'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['translation_changed'] };
-X3DJSON['ROUTE']['DECLflower_INSTANCE39000_Bounce']['translation_changed']['DECLflower_INSTANCE39000_transform']['set_translation']['FROM'].observe(X3DJSON.nodeUtil('DECLflower_INSTANCE39000_Bounce'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['DECLflower_INSTANCE39000_Bounce'] === 'undefined') {
-X3DJSON['ROUTE']['DECLflower_INSTANCE39000_Bounce'] = {};
-}
-if (typeof X3DJSON['ROUTE']['DECLflower_INSTANCE39000_Bounce']['translation_changed'] === 'undefined') {
-X3DJSON['ROUTE']['DECLflower_INSTANCE39000_Bounce']['translation_changed'] = {};
-}
-if (typeof X3DJSON['ROUTE']['DECLflower_INSTANCE39000_Bounce']['translation_changed']['DECLflower_INSTANCE39000_transform'] === 'undefined') {
-X3DJSON['ROUTE']['DECLflower_INSTANCE39000_Bounce']['translation_changed']['DECLflower_INSTANCE39000_transform'] = {};
-}
-if (typeof X3DJSON['ROUTE']['DECLflower_INSTANCE39000_Bounce']['translation_changed']['DECLflower_INSTANCE39000_transform']['set_translation'] === 'undefined') {
-X3DJSON['ROUTE']['DECLflower_INSTANCE39000_Bounce']['translation_changed']['DECLflower_INSTANCE39000_transform']['set_translation'] = {};
-}
-
-X3DJSON['ROUTE']['DECLflower_INSTANCE39000_Bounce']['translation_changed']['DECLflower_INSTANCE39000_transform']['set_translation']['TO'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'set_translation');
-			if (typeof X3DJSON['Obj']['DECLflower_INSTANCE39000_transform'].set_translation === "function") X3DJSON['Obj']['DECLflower_INSTANCE39000_transform'].set_translation(X3DJSON.nodeUtil('DECLflower_INSTANCE39000_transform','set_translation'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['set_translation'] };
-X3DJSON['ROUTE']['DECLflower_INSTANCE39000_Bounce']['translation_changed']['DECLflower_INSTANCE39000_transform']['set_translation']['TO'].observe(X3DJSON.nodeUtil('DECLflower_INSTANCE39000_transform'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['DECLflower_INSTANCE40000_TourTime'] === 'undefined') {
-X3DJSON['ROUTE']['DECLflower_INSTANCE40000_TourTime'] = {};
-}
-if (typeof X3DJSON['ROUTE']['DECLflower_INSTANCE40000_TourTime']['cycleTime'] === 'undefined') {
-X3DJSON['ROUTE']['DECLflower_INSTANCE40000_TourTime']['cycleTime'] = {};
-}
-if (typeof X3DJSON['ROUTE']['DECLflower_INSTANCE40000_TourTime']['cycleTime']['DECLflower_INSTANCE40000_Bounce'] === 'undefined') {
-X3DJSON['ROUTE']['DECLflower_INSTANCE40000_TourTime']['cycleTime']['DECLflower_INSTANCE40000_Bounce'] = {};
-}
-if (typeof X3DJSON['ROUTE']['DECLflower_INSTANCE40000_TourTime']['cycleTime']['DECLflower_INSTANCE40000_Bounce']['set_fraction'] === 'undefined') {
-X3DJSON['ROUTE']['DECLflower_INSTANCE40000_TourTime']['cycleTime']['DECLflower_INSTANCE40000_Bounce']['set_fraction'] = {};
-}
-
-X3DJSON['ROUTE']['DECLflower_INSTANCE40000_TourTime']['cycleTime']['DECLflower_INSTANCE40000_Bounce']['set_fraction']['FROM'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'cycleTime');
-			X3DJSON.nodeUtil('DECLflower_INSTANCE40000_Bounce','set_fraction',X3DJSON.nodeUtil('DECLflower_INSTANCE40000_TourTime','cycleTime'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['cycleTime'] };
-X3DJSON['ROUTE']['DECLflower_INSTANCE40000_TourTime']['cycleTime']['DECLflower_INSTANCE40000_Bounce']['set_fraction']['FROM'].observe(X3DJSON.nodeUtil('DECLflower_INSTANCE40000_TourTime'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['DECLflower_INSTANCE40000_TourTime'] === 'undefined') {
-X3DJSON['ROUTE']['DECLflower_INSTANCE40000_TourTime'] = {};
-}
-if (typeof X3DJSON['ROUTE']['DECLflower_INSTANCE40000_TourTime']['cycleTime'] === 'undefined') {
-X3DJSON['ROUTE']['DECLflower_INSTANCE40000_TourTime']['cycleTime'] = {};
-}
-if (typeof X3DJSON['ROUTE']['DECLflower_INSTANCE40000_TourTime']['cycleTime']['DECLflower_INSTANCE40000_Bounce'] === 'undefined') {
-X3DJSON['ROUTE']['DECLflower_INSTANCE40000_TourTime']['cycleTime']['DECLflower_INSTANCE40000_Bounce'] = {};
-}
-if (typeof X3DJSON['ROUTE']['DECLflower_INSTANCE40000_TourTime']['cycleTime']['DECLflower_INSTANCE40000_Bounce']['set_fraction'] === 'undefined') {
-X3DJSON['ROUTE']['DECLflower_INSTANCE40000_TourTime']['cycleTime']['DECLflower_INSTANCE40000_Bounce']['set_fraction'] = {};
-}
-
-X3DJSON['ROUTE']['DECLflower_INSTANCE40000_TourTime']['cycleTime']['DECLflower_INSTANCE40000_Bounce']['set_fraction']['TO'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'set_fraction');
-			if (typeof X3DJSON['Obj']['DECLflower_INSTANCE40000_Bounce'].set_fraction === "function") X3DJSON['Obj']['DECLflower_INSTANCE40000_Bounce'].set_fraction(X3DJSON.nodeUtil('DECLflower_INSTANCE40000_Bounce','set_fraction'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['set_fraction'] };
-X3DJSON['ROUTE']['DECLflower_INSTANCE40000_TourTime']['cycleTime']['DECLflower_INSTANCE40000_Bounce']['set_fraction']['TO'].observe(X3DJSON.nodeUtil('DECLflower_INSTANCE40000_Bounce'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['DECLflower_INSTANCE40000_Bounce'] === 'undefined') {
-X3DJSON['ROUTE']['DECLflower_INSTANCE40000_Bounce'] = {};
-}
-if (typeof X3DJSON['ROUTE']['DECLflower_INSTANCE40000_Bounce']['translation_changed'] === 'undefined') {
-X3DJSON['ROUTE']['DECLflower_INSTANCE40000_Bounce']['translation_changed'] = {};
-}
-if (typeof X3DJSON['ROUTE']['DECLflower_INSTANCE40000_Bounce']['translation_changed']['DECLflower_INSTANCE40000_transform'] === 'undefined') {
-X3DJSON['ROUTE']['DECLflower_INSTANCE40000_Bounce']['translation_changed']['DECLflower_INSTANCE40000_transform'] = {};
-}
-if (typeof X3DJSON['ROUTE']['DECLflower_INSTANCE40000_Bounce']['translation_changed']['DECLflower_INSTANCE40000_transform']['set_translation'] === 'undefined') {
-X3DJSON['ROUTE']['DECLflower_INSTANCE40000_Bounce']['translation_changed']['DECLflower_INSTANCE40000_transform']['set_translation'] = {};
-}
-
-X3DJSON['ROUTE']['DECLflower_INSTANCE40000_Bounce']['translation_changed']['DECLflower_INSTANCE40000_transform']['set_translation']['FROM'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'translation_changed');
-			X3DJSON.nodeUtil('DECLflower_INSTANCE40000_transform','set_translation',X3DJSON.nodeUtil('DECLflower_INSTANCE40000_Bounce','translation_changed'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['translation_changed'] };
-X3DJSON['ROUTE']['DECLflower_INSTANCE40000_Bounce']['translation_changed']['DECLflower_INSTANCE40000_transform']['set_translation']['FROM'].observe(X3DJSON.nodeUtil('DECLflower_INSTANCE40000_Bounce'), config);
-if (typeof X3DJSON['ROUTE'] === 'undefined') {
-X3DJSON['ROUTE'] = {};
-}
-if (typeof X3DJSON['ROUTE']['DECLflower_INSTANCE40000_Bounce'] === 'undefined') {
-X3DJSON['ROUTE']['DECLflower_INSTANCE40000_Bounce'] = {};
-}
-if (typeof X3DJSON['ROUTE']['DECLflower_INSTANCE40000_Bounce']['translation_changed'] === 'undefined') {
-X3DJSON['ROUTE']['DECLflower_INSTANCE40000_Bounce']['translation_changed'] = {};
-}
-if (typeof X3DJSON['ROUTE']['DECLflower_INSTANCE40000_Bounce']['translation_changed']['DECLflower_INSTANCE40000_transform'] === 'undefined') {
-X3DJSON['ROUTE']['DECLflower_INSTANCE40000_Bounce']['translation_changed']['DECLflower_INSTANCE40000_transform'] = {};
-}
-if (typeof X3DJSON['ROUTE']['DECLflower_INSTANCE40000_Bounce']['translation_changed']['DECLflower_INSTANCE40000_transform']['set_translation'] === 'undefined') {
-X3DJSON['ROUTE']['DECLflower_INSTANCE40000_Bounce']['translation_changed']['DECLflower_INSTANCE40000_transform']['set_translation'] = {};
-}
-
-X3DJSON['ROUTE']['DECLflower_INSTANCE40000_Bounce']['translation_changed']['DECLflower_INSTANCE40000_transform']['set_translation']['TO'] = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			console.log(mutation, 'set_translation');
-			if (typeof X3DJSON['Obj']['DECLflower_INSTANCE40000_transform'].set_translation === "function") X3DJSON['Obj']['DECLflower_INSTANCE40000_transform'].set_translation(X3DJSON.nodeUtil('DECLflower_INSTANCE40000_transform','set_translation'), __eventTime);
-		});
-});
-var config = { attributes: true, childList: true, attributeFilter:['set_translation'] };
-X3DJSON['ROUTE']['DECLflower_INSTANCE40000_Bounce']['translation_changed']['DECLflower_INSTANCE40000_transform']['set_translation']['TO'].observe(X3DJSON.nodeUtil('DECLflower_INSTANCE40000_transform'), config);
-			X3DJSON.nodeUtil('DECLflower_INSTANCE38000_Bounce','set_fraction',X3DJSON.nodeUtil('DECLflower_INSTANCE38000_TourTime','cycleTime'), __eventTime);
-			X3DJSON.nodeUtil('DECLflower_INSTANCE39000_Bounce','set_fraction',X3DJSON.nodeUtil('DECLflower_INSTANCE39000_TourTime','cycleTime'), __eventTime);
-			X3DJSON.nodeUtil('DECLflower_INSTANCE40000_Bounce','set_fraction',X3DJSON.nodeUtil('DECLflower_INSTANCE40000_TourTime','cycleTime'), __eventTime);
+			X3DJSON.nodeUtil('DECLflower_INSTANCE_transform','translation',typeof X3DJSON['Obj']['DECLflower_INSTANCE_Bounce'].translation === "function" ? X3DJSON['Obj']['DECLflower_INSTANCE_Bounce'].translation() : X3DJSON['Obj']['DECLflower_INSTANCE_Bounce'].translation, __eventTime);
+			X3DJSON['Obj']['DECLflower_INSTANCE_Bounce'].set_fraction(X3DJSON.nodeUtil('DECLflower_INSTANCE_TourTime','cycleTime'), __eventTime);
+			X3DJSON.nodeUtil('DECLflower_INSTANCE_transform','translation',typeof X3DJSON['Obj']['DECLflower_INSTANCE_Bounce'].translation === "function" ? X3DJSON['Obj']['DECLflower_INSTANCE_Bounce'].translation() : X3DJSON['Obj']['DECLflower_INSTANCE_Bounce'].translation, __eventTime);

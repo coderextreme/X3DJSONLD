@@ -41,7 +41,7 @@
         },
         {
           "@name": "translated",
-          "@content": "26 May 2017"
+          "@content": "03 June 2017"
         },
         {
           "@name": "generator",
@@ -96,7 +96,7 @@
                         "-children": [
                           {
                             "Shape": {
-                              "@DEF": "DECLProcess_INSTANCE89000_ShapeLeftDown",
+                              "@DEF": "DECLProcess_INSTANCE_ShapeLeftDown",
                               "-appearance": {
                                 "Appearance": {
                                   "-material": {
@@ -177,7 +177,7 @@
                         "-children": [
                           {
                             "Shape": {
-                              "@DEF": "DECLProcess_INSTANCE89000_ShapeUpRight",
+                              "@DEF": "DECLProcess_INSTANCE_ShapeUpRight",
                               "-appearance": {
                                 "Appearance": {
                                   "-material": {
@@ -258,7 +258,7 @@
                         "-children": [
                           {
                             "Shape": {
-                              "@USE": "DECLProcess_INSTANCE89000_ShapeUpRight"
+                              "@USE": "DECLProcess_INSTANCE_ShapeUpRight"
                             }
                           }
                         ]
@@ -277,7 +277,7 @@
                         "-children": [
                           {
                             "Shape": {
-                              "@USE": "DECLProcess_INSTANCE89000_ShapeLeftDown"
+                              "@USE": "DECLProcess_INSTANCE_ShapeLeftDown"
                             }
                           }
                         ]
@@ -308,7 +308,7 @@
                         "-children": [
                           {
                             "Shape": {
-                              "@DEF": "DECLProcess_INSTANCE90000_ShapeLeftDown",
+                              "@DEF": "DECLProcess_INSTANCE1000_ShapeLeftDown",
                               "-appearance": {
                                 "Appearance": {
                                   "-material": {
@@ -389,7 +389,7 @@
                         "-children": [
                           {
                             "Shape": {
-                              "@DEF": "DECLProcess_INSTANCE90000_ShapeUpRight",
+                              "@DEF": "DECLProcess_INSTANCE1000_ShapeUpRight",
                               "-appearance": {
                                 "Appearance": {
                                   "-material": {
@@ -470,7 +470,7 @@
                         "-children": [
                           {
                             "Shape": {
-                              "@USE": "DECLProcess_INSTANCE90000_ShapeUpRight"
+                              "@USE": "DECLProcess_INSTANCE1000_ShapeUpRight"
                             }
                           }
                         ]
@@ -489,7 +489,7 @@
                         "-children": [
                           {
                             "Shape": {
-                              "@USE": "DECLProcess_INSTANCE90000_ShapeLeftDown"
+                              "@USE": "DECLProcess_INSTANCE1000_ShapeLeftDown"
                             }
                           }
                         ]
@@ -525,7 +525,7 @@
                         "-children": [
                           {
                             "Shape": {
-                              "@DEF": "DECLProcess_INSTANCE91000_ShapeLeftDown",
+                              "@DEF": "DECLProcess_INSTANCE2000_ShapeLeftDown",
                               "-appearance": {
                                 "Appearance": {
                                   "-material": {
@@ -606,7 +606,7 @@
                         "-children": [
                           {
                             "Shape": {
-                              "@DEF": "DECLProcess_INSTANCE91000_ShapeUpRight",
+                              "@DEF": "DECLProcess_INSTANCE2000_ShapeUpRight",
                               "-appearance": {
                                 "Appearance": {
                                   "-material": {
@@ -687,7 +687,7 @@
                         "-children": [
                           {
                             "Shape": {
-                              "@USE": "DECLProcess_INSTANCE91000_ShapeUpRight"
+                              "@USE": "DECLProcess_INSTANCE2000_ShapeUpRight"
                             }
                           }
                         ]
@@ -706,7 +706,7 @@
                         "-children": [
                           {
                             "Shape": {
-                              "@USE": "DECLProcess_INSTANCE91000_ShapeLeftDown"
+                              "@USE": "DECLProcess_INSTANCE2000_ShapeLeftDown"
                             }
                           }
                         ]
