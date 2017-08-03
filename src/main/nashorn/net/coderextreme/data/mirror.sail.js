@@ -66,9 +66,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .addField(new fieldObject().setType(fieldObject.TYPE_MFSTRING).setName("bottom_changed").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
             .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("set_fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
             .addField(new fieldObject().setType(fieldObject.TYPE_SFINT32).setName("old").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("-1"))
-            .setSourceCode(" \n"+
-"\n"+
-"ecmascript:\n"+
+            .setSourceCode("ecmascript:\n"+
 "        function set_fraction( f, tm ) {\n"+
 "	    var side = Math.floor(f*frontUrls.length);\n"+
 "	    if (side > frontUrls.length-1) {\n"+

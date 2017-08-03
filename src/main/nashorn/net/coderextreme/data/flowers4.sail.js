@@ -40,10 +40,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("set_fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
           .addField(new fieldObject().setType(fieldObject.TYPE_MFVEC3F).setName("coordinates").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT))
           .addField(new fieldObject().setType(fieldObject.TYPE_MFINT32).setName("coordIndexes").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-          .setSourceCode("\n"+
-"\n"+
-"\n"+
-"ecmascript:\n"+
+          .setSourceCode("ecmascript:\n"+
 "\n"+
 "var e = 5;\n"+
 "var f = 5;\n"+

@@ -22,20 +22,15 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addChild(new ScriptObject().setDEF("MoveCylinder")
             .addField(new fieldObject().setType(fieldObject.TYPE_SFTIME).setName("set_cycle").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
             .addField(new fieldObject().setType(fieldObject.TYPE_MFVEC3F).setName("spine").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("-50 -50 0 50 50 0"))
-            .setSourceCode("\n"+
-"\n"+
-"ecmascript:\n"+
+            .setSourceCode("ecmascript:\n"+
 "\n"+
 "                function set_cycle(value) {\n"+
 "                        Browser.print(value);\n"+
-"                        var endA = new SFVec3f(spine[0][0]*Math.random()*2, spine[0][1]*Math.random()*2, spine[0][2]*Math.random()*2);\n"+
-"                        var endB = new SFVec3f(spine[1][0]*Math.random()*2, spine[1][1]*Math.random()*2, spine[1][2]*Math.random()*2);\n"+
-"		        spine = new MFVec3f(endA, endB);\n"+
-"                }\n"+
-"                function set_spine(value) {\n"+
-"                    spine = value;\n"+
+"                        var endA = new SFVec3f(spine[0].x*Math.random()*2, spine[0].y*Math.random()*2, spine[0].z*Math.random()*2);\n"+
+"                        var endB = new SFVec3f(spine[1].x*Math.random()*2, spine[1].y*Math.random()*2, spine[1].z*Math.random()*2);\n"+
+"		        spine = new MFVec3f([endA, endB]);\n"+
 "                }\n"+
 ""))
           .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("cycleTime").setToNode("MoveCylinder").setToField("set_cycle"))
-          .addChild(new ROUTEObject().setFromNode("MoveCylinder").setFromField("spine").setToNode("extrusion").setToField("set_spine"))))      ;
+          .addChild(new ROUTEObject().setFromNode("MoveCylinder").setFromField("spine_changed").setToNode("extrusion").setToField("spine"))))      ;
     X3D0.toFileX3D("../data/extrusion.new.x3d");
