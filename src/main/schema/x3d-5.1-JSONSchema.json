@@ -2597,6 +2597,9 @@
         {
           "type": "object",
           "properties": {
+            "field": {
+              "$ref": "#/definitions/field"
+            },
             "-children": {
               "$ref": "#/definitions/-childrenStatements"
             },
@@ -12269,6 +12272,9 @@
         {
           "type": "object",
           "properties": {
+            "field": {
+              "$ref": "#/definitions/field"
+            },
             "-children": {
               "$ref": "#/definitions/-childrenStatements"
             },
@@ -15186,6 +15192,16 @@
         {
           "type": "object",
           "properties": {
+            "#sourceText": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string"
+              }
+            },
+            "field": {
+              "$ref": "#/definitions/field"
+            },
             "-children": {
               "$ref": "#/definitions/-childrenStatements"
             },
@@ -15388,6 +15404,13 @@
         {
           "type": "object",
           "properties": {
+            "#sourceText": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string"
+              }
+            },
             "-children": {
               "$ref": "#/definitions/-childrenStatements"
             },
@@ -15442,6 +15465,16 @@
         {
           "type": "object",
           "properties": {
+            "#sourceText": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string"
+              }
+            },
+            "field": {
+              "$ref": "#/definitions/field"
+            },
             "-children": {
               "$ref": "#/definitions/-childrenStatements"
             },
@@ -20543,6 +20576,21 @@
           "#comment": {
             "type": "string"
           },
+          "EXPORT": {
+            "$ref": "#/definitions/EXPORT"
+          },
+          "ExternProtoDeclare": {
+            "$ref": "#/definitions/ExternProtoDeclare"
+          },
+          "IMPORT": {
+            "$ref": "#/definitions/IMPORT"
+          },
+          "ProtoDeclare": {
+            "$ref": "#/definitions/ProtoDeclare"
+          },
+          "ROUTE": {
+            "$ref": "#/definitions/ROUTE"
+          },
           "Background": {
             "$ref": "#/definitions/Background"
           },
@@ -21257,6 +21305,21 @@
     "-X3DChildNodeSFNode": {
       "type": "object",
       "properties": {
+        "EXPORT": {
+          "$ref": "#/definitions/EXPORT"
+        },
+        "ExternProtoDeclare": {
+          "$ref": "#/definitions/ExternProtoDeclare"
+        },
+        "IMPORT": {
+          "$ref": "#/definitions/IMPORT"
+        },
+        "ProtoDeclare": {
+          "$ref": "#/definitions/ProtoDeclare"
+        },
+        "ROUTE": {
+          "$ref": "#/definitions/ROUTE"
+        },
         "Background": {
           "$ref": "#/definitions/Background"
         },
@@ -21952,6 +22015,21 @@
           },
           "Appearance": {
             "$ref": "#/definitions/Appearance"
+          },
+          "EXPORT": {
+            "$ref": "#/definitions/EXPORT"
+          },
+          "ExternProtoDeclare": {
+            "$ref": "#/definitions/ExternProtoDeclare"
+          },
+          "IMPORT": {
+            "$ref": "#/definitions/IMPORT"
+          },
+          "ProtoDeclare": {
+            "$ref": "#/definitions/ProtoDeclare"
+          },
+          "ROUTE": {
+            "$ref": "#/definitions/ROUTE"
           },
           "Background": {
             "$ref": "#/definitions/Background"
@@ -23474,6 +23552,21 @@
         "properties": {
           "#comment": {
             "type": "string"
+          },
+          "EXPORT": {
+            "$ref": "#/definitions/EXPORT"
+          },
+          "ExternProtoDeclare": {
+            "$ref": "#/definitions/ExternProtoDeclare"
+          },
+          "IMPORT": {
+            "$ref": "#/definitions/IMPORT"
+          },
+          "ProtoDeclare": {
+            "$ref": "#/definitions/ProtoDeclare"
+          },
+          "ROUTE": {
+            "$ref": "#/definitions/ROUTE"
           },
           "Background": {
             "$ref": "#/definitions/Background"
