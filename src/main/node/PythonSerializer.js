@@ -132,7 +132,8 @@ PythonSerializer.prototype = {
 								+'"';
 						}
 						method = "set"+method.charAt(0).toUpperCase() + method.slice(1);
-						str += '.'+method+"("+strval+")";
+						str += element.nodeName+stack[0];
+						str += '.'+method+"("+strval+")\n";
 					}
 				}
 			} catch (e) {
