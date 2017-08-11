@@ -23,7 +23,7 @@ PythonSerializer.prototype = {
 
 		stack.unshift(this.preno);
 		this.preno++;
-		str += element.nodeName+stack[0]+" =  "+element.nodeName+"Object()";
+		str += element.nodeName+stack[0]+" =  "+element.nodeName+"Object()\n";
 		str += this.subSerializeToString(element, mapToMethod, fieldTypes, 3, stack);
 		str += "\n";
 		str += ""+element.nodeName+stack[0]+".toFileX3D(\""+clazz+".new.x3d\")\n";
@@ -272,8 +272,8 @@ PythonSerializer.prototype = {
 						}
 						strval = '"'+attrs[a].nodeValue.replace(/\n/g, '\\\\n').replace(/\\?"/g, "\\\"")+'"';
 					}
-					
-					str += '.'+method+"("+strval+")";
+					str += element.nodeName+stack[0];
+					str += '.'+method+"("+strval+")\n";
 				}
 			} catch (e) {
 				console.error(e);
@@ -294,7 +294,7 @@ PythonSerializer.prototype = {
 				this.preno++;
 				ch += node.nodeName+stack[0] + " = ";
 
-				ch += ""+node.nodeName+"Object()";
+				ch += ""+node.nodeName+"Object()\n";
 				ch += this.subSerializeToString(node, mapToMethod, fieldTypes, n+1, stack);
 				/*
 				if (element.nodeName === "Appearance" && node.NodeName === "ComposedShader") {
