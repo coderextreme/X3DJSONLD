@@ -36,7 +36,7 @@
           },
           {
             "@name":"translated",
-            "@content":"03 June 2017"
+            "@content":"12 August 2017"
           },
           {
             "@name":"generator",
@@ -154,8 +154,7 @@
                           }
                         ],
                         "#sourceText":[
-"",
-" ecmascript:",
+"ecmascript:",
 "\t\t\t\t\tfunction set_cycle(value) {",
 "                                                old = translation;",
 "\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
@@ -285,8 +284,7 @@
                             ]
                         },
                         "#sourceText":[
-"",
-" ecmascript:",
+"ecmascript:",
 "",
 "                function set_endA(value) {",
 "\t\t    if (typeof spine === \"undefined\") {",

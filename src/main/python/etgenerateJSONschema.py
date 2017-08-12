@@ -116,10 +116,6 @@ class ClassPrinter:
     def printField(self, field):
         str = '\t\t\t\t\t"@' + field.get("name") + '" : {\n'
         if field.get("name") != "value" or  (self.name != 'field' and self.name != 'fieldValue'):
-            #if field.get('additionalEnumerationValuesAllowed'):
-            #    str += '\t\t\t\t\t\t"oneOf": [\n'
-            #    str += '\t\t\t\t\t\t\t{ "type": "string" },\n'
-            #    str += '\t\t\t\t\t\t\t{\n'
             if not field.get("type").startswith("MF"):
                 try:
                     str += '\t\t\t\t\t\t"maximum" : '+field.get("maxExclusive") + ',\n'
@@ -146,18 +142,19 @@ class ClassPrinter:
                 enumerations = field.iter("enumeration")
                 enums = []
                 if enumerations is not None:
-                    for enum in enumerations:
-                        val = enum.get("value")
-                        if ' ' in val:
-                            val = '"'+val.replace('"', '\\"')+'"'
-                        elif not '"' in val:
-                            val = '"'+val+'"'
-                        enums.append(val)
-                    if enums != []:
-                        str += '\t\t\t\t\t\t"enum": [\n'
-                        str += '\t\t\t\t\t\t\t'
-                        str += ',\n\t\t\t\t\t\t\t'.join(enums)
-                        str += '\n\t\t\t\t\t\t],\n'
+                    if field.get('additionalEnumerationValuesAllowed') is None:
+                        for enum in enumerations:
+                            val = enum.get("value")
+                            if ' ' in val:
+                                val = '"'+val.replace('"', '\\"')+'"'
+                            elif not '"' in val:
+                                val = '"'+val+'"'
+                            enums.append(val)
+                        if enums != []:
+                            str += '\t\t\t\t\t\t"enum": [\n'
+                            str += '\t\t\t\t\t\t\t'
+                            str += ',\n\t\t\t\t\t\t\t'.join(enums)
+                            str += '\n\t\t\t\t\t\t],\n'
 
 
                 try:  # default value
@@ -360,8 +357,6 @@ class ClassPrinter:
                                 else:
                                     str += '\t\t\t\t\t\t\t"default":'+firstValue+',\n'
                         str += '\t\t\t\t\t\t}'
-            #if field.get('additionalEnumerationValuesAllowed'):
-            #    str += '}]'
         str += '\t\t\t\t\t},\n'
         return str
 

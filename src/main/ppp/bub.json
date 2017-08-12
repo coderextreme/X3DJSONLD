@@ -29,7 +29,7 @@
         },
         {
           "@name": "translated",
-          "@content": "03 June 2017"
+          "@content": "10 August 2017"
         },
         {
           "@name": "generator",
@@ -312,6 +312,88 @@
           }
         },
         {
+          "Script": {
+            "@DEF": "DECLBubble_INSTANCE_Bounce",
+            "field": [
+              {
+                "@name": "translation",
+                "@accessType": "inputOutput",
+                "@type": "SFVec3f",
+                "@value": [
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "@name": "velocity",
+                "@accessType": "inputOutput",
+                "@type": "SFVec3f",
+                "@value": [
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "@name": "set_fraction",
+                "@accessType": "inputOnly",
+                "@type": "SFTime"
+              }
+            ],
+            "#sourceText": [
+              "ecmascript:",
+              "\t\t\tfunction initialize() {",
+              "\t\t\t    translation = new SFVec3f(0, 0, 0);",
+              "\t\t\t    velocity = new SFVec3f(",
+              "\t\t\t    \tMath.random() - 0.5,",
+              "\t\t\t\tMath.random() - 0.5,",
+              "\t\t\t\tMath.random() - 0.5);",
+              "\t\t\t}",
+              "\t\t\tfunction set_fraction() {",
+              "\t\t\t    translation = new SFVec3f(",
+              "\t\t\t    \ttranslation.x + velocity.x,",
+              "\t\t\t\ttranslation.y + velocity.y,",
+              "\t\t\t\ttranslation.z + velocity.z);",
+              "\t\t\t    if (Math.abs(translation.x) > 10) {",
+              "\t\t\t\tinitialize();",
+              "\t\t\t    } else if (Math.abs(translation.y) > 10) {",
+              "\t\t\t\tinitialize();",
+              "\t\t\t    } else if (Math.abs(translation.z) > 10) {",
+              "\t\t\t\tinitialize();",
+              "\t\t\t    } else {",
+              "\t\t\t\tvelocity.x += Math.random() * 0.2 - 0.1;",
+              "\t\t\t\tvelocity.y += Math.random() * 0.2 - 0.1;",
+              "\t\t\t\tvelocity.z += Math.random() * 0.2 - 0.1;",
+              "\t\t\t    }",
+              "\t\t\t}"
+            ]
+          }
+        },
+        {
+          "TimeSensor": {
+            "@DEF": "DECLBubble_INSTANCE_TourTime",
+            "@cycleInterval": 0.15,
+            "@loop": true
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "DECLBubble_INSTANCE_TourTime",
+            "@fromField": "cycleTime",
+            "@toNode": "DECLBubble_INSTANCE_Bounce",
+            "@toField": "set_fraction"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "DECLBubble_INSTANCE_Bounce",
+            "@fromField": "translation_changed",
+            "@toNode": "DECLBubble_INSTANCE_transform",
+            "@toField": "set_translation"
+          }
+        },
+        {
           "Transform": {
             "@DEF": "DECLBubble_INSTANCE1000_transform",
             "-children": [
@@ -538,6 +620,88 @@
           }
         },
         {
+          "Script": {
+            "@DEF": "DECLBubble_INSTANCE1000_Bounce",
+            "field": [
+              {
+                "@name": "translation",
+                "@accessType": "inputOutput",
+                "@type": "SFVec3f",
+                "@value": [
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "@name": "velocity",
+                "@accessType": "inputOutput",
+                "@type": "SFVec3f",
+                "@value": [
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "@name": "set_fraction",
+                "@accessType": "inputOnly",
+                "@type": "SFTime"
+              }
+            ],
+            "#sourceText": [
+              "ecmascript:",
+              "\t\t\tfunction initialize() {",
+              "\t\t\t    translation = new SFVec3f(0, 0, 0);",
+              "\t\t\t    velocity = new SFVec3f(",
+              "\t\t\t    \tMath.random() - 0.5,",
+              "\t\t\t\tMath.random() - 0.5,",
+              "\t\t\t\tMath.random() - 0.5);",
+              "\t\t\t}",
+              "\t\t\tfunction set_fraction() {",
+              "\t\t\t    translation = new SFVec3f(",
+              "\t\t\t    \ttranslation.x + velocity.x,",
+              "\t\t\t\ttranslation.y + velocity.y,",
+              "\t\t\t\ttranslation.z + velocity.z);",
+              "\t\t\t    if (Math.abs(translation.x) > 10) {",
+              "\t\t\t\tinitialize();",
+              "\t\t\t    } else if (Math.abs(translation.y) > 10) {",
+              "\t\t\t\tinitialize();",
+              "\t\t\t    } else if (Math.abs(translation.z) > 10) {",
+              "\t\t\t\tinitialize();",
+              "\t\t\t    } else {",
+              "\t\t\t\tvelocity.x += Math.random() * 0.2 - 0.1;",
+              "\t\t\t\tvelocity.y += Math.random() * 0.2 - 0.1;",
+              "\t\t\t\tvelocity.z += Math.random() * 0.2 - 0.1;",
+              "\t\t\t    }",
+              "\t\t\t}"
+            ]
+          }
+        },
+        {
+          "TimeSensor": {
+            "@DEF": "DECLBubble_INSTANCE1000_TourTime",
+            "@cycleInterval": 0.15,
+            "@loop": true
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "DECLBubble_INSTANCE1000_TourTime",
+            "@fromField": "cycleTime",
+            "@toNode": "DECLBubble_INSTANCE1000_Bounce",
+            "@toField": "set_fraction"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "DECLBubble_INSTANCE1000_Bounce",
+            "@fromField": "translation_changed",
+            "@toNode": "DECLBubble_INSTANCE1000_transform",
+            "@toField": "set_translation"
+          }
+        },
+        {
           "Transform": {
             "@DEF": "DECLBubble_INSTANCE2000_transform",
             "-children": [
@@ -761,6 +925,88 @@
                 }
               }
             ]
+          }
+        },
+        {
+          "Script": {
+            "@DEF": "DECLBubble_INSTANCE2000_Bounce",
+            "field": [
+              {
+                "@name": "translation",
+                "@accessType": "inputOutput",
+                "@type": "SFVec3f",
+                "@value": [
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "@name": "velocity",
+                "@accessType": "inputOutput",
+                "@type": "SFVec3f",
+                "@value": [
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "@name": "set_fraction",
+                "@accessType": "inputOnly",
+                "@type": "SFTime"
+              }
+            ],
+            "#sourceText": [
+              "ecmascript:",
+              "\t\t\tfunction initialize() {",
+              "\t\t\t    translation = new SFVec3f(0, 0, 0);",
+              "\t\t\t    velocity = new SFVec3f(",
+              "\t\t\t    \tMath.random() - 0.5,",
+              "\t\t\t\tMath.random() - 0.5,",
+              "\t\t\t\tMath.random() - 0.5);",
+              "\t\t\t}",
+              "\t\t\tfunction set_fraction() {",
+              "\t\t\t    translation = new SFVec3f(",
+              "\t\t\t    \ttranslation.x + velocity.x,",
+              "\t\t\t\ttranslation.y + velocity.y,",
+              "\t\t\t\ttranslation.z + velocity.z);",
+              "\t\t\t    if (Math.abs(translation.x) > 10) {",
+              "\t\t\t\tinitialize();",
+              "\t\t\t    } else if (Math.abs(translation.y) > 10) {",
+              "\t\t\t\tinitialize();",
+              "\t\t\t    } else if (Math.abs(translation.z) > 10) {",
+              "\t\t\t\tinitialize();",
+              "\t\t\t    } else {",
+              "\t\t\t\tvelocity.x += Math.random() * 0.2 - 0.1;",
+              "\t\t\t\tvelocity.y += Math.random() * 0.2 - 0.1;",
+              "\t\t\t\tvelocity.z += Math.random() * 0.2 - 0.1;",
+              "\t\t\t    }",
+              "\t\t\t}"
+            ]
+          }
+        },
+        {
+          "TimeSensor": {
+            "@DEF": "DECLBubble_INSTANCE2000_TourTime",
+            "@cycleInterval": 0.15,
+            "@loop": true
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "DECLBubble_INSTANCE2000_TourTime",
+            "@fromField": "cycleTime",
+            "@toNode": "DECLBubble_INSTANCE2000_Bounce",
+            "@toField": "set_fraction"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "DECLBubble_INSTANCE2000_Bounce",
+            "@fromField": "translation_changed",
+            "@toNode": "DECLBubble_INSTANCE2000_transform",
+            "@toField": "set_translation"
           }
         }
       ]

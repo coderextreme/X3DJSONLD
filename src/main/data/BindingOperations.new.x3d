@@ -103,8 +103,6 @@
                 <field name='view4Bound' accessType='inputOnly' type='SFBool'/>
                 <field name='priorInputvalue' accessType='initializeOnly' type='SFInt32' value='-1'/>
 <![CDATA[
-
-        
 ecmascript:
 
 function initialize ()

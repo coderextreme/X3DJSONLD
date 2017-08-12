@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"03 June 2017"
+            "@content":"12 August 2017"
           },
           {
             "@name":"generator",
@@ -124,6 +124,7 @@
                 { "PlaneSensor":
                   {
                     "@description":"Grab to move",
+                    "@offset":[1,-1,0.01],
                     "@DEF":"PS2"
                   }
                 },
@@ -167,6 +168,7 @@
                 { "PlaneSensor":
                   {
                     "@description":"Grab to move",
+                    "@offset":[1,1,0.01],
                     "@DEF":"PS3"
                   }
                 },
@@ -210,6 +212,7 @@
                 { "PlaneSensor":
                   {
                     "@description":"Grab to move",
+                    "@offset":[-1,1,0.01],
                     "@DEF":"PS4"
                   }
                 },
@@ -226,28 +229,35 @@
           },
           { "Transform":
             {
-              "@DEF":"C1",
+              "@DEF":"transC1",
               "-children":[
-                { "Shape":
+                { "Transform":
                   {
-                    "-appearance":
-                      { "Appearance":
+                    "@DEF":"rotscaleC1",
+                    "-children":[
+                      { "Shape":
                         {
-                          "-material":
-                            { "Material":
+                          "-appearance":
+                            { "Appearance":
                               {
-                                "@diffuseColor":[0.2,0.7,0.7],
-                                "@transparency":0.5
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.2,0.7,0.7],
+                                      "@transparency":0.5
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Cylinder":
+                              {
+                                "@radius":0.05
                               }
                             }
                         }
-                      },
-                    "-geometry":
-                      { "Cylinder":
-                        {
-                          "@radius":0.05
-                        }
                       }
+                    ]
                   }
                 }
               ]
@@ -255,28 +265,35 @@
           },
           { "Transform":
             {
-              "@DEF":"C2",
+              "@DEF":"transC2",
               "-children":[
-                { "Shape":
+                { "Transform":
                   {
-                    "-appearance":
-                      { "Appearance":
+                    "@DEF":"rotscaleC2",
+                    "-children":[
+                      { "Shape":
                         {
-                          "-material":
-                            { "Material":
+                          "-appearance":
+                            { "Appearance":
                               {
-                                "@diffuseColor":[0.2,0.7,0.7],
-                                "@transparency":0.5
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.2,0.7,0.7],
+                                      "@transparency":0.5
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Cylinder":
+                              {
+                                "@radius":0.05
                               }
                             }
                         }
-                      },
-                    "-geometry":
-                      { "Cylinder":
-                        {
-                          "@radius":0.05
-                        }
                       }
+                    ]
                   }
                 }
               ]
@@ -284,28 +301,35 @@
           },
           { "Transform":
             {
-              "@DEF":"C3",
+              "@DEF":"transC3",
               "-children":[
-                { "Shape":
+                { "Transform":
                   {
-                    "-appearance":
-                      { "Appearance":
+                    "@DEF":"rotscaleC3",
+                    "-children":[
+                      { "Shape":
                         {
-                          "-material":
-                            { "Material":
+                          "-appearance":
+                            { "Appearance":
                               {
-                                "@diffuseColor":[0.2,0.7,0.7],
-                                "@transparency":0.5
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.2,0.7,0.7],
+                                      "@transparency":0.5
+                                    }
+                                  }
+                              }
+                            },
+                          "-geometry":
+                            { "Cylinder":
+                              {
+                                "@radius":0.05
                               }
                             }
                         }
-                      },
-                    "-geometry":
-                      { "Cylinder":
-                        {
-                          "@radius":0.05
-                        }
                       }
+                    ]
                   }
                 }
               ]
@@ -327,7 +351,12 @@
                       "@type":"SFNode"
                     },
                     {
-                      "@name":"connectornode",
+                      "@name":"transnode",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFNode"
+                    },
+                    {
+                      "@name":"rotscalenode",
                       "@accessType":"initializeOnly",
                       "@type":"SFNode"
                     },
@@ -360,7 +389,12 @@
                             "@type":"SFNode"
                           },
                           {
-                            "@name":"connectornode",
+                            "@name":"transnode",
+                            "@accessType":"initializeOnly",
+                            "@type":"SFNode"
+                          },
+                          {
+                            "@name":"rotscalenode",
                             "@accessType":"initializeOnly",
                             "@type":"SFNode"
                           },
@@ -386,8 +420,12 @@
                                 "@protoField":"endnode"
                               },
                               {
-                                "@nodeField":"connectornode",
-                                "@protoField":"connectornode"
+                                "@nodeField":"transnode",
+                                "@protoField":"transnode"
+                              },
+                              {
+                                "@nodeField":"rotscalenode",
+                                "@protoField":"rotscalenode"
                               },
                               {
                                 "@nodeField":"set_startpoint",
@@ -400,8 +438,7 @@
                             ]
                         },
                         "#sourceText":[
-"",
-"            ecmascript:",
+"ecmascript:",
 "        function recompute(startpoint,endpoint){",
 "\t    if (typeof endpoint === 'undefined') {",
 "\t\treturn;",
@@ -411,18 +448,25 @@
 "            var dif2 = dif.multiply(0.5);",
 "            var norm = dif.normalize();",
 "            var transl = startpoint.add(dif2);",
-"\t    return {",
-"\t\t    scale : new SFVec3f(1.0,dist,1.0),",
-"\t\t    translation : transl,",
-"\t\t    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)",
-"\t    \t    // rotation : new x3dom.fields.Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)",
-"\t    };",
+"\t    if (typeof Quaternion !== 'undefined') {",
+"\t\t    return {",
+"\t\t\t    scale : new SFVec3f(1.0,dist,1.0),",
+"\t\t\t    translation : transl,",
+"\t\t\t    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)",
+"\t\t    };",
+"\t    } else {",
+"\t\t    return {",
+"\t\t\t    scale : new SFVec3f(1.0,dist,1.0),",
+"\t\t\t    translation : transl,",
+"\t\t\t    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)",
+"\t\t    };",
+"\t    }",
 "\t}",
 "\tfunction recompute_and_route(startpoint, endpoint) {",
 "\t      var trafo = recompute(startpoint, endpoint);",
-"\t      connectornode.translation = trafo.translation;",
-"\t      connectornode.rotation = trafo.rotation;",
-"\t      connectornode.scale = trafo.scale;",
+"\t      transnode.translation = trafo.translation;",
+"\t      rotscalenode.rotation = trafo.rotation;",
+"\t      rotscalenode.scale = trafo.scale;",
 "\t}",
 "        function initialize(){",
 "            recompute_and_route(startnode.translation,endnode.translation);",
@@ -466,11 +510,21 @@
                   ]
                 },
                 {
-                  "@name":"connectornode",
+                  "@name":"transnode",
                   "-children":[
                     { "Transform":
                       {
-                        "@USE":"C1"
+                        "@USE":"transC1"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "@name":"rotscalenode",
+                  "-children":[
+                    { "Transform":
+                      {
+                        "@USE":"rotscaleC1"
                       }
                     }
                   ]
@@ -510,11 +564,21 @@
                   ]
                 },
                 {
-                  "@name":"connectornode",
+                  "@name":"transnode",
                   "-children":[
                     { "Transform":
                       {
-                        "@USE":"C2"
+                        "@USE":"transC2"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "@name":"rotscalenode",
+                  "-children":[
+                    { "Transform":
+                      {
+                        "@USE":"rotscaleC2"
                       }
                     }
                   ]
@@ -554,11 +618,21 @@
                   ]
                 },
                 {
-                  "@name":"connectornode",
+                  "@name":"transnode",
                   "-children":[
                     { "Transform":
                       {
-                        "@USE":"C3"
+                        "@USE":"transC3"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "@name":"rotscalenode",
+                  "-children":[
+                    { "Transform":
+                      {
+                        "@USE":"rotscaleC3"
                       }
                     }
                   ]

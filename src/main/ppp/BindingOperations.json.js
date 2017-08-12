@@ -203,8 +203,6 @@ X3DJSON['Script']['BindingSequencerEngine'] = function() {
 		return value;
 	};
 	this.priorInputvalue = new SFInt32(-1);
-
-        
 ecmascript:
 
 

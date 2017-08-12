@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"03 June 2017"
+            "@content":"12 August 2017"
           },
           {
             "@name":"generator",
@@ -130,7 +130,6 @@
                                 }
                               ],
                               "#sourceText":[
-"",
 "ecmascript:",
 "function initialize() {",
 "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);",

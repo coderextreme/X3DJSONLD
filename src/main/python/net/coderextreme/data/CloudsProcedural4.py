@@ -1,78 +1,183 @@
+# -*- coding: UTF-8 -*-
 from jnius import autoclass
 from X3Dautoclass import *
-X3D0 =  X3DObject().setProfile("Immersive").setVersion("3.2")
+X3D0 =  X3DObject()
+X3D0.setProfile("Immersive")
+X3D0.setVersion("3.2")
+
 head1 = headObject()
-meta2 = metaObject().setName("title").setContent("CloudsProcedural4.x3d")
+
+meta2 = metaObject()
+meta2.setName("title")
+meta2.setContent("CloudsProcedural4.x3d")
+
 head1.addMeta(meta2)
-meta3 = metaObject().setName("description").setContent("X3D utilizing ecmascript to develop quasi volumetric 3D clouds from png image textured billboard nodes.")
+meta3 = metaObject()
+meta3.setName("description")
+meta3.setContent("X3D utilizing ecmascript to develop quasi volumetric 3D clouds from png image textured billboard nodes.")
+
 head1.addMeta(meta3)
-meta4 = metaObject().setName("creator").setContent("Capt Darren W. Murphy")
+meta4 = metaObject()
+meta4.setName("creator")
+meta4.setContent("Capt Darren W. Murphy")
+
 head1.addMeta(meta4)
-meta5 = metaObject().setName("created").setContent("1 November 2007")
+meta5 = metaObject()
+meta5.setName("created")
+meta5.setContent("1 November 2007")
+
 head1.addMeta(meta5)
-meta6 = metaObject().setName("modified").setContent("14 January 2014")
+meta6 = metaObject()
+meta6.setName("modified")
+meta6.setContent("14 January 2014")
+
 head1.addMeta(meta6)
-meta7 = metaObject().setName("identifier").setContent("https://savage.nps.edu/Savage/Environment/Atmosphere/CloudsProcedural4.x3d")
+meta7 = metaObject()
+meta7.setName("identifier")
+meta7.setContent("https://savage.nps.edu/Savage/Environment/Atmosphere/CloudsProcedural4.x3d")
+
 head1.addMeta(meta7)
-meta8 = metaObject().setName("generator").setContent("X3D-Edit, http://www.web3d.org/x3d/content/README.X3D-Edit.html")
+meta8 = metaObject()
+meta8.setName("generator")
+meta8.setContent("X3D-Edit, http://www.web3d.org/x3d/content/README.X3D-Edit.html")
+
 head1.addMeta(meta8)
-meta9 = metaObject().setName("license").setContent("../../license.html")
+meta9 = metaObject()
+meta9.setName("license")
+meta9.setContent("../../license.html")
+
 head1.addMeta(meta9)
-meta10 = metaObject().setName("TODO").setContent("fix links")
+meta10 = metaObject()
+meta10.setName("TODO")
+meta10.setContent("fix links")
+
 head1.addMeta(meta10)
 X3D0.setHead(head1)
 Scene11 = SceneObject()
 
+
 Scene11.addComments(CommentsBlock("A png image file for the cloud texture must be designated in the ecmascript node."))
-Viewpoint12 = ViewpointObject().setDescription("Main").setJump(False).setOrientation([0,1,0,1.57]).setPosition([50000,1000,42000])
+Viewpoint12 = ViewpointObject()
+Viewpoint12.setDescription("Main")
+Viewpoint12.setJump(False)
+Viewpoint12.setOrientation([0,1,0,1.57])
+Viewpoint12.setPosition([50000,1000,42000])
+
 Scene11.addChild(Viewpoint12)
-Viewpoint13 = ViewpointObject().setDescription("Light House Tower").setJump(False).setOrientation([0,1,0,1.3]).setPosition([45000,1290,44000])
+Viewpoint13 = ViewpointObject()
+Viewpoint13.setDescription("Light House Tower")
+Viewpoint13.setJump(False)
+Viewpoint13.setOrientation([0,1,0,1.3])
+Viewpoint13.setPosition([45000,1290,44000])
+
 Scene11.addChild(Viewpoint13)
-Viewpoint14 = ViewpointObject().setDescription("centerWest").setJump(False).setOrientation([0,1,0,2.5]).setPosition([48000,1000,20000])
+Viewpoint14 = ViewpointObject()
+Viewpoint14.setDescription("centerWest")
+Viewpoint14.setJump(False)
+Viewpoint14.setOrientation([0,1,0,2.5])
+Viewpoint14.setPosition([48000,1000,20000])
+
 Scene11.addChild(Viewpoint14)
-Background15 = BackgroundObject().setGroundColor([0,0,1]).setSkyColor([0,0,1])
+Background15 = BackgroundObject()
+Background15.setGroundColor([0,0,1])
+Background15.setSkyColor([0,0,1])
+
 Scene11.addChild(Background15)
-DirectionalLight16 = DirectionalLightObject().setAmbientIntensity(1).setDirection([-1,0,0]).setGlobal(True)
+DirectionalLight16 = DirectionalLightObject()
+DirectionalLight16.setAmbientIntensity(1)
+DirectionalLight16.setDirection([-1,0,0])
+DirectionalLight16.setGlobal(True)
+
 Scene11.addChild(DirectionalLight16)
-Group17 = GroupObject().setDEF("Terrain")
-Transform18 = TransformObject().setScale([50,50,50]).setTranslation([25000,0,25000])
-Inline19 = InlineObject().setUrl(["MontereyBayLargeMesh.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.x3d","MontereyBayLargeMesh.wrl","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.wrl"])
+Group17 = GroupObject()
+Group17.setDEF("Terrain")
+
+Transform18 = TransformObject()
+Transform18.setScale([50,50,50])
+Transform18.setTranslation([25000,0,25000])
+
+Inline19 = InlineObject()
+Inline19.setUrl(["MontereyBayLargeMesh.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.x3d","MontereyBayLargeMesh.wrl","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.wrl"])
+
 Transform18.addChild(Inline19)
 Group17.addChild(Transform18)
-Transform20 = TransformObject().setRotation([1,0,0,1.57]).setTranslation([25000,0,25000])
+Transform20 = TransformObject()
+Transform20.setRotation([1,0,0,1.57])
+Transform20.setTranslation([25000,0,25000])
+
 Shape21 = ShapeObject()
-Rectangle2D22 = Rectangle2DObject().setSize([77000,55000])
+
+Rectangle2D22 = Rectangle2DObject()
+Rectangle2D22.setSize([77000,55000])
+
 Shape21.setGeometry(Rectangle2D22)
 Appearance23 = AppearanceObject()
-ImageTexture24 = ImageTextureObject().setUrl(["ocean.png","https://savage.nps.edu/Savage/Environment/Atmosphere/ocean.png"])
+
+ImageTexture24 = ImageTextureObject()
+ImageTexture24.setUrl(["ocean.png","https://savage.nps.edu/Savage/Environment/Atmosphere/ocean.png"])
+
 Appearance23.setTexture(ImageTexture24)
 Shape21.setAppearance(Appearance23)
 Transform20.addChild(Shape21)
 Group17.addChild(Transform20)
 Scene11.addChild(Group17)
-Group25 = GroupObject().setDEF("Placemarks")
-Transform26 = TransformObject().setScale([50,50,50]).setTranslation([45000,30,44000])
-Inline27 = InlineObject().setUrl(["Lighthouse.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.x3d","Lighthouse.wrl","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.wrl"])
+Group25 = GroupObject()
+Group25.setDEF("Placemarks")
+
+Transform26 = TransformObject()
+Transform26.setScale([50,50,50])
+Transform26.setTranslation([45000,30,44000])
+
+Inline27 = InlineObject()
+Inline27.setUrl(["Lighthouse.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.x3d","Lighthouse.wrl","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.wrl"])
+
 Transform26.addChild(Inline27)
 Group25.addChild(Transform26)
 Scene11.addChild(Group25)
-Group28 = GroupObject().setDEF("Clouds")
-Transform29 = TransformObject().setDEF("Cumulus")
+Group28 = GroupObject()
+Group28.setDEF("Clouds")
+
+Transform29 = TransformObject()
+Transform29.setDEF("Cumulus")
+
 Group28.addChild(Transform29)
-Transform30 = TransformObject().setDEF("Cirrus")
+Transform30 = TransformObject()
+Transform30.setDEF("Cirrus")
+
 Group28.addChild(Transform30)
-Transform31 = TransformObject().setDEF("Fog")
+Transform31 = TransformObject()
+Transform31.setDEF("Fog")
+
 Group28.addChild(Transform31)
-Script32 = ScriptObject().setDEF("PixelScript").setDirectOutput(True)
-field33 = fieldObject().setType(fieldObject.TYPE_SFNODE).setName("Cumulus").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
-Transform34 = TransformObject().setUSE("Cumulus")
+Script32 = ScriptObject()
+Script32.setDEF("PixelScript")
+Script32.setDirectOutput(True)
+
+field33 = fieldObject()
+field33.setType(fieldObject.TYPE_SFNODE)
+field33.setName("Cumulus")
+field33.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
+
+Transform34 = TransformObject()
+Transform34.setUSE("Cumulus")
+
 field33.addChild(Transform34)
 Script32.addField(field33)
-field35 = fieldObject().setType(fieldObject.TYPE_SFNODE).setName("Cirrus").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
-Transform36 = TransformObject().setUSE("Cirrus")
+field35 = fieldObject()
+field35.setType(fieldObject.TYPE_SFNODE)
+field35.setName("Cirrus")
+field35.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
+
+Transform36 = TransformObject()
+Transform36.setUSE("Cirrus")
+
 field35.addChild(Transform36)
 Script32.addField(field35)
-field37 = fieldObject().setType(fieldObject.TYPE_SFNODE).setName("Fog").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
+field37 = fieldObject()
+field37.setType(fieldObject.TYPE_SFNODE)
+field37.setName("Fog")
+field37.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
+
 Script32.addField(field37)
 
 Script32.setSourceCode("ecmascript:\n"+
@@ -458,7 +563,12 @@ Script32.setSourceCode("ecmascript:\n"+
 "}\n"+
 "")
 Group28.addChild(Script32)
-DirectionalLight38 = DirectionalLightObject().setAmbientIntensity(1).setColor([1,0,0]).setDirection([-1,-1,0]).setGlobal(True)
+DirectionalLight38 = DirectionalLightObject()
+DirectionalLight38.setAmbientIntensity(1)
+DirectionalLight38.setColor([1,0,0])
+DirectionalLight38.setDirection([-1,-1,0])
+DirectionalLight38.setGlobal(True)
+
 Group28.addChild(DirectionalLight38)
 Scene11.addChild(Group28)
 X3D0.setScene(Scene11)

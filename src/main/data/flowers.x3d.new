@@ -37,8 +37,9 @@
 <ShaderPart url="&quot;../shaders/pc_bubbles.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs&quot;" type="FRAGMENT"></ShaderPart>
 </ComposedShader>
 </Appearance>
-<Sphere containerField="geometry"></Sphere>
-<!--<IndexedFaceSet convex="false" DEF="Orbit" creaseAngle="0"> <Coordinate DEF="OrbitCoordinates"></Coordinate> </IndexedFaceSet>--></Shape>
+<!--<Sphere></Sphere>--><IndexedFaceSet containerField="geometry" convex="false" DEF="Orbit"><Coordinate containerField="coord" DEF="OrbitCoordinates"></Coordinate>
+</IndexedFaceSet>
+</Shape>
 </Transform>
 <Script DEF="Bounce"><field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 <field name="velocity" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
@@ -51,8 +52,7 @@
 <field name="d" type="SFFloat" accessType="inputOutput" value="3"></field>
 <field name="tdelta" type="SFFloat" accessType="inputOutput" value="0.5"></field>
 <field name="pdelta" type="SFFloat" accessType="inputOutput" value="0.5"></field>
-<![CDATA[
-ecmascript:
+<![CDATA[ecmascript:
 			function newBubble() {
 			    translation = new SFVec3f(0, 0, 0);
 			    velocity = new SFVec3f(
@@ -158,12 +158,10 @@ ecmascript:
 ]]></Script>
 <TimeSensor DEF="TourTime" cycleInterval="0.15" loop="true"></TimeSensor>
 <ROUTE fromNode="TourTime" fromField="cycleTime" toNode="Bounce" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="Bounce" fromField="translation_changed" toNode="transform" toField="set_translation"></ROUTE>
+<ROUTE fromNode="Bounce" fromField="translation" toNode="transform" toField="set_translation"></ROUTE>
 <!--<ROUTE fromField="coordIndexes" fromNode="Bounce" toField="set_coordIndex" toNode="Orbit"></ROUTE> <ROUTE fromField="coordinates" fromNode="Bounce" toField="set_point" toNode="OrbitCoordinates"></ROUTE>--></ProtoBody>
 </ProtoDeclare>
 <Transform><ProtoInstance name="flower"></ProtoInstance>
-<ProtoInstance name="flower"></ProtoInstance>
-<ProtoInstance name="flower"></ProtoInstance>
-</Transform>
+<!--<ProtoInstance name="flower"></ProtoInstance> <ProtoInstance name="flower"></ProtoInstance>--></Transform>
 </Scene>
 </X3D>

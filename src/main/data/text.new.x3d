@@ -6,19 +6,43 @@
         <meta name='created' content='December 13 2015'/>
         <meta name='title' content='text.x3d'/>
         <meta name='identifier' content='https://coderextreme.net/X3DJSONLD/text.x3d'/>
-        <meta name='description' content='test text'/>
+        <meta name='description' content='test \n text'/>
         <meta name='generator' content='Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit'/>
     </head>
     <Scene>
         <Transform>
             <Shape>
                 <Appearance>
-                    <Material diffuseColor='0 0 1'/>
+                    <Material/>
                 </Appearance>
                 <Text string='"Node\"\"\""'>
-                    <FontStyle family='"SERIF"' justify='"MIDDLE" "MIDDLE"' size='5.0'/>
+                    <FontStyle family='"SERIF"' justify='"BEGIN"'/>
                 </Text>
             </Shape>
+            <Shape>
+                <Appearance>
+                    <Material/>
+                </Appearance>
+                <Text string='"Node2" "\" "\\" "Node2"'>
+                    <FontStyle family='"SERIF"' justify='"BEGIN"'/>
+                </Text>
+            </Shape>
+            <Shape>
+                <Appearance>
+                    <Material/>
+                </Appearance>
+                <Text string='"Node3 \\ \" "Node3\"\"\""'>
+                    <FontStyle family='"SERIF"' justify='"BEGIN"'/>
+                </Text>
+            </Shape>
+            <Script>
+                <field name='frontUrls' accessType='initializeOnly' type='MFString' value='"rnl_front.png" "uffizi_front.png"'/>
+<![CDATA[
+ecmascript:
+			    var me = '"1" ""2" "\n3"';
+
+]]>
+            </Script>
         </Transform>
     </Scene>
 </X3D>

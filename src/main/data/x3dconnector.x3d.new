@@ -13,35 +13,46 @@
 <Sphere containerField="geometry" radius="0.1"></Sphere>
 </Shape>
 <PlaneSensor description="Grab to move" DEF="PS1"></PlaneSensor>
-<ROUTE fromNode="PS1" fromField="translation_changed" toNode="G1" toField="translation"></ROUTE>
+<ROUTE fromNode="PS1" fromField="translation_changed" toNode="G1" toField="set_translation"></ROUTE>
 </Transform>
 <Transform DEF="G2" translation="1 -1 0.01"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.2 0.7 0.2"></Material>
 </Appearance>
 <Sphere containerField="geometry" radius="0.1"></Sphere>
 </Shape>
 <PlaneSensor description="Grab to move" offset="1 -1 0.01" DEF="PS2"></PlaneSensor>
-<ROUTE fromNode="PS2" fromField="translation_changed" toNode="G2" toField="translation"></ROUTE>
+<ROUTE fromNode="PS2" fromField="translation_changed" toNode="G2" toField="set_translation"></ROUTE>
 </Transform>
-<Transform DEF="C0"><Transform DEF="C1"><Transform DEF="C2"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.2 0.7 0.7" transparency="0.5"></Material>
+<Transform DEF="transC1"><Transform DEF="rotscaleC1"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.2 0.7 0.7" transparency="0.5"></Material>
 </Appearance>
 <Cylinder containerField="geometry" radius="0.05"></Cylinder>
 </Shape>
 </Transform>
 </Transform>
-</Transform>
-<Script DEF="S1"><field name="startnode" accessType="initializeOnly" type="SFNode"><Transform USE="G1"></Transform>
-</field>
-<field name="endnode" accessType="initializeOnly" type="SFNode"><Transform USE="G2"></Transform>
-</field>
-<field name="transnode" accessType="inputOutput" type="SFNode"><Transform USE="C0"></Transform>
-</field>
-<field name="rotscalenode" accessType="inputOutput" type="SFNode"><Transform USE="C2"></Transform>
-</field>
+<ProtoDeclare name="x3dconnector"><ProtoInterface><field name="startnode" accessType="initializeOnly" type="SFNode"></field>
+<field name="endnode" accessType="initializeOnly" type="SFNode"></field>
+<field name="transnode" accessType="initializeOnly" type="SFNode"></field>
+<field name="rotscalenode" accessType="initializeOnly" type="SFNode"></field>
 <field name="set_startpoint" accessType="inputOnly" type="SFVec3f"></field>
 <field name="set_endpoint" accessType="inputOnly" type="SFVec3f"></field>
-<![CDATA[
-        ecmascript:
+</ProtoInterface>
+<ProtoBody><Script DEF="S1"><field name="startnode" accessType="initializeOnly" type="SFNode"></field>
+<field name="endnode" accessType="initializeOnly" type="SFNode"></field>
+<field name="transnode" accessType="initializeOnly" type="SFNode"></field>
+<field name="rotscalenode" accessType="initializeOnly" type="SFNode"></field>
+<field name="set_startpoint" accessType="inputOnly" type="SFVec3f"></field>
+<field name="set_endpoint" accessType="inputOnly" type="SFVec3f"></field>
+<IS><connect nodeField="startnode" protoField="startnode"></connect>
+<connect nodeField="endnode" protoField="endnode"></connect>
+<connect nodeField="transnode" protoField="transnode"></connect>
+<connect nodeField="rotscalenode" protoField="rotscalenode"></connect>
+<connect nodeField="set_startpoint" protoField="set_startpoint"></connect>
+<connect nodeField="set_endpoint" protoField="set_endpoint"></connect>
+</IS>
+<![CDATA[ecmascript:
         function recompute(startpoint,endpoint){
+	    if (typeof endpoint === 'undefined') {
+		return;
+	    }
             var dif = endpoint.subtract(startpoint);
             var dist = dif.length()*0.5;
             var dif2 = dif.multiply(0.5);
@@ -77,7 +88,20 @@
             recompute_and_route(startnode.translation,val);
         }
 ]]></Script>
-<ROUTE fromNode="G1" fromField="translation_changed" toNode="S1" toField="set_startpoint"></ROUTE>
-<ROUTE fromNode="G2" fromField="translation_changed" toNode="S1" toField="set_endpoint"></ROUTE>
+</ProtoBody>
+</ProtoDeclare>
+<ProtoInstance name="x3dconnector" DEF="connector1"><fieldValue name="startnode"><Transform USE="G1"></Transform>
+</fieldValue>
+<fieldValue name="endnode"><Transform USE="G2"></Transform>
+</fieldValue>
+<fieldValue name="transnode"><Transform USE="transC1"></Transform>
+</fieldValue>
+<fieldValue name="rotscalenode"><Transform USE="rotscaleC1"></Transform>
+</fieldValue>
+<fieldValue name="set_startpoint"></fieldValue>
+<fieldValue name="set_endpoint"></fieldValue>
+</ProtoInstance>
+<ROUTE fromNode="G1" fromField="translation_changed" toNode="connector1" toField="set_startpoint"></ROUTE>
+<ROUTE fromNode="G2" fromField="translation_changed" toNode="connector1" toField="set_endpoint"></ROUTE>
 </Scene>
 </X3D>

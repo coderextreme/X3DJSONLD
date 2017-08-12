@@ -71,9 +71,7 @@
 <field name="view3Bound" accessType="inputOnly" type="SFBool"></field>
 <field name="view4Bound" accessType="inputOnly" type="SFBool"></field>
 <field name="priorInputvalue" accessType="initializeOnly" type="SFInt32" value="-1"></field>
-<![CDATA[
-        
-ecmascript:
+<![CDATA[ecmascript:
 
 function initialize ()
 {

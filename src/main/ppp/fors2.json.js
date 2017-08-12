@@ -147,8 +147,7 @@ X3DJSON['Script']['DECLnode_nodeA_MoveBall'] = function() {
 		return value;
 	};
 	this.keyValue = new MFVec3f();
-
- ecmascript:
+ecmascript:
 					
 	this.set_cycle = function (value) {
                                                 this.proxy.old = this.proxy.translation;
@@ -175,25 +174,6 @@ X3DJSON['Obj']['DECLnode_nodeA_MoveBall']['ACTION'] = {};
 X3DJSON['Obj']['DECLnode_nodeA_MoveBall'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['DECLnode_nodeA_MoveBall']['ACTION'],X3DJSON['Obj']['DECLnode_nodeA_MoveBall']);
 }
 if (typeof X3DJSON['Obj']['DECLnode_nodeA_MoveBall'].initialize === "function") X3DJSON['Obj']['DECLnode_nodeA_MoveBall'].initialize();
-X3DJSON.createProxy = function(action, scriptObject) {
-	var proxy = new Proxy(scriptObject, {
-		get: function(target, property, receiver) {
-			return Reflect.get(target, property, receiver);
-		},
-		set: function(target, property, value, receiver) {
-                 if (typeof action[property] === 'object') {
-                        for (var route in action[property]) {
-                                if (typeof action[property][route] === 'function') {
-                                        action[property][route](property, value);
-   		                     // console.log('Set',property,'to', value);
-                                }
-                        }
-                 }
-		      return Reflect.set(target, property, value, receiver);
-		}
-	});
-	return proxy;
-};
 if (typeof X3DJSON['Script'] === 'undefined') {
 X3DJSON['Script'] = {};
 }
@@ -231,8 +211,7 @@ X3DJSON['Script']['DECLnode_nodeB_MoveBall'] = function() {
 		return value;
 	};
 	this.keyValue = new MFVec3f();
-
- ecmascript:
+ecmascript:
 					
 	this.set_cycle = function (value) {
                                                 this.proxy.old = this.proxy.translation;
@@ -259,25 +238,6 @@ X3DJSON['Obj']['DECLnode_nodeB_MoveBall']['ACTION'] = {};
 X3DJSON['Obj']['DECLnode_nodeB_MoveBall'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['DECLnode_nodeB_MoveBall']['ACTION'],X3DJSON['Obj']['DECLnode_nodeB_MoveBall']);
 }
 if (typeof X3DJSON['Obj']['DECLnode_nodeB_MoveBall'].initialize === "function") X3DJSON['Obj']['DECLnode_nodeB_MoveBall'].initialize();
-X3DJSON.createProxy = function(action, scriptObject) {
-	var proxy = new Proxy(scriptObject, {
-		get: function(target, property, receiver) {
-			return Reflect.get(target, property, receiver);
-		},
-		set: function(target, property, value, receiver) {
-                 if (typeof action[property] === 'object') {
-                        for (var route in action[property]) {
-                                if (typeof action[property][route] === 'function') {
-                                        action[property][route](property, value);
-   		                     // console.log('Set',property,'to', value);
-                                }
-                        }
-                 }
-		      return Reflect.set(target, property, value, receiver);
-		}
-	});
-	return proxy;
-};
 if (typeof X3DJSON['Script'] === 'undefined') {
 X3DJSON['Script'] = {};
 }
@@ -307,8 +267,7 @@ X3DJSON['Script']['DECLcylinder_linkA_MoveCylinder'] = function() {
 		return value;
 	};
 	this.endB = undefined;
-
- ecmascript:
+ecmascript:
 
                 
 	this.set_endA = function (value) {

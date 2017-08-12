@@ -11,8 +11,8 @@
     <Scene>
         <ProtoDeclare name='FlowerProto' appinfo='' documentation=''>
             <ProtoInterface>
-                <field name='vertex' accessType='inputOutput' appinfo='' documentation='' type='MFString' value='&quot;../shaders/gl_flowers_chromatic.vs&quot;'/>
-                <field name='fragment' accessType='inputOutput' appinfo='' documentation='' type='MFString' value='&quot;../shaders/pc_flowers.fs&quot;'/>
+                <field name='vertex' accessType='inputOutput' appinfo='' documentation='' type='MFString' value='"../shaders/gl_flowers_chromatic.vs"'/>
+                <field name='fragment' accessType='inputOutput' appinfo='' documentation='' type='MFString' value='"../shaders/pc_flowers.fs"'/>
             </ProtoInterface>
             <ProtoBody>
                 <Transform DEF='transform' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
@@ -71,14 +71,7 @@
                         <field name='tdelta' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='0.5'/>
                         <field name='pdelta' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='0.5'/>
 <![CDATA[
-
 ecmascript:
-			function set_translation(value) {
-				translation = value;
-			}
-			function translation_changed() {
-				return translation;
-			}
 			function initialize() {
 			    translation = new SFVec3f(0, 0, 0);
 			    velocity = new SFVec3f(
@@ -88,16 +81,20 @@ ecmascript:
 			}
 			function set_fraction() {
 			    translation = new SFVec3f(
-			    	translation[0] + velocity[0],
-				translation[1] + velocity[1],
-				translation[2] + velocity[2]);
+			    	translation.x + velocity.x,
+				translation.y + velocity.y,
+				translation.z + velocity.z);
 			    for (var j = 0; j <= 2; j++) {
-				    if (Math.abs(translation[j]) > 10) {
+				    if (Math.abs(translation.x) > 10) {
+					initialize();
+				    } else if (Math.abs(translation.y) > 10) {
+					initialize();
+				    } else if (Math.abs(translation.z) > 10) {
 					initialize();
 				    } else {
-					velocity[0] += Math.random() * 0.2 - 0.1;
-					velocity[1] += Math.random() * 0.2 - 0.1;
-					velocity[2] += Math.random() * 0.2 - 0.1;
+					velocity.x += Math.random() * 0.2 - 0.1;
+					velocity.y += Math.random() * 0.2 - 0.1;
+					velocity.z += Math.random() * 0.2 - 0.1;
 				    }
 			    }
 			    animate_flowers();

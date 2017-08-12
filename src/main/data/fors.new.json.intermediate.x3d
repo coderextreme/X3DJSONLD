@@ -22,14 +22,19 @@
                     <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
                         <Appearance class=''>
                             <Material ambientIntensity='0.2' diffuseColor='1 0 0' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0' class=''/>
-                            <!-- comment before Material -->
-                            <!-- comment after Material -->
                         </Appearance>
                         <Sphere radius='1.0' solid='true' class=''/>
-                        <!-- comment before Sphere -->
-                        <!-- comment after Sphere -->
-                        <!-- comment after Appearance -->
                     </Shape>
+                    <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='1 0 0' class=''>
+                        <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                            <Appearance class=''>
+                                <Material ambientIntensity='0.2' diffuseColor='0 0 1' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0' class=''/>
+                            </Appearance>
+                            <Text length='' maxExtent='0.0' solid='false' string='"Node"' class=''>
+                                <FontStyle family='"SERIF"' horizontal='true' justify='"MIDDLE" "MIDDLE"' language='' leftToRight='true' size='5.0' spacing='1.0' style='PLAIN' topToBottom='true' class=''/>
+                            </Text>
+                        </Shape>
+                    </Transform>
                 </Transform>
                 <PositionInterpolator DEF='NodePosition' key='0 1' keyValue='0 0 0 0 5 0' class=''/>
                 <Script DEF='MoveBall' directOutput='false' mustEvaluate='false' url='' class=''>
@@ -38,13 +43,11 @@
                     <field name='set_cycle' accessType='inputOnly' appinfo='' documentation='' type='SFTime' value=''/>
                     <field name='keyValue' accessType='outputOnly' appinfo='' documentation='' type='MFVec3f' value=''/>
 <![CDATA[
-
-
 ecmascript:
 					function set_cycle(value) {
                                                 old = translation;
 						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
-                                                keyValue = new MFVec3f(old, translation);
+                                                keyValue = new MFVec3f([old, translation]);
 						// Browser.println(translation);
 					}
 
@@ -59,42 +62,40 @@ ecmascript:
         </ProtoDeclare>
         <ProtoDeclare name='cylinder' appinfo='' documentation=''>
             <ProtoInterface>
-                <field name='positionA' accessType='inputOnly' appinfo='' documentation='' type='SFVec3f' value=''/>
-                <field name='positionB' accessType='inputOnly' appinfo='' documentation='' type='SFVec3f' value=''/>
+                <field name='set_positionA' accessType='inputOnly' appinfo='' documentation='' type='SFVec3f' value=''/>
+                <field name='set_positionB' accessType='inputOnly' appinfo='' documentation='' type='SFVec3f' value=''/>
             </ProtoInterface>
             <ProtoBody>
                 <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
                     <Appearance class=''>
                         <Material ambientIntensity='0.2' diffuseColor='0 1 0' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0' class=''/>
                     </Appearance>
-                    <Extrusion DEF='extrusion' beginCap='true' ccw='true' convex='true' creaseAngle='0.785' crossSection='1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0' endCap='true' orientation='0 0 1 0' scale='1 1' solid='true' spine='0 -50 0 0 0 0 0 50 0' class=''/>
+                    <Extrusion DEF='extrusion' beginCap='true' ccw='true' convex='true' creaseAngle='0.785' crossSection='1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0' endCap='true' orientation='0 0 1 0' scale='1 1' solid='true' spine='0 -50 0 0 50 0' class=''/>
                 </Shape>
                 <Script DEF='MoveCylinder' directOutput='false' mustEvaluate='false' url='' class=''>
-                    <field name='spine' accessType='inputOutput' appinfo='' documentation='' type='MFVec3f' value='0 -50 0 0 0 0 0 50 0'/>
+                    <field name='spine' accessType='inputOutput' appinfo='' documentation='' type='MFVec3f' value='0 -50 0 0 50 0'/>
                     <field name='set_endA' accessType='inputOnly' appinfo='' documentation='' type='SFVec3f' value=''/>
                     <field name='set_endB' accessType='inputOnly' appinfo='' documentation='' type='SFVec3f' value=''/>
                     <IS>
-                        <connect nodeField='set_endA' protoField='positionA'/>
-                        <connect nodeField='set_endB' protoField='positionB'/>
+                        <connect nodeField='set_endA' protoField='set_positionA'/>
+                        <connect nodeField='set_endB' protoField='set_positionB'/>
                     </IS>
 <![CDATA[
-
-
 ecmascript:
 
                 function set_endA(value) {
-		    if (typeof spine === "undefined") {
-		        spine = new MFVec3f(value, value);
+		    if (typeof spine === 'undefined') {
+		        spine = new MFVec3f([value, value]);
 		    } else {
-		        spine = new MFVec3f(value, spine[1]);
+		        spine = new MFVec3f([value, spine[1]]);
 		    }
                 }
                 
                 function set_endB(value) {
-		    if (typeof spine === "undefined") {
-		        spine = new MFVec3f(value, value);
+		    if (typeof spine === 'undefined') {
+		        spine = new MFVec3f([value, value]);
 		    } else {
-		        spine = new MFVec3f(spine[0], value);
+		        spine = new MFVec3f([spine[0], value]);
 		    }
                 }
                 
@@ -107,19 +108,20 @@ ecmascript:
                 <ROUTE fromField='spine' fromNode='MoveCylinder' toField='set_spine' toNode='extrusion'/>
             </ProtoBody>
         </ProtoDeclare>
-        <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='0.1 0.1 0.1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
+        <Transform DEF='HoldsContent' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='0.1 0.1 0.1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
+            <PlaneSensor DEF='clickGenerator' autoOffset='true' axisRotation='0 1 0 0' description='click on background to add nodes, click on nodes to add links' enabled='true' maxPosition='50 50' minPosition='-50 -50' offset='0 0 0' class=''/>
             <ProtoInstance DEF='nodeA' name='node' class=''>
-                <fieldValue name='position' value='-50 -50 -50'/>
+                <fieldValue name='position' value='0 0 0'/>
             </ProtoInstance>
             <ProtoInstance DEF='nodeB' name='node' class=''>
                 <fieldValue name='position' value='50 50 50'/>
             </ProtoInstance>
             <ProtoInstance DEF='linkA' name='cylinder' class=''>
-                <fieldValue name='positionA' value='0 0 0'/>
-                <fieldValue name='positionB' value='50 50 50'/>
+                <fieldValue name='set_positionA' value='0 0 0'/>
+                <fieldValue name='set_positionB' value='50 50 50'/>
             </ProtoInstance>
         </Transform>
-        <ROUTE fromField='position' fromNode='nodeA' toField='positionA' toNode='linkA'/>
-        <ROUTE fromField='position' fromNode='nodeB' toField='positionB' toNode='linkA'/>
+        <ROUTE fromField='position' fromNode='nodeA' toField='set_positionA' toNode='linkA'/>
+        <ROUTE fromField='position' fromNode='nodeB' toField='set_positionB' toNode='linkA'/>
     </Scene>
 </X3D>

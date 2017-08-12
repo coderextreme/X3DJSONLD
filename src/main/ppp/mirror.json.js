@@ -227,8 +227,6 @@ X3DJSON['Script']['UrlSelector'] = function() {
 		return value;
 	};
 	this.old = new SFInt32(-1);
- 
-
 ecmascript:
         
 	this.set_fraction = function ( f, tm ) {

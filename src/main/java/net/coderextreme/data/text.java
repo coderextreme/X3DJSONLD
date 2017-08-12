@@ -119,7 +119,7 @@ protected class MFString0 {
 }
 protected class MFString1 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"Node2","\\","\\\\","\\\\\\","Node2"});
+    return new MFStringObject(new java.lang.String[] {"Node2","\\","\\\\","Node2"});
   }
 }
 protected class MFString2 {

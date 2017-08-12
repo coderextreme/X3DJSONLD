@@ -139,7 +139,6 @@ X3DJSON['Script']['FlowerScript'] = function() {
 		return value;
 	};
 	this.coordIndexes = new MFInt32();
-
 ecmascript:
     
 var e = 5;

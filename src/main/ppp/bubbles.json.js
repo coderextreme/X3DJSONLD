@@ -171,8 +171,7 @@ X3DJSON['Script']['RandomTourTime'] = function() {
 		return value;
 	};
 	this.orientation = undefined;
-
-	    ecmascript:
+ecmascript:
                
 	this.set_cycle = function (value) {
                         var ov = this.proxy.lastKey;

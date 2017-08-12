@@ -29,7 +29,7 @@
         },
         {
           "@name": "translated",
-          "@content": "03 June 2017"
+          "@content": "10 August 2017"
         },
         {
           "@name": "generator",
@@ -84,7 +84,7 @@
                   "-children": [
                     {
                       "Transform": {
-                        "@DEF": "DECLflower_INSTANCE1000_DECLFlowerProto_INSTANCE2000_transform",
+                        "@DEF": "DECLFlowerProto_INSTANCE2000_transform",
                         "-children": [
                           {
                             "Shape": {
@@ -101,7 +101,7 @@
                                   },
                                   "-texture": {
                                     "ComposedCubeMapTexture": {
-                                      "@DEF": "DECLflower_INSTANCE1000_DECLFlowerProto_INSTANCE2000_texture",
+                                      "@DEF": "DECLFlowerProto_INSTANCE2000_texture",
                                       "-back": {
                                         "ImageTexture": {
                                           "@url": [
@@ -155,7 +155,7 @@
                                   "-shaders": [
                                     {
                                       "ComposedShader": {
-                                        "@DEF": "DECLflower_INSTANCE1000_DECLFlowerProto_INSTANCE2000_shader",
+                                        "@DEF": "DECLFlowerProto_INSTANCE2000_shader",
                                         "@language": "GLSL",
                                         "field": [
                                           {
@@ -264,7 +264,7 @@
                           },
                           {
                             "Script": {
-                              "@DEF": "DECLflower_INSTANCE1000_DECLFlowerProto_INSTANCE2000_Bounce",
+                              "@DEF": "DECLFlowerProto_INSTANCE2000_Bounce",
                               "field": [
                                 {
                                   "@name": "translation",
@@ -329,7 +329,6 @@
                                 }
                               ],
                               "#sourceText": [
-                                "",
                                 "ecmascript:",
                                 "\t\t\tfunction initialize() {",
                                 "\t\t\t    translation = new SFVec3f(0, 0, 0);",
@@ -401,72 +400,72 @@
                           },
                           {
                             "TimeSensor": {
-                              "@DEF": "DECLflower_INSTANCE1000_DECLFlowerProto_INSTANCE2000_TourTime",
+                              "@DEF": "DECLFlowerProto_INSTANCE2000_TourTime",
                               "@cycleInterval": 0.15,
                               "@loop": true
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLflower_INSTANCE1000_DECLFlowerProto_INSTANCE2000_TourTime",
+                              "@fromNode": "DECLFlowerProto_INSTANCE2000_TourTime",
                               "@fromField": "cycleTime",
-                              "@toNode": "DECLflower_INSTANCE1000_DECLFlowerProto_INSTANCE2000_Bounce",
+                              "@toNode": "DECLFlowerProto_INSTANCE2000_Bounce",
                               "@toField": "set_fraction"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLflower_INSTANCE1000_DECLFlowerProto_INSTANCE2000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE2000_Bounce",
                               "@fromField": "translation_changed",
-                              "@toNode": "DECLflower_INSTANCE1000_DECLFlowerProto_INSTANCE2000_transform",
+                              "@toNode": "DECLFlowerProto_INSTANCE2000_transform",
                               "@toField": "set_translation"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLflower_INSTANCE1000_DECLFlowerProto_INSTANCE2000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE2000_Bounce",
                               "@fromField": "a",
-                              "@toNode": "DECLflower_INSTANCE1000_DECLFlowerProto_INSTANCE2000_shader",
+                              "@toNode": "DECLFlowerProto_INSTANCE2000_shader",
                               "@toField": "a"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLflower_INSTANCE1000_DECLFlowerProto_INSTANCE2000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE2000_Bounce",
                               "@fromField": "b",
-                              "@toNode": "DECLflower_INSTANCE1000_DECLFlowerProto_INSTANCE2000_shader",
+                              "@toNode": "DECLFlowerProto_INSTANCE2000_shader",
                               "@toField": "b"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLflower_INSTANCE1000_DECLFlowerProto_INSTANCE2000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE2000_Bounce",
                               "@fromField": "c",
-                              "@toNode": "DECLflower_INSTANCE1000_DECLFlowerProto_INSTANCE2000_shader",
+                              "@toNode": "DECLFlowerProto_INSTANCE2000_shader",
                               "@toField": "c"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLflower_INSTANCE1000_DECLFlowerProto_INSTANCE2000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE2000_Bounce",
                               "@fromField": "d",
-                              "@toNode": "DECLflower_INSTANCE1000_DECLFlowerProto_INSTANCE2000_shader",
+                              "@toNode": "DECLFlowerProto_INSTANCE2000_shader",
                               "@toField": "d"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLflower_INSTANCE1000_DECLFlowerProto_INSTANCE2000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE2000_Bounce",
                               "@fromField": "tdelta",
-                              "@toNode": "DECLflower_INSTANCE1000_DECLFlowerProto_INSTANCE2000_shader",
+                              "@toNode": "DECLFlowerProto_INSTANCE2000_shader",
                               "@toField": "tdelta"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLflower_INSTANCE1000_DECLFlowerProto_INSTANCE2000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE2000_Bounce",
                               "@fromField": "pdelta",
-                              "@toNode": "DECLflower_INSTANCE1000_DECLFlowerProto_INSTANCE2000_shader",
+                              "@toNode": "DECLFlowerProto_INSTANCE2000_shader",
                               "@toField": "pdelta"
                             }
                           }
@@ -481,7 +480,7 @@
                   "-children": [
                     {
                       "Transform": {
-                        "@DEF": "DECLflower_INSTANCE3000_DECLFlowerProto_INSTANCE4000_transform",
+                        "@DEF": "DECLFlowerProto_INSTANCE4000_transform",
                         "-children": [
                           {
                             "Shape": {
@@ -498,7 +497,7 @@
                                   },
                                   "-texture": {
                                     "ComposedCubeMapTexture": {
-                                      "@DEF": "DECLflower_INSTANCE3000_DECLFlowerProto_INSTANCE4000_texture",
+                                      "@DEF": "DECLFlowerProto_INSTANCE4000_texture",
                                       "-back": {
                                         "ImageTexture": {
                                           "@url": [
@@ -552,7 +551,7 @@
                                   "-shaders": [
                                     {
                                       "ComposedShader": {
-                                        "@DEF": "DECLflower_INSTANCE3000_DECLFlowerProto_INSTANCE4000_shader",
+                                        "@DEF": "DECLFlowerProto_INSTANCE4000_shader",
                                         "@language": "GLSL",
                                         "field": [
                                           {
@@ -661,7 +660,7 @@
                           },
                           {
                             "Script": {
-                              "@DEF": "DECLflower_INSTANCE3000_DECLFlowerProto_INSTANCE4000_Bounce",
+                              "@DEF": "DECLFlowerProto_INSTANCE4000_Bounce",
                               "field": [
                                 {
                                   "@name": "translation",
@@ -726,7 +725,6 @@
                                 }
                               ],
                               "#sourceText": [
-                                "",
                                 "ecmascript:",
                                 "\t\t\tfunction initialize() {",
                                 "\t\t\t    translation = new SFVec3f(0, 0, 0);",
@@ -798,72 +796,72 @@
                           },
                           {
                             "TimeSensor": {
-                              "@DEF": "DECLflower_INSTANCE3000_DECLFlowerProto_INSTANCE4000_TourTime",
+                              "@DEF": "DECLFlowerProto_INSTANCE4000_TourTime",
                               "@cycleInterval": 0.15,
                               "@loop": true
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLflower_INSTANCE3000_DECLFlowerProto_INSTANCE4000_TourTime",
+                              "@fromNode": "DECLFlowerProto_INSTANCE4000_TourTime",
                               "@fromField": "cycleTime",
-                              "@toNode": "DECLflower_INSTANCE3000_DECLFlowerProto_INSTANCE4000_Bounce",
+                              "@toNode": "DECLFlowerProto_INSTANCE4000_Bounce",
                               "@toField": "set_fraction"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLflower_INSTANCE3000_DECLFlowerProto_INSTANCE4000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE4000_Bounce",
                               "@fromField": "translation_changed",
-                              "@toNode": "DECLflower_INSTANCE3000_DECLFlowerProto_INSTANCE4000_transform",
+                              "@toNode": "DECLFlowerProto_INSTANCE4000_transform",
                               "@toField": "set_translation"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLflower_INSTANCE3000_DECLFlowerProto_INSTANCE4000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE4000_Bounce",
                               "@fromField": "a",
-                              "@toNode": "DECLflower_INSTANCE3000_DECLFlowerProto_INSTANCE4000_shader",
+                              "@toNode": "DECLFlowerProto_INSTANCE4000_shader",
                               "@toField": "a"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLflower_INSTANCE3000_DECLFlowerProto_INSTANCE4000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE4000_Bounce",
                               "@fromField": "b",
-                              "@toNode": "DECLflower_INSTANCE3000_DECLFlowerProto_INSTANCE4000_shader",
+                              "@toNode": "DECLFlowerProto_INSTANCE4000_shader",
                               "@toField": "b"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLflower_INSTANCE3000_DECLFlowerProto_INSTANCE4000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE4000_Bounce",
                               "@fromField": "c",
-                              "@toNode": "DECLflower_INSTANCE3000_DECLFlowerProto_INSTANCE4000_shader",
+                              "@toNode": "DECLFlowerProto_INSTANCE4000_shader",
                               "@toField": "c"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLflower_INSTANCE3000_DECLFlowerProto_INSTANCE4000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE4000_Bounce",
                               "@fromField": "d",
-                              "@toNode": "DECLflower_INSTANCE3000_DECLFlowerProto_INSTANCE4000_shader",
+                              "@toNode": "DECLFlowerProto_INSTANCE4000_shader",
                               "@toField": "d"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLflower_INSTANCE3000_DECLFlowerProto_INSTANCE4000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE4000_Bounce",
                               "@fromField": "tdelta",
-                              "@toNode": "DECLflower_INSTANCE3000_DECLFlowerProto_INSTANCE4000_shader",
+                              "@toNode": "DECLFlowerProto_INSTANCE4000_shader",
                               "@toField": "tdelta"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLflower_INSTANCE3000_DECLFlowerProto_INSTANCE4000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE4000_Bounce",
                               "@fromField": "pdelta",
-                              "@toNode": "DECLflower_INSTANCE3000_DECLFlowerProto_INSTANCE4000_shader",
+                              "@toNode": "DECLFlowerProto_INSTANCE4000_shader",
                               "@toField": "pdelta"
                             }
                           }
@@ -878,7 +876,7 @@
                   "-children": [
                     {
                       "Transform": {
-                        "@DEF": "DECLflower_INSTANCE5000_DECLFlowerProto_INSTANCE6000_transform",
+                        "@DEF": "DECLFlowerProto_INSTANCE6000_transform",
                         "-children": [
                           {
                             "Shape": {
@@ -895,7 +893,7 @@
                                   },
                                   "-texture": {
                                     "ComposedCubeMapTexture": {
-                                      "@DEF": "DECLflower_INSTANCE5000_DECLFlowerProto_INSTANCE6000_texture",
+                                      "@DEF": "DECLFlowerProto_INSTANCE6000_texture",
                                       "-back": {
                                         "ImageTexture": {
                                           "@url": [
@@ -949,7 +947,7 @@
                                   "-shaders": [
                                     {
                                       "ComposedShader": {
-                                        "@DEF": "DECLflower_INSTANCE5000_DECLFlowerProto_INSTANCE6000_shader",
+                                        "@DEF": "DECLFlowerProto_INSTANCE6000_shader",
                                         "@language": "GLSL",
                                         "field": [
                                           {
@@ -1058,7 +1056,7 @@
                           },
                           {
                             "Script": {
-                              "@DEF": "DECLflower_INSTANCE5000_DECLFlowerProto_INSTANCE6000_Bounce",
+                              "@DEF": "DECLFlowerProto_INSTANCE6000_Bounce",
                               "field": [
                                 {
                                   "@name": "translation",
@@ -1123,7 +1121,6 @@
                                 }
                               ],
                               "#sourceText": [
-                                "",
                                 "ecmascript:",
                                 "\t\t\tfunction initialize() {",
                                 "\t\t\t    translation = new SFVec3f(0, 0, 0);",
@@ -1195,72 +1192,72 @@
                           },
                           {
                             "TimeSensor": {
-                              "@DEF": "DECLflower_INSTANCE5000_DECLFlowerProto_INSTANCE6000_TourTime",
+                              "@DEF": "DECLFlowerProto_INSTANCE6000_TourTime",
                               "@cycleInterval": 0.15,
                               "@loop": true
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLflower_INSTANCE5000_DECLFlowerProto_INSTANCE6000_TourTime",
+                              "@fromNode": "DECLFlowerProto_INSTANCE6000_TourTime",
                               "@fromField": "cycleTime",
-                              "@toNode": "DECLflower_INSTANCE5000_DECLFlowerProto_INSTANCE6000_Bounce",
+                              "@toNode": "DECLFlowerProto_INSTANCE6000_Bounce",
                               "@toField": "set_fraction"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLflower_INSTANCE5000_DECLFlowerProto_INSTANCE6000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE6000_Bounce",
                               "@fromField": "translation_changed",
-                              "@toNode": "DECLflower_INSTANCE5000_DECLFlowerProto_INSTANCE6000_transform",
+                              "@toNode": "DECLFlowerProto_INSTANCE6000_transform",
                               "@toField": "set_translation"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLflower_INSTANCE5000_DECLFlowerProto_INSTANCE6000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE6000_Bounce",
                               "@fromField": "a",
-                              "@toNode": "DECLflower_INSTANCE5000_DECLFlowerProto_INSTANCE6000_shader",
+                              "@toNode": "DECLFlowerProto_INSTANCE6000_shader",
                               "@toField": "a"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLflower_INSTANCE5000_DECLFlowerProto_INSTANCE6000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE6000_Bounce",
                               "@fromField": "b",
-                              "@toNode": "DECLflower_INSTANCE5000_DECLFlowerProto_INSTANCE6000_shader",
+                              "@toNode": "DECLFlowerProto_INSTANCE6000_shader",
                               "@toField": "b"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLflower_INSTANCE5000_DECLFlowerProto_INSTANCE6000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE6000_Bounce",
                               "@fromField": "c",
-                              "@toNode": "DECLflower_INSTANCE5000_DECLFlowerProto_INSTANCE6000_shader",
+                              "@toNode": "DECLFlowerProto_INSTANCE6000_shader",
                               "@toField": "c"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLflower_INSTANCE5000_DECLFlowerProto_INSTANCE6000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE6000_Bounce",
                               "@fromField": "d",
-                              "@toNode": "DECLflower_INSTANCE5000_DECLFlowerProto_INSTANCE6000_shader",
+                              "@toNode": "DECLFlowerProto_INSTANCE6000_shader",
                               "@toField": "d"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLflower_INSTANCE5000_DECLFlowerProto_INSTANCE6000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE6000_Bounce",
                               "@fromField": "tdelta",
-                              "@toNode": "DECLflower_INSTANCE5000_DECLFlowerProto_INSTANCE6000_shader",
+                              "@toNode": "DECLFlowerProto_INSTANCE6000_shader",
                               "@toField": "tdelta"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLflower_INSTANCE5000_DECLFlowerProto_INSTANCE6000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE6000_Bounce",
                               "@fromField": "pdelta",
-                              "@toNode": "DECLflower_INSTANCE5000_DECLFlowerProto_INSTANCE6000_shader",
+                              "@toNode": "DECLFlowerProto_INSTANCE6000_shader",
                               "@toField": "pdelta"
                             }
                           }
@@ -1275,7 +1272,7 @@
                   "-children": [
                     {
                       "Transform": {
-                        "@DEF": "DECLflower_INSTANCE7000_DECLFlowerProto_INSTANCE8000_transform",
+                        "@DEF": "DECLFlowerProto_INSTANCE8000_transform",
                         "-children": [
                           {
                             "Shape": {
@@ -1292,7 +1289,7 @@
                                   },
                                   "-texture": {
                                     "ComposedCubeMapTexture": {
-                                      "@DEF": "DECLflower_INSTANCE7000_DECLFlowerProto_INSTANCE8000_texture",
+                                      "@DEF": "DECLFlowerProto_INSTANCE8000_texture",
                                       "-back": {
                                         "ImageTexture": {
                                           "@url": [
@@ -1346,7 +1343,7 @@
                                   "-shaders": [
                                     {
                                       "ComposedShader": {
-                                        "@DEF": "DECLflower_INSTANCE7000_DECLFlowerProto_INSTANCE8000_shader",
+                                        "@DEF": "DECLFlowerProto_INSTANCE8000_shader",
                                         "@language": "GLSL",
                                         "field": [
                                           {
@@ -1455,7 +1452,7 @@
                           },
                           {
                             "Script": {
-                              "@DEF": "DECLflower_INSTANCE7000_DECLFlowerProto_INSTANCE8000_Bounce",
+                              "@DEF": "DECLFlowerProto_INSTANCE8000_Bounce",
                               "field": [
                                 {
                                   "@name": "translation",
@@ -1520,7 +1517,6 @@
                                 }
                               ],
                               "#sourceText": [
-                                "",
                                 "ecmascript:",
                                 "\t\t\tfunction initialize() {",
                                 "\t\t\t    translation = new SFVec3f(0, 0, 0);",
@@ -1592,72 +1588,72 @@
                           },
                           {
                             "TimeSensor": {
-                              "@DEF": "DECLflower_INSTANCE7000_DECLFlowerProto_INSTANCE8000_TourTime",
+                              "@DEF": "DECLFlowerProto_INSTANCE8000_TourTime",
                               "@cycleInterval": 0.15,
                               "@loop": true
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLflower_INSTANCE7000_DECLFlowerProto_INSTANCE8000_TourTime",
+                              "@fromNode": "DECLFlowerProto_INSTANCE8000_TourTime",
                               "@fromField": "cycleTime",
-                              "@toNode": "DECLflower_INSTANCE7000_DECLFlowerProto_INSTANCE8000_Bounce",
+                              "@toNode": "DECLFlowerProto_INSTANCE8000_Bounce",
                               "@toField": "set_fraction"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLflower_INSTANCE7000_DECLFlowerProto_INSTANCE8000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE8000_Bounce",
                               "@fromField": "translation_changed",
-                              "@toNode": "DECLflower_INSTANCE7000_DECLFlowerProto_INSTANCE8000_transform",
+                              "@toNode": "DECLFlowerProto_INSTANCE8000_transform",
                               "@toField": "set_translation"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLflower_INSTANCE7000_DECLFlowerProto_INSTANCE8000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE8000_Bounce",
                               "@fromField": "a",
-                              "@toNode": "DECLflower_INSTANCE7000_DECLFlowerProto_INSTANCE8000_shader",
+                              "@toNode": "DECLFlowerProto_INSTANCE8000_shader",
                               "@toField": "a"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLflower_INSTANCE7000_DECLFlowerProto_INSTANCE8000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE8000_Bounce",
                               "@fromField": "b",
-                              "@toNode": "DECLflower_INSTANCE7000_DECLFlowerProto_INSTANCE8000_shader",
+                              "@toNode": "DECLFlowerProto_INSTANCE8000_shader",
                               "@toField": "b"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLflower_INSTANCE7000_DECLFlowerProto_INSTANCE8000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE8000_Bounce",
                               "@fromField": "c",
-                              "@toNode": "DECLflower_INSTANCE7000_DECLFlowerProto_INSTANCE8000_shader",
+                              "@toNode": "DECLFlowerProto_INSTANCE8000_shader",
                               "@toField": "c"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLflower_INSTANCE7000_DECLFlowerProto_INSTANCE8000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE8000_Bounce",
                               "@fromField": "d",
-                              "@toNode": "DECLflower_INSTANCE7000_DECLFlowerProto_INSTANCE8000_shader",
+                              "@toNode": "DECLFlowerProto_INSTANCE8000_shader",
                               "@toField": "d"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLflower_INSTANCE7000_DECLFlowerProto_INSTANCE8000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE8000_Bounce",
                               "@fromField": "tdelta",
-                              "@toNode": "DECLflower_INSTANCE7000_DECLFlowerProto_INSTANCE8000_shader",
+                              "@toNode": "DECLFlowerProto_INSTANCE8000_shader",
                               "@toField": "tdelta"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLflower_INSTANCE7000_DECLFlowerProto_INSTANCE8000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE8000_Bounce",
                               "@fromField": "pdelta",
-                              "@toNode": "DECLflower_INSTANCE7000_DECLFlowerProto_INSTANCE8000_shader",
+                              "@toNode": "DECLFlowerProto_INSTANCE8000_shader",
                               "@toField": "pdelta"
                             }
                           }
@@ -1672,7 +1668,7 @@
                   "-children": [
                     {
                       "Transform": {
-                        "@DEF": "DECLflower_INSTANCE9000_DECLFlowerProto_INSTANCE10000_transform",
+                        "@DEF": "DECLFlowerProto_INSTANCE10000_transform",
                         "-children": [
                           {
                             "Shape": {
@@ -1689,7 +1685,7 @@
                                   },
                                   "-texture": {
                                     "ComposedCubeMapTexture": {
-                                      "@DEF": "DECLflower_INSTANCE9000_DECLFlowerProto_INSTANCE10000_texture",
+                                      "@DEF": "DECLFlowerProto_INSTANCE10000_texture",
                                       "-back": {
                                         "ImageTexture": {
                                           "@url": [
@@ -1743,7 +1739,7 @@
                                   "-shaders": [
                                     {
                                       "ComposedShader": {
-                                        "@DEF": "DECLflower_INSTANCE9000_DECLFlowerProto_INSTANCE10000_shader",
+                                        "@DEF": "DECLFlowerProto_INSTANCE10000_shader",
                                         "@language": "GLSL",
                                         "field": [
                                           {
@@ -1852,7 +1848,7 @@
                           },
                           {
                             "Script": {
-                              "@DEF": "DECLflower_INSTANCE9000_DECLFlowerProto_INSTANCE10000_Bounce",
+                              "@DEF": "DECLFlowerProto_INSTANCE10000_Bounce",
                               "field": [
                                 {
                                   "@name": "translation",
@@ -1917,7 +1913,6 @@
                                 }
                               ],
                               "#sourceText": [
-                                "",
                                 "ecmascript:",
                                 "\t\t\tfunction initialize() {",
                                 "\t\t\t    translation = new SFVec3f(0, 0, 0);",
@@ -1989,72 +1984,72 @@
                           },
                           {
                             "TimeSensor": {
-                              "@DEF": "DECLflower_INSTANCE9000_DECLFlowerProto_INSTANCE10000_TourTime",
+                              "@DEF": "DECLFlowerProto_INSTANCE10000_TourTime",
                               "@cycleInterval": 0.15,
                               "@loop": true
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLflower_INSTANCE9000_DECLFlowerProto_INSTANCE10000_TourTime",
+                              "@fromNode": "DECLFlowerProto_INSTANCE10000_TourTime",
                               "@fromField": "cycleTime",
-                              "@toNode": "DECLflower_INSTANCE9000_DECLFlowerProto_INSTANCE10000_Bounce",
+                              "@toNode": "DECLFlowerProto_INSTANCE10000_Bounce",
                               "@toField": "set_fraction"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLflower_INSTANCE9000_DECLFlowerProto_INSTANCE10000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE10000_Bounce",
                               "@fromField": "translation_changed",
-                              "@toNode": "DECLflower_INSTANCE9000_DECLFlowerProto_INSTANCE10000_transform",
+                              "@toNode": "DECLFlowerProto_INSTANCE10000_transform",
                               "@toField": "set_translation"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLflower_INSTANCE9000_DECLFlowerProto_INSTANCE10000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE10000_Bounce",
                               "@fromField": "a",
-                              "@toNode": "DECLflower_INSTANCE9000_DECLFlowerProto_INSTANCE10000_shader",
+                              "@toNode": "DECLFlowerProto_INSTANCE10000_shader",
                               "@toField": "a"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLflower_INSTANCE9000_DECLFlowerProto_INSTANCE10000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE10000_Bounce",
                               "@fromField": "b",
-                              "@toNode": "DECLflower_INSTANCE9000_DECLFlowerProto_INSTANCE10000_shader",
+                              "@toNode": "DECLFlowerProto_INSTANCE10000_shader",
                               "@toField": "b"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLflower_INSTANCE9000_DECLFlowerProto_INSTANCE10000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE10000_Bounce",
                               "@fromField": "c",
-                              "@toNode": "DECLflower_INSTANCE9000_DECLFlowerProto_INSTANCE10000_shader",
+                              "@toNode": "DECLFlowerProto_INSTANCE10000_shader",
                               "@toField": "c"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLflower_INSTANCE9000_DECLFlowerProto_INSTANCE10000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE10000_Bounce",
                               "@fromField": "d",
-                              "@toNode": "DECLflower_INSTANCE9000_DECLFlowerProto_INSTANCE10000_shader",
+                              "@toNode": "DECLFlowerProto_INSTANCE10000_shader",
                               "@toField": "d"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLflower_INSTANCE9000_DECLFlowerProto_INSTANCE10000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE10000_Bounce",
                               "@fromField": "tdelta",
-                              "@toNode": "DECLflower_INSTANCE9000_DECLFlowerProto_INSTANCE10000_shader",
+                              "@toNode": "DECLFlowerProto_INSTANCE10000_shader",
                               "@toField": "tdelta"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLflower_INSTANCE9000_DECLFlowerProto_INSTANCE10000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE10000_Bounce",
                               "@fromField": "pdelta",
-                              "@toNode": "DECLflower_INSTANCE9000_DECLFlowerProto_INSTANCE10000_shader",
+                              "@toNode": "DECLFlowerProto_INSTANCE10000_shader",
                               "@toField": "pdelta"
                             }
                           }
@@ -2069,7 +2064,7 @@
                   "-children": [
                     {
                       "Transform": {
-                        "@DEF": "DECLflower_INSTANCE11000_DECLFlowerProto_INSTANCE12000_transform",
+                        "@DEF": "DECLFlowerProto_INSTANCE12000_transform",
                         "-children": [
                           {
                             "Shape": {
@@ -2086,7 +2081,7 @@
                                   },
                                   "-texture": {
                                     "ComposedCubeMapTexture": {
-                                      "@DEF": "DECLflower_INSTANCE11000_DECLFlowerProto_INSTANCE12000_texture",
+                                      "@DEF": "DECLFlowerProto_INSTANCE12000_texture",
                                       "-back": {
                                         "ImageTexture": {
                                           "@url": [
@@ -2140,7 +2135,7 @@
                                   "-shaders": [
                                     {
                                       "ComposedShader": {
-                                        "@DEF": "DECLflower_INSTANCE11000_DECLFlowerProto_INSTANCE12000_shader",
+                                        "@DEF": "DECLFlowerProto_INSTANCE12000_shader",
                                         "@language": "GLSL",
                                         "field": [
                                           {
@@ -2249,7 +2244,7 @@
                           },
                           {
                             "Script": {
-                              "@DEF": "DECLflower_INSTANCE11000_DECLFlowerProto_INSTANCE12000_Bounce",
+                              "@DEF": "DECLFlowerProto_INSTANCE12000_Bounce",
                               "field": [
                                 {
                                   "@name": "translation",
@@ -2314,7 +2309,6 @@
                                 }
                               ],
                               "#sourceText": [
-                                "",
                                 "ecmascript:",
                                 "\t\t\tfunction initialize() {",
                                 "\t\t\t    translation = new SFVec3f(0, 0, 0);",
@@ -2386,72 +2380,72 @@
                           },
                           {
                             "TimeSensor": {
-                              "@DEF": "DECLflower_INSTANCE11000_DECLFlowerProto_INSTANCE12000_TourTime",
+                              "@DEF": "DECLFlowerProto_INSTANCE12000_TourTime",
                               "@cycleInterval": 0.15,
                               "@loop": true
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLflower_INSTANCE11000_DECLFlowerProto_INSTANCE12000_TourTime",
+                              "@fromNode": "DECLFlowerProto_INSTANCE12000_TourTime",
                               "@fromField": "cycleTime",
-                              "@toNode": "DECLflower_INSTANCE11000_DECLFlowerProto_INSTANCE12000_Bounce",
+                              "@toNode": "DECLFlowerProto_INSTANCE12000_Bounce",
                               "@toField": "set_fraction"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLflower_INSTANCE11000_DECLFlowerProto_INSTANCE12000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE12000_Bounce",
                               "@fromField": "translation_changed",
-                              "@toNode": "DECLflower_INSTANCE11000_DECLFlowerProto_INSTANCE12000_transform",
+                              "@toNode": "DECLFlowerProto_INSTANCE12000_transform",
                               "@toField": "set_translation"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLflower_INSTANCE11000_DECLFlowerProto_INSTANCE12000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE12000_Bounce",
                               "@fromField": "a",
-                              "@toNode": "DECLflower_INSTANCE11000_DECLFlowerProto_INSTANCE12000_shader",
+                              "@toNode": "DECLFlowerProto_INSTANCE12000_shader",
                               "@toField": "a"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLflower_INSTANCE11000_DECLFlowerProto_INSTANCE12000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE12000_Bounce",
                               "@fromField": "b",
-                              "@toNode": "DECLflower_INSTANCE11000_DECLFlowerProto_INSTANCE12000_shader",
+                              "@toNode": "DECLFlowerProto_INSTANCE12000_shader",
                               "@toField": "b"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLflower_INSTANCE11000_DECLFlowerProto_INSTANCE12000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE12000_Bounce",
                               "@fromField": "c",
-                              "@toNode": "DECLflower_INSTANCE11000_DECLFlowerProto_INSTANCE12000_shader",
+                              "@toNode": "DECLFlowerProto_INSTANCE12000_shader",
                               "@toField": "c"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLflower_INSTANCE11000_DECLFlowerProto_INSTANCE12000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE12000_Bounce",
                               "@fromField": "d",
-                              "@toNode": "DECLflower_INSTANCE11000_DECLFlowerProto_INSTANCE12000_shader",
+                              "@toNode": "DECLFlowerProto_INSTANCE12000_shader",
                               "@toField": "d"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLflower_INSTANCE11000_DECLFlowerProto_INSTANCE12000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE12000_Bounce",
                               "@fromField": "tdelta",
-                              "@toNode": "DECLflower_INSTANCE11000_DECLFlowerProto_INSTANCE12000_shader",
+                              "@toNode": "DECLFlowerProto_INSTANCE12000_shader",
                               "@toField": "tdelta"
                             }
                           },
                           {
                             "ROUTE": {
-                              "@fromNode": "DECLflower_INSTANCE11000_DECLFlowerProto_INSTANCE12000_Bounce",
+                              "@fromNode": "DECLFlowerProto_INSTANCE12000_Bounce",
                               "@fromField": "pdelta",
-                              "@toNode": "DECLflower_INSTANCE11000_DECLFlowerProto_INSTANCE12000_shader",
+                              "@toNode": "DECLFlowerProto_INSTANCE12000_shader",
                               "@toField": "pdelta"
                             }
                           }

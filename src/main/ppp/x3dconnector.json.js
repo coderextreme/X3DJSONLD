@@ -163,8 +163,7 @@ X3DJSON['Script']['DECLx3dconnector_connector1_S1'] = function() {
 		return value;
 	};
 	this.endpoint = undefined;
-
-            ecmascript:
+ecmascript:
         
 	this.recompute = function (startpoint,endpoint){
 	    if (typeof endpoint === 'undefined') {

@@ -158,8 +158,6 @@
                         <connect nodeField='traceEnabled' protoField='traceEnabled'/>
                     </IS>
 <![CDATA[
-
-          
 ecmascript:
 function initialize () // CameraScript
 {
@@ -563,8 +561,6 @@ function alwaysPrint (outputValue)
                         <connect nodeField='traceEnabled' protoField='traceEnabled'/>
                     </IS>
 <![CDATA[
-
-          
 ecmascript:
 function initialize () // CameraShotScript
 {
@@ -712,8 +708,6 @@ function alwaysPrint (outputValue)
                         <connect nodeField='traceEnabled' protoField='traceEnabled'/>
                     </IS>
 <![CDATA[
-
-          
 ecmascript:
 function initialize () // CameraMovementScript
 {
@@ -821,8 +815,8 @@ function alwaysPrint (outputValue)
                 <field name='set_startTime' accessType='inputOnly' appinfo='Begin render operation' documentation='' type='SFTime' value=''/>
                 <field name='progress' accessType='outputOnly' appinfo='Progress performing render operation (0..1)' documentation='' type='SFFloat' value=''/>
                 <field name='renderCompleteTime' accessType='outputOnly' appinfo='Render operation complete' documentation='' type='SFTime' value=''/>
-                <field name='movieFormat' accessType='initializeOnly' appinfo='Format of rendered output movie (mpeg mp4 etc.), use first supported format' documentation='' type='MFString' value='&quot;mpeg&quot;'/>
-                <field name='imageFormat' accessType='initializeOnly' appinfo='Format of rendered output images (png jpeg gif tiff etc.) use first supported format' documentation='' type='MFString' value='&quot;png&quot;'/>
+                <field name='movieFormat' accessType='initializeOnly' appinfo='Format of rendered output movie (mpeg mp4 etc.), use first supported format' documentation='' type='MFString' value='"mpeg"'/>
+                <field name='imageFormat' accessType='initializeOnly' appinfo='Format of rendered output images (png jpeg gif tiff etc.) use first supported format' documentation='' type='MFString' value='"png"'/>
                 <field name='traceEnabled' accessType='initializeOnly' appinfo='enable console output to trace script computations and prototype progress' documentation='' type='SFBool' value='false'/>
                 <!-- TODO non-photorealistic rendering (NPR) parameters -->
             </ProtoInterface>
@@ -855,8 +849,6 @@ function alwaysPrint (outputValue)
                         <connect nodeField='traceEnabled' protoField='traceEnabled'/>
                     </IS>
 <![CDATA[
-
-          
 ecmascript:
 function initialize () // OfflineRenderScript
 {

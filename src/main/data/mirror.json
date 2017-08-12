@@ -34,7 +34,7 @@
           },
           {
             "@name":"translated",
-            "@content":"03 June 2017"
+            "@content":"12 August 2017"
           },
           {
             "@name":"generator",
@@ -372,8 +372,6 @@
                       }
                     ],
                     "#sourceText":[
-" ",
-"",
 "ecmascript:",
 "        function set_fraction( f, tm ) {",
 "\t    var side = Math.floor(f*frontUrls.length);",

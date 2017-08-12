@@ -32,7 +32,7 @@
           },
           {
             "@name":"translated",
-            "@content":"03 June 2017"
+            "@content":"12 August 2017"
           },
           {
             "@name":"generator",
@@ -61,55 +61,26 @@
               },
               "ProtoBody": {
                   "-children":[
-                    { "Transform":
+                    { "Group":
                       {
-                        "@DEF":"transform",
-                        "IS": {
-                            "connect": [
-                              {
-                                "@nodeField":"translation",
-                                "@protoField":"position"
-                              }
-                            ]
-                        },
                         "-children":[
-                          { "Shape":
-                            {
-                              "-geometry":
-                                { "Sphere":
-                                  {
-                                  }
-                                },
-                              "-appearance":
-                                { "Appearance":
-                                  {
-                                    "-material":
-                                      { "Material":
-                                        {
-                                          "@diffuseColor":[1,0,0]
-                                        }
-                                      }
-                                  }
-                                }
-                            }
-                          },
                           { "Transform":
                             {
-                              "@translation":[1,0,0],
+                              "@DEF":"transform",
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"translation",
+                                      "@protoField":"position"
+                                    }
+                                  ]
+                              },
                               "-children":[
                                 { "Shape":
                                   {
                                     "-geometry":
-                                      { "Text":
+                                      { "Sphere":
                                         {
-                                          "@string":["Node"],
-                                          "-fontStyle":
-                                            { "FontStyle":
-                                              {
-                                                "@justify":["MIDDLE","MIDDLE"],
-                                                "@size":5
-                                              }
-                                            }
                                         }
                                       },
                                     "-appearance":
@@ -118,56 +89,86 @@
                                           "-material":
                                             { "Material":
                                               {
-                                                "@diffuseColor":[0,0,1]
+                                                "@diffuseColor":[1,0,0]
                                               }
                                             }
                                         }
                                       }
                                   }
+                                },
+                                { "Transform":
+                                  {
+                                    "@translation":[1,0,0],
+                                    "-children":[
+                                      { "Shape":
+                                        {
+                                          "-geometry":
+                                            { "Text":
+                                              {
+                                                "@string":["Node"],
+                                                "-fontStyle":
+                                                  { "FontStyle":
+                                                    {
+                                                      "@justify":["MIDDLE","MIDDLE"],
+                                                      "@size":5
+                                                    }
+                                                  }
+                                              }
+                                            },
+                                          "-appearance":
+                                            { "Appearance":
+                                              {
+                                                "-material":
+                                                  { "Material":
+                                                    {
+                                                      "@diffuseColor":[0,0,1]
+                                                    }
+                                                  }
+                                              }
+                                            }
+                                        }
+                                      }
+                                    ]
+                                  }
                                 }
                               ]
                             }
-                          }
-                        ]
-                      }
-                    },
-                    { "PositionInterpolator":
-                      {
-                        "@DEF":"NodePosition",
-                        "@key":[0,1],
-                        "@keyValue":[0,0,0,0,5,0]
-                      }
-                    },
-                    { "Script":
-                      {
-                        "@DEF":"MoveBall",
-                        "field": [
-                          {
-                            "@name":"translation",
-                            "@accessType":"inputOutput",
-                            "@type":"SFVec3f",
-                            "@value":[50,50,0]
                           },
-                          {
-                            "@name":"old",
-                            "@accessType":"inputOutput",
-                            "@type":"SFVec3f",
-                            "@value":[0,0,0]
+                          { "PositionInterpolator":
+                            {
+                              "@DEF":"NodePosition",
+                              "@key":[0,1],
+                              "@keyValue":[0,0,0,0,5,0]
+                            }
                           },
-                          {
-                            "@name":"set_cycle",
-                            "@accessType":"inputOnly",
-                            "@type":"SFTime"
-                          },
-                          {
-                            "@name":"keyValue",
-                            "@accessType":"outputOnly",
-                            "@type":"MFVec3f"
-                          }
-                        ],
-                        "#sourceText":[
-"",
-"",
+                          { "Script":
+                            {
+                              "@DEF":"MoveBall",
+                              "field": [
+                                {
+                                  "@name":"translation",
+                                  "@accessType":"inputOutput",
+                                  "@type":"SFVec3f",
+                                  "@value":[50,50,0]
+                                },
+                                {
+                                  "@name":"old",
+                                  "@accessType":"inputOutput",
+                                  "@type":"SFVec3f",
+                                  "@value":[0,0,0]
+                                },
+                                {
+                                  "@name":"set_cycle",
+                                  "@accessType":"inputOnly",
+                                  "@type":"SFTime"
+                                },
+                                {
+                                  "@name":"keyValue",
+                                  "@accessType":"outputOnly",
+                                  "@type":"MFVec3f"
+                                }
+                              ],
+                              "#sourceText":[
 "ecmascript:",
 "\t\t\t\t\tfunction set_cycle(value) {",
 "                                                old = translation;",
@@ -176,45 +177,48 @@
 "\t\t\t\t\t\t// Browser.println(translation);",
 "\t\t\t\t\t}"
 ]
-                      }
-                    },
-                    { "TimeSensor":
-                      {
-                        "@DEF":"nodeClock",
-                        "@cycleInterval":3,
-                        "@loop":true
-                      }
-                    },
-                    { "ROUTE":
-                      {
-                        "@fromNode":"nodeClock",
-                        "@fromField":"cycleTime",
-                        "@toNode":"MoveBall",
-                        "@toField":"set_cycle"
-                      }
-                    },
-                    { "ROUTE":
-                      {
-                        "@fromNode":"nodeClock",
-                        "@fromField":"fraction_changed",
-                        "@toNode":"NodePosition",
-                        "@toField":"set_fraction"
-                      }
-                    },
-                    { "ROUTE":
-                      {
-                        "@fromNode":"MoveBall",
-                        "@fromField":"keyValue",
-                        "@toNode":"NodePosition",
-                        "@toField":"keyValue"
-                      }
-                    },
-                    { "ROUTE":
-                      {
-                        "@fromNode":"NodePosition",
-                        "@fromField":"value_changed",
-                        "@toNode":"transform",
-                        "@toField":"set_translation"
+                            }
+                          },
+                          { "TimeSensor":
+                            {
+                              "@DEF":"nodeClock",
+                              "@cycleInterval":3,
+                              "@loop":true
+                            }
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromNode":"nodeClock",
+                              "@fromField":"cycleTime",
+                              "@toNode":"MoveBall",
+                              "@toField":"set_cycle"
+                            }
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromNode":"nodeClock",
+                              "@fromField":"fraction_changed",
+                              "@toNode":"NodePosition",
+                              "@toField":"set_fraction"
+                            }
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromNode":"MoveBall",
+                              "@fromField":"keyValue",
+                              "@toNode":"NodePosition",
+                              "@toField":"keyValue"
+                            }
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromNode":"NodePosition",
+                              "@fromField":"value_changed",
+                              "@toNode":"transform",
+                              "@toField":"set_translation"
+                            }
+                          }
+                        ]
                       }
                     }
                   ]
@@ -240,66 +244,67 @@
               },
               "ProtoBody": {
                   "-children":[
-                    { "Shape":
+                    { "Group":
                       {
-                        "-geometry":
-                          { "Extrusion":
+                        "-children":[
+                          { "Shape":
                             {
-                              "@DEF":"extrusion",
-                              "@creaseAngle":0.785,
-                              "@crossSection":[1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00],
-                              "@spine":[0,-50,0,0,50,0]
-                            }
-                          },
-                        "-appearance":
-                          { "Appearance":
-                            {
-                              "-material":
-                                { "Material":
+                              "-geometry":
+                                { "Extrusion":
                                   {
-                                    "@diffuseColor":[0,1,0]
+                                    "@DEF":"extrusion",
+                                    "@creaseAngle":0.785,
+                                    "@crossSection":[1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00],
+                                    "@spine":[0,-50,0,0,50,0]
+                                  }
+                                },
+                              "-appearance":
+                                { "Appearance":
+                                  {
+                                    "-material":
+                                      { "Material":
+                                        {
+                                          "@diffuseColor":[0,1,0]
+                                        }
+                                      }
                                   }
                                 }
                             }
-                          }
-                      }
-                    },
-                    { "Script":
-                      {
-                        "@DEF":"MoveCylinder",
-                        "field": [
-                          {
-                            "@name":"spine",
-                            "@accessType":"inputOutput",
-                            "@type":"MFVec3f",
-                            "@value":[0,-50,0,0,50,0]
                           },
-                          {
-                            "@name":"set_endA",
-                            "@accessType":"inputOnly",
-                            "@type":"SFVec3f"
-                          },
-                          {
-                            "@name":"set_endB",
-                            "@accessType":"inputOnly",
-                            "@type":"SFVec3f"
-                          }
-                        ],
-                        "IS": {
-                            "connect": [
-                              {
-                                "@nodeField":"set_endA",
-                                "@protoField":"set_positionA"
+                          { "Script":
+                            {
+                              "@DEF":"MoveCylinder",
+                              "field": [
+                                {
+                                  "@name":"spine",
+                                  "@accessType":"inputOutput",
+                                  "@type":"MFVec3f",
+                                  "@value":[0,-50,0,0,50,0]
+                                },
+                                {
+                                  "@name":"set_endA",
+                                  "@accessType":"inputOnly",
+                                  "@type":"SFVec3f"
+                                },
+                                {
+                                  "@name":"set_endB",
+                                  "@accessType":"inputOnly",
+                                  "@type":"SFVec3f"
+                                }
+                              ],
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"set_endA",
+                                      "@protoField":"set_positionA"
+                                    },
+                                    {
+                                      "@nodeField":"set_endB",
+                                      "@protoField":"set_positionB"
+                                    }
+                                  ]
                               },
-                              {
-                                "@nodeField":"set_endB",
-                                "@protoField":"set_positionB"
-                              }
-                            ]
-                        },
-                        "#sourceText":[
-"",
-"",
+                              "#sourceText":[
 "ecmascript:",
 "",
 "                function set_endA(value) {",
@@ -322,14 +327,17 @@
 "                    spine = value;",
 "                }"
 ]
-                      }
-                    },
-                    { "ROUTE":
-                      {
-                        "@fromNode":"MoveCylinder",
-                        "@fromField":"spine",
-                        "@toNode":"extrusion",
-                        "@toField":"set_spine"
+                            }
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromNode":"MoveCylinder",
+                              "@fromField":"spine",
+                              "@toNode":"extrusion",
+                              "@toField":"set_spine"
+                            }
+                          }
+                        ]
                       }
                     }
                   ]
@@ -476,8 +484,6 @@
                 }
               ],
               "#sourceText":[
-"",
-"\t",
 "ecmascript:",
 "\tfunction add_node(value) {",
 "                // Browser.print('hey ', counter);",

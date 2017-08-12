@@ -121,9 +121,7 @@
 <connect nodeField="offlineRender" protoField="offlineRender"></connect>
 <connect nodeField="traceEnabled" protoField="traceEnabled"></connect>
 </IS>
-<![CDATA[
-          
-ecmascript:
+<![CDATA[ecmascript:
 function initialize () // CameraScript
 {
 //  tracePrint ('initialize start...');
@@ -512,9 +510,7 @@ function alwaysPrint (outputValue)
 <connect nodeField="isActive" protoField="isActive"></connect>
 <connect nodeField="traceEnabled" protoField="traceEnabled"></connect>
 </IS>
-<![CDATA[
-          
-ecmascript:
+<![CDATA[ecmascript:
 function initialize () // CameraShotScript
 {
 //  tracePrint ('initialize start...');
@@ -648,9 +644,7 @@ function alwaysPrint (outputValue)
 <connect nodeField="isActive" protoField="isActive"></connect>
 <connect nodeField="traceEnabled" protoField="traceEnabled"></connect>
 </IS>
-<![CDATA[
-          
-ecmascript:
+<![CDATA[ecmascript:
 function initialize () // CameraMovementScript
 {
 //  tracePrint ('initialize start...');
@@ -778,9 +772,7 @@ function alwaysPrint (outputValue)
 <connect nodeField="imageFormat" protoField="imageFormat"></connect>
 <connect nodeField="traceEnabled" protoField="traceEnabled"></connect>
 </IS>
-<![CDATA[
-          
-ecmascript:
+<![CDATA[ecmascript:
 function initialize () // OfflineRenderScript
 {
 //  tracePrint ('initialize start...');

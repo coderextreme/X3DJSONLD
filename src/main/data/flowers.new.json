@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"26 May 2017"
+            "@content":"06 August 2017"
           },
           {
             "@name":"generator",
@@ -251,13 +251,21 @@
                                   }
                                 },
                               "-geometry":
-                                { "Sphere":
+                                { "IndexedFaceSet":
                                   {
+                                    "@DEF":"Orbit",
+                                    "@convex":false,
+                                    "-coord":
+                                      { "Coordinate":
+                                        {
+                                          "@DEF":"OrbitCoordinates"
+                                        }
+                                      }
                                   }
                                 },
                               "-children":[
                                 {
-                                  "#comment":"<IndexedFaceSet convex=\"false\" DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>"
+                                  "#comment":"<Sphere></Sphere>"
                                 }
                               ]
                             }
@@ -334,9 +342,6 @@
                           }
                         ],
                         "#sourceText":[
-"",
-"",
-"",
 "ecmascript:",
 "\t\t\tfunction newBubble() {",
 "\t\t\t    translation = new SFVec3f(0, 0, 0);",
@@ -460,7 +465,7 @@
                     },
                     { "ROUTE":
                       {
-                        "@fromField":"translation_changed",
+                        "@fromField":"translation",
                         "@fromNode":"Bounce",
                         "@toField":"set_translation",
                         "@toNode":"transform"
@@ -481,15 +486,8 @@
                     "@name":"flower"
                   }
                 },
-                { "ProtoInstance":
-                  {
-                    "@name":"flower"
-                  }
-                },
-                { "ProtoInstance":
-                  {
-                    "@name":"flower"
-                  }
+                {
+                  "#comment":"<ProtoInstance name=\"flower\"/> <ProtoInstance name=\"flower\"/>"
                 }
               ]
             }

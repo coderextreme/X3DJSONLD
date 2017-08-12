@@ -29,7 +29,7 @@
         },
         {
           "@name": "translated",
-          "@content": "06 July 2017"
+          "@content": "10 August 2017"
         },
         {
           "@name": "generator",
@@ -440,8 +440,7 @@
               }
             ],
             "#sourceText": [
-              "",
-              "            ecmascript:",
+              "ecmascript:",
               "        function recompute(startpoint,endpoint){",
               "\t    if (typeof endpoint === 'undefined') {",
               "\t\treturn;",
@@ -547,8 +546,7 @@
               }
             ],
             "#sourceText": [
-              "",
-              "            ecmascript:",
+              "ecmascript:",
               "        function recompute(startpoint,endpoint){",
               "\t    if (typeof endpoint === 'undefined') {",
               "\t\treturn;",
@@ -654,8 +652,7 @@
               }
             ],
             "#sourceText": [
-              "",
-              "            ecmascript:",
+              "ecmascript:",
               "        function recompute(startpoint,endpoint){",
               "\t    if (typeof endpoint === 'undefined') {",
               "\t\treturn;",

@@ -9,7 +9,7 @@
 </head>
 <Scene><ProtoDeclare name="node"><ProtoInterface><field name="position" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 </ProtoInterface>
-<ProtoBody><Transform DEF="transform"><IS><connect nodeField="translation" protoField="position"></connect>
+<ProtoBody><Group><Transform DEF="transform"><IS><connect nodeField="translation" protoField="position"></connect>
 </IS>
 <Shape><Sphere containerField="geometry"></Sphere>
 <Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 0 0"></Material>
@@ -27,9 +27,7 @@
 <field name="old" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 <field name="set_cycle" accessType="inputOnly" type="SFTime"></field>
 <field name="keyValue" accessType="outputOnly" type="MFVec3f"></field>
-<![CDATA[
-
-ecmascript:
+<![CDATA[ecmascript:
 					function set_cycle(value) {
                                                 old = translation;
 						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
@@ -42,12 +40,13 @@ ecmascript:
 <ROUTE fromNode="nodeClock" fromField="fraction_changed" toNode="NodePosition" toField="set_fraction"></ROUTE>
 <ROUTE fromNode="MoveBall" fromField="keyValue" toNode="NodePosition" toField="keyValue"></ROUTE>
 <ROUTE fromNode="NodePosition" fromField="value_changed" toNode="transform" toField="set_translation"></ROUTE>
+</Group>
 </ProtoBody>
 </ProtoDeclare>
 <ProtoDeclare name="cylinder"><ProtoInterface><field name="set_positionA" accessType="inputOnly" type="SFVec3f"></field>
 <field name="set_positionB" accessType="inputOnly" type="SFVec3f"></field>
 </ProtoInterface>
-<ProtoBody><Shape><Extrusion containerField="geometry" DEF="extrusion" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 -50 0 0 50 0"></Extrusion>
+<ProtoBody><Group><Shape><Extrusion containerField="geometry" DEF="extrusion" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 -50 0 0 50 0"></Extrusion>
 <Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 1 0"></Material>
 </Appearance>
 </Shape>
@@ -57,9 +56,7 @@ ecmascript:
 <IS><connect nodeField="set_endA" protoField="set_positionA"></connect>
 <connect nodeField="set_endB" protoField="set_positionB"></connect>
 </IS>
-<![CDATA[
-
-ecmascript:
+<![CDATA[ecmascript:
 
                 function set_endA(value) {
 		    if (typeof spine === 'undefined') {
@@ -82,6 +79,7 @@ ecmascript:
                 }
 ]]></Script>
 <ROUTE fromNode="MoveCylinder" fromField="spine" toNode="extrusion" toField="set_spine"></ROUTE>
+</Group>
 </ProtoBody>
 </ProtoDeclare>
 <Transform DEF="HoldsContent" scale="0.1 0.1 0.1"><PlaneSensor DEF="clickGenerator" minPosition="-50 -50" maxPosition="50 50" description="click on background to add nodes, click on nodes to add links"></PlaneSensor>
@@ -106,11 +104,7 @@ ecmascript:
 <Script DEF="clickHandler"><field name="counter" accessType="inputOutput" value="0" type="SFInt32"></field>
 <field name="node_changed" accessType="outputOnly" type="SFNode"></field>
 <field name="add_node" accessType="inputOnly" value="false" type="SFBool"></field>
-<field name="ModifiableNode" type="SFNode" accessType="inputOutput"><Transform USE="HoldsContent"></Transform>
-</field>
-<![CDATA[
-	
-ecmascript:
+<!--<field name="ModifiableNode" type="SFNode" accessType="inputOutput"> <Transform USE="HoldsContent"></Transform> </field>--><![CDATA[ecmascript:
 	function add_node(value) {
                 // Browser.print('hey ', counter);
                 counter = counter++;

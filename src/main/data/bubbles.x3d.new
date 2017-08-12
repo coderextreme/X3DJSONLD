@@ -50,8 +50,7 @@
 <field name="position_changed" accessType="outputOnly" type="MFVec3f"></field>
 <field name="set_orientation" accessType="inputOnly" type="MFRotation"></field>
 <field name="orientation_changed" accessType="outputOnly" type="MFRotation"></field>
-<![CDATA[
-	    ecmascript:
+<![CDATA[ecmascript:
                function set_cycle(value) {
                         var ov = lastKey;
                         do {

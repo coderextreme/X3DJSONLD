@@ -17,6 +17,18 @@
                     <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
                         <Appearance class=''>
                             <Material ambientIntensity='0.2' diffuseColor='0.7 0.7 0.7' emissiveColor='0 0 0' shininess='0.2' specularColor='0.5 0.5 0.5' transparency='0.0' class=''/>
+                            <ComposedShader language='GLSL' class=''>
+                                <ShaderPart type='VERTEX' url='"../shaders/x3dom.vs" "https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs"' class=''/>
+                                <ShaderPart type='FRAGMENT' url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"' class=''/>
+                                <field name='xxxcube' accessType='inputOutput' appinfo='' documentation='' type='SFInt32' value='0'/>
+                                <field name='cube' accessType='inputOutput' appinfo='' documentation='' type='SFNode' value=''>
+                                    <ComposedCubeMapTexture USE='texture'/>
+                                </field>
+                                <field name='chromaticDispertion' accessType='inputOutput' appinfo='' documentation='' type='SFVec3f' value='0.98 1 1.033'/>
+                                <field name='bias' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='0.5'/>
+                                <field name='scale' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='0.5'/>
+                                <field name='power' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='2.0'/>
+                            </ComposedShader>
                             <ComposedShader DEF='shader' language='GLSL' class=''>
                                 <ShaderPart type='VERTEX' url='"../shaders/cobweb.vs" "https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"' class=''/>
                                 <ShaderPart type='FRAGMENT' url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"' class=''/>
@@ -38,9 +50,10 @@
                                 <ImageTexture containerField='top' repeatS='true' repeatT='true' url='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"' class=''/>
                             </ComposedCubeMapTexture>
                         </Appearance>
-                        <IndexedFaceSet DEF='Orbit' ccw='true' colorIndex='' colorPerVertex='true' convex='true' coordIndex='' creaseAngle='0.0' normalIndex='' normalPerVertex='true' solid='true' texCoordIndex='' class=''>
+                        <IndexedFaceSet DEF='Orbit' ccw='true' colorIndex='' colorPerVertex='true' convex='false' coordIndex='' creaseAngle='0.0' normalIndex='' normalPerVertex='true' solid='true' texCoordIndex='' class=''>
                             <Coordinate DEF='OrbitCoordinates' class=''/>
                         </IndexedFaceSet>
+                        <!-- <Sphere></Sphere> -->
                     </Shape>
                 </Transform>
                 <Script DEF='Bounce' directOutput='false' mustEvaluate='false' url='' class=''>
@@ -48,7 +61,7 @@
                     <field name='velocity' accessType='inputOutput' appinfo='' documentation='' type='SFVec3f' value='0 0 0'/>
                     <field name='set_fraction' accessType='inputOnly' appinfo='' documentation='' type='SFTime' value=''/>
                     <field name='coordinates' accessType='inputOutput' appinfo='' documentation='' type='MFVec3f' value=''/>
-                    <field name='coordIndexes' accessType='inputOutput' appinfo='' documentation='' type='MFInt32' value=''/>
+                    <field name='coordIndexes' accessType='outputOnly' appinfo='' documentation='' type='MFInt32' value=''/>
                     <field name='a' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='0.5'/>
                     <field name='b' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='0.5'/>
                     <field name='c' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='3.0'/>
@@ -56,15 +69,8 @@
                     <field name='tdelta' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='0.5'/>
                     <field name='pdelta' accessType='inputOutput' appinfo='' documentation='' type='SFFloat' value='0.5'/>
 <![CDATA[
-
 ecmascript:
-			function set_translation(value) {
-				translation = value;
-			}
-			function translation_changed() {
-				return translation;
-			}
-			function initialize() {
+			function newBubble() {
 			    translation = new SFVec3f(0, 0, 0);
 			    velocity = new SFVec3f(
 			    	Math.random() - 0.5,
@@ -73,57 +79,59 @@ ecmascript:
 			}
 			function set_fraction() {
 			    translation = new SFVec3f(
-			    	translation[0] + velocity[0],
-				translation[1] + velocity[1],
-				translation[2] + velocity[2]);
-			    for (var j = 0; j <= 2; j++) {
-				    if (Math.abs(translation[j]) > 10) {
-					initialize();
-				    } else {
-					velocity[0] += Math.random() * 0.2 - 0.1;
-					velocity[1] += Math.random() * 0.2 - 0.1;
-					velocity[2] += Math.random() * 0.2 - 0.1;
-				    }
+			    	translation.x + velocity.x,
+				translation.y + velocity.y,
+				translation.z + velocity.z);
+			    if (Math.abs(translation.x) > 10) {
+					newBubble();
+			    } else if (Math.abs(translation.y) > 10) {
+					newBubble();
+			    } else if (Math.abs(translation.z) > 10) {
+					newBubble();
+			    } else {
+					velocity = new SFVec3f(
+						velocity.x + Math.random() * 0.2 - 0.1,
+						velocity.y + Math.random() * 0.2 - 0.1,
+						velocity.z + Math.random() * 0.2 - 0.1
+					);
 			    }
 			    animate_flowers();
 			}
 
 			function initialize() {
+			     newBubble();
 			     resolution = 100;
 			     updateCoordinates(resolution);
-			     if (typeof coordIndexes == 'undefined' || coordIndexes == null) {
-				coordIndexes = new MFInt32();
-			     }
-			     ci = 0;
+			     var cis = [];
 			     for ( i = 0; i < resolution-1; i++) {
 				for ( j = 0; j < resolution-1; j++) {
-				     coordIndexes[ci] = i*resolution+j;
-				     coordIndexes[ci+1] = i*resolution+j+1;
-				     coordIndexes[ci+2] = (i+1)*resolution+j+1;
-				     coordIndexes[ci+3] = (i+1)*resolution+j;
-				     coordIndexes[ci+4] = -1;
-				     ci += 5;
+				     cis.push(i*resolution+j);
+				     cis.push(i*resolution+j+1);
+				     cis.push((i+1)*resolution+j+1);
+				     cis.push((i+1)*resolution+j);
+				     cis.push(-1);
 				}
 			    }
+			     coordIndexes = new MFInt32(cis);
 			}
 
 			function updateCoordinates(resolution) {
 			     theta = 0.0;
 			     phi = 0.0;
 			     delta = (2 * 3.141592653) / (resolution-1);
-			     if (typeof coordinates == 'undefined' || coordinates == null) {
-				coordinates = new MFVec3f();
-			     }
+			     var crds = [];
 			     for ( i = 0; i < resolution; i++) {
 				for ( j = 0; j < resolution; j++) {
 					rho = a + b * Math.cos(c * theta) * Math.cos(d * phi);
-					coordinates[i*resolution+j] = new SFVec3f();
-					coordinates[i*resolution+j][0] = rho * Math.cos(phi) * Math.cos(theta);
-					coordinates[i*resolution+j][1] = rho * Math.cos(phi) * Math.sin(theta);
-					coordinates[i*resolution+j][2] = rho * Math.sin(phi);
+					crds.push(new SFVec3f(
+						rho * Math.cos(phi) * Math.cos(theta),
+						rho * Math.cos(phi) * Math.sin(theta),
+						rho * Math.sin(phi)
+					));
 					theta += delta;
 				}
 				phi += delta;
+				coordinates = new MFVec3f(crds);
 			     }
 			}
 
@@ -169,15 +177,13 @@ ecmascript:
                 </Script>
                 <TimeSensor DEF='TourTime' cycleInterval='0.15' enabled='true' loop='true' pauseTime='0.0' resumeTime='0.0' startTime='0.0' stopTime='0.0' class=''/>
                 <ROUTE fromField='cycleTime' fromNode='TourTime' toField='set_fraction' toNode='Bounce'/>
-                <ROUTE fromField='translation_changed' fromNode='Bounce' toField='set_translation' toNode='transform'/>
-                <ROUTE fromField='coordIndexes' fromNode='Bounce' toField='set_coordIndex' toNode='Orbit'/>
-                <ROUTE fromField='coordinates' fromNode='Bounce' toField='set_point' toNode='OrbitCoordinates'/>
+                <ROUTE fromField='translation' fromNode='Bounce' toField='set_translation' toNode='transform'/>
+                <!-- <ROUTE fromField="coordIndexes" fromNode="Bounce" toField="set_coordIndex" toNode="Orbit"/> <ROUTE fromField="coordinates" fromNode="Bounce" toField="set_point" toNode="OrbitCoordinates"/> -->
             </ProtoBody>
         </ProtoDeclare>
         <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
             <ProtoInstance name='flower' class=''/>
-            <ProtoInstance name='flower' class=''/>
-            <ProtoInstance name='flower' class=''/>
+            <!-- <ProtoInstance name="flower"/> <ProtoInstance name="flower"/> -->
         </Transform>
     </Scene>
 </X3D>

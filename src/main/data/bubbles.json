@@ -38,7 +38,7 @@
           },
           {
             "@name":"translated",
-            "@content":"03 June 2017"
+            "@content":"12 August 2017"
           },
           {
             "@name":"generator",
@@ -320,8 +320,7 @@
                 }
               ],
               "#sourceText":[
-"",
-"\t    ecmascript:",
+"ecmascript:",
 "               function set_cycle(value) {",
 "                        var ov = lastKey;",
 "                        do {",
