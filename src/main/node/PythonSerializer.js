@@ -32,6 +32,14 @@ PythonSerializer.prototype = {
 	},
 
 	printSubArray : function (attrType, type, values, co, j, lead, trail) {
+                if (type === "int") {
+                        for (var v in values) {
+                                if (values[v] > 4200000000) {
+                                        values[v] = "0x"+parseInt(values[v]).toString(16).toUpperCase();
+                                }
+                        }
+                }
+
 		return '['+lead+values.join(j)+trail+']';
 	},
 
