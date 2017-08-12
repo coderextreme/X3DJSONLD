@@ -18,6 +18,7 @@ PythonSerializer.prototype = {
 		var stack = [];
 
 		var str = "";
+		str += "# -*- coding: "+json.X3D.encoding+" -*-\n";
 		str += "from jnius import autoclass\n";
 		str += "from X3Dautoclass import *\n";
 
@@ -34,9 +35,15 @@ PythonSerializer.prototype = {
 	printSubArray : function (attrType, type, values, co, j, lead, trail) {
                 if (type === "int") {
                         for (var v in values) {
+				if (values[v] > 0x7fffffff) {
+				    values[v] = values[v] - 4294967296
+				}
+
+				/*
                                 if (values[v] > 4200000000) {
                                         values[v] = "0x"+parseInt(values[v]).toString(16).toUpperCase();
                                 }
+				*/
                         }
                 }
 
