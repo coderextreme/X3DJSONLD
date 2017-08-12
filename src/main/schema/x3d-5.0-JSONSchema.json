@@ -2636,11 +2636,6 @@
 						"type":"boolean"
 					},
 					"@language" : {
-						"enum": [
-							"Cg",
-							"GLSL",
-							"HLSL"
-						],
 						"type":"string"
 					},
 					"-metadata" : {
@@ -7224,10 +7219,6 @@
 						}
 					},
 					"@version" : {
-						"enum": [
-							"2.0",
-							"2.2"
-						],
 						"default":"2.2",
 						"type":"string"
 					},
@@ -9403,10 +9394,6 @@
 						"type":"boolean"
 					},
 					"@intersectionType" : {
-						"enum": [
-							"BOUNDS",
-							"GEOMETRY"
-						],
 						"default":"BOUNDS",
 						"type":"string"
 					},
@@ -12375,11 +12362,6 @@
 						"type":"boolean"
 					},
 					"@language" : {
-						"enum": [
-							"Cg",
-							"GLSL",
-							"HLSL"
-						],
 						"type":"string"
 					},
 					"-metadata" : {
@@ -13087,10 +13069,6 @@
 						"type":"boolean"
 					},
 					"@intersectionType" : {
-						"enum": [
-							"BOUNDS",
-							"GEOMETRY"
-						],
 						"default":"BOUNDS",
 						"type":"string"
 					},
@@ -13928,10 +13906,6 @@
 						"type":"boolean"
 					},
 					"@intersectionType" : {
-						"enum": [
-							"BOUNDS",
-							"GEOMETRY"
-						],
 						"default":"BOUNDS",
 						"type":"string"
 					},
@@ -14026,11 +14000,6 @@
 						"type":"boolean"
 					},
 					"@language" : {
-						"enum": [
-							"Cg",
-							"GLSL",
-							"HLSL"
-						],
 						"type":"string"
 					},
 					"-metadata" : {
@@ -15470,10 +15439,6 @@
 						"$ref":"#/definitions/-X3DMetadataObjectSFNode"
 					},
 					"@phaseFunction" : {
-						"enum": [
-							"Henyey-Greenstein",
-							"NONE"
-						],
 						"default":"Henyey-Greenstein",
 						"type":"string"
 					},
@@ -20001,10 +19966,6 @@
 						"type":"boolean"
 					},
 					"@intersectionType" : {
-						"enum": [
-							"BOUNDS",
-							"GEOMETRY"
-						],
 						"default":"BOUNDS",
 						"type":"string"
 					},
@@ -20506,39 +20467,6 @@
 						"type":"string"
 					},
 					"@name" : {
-						"enum": [
-							"accessRights",
-							"contributor",
-							"created",
-							"creator",
-							"description",
-							"drawing",
-							"error",
-							"generator",
-							"hint",
-							"identifier",
-							"Image",
-							"info",
-							"license",
-							"modified",
-							"MovingImage",
-							"photo",
-							"reference",
-							"requires",
-							"rights",
-							"robots",
-							"Sound",
-							"specificationSection",
-							"specificationUrl",
-							"subject",
-							"Text",
-							"title",
-							"TODO",
-							"translator",
-							"translated",
-							"version",
-							"warning"
-						],
 						"type":"string"
 					},
 					"@scheme" : {
