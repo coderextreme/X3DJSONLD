@@ -24,14 +24,7 @@
             <field name='velocity' accessType='inputOutput' appinfo='' documentation='' type='SFVec3f' value='0 0 0'/>
             <field name='set_fraction' accessType='inputOnly' appinfo='' documentation='' type='SFTime' value=''/>
 <![CDATA[
-
 ecmascript:
-			function set_translation(value) {
-				translation = value;
-			}
-			function translation_changed() {
-				return translation;
-			}
 			function newBubble() {
 			    translation = new SFVec3f(0, 0, 0);
 			    velocity = new SFVec3f(
@@ -41,20 +34,22 @@ ecmascript:
 			}
 			function set_fraction() {
 			    translation = new SFVec3f(
-			    	translation[0] + velocity[0],
-				translation[1] + velocity[1],
-				translation[2] + velocity[2]);
-			    for (var j = 0; j <= 2; j++) {
-				    if (Math.abs(translation[j]) > 10) {
+			    	translation.x + velocity.x,
+				translation.y + velocity.y,
+				translation.z + velocity.z);
+				if (Math.abs(translation.x) > 10) {
 					newBubble();
-				    } else {
+				} else if (Math.abs(translation.y) > 10) {
+					newBubble();
+				} else if (Math.abs(translation.z) > 10) {
+					newBubble();
+				} else {
 					velocity = new SFVec3f(
-						velocity[0] + Math.random() * 0.2 - 0.1,
-						velocity[1] + Math.random() * 0.2 - 0.1,
-						velocity[2] + Math.random() * 0.2 - 0.1
+						velocity.x + Math.random() * 0.2 - 0.1,
+						velocity.y + Math.random() * 0.2 - 0.1,
+						velocity.z + Math.random() * 0.2 - 0.1
 					);
-				    }
-			    }
+				}
 			}
 
 			function initialize() {

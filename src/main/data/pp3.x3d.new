@@ -58,8 +58,7 @@
 </Group>
 <Script DEF="RightSingleToMultiString"><field name="set_rightstring" accessType="inputOnly" type="SFString"></field>
 <field name="rightlines" accessType="outputOnly" type="MFString"></field>
-<![CDATA[
-ecmascript:
+<![CDATA[ecmascript:
 
 function initialize() {
 	rightlines = new MFString("");
@@ -71,8 +70,7 @@ function set_rightstring(rightstr) {
 ]]></Script>
 <Script DEF="UpSingleToMultiString"><field name="set_upstring" accessType="inputOnly" type="SFString"></field>
 <field name="uplines" accessType="outputOnly" type="MFString"></field>
-<![CDATA[
-ecmascript:
+<![CDATA[ecmascript:
 
 function initialize() {
 	uplines = new MFString("");
@@ -84,8 +82,7 @@ function set_upstring(upstr) {
 ]]></Script>
 <Script DEF="CenterSingleToMultiString"><field name="set_centerstring" accessType="inputOnly" type="SFString"></field>
 <field name="centerlines" accessType="outputOnly" type="MFString"></field>
-<![CDATA[
-ecmascript:
+<![CDATA[ecmascript:
 
 function initialize() {
 	centerlines = new MFString("");

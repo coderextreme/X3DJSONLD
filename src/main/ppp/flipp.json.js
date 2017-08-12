@@ -91,6 +91,25 @@ X3DJSON.nodeUtil = function(node, field, value) {
 			return $(selector)[0];
 		}
 };
+X3DJSON.createProxy = function(action, scriptObject) {
+	var proxy = new Proxy(scriptObject, {
+		get: function(target, property, receiver) {
+			return Reflect.get(target, property, receiver);
+		},
+		set: function(target, property, value, receiver) {
+                 if (typeof action[property] === 'object') {
+                        for (var route in action[property]) {
+                                if (typeof action[property][route] === 'function') {
+                                        action[property][route](property, value);
+   		                     // console.log('Set',property,'to', value);
+                                }
+                        }
+                 }
+		      return Reflect.set(target, property, value, receiver);
+		}
+	});
+	return proxy;
+};
 X3DJSON.nodeUtil('ci').addEventListener('outputchange', function(event) {
 }, false);
 X3DJSON.nodeUtil('si').addEventListener('outputchange', function(event) {

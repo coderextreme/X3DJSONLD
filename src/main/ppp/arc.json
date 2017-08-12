@@ -29,7 +29,7 @@
         },
         {
           "@name": "translated",
-          "@content": "21 July 2017"
+          "@content": "10 August 2017"
         },
         {
           "@name": "generator",
@@ -143,8 +143,16 @@
                     },
                     {
                       "@name": "keyValue",
-                      "@accessType": "outputOnly",
-                      "@type": "MFVec3f"
+                      "@accessType": "inputOutput",
+                      "@type": "MFVec3f",
+                      "@value": [
+                        0,
+                        0,
+                        0,
+                        0,
+                        5,
+                        0
+                      ]
                     }
                   ],
                   "#sourceText": [
@@ -153,7 +161,7 @@
                     "                    old = translation;",
                     "\t\t    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);",
                     "                    keyValue = new MFVec3f([old, translation]);",
-                    "\t\t    // Browser.println(translation);",
+                    "\t\t    // Browser.println(keyValue);",
                     "\t\t}"
                   ]
                 }
@@ -279,8 +287,16 @@
                     },
                     {
                       "@name": "keyValue",
-                      "@accessType": "outputOnly",
-                      "@type": "MFVec3f"
+                      "@accessType": "inputOutput",
+                      "@type": "MFVec3f",
+                      "@value": [
+                        0,
+                        0,
+                        0,
+                        0,
+                        5,
+                        0
+                      ]
                     }
                   ],
                   "#sourceText": [
@@ -289,7 +305,7 @@
                     "                    old = translation;",
                     "\t\t    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);",
                     "                    keyValue = new MFVec3f([old, translation]);",
-                    "\t\t    // Browser.println(translation);",
+                    "\t\t    // Browser.println(keyValue);",
                     "\t\t}"
                   ]
                 }
@@ -415,8 +431,16 @@
                     },
                     {
                       "@name": "keyValue",
-                      "@accessType": "outputOnly",
-                      "@type": "MFVec3f"
+                      "@accessType": "inputOutput",
+                      "@type": "MFVec3f",
+                      "@value": [
+                        0,
+                        0,
+                        0,
+                        0,
+                        5,
+                        0
+                      ]
                     }
                   ],
                   "#sourceText": [
@@ -425,7 +449,7 @@
                     "                    old = translation;",
                     "\t\t    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);",
                     "                    keyValue = new MFVec3f([old, translation]);",
-                    "\t\t    // Browser.println(translation);",
+                    "\t\t    // Browser.println(keyValue);",
                     "\t\t}"
                   ]
                 }
@@ -551,8 +575,16 @@
                     },
                     {
                       "@name": "keyValue",
-                      "@accessType": "outputOnly",
-                      "@type": "MFVec3f"
+                      "@accessType": "inputOutput",
+                      "@type": "MFVec3f",
+                      "@value": [
+                        0,
+                        0,
+                        0,
+                        0,
+                        5,
+                        0
+                      ]
                     }
                   ],
                   "#sourceText": [
@@ -561,7 +593,7 @@
                     "                    old = translation;",
                     "\t\t    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);",
                     "                    keyValue = new MFVec3f([old, translation]);",
-                    "\t\t    // Browser.println(translation);",
+                    "\t\t    // Browser.println(keyValue);",
                     "\t\t}"
                   ]
                 }
@@ -728,11 +760,16 @@
                     "\t\t\t    translation : transl,",
                     "\t\t\t    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)",
                     "\t\t    };",
-                    "\t    } else {",
+                    "\t    } else if (typeof SFRotation !== 'undefined') {",
                     "\t\t    return {",
                     "\t\t\t    scale : new SFVec3f(1.0,dist,1.0),",
                     "\t\t\t    translation : transl,",
                     "\t\t\t    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)",
+                    "\t\t    };",
+                    "\t    } else {",
+                    "\t\t    return {",
+                    "\t\t\t    scale : new SFVec3f(1.0,dist,1.0),",
+                    "\t\t\t    translation : transl",
                     "\t\t    };",
                     "\t    }",
                     "\t}",
@@ -877,11 +914,16 @@
                     "\t\t\t    translation : transl,",
                     "\t\t\t    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)",
                     "\t\t    };",
-                    "\t    } else {",
+                    "\t    } else if (typeof SFRotation !== 'undefined') {",
                     "\t\t    return {",
                     "\t\t\t    scale : new SFVec3f(1.0,dist,1.0),",
                     "\t\t\t    translation : transl,",
                     "\t\t\t    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)",
+                    "\t\t    };",
+                    "\t    } else {",
+                    "\t\t    return {",
+                    "\t\t\t    scale : new SFVec3f(1.0,dist,1.0),",
+                    "\t\t\t    translation : transl",
                     "\t\t    };",
                     "\t    }",
                     "\t}",
@@ -1026,11 +1068,16 @@
                     "\t\t\t    translation : transl,",
                     "\t\t\t    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)",
                     "\t\t    };",
-                    "\t    } else {",
+                    "\t    } else if (typeof SFRotation !== 'undefined') {",
                     "\t\t    return {",
                     "\t\t\t    scale : new SFVec3f(1.0,dist,1.0),",
                     "\t\t\t    translation : transl,",
                     "\t\t\t    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)",
+                    "\t\t    };",
+                    "\t    } else {",
+                    "\t\t    return {",
+                    "\t\t\t    scale : new SFVec3f(1.0,dist,1.0),",
+                    "\t\t\t    translation : transl",
                     "\t\t    };",
                     "\t    }",
                     "\t}",

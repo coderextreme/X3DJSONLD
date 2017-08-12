@@ -85,7 +85,7 @@
         },
         {
           "@name": "translated",
-          "@content": "03 June 2017"
+          "@content": "10 August 2017"
         },
         {
           "@name": "generator",
@@ -1603,7 +1603,7 @@
                 "ROUTE": {
                   "@fromNode": "BoxPath",
                   "@fromField": "value_changed",
-                  "@toNode": "DECLCamera_Camera.AimPointTest_FIELDshots_DECLCameraShot_Shot5_FIELDmoves_DECLCameraMovement_MoveAimPoint3.1",
+                  "@toNode": "DECLCameraMovement_MoveAimPoint3.1",
                   "@toField": "goalAimPoint"
                 }
               },
@@ -1611,7 +1611,7 @@
                 "ROUTE": {
                   "@fromNode": "BoxPath",
                   "@fromField": "value_changed",
-                  "@toNode": "DECLCamera_Camera.AimPointTest_FIELDshots_DECLCameraShot_Shot5_FIELDmoves_DECLCameraMovement_MoveAimPoint3.2",
+                  "@toNode": "DECLCameraMovement_MoveAimPoint3.2",
                   "@toField": "goalAimPoint"
                 }
               },
@@ -1619,7 +1619,7 @@
                 "ROUTE": {
                   "@fromNode": "BoxPath",
                   "@fromField": "value_changed",
-                  "@toNode": "DECLCamera_Camera.AimPointTest_FIELDshots_DECLCameraShot_Shot5_FIELDmoves_DECLCameraMovement_MoveAimPoint3.3",
+                  "@toNode": "DECLCameraMovement_MoveAimPoint3.3",
                   "@toField": "goalAimPoint"
                 }
               },

@@ -1,66 +1,151 @@
+# -*- coding: UTF-8 -*-
 from jnius import autoclass
 from X3Dautoclass import *
-X3D0 =  X3DObject().setProfile("Immersive").setVersion("3.0")
+X3D0 =  X3DObject()
+X3D0.setProfile("Immersive")
+X3D0.setVersion("3.0")
+
 head1 = headObject()
-meta2 = metaObject().setName("flowers2.x3d").setContent("title")
+
+meta2 = metaObject()
+meta2.setName("flowers2.x3d")
+meta2.setContent("title")
+
 head1.addMeta(meta2)
-meta3 = metaObject().setName("author").setContent("John Carlson")
+meta3 = metaObject()
+meta3.setName("author")
+meta3.setContent("John Carlson")
+
 head1.addMeta(meta3)
-meta4 = metaObject().setName("transcriber").setContent("John Carlson")
+meta4 = metaObject()
+meta4.setName("transcriber")
+meta4.setContent("John Carlson")
+
 head1.addMeta(meta4)
-meta5 = metaObject().setName("created").setContent("23 January 2005")
+meta5 = metaObject()
+meta5.setName("created")
+meta5.setContent("23 January 2005")
+
 head1.addMeta(meta5)
-meta6 = metaObject().setName("modified").setContent("05 May 2017")
+meta6 = metaObject()
+meta6.setName("modified")
+meta6.setContent("05 May 2017")
+
 head1.addMeta(meta6)
-meta7 = metaObject().setName("description").setContent("2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)")
+meta7 = metaObject()
+meta7.setName("description")
+meta7.setContent("2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)")
+
 head1.addMeta(meta7)
-meta8 = metaObject().setName("url").setContent("https://coderextreme.net/x3d/flowers2.x3d")
+meta8 = metaObject()
+meta8.setName("url")
+meta8.setContent("https://coderextreme.net/x3d/flowers2.x3d")
+
 head1.addMeta(meta8)
-meta9 = metaObject().setName("generator").setContent("manually written")
+meta9 = metaObject()
+meta9.setName("generator")
+meta9.setContent("manually written")
+
 head1.addMeta(meta9)
 X3D0.setHead(head1)
 Scene10 = SceneObject()
+
 NavigationInfo11 = NavigationInfoObject()
+
 Scene10.addChild(NavigationInfo11)
-Viewpoint12 = ViewpointObject().setDescription("Two mathematical orbitals").setPosition([0,0,50])
+Viewpoint12 = ViewpointObject()
+Viewpoint12.setDescription("Two mathematical orbitals")
+Viewpoint12.setPosition([0,0,50])
+
 Scene10.addChild(Viewpoint12)
 Group13 = GroupObject()
-DirectionalLight14 = DirectionalLightObject().setDirection([1,1,1])
+
+DirectionalLight14 = DirectionalLightObject()
+DirectionalLight14.setDirection([1,1,1])
+
 Group13.addChild(DirectionalLight14)
-Transform15 = TransformObject().setDEF("OrbitTransform").setTranslation([8,0,0])
+Transform15 = TransformObject()
+Transform15.setDEF("OrbitTransform")
+Transform15.setTranslation([8,0,0])
+
 Shape16 = ShapeObject()
+
 Appearance17 = AppearanceObject()
-Material18 = MaterialObject().setDiffuseColor([0,0.5,1]).setSpecularColor([0,0.5,1])
+
+Material18 = MaterialObject()
+Material18.setDiffuseColor([0,0.5,1])
+Material18.setSpecularColor([0,0.5,1])
+
 Appearance17.setMaterial(Material18)
 Shape16.setAppearance(Appearance17)
-IndexedFaceSet19 = IndexedFaceSetObject().setConvex(False).setDEF("Orbit")
-Coordinate20 = CoordinateObject().setDEF("OrbitCoordinates")
+IndexedFaceSet19 = IndexedFaceSetObject()
+IndexedFaceSet19.setConvex(False)
+IndexedFaceSet19.setDEF("Orbit")
+
+Coordinate20 = CoordinateObject()
+Coordinate20.setDEF("OrbitCoordinates")
+
 IndexedFaceSet19.setCoord(Coordinate20)
 Shape16.setGeometry(IndexedFaceSet19)
 Transform15.addChild(Shape16)
 Group13.addChild(Transform15)
-Transform21 = TransformObject().setDEF("OrbitTransform2").setTranslation([-8,0,0])
+Transform21 = TransformObject()
+Transform21.setDEF("OrbitTransform2")
+Transform21.setTranslation([-8,0,0])
+
 Shape22 = ShapeObject()
+
 Appearance23 = AppearanceObject()
-Material24 = MaterialObject().setDiffuseColor([1,0.5,0]).setSpecularColor([1,0.5,0]).setTransparency(0.75)
+
+Material24 = MaterialObject()
+Material24.setDiffuseColor([1,0.5,0])
+Material24.setSpecularColor([1,0.5,0])
+Material24.setTransparency(0.75)
+
 Appearance23.setMaterial(Material24)
 Shape22.setAppearance(Appearance23)
-IndexedFaceSet25 = IndexedFaceSetObject().setDEF("Orbit2")
-Coordinate26 = CoordinateObject().setDEF("OrbitCoordinates2")
+IndexedFaceSet25 = IndexedFaceSetObject()
+IndexedFaceSet25.setDEF("Orbit2")
+
+Coordinate26 = CoordinateObject()
+Coordinate26.setDEF("OrbitCoordinates2")
+
 IndexedFaceSet25.setCoord(Coordinate26)
 Shape22.setGeometry(IndexedFaceSet25)
 Transform21.addChild(Shape22)
 Group13.addChild(Transform21)
-TimeSensor27 = TimeSensorObject().setDEF("Clock").setCycleInterval(16).setLoop(True)
+TimeSensor27 = TimeSensorObject()
+TimeSensor27.setDEF("Clock")
+TimeSensor27.setCycleInterval(16)
+TimeSensor27.setLoop(True)
+
 Group13.addChild(TimeSensor27)
-OrientationInterpolator28 = OrientationInterpolatorObject().setDEF("OrbitPath").setKey([0,0.5,1]).setKeyValue([1,0,0,0,1,0,0,3.14,1,0,0,6.28])
+OrientationInterpolator28 = OrientationInterpolatorObject()
+OrientationInterpolator28.setDEF("OrbitPath")
+OrientationInterpolator28.setKey([0,0.5,1])
+OrientationInterpolator28.setKeyValue([1,0,0,0,1,0,0,3.14,1,0,0,6.28])
+
 Group13.addChild(OrientationInterpolator28)
-Script29 = ScriptObject().setDEF("OrbitScript")
-field30 = fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("set_fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
+Script29 = ScriptObject()
+Script29.setDEF("OrbitScript")
+
+field30 = fieldObject()
+field30.setType(fieldObject.TYPE_SFFLOAT)
+field30.setName("set_fraction")
+field30.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
+
 Script29.addField(field30)
-field31 = fieldObject().setType(fieldObject.TYPE_MFVEC3F).setName("coordinates").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
+field31 = fieldObject()
+field31.setType(fieldObject.TYPE_MFVEC3F)
+field31.setName("coordinates")
+field31.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
+
 Script29.addField(field31)
-field32 = fieldObject().setType(fieldObject.TYPE_MFINT32).setName("coordIndexes").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
+field32 = fieldObject()
+field32.setType(fieldObject.TYPE_MFINT32)
+field32.setName("coordIndexes")
+field32.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
+
 Script29.addField(field32)
 
 Script29.setSourceCode("ecmascript:\n"+
@@ -136,12 +221,26 @@ Script29.setSourceCode("ecmascript:\n"+
 "}\n"+
 "")
 Group13.addChild(Script29)
-Script33 = ScriptObject().setDEF("OrbitScript2")
-field34 = fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("set_fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
+Script33 = ScriptObject()
+Script33.setDEF("OrbitScript2")
+
+field34 = fieldObject()
+field34.setType(fieldObject.TYPE_SFFLOAT)
+field34.setName("set_fraction")
+field34.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
+
 Script33.addField(field34)
-field35 = fieldObject().setType(fieldObject.TYPE_MFVEC3F).setName("coordinates").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
+field35 = fieldObject()
+field35.setType(fieldObject.TYPE_MFVEC3F)
+field35.setName("coordinates")
+field35.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
+
 Script33.addField(field35)
-field36 = fieldObject().setType(fieldObject.TYPE_MFINT32).setName("coordIndexes").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
+field36 = fieldObject()
+field36.setType(fieldObject.TYPE_MFINT32)
+field36.setName("coordIndexes")
+field36.setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)
+
 Script33.addField(field36)
 
 Script33.setSourceCode("ecmascript:\n"+
@@ -219,23 +318,68 @@ Script33.setSourceCode("ecmascript:\n"+
 "")
 Group13.addChild(Script33)
 Scene10.addChild(Group13)
-ROUTE37 = ROUTEObject().setFromField("coordIndexes").setFromNode("OrbitScript").setToField("coordIndex").setToNode("Orbit")
+ROUTE37 = ROUTEObject()
+ROUTE37.setFromField("coordIndexes")
+ROUTE37.setFromNode("OrbitScript")
+ROUTE37.setToField("coordIndex")
+ROUTE37.setToNode("Orbit")
+
 Scene10.addChild(ROUTE37)
-ROUTE38 = ROUTEObject().setFromField("coordinates").setFromNode("OrbitScript").setToField("point").setToNode("OrbitCoordinates")
+ROUTE38 = ROUTEObject()
+ROUTE38.setFromField("coordinates")
+ROUTE38.setFromNode("OrbitScript")
+ROUTE38.setToField("point")
+ROUTE38.setToNode("OrbitCoordinates")
+
 Scene10.addChild(ROUTE38)
-ROUTE39 = ROUTEObject().setFromField("fraction_changed").setFromNode("Clock").setToField("set_fraction").setToNode("OrbitScript")
+ROUTE39 = ROUTEObject()
+ROUTE39.setFromField("fraction_changed")
+ROUTE39.setFromNode("Clock")
+ROUTE39.setToField("set_fraction")
+ROUTE39.setToNode("OrbitScript")
+
 Scene10.addChild(ROUTE39)
-ROUTE40 = ROUTEObject().setFromField("coordIndexes").setFromNode("OrbitScript2").setToField("coordIndex").setToNode("Orbit2")
+ROUTE40 = ROUTEObject()
+ROUTE40.setFromField("coordIndexes")
+ROUTE40.setFromNode("OrbitScript2")
+ROUTE40.setToField("coordIndex")
+ROUTE40.setToNode("Orbit2")
+
 Scene10.addChild(ROUTE40)
-ROUTE41 = ROUTEObject().setFromField("coordinates").setFromNode("OrbitScript2").setToField("point").setToNode("OrbitCoordinates2")
+ROUTE41 = ROUTEObject()
+ROUTE41.setFromField("coordinates")
+ROUTE41.setFromNode("OrbitScript2")
+ROUTE41.setToField("point")
+ROUTE41.setToNode("OrbitCoordinates2")
+
 Scene10.addChild(ROUTE41)
-ROUTE42 = ROUTEObject().setFromField("fraction_changed").setFromNode("Clock").setToField("set_fraction").setToNode("OrbitScript2")
+ROUTE42 = ROUTEObject()
+ROUTE42.setFromField("fraction_changed")
+ROUTE42.setFromNode("Clock")
+ROUTE42.setToField("set_fraction")
+ROUTE42.setToNode("OrbitScript2")
+
 Scene10.addChild(ROUTE42)
-ROUTE43 = ROUTEObject().setFromField("fraction_changed").setFromNode("Clock").setToField("set_fraction").setToNode("OrbitPath")
+ROUTE43 = ROUTEObject()
+ROUTE43.setFromField("fraction_changed")
+ROUTE43.setFromNode("Clock")
+ROUTE43.setToField("set_fraction")
+ROUTE43.setToNode("OrbitPath")
+
 Scene10.addChild(ROUTE43)
-ROUTE44 = ROUTEObject().setFromField("value_changed").setFromNode("OrbitPath").setToField("rotation").setToNode("OrbitTransform")
+ROUTE44 = ROUTEObject()
+ROUTE44.setFromField("value_changed")
+ROUTE44.setFromNode("OrbitPath")
+ROUTE44.setToField("rotation")
+ROUTE44.setToNode("OrbitTransform")
+
 Scene10.addChild(ROUTE44)
-ROUTE45 = ROUTEObject().setFromField("value_changed").setFromNode("OrbitPath").setToField("rotation").setToNode("OrbitTransform2")
+ROUTE45 = ROUTEObject()
+ROUTE45.setFromField("value_changed")
+ROUTE45.setFromNode("OrbitPath")
+ROUTE45.setToField("rotation")
+ROUTE45.setToNode("OrbitTransform2")
+
 Scene10.addChild(ROUTE45)
 X3D0.setScene(Scene10)
 

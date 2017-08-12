@@ -131,8 +131,6 @@ X3DJSON['Script']['MoveCylinder'] = function() {
 		return value;
 	};
 	this.spine = new MFVec3f([new SFVec3f ( -50 , -50 , 0 ),new SFVec3f ( 50 , 50 , 0 )]);
-
-
 ecmascript:
 
                 

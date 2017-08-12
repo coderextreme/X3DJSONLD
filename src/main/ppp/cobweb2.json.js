@@ -155,7 +155,6 @@ X3DJSON['Script']['DECLBubble_bubbleA_bounce'] = function() {
 		return value;
 	};
 	this.fraction = undefined;
-
 ecmascript:
 
 	this.initialize = function () {
@@ -229,25 +228,6 @@ X3DJSON['Obj']['DECLBubble_bubbleA_bounce']['ACTION'] = {};
 X3DJSON['Obj']['DECLBubble_bubbleA_bounce'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['DECLBubble_bubbleA_bounce']['ACTION'],X3DJSON['Obj']['DECLBubble_bubbleA_bounce']);
 }
 if (typeof X3DJSON['Obj']['DECLBubble_bubbleA_bounce'].initialize === "function") X3DJSON['Obj']['DECLBubble_bubbleA_bounce'].initialize();
-X3DJSON.createProxy = function(action, scriptObject) {
-	var proxy = new Proxy(scriptObject, {
-		get: function(target, property, receiver) {
-			return Reflect.get(target, property, receiver);
-		},
-		set: function(target, property, value, receiver) {
-                 if (typeof action[property] === 'object') {
-                        for (var route in action[property]) {
-                                if (typeof action[property][route] === 'function') {
-                                        action[property][route](property, value);
-   		                     // console.log('Set',property,'to', value);
-                                }
-                        }
-                 }
-		      return Reflect.set(target, property, value, receiver);
-		}
-	});
-	return proxy;
-};
 if (typeof X3DJSON['Script'] === 'undefined') {
 X3DJSON['Script'] = {};
 }
@@ -293,7 +273,6 @@ X3DJSON['Script']['DECLBubble_bubbleB_bounce'] = function() {
 		return value;
 	};
 	this.fraction = undefined;
-
 ecmascript:
 
 	this.initialize = function () {
@@ -367,25 +346,6 @@ X3DJSON['Obj']['DECLBubble_bubbleB_bounce']['ACTION'] = {};
 X3DJSON['Obj']['DECLBubble_bubbleB_bounce'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['DECLBubble_bubbleB_bounce']['ACTION'],X3DJSON['Obj']['DECLBubble_bubbleB_bounce']);
 }
 if (typeof X3DJSON['Obj']['DECLBubble_bubbleB_bounce'].initialize === "function") X3DJSON['Obj']['DECLBubble_bubbleB_bounce'].initialize();
-X3DJSON.createProxy = function(action, scriptObject) {
-	var proxy = new Proxy(scriptObject, {
-		get: function(target, property, receiver) {
-			return Reflect.get(target, property, receiver);
-		},
-		set: function(target, property, value, receiver) {
-                 if (typeof action[property] === 'object') {
-                        for (var route in action[property]) {
-                                if (typeof action[property][route] === 'function') {
-                                        action[property][route](property, value);
-   		                     // console.log('Set',property,'to', value);
-                                }
-                        }
-                 }
-		      return Reflect.set(target, property, value, receiver);
-		}
-	});
-	return proxy;
-};
 if (typeof X3DJSON['Script'] === 'undefined') {
 X3DJSON['Script'] = {};
 }
@@ -431,7 +391,6 @@ X3DJSON['Script']['DECLBubble_bubbleC_bounce'] = function() {
 		return value;
 	};
 	this.fraction = undefined;
-
 ecmascript:
 
 	this.initialize = function () {
@@ -505,25 +464,6 @@ X3DJSON['Obj']['DECLBubble_bubbleC_bounce']['ACTION'] = {};
 X3DJSON['Obj']['DECLBubble_bubbleC_bounce'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['DECLBubble_bubbleC_bounce']['ACTION'],X3DJSON['Obj']['DECLBubble_bubbleC_bounce']);
 }
 if (typeof X3DJSON['Obj']['DECLBubble_bubbleC_bounce'].initialize === "function") X3DJSON['Obj']['DECLBubble_bubbleC_bounce'].initialize();
-X3DJSON.createProxy = function(action, scriptObject) {
-	var proxy = new Proxy(scriptObject, {
-		get: function(target, property, receiver) {
-			return Reflect.get(target, property, receiver);
-		},
-		set: function(target, property, value, receiver) {
-                 if (typeof action[property] === 'object') {
-                        for (var route in action[property]) {
-                                if (typeof action[property][route] === 'function') {
-                                        action[property][route](property, value);
-   		                     // console.log('Set',property,'to', value);
-                                }
-                        }
-                 }
-		      return Reflect.set(target, property, value, receiver);
-		}
-	});
-	return proxy;
-};
 if (typeof X3DJSON['Script'] === 'undefined') {
 X3DJSON['Script'] = {};
 }
@@ -569,7 +509,6 @@ X3DJSON['Script']['DECLBubble_bubbleD_bounce'] = function() {
 		return value;
 	};
 	this.fraction = undefined;
-
 ecmascript:
 
 	this.initialize = function () {

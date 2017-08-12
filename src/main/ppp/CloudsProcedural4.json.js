@@ -139,8 +139,6 @@ X3DJSON['Script']['PixelScript'] = function() {
 		return value;
 	};
 	this.Fog = new SFNode();
-
-        
 ecmascript:
 
 

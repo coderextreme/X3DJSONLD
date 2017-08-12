@@ -20,7 +20,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject())))
           .addChild(new ShapeObject()
-            .setGeometry(new TextObject().setString(Java.to(["Node2","\\","\\\\","\\\\\\","Node2"], Java.type("java.lang.String[]")))
+            .setGeometry(new TextObject().setString(Java.to(["Node2","\\","\\\\","Node2"], Java.type("java.lang.String[]")))
               .setFontStyle(new FontStyleObject()))
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject())))

@@ -57,41 +57,32 @@
             <field name='lastKey' accessType='inputOutput' type='SFFloat' value='0.0'/>
             <field name='orientations' accessType='inputOutput' type='MFRotation' value='0 1 0 0 0 1 0 -1.57 0 1 0 3.14 0 1 0 1.57 0 1 0 0 1 0 0 -1.57 0 1 0 0 1 0 0 1.57 0 1 0 0'/>
             <field name='positions' accessType='inputOutput' type='MFVec3f' value='0 0 10 -10 0 0 0 0 -10 10 0 0 0 0 10 0 10 0 0 0 10 0 -10 0 0 0 10'/>
-            <field name='position' accessType='outputOnly' type='MFVec3f'/>
-            <field name='orientation' accessType='outputOnly' type='MFRotation'/>
+            <field name='position_changed' accessType='outputOnly' type='MFVec3f'/>
+            <field name='set_orientation' accessType='inputOnly' type='MFRotation'/>
+            <field name='orientation_changed' accessType='outputOnly' type='MFRotation'/>
 <![CDATA[
 ecmascript:
                function set_cycle(value) {
-                        //var positions = [[0, 0, 10], [-10, 0, 0], [0, 0, -10], [10, 0, 0], [0, 0, 10], [0, 10, 0], [0, 0, 10], [0, -10, 0], [0, 0, 10]];
-                        //var orientations = [[0, 1, 0, 0], [0, 1, 0, -1.57], [0, 1, 0, 3.14], [0, 1, 0, 1.57], [0, 1, 0, 0] [1, 0, 0, -1.57], [0, 1, 0, 0], [1, 0, 0, 1.57], [0, 1, 0, 0]];
-                        //Browser.println(lastKey);
                         var ov = lastKey;
-                        // Browser.println(ov);      
-                        //Browser.println(positions.length);                  
                         do {
                             lastKey = Math.round(Math.random()*(positions.length-1));
                         } while (lastKey === ov);
-                        // Browser.println(lastKey);
                         var vc = lastKey;
                         
-                        // Browser.println(orientations[ov]);
-                        // Browser.println(orientations[vc]);
-                        orientation = new MFRotation();
-                        orientation[0] = new SFRotation(orientations[ov][0], orientations[ov][1], orientations[ov][2], orientations[ov][3]);
-                        orientation[1] = new SFRotation(orientations[vc][0], orientations[vc][1], orientations[vc][2], orientations[vc][3]);
-                        // Browser.println(positions[ov]);
-                        // Browser.println(positions[vc]);
-                        position = new MFVec3f();
-                        position[0] = new SFVec3f(positions[ov][0],positions[ov][1],positions[ov][2]);
-                        position[1] = new SFVec3f(positions[vc][0],positions[vc][1],positions[vc][2]);
+                        orientation_changed = new MFRotation();
+                        orientation_changed[0] = new SFRotation(orientations[ov].x, orientations[ov].y, orientations[ov].z, orientations[ov].w);
+                        orientation_changed[1] = new SFRotation(orientations[vc].x, orientations[vc].y, orientations[vc].z, orientations[vc].w);
+                        position_changed = new MFVec3f();
+                        position_changed[0] = new SFVec3f(positions[ov].x,positions[ov].y,positions[ov].z);
+                        position_changed[1] = new SFVec3f(positions[vc].x,positions[vc].y,positions[vc].z);
                     // }
                }
 
 ]]>
         </Script>
-        <ROUTE fromField='cycleTime' fromNode='TourTime' toField='set_cycle' toNode='RandomTourTime'/>
-        <ROUTE fromField='orientation' fromNode='RandomTourTime' toField='keyValue' toNode='TourOrientation'/>
-        <ROUTE fromField='position' fromNode='RandomTourTime' toField='keyValue' toNode='TourPosition'/>
+        <ROUTE fromField='cycleTime_changed' fromNode='TourTime' toField='set_cycle' toNode='RandomTourTime'/>
+        <ROUTE fromField='orientation_changed' fromNode='RandomTourTime' toField='set_keyValue' toNode='TourOrientation'/>
+        <ROUTE fromField='position_changed' fromNode='RandomTourTime' toField='set_keyValue' toNode='TourPosition'/>
         <ROUTE fromField='fraction_changed' fromNode='TourTime' toField='set_fraction' toNode='TourOrientation'/>
         <ROUTE fromField='value_changed' fromNode='TourOrientation' toField='set_orientation' toNode='Tour'/>
         <ROUTE fromField='fraction_changed' fromNode='TourTime' toField='set_fraction' toNode='TourPosition'/>

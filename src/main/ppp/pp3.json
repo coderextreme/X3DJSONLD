@@ -41,7 +41,7 @@
         },
         {
           "@name": "translated",
-          "@content": "03 June 2017"
+          "@content": "10 August 2017"
         },
         {
           "@name": "generator",
@@ -603,7 +603,6 @@
                     }
                   ],
                   "#sourceText": [
-                    "",
                     "ecmascript:",
                     "",
                     "function initialize() {",
@@ -632,7 +631,6 @@
                     }
                   ],
                   "#sourceText": [
-                    "",
                     "ecmascript:",
                     "",
                     "function initialize() {",
@@ -661,7 +659,6 @@
                     }
                   ],
                   "#sourceText": [
-                    "",
                     "ecmascript:",
                     "",
                     "function initialize() {",
@@ -1272,7 +1269,6 @@
                     }
                   ],
                   "#sourceText": [
-                    "",
                     "ecmascript:",
                     "",
                     "function initialize() {",
@@ -1301,7 +1297,6 @@
                     }
                   ],
                   "#sourceText": [
-                    "",
                     "ecmascript:",
                     "",
                     "function initialize() {",
@@ -1330,7 +1325,6 @@
                     }
                   ],
                   "#sourceText": [
-                    "",
                     "ecmascript:",
                     "",
                     "function initialize() {",
@@ -1946,7 +1940,6 @@
                     }
                   ],
                   "#sourceText": [
-                    "",
                     "ecmascript:",
                     "",
                     "function initialize() {",
@@ -1975,7 +1968,6 @@
                     }
                   ],
                   "#sourceText": [
-                    "",
                     "ecmascript:",
                     "",
                     "function initialize() {",
@@ -2004,7 +1996,6 @@
                     }
                   ],
                   "#sourceText": [
-                    "",
                     "ecmascript:",
                     "",
                     "function initialize() {",

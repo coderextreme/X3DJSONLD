@@ -1,104 +1,248 @@
+# -*- coding: UTF-8 -*-
 from jnius import autoclass
 from X3Dautoclass import *
-X3D0 =  X3DObject().setProfile("Immersive").setVersion("3.3")
+X3D0 =  X3DObject()
+X3D0.setProfile("Immersive")
+X3D0.setVersion("3.3")
+
 head1 = headObject()
-meta2 = metaObject().setName("title").setContent("x3dconnectorProto")
+
+meta2 = metaObject()
+meta2.setName("title")
+meta2.setContent("x3dconnectorProto")
+
 head1.addMeta(meta2)
-meta3 = metaObject().setName("creator").setContent("Lost, Doug Sanden I think")
+meta3 = metaObject()
+meta3.setName("creator")
+meta3.setContent("Lost, Doug Sanden I think")
+
 head1.addMeta(meta3)
-meta4 = metaObject().setName("generator").setContent("manual")
+meta4 = metaObject()
+meta4.setName("generator")
+meta4.setContent("manual")
+
 head1.addMeta(meta4)
-meta5 = metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d")
+meta5 = metaObject()
+meta5.setName("identifier")
+meta5.setContent("https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d")
+
 head1.addMeta(meta5)
-meta6 = metaObject().setName("description").setContent("a generic proto to connect two objects")
+meta6 = metaObject()
+meta6.setName("description")
+meta6.setContent("a generic proto to connect two objects")
+
 head1.addMeta(meta6)
 X3D0.setHead(head1)
 Scene7 = SceneObject()
-Viewpoint8 = ViewpointObject().setPosition([0,0,5]).setDescription("Only Viewpoint")
+
+Viewpoint8 = ViewpointObject()
+Viewpoint8.setPosition([0,0,5])
+Viewpoint8.setDescription("Only Viewpoint")
+
 Scene7.addChild(Viewpoint8)
-Background9 = BackgroundObject().setSkyColor([0.4,0.4,0.4])
+Background9 = BackgroundObject()
+Background9.setSkyColor([0.4,0.4,0.4])
+
 Scene7.addChild(Background9)
-Transform10 = TransformObject().setDEF("G1")
+Transform10 = TransformObject()
+Transform10.setDEF("G1")
+
 Shape11 = ShapeObject()
+
 Appearance12 = AppearanceObject()
-Material13 = MaterialObject().setDiffuseColor([0.7,0.2,0.2])
+
+Material13 = MaterialObject()
+Material13.setDiffuseColor([0.7,0.2,0.2])
+
 Appearance12.setMaterial(Material13)
 Shape11.setAppearance(Appearance12)
-Sphere14 = SphereObject().setRadius(0.1)
+Sphere14 = SphereObject()
+Sphere14.setRadius(0.1)
+
 Shape11.setGeometry(Sphere14)
 Transform10.addChild(Shape11)
-PlaneSensor15 = PlaneSensorObject().setDescription("Grab to move").setDEF("PS1")
+PlaneSensor15 = PlaneSensorObject()
+PlaneSensor15.setDescription("Grab to move")
+PlaneSensor15.setDEF("PS1")
+
 Transform10.addChild(PlaneSensor15)
-ROUTE16 = ROUTEObject().setFromNode("PS1").setFromField("translation_changed").setToNode("G1").setToField("set_translation")
+ROUTE16 = ROUTEObject()
+ROUTE16.setFromNode("PS1")
+ROUTE16.setFromField("translation_changed")
+ROUTE16.setToNode("G1")
+ROUTE16.setToField("set_translation")
+
 Transform10.addChild(ROUTE16)
 Scene7.addChild(Transform10)
-Transform17 = TransformObject().setDEF("G2").setTranslation([1,-1,0.01])
+Transform17 = TransformObject()
+Transform17.setDEF("G2")
+Transform17.setTranslation([1,-1,0.01])
+
 Shape18 = ShapeObject()
+
 Appearance19 = AppearanceObject()
-Material20 = MaterialObject().setDiffuseColor([0.2,0.7,0.2])
+
+Material20 = MaterialObject()
+Material20.setDiffuseColor([0.2,0.7,0.2])
+
 Appearance19.setMaterial(Material20)
 Shape18.setAppearance(Appearance19)
-Sphere21 = SphereObject().setRadius(0.1)
+Sphere21 = SphereObject()
+Sphere21.setRadius(0.1)
+
 Shape18.setGeometry(Sphere21)
 Transform17.addChild(Shape18)
-PlaneSensor22 = PlaneSensorObject().setDescription("Grab to move").setOffset([1,-1,0.01]).setDEF("PS2")
+PlaneSensor22 = PlaneSensorObject()
+PlaneSensor22.setDescription("Grab to move")
+PlaneSensor22.setOffset([1,-1,0.01])
+PlaneSensor22.setDEF("PS2")
+
 Transform17.addChild(PlaneSensor22)
-ROUTE23 = ROUTEObject().setFromNode("PS2").setFromField("translation_changed").setToNode("G2").setToField("set_translation")
+ROUTE23 = ROUTEObject()
+ROUTE23.setFromNode("PS2")
+ROUTE23.setFromField("translation_changed")
+ROUTE23.setToNode("G2")
+ROUTE23.setToField("set_translation")
+
 Transform17.addChild(ROUTE23)
 Scene7.addChild(Transform17)
-Transform24 = TransformObject().setDEF("transC1")
-Transform25 = TransformObject().setDEF("rotscaleC1")
+Transform24 = TransformObject()
+Transform24.setDEF("transC1")
+
+Transform25 = TransformObject()
+Transform25.setDEF("rotscaleC1")
+
 Shape26 = ShapeObject()
+
 Appearance27 = AppearanceObject()
-Material28 = MaterialObject().setDiffuseColor([0.2,0.7,0.7]).setTransparency(0.5)
+
+Material28 = MaterialObject()
+Material28.setDiffuseColor([0.2,0.7,0.7])
+Material28.setTransparency(0.5)
+
 Appearance27.setMaterial(Material28)
 Shape26.setAppearance(Appearance27)
-Cylinder29 = CylinderObject().setRadius(0.05)
+Cylinder29 = CylinderObject()
+Cylinder29.setRadius(0.05)
+
 Shape26.setGeometry(Cylinder29)
 Transform25.addChild(Shape26)
 Transform24.addChild(Transform25)
 Scene7.addChild(Transform24)
-ProtoDeclare30 = ProtoDeclareObject().setName("x3dconnector")
+ProtoDeclare30 = ProtoDeclareObject()
+ProtoDeclare30.setName("x3dconnector")
+
 ProtoInterface31 = ProtoInterfaceObject()
-field32 = fieldObject().setType(fieldObject.TYPE_SFNODE).setName("startnode").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
+
+field32 = fieldObject()
+field32.setType(fieldObject.TYPE_SFNODE)
+field32.setName("startnode")
+field32.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
+
 ProtoInterface31.addField(field32)
-field33 = fieldObject().setType(fieldObject.TYPE_SFNODE).setName("endnode").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
+field33 = fieldObject()
+field33.setType(fieldObject.TYPE_SFNODE)
+field33.setName("endnode")
+field33.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
+
 ProtoInterface31.addField(field33)
-field34 = fieldObject().setType(fieldObject.TYPE_SFNODE).setName("transnode").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
+field34 = fieldObject()
+field34.setType(fieldObject.TYPE_SFNODE)
+field34.setName("transnode")
+field34.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
+
 ProtoInterface31.addField(field34)
-field35 = fieldObject().setType(fieldObject.TYPE_SFNODE).setName("rotscalenode").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
+field35 = fieldObject()
+field35.setType(fieldObject.TYPE_SFNODE)
+field35.setName("rotscalenode")
+field35.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
+
 ProtoInterface31.addField(field35)
-field36 = fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("set_startpoint").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
+field36 = fieldObject()
+field36.setType(fieldObject.TYPE_SFVEC3F)
+field36.setName("set_startpoint")
+field36.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
+
 ProtoInterface31.addField(field36)
-field37 = fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("set_endpoint").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
+field37 = fieldObject()
+field37.setType(fieldObject.TYPE_SFVEC3F)
+field37.setName("set_endpoint")
+field37.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
+
 ProtoInterface31.addField(field37)
 ProtoDeclare30.setProtoInterface(ProtoInterface31)
 ProtoBody38 = ProtoBodyObject()
-Script39 = ScriptObject().setDEF("S1")
-field40 = fieldObject().setType(fieldObject.TYPE_SFNODE).setName("startnode").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
+
+Script39 = ScriptObject()
+Script39.setDEF("S1")
+
+field40 = fieldObject()
+field40.setType(fieldObject.TYPE_SFNODE)
+field40.setName("startnode")
+field40.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
+
 Script39.addField(field40)
-field41 = fieldObject().setType(fieldObject.TYPE_SFNODE).setName("endnode").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
+field41 = fieldObject()
+field41.setType(fieldObject.TYPE_SFNODE)
+field41.setName("endnode")
+field41.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
+
 Script39.addField(field41)
-field42 = fieldObject().setType(fieldObject.TYPE_SFNODE).setName("transnode").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
+field42 = fieldObject()
+field42.setType(fieldObject.TYPE_SFNODE)
+field42.setName("transnode")
+field42.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
+
 Script39.addField(field42)
-field43 = fieldObject().setType(fieldObject.TYPE_SFNODE).setName("rotscalenode").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
+field43 = fieldObject()
+field43.setType(fieldObject.TYPE_SFNODE)
+field43.setName("rotscalenode")
+field43.setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
+
 Script39.addField(field43)
-field44 = fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("set_startpoint").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
+field44 = fieldObject()
+field44.setType(fieldObject.TYPE_SFVEC3F)
+field44.setName("set_startpoint")
+field44.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
+
 Script39.addField(field44)
-field45 = fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("set_endpoint").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
+field45 = fieldObject()
+field45.setType(fieldObject.TYPE_SFVEC3F)
+field45.setName("set_endpoint")
+field45.setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)
+
 Script39.addField(field45)
 IS46 = ISObject()
-connect47 = connectObject().setNodeField("startnode").setProtoField("startnode")
+
+connect47 = connectObject()
+connect47.setNodeField("startnode")
+connect47.setProtoField("startnode")
+
 IS46.addConnect(connect47)
-connect48 = connectObject().setNodeField("endnode").setProtoField("endnode")
+connect48 = connectObject()
+connect48.setNodeField("endnode")
+connect48.setProtoField("endnode")
+
 IS46.addConnect(connect48)
-connect49 = connectObject().setNodeField("transnode").setProtoField("transnode")
+connect49 = connectObject()
+connect49.setNodeField("transnode")
+connect49.setProtoField("transnode")
+
 IS46.addConnect(connect49)
-connect50 = connectObject().setNodeField("rotscalenode").setProtoField("rotscalenode")
+connect50 = connectObject()
+connect50.setNodeField("rotscalenode")
+connect50.setProtoField("rotscalenode")
+
 IS46.addConnect(connect50)
-connect51 = connectObject().setNodeField("set_startpoint").setProtoField("set_startpoint")
+connect51 = connectObject()
+connect51.setNodeField("set_startpoint")
+connect51.setProtoField("set_startpoint")
+
 IS46.addConnect(connect51)
-connect52 = connectObject().setNodeField("set_endpoint").setProtoField("set_endpoint")
+connect52 = connectObject()
+connect52.setNodeField("set_endpoint")
+connect52.setProtoField("set_endpoint")
+
 IS46.addConnect(connect52)
 Script39.setIS(IS46)
 
@@ -145,31 +289,64 @@ Script39.setSourceCode("ecmascript:\n"+
 ProtoBody38.addChild(Script39)
 ProtoDeclare30.setProtoBody(ProtoBody38)
 Scene7.addChild(ProtoDeclare30)
-ProtoInstance53 = ProtoInstanceObject().setName("x3dconnector").setDEF("connector1")
-fieldValue54 = fieldValueObject().setName("startnode")
-Transform55 = TransformObject().setUSE("G1")
+ProtoInstance53 = ProtoInstanceObject()
+ProtoInstance53.setName("x3dconnector")
+ProtoInstance53.setDEF("connector1")
+
+fieldValue54 = fieldValueObject()
+fieldValue54.setName("startnode")
+
+Transform55 = TransformObject()
+Transform55.setUSE("G1")
+
 fieldValue54.addChild(Transform55)
 ProtoInstance53.addFieldValue(fieldValue54)
-fieldValue56 = fieldValueObject().setName("endnode")
-Transform57 = TransformObject().setUSE("G2")
+fieldValue56 = fieldValueObject()
+fieldValue56.setName("endnode")
+
+Transform57 = TransformObject()
+Transform57.setUSE("G2")
+
 fieldValue56.addChild(Transform57)
 ProtoInstance53.addFieldValue(fieldValue56)
-fieldValue58 = fieldValueObject().setName("transnode")
-Transform59 = TransformObject().setUSE("transC1")
+fieldValue58 = fieldValueObject()
+fieldValue58.setName("transnode")
+
+Transform59 = TransformObject()
+Transform59.setUSE("transC1")
+
 fieldValue58.addChild(Transform59)
 ProtoInstance53.addFieldValue(fieldValue58)
-fieldValue60 = fieldValueObject().setName("rotscalenode")
-Transform61 = TransformObject().setUSE("rotscaleC1")
+fieldValue60 = fieldValueObject()
+fieldValue60.setName("rotscalenode")
+
+Transform61 = TransformObject()
+Transform61.setUSE("rotscaleC1")
+
 fieldValue60.addChild(Transform61)
 ProtoInstance53.addFieldValue(fieldValue60)
-fieldValue62 = fieldValueObject().setName("set_startpoint")
+fieldValue62 = fieldValueObject()
+fieldValue62.setName("set_startpoint")
+
 ProtoInstance53.addFieldValue(fieldValue62)
-fieldValue63 = fieldValueObject().setName("set_endpoint")
+fieldValue63 = fieldValueObject()
+fieldValue63.setName("set_endpoint")
+
 ProtoInstance53.addFieldValue(fieldValue63)
 Scene7.addChild(ProtoInstance53)
-ROUTE64 = ROUTEObject().setFromNode("G1").setFromField("translation_changed").setToNode("connector1").setToField("set_startpoint")
+ROUTE64 = ROUTEObject()
+ROUTE64.setFromNode("G1")
+ROUTE64.setFromField("translation_changed")
+ROUTE64.setToNode("connector1")
+ROUTE64.setToField("set_startpoint")
+
 Scene7.addChild(ROUTE64)
-ROUTE65 = ROUTEObject().setFromNode("G2").setFromField("translation_changed").setToNode("connector1").setToField("set_endpoint")
+ROUTE65 = ROUTEObject()
+ROUTE65.setFromNode("G2")
+ROUTE65.setFromField("translation_changed")
+ROUTE65.setToNode("connector1")
+ROUTE65.setToField("set_endpoint")
+
 Scene7.addChild(ROUTE65)
 X3D0.setScene(Scene7)
 

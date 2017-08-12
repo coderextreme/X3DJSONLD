@@ -47,8 +47,7 @@
 <field name="d" type="SFFloat" accessType="inputOutput" value="3"></field>
 <field name="tdelta" type="SFFloat" accessType="inputOutput" value="0.5"></field>
 <field name="pdelta" type="SFFloat" accessType="inputOutput" value="0.5"></field>
-<![CDATA[
-ecmascript:
+<![CDATA[ecmascript:
 			function initialize() {
 			    translation = new SFVec3f(0, 0, 0);
 			    velocity = new SFVec3f(

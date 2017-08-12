@@ -383,7 +383,7 @@
                 "-children": [
                   {
                     "Transform": {
-                      "@DEF": "DECLx3dconnector_connector1_FIELDstartnode_DECLpoint_INSTANCE_node",
+                      "@DEF": "DECLpoint_INSTANCE_node",
                       "-children": [
                         {
                           "Shape": {
@@ -409,7 +409,7 @@
                         },
                         {
                           "PositionInterpolator": {
-                            "@DEF": "DECLx3dconnector_connector1_FIELDstartnode_DECLpoint_INSTANCE_PI1",
+                            "@DEF": "DECLpoint_INSTANCE_PI1",
                             "@key": [
                               0,
                               1
@@ -426,7 +426,7 @@
                         },
                         {
                           "Script": {
-                            "@DEF": "DECLx3dconnector_connector1_FIELDstartnode_DECLpoint_INSTANCE_MB1",
+                            "@DEF": "DECLpoint_INSTANCE_MB1",
                             "field": [
                               {
                                 "@name": "translation",
@@ -474,40 +474,40 @@
                         },
                         {
                           "TimeSensor": {
-                            "@DEF": "DECLx3dconnector_connector1_FIELDstartnode_DECLpoint_INSTANCE_CL1",
+                            "@DEF": "DECLpoint_INSTANCE_CL1",
                             "@cycleInterval": 3,
                             "@loop": true
                           }
                         },
                         {
                           "ROUTE": {
-                            "@fromNode": "DECLx3dconnector_connector1_FIELDstartnode_DECLpoint_INSTANCE_CL1",
+                            "@fromNode": "DECLpoint_INSTANCE_CL1",
                             "@fromField": "cycleTime",
-                            "@toNode": "DECLx3dconnector_connector1_FIELDstartnode_DECLpoint_INSTANCE_MB1",
+                            "@toNode": "DECLpoint_INSTANCE_MB1",
                             "@toField": "set_location"
                           }
                         },
                         {
                           "ROUTE": {
-                            "@fromNode": "DECLx3dconnector_connector1_FIELDstartnode_DECLpoint_INSTANCE_CL1",
+                            "@fromNode": "DECLpoint_INSTANCE_CL1",
                             "@fromField": "fraction_changed",
-                            "@toNode": "DECLx3dconnector_connector1_FIELDstartnode_DECLpoint_INSTANCE_PI1",
+                            "@toNode": "DECLpoint_INSTANCE_PI1",
                             "@toField": "set_fraction"
                           }
                         },
                         {
                           "ROUTE": {
-                            "@fromNode": "DECLx3dconnector_connector1_FIELDstartnode_DECLpoint_INSTANCE_MB1",
+                            "@fromNode": "DECLpoint_INSTANCE_MB1",
                             "@fromField": "keyValue",
-                            "@toNode": "DECLx3dconnector_connector1_FIELDstartnode_DECLpoint_INSTANCE_PI1",
+                            "@toNode": "DECLpoint_INSTANCE_PI1",
                             "@toField": "keyValue"
                           }
                         },
                         {
                           "ROUTE": {
-                            "@fromNode": "DECLx3dconnector_connector1_FIELDstartnode_DECLpoint_INSTANCE_PI1",
+                            "@fromNode": "DECLpoint_INSTANCE_PI1",
                             "@fromField": "value_changed",
-                            "@toNode": "DECLx3dconnector_connector1_FIELDstartnode_DECLpoint_INSTANCE_node",
+                            "@toNode": "DECLpoint_INSTANCE_node",
                             "@toField": "set_translation"
                           }
                         }
@@ -524,7 +524,7 @@
                 "-children": [
                   {
                     "Transform": {
-                      "@DEF": "DECLx3dconnector_connector1_FIELDendnode_DECLpoint_INSTANCE1000_node",
+                      "@DEF": "DECLpoint_INSTANCE1000_node",
                       "-children": [
                         {
                           "Shape": {
@@ -550,7 +550,7 @@
                         },
                         {
                           "PositionInterpolator": {
-                            "@DEF": "DECLx3dconnector_connector1_FIELDendnode_DECLpoint_INSTANCE1000_PI1",
+                            "@DEF": "DECLpoint_INSTANCE1000_PI1",
                             "@key": [
                               0,
                               1
@@ -567,7 +567,7 @@
                         },
                         {
                           "Script": {
-                            "@DEF": "DECLx3dconnector_connector1_FIELDendnode_DECLpoint_INSTANCE1000_MB1",
+                            "@DEF": "DECLpoint_INSTANCE1000_MB1",
                             "field": [
                               {
                                 "@name": "translation",
@@ -615,40 +615,40 @@
                         },
                         {
                           "TimeSensor": {
-                            "@DEF": "DECLx3dconnector_connector1_FIELDendnode_DECLpoint_INSTANCE1000_CL1",
+                            "@DEF": "DECLpoint_INSTANCE1000_CL1",
                             "@cycleInterval": 3,
                             "@loop": true
                           }
                         },
                         {
                           "ROUTE": {
-                            "@fromNode": "DECLx3dconnector_connector1_FIELDendnode_DECLpoint_INSTANCE1000_CL1",
+                            "@fromNode": "DECLpoint_INSTANCE1000_CL1",
                             "@fromField": "cycleTime",
-                            "@toNode": "DECLx3dconnector_connector1_FIELDendnode_DECLpoint_INSTANCE1000_MB1",
+                            "@toNode": "DECLpoint_INSTANCE1000_MB1",
                             "@toField": "set_location"
                           }
                         },
                         {
                           "ROUTE": {
-                            "@fromNode": "DECLx3dconnector_connector1_FIELDendnode_DECLpoint_INSTANCE1000_CL1",
+                            "@fromNode": "DECLpoint_INSTANCE1000_CL1",
                             "@fromField": "fraction_changed",
-                            "@toNode": "DECLx3dconnector_connector1_FIELDendnode_DECLpoint_INSTANCE1000_PI1",
+                            "@toNode": "DECLpoint_INSTANCE1000_PI1",
                             "@toField": "set_fraction"
                           }
                         },
                         {
                           "ROUTE": {
-                            "@fromNode": "DECLx3dconnector_connector1_FIELDendnode_DECLpoint_INSTANCE1000_MB1",
+                            "@fromNode": "DECLpoint_INSTANCE1000_MB1",
                             "@fromField": "keyValue",
-                            "@toNode": "DECLx3dconnector_connector1_FIELDendnode_DECLpoint_INSTANCE1000_PI1",
+                            "@toNode": "DECLpoint_INSTANCE1000_PI1",
                             "@toField": "keyValue"
                           }
                         },
                         {
                           "ROUTE": {
-                            "@fromNode": "DECLx3dconnector_connector1_FIELDendnode_DECLpoint_INSTANCE1000_PI1",
+                            "@fromNode": "DECLpoint_INSTANCE1000_PI1",
                             "@fromField": "value_changed",
-                            "@toNode": "DECLx3dconnector_connector1_FIELDendnode_DECLpoint_INSTANCE1000_node",
+                            "@toNode": "DECLpoint_INSTANCE1000_node",
                             "@toField": "set_translation"
                           }
                         }
@@ -721,17 +721,17 @@
         },
         {
           "ROUTE": {
-            "@fromNode": "DECLpoint_start_DECLpoint_start_MB1",
+            "@fromNode": "DECLpoint_start_MB1",
             "@fromField": "translation",
-            "@toNode": "DECLx3dconnector_connector1_DECLx3dconnector_connector1_S1",
+            "@toNode": "DECLx3dconnector_connector1_S1",
             "@toField": "set_startpoint"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "DECLpoint_end_DECLpoint_end_MB1",
+            "@fromNode": "DECLpoint_end_MB1",
             "@fromField": "translation",
-            "@toNode": "DECLx3dconnector_connector1_DECLx3dconnector_connector1_S1",
+            "@toNode": "DECLx3dconnector_connector1_S1",
             "@toField": "set_endpoint"
           }
         }

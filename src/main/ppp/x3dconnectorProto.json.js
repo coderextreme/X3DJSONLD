@@ -163,8 +163,7 @@ X3DJSON['Script']['DECLx3dconnector_connector1_S1'] = function() {
 		return value;
 	};
 	this.endpoint = undefined;
-
-            ecmascript:
+ecmascript:
         
 	this.recompute = function (startpoint,endpoint){
 	    if (typeof endpoint === 'undefined') {
@@ -231,25 +230,6 @@ X3DJSON['Obj']['DECLx3dconnector_connector1_S1']['ACTION'] = {};
 X3DJSON['Obj']['DECLx3dconnector_connector1_S1'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['DECLx3dconnector_connector1_S1']['ACTION'],X3DJSON['Obj']['DECLx3dconnector_connector1_S1']);
 }
 if (typeof X3DJSON['Obj']['DECLx3dconnector_connector1_S1'].initialize === "function") X3DJSON['Obj']['DECLx3dconnector_connector1_S1'].initialize();
-X3DJSON.createProxy = function(action, scriptObject) {
-	var proxy = new Proxy(scriptObject, {
-		get: function(target, property, receiver) {
-			return Reflect.get(target, property, receiver);
-		},
-		set: function(target, property, value, receiver) {
-                 if (typeof action[property] === 'object') {
-                        for (var route in action[property]) {
-                                if (typeof action[property][route] === 'function') {
-                                        action[property][route](property, value);
-   		                     // console.log('Set',property,'to', value);
-                                }
-                        }
-                 }
-		      return Reflect.set(target, property, value, receiver);
-		}
-	});
-	return proxy;
-};
 if (typeof X3DJSON['Script'] === 'undefined') {
 X3DJSON['Script'] = {};
 }
@@ -303,8 +283,7 @@ X3DJSON['Script']['DECLx3dconnector_connector2_S1'] = function() {
 		return value;
 	};
 	this.endpoint = undefined;
-
-            ecmascript:
+ecmascript:
         
 	this.recompute = function (startpoint,endpoint){
 	    if (typeof endpoint === 'undefined') {
@@ -371,25 +350,6 @@ X3DJSON['Obj']['DECLx3dconnector_connector2_S1']['ACTION'] = {};
 X3DJSON['Obj']['DECLx3dconnector_connector2_S1'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['DECLx3dconnector_connector2_S1']['ACTION'],X3DJSON['Obj']['DECLx3dconnector_connector2_S1']);
 }
 if (typeof X3DJSON['Obj']['DECLx3dconnector_connector2_S1'].initialize === "function") X3DJSON['Obj']['DECLx3dconnector_connector2_S1'].initialize();
-X3DJSON.createProxy = function(action, scriptObject) {
-	var proxy = new Proxy(scriptObject, {
-		get: function(target, property, receiver) {
-			return Reflect.get(target, property, receiver);
-		},
-		set: function(target, property, value, receiver) {
-                 if (typeof action[property] === 'object') {
-                        for (var route in action[property]) {
-                                if (typeof action[property][route] === 'function') {
-                                        action[property][route](property, value);
-   		                     // console.log('Set',property,'to', value);
-                                }
-                        }
-                 }
-		      return Reflect.set(target, property, value, receiver);
-		}
-	});
-	return proxy;
-};
 if (typeof X3DJSON['Script'] === 'undefined') {
 X3DJSON['Script'] = {};
 }
@@ -443,8 +403,7 @@ X3DJSON['Script']['DECLx3dconnector_connector3_S1'] = function() {
 		return value;
 	};
 	this.endpoint = undefined;
-
-            ecmascript:
+ecmascript:
         
 	this.recompute = function (startpoint,endpoint){
 	    if (typeof endpoint === 'undefined') {

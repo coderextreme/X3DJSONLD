@@ -32,7 +32,7 @@
           },
           {
             "@name":"translated",
-            "@content":"03 June 2017"
+            "@content":"12 August 2017"
           },
           {
             "@name":"generator",
@@ -166,8 +166,6 @@
                           }
                         ],
                         "#sourceText":[
-"",
-"",
 "ecmascript:",
 "\t\t\t\t\tfunction set_cycle(value) {",
 "                                                old = translation;",
@@ -298,8 +296,6 @@
                             ]
                         },
                         "#sourceText":[
-"",
-"",
 "ecmascript:",
 "",
 "                function set_endA(value) {",

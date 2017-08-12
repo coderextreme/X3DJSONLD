@@ -115,7 +115,6 @@ X3DJSON['Script'] = {};
 }
 
 X3DJSON['Script']['Browser'] = function() {
-
 ecmascript:
                 
 	this.initialize = function () {
@@ -140,32 +139,11 @@ X3DJSON['Obj']['Browser']['ACTION'] = {};
 X3DJSON['Obj']['Browser'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Browser']['ACTION'],X3DJSON['Obj']['Browser']);
 }
 if (typeof X3DJSON['Obj']['Browser'].initialize === "function") X3DJSON['Obj']['Browser'].initialize();
-X3DJSON.createProxy = function(action, scriptObject) {
-	var proxy = new Proxy(scriptObject, {
-		get: function(target, property, receiver) {
-			return Reflect.get(target, property, receiver);
-		},
-		set: function(target, property, value, receiver) {
-                 if (typeof action[property] === 'object') {
-                        for (var route in action[property]) {
-                                if (typeof action[property][route] === 'function') {
-                                        action[property][route](property, value);
-   		                     // console.log('Set',property,'to', value);
-                                }
-                        }
-                 }
-		      return Reflect.set(target, property, value, receiver);
-		}
-	});
-	return proxy;
-};
 if (typeof X3DJSON['Script'] === 'undefined') {
 X3DJSON['Script'] = {};
 }
 
 X3DJSON['Script']['Clouds'] = function() {
-
-        
 ecmascript:
 
 

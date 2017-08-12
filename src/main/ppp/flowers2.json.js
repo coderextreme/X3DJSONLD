@@ -139,8 +139,6 @@ X3DJSON['Script']['OrbitScript'] = function() {
 		return value;
 	};
 	this.coordIndexes = new MFInt32();
-
-
 ecmascript:
 
 var e = 5;
@@ -236,25 +234,6 @@ X3DJSON['Obj']['OrbitScript']['ACTION'] = {};
 X3DJSON['Obj']['OrbitScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['OrbitScript']['ACTION'],X3DJSON['Obj']['OrbitScript']);
 }
 if (typeof X3DJSON['Obj']['OrbitScript'].initialize === "function") X3DJSON['Obj']['OrbitScript'].initialize();
-X3DJSON.createProxy = function(action, scriptObject) {
-	var proxy = new Proxy(scriptObject, {
-		get: function(target, property, receiver) {
-			return Reflect.get(target, property, receiver);
-		},
-		set: function(target, property, value, receiver) {
-                 if (typeof action[property] === 'object') {
-                        for (var route in action[property]) {
-                                if (typeof action[property][route] === 'function') {
-                                        action[property][route](property, value);
-   		                     // console.log('Set',property,'to', value);
-                                }
-                        }
-                 }
-		      return Reflect.set(target, property, value, receiver);
-		}
-	});
-	return proxy;
-};
 if (typeof X3DJSON['Script'] === 'undefined') {
 X3DJSON['Script'] = {};
 }
@@ -284,8 +263,6 @@ X3DJSON['Script']['OrbitScript2'] = function() {
 		return value;
 	};
 	this.coordIndexes = new MFInt32();
-
-
 ecmascript:
 
 var e = 5;

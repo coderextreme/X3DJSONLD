@@ -131,7 +131,6 @@ X3DJSON['Script']['DECLProcess_INSTANCE_RightSingleToMultiString'] = function() 
 		return value;
 	};
 	this.rightlines = new MFString();
-
 ecmascript:
 
 
@@ -163,25 +162,6 @@ X3DJSON['Obj']['DECLProcess_INSTANCE_RightSingleToMultiString']['ACTION'] = {};
 X3DJSON['Obj']['DECLProcess_INSTANCE_RightSingleToMultiString'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['DECLProcess_INSTANCE_RightSingleToMultiString']['ACTION'],X3DJSON['Obj']['DECLProcess_INSTANCE_RightSingleToMultiString']);
 }
 if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE_RightSingleToMultiString'].initialize === "function") X3DJSON['Obj']['DECLProcess_INSTANCE_RightSingleToMultiString'].initialize();
-X3DJSON.createProxy = function(action, scriptObject) {
-	var proxy = new Proxy(scriptObject, {
-		get: function(target, property, receiver) {
-			return Reflect.get(target, property, receiver);
-		},
-		set: function(target, property, value, receiver) {
-                 if (typeof action[property] === 'object') {
-                        for (var route in action[property]) {
-                                if (typeof action[property][route] === 'function') {
-                                        action[property][route](property, value);
-   		                     // console.log('Set',property,'to', value);
-                                }
-                        }
-                 }
-		      return Reflect.set(target, property, value, receiver);
-		}
-	});
-	return proxy;
-};
 if (typeof X3DJSON['Script'] === 'undefined') {
 X3DJSON['Script'] = {};
 }
@@ -203,7 +183,6 @@ X3DJSON['Script']['DECLProcess_INSTANCE_UpSingleToMultiString'] = function() {
 		return value;
 	};
 	this.uplines = new MFString();
-
 ecmascript:
 
 
@@ -235,25 +214,6 @@ X3DJSON['Obj']['DECLProcess_INSTANCE_UpSingleToMultiString']['ACTION'] = {};
 X3DJSON['Obj']['DECLProcess_INSTANCE_UpSingleToMultiString'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['DECLProcess_INSTANCE_UpSingleToMultiString']['ACTION'],X3DJSON['Obj']['DECLProcess_INSTANCE_UpSingleToMultiString']);
 }
 if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE_UpSingleToMultiString'].initialize === "function") X3DJSON['Obj']['DECLProcess_INSTANCE_UpSingleToMultiString'].initialize();
-X3DJSON.createProxy = function(action, scriptObject) {
-	var proxy = new Proxy(scriptObject, {
-		get: function(target, property, receiver) {
-			return Reflect.get(target, property, receiver);
-		},
-		set: function(target, property, value, receiver) {
-                 if (typeof action[property] === 'object') {
-                        for (var route in action[property]) {
-                                if (typeof action[property][route] === 'function') {
-                                        action[property][route](property, value);
-   		                     // console.log('Set',property,'to', value);
-                                }
-                        }
-                 }
-		      return Reflect.set(target, property, value, receiver);
-		}
-	});
-	return proxy;
-};
 if (typeof X3DJSON['Script'] === 'undefined') {
 X3DJSON['Script'] = {};
 }
@@ -275,7 +235,6 @@ X3DJSON['Script']['DECLProcess_INSTANCE_CenterSingleToMultiString'] = function()
 		return value;
 	};
 	this.centerlines = new MFString();
-
 ecmascript:
 
 
@@ -307,25 +266,6 @@ X3DJSON['Obj']['DECLProcess_INSTANCE_CenterSingleToMultiString']['ACTION'] = {};
 X3DJSON['Obj']['DECLProcess_INSTANCE_CenterSingleToMultiString'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['DECLProcess_INSTANCE_CenterSingleToMultiString']['ACTION'],X3DJSON['Obj']['DECLProcess_INSTANCE_CenterSingleToMultiString']);
 }
 if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE_CenterSingleToMultiString'].initialize === "function") X3DJSON['Obj']['DECLProcess_INSTANCE_CenterSingleToMultiString'].initialize();
-X3DJSON.createProxy = function(action, scriptObject) {
-	var proxy = new Proxy(scriptObject, {
-		get: function(target, property, receiver) {
-			return Reflect.get(target, property, receiver);
-		},
-		set: function(target, property, value, receiver) {
-                 if (typeof action[property] === 'object') {
-                        for (var route in action[property]) {
-                                if (typeof action[property][route] === 'function') {
-                                        action[property][route](property, value);
-   		                     // console.log('Set',property,'to', value);
-                                }
-                        }
-                 }
-		      return Reflect.set(target, property, value, receiver);
-		}
-	});
-	return proxy;
-};
 if (typeof X3DJSON['Script'] === 'undefined') {
 X3DJSON['Script'] = {};
 }
@@ -347,7 +287,6 @@ X3DJSON['Script']['DECLProcess_INSTANCE1000_RightSingleToMultiString'] = functio
 		return value;
 	};
 	this.rightlines = new MFString();
-
 ecmascript:
 
 
@@ -379,25 +318,6 @@ X3DJSON['Obj']['DECLProcess_INSTANCE1000_RightSingleToMultiString']['ACTION'] = 
 X3DJSON['Obj']['DECLProcess_INSTANCE1000_RightSingleToMultiString'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['DECLProcess_INSTANCE1000_RightSingleToMultiString']['ACTION'],X3DJSON['Obj']['DECLProcess_INSTANCE1000_RightSingleToMultiString']);
 }
 if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE1000_RightSingleToMultiString'].initialize === "function") X3DJSON['Obj']['DECLProcess_INSTANCE1000_RightSingleToMultiString'].initialize();
-X3DJSON.createProxy = function(action, scriptObject) {
-	var proxy = new Proxy(scriptObject, {
-		get: function(target, property, receiver) {
-			return Reflect.get(target, property, receiver);
-		},
-		set: function(target, property, value, receiver) {
-                 if (typeof action[property] === 'object') {
-                        for (var route in action[property]) {
-                                if (typeof action[property][route] === 'function') {
-                                        action[property][route](property, value);
-   		                     // console.log('Set',property,'to', value);
-                                }
-                        }
-                 }
-		      return Reflect.set(target, property, value, receiver);
-		}
-	});
-	return proxy;
-};
 if (typeof X3DJSON['Script'] === 'undefined') {
 X3DJSON['Script'] = {};
 }
@@ -419,7 +339,6 @@ X3DJSON['Script']['DECLProcess_INSTANCE1000_UpSingleToMultiString'] = function()
 		return value;
 	};
 	this.uplines = new MFString();
-
 ecmascript:
 
 
@@ -451,25 +370,6 @@ X3DJSON['Obj']['DECLProcess_INSTANCE1000_UpSingleToMultiString']['ACTION'] = {};
 X3DJSON['Obj']['DECLProcess_INSTANCE1000_UpSingleToMultiString'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['DECLProcess_INSTANCE1000_UpSingleToMultiString']['ACTION'],X3DJSON['Obj']['DECLProcess_INSTANCE1000_UpSingleToMultiString']);
 }
 if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE1000_UpSingleToMultiString'].initialize === "function") X3DJSON['Obj']['DECLProcess_INSTANCE1000_UpSingleToMultiString'].initialize();
-X3DJSON.createProxy = function(action, scriptObject) {
-	var proxy = new Proxy(scriptObject, {
-		get: function(target, property, receiver) {
-			return Reflect.get(target, property, receiver);
-		},
-		set: function(target, property, value, receiver) {
-                 if (typeof action[property] === 'object') {
-                        for (var route in action[property]) {
-                                if (typeof action[property][route] === 'function') {
-                                        action[property][route](property, value);
-   		                     // console.log('Set',property,'to', value);
-                                }
-                        }
-                 }
-		      return Reflect.set(target, property, value, receiver);
-		}
-	});
-	return proxy;
-};
 if (typeof X3DJSON['Script'] === 'undefined') {
 X3DJSON['Script'] = {};
 }
@@ -491,7 +391,6 @@ X3DJSON['Script']['DECLProcess_INSTANCE1000_CenterSingleToMultiString'] = functi
 		return value;
 	};
 	this.centerlines = new MFString();
-
 ecmascript:
 
 
@@ -523,25 +422,6 @@ X3DJSON['Obj']['DECLProcess_INSTANCE1000_CenterSingleToMultiString']['ACTION'] =
 X3DJSON['Obj']['DECLProcess_INSTANCE1000_CenterSingleToMultiString'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['DECLProcess_INSTANCE1000_CenterSingleToMultiString']['ACTION'],X3DJSON['Obj']['DECLProcess_INSTANCE1000_CenterSingleToMultiString']);
 }
 if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE1000_CenterSingleToMultiString'].initialize === "function") X3DJSON['Obj']['DECLProcess_INSTANCE1000_CenterSingleToMultiString'].initialize();
-X3DJSON.createProxy = function(action, scriptObject) {
-	var proxy = new Proxy(scriptObject, {
-		get: function(target, property, receiver) {
-			return Reflect.get(target, property, receiver);
-		},
-		set: function(target, property, value, receiver) {
-                 if (typeof action[property] === 'object') {
-                        for (var route in action[property]) {
-                                if (typeof action[property][route] === 'function') {
-                                        action[property][route](property, value);
-   		                     // console.log('Set',property,'to', value);
-                                }
-                        }
-                 }
-		      return Reflect.set(target, property, value, receiver);
-		}
-	});
-	return proxy;
-};
 if (typeof X3DJSON['Script'] === 'undefined') {
 X3DJSON['Script'] = {};
 }
@@ -563,7 +443,6 @@ X3DJSON['Script']['DECLProcess_INSTANCE2000_RightSingleToMultiString'] = functio
 		return value;
 	};
 	this.rightlines = new MFString();
-
 ecmascript:
 
 
@@ -595,25 +474,6 @@ X3DJSON['Obj']['DECLProcess_INSTANCE2000_RightSingleToMultiString']['ACTION'] = 
 X3DJSON['Obj']['DECLProcess_INSTANCE2000_RightSingleToMultiString'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['DECLProcess_INSTANCE2000_RightSingleToMultiString']['ACTION'],X3DJSON['Obj']['DECLProcess_INSTANCE2000_RightSingleToMultiString']);
 }
 if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE2000_RightSingleToMultiString'].initialize === "function") X3DJSON['Obj']['DECLProcess_INSTANCE2000_RightSingleToMultiString'].initialize();
-X3DJSON.createProxy = function(action, scriptObject) {
-	var proxy = new Proxy(scriptObject, {
-		get: function(target, property, receiver) {
-			return Reflect.get(target, property, receiver);
-		},
-		set: function(target, property, value, receiver) {
-                 if (typeof action[property] === 'object') {
-                        for (var route in action[property]) {
-                                if (typeof action[property][route] === 'function') {
-                                        action[property][route](property, value);
-   		                     // console.log('Set',property,'to', value);
-                                }
-                        }
-                 }
-		      return Reflect.set(target, property, value, receiver);
-		}
-	});
-	return proxy;
-};
 if (typeof X3DJSON['Script'] === 'undefined') {
 X3DJSON['Script'] = {};
 }
@@ -635,7 +495,6 @@ X3DJSON['Script']['DECLProcess_INSTANCE2000_UpSingleToMultiString'] = function()
 		return value;
 	};
 	this.uplines = new MFString();
-
 ecmascript:
 
 
@@ -667,25 +526,6 @@ X3DJSON['Obj']['DECLProcess_INSTANCE2000_UpSingleToMultiString']['ACTION'] = {};
 X3DJSON['Obj']['DECLProcess_INSTANCE2000_UpSingleToMultiString'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['DECLProcess_INSTANCE2000_UpSingleToMultiString']['ACTION'],X3DJSON['Obj']['DECLProcess_INSTANCE2000_UpSingleToMultiString']);
 }
 if (typeof X3DJSON['Obj']['DECLProcess_INSTANCE2000_UpSingleToMultiString'].initialize === "function") X3DJSON['Obj']['DECLProcess_INSTANCE2000_UpSingleToMultiString'].initialize();
-X3DJSON.createProxy = function(action, scriptObject) {
-	var proxy = new Proxy(scriptObject, {
-		get: function(target, property, receiver) {
-			return Reflect.get(target, property, receiver);
-		},
-		set: function(target, property, value, receiver) {
-                 if (typeof action[property] === 'object') {
-                        for (var route in action[property]) {
-                                if (typeof action[property][route] === 'function') {
-                                        action[property][route](property, value);
-   		                     // console.log('Set',property,'to', value);
-                                }
-                        }
-                 }
-		      return Reflect.set(target, property, value, receiver);
-		}
-	});
-	return proxy;
-};
 if (typeof X3DJSON['Script'] === 'undefined') {
 X3DJSON['Script'] = {};
 }
@@ -707,7 +547,6 @@ X3DJSON['Script']['DECLProcess_INSTANCE2000_CenterSingleToMultiString'] = functi
 		return value;
 	};
 	this.centerlines = new MFString();
-
 ecmascript:
 
 
