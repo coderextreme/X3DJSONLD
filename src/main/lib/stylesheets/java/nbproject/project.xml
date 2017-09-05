@@ -12,6 +12,7 @@
             <test-roots/>
         </data>
         <spellchecker-wordlist xmlns="http://www.netbeans.org/ns/spellchecker-wordlist/1">
+            <word>accessor</word>
             <word>accessType</word>
             <word>appinfo</word>
             <word>ArrayList</word>
@@ -43,6 +44,7 @@
             <word>HTML</word>
             <word>http</word>
             <word>https</word>
+            <word>Immel</word>
             <word>Immersive</word>
             <word>initializeOnly</word>
             <word>inputOutput</word>
@@ -51,6 +53,7 @@
             <word>interoperability</word>
             <word>InvalidFieldValueException</word>
             <word>javadoc</word>
+            <word>jsail</word>
             <word>json</word>
             <word>keyValue</word>
             <word>metadata</word>

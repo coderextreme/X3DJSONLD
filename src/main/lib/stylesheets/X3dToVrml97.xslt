@@ -6330,7 +6330,7 @@ EXTERNPROTO TransmitterPdu [
                 not((local-name(..)='Script' or local-name(..)='field') and (local-name()='xml:space' or local-name()='space')) and
                 not((local-name(..)='Script') and local-name()='url') and
                 not((local-name(..)='connect') and (local-name()='protoField' or local-name()='nodeField'))"/>
-  <xsl:if test="$notDefaultValue or (local-name()='name')">
+  <xsl:if test="$notDefaultValue or ((local-name()='name') and not(local-name(..)='ProtoInstance'))">
     <!-- valid field found by the preceding checks, now output accordingly -->
     <xsl:call-template name="print-indent">
       <xsl:with-param name="indent" select="$indent"/>

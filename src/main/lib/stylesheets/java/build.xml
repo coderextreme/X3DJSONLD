@@ -13,28 +13,37 @@
     <import file="nbproject/build-impl.xml"/>
 	
     <property name="javac.verbose"            value="-verbose"/>
-	
-	<target name="all" depends="compile.examples,run.examples"/>
-	
-	<target name="build" depends="">
-		<ant antfile="../build.xml" target="CreateX3dSceneAccessInterfaceJava"/>
-		<antcall target="compile.examples"/>
-		<antcall target="run.examples"/>
-	</target>
-	
-	<target name="compile.examples">
-		<javac srcdir="examples" destdir="classes" debug="on" verbose="${javac.verbose}" 
-			   classpath="jars/X3dJavaSceneAccessInterface3.3.full.jar" includeantruntime="false"/>
-	</target>
-	
-	<target name="run.examples">
-		<java  classname="HelloWorldProgram" dir="classes">
-			<classpath>
-				<pathelement location="jars/X3dJavaSceneAccessInterface3.3.full.jar"/>
-				<pathelement path="classes"/>
-			</classpath>
-		</java>
-	</target>
+
+    <target name="all" depends="compile.examples,run.examples"/>
+
+    <target name="build" depends="">
+            <ant antfile="../build.xml" target="CreateX3dSceneAccessInterfaceJava"/>
+            <antcall target="compile.examples"/>
+            <antcall target="run.examples"/>
+    </target>
+
+    <target name="compile.examples">
+            <javac srcdir="examples" destdir="classes" debug="on" verbose="${javac.verbose}" 
+                       classpath="jars/X3dJavaSceneAccessInterface3.3.full.jar" includeantruntime="false"/>
+    </target>
+
+    <target name="run.examples">
+            <java  classname="HelloWorldProgram" dir="classes">
+                    <classpath>
+                            <pathelement location="jars/X3dJavaSceneAccessInterface3.3.full.jar"/>
+                            <pathelement path="classes"/>
+                    </classpath>
+            </java>
+    </target>
+
+    <target name="v.local" description="view local javadoc in web browser (Netbeans only)">
+        <nbbrowse file="javadoc/index.html" />
+        <!-- TODO implementation-independent approach if possible.  other Ant approachs have to be customized for each OS -->
+    </target>
+
+    <target name="view.javadoc.online" description="view online javadoc in web browser (Netbeans only)">
+        <nbbrowse url="http://www.web3d.org/specifications/java/javadoc/index.html" />
+    </target>
     <!--
 
     There exist several targets which are by default empty and which can be 

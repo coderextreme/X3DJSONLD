@@ -48,6 +48,10 @@ table.curvedEdges td, table.curvedEdges th { border-bottom:1px dotted black;padd
                the given X3D profile">&lt;<span class="element">component</span>&#160;<span class="attribute">name</span>='<span class="value">Navigation</span>'&#160;<span class="attribute">level</span>='<span class="value">3</span>'/&gt;
                </span><br />
 
+               <span title="X3D component name and level indicate any additional scene functionality needed above
+               the given X3D profile">&lt;<span class="element">component</span>&#160;<span class="attribute">name</span>='<span class="value">Layering</span>'&#160;<span class="attribute">level</span>='<span class="value">1</span>'/&gt;
+               </span><br />
+
                <span title="unit defines scene scaling factors for length, angle, mass, or force">&lt;<span class="element">unit</span>&#160;<span class="attribute">name</span>='<span class="value">AngleUnitConversion</span>'&#160;<span class="attribute">category</span>='<span class="value">angle</span>'&#160;<span class="attribute">conversionFactor</span>='<span class="value">1.0</span>'/&gt;
                </span><br />
 
@@ -73,7 +77,7 @@ table.curvedEdges td, table.curvedEdges th { border-bottom:1px dotted black;padd
                <span title="meta 'created' provides date of initial version">&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">created</span>'&#160;<span class="attribute">content</span>='<span class="value">6 September 2016</span>'/&gt;
                </span><br />
 
-               <span title="meta 'modified' provides date of modified version">&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">modified</span>'&#160;<span class="attribute">content</span>='<span class="value">29 May 2017</span>'/&gt;
+               <span title="meta 'modified' provides date of modified version">&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">modified</span>'&#160;<span class="attribute">content</span>='<span class="value">3 September 2017</span>'/&gt;
                </span><br />
 
                <span title="meta 'generator' provides name of authoring tool or translation tool producing this
@@ -594,7 +598,7 @@ function colorInput (eventValue) // Example source code
                "<a href="someOtherScene.x3d">someOtherScene.x3d</a>" '</span>/&gt;
                </span><br />
 
-               <span title="IMPORT provides ROUTE access to a node that is EXPORTed by an Inline scene">&lt;<span class="element">IMPORT</span>&#160;<span class="attribute">AS</span>='<span class="value">WorldInfoDEF2</span>'/&gt;
+               <span title="IMPORT provides ROUTE access to a node that is EXPORTed by an Inline scene">&lt;<span class="element">IMPORT</span>&#160;<span class="attribute">inlineDEF</span>='<span class="value">inlineSceneDef</span>'&#160;<span class="attribute">importedDEF</span>='<span class="value">WorldInfoDEF</span>'&#160;<span class="attribute">AS</span>='<span class="value">WorldInfoDEF2</span>'/&gt;
                </span><br />
 
                <span title="EXPORT exposes a local node for ROUTEing when the current Scene is Inlined by an external

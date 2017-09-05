@@ -125,7 +125,7 @@ TODO:
 <xsl:for-each select="//xs:attribute[not(@name='DEF' or @name='USE' or @name='containerField' or @name='class'
 		or @name='AS' or @name='http-equiv' or @name='lang' or @name='profile'
 		or @name='nodeField' or @name='protoField'  or @name='additionalInterface'
-		or @name='InlineDEF' or @name='importedDEF' or @name='localDEF'
+		or @name='inlineDEF' or @name='importedDEF' or @name='localDEF'
 		or @name='fromNode'  or @name='fromField' or @name='toNode' or @name='toField')]">
 
   <xsl:variable name="attributeName"><xsl:value-of select="@name"/></xsl:variable>

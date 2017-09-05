@@ -154,6 +154,30 @@ Recommended tool:
 							<xsl:if test="(string-length($enumerationAppinfo) > 0)">
 								<xsl:attribute name="appinfo" select="normalize-space($enumerationAppinfo)"/>
 							</xsl:if>
+							<xsl:if test="($name='profileNames')">
+								<xsl:variable name="nodeList" select="translate(normalize-space(substring-after($enumerationAppinfo,'Allowed X3D nodes for this profile are:')),'.','')"/>
+								<!-- get statementList from Core profile enumeration appinfo within profileNames -->
+								<xsl:variable name="statementList">
+									<xsl:choose>
+										<xsl:when test="(@value='Core')">
+											<xsl:value-of select="translate(normalize-space(substring-before(substring-after(                    xs:annotation/xs:appinfo,'Allowed X3D statements for all profiles are:'),'Allowed X3D nodes for this profile are:')),'.','')"/>
+										</xsl:when>
+										<xsl:otherwise>
+											<xsl:value-of select="translate(normalize-space(substring-before(substring-after(../*[@value='Core']/xs:annotation/xs:appinfo,'Allowed X3D statements for all profiles are:'),'Allowed X3D nodes for this profile are:')),'.','')"/>
+										</xsl:otherwise>
+									</xsl:choose>
+								</xsl:variable>
+								<xsl:for-each select="tokenize($nodeList,' ')">
+									<xsl:element name="allowedElement">
+										<xsl:value-of select="."/>
+									</xsl:element>
+								</xsl:for-each>
+								<xsl:for-each select="tokenize($statementList,' ')">
+									<xsl:element name="allowedElement">
+										<xsl:value-of select="."/>
+									</xsl:element>
+								</xsl:for-each>
+							</xsl:if>
 						</xsl:element>
 					</xsl:for-each>
 				</xsl:element>

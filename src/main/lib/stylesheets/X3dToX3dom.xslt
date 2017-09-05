@@ -70,7 +70,7 @@ POSSIBILITY OF SUCH DAMAGE.
 	<!-- also in CreateContentCatalogPages.xslt -->
     <xsl:param name="urlScene"                 ></xsl:param>      <!-- X3D MFString url list -->
     <xsl:param name="urlCobweb"                >https://cdn.rawgit.com/create3000/cobweb/master/stable</xsl:param> <!-- no trailing slash / -->
-    <xsl:param name="versionCobweb"            >3/3.2</xsl:param> <!-- 1/1.28 or 2/2.6 or 3/3.1 with no trailing slash / -->
+    <xsl:param name="versionCobweb"            >latest</xsl:param> <!-- 1/1.28 or 2/2.6 or 3/3.1 or 3/3.2 or 3.3 with no trailing slash / -->
     <!-- Catalog generator and configuration parameters -->
     <xsl:param name="x3dSceneAvailable"        >true</xsl:param> <!-- .x3d source, same file name -->
     <xsl:param name="x3dDocumentationAvailable">true</xsl:param> <!-- .html pretty print, same file name -->
@@ -80,21 +80,21 @@ POSSIBILITY OF SUCH DAMAGE.
     <xsl:strip-space elements="*"/>
     <xsl:output encoding="UTF-8" media-type="text/xml" indent="yes" cdata-section-elements="Script PackagedShader ShaderPart ShaderProgram" omit-xml-declaration="yes" method="xml"/>
 
-	<xsl:variable name="cobwebRootElement">
-		<xsl:choose>
-			<xsl:when test="starts-with($versionCobweb,'1')">
-				<xsl:text>X3D</xsl:text>
-			</xsl:when>
-			<xsl:otherwise>
-				<xsl:text>X3DCanvas</xsl:text>
-			</xsl:otherwise>
-		</xsl:choose>
-	</xsl:variable>
+    <xsl:variable name="cobwebRootElement">
+        <xsl:choose>
+            <xsl:when test="starts-with($versionCobweb,'1')">
+                    <xsl:text>X3D</xsl:text>
+            </xsl:when>
+            <xsl:otherwise>
+                    <xsl:text>X3DCanvas</xsl:text>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:variable>
 		
     <xsl:variable name="lower-case-player" select="translate($player,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz')"/> <!-- XSLT 1 hack -->
 
-	<xsl:variable name="apos">'</xsl:variable>
-	<xsl:variable name="quot">"</xsl:variable>
+    <xsl:variable name="apos">'</xsl:variable>
+    <xsl:variable name="quot">"</xsl:variable>
     
     <xsl:variable name="urlSceneQuoted">
         <xsl:choose>
@@ -231,7 +231,7 @@ POSSIBILITY OF SUCH DAMAGE.
                     <xsl:text>&#10;</xsl:text>
 					<xsl:choose>
 						<xsl:when test="($cobwebStyle = 'simple')">
-	<style>
+	<style type="text/css">
 <xsl:text>
 #main {
 	width: 768px;
@@ -252,7 +252,7 @@ POSSIBILITY OF SUCH DAMAGE.
 </style>
 						</xsl:when>
 						<xsl:otherwise>      
-	<style>
+	<style type="text/css">
 		<xsl:text>
          @import url(https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic);
          html, body {
@@ -319,7 +319,7 @@ POSSIBILITY OF SUCH DAMAGE.
          }
 </xsl:text>
       </style>
-      <script>
+      <script type="text/javascript">
 		<xsl:text>
          var fullscreen = false;
          
@@ -443,43 +443,41 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                                     </xsl:otherwise>
                                 </xsl:choose>
                             </h2>
-							
-                            <p>
-								<div class="frame">
-								   <div class="browser">
-										<!-- note that no . precedes class name webfont here! -->
-										<span class="webfont">
-											<xsl:choose>
-												<xsl:when test="X3D/head/meta[@name='description']">
-														<xsl:value-of select="X3D/head/meta[@name='description']/@content" disable-output-escaping="yes"/><!-- I18N -->
-												</xsl:when>
-												<xsl:otherwise>
-													<xsl:text disable-output-escaping="yes">&amp;nbsp;</xsl:text>
-												</xsl:otherwise>
-											</xsl:choose>
-										</span>
-										<div class="references">
-											<p><a href='{$urlSceneUnquoted}'>Original X3D scene</a></p>
-										</div>
-										<xsl:text disable-output-escaping="yes">
+				
+                            <div class="frame">
+                                <div class="browser">
+                                            <!-- note that no . precedes class name webfont here! -->
+                                            <span class="webfont">
+                                                    <xsl:choose>
+                                                            <xsl:when test="X3D/head/meta[@name='description']">
+                                                                            <xsl:value-of select="X3D/head/meta[@name='description']/@content" disable-output-escaping="yes"/><!-- I18N -->
+                                                            </xsl:when>
+                                                            <xsl:otherwise>
+                                                                    <xsl:text disable-output-escaping="yes">&amp;nbsp;</xsl:text>
+                                                            </xsl:otherwise>
+                                                    </xsl:choose>
+                                            </span>
+                                            <div class="references">
+                                                    <p><a href='{$urlSceneUnquoted}'>Original X3D scene</a></p>
+                                            </div>
+                                            <xsl:text disable-output-escaping="yes">
 &lt;</xsl:text><xsl:value-of select="$cobwebRootElement"/><xsl:text> url='</xsl:text><xsl:value-of select="$urlSceneQuoted"/><xsl:text disable-output-escaping="yes">'&gt;
-   &lt;p&gt;Your browser might not support all features required by Cobweb!&lt;/p&gt;
+&lt;p&gt;Your browser might not support all features required by Cobweb!&lt;/p&gt;
 &lt;/</xsl:text><xsl:value-of select="$cobwebRootElement"/><xsl:text disable-output-escaping="yes">&gt;
 </xsl:text>
-										<div class="references" style="text-align: right;">
-										 <p>
-											 <!-- 4-arrow "full screen" button -->
-											 <button title="Maximize Frame" class="maximize" onclick="toggleFullscreen ();"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAYAAACprHcmAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAB3RJTUUH4QQNFQk1i7oCawAAALhJREFUGJWV0TFKA2EQBeBn1iqptBJvEFsVjxR0LyB4txQSRCzEeAexsLCJydr4WWQWwjbGBwPzv3nDP/Mm+EBXscAhggb3xW/wGaxt8Y2rEvZxWTx0wWqn4R3HJTzCW/FrbEZJnpKcJ3lJcpLkOlvMkpwmeU1ykeSxny0Yox2M0WLS73CA7ItRkqbycZJ2UL9JMqm8CeaY4rmWuatvb+u9xBnm/3Ij+PrD527X5178g4fBBRfFQ/cL8YlBv40R0JoAAAAASUVORK5CYII="/></button>
-											 <a href="http://titania.create3000.de/cobweb" target="_blank">Cobweb X3D Player</a>
-										 </p>
-										</div>
-									</div>
-								</div>
-								<div>
-								   <p class="cobweb-console"></p>
-								</div>
-							</p>
-						</div>
+                                            <div class="references" style="text-align: right;">
+                                             <p>
+                                                    <!-- 4-arrow "full screen" button -->
+                                                    <button title="Maximize Frame" class="maximize" onclick="toggleFullscreen ();"><img alt="Maximize Frame" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAYAAACprHcmAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAB3RJTUUH4QQNFQk1i7oCawAAALhJREFUGJWV0TFKA2EQBeBn1iqptBJvEFsVjxR0LyB4txQSRCzEeAexsLCJydr4WWQWwjbGBwPzv3nDP/Mm+EBXscAhggb3xW/wGaxt8Y2rEvZxWTx0wWqn4R3HJTzCW/FrbEZJnpKcJ3lJcpLkOlvMkpwmeU1ykeSxny0Yox2M0WLS73CA7ItRkqbycZJ2UL9JMqm8CeaY4rmWuatvb+u9xBnm/3Ij+PrD527X5178g4fBBRfFQ/cL8YlBv40R0JoAAAAASUVORK5CYII="/></button>
+                                                    <a href="http://titania.create3000.de/cobweb" target="_blank">Cobweb X3D Player</a>
+                                             </p>
+                                            </div>
+                                    </div>
+                                </div>
+                                <div>
+                                   <p class="cobweb-console"></p>
+                                </div>
+                            </div>
     </xsl:when>
     <xsl:otherwise> <!-- default X3DOM -->
                 <table style="width:96%" id="htmlPageHeader">

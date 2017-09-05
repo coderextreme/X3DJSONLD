@@ -1,36 +1,30 @@
-#X3D V3.3 utf8
-PROFILE Immersive
+#VRML V2.0 utf8
+#PROFILE Immersive
 # head
-COMPONENT Navigation:3
-COMPONENT Layering:1
-UNIT angle AngleUnitConversion 1.0
-UNIT length LengthUnitConversion 1.0
-META "title" "HelloWorldProgramOutput.x3d"
-META "description" "Example HelloWorldProgram creates an X3D model using the X3D Java Scene Access Interface (SAI) Library"
-META "reference" "http://www.web3d.org/specifications/java/X3DJSAIL.html"
-META "generator" "HelloWorldProgramOutput.java"
-META "created" "6 September 2016"
-<<<<<<< .mine
-META "modified" "1 September 2017"
-||||||| .r25445
-META "modified" "31 August 2017"
-=======
-META "modified" "3 September 2017"
->>>>>>> .r25463
-META "generator" "X3D Java Scene Access Interface Library (X3DJSAIL)"
-META "generator" "http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"
-META "generator" "Netbeans http://www.netbeans.org"
-META "creator" "Don Brutzman"
-META "reference" "https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/java/examples/HelloWorldProgramOutput.x3d"
-META "reference" "Console output, ClassicVRML encoding, VRML97 encoding and pretty-print documentation:"
-META "reference" "HelloWorldProgramOutput.txt"
-META "reference" "HelloWorldProgramOutput.x3dv"
-META "reference" "HelloWorldProgramOutput.wrl"
-META "reference" "HelloWorldProgramOutput.html"
-META "X3dValidator" "https://savage.nps.edu/X3dValidator?url=http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d"
-META "identifier" "http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d"
-META "license" "../license.html"
-META "SpecialTest" "tested sat: name value cannot contain embedded space character"
+#COMPONENT Navigation:3
+#COMPONENT Layering:1
+#UNIT angle AngleUnitConversion 1.0
+#UNIT length LengthUnitConversion 1.0
+#META "title" "HelloWorldProgramOutput.x3d"
+#META "description" "Example HelloWorldProgram creates an X3D model using the X3D Java Scene Access Interface (SAI) Library"
+#META "reference" "http://www.web3d.org/specifications/java/X3DJSAIL.html"
+#META "generator" "HelloWorldProgramOutput.java"
+#META "created" "6 September 2016"
+#META "modified" "1 September 2017"
+#META "generator" "X3D Java Scene Access Interface Library (X3DJSAIL)"
+#META "generator" "http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"
+#META "generator" "Netbeans http://www.netbeans.org"
+#META "creator" "Don Brutzman"
+#META "reference" "https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/java/examples/HelloWorldProgramOutput.x3d"
+#META "reference" "Console output, ClassicVRML encoding, VRML97 encoding and pretty-print documentation:"
+#META "reference" "HelloWorldProgramOutput.txt"
+#META "reference" "HelloWorldProgramOutput.x3dv"
+#META "reference" "HelloWorldProgramOutput.wrl"
+#META "reference" "HelloWorldProgramOutput.html"
+#META "X3dValidator" "https://savage.nps.edu/X3dValidator?url=http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d"
+#META "identifier" "http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d"
+#META "license" "../license.html"
+#META "SpecialTest" "tested sat: name value cannot contain embedded space character"
 # comment #1
 # comment #2
 # comment #3

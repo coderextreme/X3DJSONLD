@@ -739,8 +739,12 @@ Additional references of interest:
 						<xsl:text>
 // File operations
 import java.io.*;
+import java.net.*;
 import java.nio.charset.Charset;
-import java.nio.file.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.jar.Manifest;
 // XSLT operations: Saxon HE9
 import net.sf.saxon.s9api.*;
 // XSLT operations: Native Java
@@ -1528,7 +1532,8 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 			<xsl:if test="not($hasChildrenField = 'true') and not($isInterface = 'true') and not($isFieldInterface or $isException or $isServiceInterface) and
                           not(starts-with($name, 'X3DConcrete')) and not($isUtilityClass = 'true')">
 				<xsl:text disable-output-escaping="yes"><![CDATA[
-	private ArrayList<String> commentsList; // provided since no children array present
+	/** required by internal interface, empty list provided since no children array present in this class */
+        private ArrayList<String> commentsList; 
 ]]></xsl:text>
 			</xsl:if>
 			
@@ -1981,15 +1986,53 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 			<xsl:value-of select="@name"/>
 			<xsl:text><![CDATA[";
 
-	/** Provides name of this element: ]]></xsl:text>
+	/** Provides name of this element: <i>]]></xsl:text>
 			<xsl:value-of select="@name"/>
-			<xsl:text><![CDATA[.
+			<xsl:text><![CDATA[</i>.
 	 * @return name of this element
 	 */
 	@Override
 	public final String getElementName()
 	{
 		return NAME;
+	}
+]]></xsl:text>
+			<xsl:text disable-output-escaping="yes"><![CDATA[
+	/** String constant <i>COMPONENT</i> provides X3D component for this element: <i>]]></xsl:text>
+			<xsl:value-of select="InterfaceDefinition/componentInfo/@name"/>
+			<xsl:text disable-output-escaping="yes"><![CDATA[</i>. */
+	public static final String COMPONENT = "]]></xsl:text>
+			<xsl:value-of select="InterfaceDefinition/componentInfo/@name"/>
+			<xsl:text><![CDATA[";
+
+	/** Provides X3D component for this element: <i>]]></xsl:text>
+			<xsl:value-of select="InterfaceDefinition/componentInfo/@name"/>
+			<xsl:text><![CDATA[</i>.
+	 * @return X3D component for this element
+	 */
+	@Override
+	public final String getComponent()
+	{
+		return COMPONENT;
+	}
+]]></xsl:text>
+			<xsl:text disable-output-escaping="yes"><![CDATA[
+	/** Integer constant <i>LEVEL</i> provides default X3D component level for this element: <i>]]></xsl:text>
+			<xsl:value-of select="InterfaceDefinition/componentInfo/@level"/>
+			<xsl:text disable-output-escaping="yes"><![CDATA[</i>. */
+	public static final int LEVEL = ]]></xsl:text>
+			<xsl:value-of select="InterfaceDefinition/componentInfo/@level"/>
+			<xsl:text><![CDATA[;
+
+	/** Provides default X3D component level for this element: <i>]]></xsl:text>
+			<xsl:value-of select="InterfaceDefinition/componentInfo/@level"/>
+			<xsl:text><![CDATA[</i>.
+	 * @return default X3D component level for this element
+	 */
+	@Override
+	public final int getComponentLevel()
+	{
+		return LEVEL;
 	}
 ]]></xsl:text>
 									</xsl:otherwise>
@@ -2593,6 +2636,12 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 	public static final String FILE_EXTENSION_VRML97 = ".wrl";
 										
 	/**
+	 * File extension for Scalable Vector Graphics (SVG), with dot prepended: <i>.svg</i>.
+	 * @see <a href="https://www.w3.org/Graphics/SVG">SVG Working Group</a>
+	 */
+	public static final String FILE_EXTENSION_SVG = ".svg";
+										
+	/**
 	 * File extension for HTML Encoding, with dot prepended: <i>.html</i>.
 	 * @see <a href="https://www.w3.org/TR/html/syntax.html#syntax">HTML5: HTML syntax</a>
 	 */
@@ -2639,6 +2688,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 	 */
 	public File toFileX3D(String fileName)
 	{
+		String errorNotice = new String();
 		if ((fileName == null || fileName.isEmpty()))
 		{
 			throw new X3DException("toFileX3D(fileName) fileName not provided;" +
@@ -2649,7 +2699,12 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 			throw new X3DException("fileName " + fileName + " does not end with extension \"" + FILE_EXTENSION_X3D + "\"");
 		}
 		Path outputFilePath = Paths.get(fileName);
-		outputFilePath.toAbsolutePath(); // debug check, defaults to local directory
+
+                if (ConfigurationProperties.isDebugModeActive()) // debug check, defaults to local directory
+                {
+                        errorNotice += "[debug] Output file path=" + outputFilePath.toAbsolutePath() + "\n";
+                }
+                System.out.println (errorNotice);
 		
 		// http://docs.oracle.com/javase/8/docs/technotes/guides/intl/encoding.doc.html
 		// http://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html
@@ -2690,6 +2745,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 	 */
 	public File toFileClassicVRML(String fileName)
 	{
+		String errorNotice = new String();
 		if ((fileName == null || fileName.isEmpty()))
 		{
 			throw new X3DException("toFileClassicVRML(fileName) fileName not provided;" +
@@ -2700,7 +2756,12 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 			throw new X3DException("fileName " + fileName + " does not end with extension \"" + FILE_EXTENSION_CLASSICVRML + "\"");
 		}
 		Path outputFilePath = Paths.get(fileName);
-		outputFilePath.toAbsolutePath(); // debug check, defaults to local directory
+                if (ConfigurationProperties.isDebugModeActive()) // debug check, defaults to local directory
+                {
+                        if (errorNotice.isEmpty()) errorNotice += "\n";
+                        errorNotice += "[debug] Output file path=" + outputFilePath.toAbsolutePath() + "\n";
+                }
+                System.out.println (errorNotice);
 		
 		// http://docs.oracle.com/javase/8/docs/technotes/guides/intl/encoding.doc.html
 		// http://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html
@@ -2741,6 +2802,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 	 */
 	public File toFileVRML97(String fileName)
 	{
+		String errorNotice = new String();
 		if ((fileName == null || fileName.isEmpty()))
 		{
 			throw new X3DException("toFileVRML97(fileName) fileName not provided;" +
@@ -2751,7 +2813,12 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 			throw new X3DException("fileName " + fileName + " does not end with extension \"" + FILE_EXTENSION_VRML97 + "\"");
 		}
 		Path outputFilePath = Paths.get(fileName);
-		outputFilePath.toAbsolutePath(); // debug check, defaults to local directory
+                if (ConfigurationProperties.isDebugModeActive()) // debug check, defaults to local directory
+                {
+                        if (errorNotice.isEmpty()) errorNotice += "\n";
+                        errorNotice += "[debug] Output file path=" + outputFilePath.toAbsolutePath() + "\n";
+                }
+                System.out.println (errorNotice);
 		
 		// http://docs.oracle.com/javase/8/docs/technotes/guides/intl/encoding.doc.html
 		// http://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html
@@ -2783,7 +2850,274 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 			throw new X3DException("IOException for fileName " + fileName + ", unable to save file: " + exception);
 		}
 	}
-						
+	/**
+	 * Utility method for toFileStylesheetConversion() with no stylesheet parameters.
+	 * @param stylesheetName name of stylesheet to apply
+	 * @param fileName name of file to create and save, can include local directory path, must end with allowed file extension (e.g. ".html")
+	 * @return File containing result (if operation succeeds), null otherwise
+	 */
+	public File toFileStylesheetConversion(String stylesheetName, String fileName)
+	{
+            return toFileStylesheetConversion(stylesheetName, fileName, "", "", "", "");
+	}
+	/**
+	 * Utility method for toFileStylesheetConversion() with a single stylesheet name=value parameter pair.
+	 * @param stylesheetName name of stylesheet to apply
+	 * @param fileName name of file to create and save, can include local directory path, must end with allowed file extension (e.g. ".html")
+	 * @param parameterName1  first stylesheet parameter name
+	 * @param parameterValue1 first stylesheet parameter value
+	 * @return File containing result (if operation succeeds), null otherwise
+	 */
+	public File toFileStylesheetConversion(String stylesheetName, String fileName, String parameterName1, String parameterValue1)
+	{
+            return toFileStylesheetConversion(stylesheetName, fileName, parameterName1, parameterValue1, "", "");
+	}
+
+	/**
+	 * Serialize scene graph using <i>toFileX3D()</i> and then create a new file with corresponding filename extension (e.g. <i>.html</i>) using an embedded stylesheet.
+	 * @see X3DObject#toStringX3D()
+	 * @see X3DObject#toFileX3D(String)
+	 * @see X3DObject#toFileJava(String)
+	 * @see X3DObject#toFileJSON(String)
+	 * @see X3DObject#toFileX3DOM(String)
+	 * @see X3DObject#toFileCobweb(String,String)
+         * @see ConfigurationProperties#X3DJSAIL_JAR_RELEASE_VERSIONS
+	 * @see <a href="http://www.saxonica.com/documentation/index.html#!using-xsl/embedding">Saxonica &gt; Saxon &gt; Using XSLT &gt; Invoking XSLT from an application</a>
+	 * @see <a href="http://saxon.sourceforge.net/#F9.7HE">Saxon-HE 9.7</a>
+	 * @see <a href="https://docs.oracle.com/javase/tutorial/jaxp/xslt/transformingXML.html">Java Tutorials: Transforming XML Data with XSLT</a>
+	 * @see <a href="https://docs.oracle.com/javase/tutorial/jaxp/examples/xslt_samples.zip">Java Tutorials: Transforming XML Data with XSLT, sample files</a>
+	 * @see <a href="https://docs.oracle.com/javase/tutorial/essential/io/file.html#textfiles">Buffered I/O Methods for Text Files</a>
+	 * @param stylesheetName name of stylesheet to apply
+	 * @param fileName name of file to create and save, can include local directory path, must end with allowed file extension (e.g. ".html")
+	 * @param parameterName1  first stylesheet parameter name
+	 * @param parameterValue1 first stylesheet parameter value
+	 * @param parameterName2  second stylesheet parameter name
+	 * @param parameterValue2 second stylesheet parameter value
+	 * @return File containing result (if operation succeeds), null otherwise
+	 */
+	public File toFileStylesheetConversion(String stylesheetName, String fileName, String parameterName1, String parameterValue1, String parameterName2, String parameterValue2)
+	{
+		String errorNotice = new String();
+                String expectedFileNameExtension = "";
+		if ((stylesheetName == null || stylesheetName.isEmpty()))
+		{
+			throw new X3DException("toFileStylesheetConversion(stylesheetName, fileName) stylesheetName not provided;" +
+				" (see ConfigurationProperties for allowed choices)");
+		}
+                else if (stylesheetName.equals(ConfigurationProperties.STYLESHEET_extrusionCrossSectionSVG))
+                {
+                    expectedFileNameExtension = FILE_EXTENSION_SVG;
+                }
+                else if (stylesheetName.equals(ConfigurationProperties.STYLESHEET_htmlDocumentation))
+                {
+                    expectedFileNameExtension = FILE_EXTENSION_HTML;
+                }
+                else if (stylesheetName.equals(ConfigurationProperties.STYLESHEET_JAVA))
+                {
+                    expectedFileNameExtension = FILE_EXTENSION_JAVA;
+                }
+                else if (stylesheetName.equals(ConfigurationProperties.STYLESHEET_JSON))
+                {
+                    expectedFileNameExtension = FILE_EXTENSION_JSON;
+                }
+                else if (stylesheetName.equals(ConfigurationProperties.STYLESHEET_X3DOM))
+                {
+                    expectedFileNameExtension = FILE_EXTENSION_HTML;
+                }
+                else if (stylesheetName.equals(ConfigurationProperties.STYLESHEET_COBWEB))
+                {
+                    expectedFileNameExtension = FILE_EXTENSION_HTML;
+                }
+                                                                            
+		if ((fileName == null || fileName.isEmpty()))
+		{
+			throw new X3DException("toFileStylesheetConversion(stylesheetName, fileName) fileName not provided;" +
+				" (see ConfigurationProperties for allowed choices)");
+		}
+		if (!(fileName.endsWith(expectedFileNameExtension) || // some variations allowed
+                     (fileName.endsWith(FILE_EXTENSION_XHTML)      && expectedFileNameExtension.equals(FILE_EXTENSION_HTML)) ||
+                     (fileName.endsWith(FILE_EXTENSION_JAVASCRIPT) && expectedFileNameExtension.equals(FILE_EXTENSION_JSON))))
+		{
+			throw new X3DException("fileName " + fileName + " does not end with expected extension \"" + expectedFileNameExtension + "\"");
+		}
+
+		Path outputFilePath = Paths.get(fileName);
+                if (ConfigurationProperties.isDebugModeActive()) // debug check, defaults to local directory
+                {
+                        errorNotice += "[debug] Output file path=" + outputFilePath.toAbsolutePath() + "\n";
+                }					
+		
+		String intermediateX3DFileName = fileName.substring(0, fileName.length() - 5) + "PrettyPrint.intermediate.x3d";
+		Path   intermediateX3DFilePath = Paths.get(intermediateX3DFileName);
+                if (ConfigurationProperties.isDebugModeActive())
+                    errorNotice += "[debug] intermediateX3DFilePath=" + intermediateX3DFilePath.toAbsolutePath() + "\n";
+
+		// http://docs.oracle.com/javase/8/docs/technotes/guides/intl/encoding.doc.html
+		// http://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html
+		Charset charset = Charset.forName(ConfigurationProperties.XML_ENCODING_DECLARATION_DEFAULT); // "UTF-8"
+										
+		try
+		{	
+			validate(); // strict checks before serializing scene and saving file
+		}
+		catch (Exception e)
+		{
+			System.out.println (e); // output exception but allow serialization to continue, file may be editable
+			e.printStackTrace();
+			if (ConfigurationProperties.isValidationExceptionAllowed())
+				 System.out.println ("Output serialization allowed to continue, file may be editable...");
+			else throw (e);
+		}
+
+		String outputSceneText = toStringX3D();
+		try
+		{
+			bufferedWriter = Files.newBufferedWriter(intermediateX3DFilePath, charset);
+			bufferedWriter.write(outputSceneText, 0, outputSceneText.length());
+			bufferedWriter.close(); // ensure file writing is complete
+		}
+		catch (IOException exception)
+		{
+			throw new X3DException("IOException when creating intermediateX3DFilePath " + intermediateX3DFilePath + 
+				", unable to save file: " + exception);
+		}
+		
+		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+//		factory.setNamespaceAware(true);
+//		factory.setValidating    (true);
+                
+		try // https://docs.oracle.com/javase/tutorial/jaxp/xslt/transformingXML.html
+		{
+                        // background references
+			// https://stackoverflow.com/questions/20389255/reading-a-resource-file-from-within-jar/20389418#20389418
+			// https://stackoverflow.com/questions/403256/how-do-i-read-a-resource-file-from-a-java-jar-file
+			// https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html#getResourceAsStream-java.lang.String-
+			// https://stackoverflow.com/questions/11501418/is-it-possible-to-create-a-file-object-from-inputstream
+			// targets: X3DJSAIL.3.3.full.jar and X3DJSAIL.3.3.classes.jar
+
+			String systemClassPath = ConfigurationProperties.getClassPath();
+
+                        String currentX3dJsailJar = systemClassPath.substring(systemClassPath.indexOf("X3DJSAIL"));
+                        if    (currentX3dJsailJar.indexOf(java.io.File.pathSeparatorChar) > 0)
+                               currentX3dJsailJar = currentX3dJsailJar.substring(0,currentX3dJsailJar.indexOf(java.io.File.pathSeparatorChar));
+                        boolean foundX3dJsailJar = false;
+                        for (String nextX3dJsailJar : ConfigurationProperties.X3DJSAIL_JAR_RELEASE_VERSIONS)
+                        {
+                            if (currentX3dJsailJar.equals(nextX3dJsailJar))
+                            {
+                                 foundX3dJsailJar = true;
+                                 break;
+                            }
+                        }
+                        if (!foundX3dJsailJar)
+                        {
+				errorNotice = ConfigurationProperties.ERROR_CONFIGURATION_X3DJSAIL + " X3DJSAIL jar archive \"" + currentX3dJsailJar + "\" not found!";
+//				validationResult.append(errorNotice).append("\n");
+				throw new InvalidFieldValueException(errorNotice);
+			}
+
+                        // TODO jar flexibility, once working
+                        // must end in !/ https://stackoverflow.com/questions/38488492/documentbuilder-gives-java-net-malformedurlexception-no-in-spec
+			String        jarPath = "jar:file:" + currentX3dJsailJar + "!/";
+			String stylesheetPath = "stylesheets/" + stylesheetName;
+
+			if (ConfigurationProperties.isDebugModeActive())
+			{
+				errorNotice += "[debug] System java.class.path=" + systemClassPath   + "\n";
+				errorNotice += "[debug] jarPath=" + jarPath + ", ";
+				errorNotice += "[debug] stylesheetPath=" + stylesheetPath + "\n";
+			}
+                        // getClass().getResourceAsStream looks within each classpath .jar for stylesheetPath
+			InputStream stylesheetInputStream = getClass().getResourceAsStream("/" + stylesheetPath);
+ 			if (stylesheetInputStream == null)
+			{
+				errorNotice += "Stylesheet not found in " + jarPath + ": " + stylesheetPath + ", ";
+			}
+                        // if class loader jar invocation not working then here is a bad hack for build testing: use local path instead
+			File stylesheetFile = new File("lib/stylesheets/", ConfigurationProperties.STYLESHEET_htmlDocumentation);
+                        if ((stylesheetInputStream == null) && !stylesheetFile.exists())
+				errorNotice += "Stylesheet not found: " + stylesheetFile.getAbsolutePath() + ", ";
+
+			// TODO check for subdirectory writeable
+                        File outputFile = outputFilePath.toFile();
+			if (!outputFile.canWrite())
+				errorNotice += "outputFile not writable: " + outputFile.getAbsolutePath() + ", ";
+			
+			if (ConfigurationProperties.getXsltEngine().equals(ConfigurationProperties.XSLT_ENGINE_saxon))
+			{
+				// reference: Saxon-HE 9.7 documentation and samples
+				// S9APIExamples.jsail: private static class TransformA implements S9APIExamples.Test
+
+				Processor           processor = new Processor(false);
+				XsltCompiler     xsltCompiler = processor.newXsltCompiler();
+				XsltExecutable xsltExecutable;
+                                if (stylesheetInputStream != null)
+                                    xsltExecutable = xsltCompiler.compile (new StreamSource(stylesheetInputStream));
+				else
+                                    xsltExecutable = xsltCompiler.compile (new StreamSource(stylesheetFile)); // this fallback might easily fail
+
+				XdmNode source = processor.newDocumentBuilder().build(new StreamSource(intermediateX3DFilePath.toFile()));
+				Serializer out = processor.newSerializer(outputFile);
+				out.setOutputProperty(Serializer.Property.METHOD, "html");
+				out.setOutputProperty(Serializer.Property.INDENT, "yes");
+				XsltTransformer xsltTransformer = xsltExecutable.load();
+				xsltTransformer.setInitialContextNode(source);
+				xsltTransformer.setDestination(out);
+				if (parameterName1.length() > 0)
+					xsltTransformer.setParameter(new QName(parameterName1), new XdmAtomicValue(parameterValue1));
+				if (parameterName2.length() > 0)
+					xsltTransformer.setParameter(new QName(parameterName2), new XdmAtomicValue(parameterValue2));
+                                if (stylesheetInputStream != null)
+                                        xsltTransformer.setParameter(new QName("produceSVGfigures"), new XdmAtomicValue("false"));
+                                xsltTransformer.transform();
+			}
+			else if (ConfigurationProperties.getXsltEngine().equals(ConfigurationProperties.XSLT_ENGINE_nativeJava))
+			{
+				DocumentBuilder builder = factory.newDocumentBuilder();
+				Document x3dDocument = builder.parse(intermediateX3DFilePath.toFile());
+				TransformerFactory tFactory = TransformerFactory.newInstance();
+                                StreamSource styleStreamSource;
+                                if (stylesheetInputStream != null)
+                                    styleStreamSource = new StreamSource(stylesheetInputStream);
+				else
+                                    styleStreamSource = new StreamSource(stylesheetFile);
+				Transformer transformer = tFactory.newTransformer(styleStreamSource);
+				if (parameterName1.length() > 0)
+					transformer.setParameter(parameterName1, parameterValue1);
+				if (parameterName2.length() > 0)
+					transformer.setParameter(parameterName2, parameterValue2);
+                                if (stylesheetInputStream != null)
+                                        transformer.setParameter("produceSVGfigures", "false");
+
+				DOMSource       domSource = new DOMSource(x3dDocument);
+				StreamResult streamResult = new StreamResult(outputFile);
+				transformer.transform(domSource, streamResult);
+			}
+			else // no joy
+			{
+				errorNotice = "Invalid ConfigurationProperties.getXsltEngine() value='" + ConfigurationProperties.getXsltEngine() + 
+									 "', legal values are ConfigurationProperties.XSLT_ENGINE_saxon or ConfigurationProperties.XSLT_ENGINE_nativeJava";
+//				validationResult.append(errorNotice).append("\n");
+				throw new InvalidFieldValueException(errorNotice);
+			}
+			if (ConfigurationProperties.isDeleteIntermediateFiles()) // clean up when done
+				intermediateX3DFilePath.toFile().deleteOnExit();
+		}
+		catch (IOException | ParserConfigurationException | TransformerException | SAXException exception)
+		{
+			throw new X3DException(errorNotice + exception.toString() + " exception when transforming and creating fileName " + outputFilePath + 
+				", unable to save result: " + exception);
+		}
+		catch (SaxonApiException saxonApiException)
+		{
+//			Logger.getLogger(X3DObject.class.getName()).log(Level.SEVERE, null, saxonApiException);
+										
+			throw new X3DException(errorNotice + "SaxonApiException when transforming and creating fileName " + outputFilePath + 
+				", unable to save result: " + saxonApiException);
+		}
+		return outputFilePath.toFile(); // success
+	}
+
 	/**
 	 * Serialize scene graph using <i>toFileX3D()</i> and then create a new pretty-print HTML file with extension <i>.html</i>, suitable for documentation purposes.
 	 * @see X3DObject#toStringX3D()
@@ -2802,6 +3136,17 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 	 */
 	public File toFileDocumentationHtml(String fileName)
 	{
+            String   svgFileName = fileName;
+            if (     svgFileName.endsWith(".html"))
+                     svgFileName = svgFileName.replace(".html", ".svg");
+            else if (svgFileName.endsWith(".xhtml"))
+                     svgFileName = svgFileName.replace(".xhtml", ".svg");
+            else     svgFileName+= ".svg";
+                                                                            
+                   toFileStylesheetConversion(ConfigurationProperties.STYLESHEET_extrusionCrossSectionSVG, svgFileName);
+
+            return toFileStylesheetConversion(ConfigurationProperties.STYLESHEET_htmlDocumentation,           fileName);
+/*
 		if ((fileName == null || fileName.isEmpty()))
 		{
 			throw new X3DException("toFileDocumentationHtml(fileName) fileName not provided;" +
@@ -2812,7 +3157,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 			throw new X3DException("fileName " + fileName + " does not end with extension \"" + FILE_EXTENSION_HTML + "\"");
 		}
 
-		// XSLT parameter names and values
+		// XSLT stylesheet parameter names and values
 		String parameterName1  = "";
 		String parameterValue1 = "";
 		String parameterName2  = "";
@@ -2848,7 +3193,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 		}
 		catch (IOException exception)
 		{
-			throw new X3DException("IOException when creating intermediateX3DFileName " + intermediateX3DFileName + 
+			throw new X3DException("IOException when creating intermediateX3DFilePath " + intermediateX3DFilePath + 
 				", unable to save file: " + exception);
 		}
 		
@@ -2859,27 +3204,80 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 		String errorNotice = new String();
 		try // https://docs.oracle.com/javase/tutorial/jaxp/xslt/transformingXML.html
 		{
-/* TODO
-*/
+                        // background references
+			// https://stackoverflow.com/questions/20389255/reading-a-resource-file-from-within-jar/20389418#20389418
 			// https://stackoverflow.com/questions/403256/how-do-i-read-a-resource-file-from-a-java-jar-file
-                        // https://stackoverflow.com/questions/20389255/reading-a-resource-file-from-within-jar
 			// https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html#getResourceAsStream-java.lang.String-
-                        // https://stackoverflow.com/questions/11501418/is-it-possible-to-create-a-file-object-from-inputstream
-                        // X3DJSAIL.3.3.full.jar
-			String stylesheetJarPath = "/stylesheets/" + ConfigurationProperties.STYLESHEET_htmlDocumentation;
-			InputStream stylesheetInputStream = getClass().getResourceAsStream(stylesheetJarPath);
+			// https://stackoverflow.com/questions/11501418/is-it-possible-to-create-a-file-object-from-inputstream
+			// targets: X3DJSAIL.3.3.full.jar and X3DJSAIL.3.3.classes.jar
+
+			String systemClassPath = System.getProperty("java.class.path");
+			
+                        // TODO jar flexibility, once working
+                        // must end in !/ https://stackoverflow.com/questions/38488492/documentbuilder-gives-java-net-malformedurlexception-no-in-spec
+			String       jarPath1 = "jar:file:X3DJSAIL.3.3.classes.jar!/";
+			String       jarPath2 = "jar:file:X3DJSAIL.3.3.full.jar!/";
+                        String    jarPathUsed = jarPath1;
+			String stylesheetPath = "stylesheets/" + ConfigurationProperties.STYLESHEET_htmlDocumentation;
+			
+			if (ConfigurationProperties.isDebugModeActive())
+			{
+				if (errorNotice.isEmpty()) errorNotice += "\n";
+				errorNotice += "[debug] System java.class.path=" + systemClassPath   + "\n";
+				errorNotice += "[debug] stylesheetPath=" + stylesheetPath + "\n";
+			}
+////// /*
+                        // https://docs.oracle.com/javase/7/docs/api/java/net/JarURLConnection.html
+                                                                            
+                        // initial look for X3DJSAIL jar
+                        URL url = new URL(jarPathUsed + stylesheetPath);
+                        JarURLConnection jarConnection = (JarURLConnection)url.openConnection();
+                        Manifest manifest;
+                        
+                        try
+                        {
+                            manifest = jarConnection.getManifest();
+                        }
+                        catch (IOException e1) // try again
+                        {
+                            errorNotice += "not found: " + URL(jarPathUsed + "\n";
+                            // second look for X3DJSAIL jar
+                            jarPathUsed = jarPath2;
+                            url = new URL(jarPathUsed + stylesheetPath);
+                            jarConnection = (JarURLConnection)url.openConnection();
+                            try
+                            {
+                                manifest = jarConnection.getManifest(); // throws exception on failure
+                            }
+                            catch (IOException e2) // try again, ignoring .jar in case it is defined in path already
+                            {
+                                errorNotice += "not found: " + URL(jarPathUsed + "\n";
+                                errorNotice += "now looking for stylesheet itself..." + "\n";
+                                jarPathUsed = "";
+                                url = new URL(jarPathUsed + stylesheetPath);
+                                jarConnection = (JarURLConnection)url.openConnection();
+                            }
+                        }
+////// * /
+                        // first attempt: assume .jar is in classpath
+			InputStream stylesheetInputStream = getClass().getResourceAsStream("/" + stylesheetPath);
+                        if (stylesheetInputStream == null)
+                            stylesheetInputStream = getClass().getResourceAsStream(jarPathUsed + stylesheetPath);
+                        if (stylesheetInputStream == null)
+                            stylesheetInputStream = getClass().getResourceAsStream(jarPath2 + stylesheetPath);
 			
 			if (stylesheetInputStream == null)
 			{
-				errorNotice += "Stylesheet not found in jar: " + stylesheetJarPath + ", ";
+				errorNotice += "Stylesheet not found in jar: " + stylesheetPath + ", ";
 			}
-                        // TODO class loader jar invocation not working :(   so bad hack: use local path instead
+                        // TODO fix: if class loader jar invocation not working then here is a bad hack for build testing: use local path instead
 			File stylesheetFile = new File("lib/stylesheets/", ConfigurationProperties.STYLESHEET_htmlDocumentation);
-			if (!stylesheetFile.exists())
-				errorNotice += "Stylesheet not found: " + stylesheetFile.getAbsolutePath() + ", ";
-										
+			if ((stylesheetInputStream == null) && !stylesheetFile.exists())
+				errorNotice += "Stylesheet not found: " + stylesheetFile.getAbsolutePath() + ", ";					
 			outputFilePath.toAbsolutePath(); // debug check, defaults to local directory
-			File outputFile = outputFilePath.toFile();
+
+			// TODO check for subdirectory writeable
+                        File outputFile = outputFilePath.toFile();
 			if (!outputFile.canWrite())
 				errorNotice += "outputFile not writable: " + outputFile.getAbsolutePath() + ", ";
 			
@@ -2890,7 +3288,12 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 
 				Processor           processor = new Processor(false);
 				XsltCompiler     xsltCompiler = processor.newXsltCompiler();
-				XsltExecutable xsltExecutable = xsltCompiler.compile (new StreamSource(stylesheetFile)); // stylesheetInputStream));
+				XsltExecutable xsltExecutable;
+                                if (stylesheetInputStream != null)
+                                    xsltExecutable = xsltCompiler.compile (new StreamSource(stylesheetInputStream));
+				else
+                                    xsltExecutable = xsltCompiler.compile (new StreamSource(stylesheetFile)); // this fallback might easily fail
+
 				XdmNode source = processor.newDocumentBuilder().build(new StreamSource(intermediateX3DFilePath.toFile()));
 				Serializer out = processor.newSerializer(outputFile);
 				out.setOutputProperty(Serializer.Property.METHOD, "html");
@@ -2902,19 +3305,29 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 					xsltTransformer.setParameter(new QName(parameterName1), new XdmAtomicValue(parameterValue1));
 				if (parameterName2.length() > 0)
 					xsltTransformer.setParameter(new QName(parameterName2), new XdmAtomicValue(parameterValue2));
-				xsltTransformer.transform();
+                                if (stylesheetInputStream != null)
+                                        xsltTransformer.setParameter(new QName("produceSVGfigures"), new XdmAtomicValue("false")); // avoid invoking hidden stylesheet
+                                        // TODO invoke spearately
+                                xsltTransformer.transform();
 			}
 			else if (ConfigurationProperties.getXsltEngine().equals(ConfigurationProperties.XSLT_ENGINE_nativeJava))
 			{
 				DocumentBuilder builder = factory.newDocumentBuilder();
 				Document x3dDocument = builder.parse(intermediateX3DFilePath.toFile());
 				TransformerFactory tFactory = TransformerFactory.newInstance();
-				StreamSource styleStreamSource = new StreamSource(stylesheetFile); // stylesheetInputStream);
+                                StreamSource styleStreamSource;
+                                if (stylesheetInputStream != null)
+                                    styleStreamSource = new StreamSource(stylesheetInputStream);
+				else
+                                    styleStreamSource = new StreamSource(stylesheetFile);
 				Transformer transformer = tFactory.newTransformer(styleStreamSource);
 				if (parameterName1.length() > 0)
 					transformer.setParameter(parameterName1, parameterValue1);
 				if (parameterName2.length() > 0)
 					transformer.setParameter(parameterName2, parameterValue2);
+                                if (stylesheetInputStream != null)
+                                        transformer.setParameter("produceSVGfigures", "false"); // avoid invoking hidden stylesheet
+                                        // TODO invoke spearately
 
 				DOMSource       domSource = new DOMSource(x3dDocument);
 				StreamResult streamResult = new StreamResult(outputFile);
@@ -2932,7 +3345,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 		}
 		catch (IOException | ParserConfigurationException | TransformerException | SAXException exception)
 		{
-			throw new X3DException(errorNotice + "IOException when transforming and creating fileName " + outputFilePath + 
+			throw new X3DException(errorNotice + exception.toString() + " exception when transforming and creating fileName " + outputFilePath + 
 				", unable to save result: " + exception);
 		}
 		catch (SaxonApiException saxonApiException)
@@ -2943,6 +3356,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 				", unable to save result: " + saxonApiException);
 		}
 		return outputFilePath.toFile(); // success
+*/
 	}
 
 	// TODO refactor XSLT conversion methods to re-use common code
@@ -3027,133 +3441,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 	 */
 	public File toFileJSON(String fileName)
 	{
-		if ((fileName == null || fileName.isEmpty()))
-		{
-			throw new X3DException("toFileJSON(fileName) fileName not provided;" +
-				" be sure to end with extension \"" + FILE_EXTENSION_JSON + "\"");
-		}
-		if (!fileName.endsWith(FILE_EXTENSION_JAVASCRIPT) && !fileName.endsWith(FILE_EXTENSION_JSON))
-		{
-			throw new X3DException("fileName " + fileName + " does not end with extension \"" + FILE_EXTENSION_JSON + "\" or  \"" + FILE_EXTENSION_JAVASCRIPT + "\"");
-		}
-
-		// XSLT parameter names and values
-		String parameterName1  = "";
-		String parameterValue1 = "";
-		String parameterName2  = "";
-		String parameterValue2 = "";
-
-		Path outputFilePath = Paths.get(fileName);
-		
-		String intermediateX3DFileName = fileName + ".intermediate.x3d";
-		Path   intermediateX3DFilePath = Paths.get(intermediateX3DFileName);
-		
-		// http://docs.oracle.com/javase/8/docs/technotes/guides/intl/encoding.doc.html
-		// http://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html
-		Charset charset = Charset.forName(ConfigurationProperties.XML_ENCODING_DECLARATION_DEFAULT); // "UTF-8"
-										
-		try
-		{	
-			validate(); // strict checks before serializing scene and saving file
-		}
-		catch (Exception e)
-		{
-			System.out.println (e); // output exception but allow serialization to continue, file may be editable
-			e.printStackTrace();
-			if (ConfigurationProperties.isValidationExceptionAllowed())
-				 System.out.println ("Output serialization allowed to continue, file may be editable...");
-			else throw (e);
-		}
-
-		String outputSceneText = toStringX3D();
-		try
-		{
-			bufferedWriter = Files.newBufferedWriter(intermediateX3DFilePath, charset);
-			bufferedWriter.write(outputSceneText, 0, outputSceneText.length());
-			bufferedWriter.close(); // ensure file writing is complete
-		}
-		catch (IOException exception)
-		{
-			throw new X3DException("IOException when creating intermediateX3DFileName " + intermediateX3DFileName + 
-				", unable to save file: " + exception);
-		}
-		
-		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-//		factory.setNamespaceAware(true);
-//		factory.setValidating    (true);
-
-		String errorNotice = new String();
-		try // https://docs.oracle.com/javase/tutorial/jaxp/xslt/transformingXML.html
-		{
-			File stylesheetFile = new File("lib/stylesheets/", ConfigurationProperties.STYLESHEET_JSON);
-			if (!stylesheetFile.exists())
-				errorNotice += "Stylesheet not found: " + stylesheetFile.getAbsolutePath() + ", ";
-										
-			outputFilePath.toAbsolutePath(); // debug check, defaults to local directory
-			File outputFile = outputFilePath.toFile();
-			if (!outputFile.canWrite())
-				errorNotice += "outputFile not writable: " + outputFile.getAbsolutePath() + ", ";
-			
-			if (ConfigurationProperties.getXsltEngine().equals(ConfigurationProperties.XSLT_ENGINE_saxon))
-			{
-				// reference: Saxon-HE 9.7 documentation and samples
-				// S9APIExamples.jsail: private static class TransformA implements S9APIExamples.Test
-
-				Processor           processor = new Processor(false);
-				XsltCompiler     xsltCompiler = processor.newXsltCompiler();
-				XsltExecutable xsltExecutable = xsltCompiler.compile (new StreamSource(stylesheetFile));
-				XdmNode source = processor.newDocumentBuilder().build(new StreamSource(intermediateX3DFilePath.toFile()));
-				Serializer out = processor.newSerializer(outputFile);
-				out.setOutputProperty(Serializer.Property.METHOD, "html");
-				out.setOutputProperty(Serializer.Property.INDENT, "yes");
-				XsltTransformer xsltTransformer = xsltExecutable.load();
-				xsltTransformer.setInitialContextNode(source);
-				xsltTransformer.setDestination(out);
-				if (parameterName1.length() > 0)
-					xsltTransformer.setParameter(new QName(parameterName1), new XdmAtomicValue(parameterValue1));
-				if (parameterName2.length() > 0)
-					xsltTransformer.setParameter(new QName(parameterName2), new XdmAtomicValue(parameterValue2));
-				xsltTransformer.transform();
-			}
-			else if (ConfigurationProperties.getXsltEngine().equals(ConfigurationProperties.XSLT_ENGINE_nativeJava))
-			{
-				DocumentBuilder builder = factory.newDocumentBuilder();
-				Document x3dDocument = builder.parse(intermediateX3DFilePath.toFile());
-				TransformerFactory tFactory = TransformerFactory.newInstance();
-				StreamSource styleStreamSource = new StreamSource(stylesheetFile);
-				Transformer transformer = tFactory.newTransformer(styleStreamSource);
-				if (parameterName1.length() > 0)
-					transformer.setParameter(parameterName1, parameterValue1);
-				if (parameterName2.length() > 0)
-					transformer.setParameter(parameterName2, parameterValue2);
-
-				DOMSource       domSource = new DOMSource(x3dDocument);
-				StreamResult streamResult = new StreamResult(outputFile);
-				transformer.transform(domSource, streamResult);
-			}
-			else // no joy
-			{
-				errorNotice = "Invalid ConfigurationProperties.getXsltEngine() value='" + ConfigurationProperties.getXsltEngine() + 
-									 "', legal values are ConfigurationProperties.XSLT_ENGINE_saxon or ConfigurationProperties.XSLT_ENGINE_nativeJava";
-//				validationResult.append(errorNotice).append("\n");
-				throw new InvalidFieldValueException(errorNotice);
-			}
-			if (ConfigurationProperties.isDeleteIntermediateFiles()) // clean up when done
-				intermediateX3DFilePath.toFile().deleteOnExit();
-		}
-		catch (IOException | ParserConfigurationException | TransformerException | SAXException exception)
-		{
-			throw new X3DException(errorNotice + "IOException when transforming and creating fileName " + outputFilePath + 
-				", unable to save result: " + exception);
-		}
-		catch (SaxonApiException saxonApiException)
-		{
-//			Logger.getLogger(X3DObject.class.getName()).log(Level.SEVERE, null, saxonApiException);
-										
-			throw new X3DException(errorNotice + "SaxonApiException when transforming and creating fileName " + outputFilePath + 
-				", unable to save result: " + saxonApiException);
-		}
-		return outputFilePath.toFile(); // success
+            return toFileStylesheetConversion(ConfigurationProperties.STYLESHEET_JSON, fileName);
 	}
 	/**
 	 * Serialize scene graph using X3dToJava.xslt stylesheet to create a new Java source file with extension <i>java</i>, no default license included.
@@ -3189,144 +3477,18 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 	 */
 	public File toFileJava(String fileName, boolean includeWeb3dLicense)
 	{
-                String subdirectoryPath = new String();
-		if (fileName.contains("/"))
-		{
-			subdirectoryPath = fileName.substring(0,fileName.lastIndexOf("/")+1);
-                                fileName = fileName.substring(  fileName.lastIndexOf("/")+1);
-		}
-		if ((fileName == null || fileName.isEmpty()))
-		{
-			throw new X3DException("toFileJava(fileName) fileName not provided;" +
-				" be sure to end with extension \"" + FILE_EXTENSION_JAVA + "\"");
-		}
-		if (!fileName.endsWith(FILE_EXTENSION_JAVA))
-		{
-			throw new X3DException("fileName " + fileName + " does not end with extension \"" + FILE_EXTENSION_JAVA + "\"");
-		}
-
-		// XSLT parameter names and values
-		String parameterName1  = "className";
-		String parameterValue1 = fileName.substring(0,fileName.indexOf(".java"));
-		String parameterName2  = "";
-		String parameterValue2 = "";
-		if (includeWeb3dLicense)
-		{
-			parameterName2  = "includeLicenseoriginals";
-			parameterValue2 = Boolean.toString(includeWeb3dLicense);
-		}
-
-		Path outputFilePath = Paths.get(fileName);
-		
-		String intermediateX3DFileName = subdirectoryPath + fileName + ".intermediate.x3d";
-		Path   intermediateX3DFilePath = Paths.get(intermediateX3DFileName);
-		
-		// http://docs.oracle.com/javase/8/docs/technotes/guides/intl/encoding.doc.html
-		// http://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html
-		Charset charset = Charset.forName(ConfigurationProperties.XML_ENCODING_DECLARATION_DEFAULT); // "UTF-8"
-										
-		try
-		{	
-			validate(); // strict checks before serializing scene and saving file
-		}
-		catch (Exception e)
-		{
-			System.out.println (e); // output exception but allow serialization to continue, file may be editable
-			e.printStackTrace();
-			if (ConfigurationProperties.isValidationExceptionAllowed())
-				 System.out.println ("Output serialization allowed to continue, file may be editable...");
-			else throw (e);
-		}
-
-		String outputSceneText = toStringX3D();
-		try
-		{
-			bufferedWriter = Files.newBufferedWriter(intermediateX3DFilePath, charset);
-			bufferedWriter.write(outputSceneText, 0, outputSceneText.length());
-			bufferedWriter.close(); // ensure file writing is complete
-		}
-		catch (IOException exception)
-		{
-			throw new X3DException("IOException when creating intermediateX3DFileName " + intermediateX3DFileName + 
-				", unable to save file: " + exception);
-		}
-		
-		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-//		factory.setNamespaceAware(true);
-//		factory.setValidating    (true);
-
-		String errorNotice = new String();
-		try // https://docs.oracle.com/javase/tutorial/jaxp/xslt/transformingXML.html
-		{
-			File stylesheetFile = new File("lib/stylesheets/", ConfigurationProperties.STYLESHEET_JAVA);
-			if (!stylesheetFile.exists())
-				errorNotice += "Stylesheet not found: " + stylesheetFile.getAbsolutePath() + ", ";
-										
-			outputFilePath.toAbsolutePath(); // debug check, defaults to local directory
-			File outputFile = outputFilePath.toFile();
-			if (!outputFile.canWrite())
-				errorNotice += "outputFile not writable: " + outputFile.getAbsolutePath() + ", ";
-			
-			if (ConfigurationProperties.getXsltEngine().equals(ConfigurationProperties.XSLT_ENGINE_saxon))
-			{
-				// reference: Saxon-HE 9.7 documentation and samples
-				// S9APIExamples.jsail: private static class TransformA implements S9APIExamples.Test
-
-				Processor           processor = new Processor(false);
-				XsltCompiler     xsltCompiler = processor.newXsltCompiler();
-				XsltExecutable xsltExecutable = xsltCompiler.compile (new StreamSource(stylesheetFile));
-				XdmNode source = processor.newDocumentBuilder().build(new StreamSource(intermediateX3DFilePath.toFile()));
-				Serializer out = processor.newSerializer(outputFile);
-				out.setOutputProperty(Serializer.Property.METHOD, "html");
-				out.setOutputProperty(Serializer.Property.INDENT, "yes");
-				XsltTransformer xsltTransformer = xsltExecutable.load();
-				xsltTransformer.setInitialContextNode(source);
-				xsltTransformer.setDestination(out);
-				if (parameterName1.length() > 0)
-					xsltTransformer.setParameter(new QName(parameterName1), new XdmAtomicValue(parameterValue1));
-				if (parameterName2.length() > 0)
-					xsltTransformer.setParameter(new QName(parameterName2), new XdmAtomicValue(parameterValue2));
-				xsltTransformer.transform();
-			}
-			else if (ConfigurationProperties.getXsltEngine().equals(ConfigurationProperties.XSLT_ENGINE_nativeJava))
-			{
-				DocumentBuilder builder = factory.newDocumentBuilder();
-				Document x3dDocument = builder.parse(intermediateX3DFilePath.toFile());
-				TransformerFactory tFactory = TransformerFactory.newInstance();
-				StreamSource styleStreamSource = new StreamSource(stylesheetFile);
-				Transformer transformer = tFactory.newTransformer(styleStreamSource);
-				if (parameterName1.length() > 0)
-					transformer.setParameter(parameterName1, parameterValue1);
-				if (parameterName2.length() > 0)
-					transformer.setParameter(parameterName2, parameterValue2);
-
-				DOMSource       domSource = new DOMSource(x3dDocument);
-				StreamResult streamResult = new StreamResult(outputFile);
-				transformer.transform(domSource, streamResult);
-			}
-			else // no joy
-			{
-				errorNotice = "Invalid ConfigurationProperties.getXsltEngine() value='" + ConfigurationProperties.getXsltEngine() + 
-									 "', legal values are ConfigurationProperties.XSLT_ENGINE_saxon or ConfigurationProperties.XSLT_ENGINE_nativeJava";
-//				validationResult.append(errorNotice).append("\n");
-				throw new InvalidFieldValueException(errorNotice);
-			}
-			if (ConfigurationProperties.isDeleteIntermediateFiles()) // clean up when done
-				intermediateX3DFilePath.toFile().deleteOnExit();
-		}
-		catch (IOException | ParserConfigurationException | TransformerException | SAXException exception)
-		{
-			throw new X3DException(errorNotice + "IOException when transforming and creating fileName " + outputFilePath + 
-				", unable to save result: " + exception);
-		}
-		catch (SaxonApiException saxonApiException)
-		{
-//			Logger.getLogger(X3DObject.class.getName()).log(Level.SEVERE, null, saxonApiException);
-										
-			throw new X3DException(errorNotice + "SaxonApiException when transforming and creating fileName " + outputFilePath + 
-				", unable to save result: " + saxonApiException);
-		}
-		return outputFilePath.toFile(); // success
+            // XSLT stylesheet parameter names and values
+            String parameterName1  = "className";
+            String parameterValue1 = fileName.substring(0,fileName.indexOf(".java"));
+            String parameterName2  = "";
+            String parameterValue2 = "";
+            if (includeWeb3dLicense)
+            {
+                    parameterName2  = "includeLicenseoriginals";
+                    parameterValue2 = Boolean.toString(includeWeb3dLicense);
+            }
+            return toFileStylesheetConversion(ConfigurationProperties.STYLESHEET_JAVA, fileName,
+                        parameterName1, parameterValue1, parameterName2, parameterValue2);
 	}
 										
 	/**
@@ -3348,133 +3510,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 	 */
 	public File toFileX3DOM(String fileName)
 	{
-		if ((fileName == null || fileName.isEmpty()))
-		{
-			throw new X3DException("toFileX3DOM(fileName) fileName not provided;" +
-				" be sure to end with extension \"" + FILE_EXTENSION_HTML + "\" or  \"" + FILE_EXTENSION_XHTML + "\"");
-		}
-		if (!fileName.endsWith(FILE_EXTENSION_HTML) && !fileName.endsWith(FILE_EXTENSION_XHTML))
-		{
-			throw new X3DException("fileName " + fileName + " does not end with extension \"" + FILE_EXTENSION_HTML + "\" or  \"" + FILE_EXTENSION_XHTML + "\"");
-		}
-										
-		// XSLT parameter names and values
-		String parameterName1  = "";
-		String parameterValue1 = "";
-		String parameterName2  = "";
-		String parameterValue2 = "";
-
-		Path outputFilePath = Paths.get(fileName);
-		
-		String intermediateX3DFileName = fileName + ".intermediate.x3d";
-		Path   intermediateX3DFilePath = Paths.get(intermediateX3DFileName);
-		
-		// http://docs.oracle.com/javase/8/docs/technotes/guides/intl/encoding.doc.html
-		// http://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html
-		Charset charset = Charset.forName(ConfigurationProperties.XML_ENCODING_DECLARATION_DEFAULT); // "UTF-8"
-										
-		try
-		{	
-			validate(); // strict checks before serializing scene and saving file
-		}
-		catch (Exception e)
-		{
-			System.out.println (e); // output exception but allow serialization to continue, file may be editable
-			e.printStackTrace();
-			if (ConfigurationProperties.isValidationExceptionAllowed())
-				 System.out.println ("Output serialization allowed to continue, file may be editable...");
-			else throw (e);
-		}
-
-		String outputSceneText = toStringX3D();
-		try
-		{
-			bufferedWriter = Files.newBufferedWriter(intermediateX3DFilePath, charset);
-			bufferedWriter.write(outputSceneText, 0, outputSceneText.length());
-			bufferedWriter.close(); // ensure file writing is complete
-		}
-		catch (IOException exception)
-		{
-			throw new X3DException("IOException when creating intermediateX3DFileName " + intermediateX3DFileName + 
-				", unable to save file: " + exception);
-		}
-		
-		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-//		factory.setNamespaceAware(true);
-//		factory.setValidating    (true);
-
-		String errorNotice = new String();
-		try // https://docs.oracle.com/javase/tutorial/jaxp/xslt/transformingXML.html
-		{
-			File stylesheetFile = new File("lib/stylesheets/", ConfigurationProperties.STYLESHEET_X3DOM);
-			if (!stylesheetFile.exists())
-				errorNotice += "Stylesheet not found: " + stylesheetFile.getAbsolutePath() + ", ";
-										
-			outputFilePath.toAbsolutePath(); // debug check, defaults to local directory
-			File outputFile = outputFilePath.toFile();
-			if (!outputFile.canWrite())
-				errorNotice += "outputFile not writable: " + outputFile.getAbsolutePath() + ", ";
-			
-			if (ConfigurationProperties.getXsltEngine().equals(ConfigurationProperties.XSLT_ENGINE_saxon))
-			{
-				// reference: Saxon-HE 9.7 documentation and samples
-				// S9APIExamples.jsail: private static class TransformA implements S9APIExamples.Test
-
-				Processor           processor = new Processor(false);
-				XsltCompiler     xsltCompiler = processor.newXsltCompiler();
-				XsltExecutable xsltExecutable = xsltCompiler.compile (new StreamSource(stylesheetFile));
-				XdmNode source = processor.newDocumentBuilder().build(new StreamSource(intermediateX3DFilePath.toFile()));
-				Serializer out = processor.newSerializer(outputFile);
-				out.setOutputProperty(Serializer.Property.METHOD, "html");
-				out.setOutputProperty(Serializer.Property.INDENT, "yes");
-				XsltTransformer xsltTransformer = xsltExecutable.load();
-				xsltTransformer.setInitialContextNode(source);
-				xsltTransformer.setDestination(out);
-				if (parameterName1.length() > 0)
-					xsltTransformer.setParameter(new QName(parameterName1), new XdmAtomicValue(parameterValue1));
-				if (parameterName2.length() > 0)
-					xsltTransformer.setParameter(new QName(parameterName2), new XdmAtomicValue(parameterValue2));
-				xsltTransformer.transform();
-			}
-			else if (ConfigurationProperties.getXsltEngine().equals(ConfigurationProperties.XSLT_ENGINE_nativeJava))
-			{
-				DocumentBuilder builder = factory.newDocumentBuilder();
-				Document x3dDocument = builder.parse(intermediateX3DFilePath.toFile());
-				TransformerFactory tFactory = TransformerFactory.newInstance();
-				StreamSource styleStreamSource = new StreamSource(stylesheetFile);
-				Transformer transformer = tFactory.newTransformer(styleStreamSource);
-				if (parameterName1.length() > 0)
-					transformer.setParameter(parameterName1, parameterValue1);
-				if (parameterName2.length() > 0)
-					transformer.setParameter(parameterName2, parameterValue2);
-
-				DOMSource       domSource = new DOMSource(x3dDocument);
-				StreamResult streamResult = new StreamResult(outputFile);
-				transformer.transform(domSource, streamResult);
-			}
-			else // no joy
-			{
-				errorNotice = "Invalid ConfigurationProperties.getXsltEngine() value='" + ConfigurationProperties.getXsltEngine() + 
-									 "', legal values are ConfigurationProperties.XSLT_ENGINE_saxon or ConfigurationProperties.XSLT_ENGINE_nativeJava";
-//				validationResult.append(errorNotice).append("\n");
-				throw new InvalidFieldValueException(errorNotice);
-			}
-			if (ConfigurationProperties.isDeleteIntermediateFiles()) // clean up when done
-				intermediateX3DFilePath.toFile().deleteOnExit();
-		}
-		catch (IOException | ParserConfigurationException | TransformerException | SAXException exception)
-		{
-			throw new X3DException(errorNotice + "IOException when transforming and creating fileName " + outputFilePath + 
-				", unable to save result: " + exception);
-		}
-		catch (SaxonApiException saxonApiException)
-		{
-//			Logger.getLogger(X3DObject.class.getName()).log(Level.SEVERE, null, saxonApiException);
-										
-			throw new X3DException(errorNotice + "SaxonApiException when transforming and creating fileName " + outputFilePath + 
-				", unable to save result: " + saxonApiException);
-		}
-		return outputFilePath.toFile(); // success
+            return toFileStylesheetConversion(ConfigurationProperties.STYLESHEET_X3DOM, fileName, "player", "X3DOM");
 	}
 										
 	/**
@@ -3497,138 +3533,8 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 	 */
 	public File toFileCobweb(String sourceSceneName, String fileName)
 	{
-		if ((fileName == null || fileName.isEmpty()))
-		{
-			throw new X3DException("toFileCobweb(fileName) fileName not provided;" +
-				" be sure to end with extension \"" + FILE_EXTENSION_HTML + "\" or  \"" + FILE_EXTENSION_XHTML + "\"");
-		}
-		if (!fileName.endsWith(FILE_EXTENSION_HTML) && !fileName.endsWith(FILE_EXTENSION_XHTML))
-		{
-			throw new X3DException("fileName " + fileName + " does not end with extension \"" + FILE_EXTENSION_HTML + "\" or  \"" + FILE_EXTENSION_XHTML + "\"");
-		}
-										
-		// XSLT parameter names and values
-		String parameterName1  = "";
-		String parameterValue1 = "";
-		String parameterName2  = "";
-		String parameterValue2 = "";
-										
-		parameterName1  = "player";
-		parameterValue1 = "Cobweb";
-		parameterName2  = "urlScene";
-		parameterValue2 = sourceSceneName;
-
-		Path outputFilePath = Paths.get(fileName);
-		
-		String intermediateX3DFileName = fileName + ".intermediate.x3d";
-		Path   intermediateX3DFilePath = Paths.get(intermediateX3DFileName);
-		
-		// http://docs.oracle.com/javase/8/docs/technotes/guides/intl/encoding.doc.html
-		// http://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html
-		Charset charset = Charset.forName(ConfigurationProperties.XML_ENCODING_DECLARATION_DEFAULT); // "UTF-8"
-										
-		try
-		{	
-			validate(); // strict checks before serializing scene and saving file
-		}
-		catch (Exception e)
-		{
-			System.out.println (e); // output exception but allow serialization to continue, file may be editable
-			e.printStackTrace();
-			if (ConfigurationProperties.isValidationExceptionAllowed())
-				 System.out.println ("Output serialization allowed to continue, file may be editable...");
-			else throw (e);
-		}
-
-		String outputSceneText = toStringX3D();
-		try
-		{
-			bufferedWriter = Files.newBufferedWriter(intermediateX3DFilePath, charset);
-			bufferedWriter.write(outputSceneText, 0, outputSceneText.length());
-			bufferedWriter.close(); // ensure file writing is complete
-		}
-		catch (IOException exception)
-		{
-			throw new X3DException("IOException when creating intermediateX3DFileName " + intermediateX3DFileName + 
-				", unable to save file: " + exception);
-		}
-		
-		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-//		factory.setNamespaceAware(true);
-//		factory.setValidating    (true);
-
-		String errorNotice = new String();
-		try // https://docs.oracle.com/javase/tutorial/jaxp/xslt/transformingXML.html
-		{
-			File stylesheetFile = new File("lib/stylesheets/", ConfigurationProperties.STYLESHEET_X3DOM);
-			if (!stylesheetFile.exists())
-				errorNotice += "Stylesheet not found: " + stylesheetFile.getAbsolutePath() + ", ";
-										
-			outputFilePath.toAbsolutePath(); // debug check, defaults to local directory
-			File outputFile = outputFilePath.toFile();
-			if (!outputFile.canWrite())
-				errorNotice += "outputFile not writable: " + outputFile.getAbsolutePath() + ", ";
-			
-			if (ConfigurationProperties.getXsltEngine().equals(ConfigurationProperties.XSLT_ENGINE_saxon))
-			{
-				// reference: Saxon-HE 9.7 documentation and samples
-				// S9APIExamples.jsail: private static class TransformA implements S9APIExamples.Test
-
-				Processor           processor = new Processor(false);
-				XsltCompiler     xsltCompiler = processor.newXsltCompiler();
-				XsltExecutable xsltExecutable = xsltCompiler.compile (new StreamSource(stylesheetFile));
-				XdmNode source = processor.newDocumentBuilder().build(new StreamSource(intermediateX3DFilePath.toFile()));
-				Serializer out = processor.newSerializer(outputFile);
-				out.setOutputProperty(Serializer.Property.METHOD, "html");
-				out.setOutputProperty(Serializer.Property.INDENT, "yes");
-				XsltTransformer xsltTransformer = xsltExecutable.load();
-				xsltTransformer.setInitialContextNode(source);
-				xsltTransformer.setDestination(out);
-				if (parameterName1.length() > 0)
-					xsltTransformer.setParameter(new QName(parameterName1), new XdmAtomicValue(parameterValue1));
-				if (parameterName2.length() > 0)
-					xsltTransformer.setParameter(new QName(parameterName2), new XdmAtomicValue(parameterValue2));
-				xsltTransformer.transform();
-			}
-			else if (ConfigurationProperties.getXsltEngine().equals(ConfigurationProperties.XSLT_ENGINE_nativeJava))
-			{
-				DocumentBuilder builder = factory.newDocumentBuilder();
-				Document x3dDocument = builder.parse(intermediateX3DFilePath.toFile());
-				TransformerFactory tFactory = TransformerFactory.newInstance();
-				StreamSource styleStreamSource = new StreamSource(stylesheetFile);
-				Transformer transformer = tFactory.newTransformer(styleStreamSource);
-				if (parameterName1.length() > 0)
-					transformer.setParameter(parameterName1, parameterValue1);
-				if (parameterName2.length() > 0)
-					transformer.setParameter(parameterName2, parameterValue2);
-
-				DOMSource       domSource = new DOMSource(x3dDocument);
-				StreamResult streamResult = new StreamResult(outputFile);
-				transformer.transform(domSource, streamResult);
-			}
-			else // no joy
-			{
-				errorNotice = "Invalid ConfigurationProperties.getXsltEngine() value='" + ConfigurationProperties.getXsltEngine() + 
-									 "', legal values are ConfigurationProperties.XSLT_ENGINE_saxon or ConfigurationProperties.XSLT_ENGINE_nativeJava";
-//				validationResult.append(errorNotice).append("\n");
-				throw new InvalidFieldValueException(errorNotice);
-			}
-			if (ConfigurationProperties.isDeleteIntermediateFiles()) // clean up when done
-				intermediateX3DFilePath.toFile().deleteOnExit();
-		}
-		catch (IOException | ParserConfigurationException | TransformerException | SAXException exception)
-		{
-			throw new X3DException(errorNotice + "IOException when transforming and creating fileName " + outputFilePath + 
-				", unable to save result: " + exception);
-		}
-		catch (SaxonApiException saxonApiException)
-		{
-//			Logger.getLogger(X3DObject.class.getName()).log(Level.SEVERE, null, saxonApiException);
-										
-			throw new X3DException(errorNotice + "SaxonApiException when transforming and creating fileName " + outputFilePath + 
-				", unable to save result: " + saxonApiException);
-		}
-		return outputFilePath.toFile(); // success
+            return toFileStylesheetConversion(ConfigurationProperties.STYLESHEET_COBWEB, fileName, 
+                "player", "Cobweb", "urlScene", sourceSceneName);
 	}
 										
   /** Provide thorough X3DJSAIL validation results for this X3D model.
@@ -3931,6 +3837,16 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 	 * @return name of this element
 	 */
 	abstract public String getElementName(); // must be overridden (static methods cannot be abstract)
+										
+	/** Provides X3D component for this element.
+	 * @return X3D component for this element
+	 */
+	abstract public String getComponent(); // must be overridden (static methods cannot be abstract)
+										
+	/** Provides default X3D component level for this element
+	 * @return default X3D component level for this element
+	 */
+	abstract public int getComponentLevel(); // must be overridden (static methods cannot be abstract)
 
 	/** Indicate type corresponding to given fieldName.
 	 * @param fieldName name of field in this X3D statement
@@ -10387,13 +10303,66 @@ setAttribute method invocations).
 			!Arrays.asList(containerField_ALTERNATE_VALUES).contains(getContainerFieldOverride()))
 		{
 			String errorNotice = ConfigurationProperties.ERROR_ILLEGAL_VALUE + 
-				": illegal value enountered, containerField='" + getContainerFieldOverride() +
+				": illegal value encountered, containerField='" + getContainerFieldOverride() +
 				"' but allowed values are containerField_ALTERNATE_VALUES='" + 
 				new MFStringObject(containerField_ALTERNATE_VALUES).toStringX3D() + "'.";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldException(errorNotice); // report error
 		}]]></xsl:text>
 							</xsl:if>
+							<!-- profileNames checking, add validation test if appropriate -->
+							<xsl:variable name="profileNamesAppinfo" select="false()"/>
+							<xsl:variable name="componentName"                       select="translate(InterfaceDefinition/componentInfo/@name,'-','')"/>
+							<xsl:variable name="componentLevel"                      select="InterfaceDefinition/componentInfo/@level"/>
+							<xsl:choose>
+								<xsl:when test="($isX3dStatement = 'true') or ($name = 'CommentsBlock')">
+									<!-- no validation test needed, all X3D statements allowed in all X3D profiles -->
+								</xsl:when>
+								<xsl:otherwise>
+									<xsl:text disable-output-escaping="yes"><![CDATA[
+
+		// profile validation test, if connected to full scene
+		if (findAncestorX3DObject() != null)
+		{
+			String     modelProfile = findAncestorX3DObject().getProfile();
+			headObject modelHead    = findAncestorX3DObject().getHead();
+			ArrayList<componentObject> sceneComponentsList = new ArrayList<>();
+			if (modelHead != null) 
+				sceneComponentsList = modelHead.getComponentList();
+			boolean hasSatisfactoryComponent = false;
+			for (componentObject nextComponent : sceneComponentsList)
+			{
+				if ( nextComponent.getName().equals("]]></xsl:text><xsl:value-of select="$componentName"/>
+					<xsl:text disable-output-escaping="yes"><![CDATA[") &&
+					(nextComponent.getLevel() >= ]]></xsl:text>
+					<xsl:value-of select="$componentLevel"/>
+					<xsl:text disable-output-escaping="yes"><![CDATA[))
+					hasSatisfactoryComponent = true;
+			}
+			if (!hasSatisfactoryComponent &&]]></xsl:text>
+			<xsl:for-each select="(//SimpleTypeEnumerations/SimpleType[@name='profileNames']/enumeration/allowedElement[.=$name])">
+				<xsl:text>
+				!modelProfile.equals("</xsl:text><xsl:value-of select="../@value"/><xsl:text disable-output-escaping="yes"><![CDATA[") &&]]></xsl:text>
+			</xsl:for-each>
+				<xsl:text disable-output-escaping="yes"><![CDATA[
+				!modelProfile.equals("Full"))
+			{
+				String errorNotice = ConfigurationProperties.ERROR_ILLEGAL_VALUE + 
+					": invalid X3D profile='" + getContainerFieldOverride() +
+					"' for parent X3D model, add element <componentInfo name=']]></xsl:text><xsl:value-of select="$componentName"/>
+					<xsl:text disable-output-escaping="yes"><![CDATA[' level=']]></xsl:text>
+					<xsl:value-of select="$componentLevel"/>
+					<xsl:text disable-output-escaping="yes"><![CDATA['/> or assignment " +
+					"' findAncestorX3DObject().getHead().addComponentInfo(\"]]></xsl:text><xsl:value-of select="$componentName"/>
+					<xsl:text disable-output-escaping="yes"><![CDATA[\").setLevel(]]></xsl:text>
+					<xsl:value-of select="$componentLevel"/>
+					<xsl:text disable-output-escaping="yes"><![CDATA[);";
+				validationResult.append(errorNotice).append("\n");
+				throw new InvalidFieldException(errorNotice); // report error
+			}
+		}]]></xsl:text>
+								</xsl:otherwise>
+							</xsl:choose>
 
 							<xsl:text>
 		return validationResult.toString();
@@ -12993,7 +12962,7 @@ method invocations on the same node object).
 	 */
 	public static ArrayList<String> cleanupEnumerationValues(ArrayList<String> values)
 	{
-		ArrayList<String> results = new  ArrayList<>();
+		ArrayList<String> results = new ArrayList<>();
 		if  (values != null)
 			 results = values;
 		for (String result : results)
@@ -23192,6 +23161,10 @@ TODO more to follow!</xsl:text>
 				
 	// TODO add additional encoding declarations as string constants, along with mutatable configuration property.
 	
+	/** Error message if configuration of X3DJSAIL is incorrect: CLASSPATH missing jar or other error.
+	 */
+	public static final String ERROR_CONFIGURATION_X3DJSAIL = "ERROR_CONFIGURATION_X3DJSAIL";
+
 	/** Error message if an illegal value is provided as a method parameter.
 	 */
 	public static final String ERROR_ILLEGAL_VALUE = "ERROR_ILLEGAL_VALUE";
@@ -23234,7 +23207,6 @@ TODO more to follow!</xsl:text>
 	 */
 	public static final String ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE = "ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE"; // not defined in X3D Java SAI
 
-
 	/** Error message if node type of ProtoInstanceObject is not found
 	 * @see ProtoInstanceObject
 	 * @see ProtoDeclareObject
@@ -23244,6 +23216,9 @@ TODO more to follow!</xsl:text>
 	public static final String ERROR_UNKNOWN_PROTOINSTANCE_NODE_TYPE = "ERROR_UNKNOWN_PROTOINSTANCE_NODE_TYPE"; // not defined in X3D Java SAI
 
 // ==========================================================================================
+				
+	/** Default mode for debugging results, initialized as false. */
+	public static boolean debugModeActive  = false;
 				
 	/** Whether to show default attribute values when serializing scene output, initialized as false. */
 	public static final boolean showDefaultAttributes_DEFAULT   = false;
@@ -23268,13 +23243,14 @@ TODO more to follow!</xsl:text>
 	/** XSLT stylesheet to create Extrusion node cross sections in SVG from X3D scene: <i>../lib/stylesheets/X3dExtrusionToSvgViaXslt1.1.xslt</i> */
 	public static final String STYLESHEET_extrusionCrossSectionSVG   = "X3dExtrusionToSvgViaXslt1.1.xslt";
 				
-	/** XSLT stylesheet to create java source from X3D scene: <i>../lib/stylesheets/X3dToJava.xslt</i> */
-	public static final String STYLESHEET_X3dToJava   = "X3dToJava";
-				
-	/** XSLT stylesheet to create X3DOM XHTML page or Cobweb HTML page from X3D scene: <i>../lib/stylesheets/X3dToX3dom.xslt</i> */
+	/** XSLT stylesheet to create X3DOM XHTML page or X3DOM HTML page from X3D scene: <i>../lib/stylesheets/X3dToX3dom.xslt</i> */
 	public static final String STYLESHEET_X3DOM   = "X3dToX3dom.xslt";
 				
-	/** XSLT stylesheet to create JSON encoding from X3D scene: <i>../lib/stylesheets/X3dToJava.xslt</i>.
+	/** XSLT stylesheet to create Cobweb XHTML page or Cobweb HTML page from X3D scene: <i>../lib/stylesheets/X3dToX3dom.xslt</i> 
+            TODO disambiguation needed? */
+	public static final String STYLESHEET_COBWEB   = "X3dToX3dom.xslt";
+				
+	/** XSLT stylesheet to create Java source code (using X3DJSAIL library) from X3D scene: <i>../lib/stylesheets/X3dToJava.xslt</i>.
 	 * TODO: documentation.
 	 */
 	public static final String STYLESHEET_JAVA   = "X3dToJava.xslt";
@@ -23283,6 +23259,12 @@ TODO more to follow!</xsl:text>
 	 * @see <a href="http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding">X3D JSON Encoding</a>
 	 * @see <a href="http://www.web3d.org/x3d/stylesheets/X3dToJson.html">X3D to JSON Stylesheet Converter</a> */
 	public static final String STYLESHEET_JSON   = "X3dToJson.xslt";
+		
+	/** List of officially released X3DJSAIL jar files.
+	 */
+        // https://stackoverflow.com/questions/21696784/how-to-declare-an-arraylist-with-values
+        public static final ArrayList<String> X3DJSAIL_JAR_RELEASE_VERSIONS = 
+            new ArrayList<>(Arrays.asList("X3DJSAIL.3.3.classes.jar", "X3DJSAIL.3.3.full.jar"));
 
 // ==========================================================================================
 				
@@ -23363,7 +23345,7 @@ TODO more to follow!</xsl:text>
 		else
 		{
 			String errorNotice = "Invalid setXsltEngine(String newValue) invocation, newValue='" + newValue + 
-								 "', legal values are ConfigurationProperties.XSLT_ENGINE_saxon; or ConfigurationProperties.XSLT_ENGINE_nativeJava";
+								 "', legal values are ConfigurationProperties.XSLT_ENGINE_saxon or ConfigurationProperties.XSLT_ENGINE_nativeJava";
 //			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
 		}
@@ -23379,6 +23361,15 @@ TODO more to follow!</xsl:text>
 		validationExceptionAllowed = validationExceptionAllowed_DEFAULT;
 		deleteIntermediateFiles    = deleteIntermediateFiles_DEFAULT;
 		stripTrailingZeroes	       = stripTrailingZeroes_DEFAULT;
+	}
+	/**
+	 * Get current system CLASSPATH value.  Note that some version of X3DJSAIL.*.jar is expected to be in the current CLASSPATH.
+	 * @see <a href="https://docs.oracle.com/javase/8/docs/technotes/tools/windows/classpath.html">Java documentation: Setting the Class Path</a>
+	 * @see <a href="https://docs.oracle.com/javase/tutorial/essential/environment/paths.html">Java Documentation: PATH and CLASSPATH</a>
+	 * @return system CLASSPATH value. */
+	public static String getClassPath()
+	{
+		return System.getProperty("java.class.path");
 	}
 	/**
 	 * Get indentCharacter used when serializing scene output.
@@ -23459,6 +23450,20 @@ TODO more to follow!</xsl:text>
 	{
 		indentIncrement = indentIncrement_DEFAULT;
 		indentCharacter = indentCharacter_DEFAULT;
+	}
+	/**
+	 * Indicate whether debug mode is active.
+	 * @return whether debug mode is active. */
+	public static boolean isDebugModeActive()
+	{
+		return debugModeActive;
+	}
+	/**
+	 * Set whether debug mode is active.
+	 * @param newDebugModeActive whether debug mode is active. */
+	public static void setDebugModeActive(boolean newDebugModeActive)
+	{
+		debugModeActive = newDebugModeActive;
 	}
 	/**
 	 * Indicate whether default attributes (and their values) are shown when serializing scene output.
@@ -25028,6 +25033,29 @@ import org.web3d.x3d.jsail.*;</xsl:text>
 	public final String getElementName()
 	{
 		return NAME;
+	}
+	/** String constant <i>COMPONENT</i> provides X3D component for this element: <i>Core</i>. */
+	public static final String COMPONENT = "Core";
+
+	/** Provides X3D component for this element: <i>Core</i>.
+	 * @return X3D component for this element
+	 */
+	@Override
+	public final String getComponent()
+	{
+		return COMPONENT;
+	}
+
+	/** Integer constant <i>LEVEL</i> provides default X3D component level for this element: <i>1</i>. */
+	public static final int LEVEL = 1;
+
+	/** Provides default X3D component level for this element: <i>1</i>.
+	 * @return default X3D component level for this element
+	 */
+	@Override
+	public final int getComponentLevel()
+	{
+		return LEVEL;
 	}
 
 	/** Constructor for CommentsBlock. */
