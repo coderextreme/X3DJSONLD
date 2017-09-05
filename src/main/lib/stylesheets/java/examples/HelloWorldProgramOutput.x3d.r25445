@@ -11,7 +11,7 @@
         <meta name='reference' content='http://www.web3d.org/specifications/java/X3DJSAIL.html'/>
         <meta name='generator' content='HelloWorldProgramOutput.java'/>
         <meta name='created' content='6 September 2016'/>
-        <meta name='modified' content='3 September 2017'/>
+        <meta name='modified' content='31 August 2017'/>
         <meta name='generator' content='X3D Java Scene Access Interface Library (X3DJSAIL)'/>
         <meta name='generator' content='http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java'/>
         <meta name='generator' content='Netbeans http://www.netbeans.org'/>
@@ -71,7 +71,8 @@
                 </Appearance>
                 <Text string='"X3D Java" "SAI Library" "X3DJSAIL"'>
                     <MetadataSet name='EscapedQuotationMarksMetadataSet'>
-                        <MetadataString name='escapedQuotesTest2' value='"escaped quotation marks example 2: He said, &amp;quot;Immel did it!&amp;quot;"'/>
+                        <MetadataString name='escapedQuotesTest1' containerField='value' value='"escaped quotation marks example 1: He said, \"Immel did it!\""'/>
+                        <MetadataString name='escapedQuotesTest2' containerField='value' value='"escaped quotation marks example 2: He said, &amp;quot;Immel did it!&amp;quot;"'/>
                     </MetadataSet>
                     <FontStyle family='"SERIF"' justify='"MIDDLE" "MIDDLE"'/>
                     <!-- escaped quotation marks example 3: He said, "Immel did it!" -->
@@ -80,7 +81,7 @@
             </Shape>
             <Collision>
                 <!-- test containerField='proxy' -->
-                <Shape DEF='ProxyShape'>
+                <Shape DEF='ProxyShape' containerField='proxy'>
                     <Text string='"One, Two, Three" "" "He said, \"Immel did it!\""'/>
                     <!-- alternative XML encoding: Text string='"One, Two, Three" "" "He said, \&quot;Immel did it!\&quot;"' -->
                     <!-- alternative Java source: .setString(new String [] {"One, Two, Three", "", "He said, \"Immel did it!\""}) -->
@@ -144,7 +145,7 @@ function colorInput (eventValue) // Example source code
         <!-- Tested ArtDeco01ProtoInstance, ArtDeco02ProtoInstance for improper node type when ProtoInstance is added in wrong place -->
         <Shape DEF='TestShape1'>
             <Appearance DEF='TestAppearance1'>
-                <ProtoInstance name='ArtDeco01'>
+                <ProtoInstance name='ArtDeco01' containerField='material'>
                     <fieldValue name='description' value='ArtDeco01 can substitute for a Material node'/>
                     <!-- [HelloWorldProgram diagnostic] ArtDeco01ProtoInstance.getNodeType()="ERROR_UNKNOWN_PROTOINSTANCE_NODE_TYPE: ProtoInstance name='ArtDeco01' has no corresponding ProtoDeclareObject or ExternProtoDeclareObject to provide type." -->
                 </ProtoInstance>
@@ -154,7 +155,7 @@ function colorInput (eventValue) // Example source code
         </Shape>
         <Shape DEF='TestShape2'>
             <Appearance DEF='TestAppearance2'>
-                <ProtoInstance name='ArtDeco02'>
+                <ProtoInstance name='ArtDeco02' containerField='material'>
                     <fieldValue name='description' value='ArtDeco02 can substitute for another Material node'/>
                     <!-- [HelloWorldProgram diagnostic] ArtDeco02ProtoInstance.getNodeType()="ERROR_UNKNOWN_PROTOINSTANCE_NODE_TYPE: ProtoInstance name='ArtDeco02' has no corresponding ProtoDeclareObject or ExternProtoDeclareObject to provide type." -->
                 </ProtoInstance>
@@ -229,7 +230,7 @@ function clockTrigger (timeValue)
             <Shape>
                 <MetadataString DEF='FindableMetadataStringTest' name='findThisNameValue' value='"test case"'/>
                 <Appearance DEF='DeclarativeAppearanceExample'>
-                    <ProtoInstance DEF='MyMaterialModulator' name='MaterialModulator'/>
+                    <ProtoInstance DEF='MyMaterialModulator' name='MaterialModulator' containerField='material'/>
                     <!-- DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance -->
                 </Appearance>
                 <Cone bottom='false' bottomRadius='0.05' height='0.1'/>

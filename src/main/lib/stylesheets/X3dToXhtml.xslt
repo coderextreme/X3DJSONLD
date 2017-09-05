@@ -58,11 +58,13 @@ Recommended tools:
                 xmlns:ds="http://www.w3.org/2000/09/xmldsig#" 
                 xmlns:saxon="http://icl.com/saxon" saxon:trace="no">
     <!--        xmlns:fn="http://www.w3.org/2005/xpath-functions" -->
-    <xsl:import href="X3dExtrusionToSvgViaXslt1.1.xslt"/>
+    <!-- <xsl:import href="X3dExtrusionToSvgViaXslt1.1.xslt"/> -->
     <!-- default parameter values can be overridden when invoking this stylesheet -->
     <xsl:param name="linkImages"><xsl:text>false</xsl:text></xsl:param>
     <!-- $baseUrlAvailable false means that stylesheet is being used by servlet or else styled results won't be in original directory -->
     <xsl:param name="baseUrlAvailable"><xsl:text>true</xsl:text></xsl:param>
+    <!-- turn off links to SVG figures if stylesheet unavailable -->
+    <xsl:param name="produceSVGfigures"><xsl:text>true</xsl:text></xsl:param>
 
     <xsl:strip-space elements="*"/>
     <xsl:output encoding="UTF-8" media-type="text/html" indent="yes" cdata-section-elements="Script PackagedShader ShaderPart ShaderProgram" omit-xml-declaration="no" method="xml"/>
@@ -99,11 +101,6 @@ Recommended tools:
 
     <!-- start - - - - - - - - - - - - - - - - - - - - - - - -->
     <xsl:template match="/">
-
-        <!-- first produce supporting SVG figures -->
-        <xsl:call-template name="produce-SVG-figures">
-            <!--	<xsl:with-param name="list" select="."/> -->
-        </xsl:call-template>
 
         <!-- line break after XML header line -->
         <xsl:text>&#10;</xsl:text>
@@ -517,12 +514,15 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                 </p>
             </body>
             <!-- </xsl:element> </html> -->
-        </html>
+        </html>                 
 
-        <!-- build Extrusion crossSection SVG diagrams
-		<xsl:for-each select="//Extrusion">
-		</xsl:for-each>
-		 -->
+        <!-- finally build Extrusion crossSection SVG figures, if appropriate
+        <xsl:if test="($produceSVGfigures = 'true')">
+            <xsl:call-template name="produce-SVG-figures">
+                <! - -	<xsl:with-param name="list" select="."/> - - >
+            </xsl:call-template>
+        </xsl:if> -->
+        
     </xsl:template>
 
     <!-- ****** HAnimNode-indent:  callable template (recursive function) ****** -->
@@ -1800,7 +1800,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                 <xsl:apply-templates select="@toNode"/>
                 <xsl:apply-templates select="@toField"/>
                 <xsl:apply-templates select="@*[local-name()!='fromNode' and local-name()!='fromField' and
-												local-name()!= '@toNode' and local-name()!=  'toField']"/><!-- safety net -->
+												local-name()!=  'toNode' and local-name()!=  'toField']"/><!-- safety net -->
             </xsl:when>
             <xsl:when test="local-name()='ElevationGrid' or local-name()='GeoElevationGrid'">
                 <xsl:apply-templates select="@DEF | @USE | @containerField "/>
@@ -3927,10 +3927,10 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
 
                 <!--	<svg/> -->
 
-                <!-- invoke appropriate template in X3dExtrusionToSvgViaXslt1.1.xslt -->
+                <!-- invoke appropriate template in X3dExtrusionToSvgViaXslt1.1.xslt
                 <xsl:call-template name="plotSvgExtrusionCrossSection">
                     <xsl:with-param name="svgFilename" select="$svgFilename"/>
-                </xsl:call-template>
+                </xsl:call-template> -->
 
             </xsl:result-document>
 

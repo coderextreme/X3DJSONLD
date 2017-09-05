@@ -2,6 +2,7 @@
 #PROFILE Immersive
 # head
 #COMPONENT Navigation:3
+#COMPONENT Layering:1
 #UNIT angle AngleUnitConversion 1.0
 #UNIT length LengthUnitConversion 1.0
 #META "title" "HelloWorldProgramOutput.x3d"
@@ -9,7 +10,13 @@
 #META "reference" "http://www.web3d.org/specifications/java/X3DJSAIL.html"
 #META "generator" "HelloWorldProgramOutput.java"
 #META "created" "6 September 2016"
-#META "modified" "29 May 2017"
+<<<<<<< .mine
+#META "modified" "1 September 2017"
+||||||| .r25445
+#META "modified" "31 August 2017"
+=======
+#META "modified" "3 September 2017"
+>>>>>>> .r25463
 #META "generator" "X3D Java Scene Access Interface Library (X3DJSAIL)"
 #META "generator" "http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"
 #META "generator" "Netbeans http://www.netbeans.org"

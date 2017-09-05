@@ -10,6 +10,7 @@ no errors detected.
 <X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
     <head>
         <component name='Navigation' level='3'/>
+        <component name='Layering' level='1'/>
         <unit name='AngleUnitConversion' category='angle' conversionFactor='1.0'/>
         <unit name='LengthUnitConversion' category='length' conversionFactor='1.0'/>
         <meta name='title' content='HelloWorldProgramOutput.x3d'/>
@@ -17,7 +18,7 @@ no errors detected.
         <meta name='reference' content='http://www.web3d.org/specifications/java/X3DJSAIL.html'/>
         <meta name='generator' content='HelloWorldProgramOutput.java'/>
         <meta name='created' content='6 September 2016'/>
-        <meta name='modified' content='29 May 2017'/>
+        <meta name='modified' content='3 September 2017'/>
         <meta name='generator' content='X3D Java Scene Access Interface Library (X3DJSAIL)'/>
         <meta name='generator' content='http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java'/>
         <meta name='generator' content='Netbeans http://www.netbeans.org'/>
@@ -279,6 +280,7 @@ function clockTrigger (timeValue)
 PROFILE Immersive
 # head
 COMPONENT Navigation:3
+COMPONENT Layering:1
 UNIT angle AngleUnitConversion 1.0
 UNIT length LengthUnitConversion 1.0
 META "title" "HelloWorldProgramOutput.x3d"
@@ -286,7 +288,7 @@ META "description" "Example HelloWorldProgram creates an X3D model using the X3D
 META "reference" "http://www.web3d.org/specifications/java/X3DJSAIL.html"
 META "generator" "HelloWorldProgramOutput.java"
 META "created" "6 September 2016"
-META "modified" "29 May 2017"
+META "modified" "3 September 2017"
 META "generator" "X3D Java Scene Access Interface Library (X3DJSAIL)"
 META "generator" "http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"
 META "generator" "Netbeans http://www.netbeans.org"
@@ -641,6 +643,7 @@ Sound {
 #PROFILE Immersive
 # head
 #COMPONENT Navigation:3
+#COMPONENT Layering:1
 #UNIT angle AngleUnitConversion 1.0
 #UNIT length LengthUnitConversion 1.0
 #META "title" "HelloWorldProgramOutput.x3d"
@@ -648,7 +651,7 @@ Sound {
 #META "reference" "http://www.web3d.org/specifications/java/X3DJSAIL.html"
 #META "generator" "HelloWorldProgramOutput.java"
 #META "created" "6 September 2016"
-#META "modified" "29 May 2017"
+#META "modified" "3 September 2017"
 #META "generator" "X3D Java Scene Access Interface Library (X3DJSAIL)"
 #META "generator" "http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"
 #META "generator" "Netbeans http://www.netbeans.org"
@@ -1000,24 +1003,25 @@ Sound {
 
 ===========================================
 Create X3D XML Encoding of model
+
 helloWorldObject.toFileX3D("HelloWorldProgramOutput.x3d") success: true
 C:\x3d-code\www.web3d.org\x3d\stylesheets\java\examples\HelloWorldProgramOutput.x3d
 ===========================================
 Create X3D ClassicVRML Encoding of model
+
 helloWorldObject.toFileClassicVRML("HelloWorldProgramOutput.x3dv") success: true
 C:\x3d-code\www.web3d.org\x3d\stylesheets\java\examples\HelloWorldProgramOutput.x3dv
 ===========================================
 Create VRML97 Encoding of model
+
 helloWorldObject.toFileVRML97("HelloWorldProgramOutput.wrl") success: true
 C:\x3d-code\www.web3d.org\x3d\stylesheets\java\examples\HelloWorldProgramOutput.wrl
 ===========================================
 Create pretty-print HTML documentation of model using XSLT_ENGINE_saxon=saxon9he.jar and stylesheet X3dToXhtml.xslt
-Warning at xsl:stylesheet on line 2 column 196 of X3dExtrusionToSvgViaXslt1.1.xslt:
-  Unrecognized version 1.1: treated as 1.0
 helloWorldObject.toFileDocumentationHTML("HelloWorldProgramOutput.html") success: true
 C:\x3d-code\www.web3d.org\x3d\stylesheets\java\examples\HelloWorldProgramOutput.html
 ===========================================
-Create Java source of model using stylesheet X3dToJava.xslt
+Create concise Java source of model using stylesheet X3dToJava.xslt
 helloWorldObject.toFileJava("HelloWorldProgramOutput.java") success: true
 C:\x3d-code\www.web3d.org\x3d\stylesheets\java\examples\HelloWorldProgramOutput.java
 ===========================================
@@ -1041,6 +1045,7 @@ Reload and provide text output using Java DOM, which includes default attribute 
 <X3D profile='Immersive' version='3.3' xmlns:ds='http://www.w3.org/2000/09/xmldsig#' xmlns:xenc='http://www.w3.org/2001/04/xmlenc#' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
   <head>
     <component level='3' name='Navigation'/>
+    <component level='1' name='Layering'/>
     <unit category='angle' conversionFactor='1.0' name='AngleUnitConversion'/>
     <unit category='length' conversionFactor='1.0' name='LengthUnitConversion'/>
     <meta content='HelloWorldProgramOutput.x3d' name='title'/>
@@ -1048,7 +1053,7 @@ Reload and provide text output using Java DOM, which includes default attribute 
     <meta content='http://www.web3d.org/specifications/java/X3DJSAIL.html' name='reference'/>
     <meta content='HelloWorldProgramOutput.java' name='generator'/>
     <meta content='6 September 2016' name='created'/>
-    <meta content='29 May 2017' name='modified'/>
+    <meta content='3 September 2017' name='modified'/>
     <meta content='X3D Java Scene Access Interface Library (X3DJSAIL)' name='generator'/>
     <meta content='http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java' name='generator'/>
     <meta content='Netbeans http://www.netbeans.org' name='generator'/>
@@ -1307,6 +1312,7 @@ function clockTrigger (timeValue)
 ===========================================
 Test success: x3dLoader.loadX3DfromXML(HelloWorldProgramOutput.x3d), x3dLoader.getDomDocument() and x3dLoader.toStringX3D(domDocument)
 ===========================================
+
 Test success: x3dLoader.toX3dObjectTree(domDocument), save HelloWorldProgramOutput.Reloaded.x3d
 x3dLoader validation result: no issues reported.
 ===========================================
@@ -1324,6 +1330,10 @@ Script DEF=MaterialModulatorScript contains CDATA source-code text, copied as "#
 {
 "@name":"Navigation",
 "@level":3
+},
+{
+"@name":"Layering",
+"@level":1
 }
 ],
 "unit": [
@@ -1362,7 +1372,7 @@ Access Interface (SAI) Library"
 },
 {
 "@name":"modified",
-"@content":"29 May 2017"
+"@content":"3 September 2017"
 },
 {
 "@name":"generator",
@@ -1423,7 +1433,7 @@ documentation:"
 },
 {
 "@name":"translated",
-"@content":"29 May 2017"
+"@content":"03 September 2017"
 },
 {
 "@name":"generator",
@@ -1763,8 +1773,6 @@ documentation:"
 }
 ],
 "#sourceText":[
-"",
-"",
 "ecmascript:",
 "",
 "function colorInput (eventValue) // Example source code",
@@ -2140,8 +2148,6 @@ ride"
 ]
 },
 "#sourceText":[
-"",
-"",
 "ecmascript:",
 "function initialize ()",
 "{",
@@ -2325,4 +2331,4 @@ setValue(4.0)=4.0"
 }
 
 ===========================================
-BUILD SUCCESSFUL (total time: 20 seconds)
+BUILD SUCCESSFUL (total time: 10 seconds)

@@ -9,6 +9,10 @@
           {
             "@name":"Navigation",
             "@level":3
+          },
+          {
+            "@name":"Layering",
+            "@level":1
           }
         ],
         "unit": [
@@ -46,7 +50,7 @@
           },
           {
             "@name":"modified",
-            "@content":"29 May 2017"
+            "@content":"3 September 2017"
           },
           {
             "@name":"generator",
@@ -106,7 +110,7 @@
           },
           {
             "@name":"translated",
-            "@content":"29 May 2017"
+            "@content":"03 September 2017"
           },
           {
             "@name":"generator",
@@ -444,8 +448,6 @@
                       }
                     ],
                     "#sourceText":[
-"",
-"",
 "ecmascript:",
 "",
 "function colorInput (eventValue) // Example source code",
@@ -811,8 +813,6 @@
                             ]
                         },
                         "#sourceText":[
-"",
-"",
 "ecmascript:",
 "function initialize ()",
 "{",

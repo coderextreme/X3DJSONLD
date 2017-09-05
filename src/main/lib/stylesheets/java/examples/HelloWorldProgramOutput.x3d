@@ -3,6 +3,7 @@
 <X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
     <head>
         <component name='Navigation' level='3'/>
+        <component name='Layering' level='1'/>
         <unit name='AngleUnitConversion' category='angle' conversionFactor='1.0'/>
         <unit name='LengthUnitConversion' category='length' conversionFactor='1.0'/>
         <meta name='title' content='HelloWorldProgramOutput.x3d'/>
@@ -10,7 +11,13 @@
         <meta name='reference' content='http://www.web3d.org/specifications/java/X3DJSAIL.html'/>
         <meta name='generator' content='HelloWorldProgramOutput.java'/>
         <meta name='created' content='6 September 2016'/>
-        <meta name='modified' content='29 May 2017'/>
+<<<<<<< .mine
+        <meta name='modified' content='1 September 2017'/>
+||||||| .r25445
+        <meta name='modified' content='31 August 2017'/>
+=======
+        <meta name='modified' content='3 September 2017'/>
+>>>>>>> .r25463
         <meta name='generator' content='X3D Java Scene Access Interface Library (X3DJSAIL)'/>
         <meta name='generator' content='http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java'/>
         <meta name='generator' content='Netbeans http://www.netbeans.org'/>

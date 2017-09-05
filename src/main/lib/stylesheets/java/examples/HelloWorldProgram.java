@@ -56,6 +56,7 @@ public class HelloWorldProgram
 	private final headObject        head;
 	private final SceneObject      scene;
 	private final String nameArtDeco01Material = "ArtDeco01Material";
+    private final String      subdirectoryPath = "examples/";
 
 	/** Constructor */
 	HelloWorldProgram ()
@@ -72,7 +73,15 @@ public class HelloWorldProgram
 	public static void main(String[] args)
 	{
 		HelloWorldProgram thisProgram = new HelloWorldProgram ();
+                thisProgram.validate(); // trace invocation
 	}
+        
+        private String validate()
+        {
+            if (x3dModel == null)
+                buildModelSceneGraph();
+            return x3dModel.validationReport();
+        }
 	
 	private void showSceneResults()
 	{
@@ -114,86 +123,88 @@ public class HelloWorldProgram
 		System.out.println ("===========================================");
 		
 		System.out.println ("Create X3D XML Encoding of model");
-		String savedFileName = thisSceneName + X3DObject.FILE_EXTENSION_X3D;
-		File   savedFile = x3dModel.toFileX3D(savedFileName);
+		String savedFileName    = thisSceneName + X3DObject.FILE_EXTENSION_X3D;
+		File   savedFile        = x3dModel.toFileX3D(savedFileName);
 		boolean savedFileExists = !(savedFile == null);
 		System.out.println ("helloWorldObject.toFileX3D(\"" + savedFileName + "\") success: " + savedFileExists);
-		if (savedFileExists)
+		if (!(savedFile == null))
 			System.out.println (savedFile.getAbsolutePath());
 		System.out.println ("===========================================");
 		
 		System.out.println ("Create X3D ClassicVRML Encoding of model");
-		savedFileName = thisSceneName + X3DObject.FILE_EXTENSION_CLASSICVRML;
-		savedFile = x3dModel.toFileClassicVRML(savedFileName);
+		savedFileName   = thisSceneName + X3DObject.FILE_EXTENSION_CLASSICVRML;
+		savedFile       = x3dModel.toFileClassicVRML(savedFileName);
 		savedFileExists = !(savedFile == null);
 		System.out.println ("helloWorldObject.toFileClassicVRML(\"" + savedFileName + "\") success: " + savedFileExists);
-		if (savedFileExists)
+		if (!(savedFile == null))
 			System.out.println (savedFile.getAbsolutePath());
 		System.out.println ("===========================================");
 		
 		System.out.println ("Create VRML97 Encoding of model");
-		savedFileName = thisSceneName + X3DObject.FILE_EXTENSION_VRML97;
-		savedFile = x3dModel.toFileVRML97(savedFileName);
+		savedFileName   = thisSceneName + X3DObject.FILE_EXTENSION_VRML97;
+		savedFile       = x3dModel.toFileVRML97(savedFileName);
 		savedFileExists = !(savedFile == null);
 		System.out.println ("helloWorldObject.toFileVRML97(\"" + savedFileName + "\") success: " + savedFileExists);
-		if (savedFileExists)
+		if (!(savedFile == null))
 			System.out.println (savedFile.getAbsolutePath());
 		System.out.println ("===========================================");
 		
-		ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_saxon);	   // default
-//		ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_nativeJava); // old
+		ConfigurationProperties.setDebugModeActive(false);
+		ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_saxon);      // default
+//		ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_nativeJava); // built-in version
 		System.out.println ("Create pretty-print HTML documentation of model using XSLT_ENGINE_saxon=" + ConfigurationProperties.getXsltEngine()
 			+ " and stylesheet " + ConfigurationProperties.STYLESHEET_htmlDocumentation);
 		ConfigurationProperties.setDeleteIntermediateFiles(true);
-		savedFileName = thisSceneName + X3DObject.FILE_EXTENSION_HTML;
-		savedFile = x3dModel.toFileDocumentationHtml(savedFileName);
+		savedFileName   = thisSceneName + X3DObject.FILE_EXTENSION_HTML;
+		savedFile       = x3dModel.toFileDocumentationHtml(savedFileName);
 		savedFileExists = !(savedFile == null);
 		System.out.println ("helloWorldObject.toFileDocumentationHTML(\"" + savedFileName + "\") success: " + savedFileExists);
-		if (savedFileExists)
+		if (!(savedFile == null))
 			System.out.println (savedFile.getAbsolutePath());
+		ConfigurationProperties.setDebugModeActive(false);
 		System.out.println ("===========================================");
 		
-		ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_nativeJava); // old verrsion avoids unwanted line breaks
-		System.out.println ("Create Java source of model using stylesheet " + ConfigurationProperties.STYLESHEET_JAVA);
-		savedFileName = thisSceneName + X3DObject.FILE_EXTENSION_JAVA;
-		savedFile = x3dModel.toFileJava(savedFileName, true); // include license
+		ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_nativeJava); // built-in version avoids unwanted line breaks
+		System.out.println ("Create concise Java source of model using stylesheet " + ConfigurationProperties.STYLESHEET_JAVA);
+		savedFileName   = thisSceneName + X3DObject.FILE_EXTENSION_JAVA;
+		savedFile       = x3dModel.toFileJava(savedFileName, true); // include license
 		savedFileExists = !(savedFile == null);
 		System.out.println ("helloWorldObject.toFileJava(\"" + savedFileName + "\") success: " + savedFileExists);
-		if (savedFileExists)
+		if (!(savedFile == null))
 			System.out.println (savedFile.getAbsolutePath());
 		System.out.println ("===========================================");
 		
-		ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_nativeJava); // old verrsion avoids unwanted line breaks
+		ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_nativeJava); // built-in version avoids unwanted line breaks
 		System.out.println ("Create JSON Encoding of model using stylesheet " + ConfigurationProperties.STYLESHEET_JSON);
-		savedFileName = thisSceneName + X3DObject.FILE_EXTENSION_JSON;
-		savedFile = x3dModel.toFileJSON(savedFileName);
+		savedFileName   = thisSceneName + X3DObject.FILE_EXTENSION_JSON;
+		savedFile       = x3dModel.toFileJSON(savedFileName);
 		savedFileExists = !(savedFile == null);
 		System.out.println ("helloWorldObject.toFileJSON(\"" + savedFileName + "\") success: " + savedFileExists);
-		if (savedFileExists)
+		if (!(savedFile == null))
 			System.out.println (savedFile.getAbsolutePath());
 		System.out.println ("===========================================");
 		
 		ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_saxon);	   // default
 		System.out.println ("Create displayable scene page rendered with X3DOM using stylesheet " + ConfigurationProperties.STYLESHEET_X3DOM);
-		savedFileName = thisSceneName + "X3dom" + X3DObject.FILE_EXTENSION_XHTML;
-		savedFile = x3dModel.toFileX3DOM(savedFileName);
+		savedFileName   = thisSceneName + "X3dom" + X3DObject.FILE_EXTENSION_XHTML;
+		savedFile       = x3dModel.toFileX3DOM(savedFileName);
 		savedFileExists = !(savedFile == null);
 		System.out.println ("helloWorldObject.toFileX3DOM(\"" + savedFileName + "\") success: " + savedFileExists);
-		if (savedFileExists)
+		if (!(savedFile == null))
 			System.out.println (savedFile.getAbsolutePath());
 		System.out.println ("===========================================");
 		
 		System.out.println ("Create displayable scene page rendered with Cobweb using stylesheet " + ConfigurationProperties.STYLESHEET_X3DOM);
-		savedFileName = thisSceneName + "Cobweb" + X3DObject.FILE_EXTENSION_HTML;
-		savedFile = x3dModel.toFileCobweb(thisSceneName + ".x3d", savedFileName);
+		savedFileName   = thisSceneName + "Cobweb" + X3DObject.FILE_EXTENSION_HTML;
+		savedFile       = x3dModel.toFileCobweb(thisSceneName + ".x3d", savedFileName);
 		savedFileExists = !(savedFile == null);
 		System.out.println ("helloWorldObject.toFileX3DOM(\"" + savedFileName + "\") success: " + savedFileExists);
-		if (savedFileExists)
+		if (!(savedFile == null))
 			System.out.println (savedFile.getAbsolutePath());
 		System.out.println ("===========================================");
 		
 		System.out.println ("Reload and provide text output using Java DOM, which includes default attribute values");
-		testX3DLoaderObject();
+		testX3DLoaderObjectDomDocument();
 		System.out.println ("===========================================");
 		System.out.println ("Test toStringJSON()");
 		System.out.println (x3dModel.toStringJSON());
@@ -237,6 +248,7 @@ public class HelloWorldProgram
 		
 		component1.setName(componentObject.NAME_NAVIGATION).setLevel(3);
 		head.addComponent(component1);
+		head.addComponent(new componentObject().setName("Layering").setLevel(1)); // TODO add utility methods to headObject
 		
 		unitAngle .setName("AngleRadiansFromDegrees").setCategory(unitObject.CATEGORY_ANGLE ).setConversionFactor(unitObject.CONVERSIONFACTOR_ANGLES_toRadiansFromDegrees);
 		unitAngle .setName("AngleUnitConversion"    ).setCategory(unitObject.CATEGORY_ANGLE ).setConversionFactor(unitObject.CONVERSIONFACTOR_DEFAULT_VALUE);
@@ -270,7 +282,7 @@ public class HelloWorldProgram
 		meta5.setName(metaObject.NAME_CREATED).setContent("6 September 2016");
 		
 		meta7.setName(metaObject.NAME_GENERATOR).setContent("X3D Java Scene Access Interface Library (X3DJSAIL)");
-		meta8.setName(metaObject.NAME_GENERATOR).setContent(urlLocation + "examples/" + thisProgramFile);
+		meta8.setName(metaObject.NAME_GENERATOR).setContent(urlLocation + subdirectoryPath + thisProgramFile);
 		meta9.setName(metaObject.NAME_GENERATOR).setContent("Netbeans http://www.netbeans.org");
 		meta10.setName(metaObject.NAME_CREATOR).setContent("Don Brutzman");
 		meta11.setName(metaObject.NAME_REFERENCE).setContent("https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/java/examples/" 
@@ -281,8 +293,8 @@ public class HelloWorldProgram
 		meta15.setName(metaObject.NAME_REFERENCE).setContent(thisSceneName + ".wrl");
 		meta16.setName(metaObject.NAME_REFERENCE).setContent(thisSceneName + ".html");
 		meta17.setName("X3dValidator").setContent("https://savage.nps.edu/X3dValidator?url=" + 
-															  urlLocation + "examples/" + thisSceneName + ".x3d");
-		meta18.setName(metaObject.NAME_IDENTIFIER).setContent(urlLocation + "examples/" + thisSceneName + ".x3d");
+															  urlLocation + subdirectoryPath + thisSceneName + ".x3d");
+		meta18.setName(metaObject.NAME_IDENTIFIER).setContent(urlLocation + subdirectoryPath + thisSceneName + ".x3d");
 		meta19.setName(metaObject.NAME_LICENSE).setContent("../license.html");
 		// name="special test" throws exception as expected:
 		meta20.setName("SpecialTest").setContent("tested sat: name value cannot contain embedded space character");
@@ -297,7 +309,7 @@ public class HelloWorldProgram
 		
 		String       defaultViewpointDEF = "DefaultView";
 		String       topDownViewpointDEF = "TopDownView";
-	ViewpointGroupObject  viewpointGroup = new ViewpointGroupObject(); //  requires <component name='Navigation' level='3'/>
+            ViewpointGroupObject  viewpointGroup = new ViewpointGroupObject(); //  requires <component name='Navigation' level='3'/>
 		ViewpointObject defaultViewpoint = new ViewpointObject(defaultViewpointDEF);
 		ViewpointObject topDownViewpoint = new ViewpointObject(topDownViewpointDEF);
 		String          worldInfoDEFname = "WorldInfoDEF";
@@ -305,13 +317,13 @@ public class HelloWorldProgram
 		WorldInfoObject   worldInfoCopy1 = new WorldInfoObject();
 		WorldInfoObject   worldInfoCopy2 = new WorldInfoObject();
 		String  logoGeometryTransformDEF = "LogoGeometryTransform";
-        TransformObject    logoTransform = new TransformObject(logoGeometryTransformDEF);
+                TransformObject    logoTransform = new TransformObject(logoGeometryTransformDEF);
 		AnchorObject          siteAnchor = new AnchorObject();
 		ShapeObject             boxShape = new ShapeObject();
 		BoxObject                    box = new BoxObject();
 		String              lineShapeDEF = "LineShape";
-		ShapeObject	 		   lineShape = new ShapeObject(lineShapeDEF);
-		IndexedLineSetObject		 ils = new IndexedLineSetObject();
+		ShapeObject         lineShape    = new ShapeObject(lineShapeDEF);
+		IndexedLineSetObject         ils = new IndexedLineSetObject();
 		AppearanceObject   ilsAppearance = new AppearanceObject();
 		MaterialObject	   ilsMaterial   = new MaterialObject();
 		AppearanceObject   boxAppearance = new AppearanceObject();
@@ -983,6 +995,7 @@ public class HelloWorldProgram
 	 * TODO add assertions.
 	 * @see org.web3d.x3d.jsail.fields
 	 */
+        @SuppressWarnings("UnusedAssignment")
 	private void testFieldObjects()
 	{
 		GroupObject testFieldObjectsGroup = new GroupObject("TestFieldObjectsGroup");
@@ -1067,8 +1080,10 @@ public class HelloWorldProgram
 	String             domDocumentToStringX3D;
 	X3DObject          reloadedX3dObjectTree;
 	File               reloadedFile;
-	
-	private void testX3DLoaderObject()
+	/**
+         * Load the produced HelloWorldProgramOutput.x3d scene using X3DLoaderObject, then write resulting DOM back out to a file.
+         */
+	private void testX3DLoaderObjectDomDocument()
 	{
 		X3DLoaderObject x3dLoader = new X3DLoaderObject();
 		x3dLoader.loadX3DfromFile(thisSceneName + ".x3d");

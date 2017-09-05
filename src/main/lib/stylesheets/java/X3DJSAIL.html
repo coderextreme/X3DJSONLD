@@ -447,6 +447,14 @@ for Java programmers.
 			<a href="examples/images/HelloWorldProgramOutput.mp4" target="_blank">movie</a>
 		</li>
 		<li>
+                        Concise program-produced java source to produce the resulting scene graph:
+			<a href="examples/HelloWorldProgramOutput.java" target="_blank">HelloWorldProgramOutput.java</a>
+		</li>
+		<li>
+                        Load the produced HelloWorldProgramOutput.x3d scene using X3DLoaderObject, then write resulting DOM back out to
+			<a href="examples/HelloWorldProgramOutput.Reloaded.java" target="_blank">HelloWorldProgramOutput.Reloaded.x3d</a>
+		</li>
+		<li>
 			Stylesheet-generated
 			<a href="examples/HelloWorldProgramOutput.html" target="_blank">pretty-print X3D model documentation</a>
 		</li>
@@ -653,8 +661,9 @@ for Java programmers.
 
 	<ul>
 		<li>
-			<i>In progress</i>:
-			prepare tutorial for
+			<i>Available</i>:
+			<a href="http://www.web3d.org/specifications/X3DUOM/ObjectModelForX3dMasterClassWeb3dConference2017June7.pdf">tutorial</a>
+			from
 			<a href="http://web3d2017.web3d.org" target="_blank">Web3D 2017 Conference</a>.
 		</li>
 		<li>
@@ -689,7 +698,7 @@ for Java programmers.
 	</ul>
 
 
-<h4> TODO: X3DJSAIL source code improvements
+<h4> TODO: X3DJSAIL source code and capability improvements
 	<a href="#"><!-- to top -->
 		<img src="images/x3d2-s.gif" width="50" height="32" border="0" title="to top" alt="to top" align="right"/>
 	</a>
@@ -745,9 +754,6 @@ for Java programmers.
 			when first constructing HAnim nodes.
 			Include naming checks in each node's self-checking <code>validate()</code> method.
 		</li>
-		<li>	
-			Add X3D profile-validation and component-validation checks.
-		</li>
 		<li>
 			Add import/export for different file encodings (for example 
 			<a href="https://en.wikipedia.org/wiki/STL_(file_format)"><code>.stl</code></a> and 
@@ -787,6 +793,24 @@ for Java programmers.
 			<a href="https://github.com/kivy/pyjnius">PyJNIus</a>
 			Python module to access Java classes as Python classes using 
 			<a href="http://docs.oracle.com/javase/8/docs/technotes/guides/jni">Java Native Interface (JNI)</a>.
+		</li>
+		<li>
+                        Confirm support for 
+                        <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/X3D_Java.html">Java Scene Access Interface (SAI)</a>
+                        requirements, including
+                        <a href="http://www.web3d.org/documents/specifications/19777-2/V3.3/Part2/functions.html#importDocument">Java Scene Access Interface (SAI)</a>
+		</li>
+		<li>
+                        Add validate() testing for special fields requiring a higher-than-default component level, when they occur.
+                        Example: Inline load field. Requires additional information in X3D Unified Object Model.
+		</li>
+		<li>
+                        Integrate support for 
+                        <a href="http://santuario.apache.org/">Apache Santuario</a>
+                        project implementing the primary security standards for XML:
+						<i>XML-Signature Syntax and Processing</i>
+						and
+						<i>XML Encryption Syntax and Processing</i>.
 		</li>
 		<li>
 			Add a variety of utility methods, as needed.  Suggestions are welcome!
@@ -1123,6 +1147,10 @@ for Java programmers.
 			<code><a href="javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html#validationExceptionAllowed_DEFAULT">validationExceptionAllowed_DEFAULT</a></code>
 			value is <i>false</i> for strict operation.
 		</li>
+		<li>	
+			<span style="color:darkgreen"><i>Complete</i></span>.
+			Add X3D profile-validation and component-validation checks.
+		</li>
 	</ul>
 
 	<!-- =================================================== -->
@@ -1137,7 +1165,7 @@ for Java programmers.
 </h3>
 
 	<blockquote>
-		Updated 28 May 2017.
+		Updated 2 September 2017.
 	</blockquote>
 
 	<blockquote>
