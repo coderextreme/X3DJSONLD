@@ -531,6 +531,8 @@ class ClassPrinter:
                                     cf += '\t\t\t\t\t\t\t\t\t"type": "string"\n'
                                     cf += '\t\t\t\t\t\t\t\t},\n'
                                 acnts = field.get("acceptableNodeTypes").split("|")
+                                # add properties that appear in all SFNode, MFNode
+                                acnts.append("ProtoInstance")
                                 doList = {}
                                 for acnt in acnts:
                                     doList = classes[acnt].listChildren(doList)

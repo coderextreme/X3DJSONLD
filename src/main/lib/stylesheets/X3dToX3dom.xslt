@@ -58,19 +58,19 @@ POSSIBILITY OF SUCH DAMAGE.
 -->
 <xsl:stylesheet version="2.0" xmlns='http://www.w3.org/1999/xhtml' xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <!-- default parameter values that can be overridden when invoking this stylesheet -->
-    <xsl:param name="player"                   >X3DOM</xsl:param> <!-- supported players: X3DOM Cobweb -->
+    <xsl:param name="player"                   >X3DOM</xsl:param> <!-- supported players: X3DOM X_ITE (formerly Cobweb) -->
     <xsl:param name="x3dHeight"                >450px</xsl:param> <!-- default 16x9 aspect ratio -->
     <xsl:param name="x3dWidth"                 >800px</xsl:param>
     <!-- X3DOM parameters -->
     <xsl:param name="showStatistics"           >false</xsl:param>
     <xsl:param name="showDebugLog"             >true</xsl:param>
     <xsl:param name="urlX3DOM"                 >http://www.x3dom.org/download/dev</xsl:param> <!-- no trailing / -->
-    <!-- Cobweb parameters -->
+    <!-- X_ITE parameters -->
     <xsl:param name="cache"                    >true</xsl:param>
 	<!-- also in CreateContentCatalogPages.xslt -->
     <xsl:param name="urlScene"                 ></xsl:param>      <!-- X3D MFString url list -->
-    <xsl:param name="urlCobweb"                >https://cdn.rawgit.com/create3000/cobweb/master/stable</xsl:param> <!-- no trailing slash / -->
-    <xsl:param name="versionCobweb"            >latest</xsl:param> <!-- 1/1.28 or 2/2.6 or 3/3.1 or 3/3.2 or 3.3 with no trailing slash / -->
+    <xsl:param name="urlCobweb"                >http://code.create3000.de/x_ite</xsl:param> <!-- no trailing slash / -->
+    <xsl:param name="versionCobweb"            >latest/dist</xsl:param> <!-- 1/1.28 or 2/2.6 or 3/3.1 or 3/3.2 or 3.3 or 4.0.5 or latest/dist with no trailing slash / -->
     <!-- Catalog generator and configuration parameters -->
     <xsl:param name="x3dSceneAvailable"        >true</xsl:param> <!-- .x3d source, same file name -->
     <xsl:param name="x3dDocumentationAvailable">true</xsl:param> <!-- .html pretty print, same file name -->
@@ -141,7 +141,7 @@ POSSIBILITY OF SUCH DAMAGE.
                 <xsl:text>X3dToX3dom.xslt X3D parameters: </xsl:text>
                 <xsl:text>$fileName=</xsl:text>
                 <xsl:value-of select="$fileName"/>
-                <xsl:text>$player=</xsl:text>
+                <xsl:text>, $player=</xsl:text>
                 <xsl:value-of select="$player"/>
                 <xsl:text>, $x3dHeight=</xsl:text>
                 <xsl:value-of select="$x3dHeight"/>
@@ -152,7 +152,7 @@ POSSIBILITY OF SUCH DAMAGE.
             </xsl:message>
             <xsl:message>
                 <xsl:text>X3DOM parameters: </xsl:text>
-                <xsl:text>, $showStatistics=</xsl:text>
+                <xsl:text>$showStatistics=</xsl:text>
                 <xsl:value-of select="$showStatistics"/>
                 <xsl:text>, $showDebugLog=</xsl:text>
                 <xsl:value-of select="$showDebugLog"/>
@@ -160,13 +160,14 @@ POSSIBILITY OF SUCH DAMAGE.
                 <xsl:value-of select="$urlX3DOM"/>
             </xsl:message>
             <xsl:message>
-                <xsl:text>Cobweb parameters: </xsl:text>
-                <xsl:text>, $cache=</xsl:text>
+                <xsl:text>X_ITE parameters: </xsl:text>
+                <xsl:text>$cache=</xsl:text>
                 <xsl:value-of select="$cache"/>
                 <xsl:text>, $urlScene=</xsl:text>
                 <xsl:value-of select="$urlScene"/>
                 <xsl:text>, $urlCobweb=</xsl:text>
                 <xsl:value-of select="$urlCobweb"/>
+                <xsl:text>/</xsl:text>
                 <xsl:value-of select="$versionCobweb"/>
                 <xsl:text>, $x3dSceneAvailable=</xsl:text>
                 <xsl:value-of select="$x3dSceneAvailable"/>
@@ -181,7 +182,7 @@ POSSIBILITY OF SUCH DAMAGE.
 
 <!-- special player customization in head -->
 <xsl:choose>
-    <xsl:when test="($lower-case-player = 'cobweb')">
+    <xsl:when test="($lower-case-player = 'x_ite') or ($lower-case-player = 'cobweb')">
         <!-- TODO -->
     </xsl:when>
     <xsl:otherwise> <!-- default X3DOM -->
@@ -218,16 +219,22 @@ POSSIBILITY OF SUCH DAMAGE.
               <!--                     alternate stylesheet: http://www.x3dom.org/x3dom/example/x3dom.css -->
               <xsl:text>&#10;</xsl:text>
               <xsl:choose>
-                  <xsl:when test="($lower-case-player = 'cobweb')">
-                    <xsl:comment> Cobweb developer site: https://github.com/create3000/cobweb </xsl:comment>
+                  <xsl:when test="($lower-case-player = 'x_ite') or ($lower-case-player = 'cobweb')">
+                    <xsl:comment> X_ITE developer site: http://create3000.de/x_ite </xsl:comment>
                     <xsl:text>&#10;</xsl:text>
                     <xsl:text>      </xsl:text>
-                    <link rel="stylesheet" type="text/css" href="{$urlCobweb}/{$versionCobweb}/cobweb.css" />
+                    <link rel="stylesheet" type="text/css" href="{$urlCobweb}/{$versionCobweb}/x_ite.css" />
                     <xsl:text>&#10;</xsl:text>
                     <xsl:text>      </xsl:text>
                     <!-- TODO singleton <script /> tag buggy under Firefox -->
-                    <!-- <script type="text/javascript" src="https://cdn.rawgit.com/create3000/cobweb/master/stable/1/{$versionCobweb}/cobweb.min.js"></script> -->
-                    <xsl:text disable-output-escaping="yes"><![CDATA[<script type="text/javascript" src="]]></xsl:text><xsl:value-of select="$urlCobweb"/><xsl:text>/</xsl:text><xsl:value-of select="$versionCobweb"/><xsl:text disable-output-escaping="yes"><![CDATA[/cobweb.min.js"></script>]]></xsl:text>
+                    <!-- <script type="text/javascript" src="https://cdn.rawgit.com/create3000/cobweb/master/stable/1/{$versionCobweb}/x_ite.min.js"></script> -->
+                    <xsl:text disable-output-escaping="yes"><![CDATA[<script type="text/javascript" src="]]></xsl:text><xsl:value-of select="$urlCobweb"/><xsl:text>/</xsl:text><xsl:value-of select="$versionCobweb"/><xsl:text disable-output-escaping="yes"><![CDATA[/x_ite.min.js"></script>]]></xsl:text>
+                    <xsl:text>&#10;</xsl:text>
+					<!-- jQuery availability: https://developers.google.com/speed/libraries https://stackoverflow.com/questions/12608242/latest-jquery-version-on-googles-cdn -->
+					<xsl:variable name="urlJquery">
+						<xsl:text>https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js</xsl:text>
+					</xsl:variable>
+					<xsl:text disable-output-escaping="yes"><![CDATA[<script type="text/javascript" src="]]></xsl:text><xsl:value-of select="$urlJquery"/><xsl:text disable-output-escaping="yes"><![CDATA["></script>]]></xsl:text>
                     <xsl:text>&#10;</xsl:text>
 					<xsl:choose>
 						<xsl:when test="($cobwebStyle = 'simple')">
@@ -310,7 +317,7 @@ POSSIBILITY OF SUCH DAMAGE.
          .references p {
          margin: 0;
          }
-         .cobweb-console {
+         .x_ite-console {
          margin-bottom: 0px;
          }
          .maximize {
@@ -382,7 +389,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
 
 <!-- special player customization in head -->
 <xsl:choose>
-    <xsl:when test="($lower-case-player = 'cobweb')">
+    <xsl:when test="($lower-case-player = 'x_ite') or ($lower-case-player = 'cobweb')">
         <!-- TODO -->
     </xsl:when>
     <xsl:otherwise> <!-- default X3DOM -->
@@ -428,7 +435,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                 <xsl:text>&#10;</xsl:text>
                     
 <xsl:choose>
-    <xsl:when test="($lower-case-player = 'cobweb')">
+    <xsl:when test="($lower-case-player = 'x_ite') or ($lower-case-player = 'cobweb')">
 						<div id="main" style="margin-left: 40px;">
                             <h2>
                                 <xsl:choose>
@@ -462,20 +469,22 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                                             </div>
                                             <xsl:text disable-output-escaping="yes">
 &lt;</xsl:text><xsl:value-of select="$cobwebRootElement"/><xsl:text> url='</xsl:text><xsl:value-of select="$urlSceneQuoted"/><xsl:text disable-output-escaping="yes">'&gt;
-&lt;p&gt;Your browser might not support all features required by Cobweb!&lt;/p&gt;
+	&lt;p&gt;&lt;b&gt;Display error: X3D model not shown.&lt;/b&gt;&lt;/p&gt;
+	&lt;p&gt;Your HTML browser does not appear to support all features required by the
+	&lt;a href="http://create3000.de/x_ite" target="_blank"&gt;X_ITE&lt;/a&gt; X3D player!&lt;/p&gt;
 &lt;/</xsl:text><xsl:value-of select="$cobwebRootElement"/><xsl:text disable-output-escaping="yes">&gt;
 </xsl:text>
                                             <div class="references" style="text-align: right;">
                                              <p>
                                                     <!-- 4-arrow "full screen" button -->
                                                     <button title="Maximize Frame" class="maximize" onclick="toggleFullscreen ();"><img alt="Maximize Frame" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAYAAACprHcmAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAB3RJTUUH4QQNFQk1i7oCawAAALhJREFUGJWV0TFKA2EQBeBn1iqptBJvEFsVjxR0LyB4txQSRCzEeAexsLCJydr4WWQWwjbGBwPzv3nDP/Mm+EBXscAhggb3xW/wGaxt8Y2rEvZxWTx0wWqn4R3HJTzCW/FrbEZJnpKcJ3lJcpLkOlvMkpwmeU1ykeSxny0Yox2M0WLS73CA7ItRkqbycZJ2UL9JMqm8CeaY4rmWuatvb+u9xBnm/3Ij+PrD527X5178g4fBBRfFQ/cL8YlBv40R0JoAAAAASUVORK5CYII="/></button>
-                                                    <a href="http://titania.create3000.de/cobweb" target="_blank">Cobweb X3D Player</a>
+                                                    <a href="http://create3000.de/x_ite" target="_blank">X_ITE X3D Player</a>
                                              </p>
                                             </div>
                                     </div>
                                 </div>
                                 <div>
-                                   <p class="cobweb-console"></p>
+                                   <p class="x_ite-console"></p>
                                 </div>
                             </div>
     </xsl:when>

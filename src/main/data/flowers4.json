@@ -5,6 +5,16 @@
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
     "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
+        "component": [
+          {
+            "@name":"Shaders",
+            "@level":1
+          },
+          {
+            "@name":"CubeMapTexturing",
+            "@level":1
+          }
+        ],
         "meta": [
           {
             "@name":"title",
@@ -28,7 +38,7 @@
           },
           {
             "@name":"translated",
-            "@content":"12 August 2017"
+            "@content":"28 September 2017"
           },
           {
             "@name":"generator",

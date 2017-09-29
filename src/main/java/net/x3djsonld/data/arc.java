@@ -100,13 +100,13 @@ public class arc
 "                    old = translation;" + "\n" + 
 "		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);" + "\n" + 
 "                    keyValue = new MFVec3f([old, translation]);" + "\n" + 
-"		    // Browser.println(translation);" + "\n" + 
+"		    // Browser.println(keyValue);" + "\n" + 
 "		}" + "\n" + "]]>"
 )
             .addField(new fieldObject().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("50 50 0"))
             .addField(new fieldObject().setAccessType("inputOutput").setName("old").setType("SFVec3f").setValue("0 0 0"))
             .addField(new fieldObject().setAccessType("inputOnly").setName("set_location").setType("SFTime"))
-            .addField(new fieldObject().setAccessType("outputOnly").setName("keyValue").setType("MFVec3f")))
+            .addField(new fieldObject().setAccessType("inputOutput").setName("keyValue").setType("MFVec3f").setValue("0 0 0 0 5 0")))
           .addChild(new TimeSensorObject("CL1").setCycleInterval(3).setLoop(true))
           .addChild(new ROUTEObject().setFromNode("CL1").setFromField("cycleTime").setToNode("MB1").setToField("set_location"))
           .addChild(new ROUTEObject().setFromNode("CL1").setFromField("fraction_changed").setToNode("PI1").setToField("set_fraction"))
@@ -145,11 +145,16 @@ public class arc
 "			    translation : transl," + "\n" + 
 "			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)" + "\n" + 
 "		    };" + "\n" + 
-"	    } else {" + "\n" + 
+"	    } else if (typeof SFRotation !== 'undefined') {" + "\n" + 
 "		    return {" + "\n" + 
 "			    scale : new SFVec3f(1.0,dist,1.0)," + "\n" + 
 "			    translation : transl," + "\n" + 
 "			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)" + "\n" + 
+"		    };" + "\n" + 
+"	    } else {" + "\n" + 
+"		    return {" + "\n" + 
+"			    scale : new SFVec3f(1.0,dist,1.0)," + "\n" + 
+"			    translation : transl" + "\n" + 
 "		    };" + "\n" + 
 "	    }" + "\n" + 
 "	}" + "\n" + 
@@ -188,31 +193,31 @@ public class arc
     .addChild(new ProtoInstanceObject("G4", "point").setDEF("G4").setName("point"))
     .addChild(new ProtoInstanceObject("connector1", "x3dconnector").setDEF("connector1").setName("x3dconnector")
       .addFieldValue(new fieldValueObject().setName("startnode")
-        .addChild(new TransformObject().setUSE("G1")))
+        .addChild(new ProtoInstanceObject().setUSE("G1")))
       .addFieldValue(new fieldValueObject().setName("endnode")
-        .addChild(new TransformObject().setUSE("G2")))
+        .addChild(new ProtoInstanceObject().setUSE("G2")))
       .addFieldValue(new fieldValueObject().setName("set_startpoint"))
       .addFieldValue(new fieldValueObject().setName("set_endpoint")))
     .addChild(new ProtoInstanceObject("connector2", "x3dconnector").setDEF("connector2").setName("x3dconnector")
       .addFieldValue(new fieldValueObject().setName("startnode")
-        .addChild(new TransformObject().setUSE("G1")))
+        .addChild(new ProtoInstanceObject().setUSE("G1")))
       .addFieldValue(new fieldValueObject().setName("endnode")
-        .addChild(new TransformObject().setUSE("G3")))
+        .addChild(new ProtoInstanceObject().setUSE("G3")))
       .addFieldValue(new fieldValueObject().setName("set_startpoint"))
       .addFieldValue(new fieldValueObject().setName("set_endpoint")))
     .addChild(new ProtoInstanceObject("connector3", "x3dconnector").setDEF("connector3").setName("x3dconnector")
       .addFieldValue(new fieldValueObject().setName("startnode")
-        .addChild(new TransformObject().setUSE("G1")))
+        .addChild(new ProtoInstanceObject().setUSE("G1")))
       .addFieldValue(new fieldValueObject().setName("endnode")
-        .addChild(new TransformObject().setUSE("G4")))
+        .addChild(new ProtoInstanceObject().setUSE("G4")))
       .addFieldValue(new fieldValueObject().setName("set_startpoint"))
       .addFieldValue(new fieldValueObject().setName("set_endpoint")))
-    .addChild(new ROUTEObject().setFromNode("G1").setFromField("translation_changed").setToNode("connector1").setToField("set_startpoint"))
-    .addChild(new ROUTEObject().setFromNode("G2").setFromField("translation_changed").setToNode("connector1").setToField("set_endpoint"))
-    .addChild(new ROUTEObject().setFromNode("G1").setFromField("translation_changed").setToNode("connector2").setToField("set_startpoint"))
-    .addChild(new ROUTEObject().setFromNode("G3").setFromField("translation_changed").setToNode("connector2").setToField("set_endpoint"))
-    .addChild(new ROUTEObject().setFromNode("G1").setFromField("translation_changed").setToNode("connector3").setToField("set_startpoint"))
-    .addChild(new ROUTEObject().setFromNode("G4").setFromField("translation_changed").setToNode("connector3").setToField("set_endpoint")));
+    .addChild(new ROUTEObject().setFromNode("G1").setFromField("translation").setToNode("connector1").setToField("set_startpoint"))
+    .addChild(new ROUTEObject().setFromNode("G2").setFromField("translation").setToNode("connector1").setToField("set_endpoint"))
+    .addChild(new ROUTEObject().setFromNode("G1").setFromField("translation").setToNode("connector2").setToField("set_startpoint"))
+    .addChild(new ROUTEObject().setFromNode("G3").setFromField("translation").setToNode("connector2").setToField("set_endpoint"))
+    .addChild(new ROUTEObject().setFromNode("G1").setFromField("translation").setToNode("connector3").setToField("set_startpoint"))
+    .addChild(new ROUTEObject().setFromNode("G4").setFromField("translation").setToNode("connector3").setToField("set_endpoint")));
   }
   // end of initialize() method
 

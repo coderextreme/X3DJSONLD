@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D profile='Interchange' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
+    <head>
+        <meta name='title' content='Table5_18PixelTexture' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='description' content='PixelTexture example for Table 5.18' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='creator' content='Leonard Daly and Don Brutzman' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='created' content='18 December 2006' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='modified' content='2 April 2017' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='reference' content='http://X3dGraphics.com' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='reference' content='http://www.web3d.org/x3d/content/examples/X3dResources.html' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='rights' content='Copyright 2006, Daly Realism and Don Brutzman' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='subject' content='X3D, PixelTexture' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='identifier' content='http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter05AppearanceMaterialTextures/Table5_18PixelTexture' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='generator' content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='license' content='../license.html' dir='' http_equiv='' lang='' scheme=''/>
+    </head>
+    <Scene>
+        <Background backUrl='' bottomUrl='' frontUrl='' groundAngle='' leftUrl='' rightUrl='' skyAngle='' skyColor='0 0 1' topUrl='' transparency='0.0' class=''/>
+        <Transform DEF='Checkerboard' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 -10' class=''>
+            <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                <Appearance class=''>
+                    <PixelTexture image='3 2 4 -16776961 16711935 65535 -16777089 16711807 65407' repeatS='true' repeatT='true' class=''/>
+                    <TextureTransform center='0 0' rotation='0.0' scale='500 500' translation='0 0' class=''/>
+                </Appearance>
+                <Box size='1000 1000 0.01' solid='true' class=''/>
+            </Shape>
+        </Transform>
+        <Viewpoint centerOfRotation='0 0 0' description='View All' fieldOfView='0.7854' jump='true' orientation='0 0 1 0' position='0 0 20' retainUserOffsets='false' class=''/>
+        <Viewpoint centerOfRotation='0 0 0' description='Empty Image' fieldOfView='0.7854' jump='true' orientation='0 0 1 0' position='0 5 5' retainUserOffsets='false' class=''/>
+        <Transform DEF='EmptyImage' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='1 1 0 1' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 5 0' class=''>
+            <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                <Appearance class=''>
+                    <PixelTexture image='3 2 4 -16776961 16711935 65535 -16777089 16711807 65407' repeatS='true' repeatT='true' class=''/>
+                </Appearance>
+                <Box DEF='StandardBox' size='2 2 2' solid='true' class=''/>
+            </Shape>
+        </Transform>
+        <Viewpoint centerOfRotation='0 0 0' description='Black and white PixelTexture' fieldOfView='0.7854' jump='true' orientation='0 0 1 0' position='-5 0 5' retainUserOffsets='false' class=''/>
+        <Transform DEF='BW' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='1 1 0 1' scale='1 1 1' scaleOrientation='0 0 1 0' translation='-5 0 0' class=''>
+            <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                <Appearance class=''>
+                    <PixelTexture image='3 2 4 -16776961 16711935 65535 -16777089 16711807 65407' repeatS='true' repeatT='true' class=''/>
+                </Appearance>
+                <Box USE='StandardBox'/>
+            </Shape>
+        </Transform>
+        <Viewpoint centerOfRotation='0 0 0' description='Black and white with Alpha PixelTexture' fieldOfView='0.7854' jump='true' orientation='0 0 1 0' position='5 0 5' retainUserOffsets='false' class=''/>
+        <Transform DEF='AlphaBW' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='1 1 0 1' scale='1 1 1' scaleOrientation='0 0 1 0' translation='5 0 0' class=''>
+            <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                <Appearance class=''>
+                    <PixelTexture image='3 2 4 -16776961 16711935 65535 -16777089 16711807 65407' repeatS='true' repeatT='true' class=''/>
+                </Appearance>
+                <Box USE='StandardBox'/>
+            </Shape>
+        </Transform>
+        <Viewpoint centerOfRotation='0 0 0' description='RGB PixelTexture' fieldOfView='0.7854' jump='true' orientation='0 0 1 0' position='-5 -5 5' retainUserOffsets='false' class=''/>
+        <Transform DEF='RGB' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='1 1 0 1' scale='1 1 1' scaleOrientation='0 0 1 0' translation='-5 -5 0' class=''>
+            <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                <Appearance class=''>
+                    <PixelTexture image='3 2 4 -16776961 16711935 65535 -16777089 16711807 65407' repeatS='true' repeatT='true' class=''/>
+                </Appearance>
+                <Box USE='StandardBox'/>
+            </Shape>
+        </Transform>
+        <Viewpoint centerOfRotation='0 0 0' description='RGB with Alpha PixelTexture' fieldOfView='0.7854' jump='true' orientation='0 0 1 0' position='5 -5 5' retainUserOffsets='false' class=''/>
+        <Transform DEF='AlphaRGB' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='1 1 0 1' scale='1 1 1' scaleOrientation='0 0 1 0' translation='5 -5 0' class=''>
+            <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                <Appearance class=''>
+                    <PixelTexture image='3 2 4 -16776961 16711935 65535 -16777089 16711807 65407' repeatS='true' repeatT='true' class=''/>
+                </Appearance>
+                <Box USE='StandardBox'/>
+            </Shape>
+        </Transform>
+    </Scene>
+</X3D>

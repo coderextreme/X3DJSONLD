@@ -15,6 +15,12 @@
                     <location>.</location>
                     <encoding>windows-1252</encoding>
                 </source-folder>
+                <source-folder>
+                    <label>java\lib</label>
+                    <type>java</type>
+                    <location>java/lib</location>
+                    <encoding>windows-1252</encoding>
+                </source-folder>
             </folders>
             <ide-actions>
                 <action name="build">
@@ -39,6 +45,10 @@
             </ide-actions>
             <view>
                 <items>
+                    <source-folder style="packages">
+                        <label>java\lib</label>
+                        <location>java/lib</location>
+                    </source-folder>
                     <source-file>
                         <location>README.txt</location>
                     </source-file>
@@ -61,7 +71,12 @@
             </view>
             <subprojects/>
         </general-data>
-        <java-data xmlns="http://www.netbeans.org/ns/freeform-project-java/3"/>
+        <java-data xmlns="http://www.netbeans.org/ns/freeform-project-java/3">
+            <compilation-unit>
+                <package-root>java/lib</package-root>
+                <source-level>1.5</source-level>
+            </compilation-unit>
+        </java-data>
         <spellchecker-wordlist xmlns="http://www.netbeans.org/ns/spellchecker-wordlist/1">
             <word>appendWrlAfterX</word>
             <word>applet</word>

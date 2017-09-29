@@ -21050,6 +21050,9 @@
 								},
 								"MetadataString" : {
 									"$ref":"#/definitions/MetadataString"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -21059,6 +21062,9 @@
 							"properties": {
 								"FillProperties" : {
 									"$ref":"#/definitions/FillProperties"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -21068,6 +21074,9 @@
 							"properties": {
 								"LineProperties" : {
 									"$ref":"#/definitions/LineProperties"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -21080,6 +21089,9 @@
 								},
 								"TwoSidedMaterial" : {
 									"$ref":"#/definitions/TwoSidedMaterial"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -21101,6 +21113,9 @@
 								},
 								"ProgramShader" : {
 									"$ref":"#/definitions/ProgramShader"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -21138,6 +21153,9 @@
 								},
 								"MultiTexture" : {
 									"$ref":"#/definitions/MultiTexture"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -21156,6 +21174,9 @@
 								},
 								"TextureTransformMatrix3D" : {
 									"$ref":"#/definitions/TextureTransformMatrix3D"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -21165,6 +21186,9 @@
 							"properties": {
 								"RigidBody" : {
 									"$ref":"#/definitions/RigidBody"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -21198,6 +21222,9 @@
 								},
 								"ToneMappedVolumeStyle" : {
 									"$ref":"#/definitions/ToneMappedVolumeStyle"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -21213,6 +21240,9 @@
 								},
 								"PixelTexture3D" : {
 									"$ref":"#/definitions/PixelTexture3D"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -21228,6 +21258,9 @@
 								},
 								"PixelTexture" : {
 									"$ref":"#/definitions/PixelTexture"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -21333,6 +21366,9 @@
 								},
 								"TriangleSet2D" : {
 									"$ref":"#/definitions/TriangleSet2D"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -21348,6 +21384,9 @@
 								},
 								"Transform" : {
 									"$ref":"#/definitions/Transform"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -21363,6 +21402,9 @@
 								},
 								"CADFace" : {
 									"$ref":"#/definitions/CADFace"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -21376,6 +21418,9 @@
 								},
 								"CollidableShape" : {
 									"$ref":"#/definitions/CollidableShape"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -21385,6 +21430,9 @@
 							"properties": {
 								"Shape" : {
 									"$ref":"#/definitions/Shape"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -21775,6 +21823,9 @@
 								},
 								"CollidableShape" : {
 									"$ref":"#/definitions/CollidableShape"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -21785,6 +21836,9 @@
 							"properties": {
 								"CollisionCollection" : {
 									"$ref":"#/definitions/CollisionCollection"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -21800,6 +21854,9 @@
 								},
 								"Contact" : {
 									"$ref":"#/definitions/Contact"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -21819,6 +21876,9 @@
 								},
 								"CollidableShape" : {
 									"$ref":"#/definitions/CollidableShape"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -21835,6 +21895,9 @@
 								},
 								"ShaderPart" : {
 									"$ref":"#/definitions/ShaderPart"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -21857,6 +21920,9 @@
 								},
 								"PixelTexture" : {
 									"$ref":"#/definitions/PixelTexture"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -21867,6 +21933,9 @@
 							"properties": {
 								"TextureProperties" : {
 									"$ref":"#/definitions/TextureProperties"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -21906,6 +21975,9 @@
 								},
 								"ToneMappedVolumeStyle" : {
 									"$ref":"#/definitions/ToneMappedVolumeStyle"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -21925,6 +21997,9 @@
 								},
 								"ContourPolyline2D" : {
 									"$ref":"#/definitions/ContourPolyline2D"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -21941,6 +22016,9 @@
 								},
 								"DISEntityTypeMapping" : {
 									"$ref":"#/definitions/DISEntityTypeMapping"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -21963,6 +22041,9 @@
 								},
 								"Matrix4VertexAttribute" : {
 									"$ref":"#/definitions/Matrix4VertexAttribute"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -21976,6 +22057,9 @@
 								},
 								"ColorRGBA" : {
 									"$ref":"#/definitions/ColorRGBA"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -21985,6 +22069,9 @@
 							"properties": {
 								"FogCoordinate" : {
 									"$ref":"#/definitions/FogCoordinate"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -21994,6 +22081,9 @@
 							"properties": {
 								"Normal" : {
 									"$ref":"#/definitions/Normal"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -22015,6 +22105,9 @@
 								},
 								"TextureCoordinateGenerator" : {
 									"$ref":"#/definitions/TextureCoordinateGenerator"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -22024,6 +22117,9 @@
 							"properties": {
 								"GeoOrigin" : {
 									"$ref":"#/definitions/GeoOrigin"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -22769,6 +22865,9 @@
 								},
 								"HAnimJoint" : {
 									"$ref":"#/definitions/HAnimJoint"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -22785,6 +22884,9 @@
 								},
 								"HAnimSegment" : {
 									"$ref":"#/definitions/HAnimSegment"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -22801,6 +22903,9 @@
 								},
 								"HAnimSite" : {
 									"$ref":"#/definitions/HAnimSite"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -22820,6 +22925,9 @@
 								},
 								"HAnimSite" : {
 									"$ref":"#/definitions/HAnimSite"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -22836,6 +22944,9 @@
 								},
 								"GeoCoordinate" : {
 									"$ref":"#/definitions/GeoCoordinate"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -22854,6 +22965,9 @@
 								},
 								"HAnimSegment" : {
 									"$ref":"#/definitions/HAnimSegment"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -22870,6 +22984,9 @@
 								},
 								"HAnimDisplacer" : {
 									"$ref":"#/definitions/HAnimDisplacer"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -22913,6 +23030,9 @@
 								},
 								"ProjectionVolumeStyle" : {
 									"$ref":"#/definitions/ProjectionVolumeStyle"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -22923,6 +23043,9 @@
 							"properties": {
 								"Viewport" : {
 									"$ref":"#/definitions/Viewport"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -22941,6 +23064,9 @@
 								},
 								"LayoutLayer" : {
 									"$ref":"#/definitions/LayoutLayer"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -22951,6 +23077,9 @@
 							"properties": {
 								"Layout" : {
 									"$ref":"#/definitions/Layout"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -23029,6 +23158,9 @@
 								},
 								"Inline" : {
 									"$ref":"#/definitions/Inline"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -23081,6 +23213,9 @@
 								},
 								"ShaderProgram" : {
 									"$ref":"#/definitions/ShaderProgram"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -23112,6 +23247,9 @@
 								},
 								"MetadataString" : {
 									"$ref":"#/definitions/MetadataString"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -23155,6 +23293,9 @@
 								},
 								"MultiTexture" : {
 									"$ref":"#/definitions/MultiTexture"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -23183,6 +23324,9 @@
 								},
 								"TextureCoordinateGenerator" : {
 									"$ref":"#/definitions/TextureCoordinateGenerator"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -23208,6 +23352,9 @@
 								},
 								"TextureTransformMatrix3D" : {
 									"$ref":"#/definitions/TextureTransformMatrix3D"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -23233,6 +23380,9 @@
 								},
 								"NurbsTextureCoordinate" : {
 									"$ref":"#/definitions/NurbsTextureCoordinate"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -23251,6 +23401,9 @@
 								},
 								"NurbsTrimmedSurface" : {
 									"$ref":"#/definitions/NurbsTrimmedSurface"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -23264,6 +23417,9 @@
 								},
 								"NurbsCurve2D" : {
 									"$ref":"#/definitions/NurbsCurve2D"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -23273,6 +23429,9 @@
 							"properties": {
 								"NurbsCurve" : {
 									"$ref":"#/definitions/NurbsCurve"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -23288,6 +23447,9 @@
 								},
 								"Contour2D" : {
 									"$ref":"#/definitions/Contour2D"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -23313,6 +23475,9 @@
 								},
 								"PixelTexture3D" : {
 									"$ref":"#/definitions/PixelTexture3D"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -23322,6 +23487,9 @@
 							"properties": {
 								"Appearance" : {
 									"$ref":"#/definitions/Appearance"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -23346,6 +23514,9 @@
 								},
 								"VolumeEmitter" : {
 									"$ref":"#/definitions/VolumeEmitter"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -23367,6 +23538,9 @@
 								},
 								"WindPhysicsModel" : {
 									"$ref":"#/definitions/WindPhysicsModel"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -23377,6 +23551,9 @@
 							"properties": {
 								"TextureCoordinate" : {
 									"$ref":"#/definitions/TextureCoordinate"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -23392,6 +23569,9 @@
 								},
 								"ShaderProgram" : {
 									"$ref":"#/definitions/ShaderProgram"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -23408,6 +23588,9 @@
 								},
 								"Cone" : {
 									"$ref":"#/definitions/Cone"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -23423,6 +23606,9 @@
 								},
 								"RigidBody" : {
 									"$ref":"#/definitions/RigidBody"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -23454,6 +23640,9 @@
 								},
 								"UniversalJoint" : {
 									"$ref":"#/definitions/UniversalJoint"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -23467,6 +23656,9 @@
 								},
 								"MovieTexture" : {
 									"$ref":"#/definitions/MovieTexture"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -23479,6 +23671,9 @@
 								},
 								"ScreenFontStyle" : {
 									"$ref":"#/definitions/ScreenFontStyle"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -23497,6 +23692,9 @@
 								},
 								"MultiTexture" : {
 									"$ref":"#/definitions/MultiTexture"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -23566,6 +23764,9 @@
 								},
 								"Shape" : {
 									"$ref":"#/definitions/Shape"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -23590,6 +23791,9 @@
 								},
 								"ViewpointGroup" : {
 									"$ref":"#/definitions/ViewpointGroup"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false
@@ -23627,6 +23831,9 @@
 								},
 								"ProjectionVolumeStyle" : {
 									"$ref":"#/definitions/ProjectionVolumeStyle"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/definitions/ProtoInstance"
 								}
 							},
 							"additionalProperties": false

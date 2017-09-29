@@ -1,3 +1,11 @@
+ant -f C:\\x3d-code\\www.web3d.org\\x3d\\stylesheets\\java -Dnb.internal.action.name=run run
+init:
+Deleting: C:\x3d-code\www.web3d.org\x3d\stylesheets\java\build\built-jar.properties
+deps-jar:
+Updating property file: C:\x3d-code\www.web3d.org\x3d\stylesheets\java\build\built-jar.properties
+Compiling 2 source files to C:\x3d-code\www.web3d.org\x3d\stylesheets\java\build\classes
+Copying 10 files to C:\x3d-code\www.web3d.org\x3d\stylesheets\java\build\classes
+compile:
 run:
 
 HelloWorldProgramOutput.java console output
@@ -18,7 +26,7 @@ no errors detected.
         <meta name='reference' content='http://www.web3d.org/specifications/java/X3DJSAIL.html'/>
         <meta name='generator' content='HelloWorldProgramOutput.java'/>
         <meta name='created' content='6 September 2016'/>
-        <meta name='modified' content='3 September 2017'/>
+        <meta name='modified' content='24 September 2017'/>
         <meta name='generator' content='X3D Java Scene Access Interface Library (X3DJSAIL)'/>
         <meta name='generator' content='http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java'/>
         <meta name='generator' content='Netbeans http://www.netbeans.org'/>
@@ -272,6 +280,12 @@ function clockTrigger (timeValue)
             <!-- Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d -->
             <!-- Expected containerField='source', allowed containerField values="texture" "source" "back" "bottom" "front" "left" "right" "top" "backTexture" "bottomTexture" "frontTexture" "leftTexture" "rightTexture" "topTexture" -->
         </Sound>
+        <!-- Test success:  AnchorObject.isNode()=true,              siteAnchor.isNode()=true -->
+        <!-- Test success:  AnchorObject.isStatement()=false,        siteAnchor.isStatement()=false -->
+        <!-- Test success:   ROUTEObject.isNode()=false,     orbitPositionROUTE.isNode()=false -->
+        <!-- Test success:   ROUTEObject.isStatement()=true, orbitPositionROUTE.isStatement()=true -->
+        <!-- Test success: CommentsBlock.isNode()=false,           testComments.isNode()=false -->
+        <!-- Test success: CommentsBlock.isStatement()=false,      testComments.isStatement()=false -->
     </Scene>
 </X3D>
 
@@ -288,7 +302,7 @@ META "description" "Example HelloWorldProgram creates an X3D model using the X3D
 META "reference" "http://www.web3d.org/specifications/java/X3DJSAIL.html"
 META "generator" "HelloWorldProgramOutput.java"
 META "created" "6 September 2016"
-META "modified" "3 September 2017"
+META "modified" "24 September 2017"
 META "generator" "X3D Java Scene Access Interface Library (X3DJSAIL)"
 META "generator" "http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"
 META "generator" "Netbeans http://www.netbeans.org"
@@ -637,6 +651,12 @@ Sound {
 # Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d
 # Expected containerField='source', allowed containerField values="texture" "source" "back" "bottom" "front" "left" "right" "top" "backTexture" "bottomTexture" "frontTexture" "leftTexture" "rightTexture" "topTexture"
 }
+# Test success:  AnchorObject.isNode()=true,              siteAnchor.isNode()=true
+# Test success:  AnchorObject.isStatement()=false,        siteAnchor.isStatement()=false
+# Test success:   ROUTEObject.isNode()=false,     orbitPositionROUTE.isNode()=false
+# Test success:   ROUTEObject.isStatement()=true, orbitPositionROUTE.isStatement()=true
+# Test success: CommentsBlock.isNode()=false,           testComments.isNode()=false
+# Test success: CommentsBlock.isStatement()=false,      testComments.isStatement()=false
 
 ===========================================
 #VRML V2.0 utf8
@@ -651,7 +671,7 @@ Sound {
 #META "reference" "http://www.web3d.org/specifications/java/X3DJSAIL.html"
 #META "generator" "HelloWorldProgramOutput.java"
 #META "created" "6 September 2016"
-#META "modified" "3 September 2017"
+#META "modified" "24 September 2017"
 #META "generator" "X3D Java Scene Access Interface Library (X3DJSAIL)"
 #META "generator" "http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"
 #META "generator" "Netbeans http://www.netbeans.org"
@@ -1000,6 +1020,12 @@ Sound {
 # Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d
 # Expected containerField='source', allowed containerField values="texture" "source" "back" "bottom" "front" "left" "right" "top" "backTexture" "bottomTexture" "frontTexture" "leftTexture" "rightTexture" "topTexture"
 }
+# Test success:  AnchorObject.isNode()=true,              siteAnchor.isNode()=true
+# Test success:  AnchorObject.isStatement()=false,        siteAnchor.isStatement()=false
+# Test success:   ROUTEObject.isNode()=false,     orbitPositionROUTE.isNode()=false
+# Test success:   ROUTEObject.isStatement()=true, orbitPositionROUTE.isStatement()=true
+# Test success: CommentsBlock.isNode()=false,           testComments.isNode()=false
+# Test success: CommentsBlock.isStatement()=false,      testComments.isStatement()=false
 
 ===========================================
 Create X3D XML Encoding of model
@@ -1035,11 +1061,14 @@ Create displayable scene page rendered with X3DOM using stylesheet X3dToX3dom.xs
 helloWorldObject.toFileX3DOM("HelloWorldProgramOutputX3dom.xhtml") success: true
 C:\x3d-code\www.web3d.org\x3d\stylesheets\java\examples\HelloWorldProgramOutputX3dom.xhtml
 ===========================================
-Create displayable scene page rendered with Cobweb using stylesheet X3dToX3dom.xslt
-helloWorldObject.toFileX3DOM("HelloWorldProgramOutputCobweb.html") success: true
-C:\x3d-code\www.web3d.org\x3d\stylesheets\java\examples\HelloWorldProgramOutputCobweb.html
+Create displayable scene page rendered with X_ITE (formerly Cobweb) using stylesheet X3dToX3dom.xslt
+helloWorldObject.toFileX3DOM("HelloWorldProgramOutputX_ITE.html") success: true
+C:\x3d-code\www.web3d.org\x3d\stylesheets\java\examples\HelloWorldProgramOutputX_ITE.html
 ===========================================
 Reload and provide text output using Java DOM, which includes default attribute values
+===========================================
+Test success: x3dLoader.loadX3DfromXML(HelloWorldProgramOutput.x3d), x3dLoader.getX3dObjectTree()
+===========================================
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D profile='Immersive' version='3.3' xmlns:ds='http://www.w3.org/2000/09/xmldsig#' xmlns:xenc='http://www.w3.org/2001/04/xmlenc#' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
@@ -1053,7 +1082,7 @@ Reload and provide text output using Java DOM, which includes default attribute 
     <meta content='http://www.web3d.org/specifications/java/X3DJSAIL.html' name='reference'/>
     <meta content='HelloWorldProgramOutput.java' name='generator'/>
     <meta content='6 September 2016' name='created'/>
-    <meta content='3 September 2017' name='modified'/>
+    <meta content='24 September 2017' name='modified'/>
     <meta content='X3D Java Scene Access Interface Library (X3DJSAIL)' name='generator'/>
     <meta content='http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java' name='generator'/>
     <meta content='Netbeans http://www.netbeans.org' name='generator'/>
@@ -1307,6 +1336,12 @@ function clockTrigger (timeValue)
       <!-- Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d -->
       <!-- Expected containerField='source', allowed containerField values="texture" "source" "back" "bottom" "front" "left" "right" "top" "backTexture" "bottomTexture" "frontTexture" "leftTexture" "rightTexture" "topTexture" -->
     </Sound>
+    <!-- Test success:  AnchorObject.isNode()=true,              siteAnchor.isNode()=true -->
+    <!-- Test success:  AnchorObject.isStatement()=false,        siteAnchor.isStatement()=false -->
+    <!-- Test success:   ROUTEObject.isNode()=false,     orbitPositionROUTE.isNode()=false -->
+    <!-- Test success:   ROUTEObject.isStatement()=true, orbitPositionROUTE.isStatement()=true -->
+    <!-- Test success: CommentsBlock.isNode()=false,           testComments.isNode()=false -->
+    <!-- Test success: CommentsBlock.isStatement()=false,      testComments.isStatement()=false -->
   </Scene>
 </X3D>
 ===========================================
@@ -1372,7 +1407,7 @@ Access Interface (SAI) Library"
 },
 {
 "@name":"modified",
-"@content":"3 September 2017"
+"@content":"24 September 2017"
 },
 {
 "@name":"generator",
@@ -1433,7 +1468,7 @@ documentation:"
 },
 {
 "@name":"translated",
-"@content":"03 September 2017"
+"@content":"24 September 2017"
 },
 {
 "@name":"generator",
@@ -2324,6 +2359,24 @@ setValue(4.0)=4.0"
 }
 ]
 }
+},
+{
+"#comment":"Test success: AnchorObject.isNode()=true, siteAnchor.isNode()=true"
+},
+{
+"#comment":"Test success: AnchorObject.isStatement()=false, siteAnchor.isStatement()=false"
+},
+{
+"#comment":"Test success: ROUTEObject.isNode()=false, orbitPositionROUTE.isNode()=false"
+},
+{
+"#comment":"Test success: ROUTEObject.isStatement()=true, orbitPositionROUTE.isStatement()=true"
+},
+{
+"#comment":"Test success: CommentsBlock.isNode()=false, testComments.isNode()=false"
+},
+{
+"#comment":"Test success: CommentsBlock.isStatement()=false, testComments.isStatement()=false"
 }
 ]
 }

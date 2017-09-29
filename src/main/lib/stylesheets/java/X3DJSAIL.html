@@ -34,6 +34,7 @@
             <p align="center"><small>
                 <a href="#Abstract">Abstract</a>&nbsp;|
                 <a href="#Codebase">Codebase</a>&nbsp;|
+                <a href="#CommandLine">Command&nbsp;Line</a>&nbsp;|
                 <a href="#Conversions">Conversions</a>&nbsp;|
                 <a href="#Design">Design&nbsp;Features</a>&nbsp;|
                 <a href="#Downloads">Downloads</a>&nbsp;|
@@ -184,6 +185,52 @@ for Java programmers.
 <!-- ======================================================== -->
 
 <h3>
+	<a name="CommandLine">Command Line</a>
+	<a href="#"><!-- to top -->
+		<img src="images/x3d2-s.gif" width="50" height="32" border="0" title="to top" alt="to top" align="right"/>
+	</a>
+</h3>
+
+	<p>
+		Command line invocation is feasible through use of the
+                <a href="javadoc/org/web3d/x3d/jsail/CommandLine.html" target="_blank">org.x3d.jsail.CommandLine</a>
+                class.
+	</p>
+        <ul style="padding: 0 0 0 40px"><!-- not working -->
+            <li>
+                <i>Prerequisite:</i> CLASSPATH correctly containing
+                <code>saxon9he.jar</code>
+                plus
+                <code>X3DJSAIL.3.3.classes.jar</code> (or
+                <code>X3DJSAIL.3.3.full.jar</code>):
+                <br />
+                CLASSPATH confirmation: <code>% <b>set</b></code>
+                <br />
+                <code>CLASSPATH='C:\x3d-code\www.web3d.org\x3d\stylesheets\java\jars\X3DJSAIL.3.3.classes.jar;C:\x3d-code\www.web3d.org\x3d\stylesheets\java\lib\saxon9he.jar'</code>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <i>Invocation:</i>        <b><code>java org.web3d.x3d.jsail.CommandLine [-help | sourceScene.x3d] [-file [resultFile.*]] [-toX3D | -toXML | -toClassicVrml | -toJSON | -toVRML97 | -toX3DOM | -toX_ITE]</code></b>
+                <br />
+                <i>Example:</i> &nbsp;&nbsp; <code>java org.web3d.x3d.jsail.CommandLine HelloWorld.x3d -toClassicVRML</code>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                TODO debug direct .jar invocation (according to following)
+                <br />
+                <i>Expected usage:</i> <code>java -jar path/X3DJSAIL.*.jar [-help | sourceScene.x3d] [-file [resultFile.*]] [-toX3D | -toXML | -toClassicVrml | -toJSON | -toVRML97 | -toX3DOM | -toX_ITE]</code>
+            </li>
+        </ul>
+
+        <p>
+            Model validation is performed as part of this process.
+        </p>
+
+<!-- ======================================================== -->
+
+<h3>
 	<a name="Conversions">Conversions</a>
 	<a href="#"><!-- to top -->
 		<img src="images/x3d2-s.gif" width="50" height="32" border="0" title="to top" alt="to top" align="right"/>
@@ -259,8 +306,8 @@ for Java programmers.
 				(<span style="color:darkgreen">implemented</span>)
 			</td>
 			<td>
-				Cobweb scene page 
-				<code><a href="examples/HelloWorldProgramOutputCobweb.html" target="_blank">Cobweb.html</a></code> 
+				X_ITE scene page (formerly Cobweb)
+				<code><a href="examples/HelloWorldProgramOutputX_ITE.html" target="_blank">X_ITE.html</a></code> 
 				(<span style="color:darkgreen">implemented</span>)
 			</td>
 			<td>
@@ -440,7 +487,7 @@ for Java programmers.
 		</li>
 		<li>
 			<a href="examples/HelloWorldProgramOutputX3dom.xhtml" target="_blank">X3DOM scene page</a>,
-			<a href="examples/HelloWorldProgramOutputCobweb.html" target="_blank">Cobweb scene page</a>,
+			<a href="examples/HelloWorldProgramOutputX_ITE.html" target="_blank">X_ITE scene page</a>,
 			<a href="examples/HelloWorldProgramOutput.txt" target="_blank">console output</a>,
 			<a href="examples/images/HelloWorldProgramOutput.png" target="_blank">screenshot image</a>
 			and
@@ -626,9 +673,6 @@ for Java programmers.
 </h3>
 
 <h4> TODO: <a href="http://www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">X3dToJava.xslt</a> stylesheet improvements
-	<a href="#"><!-- to top -->
-		<img src="images/x3d2-s.gif" width="50" height="32" border="0" title="to top" alt="to top" align="right"/>
-	</a>
 </h4>
 
 	<ul>
@@ -892,9 +936,9 @@ for Java programmers.
 					<code><a href="javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html#STYLESHEET_X3DOM">STYLESHEET_X3DOM</a></code>
 				</li>
 				<li>
-					<a href="examples/HelloWorldProgramOutputCobweb.html">Cobweb page presentation</a>
+					<a href="examples/HelloWorldProgramOutputX_ITE.html">X_ITE page presentation</a>
 					using method
-					<code><a href="javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#toFileCobweb-java.lang.String-java.lang.String-">X3DObject.toFileCobweb(String sourceSceneName, String filename)</a></code>
+					<code><a href="javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#toFileX_ITE-java.lang.String-java.lang.String-">X3DObject.toFileX_ITE(String sourceSceneName, String filename)</a></code>
 					and stylesheet
 					<code><a href="javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html#STYLESHEET_X3DOM">STYLESHEET_X3DOM</a></code>
 					(with parameter settings)
@@ -1151,6 +1195,14 @@ for Java programmers.
 			<span style="color:darkgreen"><i>Complete</i></span>.
 			Add X3D profile-validation and component-validation checks.
 		</li>
+		<li>
+			<span style="color:darkgreen"><i>Complete</i></span>. 
+			Utility methods 
+			<code><a href="javadoc/org/web3d/x3d/jsail/X3DConcreteNode.html#isNode--">X3DConcreteNode.isNode()</a></code>,
+			<code><a href="javadoc/org/web3d/x3d/jsail/X3DConcreteStatement.html#isStatement--">X3DConcreteStatement.isStatement()</a></code> 
+                        and
+			<code><a href="javadoc/org/web3d/x3d/jsail/Core/CommentsBlock.html#isStatement--">CommentsBlock.isStatement()</a></code> 
+		</li>
 	</ul>
 
 	<!-- =================================================== -->
@@ -1165,7 +1217,7 @@ for Java programmers.
 </h3>
 
 	<blockquote>
-		Updated 2 September 2017.
+		Updated  25 September 2017.
 	</blockquote>
 
 	<blockquote>

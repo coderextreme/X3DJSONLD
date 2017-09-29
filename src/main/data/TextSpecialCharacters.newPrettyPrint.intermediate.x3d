@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
+    <head>
+        <meta name='title' content='TextSpecialCharacters.x3d' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='description' content='Text node demonstration of quotation, apostrophe, ampersand and backslash characters using X3D MFString escaping for XML character entities' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='creator' content='Don Brutzman' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='created' content='12 July 2008' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='modified' content='2 April 2017' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='reference' content='Character entity references in HTML 4' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='reference' content='http://www.w3.org/TR/REC-html40/sgml/entities.html' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='rights' content='Copyright (c) Don Brutzman and Leonard Daly, 2008' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='identifier' content='http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter02GeometryPrimitives/TextSpecialCharacters.x3d' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='generator' content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='license' content='../license.html' dir='' http_equiv='' lang='' scheme=''/>
+    </head>
+    <Scene>
+        <Background backUrl='' bottomUrl='' frontUrl='' groundAngle='' leftUrl='' rightUrl='' skyAngle='' skyColor='1 1 1' topUrl='' transparency='0.0' class=''/>
+        <Viewpoint centerOfRotation='0 0 0' description='Default View' fieldOfView='0.7854' jump='true' orientation='0 0 1 0' position='0 0 15' retainUserOffsets='false' class=''/>
+        <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+            <Appearance class=''>
+                <Material DEF='DefaultMaterial' ambientIntensity='0.2' diffuseColor='0.2 0.2 0.2' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0' class=''/>
+            </Appearance>
+            <Text DEF='DefaultText' length='' maxExtent='0.0' solid='false' string='"Character entity substitutions:" "empty string \"\" skips a line:" "" "apostrophe &apos; is &amp;apos;" "ampersand &amp; is &amp;amp;" "quote mark \" is &amp;quot;" "backslash \ is X3D escape character" "double backslash \\ is X3D backslash \ character" "Pi Î  is &amp;#928; XML character entity"' class=''>
+                <FontStyle DEF='CenteredFontStyle' family='"SERIF"' horizontal='true' justify='"MIDDLE" "MIDDLE"' language='' leftToRight='true' size='1.0' spacing='1.0' style='PLAIN' topToBottom='true' class=''/>
+            </Text>
+            <!-- Empty string "" means to skip a line -->
+            <!-- The ampersand escape characters are based on XML rules -->
+            <!-- apostrophe ' is &apos; and needs to be escaped in single-quote delimiters used for string='value' attribute -->
+            <!-- ampersand & is &amp; and needs to be escaped -->
+            <!-- quotation " is &quot; and isn't needed if single-quote delimiters used for string='value' attribute -->
+            <!-- quotation " can be used within an X3D string if escaped with backslash \ as \" -->
+            <!-- backslash \ is used as escape character for " (and itself) in X3D -->
+            <!-- character entities are listed in HTML specification and are good for any XML -->
+        </Shape>
+    </Scene>
+</X3D>

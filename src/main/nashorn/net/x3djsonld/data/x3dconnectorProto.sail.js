@@ -81,42 +81,46 @@ x3dconnectorProto_sail.prototype = {
         .setAppearance(new AppearanceObject()
           .setMaterial(new MaterialObject().setDiffuseColor(0.2,0.7,0.2)))
         .setGeometry(new SphereObject().setRadius(.1)))
-      .addChild(new PlaneSensorObject("PS2").setDescription("Grab to move"))
+      .addChild(new PlaneSensorObject("PS2").setDescription("Grab to move").setOffset(1.0,-1.0,.01))
       .addChild(new ROUTEObject().setFromNode("PS2").setFromField("translation_changed").setToNode("G2").setToField("set_translation")))
     .addChild(new TransformObject("G3").setTranslation(1.0,1.0,.01)
       .addChild(new ShapeObject()
         .setAppearance(new AppearanceObject()
           .setMaterial(new MaterialObject().setDiffuseColor(0.2,0.7,0.2)))
         .setGeometry(new SphereObject().setRadius(.1)))
-      .addChild(new PlaneSensorObject("PS3").setDescription("Grab to move"))
+      .addChild(new PlaneSensorObject("PS3").setDescription("Grab to move").setOffset(1.0,1.0,.01))
       .addChild(new ROUTEObject().setFromNode("PS3").setFromField("translation_changed").setToNode("G3").setToField("set_translation")))
     .addChild(new TransformObject("G4").setTranslation(-1.0,1.0,.01)
       .addChild(new ShapeObject()
         .setAppearance(new AppearanceObject()
           .setMaterial(new MaterialObject().setDiffuseColor(0.2,0.7,0.2)))
         .setGeometry(new SphereObject().setRadius(.1)))
-      .addChild(new PlaneSensorObject("PS4").setDescription("Grab to move"))
+      .addChild(new PlaneSensorObject("PS4").setDescription("Grab to move").setOffset(-1.0,1.0,.01))
       .addChild(new ROUTEObject().setFromNode("PS4").setFromField("translation_changed").setToNode("G4").setToField("set_translation")))
-    .addChild(new TransformObject("C1")
-      .addChild(new ShapeObject()
-        .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject().setTransparency(.5).setDiffuseColor(0.2,0.7,0.7)))
-        .setGeometry(new CylinderObject().setRadius(.05))))
-    .addChild(new TransformObject("C2")
-      .addChild(new ShapeObject()
-        .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject().setTransparency(.5).setDiffuseColor(0.2,0.7,0.7)))
-        .setGeometry(new CylinderObject().setRadius(.05))))
-    .addChild(new TransformObject("C3")
-      .addChild(new ShapeObject()
-        .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject().setTransparency(.5).setDiffuseColor(0.2,0.7,0.7)))
-        .setGeometry(new CylinderObject().setRadius(.05))))
+    .addChild(new TransformObject("transC1")
+      .addChild(new TransformObject("rotscaleC1")
+        .addChild(new ShapeObject()
+          .setAppearance(new AppearanceObject()
+            .setMaterial(new MaterialObject().setTransparency(.5).setDiffuseColor(0.2,0.7,0.7)))
+          .setGeometry(new CylinderObject().setRadius(.05)))))
+    .addChild(new TransformObject("transC2")
+      .addChild(new TransformObject("rotscaleC2")
+        .addChild(new ShapeObject()
+          .setAppearance(new AppearanceObject()
+            .setMaterial(new MaterialObject().setTransparency(.5).setDiffuseColor(0.2,0.7,0.7)))
+          .setGeometry(new CylinderObject().setRadius(.05)))))
+    .addChild(new TransformObject("transC3")
+      .addChild(new TransformObject("rotscaleC3")
+        .addChild(new ShapeObject()
+          .setAppearance(new AppearanceObject()
+            .setMaterial(new MaterialObject().setTransparency(.5).setDiffuseColor(0.2,0.7,0.7)))
+          .setGeometry(new CylinderObject().setRadius(.05)))))
     .addChild(new ProtoDeclareObject().setName("x3dconnector")
       .setProtoInterface(new ProtoInterfaceObject()
         .addField(new fieldObject().setAccessType("initializeOnly").setName("startnode").setType("SFNode"))
         .addField(new fieldObject().setAccessType("initializeOnly").setName("endnode").setType("SFNode"))
-        .addField(new fieldObject().setAccessType("initializeOnly").setName("connectornode").setType("SFNode"))
+        .addField(new fieldObject().setAccessType("initializeOnly").setName("transnode").setType("SFNode"))
+        .addField(new fieldObject().setAccessType("initializeOnly").setName("rotscalenode").setType("SFNode"))
         .addField(new fieldObject().setAccessType("inputOnly").setName("set_startpoint").setType("SFVec3f"))
         .addField(new fieldObject().setAccessType("inputOnly").setName("set_endpoint").setType("SFVec3f")))
       .setProtoBody(new ProtoBodyObject()
@@ -133,18 +137,25 @@ x3dconnectorProto_sail.prototype = {
 "            var dif2 = dif.multiply(0.5);" + "\n" + 
 "            var norm = dif.normalize();" + "\n" + 
 "            var transl = startpoint.add(dif2);" + "\n" + 
-"	    return {" + "\n" + 
-"		    scale : new SFVec3f(1.0,dist,1.0)," + "\n" + 
-"		    translation : transl," + "\n" + 
-"		    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)" + "\n" + 
-"	    	    // rotation : new x3dom.fields.Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)" + "\n" + 
-"	    };" + "\n" + 
+"	    if (typeof Quaternion !== 'undefined') {" + "\n" + 
+"		    return {" + "\n" + 
+"			    scale : new SFVec3f(1.0,dist,1.0)," + "\n" + 
+"			    translation : transl," + "\n" + 
+"			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)" + "\n" + 
+"		    };" + "\n" + 
+"	    } else {" + "\n" + 
+"		    return {" + "\n" + 
+"			    scale : new SFVec3f(1.0,dist,1.0)," + "\n" + 
+"			    translation : transl," + "\n" + 
+"			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)" + "\n" + 
+"		    };" + "\n" + 
+"	    }" + "\n" + 
 "	}" + "\n" + 
 "	function recompute_and_route(startpoint, endpoint) {" + "\n" + 
 "	      var trafo = recompute(startpoint, endpoint);" + "\n" + 
-"	      connectornode.translation = trafo.translation;" + "\n" + 
-"	      connectornode.rotation = trafo.rotation;" + "\n" + 
-"	      connectornode.scale = trafo.scale;" + "\n" + 
+"	      transnode.translation = trafo.translation;" + "\n" + 
+"	      rotscalenode.rotation = trafo.rotation;" + "\n" + 
+"	      rotscalenode.scale = trafo.scale;" + "\n" + 
 "	}" + "\n" + 
 "        function initialize(){" + "\n" + 
 "            recompute_and_route(startnode.translation,endnode.translation);" + "\n" + 
@@ -158,13 +169,15 @@ x3dconnectorProto_sail.prototype = {
 )
           .addField(new fieldObject().setAccessType("initializeOnly").setName("startnode").setType("SFNode"))
           .addField(new fieldObject().setAccessType("initializeOnly").setName("endnode").setType("SFNode"))
-          .addField(new fieldObject().setAccessType("initializeOnly").setName("connectornode").setType("SFNode"))
+          .addField(new fieldObject().setAccessType("initializeOnly").setName("transnode").setType("SFNode"))
+          .addField(new fieldObject().setAccessType("initializeOnly").setName("rotscalenode").setType("SFNode"))
           .addField(new fieldObject().setAccessType("inputOnly").setName("set_startpoint").setType("SFVec3f"))
           .addField(new fieldObject().setAccessType("inputOnly").setName("set_endpoint").setType("SFVec3f"))
           .setIS(new ISObject()
             .addConnect(new connectObject().setNodeField("startnode").setProtoField("startnode"))
             .addConnect(new connectObject().setNodeField("endnode").setProtoField("endnode"))
-            .addConnect(new connectObject().setNodeField("connectornode").setProtoField("connectornode"))
+            .addConnect(new connectObject().setNodeField("transnode").setProtoField("transnode"))
+            .addConnect(new connectObject().setNodeField("rotscalenode").setProtoField("rotscalenode"))
             .addConnect(new connectObject().setNodeField("set_startpoint").setProtoField("set_startpoint"))
             .addConnect(new connectObject().setNodeField("set_endpoint").setProtoField("set_endpoint"))))))
     .addChild(new ProtoInstanceObject("connector1", "x3dconnector").setDEF("connector1").setName("x3dconnector")
@@ -172,8 +185,10 @@ x3dconnectorProto_sail.prototype = {
         .addChild(new TransformObject().setUSE("G1")))
       .addFieldValue(new fieldValueObject().setName("endnode")
         .addChild(new TransformObject().setUSE("G2")))
-      .addFieldValue(new fieldValueObject().setName("connectornode")
-        .addChild(new TransformObject().setUSE("C1")))
+      .addFieldValue(new fieldValueObject().setName("transnode")
+        .addChild(new TransformObject().setUSE("transC1")))
+      .addFieldValue(new fieldValueObject().setName("rotscalenode")
+        .addChild(new TransformObject().setUSE("rotscaleC1")))
       .addFieldValue(new fieldValueObject().setName("set_startpoint"))
       .addFieldValue(new fieldValueObject().setName("set_endpoint")))
     .addChild(new ProtoInstanceObject("connector2", "x3dconnector").setDEF("connector2").setName("x3dconnector")
@@ -181,8 +196,10 @@ x3dconnectorProto_sail.prototype = {
         .addChild(new TransformObject().setUSE("G1")))
       .addFieldValue(new fieldValueObject().setName("endnode")
         .addChild(new TransformObject().setUSE("G3")))
-      .addFieldValue(new fieldValueObject().setName("connectornode")
-        .addChild(new TransformObject().setUSE("C2")))
+      .addFieldValue(new fieldValueObject().setName("transnode")
+        .addChild(new TransformObject().setUSE("transC2")))
+      .addFieldValue(new fieldValueObject().setName("rotscalenode")
+        .addChild(new TransformObject().setUSE("rotscaleC2")))
       .addFieldValue(new fieldValueObject().setName("set_startpoint"))
       .addFieldValue(new fieldValueObject().setName("set_endpoint")))
     .addChild(new ProtoInstanceObject("connector3", "x3dconnector").setDEF("connector3").setName("x3dconnector")
@@ -190,8 +207,10 @@ x3dconnectorProto_sail.prototype = {
         .addChild(new TransformObject().setUSE("G1")))
       .addFieldValue(new fieldValueObject().setName("endnode")
         .addChild(new TransformObject().setUSE("G4")))
-      .addFieldValue(new fieldValueObject().setName("connectornode")
-        .addChild(new TransformObject().setUSE("C3")))
+      .addFieldValue(new fieldValueObject().setName("transnode")
+        .addChild(new TransformObject().setUSE("transC3")))
+      .addFieldValue(new fieldValueObject().setName("rotscalenode")
+        .addChild(new TransformObject().setUSE("rotscaleC3")))
       .addFieldValue(new fieldValueObject().setName("set_startpoint"))
       .addFieldValue(new fieldValueObject().setName("set_endpoint")))
     .addChild(new ROUTEObject().setFromNode("G1").setFromField("translation_changed").setToNode("connector1").setToField("set_startpoint"))

@@ -1,1 +1,1 @@
-java -cp "../../../git/X3DJSAIL/target/X3DJSAIL.jar;saxon9he.jar" net.x3djsonld.abox js growl.js
+java -cp "target/X3DJSONLD-1.0-SNAPSHOT.jar;../pythonSAI/X3DJSAIL.3.3.full.jar;saxon9he.jar" net.x3djsonld.data.abox js growl.js

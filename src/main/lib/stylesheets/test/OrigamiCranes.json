@@ -112,15 +112,15 @@
           },
           {
             "@name":"translated",
-            "@content":"18 March 2017"
+            "@content":"26 July 2017"
           },
           {
             "@name":"generator",
             "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
           },
           {
-            "@name":"warning",
-            "@content":"An experimental version of X3D JSON encoding is used for this scene.  Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+            "@name":"reference",
+            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
           }
         ]
     },

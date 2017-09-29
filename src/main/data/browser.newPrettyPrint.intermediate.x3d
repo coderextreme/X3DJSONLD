@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
+    <head>
+        <meta name='title' content='browser.x3d' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='creator' content='John Carlson' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='generator' content='manual' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='identifier' content='https://coderextreme.net/X3DJSONLD/browser.x3d' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='description' content='a script test with embedded \n between single quotes, a double backslash \\ a backslash \ and a closing quote "' dir='' http_equiv='' lang='' scheme=''/>
+    </head>
+    <Scene>
+        <Script DEF='Browser' directOutput='false' mustEvaluate='false' url='' class=''>
+<![CDATA[
+ecmascript:
+                function initialize() {
+		    Browser.print('DUDES\n'+'"DUDETTES');
+                }
+
+]]>
+        </Script>
+        <Script DEF='Clouds' directOutput='false' mustEvaluate='false' url='' class=''>
+<![CDATA[
+ecmascript:
+
+
+function cumulustranslation() // These values designate the boundary location of the cloud
+{
+var xxx = ' '+' '+
+'	Transform		\n'+
+'    ' + '               	\n';
+
+}
+
+]]>
+        </Script>
+    </Scene>
+</X3D>

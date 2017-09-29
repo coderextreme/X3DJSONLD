@@ -24,7 +24,7 @@
           },
           {
             "@name":"description",
-            "@content":"test text"
+            "@content":"test \n text"
           },
           {
             "@name":"generator",
@@ -32,7 +32,7 @@
           },
           {
             "@name":"translated",
-            "@content":"20 May 2017"
+            "@content":"28 September 2017"
           },
           {
             "@name":"generator",
@@ -57,7 +57,6 @@
                           "-material":
                             { "Material":
                               {
-                                "@diffuseColor":[0,0,1]
                               }
                             }
                         }
@@ -69,12 +68,76 @@
                           "-fontStyle":
                             { "FontStyle":
                               {
-                                "@justify":["MIDDLE","MIDDLE"],
-                                "@size":5.0
                               }
                             }
                         }
                       }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["Node2","\"\\"," Node2"," ],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["Node3 \\ \"Node3\"," \"\""],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                              }
+                            }
+                        }
+                      }
+                  }
+                },
+                { "Script":
+                  {
+                    "field": [
+                      {
+                        "@name":"frontUrls",
+                        "@accessType":"initializeOnly",
+                        "@type":"MFString",
+                        "@value":["rnl_front.png","uffizi_front.png"]
+                      }
+                    ],
+                    "#sourceText":[
+"ecmascript:",
+"\t\t\t    var me = '\"1\" \"\"2\" \"\n3\"';"
+]
                   }
                 }
               ]

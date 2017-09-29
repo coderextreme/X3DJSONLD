@@ -253,14 +253,14 @@ POSSIBILITY OF SUCH DAMAGE.
      */
     public static void main(String argv[])
     {
-		X3DObject exampleObject = new ]]></xsl:text><xsl:value-of select="$newClassName"/><xsl:text>().getX3dModel();
-		
-		exampleObject.handleArguments(argv);
-		System.out.print("</xsl:text>          <xsl:value-of select="$newClassName"/>
-		<xsl:text disable-output-escaping="yes"><![CDATA[ self-validation test results: ");
-		String validationResults = exampleObject.validationReport();
-		System.out.println(validationResults);
-	}
+        X3DObject exampleObject = new ]]></xsl:text><xsl:value-of select="$newClassName"/><xsl:text>().getX3dModel();
+
+        exampleObject.handleArguments(argv);
+        System.out.print("</xsl:text>          <xsl:value-of select="$newClassName"/>
+        <xsl:text disable-output-escaping="yes"><![CDATA[ self-validation test results: ");
+        String validationResults = exampleObject.validationReport();
+        System.out.println(validationResults);
+    }
 }
 ]]></xsl:text><!-- class complete -->
 

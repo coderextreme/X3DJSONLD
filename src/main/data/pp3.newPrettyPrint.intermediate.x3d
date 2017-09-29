@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
+    <head>
+        <meta name='title' content='pp3.x3d' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='creator' content='John Carlson' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='translator' content='John Carlson' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='created' content='5 May 2015' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='modified' content='05 May 2017' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='description' content='A process pipeline between three spheres (try typing on spheres and blue' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='identifier' content='https://coderextreme.net/x3d/pp3.x3d' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='generator' content='manual' dir='' http_equiv='' lang='' scheme=''/>
+    </head>
+    <Scene>
+        <ProtoDeclare name='Process' appinfo='' documentation=''>
+            <ProtoBody>
+                <Group bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                    <!-- left -->
+                    <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='0.5 0.5 0.5' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
+                        <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                            <Appearance class=''>
+                                <Material ambientIntensity='0.2' diffuseColor='0.7 1 0' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.5' class=''/>
+                            </Appearance>
+                            <Extrusion beginCap='true' ccw='true' convex='true' creaseAngle='0.785' crossSection='1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0' endCap='true' orientation='0 0 1 0' scale='1 1' solid='true' spine='-2.5 0 0 -1.5 0 0' class=''/>
+                        </Shape>
+                        <!-- <Transform translation="-2.5 0 0"> <Shape> <Text DEF="LeftString" string='"l"'/> </Shape> </Transform> <StringSensor DEF="LeftSensor" enabled="false"/> <TouchSensor DEF="LeftTouch" enabled="true"/> -->
+                    </Transform>
+                    <!-- right -->
+                    <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='0.5 0.5 0.5' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
+                        <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                            <Appearance class=''>
+                                <Material ambientIntensity='0.2' diffuseColor='0 0.7 1' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.5' class=''/>
+                            </Appearance>
+                            <Extrusion beginCap='true' ccw='true' convex='true' creaseAngle='0.785' crossSection='1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0' endCap='true' orientation='0 0 1 0' scale='1 1' solid='true' spine='1.5 0 0 2.5 0 0' class=''/>
+                        </Shape>
+                        <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='2 0 0' class=''>
+                            <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                                <Appearance class=''>
+                                    <Material DEF='MaterialLightBlue' ambientIntensity='0.2' diffuseColor='1 1 1' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0' class=''/>
+                                </Appearance>
+                                <Text DEF='RightString' length='' maxExtent='0.0' solid='false' string='"r"' class=''/>
+                            </Shape>
+                        </Transform>
+                        <StringSensor DEF='RightSensor' deletionAllowed='true' enabled='false' class=''/>
+                        <TouchSensor DEF='RightTouch' description='touch to activate' enabled='true' class=''/>
+                    </Transform>
+                    <!-- up -->
+                    <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='0.5 0.5 0.5' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
+                        <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                            <Appearance class=''>
+                                <Material ambientIntensity='0.2' diffuseColor='0 0.7 1' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.5' class=''/>
+                            </Appearance>
+                            <Extrusion beginCap='true' ccw='true' convex='true' creaseAngle='0.785' crossSection='1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0' endCap='true' orientation='0 0 1 0' scale='1 1' solid='true' spine='0 1.5 0 0 2.5 0' class=''/>
+                        </Shape>
+                        <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='-0.5 2 0' class=''>
+                            <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                                <Appearance class=''>
+                                    <Material USE='MaterialLightBlue'/>
+                                </Appearance>
+                                <Text DEF='UpString' length='' maxExtent='0.0' solid='false' string='"u"' class=''/>
+                            </Shape>
+                        </Transform>
+                        <StringSensor DEF='UpSensor' deletionAllowed='true' enabled='false' class=''/>
+                        <TouchSensor DEF='UpTouch' description='touch to activate' enabled='true' class=''/>
+                    </Transform>
+                    <!-- down -->
+                    <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='0.5 0.5 0.5' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
+                        <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                            <Appearance class=''>
+                                <Material ambientIntensity='0.2' diffuseColor='0.7 1 0' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.5' class=''/>
+                            </Appearance>
+                            <Extrusion beginCap='true' ccw='true' convex='true' creaseAngle='0.785' crossSection='1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0' endCap='true' orientation='0 0 1 0' scale='1 1' solid='true' spine='0 -2.5 0 0 -1.5 0' class=''/>
+                        </Shape>
+                        <!-- <Transform translation="-0.5 -2.5 0"> <Shape> <Text DEF="DownString" string='"d"'/> </Shape> </Transform> <StringSensor DEF="DownSensor" enabled="false"/> <TouchSensor description='touch to activate' DEF="DownTouch" enabled="true"/> -->
+                    </Transform>
+                    <!-- center -->
+                    <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
+                        <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                            <Appearance class=''>
+                                <Material ambientIntensity='0.2' diffuseColor='1 0 0.7' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0' class=''/>
+                            </Appearance>
+                            <Sphere radius='1.0' solid='true' class=''/>
+                        </Shape>
+                        <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='0.5 0.5 0.5' scaleOrientation='0 0 1 0' translation='-0.5 0 1' class=''>
+                            <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                                <Appearance class=''>
+                                    <Material USE='MaterialLightBlue'/>
+                                </Appearance>
+                                <Text DEF='CenterString' length='' maxExtent='0.0' solid='false' string='' class=''/>
+                            </Shape>
+                        </Transform>
+                        <StringSensor DEF='CenterSensor' deletionAllowed='true' enabled='false' class=''/>
+                        <TouchSensor DEF='CenterTouch' description='touch to activate' enabled='true' class=''/>
+                    </Transform>
+                </Group>
+                <Script DEF='RightSingleToMultiString' directOutput='false' mustEvaluate='false' url='' class=''>
+                    <field name='set_rightstring' accessType='inputOnly' appinfo='' documentation='' type='SFString' value=''/>
+                    <field name='rightlines' accessType='outputOnly' appinfo='' documentation='' type='MFString' value=''/>
+<![CDATA[
+ecmascript:
+
+function initialize() {
+	rightlines = new MFString("");
+}
+
+function set_rightstring(rightstr) {
+	rightlines = new MFString(rightstr);
+}
+
+]]>
+                </Script>
+                <Script DEF='UpSingleToMultiString' directOutput='false' mustEvaluate='false' url='' class=''>
+                    <field name='set_upstring' accessType='inputOnly' appinfo='' documentation='' type='SFString' value=''/>
+                    <field name='uplines' accessType='outputOnly' appinfo='' documentation='' type='MFString' value=''/>
+<![CDATA[
+ecmascript:
+
+function initialize() {
+	uplines = new MFString("");
+}
+
+function set_upstring(upstr) {
+	uplines = new MFString(upstr);
+}
+
+]]>
+                </Script>
+                <Script DEF='CenterSingleToMultiString' directOutput='false' mustEvaluate='false' url='' class=''>
+                    <field name='set_centerstring' accessType='inputOnly' appinfo='' documentation='' type='SFString' value=''/>
+                    <field name='centerlines' accessType='outputOnly' appinfo='' documentation='' type='MFString' value=''/>
+<![CDATA[
+ecmascript:
+
+function initialize() {
+	centerlines = new MFString("");
+}
+
+function set_centerstring(centerstr) {
+	centerlines = new MFString(centerstr);
+}
+
+]]>
+                </Script>
+                <ROUTE fromField='enteredText' fromNode='CenterSensor' toField='set_centerstring' toNode='CenterSingleToMultiString'/>
+                <ROUTE fromField='centerlines' fromNode='CenterSingleToMultiString' toField='set_string' toNode='CenterString'/>
+                <ROUTE fromField='isOver' fromNode='CenterTouch' toField='set_enabled' toNode='CenterSensor'/>
+                <ROUTE fromField='enteredText' fromNode='RightSensor' toField='set_rightstring' toNode='RightSingleToMultiString'/>
+                <ROUTE fromField='rightlines' fromNode='RightSingleToMultiString' toField='set_string' toNode='RightString'/>
+                <ROUTE fromField='isOver' fromNode='RightTouch' toField='set_enabled' toNode='RightSensor'/>
+                <ROUTE fromField='enteredText' fromNode='UpSensor' toField='set_upstring' toNode='UpSingleToMultiString'/>
+                <ROUTE fromField='uplines' fromNode='UpSingleToMultiString' toField='set_string' toNode='UpString'/>
+                <ROUTE fromField='isOver' fromNode='UpTouch' toField='set_enabled' toNode='UpSensor'/>
+            </ProtoBody>
+        </ProtoDeclare>
+        <NavigationInfo avatarSize='0.25 1.6 0.75' headlight='true' speed='1.0' transitionTime='1.0' transitionType='"LINEAR"' type='"EXAMINE" "ANY"' visibilityLimit='0.0' class=''/>
+        <Viewpoint centerOfRotation='0 0 0' description='Process pipes' fieldOfView='0.7854' jump='true' orientation='1 0 0 -0.4' position='0 5 12' retainUserOffsets='false' class=''/>
+        <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 -2.5 0' class=''>
+            <ProtoInstance name='Process' class=''/>
+        </Transform>
+        <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
+            <ProtoInstance name='Process' class=''/>
+        </Transform>
+        <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 2.5 0' class=''>
+            <ProtoInstance name='Process' class=''/>
+        </Transform>
+    </Scene>
+</X3D>

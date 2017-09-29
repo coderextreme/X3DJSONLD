@@ -6,6 +6,8 @@ ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
       var X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
       .setHead(new headObject()
+        .addComponent(new componentObject().setName("Shaders").setLevel(1))
+        .addComponent(new componentObject().setName("CubeMapTexturing").setLevel(1))
         .addMeta(new metaObject().setName("title").setContent("flowers4.x3d"))
         .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
         .addMeta(new metaObject().setName("generator").setContent("manual"))

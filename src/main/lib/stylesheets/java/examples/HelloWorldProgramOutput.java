@@ -49,7 +49,7 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 3 September 2017 </td>
+			<td> 24 September 2017 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
@@ -145,7 +145,7 @@ public class HelloWorldProgramOutput
     .addMeta(new metaObject().setName("reference").setContent("http://www.web3d.org/specifications/java/X3DJSAIL.html"))
     .addMeta(new metaObject().setName("generator").setContent("HelloWorldProgramOutput.java"))
     .addMeta(new metaObject().setName("created").setContent("6 September 2016"))
-    .addMeta(new metaObject().setName("modified").setContent("3 September 2017"))
+    .addMeta(new metaObject().setName("modified").setContent("24 September 2017"))
     .addMeta(new metaObject().setName("generator").setContent("X3D Java Scene Access Interface Library (X3DJSAIL)"))
     .addMeta(new metaObject().setName("generator").setContent("http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"))
     .addMeta(new metaObject().setName("generator").setContent("Netbeans http://www.netbeans.org"))
@@ -358,7 +358,13 @@ public class HelloWorldProgramOutput
     .addChild(new SoundObject()
       .setSource(new MovieTextureObject().setUrl(new MFStringObject("\"mpgsys.mpg\" \"http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg\"")))
       .addComments(" Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d ")
-      .addComments(" Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\" ")));
+      .addComments(" Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\" "))
+    .addComments(" Test success:  AnchorObject.isNode()=true,              siteAnchor.isNode()=true ")
+    .addComments(" Test success:  AnchorObject.isStatement()=false,        siteAnchor.isStatement()=false ")
+    .addComments(" Test success:   ROUTEObject.isNode()=false,     orbitPositionROUTE.isNode()=false ")
+    .addComments(" Test success:   ROUTEObject.isStatement()=true, orbitPositionROUTE.isStatement()=true ")
+    .addComments(" Test success: CommentsBlock.isNode()=false,           testComments.isNode()=false ")
+    .addComments(" Test success: CommentsBlock.isStatement()=false,      testComments.isStatement()=false "));
   }
   // end of initialize() method
 
@@ -383,11 +389,11 @@ public class HelloWorldProgramOutput
      */
     public static void main(String argv[])
     {
-		X3DObject exampleObject = new HelloWorldProgramOutput().getX3dModel();
-		
-		exampleObject.handleArguments(argv);
-		System.out.print("HelloWorldProgramOutput self-validation test results: ");
-		String validationResults = exampleObject.validationReport();
-		System.out.println(validationResults);
-	}
+        X3DObject exampleObject = new HelloWorldProgramOutput().getX3dModel();
+
+        exampleObject.handleArguments(argv);
+        System.out.print("HelloWorldProgramOutput self-validation test results: ");
+        String validationResults = exampleObject.validationReport();
+        System.out.println(validationResults);
+    }
 }

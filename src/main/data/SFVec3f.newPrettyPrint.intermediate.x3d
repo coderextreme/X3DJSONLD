@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
+    <head>
+        <meta name='title' content='SFVec3f.x3d' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='creator' content='John Carlson' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='description' content='3 prismatic spheres' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='identifier' content='https://coderextreme.net/X3DJSONLD/SFVec3f.x3d' dir='' http_equiv='' lang='' scheme=''/>
+    </head>
+    <Scene>
+        <NavigationInfo avatarSize='0.25 1.6 0.75' headlight='true' speed='1.0' transitionTime='1.0' transitionType='"LINEAR"' type='"EXAMINE" "ANY"' visibilityLimit='0.0' class=''/>
+        <Transform DEF='transform' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
+            <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                <Appearance class=''>
+                    <Material ambientIntensity='0.2' diffuseColor='0.7 0.7 0.7' emissiveColor='0 0 0' shininess='0.2' specularColor='0.5 0.5 0.5' transparency='0.0' class=''/>
+                </Appearance>
+                <Sphere radius='1.0' solid='true' class=''/>
+            </Shape>
+        </Transform>
+        <Script DEF='Bounce' directOutput='false' mustEvaluate='false' url='' class=''>
+            <field name='set_translation' accessType='inputOnly' appinfo='' documentation='' type='SFVec3f' value='0 0 0'/>
+            <field name='translation_changed' accessType='outputOnly' appinfo='' documentation='' type='SFVec3f' value='0 0 0'/>
+            <field name='translation' accessType='inputOutput' appinfo='' documentation='' type='SFVec3f' value='0 0 0'/>
+            <field name='velocity' accessType='inputOutput' appinfo='' documentation='' type='SFVec3f' value='0 0 0'/>
+            <field name='set_fraction' accessType='inputOnly' appinfo='' documentation='' type='SFTime' value=''/>
+<![CDATA[
+ecmascript:
+			function newBubble() {
+			    translation = new SFVec3f(0, 0, 0);
+			    velocity = new SFVec3f(
+			    	Math.random() - 0.5,
+				Math.random() - 0.5,
+				Math.random() - 0.5);
+			}
+			function set_fraction() {
+			    translation = new SFVec3f(
+			    	translation.x + velocity.x,
+				translation.y + velocity.y,
+				translation.z + velocity.z);
+				if (Math.abs(translation.x) > 10) {
+					newBubble();
+				} else if (Math.abs(translation.y) > 10) {
+					newBubble();
+				} else if (Math.abs(translation.z) > 10) {
+					newBubble();
+				} else {
+					velocity = new SFVec3f(
+						velocity.x + Math.random() * 0.2 - 0.1,
+						velocity.y + Math.random() * 0.2 - 0.1,
+						velocity.z + Math.random() * 0.2 - 0.1
+					);
+				}
+			}
+
+			function initialize() {
+			     newBubble();
+			}
+
+]]>
+        </Script>
+        <TimeSensor DEF='TourTime' cycleInterval='0.15' enabled='true' loop='true' pauseTime='0.0' resumeTime='0.0' startTime='0.0' stopTime='0.0' class=''/>
+        <ROUTE fromField='cycleTime' fromNode='TourTime' toField='set_fraction' toNode='Bounce'/>
+        <ROUTE fromField='translation_changed' fromNode='Bounce' toField='set_translation' toNode='transform'/>
+    </Scene>
+</X3D>

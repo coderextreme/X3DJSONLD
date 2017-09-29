@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
+    <head>
+        <meta name='creator' content='John W Carlson' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='created' content='December 13 2015' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='title' content='text.x3d' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='identifier' content='https://coderextreme.net/X3DJSONLD/text.x3d' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='description' content='test \n text' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='generator' content='Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit' dir='' http_equiv='' lang='' scheme=''/>
+    </head>
+    <Scene>
+        <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
+            <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                <Appearance class=''>
+                    <Material ambientIntensity='0.2' diffuseColor='0.8 0.8 0.8' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0' class=''/>
+                </Appearance>
+                <Text length='' maxExtent='0.0' solid='false' string='"Node\"\"\""' class=''>
+                    <FontStyle family='"SERIF"' horizontal='true' justify='"BEGIN"' language='' leftToRight='true' size='1.0' spacing='1.0' style='PLAIN' topToBottom='true' class=''/>
+                </Text>
+            </Shape>
+            <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                <Appearance class=''>
+                    <Material ambientIntensity='0.2' diffuseColor='0.8 0.8 0.8' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0' class=''/>
+                </Appearance>
+                <Text length='' maxExtent='0.0' solid='false' string='"Node2" "\" "\\" "Node2"' class=''>
+                    <FontStyle family='"SERIF"' horizontal='true' justify='"BEGIN"' language='' leftToRight='true' size='1.0' spacing='1.0' style='PLAIN' topToBottom='true' class=''/>
+                </Text>
+            </Shape>
+            <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                <Appearance class=''>
+                    <Material ambientIntensity='0.2' diffuseColor='0.8 0.8 0.8' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0' class=''/>
+                </Appearance>
+                <Text length='' maxExtent='0.0' solid='false' string='"Node3 \\ \" "Node3\"\"\""' class=''>
+                    <FontStyle family='"SERIF"' horizontal='true' justify='"BEGIN"' language='' leftToRight='true' size='1.0' spacing='1.0' style='PLAIN' topToBottom='true' class=''/>
+                </Text>
+            </Shape>
+            <Script directOutput='false' mustEvaluate='false' url='' class=''>
+                <field name='frontUrls' accessType='initializeOnly' appinfo='' documentation='' type='MFString' value='"rnl_front.png" "uffizi_front.png"'/>
+<![CDATA[
+ecmascript:
+			    var me = '"1" ""2" "\n3"';
+
+]]>
+            </Script>
+        </Transform>
+    </Scene>
+</X3D>
