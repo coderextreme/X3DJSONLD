@@ -50,7 +50,7 @@
           },
           {
             "@name":"modified",
-            "@content":"3 September 2017"
+            "@content":"24 September 2017"
           },
           {
             "@name":"generator",
@@ -110,7 +110,7 @@
           },
           {
             "@name":"translated",
-            "@content":"03 September 2017"
+            "@content":"24 September 2017"
           },
           {
             "@name":"generator",
@@ -972,6 +972,24 @@
                 }
               ]
             }
+          },
+          {
+            "#comment":"Test success: AnchorObject.isNode()=true, siteAnchor.isNode()=true"
+          },
+          {
+            "#comment":"Test success: AnchorObject.isStatement()=false, siteAnchor.isStatement()=false"
+          },
+          {
+            "#comment":"Test success: ROUTEObject.isNode()=false, orbitPositionROUTE.isNode()=false"
+          },
+          {
+            "#comment":"Test success: ROUTEObject.isStatement()=true, orbitPositionROUTE.isStatement()=true"
+          },
+          {
+            "#comment":"Test success: CommentsBlock.isNode()=false, testComments.isNode()=false"
+          },
+          {
+            "#comment":"Test success: CommentsBlock.isStatement()=false, testComments.isStatement()=false"
           }
         ]
     }

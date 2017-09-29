@@ -75,37 +75,55 @@ x3dconnector_sail.prototype = {
           .setMaterial(new MaterialObject().setDiffuseColor(0.7,0.2,0.2)))
         .setGeometry(new SphereObject().setRadius(.1)))
       .addChild(new PlaneSensorObject("PS1").setDescription("Grab to move"))
-      .addChild(new ROUTEObject().setFromNode("PS1").setFromField("translation_changed").setToNode("G1").setToField("translation")))
+      .addChild(new ROUTEObject().setFromNode("PS1").setFromField("translation_changed").setToNode("G1").setToField("set_translation")))
     .addChild(new TransformObject("G2").setTranslation(1.0,-1.0,.01)
       .addChild(new ShapeObject()
         .setAppearance(new AppearanceObject()
           .setMaterial(new MaterialObject().setDiffuseColor(0.2,0.7,0.2)))
         .setGeometry(new SphereObject().setRadius(.1)))
-      .addChild(new PlaneSensorObject("PS2").setDescription("Grab to move"))
-      .addChild(new ROUTEObject().setFromNode("PS2").setFromField("translation_changed").setToNode("G2").setToField("translation")))
-    .addChild(new TransformObject("C0")
-      .addChild(new TransformObject("C1")
-        .addChild(new TransformObject("C2")
-          .addChild(new ShapeObject()
-            .setAppearance(new AppearanceObject()
-              .setMaterial(new MaterialObject().setTransparency(.5).setDiffuseColor(0.2,0.7,0.7)))
-            .setGeometry(new CylinderObject().setRadius(.05))))))
-    .addChild(new ScriptObject("S1").setSourceCode(
+      .addChild(new PlaneSensorObject("PS2").setDescription("Grab to move").setOffset(1.0,-1.0,.01))
+      .addChild(new ROUTEObject().setFromNode("PS2").setFromField("translation_changed").setToNode("G2").setToField("set_translation")))
+    .addChild(new TransformObject("transC1")
+      .addChild(new TransformObject("rotscaleC1")
+        .addChild(new ShapeObject()
+          .setAppearance(new AppearanceObject()
+            .setMaterial(new MaterialObject().setTransparency(.5).setDiffuseColor(0.2,0.7,0.7)))
+          .setGeometry(new CylinderObject().setRadius(.05)))))
+    .addChild(new ProtoDeclareObject().setName("x3dconnector")
+      .setProtoInterface(new ProtoInterfaceObject()
+        .addField(new fieldObject().setAccessType("initializeOnly").setName("startnode").setType("SFNode"))
+        .addField(new fieldObject().setAccessType("initializeOnly").setName("endnode").setType("SFNode"))
+        .addField(new fieldObject().setAccessType("initializeOnly").setName("transnode").setType("SFNode"))
+        .addField(new fieldObject().setAccessType("initializeOnly").setName("rotscalenode").setType("SFNode"))
+        .addField(new fieldObject().setAccessType("inputOnly").setName("set_startpoint").setType("SFVec3f"))
+        .addField(new fieldObject().setAccessType("inputOnly").setName("set_endpoint").setType("SFVec3f")))
+      .setProtoBody(new ProtoBodyObject()
+        .addChild(new ScriptObject("S1").setSourceCode(
 "<![CDATA[" + "\n" +
 "\n" + 
-"        ecmascript:" + "\n" + 
+"            ecmascript:" + "\n" + 
 "        function recompute(startpoint,endpoint){" + "\n" + 
+"	    if (typeof endpoint === 'undefined') {" + "\n" + 
+"		return;" + "\n" + 
+"	    }" + "\n" + 
 "            var dif = endpoint.subtract(startpoint);" + "\n" + 
 "            var dist = dif.length()*0.5;" + "\n" + 
 "            var dif2 = dif.multiply(0.5);" + "\n" + 
 "            var norm = dif.normalize();" + "\n" + 
 "            var transl = startpoint.add(dif2);" + "\n" + 
-"	    return {" + "\n" + 
-"		    scale : new SFVec3f(1.0,dist,1.0)," + "\n" + 
-"		    translation : transl," + "\n" + 
-"		    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)" + "\n" + 
-"	    	    // rotation : new x3dom.fields.Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)" + "\n" + 
-"	    };" + "\n" + 
+"	    if (typeof Quaternion !== 'undefined') {" + "\n" + 
+"		    return {" + "\n" + 
+"			    scale : new SFVec3f(1.0,dist,1.0)," + "\n" + 
+"			    translation : transl," + "\n" + 
+"			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)" + "\n" + 
+"		    };" + "\n" + 
+"	    } else {" + "\n" + 
+"		    return {" + "\n" + 
+"			    scale : new SFVec3f(1.0,dist,1.0)," + "\n" + 
+"			    translation : transl," + "\n" + 
+"			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)" + "\n" + 
+"		    };" + "\n" + 
+"	    }" + "\n" + 
 "	}" + "\n" + 
 "	function recompute_and_route(startpoint, endpoint) {" + "\n" + 
 "	      var trafo = recompute(startpoint, endpoint);" + "\n" + 
@@ -123,18 +141,32 @@ x3dconnector_sail.prototype = {
 "            recompute_and_route(startnode.translation,val);" + "\n" + 
 "        }" + "\n" + "]]>"
 )
-      .addField(new fieldObject().setAccessType("initializeOnly").setName("startnode").setType("SFNode")
+          .addField(new fieldObject().setAccessType("initializeOnly").setName("startnode").setType("SFNode"))
+          .addField(new fieldObject().setAccessType("initializeOnly").setName("endnode").setType("SFNode"))
+          .addField(new fieldObject().setAccessType("initializeOnly").setName("transnode").setType("SFNode"))
+          .addField(new fieldObject().setAccessType("initializeOnly").setName("rotscalenode").setType("SFNode"))
+          .addField(new fieldObject().setAccessType("inputOnly").setName("set_startpoint").setType("SFVec3f"))
+          .addField(new fieldObject().setAccessType("inputOnly").setName("set_endpoint").setType("SFVec3f"))
+          .setIS(new ISObject()
+            .addConnect(new connectObject().setNodeField("startnode").setProtoField("startnode"))
+            .addConnect(new connectObject().setNodeField("endnode").setProtoField("endnode"))
+            .addConnect(new connectObject().setNodeField("transnode").setProtoField("transnode"))
+            .addConnect(new connectObject().setNodeField("rotscalenode").setProtoField("rotscalenode"))
+            .addConnect(new connectObject().setNodeField("set_startpoint").setProtoField("set_startpoint"))
+            .addConnect(new connectObject().setNodeField("set_endpoint").setProtoField("set_endpoint"))))))
+    .addChild(new ProtoInstanceObject("connector1", "x3dconnector").setDEF("connector1").setName("x3dconnector")
+      .addFieldValue(new fieldValueObject().setName("startnode")
         .addChild(new TransformObject().setUSE("G1")))
-      .addField(new fieldObject().setAccessType("initializeOnly").setName("endnode").setType("SFNode")
+      .addFieldValue(new fieldValueObject().setName("endnode")
         .addChild(new TransformObject().setUSE("G2")))
-      .addField(new fieldObject().setAccessType("inputOutput").setName("transnode").setType("SFNode")
-        .addChild(new TransformObject().setUSE("C0")))
-      .addField(new fieldObject().setAccessType("inputOutput").setName("rotscalenode").setType("SFNode")
-        .addChild(new TransformObject().setUSE("C2")))
-      .addField(new fieldObject().setAccessType("inputOnly").setName("set_startpoint").setType("SFVec3f"))
-      .addField(new fieldObject().setAccessType("inputOnly").setName("set_endpoint").setType("SFVec3f")))
-    .addChild(new ROUTEObject().setFromNode("G1").setFromField("translation_changed").setToNode("S1").setToField("set_startpoint"))
-    .addChild(new ROUTEObject().setFromNode("G2").setFromField("translation_changed").setToNode("S1").setToField("set_endpoint")));
+      .addFieldValue(new fieldValueObject().setName("transnode")
+        .addChild(new TransformObject().setUSE("transC1")))
+      .addFieldValue(new fieldValueObject().setName("rotscalenode")
+        .addChild(new TransformObject().setUSE("rotscaleC1")))
+      .addFieldValue(new fieldValueObject().setName("set_startpoint"))
+      .addFieldValue(new fieldValueObject().setName("set_endpoint")))
+    .addChild(new ROUTEObject().setFromNode("G1").setFromField("translation_changed").setToNode("connector1").setToField("set_startpoint"))
+    .addChild(new ROUTEObject().setFromNode("G2").setFromField("translation_changed").setToNode("connector1").setToField("set_endpoint")));
   },
   // end of initialize() method
 

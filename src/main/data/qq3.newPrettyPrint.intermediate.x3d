@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
+    <head>
+        <meta name='title' content='qq3.x3d' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='creator' content='John Carlson' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='translator' content='John Carlson' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='created' content='11 Jan 2015' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='modified' content='05 May 2017' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='description' content='12 extrusions to test prototype expander' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='identifier' content='https://coderextreme.net/x3d/qq3.x3d' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='generator' content='manual' dir='' http_equiv='' lang='' scheme=''/>
+    </head>
+    <Scene>
+        <ProtoDeclare name='Process' appinfo='' documentation=''>
+            <ProtoBody>
+                <Group bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                    <!-- left -->
+                    <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='0.5 0.5 0.5' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
+                        <Shape DEF='ShapeLeftDown' bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                            <Appearance class=''>
+                                <Material ambientIntensity='0.2' diffuseColor='0.7 1 0' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0' class=''/>
+                            </Appearance>
+                            <Extrusion beginCap='true' ccw='true' convex='true' creaseAngle='0.785' crossSection='1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0' endCap='true' orientation='0 0 1 0' scale='1 1' solid='true' spine='-2.5 0 0 -1.5 0 0' class=''/>
+                        </Shape>
+                    </Transform>
+                    <!-- right -->
+                    <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='0.5 0.5 0.5' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
+                        <Shape DEF='ShapeUpRight' bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                            <Appearance class=''>
+                                <Material ambientIntensity='0.2' diffuseColor='0 0.7 1' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0' class=''/>
+                            </Appearance>
+                            <Extrusion beginCap='true' ccw='true' convex='true' creaseAngle='0.785' crossSection='1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0' endCap='true' orientation='0 0 1 0' scale='1 1' solid='true' spine='1.5 0 0 2.5 0 0' class=''/>
+                        </Shape>
+                    </Transform>
+                    <!-- up -->
+                    <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='0.5 0.5 0.5' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
+                        <Shape USE='ShapeUpRight'/>
+                    </Transform>
+                    <!-- down -->
+                    <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='0.5 0.5 0.5' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
+                        <Shape USE='ShapeLeftDown'/>
+                    </Transform>
+                </Group>
+            </ProtoBody>
+        </ProtoDeclare>
+        <Viewpoint centerOfRotation='0 0 0' description='Process pipes' fieldOfView='0.7854' jump='true' orientation='1 0 0 -0.4' position='0 5 12' retainUserOffsets='false' class=''/>
+        <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 -2.5 0' class=''>
+            <ProtoInstance name='Process' class=''/>
+        </Transform>
+        <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
+            <ProtoInstance name='Process' class=''/>
+        </Transform>
+        <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 2.5 0' class=''>
+            <ProtoInstance name='Process' class=''/>
+        </Transform>
+    </Scene>
+</X3D>

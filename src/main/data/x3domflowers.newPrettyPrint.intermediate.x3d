@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
+    <head>
+        <meta name='title' content='sphereflowers.x3d' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='creator' content='John Carlson' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='description' content='5 or more prismatic flowers' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='generator' content='X3D-Edit, https://savage.nps.edu/X3D-Edit' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='identifier' content='https://coderextreme.net/X3DJSONLD/sphereflowers.x3d' dir='' http_equiv='' lang='' scheme=''/>
+    </head>
+    <Scene>
+        <NavigationInfo avatarSize='0.25 1.6 0.75' headlight='true' speed='1.0' transitionTime='1.0' transitionType='"LINEAR"' type='"EXAMINE" "ANY"' visibilityLimit='0.0' class=''/>
+        <Background backUrl='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"' bottomUrl='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"' frontUrl='"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"' groundAngle='' leftUrl='"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"' rightUrl='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"' skyAngle='' skyColor='0 0 0' topUrl='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"' transparency='0.0' class=''/>
+        <Group bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+            <ExternProtoDeclare name='FlowerProto' appinfo='' documentation='' url='"../data/flowerproto.json#FlowerProto"'>
+                <field name='vertex' accessType='inputOutput' appinfo='' documentation='' type='MFString' value=''/>
+                <field name='fragment' accessType='inputOutput' appinfo='' documentation='' type='MFString' value=''/>
+            </ExternProtoDeclare>
+            <ProtoDeclare name='flower' appinfo='' documentation=''>
+                <ProtoBody>
+                    <Group bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                        <ProtoInstance name='FlowerProto' class=''>
+                            <fieldValue name='vertex' value='"../shaders/x3dom_flowers_chromatic.vs"'/>
+                            <fieldValue name='fragment' value='"../shaders/common.fs"'/>
+                        </ProtoInstance>
+                    </Group>
+                </ProtoBody>
+            </ProtoDeclare>
+            <ProtoInstance name='flower' class=''/>
+            <ProtoInstance name='flower' class=''/>
+            <ProtoInstance name='flower' class=''/>
+            <ProtoInstance name='flower' class=''/>
+            <ProtoInstance name='flower' class=''/>
+            <ProtoInstance name='flower' class=''/>
+        </Group>
+    </Scene>
+</X3D>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
+    <head>
+        <meta name='title' content='CoordinateAxis.x3d' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='creator' content='Unknown, see X3D Resources Archives' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='generator' content='manual' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='identifier' content='https://coderextreme.net/X3DJSONLD/CoordinateAxis.x3d' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='description' content='a box' dir='' http_equiv='' lang='' scheme=''/>
+    </head>
+    <Scene>
+        <Collision DEF='DoNotCollideWithVisualizationWidget' bboxCenter='0 0 0' bboxSize='-1 -1 -1' enabled='true' class=''>
+            <!-- Invoke CoordinateAxes in other scenes as an Inline child inside a scaling Transform node, at the topmost level of the scene graph. -->
+            <!-- This NavigationInfo allows examine mode and will be overridden by any parent scene. -->
+            <!-- Each arrow goes from +1m to -1m to allow linear scaling to fit a scene -->
+            <!-- Note each label rotates about the scene's vertical Y axis for consistency, enabling local orientation by user -->
+            <Group bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                <!-- Vertical Y arrow and label -->
+                <Group DEF='ArrowGreen' bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                    <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                        <Appearance DEF='Green' class=''>
+                            <Material ambientIntensity='0.2' diffuseColor='0.1 0.6 0.1' emissiveColor='0.05 0.2 0.05' shininess='0.2' specularColor='0 0 0' transparency='0.0' class=''/>
+                        </Appearance>
+                        <Cylinder DEF='ArrowCylinder' bottom='true' height='2.0' radius='0.025' side='true' solid='true' top='false' class=''/>
+                    </Shape>
+                    <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 1 0' class=''>
+                        <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                            <Appearance USE='Green'/>
+                            <Cone DEF='ArrowCone' bottom='true' bottomRadius='0.05' height='0.1' side='true' solid='true' class=''/>
+                        </Shape>
+                    </Transform>
+                </Group>
+                <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 1.08 0' class=''>
+                    <Billboard axisOfRotation='0 1 0' bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                        <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                            <Appearance DEF='LABEL_APPEARANCE' class=''>
+                                <Material ambientIntensity='0.2' diffuseColor='1 1 0.3' emissiveColor='0.33 0.33 0.1' shininess='0.2' specularColor='0 0 0' transparency='0.0' class=''/>
+                            </Appearance>
+                            <Text length='' maxExtent='0.0' solid='false' string='"Y"' class=''>
+                                <FontStyle DEF='LABEL_FONT' family='"SANS"' horizontal='true' justify='"MIDDLE" "MIDDLE"' language='' leftToRight='true' size='0.2' spacing='1.0' style='PLAIN' topToBottom='true' class=''/>
+                            </Text>
+                        </Shape>
+                    </Billboard>
+                </Transform>
+            </Group>
+            <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 -1.57079' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
+                <!-- Horizontal X arrow and label -->
+                <Group bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                    <Group DEF='ArrowRed' bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                        <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                            <Appearance DEF='Red' class=''>
+                                <Material ambientIntensity='0.2' diffuseColor='0.7 0.1 0.1' emissiveColor='0.33 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0' class=''/>
+                            </Appearance>
+                            <Cylinder USE='ArrowCylinder'/>
+                        </Shape>
+                        <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 1 0' class=''>
+                            <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                                <Appearance USE='Red'/>
+                                <Cone USE='ArrowCone'/>
+                            </Shape>
+                        </Transform>
+                    </Group>
+                    <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 1.57079' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0.072 1.1 0' class=''>
+                        <!-- note label rotated back to original coordinate frame -->
+                        <Billboard axisOfRotation='0 1 0' bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                            <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                                <Appearance USE='LABEL_APPEARANCE'/>
+                                <Text length='' maxExtent='0.0' solid='false' string='"X"' class=''>
+                                    <FontStyle USE='LABEL_FONT'/>
+                                </Text>
+                            </Shape>
+                        </Billboard>
+                    </Transform>
+                </Group>
+            </Transform>
+            <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='1 0 0 1.57079' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
+                <!-- Perpendicular Z arrow and label, note right-hand rule -->
+                <Group bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                    <Group DEF='ArrowBlue' bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                        <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                            <Appearance DEF='Blue' class=''>
+                                <Material ambientIntensity='0.2' diffuseColor='0.3 0.3 1' emissiveColor='0.1 0.1 0.33' shininess='0.2' specularColor='0 0 0' transparency='0.0' class=''/>
+                            </Appearance>
+                            <Cylinder USE='ArrowCylinder'/>
+                        </Shape>
+                        <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 1 0' class=''>
+                            <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                                <Appearance USE='Blue'/>
+                                <Cone USE='ArrowCone'/>
+                            </Shape>
+                        </Transform>
+                    </Group>
+                    <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='1 0 0 -1.57079' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 1.1 0.072' class=''>
+                        <!-- note label rotated back to original coordinate frame -->
+                        <Billboard axisOfRotation='0 1 0' bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                            <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                                <Appearance USE='LABEL_APPEARANCE'/>
+                                <Text length='' maxExtent='0.0' solid='false' string='"Z"' class=''>
+                                    <FontStyle USE='LABEL_FONT'/>
+                                </Text>
+                            </Shape>
+                        </Billboard>
+                    </Transform>
+                </Group>
+            </Transform>
+        </Collision>
+    </Scene>
+</X3D>

@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
+    <head>
+        <meta name='title' content='x3dconnectorProto' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='creator' content='Lost, Doug Sanden I think' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='generator' content='manual' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='identifier' content='https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='description' content='a generic proto to connect two objects' dir='' http_equiv='' lang='' scheme=''/>
+    </head>
+    <Scene>
+        <Viewpoint centerOfRotation='0 0 0' description='Only Viewpoint' fieldOfView='0.7854' jump='true' orientation='0 0 1 0' position='0 0 5' retainUserOffsets='false' class=''/>
+        <Background backUrl='' bottomUrl='' frontUrl='' groundAngle='' leftUrl='' rightUrl='' skyAngle='' skyColor='0.4 0.4 0.4' topUrl='' transparency='0.0' class=''/>
+        <Transform DEF='G1' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
+            <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                <Appearance class=''>
+                    <Material ambientIntensity='0.2' diffuseColor='0.7 0.2 0.2' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0' class=''/>
+                </Appearance>
+                <Sphere radius='0.1' solid='true' class=''/>
+            </Shape>
+            <PlaneSensor DEF='PS1' autoOffset='true' axisRotation='0 1 0 0' description='Grab to move' enabled='true' maxPosition='-1 -1' minPosition='0 0' offset='0 0 0' class=''/>
+            <ROUTE fromField='translation_changed' fromNode='PS1' toField='set_translation' toNode='G1'/>
+        </Transform>
+        <Transform DEF='G2' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='1 -1 0.01' class=''>
+            <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                <Appearance class=''>
+                    <Material ambientIntensity='0.2' diffuseColor='0.2 0.7 0.2' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0' class=''/>
+                </Appearance>
+                <Sphere radius='0.1' solid='true' class=''/>
+            </Shape>
+            <PlaneSensor DEF='PS2' autoOffset='true' axisRotation='0 1 0 0' description='Grab to move' enabled='true' maxPosition='-1 -1' minPosition='0 0' offset='1 -1 0.01' class=''/>
+            <ROUTE fromField='translation_changed' fromNode='PS2' toField='set_translation' toNode='G2'/>
+        </Transform>
+        <Transform DEF='G3' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='1 1 0.01' class=''>
+            <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                <Appearance class=''>
+                    <Material ambientIntensity='0.2' diffuseColor='0.2 0.7 0.2' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0' class=''/>
+                </Appearance>
+                <Sphere radius='0.1' solid='true' class=''/>
+            </Shape>
+            <PlaneSensor DEF='PS3' autoOffset='true' axisRotation='0 1 0 0' description='Grab to move' enabled='true' maxPosition='-1 -1' minPosition='0 0' offset='1 1 0.01' class=''/>
+            <ROUTE fromField='translation_changed' fromNode='PS3' toField='set_translation' toNode='G3'/>
+        </Transform>
+        <Transform DEF='G4' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='-1 1 0.01' class=''>
+            <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                <Appearance class=''>
+                    <Material ambientIntensity='0.2' diffuseColor='0.2 0.7 0.2' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0' class=''/>
+                </Appearance>
+                <Sphere radius='0.1' solid='true' class=''/>
+            </Shape>
+            <PlaneSensor DEF='PS4' autoOffset='true' axisRotation='0 1 0 0' description='Grab to move' enabled='true' maxPosition='-1 -1' minPosition='0 0' offset='-1 1 0.01' class=''/>
+            <ROUTE fromField='translation_changed' fromNode='PS4' toField='set_translation' toNode='G4'/>
+        </Transform>
+        <Transform DEF='transC1' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
+            <Transform DEF='rotscaleC1' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
+                <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                    <Appearance class=''>
+                        <Material ambientIntensity='0.2' diffuseColor='0.2 0.7 0.7' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.5' class=''/>
+                    </Appearance>
+                    <Cylinder bottom='true' height='2.0' radius='0.05' side='true' solid='true' top='true' class=''/>
+                </Shape>
+            </Transform>
+        </Transform>
+        <Transform DEF='transC2' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
+            <Transform DEF='rotscaleC2' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
+                <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                    <Appearance class=''>
+                        <Material ambientIntensity='0.2' diffuseColor='0.2 0.7 0.7' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.5' class=''/>
+                    </Appearance>
+                    <Cylinder bottom='true' height='2.0' radius='0.05' side='true' solid='true' top='true' class=''/>
+                </Shape>
+            </Transform>
+        </Transform>
+        <Transform DEF='transC3' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
+            <Transform DEF='rotscaleC3' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
+                <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                    <Appearance class=''>
+                        <Material ambientIntensity='0.2' diffuseColor='0.2 0.7 0.7' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.5' class=''/>
+                    </Appearance>
+                    <Cylinder bottom='true' height='2.0' radius='0.05' side='true' solid='true' top='true' class=''/>
+                </Shape>
+            </Transform>
+        </Transform>
+        <ProtoDeclare name='x3dconnector' appinfo='' documentation=''>
+            <ProtoInterface>
+                <field name='startnode' accessType='initializeOnly' appinfo='' documentation='' type='SFNode' value=''/>
+                <field name='endnode' accessType='initializeOnly' appinfo='' documentation='' type='SFNode' value=''/>
+                <field name='transnode' accessType='initializeOnly' appinfo='' documentation='' type='SFNode' value=''/>
+                <field name='rotscalenode' accessType='initializeOnly' appinfo='' documentation='' type='SFNode' value=''/>
+                <field name='set_startpoint' accessType='inputOnly' appinfo='' documentation='' type='SFVec3f' value=''/>
+                <field name='set_endpoint' accessType='inputOnly' appinfo='' documentation='' type='SFVec3f' value=''/>
+            </ProtoInterface>
+            <ProtoBody>
+                <Script DEF='S1' directOutput='false' mustEvaluate='false' url='' class=''>
+                    <field name='startnode' accessType='initializeOnly' appinfo='' documentation='' type='SFNode' value=''/>
+                    <field name='endnode' accessType='initializeOnly' appinfo='' documentation='' type='SFNode' value=''/>
+                    <field name='transnode' accessType='initializeOnly' appinfo='' documentation='' type='SFNode' value=''/>
+                    <field name='rotscalenode' accessType='initializeOnly' appinfo='' documentation='' type='SFNode' value=''/>
+                    <field name='set_startpoint' accessType='inputOnly' appinfo='' documentation='' type='SFVec3f' value=''/>
+                    <field name='set_endpoint' accessType='inputOnly' appinfo='' documentation='' type='SFVec3f' value=''/>
+                    <IS>
+                        <connect nodeField='startnode' protoField='startnode'/>
+                        <connect nodeField='endnode' protoField='endnode'/>
+                        <connect nodeField='transnode' protoField='transnode'/>
+                        <connect nodeField='rotscalenode' protoField='rotscalenode'/>
+                        <connect nodeField='set_startpoint' protoField='set_startpoint'/>
+                        <connect nodeField='set_endpoint' protoField='set_endpoint'/>
+                    </IS>
+<![CDATA[
+ecmascript:
+        function recompute(startpoint,endpoint){
+	    if (typeof endpoint === 'undefined') {
+		return;
+	    }
+            var dif = endpoint.subtract(startpoint);
+            var dist = dif.length()*0.5;
+            var dif2 = dif.multiply(0.5);
+            var norm = dif.normalize();
+            var transl = startpoint.add(dif2);
+	    if (typeof Quaternion !== 'undefined') {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl,
+			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)
+		    };
+	    } else {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl,
+			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)
+		    };
+	    }
+	}
+	function recompute_and_route(startpoint, endpoint) {
+	      var trafo = recompute(startpoint, endpoint);
+	      transnode.translation = trafo.translation;
+	      rotscalenode.rotation = trafo.rotation;
+	      rotscalenode.scale = trafo.scale;
+	}
+        function initialize(){
+            recompute_and_route(startnode.translation,endnode.translation);
+        }
+        function set_startpoint(val,t){
+            recompute_and_route(val,endnode.translation);
+        }
+        function set_endpoint(val,t){
+            recompute_and_route(startnode.translation,val);
+        }
+
+]]>
+                </Script>
+            </ProtoBody>
+        </ProtoDeclare>
+        <ProtoInstance DEF='connector1' name='x3dconnector' class=''>
+            <fieldValue name='startnode' value=''>
+                <Transform USE='G1'/>
+            </fieldValue>
+            <fieldValue name='endnode' value=''>
+                <Transform USE='G2'/>
+            </fieldValue>
+            <fieldValue name='transnode' value=''>
+                <Transform USE='transC1'/>
+            </fieldValue>
+            <fieldValue name='rotscalenode' value=''>
+                <Transform USE='rotscaleC1'/>
+            </fieldValue>
+            <fieldValue name='set_startpoint' value=''/>
+            <fieldValue name='set_endpoint' value=''/>
+        </ProtoInstance>
+        <ProtoInstance DEF='connector2' name='x3dconnector' class=''>
+            <fieldValue name='startnode' value=''>
+                <Transform USE='G1'/>
+            </fieldValue>
+            <fieldValue name='endnode' value=''>
+                <Transform USE='G3'/>
+            </fieldValue>
+            <fieldValue name='transnode' value=''>
+                <Transform USE='transC2'/>
+            </fieldValue>
+            <fieldValue name='rotscalenode' value=''>
+                <Transform USE='rotscaleC2'/>
+            </fieldValue>
+            <fieldValue name='set_startpoint' value=''/>
+            <fieldValue name='set_endpoint' value=''/>
+        </ProtoInstance>
+        <ProtoInstance DEF='connector3' name='x3dconnector' class=''>
+            <fieldValue name='startnode' value=''>
+                <Transform USE='G1'/>
+            </fieldValue>
+            <fieldValue name='endnode' value=''>
+                <Transform USE='G4'/>
+            </fieldValue>
+            <fieldValue name='transnode' value=''>
+                <Transform USE='transC3'/>
+            </fieldValue>
+            <fieldValue name='rotscalenode' value=''>
+                <Transform USE='rotscaleC3'/>
+            </fieldValue>
+            <fieldValue name='set_startpoint' value=''/>
+            <fieldValue name='set_endpoint' value=''/>
+        </ProtoInstance>
+        <ROUTE fromField='translation_changed' fromNode='G1' toField='set_startpoint' toNode='connector1'/>
+        <ROUTE fromField='translation_changed' fromNode='G2' toField='set_endpoint' toNode='connector1'/>
+        <ROUTE fromField='translation_changed' fromNode='G1' toField='set_startpoint' toNode='connector2'/>
+        <ROUTE fromField='translation_changed' fromNode='G3' toField='set_endpoint' toNode='connector2'/>
+        <ROUTE fromField='translation_changed' fromNode='G1' toField='set_startpoint' toNode='connector3'/>
+        <ROUTE fromField='translation_changed' fromNode='G4' toField='set_endpoint' toNode='connector3'/>
+    </Scene>
+</X3D>

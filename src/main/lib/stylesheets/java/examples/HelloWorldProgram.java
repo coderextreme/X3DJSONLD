@@ -194,9 +194,9 @@ public class HelloWorldProgram
 			System.out.println (savedFile.getAbsolutePath());
 		System.out.println ("===========================================");
 		
-		System.out.println ("Create displayable scene page rendered with Cobweb using stylesheet " + ConfigurationProperties.STYLESHEET_X3DOM);
-		savedFileName   = thisSceneName + "Cobweb" + X3DObject.FILE_EXTENSION_HTML;
-		savedFile       = x3dModel.toFileCobweb(thisSceneName + ".x3d", savedFileName);
+		System.out.println ("Create displayable scene page rendered with X_ITE (formerly Cobweb) using stylesheet " + ConfigurationProperties.STYLESHEET_X3DOM);
+		savedFileName   = thisSceneName + "X_ITE" + X3DObject.FILE_EXTENSION_HTML;
+		savedFile       = x3dModel.toFileX_ITE(thisSceneName + ".x3d", savedFileName);
 		savedFileExists = !(savedFile == null);
 		System.out.println ("helloWorldObject.toFileX3DOM(\"" + savedFileName + "\") success: " + savedFileExists);
 		if (!(savedFile == null))
@@ -211,7 +211,7 @@ public class HelloWorldProgram
 		System.out.println ("===========================================");
 	}
 	
-	@SuppressWarnings("UnusedAssignment") // option to hide warnings when checking for allowable constructs during development
+	@SuppressWarnings({"UnusedAssignment", "static-access"}) // option to hide warnings when checking for allowable constructs during development
 	private void buildModelSceneGraph()
 	{
 		// independent objects must be instantiated separately - verbose but necessary
@@ -923,8 +923,28 @@ public class HelloWorldProgram
 					.addComments("Scene example fragment from " + movieExampleUrl)
 					.addComments("Expected containerField='source', allowed containerField values=" + 
 							new MFStringObject(new MovieTextureObject().getContainerFieldAlternateValues()).toStringX3D()));
-
-		// all finished, go see if the paint is dry
+                CommentsBlock testComments = new CommentsBlock ();
+                String result;
+                result = ((AnchorObject.isNode() == true) && (siteAnchor.isNode() == true)) ? "success" : "failure";
+                testComments.addComments("Test " + result + ":  AnchorObject.isNode()="      +  AnchorObject.isNode()      + ",              siteAnchor.isNode()="         + siteAnchor.isNode());
+                
+                result = ((AnchorObject.isStatement() == false) && (siteAnchor.isStatement() == false)) ? "success" : "failure";
+                testComments.addComments("Test " + result + ":  AnchorObject.isStatement()=" +  AnchorObject.isStatement() + ",        siteAnchor.isStatement()="    + siteAnchor.isStatement());
+		
+                result = ((ROUTEObject.isNode() == false) && (orbitPositionROUTE.isNode() == false)) ? "success" : "failure";
+                testComments.addComments("Test " + result + ":   ROUTEObject.isNode()="      +   ROUTEObject.isNode()      + ",     orbitPositionROUTE.isNode()=" + orbitPositionROUTE.isNode());
+		
+                result = ((ROUTEObject.isStatement() == true) && (orbitPositionROUTE.isStatement() == true)) ? "success" : "failure";
+                testComments.addComments("Test " + result + ":   ROUTEObject.isStatement()=" +   ROUTEObject.isStatement() + ", orbitPositionROUTE.isStatement()=" + orbitPositionROUTE.isStatement());
+                
+                result = ((CommentsBlock.isNode() == false) && (CommentsBlock.isNode() == false)) ? "success" : "failure";
+                testComments.addComments("Test " + result + ": CommentsBlock.isNode()="      + CommentsBlock.isNode()      + ",           testComments.isNode()="       + testComments.isNode());
+		
+                result = ((CommentsBlock.isStatement() == false) && (CommentsBlock.isStatement() == false)) ? "success" : "failure";
+                testComments.addComments("Test " + result + ": CommentsBlock.isStatement()=" + CommentsBlock.isStatement() + ",      testComments.isStatement()="  + testComments.isStatement());
+                scene.addComments (testComments);
+                
+                // all finished, go see if the paint is dry
 	}
 	
 	/** Test declarative programming style using Java 8
@@ -1090,13 +1110,23 @@ public class HelloWorldProgram
 //		boolean successfulLoad = x3dLoader.loadX3DfromFile(new File(thisSceneName + ".x3d")); // alternate form, tested OK
 		if (x3dLoader.isLoadSuccessful())
 		{
+                        if (x3dLoader.getX3dObjectTree() instanceof X3DObject)
+                        {
+                            System.out.println ("===========================================");
+                            System.out.println("Test success: x3dLoader.loadX3DfromXML(" + thisSceneName + ".x3d), " + 
+                                                             "x3dLoader.getX3dObjectTree()");
+                            System.out.println ("===========================================");
+                        }
+			else System.out.println("Test failure: x3dLoader.loadX3DfromXML(" + thisSceneName + ".x3d), " + 
+                                                             "x3dLoader.getgetX3dObjectTree()");
+                        // alternative approach to loading:
 			domDocument       = x3dLoader.getDomDocument();
 			domImplementation = domDocument.getImplementation(); // debug use only
 			domDocumentToStringX3D = x3dLoader.toStringX3D(domDocument);
 			System.out.println (domDocumentToStringX3D.trim()); // may include partial results if settings permit
 			System.out.println ("===========================================");
 			System.out.println("Test success: x3dLoader.loadX3DfromXML(" + thisSceneName + ".x3d), " + 
-							   "x3dLoader.getDomDocument() and x3dLoader.toStringX3D(domDocument)");
+							 "x3dLoader.getDomDocument() and x3dLoader.toStringX3D(domDocument)");
 
 			System.out.println ("===========================================");
 			x3dLoader.toX3dObjectTree(domDocument); 

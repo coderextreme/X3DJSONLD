@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
+    <head>
+        <meta name='title' content='abox.x3d' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='creator' content='John Carlson' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='generator' content='manual' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='identifier' content='https://coderextreme.net/X3DJSONLD/abox.x3d' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='description' content='a box' dir='' http_equiv='' lang='' scheme=''/>
+    </head>
+    <Scene>
+        <ProtoDeclare name='anyShape' appinfo='' documentation=''>
+            <ProtoInterface>
+                <field name='myShape' accessType='inputOutput' appinfo='' documentation='' type='MFNode' value=''>
+                    <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                        <Sphere radius='1.0' solid='true' class=''/>
+                    </Shape>
+                </field>
+            </ProtoInterface>
+            <ProtoBody>
+                <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
+                    <IS>
+                        <connect nodeField='children' protoField='myShape'/>
+                    </IS>
+                </Transform>
+            </ProtoBody>
+        </ProtoDeclare>
+        <ProtoDeclare name='one' appinfo='' documentation=''>
+            <ProtoInterface>
+                <field name='myShape' accessType='inputOutput' appinfo='' documentation='' type='MFNode' value=''>
+                    <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                        <Cylinder bottom='true' height='2.0' radius='1.0' side='true' solid='true' top='true' class=''/>
+                    </Shape>
+                </field>
+            </ProtoInterface>
+            <ProtoBody>
+                <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
+                    <ProtoInstance name='anyShape' class=''>
+                        <IS>
+                            <connect nodeField='myShape' protoField='myShape'/>
+                        </IS>
+                    </ProtoInstance>
+                </Transform>
+            </ProtoBody>
+        </ProtoDeclare>
+        <ProtoInstance name='one' class=''>
+            <fieldValue name='myShape' value=''>
+                <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                    <Box size='140 140 140' solid='true' class=''/>
+                </Shape>
+            </fieldValue>
+        </ProtoInstance>
+    </Scene>
+</X3D>

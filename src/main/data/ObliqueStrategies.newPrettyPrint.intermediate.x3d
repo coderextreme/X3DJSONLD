@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
+    <head>
+        <meta name='title' content='ObliqueStrategies.x3d' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='description' content='Text scripting and animation example using Oblique Strategies card set by Brian Eno.' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='creator' content='Don Brutzman, John Kelly, Ben Cheng' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='created' content='3 November 2013' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='modified' content='18 October 2015' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='reference' content='oblique.html' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='reference' content='ObliqueStrategies.txt' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='reference' content='ObliqueStrategiesScript.js' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='reference' content='http://music.hyperreal.org/artists/brian_eno/oblique/oblique.html' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='reference' content='http://www.eno-web.co.uk/obliques.html' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='reference' content='http://gothpunk.com/haiku-intro.html' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='reference' content='http://www.rtqe.net/ObliqueStrategies/OSintro.html' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='reference' content='https://en.wikipedia.org/wiki/Oblique_Strategies' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='subject' content='Brian Eno, Oblique Strategies' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='Image' content='images/ObliqueStrategiesEntryScreen.png' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='audio' content='http://translate.google.com/translate_tts?tl=en&amp;q=hello%20X3D' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='audio' content='translate_tts_HelloX3D.mp3' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='audio' content='translate_tts_HelloX3D.wav' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='TODO' content='multiliingual translation parameter' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='reference' content='http://stackoverflow.com/questions/9163988/download-mp3-from-google-translate-text-to-speech' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='reference' content='http://www.greenbot.com/article/2105862/how-to-get-started-with-google-text-to-speech.html' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='warning' content='under development, scene Sound/AudioClip triggering (or retrieved file format) not working' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='warning' content='BSContact error: Script node TextScript: parse error: line 15 " var strategy = [];' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='identifier' content='http://X3dGraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategies.x3d' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='generator' content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' dir='' http_equiv='' lang='' scheme=''/>
+        <meta name='license' content='../license.html' dir='' http_equiv='' lang='' scheme=''/>
+    </head>
+    <Scene>
+        <NavigationInfo avatarSize='0.25 1.6 0.75' headlight='true' speed='1.0' transitionTime='1.0' transitionType='"LINEAR"' type='"EXAMINE" "ANY"' visibilityLimit='0.0' class=''/>
+        <Background backUrl='' bottomUrl='' frontUrl='' groundAngle='' leftUrl='' rightUrl='' skyAngle='' skyColor='0.419608 0.427451 1' topUrl='' transparency='0.0' class=''/>
+        <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='0.4 0.4 0.4' scaleOrientation='0 0 1 0' translation='0 1 0' class=''>
+            <TouchSensor DEF='RandomTextClickedSensor' description='Select to see a new strategy' enabled='true' class=''/>
+            <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                <Appearance class=''>
+                    <Material ambientIntensity='0.2' diffuseColor='1 1 1' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0' class=''/>
+                </Appearance>
+                <Text length='' maxExtent='0.0' solid='false' string='"Oblique Strategies" "" "(Over One Hundred Worthwhile Dilemmas)" "" "by Brian Eno and Peter Schmidt"' class=''>
+                    <FontStyle DEF='MessageFont' family='"SANS"' horizontal='true' justify='"MIDDLE" "MIDDLE"' language='' leftToRight='true' size='1.0' spacing='1.0' style='BOLD' topToBottom='true' class=''/>
+                </Text>
+            </Shape>
+            <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='10 3 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
+                <Shape DEF='HeadlineClickSurface' bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                    <Appearance class=''>
+                        <Material ambientIntensity='0.245763' diffuseColor='0.34773 0.090909 0.005289' emissiveColor='0 0 0' shininess='0.07' specularColor='0.336735 0.051091 0.051091' transparency='0.8' class=''/>
+                    </Appearance>
+                    <IndexedFaceSet ccw='true' colorIndex='' colorPerVertex='true' convex='true' coordIndex='0 1 2 3 -1' creaseAngle='0.0' normalIndex='' normalPerVertex='true' solid='false' texCoordIndex='' class=''>
+                        <Coordinate point='1 1 0 1 -1 0 -1 -1 0 -1 1 0' class=''/>
+                    </IndexedFaceSet>
+                </Shape>
+            </Transform>
+        </Transform>
+        <Script DEF='TextScript' directOutput='false' mustEvaluate='false' url='"./ObliqueStrategiesScript.js"' class=''>
+            <field name='index' accessType='initializeOnly' appinfo='index for active strategy card, -1 means no selection' documentation='' type='SFInt32' value='0'/>
+            <field name='string_changed' accessType='outputOnly' appinfo='latest strategy card value' documentation='' type='MFString' value=''/>
+            <field name='textToSpeechUrl' accessType='outputOnly' appinfo='url to invoke Google Translate' documentation='' type='MFString' value=''/>
+            <field name='newCardTime' accessType='outputOnly' appinfo='activate Sound node' documentation='' type='SFTime' value=''/>
+            <field name='selectPreviousCard' accessType='inputOnly' appinfo='' documentation='' type='SFBool' value=''/>
+            <field name='selectNextCard' accessType='inputOnly' appinfo='' documentation='' type='SFBool' value=''/>
+            <field name='selectRandomCard' accessType='inputOnly' appinfo='' documentation='' type='SFBool' value=''/>
+            <field name='traceEnabled' accessType='initializeOnly' appinfo='controls console tracing' documentation='' type='SFBool' value='true'/>
+            <!-- initialize() method includes unit test to printAllStrategies() to console -->
+            <!-- TODO insert field definitions here (index string_changed previous next random) and then animate! -->
+        </Script>
+        <Transform DEF='CardTransform' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='0.4 0.4 0.4' scaleOrientation='0 0 1 0' translation='0 -1.5 0' class=''>
+            <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                <Appearance class=''>
+                    <Material ambientIntensity='0.2' diffuseColor='1 1 1' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0' class=''/>
+                </Appearance>
+                <Text DEF='CardText' length='' maxExtent='0.0' solid='false' string='' class=''>
+                    <FontStyle family='"SANS"' horizontal='true' justify='"MIDDLE" "MIDDLE"' language='' leftToRight='true' size='1.0' spacing='1.0' style='BOLD' topToBottom='true' class=''/>
+                </Text>
+            </Shape>
+            <ROUTE fromField='string_changed' fromNode='TextScript' toField='string' toNode='CardText'/>
+            <Sound DEF='CardSoundSpatialization' direction='0 0 1' intensity='1.0' location='0 0 0' maxBack='100.0' maxFront='100.0' minBack='20.0' minFront='20.0' priority='0.0' spatialize='true' class=''>
+                <AudioClip DEF='TextToSpeechAudioClip' description='sends strategy text google translate' loop='false' pauseTime='0.0' pitch='1.0' resumeTime='0.0' startTime='0.0' stopTime='0.0' url='"http://translate.google.com/translate_tts?tl=en&amp;q=Feed%20the%20recording%20back%20out%20of%20the%20medium" "translate_tts_mp3FileFormatNotSupported.wav"' class=''/>
+                <!-- Make sure the sound source AudioClip is audible at the user location -->
+                <!-- Not all X3D players seem to use the .mp3 -->
+                <!-- &#38; is ampersand character, avoids escaping problems and inconsistencies in browsers and X3D players -->
+                <!-- %20 is space character used in uri/url encoding -->
+            </Sound>
+            <ROUTE fromField='textToSpeechUrl' fromNode='TextScript' toField='url' toNode='TextToSpeechAudioClip'/>
+            <ROUTE fromField='newCardTime' fromNode='TextScript' toField='startTime' toNode='TextToSpeechAudioClip'/>
+        </Transform>
+        <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='0.4 0.4 0.4' scaleOrientation='0 0 1 0' translation='-3.2 2.5 0' class=''>
+            <TouchSensor DEF='PreviousTextClickedSensor' description='Select to see previous strategy' enabled='true' class=''/>
+            <ROUTE fromField='isActive' fromNode='PreviousTextClickedSensor' toField='selectPreviousCard' toNode='TextScript'/>
+            <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                <Appearance DEF='InterfaceAppearance' class=''>
+                    <Material ambientIntensity='0.2' diffuseColor='1 0 0.6' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0' class=''/>
+                </Appearance>
+                <Text length='' maxExtent='0.0' solid='false' string='"previous"' class=''>
+                    <FontStyle USE='MessageFont'/>
+                </Text>
+            </Shape>
+            <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='2 0.6 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
+                <Shape DEF='TransparentClickSurface' bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                    <Appearance class=''>
+                        <Material ambientIntensity='0.2' diffuseColor='0.8 0.8 0.8' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='1.0' class=''/>
+                    </Appearance>
+                    <IndexedFaceSet ccw='true' colorIndex='' colorPerVertex='true' convex='true' coordIndex='0 1 2 3 -1' creaseAngle='0.0' normalIndex='' normalPerVertex='true' solid='false' texCoordIndex='' class=''>
+                        <Coordinate point='1 1 0 1 -1 0 -1 -1 0 -1 1 0' class=''/>
+                    </IndexedFaceSet>
+                    <!-- support Selectable Text with a scalable IFS -->
+                </Shape>
+            </Transform>
+        </Transform>
+        <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='0.4 0.4 0.4' scaleOrientation='0 0 1 0' translation='3.5 2.5 0' class=''>
+            <TouchSensor DEF='NextTextClickedSensor' description='Select to see next strategy' enabled='true' class=''/>
+            <ROUTE fromField='isActive' fromNode='NextTextClickedSensor' toField='selectNextCard' toNode='TextScript'/>
+            <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                <Appearance USE='InterfaceAppearance'/>
+                <Text length='' maxExtent='0.0' solid='false' string='"next"' class=''>
+                    <FontStyle USE='MessageFont'/>
+                </Text>
+            </Shape>
+            <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1.2 0.6 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
+                <Shape USE='TransparentClickSurface'/>
+            </Transform>
+        </Transform>
+        <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='0.4 0.4 0.4' scaleOrientation='0 0 1 0' translation='-3.3 -0.5 0' class=''>
+            <TouchSensor USE='RandomTextClickedSensor'/>
+            <ROUTE fromField='isActive' fromNode='RandomTextClickedSensor' toField='selectRandomCard' toNode='TextScript'/>
+            <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                <Appearance USE='InterfaceAppearance'/>
+                <Text length='' maxExtent='0.0' solid='false' string='"random"' class=''>
+                    <FontStyle USE='MessageFont'/>
+                </Text>
+            </Shape>
+            <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1.8 0.6 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
+                <Shape USE='TransparentClickSurface'/>
+            </Transform>
+        </Transform>
+        <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='0.4 0.4 0.4' scaleOrientation='0 0 1 0' translation='3.3 -0.5 0' class=''>
+            <Anchor DEF='TextToSpeechAnchor' bboxCenter='0 0 0' bboxSize='-1 -1 -1' description='text to speech in browser' parameter='"target=_blank"' url='"http://translate.google.com/translate_tts?tl=en&amp;q=Overtly%20resist%20change"' class=''>
+                <ROUTE fromField='textToSpeechUrl' fromNode='TextScript' toField='url' toNode='TextToSpeechAnchor'/>
+                <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                    <Appearance USE='InterfaceAppearance'/>
+                    <Text length='' maxExtent='0.0' solid='false' string='"speech"' class=''>
+                        <FontStyle USE='MessageFont'/>
+                    </Text>
+                </Shape>
+                <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' rotation='0 0 1 0' scale='1.8 0.6 1' scaleOrientation='0 0 1 0' translation='0 0 0' class=''>
+                    <Shape USE='TransparentClickSurface'/>
+                </Transform>
+            </Anchor>
+        </Transform>
+    </Scene>
+</X3D>

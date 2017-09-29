@@ -4,6 +4,8 @@
     <head>
         <component name='EnvironmentalEffects' level='1'/>
         <component name='EnvironmentalEffects' level='3'/>
+        <component name='Shaders' level='1'/>
+        <component name='CubeMapTexturing' level='1'/>
         <meta name='title' content='ball.x3d'/>
         <meta name='creator' content='John Carlson'/>
         <meta name='generator' content='manual'/>

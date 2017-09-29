@@ -11,13 +11,7 @@
         <meta name='reference' content='http://www.web3d.org/specifications/java/X3DJSAIL.html'/>
         <meta name='generator' content='HelloWorldProgramOutput.java'/>
         <meta name='created' content='6 September 2016'/>
-<<<<<<< .mine
-        <meta name='modified' content='1 September 2017'/>
-||||||| .r25445
-        <meta name='modified' content='31 August 2017'/>
-=======
-        <meta name='modified' content='3 September 2017'/>
->>>>>>> .r25463
+        <meta name='modified' content='24 September 2017'/>
         <meta name='generator' content='X3D Java Scene Access Interface Library (X3DJSAIL)'/>
         <meta name='generator' content='http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java'/>
         <meta name='generator' content='Netbeans http://www.netbeans.org'/>
@@ -271,5 +265,11 @@ function clockTrigger (timeValue)
             <!-- Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d -->
             <!-- Expected containerField='source', allowed containerField values="texture" "source" "back" "bottom" "front" "left" "right" "top" "backTexture" "bottomTexture" "frontTexture" "leftTexture" "rightTexture" "topTexture" -->
         </Sound>
+        <!-- Test success:  AnchorObject.isNode()=true,              siteAnchor.isNode()=true -->
+        <!-- Test success:  AnchorObject.isStatement()=false,        siteAnchor.isStatement()=false -->
+        <!-- Test success:   ROUTEObject.isNode()=false,     orbitPositionROUTE.isNode()=false -->
+        <!-- Test success:   ROUTEObject.isStatement()=true, orbitPositionROUTE.isStatement()=true -->
+        <!-- Test success: CommentsBlock.isNode()=false,           testComments.isNode()=false -->
+        <!-- Test success: CommentsBlock.isStatement()=false,      testComments.isStatement()=false -->
     </Scene>
 </X3D>

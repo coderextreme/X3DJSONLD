@@ -80,8 +80,11 @@ POSSIBILITY OF SUCH DAMAGE.
     <property name="json-schema-validator.jar"     value="lib/json-schema-validator-2.2.6-lib.jar"/>
 
     <!-- http://stackoverflow.com/questions/919692/how-to-execute-xslt-2-0-with-ant -->
-    <property name="saxon.dir"        location="../tools/jar" description="relative path from stylesheets directory"/>
+    <property name="saxon.dir"        location="java/lib" description="relative path from stylesheets directory"/>
     <property name="saxon.jar"           value="saxon9he.jar"/>
+
+    <!-- ant jar manifest properties -->
+    <property name="user.name"                value="Don Brutzman, brutzman@nps.edu"/>
 
     <target name="get.saxon" description="get saxon.jar if not checked out" depends="get.saxon.check" unless="saxon.found"> 
         <echo message="get saxon.jar if not checked out"/>
@@ -109,7 +112,7 @@ POSSIBILITY OF SUCH DAMAGE.
     </target>
 
     <target name="build" 
-         depends="validate,compile.stylesheets,BuildX3dObjectModel.saxon,BuildSpecificationXmlEncodingFromSchema.saxon,BuildSpecificationVrmlEncodingFromSchema.saxon,BuildSpecificationLanguageBindingJava.saxon,test,zip.X3dToXhtmlStylesheetExamples"
+         depends="validate,BuildX3dUnifiedObjectModel.saxon,BuildSpecificationXmlEncodingFromSchema.saxon,BuildSpecificationVrmlEncodingFromSchema.saxon,BuildSpecificationLanguageBindingJava.saxon,test,zip.X3dToXhtmlStylesheetExamples"
      description="compile and test XSLT stylesheets">
     </target>
 
@@ -410,7 +413,25 @@ and
 		<echo message="preparing .jar files"/>
         <mkdir dir="${java.jars.dir}"/>
 		<echo message="${jsai.classes.archive.jar.name} contains only compiled .class files"/>
-		<jar destfile="${jsai.classes.archive.jar.name}">
+	<jar destfile="${jsai.classes.archive.jar.name}">
+            <manifest id="JarManifestClasses">
+              <!-- If this is an Applet or Web Start application, include
+                   the proper attributes from http://docs.oracle.com/javase/7/docs/technotes/guides/jweb/index.html
+              <attribute name="Permissions" value="sandbox"/>
+              <attribute name="Codebase" value="example.com"/> -->
+              <!-- Who is building this jar? -->
+              <attribute name="Built-By" value="${user.name}"/>
+              <!-- Information about the program itself -->
+              <attribute name="Implementation-Vendor" value="Web3D Consortium http://www.web3D.org"/>
+              <attribute name="Implementation-Title" value="X3DJSAIL"/>
+              <attribute name="Implementation-Version" value="1.0"/>
+              <attribute name="Sealed" value="true"/>
+              <attribute name="Main-Class" value="org.web3d.x3d.jsail.CommandLine"/>
+              <attribute name="Class-Path" value="saxon9he.jar"/>
+              <!-- details
+              <section name="common/MyClass.class">
+              </section> -->
+            </manifest>
             <fileset dir="${java.dir}">
                 <include name="*.txt"/>
                 <include name="*.html"/>
@@ -421,20 +442,40 @@ and
                 <exclude name="jars"/>
                 <exclude name="jars/*.jar"/>
             </fileset>
-			<!-- jars -->
+			<!-- jars
             <fileset dir="${java.jars.dir}">
                 <include name="*.jar"/>
-            </fileset>
+            </fileset> -->
 			<!-- lib, stylesheets -->
             <fileset dir="${java.lib.dir}">
                 <include name="**/*"/>
                 <include name="**/*.xslt"/>
+                <include name="**/saxon9he.jar"/>
             </fileset>
         </jar>
 		
-		<echo message="${jsai.full.archive.jar.name} contains all compiled .class files, all source .java files, and javadoc documentation"/>
-		<jar destfile="${jsai.full.archive.jar.name}">
-			<!-- everything -->
+        <echo message="${jsai.full.archive.jar.name} contains all compiled .class files, all source .java files, and javadoc documentation"/>
+        <jar destfile="${jsai.full.archive.jar.name}">
+            <manifest id="JarManifestFull">
+              <!-- If this is an Applet or Web Start application, include
+                   the proper attributes from http://docs.oracle.com/javase/7/docs/technotes/guides/jweb/index.html
+              <attribute name="Permissions" value="sandbox"/>
+              <attribute name="Codebase" value="example.com"/> -->
+              <!-- Who is building this jar? -->
+              <attribute name="Built-By" value="${user.name}"/>
+              <!-- Information about the program itself -->
+              <attribute name="Implementation-Vendor" value="Web3D Consortium http://www.web3D.org"/>
+              <attribute name="Implementation-Title" value="X3DJSAIL"/>
+              <attribute name="Implementation-Version" value="1.0"/>
+              <attribute name="Sealed" value="true"/>
+              <attribute name="Main-Class" value="org.web3d.x3d.jsail.CommandLine"/>
+              <attribute name="Class-Path" value="saxon9he.jar"/>
+              <!-- details
+              <section name="common/MyClass.class">
+                <attribute name="Sealed" value="false"/>
+              </section> -->
+            </manifest>
+            <!-- everything -->
             <fileset dir="${java.dir}">
                 <include name="*.txt"/>
                 <include name="*.html"/>
@@ -445,14 +486,15 @@ and
                 <exclude name="jars"/>
                 <exclude name="jars/*.jar"/>
             </fileset>
-			<!-- jars -->
+			<!-- jars
             <fileset dir="${java.jars.dir}">
                 <include name="*.jar"/>
-            </fileset>
+            </fileset> -->
 			<!-- lib, stylesheets -->
             <fileset dir="${java.lib.dir}">
                 <include name="**/*"/>
                 <include name="**/*.xslt"/>
+                <include name="**/saxon9he.jar"/>
             </fileset>
 			<!-- additions -->
             <fileset dir="${java.dir}">
@@ -541,7 +583,7 @@ and
         <!-- TODO implementation-independent approach to browser viewing, if possible.  other Ant approachs have to be customized for each OS -->
     </target>
 
-    <target name="BuildX3dObjectModel.saxon" depends="" description="Build  X3D object model files in XML format, planned for use in API autogeneration">
+    <target name="BuildX3dUnifiedObjectModel.saxon" depends="" description="Build  X3D object model files in XML format, planned for use in API autogeneration">
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
             <arg value="-t"/>  <!-- timing information -->
             <arg value="-warnings:recover"/> <!-- recover after writing a warning message -->
@@ -561,6 +603,7 @@ and
             <arg value="-s:${X3dDtdsSchemas.dir}/${X3dSchemaSource}"/> <!-- source-doc -->
             <arg value="-xsl:BuildSpecificationXmlEncodingFromSchema.xslt"/> <!-- style-doc -->
         </java>
+        <echo message="Output includes AllX3dElementsAttributes3.3.xml"/>
         <echo message="Remove extraneous namespace attributes from result files:"/>
         <replace file="EncodingOfNodes.html" token=' xmlns:fn="http://www.w3.org/2005/xpath-functions"'    value=""  summary="true"/>
         <replace file="EncodingOfStatements.html" token=' xmlns:fn="http://www.w3.org/2005/xpath-functions"'    value=""  summary="true"/>
@@ -654,14 +697,14 @@ and
         -->
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
             <arg value="-t"/>  <!-- timing information -->
-            <arg value="-w:recover"/> <!-- recover after writing a warning message -->
+            <arg value="-warnings:recover"/> <!-- recover after writing a warning message -->
             <arg value="-o:X3dElementsAttributesLowerCaseTable.txt"/> <!-- output-doc -->
             <arg value="-s:${X3dDtdsSchemas.dir}/${X3dSchemaSource}"/> <!-- source-doc -->
             <arg value="-xsl:X3dElementsAttributesLowerCaseTableConstruction.xslt"/> <!-- style-doc -->
         </java>
      </target>
 
-    <target name="clean" depends="clean.results,clean.stylesheets" description="clean all" >
+    <target name="clean" depends="clean.results" description="clean all" >
      </target>
 
     <target name="clean.results" description="Remove autogenerated files, directory" >
@@ -681,137 +724,6 @@ and
 			<fileset dir="${java.jars.dir}/*.jar"/>
 		</delete>
      </target>
-
-    <target name="clean.stylesheets" description="remove compiled stylesheets" >
-        <echo>delete compiled *.sxx stylesheets</echo>
-        <delete file="X3dToJson.sxx" verbose="true"/>
-        <delete file="X3dToVrml97.sxx" verbose="true"/>
-        <delete file="X3dToX3dom.sxx" verbose="true"/>
-        <delete file="X3dToXhtml.sxx" verbose="true"/>
-        <delete file="X3dToX3dvClassicVrmlEncoding.sxx" verbose="true"/>
-    </target>
-    
-    <target name="compile.stylesheets" depends="validate" description="compile stylesheets using Saxon" >
-        <!-- http://www.saxonica.com/documentation/using-xsl/compiling.html -->
-        <if>
-            <outofdate>
-                <sourcefiles>
-                    <fileset file="X3dToXhtml.xslt"/>
-                </sourcefiles>
-                <mapper dir="." type="glob" from="*.xslt" to="*.sxx"/>
-            </outofdate>
-            <then>
-                <echo>Compiling X3dToXhtml.xslt as X3dToXhtml.sxx ...</echo>
-                <java classname="net.sf.saxon.Compile" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
-                    <arg value="-t"/>
-                    <arg value="X3dToXhtml.xslt"/>
-                    <arg value="X3dToXhtml.sxx"/>
-                </java>
-            </then>
-            <else>
-                <echo message="Compiled stylesheet X3dToXhtml.sxx up to date"/>
-            </else>
-        </if>
-        <if>
-            <outofdate>
-                <sourcefiles>
-                    <fileset file="X3dToVrml97.xslt"/>
-                </sourcefiles>
-                <mapper dir="." type="glob" from="*.xslt" to="*.sxx"/>
-            </outofdate>
-            <then>
-                <echo>Compiling X3dToVrml97.xslt as X3dToVrml97.sxx ...</echo>
-                <java classname="net.sf.saxon.Compile" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
-                    <arg value="-t"/>
-                    <arg value="X3dToVrml97.xslt"/>
-                    <arg value="X3dToVrml97.sxx"/>
-                </java>
-            </then>
-            <else>
-                <echo message="Compiled stylesheet X3dToVrml97.sxx up to date"/>
-            </else>
-        </if>
-        <if>
-            <outofdate>
-                <sourcefiles>
-                    <fileset file="X3dToX3dvClassicVrmlEncoding.xslt"/>
-                </sourcefiles>
-                <mapper dir="." type="glob" from="*.xslt" to="*.sxx"/>
-            </outofdate>
-            <then>
-                <echo>Compiling X3dToX3dvClassicVrmlEncoding.xslt as X3dToX3dvClassicVrmlEncoding.sxx ...</echo>
-                <java classname="net.sf.saxon.Compile" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
-                    <arg value="-t"/>
-                    <arg value="X3dToX3dvClassicVrmlEncoding.xslt"/>
-                    <arg value="X3dToX3dvClassicVrmlEncoding.sxx"/>
-                </java>
-            </then>
-            <else>
-                <echo message="Compiled stylesheet X3dToX3dvClassicVrmlEncoding.sxx up to date"/>
-            </else>
-        </if>
-        <if>
-            <outofdate>
-                <sourcefiles>
-                    <fileset file="X3dToX3dom.xslt"/>
-                </sourcefiles>
-                <mapper dir="." type="glob" from="*.xslt" to="*.sxx"/>
-            </outofdate>
-            <then>
-                <echo>Compiling X3dToX3dom.xslt as X3dToX3dom.sxx ...</echo>
-                <java classname="net.sf.saxon.Compile" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
-                    <arg value="-t"/>
-                    <arg value="X3dToX3dom.xslt"/>
-                    <arg value="X3dToX3dom.sxx"/>
-                </java>
-            </then>
-            <else>
-                <echo message="Compiled stylesheet X3dToX3dom.sxx up to date"/>
-            </else>
-        </if>
-        <if>
-            <outofdate>
-                <sourcefiles>
-                    <fileset file="X3dToJson.xslt"/>
-                </sourcefiles>
-                <mapper dir="." type="glob" from="*.xslt" to="*.sxx"/>
-            </outofdate>
-            <then>
-                <echo>Compiling X3dToJson.xslt as X3dToJson.sxx ...</echo>
-                <java classname="net.sf.saxon.Compile" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
-                    <arg value="-t"/>
-                    <arg value="X3dToJson.xslt"/>
-                    <arg value="X3dToJson.sxx"/>
-                </java>
-            </then>
-            <else>
-                <echo message="Compiled stylesheet X3dToJson.sxx up to date"/>
-            </else>
-        </if>
-        <if>
-            <outofdate>
-                <sourcefiles>
-                    <fileset file="X3dToJava.xslt"/>
-                </sourcefiles>
-                <mapper dir="." type="glob" from="*.xslt" to="*.sxx"/>
-            </outofdate>
-            <then>
-                <echo>Compiling X3dToJava.xslt as X3dToJava.sxx ...</echo>
-                <java classname="net.sf.saxon.Compile" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
-                    <arg value="-t"/>
-                    <arg value="X3dToJava.xslt"/>
-                    <arg value="X3dToJava.sxx"/>
-                </java>
-            </then>
-            <else>
-                <echo message="Compiled stylesheet X3dToJava.sxx up to date"/>
-            </else>
-        </if>
-        <!-- copy results -->
-        <copy todir="../content/" verbose="true">
-            <fileset dir="." includes="*.sxx"/>
-        </copy>
-    </target>
     
     <target name="test"
         depends="test.X3dToVrml97.saxon,test.X3dToX3dvClassicVrmlEncoding.saxon,test.X3dToXhtml.saxon" description="Perform stylesheet test tasks" >
@@ -840,7 +752,7 @@ and
     <target name="test.X3dToXhtml.saxon" depends="test.mkdir" description="Test X3dToXhtml.xslt stylesheet using saxon" >
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
             <arg value="-t"/>  <!-- timing information -->
-            <arg value="-w:recover"/> <!-- recover after writing a warning message -->
+            <arg value="-warnings:recover"/> <!-- recover after writing a warning message -->
             <arg value="-o:test/HelloWorld.saxon.html"/> <!-- output-doc -->
             <arg value="-s:test/HelloWorld.x3d"/> <!-- source-doc -->
             <arg value="-xsl:X3dToXhtml.xslt"/> <!-- style-doc -->
@@ -851,7 +763,7 @@ and
     <target name="test.X3dToVrml97.saxon" depends="test.mkdir" description="Test X3dToVrml97.xslt stylesheet using saxon" >
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
             <arg value="-t"/>  <!-- timing information -->
-            <arg value="-w:recover"/> <!-- recover after writing a warning message -->
+            <arg value="-warnings:recover"/> <!-- recover after writing a warning message -->
             <arg value="-o:test/HelloWorld.saxon.wrl"/> <!-- output-doc -->
             <arg value="-s:${examples.dir}/HelloWorld.x3d"/> <!-- source-doc -->
             <arg value="-xsl:X3dToVrml97.xslt"/> <!-- style-doc -->
@@ -862,7 +774,7 @@ and
     <target name="test.X3dToX3dvClassicVrmlEncoding.saxon" depends="test.mkdir" description="Test X3dToX3dvClassicVrmlEncoding.xslt stylesheet using saxon" >
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
             <arg value="-t"/>  <!-- timing information -->
-            <arg value="-w:recover"/> <!-- recover after writing a warning message -->
+            <arg value="-warnings:recover"/> <!-- recover after writing a warning message -->
             <arg value="-o:test/HelloWorld.saxon.x3dv"/> <!-- output-doc -->
             <arg value="-s:${examples.dir}/HelloWorld.x3d"/> <!-- source-doc -->
             <arg value="-xsl:X3dToX3dvClassicVrmlEncoding.xslt"/> <!-- style-doc -->
@@ -877,7 +789,7 @@ and
     <target name="test.X3dHAnimHumanoidReport" depends="test.mkdir" description="Test X3dToXhtml.xslt stylesheet using saxon" >
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
             <arg value="-t"/>  <!-- timing information -->
-            <arg value="-w:recover"/> <!-- recover after writing a warning message -->
+            <arg value="-warnings:recover"/> <!-- recover after writing a warning message -->
             <arg value="-o:test/HAnimSpecificationLOA3Invisible.xslt.html"/> <!-- output-doc -->
             <arg value="-s:${examples.dir}/Basic/HumanoidAnimation/HAnimSpecificationLOA3Invisible.x3d"/> <!-- source-doc -->
             <arg value="-xsl:X3dToXhtml.xslt"/> <!-- style-doc -->
@@ -886,7 +798,7 @@ and
         
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
             <arg value="-t"/>  <!-- timing information -->
-            <arg value="-w:recover"/> <!-- recover after writing a warning message -->
+            <arg value="-warnings:recover"/> <!-- recover after writing a warning message -->
             <arg value="-o:test/BoxMan.xslt.html"/> <!-- output-doc -->
             <arg value="-s:${examples.dir}/Basic/HumanoidAnimation/BoxMan.x3d"/> <!-- source-doc -->
             <arg value="-xsl:X3dToXhtml.xslt"/> <!-- style-doc -->
@@ -927,29 +839,78 @@ and
         <echo message="validate test/ExtrusionHeart.svg:"/>
         <xmlvalidate failonerror="true" warn="true" lenient="true" file="test/ExtrusionHeart.svg"/>
     </target>
-    
-    <target name="test.X3dToJson.CobwebExamples.xslt" depends="test.mkdir" description="Test X3dToJson.xslt stylesheet using default Ant xslt task" >
-        <echo message="====================================="/>
-        <echo message="translation input: test/BadJsonFromCobweb/Examples/Appartment/index.x3d"/>
-        <echo message="..expected output: test/BadJsonFromCobweb/Examples/Appartment/index.fixed.json"/>
+	
+    <macrodef name="JsonConversion" description="Invoke XSLT transformation on passed scene using passed stylesheet">
+        <attribute name="pathScene"/>
+		<sequential>
+			<echo message="translation input: @{pathScene}.x3d"/>
+			<echo message="..expected output: @{pathScene}.fixed.json"/>
+			<java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
+				<!-- <arg value="-t"/>  timing information -->
+				<arg value="-warnings:recover"/> <!-- recover after writing a warning message -->
+				<arg value="-expand:on"/>  <!-- force insertion of default attribute values found in DTD -->
+				<arg value="-o:@{pathScene}.fixed.json"/> <!-- output-doc -->
+				<arg value="-s:@{pathScene}.x3d"/>  <!-- source-doc -->
+				<arg value="-xsl:X3dToJson.xslt"/> <!-- style-doc -->
+			</java>
+			<echo>..error checking with jslint</echo>
+			<java classname="com.googlecode.jslint4java.cli.Main" classpath="${jslint.jar}" fork="${fork}">
+				<arg value="@{pathScene}.fixed.json"/>
+			</java>
+			<echo>..error checking with json-schema-validator</echo>
+			<java jar="${json-schema-validator.jar}" fork="${fork}">
+				<arg value="../../specifications/x3d-3.3-JSONSchema.json"/>
+				<arg value="@{pathScene}.fixed.json"/>
+			</java>
+			<echo message="====================================="/>
+		</sequential>
+	</macrodef>
+
+   <target name="test.text" depends="test.mkdir" description="Test X3dToJson.xslt stylesheet using default Ant xslt task" >
+		<echo message="====================================="/>
+        <echo message="translation input: test/text.x3d"/>
+        <echo message="..expected output: test/text.json"/>
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
             <!-- <arg value="-t"/>  timing information -->
             <arg value="-warnings:recover"/> <!-- recover after writing a warning message -->
             <arg value="-expand:on"/>  <!-- force insertion of default attribute values found in DTD -->
-            <arg value="-o:test/BadJsonFromCobweb/Examples/Appartment/index.fixed.json"/> <!-- output-doc -->
-            <arg value="-s:test/BadJsonFromCobweb/Examples/Appartment/index.x3d"/>  <!-- source-doc -->
+            <arg value="-o:test/text.json"/> <!-- output-doc -->
+            <arg value="-s:test/text.x3d"/>  <!-- source-doc -->
             <arg value="-xsl:X3dToJson.xslt"/> <!-- style-doc -->
         </java>
         <echo>..error checking with jslint</echo>
         <java classname="com.googlecode.jslint4java.cli.Main" classpath="${jslint.jar}" fork="${fork}">
-            <arg value="test/BadJsonFromCobweb/Examples/Appartment/index.fixed.json"/>
+            <arg value="test/HelloWorld.json"/>
         </java>
         <echo>..error checking with json-schema-validator</echo>
         <java jar="${json-schema-validator.jar}" fork="${fork}">
             <arg value="../../specifications/x3d-3.3-JSONSchema.json"/>
-            <arg value="test/BadJsonFromCobweb/Examples/Appartment/index.fixed.json"/>
+            <arg value="test/HelloWorld.json"/>
         </java>
-        <echo message="====================================="/>
+    </target>
+    
+    <target name="test.X3dToJson.CobwebExamples.xslt" depends="test.mkdir" description="Test X3dToJson.xslt stylesheet using default Ant xslt task" >
+		
+		<JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/ICTS/stage/index__2"/>
+        <JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/Appartment/index"/>
+		<JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/BIC/index"/>
+		<JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/BIC/building"/>
+		<JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/BIC/buero"/>
+		<JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/Chomp/canyonv"/>
+		<JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/DLMF/21.4.F1a"/>
+		<JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/DLMF/5.3.F4"/>
+		<JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/DLMF/6.3.F3"/>
+		<JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/Dolphin/index"/>
+		<JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/ICTS/stage/index__4"/>
+		<JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/ICTS/stage/index__5"/>
+		<JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/ICTS/stage/level1"/>
+		<JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/Pong/index"/>
+		<JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/Schacht/index"/>
+		<JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/Terrain/index"/>
+		<JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/TikiWorld/index"/>
+		<JsonConversion  pathScene="test/BadJsonFromCobweb/Examples/Vattenfall/index"/>
+		<!--
+		-->
     </target>
     
     <target name="test.X3dToJson.xslt" depends="test.mkdir" description="Test X3dToJson.xslt stylesheet using default Ant xslt task" >
@@ -1323,7 +1284,7 @@ and
             <fileset dir=".">
                 <include name="*.xml"/>
                 <include name="*.xslt"/>
-                <include name="*.sxx"/><!-- .sxx is saxon-compiled stylesheet -->
+            <!--<include name="*.sxx"/> .sxx is saxon-compiled stylesheet, no longer used -->
                 <include name="*.bat"/>
                 <include name="*.html"/>
                 <include name="*.gif"/>
