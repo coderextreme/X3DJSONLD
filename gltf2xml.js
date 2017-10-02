@@ -10,12 +10,16 @@ process.argv.shift();
 process.argv.shift();
 
 for (arg in process.argv) {
-	argv = process.argv[arg];
-	var string = fs.readFileSync(argv).toString();
-	var json = JSON.parse(string);
-	var element = writeAsXml(document.documentElement, "gltf", json);
-	document.documentElement.appendChild(element);
-	console.log(serializeDOM(json, document));
+	try {
+		argv = process.argv[arg];
+		var string = fs.readFileSync(argv).toString();
+		var json = JSON.parse(string);
+		var element = writeAsXml(document.documentElement, "gltf", json);
+		document.documentElement.appendChild(element);
+		console.log(serializeDOM(json, document));
+	} catch (e) {
+		console.error(e);
+	}
 }
 
 function serializeDOM(json, element) {
@@ -49,9 +53,13 @@ function writeAsXml(parent, j, json) {
 					var child = document.createTextNode(json[js]+"\n");
 					element.appendChild(child);
 				} else if (k.startsWith("@")) {
-					element.setAttribute(k.substr(1), json.join(","));
+					if (typeof json[js] === 'string') {
+						element.setAttribute(k.substr(1), '"'+json.join('" "').replace(/\\/g, "\\\\")+'"');
+					} else {
+						element.setAttribute(k.substr(1), json.join(" "));
+					}
 				} else {
-					element.setAttribute(k, json.join(","));
+					element.setAttribute(k, json.join(" "));
 				}
 			} else {
 				var child = writeAsXml(element, k, json[js]);
