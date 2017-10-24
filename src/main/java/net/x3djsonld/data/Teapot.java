@@ -235,11 +235,11 @@ public class Teapot
      */
     public static void main(String argv[])
     {
-		X3DObject exampleObject = new Teapot().getX3dModel();
-		
-		exampleObject.handleArguments(argv);
-		System.out.print("Teapot self-validation test results: ");
-		String validationResults = exampleObject.validationReport();
-		System.out.println(validationResults);
-	}
+        X3DObject exampleObject = new Teapot().getX3dModel();
+
+        exampleObject.handleArguments(argv);
+        System.out.print("Teapot self-validation test results: ");
+        String validationResults = exampleObject.validationReport();
+        System.out.println(validationResults);
+    }
 }

@@ -103,11 +103,11 @@ public class ifscubeworks
      */
     public static void main(String argv[])
     {
-		X3DObject exampleObject = new ifscubeworks().getX3dModel();
-		
-		exampleObject.handleArguments(argv);
-		System.out.print("ifscubeworks self-validation test results: ");
-		String validationResults = exampleObject.validationReport();
-		System.out.println(validationResults);
-	}
+        X3DObject exampleObject = new ifscubeworks().getX3dModel();
+
+        exampleObject.handleArguments(argv);
+        System.out.print("ifscubeworks self-validation test results: ");
+        String validationResults = exampleObject.validationReport();
+        System.out.println(validationResults);
+    }
 }

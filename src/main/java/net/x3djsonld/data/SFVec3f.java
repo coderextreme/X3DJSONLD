@@ -143,11 +143,11 @@ public class SFVec3f
      */
     public static void main(String argv[])
     {
-		X3DObject exampleObject = new SFVec3f().getX3dModel();
-		
-		exampleObject.handleArguments(argv);
-		System.out.print("SFVec3f self-validation test results: ");
-		String validationResults = exampleObject.validationReport();
-		System.out.println(validationResults);
-	}
+        X3DObject exampleObject = new SFVec3f().getX3dModel();
+
+        exampleObject.handleArguments(argv);
+        System.out.print("SFVec3f self-validation test results: ");
+        String validationResults = exampleObject.validationReport();
+        System.out.println(validationResults);
+    }
 }

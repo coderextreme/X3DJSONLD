@@ -159,11 +159,11 @@ public class CoordinateAxes
      */
     public static void main(String argv[])
     {
-		X3DObject exampleObject = new CoordinateAxes().getX3dModel();
-		
-		exampleObject.handleArguments(argv);
-		System.out.print("CoordinateAxes self-validation test results: ");
-		String validationResults = exampleObject.validationReport();
-		System.out.println(validationResults);
-	}
+        X3DObject exampleObject = new CoordinateAxes().getX3dModel();
+
+        exampleObject.handleArguments(argv);
+        System.out.print("CoordinateAxes self-validation test results: ");
+        String validationResults = exampleObject.validationReport();
+        System.out.println(validationResults);
+    }
 }

@@ -151,11 +151,11 @@ public class rubik
      */
     public static void main(String argv[])
     {
-		X3DObject exampleObject = new rubik().getX3dModel();
-		
-		exampleObject.handleArguments(argv);
-		System.out.print("rubik self-validation test results: ");
-		String validationResults = exampleObject.validationReport();
-		System.out.println(validationResults);
-	}
+        X3DObject exampleObject = new rubik().getX3dModel();
+
+        exampleObject.handleArguments(argv);
+        System.out.print("rubik self-validation test results: ");
+        String validationResults = exampleObject.validationReport();
+        System.out.println(validationResults);
+    }
 }

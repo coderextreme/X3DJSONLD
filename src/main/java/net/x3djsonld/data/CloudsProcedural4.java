@@ -535,11 +535,11 @@ public class CloudsProcedural4
      */
     public static void main(String argv[])
     {
-		X3DObject exampleObject = new CloudsProcedural4().getX3dModel();
-		
-		exampleObject.handleArguments(argv);
-		System.out.print("CloudsProcedural4 self-validation test results: ");
-		String validationResults = exampleObject.validationReport();
-		System.out.println(validationResults);
-	}
+        X3DObject exampleObject = new CloudsProcedural4().getX3dModel();
+
+        exampleObject.handleArguments(argv);
+        System.out.print("CloudsProcedural4 self-validation test results: ");
+        String validationResults = exampleObject.validationReport();
+        System.out.println(validationResults);
+    }
 }

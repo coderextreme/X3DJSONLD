@@ -197,11 +197,11 @@ public class X3dHeaderPrototypeSyntaxExamples
      */
     public static void main(String argv[])
     {
-		X3DObject exampleObject = new X3dHeaderPrototypeSyntaxExamples().getX3dModel();
-		
-		exampleObject.handleArguments(argv);
-		System.out.print("X3dHeaderPrototypeSyntaxExamples self-validation test results: ");
-		String validationResults = exampleObject.validationReport();
-		System.out.println(validationResults);
-	}
+        X3DObject exampleObject = new X3dHeaderPrototypeSyntaxExamples().getX3dModel();
+
+        exampleObject.handleArguments(argv);
+        System.out.print("X3dHeaderPrototypeSyntaxExamples self-validation test results: ");
+        String validationResults = exampleObject.validationReport();
+        System.out.println(validationResults);
+    }
 }

@@ -76,6 +76,8 @@ public class bubbles
   .setHead(new headObject()
     .addComponent(new componentObject().setName("EnvironmentalEffects").setLevel(1))
     .addComponent(new componentObject().setName("EnvironmentalEffects").setLevel(3))
+    .addComponent(new componentObject().setName("Shaders").setLevel(1))
+    .addComponent(new componentObject().setName("CubeMapTexturing").setLevel(1))
     .addMeta(new metaObject().setName("title").setContent("bubbles.x3d"))
     .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
     .addMeta(new metaObject().setName("generator").setContent("manual"))
@@ -175,11 +177,11 @@ public class bubbles
      */
     public static void main(String argv[])
     {
-		X3DObject exampleObject = new bubbles().getX3dModel();
-		
-		exampleObject.handleArguments(argv);
-		System.out.print("bubbles self-validation test results: ");
-		String validationResults = exampleObject.validationReport();
-		System.out.println(validationResults);
-	}
+        X3DObject exampleObject = new bubbles().getX3dModel();
+
+        exampleObject.handleArguments(argv);
+        System.out.print("bubbles self-validation test results: ");
+        String validationResults = exampleObject.validationReport();
+        System.out.println(validationResults);
+    }
 }
