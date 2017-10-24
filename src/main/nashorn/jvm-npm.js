@@ -86,6 +86,9 @@ module = (typeof module === 'undefined') ? {} : module;
         if (native_) return native_;
       }
       System.err.println('Cannot find module ' + id);
+      if (id === 'fs') {
+	      return native_;
+      }
       throw new ModuleError('Cannot find module ' + id, 'MODULE_NOT_FOUND');
     }
 
@@ -206,14 +209,25 @@ module = (typeof module === 'undefined') ? {} : module;
       try {
         var body = readFile(file.getCanonicalPath());
         var package_ = JSON.parse(body);
+      } catch (ex) {
+	System.err.println(ex);
+        throw new ModuleError('Cannot load JSON file', 'PARSE_ERROR', ex);
+      }
+      try {
         if (package_.main) {
           return (resolveAsFile(package_.main, base) ||
             resolveAsDirectory(package_.main, base));
         }
+      } catch (ex) {
+	System.err.println(ex);
+        throw new ModuleError('Cannot resolve main in package.json', 'PARSE_ERROR', ex);
+      }
+      try {
         // if no package.main exists, look for index.js
         return resolveAsFile('index.js', base);
       } catch (ex) {
-        throw new ModuleError('Cannot load JSON file', 'PARSE_ERROR', ex);
+	System.err.println(ex);
+        throw new ModuleError('Cannot resolve index.js', 'PARSE_ERROR', ex);
       }
     }
     return resolveAsFile('index.js', base);
@@ -257,12 +271,12 @@ module = (typeof module === 'undefined') ? {} : module;
         var classloader = java.lang.Thread.currentThread().getContextClassLoader();
         input = classloader.getResourceAsStream(filename);
       } else {
-        input = new File(filename);
+	input = new java.io.FileInputStream(filename);
       }
-      // TODO: I think this is not very efficient
-      return new Scanner(input).useDelimiter('\\A').next();
+      return new java.lang.String(input.readAllBytes());
     } catch (e) {
-      throw new ModuleError('Cannot read file [' + input + ']: ', 'IO_ERROR', e);
+      System.err.println(e);
+      throw new ModuleError('Cannot read file [' + filename + ']: ', 'IO_ERROR', e);
     }
   }
 
