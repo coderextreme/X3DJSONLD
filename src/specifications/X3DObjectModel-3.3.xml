@@ -2,7 +2,7 @@
 <!-- X3D Object Model X3DObjectModel-3.3.xml-->
 <!-- Online at http://www.web3d.org/specifications/X3DObjectModel-3.3.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 3.3 of X3D -->
-<!-- Generated 2017-09-09-07:00 15:44:44.928-07:00 -->
+<!-- Generated 2017-10-01-07:00 16:15:02.247-07:00 -->
 <X3DObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                 version="3.3"
                 xsd:noNamespaceSchemaLocation="x3dObjectModel.xsd">
@@ -11616,7 +11616,8 @@
             <field type="SFInt32"
                    accessType="inputOutput"
                    name="activeLayer"
-                   default="0"/>
+                   default="0"
+                   minInclusive="0"/>
             <field type="MFNode"
                    accessType="inputOutput"
                    name="layers"
@@ -11630,7 +11631,8 @@
             <field type="MFInt32"
                    accessType="initializeOnly"
                    name="order"
-                   default="0"/>
+                   default="0"
+                   minInclusive="0"/>
             <field type="SFString"
                    accessType="inputOutput"
                    name="DEF"
@@ -13312,7 +13314,8 @@
             <field type="SFInt32"
                    accessType="inputOutput"
                    name="order"
-                   default="3"/>
+                   default="3"
+                   minInclusive="2"/>
             <field type="SFFloat" accessType="inputOnly" name="set_fraction"/>
             <field type="SFRotation" accessType="outputOnly" name="value_changed"/>
             <field type="MFDouble" accessType="inputOutput" name="weight"/>
@@ -13464,7 +13467,8 @@
             <field type="SFInt32"
                    accessType="inputOutput"
                    name="order"
-                   default="3"/>
+                   default="3"
+                   minInclusive="2"/>
             <field type="SFFloat" accessType="inputOnly" name="set_fraction"/>
             <field type="SFVec3f" accessType="outputOnly" name="value_changed"/>
             <field type="MFDouble" accessType="inputOutput" name="weight"/>
@@ -19999,6 +20003,8 @@
                    accessType="inputOutput"
                    name="level"
                    default="1"
+                   minInclusive="1"
+                   maxInclusive="5"
                    use="required"/>
             <field type="SFString"
                    accessType="inputOutput"
@@ -20404,6 +20410,7 @@
                    accessType="inputOutput"
                    name="conversionFactor"
                    default="1.0"
+                   minExclusive="0"
                    use="required"/>
             <field type="SFString"
                    accessType="inputOutput"
