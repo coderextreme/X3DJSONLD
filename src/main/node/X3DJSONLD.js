@@ -108,7 +108,7 @@ function processURLs(localArray, path) {
 	return localArray;
 }
 
-if (typeof require === 'function') {
+if (typeof require === 'function' && typeof load !== 'function') {
 	var fs = require("fs");
 	var http = require("http");
 	var https = require("https");
