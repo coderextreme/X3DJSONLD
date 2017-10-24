@@ -170,6 +170,10 @@ var ProtoInstance0 = null;
 "			}\n"+
 ""))
             .addChild(new TimeSensorObject().setDEF("TourTime").setCycleInterval(0.15).setLoop(true))
+            .addChild(new TimeSensorObject().setDEF("SongTime").setLoop(true))
+            .addChild(new SoundObject().setMaxBack(100).setMaxFront(100).setMinBack(20).setMinFront(20)
+              .setSource(new AudioClipObject().setDEF("AudioClip").setDescription("Chandubabamusic #1").setUrl(Java.to(["../resources/chandubabamusic1.wav"], Java.type("java.lang.String[]")))))
+            .addChild(new ROUTEObject().setFromField("cycleTime").setFromNode("SongTime").setToField("startTime").setToNode("AudioClip"))
             .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("cycleTime").setToNode("Bounce").setToField("set_fraction"))
             .addChild(new ROUTEObject().setFromNode("Bounce").setFromField("translation").setToNode("transform").setToField("set_translation"))
             .addComments(new CommentsBlock("<ROUTE fromField=\"coordIndexes\" fromNode=\"Bounce\" toField=\"set_coordIndex\" toNode=\"Orbit\"/> <ROUTE fromField=\"coordinates\" fromNode=\"Bounce\" toField=\"set_point\" toNode=\"OrbitCoordinates\"/>"))))

@@ -246,6 +246,10 @@ ProtoInstanceObject ProtoInstance0 = null;
 "			}\n"+
 ""))
             .addChild(new TimeSensorObject().setDEF("TourTime").setCycleInterval(0.15d).setLoop(true))
+            .addChild(new TimeSensorObject().setDEF("SongTime").setLoop(true))
+            .addChild(new SoundObject().setMaxBack(100f).setMaxFront(100f).setMinBack(20f).setMinFront(20f)
+              .setSource(new AudioClipObject().setDEF("AudioClip").setDescription("Chandubabamusic #1").setUrl(new MFStringObject(new MFString16().getArray()))))
+            .addChild(new ROUTEObject().setFromField("cycleTime").setFromNode("SongTime").setToField("startTime").setToNode("AudioClip"))
             .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("cycleTime").setToNode("Bounce").setToField("set_fraction"))
             .addChild(new ROUTEObject().setFromNode("Bounce").setFromField("translation").setToNode("transform").setToField("set_translation"))
             .addComments(new CommentsBlock("<ROUTE fromField=\"coordIndexes\" fromNode=\"Bounce\" toField=\"set_coordIndex\" toNode=\"Orbit\"/> <ROUTE fromField=\"coordinates\" fromNode=\"Bounce\" toField=\"set_point\" toNode=\"OrbitCoordinates\"/>"))))
@@ -332,6 +336,11 @@ protected class MFString14 {
 protected class MFString15 {
   protected MFStringObject getArray() {
     return new MFStringObject(new java.lang.String[] {"../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"});
+  }
+}
+protected class MFString16 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new java.lang.String[] {"../resources/chandubabamusic1.wav"});
   }
 }
 }

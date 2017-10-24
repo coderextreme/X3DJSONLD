@@ -196,6 +196,12 @@
 ]]>
                 </Script>
                 <TimeSensor DEF='TourTime' cycleInterval='0.150' loop='true'></TimeSensor>
+                <TimeSensor DEF='SongTime' loop='true'></TimeSensor>
+	        <Sound maxBack='100' maxFront='100' minBack='20' minFront='20'>
+			<AudioClip DEF='AudioClip' description='Chandubabamusic #1' url='"../resources/chandubabamusic1.wav"'/>
+		</Sound>
+      		<ROUTE fromField='cycleTime' fromNode='SongTime' toField='startTime' toNode='AudioClip'/>
+
                 <ROUTE fromNode="TourTime" fromField="cycleTime" toNode="Bounce" toField="set_fraction"></ROUTE>
                 <ROUTE fromNode="Bounce" fromField="translation" toNode="transform" toField="set_translation"></ROUTE>
 		<!--

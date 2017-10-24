@@ -21,7 +21,7 @@ var runAndSend = require('./src/main/node/runAndSend');
 var www = config.x3dcode;
 
 
-// app.use(express.static('src/main'));
+// app.use(express.static('/src/main'));
 // app.use(express.static('src/main/html'));
 app.use(express.static('/'));
 app.use(express.static('src/main/data'));
@@ -85,7 +85,7 @@ app.post("/convert", function(req, res, next) {
 });
 
 
-app.get("/X3dGraphics.com/*.x3d", function(req, res, next) {
+app.get("/X3dGraphics.com/*.x3d*", function(req, res, next) {
 	var url = req._parsedUrl.pathname;
 	var hash = url.indexOf("#");
 	var infile = url;
@@ -98,7 +98,7 @@ app.get("/X3dGraphics.com/*.x3d", function(req, res, next) {
 	var outfile = infile.substr(0, infile.lastIndexOf("."))+".json";
 	convertX3dToJson(res, infile, outfile, next);
 });
-app.get("/www.web3d.org/*.x3d", function(req, res, next) {
+app.get("/www.web3d.org/*.x3d*", function(req, res, next) {
 	var url = req._parsedUrl.pathname;
 	var hash = url.indexOf("#");
 	var infile = url;
@@ -111,7 +111,7 @@ app.get("/www.web3d.org/*.x3d", function(req, res, next) {
 	var outfile = infile.substr(0, infile.lastIndexOf("."))+".json";
 	convertX3dToJson(res, infile, outfile, next);
 });
-app.get("/data/*.x3d", function(req, res, next) {
+app.get("/data/*.x3d*", function(req, res, next) {
 	var url = req._parsedUrl.pathname;
 	var hash = url.indexOf("#");
 	var infile = url;

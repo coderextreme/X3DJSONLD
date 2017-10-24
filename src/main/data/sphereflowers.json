@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"02 October 2017"
+            "@content":"24 October 2017"
           },
           {
             "@name":"generator",
@@ -135,6 +135,36 @@
                 { "ProtoInstance":
                   {
                     "@name":"flower"
+                  }
+                },
+                { "TimeSensor":
+                  {
+                    "@DEF":"SongTime",
+                    "@loop":true
+                  }
+                },
+                { "Sound":
+                  {
+                    "@maxBack":100,
+                    "@maxFront":100,
+                    "@minBack":20,
+                    "@minFront":20,
+                    "-source":
+                      { "AudioClip":
+                        {
+                          "@DEF":"AudioClip",
+                          "@description":"Chandubabamusic #1",
+                          "@url":["../resources/chandubabamusic1.wav"]
+                        }
+                      }
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"cycleTime",
+                    "@fromNode":"SongTime",
+                    "@toField":"startTime",
+                    "@toNode":"AudioClip"
                   }
                 }
               ]
