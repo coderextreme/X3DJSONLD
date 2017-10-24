@@ -8406,7 +8406,7 @@
             "@index": {
               "type": "array",
               "items": {
-                "minimum": 0,
+                "minimum": -1,
                 "type": "integer"
               }
             },
@@ -8576,7 +8576,7 @@
             "@index": {
               "type": "array",
               "items": {
-                "minimum": 0,
+                "minimum": -1,
                 "type": "integer"
               }
             },
@@ -9021,6 +9021,7 @@
               "$ref": "#/definitions/IS"
             },
             "@activeLayer": {
+              "minimum": 0,
               "default": 0,
               "type": "integer"
             },
@@ -9034,6 +9035,7 @@
               "type": "array",
               "items": {
                 "default": 0,
+                "minimum": 0,
                 "type": "integer"
               }
             },
@@ -11086,6 +11088,7 @@
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
             "@order": {
+              "minimum": 2,
               "default": 3,
               "type": "integer"
             },
@@ -11258,6 +11261,7 @@
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
             "@order": {
+              "minimum": 2,
               "default": 3,
               "type": "integer"
             },
@@ -14030,9 +14034,6 @@
               "type": "string"
             }
           },
-          "required": [
-            "@name"
-          ],
           "additionalProperties": false
         }
       ]
@@ -20005,6 +20006,8 @@
             "$ref": "#/definitions/-childrenStatements"
           },
           "@level": {
+            "maximum": 5,
+            "minimum": 1,
             "default": 1,
             "type": "integer"
           },
@@ -20422,6 +20425,8 @@
             "type": "string"
           },
           "@conversionFactor": {
+            "minimum": 0,
+            "exclusiveMinimum": true,
             "default": 1,
             "type": "number"
           },
