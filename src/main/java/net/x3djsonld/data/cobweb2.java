@@ -188,11 +188,11 @@ public class cobweb2
      */
     public static void main(String argv[])
     {
-		X3DObject exampleObject = new cobweb2().getX3dModel();
-		
-		exampleObject.handleArguments(argv);
-		System.out.print("cobweb2 self-validation test results: ");
-		String validationResults = exampleObject.validationReport();
-		System.out.println(validationResults);
-	}
+        X3DObject exampleObject = new cobweb2().getX3dModel();
+
+        exampleObject.handleArguments(argv);
+        System.out.print("cobweb2 self-validation test results: ");
+        String validationResults = exampleObject.validationReport();
+        System.out.println(validationResults);
+    }
 }

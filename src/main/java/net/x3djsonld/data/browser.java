@@ -117,11 +117,11 @@ public class browser
      */
     public static void main(String argv[])
     {
-		X3DObject exampleObject = new browser().getX3dModel();
-		
-		exampleObject.handleArguments(argv);
-		System.out.print("browser self-validation test results: ");
-		String validationResults = exampleObject.validationReport();
-		System.out.println(validationResults);
-	}
+        X3DObject exampleObject = new browser().getX3dModel();
+
+        exampleObject.handleArguments(argv);
+        System.out.print("browser self-validation test results: ");
+        String validationResults = exampleObject.validationReport();
+        System.out.println(validationResults);
+    }
 }

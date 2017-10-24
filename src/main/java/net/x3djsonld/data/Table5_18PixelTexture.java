@@ -172,11 +172,11 @@ public class Table5_18PixelTexture
      */
     public static void main(String argv[])
     {
-		X3DObject exampleObject = new Table5_18PixelTexture().getX3dModel();
-		
-		exampleObject.handleArguments(argv);
-		System.out.print("Table5_18PixelTexture self-validation test results: ");
-		String validationResults = exampleObject.validationReport();
-		System.out.println(validationResults);
-	}
+        X3DObject exampleObject = new Table5_18PixelTexture().getX3dModel();
+
+        exampleObject.handleArguments(argv);
+        System.out.print("Table5_18PixelTexture self-validation test results: ");
+        String validationResults = exampleObject.validationReport();
+        System.out.println(validationResults);
+    }
 }

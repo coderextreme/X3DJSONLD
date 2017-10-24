@@ -204,11 +204,11 @@ public class PixelTextureComponentExamples
      */
     public static void main(String argv[])
     {
-		X3DObject exampleObject = new PixelTextureComponentExamples().getX3dModel();
-		
-		exampleObject.handleArguments(argv);
-		System.out.print("PixelTextureComponentExamples self-validation test results: ");
-		String validationResults = exampleObject.validationReport();
-		System.out.println(validationResults);
-	}
+        X3DObject exampleObject = new PixelTextureComponentExamples().getX3dModel();
+
+        exampleObject.handleArguments(argv);
+        System.out.print("PixelTextureComponentExamples self-validation test results: ");
+        String validationResults = exampleObject.validationReport();
+        System.out.println(validationResults);
+    }
 }

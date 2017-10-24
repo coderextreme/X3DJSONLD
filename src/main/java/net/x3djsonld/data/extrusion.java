@@ -131,11 +131,11 @@ public class extrusion
      */
     public static void main(String argv[])
     {
-		X3DObject exampleObject = new extrusion().getX3dModel();
-		
-		exampleObject.handleArguments(argv);
-		System.out.print("extrusion self-validation test results: ");
-		String validationResults = exampleObject.validationReport();
-		System.out.println(validationResults);
-	}
+        X3DObject exampleObject = new extrusion().getX3dModel();
+
+        exampleObject.handleArguments(argv);
+        System.out.print("extrusion self-validation test results: ");
+        String validationResults = exampleObject.validationReport();
+        System.out.println(validationResults);
+    }
 }

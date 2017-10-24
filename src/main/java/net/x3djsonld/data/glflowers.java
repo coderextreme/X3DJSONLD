@@ -114,11 +114,11 @@ public class glflowers
      */
     public static void main(String argv[])
     {
-		X3DObject exampleObject = new glflowers().getX3dModel();
-		
-		exampleObject.handleArguments(argv);
-		System.out.print("glflowers self-validation test results: ");
-		String validationResults = exampleObject.validationReport();
-		System.out.println(validationResults);
-	}
+        X3DObject exampleObject = new glflowers().getX3dModel();
+
+        exampleObject.handleArguments(argv);
+        System.out.print("glflowers self-validation test results: ");
+        String validationResults = exampleObject.validationReport();
+        System.out.println(validationResults);
+    }
 }

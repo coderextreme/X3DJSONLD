@@ -193,11 +193,11 @@ public class indexedfaceset_pixeltexture_whole
      */
     public static void main(String argv[])
     {
-		X3DObject exampleObject = new indexedfaceset_pixeltexture_whole().getX3dModel();
-		
-		exampleObject.handleArguments(argv);
-		System.out.print("indexedfaceset_pixeltexture_whole self-validation test results: ");
-		String validationResults = exampleObject.validationReport();
-		System.out.println(validationResults);
-	}
+        X3DObject exampleObject = new indexedfaceset_pixeltexture_whole().getX3dModel();
+
+        exampleObject.handleArguments(argv);
+        System.out.print("indexedfaceset_pixeltexture_whole self-validation test results: ");
+        String validationResults = exampleObject.validationReport();
+        System.out.println(validationResults);
+    }
 }

@@ -114,11 +114,11 @@ public class freewrlflowers
      */
     public static void main(String argv[])
     {
-		X3DObject exampleObject = new freewrlflowers().getX3dModel();
-		
-		exampleObject.handleArguments(argv);
-		System.out.print("freewrlflowers self-validation test results: ");
-		String validationResults = exampleObject.validationReport();
-		System.out.println(validationResults);
-	}
+        X3DObject exampleObject = new freewrlflowers().getX3dModel();
+
+        exampleObject.handleArguments(argv);
+        System.out.print("freewrlflowers self-validation test results: ");
+        String validationResults = exampleObject.validationReport();
+        System.out.println(validationResults);
+    }
 }

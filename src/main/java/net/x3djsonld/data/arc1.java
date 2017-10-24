@@ -222,11 +222,11 @@ public class arc1
      */
     public static void main(String argv[])
     {
-		X3DObject exampleObject = new arc1().getX3dModel();
-		
-		exampleObject.handleArguments(argv);
-		System.out.print("arc1 self-validation test results: ");
-		String validationResults = exampleObject.validationReport();
-		System.out.println(validationResults);
-	}
+        X3DObject exampleObject = new arc1().getX3dModel();
+
+        exampleObject.handleArguments(argv);
+        System.out.print("arc1 self-validation test results: ");
+        String validationResults = exampleObject.validationReport();
+        System.out.println(validationResults);
+    }
 }

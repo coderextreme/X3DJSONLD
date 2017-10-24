@@ -74,6 +74,8 @@ public class flowers4
   {
   x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
   .setHead(new headObject()
+    .addComponent(new componentObject().setName("Shaders").setLevel(1))
+    .addComponent(new componentObject().setName("CubeMapTexturing").setLevel(1))
     .addMeta(new metaObject().setName("title").setContent("flowers4.x3d"))
     .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
     .addMeta(new metaObject().setName("generator").setContent("manual"))
@@ -213,11 +215,11 @@ public class flowers4
      */
     public static void main(String argv[])
     {
-		X3DObject exampleObject = new flowers4().getX3dModel();
-		
-		exampleObject.handleArguments(argv);
-		System.out.print("flowers4 self-validation test results: ");
-		String validationResults = exampleObject.validationReport();
-		System.out.println(validationResults);
-	}
+        X3DObject exampleObject = new flowers4().getX3dModel();
+
+        exampleObject.handleArguments(argv);
+        System.out.print("flowers4 self-validation test results: ");
+        String validationResults = exampleObject.validationReport();
+        System.out.println(validationResults);
+    }
 }
