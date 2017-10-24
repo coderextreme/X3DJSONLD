@@ -114,6 +114,31 @@ ProtoInstance25 = ProtoInstanceObject()
 ProtoInstance25.setName("flower")
 
 Group10.addChild(ProtoInstance25)
+TimeSensor26 = TimeSensorObject()
+TimeSensor26.setDEF("SongTime")
+TimeSensor26.setLoop(True)
+
+Group10.addChild(TimeSensor26)
+Sound27 = SoundObject()
+Sound27.setMaxBack(100)
+Sound27.setMaxFront(100)
+Sound27.setMinBack(20)
+Sound27.setMinFront(20)
+
+AudioClip28 = AudioClipObject()
+AudioClip28.setDEF("AudioClip")
+AudioClip28.setDescription("Chandubabamusic #1")
+AudioClip28.setUrl(["../resources/chandubabamusic1.wav"])
+
+Sound27.setSource(AudioClip28)
+Group10.addChild(Sound27)
+ROUTE29 = ROUTEObject()
+ROUTE29.setFromField("cycleTime")
+ROUTE29.setFromNode("SongTime")
+ROUTE29.setToField("startTime")
+ROUTE29.setToNode("AudioClip")
+
+Group10.addChild(ROUTE29)
 Scene7.addChild(Group10)
 X3D0.setScene(Scene7)
 

@@ -110,7 +110,11 @@ ProtoInstanceObject ProtoInstance6 = null;
           .addChild(ProtoInstance3 = new ProtoInstanceObject().setName("flower"))
           .addChild(ProtoInstance4 = new ProtoInstanceObject().setName("flower"))
           .addChild(ProtoInstance5 = new ProtoInstanceObject().setName("flower"))
-          .addChild(ProtoInstance6 = new ProtoInstanceObject().setName("flower"))))      ;
+          .addChild(ProtoInstance6 = new ProtoInstanceObject().setName("flower"))
+          .addChild(new TimeSensorObject().setDEF("SongTime").setLoop(true))
+          .addChild(new SoundObject().setMaxBack(100f).setMaxFront(100f).setMinBack(20f).setMinFront(20f)
+            .setSource(new AudioClipObject().setDEF("AudioClip").setDescription("Chandubabamusic #1").setUrl(new MFStringObject(new MFString7().getArray()))))
+          .addChild(new ROUTEObject().setFromField("cycleTime").setFromNode("SongTime").setToField("startTime").setToNode("AudioClip"))))      ;
 ProtoInstance0
                   .addFieldValue(new fieldValueObject().setName("vertex").setValue("\"../shaders/cobweb_flowers_chromatic.vs\""));
 ProtoInstance0
@@ -150,6 +154,11 @@ protected class MFString5 {
 protected class MFString6 {
   protected MFStringObject getArray() {
     return new MFStringObject(new java.lang.String[] {"../data/flowerproto.x3d#FlowerProto"});
+  }
+}
+protected class MFString7 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new java.lang.String[] {"../resources/chandubabamusic1.wav"});
   }
 }
 }

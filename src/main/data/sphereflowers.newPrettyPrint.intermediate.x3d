@@ -32,6 +32,11 @@
             <ProtoInstance name='flower' class=''/>
             <ProtoInstance name='flower' class=''/>
             <ProtoInstance name='flower' class=''/>
+            <TimeSensor DEF='SongTime' cycleInterval='1.0' enabled='true' loop='true' pauseTime='0.0' resumeTime='0.0' startTime='0.0' stopTime='0.0' class=''/>
+            <Sound direction='0 0 1' intensity='1.0' location='0 0 0' maxBack='100.0' maxFront='100.0' minBack='20.0' minFront='20.0' priority='0.0' spatialize='true' class=''>
+                <AudioClip DEF='AudioClip' description='Chandubabamusic #1' loop='false' pauseTime='0.0' pitch='1.0' resumeTime='0.0' startTime='0.0' stopTime='0.0' url='"../resources/chandubabamusic1.wav"' class=''/>
+            </Sound>
+            <ROUTE fromField='cycleTime' fromNode='SongTime' toField='startTime' toNode='AudioClip'/>
         </Group>
     </Scene>
 </X3D>

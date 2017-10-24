@@ -34,7 +34,11 @@ var ProtoInstance6 = null;
           .addChild(ProtoInstance3 = new ProtoInstanceObject().setName("flower"))
           .addChild(ProtoInstance4 = new ProtoInstanceObject().setName("flower"))
           .addChild(ProtoInstance5 = new ProtoInstanceObject().setName("flower"))
-          .addChild(ProtoInstance6 = new ProtoInstanceObject().setName("flower"))))      ;
+          .addChild(ProtoInstance6 = new ProtoInstanceObject().setName("flower"))
+          .addChild(new TimeSensorObject().setDEF("SongTime").setLoop(true))
+          .addChild(new SoundObject().setMaxBack(100).setMaxFront(100).setMinBack(20).setMinFront(20)
+            .setSource(new AudioClipObject().setDEF("AudioClip").setDescription("Chandubabamusic #1").setUrl(Java.to(["../resources/chandubabamusic1.wav"], Java.type("java.lang.String[]")))))
+          .addChild(new ROUTEObject().setFromField("cycleTime").setFromNode("SongTime").setToField("startTime").setToNode("AudioClip"))))      ;
 ProtoInstance0
                   .addFieldValue(new fieldValueObject().setName("vertex").setValue("\"../shaders/cobweb_flowers_chromatic.vs\""));
 ProtoInstance0

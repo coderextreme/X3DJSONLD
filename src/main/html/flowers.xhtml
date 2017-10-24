@@ -4,8 +4,8 @@
 	<head>
 <meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge" />
     <link rel="stylesheet" type="text/css" href="https://www.x3dom.org/download/1.7.2/x3dom.css"></link>
-    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/create3000/cobweb/master/stable/3/3.2/cobweb.css"/>
-    <script type="text/javascript" src="https://cdn.rawgit.com/create3000/cobweb/master/stable/3/3.2/cobweb.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/create3000/x_ite/4.0.7/dist/x_ite.css"/>
+<script type="text/javascript" src="https://cdn.rawgit.com/create3000/x_ite/4.0.7/dist/x_ite.min.js"></script>
     <script type="text/javascript" src="https://www.x3dom.org/download/1.7.2/x3dom-full.js"></script>
 		<style>
 		    X3D { width:800px; height: 250px; }
@@ -144,6 +144,11 @@
 				<Sphere subdivision="512,512" solid="true" radius='20'></Sphere>
 			</Shape>
 		</Transform>
+                <TimeSensor DEF='SongTime' loop='true'></TimeSensor>
+	        <Sound maxBack='100' maxFront='100' minBack='20' minFront='20'>
+			<AudioClip DEF='AudioClip' description='Chandubabamusic #1' url='"../resources/chandubabamusic1.wav"'/>
+		</Sound>
+      		<ROUTE fromField='cycleTime' fromNode='SongTime' toField='startTime' toNode='AudioClip'/>
 	</Scene>
 	</X3D>
 	</div>
@@ -153,7 +158,7 @@
 		 <h2>Cobweb</h2>
 	</div>
 	<div style="display:table-cell">
-	<X3DCanvas id="sphereflowers" cache="false" url='"data/sphereflowers.x3d"'>
+	<X3DCanvas id="sphereflowers" cache="false" url='"../data/sphereflowers.x3d"'>
 		 <p>Your browser may not support all features required by Cobweb!</p>
 	</X3DCanvas>
 	</div>
