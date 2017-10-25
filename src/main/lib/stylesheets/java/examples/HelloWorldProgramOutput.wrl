@@ -10,7 +10,7 @@
 #META "reference" "http://www.web3d.org/specifications/java/X3DJSAIL.html"
 #META "generator" "HelloWorldProgramOutput.java"
 #META "created" "6 September 2016"
-#META "modified" "24 September 2017"
+#META "modified" "22 October 2017"
 #META "generator" "X3D Java Scene Access Interface Library (X3DJSAIL)"
 #META "generator" "http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"
 #META "generator" "Netbeans http://www.netbeans.org"
@@ -365,3 +365,14 @@ Sound {
 # Test success:   ROUTEObject.isStatement()=true, orbitPositionROUTE.isStatement()=true
 # Test success: CommentsBlock.isNode()=false,           testComments.isNode()=false
 # Test success: CommentsBlock.isStatement()=false,      testComments.isStatement()=false
+DEF ExtrusionShape Shape { 
+  appearance DEF TransparentAppearance Appearance { 
+      material Material { 
+         transparency 1.0
+         }
+    }
+ geometry DEF ExampleExtrusion Extrusion { 
+     }
+# ExampleExtrusion isCrossSectionClosed()=true, crossSection='[1.0, 1.0, 1.0, -1.0, -1.0, -1.0, -1.0, 1.0, 1.0, 1.0]'
+# ExampleExtrusion isSpineClosed()=false, spine='[0.0, 0.0, 0.0, 0.0, 1.0, 0.0]'
+}

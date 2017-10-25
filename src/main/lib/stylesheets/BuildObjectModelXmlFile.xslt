@@ -696,7 +696,7 @@ Recommended tool:
                         <xsl:variable name="nodeFieldList" select="xs:annotation/xs:appinfo/xs:element"/>
                         <xsl:variable name="allFieldList" select="$nonNodeFieldList[(@name!='containerField') and (@name!='additionalInterface') and (@name!='componentName') and (@name!='componentLevel')] | $nodeFieldList"/>
 						
-						<xsl:for-each select="$allFieldList">
+			<xsl:for-each select="$allFieldList">
                             <xsl:sort select="lower-case(@name)"/>
 							<!-- debug diagnostic
 							<xsl:if test="($statementName = 'X3D')">
@@ -795,69 +795,69 @@ Recommended tool:
     <xsl:variable name="constrainedTypeGrandParent" select="//xs:schema/xs:simpleType[@name=$constrainedTypeParent]/xs:restriction/@base"/>
     <xsl:variable name="baseType">
         <xsl:choose>
-			<!-- ignore built-in types, no baseType needed -->
-			<xsl:when test="starts-with($givenType,'xs:') or starts-with($givenType,'SF') or starts-with($givenType,'MF')">
-				<xsl:text></xsl:text>
-			</xsl:when>
-			<xsl:when test="//xs:schema/xs:simpleType[(@name=$givenType) and not(starts-with(@name,'SF')) and not(starts-with(@name,'MF'))]/xs:restriction[not(@base = @type)]/@base">
-				<!-- baseType is some other schema-defined simpleType -->
-				<xsl:value-of select="@type"/>
-			</xsl:when>
-			<!-- optional SFString/MFString enumeration list, referenced as part of an element -->
-			<xsl:when test="(parent::xs:appinfo) and (ancestor::xs:element//xs:complexContent//xs:attribute[@name = $fieldName])">
-				<!-- optional enumerations are defined here within appinfo, so get baseType MFString/SFString from corresponding validation definition of attribute -->
-                <xsl:value-of select="@type"/>
-			</xsl:when>
-			<!-- optional SFString/MFString enumeration list , referenced as part of a complexType -->
-			<xsl:when test="(parent::xs:appinfo) and (ancestor::xs:complexType//xs:complexContent//xs:attribute[@name = $fieldName])">
-				<!-- optional enumerations are defined here within appinfo, so get baseType MFString/SFString from corresponding validation definition of attribute -->
-                <xsl:value-of select="@type"/>
-			</xsl:when>
-			<!-- required SFString/MFString enumeration list -->
-			<xsl:when test="ends-with(//xs:simpleType[@name = $givenType]/xs:restriction/@base,'FString')">
-				<!-- required enumerations are defined here within field, so get baseType of enumeration type directly from local schema entry -->
-				<xsl:value-of select="@type"/>
-			</xsl:when>
-		</xsl:choose>
+                <!-- ignore built-in types, no baseType needed -->
+                <xsl:when test="starts-with($givenType,'xs:') or starts-with($givenType,'SF') or starts-with($givenType,'MF')">
+                        <xsl:text></xsl:text>
+                </xsl:when>
+                <xsl:when test="//xs:schema/xs:simpleType[(@name=$givenType) and not(starts-with(@name,'SF')) and not(starts-with(@name,'MF'))]/xs:restriction[not(@base = @type)]/@base">
+                        <!-- baseType is some other schema-defined simpleType -->
+                        <xsl:value-of select="@type"/>
+                </xsl:when>
+                <!-- optional SFString/MFString enumeration list, referenced as part of an element -->
+                <xsl:when test="(parent::xs:appinfo) and (ancestor::xs:element//xs:complexContent//xs:attribute[@name = $fieldName])">
+                        <!-- optional enumerations are defined here within appinfo, so get baseType MFString/SFString from corresponding validation definition of attribute -->
+                        <xsl:value-of select="@type"/>
+		</xsl:when>
+		<!-- optional SFString/MFString enumeration list , referenced as part of a complexType -->
+		<xsl:when test="(parent::xs:appinfo) and (ancestor::xs:complexType//xs:complexContent//xs:attribute[@name = $fieldName])">
+                    <!-- optional enumerations are defined here within appinfo, so get baseType MFString/SFString from corresponding validation definition of attribute -->
+                    <xsl:value-of select="@type"/>
+                </xsl:when>
+                <!-- required SFString/MFString enumeration list -->
+                <xsl:when test="ends-with(//xs:simpleType[@name = $givenType]/xs:restriction/@base,'FString')">
+                        <!-- required enumerations are defined here within field, so get baseType of enumeration type directly from local schema entry -->
+                        <xsl:value-of select="@type"/>
+                </xsl:when>
+            </xsl:choose>
 	</xsl:variable>
 	<xsl:variable name="fieldType">
-        <xsl:choose>
-			<xsl:when test="starts-with(@type,'SF') or starts-with(@type,'MF')">
-				<xsl:value-of select="@type"/>
-			</xsl:when>
-			<xsl:when test="starts-with($givenType, 'SF') or starts-with($givenType, 'MF')">
-                <xsl:value-of select="$givenType"/>
-            </xsl:when>
-			<xsl:when test="//xs:schema/xs:simpleType[(@name=$givenType) and not(starts-with(@name,'SF')) and not(starts-with(@name,'MF'))]/xs:restriction[not(@base = @type)]/@base">
-				<!-- fieldType is found in some other schema-defined simpleType -->
-				<!-- avoid XML types in X3D object model, use X3D types instead -->
-				<xsl:variable name="derivedType">
-					<xsl:value-of select="//xs:schema/xs:simpleType[(@name=$givenType)]/xs:restriction/@base"/>
-				</xsl:variable>
-				<xsl:choose>
-					<xsl:when test="($derivedType='xs:string') or ($derivedType='xs:token')">
-						<xsl:text>SFString</xsl:text>
-					</xsl:when>
-					<xsl:otherwise>
-						<xsl:value-of select="$derivedType"/>
-					</xsl:otherwise>
-				</xsl:choose>
-			</xsl:when>
-            <xsl:when test="(parent::xs:appinfo) and (ancestor::xs:element//xs:complexContent//xs:attribute[@name = $fieldName])">
-				<!-- optional enumerations defined here, so get MFString/SFString from corresponding validation definition of attribute -->
-                <xsl:value-of select="ancestor::xs:element//xs:complexContent//xs:attribute[@name = $fieldName]/@type"/>
-			</xsl:when>
-			<xsl:when test="(parent::xs:appinfo) and (ancestor::xs:complexType//xs:complexContent//xs:attribute[@name = $fieldName])">
-				<!-- optional enumerations defined here, so get MFString/SFString from corresponding validation definition of attribute -->
-                <xsl:value-of select="ancestor::xs:complexType//xs:complexContent//xs:attribute[@name = $fieldName]/@type"/>
-			</xsl:when>
-            <xsl:when test="starts-with($constrainedTypeParent,'SF') or starts-with($constrainedTypeParent,'MF')">
-                <xsl:value-of select="$constrainedTypeParent"/>
-            </xsl:when>
-            <xsl:when test="($givenType='xs:NMTOKEN') or ($givenType='xs:NMTOKENS') or ($givenType='xs:IDREF') or ($givenType='xs:ID')">SFString</xsl:when>
-            <xsl:when test="($constrainedTypeParent='xs:token' or $constrainedTypeParent='xs:string')">SFString</xsl:when>
-            <xsl:when test="($constrainedTypeGrandParent='xs:token' or $constrainedTypeParent='xs:string')">SFString</xsl:when>
-			<xsl:otherwise>TODO-fieldType</xsl:otherwise>
+            <xsl:choose>
+                <xsl:when test="starts-with(@type,'SF') or starts-with(@type,'MF')">
+                        <xsl:value-of select="@type"/>
+                </xsl:when>
+                <xsl:when test="starts-with($givenType, 'SF') or starts-with($givenType, 'MF')">
+                    <xsl:value-of select="$givenType"/>
+                </xsl:when>
+                <xsl:when test="//xs:schema/xs:simpleType[(@name=$givenType) and not(starts-with(@name,'SF')) and not(starts-with(@name,'MF'))]/xs:restriction[not(@base = @type)]/@base">
+                        <!-- fieldType is found in some other schema-defined simpleType -->
+                        <!-- avoid XML types in X3D object model, use X3D types instead -->
+                        <xsl:variable name="derivedType">
+                                <xsl:value-of select="//xs:schema/xs:simpleType[(@name=$givenType)]/xs:restriction/@base"/>
+                        </xsl:variable>
+                        <xsl:choose>
+                                <xsl:when test="($derivedType='xs:string') or ($derivedType='xs:token')">
+                                        <xsl:text>SFString</xsl:text>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                        <xsl:value-of select="$derivedType"/>
+                                </xsl:otherwise>
+                        </xsl:choose>
+                </xsl:when>
+                <xsl:when test="(parent::xs:appinfo) and (ancestor::xs:element//xs:complexContent//xs:attribute[@name = $fieldName])">
+                    <!-- optional enumerations defined here, so get MFString/SFString from corresponding validation definition of attribute -->
+                    <xsl:value-of select="ancestor::xs:element//xs:complexContent//xs:attribute[@name = $fieldName]/@type"/>
+                </xsl:when>
+                <xsl:when test="(parent::xs:appinfo) and (ancestor::xs:complexType//xs:complexContent//xs:attribute[@name = $fieldName])">
+                    <!-- optional enumerations defined here, so get MFString/SFString from corresponding validation definition of attribute -->
+                    <xsl:value-of select="ancestor::xs:complexType//xs:complexContent//xs:attribute[@name = $fieldName]/@type"/>
+                </xsl:when>
+                <xsl:when test="starts-with($constrainedTypeParent,'SF') or starts-with($constrainedTypeParent,'MF')">
+                    <xsl:value-of select="$constrainedTypeParent"/>
+                </xsl:when>
+                <xsl:when test="($givenType='xs:NMTOKEN') or ($givenType='xs:NMTOKENS') or ($givenType='xs:IDREF') or ($givenType='xs:ID')">SFString</xsl:when>
+                <xsl:when test="($constrainedTypeParent='xs:token' or $constrainedTypeParent='xs:string')">SFString</xsl:when>
+                <xsl:when test="($constrainedTypeGrandParent='xs:token' or $constrainedTypeParent='xs:string')">SFString</xsl:when>
+                <xsl:otherwise>TODO-fieldType</xsl:otherwise>
         </xsl:choose>
     </xsl:variable>
     <xsl:variable name="fieldAccessType">
@@ -910,9 +910,27 @@ Recommended tool:
                                            not(    ancestor::xs:element//xs:annotation/xs:appinfo/xs:attribute[@name = $fieldName]))">
 		
 		<!-- debug diagnostic
-		<xsl:if test="($containerName='X3D') and (@name='profile')">
+		<xsl:if test="($containerName='component') and (@name='level')">
 			<xsl:message>
-				<xsl:text>    ... made it inside the if...</xsl:text>
+				<xsl:text>    ... made it inside the if... </xsl:text>
+				<xsl:text> $containerName=</xsl:text>
+                                <xsl:value-of select="$containerName"/>
+				<xsl:text>, local-name()=</xsl:text>
+                                <xsl:value-of select="local-name()"/>
+				<xsl:text>, @name=</xsl:text>
+                                <xsl:value-of select="@name"/>
+				<xsl:text>, $fieldName=</xsl:text>
+                                <xsl:value-of select="$fieldName"/>
+				<xsl:text>, @use=</xsl:text>
+                                <xsl:value-of select="@use"/>
+				<xsl:text>, $givenType=</xsl:text>
+                                <xsl:value-of select="$givenType"/>
+				<xsl:text>, $fieldAccessType=</xsl:text>
+                                <xsl:value-of select="$fieldAccessType"/>
+				<xsl:text>, xs:simpleType/xs:restriction/@base=</xsl:text>
+                                <xsl:value-of select="xs:simpleType/xs:restriction/@base"/>
+				<xsl:text>, ../../../xs:complexType//xs:attribute[@name=$fieldName]/xs:simpleType/xs:restriction/@base=</xsl:text>
+                                <xsl:value-of select="../../../xs:complexType//xs:attribute[@name=$fieldName]/xs:simpleType/xs:restriction/@base"/>
 			</xsl:message>
 		</xsl:if> -->
 		<xsl:element name="field">
@@ -945,13 +963,20 @@ Recommended tool:
 						<xsl:attribute name="default" select="@default"/>
 					</xsl:when>
 				</xsl:choose>
-				<xsl:if test="string-length(@type)=0 and xs:simpleType/xs:restriction">
+				<xsl:if test="true()">
 					<xsl:choose>
 						<xsl:when test="xs:simpleType/xs:restriction/xs:minInclusive">
 							<xsl:attribute name="minInclusive" select="xs:simpleType/xs:restriction/xs:minInclusive/@value"/>
 						</xsl:when>
 						<xsl:when test="xs:simpleType/xs:restriction/xs:minExclusive">
 							<xsl:attribute name="minExclusive" select="xs:simpleType/xs:restriction/xs:minExclusive/@value"/>
+						</xsl:when>
+                                                <!-- currently in xs:annotation that provides default value for restrictions that follow -->
+						<xsl:when test="../../../xs:complexType//xs:attribute[@name=$fieldName]/xs:simpleType/xs:restriction/xs:minInclusive">
+							<xsl:attribute name="minInclusive" select="../../../xs:complexType//xs:attribute[@name=$fieldName]/xs:simpleType/xs:restriction/xs:minInclusive/@value"/>
+						</xsl:when>
+						<xsl:when test="../../../xs:complexType//xs:attribute[@name=$fieldName]/xs:simpleType/xs:restriction/xs:minExclusive">
+							<xsl:attribute name="minExclusive" select="../../../xs:complexType//xs:attribute[@name=$fieldName]/xs:simpleType/xs:restriction/xs:minExclusive/@value"/>
 						</xsl:when>
 					</xsl:choose>
 					<xsl:choose>
@@ -960,6 +985,13 @@ Recommended tool:
 						</xsl:when>
 						<xsl:when test="xs:simpleType/xs:restriction/xs:maxExclusive">
 							<xsl:attribute name="maxExclusive" select="xs:simpleType/xs:restriction/xs:maxExclusive/@value"/>
+						</xsl:when>
+                                                <!-- currently in xs:annotation that provides default value for restrictions that follow -->
+						<xsl:when test="../../../xs:complexType//xs:attribute[@name=$fieldName]/xs:simpleType/xs:restriction/xs:maxInclusive">
+							<xsl:attribute name="maxInclusive" select="../../../xs:complexType//xs:attribute[@name=$fieldName]/xs:simpleType/xs:restriction/xs:maxInclusive/@value"/>
+						</xsl:when>
+						<xsl:when test="../../../xs:complexType//xs:attribute[@name=$fieldName]/xs:simpleType/xs:restriction/xs:maxExclusive">
+							<xsl:attribute name="maxExclusive" select="../../../xs:complexType//xs:attribute[@name=$fieldName]/xs:simpleType/xs:restriction/xs:maxExclusive/@value"/>
 						</xsl:when>
 					</xsl:choose>
 				</xsl:if>

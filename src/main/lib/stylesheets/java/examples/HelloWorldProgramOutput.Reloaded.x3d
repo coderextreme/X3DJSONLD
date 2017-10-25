@@ -11,7 +11,7 @@
         <meta name='reference' content='http://www.web3d.org/specifications/java/X3DJSAIL.html'/>
         <meta name='generator' content='HelloWorldProgramOutput.java'/>
         <meta name='created' content='6 September 2016'/>
-        <meta name='modified' content='24 September 2017'/>
+        <meta name='modified' content='22 October 2017'/>
         <meta name='generator' content='X3D Java Scene Access Interface Library (X3DJSAIL)'/>
         <meta name='generator' content='http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java'/>
         <meta name='generator' content='Netbeans http://www.netbeans.org'/>
@@ -270,5 +270,13 @@ function clockTrigger (timeValue)
         <!-- Test success:   ROUTEObject.isStatement()=true, orbitPositionROUTE.isStatement()=true -->
         <!-- Test success: CommentsBlock.isNode()=false,           testComments.isNode()=false -->
         <!-- Test success: CommentsBlock.isStatement()=false,      testComments.isStatement()=false -->
+        <Shape DEF='ExtrusionShape'>
+            <Appearance DEF='TransparentAppearance'>
+                <Material transparency='1.0'/>
+            </Appearance>
+            <Extrusion DEF='ExampleExtrusion'/>
+            <!-- ExampleExtrusion isCrossSectionClosed()=true, crossSection='[1.0, 1.0, 1.0, -1.0, -1.0, -1.0, -1.0, 1.0, 1.0, 1.0]' -->
+            <!-- ExampleExtrusion isSpineClosed()=false, spine='[0.0, 0.0, 0.0, 0.0, 1.0, 0.0]' -->
+        </Shape>
     </Scene>
 </X3D>

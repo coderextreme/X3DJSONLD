@@ -49,7 +49,7 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 24 September 2017 </td>
+			<td> 22 October 2017 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
@@ -145,7 +145,7 @@ public class HelloWorldProgramOutput
     .addMeta(new metaObject().setName("reference").setContent("http://www.web3d.org/specifications/java/X3DJSAIL.html"))
     .addMeta(new metaObject().setName("generator").setContent("HelloWorldProgramOutput.java"))
     .addMeta(new metaObject().setName("created").setContent("6 September 2016"))
-    .addMeta(new metaObject().setName("modified").setContent("24 September 2017"))
+    .addMeta(new metaObject().setName("modified").setContent("22 October 2017"))
     .addMeta(new metaObject().setName("generator").setContent("X3D Java Scene Access Interface Library (X3DJSAIL)"))
     .addMeta(new metaObject().setName("generator").setContent("http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"))
     .addMeta(new metaObject().setName("generator").setContent("Netbeans http://www.netbeans.org"))
@@ -364,7 +364,13 @@ public class HelloWorldProgramOutput
     .addComments(" Test success:   ROUTEObject.isNode()=false,     orbitPositionROUTE.isNode()=false ")
     .addComments(" Test success:   ROUTEObject.isStatement()=true, orbitPositionROUTE.isStatement()=true ")
     .addComments(" Test success: CommentsBlock.isNode()=false,           testComments.isNode()=false ")
-    .addComments(" Test success: CommentsBlock.isStatement()=false,      testComments.isStatement()=false "));
+    .addComments(" Test success: CommentsBlock.isStatement()=false,      testComments.isStatement()=false ")
+    .addChild(new ShapeObject("ExtrusionShape")
+      .setAppearance(new AppearanceObject("TransparentAppearance")
+        .setMaterial(new MaterialObject().setTransparency(1.0f)))
+      .setGeometry(new ExtrusionObject("ExampleExtrusion"))
+      .addComments(" ExampleExtrusion isCrossSectionClosed()=true, crossSection='[1.0, 1.0, 1.0, -1.0, -1.0, -1.0, -1.0, 1.0, 1.0, 1.0]' ")
+      .addComments(" ExampleExtrusion isSpineClosed()=false, spine='[0.0, 0.0, 0.0, 0.0, 1.0, 0.0]' ")));
   }
   // end of initialize() method
 

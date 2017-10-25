@@ -13,6 +13,9 @@ span.value {color: teal}
 span.plain {color: black}
 span.gray  {color: gray}
 span.idName {color: maroon}
+span.addedDocumentation {background-color:#EEEEEE} // slightly darker for html page contrast
+span.behaviorNode       {background-color:#DDEEFF} // light blue for html page contrast
+span.extensibilityNode  {background-color:#FFEEFF} // light blue for html page contrast
 a.idName {color: maroon}
 div.center {text-align: center}
 div.indent {margin-left: 25px}
@@ -77,7 +80,7 @@ table.curvedEdges td, table.curvedEdges th { border-bottom:1px dotted black;padd
                <span title="meta 'created' provides date of initial version">&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">created</span>'&#160;<span class="attribute">content</span>='<span class="value">6 September 2016</span>'/&gt;
                </span><br />
 
-               <span title="meta 'modified' provides date of modified version">&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">modified</span>'&#160;<span class="attribute">content</span>='<span class="value">24 September 2017</span>'/&gt;
+               <span title="meta 'modified' provides date of modified version">&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">modified</span>'&#160;<span class="attribute">content</span>='<span class="value">22 October 2017</span>'/&gt;
                </span><br />
 
                <span title="meta 'generator' provides name of authoring tool or translation tool producing this
@@ -160,6 +163,8 @@ table.curvedEdges td, table.curvedEdges th { border-bottom:1px dotted black;padd
                <a title="go to this Appearance node" href="#DeclarativeAppearanceExample" class="idName">DeclarativeAppearanceExample</a>,
                <a title="go to this Group node" href="#DeclarativeGroupExample" class="idName">DeclarativeGroupExample</a>,
                <a title="go to this Viewpoint node" href="#DefaultView" class="idName">DefaultView</a>,
+               <a title="go to this Extrusion node" href="#ExampleExtrusion" class="idName">ExampleExtrusion</a>,
+               <a title="go to this Shape node" href="#ExtrusionShape" class="idName">ExtrusionShape</a>,
                <a title="go to this MetadataString node" href="#FindableMetadataStringTest" class="idName">FindableMetadataStringTest</a>,
                <a title="go to this Background node" href="#GradualBackground" class="idName">GradualBackground</a>,
                <a title="go to this Material node" href="#GreenMaterial" class="idName">GreenMaterial</a>,
@@ -183,6 +188,7 @@ table.curvedEdges td, table.curvedEdges th { border-bottom:1px dotted black;padd
                <a title="go to this Shape node" href="#TestShape2" class="idName">TestShape2</a>,
                <a title="go to this Transform node" href="#TextTransform" class="idName">TextTransform</a>,
                <a title="go to this Viewpoint node" href="#TopDownView" class="idName">TopDownView</a>,
+               <a title="go to this Appearance node" href="#TransparentAppearance" class="idName">TransparentAppearance</a>,
                <a title="go to this WorldInfo node" href="#WorldInfoDEF" class="idName">WorldInfoDEF</a>
                
                <hr style="width:100%"></hr>
@@ -219,9 +225,9 @@ table.curvedEdges td, table.curvedEdges th { border-bottom:1px dotted black;padd
                &lt;<span class="element">LayerSet</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">scene.addChildLayerSetObjectTest</span>'&#160;<span class="attribute">containerField</span>='<span class="value">children</span>'/&gt;
                <br />
 <a name="LogoGeometryTransform"> </a> 
-               &lt;!-- <span class="idName">LogoGeometryTransform</span> <i>ROUTE</i>:&#160;
+               <span style="background-color:#EEEEEE;" title="inserted documentation about ROUTE connections">&lt;!-- <i>ROUTE</i> information for <span class="idName">LogoGeometryTransform</span> node:&#160;
                [<a title="go to this ROUTE" href="#ROUTE_1"><i>from</i>&#160;<span class="idName">BoxPathAnimator</span>.<span class="attribute">value_changed</span>&#160;<i>to</i>&#160;<span class="attribute">set_translation</span></a>]
-               --&gt;<br />
+               --&gt;<br /></span>
                <span title="Transform translates, orients and scales child geometry within the local world coordinate
                system">&lt;<span class="element">Transform</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">LogoGeometryTransform</span>'&#160;<span class="attribute">translation</span>='<span class="value">0 1.5 0</span>'&gt;
                </span>
@@ -287,28 +293,28 @@ table.curvedEdges td, table.curvedEdges th { border-bottom:1px dotted black;padd
                </div><span title="Shape contains geometry and optional corresponding Appearance">&lt;/<span class="element">Shape</span>&gt;
                </span><br />
 <a name="BoxPathAnimator"> </a> 
-               &lt;!-- <span class="idName">BoxPathAnimator</span> <i>ROUTEs</i>:&#160;
+               <span style="background-color:#EEEEEE;" title="inserted documentation about ROUTE connections">&lt;!-- <i>ROUTE</i> information for <span class="idName">BoxPathAnimator</span> node:&#160;
                [<a title="go to this ROUTE" href="#ROUTE_0"><i>from</i>&#160;<span class="idName">OrbitClock</span>.<span class="attribute">fraction_changed</span>&#160;<i>to</i>&#160;<span class="attribute">set_fraction</span></a>]
                [<a title="go to this ROUTE" href="#ROUTE_1"><i>from</i>&#160;<span class="attribute">value_changed</span>&#160;<i>to</i>&#160;<span class="idName">LogoGeometryTransform</span>.<span class="attribute">set_translation</span></a>]
-               --&gt;<br />
-               <span title="Interpolator nodes output event values using piecewise-linear function definitions">&lt;<span class="element">PositionInterpolator</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">BoxPathAnimator</span>'&#160;<span class="attribute">key</span>='<span class="value">0 0.125 0.375 0.625 0.875 1</span>'&#160;<span class="attribute">keyValue</span>='<span class="value">0 1.5 0 2 1.5 0 2 1.5 -2 -2 1.5 -2 -2 1.5 0 0 1.5 0</span>'/&gt;
+               --&gt;<br /></span>
+               <span title="Interpolator nodes output event values using piecewise-linear function definitions" style="background-color:#DDEEFF">&lt;<span class="element">PositionInterpolator</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">BoxPathAnimator</span>'&#160;<span class="attribute">key</span>='<span class="value">0 0.125 0.375 0.625 0.875 1</span>'&#160;<span class="attribute">keyValue</span>='<span class="value">0 1.5 0 2 1.5 0 2 1.5 -2 -2 1.5 -2 -2 1.5 0 0 1.5 0</span>'/&gt;
                </span><br />
 <a name="OrbitClock"> </a> 
-               &lt;!-- <span class="idName">OrbitClock</span> <i>ROUTE</i>:&#160;
+               <span style="background-color:#EEEEEE;" title="inserted documentation about ROUTE connections">&lt;!-- <i>ROUTE</i> information for <span class="idName">OrbitClock</span> node:&#160;
                [<a title="go to this ROUTE" href="#ROUTE_0"><i>from</i>&#160;<span class="attribute">fraction_changed</span>&#160;<i>to</i>&#160;<span class="idName">BoxPathAnimator</span>.<span class="attribute">set_fraction</span></a>]
-               --&gt;<br />
-               <span title="TimeSensor continuously generates events as time passes">&lt;<span class="element">TimeSensor</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">OrbitClock</span>'&#160;<span class="attribute">cycleInterval</span>='<span class="value">8.0</span>'&#160;<span class="attribute">loop</span>='<span class="value">true</span>'/&gt;
+               --&gt;<br /></span>
+               <span title="TimeSensor continuously generates events as time passes" style="background-color:#DDEEFF">&lt;<span class="element">TimeSensor</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">OrbitClock</span>'&#160;<span class="attribute">cycleInterval</span>='<span class="value">8.0</span>'&#160;<span class="attribute">loop</span>='<span class="value">true</span>'/&gt;
                </span><br />
 <a name="ROUTE_0"> </a> 
-               <span title="ROUTE connects fields between nodes to enable event passing">&lt;<span class="route">ROUTE</span>&#160;<span class="attribute">fromNode</span>='<a title="go to the original DEF node definition" href="#OrbitClock" class="idName">OrbitClock</a>'&#160;<span class="attribute">fromField</span>='<span class="value">fraction_changed</span>'&#160;<span class="attribute">toNode</span>='<a title="go to the original DEF node definition" href="#BoxPathAnimator" class="idName">BoxPathAnimator</a>'&#160;<span class="attribute">toField</span>='<span class="value">set_fraction</span>'/&gt;
+               <span title="ROUTE connects fields between nodes to enable event passing" style="background-color:#DDEEFF">&lt;<span class="route">ROUTE</span>&#160;<span class="attribute">fromNode</span>='<a title="go to the original DEF node definition" href="#OrbitClock" class="idName">OrbitClock</a>'&#160;<span class="attribute">fromField</span>='<span class="value">fraction_changed</span>'&#160;<span class="attribute">toNode</span>='<a title="go to the original DEF node definition" href="#BoxPathAnimator" class="idName">BoxPathAnimator</a>'&#160;<span class="attribute">toField</span>='<span class="value">set_fraction</span>'/&gt;
                </span><br />
 <a name="ROUTE_1"> </a> 
-               <span title="ROUTE connects fields between nodes to enable event passing">&lt;<span class="route">ROUTE</span>&#160;<span class="attribute">fromNode</span>='<a title="go to the original DEF node definition" href="#BoxPathAnimator" class="idName">BoxPathAnimator</a>'&#160;<span class="attribute">fromField</span>='<span class="value">value_changed</span>'&#160;<span class="attribute">toNode</span>='<a title="go to the original DEF node definition" href="#LogoGeometryTransform" class="idName">LogoGeometryTransform</a>'&#160;<span class="attribute">toField</span>='<span class="value">set_translation</span>'/&gt;
+               <span title="ROUTE connects fields between nodes to enable event passing" style="background-color:#DDEEFF">&lt;<span class="route">ROUTE</span>&#160;<span class="attribute">fromNode</span>='<a title="go to the original DEF node definition" href="#BoxPathAnimator" class="idName">BoxPathAnimator</a>'&#160;<span class="attribute">fromField</span>='<span class="value">value_changed</span>'&#160;<span class="attribute">toNode</span>='<a title="go to the original DEF node definition" href="#LogoGeometryTransform" class="idName">LogoGeometryTransform</a>'&#160;<span class="attribute">toField</span>='<span class="value">set_translation</span>'/&gt;
                </span><br />
 <a name="TextTransform"> </a> 
-               &lt;!-- <span class="idName">TextTransform</span> <i>ROUTE</i>:&#160;
+               <span style="background-color:#EEEEEE;" title="inserted documentation about ROUTE connections">&lt;!-- <i>ROUTE</i> information for <span class="idName">TextTransform</span> node:&#160;
                [<a title="go to this ROUTE" href="#ROUTE_3"><i>from</i>&#160;<span class="idName">SpinInterpolator</span>.<span class="attribute">value_changed</span>&#160;<i>to</i>&#160;<span class="attribute">rotation</span></a>]
-               --&gt;<br />
+               --&gt;<br /></span>
                <span title="Transform translates, orients and scales child geometry within the local world coordinate
                system">&lt;<span class="element">Transform</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">TextTransform</span>'&#160;<span class="attribute">translation</span>='<span class="value">0 -1.5 0</span>'&gt;
                </span>
@@ -377,46 +383,46 @@ table.curvedEdges td, table.curvedEdges th { border-bottom:1px dotted black;padd
                </span><br /><span title="XML comment">&lt;!-- repeatedly spin 180 degrees as a readable special effect --&gt;</span>
                <br />
 <a name="SpinInterpolator"> </a> 
-               &lt;!-- <span class="idName">SpinInterpolator</span> <i>ROUTEs</i>:&#160;
+               <span style="background-color:#EEEEEE;" title="inserted documentation about ROUTE connections">&lt;!-- <i>ROUTE</i> information for <span class="idName">SpinInterpolator</span> node:&#160;
                [<a title="go to this ROUTE" href="#ROUTE_2"><i>from</i>&#160;<span class="idName">SpinClock</span>.<span class="attribute">fraction_changed</span>&#160;<i>to</i>&#160;<span class="attribute">set_fraction</span></a>]
                [<a title="go to this ROUTE" href="#ROUTE_3"><i>from</i>&#160;<span class="attribute">value_changed</span>&#160;<i>to</i>&#160;<span class="idName">TextTransform</span>.<span class="attribute">rotation</span></a>]
-               --&gt;<br />
-               <span title="Interpolator nodes output event values using piecewise-linear function definitions">&lt;<span class="element">OrientationInterpolator</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">SpinInterpolator</span>'&#160;<span class="attribute">key</span>='<span class="value">0 0.5 1</span>'&#160;<span class="attribute">keyValue</span>='<span class="value">0 1 0 4.712389 0 1 0 0 0 1 0 1.5707964</span>'/&gt;
+               --&gt;<br /></span>
+               <span title="Interpolator nodes output event values using piecewise-linear function definitions" style="background-color:#DDEEFF">&lt;<span class="element">OrientationInterpolator</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">SpinInterpolator</span>'&#160;<span class="attribute">key</span>='<span class="value">0 0.5 1</span>'&#160;<span class="attribute">keyValue</span>='<span class="value">0 1 0 4.712389 0 1 0 0 0 1 0 1.5707964</span>'/&gt;
                </span><br />
 <a name="SpinClock"> </a> 
-               &lt;!-- <span class="idName">SpinClock</span> <i>ROUTE</i>:&#160;
+               <span style="background-color:#EEEEEE;" title="inserted documentation about ROUTE connections">&lt;!-- <i>ROUTE</i> information for <span class="idName">SpinClock</span> node:&#160;
                [<a title="go to this ROUTE" href="#ROUTE_2"><i>from</i>&#160;<span class="attribute">fraction_changed</span>&#160;<i>to</i>&#160;<span class="idName">SpinInterpolator</span>.<span class="attribute">set_fraction</span></a>]
-               --&gt;<br />
-               <span title="TimeSensor continuously generates events as time passes">&lt;<span class="element">TimeSensor</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">SpinClock</span>'&#160;<span class="attribute">cycleInterval</span>='<span class="value">5.0</span>'&#160;<span class="attribute">loop</span>='<span class="value">true</span>'/&gt;
+               --&gt;<br /></span>
+               <span title="TimeSensor continuously generates events as time passes" style="background-color:#DDEEFF">&lt;<span class="element">TimeSensor</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">SpinClock</span>'&#160;<span class="attribute">cycleInterval</span>='<span class="value">5.0</span>'&#160;<span class="attribute">loop</span>='<span class="value">true</span>'/&gt;
                </span><br />
 <a name="ROUTE_2"> </a> 
-               <span title="ROUTE connects fields between nodes to enable event passing">&lt;<span class="route">ROUTE</span>&#160;<span class="attribute">fromNode</span>='<a title="go to the original DEF node definition" href="#SpinClock" class="idName">SpinClock</a>'&#160;<span class="attribute">fromField</span>='<span class="value">fraction_changed</span>'&#160;<span class="attribute">toNode</span>='<a title="go to the original DEF node definition" href="#SpinInterpolator" class="idName">SpinInterpolator</a>'&#160;<span class="attribute">toField</span>='<span class="value">set_fraction</span>'/&gt;
+               <span title="ROUTE connects fields between nodes to enable event passing" style="background-color:#DDEEFF">&lt;<span class="route">ROUTE</span>&#160;<span class="attribute">fromNode</span>='<a title="go to the original DEF node definition" href="#SpinClock" class="idName">SpinClock</a>'&#160;<span class="attribute">fromField</span>='<span class="value">fraction_changed</span>'&#160;<span class="attribute">toNode</span>='<a title="go to the original DEF node definition" href="#SpinInterpolator" class="idName">SpinInterpolator</a>'&#160;<span class="attribute">toField</span>='<span class="value">set_fraction</span>'/&gt;
                </span><br />
 <a name="ROUTE_3"> </a> 
-               <span title="ROUTE connects fields between nodes to enable event passing">&lt;<span class="route">ROUTE</span>&#160;<span class="attribute">fromNode</span>='<a title="go to the original DEF node definition" href="#SpinInterpolator" class="idName">SpinInterpolator</a>'&#160;<span class="attribute">fromField</span>='<span class="value">value_changed</span>'&#160;<span class="attribute">toNode</span>='<a title="go to the original DEF node definition" href="#TextTransform" class="idName">TextTransform</a>'&#160;<span class="attribute">toField</span>='<span class="value">rotation</span>'/&gt;
+               <span title="ROUTE connects fields between nodes to enable event passing" style="background-color:#DDEEFF">&lt;<span class="route">ROUTE</span>&#160;<span class="attribute">fromNode</span>='<a title="go to the original DEF node definition" href="#SpinInterpolator" class="idName">SpinInterpolator</a>'&#160;<span class="attribute">fromField</span>='<span class="value">value_changed</span>'&#160;<span class="attribute">toNode</span>='<a title="go to the original DEF node definition" href="#TextTransform" class="idName">TextTransform</a>'&#160;<span class="attribute">toField</span>='<span class="value">rotation</span>'/&gt;
                </span><br />
 <a name="BackgroundGroup"> </a> 
                <span title="Group is a Grouping node that can contain most nodes">&lt;<span class="element">Group</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">BackgroundGroup</span>'&gt;
                </span>
                <div class="indent"><a name="GradualBackground"> </a> 
-                  &lt;!-- <span class="idName">GradualBackground</span> <i>ROUTE</i>:&#160;
+                  <span style="background-color:#EEEEEE;" title="inserted documentation about ROUTE connections">&lt;!-- <i>ROUTE</i> information for <span class="idName">GradualBackground</span> node:&#160;
                   [<a title="go to this ROUTE" href="#ROUTE_4"><i>from</i>&#160;<span class="idName">colorTypeConversionScript</span>.<span class="attribute">colorsOutput</span>&#160;<i>to</i>&#160;<span class="attribute">skyColor</span></a>]
-                  --&gt;<br />
+                  --&gt;<br /></span>
                   <span title="Background simulates ground and sky, using vertical arrays of wraparound color values
                   or backdrop textures on all six sides">&lt;<span class="element">Background</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">GradualBackground</span>'/&gt;
                   </span><br />
 <a name="colorTypeConversionScript"> </a> 
-                  &lt;!-- <span class="idName">colorTypeConversionScript</span> <i>ROUTEs</i>:&#160;
+                  <span style="background-color:#EEEEEE;" title="inserted documentation about ROUTE connections">&lt;!-- <i>ROUTE</i> information for <span class="idName">colorTypeConversionScript</span> node:&#160;
                   [<a title="go to this ROUTE" href="#ROUTE_5"><i>from</i>&#160;<span class="idName">ColorAnimator</span>.<span class="attribute">value_changed</span>&#160;<i>to</i>&#160;<span class="attribute">colorInput</span></a>]
                   [<a title="go to this ROUTE" href="#ROUTE_4"><i>from</i>&#160;<span class="attribute">colorsOutput</span>&#160;<i>to</i>&#160;<span class="idName">GradualBackground</span>.<span class="attribute">skyColor</span></a>]
-                  --&gt;<br />
-                  &lt;<span class="element">Script</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">colorTypeConversionScript</span>'&gt;
-                  
+                  --&gt;<br /></span>
+                  <span title="Script contains author-programmed event behaviors for a scene" style="background-color:#DDEEFF">&lt;<span class="element">Script</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">colorTypeConversionScript</span>'&gt;
+                  </span>
                   <div class="indent">
-                     <span title="A field element defines an interface attribute or node for a parent Script">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">colorInput</span>'&#160;<span class="attribute">type</span>='<span class="value">SFColor</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOnly</span>'/&gt;
+                     <span title="A field element defines an interface attribute or node for a parent Script" style="background-color:#DDEEFF">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">colorInput</span>'&#160;<span class="attribute">type</span>='<span class="value">SFColor</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOnly</span>'/&gt;
                      </span><br />
 
-                     <span title="A field element defines an interface attribute or node for a parent Script">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">colorsOutput</span>'&#160;<span class="attribute">type</span>='<span class="value">MFColor</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'/&gt;
+                     <span title="A field element defines an interface attribute or node for a parent Script" style="background-color:#DDEEFF">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">colorsOutput</span>'&#160;<span class="attribute">type</span>='<span class="value">MFColor</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'/&gt;
                      </span><br />
                      </div class="indent">
                      </div class="indent">
@@ -437,55 +443,58 @@ function colorInput (eventValue) // Example source code
                      <div class="indent">
                      <div class="indent">
                      
-                  </div>&lt;/<span class="element">Script</span>&gt;
-                  <br />
+                  </div><span title="Script contains author-programmed event behaviors for a scene" style="background-color:#DDEEFF">&lt;/<span class="element">Script</span>&gt;
+                  </span><br />
 <a name="ColorAnimator"> </a> 
-                  &lt;!-- <span class="idName">ColorAnimator</span> <i>ROUTEs</i>:&#160;
+                  <span style="background-color:#EEEEEE;" title="inserted documentation about ROUTE connections">&lt;!-- <i>ROUTE</i> information for <span class="idName">ColorAnimator</span> node:&#160;
                   [<a title="go to this ROUTE" href="#ROUTE_6"><i>from</i>&#160;<span class="idName">ColorClock</span>.<span class="attribute">fraction_changed</span>&#160;<i>to</i>&#160;<span class="attribute">set_fraction</span></a>]
                   [<a title="go to this ROUTE" href="#ROUTE_5"><i>from</i>&#160;<span class="attribute">value_changed</span>&#160;<i>to</i>&#160;<span class="idName">colorTypeConversionScript</span>.<span class="attribute">colorInput</span></a>]
-                  --&gt;<br />
-                  <span title="Interpolator nodes output event values using piecewise-linear function definitions">&lt;<span class="element">ColorInterpolator</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">ColorAnimator</span>'&#160;<span class="attribute">key</span>='<span class="value">0 0.5 1</span>'&#160;<span class="attribute">keyValue</span>='<span class="value">0.9411765 1 1 0.29411766 0 0.50980395 0.9411765 1 1</span>'&gt;
+                  --&gt;<br /></span>
+                  <span title="Interpolator nodes output event values using piecewise-linear function definitions" style="background-color:#DDEEFF">&lt;<span class="element">ColorInterpolator</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">ColorAnimator</span>'&#160;<span class="attribute">key</span>='<span class="value">0 0.5 1</span>'&#160;<span class="attribute">keyValue</span>='<span class="value">0.9411765 1 1 0.29411766 0 0.50980395 0.9411765 1 1</span>'&gt;
                   </span>
                   <div class="indent"><span title="XML comment">&lt;!-- AZURE to INDIGO and back again --&gt;</span>
                      
-                  </div><span title="Interpolator nodes output event values using piecewise-linear function definitions">&lt;/<span class="element">ColorInterpolator</span>&gt;
+                  </div><span title="Interpolator nodes output event values using piecewise-linear function definitions" style="background-color:#DDEEFF">&lt;/<span class="element">ColorInterpolator</span>&gt;
                   </span><br />
 <a name="ColorClock"> </a> 
-                  &lt;!-- <span class="idName">ColorClock</span> <i>ROUTE</i>:&#160;
+                  <span style="background-color:#EEEEEE;" title="inserted documentation about ROUTE connections">&lt;!-- <i>ROUTE</i> information for <span class="idName">ColorClock</span> node:&#160;
                   [<a title="go to this ROUTE" href="#ROUTE_6"><i>from</i>&#160;<span class="attribute">fraction_changed</span>&#160;<i>to</i>&#160;<span class="idName">ColorAnimator</span>.<span class="attribute">set_fraction</span></a>]
-                  --&gt;<br />
-                  <span title="TimeSensor continuously generates events as time passes">&lt;<span class="element">TimeSensor</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">ColorClock</span>'&#160;<span class="attribute">cycleInterval</span>='<span class="value">60.0</span>'&#160;<span class="attribute">loop</span>='<span class="value">true</span>'/&gt;
+                  --&gt;<br /></span>
+                  <span title="TimeSensor continuously generates events as time passes" style="background-color:#DDEEFF">&lt;<span class="element">TimeSensor</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">ColorClock</span>'&#160;<span class="attribute">cycleInterval</span>='<span class="value">60.0</span>'&#160;<span class="attribute">loop</span>='<span class="value">true</span>'/&gt;
                   </span><br />
 <a name="ROUTE_4"> </a> 
-                  <span title="ROUTE connects fields between nodes to enable event passing">&lt;<span class="route">ROUTE</span>&#160;<span class="attribute">fromNode</span>='<a title="go to the original DEF node definition" href="#colorTypeConversionScript" class="idName">colorTypeConversionScript</a>'&#160;<span class="attribute">fromField</span>='<span class="value">colorsOutput</span>'&#160;<span class="attribute">toNode</span>='<a title="go to the original DEF node definition" href="#GradualBackground" class="idName">GradualBackground</a>'&#160;<span class="attribute">toField</span>='<span class="value">skyColor</span>'/&gt;
+                  <span title="ROUTE connects fields between nodes to enable event passing" style="background-color:#DDEEFF">&lt;<span class="route">ROUTE</span>&#160;<span class="attribute">fromNode</span>='<a title="go to the original DEF node definition" href="#colorTypeConversionScript" class="idName">colorTypeConversionScript</a>'&#160;<span class="attribute">fromField</span>='<span class="value">colorsOutput</span>'&#160;<span class="attribute">toNode</span>='<a title="go to the original DEF node definition" href="#GradualBackground" class="idName">GradualBackground</a>'&#160;<span class="attribute">toField</span>='<span class="value">skyColor</span>'/&gt;
                   </span><br />
 <a name="ROUTE_5"> </a> 
-                  <span title="ROUTE connects fields between nodes to enable event passing">&lt;<span class="route">ROUTE</span>&#160;<span class="attribute">fromNode</span>='<a title="go to the original DEF node definition" href="#ColorAnimator" class="idName">ColorAnimator</a>'&#160;<span class="attribute">fromField</span>='<span class="value">value_changed</span>'&#160;<span class="attribute">toNode</span>='<a title="go to the original DEF node definition" href="#colorTypeConversionScript" class="idName">colorTypeConversionScript</a>'&#160;<span class="attribute">toField</span>='<span class="value">colorInput</span>'/&gt;
+                  <span title="ROUTE connects fields between nodes to enable event passing" style="background-color:#DDEEFF">&lt;<span class="route">ROUTE</span>&#160;<span class="attribute">fromNode</span>='<a title="go to the original DEF node definition" href="#ColorAnimator" class="idName">ColorAnimator</a>'&#160;<span class="attribute">fromField</span>='<span class="value">value_changed</span>'&#160;<span class="attribute">toNode</span>='<a title="go to the original DEF node definition" href="#colorTypeConversionScript" class="idName">colorTypeConversionScript</a>'&#160;<span class="attribute">toField</span>='<span class="value">colorInput</span>'/&gt;
                   </span><br />
 <a name="ROUTE_6"> </a> 
-                  <span title="ROUTE connects fields between nodes to enable event passing">&lt;<span class="route">ROUTE</span>&#160;<span class="attribute">fromNode</span>='<a title="go to the original DEF node definition" href="#ColorClock" class="idName">ColorClock</a>'&#160;<span class="attribute">fromField</span>='<span class="value">fraction_changed</span>'&#160;<span class="attribute">toNode</span>='<a title="go to the original DEF node definition" href="#ColorAnimator" class="idName">ColorAnimator</a>'&#160;<span class="attribute">toField</span>='<span class="value">set_fraction</span>'/&gt;
+                  <span title="ROUTE connects fields between nodes to enable event passing" style="background-color:#DDEEFF">&lt;<span class="route">ROUTE</span>&#160;<span class="attribute">fromNode</span>='<a title="go to the original DEF node definition" href="#ColorClock" class="idName">ColorClock</a>'&#160;<span class="attribute">fromField</span>='<span class="value">fraction_changed</span>'&#160;<span class="attribute">toNode</span>='<a title="go to the original DEF node definition" href="#ColorAnimator" class="idName">ColorAnimator</a>'&#160;<span class="attribute">toField</span>='<span class="value">set_fraction</span>'/&gt;
                   </span>
                </div><span title="Group is a Grouping node that can contain most nodes">&lt;/<span class="element">Group</span>&gt;
                </span><br />
 <a name="ProtoDeclare_ArtDeco01Material"> </a> 
-               <span title="ProtoDeclare is a Prototype declaration, defining a new node made up of other node(s)">&lt;<span class="prototype">ProtoDeclare</span>&#160;<span class="attribute">name</span>='<span class="prototype">ArtDeco01Material</span>'&#160;<span title="application information for this ProtoDeclare"><span class="gray">appinfo</span>='<span class="value">tooltip: ArtDeco01 prototype is a Material node</span>'</span>&gt;
+               <span title="ProtoDeclare is a Prototype declaration, defining a new node made up of other node(s)" style="background-color:#FFEEFF">&lt;<span class="prototype">ProtoDeclare</span>&#160;<span class="attribute">name</span>='<span class="prototype">ArtDeco01Material</span>'&#160;<span title="application information for this ProtoDeclare"><span class="gray">appinfo</span>='<span class="value">tooltip: ArtDeco01 prototype is a Material node</span>'</span>&gt;
                </span>
                <div class="indent">
-                  &lt;<span class="prototype">ProtoInterface</span>&gt;
-                  
+                  <span title="ProtoInterface is first statement inside a ProtoDeclare statement and holds field
+                  definitions" style="background-color:#FFEEFF">&lt;<span class="prototype">ProtoInterface</span>&gt;
+                  </span>
                   <div class="indent"><a name="ArtDeco01MaterialProtoField_description"> </a> 
-                     <span title="A field element defines an interface attribute or node">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">description</span>'&#160;<span class="attribute">type</span>='<span class="value">SFString</span>'&#160;<span class="attribute">value</span>='<span class="value">ArtDeco01 prototype is a Material node</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+                     <span title="A field element defines an interface attribute or node" style="background-color:#FFEEFF">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">description</span>'&#160;<span class="attribute">type</span>='<span class="value">SFString</span>'&#160;<span class="attribute">value</span>='<span class="value">ArtDeco01 prototype is a Material node</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
 <br />
 &#160;<span title="application information for this field"><span class="gray">appinfo</span>='<span class="gray">tooltip for descriptionField</span>'</span>/&gt;
                      </span><br />
 <a name="ArtDeco01MaterialProtoField_enabled"> </a> 
-                     <span title="A field element defines an interface attribute or node">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">enabled</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">true</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'/&gt;
+                     <span title="A field element defines an interface attribute or node" style="background-color:#FFEEFF">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">enabled</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">true</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'/&gt;
                      </span>
-                  </div>&lt;/<span class="prototype">ProtoInterface</span>&gt;
-                  <br />
+                  </div><span title="ProtoInterface is first statement inside a ProtoDeclare statement and holds field
+                  definitions" style="background-color:#FFEEFF">&lt;/<span class="prototype">ProtoInterface</span>&gt;
+                  </span><br />
 
-                  &lt;<span class="prototype">ProtoBody</span>&gt;
-                  
+                  <span title="Initial scene node in ProtoDeclare/ProtoBody statement determines this prototype's
+                  node type" style="background-color:#FFEEFF">&lt;<span class="prototype">ProtoBody</span>&gt;
+                  </span>
                   <div class="indent"><span title="XML comment">&lt;!-- Initial node of ProtoBody determines prototype node type --&gt;</span>
                      <br />
 
@@ -497,25 +506,26 @@ function colorInput (eventValue) // Example source code
                      <br />
 
                      <span title="TouchSensor tracks location &amp; state of the pointing device, and detects when user
-                     points at geometry">&lt;<span class="element">TouchSensor</span>&#160;<span class="attribute">description</span>='<span class="value">within ProtoBody</span>'&gt;
+                     points at geometry" style="background-color:#DDEEFF">&lt;<span class="element">TouchSensor</span>&#160;<span class="attribute">description</span>='<span class="value">within ProtoBody</span>'&gt;
                      </span>
                      <div class="indent">
-                        <span title="IS connects ProtoDeclare interface fields to node fields inside ProtoDeclare definitions">&lt;<span class="element">IS</span>&gt;
+                        <span title="IS connects ProtoDeclare interface fields to node fields inside ProtoDeclare definitions" style="background-color:#FFEEFF">&lt;<span class="element">IS</span>&gt;
                         </span>
                         <div class="indent">
-                           <span title="connect tags define each ProtoDeclare field connection within ProtoDeclare definitions">&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype" title="connect interface events to this field in given node">description</span>'&#160;<span class="attribute">protoField</span>='<span title="field interface connecting events into the prototype interior"><span class="prototype"><a title="go to the protoField definition" href="#ArtDeco01Material MaterialModulatorProtoField_description" class="prototype">description</a></span></span>'/&gt;
+                           <span title="connect tags define each ProtoDeclare field connection within ProtoDeclare definitions" style="background-color:#FFEEFF">&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype" title="connect interface events to this field in given node">description</span>'&#160;<span class="attribute">protoField</span>='<span title="field interface connecting events into the prototype interior"><span class="prototype"><a title="go to the protoField definition" href="#ArtDeco01Material MaterialModulatorProtoField_description" class="prototype">description</a></span></span>'/&gt;
                            </span><br />
 
-                           <span title="connect tags define each ProtoDeclare field connection within ProtoDeclare definitions">&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype" title="connect interface events to this field in given node">enabled</span>'&#160;<span class="attribute">protoField</span>='<span title="field interface connecting events into the prototype interior"><span class="prototype"><a title="go to the protoField definition" href="#ArtDeco01Material MaterialModulatorProtoField_enabled" class="prototype">enabled</a></span></span>'/&gt;
+                           <span title="connect tags define each ProtoDeclare field connection within ProtoDeclare definitions" style="background-color:#FFEEFF">&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype" title="connect interface events to this field in given node">enabled</span>'&#160;<span class="attribute">protoField</span>='<span title="field interface connecting events into the prototype interior"><span class="prototype"><a title="go to the protoField definition" href="#ArtDeco01Material MaterialModulatorProtoField_enabled" class="prototype">enabled</a></span></span>'/&gt;
                            </span>
-                        </div><span title="IS connects ProtoDeclare interface fields to node fields inside ProtoDeclare definitions">&lt;/<span class="element">IS</span>&gt;
+                        </div><span title="IS connects ProtoDeclare interface fields to node fields inside ProtoDeclare definitions" style="background-color:#FFEEFF">&lt;/<span class="element">IS</span>&gt;
                         </span>
                      </div><span title="TouchSensor tracks location &amp; state of the pointing device, and detects when user
-                     points at geometry">&lt;/<span class="element">TouchSensor</span>&gt;
+                     points at geometry" style="background-color:#DDEEFF">&lt;/<span class="element">TouchSensor</span>&gt;
                      </span>
-                  </div>&lt;/<span class="prototype">ProtoBody</span>&gt;
-                  
-               </div><span title="ProtoDeclare is a Prototype declaration, defining a new node made up of other node(s)">&lt;/<span class="prototype">ProtoDeclare</span>&gt;
+                  </div><span title="Initial scene node in ProtoDeclare/ProtoBody statement determines this prototype's
+                  node type" style="background-color:#FFEEFF">&lt;/<span class="prototype">ProtoBody</span>&gt;
+                  </span>
+               </div><span title="ProtoDeclare is a Prototype declaration, defining a new node made up of other node(s)" style="background-color:#FFEEFF">&lt;/<span class="prototype">ProtoDeclare</span>&gt;
                </span><br />
 <a name="ExternProtoDeclare_ArtDeco02Material"> </a> 
                <span title="ExternProtoDeclare refers to a ProtoDeclare node declaration provided in another file">&lt;<span class="prototype">ExternProtoDeclare</span>&#160;<span class="attribute">name</span>='<span class="prototype">ArtDeco02Material</span>'&#160;<span title="application information for this ExternProtoDeclare"><span class="gray">appinfo</span>='<span class="value">this is a different Material node</span>'</span>
@@ -525,7 +535,7 @@ function colorInput (eventValue) // Example source code
                "<a href="http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02">http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02</a>" "<a href="http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02">http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02</a>" '</span>&gt;
                </span>
                <div class="indent">
-                  <span title="A field element defines an interface attribute or node for a parent ExternProtoDeclare">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">description</span>'&#160;<span class="attribute">type</span>='<span class="value">SFString</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+                  <span title="A field element defines an interface attribute or node for a parent ExternProtoDeclare" style="background-color:#FFEEFF">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">description</span>'&#160;<span class="attribute">type</span>='<span class="value">SFString</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
 <br />
 &#160;<span title="application information for this field"><span class="gray">appinfo</span>='<span class="gray">tooltip for descriptionField</span>'</span>/&gt;
                   </span><br /><span title="XML comment">&lt;!-- [HelloWorldProgram diagnostic] ArtDeco02ExternProtoDeclare.getNodeType()="ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE:
@@ -544,15 +554,15 @@ function colorInput (eventValue) // Example source code
                   and TextureTransform nodes">&lt;<span class="element">Appearance</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">TestAppearance1</span>'&gt;
                   </span>
                   <div class="indent">
-                     <span title="ProtoInstance creates an instance of a locally or externally declared prototype node">&lt;<span class="prototype">ProtoInstance</span>&#160;<span class="attribute">name</span>='<span class="prototype">ArtDeco01</span>'&#160;<span class="attribute">containerField</span>='<span class="value">material</span>'&gt;
+                     <span title="ProtoInstance creates an instance of a locally or externally declared prototype node" style="background-color:#FFEEFF">&lt;<span class="prototype">ProtoInstance</span>&#160;<span class="attribute">name</span>='<span class="prototype">ArtDeco01</span>'&#160;<span class="attribute">containerField</span>='<span class="value">material</span>'&gt;
                      </span>
                      <div class="indent">
-                        <span title="A fieldValue element is used to re-initialize a default field value in a ProtoInstance">&lt;<span class="prototype">fieldValue</span>&#160;<span class="attribute">name</span>='<span class="prototype">description</span>'&#160;<span class="attribute">value</span>='<span class="value">ArtDeco01 can substitute for a Material node</span>'/&gt;
+                        <span title="A fieldValue element is used to re-initialize a default field value in a ProtoInstance" style="background-color:#FFEEFF">&lt;<span class="prototype">fieldValue</span>&#160;<span class="attribute">name</span>='<span class="prototype">description</span>'&#160;<span class="attribute">value</span>='<span class="value">ArtDeco01 can substitute for a Material node</span>'/&gt;
                         </span><br /><span title="XML comment">&lt;!-- [HelloWorldProgram diagnostic] ArtDeco01ProtoInstance.getNodeType()="ERROR_UNKNOWN_PROTOINSTANCE_NODE_TYPE:
                            ProtoInstance name='ArtDeco01' has no corresponding ProtoDeclareObject or ExternProtoDeclareObject
                            to provide type." --&gt;</span>
                         
-                     </div><span title="ProtoInstance creates an instance of a locally or externally declared prototype node">&lt;/<span class="prototype">ProtoInstance</span>&gt;
+                     </div><span title="ProtoInstance creates an instance of a locally or externally declared prototype node" style="background-color:#FFEEFF">&lt;/<span class="prototype">ProtoInstance</span>&gt;
                      </span><br /><span title="XML comment">&lt;!-- ArtDeco01 Material prototype goes here... --&gt;</span>
                      
                   </div><span title="Appearance specifies visual properties of geometry by containing Material, texture
@@ -571,15 +581,15 @@ function colorInput (eventValue) // Example source code
                   and TextureTransform nodes">&lt;<span class="element">Appearance</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">TestAppearance2</span>'&gt;
                   </span>
                   <div class="indent">
-                     <span title="ProtoInstance creates an instance of a locally or externally declared prototype node">&lt;<span class="prototype">ProtoInstance</span>&#160;<span class="attribute">name</span>='<span class="prototype">ArtDeco02</span>'&#160;<span class="attribute">containerField</span>='<span class="value">material</span>'&gt;
+                     <span title="ProtoInstance creates an instance of a locally or externally declared prototype node" style="background-color:#FFEEFF">&lt;<span class="prototype">ProtoInstance</span>&#160;<span class="attribute">name</span>='<span class="prototype">ArtDeco02</span>'&#160;<span class="attribute">containerField</span>='<span class="value">material</span>'&gt;
                      </span>
                      <div class="indent">
-                        <span title="A fieldValue element is used to re-initialize a default field value in a ProtoInstance">&lt;<span class="prototype">fieldValue</span>&#160;<span class="attribute">name</span>='<span class="prototype">description</span>'&#160;<span class="attribute">value</span>='<span class="value">ArtDeco02 can substitute for another Material node</span>'/&gt;
+                        <span title="A fieldValue element is used to re-initialize a default field value in a ProtoInstance" style="background-color:#FFEEFF">&lt;<span class="prototype">fieldValue</span>&#160;<span class="attribute">name</span>='<span class="prototype">description</span>'&#160;<span class="attribute">value</span>='<span class="value">ArtDeco02 can substitute for another Material node</span>'/&gt;
                         </span><br /><span title="XML comment">&lt;!-- [HelloWorldProgram diagnostic] ArtDeco02ProtoInstance.getNodeType()="ERROR_UNKNOWN_PROTOINSTANCE_NODE_TYPE:
                            ProtoInstance name='ArtDeco02' has no corresponding ProtoDeclareObject or ExternProtoDeclareObject
                            to provide type." --&gt;</span>
                         
-                     </div><span title="ProtoInstance creates an instance of a locally or externally declared prototype node">&lt;/<span class="prototype">ProtoInstance</span>&gt;
+                     </div><span title="ProtoInstance creates an instance of a locally or externally declared prototype node" style="background-color:#FFEEFF">&lt;/<span class="prototype">ProtoInstance</span>&gt;
                      </span><br /><span title="XML comment">&lt;!-- ArtDeco02 Material prototype goes here... --&gt;</span>
                      
                   </div><span title="Appearance specifies visual properties of geometry by containing Material, texture
@@ -605,94 +615,97 @@ function colorInput (eventValue) // Example source code
                world">&lt;<span class="element">EXPORT</span>&#160;<span class="attribute">localDEF</span>='<span class="value">WorldInfoDEF</span>'&#160;<span class="attribute">AS</span>='<span class="value">WorldInfoDEF3</span>'/&gt;
                </span><br />
 <a name="ProtoDeclare_MaterialModulator"> </a> 
-               <span title="ProtoDeclare is a Prototype declaration, defining a new node made up of other node(s)">&lt;<span class="prototype">ProtoDeclare</span>&#160;<span class="attribute">name</span>='<span class="prototype">MaterialModulator</span>'&#160;<span title="application information for this ProtoDeclare"><span class="gray">appinfo</span>='<span class="value">mimic a Material node and modulate fields as an animation effect</span>'</span>&#160;<span title="documentation url providing further information for this ProtoDeclare"><span class="attribute">documentation</span>='
+               <span title="ProtoDeclare is a Prototype declaration, defining a new node made up of other node(s)" style="background-color:#FFEEFF">&lt;<span class="prototype">ProtoDeclare</span>&#160;<span class="attribute">name</span>='<span class="prototype">MaterialModulator</span>'&#160;<span title="application information for this ProtoDeclare"><span class="gray">appinfo</span>='<span class="value">mimic a Material node and modulate fields as an animation effect</span>'</span>&#160;<span title="documentation url providing further information for this ProtoDeclare"><span class="attribute">documentation</span>='
                <a href="http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html">http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html</a>
                '</span>&gt;
                </span>
                <div class="indent">
-                  &lt;<span class="prototype">ProtoInterface</span>&gt;
-                  
+                  <span title="ProtoInterface is first statement inside a ProtoDeclare statement and holds field
+                  definitions" style="background-color:#FFEEFF">&lt;<span class="prototype">ProtoInterface</span>&gt;
+                  </span>
                   <div class="indent"><a name="MaterialModulatorProtoField_enabled"> </a> 
-                     <span title="A field element defines an interface attribute or node">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">enabled</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">true</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'/&gt;
+                     <span title="A field element defines an interface attribute or node" style="background-color:#FFEEFF">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">enabled</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">true</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'/&gt;
                      </span><br />
 <a name="MaterialModulatorProtoField_diffuseColor"> </a> 
-                     <span title="A field element defines an interface attribute or node">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">diffuseColor</span>'&#160;<span class="attribute">type</span>='<span class="value">SFColor</span>'&#160;<span class="attribute">value</span>='<span class="value">0 0 0</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'/&gt;
+                     <span title="A field element defines an interface attribute or node" style="background-color:#FFEEFF">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">diffuseColor</span>'&#160;<span class="attribute">type</span>='<span class="value">SFColor</span>'&#160;<span class="attribute">value</span>='<span class="value">0 0 0</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'/&gt;
                      </span><br />
 <a name="MaterialModulatorProtoField_emissiveColor"> </a> 
-                     <span title="A field element defines an interface attribute or node">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">emissiveColor</span>'&#160;<span class="attribute">type</span>='<span class="value">SFColor</span>'&#160;<span class="attribute">value</span>='<span class="value">0.05 0.05 0.5</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'/&gt;
+                     <span title="A field element defines an interface attribute or node" style="background-color:#FFEEFF">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">emissiveColor</span>'&#160;<span class="attribute">type</span>='<span class="value">SFColor</span>'&#160;<span class="attribute">value</span>='<span class="value">0.05 0.05 0.5</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'/&gt;
                      </span><br />
 <a name="MaterialModulatorProtoField_specularColor"> </a> 
-                     <span title="A field element defines an interface attribute or node">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">specularColor</span>'&#160;<span class="attribute">type</span>='<span class="value">SFColor</span>'&#160;<span class="attribute">value</span>='<span class="value">0 0 0</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'/&gt;
+                     <span title="A field element defines an interface attribute or node" style="background-color:#FFEEFF">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">specularColor</span>'&#160;<span class="attribute">type</span>='<span class="value">SFColor</span>'&#160;<span class="attribute">value</span>='<span class="value">0 0 0</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'/&gt;
                      </span><br />
 <a name="MaterialModulatorProtoField_transparency"> </a> 
-                     <span title="A field element defines an interface attribute or node">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">transparency</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">value</span>='<span class="value">0.0</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'/&gt;
+                     <span title="A field element defines an interface attribute or node" style="background-color:#FFEEFF">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">transparency</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">value</span>='<span class="value">0.0</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'/&gt;
                      </span><br />
 <a name="MaterialModulatorProtoField_shininess"> </a> 
-                     <span title="A field element defines an interface attribute or node">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">shininess</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">value</span>='<span class="value">0.0</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'/&gt;
+                     <span title="A field element defines an interface attribute or node" style="background-color:#FFEEFF">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">shininess</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">value</span>='<span class="value">0.0</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'/&gt;
                      </span><br />
 <a name="MaterialModulatorProtoField_ambientIntensity"> </a> 
-                     <span title="A field element defines an interface attribute or node">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">ambientIntensity</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">value</span>='<span class="value">0.0</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'/&gt;
+                     <span title="A field element defines an interface attribute or node" style="background-color:#FFEEFF">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">ambientIntensity</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">value</span>='<span class="value">0.0</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'/&gt;
                      </span>
-                  </div>&lt;/<span class="prototype">ProtoInterface</span>&gt;
-                  <br />
+                  </div><span title="ProtoInterface is first statement inside a ProtoDeclare statement and holds field
+                  definitions" style="background-color:#FFEEFF">&lt;/<span class="prototype">ProtoInterface</span>&gt;
+                  </span><br />
 
-                  &lt;<span class="prototype">ProtoBody</span>&gt;
-                  
+                  <span title="Initial scene node in ProtoDeclare/ProtoBody statement determines this prototype's
+                  node type" style="background-color:#FFEEFF">&lt;<span class="prototype">ProtoBody</span>&gt;
+                  </span>
                   <div class="indent"><a name="MaterialNode"> </a> 
                      <span title="Material specifies surface rendering properties for associated geometry">&lt;<span class="element">Material</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">MaterialNode</span>'&gt;
                      </span>
                      <div class="indent">
-                        <span title="IS connects ProtoDeclare interface fields to node fields inside ProtoDeclare definitions">&lt;<span class="element">IS</span>&gt;
+                        <span title="IS connects ProtoDeclare interface fields to node fields inside ProtoDeclare definitions" style="background-color:#FFEEFF">&lt;<span class="element">IS</span>&gt;
                         </span>
                         <div class="indent">
-                           <span title="connect tags define each ProtoDeclare field connection within ProtoDeclare definitions">&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype" title="connect interface events to this field in given node">diffuseColor</span>'&#160;<span class="attribute">protoField</span>='<span title="field interface connecting events into the prototype interior"><span class="prototype"><a title="go to the protoField definition" href="#ArtDeco01Material MaterialModulatorProtoField_diffuseColor" class="prototype">diffuseColor</a></span></span>'/&gt;
+                           <span title="connect tags define each ProtoDeclare field connection within ProtoDeclare definitions" style="background-color:#FFEEFF">&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype" title="connect interface events to this field in given node">diffuseColor</span>'&#160;<span class="attribute">protoField</span>='<span title="field interface connecting events into the prototype interior"><span class="prototype"><a title="go to the protoField definition" href="#ArtDeco01Material MaterialModulatorProtoField_diffuseColor" class="prototype">diffuseColor</a></span></span>'/&gt;
                            </span><br />
 
-                           <span title="connect tags define each ProtoDeclare field connection within ProtoDeclare definitions">&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype" title="connect interface events to this field in given node">emissiveColor</span>'&#160;<span class="attribute">protoField</span>='<span title="field interface connecting events into the prototype interior"><span class="prototype"><a title="go to the protoField definition" href="#ArtDeco01Material MaterialModulatorProtoField_emissiveColor" class="prototype">emissiveColor</a></span></span>'/&gt;
+                           <span title="connect tags define each ProtoDeclare field connection within ProtoDeclare definitions" style="background-color:#FFEEFF">&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype" title="connect interface events to this field in given node">emissiveColor</span>'&#160;<span class="attribute">protoField</span>='<span title="field interface connecting events into the prototype interior"><span class="prototype"><a title="go to the protoField definition" href="#ArtDeco01Material MaterialModulatorProtoField_emissiveColor" class="prototype">emissiveColor</a></span></span>'/&gt;
                            </span><br />
 
-                           <span title="connect tags define each ProtoDeclare field connection within ProtoDeclare definitions">&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype" title="connect interface events to this field in given node">specularColor</span>'&#160;<span class="attribute">protoField</span>='<span title="field interface connecting events into the prototype interior"><span class="prototype"><a title="go to the protoField definition" href="#ArtDeco01Material MaterialModulatorProtoField_specularColor" class="prototype">specularColor</a></span></span>'/&gt;
+                           <span title="connect tags define each ProtoDeclare field connection within ProtoDeclare definitions" style="background-color:#FFEEFF">&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype" title="connect interface events to this field in given node">specularColor</span>'&#160;<span class="attribute">protoField</span>='<span title="field interface connecting events into the prototype interior"><span class="prototype"><a title="go to the protoField definition" href="#ArtDeco01Material MaterialModulatorProtoField_specularColor" class="prototype">specularColor</a></span></span>'/&gt;
                            </span><br />
 
-                           <span title="connect tags define each ProtoDeclare field connection within ProtoDeclare definitions">&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype" title="connect interface events to this field in given node">transparency</span>'&#160;<span class="attribute">protoField</span>='<span title="field interface connecting events into the prototype interior"><span class="prototype"><a title="go to the protoField definition" href="#ArtDeco01Material MaterialModulatorProtoField_transparency" class="prototype">transparency</a></span></span>'/&gt;
+                           <span title="connect tags define each ProtoDeclare field connection within ProtoDeclare definitions" style="background-color:#FFEEFF">&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype" title="connect interface events to this field in given node">transparency</span>'&#160;<span class="attribute">protoField</span>='<span title="field interface connecting events into the prototype interior"><span class="prototype"><a title="go to the protoField definition" href="#ArtDeco01Material MaterialModulatorProtoField_transparency" class="prototype">transparency</a></span></span>'/&gt;
                            </span><br />
 
-                           <span title="connect tags define each ProtoDeclare field connection within ProtoDeclare definitions">&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype" title="connect interface events to this field in given node">shininess</span>'&#160;<span class="attribute">protoField</span>='<span title="field interface connecting events into the prototype interior"><span class="prototype"><a title="go to the protoField definition" href="#ArtDeco01Material MaterialModulatorProtoField_shininess" class="prototype">shininess</a></span></span>'/&gt;
+                           <span title="connect tags define each ProtoDeclare field connection within ProtoDeclare definitions" style="background-color:#FFEEFF">&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype" title="connect interface events to this field in given node">shininess</span>'&#160;<span class="attribute">protoField</span>='<span title="field interface connecting events into the prototype interior"><span class="prototype"><a title="go to the protoField definition" href="#ArtDeco01Material MaterialModulatorProtoField_shininess" class="prototype">shininess</a></span></span>'/&gt;
                            </span><br />
 
-                           <span title="connect tags define each ProtoDeclare field connection within ProtoDeclare definitions">&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype" title="connect interface events to this field in given node">ambientIntensity</span>'&#160;<span class="attribute">protoField</span>='<span title="field interface connecting events into the prototype interior"><span class="prototype"><a title="go to the protoField definition" href="#ArtDeco01Material MaterialModulatorProtoField_ambientIntensity" class="prototype">ambientIntensity</a></span></span>'/&gt;
+                           <span title="connect tags define each ProtoDeclare field connection within ProtoDeclare definitions" style="background-color:#FFEEFF">&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype" title="connect interface events to this field in given node">ambientIntensity</span>'&#160;<span class="attribute">protoField</span>='<span title="field interface connecting events into the prototype interior"><span class="prototype"><a title="go to the protoField definition" href="#ArtDeco01Material MaterialModulatorProtoField_ambientIntensity" class="prototype">ambientIntensity</a></span></span>'/&gt;
                            </span>
-                        </div><span title="IS connects ProtoDeclare interface fields to node fields inside ProtoDeclare definitions">&lt;/<span class="element">IS</span>&gt;
+                        </div><span title="IS connects ProtoDeclare interface fields to node fields inside ProtoDeclare definitions" style="background-color:#FFEEFF">&lt;/<span class="element">IS</span>&gt;
                         </span>
                      </div><span title="Material specifies surface rendering properties for associated geometry">&lt;/<span class="element">Material</span>&gt;
                      </span><br /><span title="XML comment">&lt;!-- Only first node (the node type) is renderable, others are along for the ride
                         --&gt;</span>
                      <br />
 <a name="MaterialModulatorScript"> </a> 
-                     &lt;<span class="element">Script</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">MaterialModulatorScript</span>'&gt;
-                     
+                     <span title="Script contains author-programmed event behaviors for a scene" style="background-color:#DDEEFF">&lt;<span class="element">Script</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">MaterialModulatorScript</span>'&gt;
+                     </span>
                      <div class="indent">
-                        <span title="A field element defines an interface attribute or node for a parent Script">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">enabled</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'/&gt;
+                        <span title="A field element defines an interface attribute or node for a parent Script" style="background-color:#DDEEFF">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">enabled</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'/&gt;
                         </span><br />
 
-                        <span title="A field element defines an interface attribute or node for a parent Script">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">diffuseColor</span>'&#160;<span class="attribute">type</span>='<span class="value">SFColor</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'/&gt;
+                        <span title="A field element defines an interface attribute or node for a parent Script" style="background-color:#DDEEFF">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">diffuseColor</span>'&#160;<span class="attribute">type</span>='<span class="value">SFColor</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'/&gt;
                         </span><br />
 
-                        <span title="A field element defines an interface attribute or node for a parent Script">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">newColor</span>'&#160;<span class="attribute">type</span>='<span class="value">SFColor</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'/&gt;
+                        <span title="A field element defines an interface attribute or node for a parent Script" style="background-color:#DDEEFF">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">newColor</span>'&#160;<span class="attribute">type</span>='<span class="value">SFColor</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'/&gt;
                         </span><br />
 
-                        <span title="A field element defines an interface attribute or node for a parent Script">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">clockTrigger</span>'&#160;<span class="attribute">type</span>='<span class="value">SFTime</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOnly</span>'/&gt;
+                        <span title="A field element defines an interface attribute or node for a parent Script" style="background-color:#DDEEFF">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">clockTrigger</span>'&#160;<span class="attribute">type</span>='<span class="value">SFTime</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOnly</span>'/&gt;
                         </span><br />
 
-                        <span title="IS connects ProtoDeclare interface fields to node fields inside ProtoDeclare definitions">&lt;<span class="element">IS</span>&gt;
+                        <span title="IS connects ProtoDeclare interface fields to node fields inside ProtoDeclare definitions" style="background-color:#FFEEFF">&lt;<span class="element">IS</span>&gt;
                         </span>
                         <div class="indent">
-                           <span title="connect tags define each ProtoDeclare field connection within ProtoDeclare definitions">&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype" title="connect interface events to this field in given node">enabled</span>'&#160;<span class="attribute">protoField</span>='<span title="field interface connecting events into the prototype interior"><span class="prototype"><a title="go to the protoField definition" href="#ArtDeco01Material MaterialModulatorProtoField_enabled" class="prototype">enabled</a></span></span>'/&gt;
+                           <span title="connect tags define each ProtoDeclare field connection within ProtoDeclare definitions" style="background-color:#FFEEFF">&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype" title="connect interface events to this field in given node">enabled</span>'&#160;<span class="attribute">protoField</span>='<span title="field interface connecting events into the prototype interior"><span class="prototype"><a title="go to the protoField definition" href="#ArtDeco01Material MaterialModulatorProtoField_enabled" class="prototype">enabled</a></span></span>'/&gt;
                            </span><br />
 
-                           <span title="connect tags define each ProtoDeclare field connection within ProtoDeclare definitions">&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype" title="connect interface events to this field in given node">diffuseColor</span>'&#160;<span class="attribute">protoField</span>='<span title="field interface connecting events into the prototype interior"><span class="prototype"><a title="go to the protoField definition" href="#ArtDeco01Material MaterialModulatorProtoField_diffuseColor" class="prototype">diffuseColor</a></span></span>'/&gt;
+                           <span title="connect tags define each ProtoDeclare field connection within ProtoDeclare definitions" style="background-color:#FFEEFF">&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype" title="connect interface events to this field in given node">diffuseColor</span>'&#160;<span class="attribute">protoField</span>='<span title="field interface connecting events into the prototype interior"><span class="prototype"><a title="go to the protoField definition" href="#ArtDeco01Material MaterialModulatorProtoField_diffuseColor" class="prototype">diffuseColor</a></span></span>'/&gt;
                            </span>
-                        </div><span title="IS connects ProtoDeclare interface fields to node fields inside ProtoDeclare definitions">&lt;/<span class="element">IS</span>&gt;
+                        </div><span title="IS connects ProtoDeclare interface fields to node fields inside ProtoDeclare definitions" style="background-color:#FFEEFF">&lt;/<span class="element">IS</span>&gt;
                         </span><br />
                         </div class="indent">
                         </div class="indent">
@@ -731,11 +744,12 @@ function clockTrigger (timeValue)
                         <div class="indent">
                         <div class="indent">
                         
-                     </div>&lt;/<span class="element">Script</span>&gt;
-                     
-                  </div>&lt;/<span class="prototype">ProtoBody</span>&gt;
-                  
-               </div><span title="ProtoDeclare is a Prototype declaration, defining a new node made up of other node(s)">&lt;/<span class="prototype">ProtoDeclare</span>&gt;
+                     </div><span title="Script contains author-programmed event behaviors for a scene" style="background-color:#DDEEFF">&lt;/<span class="element">Script</span>&gt;
+                     </span>
+                  </div><span title="Initial scene node in ProtoDeclare/ProtoBody statement determines this prototype's
+                  node type" style="background-color:#FFEEFF">&lt;/<span class="prototype">ProtoBody</span>&gt;
+                  </span>
+               </div><span title="ProtoDeclare is a Prototype declaration, defining a new node made up of other node(s)" style="background-color:#FFEEFF">&lt;/<span class="prototype">ProtoDeclare</span>&gt;
                </span><br /><span title="XML comment">&lt;!-- Test success: declarative statement createDeclarativeShapeTests() --&gt;</span>
                <br />
 <a name="DeclarativeGroupExample"> </a> 
@@ -752,7 +766,7 @@ function clockTrigger (timeValue)
                      and TextureTransform nodes">&lt;<span class="element">Appearance</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">DeclarativeAppearanceExample</span>'&gt;
                      </span>
                      <div class="indent"><a name="MyMaterialModulator"> </a> 
-                        <span title="ProtoInstance creates an instance of a locally or externally declared prototype node">&lt;<span class="prototype">ProtoInstance</span>&#160;<span class="attribute">name</span>='<a title="go to the defining ProtoDeclare for this prototype instance" href="#ProtoDeclare_MaterialModulator" class="prototype">MaterialModulator</a>'&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">MyMaterialModulator</span>'&#160;<span class="attribute">containerField</span>='<span class="value">material</span>'/&gt;
+                        <span title="ProtoInstance creates an instance of a locally or externally declared prototype node" style="background-color:#FFEEFF">&lt;<span class="prototype">ProtoInstance</span>&#160;<span class="attribute">name</span>='<a title="go to the defining ProtoDeclare for this prototype instance" href="#ProtoDeclare_MaterialModulator" class="prototype">MaterialModulator</a>'&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">MyMaterialModulator</span>'&#160;<span class="attribute">containerField</span>='<span class="value">material</span>'/&gt;
                         </span><br /><span title="XML comment">&lt;!-- DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator
                            ProtoInstance --&gt;</span>
                         
@@ -838,7 +852,29 @@ function clockTrigger (timeValue)
                <br /><span title="XML comment">&lt;!-- Test success: CommentsBlock.isNode()=false, testComments.isNode()=false --&gt;</span>
                <br /><span title="XML comment">&lt;!-- Test success: CommentsBlock.isStatement()=false, testComments.isStatement()=false
                   --&gt;</span>
-               
+               <br />
+<a name="ExtrusionShape"> </a> 
+               <span title="Shape contains geometry and optional corresponding Appearance">&lt;<span class="element">Shape</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">ExtrusionShape</span>'&gt;
+               </span>
+               <div class="indent"><a name="TransparentAppearance"> </a> 
+                  <span title="Appearance specifies visual properties of geometry by containing Material, texture
+                  and TextureTransform nodes">&lt;<span class="element">Appearance</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">TransparentAppearance</span>'&gt;
+                  </span>
+                  <div class="indent">
+                     <span title="Material specifies surface rendering properties for associated geometry">&lt;<span class="element">Material</span>&#160;<span class="attribute">transparency</span>='<span class="value">1.0</span>'/&gt;
+                     </span>
+                  </div><span title="Appearance specifies visual properties of geometry by containing Material, texture
+                  and TextureTransform nodes">&lt;/<span class="element">Appearance</span>&gt;
+                  </span><br />
+<a name="ExampleExtrusion"> </a> 
+                  <span title="Extrusion is a geometry node">&lt;<span class="element">Extrusion</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">ExampleExtrusion</span>'/&gt;
+                  </span><br /><span title="XML comment">&lt;!-- ExampleExtrusion isCrossSectionClosed()=true, crossSection='[1.0, 1.0, 1.0, -1.0,
+                     -1.0, -1.0, -1.0, 1.0, 1.0, 1.0]' --&gt;</span>
+                  <br /><span title="XML comment">&lt;!-- ExampleExtrusion isSpineClosed()=false, spine='[0.0, 0.0, 0.0, 0.0, 1.0, 0.0]'
+                     --&gt;</span>
+                  
+               </div><span title="Shape contains geometry and optional corresponding Appearance">&lt;/<span class="element">Shape</span>&gt;
+               </span>
             </div><span title="Scene is the root node that contains an X3D scene graph">&lt;/<span class="element">Scene</span>&gt;
             </span>
          </div><span title="X3D is the top-most XML element for an Extensible 3D (X3D) Graphics file">&lt;/<span class="element">X3D</span>&gt;
@@ -865,6 +901,8 @@ function clockTrigger (timeValue)
             <a title="go to this Appearance node" href="#DeclarativeAppearanceExample" class="idName">DeclarativeAppearanceExample</a>,
             <a title="go to this Group node" href="#DeclarativeGroupExample" class="idName">DeclarativeGroupExample</a>,
             <a title="go to this Viewpoint node" href="#DefaultView" class="idName">DefaultView</a>,
+            <a title="go to this Extrusion node" href="#ExampleExtrusion" class="idName">ExampleExtrusion</a>,
+            <a title="go to this Shape node" href="#ExtrusionShape" class="idName">ExtrusionShape</a>,
             <a title="go to this MetadataString node" href="#FindableMetadataStringTest" class="idName">FindableMetadataStringTest</a>,
             <a title="go to this Background node" href="#GradualBackground" class="idName">GradualBackground</a>,
             <a title="go to this Material node" href="#GreenMaterial" class="idName">GreenMaterial</a>,
@@ -888,22 +926,25 @@ function clockTrigger (timeValue)
             <a title="go to this Shape node" href="#TestShape2" class="idName">TestShape2</a>,
             <a title="go to this Transform node" href="#TextTransform" class="idName">TextTransform</a>,
             <a title="go to this Viewpoint node" href="#TopDownView" class="idName">TopDownView</a>,
+            <a title="go to this Appearance node" href="#TransparentAppearance" class="idName">TransparentAppearance</a>,
             <a title="go to this WorldInfo node" href="#WorldInfoDEF" class="idName">WorldInfoDEF</a>
             
             <hr style="width:100%"></hr>
          </div><span style="color:white">
             --&gt;
             </span></div>
-      <p style="text-align:center; background-color:lightgrey">
-         <span style="color:lightgrey">&lt;!--</span>
+      <p style="text-align:center;">
+         <span style="color:white">&lt;!--</span>
          Color key: 
          <!--(matching X3D and XML terminology) -->
          &lt;<span class="element">X3dNode</span><span class="idName"> DEF</span>='<span class="idName">idName</span>' <span class="attribute">field</span>='<span class="value">value</span>'/&gt; 
          matches 
-         &lt;<span class="element">XmlElement</span><span class="idName"> DEF</span>='<span class="idName">idName</span>' <span class="attribute">attribute</span>='<span class="value">value</span>'/&gt; &#160;&#160;&#160;
+         &lt;<span class="element">XmlElement</span><span class="idName"> DEF</span>='<span class="idName">idName</span>' <span class="attribute">attribute</span>='<span class="value">value</span>'/&gt; <br></br>
+         <span title="behavior node" style="background-color:#DDEEFF;">(Light blue background: behavior node)</span> <span title="inserted documentation about ROUTE connections" style="background-color:#EEEEEE;">(Grey background: inserted documentation)</span> <span title="X3D Extensibility" style="background-color:#FFEEFF;">(Magenta background: X3D Extensibility)</span><br></br>
+         &#160;&#160;&#160;
          &lt;<span class="prototype">Prototype</span> <span class="attribute">name</span>='<span class="prototype">ProtoName</span>'&gt;
          	&lt;<span class="prototype">field</span><span class="attribute">name</span>='<span class="prototype">fieldName</span>'/&gt; &lt;/<span class="prototype">Prototype</span>&gt;
-         <span style="color:lightgrey"> --&gt;</span>
+         <span style="color:white"> --&gt;</span>
          
       </p>
       <p style="text-align:center; background-color:white">
