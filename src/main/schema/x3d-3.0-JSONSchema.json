@@ -18646,13 +18646,13 @@
 		    }
 		},
 		"-coord": {
-		    "$ref": "#/definitions/-coord"
+		    "$ref": "#/definitions/-X3DCoordinateNodeSFNode"
 		},
 		"-texCoord": {
-		    "$ref": "#/definitions/-texCoord"
+		    "$ref": "#/definitions/-X3DTextureCoordinateNodeSFNode"
 		},
 		"-metadata": {
-		    "$ref": "#/definitions/-metadata"
+		    "$ref": "#/definitions/-X3DMetadataObjectSFNode"
 		}
 	    },
 	    "additionalProperties": false
