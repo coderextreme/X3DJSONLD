@@ -386,6 +386,7 @@ class ClassPrinter:
                 if field.get("name") == "children":
                     foundChildren = True
         if foundUse:
+            # Not sure if #comment is allowed alongside @USE or not
             str += '''\
 			"type": "object",
 			"oneOf": [
@@ -394,7 +395,20 @@ class ClassPrinter:
 					"properties": {
 						"@USE": {
 							"type": "string"
-						}
+						},
+                                                "-children": {
+                                                        "type": "array",
+                                                        "minItems": 1,
+                                                        "items": {
+                                                                "type": "object",
+                                                                "properties": {
+                                                                        "#comment": {
+                                                                                "type": "string"
+                                                                        }
+                                                                },
+                                                                "additionalProperties": false
+                                                        }
+                                                }
 					},
                                         "required": [
                                             "@USE"

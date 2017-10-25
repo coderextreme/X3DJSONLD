@@ -17,6 +17,7 @@
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
 import org.w3c.dom.DOMImplementation;
@@ -215,7 +216,7 @@ public class HelloWorldProgram
 	private void buildModelSceneGraph()
 	{
 		// independent objects must be instantiated separately - verbose but necessary
-	componentObject component1 = new componentObject();
+	    componentObject component1 = new componentObject();
 		unitObject   unitAngle = new unitObject();
 		unitObject  unitLength = new unitObject();
 		metaObject       meta0 = new metaObject(); // wild-card meta for current status
@@ -323,7 +324,7 @@ public class HelloWorldProgram
 		BoxObject                    box = new BoxObject();
 		String              lineShapeDEF = "LineShape";
 		ShapeObject         lineShape    = new ShapeObject(lineShapeDEF);
-		IndexedLineSetObject         ils = new IndexedLineSetObject();
+	 IndexedLineSetObject indexedLineSet = new IndexedLineSetObject();
 		AppearanceObject   ilsAppearance = new AppearanceObject();
 		MaterialObject	   ilsMaterial   = new MaterialObject();
 		AppearanceObject   boxAppearance = new AppearanceObject();
@@ -405,7 +406,7 @@ public class HelloWorldProgram
 		lineShape.setAppearance(ilsAppearance);
 		ilsAppearance.setMaterial(ilsMaterial);
 		ilsMaterial.setEmissiveColor(SFColorObject.DARKORCHID);
-		lineShape.setGeometry(ils);
+		lineShape.setGeometry(indexedLineSet);
 		 
 		// note last coordinate only used by interpolator
 		float[] boxPathPointArray = new float[] {0f, 1.5f, 0f,	2, 1.5f, 0,	2, 1.5f, -2,	-2, 1.5f, -2,	-2, 1.5f, 0,	0, 1.5f, 0};
@@ -413,10 +414,10 @@ public class HelloWorldProgram
 		float[] boxPathKeyArray   = new float[] {0, 0.125f, 0.375f, 0.625f, 0.875f, 1};
 		MFVec3fObject     boxPath = new MFVec3fObject();
 		 boxPath.setValue(boxPathPointArray);
-		ils.setCoordIndex(boxPathIndexArray);
+		indexedLineSet.setCoordIndex(boxPathIndexArray);
 		CoordinateObject boxCoordinateNode = new CoordinateObject();
 		boxCoordinateNode.setPoint(boxPathPointArray);
-		ils.setCoord(boxCoordinateNode);
+		indexedLineSet.setCoord(boxCoordinateNode);
 		
 		// test alternate type forms
 		boxCoordinateNode.setPoint(new MFVec3fObject(new float[] {-8f,-9f,4f,-7f,-7f,5f,-3f,0f,5f}));				//  floats to  float array to MFVec3f
@@ -943,6 +944,19 @@ public class HelloWorldProgram
                 result = ((CommentsBlock.isStatement() == false) && (CommentsBlock.isStatement() == false)) ? "success" : "failure";
                 testComments.addComments("Test " + result + ": CommentsBlock.isStatement()=" + CommentsBlock.isStatement() + ",      testComments.isStatement()="  + testComments.isStatement());
                 scene.addComments (testComments);
+                
+                ExtrusionObject exampleExtrusion = new ExtrusionObject("ExampleExtrusion");
+//              exampleExtrusion.setSpine(new MFVec3fObject() // test closed spine
+//                  .append(new SFVec3fObject(0,0,0)).append(new SFVec3fObject(0,1,0)).append(new SFVec3fObject(0,0,0)));
+                scene.addChild(new ShapeObject("ExtrusionShape")
+                        .setGeometry(exampleExtrusion)
+                        .addComments(new CommentsBlock(exampleExtrusion.getDEF() +
+                            " isCrossSectionClosed()=" + exampleExtrusion.isCrossSectionClosed() +
+                            ", crossSection='" + Arrays.toString(exampleExtrusion.getCrossSection()) + "'"))
+                        .addComments(new CommentsBlock(exampleExtrusion.getDEF() +
+                            " isSpineClosed()=" + exampleExtrusion.isSpineClosed() +
+                            ", spine='" + Arrays.toString(exampleExtrusion.getSpine()) + "'"))
+                        .setAppearance(new AppearanceObject("TransparentAppearance").setMaterial(new MaterialObject().setTransparency(1))));
                 
                 // all finished, go see if the paint is dry
 	}

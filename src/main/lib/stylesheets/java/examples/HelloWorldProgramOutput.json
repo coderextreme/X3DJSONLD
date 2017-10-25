@@ -50,7 +50,7 @@
           },
           {
             "@name":"modified",
-            "@content":"24 September 2017"
+            "@content":"22 October 2017"
           },
           {
             "@name":"generator",
@@ -110,7 +110,7 @@
           },
           {
             "@name":"translated",
-            "@content":"24 September 2017"
+            "@content":"22 October 2017"
           },
           {
             "@name":"generator",
@@ -990,6 +990,37 @@
           },
           {
             "#comment":"Test success: CommentsBlock.isStatement()=false, testComments.isStatement()=false"
+          },
+          { "Shape":
+            {
+              "@DEF":"ExtrusionShape",
+              "-appearance":
+                { "Appearance":
+                  {
+                    "@DEF":"TransparentAppearance",
+                    "-material":
+                      { "Material":
+                        {
+                          "@transparency":1.0
+                        }
+                      }
+                  }
+                },
+              "-geometry":
+                { "Extrusion":
+                  {
+                    "@DEF":"ExampleExtrusion"
+                  }
+                },
+              "-children":[
+                {
+                  "#comment":"ExampleExtrusion isCrossSectionClosed()=true, crossSection='[1.0, 1.0, 1.0, -1.0, -1.0, -1.0, -1.0, 1.0, 1.0, 1.0]'"
+                },
+                {
+                  "#comment":"ExampleExtrusion isSpineClosed()=false, spine='[0.0, 0.0, 0.0, 0.0, 1.0, 0.0]'"
+                }
+              ]
+            }
           }
         ]
     }

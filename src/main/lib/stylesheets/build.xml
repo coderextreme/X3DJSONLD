@@ -82,6 +82,14 @@ POSSIBILITY OF SUCH DAMAGE.
     <!-- http://stackoverflow.com/questions/919692/how-to-execute-xslt-2-0-with-ant -->
     <property name="saxon.dir"        location="java/lib" description="relative path from stylesheets directory"/>
     <property name="saxon.jar"           value="saxon9he.jar"/>
+    
+    <!-- http://openexi.sourceforge.net -->
+    <!-- https://sourceforge.net/projects/openexi/files -->
+    <property name="openexi-nagasena.jar"           value="nagasena.jar"/>
+    
+    <!-- https://exificient.github.io/java -->
+    <!-- https://exificient.github.io/java/exificient-gui-jar-with-dependencies.jar -->
+    <property name="exificient.jar"           value="exificient-gui-jar-with-dependencies.jar"/>
 
     <!-- ant jar manifest properties -->
     <property name="user.name"                value="Don Brutzman, brutzman@nps.edu"/>
@@ -410,27 +418,23 @@ and
 
     <target name="create.X3DJSAIL.jars" depends="" description="Build X3DJSAIL jars" >
         <!-- TODO jar files for each X3D version -->
-		<echo message="preparing .jar files"/>
+	<!-- https://dzone.com/articles/what-is-jar-hell -->
+        <!-- http://docs.oracle.com/javase/8/docs/technotes/guides/deploy/toc.html -->
+        <echo message="preparing .jar files"/>
         <mkdir dir="${java.jars.dir}"/>
-		<echo message="${jsai.classes.archive.jar.name} contains only compiled .class files"/>
+	<!-- ===================================================================== -->
+	<echo message="${jsai.classes.archive.jar.name} contains only compiled .class files and dependency jars"/>
 	<jar destfile="${jsai.classes.archive.jar.name}">
-            <manifest id="JarManifestClasses">
-              <!-- If this is an Applet or Web Start application, include
-                   the proper attributes from http://docs.oracle.com/javase/7/docs/technotes/guides/jweb/index.html
-              <attribute name="Permissions" value="sandbox"/>
-              <attribute name="Codebase" value="example.com"/> -->
+            <!-- http://docs.oracle.com/javase/8/docs/technotes/guides/deploy/manifest.html -->
+            <manifest id="ClassesJarManifest">
               <!-- Who is building this jar? -->
               <attribute name="Built-By" value="${user.name}"/>
               <!-- Information about the program itself -->
               <attribute name="Implementation-Vendor" value="Web3D Consortium http://www.web3D.org"/>
               <attribute name="Implementation-Title" value="X3DJSAIL"/>
               <attribute name="Implementation-Version" value="1.0"/>
-              <attribute name="Sealed" value="true"/>
               <attribute name="Main-Class" value="org.web3d.x3d.jsail.CommandLine"/>
-              <attribute name="Class-Path" value="saxon9he.jar"/>
-              <!-- details
-              <section name="common/MyClass.class">
-              </section> -->
+              <attribute name="Sealed" value="true"/>
             </manifest>
             <fileset dir="${java.dir}">
                 <include name="*.txt"/>
@@ -442,21 +446,20 @@ and
                 <exclude name="jars"/>
                 <exclude name="jars/*.jar"/>
             </fileset>
-			<!-- jars
-            <fileset dir="${java.jars.dir}">
-                <include name="*.jar"/>
-            </fileset> -->
-			<!-- lib, stylesheets -->
+            <!-- lib, stylesheets -->
             <fileset dir="${java.lib.dir}">
                 <include name="**/*"/>
                 <include name="**/*.xslt"/>
-                <include name="**/saxon9he.jar"/>
+                <!-- Note that no external-dependency jar files are included in this stripped-down jar -->
             </fileset>
         </jar>
-		
+        
+	<!-- ===================================================================== -->
         <echo message="${jsai.full.archive.jar.name} contains all compiled .class files, all source .java files, and javadoc documentation"/>
-        <jar destfile="${jsai.full.archive.jar.name}">
-            <manifest id="JarManifestFull">
+        <echo message="${jsai.full.archive.jar.name} is a 'fat jar' that can be run independently on command line or elsewehere"/>
+        <!-- https://stackoverflow.com/questions/19150811/what-is-a-fat-jar -->
+        <jar destfile="${jsai.full.archive.jar.name}.withSignatures">
+            <manifest id="FullJarManifest">
               <!-- If this is an Applet or Web Start application, include
                    the proper attributes from http://docs.oracle.com/javase/7/docs/technotes/guides/jweb/index.html
               <attribute name="Permissions" value="sandbox"/>
@@ -465,39 +468,23 @@ and
               <attribute name="Built-By" value="${user.name}"/>
               <!-- Information about the program itself -->
               <attribute name="Implementation-Vendor" value="Web3D Consortium http://www.web3D.org"/>
-              <attribute name="Implementation-Title" value="X3DJSAIL"/>
+              <attribute name="Implementation-Title" value="X3DJSAIL Full"/>
               <attribute name="Implementation-Version" value="1.0"/>
               <attribute name="Sealed" value="true"/>
               <attribute name="Main-Class" value="org.web3d.x3d.jsail.CommandLine"/>
-              <attribute name="Class-Path" value="saxon9he.jar"/>
-              <!-- details
-              <section name="common/MyClass.class">
-                <attribute name="Sealed" value="false"/>
-              </section> -->
+              <!-- https://dzone.com/articles/what-is-jar-hell
+                   http://docs.oracle.com/javase/tutorial/deployment/jar/downman.html
+                   "Note: The Class-Path header points to classes or JAR files on the local network, 
+                    not JAR files within the JAR file or classes accessible over Internet protocols.
+                    To load classes in JAR files within a JAR file into the class path, you must write custom code to load those classes."
+                    So one or more Class-Path entries won't provide general portability:
+              <attribute name="Class-Path" value="./${saxon.jar};./${openexi-nagasena.jar};./${exificient.jar}"/>
+               -->
             </manifest>
             <!-- everything -->
             <fileset dir="${java.dir}">
                 <include name="*.txt"/>
                 <include name="*.html"/>
-            </fileset>
-            <fileset dir="${java.classes.dir}">
-                <include name="**/*.class"/>
-                <exclude name="javadoc.redirect.html"/>
-                <exclude name="jars"/>
-                <exclude name="jars/*.jar"/>
-            </fileset>
-			<!-- jars
-            <fileset dir="${java.jars.dir}">
-                <include name="*.jar"/>
-            </fileset> -->
-			<!-- lib, stylesheets -->
-            <fileset dir="${java.lib.dir}">
-                <include name="**/*"/>
-                <include name="**/*.xslt"/>
-                <include name="**/saxon9he.jar"/>
-            </fileset>
-			<!-- additions -->
-            <fileset dir="${java.dir}">
                 <include name="draftJavaLanguageBindingAnnexes/**/*"/>
                 <include name="examples/**/*"/>
                 <include name="images/**/*"/>
@@ -509,8 +496,46 @@ and
                 <exclude name="**/private/**"/>
                 <exclude name="examples/images/HelloWorldProgramOutput/**"/>
             </fileset>
+            <fileset dir="${java.classes.dir}">
+                <include name="**/*.class"/>
+                <exclude name="javadoc.redirect.html"/>
+                <exclude name="jars"/>
+                <exclude name="jars/*.jar"/>
+            </fileset>
+            <!-- lib, stylesheets -->
+            <fileset dir="${java.lib.dir}">
+                <include name="**/*"/>
+                <include name="**/*.xslt"/>
+                <exclude name="${saxon.jar}"/>
+                <exclude name="${openexi-nagasena.jar}"/>
+                <exclude name="${exificient.jar}"/>
+            </fileset>
+            <zipgroupfileset dir="${java.lib.dir}">
+                <include name="${exificient.jar}"/>
+                <include name="${openexi-nagasena.jar}"/>
+                <include name="${saxon.jar}"/>
+                <!-- apparently unable to avoid inclusion, so removed later
+                    <exclude name="META-INF/SAXONICA.DSA"/>
+                    <exclude name="META-INF/SAXONICA.RSA"/>
+                    <exclude name="META-INF/SAXONICA.SF"/>
+                -->
+            </zipgroupfileset>
         </jar>
-		
+        <!-- why removing signatures from integrated jar files is necessary:
+             https://stackoverflow.com/questions/999489/invalid-signature-file-when-attempting-to-run-a-jar -->
+        <!-- remove signatures from external jars: see "Have you tried using the zipfileset task?"
+             https://stackoverflow.com/questions/2521231/ant-task-to-remove-files-from-a-jar -->
+        <!-- zipfileset: https://ant.apache.org/manual/Tasks/zip.html and https://ant.apache.org/manual/Types/zipfileset.html -->
+        <jar destfile="${jsai.full.archive.jar.name}">
+            <zipfileset src="${jsai.full.archive.jar.name}.withSignatures">
+                <exclude name="META-INF/*.DSA"/>
+                <exclude name="META-INF/*.RSA"/>
+                <exclude name="META-INF/*.SF"/>
+            </zipfileset>
+        </jar>
+        <delete file="${jsai.full.archive.jar.name}.withSignatures" verbose="true"/>
+
+	<!-- ===================================================================== -->
         <move file="${jsai.classes.archive.jar.name}"     todir="${java.jars.dir}" verbose="true"/>
         <length property="jsai.classes.archive.jar.length" file="${java.jars.dir}/${jsai.classes.archive.jar.name}"/>
         <echo>Build complete: ${jsai.classes.archive.jar.name} for Java SAI .class interfaces only (${jsai.classes.archive.jar.length} bytes) </echo>
@@ -518,8 +543,8 @@ and
 		<move file="${jsai.full.archive.jar.name}"     todir="${java.jars.dir}" verbose="true"/>
         <length property="jsai.full.archive.jar.length" file="${java.jars.dir}/${jsai.full.archive.jar.name}"/>
         <echo>Build complete: ${jsai.full.archive.jar.name} for all .class interfaces, .java sources (${jsai.full.archive.jar.length} bytes) </echo>
-		<!-- TODO also provide option in archive build file to download current version -->
-		<copy file="${java.jars.dir}/${jsai.classes.archive.jar.name}" todir="../content/examples/Basic/lib"/>
+	<!-- TODO also provide option in archive build file to download current version -->
+	<copy file="${java.jars.dir}/${jsai.classes.archive.jar.name}" todir="../content/examples/Basic/lib"/>
     	<copy file="${java.jars.dir}/${jsai.classes.archive.jar.name}" todir="../content/examples/ConformanceNist/lib"/>
     	<copy file="${java.jars.dir}/${jsai.classes.archive.jar.name}" todir="../content/examples/Vrml2Sourcebook/lib"/>
     	<copy file="${java.jars.dir}/${jsai.classes.archive.jar.name}" todir="../content/examples/Savage/lib"/>

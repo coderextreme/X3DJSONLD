@@ -52,7 +52,7 @@
         </blockquote>
 
 <!-- ======================================================== -->
-
+<hr />
 <h3> 
 	<a name="Abstract">Abstract</a>
 	<a href="#"><!-- to top -->
@@ -117,7 +117,7 @@ for Java programmers.
 	</ul>
 
 <!-- ======================================================== -->
-
+<hr />
 <h3> 
 	<a name="Codebase">Codebase Production</a> 
 	<a href="#"><!-- to top -->
@@ -125,7 +125,11 @@ for Java programmers.
 	</a>
 </h3>
 	
-
+        <p>
+            This work implements the 
+            X3D Unified Object Model (X3DUOM)
+            in support of full and emerging X3D Specification capabilities.
+        </p>
 	<ul>
 		<!--
 		<li>
@@ -181,9 +185,13 @@ for Java programmers.
 			lists Javadoc links for all archives.
 		</li>
 	</ul>
+	<p>
+		TODO under active development: the X3DJSAIL library-creation files currently require multiple external assets and local configuration.
+		Ongoing work will combine these and other resources into an independently buildable project.
+	</p>
 
 <!-- ======================================================== -->
-
+<hr />
 <h3>
 	<a name="CommandLine">Command Line</a>
 	<a href="#"><!-- to top -->
@@ -196,40 +204,71 @@ for Java programmers.
                 <a href="javadoc/org/web3d/x3d/jsail/CommandLine.html" target="_blank">org.x3d.jsail.CommandLine</a>
                 class.
 	</p>
-        <ul style="padding: 0 0 0 40px"><!-- not working -->
+        <ul>
             <li>
-                <i>Prerequisite:</i> CLASSPATH correctly containing
-                <code>saxon9he.jar</code>
-                plus
-                <code>X3DJSAIL.3.3.classes.jar</code> (or
-                <code>X3DJSAIL.3.3.full.jar</code>):
-                <br />
-                CLASSPATH confirmation: <code>% <b>set</b></code>
-                <br />
-                <code>CLASSPATH='C:\x3d-code\www.web3d.org\x3d\stylesheets\java\jars\X3DJSAIL.3.3.classes.jar;C:\x3d-code\www.web3d.org\x3d\stylesheets\java\lib\saxon9he.jar'</code>
+                <i>Invocation of standalone .jar</i>
+                <p>
+                    <code>java -classpath path/<a href="lib/X3DJSAIL.3.3.full.jar">X3DJSAIL.3.3.full.jar</a> [sourceModel.x3d | -help | -page | -resources | -tooltips]
+                        <br /> &nbsp;&nbsp;&nbsp;&nbsp; [-tofile [resultFile.*]]
+                        <br /> &nbsp;&nbsp;&nbsp;&nbsp; [-validate | -toX3D | -toXML | -toClassicVrml | -toJSON | -toVRML97 | -toX3DOM | -toX_ITE]</code>
+                </p>
+                <p>
+                    <i>Example:</i> &nbsp;&nbsp; <span style="font-weight:bold;color:darkgreen">
+                                                 <code>java -classpath path/X3DJSAIL.3.3.full.jar org.web3d.x3d.jsail.CommandLine -help</code></span>
+                </p>
+                <p>
+                    <i>Example:</i> &nbsp;&nbsp; <span style="font-weight:bold;color:darkgreen">
+                                                 <code>java -classpath path/X3DJSAIL.3.3.full.jar org.web3d.x3d.jsail.CommandLine HelloWorld.x3d -toVRML97 -toFile</code></span>
+                </p>
             </li>
         </ul>
         <ul>
             <li>
-                <i>Invocation:</i>        <b><code>java org.web3d.x3d.jsail.CommandLine [-help | sourceScene.x3d] [-file [resultFile.*]] [-toX3D | -toXML | -toClassicVrml | -toJSON | -toVRML97 | -toX3DOM | -toX_ITE]</code></b>
-                <br />
-                <i>Example:</i> &nbsp;&nbsp; <code>java org.web3d.x3d.jsail.CommandLine HelloWorld.x3d -toClassicVRML</code>
+                <i>Invocation using local libraries</i> <br /> &nbsp;
             </li>
-        </ul>
-        <ul>
-            <li>
-                TODO debug direct .jar invocation (according to following)
-                <br />
-                <i>Expected usage:</i> <code>java -jar path/X3DJSAIL.*.jar [-help | sourceScene.x3d] [-file [resultFile.*]] [-toX3D | -toXML | -toClassicVrml | -toJSON | -toVRML97 | -toX3DOM | -toX_ITE]</code>
-            </li>
+            <ul>
+                <li>
+                    <i>Prerequisite:</i> CLASSPATH correctly containing 
+                    <a href="lib/X3DJSAIL.3.3.classes.jar"><code>X3DJSAIL.3.3.classes.jar</code></a>
+                    plus
+                    Saxon stylesheet engine
+                    <a href="lib/saxon9he.jar"><code>saxon9he.jar</code></a>
+                    <p>
+                        Example CLASSPATH confirmation: <code>% <span style="font-weight:bold;color:darkgreen"><b>echo $CLASSPATH</b></span></code>
+                        <br />
+                        <code>CLASSPATH='C:\x3d-code\www.web3d.org\x3d\stylesheets\java\jars\X3DJSAIL.3.3.classes.jar;C:\x3d-code\www.web3d.org\x3d\stylesheets\java\lib\saxon9he.jar'</code>
+                    </p>
+                    <p>
+                        Alternative CLASSPATH configuration: <code>% <span style="font-weight:bold;color:darkgreen"><b>echo $CLASSPATH</b></span></code>
+                        <br />
+                        <code>CLASSPATH='C:\x3d-code\www.web3d.org\x3d\stylesheets\java\jars\X3DJSAIL.3.3.full.jar'</code>
+                    </p>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <i>Invocation:</i>  
+                        <br /> <b><code>java org.web3d.x3d.jsail.CommandLine [sourceModel.x3d | -help | -page | -resources | -tooltips] 
+                        <br /> &nbsp;&nbsp;&nbsp;&nbsp; [-tofile [resultFile.*]]
+                        <br /> &nbsp;&nbsp;&nbsp;&nbsp; [-validate | -toX3D | -toXML | -toClassicVrml | -toJSON | -toVRML97 | -toX3DOM | -toX_ITE]</code></b>
+                    <p>
+                        <i>Example:</i> &nbsp;&nbsp; <span style="font-weight:bold;color:darkgreen">
+                                                 <code>java org.web3d.x3d.jsail.CommandLine -help</code></span>
+                    </p>
+                    <p>
+                        <i>Example:</i> &nbsp;&nbsp; <span style="font-weight:bold;color:darkgreen">
+                                                 <code>java org.web3d.x3d.jsail.CommandLine HelloWorld.x3d -toClassicVRML</code></span>
+                    </p>
+                </li>
+            </ul>
         </ul>
 
         <p>
-            Model validation is performed as part of this process.
+            Model validation is always performed as part of X3DJSAIL operations.
         </p>
 
 <!-- ======================================================== -->
-
+<hr />
 <h3>
 	<a name="Conversions">Conversions</a>
 	<a href="#"><!-- to top -->
@@ -366,7 +405,7 @@ for Java programmers.
 	</p>
 
 <!-- ======================================================== -->
-
+<hr />
 <h3>
 	<a name="Design">Design Features</a>
 	<a href="#"><!-- to top -->
@@ -417,7 +456,7 @@ for Java programmers.
 
 
 <!-- ======================================================== -->
-
+<hr />
 <h3> 
 	<a name="Downloads">Downloads</a>
 	<a href="#"><!-- to top -->
@@ -431,20 +470,27 @@ for Java programmers.
 
 	<ul>
 		<li>
-			<a href="jars/X3DJSAIL.3.3.classes.jar" target="_blank">X3DJSAIL.3.3.classes.jar</a> (~8MB)
+			<a href="jars/X3DJSAIL.3.3.full.jar" target="_blank">X3DJSAIL.3.3.full.jar</a> (24MB) is a
+                        <a href="https://stackoverflow.com/questions/19150811/what-is-a-fat-jar" target="_blank">fat&nbsp;jar</a> 
+                        with all necessary binaries, source, and documentation. 
 		</li>
 		<li>
-			<a href="jars/X3DJSAIL.3.3.full.jar" target="_blank">X3DJSAIL.3.3.full.jar</a> source, documentation, etc. (~24MB)
+			<a href="jars/X3DJSAIL.3.3.classes.jar" target="_blank">X3DJSAIL.3.3.classes.jar</a> (8MB)
+                        is a minimalist jar that only contains X3DJSAIL classes and assets.
 		</li>
 	</ul>
 	<p>
-			The full.jar can be unzipped to create a complete local copy of all source, documentation and example programs.
-			When building examples, further CLASSPATH modifications may also be needed to link additional support-library jar files in the 
-			<a href="lib/"><code>lib</code></a> subdirectory.
+            <b><code>X3DJSAIL.3.3.full.jar</code></b> can be unzipped to create a complete local copy of all source, binaries, documentation and example programs.
+            It is also executable on the
+            <a href="#CommandLine">Command&nbsp;Line</a>.
 	</p>
 	<p>
-			Development: the following library-creation files currently require special configuration to build X3DJSAIL.
-			TODO work will combine these and other resources into an independently buildable project.
+            <b><code>X3DJSAIL.3.3.classes.jar</code></b> can be used by developers for server-side usage or integration in other applications.
+            Further CLASSPATH modifications may be needed to to use it.
+            For full operation, third-party dependency jars found in the 
+            <a href="lib/"><code>lib</code></a> subdirectory must also be in the application <code>CLASSPATH</code>.
+            Examples are shown under 
+            <a href="#CommandLine">Command&nbsp;Line</a> use.
 	</p>
 
 	<ul>
@@ -457,7 +503,7 @@ for Java programmers.
 	</ul>
 
 <!-- ======================================================== -->
-
+<hr />
 <h3> 
 	<a name="Examples">Examples</a>
 	<a href="#"><!-- to top -->
@@ -522,7 +568,7 @@ for Java programmers.
 	</ul>
 
 <!-- ======================================================== -->
-
+<hr />
 <h3> 
 	<a name="OtherImplementations">Other X3D Java Implementations</a>
 	<a href="#"><!-- to top -->
@@ -550,7 +596,7 @@ for Java programmers.
 	</ul>
 
 <!-- ======================================================== -->
-
+<hr />
 <h3>
 	<a name="References">References and Relevant X3D Specifications</a>
 	<a href="#"><!-- to top -->
@@ -628,7 +674,7 @@ for Java programmers.
 	</ul>
 
 <!-- ======================================================== -->
-
+<hr />
 <h3>
 	<a name="SpecificationChanges">Specification Changes under Consideration</a>
 	<a href="#"><!-- to top -->
@@ -644,10 +690,12 @@ for Java programmers.
 			(ISO/IEC&nbsp;19777-2).
 		</li>
 		<li>
-			Specification prose is needed to define necessary support for <code>DEF</code>, <code>USE</code> and <code>class</code> attributes.
+			Significant specification work is needed to align
+			<a href="http://www.web3d.org/documents/specifications/19775-2/V3.3/Part02/X3D_SAI.html">X3D Abstract Scene Access Interface (SAI)</a>	
+			and corresponding language-binding specifications, including the X3D Java SAI.
 		</li>
 		<li>
-			Consider appropriate specification issues for abstract SAI and corresponding encoding specifications.
+			Specification prose is needed to define necessary support for <code>DEF</code>, <code>USE</code> and <code>class</code> attributes.
 		</li>
 		<li>
 			Not needed: adding Annex D Java SAI Concrete Classes for standalone scene programming, since
@@ -664,7 +712,7 @@ for Java programmers.
 	</ul>
 
 <!-- ======================================================== -->
-
+<hr />
 <h3>
 	<a name="TODO">TODO</a> Planned Work
 	<a href="#"><!-- to top -->
@@ -712,7 +760,8 @@ for Java programmers.
 		</li>
 		<li>
 			Transcribe definitions into XML Schema, automate addition of the very-short set of allowed alternative
-			<code>containerField</code> values.
+			<code><a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerField">containerField</a></code> 
+			values.
 		</li>
 		<li>
 			Implement specialty string subtypes such as 
@@ -754,6 +803,9 @@ for Java programmers.
 			development is testing and building many capabilities.
 			<a name="Maven"><a href="https://maven.apache.org" target="_blank">Maven</a></a>
 			support is planned.
+		</li>
+		<li>
+                        Add validation of min/max inclusive/exclusive bounds when setting values for arrays.
 		</li>
 		<li>
 			Provide enumeration constants for
@@ -862,7 +914,7 @@ for Java programmers.
 	</ul>
 
 <!-- ======================================================== -->
-
+<hr />
 <h3>
 	<a name="UtilityMethods">Utility Methods and Functionality</a>
 	<a href="#"><!-- to top -->
@@ -1201,14 +1253,21 @@ for Java programmers.
 			<code><a href="javadoc/org/web3d/x3d/jsail/X3DConcreteNode.html#isNode--">X3DConcreteNode.isNode()</a></code>,
 			<code><a href="javadoc/org/web3d/x3d/jsail/X3DConcreteStatement.html#isStatement--">X3DConcreteStatement.isStatement()</a></code> 
                         and
-			<code><a href="javadoc/org/web3d/x3d/jsail/Core/CommentsBlock.html#isStatement--">CommentsBlock.isStatement()</a></code> 
+			<code><a href="javadoc/org/web3d/x3d/jsail/Core/CommentsBlock.html#isStatement--">CommentsBlock.isStatement()</a></code>
+		</li>
+		<li>
+			<span style="color:darkgreen"><i>Complete</i></span>. 
+                        <code><a href="javadoc/org/web3d/x3d/jsail/Geometry3D/ExtrusionObject.html">ExtrusionObject</a></code>
+                        utility methods 
+                        <code><a href="javadoc/org/web3d/x3d/jsail/Geometry3D/ExtrusionObject.html#isCrossSectionClosed--">isCrossSectionClosed()</a></code>,
+                        <code><a href="javadoc/org/web3d/x3d/jsail/Geometry3D/ExtrusionObject.html#isSpineClosed--">isSpineClosed()</a></code>
+                        and
+                        <code><a href="javadoc/org/web3d/x3d/jsail/Geometry3D/ExtrusionObject.html#itoFileSvgCrossSection-java.lang.String-">toFileSvgCrossSection(fileName)</a></code>
 		</li>
 	</ul>
 
-	<!-- =================================================== -->
-
-	<hr />
-
+<!-- =================================================== -->
+<hr />
 <h3>
 	<a name="Contact">Contact</a>
 	<a href="#"><!-- to top -->
@@ -1217,7 +1276,7 @@ for Java programmers.
 </h3>
 
 	<blockquote>
-		Updated  25 September 2017.
+		Updated  22 October 2017.
 	</blockquote>
 
 	<blockquote>
@@ -1234,7 +1293,7 @@ for Java programmers.
 
 	<blockquote>
 		Questions, suggestions, additions and comments regarding the
-		Object Model for X3D&nbsp;(OM4X3D) and the X3D&nbsp;Java&nbsp;SAI Library&nbsp;(X3DJSAIL) are welcome.
+		X3D&nbsp;Java&nbsp;SAI Library&nbsp;(X3DJSAIL) and X3D Unified Object Model(X3DUOM) design are welcome.
 		Please send them to
 		<a href="http://faculty.nps.edu/brutzman" target="_blank">Don&nbsp;Brutzman</a>
 		(<a href="mailto:brutzman_@_nps.edu%20(Don%20Brutzman)?subject=feedback:%20X3D%20Java%20SAI%20"><i>brutzman&nbsp;at&nbsp;nps.edu</i></a>),

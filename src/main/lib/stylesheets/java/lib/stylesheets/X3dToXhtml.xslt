@@ -136,9 +136,6 @@ span.value {color: teal}
 span.plain {color: black}
 span.gray  {color: gray}
 span.idName {color: maroon}
-span.addedDocumentation {background-color:#EEEEEE} // slightly darker for html page contrast
-span.behaviorNode       {background-color:#DDEEFF} // light blue for html page contrast
-span.extensibilityNode  {background-color:#FFEEFF} // light blue for html page contrast
 a.idName {color: maroon}
 div.center {text-align: center}
 div.indent {margin-left: 25px}
@@ -403,9 +400,9 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                 </xsl:if>
 
                 <!-- build color key as XML comment -->
-                <p style="text-align:center;">
+                <p style="text-align:center; background-color:lightgrey">
                     <xsl:text>&#10;</xsl:text>
-                    <span style="color:white">&lt;!--</span>
+                    <span style="color:lightgrey">&lt;!--</span>
                     <xsl:text>&#10;</xsl:text>
                     <xsl:text>Color key: </xsl:text>
                     <xsl:comment>(matching X3D and XML terminology) </xsl:comment>
@@ -462,16 +459,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <xsl:text>value</xsl:text>
                     </span>
                     <xsl:text>'/&gt; </xsl:text>
-                    <br />
-                    <xsl:text>&#10;</xsl:text>
-                    <xsl:text disable-output-escaping="yes">&lt;span title="behavior node" style="background-color:#DDEEFF;"&gt;(Light blue background: behavior node)&lt;/span&gt;</xsl:text>
-                    <xsl:text> </xsl:text>
-                    <xsl:text disable-output-escaping="yes">&lt;span title="inserted documentation about ROUTE connections" style="background-color:#EEEEEE;"&gt;(Grey background: inserted documentation)&lt;/span&gt;</xsl:text>
-                    <xsl:text> </xsl:text>
-                    <xsl:text disable-output-escaping="yes">&lt;span title="X3D Extensibility" style="background-color:#FFEEFF;"&gt;(Magenta background: X3D Extensibility)&lt;/span&gt;</xsl:text>
-                    <br />
-                    <xsl:text>&#10;</xsl:text>
-                    
+
                     <!-- done with node key, begin Prototype key -->
                     <xsl:if test="//*[contains(local-name(),'Proto')]">
                         <xsl:text disable-output-escaping="yes">&amp;#160;&amp;#160;&amp;#160;</xsl:text> <!-- &nbsp; -->
@@ -507,7 +495,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <xsl:text>&gt;</xsl:text>
                     </xsl:if>
                     <xsl:text>&#10;</xsl:text>
-                    <span style="color:white"> --&gt;</span>
+                    <span style="color:lightgrey"> --&gt;</span>
                     <xsl:text>&#10;</xsl:text>
                 </p>
                 
@@ -1113,117 +1101,109 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
             <xsl:variable name="OutgoingRoutes" select="//ROUTE[(@fromNode=$DEFname) and not(@toNode=$DEFname)]"/>
             <xsl:variable name="SelfRoutes"     select="//ROUTE[(@fromNode=$DEFname) and    (@toNode=$DEFname)]"/>
             <xsl:if test="boolean($IncomingRoutes | $OutgoingRoutes | $SelfRoutes)">
-                <!-- addedDocumentationColor.HTML -->
-                <xsl:text disable-output-escaping="yes">&lt;span style="background-color:#EEEEEE;" title="inserted documentation about ROUTE connections"&gt;</xsl:text>
-                    <xsl:text>&lt;!-- </xsl:text>
-                    <i>
-                        <xsl:text>ROUTE</xsl:text>
-                        <!--
-                        <xsl:if test="count($IncomingRoutes) + count($OutgoingRoutes) + count($SelfRoutes) > 1">
-                            <xsl:text>s</xsl:text>
-                        </xsl:if>
-                        -->
-                    </i>
-                    <xsl:text> information for </xsl:text>
-                    <xsl:text disable-output-escaping="yes">&lt;span class="idName"&gt;</xsl:text>
-                    <xsl:value-of select="@DEF"/>
-                    <xsl:text disable-output-escaping="yes">&lt;/span&gt;</xsl:text>
-                    <xsl:text> node</xsl:text>
-                    <xsl:text>:</xsl:text>
-                    <xsl:text disable-output-escaping="yes">&amp;#160;</xsl:text> <!-- &nbsp; -->
-                    <xsl:text>&#10;</xsl:text>
-                    <xsl:for-each select="$IncomingRoutes">
-                        <xsl:text>[</xsl:text>
-                        <xsl:element name="a">
-                            <xsl:attribute name="title">
-                                <xsl:text>go to this ROUTE</xsl:text>
-                            </xsl:attribute>
-                            <xsl:attribute name="href">
-                                <xsl:text>#ROUTE_</xsl:text>
-                                <xsl:value-of select="count(preceding::ROUTE)"/>
-                            </xsl:attribute>
-                            <xsl:text disable-output-escaping="yes">&lt;i&gt;</xsl:text>
-                            <xsl:text>from</xsl:text>
-                            <xsl:text disable-output-escaping="yes">&lt;/i&gt;</xsl:text>
-                            <xsl:text disable-output-escaping="yes">&amp;#160;</xsl:text> <!-- &nbsp; -->
-                            <span class="idName">
-                                <xsl:value-of select="@fromNode"/>
-                            </span>
-                            <xsl:text>.</xsl:text>
-                            <span class="attribute">
-                                <xsl:value-of select="@fromField"/>
-                            </span>
-                            <xsl:text disable-output-escaping="yes">&amp;#160;</xsl:text> <!-- &nbsp; -->
-                            <xsl:text disable-output-escaping="yes">&lt;i&gt;</xsl:text>
-                            <xsl:text>to</xsl:text>
-                            <xsl:text disable-output-escaping="yes">&lt;/i&gt;</xsl:text>
-                            <xsl:text disable-output-escaping="yes">&amp;#160;</xsl:text> <!-- &nbsp; -->
-                            <span class="attribute">
-                                <xsl:value-of select="@toField"/>
-                        </span></xsl:element><xsl:text>]&#10;</xsl:text>
-                    </xsl:for-each>
-                    <xsl:for-each select="$OutgoingRoutes">
-                        <xsl:text>[</xsl:text>
-                        <xsl:element name="a">
-                            <xsl:attribute name="title">
-                                <xsl:text>go to this ROUTE</xsl:text>
-                            </xsl:attribute>
-                            <xsl:attribute name="href">
-                                <xsl:text>#ROUTE_</xsl:text>
-                                <xsl:value-of select="count(preceding::ROUTE)"/>
-                            </xsl:attribute>
-                            <xsl:text disable-output-escaping="yes">&lt;i&gt;</xsl:text>
-                            <xsl:text>from</xsl:text>
-                            <xsl:text disable-output-escaping="yes">&lt;/i&gt;</xsl:text>
-                            <xsl:text disable-output-escaping="yes">&amp;#160;</xsl:text> <!-- &nbsp; -->
-                            <span class="attribute">
-                                <xsl:value-of select="@fromField"/>
-                            </span>
-                            <xsl:text disable-output-escaping="yes">&amp;#160;</xsl:text> <!-- &nbsp; -->
-                            <xsl:text disable-output-escaping="yes">&lt;i&gt;</xsl:text>
-                            <xsl:text>to</xsl:text>
-                            <xsl:text disable-output-escaping="yes">&lt;/i&gt;</xsl:text>
-                            <xsl:text disable-output-escaping="yes">&amp;#160;</xsl:text> <!-- &nbsp; -->
-                            <span class="idName">
-                                <xsl:value-of select="@toNode"/>
-                            </span>
-                            <xsl:text>.</xsl:text>
-                            <span class="attribute">
-                                <xsl:value-of select="@toField"/>
-                        </span></xsl:element><xsl:text>]&#10;</xsl:text>
-                    </xsl:for-each>
-                    <xsl:for-each select="$SelfRoutes">
-                        <xsl:text>[</xsl:text>
-                        <xsl:element name="a">
-                            <xsl:attribute name="href">
-                                <xsl:text>#ROUTE_</xsl:text>
-                                <xsl:value-of select="count(preceding::ROUTE)"/>
-                            </xsl:attribute>
-                            <xsl:text>self-route</xsl:text>
-                            <xsl:text disable-output-escaping="yes">&amp;#160;</xsl:text> <!-- &nbsp; -->
-                            <xsl:text disable-output-escaping="yes">&lt;i&gt;</xsl:text>
-                            <xsl:text>from</xsl:text>
-                            <xsl:text disable-output-escaping="yes">&lt;/i&gt;</xsl:text>
-                            <xsl:text disable-output-escaping="yes">&amp;#160;</xsl:text> <!-- &nbsp; -->
-                            <span class="attribute">
-                                <xsl:value-of select="@fromField"/>
-                            </span>
-                            <xsl:text disable-output-escaping="yes">&amp;#160;</xsl:text> <!-- &nbsp; -->
-                            <xsl:text disable-output-escaping="yes">&lt;i&gt;</xsl:text>
-                            <xsl:text>to</xsl:text>
-                            <xsl:text disable-output-escaping="yes">&lt;/i&gt;</xsl:text>
-                            <xsl:text disable-output-escaping="yes">&amp;#160;</xsl:text> <!-- &nbsp; -->
-                            <span class="attribute">
-                                <xsl:value-of select="@toField"/>
-                            </span>
-                        </xsl:element>
-                        <xsl:text>]&#10;</xsl:text>
-                    </xsl:for-each>
-                    <xsl:text> --&gt;</xsl:text>
-                    <xsl:if test="($lineBreaks='true')">
-                        <xsl:text disable-output-escaping="yes">&lt;br /&gt;</xsl:text>
+                <xsl:text>&lt;!-- </xsl:text>
+                <xsl:text disable-output-escaping="yes">&lt;span class="idName"&gt;</xsl:text>
+                <xsl:value-of select="@DEF"/>
+                <xsl:text disable-output-escaping="yes">&lt;/span&gt;</xsl:text>
+                <xsl:text> </xsl:text>
+                <i>
+                    <xsl:text>ROUTE</xsl:text>
+                    <xsl:if test="count($IncomingRoutes) + count($OutgoingRoutes) + count($SelfRoutes) > 1">
+                        <xsl:text>s</xsl:text>
                     </xsl:if>
-                <xsl:text disable-output-escaping="yes">&lt;/span&gt;</xsl:text><!-- addedDocumentationColor -->
+                </i>
+                <xsl:text>:</xsl:text>
+                <xsl:text disable-output-escaping="yes">&amp;#160;</xsl:text> <!-- &nbsp; -->
+                <xsl:text>&#10;</xsl:text>
+                <xsl:for-each select="$IncomingRoutes">
+                    <xsl:text>[</xsl:text>
+                    <xsl:element name="a">
+                        <xsl:attribute name="title">
+                            <xsl:text>go to this ROUTE</xsl:text>
+                        </xsl:attribute>
+                        <xsl:attribute name="href">
+                            <xsl:text>#ROUTE_</xsl:text>
+                            <xsl:value-of select="count(preceding::ROUTE)"/>
+                        </xsl:attribute>
+                        <xsl:text disable-output-escaping="yes">&lt;i&gt;</xsl:text>
+                        <xsl:text>from</xsl:text>
+                        <xsl:text disable-output-escaping="yes">&lt;/i&gt;</xsl:text>
+                        <xsl:text disable-output-escaping="yes">&amp;#160;</xsl:text> <!-- &nbsp; -->
+                        <span class="idName">
+                            <xsl:value-of select="@fromNode"/>
+                        </span>
+                        <xsl:text>.</xsl:text>
+                        <span class="attribute">
+                            <xsl:value-of select="@fromField"/>
+                        </span>
+                        <xsl:text disable-output-escaping="yes">&amp;#160;</xsl:text> <!-- &nbsp; -->
+                        <xsl:text disable-output-escaping="yes">&lt;i&gt;</xsl:text>
+                        <xsl:text>to</xsl:text>
+                        <xsl:text disable-output-escaping="yes">&lt;/i&gt;</xsl:text>
+                        <xsl:text disable-output-escaping="yes">&amp;#160;</xsl:text> <!-- &nbsp; -->
+                        <span class="attribute">
+                            <xsl:value-of select="@toField"/>
+                    </span></xsl:element><xsl:text>]&#10;</xsl:text>
+                </xsl:for-each>
+                <xsl:for-each select="$OutgoingRoutes">
+                    <xsl:text>[</xsl:text>
+                    <xsl:element name="a">
+                        <xsl:attribute name="title">
+                            <xsl:text>go to this ROUTE</xsl:text>
+                        </xsl:attribute>
+                        <xsl:attribute name="href">
+                            <xsl:text>#ROUTE_</xsl:text>
+                            <xsl:value-of select="count(preceding::ROUTE)"/>
+                        </xsl:attribute>
+                        <xsl:text disable-output-escaping="yes">&lt;i&gt;</xsl:text>
+                        <xsl:text>from</xsl:text>
+                        <xsl:text disable-output-escaping="yes">&lt;/i&gt;</xsl:text>
+                        <xsl:text disable-output-escaping="yes">&amp;#160;</xsl:text> <!-- &nbsp; -->
+                        <span class="attribute">
+                            <xsl:value-of select="@fromField"/>
+                        </span>
+                        <xsl:text disable-output-escaping="yes">&amp;#160;</xsl:text> <!-- &nbsp; -->
+                        <xsl:text disable-output-escaping="yes">&lt;i&gt;</xsl:text>
+                        <xsl:text>to</xsl:text>
+                        <xsl:text disable-output-escaping="yes">&lt;/i&gt;</xsl:text>
+                        <xsl:text disable-output-escaping="yes">&amp;#160;</xsl:text> <!-- &nbsp; -->
+                        <span class="idName">
+                            <xsl:value-of select="@toNode"/>
+                        </span>
+                        <xsl:text>.</xsl:text>
+                        <span class="attribute">
+                            <xsl:value-of select="@toField"/>
+                    </span></xsl:element><xsl:text>]&#10;</xsl:text>
+                </xsl:for-each>
+                <xsl:for-each select="$SelfRoutes">
+                    <xsl:text>[</xsl:text>
+                    <xsl:element name="a">
+                        <xsl:attribute name="href">
+                            <xsl:text>#ROUTE_</xsl:text>
+                            <xsl:value-of select="count(preceding::ROUTE)"/>
+                        </xsl:attribute>
+                        <xsl:text>self-route</xsl:text>
+                        <xsl:text disable-output-escaping="yes">&amp;#160;</xsl:text> <!-- &nbsp; -->
+                        <xsl:text disable-output-escaping="yes">&lt;i&gt;</xsl:text>
+                        <xsl:text>from</xsl:text>
+                        <xsl:text disable-output-escaping="yes">&lt;/i&gt;</xsl:text>
+                        <xsl:text disable-output-escaping="yes">&amp;#160;</xsl:text> <!-- &nbsp; -->
+                        <span class="attribute">
+                            <xsl:value-of select="@fromField"/>
+                        </span>
+                        <xsl:text disable-output-escaping="yes">&amp;#160;</xsl:text> <!-- &nbsp; -->
+                        <xsl:text disable-output-escaping="yes">&lt;i&gt;</xsl:text>
+                        <xsl:text>to</xsl:text>
+                        <xsl:text disable-output-escaping="yes">&lt;/i&gt;</xsl:text>
+                        <xsl:text disable-output-escaping="yes">&amp;#160;</xsl:text> <!-- &nbsp; -->
+                        <span class="attribute">
+                            <xsl:value-of select="@toField"/>
+                    </span></xsl:element><xsl:text>]&#10;</xsl:text>
+                </xsl:for-each>
+                <xsl:text> --&gt;</xsl:text>
+                <xsl:if test="($lineBreaks='true')">
+                    <xsl:text disable-output-escaping="yes">&lt;br /&gt;</xsl:text>
+                </xsl:if>
                 <xsl:text>&#10;</xsl:text>
             </xsl:if>
         </xsl:if>
@@ -1541,9 +1521,6 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     <xsl:value-of select="local-name()"/>
                     <xsl:text> is a Non Uniform Rational B-Spline (NURBS) node</xsl:text>
                 </xsl:when>
-                <xsl:when test="local-name()='Script'">
-                    <xsl:text>Script contains author-programmed event behaviors for a scene</xsl:text>
-                </xsl:when>
                 <xsl:when test="local-name()='ProtoDeclare'">
                     <xsl:text>ProtoDeclare is a Prototype declaration, defining a new node made up of other node(s)</xsl:text>
                 </xsl:when>
@@ -1556,12 +1533,6 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <xsl:text> for a parent </xsl:text>
                         <xsl:value-of select="local-name(..)"/>
                     </xsl:if>
-                </xsl:when>
-                <xsl:when test="local-name()='ProtoInterface'">
-                    <xsl:text>ProtoInterface is first statement inside a ProtoDeclare statement and holds field definitions</xsl:text>
-                </xsl:when>
-                <xsl:when test="local-name()='ProtoBody'">
-                    <xsl:text>Initial scene node in ProtoDeclare/ProtoBody statement determines this prototype's node type</xsl:text>
                 </xsl:when>
                 <xsl:when test="local-name()='ProtoInstance'">
                     <xsl:text>ProtoInstance creates an instance of a locally or externally declared prototype node</xsl:text>
@@ -1577,29 +1548,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                 </xsl:when>
             </xsl:choose>
         </xsl:variable>
-        <xsl:variable name="isBehaviorNode" select="(local-name()='ROUTE') or (local-name()='Script') or
-                        ((local-name()='field') and (local-name(..)='Script')) or
-                        contains(local-name(),'Filter') or contains(local-name(),'Interpolator') or contains(local-name(),'Sensor') or
-                        contains(local-name(),'Sequencer') or contains(local-name(),'Trigger')"/>
-		<!-- debug -->
-		<xsl:if test="isBehaviorNode">
-                    <xsl:message>
-                            <xsl:value-of select="local-name()"/>
-			<xsl:text> $isBehaviorNode=</xsl:text>
-			<xsl:value-of select="$isBehaviorNode"/>
-                    </xsl:message>
-                </xsl:if>
-        <xsl:variable name="isExtensibleNode" select="starts-with(local-name(),'Proto') or
-                        contains(local-name(),'Shader') or (local-name()='IS') or (local-name()='connect') or 
-                        (starts-with(local-name(),'field') and contains(local-name(..),'Proto'))"/>
-		<!-- debug
-                <xsl:if test="$isExtensibleNode">
-                    <xsl:message>
-                            <xsl:value-of select="local-name()"/>
-                            <xsl:text> $isExtensibleNode=</xsl:text>
-                            <xsl:value-of select="$isExtensibleNode"/>
-                    </xsl:message>
-                </xsl:if> -->
+      
         <!-- tooltips for each node
         <xsl:element name="span"> -->
             <!-- apply tooltips for each node -->              
@@ -1609,14 +1558,6 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     <xsl:if test="string-length($elementTooltip) > 0">
                         <xsl:text disable-output-escaping="yes">&lt;span title="</xsl:text>
                         <xsl:value-of select="$elementTooltip"/>
-                        <xsl:choose>
-                            <xsl:when test="$isBehaviorNode">
-                                <xsl:text disable-output-escaping="yes">" style="background-color:#DDEEFF</xsl:text>
-                            </xsl:when>
-                            <xsl:when test="$isExtensibleNode">
-                                <xsl:text disable-output-escaping="yes">" style="background-color:#FFEEFF</xsl:text>
-                            </xsl:when>
-                        </xsl:choose>
                         <xsl:text disable-output-escaping="yes">"&gt;</xsl:text>
                     </xsl:if>
                     <!-- open tag for current element, which itself is a parent -->
@@ -1738,14 +1679,6 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     <xsl:if test="string-length($elementTooltip) > 0">
                         <xsl:text disable-output-escaping="yes">&lt;span title="</xsl:text>
                         <xsl:value-of select="$elementTooltip"/>
-                        <xsl:choose>
-                            <xsl:when test="$isBehaviorNode">
-                                <xsl:text disable-output-escaping="yes">" style="background-color:#DDEEFF</xsl:text>
-                            </xsl:when>
-                            <xsl:when test="$isExtensibleNode">
-                                <xsl:text disable-output-escaping="yes">" style="background-color:#FFEEFF</xsl:text>
-                            </xsl:when>
-                        </xsl:choose>
                         <xsl:text disable-output-escaping="yes">"&gt;</xsl:text>
                     </xsl:if>
                     <!-- closing element -->
@@ -1761,14 +1694,6 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     <xsl:if test="string-length($elementTooltip) > 0">
                         <xsl:text disable-output-escaping="yes">&lt;span title="</xsl:text>
                         <xsl:value-of select="$elementTooltip"/>
-                        <xsl:choose>
-                            <xsl:when test="$isBehaviorNode">
-                                <xsl:text disable-output-escaping="yes">" style="background-color:#DDEEFF</xsl:text>
-                            </xsl:when>
-                            <xsl:when test="$isExtensibleNode">
-                                <xsl:text disable-output-escaping="yes">" style="background-color:#FFEEFF</xsl:text>
-                            </xsl:when>
-                        </xsl:choose>
                         <xsl:text disable-output-escaping="yes">"&gt;</xsl:text>
                     </xsl:if>
                     <xsl:text>&lt;</xsl:text>
