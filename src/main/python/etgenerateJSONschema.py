@@ -524,7 +524,7 @@ class ClassPrinter:
                     except:
                         pass
 
-                    if not field.get("name").startswith("add") and not field.get("name").startswith("remove"):
+                    if field.get("name") == "address" or (not field.get("name").startswith("add") and not field.get("name").startswith("remove")):
                         if field.get("type") == "MFNode" or field.get("type") == "SFNode":
                             try:
                                 if classes[field.get("name")] != None and field.get("name") != "X3D":
