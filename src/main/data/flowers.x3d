@@ -46,6 +46,23 @@
                                   <field name='scale' type='SFFloat' accessType="inputOutput" value='0.5'/>
                                   <field name='power' type='SFFloat' accessType="inputOutput" value='2.0'/>
 
+				  <ShaderPart url='"../shaders/common.vs" "https://coderextreme.net/X3DJSONLD/shaders/common.vs"' type="VERTEX">
+                                </ShaderPart>
+				<ShaderPart url='"../shaders/gl_flowers_chromatic.fs" "https://coderextreme.net/X3DJSONLD/shaders/gl_flowers_chromatic.fs"' type='FRAGMENT'>
+                                </ShaderPart>
+                            </ComposedShader>
+
+                            <ComposedShader language="GLSL">
+                                  <field name='xxxcube' type='SFInt32' accessType="inputOutput" value='0'/>
+                                  <field name='cube' type='SFNode' accessType="inputOutput">
+                                          <ComposedCubeMapTexture USE="texture"/>
+                                  </field>
+
+                                  <field name='chromaticDispertion' type='SFVec3f' accessType="inputOutput" value='0.98 1.0 1.033'/>
+                                  <field name='bias' type='SFFloat' accessType="inputOutput" value='0.5'/>
+                                  <field name='scale' type='SFFloat' accessType="inputOutput" value='0.5'/>
+                                  <field name='power' type='SFFloat' accessType="inputOutput" value='2.0'/>
+
 				  <ShaderPart url='"../shaders/x3dom.vs" "https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs"' type="VERTEX">
                                 </ShaderPart>
 				<ShaderPart url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"' type='FRAGMENT'>
@@ -119,10 +136,10 @@
 			}
 
 			function initialize() {
+			     var cis = [];
 			     newBubble();
 			     resolution = 100;
 			     updateCoordinates(resolution);
-			     var cis = [];
 			     for ( i = 0; i < resolution-1; i++) {
 				for ( j = 0; j < resolution-1; j++) {
 				     cis.push(i*resolution+j);
