@@ -298,7 +298,7 @@ class ClassPrinter:
                 if allTheSame:  # or an exception was thrown
                     str += '{\n'
                     if field.get("name").endswith("url") or field.get("name").endswith("Url"):
-                        str += '\t\t\t\t\t\t"format":"uri",\n'
+                        str += '\t\t\t\t\t\t"format":"uri-reference",\n'
                     if enums != []:
                         str += '\t\t\t\t\t\t\t"enum": [\n'
                         str += '\t\t\t\t\t\t\t\t'
@@ -322,7 +322,7 @@ class ClassPrinter:
                                 str += ',\n'
                             str += '\t\t\t\t\t\t{\n'
                             if field.get("name").endswith("url") or field.get("name").endswith("Url"):
-                                str += '\t\t\t\t\t\t\t\t"format":"uri",\n'
+                                str += '\t\t\t\t\t\t\t\t"format":"uri-reference",\n'
                             if enums != []:
                                 str += '\t\t\t\t\t\t\t"enum": [\n'
                                 str += '\t\t\t\t\t\t\t'
