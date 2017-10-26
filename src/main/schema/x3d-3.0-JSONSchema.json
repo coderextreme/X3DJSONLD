@@ -1000,7 +1000,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "format": "uri",
+                "format": "uri-reference",
                 "type": "string"
               }
             },
@@ -1316,7 +1316,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "format": "uri",
+                "format": "uri-reference",
                 "type": "string"
               }
             },
@@ -1372,7 +1372,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "format": "uri",
+                "format": "uri-reference",
                 "type": "string"
               }
             },
@@ -1383,7 +1383,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "format": "uri",
+                "format": "uri-reference",
                 "type": "string"
               }
             },
@@ -1391,7 +1391,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "format": "uri",
+                "format": "uri-reference",
                 "type": "string"
               }
             },
@@ -1419,7 +1419,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "format": "uri",
+                "format": "uri-reference",
                 "type": "string"
               }
             },
@@ -1430,7 +1430,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "format": "uri",
+                "format": "uri-reference",
                 "type": "string"
               }
             },
@@ -1459,7 +1459,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "format": "uri",
+                "format": "uri-reference",
                 "type": "string"
               }
             },
@@ -5516,7 +5516,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "format": "uri",
+                "format": "uri-reference",
                 "type": "string"
               }
             },
@@ -7750,7 +7750,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "format": "uri",
+                "format": "uri-reference",
                 "type": "string"
               }
             },
@@ -7758,7 +7758,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "format": "uri",
+                "format": "uri-reference",
                 "type": "string"
               }
             },
@@ -7766,7 +7766,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "format": "uri",
+                "format": "uri-reference",
                 "type": "string"
               }
             },
@@ -7774,7 +7774,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "format": "uri",
+                "format": "uri-reference",
                 "type": "string"
               }
             },
@@ -7805,7 +7805,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "format": "uri",
+                "format": "uri-reference",
                 "type": "string"
               }
             },
@@ -7873,7 +7873,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "format": "uri",
+                "format": "uri-reference",
                 "type": "string"
               }
             },
@@ -9770,7 +9770,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "format": "uri",
+                "format": "uri-reference",
                 "type": "string"
               }
             },
@@ -9840,7 +9840,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "format": "uri",
+                "format": "uri-reference",
                 "type": "string"
               }
             },
@@ -9914,7 +9914,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "format": "uri",
+                "format": "uri-reference",
                 "type": "string"
               }
             },
@@ -10626,7 +10626,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "format": "uri",
+                "format": "uri-reference",
                 "type": "string"
               }
             },
@@ -12752,7 +12752,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "format": "uri",
+                "format": "uri-reference",
                 "type": "string"
               }
             },
@@ -14878,7 +14878,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "format": "uri",
+                "format": "uri-reference",
                 "type": "string"
               }
             },
@@ -18206,7 +18206,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "format": "uri",
+                "format": "uri-reference",
                 "type": "string"
               }
             },
@@ -18448,7 +18448,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "format": "uri",
+                "format": "uri-reference",
                 "type": "string"
               }
             },
@@ -18525,7 +18525,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "format": "uri",
+                "format": "uri-reference",
                 "type": "string"
               }
             },
@@ -23909,7 +23909,7 @@
           "type": "array",
           "minItems": 1,
           "items": {
-            "format": "uri",
+            "format": "uri-reference",
             "type": "string"
           }
         }

@@ -58,7 +58,7 @@
 					"minItems": 1,
 					"items": {
 						"type": "string",
-						"format": "uri"
+						"format": "uri-reference"
 					}
 				}
 			},
@@ -253,7 +253,7 @@
 					"type": "array",
 					"items": {
 						"type": "string",
-						"format": "uri"
+						"format": "uri-reference"
 					}
 				},
 				"-metadata": {
@@ -282,7 +282,7 @@
 					"minItems": 1,
 					"items": {
 						"type": "string",
-						"format": "uri"
+						"format": "uri-reference"
 					}
 				},
 				"@bottomUrl": {
@@ -290,7 +290,7 @@
 					"minItems": 1,
 					"items": {
 						"type": "string",
-						"format": "uri"
+						"format": "uri-reference"
 					}
 				},
 				"@frontUrl": {
@@ -298,7 +298,7 @@
 					"minItems": 1,
 					"items": {
 						"type": "string",
-						"format": "uri"
+						"format": "uri-reference"
 					}
 				},
 				"@groundAngle": {
@@ -324,7 +324,7 @@
 					"minItems": 1,
 					"items": {
 						"type": "string",
-						"format": "uri"
+						"format": "uri-reference"
 					}
 				},
 				"@rightUrl": {
@@ -332,7 +332,7 @@
 					"minItems": 1,
 					"items": {
 						"type": "string",
-						"format": "uri"
+						"format": "uri-reference"
 					}
 				},
 				"@skyAngle": {
@@ -358,7 +358,7 @@
 					"minItems": 1,
 					"items": {
 						"type": "string",
-						"format": "uri"
+						"format": "uri-reference"
 					}
 				},
 				"@transparency": {
@@ -2658,7 +2658,7 @@
 					"minItems": 1,
 					"items": {
 						"type": "string",
-						"format": "uri"
+						"format": "uri-reference"
 					}
 				},
 				"-metadata": {
@@ -3543,7 +3543,7 @@
 					"minItems": 1,
 					"items": {
 						"type": "string",
-						"format": "uri"
+						"format": "uri-reference"
 					}
 				},
 				"@appinfo": {
@@ -4266,7 +4266,7 @@
 					"minItems": 1,
 					"items": {
 						"type": "string",
-						"format": "uri"
+						"format": "uri-reference"
 					}
 				},
 				"@child2Url": {
@@ -4274,7 +4274,7 @@
 					"minItems": 1,
 					"items": {
 						"type": "string",
-						"format": "uri"
+						"format": "uri-reference"
 					}
 				},
 				"@child3Url": {
@@ -4282,7 +4282,7 @@
 					"minItems": 1,
 					"items": {
 						"type": "string",
-						"format": "uri"
+						"format": "uri-reference"
 					}
 				},
 				"@child4Url": {
@@ -4290,7 +4290,7 @@
 					"minItems": 1,
 					"items": {
 						"type": "string",
-						"format": "uri"
+						"format": "uri-reference"
 					}
 				},
 				"@geoSystem": {
@@ -4306,7 +4306,7 @@
 					"minItems": 1,
 					"items": {
 						"type": "string",
-						"format": "uri"
+						"format": "uri-reference"
 					}
 				},
 				"-children": {
@@ -4348,7 +4348,7 @@
 					"minItems": 1,
 					"items": {
 						"type": "string",
-						"format": "uri"
+						"format": "uri-reference"
 					}
 				},
 				"-data": {
@@ -5171,7 +5171,7 @@
 					"minItems": 1,
 					"items": {
 						"type": "string",
-						"format": "uri"
+						"format": "uri-reference"
 					}
 				},
 				"-metadata": {
@@ -5211,7 +5211,7 @@
 					"minItems": 1,
 					"items": {
 						"type": "string",
-						"format": "uri"
+						"format": "uri-reference"
 					}
 				},
 				"-metadata": {
@@ -5255,7 +5255,7 @@
 					"minItems": 1,
 					"items": {
 						"type": "string",
-						"format": "uri"
+						"format": "uri-reference"
 					}
 				},
 				"-metadata": {
@@ -5726,7 +5726,7 @@
 					"minItems": 1,
 					"items": {
 						"type": "string",
-						"format": "uri"
+						"format": "uri-reference"
 					}
 				},
 				"-metadata": {
@@ -7084,7 +7084,7 @@
 					"minItems": 1,
 					"items": {
 						"type": "string",
-						"format": "uri"
+						"format": "uri-reference"
 					}
 				},
 				"-metadata": {
@@ -8265,7 +8265,7 @@
 					"minItems": 1,
 					"items": {
 						"type": "string",
-						"format": "uri"
+						"format": "uri-reference"
 					}
 				},
 				"#sourceText": {
@@ -10793,7 +10793,7 @@
 					"minItems": 1,
 					"items": {
 						"type": "string",
-						"format": "uri"
+						"format": "uri-reference"
 					}
 				},
 				"#sourceText": {
@@ -10933,7 +10933,7 @@
 					"type": "array",
 					"items": {
 						"type": "string",
-						"format": "uri"
+						"format": "uri-reference"
 					}
 				},
 				"#sourceText": {
@@ -10972,7 +10972,7 @@
 					"type": "array",
 					"items": {
 						"type": "string",
-						"format": "uri"
+						"format": "uri-reference"
 					}
 				},
 				"#sourceText": {
