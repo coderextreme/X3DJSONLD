@@ -32,7 +32,7 @@ app.use(express.static('src/main/shaders'));
 app.use(express.static('src/main/nashorn'));
 app.use(express.static('src/main/lib'));
 app.use(express.static('src/main/html'));
-app.use(express.static('/src/main'));
+app.use(express.static('src/main'));
 
 function convertX3dToJson(res, infile, outfile, next) {
 	console.error("Calling converter on "+infile);
