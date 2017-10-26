@@ -81,8 +81,7 @@ class ClassPrinter:
     def printTypeMinMax(self, field):
         str = ""
         try:
-            str += '\t\t\t\t\t\t"maximum" : '+field.get("maxExclusive") + ',\n'
-            str += '\t\t\t\t\t\t"exclusiveMaximum" : true,\n'
+            str += '\t\t\t\t\t\t"exclusiveMaximum" : '+field.get("maxExclusive") + ',\n'
         except:
             pass
         try:
@@ -91,8 +90,7 @@ class ClassPrinter:
             pass
 
         try:
-            str += '\t\t\t\t\t\t"minimum" : '+field.get("minExclusive") + ',\n'
-            str += '\t\t\t\t\t\t"exclusiveMinimum" : true,\n'
+            str += '\t\t\t\t\t\t"exclusiveMinimum" : '+field.get("minExclusive") + ',\n'
         except:
             pass
 
@@ -114,12 +112,18 @@ class ClassPrinter:
         return str
 
     def printField(self, field):
+        if field.get("name") == "geoSystem":
+            str = '''\
+            "@geoSystem": {
+		"$ref": "#/definitions/@geoSystem"
+            },
+'''
+            return str
         str = '\t\t\t\t\t"@' + field.get("name") + '" : {\n'
         if field.get("name") != "value" or  (self.name != 'field' and self.name != 'fieldValue'):
             if not field.get("type").startswith("MF"):
                 try:
-                    str += '\t\t\t\t\t\t"maximum" : '+field.get("maxExclusive") + ',\n'
-                    str += '\t\t\t\t\t\t"exclusiveMaximum" : true,\n'
+                    str += '\t\t\t\t\t\t"exclusiveMaximum" : '+field.get("maxExclusive") + ',\n'
                 except:
                     pass
                 try:
@@ -128,8 +132,7 @@ class ClassPrinter:
                     pass
 
                 try:
-                    str += '\t\t\t\t\t\t"minimum" : '+field.get("minExclusive") + ',\n'
-                    str += '\t\t\t\t\t\t"exclusiveMinimum" : true,\n'
+                    str += '\t\t\t\t\t\t"exclusiveMinimum" : '+field.get("minExclusive") + ',\n'
                 except:
                     pass
 
@@ -583,7 +586,7 @@ class ClassPrinter:
         return str
 
 code = '''{
-        "$schema": "http://json-schema.org/draft-04/schema#",
+        "$schema": "http://json-schema.org/draft-06/schema#",
         "title": "JSON Schema X3D V3.3",
         "description": "Experimental JSON Schema for X3D V3.3 ",
         "type": "object",
@@ -626,6 +629,893 @@ code = '''{
                                 "additionalProperties": false
                         }
                 },
+                "@geoSystem": {
+                            "description": "Attempts to validate all possible combinations",
+                            "oneOf": [
+                                    {
+                                            "type": "array",
+                                            "minItems": 2,
+                                            "maxItems": 3,
+                                            "items": [
+                                                    {
+                                                            "type": "string",
+                                                            "enum": [
+                                                                    "GD",
+                                                                    "GDC"
+                                                            ],
+                                                            "default": "GD"
+                                                    },
+                                                    {
+                                                            "type": "string",
+                                                            "enum": [
+                                                                    "WGS84"
+                                                            ]
+                                                    }
+                                            ],
+                                            "additionalItems": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                            "AM",
+                                                            "AN",
+                                                            "BN",
+                                                            "BR",
+                                                            "CC",
+                                                            "CD",
+                                                            "EA",
+                                                            "EB",
+                                                            "EC",
+                                                            "ED",
+                                                            "EE",
+                                                            "EF",
+                                                            "FA",
+                                                            "HE",
+                                                            "HO",
+                                                            "ID",
+                                                            "IN",
+                                                            "KA",
+                                                            "RF",
+                                                            "SA",
+                                                            "WD",
+                                                            "WE"
+                                                    ],
+                                                    "default": "WE"
+                                            }
+                                    },
+                                    {
+                                            "type": "array",
+                                            "minItems": 1,
+                                            "maxItems": 3,
+                                            "items": [
+                                                    {
+                                                            "type": "string",
+                                                            "enum": [
+                                                                    "GD",
+                                                                    "GDC"
+                                                            ],
+                                                            "default": "GD"
+                                                    },
+                                                    {
+                                                            "type": "string",
+                                                            "enum": [
+                                                                    "AM",
+                                                                    "AN",
+                                                                    "BN",
+                                                                    "BR",
+                                                                    "CC",
+                                                                    "CD",
+                                                                    "EA",
+                                                                    "EB",
+                                                                    "EC",
+                                                                    "ED",
+                                                                    "EE",
+                                                                    "EF",
+                                                                    "FA",
+                                                                    "HE",
+                                                                    "HO",
+                                                                    "ID",
+                                                                    "IN",
+                                                                    "KA",
+                                                                    "RF",
+                                                                    "SA",
+                                                                    "WD",
+                                                                    "WE"
+                                                            ],
+                                                            "default": "WE"
+                                                    }
+                                            ],
+                                            "additionalItems": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                            "WGS84"
+                                                    ]
+                                            }
+                                    },
+                                    {
+                                            "type": "array",
+                                            "minItems": 4,
+                                            "maxItems": 5,
+                                            "items": [
+                                                    {
+                                                            "type": "string",
+                                                            "enum": [
+                                                                    "UTM"
+                                                            ],
+                                                            "default": "GD"
+                                                    },
+                                                    {
+                                                            "type": "string",
+                                                            "enum": [
+                                                                    "Z01",
+                                                                    "Z1",
+                                                                    "Z02",
+                                                                    "Z2",
+                                                                    "Z03",
+                                                                    "Z3",
+                                                                    "Z04",
+                                                                    "Z4",
+                                                                    "Z05",
+                                                                    "Z5",
+                                                                    "Z06",
+                                                                    "Z6",
+                                                                    "Z07",
+                                                                    "Z7",
+                                                                    "Z08",
+                                                                    "Z8",
+                                                                    "Z09",
+                                                                    "Z9",
+                                                                    "Z10",
+                                                                    "Z11",
+                                                                    "Z12",
+                                                                    "Z13",
+                                                                    "Z14",
+                                                                    "Z15",
+                                                                    "Z16",
+                                                                    "Z17",
+                                                                    "Z18",
+                                                                    "Z19",
+                                                                    "Z20",
+                                                                    "Z21",
+                                                                    "Z22",
+                                                                    "Z23",
+                                                                    "Z24",
+                                                                    "Z25",
+                                                                    "Z26",
+                                                                    "Z27",
+                                                                    "Z28",
+                                                                    "Z29",
+                                                                    "Z30",
+                                                                    "Z31",
+                                                                    "Z32",
+                                                                    "Z33",
+                                                                    "Z34",
+                                                                    "Z35",
+                                                                    "Z36",
+                                                                    "Z37",
+                                                                    "Z38",
+                                                                    "Z39",
+                                                                    "Z40",
+                                                                    "Z41",
+                                                                    "Z42",
+                                                                    "Z43",
+                                                                    "Z44",
+                                                                    "Z45",
+                                                                    "Z46",
+                                                                    "Z47",
+                                                                    "Z48",
+                                                                    "Z49",
+                                                                    "Z50",
+                                                                    "Z51",
+                                                                    "Z52",
+                                                                    "Z53",
+                                                                    "Z54",
+                                                                    "Z55",
+                                                                    "Z56",
+                                                                    "Z57",
+                                                                    "Z58",
+                                                                    "Z59",
+                                                                    "Z60"
+                                                            ],
+                                                            "default": "WE"
+                                                    },
+                                                    {
+                                                            "type": "string",
+                                                            "enum": [
+                                                                    "AM",
+                                                                    "AN",
+                                                                    "BN",
+                                                                    "BR",
+                                                                    "CC",
+                                                                    "CD",
+                                                                    "EA",
+                                                                    "EB",
+                                                                    "EC",
+                                                                    "ED",
+                                                                    "EE",
+                                                                    "EF",
+                                                                    "FA",
+                                                                    "HE",
+                                                                    "HO",
+                                                                    "ID",
+                                                                    "IN",
+                                                                    "KA",
+                                                                    "RF",
+                                                                    "SA",
+                                                                    "WD",
+                                                                    "WE"
+                                                            ]
+                                                    },
+                                                    {
+                                                            "type": "string",
+                                                            "enum": [
+                                                                    "WGS84"
+                                                            ]
+                                                    }
+                                            ],
+                                            "additionalItems": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                            "S"
+                                                    ]
+                                            }
+                                    },
+                                    {
+                                            "type": "array",
+                                            "minItems": 3,
+                                            "maxItems": 5,
+                                            "items": [
+                                                    {
+                                                            "type": "string",
+                                                            "enum": [
+                                                                    "UTM"
+                                                            ],
+                                                            "default": "GD"
+                                                    },
+                                                    {
+                                                            "type": "string",
+                                                            "enum": [
+                                                                    "Z01",
+                                                                    "Z1",
+                                                                    "Z02",
+                                                                    "Z2",
+                                                                    "Z03",
+                                                                    "Z3",
+                                                                    "Z04",
+                                                                    "Z4",
+                                                                    "Z05",
+                                                                    "Z5",
+                                                                    "Z06",
+                                                                    "Z6",
+                                                                    "Z07",
+                                                                    "Z7",
+                                                                    "Z08",
+                                                                    "Z8",
+                                                                    "Z09",
+                                                                    "Z9",
+                                                                    "Z10",
+                                                                    "Z11",
+                                                                    "Z12",
+                                                                    "Z13",
+                                                                    "Z14",
+                                                                    "Z15",
+                                                                    "Z16",
+                                                                    "Z17",
+                                                                    "Z18",
+                                                                    "Z19",
+                                                                    "Z20",
+                                                                    "Z21",
+                                                                    "Z22",
+                                                                    "Z23",
+                                                                    "Z24",
+                                                                    "Z25",
+                                                                    "Z26",
+                                                                    "Z27",
+                                                                    "Z28",
+                                                                    "Z29",
+                                                                    "Z30",
+                                                                    "Z31",
+                                                                    "Z32",
+                                                                    "Z33",
+                                                                    "Z34",
+                                                                    "Z35",
+                                                                    "Z36",
+                                                                    "Z37",
+                                                                    "Z38",
+                                                                    "Z39",
+                                                                    "Z40",
+                                                                    "Z41",
+                                                                    "Z42",
+                                                                    "Z43",
+                                                                    "Z44",
+                                                                    "Z45",
+                                                                    "Z46",
+                                                                    "Z47",
+                                                                    "Z48",
+                                                                    "Z49",
+                                                                    "Z50",
+                                                                    "Z51",
+                                                                    "Z52",
+                                                                    "Z53",
+                                                                    "Z54",
+                                                                    "Z55",
+                                                                    "Z56",
+                                                                    "Z57",
+                                                                    "Z58",
+                                                                    "Z59",
+                                                                    "Z60"
+                                                            ],
+                                                            "default": "WE"
+                                                    },
+                                                    {
+                                                            "type": "string",
+                                                            "enum": [
+                                                                    "AM",
+                                                                    "AN",
+                                                                    "BN",
+                                                                    "BR",
+                                                                    "CC",
+                                                                    "CD",
+                                                                    "EA",
+                                                                    "EB",
+                                                                    "EC",
+                                                                    "ED",
+                                                                    "EE",
+                                                                    "EF",
+                                                                    "FA",
+                                                                    "HE",
+                                                                    "HO",
+                                                                    "ID",
+                                                                    "IN",
+                                                                    "KA",
+                                                                    "RF",
+                                                                    "SA",
+                                                                    "WD",
+                                                                    "WE"
+                                                            ]
+                                                    },
+                                                    {
+                                                            "type": "string",
+                                                            "enum": [
+                                                                    "S"
+                                                            ]
+                                                    }
+                                            ],
+                                            "additionalItems": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                            "WGS84"
+                                                    ]
+                                            }
+                                    },
+                                    {
+                                            "type": "array",
+                                            "minItems": 4,
+                                            "maxItems": 5,
+                                            "items": [
+                                                    {
+                                                            "type": "string",
+                                                            "enum": [
+                                                                    "UTM"
+                                                            ],
+                                                            "default": "GD"
+                                                    },
+                                                    {
+                                                            "type": "string",
+                                                            "enum": [
+                                                                    "Z01",
+                                                                    "Z1",
+                                                                    "Z02",
+                                                                    "Z2",
+                                                                    "Z03",
+                                                                    "Z3",
+                                                                    "Z04",
+                                                                    "Z4",
+                                                                    "Z05",
+                                                                    "Z5",
+                                                                    "Z06",
+                                                                    "Z6",
+                                                                    "Z07",
+                                                                    "Z7",
+                                                                    "Z08",
+                                                                    "Z8",
+                                                                    "Z09",
+                                                                    "Z9",
+                                                                    "Z10",
+                                                                    "Z11",
+                                                                    "Z12",
+                                                                    "Z13",
+                                                                    "Z14",
+                                                                    "Z15",
+                                                                    "Z16",
+                                                                    "Z17",
+                                                                    "Z18",
+                                                                    "Z19",
+                                                                    "Z20",
+                                                                    "Z21",
+                                                                    "Z22",
+                                                                    "Z23",
+                                                                    "Z24",
+                                                                    "Z25",
+                                                                    "Z26",
+                                                                    "Z27",
+                                                                    "Z28",
+                                                                    "Z29",
+                                                                    "Z30",
+                                                                    "Z31",
+                                                                    "Z32",
+                                                                    "Z33",
+                                                                    "Z34",
+                                                                    "Z35",
+                                                                    "Z36",
+                                                                    "Z37",
+                                                                    "Z38",
+                                                                    "Z39",
+                                                                    "Z40",
+                                                                    "Z41",
+                                                                    "Z42",
+                                                                    "Z43",
+                                                                    "Z44",
+                                                                    "Z45",
+                                                                    "Z46",
+                                                                    "Z47",
+                                                                    "Z48",
+                                                                    "Z49",
+                                                                    "Z50",
+                                                                    "Z51",
+                                                                    "Z52",
+                                                                    "Z53",
+                                                                    "Z54",
+                                                                    "Z55",
+                                                                    "Z56",
+                                                                    "Z57",
+                                                                    "Z58",
+                                                                    "Z59",
+                                                                    "Z60"
+                                                            ],
+                                                            "default": "WE"
+                                                    },
+                                                    {
+                                                            "type": "string",
+                                                            "enum": [
+                                                                    "WGS84"
+                                                            ]
+                                                    },
+                                                    {
+                                                            "type": "string",
+                                                            "enum": [
+                                                                    "AM",
+                                                                    "AN",
+                                                                    "BN",
+                                                                    "BR",
+                                                                    "CC",
+                                                                    "CD",
+                                                                    "EA",
+                                                                    "EB",
+                                                                    "EC",
+                                                                    "ED",
+                                                                    "EE",
+                                                                    "EF",
+                                                                    "FA",
+                                                                    "HE",
+                                                                    "HO",
+                                                                    "ID",
+                                                                    "IN",
+                                                                    "KA",
+                                                                    "RF",
+                                                                    "SA",
+                                                                    "WD",
+                                                                    "WE"
+                                                            ]
+                                                    }
+                                            ],
+                                            "additionalItems": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                            "S"
+                                                    ]
+                                            }
+                                    },
+                                    {
+                                            "type": "array",
+                                            "minItems": 3,
+                                            "maxItems": 5,
+                                            "items": [
+                                                    {
+                                                            "type": "string",
+                                                            "enum": [
+                                                                    "UTM"
+                                                            ],
+                                                            "default": "GD"
+                                                    },
+                                                    {
+                                                            "type": "string",
+                                                            "enum": [
+                                                                    "Z01",
+                                                                    "Z1",
+                                                                    "Z02",
+                                                                    "Z2",
+                                                                    "Z03",
+                                                                    "Z3",
+                                                                    "Z04",
+                                                                    "Z4",
+                                                                    "Z05",
+                                                                    "Z5",
+                                                                    "Z06",
+                                                                    "Z6",
+                                                                    "Z07",
+                                                                    "Z7",
+                                                                    "Z08",
+                                                                    "Z8",
+                                                                    "Z09",
+                                                                    "Z9",
+                                                                    "Z10",
+                                                                    "Z11",
+                                                                    "Z12",
+                                                                    "Z13",
+                                                                    "Z14",
+                                                                    "Z15",
+                                                                    "Z16",
+                                                                    "Z17",
+                                                                    "Z18",
+                                                                    "Z19",
+                                                                    "Z20",
+                                                                    "Z21",
+                                                                    "Z22",
+                                                                    "Z23",
+                                                                    "Z24",
+                                                                    "Z25",
+                                                                    "Z26",
+                                                                    "Z27",
+                                                                    "Z28",
+                                                                    "Z29",
+                                                                    "Z30",
+                                                                    "Z31",
+                                                                    "Z32",
+                                                                    "Z33",
+                                                                    "Z34",
+                                                                    "Z35",
+                                                                    "Z36",
+                                                                    "Z37",
+                                                                    "Z38",
+                                                                    "Z39",
+                                                                    "Z40",
+                                                                    "Z41",
+                                                                    "Z42",
+                                                                    "Z43",
+                                                                    "Z44",
+                                                                    "Z45",
+                                                                    "Z46",
+                                                                    "Z47",
+                                                                    "Z48",
+                                                                    "Z49",
+                                                                    "Z50",
+                                                                    "Z51",
+                                                                    "Z52",
+                                                                    "Z53",
+                                                                    "Z54",
+                                                                    "Z55",
+                                                                    "Z56",
+                                                                    "Z57",
+                                                                    "Z58",
+                                                                    "Z59",
+                                                                    "Z60"
+                                                            ],
+                                                            "default": "WE"
+                                                    },
+                                                    {
+                                                            "type": "string",
+                                                            "enum": [
+                                                                    "WGS84"
+                                                            ]
+                                                    },
+                                                    {
+                                                            "type": "string",
+                                                            "enum": [
+                                                                    "S"
+                                                            ]
+                                                    }
+                                            ],
+                                            "additionalItems": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                            "AM",
+                                                            "AN",
+                                                            "BN",
+                                                            "BR",
+                                                            "CC",
+                                                            "CD",
+                                                            "EA",
+                                                            "EB",
+                                                            "EC",
+                                                            "ED",
+                                                            "EE",
+                                                            "EF",
+                                                            "FA",
+                                                            "HE",
+                                                            "HO",
+                                                            "ID",
+                                                            "IN",
+                                                            "KA",
+                                                            "RF",
+                                                            "SA",
+                                                            "WD",
+                                                            "WE"
+                                                    ]
+                                            }
+                                    },
+                                    {
+                                            "type": "array",
+                                            "minItems": 4,
+                                            "maxItems": 5,
+                                            "items": [
+                                                    {
+                                                            "type": "string",
+                                                            "enum": [
+                                                                    "UTM"
+                                                            ],
+                                                            "default": "GD"
+                                                    },
+                                                    {
+                                                            "type": "string",
+                                                            "enum": [
+                                                                    "Z01",
+                                                                    "Z1",
+                                                                    "Z02",
+                                                                    "Z2",
+                                                                    "Z03",
+                                                                    "Z3",
+                                                                    "Z04",
+                                                                    "Z4",
+                                                                    "Z05",
+                                                                    "Z5",
+                                                                    "Z06",
+                                                                    "Z6",
+                                                                    "Z07",
+                                                                    "Z7",
+                                                                    "Z08",
+                                                                    "Z8",
+                                                                    "Z09",
+                                                                    "Z9",
+                                                                    "Z10",
+                                                                    "Z11",
+                                                                    "Z12",
+                                                                    "Z13",
+                                                                    "Z14",
+                                                                    "Z15",
+                                                                    "Z16",
+                                                                    "Z17",
+                                                                    "Z18",
+                                                                    "Z19",
+                                                                    "Z20",
+                                                                    "Z21",
+                                                                    "Z22",
+                                                                    "Z23",
+                                                                    "Z24",
+                                                                    "Z25",
+                                                                    "Z26",
+                                                                    "Z27",
+                                                                    "Z28",
+                                                                    "Z29",
+                                                                    "Z30",
+                                                                    "Z31",
+                                                                    "Z32",
+                                                                    "Z33",
+                                                                    "Z34",
+                                                                    "Z35",
+                                                                    "Z36",
+                                                                    "Z37",
+                                                                    "Z38",
+                                                                    "Z39",
+                                                                    "Z40",
+                                                                    "Z41",
+                                                                    "Z42",
+                                                                    "Z43",
+                                                                    "Z44",
+                                                                    "Z45",
+                                                                    "Z46",
+                                                                    "Z47",
+                                                                    "Z48",
+                                                                    "Z49",
+                                                                    "Z50",
+                                                                    "Z51",
+                                                                    "Z52",
+                                                                    "Z53",
+                                                                    "Z54",
+                                                                    "Z55",
+                                                                    "Z56",
+                                                                    "Z57",
+                                                                    "Z58",
+                                                                    "Z59",
+                                                                    "Z60"
+                                                            ],
+                                                            "default": "WE"
+                                                    },
+                                                    {
+                                                            "type": "string",
+                                                            "enum": [
+                                                                    "S"
+                                                            ]
+                                                    },
+                                                    {
+                                                            "type": "string",
+                                                            "enum": [
+                                                                    "WGS84"
+                                                            ]
+                                                    }
+                                            ],
+                                            "additionalItems": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                            "AM",
+                                                            "AN",
+                                                            "BN",
+                                                            "BR",
+                                                            "CC",
+                                                            "CD",
+                                                            "EA",
+                                                            "EB",
+                                                            "EC",
+                                                            "ED",
+                                                            "EE",
+                                                            "EF",
+                                                            "FA",
+                                                            "HE",
+                                                            "HO",
+                                                            "ID",
+                                                            "IN",
+                                                            "KA",
+                                                            "RF",
+                                                            "SA",
+                                                            "WD",
+                                                            "WE"
+                                                    ]
+                                            }
+                                    },
+                                    {
+                                            "type": "array",
+                                            "minItems": 2,
+                                            "maxItems": 5,
+                                            "items": [
+                                                    {
+                                                            "type": "string",
+                                                            "enum": [
+                                                                    "UTM"
+                                                            ],
+                                                            "default": "GD"
+                                                    },
+                                                    {
+                                                            "type": "string",
+                                                            "enum": [
+                                                                    "Z01",
+                                                                    "Z1",
+                                                                    "Z02",
+                                                                    "Z2",
+                                                                    "Z03",
+                                                                    "Z3",
+                                                                    "Z04",
+                                                                    "Z4",
+                                                                    "Z05",
+                                                                    "Z5",
+                                                                    "Z06",
+                                                                    "Z6",
+                                                                    "Z07",
+                                                                    "Z7",
+                                                                    "Z08",
+                                                                    "Z8",
+                                                                    "Z09",
+                                                                    "Z9",
+                                                                    "Z10",
+                                                                    "Z11",
+                                                                    "Z12",
+                                                                    "Z13",
+                                                                    "Z14",
+                                                                    "Z15",
+                                                                    "Z16",
+                                                                    "Z17",
+                                                                    "Z18",
+                                                                    "Z19",
+                                                                    "Z20",
+                                                                    "Z21",
+                                                                    "Z22",
+                                                                    "Z23",
+                                                                    "Z24",
+                                                                    "Z25",
+                                                                    "Z26",
+                                                                    "Z27",
+                                                                    "Z28",
+                                                                    "Z29",
+                                                                    "Z30",
+                                                                    "Z31",
+                                                                    "Z32",
+                                                                    "Z33",
+                                                                    "Z34",
+                                                                    "Z35",
+                                                                    "Z36",
+                                                                    "Z37",
+                                                                    "Z38",
+                                                                    "Z39",
+                                                                    "Z40",
+                                                                    "Z41",
+                                                                    "Z42",
+                                                                    "Z43",
+                                                                    "Z44",
+                                                                    "Z45",
+                                                                    "Z46",
+                                                                    "Z47",
+                                                                    "Z48",
+                                                                    "Z49",
+                                                                    "Z50",
+                                                                    "Z51",
+                                                                    "Z52",
+                                                                    "Z53",
+                                                                    "Z54",
+                                                                    "Z55",
+                                                                    "Z56",
+                                                                    "Z57",
+                                                                    "Z58",
+                                                                    "Z59",
+                                                                    "Z60"
+                                                            ],
+                                                            "default": "WE"
+                                                    },
+                                                    {
+                                                            "type": "string",
+                                                            "enum": [
+                                                                    "S"
+                                                            ]
+                                                    },
+                                                    {
+                                                            "type": "string",
+                                                            "enum": [
+                                                                    "AM",
+                                                                    "AN",
+                                                                    "BN",
+                                                                    "BR",
+                                                                    "CC",
+                                                                    "CD",
+                                                                    "EA",
+                                                                    "EB",
+                                                                    "EC",
+                                                                    "ED",
+                                                                    "EE",
+                                                                    "EF",
+                                                                    "FA",
+                                                                    "HE",
+                                                                    "HO",
+                                                                    "ID",
+                                                                    "IN",
+                                                                    "KA",
+                                                                    "RF",
+                                                                    "SA",
+                                                                    "WD",
+                                                                    "WE"
+                                                            ]
+                                                    }
+                                            ],
+                                            "additionalItems": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                            "WGS84"
+                                                    ]
+                                            }
+                                    },
+                                    {
+                                            "type": "array",
+                                            "minItems": 1,
+                                            "maxItems": 1,
+                                            "items": [
+                                                    {
+                                                            "type": "string",
+                                                            "enum": [
+                                                                    "GC",
+                                                                    "GCC"
+                                                            ],
+                                                            "default": "GD"
+                                                    }
+                                            ],
+                                            "additionalItems": false
+                                    }
+                            ]
+                  },
 '''
 
 
