@@ -38,6 +38,16 @@ var ProtoInstance0 = null;
                     .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("bias").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
                     .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("scale").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
                     .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("power").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("2"))
+                    .addParts(new ShaderPartObject().setType("VERTEX").setUrl(Java.to(["../shaders/common.vs","https://coderextreme.net/X3DJSONLD/shaders/common.vs"], Java.type("java.lang.String[]"))))
+                    .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(Java.to(["../shaders/gl_flowers_chromatic.fs","https://coderextreme.net/X3DJSONLD/shaders/gl_flowers_chromatic.fs"], Java.type("java.lang.String[]")))))
+                  .addShaders(new ComposedShaderObject().setLanguage("GLSL")
+                    .addField(new fieldObject().setType(fieldObject.TYPE_SFINT32).setName("xxxcube").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
+                    .addField(new fieldObject().setType(fieldObject.TYPE_SFNODE).setName("cube").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
+                      .addChild(new ComposedCubeMapTextureObject().setUSE("texture")))
+                    .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("chromaticDispertion").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.98 1 1.033"))
+                    .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("bias").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
+                    .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("scale").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
+                    .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("power").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("2"))
                     .addParts(new ShaderPartObject().setType("VERTEX").setUrl(Java.to(["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs"], Java.type("java.lang.String[]"))))
                     .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(Java.to(["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"], Java.type("java.lang.String[]")))))
                   .addShaders(new ComposedShaderObject().setDEF("shader").setLanguage("GLSL")
@@ -95,10 +105,10 @@ var ProtoInstance0 = null;
 "			}\n"+
 "\n"+
 "			function initialize() {\n"+
+"			     var cis = [];\n"+
 "			     newBubble();\n"+
 "			     resolution = 100;\n"+
 "			     updateCoordinates(resolution);\n"+
-"			     var cis = [];\n"+
 "			     for ( i = 0; i < resolution-1; i++) {\n"+
 "				for ( j = 0; j < resolution-1; j++) {\n"+
 "				     cis.push(i*resolution+j);\n"+

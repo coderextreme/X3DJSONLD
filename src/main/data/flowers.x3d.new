@@ -25,6 +25,16 @@
 <field name="bias" type="SFFloat" accessType="inputOutput" value="0.5"></field>
 <field name="scale" type="SFFloat" accessType="inputOutput" value="0.5"></field>
 <field name="power" type="SFFloat" accessType="inputOutput" value="2"></field>
+<ShaderPart url="&quot;../shaders/common.vs&quot; &quot;https://coderextreme.net/X3DJSONLD/shaders/common.vs&quot;" type="VERTEX"></ShaderPart>
+<ShaderPart url="&quot;../shaders/gl_flowers_chromatic.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/shaders/gl_flowers_chromatic.fs&quot;" type="FRAGMENT"></ShaderPart>
+</ComposedShader>
+<ComposedShader language="GLSL"><field name="xxxcube" type="SFInt32" accessType="inputOutput" value="0"></field>
+<field name="cube" type="SFNode" accessType="inputOutput"><ComposedCubeMapTexture USE="texture"></ComposedCubeMapTexture>
+</field>
+<field name="chromaticDispertion" type="SFVec3f" accessType="inputOutput" value="0.98 1 1.033"></field>
+<field name="bias" type="SFFloat" accessType="inputOutput" value="0.5"></field>
+<field name="scale" type="SFFloat" accessType="inputOutput" value="0.5"></field>
+<field name="power" type="SFFloat" accessType="inputOutput" value="2"></field>
 <ShaderPart url="&quot;../shaders/x3dom.vs&quot; &quot;https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs&quot;" type="VERTEX"></ShaderPart>
 <ShaderPart url="&quot;../shaders/pc_bubbles.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs&quot;" type="FRAGMENT"></ShaderPart>
 </ComposedShader>
@@ -84,10 +94,10 @@
 			}
 
 			function initialize() {
+			     var cis = [];
 			     newBubble();
 			     resolution = 100;
 			     updateCoordinates(resolution);
-			     var cis = [];
 			     for ( i = 0; i < resolution-1; i++) {
 				for ( j = 0; j < resolution-1; j++) {
 				     cis.push(i*resolution+j);

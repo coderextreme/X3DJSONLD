@@ -180,6 +180,69 @@
                                           "-parts":[
                                             { "ShaderPart":
                                               {
+                                                "@url":["../shaders/common.vs","https://coderextreme.net/X3DJSONLD/shaders/common.vs"],
+                                                "@type":"VERTEX"
+                                              }
+                                            },
+                                            { "ShaderPart":
+                                              {
+                                                "@url":["../shaders/gl_flowers_chromatic.fs","https://coderextreme.net/X3DJSONLD/shaders/gl_flowers_chromatic.fs"],
+                                                "@type":"FRAGMENT"
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      { "ComposedShader":
+                                        {
+                                          "@language":"GLSL",
+                                          "field": [
+                                            {
+                                              "@name":"xxxcube",
+                                              "@type":"SFInt32",
+                                              "@accessType":"inputOutput",
+                                              "@value":0
+                                            },
+                                            {
+                                              "@name":"cube",
+                                              "@type":"SFNode",
+                                              "@accessType":"inputOutput",
+                                              "-children":[
+                                                { "ComposedCubeMapTexture":
+                                                  {
+                                                    "@USE":"texture"
+                                                  }
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "@name":"chromaticDispertion",
+                                              "@type":"SFVec3f",
+                                              "@accessType":"inputOutput",
+                                              "@value":[0.98,1.0,1.033]
+                                            },
+                                            {
+                                              "@name":"bias",
+                                              "@type":"SFFloat",
+                                              "@accessType":"inputOutput",
+                                              "@value":0.5
+                                            },
+                                            {
+                                              "@name":"scale",
+                                              "@type":"SFFloat",
+                                              "@accessType":"inputOutput",
+                                              "@value":0.5
+                                            },
+                                            {
+                                              "@name":"power",
+                                              "@type":"SFFloat",
+                                              "@accessType":"inputOutput",
+                                              "@value":2.0
+                                            }
+                                          ],
+                                          "-parts":[
+                                            { "ShaderPart":
+                                              {
                                                 "@url":["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs"],
                                                 "@type":"VERTEX"
                                               }
@@ -382,10 +445,10 @@
 "\t\t\t}",
 "",
 "\t\t\tfunction initialize() {",
+"\t\t\t     var cis = [];",
 "\t\t\t     newBubble();",
 "\t\t\t     resolution = 100;",
 "\t\t\t     updateCoordinates(resolution);",
-"\t\t\t     var cis = [];",
 "\t\t\t     for ( i = 0; i < resolution-1; i++) {",
 "\t\t\t\tfor ( j = 0; j < resolution-1; j++) {",
 "\t\t\t\t     cis.push(i*resolution+j);",
