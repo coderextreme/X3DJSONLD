@@ -1,5 +1,5 @@
 {
-	"$schema": "http://json-schema.org/draft-04/schema#",
+	"$schema": "http://json-schema.org/draft-06/schema#",
 	"title": "JSON Schema X3D V3.3",
 	"description": "Experimental JSON Schema for X3D V3.3 ",
 	"type": "object",
@@ -135,24 +135,19 @@
 				},
 				"@endAngle": {
 					"type": "number",
-					"minimum": -6.2832,
-					"exclusiveMinimum": true,
-					"maximum": 6.2832,
-					"exclusiveMaximum": true,
+					"exclusiveMinimum": -6.2832,
+					"exclusiveMaximum": 6.2832,
 					"default": 1.570796
 				},
 				"@radius": {
 					"type": "number",
-					"minimum": 0,
-					"exclusiveMinimum": true,
+					"exclusiveMinimum": 0,
 					"default": 1
 				},
 				"@startAngle": {
 					"type": "number",
-					"minimum": -6.2832,
-					"exclusiveMinimum": true,
-					"maximum": 6.2832,
-					"exclusiveMaximum": true,
+					"exclusiveMinimum": -6.2832,
+					"exclusiveMaximum": 6.2832,
 					"default": 0
 				},
 				"-metadata": {
@@ -186,24 +181,19 @@
 				},
 				"@endAngle": {
 					"type": "number",
-					"minimum": -6.2832,
-					"exclusiveMinimum": true,
-					"maximum": 6.2832,
-					"exclusiveMaximum": true,
+					"exclusiveMinimum": -6.2832,
+					"exclusiveMaximum": 6.2832,
 					"default": 1.570796
 				},
 				"@radius": {
 					"type": "number",
-					"minimum": 0,
-					"exclusiveMinimum": true,
+					"exclusiveMinimum": 0,
 					"default": 1
 				},
 				"@startAngle": {
 					"type": "number",
-					"minimum": -6.2832,
-					"exclusiveMinimum": true,
-					"maximum": 6.2832,
-					"exclusiveMaximum": true,
+					"exclusiveMinimum": -6.2832,
+					"exclusiveMaximum": 6.2832,
 					"default": 0
 				},
 				"@solid": {
@@ -244,8 +234,7 @@
 				},
 				"@pitch": {
 					"type": "number",
-					"minimum": 0,
-					"exclusiveMinimum": true,
+					"exclusiveMinimum": 0,
 					"default": 1
 				},
 				"@resumeTime": {
@@ -1080,8 +1069,7 @@
 				},
 				"@radius": {
 					"type": "number",
-					"minimum": 0,
-					"exclusiveMinimum": true,
+					"exclusiveMinimum": 0,
 					"default": 1
 				},
 				"-metadata": {
@@ -1813,14 +1801,12 @@
 				},
 				"@bottomRadius": {
 					"type": "number",
-					"minimum": 0,
-					"exclusiveMinimum": true,
+					"exclusiveMinimum": 0,
 					"default": 1
 				},
 				"@height": {
 					"type": "number",
-					"minimum": 0,
-					"exclusiveMinimum": true,
+					"exclusiveMinimum": 0,
 					"default": 2
 				},
 				"@side": {
@@ -2382,14 +2368,12 @@
 				},
 				"@height": {
 					"type": "number",
-					"minimum": 0,
-					"exclusiveMinimum": true,
+					"exclusiveMinimum": 0,
 					"default": 2
 				},
 				"@radius": {
 					"type": "number",
-					"minimum": 0,
-					"exclusiveMinimum": true,
+					"exclusiveMinimum": 0,
 					"default": 1
 				},
 				"@side": {
@@ -2474,18 +2458,14 @@
 				},
 				"@maxAngle": {
 					"type": "number",
-					"minimum": -6.2832,
-					"exclusiveMinimum": true,
-					"maximum": 6.2832,
-					"exclusiveMaximum": true,
+					"exclusiveMinimum": -6.2832,
+					"exclusiveMaximum": 6.2832,
 					"default": -1
 				},
 				"@minAngle": {
 					"type": "number",
-					"minimum": -6.2832,
-					"exclusiveMinimum": true,
-					"maximum": 6.2832,
-					"exclusiveMaximum": true,
+					"exclusiveMinimum": -6.2832,
+					"exclusiveMaximum": 6.2832,
 					"default": 0
 				},
 				"@offset": {
@@ -2709,8 +2689,7 @@
 				},
 				"@outerRadius": {
 					"type": "number",
-					"minimum": 0,
-					"exclusiveMinimum": true,
+					"exclusiveMinimum": 0,
 					"default": 1
 				},
 				"@solid": {
@@ -2822,10 +2801,8 @@
 				},
 				"@maxAngle1": {
 					"type": "number",
-					"minimum": -3.1416,
-					"exclusiveMinimum": true,
-					"maximum": 3.1416,
-					"exclusiveMaximum": true,
+					"exclusiveMinimum": -3.1416,
+					"exclusiveMaximum": 3.1416,
 					"default": 3.141592653
 				},
 				"@maxTorque1": {
@@ -2838,10 +2815,8 @@
 				},
 				"@minAngle1": {
 					"type": "number",
-					"minimum": -3.1416,
-					"exclusiveMinimum": true,
-					"maximum": 3.1416,
-					"exclusiveMaximum": true,
+					"exclusiveMinimum": -3.1416,
+					"exclusiveMaximum": 3.1416,
 					"default": -3.141592653
 				},
 				"@stop1Bounce": {
@@ -3955,8 +3930,7 @@
 				},
 				"@size": {
 					"type": "number",
-					"minimum": 0,
-					"exclusiveMinimum": true,
+					"exclusiveMinimum": 0,
 					"default": 1
 				},
 				"@spacing": {
@@ -4047,8 +4021,7 @@
 				},
 				"@size": {
 					"type": "integer",
-					"minimum": 0,
-					"exclusiveMinimum": true,
+					"exclusiveMinimum": 0,
 					"default": 128
 				},
 				"@update": {
@@ -4168,8 +4141,7 @@
 				},
 				"@xSpacing": {
 					"type": "number",
-					"minimum": 0,
-					"exclusiveMinimum": true,
+					"exclusiveMinimum": 0,
 					"default": 1
 				},
 				"@yScale": {
@@ -4184,8 +4156,7 @@
 				},
 				"@zSpacing": {
 					"type": "number",
-					"minimum": 0,
-					"exclusiveMinimum": true,
+					"exclusiveMinimum": 0,
 					"default": 1
 				},
 				"-color": {
@@ -4651,8 +4622,7 @@
 					"maxItems": 3,
 					"items": {
 						"type": "number",
-						"minimum": 0,
-						"exclusiveMinimum": true,
+						"exclusiveMinimum": 0,
 						"default": 1
 					}
 				},
@@ -4703,10 +4673,8 @@
 				},
 				"@fieldOfView": {
 					"type": "number",
-					"minimum": 0,
-					"exclusiveMinimum": true,
-					"maximum": 3.1416,
-					"exclusiveMaximum": true,
+					"exclusiveMinimum": 0,
+					"exclusiveMaximum": 3.1416,
 					"default": 0.7854
 				},
 				"@geoSystem": {
@@ -4888,8 +4856,7 @@
 					"maxItems": 3,
 					"items": {
 						"type": "number",
-						"minimum": 0,
-						"exclusiveMinimum": true
+						"exclusiveMinimum": 0
 					}
 				},
 				"@scaleOrientation": {
@@ -5162,8 +5129,7 @@
 					"maxItems": 3,
 					"items": {
 						"type": "number",
-						"minimum": 0,
-						"exclusiveMinimum": true,
+						"exclusiveMinimum": 0,
 						"default": 1
 					}
 				},
@@ -5905,8 +5871,7 @@
 					"maxItems": 3,
 					"items": {
 						"type": "number",
-						"minimum": 0,
-						"exclusiveMinimum": true,
+						"exclusiveMinimum": 0,
 						"default": 1
 					}
 				},
@@ -6326,8 +6291,7 @@
 				},
 				"@linetype": {
 					"type": "integer",
-					"minimum": 1,
-					"exclusiveMinimum": true,
+					"exclusiveMinimum": 1,
 					"default": 1
 				},
 				"@linewidthScaleFactor": {
@@ -6935,10 +6899,8 @@
 				},
 				"@axis1Angle": {
 					"type": "number",
-					"minimum": -3.1416,
-					"exclusiveMinimum": true,
-					"maximum": 3.1416,
-					"exclusiveMaximum": true,
+					"exclusiveMinimum": -3.1416,
+					"exclusiveMaximum": 3.1416,
 					"default": 0
 				},
 				"@axis1Torque": {
@@ -6947,10 +6909,8 @@
 				},
 				"@axis2Angle": {
 					"type": "number",
-					"minimum": -3.1416,
-					"exclusiveMinimum": true,
-					"maximum": 3.1416,
-					"exclusiveMaximum": true,
+					"exclusiveMinimum": -3.1416,
+					"exclusiveMaximum": 3.1416,
 					"default": 0
 				},
 				"@axis2Torque": {
@@ -6959,10 +6919,8 @@
 				},
 				"@axis3Angle": {
 					"type": "number",
-					"minimum": -3.1416,
-					"exclusiveMinimum": true,
-					"maximum": 3.1416,
-					"exclusiveMaximum": true,
+					"exclusiveMinimum": -3.1416,
+					"exclusiveMaximum": 3.1416,
 					"default": 0
 				},
 				"@axis3Torque": {
@@ -7094,8 +7052,7 @@
 				},
 				"@pitch": {
 					"type": "number",
-					"minimum": 0,
-					"exclusiveMinimum": true,
+					"exclusiveMinimum": 0,
 					"default": 1
 				},
 				"@repeatS": {
@@ -7480,8 +7437,7 @@
 					"minItems": 1,
 					"items": {
 						"type": "number",
-						"minimum": 0,
-						"exclusiveMinimum": true
+						"exclusiveMinimum": 0
 					}
 				},
 				"-controlPoint": {
@@ -7540,8 +7496,7 @@
 					"minItems": 1,
 					"items": {
 						"type": "number",
-						"minimum": 0,
-						"exclusiveMinimum": true
+						"exclusiveMinimum": 0
 					}
 				},
 				"-metadata": {
@@ -7667,8 +7622,7 @@
 					"minItems": 1,
 					"items": {
 						"type": "number",
-						"minimum": 0,
-						"exclusiveMinimum": true
+						"exclusiveMinimum": 0
 					}
 				},
 				"-controlPoint": {
@@ -7755,8 +7709,7 @@
 				},
 				"@tesselationScale": {
 					"type": "number",
-					"minimum": 0,
-					"exclusiveMinimum": true,
+					"exclusiveMinimum": 0,
 					"default": 1
 				},
 				"-geometry": {
@@ -8046,8 +7999,7 @@
 					"minItems": 1,
 					"items": {
 						"type": "number",
-						"minimum": 0,
-						"exclusiveMinimum": true
+						"exclusiveMinimum": 0
 					}
 				},
 				"-controlPoint": {
@@ -9888,8 +9840,7 @@
 					"maxItems": 2,
 					"items": {
 						"type": "number",
-						"minimum": 0,
-						"exclusiveMinimum": true,
+						"exclusiveMinimum": 0,
 						"default": 2
 					}
 				},
@@ -10026,8 +9977,7 @@
 				},
 				"@mass": {
 					"type": "number",
-					"minimum": 0,
-					"exclusiveMinimum": true,
+					"exclusiveMinimum": 0,
 					"default": 1
 				},
 				"@orientation": {
@@ -10750,8 +10700,7 @@
 				},
 				"@pointSize": {
 					"type": "number",
-					"minimum": 0,
-					"exclusiveMinimum": true,
+					"exclusiveMinimum": 0,
 					"default": 12
 				},
 				"@spacing": {
@@ -10892,8 +10841,7 @@
 					"maxItems": 3,
 					"items": {
 						"type": "number",
-						"minimum": 0,
-						"exclusiveMinimum": true,
+						"exclusiveMinimum": 0,
 						"default": 1
 					}
 				},
@@ -11351,18 +11299,14 @@
 				},
 				"@maxAngle": {
 					"type": "number",
-					"minimum": -3.1416,
-					"exclusiveMinimum": true,
-					"maximum": 3.1416,
-					"exclusiveMaximum": true,
+					"exclusiveMinimum": -3.1416,
+					"exclusiveMaximum": 3.1416,
 					"default": 3.141592653
 				},
 				"@minAngle": {
 					"type": "number",
-					"minimum": -3.1416,
-					"exclusiveMinimum": true,
-					"maximum": 3.1416,
-					"exclusiveMaximum": true,
+					"exclusiveMinimum": -3.1416,
+					"exclusiveMaximum": 3.1416,
 					"default": -3.141592653
 				},
 				"@stopBounce": {
@@ -11593,8 +11537,7 @@
 				},
 				"@radius": {
 					"type": "number",
-					"minimum": 0,
-					"exclusiveMinimum": true,
+					"exclusiveMinimum": 0,
 					"default": 1
 				},
 				"@solid": {
@@ -11865,8 +11808,7 @@
 				},
 				"@beamWidth": {
 					"type": "number",
-					"minimum": 0,
-					"exclusiveMinimum": true,
+					"exclusiveMinimum": 0,
 					"maximum": 1.5708,
 					"default": 0.7854
 				},
@@ -11883,8 +11825,7 @@
 				},
 				"@cutOffAngle": {
 					"type": "number",
-					"minimum": 0,
-					"exclusiveMinimum": true,
+					"exclusiveMinimum": 0,
 					"maximum": 1.5708,
 					"default": 1.570796
 				},
@@ -12767,8 +12708,7 @@
 				},
 				"@cycleInterval": {
 					"type": "number",
-					"minimum": 0,
-					"exclusiveMinimum": true,
+					"exclusiveMinimum": 0,
 					"default": 1
 				},
 				"@enabled": {
@@ -14157,8 +14097,7 @@
 					"maxItems": 3,
 					"items": {
 						"type": "number",
-						"minimum": 0,
-						"exclusiveMinimum": true,
+						"exclusiveMinimum": 0,
 						"default": 1
 					}
 				},
