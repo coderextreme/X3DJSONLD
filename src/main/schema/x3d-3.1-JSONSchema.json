@@ -7184,7 +7184,8 @@
                 "enum": [
                   "SANS",
                   "SERIF",
-                  "TYPEWRITER"
+                  "TYPEWRITER",
+                  "Arial"
                 ],
                 "default": "SERIF",
                 "type": "string"
@@ -17999,7 +18000,8 @@
                 "enum": [
                   "SANS",
                   "SERIF",
-                  "TYPEWRITER"
+                  "TYPEWRITER",
+                  "Arial"
                 ],
                 "default": "SERIF",
                 "type": "string"
