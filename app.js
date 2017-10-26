@@ -21,8 +21,6 @@ var runAndSend = require('./src/main/node/runAndSend');
 var www = config.x3dcode;
 
 
-// app.use(express.static('/src/main'));
-// app.use(express.static('src/main/html'));
 app.use(express.static('/'));
 app.use(express.static('src/main/data'));
 // app.use(express.static('src/main/node'));
@@ -33,6 +31,8 @@ app.use(express.static('src/main/resources'));
 app.use(express.static('src/main/shaders'));
 app.use(express.static('src/main/nashorn'));
 app.use(express.static('src/main/lib'));
+app.use(express.static('src/main/html'));
+app.use(express.static('/src/main'));
 
 function convertX3dToJson(res, infile, outfile, next) {
 	console.error("Calling converter on "+infile);
@@ -111,6 +111,7 @@ app.get("/www.web3d.org/*.x3d*", function(req, res, next) {
 	var outfile = infile.substr(0, infile.lastIndexOf("."))+".json";
 	convertX3dToJson(res, infile, outfile, next);
 });
+/*
 app.get("/data/*.x3d*", function(req, res, next) {
 	var url = req._parsedUrl.pathname;
 	var hash = url.indexOf("#");
@@ -122,6 +123,7 @@ app.get("/data/*.x3d*", function(req, res, next) {
 	var outfile = infile.substr(0, infile.lastIndexOf("."))+".json";
 	convertX3dToJson(res, infile, outfile, next);
 });
+*/
 
 app.get("/files", function(req, res, next) {
 	var test = req._parsedUrl.query;
@@ -229,10 +231,10 @@ magic("*.xslt", "text/xsl");
 magic("*.css", "text/css");
 magic("*.swf", "application/x-shockwave-flash");
 magic("/**/schema/*.json", "text/json");
+magic("*.x3d", "model/x3d+xml");
 /*
 magic("*.gltf", "text/json");
 magic("*.glb", "application/octet-stream");
-magic("*.x3d", "model/x3d+xml");
 magic("*.xml", "text/xml");
 */
 
