@@ -12,6 +12,7 @@ import org.web3d.x3d.jsail.Rendering.*;
 import org.web3d.x3d.jsail.Scripting.*;
 import org.web3d.x3d.jsail.Shaders.*;
 import org.web3d.x3d.jsail.Shape.*;
+import org.web3d.x3d.jsail.Sound.*;
 import org.web3d.x3d.jsail.Texturing.*;
 import org.web3d.x3d.jsail.Time.*;
 
@@ -240,6 +241,10 @@ public class flowers
           .addField(new fieldObject().setAccessType("inputOutput").setName("tdelta").setType("SFFloat").setValue("0.5"))
           .addField(new fieldObject().setAccessType("inputOutput").setName("pdelta").setType("SFFloat").setValue("0.5")))
         .addChild(new TimeSensorObject("TourTime").setCycleInterval(0.150).setLoop(true))
+        .addChild(new TimeSensorObject("SongTime").setLoop(true))
+        .addChild(new SoundObject().setMaxBack(100f).setMaxFront(100f).setMinBack(20f).setMinFront(20f)
+          .setSource(new AudioClipObject("AudioClip").setDescription("Chandubabamusic #1").setUrl(new MFStringObject("\"../resources/chandubabamusic1.wav\""))))
+        .addChild(new ROUTEObject().setFromNode("SongTime").setFromField("cycleTime").setToNode("AudioClip").setToField("startTime"))
         .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("cycleTime").setToNode("Bounce").setToField("set_fraction"))
         .addChild(new ROUTEObject().setFromNode("Bounce").setFromField("translation").setToNode("transform").setToField("set_translation"))
         .addComments(new String[] {"",

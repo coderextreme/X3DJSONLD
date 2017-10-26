@@ -6,6 +6,8 @@ import org.web3d.x3d.jsail.EnvironmentalEffects.*;
 import org.web3d.x3d.jsail.fields.*;
 import org.web3d.x3d.jsail.Grouping.*;
 import org.web3d.x3d.jsail.Navigation.*;
+import org.web3d.x3d.jsail.Sound.*;
+import org.web3d.x3d.jsail.Time.*;
 
 // Javadoc annotations follow, see below for source.
 /**
@@ -89,7 +91,11 @@ public class sphereflowers
       .addChild(new ProtoInstanceObject().setName("flower"))
       .addChild(new ProtoInstanceObject().setName("flower"))
       .addChild(new ProtoInstanceObject().setName("flower"))
-      .addChild(new ProtoInstanceObject().setName("flower"))));
+      .addChild(new ProtoInstanceObject().setName("flower"))
+      .addChild(new TimeSensorObject("SongTime").setLoop(true))
+      .addChild(new SoundObject().setMaxBack(100f).setMaxFront(100f).setMinBack(20f).setMinFront(20f)
+        .setSource(new AudioClipObject("AudioClip").setDescription("Chandubabamusic #1").setUrl(new MFStringObject("\"../resources/chandubabamusic1.wav\""))))
+      .addChild(new ROUTEObject().setFromNode("SongTime").setFromField("cycleTime").setToNode("AudioClip").setToField("startTime"))));
   }
   // end of initialize() method
 

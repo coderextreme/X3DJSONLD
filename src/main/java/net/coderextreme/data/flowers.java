@@ -116,6 +116,16 @@ ProtoInstanceObject ProtoInstance0 = null;
                     .addField(new fieldObject().setType("SFFloat").setName("power").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("2"))
                     .addParts(new ShaderPartObject().setType("VERTEX").setUrl(new MFStringObject(new MFString12().getArray())))
                     .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject(new MFString13().getArray()))))
+                  .addShaders(new ComposedShaderObject().setLanguage("GLSL")
+                    .addField(new fieldObject().setType("SFInt32").setName("xxxcube").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
+                    .addField(new fieldObject().setType("SFNode").setName("cube").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
+                      .addChild(new ComposedCubeMapTextureObject().setUSE("texture")))
+                    .addField(new fieldObject().setType("SFVec3f").setName("chromaticDispertion").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.98 1 1.033"))
+                    .addField(new fieldObject().setType("SFFloat").setName("bias").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
+                    .addField(new fieldObject().setType("SFFloat").setName("scale").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
+                    .addField(new fieldObject().setType("SFFloat").setName("power").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("2"))
+                    .addParts(new ShaderPartObject().setType("VERTEX").setUrl(new MFStringObject(new MFString14().getArray())))
+                    .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject(new MFString15().getArray()))))
                   .addShaders(new ComposedShaderObject().setDEF("shader").setLanguage("GLSL")
                     .addField(new fieldObject().setType("SFInt32").setName("xxxcube").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
                     .addField(new fieldObject().setType("SFNode").setName("cube").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
@@ -124,8 +134,8 @@ ProtoInstanceObject ProtoInstance0 = null;
                     .addField(new fieldObject().setType("SFFloat").setName("bias").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("10"))
                     .addField(new fieldObject().setType("SFFloat").setName("scale").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("10"))
                     .addField(new fieldObject().setType("SFFloat").setName("power").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("2"))
-                    .addParts(new ShaderPartObject().setType("VERTEX").setUrl(new MFStringObject(new MFString14().getArray())))
-                    .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject(new MFString15().getArray())))))
+                    .addParts(new ShaderPartObject().setType("VERTEX").setUrl(new MFStringObject(new MFString16().getArray())))
+                    .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject(new MFString17().getArray())))))
                 .addComments(new CommentsBlock("<Sphere></Sphere>"))
                 .setGeometry(new IndexedFaceSetObject().setConvex(false).setDEF("Orbit")
                   .setCoord(new CoordinateObject().setDEF("OrbitCoordinates")))))
@@ -171,10 +181,10 @@ ProtoInstanceObject ProtoInstance0 = null;
 "			}\n"+
 "\n"+
 "			function initialize() {\n"+
+"			     var cis = [];\n"+
 "			     newBubble();\n"+
 "			     resolution = 100;\n"+
 "			     updateCoordinates(resolution);\n"+
-"			     var cis = [];\n"+
 "			     for ( i = 0; i < resolution-1; i++) {\n"+
 "				for ( j = 0; j < resolution-1; j++) {\n"+
 "				     cis.push(i*resolution+j);\n"+
@@ -248,7 +258,7 @@ ProtoInstanceObject ProtoInstance0 = null;
             .addChild(new TimeSensorObject().setDEF("TourTime").setCycleInterval(0.15d).setLoop(true))
             .addChild(new TimeSensorObject().setDEF("SongTime").setLoop(true))
             .addChild(new SoundObject().setMaxBack(100f).setMaxFront(100f).setMinBack(20f).setMinFront(20f)
-              .setSource(new AudioClipObject().setDEF("AudioClip").setDescription("Chandubabamusic #1").setUrl(new MFStringObject(new MFString16().getArray()))))
+              .setSource(new AudioClipObject().setDEF("AudioClip").setDescription("Chandubabamusic #1").setUrl(new MFStringObject(new MFString18().getArray()))))
             .addChild(new ROUTEObject().setFromField("cycleTime").setFromNode("SongTime").setToField("startTime").setToNode("AudioClip"))
             .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("cycleTime").setToNode("Bounce").setToField("set_fraction"))
             .addChild(new ROUTEObject().setFromNode("Bounce").setFromField("translation").setToNode("transform").setToField("set_translation"))
@@ -320,17 +330,17 @@ protected class MFString11 {
 }
 protected class MFString12 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs"});
+    return new MFStringObject(new java.lang.String[] {"../shaders/common.vs","https://coderextreme.net/X3DJSONLD/shaders/common.vs"});
   }
 }
 protected class MFString13 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"});
+    return new MFStringObject(new java.lang.String[] {"../shaders/gl_flowers_chromatic.fs","https://coderextreme.net/X3DJSONLD/shaders/gl_flowers_chromatic.fs"});
   }
 }
 protected class MFString14 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../shaders/cobweb.vs","https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"});
+    return new MFStringObject(new java.lang.String[] {"../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs"});
   }
 }
 protected class MFString15 {
@@ -339,6 +349,16 @@ protected class MFString15 {
   }
 }
 protected class MFString16 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new java.lang.String[] {"../shaders/cobweb.vs","https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"});
+  }
+}
+protected class MFString17 {
+  protected MFStringObject getArray() {
+    return new MFStringObject(new java.lang.String[] {"../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"});
+  }
+}
+protected class MFString18 {
   protected MFStringObject getArray() {
     return new MFStringObject(new java.lang.String[] {"../resources/chandubabamusic1.wav"});
   }
