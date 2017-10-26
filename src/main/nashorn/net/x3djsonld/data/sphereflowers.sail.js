@@ -84,7 +84,11 @@ sphereflowers_sail.prototype = {
       .addChild(new ProtoInstanceObject().setName("flower"))
       .addChild(new ProtoInstanceObject().setName("flower"))
       .addChild(new ProtoInstanceObject().setName("flower"))
-      .addChild(new ProtoInstanceObject().setName("flower"))));
+      .addChild(new ProtoInstanceObject().setName("flower"))
+      .addChild(new TimeSensorObject("SongTime").setLoop(true))
+      .addChild(new SoundObject().setMaxBack(100).setMaxFront(100).setMinBack(20).setMinFront(20)
+        .setSource(new AudioClipObject("AudioClip").setDescription("Chandubabamusic #1").setUrl(new MFStringObject("\"../resources/chandubabamusic1.wav\""))))
+      .addChild(new ROUTEObject().setFromNode("SongTime").setFromField("cycleTime").setToNode("AudioClip").setToField("startTime"))));
   },
   // end of initialize() method
 
