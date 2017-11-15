@@ -187,6 +187,7 @@
          <enumeration value="&#34;SANS&#34;"/>
          <enumeration value="&#34;SERIF&#34;"/>
          <enumeration value="&#34;TYPEWRITER&#34;"/>
+         <enumeration value="&#34;Arial&#34;"/>
       </SimpleType>
       <SimpleType name="fontStyleValues"
                   baseType="SFString"
@@ -8842,6 +8843,7 @@
                <enumeration value="&#34;SANS&#34;"/>
                <enumeration value="&#34;SERIF&#34;"/>
                <enumeration value="&#34;TYPEWRITER&#34;"/>
+               <enumeration value="&#34;Arial&#34;"/>
             </field>
             <field type="SFBool"
                    accessType="initializeOnly"
@@ -16239,6 +16241,7 @@
                <enumeration value="&#34;SANS&#34;"/>
                <enumeration value="&#34;SERIF&#34;"/>
                <enumeration value="&#34;TYPEWRITER&#34;"/>
+               <enumeration value="&#34;Arial&#34;"/>
             </field>
             <field type="SFBool"
                    accessType="initializeOnly"
