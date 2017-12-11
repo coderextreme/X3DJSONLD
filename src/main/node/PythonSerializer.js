@@ -330,7 +330,7 @@ PythonSerializer.prototype = {
 					replace(/\\/g, '\\\\').
 					replace(/"/g, '\\"');
 				str += "\n"+element.nodeName+stack[0];
-				str += ".addComments(CommentsBlock(\""+y+"\"))\n";
+				str += ".addComments(CommentsBlock(\"\"\""+y+"\"\"\"))\n";
 				if (y !== node.nodeValue) {
 					// console.error("Java Comment Replacing "+node.nodeValue+" with "+y);
 				}
