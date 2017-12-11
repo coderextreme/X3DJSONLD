@@ -87,23 +87,35 @@
               {
                 "ProtoDeclare": {
                   "@name": "flower",
-                  "ProtoBody": {
-                    "Group": {
-                      "ProtoInstance": {
-                        "@name": "FlowerProto",
-                        "fieldValue": [
+                  "-children": [
+                    {
+                      "ProtoBody": {
+                        "-children": [
                           {
-                            "@name": "vertex",
-                            "@value": "\"../shaders/cobweb_flowers_chromatic.vs\""
-                          },
-                          {
-                            "@name": "fragment",
-                            "@value": "\"../shaders/common.fs\""
+                            "Group": {
+                              "-children": [
+                                {
+                                  "ProtoInstance": {
+                                    "@name": "FlowerProto",
+                                    "fieldValue": [
+                                      {
+                                        "@name": "vertex",
+                                        "@value": "\\\"../shaders/cobweb_flowers_chromatic.vs\\\""
+                                      },
+                                      {
+                                        "@name": "fragment",
+                                        "@value": "\\\"../shaders/common.fs\\\""
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
                           }
                         ]
                       }
                     }
-                  }
+                  ]
                 }
               },
               {
@@ -148,15 +160,17 @@
                   "@maxFront": 100,
                   "@minBack": 20,
                   "@minFront": 20,
-                  "-source": {
-                    "AudioClip": {
-                      "@DEF": "AudioClip",
-                      "@description": "Chandubabamusic #1",
-                      "@url": [
-                        "../resources/chandubabamusic1.wav"
-                      ]
+                  "-source": [
+                    {
+                      "AudioClip": {
+                        "@DEF": "AudioClip",
+                        "@description": "Chandubabamusic #1",
+                        "@url": [
+                          "../resources/chandubabamusic1.wav"
+                        ]
+                      }
                     }
-                  }
+                  ]
                 }
               }
             ],

@@ -84,128 +84,263 @@
         {
           "ProtoDeclare": {
             "@name": "Bubble",
-            "ProtoBody": {
-              "-children": [
-                {
-                  "Transform": {
-                    "@DEF": "transform",
-                    "Shape": {
-                      "@DEF": "myShape",
-                      "-appearance": {
-                        "Appearance": {
-                          "-material": {
-                            "Material": {
-                              "@diffuseColor": [
-                                0.7,
-                                0.7,
-                                0.7
+            "-children": [
+              {
+                "ProtoBody": {
+                  "-children": [
+                    {
+                      "Transform": {
+                        "@DEF": "transform",
+                        "-children": [
+                          {
+                            "Shape": {
+                              "@DEF": "myShape",
+                              "-appearance": [
+                                {
+                                  "Appearance": {
+                                    "-material": [
+                                      {
+                                        "Material": {
+                                          "@diffuseColor": [
+                                            0,
+                                            0,
+                                            0
+                                          ],
+                                          "@specularColor": [
+                                            0,
+                                            0,
+                                            0
+                                          ]
+                                        }
+                                      }
+                                    ],
+                                    "-texture": [
+                                      {
+                                        "ComposedCubeMapTexture": {
+                                          "@DEF": "texture",
+                                          "-back": [
+                                            {
+                                              "ImageTexture": {
+                                                "@url": [
+                                                  "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
+                                                  "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"
+                                                ]
+                                              }
+                                            }
+                                          ],
+                                          "-bottom": [
+                                            {
+                                              "ImageTexture": {
+                                                "@url": [
+                                                  "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
+                                                  "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"
+                                                ]
+                                              }
+                                            }
+                                          ],
+                                          "-front": [
+                                            {
+                                              "ImageTexture": {
+                                                "@url": [
+                                                  "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
+                                                  "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"
+                                                ]
+                                              }
+                                            }
+                                          ],
+                                          "-left": [
+                                            {
+                                              "ImageTexture": {
+                                                "@url": [
+                                                  "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
+                                                  "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"
+                                                ]
+                                              }
+                                            }
+                                          ],
+                                          "-right": [
+                                            {
+                                              "ImageTexture": {
+                                                "@url": [
+                                                  "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
+                                                  "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"
+                                                ]
+                                              }
+                                            }
+                                          ],
+                                          "-top": [
+                                            {
+                                              "ImageTexture": {
+                                                "@url": [
+                                                  "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
+                                                  "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ],
+                                    "#comment": "<ComposedShader DEF='instant' language=\\\"GLSL\\\"> <field name='cube' type='SFInt32' accessType=\\\"inputOutput\\\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\\\"inputOutput\\\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\\\"inputOutput\\\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\\\"inputOutput\\\" value='0.5'/> <field name='power' type='SFFloat' accessType=\\\"inputOutput\\\" value='2.0'/> <ShaderPart url='\\\"../shaders/instant.vs\\\" \\\"https://coderextreme.net/X3DJSONLD/shaders/instant.vs\\\"' type='VERTEX'></ShaderPart> <ShaderPart url='\\\"../shaders/pc_bubbles.fs\\\" \\\"https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs\\\"' type='FRAGMENT'></ShaderPart> </ComposedShader>",
+                                    "-children": [
+                                      {
+                                        "ComposedShader": {
+                                          "@DEF": "x3dom",
+                                          "@language": "GLSL",
+                                          "field": [
+                                            {
+                                              "@name": "cube",
+                                              "@type": "SFInt32",
+                                              "@accessType": "inputOutput",
+                                              "@value": "0"
+                                            },
+                                            {
+                                              "@name": "chromaticDispertion",
+                                              "@type": "SFVec3f",
+                                              "@accessType": "inputOutput",
+                                              "@value": "0.98 1 1.033"
+                                            },
+                                            {
+                                              "@name": "bias",
+                                              "@type": "SFFloat",
+                                              "@accessType": "inputOutput",
+                                              "@value": "0.5"
+                                            },
+                                            {
+                                              "@name": "scale",
+                                              "@type": "SFFloat",
+                                              "@accessType": "inputOutput",
+                                              "@value": "0.5"
+                                            },
+                                            {
+                                              "@name": "power",
+                                              "@type": "SFFloat",
+                                              "@accessType": "inputOutput",
+                                              "@value": "2"
+                                            }
+                                          ],
+                                          "-children": [
+                                            {
+                                              "ShaderPart": {
+                                                "@url": [
+                                                  "../shaders/x3dom.vs",
+                                                  "https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs"
+                                                ],
+                                                "@type": "VERTEX"
+                                              }
+                                            },
+                                            {
+                                              "ShaderPart": {
+                                                "@url": [
+                                                  "../shaders/pc_bubbles.fs",
+                                                  "https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"
+                                                ],
+                                                "@type": "FRAGMENT"
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      {
+                                        "ComposedShader": {
+                                          "@DEF": "cobweb",
+                                          "@language": "GLSL",
+                                          "field": [
+                                            {
+                                              "@name": "cube",
+                                              "@type": "SFNode",
+                                              "@accessType": "inputOutput",
+                                              "-children": [
+                                                {
+                                                  "ComposedCubeMapTexture": {
+                                                    "@USE": "texture"
+                                                  }
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "@name": "chromaticDispertion",
+                                              "@type": "SFVec3f",
+                                              "@accessType": "inputOutput",
+                                              "@value": "0.98 1 1.033"
+                                            },
+                                            {
+                                              "@name": "bias",
+                                              "@type": "SFFloat",
+                                              "@accessType": "inputOutput",
+                                              "@value": "0.5"
+                                            },
+                                            {
+                                              "@name": "scale",
+                                              "@type": "SFFloat",
+                                              "@accessType": "inputOutput",
+                                              "@value": "0.5"
+                                            },
+                                            {
+                                              "@name": "power",
+                                              "@type": "SFFloat",
+                                              "@accessType": "inputOutput",
+                                              "@value": "2"
+                                            }
+                                          ],
+                                          "-children": [
+                                            {
+                                              "ShaderPart": {
+                                                "@url": [
+                                                  "../shaders/cobweb.vs",
+                                                  "https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"
+                                                ],
+                                                "@type": "VERTEX"
+                                              }
+                                            },
+                                            {
+                                              "ShaderPart": {
+                                                "@url": [
+                                                  "../shaders/pc_bubbles.fs",
+                                                  "https://coderextreme.net/X3DJSONLD/shaders/pc.fs"
+                                                ],
+                                                "@type": "FRAGMENT"
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
                               ],
-                              "@specularColor": [
-                                0.5,
-                                0.5,
-                                0.5
+                              "-geometry": [
+                                {
+                                  "Sphere": {}
+                                }
                               ]
                             }
-                          },
-                          "-texture": {
-                            "ComposedCubeMapTexture": {
-                              "@DEF": "texture",
-                              "-back": {
-                                "ImageTexture": {
-                                  "@url": [
-                                    "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
-                                    "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"
-                                  ]
-                                }
-                              },
-                              "-bottom": {
-                                "ImageTexture": {
-                                  "@url": [
-                                    "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
-                                    "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"
-                                  ]
-                                }
-                              },
-                              "-front": {
-                                "ImageTexture": {
-                                  "@url": [
-                                    "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
-                                    "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"
-                                  ]
-                                }
-                              },
-                              "-left": {
-                                "ImageTexture": {
-                                  "@url": [
-                                    "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
-                                    "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"
-                                  ]
-                                }
-                              },
-                              "-right": {
-                                "ImageTexture": {
-                                  "@url": [
-                                    "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
-                                    "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"
-                                  ]
-                                }
-                              },
-                              "-top": {
-                                "ImageTexture": {
-                                  "@url": [
-                                    "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
-                                    "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"
-                                  ]
-                                }
-                              }
-                            }
-                          },
-                          "ComposedShader": {
-                            "@DEF": "cobweb",
-                            "@language": "GLSL",
-                            "field": [],
-                            "-children": [
-                              {
-                                "ShaderPart": {
-                                  "@url": [
-                                    "../shaders/cobweb.vs",
-                                    "https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"
-                                  ],
-                                  "@type": "VERTEX"
-                                }
-                              },
-                              {
-                                "ShaderPart": {
-                                  "@url": [
-                                    "../shaders/pc_bubbles.fs",
-                                    "https://coderextreme.net/X3DJSONLD/shaders/pc.fs"
-                                  ],
-                                  "@type": "FRAGMENT"
-                                }
-                              }
-                            ]
-                          },
-                          "-children": [
-                            {
-                              "#comment": "<ComposedShader DEF='gl' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"../shaders/gl.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/gl.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader> <ComposedShader DEF='freewrl' language=\"GLSL\"> <field name='fw_textureCoodGenType' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/freewrl.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader>"
-                            },
-                            {
-                              "#comment": "<ComposedShader DEF='instant' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"../shaders/instant.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/instant.vs\"' type='VERTEX'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader>"
-                            }
-                          ]
-                        }
-                      },
-                      "-geometry": {
-                        "Sphere": {}
+                          }
+                        ]
                       }
-                    }
-                  }
-                },
-                {
-                  "Script": {
-                    "@DEF": "Bounce",
-                    "-children": [
-                      {
+                    },
+                    {
+                      "Script": {
+                        "@DEF": "Bounce",
+                        "field": [
+                          {
+                            "@name": "translation",
+                            "@accessType": "inputOutput",
+                            "@type": "SFVec3f",
+                            "@value": "0 0 0"
+                          },
+                          {
+                            "@name": "velocity",
+                            "@accessType": "inputOutput",
+                            "@type": "SFVec3f",
+                            "@value": "0 0 0"
+                          },
+                          {
+                            "@name": "set_fraction",
+                            "@accessType": "inputOnly",
+                            "@type": "SFTime"
+                          }
+                        ],
                         "#sourceText": [
                           "ecmascript:",
                           "\t\t\tfunction initialize() {",
@@ -235,51 +370,32 @@
                           ""
                         ]
                       }
-                    ],
-                    "field": [
-                      {
-                        "@name": "translation",
-                        "@accessType": "inputOutput",
-                        "@type": "SFVec3f",
-                        "@value": "0 0 0"
-                      },
-                      {
-                        "@name": "velocity",
-                        "@accessType": "inputOutput",
-                        "@type": "SFVec3f",
-                        "@value": "0 0 0"
-                      },
-                      {
-                        "@name": "set_fraction",
-                        "@accessType": "inputOnly",
-                        "@type": "SFTime"
+                    },
+                    {
+                      "TimeSensor": {
+                        "@DEF": "TourTime",
+                        "@cycleInterval": 0.15,
+                        "@loop": true
                       }
-                    ]
-                  }
-                },
-                {
-                  "TimeSensor": {
-                    "@DEF": "TourTime",
-                    "@cycleInterval": "0.15",
-                    "@loop": true
-                  }
+                    }
+                  ],
+                  "ROUTE": [
+                    {
+                      "@fromNode": "TourTime",
+                      "@fromField": "cycleTime",
+                      "@toNode": "Bounce",
+                      "@toField": "set_fraction"
+                    },
+                    {
+                      "@fromNode": "Bounce",
+                      "@fromField": "translation_changed",
+                      "@toNode": "transform",
+                      "@toField": "set_translation"
+                    }
+                  ]
                 }
-              ],
-              "ROUTE": [
-                {
-                  "@fromNode": "TourTime",
-                  "@fromField": "cycleTime",
-                  "@toNode": "Bounce",
-                  "@toField": "set_fraction"
-                },
-                {
-                  "@fromNode": "Bounce",
-                  "@fromField": "translation_changed",
-                  "@toNode": "transform",
-                  "@toField": "set_translation"
-                }
-              ]
-            }
+              }
+            ]
           }
         },
         {

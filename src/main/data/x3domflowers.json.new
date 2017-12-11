@@ -87,23 +87,35 @@
               {
                 "ProtoDeclare": {
                   "@name": "flower",
-                  "ProtoBody": {
-                    "Group": {
-                      "ProtoInstance": {
-                        "@name": "FlowerProto",
-                        "fieldValue": [
+                  "-children": [
+                    {
+                      "ProtoBody": {
+                        "-children": [
                           {
-                            "@name": "vertex",
-                            "@value": "\"../shaders/x3dom_flowers_chromatic.vs\""
-                          },
-                          {
-                            "@name": "fragment",
-                            "@value": "\"../shaders/common.fs\""
+                            "Group": {
+                              "-children": [
+                                {
+                                  "ProtoInstance": {
+                                    "@name": "FlowerProto",
+                                    "fieldValue": [
+                                      {
+                                        "@name": "vertex",
+                                        "@value": "\\\"../shaders/x3dom_flowers_chromatic.vs\\\""
+                                      },
+                                      {
+                                        "@name": "fragment",
+                                        "@value": "\\\"../shaders/common.fs\\\""
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
                           }
                         ]
                       }
                     }
-                  }
+                  ]
                 }
               },
               {

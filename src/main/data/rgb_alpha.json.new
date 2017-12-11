@@ -102,32 +102,44 @@
                     0.0694613,
                     -0.000999451
                   ],
-                  "Shape": {
-                    "-appearance": {
-                      "Appearance": {
-                        "-material": {
-                          "Material": {}
-                        },
-                        "-texture": {
-                          "PixelTexture": {
-                            "@DEF": "RgbOpacityCheckerboard",
-                            "@image": [
-                              2,
-                              2,
-                              4,
-                              4278190335,
-                              4294901760,
-                              4294901760,
-                              4278190335
-                            ]
+                  "-children": [
+                    {
+                      "Shape": {
+                        "-appearance": [
+                          {
+                            "Appearance": {
+                              "-material": [
+                                {
+                                  "Material": {}
+                                }
+                              ],
+                              "-texture": [
+                                {
+                                  "PixelTexture": {
+                                    "@DEF": "RgbOpacityCheckerboard",
+                                    "@image": [
+                                      2,
+                                      2,
+                                      4,
+                                      4278190335,
+                                      4294901760,
+                                      4294901760,
+                                      4278190335
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
                           }
-                        }
+                        ],
+                        "-geometry": [
+                          {
+                            "Box": {}
+                          }
+                        ]
                       }
-                    },
-                    "-geometry": {
-                      "Box": {}
                     }
-                  }
+                  ]
                 }
               },
               {
@@ -137,23 +149,35 @@
                     0.0694381,
                     -0.00149918
                   ],
-                  "Shape": {
-                    "-appearance": {
-                      "Appearance": {
-                        "-material": {
-                          "Material": {}
-                        },
-                        "-texture": {
-                          "PixelTexture": {
-                            "@USE": "RgbOpacityCheckerboard"
+                  "-children": [
+                    {
+                      "Shape": {
+                        "-appearance": [
+                          {
+                            "Appearance": {
+                              "-material": [
+                                {
+                                  "Material": {}
+                                }
+                              ],
+                              "-texture": [
+                                {
+                                  "PixelTexture": {
+                                    "@USE": "RgbOpacityCheckerboard"
+                                  }
+                                }
+                              ]
+                            }
                           }
-                        }
+                        ],
+                        "-geometry": [
+                          {
+                            "Sphere": {}
+                          }
+                        ]
                       }
-                    },
-                    "-geometry": {
-                      "Sphere": {}
                     }
-                  }
+                  ]
                 }
               },
               {
@@ -163,23 +187,35 @@
                     0.036672,
                     -0.00175095
                   ],
-                  "Shape": {
-                    "-appearance": {
-                      "Appearance": {
-                        "-material": {
-                          "Material": {}
-                        },
-                        "-texture": {
-                          "PixelTexture": {
-                            "@USE": "RgbOpacityCheckerboard"
+                  "-children": [
+                    {
+                      "Shape": {
+                        "-appearance": [
+                          {
+                            "Appearance": {
+                              "-material": [
+                                {
+                                  "Material": {}
+                                }
+                              ],
+                              "-texture": [
+                                {
+                                  "PixelTexture": {
+                                    "@USE": "RgbOpacityCheckerboard"
+                                  }
+                                }
+                              ]
+                            }
                           }
-                        }
+                        ],
+                        "-geometry": [
+                          {
+                            "Cone": {}
+                          }
+                        ]
                       }
-                    },
-                    "-geometry": {
-                      "Cone": {}
                     }
-                  }
+                  ]
                 }
               },
               {
@@ -189,23 +225,35 @@
                     0.0694206,
                     -0.00187683
                   ],
-                  "Shape": {
-                    "-appearance": {
-                      "Appearance": {
-                        "-material": {
-                          "Material": {}
-                        },
-                        "-texture": {
-                          "PixelTexture": {
-                            "@USE": "RgbOpacityCheckerboard"
+                  "-children": [
+                    {
+                      "Shape": {
+                        "-appearance": [
+                          {
+                            "Appearance": {
+                              "-material": [
+                                {
+                                  "Material": {}
+                                }
+                              ],
+                              "-texture": [
+                                {
+                                  "PixelTexture": {
+                                    "@USE": "RgbOpacityCheckerboard"
+                                  }
+                                }
+                              ]
+                            }
                           }
-                        }
+                        ],
+                        "-geometry": [
+                          {
+                            "Cylinder": {}
+                          }
+                        ]
                       }
-                    },
-                    "-geometry": {
-                      "Cylinder": {}
                     }
-                  }
+                  ]
                 }
               }
             ]

@@ -75,69 +75,52 @@
         },
         {
           "Shape": {
-            "-geometry": {
-              "Text": {
-                "@DEF": "DefaultText",
-                "@string": [
-                  "Character entity substitutions:",
-                  "empty string \"\" skips a line:",
-                  "",
-                  "apostrophe ' is &amp;apos;",
-                  "ampersand &amp; is &amp;amp;",
-                  "quote mark \" is &amp;quot;",
-                  "backslash \\ is X3D escape character",
-                  "double backslash \\\\\\\\ is X3D backslash \\ character",
-                  "Pi Π is &amp;#928; XML character entity"
-                ],
-                "-fontStyle": {
-                  "FontStyle": {
-                    "@DEF": "CenteredFontStyle",
-                    "@justify": [
-                      "MIDDLE",
-                      "MIDDLE"
-                    ]
-                  }
+            "#comment": "character entities are listed in HTML specification and are good for any XML",
+            "-geometry": [
+              {
+                "Text": {
+                  "@DEF": "DefaultText",
+                  "@string": [
+                    "Character entity substitutions:",
+                    "empty string \\\"\\\" skips a line:",
+                    "",
+                    "apostrophe ' is &amp;apos;",
+                    "ampersand &amp; is &amp;amp;",
+                    "quote mark \\\" is &amp;quot;",
+                    "backslash \\\\ is X3D escape character",
+                    "double backslash \\\\\\\\\\\\\\\\ is X3D backslash \\\\ character",
+                    "Pi Π is &amp;#928; XML character entity"
+                  ],
+                  "-fontStyle": [
+                    {
+                      "FontStyle": {
+                        "@DEF": "CenteredFontStyle",
+                        "@justify": [
+                          "MIDDLE",
+                          "MIDDLE"
+                        ]
+                      }
+                    }
+                  ]
                 }
               }
-            },
-            "-appearance": {
-              "Appearance": {
-                "-material": {
-                  "Material": {
-                    "@DEF": "DefaultMaterial",
-                    "@diffuseColor": [
-                      0.2,
-                      0.2,
-                      0.2
-                    ]
-                  }
+            ],
+            "-appearance": [
+              {
+                "Appearance": {
+                  "-material": [
+                    {
+                      "Material": {
+                        "@DEF": "DefaultMaterial",
+                        "@diffuseColor": [
+                          0,
+                          0,
+                          0
+                        ]
+                      }
+                    }
+                  ]
                 }
-              }
-            },
-            "-children": [
-              {
-                "#comment": "Empty string \"\" means to skip a line"
-              },
-              {
-                "#comment": "The ampersand escape characters are based on XML rules"
-              },
-              {
-                "#comment": "apostrophe ' is &apos; and needs to be escaped in single-quote delimiters used for string='value' attribute"
-              },
-              {
-                "#comment": "ampersand & is &amp; and needs to be escaped"
-              },
-              {
-                "#comment": "quotation \" is &quot; and isn't needed if single-quote delimiters used for string='value' attribute"
-              },
-              {
-                "#comment": "quotation \" can be used within an X3D string if escaped with backslash \\ as \\\""
-              },
-              {
-                "#comment": "backslash \\ is used as escape character for \" (and itself) in X3D"
-              },
-              {
-                "#comment": "character entities are listed in HTML specification and are good for any XML"
               }
             ]
           }

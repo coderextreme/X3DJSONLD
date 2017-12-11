@@ -33,86 +33,105 @@
       ]
     },
     "Scene": {
-      "Group": {
-        "-children": [
-          {
-            "Shape": {
-              "-geometry": {
-                "Extrusion": {
-                  "@DEF": "extrusion",
-                  "@spine": [
-                    -50,
-                    -50,
-                    0,
-                    50,
-                    50,
-                    0
+      "-children": [
+        {
+          "Group": {
+            "-children": [
+              {
+                "Shape": {
+                  "-geometry": [
+                    {
+                      "Extrusion": {
+                        "@DEF": "extrusion",
+                        "@spine": [
+                          -50,
+                          -50,
+                          0,
+                          50,
+                          50,
+                          0
+                        ],
+                        "@creaseAngle": 0.785,
+                        "@crossSection": [
+                          1,
+                          0,
+                          0.92,
+                          -0.38,
+                          0.71,
+                          -0.71,
+                          0.38,
+                          -0.92,
+                          0,
+                          -1,
+                          -0.38,
+                          -0.92,
+                          -0.71,
+                          -0.71,
+                          -0.92,
+                          -0.38,
+                          -1,
+                          0,
+                          -0.92,
+                          0.38,
+                          -0.71,
+                          0.71,
+                          -0.38,
+                          0.92,
+                          0,
+                          1,
+                          0.38,
+                          0.92,
+                          0.71,
+                          0.71,
+                          0.92,
+                          0.38,
+                          1,
+                          0
+                        ]
+                      }
+                    }
                   ],
-                  "@creaseAngle": 0.785,
-                  "@crossSection": [
-                    1,
-                    0,
-                    0.92,
-                    -0.38,
-                    0.71,
-                    -0.71,
-                    0.38,
-                    -0.92,
-                    0,
-                    -1,
-                    -0.38,
-                    -0.92,
-                    -0.71,
-                    -0.71,
-                    -0.92,
-                    -0.38,
-                    -1,
-                    0,
-                    -0.92,
-                    0.38,
-                    -0.71,
-                    0.71,
-                    -0.38,
-                    0.92,
-                    0,
-                    1,
-                    0.38,
-                    0.92,
-                    0.71,
-                    0.71,
-                    0.92,
-                    0.38,
-                    1,
-                    0
+                  "-appearance": [
+                    {
+                      "Appearance": {
+                        "-material": [
+                          {
+                            "Material": {
+                              "@diffuseColor": [
+                                0,
+                                1,
+                                0
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
                   ]
                 }
               },
-              "-appearance": {
-                "Appearance": {
-                  "-material": {
-                    "Material": {
-                      "@diffuseColor": [
-                        0,
-                        1,
-                        0
-                      ]
-                    }
-                  }
+              {
+                "TimeSensor": {
+                  "@DEF": "TourTime",
+                  "@loop": true
                 }
-              }
-            }
-          },
-          {
-            "TimeSensor": {
-              "@DEF": "TourTime",
-              "@loop": true
-            }
-          },
-          {
-            "Script": {
-              "@DEF": "MoveCylinder",
-              "-children": [
-                {
+              },
+              {
+                "Script": {
+                  "@DEF": "MoveCylinder",
+                  "field": [
+                    {
+                      "@name": "set_cycle",
+                      "@accessType": "inputOnly",
+                      "@type": "SFTime"
+                    },
+                    {
+                      "@name": "spine",
+                      "@accessType": "inputOutput",
+                      "@type": "MFVec3f",
+                      "@value": "-50 -50 0 50 50 0"
+                    }
+                  ],
                   "#sourceText": [
                     "ecmascript:",
                     "",
@@ -125,38 +144,25 @@
                     ""
                   ]
                 }
-              ],
-              "field": [
-                {
-                  "@name": "set_cycle",
-                  "@accessType": "inputOnly",
-                  "@type": "SFTime"
-                },
-                {
-                  "@name": "spine",
-                  "@accessType": "inputOutput",
-                  "@type": "MFVec3f",
-                  "@value": "-50 -50 0 50 50 0"
-                }
-              ]
-            }
+              }
+            ],
+            "ROUTE": [
+              {
+                "@fromNode": "TourTime",
+                "@fromField": "cycleTime",
+                "@toNode": "MoveCylinder",
+                "@toField": "set_cycle"
+              },
+              {
+                "@fromNode": "MoveCylinder",
+                "@fromField": "spine_changed",
+                "@toNode": "extrusion",
+                "@toField": "spine"
+              }
+            ]
           }
-        ],
-        "ROUTE": [
-          {
-            "@fromNode": "TourTime",
-            "@fromField": "cycleTime",
-            "@toNode": "MoveCylinder",
-            "@toField": "set_cycle"
-          },
-          {
-            "@fromNode": "MoveCylinder",
-            "@fromField": "spine_changed",
-            "@toNode": "extrusion",
-            "@toField": "spine"
-          }
-        ]
-      }
+        }
+      ]
     }
   }
 }

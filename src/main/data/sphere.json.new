@@ -29,26 +29,40 @@
       ]
     },
     "Scene": {
-      "Group": {
-        "Shape": {
-          "-appearance": {
-            "Appearance": {
-              "-material": {
-                "Material": {
-                  "@diffuseColor": [
-                    1,
-                    1,
-                    1
+      "-children": [
+        {
+          "Group": {
+            "-children": [
+              {
+                "Shape": {
+                  "-appearance": [
+                    {
+                      "Appearance": {
+                        "-material": [
+                          {
+                            "Material": {
+                              "@diffuseColor": [
+                                1,
+                                1,
+                                1
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "-geometry": [
+                    {
+                      "Sphere": {}
+                    }
                   ]
                 }
               }
-            }
-          },
-          "-geometry": {
-            "Sphere": {}
+            ]
           }
         }
-      }
+      ]
     }
   }
 }
