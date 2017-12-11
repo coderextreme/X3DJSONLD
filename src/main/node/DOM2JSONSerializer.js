@@ -15,7 +15,6 @@ DOM2JSONSerializer.prototype = {
 		str += '{';
 		str += this.descendMethod(element, fieldTypes, "", 0);
 		str += '}\n';
-
 		try {
 			str = JSON.stringify(jsonlint.parse(str), null, 2);
 		} catch (e) {
