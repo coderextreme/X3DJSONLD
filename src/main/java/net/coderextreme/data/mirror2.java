@@ -75,7 +75,7 @@ import org.web3d.x3d.sai.VolumeRendering.*;
 public class mirror2 {
   public static void main(String[] args) {
     ConfigurationProperties.setShowDefaultAttributes(true);
-    ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_nativeJava);
+    ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
     new mirror2().initialize().toFileJSON("../data/mirror2.new.json");
     }

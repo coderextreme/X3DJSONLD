@@ -75,7 +75,7 @@ import org.web3d.x3d.sai.VolumeRendering.*;
 public class SFVec3f {
   public static void main(String[] args) {
     ConfigurationProperties.setShowDefaultAttributes(true);
-    ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_nativeJava);
+    ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
     new SFVec3f().initialize().toFileJSON("../data/SFVec3f.new.json");
     }
