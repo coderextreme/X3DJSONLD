@@ -1,35 +1,37 @@
-"use strict";
+'use strict';
 
-var jsonlint = require("jsonlint");
+var jsonlint = require('jsonlint');
 
 const DOUBLE_SUFFIX = 'd';
 const FLOAT_SUFFIX = 'f';
 
 function DOM2JSONSerializer() {
+
+
 }
 
 
 DOM2JSONSerializer.prototype = {
 	serializeToString : function(json, element, clazz, mapToMethod, fieldTypes) {
-		var string = "";
-		string += '{';
-		string += this.descendMethod(element, fieldTypes, "", 0);
-		string += '}\n';
+		var st = '';
+		st += '{';
+		st += this.descendMethod(element, fieldTypes, '', 0);
+		st += '}\n';
 		try {
-			string = JSON.stringify(jsonlint.parse(string), null, 2);
+			st = JSON.stringify(jsonlint.parse(st), null, 2);
 		} catch (e) {
-			console.log(string, clazz, e);
-
+			console.log(st, clazz, e);
 		}
-		return string;
-	},
 
+		return st;
+	,;
+	};
 	descendSubArray: function (values, j, trail) {
 		return '['+values.join(j)+trail+']';
-	},
-
+	,;
+	}
 	descendMethod: function (node, fieldTypes, par, n) {
-		var string = "";
+		var st = '';
 		var cf = false;
 		for (var a in node.attributes) {
 			var attrs = node.attributes;
@@ -38,87 +40,87 @@ DOM2JSONSerializer.prototype = {
 				if (attrs.hasOwnProperty(a) && attrs[a].nodeType == 2) {
 					var attr = attrs[a].nodeName;
 					if (attr === 'containerField') {
-						string += '  '.repeat(n)+'"-'+attrs[a].nodeValue+'" : {\n';
+						st += '  '.repeat(n)+'"-'+attrs[a].nodeValue+'" : {\n';
 						cf = true;
 					}
-				}
-			} catch (e) {
-			}
-		}
-		if (par === "-children") {
-			cf = true;
-			string += '  '.repeat(n)+'{ "'+node.nodeName+'":';;
-		} else if (par === "") {
-			string += '  '.repeat(n)+'"'+node.nodeName+'":';
-		}
-		string += '  '.repeat(n)+'{\n';
-		string += this.subSerializeToString(node, fieldTypes, n+1);
-		string += '  '.repeat(n)+'}\n';
-		if (cf) {
-			string += '  '.repeat(n)+'}\n';
-		}
-		return string;
-	},
 
-	descendComment: function (node, par, n) {
-		var string = "";
-		var cf = false;
-		if (par === "-children") {
+			} catch (e) {;
+
+				}
+		if (par === '-children') {
 			cf = true;
-			string += '  '.repeat(n)+'{ "'+node.nodeName+'":';
-		} else if (par === "") {
-			string += '  '.repeat(n)+'"'+node.nodeName+'":';
+			st += '  '.repeat(n)+'{ "'+node.nodeName+'":';
+		} else if (par === '') {
+			st += '  '.repeat(n)+'"'+node.nodeName+'":';
 		}
-		
-		string += "\""+(node.nodeValue.
-			replace(/\\/g, '\\\\').
-			replace(/"/g, '\\"').
+		st += '  '.repeat(n)+'{\n';
+		st += this.subSerializeToString(node, fieldTypes, n+1);
+		st += '  '.repeat(n)+'}\n';
+		if (cf) {
+			st += '  '.repeat(n)+'}\n';
+		}
+		return st;
+	,;
+			}
+	descendComment: function (node, par, n) {
+		var st = '';
+		var cf = false;
+		if (par === '-children') {
+			cf = true;
+			st += '  '.repeat(n)+'{ "'+node.nodeName+'":';
+		} else if (par === '') {
+			st += '  '.repeat(n)+'"'+node.nodeName+'":';
+		}
+
+		st += '\"'+(node.nodeValue.;
+			replace(/\\/g, '\\\\').;
+			replace(/'/g, '\\'').
 			replace(/\n/g, '\\n'))+"\"";
 		if (cf) {
-			string += '}\n';
+			st += '}\n';
 		}
-		return string;
+		return st;
 	},
 
 	descendSourceText: function (node, par, n) {
-		var string = "";
+		var st = "";
 		var cf = false;
 		if (par === "-children") {
 			cf = true;
-			string += '  '.repeat(n)+'{ "#sourceText":';
+			st += '  '.repeat(n)+'{ '#sourceText':';
 		} else if (par === "") {
-			string += '  '.repeat(n)+'"#sourceText":';
+			st += '  '.repeat(n)+''#sourceText':';
 		}
-		string +=  '["'+node.nodeValue.split("\r\n").map(
+		st +=  '[''+node.nodeValue.split('\r\n').map(
 			function(x) { return x.
 					        replace(/\\/g, '\\\\').
-						replace(/"/g, '\\"').
+						replace(/'/g, '\\"').
 						replace(/\t/g, '\\t')
-							;
+
 			}).join('",\n"')+'"]';
 		if (cf) {
-			string += '}\n';
+			st += '}\n';
 		}
-		return string;
+		return st;
 	},
 
 	subSerializeToString : function(element, fieldTypes, n) {
-		var fieldAttrType = "";
+		var fieldAttrType = '';
 		for (var a in element.attributes) {
 			var attrs = element.attributes;
 			try {
 				parseInt(a);
 				if (attrs.hasOwnProperty(a) && attrs[a].nodeType == 2) {
 					var attr = attrs[a].nodeName;
-					if (attr == "type") {
+					if (attr == 'type') {
 						fieldAttrType = attrs[a].nodeValue;
 					}
-				}
+
 			} catch (e) {
 				console.error(e);
-			}
-		}
-		var attrType = "";
+				}
+
+		var attrType = '';
 		var object = [];
 		for (var a in element.attributes) {
 			var attrs = element.attributes;
@@ -131,23 +133,23 @@ DOM2JSONSerializer.prototype = {
 						continue;
 					}
 					// look at object model
-					var attrType = "SFString";
+					var attrType = 'SFString';
 					try {
 						attrType = fieldTypes[element.nodeName][attr];
 					} catch (e) {
-						console.error("Missing", attr, "in fieldTypes.js element", element.nodeName, " = ", fieldTypes[element.nodeName], "setting to SFString");
+						console.error('Missing', attr, 'in fieldTypes.js element', element.nodeName, ' = ', fieldTypes[element.nodeName], 'setting to SFString');
 					}
 
 					if (attrs[a].nodeValue === 'NULL' &&
-					   (fieldAttrType === "SFNode"  ||
-					    fieldAttrType === "MFNode")) {
-						method = "-children";
-					}
+					   (fieldAttrType === 'SFNode'  ||;
+					    fieldAttrType === 'MFNode')) {
+						method = '-children';
+					    }
 					var attrstr = '  '.repeat(n)+'"@'+method+'":';
 					if (attrs[a].nodeValue === 'NULL') {
-						attrstr += "null";
-					} else if (attrType === "SFString") {
-						attrstr += '"'+attrs[a].nodeValue.replace(/\\?"/g, "\\\"")+'"';
+						attrstr += 'null';
+					} else if (attrType === 'SFString') {
+						attrstr += '"'+attrs[a].nodeValue.replace(/\\?'/g, '\\\"')+''';
 					} else if (attrType === "SFInt32" ||
 					           attrType === "SFFloat" ||
 					           attrType === "SFDouble" ||
@@ -158,47 +160,47 @@ DOM2JSONSerializer.prototype = {
 							attrs[a].nodeValue.
 								replace(/([^\\]| )\\\\( |[^\\"])/g, "$1\\\\$2").
 								replace(/([^\\]| )\\\\\\\\([^\\"]| )/g, "$1\\\\\\\\\\\\\\\\$2").
-								replace(/\\\\\\\\"/g, '\\\\"').
-								replace(/\\\\"/g, '\\\\\\"').
-								replace(/\t/g, '\\t').
-								replace(/&/g, "&amp;").
-								split(/"[ ,]+"/),
-							'","', '');
-					} else if (
-						attrType === "MFInt32"||
-						attrType === "MFImage"||
-						attrType === "SFImage"||
-						attrType === "SFColor"||
-						attrType === "MFColor"||
-						attrType === "SFColorRGBA"||
-						attrType === "MFColorRGBA"||
-						attrType === "SFVec2f"||
-						attrType === "SFVec3f"||
-						attrType === "SFVec4f"||
-						attrType === "MFVec2f"||
-						attrType === "MFVec3f"||
-						attrType === "MFVec4f"||
-						attrType === "SFMatrix3f"||
-						attrType === "SFMatrix4f"||
-						attrType === "MFMatrix3f"||
-						attrType === "MFMatrix4f"||
-						attrType === "SFRotation"||
-						attrType === "MFRotation"||
-						attrType === "MFFloat"||
-						attrType === "SFVec2d"||
-						attrType === "SFVec3d"||
-						attrType === "SFVec4d"||
-						attrType === "MFVec2d"||
-						attrType === "MFVec3d"||
-						attrType === "MFVec4d"||
-						attrType === "SFMatrix3d"||
-						attrType === "SFMatrix4d"||
-						attrType === "MFMatrix3d"||
-						attrType === "MFMatrix4d"||
-						attrType === "MFDouble") {
+								replace(/\\\\\\\\"/g, '\\\\'').
+								replace(/\\\\'/g, '\\\\\\"').;
+								replace(/\t/g, '\\t').;
+								replace(/&/g, '&amp;').;
+								split(/'[ ,]+'/),
+							'","', '';					})
+					elif;
+						attrType === 'MFInt32'||;
+						attrType === 'MFImage'||;
+						attrType === 'SFImage'||;
+						attrType === 'SFColor'||;
+						attrType === 'MFColor'||;
+						attrType === 'SFColorRGBA'||;
+						attrType === 'MFColorRGBA'||;
+						attrType === 'SFVec2f'||;
+						attrType === 'SFVec3f'||;
+						attrType === 'SFVec4f'||;
+						attrType === 'MFVec2f'||;
+						attrType === 'MFVec3f'||;
+						attrType === 'MFVec4f'||;
+						attrType === 'SFMatrix3f'||;
+						attrType === 'SFMatrix4f'||;
+						attrType === 'MFMatrix3f'||;
+						attrType === 'MFMatrix4f'||;
+						attrType === 'SFRotation'||;
+						attrType === 'MFRotation'||;
+						attrType === 'MFFloat'||;
+						attrType === 'SFVec2d'||;
+						attrType === 'SFVec3d'||;
+						attrType === 'SFVec4d'||;
+						attrType === 'MFVec2d'||;
+						attrType === 'MFVec3d'||;
+						attrType === 'MFVec4d'||;
+						attrType === 'SFMatrix3d'||;
+						attrType === 'SFMatrix4d'||;
+						attrType === 'MFMatrix3d'||;
+						attrType === 'MFMatrix4d'||;
+						attrType === 'MFDouble') {
 						attrstr += this.descendSubArray(attrs[a].nodeValue.split(/[ ,]+/), ',', '');
 					} else {
-						attrstr += '"'+attrs[a].nodeValue.replace(/\\?"/g, "\\\"")+'"';
+						attrstr += '"'+attrs[a].nodeValue.replace(/\\?'/g, '\\\"')+''';
 					}
 					object.push(attrstr);
 				}
@@ -298,19 +300,38 @@ DOM2JSONSerializer.prototype = {
 	},
 
 	descendParChilluns : function(par, chilluns, n) {
-		var string = "";
+		var st = "";
 		if (par !== "") {
-			string += '  '.repeat(n)+'"'+par+'": [\n';
-			string += '  '.repeat(n)+chilluns.join(",");
-			string += '  '.repeat(n)+']\n';
+			st += '  '.repeat(n)+'''+par+'': [\n';
+			st += '  '.repeat(n)+chilluns.join(",");
+			st += '  '.repeat(n)+']\n';
 		} else {
-			string += '  '.repeat(n)+chilluns.join(",");
+			st += '  '.repeat(n)+chilluns.join(",");
 		}
-		return string;
+		return st;
 	}
 };
 
 
 if (typeof module === 'object')  {
 	module.exports = DOM2JSONSerializer;
-}
+};
+
+						}
+				}
+
+			}
+
+		}
+
+			}
+
+		}
+
+	};
+
+
+	}
+		}
+
+	}
