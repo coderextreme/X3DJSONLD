@@ -11,17 +11,17 @@ function DOM2JSONSerializer() {
 
 DOM2JSONSerializer.prototype = {
 	serializeToString : function(json, element, clazz, mapToMethod, fieldTypes) {
-		var str = "";
-		str += '{';
-		str += this.descendMethod(element, fieldTypes, "", 0);
-		str += '}\n';
+		var string = "";
+		string += '{';
+		string += this.descendMethod(element, fieldTypes, "", 0);
+		string += '}\n';
 		try {
-			str = JSON.stringify(jsonlint.parse(str), null, 2);
+			string = JSON.stringify(jsonlint.parse(string), null, 2);
 		} catch (e) {
-			console.log(str, clazz, e);
+			console.log(string, clazz, e);
 
 		}
-		return str;
+		return string;
 	},
 
 	descendSubArray: function (values, j, trail) {
@@ -29,7 +29,7 @@ DOM2JSONSerializer.prototype = {
 	},
 
 	descendMethod: function (node, fieldTypes, par, n) {
-		var str = "";
+		var string = "";
 		var cf = false;
 		for (var a in node.attributes) {
 			var attrs = node.attributes;
@@ -38,7 +38,7 @@ DOM2JSONSerializer.prototype = {
 				if (attrs.hasOwnProperty(a) && attrs[a].nodeType == 2) {
 					var attr = attrs[a].nodeName;
 					if (attr === 'containerField') {
-						str += '  '.repeat(n)+'"-'+attrs[a].nodeValue+'" : {\n';
+						string += '  '.repeat(n)+'"-'+attrs[a].nodeValue+'" : {\n';
 						cf = true;
 					}
 				}
@@ -47,49 +47,49 @@ DOM2JSONSerializer.prototype = {
 		}
 		if (par === "-children") {
 			cf = true;
-			str += '  '.repeat(n)+'{ "'+node.nodeName+'":';;
+			string += '  '.repeat(n)+'{ "'+node.nodeName+'":';;
 		} else if (par === "") {
-			str += '  '.repeat(n)+'"'+node.nodeName+'":';
+			string += '  '.repeat(n)+'"'+node.nodeName+'":';
 		}
-		str += '  '.repeat(n)+'{\n';
-		str += this.subSerializeToString(node, fieldTypes, n+1);
-		str += '  '.repeat(n)+'}\n';
+		string += '  '.repeat(n)+'{\n';
+		string += this.subSerializeToString(node, fieldTypes, n+1);
+		string += '  '.repeat(n)+'}\n';
 		if (cf) {
-			str += '  '.repeat(n)+'}\n';
+			string += '  '.repeat(n)+'}\n';
 		}
-		return str;
+		return string;
 	},
 
 	descendComment: function (node, par, n) {
-		var str = "";
+		var string = "";
 		var cf = false;
 		if (par === "-children") {
 			cf = true;
-			str += '  '.repeat(n)+'{ "'+node.nodeName+'":';
+			string += '  '.repeat(n)+'{ "'+node.nodeName+'":';
 		} else if (par === "") {
-			str += '  '.repeat(n)+'"'+node.nodeName+'":';
+			string += '  '.repeat(n)+'"'+node.nodeName+'":';
 		}
 		
-		str += "\""+(node.nodeValue.
+		string += "\""+(node.nodeValue.
 			replace(/\\/g, '\\\\').
 			replace(/"/g, '\\"').
 			replace(/\n/g, '\\n'))+"\"";
 		if (cf) {
-			str += '}\n';
+			string += '}\n';
 		}
-		return str;
+		return string;
 	},
 
 	descendSourceText: function (node, par, n) {
-		var str = "";
+		var string = "";
 		var cf = false;
 		if (par === "-children") {
 			cf = true;
-			str += '  '.repeat(n)+'{ "#sourceText":';
+			string += '  '.repeat(n)+'{ "#sourceText":';
 		} else if (par === "") {
-			str += '  '.repeat(n)+'"#sourceText":';
+			string += '  '.repeat(n)+'"#sourceText":';
 		}
-		str +=  '["'+node.nodeValue.split("\r\n").map(
+		string +=  '["'+node.nodeValue.split("\r\n").map(
 			function(x) { return x.
 					        replace(/\\/g, '\\\\').
 						replace(/"/g, '\\"').
@@ -97,9 +97,9 @@ DOM2JSONSerializer.prototype = {
 							;
 			}).join('",\n"')+'"]';
 		if (cf) {
-			str += '}\n';
+			string += '}\n';
 		}
-		return str;
+		return string;
 	},
 
 	subSerializeToString : function(element, fieldTypes, n) {
@@ -207,7 +207,6 @@ DOM2JSONSerializer.prototype = {
 			}
 			attrType = "";
 		}
-		var childstr = "";
 		var children = {};
 		var par = "";
 		var childpar = false;
@@ -299,15 +298,15 @@ DOM2JSONSerializer.prototype = {
 	},
 
 	descendParChilluns : function(par, chilluns, n) {
-		var str = "";
+		var string = "";
 		if (par !== "") {
-			str += '  '.repeat(n)+'"'+par+'": [\n';
-			str += '  '.repeat(n)+chilluns.join(",");
-			str += '  '.repeat(n)+']\n';
+			string += '  '.repeat(n)+'"'+par+'": [\n';
+			string += '  '.repeat(n)+chilluns.join(",");
+			string += '  '.repeat(n)+']\n';
 		} else {
-			str += '  '.repeat(n)+chilluns.join(",");
+			string += '  '.repeat(n)+chilluns.join(",");
 		}
-		return str;
+		return string;
 	}
 };
 
