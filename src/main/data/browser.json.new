@@ -24,7 +24,7 @@
         },
         {
           "@name": "description",
-          "@content": "a script test with embedded \n between single quotes, a double backslash \\\\ a backslash \\ and a closing quote \""
+          "@content": "a script test with embedded \\n between single quotes, a double backslash \\\\\\\\ a backslash \\\\ and a closing quote \\\""
         }
       ]
     },
@@ -36,7 +36,7 @@
             "#sourceText": [
               "ecmascript:",
               "                function initialize() {",
-              "\t\t    Browser.print('DUDES\n'+'\"DUDETTES');",
+              "\t\t    Browser.print('DUDES\\\\n'+'\\\"DUDETTES');",
               "                }",
               ""
             ]
@@ -52,8 +52,8 @@
               "function cumulustranslation() // These values designate the boundary location of the cloud",
               "{",
               "var xxx = ' '+' '+",
-              "'\tTransform\t\t\n'+",
-              "'    ' + '               \t\n';",
+              "'\tTransform\t\t\\\\n'+",
+              "'    ' + '               \t\\\\n';",
               "",
               "}",
               ""

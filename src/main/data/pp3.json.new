@@ -45,498 +45,564 @@
         {
           "ProtoDeclare": {
             "@name": "Process",
-            "ProtoBody": {
-              "-children": [
-                {
-                  "Group": {
-                    "-children": [
-                      {
-                        "#comment": "left"
-                      },
-                      {
-                        "Transform": {
-                          "@scale": [
-                            0.5,
-                            0.5,
-                            0.5
-                          ],
-                          "Shape": {
-                            "-appearance": {
-                              "Appearance": {
-                                "-material": {
-                                  "Material": {
-                                    "@diffuseColor": [
-                                      0.7,
-                                      1,
-                                      0
-                                    ],
-                                    "@transparency": 0.5
-                                  }
-                                }
-                              }
-                            },
-                            "-geometry": {
-                              "Extrusion": {
-                                "@creaseAngle": 0.785,
-                                "@crossSection": [
-                                  1,
-                                  0,
-                                  0.92,
-                                  -0.38,
-                                  0.71,
-                                  -0.71,
-                                  0.38,
-                                  -0.92,
-                                  0,
-                                  -1,
-                                  -0.38,
-                                  -0.92,
-                                  -0.71,
-                                  -0.71,
-                                  -0.92,
-                                  -0.38,
-                                  -1,
-                                  0,
-                                  -0.92,
-                                  0.38,
-                                  -0.71,
-                                  0.71,
-                                  -0.38,
-                                  0.92,
-                                  0,
-                                  1,
-                                  0.38,
-                                  0.92,
-                                  0.71,
-                                  0.71,
-                                  0.92,
-                                  0.38,
-                                  1,
-                                  0
-                                ],
-                                "@spine": [
-                                  -2.5,
-                                  0,
-                                  0,
-                                  -1.5,
-                                  0,
-                                  0
-                                ]
-                              }
-                            }
-                          },
-                          "#comment": "<Transform translation=\"-2.5 0 0\"> <Shape> <Text DEF=\"LeftString\" string='\"l\"'/> </Shape> </Transform> <StringSensor DEF=\"LeftSensor\" enabled=\"false\"/> <TouchSensor DEF=\"LeftTouch\" enabled=\"true\"/>"
-                        }
-                      },
-                      {
-                        "#comment": "right"
-                      },
-                      {
-                        "Transform": {
-                          "@scale": [
-                            0.5,
-                            0.5,
-                            0.5
-                          ],
-                          "-children": [
-                            {
-                              "Shape": {
-                                "-appearance": {
-                                  "Appearance": {
-                                    "-material": {
-                                      "Material": {
-                                        "@diffuseColor": [
-                                          0,
-                                          0.7,
-                                          1
-                                        ],
-                                        "@transparency": 0.5
-                                      }
-                                    }
-                                  }
-                                },
-                                "-geometry": {
-                                  "Extrusion": {
-                                    "@creaseAngle": 0.785,
-                                    "@crossSection": [
-                                      1,
-                                      0,
-                                      0.92,
-                                      -0.38,
-                                      0.71,
-                                      -0.71,
-                                      0.38,
-                                      -0.92,
-                                      0,
-                                      -1,
-                                      -0.38,
-                                      -0.92,
-                                      -0.71,
-                                      -0.71,
-                                      -0.92,
-                                      -0.38,
-                                      -1,
-                                      0,
-                                      -0.92,
-                                      0.38,
-                                      -0.71,
-                                      0.71,
-                                      -0.38,
-                                      0.92,
-                                      0,
-                                      1,
-                                      0.38,
-                                      0.92,
-                                      0.71,
-                                      0.71,
-                                      0.92,
-                                      0.38,
-                                      1,
-                                      0
-                                    ],
-                                    "@spine": [
-                                      1.5,
-                                      0,
-                                      0,
-                                      2.5,
-                                      0,
-                                      0
-                                    ]
-                                  }
-                                }
-                              }
-                            },
-                            {
-                              "Transform": {
-                                "@translation": [
-                                  2,
-                                  0,
-                                  0
-                                ],
-                                "Shape": {
-                                  "-appearance": {
-                                    "Appearance": {
-                                      "-material": {
-                                        "Material": {
-                                          "@DEF": "MaterialLightBlue",
-                                          "@diffuseColor": [
-                                            1,
-                                            1,
-                                            1
+            "-children": [
+              {
+                "ProtoBody": {
+                  "-children": [
+                    {
+                      "Group": {
+                        "#comment": "center",
+                        "-children": [
+                          {
+                            "Transform": {
+                              "@scale": [
+                                0.5,
+                                0.5,
+                                0.5
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": [
+                                      {
+                                        "Appearance": {
+                                          "-material": [
+                                            {
+                                              "Material": {
+                                                "@diffuseColor": [
+                                                  0,
+                                                  1,
+                                                  0
+                                                ],
+                                                "@transparency": 0.5
+                                              }
+                                            }
                                           ]
                                         }
                                       }
-                                    }
-                                  },
-                                  "-geometry": {
-                                    "Text": {
-                                      "@DEF": "RightString",
-                                      "@string": [
-                                        "r"
-                                      ]
-                                    }
-                                  }
-                                }
-                              }
-                            },
-                            {
-                              "StringSensor": {
-                                "@DEF": "RightSensor",
-                                "@enabled": false
-                              }
-                            },
-                            {
-                              "TouchSensor": {
-                                "@description": "touch to activate",
-                                "@DEF": "RightTouch"
-                              }
-                            }
-                          ]
-                        }
-                      },
-                      {
-                        "#comment": "up"
-                      },
-                      {
-                        "Transform": {
-                          "@scale": [
-                            0.5,
-                            0.5,
-                            0.5
-                          ],
-                          "-children": [
-                            {
-                              "Shape": {
-                                "-appearance": {
-                                  "Appearance": {
-                                    "-material": {
-                                      "Material": {
-                                        "@diffuseColor": [
-                                          0,
-                                          0.7,
-                                          1
-                                        ],
-                                        "@transparency": 0.5
-                                      }
-                                    }
-                                  }
-                                },
-                                "-geometry": {
-                                  "Extrusion": {
-                                    "@creaseAngle": 0.785,
-                                    "@crossSection": [
-                                      1,
-                                      0,
-                                      0.92,
-                                      -0.38,
-                                      0.71,
-                                      -0.71,
-                                      0.38,
-                                      -0.92,
-                                      0,
-                                      -1,
-                                      -0.38,
-                                      -0.92,
-                                      -0.71,
-                                      -0.71,
-                                      -0.92,
-                                      -0.38,
-                                      -1,
-                                      0,
-                                      -0.92,
-                                      0.38,
-                                      -0.71,
-                                      0.71,
-                                      -0.38,
-                                      0.92,
-                                      0,
-                                      1,
-                                      0.38,
-                                      0.92,
-                                      0.71,
-                                      0.71,
-                                      0.92,
-                                      0.38,
-                                      1,
-                                      0
                                     ],
-                                    "@spine": [
-                                      0,
-                                      1.5,
-                                      0,
-                                      0,
-                                      2.5,
-                                      0
+                                    "-geometry": [
+                                      {
+                                        "Extrusion": {
+                                          "@creaseAngle": 0.785,
+                                          "@crossSection": [
+                                            1,
+                                            0,
+                                            0.92,
+                                            -0.38,
+                                            0.71,
+                                            -0.71,
+                                            0.38,
+                                            -0.92,
+                                            0,
+                                            -1,
+                                            -0.38,
+                                            -0.92,
+                                            -0.71,
+                                            -0.71,
+                                            -0.92,
+                                            -0.38,
+                                            -1,
+                                            0,
+                                            -0.92,
+                                            0.38,
+                                            -0.71,
+                                            0.71,
+                                            -0.38,
+                                            0.92,
+                                            0,
+                                            1,
+                                            0.38,
+                                            0.92,
+                                            0.71,
+                                            0.71,
+                                            0.92,
+                                            0.38,
+                                            1,
+                                            0
+                                          ],
+                                          "@spine": [
+                                            -2.5,
+                                            0,
+                                            0,
+                                            -1.5,
+                                            0,
+                                            0
+                                          ]
+                                        }
+                                      }
                                     ]
                                   }
                                 }
-                              }
-                            },
-                            {
-                              "Transform": {
-                                "@translation": [
-                                  -0.5,
-                                  2,
-                                  0
-                                ],
-                                "Shape": {
-                                  "-appearance": {
-                                    "Appearance": {
-                                      "-material": {
-                                        "Material": {
-                                          "@USE": "MaterialLightBlue"
-                                        }
-                                      }
-                                    }
-                                  },
-                                  "-geometry": {
-                                    "Text": {
-                                      "@DEF": "UpString",
-                                      "@string": [
-                                        "u"
-                                      ]
-                                    }
-                                  }
-                                }
-                              }
-                            },
-                            {
-                              "StringSensor": {
-                                "@DEF": "UpSensor",
-                                "@enabled": false
-                              }
-                            },
-                            {
-                              "TouchSensor": {
-                                "@description": "touch to activate",
-                                "@DEF": "UpTouch"
-                              }
-                            }
-                          ]
-                        }
-                      },
-                      {
-                        "#comment": "down"
-                      },
-                      {
-                        "Transform": {
-                          "@scale": [
-                            0.5,
-                            0.5,
-                            0.5
-                          ],
-                          "Shape": {
-                            "-appearance": {
-                              "Appearance": {
-                                "-material": {
-                                  "Material": {
-                                    "@diffuseColor": [
-                                      0.7,
-                                      1,
-                                      0
-                                    ],
-                                    "@transparency": 0.5
-                                  }
-                                }
-                              }
-                            },
-                            "-geometry": {
-                              "Extrusion": {
-                                "@creaseAngle": 0.785,
-                                "@crossSection": [
-                                  1,
-                                  0,
-                                  0.92,
-                                  -0.38,
-                                  0.71,
-                                  -0.71,
-                                  0.38,
-                                  -0.92,
-                                  0,
-                                  -1,
-                                  -0.38,
-                                  -0.92,
-                                  -0.71,
-                                  -0.71,
-                                  -0.92,
-                                  -0.38,
-                                  -1,
-                                  0,
-                                  -0.92,
-                                  0.38,
-                                  -0.71,
-                                  0.71,
-                                  -0.38,
-                                  0.92,
-                                  0,
-                                  1,
-                                  0.38,
-                                  0.92,
-                                  0.71,
-                                  0.71,
-                                  0.92,
-                                  0.38,
-                                  1,
-                                  0
-                                ],
-                                "@spine": [
-                                  0,
-                                  -2.5,
-                                  0,
-                                  0,
-                                  -1.5,
-                                  0
-                                ]
-                              }
+                              ],
+                              "#comment": "<Transform translation=\\\"-2.5 0 0\\\"> <Shape> <Text DEF=\\\"LeftString\\\" string='\\\"l\\\"'/> </Shape> </Transform> <StringSensor DEF=\\\"LeftSensor\\\" enabled=\\\"false\\\"/> <TouchSensor DEF=\\\"LeftTouch\\\" enabled=\\\"true\\\"/>"
                             }
                           },
-                          "#comment": "<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>"
-                        }
-                      },
-                      {
-                        "#comment": "center"
-                      },
-                      {
-                        "Transform": {
-                          "-children": [
-                            {
-                              "Shape": {
-                                "-appearance": {
-                                  "Appearance": {
-                                    "-material": {
-                                      "Material": {
-                                        "@diffuseColor": [
-                                          1,
-                                          0,
-                                          0.7
-                                        ]
-                                      }
-                                    }
-                                  }
-                                },
-                                "-geometry": {
-                                  "Sphere": {}
-                                }
-                              }
-                            },
-                            {
-                              "Transform": {
-                                "@scale": [
-                                  0.5,
-                                  0.5,
-                                  0.5
-                                ],
-                                "@translation": [
-                                  -0.5,
-                                  0,
-                                  1
-                                ],
-                                "Shape": {
-                                  "-appearance": {
-                                    "Appearance": {
-                                      "-material": {
-                                        "Material": {
-                                          "@USE": "MaterialLightBlue"
+                          {
+                            "Transform": {
+                              "@scale": [
+                                0.5,
+                                0.5,
+                                0.5
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": [
+                                      {
+                                        "Appearance": {
+                                          "-material": [
+                                            {
+                                              "Material": {
+                                                "@diffuseColor": [
+                                                  0,
+                                                  0,
+                                                  1
+                                                ],
+                                                "@transparency": 0.5
+                                              }
+                                            }
+                                          ]
                                         }
                                       }
-                                    }
-                                  },
-                                  "-geometry": {
-                                    "Text": {
-                                      "@DEF": "CenterString"
-                                    }
+                                    ],
+                                    "-geometry": [
+                                      {
+                                        "Extrusion": {
+                                          "@creaseAngle": 0.785,
+                                          "@crossSection": [
+                                            1,
+                                            0,
+                                            0.92,
+                                            -0.38,
+                                            0.71,
+                                            -0.71,
+                                            0.38,
+                                            -0.92,
+                                            0,
+                                            -1,
+                                            -0.38,
+                                            -0.92,
+                                            -0.71,
+                                            -0.71,
+                                            -0.92,
+                                            -0.38,
+                                            -1,
+                                            0,
+                                            -0.92,
+                                            0.38,
+                                            -0.71,
+                                            0.71,
+                                            -0.38,
+                                            0.92,
+                                            0,
+                                            1,
+                                            0.38,
+                                            0.92,
+                                            0.71,
+                                            0.71,
+                                            0.92,
+                                            0.38,
+                                            1,
+                                            0
+                                          ],
+                                          "@spine": [
+                                            1.5,
+                                            0,
+                                            0,
+                                            2.5,
+                                            0,
+                                            0
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "Transform": {
+                                    "@translation": [
+                                      2,
+                                      0,
+                                      0
+                                    ],
+                                    "-children": [
+                                      {
+                                        "Shape": {
+                                          "-appearance": [
+                                            {
+                                              "Appearance": {
+                                                "-material": [
+                                                  {
+                                                    "Material": {
+                                                      "@DEF": "MaterialLightBlue",
+                                                      "@diffuseColor": [
+                                                        1,
+                                                        1,
+                                                        1
+                                                      ]
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          ],
+                                          "-geometry": [
+                                            {
+                                              "Text": {
+                                                "@DEF": "RightString",
+                                                "@string": [
+                                                  "r"
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "StringSensor": {
+                                    "@DEF": "RightSensor",
+                                    "@enabled": true
+                                  }
+                                },
+                                {
+                                  "TouchSensor": {
+                                    "@description": "touch to activate",
+                                    "@DEF": "RightTouch"
                                   }
                                 }
-                              }
-                            },
-                            {
-                              "StringSensor": {
-                                "@DEF": "CenterSensor",
-                                "@enabled": false
-                              }
-                            },
-                            {
-                              "TouchSensor": {
-                                "@description": "touch to activate",
-                                "@DEF": "CenterTouch"
-                              }
+                              ]
                             }
-                          ]
-                        }
+                          },
+                          {
+                            "Transform": {
+                              "@scale": [
+                                0.5,
+                                0.5,
+                                0.5
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": [
+                                      {
+                                        "Appearance": {
+                                          "-material": [
+                                            {
+                                              "Material": {
+                                                "@diffuseColor": [
+                                                  0,
+                                                  0,
+                                                  1
+                                                ],
+                                                "@transparency": 0.5
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ],
+                                    "-geometry": [
+                                      {
+                                        "Extrusion": {
+                                          "@creaseAngle": 0.785,
+                                          "@crossSection": [
+                                            1,
+                                            0,
+                                            0.92,
+                                            -0.38,
+                                            0.71,
+                                            -0.71,
+                                            0.38,
+                                            -0.92,
+                                            0,
+                                            -1,
+                                            -0.38,
+                                            -0.92,
+                                            -0.71,
+                                            -0.71,
+                                            -0.92,
+                                            -0.38,
+                                            -1,
+                                            0,
+                                            -0.92,
+                                            0.38,
+                                            -0.71,
+                                            0.71,
+                                            -0.38,
+                                            0.92,
+                                            0,
+                                            1,
+                                            0.38,
+                                            0.92,
+                                            0.71,
+                                            0.71,
+                                            0.92,
+                                            0.38,
+                                            1,
+                                            0
+                                          ],
+                                          "@spine": [
+                                            0,
+                                            1.5,
+                                            0,
+                                            0,
+                                            2.5,
+                                            0
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "Transform": {
+                                    "@translation": [
+                                      -0.5,
+                                      2,
+                                      0
+                                    ],
+                                    "-children": [
+                                      {
+                                        "Shape": {
+                                          "-appearance": [
+                                            {
+                                              "Appearance": {
+                                                "-material": [
+                                                  {
+                                                    "Material": {
+                                                      "@USE": "MaterialLightBlue"
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          ],
+                                          "-geometry": [
+                                            {
+                                              "Text": {
+                                                "@DEF": "UpString",
+                                                "@string": [
+                                                  "u"
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "StringSensor": {
+                                    "@DEF": "UpSensor",
+                                    "@enabled": true
+                                  }
+                                },
+                                {
+                                  "TouchSensor": {
+                                    "@description": "touch to activate",
+                                    "@DEF": "UpTouch"
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "Transform": {
+                              "@scale": [
+                                0.5,
+                                0.5,
+                                0.5
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": [
+                                      {
+                                        "Appearance": {
+                                          "-material": [
+                                            {
+                                              "Material": {
+                                                "@diffuseColor": [
+                                                  0,
+                                                  1,
+                                                  0
+                                                ],
+                                                "@transparency": 0.5
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ],
+                                    "-geometry": [
+                                      {
+                                        "Extrusion": {
+                                          "@creaseAngle": 0.785,
+                                          "@crossSection": [
+                                            1,
+                                            0,
+                                            0.92,
+                                            -0.38,
+                                            0.71,
+                                            -0.71,
+                                            0.38,
+                                            -0.92,
+                                            0,
+                                            -1,
+                                            -0.38,
+                                            -0.92,
+                                            -0.71,
+                                            -0.71,
+                                            -0.92,
+                                            -0.38,
+                                            -1,
+                                            0,
+                                            -0.92,
+                                            0.38,
+                                            -0.71,
+                                            0.71,
+                                            -0.38,
+                                            0.92,
+                                            0,
+                                            1,
+                                            0.38,
+                                            0.92,
+                                            0.71,
+                                            0.71,
+                                            0.92,
+                                            0.38,
+                                            1,
+                                            0
+                                          ],
+                                          "@spine": [
+                                            0,
+                                            -2.5,
+                                            0,
+                                            0,
+                                            -1.5,
+                                            0
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ],
+                              "#comment": "<Transform translation=\\\"-0.5 -2.5 0\\\"> <Shape> <Text DEF=\\\"DownString\\\" string='\\\"d\\\"'/> </Shape> </Transform> <StringSensor DEF=\\\"DownSensor\\\" enabled=\\\"false\\\"/> <TouchSensor description='touch to activate' DEF=\\\"DownTouch\\\" enabled=\\\"true\\\"/>"
+                            }
+                          },
+                          {
+                            "Transform": {
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": [
+                                      {
+                                        "Appearance": {
+                                          "-material": [
+                                            {
+                                              "Material": {
+                                                "@diffuseColor": [
+                                                  1,
+                                                  0,
+                                                  0
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ],
+                                    "-geometry": [
+                                      {
+                                        "Sphere": {}
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "Transform": {
+                                    "@scale": [
+                                      0.5,
+                                      0.5,
+                                      0.5
+                                    ],
+                                    "@translation": [
+                                      -0.5,
+                                      0,
+                                      1
+                                    ],
+                                    "-children": [
+                                      {
+                                        "Shape": {
+                                          "-appearance": [
+                                            {
+                                              "Appearance": {
+                                                "-material": [
+                                                  {
+                                                    "Material": {
+                                                      "@USE": "MaterialLightBlue"
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          ],
+                                          "-geometry": [
+                                            {
+                                              "Text": {
+                                                "@DEF": "CenterString"
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "StringSensor": {
+                                    "@DEF": "CenterSensor",
+                                    "@enabled": true
+                                  }
+                                },
+                                {
+                                  "TouchSensor": {
+                                    "@description": "touch to activate",
+                                    "@DEF": "CenterTouch"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
                       }
-                    ]
-                  }
-                },
-                {
-                  "Script": {
-                    "@DEF": "RightSingleToMultiString",
-                    "-children": [
-                      {
+                    },
+                    {
+                      "Script": {
+                        "@DEF": "RightSingleToMultiString",
+                        "field": [
+                          {
+                            "@name": "set_rightstring",
+                            "@accessType": "inputOnly",
+                            "@type": "SFString"
+                          },
+                          {
+                            "@name": "rightlines",
+                            "@accessType": "outputOnly",
+                            "@type": "MFString"
+                          }
+                        ],
                         "#sourceText": [
                           "ecmascript:",
                           "",
                           "function initialize() {",
-                          "\trightlines = new MFString(\"\");",
+                          "\trightlines = new MFString(\\\"\\\");",
                           "}",
                           "",
                           "function set_rightstring(rightstr) {",
@@ -545,31 +611,27 @@
                           ""
                         ]
                       }
-                    ],
-                    "field": [
-                      {
-                        "@name": "set_rightstring",
-                        "@accessType": "inputOnly",
-                        "@type": "SFString"
-                      },
-                      {
-                        "@name": "rightlines",
-                        "@accessType": "outputOnly",
-                        "@type": "MFString"
-                      }
-                    ]
-                  }
-                },
-                {
-                  "Script": {
-                    "@DEF": "UpSingleToMultiString",
-                    "-children": [
-                      {
+                    },
+                    {
+                      "Script": {
+                        "@DEF": "UpSingleToMultiString",
+                        "field": [
+                          {
+                            "@name": "set_upstring",
+                            "@accessType": "inputOnly",
+                            "@type": "SFString"
+                          },
+                          {
+                            "@name": "uplines",
+                            "@accessType": "outputOnly",
+                            "@type": "MFString"
+                          }
+                        ],
                         "#sourceText": [
                           "ecmascript:",
                           "",
                           "function initialize() {",
-                          "\tuplines = new MFString(\"\");",
+                          "\tuplines = new MFString(\\\"\\\");",
                           "}",
                           "",
                           "function set_upstring(upstr) {",
@@ -578,31 +640,27 @@
                           ""
                         ]
                       }
-                    ],
-                    "field": [
-                      {
-                        "@name": "set_upstring",
-                        "@accessType": "inputOnly",
-                        "@type": "SFString"
-                      },
-                      {
-                        "@name": "uplines",
-                        "@accessType": "outputOnly",
-                        "@type": "MFString"
-                      }
-                    ]
-                  }
-                },
-                {
-                  "Script": {
-                    "@DEF": "CenterSingleToMultiString",
-                    "-children": [
-                      {
+                    },
+                    {
+                      "Script": {
+                        "@DEF": "CenterSingleToMultiString",
+                        "field": [
+                          {
+                            "@name": "set_centerstring",
+                            "@accessType": "inputOnly",
+                            "@type": "SFString"
+                          },
+                          {
+                            "@name": "centerlines",
+                            "@accessType": "outputOnly",
+                            "@type": "MFString"
+                          }
+                        ],
                         "#sourceText": [
                           "ecmascript:",
                           "",
                           "function initialize() {",
-                          "\tcenterlines = new MFString(\"\");",
+                          "\tcenterlines = new MFString(\\\"\\\");",
                           "}",
                           "",
                           "function set_centerstring(centerstr) {",
@@ -611,79 +669,67 @@
                           ""
                         ]
                       }
-                    ],
-                    "field": [
-                      {
-                        "@name": "set_centerstring",
-                        "@accessType": "inputOnly",
-                        "@type": "SFString"
-                      },
-                      {
-                        "@name": "centerlines",
-                        "@accessType": "outputOnly",
-                        "@type": "MFString"
-                      }
-                    ]
-                  }
+                    }
+                  ],
+                  "ROUTE": [
+                    {
+                      "@fromField": "enteredText",
+                      "@fromNode": "CenterSensor",
+                      "@toField": "set_centerstring",
+                      "@toNode": "CenterSingleToMultiString"
+                    },
+                    {
+                      "@fromField": "centerlines",
+                      "@fromNode": "CenterSingleToMultiString",
+                      "@toField": "set_string",
+                      "@toNode": "CenterString"
+                    },
+                    {
+                      "@fromField": "isOver",
+                      "@fromNode": "CenterTouch",
+                      "@toField": "set_enabled",
+                      "@toNode": "CenterSensor"
+                    },
+                    {
+                      "@fromField": "enteredText",
+                      "@fromNode": "RightSensor",
+                      "@toField": "set_rightstring",
+                      "@toNode": "RightSingleToMultiString"
+                    },
+                    {
+                      "@fromField": "rightlines",
+                      "@fromNode": "RightSingleToMultiString",
+                      "@toField": "set_string",
+                      "@toNode": "RightString"
+                    },
+                    {
+                      "@fromField": "isOver",
+                      "@fromNode": "RightTouch",
+                      "@toField": "set_enabled",
+                      "@toNode": "RightSensor"
+                    },
+                    {
+                      "@fromField": "enteredText",
+                      "@fromNode": "UpSensor",
+                      "@toField": "set_upstring",
+                      "@toNode": "UpSingleToMultiString"
+                    },
+                    {
+                      "@fromField": "uplines",
+                      "@fromNode": "UpSingleToMultiString",
+                      "@toField": "set_string",
+                      "@toNode": "UpString"
+                    },
+                    {
+                      "@fromField": "isOver",
+                      "@fromNode": "UpTouch",
+                      "@toField": "set_enabled",
+                      "@toNode": "UpSensor"
+                    }
+                  ]
                 }
-              ],
-              "ROUTE": [
-                {
-                  "@fromField": "enteredText",
-                  "@fromNode": "CenterSensor",
-                  "@toField": "set_centerstring",
-                  "@toNode": "CenterSingleToMultiString"
-                },
-                {
-                  "@fromField": "centerlines",
-                  "@fromNode": "CenterSingleToMultiString",
-                  "@toField": "set_string",
-                  "@toNode": "CenterString"
-                },
-                {
-                  "@fromField": "isOver",
-                  "@fromNode": "CenterTouch",
-                  "@toField": "set_enabled",
-                  "@toNode": "CenterSensor"
-                },
-                {
-                  "@fromField": "enteredText",
-                  "@fromNode": "RightSensor",
-                  "@toField": "set_rightstring",
-                  "@toNode": "RightSingleToMultiString"
-                },
-                {
-                  "@fromField": "rightlines",
-                  "@fromNode": "RightSingleToMultiString",
-                  "@toField": "set_string",
-                  "@toNode": "RightString"
-                },
-                {
-                  "@fromField": "isOver",
-                  "@fromNode": "RightTouch",
-                  "@toField": "set_enabled",
-                  "@toNode": "RightSensor"
-                },
-                {
-                  "@fromField": "enteredText",
-                  "@fromNode": "UpSensor",
-                  "@toField": "set_upstring",
-                  "@toNode": "UpSingleToMultiString"
-                },
-                {
-                  "@fromField": "uplines",
-                  "@fromNode": "UpSingleToMultiString",
-                  "@toField": "set_string",
-                  "@toNode": "UpString"
-                },
-                {
-                  "@fromField": "isOver",
-                  "@fromNode": "UpTouch",
-                  "@toField": "set_enabled",
-                  "@toNode": "UpSensor"
-                }
-              ]
-            }
+              }
+            ]
           }
         },
         {
@@ -712,16 +758,24 @@
               -2.5,
               0
             ],
-            "ProtoInstance": {
-              "@name": "Process"
-            }
+            "-children": [
+              {
+                "ProtoInstance": {
+                  "@name": "Process"
+                }
+              }
+            ]
           }
         },
         {
           "Transform": {
-            "ProtoInstance": {
-              "@name": "Process"
-            }
+            "-children": [
+              {
+                "ProtoInstance": {
+                  "@name": "Process"
+                }
+              }
+            ]
           }
         },
         {
@@ -731,9 +785,13 @@
               2.5,
               0
             ],
-            "ProtoInstance": {
-              "@name": "Process"
-            }
+            "-children": [
+              {
+                "ProtoInstance": {
+                  "@name": "Process"
+                }
+              }
+            ]
           }
         }
       ]

@@ -79,53 +79,54 @@
         {
           "Background": {
             "@skyColor": [
-              0.6,
+              0,
               1,
-              0.8
+              0
             ]
           }
         },
         {
           "Shape": {
-            "-geometry": {
-              "Text": {
-                "@string": [
-                  "One, Two, Three",
-                  "",
-                  "He said, \"Immel did it!\""
-                ],
-                "-fontStyle": {
-                  "FontStyle": {
-                    "@justify": [
-                      "MIDDLE",
-                      "MIDDLE"
-                    ],
-                    "@style": "BOLD"
-                  }
-                },
-                "-children": [
-                  {
-                    "#comment": "alternative XML encoding: Text string='\"One, Two, Three\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"'"
-                  },
-                  {
-                    "#comment": "alternative Java source: .setString(new String [] {\"One, Two, Three\", \"\", \"He said, \\\"Immel did it!\\\"\"})"
-                  }
-                ]
-              }
-            },
-            "-appearance": {
-              "Appearance": {
-                "-material": {
-                  "Material": {
-                    "@diffuseColor": [
-                      0.6,
-                      0.4,
-                      0.2
-                    ]
-                  }
+            "-geometry": [
+              {
+                "Text": {
+                  "@string": [
+                    "One, Two, Three",
+                    "",
+                    "He said, \\\"Immel did it!\\\""
+                  ],
+                  "#comment": "alternative Java source: .setString(new String [] {\\\"One, Two, Three\\\", \\\"\\\", \\\"He said, \\\\\\\"Immel did it!\\\\\\\"\\\"})",
+                  "-fontStyle": [
+                    {
+                      "FontStyle": {
+                        "@justify": [
+                          "MIDDLE",
+                          "MIDDLE"
+                        ],
+                        "@style": "BOLD"
+                      }
+                    }
+                  ]
                 }
               }
-            }
+            ],
+            "-appearance": [
+              {
+                "Appearance": {
+                  "-material": [
+                    {
+                      "Material": {
+                        "@diffuseColor": [
+                          0,
+                          0,
+                          0
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
           }
         }
       ]

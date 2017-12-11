@@ -50,178 +50,222 @@
         {
           "ProtoDeclare": {
             "@name": "anyShape",
-            "ProtoInterface": {
-              "field": [
-                {
-                  "@name": "xtranslation",
-                  "@accessType": "inputOutput",
-                  "@type": "SFVec3f",
-                  "@value": "0 0 0"
-                },
-                {
-                  "@name": "myShape",
-                  "@accessType": "inputOutput",
-                  "@type": "MFNode",
-                  "Shape": {
-                    "-geometry": {
-                      "Sphere": {}
+            "-children": [
+              {
+                "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name": "xtranslation",
+                      "@accessType": "inputOutput",
+                      "@type": "SFVec3f",
+                      "@value": "0 0 0"
                     },
-                    "-appearance": {
-                      "Appearance": {
-                        "-material": {
-                          "Material": {
-                            "@diffuseColor": [
-                              1,
-                              1,
-                              1
+                    {
+                      "@name": "myShape",
+                      "@accessType": "inputOutput",
+                      "@type": "MFNode",
+                      "-children": [
+                        {
+                          "Shape": {
+                            "-geometry": [
+                              {
+                                "Sphere": {}
+                              }
+                            ],
+                            "-appearance": [
+                              {
+                                "Appearance": {
+                                  "-material": [
+                                    {
+                                      "Material": {
+                                        "@diffuseColor": [
+                                          1,
+                                          1,
+                                          1
+                                        ]
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
                             ]
                           }
                         }
-                      }
+                      ]
                     }
-                  }
+                  ]
                 }
-              ]
-            },
-            "ProtoBody": {
-              "Transform": {
-                "IS": {
-                  "connect": [
+              },
+              {
+                "ProtoBody": {
+                  "-children": [
                     {
-                      "@nodeField": "translation",
-                      "@protoField": "xtranslation"
-                    },
-                    {
-                      "@nodeField": "children",
-                      "@protoField": "myShape"
+                      "Transform": {
+                        "-children": [
+                          {
+                            "IS": {
+                              "connect": [
+                                {
+                                  "@nodeField": "translation",
+                                  "@protoField": "xtranslation"
+                                },
+                                {
+                                  "@nodeField": "children",
+                                  "@protoField": "myShape"
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
                     }
                   ]
                 }
               }
-            }
+            ]
           }
         },
         {
           "ProtoDeclare": {
             "@name": "three",
-            "ProtoInterface": {
-              "field": [
-                {
-                  "@name": "ytranslation",
-                  "@accessType": "inputOutput",
-                  "@type": "SFVec3f",
-                  "@value": "0 0 0"
-                },
-                {
-                  "@name": "myShape",
-                  "@accessType": "inputOutput",
-                  "@type": "MFNode",
-                  "Shape": {
-                    "-geometry": {
-                      "Cylinder": {}
+            "-children": [
+              {
+                "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name": "ytranslation",
+                      "@accessType": "inputOutput",
+                      "@type": "SFVec3f",
+                      "@value": "0 0 0"
                     },
-                    "-appearance": {
-                      "Appearance": {
-                        "-material": {
-                          "Material": {
-                            "@diffuseColor": [
-                              1,
-                              1,
-                              1
+                    {
+                      "@name": "myShape",
+                      "@accessType": "inputOutput",
+                      "@type": "MFNode",
+                      "-children": [
+                        {
+                          "Shape": {
+                            "-geometry": [
+                              {
+                                "Cylinder": {}
+                              }
+                            ],
+                            "-appearance": [
+                              {
+                                "Appearance": {
+                                  "-material": [
+                                    {
+                                      "Material": {
+                                        "@diffuseColor": [
+                                          1,
+                                          1,
+                                          1
+                                        ]
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
                             ]
                           }
                         }
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "ProtoBody": {
+                  "-children": [
+                    {
+                      "Transform": {
+                        "-children": [
+                          {
+                            "IS": {
+                              "connect": [
+                                {
+                                  "@nodeField": "translation",
+                                  "@protoField": "ytranslation"
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "ProtoInstance": {
+                              "@name": "anyShape",
+                              "fieldValue": [
+                                {
+                                  "@name": "xtranslation",
+                                  "@value": "0 0 0"
+                                }
+                              ],
+                              "-children": [
+                                {
+                                  "IS": {
+                                    "connect": [
+                                      {
+                                        "@nodeField": "myShape",
+                                        "@protoField": "myShape"
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "ProtoInstance": {
+                              "@name": "anyShape",
+                              "fieldValue": [
+                                {
+                                  "@name": "xtranslation",
+                                  "@value": "2 0 0"
+                                }
+                              ],
+                              "-children": [
+                                {
+                                  "IS": {
+                                    "connect": [
+                                      {
+                                        "@nodeField": "myShape",
+                                        "@protoField": "myShape"
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "ProtoInstance": {
+                              "@name": "anyShape",
+                              "fieldValue": [
+                                {
+                                  "@name": "xtranslation",
+                                  "@value": "-2 0 0"
+                                }
+                              ],
+                              "-children": [
+                                {
+                                  "IS": {
+                                    "connect": [
+                                      {
+                                        "@nodeField": "myShape",
+                                        "@protoField": "myShape"
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
                       }
                     }
-                  }
+                  ]
                 }
-              ]
-            },
-            "ProtoBody": {
-              "Transform": {
-                "-children": [
-                  {
-                    "IS": {
-                      "connect": [
-                        {
-                          "@nodeField": "translation",
-                          "@protoField": "ytranslation"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "ProtoInstance": {
-                      "@name": "anyShape",
-                      "fieldValue": [
-                        {
-                          "@name": "xtranslation",
-                          "@value": "0 0 0"
-                        }
-                      ],
-                      "-children": [
-                        {
-                          "IS": {
-                            "connect": [
-                              {
-                                "@nodeField": "myShape",
-                                "@protoField": "myShape"
-                              }
-                            ]
-                          }
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "ProtoInstance": {
-                      "@name": "anyShape",
-                      "fieldValue": [
-                        {
-                          "@name": "xtranslation",
-                          "@value": "2 0 0"
-                        }
-                      ],
-                      "-children": [
-                        {
-                          "IS": {
-                            "connect": [
-                              {
-                                "@nodeField": "myShape",
-                                "@protoField": "myShape"
-                              }
-                            ]
-                          }
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "ProtoInstance": {
-                      "@name": "anyShape",
-                      "fieldValue": [
-                        {
-                          "@name": "xtranslation",
-                          "@value": "-2 0 0"
-                        }
-                      ],
-                      "-children": [
-                        {
-                          "IS": {
-                            "connect": [
-                              {
-                                "@nodeField": "myShape",
-                                "@protoField": "myShape"
-                              }
-                            ]
-                          }
-                        }
-                      ]
-                    }
-                  }
-                ]
               }
-            }
+            ]
           }
         },
         {
@@ -234,30 +278,40 @@
               },
               {
                 "@name": "myShape",
-                "Shape": {
-                  "-geometry": {
-                    "Box": {
-                      "@size": [
-                        1,
-                        1,
-                        1
+                "-children": [
+                  {
+                    "Shape": {
+                      "-geometry": [
+                        {
+                          "Box": {
+                            "@size": [
+                              1,
+                              1,
+                              1
+                            ]
+                          }
+                        }
+                      ],
+                      "-appearance": [
+                        {
+                          "Appearance": {
+                            "-material": [
+                              {
+                                "Material": {
+                                  "@diffuseColor": [
+                                    0,
+                                    1,
+                                    0
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        }
                       ]
                     }
-                  },
-                  "-appearance": {
-                    "Appearance": {
-                      "-material": {
-                        "Material": {
-                          "@diffuseColor": [
-                            0,
-                            1,
-                            0
-                          ]
-                        }
-                      }
-                    }
                   }
-                }
+                ]
               }
             ]
           }

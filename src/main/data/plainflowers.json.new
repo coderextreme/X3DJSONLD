@@ -87,23 +87,35 @@
               {
                 "ProtoDeclare": {
                   "@name": "flower",
-                  "ProtoBody": {
-                    "Group": {
-                      "ProtoInstance": {
-                        "@name": "FlowerProto",
-                        "fieldValue": [
+                  "-children": [
+                    {
+                      "ProtoBody": {
+                        "-children": [
                           {
-                            "@name": "vertex",
-                            "@value": "\"../shaders/cobweb_flowers_plain.vs\""
-                          },
-                          {
-                            "@name": "fragment",
-                            "@value": "\"../shaders/plain.fs\""
+                            "Group": {
+                              "-children": [
+                                {
+                                  "ProtoInstance": {
+                                    "@name": "FlowerProto",
+                                    "fieldValue": [
+                                      {
+                                        "@name": "vertex",
+                                        "@value": "\\\"../shaders/cobweb_flowers_plain.vs\\\""
+                                      },
+                                      {
+                                        "@name": "fragment",
+                                        "@value": "\\\"../shaders/plain.fs\\\""
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
                           }
                         ]
                       }
                     }
-                  }
+                  ]
                 }
               },
               {

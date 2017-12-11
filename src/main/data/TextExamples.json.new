@@ -57,39 +57,51 @@
               2,
               0
             ],
-            "Shape": {
-              "-geometry": {
-                "Text": {
-                  "@string": [
-                    "Compare special character escaping"
+            "-children": [
+              {
+                "Shape": {
+                  "-geometry": [
+                    {
+                      "Text": {
+                        "@string": [
+                          "Compare special character escaping"
+                        ],
+                        "-fontStyle": [
+                          {
+                            "FontStyle": {
+                              "@DEF": "testFontStyle",
+                              "@justify": [
+                                "MIDDLE",
+                                "MIDDLE"
+                              ],
+                              "@size": 0.8
+                            }
+                          }
+                        ]
+                      }
+                    }
                   ],
-                  "-fontStyle": {
-                    "FontStyle": {
-                      "@DEF": "testFontStyle",
-                      "@justify": [
-                        "MIDDLE",
-                        "MIDDLE"
-                      ],
-                      "@size": 0.8
+                  "-appearance": [
+                    {
+                      "Appearance": {
+                        "@DEF": "LightBlueAppearance",
+                        "-material": [
+                          {
+                            "Material": {
+                              "@diffuseColor": [
+                                0,
+                                0,
+                                0
+                              ]
+                            }
+                          }
+                        ]
+                      }
                     }
-                  }
-                }
-              },
-              "-appearance": {
-                "Appearance": {
-                  "@DEF": "LightBlueAppearance",
-                  "-material": {
-                    "Material": {
-                      "@diffuseColor": [
-                        0.1,
-                        0.7,
-                        0.7
-                      ]
-                    }
-                  }
+                  ]
                 }
               }
-            }
+            ]
           }
         },
         {
@@ -99,27 +111,37 @@
               0,
               0
             ],
-            "Shape": {
-              "-geometry": {
-                "Text": {
-                  "@string": [
-                    "I don't think so",
-                    "",
-                    "he said \"Hi\""
-                  ],
-                  "-fontStyle": {
-                    "FontStyle": {
-                      "@USE": "testFontStyle"
+            "-children": [
+              {
+                "Shape": {
+                  "-geometry": [
+                    {
+                      "Text": {
+                        "@string": [
+                          "I don't think so",
+                          "",
+                          "he said \\\"Hi\\\""
+                        ],
+                        "-fontStyle": [
+                          {
+                            "FontStyle": {
+                              "@USE": "testFontStyle"
+                            }
+                          }
+                        ]
+                      }
                     }
-                  }
-                }
-              },
-              "-appearance": {
-                "Appearance": {
-                  "@USE": "LightBlueAppearance"
+                  ],
+                  "-appearance": [
+                    {
+                      "Appearance": {
+                        "@USE": "LightBlueAppearance"
+                      }
+                    }
+                  ]
                 }
               }
-            }
+            ]
           }
         },
         {
@@ -129,27 +151,37 @@
               0,
               0
             ],
-            "Shape": {
-              "-geometry": {
-                "Text": {
-                  "@string": [
-                    "I don't think so",
-                    "",
-                    "he said \"Hi\""
-                  ],
-                  "-fontStyle": {
-                    "FontStyle": {
-                      "@USE": "testFontStyle"
+            "-children": [
+              {
+                "Shape": {
+                  "-geometry": [
+                    {
+                      "Text": {
+                        "@string": [
+                          "I don't think so",
+                          "",
+                          "he said \\\"Hi\\\""
+                        ],
+                        "-fontStyle": [
+                          {
+                            "FontStyle": {
+                              "@USE": "testFontStyle"
+                            }
+                          }
+                        ]
+                      }
                     }
-                  }
-                }
-              },
-              "-appearance": {
-                "Appearance": {
-                  "@USE": "LightBlueAppearance"
+                  ],
+                  "-appearance": [
+                    {
+                      "Appearance": {
+                        "@USE": "LightBlueAppearance"
+                      }
+                    }
+                  ]
                 }
               }
-            }
+            ]
           }
         }
       ]

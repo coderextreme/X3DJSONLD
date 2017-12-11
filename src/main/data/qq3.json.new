@@ -45,196 +45,221 @@
         {
           "ProtoDeclare": {
             "@name": "Process",
-            "ProtoBody": {
-              "Group": {
-                "-children": [
-                  {
-                    "#comment": "left"
-                  },
-                  {
-                    "Transform": {
-                      "@scale": [
-                        0.5,
-                        0.5,
-                        0.5
-                      ],
-                      "Shape": {
-                        "@DEF": "ShapeLeftDown",
-                        "-appearance": {
-                          "Appearance": {
-                            "-material": {
-                              "Material": {
-                                "@diffuseColor": [
-                                  0.7,
-                                  1,
-                                  0
-                                ]
-                              }
+            "-children": [
+              {
+                "ProtoBody": {
+                  "-children": [
+                    {
+                      "Group": {
+                        "#comment": "down",
+                        "-children": [
+                          {
+                            "Transform": {
+                              "@scale": [
+                                0.5,
+                                0.5,
+                                0.5
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "@DEF": "ShapeLeftDown",
+                                    "-appearance": [
+                                      {
+                                        "Appearance": {
+                                          "-material": [
+                                            {
+                                              "Material": {
+                                                "@diffuseColor": [
+                                                  0,
+                                                  1,
+                                                  0
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ],
+                                    "-geometry": [
+                                      {
+                                        "Extrusion": {
+                                          "@spine": [
+                                            -2.5,
+                                            0,
+                                            0,
+                                            -1.5,
+                                            0,
+                                            0
+                                          ],
+                                          "@creaseAngle": 0.785,
+                                          "@crossSection": [
+                                            1,
+                                            0,
+                                            0.92,
+                                            -0.38,
+                                            0.71,
+                                            -0.71,
+                                            0.38,
+                                            -0.92,
+                                            0,
+                                            -1,
+                                            -0.38,
+                                            -0.92,
+                                            -0.71,
+                                            -0.71,
+                                            -0.92,
+                                            -0.38,
+                                            -1,
+                                            0,
+                                            -0.92,
+                                            0.38,
+                                            -0.71,
+                                            0.71,
+                                            -0.38,
+                                            0.92,
+                                            0,
+                                            1,
+                                            0.38,
+                                            0.92,
+                                            0.71,
+                                            0.71,
+                                            0.92,
+                                            0.38,
+                                            1,
+                                            0
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "Transform": {
+                              "@scale": [
+                                0.5,
+                                0.5,
+                                0.5
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "@DEF": "ShapeUpRight",
+                                    "-appearance": [
+                                      {
+                                        "Appearance": {
+                                          "-material": [
+                                            {
+                                              "Material": {
+                                                "@diffuseColor": [
+                                                  0,
+                                                  0,
+                                                  1
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ],
+                                    "-geometry": [
+                                      {
+                                        "Extrusion": {
+                                          "@spine": [
+                                            1.5,
+                                            0,
+                                            0,
+                                            2.5,
+                                            0,
+                                            0
+                                          ],
+                                          "@creaseAngle": 0.785,
+                                          "@crossSection": [
+                                            1,
+                                            0,
+                                            0.92,
+                                            -0.38,
+                                            0.71,
+                                            -0.71,
+                                            0.38,
+                                            -0.92,
+                                            0,
+                                            -1,
+                                            -0.38,
+                                            -0.92,
+                                            -0.71,
+                                            -0.71,
+                                            -0.92,
+                                            -0.38,
+                                            -1,
+                                            0,
+                                            -0.92,
+                                            0.38,
+                                            -0.71,
+                                            0.71,
+                                            -0.38,
+                                            0.92,
+                                            0,
+                                            1,
+                                            0.38,
+                                            0.92,
+                                            0.71,
+                                            0.71,
+                                            0.92,
+                                            0.38,
+                                            1,
+                                            0
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "Transform": {
+                              "@scale": [
+                                0.5,
+                                0.5,
+                                0.5
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "@USE": "ShapeUpRight"
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "Transform": {
+                              "@scale": [
+                                0.5,
+                                0.5,
+                                0.5
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "@USE": "ShapeLeftDown"
+                                  }
+                                }
+                              ]
                             }
                           }
-                        },
-                        "-geometry": {
-                          "Extrusion": {
-                            "@spine": [
-                              -2.5,
-                              0,
-                              0,
-                              -1.5,
-                              0,
-                              0
-                            ],
-                            "@creaseAngle": 0.785,
-                            "@crossSection": [
-                              1,
-                              0,
-                              0.92,
-                              -0.38,
-                              0.71,
-                              -0.71,
-                              0.38,
-                              -0.92,
-                              0,
-                              -1,
-                              -0.38,
-                              -0.92,
-                              -0.71,
-                              -0.71,
-                              -0.92,
-                              -0.38,
-                              -1,
-                              0,
-                              -0.92,
-                              0.38,
-                              -0.71,
-                              0.71,
-                              -0.38,
-                              0.92,
-                              0,
-                              1,
-                              0.38,
-                              0.92,
-                              0.71,
-                              0.71,
-                              0.92,
-                              0.38,
-                              1,
-                              0
-                            ]
-                          }
-                        }
+                        ]
                       }
                     }
-                  },
-                  {
-                    "#comment": "right"
-                  },
-                  {
-                    "Transform": {
-                      "@scale": [
-                        0.5,
-                        0.5,
-                        0.5
-                      ],
-                      "Shape": {
-                        "@DEF": "ShapeUpRight",
-                        "-appearance": {
-                          "Appearance": {
-                            "-material": {
-                              "Material": {
-                                "@diffuseColor": [
-                                  0,
-                                  0.7,
-                                  1
-                                ]
-                              }
-                            }
-                          }
-                        },
-                        "-geometry": {
-                          "Extrusion": {
-                            "@spine": [
-                              1.5,
-                              0,
-                              0,
-                              2.5,
-                              0,
-                              0
-                            ],
-                            "@creaseAngle": 0.785,
-                            "@crossSection": [
-                              1,
-                              0,
-                              0.92,
-                              -0.38,
-                              0.71,
-                              -0.71,
-                              0.38,
-                              -0.92,
-                              0,
-                              -1,
-                              -0.38,
-                              -0.92,
-                              -0.71,
-                              -0.71,
-                              -0.92,
-                              -0.38,
-                              -1,
-                              0,
-                              -0.92,
-                              0.38,
-                              -0.71,
-                              0.71,
-                              -0.38,
-                              0.92,
-                              0,
-                              1,
-                              0.38,
-                              0.92,
-                              0.71,
-                              0.71,
-                              0.92,
-                              0.38,
-                              1,
-                              0
-                            ]
-                          }
-                        }
-                      }
-                    }
-                  },
-                  {
-                    "#comment": "up"
-                  },
-                  {
-                    "Transform": {
-                      "@scale": [
-                        0.5,
-                        0.5,
-                        0.5
-                      ],
-                      "Shape": {
-                        "@USE": "ShapeUpRight"
-                      }
-                    }
-                  },
-                  {
-                    "#comment": "down"
-                  },
-                  {
-                    "Transform": {
-                      "@scale": [
-                        0.5,
-                        0.5,
-                        0.5
-                      ],
-                      "Shape": {
-                        "@USE": "ShapeLeftDown"
-                      }
-                    }
-                  }
-                ]
+                  ]
+                }
               }
-            }
+            ]
           }
         },
         {
@@ -260,16 +285,24 @@
               -2.5,
               0
             ],
-            "ProtoInstance": {
-              "@name": "Process"
-            }
+            "-children": [
+              {
+                "ProtoInstance": {
+                  "@name": "Process"
+                }
+              }
+            ]
           }
         },
         {
           "Transform": {
-            "ProtoInstance": {
-              "@name": "Process"
-            }
+            "-children": [
+              {
+                "ProtoInstance": {
+                  "@name": "Process"
+                }
+              }
+            ]
           }
         },
         {
@@ -279,9 +312,13 @@
               2.5,
               0
             ],
-            "ProtoInstance": {
-              "@name": "Process"
-            }
+            "-children": [
+              {
+                "ProtoInstance": {
+                  "@name": "Process"
+                }
+              }
+            ]
           }
         }
       ]
