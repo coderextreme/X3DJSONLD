@@ -269,9 +269,7 @@ PythonSerializer.prototype = {
 						// strval = attrs[a].nodeValue;
 						// not found in field types
 						// Fixes for X3DOM
-						if (attr === "class") {
-							method = "setCssClass";
-						} else if (attr === "id") {
+						if (attr === "id") {
 							continue;
 						} else if (element.nodeName === "Sphere" && attr === "subdivision") {
 							continue;
@@ -287,6 +285,9 @@ PythonSerializer.prototype = {
 							continue;
 						}
 						strval = '"'+attrs[a].nodeValue.replace(/\n/g, '\\\\n').replace(/\\?"/g, "\\\"")+'"';
+					}
+					if (attr === "class") {
+						method = "setCssClass";
 					}
 					str += element.nodeName+stack[0];
 					str += '.'+method+"("+strval+")\n";

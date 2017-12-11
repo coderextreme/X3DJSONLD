@@ -106,7 +106,7 @@ JavaSerializer.prototype = {
 		str += "public class "+clz+" {\n";
 		str += "  public static void main(String[] args) {\n";
 		str += "    ConfigurationProperties.setShowDefaultAttributes(true);\n";
-		str += "    ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_nativeJava);\n";
+		str += "    ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);\n";
 		str += "    ConfigurationProperties.setDeleteIntermediateFiles(false);\n";
 		str += "    new "+clz+"().initialize().toFileJSON(\""+clazz+".new.json\");\n";
 		str += "    }\n";
@@ -386,9 +386,7 @@ JavaSerializer.prototype = {
 						// strval = attrs[a].nodeValue;
 						// not found in field types
 						// Fixes for X3DOM
-						if (attr === "class") {
-							method = "setCssClass";
-						} else if (attr === "id") {
+						if (attr === "id") {
 							continue;
 						} else if (element.nodeName === "Sphere" && attr === "subdivision") {
 							continue;
@@ -404,6 +402,9 @@ JavaSerializer.prototype = {
 							continue;
 						}
 						strval = '"'+attrs[a].nodeValue.replace(/\n/g, '\\\\n').replace(/\\?"/g, "\\\"")+'"';
+					}
+					if (attr === "class") {
+						method = "setCssClass";
 					}
 					
 					str += '.'+method+"("+strval+")";
