@@ -56,7 +56,7 @@ meta10.setContent("6 September 2016")
 head1.addMeta(meta10)
 meta11 = metaObject()
 meta11.setName("modified")
-meta11.setContent("9 December 2017")
+meta11.setContent("11 December 2017")
 
 head1.addMeta(meta11)
 meta12 = metaObject()
@@ -410,7 +410,7 @@ Group65.addChild(ROUTE74)
 Scene26.addChild(Group65)
 ProtoDeclare75 = ProtoDeclareObject()
 ProtoDeclare75.setName("ArtDeco01Material")
-ProtoDeclare75.setAppinfo("tooltip: ArtDeco01 prototype is a Material node")
+ProtoDeclare75.setAppinfo("tooltip: ArtDeco01Material prototype is a Material node")
 
 ProtoInterface76 = ProtoInterfaceObject()
 
@@ -419,7 +419,7 @@ field77.setType(fieldObject.TYPE_SFSTRING)
 field77.setName("description")
 field77.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
 field77.setAppinfo("tooltip for descriptionField")
-field77.setValue("ArtDeco01 prototype is a Material node")
+field77.setValue("ArtDeco01Material prototype is a Material node")
 
 ProtoInterface76.addField(field77)
 field78 = fieldObject()
@@ -467,7 +467,7 @@ Scene26.addChild(ProtoDeclare75)
 ExternProtoDeclare85 = ExternProtoDeclareObject()
 ExternProtoDeclare85.setName("ArtDeco02Material")
 ExternProtoDeclare85.setAppinfo("this is a different Material node")
-ExternProtoDeclare85.setUrl(["http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02"])
+ExternProtoDeclare85.setUrl(["http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"])
 
 field86 = fieldObject()
 field86.setType(fieldObject.TYPE_SFSTRING)
@@ -488,18 +488,18 @@ Appearance88 = AppearanceObject()
 Appearance88.setDEF("TestAppearance1")
 
 ProtoInstance89 = ProtoInstanceObject()
-ProtoInstance89.setName("ArtDeco01")
+ProtoInstance89.setName("ArtDeco01Material")
 
 fieldValue90 = fieldValueObject()
 fieldValue90.setName("description")
-fieldValue90.setValue("ArtDeco01 can substitute for a Material node")
+fieldValue90.setValue("ArtDeco01Material can substitute for a Material node")
 
 ProtoInstance89.addFieldValue(fieldValue90)
 
-ProtoInstance89.addComments(CommentsBlock("""[HelloWorldProgram diagnostic] ArtDeco01ProtoInstance.getNodeType()=\"ERROR_UNKNOWN_PROTOINSTANCE_NODE_TYPE: ProtoInstance name='ArtDeco01' has no corresponding ProtoDeclareObject or ExternProtoDeclareObject to provide type.\""""))
+ProtoInstance89.addComments(CommentsBlock("""[HelloWorldProgram diagnostic] ArtDeco01ProtoInstance.getNodeType()=\"Material\""""))
 Appearance88.setProtoInstance(ProtoInstance89)
 
-Appearance88.addComments(CommentsBlock("""ArtDeco01 Material prototype goes here..."""))
+Appearance88.addComments(CommentsBlock("""ArtDeco01Material prototype goes here..."""))
 Shape87.setAppearance(Appearance88)
 Sphere91 = SphereObject()
 Sphere91.setRadius(0.001)
@@ -513,18 +513,18 @@ Appearance93 = AppearanceObject()
 Appearance93.setDEF("TestAppearance2")
 
 ProtoInstance94 = ProtoInstanceObject()
-ProtoInstance94.setName("ArtDeco02")
+ProtoInstance94.setName("ArtDeco02Material")
 
 fieldValue95 = fieldValueObject()
 fieldValue95.setName("description")
-fieldValue95.setValue("ArtDeco02 can substitute for another Material node")
+fieldValue95.setValue("ArtDeco02Material can substitute for another Material node")
 
 ProtoInstance94.addFieldValue(fieldValue95)
 
-ProtoInstance94.addComments(CommentsBlock("""[HelloWorldProgram diagnostic] ArtDeco02ProtoInstance.getNodeType()=\"ERROR_UNKNOWN_PROTOINSTANCE_NODE_TYPE: ProtoInstance name='ArtDeco02' has no corresponding ProtoDeclareObject or ExternProtoDeclareObject to provide type.\""""))
+ProtoInstance94.addComments(CommentsBlock("""[HelloWorldProgram diagnostic] ArtDeco02ProtoInstance.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time, TODO X3DJSAIL needs to add further capability.\""""))
 Appearance93.setProtoInstance(ProtoInstance94)
 
-Appearance93.addComments(CommentsBlock("""ArtDeco02 Material prototype goes here..."""))
+Appearance93.addComments(CommentsBlock("""ArtDeco02Material prototype goes here..."""))
 Shape92.setAppearance(Appearance93)
 Cone96 = ConeObject()
 Cone96.setBottomRadius(0.001)
@@ -779,24 +779,32 @@ Group132.addComments(CommentsBlock("""... get1Value[3]=3.0, remove[1]=0 2 3 4 5 
 Group132.addComments(CommentsBlock("""SFVec3f default=0 0 0, initial=1 2 3, setValue=4 5 6, multiply(2)=8 10 12, normalize()=0.45584232 0.5698029 0.68376344"""))
 Scene26.addChild(Group132)
 Sound133 = SoundObject()
+Sound133.setLocation([0,1.6,0])
 
 AudioClip134 = AudioClipObject()
+AudioClip134.setDescription("chimes")
 AudioClip134.setUrl(["chimes.wav","http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"])
 
+
+AudioClip134.addComments(CommentsBlock("""Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d"""))
 Sound133.setSource(AudioClip134)
 
-Sound133.addComments(CommentsBlock("""Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d"""))
+Sound133.addComments(CommentsBlock("""set sound-ellipsoid location height at 1.6m to match typical avatar height"""))
 Scene26.addChild(Sound133)
 Sound135 = SoundObject()
+Sound135.setLocation([0,1.6,0])
 
 MovieTexture136 = MovieTextureObject()
+MovieTexture136.setDescription("mpgsys.mpg from ConformanceNist suite")
 MovieTexture136.setUrl(["mpgsys.mpg","http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"])
 
+
+MovieTexture136.addComments(CommentsBlock("""Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d"""))
+
+MovieTexture136.addComments(CommentsBlock("""Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\""""))
 Sound135.setSource(MovieTexture136)
 
-Sound135.addComments(CommentsBlock("""Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d"""))
-
-Sound135.addComments(CommentsBlock("""Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\""""))
+Sound135.addComments(CommentsBlock("""set sound-ellipsoid location height at 1.6m to match typical avatar height"""))
 Scene26.addChild(Sound135)
 
 Scene26.addComments(CommentsBlock("""Test success: AnchorObject.isNode()=true, siteAnchor.isNode()=true"""))
