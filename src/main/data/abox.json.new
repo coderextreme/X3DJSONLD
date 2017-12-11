@@ -1,0 +1,122 @@
+{
+  "X3D": {
+    "@xmlns:xsd": "http://www.w3.org/2001/XMLSchema-instance",
+    "@profile": "Immersive",
+    "@version": "3.3",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "head": {
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "abox.x3d"
+        },
+        {
+          "@name": "creator",
+          "@content": "John Carlson"
+        },
+        {
+          "@name": "generator",
+          "@content": "manual"
+        },
+        {
+          "@name": "identifier",
+          "@content": "https://coderextreme.net/X3DJSONLD/abox.x3d"
+        },
+        {
+          "@name": "description",
+          "@content": "a box"
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        {
+          "ProtoDeclare": {
+            "@name": "anyShape",
+            "ProtoInterface": {
+              "field": [
+                {
+                  "@name": "myShape",
+                  "@accessType": "inputOutput",
+                  "@type": "MFNode",
+                  "Shape": {
+                    "-geometry": {
+                      "Sphere": {}
+                    }
+                  }
+                }
+              ]
+            },
+            "ProtoBody": {
+              "Transform": {
+                "IS": {
+                  "connect": [
+                    {
+                      "@nodeField": "children",
+                      "@protoField": "myShape"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "one",
+            "ProtoInterface": {
+              "field": [
+                {
+                  "@name": "myShape",
+                  "@accessType": "inputOutput",
+                  "@type": "MFNode",
+                  "Shape": {
+                    "-geometry": {
+                      "Cylinder": {}
+                    }
+                  }
+                }
+              ]
+            },
+            "ProtoBody": {
+              "Transform": {
+                "ProtoInstance": {
+                  "@name": "anyShape",
+                  "IS": {
+                    "connect": [
+                      {
+                        "@nodeField": "myShape",
+                        "@protoField": "myShape"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "ProtoInstance": {
+            "@name": "one",
+            "fieldValue": [
+              {
+                "@name": "myShape",
+                "Shape": {
+                  "-geometry": {
+                    "Box": {
+                      "@size": [
+                        140,
+                        140,
+                        140
+                      ]
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

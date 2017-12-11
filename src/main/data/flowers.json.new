@@ -1,0 +1,450 @@
+{
+  "X3D": {
+    "@xmlns:xsd": "http://www.w3.org/2001/XMLSchema-instance",
+    "@profile": "Immersive",
+    "@version": "3.3",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "head": {
+      "-children": [
+        {
+          "component": {
+            "@name": "Shaders",
+            "@level": 1
+          }
+        },
+        {
+          "component": {
+            "@name": "CubeMapTexturing",
+            "@level": 1
+          }
+        }
+      ],
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "flowers.x3d"
+        },
+        {
+          "@name": "creator",
+          "@content": "John Carlson"
+        },
+        {
+          "@name": "description",
+          "@content": "5 or more prismatic flowers"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3D-Edit, https://savage.nps.edu/X3D-Edit"
+        },
+        {
+          "@name": "identifier",
+          "@content": "https://coderextreme.net/X3DJSONLD/flowers.x3d"
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        {
+          "NavigationInfo": {}
+        },
+        {
+          "Background": {
+            "@backUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
+              "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"
+            ],
+            "@bottomUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
+              "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"
+            ],
+            "@frontUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
+              "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"
+            ],
+            "@leftUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
+              "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"
+            ],
+            "@rightUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
+              "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"
+            ],
+            "@topUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
+              "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"
+            ]
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "flower",
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Transform": {
+                    "@DEF": "transform",
+                    "Shape": {
+                      "-appearance": {
+                        "Appearance": {
+                          "-material": {
+                            "Material": {
+                              "@diffuseColor": [
+                                0.7,
+                                0.7,
+                                0.7
+                              ],
+                              "@specularColor": [
+                                0.5,
+                                0.5,
+                                0.5
+                              ]
+                            }
+                          },
+                          "-texture": {
+                            "ComposedCubeMapTexture": {
+                              "@DEF": "texture",
+                              "-back": {
+                                "ImageTexture": {
+                                  "@url": [
+                                    "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
+                                    "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"
+                                  ]
+                                }
+                              },
+                              "-bottom": {
+                                "ImageTexture": {
+                                  "@url": [
+                                    "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
+                                    "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"
+                                  ]
+                                }
+                              },
+                              "-front": {
+                                "ImageTexture": {
+                                  "@url": [
+                                    "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
+                                    "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"
+                                  ]
+                                }
+                              },
+                              "-left": {
+                                "ImageTexture": {
+                                  "@url": [
+                                    "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
+                                    "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"
+                                  ]
+                                }
+                              },
+                              "-right": {
+                                "ImageTexture": {
+                                  "@url": [
+                                    "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
+                                    "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"
+                                  ]
+                                }
+                              },
+                              "-top": {
+                                "ImageTexture": {
+                                  "@url": [
+                                    "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
+                                    "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"
+                                  ]
+                                }
+                              }
+                            }
+                          },
+                          "ComposedShader": {
+                            "@DEF": "shader",
+                            "@language": "GLSL",
+                            "field": [],
+                            "-children": [
+                              {
+                                "ShaderPart": {
+                                  "@url": [
+                                    "../shaders/cobweb.vs",
+                                    "https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"
+                                  ],
+                                  "@type": "VERTEX"
+                                }
+                              },
+                              {
+                                "ShaderPart": {
+                                  "@url": [
+                                    "../shaders/pc_bubbles.fs",
+                                    "https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"
+                                  ],
+                                  "@type": "FRAGMENT"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "-geometry": {
+                        "IndexedFaceSet": {
+                          "@convex": false,
+                          "@DEF": "Orbit",
+                          "-coord": {
+                            "Coordinate": {
+                              "@DEF": "OrbitCoordinates"
+                            }
+                          }
+                        }
+                      },
+                      "-children": [
+                        {
+                          "#comment": "<Sphere></Sphere>"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "Script": {
+                    "@DEF": "Bounce",
+                    "-children": [
+                      {
+                        "#sourceText": [
+                          "ecmascript:",
+                          "\t\t\tfunction newBubble() {",
+                          "\t\t\t    translation = new SFVec3f(0, 0, 0);",
+                          "\t\t\t    velocity = new SFVec3f(",
+                          "\t\t\t    \tMath.random() - 0.5,",
+                          "\t\t\t\tMath.random() - 0.5,",
+                          "\t\t\t\tMath.random() - 0.5);",
+                          "\t\t\t}",
+                          "\t\t\tfunction set_fraction() {",
+                          "\t\t\t    translation = new SFVec3f(",
+                          "\t\t\t    \ttranslation.x + velocity.x,",
+                          "\t\t\t\ttranslation.y + velocity.y,",
+                          "\t\t\t\ttranslation.z + velocity.z);",
+                          "\t\t\t    if (Math.abs(translation.x) > 10) {",
+                          "\t\t\t\t\tnewBubble();",
+                          "\t\t\t    } else if (Math.abs(translation.y) > 10) {",
+                          "\t\t\t\t\tnewBubble();",
+                          "\t\t\t    } else if (Math.abs(translation.z) > 10) {",
+                          "\t\t\t\t\tnewBubble();",
+                          "\t\t\t    } else {",
+                          "\t\t\t\t\tvelocity = new SFVec3f(",
+                          "\t\t\t\t\t\tvelocity.x + Math.random() * 0.2 - 0.1,",
+                          "\t\t\t\t\t\tvelocity.y + Math.random() * 0.2 - 0.1,",
+                          "\t\t\t\t\t\tvelocity.z + Math.random() * 0.2 - 0.1",
+                          "\t\t\t\t\t);",
+                          "\t\t\t    }",
+                          "\t\t\t    animate_flowers();",
+                          "\t\t\t}",
+                          "",
+                          "\t\t\tfunction initialize() {",
+                          "\t\t\t     var cis = [];",
+                          "\t\t\t     newBubble();",
+                          "\t\t\t     resolution = 100;",
+                          "\t\t\t     updateCoordinates(resolution);",
+                          "\t\t\t     for ( i = 0; i < resolution-1; i++) {",
+                          "\t\t\t\tfor ( j = 0; j < resolution-1; j++) {",
+                          "\t\t\t\t     cis.push(i*resolution+j);",
+                          "\t\t\t\t     cis.push(i*resolution+j+1);",
+                          "\t\t\t\t     cis.push((i+1)*resolution+j+1);",
+                          "\t\t\t\t     cis.push((i+1)*resolution+j);",
+                          "\t\t\t\t     cis.push(-1);",
+                          "\t\t\t\t}",
+                          "\t\t\t    }",
+                          "\t\t\t     coordIndexes = new MFInt32(cis);",
+                          "\t\t\t}",
+                          "",
+                          "\t\t\tfunction updateCoordinates(resolution) {",
+                          "\t\t\t     theta = 0.0;",
+                          "\t\t\t     phi = 0.0;",
+                          "\t\t\t     delta = (2 * 3.141592653) / (resolution-1);",
+                          "\t\t\t     var crds = [];",
+                          "\t\t\t     for ( i = 0; i < resolution; i++) {",
+                          "\t\t\t\tfor ( j = 0; j < resolution; j++) {",
+                          "\t\t\t\t\trho = a + b * Math.cos(c * theta) * Math.cos(d * phi);",
+                          "\t\t\t\t\tcrds.push(new SFVec3f(",
+                          "\t\t\t\t\t\trho * Math.cos(phi) * Math.cos(theta),",
+                          "\t\t\t\t\t\trho * Math.cos(phi) * Math.sin(theta),",
+                          "\t\t\t\t\t\trho * Math.sin(phi)",
+                          "\t\t\t\t\t));",
+                          "\t\t\t\t\ttheta += delta;",
+                          "\t\t\t\t}",
+                          "\t\t\t\tphi += delta;",
+                          "\t\t\t\tcoordinates = new MFVec3f(crds);",
+                          "\t\t\t     }",
+                          "\t\t\t}",
+                          "",
+                          "\t\t\tfunction animate_flowers(fraction, eventTime) {",
+                          "\t\t\t\tchoice = Math.floor(Math.random() * 4);",
+                          "\t\t\t\tswitch (choice) {",
+                          "\t\t\t\tcase 0:",
+                          "\t\t\t\t\ta += Math.random() * 0.2 - 0.1;",
+                          "\t\t\t\t\tbreak;",
+                          "\t\t\t\tcase 1:",
+                          "\t\t\t\t\tb += Math.random() * 0.2 - 0.1;",
+                          "\t\t\t\t\tbreak;",
+                          "\t\t\t\tcase 2:",
+                          "\t\t\t\t\tc += Math.random() * 2 - 1;",
+                          "\t\t\t\t\tbreak;",
+                          "\t\t\t\tcase 3:",
+                          "\t\t\t\t\td += Math.random() * 2 - 1;",
+                          "\t\t\t\t\tbreak;",
+                          "\t\t\t\t}",
+                          "\t\t\t\tif (a > 1) {",
+                          "\t\t\t\t\ta =  0.5;",
+                          "\t\t\t\t}",
+                          "\t\t\t\tif (b > 1) {",
+                          "\t\t\t\t\tb =  0.5;",
+                          "\t\t\t\t}",
+                          "\t\t\t\tif (c < 1) {",
+                          "\t\t\t\t\tc =  4;",
+                          "\t\t\t\t}",
+                          "\t\t\t\tif (d < 1) {",
+                          "\t\t\t\t\td =  4;",
+                          "\t\t\t\t}",
+                          "\t\t\t\tif (c > 10) {",
+                          "\t\t\t\t\tc = 4;",
+                          "\t\t\t\t}",
+                          "\t\t\t\tif (d > 10) {",
+                          "\t\t\t\t\td = 4;",
+                          "\t\t\t\t}",
+                          "\t\t\t\tresolution = 100;",
+                          "\t\t\t\tupdateCoordinates(resolution);",
+                          "\t\t\t}",
+                          ""
+                        ]
+                      }
+                    ],
+                    "field": [
+                      {
+                        "@name": "translation",
+                        "@accessType": "inputOutput",
+                        "@type": "SFVec3f",
+                        "@value": "0 0 0"
+                      },
+                      {
+                        "@name": "velocity",
+                        "@accessType": "inputOutput",
+                        "@type": "SFVec3f",
+                        "@value": "0 0 0"
+                      },
+                      {
+                        "@name": "set_fraction",
+                        "@accessType": "inputOnly",
+                        "@type": "SFTime"
+                      },
+                      {
+                        "@name": "coordinates",
+                        "@accessType": "inputOutput",
+                        "@type": "MFVec3f"
+                      },
+                      {
+                        "@name": "coordIndexes",
+                        "@accessType": "outputOnly",
+                        "@type": "MFInt32"
+                      },
+                      {
+                        "@name": "a",
+                        "@type": "SFFloat",
+                        "@accessType": "inputOutput",
+                        "@value": "0.5"
+                      },
+                      {
+                        "@name": "b",
+                        "@type": "SFFloat",
+                        "@accessType": "inputOutput",
+                        "@value": "0.5"
+                      },
+                      {
+                        "@name": "c",
+                        "@type": "SFFloat",
+                        "@accessType": "inputOutput",
+                        "@value": "3"
+                      },
+                      {
+                        "@name": "d",
+                        "@type": "SFFloat",
+                        "@accessType": "inputOutput",
+                        "@value": "3"
+                      },
+                      {
+                        "@name": "tdelta",
+                        "@type": "SFFloat",
+                        "@accessType": "inputOutput",
+                        "@value": "0.5"
+                      },
+                      {
+                        "@name": "pdelta",
+                        "@type": "SFFloat",
+                        "@accessType": "inputOutput",
+                        "@value": "0.5"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "TimeSensor": {
+                    "@DEF": "TourTime",
+                    "@cycleInterval": "0.15",
+                    "@loop": true
+                  }
+                },
+                {
+                  "TimeSensor": {
+                    "@DEF": "SongTime",
+                    "@loop": true
+                  }
+                },
+                {
+                  "Sound": {
+                    "@maxBack": 100,
+                    "@maxFront": 100,
+                    "@minBack": 20,
+                    "@minFront": 20,
+                    "-source": {
+                      "AudioClip": {
+                        "@DEF": "AudioClip",
+                        "@description": "Chandubabamusic #1",
+                        "@url": [
+                          "../resources/chandubabamusic1.wav"
+                        ]
+                      }
+                    }
+                  }
+                },
+                {
+                  "#comment": "<ROUTE fromField=\"coordIndexes\" fromNode=\"Bounce\" toField=\"set_coordIndex\" toNode=\"Orbit\"/> <ROUTE fromField=\"coordinates\" fromNode=\"Bounce\" toField=\"set_point\" toNode=\"OrbitCoordinates\"/>"
+                }
+              ],
+              "ROUTE": [
+                {
+                  "@fromField": "cycleTime",
+                  "@fromNode": "SongTime",
+                  "@toField": "startTime",
+                  "@toNode": "AudioClip"
+                },
+                {
+                  "@fromNode": "TourTime",
+                  "@fromField": "cycleTime",
+                  "@toNode": "Bounce",
+                  "@toField": "set_fraction"
+                },
+                {
+                  "@fromNode": "Bounce",
+                  "@fromField": "translation",
+                  "@toNode": "transform",
+                  "@toField": "set_translation"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "Transform": {
+            "ProtoInstance": {
+              "@name": "flower"
+            },
+            "#comment": "<ProtoInstance name=\"flower\"/> <ProtoInstance name=\"flower\"/>"
+          }
+        }
+      ]
+    }
+  }
+}

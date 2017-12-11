@@ -1,0 +1,373 @@
+{
+  "X3D": {
+    "@xmlns:xsd": "http://www.w3.org/2001/XMLSchema-instance",
+    "@profile": "Immersive",
+    "@version": "3.3",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "head": {
+      "-children": [
+        {
+          "component": {
+            "@name": "Shaders",
+            "@level": 1
+          }
+        },
+        {
+          "component": {
+            "@name": "CubeMapTexturing",
+            "@level": 1
+          }
+        }
+      ],
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "flowerproto.x3d"
+        },
+        {
+          "@name": "creator",
+          "@content": "John Carlson"
+        },
+        {
+          "@name": "description",
+          "@content": "A flower proto with configurable shaders"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3D-Edit, https://savage.nps.edu/X3D-Edit"
+        },
+        {
+          "@name": "identifier",
+          "@content": "https://coderextreme.net/X3DJSONLD/flowerproto.x3d"
+        }
+      ]
+    },
+    "Scene": {
+      "ProtoDeclare": {
+        "@name": "FlowerProto",
+        "ProtoInterface": {
+          "field": [
+            {
+              "@name": "vertex",
+              "@accessType": "inputOutput",
+              "@type": "MFString",
+              "@value": "\"../shaders/gl_flowers_chromatic.vs\""
+            },
+            {
+              "@name": "fragment",
+              "@accessType": "inputOutput",
+              "@type": "MFString",
+              "@value": "\"../shaders/pc_flowers.fs\""
+            }
+          ]
+        },
+        "ProtoBody": {
+          "Transform": {
+            "@DEF": "transform",
+            "-children": [
+              {
+                "Shape": {
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            0.7,
+                            0.7,
+                            0.7
+                          ]
+                        }
+                      },
+                      "-texture": {
+                        "ComposedCubeMapTexture": {
+                          "@DEF": "texture",
+                          "-back": {
+                            "ImageTexture": {
+                              "@url": [
+                                "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
+                                "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"
+                              ]
+                            }
+                          },
+                          "-bottom": {
+                            "ImageTexture": {
+                              "@url": [
+                                "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
+                                "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"
+                              ]
+                            }
+                          },
+                          "-front": {
+                            "ImageTexture": {
+                              "@url": [
+                                "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
+                                "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"
+                              ]
+                            }
+                          },
+                          "-left": {
+                            "ImageTexture": {
+                              "@url": [
+                                "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
+                                "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"
+                              ]
+                            }
+                          },
+                          "-right": {
+                            "ImageTexture": {
+                              "@url": [
+                                "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
+                                "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"
+                              ]
+                            }
+                          },
+                          "-top": {
+                            "ImageTexture": {
+                              "@url": [
+                                "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
+                                "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      "ComposedShader": {
+                        "@DEF": "shader",
+                        "@language": "GLSL",
+                        "field": [],
+                        "-children": [
+                          {
+                            "#comment": "<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>"
+                          },
+                          {
+                            "ShaderPart": {
+                              "@type": "VERTEX",
+                              "IS": {
+                                "connect": [
+                                  {
+                                    "@nodeField": "url",
+                                    "@protoField": "vertex"
+                                  }
+                                ]
+                              }
+                            }
+                          },
+                          {
+                            "ShaderPart": {
+                              "@type": "FRAGMENT",
+                              "IS": {
+                                "connect": [
+                                  {
+                                    "@nodeField": "url",
+                                    "@protoField": "fragment"
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "-geometry": {
+                    "Sphere": {}
+                  }
+                }
+              },
+              {
+                "Script": {
+                  "@DEF": "Bounce",
+                  "-children": [
+                    {
+                      "#sourceText": [
+                        "ecmascript:",
+                        "\t\t\tfunction initialize() {",
+                        "\t\t\t    translation = new SFVec3f(0, 0, 0);",
+                        "\t\t\t    velocity = new SFVec3f(",
+                        "\t\t\t    \tMath.random() - 0.5,",
+                        "\t\t\t\tMath.random() - 0.5,",
+                        "\t\t\t\tMath.random() - 0.5);",
+                        "\t\t\t}",
+                        "\t\t\tfunction set_fraction() {",
+                        "\t\t\t    translation = new SFVec3f(",
+                        "\t\t\t    \ttranslation.x + velocity.x,",
+                        "\t\t\t\ttranslation.y + velocity.y,",
+                        "\t\t\t\ttranslation.z + velocity.z);",
+                        "\t\t\t    for (var j = 0; j <= 2; j++) {",
+                        "\t\t\t\t    if (Math.abs(translation.x) > 10) {",
+                        "\t\t\t\t\tinitialize();",
+                        "\t\t\t\t    } else if (Math.abs(translation.y) > 10) {",
+                        "\t\t\t\t\tinitialize();",
+                        "\t\t\t\t    } else if (Math.abs(translation.z) > 10) {",
+                        "\t\t\t\t\tinitialize();",
+                        "\t\t\t\t    } else {",
+                        "\t\t\t\t\tvelocity.x += Math.random() * 0.2 - 0.1;",
+                        "\t\t\t\t\tvelocity.y += Math.random() * 0.2 - 0.1;",
+                        "\t\t\t\t\tvelocity.z += Math.random() * 0.2 - 0.1;",
+                        "\t\t\t\t    }",
+                        "\t\t\t    }",
+                        "\t\t\t    animate_flowers();",
+                        "\t\t\t}",
+                        "",
+                        "\t\t\tfunction animate_flowers(fraction, eventTime) {",
+                        "\t\t\t\tchoice = Math.floor(Math.random() * 4);",
+                        "\t\t\t\tswitch (choice) {",
+                        "\t\t\t\tcase 0:",
+                        "\t\t\t\t\ta += Math.random() * 0.2 - 0.1;",
+                        "\t\t\t\t\tbreak;",
+                        "\t\t\t\tcase 1:",
+                        "\t\t\t\t\tb += Math.random() * 0.2 - 0.1;",
+                        "\t\t\t\t\tbreak;",
+                        "\t\t\t\tcase 2:",
+                        "\t\t\t\t\tc += Math.random() * 2 - 1;",
+                        "\t\t\t\t\tbreak;",
+                        "\t\t\t\tcase 3:",
+                        "\t\t\t\t\td += Math.random() * 2 - 1;",
+                        "\t\t\t\t\tbreak;",
+                        "\t\t\t\t}",
+                        "\t\t\t\ttdelta += 0.5;",
+                        "\t\t\t\tpdelta += 0.5;",
+                        "\t\t\t\tif (a > 1) {",
+                        "\t\t\t\t\ta =  0.5;",
+                        "\t\t\t\t}",
+                        "\t\t\t\tif (b > 1) {",
+                        "\t\t\t\t\tb =  0.5;",
+                        "\t\t\t\t}",
+                        "\t\t\t\tif (c < 1) {",
+                        "\t\t\t\t\tc =  4;",
+                        "\t\t\t\t}",
+                        "\t\t\t\tif (d < 1) {",
+                        "\t\t\t\t\td =  4;",
+                        "\t\t\t\t}",
+                        "\t\t\t\tif (c > 10) {",
+                        "\t\t\t\t\tc = 4;",
+                        "\t\t\t\t}",
+                        "\t\t\t\tif (d > 10) {",
+                        "\t\t\t\t\td = 4;",
+                        "\t\t\t\t}",
+                        "\t\t\t}",
+                        ""
+                      ]
+                    }
+                  ],
+                  "field": [
+                    {
+                      "@name": "translation",
+                      "@accessType": "inputOutput",
+                      "@type": "SFVec3f",
+                      "@value": "0 0 0"
+                    },
+                    {
+                      "@name": "velocity",
+                      "@accessType": "inputOutput",
+                      "@type": "SFVec3f",
+                      "@value": "0 0 0"
+                    },
+                    {
+                      "@name": "set_fraction",
+                      "@accessType": "inputOnly",
+                      "@type": "SFTime"
+                    },
+                    {
+                      "@name": "a",
+                      "@type": "SFFloat",
+                      "@accessType": "inputOutput",
+                      "@value": "0.5"
+                    },
+                    {
+                      "@name": "b",
+                      "@type": "SFFloat",
+                      "@accessType": "inputOutput",
+                      "@value": "0.5"
+                    },
+                    {
+                      "@name": "c",
+                      "@type": "SFFloat",
+                      "@accessType": "inputOutput",
+                      "@value": "3"
+                    },
+                    {
+                      "@name": "d",
+                      "@type": "SFFloat",
+                      "@accessType": "inputOutput",
+                      "@value": "3"
+                    },
+                    {
+                      "@name": "tdelta",
+                      "@type": "SFFloat",
+                      "@accessType": "inputOutput",
+                      "@value": "0.5"
+                    },
+                    {
+                      "@name": "pdelta",
+                      "@type": "SFFloat",
+                      "@accessType": "inputOutput",
+                      "@value": "0.5"
+                    }
+                  ]
+                }
+              },
+              {
+                "TimeSensor": {
+                  "@DEF": "TourTime",
+                  "@cycleInterval": "0.15",
+                  "@loop": true
+                }
+              }
+            ],
+            "ROUTE": [
+              {
+                "@fromNode": "TourTime",
+                "@fromField": "cycleTime",
+                "@toNode": "Bounce",
+                "@toField": "set_fraction"
+              },
+              {
+                "@fromNode": "Bounce",
+                "@fromField": "translation_changed",
+                "@toNode": "transform",
+                "@toField": "set_translation"
+              },
+              {
+                "@fromNode": "Bounce",
+                "@fromField": "a",
+                "@toNode": "shader",
+                "@toField": "a"
+              },
+              {
+                "@fromNode": "Bounce",
+                "@fromField": "b",
+                "@toNode": "shader",
+                "@toField": "b"
+              },
+              {
+                "@fromNode": "Bounce",
+                "@fromField": "c",
+                "@toNode": "shader",
+                "@toField": "c"
+              },
+              {
+                "@fromNode": "Bounce",
+                "@fromField": "d",
+                "@toNode": "shader",
+                "@toField": "d"
+              },
+              {
+                "@fromNode": "Bounce",
+                "@fromField": "tdelta",
+                "@toNode": "shader",
+                "@toField": "tdelta"
+              },
+              {
+                "@fromNode": "Bounce",
+                "@fromField": "pdelta",
+                "@toNode": "shader",
+                "@toField": "pdelta"
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}
