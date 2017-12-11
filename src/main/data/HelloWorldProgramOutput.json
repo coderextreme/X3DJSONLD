@@ -50,7 +50,7 @@
           },
           {
             "@name":"modified",
-            "@content":"9 December 2017"
+            "@content":"11 December 2017"
           },
           {
             "@name":"generator",
@@ -499,7 +499,7 @@
           { "ProtoDeclare":
             {
               "@name":"ArtDeco01Material",
-              "@appinfo":"tooltip: ArtDeco01 prototype is a Material node",
+              "@appinfo":"tooltip: ArtDeco01Material prototype is a Material node",
               "ProtoInterface": {
                   "field": [
                     {
@@ -507,7 +507,7 @@
                       "@accessType":"inputOutput",
                       "@appinfo":"tooltip for descriptionField",
                       "@type":"SFString",
-                      "@value":"ArtDeco01 prototype is a Material node"
+                      "@value":"ArtDeco01Material prototype is a Material node"
                     },
                     {
                       "@name":"enabled",
@@ -561,7 +561,7 @@
             {
               "@name":"ArtDeco02Material",
               "@appinfo":"this is a different Material node",
-              "@url":["http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02"],
+              "@url":["http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"],
               "field": [
                 {
                   "@name":"description",
@@ -590,22 +590,22 @@
                     "-children":[
                       { "ProtoInstance":
                         {
-                          "@name":"ArtDeco01",
+                          "@name":"ArtDeco01Material",
                           "fieldValue": [
                             {
                               "@name":"description",
-                              "@value":"ArtDeco01 can substitute for a Material node"
+                              "@value":"ArtDeco01Material can substitute for a Material node"
                             }
                           ],
                           "-children":[
                             {
-                              "#comment":"[HelloWorldProgram diagnostic] ArtDeco01ProtoInstance.getNodeType()=\"ERROR_UNKNOWN_PROTOINSTANCE_NODE_TYPE: ProtoInstance name='ArtDeco01' has no corresponding ProtoDeclareObject or ExternProtoDeclareObject to provide type.\""
+                              "#comment":"[HelloWorldProgram diagnostic] ArtDeco01ProtoInstance.getNodeType()=\"Material\""
                             }
                           ]
                         }
                       },
                       {
-                        "#comment":"ArtDeco01 Material prototype goes here..."
+                        "#comment":"ArtDeco01Material prototype goes here..."
                       }
                     ]
                   }
@@ -628,22 +628,22 @@
                     "-children":[
                       { "ProtoInstance":
                         {
-                          "@name":"ArtDeco02",
+                          "@name":"ArtDeco02Material",
                           "fieldValue": [
                             {
                               "@name":"description",
-                              "@value":"ArtDeco02 can substitute for another Material node"
+                              "@value":"ArtDeco02Material can substitute for another Material node"
                             }
                           ],
                           "-children":[
                             {
-                              "#comment":"[HelloWorldProgram diagnostic] ArtDeco02ProtoInstance.getNodeType()=\"ERROR_UNKNOWN_PROTOINSTANCE_NODE_TYPE: ProtoInstance name='ArtDeco02' has no corresponding ProtoDeclareObject or ExternProtoDeclareObject to provide type.\""
+                              "#comment":"[HelloWorldProgram diagnostic] ArtDeco02ProtoInstance.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time, TODO X3DJSAIL needs to add further capability.\""
                             }
                           ]
                         }
                       },
                       {
-                        "#comment":"ArtDeco02 Material prototype goes here..."
+                        "#comment":"ArtDeco02Material prototype goes here..."
                       }
                     ]
                   }
@@ -931,33 +931,47 @@
           },
           { "Sound":
             {
+              "@location":[0,1.6,0],
               "-source":
                 { "AudioClip":
                   {
-                    "@url":["chimes.wav","http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"]
+                    "@description":"chimes",
+                    "@url":["chimes.wav","http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"],
+                    "-children":[
+                      {
+                        "#comment":"Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d"
+                      }
+                    ]
                   }
                 },
               "-children":[
                 {
-                  "#comment":"Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d"
+                  "#comment":"set sound-ellipsoid location height at 1.6m to match typical avatar height"
                 }
               ]
             }
           },
           { "Sound":
             {
+              "@location":[0,1.6,0],
               "-source":
                 { "MovieTexture":
                   {
-                    "@url":["mpgsys.mpg","http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"]
+                    "@description":"mpgsys.mpg from ConformanceNist suite",
+                    "@url":["mpgsys.mpg","http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"],
+                    "-children":[
+                      {
+                        "#comment":"Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d"
+                      },
+                      {
+                        "#comment":"Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\""
+                      }
+                    ]
                   }
                 },
               "-children":[
                 {
-                  "#comment":"Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d"
-                },
-                {
-                  "#comment":"Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\""
+                  "#comment":"set sound-ellipsoid location height at 1.6m to match typical avatar height"
                 }
               ]
             }

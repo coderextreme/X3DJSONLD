@@ -11,7 +11,7 @@
         <meta name='reference' content='http://www.web3d.org/specifications/java/X3DJSAIL.html'/>
         <meta name='generator' content='HelloWorldProgramOutput.java'/>
         <meta name='created' content='6 September 2016'/>
-        <meta name='modified' content='9 December 2017'/>
+        <meta name='modified' content='11 December 2017'/>
         <meta name='generator' content='X3D Java Scene Access Interface Library (X3DJSAIL)'/>
         <meta name='generator' content='http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java'/>
         <meta name='generator' content='Netbeans http://www.netbeans.org'/>
@@ -119,9 +119,9 @@ function colorInput (eventValue) // Example source code
             <ROUTE fromField='value_changed' fromNode='ColorAnimator' toField='colorInput' toNode='colorTypeConversionScript'/>
             <ROUTE fromField='fraction_changed' fromNode='ColorClock' toField='set_fraction' toNode='ColorAnimator'/>
         </Group>
-        <ProtoDeclare name='ArtDeco01Material' appinfo='tooltip: ArtDeco01 prototype is a Material node'>
+        <ProtoDeclare name='ArtDeco01Material' appinfo='tooltip: ArtDeco01Material prototype is a Material node'>
             <ProtoInterface>
-                <field name='description' accessType='inputOutput' appinfo='tooltip for descriptionField' type='SFString' value='ArtDeco01 prototype is a Material node'/>
+                <field name='description' accessType='inputOutput' appinfo='tooltip for descriptionField' type='SFString' value='ArtDeco01Material prototype is a Material node'/>
                 <field name='enabled' accessType='inputOutput' type='SFBool' value='true'/>
             </ProtoInterface>
             <ProtoBody>
@@ -137,28 +137,28 @@ function colorInput (eventValue) // Example source code
                 </TouchSensor>
             </ProtoBody>
         </ProtoDeclare>
-        <ExternProtoDeclare name='ArtDeco02Material' appinfo='this is a different Material node' url='"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02" "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02"'>
+        <ExternProtoDeclare name='ArtDeco02Material' appinfo='this is a different Material node' url='"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material" "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"'>
             <field name='description' accessType='inputOutput' appinfo='tooltip for descriptionField' type='SFString'/>
             <!-- [HelloWorldProgram diagnostic] ArtDeco02ExternProtoDeclare.getNodeType()="ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time, TODO X3DJSAIL needs to add further capability." -->
         </ExternProtoDeclare>
         <!-- Tested ArtDeco01ProtoInstance, ArtDeco02ProtoInstance for improper node type when ProtoInstance is added in wrong place -->
         <Shape DEF='TestShape1'>
             <Appearance DEF='TestAppearance1'>
-                <ProtoInstance name='ArtDeco01'>
-                    <fieldValue name='description' value='ArtDeco01 can substitute for a Material node'/>
-                    <!-- [HelloWorldProgram diagnostic] ArtDeco01ProtoInstance.getNodeType()="ERROR_UNKNOWN_PROTOINSTANCE_NODE_TYPE: ProtoInstance name='ArtDeco01' has no corresponding ProtoDeclareObject or ExternProtoDeclareObject to provide type." -->
+                <ProtoInstance name='ArtDeco01Material'>
+                    <fieldValue name='description' value='ArtDeco01Material can substitute for a Material node'/>
+                    <!-- [HelloWorldProgram diagnostic] ArtDeco01ProtoInstance.getNodeType()="Material" -->
                 </ProtoInstance>
-                <!-- ArtDeco01 Material prototype goes here... -->
+                <!-- ArtDeco01Material prototype goes here... -->
             </Appearance>
             <Sphere radius='0.001'/>
         </Shape>
         <Shape DEF='TestShape2'>
             <Appearance DEF='TestAppearance2'>
-                <ProtoInstance name='ArtDeco02'>
-                    <fieldValue name='description' value='ArtDeco02 can substitute for another Material node'/>
-                    <!-- [HelloWorldProgram diagnostic] ArtDeco02ProtoInstance.getNodeType()="ERROR_UNKNOWN_PROTOINSTANCE_NODE_TYPE: ProtoInstance name='ArtDeco02' has no corresponding ProtoDeclareObject or ExternProtoDeclareObject to provide type." -->
+                <ProtoInstance name='ArtDeco02Material'>
+                    <fieldValue name='description' value='ArtDeco02Material can substitute for another Material node'/>
+                    <!-- [HelloWorldProgram diagnostic] ArtDeco02ProtoInstance.getNodeType()="ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time, TODO X3DJSAIL needs to add further capability." -->
                 </ProtoInstance>
-                <!-- ArtDeco02 Material prototype goes here... -->
+                <!-- ArtDeco02Material prototype goes here... -->
             </Appearance>
             <Cone bottomRadius='0.001' height='0.001'/>
         </Shape>
@@ -255,14 +255,18 @@ function clockTrigger (timeValue)
             <!-- ... get1Value[3]=3.0, remove[1]=0 2 3 4 5 6, set1Value(0,10)=10 2 3 4 5 6, multiply(2)=20 4 6 8 10 12, clear= -->
             <!-- SFVec3f default=0 0 0, initial=1 2 3, setValue=4 5 6, multiply(2)=8 10 12, normalize()=0.45584232 0.5698029 0.68376344 -->
         </Group>
-        <Sound>
-            <AudioClip url='"chimes.wav" "http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"'/>
-            <!-- Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d -->
+        <Sound location='0 1.6 0'>
+            <AudioClip description='chimes' url='"chimes.wav" "http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"'>
+                <!-- Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d -->
+            </AudioClip>
+            <!-- set sound-ellipsoid location height at 1.6m to match typical avatar height -->
         </Sound>
-        <Sound>
-            <MovieTexture containerField='source' url='"mpgsys.mpg" "http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"'/>
-            <!-- Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d -->
-            <!-- Expected containerField='source', allowed containerField values="texture" "source" "back" "bottom" "front" "left" "right" "top" "backTexture" "bottomTexture" "frontTexture" "leftTexture" "rightTexture" "topTexture" -->
+        <Sound location='0 1.6 0'>
+            <MovieTexture containerField='source' description='mpgsys.mpg from ConformanceNist suite' url='"mpgsys.mpg" "http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"'>
+                <!-- Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d -->
+                <!-- Expected containerField='source', allowed containerField values="texture" "source" "back" "bottom" "front" "left" "right" "top" "backTexture" "bottomTexture" "frontTexture" "leftTexture" "rightTexture" "topTexture" -->
+            </MovieTexture>
+            <!-- set sound-ellipsoid location height at 1.6m to match typical avatar height -->
         </Sound>
         <!-- Test success:  AnchorObject.isNode()=true,              siteAnchor.isNode()=true -->
         <!-- Test success:  AnchorObject.isStatement()=false,        siteAnchor.isStatement()=false -->
