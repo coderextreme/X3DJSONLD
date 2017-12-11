@@ -81,7 +81,7 @@ X3D0.setHead(head1)
 Scene16 = SceneObject()
 
 
-Scene16.addComments(CommentsBlock("=============== Camera =============="))
+Scene16.addComments(CommentsBlock("""=============== Camera =============="""))
 ProtoDeclare17 = ProtoDeclareObject()
 ProtoDeclare17.setName("Camera")
 ProtoDeclare17.setAppinfo("Camera node provides direct control of scene view to enable cinematic camera animation shot by shot and move by move along with still digital-photography settings for offline rendering of camera images.")
@@ -89,7 +89,7 @@ ProtoDeclare17.setAppinfo("Camera node provides direct control of scene view to 
 ProtoInterface18 = ProtoInterfaceObject()
 
 
-ProtoInterface18.addComments(CommentsBlock("Viewpoint-related fields, NavigationInfo-related fields and Camera-unique fields"))
+ProtoInterface18.addComments(CommentsBlock("""Viewpoint-related fields, NavigationInfo-related fields and Camera-unique fields"""))
 field19 = fieldObject()
 field19.setType(fieldObject.TYPE_SFSTRING)
 field19.setName("description")
@@ -172,7 +172,7 @@ field29.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
 field29.setAppinfo("Array of CameraShot nodes which in turn contain CameraMovement nodes")
 
 
-field29.addComments(CommentsBlock("initialization nodes (if any) go here"))
+field29.addComments(CommentsBlock("""initialization nodes (if any) go here"""))
 ProtoInterface18.addField(field29)
 field30 = fieldObject()
 field30.setType(fieldObject.TYPE_SFBOOL)
@@ -259,7 +259,7 @@ field40.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
 field40.setAppinfo("OfflineRender node")
 
 
-field40.addComments(CommentsBlock("initialization node (if any) goes here"))
+field40.addComments(CommentsBlock("""initialization node (if any) goes here"""))
 ProtoInterface18.addField(field40)
 field41 = fieldObject()
 field41.setType(fieldObject.TYPE_SFBOOL)
@@ -315,7 +315,7 @@ IS44.addConnect(connect51)
 Viewpoint43.setIS(IS44)
 ProtoBody42.addChild(Viewpoint43)
 
-ProtoBody42.addComments(CommentsBlock("NavInfo EXAMINE used since some browsers (InstantReality) try to lock view to vertical when flying to avoid disorientation"))
+ProtoBody42.addComments(CommentsBlock("""NavInfo EXAMINE used since some browsers (InstantReality) try to lock view to vertical when flying to avoid disorientation"""))
 NavigationInfo52 = NavigationInfoObject()
 NavigationInfo52.setType(["EXAMINE","FLY","ANY"])
 NavigationInfo52.setDEF("CameraNavInfo")
@@ -338,17 +338,17 @@ connect56.setProtoField("farClipPlane")
 
 IS53.addConnect(connect56)
 
-IS53.addComments(CommentsBlock("No need to bind outputs bindTime, isBound from NavigationInfo since Viewpoint outputs will suffice. TODO inform BitManagement that bindTime field is missing."))
+IS53.addComments(CommentsBlock("""No need to bind outputs bindTime, isBound from NavigationInfo since Viewpoint outputs will suffice. TODO inform BitManagement that bindTime field is missing."""))
 NavigationInfo52.setIS(IS53)
 ProtoBody42.addChild(NavigationInfo52)
 
-ProtoBody42.addComments(CommentsBlock("this DirectionalLight replaces NavigationInfo headlight in order to add color capability"))
+ProtoBody42.addComments(CommentsBlock("""this DirectionalLight replaces NavigationInfo headlight in order to add color capability"""))
 DirectionalLight57 = DirectionalLightObject()
 DirectionalLight57.setDEF("CameraDirectionalLight")
 DirectionalLight57.setGlobal(True)
 
 
-DirectionalLight57.addComments(CommentsBlock("TODO confirm other default field values match NavigationInfo spec"))
+DirectionalLight57.addComments(CommentsBlock("""TODO confirm other default field values match NavigationInfo spec"""))
 IS58 = ISObject()
 
 connect59 = connectObject()
@@ -416,7 +416,7 @@ Script70.setDirectOutput(True)
 Script70.setMustEvaluate(True)
 
 
-Script70.addComments(CommentsBlock("binding is controlled externally, all camera operations proceed the same regardless of whether bound or not"))
+Script70.addComments(CommentsBlock("""binding is controlled externally, all camera operations proceed the same regardless of whether bound or not"""))
 field71 = fieldObject()
 field71.setType(fieldObject.TYPE_SFSTRING)
 field71.setName("description")
@@ -480,7 +480,7 @@ field79.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
 field79.setAppinfo("Array of CameraShot nodes which in turn contain CameraMovement nodes")
 
 
-field79.addComments(CommentsBlock("initialization nodes (if any) go here"))
+field79.addComments(CommentsBlock("""initialization nodes (if any) go here"""))
 Script70.addField(field79)
 field80 = fieldObject()
 field80.setType(fieldObject.TYPE_SFCOLOR)
@@ -538,7 +538,7 @@ field87.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
 field87.setAppinfo("OfflineRender node")
 
 
-field87.addComments(CommentsBlock("initialization node (if any) goes here"))
+field87.addComments(CommentsBlock("""initialization node (if any) goes here"""))
 Script70.addField(field87)
 field88 = fieldObject()
 field88.setType(fieldObject.TYPE_SFNODE)
@@ -1142,7 +1142,7 @@ ProtoBody42.addChild(ROUTE130)
 ProtoDeclare17.setProtoBody(ProtoBody42)
 Scene16.addChild(ProtoDeclare17)
 
-Scene16.addComments(CommentsBlock("=============== CameraShot =============="))
+Scene16.addComments(CommentsBlock("""=============== CameraShot =============="""))
 ProtoDeclare131 = ProtoDeclareObject()
 ProtoDeclare131.setName("CameraShot")
 ProtoDeclare131.setAppinfo("CameraShot collects a specific set of CameraMovement animations that make up an individual shot.")
@@ -1171,7 +1171,7 @@ field135.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
 field135.setAppinfo("Set of CameraMovement nodes")
 
 
-field135.addComments(CommentsBlock("initializing CameraMovement nodes are inserted here by scene author using ProtoInstance"))
+field135.addComments(CommentsBlock("""initializing CameraMovement nodes are inserted here by scene author using ProtoInstance"""))
 ProtoInterface132.addField(field135)
 field136 = fieldObject()
 field136.setType(fieldObject.TYPE_SFVEC3F)
@@ -1272,7 +1272,7 @@ field149.setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
 field149.setAppinfo("Set of CameraMovement nodes")
 
 
-field149.addComments(CommentsBlock("initialization nodes (if any) go here"))
+field149.addComments(CommentsBlock("""initialization nodes (if any) go here"""))
 Script146.addField(field149)
 field150 = fieldObject()
 field150.setType(fieldObject.TYPE_SFVEC3F)
@@ -1518,11 +1518,11 @@ Script146.setSourceCode("ecmascript:\n"+
 "")
 ProtoBody145.addChild(Script146)
 
-ProtoBody145.addComments(CommentsBlock("Add any ROUTEs here, going from Script to other nodes within ProtoBody"))
+ProtoBody145.addComments(CommentsBlock("""Add any ROUTEs here, going from Script to other nodes within ProtoBody"""))
 ProtoDeclare131.setProtoBody(ProtoBody145)
 Scene16.addChild(ProtoDeclare131)
 
-Scene16.addComments(CommentsBlock("=============== CameraMovement =============="))
+Scene16.addComments(CommentsBlock("""=============== CameraMovement =============="""))
 ProtoDeclare175 = ProtoDeclareObject()
 ProtoDeclare175.setName("CameraMovement")
 ProtoDeclare175.setAppinfo("CameraMovement node defines a single camera movement animation including goalPosition, goalOrientation, goalAimPoint and goalFieldOfView.")
@@ -1627,11 +1627,11 @@ ProtoDeclare175.setProtoInterface(ProtoInterface176)
 ProtoBody189 = ProtoBodyObject()
 
 
-ProtoBody189.addComments(CommentsBlock("First node determines node type of this prototype"))
+ProtoBody189.addComments(CommentsBlock("""First node determines node type of this prototype"""))
 
-ProtoBody189.addComments(CommentsBlock("Subsequent nodes do not render, but still must be a valid X3D subgraph"))
+ProtoBody189.addComments(CommentsBlock("""Subsequent nodes do not render, but still must be a valid X3D subgraph"""))
 
-ProtoBody189.addComments(CommentsBlock("Script holds CameraMovement initialization values for query by parent CameraShot, and also permits changing values via events"))
+ProtoBody189.addComments(CommentsBlock("""Script holds CameraMovement initialization values for query by parent CameraShot, and also permits changing values via events"""))
 Script190 = ScriptObject()
 Script190.setDEF("CameraMovementScript")
 Script190.setDirectOutput(True)
@@ -1878,11 +1878,11 @@ Script190.setSourceCode("ecmascript:\n"+
 "")
 ProtoBody189.addChild(Script190)
 
-ProtoBody189.addComments(CommentsBlock("Add any ROUTEs here, going from Script to other nodes within ProtoBody"))
+ProtoBody189.addComments(CommentsBlock("""Add any ROUTEs here, going from Script to other nodes within ProtoBody"""))
 ProtoDeclare175.setProtoBody(ProtoBody189)
 Scene16.addChild(ProtoDeclare175)
 
-Scene16.addComments(CommentsBlock("=============== OfflineRender =============="))
+Scene16.addComments(CommentsBlock("""=============== OfflineRender =============="""))
 ProtoDeclare216 = ProtoDeclareObject()
 ProtoDeclare216.setName("OfflineRender")
 ProtoDeclare216.setAppinfo("OfflineRender defines a parameters for offline rendering of Camera animation output to a movie file (or possibly a still shot).")
@@ -1890,7 +1890,7 @@ ProtoDeclare216.setAppinfo("OfflineRender defines a parameters for offline rende
 ProtoInterface217 = ProtoInterfaceObject()
 
 
-ProtoInterface217.addComments(CommentsBlock("TODO non-photorealistic rendering (NPR) parameters"))
+ProtoInterface217.addComments(CommentsBlock("""TODO non-photorealistic rendering (NPR) parameters"""))
 field218 = fieldObject()
 field218.setType(fieldObject.TYPE_SFSTRING)
 field218.setName("description")
@@ -1979,9 +1979,9 @@ ProtoDeclare216.setProtoInterface(ProtoInterface217)
 ProtoBody229 = ProtoBodyObject()
 
 
-ProtoBody229.addComments(CommentsBlock("First node determines node type of this prototype"))
+ProtoBody229.addComments(CommentsBlock("""First node determines node type of this prototype"""))
 
-ProtoBody229.addComments(CommentsBlock("Subsequent nodes do not render, but still must be a valid X3D subgraph"))
+ProtoBody229.addComments(CommentsBlock("""Subsequent nodes do not render, but still must be a valid X3D subgraph"""))
 Script230 = ScriptObject()
 Script230.setDEF("OfflineRenderScript")
 Script230.setMustEvaluate(True)
@@ -2179,11 +2179,11 @@ Script230.setSourceCode("ecmascript:\n"+
 "")
 ProtoBody229.addChild(Script230)
 
-ProtoBody229.addComments(CommentsBlock("Add any ROUTEs here, going from Script to other nodes within ProtoBody"))
+ProtoBody229.addComments(CommentsBlock("""Add any ROUTEs here, going from Script to other nodes within ProtoBody"""))
 ProtoDeclare216.setProtoBody(ProtoBody229)
 Scene16.addChild(ProtoDeclare216)
 
-Scene16.addComments(CommentsBlock("=============== Launch Prototype Example =============="))
+Scene16.addComments(CommentsBlock("""=============== Launch Prototype Example =============="""))
 Background254 = BackgroundObject()
 Background254.setSkyColor([0.282353,0.380392,0.470588])
 

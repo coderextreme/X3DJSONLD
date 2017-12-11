@@ -41,9 +41,9 @@ X3D0.setHead(head1)
 Scene8 = SceneObject()
 
 
-Scene8.addComments(CommentsBlock("Viewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views'/"))
+Scene8.addComments(CommentsBlock("""Viewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views'/"""))
 
-Scene8.addComments(CommentsBlock("PositionInterpolator DEF='TourPosition' key='0 1' keyValue='-0.5 -0.5 4 -0.5 0.5 4'/"))
+Scene8.addComments(CommentsBlock("""PositionInterpolator DEF='TourPosition' key='0 1' keyValue='-0.5 -0.5 4 -0.5 0.5 4'/"""))
 GeoViewpoint9 = GeoViewpointObject()
 GeoViewpoint9.setDEF("Tour")
 GeoViewpoint9.setPosition([0,0,4])

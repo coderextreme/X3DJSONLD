@@ -114,7 +114,7 @@ Viewpoint21.setPosition([6,0,5])
 
 Scene17.addChild(Viewpoint21)
 
-Scene17.addComments(CommentsBlock("Script initialization ought to first bind view5 below."))
+Scene17.addComments(CommentsBlock("""Script initialization ought to first bind view5 below."""))
 Group22 = GroupObject()
 
 Transform23 = TransformObject()
@@ -211,14 +211,14 @@ Transform41.addChild(Shape42)
 Group22.addChild(Transform41)
 Scene17.addChild(Group22)
 
-Scene17.addComments(CommentsBlock("The following advanced animation sequence uses nodes covered in Chapters 7, 8 and 9."))
+Scene17.addComments(CommentsBlock("""The following advanced animation sequence uses nodes covered in Chapters 7, 8 and 9."""))
 
-Scene17.addComments(CommentsBlock("It does not need to be studied in this chapter."))
+Scene17.addComments(CommentsBlock("""It does not need to be studied in this chapter."""))
 Transform47 = TransformObject()
 Transform47.setTranslation([0,-3,8])
 
 
-Transform47.addComments(CommentsBlock("notice this next Viewpoint has been transformed with the text, so its position is relative. it is called view5 in the Script."))
+Transform47.addComments(CommentsBlock("""notice this next Viewpoint has been transformed with the text, so its position is relative. it is called view5 in the Script."""))
 Viewpoint48 = ViewpointObject()
 Viewpoint48.setDEF("ClickToAnimateView")
 Viewpoint48.setDescription("Select animation sequence")
@@ -449,7 +449,7 @@ Script63.setSourceCode("ecmascript:\n"+
 "")
 Transform47.addChild(Script63)
 
-Transform47.addComments(CommentsBlock("drive Script with TimeSensor clock"))
+Transform47.addComments(CommentsBlock("""drive Script with TimeSensor clock"""))
 ROUTE75 = ROUTEObject()
 ROUTE75.setFromField("value_changed")
 ROUTE75.setFromNode("TimingSequencer")
@@ -458,7 +458,7 @@ ROUTE75.setToNode("BindingSequencerEngine")
 
 Transform47.addChild(ROUTE75)
 
-Transform47.addComments(CommentsBlock("Script will bind and unbind Viewpoint nodes"))
+Transform47.addComments(CommentsBlock("""Script will bind and unbind Viewpoint nodes"""))
 ROUTE76 = ROUTEObject()
 ROUTE76.setFromField("bindView1")
 ROUTE76.setFromNode("BindingSequencerEngine")
@@ -495,7 +495,7 @@ ROUTE80.setToNode("ClickToAnimateView")
 
 Transform47.addChild(ROUTE80)
 
-Transform47.addComments(CommentsBlock("Viewpoint nodes report bind and unbind events"))
+Transform47.addComments(CommentsBlock("""Viewpoint nodes report bind and unbind events"""))
 ROUTE81 = ROUTEObject()
 ROUTE81.setFromField("isBound")
 ROUTE81.setFromNode("View1")

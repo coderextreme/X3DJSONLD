@@ -206,7 +206,7 @@ Shape50 = ShapeObject()
 Appearance51 = AppearanceObject()
 
 
-Appearance51.addComments(CommentsBlock("note 0x000000 = 0"))
+Appearance51.addComments(CommentsBlock("""note 0x000000 = 0"""))
 PixelTexture52 = PixelTextureObject()
 PixelTexture52.setDEF("ThreeComponents")
 PixelTexture52.setImage([2,4,3,16711680,65280,0,0,0,0,16777215,16776960])
@@ -245,7 +245,7 @@ Shape60 = ShapeObject()
 Appearance61 = AppearanceObject()
 
 
-Appearance61.addComments(CommentsBlock("Erroneous value in book: 1 0 0 255, 0 1 0 255, 0 0 1 255, 1 0 0 127, 0 1 0 127, 0 0 1 127"))
+Appearance61.addComments(CommentsBlock("""Erroneous value in book: 1 0 0 255, 0 1 0 255, 0 0 1 255, 1 0 0 127, 0 1 0 127, 0 0 1 127"""))
 PixelTexture62 = PixelTextureObject()
 PixelTexture62.setDEF("FourComponents")
 PixelTexture62.setImage([3,2,4,-16776961,16711935,65535,-16777089,16711807,65407])
@@ -277,7 +277,7 @@ Transform64.addChild(Shape65)
 Transform59.addChild(Transform64)
 Scene15.addChild(Transform59)
 
-Scene15.addComments(CommentsBlock("Background from PixelTextureBW.x3d"))
+Scene15.addComments(CommentsBlock("""Background from PixelTextureBW.x3d"""))
 Transform69 = TransformObject()
 Transform69.setTranslation([0,6,-2])
 

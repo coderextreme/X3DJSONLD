@@ -58,7 +58,7 @@ ProtoBody12 = ProtoBodyObject()
 Group13 = GroupObject()
 
 
-Group13.addComments(CommentsBlock("left"))
+Group13.addComments(CommentsBlock("""left"""))
 Transform14 = TransformObject()
 Transform14.setScale([0.5,0.5,0.5])
 
@@ -80,10 +80,10 @@ Extrusion18.setSpine([-2.5,0,0,-1.5,0,0])
 Shape15.setGeometry(Extrusion18)
 Transform14.addChild(Shape15)
 
-Transform14.addComments(CommentsBlock("<Transform translation=\"-2.5 0 0\"> <Shape> <Text DEF=\"LeftString\" string='\"l\"'/> </Shape> </Transform> <StringSensor DEF=\"LeftSensor\" enabled=\"false\"/> <TouchSensor DEF=\"LeftTouch\" enabled=\"true\"/>"))
+Transform14.addComments(CommentsBlock("""<Transform translation=\"-2.5 0 0\"> <Shape> <Text DEF=\"LeftString\" string='\"l\"'/> </Shape> </Transform> <StringSensor DEF=\"LeftSensor\" enabled=\"false\"/> <TouchSensor DEF=\"LeftTouch\" enabled=\"true\"/>"""))
 Group13.addChild(Transform14)
 
-Group13.addComments(CommentsBlock("right"))
+Group13.addComments(CommentsBlock("""right"""))
 Transform19 = TransformObject()
 Transform19.setScale([0.5,0.5,0.5])
 
@@ -136,7 +136,7 @@ TouchSensor30.setDEF("RightTouch")
 Transform19.addChild(TouchSensor30)
 Group13.addChild(Transform19)
 
-Group13.addComments(CommentsBlock("up"))
+Group13.addComments(CommentsBlock("""up"""))
 Transform31 = TransformObject()
 Transform31.setScale([0.5,0.5,0.5])
 
@@ -188,7 +188,7 @@ TouchSensor42.setDEF("UpTouch")
 Transform31.addChild(TouchSensor42)
 Group13.addChild(Transform31)
 
-Group13.addComments(CommentsBlock("down"))
+Group13.addComments(CommentsBlock("""down"""))
 Transform43 = TransformObject()
 Transform43.setScale([0.5,0.5,0.5])
 
@@ -210,10 +210,10 @@ Extrusion47.setSpine([0,-2.5,0,0,-1.5,0])
 Shape44.setGeometry(Extrusion47)
 Transform43.addChild(Shape44)
 
-Transform43.addComments(CommentsBlock("<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>"))
+Transform43.addComments(CommentsBlock("""<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>"""))
 Group13.addChild(Transform43)
 
-Group13.addComments(CommentsBlock("center"))
+Group13.addComments(CommentsBlock("""center"""))
 Transform48 = TransformObject()
 
 Shape49 = ShapeObject()

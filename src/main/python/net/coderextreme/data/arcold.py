@@ -233,7 +233,7 @@ ProtoBody31.addChild(Transform32)
 ProtoDeclare28.setProtoBody(ProtoBody31)
 Scene7.addChild(ProtoDeclare28)
 
-Scene7.addComments(CommentsBlock("from doug sanden"))
+Scene7.addComments(CommentsBlock("""from doug sanden"""))
 ProtoDeclare50 = ProtoDeclareObject()
 ProtoDeclare50.setName("x3dconnector")
 

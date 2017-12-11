@@ -55,7 +55,7 @@ Viewpoint11.setDescription("Tour Views")
 
 Scene9.addChild(Viewpoint11)
 
-Scene9.addComments(CommentsBlock("Viewpoint position='0 0 4' description='sphere in road'/"))
+Scene9.addComments(CommentsBlock("""Viewpoint position='0 0 4' description='sphere in road'/"""))
 Background12 = BackgroundObject()
 Background12.setBackUrl(["resources/images/bBK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"])
 Background12.setBottomUrl(["resources/images/bBT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"])

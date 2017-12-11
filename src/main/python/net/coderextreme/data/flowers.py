@@ -282,7 +282,7 @@ ComposedShader45.addParts(ShaderPart54)
 Appearance16.addShaders(ComposedShader45)
 Shape15.setAppearance(Appearance16)
 
-Shape15.addComments(CommentsBlock("<Sphere></Sphere>"))
+Shape15.addComments(CommentsBlock("""<Sphere></Sphere>"""))
 IndexedFaceSet55 = IndexedFaceSetObject()
 IndexedFaceSet55.setConvex(False)
 IndexedFaceSet55.setDEF("Orbit")
@@ -523,7 +523,7 @@ ROUTE75.setToField("set_translation")
 
 ProtoBody13.addChild(ROUTE75)
 
-ProtoBody13.addComments(CommentsBlock("<ROUTE fromField=\"coordIndexes\" fromNode=\"Bounce\" toField=\"set_coordIndex\" toNode=\"Orbit\"/> <ROUTE fromField=\"coordinates\" fromNode=\"Bounce\" toField=\"set_point\" toNode=\"OrbitCoordinates\"/>"))
+ProtoBody13.addComments(CommentsBlock("""<ROUTE fromField=\"coordIndexes\" fromNode=\"Bounce\" toField=\"set_coordIndex\" toNode=\"Orbit\"/> <ROUTE fromField=\"coordinates\" fromNode=\"Bounce\" toField=\"set_point\" toNode=\"OrbitCoordinates\"/>"""))
 ProtoDeclare12.setProtoBody(ProtoBody13)
 Scene9.addChild(ProtoDeclare12)
 Transform76 = TransformObject()
@@ -533,7 +533,7 @@ ProtoInstance77.setName("flower")
 
 Transform76.addChild(ProtoInstance77)
 
-Transform76.addComments(CommentsBlock("<ProtoInstance name=\"flower\"/> <ProtoInstance name=\"flower\"/>"))
+Transform76.addComments(CommentsBlock("""<ProtoInstance name=\"flower\"/> <ProtoInstance name=\"flower\"/>"""))
 Scene9.addChild(Transform76)
 X3D0.setScene(Scene9)
 

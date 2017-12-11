@@ -188,7 +188,7 @@ field37.setValue("0.5")
 
 ComposedShader26.addField(field37)
 
-ComposedShader26.addComments(CommentsBlock("<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>"))
+ComposedShader26.addComments(CommentsBlock("""<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>"""))
 ShaderPart38 = ShaderPartObject()
 ShaderPart38.setType("VERTEX")
 
