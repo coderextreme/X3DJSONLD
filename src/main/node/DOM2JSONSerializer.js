@@ -24,12 +24,10 @@ DOM2JSONSerializer.prototype = {
 		}
 
 		return st;
-	,;
-	};
+	},
 	descendSubArray: function (values, j, trail) {
 		return '['+values.join(j)+trail+']';
-	,;
-	}
+	},
 	descendMethod: function (node, fieldTypes, par, n) {
 		var st = '';
 		var cf = false;
@@ -44,9 +42,10 @@ DOM2JSONSerializer.prototype = {
 						cf = true;
 					}
 
-			} catch (e) {;
+			} catch (e) {
 
-				}
+			}
+		}
 		if (par === '-children') {
 			cf = true;
 			st += '  '.repeat(n)+'{ "'+node.nodeName+'":';
@@ -60,8 +59,7 @@ DOM2JSONSerializer.prototype = {
 			st += '  '.repeat(n)+'}\n';
 		}
 		return st;
-	,;
-			}
+	},
 	descendComment: function (node, par, n) {
 		var st = '';
 		var cf = false;
@@ -75,7 +73,7 @@ DOM2JSONSerializer.prototype = {
 		st += '\"'+(node.nodeValue.;
 			replace(/\\/g, '\\\\').;
 			replace(/'/g, '\\'').
-			replace(/\n/g, '\\n'))+"\"";
+			replace(/\n/g, '\\n'))+'\"';
 		if (cf) {
 			st += '}\n';
 		}
@@ -83,12 +81,12 @@ DOM2JSONSerializer.prototype = {
 	},
 
 	descendSourceText: function (node, par, n) {
-		var st = "";
+		var st = '';
 		var cf = false;
-		if (par === "-children") {
+		if (par === '-children') {
 			cf = true;
 			st += '  '.repeat(n)+'{ '#sourceText':';
-		} else if (par === "") {
+		} else if (par === '') {
 			st += '  '.repeat(n)+''#sourceText':';
 		}
 		st +=  '[''+node.nodeValue.split('\r\n').map(
@@ -150,16 +148,16 @@ DOM2JSONSerializer.prototype = {
 						attrstr += 'null';
 					} else if (attrType === 'SFString') {
 						attrstr += '"'+attrs[a].nodeValue.replace(/\\?'/g, '\\\"')+''';
-					} else if (attrType === "SFInt32" ||
-					           attrType === "SFFloat" ||
-					           attrType === "SFDouble" ||
-					           attrType === "SFBool") {
+					} else if (attrType === 'SFInt32' ||
+					           attrType === 'SFFloat' ||
+					           attrType === 'SFDouble' ||
+					           attrType === 'SFBool') {
 						attrstr += attrs[a].nodeValue;
-					} else if (attrType === "MFString") {
+					} else if (attrType === 'MFString') {
 						attrstr += this.descendSubArray(
 							attrs[a].nodeValue.
-								replace(/([^\\]| )\\\\( |[^\\"])/g, "$1\\\\$2").
-								replace(/([^\\]| )\\\\\\\\([^\\"]| )/g, "$1\\\\\\\\\\\\\\\\$2").
+								replace(/([^\\]| )\\\\( |[^\\"])/g, '$1\\\\$2').
+								replace(/([^\\]| )\\\\\\\\([^\\"]| )/g, '$1\\\\\\\\\\\\\\\\$2').
 								replace(/\\\\\\\\"/g, '\\\\'').
 								replace(/\\\\'/g, '\\\\\\"').;
 								replace(/\t/g, '\\t').;
@@ -207,22 +205,22 @@ DOM2JSONSerializer.prototype = {
 			} catch (e) {
 				console.error(e);
 			}
-			attrType = "";
+			attrType = '';
 		}
 		var children = {};
-		var par = "";
+		var par = '';
 		var childpar = false;
 		var route = [];
 		for (var cn in element.childNodes) {
 			var node = element.childNodes[cn];
-			if ( typeof node.nodeName !== "undefined" &&
-			    node.nodeName !== "meta" &&
-			    node.nodeName !== "unit" &&
-			    node.nodeName !== "component" &&
-			    node.nodeName !== "field" &&
-			    node.nodeName !== "fieldValue" &&
-			    node.nodeName !== "connect" &&
-			    node.nodeName !== "ROUTE" &&
+			if ( typeof node.nodeName !== 'undefined' &&
+			    node.nodeName !== 'meta' &&
+			    node.nodeName !== 'unit' &&
+			    node.nodeName !== 'component' &&
+			    node.nodeName !== 'field' &&
+			    node.nodeName !== 'fieldValue' &&
+			    node.nodeName !== 'connect' &&
+			    node.nodeName !== 'ROUTE' &&
 			    typeof children[node.nodeName] !== 'undefined') {
 				childpar = true;
 			}
@@ -230,16 +228,16 @@ DOM2JSONSerializer.prototype = {
 
 		}
 		var attrchildren = false;
-		if (element.nodeName === "X3D" ||
-			element.nodeName === "Appearance" ||
-			element.nodeName === "ComposedCubeMapTexture" ||
-			element.nodeName === "TextureBackground" ||
-			element.nodeName === "Sound" ||
-			element.nodeName === "IndexedFaceSet" ||
-			element.nodeName === "ProtoDeclare" ||
-			element.nodeName === "Text" ||
-			element.nodeName === "Collision" ||
-			element.nodeName === "Shape") {
+		if (element.nodeName === 'X3D' ||
+			element.nodeName === 'Appearance' ||
+			element.nodeName === 'ComposedCubeMapTexture' ||
+			element.nodeName === 'TextureBackground' ||
+			element.nodeName === 'Sound' ||
+			element.nodeName === 'IndexedFaceSet' ||
+			element.nodeName === 'ProtoDeclare' ||
+			element.nodeName === 'Text' ||
+			element.nodeName === 'Collision' ||
+			element.nodeName === 'Shape') {
 			attrchildren = true;
 
 		}
@@ -251,46 +249,46 @@ DOM2JSONSerializer.prototype = {
 			if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 1) {
 				// handle object collections which become arrays
 				if (par !== node.nodeName && (
-					par === "meta" ||
-					par === "unit" ||
-					par === "component" ||
-					par === "field" ||
-					par === "fieldValue" ||
-					par === "connect" ||
-					par === "ROUTE")) {
-					if (par === "ROUTE") {
+					par === 'meta' ||
+					par === 'unit' ||
+					par === 'component' ||
+					par === 'field' ||
+					par === 'fieldValue' ||
+					par === 'connect' ||
+					par === 'ROUTE')) {
+					if (par === 'ROUTE') {
 						route.push(this.descendParChilluns(par, chilluns, n+1));
 					} else {
 						object.push(this.descendParChilluns(par, chilluns, n+1));
 					}
 					chilluns = [];
 				}
-				if (node.nodeName === "meta" ||
-				    node.nodeName === "unit" ||
-				    node.nodeName === "component" ||
-				    node.nodeName === "field" ||
-				    node.nodeName === "fieldValue" ||
-				    node.nodeName === "connect" ||
-				    node.nodeName === "ROUTE") {
+				if (node.nodeName === 'meta' ||
+				    node.nodeName === 'unit' ||
+				    node.nodeName === 'component' ||
+				    node.nodeName === 'field' ||
+				    node.nodeName === 'fieldValue' ||
+				    node.nodeName === 'connect' ||
+				    node.nodeName === 'ROUTE') {
 					par = node.nodeName;
 					chilluns.push(this.descendMethod(node, fieldTypes, par, n+1));
 				} else if (attrchildren) {
 					object.push(this.descendMethod(node, fieldTypes, par, n+1));
 				} else {
-					chillins.push(this.descendMethod(node, fieldTypes, childpar ? "-children" : "", n+1));
+					chillins.push(this.descendMethod(node, fieldTypes, childpar ? '-children' : '', n+1));
 				}
 			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 8) {
-				chillins.push(this.descendComment(node, childpar ? "-children" : "", n+1));
+				chillins.push(this.descendComment(node, childpar ? '-children' : '', n+1));
 			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 4) {
-				chillins.push(this.descendSourceText(node, childpar ? "-children" : "", n+1));
+				chillins.push(this.descendSourceText(node, childpar ? '-children' : '', n+1));
 			}
 		}
 		if (chillins.length > 0) {
-			object.push(this.descendParChilluns(childpar ? "-children" : "", chillins, n+1));
+			object.push(this.descendParChilluns(childpar ? '-children' : '', chillins, n+1));
 		}
 		// prepare to move ROUTEs to end
 		if (chilluns.length > 0) {
-			if (par === "ROUTE") {
+			if (par === 'ROUTE') {
 				route.push(this.descendParChilluns(par, chilluns, n+1));
 			} else {
 				object.push(this.descendParChilluns(par, chilluns, n+1));
@@ -300,13 +298,13 @@ DOM2JSONSerializer.prototype = {
 	},
 
 	descendParChilluns : function(par, chilluns, n) {
-		var st = "";
-		if (par !== "") {
+		var st = '';
+		if (par !== '') {
 			st += '  '.repeat(n)+'''+par+'': [\n';
-			st += '  '.repeat(n)+chilluns.join(",");
+			st += '  '.repeat(n)+chilluns.join(',');
 			st += '  '.repeat(n)+']\n';
 		} else {
-			st += '  '.repeat(n)+chilluns.join(",");
+			st += '  '.repeat(n)+chilluns.join(',');
 		}
 		return st;
 	}
@@ -316,22 +314,3 @@ DOM2JSONSerializer.prototype = {
 if (typeof module === 'object')  {
 	module.exports = DOM2JSONSerializer;
 };
-
-						}
-				}
-
-			}
-
-		}
-
-			}
-
-		}
-
-	};
-
-
-	}
-		}
-
-	}
