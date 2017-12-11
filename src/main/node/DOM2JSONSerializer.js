@@ -217,6 +217,8 @@ DOM2JSONSerializer.prototype = {
 			var node = element.childNodes[cn];
 			if ( typeof node.nodeName !== "undefined" &&
 			    node.nodeName !== "meta" &&
+			    node.nodeName !== "unit" &&
+			    node.nodeName !== "component" &&
 			    node.nodeName !== "field" &&
 			    node.nodeName !== "fieldValue" &&
 			    node.nodeName !== "connect" &&
@@ -247,8 +249,11 @@ DOM2JSONSerializer.prototype = {
 		for (var cn in element.childNodes) {
 			var node = element.childNodes[cn];
 			if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 1) {
+				// handle object collections which become arrays
 				if (par !== node.nodeName && (
 					par === "meta" ||
+					par === "unit" ||
+					par === "component" ||
 					par === "field" ||
 					par === "fieldValue" ||
 					par === "connect" ||
@@ -261,6 +266,8 @@ DOM2JSONSerializer.prototype = {
 					chilluns = [];
 				}
 				if (node.nodeName === "meta" ||
+				    node.nodeName === "unit" ||
+				    node.nodeName === "component" ||
 				    node.nodeName === "field" ||
 				    node.nodeName === "fieldValue" ||
 				    node.nodeName === "connect" ||
@@ -281,6 +288,7 @@ DOM2JSONSerializer.prototype = {
 		if (chillins.length > 0) {
 			object.push(this.printParChilluns(childpar ? "-children" : "", chillins, n+1));
 		}
+		// prepare to move ROUTEs to end
 		if (chilluns.length > 0) {
 			if (par === "ROUTE") {
 				route.push(this.printParChilluns(par, chilluns, n+1));
