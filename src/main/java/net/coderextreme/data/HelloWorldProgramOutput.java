@@ -94,7 +94,7 @@ ProtoInstanceObject ProtoInstance2 = null;
         .addMeta(new metaObject().setName("reference").setContent("http://www.web3d.org/specifications/java/X3DJSAIL.html"))
         .addMeta(new metaObject().setName("generator").setContent("HelloWorldProgramOutput.java"))
         .addMeta(new metaObject().setName("created").setContent("6 September 2016"))
-        .addMeta(new metaObject().setName("modified").setContent("9 December 2017"))
+        .addMeta(new metaObject().setName("modified").setContent("11 December 2017"))
         .addMeta(new metaObject().setName("generator").setContent("X3D Java Scene Access Interface Library (X3DJSAIL)"))
         .addMeta(new metaObject().setName("generator").setContent("http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"))
         .addMeta(new metaObject().setName("generator").setContent("Netbeans http://www.netbeans.org"))
@@ -181,9 +181,9 @@ ProtoInstanceObject ProtoInstance2 = null;
           .addChild(new ROUTEObject().setFromField("colorsOutput").setFromNode("colorTypeConversionScript").setToField("skyColor").setToNode("GradualBackground"))
           .addChild(new ROUTEObject().setFromField("value_changed").setFromNode("ColorAnimator").setToField("colorInput").setToNode("colorTypeConversionScript"))
           .addChild(new ROUTEObject().setFromField("fraction_changed").setFromNode("ColorClock").setToField("set_fraction").setToNode("ColorAnimator")))
-        .addChild(new ProtoDeclareObject().setName("ArtDeco01Material").setAppinfo("tooltip: ArtDeco01 prototype is a Material node")
+        .addChild(new ProtoDeclareObject().setName("ArtDeco01Material").setAppinfo("tooltip: ArtDeco01Material prototype is a Material node")
           .setProtoInterface(new ProtoInterfaceObject()
-            .addField(new fieldObject().setType("SFString").setName("description").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("tooltip for descriptionField").setValue("ArtDeco01 prototype is a Material node"))
+            .addField(new fieldObject().setType("SFString").setName("description").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("tooltip for descriptionField").setValue("ArtDeco01Material prototype is a Material node"))
             .addField(new fieldObject().setType("SFBool").setName("enabled").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("true")))
           .setProtoBody(new ProtoBodyObject()
             .addComments(new CommentsBlock("Initial node of ProtoBody determines prototype node type"))
@@ -200,15 +200,15 @@ ProtoInstanceObject ProtoInstance2 = null;
         .addComments(new CommentsBlock("Tested ArtDeco01ProtoInstance, ArtDeco02ProtoInstance for improper node type when ProtoInstance is added in wrong place"))
         .addChild(new ShapeObject().setDEF("TestShape1")
           .setAppearance(new AppearanceObject().setDEF("TestAppearance1")
-            .setProtoInstance(ProtoInstance0 = new ProtoInstanceObject().setName("ArtDeco01")
-              .addComments(new CommentsBlock("[HelloWorldProgram diagnostic] ArtDeco01ProtoInstance.getNodeType()=\"ERROR_UNKNOWN_PROTOINSTANCE_NODE_TYPE: ProtoInstance name='ArtDeco01' has no corresponding ProtoDeclareObject or ExternProtoDeclareObject to provide type.\"")))
-            .addComments(new CommentsBlock("ArtDeco01 Material prototype goes here...")))
+            .setProtoInstance(ProtoInstance0 = new ProtoInstanceObject().setName("ArtDeco01Material")
+              .addComments(new CommentsBlock("[HelloWorldProgram diagnostic] ArtDeco01ProtoInstance.getNodeType()=\"Material\"")))
+            .addComments(new CommentsBlock("ArtDeco01Material prototype goes here...")))
           .setGeometry(new SphereObject().setRadius(0.001f)))
         .addChild(new ShapeObject().setDEF("TestShape2")
           .setAppearance(new AppearanceObject().setDEF("TestAppearance2")
-            .setProtoInstance(ProtoInstance1 = new ProtoInstanceObject().setName("ArtDeco02")
-              .addComments(new CommentsBlock("[HelloWorldProgram diagnostic] ArtDeco02ProtoInstance.getNodeType()=\"ERROR_UNKNOWN_PROTOINSTANCE_NODE_TYPE: ProtoInstance name='ArtDeco02' has no corresponding ProtoDeclareObject or ExternProtoDeclareObject to provide type.\"")))
-            .addComments(new CommentsBlock("ArtDeco02 Material prototype goes here...")))
+            .setProtoInstance(ProtoInstance1 = new ProtoInstanceObject().setName("ArtDeco02Material")
+              .addComments(new CommentsBlock("[HelloWorldProgram diagnostic] ArtDeco02ProtoInstance.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time, TODO X3DJSAIL needs to add further capability.\"")))
+            .addComments(new CommentsBlock("ArtDeco02Material prototype goes here...")))
           .setGeometry(new ConeObject().setBottomRadius(0.001f).setHeight(0.001f)))
         .addChild(new InlineObject().setDEF("inlineSceneDef").setUrl(new MFStringObject(new MFString15().getArray())))
         .addChild(new IMPORTObject().setAS("WorldInfoDEF2").setImportedDEF("WorldInfoDEF").setInlineDEF("inlineSceneDef"))
@@ -287,13 +287,15 @@ ProtoInstanceObject ProtoInstance2 = null;
           .addComments(new CommentsBlock("MFFloat default=, initial=1 2 3, append(5)=1 2 3 5, inserts(3,4)(0,0)=0 1 2 3 4 5, append(6)=0 1 2 3 4 5 6, size()=7"))
           .addComments(new CommentsBlock("... get1Value[3]=3.0, remove[1]=0 2 3 4 5 6, set1Value(0,10)=10 2 3 4 5 6, multiply(2)=20 4 6 8 10 12, clear="))
           .addComments(new CommentsBlock("SFVec3f default=0 0 0, initial=1 2 3, setValue=4 5 6, multiply(2)=8 10 12, normalize()=0.45584232 0.5698029 0.68376344")))
-        .addChild(new SoundObject()
-          .setSource(new AudioClipObject().setUrl(new MFStringObject(new MFString17().getArray())))
-          .addComments(new CommentsBlock("Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d")))
-        .addChild(new SoundObject()
-          .setSource(new MovieTextureObject().setUrl(new MFStringObject(new MFString18().getArray())))
-          .addComments(new CommentsBlock("Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d"))
-          .addComments(new CommentsBlock("Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\"")))
+        .addChild(new SoundObject().setLocation(new float[] {0f,1.6f,0f})
+          .setSource(new AudioClipObject().setDescription("chimes").setUrl(new MFStringObject(new MFString17().getArray()))
+            .addComments(new CommentsBlock("Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d")))
+          .addComments(new CommentsBlock("set sound-ellipsoid location height at 1.6m to match typical avatar height")))
+        .addChild(new SoundObject().setLocation(new float[] {0f,1.6f,0f})
+          .setSource(new MovieTextureObject().setDescription("mpgsys.mpg from ConformanceNist suite").setUrl(new MFStringObject(new MFString18().getArray()))
+            .addComments(new CommentsBlock("Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d"))
+            .addComments(new CommentsBlock("Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\"")))
+          .addComments(new CommentsBlock("set sound-ellipsoid location height at 1.6m to match typical avatar height")))
         .addComments(new CommentsBlock("Test success: AnchorObject.isNode()=true, siteAnchor.isNode()=true"))
         .addComments(new CommentsBlock("Test success: AnchorObject.isStatement()=false, siteAnchor.isStatement()=false"))
         .addComments(new CommentsBlock("Test success: ROUTEObject.isNode()=false, orbitPositionROUTE.isNode()=false"))
@@ -307,9 +309,9 @@ ProtoInstanceObject ProtoInstance2 = null;
           .addComments(new CommentsBlock("ExampleExtrusion isCrossSectionClosed()=true, crossSection='[1.0, 1.0, 1.0, -1.0, -1.0, -1.0, -1.0, 1.0, 1.0, 1.0]'"))
           .addComments(new CommentsBlock("ExampleExtrusion isSpineClosed()=false, spine='[0.0, 0.0, 0.0, 0.0, 1.0, 0.0]'"))))      ;
 ProtoInstance0
-              .addFieldValue(new fieldValueObject().setName("description").setValue("ArtDeco01 can substitute for a Material node"));
+              .addFieldValue(new fieldValueObject().setName("description").setValue("ArtDeco01Material can substitute for a Material node"));
 ProtoInstance1
-              .addFieldValue(new fieldValueObject().setName("description").setValue("ArtDeco02 can substitute for another Material node"));
+              .addFieldValue(new fieldValueObject().setName("description").setValue("ArtDeco02Material can substitute for another Material node"));
     return X3D0;
     }
 protected class MFString0 {
@@ -384,7 +386,7 @@ protected class MFColor13 {
 }
 protected class MFString14 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02"});
+    return new MFStringObject(new java.lang.String[] {"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"});
   }
 }
 protected class MFString15 {
