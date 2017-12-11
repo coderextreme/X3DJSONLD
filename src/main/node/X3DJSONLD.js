@@ -344,7 +344,7 @@ function ConvertObject(key, object, element, path, containerField) {
 		} else if (key === '#sourceText') {
 			CDATACreateFunction(document, element, object[key].join("\r\n")+"\r\n");
 		} else {
-			if (key === 'connect' || key === 'fieldValue' || key === 'field' || key === 'meta' || key === 'component') {
+			if (key === 'connect' || key === 'fieldValue' || key === 'field' || key === 'meta' || key === 'component' || key === 'unit') {
 				/*
 				if (key === 'meta') {
 					// Add meta information for X3DJSONLD

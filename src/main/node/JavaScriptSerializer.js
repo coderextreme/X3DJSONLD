@@ -33,7 +33,7 @@ JavaScriptSerializer.prototype = {
 		str += "load('X3Dautoclass.js');\n";
 		str += "var ConfigurationProperties = Packages.org.web3d.x3d.jsail.ConfigurationProperties;\n";
 		str += "ConfigurationProperties.showDefaultAttributes = false;\n";
-		str += "ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_nativeJava;\n";
+		str += "ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;\n";
 		str += "ConfigurationProperties.deleteIntermediateFiles = false;\n";
 		str += "ConfigurationProperties.setStripTrailingZeroes(true);\n";
 		// we figure out body first and print it out later
@@ -273,9 +273,7 @@ JavaScriptSerializer.prototype = {
 						// strval = attrs[a].nodeValue;
 						// not found in field types
 						// Fixes for X3DOM
-						if (attr === "class") {
-							method = "setCssClass";
-						} else if (attr === "id") {
+						if (attr === "id") {
 							continue;
 						} else if (element.nodeName === "Sphere" && attr === "subdivision") {
 							continue;
@@ -291,6 +289,9 @@ JavaScriptSerializer.prototype = {
 							continue;
 						}
 						strval = '"'+attrs[a].nodeValue.replace(/\n/g, '\\\\n').replace(/\\?"/g, "\\\"")+'"';
+					}
+					if (attr === "class") {
+						method = "setCssClass";
 					}
 					
 					str += '.'+method+"("+strval+")";
