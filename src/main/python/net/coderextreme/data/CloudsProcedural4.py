@@ -56,7 +56,7 @@ X3D0.setHead(head1)
 Scene11 = SceneObject()
 
 
-Scene11.addComments(CommentsBlock("A png image file for the cloud texture must be designated in the ecmascript node."))
+Scene11.addComments(CommentsBlock("""A png image file for the cloud texture must be designated in the ecmascript node."""))
 Viewpoint12 = ViewpointObject()
 Viewpoint12.setDescription("Main")
 Viewpoint12.setJump(False)

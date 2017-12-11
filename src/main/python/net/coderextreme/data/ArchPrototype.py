@@ -72,13 +72,13 @@ ProtoDeclare14.setAppinfo("Create an arch. Can modify general parameters: clearS
 ProtoInterface15 = ProtoInterfaceObject()
 
 
-ProtoInterface15.addComments(CommentsBlock("COLOR OF ARCH"))
+ProtoInterface15.addComments(CommentsBlock("""COLOR OF ARCH"""))
 
-ProtoInterface15.addComments(CommentsBlock("INPUT PARAMETERS"))
+ProtoInterface15.addComments(CommentsBlock("""INPUT PARAMETERS"""))
 
-ProtoInterface15.addComments(CommentsBlock("General parameters: measures in meters"))
+ProtoInterface15.addComments(CommentsBlock("""General parameters: measures in meters"""))
 
-ProtoInterface15.addComments(CommentsBlock("Parameters to create to create shapes related to arch: put true to apply"))
+ProtoInterface15.addComments(CommentsBlock("""Parameters to create to create shapes related to arch: put true to apply"""))
 field16 = fieldObject()
 field16.setType(fieldObject.TYPE_SFCOLOR)
 field16.setName("diffuseColor")
@@ -195,9 +195,9 @@ ProtoDeclare14.setProtoInterface(ProtoInterface15)
 ProtoBody30 = ProtoBodyObject()
 
 
-ProtoBody30.addComments(CommentsBlock("First node determines node type of this prototype"))
+ProtoBody30.addComments(CommentsBlock("""First node determines node type of this prototype"""))
 
-ProtoBody30.addComments(CommentsBlock("IndexedFaceset creates arch"))
+ProtoBody30.addComments(CommentsBlock("""IndexedFaceset creates arch"""))
 Transform31 = TransformObject()
 Transform31.setDEF("ArchTransform")
 
@@ -205,7 +205,7 @@ Shape32 = ShapeObject()
 Shape32.setDEF("Arch")
 
 
-Shape32.addComments(CommentsBlock("note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly"))
+Shape32.addComments(CommentsBlock("""note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly"""))
 IndexedFaceSet33 = IndexedFaceSetObject()
 IndexedFaceSet33.setDEF("ArchIndex")
 IndexedFaceSet33.setConvex(False)
@@ -239,21 +239,21 @@ Shape32.setAppearance(Appearance35)
 Transform31.addChild(Shape32)
 ProtoBody30.addChild(Transform31)
 
-ProtoBody30.addComments(CommentsBlock("Subsequent nodes do not render, but still must be a valid X3D subgraph"))
+ProtoBody30.addComments(CommentsBlock("""Subsequent nodes do not render, but still must be a valid X3D subgraph"""))
 
-ProtoBody30.addComments(CommentsBlock("This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs"))
+ProtoBody30.addComments(CommentsBlock("""This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs"""))
 Script40 = ScriptObject()
 Script40.setDEF("ArchPrototypeScript")
 Script40.setUrl(["../node/ArchPrototypeScript.js"])
 
 
-Script40.addComments(CommentsBlock("INPUT PARAMETERS"))
+Script40.addComments(CommentsBlock("""INPUT PARAMETERS"""))
 
-Script40.addComments(CommentsBlock("General parameters"))
+Script40.addComments(CommentsBlock("""General parameters"""))
 
-Script40.addComments(CommentsBlock("Parameters to create to create shapes related to arch: put true to apply"))
+Script40.addComments(CommentsBlock("""Parameters to create to create shapes related to arch: put true to apply"""))
 
-Script40.addComments(CommentsBlock("OUTPUT PARAMETERS"))
+Script40.addComments(CommentsBlock("""OUTPUT PARAMETERS"""))
 field41 = fieldObject()
 field41.setType(fieldObject.TYPE_SFFLOAT)
 field41.setName("clearSpanWidth")
@@ -492,7 +492,7 @@ fieldValue80.setValue("2")
 ProtoInstance72.addFieldValue(fieldValue80)
 Scene13.addChild(ProtoInstance72)
 
-Scene13.addComments(CommentsBlock("Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare)"))
+Scene13.addComments(CommentsBlock("""Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare)"""))
 Inline81 = InlineObject()
 Inline81.setDEF("CoordinateAxes")
 Inline81.setUrl(["../data/CoordinateAxes.x3d"])

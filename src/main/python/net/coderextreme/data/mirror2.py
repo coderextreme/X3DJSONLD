@@ -109,7 +109,7 @@ ComposedShader23.setDEF("cobweb")
 ComposedShader23.setLanguage("GLSL")
 
 
-ComposedShader23.addComments(CommentsBlock("http://hypertextbook.com/facts/2005/JustinChe.shtml"))
+ComposedShader23.addComments(CommentsBlock("""http://hypertextbook.com/facts/2005/JustinChe.shtml"""))
 field24 = fieldObject()
 field24.setType(fieldObject.TYPE_SFVEC3F)
 field24.setName("chromaticDispertion")
@@ -161,7 +161,7 @@ ComposedShader31.setDEF("x3dom")
 ComposedShader31.setLanguage("GLSL")
 
 
-ComposedShader31.addComments(CommentsBlock("http://hypertextbook.com/facts/2005/JustinChe.shtml"))
+ComposedShader31.addComments(CommentsBlock("""http://hypertextbook.com/facts/2005/JustinChe.shtml"""))
 field32 = fieldObject()
 field32.setType(fieldObject.TYPE_SFVEC3F)
 field32.setName("chromaticDispertion")

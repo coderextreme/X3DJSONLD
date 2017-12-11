@@ -416,7 +416,7 @@ field78.setValue("false")
 
 Script75.addField(field78)
 
-Script75.addComments(CommentsBlock("<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>"))
+Script75.addComments(CommentsBlock("""<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>"""))
 
 Script75.setSourceCode("ecmascript:\n"+
 "	function add_node(value) {\n"+

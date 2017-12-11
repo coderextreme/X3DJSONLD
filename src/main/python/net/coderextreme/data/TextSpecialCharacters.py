@@ -77,21 +77,21 @@ Scene13.addChild(Viewpoint15)
 Shape16 = ShapeObject()
 
 
-Shape16.addComments(CommentsBlock("Empty string \"\" means to skip a line"))
+Shape16.addComments(CommentsBlock("""Empty string \"\" means to skip a line"""))
 
-Shape16.addComments(CommentsBlock("The ampersand escape characters are based on XML rules"))
+Shape16.addComments(CommentsBlock("""The ampersand escape characters are based on XML rules"""))
 
-Shape16.addComments(CommentsBlock("apostrophe ' is &apos; and needs to be escaped in single-quote delimiters used for string='value' attribute"))
+Shape16.addComments(CommentsBlock("""apostrophe ' is &apos; and needs to be escaped in single-quote delimiters used for string='value' attribute"""))
 
-Shape16.addComments(CommentsBlock("ampersand & is &amp; and needs to be escaped"))
+Shape16.addComments(CommentsBlock("""ampersand & is &amp; and needs to be escaped"""))
 
-Shape16.addComments(CommentsBlock("quotation \" is &quot; and isn't needed if single-quote delimiters used for string='value' attribute"))
+Shape16.addComments(CommentsBlock("""quotation \" is &quot; and isn't needed if single-quote delimiters used for string='value' attribute"""))
 
-Shape16.addComments(CommentsBlock("quotation \" can be used within an X3D string if escaped with backslash \\ as \\\""))
+Shape16.addComments(CommentsBlock("""quotation \" can be used within an X3D string if escaped with backslash \\ as \\\""""))
 
-Shape16.addComments(CommentsBlock("backslash \\ is used as escape character for \" (and itself) in X3D"))
+Shape16.addComments(CommentsBlock("""backslash \\ is used as escape character for \" (and itself) in X3D"""))
 
-Shape16.addComments(CommentsBlock("character entities are listed in HTML specification and are good for any XML"))
+Shape16.addComments(CommentsBlock("""character entities are listed in HTML specification and are good for any XML"""))
 Text17 = TextObject()
 Text17.setDEF("DefaultText")
 Text17.setString(["Character entity substitutions:","empty string \"\" skips a line:","","apostrophe ' is &apos;","ampersand & is &amp;","quote mark \" is &quot;","backslash \\ is X3D escape character","double backslash \\\\ is X3D backslash \\ character","Pi Π is &#928; XML character entity"])

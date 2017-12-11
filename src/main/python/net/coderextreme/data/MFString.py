@@ -361,7 +361,7 @@ Transform78.setRotation([-1,0,0,1.92])
 Transform78.setTranslation([0.7,-5.2,-6.5])
 
 
-Transform78.addComments(CommentsBlock("Front wheel is taken from the Savage Library, modified and re-animated.(from F18 Blue Angel)"))
+Transform78.addComments(CommentsBlock("""Front wheel is taken from the Savage Library, modified and re-animated.(from F18 Blue Angel)"""))
 Inline79 = InlineObject()
 Inline79.setUrl(["FrontWheel.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontWheel.x3d","FrontWheel.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontWheel.wrl"])
 
@@ -374,7 +374,7 @@ Transform80.setRotation([1,0,1,1.92])
 Transform80.setTranslation([-2.95,-5,7])
 
 
-Transform80.addComments(CommentsBlock("Rear wheels are taken from the Savage Library and re-animated (from F18 Blue Angel)"))
+Transform80.addComments(CommentsBlock("""Rear wheels are taken from the Savage Library and re-animated (from F18 Blue Angel)"""))
 Inline81 = InlineObject()
 Inline81.setUrl(["RearLeftWheel.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearLeftWheel.x3d","RearLeftWheel.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearLeftWheel.wrl"])
 
@@ -387,7 +387,7 @@ Transform82.setRotation([-1,0,-1,1.92])
 Transform82.setTranslation([2.95,-5,7])
 
 
-Transform82.addComments(CommentsBlock("Rear wheels are taken from the Savage Library and re-animated (from F18 Blue Angel)"))
+Transform82.addComments(CommentsBlock("""Rear wheels are taken from the Savage Library and re-animated (from F18 Blue Angel)"""))
 Inline83 = InlineObject()
 Inline83.setUrl(["RearRightWheel.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearRightWheel.x3d","RearRightWheel.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearRightWheel.wrl"])
 
@@ -666,7 +666,7 @@ ROUTE138.setToNode("FrontWheelTransform")
 
 Scene17.addChild(ROUTE138)
 
-Scene17.addComments(CommentsBlock("Animation commands for Rear Right Wheel Starts"))
+Scene17.addComments(CommentsBlock("""Animation commands for Rear Right Wheel Starts"""))
 TimeSensor139 = TimeSensorObject()
 TimeSensor139.setDEF("RRearUp1")
 TimeSensor139.setCycleInterval(8)
@@ -732,7 +732,7 @@ ROUTE148.setToNode("RearRightWheelTransform")
 
 Scene17.addChild(ROUTE148)
 
-Scene17.addComments(CommentsBlock("Animation commands for Rear Left Wheel"))
+Scene17.addComments(CommentsBlock("""Animation commands for Rear Left Wheel"""))
 TimeSensor149 = TimeSensorObject()
 TimeSensor149.setDEF("LRearUp1")
 TimeSensor149.setCycleInterval(8)
@@ -1056,7 +1056,7 @@ ROUTE205.setToNode("MissileLaunchView")
 
 Scene17.addChild(ROUTE205)
 
-Scene17.addComments(CommentsBlock("TODO fix type, add filter"))
+Scene17.addComments(CommentsBlock("""TODO fix type, add filter"""))
 X3D0.setScene(Scene17)
 
 X3D0.toFileX3D("../data/MFString.new.x3d")

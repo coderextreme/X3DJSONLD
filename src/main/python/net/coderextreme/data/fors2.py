@@ -74,20 +74,20 @@ Transform14.setIS(IS15)
 Shape17 = ShapeObject()
 
 
-Shape17.addComments(CommentsBlock("comment before Sphere"))
+Shape17.addComments(CommentsBlock("""comment before Sphere"""))
 
-Shape17.addComments(CommentsBlock("comment after Sphere"))
+Shape17.addComments(CommentsBlock("""comment after Sphere"""))
 
-Shape17.addComments(CommentsBlock("comment after Appearance"))
+Shape17.addComments(CommentsBlock("""comment after Appearance"""))
 Sphere18 = SphereObject()
 
 Shape17.setGeometry(Sphere18)
 Appearance19 = AppearanceObject()
 
 
-Appearance19.addComments(CommentsBlock("comment before Material"))
+Appearance19.addComments(CommentsBlock("""comment before Material"""))
 
-Appearance19.addComments(CommentsBlock("comment after Material"))
+Appearance19.addComments(CommentsBlock("""comment after Material"""))
 Material20 = MaterialObject()
 Material20.setDiffuseColor([1,0,0])
 
