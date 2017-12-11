@@ -75,7 +75,7 @@ import org.web3d.x3d.sai.VolumeRendering.*;
 public class CloudsProcedural4 {
   public static void main(String[] args) {
     ConfigurationProperties.setShowDefaultAttributes(true);
-    ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_nativeJava);
+    ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
     new CloudsProcedural4().initialize().toFileJSON("../data/CloudsProcedural4.new.json");
     }

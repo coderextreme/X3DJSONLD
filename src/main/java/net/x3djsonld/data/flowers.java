@@ -106,6 +106,16 @@ public class flowers
                 .addField(new fieldObject().setAccessType("inputOutput").setName("bias").setType("SFFloat").setValue("0.5"))
                 .addField(new fieldObject().setAccessType("inputOutput").setName("scale").setType("SFFloat").setValue("0.5"))
                 .addField(new fieldObject().setAccessType("inputOutput").setName("power").setType("SFFloat").setValue("2.0"))
+                .addParts(new ShaderPartObject().setUrl(new MFStringObject("\"../shaders/common.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/common.vs\"")))
+                .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject("\"../shaders/gl_flowers_chromatic.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/gl_flowers_chromatic.fs\""))))
+              .addShaders(new ComposedShaderObject().setLanguage("GLSL")
+                .addField(new fieldObject().setAccessType("inputOutput").setName("xxxcube").setType("SFInt32").setValue("0"))
+                .addField(new fieldObject().setAccessType("inputOutput").setName("cube").setType("SFNode")
+                  .addChild(new ComposedCubeMapTextureObject().setUSE("texture")))
+                .addField(new fieldObject().setAccessType("inputOutput").setName("chromaticDispertion").setType("SFVec3f").setValue("0.98 1.0 1.033"))
+                .addField(new fieldObject().setAccessType("inputOutput").setName("bias").setType("SFFloat").setValue("0.5"))
+                .addField(new fieldObject().setAccessType("inputOutput").setName("scale").setType("SFFloat").setValue("0.5"))
+                .addField(new fieldObject().setAccessType("inputOutput").setName("power").setType("SFFloat").setValue("2.0"))
                 .addParts(new ShaderPartObject().setUrl(new MFStringObject("\"../shaders/x3dom.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs\"")))
                 .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject("\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs\""))))
               .addShaders(new ComposedShaderObject("shader").setLanguage("GLSL")
@@ -155,10 +165,10 @@ public class flowers
 "			}" + "\n" + 
 "\n" + 
 "			function initialize() {" + "\n" + 
+"			     var cis = [];" + "\n" + 
 "			     newBubble();" + "\n" + 
 "			     resolution = 100;" + "\n" + 
 "			     updateCoordinates(resolution);" + "\n" + 
-"			     var cis = [];" + "\n" + 
 "			     for ( i = 0; i < resolution-1; i++) {" + "\n" + 
 "				for ( j = 0; j < resolution-1; j++) {" + "\n" + 
 "				     cis.push(i*resolution+j);" + "\n" + 
