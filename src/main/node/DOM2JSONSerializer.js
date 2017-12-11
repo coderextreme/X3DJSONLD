@@ -13,7 +13,7 @@ DOM2JSONSerializer.prototype = {
 	serializeToString : function(json, element, clazz, mapToMethod, fieldTypes) {
 		var str = "";
 		str += '{';
-		str += this.printMethod(element, fieldTypes, "", 0);
+		str += this.descendMethod(element, fieldTypes, "", 0);
 		str += '}\n';
 
 		try {
@@ -25,11 +25,11 @@ DOM2JSONSerializer.prototype = {
 		return str;
 	},
 
-	printSubArray: function (values, j, trail) {
+	descendSubArray: function (values, j, trail) {
 		return '['+values.join(j)+trail+']';
 	},
 
-	printMethod: function (node, fieldTypes, par, n) {
+	descendMethod: function (node, fieldTypes, par, n) {
 		var str = "";
 		var cf = false;
 		for (var a in node.attributes) {
@@ -61,7 +61,7 @@ DOM2JSONSerializer.prototype = {
 		return str;
 	},
 
-	printComment: function (node, par, n) {
+	descendComment: function (node, par, n) {
 		var str = "";
 		var cf = false;
 		if (par === "-children") {
@@ -81,7 +81,7 @@ DOM2JSONSerializer.prototype = {
 		return str;
 	},
 
-	printSourceText: function (node, par, n) {
+	descendSourceText: function (node, par, n) {
 		var str = "";
 		var cf = false;
 		if (par === "-children") {
@@ -155,7 +155,7 @@ DOM2JSONSerializer.prototype = {
 					           attrType === "SFBool") {
 						attrstr += attrs[a].nodeValue;
 					} else if (attrType === "MFString") {
-						attrstr += this.printSubArray(
+						attrstr += this.descendSubArray(
 							attrs[a].nodeValue.
 								replace(/([^\\]| )\\\\( |[^\\"])/g, "$1\\\\$2").
 								replace(/([^\\]| )\\\\\\\\([^\\"]| )/g, "$1\\\\\\\\\\\\\\\\$2").
@@ -197,7 +197,7 @@ DOM2JSONSerializer.prototype = {
 						attrType === "MFMatrix3d"||
 						attrType === "MFMatrix4d"||
 						attrType === "MFDouble") {
-						attrstr += this.printSubArray(attrs[a].nodeValue.split(/[ ,]+/), ',', '');
+						attrstr += this.descendSubArray(attrs[a].nodeValue.split(/[ ,]+/), ',', '');
 					} else {
 						attrstr += '"'+attrs[a].nodeValue.replace(/\\?"/g, "\\\"")+'"';
 					}
@@ -259,9 +259,9 @@ DOM2JSONSerializer.prototype = {
 					par === "connect" ||
 					par === "ROUTE")) {
 					if (par === "ROUTE") {
-						route.push(this.printParChilluns(par, chilluns, n+1));
+						route.push(this.descendParChilluns(par, chilluns, n+1));
 					} else {
-						object.push(this.printParChilluns(par, chilluns, n+1));
+						object.push(this.descendParChilluns(par, chilluns, n+1));
 					}
 					chilluns = [];
 				}
@@ -273,33 +273,33 @@ DOM2JSONSerializer.prototype = {
 				    node.nodeName === "connect" ||
 				    node.nodeName === "ROUTE") {
 					par = node.nodeName;
-					chilluns.push(this.printMethod(node, fieldTypes, par, n+1));
+					chilluns.push(this.descendMethod(node, fieldTypes, par, n+1));
 				} else if (attrchildren) {
-					object.push(this.printMethod(node, fieldTypes, par, n+1));
+					object.push(this.descendMethod(node, fieldTypes, par, n+1));
 				} else {
-					chillins.push(this.printMethod(node, fieldTypes, childpar ? "-children" : "", n+1));
+					chillins.push(this.descendMethod(node, fieldTypes, childpar ? "-children" : "", n+1));
 				}
 			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 8) {
-				chillins.push(this.printComment(node, childpar ? "-children" : "", n+1));
+				chillins.push(this.descendComment(node, childpar ? "-children" : "", n+1));
 			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 4) {
-				chillins.push(this.printSourceText(node, childpar ? "-children" : "", n+1));
+				chillins.push(this.descendSourceText(node, childpar ? "-children" : "", n+1));
 			}
 		}
 		if (chillins.length > 0) {
-			object.push(this.printParChilluns(childpar ? "-children" : "", chillins, n+1));
+			object.push(this.descendParChilluns(childpar ? "-children" : "", chillins, n+1));
 		}
 		// prepare to move ROUTEs to end
 		if (chilluns.length > 0) {
 			if (par === "ROUTE") {
-				route.push(this.printParChilluns(par, chilluns, n+1));
+				route.push(this.descendParChilluns(par, chilluns, n+1));
 			} else {
-				object.push(this.printParChilluns(par, chilluns, n+1));
+				object.push(this.descendParChilluns(par, chilluns, n+1));
 			}
 		}
 		return object.concat(route).join(',\n');
 	},
 
-	printParChilluns : function(par, chilluns, n) {
+	descendParChilluns : function(par, chilluns, n) {
 		var str = "";
 		if (par !== "") {
 			str += '  '.repeat(n)+'"'+par+'": [\n';
