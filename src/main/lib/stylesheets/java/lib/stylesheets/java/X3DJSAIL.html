@@ -1,0 +1,1522 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>X3DJSAIL, X3D Java Scene Access Interface Library</title>
+		<meta name="creator" content="Don Brutzman and Roy Walmsley"/>
+		<meta name="description" value="X3D Java Scene Access Interface Library (X3DJSAIL) overview"/>
+		<meta name="generator" content="X3D-Edit, https://savage.nps.edu/X3D-Edit"/>
+		<meta name='license' content='license.html'/>
+	</head>
+
+<body>
+	<!-- Hidden text used to omit top-level Javadoc page indexing -->
+	<span style="color: white">.</span>
+	
+	<a name="top"/>
+	<table border="0" cellspacing="0" cellpadding="0" summary="" align="center">
+		<tr align="center">
+			<td><a href="http://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank"><img src="images/x3d2-s.gif" width="154" height="97" border="0" alt="to X3D Resources"/></a></td>
+			<td><pre> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </pre></td>
+			<td><h2>X3D Java Scene Access Interface Library (X3DJSAIL)</h2></td>
+			<td><pre> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </pre></td>
+			<td><a href="http://www.web3d.org" target="_blank"><img src="images/web3d_logo2.png" width="120" height="60" border="0" alt="to Web3D home page"/></a></td>
+		</tr>
+	</table>
+
+	<p align="center">
+		X3D Java Scene Access Interface Library (X3DJSAIL) supports programmers with 
+		standards-based X3D Java interfaces and objects, all as open source.
+	</p>
+	
+        <blockquote>
+            <p align="center"><small>
+                <a href="#Abstract">Abstract</a>&nbsp;|
+                <a href="#Codebase">Codebase</a>&nbsp;|
+                <a href="#CommandLine">Command&nbsp;Line</a>&nbsp;|
+                <a href="#Conversions">Conversions&nbsp;Support</a>&nbsp;|
+                <a href="#Design">Design&nbsp;Features</a>&nbsp;|
+                <a href="#Downloads">Downloads</a>&nbsp;|
+                <a href="#Examples">Examples</a>&nbsp;|
+                <a href="#EXI" title="Efficient XML Interchange (EXI) Compression">EXI</a>&nbsp;|
+                <a href="javadoc/index.html" target="_blank" title="Java Documentation">Javadoc</a>&nbsp;|
+                <a href="license.html">License</a>&nbsp;|
+                <a href="#OtherImplementations">Other&nbsp;Implementations</a>&nbsp;|
+                <a href="README.txt">README</a>&nbsp;|
+                <a href="#References">References</a>&nbsp;|
+                <a href="#SpecificationChanges">Specification&nbsp;Changes</a>&nbsp;|
+                <a href="#TODO" title="Improvements">TODO</a>&nbsp;|
+                <a href="#UtilityMethods">Utility&nbsp;Methods</a>&nbsp;|
+                <a href="#Contact">Contact</a>
+            </small></p>
+        </blockquote>
+
+<!-- ======================================================== -->
+<hr />
+<h3> 
+	<a name="Abstract">Abstract</a>
+	<a href="#"><!-- to top -->
+		<img src="images/x3d2-s.gif" width="50" height="32" border="0" title="to top" alt="to top" align="right"/>
+		<!-- http://stackoverflow.com/questions/11750862/create-a-link-to-the-top-of-a-web-page-without-using-anchors -->
+		<!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#attr-href -->
+		<!-- https://www.w3.org/TR/html5/single-page.html#scroll-to-fragid -->
+	</a>
+</h3>
+	
+	<p>
+X3DJSAIL, the X3D Java Scene Access Interface Library is a set of strongly typed
+Java application programming interfaces (APIs) providing programmer access to an
+X3D scene graph. Two open-source Java packages are included that contain X3D SAI
+interfaces and support the 
+<a href="http://www.web3d.org/standards">X3D&nbsp;Standards</a>
+for Java programmers.
+		<ul>
+			<li>
+				<code>org.web3d.x3d.jsail</code> provides concrete implementation-oriented classes for building X3D scenes using standalone Java objects.
+			</li>
+			<li>
+				<code>org.web3d.x3d.sai</code> &nbsp;&nbsp; contains standard X3D SAI interfaces to independently compile Script-node source for use in X3D players.
+			</li>
+		</ul>
+	</p>
+	
+	<p>
+		Available products include
+		several thousand self-validating <a href="#Examples">Examples</a>,
+		<a href="javadoc/index.html" target="_blank">Javadoc</a>,
+		<a href="src/" target="_blank">source code</a>,
+		<a href="classes/" target="_blank">compiled classes</a>
+		build support,
+		run-time jar archives,
+		and draft specification annexes for
+		<a href="draftJavaLanguageBindingAnnexes/Part2/nodeInterfaces.html" target="_blank">node interfaces</a>
+		and
+		<a href="draftJavaLanguageBindingAnnexes/Part2/nodeTypeInterfaces.html" target="_blank">abstract-node type interfaces</a>.
+	</p>
+
+	<p>
+		Goals include making it easy to create an X3D scene graph using Java,
+		while also making it hard to create an incorrect or invalid X3D model.
+	</p>
+	
+	<p>
+		Multiple uses are intended for these libraries.
+	</p>
+	
+	<ul>
+		<li>
+			Create high-performance standalone Java applications using a 
+			<a href="https://en.wikipedia.org/wiki/Plain_Old_Java_Object" target="_blank">Plain Old Java Object (POJO)</a> 
+			implementation for X3D.
+		</li>
+		<li>
+			Compiling Java source code used in X3D Script nodes.
+		</li>
+		<li>
+			Future: serve as a design template for planned autogeneration of similar codebases using
+			ECMAScript, C++/C# and Python programming languages.
+		</li>
+	</ul>
+
+<!-- ======================================================== -->
+<hr />
+<h3> 
+	<a name="Codebase">Codebase Production</a> 
+	<a href="#"><!-- to top -->
+		<img src="images/x3d2-s.gif" width="50" height="32" border="0" title="to top" alt="to top" align="right"/>
+	</a>
+</h3>
+	
+        <p>
+            This work implements the 
+            X3D Unified Object Model (X3DUOM)
+            in support of full and emerging X3D Specification capabilities.
+        </p>
+	<ul>
+		<!--
+		<li>
+			Originally released 27 June 2016, providing support corresponding to X3D version 3.3.
+		</li>
+		-->
+		<li>
+			This is a
+			<a href="https://en.wikipedia.org/wiki/Software_release_life_cycle#Beta" target="_blank">beta software release</a>
+			that is adding further capabilities while undergoing software testing and public review.  
+			See the <a href="#TODO">TODO</a> list for work details.
+		</li>
+		<li>
+			Initial <code>version 1.0</code> release is complete following satisfactory conversions of all
+			<a href="http://www.web3d.org/x3d/content/examples/X3dResources.html#Examples" target="_blank">X3D Examples Archives</a>..
+			Javadoc links are provided for all archives.  See
+			<a href="http://www.web3d.org/x3d/content/examples/build.log.java.txt" target="_blank">build.log.java.txt</a>
+			for console logs from all examples.
+			
+		</li>
+		<li>
+			This codebase is automatically generated from the 
+			<a href="http://www.web3d.org/specifications/X3DObjectModel-3.3.xml" target="_blank">X3D Object Model</a>,
+			which in turn is automatically generated from the 
+			<a href="http://www.web3d.org/specifications" target="_blank">X3D XML Schema</a>.
+		</li>
+		<li>
+			X3DJSAIL rigorously matches the data&nbsp;types and parent-child relationships of the X3D&nbsp;specifications.
+		</li>
+		<li>
+			Schema to object model to codebase conversion is performed by two XSLT stylesheets,
+			<a href="http://www.web3d.org/x3d/stylesheets/BuildObjectModelXmlFile.xslt" target="_blank">BuildObjectModelXmlFile.xslt</a>
+			and
+			<a href="http://www.web3d.org/x3d/stylesheets/CreateX3dSceneAccessInterfaceJava.xslt" target="_blank">CreateX3dSceneAccessInterfaceJava.xslt</a>,
+			one after the other.
+		</li>
+		<li>
+			Explanatory information about the functionality of X3D nodes and fields is inserted into source code and
+			<a href="javadoc/index.html" target="_blank">Javadoc</a>
+			using the
+			<a href="http://www.web3d.org/x3d/content/examples/X3dResources.html#Tooltips" target="_blank">X3D Tooltips</a>
+		   (specifically the
+			<a href="http://www.web3d.org/x3d/tooltips/x3d-3.3.profile.xml" target="_blank">X3D English tooltips XML source</a> file).
+		</li>
+		<li>
+			Build functionality is invoked via the
+			<a href="http://www.web3d.org/x3d/stylesheets/build.xml" target="_blank">X3D Stylesheets build.xml</a>
+			file and
+			<a href="http://ant.apache.org" target="_blank">Ant</a>.
+		</li>
+		<li>
+			<a href="http://www.web3d.org/x3d/content/examples/X3dResources.html#Examples" target="_blank">X3D Resource Examples: Scene Archives for X3D</a>
+			lists Javadoc links for all archives.
+		</li>
+	</ul>
+	<p>
+		TODO under active development: the X3DJSAIL library-creation files currently require multiple external assets and local configuration.
+		Ongoing work will combine these and other resources into an independently buildable project.
+	</p>
+
+<!-- ======================================================== -->
+<hr />
+<h3>
+	<a name="CommandLine">Command Line</a>
+	<a href="#"><!-- to top -->
+		<img src="images/x3d2-s.gif" width="50" height="32" border="0" title="to top" alt="to top" align="right"/>
+	</a>
+</h3>
+
+	<p>
+		Command line invocation is feasible through use of the
+		<a href="javadoc/org/web3d/x3d/jsail/CommandLine.html" target="_blank">org.x3d.jsail.CommandLine</a>
+		class.
+	</p>
+	<p>
+        Note that model validation is always performed as part of X3DJSAIL operations.
+	</p>
+
+        <ul>
+            <li>
+                Invocation of standalone .jar
+                <p style="background-color: #DDDDDD">
+                    <b><code>java -classpath <i>someLocalPath</i>/<a href="lib/X3DJSAIL.3.3.full.jar">X3DJSAIL.3.3.full.jar</a>
+                        <br /> &nbsp;&nbsp;&nbsp;&nbsp; [sourceModel.x3d | -help | -page | -resources | -tooltips]
+                        <br /> &nbsp;&nbsp;&nbsp;&nbsp; [-tofile [resultFile.*]] [-validate] 
+                        <br /> &nbsp;&nbsp;&nbsp;&nbsp; [sourceModel.exi -fromEXI] [sourceModel.gz -fromGZIP] [sourceModel.zip -fromZIP]
+                        <br /> &nbsp;&nbsp;&nbsp;&nbsp; [-toX3D | -toXML | -toClassicVrml | -toJSON | -toVRML97 | -toX3DOM | -toX_ITE | -toGZIP | -toZIP]</code></b>
+                </p>
+                <p>
+                    <i>Example:</i> &nbsp;&nbsp; <span style="font-weight:bold;color:darkgreen">
+                                                 <code>java -classpath <i>someLocalPath</i>/X3DJSAIL.3.3.full.jar org.web3d.x3d.jsail.CommandLine -help</code></span>
+                </p>
+                <p>
+                    <i>Example:</i> &nbsp;&nbsp; <span style="font-weight:bold;color:darkgreen">
+                                                 <code>java -classpath <i>someLocalPath</i>/X3DJSAIL.3.3.full.jar org.web3d.x3d.jsail.CommandLine HelloWorld.x3d -toVRML97 -toFile</code></span>
+                </p>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                Prerequisite setup: invocation using local libraries <br /> &nbsp;
+            </li>
+            <ul>
+                <li>
+                    <i>Primary:</i> CLASSPATH correctly containing "fat&nbsp;jar"
+                    <a href="lib/X3DJSAIL.3.3.full.jar"><code>X3DJSAIL.3.3.full.jar</code></a>
+                    <p>
+                        Example CLASSPATH confirmation:
+                        <br />
+						<code>% <span style="font-weight:bold;color:darkgreen"><b>echo $CLASSPATH</b></span></code>
+                        <br />
+                        <code>CLASSPATH='C:\x3d-code\www.web3d.org\x3d\stylesheets\java\jars\X3DJSAIL.3.3.full.jar'</code>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <i>Alternative:</i> For developers, an alternative CLASSPATH configuration is "skinny&nbsp;jar"
+						<a href="lib/X3DJSAIL.3.3.classes.jar"><code>X3DJSAIL.3.3.classes.jar</code></a> 
+						but note that Saxon stylesheet engine and other EXI .jar dependencies must also be provided.
+                        <br />
+						<code>% <span style="font-weight:bold;color:darkgreen"><b>echo $CLASSPATH</b></span></code>
+                        <br />
+                        <code>CLASSPATH='C:\x3d-code\www.web3d.org\x3d\stylesheets\java\jars\X3DJSAIL.3.3.classes.jar;<br />
+										 C:\x3d-code\www.web3d.org\x3d\stylesheets\java\lib\<a href="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/java/lib/saxon9he.jar?format=raw">saxon9he.jar</a>;<br />
+										 C:\x3d-code\www.web3d.org\x3d\stylesheets\java\lib\<a href="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/java/lib/exificient-gui-jar-with-dependencies?format=raw">exificient-gui-jar-with-dependencies.jar</a>;<br />
+										 C:\x3d-code\www.web3d.org\x3d\stylesheets\java\lib\<a href="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/java/lib/nagasena.jar?format=raw">nagasena.jar</a>'</code>
+                    </p>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <i>Invocation:</i>  
+                        <br /> <b><code>java org.web3d.x3d.jsail.CommandLine
+                        <br /> &nbsp;&nbsp;&nbsp;&nbsp; [sourceModel.x3d | -help | -page | -resources | -tooltips] 
+                        <br /> &nbsp;&nbsp;&nbsp;&nbsp; [-tofile [resultFile.*]] [-validate]
+						<br /> &nbsp;&nbsp;&nbsp;&nbsp; [sourceModel.exi -fromEXI] [sourceModel.gz -fromGZIP] [sourceModel.zip -fromZIP]
+                        <br /> &nbsp;&nbsp;&nbsp;&nbsp; [-toX3D | -toXML | -toClassicVrml | -toJSON | -toVRML97 | -toX3DOM | -toX_ITE | -toGZIP | -toZIP]</code></b>
+                    <p>
+                        <i>Example:</i> &nbsp;&nbsp; <span style="font-weight:bold;color:darkgreen">
+                                                 <code>java org.web3d.x3d.jsail.CommandLine -help</code></span>
+                    </p>
+                    <p>
+                        <i>Example:</i> &nbsp;&nbsp; <span style="font-weight:bold;color:darkgreen">
+                                                 <code>java org.web3d.x3d.jsail.CommandLine HelloWorld.x3d -toClassicVRML</code></span>
+                    </p>
+                    <p>
+                        <i>Example:</i> &nbsp;&nbsp; <span style="font-weight:bold;color:darkgreen">
+                                                 <code>java org.web3d.x3d.jsail.CommandLine HelloWorld.x3d.gz -fromGZIP</code></span>
+                    </p>
+                </li>
+            </ul>
+        </ul>
+
+<!-- ======================================================== -->
+<hr />
+<h3>
+	<a name="Conversions">Conversions Support</a>
+	<a href="#"><!-- to top -->
+		<img src="images/x3d2-s.gif" width="50" height="32" border="0" title="to top" alt="to top" align="right"/>
+	</a>
+</h3>
+
+	<p>
+		X3D scene graph run-time capabilities are interoperable and functionally equivalent for 
+		all X3D file encodings and programming-language bindings.
+	</p>
+	<p>
+		Conversion capabilities continue to grow through multiple exporters and importers.
+		Current and planned support is shown in the following table.
+	</p>
+
+	<table border="">
+		
+		<tr style="background-color: lightgrey">
+			<td colspan="3">
+				<a name="import"><b>File load and import</b></a>
+			</td>
+		</tr>
+		<tr>
+			<td width="34%">
+				<a href="http://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/X3D_XML.html" target="_blank">X3D&nbsp;XML</a>
+				encoding&nbsp;<code><a href="examples/HelloWorldProgramOutput.Reloaded.x3d" target="_blank">.x3d</a></code>
+				(<span style="color:darkgreen">implemented</span>)
+			</td>
+			<td width="33%">
+				<a href="http://www.web3d.org/documents/specifications/19776-2/V3.3/Part02/X3D_ClassicVRML.html" target="_blank">X3D&nbsp;ClassicVRML</a> 
+				encoding&nbsp;<code>.x3dv</code>
+				(TODO)
+			</td>
+			<td width="33%">
+				<a href="http://www.web3d.org/documents/specifications/14772/V2.0/index.html" target="_blank">X3D&nbsp;VRML97</a>
+				encoding&nbsp;<code>.wrl</code>
+				(TODO)
+			</td>
+		</tr>
+		<tr>
+			<td width="33%" rowspan="2">
+				<a href="https://www.w3.org/XML/EXI">Efficient XML Interchange (EXI)</a>
+				compressed
+				<code>.exi</code>
+				<br />
+				(<span style="color:darkgreen">implemented</span> with EXIficient; OpenEXI to follow)
+			</td>
+			<td width="33%">
+				<a href="https://en.wikipedia.org/wiki/Gzip">GZIP</a>-compressed&nbsp;<code>.x3d</code>
+				(<span style="color:darkgreen">implemented</span>)
+			</td>
+			<td width="34%">
+				<a href="https://en.wikipedia.org/wiki/Zip_(file_format)">ZIP</a>-compressed&nbsp;<code>.x3d</code>
+				(<span style="color:darkgreen">implemented</span>)
+			</td>
+		</tr>
+		<tr>
+			<td width="34%">
+				<a href="http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding" target="_blank">X3D&nbsp;JSON</a> 
+				encoding&nbsp;<code>.json</code>
+				(TODO)
+			</td>
+			<td width="33%">
+				<code><a href="https://en.wikipedia.org/wiki/STL_(file_format)" target="_blank">.stl</a></code>
+				and
+				<a href="https://en.wikipedia.org/wiki/PLY_(file_format)"><code>.ply</code></a>
+				geometry import
+				(TODO)
+			</td>
+		</tr>
+		<tr style="background-color: lightgrey">
+			<td colspan="3">
+				<a name="export"><b>Export serialization</b></a>
+			</td>
+		</tr>
+		<tr>
+			<td width="34%">
+				X3D&nbsp;XML&nbsp;<code><a href="examples/HelloWorldProgramOutput.x3d" target="_blank">.x3d</a></code> encoding
+				(<span style="color:darkgreen">implemented</span>)
+			</td>
+			<td width="33%">
+				ClassicVRML&nbsp;<code><a href="examples/HelloWorldProgramOutput.x3dv" target="_blank">.x3dv</a></code> encoding
+				(<span style="color:darkgreen">implemented</span>)
+			</td>
+			<td width="33%">
+				VRML97&nbsp;<code><a href="examples/HelloWorldProgramOutput.wrl" target="_blank">.wrl</a></code> encoding
+				(<span style="color:darkgreen">implemented</span>)
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<a href="http://www.x3dom.org" target="_blank">X3DOM</a> 
+				scene page 
+				<code><a href="examples/HelloWorldProgramOutputX3dom.xhtml" target="_blank">X3dom.xhtml</a></code> 
+				(<span style="color:darkgreen">implemented</span>)
+			</td>
+			<td>
+				X_ITE scene page (formerly Cobweb)
+				<code><a href="examples/HelloWorldProgramOutputX_ITE.html" target="_blank">X_ITE.html</a></code> 
+				(<span style="color:darkgreen">implemented</span>)
+			</td>
+			<td>
+				X3D &nbsp;<code><a href="examples/HelloWorldProgramOutput.json" target="_blank">.json</a></code> encoding
+				(<span style="color:darkgreen">implemented</span>)
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<a href="https://www.w3.org/XML/EXI">Efficient XML Interchange (EXI)</a>
+				<code>.exi</code>
+				<br />
+				(<span style="color:darkgreen">implemented</span> with EXIficient, OpenEXI to follow)
+			</td>
+			<td>
+				<a href="https://en.wikipedia.org/wiki/Gzip">GZIP</a>
+				<code>.gz</code>
+				(<span style="color:darkgreen">implemented</span>)
+			</td>
+			<td>
+				<a href="https://en.wikipedia.org/wiki/Zip_(file_format)">ZIP</a>
+				<code>.zip</code>
+				(<span style="color:darkgreen">implemented</span>)
+			</td>
+		</tr>
+		<tr>
+			<td>
+				X3D Compressed Binary Encoding (CBE)
+				<a href="http://www.web3d.org/documents/specifications/19776-3/V3.3/Part03/X3D_Binary.html" target="_blank"><code>.x3db</code></a>
+				(TODO)
+			</td>
+			<td>
+				<a href="http://www.web3d.org/working-groups/x3d/compressed-binary-encoding-activity" target="_blank">Efficient X3D Encoding</a>
+				<code>.x3de</code>
+				(proposed)
+			</td>
+			<td>
+				X3DJSAIL
+				<code>.java</code> source using
+				<a href="http://www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">X3dToJava.xslt</a>
+				(<span style="color:darkgreen">implemented</span>)
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<a href="http://www.web3d.org/documents/specifications/19776-3/V3.3/Part03/concepts.html#X3DCanonicalForm" target="_blank">X3D canonical form</a>
+				(<span style="color:darkgreen">implemented as default output format</span>)
+			</td>
+			<td>
+				<a href="https://www.w3.org/TR/xml-c14n" target="_blank">XML Canonicalization (C14N)</a>
+				(TODO)
+			</td>
+			<td>
+				<a href="https://x3dom.org/src" target="_blank">Shape Resource Container (SRC)</a>
+				<code>.src</code> (TODO&nbsp;once&nbsp;available)
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<a href="https://en.wikipedia.org/wiki/XML_Signature" target="_blank">XML Signature</a> 
+				for authentication
+				(TODO)
+			</td>
+			<td>
+				<a href="https://en.wikipedia.org/wiki/XML_Encryption" target="_blank">XML Encryption</a> 
+				for confidential access and privacy
+				(TODO)
+			</td>
+			<td>
+			</td>
+		</tr>
+	</table>
+
+<!-- ======================================================== -->
+<hr />
+<h3>
+	<a name="Design">Design Features</a>
+	<a href="#"><!-- to top -->
+		<img src="images/x3d2-s.gif" width="50" height="32" border="0" title="to top" alt="to top" align="right"/>
+	</a>
+</h3>
+	
+	<p>
+		Success metric: the X3D information model is sufficient to support round-trip
+		conversion of any X3D scene from one encoding to another.
+	</p>
+
+	<ul>
+		<li>
+			In the X3D language binding for Java, field and node types are defined as
+			<code>org.web3d.x3d.sai</code> Java interfaces so that 
+			author-created source code for Script nodes can be precompiled and later work with a variety of 
+			X3D player implementations.
+		</li>
+		<li>
+			A separate <code>org.web3d.x3d.jsail</code> package of SAI concrete objects that defines instantiable classes, constants and utility methods.
+			Complementary design enables standalone X3D Java programming, with no X3D Script node or external HTML browser required.
+		</li>
+	</ul>
+	<p>
+		The following software-architecture principles have influenced codebase design.
+	</p>
+
+	<ul>
+		<li>
+			Strong checking throughout of node content models and field data types, at compile time, using
+			<a href="https://en.wikipedia.org/wiki/Type_safety" target="_blank">type safety</a>
+			to avoid run-time errors wherever possible.
+		</li>
+		<li>
+			Strict, extensible string enumerations are provided to avoid simple spelling errors 
+			(which otherwise are discovered only by users at run time).
+		</li>
+		<li>
+			Method pipelining to allow setting multiple fields on a single node at one time.
+		</li>
+		<li>
+			Strict checking when setting values using set methods for fields.
+			If a parameter with an illegal value or incorrect length is provided, then no change is applied and an
+			<code>org.web3d.x3d.sai.InvalidFieldValueException</code> exception is thrown.
+		</li>
+	</ul>
+
+
+<!-- ======================================================== -->
+<hr />
+<h3> 
+	<a name="Downloads">Downloads</a>
+	<a href="#"><!-- to top -->
+		<img src="images/x3d2-s.gif" width="50" height="32" border="0" title="to top" alt="to top" align="right"/>
+	</a>
+</h3>
+
+	<p>
+			X3DJSAIL can be used in any Java project by including one of the following jar files in the application CLASSPATH.
+	</p>
+
+	<ul>
+		<li>
+			<a href="jars/X3DJSAIL.3.3.full.jar" target="_blank">X3DJSAIL.3.3.full.jar</a> (30MB) is a
+			<a href="https://stackoverflow.com/questions/19150811/what-is-a-fat-jar" target="_blank">fat&nbsp;jar</a> 
+			with all necessary binaries, source, and documentation. 
+		</li>
+		<li>
+			<a href="jars/X3DJSAIL.3.3.classes.jar" target="_blank">X3DJSAIL.3.3.classes.jar</a> (12MB)
+			is a minimalist jar that only contains X3DJSAIL classes and assets.
+		</li>
+	</ul>
+	<p>
+            <b><code>X3DJSAIL.3.3.full.jar</code></b> can be unzipped to create a complete local copy of all source, binaries, documentation and example programs.
+            It is also executable on the
+            <a href="#CommandLine">Command&nbsp;Line</a>.
+	</p>
+	<p>
+            <b><code>X3DJSAIL.3.3.classes.jar</code></b> can be used by developers for server-side usage or integration in other applications.
+            Further CLASSPATH modifications may be needed to to use it.
+            For full operation, third-party dependency jars found in the 
+            <a href="lib/"><code>lib</code></a> subdirectory must also be in the application <code>CLASSPATH</code>.
+            Examples are shown under 
+            <a href="#CommandLine">Command&nbsp;Line</a> use.
+	</p>
+
+	<ul>
+		<li>
+			<a href="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/CreateX3dSceneAccessInterfaceJava.xslt" target="_blank">CreateX3dSceneAccessInterfaceJava.xslt</a> stylesheet
+		</li>
+		<li>
+			<a href="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/java/" target="_blank">stylesheets/java/</a> directory holds stubs and deployment files
+		</li>
+	</ul>
+
+<!-- ======================================================== -->
+<hr />
+<h3> 
+	<a name="Examples">Examples</a>
+	<a href="#"><!-- to top -->
+		<img src="images/x3d2-s.gif" width="50" height="32" border="0" title="to top" alt="to top" align="right"/>
+	</a>
+</h3>
+
+	<p>
+		Initial codebase development is building out features in a single example
+		&quot;<a href="https://en.wikipedia.org/wiki/Smoke_testing_(software)"  target="_blank">smoke test</a>&quot;
+		program for comprehensive testing.
+	</p>
+
+	<ul>
+		<li>
+			<a href="examples/HelloWorldProgram.java" target="_blank">HelloWorldProgram.java</a>
+			source code that exercises the X3D Java SAI Library
+		   (<a href="examples/HelloWorldProgramOutputLog.txt" target="_blank">console&nbsp;output</a>)
+		</li>
+		<li>
+			Program-generated
+			<a href="examples/HelloWorldProgramOutput.x3d" target="_blank">X3D model</a>,
+			<a href="examples/HelloWorldProgramOutput.x3dv" target="_blank">ClassicVRML model</a>,
+			<a href="examples/HelloWorldProgramOutput.wrl" target="_blank">VRML97 model</a>
+			and 
+			<a href="examples/HelloWorldProgramOutput.json" target="_blank">JSON encoding</a>
+		</li>
+		<li>
+			<a href="examples/HelloWorldProgramOutputX3dom.xhtml" target="_blank">X3DOM scene page</a>,
+			<a href="examples/HelloWorldProgramOutputX_ITE.html" target="_blank">X_ITE scene page</a>,
+			<a href="examples/HelloWorldProgramOutputLog.txt" target="_blank">console output</a>,
+			<a href="examples/images/HelloWorldProgramOutput.png" target="_blank">screenshot image</a>
+			and
+			<a href="examples/images/HelloWorldProgramOutput.mp4" target="_blank">movie</a>
+		</li>
+		<li>
+            Concise program-produced java source to produce the resulting scene graph:
+			<a href="examples/HelloWorldProgramOutput.java" target="_blank">HelloWorldProgramOutput.java</a>
+		</li>
+		<li>
+            Load the produced scene
+			<a href="examples/HelloWorldProgramOutput.x3d" target="_blank">HelloWorldProgramOutput.x3d</a>
+		   (<a href="https://savage.nps.edu/X3dValidator?url=http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d" target="_blank">validator</a>)
+			using 
+			<a href="javadoc/org/web3d/x3d/jsail/X3DLoaderObject.html" target="_blank">X3DLoaderObject</a>, 
+			then write resulting DOM back out to
+			<a href="examples/HelloWorldProgramOutput.Reloaded.java" target="_blank">HelloWorldProgramOutput.Reloaded.x3d</a>
+		   (<a href="https://savage.nps.edu/X3dValidator?url=http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.Reloaded.x3d" target="_blank">validator</a>)
+		</li>
+		<li>
+			Stylesheet-generated
+			<a href="examples/HelloWorldProgramOutput.html" target="_blank">pretty-print X3D model documentation</a>
+		</li>
+		<li>
+			Experimental
+			<a href="examples/HelloWorldProgramOutput.Reloaded.x3d" target="_blank">HelloWorldProgramOutput.Reloaded.x3d</a>
+			using
+			<a href="javadoc/org/web3d/x3d/jsail/X3DLoaderObject.html" target="_blank">X3DLoaderObject</a>
+		</li>
+		<li>
+			<a href="examples/HelloWorldProgramOutput.java" target="_blank">HelloWorldProgramOutput.java</a>
+			source-code serialization using
+			<a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#toFileJava-java.lang.String-" target="_blank">X3DObject.toFileJava(filename)</a>
+			and
+			<a href="http://www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">X3dToJava.xslt</a> 
+			stylesheet.
+		</li>
+	</ul>
+	<p>
+		Long-term plans include creation (and possibly autogeneration) of a unit-test suite to always ensure that capabilities and features remain working.
+	</p>
+
+<!-- ======================================================== -->
+<hr />
+<h3> 
+	<a name="EXI">Efficient XML Interchange (EXI) Compression</a>
+	<a href="#"><!-- to top -->
+		<img src="images/x3d2-s.gif" width="50" height="32" border="0" title="to top" alt="to top" align="right"/>
+	</a>
+</h3>
+
+	<p>
+		<a href="https://en.wikipedia.org/wiki/Efficient_XML_Interchange" target="_blank">Efficient XML Interchange (EXI)</a>
+		is a
+		<a href="https://www.w3.org/TR/exi" target="_blank">World Wide Web Consortium (W3C) Recommendation</a>
+		that provides compact, high-performance compression for XML and JSON files.
+	</p>
+
+	<table style="margin-left:auto; margin-right:auto; text-align: center; border: 0;">
+		<tr style="padding: 40px;">
+			<td>
+				<!-- rescaled to match from suggested size 560 x 315 -->
+				<iframe width="333" height="250" src="http://www.youtube.com/embed/Rig2z9veUv0" frameborder="0" allowfullscreen></iframe>
+			</td>
+			<td>
+				&nbsp;
+			</td>
+			<td>
+				<!-- image size 770 x 500 -->
+				<a href="lib/exificient-gui-jar-with-dependencies.jar" target="_blank" title="EXIficient GUI: to execute, save and launch .jar file (requires Java installed)"><img src="images/ExificientGuiHelloWorld.x3d.png" width="385" height="250"/></a>
+			</td>
+		</tr>
+	</table>
+
+	<p>
+		The 
+		<a href="https://www.dropbox.com/s/n2545xm0jjyui2d/IntroToOpenEXI.pdf">OpenEXI introduction whitepaper</a>
+		describes how
+		EXI design produces documents that decompress directly into computer memory, with no parsing of decompressed data required.
+	</p>
+	<p>
+		EXI file compaction and computational performance have been demonstrated to be superior to
+		a variety other compression schemes including
+		<a href="https://en.wikipedia.org/wiki/Gzip" target="_blank">gzip</a>,
+		<a href="https://en.wikipedia.org/wiki/Zip_(file_format)" target="_blank">zip</a>,
+		<a href="https://en.wikipedia.org/wiki/BSON" target="_blank">BSON</a>,
+		<a href="https://en.wikipedia.org/wiki/CBOR" target="_blank">CBOR</a>,
+		and other compressed file formats.
+		<!-- TODO confirmation relative to Brotli https://en.wikipedia.org/wiki/Brotli -->
+	</p>
+
+	<h4>
+		EXI References
+	</h4>
+	<ul>
+		<li>
+			<a href="http://openexi.sourceforge.net" target="_blank">OpenEXI Nagasena</a>
+			project:
+			<a href="https://www.youtube.com/watch?v=Rig2z9veUv0" target="_blank">overview video</a>,
+			<a href="https://www.dropbox.com/s/n2545xm0jjyui2d/IntroToOpenEXI.pdf">introduction whitepaper</a>
+			and
+			<a href="http://openexi.sourceforge.net/tutorial" target="_blank">implementation tutorial</a>
+			with code available as open source in
+			<a href="https://sourceforge.net/projects/openexi" target="_blank">OpenEXI Sourceforge project repository</a>.
+		</li>
+		<li>
+			<a href="https://exificient.github.io" target="_blank">EXIficient</a>
+			project implementation in Java, JavaScript, and C/C++ programming languages
+			with code available as open source in
+			<a href="https://github.com/exificient" target="_blank">EXIficient github project repository</a>.
+		</li>
+		<li>
+			<a href="https://www.w3.org/XML/EXI" target="_blank">EXI Working Group Public Page</a>
+			describes work in progress and how to get involved.
+		</li>
+		<li>
+			<a href="https://www.w3.org/TR/exi" target="_blank">Efficient XML Interchange (EXI) Format 1.0 (Second Edition)</a>,
+			W3C Recommendation, 11 February 2014.
+			EXI is a very compact representation for the Extensible Markup Language (XML) Information Set that is intended to simultaneously optimize performance and the utilization of computational resources.
+		</li>
+		<li>
+			<a href="https://www.w3.org/TR/exi-primer" target="_blank">EXI Primer</a>
+			provides a more-easily readable technical background on the Efficient XML Interchange (EXI) format.
+		</li>
+		<li>
+			<a href="https://www.w3.org/TR/exi-c14n" target="_blank">Canonical EXI</a>, W3C Candidate Recommendation, 03 Nov 2016.
+			Canonical EXI describes a relatively simple method for generating a consistent canonical form of an EXI document
+			that accounts for  permissible differences that might otherwise occur when using different applications.
+			<a href="https://en.wikipedia.org/wiki/Canonical_form" target="_blank">Canonical form</a>
+			specifies a unique representation for any document, encouraging consistent document interchange
+			and data-centric security.
+		</li>
+		<li>
+			<a href="https://www.w3.org/TR/exi-for-json" target="_blank">EXI4JSON (EXI for JSON)</a>, Second Public Working Draft, 23 August 2016.
+			With a relatively small set of transformations EXI may also be applied to compress
+			<a href="https://www.json.org"> JavaScript Object Notation(JSON)</a>,
+			a popular format for exchange of structured data on the Web.
+		</li>
+		<li>
+          <a href="https://wiki.nps.edu/display/NOW/Efficient+Messaging">Efficient Messaging</a>
+		  considerations for afloat networking and
+          <a href="https://wiki.nps.edu/display/NOW/Network+Optional+Warfare">Network Optional Warfare (NOW)</a>.
+		</li>
+	</ul>
+
+<!-- ======================================================== -->
+<hr />
+<h3> 
+	<a name="OtherImplementations">Other X3D Java Implementations</a>
+	<a href="#"><!-- to top -->
+		<img src="images/x3d2-s.gif" width="50" height="32" border="0" title="to top" alt="to top" align="right"/>
+	</a>
+</h3>
+
+	<ul>
+		<li>
+			<a href="https://savage.nps.edu/Savage/developers.html#Xj3D" target="_blank">Xj3D</a>
+		</li>
+		<li>
+			<a href="http://freewrl.sourceforge.net/extend.html" target="_blank">FreeWrl</a>
+		</li>
+		<li>
+			<a href="http://doc.instantreality.org/tutorial/implementing-script-nodes-in-java/" target="_blank">InstantReality</a>
+		</li>
+		<li>
+			<a href="http://www.bitmanagement.com/en/products/interactive-3d-clients/bs-contact" target="_blank">BS Contact</a> and 
+			<a href="http://www.bitmanagement.com/products/interactive-3d-clients/bs-contact-j" target="_blank">BS Contact J</a>
+		</li>
+		<li>
+			Others?
+		</li>
+	</ul>
+
+<!-- ======================================================== -->
+<hr />
+<h3>
+	<a name="References">References and Relevant X3D Specifications</a>
+	<a href="#"><!-- to top -->
+		<img src="images/x3d2-s.gif" width="50" height="32" border="0" title="to top" alt="to top" align="right"/>
+	</a>
+</h3>
+
+	<ul>
+		<li>
+			<a href="http://www.web3d.org/documents/specifications/19777-2/V3.0" target="_blank">X3D Java SAI Language Bindings</a>
+			(ISO/IEC&nbsp;19777-2) that these packages implement.
+			<ul>
+				<li>
+					Autogenerated: draft <a href="draftJavaLanguageBindingAnnexes/Part2/nodeTypeInterfaces.html" target="_blank">Annex B Node type interfaces</a>
+					(former original
+					<a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/abstracts.html" target="_blank">Abstract node interfaces</a>)
+				</li>
+				<li>
+					Autogenerated: draft <a href="draftJavaLanguageBindingAnnexes/Part2/nodeInterfaces.html" target="_blank">Annex C Node interfaces</a>
+					&nbsp; &nbsp; &nbsp; &nbsp; (former original
+					<a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/concretes.html" target="_blank">Concrete node interfaces</a>)
+				</li>
+			</ul>
+		</li>
+		<li>
+			<a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/Architecture.html" target="_blank">X3D Abstract Specification</a>
+			(ISO/IEC&nbsp;19775-1) providing functional definitions for X3D scene graphs.
+		</li>
+		<li>
+			<a href="http://www.web3d.org/documents/specifications/19775-2/V3.3/Part02/X3D_SAI.html" target="_blank">X3D SAI Abstract Specification</a>
+			(ISO/IEC&nbsp;19775-2) abstract interface definitions for all SAI programming language bindings.
+		</li>
+		<li>
+			<a href="http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding" target="_blank">X3D JSON Encoding</a>,
+			<a href="http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json" target="_blank">JSON schema</a>
+		   (<a href="http://www.web3d.org/specifications/X3dJsonSchemaDocumentation3.3/x3d-3.3-JSONSchema.html" target="_blank">documentation</a>)
+			and draft 
+			<a href="https://github.com/Web3dConsortium" target="_blank">X3D JSON specification</a>. 
+		</li>
+		<li>
+			X3D JSON implementations:
+			<a href="http://www.web3d.org/x3d/stylesheets/X3dToJson.html" target="_blank">X3D to JSON Stylesheet Converter</a> 
+			and
+			<a href="https://github.com/coderextreme/X3DJSONLD" target="_blank">X3DJSONLD JavaScript conversion library</a>. 
+		</li>
+		<li>
+			Roy Walmsley, Don Brutzman and John Carlson,
+			&quot;<a href="references/BrutzmanWalmsleyCarlsonJsonEncodingForX3dJuly2016.pdf" target="_blank">A JSON Encoding for X3D</a>&quot;,
+			<a href="http://web3d2016.web3d.org" target="_blank">Web3D&nbsp;2016&nbsp;Conference</a>,
+			Anaheim California, 22-24 July 2016.
+		</li>
+		<li>
+			X3D Example Archives: 
+			<a href="http://www.web3d.org/x3d/content/examples/Basic/ScriptConformance" target="_blank">Basic, Script Conformance</a>
+			and
+			<a href="http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter09-EventUtilitiesScripting" target="_blank">X3D for Web Authors, Chapter 09 - Event Utilities Scripting</a>
+		</li>
+		<li>
+			<a href="http://www.web3d.org/x3d/content/examples/Basic/ScriptConformance/VrmlJavaPaper.pdf">The Virtual Reality Modeling Language (VRML) and Java</a>,
+			Don Brutzman, <i>Communications of the ACM</i>, vol. 41 no. 6, June 1998, pp. 57-64.
+		</li>
+		<li>
+			<a href="https://pragprog.com/book/vsjava8/functional-programming-in-java">Functional Programming in Java: Harnessing the Power of Java 8 Lambda Expressions</a>,
+			Venkat Subramaniam, <i>Pragmatic Bookshelf</i>, Dallas Texas, 2014.
+		</li>
+		<li>
+			<a href="https://www.manning.com/books/java-reflection-in-action">Java Reflection in Action</a>, 
+			Ira R. Forman and Nate Forman, <i>Manning Press</i>, Greenwich England, 2005.
+		</li>
+		<li>
+			Java Tutorials: 
+			<a href="https://docs.oracle.com/javase/tutorial/reflect/index.html">Reflection API</a>,
+			<a href="https://docs.oracle.com/javase/tutorial/jaxp/xslt/transformingXML.html">Transforming XML Data with XSLT</a>
+		</li>
+	</ul>
+
+<!-- ======================================================== -->
+<hr />
+<h3>
+	<a name="SpecificationChanges">Specification Changes under Consideration</a>
+	<a href="#"><!-- to top -->
+		<img src="images/x3d2-s.gif" width="50" height="32" border="0" title="to top" alt="to top" align="right"/>
+	</a>
+</h3>
+
+	<ul>
+		<li>
+			<a href="X3dJavaSpecificationChangesAndIssues.txt">X3dJavaSpecificationChangesAndIssues.txt</a>
+			lists noted problems with the governing specification
+			<a href="http://www.web3d.org/documents/specifications/19777-2/V3.0" target="_blank">X3D Java SAI Language Bindings</a>
+			(ISO/IEC&nbsp;19777-2).
+		</li>
+		<li>
+			Significant specification work is needed to align
+			<a href="http://www.web3d.org/documents/specifications/19775-2/V3.3/Part02/X3D_SAI.html">X3D Abstract Scene Access Interface (SAI)</a>	
+			and corresponding language-binding specifications, including the X3D Java SAI.
+		</li>
+		<li>
+			Specification prose is needed to define necessary support for <code>DEF</code>, <code>USE</code> and <code>class</code> attributes.
+		</li>
+		<li>
+			Not needed: adding Annex D Java SAI Concrete Classes for standalone scene programming, since
+			other approaches can be accomplished compatibly.
+		</li>
+		<li>
+			<a href="http://www.web3d.org/realtime-3d/member-only/mantis/my_view_page.php">Mantis issue tracker</a>
+			keeps track of details, alternatives and resolution for each specification issue.
+		</li>
+		<li>
+			<a href="https://github.com/Web3dConsortium">Web3D Consortium github</a>
+			(member-only access) is used to maintain editors-draft Web3D specifications in version control.
+		</li>
+	</ul>
+
+<!-- ======================================================== -->
+<hr />
+<h3>
+	<a name="TODO">TODO</a> Planned Work
+	<a href="#"><!-- to top -->
+		<img src="images/x3d2-s.gif" width="50" height="32" border="0" title="to top" alt="to top" align="right"/>
+	</a>
+</h3>
+
+<h4> TODO: <a href="http://www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">X3dToJava.xslt</a> stylesheet improvements
+</h4>
+
+	<ul>
+		<li>
+			Continued testing and improvement with conversion of <code>.x3d</code> source models in the
+			<a href="http://www.web3d.org/x3d/content/examples/X3dResources.html#Examples" target="_blank">X3D Examples Archive</a>.
+		</li>
+		<li>
+			Continued resolution of issue reports on 
+			<a href="http://www.web3d.org/mailman/listinfo/x3d-public_web3d.org">x3d-public@web3d.org</a> mailing list
+		   (<a href="http://web3d.org/pipermail/x3d-public_web3d.org">archives</a>).
+		</li>
+		<li>
+			Partially addressed: handle too-large initialization methods (greater than 64K compiled)
+			by splitting off arrays portions as separate data structures, when needed, rather than
+			pipelined functional-style instantiations.
+		</li>
+		<li>
+			<i>Prototypes:</i>
+			check <code>IS</code>/<code>connect</code> support, 
+			improve <code>ProtoInstance</code> handling without needing <code>containerField</code>
+		</li>
+	</ul>
+
+<h4> TODO: Object Model for X3D&nbsp;(OM4X3D) issues
+	<a href="#"><!-- to top -->
+		<img src="images/x3d2-s.gif" width="50" height="32" border="0" title="to top" alt="to top" align="right"/>
+	</a>
+</h4>
+
+	<ul>
+		<li>
+			<i>Available</i>:
+			<a href="http://www.web3d.org/specifications/X3DUOM/ObjectModelForX3dMasterClassWeb3dConference2017June7.pdf">tutorial</a>
+			from
+			<a href="http://web3d2017.web3d.org" target="_blank">Web3D 2017 Conference</a>.
+		</li>
+		<li>
+			Transcribe definitions into XML Schema, automate addition of the very-short set of allowed alternative
+			<code><a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerField">containerField</a></code> 
+			values.
+		</li>
+		<li>
+			Implement specialty string subtypes such as 
+			<code>ID</code>, <code>IDREF</code>, <code>NMTOKEN</code> and <code>NMTOKENS</code>.
+		</li>
+		<!--
+		<li>
+			Decide how to represent contained CDATA source code for Script and Shader nodes.
+		</li>
+		-->
+		<li>
+			Document how ROUTEs and comments can be children of nodes and statements (but not on a per-field basis).
+		</li>
+		<li>
+			Confirm consistent handling of ROUTE, ProtoInstance, ProtoDeclare, ExternProtoDeclare.
+			Ensure that specification support for ProtoDeclare and ExternProtoDeclare includes <code>appinfo</code> and <code>documentation</code> fields.
+			Ensure that specification support for ProtoInstance includes <code>DEF USE IS class</code> and <code>metadata</code> fields.
+		</li>
+		<li>
+			Provide annotation descriptions for abstract node types in XML Schema.
+		</li>
+		<li>
+			Finish 
+			<a href="http://www.web3d.org/specifications/X3dRegularExpressions.html" target="_blank">X3D Regular Expressions (regexes)</a>,
+			apply them in X3D XML Schema, then include in Object Model for X3D&nbsp;(OM4X3D).
+		</li>
+	</ul>
+
+
+<h4> TODO: X3DJSAIL source code and capability improvements
+	<a href="#"><!-- to top -->
+		<img src="images/x3d2-s.gif" width="50" height="32" border="0" title="to top" alt="to top" align="right"/>
+	</a>
+</h4>
+
+	<ul>
+		<li>
+			<a name="coderextreme"><a href="https://github.com/coderextreme/X3DJSAIL">coderextreme/X3DJSAIL</a></a>
+			development is testing and building many capabilities.
+			<a name="Maven"><a href="https://maven.apache.org" target="_blank">Maven</a></a>
+			support is planned.
+		</li>
+		<li>
+                        Add validation of min/max inclusive/exclusive bounds when setting values for arrays.
+		</li>
+		<li>
+			Provide enumeration constants for
+			<a href="http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/tables/tables.html" target="_blank">Humanoid Animation (HAnim)</a>
+			nodes.
+		</li>
+		<li>
+			Provide programmer with <code>java.util.logging</code> options as alternatives to strict exception throwing.
+			Add 
+			<code><a href="javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a></code>
+			parameter(s) to enable verbose debugging output when desired.
+		</li>
+		<li>
+			Method
+			<a href="javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html#">ConfigurationProperties.</a>
+			for selection between implementations
+			<a href="https://exificient.github.io">EXIficient</a> (implemented)
+			and
+			<a href="http://openexi.sourceforge.net">Nagasena OpenEXI</a> (TODO)
+			for
+			<a href="https://www.w3.org/XML/EXI">Efficient XML Interchange (EXI)</a>
+			compression.
+		</li>
+		<li>
+			Internationalization (I18N):
+			confirm proper handling of XML character entities and UTF-8 characters, both in Java source and when serializing to other X3D encodings.
+		</li>
+		<li>
+			Measure and profile performance.  Aside from stylesheet-driven file conversions, current execution times seem (screamingly?) fast.
+			Further speedups in stylesheet conversions might be possible if stylesheets are precompiled using Saxon.
+		</li>
+		<li>
+			Confirm support for Browser services and connections:
+			<a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/tables.html#BrowserServices" target="_blank">4.2.4 Browser services</a>
+			and
+			<a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/functions.html#BrowserServicesAndConnections" target="_blank">6.2.1 BrowserFactory</a>.
+		</li>
+		<li>
+			Missing capability: need to finish implementation of partial-stub methods for <code>SF/MF Image</code> and <code>Matrix*</code> classes
+			(typically adapting source code from the Xj3D implementation). 
+		</li>
+		<li>
+			Automatically support naming correspondences for <code>DEF</code> and <code>name</code> values
+			when first constructing HAnim nodes.
+			Include naming checks in each node's self-checking <code>validate()</code> method.
+		</li>
+		<li>
+			Add import/export for different file encodings (for example 
+			<a href="https://en.wikipedia.org/wiki/STL_(file_format)"><code>.stl</code></a> and 
+			<a href="https://en.wikipedia.org/wiki/PLY_(file_format)"><code>.ply</code></a>, others).
+			Adding native export to this codebase can likely be adapted to X3D&nbsp;SAI codebases in other programming languages.
+		</li>
+		<li>
+			Filter redundant <code>import</code> statements within autogenerated library source code.
+		</li>
+		<li>
+			Add and fully integrate relevant external libraries as needed:
+			<a href="http://www.web3d.org/wiki/index.php/X3D_NURBS" target="_blank">jgeom for NURBS</a>,
+			<a href="http://open-dis.sourceforge.net/Open-DIS.html" target="_blank">OpenDIS</a>,
+			and likely others.
+		</li>
+		<li>
+			Test compilation with existing X3D Script-node example source code.
+		</li>
+		<li>
+			Test interoperability of resulting <code>.class</code> byte code with various X3D players.
+		</li>
+		<li>
+			Test X3D scene creation and file serialization using the
+			<a href="http://www.web3d.org/x3d/content/examples/X3dResources.html#Examples" target="_blank">X3D Examples Archives</a>.
+		</li>
+		<li>
+			Add X3D Java SAI Library support to
+			<a href="https://savage.nps.edu/X3D-Edit" target="_blank">X3D-Edit</a> authoring tool.
+		</li>
+		<li>
+			Explore feasibility of using
+			<a href="http://www.jsweet.org">jsweet</a> transcompilation transpiler
+			to convert X3DJSAIL java libraries into JavaScript.
+		</li>
+		<li>
+			Explore feasibility of using
+			<a href="https://github.com/kivy/pyjnius">PyJNIus</a>
+			Python module to access Java classes as Python classes using 
+			<a href="http://docs.oracle.com/javase/8/docs/technotes/guides/jni">Java Native Interface (JNI)</a>.
+		</li>
+		<li>
+                        Confirm support for 
+                        <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/X3D_Java.html">Java Scene Access Interface (SAI)</a>
+                        requirements, including
+                        <a href="http://www.web3d.org/documents/specifications/19777-2/V3.3/Part2/functions.html#importDocument">Java Scene Access Interface (SAI)</a>
+		</li>
+		<li>
+                        Add validate() testing for special fields requiring a higher-than-default component level, when they occur.
+                        Example: Inline load field. Requires additional information in X3D Unified Object Model.
+		</li>
+		<li>
+                        Integrate support for 
+                        <a href="http://santuario.apache.org/">Apache Santuario</a>
+                        project implementing the primary security standards for XML:
+						<i>XML-Signature Syntax and Processing</i>
+						and
+						<i>XML Encryption Syntax and Processing</i>.
+		</li>
+		<li>
+			Add a variety of utility methods, as needed.  Suggestions are welcome!
+		</li>
+	</ul>
+
+<!-- ======================================================== -->
+<hr />
+<h3>
+	<a name="UtilityMethods">Utility Methods and Functionality</a>
+	<a href="#"><!-- to top -->
+		<img src="images/x3d2-s.gif" width="50" height="32" border="0" title="to top" alt="to top" align="right"/>
+	</a>
+</h3>
+	
+	<p>
+		Utility methods provide additional helpful functionality to X3D Java programmers, 
+		going beyond the minimalist required interfaces in the X3D Java SAI specification.
+	</p>
+
+	<p>
+		<i>Warning:</i> note that, by default, creating or decompressing files may overwrite prior versions.
+		See 
+		<code><a href="javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html#isOverwriteExistingFiles()">ConfigurationProperties.isOverwriteExistingFiles()</a></code>
+		and
+		<code><a href="javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html#setOverwriteExistingFiles-boolean-">setOverwriteExistingFiles(newValue)</a></code>
+		to modify overwrite permissions.
+	</p>
+
+	<ul>
+		<li>
+			<span style="color:darkgreen"><i>Complete</i></span>.
+			Import loading: ability to load X3D scene-graph files.
+			<ul>
+				<li>
+					<code><a href="javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#loadModelFromFileX3D-java.lang.String-">X3DObject.loadModelFromFileX3D(fileName)</a></code>,
+					<code><a href="javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#loadModelFromFileX3D-java.io.File-">X3DObject.loadModelFromFileX3D(x3dFile)</a></code>,
+					<code><a href="javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#replace-org.web3d.x3d.jsail.Core.X3DObject-">X3DObject.replace(newX3DObject)</a></code>
+				</li>
+				<li>
+					<code><a href="javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#fromFileEXI-java.lang.String-">X3DObject.fromFileEXI(exiFileName)</a></code>
+					(using EXIficient; OpenEXI to follow)
+				</li>
+				<li>
+					<code><a href="javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#fromFileGZIP-java.lang.String-">X3DObject.fromFileGZIP(gzipFileName)</a></code>
+				</li>
+				<li>
+					<code><a href="javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#fromFileZIP-java.lang.String-java.lang.String-">X3DObject.fromFileZIP(zipFileName, modelFileName)</a></code>
+					<br />
+					If no <code>modelFileName</code> is provided, then the first <code>.x3d</code> model encountered in the zip file is returned (if any).
+				</li>
+				<li>
+					<code><a href="javadoc/org/web3d/x3d/jsail/X3DLoaderObject.html#loadModelFromFileX3D-java.lang.String-">X3DLoaderObject.loadModelFromFileX3D(fileName)</a></code>,
+					<code><a href="javadoc/org/web3d/x3d/jsail/X3DLoaderObject.html#loadModelFromFileX3D-java.io.File-">X3DLoaderObject.loadModelFromFileX3D(x3dFile)</a></code>,
+					<code><a href="javadoc/org/web3d/x3d/jsail/X3DLoaderObject.html#getValidationResult--">X3DLoaderObject.getValidationResult()</a></code>
+				</li>
+				<li>
+					<code><a href="javadoc/org/web3d/x3d/jsail/X3DLoaderObject.html#getDomDocument--">X3DLoaderObject.getDomDocument()</a></code>,
+					<code><a href="javadoc/org/web3d/x3d/jsail/X3DLoaderObject.html#getX3dObjectTree--">X3DLoaderObject.getX3dObjectTree()</a></code>
+					and other
+					<a href="javadoc/org/web3d/x3d/jsail/X3DLoaderObject.html#method.summary">methods</a>.
+				</li>
+			</ul>
+		</li>
+		<li>
+			<span style="color:darkgreen"><i>Complete</i></span>.
+			Export serialization: ability to save X3D scene-graph files in various file encodings and language bindings,
+			with each returning the resulting <code>File</code> object if successful.
+			<table>
+				<tr>
+				  <td>
+					<ul>
+						<li>
+							<code><a href="javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#toFileX3D-java.lang.String-" target="_javadoc">X3DObject.toFileX3D(fileName)</a></code>
+						</li>
+						<li>
+							<code><a href="javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#toFileClassicVRML-java.lang.String-" target="_javadoc">X3DObject.toFileClassicVRML(fileName)</a></code>
+						</li>
+						<li>
+							<code><a href="javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#toFileVRML97-java.lang.String-" target="_javadoc">X3DObject.toFileVRML97(fileName)</a></code>
+						</li>
+						<li>
+							<code><a href="javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#toFileJava-java.lang.String-" target="_javadoc">X3DObject.toFileJava(fileName)</a></code>
+						</li>
+					</ul>
+				  </td>
+				  <td>
+					<ul>
+						<li>
+							<code><a href="javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#toFileJSON-java.lang.String-" target="_javadoc">X3DObject.toFileJSON(fileName)</a></code>
+						</li>
+						<li>
+							<code><a href="javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#toFileEXI-java.lang.String-" target="_javadoc">X3DObject.toFileEXI(resultFileName)</a></code> (using EXIficient, OpenEXI to follow)
+						</li>
+						<li>
+							<code><a href="javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#toFileGZIP-java.lang.String-" target="_javadoc">X3DObject.toFileGZIP(resultFileName)</a></code>
+						</li>
+						<li>
+							<code><a href="javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#toFileZIP-java.lang.String-java.lang.String-" target="_javadoc">X3DObject.toFileZIP(zipFileName,modelName)</a></code>
+						</li>
+					</ul>
+				  </td>
+				</tr>
+			</table>
+		</li>
+		<li>
+			<span style="color:darkgreen"><i>Complete</i></span>.
+			Export serialization: XSLT stylesheet support that subsequently converts an intermediate XML&nbsp;X3D scene.
+			<ul>
+				<li>
+					<a href="examples/HelloWorldProgramOutput.html">Pretty-print HTML documentation</a>
+					using method
+					<code><a href="javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#toFileDocumentationHtml-java.lang.String-">X3DObject.toFileDocumentationHtml(String filename)</a></code>
+					and stylesheets
+					<code><a href="javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html#STYLESHEET_htmlDocumentation">STYLESHEET_htmlDocumentation</a></code>,
+					<code><a href="javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html#STYLESHEET_extrusionCrossSectionSVG">STYLESHEET_extrusionCrossSectionSVG</a></code>
+				</li>
+				<li>
+					<a href="examples/HelloWorldProgramOutputX3DOM.xhtml">X3DOM page presentation</a>
+					using method
+					<code><a href="javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#toFileX3DOM-java.lang.String-">X3DObject.toFileX3DOM(String filename)</a></code>
+					and stylesheet
+					<code><a href="javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html#STYLESHEET_X3DOM">STYLESHEET_X3DOM</a></code>
+				</li>
+				<li>
+					<a href="examples/HelloWorldProgramOutputX_ITE.html">X_ITE page presentation</a>
+					using method
+					<code><a href="javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#toFileX_ITE-java.lang.String-java.lang.String-">X3DObject.toFileX_ITE(String sourceSceneName, String filename)</a></code>
+					and stylesheet
+					<code><a href="javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html#STYLESHEET_X3DOM">STYLESHEET_X3DOM</a></code>
+					(with parameter settings)
+				</li>
+				<li>
+					<a href="examples/HelloWorldProgramOutput.json">JSON encoding</a>
+					using method
+					<code><a href="javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#toFileJSON-java.lang.String-">X3DObject.toFileJSON(String filename)</a></code>
+					and stylesheet
+					<code><a href="javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html#STYLESHEET_JSON">STYLESHEET_JSON</a></code>
+				</li>
+				<li>
+					<a href="examples/HelloWorldProgramOutput.java">Java language binding</a>
+					using method
+					<code><a href="javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#toFileJava-java.lang.String-">X3DObject.toFileJava(String filename)</a></code>
+					and stylesheet
+					<code><a href="javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html#STYLESHEET_JAVA">STYLESHEET_JAVA</a></code>
+				</li>
+				<li>
+					Choice of XSLT engines, can use method
+					<code><a href="javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html#setXsltEngine-java.lang.String-">ConfigurationProperties.setXsltEngine(String filename)</a></code>
+					with
+					<code><a href="javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html#XSLT_ENGINE_saxon">XSLT_ENGINE_saxon</a></code>
+					(default) or
+					<code><a href="javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html#XSLT_ENGINE_nativeJava">XSLT_ENGINE_nativeJava</a></code>.
+				</li>
+			</ul>
+		</li>
+		<li>
+			<span style="color:darkgreen"><i>Complete</i></span>.
+			Demonstrated declarative programming style in
+			<a href="examples/HelloWorldProgram.java" target="_blank">HelloWorldProgram.java</a>
+			method <code>createDeclarativeShapeTests()</code>.
+			<ul>
+				<li>
+					Further method-pipelining support provided by chainable utility method
+					<code><a href="javadoc/org/web3d/x3d/jsail/Grouping/GroupObject.html#addChild-org.web3d.x3d.sai.Core.X3DChildNode-">addChild()</a></code>
+					for nodes implementing the
+					<code>X3DGroupingNode</code>
+					interface.  This is a big help because SAI-specified interfaces for
+					<code><a href="javadoc/org/web3d/x3d/sai/Grouping/X3DGroupingNode.html#addChildren-org.web3d.x3d.sai.Core.X3DNode:A-">addChildren()</a></code>
+					are required to return <code>void</code>.
+				</li>
+				<li>
+					Further declarative-style support provided by utility methods
+					<code><a href="javadoc/org/web3d/x3d/jsail/X3DConcreteElement.html#findNodeByDEF-java.lang.String-">findNodeByDEF(DEFvalue)</a></code>,
+					<code><a href="javadoc/org/web3d/x3d/jsail/X3DConcreteElement.html#findElementByNameValue-java.lang.String-">findElementByNameValue(nameValue)</a></code>,
+					<code><a href="javadoc/org/web3d/x3d/jsail/X3DConcreteElement.html#findElementByNameValue-java.lang.String-java.lang.String-">findElementByNameValue(nameValue,&nbsp;elementName)</a></code>,
+					
+					<code><a href="javadoc/org/web3d/x3d/jsail/X3DConcreteElement.html#findAncestorElementByName-java.lang.String-">findAncestorElementByName(ancestorElementName)</a></code>
+					and
+					<code><a href="javadoc/org/web3d/x3d/jsail/X3DConcreteElement.html#hasAncestorElementByName-java.lang.String-">hasAncestorElementByName(ancestorElementName)</a></code>.
+				</li>
+				<li>
+					Possible future work: autogenerate a subset codebase for
+					X3D CAD Profile
+					(or another profile) tuned for Java Micro Edition/Android use.
+				</li>
+			</ul>
+		</li>
+		<li>
+			<span style="color:darkgreen">Complete</span>.
+			For convenience add <code>containerField_DEFAULT</code> to each node, as well as a handful of
+			<code>containerField_ALTERNATE_VALUES</code>.
+			Interestingly these values are typically never needed in Java SAI programs (unless someone is writing a low-level XML parser or somesuch).
+			For more detail:
+			<a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerField" target="_blank">X3D Scene Authoring Hints: containerField</a>.
+		</li>
+		<li>
+			<span style="color:darkgreen"><i>Complete</i></span>.
+			Test concrete field-type classes for SFBool/MFBool through SFNode/MFNode to support value instantiation, 
+			including creation of type-checked new values from strings.
+			A number of new data types have been added since X3D version 3.0 and the original Java SAI,
+			so extra attention is needed to ensure
+			that new classes and methods consistently support new specification additions.
+		</li>
+		<li>
+			<span style="color:darkgreen"><i>Complete</i></span>.
+			Build examples, test and finish support for prototypes: 
+			<code><a href="javadoc/org/web3d/x3d/jsail/Core/ProtoDeclareObject.html">ProtoDeclare</a></code>,
+			<code><a href="javadoc/org/web3d/x3d/jsail/Core/ProtoInterfaceObject.html">ProtoInterface</a></code>,
+			<code><a href="javadoc/org/web3d/x3d/jsail/Core/ProtoBodyObject.html">ProtoBody</a></code>,
+			<code><a href="javadoc/org/web3d/x3d/jsail/Core/ExternProtoDeclareObject.html">ExternProtoDeclare</a></code>,
+			<code><a href="javadoc/org/web3d/x3d/jsail/Core/ProtoInstanceObject.html">ProtoInstance</a></code>,
+			<code><a href="javadoc/org/web3d/x3d/jsail/Core/ISObject.html">IS</a></code>
+			and
+			<code><a href="javadoc/org/web3d/x3d/jsail/Core/connectObject.html">connect</a></code>.
+		</li>
+		<li>
+			All value handling is now strongly typed for
+			<code><a href="javadoc/org/web3d/x3d/jsail/Core/fieldObject.html"></a>fieldObject</code>
+			and
+			<code><a href="javadoc/org/web3d/x3d/jsail/Core/fieldValueObject.html"></a>fieldValueObject</code>.
+		</li>
+		<li>
+			<span style="color:darkgreen"><i>Complete</i></span>.
+			Add type and accessType checking of <code>ROUTE</code> fields using
+			<code><a href="javadoc/org/web3d/x3d/jsail/Core/ROUTEObject.html#validate--">ROUTEObject.validate()</a></code>
+			method.
+		</li>
+		<li>
+			<span style="color:darkgreen"><i>Complete</i></span>.
+			Add a subtree-walking 
+			<code><a href="javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#validate--">X3DObject.validate()</a></code>
+			to confirm correctness of all attribute and contained-node values.
+			This feature essentially confirms the strongly typed design and value-range checks already in place.
+		</li>
+		<li>
+			<span style="color:darkgreen"><i>Complete</i></span>.
+			Add support for <code>DEF</code> and <code>USE</code> attributes.
+			Follow up with related specification issues for abstract SAI and corresponding encoding specifications.
+		</li>
+		<li>
+			<span style="color:darkgreen"><i>Complete</i></span>.
+			Add <code>class</code> attribute  to Object Model for X3D&nbsp;(OM4X3D).
+			Follow up with related specification issues for abstract SAI and corresponding encoding specifications.
+		</li>
+		<li>
+			<span style="color:darkgreen"><i>Complete</i></span>.
+			Utility constructor for nodes that includes <code>DEF</code> name for immediate identification when creating a new node.
+		</li>
+		<li>
+			<span style="color:darkgreen"><i>Complete</i></span>.
+			Add support for concrete <code>SFNode</code> and <code>MFNode</code> instantiation.
+			Add boolean <code>hasSomeFieldName()</code> methods to indicate whether each SFNode/MFNode field contains either strongly typed node(s) or ProtoInstance node(s).
+		</li>
+		<li>
+			<span style="color:darkgreen"><i>Complete</i></span>.
+			Add concrete utility variants for <code>addChildren</code>/<code>clearChildren</code>
+			/<code>removeChildren</code>/<code>setChildren</code> and related accessor methods.
+		</li>
+		<li>
+			<span style="color:darkgreen"><i>Complete</i></span>.
+			Check node types and min/max range values, throw exceptions before setting fields incorrectly.  
+		</li>
+		<li>
+			<span style="color:darkgreen"><i>Complete</i></span>.
+			Convert concrete arrays to 
+			<code><a href="https://docs.oracle.com/javase/tutorial/collections/interfaces/list.html" target="_blank">ArrayList</a></code>
+			data structures.
+		</li>
+		<li>
+			<span style="color:darkgreen"><i>Complete</i></span>.
+			Add
+			<code><a href="javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a></code>
+			serialization support for line indent character and indent increment.
+		</li>
+		<li>
+			<span style="color:darkgreen"><i>Complete</i></span>.
+			Confirm generation of default attribute values and constructors for concrete objects.
+		</li>
+		<li>
+			<span style="color:darkgreen"><i>Complete</i></span>. 
+			Concrete objects for X3D statements, also confirming that attributes are properly reflected as fields.
+		</li>
+		<li>
+			<span style="color:darkgreen"><i>Complete</i></span>.
+			Support for persistent scene-graph comments, providing <code>addComments()</code> methods for any node or statement, using 
+			<code><a href="javadoc/org/web3d/x3d/jsail/Core/CommentsBlock.html">CommentsBlock</a></code>
+			class.
+		</li>
+		<li>
+			<span style="color:darkgreen"><i>Complete</i></span>. 
+			Add support for numerous hexadecimal <code>0xRRGGBB</code> integer colors (through defined constants and utility methods) to 
+			<code><a href="javadoc/org/web3d/x3d/jsail/fields/SFColorObject.html">SFColorObject</a></code>
+			and related classes.
+		</li>
+		<li>
+			<span style="color:darkgreen"><i>Complete</i></span>. 
+			Add string constants that name each field eligible for <code>ROUTE</code> connections, e.g. 
+			<code><a href="javadoc/org/web3d/x3d/jsail/Interpolation/OrientationInterpolatorObject.html#toField_SET_FRACTION">OrientationInterpolatorObject.toField_SET_FRACTION</a></code>
+			and
+			<code><a href="javadoc/org/web3d/x3d/jsail/Interpolation/OrientationInterpolatorObject.html#fromField_VALUE_CHANGED">OrientationInterpolatorObject.fromField_VALUE_CHANGED</a></code>.
+		</li>
+		<li>
+			<span style="color:darkgreen"><i>Complete</i></span>. 
+			Utility methods <code>getFieldType(fieldName)</code> and <code>getAccessType(fieldName)</code>
+			for each X3DConcreteElement
+		</li>
+		<li>
+			<span style="color:darkgreen"><i>Complete</i></span>. 
+			Add 
+			<a href="javadoc/org/web3d/x3d/jsail/Core/unitObject.html#CONVERSIONFACTOR_ANGLES_toRadiansFromDegrees" target="_blank">conversionFactor convenience constants</a>
+			for <code>unit</code> statement
+			<a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Scale" target="_blank">scale factors</a>.
+		</li>
+		<li>
+			<span style="color:darkgreen"><i>Complete</i></span>.
+			Default <code>toStringX3D()</code> serialization-output settings support
+			<a href="http://www.web3d.org/documents/specifications/19776-3/V3.3/Part03/concepts.html#X3DCanonicalForm">X3D canonical form</a>,
+			with
+			<code><a href="javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a></code>
+			providing additional settings for showing default <code>attribute=value</code> pairs.
+			Thus additional
+			<a href="https://svn.code.sf.net/p/x3d/code/www.web3d.org/x3d/tools/canonical/doc/x3dTools.htm" target="_blank">X3D Canonicalization (C14N)</a>
+			integration is no longer needed.
+		</li>
+		<li>
+			<span style="color:darkgreen"><i>Complete</i></span>. 
+			Utility methods 
+			<code><a href="javadoc/org/web3d/x3d/jsail/Core/headObject.html#method.summary">headObject</a>.getMetaByName(metaName)</code>
+			<code>getComponentByName(componentName)</code> and <code>getUnitByName(unitName)</code>,
+			<code><a href="javadoc/org/web3d/x3d/jsail/Scripting/ScriptObject.html#method.summary">ScriptObject</a>.findFieldByName(fieldName)</code> (also for <code>ComposedShaderObject</code>, <code>ShaderPartObject</code> and <code>ShaderProgramObject</code>),
+			and
+			<code><a href="javadoc/org/web3d/x3d/jsail/Core/ProtoInstanceObject.html#method.summary">ProtoInstanceObject</a>.findFieldValueByName(fieldValueName)</code>
+		</li>
+		<li>
+			<span style="color:darkgreen"><i>Complete</i></span>. 
+			Utility methods 
+			<code><a href="javadoc/org/web3d/x3d/jsail/X3DConcreteNode.html#getNodeByDEF-java.lang.String-">X3DConcreteNode.getNodeByDEF(DEFName)</a></code> 
+			plus ancestor-finding 
+			<code><a href="javadoc/org/web3d/x3d/jsail/X3DConcreteElement.html#findAncestorSceneObject--">.findAncestorSceneObject()</a></code> and
+			<code><a href="javadoc/org/web3d/x3d/jsail/X3DConcreteElement.html#hasAncestorSceneObject--">.hasAncestorSceneObject()</a></code>,
+			
+			<code><a href="javadoc/org/web3d/x3d/jsail/X3DConcreteElement.html#findAncestorX3DObject--">.findAncestorX3DObject()</a></code> and
+			<code><a href="javadoc/org/web3d/x3d/jsail/X3DConcreteElement.html#hasAncestorX3DObject--">.hasAncestorX3DObject()</a></code>,
+			
+			<code><a href="javadoc/org/web3d/x3d/jsail/X3DConcreteElement.html#findAncestorProtoBody--">findAncestorProtoBody()</a></code>
+			and
+			<code><a href="javadoc/org/web3d/x3d/jsail/X3DConcreteElement.html#hasAncestorProtoBody--">hasAncestorProtoBody()</a></code>.
+		</li>
+		<li>
+			<span style="color:darkgreen"><i>Complete</i></span>. 
+			Convenience methods to set a single String or SFString into an 
+			<a href="javadoc/org/web3d/x3d/jsail/fields/MFStringObject.html">MFStringObject</a>
+			field, plus additional static convenience methods for enumeration handling such as
+			<code><a href="javadoc/org/web3d/x3d/jsail/fields/MFStringObject.html#cleanupEnclosingQuotes-java.lang.String-">cleanupEnclosingQuotes(singleValue)</a></code>
+			and
+			<code><a href="javadoc/org/web3d/x3d/jsail/fields/MFStringObject.html#cleanupEnumerationValues-java.lang.String-">cleanupEnumerationValue(values)</a></code>.
+		</li>
+		<li>	
+			<span style="color:darkgreen"><i>Complete</i></span>. 
+			Added run-time checks to ensure <code>acceptableNodeTypes</code> restrictions are met for operations on <code>children</code> nodes, such as
+			<code><a href="javadoc/org/web3d/x3d/jsail/Navigation/ViewpointGroupObject.html">ViewpointGroupObject</a></code>.
+		</li>
+		<li>	
+			<span style="color:darkgreen"><i>Complete</i></span>. 
+			Scene-graph construction and run-time checks for
+			<code><a href="javadoc/org/web3d/x3d/jsail/Networking/IMPORTObject.html">IMPORTObject</a></code>
+			and
+			<code><a href="javadoc/org/web3d/x3d/jsail/Networking/EXPORTObject.html">EXPORTObject</a></code>.
+		</li>
+		<li>
+			<span style="color:darkgreen"><i>Complete</i></span>.
+			Add
+			<code><a href="javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html#setValidationExceptionAllowed-boolean-">ConfigurationProperties.setValidationExceptionAllowed</a></code>
+			to set whether partial results are allowed if validation exception occurs when serializing scene output.
+			Can be useful technique for debugging, 
+			
+			<code><a href="javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html#validationExceptionAllowed_DEFAULT">validationExceptionAllowed_DEFAULT</a></code>
+			value is <i>false</i> for strict operation.
+		</li>
+		<li>	
+			<span style="color:darkgreen"><i>Complete</i></span>.
+			Add X3D profile-validation and component-validation checks.
+		</li>
+		<li>
+			<span style="color:darkgreen"><i>Complete</i></span>. 
+			Utility methods 
+			<code><a href="javadoc/org/web3d/x3d/jsail/X3DConcreteNode.html#isNode--">X3DConcreteNode.isNode()</a></code>,
+			<code><a href="javadoc/org/web3d/x3d/jsail/X3DConcreteStatement.html#isStatement--">X3DConcreteStatement.isStatement()</a></code> 
+                        and
+			<code><a href="javadoc/org/web3d/x3d/jsail/Core/CommentsBlock.html#isStatement--">CommentsBlock.isStatement()</a></code>
+		</li>
+		<li>
+			<span style="color:darkgreen"><i>Complete</i></span>. 
+                        <code><a href="javadoc/org/web3d/x3d/jsail/Geometry3D/ExtrusionObject.html">ExtrusionObject</a></code>
+                        utility methods 
+                        <code><a href="javadoc/org/web3d/x3d/jsail/Geometry3D/ExtrusionObject.html#isCrossSectionClosed--">isCrossSectionClosed()</a></code>,
+                        <code><a href="javadoc/org/web3d/x3d/jsail/Geometry3D/ExtrusionObject.html#isSpineClosed--">isSpineClosed()</a></code>
+                        and
+                        <code><a href="javadoc/org/web3d/x3d/jsail/Geometry3D/ExtrusionObject.html#itoFileSvgCrossSection-java.lang.String-">toFileSvgCrossSection(fileName)</a></code>
+		</li>
+	</ul>
+
+<!-- =================================================== -->
+<hr />
+<h3>
+	<a name="Contact">Contact</a>
+	<a href="#"><!-- to top -->
+		<img src="images/x3d2-s.gif" width="50" height="32" border="0" title="to top" alt="to top" align="right"/>
+	</a>
+</h3>
+
+	<blockquote>
+		Updated 11 December 2017.
+	</blockquote>
+
+	<blockquote>
+		<a href="http://www.web3d.org/specifications/java/X3DJSAIL.html">X3D Java Scene Access Interface Library&nbsp;(X3DJSAIL)</a>
+		deployed release version is available online at
+		<br />
+		<a href="http://www.web3d.org/specifications/java/X3DJSAIL.html">http://www.web3d.org/specifications/java/X3DJSAIL.html</a>
+	</blockquote>
+	
+	<blockquote>
+		Test programs, results and autogeneration build scripts are available in
+		<a href="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/java">Sourceforge version control</a>.
+	</blockquote>
+
+	<blockquote>
+		Questions, suggestions, additions and comments regarding the
+		X3D&nbsp;Java&nbsp;SAI Library&nbsp;(X3DJSAIL) and X3D Unified Object Model(X3DUOM) design are welcome.
+		Please send them to
+		<a href="http://faculty.nps.edu/brutzman" target="_blank">Don&nbsp;Brutzman</a>
+		(<a href="mailto:brutzman_@_nps.edu%20(Don%20Brutzman)?subject=feedback:%20X3D%20Java%20SAI%20"><i>brutzman&nbsp;at&nbsp;nps.edu</i></a>),
+		John Carlson
+		(<a href="mailto:yottzumm_@_gmail.com%20(John%20Carlson)?subject=feedback:%20X3D%20Java%20SAI%20"><i>yottzumm&nbsp;at&nbsp;gmail.com</i></a>),
+		and Roy Walmsley
+		(<a href="mailto:roy.walmsley_@_ntlworld.com%20(Roy%20Walmsley)?subject=feedback:%20X3D%20Java%20SAI%20"><i>roy.walmsley&nbsp;at&nbsp;ntlworld.com</i></a>).
+	</blockquote>
+
+</body>
+</html>
