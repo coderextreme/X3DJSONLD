@@ -1,0 +1,193 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "component": [
+          {
+            "@name":"CADGeometry",
+            "@level":1
+          },
+          {
+            "@name":"H-Anim",
+            "@level":1
+          }
+        ],
+        "unit": [
+          {
+            "@name":"Yards",
+            "@category":"length",
+            "@conversionFactor":0.9144
+          },
+          {
+            "@name":"Degrees",
+            "@category":"angle",
+            "@conversionFactor":0.0174532925167
+          }
+        ],
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"TestJsonEncoding.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"29 March 2015"
+          },
+          {
+            "@name":"modified",
+            "@content":"3 November 2015"
+          },
+          {
+            "@name":"description",
+            "@content":"Test scene to ensure that X3dToJson xslt stylesheet translator properly converts X3D source into JavaScript Object Notation (JSON)."
+          },
+          {
+            "@name":"reference",
+            "@content":"TestJsonEncoding.json"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/development/TestJsonEncoding.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/stylesheets/X3dToJson.xslt"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"26 July 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":"excerpted from HelloWorld.x3d"
+          },
+          { "Group":
+            {
+              "-children":[
+                { "Viewpoint":
+                  {
+                    "@DEF":"ViewUpClose",
+                    "@centerOfRotation":[0,-1,0],
+                    "@description":"Hello world!",
+                    "@position":[0,-1,7]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@rotation":[0,1,0,3],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Sphere":
+                              {
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-children":[
+                                  {
+                                    "#comment":"Test leading zeroes inserted before (and trailing zeroes inserted after) decimal points: diffuseColor='.1 0.5 1.'"
+                                  }
+                                ],
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@DEF":"MaterialLightBlue",
+                                      "@diffuseColor":[0.1,0.5,1.0]
+                                    }
+                                  },
+                                "-texture":
+                                  { "ImageTexture":
+                                    {
+                                      "@DEF":"ImageCloudlessEarth",
+                                      "@url":["earth-topo.png","earth-topo.jpg","earth-topo-small.gif","http://www.web3d.org/x3d/content/examples/Basic/earth-topo.png","http://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg","http://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@translation":[-0.1,-2,-0.2],
+                    "-children":[
+                      {
+                        "#comment":"Test leading zeroes inserted between -. values: translation='-.1 -2 -.2'"
+                      },
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@DEF":"TextMessage",
+                                "@string":["Hello","JSON!"],
+                                "-fontStyle":
+                                  { "FontStyle":
+                                    {
+                                      "@justify":["MIDDLE","MIDDLE"]
+                                    }
+                                  }
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@USE":"MaterialLightBlue"
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

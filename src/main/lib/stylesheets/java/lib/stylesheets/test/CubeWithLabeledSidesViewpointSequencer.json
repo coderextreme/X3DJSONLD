@@ -1,0 +1,263 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"CubeWithLabeledSidesViewpointSequencer.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"ViewpointSequencer animation of a cube-shaped test model with faces on each side individually labeled."
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"14 November 2014"
+          },
+          {
+            "@name":"modified",
+            "@content":"30 December 2015"
+          },
+          {
+            "@name":"TODO",
+            "@content":"add ability for prototype to hide text"
+          },
+          {
+            "@name":"reference",
+            "@content":"BoxSwitch.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"CubeWithLabeledSidesViewpointSequencer.png"
+          },
+          {
+            "@name":"drawing",
+            "@content":"CubeWithLabeledSidesViewpointSequencer.vsd"
+          },
+          {
+            "@name":"reference",
+            "@content":"../GeometricShapes/CubeWithLabeledSides.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/DistributedInteractiveSimulation/TestCube.x3d"
+          },
+          {
+            "@name":"drawing",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/DistributedInteractiveSimulation/images/TestBoxImages.vsd"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://x3dGraphics.com/examples/X3dForAdvancedModeling/Animation/CubeWithLabeledSidesViewpointSequencer.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"26 July 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Background":
+            {
+              "@skyColor":[0.3,0.3,0.3]
+            }
+          },
+          { "Inline":
+            {
+              "@url":["../GeometricShapes/CubeWithLabeledSides.x3d","http://x3dGraphics.com/examples/X3dForAdvancedModeling/GeometricShapes/CubeWithLabeledSides.x3d","../GeometricShapes/CubeWithLabeledSides.wrl","http://x3dGraphics.com/examples/X3dForAdvancedModeling/GeometricShapes/CubeWithLabeledSides.wrl"]
+            }
+          },
+          {
+            "#comment":"===================="
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"ViewpointSequencer",
+              "@appinfo":"Sequentially binds each Viewpoint in a set of Viewpoint USE nodes, creating an automatic tour for a scene",
+              "@url":["../../Savage/Tools/Animation/ViewpointSequencerPrototype.x3d#ViewpointSequencer","https://savage.nps.edu/Savage/Tools/Animation/ViewpointSequencerPrototype.x3d#ViewpointSequencer","../../Savage/Tools/Animation/ViewpointSequencerPrototype.wrl#ViewpointSequencer","https://savage.nps.edu/Savage/Tools/Animation/ViewpointSequencerPrototype.wrl#ViewpointSequencer"],
+              "field": [
+                {
+                  "@name":"viewpoints",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Viewpoint USE nodes that are sequentially bound",
+                  "@type":"MFNode"
+                },
+                {
+                  "@name":"interval",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"number of seconds between viewpoint shifts",
+                  "@type":"SFTime"
+                },
+                {
+                  "@name":"enabled",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"whether ViewpointSequencer is enabled or not",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"set_enabled",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"whether ViewpointSequencer is enabled or not",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"previous",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"bind previous Viewpoint in list",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"next",
+                  "@accessType":"inputOnly",
+                  "@appinfo":"bind next Viewpoint in list",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"toggleMessage",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"Select message to toggle ViewpointSequencer",
+                  "@type":"MFString"
+                },
+                {
+                  "@name":"toggleMessageFontSize",
+                  "@accessType":"initializeOnly",
+                  "@appinfo":"Font size for toggleMessage text",
+                  "@type":"SFFloat"
+                },
+                {
+                  "@name":"toggleMessageColor",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"Color for toggleMessage text",
+                  "@type":"SFColor"
+                },
+                {
+                  "@name":"traceEnabled",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"enable console output",
+                  "@type":"SFBool"
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@scale":[0.5,0.5,0.5],
+              "@translation":[0,-2,0],
+              "-children":[
+                {
+                  "#comment":"Only one copy of a given ExternProtoDeclare is needed in a scene. Multiple ProtoInstance nodes can be created like the following:"
+                },
+                { "ProtoInstance":
+                  {
+                    "@name":"ViewpointSequencer",
+                    "@DEF":"ViewpointSequencerExample",
+                    "fieldValue": [
+                      {
+                        "@name":"interval",
+                        "@value":2
+                      },
+                      {
+                        "@name":"viewpoints",
+                        "-children":[
+                          {
+                            "#comment":"These viewpoints were copied from the Inline scene above. Authors can also DEF/USE other Viewpoint nodes used elsewhere in a scene"
+                          },
+                          { "Viewpoint":
+                            {
+                              "@DEF":"FrontViewSequenced",
+                              "@description":"Front view, sequenced",
+                              "@orientation":[0,1,0,1.57],
+                              "@position":[8,0,0]
+                            }
+                          },
+                          { "Viewpoint":
+                            {
+                              "@DEF":"LeftViewSequenced",
+                              "@description":"Left view, sequenced",
+                              "@orientation":[0,1,0,3.1416],
+                              "@position":[0,0,-8]
+                            }
+                          },
+                          { "Viewpoint":
+                            {
+                              "@DEF":"TopViewSequenced",
+                              "@description":"Top view, sequenced",
+                              "@orientation":[1,0,0,-1.57],
+                              "@position":[0,8,0]
+                            }
+                          },
+                          { "Viewpoint":
+                            {
+                              "@DEF":"BackViewSequenced",
+                              "@description":"Back view, sequenced",
+                              "@orientation":[0,1,0,-1.57],
+                              "@position":[-8,0,0]
+                            }
+                          },
+                          { "Viewpoint":
+                            {
+                              "@DEF":"RightViewSequenced",
+                              "@description":"Right view, sequenced",
+                              "@position":[0,0,8]
+                            }
+                          },
+                          { "Viewpoint":
+                            {
+                              "@DEF":"BottomViewSequenced",
+                              "@description":"Bottom view, sequenced",
+                              "@orientation":[1,0,0,1.57],
+                              "@position":[0,-8,0]
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "@name":"enabled",
+                        "@value":false
+                      }
+                    ],
+                    "-children":[
+                      {
+                        "#comment":"initially enabled field is off (false), scene provides selectable text to activate"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "#comment":"Example use can be found at https://savage.nps.edu/Savage/Tools/Animation/ViewpointSequencerExample.x3d"
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"===================="
+          }
+        ]
+    }
+  }
+}

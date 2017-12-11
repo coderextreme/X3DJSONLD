@@ -1,0 +1,384 @@
+#VRML V2.0 utf8
+#PROFILE Immersive
+# head
+#COMPONENT Navigation:3
+#COMPONENT Layering:1
+#UNIT angle AngleUnitConversion 1.0
+#UNIT length LengthUnitConversion 1.0
+#META "title" "HelloWorldProgramOutput.x3d"
+#META "description" "Example HelloWorldProgram creates an X3D model using the X3D Java Scene Access Interface (SAI) Library"
+#META "reference" "http://www.web3d.org/specifications/java/X3DJSAIL.html"
+#META "generator" "HelloWorldProgramOutput.java"
+#META "created" "6 September 2016"
+#META "modified" "11 December 2017"
+#META "generator" "X3D Java Scene Access Interface Library (X3DJSAIL)"
+#META "generator" "http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"
+#META "generator" "Netbeans http://www.netbeans.org"
+#META "creator" "Don Brutzman"
+#META "reference" "https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/java/examples/HelloWorldProgramOutput.x3d"
+#META "reference" "Console output, ClassicVRML encoding, VRML97 encoding and pretty-print documentation:"
+#META "reference" "HelloWorldProgramOutput.txt"
+#META "reference" "HelloWorldProgramOutput.x3dv"
+#META "reference" "HelloWorldProgramOutput.wrl"
+#META "reference" "HelloWorldProgramOutput.html"
+#META "X3dValidator" "https://savage.nps.edu/X3dValidator?url=http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d"
+#META "identifier" "http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d"
+#META "license" "../license.html"
+#META "SpecialTest" "tested sat: name value cannot contain embedded space character"
+# comment #1
+# comment #2
+# comment #3
+# comment #4
+# Scene
+ViewpointGroup { 
+ description "Available viewpoints"
+   children [
+  DEF DefaultView Viewpoint { 
+         description "Hello X3DJSAIL"
+         }
+DEF TopDownView Viewpoint { 
+         description "top-down view from above"
+         orientation 1 0 0 -1.570796
+         position 0 100 0
+         }
+  ]
+}
+DEF WorldInfoDEF WorldInfo { 
+ title "HelloWorldProgram produced by X3D Java SAI Library (X3DJSAIL)"
+ }
+USE WorldInfoDEF
+USE WorldInfoDEF
+DEF scene.addChildMetadataObject MetadataString { 
+ name "test"
+ }
+DEF scene.addChildLayerSetObjectTest LayerSet { 
+ order [ 0 ]
+ }
+DEF LogoGeometryTransform Transform { 
+ translation 0 1.5 0
+   children [
+  Anchor { 
+         description "select for X3D Java SAI Library (X3DJSAIL) description"
+         url [ "../X3DJSAIL.html" "http://www.web3d.org/specifications/java/X3DJSAIL.html" ]
+           children [
+          DEF BoxShape Shape { 
+                  appearance Appearance { 
+                      material DEF GreenMaterial Material { 
+                         diffuseColor 0 1 1
+                         emissiveColor 0.8 0 0
+                         transparency 0.1
+                         }
+                     texture ImageTexture { 
+                         url [ "images/X3dJavaSceneAccessInterfaceSaiLibrary.png" "http://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png" ]
+                         }
+                    }
+                 geometry DEF test-NMTOKEN_regex.0123456789 Box { 
+                     # class "textured"
+                     }
+                }
+          ]
+        }
+  ]
+}
+DEF LineShape Shape { 
+  appearance Appearance { 
+      material Material { 
+         emissiveColor 0.6 0.19607843 0.8
+         }
+    }
+ geometry IndexedLineSet { 
+     coordIndex [ 0 1 2 3 4 0 ]
+      coord Coordinate { 
+         point [ 0 1.5 0 2 1.5 0 2 1.5 -2 -2 1.5 -2 -2 1.5 0 0 1.5 0 ]
+         }
+    }
+}
+DEF BoxPathAnimator PositionInterpolator { 
+ key [ 0 0.125 0.375 0.625 0.875 1 ]
+ keyValue [ 0 1.5 0 2 1.5 0 2 1.5 -2 -2 1.5 -2 -2 1.5 0 0 1.5 0 ]
+ }
+DEF OrbitClock TimeSensor { 
+ cycleInterval 8.0
+ loop true
+ }
+ROUTE OrbitClock.fraction_changed TO BoxPathAnimator.set_fraction
+ROUTE BoxPathAnimator.value_changed TO LogoGeometryTransform.set_translation
+DEF TextTransform Transform { 
+ translation 0 -1.5 0
+   children [
+  Shape { 
+          appearance Appearance { 
+              material USE GreenMaterial
+            }
+         geometry Text { 
+             string [ "X3D Java" "SAI Library" "X3DJSAIL" ]
+              fontStyle FontStyle { 
+                 family [ "SERIF" ]
+                 justify [ "MIDDLE" "MIDDLE" ]
+                 }
+             metadata MetadataSet { 
+                 name "EscapedQuotationMarksMetadataSet"
+                   value [
+                  MetadataString { 
+                         name "escapedQuotesTest1"
+                         value [ "escaped quotation marks example 1: He said, \"Immel did it!\"" ]
+                         }
+MetadataString { 
+                         name "escapedQuotesTest2"
+                         value [ "escaped quotation marks example 2: He said, &quot;Immel did it!&quot;" ]
+                         }
+                  ]
+                }
+            # escaped quotation marks example 3: He said, "Immel did it!"
+            # escaped quotation marks example 4: He said, &quot;Immel did it!&quot;
+                        }
+        }
+Collision { 
+           children [
+          # test containerField='proxy'
+                          ]
+         proxy DEF ProxyShape Shape { 
+              geometry Text { 
+                 string [ "One, Two, Three" "" "He said, \"Immel did it!\"" ]
+                 }
+            #  alternative XML encoding: Text string='"One, Two, Three" "" "He said, \&quot;Immel did it!\&quot;"' 
+            #  alternative Java source: .setString(new String [] {"One, Two, Three", "", "He said, \"Immel did it!\""})
+            #  reference: http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html 
+                        }
+        }
+# It's a beautiful world
+        # ... for you!
+        # https://en.wikipedia.org/wiki/Beautiful_World_(Devo_song)
+          ]
+}
+# repeatedly spin 180 degrees as a readable special effect
+DEF SpinInterpolator OrientationInterpolator { 
+ key [ 0 0.5 1 ]
+ keyValue [ 0 1 0 4.712389 0 1 0 0 0 1 0 1.5707964 ]
+ }
+DEF SpinClock TimeSensor { 
+ cycleInterval 5.0
+ loop true
+ }
+ROUTE SpinClock.fraction_changed TO SpinInterpolator.set_fraction
+ROUTE SpinInterpolator.value_changed TO TextTransform.rotation
+DEF BackgroundGroup Group { 
+   children [
+  DEF GradualBackground Background { 
+         }
+DEF colorTypeConversionScript Script { 
+              inputOnly SFColor colorInput
+              outputOnly MFColor colorsOutput          url [ "ecmascript:
+
+function colorInput (eventValue) // Example source code
+{
+   colorsOutput = new MFColor(eventValue); // assigning value sends output event
+// Browser.print('colorInput=' + eventValue + ', colorsOutput=' + colorsOutput + '\n');
+}
+" ]
+}
+DEF ColorAnimator ColorInterpolator { 
+         key [ 0 0.5 1 ]
+         keyValue [ 0.9411765 1 1 0.29411766 0 0.50980395 0.9411765 1 1 ]
+         # AZURE to INDIGO and back again
+                }
+DEF ColorClock TimeSensor { 
+         cycleInterval 60.0
+         loop true
+         }
+ROUTE colorTypeConversionScript.colorsOutput TO GradualBackground.skyColor
+        ROUTE ColorAnimator.value_changed TO colorTypeConversionScript.colorInput
+        ROUTE ColorClock.fraction_changed TO ColorAnimator.set_fraction
+          ]
+}
+PROTO ArtDeco01Material [
+   # [appinfo] "tooltip: ArtDeco01Material prototype is a Material node"
+  # ProtoInterface
+      inputOutput SFString description "ArtDeco01Material prototype is a Material node" # [appinfo] "tooltip for descriptionField"
+    
+      inputOutput SFBool enabled true] {
+
+  # ProtoBody
+  # Initial node of ProtoBody determines prototype node type
+    Material { 
+     ambientIntensity 0.25
+     diffuseColor 0.282435 0.085159 0.134462
+     shininess 0.127273
+     specularColor 0.276305 0.11431 0.139857
+     }
+# [HelloWorldProgram diagnostic] should be connected to scene graph: ArtDeco01ProtoDeclare.getNodeType()="Material"
+    #  presence of follow-on TouchSensor shows that additional nodes are allowed in ProtoBody after initial node, regardless of node types
+    TouchSensor { 
+      description IS description
+      enabled IS enabled
+     }
+}
+EXTERNPROTO ArtDeco02Material [
+   # [appinfo] "this is a different Material node"
+ url [ "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material" "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material" ]
+  inputOutput SFString description # [appinfo] "tooltip for descriptionField"
+# [HelloWorldProgram diagnostic] ArtDeco02ExternProtoDeclare.getNodeType()="ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time, TODO X3DJSAIL needs to add further capability."
+]
+# Tested ArtDeco01ProtoInstance, ArtDeco02ProtoInstance for improper node type when ProtoInstance is added in wrong place
+DEF TestShape1 Shape { 
+  appearance DEF TestAppearance1 Appearance { 
+      material ArtDeco01Material { name "ArtDeco01Material"
+
+          description "ArtDeco01Material can substitute for a Material node"# [HelloWorldProgram diagnostic] ArtDeco01ProtoInstance.getNodeType()="Material"
+                }
+    # ArtDeco01Material prototype goes here...
+        }
+ geometry Sphere { 
+     radius 0.001
+     }
+}
+DEF TestShape2 Shape { 
+  appearance DEF TestAppearance2 Appearance { 
+      material ArtDeco02Material { name "ArtDeco02Material"
+
+          description "ArtDeco02Material can substitute for another Material node"# [HelloWorldProgram diagnostic] ArtDeco02ProtoInstance.getNodeType()="ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time, TODO X3DJSAIL needs to add further capability."
+                }
+    # ArtDeco02Material prototype goes here...
+        }
+ geometry Cone { 
+     bottomRadius 0.001
+     height 0.001
+     }
+}
+DEF inlineSceneDef Inline { 
+ url [ "someOtherScene.x3d" ]
+ }
+IMPORT inlineSceneDef.WorldInfoDEF AS WorldInfoDEF2 
+EXPORT WorldInfoDEF AS WorldInfoDEF3 
+PROTO MaterialModulator [
+   # [appinfo] "mimic a Material node and modulate fields as an animation effect"
+  # [documentation] "http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html"
+ 
+  # ProtoInterface
+      inputOutput SFBool enabled true
+      inputOutput SFColor diffuseColor 0 0 0
+      inputOutput SFColor emissiveColor 0.05 0.05 0.5
+      inputOutput SFColor specularColor 0 0 0
+      inputOutput SFFloat transparency 0.0
+      inputOutput SFFloat shininess 0.0
+      inputOutput SFFloat ambientIntensity 0.0] {
+
+  # ProtoBody
+  DEF MaterialNode Material { 
+      ambientIntensity IS ambientIntensity
+      diffuseColor IS diffuseColor
+      emissiveColor IS emissiveColor
+      shininess IS shininess
+      specularColor IS specularColor
+      transparency IS transparency
+     }
+# Only first node (the node type) is renderable, others are along for the ride
+    DEF MaterialModulatorScript Script { 
+          inputOutput SFBool enabled
+          inputOutput SFColor diffuseColor
+          outputOnly SFColor newColor
+          inputOnly SFTime clockTrigger      url [ "ecmascript:
+function initialize ()
+{
+    newColor = diffuseColor; // start with correct color
+}
+function set_enabled (newValue)
+{
+	enabled = newValue;
+}
+function clockTrigger (timeValue)
+{
+    if (!enabled) return;
+    red   = newColor.r;
+    green = newColor.g;
+    blue  = newColor.b;
+    
+    // note different modulation rates for each color component, % is modulus operator
+    newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1);
+	if (enabled)
+	{
+		Browser.print ('diffuseColor=(' + red + ',' + green + ',' + blue + ') newColor=' + newColor.toString() + '\n');
+	}
+}
+" ]
+}
+}
+# Test success: declarative statement createDeclarativeShapeTests()
+DEF DeclarativeGroupExample Group { 
+   children [
+  Shape { 
+          appearance DEF DeclarativeAppearanceExample Appearance { 
+              material DEF MyMaterialModulator MaterialModulator { name "MaterialModulator"
+                }
+            # DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance
+                        }
+         geometry Cone { 
+             bottom false
+             bottomRadius 0.05
+             height 0.1
+             }
+         metadata DEF FindableMetadataStringTest MetadataString { 
+             name "findThisNameValue"
+             value [ "test case" ]
+             }
+        }
+# Test success: declarativeGroup.addChild() singleton pipeline method
+          ]
+}
+# Test success: declarative statement addChild()
+# Test success: x3dModel.findNodeByDEF(DeclarativeAppearanceExample) = <Appearance DEF='DeclarativeAppearanceExample'/> i.e.
+#	<Appearance DEF='DeclarativeAppearanceExample'>
+#	    <ProtoInstance DEF='MyMaterialModulator' name='MaterialModulator' containerField='material'/>
+#	    <!-- DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance -->
+#	</Appearance>
+# Test success: x3dModel.findElementByNameValue(findThisNameValue) = <MetadataString DEF='FindableMetadataStringTest' name='findThisNameValue' value='"test case"'/>
+# Test success: x3dModel.findElementByNameValue("ArtDeco01Material", "ProtoDeclare") found
+# Test success: x3dModel.findElementByNameValue("MaterialModulator", "ProtoDeclare")  found
+# Test success: x3dModel.findElementByNameValue("MaterialModulator", "ProtoInstance") found
+DEF TestFieldObjectsGroup Group { 
+   children [
+  # testFieldObjects() results
+        # SFBool default=true, true=true, false=false, negate()=true
+        # MFBool default=, initial=true false true, negate()=false true false
+        # SFFloat default=0.0, initial=1.0, setValue(2)=2.0, setValue(3.0f)=3.0, setValue(4.0)=4.0
+        # MFFloat default=, initial=1 2 3, append(5)=1 2 3 5, inserts(3,4)(0,0)=0 1 2 3 4 5, append(6)=0 1 2 3 4 5 6, size()=7
+        # ... get1Value[3]=3.0, remove[1]=0 2 3 4 5 6, set1Value(0,10)=10 2 3 4 5 6, multiply(2)=20 4 6 8 10 12, clear=
+        # SFVec3f default=0 0 0, initial=1 2 3, setValue=4 5 6, multiply(2)=8 10 12, normalize()=0.45584232 0.5698029 0.68376344
+          ]
+}
+Sound { 
+ location 0 1.6 0
+  source AudioClip { 
+     description "chimes"
+     url [ "chimes.wav" "http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav" ]
+     # Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d
+        }
+# set sound-ellipsoid location height at 1.6m to match typical avatar height
+}
+Sound { 
+ location 0 1.6 0
+  source MovieTexture { 
+     description "mpgsys.mpg from ConformanceNist suite"
+     url [ "mpgsys.mpg" "http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg" ]
+     # Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d
+    # Expected containerField='source', allowed containerField values="texture" "source" "back" "bottom" "front" "left" "right" "top" "backTexture" "bottomTexture" "frontTexture" "leftTexture" "rightTexture" "topTexture"
+        }
+# set sound-ellipsoid location height at 1.6m to match typical avatar height
+}
+# Test success:  AnchorObject.isNode()=true,              siteAnchor.isNode()=true
+# Test success:  AnchorObject.isStatement()=false,        siteAnchor.isStatement()=false
+# Test success:   ROUTEObject.isNode()=false,     orbitPositionROUTE.isNode()=false
+# Test success:   ROUTEObject.isStatement()=true, orbitPositionROUTE.isStatement()=true
+# Test success: CommentsBlock.isNode()=false,           testComments.isNode()=false
+# Test success: CommentsBlock.isStatement()=false,      testComments.isStatement()=false
+DEF ExtrusionShape Shape { 
+  appearance DEF TransparentAppearance Appearance { 
+      material Material { 
+         transparency 1.0
+         }
+    }
+ geometry DEF ExampleExtrusion Extrusion { 
+     }
+# ExampleExtrusion isCrossSectionClosed()=true, crossSection='[1.0, 1.0, 1.0, -1.0, -1.0, -1.0, -1.0, 1.0, 1.0, 1.0]'
+# ExampleExtrusion isSpineClosed()=false, spine='[0.0, 0.0, 0.0, 0.0, 1.0, 0.0]'
+}

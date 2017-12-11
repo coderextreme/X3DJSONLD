@@ -1,0 +1,6 @@
+# ENABLE DIRECTORY VIEWS
+Options +Indexes
+
+# References
+# https://httpd.apache.org/docs/current/howto/htaccess.html
+# https://perishablepress.com/better-default-directory-views-with-htaccess

@@ -1,0 +1,970 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/TR/xhtml1/strict" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:saxon="http://icl.com/saxon">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+      <title>HelloWorldProgramOutput.x3d (X3dToXhtml listing)</title>
+      <!-- I18N -->
+      
+      <meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge"></meta><style type="text/css">
+span.element {color: navy}
+span.attribute {color: green}
+span.value {color: teal}
+span.plain {color: black}
+span.gray  {color: gray}
+span.idName {color: maroon}
+span.addedDocumentation {background-color:#EEEEEE} // slightly darker for html page contrast
+span.behaviorNode       {background-color:#DDEEFF} // light blue for html page contrast
+span.extensibilityNode  {background-color:#FFEEFF} // light blue for html page contrast
+a.idName {color: maroon}
+div.center {text-align: center}
+div.indent {margin-left: 25px}
+
+span.prototype {color: purple}
+a.prototype {color: purple}
+a.prototype:visited {color: black}
+span.route {color: red}
+b.warning {color: #CC5500}
+b.error {color: #CC0000}
+
+                </style><style type="text/css">
+table.curvedEdges { border:10px solid RoyalBlue;-webkit-border-radius:13px;-moz-border-radius:13px;-ms-border-radius:13px;-o-border-radius:13px;border-radius:13px; }
+table.curvedEdges td, table.curvedEdges th { border-bottom:1px dotted black;padding:5px; }
+</style><meta name="generator" content="XSLT processor Saxonica"></meta>
+      <meta name="generator" content="http://www.web3d.org/x3d/stylesheets/X3dToXhtml.xslt"></meta>
+      <meta name="generator" content="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/X3dToXhtml.xslt"></meta>
+      <link rel="shortcut icon" href="http://www.web3d.org/x3d/content/icons/X3DtextIcon16.png" title="X3D"></link>
+   </head>
+   <body><code title="XML declaration">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</code><br></br><code title="Document Type Declaration (DTD) for X3D validation">&lt;!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "<a href="http://www.web3d.org/specifications/x3d-3.3.dtd">http://www.web3d.org/specifications/x3d-3.3.dtd</a>"&gt;</code>
+      
+      <div>
+         <span title="X3D is the top-most XML element for an Extensible 3D (X3D) Graphics file">&lt;<span class="element">X3D</span>&#160;<span title="X3D Immersive Profile supports most nodes, similar to VRML97"><span class="attribute">profile</span>='<span class="value">Immersive</span>'</span>&#160;<span class="attribute">version</span>='<span class="value">3.3</span>'&#160;<span title="XML namespace for X3D Graphics schema validation"><span title="XML namespace for XML Schema validation"><span class="attribute">xmlns:xsd</span>='<a href="http://www.w3.org/2001/XMLSchema-instance" target="_blank">http://www.w3.org/2001/XMLSchema-instance</a>'
+            </span><span title="XML namespace for X3D Graphics schema validation"><span class="attribute">xsd:noNamespaceSchemaLocation</span></span>='
+         <a href="http://www.web3d.org/specifications/x3d-3.3.xsd">http://www.web3d.org/specifications/x3d-3.3.xsd</a>
+         '</span>&gt;
+         </span>
+         <div class="indent">
+            <span title="head can contain component, unit, and author-defined metadata (meta) tags">&lt;<span class="element">head</span>&gt;
+            </span>
+            <div class="indent">
+               <span title="X3D component name and level indicate any additional scene functionality needed above
+               the given X3D profile">&lt;<span class="element">component</span>&#160;<span class="attribute">name</span>='<span class="value">Navigation</span>'&#160;<span class="attribute">level</span>='<span class="value">3</span>'/&gt;
+               </span><br />
+
+               <span title="X3D component name and level indicate any additional scene functionality needed above
+               the given X3D profile">&lt;<span class="element">component</span>&#160;<span class="attribute">name</span>='<span class="value">Layering</span>'&#160;<span class="attribute">level</span>='<span class="value">1</span>'/&gt;
+               </span><br />
+
+               <span title="unit defines scene scaling factors for length, angle, mass, or force">&lt;<span class="element">unit</span>&#160;<span class="attribute">name</span>='<span class="value">AngleUnitConversion</span>'&#160;<span class="attribute">category</span>='<span class="value">angle</span>'&#160;<span class="attribute">conversionFactor</span>='<span class="value">1.0</span>'/&gt;
+               </span><br />
+
+               <span title="unit defines scene scaling factors for length, angle, mass, or force">&lt;<span class="element">unit</span>&#160;<span class="attribute">name</span>='<span class="value">LengthUnitConversion</span>'&#160;<span class="attribute">category</span>='<span class="value">length</span>'&#160;<span class="attribute">conversionFactor</span>='<span class="value">1.0</span>'/&gt;
+               </span><br />
+
+               <span title="meta 'title' provides file name for this resource">&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">title</span>'&#160;<span class="attribute">content</span>='<a href="HelloWorldProgramOutput.x3d">HelloWorldProgramOutput.x3d</a>'/&gt;
+               </span><br />
+
+               <span title="meta 'description' provides summary overview describing this resource">&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">description</span>'&#160;<span class="attribute">content</span>='<span class="plain">Example HelloWorldProgram creates an X3D model using the X3D Java Scene Access Interface
+                  (SAI) Library</span>'/&gt;
+               </span><br />
+
+               <span title="meta 'reference' provides name or reference link to a supporting resource">&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">reference</span>'&#160;<span class="attribute">content</span>='
+               <a href="http://www.web3d.org/specifications/java/X3DJSAIL.html">http://www.web3d.org/specifications/java/X3DJSAIL.html</a>
+               '/&gt;
+               </span><br />
+
+               <span title="meta 'generator' provides name of authoring tool or translation tool producing this
+               scene">&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">generator</span>'&#160;<span class="attribute">content</span>='<a href="HelloWorldProgramOutput.java" target="_blank">HelloWorldProgramOutput.java</a>'/&gt;
+               </span><br />
+
+               <span title="meta 'created' provides date of initial version">&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">created</span>'&#160;<span class="attribute">content</span>='<span class="value">6 September 2016</span>'/&gt;
+               </span><br />
+
+               <span title="meta 'modified' provides date of modified version">&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">modified</span>'&#160;<span class="attribute">content</span>='<span class="value">11 December 2017</span>'/&gt;
+               </span><br />
+
+               <span title="meta 'generator' provides name of authoring tool or translation tool producing this
+               scene">&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">generator</span>'&#160;<span class="attribute">content</span>='<span class="value">X3D Java Scene Access Interface Library (X3DJSAIL)</span>'/&gt;
+               </span><br />
+
+               <span title="meta 'generator' provides name of authoring tool or translation tool producing this
+               scene">&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">generator</span>'&#160;<span class="attribute">content</span>='<a href="http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java" target="_blank">http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java</a>'/&gt;
+               </span><br />
+
+               <span title="meta 'generator' provides name of authoring tool or translation tool producing this
+               scene">&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">generator</span>'&#160;<span class="attribute">content</span>='<span class="value">Netbeans </span><a href="http://www.netbeans.org" target="_blank">http://www.netbeans.org</a>'/&gt;
+               </span><br />
+
+               <span title="meta 'creator' provides name of original author">&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">creator</span>'&#160;<span class="attribute">content</span>='<span class="value">Don Brutzman</span>'/&gt;
+               </span><br />
+
+               <span title="meta 'reference' provides name or reference link to a supporting resource">&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">reference</span>'&#160;<span class="attribute">content</span>='
+               <a href="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/java/examples/HelloWorldProgramOutput.x3d">https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/java/examples/HelloWorldProgramOutput.x3d</a>
+               '/&gt;
+               </span><br />
+
+               <span title="meta 'reference' provides name or reference link to a supporting resource">&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">reference</span>'&#160;<span class="attribute">content</span>='<span class="value">Console output, ClassicVRML encoding, VRML97 encoding and pretty-print documentation:</span>'/&gt;
+               </span><br />
+
+               <span title="meta 'reference' provides name or reference link to a supporting resource">&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">reference</span>'&#160;<span class="attribute">content</span>='<a href="HelloWorldProgramOutput.txt">HelloWorldProgramOutput.txt</a>'/&gt;
+               </span><br />
+
+               <span title="meta 'reference' provides name or reference link to a supporting resource">&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">reference</span>'&#160;<span class="attribute">content</span>='<a href="HelloWorldProgramOutput.x3dv">HelloWorldProgramOutput.x3dv</a>'/&gt;
+               </span><br />
+
+               <span title="meta 'reference' provides name or reference link to a supporting resource">&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">reference</span>'&#160;<span class="attribute">content</span>='<a href="HelloWorldProgramOutput.wrl">HelloWorldProgramOutput.wrl</a>'/&gt;
+               </span><br />
+
+               <span title="meta 'reference' provides name or reference link to a supporting resource">&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">reference</span>'&#160;<span class="attribute">content</span>='<a href="HelloWorldProgramOutput.html">HelloWorldProgramOutput.html</a>'/&gt;
+               </span><br />
+
+               <span title="author-defined metadata">&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">X3dValidator</span>'&#160;<span class="attribute">content</span>='
+               https://savage.nps.edu/X3dValidator?url=<a href="http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d">http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d</a>
+               '/&gt;
+               </span><br />
+
+               <span title="meta 'identifier' provides the unique Uniform Resource Identifier (URI) or url address
+               for this resource">&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">identifier</span>'&#160;<span class="attribute">content</span>='
+               <a href="http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d">http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d</a>
+               '/&gt;
+               </span><br />
+
+               <span title="meta 'license' provides software license link or information">&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">license</span>'&#160;<span class="attribute">content</span>='
+               <a href="../license.html">../license.html</a>'/&gt;
+               </span><br />
+
+               <span title="author-defined metadata">&lt;<span class="element">meta</span>&#160;<span class="attribute">name</span>='<span class="value">SpecialTest</span>'&#160;<span class="attribute">content</span>='<span class="value">tested sat: name value cannot contain embedded space character</span>'/&gt;
+               </span><br /><span title="XML comment">&lt;!-- comment #1 --&gt;</span>
+               <br /><span title="XML comment">&lt;!-- comment #2 --&gt;</span>
+               <br /><span title="XML comment">&lt;!-- comment #3 --&gt;</span>
+               <br /><span title="XML comment">&lt;!-- comment #4 --&gt;</span>
+               
+            </div><span title="head can contain component, unit, and author-defined metadata (meta) tags">&lt;/<span class="element">head</span>&gt;
+            </span><br /><span style="color:white">
+               &lt;!--
+               </span><div class="center">
+               <hr style="width:100%"></hr>
+               <b><i>Index for ExternProtoDeclare definition</i></b>: 
+               <a title="go to this declaration" href="#ExternProtoDeclare_ArtDeco02Material" class="prototype">ArtDeco02Material</a>
+               <br />
+               <hr width="50%"></hr>
+               <b><i>Index for ProtoDeclare definitions</i></b>: 
+               <a title="go to this declaration" href="#ProtoDeclare_ArtDeco01Material" class="prototype">ArtDeco01Material</a>,
+               <a title="go to this declaration" href="#ProtoDeclare_MaterialModulator" class="prototype">MaterialModulator</a>
+               <br />
+               <hr width="50%"></hr>
+               <b><i>Index for DEF nodes</i></b>: 
+               <a title="go to this Group node" href="#BackgroundGroup" class="idName">BackgroundGroup</a>,
+               <a title="go to this PositionInterpolator node" href="#BoxPathAnimator" class="idName">BoxPathAnimator</a>,
+               <a title="go to this Shape node" href="#BoxShape" class="idName">BoxShape</a>,
+               <a title="go to this ColorInterpolator node" href="#ColorAnimator" class="idName">ColorAnimator</a>,
+               <a title="go to this TimeSensor node" href="#ColorClock" class="idName">ColorClock</a>,
+               <a title="go to this Script node" href="#colorTypeConversionScript" class="idName">colorTypeConversionScript</a>,
+               <a title="go to this Appearance node" href="#DeclarativeAppearanceExample" class="idName">DeclarativeAppearanceExample</a>,
+               <a title="go to this Group node" href="#DeclarativeGroupExample" class="idName">DeclarativeGroupExample</a>,
+               <a title="go to this Viewpoint node" href="#DefaultView" class="idName">DefaultView</a>,
+               <a title="go to this Extrusion node" href="#ExampleExtrusion" class="idName">ExampleExtrusion</a>,
+               <a title="go to this Shape node" href="#ExtrusionShape" class="idName">ExtrusionShape</a>,
+               <a title="go to this MetadataString node" href="#FindableMetadataStringTest" class="idName">FindableMetadataStringTest</a>,
+               <a title="go to this Background node" href="#GradualBackground" class="idName">GradualBackground</a>,
+               <a title="go to this Material node" href="#GreenMaterial" class="idName">GreenMaterial</a>,
+               <a title="go to this Inline node" href="#inlineSceneDef" class="idName">inlineSceneDef</a>,
+               <a title="go to this Shape node" href="#LineShape" class="idName">LineShape</a>,
+               <a title="go to this Transform node" href="#LogoGeometryTransform" class="idName">LogoGeometryTransform</a>,
+               <a title="go to this Script node" href="#MaterialModulatorScript" class="idName">MaterialModulatorScript</a>,
+               <a title="go to this Material node" href="#MaterialNode" class="idName">MaterialNode</a>,
+               <a title="go to this ProtoInstance node" href="#MyMaterialModulator" class="idName">MyMaterialModulator</a>,
+               <a title="go to this TimeSensor node" href="#OrbitClock" class="idName">OrbitClock</a>,
+               <a title="go to this Shape node" href="#ProxyShape" class="idName">ProxyShape</a>,
+               <a title="go to this LayerSet node" href="#scene.addChildLayerSetObjectTest" class="idName">scene.addChildLayerSetObjectTest</a>,
+               <a title="go to this MetadataString node" href="#scene.addChildMetadataObject" class="idName">scene.addChildMetadataObject</a>,
+               <a title="go to this TimeSensor node" href="#SpinClock" class="idName">SpinClock</a>,
+               <a title="go to this OrientationInterpolator node" href="#SpinInterpolator" class="idName">SpinInterpolator</a>,
+               <a title="go to this Appearance node" href="#TestAppearance1" class="idName">TestAppearance1</a>,
+               <a title="go to this Appearance node" href="#TestAppearance2" class="idName">TestAppearance2</a>,
+               <a title="go to this Group node" href="#TestFieldObjectsGroup" class="idName">TestFieldObjectsGroup</a>,
+               <a title="go to this Box node" href="#test-NMTOKEN_regex.0123456789" class="idName">test-NMTOKEN_regex.0123456789</a>,
+               <a title="go to this Shape node" href="#TestShape1" class="idName">TestShape1</a>,
+               <a title="go to this Shape node" href="#TestShape2" class="idName">TestShape2</a>,
+               <a title="go to this Transform node" href="#TextTransform" class="idName">TextTransform</a>,
+               <a title="go to this Viewpoint node" href="#TopDownView" class="idName">TopDownView</a>,
+               <a title="go to this Appearance node" href="#TransparentAppearance" class="idName">TransparentAppearance</a>,
+               <a title="go to this WorldInfo node" href="#WorldInfoDEF" class="idName">WorldInfoDEF</a>
+               
+               <hr style="width:100%"></hr>
+            </div><span style="color:white">
+               --&gt;
+               </span><br />
+
+            <span title="Scene is the root node that contains an X3D scene graph">&lt;<span class="element">Scene</span>&gt;
+            </span>
+            <div class="indent">
+               &lt;<span class="element">ViewpointGroup</span>&#160;<span class="attribute">description</span>='<span class="value">Available viewpoints</span>'&#160;<span class="attribute">containerField</span>='<span class="value">children</span>'&gt;
+               
+               <div class="indent"><a name="DefaultView"> </a> 
+                  <span title="Viewpoint provides a specific location and direction where the user may view the scene">&lt;<span class="element">Viewpoint</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">DefaultView</span>'&#160;<span class="attribute">description</span>='<span class="value">Hello X3DJSAIL</span>'/&gt;
+                  </span><br />
+<a name="TopDownView"> </a> 
+                  <span title="Viewpoint provides a specific location and direction where the user may view the scene">&lt;<span class="element">Viewpoint</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">TopDownView</span>'&#160;<span class="attribute">description</span>='<span class="value">top-down view from above</span>'&#160;<span class="attribute">orientation</span>='<span class="value">1 0 0 -1.570796</span>'&#160;<span class="attribute">position</span>='<span class="value">0 100 0</span>'/&gt;
+                  </span>
+               </div>&lt;/<span class="element">ViewpointGroup</span>&gt;
+               <br />
+<a name="WorldInfoDEF"> </a> 
+               <span title="WorldInfo contains persistent documentation information about the 3D world">&lt;<span class="element">WorldInfo</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">WorldInfoDEF</span>'&#160;<span class="attribute">title</span>='<span class="value">HelloWorldProgram produced by X3D Java SAI Library (X3DJSAIL)</span>'/&gt;
+               </span><br />
+
+               <span title="WorldInfo contains persistent documentation information about the 3D world">&lt;<span class="element">WorldInfo</span>&#160;<span class="attribute">USE</span>='<a title="go to the original DEF node definition" href="#WorldInfoDEF" class="idName">WorldInfoDEF</a>'/&gt;
+               </span><br />
+
+               <span title="WorldInfo contains persistent documentation information about the 3D world">&lt;<span class="element">WorldInfo</span>&#160;<span class="attribute">USE</span>='<a title="go to the original DEF node definition" href="#WorldInfoDEF" class="idName">WorldInfoDEF</a>'/&gt;
+               </span><br />
+<a name="scene.addChildMetadataObject"> </a> 
+               &lt;<span class="element">MetadataString</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">scene.addChildMetadataObject</span>'&#160;<span class="attribute">name</span>='<span class="value">test</span>'&#160;<span class="attribute">containerField</span>='<span class="value">metadata</span>'/&gt;
+               <br />
+<a name="scene.addChildLayerSetObjectTest"> </a> 
+               &lt;<span class="element">LayerSet</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">scene.addChildLayerSetObjectTest</span>'&#160;<span class="attribute">containerField</span>='<span class="value">children</span>'/&gt;
+               <br />
+<a name="LogoGeometryTransform"> </a> 
+               <span style="background-color:#EEEEEE;" title="inserted documentation about ROUTE connections">&lt;!-- <i>ROUTE</i> information for <span class="idName">LogoGeometryTransform</span> node:&#160;
+               [<a title="go to this ROUTE" href="#ROUTE_1"><i>from</i>&#160;<span class="idName">BoxPathAnimator</span>.<span class="attribute">value_changed</span>&#160;<i>to</i>&#160;<span class="attribute">set_translation</span></a>]
+               --&gt;<br /></span>
+               <span title="Transform translates, orients and scales child geometry within the local world coordinate
+               system">&lt;<span class="element">Transform</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">LogoGeometryTransform</span>'&#160;<span class="attribute">translation</span>='<span class="value">0 1.5 0</span>'&gt;
+               </span>
+               <div class="indent">
+                  <span title="Selecting Anchored geometry loads content specified by the url field">&lt;<span class="element">Anchor</span>&#160;<span class="attribute">description</span>='<span class="value">select for X3D Java SAI Library (X3DJSAIL) description</span>'
+<br />
+&#160;&#160;<span title="uniform resource locator (url) list of relative or absolute file addresses, performed
+                  in order until resource retrieval succeeds"><span class="attribute">url</span>='
+                  "<a href="../X3DJSAIL.html">../X3DJSAIL.html</a>"
+                  "<a href="http://www.web3d.org/specifications/java/X3DJSAIL.html">http://www.web3d.org/specifications/java/X3DJSAIL.html</a>" '</span>&gt;
+                  </span>
+                  <div class="indent"><a name="BoxShape"> </a> 
+                     <span title="Shape contains geometry and optional corresponding Appearance">&lt;<span class="element">Shape</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">BoxShape</span>'&gt;
+                     </span>
+                     <div class="indent">
+                        <span title="Appearance specifies visual properties of geometry by containing Material, texture
+                        and TextureTransform nodes">&lt;<span class="element">Appearance</span>&gt;
+                        </span>
+                        <div class="indent"><a name="GreenMaterial"> </a> 
+                           <span title="Material specifies surface rendering properties for associated geometry">&lt;<span class="element">Material</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">GreenMaterial</span>'&#160;<span class="attribute">diffuseColor</span>='<span class="value">0 1 1</span>'&#160;<span class="attribute">emissiveColor</span>='<span class="value">0.8 0 0</span>'&#160;<span class="attribute">transparency</span>='<span class="value">0.1</span>'/&gt;
+                           </span><br />
+
+                           <span title="ImageTexture maps a 2D-image file onto a geometric shape">&lt;<span class="element">ImageTexture</span>
+<br />
+&#160;&#160;<span title="uniform resource locator (url) list of relative or absolute file addresses, performed
+                           in order until resource retrieval succeeds"><span class="attribute">url</span>='
+                           "<a href="images/X3dJavaSceneAccessInterfaceSaiLibrary.png">images/X3dJavaSceneAccessInterfaceSaiLibrary.png</a>" "<a href="http://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png">http://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png</a>" '</span>/&gt;
+                           </span>
+                        </div><span title="Appearance specifies visual properties of geometry by containing Material, texture
+                        and TextureTransform nodes">&lt;/<span class="element">Appearance</span>&gt;
+                        </span><br />
+<a name="test-NMTOKEN_regex.0123456789"> </a> 
+                        <span title="Box is a geometry primitive node">&lt;<span class="element">Box</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">test-NMTOKEN_regex.0123456789</span>'&#160;<span class="attribute">class</span>='<span class="value">textured</span>'/&gt;
+                        </span>
+                     </div><span title="Shape contains geometry and optional corresponding Appearance">&lt;/<span class="element">Shape</span>&gt;
+                     </span>
+                  </div><span title="Selecting Anchored geometry loads content specified by the url field">&lt;/<span class="element">Anchor</span>&gt;
+                  </span>
+               </div><span title="Transform translates, orients and scales child geometry within the local world coordinate
+               system">&lt;/<span class="element">Transform</span>&gt;
+               </span><br />
+<a name="LineShape"> </a> 
+               <span title="Shape contains geometry and optional corresponding Appearance">&lt;<span class="element">Shape</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">LineShape</span>'&gt;
+               </span>
+               <div class="indent">
+                  <span title="Appearance specifies visual properties of geometry by containing Material, texture
+                  and TextureTransform nodes">&lt;<span class="element">Appearance</span>&gt;
+                  </span>
+                  <div class="indent">
+                     <span title="Material specifies surface rendering properties for associated geometry">&lt;<span class="element">Material</span>&#160;<span class="attribute">emissiveColor</span>='<span class="value">0.6 0.19607843 0.8</span>'/&gt;
+                     </span>
+                  </div><span title="Appearance specifies visual properties of geometry by containing Material, texture
+                  and TextureTransform nodes">&lt;/<span class="element">Appearance</span>&gt;
+                  </span><br />
+
+                  <span title="IndexedLineSet is a geometry node">&lt;<span class="element">IndexedLineSet</span>&#160;<span class="attribute">coordIndex</span>='<span class="value">0 1 2 3 4 0</span>'&gt;
+                  </span>
+                  <div class="indent">
+                     <span title="Coordinate defines a set of 3D coordinate triplet values">&lt;<span class="element">Coordinate</span>&#160;<span class="attribute">point</span>='<span class="value">0 1.5 0 2 1.5 0 2 1.5 -2 -2 1.5 -2 -2 1.5 0 0 1.5 0</span>'/&gt;
+                     </span>
+                  </div><span title="IndexedLineSet is a geometry node">&lt;/<span class="element">IndexedLineSet</span>&gt;
+                  </span>
+               </div><span title="Shape contains geometry and optional corresponding Appearance">&lt;/<span class="element">Shape</span>&gt;
+               </span><br />
+<a name="BoxPathAnimator"> </a> 
+               <span style="background-color:#EEEEEE;" title="inserted documentation about ROUTE connections">&lt;!-- <i>ROUTE</i> information for <span class="idName">BoxPathAnimator</span> node:&#160;
+               [<a title="go to this ROUTE" href="#ROUTE_0"><i>from</i>&#160;<span class="idName">OrbitClock</span>.<span class="attribute">fraction_changed</span>&#160;<i>to</i>&#160;<span class="attribute">set_fraction</span></a>]
+               [<a title="go to this ROUTE" href="#ROUTE_1"><i>from</i>&#160;<span class="attribute">value_changed</span>&#160;<i>to</i>&#160;<span class="idName">LogoGeometryTransform</span>.<span class="attribute">set_translation</span></a>]
+               --&gt;<br /></span>
+               <span title="Interpolator nodes output event values using piecewise-linear function definitions" style="background-color:#DDEEFF">&lt;<span class="element">PositionInterpolator</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">BoxPathAnimator</span>'&#160;<span class="attribute">key</span>='<span class="value">0 0.125 0.375 0.625 0.875 1</span>'&#160;<span class="attribute">keyValue</span>='<span class="value">0 1.5 0 2 1.5 0 2 1.5 -2 -2 1.5 -2 -2 1.5 0 0 1.5 0</span>'/&gt;
+               </span><br />
+<a name="OrbitClock"> </a> 
+               <span style="background-color:#EEEEEE;" title="inserted documentation about ROUTE connections">&lt;!-- <i>ROUTE</i> information for <span class="idName">OrbitClock</span> node:&#160;
+               [<a title="go to this ROUTE" href="#ROUTE_0"><i>from</i>&#160;<span class="attribute">fraction_changed</span>&#160;<i>to</i>&#160;<span class="idName">BoxPathAnimator</span>.<span class="attribute">set_fraction</span></a>]
+               --&gt;<br /></span>
+               <span title="TimeSensor continuously generates events as time passes" style="background-color:#DDEEFF">&lt;<span class="element">TimeSensor</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">OrbitClock</span>'&#160;<span class="attribute">cycleInterval</span>='<span class="value">8.0</span>'&#160;<span class="attribute">loop</span>='<span class="value">true</span>'/&gt;
+               </span><br />
+<a name="ROUTE_0"> </a> 
+               <span title="ROUTE connects fields between nodes to enable event passing" style="background-color:#DDEEFF">&lt;<span class="route">ROUTE</span>&#160;<span class="attribute">fromNode</span>='<a title="go to the original DEF node definition" href="#OrbitClock" class="idName">OrbitClock</a>'&#160;<span class="attribute">fromField</span>='<span class="value">fraction_changed</span>'&#160;<span class="attribute">toNode</span>='<a title="go to the original DEF node definition" href="#BoxPathAnimator" class="idName">BoxPathAnimator</a>'&#160;<span class="attribute">toField</span>='<span class="value">set_fraction</span>'/&gt;
+               </span><br />
+<a name="ROUTE_1"> </a> 
+               <span title="ROUTE connects fields between nodes to enable event passing" style="background-color:#DDEEFF">&lt;<span class="route">ROUTE</span>&#160;<span class="attribute">fromNode</span>='<a title="go to the original DEF node definition" href="#BoxPathAnimator" class="idName">BoxPathAnimator</a>'&#160;<span class="attribute">fromField</span>='<span class="value">value_changed</span>'&#160;<span class="attribute">toNode</span>='<a title="go to the original DEF node definition" href="#LogoGeometryTransform" class="idName">LogoGeometryTransform</a>'&#160;<span class="attribute">toField</span>='<span class="value">set_translation</span>'/&gt;
+               </span><br />
+<a name="TextTransform"> </a> 
+               <span style="background-color:#EEEEEE;" title="inserted documentation about ROUTE connections">&lt;!-- <i>ROUTE</i> information for <span class="idName">TextTransform</span> node:&#160;
+               [<a title="go to this ROUTE" href="#ROUTE_3"><i>from</i>&#160;<span class="idName">SpinInterpolator</span>.<span class="attribute">value_changed</span>&#160;<i>to</i>&#160;<span class="attribute">rotation</span></a>]
+               --&gt;<br /></span>
+               <span title="Transform translates, orients and scales child geometry within the local world coordinate
+               system">&lt;<span class="element">Transform</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">TextTransform</span>'&#160;<span class="attribute">translation</span>='<span class="value">0 -1.5 0</span>'&gt;
+               </span>
+               <div class="indent">
+                  <span title="Shape contains geometry and optional corresponding Appearance">&lt;<span class="element">Shape</span>&gt;
+                  </span>
+                  <div class="indent">
+                     <span title="Appearance specifies visual properties of geometry by containing Material, texture
+                     and TextureTransform nodes">&lt;<span class="element">Appearance</span>&gt;
+                     </span>
+                     <div class="indent">
+                        <span title="Material specifies surface rendering properties for associated geometry">&lt;<span class="element">Material</span>&#160;<span class="attribute">USE</span>='<a title="go to the original DEF node definition" href="#GreenMaterial" class="idName">GreenMaterial</a>'/&gt;
+                        </span>
+                     </div><span title="Appearance specifies visual properties of geometry by containing Material, texture
+                     and TextureTransform nodes">&lt;/<span class="element">Appearance</span>&gt;
+                     </span><br />
+
+                     <span title="Text is a geometry primitive node">&lt;<span class="element">Text</span>&#160;<span class="attribute">string</span>='<span class="value">"X3D Java" "SAI Library" "X3DJSAIL"</span>'&gt;
+                     </span>
+                     <div class="indent">
+                        &lt;<span class="element">MetadataSet</span>&#160;<span class="attribute">name</span>='<span class="value">EscapedQuotationMarksMetadataSet</span>'&#160;<span class="attribute">containerField</span>='<span class="value">metadata</span>'&gt;
+                        
+                        <div class="indent">
+                           &lt;<span class="element">MetadataString</span>&#160;<span class="attribute">name</span>='<span class="value">escapedQuotesTest1</span>'&#160;<span class="attribute">containerField</span>='<span class="value">value</span>'&#160;<span class="attribute">value</span>='<span class="value">"escaped quotation marks example 1: He said, \"Immel did it!\""</span>'/&gt;
+                           <br />
+
+                           &lt;<span class="element">MetadataString</span>&#160;<span class="attribute">name</span>='<span class="value">escapedQuotesTest2</span>'&#160;<span class="attribute">containerField</span>='<span class="value">value</span>'&#160;<span class="attribute">value</span>='<span class="value">"escaped quotation marks example 2: He said, &amp;quot;Immel did it!&amp;quot;"</span>'/&gt;
+                           
+                        </div>&lt;/<span class="element">MetadataSet</span>&gt;
+                        <br />
+
+                        <span title="FontStyle defines the size, family, justification, and other styles used by Text nodes">&lt;<span class="element">FontStyle</span>&#160;<span class="attribute">justify</span>='<span class="value">"MIDDLE" "MIDDLE"</span>'/&gt;
+                        </span><br /><span title="XML comment">&lt;!-- escaped quotation marks example 3: He said, "Immel did it!" --&gt;</span>
+                        <br /><span title="XML comment">&lt;!-- escaped quotation marks example 4: He said, &amp;quot;Immel did it!&amp;quot; --&gt;</span>
+                        
+                     </div><span title="Text is a geometry primitive node">&lt;/<span class="element">Text</span>&gt;
+                     </span>
+                  </div><span title="Shape contains geometry and optional corresponding Appearance">&lt;/<span class="element">Shape</span>&gt;
+                  </span><br />
+
+                  <span title="Collision detects camera-to-object contact using current view and NavigationInfo avatarSize">&lt;<span class="element">Collision</span>&gt;
+                  </span>
+                  <div class="indent"><span title="XML comment">&lt;!-- test containerField='proxy' --&gt;</span>
+                     <br />
+<a name="ProxyShape"> </a> 
+                     <span title="Shape contains geometry and optional corresponding Appearance">&lt;<span class="element">Shape</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">ProxyShape</span>'&#160;<span class="attribute">containerField</span>='<span class="value">proxy</span>'&gt;
+                     </span>
+                     <div class="indent">
+                        <span title="Text is a geometry primitive node">&lt;<span class="element">Text</span>&#160;<span class="attribute">string</span>='<span class="value">"One, Two, Three" "" "He said, \"Immel did it!\""</span>'/&gt;
+                        </span><br /><span title="XML comment">&lt;!-- alternative XML encoding: Text string='"One, Two, Three" "" "He said, \&amp;quot;Immel
+                           did it!\&amp;quot;"' --&gt;</span>
+                        <br /><span title="XML comment">&lt;!-- alternative Java source: .setString(new String [] {"One, Two, Three", "", "He
+                           said, \"Immel did it!\""}) --&gt;</span>
+                        <br /><span title="XML comment">&lt;!-- reference: http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html
+                           --&gt;</span>
+                        
+                     </div><span title="Shape contains geometry and optional corresponding Appearance">&lt;/<span class="element">Shape</span>&gt;
+                     </span>
+                  </div><span title="Collision detects camera-to-object contact using current view and NavigationInfo avatarSize">&lt;/<span class="element">Collision</span>&gt;
+                  </span><br /><span title="XML comment">&lt;!-- It's a beautiful world --&gt;</span>
+                  <br /><span title="XML comment">&lt;!-- ... for you! --&gt;</span>
+                  <br /><span title="XML comment">&lt;!-- https://en.wikipedia.org/wiki/Beautiful_World_(Devo_song) --&gt;</span>
+                  
+               </div><span title="Transform translates, orients and scales child geometry within the local world coordinate
+               system">&lt;/<span class="element">Transform</span>&gt;
+               </span><br /><span title="XML comment">&lt;!-- repeatedly spin 180 degrees as a readable special effect --&gt;</span>
+               <br />
+<a name="SpinInterpolator"> </a> 
+               <span style="background-color:#EEEEEE;" title="inserted documentation about ROUTE connections">&lt;!-- <i>ROUTE</i> information for <span class="idName">SpinInterpolator</span> node:&#160;
+               [<a title="go to this ROUTE" href="#ROUTE_2"><i>from</i>&#160;<span class="idName">SpinClock</span>.<span class="attribute">fraction_changed</span>&#160;<i>to</i>&#160;<span class="attribute">set_fraction</span></a>]
+               [<a title="go to this ROUTE" href="#ROUTE_3"><i>from</i>&#160;<span class="attribute">value_changed</span>&#160;<i>to</i>&#160;<span class="idName">TextTransform</span>.<span class="attribute">rotation</span></a>]
+               --&gt;<br /></span>
+               <span title="Interpolator nodes output event values using piecewise-linear function definitions" style="background-color:#DDEEFF">&lt;<span class="element">OrientationInterpolator</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">SpinInterpolator</span>'&#160;<span class="attribute">key</span>='<span class="value">0 0.5 1</span>'&#160;<span class="attribute">keyValue</span>='<span class="value">0 1 0 4.712389 0 1 0 0 0 1 0 1.5707964</span>'/&gt;
+               </span><br />
+<a name="SpinClock"> </a> 
+               <span style="background-color:#EEEEEE;" title="inserted documentation about ROUTE connections">&lt;!-- <i>ROUTE</i> information for <span class="idName">SpinClock</span> node:&#160;
+               [<a title="go to this ROUTE" href="#ROUTE_2"><i>from</i>&#160;<span class="attribute">fraction_changed</span>&#160;<i>to</i>&#160;<span class="idName">SpinInterpolator</span>.<span class="attribute">set_fraction</span></a>]
+               --&gt;<br /></span>
+               <span title="TimeSensor continuously generates events as time passes" style="background-color:#DDEEFF">&lt;<span class="element">TimeSensor</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">SpinClock</span>'&#160;<span class="attribute">cycleInterval</span>='<span class="value">5.0</span>'&#160;<span class="attribute">loop</span>='<span class="value">true</span>'/&gt;
+               </span><br />
+<a name="ROUTE_2"> </a> 
+               <span title="ROUTE connects fields between nodes to enable event passing" style="background-color:#DDEEFF">&lt;<span class="route">ROUTE</span>&#160;<span class="attribute">fromNode</span>='<a title="go to the original DEF node definition" href="#SpinClock" class="idName">SpinClock</a>'&#160;<span class="attribute">fromField</span>='<span class="value">fraction_changed</span>'&#160;<span class="attribute">toNode</span>='<a title="go to the original DEF node definition" href="#SpinInterpolator" class="idName">SpinInterpolator</a>'&#160;<span class="attribute">toField</span>='<span class="value">set_fraction</span>'/&gt;
+               </span><br />
+<a name="ROUTE_3"> </a> 
+               <span title="ROUTE connects fields between nodes to enable event passing" style="background-color:#DDEEFF">&lt;<span class="route">ROUTE</span>&#160;<span class="attribute">fromNode</span>='<a title="go to the original DEF node definition" href="#SpinInterpolator" class="idName">SpinInterpolator</a>'&#160;<span class="attribute">fromField</span>='<span class="value">value_changed</span>'&#160;<span class="attribute">toNode</span>='<a title="go to the original DEF node definition" href="#TextTransform" class="idName">TextTransform</a>'&#160;<span class="attribute">toField</span>='<span class="value">rotation</span>'/&gt;
+               </span><br />
+<a name="BackgroundGroup"> </a> 
+               <span title="Group is a Grouping node that can contain most nodes">&lt;<span class="element">Group</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">BackgroundGroup</span>'&gt;
+               </span>
+               <div class="indent"><a name="GradualBackground"> </a> 
+                  <span style="background-color:#EEEEEE;" title="inserted documentation about ROUTE connections">&lt;!-- <i>ROUTE</i> information for <span class="idName">GradualBackground</span> node:&#160;
+                  [<a title="go to this ROUTE" href="#ROUTE_4"><i>from</i>&#160;<span class="idName">colorTypeConversionScript</span>.<span class="attribute">colorsOutput</span>&#160;<i>to</i>&#160;<span class="attribute">skyColor</span></a>]
+                  --&gt;<br /></span>
+                  <span title="Background simulates ground and sky, using vertical arrays of wraparound color values
+                  or backdrop textures on all six sides">&lt;<span class="element">Background</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">GradualBackground</span>'/&gt;
+                  </span><br />
+<a name="colorTypeConversionScript"> </a> 
+                  <span style="background-color:#EEEEEE;" title="inserted documentation about ROUTE connections">&lt;!-- <i>ROUTE</i> information for <span class="idName">colorTypeConversionScript</span> node:&#160;
+                  [<a title="go to this ROUTE" href="#ROUTE_5"><i>from</i>&#160;<span class="idName">ColorAnimator</span>.<span class="attribute">value_changed</span>&#160;<i>to</i>&#160;<span class="attribute">colorInput</span></a>]
+                  [<a title="go to this ROUTE" href="#ROUTE_4"><i>from</i>&#160;<span class="attribute">colorsOutput</span>&#160;<i>to</i>&#160;<span class="idName">GradualBackground</span>.<span class="attribute">skyColor</span></a>]
+                  --&gt;<br /></span>
+                  <span title="Script contains author-programmed event behaviors for a scene" style="background-color:#DDEEFF">&lt;<span class="element">Script</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">colorTypeConversionScript</span>'&gt;
+                  </span>
+                  <div class="indent">
+                     <span title="A field element defines an interface attribute or node for a parent Script" style="background-color:#DDEEFF">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">colorInput</span>'&#160;<span class="attribute">type</span>='<span class="value">SFColor</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOnly</span>'/&gt;
+                     </span><br />
+
+                     <span title="A field element defines an interface attribute or node for a parent Script" style="background-color:#DDEEFF">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">colorsOutput</span>'&#160;<span class="attribute">type</span>='<span class="value">MFColor</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'/&gt;
+                     </span><br />
+                     </div class="indent">
+                     </div class="indent">
+                     </div class="indent">
+                     <code><b>&lt;![CDATA[</b></code>
+                     <pre>
+
+ecmascript:
+
+function colorInput (eventValue) // Example source code
+{
+   colorsOutput = new MFColor(eventValue); // assigning value sends output event
+// Browser.print(&apos;colorInput=&apos; + eventValue + &apos;, colorsOutput=&apos; + colorsOutput + &apos;\n&apos;);
+}
+
+            </pre><code><b>]]&gt;</b></code>
+                     <div class="indent">
+                     <div class="indent">
+                     <div class="indent">
+                     
+                  </div><span title="Script contains author-programmed event behaviors for a scene" style="background-color:#DDEEFF">&lt;/<span class="element">Script</span>&gt;
+                  </span><br />
+<a name="ColorAnimator"> </a> 
+                  <span style="background-color:#EEEEEE;" title="inserted documentation about ROUTE connections">&lt;!-- <i>ROUTE</i> information for <span class="idName">ColorAnimator</span> node:&#160;
+                  [<a title="go to this ROUTE" href="#ROUTE_6"><i>from</i>&#160;<span class="idName">ColorClock</span>.<span class="attribute">fraction_changed</span>&#160;<i>to</i>&#160;<span class="attribute">set_fraction</span></a>]
+                  [<a title="go to this ROUTE" href="#ROUTE_5"><i>from</i>&#160;<span class="attribute">value_changed</span>&#160;<i>to</i>&#160;<span class="idName">colorTypeConversionScript</span>.<span class="attribute">colorInput</span></a>]
+                  --&gt;<br /></span>
+                  <span title="Interpolator nodes output event values using piecewise-linear function definitions" style="background-color:#DDEEFF">&lt;<span class="element">ColorInterpolator</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">ColorAnimator</span>'&#160;<span class="attribute">key</span>='<span class="value">0 0.5 1</span>'&#160;<span class="attribute">keyValue</span>='<span class="value">0.9411765 1 1 0.29411766 0 0.50980395 0.9411765 1 1</span>'&gt;
+                  </span>
+                  <div class="indent"><span title="XML comment">&lt;!-- AZURE to INDIGO and back again --&gt;</span>
+                     
+                  </div><span title="Interpolator nodes output event values using piecewise-linear function definitions" style="background-color:#DDEEFF">&lt;/<span class="element">ColorInterpolator</span>&gt;
+                  </span><br />
+<a name="ColorClock"> </a> 
+                  <span style="background-color:#EEEEEE;" title="inserted documentation about ROUTE connections">&lt;!-- <i>ROUTE</i> information for <span class="idName">ColorClock</span> node:&#160;
+                  [<a title="go to this ROUTE" href="#ROUTE_6"><i>from</i>&#160;<span class="attribute">fraction_changed</span>&#160;<i>to</i>&#160;<span class="idName">ColorAnimator</span>.<span class="attribute">set_fraction</span></a>]
+                  --&gt;<br /></span>
+                  <span title="TimeSensor continuously generates events as time passes" style="background-color:#DDEEFF">&lt;<span class="element">TimeSensor</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">ColorClock</span>'&#160;<span class="attribute">cycleInterval</span>='<span class="value">60.0</span>'&#160;<span class="attribute">loop</span>='<span class="value">true</span>'/&gt;
+                  </span><br />
+<a name="ROUTE_4"> </a> 
+                  <span title="ROUTE connects fields between nodes to enable event passing" style="background-color:#DDEEFF">&lt;<span class="route">ROUTE</span>&#160;<span class="attribute">fromNode</span>='<a title="go to the original DEF node definition" href="#colorTypeConversionScript" class="idName">colorTypeConversionScript</a>'&#160;<span class="attribute">fromField</span>='<span class="value">colorsOutput</span>'&#160;<span class="attribute">toNode</span>='<a title="go to the original DEF node definition" href="#GradualBackground" class="idName">GradualBackground</a>'&#160;<span class="attribute">toField</span>='<span class="value">skyColor</span>'/&gt;
+                  </span><br />
+<a name="ROUTE_5"> </a> 
+                  <span title="ROUTE connects fields between nodes to enable event passing" style="background-color:#DDEEFF">&lt;<span class="route">ROUTE</span>&#160;<span class="attribute">fromNode</span>='<a title="go to the original DEF node definition" href="#ColorAnimator" class="idName">ColorAnimator</a>'&#160;<span class="attribute">fromField</span>='<span class="value">value_changed</span>'&#160;<span class="attribute">toNode</span>='<a title="go to the original DEF node definition" href="#colorTypeConversionScript" class="idName">colorTypeConversionScript</a>'&#160;<span class="attribute">toField</span>='<span class="value">colorInput</span>'/&gt;
+                  </span><br />
+<a name="ROUTE_6"> </a> 
+                  <span title="ROUTE connects fields between nodes to enable event passing" style="background-color:#DDEEFF">&lt;<span class="route">ROUTE</span>&#160;<span class="attribute">fromNode</span>='<a title="go to the original DEF node definition" href="#ColorClock" class="idName">ColorClock</a>'&#160;<span class="attribute">fromField</span>='<span class="value">fraction_changed</span>'&#160;<span class="attribute">toNode</span>='<a title="go to the original DEF node definition" href="#ColorAnimator" class="idName">ColorAnimator</a>'&#160;<span class="attribute">toField</span>='<span class="value">set_fraction</span>'/&gt;
+                  </span>
+               </div><span title="Group is a Grouping node that can contain most nodes">&lt;/<span class="element">Group</span>&gt;
+               </span><br />
+<a name="ProtoDeclare_ArtDeco01Material"> </a> 
+               <span title="ProtoDeclare is a Prototype declaration, defining a new node made up of other node(s)" style="background-color:#FFEEFF">&lt;<span class="prototype">ProtoDeclare</span>&#160;<span class="attribute">name</span>='<span class="prototype">ArtDeco01Material</span>'&#160;<span title="application information for this ProtoDeclare"><span class="gray">appinfo</span>='<span class="value">tooltip: ArtDeco01Material prototype is a Material node</span>'</span>&gt;
+               </span>
+               <div class="indent">
+                  <span title="ProtoInterface is first statement inside a ProtoDeclare statement and holds field
+                  definitions" style="background-color:#FFEEFF">&lt;<span class="prototype">ProtoInterface</span>&gt;
+                  </span>
+                  <div class="indent"><a name="ArtDeco01MaterialProtoField_description"> </a> 
+                     <span title="A field element defines an interface attribute or node" style="background-color:#FFEEFF">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">description</span>'&#160;<span class="attribute">type</span>='<span class="value">SFString</span>'&#160;<span class="attribute">value</span>='<span class="value">ArtDeco01Material prototype is a Material node</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span title="application information for this field"><span class="gray">appinfo</span>='<span class="gray">tooltip for descriptionField</span>'</span>/&gt;
+                     </span><br />
+<a name="ArtDeco01MaterialProtoField_enabled"> </a> 
+                     <span title="A field element defines an interface attribute or node" style="background-color:#FFEEFF">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">enabled</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">true</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'/&gt;
+                     </span>
+                  </div><span title="ProtoInterface is first statement inside a ProtoDeclare statement and holds field
+                  definitions" style="background-color:#FFEEFF">&lt;/<span class="prototype">ProtoInterface</span>&gt;
+                  </span><br />
+
+                  <span title="Initial scene node in ProtoDeclare/ProtoBody statement determines this prototype's
+                  node type" style="background-color:#FFEEFF">&lt;<span class="prototype">ProtoBody</span>&gt;
+                  </span>
+                  <div class="indent"><span title="XML comment">&lt;!-- Initial node of ProtoBody determines prototype node type --&gt;</span>
+                     <br />
+
+                     <span title="Material specifies surface rendering properties for associated geometry">&lt;<span class="element">Material</span>&#160;<span class="attribute">ambientIntensity</span>='<span class="value">0.25</span>'&#160;<span class="attribute">diffuseColor</span>='<span class="value">0.282435 0.085159 0.134462</span>'&#160;<span class="attribute">shininess</span>='<span class="value">0.127273</span>'&#160;<span class="attribute">specularColor</span>='<span class="value">0.276305 0.11431 0.139857</span>'/&gt;
+                     </span><br /><span title="XML comment">&lt;!-- [HelloWorldProgram diagnostic] should be connected to scene graph: ArtDeco01ProtoDeclare.getNodeType()="Material"
+                        --&gt;</span>
+                     <br /><span title="XML comment">&lt;!-- presence of follow-on TouchSensor shows that additional nodes are allowed in
+                        ProtoBody after initial node, regardless of node types --&gt;</span>
+                     <br />
+
+                     <span title="TouchSensor tracks location &amp; state of the pointing device, and detects when user
+                     points at geometry" style="background-color:#DDEEFF">&lt;<span class="element">TouchSensor</span>&#160;<span class="attribute">description</span>='<span class="value">within ProtoBody</span>'&gt;
+                     </span>
+                     <div class="indent">
+                        <span title="IS connects ProtoDeclare interface fields to node fields inside ProtoDeclare definitions" style="background-color:#FFEEFF">&lt;<span class="element">IS</span>&gt;
+                        </span>
+                        <div class="indent">
+                           <span title="connect tags define each ProtoDeclare field connection within ProtoDeclare definitions" style="background-color:#FFEEFF">&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype" title="connect interface events to this field in given node">description</span>'&#160;<span class="attribute">protoField</span>='<span title="field interface connecting events into the prototype interior"><span class="prototype"><a title="go to the protoField definition" href="#ArtDeco01Material MaterialModulatorProtoField_description" class="prototype">description</a></span></span>'/&gt;
+                           </span><br />
+
+                           <span title="connect tags define each ProtoDeclare field connection within ProtoDeclare definitions" style="background-color:#FFEEFF">&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype" title="connect interface events to this field in given node">enabled</span>'&#160;<span class="attribute">protoField</span>='<span title="field interface connecting events into the prototype interior"><span class="prototype"><a title="go to the protoField definition" href="#ArtDeco01Material MaterialModulatorProtoField_enabled" class="prototype">enabled</a></span></span>'/&gt;
+                           </span>
+                        </div><span title="IS connects ProtoDeclare interface fields to node fields inside ProtoDeclare definitions" style="background-color:#FFEEFF">&lt;/<span class="element">IS</span>&gt;
+                        </span>
+                     </div><span title="TouchSensor tracks location &amp; state of the pointing device, and detects when user
+                     points at geometry" style="background-color:#DDEEFF">&lt;/<span class="element">TouchSensor</span>&gt;
+                     </span>
+                  </div><span title="Initial scene node in ProtoDeclare/ProtoBody statement determines this prototype's
+                  node type" style="background-color:#FFEEFF">&lt;/<span class="prototype">ProtoBody</span>&gt;
+                  </span>
+               </div><span title="ProtoDeclare is a Prototype declaration, defining a new node made up of other node(s)" style="background-color:#FFEEFF">&lt;/<span class="prototype">ProtoDeclare</span>&gt;
+               </span><br />
+<a name="ExternProtoDeclare_ArtDeco02Material"> </a> 
+               <span title="ExternProtoDeclare refers to a ProtoDeclare node declaration provided in another file">&lt;<span class="prototype">ExternProtoDeclare</span>&#160;<span class="attribute">name</span>='<span class="prototype">ArtDeco02Material</span>'&#160;<span title="application information for this ExternProtoDeclare"><span class="gray">appinfo</span>='<span class="value">this is a different Material node</span>'</span>
+<br />
+&#160;&#160;<span title="uniform resource locator (url) list of relative or absolute file addresses, performed
+               in order until resource retrieval succeeds"><span class="attribute">url</span>='
+               "<a href="http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material">http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material</a>" "<a href="http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material">http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material</a>" '</span>&gt;
+               </span>
+               <div class="indent">
+                  <span title="A field element defines an interface attribute or node for a parent ExternProtoDeclare" style="background-color:#FFEEFF">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">description</span>'&#160;<span class="attribute">type</span>='<span class="value">SFString</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'
+<br />
+&#160;<span title="application information for this field"><span class="gray">appinfo</span>='<span class="gray">tooltip for descriptionField</span>'</span>/&gt;
+                  </span><br /><span title="XML comment">&lt;!-- [HelloWorldProgram diagnostic] ArtDeco02ExternProtoDeclare.getNodeType()="ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE:
+                     ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run
+                     time, TODO X3DJSAIL needs to add further capability." --&gt;</span>
+                  
+               </div><span title="ExternProtoDeclare refers to a ProtoDeclare node declaration provided in another file">&lt;/<span class="prototype">ExternProtoDeclare</span>&gt;
+               </span><br /><span title="XML comment">&lt;!-- Tested ArtDeco01ProtoInstance, ArtDeco02ProtoInstance for improper node type
+                  when ProtoInstance is added in wrong place --&gt;</span>
+               <br />
+<a name="TestShape1"> </a> 
+               <span title="Shape contains geometry and optional corresponding Appearance">&lt;<span class="element">Shape</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">TestShape1</span>'&gt;
+               </span>
+               <div class="indent"><a name="TestAppearance1"> </a> 
+                  <span title="Appearance specifies visual properties of geometry by containing Material, texture
+                  and TextureTransform nodes">&lt;<span class="element">Appearance</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">TestAppearance1</span>'&gt;
+                  </span>
+                  <div class="indent">
+                     <span title="ProtoInstance creates an instance of a locally or externally declared prototype node" style="background-color:#FFEEFF">&lt;<span class="prototype">ProtoInstance</span>&#160;<span class="attribute">name</span>='<a title="go to the defining ProtoDeclare for this prototype instance" href="#ProtoDeclare_ArtDeco01Material" class="prototype">ArtDeco01Material</a>'&#160;<span class="attribute">containerField</span>='<span class="value">material</span>'&gt;
+                     </span>
+                     <div class="indent">
+                        <span title="A fieldValue element is used to re-initialize a default field value in a ProtoInstance" style="background-color:#FFEEFF">&lt;<span class="prototype">fieldValue</span>&#160;<span class="attribute">name</span>='<span class="prototype">description</span>'&#160;<span class="attribute">value</span>='<span class="value">ArtDeco01Material can substitute for a Material node</span>'/&gt;
+                        </span><br /><span title="XML comment">&lt;!-- [HelloWorldProgram diagnostic] ArtDeco01ProtoInstance.getNodeType()="Material"
+                           --&gt;</span>
+                        
+                     </div><span title="ProtoInstance creates an instance of a locally or externally declared prototype node" style="background-color:#FFEEFF">&lt;/<span class="prototype">ProtoInstance</span>&gt;
+                     </span><br /><span title="XML comment">&lt;!-- ArtDeco01Material prototype goes here... --&gt;</span>
+                     
+                  </div><span title="Appearance specifies visual properties of geometry by containing Material, texture
+                  and TextureTransform nodes">&lt;/<span class="element">Appearance</span>&gt;
+                  </span><br />
+
+                  <span title="Sphere is a geometry primitive node">&lt;<span class="element">Sphere</span>&#160;<span class="attribute">radius</span>='<span class="value">0.001</span>'/&gt;
+                  </span>
+               </div><span title="Shape contains geometry and optional corresponding Appearance">&lt;/<span class="element">Shape</span>&gt;
+               </span><br />
+<a name="TestShape2"> </a> 
+               <span title="Shape contains geometry and optional corresponding Appearance">&lt;<span class="element">Shape</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">TestShape2</span>'&gt;
+               </span>
+               <div class="indent"><a name="TestAppearance2"> </a> 
+                  <span title="Appearance specifies visual properties of geometry by containing Material, texture
+                  and TextureTransform nodes">&lt;<span class="element">Appearance</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">TestAppearance2</span>'&gt;
+                  </span>
+                  <div class="indent">
+                     <span title="ProtoInstance creates an instance of a locally or externally declared prototype node" style="background-color:#FFEEFF">&lt;<span class="prototype">ProtoInstance</span>&#160;<span class="attribute">name</span>='<a title="go to the defining ExternProtoDeclare for this prototype instance" href="#ExternProtoDeclare_ArtDeco02Material" class="prototype">ArtDeco02Material</a>'&#160;<span class="attribute">containerField</span>='<span class="value">material</span>'&gt;
+                     </span>
+                     <div class="indent">
+                        <span title="A fieldValue element is used to re-initialize a default field value in a ProtoInstance" style="background-color:#FFEEFF">&lt;<span class="prototype">fieldValue</span>&#160;<span class="attribute">name</span>='<span class="prototype">description</span>'&#160;<span class="attribute">value</span>='<span class="value">ArtDeco02Material can substitute for another Material node</span>'/&gt;
+                        </span><br /><span title="XML comment">&lt;!-- [HelloWorldProgram diagnostic] ArtDeco02ProtoInstance.getNodeType()="ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE:
+                           ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run
+                           time, TODO X3DJSAIL needs to add further capability." --&gt;</span>
+                        
+                     </div><span title="ProtoInstance creates an instance of a locally or externally declared prototype node" style="background-color:#FFEEFF">&lt;/<span class="prototype">ProtoInstance</span>&gt;
+                     </span><br /><span title="XML comment">&lt;!-- ArtDeco02Material prototype goes here... --&gt;</span>
+                     
+                  </div><span title="Appearance specifies visual properties of geometry by containing Material, texture
+                  and TextureTransform nodes">&lt;/<span class="element">Appearance</span>&gt;
+                  </span><br />
+
+                  <span title="Cone is a geometry primitive node">&lt;<span class="element">Cone</span>&#160;<span class="attribute">bottomRadius</span>='<span class="value">0.001</span>'&#160;<span class="attribute">height</span>='<span class="value">0.001</span>'/&gt;
+                  </span>
+               </div><span title="Shape contains geometry and optional corresponding Appearance">&lt;/<span class="element">Shape</span>&gt;
+               </span><br />
+<a name="inlineSceneDef"> </a> 
+               <span title="Inline is a Grouping node that can load nodes from another X3D scene via url">&lt;<span class="element">Inline</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">inlineSceneDef</span>'
+<br />
+&#160;&#160;<span title="uniform resource locator (url) list of relative or absolute file addresses, performed
+               in order until resource retrieval succeeds"><span class="attribute">url</span>='
+               "<a href="someOtherScene.x3d">someOtherScene.x3d</a>" '</span>/&gt;
+               </span><br />
+
+               <span title="IMPORT provides ROUTE access to a node that is EXPORTed by an Inline scene">&lt;<span class="element">IMPORT</span>&#160;<span class="attribute">inlineDEF</span>='<span class="value">inlineSceneDef</span>'&#160;<span class="attribute">importedDEF</span>='<span class="value">WorldInfoDEF</span>'&#160;<span class="attribute">AS</span>='<span class="value">WorldInfoDEF2</span>'/&gt;
+               </span><br />
+
+               <span title="EXPORT exposes a local node for ROUTEing when the current Scene is Inlined by an external
+               world">&lt;<span class="element">EXPORT</span>&#160;<span class="attribute">localDEF</span>='<span class="value">WorldInfoDEF</span>'&#160;<span class="attribute">AS</span>='<span class="value">WorldInfoDEF3</span>'/&gt;
+               </span><br />
+<a name="ProtoDeclare_MaterialModulator"> </a> 
+               <span title="ProtoDeclare is a Prototype declaration, defining a new node made up of other node(s)" style="background-color:#FFEEFF">&lt;<span class="prototype">ProtoDeclare</span>&#160;<span class="attribute">name</span>='<span class="prototype">MaterialModulator</span>'&#160;<span title="application information for this ProtoDeclare"><span class="gray">appinfo</span>='<span class="value">mimic a Material node and modulate fields as an animation effect</span>'</span>&#160;<span title="documentation url providing further information for this ProtoDeclare"><span class="attribute">documentation</span>='
+               <a href="http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html">http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html</a>
+               '</span>&gt;
+               </span>
+               <div class="indent">
+                  <span title="ProtoInterface is first statement inside a ProtoDeclare statement and holds field
+                  definitions" style="background-color:#FFEEFF">&lt;<span class="prototype">ProtoInterface</span>&gt;
+                  </span>
+                  <div class="indent"><a name="MaterialModulatorProtoField_enabled"> </a> 
+                     <span title="A field element defines an interface attribute or node" style="background-color:#FFEEFF">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">enabled</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">value</span>='<span class="value">true</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'/&gt;
+                     </span><br />
+<a name="MaterialModulatorProtoField_diffuseColor"> </a> 
+                     <span title="A field element defines an interface attribute or node" style="background-color:#FFEEFF">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">diffuseColor</span>'&#160;<span class="attribute">type</span>='<span class="value">SFColor</span>'&#160;<span class="attribute">value</span>='<span class="value">0 0 0</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'/&gt;
+                     </span><br />
+<a name="MaterialModulatorProtoField_emissiveColor"> </a> 
+                     <span title="A field element defines an interface attribute or node" style="background-color:#FFEEFF">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">emissiveColor</span>'&#160;<span class="attribute">type</span>='<span class="value">SFColor</span>'&#160;<span class="attribute">value</span>='<span class="value">0.05 0.05 0.5</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'/&gt;
+                     </span><br />
+<a name="MaterialModulatorProtoField_specularColor"> </a> 
+                     <span title="A field element defines an interface attribute or node" style="background-color:#FFEEFF">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">specularColor</span>'&#160;<span class="attribute">type</span>='<span class="value">SFColor</span>'&#160;<span class="attribute">value</span>='<span class="value">0 0 0</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'/&gt;
+                     </span><br />
+<a name="MaterialModulatorProtoField_transparency"> </a> 
+                     <span title="A field element defines an interface attribute or node" style="background-color:#FFEEFF">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">transparency</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">value</span>='<span class="value">0.0</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'/&gt;
+                     </span><br />
+<a name="MaterialModulatorProtoField_shininess"> </a> 
+                     <span title="A field element defines an interface attribute or node" style="background-color:#FFEEFF">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">shininess</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">value</span>='<span class="value">0.0</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'/&gt;
+                     </span><br />
+<a name="MaterialModulatorProtoField_ambientIntensity"> </a> 
+                     <span title="A field element defines an interface attribute or node" style="background-color:#FFEEFF">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">ambientIntensity</span>'&#160;<span class="attribute">type</span>='<span class="value">SFFloat</span>'&#160;<span class="attribute">value</span>='<span class="value">0.0</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'/&gt;
+                     </span>
+                  </div><span title="ProtoInterface is first statement inside a ProtoDeclare statement and holds field
+                  definitions" style="background-color:#FFEEFF">&lt;/<span class="prototype">ProtoInterface</span>&gt;
+                  </span><br />
+
+                  <span title="Initial scene node in ProtoDeclare/ProtoBody statement determines this prototype's
+                  node type" style="background-color:#FFEEFF">&lt;<span class="prototype">ProtoBody</span>&gt;
+                  </span>
+                  <div class="indent"><a name="MaterialNode"> </a> 
+                     <span title="Material specifies surface rendering properties for associated geometry">&lt;<span class="element">Material</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">MaterialNode</span>'&gt;
+                     </span>
+                     <div class="indent">
+                        <span title="IS connects ProtoDeclare interface fields to node fields inside ProtoDeclare definitions" style="background-color:#FFEEFF">&lt;<span class="element">IS</span>&gt;
+                        </span>
+                        <div class="indent">
+                           <span title="connect tags define each ProtoDeclare field connection within ProtoDeclare definitions" style="background-color:#FFEEFF">&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype" title="connect interface events to this field in given node">diffuseColor</span>'&#160;<span class="attribute">protoField</span>='<span title="field interface connecting events into the prototype interior"><span class="prototype"><a title="go to the protoField definition" href="#ArtDeco01Material MaterialModulatorProtoField_diffuseColor" class="prototype">diffuseColor</a></span></span>'/&gt;
+                           </span><br />
+
+                           <span title="connect tags define each ProtoDeclare field connection within ProtoDeclare definitions" style="background-color:#FFEEFF">&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype" title="connect interface events to this field in given node">emissiveColor</span>'&#160;<span class="attribute">protoField</span>='<span title="field interface connecting events into the prototype interior"><span class="prototype"><a title="go to the protoField definition" href="#ArtDeco01Material MaterialModulatorProtoField_emissiveColor" class="prototype">emissiveColor</a></span></span>'/&gt;
+                           </span><br />
+
+                           <span title="connect tags define each ProtoDeclare field connection within ProtoDeclare definitions" style="background-color:#FFEEFF">&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype" title="connect interface events to this field in given node">specularColor</span>'&#160;<span class="attribute">protoField</span>='<span title="field interface connecting events into the prototype interior"><span class="prototype"><a title="go to the protoField definition" href="#ArtDeco01Material MaterialModulatorProtoField_specularColor" class="prototype">specularColor</a></span></span>'/&gt;
+                           </span><br />
+
+                           <span title="connect tags define each ProtoDeclare field connection within ProtoDeclare definitions" style="background-color:#FFEEFF">&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype" title="connect interface events to this field in given node">transparency</span>'&#160;<span class="attribute">protoField</span>='<span title="field interface connecting events into the prototype interior"><span class="prototype"><a title="go to the protoField definition" href="#ArtDeco01Material MaterialModulatorProtoField_transparency" class="prototype">transparency</a></span></span>'/&gt;
+                           </span><br />
+
+                           <span title="connect tags define each ProtoDeclare field connection within ProtoDeclare definitions" style="background-color:#FFEEFF">&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype" title="connect interface events to this field in given node">shininess</span>'&#160;<span class="attribute">protoField</span>='<span title="field interface connecting events into the prototype interior"><span class="prototype"><a title="go to the protoField definition" href="#ArtDeco01Material MaterialModulatorProtoField_shininess" class="prototype">shininess</a></span></span>'/&gt;
+                           </span><br />
+
+                           <span title="connect tags define each ProtoDeclare field connection within ProtoDeclare definitions" style="background-color:#FFEEFF">&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype" title="connect interface events to this field in given node">ambientIntensity</span>'&#160;<span class="attribute">protoField</span>='<span title="field interface connecting events into the prototype interior"><span class="prototype"><a title="go to the protoField definition" href="#ArtDeco01Material MaterialModulatorProtoField_ambientIntensity" class="prototype">ambientIntensity</a></span></span>'/&gt;
+                           </span>
+                        </div><span title="IS connects ProtoDeclare interface fields to node fields inside ProtoDeclare definitions" style="background-color:#FFEEFF">&lt;/<span class="element">IS</span>&gt;
+                        </span>
+                     </div><span title="Material specifies surface rendering properties for associated geometry">&lt;/<span class="element">Material</span>&gt;
+                     </span><br /><span title="XML comment">&lt;!-- Only first node (the node type) is renderable, others are along for the ride
+                        --&gt;</span>
+                     <br />
+<a name="MaterialModulatorScript"> </a> 
+                     <span title="Script contains author-programmed event behaviors for a scene" style="background-color:#DDEEFF">&lt;<span class="element">Script</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">MaterialModulatorScript</span>'&gt;
+                     </span>
+                     <div class="indent">
+                        <span title="A field element defines an interface attribute or node for a parent Script" style="background-color:#DDEEFF">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">enabled</span>'&#160;<span class="attribute">type</span>='<span class="value">SFBool</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'/&gt;
+                        </span><br />
+
+                        <span title="A field element defines an interface attribute or node for a parent Script" style="background-color:#DDEEFF">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">diffuseColor</span>'&#160;<span class="attribute">type</span>='<span class="value">SFColor</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOutput</span>'/&gt;
+                        </span><br />
+
+                        <span title="A field element defines an interface attribute or node for a parent Script" style="background-color:#DDEEFF">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">newColor</span>'&#160;<span class="attribute">type</span>='<span class="value">SFColor</span>'&#160;<span class="attribute">accessType</span>='<span class="value">outputOnly</span>'/&gt;
+                        </span><br />
+
+                        <span title="A field element defines an interface attribute or node for a parent Script" style="background-color:#DDEEFF">&lt;<span class="prototype">field</span>&#160;<span class="attribute">name</span>='<span class="prototype">clockTrigger</span>'&#160;<span class="attribute">type</span>='<span class="value">SFTime</span>'&#160;<span class="attribute">accessType</span>='<span class="value">inputOnly</span>'/&gt;
+                        </span><br />
+
+                        <span title="IS connects ProtoDeclare interface fields to node fields inside ProtoDeclare definitions" style="background-color:#FFEEFF">&lt;<span class="element">IS</span>&gt;
+                        </span>
+                        <div class="indent">
+                           <span title="connect tags define each ProtoDeclare field connection within ProtoDeclare definitions" style="background-color:#FFEEFF">&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype" title="connect interface events to this field in given node">enabled</span>'&#160;<span class="attribute">protoField</span>='<span title="field interface connecting events into the prototype interior"><span class="prototype"><a title="go to the protoField definition" href="#ArtDeco01Material MaterialModulatorProtoField_enabled" class="prototype">enabled</a></span></span>'/&gt;
+                           </span><br />
+
+                           <span title="connect tags define each ProtoDeclare field connection within ProtoDeclare definitions" style="background-color:#FFEEFF">&lt;<span class="element">connect</span>&#160;<span class="attribute">nodeField</span>='<span class="prototype" title="connect interface events to this field in given node">diffuseColor</span>'&#160;<span class="attribute">protoField</span>='<span title="field interface connecting events into the prototype interior"><span class="prototype"><a title="go to the protoField definition" href="#ArtDeco01Material MaterialModulatorProtoField_diffuseColor" class="prototype">diffuseColor</a></span></span>'/&gt;
+                           </span>
+                        </div><span title="IS connects ProtoDeclare interface fields to node fields inside ProtoDeclare definitions" style="background-color:#FFEEFF">&lt;/<span class="element">IS</span>&gt;
+                        </span><br />
+                        </div class="indent">
+                        </div class="indent">
+                        </div class="indent">
+                        </div class="indent">
+                        <code><b>&lt;![CDATA[</b></code>
+                        <pre>
+
+ecmascript:
+function initialize ()
+{
+    newColor = diffuseColor; // start with correct color
+}
+function set_enabled (newValue)
+{
+	enabled = newValue;
+}
+function clockTrigger (timeValue)
+{
+    if (!enabled) return;
+    red   = newColor.r;
+    green = newColor.g;
+    blue  = newColor.b;
+    
+    // note different modulation rates for each color component, % is modulus operator
+    newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1);
+	if (enabled)
+	{
+		Browser.print (&apos;diffuseColor=(&apos; + red + &apos;,&apos; + green + &apos;,&apos; + blue + &apos;) newColor=&apos; + newColor.toString() + &apos;\n&apos;);
+	}
+}
+
+                </pre><code><b>]]&gt;</b></code>
+                        <div class="indent">
+                        <div class="indent">
+                        <div class="indent">
+                        <div class="indent">
+                        
+                     </div><span title="Script contains author-programmed event behaviors for a scene" style="background-color:#DDEEFF">&lt;/<span class="element">Script</span>&gt;
+                     </span>
+                  </div><span title="Initial scene node in ProtoDeclare/ProtoBody statement determines this prototype's
+                  node type" style="background-color:#FFEEFF">&lt;/<span class="prototype">ProtoBody</span>&gt;
+                  </span>
+               </div><span title="ProtoDeclare is a Prototype declaration, defining a new node made up of other node(s)" style="background-color:#FFEEFF">&lt;/<span class="prototype">ProtoDeclare</span>&gt;
+               </span><br /><span title="XML comment">&lt;!-- Test success: declarative statement createDeclarativeShapeTests() --&gt;</span>
+               <br />
+<a name="DeclarativeGroupExample"> </a> 
+               <span title="Group is a Grouping node that can contain most nodes">&lt;<span class="element">Group</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">DeclarativeGroupExample</span>'&gt;
+               </span>
+               <div class="indent">
+                  <span title="Shape contains geometry and optional corresponding Appearance">&lt;<span class="element">Shape</span>&gt;
+                  </span>
+                  <div class="indent"><a name="FindableMetadataStringTest"> </a> 
+                     &lt;<span class="element">MetadataString</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">FindableMetadataStringTest</span>'&#160;<span class="attribute">name</span>='<span class="value">findThisNameValue</span>'&#160;<span class="attribute">value</span>='<span class="value">"test case"</span>'&#160;<span class="attribute">containerField</span>='<span class="value">metadata</span>'/&gt;
+                     <br />
+<a name="DeclarativeAppearanceExample"> </a> 
+                     <span title="Appearance specifies visual properties of geometry by containing Material, texture
+                     and TextureTransform nodes">&lt;<span class="element">Appearance</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">DeclarativeAppearanceExample</span>'&gt;
+                     </span>
+                     <div class="indent"><a name="MyMaterialModulator"> </a> 
+                        <span title="ProtoInstance creates an instance of a locally or externally declared prototype node" style="background-color:#FFEEFF">&lt;<span class="prototype">ProtoInstance</span>&#160;<span class="attribute">name</span>='<a title="go to the defining ProtoDeclare for this prototype instance" href="#ProtoDeclare_MaterialModulator" class="prototype">MaterialModulator</a>'&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">MyMaterialModulator</span>'&#160;<span class="attribute">containerField</span>='<span class="value">material</span>'/&gt;
+                        </span><br /><span title="XML comment">&lt;!-- DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator
+                           ProtoInstance --&gt;</span>
+                        
+                     </div><span title="Appearance specifies visual properties of geometry by containing Material, texture
+                     and TextureTransform nodes">&lt;/<span class="element">Appearance</span>&gt;
+                     </span><br />
+
+                     <span title="Cone is a geometry primitive node">&lt;<span class="element">Cone</span>&#160;<span class="attribute">bottom</span>='<span class="value">false</span>'&#160;<span class="attribute">bottomRadius</span>='<span class="value">0.05</span>'&#160;<span class="attribute">height</span>='<span class="value">0.1</span>'/&gt;
+                     </span>
+                  </div><span title="Shape contains geometry and optional corresponding Appearance">&lt;/<span class="element">Shape</span>&gt;
+                  </span><br /><span title="XML comment">&lt;!-- Test success: declarativeGroup.addChild() singleton pipeline method --&gt;</span>
+                  
+               </div><span title="Group is a Grouping node that can contain most nodes">&lt;/<span class="element">Group</span>&gt;
+               </span><br /><span title="XML comment">&lt;!-- Test success: declarative statement addChild() --&gt;</span>
+               <br /><span title="XML comment">&lt;!-- Test success: x3dModel.findNodeByDEF(DeclarativeAppearanceExample) = &lt;Appearance
+                  DEF='DeclarativeAppearanceExample'/&gt; i.e. &lt;Appearance DEF='DeclarativeAppearanceExample'&gt;
+                  &lt;ProtoInstance DEF='MyMaterialModulator' name='MaterialModulator' containerField='material'/&gt;
+                  &lt;!- - DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator
+                  ProtoInstance - -&gt; &lt;/Appearance&gt; --&gt;</span>
+               <br /><span title="XML comment">&lt;!-- Test success: x3dModel.findElementByNameValue(findThisNameValue) = &lt;MetadataString
+                  DEF='FindableMetadataStringTest' name='findThisNameValue' value='"test case"'/&gt; --&gt;</span>
+               <br /><span title="XML comment">&lt;!-- Test success: x3dModel.findElementByNameValue("ArtDeco01Material", "ProtoDeclare")
+                  found --&gt;</span>
+               <br /><span title="XML comment">&lt;!-- Test success: x3dModel.findElementByNameValue("MaterialModulator", "ProtoDeclare")
+                  found --&gt;</span>
+               <br /><span title="XML comment">&lt;!-- Test success: x3dModel.findElementByNameValue("MaterialModulator", "ProtoInstance")
+                  found --&gt;</span>
+               <br />
+<a name="TestFieldObjectsGroup"> </a> 
+               <span title="Group is a Grouping node that can contain most nodes">&lt;<span class="element">Group</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">TestFieldObjectsGroup</span>'&gt;
+               </span>
+               <div class="indent"><span title="XML comment">&lt;!-- testFieldObjects() results --&gt;</span>
+                  <br /><span title="XML comment">&lt;!-- SFBool default=true, true=true, false=false, negate()=true --&gt;</span>
+                  <br /><span title="XML comment">&lt;!-- MFBool default=, initial=true false true, negate()=false true false --&gt;</span>
+                  <br /><span title="XML comment">&lt;!-- SFFloat default=0.0, initial=1.0, setValue(2)=2.0, setValue(3.0f)=3.0, setValue(4.0)=4.0
+                     --&gt;</span>
+                  <br /><span title="XML comment">&lt;!-- MFFloat default=, initial=1 2 3, append(5)=1 2 3 5, inserts(3,4)(0,0)=0 1 2 3
+                     4 5, append(6)=0 1 2 3 4 5 6, size()=7 --&gt;</span>
+                  <br /><span title="XML comment">&lt;!-- ... get1Value[3]=3.0, remove[1]=0 2 3 4 5 6, set1Value(0,10)=10 2 3 4 5 6, multiply(2)=20
+                     4 6 8 10 12, clear= --&gt;</span>
+                  <br /><span title="XML comment">&lt;!-- SFVec3f default=0 0 0, initial=1 2 3, setValue=4 5 6, multiply(2)=8 10 12, normalize()=0.45584232
+                     0.5698029 0.68376344 --&gt;</span>
+                  
+               </div><span title="Group is a Grouping node that can contain most nodes">&lt;/<span class="element">Group</span>&gt;
+               </span><br />
+
+               <span title="Sound controls an AudioClip or MovieTexture for sound playback">&lt;<span class="element">Sound</span>&#160;<span class="attribute">location</span>='<span class="value">0 1.6 0</span>'&gt;
+               </span>
+               <div class="indent">
+                  <span title="AudioClip provides audio data used by Sound nodes">&lt;<span class="element">AudioClip</span>&#160;<span class="attribute">description</span>='<span class="value">chimes</span>'
+<br />
+&#160;&#160;<span title="uniform resource locator (url) list of relative or absolute file addresses, performed
+                  in order until resource retrieval succeeds"><span class="attribute">url</span>='
+                  "<a href="chimes.wav">chimes.wav</a>" "<a href="http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav">http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav</a>" '</span>&gt;
+                  </span>
+                  <div class="indent"><span title="XML comment">&lt;!-- Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d
+                        --&gt;</span>
+                     
+                  </div><span title="AudioClip provides audio data used by Sound nodes">&lt;/<span class="element">AudioClip</span>&gt;
+                  </span><br /><span title="XML comment">&lt;!-- set sound-ellipsoid location height at 1.6m to match typical avatar height --&gt;</span>
+                  
+               </div><span title="Sound controls an AudioClip or MovieTexture for sound playback">&lt;/<span class="element">Sound</span>&gt;
+               </span><br />
+
+               <span title="Sound controls an AudioClip or MovieTexture for sound playback">&lt;<span class="element">Sound</span>&#160;<span class="attribute">location</span>='<span class="value">0 1.6 0</span>'&gt;
+               </span>
+               <div class="indent">
+                  <span title="MovieTexture applies a 2D movie image to surface geometry, or provides audio for a
+                  Sound node">&lt;<span class="element">MovieTexture</span>&#160;<span class="attribute">containerField</span>='<span class="value">source</span>'&#160;<span class="attribute">description</span>='<span class="value">mpgsys.mpg from ConformanceNist suite</span>'
+<br />
+&#160;&#160;<span title="uniform resource locator (url) list of relative or absolute file addresses, performed
+                  in order until resource retrieval succeeds"><span class="attribute">url</span>='
+                  "<a href="mpgsys.mpg">mpgsys.mpg</a>" "<a href="http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg">http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg</a>" '</span>&gt;
+                  </span>
+                  <div class="indent"><span title="XML comment">&lt;!-- Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d
+                        --&gt;</span>
+                     <br /><span title="XML comment">&lt;!-- Expected containerField='source', allowed containerField values="texture" "source"
+                        "back" "bottom" "front" "left" "right" "top" "backTexture" "bottomTexture" "frontTexture"
+                        "leftTexture" "rightTexture" "topTexture" --&gt;</span>
+                     
+                  </div><span title="MovieTexture applies a 2D movie image to surface geometry, or provides audio for a
+                  Sound node">&lt;/<span class="element">MovieTexture</span>&gt;
+                  </span><br /><span title="XML comment">&lt;!-- set sound-ellipsoid location height at 1.6m to match typical avatar height --&gt;</span>
+                  
+               </div><span title="Sound controls an AudioClip or MovieTexture for sound playback">&lt;/<span class="element">Sound</span>&gt;
+               </span><br /><span title="XML comment">&lt;!-- Test success: AnchorObject.isNode()=true, siteAnchor.isNode()=true --&gt;</span>
+               <br /><span title="XML comment">&lt;!-- Test success: AnchorObject.isStatement()=false, siteAnchor.isStatement()=false
+                  --&gt;</span>
+               <br /><span title="XML comment">&lt;!-- Test success: ROUTEObject.isNode()=false, orbitPositionROUTE.isNode()=false --&gt;</span>
+               <br /><span title="XML comment">&lt;!-- Test success: ROUTEObject.isStatement()=true, orbitPositionROUTE.isStatement()=true
+                  --&gt;</span>
+               <br /><span title="XML comment">&lt;!-- Test success: CommentsBlock.isNode()=false, testComments.isNode()=false --&gt;</span>
+               <br /><span title="XML comment">&lt;!-- Test success: CommentsBlock.isStatement()=false, testComments.isStatement()=false
+                  --&gt;</span>
+               <br />
+<a name="ExtrusionShape"> </a> 
+               <span title="Shape contains geometry and optional corresponding Appearance">&lt;<span class="element">Shape</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">ExtrusionShape</span>'&gt;
+               </span>
+               <div class="indent"><a name="TransparentAppearance"> </a> 
+                  <span title="Appearance specifies visual properties of geometry by containing Material, texture
+                  and TextureTransform nodes">&lt;<span class="element">Appearance</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">TransparentAppearance</span>'&gt;
+                  </span>
+                  <div class="indent">
+                     <span title="Material specifies surface rendering properties for associated geometry">&lt;<span class="element">Material</span>&#160;<span class="attribute">transparency</span>='<span class="value">1.0</span>'/&gt;
+                     </span>
+                  </div><span title="Appearance specifies visual properties of geometry by containing Material, texture
+                  and TextureTransform nodes">&lt;/<span class="element">Appearance</span>&gt;
+                  </span><br />
+<a name="ExampleExtrusion"> </a> 
+                  <span title="Extrusion is a geometry node">&lt;<span class="element">Extrusion</span>&#160;<span class="attribute">DEF</span>='<span class="idName" title="DEF name is a unique ID for a given node">ExampleExtrusion</span>'/&gt;
+                  </span><br /><span title="XML comment">&lt;!-- ExampleExtrusion isCrossSectionClosed()=true, crossSection='[1.0, 1.0, 1.0, -1.0,
+                     -1.0, -1.0, -1.0, 1.0, 1.0, 1.0]' --&gt;</span>
+                  <br /><span title="XML comment">&lt;!-- ExampleExtrusion isSpineClosed()=false, spine='[0.0, 0.0, 0.0, 0.0, 1.0, 0.0]'
+                     --&gt;</span>
+                  
+               </div><span title="Shape contains geometry and optional corresponding Appearance">&lt;/<span class="element">Shape</span>&gt;
+               </span>
+            </div><span title="Scene is the root node that contains an X3D scene graph">&lt;/<span class="element">Scene</span>&gt;
+            </span>
+         </div><span title="X3D is the top-most XML element for an Extensible 3D (X3D) Graphics file">&lt;/<span class="element">X3D</span>&gt;
+         </span><br /><span style="color:white">
+            &lt;!--
+            </span><div class="center">
+            <hr style="width:100%"></hr>
+            <b><i>Index for ExternProtoDeclare definition</i></b>: 
+            <a title="go to this declaration" href="#ExternProtoDeclare_ArtDeco02Material" class="prototype">ArtDeco02Material</a>
+            <br />
+            <hr width="50%"></hr>
+            <b><i>Index for ProtoDeclare definitions</i></b>: 
+            <a title="go to this declaration" href="#ProtoDeclare_ArtDeco01Material" class="prototype">ArtDeco01Material</a>,
+            <a title="go to this declaration" href="#ProtoDeclare_MaterialModulator" class="prototype">MaterialModulator</a>
+            <br />
+            <hr width="50%"></hr>
+            <b><i>Index for DEF nodes</i></b>: 
+            <a title="go to this Group node" href="#BackgroundGroup" class="idName">BackgroundGroup</a>,
+            <a title="go to this PositionInterpolator node" href="#BoxPathAnimator" class="idName">BoxPathAnimator</a>,
+            <a title="go to this Shape node" href="#BoxShape" class="idName">BoxShape</a>,
+            <a title="go to this ColorInterpolator node" href="#ColorAnimator" class="idName">ColorAnimator</a>,
+            <a title="go to this TimeSensor node" href="#ColorClock" class="idName">ColorClock</a>,
+            <a title="go to this Script node" href="#colorTypeConversionScript" class="idName">colorTypeConversionScript</a>,
+            <a title="go to this Appearance node" href="#DeclarativeAppearanceExample" class="idName">DeclarativeAppearanceExample</a>,
+            <a title="go to this Group node" href="#DeclarativeGroupExample" class="idName">DeclarativeGroupExample</a>,
+            <a title="go to this Viewpoint node" href="#DefaultView" class="idName">DefaultView</a>,
+            <a title="go to this Extrusion node" href="#ExampleExtrusion" class="idName">ExampleExtrusion</a>,
+            <a title="go to this Shape node" href="#ExtrusionShape" class="idName">ExtrusionShape</a>,
+            <a title="go to this MetadataString node" href="#FindableMetadataStringTest" class="idName">FindableMetadataStringTest</a>,
+            <a title="go to this Background node" href="#GradualBackground" class="idName">GradualBackground</a>,
+            <a title="go to this Material node" href="#GreenMaterial" class="idName">GreenMaterial</a>,
+            <a title="go to this Inline node" href="#inlineSceneDef" class="idName">inlineSceneDef</a>,
+            <a title="go to this Shape node" href="#LineShape" class="idName">LineShape</a>,
+            <a title="go to this Transform node" href="#LogoGeometryTransform" class="idName">LogoGeometryTransform</a>,
+            <a title="go to this Script node" href="#MaterialModulatorScript" class="idName">MaterialModulatorScript</a>,
+            <a title="go to this Material node" href="#MaterialNode" class="idName">MaterialNode</a>,
+            <a title="go to this ProtoInstance node" href="#MyMaterialModulator" class="idName">MyMaterialModulator</a>,
+            <a title="go to this TimeSensor node" href="#OrbitClock" class="idName">OrbitClock</a>,
+            <a title="go to this Shape node" href="#ProxyShape" class="idName">ProxyShape</a>,
+            <a title="go to this LayerSet node" href="#scene.addChildLayerSetObjectTest" class="idName">scene.addChildLayerSetObjectTest</a>,
+            <a title="go to this MetadataString node" href="#scene.addChildMetadataObject" class="idName">scene.addChildMetadataObject</a>,
+            <a title="go to this TimeSensor node" href="#SpinClock" class="idName">SpinClock</a>,
+            <a title="go to this OrientationInterpolator node" href="#SpinInterpolator" class="idName">SpinInterpolator</a>,
+            <a title="go to this Appearance node" href="#TestAppearance1" class="idName">TestAppearance1</a>,
+            <a title="go to this Appearance node" href="#TestAppearance2" class="idName">TestAppearance2</a>,
+            <a title="go to this Group node" href="#TestFieldObjectsGroup" class="idName">TestFieldObjectsGroup</a>,
+            <a title="go to this Box node" href="#test-NMTOKEN_regex.0123456789" class="idName">test-NMTOKEN_regex.0123456789</a>,
+            <a title="go to this Shape node" href="#TestShape1" class="idName">TestShape1</a>,
+            <a title="go to this Shape node" href="#TestShape2" class="idName">TestShape2</a>,
+            <a title="go to this Transform node" href="#TextTransform" class="idName">TextTransform</a>,
+            <a title="go to this Viewpoint node" href="#TopDownView" class="idName">TopDownView</a>,
+            <a title="go to this Appearance node" href="#TransparentAppearance" class="idName">TransparentAppearance</a>,
+            <a title="go to this WorldInfo node" href="#WorldInfoDEF" class="idName">WorldInfoDEF</a>
+            
+            <hr style="width:100%"></hr>
+         </div><span style="color:white">
+            --&gt;
+            </span></div>
+      <p style="text-align:center;">
+         <span style="color:white">&lt;!--</span>
+         Color key: 
+         <!--(matching X3D and XML terminology) -->
+         &lt;<span class="element">X3dNode</span><span class="idName"> DEF</span>='<span class="idName">idName</span>' <span class="attribute">field</span>='<span class="value">value</span>'/&gt; 
+         matches 
+         &lt;<span class="element">XmlElement</span><span class="idName"> DEF</span>='<span class="idName">idName</span>' <span class="attribute">attribute</span>='<span class="value">value</span>'/&gt; <br></br>
+         <span title="behavior node" style="background-color:#DDEEFF;">(Light blue background: behavior node)</span> <span title="inserted documentation about ROUTE connections" style="background-color:#EEEEEE;">(Grey background: inserted documentation)</span> <span title="X3D Extensibility" style="background-color:#FFEEFF;">(Magenta background: X3D Extensibility)</span><br></br>
+         &#160;&#160;&#160;
+         &lt;<span class="prototype">Prototype</span> <span class="attribute">name</span>='<span class="prototype">ProtoName</span>'&gt;
+         	&lt;<span class="prototype">field</span><span class="attribute">name</span>='<span class="prototype">fieldName</span>'/&gt; &lt;/<span class="prototype">Prototype</span>&gt;
+         <span style="color:white"> --&gt;</span>
+         
+      </p>
+      <p style="text-align:center; background-color:white">
+         <span style="color:white">&lt;!--</span>
+         
+         Additional help information about X3D scenes:  
+         <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html" title="Numerous resources that support X3D graphics">X3D Resources</a>,
+         <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" title="Style guidelines, authoring tips and best practices">X3D Scene Authoring Hints</a>
+         and
+         <a href="http://www.web3d.org/x3d/content/X3dTooltips.html" title="Summary descriptions and authoring hints for each X3D node (element) and field (attribute)">X3D Tooltips</a>
+         <span style="color:white">--&gt;</span>
+         
+      </p>
+   </body>
+</html>

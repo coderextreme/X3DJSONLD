@@ -1,0 +1,1664 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.1",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.1.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"CadGeometryPrototypes.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"This scene provides tool developers with X3D Amendment 1 CAD Component node prototypes, providing backwards compatibility with VRML97 and X3D v3.0."
+          },
+          {
+            "@name":"creator",
+            "@content":"Travis Rauch, Alan Shaffer, Mounir Sidhom, Patrick Sullivan and Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"28 April 2005"
+          },
+          {
+            "@name":"modified",
+            "@content":"6 December 2015"
+          },
+          {
+            "@name":"warning",
+            "@content":"Do not use these prototypes in an up-to-date X3D browser that already provides CAD support."
+          },
+          {
+            "@name":"information",
+            "@content":"Recommended practice: avoid using these prototypes, instead use native definitions for CAD nodes using an up-to-date X3D browser."
+          },
+          {
+            "@name":"information",
+            "@content":"These scenes are not intended for regular authoring - use X3D v3.2 CAD component instead. Example scenes using these prototypes do not get support for making embdedded metadata values visible at run time, though metadata can certainly be saved in the scene file OK."
+          },
+          {
+            "@name":"reference",
+            "@content":"CadGeometryExternPrototypes.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/files/specifications/19775-1/V3.3/Part01/components/CADGeometry.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/files/specifications/19775-1/V3.3/Part01/CADInterchange.html"
+          },
+          {
+            "@name":"subject",
+            "@content":"CADAssembly CADFace CADLayer CADPart IndexedQuadSet QuadSet"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/CAD/CadGeometryPrototypes.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"26 July 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          {
+            "#comment":"==========================================="
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"IndexedQuadSet",
+              "@appinfo":"The IndexedQuadSet node represents a 3D shape composed of a collection of individual quadrilaterals (quads). IndexedQuadSet uses the indices in its index field to specify the vertices of each quad from the coord field. Each quad is formed from a set of four vertices of the Coordinate node identified by four consecutive indices from the index field If the index field does not contain a multiple of four coordinate values the remaining vertices shall be ignored.",
+              "@documentation":"http://www.web3d.org/x3d/specifications/ISO-IEC-19775-Amendment1-PDAM-X3DAbstractSpecification/Part01/components/CADGeometry.html#IndexedQuadSet",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"set_index",
+                      "@accessType":"inputOnly",
+                      "@appinfo":"range [0..∞) or -1",
+                      "@type":"MFInt32",
+                      "-children":[
+                        {
+                          "#comment":"No specific initialization value"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"attrib",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"[X3DVertexAttributeNode]",
+                      "@type":"MFNode",
+                      "-children":[
+                        {
+                          "#comment":"Specification initialization: NULL node"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"color",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"[X3DColorNode]",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"Specification initialization: NULL node"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"coord",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"[X3DCoordinateNode]",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"Specification initialization: NULL node"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"fogCoord",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"[FogCoordinate]",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"Specification initialization: NULL node"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"normal",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"[X3DNormalNode]",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"Specification initialization: NULL node"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"texCoord",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"[X3DTextureCoordinateNode]",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"Specification initialization: NULL node"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"ccw",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"colorPerVertex",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"colorPerVertex ignored in IndexedQuadSet, and always treated as true",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"normalPerVertex",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"solid",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"index",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"range [0..∞) or -1",
+                      "@type":"MFInt32",
+                      "-children":[
+                        {
+                          "#comment":"No specific initialization value"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"metadata",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"[X3DMetadataObject]",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"Specification initialization: NULL node"
+                        }
+                      ]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "IndexedFaceSet":
+                      {
+                        "@DEF":"RenderedIQS",
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"attrib",
+                                "@protoField":"attrib"
+                              },
+                              {
+                                "@nodeField":"color",
+                                "@protoField":"color"
+                              },
+                              {
+                                "@nodeField":"colorPerVertex",
+                                "@protoField":"colorPerVertex"
+                              },
+                              {
+                                "@nodeField":"coord",
+                                "@protoField":"coord"
+                              },
+                              {
+                                "@nodeField":"fogCoord",
+                                "@protoField":"fogCoord"
+                              },
+                              {
+                                "@nodeField":"normal",
+                                "@protoField":"normal"
+                              },
+                              {
+                                "@nodeField":"texCoord",
+                                "@protoField":"texCoord"
+                              },
+                              {
+                                "@nodeField":"ccw",
+                                "@protoField":"ccw"
+                              },
+                              {
+                                "@nodeField":"normalPerVertex",
+                                "@protoField":"normalPerVertex"
+                              },
+                              {
+                                "@nodeField":"solid",
+                                "@protoField":"solid"
+                              }
+                            ]
+                        }
+                      }
+                    },
+                    {
+                      "#comment":"Initial node in the PROTO body is actual node type, and the only node rendered. Remaining ProtoBody nodes not rendered"
+                    },
+                    { "Group":
+                      {
+                        "@DEF":"UnrenderedIQS",
+                        "-children":[
+                          { "Script":
+                            {
+                              "@DEF":"IndexedQuadSetToIndexedFaceSet",
+                              "@directOutput":true,
+                              "field": [
+                                {
+                                  "@name":"index",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"MFInt32"
+                                },
+                                {
+                                  "@name":"set_index",
+                                  "@accessType":"inputOnly",
+                                  "@type":"MFInt32"
+                                },
+                                {
+                                  "@name":"renderedIQS",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFNode",
+                                  "-children":[
+                                    { "IndexedFaceSet":
+                                      {
+                                        "@USE":"RenderedIQS"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"localTraceEnabled",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFBool",
+                                  "@value":true
+                                },
+                                {
+                                  "@name":"coordIndexNew",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"MFInt32",
+                                  "-children":[
+                                    {
+                                      "#comment":"constructed during initialization"
+                                    }
+                                  ]
+                                }
+                              ],
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"index",
+                                      "@protoField":"index"
+                                    },
+                                    {
+                                      "@nodeField":"set_index",
+                                      "@protoField":"set_index"
+                                    }
+                                  ]
+                              },
+                              "#sourceText":[
+"ecmascript:",
+"",
+"function initialize()",
+"{",
+"\t//colorPerVertex ignored in IndexedQuadSet, and always treated as \"true\"",
+"\tRenderedIQS.colorPerVertex = true;",
+"",
+"\t// index is an array of quad indices. The ordering of",
+"\t// the vertices is ccw (counter-clockwise).",
+"",
+"\t// ensure legal index values",
+"\tfor (ii=0; ii <= index.length-1; ii++)",
+"\t{",
+"\t  if (index[ii] < -1)",
+"\t  {",
+"\t\talwaysPrint ('error, index[' + ii + ']=' + index[ii] + ' is illegal value');",
+"\t\treturn;",
+"\t  }",
+"\t}",
+"\ttracePrint ('index.length=' + index.length);",
+"\ttracePrint ('index=' + index);",
+"",
+"\tif (index.length < 4)",
+"\t{",
+"\t\talwaysPrint ('warning, index.length=' + index.length + ' insufficient to construct a quad, IQS ignored');",
+"\t\treturn;",
+"\t}",
+"",
+"\tcoordIndexNew = new MFInt32 ();",
+"",
+"\t// ii walks through index array,",
+"\t// goal is to initialize coordIndexNew list to match quads",
+"\tfor (ii=0; ii <= index.length-1; ii+=4)",
+"\t{",
+"\t\tif ((index[ii]   == index[ii+1]) || (index[ii]   == index[ii+2]) || (index[ii] == index[ii+3]) ||",
+"\t\t    (index[ii+1] == index[ii+2]) || (index[ii+1] == index[ii+3]) ||",
+"\t\t    (index[ii+2] == index[ii+3]))",
+"\t\t{",
+"\t\t\talwaysPrint ('index=' + index);",
+"\t\t\talwaysPrint ('error, pair of equal indices in quad');",
+"\t\t\treturn;",
+"\t\t}",
+"",
+"\t\tif (index[ii] >= 0)",
+"\t\t{",
+"\t\t\t// add another quad from latest 4 points of fan set to IQS",
+"\t\t\t// order is ccw, i.e. in correct halfplane direction",
+"\t\t\t// note: there is an implicit \"malloc\" here for the'length' element of the array",
+"\t\t\tcoordIndexNew [coordIndexNew.length] = index[ii];",
+"\t\t\tcoordIndexNew [coordIndexNew.length] = index[ii+1];",
+"\t\t\tcoordIndexNew [coordIndexNew.length] = index[ii+2];",
+"\t\t\tcoordIndexNew [coordIndexNew.length] = index[ii+3];",
+"\t\t\tcoordIndexNew [coordIndexNew.length] = -1;",
+"\t\t}",
+"",
+"\t\tif (index.length % 4 != 0) {",
+"\t\t\talwaysPrint ('error, index field does not contain a multiple of four coordinate values.');",
+"\t\t\talwaysPrint ('The remaining vertices shall be ignored');",
+"\t\t\treturn;",
+"\t\t}",
+"",
+"\t  // incremental trace of array being built",
+"\t  tracePrint ('coordIndexNew=' + coordIndexNew);",
+"\t}",
+"\trenderedIQS.set_coordIndex = coordIndexNew;",
+"\ttracePrint ('renderedIQS.coordIndex=' + renderedIQS.coordIndex);",
+"\t// match colorIndex if any Color node exists",
+"//\tif (nodesHolder.color)",
+"//\t{",
+"//\t  if (nodesHolder.color.color.length > 0)",
+"//\t  {",
+"\t\t//  Could implement color count check here",
+"//\t  }",
+"//\t}",
+"",
+"\t// no need to set colorIndex since indexedFaceSet semantics handles this",
+"}",
+"function set_index (value, timestamp)",
+"{",
+"\tindex = value;",
+"\tinitialize ();",
+"}",
+"function tracePrint(outputString)",
+"{",
+"    if (localTraceEnabled)",
+"\t  Browser.print ('[IndexedQuadSet]' + outputString);",
+"}",
+"function alwaysPrint(outputString)",
+"{",
+"\tBrowser.print ('[IndexedQuadSet]' + outputString);",
+"}"
+]
+                            }
+                          },
+                          { "Group":
+                            {
+                              "-metadata":
+                                { "MetadataString":
+                                  {
+                                    "@name":"metadataHolder",
+                                    "IS": {
+                                        "connect": [
+                                          {
+                                            "@nodeField":"metadata",
+                                            "@protoField":"metadata"
+                                          }
+                                        ]
+                                    }
+                                  }
+                                }
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          {
+            "#comment":"==========================================="
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"QuadSet",
+              "@appinfo":"The QuadSet node represents a 3D shape that represents a collection of individual planar quadrilaterals. The coord field contains a Coordinate node that defines the 3D vertices that define the quad. Each quad is formed from a consecutive set of four vertices of the coordinate node. If the coordinate node does not contain a multiple of four coordinate values the remaining vertices shall be ignored.",
+              "@documentation":"http://www.web3d.org/x3d/specifications/ISO-IEC-19775-Amendment1-PDAM-X3DAbstractSpecification/Part01/components/CadGeometry.html#QuadSet",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"attrib",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"[X3DVertexAttributeNode]",
+                      "@type":"MFNode",
+                      "-children":[
+                        {
+                          "#comment":"Specification initialization: NULL node"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"color",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"[X3DColorNode]",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"Specification initialization: NULL node"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"coord",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"[X3DCoordinateNode]",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"Specification initialization: NULL node"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"fogCoord",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"[FogCoordinate]",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"Specification initialization: NULL node"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"normal",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"[X3DNormalNode]",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"Specification initialization: NULL node"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"texCoord",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"[X3DTextureCoordinateNode]",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"Specification initialization: NULL node"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"ccw",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"colorPerVertex",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"colorPerVertex ignored in QuadSet, and always treated as true",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"normalPerVertex",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"solid",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFBool",
+                      "@value":true
+                    },
+                    {
+                      "@name":"metadata",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"[X3DMetadataObject]",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"Specification initialization: NULL node"
+                        }
+                      ]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "IndexedFaceSet":
+                      {
+                        "@DEF":"RenderedQS",
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"attrib",
+                                "@protoField":"attrib"
+                              },
+                              {
+                                "@nodeField":"color",
+                                "@protoField":"color"
+                              },
+                              {
+                                "@nodeField":"colorPerVertex",
+                                "@protoField":"colorPerVertex"
+                              },
+                              {
+                                "@nodeField":"coord",
+                                "@protoField":"coord"
+                              },
+                              {
+                                "@nodeField":"fogCoord",
+                                "@protoField":"fogCoord"
+                              },
+                              {
+                                "@nodeField":"normal",
+                                "@protoField":"normal"
+                              },
+                              {
+                                "@nodeField":"texCoord",
+                                "@protoField":"texCoord"
+                              },
+                              {
+                                "@nodeField":"ccw",
+                                "@protoField":"ccw"
+                              },
+                              {
+                                "@nodeField":"normalPerVertex",
+                                "@protoField":"normalPerVertex"
+                              },
+                              {
+                                "@nodeField":"solid",
+                                "@protoField":"solid"
+                              }
+                            ]
+                        }
+                      }
+                    },
+                    {
+                      "#comment":"Initial node in the PROTO body is actual node type, and the only node rendered. Remaining ProtoBody nodes not rendered"
+                    },
+                    { "Group":
+                      {
+                        "@DEF":"UnrenderedQS",
+                        "-children":[
+                          { "Script":
+                            {
+                              "@DEF":"QuadSetToIndexedFaceSet",
+                              "@directOutput":true,
+                              "field": [
+                                {
+                                  "@name":"index",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"MFInt32",
+                                  "-children":[
+                                    {
+                                      "#comment":"initialized in ecmascript"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"set_index",
+                                  "@accessType":"inputOnly",
+                                  "@type":"MFInt32"
+                                },
+                                {
+                                  "@name":"renderedQS",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFNode",
+                                  "-children":[
+                                    { "IndexedFaceSet":
+                                      {
+                                        "@USE":"RenderedQS"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "@name":"localTraceEnabled",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"SFBool",
+                                  "@value":true
+                                },
+                                {
+                                  "@name":"coordIndexNew",
+                                  "@accessType":"initializeOnly",
+                                  "@type":"MFInt32",
+                                  "-children":[
+                                    {
+                                      "#comment":"constructed during initialization"
+                                    }
+                                  ]
+                                }
+                              ],
+                              "#sourceText":[
+"ecmascript:",
+"",
+"function initialize()",
+"{",
+"\t//colorPerVertex ignored in QuadSet, and always treated as \"true\"",
+"\tRenderedQS.colorPerVertex = true;",
+"",
+"\t// calculate index value from QuadSet coord values",
+"\tif (renderedQS.coord)",
+"\t{",
+"\t\tnumberOfCoordinatePoints = renderedQS.coord.point.length;",
+"\t}",
+"\telse",
+"\t{",
+"\t\ttracePrint ('no Coordinate node found');",
+"\t\treturn;",
+"\t}",
+"\tif (numberOfCoordinatePoints < 4)",
+"\t{",
+"\t\talwaysPrint ('warning, numberOfCoordinatePoints=' + numberOfCoordinatePoints + ' insufficient to construct a quad, QuadSet ignored');",
+"\t\treturn;",
+"\t}",
+"",
+"\tcoordIndexNew = new MFInt32 ();",
+"",
+"\t// ii walks through index array,",
+"\t// goal is to initialize coordIndexNew list to match quads",
+"\tfor (ii=0; ii <= numberOfCoordinatePoints-1; ii+=4)",
+"\t{",
+"\t\t// check if at least 4 vertices remaining to build a quad",
+"\t\tif ((numberOfCoordinatePoints - ii) < 4)",
+"\t\t{",
+"\t\t\talwaysPrint ('error, index field does not contain a multiple' +",
+"' of four coordinate values.');",
+"\t\t\talwaysPrint ('The remaining vertices shall be ignored');",
+"\t\t\treturn;",
+"\t\t}",
+"",
+"\t\tif ((index[ii]   == index[ii+1]) || (index[ii]   == index[ii+2]) || (index[ii] == index[ii+3]) ||",
+"\t\t    (index[ii+1] == index[ii+2]) || (index[ii+1] == index[ii+3]) ||",
+"\t\t    (index[ii+2] == index[ii+3]))",
+"\t\t{",
+"\t\t\talwaysPrint ('index=' + index);",
+"\t\t\talwaysPrint ('error, pair of equal indices in quad');",
+"\t\t\treturn;",
+"\t\t}",
+"",
+"\t\tif (index[ii] >= 0)",
+"\t\t{",
+"\t\t\t// add another quad from latest 4 points of fan set to QS",
+"\t\t\t// order is ccw, i.e. in correct halfplane direction",
+"\t\t\t// note: there is an implicit \"malloc\" here for the'length' element of the array",
+"\t\t\tcoordIndexNew [coordIndexNew.length] = index[ii];",
+"\t\t\tcoordIndexNew [coordIndexNew.length] = index[ii+1];",
+"\t\t\tcoordIndexNew [coordIndexNew.length] = index[ii+2];",
+"\t\t\tcoordIndexNew [coordIndexNew.length] = index[ii+3];",
+"\t\t\tcoordIndexNew [coordIndexNew.length] = -1;",
+"\t\t}",
+"",
+"\t  // incremental trace of array being built",
+"\t  tracePrint ('coordIndexNew=' + coordIndexNew);",
+"\t}",
+"\trenderedQS.set_coordIndex = coordIndexNew;",
+"\ttracePrint ('renderedQS.coordIndex=' + renderedQS.coordIndex);",
+"\t// match colorIndex if any Color node exists",
+"//\tif (nodesHolder.color)",
+"//\t{",
+"//\t  if (nodesHolder.color.color.length > 0)",
+"//\t  {",
+"\t\t//  Could implement color count check here",
+"//\t  }",
+"//\t}",
+"",
+"\t// no need to set colorIndex since indexedFaceSet semantics handles this",
+"}",
+"function set_index (value, timestamp)",
+"{",
+"\tindex = value;",
+"\tinitialize ();",
+"}",
+"function tracePrint(outputString)",
+"{",
+"    if (localTraceEnabled)",
+"\t  Browser.print ('[IndexedQuadSet]' + outputString);",
+"}",
+"function alwaysPrint(outputString)",
+"{",
+"\tBrowser.print ('[IndexedQuadSet]' + outputString);",
+"}"
+]
+                            }
+                          },
+                          { "Group":
+                            {
+                              "-metadata":
+                                { "MetadataString":
+                                  {
+                                    "@name":"metadataHolder",
+                                    "IS": {
+                                        "connect": [
+                                          {
+                                            "@nodeField":"metadata",
+                                            "@protoField":"metadata"
+                                          }
+                                        ]
+                                    }
+                                  }
+                                }
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          {
+            "#comment":"========================================"
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"CADAssembly",
+              "@appinfo":"The CADAssembly node holds a set of assemblies or parts grouped together.",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"addChildren",
+                      "@accessType":"inputOnly",
+                      "@type":"MFNode"
+                    },
+                    {
+                      "@name":"removeChildren",
+                      "@accessType":"inputOnly",
+                      "@type":"MFNode"
+                    },
+                    {
+                      "@name":"children",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"The children field can contain X3DProductStructureChildNode types. Each child will be either a sub-assembly or a part.",
+                      "@type":"MFNode",
+                      "-children":[
+                        {
+                          "#comment":"Specification initialization: NULL node"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"name",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"The name field documents the name of this CADAssembly.",
+                      "@type":"SFString"
+                    },
+                    {
+                      "@name":"bboxCenter",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"Bounding box center: position offset from origin of local coordinate system.",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    },
+                    {
+                      "@name":"bboxSize",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"Bounding box size: automatically calculated can be specified as an optimization or constraint.",
+                      "@type":"SFVec3f",
+                      "@value":[-1,-1,-1]
+                    },
+                    {
+                      "@name":"metadata",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"[X3DMetadataObject]",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"Specification initialization: NULL node"
+                        }
+                      ]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Group":
+                      {
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"addChildren",
+                                "@protoField":"addChildren"
+                              },
+                              {
+                                "@nodeField":"removeChildren",
+                                "@protoField":"removeChildren"
+                              },
+                              {
+                                "@nodeField":"children",
+                                "@protoField":"children"
+                              },
+                              {
+                                "@nodeField":"bboxCenter",
+                                "@protoField":"bboxCenter"
+                              },
+                              {
+                                "@nodeField":"bboxSize",
+                                "@protoField":"bboxSize"
+                              }
+                            ]
+                        }
+                      }
+                    },
+                    { "Group":
+                      {
+                        "-metadata":
+                          { "MetadataString":
+                            {
+                              "@name":"metadataHolder",
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"metadata",
+                                      "@protoField":"metadata"
+                                    }
+                                  ]
+                              }
+                            }
+                          },
+                        "-children":[
+                          {
+                            "#comment":"name holder"
+                          },
+                          { "Anchor":
+                            {
+                              "@url":["#hideWarning1"],
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"description",
+                                      "@protoField":"name"
+                                    }
+                                  ]
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          {
+            "#comment":"========================================"
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"ShapeHolder",
+              "@appinfo":"local dummy node to hold value for CADFace",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"shape",
+                      "@accessType":"inputOutput",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"no initialization value"
+                        }
+                      ]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Script":
+                      {
+                        "@DEF":"HoldShapeNodeScript",
+                        "@directOutput":true,
+                        "field": [
+                          {
+                            "@name":"shape",
+                            "@accessType":"inputOutput",
+                            "@appinfo":"holder for IS field",
+                            "@type":"SFNode",
+                            "-children":[
+                              {
+                                "#comment":"no initialization node"
+                              }
+                            ]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"shape",
+                                "@protoField":"shape"
+                              }
+                            ]
+                        },
+                        "#sourceText":[
+"ecmascript:",
+"// no script code, this node is simply a container",
+"",
+"// silence warning: no function provided that includes shape = something;"
+]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          {
+            "#comment":"= = = = ="
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"CADFace",
+              "@appinfo":"The CADFace node holds the geometry representing a face of a part.",
+              "@documentation":"http://www.web3d.org/x3d/specifications/ISO-IEC-19775-Amendment1-PDAM-X3DAbstractSpecification/Part01/components/CadGeometry.html#CADPart",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"name",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"The name field documents the name of this CADFace.",
+                      "@type":"SFString"
+                    },
+                    {
+                      "@name":"shape",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"[X3DShapeNode | LOD]",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"Specification initialization: NULL node"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"bboxCenter",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"Bounding box center: position offset from origin of local coordinate system.",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    },
+                    {
+                      "@name":"bboxSize",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"Bounding box size: automatically calculated can be specified as an optimization or constraint.",
+                      "@type":"SFVec3f",
+                      "@value":[-1,-1,-1]
+                    },
+                    {
+                      "@name":"metadata",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"[X3DMetadataObject]",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"Specification initialization: NULL node"
+                        }
+                      ]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "ProtoInstance":
+                      {
+                        "@name":"ShapeHolder",
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"shape",
+                                "@protoField":"shape"
+                              }
+                            ]
+                        }
+                      }
+                    },
+                    { "Group":
+                      {
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"bboxCenter",
+                                "@protoField":"bboxCenter"
+                              },
+                              {
+                                "@nodeField":"bboxSize",
+                                "@protoField":"bboxSize"
+                              }
+                            ]
+                        },
+                        "-metadata":
+                          { "MetadataString":
+                            {
+                              "@name":"metadataHolder",
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"metadata",
+                                      "@protoField":"metadata"
+                                    }
+                                  ]
+                              }
+                            }
+                          },
+                        "-children":[
+                          {
+                            "#comment":"name holder"
+                          },
+                          { "Anchor":
+                            {
+                              "@url":["#hideWarning2"],
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"description",
+                                      "@protoField":"name"
+                                    }
+                                  ]
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          {
+            "#comment":"========================================"
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"CADLayer",
+              "@appinfo":"The CADLayer node defines a hierarchy of nodes used for showing layer structure.",
+              "@documentation":"http://www.web3d.org/x3d/specifications/ISO-IEC-19775-Amendment1-PDAM-X3DAbstractSpecification/Part01/components/CadGeometry.html#CADPart",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"addChildren",
+                      "@accessType":"inputOnly",
+                      "@type":"MFNode"
+                    },
+                    {
+                      "@name":"removeChildren",
+                      "@accessType":"inputOnly",
+                      "@type":"MFNode"
+                    },
+                    {
+                      "@name":"children",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"The children field can contain X3DChildNode types.",
+                      "@type":"MFNode",
+                      "-children":[
+                        {
+                          "#comment":"Specification initialization: NULL node"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"name",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"The name field documents the name of this CADLayer.",
+                      "@type":"SFString"
+                    },
+                    {
+                      "@name":"visible",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"specifies whether a particular child and its subchildren are visible. If the number of values is less than the number of children the remaining children shall be visible.",
+                      "@type":"MFBool"
+                    },
+                    {
+                      "@name":"bboxCenter",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"Bounding box center: position offset from origin of local coordinate system.",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    },
+                    {
+                      "@name":"bboxSize",
+                      "@accessType":"initializeOnly",
+                      "@appinfo":"Bounding box size: automatically calculated can be specified as an optimization or constraint.",
+                      "@type":"SFVec3f",
+                      "@value":[-1,-1,-1]
+                    },
+                    {
+                      "@name":"metadata",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"[X3DMetadataObject]",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"Specification initialization: NULL node"
+                        }
+                      ]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Group":
+                      {
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"addChildren",
+                                "@protoField":"addChildren"
+                              },
+                              {
+                                "@nodeField":"removeChildren",
+                                "@protoField":"removeChildren"
+                              },
+                              {
+                                "@nodeField":"children",
+                                "@protoField":"children"
+                              },
+                              {
+                                "@nodeField":"bboxCenter",
+                                "@protoField":"bboxCenter"
+                              },
+                              {
+                                "@nodeField":"bboxSize",
+                                "@protoField":"bboxSize"
+                              }
+                            ]
+                        }
+                      }
+                    },
+                    { "Group":
+                      {
+                        "-metadata":
+                          { "MetadataString":
+                            {
+                              "@name":"metadataHolder",
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"metadata",
+                                      "@protoField":"metadata"
+                                    }
+                                  ]
+                              }
+                            }
+                          },
+                        "-children":[
+                          {
+                            "#comment":"name holder"
+                          },
+                          { "Anchor":
+                            {
+                              "@url":["#hideWarning3"],
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"description",
+                                      "@protoField":"name"
+                                    }
+                                  ]
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    { "Script":
+                      {
+                        "@DEF":"HoldMFBoolFieldScript",
+                        "field": [
+                          {
+                            "@name":"visible",
+                            "@accessType":"inputOutput",
+                            "@type":"MFBool",
+                            "-children":[
+                              {
+                                "#comment":"no initialization node"
+                              }
+                            ]
+                          }
+                        ],
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"visible",
+                                "@protoField":"visible"
+                              }
+                            ]
+                        },
+                        "#sourceText":[
+"ecmascript:",
+"// no script code, this node is simply a container"
+]
+                      }
+                    },
+                    {
+                      "#comment":"No support for MFBool in VRML97, so no functionality provided for visible"
+                    }
+                  ]
+              }
+            }
+          },
+          {
+            "#comment":"========================================"
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"CADPart",
+              "@appinfo":"CADPart represents the location and faces that constitute apart",
+              "@documentation":"http://www.web3d.org/x3d/specifications/ISO-IEC-19775-Amendment1-PDAM-X3DAbstractSpecification/Part01/components/CadGeometry.html#CADPart",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"addChildren",
+                      "@accessType":"inputOnly",
+                      "@type":"MFNode"
+                    },
+                    {
+                      "@name":"removeChildren",
+                      "@accessType":"inputOnly",
+                      "@type":"MFNode"
+                    },
+                    {
+                      "@name":"children",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"The children field can only contain CADFace nodes.",
+                      "@type":"MFNode",
+                      "-children":[
+                        {
+                          "#comment":"Specification initialization: NULL node"
+                        }
+                      ]
+                    },
+                    {
+                      "@name":"name",
+                      "@accessType":"inputOutput",
+                      "@type":"SFString"
+                    },
+                    {
+                      "@name":"translation",
+                      "@accessType":"inputOutput",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    },
+                    {
+                      "@name":"rotation",
+                      "@accessType":"inputOutput",
+                      "@type":"SFRotation",
+                      "@value":[0,0,1,0]
+                    },
+                    {
+                      "@name":"center",
+                      "@accessType":"inputOutput",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    },
+                    {
+                      "@name":"scale",
+                      "@accessType":"inputOutput",
+                      "@type":"SFVec3f",
+                      "@value":[1,1,1]
+                    },
+                    {
+                      "@name":"scaleOrientation",
+                      "@accessType":"inputOutput",
+                      "@type":"SFRotation",
+                      "@value":[0,0,1,0]
+                    },
+                    {
+                      "@name":"bboxCenter",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[0,0,0]
+                    },
+                    {
+                      "@name":"bboxSize",
+                      "@accessType":"initializeOnly",
+                      "@type":"SFVec3f",
+                      "@value":[-1,-1,-1]
+                    },
+                    {
+                      "@name":"metadata",
+                      "@accessType":"inputOutput",
+                      "@appinfo":"[X3DMetadataObject]",
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"Specification initialization: NULL node"
+                        }
+                      ]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                      {
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"children",
+                                "@protoField":"children"
+                              },
+                              {
+                                "@nodeField":"addChildren",
+                                "@protoField":"addChildren"
+                              },
+                              {
+                                "@nodeField":"removeChildren",
+                                "@protoField":"removeChildren"
+                              },
+                              {
+                                "@nodeField":"translation",
+                                "@protoField":"translation"
+                              },
+                              {
+                                "@nodeField":"rotation",
+                                "@protoField":"rotation"
+                              },
+                              {
+                                "@nodeField":"center",
+                                "@protoField":"center"
+                              },
+                              {
+                                "@nodeField":"scale",
+                                "@protoField":"scale"
+                              },
+                              {
+                                "@nodeField":"scaleOrientation",
+                                "@protoField":"scaleOrientation"
+                              },
+                              {
+                                "@nodeField":"bboxCenter",
+                                "@protoField":"bboxCenter"
+                              },
+                              {
+                                "@nodeField":"bboxSize",
+                                "@protoField":"bboxSize"
+                              }
+                            ]
+                        }
+                      }
+                    },
+                    { "Group":
+                      {
+                        "-metadata":
+                          { "MetadataString":
+                            {
+                              "@name":"metadataHolder",
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"metadata",
+                                      "@protoField":"metadata"
+                                    }
+                                  ]
+                              }
+                            }
+                          },
+                        "-children":[
+                          {
+                            "#comment":"name holder"
+                          },
+                          { "Anchor":
+                            {
+                              "@url":["#hideWarning4"],
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"description",
+                                      "@protoField":"name"
+                                    }
+                                  ]
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          {
+            "#comment":"========================================"
+          },
+          { "Anchor":
+            {
+              "@description":"CadGeometryExternPrototypes",
+              "@parameter":["target=_blank"],
+              "@url":["CadGeometryExternPrototypes.x3d","http://www.web3d.org/x3d/content/examples/Basic/development/CadGeometryExternPrototypes.x3d","CadGeometryExternPrototypes.wrl","http://www.web3d.org/x3d/content/examples/Basic/development/CadGeometryExternPrototypes.wrl"],
+              "-children":[
+                { "Shape":
+                  {
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["CadGeometryExternPrototypes","defines prototype examples","","Click text to see","CadGeometryExternPrototypes"],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@justify":["MIDDLE","MIDDLE"],
+                                "@size":0.9
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[1,1,0.2]
+                              }
+                            }
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"========================================"
+          },
+          { "Transform":
+            {
+              "@translation":[-3,2,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@DEF":"White",
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[1,1,1]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "ProtoInstance":
+                        {
+                          "@name":"IndexedQuadSet",
+                          "fieldValue": [
+                            {
+                              "@name":"index",
+                              "@value":[0,3,2,1,4,5,6,7,2,7,9,8,2,3,4,7]
+                            },
+                            {
+                              "@name":"coord",
+                              "-children":[
+                                { "Coordinate":
+                                  {
+                                    "@point":[-1.5,0,0,-1.5,1,-1,-0.5,1,-1,-0.5,0,0,0.5,0,0,1.5,0,0,1.5,1,-1,0.5,1,-1,-0.5,2,-1,0.5,2,-1]
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[3,2,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@USE":"White"
+                        }
+                      },
+                    "-geometry":
+                      { "ProtoInstance":
+                        {
+                          "@name":"QuadSet",
+                          "fieldValue": [
+                            {
+                              "@name":"coord",
+                              "-children":[
+                                { "Coordinate":
+                                  {
+                                    "@point":[-1.5,0,0,-1.5,1,-1,-0.5,1,-1,-0.5,0,0,0.5,0,0,1.5,0,0,1.5,1,-1,0.5,1,-1]
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"========================================"
+          },
+          {
+            "#comment":"Silence scene warnings by providing ordered ProtoInstance examples. Note warning above that this scene is for developmental use. The ProtoInstance form of the CAD nodes should not be used, native X3D encoding should be used instead."
+          },
+          { "ProtoInstance":
+            {
+              "@name":"CADLayer",
+              "fieldValue": [
+                {
+                  "@name":"children",
+                  "-children":[
+                    { "ProtoInstance":
+                      {
+                        "@name":"CADAssembly",
+                        "fieldValue": [
+                          {
+                            "@name":"children",
+                            "-children":[
+                              { "ProtoInstance":
+                                {
+                                  "@name":"CADPart",
+                                  "fieldValue": [
+                                    {
+                                      "@name":"children",
+                                      "-children":[
+                                        { "ProtoInstance":
+                                          {
+                                            "@name":"CADFace",
+                                            "fieldValue": [
+                                              {
+                                                "@name":"shape",
+                                                "-children":[
+                                                  { "Shape":
+                                                    {
+                                                      "-geometry":
+                                                        { "Cylinder":
+                                                          {
+                                                            "@bottom":false,
+                                                            "@height":0.000001,
+                                                            "@radius":0.000001,
+                                                            "@side":false
+                                                          }
+                                                        },
+                                                      "-appearance":
+                                                        { "Appearance":
+                                                          {
+                                                            "-material":
+                                                              { "Material":
+                                                                {
+                                                                }
+                                                              }
+                                                          }
+                                                        }
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

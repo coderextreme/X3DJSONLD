@@ -1,0 +1,1065 @@
+{ "AllX3dElementsAttributes": {
+    "-children":[
+      { "Anchor":
+        {
+        }
+      },
+      { "Background":
+        {
+        }
+      },
+      { "Billboard":
+        {
+        }
+      },
+      { "BooleanFilter":
+        {
+        }
+      },
+      { "BooleanSequencer":
+        {
+        }
+      },
+      { "BooleanToggle":
+        {
+        }
+      },
+      { "BooleanTrigger":
+        {
+        }
+      },
+      { "CADAssembly":
+        {
+        }
+      },
+      { "CADFace":
+        {
+        }
+      },
+      { "CADLayer":
+        {
+        }
+      },
+      { "CADPart":
+        {
+        }
+      },
+      { "ClipPlane":
+        {
+        }
+      },
+      { "CollidableOffset":
+        {
+        }
+      },
+      { "CollidableShape":
+        {
+        }
+      },
+      { "Collision":
+        {
+        }
+      },
+      { "CollisionSensor":
+        {
+        }
+      },
+      { "CollisionSpace":
+        {
+        }
+      },
+      { "ColorChaser":
+        {
+        }
+      },
+      { "ColorDamper":
+        {
+        }
+      },
+      { "ColorInterpolator":
+        {
+        }
+      },
+      { "ContourPolyline2D":
+        {
+        }
+      },
+      { "CoordinateChaser":
+        {
+        }
+      },
+      { "CoordinateDamper":
+        {
+        }
+      },
+      { "CoordinateInterpolator":
+        {
+        }
+      },
+      { "CoordinateInterpolator2D":
+        {
+        }
+      },
+      { "CylinderSensor":
+        {
+        }
+      },
+      { "DirectionalLight":
+        {
+        }
+      },
+      { "DISEntityManager":
+        {
+        }
+      },
+      { "EaseInEaseOut":
+        {
+        }
+      },
+      { "EspduTransform":
+        {
+        }
+      },
+      { "EXPORT":
+        {
+        }
+      },
+      { "ExternProtoDeclare":
+        {
+        }
+      },
+      { "Fog":
+        {
+        }
+      },
+      { "GeoLocation":
+        {
+        }
+      },
+      { "GeoLOD":
+        {
+        }
+      },
+      { "GeoMetadata":
+        {
+        }
+      },
+      { "GeoPositionInterpolator":
+        {
+        }
+      },
+      { "GeoProximitySensor":
+        {
+        }
+      },
+      { "GeoTouchSensor":
+        {
+        }
+      },
+      { "GeoTransform":
+        {
+        }
+      },
+      { "GeoViewpoint":
+        {
+        }
+      },
+      { "Group":
+        {
+        }
+      },
+      { "HAnimHumanoid":
+        {
+        }
+      },
+      { "HAnimJoint":
+        {
+        }
+      },
+      { "HAnimSegment":
+        {
+        }
+      },
+      { "HAnimSite":
+        {
+        }
+      },
+      { "IMPORT":
+        {
+        }
+      },
+      { "Inline":
+        {
+        }
+      },
+      { "IntegerSequencer":
+        {
+        }
+      },
+      { "IntegerTrigger":
+        {
+        }
+      },
+      { "IsoSurfaceVolumeData":
+        {
+        }
+      },
+      { "KeySensor":
+        {
+        }
+      },
+      { "LayerSet":
+        {
+        }
+      },
+      { "LayoutGroup":
+        {
+        }
+      },
+      { "LinePickSensor":
+        {
+        }
+      },
+      { "LoadSensor":
+        {
+        }
+      },
+      { "LocalFog":
+        {
+        }
+      },
+      { "LOD":
+        {
+        }
+      },
+      { "NavigationInfo":
+        {
+        }
+      },
+      { "NormalInterpolator":
+        {
+        }
+      },
+      { "NurbsCurve2D":
+        {
+        }
+      },
+      { "NurbsOrientationInterpolator":
+        {
+        }
+      },
+      { "NurbsPositionInterpolator":
+        {
+        }
+      },
+      { "NurbsSet":
+        {
+        }
+      },
+      { "NurbsSurfaceInterpolator":
+        {
+        }
+      },
+      { "OrientationChaser":
+        {
+        }
+      },
+      { "OrientationDamper":
+        {
+        }
+      },
+      { "OrientationInterpolator":
+        {
+        }
+      },
+      { "OrthoViewpoint":
+        {
+        }
+      },
+      { "ParticleSystem":
+        {
+        }
+      },
+      { "PickableGroup":
+        {
+        }
+      },
+      { "PlaneSensor":
+        {
+        }
+      },
+      { "PointLight":
+        {
+        }
+      },
+      { "PointPickSensor":
+        {
+        }
+      },
+      { "PositionChaser":
+        {
+        }
+      },
+      { "PositionChaser2D":
+        {
+        }
+      },
+      { "PositionDamper":
+        {
+        }
+      },
+      { "PositionDamper2D":
+        {
+        }
+      },
+      { "PositionInterpolator":
+        {
+        }
+      },
+      { "PositionInterpolator2D":
+        {
+        }
+      },
+      { "PrimitivePickSensor":
+        {
+        }
+      },
+      { "ProtoDeclare":
+        {
+        }
+      },
+      { "ProtoInstance":
+        {
+        }
+      },
+      { "ProximitySensor":
+        {
+        }
+      },
+      { "ReceiverPdu":
+        {
+        }
+      },
+      { "RigidBodyCollection":
+        {
+        }
+      },
+      { "ROUTE":
+        {
+        }
+      },
+      { "ScalarChaser":
+        {
+        }
+      },
+      { "ScalarDamper":
+        {
+        }
+      },
+      { "ScalarInterpolator":
+        {
+        }
+      },
+      { "ScreenGroup":
+        {
+        }
+      },
+      { "Script":
+        {
+        }
+      },
+      { "SegmentedVolumeData":
+        {
+        }
+      },
+      { "Shape":
+        {
+        }
+      },
+      { "SignalPdu":
+        {
+        }
+      },
+      { "Sound":
+        {
+        }
+      },
+      { "SphereSensor":
+        {
+        }
+      },
+      { "SplinePositionInterpolator":
+        {
+        }
+      },
+      { "SplinePositionInterpolator2D":
+        {
+        }
+      },
+      { "SplineScalarInterpolator":
+        {
+        }
+      },
+      { "SpotLight":
+        {
+        }
+      },
+      { "SquadOrientationInterpolator":
+        {
+        }
+      },
+      { "StaticGroup":
+        {
+        }
+      },
+      { "StringSensor":
+        {
+        }
+      },
+      { "Switch":
+        {
+        }
+      },
+      { "TexCoordChaser2D":
+        {
+        }
+      },
+      { "TexCoordDamper2D":
+        {
+        }
+      },
+      { "TextureBackground":
+        {
+        }
+      },
+      { "TimeSensor":
+        {
+        }
+      },
+      { "TimeTrigger":
+        {
+        }
+      },
+      { "TouchSensor":
+        {
+        }
+      },
+      { "Transform":
+        {
+        }
+      },
+      { "TransformSensor":
+        {
+        }
+      },
+      { "TransmitterPdu":
+        {
+        }
+      },
+      { "Viewpoint":
+        {
+        }
+      },
+      { "ViewpointGroup":
+        {
+        }
+      },
+      { "VisibilitySensor":
+        {
+        }
+      },
+      { "VolumeData":
+        {
+        }
+      },
+      { "VolumePickSensor":
+        {
+        }
+      },
+      { "WorldInfo":
+        {
+        }
+      }
+    ],
+    "-appearance":[
+      { "Appearance":
+        {
+        }
+      }
+    ],
+    "-geometry":[
+      { "Arc2D":
+        {
+        }
+      },
+      { "ArcClose2D":
+        {
+        }
+      },
+      { "Box":
+        {
+        }
+      },
+      { "Circle2D":
+        {
+        }
+      },
+      { "Cone":
+        {
+        }
+      },
+      { "Cylinder":
+        {
+        }
+      },
+      { "Disk2D":
+        {
+        }
+      },
+      { "ElevationGrid":
+        {
+        }
+      },
+      { "Extrusion":
+        {
+        }
+      },
+      { "GeoElevationGrid":
+        {
+        }
+      },
+      { "IndexedFaceSet":
+        {
+        }
+      },
+      { "IndexedLineSet":
+        {
+        }
+      },
+      { "IndexedQuadSet":
+        {
+        }
+      },
+      { "IndexedTriangleFanSet":
+        {
+        }
+      },
+      { "IndexedTriangleSet":
+        {
+        }
+      },
+      { "IndexedTriangleStripSet":
+        {
+        }
+      },
+      { "LineSet":
+        {
+        }
+      },
+      { "NurbsCurve":
+        {
+        }
+      },
+      { "NurbsPatchSurface":
+        {
+        }
+      },
+      { "NurbsSweptSurface":
+        {
+        }
+      },
+      { "NurbsSwungSurface":
+        {
+        }
+      },
+      { "NurbsTrimmedSurface":
+        {
+        }
+      },
+      { "PointSet":
+        {
+        }
+      },
+      { "Polyline2D":
+        {
+        }
+      },
+      { "Polypoint2D":
+        {
+        }
+      },
+      { "QuadSet":
+        {
+        }
+      },
+      { "Rectangle2D":
+        {
+        }
+      },
+      { "Sphere":
+        {
+        }
+      },
+      { "Text":
+        {
+        }
+      },
+      { "TriangleFanSet":
+        {
+        }
+      },
+      { "TriangleSet":
+        {
+        }
+      },
+      { "TriangleSet2D":
+        {
+        }
+      },
+      { "TriangleStripSet":
+        {
+        }
+      }
+    ],
+    "-source":[
+      { "AudioClip":
+        {
+        }
+      }
+    ],
+    "-joints":[
+      { "BallJoint":
+        {
+        }
+      },
+      { "DoubleAxisHingeJoint":
+        {
+        }
+      },
+      { "MotorJoint":
+        {
+        }
+      },
+      { "SingleAxisHingeJoint":
+        {
+        }
+      },
+      { "SliderJoint":
+        {
+        }
+      },
+      { "UniversalJoint":
+        {
+        }
+      }
+    ],
+    "-renderStyle":[
+      { "BlendedVolumeStyle":
+        {
+        }
+      },
+      { "BoundaryEnhancementVolumeStyle":
+        {
+        }
+      },
+      { "CartoonVolumeStyle":
+        {
+        }
+      },
+      { "ComposedVolumeStyle":
+        {
+        }
+      },
+      { "EdgeEnhancementVolumeStyle":
+        {
+        }
+      },
+      { "OpacityMapVolumeStyle":
+        {
+        }
+      },
+      { "ProjectionVolumeStyle":
+        {
+        }
+      },
+      { "ShadedVolumeStyle":
+        {
+        }
+      },
+      { "SilhouetteEnhancementVolumeStyle":
+        {
+        }
+      },
+      { "ToneMappedVolumeStyle":
+        {
+        }
+      }
+    ],
+    "-physics":[
+      { "BoundedPhysicsModel":
+        {
+        }
+      },
+      { "ForcePhysicsModel":
+        {
+        }
+      },
+      { "WindPhysicsModel":
+        {
+        }
+      }
+    ],
+    "-collider":[
+      { "CollisionCollection":
+        {
+        }
+      }
+    ],
+    "-color":[
+      { "Color":
+        {
+        }
+      },
+      { "ColorRGBA":
+        {
+        }
+      }
+    ],
+    "component": [
+      {
+      }
+    ],
+    "-texture":[
+      { "ComposedCubeMapTexture":
+        {
+        }
+      },
+      { "ComposedTexture3D":
+        {
+        }
+      },
+      { "GeneratedCubeMapTexture":
+        {
+        }
+      },
+      { "ImageCubeMapTexture":
+        {
+        }
+      },
+      { "ImageTexture":
+        {
+        }
+      },
+      { "ImageTexture3D":
+        {
+        }
+      },
+      { "MovieTexture":
+        {
+        }
+      },
+      { "MultiTexture":
+        {
+        }
+      },
+      { "PixelTexture":
+        {
+        }
+      },
+      { "PixelTexture3D":
+        {
+        }
+      }
+    ],
+    "-shaders":[
+      { "ComposedShader":
+        {
+        }
+      },
+      { "PackagedShader":
+        {
+        }
+      },
+      { "ProgramShader":
+        {
+        }
+      }
+    ],
+    "-emitter":[
+      { "ConeEmitter":
+        {
+        }
+      },
+      { "ExplosionEmitter":
+        {
+        }
+      },
+      { "PointEmitter":
+        {
+        }
+      },
+      { "PolylineEmitter":
+        {
+        }
+      },
+      { "SurfaceEmitter":
+        {
+        }
+      },
+      { "VolumeEmitter":
+        {
+        }
+      }
+    ],
+    "connect": [
+      {
+      }
+    ],
+    "-contacts":[
+      { "Contact":
+        {
+        }
+      }
+    ],
+    "-trimmingContour":[
+      { "Contour2D":
+        {
+        }
+      }
+    ],
+    "-coord":[
+      { "Coordinate":
+        {
+        }
+      },
+      { "CoordinateDouble":
+        {
+        }
+      },
+      { "GeoCoordinate":
+        {
+        }
+      }
+    ],
+    "-mapping":[
+      { "DISEntityTypeMapping":
+        {
+        }
+      }
+    ],
+    "field": [
+      {
+      }
+    ],
+    "fieldValue": [
+      {
+      }
+    ],
+    "-fillProperties":[
+      { "FillProperties":
+        {
+        }
+      }
+    ],
+    "-attrib":[
+      { "FloatVertexAttribute":
+        {
+        }
+      },
+      { "Matrix3VertexAttribute":
+        {
+        }
+      },
+      { "Matrix4VertexAttribute":
+        {
+        }
+      }
+    ],
+    "-fogCoord":[
+      { "FogCoordinate":
+        {
+        }
+      }
+    ],
+    "-fontStyle":[
+      { "FontStyle":
+        {
+        }
+      },
+      { "ScreenFontStyle":
+        {
+        }
+      }
+    ],
+    "-geoOrigin":[
+      { "GeoOrigin":
+        {
+        }
+      }
+    ],
+    "-displacers":[
+      { "HAnimDisplacer":
+        {
+        }
+      }
+    ],
+    "head": {
+    },
+    "IS": {
+    },
+    "-layers":[
+      { "Layer":
+        {
+        }
+      },
+      { "LayoutLayer":
+        {
+        }
+      }
+    ],
+    "-layout":[
+      { "Layout":
+        {
+        }
+      }
+    ],
+    "-lineProperties":[
+      { "LineProperties":
+        {
+        }
+      }
+    ],
+    "-material":[
+      { "Material":
+        {
+        }
+      },
+      { "TwoSidedMaterial":
+        {
+        }
+      }
+    ],
+    "meta": [
+      {
+      }
+    ],
+    "-metadata":[
+      { "MetadataBoolean":
+        {
+        }
+      },
+      { "MetadataDouble":
+        {
+        }
+      },
+      { "MetadataFloat":
+        {
+        }
+      },
+      { "MetadataInteger":
+        {
+        }
+      },
+      { "MetadataSet":
+        {
+        }
+      },
+      { "MetadataString":
+        {
+        }
+      }
+    ],
+    "-texCoord":[
+      { "MultiTextureCoordinate":
+        {
+        }
+      },
+      { "NurbsTextureCoordinate":
+        {
+        }
+      },
+      { "TextureCoordinate":
+        {
+        }
+      },
+      { "TextureCoordinate3D":
+        {
+        }
+      },
+      { "TextureCoordinate4D":
+        {
+        }
+      },
+      { "TextureCoordinateGenerator":
+        {
+        }
+      }
+    ],
+    "-textureTransform":[
+      { "MultiTextureTransform":
+        {
+        }
+      },
+      { "TextureTransform":
+        {
+        }
+      },
+      { "TextureTransform3D":
+        {
+        }
+      },
+      { "TextureTransformMatrix3D":
+        {
+        }
+      }
+    ],
+    "-normal":[
+      { "Normal":
+        {
+        }
+      }
+    ],
+    "ProtoBody": {
+    },
+    "ProtoInterface": {
+    },
+    "-bodies":[
+      { "RigidBody":
+        {
+        }
+      }
+    ],
+    "Scene": {
+    },
+    "-parts":[
+      { "ShaderPart":
+        {
+        }
+      }
+    ],
+    "-programs":[
+      { "ShaderProgram":
+        {
+        }
+      }
+    ],
+    "-textureProperties":[
+      { "TextureProperties":
+        {
+        }
+      }
+    ],
+    "unit": [
+      {
+      }
+    ],
+    "-viewport":[
+      { "Viewport":
+        {
+        }
+      }
+    ],
+    "X3D": {
+      }
+    }
+}

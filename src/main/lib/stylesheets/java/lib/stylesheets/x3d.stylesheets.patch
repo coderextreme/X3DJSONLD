@@ -1,0 +1,359 @@
+Index: CreateX3dSceneAccessInterfaceJava.xslt
+===================================================================
+--- CreateX3dSceneAccessInterfaceJava.xslt	(revision 26036)
++++ CreateX3dSceneAccessInterfaceJava.xslt	(working copy)
+@@ -3557,9 +3557,7 @@
+ 	}
+ 
+ 	/**
+-	 * Serialize scene graph using X3dToX3dom.xslt stylesheet to create a new X3DOM html page as a string.
+-	 * @see X3DObject#toFileX3DOM(String)
+-	 * @see <a href="http://www.x3dom.org">X3DOM open-source X3D player</a>
++	 * Serialize scene graph using JavaScriptSerializer.js to create a JavaScript string
+ 	 * @return String containing result (if operation succeeds), empty otherwise
+ 	 */
+ 	public String toStringJavaScript()
+@@ -3587,11 +3585,9 @@
+ 	}
+ 
+ 	/**
+-	 * Serialize scene graph using X3dToX3dom.xslt stylesheet to create a new X3DOM html page as a string.
+-	 * @see X3DObject#toFileX3DOM(String)
+-	 * @see <a href="http://www.x3dom.org">X3DOM open-source X3D player</a>
++	 * Serialize scene graph using JavaScriptSerializer.js to create a JavaScript file
+ 	 * @param fileName name of file to create and save, can include local directory path, must end with .js
+-	 * @return String containing result (if operation succeeds), empty otherwise
++	 * @return File containing result (if operation succeeds)
+ 	 */
+ 
+        public File toFileJavaScript(String fileName)
+@@ -3636,13 +3632,14 @@
+ 
+                }
+ 
++	       ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA); // built-in version avoids unwanted line breaks
+                String outputSceneText = toStringJSON();
+                try
+                {
+                        bufferedWriter = Files.newBufferedWriter(intermediateJSFilePath, charset);
+-                       String tmpStr = " load('./node_modules/jvm-npm/src/main/javascript/jvm-npm.js');\n var saxObj = require('xmldom/sax.js');\n var dpObj = require('xmldom/dom-parser.js');\n var DOMParser = new dpObj.DOMParser();\n var domObj = require('xmldom/dom.js');\n var XMLSerializer = new dpObj.XMLSerializer(); var DOMImplementation = new domObj.DOMImplementation();\n";
++		       String tmpStr = "load('nashorn/jvm-npm.js');\nload('nashorn/repeatPolyfill.js');\nvar xmldom = require('nashorn/node_modules/xmldom');\nvar DOMParser = xmldom.DOMParser;\nvar XMLSerializer = new xmldom.XMLSerializer();\nvar DOMImplementation = new xmldom.DOMImplementation();\n";
+                        bufferedWriter.write(tmpStr, 0, tmpStr.length());
+-                       tmpStr = " var json = "+outputSceneText+";\n var mapToMethod = require('src/main/node/mapToMethod.js');\n var mapToMethod2 = require('src/main/node/mapToMethod2.js');\n var fieldTypes = require('src/main/node/fieldTypes.js');\n load('src/main/node/X3DJSONLD.js');\n load('src/main/node/JavaScriptSerializer.js');\n var child = CreateElement('X3D');\n ConvertToX3DOM(json, '', child, 'flipper.json');\n print('Returning with', child);\n var output = new JavaScriptSerializer().serializeToString(json, child, '"+outputFilePath+"', mapToMethod, fieldTypes);\n var FileWriter = Java.type('java.io.FileWriter');\n var fw = new FileWriter('"+outputFilePath+"');\n fw.write(output);\n fw.close();\n";
++		       tmpStr = "var json = "+outputSceneText+";\nvar version = json['X3D']['@version'];\nvar docType = DOMImplementation.createDocumentType('X3D', 'ISO//Web3D//DTD X3D '+version+'//EN', 'http://www.web3d.org/specifications/x3d-'+version+'.dtd', null);\nvar document = DOMImplementation.createDocument(null, 'X3D', docType);\nvar mapToMethod = require('nashorn/node/mapToMethod.js');\n var mapToMethod2 = require('nashorn/node/mapToMethod2.js');\n var fieldTypes = require('nashorn/node/fieldTypes.js');\n load('nashorn/node/X3DJSONLD.js');\n load('nashorn/node/JavaScriptSerializer.js');\n var child = CreateElement('X3D');\n ConvertToX3DOM(json, '', child, 'flipper.json');\n print('Returning with', child);\n var output = new JavaScriptSerializer().serializeToString(json, child, '"+outputFilePath+"', mapToMethod, fieldTypes);\n var FileWriter = Java.type('java.io.FileWriter');\n var fw = new FileWriter('"+outputFilePath+"');\n fw.write(output);\n fw.close();\n";
+                        bufferedWriter.write(tmpStr, 0, tmpStr.length());
+                        bufferedWriter.close(); // ensure file writing is complete
+                }
+@@ -3652,6 +3649,7 @@
+                                ", unable to save file: " + exception);
+                }
+ 
++	       /*
+                try {
+                        ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
+                        engine.eval("load('"+intermediateJSFilePath+"');");
+@@ -3664,6 +3662,7 @@
+                        throw new X3DException(errorNotice + "ScriptException when processing fileName " + intermediateJSFilePath +
+                                ", unable to save result: " + exception);
+                }
++	       */
+                return outputFilePath.toFile(); // success
+ 	}
+ 
+@@ -24205,6 +24204,7 @@
+     private static boolean convertToX3D         = false;
+     private static boolean convertToXML         = false;
+     private static boolean convertToJSON        = false;
++    private static boolean convertToJS         = false;
+     private static boolean convertToX3DOM       = false;
+     private static boolean convertToX_ITE       = false;
+     private static boolean convertToEXI         = false;
+@@ -24225,6 +24225,7 @@
+ 		convertToX3D         = false;
+ 		convertToXML         = false;
+ 		convertToJSON        = false;
++		convertToJS          = false;
+ 		convertToX3DOM       = false;
+ 		convertToX_ITE       = false;
+ 		convertToEXI         = false;
+@@ -24337,6 +24338,13 @@
+ 					conversionExtension = X3DObject.FILE_EXTENSION_JSON;
+ 					System.out.println ("parameter: \"" + args[i] + "\" for conversion to JSON encoding");
+ 				}
++				else  if (args[i].equalsIgnoreCase("-js") || args[i].equalsIgnoreCase("-tojs"))
++				{
++					clearPriorConversionSwitches(args[i]);
++					convertToJS = true;
++					conversionExtension = X3DObject.FILE_EXTENSION_JAVASCRIPT;
++					System.out.println ("parameter: \"" + args[i] + "\" for conversion to JSON encoding");
++				}
+ 				else  if (args[i].equalsIgnoreCase(  "-vrml") || args[i].equalsIgnoreCase(  "-vrml97") ||args[i].equalsIgnoreCase( "-wrl") || 
+ 						  args[i].equalsIgnoreCase("-tovrml") || args[i].equalsIgnoreCase("-tovrml97"))
+ 				{
+@@ -24600,6 +24608,13 @@
+                                    resultFile = x3dModel.toFileJSON (resultFileName);
+                         else System.out.println(x3dModel.toStringJSON());
+                     }
++                    else if (convertToJS)
++                    {
++                        System.out.println("convert to JS:");
++                        if  (convertToFile)
++                                   resultFile = x3dModel.toFileJavaScript (resultFileName);
++                        else System.out.println(x3dModel.toStringJavaScript());
++                    }
+                     else if (convertToClassicVRML)
+                     {
+                         System.out.println("convert to ClassicVRML:");
+@@ -24850,7 +24865,7 @@
+     private static void clearPriorConversionSwitches(String newCommand)
+     {
+         if (convertToVRML97 ||  convertToClassicVRML || convertToX3D   || convertToXML ||
+-            convertToJSON   || convertToX3DOM        || convertToX_ITE)       
++            convertToJSON   || convertToJS   || convertToX3DOM        || convertToX_ITE)       
+             System.out.println(WARNING+"Prior conversion flag overridden by " + newCommand);
+             
+         convertToVRML97      = false;
+@@ -24858,6 +24873,7 @@
+         convertToX3D         = false;
+         convertToXML         = false;
+         convertToJSON        = false;
++        convertToJS          = false;
+         convertToX3DOM       = false;
+         convertToX_ITE       = false;
+     }
+Index: X3dToJava.xslt
+===================================================================
+--- X3dToJava.xslt	(revision 26036)
++++ X3dToJava.xslt	(working copy)
+@@ -667,12 +667,12 @@
+ 					  (string-length(normalize-space(text())) > 0)"><!-- TODO restrict to immediate child? -->
+ 			<xsl:text>.setSourceCode(</xsl:text>
+ 			<xsl:text>&#10;</xsl:text>
+-			<xsl:text>"&lt;![CDATA[" + "\n" +</xsl:text>
++			<xsl:text></xsl:text>
+ 			<xsl:text>&#10;</xsl:text>
+ 			<xsl:call-template name="stringify-text-lines">
+ 			  <xsl:with-param name="inputString" select="text()"/><!-- TODO restrict to immediate child? might be an issue if field has contained node content and further CDATA text-->
+ 			</xsl:call-template>
+-			<xsl:text> + "]]&gt;"</xsl:text><!-- end of CDATA block -->
++			<xsl:text></xsl:text><!-- end of CDATA block -->
+ 			<xsl:text>&#10;</xsl:text>
+ 			<xsl:text>)</xsl:text>
+ 		</xsl:if>
+Index: build.xml
+===================================================================
+--- build.xml	(revision 26036)
++++ build.xml	(working copy)
+@@ -156,6 +156,7 @@
+     <property name="javac.verbose"            value="-verbose"/>
+     <property name="java.dir"                 value="java"/>
+     <property name="java.classes.dir"         value="${java.dir}/classes"/>
++    <property name="java.examples.dir"        value="${java.dir}/examples"/>
+     <property name="java.jars.dir"            value="${java.dir}/jars"/>
+     <property name="java.lib.dir"             value="${java.dir}/lib"/>
+     <property name="java.src.dir"             value="${java.dir}/src"/>
+@@ -1570,4 +1571,31 @@
+         <copy file="${examples.dir}/X3dForWebAuthors/Chapter09EventUtilitiesScripting/TestScriptInitialization.x3d" todir="test/" verbose="true" force="true"/>
+     </target>
+ 
++    <target name="test-nashorn" description="Test Nashorn output from X3DJSAIL">
++        <javac srcdir ="${java.examples.dir}"
++			 classpath=""
++               destdir="${java.classes.dir}"
++               debug="on"
++               verbose="${javac.verbose}"
++               includeantruntime="false">
++        </javac>
++        <java classname="HelloWorldProgramOutput" classpath="${java.classes.dir};${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
++	
++            <arg value="js"/>
++	    <arg value="nashorn//examples//HelloWorldProgramOutput.js"/>
++	</java>
++	<script language="nashorn">
++		<classpath>
++			<fileset dir="${saxon.dir}" includes="${saxon.jar}" />
++			<fileset dir="${java.jars.dir}" includes="${jsai.classes.archive.jar.name}" />
++			<fileset dir="${java.lib.dir}" includes="${exificient.jar}"/>
++			<fileset dir="${java.lib.dir}" includes="${openexi.jar}"/>
++		</classpath>
++		load('nashorn/jvm-npm.js');
++		load('nashorn/repeatPolyfill.js');
++		load('nashorn/examples/HelloWorldProgramOutput.js.intermediate.js');
++		load('nashorn/examples/HelloWorldProgramOutput.js');
++	</script>
++    </target>
++
+ </project>
+Index: java/classes/README.classes.txt
+===================================================================
+--- java/classes/README.classes.txt	(revision 26036)
++++ java/classes/README.classes.txt	(nonexistent)
+@@ -1,8 +0,0 @@
+-README.classes.txt
+-
+-This directory tree contains compiled Java classes for X3DJSAIL libraries.
+-
+-For more information and latest version please see
+-
+-X3D Java Scene Access Interface Library (X3DJSAIL)
+-http://www.web3d.org/specifications/java/X3dJavaSceneAuthoringInterface.html
+Index: java/classes/index.html
+===================================================================
+--- java/classes/index.html	(revision 26036)
++++ java/classes/index.html	(nonexistent)
+@@ -1,21 +0,0 @@
+-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
+-<html>
+-    <head>
+-        <title>redirect: X3D Java Scene Access Interface (SAI) classes directory</title>
+-        <meta http-equiv="refresh" content="0; url=README.classes.txt">
+-        <meta name="description" content="Redirect via html refresh url instead of symbolic link to target"/>
+-    </head>
+-    <body>
+-        <p>
+-			Going to 
+-			<a href="README.classes.txt">README.classes.txt</a>
+-			for
+-            <a href="X3dJavaSceneAuthoringInterface.html">X3dJavaSceneAuthoringInterface.html</a>
+-        </p>
+-        
+-        <p>
+-			Questions may be directed to 
+-            <a href="mailto:brutzman@nps.edu(Don%20Brutzman)?subject=feedback:%20X3DJSAIL%20README.classes.txtc%20redirect"><i>brutzman&nbsp;at&nbsp;nps.edu</i></a>
+-        </p>
+-    </body>
+-</html>
+\ No newline at end of file
+Index: java/examples/HelloWorldProgramOutput.CommandLine.EXIFICIENT.exi
+===================================================================
+Cannot display: file marked as a binary type.
+svn:mime-type = application/octet-stream
+Index: java/examples/HelloWorldProgramOutput.CommandLine.x3d.gz
+===================================================================
+Cannot display: file marked as a binary type.
+svn:mime-type = application/octet-stream
+Index: java/examples/HelloWorldProgramOutput.CommandLine.x3d.zip
+===================================================================
+Cannot display: file marked as a binary type.
+svn:mime-type = application/octet-stream
+Index: java/examples/HelloWorldProgramOutput.EXIFICIENT.exi
+===================================================================
+Cannot display: file marked as a binary type.
+svn:mime-type = application/octet-stream
+Index: java/examples/HelloWorldProgramOutput.gz
+===================================================================
+Cannot display: file marked as a binary type.
+svn:mime-type = application/octet-stream
+Index: java/examples/HelloWorldProgramOutput.html
+===================================================================
+--- java/examples/HelloWorldProgramOutput.html	(revision 26036)
++++ java/examples/HelloWorldProgramOutput.html	(working copy)
+@@ -959,4 +959,4 @@
+          
+       </p>
+    </body>
+-</html>
+\ No newline at end of file
++</html>
+Index: java/examples/HelloWorldProgramOutput.java
+===================================================================
+--- java/examples/HelloWorldProgramOutput.java	(revision 26036)
++++ java/examples/HelloWorldProgramOutput.java	(working copy)
+@@ -218,7 +218,7 @@
+     .addChild(new GroupObject("BackgroundGroup")
+       .addChild(new BackgroundObject("GradualBackground"))
+       .addChild(new ScriptObject("colorTypeConversionScript").setSourceCode(
+-"<![CDATA[" + "\n" +
++
+ "\n" + 
+ "\n" + 
+ "ecmascript:" + "\n" + 
+@@ -227,7 +227,7 @@
+ "{" + "\n" + 
+ "   colorsOutput = new MFColor(eventValue); // assigning value sends output event" + "\n" + 
+ "// Browser.print('colorInput=' + eventValue + ', colorsOutput=' + colorsOutput + '\\n');" + "\n" + 
+-"}" + "\n" + "]]>"
++"}" + "\n"
+ )
+         .addField(new fieldObject().setAccessType("inputOnly").setName("colorInput").setType("SFColor"))
+         .addField(new fieldObject().setAccessType("outputOnly").setName("colorsOutput").setType("MFColor")))
+@@ -291,7 +291,7 @@
+             .addConnect(new connectObject().setNodeField("ambientIntensity").setProtoField("ambientIntensity"))))
+         .addComments(" Only first node (the node type) is renderable, others are along for the ride ")
+         .addChild(new ScriptObject("MaterialModulatorScript").setSourceCode(
+-"<![CDATA[" + "\n" +
++
+ "\n" + 
+ "\n" + 
+ "ecmascript:" + "\n" + 
+@@ -316,7 +316,7 @@
+ "	{" + "\n" + 
+ "		Browser.print ('diffuseColor=(' + red + ',' + green + ',' + blue + ') newColor=' + newColor.toString() + '\\n');" + "\n" + 
+ "	}" + "\n" + 
+-"}" + "\n" + "]]>"
++"}" + "\n"
+ )
+           .addField(new fieldObject().setAccessType("inputOutput").setName("enabled").setType("SFBool"))
+           .addField(new fieldObject().setAccessType("inputOutput").setName("diffuseColor").setType("SFColor"))
+Index: java/examples/HelloWorldProgramOutput.json
+===================================================================
+--- java/examples/HelloWorldProgramOutput.json	(revision 26036)
++++ java/examples/HelloWorldProgramOutput.json	(working copy)
+@@ -1025,4 +1025,4 @@
+         ]
+     }
+   }
+-}
+\ No newline at end of file
++}
+Index: java/examples/HelloWorldProgramOutput.zip
+===================================================================
+Cannot display: file marked as a binary type.
+svn:mime-type = application/octet-stream
+Index: java/examples/HelloWorldProgramOutputX3dom.xhtml
+===================================================================
+--- java/examples/HelloWorldProgramOutputX3dom.xhtml	(revision 26036)
++++ java/examples/HelloWorldProgramOutputX3dom.xhtml	(working copy)
+@@ -610,4 +610,4 @@
+       </div>
+       
+    </body>
+-</html>
+\ No newline at end of file
++</html>
+Index: java/lib/stylesheets/X3dToJava.xslt
+===================================================================
+--- java/lib/stylesheets/X3dToJava.xslt	(revision 26036)
++++ java/lib/stylesheets/X3dToJava.xslt	(working copy)
+@@ -649,16 +649,6 @@
+ 				<xsl:value-of select="@name"/>
+ 				<xsl:text>"</xsl:text>
+ 			</xsl:when>
+-			<xsl:when test="(string-length(@USE) > 0) and (string-length(@name) > 0) and (local-name() = 'ProtoInstance')">
+-				<!-- special utility constructor using ProtoInstance DEFname and prototypeName; duplicative of .setDEF().setName() -->
+-				<xsl:text>"</xsl:text>
+-				<xsl:value-of select="@USE"/>
+-				<!-- ProtoInstance USE nodes do not include @name field
+-				<xsl:text>", "</xsl:text>
+-				<xsl:value-of select="@name"/>
+-				-->
+-				<xsl:text>"</xsl:text>
+-			</xsl:when>
+ 			<xsl:when test="(string-length(@DEF) > 0) and not(local-name() = 'ProtoInstance')">
+ 				<xsl:text>"</xsl:text>
+ 				<xsl:value-of select="@DEF"/><!-- special utility constructor using DEF name -->
+@@ -677,12 +667,12 @@
+ 					  (string-length(normalize-space(text())) > 0)"><!-- TODO restrict to immediate child? -->
+ 			<xsl:text>.setSourceCode(</xsl:text>
+ 			<xsl:text>&#10;</xsl:text>
+-			<xsl:text>"&lt;![CDATA[" + "\n" +</xsl:text>
++			<xsl:text></xsl:text>
+ 			<xsl:text>&#10;</xsl:text>
+ 			<xsl:call-template name="stringify-text-lines">
+ 			  <xsl:with-param name="inputString" select="text()"/><!-- TODO restrict to immediate child? might be an issue if field has contained node content and further CDATA text-->
+ 			</xsl:call-template>
+-			<xsl:text> + "]]&gt;"</xsl:text><!-- end of CDATA block -->
++			<xsl:text></xsl:text><!-- end of CDATA block -->
+ 			<xsl:text>&#10;</xsl:text>
+ 			<xsl:text>)</xsl:text>
+ 		</xsl:if>

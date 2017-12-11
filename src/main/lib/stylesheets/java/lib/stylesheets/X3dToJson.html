@@ -1,0 +1,3279 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" SYSTEM "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en">
+    <head>
+        <link rel="shortcut icon" href="http://www.web3d.org/x3d/content/examples/images/X3DtextIcon16.png" title="X3D"/>
+        <title>X3D to JSON Stylesheet Converter</title>
+        <meta name="title"       content="X3dToJson.html"/>
+        <meta name="identifier"  content="http://www.web3d.org/x3d/stylesheets/X3dToJson.html"/>
+        <meta name="creator"     content="Don Brutzman "/>
+        <meta name="description" content="Describe X3D JSON design pattern and conversion from x3d to json formats."/>
+        <meta name="created"     content="1 November 2015"/>
+        <meta name="reference"   content="X3dToJson.xslt"/>
+        <meta name="reference"   content="license.html"/>
+        <meta name="generator"   content="X3D-Edit, https://savage.nps.edu/X3D-Edit"/>
+    </head>
+    <body>
+        <a name="top"/>
+        <table border="0" cellspacing="0" cellpadding="0" summary="" align="center">
+            <tr align="center">
+                <td><a href="../content/examples/X3dResources.html"><img src="images/x3d2-s.gif" width="154" height="97" border="0" title="to X3D Resources" alt="to X3D Resources"/></a></td>
+                <td><pre> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </pre></td>
+                <td><h1>X3D to JSON Stylesheet Converter</h1></td>
+                <td><pre> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </pre></td>
+                <td><a href="http://www.web3d.org"><img src="images/web3d_logo2.png" width="120" height="60" border="0" title="to Web3D home page" alt="to Web3D home page"/></a></td>
+            </tr>
+        </table>
+
+        <p align="center">
+            The
+            <a href="http://www.web3d.org/x3d/stylesheets/X3dToJson.xslt">X3D to JSON stylesheet</a>
+            converts .x3d&nbsp;XML to .json, supporting the forthcoming JSON Encoding for X3D Graphics.
+        </p>
+        <blockquote>
+            <p align="center"><small>
+                <a href="#Overview">Overview</a>&nbsp;|
+                <a href="#Goals">Goals</a>&nbsp;|
+                <a href="#DataTypes">Data&nbsp;Types</a>&nbsp;|
+                <a href="#DesignPatterns">Design&nbsp;Patterns</a>&nbsp;|
+                <a href="#DesignCorrespondences">Design&nbsp;Correspondences</a>&nbsp;|
+                <a href="#Examples">Examples</a>&nbsp;|
+                <a href="#Issues">Issues</a>&nbsp;|
+                <a href="#Options">Options</a>&nbsp;|
+                <a href="#References">References</a>&nbsp;|
+                <a href="#RelatedWork">Related&nbspWork</a>&nbsp;|
+                <a href="#Tools">Tools</a>&nbsp;|
+                <a href="#Contact">Contact</a>
+            </small></p>
+        </blockquote>
+        
+        <p align="center">
+            <i>Status:</i> developmental work is mature and provides full coverage.  Design pattern being assessed by X3D community.
+        </p>
+        
+        <hr />
+
+        <!-- =================================================== -->
+
+        <h2><a name="Overview">Overview</a>
+            <a href="#top">
+               <!-- width="154" height="97" -->
+               <img src="images/x3d2-s.gif" width="50" height="32" border="0" title="to top" alt="to top" align="right"/>
+            </a>
+        </h2>
+        
+        <p>
+			This work supports 
+			<a href="http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding" target=_blank">X3D JSON Encoding</a>
+			efforts by the X3D Working Group.  It is summarized in the Web3D&nbsp;2016 paper
+			&quot;<a href="#JsonEncodingForX3dPaper">A JSON Encoding for X3D</a>&quot;.
+		</p>
+		<p>
+            The 
+            <a href="http://www.web3d.org/strategy" target="_blank">Web3D Consortium standards strategy</a>
+            has the fundamental objective to enable the open publishing of interactive 3D graphics models on the Web, 
+            enabling real-time 3D communication.
+            Web3D carefully improves and evolves 
+            <a href="http://www.web3d.org/specifications/X3dSpecificationRelationships.png" target="_blank">X3D Graphics and related standards </a>
+            while maintaining long-term archival stability.
+        </p>
+        
+        <p>
+            <a href="http://www.json.org" target="_blank">JavaScript Object Notation (JSON)</a>
+            is
+            &quot;a lightweight data-interchange format. It is easy for humans to read and write. 
+            It is easy for machines to parse and generate. It is based on a subset of the 
+            JavaScript Programming Language&quot;.
+            (from <a href="http://www.json.org" target="_blank">json.org</a>)
+        </p>
+
+        <p>
+            X3D scenes can be encoded in various encoding formats.
+            In order to consistently take advantage of JSON capabilities,
+            the X3D Working Group is preparing a new 
+            ISO/IEC 19776-5 specification
+            <a href="http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding" target="_blank">X3D JSON Encoding</a>.
+        </p>
+
+        <p>
+            The X3D JSON Encoding needs to meet multiple interoperability requirements:
+        </p>
+
+        <ul>
+            <li> 
+                Representing any X3D scene graph found in another encoding (such as 
+                .x3d&nbsp;XML, .x3dv&nbsp;ClassicVRML, and .x3db&nbsp;Compressed Binary Encoding, CBE).
+            </li>
+            <li> 
+                Round-trip conversion capability as primary requirement to show that features
+                in the X3D Abstract Specification can all be represented in an X3D JSON file. 
+            </li>
+            <li> 
+                File extension (.js is also used by Script nodes, .json is common, .x3dj is unused/unambiguous) and MIME type.
+            </li>
+            <li> 
+                Forward compatibility with the evolving X3D version 4.0 revision.
+            </li>
+        </ul>
+
+        <p>
+            The 
+            <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/X3D.html">X3D abstract specification</a>
+            (ISO/IEC&nbsp;19775-1)
+            governs X3D semantics and presentation for all scene encodings.
+            Thus no new X3D functionality for graphics rendering or scene interaction are needed for the X3D JSON encoding.
+        </p>
+        
+        <hr />
+
+        <!-- =================================================== -->
+
+        <h2><a name="Goals">Goals, Requirements and Use Cases</a>
+            <a href="#top">
+               <!-- width="154" height="97" -->
+               <img src="images/x3d2-s.gif" width="50" height="32" border="0" title="to top" alt="to top" align="right"/>
+            </a>
+        </h2>
+
+        <p>
+            JSON defines a native JavaScript object that can be parsed directly from a JSON string.
+            Once loaded, the resulting object tree can be used to provide a renderable presentation 
+            along with behavior of the scene graph.
+        </p>
+        <p>
+            Interpreting the JSON and rendering the X3D scene graph is typically an independent decision 
+            for a given JavaScript library of interest.
+            The JSON representation is only meant to provide the scene graph for appropriate
+            initialization in the 3D engine, and perhaps optionally export model state at a given 
+            moment if desired.
+        </p>
+        <p> 
+            The forthcoming X3D JSON Encoding (ISO 19776-5) specification needs to fully define 
+            everything representable in a scene graph defined by the X3D Abstract Specification.  
+            Full expression of all scene graph information is commonly referred to as the
+            "round&nbsp;trippable" property.
+            This round-trippable requirement for functional equivalence is shared by all X3D encodings:
+            XML .x3d, ClassicVRML .x3dv, Compressed Binary .x3db.
+            Authors can thus use any X3D encoding of interest interchangeably.
+        </p>
+        
+        <p>
+            Programming goals for X3D JSON include:
+        </p>
+        <ul>  
+            <li> 
+                Meaningful and low complexity because it's simpler to think with, easier to read, 
+                easier to compare differences between two states, and easier to synchronize between devices.
+            </li>
+            <li> 
+                Easy to <code>require()</code> in order to use the same package management as code and assets
+                in the rest of the  JavaScript application.
+            </li>
+            <li> 
+                Easy for programmers to manipulate and adapt. 
+            </li>
+            <li> 
+                Strive for reusability, avoid hard-wiring the object syntax to one exclusive
+                Application Programming Interface (API) 
+                approach if possible (there are many "similar but different" scene graphs).
+            </li>
+        </ul>
+        
+        <p>
+            Note that the features for representing an entire X3D scene using JSON are quite different than the 
+            <a href="http://www.web3d.org/documents/specifications/19777-1/V3.3/Part1/X3D_ECMAScript.html" target="_blank">X3D language binding for ECMAScript</a>,
+            which describes linking or embedding JavaScript source code within a
+            <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Script">Script node</a> 
+            as part of an X3D scene.
+        </p>
+        
+        <p>
+            Functional requirements for X3D JSON include:
+        </p>
+
+        <ul>
+            <li> 
+                Object models and data typing of values are well aligned between X3D and JSON specifications.
+            </li>
+            <li> 
+                X3D JSON is written in same JavaScript language as the rest of an application. 
+            </li>
+            <li> 
+                X3D JSON is lightweight to parse; little X3D-specific contextual information is needed. 
+            </li>
+            <li> 
+                Can be optimized with the rest of the application. 
+            </li>
+            <li> 
+                Can be tested with the rest of the application. 
+            </li>
+            <li> 
+                Can refer to and interact with non-3D modules (e.g. a third-party library
+                for formatting Date timestamps). 
+            </li>
+            <li> 
+                No <code>eval()</code> method needs to be applied. 
+            </li>
+        </ul>
+        
+        <p>
+            Use cases for X3D JSON include:
+        </p>
+        <ul>
+            <li>
+                JavaScript authors can easily read, create or modify X3D scene graphs
+            </li>
+            
+            <li>
+                JavaScript libraries can easily read, render and exchange events with X3D scene graphs
+            </li>
+            
+            <li>
+                Support any emergent requirements for X3D&nbsp;version&nbsp;4 integration with HTML5
+            </li>
+            
+            <li>
+                TODO articulate further...
+            </li>
+        </ul>
+        
+        <hr />
+
+        <!-- =================================================== -->
+        <h2><a name="DataTypes">Data Types</a>
+            <a href="#top">
+               <!-- width="154" height="97" -->
+               <img src="images/x3d2-s.gif" width="50" height="32" border="0" title="to top" alt="to top" align="right"/>
+            </a>
+        </h2>
+        <p>
+            JSON has two primary data structures: objects and arrays.  
+            Aligning X3D scene graphs well with these data structures is the essence of this design process.
+            From the  <a href="http://www.json.org" target=_blank">json.org</a> site:
+        </p>
+        <ul>
+            <li> 
+                <i><b>Objects</b>. A collection of name/value pairs.</i> In various languages, this is realized as an object, record, struct, dictionary, hash table, keyed list, or associative array.
+            </li>
+            <li>
+                 <i><b>Arrays</b>. An ordered list of values.</i> In most languages, this is realized as an array, vector, list, or sequence.
+            </li>
+        </ul>
+        
+        <p>
+            Curiously, other XML-based languages have applied multiple different approaches to mapping XML document models to JSON object models.
+            In order to consistently reconcile conceptual overlaps, the following nomenclature conventions are been used.
+        </p>
+
+        <table border="1" cellspacing="2" cellpadding="2" align="center">
+            <thead>
+                <tr align="center">
+                    <th colspan="3"> 
+                        Nomenclature comparison: X3D, XML, JSON
+                    </th>
+                </tr>
+                <tr align="left">
+                    <th> 
+                        X3D scene graph
+                    </th>
+                    <th> 
+                        XML encoding for X3D
+                    </th>
+                    <th> 
+                        JSON encoding for X3D
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        X3D nodes
+                    </td>
+                    <td>
+                        XML elements
+                    </td>
+                    <td>
+                        JSON objects
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        X3D node name
+                    </td>
+                    <td>
+                        XML tag (open/close or singleton tags)
+                    </td>
+                    <td>
+                        JSON object name
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Scene-graph structures/statements
+                    </td>
+                    <td>
+                        XML elements
+                    </td>
+                    <td>
+                        JSON objects
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        X3D simple-type fields
+                    </td>
+                    <td>
+                        XML attributes
+                    </td>
+                    <td>
+                        prepend <code>@</code> sign to field name as JSON string
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        X3D MFNode child nodes
+                    </td>
+                    <td>
+                        Single ordered array of sibling elements
+                    </td>
+                    <td>
+                        One or more JSON strings for each
+                        [array&nbsp;of&nbsp;JSON&nbsp;objects]
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        X3D SFNode/MFNode field names
+                    </td>
+                    <td>
+                        containerField value
+                        <br />
+                        Example: <code>containerField='children'</code>
+                    </td>
+                    <td>
+                        Prepend <code>-</code> hyphen to JSON string for field name, 
+						do not include as a separate <code>@containerField</code> attribute
+                        <br />
+                        Example: <code>"-children"</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Comments
+                    </td>
+                    <td>
+                        <code>&lt;!-- XML comment --&gt;</code>
+                    </td>
+                    <td>
+                        Special string prefix: <code>"<b>#comment</b>"</code> for single-object comments
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Embedded source code for
+                        <br />
+                        <a href="http://www.web3d.org/x3d/content/X3dTooltips.html#Script" target="_blank">Script</a>, 
+                        <a href="http://www.web3d.org/x3d/content/X3dTooltips.html#ShaderPart" target="_blank">ShaderPart</a>
+                        and 
+                        <a href="http://www.web3d.org/x3d/content/X3dTooltips.html#ShaderProgram" target="_blank">ShaderProgram</a>
+                         nodes
+                    </td>
+                    <td>
+                        CDATA (Character DATA) section
+                        <br />
+                        <code>&lt;[CDATA[ &quot;world wild Web!&quot; ]]&gt;</code>
+                    </td>
+                    <td>
+                        <code>"#sourceText"</code> string array containing original code, possibly escaped
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <p>
+            TODO: add notes contrasting document models to object models.
+        </p>
+        
+        <hr />
+
+        <!-- =================================================== -->
+        <h2><a name="DesignPatterns">Design Patterns</a>
+            <a href="#top">
+               <!-- width="154" height="97" -->
+               <img src="images/x3d2-s.gif" width="50" height="32" border="0" title="to top" alt="to top" align="right"/>
+            </a>
+        </h2>
+        
+        <p> 
+            It is important to get the X3D JSON design pattern correct.  Here are possible approaches for
+            an example set of four adjacent <b>ROUTE</b> statements.
+        </p>
+        
+        <table border="1" cellspacing="2" cellpadding="2">
+            <thead>
+                <tr align="left">
+                    <th colspan="2"> 
+                        Source excerpts from scene
+                        <a href="http://x3dGraphics.com/examples/X3dForAdvancedModeling/Animation/OrigamiCranes.x3d">OrigamiCranes.x3d</a>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="2">
+    <Group DEF=''>
+      <PositionInterpolator DEF='MovingPovLocation' key='0 0.125 0.25 0.375 0.5 0.625 0.75 0.875 1'
+						  keyValue='0 0 3 3 0 2 3 0 2 0 0 3 0 0 3 -3 0 2 -3 0 2 0 0 3 0 0 3'/>
+      <ROUTE fromField='fraction_changed' fromNode='PovClock' toField='set_fraction' toNode='MovingPovLocation'/>
+      <ROUTE fromField='value_changed' fromNode='MovingPovLocation' toField='position' toNode='MovingPov'/>
+      <OrientationInterpolator DEF='MovingPovRotation' key='0 0.125 0.25 0.375 0.5 0.625 0.75 0.875 1' 
+	   keyValue='0 1 0 0 0 1 0 0.982794 0 1 0 0.982794 0 1 0 0 0 1 0 0 0 1 0 -0.982794 0 1 0 -0.982794 0 1 0 0 0 1 0 0'/>
+      <ROUTE fromField='fraction_changed' fromNode='PovClock' toField='set_fraction' toNode='MovingPovRotation'/>
+      <ROUTE fromField='value_changed' fromNode='MovingPovRotation' toField='set_orientation' toNode='MovingPov'/>
+    </Group>
+<pre>
+&lt;<b>Group</b> DEF='AnimatedView'&gt;
+    &lt;<b>Viewpoint</b> DEF='MovingPov' description='Rotating Viewpoint'/>
+    &lt;<b>TimeSensor</b> DEF='PovClock' cycleInterval='60' loop='true'/>
+    &lt;<b>PositionInterpolator</b> DEF='MovingPovLocation' key='0 0.125 0.25 0.375 0.5 0.625 0.75 0.875 1' 
+                                    keyValue='0 0 3 <i>etc.</i>'/>
+    &lt;<b>ROUTE</b> fromField='fraction_changed' fromNode='PovClock' toField='set_fraction' toNode='MovingPovRotation'/&gt;
+    &lt;<b>ROUTE</b> fromField='fraction_changed' fromNode='PovClock' toField='set_fraction' toNode='MovingPovLocation'/&gt;
+    &lt;<b>OrientationInterpolator</b> DEF='MovingPovRotation' key='0 0.125 0.25 0.375 0.5 0.625 0.75 0.875 1' 
+        keyValue='0 1 0 0 <i>etc.</i>'/>
+    &lt;<b>ROUTE</b> fromField='value_changed' fromNode='MovingPovRotation' toField='set_orientation' toNode='MovingPov'/&gt;
+    &lt;<b>ROUTE</b> fromField='value_changed' fromNode='MovingPovLocation' toField='position' toNode='MovingPov'/&gt;
+&lt;/<b>Group</b>&gt;
+</pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <p> 
+            For comparison, please look at the different approaches that follow.
+            Each pattern encodes these same four ROUTEs.
+        </p> 
+        
+        <p> 
+            The pattern on the left is important from a JSON perspective, because it avoids JSON validation errors.
+            This is because it avoids object-model ambiguity problems that occur when multiple key names
+            are repeated for a parent object.
+        </p>
+        <p> 
+            The pattern in the third column (showing the four ROUTEs in context) was evaluated as the 
+            best solution for preserving ROUTE ordering within an X3D scene.
+        </p>
+        <table border="1" cellspacing="2" cellpadding="2">
+            <thead>
+                <tr align="left">
+                    <th width="50%"> Single key for contained objects: <br /> valid JSON </th>
+                    <th width="50%"> Repeating keys for multiple objects: <br /> invalid JSON </th>
+                    <th width="50%"> Common <b>-children</b> key for ROUTE objects: <br /> valid JSON. Approved. </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr valign="top">
+                    <td>
+<pre>
+"<b>ROUTE</b>":[
+  {
+    "@fromField":"fraction_changed",
+    "@fromNode":"PovClock",
+    "@toField":"set_fraction",
+    "@toNode":"MovingPovRotation"
+  },
+  {
+    "@fromField":"fraction_changed",
+    "@fromNode":"PovClock",
+    "@toField":"set_fraction",
+    "@toNode":"MovingPovLocation"
+  },
+  {
+    "@fromField":"value_changed",
+    "@fromNode":"MovingPovRotation",
+    "@toField":"set_orientation",
+    "@toNode":"MovingPov"
+  },
+  {
+    "@fromField":"value_changed",
+    "@fromNode":"MovingPovLocation",
+    "@toField":"position",
+    "@toNode":"MovingPov"
+  }
+]
+</pre>
+                        <hr />
+                        <p><i>Advantages:</i> terse, clear.</p>
+                        <p><i>Disadvantages:</i>
+                            ordering of ROUTE statements is lost, relative to other children nodes.
+                            ROUTEs are placed at the end, only a partial order is retained.
+						</p>
+
+        <p> 
+            The downside of bundling the four ROUTEs together is that these statements
+            might not have appeared side-by-side in the original X3D scene.
+            The order of the sequence from first to last might be unchanged, but 
+            these ROUTE statements might appear before &amp; after other nodes when compared to the original scene.
+		</p>
+        <p> 
+            For this approach, moving ROUTEs means that exact literal round-trippability with the original scene is not always possible.
+            Nevertheless functional equivalence of rendering and behavior for the scene appears to be possible.
+            Local partial sorts can limit any reshuffling to sorting by field, 
+            leaving the original first-to-last sequence of occurrence unchanged.
+        </p>
+                    </td>
+                    <td>
+<pre>
+"<b>ROUTE</b>":
+  {
+    "@fromField":"fraction_changed",
+    "@fromNode":"PovClock",
+    "@toField":"set_fraction",
+    "@toNode":"MovingPovRotation"
+  },
+"<b>ROUTE</b>":
+  {
+    "@fromField":"fraction_changed",
+    "@fromNode":"PovClock",
+    "@toField":"set_fraction",
+    "@toNode":"MovingPovLocation"
+  },
+"<b>ROUTE</b>":
+  {
+    "@fromField":"value_changed",
+    "@fromNode":"MovingPovRotation",
+    "@toField":"set_orientation",
+    "@toNode":"MovingPov"
+  },
+"<b>ROUTE</b>":
+  {
+    "@fromField":"value_changed",
+    "@fromNode":"MovingPovLocation",
+    "@toField":"position",
+    "@toNode":"MovingPov"
+  }
+</pre>
+                        <hr />
+                        <p><i>Advantages:</i> terse, clear.</p>
+                        <p><i>Disadvantages:</i>
+                            invalid JSON object since the <b>ROUTE</b> key is used multiple times.</p>
+                    </td>
+                    <td>
+<pre>
+{ "<b>Group</b>":
+  {
+    "@DEF":"AnimatedView",
+    "-children":[
+      { "<b>Viewpoint</b>":
+        {
+          "@DEF":"MovingPov",
+          "@description":"Rotating Viewpoint"
+        }
+      },
+      { "<b>TimeSensor</b>":
+        {
+          "@DEF":"PovClock",
+          "@cycleInterval":60,
+          "@loop":true
+        }
+      },
+      { "<b>PositionInterpolator</b>":
+        {
+          "@DEF":"MovingPovLocation",
+          "@key":[0,0.125,0.25,0.375,0.5,0.625,0.75,0.875,1],
+          "@keyValue":[0,0,3,3,0,2,3,0,2,0,0,3,0,0,3,-3,0,2,-3,0,2,0,0,3,0,0,3]
+        }
+      },
+      { "<b>ROUTE</b>":
+        {
+          "@fromField":"fraction_changed",
+          "@fromNode":"PovClock",
+          "@toField":"set_fraction",
+          "@toNode":"MovingPovLocation"
+        }
+      },
+      { "<b>ROUTE</b>":
+        {
+          "@fromField":"value_changed",
+          "@fromNode":"MovingPovLocation",
+          "@toField":"position",
+          "@toNode":"MovingPov"
+        }
+      },
+      { "<b>OrientationInterpolator</b>":
+        {
+          "@DEF":"MovingPovRotation",
+          "@key":[0,0.125,0.25,0.375,0.5,0.625,0.75,0.875,1],
+          "@keyValue":[0,1,0,0,0,1,0,0.982794,<i>etc.</i>]
+        }
+      },
+      { "<b>ROUTE</b>":
+        {
+          "@fromField":"fraction_changed",
+          "@fromNode":"PovClock",
+          "@toField":"set_fraction",
+          "@toNode":"MovingPovRotation"
+        }
+      },
+      { "<b>ROUTE</b>":
+        {
+          "@fromField":"value_changed",
+          "@fromNode":"MovingPovRotation",
+          "@toField":"set_orientation",
+          "@toNode":"MovingPov"
+        }
+      }
+    ]
+  }
+},
+</pre>
+                        <hr />
+                        <p><i>Advantages:</i> terse, clear.  Ordering of nodes in the original scene is nearly always preserved.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p> 
+            Some special X3D semantics must always be observed.
+            For example, X3D requires each ROUTE must appear after the DEF nodes it refers to.
+            (DEF/USE name identifiers for X3D nodes have type ID/IDREF in XML, which does not provide ordering constraints.)
+			Preserving order with other peer nodes avoids creating any new problems for a scene.
+        </p> 
+        <p> 
+            Typically most elements are <code>children</code> nodes, but that is not always the case.
+			Since a ROUTE is allowed to appear almost anywhere in the scene graph, one extra precaution is necessary.
+			For acceptable local reordering of ROUTEs that appear within a Shape, or within other nodes that are outside of a regular -children context, the 
+			<code>"-children":{ROUTE}</code> constructs are placed after any other sibling nodes.
+        </p>
+        
+        <hr />
+
+        <!-- =================================================== -->
+
+        <h2><a name="DesignCorrespondences">Design Correspondences</a>
+            <a href="#top">
+               <!-- width="154" height="97" -->
+               <img src="images/x3d2-s.gif" width="50" height="32" border="0" title="to top" alt="to top" align="right"/>
+            </a>
+        </h2>
+        
+        <!-- =================================================== -->
+        
+        <p>
+            These design patterns for X3D JSON include the following correspondences.
+        </p>
+        
+        <ul>
+            <li> 
+                X3D nodes are each mapped as JSON objects. 
+            </li>
+            <li> 
+                X3D statements that are not scene-graph nodes (specifically X3D, head, component, meta, unit, Scene, field/fieldValue, IS/connect, IMPORT/EXPORT and prototype constructs) 
+                are simple JSON objects. 
+            </li>
+            <li> 
+                Comments are copied individually as JSON objects named #comment, interspersed with other -children nodes and ROUTEs. 
+            </li>
+            <li> 
+                Child scene-graph nodes are mapped as JSON arrays of JSON objects, 
+				with a single key that uses the value of the containerField  (i.e. field name). 
+				The <code>@containerField </code> attribute is not listed separately.
+            </li>
+            <li> 
+                Mapping object members to field names ensures key uniqueness. 
+                Multiple sets of members must be collected into a single array, which sometimes has the effect of
+                reordering the original scene graph.
+                Occasionally the original order may change, but the sequence of first-to-last for like node types (a partial ordering) is always preserved.
+            </li>
+            <li>
+                Current prefix conventions follow. 
+                Name prefixes are used to disambiguate language constructs that are not X3D nodes or structural statements.
+                <ul>
+                    <li> <code>@attributeName</code> for attributes </li>
+                    <li> <code>-fieldName</code> for containerField names </li>
+                    <li> <code>#comment</code> for comments (an allowed option, even though not natively supported by JSON) </li>
+                    <li> 
+                        <code>#sourceText</code> preservation of character data (e.g. source code contained in a 
+                        <a href="http://www.web3d.org/x3d/content/X3dTooltips.html#Script" target="_blank">Script</a>, 
+                        <a href="http://www.web3d.org/x3d/content/X3dTooltips.html#ShaderPart" target="_blank">ShaderPart</a>
+                        and 
+                        <a href="http://www.web3d.org/x3d/content/X3dTooltips.html#ShaderProgram" target="_blank">ShaderProgram</a>
+                        node) 
+                    </li>
+                </ul>
+            </li>
+            <li> 
+                JSON requires that boolean values true|false are lower case, matching the X3D XML encoding. 
+            </li>
+            <li> 
+                JSON requires that numeric values omit any leading + sign. 
+            </li>
+            <li> 
+                JSON requires that float values must have leading zero prior to decimal point, and trailing zero after decimal point. 
+            </li>
+            <li> 
+                JSON handling of values and arrays for numeric, boolean and string types includes special rules for brackets, commas and whitespace. 
+            </li>
+            <li>
+                JSON handling of singleton numeric values does not require an array, e.g. 
+                <br />
+                <code>"@transparency":1,</code>
+                rather than
+                <br />
+                <code>"@transparency":[1],</code>
+            </li>
+            <li>
+                Nodes with all-default attribute values can be represented as an empty JSON object:
+<pre>
+"-geometry": {
+      "<b>Sphere</b>": { }
+    }
+</pre>
+            </li>
+            <li>
+                X3D file-format encodings for XML, VRML, JSON and binary compression are all case sensitive.
+            </li>
+            <li>
+                Embedded <code>#sourceText</code> code 
+               (for X3D 
+                <a href="http://www.web3d.org/x3d/content/X3dTooltips.html#Script" target="_blank">Script</a>, 
+                <a href="http://www.web3d.org/x3d/content/X3dTooltips.html#ShaderPart" target="_blank">ShaderPart</a>
+                and 
+                <a href="http://www.web3d.org/x3d/content/X3dTooltips.html#ShaderProgram" target="_blank">ShaderProgram</a>
+                nodes)
+                must follow JSON rules that demand replacement of line feeds as <code>\n</code> literals and
+                tabs as <code>\t</code> literals
+               (<a href="http://web3d.org/pipermail/x3d-public_web3d.org/2015-November/003803.html">discussion</a>).
+                A significant reduction in readability occurs but apparently is required.
+                A 
+                <a href="#Options">stylesheet switch</a>
+                allows an author to retain multiline strings without such obfuscation.
+            </li>
+            <li>
+                <i><a name="encoding">Encoding</a></i>. JSON files are implicitly allowed to have an encoding of UTF-8, UTF-16 or UTF-32.
+				The <code>"X3D"</code> object is given a field such as <code>"encoding":"UTF-8"</code> to indicate the scene author's expected encoding.
+				This expression of file encoding corresponds to the header statement syntax required for the 
+				<a href="http://www.web3d.org/documents/specifications/14772/V2.0/part1/concepts.html#4.2.2">VRML97</a>, 
+				<a href="http://www.web3d.org/documents/specifications/19776-2/V3.3/Part02/concepts.html#HeaderStatementSyntax">ClassicVRML</a> 
+				and 
+				<a href="http://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/concepts.html#Header">XML</a> 
+				file formats.
+            </li>
+        </ul>
+        
+        <p>
+            See the <a href="#Issues">Issues</a> list for additional changes under consideration.
+        </p>
+        
+        <p>
+            The following tables illustrate how each of the major JSON constructs
+            are correlated to X3D nodes, fields, statements and values.
+        </p>
+        <ul>
+            <li>
+                <a href="#objects">JSON objects</a>
+            </li>
+            <li>
+                <a href="#arrays">JSON arrays</a>
+            </li>
+            <li>
+                <a href="#values">JSON values</a>
+            </li>
+            <li>
+                <a href="#strings">JSON strings</a>
+            </li>
+            <li>
+                <a href="#numbers">JSON numbers</a>
+            </li>
+        </ul>
+
+        
+        <!-- =================================================== -->
+        
+        <h4>
+            <a name="objects">JSON objects</a>
+            <a href="#top">
+               <!-- width="154" height="97" -->
+               <img src="images/x3d2-s.gif" width="50" height="32" border="0" title="to top" alt="to top" align="right"/>
+            </a>
+        </h4>
+        <p>
+            JSON objects are typically an X3D node, or scene graph structure element.
+            Note that each <i>string</i> matches an X3D field name and must be unique, allowing direct access to each field.
+        </p>
+        <table border="1" cellspacing="2" cellpadding="2" width="800">
+            <thead>
+                <tr>
+                    <td colspan="2" align="center">
+                        <a href="http://www.json.org"><img src="images/json/object.gif" style="border: 0"/></a>
+                    </td>
+                </tr>
+                <tr>
+                    <th width="50%" align="right">string :</th>
+                    <th width="50%" align="left">value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td align="right">
+                        X3D, head and Scene :
+                    </td>
+                    <td align="left">
+                        scene-graph structure elements
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        simple-type field name :
+                    </td>
+                    <td align="left">
+                        attribute value
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        containerField :
+                    </td>
+                    <td align="left">
+                        X3D nodes (XML elements) as JSON objects
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <!-- =================================================== -->
+        
+        <h4>
+            <a name="arrays">JSON arrays</a>
+            <a href="#top">
+               <!-- width="154" height="97" -->
+               <img src="images/x3d2-s.gif" width="50" height="32" border="0" title="to top" alt="to top" align="right"/>
+            </a>
+        </h4>
+        <table border="1" cellspacing="2" cellpadding="2" width="800">
+            <thead>
+                <tr>
+                    <td colspan="2" align="center">
+                        <a href="http://www.json.org"><img src="images/json/array.gif" style="border: 0"/></a>
+                    </td>
+                </tr>
+                <tr align="left">
+                    <th width="50%"> X3D scene graph </th>
+                    <th width="50%"> JSON representation of <i>value</i> </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        X3DGrouping nodes:
+                        MFNode children array
+                    </td>
+                    <td>
+                        array of JSON objects
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Scene and ProtoBody elements:
+                        MFNode children array
+                    </td>
+                    <td>
+                        array of JSON objects
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        MFBool array of simple SFBool values (XML&nbsp;attribute):
+                    </td>
+                    <td>
+                        JSON array of <i>boolean</i> (true|false) values
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        MFInt32 array of simple SFInt32 values (XML&nbsp;attribute):
+                    </td>
+                    <td>
+                        JSON array of <i>number</i> type with non-decimal values
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        MFFloat/MFDouble array of simple SFFloat/SFDouble values (XML&nbsp;attribute):
+                    </td>
+                    <td>
+                        JSON array of <i>number</i> type with decimal values
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        SFVec*/MFVec* n-tuple arrays of SFFloat/SFDouble values (XML&nbsp;attribute):
+                    </td>
+                    <td>
+                        JSON array of <i>number</i> type with decimal values
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        SFColor/MFColor and SFColorRGBA/MFColorRGBA triplet arrays of SFFloat/SFDouble values (XML&nbsp;attribute):
+                    </td>
+                    <td>
+                        JSON array of <i>number</i> type with decimal values, range [0..1]
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        MFString is array of quoted SFString (XML&nbsp;attribute) values
+                    </td>
+                    <td>
+                        JSON array of <i>string</i> type
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <!-- =================================================== -->
+        
+        <h4>
+            <a name="values">JSON values</a>
+            <a href="#top">
+               <!-- width="154" height="97" -->
+               <img src="images/x3d2-s.gif" width="50" height="32" border="0" title="to top" alt="to top" align="right"/>
+            </a>
+        </h4>
+        <table border="1" cellspacing="2" cellpadding="4" width="800">
+            <thead>
+                <tr>
+                    <td colspan="2" align="center">
+                        <a href="http://www.json.org"><img src="images/json/value.gif" style="border: 0"/></a>
+                    </td>
+                </tr>
+                <tr align="left">
+                    <th width="50%"> X3D scene graph </th>
+                    <th width="50%"> JSON representation of <i>value</i> </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        SFString simple type (XML&nbsp;attribute)
+                    </td>
+                    <td>
+                        JSON value of <i>string</i> type, no added &quot;quote&nbsp;marks&quot;
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        SFInt32 simple type (XML&nbsp;attribute)
+                    </td>
+                    <td>
+                        JSON value of <i>number</i> type, no decimal point
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        SFFloat/SFDouble simple type (XML&nbsp;attribute)
+                    </td>
+                    <td>
+                        JSON value of <i>number</i> type, with <br /> leading numeral(s) and decimal point
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        SFBool simple type (XML&nbsp;attribute)
+                    </td>
+                    <td>
+                        JSON value of <i>boolean</i> type (true|false)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        SFNode field (XML element)
+                    </td>
+                    <td>
+                        JSON value of <i>object</i> type or null (no entry)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        MFNode field (array XML elements) 
+                        <br/>
+                        each having identical containerField values
+                    </td>
+                    <td>
+                        JSON array of <i>object</i> types
+                        <br/>
+                        each sharing identical <i>string</i> key
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <!-- =================================================== -->
+        
+        <h4>
+            <a name="strings">JSON strings</a>
+            <a href="#top">
+               <!-- width="154" height="97" -->
+               <img src="images/x3d2-s.gif" width="50" height="32" border="0" title="to top" alt="to top" align="right"/>
+            </a>
+        </h4>
+        <table border="1" cellspacing="2" cellpadding="2" width="800">
+            <thead>
+                <tr>
+                    <td colspan="2" align="center">
+                        <a href="http://www.json.org"><img src="images/json/string.gif" style="border: 0"/></a>
+                    </td>
+                </tr>
+                <tr align="left">
+                    <th width="50%">X3D scene graph</th>
+                    <th width="50%">JSON representation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        SFString is unquoted XML&nbsp;attribute value
+                    </td>
+                    <td>
+                        JSON value of <i>string</i> type. 
+						Backslash&nbsp;<b>\</b> (reverse solidus) characters get escaped with an adjacent backslash&nbsp;<b>\</b> character, resulting in&nbsp;<b>\\</b> value.
+						<br />
+                    	Similarly &quot; (quotation mark) characters get escaped with an adjacent backslash as&nbsp;<b>\&quot;</b> value.
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        MFString is array of quoted SFString (XML&nbsp;attribute) values
+                    </td>
+                    <td>
+                        JSON array of <i>string</i> type
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <!-- =================================================== -->
+        
+        <h4>
+            <a name="numbers">JSON numbers</a>
+            <a href="#top">
+               <!-- width="154" height="97" -->
+               <img src="images/x3d2-s.gif" width="50" height="32" border="0" title="to top" alt="to top" align="right"/>
+            </a>
+        </h4>
+        <table border="1" cellspacing="2" cellpadding="2" width="800">
+            <thead>
+                <tr>
+                    <td colspan="2" align="center">
+                        <a href="http://www.json.org"><img src="images/json/number.gif" style="border: 0"/></a>
+                    </td>
+                </tr>
+                <tr align="left">
+                    <th width="50%">X3D scene graph</th>
+                    <th width="50%">JSON representation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        Numeric attributes with type SF/MFFloat, SF/MFDouble, SF/MFVec*,SF/MFMatrix*
+                    </td>
+                    <td>
+                        integer or floating point with double precision;
+                        <br />
+                        note that leading zero required if less than zero;
+                        <br />
+                        note no scientific notation (e.g. 1.0E-6);
+                        <br />
+                        note no leading + plus sign allowed
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        SFBool/MFBool
+                    </td>
+                    <td>
+                        boolean (true, false)
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr />
+
+        <!-- =================================================== -->
+
+        <h2><a name="Examples">&nbsp;Examples</a>
+            <!-- width="160" height="160" -->
+            <img src="images/json/json160.gif" width="24" height="24" border="0" title="Examples list" alt="Examples list" align="left"/>
+            <a href="#top">
+               <!-- width="154" height="97" -->
+               <img src="images/x3d2-s.gif" width="50" height="32" border="0" title="to top" alt="to top" align="right"/>
+            </a>
+        </h2>
+
+        <p>
+            Test examples are essential for determining how the X3D JSON encoding can best meets authoring and library requirements.
+        </p>
+        <ul>
+            <li> 
+                <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html#Examples">Web3D examples archive</a>
+                has this JSON X3D encoding in production.
+                All scenes are automatically converted and published to facilitate testing.
+            </li>
+            <li> 
+                <a href="http://www.web3d.org/x3d/content/examples/X3dExampleArchivesJsonScenes.zip">X3dExampleArchivesJsonScenes.zip</a>
+               (<a href="http://www.web3d.org/x3d/content/examples/X3dExampleArchivesJsonScenes.zip.MD5">MD5</a>)
+                is a comprehensive collection of all JSON example scenes to facilitate batch testing,
+                plus current output from the X3D&nbsp;JSON build process at
+                <a href="http://www.web3d.org/x3d/content/examples/build.json.out">build.json.out</a>.
+            </li>
+            <li> 
+                Need 
+                <a href="http://www.x3dom.org">X3DOM</a> 
+                examples with corresponding parsing of someTestScene.json 
+            </li>
+            <li> 
+                Additional example uses are welcome. 
+            </li>
+        </ul>
+        
+        <!-- =================================================== -->
+        
+        <p>
+            Excerpted encodings of example X3D scene-graph fragments follow.
+        </p>
+            
+        <ul>
+            <li> 
+                <a href="#structure">X3D file structure</a>
+            </li>
+            <li> 
+                <a href="#head">X3D head</a>
+            </li>
+            <li> 
+                <a href="#HelloWorld">Hello World example</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               (<a href="#HelloWorld">.x3d</a> and
+                <a href="#HelloWorld.json">.json</a>)
+            </li>
+            <li> 
+                <a href="#TestJsonEncoding">Test Json Encoding example</a>
+               (<a href="#TestJsonEncoding">.x3d</a> and
+                <a href="#TestJsonEncoding.json">.json</a>)
+            </li>
+            <li> 
+                <a href="#OrigamiCranes">Origami Cranes example</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               (<a href="#OrigamiCranes">.x3d</a> and
+                <a href="#OrigamiCranes.json">.json</a>)
+            </li>
+        </ul>
+        
+        <p>
+            TODO: show continued conversion excerpts including nodes, attributes, comments, children nodes, X3D statements, Scripts, prototypes, fields, IS/connect.
+        </p>
+        
+        <!-- =================================================== -->
+        
+        <h4>
+            <a name="structure">X3D file structure</a>
+            <a href="#Examples">
+                <!-- width="160" height="160" -->
+               <img src="images/json/json160.gif" width="24" height="24" border="0" title="to Examples list" alt="to Examples list" align="right"/>
+            </a>
+        </h4>
+        <table border="1" cellspacing="2" cellpadding="2">
+            <thead>
+                <tr align="left">
+                    <th width="50%"> Source excerpts, .x3d and .json </th>
+                    <th width="50%"> Notes </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr valign="top">
+                    <td>
+<pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd"&gt;
+&lt;<b>X3D</b> 
+  profile='Immersive' version='3.3
+  xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance'
+  xsd:noNamespaceSchemaLocation='<a href="http://www.web3d.org/specifications/x3d-3.3.xsd">http://www.web3d.org/specifications/x3d-3.3.xsd</a>'&gt;
+    &lt;<b>head</b>&gt;&lt;/<b>head</b>&gt;
+    &lt;<b>Scene</b>&gt;&lt;/<b>Scene</b>&gt;
+&lt;/<b>X3D</b>&gt;
+</pre>
+                    </td>
+                    <td>
+                        <p><b>X3D</b>, <b>head</b> and <b>Scene</b> are scene-graph structure statements.</p>
+                        
+                        <p><b>X3D</b> <code>@profile</code> and <code>@version</code> attributes are required.</p>
+                        
+                        <p><b>X3D</b> <code>@xmlns:xsd</code> and <code>@xsd:noNamespaceSchemaLocation</code> attributes are optional.</p>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td>
+<pre>
+ { "<b>X3D</b>": {
+      "@profile":"Immersive",
+      "@version":3.3,
+      "@xsd:noNamespaceSchemaLocation":"<a href="http://www.web3d.org/specifications/x3d-3.3.xsd">http://www.web3d.org/specifications/x3d-3.3.xsd</a>",
+      "<b>head</b>":{
+      },
+      "<b>Scene</b>":{
+      }
+    }
+ }
+</pre>
+                    </td>
+                    <td>
+                        <p>XML header and DOCTYPE are omitted in the JSON encoding.</p>
+                        
+                        <p><b>X3D</b>, <b>head</b> and <b>Scene</b> are JSON objects that contain arrays of JSON objects.</p>
+                        
+                        <p>Resolved: avoid wrapping the X3D object in [array brackets] since they are superfluous.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <!-- =================================================== -->
+        
+        <h4>
+            <a name="head">X3D head excerpt</a>
+            <a href="#Examples">
+                <!-- width="160" height="160" -->
+               <img src="images/json/json160.gif" width="24" height="24" border="0" title="to Examples list" alt="to Examples list" align="right"/>
+            </a>
+        </h4>
+        <table border="1" cellspacing="2" cellpadding="2">
+            <thead>
+                <tr align="left">
+                    <th width="50%"> Source excerpts, .x3d and .json </th>
+                    <th width="50%"> Notes </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr valign="top">
+                    <td>
+<pre>
+  &lt;<b>head</b>&gt;
+    &lt;<b>component</b> level='1' name='CADGeometry'/&gt;
+    &lt;<b>component</b> level='1' name='H-Anim'/&gt;
+    &lt;<b>unit</b> category='length' conversionFactor='0.9144' name='Yards'/&gt;
+    &lt;<b>unit</b> category='angle' conversionFactor='0.0174532925167' name='Degrees'/&gt;
+    &lt;<b>meta</b> content='TestJsonEncoding.x3d' name='title'/&gt;
+    &lt;<b>meta</b> content='2 November 2015' name='modified'/&gt;
+    &lt;<b>meta</b> content='TestJsonEncoding.json' name='reference'/&gt;
+    &lt;!-- Here is a comment. --&gt;
+  &lt;/<b>head</b>&gt;
+</pre>
+                    </td>
+                    <td>
+                        <p>
+                            Note that this excerpt from an X3D scene only produces a valid JSON fragment because it does not include the parent X3D element.  
+                        </p>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td>
+<pre>
+ { "<b>X3D</b>": {
+   "<b>head</b>":{
+      { "<b>component</b>":[
+        {
+          "@level":1,
+          "@name":"CADGeometry"
+        },
+        {
+          "@level":1,
+          "@name":"H-Anim"
+        }
+      ]
+      },
+      { "<b>unit</b>":[
+        {
+          "@category":"length",
+          "@conversionFactor":0.9144,
+          "@name":"Yards"
+        },
+        {
+          "@category":"angle",
+          "@conversionFactor":0.0174532925167,
+          "@name":"Degrees"
+        }
+      ]
+      },
+      { "<b>meta</b>":[
+        {
+          "@content":"TestJsonEncoding.x3d",
+          "@name":"title"
+        },
+        {
+          "@content":"2 November 2015",
+          "@name":"modified"
+        },
+        {
+          "@content":"TestJsonEncoding.json",
+          "@name":"reference"
+        }
+      ]
+      },
+      { "<b>#comment</b>":"Here is a comment."
+      }
+    }
+  }
+</pre>
+                    </td>
+                    <td>
+                        <p>
+                            Note multiple statement elements are collected as objects, with 
+                            each set of matching objects found under a single statement key.
+                        </p>
+                        <p>
+                            Comments are treated as -children objects, typically allowing them to appear individually instead of clumped under a single key.
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <!-- =================================================== -->
+        
+        <h4>
+            <a name="HelloWorld">Hello World Example</a>
+            <a href="#Examples">
+                <!-- width="160" height="160" -->
+               <img src="images/json/json160.gif" width="24" height="24" border="0" title="to Examples list" alt="to Examples list" align="right"/>
+            </a>
+        </h4>
+        <table border="1" cellspacing="2" cellpadding="2">
+            <thead>
+                <tr align="left">
+                    <th width="50%"> Source excerpts, .x3d and .json </th>
+                    <th width="50%"> Notes </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr valign="top">
+                    <td>
+<pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd"&gt;
+&lt;<b>X3D</b> profile='Immersive' version='3.3'
+   xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' 
+   xsd:noNamespaceSchemaLocation='<a href="http://www.web3d.org/specifications/x3d-3.3.xsd">http://www.web3d.org/specifications/x3d-3.3.xsd</a>'&gt;
+  &lt;<b>head</b>&gt;
+    &lt;<b>meta</b> content='HelloWorld.x3d' name='title'/&gt;
+    &lt;<b>meta</b> content='Simple X3D scene example: Hello World!' name='description'/&gt;
+    &lt;<b>meta</b> content='30 October 2000' name='created'/&gt;
+    &lt;<b>meta</b> content='14 October 2015' name='modified'/&gt;
+    &lt;<b>meta</b> content='Don Brutzman' name='creator'/&gt;
+    &lt;<b>meta</b> content='HelloWorld.tall.png' name='Image'/&gt;
+    &lt;<b>meta</b> content='http://en.wikipedia.org/wiki/Hello_world' name='reference'/&gt;
+    &lt;<b>meta</b> content='https://en.wikipedia.org/wiki/Hello#.22Hello.2C_World.22_computer_program' name='reference'/&gt;
+    &lt;<b>meta</b> content='https://en.wikipedia.org/wiki/"Hello,_World!"_program' name='reference'/&gt;
+    &lt;<b>meta</b> content='http://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world' name='reference'/&gt;
+    &lt;<b>meta</b> content='http://www.HelloWorldExample.net' name='reference'/&gt;
+    &lt;<b>meta</b> content='http://www.web3D.org' name='reference'/&gt;
+    &lt;<b>meta</b> content='http://www.web3d.org/realtime-3d/news/internationalization-x3d' name='reference'/&gt;
+    &lt;<b>meta</b> content='http://www.web3d.org/x3d/content/examples/HelloWorld.x3d' name='reference'/&gt;
+    &lt;<b>meta</b> content='http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes' name='reference'/&gt;
+    &lt;<b>meta</b> content='http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01-TechnicalOverview/HelloWorld.x3d' 
+          name='identifier'/&gt;
+    &lt;<b>meta</b> content='http://www.web3d.org/x3d/content/examples/license.html' name='license'/&gt;
+    &lt;<b>meta</b> content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/&gt;
+    &lt;!-- Alternate encodings: VRML97, X3D ClassicVRML Encoding, X3D Compressed Binary Encoding (CBE), X3DOM, JSON --&gt;
+    &lt;<b>meta</b> content='HelloWorld.wrl' name='reference'/&gt;
+    &lt;<b>meta</b> content='HelloWorld.x3dv' name='reference'/&gt;
+    &lt;<b>meta</b> content='HelloWorld.x3db' name='reference'/&gt;
+    &lt;<b>meta</b> content='HelloWorld.xhtml' name='reference'/&gt;
+    &lt;<b>meta</b> content='HelloWorld.json' name='reference'/&gt;
+  &lt;/<b>head</b>&gt;
+  &lt;<b>Scene</b>&gt;
+    &lt;!-- Example scene to illustrate X3D nodes and fields (XML elements and attributes) --&gt;
+    &lt;<b>WorldInfo</b> title='Hello world!'/&gt;
+    &lt;<b>Group</b>&gt;
+      &lt;<b>Viewpoint</b> DEF='ViewUpClose' centerOfRotation='0 -1 0' description='Hello world!' position='0 -1 7'/&gt;
+      &lt;<b>Transform</b> rotation='0 1 0 3'&gt;
+        &lt;<b>Shape</b>&gt;
+          &lt;<b>Sphere</b>/&gt;
+          &lt;<b>Appearance</b>&gt;
+            &lt;<b>Material</b> DEF='MaterialLightBlue' diffuseColor='0.1 0.5 1'/&gt;
+            &lt;<b>ImageTexture</b>  DEF='ImageCloudlessEarth' 
+                                url='"earth-topo.png" "earth-topo.jpg" "earth-topo-small.gif" 
+                                     "http://www.web3d.org/x3d/content/examples/Basic/earth-topo.png" 
+                                     "http://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg" 
+                                     "http://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"'/&gt;
+          &lt;/<b>Appearance</b>&gt;
+        &lt;/<b>Shape</b>&gt;
+      &lt;/<b>Transform</b>&gt;
+      &lt;<b>Transform</b> translation='0 -2 0'&gt;
+        &lt;<b>Shape</b>&gt;
+          &lt;<b>Text</b>  DEF='TextMessage' string='"Hello" "world!"'&gt;
+            &lt;<b>FontStyle</b>  justify='"MIDDLE" "MIDDLE"'/&gt;
+         &lt;/<b>Text</b>&gt;
+          &lt;<b>Appearance</b>&gt;
+            &lt;<b>Material</b> USE='MaterialLightBlue'/&gt;
+          &lt;/<b>Appearance</b>&gt;
+        &lt;/<b>Shape</b>&gt;
+      &lt;/<b>Transform</b>&gt;
+    &lt;/<b>Group</b>&gt;
+  &lt;/<b>Scene</b>&gt;
+&lt;/<b>X3D</b>&gt;
+</pre>
+                    </td>
+                    <td>
+                        <p>
+                            <a href="http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorld.x3d">HelloWorld.x3d</a>
+                            source, <br />
+                            <a href="http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorld.html">HelloWorld.html</a>
+                            pretty-print, and <br />
+                            <a href="http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorld.xhtml">HelloWorld.xhtml</a>
+                            using X3DOM
+                        </p>
+                    </td>
+                </tr>
+                <tr align="left">
+                    <th width="50%"> 
+                        <a name="HelloWorld.json"> </a>
+                        <b>Source excerpts, .x3d and .json</b> 
+                    </th>
+                    <th width="50%"> 
+                        <b>Notes</b> 
+                        <a href="#Examples">
+                            <!-- width="160" height="160" -->
+                           <img src="images/json/json160.gif" width="24" height="24" border="0" title="to Examples list" alt="to Examples list" align="right"/>
+                        </a>
+                    </th>
+                </tr>
+                <tr valign="top">
+                    <td>
+<pre>{ "<b>X3D</b>": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"<a href="http://www.web3d.org/specifications/x3d-3.3.xsd">http://www.web3d.org/specifications/x3d-3.3.xsd</a>",
+    "JSON schema":"<a href="http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json">http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json</a>",
+    "<b>head</b>": {
+        "<b>meta</b>": [
+          {
+            "@name":"title",
+            "@content":"HelloWorld.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Simple X3D scene example: Hello World!"
+          },
+          {
+            "@name":"created",
+            "@content":"30 October 2000"
+          },
+          {
+            "@name":"modified",
+            "@content":"23 November 2014"
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"Image",
+            "@content":"HelloWorld.tall.png"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://en.wikipedia.org/wiki/Hello_world"
+          },
+          {
+            "@name":"reference",
+            "@content":"en.wikipedia.org/wiki/Hello#\"Hello,_World\"_computer_program"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.HelloWorldExample.net"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3D.org"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/realtime-3d/news/internationalization-x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/content/examples/HelloWorld.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01-TechnicalOverview/HelloWorld.x3d"
+          },
+          {
+            "@name":"license",
+            "@content":"http://www.web3d.org/x3d/content/examples/license.html"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"reference",
+            "@content":"HelloWorld.wrl"
+          },
+          {
+            "@name":"reference",
+            "@content":"HelloWorld.x3dv"
+          },
+          {
+            "@name":"reference",
+            "@content":"HelloWorld.x3db"
+          },
+          {
+            "@name":"reference",
+            "@content":"HelloWorld.xhtml"
+          },
+          {
+            "@name":"reference",
+            "@content":"HelloWorld.json"
+          },
+          {
+            "@name":"translated",
+            "@content":"17 March 2016"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.
+                        Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ],
+        "-children":[
+          { "<b>#comment</b>":"Alternate encodings: VRML97, X3D ClassicVRML Encoding, 
+             X3D Compressed Binary Encoding (CBE), X3DOM, JSON"
+          }
+        ]
+    },
+    "<b>Scene</b>": {
+        "-children":[
+          { "<b>#comment</b>":"Example scene to illustrate X3D nodes and fields (XML elements and attributes)"
+          },
+          { "<b>Group</b>":
+            {
+              "-children":[
+                { "<b>Viewpoint</b>":
+                  {
+                    "@DEF":"ViewUpClose",
+                    "@centerOfRotation":[0,-1,0],
+                    "@description":"Hello world!",
+                    "@position":[0,-1,7]
+                  }
+                },
+                { "<b>Transform</b>":
+                  {
+                    "@rotation":[0,1,0,3],
+                    "-children":[
+                      { "<b>Shape</b>":
+                        {
+                          "-geometry":
+                            { "<b>Sphere</b>":
+                              {
+                              }
+                            },
+                          "-appearance":
+                            { "<b>Appearance</b>":
+                              {
+                                "-material":
+                                  { "<b>Material</b>":
+                                    {
+                                      "@DEF":"MaterialLightBlue",
+                                      "@diffuseColor":[0.1,0.5,1]
+                                    }
+                                  },
+                                "-texture":
+                                  { "<b>ImageTexture</b>":
+                                    {
+                                      "@DEF":"ImageCloudlessEarth",
+                                      "@url":[
+"earth-topo.png","earth-topo.jpg","earth-topo-small.gif",
+"http://www.web3d.org/x3d/content/examples/Basic/earth-topo.png",
+"http://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg",
+"http://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "<b>Transform</b>":
+                  {
+                    "@translation":[0,-2,0],
+                    "-children":[
+                      { "<b>Shape</b>":
+                        {
+                          "-geometry":
+                            { "<b>Text</b>":
+                              {
+                                "@DEF":"TextMessage",
+                                "@string":["Hello","world!"],
+                                "-fontStyle":
+                                  { "<b>FontStyle</b>":
+                                    {
+                                      "@justify":["MIDDLE","MIDDLE"]
+                                    }
+                                  }
+                              }
+                            },
+                          "-appearance":
+                            { "<b>Appearance</b>":
+                              {
+                                "-material":
+                                  { "<b>Material</b>":
+                                    {
+                                      "@USE":"MaterialLightBlue"
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}
+</pre>
+                    </td>
+                    <td>
+                        <p>
+                            <a href="http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorld.json">HelloWorld.json</a>
+                        </p>
+                        <p>
+                            Comments are treated as a unique-key array of objects, which appears before other child elements. 
+                        </p>
+                        <p>
+                            Attributes with default values are omitted for clarity.
+                        </p>
+                        <p>
+                            Line breaks inserted in url arrays for readability.
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        
+        <!-- =================================================== -->
+        
+        <h4>
+            <a name="TestJsonEncoding">Test Json Encoding Example</a>
+            <a href="#Examples">
+                <!-- width="160" height="160" -->
+               <img src="images/json/json160.gif" width="24" height="24" border="0" title="to Examples list" alt="to Examples list" align="right"/>
+            </a>
+        </h4>
+        <table border="1" cellspacing="2" cellpadding="2">
+            <thead>
+                <tr align="left">
+                    <th width="50%"> Source excerpts, .x3d and .json </th>
+                    <th width="50%"> Notes </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr valign="top">
+                    <td>
+<pre>
+&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN"  "http://www.web3d.org/specifications/x3d-3.3.dtd"&gt;
+&lt;<b>X3D</b> profile='Immersive' version='3.3' 
+    xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' 
+    xsd:noNamespaceSchemaLocation='<a href="http://www.web3d.org/specifications/x3d-3.3.xsd">http://www.web3d.org/specifications/x3d-3.3.xsd</a>'&gt;
+  &lt;<b>head</b>&gt;
+    &lt;<b>component</b> level='1' name='CADGeometry'/&gt;
+    &lt;<b>component</b> level='1' name='H-Anim'/&gt;
+    &lt;<b>unit</b> category='length' conversionFactor='0.9144' name='Yards'/&gt;
+    &lt;<b>unit</b> category='angle' conversionFactor='0.0174532925167' name='Degrees'/&gt;
+    &lt;<b>meta</b> content='TestJsonEncoding.x3d' name='title'/&gt;
+    &lt;<b>meta</b> content='Don Brutzman' name='creator'/&gt;
+    &lt;<b>meta</b> content='29 March 2015' name='created'/&gt;
+    &lt;<b>meta</b> content='3 November 2015' name='modified'/&gt;
+    &lt;<b>meta</b> content='Test scene to ensure that X3dToJson xslt stylesheet translator properly converts X3D source
+          into JavaScript Object Notation (JSON).' name='description'/&gt;
+    &lt;<b>meta</b> content='TestJsonEncoding.json' name='reference'/&gt;
+    &lt;<b>meta</b> content='http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding' name='reference'/&gt;
+    &lt;<b>meta</b> content='http://www.web3d.org/x3d/content/examples/Basic/development/TestJsonEncoding.x3d' 
+          name='identifier'/&gt;
+    &lt;<b>meta</b> content='http://www.web3d.org/x3d/stylesheets/X3dToJson.xslt' name='reference'/&gt;
+    &lt;<b>meta</b> content='http://www.web3d.org/x3d/stylesheets/X3dToJson.html' name='reference'/&gt;
+    &lt;<b>meta</b> content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/&gt;
+    &lt;<b>meta</b> content='../license.html' name='license'/&gt;
+  &lt;/<b>head</b>&gt;
+  &lt;<b>Scene</b>&gt;
+    &lt;!-- excerpted from HelloWorld.x3d --&gt;
+    &lt;<b>Group</b>&gt;
+      &lt;<b>Viewpoint</b> DEF='ViewUpClose' centerOfRotation='0 -1 0' description='Hello world!' position='0 -1 7'/&gt;
+      &lt;<b>Transform</b> rotation='0 1 0 3'&gt;
+        &lt;<b>Shape</b>&gt;
+          &lt;<b>Sphere</b>/&gt;
+          &lt;<b>Appearance</b>&gt;
+            &lt;!-- Test leading zeroes inserted before (and trailing zeroes inserted after) decimal points:
+                  diffuseColor='.1 0.5 1.' --&gt;
+            &lt;<b>Material</b> DEF='MaterialLightBlue' diffuseColor='.1 0.5 1.'/&gt;
+            &lt;<b>ImageTexture</b>  DEF='ImageCloudlessEarth' 
+                                     url='"earth-topo.png" "earth-topo.jpg" "earth-topo-small.gif" 
+                                          "http://www.web3d.org/x3d/content/examples/Basic/earth-topo.png"
+                                          "http://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg" 
+                                          "http://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"'/&gt;
+          &lt;/<b>Appearance</b>&gt;
+        &lt;/<b>Shape</b>&gt;
+      &lt;/<b>Transform</b>&gt;
+      &lt;<b>Transform</b> translation='-.1 -2 -.2'&gt;
+        &lt;!-- Test leading zeroes inserted between -. values: translation='-.1 -2 -.2' --&gt;
+        &lt;<b>Shape</b>&gt;
+          &lt;<b>Text</b>  DEF='TextMessage' string='"Hello" "JSON!"'&gt;
+            &lt;<b>FontStyle</b>  justify='"MIDDLE" "MIDDLE"'/&gt;
+         &lt;/<b>Text</b>&gt;
+          &lt;<b>Appearance</b>&gt;
+            &lt;<b>Material</b> USE='MaterialLightBlue'/&gt;
+          &lt;/<b>Appearance</b>&gt;
+        &lt;/<b>Shape</b>&gt;
+      &lt;/<b>Transform</b>&gt;
+    &lt;/<b>Group</b>&gt;
+  &lt;/<b>Scene</b>&gt;
+&lt;/<b>X3D</b>&gt;
+</pre>
+                    </td>
+                    <td>
+                        <p>
+                            <a href="http://www.web3d.org/x3d/content/examples/Basic/development/TestJsonEncoding.x3d">TestJsonEncoding.x3d</a>
+                            source, <br />
+                            <a href="http://www.web3d.org/x3d/content/examples/Basic/development/TestJsonEncoding.html">TestJsonEncoding.html</a>
+                            pretty-print, and <br />
+                            <a href="http://www.web3d.org/x3d/content/examples/Basic/development/TestJsonEncoding.xhtml">TestJsonEncoding.xhtml</a>
+                            using X3DOM
+                        </p>
+                    </td>
+                </tr>
+                <tr align="left">
+                    <th width="50%"> 
+                        <a name="TestJsonEncoding.json"> </a>
+                        <b>Source excerpts, .x3d and .json</b> 
+                    </th>
+                    <th width="50%"> 
+                        <b>Notes</b> 
+                        <a href="#Examples">
+                            <!-- width="160" height="160" -->
+                           <img src="images/json/json160.gif" width="24" height="24" border="0" title="to Examples list" alt="to Examples list" align="right"/>
+                        </a>
+                    </th>
+                </tr>
+                <tr valign="top">
+                    <td>
+<pre>{ "<b>X3D</b>": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"<a href="http://www.web3d.org/specifications/x3d-3.3.xsd">http://www.web3d.org/specifications/x3d-3.3.xsd</a>",
+    "JSON schema":"<a href="http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json">http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json</a>",
+    "<b>head</b>": {
+        "<b>component</b>": [
+          {
+            "@name":"CADGeometry",
+            "@level":1
+          },
+          {
+            "@name":"H-Anim",
+            "@level":1
+          }
+        ],
+        "<b>unit</b>": [
+          {
+            "@name":"Yards",
+            "@category":"length",
+            "@conversionFactor":0.9144
+          },
+          {
+            "@name":"Degrees",
+            "@category":"angle",
+            "@conversionFactor":0.0174532925167
+          }
+        ],
+        "<b>meta</b>": [
+          {
+            "@name":"title",
+            "@content":"TestJsonEncoding.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"29 March 2015"
+          },
+          {
+            "@name":"modified",
+            "@content":"3 November 2015"
+          },
+          {
+            "@name":"description",
+            "@content":"Test scene to ensure that X3dToJson xslt stylesheet translator
+                        properly converts X3D source into JavaScript Object Notation (JSON)."
+          },
+          {
+            "@name":"reference",
+            "@content":"TestJsonEncoding.json"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/development/TestJsonEncoding.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/stylesheets/X3dToJson.xslt"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"17 March 2016"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene.
+                        Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "<b>Scene</b>": {
+        "-children":[
+          { "<b>#comment</b>":"excerpted from HelloWorld.x3d"
+          },
+          { "<b>Group</b>":
+            {
+              "-children":[
+                { "<b>Viewpoint</b>":
+                  {
+                    "@DEF":"ViewUpClose",
+                    "@centerOfRotation":[0,-1,0],
+                    "@description":"Hello world!",
+                    "@position":[0,-1,7]
+                  }
+                },
+                { "<b>Transform</b>":
+                  {
+                    "@rotation":[0,1,0,3],
+                    "-children":[
+                      { "<b>Shape</b>":
+                        {
+                          "-geometry":
+                            { "<b>Sphere</b>":
+                              {
+                              }
+                            },
+                          "-appearance":
+                            { "<b>Appearance</b>":
+                              {
+                                "-children":[
+                                  { "<b>#comment</b>":"Test leading zeroes inserted before 
+                                        (and trailing zeroes inserted after) decimal points: diffuseColor='.1 0.5 1.'"
+                                  }
+                                ],
+                                "-material":
+                                  { "<b>Material</b>":
+                                    {
+                                      "@DEF":"MaterialLightBlue",
+                                      "@diffuseColor":[0.1,0.5,1.0]
+                                    }
+                                  },
+                                "-texture":
+                                  { "<b>ImageTexture</b>":
+                                    {
+                                      "@DEF":"ImageCloudlessEarth",
+                                      "@url":[
+"earth-topo.png","earth-topo.jpg","earth-topo-small.gif",
+"http://www.web3d.org/x3d/content/examples/Basic/earth-topo.png",
+"http://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg",
+"http://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                },
+                { "<b>Transform</b>":
+                  {
+                    "@translation":[-0.1,-2,-0.2],
+                    "-children":[
+                      { "<b>#comment</b>":"Test leading zeroes inserted between -. values: translation='-.1 -2 -.2'"
+                      },
+                      { "<b>Shape</b>":
+                        {
+                          "-geometry":
+                            { "<b>Text</b>":
+                              {
+                                "@DEF":"TextMessage",
+                                "@string":["Hello","JSON!"],
+                                "-fontStyle":
+                                  { "<b>FontStyle</b>":
+                                    {
+                                      "@justify":["MIDDLE","MIDDLE"]
+                                    }
+                                  }
+                              }
+                            },
+                          "-appearance":
+                            { "<b>Appearance</b>":
+                              {
+                                "-material":
+                                  { "<b>Material</b>":
+                                    {
+                                      "@USE":"MaterialLightBlue"
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}
+</pre>
+                    </td>
+                    <td>
+                        <p>
+                            <a href="http://www.web3d.org/x3d/content/examples/Basic/development/TestJsonEncoding.json">TestJsonEncoding.json</a>
+                        </p>
+                        <p>
+                            Comments are treated as a unique-key array of objects, which appears before other child elements. 
+                        </p>
+                        <p>
+                            Attributes with default values are omitted for clarity.
+                        </p>
+                        <p>
+                            Line breaks inserted in url arrays for readability.
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        
+        <!-- =================================================== -->
+        
+        <h4>
+            <a name="OrigamiCranes">Origami Cranes Example</a>
+            <a href="#Examples">
+                <!-- width="160" height="160" -->
+               <img src="images/json/json160.gif" width="24" height="24" border="0" title="to Examples list" alt="to Examples list" align="right"/>
+            </a>
+        </h4>
+        <table border="1" cellspacing="2" cellpadding="2">
+            <thead>
+                <tr align="left">
+                    <th width="50%"> <b>Source excerpts, .x3d and .json</b> </th>
+                    <th width="50%"> <b>Notes</b> </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr valign="top">
+                    <td>
+<pre>
+&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd"&gt;
+&lt;<b>X3D</b> profile='Interactive' version='3.3'
+     xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance'
+     xsd:noNamespaceSchemaLocation='<a href="http://www.web3d.org/specifications/x3d-3.3.xsd">http://www.web3d.org/specifications/x3d-3.3.xsd</a>'&gt;
+  &lt;<b>head</b>&gt;
+    &lt;<b>meta</b> content='OrigamiCranes.x3d' name='title'/&gt;
+    &lt;<b>meta</b> content='Origami Cranes with black/white contrast as art work for Black Swan game.'
+       name='description'/&gt;
+    &lt;<b>meta</b> content='2 November 2014' name='created'/&gt;
+    &lt;<b>meta</b> content='3 November 2015' name='modified'/&gt;
+    &lt;<b>meta</b> content='epicpopcorn' name='creator'/&gt;
+    &lt;<b>meta</b> content='http://www.turbosquid.com/FullPreview/Index.cfm/ID/598176' name='reference'/&gt;
+    &lt;<b>meta</b> content='crane.obj' name='reference'/&gt;
+    &lt;<b>meta</b> content='OrigamiCrane.ply' name='reference'/&gt;
+    &lt;<b>meta</b> content='Don Brutzman' name='translator'/&gt;
+    &lt;<b>meta</b> content='http://en.wikipedia.org/wiki/Swan' name='reference'/&gt;
+    &lt;<b>meta</b> content='http://en.wikipedia.org/wiki/Orizuru' name='reference'/&gt;
+    &lt;<b>meta</b> content='http://www.youtube.com/watch?v=CXwwPgMiEPc' name='reference'/&gt;
+    &lt;<b>meta</b> content='http://www.origami-make.com/howto-origami-swan.php' name='reference'/&gt;
+    &lt;<b>meta</b> content='http://origami.about.com/od/Origami-Animals/tp/How-To-Make-An-Origami-Swan.htm' 
+        name='reference'/&gt;
+    &lt;<b>meta</b> content='http://en.wikipedia.org/wiki/The_Black_Swan_(2007_book)' name='reference'/&gt;
+    &lt;<b>meta</b> content='http://en.wikipedia.org/wiki/Nassim_Nicholas_Taleb' name='reference'/&gt;
+    &lt;<b>meta</b> content='Making sense of The Black Swan por Mark Crovelli, quarta-feira, 18 de abril de 2012' 
+        name='reference'/&gt;
+    &lt;<b>meta</b> content='http://www.mises.org.br/Article.aspx?id=1284' name='reference'/&gt;
+    &lt;<b>meta</b> content='http://www.mises.org.br/images/articles/2012/Abril/black_swan.jpg' name='Image'/&gt;
+    &lt;<b>meta</b> content='OrigamiBlackSwanWhiteSwan.jpg' name='Image'/&gt;
+    &lt;<b>meta</b> content='http://x3dGraphics.com/examples/X3dForAdvancedModeling/Animation/OrigamiCranes.x3d' 
+               name='identifier'/&gt;
+    &lt;<b>meta</b> content='OrigamiCraneMeshlab.png' name='Image'/&gt;
+    &lt;<b>meta</b> content='Meshlab X3D Exported, http://meshlab.sourceforge.net' name='generator'/&gt;
+    &lt;<b>meta</b> content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/&gt;
+    &lt;<b>meta</b> content='http://support.turbosquid.com/entries/31030006-Royalty-Free-License?locale=1' 
+        name='license'/&gt;
+    &lt;<b>meta</b> content='../license.html' name='license'/&gt;
+  &lt;/<b>head</b>&gt;
+  &lt;<b>Scene</b>&gt;
+    &lt;<b>Background</b> groundAngle='1.5707' groundColor='1 1 1 1 1 1' skyAngle='0' skyColor='0 0 0 0 0 0'/&gt;
+    &lt;<b>NavigationInfo</b> type='"NONE"'/&gt;
+    &lt;<b>PointLight</b> intensity='0.3' location='0 2 6'/&gt;
+    &lt;<b>PointLight</b> intensity='0.3' location='0 -2 6'/&gt;
+    &lt;<b>Group</b> DEF='AnimatedView'&gt;
+      &lt;<b>Viewpoint</b> DEF='MovingPov' description='Rotating <b>Viewpoint</b>'/&gt;
+      &lt;<b>TimeSensor</b> DEF='PovClock' cycleInterval='60' loop='true'/&gt;
+      &lt;<b>PositionInterpolator</b> DEF='MovingPovLocation' key='0 0.125 0.25 0.375 0.5 0.625 0.75 0.875 1' 
+        keyValue='0 0 3 3 0 2 3 0 2 0 0 3 0 0 3 -3 0 2 -3 0 2 0 0 3 0 0 3'/&gt;   
+      &lt;<b>ROUTE</b> fromField='fraction_changed' fromNode='PovClock' toField='set_fraction' toNode='MovingPovLocation'/&gt;
+      &lt;<b>ROUTE</b> fromField='value_changed' fromNode='MovingPovLocation' toField='position' toNode='MovingPov'/&gt;
+      &lt;<b>OrientationInterpolator</b> DEF='MovingPovRotation' key='0 0.125 0.25 0.375 0.5 0.625 0.75 0.875 1' 
+        keyValue='0 1 0 0 0 1 0 0.982794 0 1 0 0.982794 0 1 0 0 0 1 0 0 0 1 0 -0.982794 0 1 0 -0.982794
+                  0 1 0 0 0 1 0 0'/&gt;
+      &lt;<b>ROUTE</b> fromField='fraction_changed' fromNode='PovClock' toField='set_fraction' toNode='MovingPovRotation'/&gt;
+      &lt;<b>ROUTE</b> fromField='value_changed' fromNode='MovingPovRotation' toField='set_orientation' toNode='MovingPov'/&gt;
+    &lt;/<b>Group</b>&gt;
+    &lt;<b>Viewpoint</b> description='Origami Cranes, from ahead' orientation='0 1 0 0.982794' position='3 0 2'/&gt;
+    &lt;<b>Viewpoint</b> description='Origami Cranes, mirror image' position='0 0 3'/&gt;
+    &lt;<b>Viewpoint</b> description='Origami Cranes, from behind' orientation='0 1 0 -0.982794' position='-3 0 2'/&gt;
+    &lt;<b>Transform</b> DEF='CraneAbove' rotation='0 1 0 1.745329'&gt;
+      &lt;!-- Rotation was necessary to point along X axis --&gt;
+      &lt;<b>Transform</b> DEF='TranslateToOrigin' translation='0.25 -0.18 -0.1'&gt;
+        &lt;<b>Shape</b> DEF='CraneShapeWhite'&gt;
+          &lt;<b>IndexedFaceSet</b> DEF='CraneIFS' coordIndex='0 1 2 -1 0 2 3 -1 4 5 2 -1  <i>[... omitted ...]</i>'
+                                    solid='false'&gt;
+            &lt;!-- Original model values are quite large, converted from inches to meters using factor 0.0254 to rescale, 
+                  wingtip is now 0.8m and length is 1.5m. --&gt;
+            &lt;<b>Coordinate</b> point='-0.39882 0.8134 0.63626 -0.33169 0.81323 0.53558 <i>[... omitted ...]</i>'/&gt;
+          &lt;/<b>IndexedFaceSet</b>&gt;
+          &lt;<b>Appearance</b>&gt; 
+            &lt;<b>Material</b> diffuseColor='0.9 0.9 0.9'/&gt;
+          &lt;/<b>Appearance</b>&gt;
+        &lt;/<b>Shape</b>&gt;
+      &lt;/<b>Transform</b>&gt;
+    &lt;/<b>Transform</b>&gt;
+    &lt;<b>Transform</b> DEF='CraneBelow' rotation='1 0 0 3.141593'&gt;
+      &lt;<b>Transform</b> rotation='0 1 0 1.745329'&gt;
+        &lt;<b>Transform</b> translation='0.25 -0.18 -0.1'&gt;
+          &lt;<b>Shape</b> DEF='CraneShapeBlack'&gt;
+            &lt;<b>IndexedFaceSet</b> USE='CraneIFS'/&gt;
+            &lt;<b>Appearance</b>&gt;
+              &lt;<b>Material</b> diffuseColor='0.15 0.15 0.15'/&gt;
+            &lt;/<b>Appearance</b>&gt;
+          &lt;/<b>Shape</b>&gt;
+        &lt;/<b>Transform</b>&gt;
+      &lt;/<b>Transform</b>&gt;
+    &lt;/<b>Transform</b>&gt;
+  &lt;/<b>Scene</b>&gt;
+&lt;/<b>X3D</b>&gt;
+</pre>
+                    </td>
+                    <td>
+                        <p>
+                            <a href="http://X3dGraphics.com/examples/X3dForAdvancedModeling/Animation/OrigamiCranes.x3d">OrigamiCranes.x3d</a>
+                            source, <br />
+                            <a href="http://X3dGraphics.com/examples/X3dForAdvancedModeling/Animation/OrigamiCranes.html">OrigamiCranes.html</a>
+                            pretty-print, and <br />
+                            <a href="http://X3dGraphics.com/examples/X3dForAdvancedModeling/Animation/OrigamiCranes.xhtml">OrigamiCranes.xhtml</a>
+                            using X3DOM
+                        </p>
+                    </td>
+                </tr>
+                <tr align="left">
+                    <th width="50%"> 
+                        <a name="OrigamiCranes.json"> </a>
+                        <b>Source excerpts, .x3d and .json</b> 
+                    </th>
+                    <th width="50%"> 
+                        <b>Notes</b> 
+                        <a href="#Examples">
+                            <!-- width="160" height="160" -->
+                           <img src="images/json/json160.gif" width="24" height="24" border="0" title="to Examples list" alt="to Examples list" align="right"/>
+                        </a>
+                    </th>
+                </tr>
+                <tr valign="top">
+                    <td>
+<pre>
+{ "<b>X3D</b>": {
+    "encoding":"UTF-8",
+    "@profile":"Interactive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"<a href="http://www.web3d.org/specifications/x3d-3.3.xsd">http://www.web3d.org/specifications/x3d-3.3.xsd</a>",
+    "JSON schema":"<a href="http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json">http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json</a>",
+    "<b>head</b>": {
+        "<b>meta</b>": [
+          {
+            "@name":"title",
+            "@content":"OrigamiCranes.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Origami Cranes with black/white contrast as art work for Black Swan game."
+          },
+          {
+            "@name":"created",
+            "@content":"2 November 2014"
+          },
+          {
+            "@name":"modified",
+            "@content":"11 November 2015"
+          },
+          {
+            "@name":"creator",
+            "@content":"epicpopcorn"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.turbosquid.com/FullPreview/Index.cfm/ID/598176"
+          },
+          {
+            "@name":"reference",
+            "@content":"crane.obj"
+          },
+          {
+            "@name":"reference",
+            "@content":"OrigamiCrane.ply"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://en.wikipedia.org/wiki/Swan"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://en.wikipedia.org/wiki/Orizuru"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.youtube.com/watch?v=CXwwPgMiEPc"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.origami-make.com/howto-origami-swan.php"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://origami.about.com/od/Origami-Animals/tp/How-To-Make-An-Origami-Swan.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://en.wikipedia.org/wiki/The_Black_Swan_(2007_book)"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://en.wikipedia.org/wiki/Nassim_Nicholas_Taleb"
+          },
+          {
+            "@name":"reference",
+            "@content":"Making sense of The Black Swan por Mark Crovelli, quarta-feira, 18 de abril de 2012"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.mises.org.br/Article.aspx?id=1284"
+          },
+          {
+            "@name":"Image",
+            "@content":"http://www.mises.org.br/images/articles/2012/Abril/black_swan.jpg"
+          },
+          {
+            "@name":"Image",
+            "@content":"OrigamiBlackSwanWhiteSwan.jpg"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://x3dGraphics.com/examples/X3dForAdvancedModeling/Animation/OrigamiCranes.x3d"
+          },
+          {
+            "@name":"Image",
+            "@content":"OrigamiCraneMeshlab.png"
+          },
+          {
+            "@name":"generator",
+            "@content":"Meshlab X3D Exported, http://meshlab.sourceforge.net"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"http://support.turbosquid.com/entries/31030006-Royalty-Free-License?locale=1"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"17 March 2016"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"warning",
+            "@content":"An experimental version of X3D JSON encoding is used for this scene
+                        Status online at http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "<b>Scene</b>": {
+        "-children":[
+          { "<b>Background</b>":
+            {
+              "@groundAngle":[1.5707],
+              "@groundColor":[1,1,1,1,1,1],
+              "@skyAngle":[0],
+              "@skyColor":[0,0,0,0,0,0]
+            }
+          },
+          { "<b>NavigationInfo</b>":
+            {
+              "@type":["NONE"]
+            }
+          },
+          { "<b>PointLight</b>":
+            {
+              "@intensity":0.3,
+              "@location":[0,2,6]
+            }
+          },
+          { "<b>PointLight</b>":
+            {
+              "@intensity":0.3,
+              "@location":[0,-2,6]
+            }
+          },
+          { "<b>Group</b>":
+            {
+              "@DEF":"AnimatedView",
+              "-children":[
+                { "<b>Viewpoint</b>":
+                  {
+                    "@DEF":"MovingPov",
+                    "@description":"Rotating Viewpoint"
+                  }
+                },
+                { "<b>TimeSensor</b>":
+                  {
+                    "@DEF":"PovClock",
+                    "@cycleInterval":60,
+                    "@loop":true
+                  }
+                },
+                { "<b>PositionInterpolator</b>":
+                  {
+                    "@DEF":"MovingPovLocation",
+                    "@key":[0,0.125,0.25,0.375,0.5,0.625,0.75,0.875,1],
+                    "@keyValue":[0,0,3,3,0,2,3,0,2,0,0,3,0,0,3,-3,0,2,-3,0,2,0,0,3,0,0,3]
+                  }
+                },
+                { "<b>ROUTE</b>":
+                  {
+                    "@fromField":"fraction_changed",
+                    "@fromNode":"PovClock",
+                    "@toField":"set_fraction",
+                    "@toNode":"MovingPovLocation"
+                  }
+                },
+                { "<b>ROUTE</b>":
+                  {
+                    "@fromField":"value_changed",
+                    "@fromNode":"MovingPovLocation",
+                    "@toField":"position",
+                    "@toNode":"MovingPov"
+                  }
+                },
+                { "<b>OrientationInterpolator</b>":
+                  {
+                    "@DEF":"MovingPovRotation",
+                    "@key":[0,0.125,0.25,0.375,0.5,0.625,0.75,0.875,1],
+                    "@keyValue":[0,1,0,0,0,1,0,0.982794,0,1,0,0.982794,0,1,0,0,0,1,0,0,
+                                 0,1,0,-0.982794,0,1,0,-0.982794,0,1,0,0,0,1,0,0]
+                  }
+                },
+                { "<b>ROUTE</b>":
+                  {
+                    "@fromField":"fraction_changed",
+                    "@fromNode":"PovClock",
+                    "@toField":"set_fraction",
+                    "@toNode":"MovingPovRotation"
+                  }
+                },
+                { "<b>ROUTE</b>":
+                  {
+                    "@fromField":"value_changed",
+                    "@fromNode":"MovingPovRotation",
+                    "@toField":"set_orientation",
+                    "@toNode":"MovingPov"
+                  }
+                }
+              ]
+            }
+          },
+          { "<b>Viewpoint</b>":
+            {
+              "@description":"Origami Cranes, from ahead",
+              "@orientation":[0,1,0,0.982794],
+              "@position":[3,0,2]
+            }
+          },
+          { "<b>Viewpoint</b>":
+            {
+              "@description":"Origami Cranes, mirror image",
+              "@position":[0,0,3]
+            }
+          },
+          { "<b>Viewpoint</b>":
+            {
+              "@description":"Origami Cranes, from behind",
+              "@orientation":[0,1,0,-0.982794],
+              "@position":[-3,0,2]
+            }
+          },
+          { "<b>Transform</b>":
+            {
+              "@DEF":"CraneAbove",
+              "@rotation":[0,1,0,1.745329],
+              "-children":[
+                { "#comment":"Rotation was necessary to point along X axis"
+                },
+                { "<b>Transform</b>":
+                  {
+                    "@DEF":"TranslateToOrigin",
+                    "@translation":[0.25,-0.18,-0.1],
+                    "-children":[
+                      { "<b>Shape</b>":
+                        {
+                          "@DEF":"CraneShapeWhite",
+                          "-geometry":
+                            { "<b>IndexedFaceSet</b>":
+                              {
+                                "@DEF":"CraneIFS",
+                                "@coordIndex":[0,1,2,-1,0,2,3,-1,4,5,2,-1,4,2,1,-1,
+                                  1,0,6,-1,7,2,8,-1,3,9,10,-1,11,12,13,-1,12,9,14,-1,
+                                  11,9,12,-1,15,2,7,-1,14,9,2,-1,7,10,15,-1,12,15,16,-1,
+                                  13,12,16,-1,14,15,12,-1,16,17,13,-1,13,17,11,-1,
+                                  15,14,2,-1,9,3,2,-1,1,6,4,-1,18,8,2,-1,5,19,20,-1,
+                                  21,22,23,-1,23,24,20,-1,21,23,20,-1,25,18,2,-1,
+                                  24,2,20,-1,18,25,19,-1,23,26,25,-1,22,26,23,-1,
+                                  24,23,25,-1,26,22,27,-1,22,21,27,-1,25,2,24,-1,20,2,5,-1],
+                                "@solid":false,
+                                "-children":[
+                                  { "<b>#comment</b>":"Original model values are quite large,
+                                       converted from inches to meters using factor 0.0254 to
+                                       rescale, wingtip is now 0.8m and length is 1.5m."
+                                  }
+                                ],
+                                "-coord":
+                                  { "<b>Coordinate</b>":
+                                    {
+                                      "@point":[-0.39882,0.8134,0.63626,
+                                       -0.33169,0.81323,0.53558,-0.2503,0.31524,
+                                       0.08395,-0.35153,0.19681,0.28621,-0.30394,
+                                       0.8134,0.65336,-0.22605,0.19681,0.30883,
+                                       -0.37413,0.67816,0.77105,-0.28707,0.18877,
+                                       -0.12428,-0.11107,0.78537,-0.68858,-0.40796,
+                                       0.34843,0.27538,-0.37208,0.32894,0.06357,
+                                       -0.45279,0.43502,0.29314,-0.37197,0.32891,
+                                       0.06359,-0.40743,0.43285,0.05396,-0.25021,
+                                       0.52642,0.08345,-0.33581,0.34187,-0.15904,
+                                       -0.36691,0.43174,-0.18336,-1.12733,0.86101,
+                                       -0.07052,-0.14315,0.18877,-0.09835,-0.12906,
+                                       0.32894,0.10737,-0.16939,0.34843,0.31838,
+                                       -0.13358,0.43502,0.35067,-0.09258,0.43285,
+                                       0.11071,-0.12918,0.32891,0.10735,-0.25021,
+                                       0.52642,0.08345,-0.08534,0.34187,-0.1139,
+                                       -0.0477,0.43174,-0.12584,0.62547,0.86101,0.24538]
+                                    }
+                                  }
+                              }
+                            },
+                          "-appearance":
+                            { "<b>Appearance</b>":
+                              {
+                                "-material":
+                                  { "<b>Material</b>":
+                                    {
+                                      "@diffuseColor":[0.9,0.9,0.9]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "<b>Transform</b>":
+            {
+              "@DEF":"CraneBelow",
+              "@rotation":[1,0,0,3.141593],
+              "-children":[
+                { "<b>Transform</b>":
+                  {
+                    "@rotation":[0,1,0,1.745329],
+                    "-children":[
+                      { "<b>Transform</b>":
+                        {
+                          "@translation":[0.25,-0.18,-0.1],
+                          "-children":[
+                            { "<b>Shape</b>":
+                              {
+                                "@DEF":"CraneShapeBlack",
+                                "-geometry":
+                                  { "<b>IndexedFaceSet</b>":
+                                    {
+                                      "@USE":"CraneIFS"
+                                    }
+                                  },
+                                "-appearance":
+                                  { "<b>Appearance</b>":
+                                    {
+                                      "-material":
+                                        { "<b>Material</b>":
+                                          {
+                                            "@diffuseColor":[0.15,0.15,0.15]
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}
+</pre>
+                    </td>
+                    <td>
+                        <p>
+                            <a href="http://X3dGraphics.com/examples/X3dForAdvancedModeling/Animation/OrigamiCranes.json">OrigamiCranes.json</a>
+                        </p>
+                        <p>
+                            Comments are treated as a unique-key array of objects, which appears before other child elements. 
+                        </p>
+                        <p>
+                            Note that the two ROUTE pairs which were not adjacent in the XML encoding are now collected together.
+                        </p>
+                        <p>
+                            Attributes with default values are omitted for clarity.
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- =================================================== -->
+
+        <h2><a name="Issues">Issues</a>
+            <a href="#top">
+               <!-- width="154" height="97" -->
+               <img src="images/x3d2-s.gif" width="50" height="32" border="0" title="to top" alt="to top" align="right"/>
+            </a>
+        </h2>
+
+        <p>
+            A variety of design issues continue to get investigated and addressed.  Most items are now complete.
+        </p>
+        
+        <p> 
+            As design patterns stabilize, X3D JSON loading and round-trip testing (<code>.x3d&nbsp;&lt;==&gt;&nbsp;.json</code>) are 
+            confirming that the right design correspondences have been implemented. 
+        </p>
+        
+        <h3> Completed work </h3>
+
+        <p>
+            The current stylesheet implementation handles the majority of conversion issues, including the following.
+        </p>
+        
+        <ul>
+            <li> 
+                XML elements (X3D nodes), XML attributes (X3D simple-type fields), comments. 
+            </li>
+            <li> 
+                Square and squiggly brackets, commas. 
+            </li>
+            <li>
+                Escaping quotation marks. 
+            </li>
+            <li> 
+                Handling of singleton numeric values. 
+            </li>
+            <li> 
+                Handling of MFVec arrays (simple-array form). 
+            </li>
+            <li> 
+                Adjacent nodes with identical containerField are collected in a single array.
+                This organization is crucial to meet the unique-field access requirement.
+            </li>
+            <li>
+                Biggest example: children nodes within grouping nodes, Scene or ProtoBody.
+                Outliers are also included - comments, prototypes, ROUTEs etc. 
+            </li>
+            <li> 
+                Omitting default attribute values is provided as an option.
+                Note that DEF, USE, and class are always included.
+            </li>
+            <li> 
+                In the XML encoding, omitting or including default containerField values is an author option.
+                However, in the JSON (and ClassicVRML) encodings, containerField values are 
+                necessary keys for each contained child SFNode/MFNode element or scene-graph statement. 
+            </li>
+            <li>
+                Handling of nested vector values in MFVec arrays, 
+                <br />
+                for example 
+                <code>"keyValue": [0,0,0,1,1,1,2,2,2],</code>
+                <br />
+                (simpler form is a better match for rendering usage)
+                <br />
+                instead of
+                <code>"keyValue": [ [0,0,0],[1,1,1],[2,2,2] ],</code>
+                <br />
+                (structured form has many more opportunities where hard-to-fix authoring errors can occur).
+            </li>
+            <li> 
+                JSON objects for head and Scene elements, JSON arrays for component, meta, and unit elements. 
+            </li>
+            <li> 
+                Proper handling and escaping of MFString array quoted values updated and reconfirmed.
+                Each X3D SFString/MFString and comment is converted into a quoted JSON string with any embedded quote marks escaped as <code>\&amp;quot;</code>. 
+            </li>
+            <li> 
+                Strictly differentiate typing of string/number/boolean values and arrays.
+                Currently accomplished deterministically with occasional heuristics, apparently that is sufficient. 
+                Proper typing makes JavaScript parsing simpler and more accurate. 
+            </li>
+            <li> 
+                Handle multiple sibling comments within a single element 
+            </li>
+            <li>
+                Whether X3D JSON scenes always need to start with the <code>X3D</code> element, or perhaps begin with the <code>Scene</code> element.
+                <ul>
+                    <li>
+                        Such flexibility initially looked appealing from a terseness perspective, but is not being supported due to several negative side effects.
+                    </li>
+                    <li>
+                        Source code to parse and process X3D JSON becomes more complex if an X3D object is not delivered.
+                    </li>
+                    <li>
+                        Version, profile, components and author metadata for the original scene is lost.
+                    </li>
+                </ul>
+            </li>
+            <li> 
+                Comments can be included anywhere in the X3D scene graph as a <code><b>#comment</b></code> string array.
+                Partial re-ordering may occur when multiple sibling comments are moved to appear prior to peer nodes.
+            </li>
+            <li> 
+                Preserving contained character-data (CDATA) text (principal example: contained Script source code)
+                as a <code>#sourceText</code> string array. 
+            </li>
+            <li> 
+                ProtoInterface is handled as an explicit JSON field output, handled similarly to ProtoBody as a contained JSON field key within ProtoDeclare.
+                This simplifies loading and maintains symmetry with XML encoding, which is important for serialization.
+            </li>
+            <li> 
+                ProtoBody child nodes and comments are always referenced by <code>-children</code> field.
+                This simplifies loading and maintains symmetry with XML encoding, which is important for serialization.
+            </li>
+            <li> 
+                Handling of <b><code>#comment</code></b> and <b><code>ROUTE</code></b> is similar to other <code>-children</code> nodes,
+                regardless of whether the parent X3D node allows other children nodes.
+                <ul>
+                    <li>
+                        This consistency of handling minimizes the re-ordering of comments and ROUTEs that otherwise occurs.
+                    </li>
+                    <li>
+                        <a href="http://web3d.org/pipermail/x3d-public_web3d.org/2016-January/004100.html">&quot;Edge-case&quot; comments</a>
+                        appearing before or after X3D node are not converted or moved, a warning is provided instead.
+                    </li>
+                    <li>
+                        TODO: a detailed comparison of comment handling in other X3D encodings and language bindings will be useful.
+                    </li>
+                </ul>
+            </li>
+            <li> 
+				<b>field</b> and <b>fieldValue</b> statements containing SFNode/MFNode content use the <code>-children</code> key.
+            </li>
+        </ul>
+        
+        <h3> TODO open issues and action items </h3>
+
+        <ul>
+            <li> 
+                Need to look at how <b>IMPORT</b> and <b>EXPORT</b> statements are presented in combination with <b>Inline</b> scenes.
+            </li>
+            <li>
+                Issue under general consideration for X3D: 
+                whether "NULL" is needed to indicate that no node is provided as one or more values within an MFNode array.
+                NULL is not needed for X3D SFNode fields,
+                since an author (or tool) can simply avoid listing that field. 
+                Further investigation needed to demonstrate whether or not use of JavaScript <code>null</code> is appropriate.
+            </li>
+            <li> 
+                Confirm correct handling of special characters (UTF-8, UTF-16, UTF-16) as part of file
+				<a href="#encoding">encoding</a>.  Stylesheet currently assumes UTF-8.
+            </li>
+            <li> 
+                Fully document round-trip testing using a JavaScript program for JSON-to-XML conversion,
+                in order to ensure completeness and correctness of round-trip data preservation.
+            </li>
+            <li> 
+                Test capabilities for parsing, rendering, serialization using 
+                <a href="http://www.x3dom.org">X3DOM</a>
+                and 
+                <a href="http://titania.create3000.de/cobweb">Cobweb</a>. 
+            </li>
+            <li> 
+                Test capabilities using various JavaScript rendering libraries:
+                <a href="http://d3js.org">D3.js</a>, 
+                <a href="http://threejs.org">three.js</a>, 
+                <a href="http://xml3d.org">XML3D</a>, 
+                WebGL source code, etc.  All JavaScript libraries for
+                3D&nbsp;visualization are relevant, important and welcome. 
+            </li>
+        </ul>
+        
+        <h3> Apparently not possible, not a problem, or not needed</h3>
+
+        <ul>
+            <li> 
+                <a name="comments"><i>Embedded JSON comments</i></a>.
+                <br />
+                Thousands of inquiries have been posted for many years why the JSON specification forbids comments.
+                (Examples:
+                <a href="http://www.quora.com/How-do-I-write-comments-inside-a-JSON-document">Native comments are intentionally avoided by JSON specification</a>
+                and
+                <a href="http://stackoverflow.com/questions/244777/can-i-use-comments-inside-a-json-file">Can I use comments inside a JSON file?</a>)
+                Without providing a rationale, the suggested JavaScript approach is to use <code>JSON.minify()</code> to strip comments.
+                <!-- TODO has there ever been justification for this JSON restriction? So far, none found. -->
+                <br/>
+                Nevertheless, comments are an important capability in the X3D specification.
+                Round-trippable inclusion of comments are an important optional custom feature of 
+                this X3D encoding.  In order to best align JSON with X3D, comments are treated as first-class objects.
+            </li>
+            <li> 
+                <i>No JSON-unique header</i>.
+                <br />
+                At present, <code>{ "X3D" {</code> identifies the beginning of an X3D JSON object, 
+                with no <code><b>#comment</b></code> entries allowed externally.
+                Leaving the output JSON as simple as possible avoids code problems and
+                provides programmers with the greatest possible flexibility.  Further
+                practice and analysis will show if a JSON header is needed; probably a non-problem. 
+            </li>
+            <li> 
+                <i>DOCTYPE information is dropped</i>.
+                <br />
+                Loss of DOCTYPE from the originating XML document is a commonplace aspect for XSLT transformations,
+                and meanwhile does not appear to be needed in the JSON encoding.
+                If actually needed by someone,
+                <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation">X3D DOCTYPE validation</a>
+                information can be reconstructed simply by using the X3D version number.
+            </li>
+            <li> 
+                Not working but no longer needed: stylesheet option for suppression of default attribute values inserted by 
+                <a href="http://stackoverflow.com/questions/11749319/how-can-i-ignore-the-doctype-declaration-with-xsl">XML parser reading DOCTYPE</a>.
+                For processing with this stylesheet, the 
+                <a href="http://saxonica.com/documentation9.0/using-xsl/commandline.html">Saxon command-line option</a>
+                expand:off is applied (but apparently doesn't always work).
+            </li>
+        </ul>
+        
+        <hr />
+
+        <!-- =================================================== -->
+
+        <h2><a name="Options">Options and Invocation</a>
+            <a href="#top">
+               <!-- width="154" height="97" -->
+               <img src="images/x3d2-s.gif" width="50" height="32" border="0" title="to top" alt="to top" align="right"/>
+            </a>
+        </h2>
+        
+        <p>
+            Stylesheet options and default values:
+        </p>
+<pre>
+    &lt;xsl:param name="<b>stripComments</b>"&gt;&lt;xsl:text&gt;<b>false</b>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
+    &lt;xsl:param name="<b>stripDefaultAttributes</b>"&gt;&lt;xsl:text&gt;<b>true</b>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
+    &lt;xsl:param name="<b>indentEnabled</b>"&gt;&lt;xsl:text&gt;<b>true</b>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
+    &lt;xsl:param name="<b>sourceText</b>"&gt;&lt;xsl:text&gt;<b>strings</b>&lt;/xsl:text&gt;&lt;/xsl:param&gt; &lt;!-- escaped | strings | plaintext --&gt;
+    &lt;xsl:param name="<b>traceEnabled</b>"&gt;&lt;xsl:text&gt;<b>false</b>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
+    &lt;xsl:param name="<b>traceScripts</b>"&gt;&lt;xsl:text&gt;<b>false</b>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
+</pre>
+
+        <p>
+            <!-- width="444" height="316" -->
+            <a href="https://savage.nps.edu/X3D-Edit/images/X3dToJsonConversionPanel.png"><img src="https://savage.nps.edu/X3D-Edit/images/X3dToJsonConversionPanel.png" width="177" height="128" border="0" title="X3D-Edit conversion pane" alt="X3D-Edit conversion pane" align="right"/></a>
+               
+            The <b>sourceText</b> options govern the output mode of <code>#sourceText</code> code embedded in
+            <a href="http://www.web3d.org/x3d/content/X3dTooltips.html#Script" target="_blank">Script</a>, 
+            <a href="http://www.web3d.org/x3d/content/X3dTooltips.html#ShaderPart" target="_blank">ShaderPart</a>
+            and 
+            <a href="http://www.web3d.org/x3d/content/X3dTooltips.html#ShaderProgram" target="_blank">ShaderProgram</a>
+            nodes.
+        </p>
+        <ul>
+            <li> 
+                &nbsp;&nbsp;<b>escaped</b>: line feeds replaced by <code>\n</code> character, thus a single line results
+            </li>
+            <li>
+                &nbsp;&nbsp;&nbsp;&nbsp;<b>strings</b>: array of single-line strings that are reassembled into original text
+            </li>
+            <li> 
+                <b>plaintext</b>: no modifications, line&nbsp;feed and tab characters remain unmodified
+            </li>
+        </ul>
+        <p>
+            XSLT stylesheets are reusable and can be invoked by a wide variety of tools and programming languages.
+        </p>
+        
+        <hr />
+
+        <!-- =================================================== -->
+
+        <h2><a name="References">References</a>
+            <a href="#top">
+               <!-- width="154" height="97" -->
+               <img src="images/x3d2-s.gif" width="50" height="32" border="0" title="to top" alt="to top" align="right"/>
+            </a>
+        </h2>
+
+        <p>
+                Essential references
+        </p>
+        <ul>
+            <li>
+				<a href="http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding" target=_blank">X3D JSON Encoding</a>,
+				X3D Working Group. 
+            </li>
+            <li>
+				<a name="JsonEncodingForX3dPaper">Roy Walmsley, Don Brutzman and John Carlson,</a>
+				<a href="http://www.web3d.org/specifications/java/references/BrutzmanWalmsleyCarlsonJsonEncodingForX3dJuly2016.pdf" target=_blank">A JSON Encoding for X3D</a>",
+				<a href="http://web3d2016.web3d.org" target=_blank">Web3D 2016 Conference</a>,
+				Anaheim California, 22-24 July 2016. 
+            </li>
+            <li>
+                <a href="http://www.json.org" target=_blank">Introducing JSON</a>
+                describes JSON design goals, grammar and syntax.
+            </li>
+            <li>
+                Douglas Crockford,
+                <a href="http://shop.oreilly.com/product/9780596517748.do">JavaScript: The Good Parts</a>,
+                O'Reilly and Associates, Sebastopol California, May 2008.
+                Includes summary chapter on JSON and extensive detail on effective JavaScript usage.
+            </li>
+            <li>
+                <a href="http://www.ecma-international.org/publications/standards/Ecma-404.htm" target=_blank">JSON Data Interchange Format</a>
+                (<a href="http://www.ecma-international.org/publications/files/ecma-st/ECMA-404.pdf">.pdf</a>),
+                ECMA Standard ECMA-404, first edition, October 2013.
+            </li>
+            <li>
+                <a href="https://tools.ietf.org/html/rfc7159">JavaScript Object Notation (JSON) Data Interchange Format</a>,
+                Tim Bray, editor,
+                Internet Engineering Task Force (IETF),
+                Request for Comments (RFC)&nbsp;7159,
+                March&nbsp;2014.
+                
+                    RFC 7159 notes media type information for JSON. Further goals are to 
+                    "remove inconsistencies with other specifications of JSON, and 
+                    highlight practices that can lead to interoperability problems."
+                    It provides examples demonstrating lack of interoperability among 
+                    JSON parsers, generators and tools for values, objects, arrays, numbers, strings, and booleans. 
+                    It also shows how to avoid such problems. Thus it is an important reference for the X3D encoding of JSON, 
+                    and likely needs to be considered normative.
+            </li>
+        </ul>
+
+        <p>
+                Additional references
+        </p>
+        <ul>
+            <li>
+                <a href="http://www.ecma-international.org/ecma-262/6.0">ECMAScript 2015 Language Specification</a>
+               (<a href="http://www.ecma-international.org/publications/files/ecma-st/ECMA-262.pdf">.pdf</a>),
+                ECMA Standard ECMA-262, sixth edition, June 2015.
+            </li>
+            <li>
+                <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#JavaScript">X3D Scene Authoring Hints: JavaScript (ECMAScript) Resources</a>
+            </li>
+            <li>
+                <a href="https://tools.ietf.org/html/rfc7515">JSON Web Security (JWS)</a>,
+                M. Jones, J. Bradley and N. Sakimura, editors,
+                Internet Engineering Task Force (IETF),
+                Request for Comments (RFC)&nbsp;7515,
+                May&nbsp;2015.
+            </li>
+            <li>
+                <a href="https://tools.ietf.org/html/rfc7516">JSON Web Encryption (JWE)</a>,
+                M. Jones and J. Hildebrand, editors,
+                Internet Engineering Task Force (IETF),
+                Request for Comments (RFC)&nbsp;7516,
+                May&nbsp;2015.
+            </li>
+			<li>
+				<a href="http://www.json-schema.org">JSON Schema</a> home page
+			</li>
+        </ul>
+        
+        <hr />
+
+        <!-- =================================================== -->
+
+        <h2><a name="RelatedWork">Related Work</a>
+            <a href="#top">
+               <!-- width="154" height="97" -->
+               <img src="images/x3d2-s.gif" width="50" height="32" border="0" title="to top" alt="to top" align="right"/>
+            </a>
+        </h2>
+        
+        <p>
+            John Carlson has provided numerous insights and made many contributions during this group effort.
+            He reports:
+        </p>
+            
+        <blockquote>
+            I have created a JSON loader for X3DOM that load JSON across the WWW.
+            <br />
+            <a href="https://github.com/coderextreme/X3DJSONLD">https://github.com/coderextreme/X3DJSONLD</a>
+           (including a
+            <a href="https://github.com/coderextreme/X3DJSONLD/blob/master/Pseudo.md">Pseudocode</a>
+            description).
+        </blockquote>
+        
+        <blockquote>
+            Warning: under active development!
+            This has  been tested on a number of scenes in the Web3D Examples archives.
+            Particular caution: a number of objects are still in the global scope of JavaScript.
+        </blockquote>
+        
+        <blockquote>
+            Suggestions and contributions are welcome.
+            As usual, forks of the
+            <a href="https://github.com/coderextreme/X3DJSONLD">repository</a>
+            and pull requests for potential changes are welcome if authors agree to the 
+            <a href="https://github.com/coderextreme/X3DJSONLD/blob/master/LICENSE">license</a>.
+        </blockquote>
+        
+        <blockquote>
+            Now available:
+            the X3D JSON Loader has a
+            <a href="https://github.com/coderextreme/X3DJSONLD/blob/master/README.pdf">README</a>
+            and
+            <a href="https://github.com/coderextreme/X3DJSONLD/blob/master/GettingStarted.pdf">Getting Started</a>
+            guide for this Application Programming Interface (API).
+            Excerpts follow.
+        </blockquote>
+            
+        <blockquote style="background-color:lightgrey ;">
+            <p align="center">
+                <b>Introducing:  the X3D JSON Loader (1.0 beta) and X3D JSON Prototype Expander (1.0 alpha)</b>
+            </p>
+            
+            <p>
+                For web browser testing, a live development version of the X3D JSON loader is recommended by downloading locally or forking.
+                
+            </p>
+            <p>
+                To use the JSON loader in your HTML, put:
+            </p>
+<pre>
+     &lt;script type="text/javascript" src="https://raw.githubusercontent.com/coderextreme/X3DJSONLD/master/X3DJSONLD.js"&gt;&lt;/script&gt;
+</pre>
+            <p>
+                Then somewhere in the script afterwards (see 
+                <a href="https://raw.githubusercontent.com/coderextreme/X3DJSONLD/master/index.html">index.html</a>
+                for example usage) call
+            </p>
+<pre>
+     loadX3DJS(selector, json, url, xml);
+</pre>
+            <p>
+                where
+            </p>
+            <ul>
+                <li>
+                    <code>selector</code> is the CSS selector which you want to append the X3DOM HTML code to.
+                </li>
+                <li>
+                    <code>json</code> is the X3D JSON you want to display.
+                </li>
+                <li>
+                    <code>url</code> is used for resolving URLs in the X3D JSON. 
+                    Should be similar or the same as the URL you passed to retrieve the JSON from the server.
+                </li>
+                <li>
+                    <code>xml</code> is the XML for inclusion into 
+                    <a href="http://titania.create3000.de/cobweb" target="_blank">Cobweb</a>.
+                </li>
+            </ul>
+            
+            <p>
+                Use <code>xml.join("")</code> when passing the <code>xml</code> object to <code>createX3DFromString()</code>
+            </p>
+            <p>
+                Sample code for putting Cobweb into an <code>iframe</code> with id <code>cobwebframe</code> (thank you Andreas Plesch):
+            </p>
+<pre>
+    var content = xml.join("");
+    var cobwebWindow = document.getElementById("cobwebframe").contentWindow ;
+    var cobwebEle = cobwebWindow.document.getElementById("x3dele");
+    if (typeof cobwebWindow.X3D !== 'undefined') {
+            var browser = cobwebWindow.X3D.getBrowser(cobwebEle);
+            browser.replaceWorld(browser.createX3DFromString(content));
+            // etc.
+    }
+</pre>
+            <p>
+                For the prototype expander, again use a live, development version (local copy recommended).  
+                (Modification ofExternProtoDeclare statements is not supported yet.)
+                Invocation:
+            </p>      
+<pre>
+    &lt;script type="text/javascript" src="https://raw.githubusercontent.com/coderextreme/X3DJSONLD/master/PrototypeExpander.js"&gt;&lt;/script&gt;
+
+    prototypeExpander(json, scope);
+</pre>
+            <p>
+                where
+            </p>
+            <ul>
+                <li>
+                    <code>json</code> is the X3DJSON you want to expand photos for (also modifies the parameter as output).
+                </li>
+                <li>
+                    <code>scope</code> is a scope string added to DEF name and id attributes for ROUTE fromNode and toNode attributes.
+                    The empty string &quot;&quot; is fine for a top-level call.
+                </li>
+            </ul>
+            <p>
+                There is useful code you may want to look at in 
+                <a href="https://github.com/coderextreme/X3DJSONLD/blob/master/index.html">index.html</a>
+                with long form at
+                <a href="https://github.com/coderextreme/X3DJSONLD/blob/master/X3DExamplesViewer.html">X3DExamplesViewer.html</a>.
+                These pages work when the X3D Examples are installed locally.
+            </p>
+        </blockquote>
+                
+        <p>
+            Community-visible efforts continue to test this library in tandem with the X3dToJson outputs.
+            Usage reports are helpful and influential, future automation of verification is also likely.
+        </p>
+        <p>
+            When we get the X3D JSON encoding fully stable (it is close now), future work is also under consideration.
+            John again reports:
+        </p>
+        
+        <blockquote>
+            I have investigated auto-generating a good portion of the JSON schema to avoid a lot of work.  
+            This will not replace eventual human intervention on editing a JSON schema, but is provided to bootstrap schema efforts.  
+            This uses 
+            <a href="https://github.com/highsource/jsonix">Jsonix</a>.
+            Generating data structure code from XSD using JAXB (or other) and then taking 
+            data structure and converting it to JSON schema using Jackson (or other) should be considered as an alternative.  
+            Jsonix does not provide for a good X3D JSON standard as there is a lot of differences in the mappings and 
+            in the schema each time is is run.  There are ways to support patterns in JAXB (JSR-303), 
+            which doesn’t come by default with Jsonix yet.  I am not sure how to implement patterns in JSON schema.  
+            This may depend on the difference between JSON regexes and XSD regexes.
+        </blockquote>
+        
+        <blockquote>
+            It is hoped that the X3D JSON standard will inform itself of the JSON schema standard, and will not 
+            deviate too far from existing tools in hopes of easing the burden of creating a JSON schema.
+            We should investigate Ajv and other JSON validators once we have a JSON schema.
+        </blockquote>
+        
+        <p>
+            Additional contributions:
+        </p>
+        <ul>
+            <li>
+                <a name="Muller">Cecile Muller</a> has done a lot of important design work for X3D JSON alternatives.
+                <p>
+                <ul>
+                    <li>
+                        Tradeoffs for multiple important issues are documented at
+                        <a href="https://github.com/wildpeaks/json-scenegraph" target="_blank">github.com/wildpeaks/json-scenegraph</a>
+                    </li>
+                    <li>
+                        Posed an 
+                        <a href="http://web3d.org/pipermail/x3d-public_web3d.org/2015-December/004041.html" target="_blank">alternative encoding</a>
+                        using a
+                        <a href="http://www.json5.org" target="_blank">JSON5</a> 
+                        approach.
+                    </li>
+                    <li>
+                        Example <code>node.js</code>
+                        <a href="https://gist.github.com/cecilemuller/efa310a5f2923ce360ba" target="_blank">console directions</a>
+                        that shows file loading plus JavaScript object references to X3D JSON data structures.
+                    </li>
+                </ul>
+                </p>
+            </li>
+            <li>
+                <a name="Jung">Yvonne Jung</a>, X3DOM
+            </li>
+            <li>
+                TODO much additional prior and related work has been accomplished, it will be referred to here.
+            </li>
+        </ul>
+        <p>
+            JavaScript libraries of related interest as potential users of X3D JSON:
+        </p>
+        <ul>
+            <li>
+                <a href="http://titania.create3000.de/cobweb" target="_blank">Cobweb</a>
+                is an X3D Browser entirely written in JavaScript that uses WebGL for 3D rendering.
+            </li>
+            <li>
+                <a href="http://www.d3js.org" target="_blank">D3.js Data-Driven Documents</a>
+                is a JavaScript library for manipulating documents based on data using HTML, SVG, and CSS.
+            </li>
+            <li>
+                <a href="http://www.scenejs.org" target="_blank">GLAM (GL And Markup)</a>
+                is a declarative language for 3D web content,
+                combining the power of WebGL JavaScript with markup tags and style properties.
+            </li>
+            <li>
+                <a href="http://www.scenejs.org" target="_blank">SceneJS</a> 
+                is an open-source WebGL-based 3D visualization engine from @xeoLabs.
+            </li>
+            <li>
+                <a href="http://www.threejs.org" target="_blank">threejs</a>
+                JavaScript 3D Library which makes WebGL simpler.
+            </li>
+            <li>
+                <a href="http://www.scenejs.org" target="_blank">XML3D</a>
+                design integrates 3D content into HTML pages, with structure based on the Document Object Model (DOM).
+            </li>
+            <li>
+                <a href="http://www.x3dom.org" target="_blank">x3dom</a>
+                (pronounced X-Freedom) is an open-source framework and run-time engine
+                for X3D graphics on the Web.
+            </li>
+            <li>
+                Others?
+            </li>
+        </ul>
+        
+        <hr />
+
+        <!-- =================================================== -->
+
+        <h2><a name="Tools">Tools</a>
+            <a href="#top">
+               <!-- width="154" height="97" -->
+               <img src="images/x3d2-s.gif" width="50" height="32" border="0" title="to top" alt="to top" align="right"/>
+            </a>
+        </h2>
+        
+        <p>
+            Specialized tools are in development to provide support for X3D JSON.
+        </p>
+        <ul>
+            <li>
+				<a href="https://github.com/coderextreme/X3DJSONLD">X3D JSON loader</a>
+                is being developed by John Carlson,
+				along with multiple error-detection and validation scripts.
+            </li>
+            <li>
+				<a href="http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json">X3D JSON schema</a>
+				is being developed by Roy Walmsley,
+				currently authored manually but soon to be autogenerated for each X3D version.
+            </li>
+            <li>
+                <a href="https://savage.nps.edu/X3D-Edit" target="_blank">X3D-Edit</a>
+                includes direct support for X3D to JSON conversion using this stylesheet,
+                complemented by
+                <a href="http://plugins.netbeans.org/plugin/40893/jslint" target="_blank">jslint</a>
+                and
+                <a href="http://plugins.netbeans.org/plugin/58580/jshint" target="_blank">jshint</a>
+                plugins.  A
+                <a href="https://savage.nps.edu/X3D-Edit/images/X3dToJsonConversionPanel.png">stylesheet conversion options pane</a>
+                is included.
+            </li>
+            <li>
+                Ant-based build scripts invoke this stylesheet, jslint and other
+                <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html#Conversions">X3D&nbsp;Quality Assurance (QA)</a>
+                tools to convert several thousand scenes in the
+                <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html#Examples">X3D&nbsp;Examples</a>
+                archives.
+            </li>
+            <li> 
+                The comprehensive collection of all JSON example scenes is available at
+                <a href="http://www.web3d.org/x3d/content/examples/X3dExampleArchivesJsonScenes.zip">X3dExampleArchivesJsonScenes.zip</a>
+               (<a href="http://www.web3d.org/x3d/content/examples/X3dExampleArchivesJsonScenes.zip.MD5">MD5&nbsp;checksum</a>)
+                plus current output from the X3D&nbsp;JSON build process at
+                <a href="http://www.web3d.org/x3d/content/examples/build.json.out">build.json.out</a>.
+            </li>
+            <li> 
+                Related support is maintained at 
+                <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html#Conversions">X3D Resources: Conversions and Translation Tools</a>.
+            </li>
+        </ul>
+        
+        <p>
+            Many tools are available for JSON.
+        </p>
+        <ul>
+            <li>
+                <a href="http://www.json.org" target=_blank">JSON.org</a>
+                lists numerous implementations, tools and resources for JSON.
+            </li>
+            <li>
+                <a href="http://www.jslint.com" target=_blank">jslint.com</a>
+                provides an online interface that finds duplicates, but also lets some JavaScript past.
+            </li>
+            <!-- not responding
+            <li>
+                <a href="http://www.jsonlint.com" target=_blank">Jsonlint.com</a>
+            </li>
+            -->
+            <li>
+                <a href="http://json-schema.org" target=_blank">JSON Schema</a>
+                site provides an Internet-Draft specification for JSON schema plus a variety of tools.
+            </li>
+            <li>
+                <a href="http://www.jsoneditoronline.org" target=_blank">JSON Editor Online</a>
+                provides color-coded editing, evaluation and saving of JSON data
+            </li>
+            <li>
+                <a href="https://igm.rit.edu/~jxs/services/JSON" target=_blank">JSON Explorer</a>
+                presents JSON data structures via url or source.
+            </li>
+            <li>
+                <a href="http://www.freeformatter.com/json-formatter.html" target=_blank">JSON Formatter</a>
+                provides selectable indentation options.
+            </li>
+            <li>
+                <a href="https://www.npmjs.com/package/jsonlint-lines" target=_blank">jsonlint-lines</a>
+                is an application that validates JSON with line numbers.
+            </li>
+            <li>
+                <a href="http://json.parser.online.fr" target=_blank">JSON Parser</a>
+                provides both color-coded tree viewing and the results of JavaScript <code>eval()</code>.
+            </li>
+            <li>
+                <a href="http://json-schema-validator.herokuapp.com" target=_blank">JSON Schema Validator</a>
+                allows checking of X3D JSON source by copying source from the
+				<a href="http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json">X3D JSON schema</a>.
+            </li>
+        </ul>
+        
+        <hr />
+
+        <!-- =================================================== -->
+
+        <h2><a name="Contact">Contact</a>
+            <a href="#top">
+               <img src="images/x3d2-s.gif" width="50" height="32" border="0" title="to top" alt="to top" align="right"/>
+            </a>
+        </h2>
+
+        <blockquote>
+            Discussions regarding X3D JSON Encoding design and usage occur on the
+            <a href="mailto:x3d-public@web3d.org?subject=X3D%20JSON%20Encoding">x3d-public@web3d.org</a> mailing list
+            (<a href="http://www.web3d.org/mailman/listinfo/x3d-public_web3d.org" target="_blank">subscribe</a>).
+        </blockquote>
+
+        <blockquote>
+            Questions, suggestions, additions and comments about this X3D to JSON Stylesheet Converter page are welcome.
+            Please send them to
+            <a href="http://faculty.nps.edu/brutzman" target="_blank">Don&nbsp;Brutzman</a>
+            (<a href="mailto:brutzman%20at%20nps.edu%20(Don%20Brutzman)?subject=feedback:%20X3D%20JSON%20conversion%20"><i>brutzman&nbsp;at&nbsp;nps.edu</i></a>).
+        </blockquote>
+
+        <blockquote>
+            Master version of this X3D to JSON Stylesheet Converter description page is available at
+            <br />
+            <a href="http://www.web3d.org/x3d/stylesheets/X3dToJson.html">http://www.web3d.org/x3d/stylesheets/X3dToJson.html</a>
+         </blockquote>
+
+        <blockquote>
+            Master version of this X3D to JSON Stylesheet Converter itself is available at
+            <br />
+            <a href="http://www.web3d.org/x3d/stylesheets/X3dToJson.xslt">http://www.web3d.org/x3d/stylesheets/X3dToJson.xslt</a>
+            <br />
+            and in version control at
+            <br />
+            <a href="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/X3dToJson.xslt">https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/X3dToJson.xslt</a>
+         </blockquote>
+        
+        <blockquote>
+            Updated: 6 May 2017
+        </blockquote>
+
+    </body>
+</html>

@@ -1,0 +1,656 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.1",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.1.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"CadGeometryExternPrototypes.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"This scene provides tool developers with X3D Amendment 1 CAD Component node prototypes, providing backwards compatibility with VRML97 and X3D v3.0."
+          },
+          {
+            "@name":"creator",
+            "@content":"Travis Rauch, Alan Shaffer, Mounir Sidhom, Patrick Sullivan and Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"28 April 2005"
+          },
+          {
+            "@name":"modified",
+            "@content":"26 October 2015"
+          },
+          {
+            "@name":"warning",
+            "@content":"Do not use these prototypes in an up-to-date X3D browser that already provides CAD support."
+          },
+          {
+            "@name":"information",
+            "@content":"Recommended practice: avoid using these prototypes, instead use native definitions for CAD nodes using an up-to-date X3D browser."
+          },
+          {
+            "@name":"information",
+            "@content":"These scenes are not intended for regular authoring - use X3D v3.2 CAD component instead. Example scenes using these prototypes do not get support for making embdedded metadata values visible at run time, though metadata can certainly be saved in the scene file OK."
+          },
+          {
+            "@name":"information",
+            "@content":"Example scenes using these prototypes do not get support for making embedded metadata values visible at run time, though separate metadata nodes can certainly be saved in the scene file OK."
+          },
+          {
+            "@name":"reference",
+            "@content":"CadGeometryPrototypes.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"CadTeapot.x3d"
+          },
+          {
+            "@name":"subject",
+            "@content":"CADAssembly CADFace CADLayer CADPart IndexedQuadSet QuadSet"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.web3d.org/files/specifications/19775-1/V3.3/Part01/components/CADGeometry.html"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/CAD/CadGeometryExternPrototypes.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"26 July 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "ExternProtoDeclare":
+            {
+              "@name":"IndexedQuadSet",
+              "@appinfo":"The IndexedQuadSet node represents a 3D shape composed of a collection of individual quadrilaterals (quads). IndexedQuadSet uses the indices in its index field to specify the vertices of each quad from the coord field. Each quad is formed from a set of four vertices of the Coordinate node identified by four consecutive indices from the index field If the index field does not contain a multiple of four coordinate values the remaining vertices shall be ignored.",
+              "@documentation":"http://www.web3d.org/x3d/specifications/ISO-IEC-19775-Amendment1-PDAM-X3DAbstractSpecification/Part01/components/CADGeometry.html#IndexedQuadSet",
+              "@url":["CadGeometryPrototypes.x3d#IndexedQuadSet","http://www.web3d.org/x3d/content/examples/Basic/CAD/CadGeometryPrototypes.x3d#IndexedQuadSet","CadGeometryPrototypes.wrl#IndexedQuadSet","http://www.web3d.org/x3d/content/examples/Basic/CAD/CadGeometryPrototypes.wrl#IndexedQuadSet"],
+              "field": [
+                {
+                  "@name":"set_index",
+                  "@accessType":"inputOnly",
+                  "@type":"MFInt32"
+                },
+                {
+                  "@name":"color",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"[X3DColorNode]",
+                  "@type":"SFNode"
+                },
+                {
+                  "@name":"coord",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"[X3DCoordinateNode]",
+                  "@type":"SFNode"
+                },
+                {
+                  "@name":"fogCoord",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"[FogCoordinate]",
+                  "@type":"SFNode"
+                },
+                {
+                  "@name":"normal",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"[X3DNormalNode]",
+                  "@type":"SFNode"
+                },
+                {
+                  "@name":"texCoord",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"[X3DTextureCoordinateNode]",
+                  "@type":"SFNode"
+                },
+                {
+                  "@name":"ccw",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"colorPerVertex",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"normalPerVertex",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"solid",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"index",
+                  "@accessType":"initializeOnly",
+                  "@type":"MFInt32"
+                },
+                {
+                  "@name":"metadata",
+                  "@accessType":"inputOutput",
+                  "@type":"SFNode"
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"==========================================="
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"QuadSet",
+              "@appinfo":"The QuadSet node represents a 3D shape that represents a collection of individual planar quadrilaterals. The coord field contains a Coordinate node that defines the 3D vertices that define the quad. Each quad is formed from a consecutive set of four vertices of the coordinate node. If the coordinate node does not contain a multiple of four coordinate values the remaining vertices shall be ignored.",
+              "@documentation":"http://www.web3d.org/x3d/specifications/ISO-IEC-19775-Amendment1-PDAM-X3DAbstractSpecification/Part01/components/CADGeometry.html#QuadSet",
+              "@url":["CadGeometryPrototypes.x3d#QuadSet","http://www.web3d.org/x3d/content/examples/Basic/CAD/CadGeometryPrototypes.x3d#QuadSet","CadGeometryPrototypes.wrl#QuadSet","http://www.web3d.org/x3d/content/examples/Basic/CAD/CadGeometryPrototypes.wrl#QuadSet"],
+              "field": [
+                {
+                  "@name":"attrib",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"[X3DVertexAttributeNode]",
+                  "@type":"MFNode"
+                },
+                {
+                  "@name":"color",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"[X3DColorNode]",
+                  "@type":"SFNode"
+                },
+                {
+                  "@name":"coord",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"[X3DCoordinateNode]",
+                  "@type":"SFNode"
+                },
+                {
+                  "@name":"fogCoord",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"[FogCoordinate]",
+                  "@type":"SFNode"
+                },
+                {
+                  "@name":"normal",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"[X3DNormalNode]",
+                  "@type":"SFNode"
+                },
+                {
+                  "@name":"texCoord",
+                  "@accessType":"inputOutput",
+                  "@appinfo":"[X3DTextureCoordinateNode]",
+                  "@type":"SFNode"
+                },
+                {
+                  "@name":"ccw",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"colorPerVertex",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"normalPerVertex",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"solid",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFBool"
+                },
+                {
+                  "@name":"metadata",
+                  "@accessType":"inputOutput",
+                  "@type":"SFNode"
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"========================================"
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"CADLayer",
+              "@appinfo":"The CADLayer node defines a hierarchy of nodes used for showing layer structure.",
+              "@documentation":"http://www.web3d.org/x3d/specifications/ISO-IEC-19775-Amendment1-PDAM-X3DAbstractSpecification/Part01/components/CADGeometry.html#CADLayer",
+              "@url":["CadGeometryPrototypes.x3d#CADLayer","http://www.web3d.org/x3d/content/examples/Basic/CAD/CadGeometryPrototypes.x3d#CADLayer","CadGeometryPrototypes.wrl#CADLayer","http://www.web3d.org/x3d/content/examples/Basic/CAD/CadGeometryPrototypes.wrl#CADLayer"],
+              "field": [
+                {
+                  "@name":"addChildren",
+                  "@accessType":"inputOnly",
+                  "@type":"MFNode"
+                },
+                {
+                  "@name":"removeChildren",
+                  "@accessType":"inputOnly",
+                  "@type":"MFNode"
+                },
+                {
+                  "@name":"children",
+                  "@accessType":"inputOutput",
+                  "@type":"MFNode"
+                },
+                {
+                  "@name":"name",
+                  "@accessType":"inputOutput",
+                  "@type":"SFString"
+                },
+                {
+                  "@name":"visible",
+                  "@accessType":"inputOutput",
+                  "@type":"MFBool"
+                },
+                {
+                  "@name":"bboxCenter",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"bboxSize",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"metadata",
+                  "@accessType":"inputOutput",
+                  "@type":"SFNode"
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"========================================"
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"CADAssembly",
+              "@appinfo":"The CADAssembly node holds a set of assemblies or parts grouped together.",
+              "@documentation":"http://www.web3d.org/x3d/specifications/ISO-IEC-19775-Amendment1-PDAM-X3DAbstractSpecification/Part01/components/CADGeometry.html#CADAssembly",
+              "@url":["CadGeometryPrototypes.x3d#CADAssembly","http://www.web3d.org/x3d/content/examples/Basic/CAD/CadGeometryPrototypes.x3d#CADAssembly","CadGeometryPrototypes.wrl#CADAssembly","http://www.web3d.org/x3d/content/examples/Basic/CAD/CadGeometryPrototypes.wrl#CADAssembly"],
+              "field": [
+                {
+                  "@name":"addChildren",
+                  "@accessType":"inputOnly",
+                  "@type":"MFNode"
+                },
+                {
+                  "@name":"removeChildren",
+                  "@accessType":"inputOnly",
+                  "@type":"MFNode"
+                },
+                {
+                  "@name":"children",
+                  "@accessType":"inputOutput",
+                  "@type":"MFNode"
+                },
+                {
+                  "@name":"name",
+                  "@accessType":"inputOutput",
+                  "@type":"SFString"
+                },
+                {
+                  "@name":"bboxCenter",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"bboxSize",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"metadata",
+                  "@accessType":"inputOutput",
+                  "@type":"SFNode"
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"========================================"
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"CADPart",
+              "@appinfo":"CADPart represents the location and faces that constitute a part",
+              "@documentation":"http://www.web3d.org/x3d/specifications/ISO-IEC-19775-Amendment1-PDAM-X3DAbstractSpecification/Part01/components/CADGeometry.html#CADPart",
+              "@url":["CadGeometryPrototypes.wrl#CADPart","http://www.web3d.org/x3d/content/examples/Basic/CAD/CadGeometryPrototypes.wrl#CADPart","CadGeometryPrototypes.x3d#CADPart","http://www.web3d.org/x3d/content/examples/Basic/CAD/CadGeometryPrototypes.x3d#CADPart"],
+              "field": [
+                {
+                  "@name":"addChildren",
+                  "@accessType":"inputOnly",
+                  "@type":"MFNode"
+                },
+                {
+                  "@name":"removeChildren",
+                  "@accessType":"inputOnly",
+                  "@type":"MFNode"
+                },
+                {
+                  "@name":"children",
+                  "@accessType":"inputOutput",
+                  "@type":"MFNode"
+                },
+                {
+                  "@name":"name",
+                  "@accessType":"inputOutput",
+                  "@type":"SFString"
+                },
+                {
+                  "@name":"translation",
+                  "@accessType":"inputOutput",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"rotation",
+                  "@accessType":"inputOutput",
+                  "@type":"SFRotation"
+                },
+                {
+                  "@name":"center",
+                  "@accessType":"inputOutput",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"scale",
+                  "@accessType":"inputOutput",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"scaleOrientation",
+                  "@accessType":"inputOutput",
+                  "@type":"SFRotation"
+                },
+                {
+                  "@name":"bboxCenter",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"bboxSize",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"metadata",
+                  "@accessType":"inputOutput",
+                  "@type":"SFNode"
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"========================================"
+          },
+          { "ExternProtoDeclare":
+            {
+              "@name":"CADFace",
+              "@appinfo":"The CADFace node holds the geometry representing a face of a part.",
+              "@documentation":"http://www.web3d.org/x3d/specifications/ISO-IEC-19775-Amendment1-PDAM-X3DAbstractSpecification/Part01/components/CADGeometry.html#CADFace",
+              "@url":["CadGeometryPrototypes.x3d#CADFace","http://www.web3d.org/x3d/content/examples/Basic/CAD/CadGeometryPrototypes.x3d#CADFace","CadGeometryPrototypes.wrl#CADFace","http://www.web3d.org/x3d/content/examples/Basic/CAD/CadGeometryPrototypes.wrl#CADFace"],
+              "field": [
+                {
+                  "@name":"name",
+                  "@accessType":"inputOutput",
+                  "@type":"SFString"
+                },
+                {
+                  "@name":"shape",
+                  "@accessType":"inputOutput",
+                  "@type":"SFNode"
+                },
+                {
+                  "@name":"bboxCenter",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"bboxSize",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFVec3f"
+                },
+                {
+                  "@name":"metadata",
+                  "@accessType":"inputOutput",
+                  "@type":"SFNode"
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"========================================"
+          },
+          { "Transform":
+            {
+              "@translation":[0,-2,0],
+              "-children":[
+                { "Anchor":
+                  {
+                    "@description":"CAD Teapot",
+                    "@url":["CadTeapot.x3d","http://www.web3d.org/x3d/content/examples/Basic/CAD/CadTeapot.x3d","CadTeapot.wrl","http://www.web3d.org/x3d/content/examples/Basic/CAD/CadTeapot.wrl"],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@string":["Example CAD structure nodes","are found in CadTeapot.x3d"],
+                                "-fontStyle":
+                                  { "FontStyle":
+                                    {
+                                      "@justify":["MIDDLE","MIDDLE"],
+                                      "@size":0.9
+                                    }
+                                  }
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[1,1,0.2]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[-3,2,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@DEF":"White",
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[1,1,1]
+                              }
+                            }
+                        }
+                      },
+                    "-geometry":
+                      { "ProtoInstance":
+                        {
+                          "@name":"IndexedQuadSet",
+                          "fieldValue": [
+                            {
+                              "@name":"index",
+                              "@value":[0,3,2,1,4,5,6,7,2,7,9,8,2,3,4,7]
+                            },
+                            {
+                              "@name":"coord",
+                              "-children":[
+                                { "Coordinate":
+                                  {
+                                    "@point":[-1.5,0,0,-1.5,1,-1,-0.5,1,-1,-0.5,0,0,0.5,0,0,1.5,0,0,1.5,1,-1,0.5,1,-1,-0.5,2,-1,0.5,2,-1]
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[3,2,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "@USE":"White"
+                        }
+                      },
+                    "-geometry":
+                      { "ProtoInstance":
+                        {
+                          "@name":"QuadSet",
+                          "fieldValue": [
+                            {
+                              "@name":"coord",
+                              "-children":[
+                                { "Coordinate":
+                                  {
+                                    "@point":[-1.5,0,0,-1.5,1,-1,-0.5,1,-1,-0.5,0,0,0.5,0,0,1.5,0,0,1.5,1,-1,0.5,1,-1]
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "#comment":"========================================"
+          },
+          {
+            "#comment":"Silence scene warnings by providing ordered ProtoInstance examples. Note warning above that this scene is for developmental use. The ProtoInstance form of the CAD nodes should not be used, native X3D encoding should be used instead."
+          },
+          { "ProtoInstance":
+            {
+              "@name":"CADLayer",
+              "fieldValue": [
+                {
+                  "@name":"children",
+                  "-children":[
+                    { "ProtoInstance":
+                      {
+                        "@name":"CADAssembly",
+                        "fieldValue": [
+                          {
+                            "@name":"children",
+                            "-children":[
+                              { "ProtoInstance":
+                                {
+                                  "@name":"CADPart",
+                                  "fieldValue": [
+                                    {
+                                      "@name":"children",
+                                      "-children":[
+                                        { "ProtoInstance":
+                                          {
+                                            "@name":"CADFace",
+                                            "fieldValue": [
+                                              {
+                                                "@name":"shape",
+                                                "-children":[
+                                                  { "Shape":
+                                                    {
+                                                      "-geometry":
+                                                        { "Cylinder":
+                                                          {
+                                                            "@bottom":false,
+                                                            "@height":0.000001,
+                                                            "@radius":0.000001,
+                                                            "@side":false
+                                                          }
+                                                        },
+                                                      "-appearance":
+                                                        { "Appearance":
+                                                          {
+                                                            "-material":
+                                                              { "Material":
+                                                                {
+                                                                }
+                                                              }
+                                                          }
+                                                        }
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

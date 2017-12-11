@@ -1,0 +1,341 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Interactive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"OrigamiCranes.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Origami Cranes with black/white contrast as art work for Black Swan game."
+          },
+          {
+            "@name":"created",
+            "@content":"2 November 2014"
+          },
+          {
+            "@name":"modified",
+            "@content":"11 November 2015"
+          },
+          {
+            "@name":"creator",
+            "@content":"epicpopcorn"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.turbosquid.com/FullPreview/Index.cfm/ID/598176"
+          },
+          {
+            "@name":"reference",
+            "@content":"crane.obj"
+          },
+          {
+            "@name":"reference",
+            "@content":"OrigamiCrane.ply"
+          },
+          {
+            "@name":"translator",
+            "@content":"Don Brutzman"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://en.wikipedia.org/wiki/Swan"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://en.wikipedia.org/wiki/Orizuru"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.youtube.com/watch?v=CXwwPgMiEPc"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.origami-make.com/howto-origami-swan.php"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://origami.about.com/od/Origami-Animals/tp/How-To-Make-An-Origami-Swan.htm"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://en.wikipedia.org/wiki/The_Black_Swan_(2007_book)"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://en.wikipedia.org/wiki/Nassim_Nicholas_Taleb"
+          },
+          {
+            "@name":"reference",
+            "@content":"Making sense of The Black Swan por Mark Crovelli, quarta-feira, 18 de abril de 2012"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://www.mises.org.br/Article.aspx?id=1284"
+          },
+          {
+            "@name":"Image",
+            "@content":"http://www.mises.org.br/images/articles/2012/Abril/black_swan.jpg"
+          },
+          {
+            "@name":"Image",
+            "@content":"OrigamiBlackSwanWhiteSwan.jpg"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://x3dGraphics.com/examples/X3dForAdvancedModeling/Animation/OrigamiCranes.x3d"
+          },
+          {
+            "@name":"Image",
+            "@content":"OrigamiCraneMeshlab.png"
+          },
+          {
+            "@name":"generator",
+            "@content":"Meshlab X3D Exported, http://meshlab.sourceforge.net"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"http://support.turbosquid.com/entries/31030006-Royalty-Free-License?locale=1"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"26 July 2017"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "Background":
+            {
+              "@groundAngle":[1.5707],
+              "@groundColor":[1,1,1,1,1,1],
+              "@skyAngle":[0],
+              "@skyColor":[0,0,0,0,0,0]
+            }
+          },
+          { "NavigationInfo":
+            {
+              "@type":["NONE"]
+            }
+          },
+          { "PointLight":
+            {
+              "@intensity":0.3,
+              "@location":[0,2,6]
+            }
+          },
+          { "PointLight":
+            {
+              "@intensity":0.3,
+              "@location":[0,-2,6]
+            }
+          },
+          { "Group":
+            {
+              "@DEF":"AnimatedView",
+              "-children":[
+                { "Viewpoint":
+                  {
+                    "@DEF":"MovingPov",
+                    "@description":"Rotating Viewpoint"
+                  }
+                },
+                { "TimeSensor":
+                  {
+                    "@DEF":"PovClock",
+                    "@cycleInterval":60,
+                    "@loop":true
+                  }
+                },
+                { "PositionInterpolator":
+                  {
+                    "@DEF":"MovingPovLocation",
+                    "@key":[0,0.125,0.25,0.375,0.5,0.625,0.75,0.875,1],
+                    "@keyValue":[0,0,3,3,0,2,3,0,2,0,0,3,0,0,3,-3,0,2,-3,0,2,0,0,3,0,0,3]
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"fraction_changed",
+                    "@fromNode":"PovClock",
+                    "@toField":"set_fraction",
+                    "@toNode":"MovingPovLocation"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"value_changed",
+                    "@fromNode":"MovingPovLocation",
+                    "@toField":"position",
+                    "@toNode":"MovingPov"
+                  }
+                },
+                { "OrientationInterpolator":
+                  {
+                    "@DEF":"MovingPovRotation",
+                    "@key":[0,0.125,0.25,0.375,0.5,0.625,0.75,0.875,1],
+                    "@keyValue":[0,1,0,0,0,1,0,0.982794,0,1,0,0.982794,0,1,0,0,0,1,0,0,0,1,0,-0.982794,0,1,0,-0.982794,0,1,0,0,0,1,0,0]
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"fraction_changed",
+                    "@fromNode":"PovClock",
+                    "@toField":"set_fraction",
+                    "@toNode":"MovingPovRotation"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"value_changed",
+                    "@fromNode":"MovingPovRotation",
+                    "@toField":"set_orientation",
+                    "@toNode":"MovingPov"
+                  }
+                }
+              ]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Origami Cranes, from ahead",
+              "@orientation":[0,1,0,0.982794],
+              "@position":[3,0,2]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Origami Cranes, mirror image",
+              "@position":[0,0,3]
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Origami Cranes, from behind",
+              "@orientation":[0,1,0,-0.982794],
+              "@position":[-3,0,2]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"CraneAbove",
+              "@rotation":[0,1,0,1.745329],
+              "-children":[
+                {
+                  "#comment":"Rotation was necessary to point along X axis"
+                },
+                { "Transform":
+                  {
+                    "@DEF":"TranslateToOrigin",
+                    "@translation":[0.25,-0.18,-0.1],
+                    "-children":[
+                      { "Shape":
+                        {
+                          "@DEF":"CraneShapeWhite",
+                          "-geometry":
+                            { "IndexedFaceSet":
+                              {
+                                "@DEF":"CraneIFS",
+                                "@coordIndex":[0,1,2,-1,0,2,3,-1,4,5,2,-1,4,2,1,-1,1,0,6,-1,7,2,8,-1,3,9,10,-1,11,12,13,-1,12,9,14,-1,11,9,12,-1,15,2,7,-1,14,9,2,-1,7,10,15,-1,12,15,16,-1,13,12,16,-1,14,15,12,-1,16,17,13,-1,13,17,11,-1,15,14,2,-1,9,3,2,-1,1,6,4,-1,18,8,2,-1,5,19,20,-1,21,22,23,-1,23,24,20,-1,21,23,20,-1,25,18,2,-1,24,2,20,-1,18,25,19,-1,23,26,25,-1,22,26,23,-1,24,23,25,-1,26,22,27,-1,22,21,27,-1,25,2,24,-1,20,2,5,-1],
+                                "@solid":false,
+                                "-children":[
+                                  {
+                                    "#comment":"Original model values are quite large, converted from inches to meters using factor 0.0254 to rescale, wingtip is now 0.8m and length is 1.5m."
+                                  }
+                                ],
+                                "-coord":
+                                  { "Coordinate":
+                                    {
+                                      "@point":[-0.39882,0.8134,0.63626,-0.33169,0.81323,0.53558,-0.2503,0.31524,0.08395,-0.35153,0.19681,0.28621,-0.30394,0.8134,0.65336,-0.22605,0.19681,0.30883,-0.37413,0.67816,0.77105,-0.28707,0.18877,-0.12428,-0.11107,0.78537,-0.68858,-0.40796,0.34843,0.27538,-0.37208,0.32894,0.06357,-0.45279,0.43502,0.29314,-0.37197,0.32891,0.06359,-0.40743,0.43285,0.05396,-0.25021,0.52642,0.08345,-0.33581,0.34187,-0.15904,-0.36691,0.43174,-0.18336,-1.12733,0.86101,-0.07052,-0.14315,0.18877,-0.09835,-0.12906,0.32894,0.10737,-0.16939,0.34843,0.31838,-0.13358,0.43502,0.35067,-0.09258,0.43285,0.11071,-0.12918,0.32891,0.10735,-0.25021,0.52642,0.08345,-0.08534,0.34187,-0.1139,-0.0477,0.43174,-0.12584,0.62547,0.86101,0.24538]
+                                    }
+                                  }
+                              }
+                            },
+                          "-appearance":
+                            { "Appearance":
+                              {
+                                "-material":
+                                  { "Material":
+                                    {
+                                      "@diffuseColor":[0.9,0.9,0.9]
+                                    }
+                                  }
+                              }
+                            }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"CraneBelow",
+              "@rotation":[1,0,0,3.141593],
+              "-children":[
+                { "Transform":
+                  {
+                    "@rotation":[0,1,0,1.745329],
+                    "-children":[
+                      { "Transform":
+                        {
+                          "@translation":[0.25,-0.18,-0.1],
+                          "-children":[
+                            { "Shape":
+                              {
+                                "@DEF":"CraneShapeBlack",
+                                "-geometry":
+                                  { "IndexedFaceSet":
+                                    {
+                                      "@USE":"CraneIFS"
+                                    }
+                                  },
+                                "-appearance":
+                                  { "Appearance":
+                                    {
+                                      "-material":
+                                        { "Material":
+                                          {
+                                            "@diffuseColor":[0.15,0.15,0.15]
+                                          }
+                                        }
+                                    }
+                                  }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

@@ -1,0 +1,615 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+
+<!-- =================================================================== -->
+
+<!-- embedded X3D scene appears after html/head/script and style entries -->
+
+<!-- =================================================================== -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/xml; charset=UTF-8"></meta>
+      <title>HelloWorldProgramOutput.x3d (X3dToX3dom.xslt X3DOM)</title>
+      <meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge"></meta>
+      <meta name="generator" content="http://www.web3d.org/x3d/stylesheets/X3dToX3dom.xslt"></meta>
+      
+      <!-- Numbered X3DOM release versions: http://www.x3dom.org/download -->
+      
+      <!-- Developer X3DOM release version: http://www.x3dom.org/download/dev -->
+      
+      <link rel="stylesheet" type="text/css" href="http://www.x3dom.org/download/dev/x3dom.css"></link>
+      <script type="text/javascript" src="http://www.x3dom.org/download/dev/x3dom-full.js"></script>
+      <meta name="warning" content="Webfonts must be loaded prior to using Text node in X3D scene... see http://x3dom.org/x3dom/example/x3dom_text.html"></meta>
+      <!-- X3DOM needs Web Fonts when an X3D Text node is included -->
+      
+      <!-- adapted from http://x3dom.org/x3dom/example/x3dom_text.html and http://web.mit.edu/jmorzins/www/fonts.html -->
+      <style type="text/css">
+/* ============================================================================= */
+@font-face {
+  font-family: 'SERIF'; /* default original */
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roman'), url('Roman.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'SERIF'; /* default alternate */
+  font-style: normal;
+  font-weight: 700;
+  src: local('Times New Roman'), local('TimesNewRoman'), url('Times New Roman.ttf') format('truetype');
+}
+/* ============================================================================= */
+@font-face {
+  font-family: 'SANS'; /* default original */
+  font-style: normal;
+  font-weight: 400;
+  src: local('Arial'), url('Arial.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'SANS'; /* default alternate */
+  font-style: normal;
+  font-weight: 400;
+  src: local('Helvetica'), url('Helvetica.ttf') format('truetype');
+}
+/* ============================================================================= */
+@font-face {
+  font-family: 'TYPEWRITER'; /* default original */
+  font-style: normal;
+  font-weight: 900;
+  src: local('Courier'), url('Courier.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'TYPEWRITER'; /* default alternate */
+  font-style: normal;
+  font-weight: 900;
+  src: local('Courier New'), url('Courier New.ttf') format('truetype');
+}
+/* ============================================================================= */
+</style><style type="text/css" media="screen, print">
+.webfont { font-size:200%; font-family:'TYPEWRITER'; color:green;} /* Conversion TODO font families: SANS SERIF TYPEWRITER */
+</style>
+      <!-- Button zoom adapted from http://x3dom.org/docs/dev/tutorial/styling.html -->
+      <style type="text/css">
+
+html {width:100%;height:100%;margin:0;padding:0;}
+body {margin:0;padding:10px;width:100%;height:100%;}
+
+#rootX3dElement {
+    height: 450px;
+    width:  800px;
+    border: none;
+    display: block;
+    position:relative;
+    background:#000;
+}
+
+#toggleZoomButton {
+    position: absolute;
+    float: left;
+    z-index: 1;
+    top: 0px;
+    left: 0px;
+    width: 10em;
+    height: 2em;
+    border: none;
+    background-color: #202021;
+    color: #ccc;
+}
+
+#toggleZoomButton:hover {
+    background-color:blue;
+}
+</style>
+      <!-- http://x3dom.org/docs/dev/api.html and http://x3dom.org/docs/dev/configuration.html -->
+      <script type="text/javascript">
+var zoomed = false;
+var showStatistics = false;
+var showDebugLog   = true;
+
+function toggleZoom(button) {
+
+        var new_height;
+        var new_width;
+        var x3d_element;
+        
+        htmlBody       = document.getElementById('htmlBody');
+        htmlPageHeader = document.getElementById('htmlPageHeader');
+        htmlPageFooter = document.getElementById('htmlPageFooter');
+        x3d_element    = document.getElementById('rootX3dElement');
+
+        if (zoomed) // previous value
+        {
+                // unzoom
+                new_height = "450px";
+                new_width  = "800px";
+                button.innerHTML = "Zoom";
+                htmlPageHeader.style.display = "table-row";
+                htmlPageFooter.style.display = "table-row";
+                document.getElementById('checkBoxCell').style="text-align:right";
+                htmlBody.style.padding = "10px";
+                x3d_element.showStat   = showStatistics;
+                x3d_element.showLog    = showDebugLog;
+                x3d_element.runtime.debug(showDebugLog);
+                document.getElementById("details").hidden = (!showDebugLog);
+        } else {
+                // zoom
+                new_height = "100%";
+                new_width  = "100%";
+                button.innerHTML = "Unzoom";
+                htmlPageHeader.style.display = "none";
+                htmlPageFooter.style.display = "none";
+                htmlBody.style.padding = "0px";
+                x3d_element.showStat   = false;
+                x3d_element.showLog    = false;
+                x3d_element.runtime.debug(false);
+                document.getElementById("details").hidden = true;
+                // TODO how to hide browser interface?
+        }
+        zoomed = !zoomed; // toggle
+
+        x3d_element.style.height = new_height;
+        x3d_element.style.width  = new_width;
+}
+                    
+    // Browser information table adapted from http://www.w3schools.com/js/js_window_navigator.asp
+    
+    document.addEventListener("DOMContentLoaded", function()
+    {
+        document.getElementById("browserCodeName"      ).innerHTML = navigator.appCodeName;
+        document.getElementById("browserAppName"       ).innerHTML = navigator.appName;
+        document.getElementById("browserAppVersion"    ).innerHTML = navigator.appVersion;
+        document.getElementById("browserCookieEnabled" ).innerHTML = navigator.cookieEnabled;
+        document.getElementById("browserPlatform"      ).innerHTML = navigator.platform;
+        document.getElementById("browserUserAgent"     ).innerHTML = navigator.userAgent;
+    if (navigator.systemLanguage)
+        document.getElementById("browserSystemLanguage").innerHTML = navigator.systemLanguage;
+    else
+        document.getElementById("browserSystemLanguage").innerHTML = navigator.language;
+    }, false);
+
+function toggleOverlayStatistics()
+{
+        showStatistics = !showStatistics; // toggle
+        x3d_element = document.getElementById('rootX3dElement');
+        x3d_element.runtime.statistics(showStatistics);
+}
+function toggleShowDebugLogs()
+{
+        showDebugLog  = !showDebugLog; // toggle
+        x3d_element = document.getElementById('rootX3dElement');
+        x3d_element.runtime.debug(showDebugLog);
+        document.getElementById("details").hidden = (!showDebugLog);
+}
+</script></head>
+   <body id="htmlBody">
+      
+      <table style="width:96%" id="htmlPageHeader">
+         <tr>
+            <td style="text-align:left;">
+               <h2>HelloWorldProgramOutput.x3d</h2>
+            </td>
+            <td id="checkBoxCell" style="text-align:right"> (<a href="http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d" title="View .x3d scene">.x3d scene</a>, 
+               <a href="http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.html" title="View .html pretty-print source">pretty-print source</a>, 
+               <input id="checkBoxOverlayStatistics" type="checkbox" value="Overlay scene statistics" onclick="toggleOverlayStatistics();"></input><span title="Overlay scene performance statistics">statistics</span>, 
+               <input id="checkBoxShowDebugLogs" type="checkbox" value="Display debugger logs" checked="checked" onclick="toggleShowDebugLogs();"></input><span title="Show meta information and debug logs">info &amp; logs</span>, <a href="http://www.x3dom.org" onclick="target='_blank';">X3DOM Player</a>)
+            </td>
+         </tr>
+         <tr>
+            <td colspan="2">
+               <p><span class="webfont">Example HelloWorldProgram creates an X3D model using the X3D Java Scene Access Interface (SAI) Library</span></p>
+            </td>
+         </tr>
+      </table>
+      
+      <div>
+         
+         <!-- ================================ -->
+         
+         <!-- embedded X3D scene appears here: -->
+         <X3D id='rootX3dElement' showStat='false' showLog='true' showProgress='bar'
+         profile='Immersive' version='3.3' noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
+         <head>
+         <component name='Navigation' level='3'/>
+         <component name='Layering' level='1'/>
+         <unit name='AngleUnitConversion' category='angle' conversionFactor='1.0'/>
+         <unit name='LengthUnitConversion' category='length' conversionFactor='1.0'/>
+         <meta name='title' content='HelloWorldProgramOutput.x3d'/>
+         <meta name='description' content='Example HelloWorldProgram creates an X3D model using
+         the X3D Java Scene Access Interface (SAI) Library'/>
+         <meta name='reference' content='http://www.web3d.org/specifications/java/X3DJSAIL.html'/>
+         <meta name='generator' content='HelloWorldProgramOutput.java'/>
+         <meta name='created' content='6 September 2016'/>
+         <meta name='modified' content='11 December 2017'/>
+         <meta name='generator' content='X3D Java Scene Access Interface Library (X3DJSAIL)'/>
+         <meta name='generator' content='http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java'/>
+         <meta name='generator' content='Netbeans http://www.netbeans.org'/>
+         <meta name='creator' content='Don Brutzman'/>
+         <meta name='reference' content='https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/java/examples/HelloWorldProgramOutput.x3d'/>
+         <meta name='reference' content='Console output, ClassicVRML encoding, VRML97 encoding
+         and pretty-print documentation:'/>
+         <meta name='reference' content='HelloWorldProgramOutput.txt'/>
+         <meta name='reference' content='HelloWorldProgramOutput.x3dv'/>
+         <meta name='reference' content='HelloWorldProgramOutput.wrl'/>
+         <meta name='reference' content='HelloWorldProgramOutput.html'/>
+         <meta name='X3dValidator' content='https://savage.nps.edu/X3dValidator?url=http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d'/>
+         <meta name='identifier' content='http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d'/>
+         <meta name='license' content='../license.html'/>
+         <meta name='SpecialTest' content='tested sat: name value cannot contain embedded space
+         character'/>
+         </head>
+         
+         <!-- Conversion note: the following HTML button is overlaid on top of the X3D scene -->
+         <button id="toggleZoomButton" onclick="toggleZoom(this); return false;">Zoom</button>
+         <Scene>
+         <ViewpointGroup description='Available viewpoints' containerField='children'>
+         <Viewpoint DEF='DefaultView' description='Hello X3DJSAIL'/>
+         <Viewpoint DEF='TopDownView' description='top-down view from above' orientation='1
+         0 0 -1.570796' position='0 100 0'/>
+         </ViewpointGroup>
+         <WorldInfo DEF='WorldInfoDEF' title='HelloWorldProgram produced by X3D Java SAI Library
+         (X3DJSAIL)'/>
+         <WorldInfo USE='WorldInfoDEF'/>
+         <WorldInfo USE='WorldInfoDEF'/>
+         <MetadataString DEF='scene.addChildMetadataObject' name='test' containerField='metadata'/>
+         <LayerSet DEF='scene.addChildLayerSetObjectTest' containerField='children'/>
+         <Transform DEF='LogoGeometryTransform' translation='0 1.5 0'>
+         <Anchor description='select for X3D Java SAI Library (X3DJSAIL) description' url='&quot;../X3DJSAIL.html&quot; &quot;http://www.web3d.org/specifications/java/X3DJSAIL.html&quot;'>
+         <Shape DEF='BoxShape'>
+         <Appearance>
+         <Material DEF='GreenMaterial' diffuseColor='0 1 1' emissiveColor='0.8 0 0' transparency='0.1'/>
+         <ImageTexture url='&quot;images/X3dJavaSceneAccessInterfaceSaiLibrary.png&quot; &quot;http://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png&quot;'/>
+         </Appearance>
+         <Box DEF='test-NMTOKEN_regex.0123456789' class='textured'/>
+         </Shape>
+         </Anchor>
+         </Transform>
+         <Shape DEF='LineShape'>
+         <Appearance>
+         <Material emissiveColor='0.6 0.19607843 0.8'/>
+         </Appearance>
+         <IndexedLineSet coordIndex='0 1 2 3 4 0'>
+         <Coordinate point='0 1.5 0 2 1.5 0 2 1.5 -2 -2 1.5 -2 -2 1.5 0 0 1.5 0'/>
+         </IndexedLineSet>
+         </Shape>
+         <PositionInterpolator DEF='BoxPathAnimator' key='0 0.125 0.375 0.625 0.875 1' keyValue='0
+         1.5 0 2 1.5 0 2 1.5 -2 -2 1.5 -2 -2 1.5 0 0 1.5 0'/>
+         <TimeSensor DEF='OrbitClock' cycleInterval='8.0' loop='true'/>
+         <ROUTE fromField='fraction_changed' fromNode='OrbitClock' toField='set_fraction' toNode='BoxPathAnimator'/>
+         <ROUTE fromField='value_changed' fromNode='BoxPathAnimator' toField='set_translation'
+         toNode='LogoGeometryTransform'/>
+         <Transform DEF='TextTransform' translation='0 -1.5 0'>
+         <Shape>
+         <Appearance>
+         <Material USE='GreenMaterial'/>
+         </Appearance>
+         <Text string='&quot;X3D Java&quot; &quot;SAI Library&quot; &quot;X3DJSAIL&quot;'>
+         <MetadataSet name='EscapedQuotationMarksMetadataSet' containerField='metadata'>
+         <MetadataString name='escapedQuotesTest1' containerField='value' value='&quot;escaped quotation marks example 1: He said, \&quot;Immel did it!\&quot;&quot;'/>
+         <MetadataString name='escapedQuotesTest2' containerField='value' value='&quot;escaped quotation marks example 2: He said, &amp;quot;Immel did it!&amp;quot;&quot;'/>
+         </MetadataSet>
+         <FontStyle justify='&quot;MIDDLE&quot; &quot;MIDDLE&quot;'/>
+         </Text>
+         </Shape>
+         <Collision>
+         <Shape DEF='ProxyShape' containerField='proxy'>
+         <Text string='&quot;One, Two, Three&quot; &quot;&quot; &quot;He said, \&quot;Immel did it!\&quot;&quot;'/>
+         </Shape>
+         </Collision>
+         </Transform>
+         <OrientationInterpolator DEF='SpinInterpolator' key='0 0.5 1' keyValue='0 1 0 4.712389
+         0 1 0 0 0 1 0 1.5707964'/>
+         <TimeSensor DEF='SpinClock' cycleInterval='5.0' loop='true'/>
+         <ROUTE fromField='fraction_changed' fromNode='SpinClock' toField='set_fraction' toNode='SpinInterpolator'/>
+         <ROUTE fromField='value_changed' fromNode='SpinInterpolator' toField='rotation' toNode='TextTransform'/>
+         <Group DEF='BackgroundGroup'>
+         <Background DEF='GradualBackground'/>
+         <Script DEF='colorTypeConversionScript'>
+         <field name='colorInput' accessType='inputOnly' type='SFColor'/>
+         <field name='colorsOutput' accessType='outputOnly' type='MFColor'/>
+         </Script>
+         <ColorInterpolator DEF='ColorAnimator' key='0 0.5 1' keyValue='0.9411765 1 1 0.29411766
+         0 0.50980395 0.9411765 1 1'/>
+         <TimeSensor DEF='ColorClock' cycleInterval='60.0' loop='true'/>
+         <ROUTE fromField='colorsOutput' fromNode='colorTypeConversionScript' toField='skyColor'
+         toNode='GradualBackground'/>
+         <ROUTE fromField='value_changed' fromNode='ColorAnimator' toField='colorInput' toNode='colorTypeConversionScript'/>
+         <ROUTE fromField='fraction_changed' fromNode='ColorClock' toField='set_fraction' toNode='ColorAnimator'/>
+         </Group>
+         <ProtoDeclare name='ArtDeco01Material' appinfo='tooltip: ArtDeco01Material prototype
+         is a Material node'>
+         <ProtoInterface>
+         <field name='description' accessType='inputOutput' appinfo='tooltip for descriptionField'
+         type='SFString' value='ArtDeco01Material prototype is a Material node'/>
+         <field name='enabled' accessType='inputOutput' type='SFBool' value='true'/>
+         </ProtoInterface>
+         <ProtoBody>
+         <Material ambientIntensity='0.25' diffuseColor='0.282435 0.085159 0.134462' shininess='0.127273'
+         specularColor='0.276305 0.11431 0.139857'/>
+         <TouchSensor description='within ProtoBody'>
+         <IS>
+         <connect nodeField='description' protoField='description'/>
+         <connect nodeField='enabled' protoField='enabled'/>
+         </IS>
+         </TouchSensor>
+         </ProtoBody>
+         </ProtoDeclare>
+         <ExternProtoDeclare name='ArtDeco02Material' appinfo='this is a different Material
+         node' url='&quot;http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material&quot; &quot;http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material&quot;'>
+         <field name='description' accessType='inputOutput' appinfo='tooltip for descriptionField'
+         type='SFString'/>
+         </ExternProtoDeclare>
+         <Shape DEF='TestShape1'>
+         <Appearance DEF='TestAppearance1'>
+         <ProtoInstance name='ArtDeco01Material' containerField='material'>
+         <fieldValue name='description' value='ArtDeco01Material can substitute for a Material
+         node'/>
+         </ProtoInstance>
+         </Appearance>
+         <Sphere radius='0.001'/>
+         </Shape>
+         <Shape DEF='TestShape2'>
+         <Appearance DEF='TestAppearance2'>
+         <ProtoInstance name='ArtDeco02Material' containerField='material'>
+         <fieldValue name='description' value='ArtDeco02Material can substitute for another
+         Material node'/>
+         </ProtoInstance>
+         </Appearance>
+         <Cone bottomRadius='0.001' height='0.001'/>
+         </Shape>
+         <Inline DEF='inlineSceneDef' url='&quot;someOtherScene.x3d&quot;'/>
+         <IMPORT AS='WorldInfoDEF2' importedDEF='WorldInfoDEF' inlineDEF='inlineSceneDef'/>
+         <EXPORT AS='WorldInfoDEF3' localDEF='WorldInfoDEF'/>
+         <ProtoDeclare name='MaterialModulator' appinfo='mimic a Material node and modulate
+         fields as an animation effect' documentation='http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html'>
+         <ProtoInterface>
+         <field name='enabled' accessType='inputOutput' type='SFBool' value='true'/>
+         <field name='diffuseColor' accessType='inputOutput' type='SFColor' value='0 0 0'/>
+         <field name='emissiveColor' accessType='inputOutput' type='SFColor' value='0.05 0.05
+         0.5'/>
+         <field name='specularColor' accessType='inputOutput' type='SFColor' value='0 0 0'/>
+         <field name='transparency' accessType='inputOutput' type='SFFloat' value='0.0'/>
+         <field name='shininess' accessType='inputOutput' type='SFFloat' value='0.0'/>
+         <field name='ambientIntensity' accessType='inputOutput' type='SFFloat' value='0.0'/>
+         </ProtoInterface>
+         <ProtoBody>
+         <Material DEF='MaterialNode'>
+         <IS>
+         <connect nodeField='diffuseColor' protoField='diffuseColor'/>
+         <connect nodeField='emissiveColor' protoField='emissiveColor'/>
+         <connect nodeField='specularColor' protoField='specularColor'/>
+         <connect nodeField='transparency' protoField='transparency'/>
+         <connect nodeField='shininess' protoField='shininess'/>
+         <connect nodeField='ambientIntensity' protoField='ambientIntensity'/>
+         </IS>
+         </Material>
+         <Script DEF='MaterialModulatorScript'>
+         <field name='enabled' accessType='inputOutput' type='SFBool'/>
+         <field name='diffuseColor' accessType='inputOutput' type='SFColor'/>
+         <field name='newColor' accessType='outputOnly' type='SFColor'/>
+         <field name='clockTrigger' accessType='inputOnly' type='SFTime'/>
+         <IS>
+         <connect nodeField='enabled' protoField='enabled'/>
+         <connect nodeField='diffuseColor' protoField='diffuseColor'/>
+         </IS>
+         </Script>
+         </ProtoBody>
+         </ProtoDeclare>
+         <Group DEF='DeclarativeGroupExample'>
+         <Shape>
+         <MetadataString DEF='FindableMetadataStringTest' name='findThisNameValue' value='&quot;test case&quot;' containerField='metadata'/>
+         <Appearance DEF='DeclarativeAppearanceExample'>
+         <ProtoInstance DEF='MyMaterialModulator' name='MaterialModulator' containerField='material'/>
+         </Appearance>
+         <Cone bottom='false' bottomRadius='0.05' height='0.1'/>
+         </Shape>
+         </Group>
+         <Group DEF='TestFieldObjectsGroup'/>
+         <Sound location='0 1.6 0'>
+         <AudioClip description='chimes' url='&quot;chimes.wav&quot; &quot;http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav&quot;'/>
+         </Sound>
+         <Sound location='0 1.6 0'>
+         <MovieTexture containerField='source' description='mpgsys.mpg from ConformanceNist
+         suite' url='&quot;mpgsys.mpg&quot; &quot;http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg&quot;'/>
+         </Sound>
+         <Shape DEF='ExtrusionShape'>
+         <Appearance DEF='TransparentAppearance'>
+         <Material transparency='1.0'/>
+         </Appearance>
+         <Extrusion DEF='ExampleExtrusion'/>
+         </Shape>
+         </Scene>
+         </X3D>
+         
+         
+         <!-- ================================ -->
+         
+      </div>
+      
+      <div id="details">
+         <p style="clear:both;">&nbsp;</p>
+         <table style="border:0px solid; border-spacing:0px; margin:auto; margin-top:20px;margin-left:5%;">
+            <tr style="background-color:silver; border-color:silver;">
+               <th style="text-align:right;">X3D&nbsp;Scene </th>
+               <th style="text-align:left;"> &nbsp; </th>
+               <th style="text-align:left;"> Metadata </th>
+            </tr>
+            <tr>
+               <td style="text-align:right;color:green">title</td>
+               <td> &nbsp; </td>
+               <td><a href="HelloWorldProgramOutput.x3d">HelloWorldProgramOutput.x3d</a></td>
+            </tr>
+            <tr>
+               <td style="text-align:right;color:green">description</td>
+               <td> &nbsp; </td>
+               <td>Example HelloWorldProgram creates an X3D model using the X3D Java Scene Access Interface (SAI) Library</td>
+            </tr>
+            <tr>
+               <td style="text-align:right;color:green">reference</td>
+               <td> &nbsp; </td>
+               <td><a href="http://www.web3d.org/specifications/java/X3DJSAIL.html">http://www.web3d.org/specifications/java/X3DJSAIL.html</a></td>
+            </tr>
+            <tr>
+               <td style="text-align:right;color:green">generator</td>
+               <td> &nbsp; </td>
+               <td>HelloWorldProgramOutput.java</td>
+            </tr>
+            <tr>
+               <td style="text-align:right;color:green">created</td>
+               <td> &nbsp; </td>
+               <td>6 September 2016</td>
+            </tr>
+            <tr>
+               <td style="text-align:right;color:green">modified</td>
+               <td> &nbsp; </td>
+               <td>11 December 2017</td>
+            </tr>
+            <tr>
+               <td style="text-align:right;color:green">generator</td>
+               <td> &nbsp; </td>
+               <td>X3D Java Scene Access Interface Library (X3DJSAIL)</td>
+            </tr>
+            <tr>
+               <td style="text-align:right;color:green">generator</td>
+               <td> &nbsp; </td>
+               <td><a href="http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java">http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java</a></td>
+            </tr>
+            <tr>
+               <td style="text-align:right;color:green">generator</td>
+               <td> &nbsp; </td>
+               <td>Netbeans <a href="http://www.netbeans.org">http://www.netbeans.org</a></td>
+            </tr>
+            <tr>
+               <td style="text-align:right;color:green">creator</td>
+               <td> &nbsp; </td>
+               <td>Don Brutzman</td>
+            </tr>
+            <tr>
+               <td style="text-align:right;color:green">reference</td>
+               <td> &nbsp; </td>
+               <td><a href="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/java/examples/HelloWorldProgramOutput.x3d">https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/java/examples/HelloWorldProgramOutput.x3d</a></td>
+            </tr>
+            <tr>
+               <td style="text-align:right;color:green">reference</td>
+               <td> &nbsp; </td>
+               <td>Console output, ClassicVRML encoding, VRML97 encoding and pretty-print documentation:</td>
+            </tr>
+            <tr>
+               <td style="text-align:right;color:green">reference</td>
+               <td> &nbsp; </td>
+               <td><a href="HelloWorldProgramOutput.txt">HelloWorldProgramOutput.txt</a></td>
+            </tr>
+            <tr>
+               <td style="text-align:right;color:green">reference</td>
+               <td> &nbsp; </td>
+               <td><a href="HelloWorldProgramOutput.x3dv">HelloWorldProgramOutput.x3dv</a></td>
+            </tr>
+            <tr>
+               <td style="text-align:right;color:green">reference</td>
+               <td> &nbsp; </td>
+               <td>HelloWorldProgramOutput.wrl</td>
+            </tr>
+            <tr>
+               <td style="text-align:right;color:green">reference</td>
+               <td> &nbsp; </td>
+               <td><a href="HelloWorldProgramOutput.html">HelloWorldProgramOutput.html</a></td>
+            </tr>
+            <tr>
+               <td style="text-align:right;color:green">X3dValidator</td>
+               <td> &nbsp; </td>
+               <td><a href="https://savage.nps.edu/X3dValidator?url=http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d">https://savage.nps.edu/X3dValidator?url=http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d</a></td>
+            </tr>
+            <tr>
+               <td style="text-align:right;color:green">identifier</td>
+               <td> &nbsp; </td>
+               <td><a href="http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d">http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d</a></td>
+            </tr>
+            <tr>
+               <td style="text-align:right;color:green">license</td>
+               <td> &nbsp; </td>
+               <td><a href="../license.html">../license.html</a></td>
+            </tr>
+            <tr>
+               <td style="text-align:right;color:green">SpecialTest</td>
+               <td> &nbsp; </td>
+               <td>tested sat: name value cannot contain embedded space character</td>
+            </tr>
+            <tr>
+               <td colspan="3">&nbsp;</td>
+            </tr>
+            <tr style="background-color:silver;border-color:silver;">
+               <th style="text-align:right;"> HTML&nbsp;Browser </th>
+               <th></th>
+               <th style="text-align:left;"> Information </th>
+            </tr>
+            <tr>
+               <td style="text-align:right;"> Browser code name: </td>
+               <td></td>
+               <td id="browserCodeName"></td>
+            </tr>
+            <tr>
+               <td style="text-align:right;"> Browser application name: </td>
+               <td></td>
+               <td id="browserAppName"></td>
+            </tr>
+            <tr>
+               <td style="text-align:right;"> Browser version: </td>
+               <td></td>
+               <td id="browserAppVersion"></td>
+            </tr>
+            <tr>
+               <td style="text-align:right;"> Cookies enabled: </td>
+               <td></td>
+               <td id="browserCookieEnabled"></td>
+            </tr>
+            <tr>
+               <td style="text-align:right;"> Platform: </td>
+               <td></td>
+               <td id="browserPlatform"></td>
+            </tr>
+            <tr>
+               <td style="text-align:right;"> User Agent: </td>
+               <td></td>
+               <td id="browserUserAgent"></td>
+            </tr>
+            <tr>
+               <td style="text-align:right;"> System language: </td>
+               <td></td>
+               <td id="browserSystemLanguage"></td>
+            </tr>
+            <tr>
+               <td colspan="3">
+                  <div id="htmlPageFooter">
+                     <table border="1" style="float:left; margin:auto; margin-top:20px; border:1px solid black;">
+                        <caption style="text-align:center;background-color:silver;border-color:silver; padding:4px;"><b>X3DOM node coverage</b></caption>
+                        <tr style="text-align:center; padding:4px; border:1px solid black;">
+                           <th> Supported nodes found </th>
+                           <th> Unsupported nodes found </th>
+                           <th> Partial support</th>
+                        </tr>
+                        <tr style="border:1px solid black;">
+                           <td style="text-align:left;vertical-align:text-top;padding:4px;"><a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Anchor" target="_blank"><span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">Anchor</span></a><br></br><a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Appearance" target="_blank"><span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">Appearance</span></a><br></br><a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#AudioClip" target="_blank"><span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">AudioClip</span></a><br></br><a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Background" target="_blank"><span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">Background</span></a><br></br><a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Box" target="_blank"><span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">Box</span></a><br></br><a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Collision" target="_blank"><span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">Collision</span></a><br></br><a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#ColorInterpolator" target="_blank"><span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">ColorInterpolator</span></a><br></br><a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#component" target="_blank"><span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">component</span></a><br></br><a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Cone" target="_blank"><span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">Cone</span></a><br></br><a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Coordinate" target="_blank"><span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">Coordinate</span></a><br></br><a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Extrusion" target="_blank"><span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">Extrusion</span></a><br></br><a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#field" target="_blank"><span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">field</span></a><br></br><a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#FontStyle" target="_blank"><span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">FontStyle</span></a><br></br><a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Group" target="_blank"><span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">Group</span></a><br></br><a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#head" target="_blank"><span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">head</span></a><br></br><a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#ImageTexture" target="_blank"><span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">ImageTexture</span></a><br></br><a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#IndexedLineSet" target="_blank"><span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">IndexedLineSet</span></a><br></br><a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Inline" target="_blank"><span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">Inline</span></a><br></br><a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Material" target="_blank"><span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">Material</span></a><br></br><a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#meta" target="_blank"><span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">meta</span></a><br></br><a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#MetadataSet" target="_blank"><span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">MetadataSet</span></a><br></br><a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#MetadataString" target="_blank"><span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">MetadataString</span></a><br></br><a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#MovieTexture" target="_blank"><span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">MovieTexture</span></a><br></br><a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#OrientationInterpolator" target="_blank"><span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">OrientationInterpolator</span></a><br></br><a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#PositionInterpolator" target="_blank"><span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">PositionInterpolator</span></a><br></br><a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#ROUTE" target="_blank"><span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">ROUTE</span></a><br></br><a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Scene" target="_blank"><span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">Scene</span></a><br></br><a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Shape" target="_blank"><span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">Shape</span></a><br></br><a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Sound" target="_blank"><span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">Sound</span></a><br></br><a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Sphere" target="_blank"><span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">Sphere</span></a><br></br><a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#TimeSensor" target="_blank"><span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">TimeSensor</span></a><br></br><a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#TouchSensor" target="_blank"><span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">TouchSensor</span></a><br></br><a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Transform" target="_blank"><span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">Transform</span></a><br></br><a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Viewpoint" target="_blank"><span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">Viewpoint</span></a><br></br><a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#WorldInfo" target="_blank"><span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">WorldInfo</span></a><br></br> 
+                           </td>
+                           <td style="text-align:left;vertical-align:text-top;padding:4px;"><a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#connect" target="_blank"><span style="color:red; text-decoration-color:red; moz-text-decoration-color:red;">connect</span></a><br></br><a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#EXPORT" target="_blank"><span style="color:red; text-decoration-color:red; moz-text-decoration-color:red;">EXPORT</span></a><br></br><a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#ExternProtoDeclare" target="_blank"><span style="color:red; text-decoration-color:red; moz-text-decoration-color:red;">ExternProtoDeclare</span></a><br></br><a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#fieldValue" target="_blank"><span style="color:red; text-decoration-color:red; moz-text-decoration-color:red;">fieldValue</span></a><br></br><a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#IMPORT" target="_blank"><span style="color:red; text-decoration-color:red; moz-text-decoration-color:red;">IMPORT</span></a><br></br><a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#IS" target="_blank"><span style="color:red; text-decoration-color:red; moz-text-decoration-color:red;">IS</span></a><br></br><a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#LayerSet" target="_blank"><span style="color:red; text-decoration-color:red; moz-text-decoration-color:red;">LayerSet</span></a><br></br><a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#ProtoBody" target="_blank"><span style="color:red; text-decoration-color:red; moz-text-decoration-color:red;">ProtoBody</span></a><br></br><a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#ProtoDeclare" target="_blank"><span style="color:red; text-decoration-color:red; moz-text-decoration-color:red;">ProtoDeclare</span></a><br></br><a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#ProtoInstance" target="_blank"><span style="color:red; text-decoration-color:red; moz-text-decoration-color:red;">ProtoInstance</span></a><br></br><a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#ProtoInterface" target="_blank"><span style="color:red; text-decoration-color:red; moz-text-decoration-color:red;">ProtoInterface</span></a><br></br><a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Script" target="_blank"><span style="color:red; text-decoration-color:red; moz-text-decoration-color:red;">Script</span></a><br></br><a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#ViewpointGroup" target="_blank"><span style="color:red; text-decoration-color:red; moz-text-decoration-color:red;">ViewpointGroup</span></a><br></br> 
+                           </td>
+                           <td style="text-align:left;vertical-align:text-top;padding:4px;"><a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Text" target="_blank"><span style="color:orange; text-decoration-color:orange; moz-text-decoration-color:orange;"><b>Text</b></span></a><br></br>: for example use, see <a href="http://x3dom.org/x3dom/example/x3dom_text.html" onclick="target='x3dom';">X3DOM Text Example</a> 
+                           </td>
+                        </tr>
+                        <tr style="text-align:center; background-color:silver;border-color:silver; padding:6px;">
+                           <td colspan="3" style="cellpadding:3px"> &nbsp;&nbsp;&nbsp; References: <a href="http://www.x3dom.org/check" onclick="target='_blank';">X3DOM browser check</a>,
+                              <a href="http://www.x3dom.org" onclick="target='_blank';">X3DOM home</a>,
+                              <a href="http://doc.x3dom.org" onclick="target='_blank';">X3DOM documentation</a>,
+                              <a href="http://x3dom.org/x3dom/test/functional/dumpNodeTypeTree.html" onclick="target='_blank';">X3DOM list of supported nodes</a>,
+                              and
+                              <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html" onclick="target='_blank';">X3D Resources</a> &nbsp;&nbsp;&nbsp; 
+                           </td>
+                        </tr>
+                     </table>
+                     
+                  </div>
+                  
+               </td>
+            </tr>
+         </table>
+      </div>
+      
+   </body>
+</html>
