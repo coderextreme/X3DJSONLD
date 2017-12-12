@@ -751,9 +751,9 @@ Scene26.addChild(Group126)
 
 Scene26.addComments(CommentsBlock("""Test success: declarative statement addChild()"""))
 
-Scene26.addComments(CommentsBlock("""Test success: x3dModel.findNodeByDEF(DeclarativeAppearanceExample) = <Appearance DEF='DeclarativeAppearanceExample'/> i.e. <Appearance DEF='DeclarativeAppearanceExample'> <ProtoInstance DEF='MyMaterialModulator' name='MaterialModulator' containerField='material'/> <!- - DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance - -> </Appearance>"""))
+Scene26.addComments(CommentsBlock("""Test success: x3dModel.findNodeByDEF(DeclarativeAppearanceExample) = <Appearance DEF='DeclarativeAppearanceExample'></Appearance> i.e. <Appearance DEF='DeclarativeAppearanceExample'> <ProtoInstance DEF='MyMaterialModulator' name='MaterialModulator' containerField='material'></ProtoInstance> <!- - DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance - -> </Appearance>"""))
 
-Scene26.addComments(CommentsBlock("""Test success: x3dModel.findElementByNameValue(findThisNameValue) = <MetadataString DEF='FindableMetadataStringTest' name='findThisNameValue' value='\"test case\"'/>"""))
+Scene26.addComments(CommentsBlock("""Test success: x3dModel.findElementByNameValue(findThisNameValue) = <MetadataString DEF='FindableMetadataStringTest' name='findThisNameValue' value='\"test case\"'></MetadataString>"""))
 
 Scene26.addComments(CommentsBlock("""Test success: x3dModel.findElementByNameValue(\"ArtDeco01Material\", \"ProtoDeclare\") found"""))
 

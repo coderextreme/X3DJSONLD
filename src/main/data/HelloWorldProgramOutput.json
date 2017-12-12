@@ -19,12 +19,12 @@
           {
             "@name":"AngleUnitConversion",
             "@category":"angle",
-            "@conversionFactor":1.0
+            "@conversionFactor":1
           },
           {
             "@name":"LengthUnitConversion",
             "@category":"length",
-            "@conversionFactor":1.0
+            "@conversionFactor":1
           }
         ],
         "meta": [
@@ -266,7 +266,7 @@
           { "TimeSensor":
             {
               "@DEF":"OrbitClock",
-              "@cycleInterval":8.0,
+              "@cycleInterval":8,
               "@loop":true
             }
           },
@@ -395,7 +395,7 @@
           { "TimeSensor":
             {
               "@DEF":"SpinClock",
-              "@cycleInterval":5.0,
+              "@cycleInterval":5,
               "@loop":true
             }
           },
@@ -465,7 +465,7 @@
                 { "TimeSensor":
                   {
                     "@DEF":"ColorClock",
-                    "@cycleInterval":60.0,
+                    "@cycleInterval":60,
                     "@loop":true
                   }
                 },
@@ -711,19 +711,19 @@
                       "@name":"transparency",
                       "@accessType":"inputOutput",
                       "@type":"SFFloat",
-                      "@value":0.0
+                      "@value":0
                     },
                     {
                       "@name":"shininess",
                       "@accessType":"inputOutput",
                       "@type":"SFFloat",
-                      "@value":0.0
+                      "@value":0
                     },
                     {
                       "@name":"ambientIntensity",
                       "@accessType":"inputOutput",
                       "@type":"SFFloat",
-                      "@value":0.0
+                      "@value":0
                     }
                   ]
               },
@@ -887,10 +887,10 @@
             "#comment":"Test success: declarative statement addChild()"
           },
           {
-            "#comment":"Test success: x3dModel.findNodeByDEF(DeclarativeAppearanceExample) = <Appearance DEF='DeclarativeAppearanceExample'/> i.e. <Appearance DEF='DeclarativeAppearanceExample'> <ProtoInstance DEF='MyMaterialModulator' name='MaterialModulator' containerField='material'/> <!- - DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance - -> </Appearance>"
+            "#comment":"Test success: x3dModel.findNodeByDEF(DeclarativeAppearanceExample) = <Appearance DEF='DeclarativeAppearanceExample'></Appearance> i.e. <Appearance DEF='DeclarativeAppearanceExample'> <ProtoInstance DEF='MyMaterialModulator' name='MaterialModulator' containerField='material'></ProtoInstance> <!- - DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance - -> </Appearance>"
           },
           {
-            "#comment":"Test success: x3dModel.findElementByNameValue(findThisNameValue) = <MetadataString DEF='FindableMetadataStringTest' name='findThisNameValue' value='\"test case\"'/>"
+            "#comment":"Test success: x3dModel.findElementByNameValue(findThisNameValue) = <MetadataString DEF='FindableMetadataStringTest' name='findThisNameValue' value='\"test case\"'></MetadataString>"
           },
           {
             "#comment":"Test success: x3dModel.findElementByNameValue(\"ArtDeco01Material\", \"ProtoDeclare\") found"
@@ -1004,7 +1004,7 @@
                     "-material":
                       { "Material":
                         {
-                          "@transparency":1.0
+                          "@transparency":1
                         }
                       }
                   }
