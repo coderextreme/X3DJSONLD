@@ -50,7 +50,7 @@
         },
         {
           "@name": "modified",
-          "@content": "9 December 2017"
+          "@content": "11 December 2017"
         },
         {
           "@name": "generator",
@@ -187,9 +187,11 @@
                         "-appearance": [
                           {
                             "Appearance": {
+                              "@containerField": "appearance",
                               "-material": [
                                 {
                                   "Material": {
+                                    "@containerField": "material",
                                     "@DEF": "GreenMaterial",
                                     "@diffuseColor": [
                                       0,
@@ -208,6 +210,7 @@
                               "-texture": [
                                 {
                                   "ImageTexture": {
+                                    "@containerField": "texture",
                                     "@url": [
                                       "images/X3dJavaSceneAccessInterfaceSaiLibrary.png",
                                       "http://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png"
@@ -221,6 +224,7 @@
                         "-geometry": [
                           {
                             "Box": {
+                              "@containerField": "geometry",
                               "@DEF": "test-NMTOKEN_regex.0123456789",
                               "@class": "textured"
                             }
@@ -240,9 +244,11 @@
             "-appearance": [
               {
                 "Appearance": {
+                  "@containerField": "appearance",
                   "-material": [
                     {
                       "Material": {
+                        "@containerField": "material",
                         "@emissiveColor": [
                           0,
                           0,
@@ -257,6 +263,7 @@
             "-geometry": [
               {
                 "IndexedLineSet": {
+                  "@containerField": "geometry",
                   "@coordIndex": [
                     0,
                     1,
@@ -268,6 +275,7 @@
                   "-coord": [
                     {
                       "Coordinate": {
+                        "@containerField": "coord",
                         "@point": [
                           0,
                           1.5,
@@ -350,9 +358,11 @@
                   "-appearance": [
                     {
                       "Appearance": {
+                        "@containerField": "appearance",
                         "-material": [
                           {
                             "Material": {
+                              "@containerField": "material",
                               "@USE": "GreenMaterial"
                             }
                           }
@@ -363,6 +373,7 @@
                   "-geometry": [
                     {
                       "Text": {
+                        "@containerField": "geometry",
                         "@string": [
                           "X3D Java",
                           "SAI Library",
@@ -371,10 +382,12 @@
                         "-metadata": [
                           {
                             "MetadataSet": {
+                              "@containerField": "metadata",
                               "@name": "EscapedQuotationMarksMetadataSet",
                               "-metadata": [
                                 {
                                   "MetadataString": {
+                                    "@containerField": "metadata",
                                     "@name": "escapedQuotesTest2",
                                     "@value": [
                                       "escaped quotation marks example 2: He said, &amp;quot;Immel did it!&amp;quot;"
@@ -388,6 +401,7 @@
                         "-fontStyle": [
                           {
                             "FontStyle": {
+                              "@containerField": "fontStyle",
                               "@justify": [
                                 "MIDDLE",
                                 "MIDDLE"
@@ -411,6 +425,7 @@
                         "-geometry": [
                           {
                             "Text": {
+                              "@containerField": "geometry",
                               "@string": [
                                 "One, Two, Three",
                                 "",
@@ -551,7 +566,7 @@
         {
           "ProtoDeclare": {
             "@name": "ArtDeco01Material",
-            "@appinfo": "tooltip: ArtDeco01 prototype is a Material node",
+            "@appinfo": "tooltip: ArtDeco01Material prototype is a Material node",
             "-children": [
               {
                 "ProtoInterface": {
@@ -561,7 +576,7 @@
                       "@accessType": "inputOutput",
                       "@appinfo": "tooltip for descriptionField",
                       "@type": "SFString",
-                      "@value": "ArtDeco01 prototype is a Material node"
+                      "@value": "ArtDeco01Material prototype is a Material node"
                     },
                     {
                       "@name": "enabled",
@@ -624,8 +639,8 @@
             "@name": "ArtDeco02Material",
             "@appinfo": "this is a different Material node",
             "@url": [
-              "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02",
-              "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02"
+              "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material",
+              "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"
             ],
             "field": [
               {
@@ -644,28 +659,30 @@
             "-appearance": [
               {
                 "Appearance": {
+                  "@containerField": "appearance",
                   "@DEF": "TestAppearance1",
                   "-children": [
                     {
                       "ProtoInstance": {
-                        "@name": "ArtDeco01",
+                        "@name": "ArtDeco01Material",
                         "fieldValue": [
                           {
                             "@name": "description",
-                            "@value": "ArtDeco01 can substitute for a Material node"
+                            "@value": "ArtDeco01Material can substitute for a Material node"
                           }
                         ],
-                        "#comment": "[HelloWorldProgram diagnostic] ArtDeco01ProtoInstance.getNodeType()=\\\"ERROR_UNKNOWN_PROTOINSTANCE_NODE_TYPE: ProtoInstance name='ArtDeco01' has no corresponding ProtoDeclareObject or ExternProtoDeclareObject to provide type.\\\""
+                        "#comment": "[HelloWorldProgram diagnostic] ArtDeco01ProtoInstance.getNodeType()=\\\"Material\\\""
                       }
                     }
                   ],
-                  "#comment": "ArtDeco01 Material prototype goes here..."
+                  "#comment": "ArtDeco01Material prototype goes here..."
                 }
               }
             ],
             "-geometry": [
               {
                 "Sphere": {
+                  "@containerField": "geometry",
                   "@radius": 0.001
                 }
               }
@@ -678,28 +695,30 @@
             "-appearance": [
               {
                 "Appearance": {
+                  "@containerField": "appearance",
                   "@DEF": "TestAppearance2",
                   "-children": [
                     {
                       "ProtoInstance": {
-                        "@name": "ArtDeco02",
+                        "@name": "ArtDeco02Material",
                         "fieldValue": [
                           {
                             "@name": "description",
-                            "@value": "ArtDeco02 can substitute for another Material node"
+                            "@value": "ArtDeco02Material can substitute for another Material node"
                           }
                         ],
-                        "#comment": "[HelloWorldProgram diagnostic] ArtDeco02ProtoInstance.getNodeType()=\\\"ERROR_UNKNOWN_PROTOINSTANCE_NODE_TYPE: ProtoInstance name='ArtDeco02' has no corresponding ProtoDeclareObject or ExternProtoDeclareObject to provide type.\\\""
+                        "#comment": "[HelloWorldProgram diagnostic] ArtDeco02ProtoInstance.getNodeType()=\\\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time, TODO X3DJSAIL needs to add further capability.\\\""
                       }
                     }
                   ],
-                  "#comment": "ArtDeco02 Material prototype goes here..."
+                  "#comment": "ArtDeco02Material prototype goes here..."
                 }
               }
             ],
             "-geometry": [
               {
                 "Cone": {
+                  "@containerField": "geometry",
                   "@bottomRadius": 0.001,
                   "@height": 0.001
                 }
@@ -907,6 +926,7 @@
                   "-metadata": [
                     {
                       "MetadataString": {
+                        "@containerField": "metadata",
                         "@name": "findThisNameValue",
                         "@DEF": "FindableMetadataStringTest",
                         "@value": [
@@ -918,6 +938,7 @@
                   "-appearance": [
                     {
                       "Appearance": {
+                        "@containerField": "appearance",
                         "@DEF": "DeclarativeAppearanceExample",
                         "-children": [
                           {
@@ -934,6 +955,7 @@
                   "-geometry": [
                     {
                       "Cone": {
+                        "@containerField": "geometry",
                         "@bottom": true,
                         "@bottomRadius": 0.05,
                         "@height": 0.1
@@ -954,32 +976,48 @@
         },
         {
           "Sound": {
+            "@location": [
+              0,
+              1.6,
+              0
+            ],
             "-source": [
               {
                 "AudioClip": {
+                  "@containerField": "source",
+                  "@description": "chimes",
                   "@url": [
                     "chimes.wav",
                     "http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"
-                  ]
+                  ],
+                  "#comment": "Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d"
                 }
               }
             ],
-            "#comment": "Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d"
+            "#comment": "set sound-ellipsoid location height at 1.6m to match typical avatar height"
           }
         },
         {
           "Sound": {
+            "@location": [
+              0,
+              1.6,
+              0
+            ],
             "-source": [
               {
                 "MovieTexture": {
+                  "@containerField": "source",
+                  "@description": "mpgsys.mpg from ConformanceNist suite",
                   "@url": [
                     "mpgsys.mpg",
                     "http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"
-                  ]
+                  ],
+                  "#comment": "Expected containerField='source', allowed containerField values=\\\"texture\\\" \\\"source\\\" \\\"back\\\" \\\"bottom\\\" \\\"front\\\" \\\"left\\\" \\\"right\\\" \\\"top\\\" \\\"backTexture\\\" \\\"bottomTexture\\\" \\\"frontTexture\\\" \\\"leftTexture\\\" \\\"rightTexture\\\" \\\"topTexture\\\""
                 }
               }
             ],
-            "#comment": "Expected containerField='source', allowed containerField values=\\\"texture\\\" \\\"source\\\" \\\"back\\\" \\\"bottom\\\" \\\"front\\\" \\\"left\\\" \\\"right\\\" \\\"top\\\" \\\"backTexture\\\" \\\"bottomTexture\\\" \\\"frontTexture\\\" \\\"leftTexture\\\" \\\"rightTexture\\\" \\\"topTexture\\\""
+            "#comment": "set sound-ellipsoid location height at 1.6m to match typical avatar height"
           }
         },
         {
@@ -988,10 +1026,12 @@
             "-appearance": [
               {
                 "Appearance": {
+                  "@containerField": "appearance",
                   "@DEF": "TransparentAppearance",
                   "-material": [
                     {
                       "Material": {
+                        "@containerField": "material",
                         "@transparency": 1
                       }
                     }
@@ -1002,6 +1042,7 @@
             "-geometry": [
               {
                 "Extrusion": {
+                  "@containerField": "geometry",
                   "@DEF": "ExampleExtrusion"
                 }
               }
