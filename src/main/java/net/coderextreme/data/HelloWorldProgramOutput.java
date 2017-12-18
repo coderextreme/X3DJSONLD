@@ -83,8 +83,13 @@ public class HelloWorldProgramOutput {
 ProtoInstanceObject ProtoInstance0 = null;
 ProtoInstanceObject ProtoInstance1 = null;
 ProtoInstanceObject ProtoInstance2 = null;
+ProtoInstanceObject ProtoInstance3 = null;
       X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
       .setHead(new headObject()
+        .addComments(new CommentsBlock("comment #1"))
+        .addComments(new CommentsBlock("comment #2"))
+        .addComments(new CommentsBlock("comment #3"))
+        .addComments(new CommentsBlock("comment #4"))
         .addComponent(new componentObject().setName("Navigation").setLevel(3))
         .addComponent(new componentObject().setName("Layering").setLevel(1))
         .addUnit(new unitObject().setName("AngleUnitConversion").setCategory("angle").setConversionFactor(1d))
@@ -94,7 +99,7 @@ ProtoInstanceObject ProtoInstance2 = null;
         .addMeta(new metaObject().setName("reference").setContent("http://www.web3d.org/specifications/java/X3DJSAIL.html"))
         .addMeta(new metaObject().setName("generator").setContent("HelloWorldProgramOutput.java"))
         .addMeta(new metaObject().setName("created").setContent("6 September 2016"))
-        .addMeta(new metaObject().setName("modified").setContent("11 December 2017"))
+        .addMeta(new metaObject().setName("modified").setContent("18 December 2017"))
         .addMeta(new metaObject().setName("generator").setContent("X3D Java Scene Access Interface Library (X3DJSAIL)"))
         .addMeta(new metaObject().setName("generator").setContent("http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"))
         .addMeta(new metaObject().setName("generator").setContent("Netbeans http://www.netbeans.org"))
@@ -108,11 +113,7 @@ ProtoInstanceObject ProtoInstance2 = null;
         .addMeta(new metaObject().setName("X3dValidator").setContent("https://savage.nps.edu/X3dValidator?url=http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d"))
         .addMeta(new metaObject().setName("identifier").setContent("http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d"))
         .addMeta(new metaObject().setName("license").setContent("../license.html"))
-        .addMeta(new metaObject().setName("SpecialTest").setContent("tested sat: name value cannot contain embedded space character"))
-        .addComments(new CommentsBlock("comment #1"))
-        .addComments(new CommentsBlock("comment #2"))
-        .addComments(new CommentsBlock("comment #3"))
-        .addComments(new CommentsBlock("comment #4")))
+        .addMeta(new metaObject().setName("SpecialTest").setContent("tested sat: name value cannot contain embedded space character")))
       .setScene(new SceneObject()
         .addChild(new ViewpointGroupObject().setDescription("Available viewpoints")
           .addChild(new ViewpointObject().setDEF("DefaultView").setDescription("Hello X3DJSAIL"))
@@ -142,23 +143,24 @@ ProtoInstanceObject ProtoInstance2 = null;
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject().setUSE("GreenMaterial")))
             .setGeometry(new TextObject().setString(new MFStringObject(new MFString6().getArray()))
-              .setMetadata(new MetadataSetObject().setName("EscapedQuotationMarksMetadataSet")
-                .setMetadata(new MetadataStringObject().setName("escapedQuotesTest2").setValue(new MFStringObject(new MFString7().getArray()))))
-              .setFontStyle(new FontStyleObject().setJustify(new MFStringObject(new MFString8().getArray())))
               .addComments(new CommentsBlock("escaped quotation marks example 3: He said, \"Immel did it!\""))
-              .addComments(new CommentsBlock("escaped quotation marks example 4: He said, &quot;Immel did it!&quot;"))))
+              .addComments(new CommentsBlock("escaped quotation marks example 4: He said, &quot;Immel did it!&quot;"))
+              .setMetadata(new MetadataSetObject().setName("EscapedQuotationMarksMetadataSet")
+                .addValue(new MetadataStringObject().setName("escapedQuotesTest1").setValue(new MFStringObject(new MFString7().getArray())))
+                .addValue(new MetadataStringObject().setName("escapedQuotesTest2").setValue(new MFStringObject(new MFString8().getArray()))))
+              .setFontStyle(new FontStyleObject().setJustify(new MFStringObject(new MFString9().getArray())))))
           .addChild(new CollisionObject()
             .addComments(new CommentsBlock("test containerField='proxy'"))
-            .addChild(new ShapeObject().setDEF("ProxyShape")
-              .setGeometry(new TextObject().setString(new MFStringObject(new MFString9().getArray())))
+            .setProxy(new ShapeObject().setDEF("ProxyShape")
               .addComments(new CommentsBlock("alternative XML encoding: Text string='\"One, Two, Three\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"'"))
               .addComments(new CommentsBlock("alternative Java source: .setString(new String [] {\"One, Two, Three\", \"\", \"He said, \\\"Immel did it!\\\"\"})"))
-              .addComments(new CommentsBlock("reference: http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html"))))
+              .addComments(new CommentsBlock("reference: http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html"))
+              .setGeometry(new TextObject().setString(new MFStringObject(new MFString10().getArray())))))
           .addComments(new CommentsBlock("It's a beautiful world"))
           .addComments(new CommentsBlock("... for you!"))
           .addComments(new CommentsBlock("https://en.wikipedia.org/wiki/Beautiful_World_(Devo_song)")))
         .addComments(new CommentsBlock("repeatedly spin 180 degrees as a readable special effect"))
-        .addChild(new OrientationInterpolatorObject().setDEF("SpinInterpolator").setKey(new MFFloatObject(new MFFloat10().getArray())).setKeyValue(new MFRotationObject(new MFRotation11().getArray())))
+        .addChild(new OrientationInterpolatorObject().setDEF("SpinInterpolator").setKey(new MFFloatObject(new MFFloat11().getArray())).setKeyValue(new MFRotationObject(new MFRotation12().getArray())))
         .addChild(new TimeSensorObject().setDEF("SpinClock").setCycleInterval(5d).setLoop(true))
         .addChild(new ROUTEObject().setFromField("fraction_changed").setFromNode("SpinClock").setToField("set_fraction").setToNode("SpinInterpolator"))
         .addChild(new ROUTEObject().setFromField("value_changed").setFromNode("SpinInterpolator").setToField("rotation").setToNode("TextTransform"))
@@ -175,7 +177,7 @@ ProtoInstanceObject ProtoInstance2 = null;
 "// Browser.print('colorInput=' + eventValue + ', colorsOutput=' + colorsOutput + '\\n');\n"+
 "}\n"+
 ""))
-          .addChild(new ColorInterpolatorObject().setDEF("ColorAnimator").setKey(new MFFloatObject(new MFFloat12().getArray())).setKeyValue(new MFColorObject(new MFColor13().getArray()))
+          .addChild(new ColorInterpolatorObject().setDEF("ColorAnimator").setKey(new MFFloatObject(new MFFloat13().getArray())).setKeyValue(new MFColorObject(new MFColor14().getArray()))
             .addComments(new CommentsBlock("AZURE to INDIGO and back again")))
           .addChild(new TimeSensorObject().setDEF("ColorClock").setCycleInterval(60d).setLoop(true))
           .addChild(new ROUTEObject().setFromField("colorsOutput").setFromNode("colorTypeConversionScript").setToField("skyColor").setToNode("GradualBackground"))
@@ -194,23 +196,28 @@ ProtoInstanceObject ProtoInstance2 = null;
               .setIS(new ISObject()
                 .addConnect(new connectObject().setNodeField("description").setProtoField("description"))
                 .addConnect(new connectObject().setNodeField("enabled").setProtoField("enabled"))))))
-        .addChild(new ExternProtoDeclareObject().setName("ArtDeco02Material").setAppinfo("this is a different Material node").setUrl(new MFStringObject(new MFString14().getArray()))
-          .addField(new fieldObject().setType("SFString").setName("description").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("tooltip for descriptionField"))
-          .addComments(new CommentsBlock("[HelloWorldProgram diagnostic] ArtDeco02ExternProtoDeclare.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time, TODO X3DJSAIL needs to add further capability.\"")))
+        .addChild(new ExternProtoDeclareObject().setName("ArtDeco02Material").setAppinfo("this is a different Material node").setUrl(new MFStringObject(new MFString15().getArray()))
+          .addComments(new CommentsBlock("[HelloWorldProgram diagnostic] ArtDeco02ExternProtoDeclare.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time, TODO X3DJSAIL needs to add further capability.\""))
+          .addField(new fieldObject().setType("SFString").setName("description").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("tooltip for descriptionField")))
         .addComments(new CommentsBlock("Tested ArtDeco01ProtoInstance, ArtDeco02ProtoInstance for improper node type when ProtoInstance is added in wrong place"))
         .addChild(new ShapeObject().setDEF("TestShape1")
           .setAppearance(new AppearanceObject().setDEF("TestAppearance1")
-            .setProtoInstance(ProtoInstance0 = new ProtoInstanceObject().setName("ArtDeco01Material")
-              .addComments(new CommentsBlock("[HelloWorldProgram diagnostic] ArtDeco01ProtoInstance.getNodeType()=\"Material\"")))
-            .addComments(new CommentsBlock("ArtDeco01Material prototype goes here...")))
+            .addComments(new CommentsBlock("ArtDeco01Material prototype goes here..."))
+            .setMaterial(ProtoInstance0 = new ProtoInstanceObject().setName("ArtDeco01Material")
+              .addComments(new CommentsBlock("[HelloWorldProgram diagnostic] ArtDeco01ProtoInstance.getNodeType()=\"Material\""))))
           .setGeometry(new SphereObject().setRadius(0.001f)))
         .addChild(new ShapeObject().setDEF("TestShape2")
           .setAppearance(new AppearanceObject().setDEF("TestAppearance2")
-            .setProtoInstance(ProtoInstance1 = new ProtoInstanceObject().setName("ArtDeco02Material")
-              .addComments(new CommentsBlock("[HelloWorldProgram diagnostic] ArtDeco02ProtoInstance.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time, TODO X3DJSAIL needs to add further capability.\"")))
-            .addComments(new CommentsBlock("ArtDeco02Material prototype goes here...")))
+            .addComments(new CommentsBlock("ArtDeco02Material prototype goes here..."))
+            .setMaterial(ProtoInstance1 = new ProtoInstanceObject().setName("ArtDeco02Material").setDEF("ArtDeco02MaterialDEF")
+              .addComments(new CommentsBlock("[HelloWorldProgram diagnostic] ArtDeco02ProtoInstance.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time, TODO X3DJSAIL needs to add further capability.\""))))
           .setGeometry(new ConeObject().setBottomRadius(0.001f).setHeight(0.001f)))
-        .addChild(new InlineObject().setDEF("inlineSceneDef").setUrl(new MFStringObject(new MFString15().getArray())))
+        .addChild(new ShapeObject().setDEF("TestShape3")
+          .setAppearance(new AppearanceObject().setDEF("TestAppearance3")
+            .addComments(new CommentsBlock("ArtDeco02Material ProtoInstance USE goes here..."))
+            .setMaterial(ProtoInstance2 = new ProtoInstanceObject().setUSE("ArtDeco02MaterialDEF")))
+          .setGeometry(new CylinderObject().setHeight(0.001f).setRadius(0.001f)))
+        .addChild(new InlineObject().setDEF("inlineSceneDef").setUrl(new MFStringObject(new MFString16().getArray())))
         .addChild(new IMPORTObject().setAS("WorldInfoDEF2").setImportedDEF("WorldInfoDEF").setInlineDEF("inlineSceneDef"))
         .addChild(new EXPORTObject().setAS("WorldInfoDEF3").setLocalDEF("WorldInfoDEF"))
         .addChild(new ProtoDeclareObject().setName("MaterialModulator").setAppinfo("mimic a Material node and modulate fields as an animation effect").setDocumentation("http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html")
@@ -267,15 +274,19 @@ ProtoInstanceObject ProtoInstance2 = null;
         .addComments(new CommentsBlock("Test success: declarative statement createDeclarativeShapeTests()"))
         .addChild(new GroupObject().setDEF("DeclarativeGroupExample")
           .addChild(new ShapeObject()
-            .setMetadata(new MetadataStringObject().setName("findThisNameValue").setDEF("FindableMetadataStringTest").setValue(new MFStringObject(new MFString16().getArray())))
+            .setMetadata(new MetadataStringObject().setName("findThisNameValue").setDEF("FindableMetadataStringTest").setValue(new MFStringObject(new MFString17().getArray())))
             .setAppearance(new AppearanceObject().setDEF("DeclarativeAppearanceExample")
-              .setProtoInstance(ProtoInstance2 = new ProtoInstanceObject().setName("MaterialModulator").setDEF("MyMaterialModulator"))
-              .addComments(new CommentsBlock("DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance")))
+              .addComments(new CommentsBlock("DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance"))
+              .setMaterial(ProtoInstance3 = new ProtoInstanceObject().setName("MaterialModulator").setDEF("MyMaterialModulator")))
             .setGeometry(new ConeObject().setBottom(false).setBottomRadius(0.05f).setHeight(0.1f)))
           .addComments(new CommentsBlock("Test success: declarativeGroup.addChild() singleton pipeline method")))
         .addComments(new CommentsBlock("Test success: declarative statement addChild()"))
-        .addComments(new CommentsBlock("Test success: x3dModel.findNodeByDEF(DeclarativeAppearanceExample) = <Appearance DEF='DeclarativeAppearanceExample'></Appearance> i.e. <Appearance DEF='DeclarativeAppearanceExample'> <ProtoInstance DEF='MyMaterialModulator' name='MaterialModulator' containerField='material'></ProtoInstance> <!- - DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance - -> </Appearance>"))
-        .addComments(new CommentsBlock("Test success: x3dModel.findElementByNameValue(findThisNameValue) = <MetadataString DEF='FindableMetadataStringTest' name='findThisNameValue' value='\"test case\"'></MetadataString>"))
+        .addComments(new CommentsBlock("Test success: x3dModel.findNodeByDEF(DeclarativeAppearanceExample) = <Appearance DEF='DeclarativeAppearanceExample'/> i.e."))
+        .addComments(new CommentsBlock("<Appearance DEF='DeclarativeAppearanceExample'>"))
+        .addComments(new CommentsBlock("<!- - DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance - ->"))
+        .addComments(new CommentsBlock("<ProtoInstance DEF='MyMaterialModulator' name='MaterialModulator' containerField='material'/>"))
+        .addComments(new CommentsBlock("</Appearance>"))
+        .addComments(new CommentsBlock("Test success: x3dModel.findElementByNameValue(findThisNameValue) = <MetadataString DEF='FindableMetadataStringTest' name='findThisNameValue' value='\"test case\"'/>"))
         .addComments(new CommentsBlock("Test success: x3dModel.findElementByNameValue(\"ArtDeco01Material\", \"ProtoDeclare\") found"))
         .addComments(new CommentsBlock("Test success: x3dModel.findElementByNameValue(\"MaterialModulator\", \"ProtoDeclare\") found"))
         .addComments(new CommentsBlock("Test success: x3dModel.findElementByNameValue(\"MaterialModulator\", \"ProtoInstance\") found"))
@@ -288,14 +299,14 @@ ProtoInstanceObject ProtoInstance2 = null;
           .addComments(new CommentsBlock("... get1Value[3]=3.0, remove[1]=0 2 3 4 5 6, set1Value(0,10)=10 2 3 4 5 6, multiply(2)=20 4 6 8 10 12, clear="))
           .addComments(new CommentsBlock("SFVec3f default=0 0 0, initial=1 2 3, setValue=4 5 6, multiply(2)=8 10 12, normalize()=0.45584232 0.5698029 0.68376344")))
         .addChild(new SoundObject().setLocation(new float[] {0f,1.6f,0f})
-          .setSource(new AudioClipObject().setDescription("chimes").setUrl(new MFStringObject(new MFString17().getArray()))
-            .addComments(new CommentsBlock("Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d")))
-          .addComments(new CommentsBlock("set sound-ellipsoid location height at 1.6m to match typical avatar height")))
+          .addComments(new CommentsBlock("set sound-ellipsoid location height at 1.6m to match typical avatar height"))
+          .setSource(new AudioClipObject().setDescription("chimes").setUrl(new MFStringObject(new MFString18().getArray()))
+            .addComments(new CommentsBlock("Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d"))))
         .addChild(new SoundObject().setLocation(new float[] {0f,1.6f,0f})
-          .setSource(new MovieTextureObject().setDescription("mpgsys.mpg from ConformanceNist suite").setUrl(new MFStringObject(new MFString18().getArray()))
+          .addComments(new CommentsBlock("set sound-ellipsoid location height at 1.6m to match typical avatar height"))
+          .setSource(new MovieTextureObject().setDescription("mpgsys.mpg from ConformanceNist suite").setUrl(new MFStringObject(new MFString19().getArray()))
             .addComments(new CommentsBlock("Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d"))
-            .addComments(new CommentsBlock("Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\"")))
-          .addComments(new CommentsBlock("set sound-ellipsoid location height at 1.6m to match typical avatar height")))
+            .addComments(new CommentsBlock("Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\""))))
         .addComments(new CommentsBlock("Test success: AnchorObject.isNode()=true, siteAnchor.isNode()=true"))
         .addComments(new CommentsBlock("Test success: AnchorObject.isStatement()=false, siteAnchor.isStatement()=false"))
         .addComments(new CommentsBlock("Test success: ROUTEObject.isNode()=false, orbitPositionROUTE.isNode()=false"))
@@ -303,11 +314,11 @@ ProtoInstanceObject ProtoInstance2 = null;
         .addComments(new CommentsBlock("Test success: CommentsBlock.isNode()=false, testComments.isNode()=false"))
         .addComments(new CommentsBlock("Test success: CommentsBlock.isStatement()=false, testComments.isStatement()=false"))
         .addChild(new ShapeObject().setDEF("ExtrusionShape")
+          .addComments(new CommentsBlock("ExampleExtrusion isCrossSectionClosed()=true, crossSection='[1.0, 1.0, 1.0, -1.0, -1.0, -1.0, -1.0, 1.0, 1.0, 1.0]'"))
+          .addComments(new CommentsBlock("ExampleExtrusion isSpineClosed()=false, spine='[0.0, 0.0, 0.0, 0.0, 1.0, 0.0]'"))
           .setAppearance(new AppearanceObject().setDEF("TransparentAppearance")
             .setMaterial(new MaterialObject().setTransparency(1f)))
-          .setGeometry(new ExtrusionObject().setDEF("ExampleExtrusion"))
-          .addComments(new CommentsBlock("ExampleExtrusion isCrossSectionClosed()=true, crossSection='[1.0, 1.0, 1.0, -1.0, -1.0, -1.0, -1.0, 1.0, 1.0, 1.0]'"))
-          .addComments(new CommentsBlock("ExampleExtrusion isSpineClosed()=false, spine='[0.0, 0.0, 0.0, 0.0, 1.0, 0.0]'"))))      ;
+          .setGeometry(new ExtrusionObject().setDEF("ExampleExtrusion"))))      ;
 ProtoInstance0
               .addFieldValue(new fieldValueObject().setName("description").setValue("ArtDeco01Material can substitute for a Material node"));
 ProtoInstance1
@@ -351,60 +362,65 @@ protected class MFString6 {
 }
 protected class MFString7 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"escaped quotation marks example 2: He said, &quot;Immel did it!&quot;"});
+    return new MFStringObject(new java.lang.String[] {"escaped quotation marks example 1: He said, \"Immel did it!\""});
   }
 }
 protected class MFString8 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"MIDDLE","MIDDLE"});
+    return new MFStringObject(new java.lang.String[] {"escaped quotation marks example 2: He said, &quot;Immel did it!&quot;"});
   }
 }
 protected class MFString9 {
   protected MFStringObject getArray() {
+    return new MFStringObject(new java.lang.String[] {"MIDDLE","MIDDLE"});
+  }
+}
+protected class MFString10 {
+  protected MFStringObject getArray() {
     return new MFStringObject(new java.lang.String[] {"One, Two, Three","","He said, \"Immel did it!\""});
   }
 }
-protected class MFFloat10 {
+protected class MFFloat11 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.5f,1f});
   }
 }
-protected class MFRotation11 {
+protected class MFRotation12 {
   protected MFRotationObject getArray() {
     return new MFRotationObject(new float[] {0f,1f,0f,4.712389f,0f,1f,0f,0f,0f,1f,0f,1.5707964f});
   }
 }
-protected class MFFloat12 {
+protected class MFFloat13 {
   protected MFFloatObject getArray() {
     return new MFFloatObject(new float[] {0f,0.5f,1f});
   }
 }
-protected class MFColor13 {
+protected class MFColor14 {
   protected MFColorObject getArray() {
     return new MFColorObject(new float[] {0.9411765f,1f,1f,0.29411766f,0f,0.50980395f,0.9411765f,1f,1f});
   }
 }
-protected class MFString14 {
+protected class MFString15 {
   protected MFStringObject getArray() {
     return new MFStringObject(new java.lang.String[] {"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"});
   }
 }
-protected class MFString15 {
+protected class MFString16 {
   protected MFStringObject getArray() {
     return new MFStringObject(new java.lang.String[] {"someOtherScene.x3d"});
   }
 }
-protected class MFString16 {
+protected class MFString17 {
   protected MFStringObject getArray() {
     return new MFStringObject(new java.lang.String[] {"test case"});
   }
 }
-protected class MFString17 {
+protected class MFString18 {
   protected MFStringObject getArray() {
     return new MFStringObject(new java.lang.String[] {"chimes.wav","http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"});
   }
 }
-protected class MFString18 {
+protected class MFString19 {
   protected MFStringObject getArray() {
     return new MFStringObject(new java.lang.String[] {"mpgsys.mpg","http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"});
   }
