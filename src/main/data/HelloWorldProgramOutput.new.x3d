@@ -39,7 +39,6 @@
         <WorldInfo DEF='WorldInfoDEF' title='HelloWorldProgram produced by X3D Java SAI Library (X3DJSAIL)'/>
         <WorldInfo USE='WorldInfoDEF'/>
         <WorldInfo USE='WorldInfoDEF'/>
-        <MetadataString DEF='scene.addChildMetadataObject' name='test'/>
         <LayerSet DEF='scene.addChildLayerSetObjectTest' order='0'/>
         <Transform DEF='LogoGeometryTransform' translation='0 1.5 0'>
             <Anchor description='select for X3D Java SAI Library (X3DJSAIL) description' url='"../X3DJSAIL.html" "http://www.web3d.org/specifications/java/X3DJSAIL.html"'>
@@ -103,8 +102,6 @@
                 <field name='colorInput' accessType='inputOnly' type='SFColor'/>
                 <field name='colorsOutput' accessType='outputOnly' type='MFColor'/>
 <![CDATA[
-
-
 ecmascript:
 
 function colorInput (eventValue) // Example source code
@@ -149,7 +146,7 @@ function colorInput (eventValue) // Example source code
         <Shape DEF='TestShape1'>
             <Appearance DEF='TestAppearance1'>
                 <!-- ArtDeco01Material prototype goes here... -->
-                <ProtoInstance name='ArtDeco01Material' containerField="material">
+                <ProtoInstance name='ArtDeco01Material'>
                     <!-- [HelloWorldProgram diagnostic] ArtDeco01ProtoInstance.getNodeType()="Material" -->
                     <fieldValue name='description' value='ArtDeco01Material can substitute for a Material node'/>
                 </ProtoInstance>
@@ -159,7 +156,7 @@ function colorInput (eventValue) // Example source code
         <Shape DEF='TestShape2'>
             <Appearance DEF='TestAppearance2'>
                 <!-- ArtDeco02Material prototype goes here... -->
-                <ProtoInstance DEF='ArtDeco02MaterialDEF' name='ArtDeco02Material' containerField="material">
+                <ProtoInstance DEF='ArtDeco02MaterialDEF' name='ArtDeco02Material'>
                     <!-- [HelloWorldProgram diagnostic] ArtDeco02ProtoInstance.getNodeType()="ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time, TODO X3DJSAIL needs to add further capability." -->
                     <fieldValue name='description' value='ArtDeco02Material can substitute for another Material node'/>
                 </ProtoInstance>
@@ -169,7 +166,7 @@ function colorInput (eventValue) // Example source code
         <Shape DEF='TestShape3'>
             <Appearance DEF='TestAppearance3'>
                 <!-- ArtDeco02Material ProtoInstance USE goes here... -->
-                <ProtoInstance USE='ArtDeco02MaterialDEF' containerField="material"/>
+                <ProtoInstance USE='ArtDeco02MaterialDEF'/>
             </Appearance>
             <Cylinder height='0.001' radius='0.001'/>
         </Shape>
@@ -208,8 +205,6 @@ function colorInput (eventValue) // Example source code
                         <connect nodeField='diffuseColor' protoField='diffuseColor'/>
                     </IS>
 <![CDATA[
-
-
 ecmascript:
 function initialize ()
 {
@@ -244,7 +239,7 @@ function clockTrigger (timeValue)
                 <MetadataString DEF='FindableMetadataStringTest' name='findThisNameValue' value='"test case"'/>
                 <Appearance DEF='DeclarativeAppearanceExample'>
                     <!-- DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance -->
-                    <ProtoInstance DEF='MyMaterialModulator' name='MaterialModulator' containerField="material"/>
+                    <ProtoInstance DEF='MyMaterialModulator' name='MaterialModulator'/>
                 </Appearance>
                 <Cone bottom='false' bottomRadius='0.05' height='0.1'/>
             </Shape>
@@ -258,7 +253,7 @@ function clockTrigger (timeValue)
         <!-- </Appearance> -->
         <!-- Test success: x3dModel.findElementByNameValue(findThisNameValue) = <MetadataString DEF='FindableMetadataStringTest' name='findThisNameValue' value='"test case"'/> -->
         <!-- Test success: x3dModel.findElementByNameValue("ArtDeco01Material", "ProtoDeclare") found -->
-        <!-- Test success: x3dModel.findElementByNameValue("MaterialModulator", "ProtoDeclare")  found -->
+        <!-- Test success: x3dModel.findElementByNameValue("MaterialModulator", "ProtoDeclare") found -->
         <!-- Test success: x3dModel.findElementByNameValue("MaterialModulator", "ProtoInstance") found -->
         <Group DEF='TestFieldObjectsGroup'>
             <!-- testFieldObjects() results -->
@@ -282,12 +277,12 @@ function clockTrigger (timeValue)
                 <!-- Expected containerField='source', allowed containerField values="texture" "source" "back" "bottom" "front" "left" "right" "top" "backTexture" "bottomTexture" "frontTexture" "leftTexture" "rightTexture" "topTexture" -->
             </MovieTexture>
         </Sound>
-        <!-- Test success:  AnchorObject.isNode()=true,              siteAnchor.isNode()=true -->
-        <!-- Test success:  AnchorObject.isStatement()=false,        siteAnchor.isStatement()=false -->
-        <!-- Test success:   ROUTEObject.isNode()=false,     orbitPositionROUTE.isNode()=false -->
-        <!-- Test success:   ROUTEObject.isStatement()=true, orbitPositionROUTE.isStatement()=true -->
-        <!-- Test success: CommentsBlock.isNode()=false,           testComments.isNode()=false -->
-        <!-- Test success: CommentsBlock.isStatement()=false,      testComments.isStatement()=false -->
+        <!-- Test success: AnchorObject.isNode()=true, siteAnchor.isNode()=true -->
+        <!-- Test success: AnchorObject.isStatement()=false, siteAnchor.isStatement()=false -->
+        <!-- Test success: ROUTEObject.isNode()=false, orbitPositionROUTE.isNode()=false -->
+        <!-- Test success: ROUTEObject.isStatement()=true, orbitPositionROUTE.isStatement()=true -->
+        <!-- Test success: CommentsBlock.isNode()=false, testComments.isNode()=false -->
+        <!-- Test success: CommentsBlock.isStatement()=false, testComments.isStatement()=false -->
         <Shape DEF='ExtrusionShape'>
             <!-- ExampleExtrusion isCrossSectionClosed()=true, crossSection='[1.0, 1.0, 1.0, -1.0, -1.0, -1.0, -1.0, 1.0, 1.0, 1.0]' -->
             <!-- ExampleExtrusion isSpineClosed()=false, spine='[0.0, 0.0, 0.0, 0.0, 1.0, 0.0]' -->

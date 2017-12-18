@@ -5,6 +5,7 @@
     "@version": "3.3",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
     "head": {
+      "#comment": "comment #4",
       "component": [
         {
           "@name": "Navigation",
@@ -50,7 +51,7 @@
         },
         {
           "@name": "modified",
-          "@content": "11 December 2017"
+          "@content": "18 December 2017"
         },
         {
           "@name": "generator",
@@ -108,8 +109,7 @@
           "@name": "SpecialTest",
           "@content": "tested sat: name value cannot contain embedded space character"
         }
-      ],
-      "#comment": "comment #4"
+      ]
     },
     "Scene": {
       "-children": [
@@ -379,15 +379,23 @@
                           "SAI Library",
                           "X3DJSAIL"
                         ],
+                        "#comment": "escaped quotation marks example 4: He said, &quot;Immel did it!&quot;",
                         "-metadata": [
                           {
                             "MetadataSet": {
                               "@containerField": "metadata",
                               "@name": "EscapedQuotationMarksMetadataSet",
-                              "-metadata": [
+                              "-children": [
                                 {
                                   "MetadataString": {
-                                    "@containerField": "metadata",
+                                    "@name": "escapedQuotesTest1",
+                                    "@value": [
+                                      "escaped quotation marks example 1: He said, \\\"Immel did it!\\\""
+                                    ]
+                                  }
+                                },
+                                {
+                                  "MetadataString": {
                                     "@name": "escapedQuotesTest2",
                                     "@value": [
                                       "escaped quotation marks example 2: He said, &amp;quot;Immel did it!&amp;quot;"
@@ -408,8 +416,7 @@
                               ]
                             }
                           }
-                        ],
-                        "#comment": "escaped quotation marks example 4: He said, &quot;Immel did it!&quot;"
+                        ]
                       }
                     }
                   ]
@@ -418,10 +425,12 @@
               {
                 "Collision": {
                   "#comment": "test containerField='proxy'",
-                  "-children": [
+                  "-proxy": [
                     {
                       "Shape": {
+                        "@containerField": "proxy",
                         "@DEF": "ProxyShape",
+                        "#comment": "reference: http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html",
                         "-geometry": [
                           {
                             "Text": {
@@ -433,8 +442,7 @@
                               ]
                             }
                           }
-                        ],
-                        "#comment": "reference: http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html"
+                        ]
                       }
                     }
                   ]
@@ -642,6 +650,7 @@
               "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material",
               "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"
             ],
+            "#comment": "[HelloWorldProgram diagnostic] ArtDeco02ExternProtoDeclare.getNodeType()=\\\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time, TODO X3DJSAIL needs to add further capability.\\\"",
             "field": [
               {
                 "@name": "description",
@@ -649,8 +658,7 @@
                 "@appinfo": "tooltip for descriptionField",
                 "@type": "SFString"
               }
-            ],
-            "#comment": "[HelloWorldProgram diagnostic] ArtDeco02ExternProtoDeclare.getNodeType()=\\\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time, TODO X3DJSAIL needs to add further capability.\\\""
+            ]
           }
         },
         {
@@ -661,21 +669,22 @@
                 "Appearance": {
                   "@containerField": "appearance",
                   "@DEF": "TestAppearance1",
-                  "-children": [
+                  "#comment": "ArtDeco01Material prototype goes here...",
+                  "-material": [
                     {
                       "ProtoInstance": {
+                        "@containerField": "material",
                         "@name": "ArtDeco01Material",
+                        "#comment": "[HelloWorldProgram diagnostic] ArtDeco01ProtoInstance.getNodeType()=\\\"Material\\\"",
                         "fieldValue": [
                           {
                             "@name": "description",
                             "@value": "ArtDeco01Material can substitute for a Material node"
                           }
-                        ],
-                        "#comment": "[HelloWorldProgram diagnostic] ArtDeco01ProtoInstance.getNodeType()=\\\"Material\\\""
+                        ]
                       }
                     }
-                  ],
-                  "#comment": "ArtDeco01Material prototype goes here..."
+                  ]
                 }
               }
             ],
@@ -697,21 +706,23 @@
                 "Appearance": {
                   "@containerField": "appearance",
                   "@DEF": "TestAppearance2",
-                  "-children": [
+                  "#comment": "ArtDeco02Material prototype goes here...",
+                  "-material": [
                     {
                       "ProtoInstance": {
+                        "@containerField": "material",
                         "@name": "ArtDeco02Material",
+                        "@DEF": "ArtDeco02MaterialDEF",
+                        "#comment": "[HelloWorldProgram diagnostic] ArtDeco02ProtoInstance.getNodeType()=\\\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time, TODO X3DJSAIL needs to add further capability.\\\"",
                         "fieldValue": [
                           {
                             "@name": "description",
                             "@value": "ArtDeco02Material can substitute for another Material node"
                           }
-                        ],
-                        "#comment": "[HelloWorldProgram diagnostic] ArtDeco02ProtoInstance.getNodeType()=\\\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time, TODO X3DJSAIL needs to add further capability.\\\""
+                        ]
                       }
                     }
-                  ],
-                  "#comment": "ArtDeco02Material prototype goes here..."
+                  ]
                 }
               }
             ],
@@ -721,6 +732,37 @@
                   "@containerField": "geometry",
                   "@bottomRadius": 0.001,
                   "@height": 0.001
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Shape": {
+            "@DEF": "TestShape3",
+            "-appearance": [
+              {
+                "Appearance": {
+                  "@containerField": "appearance",
+                  "@DEF": "TestAppearance3",
+                  "#comment": "ArtDeco02Material ProtoInstance USE goes here...",
+                  "-material": [
+                    {
+                      "ProtoInstance": {
+                        "@containerField": "material",
+                        "@USE": "ArtDeco02MaterialDEF"
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
+            "-geometry": [
+              {
+                "Cylinder": {
+                  "@containerField": "geometry",
+                  "@height": 0.001,
+                  "@radius": 0.001
                 }
               }
             ]
@@ -940,15 +982,16 @@
                       "Appearance": {
                         "@containerField": "appearance",
                         "@DEF": "DeclarativeAppearanceExample",
-                        "-children": [
+                        "#comment": "DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance",
+                        "-material": [
                           {
                             "ProtoInstance": {
+                              "@containerField": "material",
                               "@name": "MaterialModulator",
                               "@DEF": "MyMaterialModulator"
                             }
                           }
-                        ],
-                        "#comment": "DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance"
+                        ]
                       }
                     }
                   ],
@@ -981,6 +1024,7 @@
               1.6,
               0
             ],
+            "#comment": "set sound-ellipsoid location height at 1.6m to match typical avatar height",
             "-source": [
               {
                 "AudioClip": {
@@ -993,8 +1037,7 @@
                   "#comment": "Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d"
                 }
               }
-            ],
-            "#comment": "set sound-ellipsoid location height at 1.6m to match typical avatar height"
+            ]
           }
         },
         {
@@ -1004,6 +1047,7 @@
               1.6,
               0
             ],
+            "#comment": "set sound-ellipsoid location height at 1.6m to match typical avatar height",
             "-source": [
               {
                 "MovieTexture": {
@@ -1016,13 +1060,13 @@
                   "#comment": "Expected containerField='source', allowed containerField values=\\\"texture\\\" \\\"source\\\" \\\"back\\\" \\\"bottom\\\" \\\"front\\\" \\\"left\\\" \\\"right\\\" \\\"top\\\" \\\"backTexture\\\" \\\"bottomTexture\\\" \\\"frontTexture\\\" \\\"leftTexture\\\" \\\"rightTexture\\\" \\\"topTexture\\\""
                 }
               }
-            ],
-            "#comment": "set sound-ellipsoid location height at 1.6m to match typical avatar height"
+            ]
           }
         },
         {
           "Shape": {
             "@DEF": "ExtrusionShape",
+            "#comment": "ExampleExtrusion isSpineClosed()=false, spine='[0.0, 0.0, 0.0, 0.0, 1.0, 0.0]'",
             "-appearance": [
               {
                 "Appearance": {
@@ -1046,8 +1090,7 @@
                   "@DEF": "ExampleExtrusion"
                 }
               }
-            ],
-            "#comment": "ExampleExtrusion isSpineClosed()=false, spine='[0.0, 0.0, 0.0, 0.0, 1.0, 0.0]'"
+            ]
           }
         }
       ],
