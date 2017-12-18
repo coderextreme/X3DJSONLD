@@ -94,12 +94,9 @@ public class text
           .setFontStyle(new FontStyleObject()))
         .setAppearance(new AppearanceObject()
           .setMaterial(new MaterialObject())))
-      .addChild(new ScriptObject().setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+      .addChild(new ScriptObject().setSourceCode("\n" + 
 "			    ecmascript:" + "\n" + 
-"			    var me = '\"1\" \"\\\"2\" \"\\n3\"';" + "\n" + "]]>"
-)
+"			    var me = '\"1\" \"\\\"2\" \"\\n3\"';" + "\n")
         .addField(new fieldObject().setAccessType("initializeOnly").setName("frontUrls").setType("MFString").setValue("\"rnl_front.png\" \"uffizi_front.png\"")))));
   }
   // end of initialize() method
