@@ -39,12 +39,12 @@ Additional references of interest:
 	<xsl:variable name="debug"><xsl:text>false</xsl:text></xsl:variable>
 	
 	<xsl:variable name="saiPackage"               >           <xsl:text>org.web3d.x3d.sai</xsl:text></xsl:variable>
-	<xsl:variable name="saiPackageDirectorySource">       <xsl:text>src/main/java/org/web3d/x3d/sai</xsl:text></xsl:variable>
+	<xsl:variable name="saiPackageDirectorySource">       <xsl:text>src/org/web3d/x3d/sai</xsl:text></xsl:variable>
 	<xsl:variable name="saiPackageDirectoryBuild" >     <xsl:text>build/org/web3d/x3d/sai</xsl:text></xsl:variable>
 	<!-- TODO restructure concrete hierarchy -->
 	<xsl:variable name="concreteSubpackageName"   >                         <xsl:text>jsail</xsl:text></xsl:variable>
 	<xsl:variable name="concretePackage"          >           <xsl:text>org.web3d.x3d.jsail</xsl:text></xsl:variable>
-	<xsl:variable name="concretePackageDirectorySource">  <xsl:text>src/main/java/org/web3d/x3d/jsail</xsl:text></xsl:variable>
+	<xsl:variable name="concretePackageDirectorySource">  <xsl:text>src/org/web3d/x3d/jsail</xsl:text></xsl:variable>
 	<xsl:variable name="concretePackageDirectoryBuild" ><xsl:text>build/org/web3d/x3d/jsail</xsl:text></xsl:variable>
 	<xsl:variable name="jsaiClassSuffix"    ><xsl:text>Object</xsl:text></xsl:variable>
 	<xsl:variable name="jsaiInterfaceSuffix"><xsl:text>Interface</xsl:text></xsl:variable>
@@ -738,13 +738,41 @@ Additional references of interest:
 					<xsl:if test="($name = 'X3D')">
 						<!-- X3D imports -->
 						<xsl:text>
+// X3DObject imports ========================
+// Base classes and SAX reader for EXIFICIENT
+import com.siemens.ct.exi.CodingMode;
+import com.siemens.ct.exi.EXIFactory;
+import com.siemens.ct.exi.GrammarFactory;
+import com.siemens.ct.exi.api.sax.EXIResult;
+import com.siemens.ct.exi.api.sax.EXISource;
+import com.siemens.ct.exi.exceptions.EXIException;
+import com.siemens.ct.exi.grammars.Grammars;
+import com.siemens.ct.exi.helpers.DefaultEXIFactory;
+import org.xml.sax.InputSource;
+import org.xml.sax.XMLReader;
+import org.xml.sax.helpers.XMLReaderFactory;
+							
+/* Base classes and SAX reader for OPENEXI
+import org.openexi.proc.common.AlignmentType;
+import org.openexi.proc.common.EXIOptionsException;
+import org.openexi.proc.common.GrammarOptions;
+import org.openexi.proc.grammars.GrammarCache;
+import org.openexi.sax.Transmogrifier;
+import org.openexi.sax.TransmogrifierException;
+import org.openexi.schema.EXISchema;
+import org.openexi.scomp.EXISchemaFactory;
+import org.openexi.scomp.EXISchemaFactoryException;
+import org.openexi.scomp.EXISchemaReader;
+import org.xml.sax.InputSource;
+*/
+
 // File operations
 import java.io.*;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.jar.Manifest;
+import java.util.zip.*;
 // XSLT operations: Saxon HE9
 import net.sf.saxon.s9api.*;
 // XSLT operations: Native Java
@@ -755,6 +783,8 @@ import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.Result;
+import javax.xml.transform.sax.SAXSource;
 import javax.xml.transform.stream.StreamSource;
 import javax.xml.transform.stream.StreamResult;
 // XSLT operations
@@ -900,14 +930,16 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 				</xsl:for-each>
 				
 				<!-- special imports -->
-				<xsl:if test="InterfaceDefinition/field[(@type = 'MFNode') and (((@name = 'address') or contains(@name, 'Entities') or not(starts-with(@name,'add'))) and not(starts-with(@name,'remove')))]">
-					<xsl:text>import java.util.Arrays;</xsl:text>
-					<xsl:text>&#10;</xsl:text>
-				</xsl:if>
-				<xsl:if test="($name = 'Extrusion')">
-					<xsl:text>import java.io.File;</xsl:text>
-					<xsl:text>&#10;</xsl:text>
-				</xsl:if>
+				<xsl:choose>
+					<xsl:when test="InterfaceDefinition/field[(@type = 'MFNode') and (((@name = 'address') or contains(@name, 'Entities') or not(starts-with(@name,'add'))) and not(starts-with(@name,'remove')))]">
+						<xsl:text>import java.util.Arrays;</xsl:text>
+						<xsl:text>&#10;</xsl:text>
+					</xsl:when>
+					<xsl:when test="($name = 'Extrusion')">
+						<xsl:text>import java.io.File;</xsl:text>
+						<xsl:text>&#10;</xsl:text>
+					</xsl:when>
+				</xsl:choose>
 				
 				<!-- TODO incorrect?
 				<xsl:if test="($name = 'ROUTE')">
@@ -990,7 +1022,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 			</xsl:variable>
 			
 			<xsl:if test="doc-available($x3d.tooltips.path)">
-				<xsl:variable name="tooltipText" select="replace($x3d.tooltips.document//element[@name = $name]/@tooltip,'&#8734;','infinity')"/>
+				<xsl:variable name="tooltipText" select="replace(replace($x3d.tooltips.document//element[@name = $name]/@tooltip,'&#8734;','infinity'),'&#960;','pi')"/>
 				
 				<xsl:variable name="containsHintWarning" select="contains($tooltipText,'Hint:') or contains($tooltipText,'Warning:')"/>
 				<xsl:if test="(string-length($tooltipText) > 0)">
@@ -1005,64 +1037,42 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 						</xsl:otherwise>
 					</xsl:choose>
 					<xsl:text disable-output-escaping="yes"> tooltip&lt;/i&gt;: </xsl:text>
-					<xsl:choose>
-						<xsl:when test="$containsHintWarning">
-							<xsl:variable name="preambleHint"    select="normalize-space(substring-before($tooltipText,'Hint:'))"/>
-							<xsl:variable name="preambleWarning" select="normalize-space(substring-before($tooltipText,'Warning:'))"/>
-							<xsl:choose>
-								<xsl:when test="(string-length($preambleHint) > 0) and 
-												 ((string-length($preambleWarning) = 0) or (string-length($preambleWarning) > string-length($preambleHint)))">
-									<xsl:call-template name="hyperlink">
-										<xsl:with-param name="string">
-											<xsl:value-of select="$preambleHint"/>
-										</xsl:with-param>
-									</xsl:call-template>
-									<xsl:text>&#10;</xsl:text>
-									<xsl:text> * </xsl:text>
-									<xsl:text disable-output-escaping="yes">&lt;ul&gt;</xsl:text>
-									<xsl:call-template name="insert-javadoc-line-breaks-recurse">
-										<xsl:with-param name="inputString"><xsl:value-of select="substring-after(normalize-space($tooltipText),$preambleHint)"/></xsl:with-param>
-										<xsl:with-param name="breakText1"><xsl:text>Hint:</xsl:text></xsl:with-param>
-										<xsl:with-param name="breakText2"><xsl:text>Warning:</xsl:text></xsl:with-param>
-									</xsl:call-template>
-									<xsl:text>&#10;</xsl:text>
-									<xsl:text> * </xsl:text>
-									<xsl:text disable-output-escaping="yes">&lt;/ul&gt;</xsl:text>
-								</xsl:when>
-								<xsl:otherwise>
-									<xsl:call-template name="hyperlink">
-										<xsl:with-param name="string">
-											<xsl:value-of select="$preambleWarning"/>
-										</xsl:with-param>
-									</xsl:call-template>
-									<xsl:text>&#10;</xsl:text>
-									<xsl:text> * </xsl:text>
-									<xsl:text disable-output-escaping="yes">&lt;ul&gt;</xsl:text>
-									<xsl:call-template name="insert-javadoc-line-breaks-recurse">
-										<xsl:with-param name="inputString"><xsl:value-of select="substring-after(normalize-space($tooltipText),$preambleWarning)"/></xsl:with-param>
-										<xsl:with-param name="breakText1"><xsl:text>Hint:</xsl:text></xsl:with-param>
-										<xsl:with-param name="breakText2"><xsl:text>Warning:</xsl:text></xsl:with-param>
-									</xsl:call-template>
-									<xsl:text>&#10;</xsl:text>
-									<xsl:text> * </xsl:text>
-									<xsl:text disable-output-escaping="yes">&lt;/ul&gt;</xsl:text>
-								</xsl:otherwise>
-							</xsl:choose>
-						</xsl:when>
-						<xsl:otherwise>
-							<xsl:call-template name="escape-javadoc-characters">
-								<xsl:with-param name="inputString">
-									<xsl:value-of select="$tooltipText"/>
-								</xsl:with-param>
-							</xsl:call-template>
-						</xsl:otherwise>
-					</xsl:choose>
-					<!--
-					<xsl:text>&#10;</xsl:text>
-					<xsl:text> * </xsl:text>
-					<xsl:text disable-output-escaping="yes">&lt;br&gt;</xsl:text><!- - line break - ->
-					<xsl:text>&#10;</xsl:text>
+					
+					<xsl:variable name="tooltipHTML">
+								<!-- debug
+								<xsl:if test="contains($tooltipText,'http')">
+									<xsl:message>
+										<xsl:text>*** found http: </xsl:text>
+										<xsl:value-of select="$tooltipText" disable-output-escaping="yes"/>
+									</xsl:message>
+								</xsl:if>
+							</xsl:with-param>
+						</xsl:call-template>
+								-->
+						<xsl:call-template name="bulletize-hints-warnings">
+							<xsl:with-param name="tooltipText">
+								<xsl:call-template name="wrap-hyperlinks">
+									<xsl:with-param name="string">
+										<!-- xsl:text> escape-javadoc-characters5 </xsl:text -->
+										<xsl:call-template name="escape-javadoc-characters">
+											<xsl:with-param name="inputString">
+												<xsl:value-of select="$tooltipText" disable-output-escaping="yes"/>
+											</xsl:with-param>
+										</xsl:call-template>
+									</xsl:with-param>
+								</xsl:call-template>
+							</xsl:with-param>
+						</xsl:call-template>
+					</xsl:variable>
+					<!-- debug diagnostic
+					<xsl:if test="contains($tooltipHTML,'http')">
+						<xsl:message>
+							<xsl:text>  * found http, wrapped: </xsl:text>
+							<xsl:value-of select="$tooltipHTML" disable-output-escaping="yes"/>
+						</xsl:message>
+					</xsl:if>
 					-->
+					<xsl:value-of select="$tooltipHTML" disable-output-escaping="yes"/>
 					<xsl:if test="not($containsHintWarning)">
 						<xsl:text> * </xsl:text>
 						<xsl:text disable-output-escaping="yes">&lt;br&gt;</xsl:text><!-- line break -->
@@ -1098,13 +1108,16 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 						   starts-with($name, 'EdgeEnhancementVolumeStyle') or starts-with($name, 'CartoonVolumeStyle') or
 						   starts-with($name, 'OpacityMapVolumeStyle')      or starts-with($name, 'ToneMappedVolumeStyle'))">
 				
-				<xsl:text> * Note that {@linkplain SFColor</xsl:text>
-				<xsl:value-of select="$jsaiClassSuffix"/>
-				<xsl:text>#ALICEBLUE SFColor</xsl:text><xsl:value-of select="$jsaiClassSuffix"/>
-				<xsl:text>} also provides a variety of color constants.</xsl:text>
 				<xsl:text>&#10;</xsl:text>
 				<xsl:text> * </xsl:text>
 				<xsl:text disable-output-escaping="yes">&lt;br&gt;</xsl:text><!-- line break -->
+				<xsl:text>&#10;</xsl:text>
+				<xsl:text> * Note that {@linkplain SFColor</xsl:text>
+				<xsl:value-of select="$jsaiClassSuffix"/>
+				<xsl:text>#ALICEBLUE SFColor</xsl:text><xsl:value-of select="$jsaiClassSuffix"/>
+				<xsl:text>} provides a variety of color constants.</xsl:text>
+				<xsl:text>&#10;</xsl:text>
+				<xsl:text> * </xsl:text>
 				<xsl:text disable-output-escaping="yes">&lt;br&gt;</xsl:text><!-- line break -->
 				<xsl:text>&#10;</xsl:text>
 			</xsl:if>
@@ -1133,7 +1146,6 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 				<xsl:text>&#10;</xsl:text>
 				<xsl:text> * </xsl:text>
 				<xsl:text disable-output-escaping="yes">&lt;br&gt;</xsl:text><!-- line break -->
-				<xsl:text disable-output-escaping="yes">&lt;br&gt;</xsl:text><!-- line break -->
 				<xsl:text>&#10;</xsl:text>
 			</xsl:if>
 			
@@ -1150,7 +1162,6 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 				<xsl:text disable-output-escaping="yes"> * &lt;li&gt; &lt;a href="http://www.unitsconversion.com.ar/massunitsconversion/index.htm" target="_blank"&gt;Unit conversion&lt;/a&gt; website &lt;/li&gt;&#10;</xsl:text>
 				<xsl:text disable-output-escaping="yes"> * &lt;/ul&gt;&#10;</xsl:text>
 				<xsl:text> * </xsl:text>
-				<xsl:text disable-output-escaping="yes">&lt;br&gt;</xsl:text><!-- line break -->
 				<xsl:text disable-output-escaping="yes">&lt;br&gt;</xsl:text><!-- line break -->
 				<xsl:text>&#10;</xsl:text>
 			</xsl:if>
@@ -1173,9 +1184,11 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 					<xsl:otherwise>
 						<xsl:text> This </xsl:text>
 						<xsl:value-of select="$concretePackage"/>
-						<xsl:text> concrete class is used for implementing a standalone X3D object as a Plain Old Java Object (POJO).</xsl:text>
+						<xsl:text> concrete class is used for implementing a standalone X3D object as a </xsl:text>
+						<!-- https://stackoverflow.com/questions/1082050/linking-to-an-external-url-in-javadoc -->
+						<xsl:text disable-output-escaping="yes"><![CDATA[<a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.]]></xsl:text>
 						<xsl:text>&#10;</xsl:text>
-						<xsl:text> * If you are writing Java code for use inside an X3D Script node, compile using the </xsl:text>
+						<xsl:text> * If you are writing Java code for use inside an X3D Script node, compile separate code using only the </xsl:text>
 						<xsl:text disable-output-escaping="yes">&lt;i&gt;</xsl:text>
 						<xsl:value-of select="$saiPackage"/>
 						<xsl:text disable-output-escaping="yes">&lt;/i&gt;</xsl:text>
@@ -1363,8 +1376,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 						</xsl:when>
 					</xsl:choose>
 				</xsl:variable>
-				
-			
+
 			<xsl:text disable-output-escaping="yes"><![CDATA[ * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html]]></xsl:text>
 			<!-- append relevant bookmarks -->
 			<xsl:if test="(string-length($sceneAuthoringHintSection) > 0)">
@@ -1377,26 +1389,33 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 				<xsl:value-of select="$sceneAuthoringHintSection"/>
 			</xsl:if>
 			<xsl:text disable-output-escaping="yes"><![CDATA[</a>]]></xsl:text>
-			<xsl:text>&#10;</xsl:text>
+			<!-- special javadoc links -->
 			<xsl:choose>
+				<xsl:when test="starts-with($name,'SFColor')">
+					<xsl:text disable-output-escaping="yes"><![CDATA[ * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a>
+]]></xsl:text>
+				</xsl:when>
 				<xsl:when test="($name = 'IS')">
 					<xsl:text disable-output-escaping="yes"><![CDATA[
-	 * @see connectObject
-	 * @see ProtoDeclareObject
-	 * @see ProtoInterfaceObject
-	 * @see ProtoBodyObject
-	 * @see ProtoInstanceObject
+ * @see connectObject
+ * @see ProtoDeclareObject
+ * @see ProtoInterfaceObject
+ * @see ProtoBodyObject
+ * @see ProtoInstanceObject
 ]]></xsl:text>
 				</xsl:when>
 				<xsl:when test="($name = 'connect')">
 					<xsl:text disable-output-escaping="yes"><![CDATA[
-	 * @see ISObject
-	 * @see ProtoDeclareObject
-	 * @see ProtoInterfaceObject
-	 * @see ProtoBodyObject
-	 * @see ProtoInstanceObject
+ * @see ISObject
+ * @see ProtoDeclareObject
+ * @see ProtoInterfaceObject
+ * @see ProtoBodyObject
+ * @see ProtoInstanceObject
 ]]></xsl:text>
 				</xsl:when>
+				<xsl:otherwise>
+					<xsl:text>&#10;</xsl:text>
+				</xsl:otherwise>
 			</xsl:choose>
 			
 			<xsl:text> */</xsl:text><!-- end javadoc -->
@@ -1545,7 +1564,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
                           not(starts-with($name, 'X3DConcrete')) and not($isUtilityClass = 'true')">
 				<xsl:text disable-output-escaping="yes"><![CDATA[
 	/** required by internal interface, empty list provided since no children array present in this class */
-        private ArrayList<String> commentsList; 
+    private ArrayList<String> commentsList; 
 ]]></xsl:text>
 			</xsl:if>
 			
@@ -1712,58 +1731,90 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 								<xsl:when test="($name = 'X3D')">
 									<!-- Excerpt from X3D-Edit SchemaData.jsail -->
 									<xsl:text disable-output-escaping="yes"><![CDATA[
-	/** XML header <i>&lt;?xml version="1.0" encoding="UTF-8"?&gt;</i>
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a> */
+	/** XML declaration appears on first line of an XML document.
+	 * <br> <i>&lt;?xml version="1.0" encoding="UTF-8"?&gt;</i>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a>
+	 * @see <a href="https://www.w3.org/TR/xml/#sec-prolog-dtd">W3C Recommendation, Extensible Markup Language (XML) 1.0 (Fifth Edition) section 2.8, Prolog and Document Type Declaration</a> */
 	public static final String XML_HEADER = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
 					
-	/** <i>&lt;!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "http://www.web3d.org/specifications/x3d-4.1.dtd"&gt;</i>
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a> */
-	public static final String DOCTYPE_4_1 = "<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.1//EN\" \"http://www.web3d.org/specifications/x3d-4.1.dtd\">";
+	/** XML document type declaration. DOCTYPE supports element/attribute structural validation and follows the initial XML declaration, before the first element in an XML document.
+	 * <br> <i>&lt;?DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "http://www.web3d.org/specifications/x3d-4.1.dtd"&gt;</i>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a>
+	 * @see <a href="https://www.w3.org/TR/xml/#sec-prolog-dtd">W3C Recommendation, Extensible Markup Language (XML) 1.0 (Fifth Edition) section 2.8, Prolog and Document Type Declaration</a> */
+	public static final String XML_DOCTYPE_X3D_4_1 = "<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.1//EN\" \"http://www.web3d.org/specifications/x3d-4.1.dtd\">";
 	
-	/** <i>&lt;!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "http://www.web3d.org/specifications/x3d-4.0.dtd"&gt;</i>
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a> */
-	public static final String DOCTYPE_4_0 = "<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.0//EN\" \"http://www.web3d.org/specifications/x3d-4.0.dtd\">";
+	/** XML document type declaration. DOCTYPE supports element/attribute structural validation and follows the initial XML declaration, before the first element in an XML document.
+	 * <i>&lt;?DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "http://www.web3d.org/specifications/x3d-4.0.dtd"&gt;</i>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a>
+	 * @see <a href="https://www.w3.org/TR/xml/#sec-prolog-dtd">W3C Recommendation, Extensible Markup Language (XML) 1.0 (Fifth Edition) section 2.8, Prolog and Document Type Declaration</a> */
+	public static final String XML_DOCTYPE_X3D_4_0 = "<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.0//EN\" \"http://www.web3d.org/specifications/x3d-4.0.dtd\">";
 	
-	/** <i>&lt;!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd"&gt;</i>
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a> */
-	public static final String DOCTYPE_3_3 = "<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 3.3//EN\" \"http://www.web3d.org/specifications/x3d-3.3.dtd\">";
+	/** XML document type declaration. DOCTYPE supports element/attribute structural validation and follows the initial XML declaration, before the first element in an XML document.
+	 * <br> <i>&lt;?DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd"&gt;</i>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a>
+	 * @see <a href="https://www.w3.org/TR/xml/#sec-prolog-dtd">W3C Recommendation, Extensible Markup Language (XML) 1.0 (Fifth Edition) section 2.8, Prolog and Document Type Declaration</a> */
+	public static final String XML_DOCTYPE_X3D_3_3 = "<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 3.3//EN\" \"http://www.web3d.org/specifications/x3d-3.3.dtd\">";
 	
-	/** <i>&lt;!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.2//EN" "http://www.web3d.org/specifications/x3d-3.2.dtd"&gt;</i>
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a> */
-	public static final String DOCTYPE_3_2 = "<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 3.2//EN\" \"http://www.web3d.org/specifications/x3d-3.2.dtd\">";
+	/** XML document type declaration. DOCTYPE supports element/attribute structural validation and follows the initial XML declaration, before the first element in an XML document.
+	 * <br> <i>&lt;?DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.2//EN" "http://www.web3d.org/specifications/x3d-3.2.dtd"&gt;</i>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a>
+	 * @see <a href="https://www.w3.org/TR/xml/#sec-prolog-dtd">W3C Recommendation, Extensible Markup Language (XML) 1.0 (Fifth Edition) section 2.8, Prolog and Document Type Declaration</a> */
+	public static final String XML_DOCTYPE_X3D_3_2 = "<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 3.2//EN\" \"http://www.web3d.org/specifications/x3d-3.2.dtd\">";
 	
-	/** <i>&lt;!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.1//EN" "http://www.web3d.org/specifications/x3d-3.1.dtd"&gt;</i>
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a> */
-	public static final String DOCTYPE_3_1 = "<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 3.1//EN\" \"http://www.web3d.org/specifications/x3d-3.1.dtd\">";
+	/** XML document type declaration. DOCTYPE supports element/attribute structural validation and follows the initial XML declaration, before the first element in an XML document.
+	 * <br> <i>&lt;?DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.1//EN" "http://www.web3d.org/specifications/x3d-3.1.dtd"&gt;</i>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a>
+	 * @see <a href="https://www.w3.org/TR/xml/#sec-prolog-dtd">W3C Recommendation, Extensible Markup Language (XML) 1.0 (Fifth Edition) section 2.8, Prolog and Document Type Declaration</a> */
+	public static final String XML_DOCTYPE_X3D_3_1 = "<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 3.1//EN\" \"http://www.web3d.org/specifications/x3d-3.1.dtd\">";
 	
-	/** <i>&lt;!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "http://www.web3d.org/specifications/x3d-3.0.dtd"&gt;</i>
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a> */
-	public static final String DOCTYPE_3_0 = "<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 3.0//EN\" \"http://www.web3d.org/specifications/x3d-3.0.dtd\">";
+	/** XML document type declaration. DOCTYPE supports element/attribute structural validation and follows the initial XML declaration, before the first element in an XML document.
+	 * <br> <i>&lt;?DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "http://www.web3d.org/specifications/x3d-3.0.dtd"&gt;</i>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a>
+	 * @see <a href="https://www.w3.org/TR/xml/#sec-prolog-dtd">W3C Recommendation, Extensible Markup Language (XML) 1.0 (Fifth Edition) section 2.8, Prolog and Document Type Declaration</a> */
+	public static final String XML_DOCTYPE_X3D_3_0 = "<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 3.0//EN\" \"http://www.web3d.org/specifications/x3d-3.0.dtd\">";
 
 	/**
-	 * <i>xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.0.xsd'</i>
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a> */
-	public static final String SCHEMA_3_0_ATTRIBUTES = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.0.xsd'";
+	 * XML Schema attributes for X3D element.
+	 * <br> <i>xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.0.xsd'</i>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a>
+	 * @see <a href="https://www.w3.org/TR/xmlschema-1/#xsi_schemaLocation">W3C Recommendation, XML Schema Part 1, Structures Second Edition, Section 2.6.3 xsi:schemaLocation, xsi:noNamespaceSchemaLocation</a>
+	 * @see <a href="https://www.w3.org/TR/xmlschema-0">W3C Recommendation, XML Schema Part 0: Primer Second Edition</a> */
+	public static final String X3D_XML_SCHEMA_3_0_ATTRIBUTES = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.0.xsd'";
 	/**
-	 * <i>xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.1.xsd'</i>
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a> */
-	public static final String SCHEMA_3_1_ATTRIBUTES = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.1.xsd'";
+	 * XML Schema attributes for X3D element.
+	 * <br> <i>xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.1.xsd'</i>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a>
+	 * @see <a href="https://www.w3.org/TR/xmlschema-1/#xsi_schemaLocation">W3C Recommendation, XML Schema Part 1, Structures Second Edition, Section 2.6.3 xsi:schemaLocation, xsi:noNamespaceSchemaLocation</a>
+	 * @see <a href="https://www.w3.org/TR/xmlschema-0">W3C Recommendation, XML Schema Part 0: Primer Second Edition</a> */
+	public static final String X3D_XML_SCHEMA_3_1_ATTRIBUTES = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.1.xsd'";
 	/**
-	 * <i>xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.2.xsd'</i>
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a> */
-	public static final String SCHEMA_3_2_ATTRIBUTES = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.2.xsd'";
+	 * XML Schema attributes for X3D element.
+	 * <br> <i>xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.2.xsd'</i>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a>
+	 * @see <a href="https://www.w3.org/TR/xmlschema-1/#xsi_schemaLocation">W3C Recommendation, XML Schema Part 1, Structures Second Edition, Section 2.6.3 xsi:schemaLocation, xsi:noNamespaceSchemaLocation</a>
+	 * @see <a href="https://www.w3.org/TR/xmlschema-0">W3C Recommendation, XML Schema Part 0: Primer Second Edition</a> */
+	public static final String X3D_XML_SCHEMA_3_2_ATTRIBUTES = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.2.xsd'";
 	/**
-	 * <i>xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'</i>
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a> */
-	public static final String SCHEMA_3_3_ATTRIBUTES = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'";
+	 * XML Schema attributes for X3D element.
+	 * <br> <i>xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'</i>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a>
+	 * @see <a href="https://www.w3.org/TR/xmlschema-1/#xsi_schemaLocation">W3C Recommendation, XML Schema Part 1, Structures Second Edition, Section 2.6.3 xsi:schemaLocation, xsi:noNamespaceSchemaLocation</a>
+	 * @see <a href="https://www.w3.org/TR/xmlschema-0">W3C Recommendation, XML Schema Part 0: Primer Second Edition</a> */
+	public static final String X3D_XML_SCHEMA_3_3_ATTRIBUTES = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'";
 	/**
-	 * <i>xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-4.0.xsd'</i>
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a> */
-	public static final String SCHEMA_4_0_ATTRIBUTES = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-4.0.xsd'";
+	 * XML Schema attributes for X3D element.
+	 * <br> <i>xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-4.0.xsd'</i>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a>
+	 * @see <a href="https://www.w3.org/TR/xmlschema-1/#xsi_schemaLocation">W3C Recommendation, XML Schema Part 1, Structures Second Edition, Section 2.6.3 xsi:schemaLocation, xsi:noNamespaceSchemaLocation</a>
+	 * @see <a href="https://www.w3.org/TR/xmlschema-0">W3C Recommendation, XML Schema Part 0: Primer Second Edition</a> */
+	public static final String X3D_XML_SCHEMA_4_0_ATTRIBUTES = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-4.0.xsd'";
 	/**  
-	 * <i>xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-4.1.xsd'</i>
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a> */
-	public static final String SCHEMA_4_1_ATTRIBUTES = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-4.1.xsd'";
+	 * XML Schema attributes for X3D element.
+	 * <br> <i>xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-4.1.xsd'</i>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a>
+	 * @see <a href="https://www.w3.org/TR/xmlschema-1/#xsi_schemaLocation">W3C Recommendation, XML Schema Part 1, Structures Second Edition, Section 2.6.3 xsi:schemaLocation, xsi:noNamespaceSchemaLocation</a>
+	 * @see <a href="https://www.w3.org/TR/xmlschema-0">W3C Recommendation, XML Schema Part 0: Primer Second Edition</a> */
+	public static final String X3D_XML_SCHEMA_4_1_ATTRIBUTES = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-4.1.xsd'";
 
 ]]></xsl:text>
 								</xsl:when>
@@ -2002,7 +2053,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 
 	/** Provides name of this element: <i>]]></xsl:text>
 			<xsl:value-of select="@name"/>
-			<xsl:text><![CDATA[</i>.
+			<xsl:text><![CDATA[</i>
 	 * @return name of this element
 	 */
 	@Override
@@ -2012,16 +2063,20 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 	}
 ]]></xsl:text>
 			<xsl:text disable-output-escaping="yes"><![CDATA[
-	/** String constant <i>COMPONENT</i> provides X3D component for this element: <i>]]></xsl:text>
+	/** String constant <i>COMPONENT</i> defines X3D component for the <i>]]></xsl:text>
+			<xsl:value-of select="@name"/>
+			<xsl:text><![CDATA[</i> element: <i>]]></xsl:text>
 			<xsl:value-of select="InterfaceDefinition/componentInfo/@name"/>
-			<xsl:text disable-output-escaping="yes"><![CDATA[</i>. */
+			<xsl:text disable-output-escaping="yes"><![CDATA[</i> */
 	public static final String COMPONENT = "]]></xsl:text>
 			<xsl:value-of select="InterfaceDefinition/componentInfo/@name"/>
 			<xsl:text><![CDATA[";
 
-	/** Provides X3D component for this element: <i>]]></xsl:text>
+	/** Defines X3D component for the <i>]]></xsl:text>
+			<xsl:value-of select="@name"/>
+			<xsl:text><![CDATA[</i> element: <i>]]></xsl:text>
 			<xsl:value-of select="InterfaceDefinition/componentInfo/@name"/>
-			<xsl:text><![CDATA[</i>.
+			<xsl:text><![CDATA[</i>
 	 * @return X3D component for this element
 	 */
 	@Override
@@ -2031,16 +2086,18 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 	}
 ]]></xsl:text>
 			<xsl:text disable-output-escaping="yes"><![CDATA[
-	/** Integer constant <i>LEVEL</i> provides default X3D component level for this element: <i>]]></xsl:text>
+	/** Integer constant <i>LEVEL</i> provides default X3D <i>]]></xsl:text>
+			<xsl:value-of select="InterfaceDefinition/componentInfo/@name"/>
+			<xsl:text><![CDATA[</i> component level for this element: <i>]]></xsl:text>
 			<xsl:value-of select="InterfaceDefinition/componentInfo/@level"/>
-			<xsl:text disable-output-escaping="yes"><![CDATA[</i>. */
+			<xsl:text disable-output-escaping="yes"><![CDATA[</i> */
 	public static final int LEVEL = ]]></xsl:text>
 			<xsl:value-of select="InterfaceDefinition/componentInfo/@level"/>
 			<xsl:text><![CDATA[;
 
 	/** Provides default X3D component level for this element: <i>]]></xsl:text>
 			<xsl:value-of select="InterfaceDefinition/componentInfo/@level"/>
-			<xsl:text><![CDATA[</i>.
+			<xsl:text><![CDATA[</i>
 	 * @return default X3D component level for this element
 	 */
 	@Override
@@ -2632,61 +2689,61 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 								<xsl:when test="($name = 'X3D')">
 									<xsl:text disable-output-escaping="yes"><![CDATA[
 	/**
-	 * File extension for X3D XML Encoding, with dot prepended: <i>.x3d</i>.
+	 * File extension for X3D XML Encoding, with dot prepended: <i>.x3d</i>
 	 * @see <a href="http://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/X3D_XML.html">X3D XML Encoding</a>
 	 */
 	public static final String FILE_EXTENSION_X3D = ".x3d";
 										
 	/**
-	 * File extension for X3D ClassicVRML Encoding, with dot prepended: <i>.x3dv</i>.
+	 * File extension for X3D ClassicVRML Encoding, with dot prepended: <i>.x3dv</i>
 	 * @see <a href="http://www.web3d.org/documents/specifications/19776-2/V3.3/Part02/X3D_ClassicVRML.html">X3D ClassicVRML Encoding</a>
 	 */
 	public static final String FILE_EXTENSION_CLASSICVRML = ".x3dv";
 										
 	/**
-	 * File extension for VRML97 Encoding, with dot prepended: <i>.wrl</i>.
+	 * File extension for VRML97 Encoding, with dot prepended: <i>.wrl</i>
 	 * @see <a href="http://www.web3d.org/documents/specifications/14772/V2.0/index.html">VRML97 Encoding</a>
 	 */
 	public static final String FILE_EXTENSION_VRML97 = ".wrl";
 										
 	/**
-	 * File extension for Extensible Markup Language, with dot prepended: <i>.xml</i>.
+	 * File extension for Extensible Markup Language, with dot prepended: <i>.xml</i>
 	 * @see <a href="https://www.w3.org/TR/REC-xml">W3C Recommendation, Extensible Markup Language (XML)</a>
 	 */
 	public static final String FILE_EXTENSION_XML = ".xml";
 										
 	/**
-	 * File extension for Scalable Vector Graphics (SVG), with dot prepended: <i>.svg</i>.
+	 * File extension for Scalable Vector Graphics (SVG), with dot prepended: <i>.svg</i>
 	 * @see <a href="https://www.w3.org/Graphics/SVG">SVG Working Group</a>
 	 */
 	public static final String FILE_EXTENSION_SVG = ".svg";
 										
 	/**
-	 * File extension for HTML Encoding, with dot prepended: <i>.html</i>.
+	 * File extension for HTML Encoding, with dot prepended: <i>.html</i>
 	 * @see <a href="https://www.w3.org/TR/html/syntax.html#syntax">HTML5: HTML syntax</a>
 	 */
 	public static final String FILE_EXTENSION_HTML = ".html";
 										
 	/**
-	 * File extension for XHTML Encoding, with dot prepended: <i>.xhtml</i>.
+	 * File extension for XHTML Encoding, with dot prepended: <i>.xhtml</i>
 	 * @see <a href="https://www.w3.org/TR/html/xhtml.html#xhtml">HTML5: XHTML syntax</a>
 	 */
 	public static final String FILE_EXTENSION_XHTML = ".xhtml";
 										
 	/**
-	 * File extension for text files, with dot prepended: <i>.txt</i>.
+	 * File extension for text files, with dot prepended: <i>.txt</i>
 	 */
 	public static final String FILE_EXTENSION_TEXT = ".txt";
 										
 	/**
-	 * File extension for Java source, with dot prepended: <i>.jsail</i>.
+	 * File extension for Java source code, with dot prepended: <i>.java</i>
 	 * @see <a href="http://www.oracle.com/technetwork/java/javase/overview">Java Platform, Standard Edition (Java SE)</a>
 	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Java">X3D Scene Authoring Hints: Java</a>
 	 */
 	public static final String FILE_EXTENSION_JAVA = ".java";
 										
 	/**
-	 * File extension for JavaScript source, with dot prepended: <i>.js</i>.
+	 * File extension for JavaScript source code, with dot prepended: <i>.js</i>
 	 * @see <a href="https://en.wikipedia.org/wiki/JavaScript">JavaScript</a>
 	 * @see <a href="https://en.wikipedia.org/wiki/ECMAScript">ECMAScript ECMA-262</a>
 	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#JavaScript">X3D Scene Authoring Hints: JavaScript</a>
@@ -2694,18 +2751,50 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 	public static final String FILE_EXTENSION_JAVASCRIPT = ".js";
 										
 	/**
-	 * File extension for JavaScript Object Notation (JSON) source, with dot prepended: <i>.json</i>.
+	 * File extension for JavaScript Object Notation (JSON) source data, with dot prepended: <i>.json</i>
 	 * @see <a href="https://en.wikipedia.org/wiki/JSON">JavaScript Object Notation (JSON)</a>
-	 * @see <a href="https://www.ecma-international.org/publications/standards/Ecma-404.htm">JSON Data Interchange Format ECMA-404</a>
 	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#JSON">X3D Scene Authoring Hints: JSON</a>
 	 */
 	public static final String FILE_EXTENSION_JSON = ".json";
+										
+	/**
+	 * File extension for Efficient XML Interchange (EXI) compressed XML file, with dot prepended: <i>.exi</i>
+	 * @see <a href="https://en.wikipedia.org/wiki/Efficient_XML_Interchange">Wikipedia: Efficient XML Interchange (EXI) file format</a>
+	 * @see <a href="https://www.w3.org/TR/2014/REC-exi-20140211">Efficient XML Interchange (EXI) Format 1.0 (Second Edition) W3C Recommendation</a>
+	 * @see <a href="https://www.w3.org/XML/EXI">EXI Working Group (public page)</a>
+	 * @see <a href="https://www.w3.org/XML/Group/EXI">EXI Working Group (member page)</a>
+	 */
+	public static final String FILE_EXTENSION_EXI = ".exi";
+										
+	/**
+	 * File extension for GZIP compressed file, with dot prepended: <i>.gz</i>
+	 * @see <a href="https://en.wikipedia.org/wiki/Gzip">Wikipedia: gzip file format</a>
+	 * @see <a href="https://docs.oracle.com/javase/8/docs/api/java/util/zip/package-summary.html">Java Package java.util.zip for ZIP and GZIP file formats</a>
+	 * @see <a href="http://www.oracle.com/technetwork/articles/java/compress-1565076.html">Compressing and Decompressing Data Using Java APIs by Qusay H. Mahmoud</a>
+	 */
+	public static final String FILE_EXTENSION_GZIP = ".gz";
+										
+	/**
+	 * File extension for ZIP compressed file, with dot prepended: <i>.zip</i>
+	 * @see <a href="https://en.wikipedia.org/wiki/Zip_(file_format)">Wikipedia: zip file format</a>
+	 * @see <a href="https://docs.oracle.com/javase/8/docs/api/java/util/zip/package-summary.html">Java Package java.util.zip for ZIP and GZIP file formats</a>
+	 * @see <a href="http://www.oracle.com/technetwork/articles/java/compress-1565076.html">Compressing and Decompressing Data Using Java APIs by Qusay H. Mahmoud</a>
+	 */
+	public static final String FILE_EXTENSION_ZIP = ".zip";
 
 	/** @see https://docs.oracle.com/javase/tutorial/essential/io/file.html#textfiles */
 	private BufferedWriter bufferedWriter;
+	
+	/**
+	 *  Setup EXIFactory as required, TODO EXIFICIENT documentation
+	 */
+//    EXIFactory exiFactory = DefaultEXIFactory.newInstance();
+	
+	/** @see TODO EXIFICIENT docs */
+	Grammars exificientGrammarX3D;
 										
 	/**
-	 * Serialize scene graph using <i>toStringX3D()</i> to create a new XML-encoding X3D file with extension <i>x3d</i>.
+	 * Serialize scene graph using <i>toStringX3D()</i> to create a new XML-encoding X3D file with extension <i>x3d</i> or  <i>xml</i>.
 	 * @see X3DObject#toStringX3D()
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/essential/io/file.html#textfiles">Buffered I/O Methods for Text Files</a>
 	 * @param fileName name of file to create and save, can include local directory path, must end with .x3d
@@ -2726,11 +2815,11 @@ import org.web3d.x3d.jsail.*; // again making sure #4
                             "\"" + FILE_EXTENSION_XML + "\"");
 		}
 		Path outputFilePath = Paths.get(fileName);
-                if (ConfigurationProperties.isDebugModeActive()) // debug check, defaults to local directory
-                {
-                        errorNotice += "[debug] Output file path=" + outputFilePath.toAbsolutePath() + "\n";
-                }
-                System.out.println (errorNotice);
+		if (ConfigurationProperties.isDebugModeActive()) // debug check, defaults to local directory
+		{
+			errorNotice += "[debug] Output file path=" + outputFilePath.toAbsolutePath() + "\n";
+			System.out.println (errorNotice);
+		}
 		
 		// http://docs.oracle.com/javase/8/docs/technotes/guides/intl/encoding.doc.html
 		// http://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html
@@ -2747,6 +2836,17 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 			if (ConfigurationProperties.isValidationExceptionAllowed())
 				 System.out.println ("Output serialization allowed to continue, file may be editable...");
 			else throw (e);
+		}
+		File priorFile = new File(fileName);
+		if  (priorFile.exists() && ConfigurationProperties.isOverwriteExistingFiles())
+		{
+			System.out.println ("Warning: toFileX3D() is overwriting prior file " + fileName);
+		}
+		else if  (priorFile.exists())
+		{
+			System.out.println ("Warning: toFileX3D() is not allowed to overwrite prior file: " + fileName);
+			System.out.println ("  see ConfigurationProperties.isOverwriteExistingFiles() and .setOverwriteExistingFiles()");
+			return null;
 		}
 
 		String outputSceneText = toStringX3D();
@@ -2782,12 +2882,12 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 			throw new X3DException("fileName " + fileName + " does not end with extension \"" + FILE_EXTENSION_CLASSICVRML + "\"");
 		}
 		Path outputFilePath = Paths.get(fileName);
-                if (ConfigurationProperties.isDebugModeActive()) // debug check, defaults to local directory
-                {
-                        if (errorNotice.isEmpty()) errorNotice += "\n";
-                        errorNotice += "[debug] Output file path=" + outputFilePath.toAbsolutePath() + "\n";
-                }
-                System.out.println (errorNotice);
+		if (ConfigurationProperties.isDebugModeActive()) // debug check, defaults to local directory
+		{
+			if (errorNotice.isEmpty()) errorNotice += "\n";
+			errorNotice += "[debug] Output file path=" + outputFilePath.toAbsolutePath() + "\n";
+			System.out.println (errorNotice);
+		}
 		
 		// http://docs.oracle.com/javase/8/docs/technotes/guides/intl/encoding.doc.html
 		// http://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html
@@ -2804,6 +2904,17 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 			if (ConfigurationProperties.isValidationExceptionAllowed())
 				 System.out.println ("Output serialization allowed to continue, file may be editable...");
 			else throw (e);
+		}
+		File priorFile = new File(fileName);
+		if  (priorFile.exists() && ConfigurationProperties.isOverwriteExistingFiles())
+		{
+			System.out.println ("Warning: toFileClassicVRML() is overwriting prior file " + fileName);
+		}
+		else if  (priorFile.exists())
+		{
+			System.out.println ("Warning: toFileClassicVRML() is not allowed to overwrite prior file: " + fileName);
+			System.out.println ("  see ConfigurationProperties.isOverwriteExistingFiles() and .setOverwriteExistingFiles()");
+			return null;
 		}
 
 		String outputSceneText = toStringClassicVRML();
@@ -2839,12 +2950,12 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 			throw new X3DException("fileName " + fileName + " does not end with extension \"" + FILE_EXTENSION_VRML97 + "\"");
 		}
 		Path outputFilePath = Paths.get(fileName);
-                if (ConfigurationProperties.isDebugModeActive()) // debug check, defaults to local directory
-                {
-                        if (errorNotice.isEmpty()) errorNotice += "\n";
-                        errorNotice += "[debug] Output file path=" + outputFilePath.toAbsolutePath() + "\n";
-                }
-                System.out.println (errorNotice);
+		if (ConfigurationProperties.isDebugModeActive()) // debug check, defaults to local directory
+		{
+			if (errorNotice.isEmpty()) errorNotice += "\n";
+			errorNotice += "[debug] Output file path=" + outputFilePath.toAbsolutePath() + "\n";
+			System.out.println (errorNotice);
+		}
 		
 		// http://docs.oracle.com/javase/8/docs/technotes/guides/intl/encoding.doc.html
 		// http://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html
@@ -2861,6 +2972,17 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 			if (ConfigurationProperties.isValidationExceptionAllowed())
 				 System.out.println ("Output serialization allowed to continue, file may be editable...");
 			else throw (e);
+		}
+		File priorFile = new File(fileName);
+		if  (priorFile.exists() && ConfigurationProperties.isOverwriteExistingFiles())
+		{
+			System.out.println ("Warning: toFileVRML97() is overwriting prior file " + fileName);
+		}
+		else if  (priorFile.exists())
+		{
+			System.out.println ("Warning: toFileVRML97() is not allowed to overwrite prior file: " + fileName);
+			System.out.println ("  see ConfigurationProperties.isOverwriteExistingFiles() and .setOverwriteExistingFiles()");
+			return null;
 		}
 
 		String outputSceneText = toStringVRML97();
@@ -2908,7 +3030,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 	 * @see X3DObject#toFileX3DOM(String)
 	 * @see X3DObject#toFileX_ITE(String,String)
 	 * @see X3DObject#toFileCobweb(String,String)
-         * @see ConfigurationProperties#X3DJSAIL_JAR_RELEASE_VERSIONS
+     * @see ConfigurationProperties#X3DJSAIL_JAR_RELEASE_VERSIONS
 	 * @see <a href="http://www.saxonica.com/documentation/index.html#!using-xsl/embedding">Saxonica &gt; Saxon &gt; Using XSLT &gt; Invoking XSLT from an application</a>
 	 * @see <a href="http://saxon.sourceforge.net/#F9.7HE">Saxon-HE 9.7</a>
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/jaxp/xslt/transformingXML.html">Java Tutorials: Transforming XML Data with XSLT</a>
@@ -2977,15 +3099,15 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 		}
 
 		Path outputFilePath = Paths.get(fileName);
-                if (ConfigurationProperties.isDebugModeActive()) // debug check, defaults to local directory
-                {
-                        errorNotice += "[debug] Output file path=" + outputFilePath.toAbsolutePath() + "\n";
-                }					
+		if (ConfigurationProperties.isDebugModeActive()) // debug check, defaults to local directory
+		{
+			errorNotice += "[debug] Output file path=" + outputFilePath.toAbsolutePath() + "\n";
+		}					
 		
 		String intermediateX3DFileName = fileName.substring(0, fileName.length() - 5) + "PrettyPrint.intermediate.x3d";
 		Path   intermediateX3DFilePath = Paths.get(intermediateX3DFileName);
-                if (ConfigurationProperties.isDebugModeActive())
-                    errorNotice += "[debug] intermediateX3DFilePath=" + intermediateX3DFilePath.toAbsolutePath() + "\n";
+		if (ConfigurationProperties.isDebugModeActive())
+			errorNotice += "[debug] intermediateX3DFilePath=" + intermediateX3DFilePath.toAbsolutePath() + "\n";
 
 		// http://docs.oracle.com/javase/8/docs/technotes/guides/intl/encoding.doc.html
 		// http://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html
@@ -3002,6 +3124,17 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 			if (ConfigurationProperties.isValidationExceptionAllowed())
 				 System.out.println ("Output serialization allowed to continue, file may be editable...");
 			else throw (e);
+		}
+		File priorFile = new File(fileName);
+		if  (priorFile.exists() && ConfigurationProperties.isOverwriteExistingFiles())
+		{
+			System.out.println ("Warning: toFileStylesheetConversion(" + stylesheetName + ") is overwriting prior file " + fileName);
+		}
+		else if  (priorFile.exists())
+		{
+			System.out.println ("Warning: toFileStylesheetConversion() is not allowed to overwrite prior file: " + fileName);
+			System.out.println ("  see ConfigurationProperties.isOverwriteExistingFiles() and .setOverwriteExistingFiles()");
+			return null;
 		}
 
 		String outputSceneText = toStringX3D();
@@ -3085,7 +3218,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 			if (!outputFile.canWrite())
 				errorNotice += "outputFile not writable: " + outputFile.getAbsolutePath() + ", ";
 			
-			if (ConfigurationProperties.getXsltEngine().equals(ConfigurationProperties.XSLT_ENGINE_saxon))
+			if (ConfigurationProperties.getXsltEngine().equals(ConfigurationProperties.XSLT_ENGINE_SAXON))
 			{
 				// reference: Saxon-HE 9.7 documentation and samples
 				// S9APIExamples.jsail: private static class TransformA implements S9APIExamples.Test
@@ -3113,7 +3246,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
                                         xsltTransformer.setParameter(new QName("produceSVGfigures"), new XdmAtomicValue("false"));
                                 xsltTransformer.transform();
 			}
-			else if (ConfigurationProperties.getXsltEngine().equals(ConfigurationProperties.XSLT_ENGINE_nativeJava))
+			else if (ConfigurationProperties.getXsltEngine().equals(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA))
 			{
 				DocumentBuilder builder = factory.newDocumentBuilder();
 				Document x3dDocument = builder.parse(intermediateX3DFilePath.toFile());
@@ -3138,7 +3271,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 			else // no joy
 			{
 				errorNotice = "Invalid ConfigurationProperties.getXsltEngine() value='" + ConfigurationProperties.getXsltEngine() + 
-									 "', legal values are ConfigurationProperties.XSLT_ENGINE_saxon or ConfigurationProperties.XSLT_ENGINE_nativeJava";
+									 "', legal values are ConfigurationProperties.XSLT_ENGINE_SAXON or ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA";
 //				validationResult.append(errorNotice).append("\n");
 				throw new InvalidFieldValueException(errorNotice);
 			}
@@ -3232,6 +3365,17 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 			if (ConfigurationProperties.isValidationExceptionAllowed())
 				 System.out.println ("Output serialization allowed to continue, file may be editable...");
 			else throw (e);
+		}
+		File priorFile = new File(fileName);
+		if  (priorFile.exists() && ConfigurationProperties.isOverwriteExistingFiles())
+		{
+			System.out.println ("Warning: toFileDocumentationHtml() is overwriting prior file " + fileName);
+		}
+		else if  (priorFile.exists())
+		{
+			System.out.println ("Warning: toFileDocumentationHtml() is not allowed to overwrite prior file: " + fileName);
+			System.out.println ("  see ConfigurationProperties.isOverwriteExistingFiles() and .setOverwriteExistingFiles()");
+			return null;
 		}
 
 		String outputSceneText = toStringX3D();
@@ -3331,7 +3475,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 			if (!outputFile.canWrite())
 				errorNotice += "outputFile not writable: " + outputFile.getAbsolutePath() + ", ";
 			
-			if (ConfigurationProperties.getXsltEngine().equals(ConfigurationProperties.XSLT_ENGINE_saxon))
+			if (ConfigurationProperties.getXsltEngine().equals(ConfigurationProperties.XSLT_ENGINE_SAXON))
 			{
 				// reference: Saxon-HE 9.7 documentation and samples
 				// S9APIExamples.jsail: private static class TransformA implements S9APIExamples.Test
@@ -3360,7 +3504,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
                                         // TODO invoke spearately
                                 xsltTransformer.transform();
 			}
-			else if (ConfigurationProperties.getXsltEngine().equals(ConfigurationProperties.XSLT_ENGINE_nativeJava))
+			else if (ConfigurationProperties.getXsltEngine().equals(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA))
 			{
 				DocumentBuilder builder = factory.newDocumentBuilder();
 				Document x3dDocument = builder.parse(intermediateX3DFilePath.toFile());
@@ -3386,7 +3530,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 			else // no joy
 			{
 				errorNotice = "Invalid ConfigurationProperties.getXsltEngine() value='" + ConfigurationProperties.getXsltEngine() + 
-									 "', legal values are ConfigurationProperties.XSLT_ENGINE_saxon or ConfigurationProperties.XSLT_ENGINE_nativeJava";
+									 "', legal values are ConfigurationProperties.XSLT_ENGINE_SAXON or ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA";
 //				validationResult.append(errorNotice).append("\n");
 				throw new InvalidFieldValueException(errorNotice);
 			}
@@ -3468,9 +3612,37 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 	}
 
 	/**
-	 * Serialize scene graph using X3dToX3dom.xslt stylesheet to create a new X3DOM html page as a string.
-	 * @see X3DObject#toFileX3DOM(String)
-	 * @see <a href="http://www.x3dom.org">X3DOM open-source X3D player</a>
+	 * Serialize scene graph using toFileJava() to create new Java source as a string.
+	 * @see X3DObject#toFileJava(String)
+	 * @return String containing result (if operation succeeds), empty otherwise
+	 */
+	public String toStringJava()
+	{
+		String temporaryFileName = "temporaryJavaOutputFile.java";
+		
+		try
+		{
+			File     fileJava = toFileJava(temporaryFileName);
+
+			if  ((fileJava != null) && fileJava.exists())
+			{
+				String fileContents = readFile(temporaryFileName);
+				fileJava.delete();
+				return fileContents;
+//				List<String> lines = Files.readAllLines(Paths.get(temporaryFileName));
+//				return String.join("\n",lines);
+			}
+		}
+		catch (Exception e)
+		{
+			// TODO consider throwing exception instead
+		}
+		return "";
+	}
+
+	/**
+	 * Serialize scene graph using JavaScriptSerializer.js to create a JavaScript string.
+	 * @see X3DObject#toFileJavaScript(String)
 	 * @return String containing result (if operation succeeds), empty otherwise
 	 */
 	public String toStringJavaScript()
@@ -3498,86 +3670,104 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 	}
 
 	/**
-	 * Serialize scene graph using X3dToX3dom.xslt stylesheet to create a new X3DOM html page as a string.
-	 * @see X3DObject#toFileX3DOM(String)
-	 * @see <a href="http://www.x3dom.org">X3DOM open-source X3D player</a>
+	 * Serialize scene graph using JavaScriptSerializer.js to create a JavaScript file.
+	 * @author John Carlson
+	 * @see X3DObject#toStringJavaScript(String)
 	 * @param fileName name of file to create and save, can include local directory path, must end with .js
-	 * @return String containing result (if operation succeeds), empty otherwise
+	 * @return File containing result (if operation succeeds), empty otherwise
 	 */
-
-       public File toFileJavaScript(String fileName)
-       {
-               if ((fileName == null || fileName.isEmpty()))
-               {
+    public File toFileJavaScript(String fileName)
+    {
+                if ((fileName == null || fileName.isEmpty()))
+                {
                        throw new X3DException("toFileJavaScript(fileName) fileName not provided;" +
                                " be sure to end with extension \"" + X3DObject.FILE_EXTENSION_JAVASCRIPT + "\"");
-               }
-               if (!fileName.endsWith(X3DObject.FILE_EXTENSION_JAVASCRIPT))
-               {
+                }
+                if (!fileName.endsWith(X3DObject.FILE_EXTENSION_JAVASCRIPT))
+                {
                        throw new X3DException("fileName " + fileName + " does not end with extension \"" + X3DObject.FILE_EXTENSION_JAVASCRIPT + "\"");
-               }
+                }
 
-               Path outputFilePath = Paths.get(fileName);
+                Path outputFilePath = Paths.get(fileName);
 
-               String intermediateJSFileName = fileName + ".intermediate.js";
-               Path   intermediateJSFilePath = Paths.get(intermediateJSFileName);
+                String intermediateJSFileName = fileName + ".intermediate.js";
+                Path   intermediateJSFilePath = Paths.get(intermediateJSFileName);
 
-               // http://docs.oracle.com/javase/8/docs/technotes/guides/intl/encoding.doc.html
-               // http://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html
-               Charset charset = Charset.forName(ConfigurationProperties.XML_ENCODING_DECLARATION_DEFAULT); // "UTF-8"
+                // http://docs.oracle.com/javase/8/docs/technotes/guides/intl/encoding.doc.html
+                // http://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html
+                Charset charset = Charset.forName(ConfigurationProperties.XML_ENCODING_DECLARATION_DEFAULT); // "UTF-8"
 
-               try
-               {
+                try
+                {
                        validate(); // strict checks before serializing scene and saving file
-               }
-               catch (Exception e)
-               {
+                }
+                catch (Exception e)
+                {
                        System.out.println (e); // output exception but allow serialization to continue, file may be editable
                        e.printStackTrace();
                        if (ConfigurationProperties.isValidationExceptionAllowed())
                                 System.out.println ("Output serialization allowed to continue, file may be editable...");
                        else throw (e);
-               }
+                }
 
-               String errorNotice = new String();
-               outputFilePath.toAbsolutePath(); // debug check, defaults to local directory
-               File outputFile = outputFilePath.toFile();
-               if (!outputFile.canWrite()) {
-                       errorNotice += "outputFile not writable: " + outputFile.getAbsolutePath() + ", ";
+                String errorNotice = new String();
+                outputFilePath.toAbsolutePath(); // debug check, defaults to local directory
+                File outputFile = outputFilePath.toFile();
+                if (!outputFile.canWrite())
+			    {
+                    errorNotice += "outputFile not writable: " + outputFile.getAbsolutePath() + ", ";
+                }
+				File priorFile = new File(fileName);
+				if  (priorFile.exists() && ConfigurationProperties.isOverwriteExistingFiles())
+				{
+					System.out.println ("Warning: toFileJavaScript() is overwriting prior file " + fileName);
+				}
+				else if  (priorFile.exists())
+				{
+					System.out.println ("Warning: toFileJavaScript() is not allowed to overwrite prior file: " + fileName);
+					System.out.println ("  see ConfigurationProperties.isOverwriteExistingFiles() and .setOverwriteExistingFiles()");
+					return null;
+				}
 
-               }
-
-               String outputSceneText = toStringJSON();
-               try
-               {
+                ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA); // built-in version avoids unwanted line breaks
+                String outputSceneText = toStringJSON();
+                try
+                {
                        bufferedWriter = Files.newBufferedWriter(intermediateJSFilePath, charset);
-		       String tmpStr = " load('jvm-npm.js');\nload('repeatPolyfill.js');\nvar xmldom = require('xmldom');\nvar DOMParser = new xmldom.DOMParser();\nvar XMLSerializer = new xmldom.XMLSerializer();\nvar DOMImplementation = new xmldom.DOMImplementation();\n";
+                       String tmpStr = "load('nashorn/jvm-npm.js');\nload('nashorn/repeatPolyfill.js');\nvar xmldom = require('nashorn/node_modules/xmldom');\nvar DOMParser = xmldom.DOMParser;\nvar XMLSerializer = new xmldom.XMLSerializer();\nvar DOMImplementation = new xmldom.DOMImplementation();\n";
                        bufferedWriter.write(tmpStr, 0, tmpStr.length());
-		       tmpStr = "var json = "+outputSceneText+";\nvar version = json['X3D']['@version'];\nvar docType = DOMImplementation.createDocumentType('X3D', 'ISO//Web3D//DTD X3D '+version+'//EN', 'http://www.web3d.org/specifications/x3d-'+version+'.dtd', null);\nvar document = DOMImplementation.createDocument(null, 'X3D', docType);\nvar mapToMethod = require('../node/mapToMethod.js');\n var mapToMethod2 = require('../node/mapToMethod2.js');\n var fieldTypes = require('../node/fieldTypes.js');\n load('../node/X3DJSONLD.js');\n load('../node/JavaScriptSerializer.js');\n var child = CreateElement('X3D');\n ConvertToX3DOM(json, '', child, 'flipper.json');\n print('Returning with', child);\n var output = new JavaScriptSerializer().serializeToString(json, child, '"+outputFilePath+"', mapToMethod, fieldTypes);\n var FileWriter = Java.type('java.io.FileWriter');\n var fw = new FileWriter('"+outputFilePath+"');\n fw.write(output);\n fw.close();\n";
+                       tmpStr = "var json = "+outputSceneText+";\nvar version = json['X3D']['@version'];\nvar docType = DOMImplementation.createDocumentType('X3D', 'ISO//Web3D//DTD X3D '+version+'//EN', 'http://www.web3d.org/specifications/x3d-'+version+'.dtd', null);\nvar document = DOMImplementation.createDocument(null, 'X3D', docType);\nvar mapToMethod = require('nashorn/node/mapToMethod.js');\n var mapToMethod2 = require('nashorn/node/mapToMethod2.js');\n var fieldTypes = require('nashorn/node/fieldTypes.js');\n load('nashorn/node/X3DJSONLD.js');\n load('nashorn/node/JavaScriptSerializer.js');\n var child = CreateElement('X3D');\n ConvertToX3DOM(json, '', child, 'flipper.json');\n print('Returning with', child);\n var output = new JavaScriptSerializer().serializeToString(json, child, '"+fileName+"', mapToMethod, fieldTypes);\n var FileWriter = Java.type('java.io.FileWriter');\n var fw = new FileWriter('"+fileName+"');\n fw.write(output);\n fw.close();\n";
                        bufferedWriter.write(tmpStr, 0, tmpStr.length());
                        bufferedWriter.close(); // ensure file writing is complete
-               }
-               catch (IOException exception)
-               {
+                }
+                catch (IOException exception)
+                {
                        throw new X3DException("IOException when creating intermediateJSFileName " + intermediateJSFileName +
                                ", unable to save file: " + exception);
-               }
-
-               try {
+                }
+                try {
                        ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
-                       engine.eval("load('"+intermediateJSFilePath+"');");
+                       engine.eval("load('"+intermediateJSFileName+"');");
                        if (ConfigurationProperties.isDeleteIntermediateFiles()) // clean up when done
                                intermediateJSFilePath.toFile().deleteOnExit();
-engine.eval("print('Hello World!');");
-               }
-               catch (ScriptException exception)
-               {
+					   engine.eval("print('Hello World!');");
+                }
+                catch (ScriptException exception)
+                {
                        throw new X3DException(errorNotice + "ScriptException when processing fileName " + intermediateJSFilePath +
                                ", unable to save result: " + exception);
-               }
-               return outputFilePath.toFile(); // success
+                }
+                return outputFilePath.toFile(); // success
 	}
 
+	/**
+	 * Serialize scene graph using STYLESHEET_X3DOM to create a new X3DOM html page as a string.
+	 * @see X3DObject#toFileX3DOM(String)
+	 * @see ConfigurationProperties#STYLESHEET_X3DOM
+	 * @see <a href="http://www.x3dom.org">X3DOM open-source X3D player</a>
+	 * @param fileName name of file to create and save, can include local directory path, must end with .js
+	 * @return String containing result (if operation succeeds), empty otherwise
+	 */
 	public String toStringX3DOM()
 	{
 		String temporaryFileName = "temporaryX3domOutputFile.html";
@@ -3603,9 +3793,11 @@ engine.eval("print('Hello World!');");
 	}
 
 	/**
-	 * Serialize scene graph using X3dToX3dom.xslt stylesheet to create a new X_ITE html page as a string.
+	 * Serialize scene graph using STYLESHEET_X3DOM (with appropriate parameters) to create a new X_ITE html page as a string.
 	 * @see X3DObject#toFileX_ITE(String,String)
 	 * @see <a href="http://create3000.de/x_ite">X_ITE open-source X3D player</a>
+	 * @see ConfigurationProperties#STYLESHEET_X3DOM
+	 * @see ConfigurationProperties#STYLESHEET_X_ITE
 	 * @param sourceSceneName X3D file to load and view
 	 * @return String containing result (if operation succeeds), empty otherwise
 	 */
@@ -3695,22 +3887,40 @@ engine.eval("print('Hello World!');");
 	 */
 	public File toFileJava(String fileName, boolean includeWeb3dLicense)
 	{
-            // XSLT stylesheet parameter names and values
-            String parameterName1  = "className";
-            String parameterValue1 = fileName.substring(0,fileName.indexOf(".java"));
-            String parameterName2  = "";
-            String parameterValue2 = "";
-            if (includeWeb3dLicense)
-            {
-                    parameterName2  = "includeLicenseoriginals";
-                    parameterValue2 = Boolean.toString(includeWeb3dLicense);
-            }
-            return toFileStylesheetConversion(ConfigurationProperties.STYLESHEET_JAVA, fileName,
-                        parameterName1, parameterValue1, parameterName2, parameterValue2);
+		String errorNotice = new String();
+		if ((fileName == null || fileName.isEmpty()))
+		{
+			throw new X3DException("toFileJava(fileName, includeWeb3dLicense) fileName not provided;" +
+				" be sure to end with extension \"" + FILE_EXTENSION_X3D + "\"");
+		}
+		if (!fileName.endsWith(FILE_EXTENSION_JAVA))
+		{
+			throw new X3DException("fileName " + fileName + " does not end with extension " +
+                            "\"" + FILE_EXTENSION_JAVA + "\"");
+		}
+		Path outputFilePath = Paths.get(fileName);
+		if (ConfigurationProperties.isDebugModeActive()) // debug check, defaults to local directory
+		{
+			errorNotice += "[debug] Output file path=" + outputFilePath.toAbsolutePath() + "\n";
+			System.out.println (errorNotice);
+		}
+
+		// XSLT stylesheet parameter names and values
+		String parameterName1  = "className";
+		String parameterValue1 = fileName.substring(0,fileName.indexOf(".java"));
+		String parameterName2  = "";
+		String parameterValue2 = "";
+		if (includeWeb3dLicense)
+		{
+				parameterName2  = "includeLicenseoriginals";
+				parameterValue2 = Boolean.toString(includeWeb3dLicense);
+		}
+		return toFileStylesheetConversion(ConfigurationProperties.STYLESHEET_JAVA, fileName,
+					parameterName1, parameterValue1, parameterName2, parameterValue2);
 	}
 										
 	/**
-	 * Create displayable scene page rendered with X3DOM, using X3dToX3dom.xslt stylesheet by serializing XML syntax within an XHTML file having extension <i>.xhtml</i>.
+	 * Create displayable scene page rendered with X3DOM, using STYLESHEET_X3DOM by serializing XML syntax within an XHTML file having extension <i>.xhtml</i>.
 	 * @see <a href="http://www.x3dom.org">X3DOM open-source X3D player</a>
 	 * @see X3DObject#toStringX3D()
 	 * @see X3DObject#toFileX3D(String)
@@ -3730,11 +3940,29 @@ engine.eval("print('Hello World!');");
 	 */
 	public File toFileX3DOM(String fileName)
 	{
-            return toFileStylesheetConversion(ConfigurationProperties.STYLESHEET_X3DOM, fileName, "player", "X3DOM");
+		String errorNotice = new String();
+		if ((fileName == null || fileName.isEmpty()))
+		{
+			throw new X3DException("toFileX3DOM(fileName) fileName not provided;" +
+				" be sure to end with extension \"" + FILE_EXTENSION_HTML + "\" or \"" + FILE_EXTENSION_XHTML + "\"");
+		}
+		if (!fileName.endsWith(FILE_EXTENSION_HTML) && !fileName.endsWith(FILE_EXTENSION_XHTML))
+		{
+			throw new X3DException("fileName " + fileName + " does not end with extension " +
+                            "\"" + FILE_EXTENSION_HTML + "\" or \"" + FILE_EXTENSION_XHTML + "\"");
+		}
+		Path outputFilePath = Paths.get(fileName);
+		if (ConfigurationProperties.isDebugModeActive()) // debug check, defaults to local directory
+		{
+			errorNotice += "[debug] Output file path=" + outputFilePath.toAbsolutePath() + "\n";
+			System.out.println (errorNotice);
+		}
+
+        return toFileStylesheetConversion(ConfigurationProperties.STYLESHEET_X3DOM, fileName, "player", "X3DOM");
 	}
 										
 	/**
-	 * Create displayable scene page rendered with X_ITE (formerly Cobweb) using X3dToX3dom.xslt stylesheet and special settings, by serializing XML syntax within an XHTML file having extension <i>.xhtml</i>.
+	 * Create displayable scene page rendered with X_ITE (formerly Cobweb) using STYLESHEET_X3DOM and special settings, by serializing XML syntax within an XHTML file having extension <i>.xhtml</i>.
 	 * @see <a href="http://create3000.de/x_ite">X_ITE open-source X3D player</a>
 	 * @see X3DObject#toStringX3D()
 	 * @see X3DObject#toFileX3D(String)
@@ -3757,7 +3985,7 @@ engine.eval("print('Hello World!');");
         // http://docs.oracle.com/javase/8/docs/technotes/guides/javadoc/deprecation/deprecation.html
         // https://docs.oracle.com/javase/tutorial/java/annotations/predefined.html
         // https://stackoverflow.com/questions/1858021/suppress-deprecated-import-warning-in-java
-        @SuppressWarnings("deprecation")
+    @SuppressWarnings("deprecation")
 	public File toFileX_ITE(String sourceSceneName, String resultFileName)
 	{
 		return toFileStylesheetConversion(ConfigurationProperties.STYLESHEET_COBWEB, resultFileName, 
@@ -3765,7 +3993,7 @@ engine.eval("print('Hello World!');");
 	}
 										
 	/**
-	 * Create displayable scene page rendered with X_ITE (formerly Cobweb) using X3dToX3dom.xslt stylesheet and special settings, by serializing XML syntax within an XHTML file having extension <i>.xhtml</i>.
+	 * Create displayable scene page rendered with X_ITE (formerly Cobweb) using STYLESHEET_X3DOM and special settings, by serializing XML syntax within an XHTML file having extension <i>.xhtml</i>.
 	 * @see <a href="http://create3000.de/x_ite">X_ITE open-source X3D player</a>
 	 * @see X3DObject#toStringX3D()
 	 * @see X3DObject#toFileX3D(String)
@@ -3784,10 +4012,608 @@ engine.eval("print('Hello World!');");
 	 * @param resultFileName name of file to create and save, can include local directory path, must end with .html (preferred) or .xhtml
 	 * @return File containing result (if operation succeeds), null otherwise
 	 */
-        @Deprecated
+    @Deprecated
 	public File toFileCobweb(String sourceSceneName, String resultFileName)
 	{
 		return toFileX_ITE (sourceSceneName, resultFileName);
+	}
+									
+	/**
+	 * Load new model from a zip file, using unzip to extract the model plus any associated files into the same path location.
+	 * <br ><br >
+	 * <i>Warning:</i> If no <code>modelFileName</code> is provided, then the first <code>.x3d</code> model encountered in the zip file is returned (if any).
+	 * <br ><br >
+	 * <i>Warning:</i> this method overwrites any previously existing file versions when decompressing.
+	 * @see <a href="https://en.wikipedia.org/wiki/Zip_(file_format)">Wikipedia: ZIP file format</a>
+	 * @see <a href="https://docs.oracle.com/javase/8/docs/api/java/util/zip/package-summary.html">Java Package java.util.zip for ZIP and GZIP file formats</a>
+	 * @see X3DObject#FILE_EXTENSION_EXI
+	 * @see X3DObject#FILE_EXTENSION_GZIP
+	 * @see X3DObject#FILE_EXTENSION_ZIP
+	 * @see X3DObject#fromFileEXI(String)
+	 * @see X3DObject#fromFileGZIP(String)
+	 * @see X3DObject#toFileZIP(String,String)
+	 * @param zipFileName name of zip file to load, can include local directory path, must end with .zip
+	 * @param modelFileName name of model file to load, can include local directory path, must end with .x3d
+	 * @return boolean if operation succeeds in creating this X3DObject, false otherwise
+	 */
+    public boolean fromFileZIP(String zipFileName, String modelFileName)
+	{
+		if (modelFileName == null)
+			modelFileName = new String(); // avoid NPE
+		String errorNotice = new String();
+		if ((zipFileName == null || zipFileName.isEmpty()))
+		{
+			throw new X3DException("fromFileZIP(zipFileName, modelFileName) zipFileName not provided;" +
+				" be sure to end with extension \"" + FILE_EXTENSION_ZIP + "\"");
+		}
+		if (!zipFileName.endsWith(FILE_EXTENSION_ZIP))
+		{
+			errorNotice += ("fromFileZIP zipFileName " + zipFileName + " does not end with extension " +
+                            "\"" + FILE_EXTENSION_ZIP + "\"" + "\n");
+			System.out.println (errorNotice);
+			return false;
+		}
+		if (!zipFileName.endsWith(FILE_EXTENSION_ZIP))
+		{
+			errorNotice += ("fromFileZIP zipFileName " + zipFileName + " does not end with extension " +
+                            "\"" + FILE_EXTENSION_ZIP + "\"" + "\n");
+			System.out.println (errorNotice);
+			return false;
+		}
+		Path inputFilePath = Paths.get(zipFileName);
+		if (ConfigurationProperties.isDebugModeActive()) // debug check, defaults to local directory
+		{
+			errorNotice += "[debug] fromFileZIP zipFileName path=" + inputFilePath.toAbsolutePath() + "\n";
+			System.out.println (errorNotice);
+		}
+		// Elliotte Rusty Harold, "Java I/O" Chapter 10 Compressing Streams, O'Reilly and Associates, 2nd edition, May 2006.
+		// Example 10-11, adapted
+		
+		File zipFile = new File(zipFileName);
+		if (!zipFile.exists() || (zipFile == null))
+		{
+			errorNotice += "zipFileName " + zipFileName + "not found\n";
+			System.out.println (errorNotice);
+			return false;
+		}
+		try
+		{
+			FileInputStream fileInputStream = new FileInputStream(zipFile);
+			ZipInputStream  zipInputStream = new  ZipInputStream(fileInputStream);
+			ZipEntry        zipEntry       = null;
+			while ((zipEntry = zipInputStream.getNextEntry()) != null)
+			{
+				if (ConfigurationProperties.isDebugModeActive())
+				{
+					System.out.println ("Unzipping " + zipEntry.getName() + " size=" + zipEntry.getSize() + " bytes");
+				}
+		
+				if (modelFileName.isEmpty() && zipEntry.getName().endsWith(FILE_EXTENSION_X3D))
+				{
+					modelFileName = zipEntry.getName(); // first found .x3d file in .zip
+					System.out.println ("Warning: fromFileZIP() modelFileName was empty, unzipping found initial X3D file to load: " + modelFileName);
+				}
+				File priorFile = new File(zipEntry.getName());
+				if  (priorFile.exists() && ConfigurationProperties.isOverwriteExistingFiles())
+				{
+					System.out.println ("Warning: fromFileZIP() is overwriting prior file " + zipEntry.getName());
+				}
+				else if  (priorFile.exists())
+				{
+					System.out.println ("Warning: fromFileZIP() is not allowed to overwrite prior file: " + zipEntry.getName());
+					System.out.println ("  see ConfigurationProperties.isOverwriteExistingFiles() and .setOverwriteExistingFiles()");
+					return false;
+				}
+				// TODO add optional output directory path
+				FileOutputStream fileOutputStream = new FileOutputStream (zipEntry.getName());
+				for (int c = zipInputStream.read(); c != -1; c = zipInputStream.read())
+				{
+					fileOutputStream.write(c);
+				}
+				zipInputStream.closeEntry();
+				fileOutputStream.close();
+				System.out.println ("Unzipped " + zipEntry.getName() + " size=" + zipEntry.getSize() + " bytes");
+			}
+			zipInputStream.close();
+
+			if (modelFileName.isEmpty())
+			{
+				System.out.println ("fromZIP output modelFileName not found in zipFileName " + zipFileName + ", no X3D model to load");
+				return false;
+			}
+										
+			X3DLoaderObject x3dLoader = new X3DLoaderObject();
+			boolean x3dLoaderSuccess = x3dLoader.loadModelFromFileX3D(modelFileName);
+			if (x3dLoaderSuccess)
+				replace((X3DObject) x3dLoader.getX3dObjectTree());
+		}
+		catch (IOException e)
+		{
+			errorNotice += "zipFileName " + zipFileName + "not readable\n";
+			System.out.println (errorNotice);
+			return false;
+		}
+		return hasHead() || hasScene(); // success test
+	}
+									
+	/**
+	 * Load new model from a gz gzip file, using ungzip to extract the model into the same path location.
+	 * <br ><br >
+	 * <i>Warning:</i> this method overwrites any previously existing file versions when decompressing.
+	 * @see <a href="https://en.wikipedia.org/wiki/Gzip">Wikipedia: GZIP file format</a>
+	 * @see <a href="https://docs.oracle.com/javase/8/docs/api/java/util/zip/package-summary.html">Java Package java.util.zip for ZIP and GZIP file formats</a>
+	 * @see X3DObject#FILE_EXTENSION_EXI
+	 * @see X3DObject#FILE_EXTENSION_GZIP
+	 * @see X3DObject#FILE_EXTENSION_ZIP
+	 * @see X3DObject#fromFileEXI(String)
+	 * @see X3DObject#fromFileZIP(String,String)
+	 * @see X3DObject#toFileGZIP(String)
+	 * @param gzipFileName name of file to load, can include local directory path, must end with .exi
+	 * @return boolean if operation succeeds in creating this X3DObject, false otherwise
+	 */
+    public boolean fromFileGZIP(String gzipFileName)
+	{
+		String errorNotice = new String();
+		if ((gzipFileName == null || gzipFileName.isEmpty()))
+		{
+			throw new X3DException("fromFileGZIP(gzipFileName) fileName not provided;" +
+				" be sure to end with extension \"" + FILE_EXTENSION_GZIP + "\"");
+		}
+		if (!gzipFileName.endsWith(FILE_EXTENSION_GZIP))
+		{
+			errorNotice += ("gzipFileName " + gzipFileName + " does not end with extension " +
+                            "\"" + FILE_EXTENSION_GZIP + "\"" + "\n");
+		}
+		Path inputFilePath = Paths.get(gzipFileName);
+		if (ConfigurationProperties.isDebugModeActive()) // debug check, defaults to local directory
+		{
+			errorNotice += "[debug] gzipFileName path=" + inputFilePath.toAbsolutePath() + "\n";
+			System.out.println (errorNotice);
+		}
+		// Elliotte Rusty Harold, "Java I/O" Chapter 10 Compressing Streams, O'Reilly and Associates, 2nd edition, May 2006.
+		// Example 10-11, adapted
+		
+		File gzipFile = new File(gzipFileName);
+		if (!gzipFile.exists() || (gzipFile == null))
+		{
+			errorNotice += "gzipFileName " + gzipFileName + "not found\n";
+			System.out.println (errorNotice);
+			return false;
+		}
+		String modelFileName = gzipFileName;
+		if (modelFileName.contains(FILE_EXTENSION_GZIP))
+			modelFileName = modelFileName.substring(0, modelFileName.lastIndexOf(FILE_EXTENSION_GZIP));
+		if (!modelFileName.endsWith (FILE_EXTENSION_X3D))
+			 modelFileName += FILE_EXTENSION_X3D;
+		if ( modelFileName.isEmpty())
+			 return false;
+		System.out.println ("  fromFileGZIP() output modelFileName " + modelFileName);
+		File priorFile = new File(modelFileName);
+		if  (priorFile.exists() && ConfigurationProperties.isOverwriteExistingFiles())
+		{
+			System.out.println ("Warning: fromFileGZIP() is overwriting prior file " + modelFileName);
+		}
+		else if  (priorFile.exists())
+		{
+			System.out.println ("Warning: fromFileGZIP() is not allowed to overwrite prior file: " + modelFileName);
+			System.out.println ("  see ConfigurationProperties.isOverwriteExistingFiles() and .setOverwriteExistingFiles()");
+			return false;
+		}
+		try
+		{
+			FileInputStream fileInputStream = new FileInputStream(gzipFile);
+			GZIPInputStream gzipInputStream = new GZIPInputStream(fileInputStream);
+			
+			if (ConfigurationProperties.isDebugModeActive())
+			{
+				System.out.println ("gunzipping " + gzipFile);
+			}
+			// TODO add optional output directory path
+			FileOutputStream fileOutputStream = new FileOutputStream (modelFileName);
+			for (int c = gzipInputStream.read(); c != -1; c = gzipInputStream.read())
+			{
+				fileOutputStream.write(c);
+			}
+			gzipInputStream.close();
+			fileOutputStream.close();
+			File decompressedFile = new File(modelFileName);
+			System.out.println ("gunzipped " + decompressedFile.getPath() + " size=" + decompressedFile.length() + " bytes");
+										
+			X3DLoaderObject x3dLoader = new X3DLoaderObject();
+			boolean x3dLoaderSuccess = x3dLoader.loadModelFromFileX3D(modelFileName);
+			if (x3dLoaderSuccess)
+				replace((X3DObject) x3dLoader.getX3dObjectTree());
+		}
+		catch (IOException e)
+		{
+			errorNotice += "gzipFileName " + gzipFileName + "not readable\n";
+			System.out.println (errorNotice);
+			return false;
+		}
+		
+		return hasHead() || hasScene(); // success test
+	}
+									
+	/**
+	 * Load new model from an EXI file, using unzip to extract the model plus any associated files into the same path location.
+	 * TODO OpenEXI version is not yet implemented!
+	 * <br ><br >
+	 * <i>Warning:</i> this method overwrites any previously existing file versions when decompressing.
+	 * @see <a href="https://openexi.sourceforge.net/tutorial/index.html">OpenEXI Nagasena Tutorial</a>
+	 * @see <a href="https://exificient.github.io/java">EXIFICIENT Java Implementations</a>
+	 * @see <a href="https://en.wikipedia.org/wiki/Efficient_XML_Interchange">Wikipedia: Efficient XML Interchange (EXI) file format</a>
+	 * @see ConfigurationProperties#getExiEngine()
+	 * @see ConfigurationProperties#setExiEngine(String)
+	 * @see X3DObject#FILE_EXTENSION_EXI
+	 * @see X3DObject#FILE_EXTENSION_GZIP
+	 * @see X3DObject#FILE_EXTENSION_ZIP
+	 * @see X3DObject#toFileEXI(String)
+	 * @see X3DObject#fromFileZIP(String,String)
+	 * @see X3DObject#fromFileGZIP(String)
+	 * @param exiFileName name of file to load, can include local directory path, must end with .exi
+	 * @return boolean if operation succeeds in creating this X3DObject, false otherwise
+	 */
+    public boolean fromFileEXI(String exiFileName)
+	{
+		String errorNotice = new String();
+		if ((exiFileName == null || exiFileName.isEmpty()))
+		{
+			throw new X3DException("fromFileEXI(exiFileName) fileName not provided;" +
+				" be sure to end with extension \"" + FILE_EXTENSION_EXI + "\"");
+		}
+		if (!exiFileName.endsWith(FILE_EXTENSION_EXI))
+		{
+			errorNotice += ("exiFileName " + exiFileName + " does not end with extension " +
+                            "\"" + FILE_EXTENSION_EXI + "\"" + "\n");
+		}
+		File priorFile = new File(exiFileName);
+		if  (priorFile.exists() && ConfigurationProperties.isOverwriteExistingFiles())
+		{
+			System.out.println ("Warning: fromFileEXI() is overwriting prior file " + exiFileName);
+		}
+		else if  (priorFile.exists())
+		{
+			System.out.println ("Warning: fromFileEXI() is not allowed to overwrite prior file: " + exiFileName);
+			System.out.println ("  see ConfigurationProperties.isOverwriteExistingFiles() and .setOverwriteExistingFiles()");
+			return false;
+		}
+
+		Path inputFilePath = Paths.get(exiFileName);
+		if (ConfigurationProperties.isDebugModeActive()) // debug check, defaults to local directory
+		{
+			errorNotice += "[debug] exiFileName path=" + inputFilePath.toAbsolutePath() + "\n";
+			System.out.println (errorNotice);
+		}
+		if (ConfigurationProperties.getExiEngine().equals(ConfigurationProperties.EXI_ENGINE_EXIFICIENT))
+		{
+			try
+			{
+				/*
+				*  Setup EXIFactory as required
+				*/
+				EXIFactory exiFactory = DefaultEXIFactory.newInstance();
+				// e.g., add additional settings beyond the default values
+				// TODO separate string constants for schema addresses
+				// TODO use local copy of schema rather than online; is identifier needed for consistency?
+				// TODO can the grammar be precompiled and cached in X3DJSAIL library?
+				// TODO is a grammar needed for file reading?
+				if (exificientGrammarX3D == null) // only needed once, avoid recomputation
+					exificientGrammarX3D = GrammarFactory.newInstance().createGrammars("http://www.web3d.org/specifications/x3d-3.3.xsd"); // use XML schema
+				exiFactory.setGrammars(exificientGrammarX3D);
+				exiFactory.setCodingMode(CodingMode.COMPRESSION); // use deflate compression for larger XML files
+
+				/*
+				 *  decode EXI to XML
+				 */
+				String xmlFileName = "temp.exiInputTransformed.x3d"; // XML output again
+				Result result = new StreamResult(xmlFileName);
+				InputSource is = new InputSource(exiFileName);
+				SAXSource exiSource = new EXISource(exiFactory);
+				exiSource.setInputSource(is);
+				TransformerFactory tf = TransformerFactory.newInstance();
+				Transformer transformer = tf.newTransformer();
+				transformer.transform(exiSource, result);
+				File decompressedFile = new File(xmlFileName);
+				System.out.println ("gunzipped " + decompressedFile.getPath() + " size=" + decompressedFile.length() + " bytes");
+				
+				X3DLoaderObject x3dLoader = new X3DLoaderObject();
+				boolean x3dLoaderSuccess = x3dLoader.loadModelFromFileX3D(xmlFileName);
+				if (x3dLoaderSuccess)
+					replace((X3DObject) x3dLoader.getX3dObjectTree());
+					
+				// TODO someday: efficiently parse as X3D, rather than using string-based methods
+			}
+			catch (EXIException | TransformerException ex)
+			{
+				System.out.println (ex.getMessage());
+				ex.printStackTrace();
+				return false;
+			}
+		}
+		else if (ConfigurationProperties.getExiEngine().equals(ConfigurationProperties.EXI_ENGINE_OPENEXI)) // Nagasena
+		{
+			/*
+			try
+			{
+				// TODO code block
+
+				// TODO someday: efficiently parse as X3D, rather than using string-based methods
+			}
+			catch (Exception ex)
+			{
+				System.out.println (ex.getMessage());
+				ex.printStackTrace();
+				return false;
+			}
+			*/
+		}
+		else
+		{
+			errorNotice = ConfigurationProperties.ERROR_CONFIGURATION_X3DJSAIL + " illegal value \"" + ConfigurationProperties.getExiEngine() 
+							+ "\" found for ConfigurationProperties.getExiEngine()\n"
+							+ "   allowed values are ConfigurationProperties.EXI_ENGINE_EXIFICIENT and ConfigurationProperties.EXI_ENGINE_OPENEXI" ;
+			if (ConfigurationProperties.isDebugModeActive()) // debug check, defaults to local directory
+			{
+				errorNotice += "[debug] exiFileName path=" + inputFilePath.toAbsolutePath() + "\n";
+			}
+			System.out.println (errorNotice);
+			throw new InvalidFieldValueException(errorNotice);
+		}
+		return hasHead() || hasScene(); // success test
+	}
+											
+	/** Determine if this X3D model is empty and no content is present.
+	 * @return true if no head and no Scene found, otherwise false
+	 */
+	public boolean isEmpty()
+	{
+		return !(hasHead() || hasScene()); 
+	}
+											
+	/** Load X3D model from file to initialize or replace contents of this X3DObject.
+	 * Supports .x3d or .xml file encodings.
+	 * @param fileName name of model file that replaces current X3DObject
+	 * @return true if replacement successful, false otherwise
+	 */
+	public boolean loadModelFromFileX3D (String fileName)
+	{
+		File x3dFile = new File(fileName);
+		
+		if (!x3dFile.exists())
+		{
+			throw new X3DException("fileName " + fileName + " does not exist and cannot be loaded, check path and filename.");
+		}
+		return loadModelFromFileX3D (x3dFile);
+	}
+											
+	/** Load X3D model from file to initialize or replace contents of this X3DObject.
+	 * Supports .x3d or .xml file encodings.
+	 * @param x3dFile model file that replaces current X3DObject
+	 * @return true if replacement successful, false otherwise
+	 */
+	public boolean loadModelFromFileX3D (File x3dFile)
+	{
+				X3DLoaderObject x3dLoader = new X3DLoaderObject();
+				boolean x3dLoaderSuccess = x3dLoader.loadModelFromFileX3D(x3dFile);
+				if  (x3dLoaderSuccess)
+					 return replace((X3DObject) x3dLoader.getX3dObjectTree());
+				else return false;
+	}
+										
+	/** Replaces current X3DObject with new X3DObject. 
+	 * @param newX3DObject replaces current X3DObject
+	 * @return true if replacement successful, false otherwise
+	 */
+	public boolean replace (X3DObject newX3DObject)
+	{
+		if (newX3DObject == null)
+			return false;
+		setHead (newX3DObject.getHead());
+		setScene(newX3DObject.getScene());
+		return true;
+	}								
+	/**
+	 * Save current model as an EXI file.  TODO not yet implemented!
+	 * @see <a href="https://openexi.sourceforge.net/tutorial/index.html">OpenEXI Nagasena Tutorial</a>
+	 * @see ConfigurationProperties#getExiEngine()
+	 * @see ConfigurationProperties#setExiEngine(String)
+	 * @see X3DObject#FILE_EXTENSION_EXI
+	 * @see X3DObject#FILE_EXTENSION_GZIP
+	 * @see X3DObject#FILE_EXTENSION_ZIP
+	 * @see X3DObject#fromFileEXI(String)
+	 * @see X3DObject#toFileGZIP(String)
+	 * @see X3DObject#toFileZIP(String,String)
+	 * @see X3DObject#toFileX3D(String)
+	 * @param resultFileName name of file to create and save, can include local directory path, must end with .exi
+	 * @return File containing result (if operation succeeds), null otherwise
+	 */
+    public File toFileEXI(String resultFileName)
+	{
+		String errorNotice = new String();
+		if ((resultFileName == null || resultFileName.isEmpty()))
+		{
+			throw new X3DException("toFileJava(resultFileName) fileName not provided;" +
+				" be sure to end with extension \"" + FILE_EXTENSION_EXI + "\"");
+		}
+		if (!resultFileName.endsWith(FILE_EXTENSION_EXI))
+		{
+			throw new X3DException("resultFileName " + resultFileName + " does not end with extension " +
+                            "\"" + FILE_EXTENSION_EXI + "\"");
+		}
+		Path outputFilePath = Paths.get(resultFileName);
+		if (ConfigurationProperties.isDebugModeActive()) // debug check, defaults to local directory
+		{
+			errorNotice += "[debug] Output file path=" + outputFilePath.toAbsolutePath() + "\n";
+			System.out.println (errorNotice);
+		}
+		File   newXmlFile = toFileX3D(resultFileName + ".temp.x3d");
+		newXmlFile.deleteOnExit();
+		String exiFileName = resultFileName;
+		if   (!exiFileName.endsWith(FILE_EXTENSION_EXI))
+		{
+			exiFileName += FILE_EXTENSION_EXI;
+			System.out.println (resultFileName + " changed to " + exiFileName);
+		}
+		File newExiFile = new File(exiFileName);
+		// TODO convert this to an .exi file
+
+		if (ConfigurationProperties.getExiEngine().equals(ConfigurationProperties.EXI_ENGINE_EXIFICIENT))
+		{
+			try
+			{
+				/*
+				*  Setup EXIFactory as required
+				*/
+				EXIFactory exiFactory = DefaultEXIFactory.newInstance();
+				// e.g., add additional settings beyond the default values
+				// TODO separate string constants for schema addresses
+				// TODO use local copy of schema rather than online; is identifier needed for consistency?
+				// TODO can the grammar be precompiled and cached in X3DJSAIL library?
+				if (exificientGrammarX3D == null) // only needed once, avoid recomputation
+					exificientGrammarX3D = GrammarFactory.newInstance().createGrammars("http://www.web3d.org/specifications/x3d-3.3.xsd"); // use XML schema
+				exiFactory.setGrammars(exificientGrammarX3D);
+				exiFactory.setCodingMode(CodingMode.COMPRESSION); // use deflate compression for larger XML files
+
+			   /*
+				*  encode XML to EXI
+				*/
+				OutputStream osEXI = new FileOutputStream(exiFileName);
+				EXIResult exiResult = new EXIResult(exiFactory);
+				exiResult.setOutputStream(osEXI);
+				XMLReader xmlReader = XMLReaderFactory.createXMLReader();
+				xmlReader.setContentHandler(exiResult.getHandler());
+				// TODO why doesn't have a parse(File) method? seems inefficient to use path
+	//			xmlReader.parse(newXmlFile); // parse XML input
+				xmlReader.parse(newXmlFile.getAbsolutePath()); // parse XML input
+				osEXI.close(); // all done, close stream and file
+			} 
+			catch (SAXException | IOException | EXIException ex)
+			{
+				System.out.println (ex.getMessage());
+				ex.printStackTrace();
+				// not rethrown
+			}
+		}
+		else if (ConfigurationProperties.getExiEngine().equals(ConfigurationProperties.EXI_ENGINE_OPENEXI)) // Nagasena
+		{
+/*
+			// reference EncodeEXI.java from Nagasena tutorial
+
+			FileInputStream   in = null;
+			FileOutputStream out = null;
+			GrammarCache grammarCache;
+
+			try {
+
+				// Encoding always requires the same steps.
+
+				// 1. Instantiate a Transmogrifier
+				Transmogrifier transmogrifier = new Transmogrifier();
+
+				// 2. Initialize the input and output streams.
+				in = new FileInputStream(sourceFile);
+				out = new FileOutputStream(destinationFile);
+
+				// 3. Create a Grammar Cache. This example uses default options and no schema.
+				grammarCache = new GrammarCache((EXISchema)null, GrammarOptions.DEFAULT_OPTIONS);
+
+				// 4. Set the configuration options in the Transmogrifier. Later examples will show more possible settings.
+				transmogrifier.setGrammarCache(grammarCache);
+
+				// 5. Set the output stream.
+				transmogrifier.setOutputStream(out);
+
+				// 6. Encode the input stream.
+				transmogrifier.encode(new InputSource(in));
+			}
+			// 7.  Verify that the streams are closed.
+			finally {
+				if (in != null)
+					in.close();
+				if (out != null)
+					out.close();
+			}
+*/
+		}
+		else
+		{
+			errorNotice = ConfigurationProperties.ERROR_CONFIGURATION_X3DJSAIL + " illegal value \"" + ConfigurationProperties.getExiEngine() 
+							+ "\" found for ConfigurationProperties.getExiEngine()\n"
+							+ "   allowed values are ConfigurationProperties.EXI_ENGINE_EXIFICIENT and ConfigurationProperties.EXI_ENGINE_OPENEXI" ;
+			if (ConfigurationProperties.isDebugModeActive()) // debug check, defaults to local directory
+			{
+				errorNotice += "[debug] Output file path=" + outputFilePath.toAbsolutePath() + "\n";
+			}
+			System.out.println (errorNotice);
+			throw new InvalidFieldValueException(errorNotice);
+		}
+		return newExiFile;
+	}
+										
+	/**
+	 * Save current model as a GZIP file.
+	 * @see <a href="https://openexi.sourceforge.net/tutorial/index.html">OpenEXI Nagasena Tutorial</a>
+	 * @see X3DObject#FILE_EXTENSION_EXI
+	 * @see X3DObject#FILE_EXTENSION_GZIP
+	 * @see X3DObject#FILE_EXTENSION_ZIP
+	 * @see X3DObject#toFileEXI(String)
+	 * @see X3DObject#toFileZIP(String,String)
+	 * @see X3DObject#toFileX3D(String)
+	 * @param resultFileName name of file to create and save, can include local directory path, must end with .gz (TODO or .tgz)
+	 * @return File containing result (if operation succeeds), null otherwise
+	 */
+    public File toFileGZIP(String resultFileName)
+	{
+		File resultFile = new File (resultFileName);
+		try
+		{
+			FileOutputStream fos  = new FileOutputStream(resultFile);
+			GZIPOutputStream gzos = new GZIPOutputStream (fos);
+			gzos.write(toStringX3D().getBytes());
+			gzos.close();
+		}
+		catch (IOException ioe)
+		{
+			System.out.println (ioe.getMessage());
+			ioe.printStackTrace();
+		}
+		return resultFile;
+	}
+										
+	/**
+	 * Save current model as a ZIP file.
+	 * @see <a href="https://openexi.sourceforge.net/tutorial/index.html">OpenEXI Nagasena Tutorial</a>
+	 * @see X3DObject#FILE_EXTENSION_EXI
+	 * @see X3DObject#FILE_EXTENSION_GZIP
+	 * @see X3DObject#FILE_EXTENSION_ZIP
+	 * @see X3DObject#toFileEXI(String)
+	 * @see X3DObject#toFileGZIP(String)
+	 * @see X3DObject#toFileX3D(String)
+	 * @param zipFileName name of zip archive file to create and save, can include local directory path, must end with .zip
+	 * @param modelName name of X3D file to create and save within the .zip archive
+	 * @return File containing result (if operation succeeds), null otherwise
+	 */
+    public File toFileZIP(String zipFileName, String modelName)
+	{
+		File resultFile = new File (zipFileName);
+		try
+		{
+			FileOutputStream fos = new FileOutputStream(resultFile);
+			ZipOutputStream  zos = new ZipOutputStream (fos);
+			zos.setMethod(ZipOutputStream.DEFLATED); // matches java default
+			zos.setLevel(Deflater.BEST_COMPRESSION);
+			zos.setComment("Created by " + ConfigurationProperties.NAME_X3DJSAIL + " " + ConfigurationProperties.URL_X3DJSAIL);
+			ZipEntry         ze  = new ZipEntry(modelName);
+			zos.putNextEntry(ze);
+			zos.write(toStringX3D().getBytes());
+			zos.close();
+		}
+		catch (IOException ioe)
+		{
+			System.out.println (ioe.getMessage());
+			ioe.printStackTrace();
+		}
+		return resultFile;
 	}
 										
   /** Provide thorough X3DJSAIL validation results for this X3D model.
@@ -4098,7 +4924,7 @@ engine.eval("print('Hello World!');");
 	 */
 	abstract public String getElementName(); // must be overridden (static methods cannot be abstract)
 										
-	/** Provides X3D component for this element.
+	/** Defines X3D component for this element.
 	 * @return X3D component for this element
 	 */
 	abstract public String getComponent(); // must be overridden (static methods cannot be abstract)
@@ -4126,7 +4952,7 @@ engine.eval("print('Hello World!');");
 	 * Recursive method to provide object reference to node or statement by name attribute, if found as part of this element or in a contained element.
 	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, HAnim nodes.
 	 * <br ><br >
-	 * <i>WARNING:</i> more than one element may be found that has the same name, this method does not handle that case.
+	 * <i>Warning:</i> more than one element may be found that has the same name, this method does not handle that case.
 	 * @param nameValue is value of the name field being searched for in this element and child elements(if any)
 	 * @param elementName identifies the element of interest (meta MetadataString ProtoDeclare CADassembly ProtoInstance HAnimHumanoid etc.)
 	 * @return object reference to found element, null otherwise
@@ -4140,7 +4966,7 @@ engine.eval("print('Hello World!');");
 	 * Recursive method to provide object reference to node or statement by name attribute, if found as part of this element or in a contained element.
 	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, HAnim nodes.
 	 * <br ><br >
-	 * <i>WARNING:</i> more than one element may be found that has the same name, this method does not handle that case.
+	 * <i>Warning:</i> more than one element may be found that has the same name, this method does not handle that case.
 	 * @param nameValue is value of the name field being searched for in this element and child elements(if any)
 	 * @return object reference to found element, null otherwise
 	 * @see #findNodeByDEF(String)
@@ -4150,7 +4976,7 @@ engine.eval("print('Hello World!');");
 	/**
 	 * Recursive method to provide object reference to node by DEF, if found as this node or in a contained node.
 	 * <br ><br >
-	 * <i>WARNING:</i> more than one element may be found that has the same DEF, this method does not handle that case.
+	 * <i>Warning:</i> more than one element may be found that has the same DEF, this method does not handle that case.
 	 * @param DEFvalue is value of the name field being searched for in this element and child elements(if any)
 	 * @return object reference to found node, null otherwise
 	 * @see #findElementByNameValue(String)
@@ -4253,9 +5079,9 @@ engine.eval("print('Hello World!');");
 							</xsl:variable>
 							<xsl:variable name="fieldTooltip">
 								<xsl:if test="(string-length(normalize-space($tooltipText)) > 0)"><!-- doc-available($x3d.tooltips.path) -->
-									<xsl:value-of select="replace($tooltipText,'&#8734;','infinity')" disable-output-escaping="yes"/>
+									<xsl:value-of select="replace(replace($tooltipText,'&#8734;','infinity'),'&#960;','pi')" disable-output-escaping="yes"/>
 									<!-- consistent javadoc punctuation -->
-									<xsl:if test="not(ends-with(normalize-space($tooltipText),'.'))">
+									<xsl:if test="not(ends-with(normalize-space($tooltipText),'.')) and not(contains($tooltipText,'http')) and not(contains($tooltipText,'mailto')) and not(contains($tooltipText,'ftp'))">
 										<xsl:text>.</xsl:text>
 									</xsl:if>
 								</xsl:if>
@@ -4508,9 +5334,18 @@ engine.eval("print('Hello World!');");
 									<xsl:text>&#10;</xsl:text>
 									<xsl:text>	 * </xsl:text>
 									<xsl:text disable-output-escaping="yes">&lt;i&gt;Tooltip:&lt;/i&gt; </xsl:text>
-									<xsl:call-template name="escape-javadoc-characters">
-										<xsl:with-param name="inputString">
-											<xsl:value-of select="normalize-space(substring-after($fieldTooltip,']'))" disable-output-escaping="no"/>
+									<xsl:call-template name="bulletize-hints-warnings">
+										<xsl:with-param name="tooltipText">
+											<xsl:call-template name="wrap-hyperlinks">
+												<xsl:with-param name="string">
+													<!-- xsl:text> escape-javadoc-characters1 </xsl:text -->
+													<xsl:call-template name="escape-javadoc-characters">
+														<xsl:with-param name="inputString">
+															<xsl:value-of select="normalize-space(substring-after($fieldTooltip,']'))" disable-output-escaping="yes"/>
+														</xsl:with-param>
+													</xsl:call-template>
+												</xsl:with-param>
+											</xsl:call-template>
 										</xsl:with-param>
 									</xsl:call-template>
 									<xsl:text>&#10;</xsl:text>
@@ -4545,7 +5380,7 @@ engine.eval("print('Hello World!');");
 									<xsl:text disable-output-escaping="yes">&lt;br&gt;</xsl:text><!-- line break -->
 									<xsl:text>&#10;</xsl:text>
 									<xsl:text>	 * </xsl:text>
-									<xsl:text disable-output-escaping="yes"><![CDATA[<i>WARNING:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to ]]></xsl:text>
+									<xsl:text disable-output-escaping="yes"><![CDATA[<i>Warning:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to ]]></xsl:text>
 									<xsl:value-of select="@acceptableNodeTypes"/>
 									<xsl:text>.</xsl:text>
 									<xsl:text>&#10;</xsl:text>
@@ -4925,7 +5760,7 @@ engine.eval("print('Hello World!');");
 											<xsl:text disable-output-escaping="yes">&lt;br&gt;</xsl:text><!-- line break -->
 											<xsl:text disable-output-escaping="yes">&lt;br&gt;</xsl:text><!-- line break -->
 											<xsl:text>&#10;</xsl:text>
-											<xsl:text disable-output-escaping="yes"><![CDATA[	 * <i>WARNING:</i> authors can only choose from a strict list of enumeration values ]]></xsl:text>
+											<xsl:text disable-output-escaping="yes"><![CDATA[	 * <i>Warning:</i> authors can only choose from a strict list of enumeration values ]]></xsl:text>
 										</xsl:when>
 										<xsl:when test="   (@additionalEnumerationValuesAllowed='true')">
 											<xsl:text>.</xsl:text>
@@ -4974,6 +5809,7 @@ engine.eval("print('Hello World!');");
 									<!-- TODO recurse to insert line breaks for each Hint: -->
 									<!-- TODO regular expression to insert links for url text -->
 									<!-- don't escape apostrophes, that makes javadoc unhappy -->
+									<!-- xsl:text> escape-javadoc-characters2 </xsl:text -->
 									<xsl:call-template name="escape-javadoc-characters">
 										<xsl:with-param name="inputString">
 											<xsl:value-of select="normalize-space(substring-after($fieldTooltip,']'))" disable-output-escaping="no"/>
@@ -5004,12 +5840,12 @@ engine.eval("print('Hello World!');");
 										<xsl:text disable-output-escaping="yes">&lt;br&gt;</xsl:text><!-- line break -->
 										<xsl:text>&#10;</xsl:text>
 										<xsl:text>	 * </xsl:text>
-										<xsl:text disable-output-escaping="yes"><![CDATA[<i>WARNING:</i> invoking the <code>setUSE()</code> method resets all other fields to their default values and also releases all child nodes.]]></xsl:text>
+										<xsl:text disable-output-escaping="yes"><![CDATA[<i>Warning:</i> invoking the <code>setUSE()</code> method on this node resets all other fields to their default values (except for containerField) and also releases all child nodes.]]></xsl:text>
 										<xsl:text disable-output-escaping="yes">&lt;br&gt;</xsl:text><!-- line break -->
 										<xsl:text disable-output-escaping="yes">&lt;br&gt;</xsl:text><!-- line break -->
 										<xsl:text>&#10;</xsl:text>
 										<xsl:text>	 * </xsl:text>
-										<xsl:text disable-output-escaping="yes"><![CDATA[<i>WARNING:</i> no other operations can be performed to modify a USE node other than setting an alternate containerField value.]]></xsl:text>
+										<xsl:text disable-output-escaping="yes"><![CDATA[<i>Warning:</i> no other operations can be performed to modify a USE node other than setting an alternate containerField value.]]></xsl:text>
 										<xsl:text>&#10;</xsl:text>
 									</xsl:when>
 								</xsl:choose>
@@ -6809,7 +7645,7 @@ engine.eval("print('Hello World!');");
 								<xsl:if test="((@type = 'MFNode') and (@name = 'children'))
 											   and not($isX3dStatement = 'true') and not($isInterface = 'true')">
 <!-- * <br ><br >
-	 * <i>WARNING:</i> acceptable child node types and statements are limited to X3DChildNode.-->
+	 * <i>Warning:</i> acceptable child node types and statements are limited to X3DChildNode.-->
 										<xsl:text disable-output-escaping="yes"><![CDATA[
 	/**
 	 * Utility method to add single child element to contained array of existing children nodes (if any).
@@ -7118,7 +7954,7 @@ engine.eval("print('Hello World!');");
 									<xsl:text> node, replacing prior array of existing nodes (if any).</xsl:text>
 									<xsl:text>&#10;</xsl:text>
 									<xsl:if test="($name = 'MetadataSet')">
-										<xsl:text disable-output-escaping="yes"><![CDATA[ * <i>WARNING:</i> this method can only accept Metadata* nodes.]]></xsl:text>
+										<xsl:text disable-output-escaping="yes"><![CDATA[ * <i>Warning:</i> this method can only accept Metadata* nodes.]]></xsl:text>
 										<xsl:text>&#10;</xsl:text>
 									</xsl:if>
 									<xsl:choose>
@@ -7607,7 +8443,7 @@ setAttribute method invocations).]]></xsl:text>
 									<xsl:text>&#10;</xsl:text>
 									<xsl:if test="(string-length(@acceptableNodeTypes) > 0)">
 										<xsl:text disable-output-escaping="yes"><![CDATA[
-	 * <i>WARNING:</i> ProtoInstance must match acceptable node type]]></xsl:text>
+	 * <i>Warning:</i> ProtoInstance must match acceptable node type]]></xsl:text>
 										<xsl:if test="contains(@acceptableNodeTypes,'|')">
 											<xsl:text>s</xsl:text>
 										</xsl:if>
@@ -7754,7 +8590,14 @@ setAttribute method invocations).
 			<xsl:otherwise>
 				<xsl:text>(</xsl:text>
 				<xsl:value-of select="$normalizedMemberObjectName"/>
-				<xsl:text> != null)</xsl:text>
+				<xsl:choose>
+					<xsl:when test="($isX3dStatement = 'true') and (@type='MFNode')">
+						<xsl:text>.isEmpty() == false)</xsl:text>
+					</xsl:when>
+					<xsl:otherwise>
+						<xsl:text> != null)</xsl:text>
+					</xsl:otherwise>
+				</xsl:choose>
 			</xsl:otherwise>
 		</xsl:choose>
 		<xsl:if test="($type='SFNode') and not($isX3dStatement = 'true')">
@@ -7907,10 +8750,9 @@ setAttribute method invocations).
 	/**
 	 * Assign a USE reference to another DEF node of same node type, similar to {@link #setUSE(String)}.
 	 * <br ><br >
-	 * <i>WARNING:</i> note that the <code>setUSE()</code> method resets all other fields to their default values and also releases
-all child nodes.
+	 * <i>Warning:</i> note that the <code>setUSE()</code> method on this node resets all other fields to their default values (except for containerField) and also releases all child nodes.
 	 * <br><br>
-	 * <i>WARNING.</i> no other operations can be performed to modify a USE node other than setting an alternate containerField value.
+	 * <i>Warning:</i> no other operations can be performed to modify a USE node other than setting an alternate containerField value.
 	 * @param DEFnode must have a DEF value defined
 	 * @return {@link ]]></xsl:text><xsl:value-of select="$name"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -7961,11 +8803,12 @@ all child nodes.
 
 	/**
 	 * Utility method that assigns </xsl:text><xsl:value-of select="$thisClassName"/><xsl:text><![CDATA[ containerField value
-	 * <i>TODO</i> make this method unnecessary.
+	 * <i>Hint:</i> ordinarily this method is unnecessary for end users.
 	 * @param containerFieldName overriding value
 	 * @see org.web3d.x3d.jsail.X3DConcreteNode#setContainerFieldOverride(String)
 	 * @return {@link ProtoInstanceObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
+	// TODO consider making private
 	public ProtoInstanceObject setContainerField(String containerFieldName)
 	{
 		setContainerFieldOverride(containerFieldName);
@@ -8400,11 +9243,11 @@ setAttribute method invocations).
 		
 	/**
 	 * Recursive method to provide X3D string serialization of this model subgraph.
-	 * @param level number of levels of indentation for this element
+	 * @param indentLevel number of levels of indentation for this element
 	 * @return X3D string
 	 */
 	@Override
-	public String toStringX3D(int level)
+	public String toStringX3D(int indentLevel)
 	{]]></xsl:text>
 	<xsl:if test="not($name = 'CommentsBlock')">
 		<xsl:text disable-output-escaping="yes"><![CDATA[
@@ -8477,7 +9320,7 @@ setAttribute method invocations).
 		StringBuilder indent = new StringBuilder();
 		int  indentIncrement = ConfigurationProperties.getIndentIncrement();
 		char indentCharacter = ConfigurationProperties.getIndentCharacter();
-		for (int i = 0; i < (level * indentIncrement); i++)
+		for (int i = 0; i < (indentLevel * indentIncrement); i++)
 			indent.append(indentCharacter); // level of indentation for this level
 
 		StringBuilder stringX3D = new StringBuilder();
@@ -8491,22 +9334,22 @@ setAttribute method invocations).
 		switch (version)
 		{
 			case "3.0":
-				stringX3D.append(DOCTYPE_3_0).append("\n");
+				stringX3D.append(XML_DOCTYPE_X3D_3_0).append("\n");
 				break;
 			case "3.1":
-				stringX3D.append(DOCTYPE_3_1).append("\n");
+				stringX3D.append(XML_DOCTYPE_X3D_3_1).append("\n");
 				break;
 			case "3.2":
-				stringX3D.append(DOCTYPE_3_2).append("\n");
+				stringX3D.append(XML_DOCTYPE_X3D_3_2).append("\n");
 				break;
 			case "3.3":
-				stringX3D.append(DOCTYPE_3_3).append("\n");
+				stringX3D.append(XML_DOCTYPE_X3D_3_3).append("\n");
 				break;
 			case "4.0":
-				stringX3D.append(DOCTYPE_4_0).append("\n");
+				stringX3D.append(XML_DOCTYPE_X3D_4_0).append("\n");
 				break;
 			case "4.1":
-				stringX3D.append(DOCTYPE_4_1).append("\n");
+				stringX3D.append(XML_DOCTYPE_X3D_4_1).append("\n");
 				break;
 			default:
 				stringX3D.append("<!-- unknown DOCTYPE for X3D version ").append(version).append(" -->").append("\n");
@@ -8704,25 +9547,25 @@ setAttribute method invocations).
 				switch (version)
 				{
 					case "3.0":
-						stringX3D.append(" ").append(SCHEMA_3_0_ATTRIBUTES);
+						stringX3D.append(" ").append(X3D_XML_SCHEMA_3_0_ATTRIBUTES);
 						break;
 					case "3.1":
-						stringX3D.append(" ").append(SCHEMA_3_1_ATTRIBUTES);
+						stringX3D.append(" ").append(X3D_XML_SCHEMA_3_1_ATTRIBUTES);
 						break;
 					case "3.2":
-						stringX3D.append(" ").append(SCHEMA_3_2_ATTRIBUTES);
+						stringX3D.append(" ").append(X3D_XML_SCHEMA_3_2_ATTRIBUTES);
 						break;
 					case "3.3":
-						stringX3D.append(" ").append(SCHEMA_3_3_ATTRIBUTES);
+						stringX3D.append(" ").append(X3D_XML_SCHEMA_3_3_ATTRIBUTES);
 						break;
 					case "4.0":
-						stringX3D.append(" ").append(SCHEMA_4_0_ATTRIBUTES);
+						stringX3D.append(" ").append(X3D_XML_SCHEMA_4_0_ATTRIBUTES);
 						break;
 					case "4.1":
-						stringX3D.append(" ").append(SCHEMA_4_1_ATTRIBUTES);
+						stringX3D.append(" ").append(X3D_XML_SCHEMA_4_1_ATTRIBUTES);
 						break;
 					default:
-						stringX3D.append(" ").append(SCHEMA_3_3_ATTRIBUTES); // TODO error condition
+						stringX3D.append(" ").append(X3D_XML_SCHEMA_3_3_ATTRIBUTES); // TODO error condition
 						break;
 				}]]></xsl:text>
 				</xsl:when>
@@ -8742,7 +9585,7 @@ setAttribute method invocations).
 			<!-- note ProtoInstance IS handled later due to serialization sequencing -->
 			<xsl:text>
 			if (getIS() != null)
-				stringX3D.append(getIS().toStringX3D(level + indentIncrement));</xsl:text>
+				stringX3D.append(getIS().toStringX3D(indentLevel + indentIncrement));</xsl:text>
 		</xsl:if>
 			<xsl:text disable-output-escaping="yes"><![CDATA[
 
@@ -8752,12 +9595,22 @@ setAttribute method invocations).
 				<xsl:text>s</xsl:text>
 			</xsl:if>
 			
+			<xsl:if test="(not($hasChildrenField = 'true') and not($isInterface = 'true') and not($isFieldInterface or $isException or $isServiceInterface) and
+							not($name = 'CommandLine') and not($name = 'ConfigurationProperties') and not($name = 'CommentsBlock') and not($name = 'CADPart'))">
+				<xsl:text><![CDATA[
+			if (!commentsList.isEmpty())
+			{
+				CommentsBlock commentsBlock = new CommentsBlock(commentsList);
+				stringX3D.append(commentsBlock.toStringX3D(indentLevel + indentIncrement));
+			}]]></xsl:text>
+			</xsl:if>
+			
 			<xsl:for-each select="InterfaceDefinition/field[(contains(@type,'FNode')) and not(starts-with(@name,'set')) and not(ends-with(@name,'changed')) and 
 															((@accessType='initializeOnly') or (@accessType='inputOutput')) and
                                                             not(@name = 'meta')]">
 				<!-- order is essential for the following name-attribute sorts -->
 				<xsl:sort select="@name[not((. = 'head') or (. = 'Scene') or (. = 'metadata') or (. = 'ProtoBody') or (. = 'ProtoInterface'))]"/>
-				<!-- necessary order for validation: field/IS/metadata before all others -->
+				<!-- necessary order for model validation: field/IS/metadata before all others -->
 				<xsl:sort select="(@name = 'metadata')"/>
 				<!-- apparently these are handled in content model, not interface definitions
 				<xsl:sort select="(@name = 'IS')"/>
@@ -8796,14 +9649,14 @@ setAttribute method invocations).
 			if      (]]></xsl:text><xsl:value-of select="@name"/><xsl:text> != null)
 			{
 				stringX3D.append(((X3DConcreteElement)</xsl:text><xsl:value-of select="@name"/>
-						<xsl:text>).toStringX3D(level + indentIncrement));
+						<xsl:text>).toStringX3D(indentLevel + indentIncrement));
 			}</xsl:text>
 						<xsl:if test="not($isX3dStatement = 'true')">
 						<xsl:text><![CDATA[
 			else if (]]></xsl:text><xsl:value-of select="@name"/><xsl:text><![CDATA[ProtoInstance != null)
 			{
 					 stringX3D.append(((X3DConcreteElement)]]></xsl:text><xsl:value-of select="@name"/>
-						<xsl:text><![CDATA[ProtoInstance).toStringX3D(level + indentIncrement));
+						<xsl:text><![CDATA[ProtoInstance).toStringX3D(indentLevel + indentIncrement));
 			}]]></xsl:text>
 						</xsl:if>
 					</xsl:when>
@@ -8817,7 +9670,7 @@ setAttribute method invocations).
 						<!-- cast abstract element to concrete type -->
 						<xsl:text>)
 			{
-				stringX3D.append(((X3DConcreteElement)element).toStringX3D(level + indentIncrement));
+				stringX3D.append(((X3DConcreteElement)element).toStringX3D(indentLevel + indentIncrement));
 			}</xsl:text>
 					</xsl:otherwise>
 				</xsl:choose>
@@ -8827,13 +9680,13 @@ setAttribute method invocations).
 				<xsl:text disable-output-escaping="yes"><![CDATA[
 			// note required order of component, unit, meta (though relaxation of this requirement has been proposed)
 			for (metaObject element : metaList)
-				 stringX3D.append(element.toStringX3D(level + indentIncrement));
+				 stringX3D.append(element.toStringX3D(indentLevel + indentIncrement));
 ]]></xsl:text>
 			</xsl:if>
 			<xsl:if test="($name = 'ProtoInstance')">
 				<xsl:text disable-output-escaping="yes"><![CDATA[
 			if (getIS() != null)
-				stringX3D.append(getIS().toStringX3D(level + indentIncrement)); // IS follows fieldValue definitions]]></xsl:text>
+				stringX3D.append(getIS().toStringX3D(indentLevel + indentIncrement)); // IS follows fieldValue definitions]]></xsl:text>
 			</xsl:if>
 			
 			<xsl:choose>
@@ -8841,10 +9694,10 @@ setAttribute method invocations).
 					<xsl:text disable-output-escaping="yes"><![CDATA[
 
 			for (fieldObject element : fieldList)
-				 stringX3D.append(element.toStringX3D(level + indentIncrement));
+				 stringX3D.append(element.toStringX3D(indentLevel + indentIncrement));
 
 			if (getIS() != null)
-				stringX3D.append(getIS().toStringX3D(level + indentIncrement)); // IS follows field definitions
+				stringX3D.append(getIS().toStringX3D(indentLevel + indentIncrement)); // IS follows field definitions
 
 			if (sourceCode.trim().length() > 0)
 				stringX3D.append("<![CDATA[\n").append(sourceCode)
@@ -8855,17 +9708,17 @@ setAttribute method invocations).
 					<xsl:text disable-output-escaping="yes"><![CDATA[
 
 			for (fieldObject element : fieldList)
-				 stringX3D.append(element.toStringX3D(level + indentIncrement));
+				 stringX3D.append(element.toStringX3D(indentLevel + indentIncrement));
 
 			if (getIS() != null)
-				stringX3D.append(getIS().toStringX3D(level + indentIncrement)); // IS follows field definitions
+				stringX3D.append(getIS().toStringX3D(indentLevel + indentIncrement)); // IS follows field definitions
 ]]></xsl:text>
 				</xsl:when>
 				<xsl:when test="($name = 'ShaderPart')">
 					<xsl:text disable-output-escaping="yes"><![CDATA[
 
 			if (getIS() != null)
-				stringX3D.append(getIS().toStringX3D(level + indentIncrement)); // IS follows field definitions
+				stringX3D.append(getIS().toStringX3D(indentLevel + indentIncrement)); // IS follows field definitions
 
 			if (sourceCode.trim().length() > 0)
 				stringX3D.append("<![CDATA[\n").append(sourceCode)
@@ -8873,16 +9726,6 @@ setAttribute method invocations).
 ]]></xsl:text>
 				</xsl:when>
 			</xsl:choose>
-			
-			<xsl:if test="(not($hasChildrenField = 'true') and not($isInterface = 'true') and not($isFieldInterface or $isException or $isServiceInterface) and
-							not($name = 'CommandLine') and not($name = 'ConfigurationProperties') and not($name = 'CommentsBlock') and not($name = 'CADPart'))">
-				<xsl:text><![CDATA[
-			if (!commentsList.isEmpty())
-			{
-				CommentsBlock commentsBlock = new CommentsBlock(commentsList);
-				stringX3D.append(commentsBlock.toStringX3D(level + indentIncrement));
-			}]]></xsl:text>
-			</xsl:if>
 
 			<xsl:text disable-output-escaping="yes"><![CDATA[
 			stringX3D.append(indent).append("</]]></xsl:text>
@@ -8921,13 +9764,13 @@ setAttribute method invocations).
 						<xsl:text disable-output-escaping="yes"><![CDATA[
 	/**
 	 * Recursive method to provide ClassicVRML string serialization.
-	 * @param level number of levels of indentation for this element
+	 * @param indentLevel number of levels of indentation for this element
 	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html#VRML">X3D Resources: Virtual Reality Modeling Language (VRML) 97</a>
 	 * @see <a href="http://www.web3d.org/documents/specifications/19776-2/V3.3/Part02/grammar.html">Extensible 3D (X3D) encodings Part 2: Classic VRML encoding, Annex A: Grammar</a>
 	 * @return ClassicVRML string
 	 */
 	@Override
-	public String toStringClassicVRML(int level)
+	public String toStringClassicVRML(int indentLevel)
 	{
 		StringBuilder stringClassicVRML = new StringBuilder();]]></xsl:text>
 	<xsl:if test="not($name = 'CommentsBlock')">
@@ -9011,7 +9854,7 @@ setAttribute method invocations).
 		StringBuilder  indent = new StringBuilder();
 		char  indentCharacter = ConfigurationProperties.getIndentCharacter();
 		int   indentIncrement = ConfigurationProperties.getIndentIncrement();
-		for (int i = 0; i < (level * indentIncrement); i++)
+		for (int i = 0; i < (indentLevel * indentIncrement); i++)
 			indent.append(indentCharacter); // level of indentation for this level
 ]]></xsl:text>			
 	</xsl:if>			
@@ -9121,27 +9964,27 @@ setAttribute method invocations).
 		if (ProtoInterface != null)
 		{
 			stringClassicVRML.append("\n").append(indent).append(indentCharacter).append(indentCharacter);
-			stringClassicVRML.append(ProtoInterface.toStringClassicVRML(level + indentIncrement));
+			stringClassicVRML.append(ProtoInterface.toStringClassicVRML(indentLevel + indentIncrement));
 			for (fieldObject nextField : ProtoInterface.getFieldList())
 			{
-				stringClassicVRML.append(nextField.toStringClassicVRML(level + indentIncrement));
+				stringClassicVRML.append(nextField.toStringClassicVRML(indentLevel + indentIncrement));
 			}
 		}
 		if (!commentsList.isEmpty())
 		{
 			CommentsBlock commentsBlock = new CommentsBlock(commentsList);
-			stringClassicVRML.append(commentsBlock.toStringClassicVRML(level));
+			stringClassicVRML.append(commentsBlock.toStringClassicVRML(indentLevel));
 		}
 		stringClassicVRML.append("] {").append("\n").append(indent);
 					
 		if (ProtoBody != null)
 		{
 			stringClassicVRML.append("\n").append(indent).append(indentCharacter).append(indentCharacter);
-			stringClassicVRML.append(ProtoBody.toStringClassicVRML(level + indentIncrement));
+			stringClassicVRML.append(ProtoBody.toStringClassicVRML(indentLevel + indentIncrement));
 			stringClassicVRML.append("\n").append(indent).append(indentCharacter).append(indentCharacter);
 			for (X3DNode element : ProtoBody.getChildren())
 			{
-				stringClassicVRML.append(((X3DConcreteElement) element).toStringClassicVRML(level + indentIncrement));
+				stringClassicVRML.append(((X3DConcreteElement) element).toStringClassicVRML(indentLevel + indentIncrement));
 			}
 		}
 		stringClassicVRML.append("}").append("\n").append(indent);
@@ -9171,12 +10014,12 @@ setAttribute method invocations).
 		// recursively iterate over child elements
 		for (fieldObject element : fieldList)
 		{
-			stringClassicVRML.append(((X3DConcreteElement)element).toStringClassicVRML(level));
+			stringClassicVRML.append(((X3DConcreteElement)element).toStringClassicVRML(indentLevel));
 		}
 		if (!commentsList.isEmpty())
 		{
 			CommentsBlock commentsBlock = new CommentsBlock(commentsList);
-			stringClassicVRML.append(commentsBlock.toStringClassicVRML(level));
+			stringClassicVRML.append(commentsBlock.toStringClassicVRML(indentLevel));
 		}
 		stringClassicVRML.append("]").append("\n").append(indent);]]></xsl:text>
 			</xsl:when>
@@ -9489,11 +10332,11 @@ setAttribute method invocations).
 						<xsl:value-of select="@name"/>
 						<xsl:choose>
 							<xsl:when test="not($isX3dStatement = 'true')">
-								<xsl:text>).toStringClassicVRML(level + indentIncrement));
+								<xsl:text>).toStringClassicVRML(indentLevel + indentIncrement));
 				stringClassicVRML.append(indent); // end SFNode</xsl:text>
 							</xsl:when>
 							<xsl:otherwise>
-								<xsl:text>).toStringClassicVRML(level)); // end X3D statement</xsl:text>
+								<xsl:text>).toStringClassicVRML(indentLevel)); // end X3D statement</xsl:text>
 							</xsl:otherwise>
 						</xsl:choose>
 						<xsl:text>
@@ -9511,7 +10354,7 @@ setAttribute method invocations).
 						<xsl:text>
 				stringClassicVRML.append(((X3DConcreteElement) </xsl:text>
 						<xsl:value-of select="@name"/>
-						<xsl:text>ProtoInstance).toStringClassicVRML(level + indentIncrement));
+						<xsl:text>ProtoInstance).toStringClassicVRML(indentLevel + indentIncrement));
 				stringClassicVRML.append(indent); // end SFNode ProtoInstance
 			}</xsl:text>
 						</xsl:if>
@@ -9554,10 +10397,10 @@ setAttribute method invocations).
 				stringClassicVRML.append(((X3DConcreteElement</xsl:text>
 						<xsl:choose>
 							<xsl:when test="not($isX3dStatement = 'true') or (@name = 'ROUTE') or (@name = 'IMPORT') or (@name = 'EXPORT')">
-								<xsl:text><![CDATA[)element).toStringClassicVRML(level + indentIncrement + indentIncrement))]]></xsl:text>
+								<xsl:text><![CDATA[)element).toStringClassicVRML(indentLevel + indentIncrement + indentIncrement))]]></xsl:text>
 							</xsl:when>
 							<xsl:otherwise>
-								<xsl:text><![CDATA[)element).toStringClassicVRML(level))]]></xsl:text>
+								<xsl:text><![CDATA[)element).toStringClassicVRML(indentLevel))]]></xsl:text>
 							</xsl:otherwise>
 						</xsl:choose>
 						<xsl:text>;</xsl:text>
@@ -9583,7 +10426,7 @@ setAttribute method invocations).
 			<xsl:if test="($name = 'ProtoInstance')">
 				<xsl:text disable-output-escaping="yes"><![CDATA[
 			if (getIS() != null)
-				stringClassicVRML.append(getIS().toStringClassicVRML(level + indentIncrement)); // IS follows fieldValue definitions]]></xsl:text>
+				stringClassicVRML.append(getIS().toStringClassicVRML(indentLevel + indentIncrement)); // IS follows fieldValue definitions]]></xsl:text>
 			</xsl:if>
 			-->
 			
@@ -9592,7 +10435,7 @@ setAttribute method invocations).
 			// note required order of component, unit, meta (though relaxation of this requirement has been proposed)
 			for (metaObject element : metaList)
 			{
-				 stringClassicVRML.append(element.toStringClassicVRML(level));
+				 stringClassicVRML.append(element.toStringClassicVRML(indentLevel));
 			}
 ]]></xsl:text>
 			</xsl:if>
@@ -9604,7 +10447,7 @@ setAttribute method invocations).
 
 			for (fieldObject element : fieldList)
 			{
-				 stringClassicVRML.append(element.toStringClassicVRML(level + indentIncrement));
+				 stringClassicVRML.append(element.toStringClassicVRML(indentLevel + indentIncrement));
 			}
 			if (sourceCode.trim().length() > 0)
 			{
@@ -9619,7 +10462,7 @@ setAttribute method invocations).
 
 			for (fieldObject element : fieldList)
 			{
-				 stringClassicVRML.append(element.toStringClassicVRML(level + indentIncrement));
+				 stringClassicVRML.append(element.toStringClassicVRML(indentLevel + indentIncrement));
 			}
 ]]></xsl:text>
 				</xsl:when>
@@ -9645,13 +10488,13 @@ setAttribute method invocations).
 				<xsl:choose>
 					<xsl:when test="not($isX3dStatement = 'true')">
 						<xsl:text>
-				stringClassicVRML.append(commentsBlock.toStringClassicVRML(level));
+				stringClassicVRML.append(commentsBlock.toStringClassicVRML(indentLevel));
 				stringClassicVRML.append(indent); // end SFNode
 			}</xsl:text>
 					</xsl:when>
 					<xsl:otherwise>
 						<xsl:text>
-				stringClassicVRML.append(commentsBlock.toStringClassicVRML(level));
+				stringClassicVRML.append(commentsBlock.toStringClassicVRML(indentLevel));
 			}</xsl:text>
 						
 					</xsl:otherwise>
@@ -9686,16 +10529,16 @@ setAttribute method invocations).
 							<xsl:text disable-output-escaping="yes"><![CDATA[
 	/**
 	 * Recursive method to provide VRML97 string serialization.
-	 * @param level number of levels of indentation for this element
+	 * @param indentLevel number of levels of indentation for this element
 	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html#VRML">X3D Resources: Virtual Reality Modeling Language (VRML) 97</a>
 	 * @see <a href="http://www.web3d.org/documents/specifications/14772/V2.0/index.html">Virtual Reality Modeling Language (VRML) 97 specification</a>
 	 * @see <a href="http://www.web3d.org/documents/specifications/14772-1/V2.1/index.html">VRML 97 v2.1 Amendment</a>
 	 * @return VRML97 string
 	 */
 	@Override
-	public String toStringVRML97(int level)
+	public String toStringVRML97(int indentLevel)
 	{
-		return toStringClassicVRML(level)]]></xsl:text>
+		return toStringClassicVRML(indentLevel)]]></xsl:text>
 	<xsl:choose>
 		<xsl:when test="($name = 'X3D')">
 			<!-- TODO fix this hack more thoroughly, possibly via ConfigurationProperties or else by optional parameter in method signature -->
@@ -9832,7 +10675,7 @@ setAttribute method invocations).
 	 * Recursive method to provide object reference to node or statement by name attribute, if found as part of this element or in a contained element.
 	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, HAnim nodes.
 	 * <br ><br >
-	 * <i>WARNING:</i> more than one element may be found that has the same name, this method does not handle that case.
+	 * <i>Warning:</i> more than one element may be found that has the same name, this method does not handle that case.
 	 * @param nameValue is value of the name field being searched for in this element and child elements(if any)
 	 * @return object reference to found element, null otherwise
 	 * @see #findNodeByDEF(String)
@@ -9847,7 +10690,7 @@ setAttribute method invocations).
 	 * Recursive method to provide object reference to node or statement by name attribute, if found as part of this element or in a contained element.
 	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, HAnim nodes.
 	 * <br ><br >
-	 * <i>WARNING:</i> more than one element may be found that has the same name, this method does not handle that case.
+	 * <i>Warning:</i> more than one element may be found that has the same name, this method does not handle that case.
 	 * @param nameValue is value of the name field being searched for in this element and child elements(if any)
 	 * @param elementName identifies the element of interest (meta MetadataString ProtoDeclare CADassembly ProtoInstance HAnimHumanoid etc.)
 	 * @return object reference to found element, null otherwise
@@ -9972,7 +10815,7 @@ setAttribute method invocations).
 	/**
 	 * Recursive method to provide object reference to node by DEF, if found as this node or in a contained node.
 	 * <br ><br >
-	 * <i>WARNING:</i> more than one element may be found that has the same DEF, this method does not handle that case.
+	 * <i>Warning:</i> more than one element may be found that has the same DEF, this method does not handle that case.
 	 * @param DEFvalue is value of the name field being searched for in this element and child elements(if any)
 	 * @return object reference to found node, null otherwise
 	 * @see #findElementByNameValue(String)
@@ -10851,6 +11694,7 @@ setAttribute method invocations).
 
 	/**
 	 * Set new source code (for example, JavaScript)
+	 * @see <a href="http://www.web3d.org/x3d/content/X3dTooltips.html#CDATA" target="_blank">X3D Scene Authoring Hints: CDATA Character Data</a>
 	 * @param newSourceText is source code to set
 	 * @return {@link ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
 setAttribute method invocations).
@@ -10868,20 +11712,14 @@ setAttribute method invocations).
 			errorNotice = "Illegal setSourceCode() invocation, String newSourceText is empty. ";
 			validationResult.append(errorNotice).append("\n");
 		}
-		else if (newSourceText.trim().startsWith("<![CDATA[") && !newSourceText.substring(newSourceText.indexOf("![CDATA[") + 8).trim().startsWith("ecmascript:"))
+		else if (newSourceText.trim().startsWith("<![CDATA[") || newSourceText.endsWith("]" + "]>"))
 		{
-			errorNotice = "Illegal setSourceCode() invocation, String newSourceText is wrapped in <![CDATA[ block but does not start with \"ecmascript:\"";
+			errorNotice = "Illegal setSourceCode() invocation, String newSourceText is wrapped in <![CDATA[ ...(source)... ]]> block which can be omitted";
 			validationResult.append(errorNotice).append("\n");
 		}
-		else if (!newSourceText.trim().startsWith("<![CDATA[") && !newSourceText.trim().startsWith("ecmascript:"))
+		if (!newSourceText.trim().startsWith("<![CDATA[") && !newSourceText.trim().startsWith("ecmascript:"))
 		{
 			errorNotice = "Illegal setSourceCode() invocation, String newSourceText must start with \"ecmascript:\"";
-			validationResult.append(errorNotice).append("\n");
-		}
-		if (newSourceText.trim().startsWith("<![CDATA[") && !newSourceText.trim().endsWith("]]>"))
-		{
-		errorNotice = "Illegal setSourceCode() invocation, String newSourceText begins with <![CDATA[ block but does not end with \"]]></xsl:text>
-			<xsl:text>]]</xsl:text><xsl:text disable-output-escaping="yes"><![CDATA[>\"";
 			validationResult.append(errorNotice).append("\n");
 		}
 		if (!errorNotice.isEmpty())
@@ -10911,7 +11749,7 @@ setAttribute method invocations).
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
 		}
-		sourceCode = newSourceText.toString();
+		setSourceCode(newSourceText.toString()); // apply further diagnostics
 		return this;
 	}
 
@@ -12615,14 +13453,6 @@ shall not include the underlying field's values at that point in time.
 			</xsl:variable>
 			<xsl:variable name="javadocBlock">
 				<xsl:value-of select="InterfaceDefinition/@appinfo"/>
-				<xsl:if test="($fieldName = 'SFColor')">
-					<xsl:text disable-output-escaping="yes">&lt;br&gt;</xsl:text><!-- line break -->
-					<xsl:text disable-output-escaping="yes">&lt;br&gt;</xsl:text><!-- line break -->
-					<xsl:text>&#10;</xsl:text>
-					<xsl:text disable-output-escaping="yes"><![CDATA[@see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a>
-	]]></xsl:text>
-					<xsl:text>&#10;</xsl:text>
-				</xsl:if>
 				<xsl:text>&#10;</xsl:text>
 				<xsl:text disable-output-escaping="yes">&lt;br&gt;</xsl:text><!-- line break -->
 				<xsl:text disable-output-escaping="yes">&lt;br&gt;</xsl:text><!-- line break -->
@@ -12745,7 +13575,7 @@ shall not include the underlying field's values at that point in time.
 				<xsl:text disable-output-escaping="yes"><![CDATA[
 	/** String constant <i>NAME</i> provides name of this element: <i>]]></xsl:text>
 				<xsl:value-of select="$fieldName"/>
-				<xsl:text disable-output-escaping="yes"><![CDATA[</i>. */
+				<xsl:text disable-output-escaping="yes"><![CDATA[</i> */
 	public static final String NAME = "]]></xsl:text>
 				<xsl:value-of select="$fieldName"/>
 				<xsl:text>";
@@ -12885,300 +13715,301 @@ shall not include the underlying field's values at that point in time.
 					</xsl:when>
 					<!-- SFColor convenience contants -->
 					<xsl:when test="($fieldName = 'SFColor')">
+						<!-- TODO add lower-case bookmarks -->
 						<xsl:text disable-output-escaping="yes"><![CDATA[
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] ALICEBLUE = toFloatArray(0xf0f8ff); // decimal 240,248,255
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] ANTIQUEWHITE = toFloatArray(0xfaebd7); // decimal 250,235,215
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] AQUA = toFloatArray(0x00ffff); // decimal 0,255,255
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] AQUAMARINE = toFloatArray(0x7fffd4); // decimal 127,255,212
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] AZURE = toFloatArray(0xf0ffff); // decimal 240,255,255
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] BEIGE = toFloatArray(0xf5f5dc); // decimal 245,245,220
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] BISQUE = toFloatArray(0xffe4c4); // decimal 255,228,196
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] BLACK = toFloatArray(0x000000); // decimal 0,0,0
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] BLANCHEDALMOND = toFloatArray(0xffebcd); // decimal 255,235,205
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] BLUE = toFloatArray(0x0000ff); // decimal 0,0,255
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] BLUEVIOLET = toFloatArray(0x8a2be2); // decimal 138,43,226
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] BROWN = toFloatArray(0xa52a2a); // decimal 165,42,42
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] BURLYWOOD = toFloatArray(0xdeb887); // decimal 222,184,135
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] CADETBLUE = toFloatArray(0x5f9ea0); // decimal 95,158,160
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] CHARTREUSE = toFloatArray(0x7fff00); // decimal 127,255,0
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] CHOCOLATE = toFloatArray(0xd2691e); // decimal 210,105,30
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] CORAL = toFloatArray(0xff7f50); // decimal 255,127,80
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] CORNFLOWERBLUE = toFloatArray(0x6495ed); // decimal 100,149,237
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] CORNSILK = toFloatArray(0xfff8dc); // decimal 255,248,220
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] CRIMSON = toFloatArray(0xdc143c); // decimal 220,20,60
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] CYAN = toFloatArray(0x00ffff); // decimal 0,255,255
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] DARKBLUE = toFloatArray(0x00008b); // decimal 0,0,139
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] DARKCYAN = toFloatArray(0x008b8b); // decimal 0,139,139
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] DARKGOLDENROD = toFloatArray(0xb8860b); // decimal 184,134,11
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] DARKGRAY = toFloatArray(0xa9a9a9); // decimal 169,169,169
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] DARKGREEN = toFloatArray(0x006400); // decimal 0,100,0
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] DARKGREY = toFloatArray(0xa9a9a9); // decimal 169,169,169
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] DARKKHAKI = toFloatArray(0xbdb76b); // decimal 189,183,107
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] DARKMAGENTA = toFloatArray(0x8b008b); // decimal 139,0,139
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] DARKOLIVEGREEN = toFloatArray(0x556b2f); // decimal 85,107,47
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] DARKORANGE = toFloatArray(0xff8c00); // decimal 255,140,0
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] DARKORCHID = toFloatArray(0x9932cc); // decimal 153,50,204
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] DARKRED = toFloatArray(0x8b0000); // decimal 139,0,0
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] DARKSALMON = toFloatArray(0xe9967a); // decimal 233,150,122
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] DARKSEAGREEN = toFloatArray(0x8fbc8f); // decimal 143,188,143
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] DARKSLATEBLUE = toFloatArray(0x483d8b); // decimal 72,61,139
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] DARKSLATEGRAY = toFloatArray(0x2f4f4f); // decimal 47,79,79
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] DARKSLATEGREY = toFloatArray(0x2f4f4f); // decimal 47,79,79
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] DARKTURQUOISE = toFloatArray(0x00ced1); // decimal 0,206,209
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] DARKVIOLET = toFloatArray(0x9400d3); // decimal 148,0,211
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] DEEPPINK = toFloatArray(0xff1493); // decimal 255,20,147
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] DEEPSKYBLUE = toFloatArray(0x00bfff); // decimal 0,191,255
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] DIMGRAY = toFloatArray(0x696969); // decimal 105,105,105
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] DIMGREY = toFloatArray(0x696969); // decimal 105,105,105
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] DODGERBLUE = toFloatArray(0x1e90ff); // decimal 30,144,255
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] FIREBRICK = toFloatArray(0xb22222); // decimal 178,34,34
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] FLORALWHITE = toFloatArray(0xfffaf0); // decimal 255,250,240
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] FORESTGREEN = toFloatArray(0x228b22); // decimal 34,139,34
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] FUCHSIA = toFloatArray(0xff00ff); // decimal 255,0,255
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] GAINSBORO = toFloatArray(0xdcdcdc); // decimal 220,220,220
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] GHOSTWHITE = toFloatArray(0xf8f8ff); // decimal 248,248,255
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] GOLD = toFloatArray(0xffd700); // decimal 255,215,0
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] GOLDENROD = toFloatArray(0xdaa520); // decimal 218,165,32
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] GRAY = toFloatArray(0x808080); // decimal 128,128,128
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] GREEN = toFloatArray(0x008000); // decimal 0,128,0
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] GREENYELLOW = toFloatArray(0xadff2f); // decimal 173,255,47
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] GREY = toFloatArray(0x808080); // decimal 128,128,128
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] HONEYDEW = toFloatArray(0xf0fff0); // decimal 240,255,240
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] HOTPINK = toFloatArray(0xff69b4); // decimal 255,105,180
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] INDIANRED = toFloatArray(0xcd5c5c); // decimal 205,92,92
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] INDIGO = toFloatArray(0x4b0082); // decimal 75,0,130
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] IVORY = toFloatArray(0xfffff0); // decimal 255,255,240
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] KHAKI = toFloatArray(0xf0e68c); // decimal 240,230,140
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] LAVENDER = toFloatArray(0xe6e6fa); // decimal 230,230,250
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] LAVENDERBLUSH = toFloatArray(0xfff0f5); // decimal 255,240,245
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] LAWNGREEN = toFloatArray(0x7cfc00); // decimal 124,252,0
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] LEMONCHIFFON = toFloatArray(0xfffacd); // decimal 255,250,205
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] LIGHTBLUE = toFloatArray(0xadd8e6); // decimal 173,216,230
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] LIGHTCORAL = toFloatArray(0xf08080); // decimal 240,128,128
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] LIGHTCYAN = toFloatArray(0xe0ffff); // decimal 224,255,255
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] LIGHTGOLDENRODYELLOW = toFloatArray(0xfafad2); // decimal 250,250,210
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] LIGHTGRAY = toFloatArray(0xd3d3d3); // decimal 211,211,211
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] LIGHTGREEN = toFloatArray(0x90ee90); // decimal 144,238,144
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] LIGHTGREY = toFloatArray(0xd3d3d3); // decimal 211,211,211
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] LIGHTPINK = toFloatArray(0xffb6c1); // decimal 255,182,193
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] LIGHTSALMON = toFloatArray(0xffa07a); // decimal 255,160,122
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] LIGHTSEAGREEN = toFloatArray(0x20b2aa); // decimal 32,178,170
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] LIGHTSKYBLUE = toFloatArray(0x87cefa); // decimal 135,206,250
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] LIGHTSLATEGRAY = toFloatArray(0x778899); // decimal 119,136,153
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] LIGHTSLATEGREY = toFloatArray(0x778899); // decimal 119,136,153
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] LIGHTSTEELBLUE = toFloatArray(0xb0c4de); // decimal 176,196,222
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] LIGHTYELLOW = toFloatArray(0xffffe0); // decimal 255,255,224
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] LIME = toFloatArray(0x00ff00); // decimal 0,255,0
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] LIMEGREEN = toFloatArray(0x32cd32); // decimal 50,205,50
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] LINEN = toFloatArray(0xfaf0e6); // decimal 250,240,230
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] MAGENTA = toFloatArray(0xff00ff); // decimal 255,0,255
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] MAROON = toFloatArray(0x800000); // decimal 128,0,0
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] MEDIUMAQUAMARINE = toFloatArray(0x66cdaa); // decimal 102,205,170
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] MEDIUMBLUE = toFloatArray(0x0000cd); // decimal 0,0,205
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] MEDIUMORCHID = toFloatArray(0xba55d3); // decimal 186,85,211
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] MEDIUMPURPLE = toFloatArray(0x9370db); // decimal 147,112,219
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] MEDIUMSEAGREEN = toFloatArray(0x3cb371); // decimal 60,179,113
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] MEDIUMSLATEBLUE = toFloatArray(0x7b68ee); // decimal 123,104,238
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] MEDIUMSPRINGGREEN = toFloatArray(0x00fa9a); // decimal 0,250,154
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] MEDIUMTURQUOISE = toFloatArray(0x48d1cc); // decimal 72,209,204
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] MEDIUMVIOLETRED = toFloatArray(0xc71585); // decimal 199,21,133
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] MIDNIGHTBLUE = toFloatArray(0x191970); // decimal 25,25,112
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] MINTCREAM = toFloatArray(0xf5fffa); // decimal 245,255,250
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] MISTYROSE = toFloatArray(0xffe4e1); // decimal 255,228,225
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] MOCCASIN = toFloatArray(0xffe4b5); // decimal 255,228,181
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] NAVAJOWHITE = toFloatArray(0xffdead); // decimal 255,222,173
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] NAVY = toFloatArray(0x000080); // decimal 0,0,128
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] OLDLACE = toFloatArray(0xfdf5e6); // decimal 253,245,230
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] OLIVE = toFloatArray(0x808000); // decimal 128,128,0
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] OLIVEDRAB = toFloatArray(0x6b8e23); // decimal 107,142,35
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] ORANGE = toFloatArray(0xffa500); // decimal 255,165,0
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] ORANGERED = toFloatArray(0xff4500); // decimal 255,69,0
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] ORCHID = toFloatArray(0xda70d6); // decimal 218,112,214
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] PALEGOLDENROD = toFloatArray(0xeee8aa); // decimal 238,232,170
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] PALEGREEN = toFloatArray(0x98fb98); // decimal 152,251,152
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] PALETURQUOISE = toFloatArray(0xafeeee); // decimal 175,238,238
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] PALEVIOLETRED = toFloatArray(0xdb7093); // decimal 219,112,147
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] PAPAYAWHIP = toFloatArray(0xffefd5); // decimal 255,239,213
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] PEACHPUFF = toFloatArray(0xffdab9); // decimal 255,218,185
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] PERU = toFloatArray(0xcd853f); // decimal 205,133,63
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] PINK = toFloatArray(0xffc0cb); // decimal 255,192,203
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] PLUM = toFloatArray(0xdda0dd); // decimal 221,160,221
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] POWDERBLUE = toFloatArray(0xb0e0e6); // decimal 176,224,230
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] PURPLE = toFloatArray(0x800080); // decimal 128,0,128
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] RED = toFloatArray(0xff0000); // decimal 255,0,0
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] ROSYBROWN = toFloatArray(0xbc8f8f); // decimal 188,143,143
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] ROYALBLUE = toFloatArray(0x4169e1); // decimal 65,105,225
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] SADDLEBROWN = toFloatArray(0x8b4513); // decimal 139,69,19
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] SALMON = toFloatArray(0xfa8072); // decimal 250,128,114
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] SANDYBROWN = toFloatArray(0xf4a460); // decimal 244,164,96
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] SEAGREEN = toFloatArray(0x2e8b57); // decimal 46,139,87
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] SEASHELL = toFloatArray(0xfff5ee); // decimal 255,245,238
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] SIENNA = toFloatArray(0xa0522d); // decimal 160,82,45
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] SILVER = toFloatArray(0xc0c0c0); // decimal 192,192,192
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] SKYBLUE = toFloatArray(0x87ceeb); // decimal 135,206,235
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] SLATEBLUE = toFloatArray(0x6a5acd); // decimal 106,90,205
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] SLATEGRAY = toFloatArray(0x708090); // decimal 112,128,144
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] SLATEGREY = toFloatArray(0x708090); // decimal 112,128,144
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] SNOW = toFloatArray(0xfffafa); // decimal 255,250,250
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] SPRINGGREEN = toFloatArray(0x00ff7f); // decimal 0,255,127
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] STEELBLUE = toFloatArray(0x4682b4); // decimal 70,130,180
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] TAN = toFloatArray(0xd2b48c); // decimal 210,180,140
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] TEAL = toFloatArray(0x008080); // decimal 0,128,128
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] THISTLE = toFloatArray(0xd8bfd8); // decimal 216,191,216
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] TOMATO = toFloatArray(0xff6347); // decimal 255,99,71
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] TURQUOISE = toFloatArray(0x40e0d0); // decimal 64,224,208
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] VIOLET = toFloatArray(0xee82ee); // decimal 238,130,238
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] WHEAT = toFloatArray(0xf5deb3); // decimal 245,222,179
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] WHITE = toFloatArray(0xffffff); // decimal 255,255,255
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] WHITESMOKE = toFloatArray(0xf5f5f5); // decimal 245,245,245
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] YELLOW = toFloatArray(0xffff00); // decimal 255,255,0
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] YELLOWGREEN = toFloatArray(0x9acd32); // decimal 154,205,50
 ]]></xsl:text>
 					</xsl:when>
@@ -13346,7 +14177,7 @@ method invocations on the same node object).
 	<xsl:text disable-output-escaping="yes">&lt;br&gt;</xsl:text><!-- line break -->
 	<xsl:text>&#10;</xsl:text>
 	<xsl:text>	 * </xsl:text>
-	<xsl:text disable-output-escaping="yes"><![CDATA[<i>WARNING:</i> do not use this method on a String that contains multiple quoted values, use cleanupEnumerationValues() instead.
+	<xsl:text disable-output-escaping="yes"><![CDATA[<i>Warning:</i> do not use this method on a String that contains multiple quoted values, use cleanupEnumerationValues() instead.
 	 * @param singleValue input String for use with MFString list, which must be unquoted
 	 * @see MFStringObject#cleanupEnumerationValue(String)
 	 * @return unquoted String value
@@ -13431,7 +14262,7 @@ method invocations on the same node object).
 		<xsl:otherwise>
 			<xsl:text disable-output-escaping="yes"><![CDATA[ (which must pass parsing validation checks).
 	 * <br ><br >
-	 * <i>WARNING:</i> this method is not 
+	 * <i>Warning:</i> this method is not 
 	 * <i><a href="https://en.wikipedia.org/wiki/Type_safety" target="_blank">type safe</a></i>
 	 * at compile time!  Best practice for X3DJSAIL programmers is to use strongly typed methods instead, in order to avoid potential for run-time errors.
 	 * @see X3DLoaderObject#toX3dObjectTree(org.w3c.dom.Node)
@@ -14014,7 +14845,7 @@ method invocations on the same node object).
 	 * @param newValue is new value to assign]]></xsl:text>
 	 <xsl:if test="not($tupleSize = '1')">
 		<xsl:text disable-output-escaping="yes"><![CDATA[
-	 * <i>WARNING:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="@type"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.]]></xsl:text>
+	 * <i>Warning:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="@type"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.]]></xsl:text>
 	 </xsl:if>
 	 <xsl:text disable-output-escaping="yes"><![CDATA[
 	 * setContainerFieldOverride(containerFieldName); // apply checksConcreteField#getTupleSize(String)
@@ -14583,7 +15414,7 @@ TODO: also MFColor.
 	 * Size of the current underlying value array does not change.]]></xsl:text>
 	 <xsl:if test="not($tupleSize = '1')">
 		<xsl:text disable-output-escaping="yes"><![CDATA[
-	 * <i>WARNING:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="@type"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.]]></xsl:text>
+	 * <i>Warning:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="@type"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.]]></xsl:text>
 	 </xsl:if>
 	 <xsl:text disable-output-escaping="yes"><![CDATA[
 	 * @see X3DConcreteField#getTupleSize(String)
@@ -14675,7 +15506,7 @@ TODO: also MFColor.
 	 * Size of the current underlying value array does not change.]]></xsl:text>
 	 <xsl:if test="not($tupleSize = '1')">
 		<xsl:text disable-output-escaping="yes"><![CDATA[
-	 * <i>WARNING:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="@type"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.]]></xsl:text>
+	 * <i>Warning:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="@type"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.]]></xsl:text>
 	 </xsl:if>
 	 <xsl:text disable-output-escaping="yes"><![CDATA[
 	 * @see X3DConcreteField#getTupleSize(String)
@@ -15275,7 +16106,7 @@ TODO: also MFColor.
 				<xsl:text disable-output-escaping="yes"><![CDATA[
 	/**
 	 * Assign a new value to this field.
-	 * <i>WARNING:</i> newValue array length must correspond to tuple size for base type SFColor tuple size of <i>3</i>.
+	 * <i>Warning:</i> newValue array length must correspond to tuple size for base type SFColor tuple size of <i>3</i>.
 	 * @see X3DConcreteField#getTupleSize(String)
 	 * @param newValue The replacement value to assign.
 	 */
@@ -15292,7 +16123,7 @@ TODO: also MFColor.
 				<xsl:text disable-output-escaping="yes"><![CDATA[
 	/**
 	 * Assign a new value to this field.
-	 * <i>WARNING:</i> newValue array length must correspond to tuple size for base type SFColorRGBA tuple size of <i>4</i>.
+	 * <i>Warning:</i> newValue array length must correspond to tuple size for base type SFColorRGBA tuple size of <i>4</i>.
 	 * @see X3DConcreteField#getTupleSize(String)
 	 * @param newValue The replacement value to assign.
 	 */
@@ -15339,7 +16170,7 @@ TODO: also MFColor.
 	}
 	/**
 	 * Assign a new value to this field. 
-	 * <i>WARNING:</i> newValue array length must correspond to tuple size for base type SFRotation tuple size of <i>4</i>.
+	 * <i>Warning:</i> newValue array length must correspond to tuple size for base type SFRotation tuple size of <i>4</i>.
 	 * @see X3DConcreteField#getTupleSize(String)
 	 * @param newValue The replacement value to assign.
 	 */
@@ -15736,7 +16567,7 @@ TODO: also MFColor.
 	 * Assign a new value to this field.]]></xsl:text>
 	 <xsl:if test="not($tupleSize = '1')">
 		<xsl:text disable-output-escaping="yes"><![CDATA[
-	 * <i>WARNING:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="@type"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.]]></xsl:text>
+	 * <i>Warning:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="@type"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.]]></xsl:text>
 	 </xsl:if>
 	 <xsl:text disable-output-escaping="yes"><![CDATA[
 	 * @see X3DConcreteField#getTupleSize(String)
@@ -15980,7 +16811,7 @@ public ]]></xsl:text>
 * Assign an array subset to this field.]]></xsl:text>
 	 <xsl:if test="not($tupleSize = '1')">
 		<xsl:text disable-output-escaping="yes"><![CDATA[
-	 * <i>WARNING:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="@type"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.]]></xsl:text>
+	 * <i>Warning:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="@type"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.]]></xsl:text>
 	 </xsl:if>
 	 <xsl:text disable-output-escaping="yes"><![CDATA[
 * @see X3DConcreteField#getTupleSize(String)
@@ -16040,7 +16871,7 @@ public void setValue(]]></xsl:text><xsl:value-of select="$javaType"/><xsl:text><
 * Assign an array subset to this field.]]></xsl:text>
 	 <xsl:if test="not($tupleSize = '1')">
 		<xsl:text disable-output-escaping="yes"><![CDATA[
-	 * <i>WARNING:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="@type"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.]]></xsl:text>
+	 * <i>Warning:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="@type"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.]]></xsl:text>
 	 </xsl:if>
 	 <xsl:text disable-output-escaping="yes"><![CDATA[
 * @see X3DConcreteField#getTupleSize(String)
@@ -16064,7 +16895,7 @@ public void setValue(int size, ]]></xsl:text><xsl:value-of select="$javaType"/><
 * Assign a new ]]></xsl:text><xsl:value-of select="$javaType"/><xsl:text><![CDATA[ value to this field.]]></xsl:text>
 	 <xsl:if test="not($tupleSize = '1')">
 		<xsl:text disable-output-escaping="yes"><![CDATA[
-* <i>WARNING:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="@type"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.]]></xsl:text>
+* <i>Warning:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="@type"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.]]></xsl:text>
 	 </xsl:if>
 	 <xsl:text disable-output-escaping="yes"><![CDATA[
 * @see X3DConcreteField#getTupleSize(String)
@@ -16126,11 +16957,11 @@ public void setValue(]]></xsl:text><xsl:value-of select="$javaType"/><xsl:text><
 /**
 * Assign a double-precision array value to this single-precision field.
 * <br ><br >
-* <i>WARNING:</i> this method casts type of input values from higher precision to lower precision.
+* <i>Warning:</i> this method casts type of input values from higher precision to lower precision.
 * <br ><br >]]></xsl:text>
 	 <xsl:if test="not($tupleSize = '1')">
 		<xsl:text disable-output-escaping="yes"><![CDATA[
-	 * <i>WARNING:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="@type"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.]]></xsl:text>
+	 * <i>Warning:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="@type"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.]]></xsl:text>
 	 </xsl:if>
 	 <xsl:text disable-output-escaping="yes"><![CDATA[
 * @see X3DConcreteField#getTupleSize(String)
@@ -16153,11 +16984,11 @@ public ]]></xsl:text><xsl:value-of select="$fieldName"/><xsl:value-of select="$j
 /**
 * Assign a single-precision floating-point array value to this double-precision field.
 * <br ><br >
-* <i>WARNING:</i> this method casts type of input values from lower precision to higher precision.
+* <i>Warning:</i> this method casts type of input values from lower precision to higher precision.
 * <br ><br >]]></xsl:text>
 	 <xsl:if test="not($tupleSize = '1')">
 		<xsl:text disable-output-escaping="yes"><![CDATA[
-	 * <i>WARNING:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="@type"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.]]></xsl:text>
+	 * <i>Warning:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="@type"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.]]></xsl:text>
 	 </xsl:if>
 	 <xsl:text disable-output-escaping="yes"><![CDATA[
 * @see X3DConcreteField#getTupleSize(String)
@@ -16266,7 +17097,7 @@ public ]]></xsl:text>
 * Size of the current underlying value array does not change.]]></xsl:text>
 	 <xsl:if test="not($tupleSize = '1')">
 		<xsl:text disable-output-escaping="yes"><![CDATA[
-	 * <i>WARNING:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="@type"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.]]></xsl:text>
+	 * <i>Warning:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="@type"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.]]></xsl:text>
 	 </xsl:if>
 	 <xsl:text disable-output-escaping="yes"><![CDATA[
 * @see X3DConcreteField#getTupleSize(String)
@@ -16354,7 +17185,7 @@ public void set1Value(int index, ]]></xsl:text><xsl:value-of select="$javaPrimit
 * Places new value(s) at the end of the existing value array, increasing the field length accordingly.]]></xsl:text>
 	 <xsl:if test="not($tupleSize = '1')">
 		<xsl:text disable-output-escaping="yes"><![CDATA[
-* <i>WARNING:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="@type"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.]]></xsl:text>
+* <i>Warning:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="@type"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.]]></xsl:text>
 	 </xsl:if>
 	 <xsl:text disable-output-escaping="yes"><![CDATA[
 * @see X3DConcreteField#getTupleSize(String)
@@ -16442,7 +17273,7 @@ public void append(]]></xsl:text><xsl:value-of select="$javaPrimitiveType"/><xsl
 						  ($fieldName = 'MFString')">
 			<xsl:text disable-output-escaping="yes"><![CDATA[/**
 * Appends another array at the end of the existing value array, increasing the field length accordingly.
-* <i>WARNING:</i> newValue array length must correspond to tuple size for base type MFVec4f tuple size of <i>4</i>.
+* <i>Warning:</i> newValue array length must correspond to tuple size for base type MFVec4f tuple size of <i>4</i>.
 * @see X3DConcreteField#getTupleSize(String)
 * @param newValue The newValue to append
 */
@@ -16534,7 +17365,7 @@ public ]]></xsl:text>
 * Insert a new value prior to the index location in the existing value array, increasing the field length accordingly.]]></xsl:text>
 	 <xsl:if test="not($tupleSize = '1')">
 		<xsl:text disable-output-escaping="yes"><![CDATA[
-	 * <i>WARNING:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="@type"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.]]></xsl:text>
+	 * <i>Warning:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="@type"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.]]></xsl:text>
 	 </xsl:if>
 	 <xsl:text disable-output-escaping="yes"><![CDATA[
 * @see X3DConcreteField#getTupleSize(String)
@@ -16666,7 +17497,7 @@ public void insertValue(int index, long newValue)
 * Size of the current underlying value array does not change.]]></xsl:text>
 	 <xsl:if test="not($tupleSize = '1')">
 		<xsl:text disable-output-escaping="yes"><![CDATA[
-	 * <i>WARNING:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="@type"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.]]></xsl:text>
+	 * <i>Warning:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="@type"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.]]></xsl:text>
 	 </xsl:if>
 	 <xsl:text disable-output-escaping="yes"><![CDATA[
 * @see X3DConcreteField#getTupleSize(String)
@@ -16688,7 +17519,7 @@ public void set1Value(int index, long newValue) throws ArrayIndexOutOfBoundsExce
 * Size of the current underlying value array does not change.]]></xsl:text>
 	 <xsl:if test="not($tupleSize = '1')">
 		<xsl:text disable-output-escaping="yes"><![CDATA[
-	 * <i>WARNING:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="@type"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.]]></xsl:text>
+	 * <i>Warning:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="@type"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.]]></xsl:text>
 	 </xsl:if>
 	 <xsl:text disable-output-escaping="yes"><![CDATA[
 * @see X3DConcreteField#getTupleSize(String)
@@ -16881,7 +17712,7 @@ public void setValue(long[] newValue)
      * Assign an array subset to this field.]]></xsl:text>
 	 <xsl:if test="not($tupleSize = '1')">
 		<xsl:text disable-output-escaping="yes"><![CDATA[
-	 * <i>WARNING:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="@type"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.]]></xsl:text>
+	 * <i>Warning:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="@type"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.]]></xsl:text>
 	 </xsl:if>
 	 <xsl:text disable-output-escaping="yes"><![CDATA[
 	 * @see X3DConcreteField#getTupleSize(String)
@@ -19581,7 +20412,7 @@ import org.web3d.x3d.sai.Core.X3DNode;</xsl:text>
     /**
      * Replace a single value at the appropriate location in the existing value array.
 	 * Size of the current underlying value array does not change.
-	 * <i>WARNING:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="$name"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.
+	 * <i>Warning:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="$name"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.
 	 * @param index is position of selected value in current array
      * @param newValue provides new value to apply
      */
@@ -19589,14 +20420,14 @@ import org.web3d.x3d.sai.Core.X3DNode;</xsl:text>
 
     /**
      * Places a new value at the end of the existing value array, increasing the field length accordingly.
-	 * <i>WARNING:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="$name"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.
+	 * <i>Warning:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="$name"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.
 	 * @param newValue The newValue to append
      */
 	public void append(float[] newValue);
 
     /**
      * Insert a new value prior to the index location in the existing value array, increasing the field length accordingly.
-     * <i>WARNING:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="$name"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.
+     * <i>Warning:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="$name"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.
 	 * @param index The position for the inserted value in the current array
      * @param newValue The newValue to insert
      */
@@ -19668,7 +20499,7 @@ import org.web3d.x3d.sai.Core.X3DNode;</xsl:text>
     /**
      * Replace a single value at the appropriate location in the existing value array.
 	 * Size of the current underlying value array does not change.
-	 * <i>WARNING:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="$name"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.
+	 * <i>Warning:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="$name"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.
 	 * @param index is position of selected value in current array
      * @param newValue provides new value to apply
      */
@@ -19676,14 +20507,14 @@ import org.web3d.x3d.sai.Core.X3DNode;</xsl:text>
 
     /** 
      * Places a new value at the end of the existing value array, increasing the field length accordingly.
-	 * <i>WARNING:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="$name"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.
+	 * <i>Warning:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="$name"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.
 	 * @param newValue The newValue to append
      */
 	public void append(float[] newValue);
 
     /**
      * Insert a new value prior to the index location in the existing value array, increasing the field length accordingly.
-     * <i>WARNING:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="$name"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.
+     * <i>Warning:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="$name"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.
 	 * @param index The position for the inserted value in the current array
      * @param newValue The newValue to insert
      */
@@ -20508,7 +21339,7 @@ import org.web3d.x3d.sai.Core.X3DNode;</xsl:text>
     /**
      * Replace a single value at the appropriate location in the existing value array.
 	 * Size of the current underlying value array does not change.
-	 * <i>WARNING:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="$name"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.
+	 * <i>Warning:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="$name"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.
 	 * @param index is position of selected value in current array
      * @param newValue provides new value to apply
      */
@@ -20516,14 +21347,14 @@ import org.web3d.x3d.sai.Core.X3DNode;</xsl:text>
 
     /**
      * Places a new value at the end of the existing value array, increasing the field length accordingly.
-	 * <i>WARNING:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="$name"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.
+	 * <i>Warning:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="$name"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.
 	 * @param newValue The newValue to append
      */
 	public void append(float[] newValue);
 
     /**
      * Insert a new value prior to the index location in the existing value array, increasing the field length accordingly.
-     * <i>WARNING:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="$name"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.
+     * <i>Warning:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="$name"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.
 	 * @param index The position for the inserted value in the current array
      * @param newValue The newValue to insert
      */
@@ -20769,7 +21600,7 @@ import org.web3d.x3d.sai.Core.X3DNode;</xsl:text>
 
     /**
      * Assign an array subset to this field.
-     * <i>WARNING:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="$name"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.
+     * <i>Warning:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="$name"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.
 	 * @param size indicates size of result to copy (i.e. the number of typed singleton values) from beginning of newValue array.
      * @param newValue The replacement value array to (potentially) slice and then assign.
      */	
@@ -20777,7 +21608,7 @@ import org.web3d.x3d.sai.Core.X3DNode;</xsl:text>
 
     /**
      * Assign an array subset to this field.
-     * <i>WARNING:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="$name"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.
+     * <i>Warning:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="$name"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.
 	 * @param size indicates size of result to copy (i.e. the number of typed singleton values) from beginning of newValue array.
      * @param newValue The replacement value array to (potentially) slice and then assign.
      */	
@@ -20786,7 +21617,7 @@ import org.web3d.x3d.sai.Core.X3DNode;</xsl:text>
     /**
      * Replace a single value at the appropriate location in the existing value array.
 	 * Size of the current underlying value array does not change.
-	 * <i>WARNING:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="$name"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.
+	 * <i>Warning:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="$name"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.
 	 * @param index is position of selected value in current array
      * @param newValue provides new value to apply
      */
@@ -20794,14 +21625,14 @@ import org.web3d.x3d.sai.Core.X3DNode;</xsl:text>
 
     /**
      * Places a new value at the end of the existing value array, increasing the field length accordingly.
-	 * <i>WARNING:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="$name"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.
+	 * <i>Warning:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="$name"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.
 	 * @param newValue The newValue to append
      */
 	public void append(double[] newValue);
 
     /**
      * Insert a new value prior to the index location in the existing value array, increasing the field length accordingly.
-	 * <i>WARNING:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="$name"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.
+	 * <i>Warning:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="$name"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.
 	 * @param index The position for the inserted value in the current array
      * @param newValue The newValue to insert
      */
@@ -20820,7 +21651,7 @@ import org.web3d.x3d.sai.Core.X3DNode;</xsl:text>
 
     /**
      * Assign a new value to this field.
-     * <i>WARNING:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="$name"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.
+     * <i>Warning:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="$name"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.
 	 * @param newValue is replacement value array to assign
      */	
 	public void setValue(float[] newValue);
@@ -20859,7 +21690,7 @@ import org.web3d.x3d.sai.Core.X3DNode;</xsl:text>
 
     /**
      * Assign an array subset to this field.
-     * <i>WARNING:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="$name"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.
+     * <i>Warning:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="$name"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.
 	 * @param size indicates size of result to copy (i.e. the number of typed singleton values) from beginning of newValue array.
      * @param newValue The replacement value array to (potentially) slice and then assign.
      */	
@@ -20867,7 +21698,7 @@ import org.web3d.x3d.sai.Core.X3DNode;</xsl:text>
 
     /**
      * Assign an array subset to this field.
-     * <i>WARNING:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="$name"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.
+     * <i>Warning:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="$name"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.
 	 * @param size indicates size of result to copy (i.e. the number of typed singleton values) from beginning of newValue array.
      * @param newValue The replacement value array to (potentially) slice and then assign.
      */	
@@ -20876,7 +21707,7 @@ import org.web3d.x3d.sai.Core.X3DNode;</xsl:text>
     /**
      * Replace a single value at the appropriate location in the existing value array.
 	 * Size of the current underlying value array does not change.
-	 * <i>WARNING:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="$name"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.
+	 * <i>Warning:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="$name"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.
 	 * @param index is position of selected value in current array
      * @param newValue provides new value to apply
      */
@@ -20884,14 +21715,14 @@ import org.web3d.x3d.sai.Core.X3DNode;</xsl:text>
 
     /**
      * Places a new value at the end of the existing value array, increasing the field length accordingly.
-	 * <i>WARNING:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="$name"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.
+	 * <i>Warning:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="$name"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.
 	 * @param newValue The newValue to append
      */
 	public void append(float[] newValue);
 
     /**
      * Insert a new value prior to the index location in the existing value array, increasing the field length accordingly.
-     * <i>WARNING:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="$name"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.
+     * <i>Warning:</i> newValue array length must correspond to tuple size for base type ]]></xsl:text><xsl:value-of select="$name"/><xsl:text><![CDATA[ tuple size of <i>]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text><![CDATA[</i>.
 	 * @param index The position for the inserted value in the current array
      * @param newValue The newValue to insert
      */
@@ -23476,6 +24307,7 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.text.DecimalFormat;
 import org.web3d.x3d.jsail.Core.*;
 import org.web3d.x3d.sai.X3DException;
 // import org.web3d.x3d.sai.InvalidFieldValueException;</xsl:text></xsl:with-param>
@@ -23495,9 +24327,9 @@ TODO more to follow!</xsl:text>
 		<xsl:with-param name="x3dAbstractSpecificationRelativeUrl"><xsl:text></xsl:text></xsl:with-param>
 		<xsl:with-param name="javadocBlock">
 			<xsl:text disable-output-escaping="yes"><![CDATA[
-     * Usage: <code>% java -jar X3DJSAIL.3.3.classes.jar -help</code>
-     * @see <a href="http://docs.oracle.com/javase/8/docs/technotes/guides/jar/jar.html">JAR File Specification</a>
-     * @see <a href="https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html">Java Tutorials, Lesson: Packaging Programs in JAR Files</a>]]></xsl:text>
+ * Usage: <code>% java -jar X3DJSAIL.3.3.classes.jar -help</code>
+ * @see <a href="http://docs.oracle.com/javase/8/docs/technotes/guides/jar/jar.html">JAR File Specification</a>
+ * @see <a href="https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html">Java Tutorials, Lesson: Packaging Programs in JAR Files</a>]]></xsl:text>
 		</xsl:with-param>
 		<xsl:with-param name="interfaceBlock">
 			<xsl:text disable-output-escaping="yes"><![CDATA[]]></xsl:text>
@@ -23515,9 +24347,9 @@ TODO more to follow!</xsl:text>
             // so far so good
     }
     /**
-     *                               Usage: <code>java -classpath X3DJSAIL.*.jar [sourceModel.x3d | -help | -page | -resources | -tooltips] [-tofile [resultFile.*]] [-validate | -toX3D | -toXML | -toClassicVrml | -toJSON | -toVRML97 | -toX3DOM | -toX_ITE]</code>
+     *                               Usage: <code>java -classpath X3DJSAIL.*.jar [sourceModel.x3d | -help | -page | -resources | -tooltips] [-tofile [resultFile.*]] [-validate] [sourceModel.exi -fromEXI] [sourceModel.gz -fromGZIP] [sourceModel.zip -fromZIP] [-toX3D | -toXML | -toClassicVrml | -toJSON | -toVRML97 | -toX3DOM | -toX_ITE | -toEXI | -toGZIP | -toZIP]</code>
      */
-    public  static final String USAGE   = "Usage: java -classpath X3DJSAIL.*.jar [sourceModel.x3d | -help | -page | -resources | -tooltips]\n       [-tofile [resultFile.*]]\n       [-validate | -toX3D | -toXML | -toClassicVrml | -toJSON | -toVRML97 | -toX3DOM | -toX_ITE]";
+    public  static final String USAGE   = "Usage: java -classpath X3DJSAIL.*.jar [sourceModel.x3d | -help | -page | -resources | -tooltips]\n       [-tofile [resultFile.*]] [-validate]\n       [sourceModel.exi -fromEXI] [sourceModel.gz -fromGZIP] [sourceModel.zip -fromZIP]\n       [-toX3D | -toXML | -toClassicVrml | -toJSON | -toVRML97 | -toX3DOM | -toX_ITE | -toEXI | -toGZIP | -toZIP]";
     private static final String WARNING = "[Warning] ";
     private static final String ERROR   = "[Error] ";
     
@@ -23526,177 +24358,374 @@ TODO more to follow!</xsl:text>
     private static boolean convertToX3D         = false;
     private static boolean convertToXML         = false;
     private static boolean convertToJSON        = false;
+    private static boolean convertToJS          = false;
     private static boolean convertToX3DOM       = false;
     private static boolean convertToX_ITE       = false;
+    private static boolean convertToEXI         = false;
+    private static boolean convertFromEXI       = false;
+    private static boolean convertToGZIP        = false;
+    private static boolean convertFromGZIP      = false;
+    private static boolean convertToZIP         = false;
+    private static boolean convertFromZIP       = false;
     private static boolean validateSwitch       = false;
+				
+	private static String  conversionExtension   = new String();
+
+	/** Reset switch values */
+	private static void initializeSwitches()
+	{
+		convertToVRML97      = false;
+		convertToClassicVRML = false;
+		convertToX3D         = false;
+		convertToXML         = false;
+		convertToJSON        = false;
+		convertToJS          = false;
+		convertToX3DOM       = false;
+		convertToX_ITE       = false;
+		convertToEXI         = false;
+		convertFromEXI       = false;
+		convertToGZIP        = false;
+		convertFromGZIP      = false;
+		convertToZIP         = false;
+		convertFromZIP       = false;
+		validateSwitch       = false;
+
+		conversionExtension  = new String();
+	}
 
     /** @see https://docs.oracle.com/javase/tutorial/essential/io/file.html#textfiles */
     private static BufferedWriter bufferedWriter;
 
-    /** Default main() method provided for test purposes.
+    /** Default main() method provided for test purposes, when invoked reports results of validate() self-checks to system output.
      * @param args the command line arguments
      * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(argv)</a>
      */
     public static void main(String[] args)
     {
+        File    sourceFile;
+        long    sourceFileLength     = 0;
         String  sourceFileName       = "";
+        String  sourceFileNameRoot   = "";
+   final String tempFileName         = "temp9876543210.txt";
+		File    resultFile           = new File(tempFileName); // overwritten or deleted
         String  resultFileName       = "";
         String  resultFileNameRoot   = "";
         boolean convertToFile        = false;
-   final String tempFileName         = "temp9876543210.txt";
+  DecimalFormat formatPrecision2 = new DecimalFormat ("#0.00");
+		String  compressionRatio;
+				
+		initializeSwitches ();
 
-	if ((args== null) || (args.length < 1))
-	{
-	    System.out.println (USAGE);
-	    return;
-	}
-	else
-	{
-	    for (int i=0; i<=args.length-1; i++)
-	    {
-	        if      (!args[i].startsWith("-"))
-	        {
-                    if (!sourceFileName.isEmpty())
-                    {
-                        System.out.println(ERROR+" [org.web3d.x3d.jsail.CommandLine] multiple source file names found, \"" + sourceFileName + "\" and \"" + args[i] + "\"");
-                        System.out.println(USAGE);
-                        return;
-                    }
-                    else 
-                    {
-                        sourceFileName = args[i];
-                        resultFileName = args[i];
-                        System.out.println ("parameter: source file name "      + sourceFileName);
-                        if      (resultFileName.contains(X3DObject.FILE_EXTENSION_X3D))
-                                 resultFileNameRoot = resultFileName.substring(0,resultFileName.lastIndexOf(X3DObject.FILE_EXTENSION_X3D));
-                        else if (resultFileName.contains(X3DObject.FILE_EXTENSION_XML))
-                                 resultFileNameRoot = resultFileName.substring(0,resultFileName.lastIndexOf(X3DObject.FILE_EXTENSION_XML));
-                        else if (resultFileName.contains(X3DObject.FILE_EXTENSION_JSON))
-                                 resultFileNameRoot = resultFileName.substring(0,resultFileName.lastIndexOf(X3DObject.FILE_EXTENSION_JSON));
-                        else if (resultFileName.contains(X3DObject.FILE_EXTENSION_VRML97))
-                                 resultFileNameRoot = resultFileName.substring(0,resultFileName.lastIndexOf(X3DObject.FILE_EXTENSION_VRML97));
-                        else 
-                        {
-                            System.out.println(ERROR+" [org.web3d.x3d.jsail.CommandLine] currently loading only supported for " + X3DObject.FILE_EXTENSION_X3D);
-                            System.out.println(USAGE);
-                            return;
-                        }
-                    }
-	        }
-                else if (args[i].equalsIgnoreCase("-f") || args[i].equalsIgnoreCase("-file") || args[i].equalsIgnoreCase("-tofile")) // optionally followed by resultFileName
-	        {
-                    if ((args.length > i + 1) && !(args[i+1] == null) && !args[i+1].isEmpty() && !args[i+1].startsWith("-"))
-                    {
-                         resultFileName     = args[i+1];
-                         resultFileNameRoot = resultFileName.substring(0,resultFileName.lastIndexOf("."));
-                         System.out.println ("parameter: \"" + args[i] + "\" \"" + args[i+1] + "\" for result file name root "      + resultFileNameRoot);
-                         i++; // increment index, carefully!
-                    }
-                    else System.out.println ("parameter: \"" + args[i] + "\" for result file name root "      + resultFileNameRoot);
-	            convertToFile = true;
-	        }
-                else if (args[i].equalsIgnoreCase("-x3d") || args[i].equalsIgnoreCase("-tox3d"))
-	        {
-                     clearPriorConversionSwitches(args[i]);
-                     convertToX3D = true;
-	             resultFileName = resultFileNameRoot + X3DObject.FILE_EXTENSION_X3D;
-                     System.out.println ("parameter: \"" + args[i] + "\" for conversion to X3D encoding "         + resultFileName);
-	        }
-                else if (args[i].equalsIgnoreCase("-xml") || args[i].equalsIgnoreCase("-toxml"))
-	        {
-                     clearPriorConversionSwitches(args[i]);
-                     convertToXML = true;
-	             resultFileName = resultFileNameRoot + X3DObject.FILE_EXTENSION_XML;
-                     System.out.println ("parameter: \"" + args[i] + "\" for conversion to XML encoding "         + resultFileName);
-	        }
-                else if (args[i].equalsIgnoreCase("-x3dv") || args[i].equalsIgnoreCase("-tox3dv") || 
-                         args[i].equalsIgnoreCase("-toClassicVRML") || args[i].equalsIgnoreCase("-ClassicVRML"))
-	        {
-                     clearPriorConversionSwitches(args[i]);
-                     convertToClassicVRML = true;
-	             resultFileName = resultFileNameRoot + X3DObject.FILE_EXTENSION_CLASSICVRML;
-	             System.out.println ("parameter: \"" + args[i] + "\" for conversion to ClassicVRML encoding " + resultFileName);
-	        }
-                else  if (args[i].equalsIgnoreCase("-j") || args[i].equalsIgnoreCase("-json") || args[i].equalsIgnoreCase("-tojson"))
-	        {
-                     clearPriorConversionSwitches(args[i]);
-                     convertToJSON = true;
-	             resultFileName = resultFileNameRoot + X3DObject.FILE_EXTENSION_JSON;
-	             System.out.println ("parameter: \"" + args[i] + "\" for conversion to JSON encoding "        + resultFileName);
-	        }
-                else  if (args[i].equalsIgnoreCase("-v")   || args[i].equalsIgnoreCase(  "-vrml") || args[i].equalsIgnoreCase(  "-vrml97") ||
-                          args[i].equalsIgnoreCase("-wrl") || args[i].equalsIgnoreCase("-tovrml") || args[i].equalsIgnoreCase("-tovrml97"))
-	        {
-                     clearPriorConversionSwitches(args[i]);
-                     convertToVRML97 = true;
-	             resultFileName = resultFileNameRoot + X3DObject.FILE_EXTENSION_VRML97;
-	             System.out.println ("parameter: \"" + args[i] + "\" for conversion to VRML97 encoding "        + resultFileName);
-	        }
-                else  if (args[i].equalsIgnoreCase("-x3dom") || args[i].equalsIgnoreCase("-tox3dom"))
-	        {
-                     clearPriorConversionSwitches(args[i]);
-                     convertToX3DOM = true;
-	             resultFileName = resultFileNameRoot + X3DObject.FILE_EXTENSION_HTML;
-	             System.out.println ("parameter: \"" + args[i] + "\" for conversion to X3DOM HTML page containing model "        + resultFileName);
-	        }
-                else  if (args[i].equalsIgnoreCase("-X_ITE") || args[i].equalsIgnoreCase("-toX_ITE"))
-	        {
-                     clearPriorConversionSwitches(args[i]);
-                     convertToX_ITE = true;
-	             resultFileName = resultFileNameRoot + X3DObject.FILE_EXTENSION_HTML;
-	             System.out.println ("parameter: \"" + args[i] + "\" for conversion to X_ITE HTML page containing model "        + resultFileName);
-	        }
-                else  if (args[i].equalsIgnoreCase("-v") || args[i].equalsIgnoreCase("-validate"))
-	        {
-                    // usually invoked in isolation, but can coexist (superfluous) with conversions
-                    validateSwitch = true;
-                    resultFileName = resultFileNameRoot + X3DObject.FILE_EXTENSION_TEXT;
-	            System.out.println ("parameter: \"" + args[i] + "\" for validation to result file "        + resultFileName);
-	        }
-                else  if (args[i].equalsIgnoreCase("-page") || args[i].equalsIgnoreCase("-X3DJSAIL"))
-	        {
-                    clearPriorConversionSwitches(args[i]);
-                    System.out.println(USAGE);
-                    openX3DJSAILpage();
-	            return;
-	        }
-                else  if (args[i].equalsIgnoreCase("-resources") || args[i].equalsIgnoreCase("-X3dResources"))
-	        {
-                    openX3dResourcesPage();
-	            return;
-	        }
-                else  if (args[i].equalsIgnoreCase("-tooltips") || args[i].equalsIgnoreCase("-X3dTooltips"))
-	        {
-                    openX3dTooltipsPage();
-	            return;
-	        }
-                else  if (args[i].equalsIgnoreCase("-help"))
-	        {
-                    clearPriorConversionSwitches(args[i]);
-                    System.out.println(USAGE);
-	            return;
-	        }
-	        else // not found
-	        {
-	            System.out.println(ERROR+" [org.web3d.x3d.jsail.CommandLine] unrecognized command-line option \"" + args[i] + "\"");
-	            System.out.println(USAGE);
-	            return;
-	        }
-	    }
-	}
-        
-        if (!sourceFileName.isEmpty()) // prepared to proceed
+		if ((args== null) || (args.length < 1))
+		{
+			System.out.println (USAGE);
+			return;
+		}
+		else
+		{
+			for (int i=0; i<=args.length-1; i++)
+			{
+				if  (!args[i].startsWith("-"))
+				{
+					if (!sourceFileName.isEmpty())
+					{
+						System.out.println(ERROR+" [org.web3d.x3d.jsail.CommandLine] multiple source file names found, \"" + sourceFileName + "\" and \"" + args[i] + "\"");
+						System.out.println(USAGE);
+						return;
+					}
+					else 
+					{
+						sourceFileName     = args[i];
+						sourceFileNameRoot = sourceFileName.substring(0,sourceFileName.lastIndexOf("."));
+						sourceFile = new File(sourceFileName);
+						if (!sourceFile.exists())
+						{
+							System.out.println(ERROR+" [org.web3d.x3d.jsail.CommandLine] file not found: " + sourceFileName);
+							System.out.println(USAGE);
+							return;
+						}
+						else
+						{
+							sourceFileLength = sourceFile.length();
+							System.out.println ("parameter: source file " + sourceFile.getName() + " filesize " + sourceFileLength + " bytes");
+						}
+					}
+				}
+				else if (args[i].equalsIgnoreCase("-f") || args[i].equalsIgnoreCase("-file") || args[i].equalsIgnoreCase("-tofile")) // optionally followed by resultFileName
+				{
+					if ((args.length > i + 1) && !(args[i+1] == null) && !args[i+1].isEmpty() && !args[i+1].startsWith("-"))
+					{
+						 resultFileName     = args[i+1];
+						 resultFileNameRoot = resultFileName.substring(0,resultFileName.lastIndexOf("."));
+						 System.out.println ("parameter: \"" + args[i] + "\" \"" + args[i+1] + "\" for result file name root " + resultFileNameRoot);
+						 i++; // increment index, carefully!
+					}
+					else System.out.println ("parameter: \"" + args[i] + "\" for result file name root "+ resultFileNameRoot);
+					convertToFile = true;
+				}
+				else if (args[i].equalsIgnoreCase("-x3d") || args[i].equalsIgnoreCase("-tox3d"))
+				{
+					clearPriorConversionSwitches(args[i]);
+					convertToX3D = true;
+					conversionExtension = X3DObject.FILE_EXTENSION_X3D;
+					System.out.println ("parameter: \"" + args[i] + "\" for conversion to X3D encoding");
+				}
+				else if (args[i].equalsIgnoreCase("-xml") || args[i].equalsIgnoreCase("-toxml"))
+				{
+					clearPriorConversionSwitches(args[i]);
+					convertToXML = true;
+					conversionExtension = X3DObject.FILE_EXTENSION_XML;
+					System.out.println ("parameter: \"" + args[i] + "\" for conversion to XML encoding");
+				}
+				else if (args[i].equalsIgnoreCase("-x3dv") || args[i].equalsIgnoreCase("-tox3dv") || 
+						 args[i].equalsIgnoreCase("-toClassicVRML") || args[i].equalsIgnoreCase("-ClassicVRML"))
+				{
+					clearPriorConversionSwitches(args[i]);
+					convertToClassicVRML = true;
+					conversionExtension = X3DObject.FILE_EXTENSION_CLASSICVRML;
+					System.out.println ("parameter: \"" + args[i] + "\" for conversion to ClassicVRML encoding");
+				}
+				else  if (args[i].equalsIgnoreCase("-json") || args[i].equalsIgnoreCase("-tojson"))
+				{
+					clearPriorConversionSwitches(args[i]);
+					convertToJSON = true;
+					conversionExtension = X3DObject.FILE_EXTENSION_JSON;
+					System.out.println ("parameter: \"" + args[i] + "\" for conversion to JSON encoding");
+				}
+ 				else  if (args[i].equalsIgnoreCase("-js") || args[i].equalsIgnoreCase("-tojs"))
+ 				{
+ 					clearPriorConversionSwitches(args[i]);
+ 					convertToJS = true;
+ 					conversionExtension = X3DObject.FILE_EXTENSION_JAVASCRIPT;
+ 					System.out.println ("parameter: \"" + args[i] + "\" for conversion to JSON encoding");
+ 				}
+				else  if (args[i].equalsIgnoreCase(  "-vrml") || args[i].equalsIgnoreCase(  "-vrml97") ||args[i].equalsIgnoreCase( "-wrl") || 
+						  args[i].equalsIgnoreCase("-tovrml") || args[i].equalsIgnoreCase("-tovrml97"))
+				{
+					clearPriorConversionSwitches(args[i]);
+					convertToVRML97 = true;
+					conversionExtension = X3DObject.FILE_EXTENSION_VRML97;
+					System.out.println ("parameter: \"" + args[i] + "\" for conversion to VRML97 encoding");
+				}
+				else  if (args[i].equalsIgnoreCase("-x3dom") || args[i].equalsIgnoreCase("-tox3dom"))
+				{
+					clearPriorConversionSwitches(args[i]);
+					convertToX3DOM = true;
+					conversionExtension = X3DObject.FILE_EXTENSION_HTML;
+					System.out.println ("parameter: \"" + args[i] + "\" for conversion to X3DOM HTML page containing model");
+				}
+				else  if (args[i].equalsIgnoreCase("-X_ITE") || args[i].equalsIgnoreCase("-toX_ITE"))
+				{
+					clearPriorConversionSwitches(args[i]);
+					convertToX_ITE = true;
+					conversionExtension = X3DObject.FILE_EXTENSION_HTML;
+					System.out.println ("parameter: \"" + args[i] + "\" for conversion to X_ITE HTML page containing model");
+				}
+				// ==========================================
+				else  if (args[i].equalsIgnoreCase("-EXIFICIENT"))
+				{
+					ConfigurationProperties.setExiEngine(ConfigurationProperties.EXI_ENGINE_EXIFICIENT);
+					System.out.println ("parameter: \"" + args[i] + "\" invoked  ConfigurationProperties.setExiEngine(" + ConfigurationProperties.EXI_ENGINE_EXIFICIENT + ");");
+				}
+				// ==========================================
+				else  if (args[i].equalsIgnoreCase("-OPENEXI") || args[i].equalsIgnoreCase("-NAGASENA"))
+				{
+					ConfigurationProperties.setExiEngine(ConfigurationProperties.EXI_ENGINE_OPENEXI);
+					System.out.println ("parameter: \"" + args[i] + "\" invoked  ConfigurationProperties.setExiEngine(" + ConfigurationProperties.EXI_ENGINE_OPENEXI + ");");
+					// TODO
+					System.out.println ("  Warning: \"" + ConfigurationProperties.EXI_ENGINE_OPENEXI + "\" option not yet implemented, using " + ConfigurationProperties.EXI_ENGINE_EXIFICIENT + " instead.");
+				}
+				// ==========================================
+				else  if (args[i].equalsIgnoreCase("-EXI") || args[i].equalsIgnoreCase("-toEXI"))
+				{
+					if (sourceFileName.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI))
+					{
+						System.out.println(ERROR+" [org.web3d.x3d.jsail.CommandLine] cannot convert an .exi file -toEXI");
+						System.out.println(USAGE);
+						return;
+					}
+					clearPriorConversionSwitches(args[i]);
+					convertToEXI  = true;
+					convertToFile = true;
+					conversionExtension = X3DObject.FILE_EXTENSION_EXI;
+					System.out.println ("parameter: \"" + args[i] + "\" for conversion to compressed EXI containing model");
+				}
+				else  if ((args[i].equalsIgnoreCase("-EXI") &&  sourceFileName.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI)) || 
+						   args[i].equalsIgnoreCase("-fromEXI"))
+				{
+					if (!sourceFileName.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI))
+					{
+						System.out.println(ERROR+" [org.web3d.x3d.jsail.CommandLine] cannot convert a non-exi file -toEXI");
+						System.out.println(USAGE);
+						return;
+					}
+					clearPriorConversionSwitches(args[i]);
+					convertFromEXI = true;
+					conversionExtension = X3DObject.FILE_EXTENSION_X3D;
+					System.out.println ("parameter: \"" + args[i] + "\" for conversion from compressed EXI containing model");
+				}
+				// ==========================================
+				else  if (args[i].equalsIgnoreCase("-toGZ") || args[i].equalsIgnoreCase("-toGZIP"))
+				{
+					if (sourceFileName.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP))
+					{
+						System.out.println(ERROR+" [org.web3d.x3d.jsail.CommandLine] cannot convert -toGZIP an already gzip .gz file " + sourceFileName);
+						System.out.println(USAGE);
+						return;
+					}
+					clearPriorConversionSwitches(args[i]);
+					convertToGZIP = true;
+					convertToFile = true;
+					conversionExtension = X3DObject.FILE_EXTENSION_GZIP;
+					System.out.println ("parameter: \"" + args[i] + "\" for conversion to compressed GZIP containing model");
+				}
+				else  if (args[i].equalsIgnoreCase("-fromGZ") || args[i].equalsIgnoreCase("-fromGZIP"))
+				{
+					if (!sourceFileName.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP))
+					{
+							System.out.println(ERROR+" [org.web3d.x3d.jsail.CommandLine] cannot convert -fromGZIP an non-gzip file " + sourceFileName);
+							System.out.println(USAGE);
+							return;
+					}
+					clearPriorConversionSwitches(args[i]);
+					convertFromGZIP = true;
+					conversionExtension = X3DObject.FILE_EXTENSION_X3D;
+					System.out.println ("parameter: \"" + args[i] + "\" for conversion from compressed GZIP containing model");
+				}
+				// ==========================================
+				else  if (args[i].equalsIgnoreCase("-toZIP"))
+				{
+					if (sourceFileName.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP))
+					{
+							System.out.println(ERROR+" [org.web3d.x3d.jsail.CommandLine] cannot convert -toZIP a non-zip file " + sourceFileName);
+							System.out.println(USAGE);
+							return;
+					}
+					clearPriorConversionSwitches(args[i]);
+					convertToZIP = true;
+					conversionExtension = X3DObject.FILE_EXTENSION_ZIP;
+					System.out.println ("parameter: \"" + args[i] + "\" for conversion to compressed ZIP containing model");
+				}
+				else  if (args[i].equalsIgnoreCase("-fromZIP"))
+				{
+					if (!sourceFileName.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP))
+					{
+							System.out.println(ERROR+" [org.web3d.x3d.jsail.CommandLine] cannot convert -fromZIP a non-zip file " + sourceFileName);
+							System.out.println(USAGE);
+							return;
+					}
+					// TODO also handle specification of filename of interest
+					clearPriorConversionSwitches(args[i]);
+					convertFromZIP = true;
+					convertToFile  = true;
+					conversionExtension = X3DObject.FILE_EXTENSION_X3D;
+					System.out.println ("parameter: \"" + args[i] + "\" for conversion from compressed ZIP containing model");
+				}
+				// ==========================================
+				else  if (args[i].equalsIgnoreCase("-v") || args[i].equalsIgnoreCase("-validate"))
+				{
+					// usually invoked in isolation, but can coexist (superfluous) with conversions
+					validateSwitch = true;
+					if (resultFileName.isEmpty())
+					{
+						 resultFileName = "Validation" + X3DObject.FILE_EXTENSION_TEXT; // be prepared with default name
+						 System.out.println ("parameter: \"" + args[i] + "\"  for model validation");
+					}
+					else System.out.println ("parameter: \"" + args[i] + "\"  for model validation to result file");
+				}
+				else  if (args[i].equalsIgnoreCase("-page") || args[i].equalsIgnoreCase("-X3DJSAIL"))
+				{
+					clearPriorConversionSwitches(args[i]);
+					System.out.println(USAGE);
+					openX3DJSAILpage();
+					return;
+				}
+				else  if (args[i].equalsIgnoreCase("-resources") || args[i].equalsIgnoreCase("-X3dResources"))
+				{
+					openX3dResourcesPage();
+					return;
+				}
+				else  if (args[i].equalsIgnoreCase("-tooltips") || args[i].equalsIgnoreCase("-X3dTooltips"))
+				{
+					openX3dTooltipsPage();
+					return;
+				}
+				else  if (args[i].equalsIgnoreCase("-help"))
+				{
+					clearPriorConversionSwitches(args[i]);
+					System.out.println(USAGE);
+					return;
+				}
+				else // not found
+				{
+					System.out.println(ERROR+" [org.web3d.x3d.jsail.CommandLine] unrecognized CommandLine option \"" + args[i] + "\"");
+					System.out.println(USAGE);
+					return;
+				}
+			}
+		}
+		// ===================================================================================
+		// compute/confirm resultFileName after all command-line switches are read
+
+		if (resultFileName.isEmpty())
+		{
+			resultFileNameRoot = sourceFileNameRoot;
+			resultFileName     = resultFileNameRoot + conversionExtension;
+		}
+		if ((convertToX3D         &&  !conversionExtension.equalsIgnoreCase(X3DObject.FILE_EXTENSION_X3D))    ||
+			(convertToXML         &&  !conversionExtension.equalsIgnoreCase(X3DObject.FILE_EXTENSION_XML))    ||
+			(convertToClassicVRML &&  !conversionExtension.equalsIgnoreCase(X3DObject.FILE_EXTENSION_CLASSICVRML)) ||
+			(convertToVRML97      &&  !conversionExtension.equalsIgnoreCase(X3DObject.FILE_EXTENSION_VRML97)) ||
+			(convertToX3DOM       && (!conversionExtension.equalsIgnoreCase(X3DObject.FILE_EXTENSION_HTML) &&
+                                      !conversionExtension.equalsIgnoreCase(X3DObject.FILE_EXTENSION_XHTML))) ||
+			(convertToX_ITE       && (!conversionExtension.equalsIgnoreCase(X3DObject.FILE_EXTENSION_HTML) &&
+                                      !conversionExtension.equalsIgnoreCase(X3DObject.FILE_EXTENSION_XHTML))) ||
+			(convertToEXI         &&  !conversionExtension.equalsIgnoreCase(X3DObject.FILE_EXTENSION_EXI))    ||
+			(convertToGZIP        &&  !conversionExtension.equalsIgnoreCase(X3DObject.FILE_EXTENSION_GZIP))   ||
+			(convertToZIP         &&  !conversionExtension.equalsIgnoreCase(X3DObject.FILE_EXTENSION_ZIP))    )
+		{
+			System.out.println(WARNING+" [org.web3d.x3d.jsail.CommandLine] mismatched file extension \"" + conversionExtension + "\" for conversion");
+		}
+				
+		// ===================================================================================
+        if (!sourceFileName.isEmpty()) // fully prepared, now get source file and proceed
         {
+			if (convertFromGZIP)
+			{
+				if (!sourceFileName.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP))
+				{
+						System.out.println(ERROR+" [org.web3d.x3d.jsail.CommandLine] cannot -gunzip a non-gzip file " + sourceFileName);
+						System.out.println(USAGE);
+						return;
+				}
+				X3DObject newX3dModel = new X3DObject();
+				boolean result = newX3dModel.fromFileGZIP(sourceFileName);
+				System.out.println("load success: " + result);
+				return;
+			}
+			else if (convertFromZIP)
+			{
+				if (!sourceFileName.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP))
+				{
+						System.out.println(ERROR+" [org.web3d.x3d.jsail.CommandLine] cannot -gunzip a non-zip file " + sourceFileName);
+						System.out.println(USAGE);
+						return;
+				}
+				X3DObject newX3dModel = new X3DObject();
+				boolean result = newX3dModel.fromFileZIP(sourceFileName,""); // pick first available .x3d file
+				System.out.println("load success: " + result);
+				return;
+			}
+			// otherwise
             X3DLoaderObject x3dLoader = new X3DLoaderObject();
-            boolean successfulLoad = x3dLoader.loadX3DfromFile(         sourceFileName);
-//          boolean successfulLoad = x3dLoader.loadX3DfromFile(new File(sourceFileName)); // alternate form, tested OK
+            boolean successfulLoad = x3dLoader.loadModelFromFileX3D(         sourceFileName);
+//          boolean successfulLoad = x3dLoader.loadModelFromFileX3D(new File(sourceFileName)); // alternate form, tested OK
 
             if (successfulLoad && x3dLoader.isLoadSuccessful()) // two equivalent ways to check
             {
-                // problem with Saxon despite presence in CLASSPATH
-		ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_nativeJava); // built-in version
+				ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA); // built-in version
                 X3DObject x3dModel;
-                File resultFile = new File(tempFileName); // unsaved
+                resultFile = new File(tempFileName); // unsaved
                 try {
 //                  x3dModel = new X3DObject();
 //                  System.out.println("x3dModel initialization:");
@@ -23731,15 +24760,22 @@ TODO more to follow!</xsl:text>
                     {
                         System.out.println("convert to JSON:");
                         if  (convertToFile)
-                                   resultFile = x3dModel.toFileJSON  (resultFileName);
+                                   resultFile = x3dModel.toFileJSON (resultFileName);
                         else System.out.println(x3dModel.toStringJSON());
+                    }
+                    else if (convertToJS)
+                    {
+                        System.out.println("convert to JS JavaScript:");
+                        if  (convertToFile)
+                                   resultFile = x3dModel.toFileJavaScript (resultFileName);
+                        else System.out.println(x3dModel.toStringJavaScript());
                     }
                     else if (convertToClassicVRML)
                     {
                         System.out.println("convert to ClassicVRML:");
                         if (!convertToFile) System.out.println(); 
                         if  (convertToFile)
-                                   resultFile = x3dModel.toFileClassicVRML  (resultFileName);
+                                   resultFile = x3dModel.toFileClassicVRML (resultFileName);
                         else System.out.println(x3dModel.toStringClassicVRML());
                     }
                     else if (convertToX3D || convertToXML)
@@ -23749,7 +24785,7 @@ TODO more to follow!</xsl:text>
                         else System.out.println("convert to XML:");
                         if (!convertToFile) System.out.println(); 
                         if  (convertToFile)
-                                   resultFile = x3dModel.toFileX3D  (resultFileName);
+                                   resultFile = x3dModel.toFileX3D (resultFileName);
                         else System.out.println(x3dModel.toStringX3D());
                     }
                     else if (convertToX3DOM)
@@ -23757,7 +24793,7 @@ TODO more to follow!</xsl:text>
                         System.out.println("convert to X3DOM:");
                         if (!convertToFile) System.out.println(); 
                         if  (convertToFile)
-                                   resultFile = x3dModel.toFileX3DOM  (resultFileName);
+                                   resultFile = x3dModel.toFileX3DOM (resultFileName);
                         else System.out.println(x3dModel.toStringX3DOM());
                     }
                     else if (convertToX_ITE)
@@ -23768,11 +24804,39 @@ TODO more to follow!</xsl:text>
                                    resultFile = x3dModel.toFileX_ITE  (sourceFileName, resultFileName);
                         else System.out.println(x3dModel.toStringX_ITE(sourceFileName));
                     }
-                    else if (validateSwitch) // note that validation already performed as part of prior conversions
+                    else if (convertToEXI)
                     {
+                        System.out.println("convert to EXI using " + ConfigurationProperties.getExiEngine() + ":");
+                        System.out.println("source: " + sourceFileName + " filesize " + sourceFileLength + " bytes");
+//						System.out.println("[trace] sourceFileName=" + sourceFileName + ", resultFileName=" + resultFileName);
+                        resultFile = x3dModel.toFileEXI (resultFileName);
+						compressionRatio = formatPrecision2.format((double)resultFile.length()/(double)sourceFileLength * 100.0);
+						System.out.println("result: " + resultFile.getName() + " filesize " + resultFile.length() + " bytes, compression " + compressionRatio + "% of original");
+                    }
+                    else if (convertToGZIP)
+                    {
+                        System.out.println("convert to GZIP:");
+                        System.out.println("source: " + sourceFileName + " filesize " + sourceFileLength + " bytes");
+//						System.out.println("[trace] sourceFileName=" + sourceFileName + ", resultFileName=" + resultFileName);
+                        resultFile = x3dModel.toFileGZIP (resultFileName);
+						compressionRatio = formatPrecision2.format((double)resultFile.length()/(double)sourceFileLength * 100.0);
+						System.out.println("result: " + resultFile.getName() + "  filesize " + resultFile.length() + " bytes, compression " + compressionRatio + "% of original");
+                    }
+                    else if (convertToZIP)
+                    {
+                        System.out.println("convert to ZIP:");
+                        System.out.println("source: " + sourceFileName + " filesize " + sourceFileLength + " bytes");
+//						System.out.println("[trace] sourceFileName=" + sourceFileName + ", resultFileName=" + resultFileName);
+                        resultFile = x3dModel.toFileZIP (resultFileName, sourceFileName);
+						compressionRatio = formatPrecision2.format((double)resultFile.length()/(double)sourceFileLength * 100.0);
+						System.out.println("result: " + resultFile.getName() + " filesize " + resultFile.length() + " bytes, compression " + compressionRatio + "% of original");
+                    }
+                    else if (validateSwitch && !convertToEXI && !convertToGZIP && !convertToZIP)
+                    {
+						// note that validation already performed as part of prior conversions
                         String outputValidationText = x3dModel.validate();
                             
-                        System.out.println("validate:");
+                        System.out.println("validate results:");
                         if (!convertToFile)
                         {
                             if  (outputValidationText.isEmpty())
@@ -23797,7 +24861,7 @@ TODO more to follow!</xsl:text>
                             String  errorNotice = new String();
                             if (ConfigurationProperties.isDebugModeActive()) // debug check, defaults to local directory
                             {
-                                    errorNotice += "[debug] Output file path=" + outputFilePath.toAbsolutePath() + "\n";
+                                errorNotice += "[debug] Output file path=" + outputFilePath.toAbsolutePath() + "\n";
                             }
                             System.out.println (errorNotice);
 		
@@ -23818,12 +24882,16 @@ TODO more to follow!</xsl:text>
                             }
                         }
                     }
-                    if      (convertToFile && resultFile.exists() && !resultFile.getName().equals(tempFileName))
-                              System.out.println("file conversion successful: " + resultFile.getName() + " (" + resultFile.length() + " bytes)");
+                    if      (convertToEXI || convertToGZIP || convertToZIP)
+                    {
+							// done
+					}
+                    else if (convertToFile && resultFile.exists() && !resultFile.getName().equals(tempFileName))
+                             System.out.println("file conversion successful: " + resultFile.getName() + " (" + resultFile.length() + " bytes)");
                     else if (convertToFile)
-                              System.out.println(ERROR+"file conversion unsuccessful!");
+                             System.out.println(ERROR+"file conversion unsuccessful!");
                     else if (validateSwitch)
-                              System.out.println("model validation complete.");
+                             System.out.println("model validation complete.");
                 }
                 catch (X3DException e)
                 {
@@ -23837,15 +24905,17 @@ TODO more to follow!</xsl:text>
                 System.out.println(ERROR+"Source model file load unsuccessful");
             //  return;
             }
-	}
-        else
+		}
+		else
         {
-            System.out.println(ERROR+"Source model file name is empty, file loading not possible.");
+            System.out.println(ERROR+"Source model file name is empty, therefore file loading not possible.");
         //  return;
         }
+		if (resultFile.getName().equals(tempFileName))
+			resultFile.delete();
     }
 
-    /* Open X3DJSAIL page
+    /** Open X3DJSAIL page
      * @see <a href="http://www.web3d.org/specifications/java/X3DJSAIL.html">http://www.web3d.org/specifications/java/X3DJSAIL.html</a>
      */
     public static void openX3DJSAILpage ()
@@ -23853,7 +24923,8 @@ TODO more to follow!</xsl:text>
          openX3DJSAILpage (""); // no bookmark
     }
 
-    /* Open X3DJSAIL page at a given bookmark
+    /** Open X3DJSAIL page at a given bookmark
+	 * @param bookmark anchor bookmark of interest for this page
      * @see <a href="http://www.web3d.org/specifications/java/X3DJSAIL.html">http://www.web3d.org/specifications/java/X3DJSAIL.html</a>
      */
     public static void openX3DJSAILpage (String bookmark)
@@ -23882,7 +24953,7 @@ TODO more to follow!</xsl:text>
         }
     }
 
-    /* Open X3D Resources page
+    /** Open X3D Resources page
      * @see <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html">http://www.web3d.org/x3d/content/examples/X3dResources.html</a>
      */
     public static void openX3dResourcesPage ()
@@ -23890,7 +24961,8 @@ TODO more to follow!</xsl:text>
          openX3dResourcesPage (""); // no bookmark
     }
 
-    /* Open X3D Resources page at a given bookmark
+    /** Open X3D Resources page at a given bookmark
+	 * @param bookmark anchor bookmark of interest for this page
      * @see <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html">http://www.web3d.org/x3d/content/examples/X3dResources.html</a>
      */
     public static void openX3dResourcesPage (String bookmark)
@@ -23911,7 +24983,7 @@ TODO more to follow!</xsl:text>
         }
     }
 
-    /* Open X3D Tooltips page
+    /** Open X3D Tooltips page
      * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html">X3D Tooltips</a>
      */
     public static void openX3dTooltipsPage ()
@@ -23919,7 +24991,8 @@ TODO more to follow!</xsl:text>
          openX3dTooltipsPage (""); // no bookmark
     }
 
-    /* Open X3D Tooltips page at a given bookmark
+    /** Open X3D Tooltips page at a given bookmark
+	 * @param bookmark anchor bookmark of interest for this page
      * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html">X3D Tooltips</a>
      */
     public static void openX3dTooltipsPage (String bookmark)
@@ -23941,10 +25014,13 @@ TODO more to follow!</xsl:text>
         }
     }
 
+    /** 
+	 * Reset all conversions switches to default (false)
+     */
     private static void clearPriorConversionSwitches(String newCommand)
     {
-        if (convertToVRML97 ||  convertToClassicVRML || convertToX3D   || convertToXML ||
-            convertToJSON   || convertToX3DOM        || convertToX_ITE)       
+        if (convertToVRML97 || convertToClassicVRML || convertToX3D   || convertToXML ||
+            convertToJSON   || convertToJS          || convertToX3DOM || convertToX_ITE)       
             System.out.println(WARNING+"Prior conversion flag overridden by " + newCommand);
             
         convertToVRML97      = false;
@@ -23952,6 +25028,7 @@ TODO more to follow!</xsl:text>
         convertToX3D         = false;
         convertToXML         = false;
         convertToJSON        = false;
+        convertToJS          = false;
         convertToX3DOM       = false;
         convertToX_ITE       = false;
     }
@@ -24003,7 +25080,7 @@ TODO more to follow!</xsl:text>
 	/** Alternative whitespace character for indenting when serializing scene output. */
 	public static final char indentCharacter_TAB   = '\t';
 				
-	/** Default character for indenting when serializing scene output, initialized as indentCharacter_SPACE. */
+	/** Default character for indenting when serializing scene output, initial value is indentCharacter_SPACE. */
 	public static final char indentCharacter_DEFAULT = indentCharacter_SPACE;
 				
 	private static char indentCharacter = indentCharacter_DEFAULT; // static initialization
@@ -24024,7 +25101,7 @@ TODO more to follow!</xsl:text>
 	 */
 	public static final String ERROR_ILLEGAL_VALUE = "ERROR_ILLEGAL_VALUE";
 				
-	/** Error message if an element is not currently connected to an existing scene graph object, and necessary checking for validation is not possible.
+	/** Error message if an element is not currently connected to an existing scene graph object, and necessary checking  for model validation is not possible.
 		Example: <i>fieldObject</i> or <i>fieldValueObject</i> creation may fail validation() if the field types cannot be checked in a 
 		corresponding <i>ProtoDeclareObject</i> or <i>ExternProtoDeclareObject</i>.
 	 */
@@ -24072,25 +25149,34 @@ TODO more to follow!</xsl:text>
 
 // ==========================================================================================
 				
-	/** Default mode for debugging results, initialized as false. */
+	/** Default mode for debugging results, initial value is false. */
 	public static boolean debugModeActive  = false;
 				
-	/** Whether to show default attribute values when serializing scene output, initialized as false. */
+	/** Whether to show default attribute values when serializing scene output, initial value is <i>false</i>. */
 	public static final boolean showDefaultAttributes_DEFAULT   = false;
 				
 	private static boolean showDefaultAttributes = showDefaultAttributes_DEFAULT; // static initialization
 				
-	/** Set whether to allow partial output if validation exception occurs when serializing scene output, initialized as <i>false</i>. */
+	/** Set whether to allow partial output if validation exception occurs when serializing scene output, initial value is <i>false</i>. */
 	public static final boolean validationExceptionAllowed_DEFAULT   = false;
 				
 	private static boolean validationExceptionAllowed = validationExceptionAllowed_DEFAULT; // static initialization
 				
-	/** Set whether to allow partial output if validation exception occurs when creating an object, initialized as <i>true</i>. */
+	/** Set whether to allow partial output if validation exception occurs when creating an object, initial value is <i>true</i>. */
 	public static final boolean creationConnectionValidationExceptionAllowed_DEFAULT   = true;
 				
 	private static boolean creationConnectionValidationExceptionAllowed = creationConnectionValidationExceptionAllowed_DEFAULT; // static initialization
 
+	/** Set whether to allow overwriting previously existing files, initial value is <i>true</i>. */
+	public static final boolean overwriteExistingFiles_DEFAULT   = true;
+				
+	private static boolean overwriteExistingFiles = overwriteExistingFiles_DEFAULT; // static initialization
+
 	// ==========================================================================================
+				
+	/** X3DJSAIL name
+	 * @see <a href="http://www.web3d.org/specifications/java/X3DJSAIL.html">http://www.web3d.org/specifications/java/X3DJSAIL.html</a> */
+	public static final String NAME_X3DJSAIL     = "X3D Java Scene Access Interface Library (X3DJSAIL)";
 				
 	/** X3DJSAIL documentation page
 	 * @see <a href="http://www.web3d.org/specifications/java/X3DJSAIL.html">http://www.web3d.org/specifications/java/X3DJSAIL.html</a> */
@@ -24185,7 +25271,8 @@ TODO more to follow!</xsl:text>
 	public static final void setStripTrailingZeroes(boolean newValue)
 	{
 		stripTrailingZeroes = newValue;
-	}	
+	}
+
 // ==========================================================================================
 	 
 	/** XSLT transformation engine: SAXON
@@ -24193,39 +25280,93 @@ TODO more to follow!</xsl:text>
 	 * @see <a href="https://sourceforge.net/projects/saxon/files">Saxon distribution</a>
 	 * @see <a href="http://www.saxonica.com/documentation/index.html#!using-xsl/embedding">Saxonica &gt; Saxon &gt; Using XSLT &gt; Invoking XSLT from an application</a>
 	 */
-	public static final String XSLT_ENGINE_saxon = "saxon9he.jar";
+	public static final String XSLT_ENGINE_SAXON = "SAXON9HE";
 				
 	/** XSLT transformation engine: native Java
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/jaxp/xslt/transformingXML.html">Java Tutorials: Transforming XML Data with XSLT</a>
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/jaxp/examples/xslt_samples.zip">Java Tutorials: Transforming XML Data with XSLT, sample files</a>
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/essential/io/file.html#textfiles">Buffered I/O Methods for Text Files</a>
 	 */
-	public static final String XSLT_ENGINE_nativeJava = "nativeJava";
+	public static final String XSLT_ENGINE_NATIVE_JAVA = "NATIVE_JAVA";
 				
-	/** XSLT transformation engine setting: default <i>XSLT_ENGINE_saxon</i>. */
-	private static String xsltEngine = XSLT_ENGINE_saxon;
+	/** XSLT transformation engine setting: default <i>XSLT_ENGINE_SAXON</i>. */
+	private static String xsltEngine = XSLT_ENGINE_SAXON;
 				
-	/** Get preference for XSLT transformation engine to use: {@link XSLT_ENGINE_saxon} or {@link XSLT_ENGINE_nativeJava}.
-	 * @return String constant regarding current configuration: XSLT_ENGINE_saxon (default) or XSLT_ENGINE_nativeJava
+	/** Get preference for XSLT transformation engine to use: {@link XSLT_ENGINE_SAXON} or {@link XSLT_ENGINE_NATIVE_JAVA}.
+	 * @return String constant regarding current configuration: XSLT_ENGINE_SAXON (default) or XSLT_ENGINE_NATIVE_JAVA
 	 */
 	public static final String getXsltEngine()
 	{
 		return xsltEngine;
 	}
-	/** Set preference for XSLT transformation engine to use: {@link XSLT_ENGINE_saxon} or {@link XSLT_ENGINE_nativeJava}.
+	/** Set preference for XSLT transformation engine to use: {@link XSLT_ENGINE_SAXON} or {@link XSLT_ENGINE_NATIVE_JAVA}.
 	 * @param newValue is new value to assign */
 	public static final void setXsltEngine(String newValue)
 	{
-		if (newValue.equals(XSLT_ENGINE_saxon) || newValue.equals(XSLT_ENGINE_nativeJava))
+		if (newValue.equals(XSLT_ENGINE_SAXON) || newValue.equals(XSLT_ENGINE_NATIVE_JAVA))
 			xsltEngine = newValue;
 		else
 		{
 			String errorNotice = "Invalid setXsltEngine(String newValue) invocation, newValue='" + newValue + 
-								 "', legal values are ConfigurationProperties.XSLT_ENGINE_saxon or ConfigurationProperties.XSLT_ENGINE_nativeJava";
+								 "', legal values are ConfigurationProperties.XSLT_ENGINE_SAXON or ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA";
 //			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
 		}
 	}
+
+// ==========================================================================================
+	 
+	/** EXI transformation engine: OpenEXI Nagasena
+	 * @see <a href="http://openexi.sourceforge.net">OpenEXI Nagasena</a>
+	 * @see <a href="http://openexi.sourceforge.net/tutorial">Nagasena Tutorial</a>
+	 * @see <a href="https://www.youtube.com/watch?v=Rig2z9veUv0">Video: OpenEXI, A Quick Introduction</a>
+	 * @see ConfigurationProperties#getExiEngine()
+	 * @see ConfigurationProperties#setExiEngine(String)
+	 * @see ConfigurationProperties#EXI_ENGINE_EXIFICIENT
+	 */
+	public static final String EXI_ENGINE_OPENEXI = "OPENEXI";
+				
+	/** XSLT transformation engine: EXIficient
+	 * @see <a href="https://github.com/EXIficient">EXIficient project page</a>
+	 * @see <a href="https://github.com/EXIficient/exificient/blob/master/README.md">EXIficient README</a>
+	 * @see ConfigurationProperties#getExiEngine()
+	 * @see ConfigurationProperties#setExiEngine(String)
+	 * @see ConfigurationProperties#EXI_ENGINE_OPENEXI
+	 */
+	public static final String EXI_ENGINE_EXIFICIENT = "EXIFICIENT";
+				
+	/** EXI transformation engine setting: default <i>EXI_ENGINE_EXIFICIENT</i>. */
+	private static String exiEngine = EXI_ENGINE_EXIFICIENT;
+				
+	/** Get preference for XSLT transformation engine to use: {@link EXI_ENGINE_EXIFICIENT} or {@link EXI_ENGINE_OPENEXI}.
+	 * @return String constant regarding current configuration: EXI_ENGINE_EXIFICIENT} (default) or EXI_ENGINE_OPENEXI
+	 * @see ConfigurationProperties#EXI_ENGINE_EXIFICIENT
+	 * @see ConfigurationProperties#EXI_ENGINE_OPENEXI
+	 * @see ConfigurationProperties#setExiEngine(String)
+	 */
+	public static final String getExiEngine()
+	{
+		return exiEngine;
+	}
+	/** Set preference for EXI transformation engine to use: {@link EXI_ENGINE_EXIFICIENT} or {@link EXI_ENGINE_OPENEXI}.
+	 * @param newValue is new value to assign
+	 * @see ConfigurationProperties#EXI_ENGINE_EXIFICIENT
+	 * @see ConfigurationProperties#EXI_ENGINE_OPENEXI
+	 * @see ConfigurationProperties#getExiEngine()
+     */
+	public static final void setExiEngine(String newValue)
+	{
+		if (newValue.equals(EXI_ENGINE_EXIFICIENT) || newValue.equals(EXI_ENGINE_OPENEXI))
+			xsltEngine = newValue;
+		else
+		{
+			String errorNotice = "Invalid setExiEngine(String newValue) invocation, newValue='" + newValue + 
+								 "', legal values are ConfigurationProperties.EXI_ENGINE_EXIFICIENT or ConfigurationProperties.EXI_ENGINE_OPENEXI";
+//			validationResult.append(errorNotice).append("\n");
+			throw new InvalidFieldValueException(errorNotice);
+		}
+	}
+
 // ==========================================================================================
 			
 	/** Initialize this ConfigurationProperties instance to default values. */
@@ -24365,7 +25506,7 @@ TODO more to follow!</xsl:text>
 	/**
 	 * Set whether partial results are allowed (and operation continues) if validation exception occurs when serializing scene output.
 	 * Can be useful technique for debugging, default value is <i>false</i> for strict operation.
-	 * <i>WARNING:</i> setting value to <i>true</i> permits creation of an invalid scene graph.
+	 * <i>Warning:</i> setting value to <i>true</i> permits creation of an invalid scene graph.
 	 * @param newValidationExceptionAllowed whether validation exceptions are allowed (and operation continues) */
 	public static void setValidationExceptionAllowed(boolean newValidationExceptionAllowed)
 	{
@@ -24373,7 +25514,7 @@ TODO more to follow!</xsl:text>
 	}
 	/**
 	 * Indicate whether continuation is allowed if validation exception occurs when creating an object.
-	 * <i>WARNING:</i> TODO experimental.
+	 * <i>Warning:</i> TODO experimental.
 	 * @return whether validation exceptions are allowed (and operation continues) during object creation */
 	public static boolean isCreationConnectionValidationExceptionAllowed()
 	{
@@ -24382,12 +25523,28 @@ TODO more to follow!</xsl:text>
 	/**
 	 * Set whether partial results are allowed (and operation continues) if validation exception occurs when creating an object.
 	 * Can be useful technique for debugging, default value is <i>true</i> for permissive order of object creation.
-	 * <i>WARNING:</i> be sure to validate() this scene once construction is complete.
-	 * <i>WARNING:</i> TODO experimental.
+	 * <i>Warning:</i> be sure to validate() this scene once construction is complete.
+	 * <i>Warning:</i> TODO experimental.
 	 * @param newCreationConnectionValidationExceptionAllowed whether validation exceptions are allowed (and object creation continues) */
 	public static void setCreationConnectionValidationExceptionAllowed(boolean newCreationConnectionValidationExceptionAllowed)
 	{
 		creationConnectionValidationExceptionAllowed = newCreationConnectionValidationExceptionAllowed;
+	}
+	/**
+	 * Indicate whether to allow overwriting previously existing files.
+	 * @see overwriteExistingFiles_DEFAULT
+	 * @return whether creation of new files can overwrite prior versions */
+	public static boolean isOverwriteExistingFiles()
+	{
+		return overwriteExistingFiles;
+	}
+	/**
+	 * Set whether to allow overwriting previously existing files.
+	 * @see overwriteExistingFiles_DEFAULT
+	 * @param newOverwriteExistingFiles whether creation of new files can overwrite prior versions */
+	public static void setOverwriteExistingFiles(boolean newOverwriteExistingFiles)
+	{
+		overwriteExistingFiles = newOverwriteExistingFiles;
 	}
 ]]></xsl:text>
 		</xsl:with-param>
@@ -24464,10 +25621,10 @@ setAttribute method invocations).
 	
 	/**
 	 * Recursive method to provide X3D string serialization of this model subgraph.
-	 * @param level number of levels of indentation for this element
+	 * @param indentLevel number of levels of indentation for this element
 	 * @return X3D string
 	 */
-	abstract public String toStringX3D(int level); // must be overridden
+	abstract public String toStringX3D(int indentLevel); // must be overridden
 				
 	/**
 	 * Recursive method to provide ClassicVRML string serialization.
@@ -24482,12 +25639,12 @@ setAttribute method invocations).
 				
 	/**
 	 * Recursive method to provide ClassicVRML string serialization.
-	 * @param level number of levels of indentation for this element
+	 * @param indentLevel number of levels of indentation for this element
 	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html#VRML">X3D Resources: Virtual Reality Modeling Language (VRML) 97</a>
 	 * @see <a href="http://www.web3d.org/documents/specifications/19776-2/V3.3/Part02/grammar.html">Extensible 3D (X3D) encodings Part 2: Classic VRML encoding, Annex A: Grammar</a>
 	 * @return ClassicVRML string
 	 */
-	abstract public String toStringClassicVRML(int level); // must be overridden
+	abstract public String toStringClassicVRML(int indentLevel); // must be overridden
 				
 	/**
 	 * Recursive method to provide VRML97 string serialization.
@@ -24503,13 +25660,13 @@ setAttribute method invocations).
 			
 	/**
 	 * Recursive method to provide VRML97 string serialization.
-	 * @param level number of levels of indentation for this element
+	 * @param indentLevel number of levels of indentation for this element
 	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html#VRML">X3D Resources: Virtual Reality Modeling Language (VRML) 97</a>
 	 * @see <a href="http://www.web3d.org/documents/specifications/14772/V2.0/index.html">Virtual Reality Modeling Language (VRML) 97 specification</a>
 	 * @see <a href="http://www.web3d.org/documents/specifications/14772-1/V2.1/index.html">VRML 97 v2.1 Amendment</a>
 	 * @return VRML97 string
 	 */	
-	abstract public String toStringVRML97(int level); // must be overridden
+	abstract public String toStringVRML97(int indentLevel); // must be overridden
 
 	/**
 	 * Recursive method to validate this element plus all contained nodes and statements.
@@ -24576,21 +25733,27 @@ setAttribute method invocations).
 	// Member value declarations are encapsulated and protected, using preferred Java types for concretes library
 
 	/** <i>Tooltip:</i> DEF defines a unique ID name for this node, referenceable by other nodes.
-	 * <i>Hint:</i> descriptive DEF names improve clarity and help document a model.
-	 * <i>Hint:</i> well-defined names can simplify design and debugging through improved author understanding.
+	 * <ul>
+	 * <li> <i>Hint:</i> descriptive DEF names improve clarity and help document a model. </li>
+	 * <li> <i>Hint:</i> well-defined names can simplify design and debugging through improved author understanding. </li>
+	 * </ul>
 	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions">X3D Scene Authoring Hints: Naming Conventions</a>
 	 */
 	private String DEF = DEF_DEFAULT_VALUE;
 
 	/** <i>Tooltip:</i> USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value).
-	 * <i>Hint:</i> USE references to previously defined DEF geometry (instead of duplicating nodes) can improve performance.
-	 * <i>WARNING:</i> each USE value must match a corresponding DEF value that is defined earlier in the scene.
+	 * <ul>
+	 * <li> <i>Hint:</i> USE references to previously defined DEF geometry (instead of duplicating nodes) can improve performance. </li>
+	 * <li> <i>Warning:</i> each USE value must match a corresponding DEF value that is defined earlier in the scene. </li>
+	 * </ul>
 	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions">X3D Scene Authoring Hints: Naming Conventions</a>
 	 */
 	private String USE = USE_DEFAULT_VALUE;
 
 	/** The class attribute is a space-separated list of classes, reserved for use by CSS cascading stylesheets.
-	 * <i> Warning:</i> currently the class attribute is only supported in XML encoding of X3D scenes.
+	 * <ul>
+	 * <li> <i>Warning:</i> currently the class attribute is only supported in XML encoding of X3D scenes. </li>
+	 * </ul>
 	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a> */
 	private String cssClass = CLASS_DEFAULT_VALUE;
 
@@ -24621,8 +25784,10 @@ setAttribute method invocations).
 	 * Provide String value from inputOutput SFString field named <i>DEF</i>.
 	 * <br><br>
 	 * <i>Tooltip:</i> DEF defines a unique ID name for this node, referenceable by other nodes.
-	 * <i>Hint:</i> descriptive DEF names improve clarity and help document a model.
-	 * <i>Hint:</i> well-defined names can simplify design and debugging through improved author understanding.
+	 * <ul>
+	 * <li> <i>Hint:</i> descriptive DEF names improve clarity and help document a model. </li>
+	 * <li> <i>Hint:</i> well-defined names can simplify design and debugging through improved author understanding. </li>
+	 * </ul>
 	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions">X3D Scene Authoring Hints: Naming Conventions</a>
 	 * @return value of DEF field
 	 */
@@ -24635,8 +25800,10 @@ setAttribute method invocations).
 	 * Provide String value from inputOutput SFString field named <i>USE</i>.
 	 * <br><br>
 	 * <i>Tooltip:</i> USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value).
-	 * <i>Hint:</i> USE references to previously defined DEF geometry (instead of duplicating nodes) can improve performance.
-	 * <i>WARNING:</i> each USE value must match a corresponding DEF value that is defined earlier in the scene.
+	 * <ul>
+	 * <li> <i>Hint:</i> USE references to previously defined DEF geometry (instead of duplicating nodes) can improve performance. </li>
+	 * <li> <i>Warning:</i> each USE value must match a corresponding DEF value that is defined earlier in the scene. </li>
+	 * </ul>
 	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions">X3D Scene Authoring Hints: Naming Conventions</a>
 	 * @return value of USE field
 	 */
@@ -24648,8 +25815,10 @@ setAttribute method invocations).
 	 * Utility method to indicate whether this element is a <i>USE</i> reference to another previously defined element (which means other fields must be empty).
 	 * <br><br>
 	 * <i>Tooltip:</i> USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value).
-	 * <i>Hint:</i> USE references to previously defined DEF geometry (instead of duplicating nodes) can improve performance.
-	 * <i>WARNING:</i> each USE value must match a corresponding DEF value that is defined earlier in the scene.
+	 * <ul>
+	 * <li> <i>Hint:</i> USE references to previously defined DEF geometry (instead of duplicating nodes) can improve performance. </li>
+	 * <li> <i>Warning:</i> each USE value must match a corresponding DEF value that is defined earlier in the scene. </li>
+	 * </ul>
 	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions">X3D Scene Authoring Hints: Naming Conventions</a>
 	 * @return whether this node is a USE reference
 	 */
@@ -24661,7 +25830,9 @@ setAttribute method invocations).
 	 * Provide String value from inputOutput SFString field named <i>class</i>.
 	 * <br><br>
 	 * <i>Tooltip:</i> The class attribute is a space-separated list of classes, reserved for use by CSS cascading stylesheets.
-	 * <i> Warning:</i> currently the class attribute is only supported in XML encoding of X3D scenes.
+	 * <ul>
+	 * <li> <i>Warning:</i> currently the class attribute is only supported in XML encoding of X3D scenes. </li>
+	 * </ul>
 	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a>
 	 * @return value of class field
 	 */
@@ -24709,7 +25880,7 @@ setAttribute method invocations).
 	}
 	/** Protected internal superclass method to keep cssClass private, scene authors should use method setCssClass(newValue) instead.
 	 * <i>Tooltip:</i> The class attribute is a space-separated list of classes, reserved for use by CSS cascading stylesheets.
-	 * <i> Warning:</i> currently the class attribute is only supported in XML encoding of X3D scenes.
+	 * <i>Warning:</i> currently the class attribute is only supported in XML encoding of X3D scenes.
 	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a>
 	 * @param newValue is new value for the cssClass field.
 	 */
@@ -24726,18 +25897,19 @@ setAttribute method invocations).
 	abstract public X3DConcreteNode setDEF(String DEFname);
 
 	/** Each concrete class must independently override this abstract method to enable object-specific method pipelining.
-	 * <br><br>
-	 * <i>WARNING:</i> note that the <code>setUSE()</code> method resets all other fields to their default values and also releases
-all child nodes.
-	 * <br><br>
-	 * <i>WARNING.</i> no other operations can be performed to modify a USE node other than setting an alternate containerField value.
+	 * <ul>
+	 * <li> <i>Warning:</i> note that the <code>setUSE()</code> method on this node resets all other fields to their default values (except for containerField) and also releases all child nodes. </li>
+	 * <li> <i>Warning:</i> no other operations can be performed to modify a USE node other than setting an alternate containerField value. </li>
+	 * </ul>
 	 * @param USEname is new value for the USE field.
 	 * @return {@link X3DConcreteNode} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object). */
 	abstract public X3DConcreteNode setUSE(String USEname);
 
 	/** Each concrete class must independently override this abstract method to enable object-specific method pipelining.
 	 * <i>Tooltip:</i> The class attribute is a space-separated list of classes, reserved for use by CSS cascading stylesheets.
-	 * <i> Warning:</i> currently the class attribute is only supported in XML encoding of X3D scenes.
+	 * <ul>
+	 * <li> <i>Warning:</i> currently the class attribute is only supported in XML encoding of X3D scenes. </li>
+	 * </ul>
 	 * @see <a href="https://www.w3.org/Style/CSS">W3C Cascading Style Sheets</a>
 	 * @param cssClass is new value for the class field.
 	 * @return {@link X3DConcreteNode} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object). */
@@ -24968,6 +26140,7 @@ import org.web3d.x3d.sai.Shape.*;
 import org.web3d.x3d.sai.Sound.*;
 import org.web3d.x3d.sai.Text.*;
 import org.web3d.x3d.sai.Texturing.*;
+import org.web3d.x3d.sai.X3DException;
 			
 // fully specified when occurring:
 // import org.w3c.dom.DocumentType;
@@ -24983,7 +26156,7 @@ import org.web3d.x3d.sai.Texturing.*;
 		<xsl:with-param name="subPackage"><xsl:text><!-- top level --></xsl:text></xsl:with-param>
 		<xsl:with-param name="extends"><xsl:text></xsl:text></xsl:with-param>
 		<xsl:with-param name="implements"><xsl:text></xsl:text></xsl:with-param>
-		<xsl:with-param name="description"><xsl:text>Concrete class for loading an X3D graphics string, file or fragment encoded in XML.</xsl:text></xsl:with-param>
+		<xsl:with-param name="description"><xsl:text>Concrete class for loading an X3D graphics string, file or fragment encoded in XML, using the Document Object Model (DOM).</xsl:text></xsl:with-param>
 		<xsl:with-param name="saiJavaSpecificationSection"><xsl:text></xsl:text></xsl:with-param>
 		<xsl:with-param name="saiJavaSpecificationRelativeUrl"><xsl:text></xsl:text></xsl:with-param>
 		<xsl:with-param name="saiAbstractSpecificationSection"><xsl:text></xsl:text></xsl:with-param>
@@ -25028,7 +26201,9 @@ import org.web3d.x3d.sai.Texturing.*;
 				
 	private String  currentProtoNameValue = new String(); // remember name attribute for current ProtoDeclare element
 	private boolean currentProtoNodeTypeFound = false;
-	private Map<String,String> protoNodeTypesHashMap = new HashMap<>();
+	private Map<String,String> protoNameToNodeTypesHashMap = new HashMap<>();
+	private Map<String,String> protoDEFtoNodeTypesHashMap = new HashMap<>();
+	private Map<String,String> protoContainerFieldHashMap  = new HashMap<>();
 	
 	/** Default constructor to initialize X3DLoaderObject */
 	public X3DLoaderObject ()
@@ -25045,21 +26220,34 @@ import org.web3d.x3d.sai.Texturing.*;
 		loadSuccess = false;
 	}
 				
-	/** Load the XML X3D file using DOM, report success 
-	 * @param filename path and file name of .x3d file (XML encoding)
+	/** Load the XML X3D file using DOM, report whether successful.  Fails if file is empty.
+	 * @param fileName path and name of .x3d or .xml file (XML encoding)
 	 * @return whether successful
+	 * @see #loadModelFromFileX3D(File)
 	*/	
-	public boolean loadX3DfromFile (String filename)
+	public boolean loadModelFromFileX3D (String fileName)
 	{
-		File x3dFile = new File(filename);
-		return loadX3DfromFile (x3dFile); // handoff
+		if (!fileName.endsWith(X3DObject.FILE_EXTENSION_X3D) && !fileName.endsWith(X3DObject.FILE_EXTENSION_XML))
+		{
+			throw new X3DException("fileName " + fileName + " does not end with extension " +
+                            "\"" + X3DObject.FILE_EXTENSION_X3D + "\" or " +
+                            "\"" + X3DObject.FILE_EXTENSION_XML + "\"");
+		}
+		File x3dFile = new File(fileName);
+		
+		if (!x3dFile.exists())
+		{
+			throw new X3DException("fileName " + fileName + " does not exist and cannot be loaded, check path and filename.");
+		}
+		return loadModelFromFileX3D (x3dFile); // handoff
 	}
 
 	/** Load the XML X3D file using DOM, report success 
 	 * @param x3dFile existing x3d file (XML encoding)
 	 * @return whether successful
+	 * @see #loadModelFromFileX3D(String)
 	*/	
-	public boolean loadX3DfromFile (File x3dFile)
+	public boolean loadModelFromFileX3D (File x3dFile)
 	{
 		try
 		{
@@ -25320,7 +26508,10 @@ import org.web3d.x3d.sai.Texturing.*;
 						|| ((loadedX3dObjectTree == null) && (elementObject instanceof org.web3d.x3d.jsail.X3DConcreteNode))) // found fragment
 					{
 						loadedX3dObjectTree = (X3DObject) elementObject; // remember X3D root
-						protoNodeTypesHashMap.clear(); // starting a new scene
+						// starting a new scene, reset hash maps
+						protoNameToNodeTypesHashMap.clear();
+						protoDEFtoNodeTypesHashMap.clear();
+						protoContainerFieldHashMap.clear();
 					}
 					if (elementObject instanceof org.web3d.x3d.jsail.Core.ProtoDeclareObject) // remember prototype declarations
 					{
@@ -25332,7 +26523,7 @@ import org.web3d.x3d.sai.Texturing.*;
 				catch (ClassNotFoundException cnfe)
 				{
 					// TODO logging
-					errorNotice = "Fully qualified object package not found," +
+					errorNotice = "[X3DLoaderObject error] Fully qualified object package not found," +
                                             "\n   " + cnfe + " " + cnfe.getMessage();
                                         if ((cnfe.getCause()!= null) && !cnfe.getCause().getMessage().isEmpty())
                                             errorNotice += "\n   " + cnfe.getCause();
@@ -25343,7 +26534,7 @@ import org.web3d.x3d.sai.Texturing.*;
 				catch (IllegalAccessException iae)
 				{
 					// TODO logging
-					errorNotice = "Visibility of no-parameter constructor inaccessible," +
+					errorNotice = "[X3DLoaderObject error] Visibility of no-parameter constructor inaccessible," +
                                             "\n   " + iae + " " + iae.getMessage();
                                         if ((iae.getCause()!= null) && !iae.getCause().getMessage().isEmpty())
                                             errorNotice += "\n   " + iae.getCause();
@@ -25354,7 +26545,7 @@ import org.web3d.x3d.sai.Texturing.*;
 				catch (InstantiationException ie)
 				{
 					// TODO logging
-					errorNotice = "Failure occurred inside constructor," +
+					errorNotice = "[X3DLoaderObject error] Failure occurred inside constructor," +
                                             "\n   " + ie + " " + ie.getMessage();
                                         if ((ie.getCause()!= null) && !ie.getCause().getMessage().isEmpty())
                                             errorNotice += "\n   " + ie.getCause();
@@ -25388,8 +26579,10 @@ import org.web3d.x3d.sai.Texturing.*;
 							continue;
 						String       childElementName = childX3dElement.getElementName();
 						String childProtoInstanceName = new String();
+						String childProtoInstanceUSE  = new String();
 						String         containerField = new String();
 						String  protoInstanceNodeType = new String();
+						String                    DEF = new String();
 						
 						try // adding this object to scene graph
 						{
@@ -25400,19 +26593,38 @@ import org.web3d.x3d.sai.Texturing.*;
 								if (!currentProtoNodeTypeFound)
 								{
 									currentProtoNodeTypeFound = true;
-									protoNodeTypesHashMap.put(currentProtoNameValue, childElementName);
+									protoNameToNodeTypesHashMap.put(currentProtoNameValue, childElementName);
 								}
 							}
 							else if (childElementName.equals("ProtoInstance"))
 							{
 								// use DOM to find name for this element
-								childProtoInstanceName = children.item(i).getAttributes().getNamedItem("name").getNodeValue();
-								        containerField = children.item(i).getAttributes().getNamedItem("containerField").getNodeValue();
-								 protoInstanceNodeType = protoNodeTypesHashMap.get(currentProtoNameValue);
-								if (childProtoInstanceName.isEmpty())
+								if (children.item(i).getAttributes().getNamedItem("name") != null)
+									childProtoInstanceName = children.item(i).getAttributes().getNamedItem("name").getNodeValue();
+						        containerField = children.item(i).getAttributes().getNamedItem("containerField").getNodeValue();
+								protoInstanceNodeType = protoNameToNodeTypesHashMap.get(currentProtoNameValue);
+				
+								if (children.item(i).getAttributes().getNamedItem("DEF") != null)			// DOM
+								{
+									// save node type for this ProtoInstance DEF so that ProtoInstance USE can find it later
+									String childProtoInstanceDEF = children.item(i).getAttributes().getNamedItem("DEF").getNodeValue();
+									protoDEFtoNodeTypesHashMap.put(childProtoInstanceDEF, protoInstanceNodeType);
+									protoContainerFieldHashMap.put(childProtoInstanceDEF, containerField);
+								}
+								else if (children.item(i).getAttributes().getNamedItem("USE") != null)
+								{
+									// ProtoInstance USE syntax does not include name, must find it via original DEF
+									childProtoInstanceUSE = children.item(i).getAttributes().getNamedItem("USE").getNodeValue();
+									protoInstanceNodeType = protoDEFtoNodeTypesHashMap.get(childProtoInstanceUSE); // find it
+									       containerField = protoContainerFieldHashMap.get(childProtoInstanceUSE); // find it
+								}
+								if (!containerField.equals("children"))
+									((ProtoInstanceObject) childX3dElement).setContainerField(containerField);
+								// diagnostics
+								if (!childProtoInstanceUSE.isEmpty() && protoInstanceNodeType.isEmpty())
 								{
 									// TODO logging
-									errorNotice = "ProtoInstance found but has no name, unable to add to scene graph";
+									errorNotice = "[X3DLoaderObject error] ProtoInstance found with USE " + childProtoInstanceUSE + " but unable to find original ProtoInstance DEF node type, thus unable to add to scene graph";
 									validationResult.append(errorNotice).append("\n");
 									System.err.println(errorNotice);
 									continue;
@@ -25420,7 +26632,25 @@ import org.web3d.x3d.sai.Texturing.*;
 								else if (protoInstanceNodeType.isEmpty() && containerField.isEmpty())
 								{
 									// TODO logging
-									errorNotice = "ProtoInstance found but node type is unknown and " +
+									errorNotice = "[X3DLoaderObject error] ProtoInstance found but node type is unknown and " +
+												  "containerField is missing, unable to add to scene graph";
+									validationResult.append(errorNotice).append("\n");
+									System.err.println(errorNotice);
+									continue;
+								}
+								else if (protoInstanceNodeType.isEmpty())
+								{
+									// TODO logging
+									errorNotice = "[X3DLoaderObject error] ProtoInstance found but node type is unknown and " +
+												  "containerField is " + containerField + ", unable to add to scene graph";
+									validationResult.append(errorNotice).append("\n");
+									System.err.println(errorNotice);
+									continue;
+								}
+								else if (containerField.isEmpty())
+								{
+									// TODO logging
+									errorNotice = "[X3DLoaderObject error] ProtoInstance found and node type is " + protoInstanceNodeType + " but " +
 												  "containerField is missing, unable to add to scene graph";
 									validationResult.append(errorNotice).append("\n");
 									System.err.println(errorNotice);
@@ -25608,10 +26838,11 @@ import org.web3d.x3d.sai.Texturing.*;
 						catch (Exception e)
 						{
 							// TODO logging
-							errorNotice = "Incorrectly handled object construction, current elementObject=" + nodeName + 
+							errorNotice = "[X3DLoaderObject error] Incorrectly handled object construction, current elementObject=" + nodeName + 
 										  " (" + elementObject.getElementName() + "), child=" + childElementName + ", " + e;
 							validationResult.append(errorNotice).append("\n");
 							System.err.println(errorNotice);
+							e.printStackTrace(); // further diagnosis needed, DOM loader errors are tricky
 							continue;
 						}
 					}
@@ -25649,7 +26880,7 @@ import org.web3d.x3d.sai.Texturing.*;
 					attributeValue = attributeValue.replaceAll("\\\\\"","\""); // unescape XML quotes
 
 					// errorNotice prelude now gets predefined (in case needed later)
-					errorNotice = "<" + nodeName + " " + attributeName + "='" + attributeValue + "'/> exception: ";
+					errorNotice = "[X3DLoaderObject error] <" + nodeName + " " + attributeName + "='" + attributeValue + "'/> exception: ";
 					
 					// ignore unused attributes
 					if      (attributeName.equals("containerField"))
@@ -25700,7 +26931,7 @@ import org.web3d.x3d.sai.Texturing.*;
 						else if (attributeType.equals(SFNodeObject.NAME) || attributeType.equals(MFNodeObject.NAME))
 						{
 							// TODO logging
-							errorNotice = "Unexpectedly encountered " + attributeType + " type when parsing attribute" + 
+							errorNotice = "[X3DLoaderObject error] Unexpectedly encountered " + attributeType + " type when parsing attribute" + 
 											attributeName + ".";
 							validationResult.append(errorNotice).append("\n");
 							System.err.println(errorNotice);
@@ -25723,7 +26954,7 @@ import org.web3d.x3d.sai.Texturing.*;
 							if (!!Modifier.isPublic(fieldSetMethod.getModifiers()))
 							{
 								// TODO logging
-//								errorNotice = "Java reflection problem, class-protected " + fieldObjectName + "." +
+//								errorNotice = "[X3DLoaderObject error] Java reflection problem, class-protected " + fieldObjectName + "." +
 //									fieldSetMethodName + "(\"" + attributeValue + "\") method not publicly accessible";
 //								validationResult.append(errorNotice).append("\n");
 //								System.err.println(errorNotice);
@@ -25741,7 +26972,7 @@ import org.web3d.x3d.sai.Texturing.*;
 					catch (ClassNotFoundException cnfe)
 					{
 						// TODO logging
-						errorNotice = "Fully qualified object package not found," +
+						errorNotice = "[X3DLoaderObject error] Fully qualified object package not found," +
                                                     "\n   " + cnfe + " " + cnfe.getMessage();
 						if ((cnfe.getCause()!= null) && !cnfe.getCause().getMessage().isEmpty())
                                                     errorNotice += "\n   " + cnfe.getCause();
@@ -25752,7 +26983,7 @@ import org.web3d.x3d.sai.Texturing.*;
 					catch (IllegalAccessException iae)
 					{
 						// TODO logging
-						errorNotice = "Visibility of no-parameter constructor inaccessible," +
+						errorNotice = "[X3DLoaderObject error] Visibility of no-parameter constructor inaccessible," +
                                                     "\n   " + iae + " " + iae.getMessage();
 						if ((iae.getCause()!= null) && !iae.getCause().getMessage().isEmpty())
                                                     errorNotice += "\n   " + iae.getCause();
@@ -25763,7 +26994,7 @@ import org.web3d.x3d.sai.Texturing.*;
 					catch (InstantiationException ie)
 					{
 						// TODO logging
-						errorNotice = "Failure occurred inside constructor," +
+						errorNotice = "[X3DLoaderObject error] Failure occurred inside constructor," +
                                                     "\n   " + ie + " " + ie.getMessage();
 						if ((ie.getCause()!= null) && !ie.getCause().getMessage().isEmpty())
                                                     errorNotice += "\n   " + ie.getCause();
@@ -25774,7 +27005,7 @@ import org.web3d.x3d.sai.Texturing.*;
 					catch (InvocationTargetException ite)
 					{
 						// TODO logging
-						errorNotice = "Invoking " + nodeName + "." + elementSetMethodName + "(" + attributeValue + ") failed (likely due to illegal value)," +
+						errorNotice = "[X3DLoaderObject error] Invoking " + nodeName + "." + elementSetMethodName + "(" + attributeValue + ") failed (likely due to illegal value)," +
                                                     "\n   " + ite + " " + ite.getMessage();
 						if ((ite.getCause()!= null) && !ite.getCause().getMessage().isEmpty())
                                                     errorNotice += "\n   " + ite.getCause();
@@ -25785,7 +27016,7 @@ import org.web3d.x3d.sai.Texturing.*;
 					catch (NoSuchMethodException nsme)
 					{
 						// TODO logging
-						errorNotice = "Incorrectly constructed set method name," +
+						errorNotice = "[X3DLoaderObject error] Incorrectly constructed set method name," +
                                                     "\n   " + nsme + " " + nsme.getMessage();
 						if ((nsme.getCause()!= null) && !nsme.getCause().getMessage().isEmpty())
                                                     errorNotice += "\n   " + nsme.getCause();
@@ -25802,7 +27033,7 @@ import org.web3d.x3d.sai.Texturing.*;
 				if (node.getNodeValue().trim().isEmpty())
 				{
 					// TODO logging
-					errorNotice = "Unexpected plain text found: " + node.getNodeValue().trim();
+					errorNotice = "[X3DLoaderObject error] Unexpected plain text found: " + node.getNodeValue().trim();
 					validationResult.append(errorNotice).append("\n");
 					System.err.println(errorNotice);
 				}
@@ -25817,8 +27048,8 @@ import org.web3d.x3d.sai.Texturing.*;
 				if (parentElement == null)
 				{
 					// TODO logging
-					errorNotice  = "CommentsBlock found without prior parent being saved; ignored.";
-					errorNotice = "<!-- " + node.getNodeValue() + " -->";
+					errorNotice = "[X3DLoaderObject error] CommentsBlock found without prior parent being saved; ignored.";
+					errorNotice+= "<!-- " + node.getNodeValue() + " -->";
 					validationResult.append(errorNotice).append("\n");
 					System.err.println(errorNotice);
 				}
@@ -25993,11 +27224,11 @@ import org.web3d.x3d.jsail.*;</xsl:text>
 	{
 		return NAME;
 	}
-	/** String constant <i>COMPONENT</i> provides X3D component for this element: <i>Core</i>. */
+	/** String constant <i>COMPONENT</i> defines X3D component for comments: <i>Core</i>. */
 	public static final String COMPONENT = "Core";
 
-	/** Provides X3D component for this element: <i>Core</i>.
-	 * @return X3D component for this element
+	/** Defines X3D component for comments: <i>Core</i>.
+	 * @return X3D component for comments
 	 */
 	@Override
 	public final String getComponent()
@@ -26005,11 +27236,11 @@ import org.web3d.x3d.jsail.*;</xsl:text>
 		return COMPONENT;
 	}
 
-	/** Integer constant <i>LEVEL</i> provides default X3D component level for this element: <i>1</i>. */
+	/** Integer constant <i>LEVEL</i> provides default X3D <i>Core</i> component level for comments: <i>1</i>. */
 	public static final int LEVEL = 1;
 
-	/** Provides default X3D component level for this element: <i>1</i>.
-	 * @return default X3D component level for this element
+	/** Provides default X3D component level for comments: <i>1</i>.
+	 * @return default X3D component level for comments
 	 */
 	@Override
 	public final int getComponentLevel()
@@ -26024,7 +27255,7 @@ import org.web3d.x3d.jsail.*;</xsl:text>
 	};
                             
 	/**
-	 * Utility method to indicate whether this element is an X3D Graphics statement, returns <i>false</i>.
+	 * Utility method to indicate whether a comment is an X3D Graphics statement, returns <i>false</i>.
 	 * <br><br>
 	 * @see X3DConcreteStatement#isStatement
 	 * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/core.html#AbstractX3DStructure">X3D Abstract Specification: 7.2.5 Abstract X3D structure</a>
@@ -27291,16 +28522,16 @@ import org.web3d.x3d.jsail.*;</xsl:text>
       <!-- empty string -->
     </xsl:when>
     <xsl:when test="not(string-length(normalize-space($breakText1)) > 0)">
-      <!-- no breakText1 to break on -->
-      <xsl:value-of select="$inputString"/>
+		<!-- no breakText1 to break on -->
+		<xsl:value-of select="$inputString" disable-output-escaping="yes"/>
     </xsl:when>
     <xsl:when test="not(string-length(normalize-space($breakText2)) > 0)">
-      <!-- no breakText2 to break on -->
-      <xsl:value-of select="$inputString"/>
+		<!-- no breakText2 to break on -->
+		<xsl:value-of select="$inputString" disable-output-escaping="yes"/>
     </xsl:when>
     <xsl:when test="not(contains($inputString,$breakText1)) and not(contains($inputString,$breakText2))">
-      <!-- no breakText found so all done -->
-      <xsl:value-of select="$inputString"/>
+		<!-- no breakText found so all done -->
+		<xsl:value-of select="$inputString" disable-output-escaping="yes"/>
     </xsl:when>
     <xsl:when test="starts-with(normalize-space($inputString),$breakText1)">
 		<!-- starts with Hint: -->
@@ -27315,13 +28546,9 @@ import org.web3d.x3d.jsail.*;</xsl:text>
 			<xsl:when test="(string-length($preambleHint) = 0) and (string-length($preambleWarning) = 0)">
 				<!-- this is last substring, no preamble -->
 				<xsl:text disable-output-escaping="yes">&lt;i&gt;</xsl:text>
-				<xsl:value-of select="substring-before($inputString,':')"/>
+				<xsl:value-of select="substring-before($inputString,':')" disable-output-escaping="yes"/>
 				<xsl:text disable-output-escaping="yes">:&lt;/i&gt; </xsl:text>
-				<xsl:call-template name="hyperlink">
-					<xsl:with-param name="string">
-						<xsl:value-of select="substring-after($inputString,':')"/>
-					</xsl:with-param>
-				</xsl:call-template>
+				<xsl:value-of select="substring-after($inputString,':')" disable-output-escaping="yes"/>
 				<xsl:text disable-output-escaping="yes"> &lt;/li&gt; </xsl:text>
 			</xsl:when>
 			<xsl:when test="(string-length($preambleHint) > 0) and 
@@ -27331,16 +28558,12 @@ import org.web3d.x3d.jsail.*;</xsl:text>
 				<xsl:value-of select="$breakText1"/>
 				<xsl:text disable-output-escaping="yes">&lt;/i&gt;</xsl:text>
 				<xsl:text> </xsl:text>
-				<xsl:call-template name="hyperlink">
-					<xsl:with-param name="string">
-						<xsl:value-of select="$preambleHint"/>
-					</xsl:with-param>
-				</xsl:call-template>
+				<xsl:value-of select="$preambleHint" disable-output-escaping="yes"/>
 				<xsl:text disable-output-escaping="yes"> &lt;/li&gt; </xsl:text>
 				<xsl:call-template name="insert-javadoc-line-breaks-recurse">
 				  <xsl:with-param name="inputString" select="normalize-space(substring-after($inputString,$preambleHint))"/>
-				  <xsl:with-param name="breakText1"   select="$breakText1"/>
-				  <xsl:with-param name="breakText2"   select="$breakText2"/>
+				  <xsl:with-param name="breakText1"  select="$breakText1"/>
+				  <xsl:with-param name="breakText2"  select="$breakText2"/>
 				</xsl:call-template>
 			</xsl:when>
 			<xsl:otherwise>
@@ -27349,16 +28572,12 @@ import org.web3d.x3d.jsail.*;</xsl:text>
 				<xsl:value-of select="$breakText1"/>
 				<xsl:text disable-output-escaping="yes">&lt;/i&gt;</xsl:text>
 				<xsl:text> </xsl:text>
-				<xsl:call-template name="hyperlink">
-					<xsl:with-param name="string">
-						<xsl:value-of select="$preambleWarning"/>
-					</xsl:with-param>
-				</xsl:call-template>
+				<xsl:value-of select="$preambleWarning" disable-output-escaping="yes"/>
 				<xsl:text disable-output-escaping="yes"> &lt;/li&gt; </xsl:text>
 				<xsl:call-template name="insert-javadoc-line-breaks-recurse">
 				  <xsl:with-param name="inputString" select="normalize-space(substring-after($inputString,$preambleWarning))"/>
-				  <xsl:with-param name="breakText1"   select="$breakText1"/>
-				  <xsl:with-param name="breakText2"   select="$breakText2"/>
+				  <xsl:with-param name="breakText1"  select="$breakText1"/>
+				  <xsl:with-param name="breakText2"  select="$breakText2"/>
 				</xsl:call-template>
 			</xsl:otherwise>
 		</xsl:choose>
@@ -27376,13 +28595,9 @@ import org.web3d.x3d.jsail.*;</xsl:text>
 			<xsl:when test="(string-length($preambleHint) = 0) and (string-length($preambleWarning) = 0)">
 				<!-- this is last substring, no preamble -->
 				<xsl:text disable-output-escaping="yes">&lt;i&gt;</xsl:text>
-				<xsl:value-of select="substring-before($inputString,':')"/>
+				<xsl:value-of select="substring-before($inputString,':')" disable-output-escaping="yes"/>
 				<xsl:text disable-output-escaping="yes">:&lt;/i&gt; </xsl:text>
-				<xsl:call-template name="hyperlink">
-					<xsl:with-param name="string">
-						<xsl:value-of select="substring-after($inputString,':')"/>
-					</xsl:with-param>
-				</xsl:call-template>
+				<xsl:value-of select="substring-after($inputString,':')" disable-output-escaping="yes"/>
 				<xsl:text disable-output-escaping="yes"> &lt;/li&gt; </xsl:text>
 			</xsl:when>
 			<xsl:when test="(string-length($preambleHint) > 0) and 
@@ -27392,11 +28607,7 @@ import org.web3d.x3d.jsail.*;</xsl:text>
 				<xsl:value-of select="$breakText2"/>
 				<xsl:text disable-output-escaping="yes">&lt;/i&gt;</xsl:text>
 				<xsl:text> </xsl:text>
-				<xsl:call-template name="hyperlink">
-					<xsl:with-param name="string">
-						<xsl:value-of select="$preambleHint"/>
-					</xsl:with-param>
-				</xsl:call-template>
+				<xsl:value-of select="$preambleHint" disable-output-escaping="yes"/>
 				<xsl:text disable-output-escaping="yes"> &lt;/li&gt; </xsl:text>
 				<xsl:call-template name="insert-javadoc-line-breaks-recurse">
 				  <xsl:with-param name="inputString" select="normalize-space(substring-after($inputString,$preambleHint))"/>
@@ -27410,11 +28621,7 @@ import org.web3d.x3d.jsail.*;</xsl:text>
 				<xsl:value-of select="$breakText2"/>
 				<xsl:text disable-output-escaping="yes">&lt;/i&gt;</xsl:text>
 				<xsl:text> </xsl:text>
-				<xsl:call-template name="hyperlink">
-					<xsl:with-param name="string">
-						<xsl:value-of select="$preambleWarning"/>
-					</xsl:with-param>
-				</xsl:call-template>
+				<xsl:value-of select="$preambleWarning" disable-output-escaping="yes"/>
 				<xsl:text disable-output-escaping="yes"> &lt;/li&gt; </xsl:text>
 				<xsl:call-template name="insert-javadoc-line-breaks-recurse">
 				  <xsl:with-param name="inputString" select="normalize-space(substring-after($inputString,$preambleWarning))"/>
@@ -27427,7 +28634,7 @@ import org.web3d.x3d.jsail.*;</xsl:text>
   </xsl:choose>
 </xsl:template>
     
-    <xsl:template name="hyperlink">
+    <xsl:template name="wrap-hyperlinks">
 		<!-- further adapted from X3dTooltipConversions.xslt -->
         <!-- Search and replace urls in text:  adapted (with thanks) from 
             http://www.dpawson.co.uk/xsl/rev2/regex2.html#d15961e67 by Jeni Tennison using url regex (http://[^ ]+) -->
@@ -27436,27 +28643,63 @@ import org.web3d.x3d.jsail.*;</xsl:text>
         <!-- wrap html text string with spaces to ensure no mismatches occur -->
         <xsl:variable name="spacedString">
             <xsl:text> </xsl:text>
-            <xsl:value-of select="$string"/>
+            <xsl:value-of select="$string" disable-output-escaping="yes"/>
             <xsl:text> </xsl:text>
         </xsl:variable>
-        <!-- diagnostic 
+        <!-- debug diagnostic 
         <xsl:if test="contains($spacedString,'http')">
-        </xsl:if>
             <xsl:message>
-                <xsl:text>diagnostic: $spacedString=</xsl:text>
-                <xsl:value-of select="normalize-space($spacedString)"/>
+                <xsl:text>*** wrap-hyperlinks diagnostic: $spacedString=</xsl:text>
+                <xsl:value-of select="normalize-space($spacedString)" disable-output-escaping="yes"/>
             </xsl:message>
+        </xsl:if>
         -->
         <!-- First: find and link url values.  Avoid matching encompassing quote marks. -->
-        <xsl:analyze-string select="$spacedString" regex='(mailto:|((news|http|https|sftp)://)[a-zA-Z0-9._%+-/#()]+)'>
+        <xsl:analyze-string select="$spacedString" regex='(")?(mailto:|((news|http|https|sftp)://)[a-zA-Z0-9._%+-/#()]+)(")?'>
             <xsl:matching-substring>
+				<xsl:variable name="urlValue">
+					<xsl:choose>
+						<xsl:when test="starts-with(.,'&quot;') and ends-with(.,'&quot;')">
+							<xsl:value-of select="substring(.,2,string-length(.)-2)" disable-output-escaping="no"/>
+						</xsl:when>
+						<xsl:when test="starts-with(.,'&quot;')">
+							<xsl:value-of select="substring(.,2)" disable-output-escaping="no"/>
+						</xsl:when>
+						<xsl:when test="ends-with(.,'&quot;')">
+							<xsl:value-of select="substring(.,1,string-length(.)-2)" disable-output-escaping="no"/>
+						</xsl:when>
+						<xsl:otherwise>
+							<xsl:value-of select="." disable-output-escaping="no"/>
+						</xsl:otherwise>
+					</xsl:choose>
+				</xsl:variable>
                 <!-- diagnostic
 					<xsl:message>
-						<xsl:text>*regex match success (</xsl:text>
+						<xsl:text>*** regex match success (</xsl:text>
 						<xsl:value-of select="."/>
+						<xsl:text>) (</xsl:text>
+						<xsl:value-of select="$urlValue"/>
 						<xsl:text>) </xsl:text>
 					</xsl:message>
                 -->
+				<!-- originally no <br> inserted in javadoc since encompassing quotes didn't break across lines evenly -->
+				<xsl:text disable-output-escaping="no"> &lt;br&gt; </xsl:text>
+				<xsl:if test="starts-with(.,'&quot;')">
+					<xsl:text>&quot;</xsl:text>
+				</xsl:if>
+				<xsl:text disable-output-escaping="no">&lt;a href="</xsl:text>
+				<xsl:value-of select="$urlValue"/>
+				<xsl:if test="(contains(.,'youtube.com') or contains(.,'youtu.be')) and not(contains(.,'rel='))">
+					<!-- prevent advertising other YouTube videos when complete -->
+					<xsl:text disable-output-escaping="yes">&amp;rel=0</xsl:text>
+				</xsl:if>
+				<xsl:text disable-output-escaping="no">" target="_blank"&gt;</xsl:text>
+					<xsl:value-of select="$urlValue"/>
+				<xsl:text disable-output-escaping="no">&lt;/a&gt;</xsl:text>
+				<xsl:if test="ends-with(.,'&quot;')">
+					<xsl:text>&quot;</xsl:text>
+				</xsl:if>
+				<!-- alternate form doesn't work because text is being produced, not elements
 				<xsl:element name="a">
 					<xsl:attribute name="href">
 						<xsl:value-of select="."/>
@@ -27465,17 +28708,7 @@ import org.web3d.x3d.jsail.*;</xsl:text>
 						<xsl:text>_blank</xsl:text>
 					</xsl:attribute>
 					<xsl:value-of select="."/>
-					<xsl:if test="(contains(.,'youtube.com') or contains(.,'youtu.be')) and not(contains(.,'rel='))">
-						<!-- prevent advertising other YouTube videos when complete -->
-						<xsl:text disable-output-escaping="yes">&amp;rel=0</xsl:text>
-					</xsl:if>
 				</xsl:element>
-				<!-- alternate form
-				<xsl:text disable-output-escaping="no">&lt;a href="</xsl:text>
-				<xsl:value-of select="."/>
-				<xsl:text disable-output-escaping="no">" target="_blank"&gt;</xsl:text>
-					<xsl:value-of select="."/>
-				<xsl:text disable-output-escaping="no">&lt;/a&gt;</xsl:text>
 				-->
             </xsl:matching-substring>
             <xsl:non-matching-substring>
@@ -27494,9 +28727,10 @@ import org.web3d.x3d.jsail.*;</xsl:text>
                         <xsl:text> </xsl:text>
                     </xsl:when>
                     <xsl:when test="string-length(normalize-space(.)) > 0">
+						<!-- xsl:text> escape-javadoc-characters3 </xsl:text -->
 						<xsl:call-template name="escape-javadoc-characters">
 							<xsl:with-param name="inputString">
-								<xsl:value-of select="."/>
+								<xsl:value-of select="." disable-output-escaping="yes"/>
 							</xsl:with-param>
 						</xsl:call-template>
                     </xsl:when>
@@ -27512,10 +28746,16 @@ import org.web3d.x3d.jsail.*;</xsl:text>
 			<xsl:with-param name="inputString">
 				<xsl:call-template name="escape-lessthan-characters">
 					<xsl:with-param name="inputString">
-						<!-- keep escape-ampersand-characters innermost so it doesn't get overzealous about escaped apostrophes or less-than characters -->
-						<xsl:call-template name="escape-ampersand-characters">
-								<xsl:with-param name="inputString" select="$inputString"/>
+						<!-- do not escape-quote-characters!
+						<xsl:call-template name="escape-quote-characters">
+								<xsl:with-param name="inputString">
+								</xsl:with-param>
 						</xsl:call-template>
+						-->
+									<!-- NOTE keep escape-ampersand-characters innermost so it doesn't get overzealous about escaped apostrophes or less-than characters -->
+									<xsl:call-template name="escape-ampersand-characters">
+										<xsl:with-param name="inputString" select="$inputString"/>
+									</xsl:call-template>
 					</xsl:with-param>
 				</xsl:call-template>
 			</xsl:with-param>
@@ -27562,6 +28802,26 @@ import org.web3d.x3d.jsail.*;</xsl:text>
         </xsl:choose>
     </xsl:template>
 
+    <xsl:template name="escape-quote-characters">
+        <xsl:param name="inputString"><xsl:text></xsl:text><!-- default value is empty --></xsl:param>
+        <!-- debug:  <xsl:text>//######&#10;</xsl:text> -->
+        <!-- debug:  <xsl:message><xsl:text>### inputString received: </xsl:text><xsl:value-of select="$inputString"/></xsl:message> -->
+        <xsl:choose>
+            <!-- &#62; is &gt; -->
+            <xsl:when test="contains($inputString,'&#34;')">
+                <xsl:value-of select="substring-before($inputString,'&#34;')" disable-output-escaping="yes"/>
+                <xsl:text disable-output-escaping="no">&amp;</xsl:text>
+                <xsl:text disable-output-escaping="no">#34;</xsl:text>
+                <xsl:call-template name="escape-quote-characters"> <!-- tail recursion -->
+                    <xsl:with-param name="inputString" select="substring-after($inputString,'&#34;')"/>
+                </xsl:call-template>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="$inputString" disable-output-escaping="yes"/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+
     <xsl:template name="escape-ampersand-characters">
         <xsl:param name="inputString"><xsl:text></xsl:text><!-- default value is empty --></xsl:param>
         <!-- debug:  <xsl:text>//######&#10;</xsl:text> -->
@@ -27579,15 +28839,6 @@ import org.web3d.x3d.jsail.*;</xsl:text>
                     <xsl:with-param name="inputString" select="substring-after($inputString,'&amp;amp;')"/>
                 </xsl:call-template>
             </xsl:when>
-            <xsl:when test="contains($inputString,'&amp;#38;') and not(contains(substring-before($inputString,'&amp;#38;'),'&amp;'))">
-                <xsl:value-of select="substring-before($inputString,'&amp;amp;')" disable-output-escaping="yes"/>
-                <xsl:text disable-output-escaping="yes">&amp;</xsl:text>
-                <xsl:text disable-output-escaping="yes">#38;</xsl:text>
-               <!-- <xsl:text disable-output-escaping="yes">amp;</xsl:text>-->
-                <xsl:call-template name="escape-ampersand-characters"> <!-- tail recursion -->
-                    <xsl:with-param name="inputString" select="substring-after($inputString,'&amp;amp;')"/>
-                </xsl:call-template>
-            </xsl:when>
             <xsl:when test="contains($inputString,'&amp;')">
                 <xsl:value-of select="substring-before($inputString,'&amp;')" disable-output-escaping="yes"/>
                 <xsl:text disable-output-escaping="yes">&amp;</xsl:text>
@@ -27596,10 +28847,100 @@ import org.web3d.x3d.jsail.*;</xsl:text>
                     <xsl:with-param name="inputString" select="substring-after($inputString,'&amp;')"/>
                 </xsl:call-template>
             </xsl:when>
+			<!-- enable to support debugging
+            <xsl:when test="true()">
+                <xsl:value-of select="$inputString" disable-output-escaping="yes"/>
+            </xsl:when>
+			-->
+			<!-- buggy and no longer needed apparently
+            <xsl:when test="contains($inputString,'&amp;#38;') and not(contains(substring-before($inputString,'&amp;#38;'),'&amp;'))">
+                <xsl:value-of select="substring-before($inputString,'&amp;amp;')" disable-output-escaping="yes"/>
+                <xsl:text disable-output-escaping="yes">&amp;</xsl:text>
+                <xsl:text disable-output-escaping="yes">#38;</xsl:text>
+                <xsl:call-template name="escape-ampersand-characters">
+                    <xsl:with-param name="inputString" select="substring-after($inputString,'&amp;amp;')"/>
+                </xsl:call-template>
+            </xsl:when>
+            <xsl:when test="contains($inputString,'&amp;#') and not(contains(substring-before($inputString,'&amp;#'),'&amp;'))">
+                <xsl:value-of select="substring-before($inputString,'&amp;#')" disable-output-escaping="yes"/>
+                <xsl:text disable-output-escaping="yes">&amp;</xsl:text>
+                <xsl:text disable-output-escaping="yes">amp;#</xsl:text>
+                <xsl:call-template name="escape-ampersand-characters">
+                    <xsl:with-param name="inputString" select="substring-after($inputString,'&amp;#')"/>
+                </xsl:call-template>
+            </xsl:when> -->
             <xsl:otherwise>
                 <xsl:value-of select="$inputString" disable-output-escaping="yes"/>
             </xsl:otherwise>
         </xsl:choose>
+    </xsl:template>
+
+    <xsl:template name="bulletize-hints-warnings">
+        <xsl:param name="tooltipText"><xsl:text></xsl:text><!-- default value is empty --></xsl:param>
+		
+		<xsl:variable name="containsHintWarning" select="contains($tooltipText,'Hint:') or contains($tooltipText,'Warning:')"/>
+		<xsl:if test="(string-length($tooltipText) > 0)">
+			<xsl:choose>
+				<xsl:when test="$containsHintWarning">
+					<xsl:variable name="preambleHint"    select="normalize-space(substring-before($tooltipText,'Hint:'))"/>
+					<xsl:variable name="preambleWarning" select="normalize-space(substring-before($tooltipText,'Warning:'))"/>
+					<xsl:choose>
+						<xsl:when test="(string-length($preambleHint) > 0) and 
+										 ((string-length($preambleWarning) = 0) or (string-length($preambleWarning) > string-length($preambleHint)))">
+							<xsl:value-of select="$preambleHint" disable-output-escaping="yes"/>
+							<xsl:text>&#10;</xsl:text>
+							<xsl:text> * </xsl:text>
+							<xsl:text disable-output-escaping="yes">&lt;ul&gt;</xsl:text>
+							<xsl:call-template name="insert-javadoc-line-breaks-recurse">
+								<xsl:with-param name="inputString">
+									<xsl:value-of select="substring-after(normalize-space($tooltipText),$preambleHint)" disable-output-escaping="yes"/>
+								</xsl:with-param>
+								<xsl:with-param name="breakText1"><xsl:text>Hint:</xsl:text></xsl:with-param>
+								<xsl:with-param name="breakText2"><xsl:text>Warning:</xsl:text></xsl:with-param>
+							</xsl:call-template>
+							<xsl:text>&#10;</xsl:text>
+							<xsl:text> * </xsl:text>
+							<xsl:text disable-output-escaping="yes">&lt;/ul&gt;</xsl:text>
+						</xsl:when>
+						<xsl:otherwise>
+							<xsl:value-of select="$preambleWarning" disable-output-escaping="yes"/>
+							<xsl:text>&#10;</xsl:text>
+							<xsl:text> * </xsl:text>
+							<xsl:text disable-output-escaping="yes">&lt;ul&gt;</xsl:text>
+							<xsl:call-template name="insert-javadoc-line-breaks-recurse">
+								<xsl:with-param name="inputString">
+									<xsl:value-of select="substring-after(normalize-space($tooltipText),$preambleWarning)" disable-output-escaping="yes"/>
+								</xsl:with-param>
+								<xsl:with-param name="breakText1"><xsl:text>Hint:</xsl:text></xsl:with-param>
+								<xsl:with-param name="breakText2"><xsl:text>Warning:</xsl:text></xsl:with-param>
+							</xsl:call-template>
+							<xsl:text>&#10;</xsl:text>
+							<xsl:text> * </xsl:text>
+							<xsl:text disable-output-escaping="yes">&lt;/ul&gt;</xsl:text>
+						</xsl:otherwise>
+					</xsl:choose>
+				</xsl:when>
+				<xsl:otherwise>
+					<!-- xsl:text> escape-javadoc-characters4 </xsl:text -->
+					<xsl:call-template name="escape-javadoc-characters">
+						<xsl:with-param name="inputString">
+							<xsl:value-of select="$tooltipText" disable-output-escaping="yes"/>
+						</xsl:with-param>
+					</xsl:call-template>
+				</xsl:otherwise>
+			</xsl:choose>
+			<!--
+			<xsl:text>&#10;</xsl:text>
+			<xsl:text> * </xsl:text>
+			<xsl:text disable-output-escaping="yes">&lt;br&gt;</xsl:text><!- - line break - ->
+			<xsl:text>&#10;</xsl:text>
+			-->
+			<xsl:if test="not($containsHintWarning)">
+				<xsl:text> * </xsl:text>
+				<xsl:text disable-output-escaping="yes">&lt;br&gt;</xsl:text><!-- line break -->
+				<xsl:text>&#10;</xsl:text>
+			</xsl:if>				
+		</xsl:if>
     </xsl:template>
 
 </xsl:stylesheet>

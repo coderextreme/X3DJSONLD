@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- You may freely edit this file. See commented blocks below for -->
+<!-- some examples of how to customize the build. -->
+<!-- (If you delete it and reopen the project it will be recreated.) -->
+<!-- By default, only the Clean and Build commands use this build script. -->
+<!-- Commands such as Run, Debug, and Test only use this build script if -->
+<!-- the Compile on Save feature is turned off for the project. -->
+<!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
+<!-- in the project's Project Properties dialog box.-->
+
+<project name="X3D Java SAI Library" default="default" basedir=".">
+    <description>Builds, tests, and runs the X3D Java SAI Library project.</description>
+    <!-- not using nbproject default build tasks: import file="nbproject/build-impl.xml"/ -->
+	
+    <property name="javac.verbose"            value="-verbose"/>
+
+    <!-- http://stackoverflow.com/questions/919692/how-to-execute-xslt-2-0-with-ant -->
+    <property name="saxon.dir"               value="lib" description="relative path"/>
+    <property name="saxon.jar"               value="saxon9he.jar"/>
+
+    <!-- http://openexi.sourceforge.net -->
+    <!-- https://sourceforge.net/projects/openexi/files -->
+    <property name="openexi.dir"             value="lib" description="relative path"/>
+	<property name="openexi.jar"             value="nagasena.jar"/>
+    
+    <!-- https://exificient.github.io/java -->
+    <!-- https://exificient.github.io/java/exificient-gui-jar-with-dependencies.jar -->
+    <property name="exificient.dir"          value="lib" description="relative path"/>
+	<property name="exificient.jar"          value="exificient-gui-jar-with-dependencies.jar"/>
+
+    <property name="javac.verbose"           value="-verbose"/>
+    <property name="java.dir"                value="."/>
+    <property name="java.classes.dir"        value="classes"/>
+    <property name="java.examples.dir"       value="examples"/>
+    <property name="java.jars.dir"           value="${java.dir}/jars"/>
+    <property name="java.lib.dir"            location="lib"/>
+    <property name="java.src.dir"            value="${java.dir}/src"/>
+    <property name="nashorn.dir"             value="nashorn"/>
+    <property name="src.org.web3d.x3d.jsail" value="${java.src.dir}/org/web3d/x3d/jsail"/><!-- concretes  -->
+    <property name="src.org.web3d.x3d.sai"   value="${java.src.dir}/org/web3d/x3d/sai"/>  <!-- interfaces -->
+	<property name="jsai.classes.archive.jar.name" value="X3DJSAIL.3.3.classes.jar"/>
+	<property name=   "jsai.full.archive.jar.name" value="X3DJSAIL.3.3.full.jar"/>
+	
+    <target name="all" depends="compile.examples,run.examples"/>
+
+    <target name="build" depends="">
+            <ant antfile="../build.xml" target="CreateX3dSceneAccessInterfaceJava"/>
+            <antcall target="compile.examples"/>
+            <antcall target="run.examples"/>
+    </target>
+
+    <target name="compile.examples">
+            <javac srcdir="examples" destdir="classes" debug="on" verbose="${javac.verbose}" 
+                   classpath="jars/X3DJSAIL.3.3.full.jar" includeantruntime="false"/>
+    </target>
+
+    <target name="run.examples">
+            <java classname="HelloWorldProgram" dir="classes">
+                 <classpath>
+					<pathelement location="jars/X3DJSAIL.3.3.full.jar"/>
+					<pathelement path="classes"/>
+                 </classpath>
+            </java>
+    </target>
+
+    <target name="view.javadoc.local" description="view local javadoc in web browser (Netbeans only)">
+        <nbbrowse file="javadoc/index.html" />
+        <!-- TODO implementation-independent approach if possible.  other Ant approachs have to be customized for each OS -->
+    </target>
+
+    <target name="view.javadoc.online" description="view online javadoc in web browser (Netbeans only)">
+        <nbbrowse url="http://www.web3d.org/specifications/java/javadoc/index.html" />
+    </target>
+
+    <target name="test.nashorn" description="Test Nashorn output from X3DJSAIL">
+		<echo message="Compile:"/>
+		<javac srcdir ="${java.examples.dir}"
+			   classpath=""
+			   destdir="${java.classes.dir}"
+			   debug="on"
+			   verbose="${javac.verbose}"
+			   includeantruntime="false">
+		</javac>
+		<echo message="Run:"/>
+		<java classname="HelloWorldProgramOutput" classpath="${java.classes.dir};${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
+			<arg value="js"/>
+			<arg value="nashorn/examples/HelloWorldProgramOutput.js"/>
+		</java>
+		<echo message="script:"/>
+		<script language="nashorn">
+			<classpath>
+				<fileset dir="${saxon.dir}"      includes="${saxon.jar}"/>
+				<fileset dir="${exificient.dir}" includes="${exificient.jar}"/>
+				<fileset dir="${openexi.dir}"    includes="${openexi.jar}"/>
+				<fileset dir="${java.jars.dir}"  includes="${jsai.classes.archive.jar.name}"/>
+			</classpath>
+			load('nashorn/jvm-npm.js');
+			load('nashorn/repeatPolyfill.js');
+			load('nashorn/examples/HelloWorldProgramOutput.js.intermediate.js');
+			load('nashorn/examples/HelloWorldProgramOutput.js');
+		</script>
+    </target>
+
+    <!--
+
+    There exist several targets which are by default empty and which can be 
+    used for execution of your tasks. These targets are usually executed 
+    before and after some main targets. They are: 
+
+      -pre-init:                 called before initialization of project properties
+      -post-init:                called after initialization of project properties
+      -pre-compile:              called before javac compilation
+      -post-compile:             called after javac compilation
+      -pre-compile-single:       called before javac compilation of single file
+      -post-compile-single:      called after javac compilation of single file
+      -pre-compile-test:         called before javac compilation of JUnit tests
+      -post-compile-test:        called after javac compilation of JUnit tests
+      -pre-compile-test-single:  called before javac compilation of single JUnit test
+      -post-compile-test-single: called after javac compilation of single JUunit test
+      -pre-jar:                  called before JAR building
+      -post-jar:                 called after JAR building
+      -post-clean:               called after cleaning build products
+
+    (Targets beginning with '-' are not intended to be called on their own.)
+
+    Example of inserting an obfuscator after compilation could look like this:
+
+        <target name="-post-compile">
+            <obfuscate>
+                <fileset dir="${build.classes.dir}"/>
+            </obfuscate>
+        </target>
+
+    For list of available properties check the imported 
+    nbproject/build-impl.xml file. 
+
+
+    Another way to customize the build is by overriding existing main targets.
+    The targets of interest are: 
+
+      -init-macrodef-javac:     defines macro for javac compilation
+      -init-macrodef-junit:     defines macro for junit execution
+      -init-macrodef-debug:     defines macro for class debugging
+      -init-macrodef-java:      defines macro for class execution
+      -do-jar:                  JAR building
+      run:                      execution of project 
+      -javadoc-build:           Javadoc generation
+      test-report:              JUnit report generation
+
+    An example of overriding the target for project execution could look like this:
+
+        <target name="run" depends="X3D_Java_SAI_Library-impl.jar">
+            <exec dir="bin" executable="launcher.exe">
+                <arg file="${dist.jar}"/>
+            </exec>
+        </target>
+
+    Notice that the overridden target depends on the jar target and not only on 
+    the compile target as the regular run target does. Again, for a list of available 
+    properties which you can use, check the target you are overriding in the
+    nbproject/build-impl.xml file. 
+
+    -->
+</project>

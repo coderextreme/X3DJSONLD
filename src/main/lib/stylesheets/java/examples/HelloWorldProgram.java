@@ -15,6 +15,7 @@
  */
 
 import java.io.File;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -56,8 +57,11 @@ public class HelloWorldProgram
 	// global scope
 	private final headObject        head;
 	private final SceneObject      scene;
-	private final String nameArtDeco01Material = "ArtDeco01Material";
-    private final String      subdirectoryPath = "examples/";
+	private final String   nameArtDeco01Material = "ArtDeco01Material";
+    private final String        subdirectoryPath = "examples/";
+	private       File          sourceFile;
+    private       DecimalFormat formatPrecision2 = new DecimalFormat ("#0.00");
+	private       String        compressionRatio;
 
 	/** Constructor */
 	HelloWorldProgram ()
@@ -77,12 +81,12 @@ public class HelloWorldProgram
                 thisProgram.validate(); // trace invocation
 	}
         
-        private String validate()
-        {
-            if (x3dModel == null)
-                buildModelSceneGraph();
-            return x3dModel.validationReport();
-        }
+	private String validate()
+	{
+		if (x3dModel == null)
+			buildModelSceneGraph();
+		return x3dModel.validationReport();
+	}
 	
 	private void showSceneResults()
 	{
@@ -118,15 +122,25 @@ public class HelloWorldProgram
 		System.out.println ("===========================================");
 		System.out.println (x3dModel.toStringX3D());
 		System.out.println ("===========================================");
+//		System.out.println (x3dModel.toStringXML()); // TODO
+//		System.out.println ("===========================================");
 		System.out.println (x3dModel.toStringClassicVRML());
 		System.out.println ("===========================================");
 		System.out.println (x3dModel.toStringVRML97());
 		System.out.println ("===========================================");
 		
-		System.out.println ("Create X3D XML Encoding of model");
+		System.out.println ("Create .x3d (X3D XML Encoding) version of model");
 		String savedFileName    = thisSceneName + X3DObject.FILE_EXTENSION_X3D;
 		File   savedFile        = x3dModel.toFileX3D(savedFileName);
 		boolean savedFileExists = !(savedFile == null);
+		System.out.println ("helloWorldObject.toFileX3D(\"" + savedFileName + "\") success: " + savedFileExists);
+		if (!(savedFile == null))
+			System.out.println (savedFile.getAbsolutePath());
+		System.out.println ("===========================================");
+		System.out.println ("Create .xml (X3D XML Encoding) version of model");
+		savedFileName    = thisSceneName + X3DObject.FILE_EXTENSION_XML;
+		savedFile        = x3dModel.toFileX3D(savedFileName);
+		savedFileExists = !(savedFile == null);
 		System.out.println ("helloWorldObject.toFileX3D(\"" + savedFileName + "\") success: " + savedFileExists);
 		if (!(savedFile == null))
 			System.out.println (savedFile.getAbsolutePath());
@@ -151,9 +165,9 @@ public class HelloWorldProgram
 		System.out.println ("===========================================");
 		
 		ConfigurationProperties.setDebugModeActive(false);
-		ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_saxon);      // default
-//		ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_nativeJava); // built-in version
-		System.out.println ("Create pretty-print HTML documentation of model using XSLT_ENGINE_saxon=" + ConfigurationProperties.getXsltEngine()
+		ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_SAXON);      // default
+//		ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA); // built-in version
+		System.out.println ("Create pretty-print HTML documentation of model using ConfigurationProperties.getXsltEngine()=" + ConfigurationProperties.getXsltEngine()
 			+ " and stylesheet " + ConfigurationProperties.STYLESHEET_htmlDocumentation);
 		ConfigurationProperties.setDeleteIntermediateFiles(true);
 		savedFileName   = thisSceneName + X3DObject.FILE_EXTENSION_HTML;
@@ -165,27 +179,40 @@ public class HelloWorldProgram
 		ConfigurationProperties.setDebugModeActive(false);
 		System.out.println ("===========================================");
 		
-		ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_nativeJava); // built-in version avoids unwanted line breaks
+		ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA); // built-in version avoids unwanted line breaks
 		System.out.println ("Create concise Java source of model using stylesheet " + ConfigurationProperties.STYLESHEET_JAVA);
 		savedFileName   = thisSceneName + X3DObject.FILE_EXTENSION_JAVA;
 		savedFile       = x3dModel.toFileJava(savedFileName, true); // include license
 		savedFileExists = !(savedFile == null);
 		System.out.println ("helloWorldObject.toFileJava(\"" + savedFileName + "\") success: " + savedFileExists);
 		if (!(savedFile == null))
+		{
 			System.out.println (savedFile.getAbsolutePath());
+			System.out.println ("Test toStringJava()");
+			System.out.println ();
+			System.out.println (x3dModel.toStringJava());
+		}
 		System.out.println ("===========================================");
 		
-		ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_nativeJava); // built-in version avoids unwanted line breaks
+		ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA); // built-in version avoids unwanted line breaks
 		System.out.println ("Create JSON Encoding of model using stylesheet " + ConfigurationProperties.STYLESHEET_JSON);
 		savedFileName   = thisSceneName + X3DObject.FILE_EXTENSION_JSON;
 		savedFile       = x3dModel.toFileJSON(savedFileName);
 		savedFileExists = !(savedFile == null);
 		System.out.println ("helloWorldObject.toFileJSON(\"" + savedFileName + "\") success: " + savedFileExists);
 		if (!(savedFile == null))
+		{
 			System.out.println (savedFile.getAbsolutePath());
+			System.out.println ("Test toStringJSON()");
+			System.out.println ();
+			System.out.println (x3dModel.toStringJSON());
+		}
 		System.out.println ("===========================================");
+//		System.out.println ("Test toStringJavaScript()");
+//		System.out.println (x3dModel.toStringJavaScript()); // TODO
+//		System.out.println ("===========================================");
 		
-		ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_saxon);	   // default
+		ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_SAXON);	   // default
 		System.out.println ("Create displayable scene page rendered with X3DOM using stylesheet " + ConfigurationProperties.STYLESHEET_X3DOM);
 		savedFileName   = thisSceneName + "X3dom" + X3DObject.FILE_EXTENSION_XHTML;
 		savedFile       = x3dModel.toFileX3DOM(savedFileName);
@@ -197,7 +224,7 @@ public class HelloWorldProgram
 		
 		System.out.println ("Create displayable scene page rendered with X_ITE (formerly Cobweb) using stylesheet " + ConfigurationProperties.STYLESHEET_X3DOM);
 		savedFileName   = thisSceneName + "X_ITE" + X3DObject.FILE_EXTENSION_HTML;
-		savedFile       = x3dModel.toFileX_ITE(thisSceneName + ".x3d", savedFileName);
+		savedFile       = x3dModel.toFileX_ITE(thisSceneName + X3DObject.FILE_EXTENSION_X3D, savedFileName);
 		savedFileExists = !(savedFile == null);
 		System.out.println ("helloWorldObject.toFileX3DOM(\"" + savedFileName + "\") success: " + savedFileExists);
 		if (!(savedFile == null))
@@ -207,9 +234,100 @@ public class HelloWorldProgram
 		System.out.println ("Reload and provide text output using Java DOM, which includes default attribute values");
 		testX3DLoaderObjectDomDocument();
 		System.out.println ("===========================================");
-		System.out.println ("Test toStringJSON()");
-		System.out.println (x3dModel.toStringJSON());
+		System.out.println ("Test loadModelFromFileX3D(String) and loadModelFromFileX3D(File)");
+		System.out.println ("checking both .x3d and .xml encodings:");
+		X3DObject newX3DModel = new X3DObject();
+		boolean loadSuccess = newX3DModel.loadModelFromFileX3D(thisSceneName + X3DObject.FILE_EXTENSION_X3D) &&
+				              newX3DModel.loadModelFromFileX3D(thisSceneName + X3DObject.FILE_EXTENSION_XML); // also invokes loadModelFromFileX3D(File)
+		String validationResult = newX3DModel.validate();
+		if (validationResult.isEmpty())
+			validationResult = "success";
+		System.out.println ("newX3DModel loadSuccess=" + loadSuccess + ", isEmpty()=" + newX3DModel.isEmpty() + ", validate()=" + validationResult);
+		
 		System.out.println ("===========================================");
+		System.out.println ("===========================================");
+		System.out.println ("Check file sizes for various forms of compression");
+		System.out.println ("Source file " + sourceFile.getName() + " " + sourceFile.length() + " bytes");
+		// TODO Decimal Format
+		System.out.println ("===========================================");
+		System.out.println ("Test toFileEXI() with EXIficient");
+		savedFileName   = thisSceneName + ".EXIFICIENT" + X3DObject.FILE_EXTENSION_EXI;
+		File exiFile   = x3dModel.toFileEXI(savedFileName);
+		compressionRatio = formatPrecision2.format((double)exiFile.length()/(double)sourceFile.length() * 100.0);
+		System.out.println (exiFile.getName() + "  filesize " + exiFile.length() + " bytes, compression " + compressionRatio + "% of original");
+		System.out.println ("===========================================");
+		System.out.println ("Test fromFileEXI() with EXIficient");
+		// savedFileName from before
+		X3DObject exiModel = new X3DObject();
+		boolean fromFileEXIsuccess = exiModel.fromFileEXI(savedFileName);
+		System.out.println ("  fromFileEXIsuccess=" + fromFileEXIsuccess + " for " + savedFileName);
+		if (fromFileEXIsuccess)
+		{
+			String exiModelValidation = exiModel.validate();
+			if    (exiModelValidation.isEmpty())
+				   exiModelValidation += "success";
+			System.out.println ("exiModel.validate() results: " + exiModelValidation);
+		}
+		System.out.println ("===========================================");
+		System.out.println ("Test toFileEXI() with OpenEXI: not yet implemented");
+//		// TODO set configuration parameter
+//		savedFileName   = thisSceneName + "OPENEXI" + X3DObject.FILE_EXTENSION_EXI;
+//		exiFile   = x3dModel.toFileEXI(savedFileName);
+//		compressionRatio = formatPrecision2.format((double)exiFile.length()/(double)sourceFile.length() * 100.0);
+//		System.out.println (exiFile.getName() + "  filesize " + exiFile.length() + " bytes, compression " + compressionRatio + "% of original");
+		System.out.println ("===========================================");
+		System.out.println ("Test fromFileEXI() with OpenEXI: not yet implemented");
+		System.out.println ("===========================================");
+		System.out.println ("Test toFileGZIP()");
+		savedFileName   = thisSceneName + X3DObject.FILE_EXTENSION_GZIP;
+		File gzipFile   = x3dModel.toFileGZIP(savedFileName);
+		compressionRatio = formatPrecision2.format((double)gzipFile.length()/(double)sourceFile.length() * 100.0);
+		System.out.println (gzipFile.getName() + "  filesize " + gzipFile.length() + " bytes, compression " + compressionRatio + "% of original");
+		System.out.println ("===========================================");
+		System.out.println ("Test toFileZip()");
+		String savedZipName = thisSceneName + X3DObject.FILE_EXTENSION_ZIP;
+		savedFileName   = thisSceneName + X3DObject.FILE_EXTENSION_X3D;
+		File zipFile    = x3dModel.toFileZIP(savedZipName, savedFileName);
+		compressionRatio = formatPrecision2.format((double)zipFile.length()/(double)sourceFile.length() * 100.0);
+		System.out.println (zipFile.getName() + " filesize " + zipFile.length() + " bytes, compression " + compressionRatio + "% of original");
+		
+		System.out.println ("===========================================");
+		System.out.println ("===========================================");
+		System.out.println ("Test CommandLine invocations");
+		String[] args = {"-help" };
+		System.out.println ("CommandLine " + Arrays.toString(args));
+		CommandLine.main (args); // run these commands
+		System.out.println ("===========================================");
+		args = new String[] {"HelloWorldProgramOutput.x3d", "-toX3D", "-file", "HelloWorldProgramOutput.CommandLine.x3d" };
+		System.out.println ("CommandLine " + Arrays.toString(args));
+		CommandLine.main (args); // run these commands
+		System.out.println ("===========================================");
+		args = new String[] {"HelloWorldProgramOutput.x3d", "-EXIFICIENT", "-toEXI", "-file", "HelloWorldProgramOutput.CommandLine.EXIFICIENT.exi"};
+		System.out.println ("CommandLine " + Arrays.toString(args));
+		CommandLine.main (args); // run these commands
+		System.out.println ("===========================================");
+		args = new String[] {"HelloWorldProgramOutput.x3d", "-OpenEXI" };
+		// TODO continue testing when ready:  , "-toEXI" , "-file", "HelloWorldProgramOutput.CommandLine.OPENEXI.exi"};
+		System.out.println ("CommandLine " + Arrays.toString(args));
+		CommandLine.main (args); // run these commands
+		System.out.println ("===========================================");
+		args = new String[] {"HelloWorldProgramOutput.x3d", "-toGZIP", "-file", "HelloWorldProgramOutput.CommandLine.x3d.gz"};
+		System.out.println ("CommandLine " + Arrays.toString(args));
+		CommandLine.main (args); // run these commands
+		System.out.println ("===========================================");
+		args = new String[] {"HelloWorldProgramOutput.CommandLine.x3d.gz", "-fromGZIP"};
+		System.out.println ("CommandLine " + Arrays.toString(args));
+		CommandLine.main (args); // run these commands
+		System.out.println ("===========================================");
+		args = new String[] {"HelloWorldProgramOutput.x3d", "-toZIP",  "-file", "HelloWorldProgramOutput.CommandLine.x3d.zip"};
+		System.out.println ("CommandLine " + Arrays.toString(args));
+		CommandLine.main (args); // run these commands
+		System.out.println ("===========================================");
+		args = new String[] {"HelloWorldProgramOutput.CommandLine.x3d.zip", "-fromZIP"};
+		System.out.println ("CommandLine " + Arrays.toString(args));
+		CommandLine.main (args); // run these commands
+		System.out.println ("===========================================");
+		System.out.println ("HelloWorldProgram complete.");
 	}
 	
 	@SuppressWarnings({"UnusedAssignment", "static-access"}) // option to hide warnings when checking for allowable constructs during development
@@ -688,8 +806,11 @@ public class HelloWorldProgram
 		    ProtoInterfaceObject              protoInterface = new       ProtoInterfaceObject();
 		         ProtoBodyObject              protoBody      = new       ProtoBodyObject     ();
 			 // ProtoInstanceObject has two constructors, either no value, or else both DEFname and prototypeName
-		     ProtoInstanceObject      ArtDeco01ProtoInstance = new       ProtoInstanceObject ().setName("ArtDeco01");
-		     ProtoInstanceObject      ArtDeco02ProtoInstance = new       ProtoInstanceObject ().setName("ArtDeco02");
+		     ProtoInstanceObject      ArtDeco01ProtoInstance = new       ProtoInstanceObject ().setName("ArtDeco01Material")
+								                                                               .setContainerField ("material");
+		     ProtoInstanceObject      ArtDeco02ProtoInstance = new       ProtoInstanceObject ().setName("ArtDeco02Material")
+								                                                               .setDEF ("ArtDeco02MaterialDEF")
+								                                                               .setContainerField ("material");
 			      MaterialObject           ArtDeco01Material = new       MaterialObject      ();
 				  MFStringObject      ArtDeco01_url_MFString = new       MFStringObject      ();
 				        String[]   ArtDeco01_url_StringArray = new       String[] { "initial value" };
@@ -704,20 +825,20 @@ public class HelloWorldProgram
 			  description01Field.setName("description")
 							  .setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
 							  .setType(fieldObject.TYPE_SFSTRING)
-							  .setValue("ArtDeco01 prototype is a Material node")
+							  .setValue("ArtDeco01Material prototype is a Material node")
 							  .setAppinfo("tooltip for descriptionField");
 			  description01FieldValue.setName(description01Field.getName())
 //							  .setAppinfo("tooltip for description01Field") // TODO
-							  .setValue("ArtDeco01 can substitute for a Material node"); // overrides initial description01Field value
+							  .setValue("ArtDeco01Material can substitute for a Material node"); // overrides initial description01Field value
 			  description02Field.setName("description")
 							  .setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
 							  .setType(fieldObject.TYPE_SFSTRING)
-							  .setValue("ArtDeco02 is another Material node") // not legal for ExternProtoDeclare field, see test below
+							  .setValue("ArtDeco02Material is another Material node") // not legal for ExternProtoDeclare field, see test below
 							  .setAppinfo("tooltip for descriptionField");
 			  description02FieldValue.setName(description02Field.getName())
-							  .setValue("ArtDeco02 can substitute for another Material node"); // overrides initial description02Field value
+							  .setValue("ArtDeco02Material can substitute for another Material node"); // overrides initial description02Field value
 			  ArtDeco01ProtoDeclare.setName(nameArtDeco01Material)
-								   .setAppinfo("tooltip: ArtDeco01 prototype is a Material node")
+								   .setAppinfo("tooltip: ArtDeco01Material prototype is a Material node")
 								   .setProtoInterface(protoInterface)
 								   .setProtoBody(protoBody);
 					 protoInterface.setField(null); // test setting null - operation succeessfully ignored as expected, no exception thrown
@@ -743,16 +864,16 @@ public class HelloWorldProgram
 				         .setDiffuseColor(diffuseColor)
 				         .setSpecularColor(new SFColorObject(0.276305f, 0.11431f, 0.139857f));
 
-		ArtDeco01_url_MFString.append("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02");
+		ArtDeco01_url_MFString.append("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material");
 		// MFString SAI interface returns void, so method pipelining not possible.  Repeat as necessary.
-		ArtDeco01_url_MFString.append("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02");
+		ArtDeco01_url_MFString.append("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material");
 
 		// initial array size 1
-		ArtDeco01_url_StringArray[0] = "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02";
+		ArtDeco01_url_StringArray[0] = "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material";
 		// syntax to reinitialize size http://stackoverflow.com/questions/2564298/java-how-to-initialize-string
 		ArtDeco01_url_StringArray = new String[] 
-			{ "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02",
-			  "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02"
+			{ "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material",
+			  "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"
 			};
 
 		ArtDeco02ExternProtoDeclare.setName("ArtDeco02Material")
@@ -791,16 +912,25 @@ public class HelloWorldProgram
 
 		ShapeObject testShape1 = new ShapeObject("TestShape1"); // constructor also initializes DEF
 		ShapeObject testShape2 = new ShapeObject("TestShape2");
+		ShapeObject testShape3 = new ShapeObject("TestShape3");
 		AppearanceObject testAppearance1 = (new AppearanceObject("TestAppearance1")).setMaterial(new MaterialObject("TestToBeOverridden1"));
 		AppearanceObject testAppearance2 = (new AppearanceObject("TestAppearance2")).setMaterial(new MaterialObject("TestToBeOverridden2"));
-		testAppearance1.addComments("ArtDeco01 Material prototype goes here...").setMaterial(ArtDeco01ProtoInstance); // successful use of overloaded, specially typed method
-		testAppearance2.addComments("ArtDeco02 Material prototype goes here...").setMaterial(ArtDeco02ProtoInstance); // successful use of overloaded, specially typed method
+		AppearanceObject testAppearance3 = (new AppearanceObject("TestAppearance3")).setMaterial(new MaterialObject("TestToBeOverridden3"));
+		testAppearance1.addComments("ArtDeco01Material prototype goes here...").setMaterial(ArtDeco01ProtoInstance); // successful use of overloaded, specially typed method
+		testAppearance2.addComments("ArtDeco02Material prototype goes here...").setMaterial(ArtDeco02ProtoInstance); // successful use of overloaded, specially typed method
+		// test ProtoInstance USE
+		testAppearance3.addComments("ArtDeco02Material ProtoInstance USE goes here...");
+		testAppearance3.setMaterial(new ProtoInstanceObject().setUSE(ArtDeco02ProtoInstance.getDEF())
+								                             .setContainerField ("material")); 
 		testShape1.setAppearance(testAppearance1);
 		testShape2.setAppearance(testAppearance2);
+		testShape3.setAppearance(testAppearance3);
 		testShape1.setGeometry(new SphereObject().setRadius(0.001f)); // provide initial children to silence superflous Schematron warnings
 		testShape2.setGeometry(new ConeObject().setHeight(0.001f).setBottomRadius(0.001f));
+		testShape3.setGeometry(new CylinderObject().setHeight(0.001f).setRadius(0.001f));
 		scene.addChildren(testShape1);
 		scene.addChildren(testShape2);
+		scene.addChildren(testShape3);
 		
 		// prerequisite met: must first be fully connected to scene graph for function getNodeType() to find predecessor declaration
 		ArtDeco01ProtoInstance.addComments(new CommentsBlock("[HelloWorldProgram diagnostic] ArtDeco01ProtoInstance.getNodeType()=\"" + ArtDeco01ProtoInstance.getNodeType() + "\""));
@@ -913,17 +1043,22 @@ public class HelloWorldProgram
 		
 		String   soundExampleUrl = "http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d";
 		String[]    soundFileUrl = { "chimes.wav", "http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav" };
-		scene.addChild(new SoundObject().setSource(new AudioClipObject().setUrl(soundFileUrl))
-			 .addComments("Scene example fragment from " + soundExampleUrl));
+		scene.addChild(new SoundObject()
+				.setLocation(0, 1.6f, 0).addComments("set sound-ellipsoid location height at 1.6m to match typical avatar height")
+				.setSource(new AudioClipObject()
+						.setUrl(soundFileUrl).setDescription("chimes")
+						.addComments("Scene example fragment from " + soundExampleUrl)));
 		
 		String   movieExampleUrl = "http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d";
 		String[]    movieFileUrl = { "mpgsys.mpg", "http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg" };
 		scene.addChild(new SoundObject()
+				.setLocation(0, 1.6f, 0).addComments("set sound-ellipsoid location height at 1.6m to match typical avatar height")
 				.setSource(new MovieTextureObject()
-					.setUrl(movieFileUrl))
+					.setDescription("mpgsys.mpg from ConformanceNist suite")
+					.setUrl(movieFileUrl)
 					.addComments("Scene example fragment from " + movieExampleUrl)
 					.addComments("Expected containerField='source', allowed containerField values=" + 
-							new MFStringObject(new MovieTextureObject().getContainerFieldAlternateValues()).toStringX3D()));
+							new MFStringObject(new MovieTextureObject().getContainerFieldAlternateValues()).toStringX3D())));
                 CommentsBlock testComments = new CommentsBlock ();
                 String result;
                 result = ((AnchorObject.isNode() == true) && (siteAnchor.isNode() == true)) ? "success" : "failure";
@@ -1115,25 +1250,26 @@ public class HelloWorldProgram
 	X3DObject          reloadedX3dObjectTree;
 	File               reloadedFile;
 	/**
-         * Load the produced HelloWorldProgramOutput.x3d scene using X3DLoaderObject, then write resulting DOM back out to a file.
-         */
+	 * Load the produced HelloWorldProgramOutput.x3d scene using X3DLoaderObject, then write resulting DOM back out to a file.
+	 */
 	private void testX3DLoaderObjectDomDocument()
 	{
 		X3DLoaderObject x3dLoader = new X3DLoaderObject();
-		x3dLoader.loadX3DfromFile(thisSceneName + ".x3d");
+		x3dLoader.loadModelFromFileX3D(thisSceneName + ".x3d");
+		sourceFile = new File (thisSceneName + ".x3d");
 //		boolean successfulLoad = x3dLoader.loadX3DfromFile(new File(thisSceneName + ".x3d")); // alternate form, tested OK
 		if (x3dLoader.isLoadSuccessful())
 		{
-                        if (x3dLoader.getX3dObjectTree() instanceof X3DObject)
-                        {
-                            System.out.println ("===========================================");
-                            System.out.println("Test success: x3dLoader.loadX3DfromXML(" + thisSceneName + ".x3d), " + 
-                                                             "x3dLoader.getX3dObjectTree()");
-                            System.out.println ("===========================================");
-                        }
+			if (x3dLoader.getX3dObjectTree() instanceof X3DObject)
+			{
+				System.out.println ("===========================================");
+				System.out.println("Test success: x3dLoader.loadX3DfromXML(" + thisSceneName + ".x3d), " + 
+												 "x3dLoader.getX3dObjectTree()");
+				System.out.println ("===========================================");
+			}
 			else System.out.println("Test failure: x3dLoader.loadX3DfromXML(" + thisSceneName + ".x3d), " + 
                                                              "x3dLoader.getgetX3dObjectTree()");
-                        // alternative approach to loading:
+            // alternative approach to loading:
 			domDocument       = x3dLoader.getDomDocument();
 			domImplementation = domDocument.getImplementation(); // debug use only
 			domDocumentToStringX3D = x3dLoader.toStringX3D(domDocument);
@@ -1144,7 +1280,7 @@ public class HelloWorldProgram
 
 			System.out.println ("===========================================");
 			x3dLoader.toX3dObjectTree(domDocument); 
-			// TODO problem! garbled scene tree has good structure but not returning correct attribute values
+			// TODO problem (still? confirm) garbled scene tree has good structure but not returning correct attribute values
 			reloadedX3dObjectTree = (X3DObject) x3dLoader.getX3dObjectTree();
 			x3dLoader.getValidationResult(); // debug inspection
 			String reloadedFileName = thisSceneName + ".Reloaded" + X3DObject.FILE_EXTENSION_X3D;

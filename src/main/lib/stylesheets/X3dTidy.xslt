@@ -72,6 +72,7 @@ POSSIBILITY OF SUCH DAMAGE.
     <xsl:param name="title"                       ><xsl:text><!-- default title value for file name is empty --></xsl:text></xsl:param>
     <xsl:param name="modifyX3dVersion"            ><xsl:text>true</xsl:text></xsl:param>
     <xsl:param name="revisedX3dVersion"           ><xsl:text>3.3</xsl:text></xsl:param>
+    <xsl:param name="reviseCurrentDate"           ><xsl:text>true</xsl:text></xsl:param>
     <xsl:param name="fixDateFormats"              ><xsl:text>true</xsl:text></xsl:param>
     <xsl:param name="fixMFStringQuotes"           ><xsl:text>true</xsl:text></xsl:param>
     <xsl:param name="fixGeoSystemMetadata"        ><xsl:text>true</xsl:text></xsl:param>
@@ -220,7 +221,7 @@ POSSIBILITY OF SUCH DAMAGE.
             <xsl:when test="($modifyX3dVersion = 'true') and ($revisedX3dVersion != //X3D/@version)">
                 <xsl:value-of select="$revisedX3dVersion"/>
                 <xsl:message>
-                    <xsl:text>*** modifyX3dVersion: changed version to </xsl:text>
+                    <xsl:text>*** modifyX3dVersion: change version to </xsl:text>
                     <xsl:value-of select="$revisedX3dVersion"/>
                     <xsl:text> (original version='</xsl:text>
                     <xsl:value-of select="//X3D/@version"/>
@@ -281,11 +282,11 @@ POSSIBILITY OF SUCH DAMAGE.
 &lt;!DOCTYPE X3D PUBLIC &quot;http://www.web3d.org/specifications/x3d-3.0.dtd&quot; &quot;file:///www.web3d.org/specifications/x3d-3.0.dtd&quot;&gt;
 -->
           </xsl:otherwise>
-      </xsl:choose>
+		</xsl:choose>
         
         <!-- Decide whether to convert or not -->
         <xsl:choose>
-            <xsl:when test="($performTidy=false)">
+            <xsl:when test="($performTidy=false())">
                 <xsl:message>X3dTidy.xslt:  no node conversion performed, copied source document.</xsl:message>
                 <xsl:copy-of select="@* | * | comment() | processing-instruction()"/>
                 <!-- line break at end: no
@@ -294,9 +295,10 @@ POSSIBILITY OF SUCH DAMAGE.
             <xsl:otherwise>
                 <!-- recurse to handle all document nodes, attributes and text blocks.  TODO  | text() | node() ? -->
                 <xsl:apply-templates select="* | comment() | processing-instruction()" />
+				<!-- line break after last line -->
+				<xsl:text>&#10;</xsl:text>
             </xsl:otherwise>
         </xsl:choose>
-
       
     </xsl:template>
 
@@ -351,7 +353,7 @@ POSSIBILITY OF SUCH DAMAGE.
                     <xsl:apply-templates select="meta[@name='title']"/>
                     <xsl:if test="meta[@name='title'] and not(meta[1][@name='title'])">
                         <xsl:message>
-                            <xsl:text disable-output-escaping="yes">*** moved to top: &lt;meta content='</xsl:text>
+                            <xsl:text disable-output-escaping="yes">*** move to top: &lt;meta content='</xsl:text>
                             <xsl:value-of select="meta[@name='title']/@content"/>
                             <xsl:text disable-output-escaping="yes">' name='title'/&gt;</xsl:text>
                         </xsl:message>
@@ -536,7 +538,7 @@ POSSIBILITY OF SUCH DAMAGE.
                                             <xsl:text>ecmascript:</xsl:text>
                                             <xsl:value-of select="substring-after(substring(.,1,$scriptLength),'ecmascript')" disable-output-escaping="yes"/>
                                             <xsl:message>
-                                                <xsl:text>*** error, changed </xsl:text>
+                                                <xsl:text>*** error, change </xsl:text>
                                                 <xsl:value-of select="$ScriptReference" disable-output-escaping="yes"/>
                                                 <xsl:text> CDATA prefix from 'ecmascript' to 'ecmascript:' </xsl:text>
                                             </xsl:message>
@@ -554,7 +556,7 @@ POSSIBILITY OF SUCH DAMAGE.
                                                 </xsl:otherwise>
                                             </xsl:choose>
                                             <xsl:message>
-                                                <xsl:text>*** error, changed </xsl:text>
+                                                <xsl:text>*** error, change </xsl:text>
                                                 <xsl:value-of select="$ScriptReference" disable-output-escaping="yes"/>
                                                 <xsl:text> CDATA prefix from 'javascript:' to 'ecmascript:' </xsl:text>
                                             </xsl:message>
@@ -567,7 +569,7 @@ POSSIBILITY OF SUCH DAMAGE.
                                             <xsl:message>
                                                 <xsl:text>*** error, </xsl:text>
                                                 <xsl:value-of select="$ScriptReference" disable-output-escaping="yes"/>
-                                                <xsl:text> CDATA prefix, inserted missing 'ecmascript:' prefix </xsl:text>
+                                                <xsl:text> CDATA prefix, insert missing 'ecmascript:' prefix </xsl:text>
                                             </xsl:message>
                                         </xsl:when>
                                         <xsl:otherwise>
@@ -930,7 +932,7 @@ POSSIBILITY OF SUCH DAMAGE.
                 </xsl:if> -->
                 <xsl:if test="(string-length(@DEF) > 0)">
                     <xsl:message>
-                        <xsl:text>*** error, found both DEF and USE: </xsl:text>
+                        <xsl:text>*** error, found both DEF and USE together: </xsl:text>
                         <xsl:text disable-output-escaping="yes">&lt;</xsl:text>
                         <xsl:value-of select="local-name()"/>
                         <xsl:text> DEF=</xsl:text>
@@ -1410,7 +1412,7 @@ POSSIBILITY OF SUCH DAMAGE.
                 <xsl:value-of select="substring($result,7,string-length($result)-7)"/>
             </xsl:message> -->
             <xsl:message>
-                <xsl:text>*** modified</xsl:text>
+                <xsl:text>*** revision </xsl:text>
                 <xsl:value-of select="$result"/>
             </xsl:message>
         </xsl:if>
@@ -1427,7 +1429,20 @@ POSSIBILITY OF SUCH DAMAGE.
 				<xsl:text disable-output-escaping="yes">'</xsl:text>
 			</xsl:message>
 		-->
-
+		<xsl:choose>
+			<xsl:when test="(local-name(..)='ProtoInstance') and (local-name(.)='name') and (string-length(../@USE) > 0)">
+				<!-- no attribute output -->
+				<xsl:message>
+					<xsl:text>*** revision: remove superfluous field name='</xsl:text>
+					<xsl:value-of select="."/>
+					<xsl:text>' from &lt;ProtoInstance USE='</xsl:text>
+					<xsl:value-of select="../@USE"/>
+					<xsl:text>' containerField='</xsl:text>
+					<xsl:value-of select="../@containerField"/>
+					<xsl:text>'/&gt;</xsl:text>
+				</xsl:message>
+			</xsl:when>
+			<xsl:otherwise>
         <!-- eliminate default attribute values, otherwise they will all appear in output  -->
         <!-- this block of tests is used identically in X3dToXhtml.xslt X3dToHtml.xslt X3dToVrml97.xslt X3dTidy.xslt X3dToX3dom.xslt X3dUnwrap.xslt X3dWrap.xslt and X3dToJson.xslt -->
         <!-- check values with/without .0 suffix since these are string checks and autogenerated/DOM output might have either -->
@@ -2267,9 +2282,9 @@ POSSIBILITY OF SUCH DAMAGE.
                 <xsl:when test="(local-name() = 'mustOutput')">
                     <xsl:text>forceOutput</xsl:text>
                     <xsl:message>
-                        <xsl:text>*** fixed </xsl:text>
+                        <xsl:text>*** fix </xsl:text>
                         <xsl:value-of select="local-name(..)"/>
-                        <xsl:text>: changed attribute name mustOutput to forceOutput</xsl:text>
+                        <xsl:text>: change attribute name mustOutput to forceOutput</xsl:text>
                     </xsl:message>
                 </xsl:when>
                 <xsl:otherwise>
@@ -2327,7 +2342,7 @@ POSSIBILITY OF SUCH DAMAGE.
                     <xsl:value-of select="normalize-space($newGeoSystem)"/>
                     <xsl:if test="not(. = normalize-space($newGeoSystem))">
                         <xsl:message>
-                            <xsl:text>*** fixGeoSystemMetadata: changed geoSystem='</xsl:text>
+                            <xsl:text>*** fixGeoSystemMetadata: change geoSystem='</xsl:text>
                             <xsl:value-of select="."/>
                             <xsl:text>' to geoSystem='</xsl:text>
                             <xsl:value-of select="normalize-space($newGeoSystem)"/>
@@ -2345,7 +2360,7 @@ POSSIBILITY OF SUCH DAMAGE.
                 <xsl:when test="(local-name(..)='meta') and (local-name(.)='name') and (.='filename' or .='file')">
                     <xsl:text>title</xsl:text>
                     <xsl:message>
-                        <xsl:text>*** fixMetaNamesMatchDublinCore: changed meta name='</xsl:text>
+                        <xsl:text>*** fixMetaNamesMatchDublinCore: change meta name='</xsl:text>
                         <xsl:value-of select="."/>
                         <xsl:text>' to name='title'</xsl:text>
                     </xsl:message>
@@ -2353,7 +2368,7 @@ POSSIBILITY OF SUCH DAMAGE.
                 <xsl:when test="(local-name(..)='meta') and (local-name(.)='name') and (.='changed' or .='revised' or .='updated')">
                     <xsl:text>modified</xsl:text>
                     <xsl:message>
-                        <xsl:text>*** fixMetaNamesMatchDublinCore: changed meta name='</xsl:text>
+                        <xsl:text>*** fixMetaNamesMatchDublinCore: change meta name='</xsl:text>
                         <xsl:value-of select="."/>
                         <xsl:text>' to name='modified'</xsl:text>
                     </xsl:message>
@@ -2361,7 +2376,7 @@ POSSIBILITY OF SUCH DAMAGE.
                 <xsl:when test="(local-name(..)='meta') and (local-name(.)='name') and (.='url')">
                     <xsl:text>identifier</xsl:text>
                     <xsl:message>
-                        <xsl:text>*** fixMetaNamesMatchDublinCore: changed meta name='</xsl:text>
+                        <xsl:text>*** fixMetaNamesMatchDublinCore: change meta name='</xsl:text>
                         <xsl:value-of select="."/>
                         <xsl:text>' to name='identifier'</xsl:text>
                     </xsl:message>
@@ -2369,15 +2384,15 @@ POSSIBILITY OF SUCH DAMAGE.
                 <xsl:when test="(local-name(..)='meta') and (local-name(.)='name') and (.='image')">
                     <xsl:text>Image</xsl:text>
                     <xsl:message>
-                        <xsl:text>*** fixMetaNamesMatchDublinCore: changed meta name='</xsl:text>
+                        <xsl:text>*** fixMetaNamesMatchDublinCore: change meta name='</xsl:text>
                         <xsl:value-of select="."/>
                         <xsl:text>' to name='Image'</xsl:text>
                     </xsl:message>
                 </xsl:when>
-                <xsl:when test="(local-name(..)='meta') and (local-name(.)='content') and (../@name='modified')">
+                <xsl:when test="($reviseCurrentDate = 'true') and (local-name(..)='meta') and (local-name(.)='content') and (../@name='modified')">
                     <xsl:value-of select="$todaysDate"/>
                     <xsl:message>
-                        <xsl:text>*** updated: &lt;meta name='modified' content='</xsl:text>
+                        <xsl:text>*** revision: &lt;meta name='modified' content='</xsl:text>
                         <xsl:value-of select="$todaysDate"/>
                         <xsl:text>'/&gt;</xsl:text>
                     </xsl:message>
@@ -2397,7 +2412,7 @@ POSSIBILITY OF SUCH DAMAGE.
                             <!-- provide revised value as output, then report -->
                             <xsl:value-of select="$newDate"/>
                             <xsl:message>
-                                <xsl:text>*** fixDateFormats: changed meta name='</xsl:text>
+                                <xsl:text>*** fixDateFormats: change meta name='</xsl:text>
                                 <xsl:value-of select="../@name"/>
                                 <xsl:text>' content='</xsl:text>
                                 <xsl:value-of select="."/>
@@ -2544,7 +2559,7 @@ POSSIBILITY OF SUCH DAMAGE.
                     </xsl:choose>
                 </xsl:when>
                 <!-- fix index values when -1 sentinel is missing follow-on space character -->
-                <xsl:when test="(local-name()='index') or ends-with(local-name(),'Index') and (contains(., '-11') or contains(., '-12') or contains(., '-13') or contains(., '-14') or contains(., '-15') or contains(., '-16') or contains(., '-17') or contains(., '-18') or contains(., '-19') or contains(., '-10'))">
+                <xsl:when test="((local-name()='index') or ends-with(local-name(),'Index')) and (contains(., '-11') or contains(., '-12') or contains(., '-13') or contains(., '-14') or contains(., '-15') or contains(., '-16') or contains(., '-17') or contains(., '-18') or contains(., '-19') or contains(., '-10'))">
 					<xsl:variable name="result">
 						<xsl:for-each select="tokenize(., '\s')">
 							<xsl:choose>
@@ -2562,7 +2577,7 @@ POSSIBILITY OF SUCH DAMAGE.
 					</xsl:variable>
 					<xsl:value-of select="normalize-space($result)"/>
 					<xsl:message>
-						<xsl:text>*** index-array sentinel checks: appended missing space character after -1 value(s), </xsl:text>
+						<xsl:text>*** index-array sentinel checks: insert missing space character after -1 value(s), </xsl:text>
                         <xsl:text> &lt;</xsl:text>
                         <xsl:value-of select="local-name(..)"/>
                         <xsl:if test="string-length(../@name) > 0">
@@ -2583,7 +2598,18 @@ POSSIBILITY OF SUCH DAMAGE.
                         <xsl:text>/&gt;</xsl:text>
 					</xsl:message>
 				</xsl:when>
-                <!-- other new attribute rules go here -->
+                <xsl:when test="(local-name(..)='TextureProperties') and contains(../@minificationFilter,'MIPMAP') and (local-name(.)='generateMipMaps') and not(.='true')">
+                    <xsl:text>true</xsl:text>
+                    <xsl:message>
+                        <xsl:text>*** fixTexturePropertiesGenerateMipMaps: change generateMipMaps='</xsl:text>
+                        <xsl:value-of select="."/>
+                        <xsl:text>' to generateMipMaps='true' in order to support @minificationFilter='</xsl:text>
+                        <xsl:value-of select="../@minificationFilter"/>
+                        <xsl:text>'</xsl:text>
+                    </xsl:message>
+					<!-- TODO how to handle case where generateMipMaps is not defined and has devalue value of false? -->
+                </xsl:when>
+                <!-- new fixes: other new attribute-value rules go here -->
                 <!-- TODO add other MFString attributes, handle fixMFStringQuotes setting accordingly -->
                 <xsl:otherwise>
                     <xsl:call-template name="escape-special-characters">
@@ -2613,6 +2639,8 @@ POSSIBILITY OF SUCH DAMAGE.
             </xsl:choose> -->
         </xsl:if>
         <!-- end if filtering of default attribute values -->
+		</xsl:otherwise>
+		</xsl:choose>
     </xsl:template>
 
     <xsl:template name="escape-special-characters">

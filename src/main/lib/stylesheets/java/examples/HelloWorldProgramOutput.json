@@ -5,6 +5,20 @@
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
     "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
+        "-children":[
+          {
+            "#comment":"comment #1"
+          },
+          {
+            "#comment":"comment #2"
+          },
+          {
+            "#comment":"comment #3"
+          },
+          {
+            "#comment":"comment #4"
+          }
+        ],
         "component": [
           {
             "@name":"Navigation",
@@ -50,7 +64,7 @@
           },
           {
             "@name":"modified",
-            "@content":"22 October 2017"
+            "@content":"18 December 2017"
           },
           {
             "@name":"generator",
@@ -110,7 +124,7 @@
           },
           {
             "@name":"translated",
-            "@content":"22 October 2017"
+            "@content":"18 December 2017"
           },
           {
             "@name":"generator",
@@ -119,20 +133,6 @@
           {
             "@name":"reference",
             "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
-          }
-        ],
-        "-children":[
-          {
-            "#comment":"comment #1"
-          },
-          {
-            "#comment":"comment #2"
-          },
-          {
-            "#comment":"comment #3"
-          },
-          {
-            "#comment":"comment #4"
           }
         ]
     },
@@ -308,6 +308,14 @@
                       { "Text":
                         {
                           "@string":["X3D Java","SAI Library","X3DJSAIL"],
+                          "-children":[
+                            {
+                              "#comment":"escaped quotation marks example 3: He said, \"Immel did it!\""
+                            },
+                            {
+                              "#comment":"escaped quotation marks example 4: He said, &quot;Immel did it!&quot;"
+                            }
+                          ],
                           "-metadata":
                             { "MetadataSet":
                               {
@@ -333,15 +341,7 @@
                               {
                                 "@justify":["MIDDLE","MIDDLE"]
                               }
-                            },
-                          "-children":[
-                            {
-                              "#comment":"escaped quotation marks example 3: He said, \"Immel did it!\""
-                            },
-                            {
-                              "#comment":"escaped quotation marks example 4: He said, &quot;Immel did it!&quot;"
                             }
-                          ]
                         }
                       }
                   }
@@ -357,12 +357,6 @@
                       { "Shape":
                         {
                           "@DEF":"ProxyShape",
-                          "-geometry":
-                            { "Text":
-                              {
-                                "@string":["One, Two, Three","","He said, \"Immel did it!\""]
-                              }
-                            },
                           "-children":[
                             {
                               "#comment":"alternative XML encoding: Text string='\"One, Two, Three\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"'"
@@ -373,7 +367,13 @@
                             {
                               "#comment":"reference: http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html"
                             }
-                          ]
+                          ],
+                          "-geometry":
+                            { "Text":
+                              {
+                                "@string":["One, Two, Three","","He said, \"Immel did it!\""]
+                              }
+                            }
                         }
                       }
                   }
@@ -507,7 +507,7 @@
           { "ProtoDeclare":
             {
               "@name":"ArtDeco01Material",
-              "@appinfo":"tooltip: ArtDeco01 prototype is a Material node",
+              "@appinfo":"tooltip: ArtDeco01Material prototype is a Material node",
               "ProtoInterface": {
                   "field": [
                     {
@@ -515,7 +515,7 @@
                       "@accessType":"inputOutput",
                       "@appinfo":"tooltip for descriptionField",
                       "@type":"SFString",
-                      "@value":"ArtDeco01 prototype is a Material node"
+                      "@value":"ArtDeco01Material prototype is a Material node"
                     },
                     {
                       "@name":"enabled",
@@ -569,18 +569,18 @@
             {
               "@name":"ArtDeco02Material",
               "@appinfo":"this is a different Material node",
-              "@url":["http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02"],
+              "@url":["http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"],
+              "-children":[
+                {
+                  "#comment":"[HelloWorldProgram diagnostic] ArtDeco02ExternProtoDeclare.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time, TODO X3DJSAIL needs to add further capability.\""
+                }
+              ],
               "field": [
                 {
                   "@name":"description",
                   "@accessType":"inputOutput",
                   "@appinfo":"tooltip for descriptionField",
                   "@type":"SFString"
-                }
-              ],
-              "-children":[
-                {
-                  "#comment":"[HelloWorldProgram diagnostic] ArtDeco02ExternProtoDeclare.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time, TODO X3DJSAIL needs to add further capability.\""
                 }
               ]
             }
@@ -595,28 +595,28 @@
                 { "Appearance":
                   {
                     "@DEF":"TestAppearance1",
+                    "-children":[
+                      {
+                        "#comment":"ArtDeco01Material prototype goes here..."
+                      }
+                    ],
                     "-material":
                       { "ProtoInstance":
                         {
-                          "@name":"ArtDeco01",
+                          "@name":"ArtDeco01Material",
+                          "-children":[
+                            {
+                              "#comment":"[HelloWorldProgram diagnostic] ArtDeco01ProtoInstance.getNodeType()=\"Material\""
+                            }
+                          ],
                           "fieldValue": [
                             {
                               "@name":"description",
-                              "@value":"ArtDeco01 can substitute for a Material node"
-                            }
-                          ],
-                          "-children":[
-                            {
-                              "#comment":"[HelloWorldProgram diagnostic] ArtDeco01ProtoInstance.getNodeType()=\"ERROR_UNKNOWN_PROTOINSTANCE_NODE_TYPE: ProtoInstance name='ArtDeco01' has no corresponding ProtoDeclareObject or ExternProtoDeclareObject to provide type.\""
+                              "@value":"ArtDeco01Material can substitute for a Material node"
                             }
                           ]
                         }
-                      },
-                    "-children":[
-                      {
-                        "#comment":"ArtDeco01 Material prototype goes here..."
                       }
-                    ]
                   }
                 },
               "-geometry":
@@ -634,28 +634,29 @@
                 { "Appearance":
                   {
                     "@DEF":"TestAppearance2",
+                    "-children":[
+                      {
+                        "#comment":"ArtDeco02Material prototype goes here..."
+                      }
+                    ],
                     "-material":
                       { "ProtoInstance":
                         {
-                          "@name":"ArtDeco02",
+                          "@name":"ArtDeco02Material",
+                          "@DEF":"ArtDeco02MaterialDEF",
+                          "-children":[
+                            {
+                              "#comment":"[HelloWorldProgram diagnostic] ArtDeco02ProtoInstance.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time, TODO X3DJSAIL needs to add further capability.\""
+                            }
+                          ],
                           "fieldValue": [
                             {
                               "@name":"description",
-                              "@value":"ArtDeco02 can substitute for another Material node"
-                            }
-                          ],
-                          "-children":[
-                            {
-                              "#comment":"[HelloWorldProgram diagnostic] ArtDeco02ProtoInstance.getNodeType()=\"ERROR_UNKNOWN_PROTOINSTANCE_NODE_TYPE: ProtoInstance name='ArtDeco02' has no corresponding ProtoDeclareObject or ExternProtoDeclareObject to provide type.\""
+                              "@value":"ArtDeco02Material can substitute for another Material node"
                             }
                           ]
                         }
-                      },
-                    "-children":[
-                      {
-                        "#comment":"ArtDeco02 Material prototype goes here..."
                       }
-                    ]
                   }
                 },
               "-geometry":
@@ -663,6 +664,35 @@
                   {
                     "@bottomRadius":0.001,
                     "@height":0.001
+                  }
+                }
+            }
+          },
+          { "Shape":
+            {
+              "@DEF":"TestShape3",
+              "-appearance":
+                { "Appearance":
+                  {
+                    "@DEF":"TestAppearance3",
+                    "-children":[
+                      {
+                        "#comment":"ArtDeco02Material ProtoInstance USE goes here..."
+                      }
+                    ],
+                    "-material":
+                      { "ProtoInstance":
+                        {
+                          "@USE":"ArtDeco02MaterialDEF"
+                        }
+                      }
+                  }
+                },
+              "-geometry":
+                { "Cylinder":
+                  {
+                    "@height":0.001,
+                    "@radius":0.001
                   }
                 }
             }
@@ -864,18 +894,18 @@
                       { "Appearance":
                         {
                           "@DEF":"DeclarativeAppearanceExample",
+                          "-children":[
+                            {
+                              "#comment":"DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance"
+                            }
+                          ],
                           "-material":
                             { "ProtoInstance":
                               {
                                 "@name":"MaterialModulator",
                                 "@DEF":"MyMaterialModulator"
                               }
-                            },
-                          "-children":[
-                            {
-                              "#comment":"DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance"
                             }
-                          ]
                         }
                       },
                     "-geometry":
@@ -898,7 +928,7 @@
             "#comment":"Test success: declarative statement addChild()"
           },
           {
-            "#comment":"Test success: x3dModel.findNodeByDEF(DeclarativeAppearanceExample) = <Appearance DEF='DeclarativeAppearanceExample'/> i.e. <Appearance DEF='DeclarativeAppearanceExample'> <ProtoInstance DEF='MyMaterialModulator' name='MaterialModulator' containerField='material'/> <!- - DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance - -> </Appearance>"
+            "#comment":"Test success: x3dModel.findNodeByDEF(DeclarativeAppearanceExample) = <Appearance DEF='DeclarativeAppearanceExample'/> i.e. <Appearance DEF='DeclarativeAppearanceExample'> <!- - DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance - -> <ProtoInstance DEF='MyMaterialModulator' name='MaterialModulator' containerField='material'/> </Appearance>"
           },
           {
             "#comment":"Test success: x3dModel.findElementByNameValue(findThisNameValue) = <MetadataString DEF='FindableMetadataStringTest' name='findThisNameValue' value='\"test case\"'/>"
@@ -942,35 +972,49 @@
           },
           { "Sound":
             {
+              "@location":[0,1.6,0],
+              "-children":[
+                {
+                  "#comment":"set sound-ellipsoid location height at 1.6m to match typical avatar height"
+                }
+              ],
               "-source":
                 { "AudioClip":
                   {
-                    "@url":["chimes.wav","http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"]
+                    "@description":"chimes",
+                    "@url":["chimes.wav","http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"],
+                    "-children":[
+                      {
+                        "#comment":"Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d"
+                      }
+                    ]
                   }
-                },
-              "-children":[
-                {
-                  "#comment":"Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d"
                 }
-              ]
             }
           },
           { "Sound":
             {
+              "@location":[0,1.6,0],
+              "-children":[
+                {
+                  "#comment":"set sound-ellipsoid location height at 1.6m to match typical avatar height"
+                }
+              ],
               "-source":
                 { "MovieTexture":
                   {
-                    "@url":["mpgsys.mpg","http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"]
+                    "@description":"mpgsys.mpg from ConformanceNist suite",
+                    "@url":["mpgsys.mpg","http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"],
+                    "-children":[
+                      {
+                        "#comment":"Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d"
+                      },
+                      {
+                        "#comment":"Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\""
+                      }
+                    ]
                   }
-                },
-              "-children":[
-                {
-                  "#comment":"Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d"
-                },
-                {
-                  "#comment":"Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\""
                 }
-              ]
             }
           },
           {
@@ -994,6 +1038,14 @@
           { "Shape":
             {
               "@DEF":"ExtrusionShape",
+              "-children":[
+                {
+                  "#comment":"ExampleExtrusion isCrossSectionClosed()=true, crossSection='[1.0, 1.0, 1.0, -1.0, -1.0, -1.0, -1.0, 1.0, 1.0, 1.0]'"
+                },
+                {
+                  "#comment":"ExampleExtrusion isSpineClosed()=false, spine='[0.0, 0.0, 0.0, 0.0, 1.0, 0.0]'"
+                }
+              ],
               "-appearance":
                 { "Appearance":
                   {
@@ -1011,15 +1063,7 @@
                   {
                     "@DEF":"ExampleExtrusion"
                   }
-                },
-              "-children":[
-                {
-                  "#comment":"ExampleExtrusion isCrossSectionClosed()=true, crossSection='[1.0, 1.0, 1.0, -1.0, -1.0, -1.0, -1.0, 1.0, 1.0, 1.0]'"
-                },
-                {
-                  "#comment":"ExampleExtrusion isSpineClosed()=false, spine='[0.0, 0.0, 0.0, 0.0, 1.0, 0.0]'"
                 }
-              ]
             }
           }
         ]

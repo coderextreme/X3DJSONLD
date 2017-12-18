@@ -1,14 +1,14 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" SYSTEM "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en">
     <head>
-        <title>X3D Tidy for Scene Cleanup, Corrections and Conversions </title>
+        <title>X3D Tidy for Scene Cleanup, Corrections and Modifications </title>
         <link rel="shortcut icon" href="images/X3DtextIcon16.png" title="X3D"/>
         <meta name="title" content="X3dTidy.html" />
+        <meta name="identifier" content="http://www.web3d.org/x3d/stylesheets/X3dTidy.html" />
         <meta name="creator" content="Don Brutzman" />
         <meta name="description" content="X3D Tidy is an XSLT stylesheet that checks for simple errors in X3D scenes and fixes them." />
         <!-- Original name: X3dDecorator.xslt -->
-        
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <style type="text/css">
             ul.box          { list-style-type: circle }
             .parameterName  { color: green; font-weight: bold; }
@@ -16,19 +16,18 @@
              .overrideName  { color: green; font-weight: bold; }
              .overrideValue { color: green; font-weight: bold; }
         </style>
-        
-</head>
+	</head>
+
     <body>
         <!-- =================================================== -->
         
-        <table style="border:0; border-spacing:0; padding:0; text-align:center" align="center">
+        <table style="border:0; border-spacing:0; padding:0; text-align:center">
             <tr style="text-align:center">
                 <td> 
-                    <a name="top"/>
-                    <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html#QualityAssurance"><img src="images/x3d2-s.gif" width="154" height="97" style="border:0;" title="to X3D Resources: Quality Assurance" alt="to X3D Resources: Quality Assurance"/></a>
+                    <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html#QualityAssurance"><img src="images/x3d2-s.gif" width="154" height="97" style="border:0;" title="to X3D Resources: Quality Assurance (QA)" alt="to X3D Resources: Quality Assurance (QA)"/></a>
                 </td>
                 <td><pre>   </pre></td>
-                <td><h1>X3D Tidy for Scene Cleanup, Corrections and Conversions</h1></td>
+                <td><h1>X3D Tidy for Scene Cleanup, Corrections and Modifications</h1></td>
                 <td><pre>   </pre></td>
                 <td><a href="http://www.web3d.org"><img src="images/web3d_logo2.png" width="120" height="60" style="border:0;" title="to Web3D home page" alt="to Web3D home page"/></a></td>
             </tr>
@@ -46,10 +45,14 @@
                 <a href="#Availability">Availability</a> |
                 <a href="#Corrections">Corrections</a>
                 and
-                <a href="#Conversions">Conversions</a> |
+                <a href="#Modifications">Modifications</a> |
                 <a href="#Parameters">Parameters</a> |
                 <a href="#References">References</a> |
+                <a href="#Acknowledgements">Acknowledgements</a> |
                 <a href="#Contact">Contact</a>
+				<br /> 
+                <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html#QualityAssurance" target="_blank">X3D Resources: Quality Assurance (QA)</a> |
+				<a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>
             </small></p>
         </blockquote>
         
@@ -85,7 +88,7 @@
             The
             <a href="https://savage.nps.edu/X3dValidator">X3D Validator</a>
             and various other tools listed in
-            <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html#QualityAssurance">X3D Resources: Quality Assurance</a>
+            <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html#QualityAssurance">X3D Resources: Quality Assurance (QA)</a>
             can help to achieve this necessary level of compliance.
         </p>
         
@@ -174,7 +177,11 @@
                 Modify DOCTYPE and Schema references to match &lt;X3D&gt; element version in scene, if match is inconsistent or insufficient 
             </li>
             <li>
-                Modify &lt;X3D&gt; element version to match a given value (by default this is disabled; recommended version is 3.3) 
+                Modify &lt;X3D&gt; element version to match a given value (by default this option is disabled; recommended version is 3.3) 
+            </li>
+            <li>
+                Condense empty start-tag/end-tag elements as a singleton element,
+				for example <code>&lt;WorldInfo&gt;&lt;/WorldInfo&gt;</code> as <code>&lt;WorldInfo/&gt;</code>
             </li>
             <li>
                 Omit default attribute values
@@ -185,15 +192,21 @@
                 order
             </li>
             <li>
-                <i>&lt;meta&gt;</i> tag: if missing insert a default title, title moved as first meta tag
+                <i>&lt;meta&gt;</i> statements: if missing insert a default title, also title moved as first meta tag
             </li>
             <li>
-                <i>&lt;meta&gt;</i> tag: add provided or suggested
+                <i>&lt;meta&gt;</i> statements: add provided or suggested
                 <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#license">license</a>
             </li>
             <li>
-                <i>&lt;meta&gt;</i> tag: normalize dates to match 
+                <i>&lt;meta&gt;</i> statements: normalize dates to match 
                 <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Dates">suggested date format</a>
+            </li>
+            <li>
+                <i>&lt;meta&gt;</i> statements: regularize capitalization and naming to match
+				<a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#metaStatements" target="_blank">metadata conventions</a>
+				(for example
+				<code>name='image'</code> to <code>name='Image'</code>)
             </li>
             <li>
                 Fix MFString array &quot;quotes&quot; (such as &lt;Text&gt; node <code>string</code> array, or &lt;ProtoInstance&gt; <code>fieldValue</code> initializations)
@@ -212,17 +225,25 @@
                 array to include online addresses, prepend .x3d variants to .wrl addresses, or append .wrl variants to .x3d addresses
             </li>
             <li>
-                <i>&lt;Script&gt;</i> node embedded source: replace <code>javascript:</code> prefix with <code>ecmascript:</code>, or insert <code>ecmascript:</code> prefix if missing
+                <i>&lt;Script&gt;</i> node embedded source: replace deprecated <code>javascript:</code> or <code>vrmlscript:</code> prefix with <code>ecmascript:</code>,
+				otherwise insert <code>ecmascript:</code> prefix if missing
             </li>
             <li>
-                For line geometry (PointSet, LineSet, IndexedLineSet, Arc2D, ArcClose2D, Circle2D):
-                if no contained Color/ColorRGBA node, and
+                For point and line geometry (PointSet, LineSet, IndexedLineSet, Arc2D, ArcClose2D, Circle2D):
+                if no contained Color/ColorRGBA node is present, and
                 if associated Appearance/Material emissiveColor value is default (black) or missing,
-                then apply the diffuseColor value as emissiveColor value.
+                then re-apply the diffuseColor value as emissiveColor value to regain visibility.
             </li>
             <li>
-                Correct erroneous attribute names:
-                <i>mustOutput</i> to <i>forceOutput</i>.
+                Correct erroneous attribute name:
+                <i>mustOutput</i> renamed as <i>forceOutput</i> for Joint nodes in Rigid Body Physics component.
+            </li>
+            <li>
+				Remove unnecessary attribute <code>name='<i>OriginalProtoDeclareName</i>'</code> 
+				from <code>&lt;ProtoInstance USE='<i>SomeProtoInstanceDEFname</i>' containerField='<i>someFieldName</i>'/&gt;</code>
+            </li>
+            <li>
+                For <code>index</code> arrays in geometry nodes, detect omissions and append missing space character after -1 sentinel values if needed.
             </li>
             
             <!--
@@ -248,13 +269,13 @@
         <!-- =================================================== -->
 
         <h2>
-            <a name="Conversions">Conversions</a>
+            <a name="Modifications">Modifications</a>
             <a href="#top">
                <img src="images/x3d2-s.gif" width="50" height="32" style="border:0; float:right;" title="to top" alt="to top"/>
             </a>
         </h2>
         <p>
-            X3D Tidy is able to apply the following scene conversions.  
+            X3D Tidy is able to apply the following scene modifications.  
         </p>
         
         <ol>
@@ -310,11 +331,12 @@
         </p>
         
 <pre>
-    &lt;!-- Default parameter values can be overridden when invoking this stylesheet --&gt;
+    &lt;!-- Default parameter values follow, can be overridden when invoking this stylesheet --&gt;
     &lt;xsl:param name="<span class="parameterName">conversionRequired</span>"          &gt;&lt;xsl:text&gt;<span class="parameterValue">true</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
     &lt;xsl:param name="<span class="parameterName">title</span>"                       &gt;&lt;xsl:text&gt;<span class="parameterValue">&lt;!-- default title value for file name is empty --&gt;</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
     &lt;xsl:param name="<span class="parameterName">modifyX3dVersion</span>"            &gt;&lt;xsl:text&gt;<span class="parameterValue">true</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
     &lt;xsl:param name="<span class="parameterName">revisedX3dVersion</span>"           &gt;&lt;xsl:text&gt;<span class="parameterValue">3.3</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
+    &lt;xsl:param name="<span class="parameterName">reviseCurrentDate</span>"           &gt;&lt;xsl:text&gt;<span class="parameterValue">true</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
     &lt;xsl:param name="<span class="parameterName">fixDateFormats</span>"              &gt;&lt;xsl:text&gt;<span class="parameterValue">true</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
     &lt;xsl:param name="<span class="parameterName">fixMFStringQuotes</span>"           &gt;&lt;xsl:text&gt;<span class="parameterValue">true</span>&lt;/xsl:te xt&gt;&lt;/xsl:param&gt;
     &lt;xsl:param name="<span class="parameterName">fixGeoSystemMetadata</span>"        &gt;&lt;xsl:text&gt;<span class="parameterValue">true</span>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
@@ -354,16 +376,17 @@ TODO:
 </pre>
 
         <p>
-            Authors can also suppress the external application of X3D&nbsp;Tidy corrections to a scene by including one or more of the following
+            Authors can also suppress the external application of X3D&nbsp;Tidy corrections within an individual scene by including one or more of the following
             <code>&lt;meta/&gt;</code>
-            tags in the
+            statements in the
             <code>&lt;head&gt;</code>
             section of an X3D scene.
         </p>
 <pre>
-    &lt;!-- Authors can override stylesheet parameter values by including meta tag(s) in an X3D scene. --&gt;
+    &lt;!-- Authors can override default X3D Tidy stylesheet parameter values by including meta tag(s) in an X3D scene. Examples follow. --&gt;
     &lt;meta name="<span class="overrideName">X3dTidy</span>" content="<span class="overrideValue">ignore</span>"/&gt;  &lt;!-- ignores all corrections --&gt;
     &lt;meta name="<span class="overrideName">X3dTidy</span>" content="<span class="overrideValue">modifyX3dVersion=false</span>"/&gt;
+    &lt;meta name="<span class="overrideName">X3dTidy</span>" content="<span class="overrideValue">reviseCurrentDate=false</span>"/&gt;
     &lt;meta name="<span class="overrideName">X3dTidy</span>" content="<span class="overrideValue">fixMFStringQuotes=false</span>"/&gt;
     &lt;meta name="<span class="overrideName">X3dTidy</span>" content="<span class="overrideValue">fixGeoSystemMetadata=false</span>"/&gt;
     &lt;meta name="<span class="overrideName">X3dTidy</span>" content="<span class="overrideValue">fixMetaNamesMatchDublinCore=false</span>"/&gt;
@@ -392,17 +415,17 @@ TODO:
         </h2>
         
         <p>
-            X3D Tidy has been developed as part of the X3D Quality Assurance (QA) efforts.
+            X3D Tidy has been developed as part of the X3D Quality Assurance (QA) (QA) efforts.
         </p>
         <ul>
             <li>
-                <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html#QualityAssurance">X3D Resources: Quality Assurance</a>
+                <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html#QualityAssurance" target="_blank">X3D Resources: Quality Assurance (QA)</a>
             </li>
             <li>
                 <a href="https://savage.nps.edu/X3dValidator">X3D Validator</a>
             </li>
             <li>
-                <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation">X3D Scene Authoring Hints: Validation</a>
+                <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation" target="_blank">X3D Scene Authoring Hints: Validation</a>
                 describes DOCTYPE (DTD) and XML Schema validation of X3D scenes in detail.
             </li>
         </ul>
@@ -414,24 +437,47 @@ TODO:
         
         <ul>
             <li>
+                <a href="http://www.html-tidy.org" target="_blank">HTML Tidy</a>
+                by HTML Tidy Advocacy Community Group (HTACG)
+            </li>
+            <li>
                 The original:
-                <a href="http://www.w3.org/People/Raggett/tidy">Clean up your Web pages with HTML TIDY</a>
+                <a href="http://www.w3.org/People/Raggett/tidy" target="_blank">Clean up your Web pages with HTML TIDY</a>
                 by Dave Raggett
             </li>
             <li>
                 Check your html content:
-                <a href="http://infohound.net/tidy">HTML Tidy Online</a>
+                <a href="http://infohound.net/tidy" target="_blank">HTML Tidy Online</a>
                 by Jonathan Hedley
             </li>
             <li>
-                <a href="http://tidy.sourceforge.net/">HTML Tidy Library Project</a>
+                <a href="http://tidy.sourceforge.net" target="_blank">HTML Tidy Library Project</a>
                 on Sourceforge
             </li>
             <li>
-                <a href="http://en.wikipedia.org/wiki/HTML_Tidy">Wikipedia: HTML TIDY</a>
+                <a href="http://en.wikipedia.org/wiki/HTML_Tidy" target="_blank">Wikipedia: HTML TIDY</a>
             </li>
         </ul>
         
+        <!-- =================================================== -->
+        
+        <h3><a name="Acknowledgements">Acknowledgements</a>
+            <a href="#top">
+               <img src="images/x3d2-s.gif" width="50" height="32" style="border:0; float:right;" title="to top" alt="to top"/>
+            </a>
+        </h3>
+		
+		<p>
+			Sincere thanks to the many people who have contributed content and suggestions to improve X3D Tidy:
+		</p>
+		<blockquote>
+			John Carlson, Roy Walmsley,
+			plus the many members of 
+			<a href="http://www.web3d.org" target="_blank">Web3D Consortium</a>
+			and
+			<a href="http://www.web3d.org/mailman/listinfo/x3d-public_web3d.org" target="_blank">X3D Community</a>.
+		</blockquote>
+		
         <hr />
         
         <!-- =================================================== -->
@@ -443,7 +489,7 @@ TODO:
         </h3>
         
         <p>
-            Updated:  27 March 2016
+            Updated: 4 November 2017
         </p>
         <div>
                <a href="http://validator.w3.org/check?uri=http://www.web3d.org/x3d/stylesheets/X3dTidy.html">
