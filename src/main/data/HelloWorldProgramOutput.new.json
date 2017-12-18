@@ -598,9 +598,7 @@
                     "-children":[
                       {
                         "#comment":"ArtDeco01Material prototype goes here..."
-                      }
-                    ],
-                    "-material":
+                      },
                       { "ProtoInstance":
                         {
                           "@name":"ArtDeco01Material",
@@ -617,6 +615,7 @@
                           ]
                         }
                       }
+                    ]
                   }
                 },
               "-geometry":
@@ -637,9 +636,7 @@
                     "-children":[
                       {
                         "#comment":"ArtDeco02Material prototype goes here..."
-                      }
-                    ],
-                    "-material":
+                      },
                       { "ProtoInstance":
                         {
                           "@name":"ArtDeco02Material",
@@ -657,6 +654,7 @@
                           ]
                         }
                       }
+                    ]
                   }
                 },
               "-geometry":
@@ -678,14 +676,13 @@
                     "-children":[
                       {
                         "#comment":"ArtDeco02Material ProtoInstance USE goes here..."
-                      }
-                    ],
-                    "-material":
+                      },
                       { "ProtoInstance":
                         {
                           "@USE":"ArtDeco02MaterialDEF"
                         }
                       }
+                    ]
                   }
                 },
               "-geometry":
@@ -897,15 +894,14 @@
                           "-children":[
                             {
                               "#comment":"DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance"
-                            }
-                          ],
-                          "-material":
+                            },
                             { "ProtoInstance":
                               {
                                 "@name":"MaterialModulator",
                                 "@DEF":"MyMaterialModulator"
                               }
                             }
+                          ]
                         }
                       },
                     "-geometry":
