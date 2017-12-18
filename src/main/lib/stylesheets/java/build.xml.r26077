@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- You may freely edit this file. See commented blocks below for -->
+<!-- some examples of how to customize the build. -->
+<!-- (If you delete it and reopen the project it will be recreated.) -->
+<!-- By default, only the Clean and Build commands use this build script. -->
+<!-- Commands such as Run, Debug, and Test only use this build script if -->
+<!-- the Compile on Save feature is turned off for the project. -->
+<!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
+<!-- in the project's Project Properties dialog box.-->
+
+<project name="X3D Java SAI Library" default="default" basedir=".">
+    <description>Builds, tests, and runs the X3D Java SAI Library project.</description>
+	
+    <property name="javac.verbose"            value="-verbose"/>
+
+    <!-- http://stackoverflow.com/questions/919692/how-to-execute-xslt-2-0-with-ant -->
+    <property name="saxon.dir"               value="lib" description="relative path"/>
+    <property name="saxon.jar"               value="saxon9he.jar"/>
+
+    <!-- http://openexi.sourceforge.net -->
+    <!-- https://sourceforge.net/projects/openexi/files -->
+    <property name="openexi.dir"             value="lib" description="relative path"/>
+	<property name="openexi.jar"             value="nagasena.jar"/>
+    
+    <!-- https://exificient.github.io/java -->
+    <!-- https://exificient.github.io/java/exificient-gui-jar-with-dependencies.jar -->
+    <property name="exificient.dir"          value="lib" description="relative path"/>
+	<property name="exificient.jar"          value="exificient-gui-jar-with-dependencies.jar"/>
+
+    <property name="javac.verbose"           value="-verbose"/>
+    <property name="java.dir"                value="."/>
+    <property name="java.classes.dir"        value="classes"/>
+    <property name="java.examples.dir"       value="examples"/>
+    <property name="java.jars.dir"           value="${java.dir}/jars"/>
+    <property name="java.lib.dir"            location="lib"/>
+    <property name="java.src.dir"            value="${java.dir}/src"/>
+    <property name="nashorn.dir"             value="nashorn"/>
+    <property name="src.org.web3d.x3d.jsail" value="${java.src.dir}/org/web3d/x3d/jsail"/><!-- concretes  -->
+    <property name="src.org.web3d.x3d.sai"   value="${java.src.dir}/org/web3d/x3d/sai"/>  <!-- interfaces -->
+	<property name="jsai.classes.archive.jar.name" value="X3DJSAIL.3.3.classes.jar"/>
+	<property name=   "jsai.full.archive.jar.name" value="X3DJSAIL.3.3.full.jar"/>
+	
+    <target name="all" depends="compile.examples,run.examples"/>
+
+    <target name="build" depends="">
+            <ant antfile="../build.xml" target="CreateX3dSceneAccessInterfaceJava"/>
+            <antcall target="compile.examples"/>
+            <antcall target="run.examples"/>
+    </target>
+
+    <target name="compile.examples">
+            <javac srcdir="examples" destdir="classes" debug="on" verbose="${javac.verbose}" 
+                   classpath="jars/X3DJSAIL.3.3.full.jar" includeantruntime="false"/>
+    </target>
+
+    <target name="run.examples">
+            <java classname="HelloWorldProgram" dir="classes">
+                 <classpath>
+					<pathelement location="jars/X3DJSAIL.3.3.full.jar"/>
+					<pathelement path="classes"/>
+                 </classpath>
+            </java>
+    </target>
+
+    <target name="view.javadoc.local" description="view local javadoc in web browser (Netbeans only)">
+        <nbbrowse file="javadoc/index.html" />
+        <!-- TODO implementation-independent approach if possible.  other Ant approachs have to be customized for each OS -->
+    </target>
+
+    <target name="view.javadoc.online" description="view online javadoc in web browser (Netbeans only)">
+        <nbbrowse url="http://www.web3d.org/specifications/java/javadoc/index.html" />
+    </target>
+
+    <target name="test.nashorn" description="Test Nashorn output from X3DJSAIL">
+		<echo message="Compile:"/>
+		<javac srcdir ="${java.examples.dir}"
+			   classpath=""
+			   destdir="${java.classes.dir}"
+			   debug="on"
+			   verbose="${javac.verbose}"
+			   includeantruntime="false">
+		</javac>
+		<echo message="Run:"/>
+		<java classname="HelloWorldProgramOutput" classpath="${java.classes.dir};${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
+			<arg value="js"/>
+			<arg value="nashorn/examples/HelloWorldProgramOutput.js"/>
+		</java>
+ 		<java classname="HelloWorldProgramOutput" classpath="${java.classes.dir};${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
+ 		    <arg value="json"/>
+ 		    <arg value="nashorn/examples/HelloWorldProgramOutput.json"/>
+ 		</java>
+ 		<java classname="HelloWorldProgramOutput" classpath="${java.classes.dir};${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
+ 		    <arg value="x3d"/>
+ 		    <arg value="nashorn/examples/HelloWorldProgramOutput.x3d"/>
+ 		</java>
+		<echo message="script:"/>
+<!--    <script language="nashorn"> TODO debugging -->
+		<script language="javascript" manager="javax">
+			<classpath>
+				<fileset dir="${saxon.dir}"      includes="${saxon.jar}"/>
+				<fileset dir="${exificient.dir}" includes="${exificient.jar}"/>
+				<fileset dir="${openexi.dir}"    includes="${openexi.jar}"/>
+				<fileset dir="${java.jars.dir}"  includes="${jsai.classes.archive.jar.name}"/>
+			</classpath>
+			load('nashorn/jvm-npm.js');
+			load('nashorn/repeatPolyfill.js');
+			load('nashorn/examples/HelloWorldProgramOutput.js.intermediate.js');
+			load('nashorn/examples/HelloWorldProgramOutput.js');
+		</script>
+    </target>
+	
+</project>

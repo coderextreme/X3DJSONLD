@@ -1,0 +1,25 @@
+Index: build.xml
+===================================================================
+--- build.xml	(revision 26068)
++++ build.xml	(working copy)
+@@ -1591,6 +1591,14 @@
+ 			<arg value="js"/>
+ 			<arg value="nashorn/examples/HelloWorldProgramOutput.js"/>
+ 		</java>
++		<java classname="HelloWorldProgramOutput" classpath="${java.classes.dir};${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
++		    <arg value="json"/>
++		    <arg value="nashorn/examples/HelloWorldProgramOutput.json"/>
++		</java>
++		<java classname="HelloWorldProgramOutput" classpath="${java.classes.dir};${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
++		    <arg value="x3d"/>
++		    <arg value="nashorn/examples/HelloWorldProgramOutput.x3d"/>
++		</java>
+ 		<script language="nashorn">
+ 			<classpath>
+ 				<fileset dir="${saxon.dir}" includes="${saxon.jar}" />
+@@ -1604,5 +1612,4 @@
+ 			load('nashorn/examples/HelloWorldProgramOutput.js');
+ 		</script>
+     </target>
+-
+ </project>
