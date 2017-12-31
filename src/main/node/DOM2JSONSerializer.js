@@ -69,9 +69,6 @@ DOM2JSONSerializer.prototype = {
 				if (attrs.hasOwnProperty(a) && attrs[a].nodeType == 2) {
 					var attr = attrs[a].nodeName;
 					var method = attr;
-					if (attr === 'containerField') {
-						continue;
-					}
 					// look at object model
 					var attrType = "SFString";
 					try {
