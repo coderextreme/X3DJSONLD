@@ -1,6 +1,5 @@
 load('X3Dautoclass.js');
 var ConfigurationProperties = Packages.org.web3d.x3d.jsail.ConfigurationProperties;
-ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
@@ -19,18 +18,18 @@ ConfigurationProperties.setStripTrailingZeroes(true);
       .setScene(new SceneObject()
         .addChild(new TransformObject().setTranslation(Java.to([0,2,0], Java.type("float[]")))
           .addChild(new ShapeObject()
-            .setGeometry(new TextObject().setString(Java.to(["Compare special character escaping"], Java.type("java.lang.String[]")))
-              .setFontStyle(new FontStyleObject().setDEF("testFontStyle").setJustify(Java.to(["MIDDLE","MIDDLE"], Java.type("java.lang.String[]"))).setSize(0.8)))
+            .setGeometry(new TextObject().setString(Java.to(["Compare special character escaping".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]")))
+              .setFontStyle(new FontStyleObject().setDEF("testFontStyle").setJustify(Java.to(["MIDDLE".replace(/\"/g, "\\\""),"MIDDLE".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]"))).setSize(0.8)))
             .setAppearance(new AppearanceObject().setDEF("LightBlueAppearance")
               .setMaterial(new MaterialObject().setDiffuseColor(Java.to([0.1,0.7,0.7], Java.type("float[]")))))))
         .addChild(new TransformObject().setTranslation(Java.to([-3,0,0], Java.type("float[]")))
           .addChild(new ShapeObject()
-            .setGeometry(new TextObject().setString(Java.to(["I don't think so","","he said \"Hi\""], Java.type("java.lang.String[]")))
+            .setGeometry(new TextObject().setString(Java.to(["I don't think so".replace(/\"/g, "\\\""),"".replace(/\"/g, "\\\""),"he said \"Hi\"".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]")))
               .setFontStyle(new FontStyleObject().setUSE("testFontStyle")))
             .setAppearance(new AppearanceObject().setUSE("LightBlueAppearance"))))
         .addChild(new TransformObject().setTranslation(Java.to([3,0,0], Java.type("float[]")))
           .addChild(new ShapeObject()
-            .setGeometry(new TextObject().setString(Java.to(["I don't think so","","he said \"Hi\""], Java.type("java.lang.String[]")))
+            .setGeometry(new TextObject().setString(Java.to(["I don't think so".replace(/\"/g, "\\\""),"".replace(/\"/g, "\\\""),"he said \"Hi\"".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]")))
               .setFontStyle(new FontStyleObject().setUSE("testFontStyle")))
             .setAppearance(new AppearanceObject().setUSE("LightBlueAppearance")))))      ;
     X3D0.toFileX3D("../data/TextExamples.new.x3d");

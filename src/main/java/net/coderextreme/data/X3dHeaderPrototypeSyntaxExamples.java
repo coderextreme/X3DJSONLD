@@ -174,22 +174,22 @@ ProtoInstance3
     }
 protected class MFString0 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation","https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation","../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation","https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation"});
+    return new MFStringObject(new java.lang.String[] {"../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation".replaceAll("\"", "\\\""),"https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation".replaceAll("\"", "\\\""),"../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation".replaceAll("\"", "\\\""),"https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString1 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"He said, \"Immel did it!\""});
+    return new MFStringObject(new java.lang.String[] {"He said, \"Immel did it!\"".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString2 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"X3D Header Prototype syntax examples","(view console for EXTERNPROTO output)"});
+    return new MFStringObject(new java.lang.String[] {"X3D Header Prototype syntax examples".replaceAll("\"", "\\\""),"(view console for EXTERNPROTO output)".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString3 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"MIDDLE","MIDDLE"});
+    return new MFStringObject(new java.lang.String[] {"MIDDLE".replaceAll("\"", "\\\""),"MIDDLE".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFFloat4 {
@@ -204,7 +204,7 @@ protected class MFRotation5 {
 }
 protected class MFString6 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"someUrl.x3d","http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/someUrl.x3d"});
+    return new MFStringObject(new java.lang.String[] {"someUrl.x3d".replaceAll("\"", "\\\""),"http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/someUrl.x3d".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFFloat7 {

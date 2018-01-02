@@ -1,6 +1,5 @@
 load('X3Dautoclass.js');
 var ConfigurationProperties = Packages.org.web3d.x3d.jsail.ConfigurationProperties;
-ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
@@ -29,8 +28,8 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .setGeometry(new BoxObject()))
           .addChild(new TransformObject().setTranslation(Java.to([0,-2,0], Java.type("float[]")))
             .addChild(new ShapeObject()
-              .setGeometry(new TextObject().setString(Java.to(["0"], Java.type("java.lang.String[]")))
-                .setFontStyle(new FontStyleObject().setDEF("CenterJustify").setJustify(Java.to(["MIDDLE","MIDDLE"], Java.type("java.lang.String[]")))))
+              .setGeometry(new TextObject().setString(Java.to(["0".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]")))
+                .setFontStyle(new FontStyleObject().setDEF("CenterJustify").setJustify(Java.to(["MIDDLE".replace(/\"/g, "\\\""),"MIDDLE".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]")))))
               .setAppearance(new AppearanceObject().setDEF("TextMaterial")
                 .setMaterial(new MaterialObject().setDiffuseColor(Java.to([1,1,1], Java.type("float[]"))))))))
         .addChild(new TransformObject().setTranslation(Java.to([-3,0,0], Java.type("float[]")))
@@ -40,7 +39,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .setGeometry(new BoxObject()))
           .addChild(new TransformObject().setTranslation(Java.to([0,-2,0], Java.type("float[]")))
             .addChild(new ShapeObject()
-              .setGeometry(new TextObject().setString(Java.to(["1"], Java.type("java.lang.String[]")))
+              .setGeometry(new TextObject().setString(Java.to(["1".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]")))
                 .setFontStyle(new FontStyleObject().setUSE("CenterJustify")))
               .setAppearance(new AppearanceObject().setUSE("TextMaterial")))))
         .addChild(new TransformObject()
@@ -50,7 +49,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .setGeometry(new BoxObject()))
           .addChild(new TransformObject().setTranslation(Java.to([0,-2,0], Java.type("float[]")))
             .addChild(new ShapeObject()
-              .setGeometry(new TextObject().setString(Java.to(["2"], Java.type("java.lang.String[]")))
+              .setGeometry(new TextObject().setString(Java.to(["2".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]")))
                 .setFontStyle(new FontStyleObject().setUSE("CenterJustify")))
               .setAppearance(new AppearanceObject().setUSE("TextMaterial")))))
         .addChild(new TransformObject().setTranslation(Java.to([3,0,0], Java.type("float[]")))
@@ -61,7 +60,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .setGeometry(new BoxObject()))
           .addChild(new TransformObject().setTranslation(Java.to([0,-2,0], Java.type("float[]")))
             .addChild(new ShapeObject()
-              .setGeometry(new TextObject().setString(Java.to(["3"], Java.type("java.lang.String[]")))
+              .setGeometry(new TextObject().setString(Java.to(["3".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]")))
                 .setFontStyle(new FontStyleObject().setUSE("CenterJustify")))
               .setAppearance(new AppearanceObject().setUSE("TextMaterial")))))
         .addChild(new TransformObject().setTranslation(Java.to([6,0,0], Java.type("float[]")))
@@ -72,7 +71,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .setGeometry(new BoxObject()))
           .addChild(new TransformObject().setTranslation(Java.to([0,-2,0], Java.type("float[]")))
             .addChild(new ShapeObject()
-              .setGeometry(new TextObject().setString(Java.to(["4"], Java.type("java.lang.String[]")))
+              .setGeometry(new TextObject().setString(Java.to(["4".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]")))
                 .setFontStyle(new FontStyleObject().setUSE("CenterJustify")))
               .setAppearance(new AppearanceObject().setUSE("TextMaterial")))))
         .addComments(new CommentsBlock("Background from PixelTextureBW.x3d"))

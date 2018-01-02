@@ -113,22 +113,22 @@ public class TextExamples {
     }
 protected class MFString0 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"Compare special character escaping"});
+    return new MFStringObject(new java.lang.String[] {"Compare special character escaping".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString1 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"MIDDLE","MIDDLE"});
+    return new MFStringObject(new java.lang.String[] {"MIDDLE".replaceAll("\"", "\\\""),"MIDDLE".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString2 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"I don't think so","","he said \"Hi\""});
+    return new MFStringObject(new java.lang.String[] {"I don't think so".replaceAll("\"", "\\\""),"".replaceAll("\"", "\\\""),"he said \"Hi\"".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString3 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"I don't think so","","he said \"Hi\""});
+    return new MFStringObject(new java.lang.String[] {"I don't think so".replaceAll("\"", "\\\""),"".replaceAll("\"", "\\\""),"he said \"Hi\"".replaceAll("\"", "\\\"")});
   }
 }
 }

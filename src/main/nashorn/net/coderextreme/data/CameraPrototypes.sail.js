@@ -1,6 +1,5 @@
 load('X3Dautoclass.js');
 var ConfigurationProperties = Packages.org.web3d.x3d.jsail.ConfigurationProperties;
-ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
@@ -866,11 +865,11 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .addComments(new CommentsBlock("Add any ROUTEs here, going from Script to other nodes within ProtoBody"))))
         .addComments(new CommentsBlock("=============== Launch Prototype Example =============="))
         .addChild(new BackgroundObject().setSkyColor(Java.to([0.282353,0.380392,0.470588], Java.type("float[]"))))
-        .addChild(new AnchorObject().setDescription("launch CameraExample scene").setUrl(Java.to(["CameraExamples.x3d","http://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d","CameraExamples.wrl","http://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.wrl"], Java.type("java.lang.String[]")))
+        .addChild(new AnchorObject().setDescription("launch CameraExample scene").setUrl(Java.to(["CameraExamples.x3d".replace(/\"/g, "\\\""),"http://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d".replace(/\"/g, "\\\""),"CameraExamples.wrl".replace(/\"/g, "\\\""),"http://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.wrl".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]")))
           .addChild(new TransformObject()
             .addChild(new ShapeObject()
-              .setGeometry(new TextObject().setString(Java.to(["CameraPrototypes.x3d","defines multiple prototype nodes","","Click on this text to see","CameraExamples.x3d scene"], Java.type("java.lang.String[]")))
-                .setFontStyle(new FontStyleObject().setJustify(Java.to(["MIDDLE","MIDDLE"], Java.type("java.lang.String[]")))))
+              .setGeometry(new TextObject().setString(Java.to(["CameraPrototypes.x3d".replace(/\"/g, "\\\""),"defines multiple prototype nodes".replace(/\"/g, "\\\""),"".replace(/\"/g, "\\\""),"Click on this text to see".replace(/\"/g, "\\\""),"CameraExamples.x3d scene".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]")))
+                .setFontStyle(new FontStyleObject().setJustify(Java.to(["MIDDLE".replace(/\"/g, "\\\""),"MIDDLE".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]")))))
               .setAppearance(new AppearanceObject()
                 .setMaterial(new MaterialObject().setDiffuseColor(Java.to([1,1,0.2], Java.type("float[]")))))))))      ;
     X3D0.toFileX3D("../data/CameraPrototypes.new.x3d");

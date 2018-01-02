@@ -1,6 +1,5 @@
 load('X3Dautoclass.js');
 var ConfigurationProperties = Packages.org.web3d.x3d.jsail.ConfigurationProperties;
-ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
@@ -17,19 +16,19 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addChild(new NavigationInfoObject().setType(Java.to(["ANY","EXAMINE","FLY","LOOKAT"], Java.type("java.lang.String[]"))))
         .addChild(new ViewpointObject().setDEF("Tour").setDescription("Tour Views"))
         .addComments(new CommentsBlock("Viewpoint position='0 0 4' description='sphere in road'/"))
-        .addChild(new BackgroundObject().setBackUrl(Java.to(["resources/images/bBK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"], Java.type("java.lang.String[]"))).setBottomUrl(Java.to(["resources/images/bBT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"], Java.type("java.lang.String[]"))).setFrontUrl(Java.to(["resources/images/bFR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"], Java.type("java.lang.String[]"))).setLeftUrl(Java.to(["resources/images/bLF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"], Java.type("java.lang.String[]"))).setRightUrl(Java.to(["resources/images/bRT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"], Java.type("java.lang.String[]"))).setTopUrl(Java.to(["resources/images/bTP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"], Java.type("java.lang.String[]"))))
+        .addChild(new BackgroundObject().setBackUrl(Java.to(["resources/images/bBK.png".replace(/\"/g, "\\\""),"https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]"))).setBottomUrl(Java.to(["resources/images/bBT.png".replace(/\"/g, "\\\""),"https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]"))).setFrontUrl(Java.to(["resources/images/bFR.png".replace(/\"/g, "\\\""),"https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]"))).setLeftUrl(Java.to(["resources/images/bLF.png".replace(/\"/g, "\\\""),"https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]"))).setRightUrl(Java.to(["resources/images/bRT.png".replace(/\"/g, "\\\""),"https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]"))).setTopUrl(Java.to(["resources/images/bTP.png".replace(/\"/g, "\\\""),"https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]"))))
         .addChild(new TransformObject()
           .addChild(new ShapeObject()
             .setGeometry(new SphereObject())
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject().setDiffuseColor(Java.to([0.7,0.7,0.7], Java.type("float[]"))).setSpecularColor(Java.to([0.5,0.5,0.5], Java.type("float[]"))))
               .setTexture(new ComposedCubeMapTextureObject().setDEF("texture")
-                .setBack(new ImageTextureObject().setUrl(Java.to(["resources/images/bBK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"], Java.type("java.lang.String[]"))))
-                .setBottom(new ImageTextureObject().setUrl(Java.to(["resources/images/bBT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"], Java.type("java.lang.String[]"))))
-                .setFront(new ImageTextureObject().setUrl(Java.to(["resources/images/bFR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"], Java.type("java.lang.String[]"))))
-                .setLeft(new ImageTextureObject().setUrl(Java.to(["resources/images/bLF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"], Java.type("java.lang.String[]"))))
-                .setRight(new ImageTextureObject().setUrl(Java.to(["resources/images/bRT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"], Java.type("java.lang.String[]"))))
-                .setTop(new ImageTextureObject().setUrl(Java.to(["resources/images/bTP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"], Java.type("java.lang.String[]")))))
+                .setBack(new ImageTextureObject().setUrl(Java.to(["resources/images/bBK.png".replace(/\"/g, "\\\""),"https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]"))))
+                .setBottom(new ImageTextureObject().setUrl(Java.to(["resources/images/bBT.png".replace(/\"/g, "\\\""),"https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]"))))
+                .setFront(new ImageTextureObject().setUrl(Java.to(["resources/images/bFR.png".replace(/\"/g, "\\\""),"https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]"))))
+                .setLeft(new ImageTextureObject().setUrl(Java.to(["resources/images/bLF.png".replace(/\"/g, "\\\""),"https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]"))))
+                .setRight(new ImageTextureObject().setUrl(Java.to(["resources/images/bRT.png".replace(/\"/g, "\\\""),"https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]"))))
+                .setTop(new ImageTextureObject().setUrl(Java.to(["resources/images/bTP.png".replace(/\"/g, "\\\""),"https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]")))))
               .addShaders(new ComposedShaderObject().setLanguage("GLSL")
                 .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("chromaticDispertion").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.98 1 1.033"))
                 .addField(new fieldObject().setType(fieldObject.TYPE_SFNODE).setName("cube").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
@@ -37,8 +36,8 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                 .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("bias").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
                 .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("scale").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
                 .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("power").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("2"))
-                .addParts(new ShaderPartObject().setType("VERTEX").setUrl(Java.to(["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs"], Java.type("java.lang.String[]"))))
-                .addParts(new ShaderPartObject().setType("FRAGMENT").setDEF("common").setUrl(Java.to(["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/shaders/common.fs"], Java.type("java.lang.String[]")))))
+                .addParts(new ShaderPartObject().setType("VERTEX").setUrl(Java.to(["../shaders/x3dom.vs".replace(/\"/g, "\\\""),"https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]"))))
+                .addParts(new ShaderPartObject().setType("FRAGMENT").setDEF("common").setUrl(Java.to(["../shaders/common.fs".replace(/\"/g, "\\\""),"https://coderextreme.net/X3DJSONLD/shaders/common.fs".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]")))))
               .addShaders(new ComposedShaderObject().setLanguage("GLSL")
                 .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("chromaticDispertion").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue("0.98 1 1.033"))
                 .addField(new fieldObject().setType(fieldObject.TYPE_SFNODE).setName("cube").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
@@ -46,6 +45,6 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                 .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("bias").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue("0.5"))
                 .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("scale").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue("0.5"))
                 .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("power").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue("2"))
-                .addParts(new ShaderPartObject().setType("VERTEX").setUrl(Java.to(["../shaders/cobweb.vs","https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"], Java.type("java.lang.String[]"))))
+                .addParts(new ShaderPartObject().setType("VERTEX").setUrl(Java.to(["../shaders/cobweb.vs".replace(/\"/g, "\\\""),"https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]"))))
                 .addParts(new ShaderPartObject().setUSE("common")))))))      ;
     X3D0.toFileX3D("../data/geo.new.x3d");

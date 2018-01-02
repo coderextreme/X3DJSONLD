@@ -1,6 +1,5 @@
 load('X3Dautoclass.js');
 var ConfigurationProperties = Packages.org.web3d.x3d.jsail.ConfigurationProperties;
-ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
@@ -25,10 +24,10 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addChild(new ViewpointObject().setDEF("EntryView").setDescription("Hello MFString syntax"))
         .addChild(new BackgroundObject().setSkyColor(Java.to([0.6,1,0.8], Java.type("float[]"))))
         .addChild(new ShapeObject()
-          .setGeometry(new TextObject().setString(Java.to(["One, Two, Three","","He said, \"Immel did it!\""], Java.type("java.lang.String[]")))
+          .setGeometry(new TextObject().setString(Java.to(["One, Two, Three".replace(/\"/g, "\\\""),"".replace(/\"/g, "\\\""),"He said, \"Immel did it!\"".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]")))
             .addComments(new CommentsBlock("alternative XML encoding: Text string='\"One, Two, Three\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"'"))
             .addComments(new CommentsBlock("alternative Java source: .setString(new String [] {\"One, Two, Three\", \"\", \"He said, \\\"Immel did it!\\\"\"})"))
-            .setFontStyle(new FontStyleObject().setJustify(Java.to(["MIDDLE","MIDDLE"], Java.type("java.lang.String[]"))).setStyle("BOLD")))
+            .setFontStyle(new FontStyleObject().setJustify(Java.to(["MIDDLE".replace(/\"/g, "\\\""),"MIDDLE".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]"))).setStyle("BOLD")))
           .setAppearance(new AppearanceObject()
             .setMaterial(new MaterialObject().setDiffuseColor(Java.to([0.6,0.4,0.2], Java.type("float[]")))))))      ;
     X3D0.toFileX3D("../data/StringArrayEncodingExamples.new.x3d");

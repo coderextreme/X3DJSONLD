@@ -127,17 +127,17 @@ public class HelloWorld {
     }
 protected class MFString0 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"earth-topo.png","earth-topo.jpg","earth-topo-small.gif","http://www.web3d.org/x3d/content/examples/Basic/earth-topo.png","http://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg","http://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"});
+    return new MFStringObject(new java.lang.String[] {"earth-topo.png".replaceAll("\"", "\\\""),"earth-topo.jpg".replaceAll("\"", "\\\""),"earth-topo-small.gif".replaceAll("\"", "\\\""),"http://www.web3d.org/x3d/content/examples/Basic/earth-topo.png".replaceAll("\"", "\\\""),"http://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg".replaceAll("\"", "\\\""),"http://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString1 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"Hello","world!"});
+    return new MFStringObject(new java.lang.String[] {"Hello".replaceAll("\"", "\\\""),"world!".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString2 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"MIDDLE","MIDDLE"});
+    return new MFStringObject(new java.lang.String[] {"MIDDLE".replaceAll("\"", "\\\""),"MIDDLE".replaceAll("\"", "\\\"")});
   }
 }
 }

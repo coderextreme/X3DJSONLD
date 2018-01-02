@@ -1,6 +1,5 @@
 load('X3Dautoclass.js');
 var ConfigurationProperties = Packages.org.web3d.x3d.jsail.ConfigurationProperties;
-ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
@@ -38,7 +37,7 @@ var ProtoInstance2 = null;
                   .addChild(new ShapeObject()
                     .setAppearance(new AppearanceObject()
                       .setMaterial(new MaterialObject().setDEF("MaterialLightBlue").setDiffuseColor(Java.to([1,1,1], Java.type("float[]")))))
-                    .setGeometry(new TextObject().setDEF("RightString").setString(Java.to(["r"], Java.type("java.lang.String[]"))))))
+                    .setGeometry(new TextObject().setDEF("RightString").setString(Java.to(["r".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]"))))))
                 .addChild(new StringSensorObject().setDEF("RightSensor").setEnabled(false))
                 .addChild(new TouchSensorObject().setDescription("touch to activate").setDEF("RightTouch")))
               .addComments(new CommentsBlock("up"))
@@ -51,7 +50,7 @@ var ProtoInstance2 = null;
                   .addChild(new ShapeObject()
                     .setAppearance(new AppearanceObject()
                       .setMaterial(new MaterialObject().setUSE("MaterialLightBlue")))
-                    .setGeometry(new TextObject().setDEF("UpString").setString(Java.to(["u"], Java.type("java.lang.String[]"))))))
+                    .setGeometry(new TextObject().setDEF("UpString").setString(Java.to(["u".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]"))))))
                 .addChild(new StringSensorObject().setDEF("UpSensor").setEnabled(false))
                 .addChild(new TouchSensorObject().setDescription("touch to activate").setDEF("UpTouch")))
               .addComments(new CommentsBlock("down"))

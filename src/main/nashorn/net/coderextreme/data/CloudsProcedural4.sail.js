@@ -1,6 +1,5 @@
 load('X3Dautoclass.js');
 var ConfigurationProperties = Packages.org.web3d.x3d.jsail.ConfigurationProperties;
-ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
@@ -24,15 +23,15 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addChild(new DirectionalLightObject().setAmbientIntensity(1).setDirection(Java.to([-1,0,0], Java.type("float[]"))).setGlobal(true))
         .addChild(new GroupObject().setDEF("Terrain")
           .addChild(new TransformObject().setScale(Java.to([50,50,50], Java.type("float[]"))).setTranslation(Java.to([25000,0,25000], Java.type("float[]")))
-            .addChild(new InlineObject().setUrl(Java.to(["MontereyBayLargeMesh.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.x3d","MontereyBayLargeMesh.wrl","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.wrl"], Java.type("java.lang.String[]")))))
+            .addChild(new InlineObject().setUrl(Java.to(["MontereyBayLargeMesh.x3d".replace(/\"/g, "\\\""),"https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.x3d".replace(/\"/g, "\\\""),"MontereyBayLargeMesh.wrl".replace(/\"/g, "\\\""),"https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.wrl".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]")))))
           .addChild(new TransformObject().setRotation(Java.to([1,0,0,1.57], Java.type("float[]"))).setTranslation(Java.to([25000,0,25000], Java.type("float[]")))
             .addChild(new ShapeObject()
               .setGeometry(new Rectangle2DObject().setSize(Java.to([77000,55000], Java.type("float[]"))))
               .setAppearance(new AppearanceObject()
-                .setTexture(new ImageTextureObject().setUrl(Java.to(["ocean.png","https://savage.nps.edu/Savage/Environment/Atmosphere/ocean.png"], Java.type("java.lang.String[]"))))))))
+                .setTexture(new ImageTextureObject().setUrl(Java.to(["ocean.png".replace(/\"/g, "\\\""),"https://savage.nps.edu/Savage/Environment/Atmosphere/ocean.png".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]"))))))))
         .addChild(new GroupObject().setDEF("Placemarks")
           .addChild(new TransformObject().setScale(Java.to([50,50,50], Java.type("float[]"))).setTranslation(Java.to([45000,30,44000], Java.type("float[]")))
-            .addChild(new InlineObject().setUrl(Java.to(["Lighthouse.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.x3d","Lighthouse.wrl","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.wrl"], Java.type("java.lang.String[]"))))))
+            .addChild(new InlineObject().setUrl(Java.to(["Lighthouse.x3d".replace(/\"/g, "\\\""),"https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.x3d".replace(/\"/g, "\\\""),"Lighthouse.wrl".replace(/\"/g, "\\\""),"https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.wrl".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]"))))))
         .addChild(new GroupObject().setDEF("Clouds")
           .addChild(new TransformObject().setDEF("Cumulus"))
           .addChild(new TransformObject().setDEF("Cirrus"))

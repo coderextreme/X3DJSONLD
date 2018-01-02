@@ -230,7 +230,7 @@ protected class MFVec3f3 {
 }
 protected class MFString4 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"r"});
+    return new MFStringObject(new java.lang.String[] {"r".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFVec2f5 {
@@ -245,7 +245,7 @@ protected class MFVec3f6 {
 }
 protected class MFString7 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"u"});
+    return new MFStringObject(new java.lang.String[] {"u".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFVec2f8 {

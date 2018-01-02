@@ -1,6 +1,5 @@
 load('X3Dautoclass.js');
 var ConfigurationProperties = Packages.org.web3d.x3d.jsail.ConfigurationProperties;
-ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
@@ -30,25 +29,25 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addChild(new GroupObject()
           .addChild(new TransformObject().setDEF("Text1").setTranslation(Java.to([-6,0,0], Java.type("float[]")))
             .addChild(new ShapeObject()
-              .setGeometry(new TextObject().setString(Java.to(["View","# 1"], Java.type("java.lang.String[]")))
-                .setFontStyle(new FontStyleObject().setDEF("CenterJustify").setJustify(Java.to(["MIDDLE","MIDDLE"], Java.type("java.lang.String[]")))))
+              .setGeometry(new TextObject().setString(Java.to(["View".replace(/\"/g, "\\\""),"# 1".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]")))
+                .setFontStyle(new FontStyleObject().setDEF("CenterJustify").setJustify(Java.to(["MIDDLE".replace(/\"/g, "\\\""),"MIDDLE".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]")))))
               .setAppearance(new AppearanceObject()
                 .setMaterial(new MaterialObject().setDiffuseColor(Java.to([1,0,0], Java.type("float[]")))))))
           .addChild(new TransformObject().setDEF("Text2").setTranslation(Java.to([-2,0,0], Java.type("float[]")))
             .addChild(new ShapeObject()
-              .setGeometry(new TextObject().setString(Java.to(["View","# 2"], Java.type("java.lang.String[]")))
+              .setGeometry(new TextObject().setString(Java.to(["View".replace(/\"/g, "\\\""),"# 2".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]")))
                 .setFontStyle(new FontStyleObject().setUSE("CenterJustify")))
               .setAppearance(new AppearanceObject()
                 .setMaterial(new MaterialObject().setDiffuseColor(Java.to([0,1,0], Java.type("float[]")))))))
           .addChild(new TransformObject().setDEF("Text3").setTranslation(Java.to([2,0,0], Java.type("float[]")))
             .addChild(new ShapeObject()
-              .setGeometry(new TextObject().setString(Java.to(["View","# 3"], Java.type("java.lang.String[]")))
+              .setGeometry(new TextObject().setString(Java.to(["View".replace(/\"/g, "\\\""),"# 3".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]")))
                 .setFontStyle(new FontStyleObject().setUSE("CenterJustify")))
               .setAppearance(new AppearanceObject()
                 .setMaterial(new MaterialObject().setDiffuseColor(Java.to([0,0,1], Java.type("float[]")))))))
           .addChild(new TransformObject().setDEF("Text4").setTranslation(Java.to([6,0,0], Java.type("float[]")))
             .addChild(new ShapeObject()
-              .setGeometry(new TextObject().setString(Java.to(["View","# 4"], Java.type("java.lang.String[]")))
+              .setGeometry(new TextObject().setString(Java.to(["View".replace(/\"/g, "\\\""),"# 4".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]")))
                 .setFontStyle(new FontStyleObject().setUSE("CenterJustify")))
               .setAppearance(new AppearanceObject()
                 .setMaterial(new MaterialObject())))))
@@ -58,8 +57,8 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addComments(new CommentsBlock("notice this next Viewpoint has been transformed with the text, so its position is relative. it is called view5 in the Script."))
           .addChild(new ViewpointObject().setDEF("ClickToAnimateView").setDescription("Select animation sequence").setPosition(Java.to([0,0,7], Java.type("float[]"))))
           .addChild(new ShapeObject()
-            .setGeometry(new TextObject().setString(Java.to(["Click here to animate"], Java.type("java.lang.String[]")))
-              .setFontStyle(new FontStyleObject().setJustify(Java.to(["MIDDLE","BEGIN"], Java.type("java.lang.String[]")))))
+            .setGeometry(new TextObject().setString(Java.to(["Click here to animate".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]")))
+              .setFontStyle(new FontStyleObject().setJustify(Java.to(["MIDDLE".replace(/\"/g, "\\\""),"BEGIN".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]")))))
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject().setDiffuseColor(Java.to([0.8,0.4,0], Java.type("float[]"))))))
           .addChild(new ShapeObject()
