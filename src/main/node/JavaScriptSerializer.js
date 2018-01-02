@@ -229,7 +229,7 @@ JavaScriptSerializer.prototype = {
 									// console.error("JavaScript Replacing "+x+" with "+y);
 								}
 								return y;
-							}), this.codeno, '","', '"', '"');
+							}), this.codeno, '".replace(/\\\"/g, "\\\\\\\""),"', '"', '".replace(/\\\"/g, "\\\\\\\"")');
 					} else if (
 						attrType === "MFInt32"||
 						attrType === "MFImage"||
