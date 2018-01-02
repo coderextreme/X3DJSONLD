@@ -116,12 +116,12 @@ protected class MFColor0 {
 }
 protected class MFString1 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"One, Two, Three","","He said, \"Immel did it!\""});
+    return new MFStringObject(new java.lang.String[] {"One, Two, Three".replaceAll("\"", "\\\""),"".replaceAll("\"", "\\\""),"He said, \"Immel did it!\"".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString2 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"MIDDLE","MIDDLE"});
+    return new MFStringObject(new java.lang.String[] {"MIDDLE".replaceAll("\"", "\\\""),"MIDDLE".replaceAll("\"", "\\\"")});
   }
 }
 }

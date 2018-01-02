@@ -1,6 +1,5 @@
 load('X3Dautoclass.js');
 var ConfigurationProperties = Packages.org.web3d.x3d.jsail.ConfigurationProperties;
-ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
@@ -36,7 +35,7 @@ var ProtoInstance0 = null;
 " \n"+
 " \n"+
 ""))
-        .addChild(new ExternProtoDeclareObject().setName("HeadsUpDisplay").setAppinfo("Heads-up display (HUD) keeps child geometry aligned on screen in a consistent location").setUrl(Java.to(["HeadsUpDisplayPrototype.x3d#HeadsUpDisplay","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayPrototype.x3d#HeadsUpDisplay","HeadsUpDisplayPrototype.wrl#HeadsUpDisplay","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayPrototype.wrl#HeadsUpDisplay"], Java.type("java.lang.String[]")))
+        .addChild(new ExternProtoDeclareObject().setName("HeadsUpDisplay").setAppinfo("Heads-up display (HUD) keeps child geometry aligned on screen in a consistent location").setUrl(Java.to(["HeadsUpDisplayPrototype.x3d#HeadsUpDisplay".replace(/\"/g, "\\\""),"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayPrototype.x3d#HeadsUpDisplay".replace(/\"/g, "\\\""),"HeadsUpDisplayPrototype.wrl#HeadsUpDisplay".replace(/\"/g, "\\\""),"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayPrototype.wrl#HeadsUpDisplay".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]")))
           .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("screenOffset").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("offset position for HUD relative to current view location, default 0 0 -5"))
           .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setName("children").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("X3D content positioned at HUD offset"))
           .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("position_changed").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setAppinfo("HUD position update (in world coordinates) relative to original location"))
@@ -46,14 +45,14 @@ var ProtoInstance0 = null;
         .addComments(new CommentsBlock("ProtoDeclare is the \"cookie cutter\" template, ProtoInstance creates an actual occurrence"))
         .addChild(ProtoInstance0 = new ProtoInstanceObject().setName("HeadsUpDisplay").setDEF("HeadsUpDisplayInstance")
           .addComments(new CommentsBlock("example: upper left-hand corner of screen (x=-2, y=1) and set back z=-5 from user view")))
-        .addChild(new InlineObject().setUrl(Java.to(["../HelloWorld.x3d","http://X3dGraphics.com/examples/X3dForWebAuthors/HelloWorld.x3d","../HelloWorld.wrl","http://X3dGraphics.com/examples/X3dForWebAuthors/HelloWorld.wrl"], Java.type("java.lang.String[]")))))      ;
+        .addChild(new InlineObject().setUrl(Java.to(["../HelloWorld.x3d".replace(/\"/g, "\\\""),"http://X3dGraphics.com/examples/X3dForWebAuthors/HelloWorld.x3d".replace(/\"/g, "\\\""),"../HelloWorld.wrl".replace(/\"/g, "\\\""),"http://X3dGraphics.com/examples/X3dForWebAuthors/HelloWorld.wrl".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]")))))      ;
 ProtoInstance0
           .addFieldValue(new fieldValueObject().setName("screenOffset").setValue("-0.75 1 -5"));
 ProtoInstance0
           .addFieldValue(new fieldValueObject().setName("children")
             .addChild(new ShapeObject()
-              .setGeometry(new TextObject().setString(Java.to(["HUD text stays fixed","while user navigates"], Java.type("java.lang.String[]")))
-                .setFontStyle(new FontStyleObject().setJustify(Java.to(["MIDDLE","MIDDLE"], Java.type("java.lang.String[]"))).setSize(0.3)))
+              .setGeometry(new TextObject().setString(Java.to(["HUD text stays fixed".replace(/\"/g, "\\\""),"while user navigates".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]")))
+                .setFontStyle(new FontStyleObject().setJustify(Java.to(["MIDDLE".replace(/\"/g, "\\\""),"MIDDLE".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]"))).setSize(0.3)))
               .setAppearance(new AppearanceObject()
                 .setMaterial(new MaterialObject().setDiffuseColor(Java.to([0.894118,0.819608,1], Java.type("float[]")))))));
     X3D0.toFileX3D("../data/HeadsUpDisplayExample.new.x3d");

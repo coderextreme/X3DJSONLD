@@ -1,6 +1,5 @@
 load('X3Dautoclass.js');
 var ConfigurationProperties = Packages.org.web3d.x3d.jsail.ConfigurationProperties;
-ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
@@ -40,11 +39,11 @@ ConfigurationProperties.setStripTrailingZeroes(true);
               .setGeometry(new SphereObject())
               .setAppearance(new AppearanceObject()
                 .setMaterial(new MaterialObject().setDEF("MaterialLightBlue").setDiffuseColor(Java.to([0.1,0.5,1], Java.type("float[]"))))
-                .setTexture(new ImageTextureObject().setDEF("ImageCloudlessEarth").setUrl(Java.to(["earth-topo.png","earth-topo.jpg","earth-topo-small.gif","http://www.web3d.org/x3d/content/examples/Basic/earth-topo.png","http://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg","http://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"], Java.type("java.lang.String[]")))))))
+                .setTexture(new ImageTextureObject().setDEF("ImageCloudlessEarth").setUrl(Java.to(["earth-topo.png".replace(/\"/g, "\\\""),"earth-topo.jpg".replace(/\"/g, "\\\""),"earth-topo-small.gif".replace(/\"/g, "\\\""),"http://www.web3d.org/x3d/content/examples/Basic/earth-topo.png".replace(/\"/g, "\\\""),"http://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg".replace(/\"/g, "\\\""),"http://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]")))))))
           .addChild(new TransformObject().setTranslation(Java.to([0,-2,0], Java.type("float[]")))
             .addChild(new ShapeObject()
-              .setGeometry(new TextObject().setDEF("TextMessage").setString(Java.to(["Hello","world!"], Java.type("java.lang.String[]")))
-                .setFontStyle(new FontStyleObject().setJustify(Java.to(["MIDDLE","MIDDLE"], Java.type("java.lang.String[]")))))
+              .setGeometry(new TextObject().setDEF("TextMessage").setString(Java.to(["Hello".replace(/\"/g, "\\\""),"world!".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]")))
+                .setFontStyle(new FontStyleObject().setJustify(Java.to(["MIDDLE".replace(/\"/g, "\\\""),"MIDDLE".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]")))))
               .setAppearance(new AppearanceObject()
                 .setMaterial(new MaterialObject().setUSE("MaterialLightBlue")))))))      ;
     X3D0.toFileX3D("../data/HelloWorld.new.x3d");

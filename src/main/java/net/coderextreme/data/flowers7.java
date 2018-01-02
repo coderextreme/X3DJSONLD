@@ -230,82 +230,82 @@ public class flowers7 {
     }
 protected class MFString0 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png"});
+    return new MFStringObject(new java.lang.String[] {"../resources/images/all_probes/beach_cross/beach_back.png".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString1 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png"});
+    return new MFStringObject(new java.lang.String[] {"../resources/images/all_probes/beach_cross/beach_bottom.png".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString2 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png"});
+    return new MFStringObject(new java.lang.String[] {"../resources/images/all_probes/beach_cross/beach_front.png".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString3 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png"});
+    return new MFStringObject(new java.lang.String[] {"../resources/images/all_probes/beach_cross/beach_left.png".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString4 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png"});
+    return new MFStringObject(new java.lang.String[] {"../resources/images/all_probes/beach_cross/beach_right.png".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString5 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png"});
+    return new MFStringObject(new java.lang.String[] {"../resources/images/all_probes/beach_cross/beach_top.png".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString6 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png"});
+    return new MFStringObject(new java.lang.String[] {"../resources/images/all_probes/beach_cross/beach_back.png".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString7 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png"});
+    return new MFStringObject(new java.lang.String[] {"../resources/images/all_probes/beach_cross/beach_bottom.png".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString8 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png"});
+    return new MFStringObject(new java.lang.String[] {"../resources/images/all_probes/beach_cross/beach_front.png".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString9 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png"});
+    return new MFStringObject(new java.lang.String[] {"../resources/images/all_probes/beach_cross/beach_left.png".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString10 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png"});
+    return new MFStringObject(new java.lang.String[] {"../resources/images/all_probes/beach_cross/beach_right.png".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString11 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png"});
+    return new MFStringObject(new java.lang.String[] {"../resources/images/all_probes/beach_cross/beach_top.png".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString12 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../shaders/x3dom_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/shaders/x3dom_flowers_chromatic.vs"});
+    return new MFStringObject(new java.lang.String[] {"../shaders/x3dom_flowers_chromatic.vs".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/shaders/x3dom_flowers_chromatic.vs".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString13 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/shaders/common.fs"});
+    return new MFStringObject(new java.lang.String[] {"../shaders/pc_bubbles.fs".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/shaders/common.fs".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString14 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../shaders/cobweb_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/shaders/cobweb_flowers_chromatic.vs"});
+    return new MFStringObject(new java.lang.String[] {"../shaders/cobweb_flowers_chromatic.vs".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/shaders/cobweb_flowers_chromatic.vs".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString15 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../shaders/common.fs","https://coderextreme.net/X3DJSONLD/shaders/common.fs"});
+    return new MFStringObject(new java.lang.String[] {"../shaders/common.fs".replaceAll("\"", "\\\""),"https://coderextreme.net/X3DJSONLD/shaders/common.fs".replaceAll("\"", "\\\"")});
   }
 }
 }

@@ -1,6 +1,5 @@
 load('X3Dautoclass.js');
 var ConfigurationProperties = Packages.org.web3d.x3d.jsail.ConfigurationProperties;
-ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
@@ -29,8 +28,8 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addComments(new CommentsBlock("quotation \" can be used within an X3D string if escaped with backslash \\ as \\\""))
           .addComments(new CommentsBlock("backslash \\ is used as escape character for \" (and itself) in X3D"))
           .addComments(new CommentsBlock("character entities are listed in HTML specification and are good for any XML"))
-          .setGeometry(new TextObject().setDEF("DefaultText").setString(Java.to(["Character entity substitutions:","empty string \"\" skips a line:","","apostrophe ' is &apos;","ampersand & is &amp;","quote mark \" is &quot;","backslash \\ is X3D escape character","double backslash \\\\ is X3D backslash \\ character","Pi Π is &#928; XML character entity"], Java.type("java.lang.String[]")))
-            .setFontStyle(new FontStyleObject().setDEF("CenteredFontStyle").setJustify(Java.to(["MIDDLE","MIDDLE"], Java.type("java.lang.String[]")))))
+          .setGeometry(new TextObject().setDEF("DefaultText").setString(Java.to(["Character entity substitutions:".replace(/\"/g, "\\\""),"empty string \"\" skips a line:".replace(/\"/g, "\\\""),"".replace(/\"/g, "\\\""),"apostrophe ' is &apos;".replace(/\"/g, "\\\""),"ampersand & is &amp;".replace(/\"/g, "\\\""),"quote mark \" is &quot;".replace(/\"/g, "\\\""),"backslash \\ is X3D escape character".replace(/\"/g, "\\\""),"double backslash \\\\ is X3D backslash \\ character".replace(/\"/g, "\\\""),"Pi Π is &#928; XML character entity".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]")))
+            .setFontStyle(new FontStyleObject().setDEF("CenteredFontStyle").setJustify(Java.to(["MIDDLE".replace(/\"/g, "\\\""),"MIDDLE".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]")))))
           .setAppearance(new AppearanceObject()
             .setMaterial(new MaterialObject().setDEF("DefaultMaterial").setDiffuseColor(Java.to([0.2,0.2,0.2], Java.type("float[]")))))))      ;
     X3D0.toFileX3D("../data/TextSpecialCharacters.new.x3d");

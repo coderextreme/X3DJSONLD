@@ -143,7 +143,7 @@ public class CameraShape {
     }
 protected class MFString0 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"VRML2.0 created with Version 1.3, from Alias Maya 2008"});
+    return new MFStringObject(new java.lang.String[] {"VRML2.0 created with Version 1.3, from Alias Maya 2008".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFInt321 {

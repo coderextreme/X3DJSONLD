@@ -237,12 +237,12 @@ ProtoInstance6
     }
 protected class MFString0 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"Node"});
+    return new MFStringObject(new java.lang.String[] {"Node".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString1 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"MIDDLE","MIDDLE"});
+    return new MFStringObject(new java.lang.String[] {"MIDDLE".replaceAll("\"", "\\\""),"MIDDLE".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFFloat2 {

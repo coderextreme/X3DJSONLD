@@ -1,6 +1,5 @@
 load('X3Dautoclass.js');
 var ConfigurationProperties = Packages.org.web3d.x3d.jsail.ConfigurationProperties;
-ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
@@ -26,7 +25,7 @@ var ProtoInstance3 = null;
         .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new metaObject().setName("license").setContent("../license.html")))
       .setScene(new SceneObject()
-        .addChild(new ExternProtoDeclareObject().setName("ViewPositionOrientation").setUrl(Java.to(["../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation","https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation","../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation","https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation"], Java.type("java.lang.String[]")))
+        .addChild(new ExternProtoDeclareObject().setName("ViewPositionOrientation").setUrl(Java.to(["../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation".replace(/\"/g, "\\\""),"https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation".replace(/\"/g, "\\\""),"../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation".replace(/\"/g, "\\\""),"https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]")))
           .addField(new fieldObject().setType(fieldObject.TYPE_SFBOOL).setName("enabled").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT))
           .addField(new fieldObject().setType(fieldObject.TYPE_SFBOOL).setName("traceEnabled").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY))
           .addField(new fieldObject().setType(fieldObject.TYPE_SFBOOL).setName("set_traceEnabled").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
@@ -70,7 +69,7 @@ var ProtoInstance3 = null;
           .setProxy(new ShapeObject()
             .addComments(new CommentsBlock("note that Collision proxy Shape is not rendered"))
             .addComments(new CommentsBlock("alternative: Text string='\"He said, \\&quot;Immel did it!\\&quot;\"'"))
-            .setGeometry(new TextObject().setString(Java.to(["He said, \"Immel did it!\""], Java.type("java.lang.String[]"))))
+            .setGeometry(new TextObject().setString(Java.to(["He said, \"Immel did it!\"".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]"))))
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject())))
           .addChild(new GroupObject().setUSE("ExampleChildElement")))
@@ -78,14 +77,14 @@ var ProtoInstance3 = null;
           .addChild(new ShapeObject()
             .setAppearance(new AppearanceObject()
               .setMaterial(ProtoInstance2 = new ProtoInstanceObject().setName("EmissiveMaterial")))
-            .setGeometry(new TextObject().setString(Java.to(["X3D Header Prototype syntax examples","(view console for EXTERNPROTO output)"], Java.type("java.lang.String[]")))
-              .setFontStyle(new FontStyleObject().setJustify(Java.to(["MIDDLE","MIDDLE"], Java.type("java.lang.String[]"))).setSize(0.6)))))
+            .setGeometry(new TextObject().setString(Java.to(["X3D Header Prototype syntax examples".replace(/\"/g, "\\\""),"(view console for EXTERNPROTO output)".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]")))
+              .setFontStyle(new FontStyleObject().setJustify(Java.to(["MIDDLE".replace(/\"/g, "\\\""),"MIDDLE".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]"))).setSize(0.6)))))
         .addChild(ProtoInstance3 = new ProtoInstanceObject().setName("ViewPositionOrientation"))
         .addChild(new TimeSensorObject().setDEF("Clock").setCycleInterval(4).setLoop(true))
         .addChild(new OrientationInterpolatorObject().setDEF("Spinner").setKey(Java.to([0,0.5,1], Java.type("float[]"))).setKeyValue(Java.to([0,1,0,0,0,1,0,3.14159,0,1,0,6.28318], Java.type("float[]"))))
         .addChild(new ROUTEObject().setFromField("fraction_changed").setFromNode("Clock").setToField("set_fraction").setToNode("Spinner"))
         .addChild(new ROUTEObject().setFromField("value_changed").setFromNode("Spinner").setToField("rotation").setToNode("TransformExampleUSE"))
-        .addChild(new InlineObject().setDEF("someInline").setUrl(Java.to(["someUrl.x3d","http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/someUrl.x3d"], Java.type("java.lang.String[]"))))
+        .addChild(new InlineObject().setDEF("someInline").setUrl(Java.to(["someUrl.x3d".replace(/\"/g, "\\\""),"http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/someUrl.x3d".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]"))))
         .addChild(new IMPORTObject().setAS("someInlineRoot").setImportedDEF("someName").setInlineDEF("someInline"))
         .addChild(new PositionInterpolatorObject().setDEF("StayInPlace").setKey(Java.to([0,1], Java.type("float[]"))).setKeyValue(Java.to([0,0,0,0,0,0], Java.type("float[]"))))
         .addChild(new ROUTEObject().setFromField("fraction_changed").setFromNode("Clock").setToField("set_fraction").setToNode("StayInPlace"))

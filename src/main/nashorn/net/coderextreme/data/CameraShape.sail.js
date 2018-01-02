@@ -1,6 +1,5 @@
 load('X3Dautoclass.js');
 var ConfigurationProperties = Packages.org.web3d.x3d.jsail.ConfigurationProperties;
-ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
@@ -18,7 +17,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new metaObject().setName("license").setContent("../../license.html")))
       .setScene(new SceneObject()
-        .addChild(new WorldInfoObject().setInfo(Java.to(["VRML2.0 created with Version 1.3, from Alias Maya 2008"], Java.type("java.lang.String[]"))).setTitle("SimpleCamera.x3d"))
+        .addChild(new WorldInfoObject().setInfo(Java.to(["VRML2.0 created with Version 1.3, from Alias Maya 2008".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]"))).setTitle("SimpleCamera.x3d"))
         .addChild(new ViewpointObject().setDEF("CameraShapeView").setDescription("Camera view, over the shoulder").setPosition(Java.to([0,0.75,3], Java.type("float[]"))))
         .addChild(new ViewpointObject().setDescription("Camera view through lens").setPosition(Java.to([0,0,0], Java.type("float[]"))))
         .addChild(new ViewpointObject().setDescription("Camera view from right side").setOrientation(Java.to([0,1,0,1.5708], Java.type("float[]"))).setPosition(Java.to([12,0,-4], Java.type("float[]"))))

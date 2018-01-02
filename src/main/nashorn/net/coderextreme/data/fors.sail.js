@@ -1,6 +1,5 @@
 load('X3Dautoclass.js');
 var ConfigurationProperties = Packages.org.web3d.x3d.jsail.ConfigurationProperties;
-ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
@@ -29,8 +28,8 @@ var ProtoInstance2 = null;
                   .setMaterial(new MaterialObject().setDiffuseColor(Java.to([1,0,0], Java.type("float[]"))))))
               .addChild(new TransformObject().setTranslation(Java.to([1,0,0], Java.type("float[]")))
                 .addChild(new ShapeObject()
-                  .setGeometry(new TextObject().setString(Java.to(["Node"], Java.type("java.lang.String[]")))
-                    .setFontStyle(new FontStyleObject().setJustify(Java.to(["MIDDLE","MIDDLE"], Java.type("java.lang.String[]"))).setSize(5)))
+                  .setGeometry(new TextObject().setString(Java.to(["Node".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]")))
+                    .setFontStyle(new FontStyleObject().setJustify(Java.to(["MIDDLE".replace(/\"/g, "\\\""),"MIDDLE".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]"))).setSize(5)))
                   .setAppearance(new AppearanceObject()
                     .setMaterial(new MaterialObject().setDiffuseColor(Java.to([0,0,1], Java.type("float[]"))))))))
             .addChild(new PositionInterpolatorObject().setDEF("NodePosition").setKey(Java.to([0,1], Java.type("float[]"))).setKeyValue(Java.to([0,0,0,0,5,0], Java.type("float[]"))))

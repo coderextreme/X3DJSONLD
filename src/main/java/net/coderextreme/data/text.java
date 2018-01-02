@@ -114,17 +114,17 @@ public class text {
     }
 protected class MFString0 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"Node\"\"\""});
+    return new MFStringObject(new java.lang.String[] {"Node\"\"\"".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString1 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"Node2","\\","\\\\","Node2"});
+    return new MFStringObject(new java.lang.String[] {"Node2".replaceAll("\"", "\\\""),"\\".replaceAll("\"", "\\\""),"\\\\".replaceAll("\"", "\\\""),"Node2".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString2 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"Node3 \\\\ \\","Node3\"\"\""});
+    return new MFStringObject(new java.lang.String[] {"Node3 \\\\ \\".replaceAll("\"", "\\\""),"Node3\"\"\"".replaceAll("\"", "\\\"")});
   }
 }
 }

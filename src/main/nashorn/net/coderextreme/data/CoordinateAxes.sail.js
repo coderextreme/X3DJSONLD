@@ -1,6 +1,5 @@
 load('X3Dautoclass.js');
 var ConfigurationProperties = Packages.org.web3d.x3d.jsail.ConfigurationProperties;
-ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
@@ -33,8 +32,8 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                 .addChild(new ShapeObject()
                   .setAppearance(new AppearanceObject().setDEF("LABEL_APPEARANCE")
                     .setMaterial(new MaterialObject().setDiffuseColor(Java.to([1,1,0.3], Java.type("float[]"))).setEmissiveColor(Java.to([0.33,0.33,0.1], Java.type("float[]")))))
-                  .setGeometry(new TextObject().setString(Java.to(["Y"], Java.type("java.lang.String[]")))
-                    .setFontStyle(new FontStyleObject().setDEF("LABEL_FONT").setFamily(Java.to(["SANS"], Java.type("java.lang.String[]"))).setJustify(Java.to(["MIDDLE","MIDDLE"], Java.type("java.lang.String[]"))).setSize(0.2)))))))
+                  .setGeometry(new TextObject().setString(Java.to(["Y".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]")))
+                    .setFontStyle(new FontStyleObject().setDEF("LABEL_FONT").setFamily(Java.to(["SANS".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]"))).setJustify(Java.to(["MIDDLE".replace(/\"/g, "\\\""),"MIDDLE".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]"))).setSize(0.2)))))))
           .addChild(new TransformObject().setRotation(Java.to([0,0,1,-1.57079], Java.type("float[]")))
             .addComments(new CommentsBlock("Horizontal X arrow and label"))
             .addChild(new GroupObject()
@@ -52,7 +51,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                 .addChild(new BillboardObject()
                   .addChild(new ShapeObject()
                     .setAppearance(new AppearanceObject().setUSE("LABEL_APPEARANCE"))
-                    .setGeometry(new TextObject().setString(Java.to(["X"], Java.type("java.lang.String[]")))
+                    .setGeometry(new TextObject().setString(Java.to(["X".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]")))
                       .setFontStyle(new FontStyleObject().setUSE("LABEL_FONT"))))))))
           .addChild(new TransformObject().setRotation(Java.to([1,0,0,1.57079], Java.type("float[]")))
             .addComments(new CommentsBlock("Perpendicular Z arrow and label, note right-hand rule"))
@@ -71,6 +70,6 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                 .addChild(new BillboardObject()
                   .addChild(new ShapeObject()
                     .setAppearance(new AppearanceObject().setUSE("LABEL_APPEARANCE"))
-                    .setGeometry(new TextObject().setString(Java.to(["Z"], Java.type("java.lang.String[]")))
+                    .setGeometry(new TextObject().setString(Java.to(["Z".replace(/\"/g, "\\\"")], Java.type("java.lang.String[]")))
                       .setFontStyle(new FontStyleObject().setUSE("LABEL_FONT"))))))))))      ;
     X3D0.toFileX3D("../data/CoordinateAxes.new.x3d");

@@ -327,12 +327,12 @@ ProtoInstance1
     }
 protected class MFString0 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../X3DJSAIL.html","http://www.web3d.org/specifications/java/X3DJSAIL.html"});
+    return new MFStringObject(new java.lang.String[] {"../X3DJSAIL.html".replaceAll("\"", "\\\""),"http://www.web3d.org/specifications/java/X3DJSAIL.html".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString1 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"images/X3dJavaSceneAccessInterfaceSaiLibrary.png","http://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png"});
+    return new MFStringObject(new java.lang.String[] {"images/X3dJavaSceneAccessInterfaceSaiLibrary.png".replaceAll("\"", "\\\""),"http://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFInt322 {
@@ -357,27 +357,27 @@ protected class MFVec3f5 {
 }
 protected class MFString6 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"X3D Java","SAI Library","X3DJSAIL"});
+    return new MFStringObject(new java.lang.String[] {"X3D Java".replaceAll("\"", "\\\""),"SAI Library".replaceAll("\"", "\\\""),"X3DJSAIL".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString7 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"escaped quotation marks example 1: He said, \"Immel did it!\""});
+    return new MFStringObject(new java.lang.String[] {"escaped quotation marks example 1: He said, \"Immel did it!\"".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString8 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"escaped quotation marks example 2: He said, &quot;Immel did it!&quot;"});
+    return new MFStringObject(new java.lang.String[] {"escaped quotation marks example 2: He said, &quot;Immel did it!&quot;".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString9 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"MIDDLE","MIDDLE"});
+    return new MFStringObject(new java.lang.String[] {"MIDDLE".replaceAll("\"", "\\\""),"MIDDLE".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString10 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"One, Two, Three","","He said, \"Immel did it!\""});
+    return new MFStringObject(new java.lang.String[] {"One, Two, Three".replaceAll("\"", "\\\""),"".replaceAll("\"", "\\\""),"He said, \"Immel did it!\"".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFFloat11 {
@@ -402,27 +402,27 @@ protected class MFColor14 {
 }
 protected class MFString15 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"});
+    return new MFStringObject(new java.lang.String[] {"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material".replaceAll("\"", "\\\""),"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString16 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"someOtherScene.x3d"});
+    return new MFStringObject(new java.lang.String[] {"someOtherScene.x3d".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString17 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"test case"});
+    return new MFStringObject(new java.lang.String[] {"test case".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString18 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"chimes.wav","http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"});
+    return new MFStringObject(new java.lang.String[] {"chimes.wav".replaceAll("\"", "\\\""),"http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav".replaceAll("\"", "\\\"")});
   }
 }
 protected class MFString19 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"mpgsys.mpg","http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"});
+    return new MFStringObject(new java.lang.String[] {"mpgsys.mpg".replaceAll("\"", "\\\""),"http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg".replaceAll("\"", "\\\"")});
   }
 }
 }
