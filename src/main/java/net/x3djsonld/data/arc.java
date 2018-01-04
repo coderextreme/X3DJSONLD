@@ -91,9 +91,7 @@ public class arc
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject().setDiffuseColor(1.0f,0.0f,0.0f))))
           .addChild(new PositionInterpolatorObject("PI1").setKeyValue(new MFVec3fObject(new float[] {0.0f,0.0f,0.0f,0.0f,5.0f,0.0f})).setKey(new float[] {0.0f,1.0f}))
-          .addChild(new ScriptObject("MB1").setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+          .addChild(new ScriptObject("MB1").setSourceCode("\n" + 
 "\n" + 
 "ecmascript:" + "\n" + 
 "		function set_location(value) {" + "\n" + 
@@ -101,8 +99,7 @@ public class arc
 "		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);" + "\n" + 
 "                    keyValue = new MFVec3f([old, translation]);" + "\n" + 
 "		    // Browser.println(keyValue);" + "\n" + 
-"		}" + "\n" + "]]>"
-)
+"		}" + "\n")
             .addField(new fieldObject().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("50 50 0"))
             .addField(new fieldObject().setAccessType("inputOutput").setName("old").setType("SFVec3f").setValue("0 0 0"))
             .addField(new fieldObject().setAccessType("inputOnly").setName("set_location").setType("SFTime"))
@@ -126,9 +123,7 @@ public class arc
                 .setAppearance(new AppearanceObject()
                   .setMaterial(new MaterialObject().setTransparency(.5f).setDiffuseColor(0.2f,0.7f,0.7f)))
                 .setGeometry(new CylinderObject().setRadius(.05f)))))
-          .addChild(new ScriptObject("S1").setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+          .addChild(new ScriptObject("S1").setSourceCode("\n" + 
 "            ecmascript:" + "\n" + 
 "        function recompute(startpoint,endpoint){" + "\n" + 
 "	    if (typeof endpoint === 'undefined') {" + "\n" + 
@@ -172,8 +167,7 @@ public class arc
 "        }" + "\n" + 
 "        function set_endpoint(val,t){" + "\n" + 
 "            recompute_and_route(startnode.translation,val);" + "\n" + 
-"        }" + "\n" + "]]>"
-)
+"        }" + "\n")
             .addField(new fieldObject().setAccessType("initializeOnly").setName("startnode").setType("SFNode"))
             .addField(new fieldObject().setAccessType("initializeOnly").setName("endnode").setType("SFNode"))
             .addField(new fieldObject().setAccessType("inputOutput").setName("position").setType("SFNode")

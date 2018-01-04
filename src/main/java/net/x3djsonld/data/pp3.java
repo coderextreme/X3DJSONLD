@@ -148,9 +148,7 @@ public class pp3
                 .setGeometry(new TextObject("CenterString"))))
             .addChild(new StringSensorObject("CenterSensor").setEnabled(false))
             .addChild(new TouchSensorObject("CenterTouch").setDescription("touch to activate"))))
-        .addChild(new ScriptObject("RightSingleToMultiString").setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+        .addChild(new ScriptObject("RightSingleToMultiString").setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
 "\n" + 
 "function initialize() {" + "\n" + 
@@ -159,13 +157,10 @@ public class pp3
 "\n" + 
 "function set_rightstring(rightstr) {" + "\n" + 
 "	rightlines = new MFString(rightstr);" + "\n" + 
-"}" + "\n" + "]]>"
-)
+"}" + "\n")
           .addField(new fieldObject().setAccessType("inputOnly").setName("set_rightstring").setType("SFString"))
           .addField(new fieldObject().setAccessType("outputOnly").setName("rightlines").setType("MFString")))
-        .addChild(new ScriptObject("UpSingleToMultiString").setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+        .addChild(new ScriptObject("UpSingleToMultiString").setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
 "\n" + 
 "function initialize() {" + "\n" + 
@@ -174,13 +169,10 @@ public class pp3
 "\n" + 
 "function set_upstring(upstr) {" + "\n" + 
 "	uplines = new MFString(upstr);" + "\n" + 
-"}" + "\n" + "]]>"
-)
+"}" + "\n")
           .addField(new fieldObject().setAccessType("inputOnly").setName("set_upstring").setType("SFString"))
           .addField(new fieldObject().setAccessType("outputOnly").setName("uplines").setType("MFString")))
-        .addChild(new ScriptObject("CenterSingleToMultiString").setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+        .addChild(new ScriptObject("CenterSingleToMultiString").setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
 "\n" + 
 "function initialize() {" + "\n" + 
@@ -189,8 +181,7 @@ public class pp3
 "\n" + 
 "function set_centerstring(centerstr) {" + "\n" + 
 "	centerlines = new MFString(centerstr);" + "\n" + 
-"}" + "\n" + "]]>"
-)
+"}" + "\n")
           .addField(new fieldObject().setAccessType("inputOnly").setName("set_centerstring").setType("SFString"))
           .addField(new fieldObject().setAccessType("outputOnly").setName("centerlines").setType("MFString")))
         .addChild(new ROUTEObject().setFromNode("CenterSensor").setFromField("enteredText").setToNode("CenterSingleToMultiString").setToField("set_centerstring"))

@@ -100,9 +100,7 @@ public class fors
               .setAppearance(new AppearanceObject()
                 .setMaterial(new MaterialObject().setDiffuseColor(0.0f,0.0f,1.0f))))))
         .addChild(new PositionInterpolatorObject("NodePosition").setKeyValue(new MFVec3fObject(new float[] {0.0f,0.0f,0.0f,0.0f,5.0f,0.0f})).setKey(new float[] {0.0f,1.0f}))
-        .addChild(new ScriptObject("MoveBall").setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+        .addChild(new ScriptObject("MoveBall").setSourceCode("\n" + 
 "\n" + 
 "ecmascript:" + "\n" + 
 "					function set_cycle(value) {" + "\n" + 
@@ -110,8 +108,7 @@ public class fors
 "						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);" + "\n" + 
 "                                                keyValue = new MFVec3f([old, translation]);" + "\n" + 
 "						// Browser.println(translation);" + "\n" + 
-"					}" + "\n" + "]]>"
-)
+"					}" + "\n")
           .addField(new fieldObject().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("50 50 0"))
           .addField(new fieldObject().setAccessType("inputOutput").setName("old").setType("SFVec3f").setValue("0 0 0"))
           .addField(new fieldObject().setAccessType("inputOnly").setName("set_cycle").setType("SFTime"))
@@ -130,9 +127,7 @@ public class fors
           .setGeometry(new ExtrusionObject("extrusion").setSpine(new MFVec3fObject(new float[] {0.0f,-50.0f,0.0f,0.0f,50.0f,0.0f})).setCreaseAngle(0.785f).setCrossSection(extrusion_6_39_crossSection))
           .setAppearance(new AppearanceObject()
             .setMaterial(new MaterialObject().setDiffuseColor(0.0f,1.0f,0.0f))))
-        .addChild(new ScriptObject("MoveCylinder").setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+        .addChild(new ScriptObject("MoveCylinder").setSourceCode("\n" + 
 "\n" + 
 "ecmascript:" + "\n" + 
 "\n" + 
@@ -154,8 +149,7 @@ public class fors
 "                " + "\n" + 
 "                function set_spine(value) {" + "\n" + 
 "                    spine = value;" + "\n" + 
-"                }" + "\n" + "]]>"
-)
+"                }" + "\n")
           .addField(new fieldObject().setAccessType("inputOutput").setName("spine").setType("MFVec3f").setValue("0 -50 0 0 50 0"))
           .addField(new fieldObject().setAccessType("inputOnly").setName("set_endA").setType("SFVec3f"))
           .addField(new fieldObject().setAccessType("inputOnly").setName("set_endB").setType("SFVec3f"))

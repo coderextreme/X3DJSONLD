@@ -101,9 +101,7 @@ public class force
                 .setAppearance(new AppearanceObject()
                   .setMaterial(new MaterialObject().setDiffuseColor(0.0f,0.0f,1.0f))))))
           .addChild(new PositionInterpolatorObject("NodePosition").setKeyValue(new MFVec3fObject(new float[] {0.0f,0.0f,0.0f,0.0f,5.0f,0.0f})).setKey(new float[] {0.0f,1.0f}))
-          .addChild(new ScriptObject("MoveBall").setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+          .addChild(new ScriptObject("MoveBall").setSourceCode("\n" + 
 "\n" + 
 "ecmascript:" + "\n" + 
 "					function set_cycle(value) {" + "\n" + 
@@ -111,8 +109,7 @@ public class force
 "						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);" + "\n" + 
 "                                                keyValue = new MFVec3f([old, translation]);" + "\n" + 
 "						// Browser.println(translation);" + "\n" + 
-"					}" + "\n" + "]]>"
-)
+"					}" + "\n")
             .addField(new fieldObject().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("50 50 0"))
             .addField(new fieldObject().setAccessType("inputOutput").setName("old").setType("SFVec3f").setValue("0 0 0"))
             .addField(new fieldObject().setAccessType("inputOnly").setName("set_cycle").setType("SFTime"))
@@ -132,9 +129,7 @@ public class force
             .setGeometry(new ExtrusionObject("extrusion").setSpine(new MFVec3fObject(new float[] {0.0f,-50.0f,0.0f,0.0f,50.0f,0.0f})).setCreaseAngle(0.785f).setCrossSection(extrusion_7_40_crossSection))
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject().setDiffuseColor(0.0f,1.0f,0.0f))))
-          .addChild(new ScriptObject("MoveCylinder").setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+          .addChild(new ScriptObject("MoveCylinder").setSourceCode("\n" + 
 "\n" + 
 "ecmascript:" + "\n" + 
 "\n" + 
@@ -156,8 +151,7 @@ public class force
 "                " + "\n" + 
 "                function set_spine(value) {" + "\n" + 
 "                    spine = value;" + "\n" + 
-"                }" + "\n" + "]]>"
-)
+"                }" + "\n")
             .addField(new fieldObject().setAccessType("inputOutput").setName("spine").setType("MFVec3f").setValue("0 -50 0 0 50 0"))
             .addField(new fieldObject().setAccessType("inputOnly").setName("set_endA").setType("SFVec3f"))
             .addField(new fieldObject().setAccessType("inputOnly").setName("set_endB").setType("SFVec3f"))
@@ -184,9 +178,7 @@ public class force
       .addChild(new ProtoInstanceObject("linkC", "cylinder").setDEF("linkC").setName("cylinder")
         .addFieldValue(new fieldValueObject().setName("set_positionA").setValue("50 50 50"))
         .addFieldValue(new fieldValueObject().setName("set_positionB").setValue("50 50 -50"))))
-    .addChild(new ScriptObject("clickHandler").setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+    .addChild(new ScriptObject("clickHandler").setSourceCode("\n" + 
 "	" + "\n" + 
 "ecmascript:" + "\n" + 
 "	function add_node(value) {" + "\n" + 
@@ -205,8 +197,7 @@ public class force
 "				}" + "\n" + 
 "			});" + "\n" + 
 "                " + "\n" + 
-"        }" + "\n" + "]]>"
-)
+"        }" + "\n")
       .addField(new fieldObject().setAccessType("inputOutput").setName("counter").setType("SFInt32").setValue("0"))
       .addField(new fieldObject().setAccessType("outputOnly").setName("node_changed").setType("SFNode"))
       .addField(new fieldObject().setAccessType("inputOnly").setName("add_node").setType("SFBool").setValue("false"))

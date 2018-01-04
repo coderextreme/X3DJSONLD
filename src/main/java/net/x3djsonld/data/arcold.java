@@ -109,9 +109,7 @@ public class arcold
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject().setDiffuseColor(1.0f,0.0f,0.0f))))
           .addChild(new PositionInterpolatorObject("PI1").setKeyValue(new MFVec3fObject(new float[] {0.0f,0.0f,0.0f,0.0f,5.0f,0.0f})).setKey(new float[] {0.0f,1.0f}))
-          .addChild(new ScriptObject("MB1").setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+          .addChild(new ScriptObject("MB1").setSourceCode("\n" + 
 "\n" + 
 "ecmascript:" + "\n" + 
 "		function set_location(value) {" + "\n" + 
@@ -119,8 +117,7 @@ public class arcold
 "		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);" + "\n" + 
 "                    keyValue = new MFVec3f([old, translation]);" + "\n" + 
 "		    // Browser.println(translation);" + "\n" + 
-"		}" + "\n" + "]]>"
-)
+"		}" + "\n")
             .addField(new fieldObject().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("50 50 0"))
             .addField(new fieldObject().setAccessType("inputOutput").setName("old").setType("SFVec3f").setValue("0 0 0"))
             .addField(new fieldObject().setAccessType("inputOnly").setName("set_location").setType("SFTime"))
@@ -140,9 +137,7 @@ public class arcold
         .addField(new fieldObject().setAccessType("inputOnly").setName("set_startpoint").setType("SFVec3f"))
         .addField(new fieldObject().setAccessType("inputOnly").setName("set_endpoint").setType("SFVec3f")))
       .setProtoBody(new ProtoBodyObject()
-        .addChild(new ScriptObject("S1").setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+        .addChild(new ScriptObject("S1").setSourceCode("\n" + 
 "            ecmascript:" + "\n" + 
 "        function recompute(startpoint,endpoint){" + "\n" + 
 "	    if (typeof endpoint === 'undefined') {" + "\n" + 
@@ -185,8 +180,7 @@ public class arcold
 "        }" + "\n" + 
 "        function set_endpoint(val,t){" + "\n" + 
 "            recompute_and_route(startnode.translation,val || endnode.translation);" + "\n" + 
-"        }" + "\n" + "]]>"
-)
+"        }" + "\n")
           .addField(new fieldObject().setAccessType("inputOutput").setName("startnode").setType("SFNode"))
           .addField(new fieldObject().setAccessType("inputOutput").setName("endnode").setType("SFNode"))
           .addField(new fieldObject().setAccessType("inputOutput").setName("transnode").setType("SFNode"))

@@ -76,9 +76,7 @@ public class SFVec3f
         .setAppearance(new AppearanceObject()
           .setMaterial(new MaterialObject().setSpecularColor(.5f,.5f,.5f).setDiffuseColor(.7f,.7f,.7f)))
         .setGeometry(new SphereObject())))
-    .addChild(new ScriptObject("Bounce").setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+    .addChild(new ScriptObject("Bounce").setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
 "			function newBubble() {" + "\n" + 
 "			    translation = new SFVec3f(0, 0, 0);" + "\n" + 
@@ -109,8 +107,7 @@ public class SFVec3f
 "\n" + 
 "			function initialize() {" + "\n" + 
 "			     newBubble();" + "\n" + 
-"			}" + "\n" + "]]>"
-)
+"			}" + "\n")
       .addField(new fieldObject().setAccessType("inputOnly").setName("set_translation").setType("SFVec3f").setValue("0 0 0"))
       .addField(new fieldObject().setAccessType("outputOnly").setName("translation_changed").setType("SFVec3f").setValue("0 0 0"))
       .addField(new fieldObject().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0"))
