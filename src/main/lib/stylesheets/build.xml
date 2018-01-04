@@ -844,26 +844,125 @@ and
     </target>
     
     <target name="test.X3DJSAIL" depends="" description="Test X3DJSAIL" >
-		<!-- helpful tasks for CommandLine debugging -->
-        <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${saxon.dir}/${saxon.jar};${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
-            <arg value="-toZIP"/>
-            <arg value="java/examples/HelloWorldProgramOutput.x3d"/>
-        </java>
+		<echo message="==========================================="/>
+		<echo message="helpful invocations for CommandLine debugging"/>
+		<echo message="org.web3d.x3d.jsail.CommandLine -help"/>
         <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${saxon.dir}/${saxon.jar};${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
             <arg value="-help"/>
         </java>
+		<echo message="==========================================="/>
+		<echo message="org.web3d.x3d.jsail.CommandLine -properties ${java.examples.dir}/X3DJSAIL.properties"/>
         <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${saxon.dir}/${saxon.jar};${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
-            <arg value="java/examples/HelloWorldProgramOutput.x3d"/>
-            <arg value="-toGZIP"/>
-            <arg value="-file"/>
-            <arg value="java/examples/HelloWorldProgramOutput.ant.gz"/>
+            <arg value="-properties"/>
+            <arg value="${java.examples.dir}/X3DJSAIL.properties"/>
         </java>
+		<echo message="==========================================="/>
+		<echo message="org.web3d.x3d.jsail.CommandLine java/examples/HelloWorldProgramOutput.x3d -toZIP -toFile ${java.examples.dir}/HelloWorldProgramOutput.ant.zip"/>
         <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${saxon.dir}/${saxon.jar};${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
-            <arg value="java/examples/HelloWorldProgramOutput.x3d"/>
+            <arg value="${java.examples.dir}/HelloWorldProgramOutput.x3d"/>
             <arg value="-toZIP"/>
-            <arg value="-file"/>
-            <arg value="java/examples/HelloWorldProgramOutput.ant.zip"/>
+            <arg value="-toFile"/>
+            <arg value="${java.examples.dir}/HelloWorldProgramOutput.ant.zip"/>
         </java>
+		<echo message="==========================================="/>
+		<echo message="org.web3d.x3d.jsail.CommandLine -toGZIP -toFile ${java.examples.dir}/HelloWorldProgramOutput.ant.gz"/>
+        <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${saxon.dir}/${saxon.jar};${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
+            <arg value="${java.examples.dir}/HelloWorldProgramOutput.x3d"/>
+            <arg value="-toGZIP"/>
+            <arg value="-toFile"/>
+            <arg value="${java.examples.dir}/HelloWorldProgramOutput.ant.gz"/>
+        </java>
+		<echo message="==========================================="/>
+		<echo message="org.web3d.x3d.jsail.CommandLine -toGZIP -toFile ${java.examples.dir}/HelloWorldProgramOutput.ant.gz"/>
+        <java classname="org.web3d.x3d.jsail.CommandLine" classpath="${saxon.dir}/${saxon.jar};${java.jars.dir}/${jsai.full.archive.jar.name};." fork="${fork}">
+            <arg value="${java.examples.dir}/HelloWorldProgramOutput.x3d"/>
+            <arg value="-toX3D"/>
+            <arg value="-toFile"/>
+            <arg value="${java.examples.dir}/HelloWorldProgramOutput.CommandLine.x3d"/>
+        </java>
+		<echo message="==========================================="/>
+		<echo message="test HelloWorldProgram"/>
+        <javac srcdir ="${java.examples.dir}"
+			 classpath="${java.jars.dir}/${jsai.full.archive.jar.name};"
+               destdir="${java.examples.dir}"
+                 debug="on"
+               verbose="${javac.verbose}"
+               includeantruntime="false">
+			 <include name="HelloWorldProgram.java"/>
+			 <exclude name="HelloWorldProgramOutput.java"/>
+			<!-- -Xlint reports problem with direct object invocation of .isNode() or isStatement()
+			<compilerarg value="-Xlint"/>
+			-->
+        </javac>
+		<java classname="HelloWorldProgram" 
+			  dir="${java.examples.dir}"
+			  classpath="${java.examples.dir};${java.jars.dir}/${jsai.full.archive.jar.name};">
+        </java>
+		<echo message="==========================================="/>
+		<echo message="test HelloWorldProgramOutput (which was just produced by HelloWorldProgram execution)"/>
+        <javac srcdir ="${java.examples.dir}"
+			 classpath="${java.jars.dir}/${jsai.full.archive.jar.name};"
+               destdir="${java.examples.dir}"
+                 debug="on"
+               verbose="${javac.verbose}"
+               includeantruntime="false">
+			 <include name="HelloWorldProgramOutput.java"/>
+			 <exclude name="HelloWorldProgram.java"/>
+			<compilerarg value="-Xlint"/>
+        </javac>
+		<!-- self-validation test -->
+		<java classname="HelloWorldProgramOutput" 
+			  dir="${java.examples.dir}"
+			  classpath="${java.examples.dir};${java.jars.dir}/${jsai.full.archive.jar.name};">
+        </java>
+		<delete file="${java.examples.dir}/HelloWorldProgramOutput.class" verbose="true"/>
+		<echo message="==========================================="/>
+        <!-- .json jslint and schema validation -->
+		<echo>Error checking with jslint: ${java.examples.dir}/HelloWorldProgramOutput.json</echo>
+		<java classname="com.googlecode.jslint4java.cli.Main" classpath="${jslint.jar}" fork="${fork}">
+			<arg value="${java.examples.dir}/HelloWorldProgramOutput.json"/>
+		</java>
+		<echo>Error checking with json-schema-validator: ${java.examples.dir}/HelloWorldProgramOutput.json</echo>
+		<java jar="${json-schema-validator.jar}" fork="${fork}">
+			<arg value="../../specifications/x3d-3.3-JSONSchema.json"/>
+			<arg value="${java.examples.dir}/HelloWorldProgramOutput.json"/>
+		</java>
+		<echo message="==========================================="/>
+		<echo message="HelloWorldProgramOutput.x3d"/>
+		<xmlvalidate lenient="yes" warn="yes" file="${java.examples.dir}/HelloWorldProgramOutput.x3d"/>
+		<xmlvalidate lenient="no"  warn="yes" file="${java.examples.dir}/HelloWorldProgramOutput.x3d"/>
+		<echo message="==========================================="/>
+		<echo message="HelloWorldProgramOutput.CommandLine.x3d"/>
+		<xmlvalidate lenient="yes" warn="yes" file="${java.examples.dir}/HelloWorldProgramOutput.CommandLine.x3d"/>
+		<xmlvalidate lenient="no"  warn="yes" file="${java.examples.dir}/HelloWorldProgramOutput.CommandLine.x3d"/>
+		<!-- https://stackoverflow.com/questions/6282542/ant-how-to-compare-contents-of-two-files -->
+		<condition property="CommandLine.match" value="true">
+			<filesmatch file1="${java.examples.dir}/HelloWorldProgramOutput.x3d"
+						file2="${java.examples.dir}/HelloWorldProgramOutput.CommandLine.x3d"/>
+		</condition>
+		<!-- otherwise --><property name="CommandLine.match" value="false"/>
+		<echo message="matches HelloWorldProgramOutput.x3d: ${CommandLine.match}"/>
+		<echo message="==========================================="/>
+		<echo message="HelloWorldProgramOutput.xml"/>
+		<xmlvalidate lenient="yes" warn="yes" file="${java.examples.dir}/HelloWorldProgramOutput.xml"/>
+		<xmlvalidate lenient="no"  warn="yes" file="${java.examples.dir}/HelloWorldProgramOutput.xml"/>
+		<condition property="X3DXML.match" value="true">
+			<filesmatch file1="${java.examples.dir}/HelloWorldProgramOutput.x3d"
+						file2="${java.examples.dir}/HelloWorldProgramOutput.xml"/>
+		</condition>
+		<!-- otherwise --><property name="X3DXML.match" value="false"/>
+		<echo message="matches HelloWorldProgramOutput.x3d: ${X3DXML.match}"/>
+		<echo message="==========================================="/>
+		<echo message="HelloWorldProgramOutput.ReloadedDOM.x3d"/>
+		<xmlvalidate lenient="yes" warn="yes" file="${java.examples.dir}/HelloWorldProgramOutput.ReloadedDOM.x3d"/>
+		<xmlvalidate lenient="no"  warn="yes" file="${java.examples.dir}/HelloWorldProgramOutput.ReloadedDOM.x3d"/>
+		<condition property="ReloadedDOM.match" value="true">
+			<filesmatch file1="${java.examples.dir}/HelloWorldProgramOutput.xml"
+						file2="${java.examples.dir}/HelloWorldProgramOutput.ReloadedDOM.x3d"/>
+		</condition>
+		<!-- otherwise --><property name="ReloadedDOM.match" value="false"/>
+		<echo message="matches HelloWorldProgramOutput.x3d: ${ReloadedDOM.match}"/>
+		<echo message="==========================================="/>
     </target>
     
     <target name="test.X3dHAnimHumanoidReport" depends="test.mkdir" description="Test X3dToXhtml.xslt stylesheet using saxon" >
@@ -942,12 +1041,12 @@ and
 				<arg value="../../specifications/x3d-3.3-JSONSchema.json"/>
 				<arg value="@{pathScene}.fixed.json"/>
 			</java>
-			<echo message="====================================="/>
+			<echo message="==========================================="/>
 		</sequential>
 	</macrodef>
 
    <target name="test.text" depends="test.mkdir" description="Test X3dToJson.xslt stylesheet using default Ant xslt task" >
-		<echo message="====================================="/>
+		<echo message="==========================================="/>
         <echo message="translation input: test/text.x3d"/>
         <echo message="..expected output: test/text.json"/>
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
@@ -994,7 +1093,7 @@ and
     </target>
     
     <target name="test.X3dToJson.xslt" depends="test.mkdir" description="Test X3dToJson.xslt stylesheet using default Ant xslt task" >
-        <echo message="====================================="/>
+        <echo message="==========================================="/>
         <echo message="translation input: test/HelloWorldProgramOutput.x3d"/>
         <echo message="..expected output: test/HelloWorldProgramOutput.json"/>
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
@@ -1014,7 +1113,7 @@ and
             <arg value="../../specifications/x3d-3.3-JSONSchema.json"/>
             <arg value="test/HelloWorldProgramOutput.json"/>
         </java>
-        <echo message="====================================="/>
+        <echo message="==========================================="/>
         <echo>First check X3D JSON Schema:</echo>
         <echo>..error checking with jslint</echo>
         <java classname="com.googlecode.jslint4java.cli.Main" classpath="${jslint.jar}" fork="${fork}">
@@ -1026,7 +1125,7 @@ and
             <arg value="--syntax"/>
             <arg value="../../specifications/x3d-3.3-JSONSchema.json"/>
         </java>
-        <echo message="====================================="/>
+        <echo message="==========================================="/>
         <echo message="translation input: AllX3dElementsAttributes3.3.xml"/>
         <echo message="..expected output: test/AllX3dElementsAttributes3.3.json"/>
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
@@ -1042,7 +1141,7 @@ and
             <arg value="test/AllX3dElementsAttributes3.3.json"/>
         </java>
         <echo>..no error checking with json-schema-validator since this is a special file</echo>
-        <echo message="====================================="/>
+        <echo message="==========================================="/>
         <echo message="translation input: test/HelloWorld.x3d"/>
         <echo message="..expected output: test/HelloWorld.json"/>
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
@@ -1062,7 +1161,7 @@ and
             <arg value="../../specifications/x3d-3.3-JSONSchema.json"/>
             <arg value="test/HelloWorld.json"/>
         </java>
-        <echo message="====================================="/>
+        <echo message="==========================================="/>
         <echo message="translation input: ${examples.dir}/Basic/development/TestJsonEncoding.x3d"/>
         <echo message="..expected output: test/TestJsonEncoding.json"/>
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
@@ -1082,7 +1181,7 @@ and
             <arg value="../../specifications/x3d-3.3-JSONSchema.json"/>
             <arg value="test/TestJsonEncoding.json"/>
         </java>
-        <echo message="====================================="/>
+        <echo message="==========================================="/>
         <echo message="translation input: ${examples.dir}/X3dForAdvancedModeling/Animation/OrigamiCranes.x3d"/>
         <echo message="..expected output: test/OrigamiCranes.json"/>
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
@@ -1102,7 +1201,7 @@ and
             <arg value="../../specifications/x3d-3.3-JSONSchema.json"/>
             <arg value="test/OrigamiCranes.json"/>
         </java>
-        <echo message="====================================="/>
+        <echo message="==========================================="/>
         <echo message="translation input: ${examples.dir}/X3dForAdvancedModeling/Animation/CubeWithLabeledSidesViewpointSequencer.x3d"/>
         <echo message="..expected output: test/CubeWithLabeledSidesViewpointSequencer.json"/>
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
@@ -1122,7 +1221,7 @@ and
             <arg value="../../specifications/x3d-3.3-JSONSchema.json"/>
             <arg value="test/CubeWithLabeledSidesViewpointSequencer.json"/>
         </java>
-        <echo message="====================================="/>
+        <echo message="==========================================="/>
         <echo message="translation input: ${examples.dir}/Basic/CAD/CadGeometryExternPrototypes.x3d"/>
         <echo message="..expected output: test/CadGeometryExternPrototypes.json"/>
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
@@ -1142,7 +1241,7 @@ and
             <arg value="../../specifications/x3d-3.3-JSONSchema.json"/>
             <arg value="test/CadGeometryExternPrototypes.json"/>
         </java>
-        <echo message="====================================="/>
+        <echo message="==========================================="/>
         <echo message="translation input: ${examples.dir}/Basic/CAD/CadGeometryPrototypes.x3d"/>
         <echo message="..expected output: test/CadGeometryPrototypes.json"/>
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
@@ -1162,7 +1261,7 @@ and
             <arg value="../../specifications/x3d-3.3-JSONSchema.json"/>
             <arg value="test/CadGeometryPrototypes.json"/>
         </java>
-        <echo message="====================================="/>
+        <echo message="==========================================="/>
         <echo message="translation input: test/flowers4.x3d"/>
         <echo message="..expected output: test/flowers4.json"/>
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
@@ -1182,7 +1281,7 @@ and
             <arg value="../../specifications/x3d-3.3-JSONSchema.json"/>
             <arg value="test/flowers4.json"/>
         </java>
-        <echo message="====================================="/>
+        <echo message="==========================================="/>
         <echo message="translation input: test/arc.x3d"/>
         <echo message="..expected output: test/arc.json"/>
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
@@ -1202,7 +1301,7 @@ and
             <arg value="../../specifications/x3d-3.3-JSONSchema.json"/>
             <arg value="test/arc.json"/>
         </java>
-        <echo message="====================================="/>
+        <echo message="==========================================="/>
     </target>
     
     <target name="test.X3dTidy.HAnim.xslt" depends="test.mkdir" description="Test X3dTidy.xslt stylesheet for HAnim xslt tasks" >
@@ -1579,37 +1678,4 @@ Build and test <a href="http://www.web3d.org/x3d/content/examples/X3dResources.h
         <copy file="${examples.dir}/X3dForWebAuthors/Chapter09EventUtilitiesScripting/TestScriptInitialization.x3d" todir="test/" verbose="true" force="true"/>
     </target>
 
-    <target name="test.nashorn" description="Test Nashorn output from X3DJSAIL">
-		<javac srcdir ="${java.examples.dir}"
-			   classpath=""
-			   destdir="${java.classes.dir}"
-			   debug="on"
-			   verbose="${javac.verbose}"
-			   includeantruntime="false">
-		</javac>
-		<java classname="HelloWorldProgramOutput" classpath="${java.classes.dir};${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
-			<arg value="js"/>
-			<arg value="java/nashorn/examples/HelloWorldProgramOutput.js"/>
-		</java>
-		<java classname="HelloWorldProgramOutput" classpath="${java.classes.dir};${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
-		    <arg value="json"/>
-		    <arg value="java/nashorn/examples/HelloWorldProgramOutput.json"/>
-		</java>
-		<java classname="HelloWorldProgramOutput" classpath="${java.classes.dir};${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
-		    <arg value="x3d"/>
-		    <arg value="java/nashorn/examples/HelloWorldProgramOutput.x3d"/>
-		</java>
-		<script language="nashorn">
-			<classpath>
-				<fileset dir="${saxon.dir}" includes="${saxon.jar}" />
-				<fileset dir="${java.jars.dir}" includes="${jsai.classes.archive.jar.name}" />
-				<fileset dir="${java.lib.dir}" includes="${exificient.jar}"/>
-				<fileset dir="${java.lib.dir}" includes="${openexi.jar}"/>
-			</classpath>
-			load('java/nashorn/jvm-npm.js');
-			load('java/nashorn/repeatPolyfill.js');
-			load('java/nashorn/examples/HelloWorldProgramOutput.js.intermediate.js');
-			load('java/nashorn/examples/HelloWorldProgramOutput.js');
-		</script>
-    </target>
 </project>
