@@ -51,9 +51,9 @@ do
 	${NODE} ${NODEDIR}/jsondiff.js $JSON $i
 done
 
-for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" |  sed -e 's/\.x3d$/.new.json.intermediate.x3d/' -e 's/-/_/g' -e $ROOTTOLOCAL -e 's/^\/c/../'`
+for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" |  sed -e 's/\.x3d$/.newPrettyPrint.intermediate.x3d/' -e 's/-/_/g' -e $ROOTTOLOCAL -e 's/^\/c/../'`
 do
-	X3D=`dirname $i | sed -e 's/_/-/g' -e $LOCALTOROOT `/`basename $i .new.json.intermediate.x3d`.x3d 
+	X3D=`dirname $i | sed -e 's/_/-/g' -e $LOCALTOROOT `/`basename $i .newPrettyPrint.intermediate.x3d`.x3d 
 	${NODE} ${NODEDIR}/xmldiff.js $X3D $i
 done
 
