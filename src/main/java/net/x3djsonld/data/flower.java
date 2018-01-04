@@ -50,9 +50,7 @@ public class flower
           .setMaterial(new MaterialObject().setTransparency(0.1f).setShininess(0.145f).setSpecularColor(0.8f,0.8f,0.8f).setDiffuseColor(0.9f,0.3f,0.3f)))
         .setGeometry(new IndexedFaceSetObject("ifs").setDEF("ifs").setCcw(false).setConvex(false).setCoordIndex(new int[] {0,1,2,-1})
           .setCoord(new CoordinateObject("crd").setPoint(new MFVec3fObject(new float[] {0.0f,0.0f,1.0f,0.0f,1.0f,0.0f,1.0f,0.0f,0.0f}))))))
-    .addChild(new ScriptObject("FlowerScript").setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+    .addChild(new ScriptObject("FlowerScript").setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
 "    " + "\n" + 
 "var e = 5;" + "\n" + 
@@ -139,8 +137,7 @@ public class flower
 "		h = 4;" + "\n" + 
 "	}" + "\n" + 
 "	updateCoordinates(resolution);" + "\n" + 
-"}" + "\n" + "]]>"
-)
+"}" + "\n")
       .addField(new fieldObject().setAccessType("inputOnly").setName("set_fraction").setType("SFFloat"))
       .addField(new fieldObject().setAccessType("outputOnly").setName("coordinates").setType("MFVec3f"))
       .addField(new fieldObject().setAccessType("outputOnly").setName("coordIndexes").setType("MFInt32")))

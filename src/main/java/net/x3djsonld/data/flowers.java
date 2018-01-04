@@ -132,9 +132,7 @@ public class flowers
 "			<Sphere></Sphere>"})
             .setGeometry(new IndexedFaceSetObject("Orbit").setDEF("Orbit").setConvex(false)
               .setCoord(new CoordinateObject("OrbitCoordinates")))))
-        .addChild(new ScriptObject("Bounce").setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+        .addChild(new ScriptObject("Bounce").setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
 "			function newBubble() {" + "\n" + 
 "			    translation = new SFVec3f(0, 0, 0);" + "\n" + 
@@ -237,8 +235,7 @@ public class flowers
 "				}" + "\n" + 
 "				resolution = 100;" + "\n" + 
 "				updateCoordinates(resolution);" + "\n" + 
-"			}" + "\n" + "]]>"
-)
+"			}" + "\n")
           .addField(new fieldObject().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0"))
           .addField(new fieldObject().setAccessType("inputOutput").setName("velocity").setType("SFVec3f").setValue("0 0 0"))
           .addField(new fieldObject().setAccessType("inputOnly").setName("set_fraction").setType("SFTime"))

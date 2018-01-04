@@ -120,9 +120,7 @@ public class mirror
             .addParts(new ShaderPartObject().setUrl(new MFStringObject("\"../shaders/cobweb.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs\"")))
             .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject("\"../shaders/mix.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/mix.fs\"")))))
         .setGeometry(new SphereObject().setRadius(30f)))
-      .addChild(new ScriptObject("UrlSelector").setDirectOutput(true).setSourceCode(
-"<![CDATA[" + "\n" +
-" " + "\n" + 
+      .addChild(new ScriptObject("UrlSelector").setDirectOutput(true).setSourceCode(" " + "\n" + 
 "\n" + 
 "ecmascript:" + "\n" + 
 "        function set_fraction( f, tm ) {" + "\n" + 
@@ -140,8 +138,7 @@ public class mirror
 "		    top_changed[0] = topUrls[side];" + "\n" + 
 "		    bottom_changed[0] = bottomUrls[side];" + "\n" + 
 "            }" + "\n" + 
-"        }" + "\n" + "]]>"
-)
+"        }" + "\n")
         .addField(new fieldObject().setAccessType("initializeOnly").setName("frontUrls").setType("MFString").setValue(field_frontUrls_5_45_value))
         .addField(new fieldObject().setAccessType("initializeOnly").setName("backUrls").setType("MFString").setValue(field_backUrls_5_46_value))
         .addField(new fieldObject().setAccessType("initializeOnly").setName("leftUrls").setType("MFString").setValue(field_leftUrls_5_47_value))

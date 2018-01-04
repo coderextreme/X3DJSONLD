@@ -107,9 +107,7 @@ public class flowers4
 "                <Sphere>"})
         .setGeometry(new IndexedFaceSetObject("Orbit").setDEF("Orbit").setConvex(false)
           .setCoord(new CoordinateObject("OrbitCoordinates")))))
-    .addChild(new ScriptObject("OrbitScript").setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+    .addChild(new ScriptObject("OrbitScript").setSourceCode("\n" + 
 "\n" + 
 "\n" + 
 "ecmascript:" + "\n" + 
@@ -182,8 +180,7 @@ public class flowers4
 "	}" + "\n" + 
 "	resolution = 100;" + "\n" + 
 "	updateCoordinates(resolution);" + "\n" + 
-"}" + "\n" + "]]>"
-)
+"}" + "\n")
       .addField(new fieldObject().setAccessType("inputOnly").setName("set_fraction").setType("SFFloat"))
       .addField(new fieldObject().setAccessType("inputOutput").setName("coordinates").setType("MFVec3f"))
       .addField(new fieldObject().setAccessType("outputOnly").setName("coordIndexes").setType("MFInt32")))

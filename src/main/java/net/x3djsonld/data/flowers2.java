@@ -110,9 +110,7 @@ public class flowers2
             .setCoord(new CoordinateObject("OrbitCoordinates2")))))
       .addChild(new TimeSensorObject("Clock").setCycleInterval(16).setLoop(true))
       .addChild(new OrientationInterpolatorObject("OrbitPath").setKey(new float[] {0.0f,0.50f,1.0f}).setKeyValue(new MFRotationObject(new float[] {1.0f,0.0f,0.0f,0.0f,1.0f,0.0f,0.0f,3.14f,1.0f,0.0f,0.0f,6.28f})))
-      .addChild(new ScriptObject("OrbitScript").setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+      .addChild(new ScriptObject("OrbitScript").setSourceCode("\n" + 
 "\n" + 
 "ecmascript:" + "\n" + 
 "\n" + 
@@ -184,14 +182,11 @@ public class flowers2
 "	}" + "\n" + 
 "	resolution = 100;" + "\n" + 
 "	generateCoordinates(resolution);" + "\n" + 
-"}" + "\n" + "]]>"
-)
+"}" + "\n")
         .addField(new fieldObject().setAccessType("inputOnly").setName("set_fraction").setType("SFFloat"))
         .addField(new fieldObject().setAccessType("outputOnly").setName("coordinates").setType("MFVec3f"))
         .addField(new fieldObject().setAccessType("outputOnly").setName("coordIndexes").setType("MFInt32")))
-      .addChild(new ScriptObject("OrbitScript2").setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+      .addChild(new ScriptObject("OrbitScript2").setSourceCode("\n" + 
 "\n" + 
 "ecmascript:" + "\n" + 
 "\n" + 
@@ -264,8 +259,7 @@ public class flowers2
 "	}" + "\n" + 
 "	resolution = 100;" + "\n" + 
 "	generateCoordinates(resolution);" + "\n" + 
-"}" + "\n" + "]]>"
-)
+"}" + "\n")
         .addField(new fieldObject().setAccessType("inputOnly").setName("set_fraction").setType("SFFloat"))
         .addField(new fieldObject().setAccessType("outputOnly").setName("coordinates").setType("MFVec3f"))
         .addField(new fieldObject().setAccessType("outputOnly").setName("coordIndexes").setType("MFInt32"))))

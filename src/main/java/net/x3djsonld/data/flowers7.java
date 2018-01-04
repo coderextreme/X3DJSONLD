@@ -129,9 +129,7 @@ public class flowers7
             .addParts(new ShaderPartObject().setUrl(new MFStringObject("\"../shaders/cobweb_flowers_chromatic.vs\" \"https://coderextreme.net/X3DJSONLD/shaders/cobweb_flowers_chromatic.vs\"")))
             .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new MFStringObject("\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/shaders/common.fs\"")))))
         .setGeometry(new SphereObject().setSolid(false))))
-    .addChild(new ScriptObject("UrlSelector").setDirectOutput(true).setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+    .addChild(new ScriptObject("UrlSelector").setDirectOutput(true).setSourceCode("\n" + 
 "\n" + 
 "ecmascript:" + "\n" + 
 "        function set_fraction( f, tm ) {" + "\n" + 
@@ -148,8 +146,7 @@ public class flowers7
 "                    top[0] = topUrls[side];" + "\n" + 
 "                    bottom[0] = bottomUrls[side];" + "\n" + 
 "            }" + "\n" + 
-"        }" + "\n" + "]]>"
-)
+"        }" + "\n")
       .addField(new fieldObject().setAccessType("initializeOnly").setName("frontUrls").setType("MFString").setValue(field_frontUrls_4_53_value))
       .addField(new fieldObject().setAccessType("initializeOnly").setName("backUrls").setType("MFString").setValue(field_backUrls_4_54_value))
       .addField(new fieldObject().setAccessType("initializeOnly").setName("leftUrls").setType("MFString").setValue(field_leftUrls_4_55_value))
@@ -179,9 +176,7 @@ public class flowers7
 "            <ROUTE fromNode='UrlSelector' fromField='right' toNode='rightShader' toField='url'/>",
 "            <ROUTE fromNode='UrlSelector' fromField='top' toNode='topShader' toField='url'/>",
 "            <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='bottomShader' toField='url'/>"})
-    .addChild(new ScriptObject("Animate").setDirectOutput(true).setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+    .addChild(new ScriptObject("Animate").setDirectOutput(true).setSourceCode("\n" + 
 "\n" + 
 "\n" + 
 "ecmascript:" + "\n" + 
@@ -217,8 +212,7 @@ public class flowers7
 "	if (d > 20) {" + "\n" + 
 "		d = 4;" + "\n" + 
 "	}" + "\n" + 
-"}" + "\n" + "]]>"
-)
+"}" + "\n")
       .addField(new fieldObject().setAccessType("inputOnly").setName("set_fraction").setType("SFFloat"))
       .addField(new fieldObject().setAccessType("inputOutput").setName("a").setType("SFFloat").setValue("10"))
       .addField(new fieldObject().setAccessType("inputOutput").setName("b").setType("SFFloat").setValue("1"))

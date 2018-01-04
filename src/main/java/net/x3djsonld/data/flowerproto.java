@@ -118,9 +118,7 @@ public class flowerproto
                   .setIS(new ISObject()
                     .addConnect(new connectObject().setNodeField("url").setProtoField("fragment"))))))
             .setGeometry(new SphereObject()))
-          .addChild(new ScriptObject("Bounce").setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+          .addChild(new ScriptObject("Bounce").setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
 "			function initialize() {" + "\n" + 
 "			    translation = new SFVec3f(0, 0, 0);" + "\n" + 
@@ -186,8 +184,7 @@ public class flowerproto
 "				if (d > 10) {" + "\n" + 
 "					d = 4;" + "\n" + 
 "				}" + "\n" + 
-"			}" + "\n" + "]]>"
-)
+"			}" + "\n")
             .addField(new fieldObject().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0"))
             .addField(new fieldObject().setAccessType("inputOutput").setName("velocity").setType("SFVec3f").setValue("0 0 0"))
             .addField(new fieldObject().setAccessType("inputOnly").setName("set_fraction").setType("SFTime"))

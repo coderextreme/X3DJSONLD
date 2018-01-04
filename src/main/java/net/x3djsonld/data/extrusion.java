@@ -85,9 +85,7 @@ public class extrusion
         .setAppearance(new AppearanceObject()
           .setMaterial(new MaterialObject().setDiffuseColor(0.0f,1.0f,0.0f))))
       .addChild(new TimeSensorObject("TourTime").setLoop(true))
-      .addChild(new ScriptObject("MoveCylinder").setSourceCode(
-"<![CDATA[" + "\n" +
-"\n" + 
+      .addChild(new ScriptObject("MoveCylinder").setSourceCode("\n" + 
 "\n" + 
 "ecmascript:" + "\n" + 
 "\n" + 
@@ -96,8 +94,7 @@ public class extrusion
 "                        var endA = new SFVec3f(spine[0].x*Math.random()*2, spine[0].y*Math.random()*2, spine[0].z*Math.random()*2);" + "\n" + 
 "                        var endB = new SFVec3f(spine[1].x*Math.random()*2, spine[1].y*Math.random()*2, spine[1].z*Math.random()*2);" + "\n" + 
 "		        spine = new MFVec3f([endA, endB]);" + "\n" + 
-"                }" + "\n" + "]]>"
-)
+"                }" + "\n")
         .addField(new fieldObject().setAccessType("inputOnly").setName("set_cycle").setType("SFTime"))
         .addField(new fieldObject().setAccessType("inputOutput").setName("spine").setType("MFVec3f").setValue("-50 -50 0 50 50 0")))
       .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("cycleTime").setToNode("MoveCylinder").setToField("set_cycle"))
