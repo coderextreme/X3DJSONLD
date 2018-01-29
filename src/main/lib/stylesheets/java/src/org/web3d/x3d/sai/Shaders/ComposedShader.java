@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -115,7 +115,7 @@ public interface ComposedShader extends X3DShaderNode, X3DProgrammableShaderObje
 
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @return value of metadata field
 	 */
 	@Override
@@ -123,7 +123,7 @@ public interface ComposedShader extends X3DShaderNode, X3DProgrammableShaderObje
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @param newValue is new value for the metadata field.
 	 * @return {@link ComposedShader} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -133,7 +133,8 @@ public interface ComposedShader extends X3DShaderNode, X3DProgrammableShaderObje
 	/**
 	 * Provide array of X3DNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) from inputOutput MFNode field <i>parts</i>.
 	 * <br><br>
-	 * <i>Warning:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to ShaderPart.
+	 * <i>Warning:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to ShaderPart.
+	 * @see org.web3d.x3d.jsail.Shaders.ShaderPartObject
 	 * @return value of parts field
 	 */
 	public X3DNode[] getParts(); // acceptable node types: ShaderPart
@@ -141,7 +142,7 @@ public interface ComposedShader extends X3DShaderNode, X3DProgrammableShaderObje
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>parts</i>.
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to ShaderPart.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to ShaderPart.
 	 * @param newValue is new value for the parts field.
 	 * @return {@link ComposedShader} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -150,13 +151,13 @@ public interface ComposedShader extends X3DShaderNode, X3DProgrammableShaderObje
 	/**
 	 * Add array of child parts nodes to array of existing nodes (if any).
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to ShaderPart.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to ShaderPart.
 	 * @param newValue is new value array to be appended the parts field.
 	 */
 	public void addParts(X3DNode[] newValue); // acceptable node types: ShaderPart
 	/**
 	 * Set single child parts node, replacing prior array of existing nodes (if any).
-	 * @param newValue is new node for the parts field.
+	 * @param newValue is new node for the parts field
 	 */
 	public void setParts(X3DNode newValue); // acceptable node types: ShaderPart
 

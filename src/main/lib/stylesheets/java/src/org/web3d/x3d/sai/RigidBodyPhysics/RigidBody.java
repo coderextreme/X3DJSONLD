@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -293,7 +293,8 @@ public interface RigidBody extends X3DNode
 	/**
 	 * Provide array of X3DNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) from inputOutput MFNode field <i>geometry</i>.
 	 * <br><br>
-	 * <i>Warning:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DNBodyCollidableNode.
+	 * <i>Warning:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DNBodyCollidableNode.
+	 * @see org.web3d.x3d.sai.RigidBodyPhysics.X3DNBodyCollidableNode
 	 * @return value of geometry field
 	 */
 	public X3DNode[] getGeometry(); // acceptable node types: X3DNBodyCollidableNode
@@ -301,7 +302,7 @@ public interface RigidBody extends X3DNode
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>geometry</i>.
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DNBodyCollidableNode.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DNBodyCollidableNode.
 	 * @param newValue is new value for the geometry field.
 	 * @return {@link RigidBody} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -310,13 +311,13 @@ public interface RigidBody extends X3DNode
 	/**
 	 * Add array of child geometry nodes to array of existing nodes (if any).
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DNBodyCollidableNode.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DNBodyCollidableNode.
 	 * @param newValue is new value array to be appended the geometry field.
 	 */
 	public void addGeometry(X3DNode[] newValue); // acceptable node types: X3DNBodyCollidableNode
 	/**
 	 * Set single child geometry node, replacing prior array of existing nodes (if any).
-	 * @param newValue is new node for the geometry field.
+	 * @param newValue is new node for the geometry field
 	 */
 	public void setGeometry(X3DNode newValue); // acceptable node types: X3DNBodyCollidableNode
 	/**
@@ -399,13 +400,13 @@ public interface RigidBody extends X3DNode
 	public RigidBody setMass(float newValue);
 
 	/**
-	 * Provide X3DNode instance (using a properly typed node) with acceptable node types Sphere|Box|Cone, from inputOutput SFNode field <i>massDensityModel</i>.
+	 * Provide X3DNode instance (using a properly typed node) with acceptable node types limited to Sphere|Box|Cone, from inputOutput SFNode field <i>massDensityModel</i>.
 	 * @return value of massDensityModel field
 	 */
 	public X3DNode getMassDensityModel(); // acceptable node types: Sphere|Box|Cone
 
 	/**
-	 * Assign X3DNode instance (using a properly typed node) with acceptable node types Sphere|Box|Cone, to inputOutput SFNode field <i>massDensityModel</i>.
+	 * Assign X3DNode instance (using a properly typed node) with acceptable node types limited to Sphere|Box|Cone, to inputOutput SFNode field <i>massDensityModel</i>.
 	 * @param newValue is new value for the massDensityModel field.
 	 * @return {@link RigidBody} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -413,7 +414,7 @@ public interface RigidBody extends X3DNode
 
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @return value of metadata field
 	 */
 	@Override
@@ -421,7 +422,7 @@ public interface RigidBody extends X3DNode
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @param newValue is new value for the metadata field.
 	 * @return {@link RigidBody} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */

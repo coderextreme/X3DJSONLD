@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -517,7 +517,7 @@ public class LinePickSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	@Override
 	public LinePickSensorObject setIntersectionType(String newValue)
 	{
-		if (newValue == null) 
+		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
 		intersectionType = newValue;
@@ -584,7 +584,7 @@ public class LinePickSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 			newValue.equals(MATCHCRITERION_MATCH_ONLY_ONE))) {
 			throw new org.web3d.x3d.sai.InvalidFieldValueException("LinePickSensor matchCriterion newValue=\"" + newValue + "\" has illegal value, must use a valid enumeration string.");
 		}
-		if (newValue == null) 
+		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
 		matchCriterion = newValue;
@@ -604,7 +604,7 @@ public class LinePickSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
 	 * @see #getMetadataProtoInstance()
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @return value of metadata field
 	 */
 	@Override
@@ -616,7 +616,7 @@ public class LinePickSensorObject extends org.web3d.x3d.jsail.X3DConcreteNode im
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
 	 * @see #setMetadata(ProtoInstanceObject)
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @param newValue is new value for the metadata field.
 	 * @return {@link LinePickSensorObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -648,12 +648,11 @@ setAttribute method invocations).	 */
 		return this;
 	}
 	/**
-	 * Assign ProtoInstance to <i>metadata</i> field;
-
+	 * Assign ProtoInstance to <i>metadata</i> field.
 	 * <i>Warning:</i> ProtoInstance must match acceptable node type X3DMetadataObject.
 	 * @param newProtoInstanceNode is the new ProtoInstance node for the metadata field
 	 * @see #setMetadata(X3DMetadataObject)
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @return {@link LinePickSensorObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
 setAttribute method invocations).
 	 */
@@ -674,7 +673,7 @@ setAttribute method invocations).
 	/**
 	 * Provide properly typed ProtoInstance for inputOutput SFNode field <i>metadata</i>, if available.
 	 * @see #getMetadata()
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @return ProtoInstance value of geometry field
 	 */
 	public ProtoInstanceObject getMetadataProtoInstance()
@@ -687,7 +686,7 @@ setAttribute method invocations).
 	 * @return whether a properly typed node or ProtoInstance or CommentsBlock is available.
 	 * @see #getMetadata()
 	 * @see #getMetadataProtoInstance()
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 */
 	public boolean hasMetadata()
 	{
@@ -829,7 +828,8 @@ setAttribute method invocations).
 	 * <i>Tooltip:</i>  Output event containing the node or nodes that have been found to intersect with the picking geometry from the last time this node performed a picking operation, given in the local coordinate system.  * <br>
 
 	 * <br><br>
-	 * <i>Warning:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DChildNode.
+	 * <i>Warning:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DChildNode.
+	 * @see org.web3d.x3d.sai.Core.X3DChildNode
 	 * @return value of pickedGeometry field
 	 */
 	@Override
@@ -939,8 +939,7 @@ setAttribute method invocations).	 */
 		return this;
 	}
 	/**
-	 * Assign ProtoInstance to <i>pickingGeometry</i> field;
-
+	 * Assign ProtoInstance to <i>pickingGeometry</i> field.
 	 * <i>Warning:</i> ProtoInstance must match acceptable node type X3DGeometryNode.
 	 * @param newProtoInstanceNode is the new ProtoInstance node for the pickingGeometry field
 	 * @see #setPickingGeometry(X3DGeometryNode)
@@ -982,12 +981,15 @@ setAttribute method invocations).
 		return (pickingGeometry != null) || (pickingGeometryProtoInstance != null);
 	}
 	/**
-	 * Provide array of X3DNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) with acceptable node types X3DGroupingNode|X3DShapeNode|Inline, from inputOutput MFNode field <i>pickTarget</i>.
+	 * Provide array of X3DNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) with acceptable node types limited to X3DGroupingNode|X3DShapeNode|Inline, from inputOutput MFNode field <i>pickTarget</i>.
 	 * <br><br>
 	 * <i>Tooltip:</i>  [X3DGroupingNode|X3DShapeNode|Inline] pickTarget specifies the list of nodes against which picking operations are performed. All nodes declared in this field and their descendents are evaluated for intersections.  * <br>
 
 	 * <br><br>
-	 * <i>Warning:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DGroupingNode|X3DShapeNode|Inline.
+	 * <i>Warning:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DGroupingNode|X3DShapeNode|Inline.
+	 * @see org.web3d.x3d.sai.Grouping.X3DGroupingNode
+	 * @see org.web3d.x3d.sai.Shape.X3DShapeNode
+	 * @see org.web3d.x3d.jsail.Networking.InlineObject
 	 * @return value of pickTarget field
 	 */
 	@Override
@@ -1011,11 +1013,11 @@ setAttribute method invocations).
 	}
 
 	/**
-	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) with acceptable node types X3DGroupingNode|X3DShapeNode|Inline, to inputOutput MFNode field <i>pickTarget</i>.
+	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) with acceptable node types limited to X3DGroupingNode|X3DShapeNode|Inline, to inputOutput MFNode field <i>pickTarget</i>.
 	 * <br><br>
 	 * <i>Tooltip:</i> [X3DGroupingNode|X3DShapeNode|Inline] pickTarget specifies the list of nodes against which picking operations are performed. All nodes declared in this field and their descendents are evaluated for intersections.
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DGroupingNode|X3DShapeNode|Inline.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DGroupingNode|X3DShapeNode|Inline.
 	 * @param newValue is new value for the pickTarget field.
 	 * @return {@link LinePickSensorObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -1028,13 +1030,13 @@ setAttribute method invocations).
 			return this;
 		}
 
-		// newValueArrayAcceptableNodeTypesTest checks are needed for methods that override/subset X3DNode interfaces
+		// newValueArrayAcceptableNodeTypesTest checks are needed for methods that override/subset X3DNode interfaces #2
 		for (int i = 0; i < newValue.length; i++)
 		{
 			boolean isNodeTypeAllowed = 
 				(((X3DConcreteNode)newValue[i]) instanceof X3DGroupingNode) || 
 				(((X3DConcreteNode)newValue[i]) instanceof X3DShapeNode) || 
-				(((X3DConcreteNode)newValue[i]) instanceof Inline);
+				(((X3DConcreteNode)newValue[i]) instanceof org.web3d.x3d.jsail.Networking.InlineObject);
 			if  (!isNodeTypeAllowed)
 			{
 				throw new org.web3d.x3d.sai.InvalidFieldValueException("X3DNode[] newValue["+i+"] is not instanceof " +
@@ -1067,13 +1069,13 @@ setAttribute method invocations).
 			return this;
 		}
 
-		// newValueArrayListAcceptableNodeTypesTest checks are needed for methods that override/subset X3DNode interfaces
+		// newValueArrayListAcceptableNodeTypesTest checks are needed for methods that override/subset X3DNode interfaces #3
 		for (X3DNode element : newValue)
 		{
 			boolean isNodeTypeAllowed = 
 				(element instanceof X3DGroupingNode) || 
 				(element instanceof X3DShapeNode) || 
-				(element instanceof Inline);
+				(element instanceof org.web3d.x3d.jsail.Networking.InlineObject);
 			if  (!isNodeTypeAllowed)
 			{
 				throw new org.web3d.x3d.sai.InvalidFieldValueException("X3DNode[] element is not instanceof " +
@@ -1090,14 +1092,14 @@ setAttribute method invocations).
 	/**
 	 * Add single child pickTarget node to array of existing nodes (if any).
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DGroupingNode|X3DShapeNode|Inline.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DGroupingNode|X3DShapeNode|Inline.
 	 * @param newValue is new value to be appended the pickTarget field.
 	 * @return {@link LinePickSensorObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).	 */
 	public LinePickSensorObject addPickTarget(X3DNode newValue)
 	{
 		if (newValue == null) return this; // newValueNullReturnThis
 
-		// newValueInstanceAcceptableNodeTypesTest checks are needed for methods that override/subset X3DNode interfaces
+		// newValueInstanceAcceptableNodeTypesTest checks are needed for methods that override/subset X3DNode interfaces #1
 		boolean isNodeTypeAllowed =
 				(((X3DConcreteNode)newValue) instanceof org.web3d.x3d.sai.Grouping.X3DGroupingNode) || 
 				(((X3DConcreteNode)newValue) instanceof org.web3d.x3d.sai.Shape.X3DShapeNode) || 
@@ -1115,7 +1117,7 @@ setAttribute method invocations).
 	/**
 	 * Add array of child pickTarget nodes to array of existing nodes (if any).
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DGroupingNode|X3DShapeNode|Inline.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DGroupingNode|X3DShapeNode|Inline.
 	 * @param newValue is new value array to be appended the pickTarget field.
 	 */
 	@Override
@@ -1123,13 +1125,13 @@ setAttribute method invocations).
 	{
 		if (newValue == null) return; // newValueNullReturnVoid
 
-		// newValueArrayAcceptableNodeTypesTest checks are needed for methods that override/subset X3DNode interfaces
+		// newValueArrayAcceptableNodeTypesTest checks are needed for methods that override/subset X3DNode interfaces #2
 		for (int i = 0; i < newValue.length; i++)
 		{
 			boolean isNodeTypeAllowed = 
 				(((X3DConcreteNode)newValue[i]) instanceof X3DGroupingNode) || 
 				(((X3DConcreteNode)newValue[i]) instanceof X3DShapeNode) || 
-				(((X3DConcreteNode)newValue[i]) instanceof Inline);
+				(((X3DConcreteNode)newValue[i]) instanceof org.web3d.x3d.jsail.Networking.InlineObject);
 			if  (!isNodeTypeAllowed)
 			{
 				throw new org.web3d.x3d.sai.InvalidFieldValueException("X3DNode[] newValue["+i+"] is not instanceof " +
@@ -1150,8 +1152,8 @@ setAttribute method invocations).
 	/**
 	 * Set single child pickTarget node, replacing prior array of existing nodes (if any).
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DGroupingNode|X3DShapeNode|Inline.
-	 * @param newValue is new node for the pickTarget field.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are restricted to X3DGroupingNode|X3DShapeNode|Inline.
+	 * @param newValue is new node for the pickTarget field (restricted to X3DGroupingNode|X3DShapeNode|Inline)
 	 */
 	@Override
 	public void setPickTarget(X3DNode newValue)
@@ -1162,7 +1164,7 @@ setAttribute method invocations).
 			return;
 		}
 
-		// newValueInstanceAcceptableNodeTypesTest checks are needed for methods that override/subset X3DNode interfaces
+		// newValueInstanceAcceptableNodeTypesTest checks are needed for methods that override/subset X3DNode interfaces #1
 		boolean isNodeTypeAllowed =
 				(((X3DConcreteNode)newValue) instanceof org.web3d.x3d.sai.Grouping.X3DGroupingNode) || 
 				(((X3DConcreteNode)newValue) instanceof org.web3d.x3d.sai.Shape.X3DShapeNode) || 
@@ -1235,7 +1237,7 @@ setAttribute method invocations).
 	@Override
 	public LinePickSensorObject setSortOrder(String newValue)
 	{
-		if (newValue == null) 
+		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
 		sortOrder = newValue;
@@ -1265,8 +1267,7 @@ setAttribute method invocations).
 	@Override
 	public final LinePickSensorObject setDEF(String newValue)
 	{
-
-		if (newValue == null) 
+		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to LinePickSensor
 		if (!newValue.isEmpty() && !org.web3d.x3d.jsail.fields.SFStringObject.isNMTOKEN(newValue))
@@ -1274,6 +1275,12 @@ setAttribute method invocations).
 			throw new org.web3d.x3d.sai.InvalidFieldValueException("LinePickSensor DEF newValue='" + newValue + "'" + 
 				" has illegal name value, cannot be empty and must be defined with valid NMTOKEN name string" + 
 				" (with legal characters and no embedded whitespace).");
+		}
+
+		if (!newValue.isEmpty() && !org.web3d.x3d.jsail.fields.SFStringObject.meetsX3dNamingConventions(newValue))
+		{
+			System.out.println("LinePickSensor DEF newValue='" + newValue + "'" + 
+				" has name value that does not meet X3D naming conventions.");
 		}
 		setConcreteUSE(""); // ensure that no previous USE value remains
 		setConcreteDEF(newValue); // private superclass methods
@@ -1306,8 +1313,7 @@ setAttribute method invocations).
 	@Override
 	public final LinePickSensorObject setUSE(String newValue)
 	{
-
-		if (newValue == null) 
+		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to LinePickSensor
 		if (!newValue.isEmpty() && !org.web3d.x3d.jsail.fields.SFStringObject.isNMTOKEN(newValue))
@@ -1315,6 +1321,12 @@ setAttribute method invocations).
 			throw new org.web3d.x3d.sai.InvalidFieldValueException("LinePickSensor USE newValue='" + newValue + "'" + 
 				" has illegal name value, cannot be empty and must be defined with valid NMTOKEN name string" + 
 				" (with legal characters and no embedded whitespace).");
+		}
+
+		if (!newValue.isEmpty() && !org.web3d.x3d.jsail.fields.SFStringObject.meetsX3dNamingConventions(newValue))
+		{
+			System.out.println("LinePickSensor USE newValue='" + newValue + "'" + 
+				" has name value that does not meet X3D naming conventions.");
 		}
 		initialize(); // reset all other field values to default (equivalent to empty)
 		setConcreteUSE(newValue); // private superclass method
@@ -1342,7 +1354,7 @@ setAttribute method invocations).
 	@Override
 	public final LinePickSensorObject setCssClass(String newValue)
 	{
-		if (newValue == null) 
+		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
 		setConcreteCssClass(newValue); // private superclass method
@@ -1361,16 +1373,6 @@ setAttribute method invocations).
 	}
 
 	// Additional utility methods for this class ==============================
-
-	/**
-	 * Utility constructor that assigns DEF name after initializing member variables with default values
-	 * @param DEFname unique DEF name for this X3D node
-	 */
-	public LinePickSensorObject (String DEFname)
-	{
-		initialize();
-		setDEF(DEFname); // apply checks
-	}
 
 	/**
 	 * Assign field named <i>IS</i> for establishing IS/connect field connections between ProtoInterface fields and internal ProtoBody nodes.
@@ -1422,6 +1424,16 @@ setAttribute method invocations).
 		setUSE(DEFnode.getDEF());
 		return this;
 	}
+	/**
+	 * Utility constructor that assigns DEF label after initializing member variables with default values.
+	 * @param DEFlabel unique DEF name for this X3D node
+	 */
+	public LinePickSensorObject (String DEFlabel)
+	{
+		initialize();
+		setDEF(DEFlabel); // apply checks
+	}
+
 	/**
 	 * Add comment as String to contained commentsList.
 	 * @param newComment initial value
@@ -1484,8 +1496,15 @@ setAttribute method invocations).
 	}
 		
 	/**
-	 * Recursive method to provide X3D string serialization of this model subgraph.
+	 * Recursive method to provide X3D string serialization of this model subgraph, utilizing XML encoding and conforming to X3D Canonical Form.
 	 * @param indentLevel number of levels of indentation for this element
+	 * @see X3DObject#FILE_EXTENSION_X3D
+	 * @see X3DObject#FILE_EXTENSION_XML
+	 * @see X3DObject#toStringXML()
+	 * @see X3DObject#toFileXML(String)
+	 * @see X3DObject#toFileX3D(String)
+	 * @see <a href="http://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/X3D_XML.html">X3D XML Encoding</a>
+	 * @see <a href="http://www.web3d.org/documents/specifications/19776-3/V3.3/Part03/concepts.html#X3DCanonicalForm">X3D Compressed Binary Encoding: X3D Canonical Form</a>
 	 * @return X3D string
 	 */
 	@Override
@@ -1517,11 +1536,11 @@ setAttribute method invocations).
 				stringX3D.append(" USE='").append(SFStringObject.toString(getUSE())).append("'");
 			}
 			
-			if (!getContainerFieldOverride().isEmpty() && !getContainerFieldOverride().equals(containerField_DEFAULT_VALUE))
-			{
-				stringX3D.append(" containerField='").append(getContainerFieldOverride()).append("'");
-			}
-			
+                            if (!getContainerFieldOverride().isEmpty() && !getContainerFieldOverride().equals(containerField_DEFAULT_VALUE))
+                            {
+                                    stringX3D.append(" containerField='").append(getContainerFieldOverride()).append("'");
+                            }
+                            
 			if (((getEnabled() != ENABLED_DEFAULT_VALUE) || ConfigurationProperties.isShowDefaultAttributes()) && !isUSE())
 			{
 				stringX3D.append(" enabled='").append(SFBoolObject.toString(getEnabled())).append("'");
@@ -1592,7 +1611,9 @@ setAttribute method invocations).
 	/**
 	 * Recursive method to provide ClassicVRML string serialization.
 	 * @param indentLevel number of levels of indentation for this element
+	 * @see X3DObject#FILE_EXTENSION_CLASSICVRML
 	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html#VRML">X3D Resources: Virtual Reality Modeling Language (VRML) 97</a>
+	 * @see <a href="http://www.web3d.org/documents/specifications/19776-2/V3.3/Part02/X3D_ClassicVRML.html">Extensible 3D (X3D) encodings Part 2: Classic VRML encoding</a>
 	 * @see <a href="http://www.web3d.org/documents/specifications/19776-2/V3.3/Part02/grammar.html">Extensible 3D (X3D) encodings Part 2: Classic VRML encoding, Annex A: Grammar</a>
 	 * @return ClassicVRML string
 	 */
@@ -1781,6 +1802,7 @@ setAttribute method invocations).
 	/**
 	 * Recursive method to provide VRML97 string serialization.
 	 * @param indentLevel number of levels of indentation for this element
+	 * @see X3DObject#FILE_EXTENSION_VRML97
 	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html#VRML">X3D Resources: Virtual Reality Modeling Language (VRML) 97</a>
 	 * @see <a href="http://www.web3d.org/documents/specifications/14772/V2.0/index.html">Virtual Reality Modeling Language (VRML) 97 specification</a>
 	 * @see <a href="http://www.web3d.org/documents/specifications/14772-1/V2.1/index.html">VRML 97 v2.1 Amendment</a>
@@ -1793,54 +1815,17 @@ setAttribute method invocations).
 	}
 
 	/**
-	 * Recursive method to provide object reference to node by DEF name, if found as this node or in a contained node.
-	 * @param DEFname DEF name of node to find
-	 * @return object reference to node
-	 */
-	@Override
-	public X3DConcreteNode getNodeByDEF(String DEFname)
-	{
-		X3DConcreteNode referenceNode;
-
-		if (getDEF().equals(DEFname))
-			return this;
-
-		if (metadata != null)
-		{
-			referenceNode = ((X3DConcreteNode) metadata).getNodeByDEF(DEFname); // SFNode
-			if (referenceNode != null)
-				return referenceNode;
-		}
-		if (pickingGeometry != null)
-		{
-			referenceNode = ((X3DConcreteNode) pickingGeometry).getNodeByDEF(DEFname); // SFNode
-			if (referenceNode != null)
-				return referenceNode;
-		}
-		for (X3DNode element : pickTarget) // MFNode
-		{
-			if (element instanceof org.web3d.x3d.jsail.X3DConcreteNode)
-			{
-				if (((X3DConcreteNode) element).getDEF().equals(DEFname))
-					return (X3DConcreteNode) element; // found, this node
-			
-				// not yet found, continue with depth-first search of current child element
-				referenceNode = ((X3DConcreteNode) element).getNodeByDEF(DEFname);
-				if (referenceNode != null)
-					return referenceNode; // found in child
-			}
-		}
-		return null; // not found, in this node or in children nodes
-	}
-
-	/**
 	 * Recursive method to provide object reference to node or statement by name attribute, if found as part of this element or in a contained element.
 	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, HAnim nodes.
 	 * <br ><br >
+	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
+	 * <br ><br >
 	 * <i>Warning:</i> more than one element may be found that has the same name, this method does not handle that case.
+	 * @see #findNodeByDEF(String)
+	 * @see X3DConcreteElement#hasAncestorSceneObject()
+	 * @see org.web3d.x3d.jsail.X3DConcreteElement#findAncestorX3DObject()
 	 * @param nameValue is value of the name field being searched for in this element and child elements(if any)
 	 * @return object reference to found element, null otherwise
-	 * @see #findNodeByDEF(String)
 	 */
 	@Override
 	public X3DConcreteElement findElementByNameValue(String nameValue)
@@ -1852,11 +1837,15 @@ setAttribute method invocations).
 	 * Recursive method to provide object reference to node or statement by name attribute, if found as part of this element or in a contained element.
 	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, HAnim nodes.
 	 * <br ><br >
+	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
+	 * <br ><br >
 	 * <i>Warning:</i> more than one element may be found that has the same name, this method does not handle that case.
+	 * @see #findNodeByDEF(String)
+	 * @see X3DConcreteElement#hasAncestorSceneObject()
+	 * @see org.web3d.x3d.jsail.X3DConcreteElement#findAncestorX3DObject()
 	 * @param nameValue is value of the name field being searched for in this element and child elements(if any)
 	 * @param elementName identifies the element of interest (meta MetadataString ProtoDeclare CADassembly ProtoInstance HAnimHumanoid etc.)
 	 * @return object reference to found element, null otherwise
-	 * @see #findNodeByDEF(String)
 	 */
 	@Override
 	public X3DConcreteElement findElementByNameValue(String nameValue, String elementName)
@@ -1919,10 +1908,14 @@ setAttribute method invocations).
 	/**
 	 * Recursive method to provide object reference to node by DEF, if found as this node or in a contained node.
 	 * <br ><br >
+	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
+	 * <br ><br >
 	 * <i>Warning:</i> more than one element may be found that has the same DEF, this method does not handle that case.
+	 * @see #findElementByNameValue(String)
+	 * @see X3DConcreteElement#hasAncestorSceneObject()
+	 * @see org.web3d.x3d.jsail.X3DConcreteElement#findAncestorX3DObject()
 	 * @param DEFvalue is value of the name field being searched for in this element and child elements(if any)
 	 * @return object reference to found node, null otherwise
-	 * @see #findElementByNameValue(String)
 	 */
 	@Override
 	public X3DConcreteNode findNodeByDEF(String DEFvalue)
@@ -2116,7 +2109,7 @@ setAttribute method invocations).
 				!modelProfile.equals("Full"))
 			{
 				String errorNotice = ConfigurationProperties.ERROR_ILLEGAL_VALUE + 
-					" invalid X3D profile='" + getContainerFieldOverride() +
+					" invalid X3D profile='" + modelProfile +
 					"' for parent X3D model, add element <componentInfo name='Picking' level='1'/>\n" +
 					"or source-code assignment: " +
 					" findAncestorX3DObject().getHead().addComponentInfo(\"Picking\").setLevel(1);";

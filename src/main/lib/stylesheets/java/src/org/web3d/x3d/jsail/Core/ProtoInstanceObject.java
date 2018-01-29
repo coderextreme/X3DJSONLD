@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -35,7 +35,6 @@ package org.web3d.x3d.jsail.Core;
 import java.util.*;
 import org.web3d.x3d.sai.*;  // making sure #2
 import org.web3d.x3d.jsail.fields.*; // making sure #4
-import org.web3d.x3d.jsail.Core.fieldValueObject;
 import org.web3d.x3d.sai.Core.*; // interfaces for this component
 import org.web3d.x3d.sai.Grouping.*;
 import org.web3d.x3d.sai.Shape.*;
@@ -276,14 +275,15 @@ public class ProtoInstanceObject extends org.web3d.x3d.jsail.X3DConcreteNode imp
 		commentsList = new ArrayList<>(); // instantiate
 
 		fieldValueList = new ArrayList<>(); // instantiate
-		}
+	}
 
 	// ==== Accessor methods: strongly typed get/set methods for compile-time strictness
 
 	/**
 	 * Provide array of fieldValueObject results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) from inputOutput MFNode field <i>fieldValue</i>.
 	 * <br><br>
-	 * <i>Warning:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to fieldValue.
+	 * <i>Warning:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to fieldValue.
+	 * @see org.web3d.x3d.jsail.Core.fieldValueObject
 	 * @return value of fieldValue field
 	 */
 	public ArrayList<fieldValueObject> getFieldValueList()
@@ -294,7 +294,7 @@ public class ProtoInstanceObject extends org.web3d.x3d.jsail.X3DConcreteNode imp
 	/**
 	 * Assign fieldValueObject array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>fieldValue</i>.
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to fieldValue.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to fieldValue.
 	 * @param newValue is new value for the fieldValue field.
 	 * @return {@link ProtoInstanceObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -311,8 +311,8 @@ public class ProtoInstanceObject extends org.web3d.x3d.jsail.X3DConcreteNode imp
 	/**
 	 * Set single child fieldValue node, replacing prior array of existing nodes (if any).
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to fieldValue.
-	 * @param newValue is new node for the fieldValue field.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are restricted to fieldValue.
+	 * @param newValue is new node for the fieldValue field (restricted to fieldValue)
 	 * @return {@link ProtoInstanceObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	public ProtoInstanceObject setFieldValue(fieldValueObject newValue)
@@ -355,9 +355,10 @@ setAttribute method invocations).
 	}
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @return value of metadata field
 	 */
+	@Override
 	public X3DMetadataObject getMetadata()
 	{
 		return metadata;
@@ -365,10 +366,11 @@ setAttribute method invocations).
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @param newValue is new value for the metadata field.
 	 * @return {@link ProtoInstanceObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
+	@Override
 	public ProtoInstanceObject setMetadata(X3DMetadataObject newValue)
 	{
 		metadata = newValue;
@@ -396,12 +398,11 @@ setAttribute method invocations).	 */
 		return this;
 	}
 	/**
-	 * Assign ProtoInstance to <i>metadata</i> field;
-
+	 * Assign ProtoInstance to <i>metadata</i> field.
 	 * <i>Warning:</i> ProtoInstance must match acceptable node type X3DMetadataObject.
 	 * @param newProtoInstanceNode is the new ProtoInstance node for the metadata field
 	 * @see #setMetadata(X3DMetadataObject)
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @return {@link ProtoInstanceObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
 setAttribute method invocations).
 	 */
@@ -422,7 +423,7 @@ setAttribute method invocations).
 	/**
 	 * Provide properly typed ProtoInstance for inputOutput SFNode field <i>metadata</i>, if available.
 	 * @see #getMetadata()
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @return ProtoInstance value of geometry field
 	 */
 	public ProtoInstanceObject getMetadataProtoInstance()
@@ -435,7 +436,7 @@ setAttribute method invocations).
 	 * @return whether a properly typed node or ProtoInstance or CommentsBlock is available.
 	 * @see #getMetadata()
 	 * @see #getMetadataProtoInstance()
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 */
 	public boolean hasMetadata()
 	{
@@ -453,6 +454,7 @@ setAttribute method invocations).
  * </ul>
 	 * @return value of name field
 	 */
+	@Override
 	public String getName()
 	{
 		return name;
@@ -462,14 +464,14 @@ setAttribute method invocations).
 	 * Assign String value to inputOutput SFString field named <i>name</i>.
 	 * <br><br>
 	 * <i>Tooltip:</i> name of the prototype node being instanced. Hint: must match name of corresponding ProtoDeclare or ExternProtoDeclare in this scene. Warning: name must be specified unless this ProtoInstance is a USE node. Hint: well-defined names can simplify design and debugging through improved author understanding. Hint: X3D Scene Authoring Hints, Naming Conventions http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions
-	 * <br><br>@see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions">X3D Scene Authoring Hints: Naming Conventions</a>
+	 * <br><br>@see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions" target="_blank">X3D Scene Authoring Hints: Naming Conventions</a>
 	 * @param newValue is new value for the name field.
 	 * @return {@link ProtoInstanceObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
+	@Override
 	public final ProtoInstanceObject setName(String newValue)
 	{
-
-		if (newValue == null) 
+		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to ProtoInstance
 		if (!newValue.isEmpty() && !org.web3d.x3d.jsail.fields.SFStringObject.isNMTOKEN(newValue))
@@ -477,6 +479,12 @@ setAttribute method invocations).
 			throw new org.web3d.x3d.sai.InvalidFieldValueException("ProtoInstance name newValue='" + newValue + "'" + 
 				" has illegal name value, cannot be empty and must be defined with valid NMTOKEN name string" + 
 				" (with legal characters and no embedded whitespace).");
+		}
+
+		if (!newValue.isEmpty() && !org.web3d.x3d.jsail.fields.SFStringObject.meetsX3dNamingConventions(newValue))
+		{
+			System.out.println("ProtoInstance name newValue='" + newValue + "'" + 
+				" has name value that does not meet X3D naming conventions.");
 		}
 		name = newValue;
 		return this;
@@ -502,10 +510,10 @@ setAttribute method invocations).
 	 * @param newValue is new value for the DEF field.
 	 * @return {@link ProtoInstanceObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
+	@Override
 	public final ProtoInstanceObject setDEF(String newValue)
 	{
-
-		if (newValue == null) 
+		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to ProtoInstance
 		if (!newValue.isEmpty() && !org.web3d.x3d.jsail.fields.SFStringObject.isNMTOKEN(newValue))
@@ -513,6 +521,12 @@ setAttribute method invocations).
 			throw new org.web3d.x3d.sai.InvalidFieldValueException("ProtoInstance DEF newValue='" + newValue + "'" + 
 				" has illegal name value, cannot be empty and must be defined with valid NMTOKEN name string" + 
 				" (with legal characters and no embedded whitespace).");
+		}
+
+		if (!newValue.isEmpty() && !org.web3d.x3d.jsail.fields.SFStringObject.meetsX3dNamingConventions(newValue))
+		{
+			System.out.println("ProtoInstance DEF newValue='" + newValue + "'" + 
+				" has name value that does not meet X3D naming conventions.");
 		}
 		setConcreteUSE(""); // ensure that no previous USE value remains
 		setConcreteDEF(newValue); // private superclass methods
@@ -542,10 +556,10 @@ setAttribute method invocations).
 	 * @param newValue is new value for the USE field.
 	 * @return {@link ProtoInstanceObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
+	@Override
 	public final ProtoInstanceObject setUSE(String newValue)
 	{
-
-		if (newValue == null) 
+		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to ProtoInstance
 		if (!newValue.isEmpty() && !org.web3d.x3d.jsail.fields.SFStringObject.isNMTOKEN(newValue))
@@ -553,6 +567,12 @@ setAttribute method invocations).
 			throw new org.web3d.x3d.sai.InvalidFieldValueException("ProtoInstance USE newValue='" + newValue + "'" + 
 				" has illegal name value, cannot be empty and must be defined with valid NMTOKEN name string" + 
 				" (with legal characters and no embedded whitespace).");
+		}
+
+		if (!newValue.isEmpty() && !org.web3d.x3d.jsail.fields.SFStringObject.meetsX3dNamingConventions(newValue))
+		{
+			System.out.println("ProtoInstance USE newValue='" + newValue + "'" + 
+				" has name value that does not meet X3D naming conventions.");
 		}
 		initialize(); // reset all other field values to default (equivalent to empty)
 		setConcreteUSE(newValue); // private superclass method
@@ -577,9 +597,10 @@ setAttribute method invocations).
 	 * @param newValue is new value for the class field.
 	 * @return {@link ProtoInstanceObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
+	@Override
 	public final ProtoInstanceObject setCssClass(String newValue)
 	{
-		if (newValue == null) 
+		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
 		setConcreteCssClass(newValue); // private superclass method
@@ -650,14 +671,14 @@ setAttribute method invocations).
 		return this;
 	}
 	/**
-	 * Utility constructor that assigns ProtoInstanceObject DEF and prototypeName after initializing member variables with default values
-	 * @param DEFname unique DEF name for this X3D node
+	 * Utility constructor that assigns ProtoInstanceObject DEF and prototypeName after initializing member variables with default values.
+	 * @param DEFlabel unique DEF name for this X3D node
 	 * @param prototypeName initial name for this ProtoInstanceObject statement
 	 */
-	public ProtoInstanceObject (String DEFname, String prototypeName)
+	public ProtoInstanceObject (String DEFlabel, String prototypeName)
 	{
 		initialize();
-		setDEF (DEFname);       // apply checks
+		setDEF (DEFlabel);       // apply checks
 		setName(prototypeName); // apply checks
 	}
 
@@ -824,8 +845,15 @@ setAttribute method invocations).
 	}
 		
 	/**
-	 * Recursive method to provide X3D string serialization of this model subgraph.
+	 * Recursive method to provide X3D string serialization of this model subgraph, utilizing XML encoding and conforming to X3D Canonical Form.
 	 * @param indentLevel number of levels of indentation for this element
+	 * @see X3DObject#FILE_EXTENSION_X3D
+	 * @see X3DObject#FILE_EXTENSION_XML
+	 * @see X3DObject#toStringXML()
+	 * @see X3DObject#toFileXML(String)
+	 * @see X3DObject#toFileX3D(String)
+	 * @see <a href="http://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/X3D_XML.html">X3D XML Encoding</a>
+	 * @see <a href="http://www.web3d.org/documents/specifications/19776-3/V3.3/Part03/concepts.html#X3DCanonicalForm">X3D Compressed Binary Encoding: X3D Canonical Form</a>
 	 * @return X3D string
 	 */
 	@Override
@@ -861,11 +889,11 @@ setAttribute method invocations).
 				stringX3D.append(" name='").append(SFStringObject.toString(getName())).append("'");
 			}
 			
-			if (!getContainerFieldOverride().isEmpty() && !getContainerFieldOverride().equals(containerField_DEFAULT_VALUE))
-			{
-				stringX3D.append(" containerField='").append(getContainerFieldOverride()).append("'");
-			}
-			
+                            if (!getContainerFieldOverride().isEmpty() && !getContainerFieldOverride().equals(containerField_DEFAULT_VALUE))
+                            {
+                                    stringX3D.append(" containerField='").append(getContainerFieldOverride()).append("'");
+                            }
+                            
 			if ((!getCssClass().equals(CLASS_DEFAULT_VALUE) || ConfigurationProperties.isShowDefaultAttributes()))
 			{
 				stringX3D.append(" class='").append(new SFStringObject(getCssClass()).toStringX3D()).append("'");
@@ -908,7 +936,9 @@ setAttribute method invocations).
 	/**
 	 * Recursive method to provide ClassicVRML string serialization.
 	 * @param indentLevel number of levels of indentation for this element
+	 * @see X3DObject#FILE_EXTENSION_CLASSICVRML
 	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html#VRML">X3D Resources: Virtual Reality Modeling Language (VRML) 97</a>
+	 * @see <a href="http://www.web3d.org/documents/specifications/19776-2/V3.3/Part02/X3D_ClassicVRML.html">Extensible 3D (X3D) encodings Part 2: Classic VRML encoding</a>
 	 * @see <a href="http://www.web3d.org/documents/specifications/19776-2/V3.3/Part02/grammar.html">Extensible 3D (X3D) encodings Part 2: Classic VRML encoding, Annex A: Grammar</a>
 	 * @return ClassicVRML string
 	 */
@@ -976,6 +1006,7 @@ setAttribute method invocations).
 	/**
 	 * Recursive method to provide VRML97 string serialization.
 	 * @param indentLevel number of levels of indentation for this element
+	 * @see X3DObject#FILE_EXTENSION_VRML97
 	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html#VRML">X3D Resources: Virtual Reality Modeling Language (VRML) 97</a>
 	 * @see <a href="http://www.web3d.org/documents/specifications/14772/V2.0/index.html">Virtual Reality Modeling Language (VRML) 97 specification</a>
 	 * @see <a href="http://www.web3d.org/documents/specifications/14772-1/V2.1/index.html">VRML 97 v2.1 Amendment</a>
@@ -988,49 +1019,17 @@ setAttribute method invocations).
 	}
 
 	/**
-	 * Recursive method to provide object reference to node by DEF name, if found as this node or in a contained node.
-	 * @param DEFname DEF name of node to find
-	 * @return object reference to node
-	 */
-	@Override
-	public X3DConcreteNode getNodeByDEF(String DEFname)
-	{
-		X3DConcreteNode referenceNode;
-
-		if (getDEF().equals(DEFname))
-			return this;
-
-		if (metadata != null)
-		{
-			referenceNode = ((X3DConcreteNode) metadata).getNodeByDEF(DEFname); // SFNode
-			if (referenceNode != null)
-				return referenceNode;
-		}
-		// ProtoInstance node can contain other DEF'ed nodes in any contained fieldValue
-		for (fieldValueObject fieldInitialization : getFieldValueList()) // MFNode
-		{
-			// not yet found, continue with depth-first search of current fieldValueList
-			for (X3DNode child : fieldInitialization.getChildren())
-			{
-				if (child instanceof X3DConcreteNode)
-				{
-					referenceNode = ((X3DConcreteNode) child).getNodeByDEF(DEFname);
-					if (referenceNode != null)
-						return referenceNode; // found in child
-				}
-			}
-		}
-		return null; // not found, in this node or in children nodes
-	}
-
-	/**
 	 * Recursive method to provide object reference to node or statement by name attribute, if found as part of this element or in a contained element.
 	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, HAnim nodes.
 	 * <br ><br >
+	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
+	 * <br ><br >
 	 * <i>Warning:</i> more than one element may be found that has the same name, this method does not handle that case.
+	 * @see #findNodeByDEF(String)
+	 * @see X3DConcreteElement#hasAncestorSceneObject()
+	 * @see org.web3d.x3d.jsail.X3DConcreteElement#findAncestorX3DObject()
 	 * @param nameValue is value of the name field being searched for in this element and child elements(if any)
 	 * @return object reference to found element, null otherwise
-	 * @see #findNodeByDEF(String)
 	 */
 	@Override
 	public X3DConcreteElement findElementByNameValue(String nameValue)
@@ -1042,11 +1041,15 @@ setAttribute method invocations).
 	 * Recursive method to provide object reference to node or statement by name attribute, if found as part of this element or in a contained element.
 	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, HAnim nodes.
 	 * <br ><br >
+	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
+	 * <br ><br >
 	 * <i>Warning:</i> more than one element may be found that has the same name, this method does not handle that case.
+	 * @see #findNodeByDEF(String)
+	 * @see X3DConcreteElement#hasAncestorSceneObject()
+	 * @see org.web3d.x3d.jsail.X3DConcreteElement#findAncestorX3DObject()
 	 * @param nameValue is value of the name field being searched for in this element and child elements(if any)
 	 * @param elementName identifies the element of interest (meta MetadataString ProtoDeclare CADassembly ProtoInstance HAnimHumanoid etc.)
 	 * @return object reference to found element, null otherwise
-	 * @see #findNodeByDEF(String)
 	 */
 	@Override
 	public X3DConcreteElement findElementByNameValue(String nameValue, String elementName)
@@ -1095,10 +1098,14 @@ setAttribute method invocations).
 	/**
 	 * Recursive method to provide object reference to node by DEF, if found as this node or in a contained node.
 	 * <br ><br >
+	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
+	 * <br ><br >
 	 * <i>Warning:</i> more than one element may be found that has the same DEF, this method does not handle that case.
+	 * @see #findElementByNameValue(String)
+	 * @see X3DConcreteElement#hasAncestorSceneObject()
+	 * @see org.web3d.x3d.jsail.X3DConcreteElement#findAncestorX3DObject()
 	 * @param DEFvalue is value of the name field being searched for in this element and child elements(if any)
 	 * @return object reference to found node, null otherwise
-	 * @see #findElementByNameValue(String)
 	 */
 	@Override
 	public X3DConcreteNode findNodeByDEF(String DEFvalue)
@@ -1144,11 +1151,19 @@ setAttribute method invocations).
 		setName(getName()); // exercise field checks, simple types
 
 		if (getName().isEmpty() && !isUSE())
-                {
-			String errorNotice = "ProtoInstance missing name field, which is usually required (unless this ProtoInstance is a USE node).";
+        {
+			String errorNotice = "ProtoInstance missing name field, which is usually required (since this ProtoInstance is not a USE node).";
 			validationResult.append(errorNotice);
-			throw new InvalidFieldValueException(errorNotice); // report error
-                }
+			throw new InvalidProtoException(errorNotice); // report error
+        }
+		// check for corresponding ProtoDeclare/ExternProtoDeclare having same name, report if missing
+		if (!getName().isEmpty() && getNodeType().startsWith(ConfigurationProperties.ERROR_UNKNOWN_PROTOINSTANCE_NODE_TYPE))
+        {
+			String errorNotice = getNodeType();
+			validationResult.append(errorNotice);
+			throw new InvalidProtoException(errorNotice); // report error
+        }
+		// TODO check for legal containerField among allowed getContainerFieldAlternateValues() for given nodeType
 
 		if (!isUSE()) // be careful! setting DEF via setDEF() method will reset USE value
 			setDEF(getDEF()); // exercise field checks, simple types

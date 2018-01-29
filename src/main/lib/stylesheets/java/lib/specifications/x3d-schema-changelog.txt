@@ -137,10 +137,19 @@ TODO identified issues:
 
 X3D Schema update activity:
 
+6 JAN 2018 brutzman
+- Allow HAnimHumanoid skin field to contain Group|Transform|Shape|IndexedFaceSet
+- Improved descriptions for hanimVersionValues enumerations.
+
+31 DEC 2017 brutzman
+- HAnimJoint can also contain HAnimSite in children field
+- HAnimHumanoid can only contain IndexedFaceSet in skin field, not X3DChildNode
+  (TODO add other indexed meshes once HAnim and mantis reviews are complete)
+
 28 OCT 2017 brutzman walmsley puk
 - (v3.1+) make shaderPartTypeValues enumerations in ShaderPart, ShaderProgram,
-  extendible rather than a fixed list (Mantis 904)
-- (v3.2+) add pickSensorSortOrderValues enumerations, extendible list (Mantis 900)
+  extensible rather than a fixed list (Mantis 904)
+- (v3.2+) add pickSensorSortOrderValues enumerations, extensible list (Mantis 900)
 - (v3.2+) add pickSensorMatchCriterionValues enumerations, fixed list
 
 5 OCT 2017 brutzman
@@ -161,8 +170,8 @@ X3D Schema update activity:
 
 28 October 2017 brutzman walmsley puk
 - (v3.1+) make shaderPartTypeValues enumerations in ShaderPart, ShaderProgram,
-  extendible rather than a fixed list (Mantis 904)
-- (v3.2+) add pickSensorSortOrderValues enumerations, extendible list (Mantis 900)
+  extensible rather than a fixed list (Mantis 904)
+- (v3.2+) add pickSensorSortOrderValues enumerations, extensible list (Mantis 900)
 - (v3.2+) add pickSensorMatchCriterionValues enumerations, fixed list 
 
 1 October 2017 brutzman
@@ -230,13 +239,13 @@ X3D Schema update activity:
   and hanimHumanoidInfoKeyValues.
 - Close review and update of simpleType enumeration lists with attribute types,
   either strictly required (as part of regular XML schema validation) or
-  optionally extendible (multiply defined, with base type listed in appinfo).
+  optionally extensible (multiply defined, with base type listed in appinfo).
   Tested with X3D Object Model and X3D Java SAI autogeneration.
 - Corrected MFString enumerations for appliedParametersValues, labelled others.
 - appinfo indication to suggest default value for required (user-specified)
   values in X3D statements (X3D version/profile, HAnimHumanoid version, etc.)
   Values are still explicitly required for inclusion in XML-encoded scenes.
-- Added metaNameValues as an extendible enumerations list to encourage inclusion
+- Added metaNameValues as an extensible enumerations list to encourage inclusion
   and consistent use of meta elements describing scene models.
 
 17 July 2016, walmsley brutzman

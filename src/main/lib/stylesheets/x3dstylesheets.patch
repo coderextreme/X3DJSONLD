@@ -1,0 +1,406 @@
+Index: CreateX3dSceneAccessInterfaceJava.xslt
+===================================================================
+--- CreateX3dSceneAccessInterfaceJava.xslt	(revision 26399)
++++ CreateX3dSceneAccessInterfaceJava.xslt	(working copy)
+@@ -3851,9 +3851,9 @@
+                 try
+                 {
+                        bufferedWriter = Files.newBufferedWriter(intermediateJSFilePath, charset);
+-                       String tmpStr = "load('nashorn/jvm-npm.js');\nload('nashorn/repeatPolyfill.js');\nvar xmldom = require('nashorn/node_modules/xmldom');\nvar DOMParser = xmldom.DOMParser;\nvar XMLSerializer = new xmldom.XMLSerializer();\nvar DOMImplementation = new xmldom.DOMImplementation();\n";
++                       String tmpStr = "load('jvm-npm.js');\nload('repeatPolyfill.js');\nvar xmldom = require('node_modules/xmldom');\nvar DOMParser = xmldom.DOMParser;\nvar XMLSerializer = new xmldom.XMLSerializer();\nvar DOMImplementation = new xmldom.DOMImplementation();\n";
+                        bufferedWriter.write(tmpStr, 0, tmpStr.length());
+-                       tmpStr = "var json = "+outputSceneText+";\nvar version = json['X3D']['@version'];\nvar docType = DOMImplementation.createDocumentType('X3D', 'ISO//Web3D//DTD X3D '+version+'//EN', 'http://www.web3d.org/specifications/x3d-'+version+'.dtd', null);\nvar document = DOMImplementation.createDocument(null, 'X3D', docType);\nvar mapToMethod = require('nashorn/node/mapToMethod.js');\n var mapToMethod2 = require('nashorn/node/mapToMethod2.js');\n var fieldTypes = require('nashorn/node/fieldTypes.js');\n load('nashorn/node/X3DJSONLD.js');\n load('nashorn/node/JavaScriptSerializer.js');\n var child = CreateElement('X3D');\n ConvertToX3DOM(json, '', child, 'flipper.json');\n print('Returning with', child);\n var output = new JavaScriptSerializer().serializeToString(json, child, '"+fileName+"', mapToMethod, fieldTypes);\n var FileWriter = Java.type('java.io.FileWriter');\n var fw = new FileWriter('"+fileName+"');\n fw.write(output);\n fw.close();\n";
++                       tmpStr = "var json = "+outputSceneText+";\nvar version = json['X3D']['@version'];\nvar docType = DOMImplementation.createDocumentType('X3D', 'ISO//Web3D//DTD X3D '+version+'//EN', 'http://www.web3d.org/specifications/x3d-'+version+'.dtd', null);\nvar document = DOMImplementation.createDocument(null, 'X3D', docType);\nvar mapToMethod = require('node/mapToMethod.js');\n var mapToMethod2 = require('node/mapToMethod2.js');\n var fieldTypes = require('node/fieldTypes.js');\n load('node/X3DJSONLD.js');\n load('node/JavaScriptSerializer.js');\n var child = CreateElement('X3D');\n ConvertToX3DOM(json, '', child, 'flipper.json');\n print('Returning with', child);\n var output = new JavaScriptSerializer().serializeToString(json, child, '"+fileName+"', mapToMethod, fieldTypes);\n var FileWriter = Java.type('java.io.FileWriter');\n var fw = new FileWriter('"+fileName+"');\n fw.write(output);\n fw.close();\n";
+                        bufferedWriter.write(tmpStr, 0, tmpStr.length());
+                        bufferedWriter.close(); // ensure file writing is complete
+                 }
+Index: java/build.xml
+===================================================================
+--- java/build.xml	(revision 26403)
++++ java/build.xml	(working copy)
+@@ -183,26 +183,21 @@
+ 		<echo message="matches HelloWorldProgramOutput.x3d: ${Nashorn.x3d.match}"/>
+ 		<echo message="==========================================="/>
+ 		<echo message="script:"/>
+-		<!--
++<!--    <script language="nashorn"> TODO debugging -->
+ 		<script language="javascript" manager="javax">
+ 			<classpath>
+-				<fileset dir="${java.jars.dir}"  includes="${jsai.full.archive.jar.name}"/>
++				<fileset dir="${saxon.dir}"      includes="${saxon.jar}"/>
++				<fileset dir="${exificient.dir}" includes="${exificient.jar}"/>
++				<fileset dir="${openexi.dir}"    includes="${openexi.jar}"/>
++				<fileset dir="${java.jars.dir}"  includes="${jsai.classes.archive.jar.name}"/>
+ 			</classpath>
+ 			load('nashorn/jvm-npm.js');
+ 			load('nashorn/repeatPolyfill.js');
++			/*
++			load('nashorn/examples/HelloWorldProgramOutput.Nashorn.js.intermediate.js');
++			*/
+ 			load('nashorn/examples/HelloWorldProgramOutput.Nashorn.js');
+ 		</script>
+-		-->
+-		<exec executable="jjs">
+-			<arg value="-J-Djava.class.path=jars/X3DJSAIL.3.3.full.jar"/>
+-			<arg value="nashorn/examples/HelloWorldProgramOutput.Nashorn.js"/>
+-		</exec>
+-
+-		<condition property="Nashorn.x3d.match" value="true">
+-                    <filesmatch file1="nashorn/examples/HelloWorldProgramOutput.Nashorn.js.new.x3d"
+-                                file2="nashorn/examples/HelloWorldProgramOutput.Nashorn.x3d"/>
+-		</condition>
+-
+     </target>
+ 	
+ </project>
+Index: java/lib/stylesheets/X3dToJson.xslt
+===================================================================
+--- java/lib/stylesheets/X3dToJson.xslt	(revision 26403)
++++ java/lib/stylesheets/X3dToJson.xslt	(working copy)
+@@ -73,6 +73,7 @@
+     <xsl:param name="stripComments"><xsl:text>false</xsl:text></xsl:param>
+     <xsl:param name="stripDefaultAttributes"><xsl:text>true</xsl:text></xsl:param>
+     <xsl:param name="indentEnabled"><xsl:text>true</xsl:text></xsl:param>
++    <xsl:param name="normalizeCommentWhitespace"><xsl:text>true</xsl:text></xsl:param>
+     <xsl:param name="sourceText"><xsl:text>strings</xsl:text></xsl:param> <!-- escaped | strings | plaintext -->
+     <xsl:param name="traceEnabled" ><xsl:text>false</xsl:text></xsl:param>
+     <xsl:param name="traceScripts" ><xsl:text>false</xsl:text></xsl:param>
+@@ -1287,7 +1288,7 @@
+                 
+                 <xsl:variable name="sourceStringText">
+                     <xsl:call-template name="escape-quote-characters-recurse">
+-                        <xsl:with-param name="inputString">
++                        <xsl:with-param name="inputText">
+                             <xsl:call-template name="omit-leading-trailing-whitespace">
+                                 <xsl:with-param name="includeLeadingWhitespace"><xsl:text>false</xsl:text></xsl:with-param>
+                                 <xsl:with-param name="inputString">
+@@ -1385,13 +1386,13 @@
+         
+         <xsl:call-template name="escape-quote-characters-recurse">
+             <xsl:with-param name="inputType"><xsl:value-of select="$inputType"/></xsl:with-param>
+-            <xsl:with-param name="inputString">
++            <xsl:with-param name="inputText">
+                 <xsl:call-template name="escape-less-than-characters-recurse">
+                     <xsl:with-param name="inputString">
+                         <xsl:call-template name="escape-greater-than-characters-recurse">
+                             <xsl:with-param name="inputString">
+                                 <xsl:call-template name="escape-backslash-characters-recurse">
+-                                    <xsl:with-param name="inputString" select="normalize-space($inputString)"/>
++                                    <xsl:with-param name="inputString" select="$inputString"/>
+                                 </xsl:call-template>
+                             </xsl:with-param>
+                         </xsl:call-template>
+@@ -1402,8 +1403,19 @@
+     </xsl:template>
+ 
+     <xsl:template name="escape-quote-characters-recurse">
+-      <xsl:param name="inputString"><xsl:text></xsl:text></xsl:param> <!-- already normalized white space -->
++      <xsl:param name="inputText"><xsl:text></xsl:text></xsl:param> <!-- possibly normalized white space -->
+       <xsl:param name="inputType"><xsl:text>unknown</xsl:text></xsl:param>
++      
++      <xsl:variable name="inputString">
++          <xsl:choose>
++              <xsl:when test="($normalizeCommentWhitespace = 'true')">
++                  <xsl:value-of select="normalize-space($inputText)"/>
++              </xsl:when>
++              <xsl:otherwise>
++                  <xsl:value-of select="$inputText"/>
++              </xsl:otherwise>
++          </xsl:choose>
++      </xsl:variable>
+ 
+       <!-- debug (also use trace messages below) -->
+       <xsl:variable name="debugTrace" select="false()"/><!-- true() false() -->
+@@ -1439,8 +1451,8 @@
+           <xsl:value-of select="substring-before($inputString,'\')"/>
+           <xsl:text>\</xsl:text><!-- JSON escaped backslash is same as X3D escaped backslash -->
+           <xsl:call-template name="escape-quote-characters-recurse">
+-              <xsl:with-param name="inputString" select="substring-after($inputString,'\')"/>
+-              <xsl:with-param name="inputType"   select="$inputType"/>
++              <xsl:with-param name="inputText" select="substring-after($inputString,'\')"/>
++              <xsl:with-param name="inputType" select="$inputType"/>
+           </xsl:call-template>
+         </xsl:when>
+         <!-- comment: XML-escaped \&amp;quot; (before regular \&quot;) needs to be handled
+@@ -1450,8 +1462,8 @@
+           <xsl:value-of select="substring-before($inputString,'\&amp;quot;')"/>
+           <xsl:text disable-output-escaping="yes">\"</xsl:text>< !- - JSON escaped quote is same as X3D escaped quote - - >
+           <xsl:call-template name="escape-quote-characters-recurse">
+-              <xsl:with-param name="inputString" select="substring-after($inputString,'\&amp;quot;')"/>
+-              <xsl:with-param name="inputType"   select="$inputType"/>
++              <xsl:with-param name="inputText" select="substring-after($inputString,'\&amp;quot;')"/>
++              <xsl:with-param name="inputType" select="$inputType"/>
+           </xsl:call-template>
+         </xsl:when> -->
+         <!-- comment: XML-escaped &amp;quot; (before regular &quot;) needs to be handled
+@@ -1461,8 +1473,8 @@
+           <xsl:value-of select="substring-before($inputString,'&amp;quot;')"/>
+           <xsl:text>"</xsl:text>
+           <xsl:call-template name="escape-quote-characters-recurse">
+-              <xsl:with-param name="inputString" select="substring-after($inputString,'&amp;quot;')"/>
+-              <xsl:with-param name="inputType"   select="$inputType"/>
++              <xsl:with-param name="inputText" select="substring-after($inputString,'&amp;quot;')"/>
++              <xsl:with-param name="inputType" select="$inputType"/>
+           </xsl:call-template>
+         </xsl:when> -->
+         <!-- comment: escaped quote needs to be left alone -->
+@@ -1472,8 +1484,8 @@
+           <xsl:value-of select="substring-before($inputString,'\&quot;')"/>
+           <xsl:text disable-output-escaping="yes">\"</xsl:text><!-- JSON escaped quote is same as X3D escaped quote -->
+           <xsl:call-template name="escape-quote-characters-recurse">
+-              <xsl:with-param name="inputString" select="substring-after($inputString,'\&quot;')"/>
+-              <xsl:with-param name="inputType"   select="$inputType"/>
++              <xsl:with-param name="inputText" select="substring-after($inputString,'\&quot;')"/>
++              <xsl:with-param name="inputType" select="$inputType"/>
+           </xsl:call-template>
+         </xsl:when>
+         <!-- comment: backslash (no following quotes ") needs to be escaped -->
+@@ -1483,8 +1495,8 @@
+           <xsl:value-of select="substring-before($inputString,'\')"/>
+           <xsl:text disable-output-escaping="yes">\\</xsl:text>
+           <xsl:call-template name="escape-quote-characters-recurse">
+-              <xsl:with-param name="inputString" select="substring-after($inputString,'\')"/>
+-              <xsl:with-param name="inputType"   select="$inputType"/>
++              <xsl:with-param name="inputText" select="substring-after($inputString,'\')"/>
++              <xsl:with-param name="inputType" select="$inputType"/>
+           </xsl:call-template>
+         </xsl:when>
+         <!-- comment: backslash (preceding ") needs to be escaped -->
+@@ -1494,8 +1506,8 @@
+           <xsl:value-of select="substring-before($inputString,'\')"/>
+           <xsl:text disable-output-escaping="yes">\\</xsl:text>
+           <xsl:call-template name="escape-quote-characters-recurse">
+-              <xsl:with-param name="inputString" select="substring-after($inputString,'\')"/>
+-              <xsl:with-param name="inputType"   select="$inputType"/>
++              <xsl:with-param name="inputText" select="substring-after($inputString,'\')"/>
++              <xsl:with-param name="inputType" select="$inputType"/>
+           </xsl:call-template>
+         </xsl:when>
+         <!-- comment: unescaped quote needs \ escape character inserted, no quote delimiter remaining -->
+@@ -1504,8 +1516,8 @@
+           <xsl:value-of select="substring-before($inputString,'&quot;')"/>
+           <xsl:text disable-output-escaping="yes">\"</xsl:text>
+           <xsl:call-template name="escape-quote-characters-recurse">
+-              <xsl:with-param name="inputString" select="substring-after($inputString,'&quot;')"/>
+-              <xsl:with-param name="inputType"   select="$inputType"/>
++              <xsl:with-param name="inputText" select="substring-after($inputString,'&quot;')"/>
++              <xsl:with-param name="inputType" select="$inputType"/>
+           </xsl:call-template>
+         </xsl:when>
+         <!-- SFString with quoted value -->
+@@ -1513,8 +1525,8 @@
+           <xsl:if test="$debugTrace"><xsl:message><xsl:text>[e-q-c-r][3]</xsl:text><xsl:value-of select="$debugMessage"/></xsl:message></xsl:if>
+           <xsl:text disable-output-escaping="yes">\"</xsl:text>
+           <xsl:call-template name="escape-quote-characters-recurse">
+-              <xsl:with-param name="inputString" select="substring($inputString,2,string-length($inputString) - 1)"/>
+-              <xsl:with-param name="inputType"   select="$inputType"/>
++              <xsl:with-param name="inputText" select="substring($inputString,2,string-length($inputString) - 1)"/>
++              <xsl:with-param name="inputType" select="$inputType"/>
+           </xsl:call-template>
+         </xsl:when>
+         <!-- SFString or MFString containing escaped quotation mark \" -->
+@@ -1524,8 +1536,8 @@
+                 <xsl:value-of select="substring-before($inputString,'\&quot;')"/>
+                 <xsl:text>\"</xsl:text>
+                 <xsl:call-template name="escape-quote-characters-recurse">
+-                        <xsl:with-param name="inputString" select="substring-after($inputString,'\&quot;')"/>
+-                        <xsl:with-param name="inputType"   select="$inputType"/>
++                        <xsl:with-param name="inputText" select="substring-after($inputString,'\&quot;')"/>
++                        <xsl:with-param name="inputType" select="$inputType"/>
+                 </xsl:call-template>
+         </xsl:when>
+         <!-- SFString or MFString containing escaped backslash \\ -->
+@@ -1534,8 +1546,8 @@
+                 <xsl:value-of select="substring-before($inputString,'\\')"/>
+                 <xsl:text>\\</xsl:text>
+                 <xsl:call-template name="escape-quote-characters-recurse">
+-                        <xsl:with-param name="inputString" select="substring-after($inputString,'\\')"/>
+-                        <xsl:with-param name="inputType"   select="$inputType"/>
++                        <xsl:with-param name="inputText" select="substring-after($inputString,'\\')"/>
++                        <xsl:with-param name="inputType" select="$inputType"/>
+                 </xsl:call-template>
+         </xsl:when>
+         <!-- SFString or MFString containing empty string "" -->
+@@ -1572,8 +1584,8 @@
+                                       <xsl:text>"</xsl:text>
+                                       <xsl:variable name="remainder2" select="normalize-space(substring-after($remainder,'&quot;'))"/>
+                                       <xsl:call-template name="escape-quote-characters-recurse">
+-                                              <xsl:with-param name="inputString" select="$remainder2"/>
+-                                              <xsl:with-param name="inputType"   select="$inputType"/>
++                                              <xsl:with-param name="inputText" select="$remainder2"/>
++                                              <xsl:with-param name="inputType" select="$inputType"/>
+                                       </xsl:call-template>
+                               </xsl:when>
+                               <xsl:when test="starts-with(normalize-space($remainder),'&quot;')">
+@@ -1580,15 +1592,15 @@
+                                       <xsl:if test="$debugTrace"><xsl:message><xsl:text>[e-q-c-r][3.7]</xsl:text></xsl:message></xsl:if>
+                                       <xsl:text>"</xsl:text>
+                                       <xsl:call-template name="escape-quote-characters-recurse">
+-                                              <xsl:with-param name="inputString" select="substring-after(substring($inputString,3),'&quot;')"/>
+-                                              <xsl:with-param name="inputType"   select="$inputType"/>
++                                              <xsl:with-param name="inputText" select="substring-after(substring($inputString,3),'&quot;')"/>
++                                              <xsl:with-param name="inputType" select="$inputType"/>
+                                       </xsl:call-template>
+                               </xsl:when>
+                               <xsl:otherwise>
+                                       <xsl:if test="$debugTrace"><xsl:message><xsl:text>[e-q-c-r][3.8]</xsl:text></xsl:message></xsl:if>
+                                       <xsl:call-template name="escape-quote-characters-recurse">
+-                                              <xsl:with-param name="inputString" select="substring($inputString,3)"/>
+-                                              <xsl:with-param name="inputType"   select="$inputType"/>
++                                              <xsl:with-param name="inputText" select="substring($inputString,3)"/>
++                                              <xsl:with-param name="inputType" select="$inputType"/>
+                                       </xsl:call-template>
+                               </xsl:otherwise>
+                       </xsl:choose>
+@@ -1611,8 +1623,8 @@
+             <xsl:if test="$debugTrace"><xsl:message><xsl:text>[e-q-c-r][4.1]</xsl:text><xsl:value-of select="$debugMessage"/></xsl:message></xsl:if>
+             <xsl:text>","</xsl:text>
+             <xsl:call-template name="escape-quote-characters-recurse">
+-                <xsl:with-param name="inputString" select="substring-after(substring-after($inputString,'&quot;'),'&quot;')"/>
+-                <xsl:with-param name="inputType"   select="$inputType"/>
++                <xsl:with-param name="inputText" select="substring-after(substring-after($inputString,'&quot;'),'&quot;')"/>
++                <xsl:with-param name="inputType" select="$inputType"/>
+             </xsl:call-template>
+         </xsl:when>
+         <!-- IMPORTANT: starting and ending quotes indicate outer delimiters of MFString array; output " and process/split string values hereafter... -->
+@@ -1621,8 +1633,8 @@
+             <xsl:if test="$debugTrace"><xsl:message><xsl:text>[e-q-c-r][4.2]</xsl:text><xsl:value-of select="$debugMessage"/></xsl:message></xsl:if>
+             <xsl:text>"</xsl:text>
+             <xsl:call-template name="escape-quote-characters-recurse">
+-                <xsl:with-param name="inputString" select="substring($inputString,2)"/>
+-                <xsl:with-param name="inputType"   select="$inputType"/>
++                <xsl:with-param name="inputText" select="substring($inputString,2)"/>
++                <xsl:with-param name="inputType" select="$inputType"/>
+             </xsl:call-template>
+         </xsl:when>
+         <!-- strings: skip past escaped quote character \" (a literal value, not a delimiter) then recurse to process remainder -->
+@@ -1631,8 +1643,8 @@
+             <xsl:value-of select="substring-before($inputString,'\&quot;')"/>
+             <xsl:text disable-output-escaping="yes">\"</xsl:text><!-- JSON escaped quote is same as X3D escaped quote -->
+             <xsl:call-template name="escape-quote-characters-recurse">
+-                <xsl:with-param name="inputString" select="substring-after($inputString,'\&quot;')"/>
+-                <xsl:with-param name="inputType"   select="$inputType"/>
++                <xsl:with-param name="inputText" select="substring-after($inputString,'\&quot;')"/>
++                <xsl:with-param name="inputType" select="$inputType"/>
+             </xsl:call-template>
+         </xsl:when>
+         <!-- MFString value next contains quotes delimiter between SFString array elements, but check no preceding unescaped quote -->
+@@ -1641,8 +1653,8 @@
+             <xsl:value-of select="substring-before($inputString,'&quot; &quot;')"/>
+             <xsl:text>" "</xsl:text>          
+             <xsl:call-template name="escape-quote-characters-recurse">
+-                <xsl:with-param name="inputString" select="substring-after($inputString,'&quot; &quot;')"/>
+-                <xsl:with-param name="inputType"   select="$inputType"/>
++                <xsl:with-param name="inputText" select="substring-after($inputString,'&quot; &quot;')"/>
++                <xsl:with-param name="inputType" select="$inputType"/>
+             </xsl:call-template>
+         </xsl:when>
+         <!-- pass through delimiter " " as "," -->
+@@ -1651,8 +1663,8 @@
+             <xsl:value-of select="substring-before($inputString,'&quot; &quot;')"/>
+             <xsl:text disable-output-escaping="yes">","</xsl:text>
+             <xsl:call-template name="escape-quote-characters-recurse">
+-                <xsl:with-param name="inputString" select="substring-after($inputString,'&quot; &quot;')"/>
+-                <xsl:with-param name="inputType"   select="$inputType"/>
++                <xsl:with-param name="inputText" select="substring-after($inputString,'&quot; &quot;')"/>
++                <xsl:with-param name="inputType" select="$inputType"/>
+             </xsl:call-template>
+         </xsl:when>
+         <!-- pass through delimeter "," as "," -->
+@@ -1661,8 +1673,8 @@
+             <xsl:value-of select="substring-before($inputString,'&quot;,&quot;')"/>
+             <xsl:text disable-output-escaping="yes">","</xsl:text>
+             <xsl:call-template name="escape-quote-characters-recurse">
+-                <xsl:with-param name="inputString" select="substring-after($inputString,'&quot;,&quot;')"/>
+-                <xsl:with-param name="inputType"   select="$inputType"/>
++                <xsl:with-param name="inputText" select="substring-after($inputString,'&quot;,&quot;')"/>
++                <xsl:with-param name="inputType" select="$inputType"/>
+             </xsl:call-template>
+         </xsl:when>
+ 		<!-- TODO need to generalize handling of unnormalized comma-whitespace, perhaps with regular expression -->
+@@ -1681,15 +1693,15 @@
+                     <xsl:if test="$debugTrace"><xsl:message><xsl:text>[e-q-c-r][7.3a]</xsl:text></xsl:message></xsl:if>
+                     <xsl:text disable-output-escaping="yes">"</xsl:text>
+                     <xsl:call-template name="escape-quote-characters-recurse">
+-                        <xsl:with-param name="inputString" select="substring-after($remainder7.3,'&quot;')"/>
+-                        <xsl:with-param name="inputType"   select="$inputType"/>
++                        <xsl:with-param name="inputText" select="substring-after($remainder7.3,'&quot;')"/>
++                        <xsl:with-param name="inputType" select="$inputType"/>
+                     </xsl:call-template>
+                 </xsl:when>
+                 <xsl:otherwise>
+                     <xsl:if test="$debugTrace"><xsl:message><xsl:text>[e-q-c-r][7.3b]</xsl:text></xsl:message></xsl:if>
+                     <xsl:call-template name="escape-quote-characters-recurse">
+-                        <xsl:with-param name="inputString" select="$remainder7.3"/>
+-                        <xsl:with-param name="inputType"   select="$inputType"/>
++                        <xsl:with-param name="inputText" select="$remainder7.3"/>
++                        <xsl:with-param name="inputType" select="$inputType"/>
+                     </xsl:call-template>
+               </xsl:otherwise>
+             </xsl:choose>
+@@ -1700,8 +1712,8 @@
+           <xsl:value-of select="substring-before($inputString,'&quot; ,&quot;')"/>
+           <xsl:text disable-output-escaping="yes">","</xsl:text>
+           <xsl:call-template name="escape-quote-characters-recurse">
+-              <xsl:with-param name="inputString" select="substring-after($inputString,'&quot; ,&quot;')"/>
+-              <xsl:with-param name="inputType"   select="$inputType"/>
++              <xsl:with-param name="inputText" select="substring-after($inputString,'&quot; ,&quot;')"/>
++              <xsl:with-param name="inputType" select="$inputType"/>
+           </xsl:call-template>
+         </xsl:when> -->
+         <!-- pass through delimeter " , " as ","
+@@ -1710,8 +1722,8 @@
+           <xsl:value-of select="substring-before($inputString,'&quot; , &quot;')"/>
+           <xsl:text disable-output-escaping="yes">","</xsl:text>
+           <xsl:call-template name="escape-quote-characters-recurse">
+-              <xsl:with-param name="inputString" select="substring-after($inputString,'&quot; , &quot;')"/>
+-              <xsl:with-param name="inputType"   select="$inputType"/>
++              <xsl:with-param name=inputText" select="substring-after($inputString,'&quot; , &quot;')"/>
++              <xsl:with-param name="inputType" select="$inputType"/>
+           </xsl:call-template>
+         </xsl:when> -->
+         <!-- unescaped quote needs \ escape character inserted, occurs before quotes delimiter -->
+@@ -1720,8 +1732,8 @@
+             <xsl:value-of select="substring-before($inputString,'&quot;')"/>
+             <xsl:text disable-output-escaping="yes">\"</xsl:text>
+             <xsl:call-template name="escape-quote-characters-recurse">
+-                <xsl:with-param name="inputString" select="substring-after($inputString,'&quot;')"/>
+-                <xsl:with-param name="inputType"   select="$inputType"/>
++                <xsl:with-param name="inputText" select="substring-after($inputString,'&quot;')"/>
++                <xsl:with-param name="inputType" select="$inputType"/>
+             </xsl:call-template>
+         </xsl:when>
+         <!-- final string and final end quote is passed through, quoted. ignore trailing comma, if any. -->
+@@ -1731,8 +1743,8 @@
+             <xsl:value-of select="substring-before($inputString,'&quot;')"/>
+             <xsl:text disable-output-escaping="yes">"</xsl:text>
+             <xsl:call-template name="escape-quote-characters-recurse">
+-                <xsl:with-param name="inputString" select="substring-after($inputString,'&quot;')"/>
+-                <xsl:with-param name="inputType"   select="$inputType"/>
++                <xsl:with-param name="inputText" select="substring-after($inputString,'&quot;')"/>
++                <xsl:with-param name="inputType" select="$inputType"/>
+             </xsl:call-template>
+         </xsl:when>
+         <!-- finish quoted SFString value and continue with next quoted SFString value -->
+@@ -1742,8 +1754,8 @@
+             <xsl:text disable-output-escaping="yes">","</xsl:text>
+             <xsl:value-of select="substring-before($inputString,'&quot;')"/>
+             <xsl:call-template name="escape-quote-characters-recurse">
+-                <xsl:with-param name="inputString" select="substring-after(substring-after($inputString,'&quot;'),'&quot;')"/>
+-                <xsl:with-param name="inputType"   select="$inputType"/>
++                <xsl:with-param name="inputText" select="substring-after(substring-after($inputString,'&quot;'),'&quot;')"/>
++                <xsl:with-param name="inputType" select="$inputType"/>
+             </xsl:call-template>
+         </xsl:when>
+         <!-- unescaped quote needs \ escape character inserted, no quote delimiter remaining -->
+@@ -1752,8 +1764,8 @@
+             <xsl:value-of select="substring-before($inputString,'&quot;')"/>
+             <xsl:text disable-output-escaping="yes">\"</xsl:text>
+             <xsl:call-template name="escape-quote-characters-recurse">
+-                <xsl:with-param name="inputString" select="substring-after($inputString,'&quot;')"/>
+-                <xsl:with-param name="inputType"   select="$inputType"/>
++                <xsl:with-param name="inputText" select="substring-after($inputString,'&quot;')"/>
++                <xsl:with-param name="inputType" select="$inputType"/>
+             </xsl:call-template>
+         </xsl:when>
+         <!-- remaining case: all done -->

@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -87,7 +87,7 @@ public class BrowserEvent extends java.util.EventObject
     /** The identifier of the event that this class instance represents */
     private int id;
 	
-	/** Error message if incorrect Browser event value encountered
+	/** Error message if incorrect Browser event value encountered.
 	 * @see <a href="http://www.web3d.org/documents/specifications/19777-2/V3.0/Part2/abstracts.html#BrowserEvent">X3D Java SAI: B.5.1 BrowserEvent</a>
 	 * @see <a href="http://www.web3d.org/documents/specifications/19775-2/V3.3/Part02/concepts.html#Browser">X3D SAI: 4.4.6 Browser</a>
 	 * @see <a href="http://www.web3d.org/documents/specifications/19775-2/V3.3/Part02/concepts.html#Events">X3D SAI: 4.5 Events</a>

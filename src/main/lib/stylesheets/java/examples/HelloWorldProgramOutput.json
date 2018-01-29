@@ -64,7 +64,7 @@
           },
           {
             "@name":"modified",
-            "@content":"18 December 2017"
+            "@content":"28 January 2018"
           },
           {
             "@name":"generator",
@@ -124,7 +124,7 @@
           },
           {
             "@name":"translated",
-            "@content":"18 December 2017"
+            "@content":"28 January 2018"
           },
           {
             "@name":"generator",
@@ -175,6 +175,13 @@
               "@USE":"WorldInfoDEF"
             }
           },
+          { "MetadataString":
+            {
+              "@name":"test",
+              "@DEF":"scene.addChildMetadataObject",
+              "@value":["Top-level root Metadata node beneath Scene needs to be one of '-children' in JSON encoding"]
+            }
+          },
           { "LayerSet":
             {
               "@DEF":"scene.addChildLayerSetObjectTest"
@@ -217,7 +224,7 @@
                             { "Box":
                               {
                                 "@DEF":"test-NMTOKEN_regex.0123456789",
-                                "@class":"textured"
+                                "@class":"untextured"
                               }
                             }
                         }
@@ -310,10 +317,10 @@
                           "@string":["X3D Java","SAI Library","X3DJSAIL"],
                           "-children":[
                             {
-                              "#comment":"escaped quotation marks example 3: He said, \"Immel did it!\""
+                              "#comment":"Comment example A, plain quotation marks: He said, \"Immel did it!\""
                             },
                             {
-                              "#comment":"escaped quotation marks example 4: He said, &quot;Immel did it!&quot;"
+                              "#comment":"Comment example B, XML character entities: He said, &quot;Immel did it!&quot;"
                             }
                           ],
                           "-metadata":
@@ -323,14 +330,14 @@
                                 "-value":[
                                   { "MetadataString":
                                     {
-                                      "@name":"escapedQuotesTest1",
-                                      "@value":["escaped quotation marks example 1: He said, \"Immel did it!\""]
+                                      "@name":"quotesTestC",
+                                      "@value":["MFString example C, backslash-escaped quotes: He said, \"Immel did it!\""]
                                     }
                                   },
                                   { "MetadataString":
                                     {
-                                      "@name":"escapedQuotesTest2",
-                                      "@value":["escaped quotation marks example 2: He said, &quot;Immel did it!&quot;"]
+                                      "@name":"extraChildTest",
+                                      "@value":["checks MetadataSetObject addValue() method"]
                                     }
                                   }
                                 ]
@@ -359,7 +366,7 @@
                           "@DEF":"ProxyShape",
                           "-children":[
                             {
-                              "#comment":"alternative XML encoding: Text string='\"One, Two, Three\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"'"
+                              "#comment":"alternative XML encoding: Text string='\"One, Two, Three\"\"\"\"He said, \\&quot;Immel did it!\\&quot;\"'"
                             },
                             {
                               "#comment":"alternative Java source: .setString(new String [] {\"One, Two, Three\", \"\", \"He said, \\\"Immel did it!\\\"\"})"
@@ -448,13 +455,7 @@
                       }
                     ],
                     "#sourceText":[
-"ecmascript:",
-"",
-"function colorInput (eventValue) // Example source code",
-"{",
-"   colorsOutput = new MFColor(eventValue); // assigning value sends output event",
-"// Browser.print('colorInput=' + eventValue + ', colorsOutput=' + colorsOutput + '\n');",
-"}"
+"ecmascript: function colorInput (eventValue) // Example source code { colorsOutput = new MFColor(eventValue); // assigning value sends output event // Browser.print('colorInput=' + eventValue + ', colorsOutput=' + colorsOutput + '\n'); }"
 ]
                   }
                 },
@@ -597,7 +598,7 @@
                     "@DEF":"TestAppearance1",
                     "-children":[
                       {
-                        "#comment":"ArtDeco01Material prototype goes here..."
+                        "#comment":"ArtDeco01Material prototype goes here... TODO ensure setContainerField is handled in exported Java"
                       }
                     ],
                     "-material":
@@ -636,7 +637,7 @@
                     "@DEF":"TestAppearance2",
                     "-children":[
                       {
-                        "#comment":"ArtDeco02Material prototype goes here..."
+                        "#comment":"ArtDeco02Material prototype goes here... TODO ensure setContainerField is handled in exported Java"
                       }
                     ],
                     "-material":
@@ -843,29 +844,7 @@
                             ]
                         },
                         "#sourceText":[
-"ecmascript:",
-"function initialize ()",
-"{",
-"    newColor = diffuseColor; // start with correct color",
-"}",
-"function set_enabled (newValue)",
-"{",
-"\tenabled = newValue;",
-"}",
-"function clockTrigger (timeValue)",
-"{",
-"    if (!enabled) return;",
-"    red   = newColor.r;",
-"    green = newColor.g;",
-"    blue  = newColor.b;",
-"    ",
-"    // note different modulation rates for each color component, % is modulus operator",
-"    newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1);",
-"\tif (enabled)",
-"\t{",
-"\t\tBrowser.print ('diffuseColor=(' + red + ',' + green + ',' + blue + ') newColor=' + newColor.toString() + '\n');",
-"\t}",
-"}"
+"ecmascript: function initialize () { newColor = diffuseColor; // start with correct color } function set_enabled (newValue) { enabled = newValue; } function clockTrigger (timeValue) { if (!enabled) return; red = newColor.r; green = newColor.g; blue = newColor.b; // note different modulation rates for each color component, % is modulus operator newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1); if (enabled) { Browser.print ('diffuseColor=(' + red + ',' + green + ',' + blue + ') newColor=' + newColor.toString() + '\n'); } }"
 ]
                       }
                     }
@@ -1010,7 +989,7 @@
                         "#comment":"Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d"
                       },
                       {
-                        "#comment":"Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\""
+                        "#comment":"Expected containerField='source', allowed containerField values=\"texture\"\"source\"\"back\"\"bottom\"\"front\"\"left\"\"right\"\"top\"\"backTexture\"\"bottomTexture\"\"frontTexture\"\"leftTexture\"\"rightTexture\"\"topTexture\""
                       }
                     ]
                   }
@@ -1033,7 +1012,7 @@
             "#comment":"Test success: CommentsBlock.isNode()=false, testComments.isNode()=false"
           },
           {
-            "#comment":"Test success: CommentsBlock.isStatement()=false, testComments.isStatement()=false"
+            "#comment":"Test failure: CommentsBlock.isStatement()=true, testComments.isStatement()=true"
           },
           { "Shape":
             {

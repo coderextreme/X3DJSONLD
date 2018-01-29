@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -44,7 +44,7 @@ import java.util.Arrays;
  * <br><br>
  * <i>X3D node tooltip</i>: (X3D version 3.1 or later) ProgramShader defines a shader that consists of one or more individually programmable, self-contained pieces. ProgramShader contains IS/connect, programs [ShaderProgram] nodes and field declarations.
  * <ul>
- *  <li> <i>Warning:</i>  ProgramShader contains no field declarations and no plain-text source code. </li> 
+ *  <li> <i> Warning:</i>  ProgramShader contains no field declarations and no plain-text source code. </li> 
  * </ul>
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
@@ -114,7 +114,7 @@ public interface ProgramShader extends X3DShaderNode
 
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @return value of metadata field
 	 */
 	@Override
@@ -122,7 +122,7 @@ public interface ProgramShader extends X3DShaderNode
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @param newValue is new value for the metadata field.
 	 * @return {@link ProgramShader} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -132,7 +132,8 @@ public interface ProgramShader extends X3DShaderNode
 	/**
 	 * Provide array of X3DNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) from inputOutput MFNode field <i>programs</i>.
 	 * <br><br>
-	 * <i>Warning:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to ShaderProgram.
+	 * <i>Warning:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to ShaderProgram.
+	 * @see org.web3d.x3d.jsail.Shaders.ShaderProgramObject
 	 * @return value of programs field
 	 */
 	public X3DNode[] getPrograms(); // acceptable node types: ShaderProgram
@@ -140,7 +141,7 @@ public interface ProgramShader extends X3DShaderNode
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>programs</i>.
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to ShaderProgram.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to ShaderProgram.
 	 * @param newValue is new value for the programs field.
 	 * @return {@link ProgramShader} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -149,13 +150,13 @@ public interface ProgramShader extends X3DShaderNode
 	/**
 	 * Add array of child programs nodes to array of existing nodes (if any).
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to ShaderProgram.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to ShaderProgram.
 	 * @param newValue is new value array to be appended the programs field.
 	 */
 	public void addPrograms(X3DNode[] newValue); // acceptable node types: ShaderProgram
 	/**
 	 * Set single child programs node, replacing prior array of existing nodes (if any).
-	 * @param newValue is new node for the programs field.
+	 * @param newValue is new node for the programs field
 	 */
 	public void setPrograms(X3DNode newValue); // acceptable node types: ShaderProgram
 

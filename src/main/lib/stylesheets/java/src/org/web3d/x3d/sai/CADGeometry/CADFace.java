@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -45,7 +45,8 @@ import org.web3d.x3d.sai.Core.*;
  * <i>X3D node tooltip</i>: (X3D version 3.1 or later) CADFace holds geometry representing one face in a Computer-Aided Design (CAD) CADPart. CADFace can only contain a single Shape or LOD node (with containerField='shape').
  * <ul>
  *  <li> <i>Hint:</i> only zero or one Shape child can be active at one time. </li> 
- *  <li> <i>Hint:</i>  include &amp;lt;component name='CADGeometry' level='2'/&amp;gt; </li> 
+ *  <li> <i>Hint:</i> X3D for Advanced Modeling (X3D4AM) slideset <br> <a href="http://x3dgraphics.com/slidesets/X3dForAdvancedModeling/ComputerAidedDesignInterchangeProfile.pdf" target="_blank">http://x3dgraphics.com/slidesets/X3dForAdvancedModeling/ComputerAidedDesignInterchangeProfile.pdf</a> </li> 
+ *  <li> <i>Warning:</i>  requires X3D profile='Full' or else include &amp;lt;component name='CADGeometry' level='2'/&amp;gt; </li> 
  * </ul>
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
@@ -108,7 +109,7 @@ public interface CADFace extends X3DProductStructureChildNode, X3DBoundedObject
 
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @return value of metadata field
 	 */
 	@Override
@@ -116,7 +117,7 @@ public interface CADFace extends X3DProductStructureChildNode, X3DBoundedObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @param newValue is new value for the metadata field.
 	 * @return {@link CADFace} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -141,7 +142,7 @@ public interface CADFace extends X3DProductStructureChildNode, X3DBoundedObject
 	 * Assign String value to inputOutput SFString field named <i>name</i>.
 	 * <br><br>
 	 * <i>Tooltip:</i> Optional name for this particular CAD node. Warning: name is not included if this instance is a USE node. Hint: well-defined names can simplify design and debugging through improved author understanding. Hint: X3D Scene Authoring Hints, Naming Conventions http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions
-	 * <br><br>@see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions">X3D Scene Authoring Hints: Naming Conventions</a>
+	 * <br><br>@see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions" target="_blank">X3D Scene Authoring Hints: Naming Conventions</a>
 	 * @param newValue is new value for the name field.
 	 * @return {@link CADFace} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -149,13 +150,13 @@ public interface CADFace extends X3DProductStructureChildNode, X3DBoundedObject
 	public CADFace setName(String newValue);
 
 	/**
-	 * Provide X3DNode instance (using a properly typed node) with acceptable node types Shape|LOD|Transform, from inputOutput SFNode field <i>shape</i>.
+	 * Provide X3DNode instance (using a properly typed node) with acceptable node types limited to Shape|LOD|Transform, from inputOutput SFNode field <i>shape</i>.
 	 * @return value of shape field
 	 */
 	public X3DNode getShape(); // acceptable node types: Shape|LOD|Transform
 
 	/**
-	 * Assign X3DNode instance (using a properly typed node) with acceptable node types Shape|LOD|Transform, to inputOutput SFNode field <i>shape</i>.
+	 * Assign X3DNode instance (using a properly typed node) with acceptable node types limited to Shape|LOD|Transform, to inputOutput SFNode field <i>shape</i>.
 	 * @param newValue is new value for the shape field.
 	 * @return {@link CADFace} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */

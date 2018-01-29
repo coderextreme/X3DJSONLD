@@ -34,7 +34,7 @@
             <p align="center"><small>
                 <a href="#Abstract">Abstract</a>&nbsp;|
                 <a href="#Codebase">Codebase</a>&nbsp;|
-                <a href="#CommandLine">Command&nbsp;Line</a>&nbsp;|
+                <a href="#CommandLine">CLASSPATH and Command&nbsp;Line</a>&nbsp;|
                 <a href="#Conversions">Conversions&nbsp;Support</a>&nbsp;|
                 <a href="#Design">Design&nbsp;Features</a>&nbsp;|
                 <a href="#Downloads">Downloads</a>&nbsp;|
@@ -196,7 +196,7 @@ for Java programmers.
 <!-- ======================================================== -->
 <hr />
 <h3>
-	<a name="CommandLine">Command Line</a>
+	<a name="CLASSPATH"/><a name="CommandLine">CLASSPATH and Command Line</a>
 	<a href="#"><!-- to top -->
 		<img src="images/x3d2-s.gif" width="50" height="32" border="0" title="to top" alt="to top" align="right"/>
 	</a>
@@ -213,11 +213,11 @@ for Java programmers.
 
         <ul>
             <li>
-                Invocation of standalone .jar
+		CommandLine invocation using console with standalone .jar in local directory:
                 <p style="background-color: #DDDDDD">
                     <b><code>java -classpath <i>someLocalPath</i>/<a href="lib/X3DJSAIL.3.3.full.jar">X3DJSAIL.3.3.full.jar</a>
-                        <br /> &nbsp;&nbsp;&nbsp;&nbsp; [sourceModel.x3d | -help | -page | -resources | -tooltips]
-                        <br /> &nbsp;&nbsp;&nbsp;&nbsp; [-tofile [resultFile.*]] [-validate] 
+                        <br /> &nbsp;&nbsp;&nbsp;&nbsp; [sourceModel.x3d | package.path.ProgramName | -help | -page | -resources | -tooltips]
+                        <br /> &nbsp;&nbsp;&nbsp;&nbsp; [-tofile [resultFile.*]] [-properties [propertiesFile]] [-validate] 
                         <br /> &nbsp;&nbsp;&nbsp;&nbsp; [sourceModel.exi -fromEXI] [sourceModel.gz -fromGZIP] [sourceModel.zip -fromZIP]
                         <br /> &nbsp;&nbsp;&nbsp;&nbsp; [-toX3D | -toXML | -toClassicVrml | -toJSON | -toVRML97 | -toX3DOM | -toX_ITE | -toGZIP | -toZIP]</code></b>
                 </p>
@@ -233,7 +233,7 @@ for Java programmers.
         </ul>
         <ul>
             <li>
-                Prerequisite setup: invocation using local libraries <br /> &nbsp;
+                Setup CLASSPATH for repeated invocation using local libraries: <br /> &nbsp;
             </li>
             <ul>
                 <li>
@@ -262,14 +262,20 @@ for Java programmers.
                     </p>
                 </li>
             </ul>
+		</ul>
+		<ul>
+			<li>
+				CommandLine invocation using console with proper CLASSPATH configuration:
+			</li>
             <ul>
                 <li>
-                    <i>Invocation:</i>  
-                        <br /> <b><code>java org.web3d.x3d.jsail.CommandLine
-                        <br /> &nbsp;&nbsp;&nbsp;&nbsp; [sourceModel.x3d | -help | -page | -resources | -tooltips] 
-                        <br /> &nbsp;&nbsp;&nbsp;&nbsp; [-tofile [resultFile.*]] [-validate]
+					<p style="background-color: #DDDDDD">
+                        <b><code>java org.web3d.x3d.jsail.CommandLine
+                        <br /> &nbsp;&nbsp;&nbsp;&nbsp; [sourceModel.x3d | package.path.ProgramName | -help | -page | -resources | -tooltips] 
+                        <br /> &nbsp;&nbsp;&nbsp;&nbsp; [-tofile [resultFile.*]] [-properties [propertiesFile]] [-validate]
 						<br /> &nbsp;&nbsp;&nbsp;&nbsp; [sourceModel.exi -fromEXI] [sourceModel.gz -fromGZIP] [sourceModel.zip -fromZIP]
                         <br /> &nbsp;&nbsp;&nbsp;&nbsp; [-toX3D | -toXML | -toClassicVrml | -toJSON | -toVRML97 | -toX3DOM | -toX_ITE | -toGZIP | -toZIP]</code></b>
+                    </p>
                     <p>
                         <i>Example:</i> &nbsp;&nbsp; <span style="font-weight:bold;color:darkgreen">
                                                  <code>java org.web3d.x3d.jsail.CommandLine -help</code></span>
@@ -284,7 +290,58 @@ for Java programmers.
                     </p>
                 </li>
             </ul>
+			<li>
+				CommandLine invocation using Ant build.xml:
+<pre>
+&lt;target name="test.X3DJSAIL" depends="" description="Test X3DJSAIL" &gt;
+	&lt;echo message="==========================================="/&gt;
+	&lt;echo message="helpful invocations for CommandLine debugging"/&gt;
+	&lt;echo message="org.web3d.x3d.jsail.CommandLine -help"/&gt;
+	&lt;java classname="org.web3d.x3d.jsail.CommandLine"
+	      classpath="${saxon.dir}/${saxon.jar};${java.jars.dir}/${jsai.full.archive.jar.name};."&gt;
+		&lt;arg value="-help"/&gt;
+	&lt;/java&gt;
+	&lt;echo message="==========================================="/&gt;
+	&lt;echo message="org.web3d.x3d.jsail.CommandLine -properties ${java.examples.dir}/X3DJSAIL.properties"/&gt;
+	&lt;java classname="org.web3d.x3d.jsail.CommandLine"
+	      classpath="${saxon.dir}/${saxon.jar};${java.jars.dir}/${jsai.full.archive.jar.name};."&gt;
+		&lt;arg value="-properties"/&gt;
+		&lt;arg value="${java.examples.dir}/X3DJSAIL.properties"/&gt;
+	&lt;/java&gt;
+&lt;/target&gt;
+</pre>
+			</li>
+			<li>
+				CommandLine invocation using Java source code:
+<pre>
+System.out.println ("===========================================");
+System.out.println ("Test CommandLine invocations");
+String[] args = {"-help" };
+System.out.println ("CommandLine " + Arrays.toString(args));
+CommandLine.run (args); // run these commands
+System.out.println ("===========================================");
+args = new String[] {"HelloWorldProgramOutput.x3d", "-toX3D", "-toFile", "HelloWorldProgramOutput.CommandLine.x3d" };
+System.out.println ("CommandLine " + Arrays.toString(args));
+CommandLine.run (args); // run these commands
+System.out.println ("===========================================");
+args = new String[] {"HelloWorldProgramOutput.x3d", "-EXIFICIENT", "-toEXI", "-toFile", "HelloWorldProgramOutput.CommandLine.EXIFICIENT.exi"};
+System.out.println ("CommandLine " + Arrays.toString(args));
+CommandLine.run (args); // run these commands
+System.out.println ("===========================================");
+</pre>
+			</li>
+			<li>
+				<a href="javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
+				is also used by Java source code that gets created using
+				<a href="lib/stylesheets/X3dToJava.xslt" target="_blank">X3dToJava.xslt</a>
+				stylesheet, setting
+				
+				<a href="javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
+				via inherited method
+				<a href="javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(args)</a>.
+			</li>
         </ul>
+<!-- TODO Ant and source invocation -->
 
 <!-- ======================================================== -->
 <hr />
@@ -315,7 +372,7 @@ for Java programmers.
 			<td width="34%">
 				<a href="http://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/X3D_XML.html" target="_blank">X3D&nbsp;XML</a>
 				encoding&nbsp;<code><a href="examples/HelloWorldProgramOutput.Reloaded.x3d" target="_blank">.x3d</a></code>
-				(<span style="color:darkgreen">implemented</span>)
+				(<span style="color:darkgreen">implemented using DOM</span>)
 			</td>
 			<td width="33%">
 				<a href="http://www.web3d.org/documents/specifications/19776-2/V3.3/Part02/X3D_ClassicVRML.html" target="_blank">X3D&nbsp;ClassicVRML</a> 
@@ -361,7 +418,7 @@ for Java programmers.
 		</tr>
 		<tr style="background-color: lightgrey">
 			<td colspan="3">
-				<a name="export"><b>Export serialization</b></a>
+				<a name="export"><b>File/stream Export serialization</b></a>
 			</td>
 		</tr>
 		<tr>
@@ -427,7 +484,7 @@ for Java programmers.
 			<td>
 				X3DJSAIL
 				<code>.java</code> source using
-				<a href="http://www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">X3dToJava.xslt</a>
+				<a href="lib/stylesheets/X3dToJava.xslt" target="_blank">X3dToJava.xslt</a>
 				(<span style="color:darkgreen">implemented</span>)
 			</td>
 		</tr>
@@ -625,7 +682,7 @@ for Java programmers.
 			source-code serialization using
 			<a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#toFileJava-java.lang.String-" target="_blank">X3DObject.toFileJava(filename)</a>
 			and
-			<a href="http://www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">X3dToJava.xslt</a> 
+			<a href="lib/stylesheets/X3dToJava.xslt" target="_blank">X3dToJava.xslt</a> 
 			stylesheet.
 		</li>
 	</ul>
@@ -807,7 +864,7 @@ for Java programmers.
 		</li>
 		<li>
 			X3D JSON implementations:
-			<a href="http://www.web3d.org/x3d/stylesheets/X3dToJson.html" target="_blank">X3D to JSON Stylesheet Converter</a> 
+			<a href="lib/stylesheets/X3dToJson.html" target="_blank">X3D to JSON Stylesheet Converter</a> 
 			and
 			<a href="https://github.com/coderextreme/X3DJSONLD" target="_blank">X3DJSONLD JavaScript conversion library</a>. 
 		</li>
@@ -889,7 +946,7 @@ for Java programmers.
 	</a>
 </h3>
 
-<h4> TODO: <a href="http://www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">X3dToJava.xslt</a> stylesheet improvements
+<h4> TODO: <a href="lib/stylesheets/X3dToJava.xslt" target="_blank">X3dToJava.xslt</a> stylesheet improvements
 </h4>
 
 	<ul>
@@ -975,6 +1032,10 @@ for Java programmers.
 		</li>
 		<li>
                         Add validation of min/max inclusive/exclusive bounds when setting values for arrays.
+		</li>
+		<li>
+                        Add XML Catalog capabilities for XML Schema, DTD etc. in order to support 
+                        off-line use without an Internet connection.
 		</li>
 		<li>
 			Provide enumeration constants for
@@ -1110,6 +1171,24 @@ for Java programmers.
 	<ul>
 		<li>
 			<span style="color:darkgreen"><i>Complete</i></span>.
+			<a name="properties">Properties file</a> can override default values. See
+			<ul>
+				<li>
+					<a href="X3DJSAIL.properties.template">X3DJSAIL.properties.template</a>
+					and example
+					<a href="examples/X3DJSAIL.properties">X3DJSAIL.properties</a>
+				</li>
+				<li>
+					<code><a href="javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html#PROPERTIES_FILENAME_DEFAULT">ConfigurationProperties.PROPERTIES_FILENAME_DEFAULT</a></code>,
+					<code><a href="javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html#getPropertiesFileName--">ConfigurationProperties.getPropertiesFileName()</a></code>,
+					<code><a href="javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html#setPropertiesFileName-java.lang.String-">ConfigurationProperties.setPropertiesFileName(fileName)</a></code>,
+					<code><a href="javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html#loadProperties--">ConfigurationProperties.loadProperties()</a></code>,
+					<code><a href="javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html#isNormalizeCommentWhitespace--">ConfigurationProperties.isNormalizeCommentWhitespace()</a></code>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<span style="color:darkgreen"><i>Complete</i></span>.
 			Import loading: ability to load X3D scene-graph files.
 			<ul>
 				<li>
@@ -1146,6 +1225,7 @@ for Java programmers.
 			<span style="color:darkgreen"><i>Complete</i></span>.
 			Export serialization: ability to save X3D scene-graph files in various file encodings and language bindings,
 			with each returning the resulting <code>File</code> object if successful.
+			Similar <code>toStringEncoding</code> and <code>toStringLanguage</code> methods are also provided.
 			<table>
 				<tr>
 				  <td>
@@ -1250,6 +1330,21 @@ for Java programmers.
 					are required to return <code>void</code>.
 				</li>
 				<li>
+					Ancestor-finding Utility methods
+					<code><a href="javadoc/org/web3d/x3d/jsail/X3DConcreteElement.html#hasAncestorSceneObject--">.hasAncestorSceneObject()</a></code> and
+					<code><a href="javadoc/org/web3d/x3d/jsail/X3DConcreteElement.html#findAncestorSceneObject--">.findAncestorSceneObject()</a></code>
+
+					<code><a href="javadoc/org/web3d/x3d/jsail/X3DConcreteElement.html#hasAncestorX3DObject--">.hasAncestorX3DObject()</a></code> and
+					<code><a href="javadoc/org/web3d/x3d/jsail/X3DConcreteElement.html#findAncestorX3DObject--">.findAncestorX3DObject()</a></code>,
+
+					<code><a href="javadoc/org/web3d/x3d/jsail/X3DConcreteElement.html#findAncestorProtoBody--">findAncestorProtoBody()</a></code>
+					and
+					<code><a href="javadoc/org/web3d/x3d/jsail/X3DConcreteElement.html#hasAncestorProtoBody--">hasAncestorProtoBody()</a></code>.
+				</li>
+				<li>
+					Be sure to first utilize one of the preceding find methods if finding elements in the scene graph.
+				</li>
+				<li>
 					Further declarative-style support provided by utility methods
 					<code><a href="javadoc/org/web3d/x3d/jsail/X3DConcreteElement.html#findNodeByDEF-java.lang.String-">findNodeByDEF(DEFvalue)</a></code>,
 					<code><a href="javadoc/org/web3d/x3d/jsail/X3DConcreteElement.html#findElementByNameValue-java.lang.String-">findElementByNameValue(nameValue)</a></code>,
@@ -1267,7 +1362,7 @@ for Java programmers.
 			</ul>
 		</li>
 		<li>
-			<span style="color:darkgreen">Complete</span>.
+			<span style="color:darkgreen"><i>Complete</i></span>.
 			For convenience add <code>containerField_DEFAULT</code> to each node, as well as a handful of
 			<code>containerField_ALTERNATE_VALUES</code>.
 			Interestingly these values are typically never needed in Java SAI programs (unless someone is writing a low-level XML parser or somesuch).
@@ -1414,21 +1509,6 @@ for Java programmers.
 		</li>
 		<li>
 			<span style="color:darkgreen"><i>Complete</i></span>. 
-			Utility methods 
-			<code><a href="javadoc/org/web3d/x3d/jsail/X3DConcreteNode.html#getNodeByDEF-java.lang.String-">X3DConcreteNode.getNodeByDEF(DEFName)</a></code> 
-			plus ancestor-finding 
-			<code><a href="javadoc/org/web3d/x3d/jsail/X3DConcreteElement.html#findAncestorSceneObject--">.findAncestorSceneObject()</a></code> and
-			<code><a href="javadoc/org/web3d/x3d/jsail/X3DConcreteElement.html#hasAncestorSceneObject--">.hasAncestorSceneObject()</a></code>,
-			
-			<code><a href="javadoc/org/web3d/x3d/jsail/X3DConcreteElement.html#findAncestorX3DObject--">.findAncestorX3DObject()</a></code> and
-			<code><a href="javadoc/org/web3d/x3d/jsail/X3DConcreteElement.html#hasAncestorX3DObject--">.hasAncestorX3DObject()</a></code>,
-			
-			<code><a href="javadoc/org/web3d/x3d/jsail/X3DConcreteElement.html#findAncestorProtoBody--">findAncestorProtoBody()</a></code>
-			and
-			<code><a href="javadoc/org/web3d/x3d/jsail/X3DConcreteElement.html#hasAncestorProtoBody--">hasAncestorProtoBody()</a></code>.
-		</li>
-		<li>
-			<span style="color:darkgreen"><i>Complete</i></span>. 
 			Convenience methods to set a single String or SFString into an 
 			<a href="javadoc/org/web3d/x3d/jsail/fields/MFStringObject.html">MFStringObject</a>
 			field, plus additional static convenience methods for enumeration handling such as
@@ -1491,7 +1571,7 @@ for Java programmers.
 </h3>
 
 	<blockquote>
-		Updated 17 December 2017.
+		Updated 27 January 2017.
 	</blockquote>
 
 	<blockquote>

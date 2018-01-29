@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Copyright (c) 2001-2017 held by the author(s).  All rights reserved.
+Copyright (c) 2001-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -316,7 +316,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td valign="top" align="right">
+                                    <td valign="top" align="right" width="80px">
                                         <span class="attribute">info</span>
                                         <xsl:text>='</xsl:text>
                                         <xsl:text>&#10;</xsl:text>
@@ -341,11 +341,34 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                 <tr>
                                     <td colspan="2">
                                         <xsl:for-each select="HAnimJoint[string-length(@name) > 0]">
+                                            <xsl:call-template name="HAnimNode-indent"/>
+                                        </xsl:for-each>
+										<!-- HAnimSite containerField='viewpoints' (not USE nodes) -->
+                                        <xsl:for-each select="HAnimSite[string-length(@name) > 0]">
                                             <xsl:apply-templates select="preceding-sibling::comment()"/>
                                             <xsl:call-template name="HAnimNode-indent"/>
                                         </xsl:for-each>
+										<xsl:if test="not(HAnimSite[string-length(@name) > 0])">
+											<xsl:apply-templates select="preceding-sibling::comment()"/>
+										</xsl:if>
                                     </td>
                                 </tr>
+								<!-- 
+                                <xsl:if test="HAnimSite[string-length(@name) > 0][(@containerField = 'viewpoints')]">
+									< ! - - includes USE geometry, must follow prior generation of geometry under HAnimJoint tree - - >
+                                    <tr>
+                                        <td colspan="2">
+                                            < ! - - <xsl:text>&lt;! - - Top-level HAnimSite/Viewpoint nodes that move with the human center but are unaffected by body animation - -&gt;</xsl:text> - - >
+                                            <br />
+                                            <xsl:for-each select="HAnimSite[string-length(@name) > 0][(@containerField = 'viewpoints')]">
+                                                < ! - - http://p2p.wrox.com/xslt/70832-preceding-sibling-comment.html - - >
+                                                <xsl:apply-templates select="preceding-sibling::node()[1][self::comment()]"/>
+                                                <xsl:call-template name="HAnimNode-indent"/>
+                                            </xsl:for-each>
+                                        </td>
+                                    </tr>
+                                </xsl:if>
+								-->
                                 <xsl:if test="*[string-length(@USE) > 0]">
                                     <tr>
                                         <td colspan="2">
@@ -359,19 +382,6 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                                 </xsl:if>
                                                 <xsl:apply-templates select="."/>
                                                 <br />
-                                            </xsl:for-each>
-                                        </td>
-                                    </tr>
-                                </xsl:if>
-                                <xsl:if test="HAnimSite[string-length(@name) > 0]">
-                                    <tr>
-                                        <td colspan="2">
-                                            <!-- <xsl:text>&lt;! - - Top-level HAnimSite/Viewpoint nodes that move with the human center but are unaffected by body animation - -&gt;</xsl:text> -->
-                                            <br />
-                                            <xsl:for-each select="HAnimSite[string-length(@name) > 0]">
-                                                <!-- http://p2p.wrox.com/xslt/70832-preceding-sibling-comment.html -->
-                                                <xsl:apply-templates select="preceding-sibling::node()[1][self::comment()]"/>
-                                                <xsl:call-template name="HAnimNode-indent"/>
                                             </xsl:for-each>
                                         </td>
                                     </tr>
@@ -605,83 +615,12 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         
                 <!-- comments, HAnimJoint*/HAnimSegment -->
                 <xsl:if test="comment()">
-                    <!-- side effect: pushed to top -->
+                    <!-- side effect: pushed to top among siblings -->
 					<br />
                     <xsl:apply-templates select="comment()" />
                 </xsl:if>
 				
-		<xsl:if test="parent::HAnimHumanoid and not(preceding::HAnimJoint)">
-			
-										<span class="gray">
-										<ul>
-											<li>
-                                        &lt;!-- Visualization root shape and hidden DEF geometry for later use --&gt;
-											</li>
-											<li>
-										<!-- TODO better name? -->
-                                        &lt;HAnimSegment DEF='HAnimSegment_HumanoidRoot' name='HAnimSegment_HumanoidRoot'&gt;
-												<ul>
-													<li>
-                                            &lt;Viewpoint description='View from (0 0 4) towards HAnimHumanoid center' position='0 0 4'/&gt;
-													</li>
-													<li>
-                                            &lt;Switch whichChoice='0'&gt;
-														<ul>
-															<li>
-                                                &lt;Group&gt;
-															<ul>
-																<li>
-                                                    &lt;TouchSensor description='HAnimHumanoid HAnimSegment HumanoidRoot'/&gt;
-																</li>
-																<li>
-                                                    &lt;Shape DEF='<span style='color:{$rootColor.HTML};font-weight:bold;text-shadow: 1px 1px #aaaaaa;'>HAnimRootShape</span>'&gt;
-                                                        &lt;Sphere DEF='HAnimJointSphere'/&gt;
-                                                        &lt;Appearance&gt;
-                                                            &lt;Material DEF='HAnimRootMaterial' <span style='color:{$rootColor.HTML};font-weight:bold;text-shadow: 1px 1px #aaaaaa;'>diffuseColor='<xsl:value-of select="$rootColor"/>'</span> transparency='0.3'/&gt;
-                                                        &lt;/Appearance&gt;
-                                                    &lt;/Shape&gt;
-																</li>
-															</ul>
-                                                &lt;/Group&gt;
-															</li>
-															<li>
-                                                &lt;Shape DEF='<span style='color:{$jointColor.HTML};font-weight:bold;text-shadow: 1px 1px #aaaaaa;'>HAnimJointShape</span>'&gt;
-                                                    &lt;Sphere USE='HAnimJointSphere'/&gt;
-                                                    &lt;Appearance&gt;
-                                                        &lt;Material DEF='HAnimJointMaterial' <span style='color:{$jointColor.HTML};font-weight:bold;text-shadow: 1px 1px #aaaaaa;'>diffuseColor='<xsl:value-of select="$jointColor"/>'</span> transparency='0.3'/&gt;
-                                                    &lt;/Appearance&gt;
-                                                &lt;/Shape&gt;
-															</li>
-															<li>
-                                                &lt;Shape&gt;
-                                                    &lt;LineSet vertexCount='2'&gt;
-														&lt;!-- transparency indicates parent/child relationship of line segment --&gt;
-														&lt;ColorRGBA DEF='<span style='color:{$segmentColor.HTML};font-weight:bold;text-shadow: 1px 1px #aaaaaa;'>HAnimSegmentLineColorRGBA' color='<xsl:value-of select="$segmentColor"/> 1 <xsl:value-of select="$segmentColor"/> 0.1'</span>/&gt;
-														&lt;Coordinate point='0 0 0 0 0 0'/&gt;
-                                                    &lt;/LineSet&gt;
-                                                &lt;/Shape&gt;
-															</li>
-															<li>
-                                                &lt;Shape DEF='<span style='color:{$siteColor.HTML};font-weight:bold;text-shadow: 1px 1px #aaaaaa;'>HAnimSiteShape</span>'&gt;
-                                                    &lt;IndexedFaceSet DEF='DiamondIFS' creaseAngle='0.5' solid='false' coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1'&gt;
-														&lt;ColorRGBA DEF='<span style='color:{$siteColor.HTML};font-weight:bold;text-shadow: 1px 1px #aaaaaa;'>HAnimSiteColorRGBA' color='<xsl:value-of select="$siteColor"/> 1 <xsl:value-of select="$siteColor"/> 0.1'</span>/&gt;
-														&lt;Coordinate point='0 0.8 0 -0.8 0 0 0 0 0.8 0.8 0 0 0 0 -0.8 0 -0.8 0'/&gt;
-                                                    &lt;/IndexedFaceSet&gt;
-                                                    &lt;Appearance&gt;
-                                                        &lt;Material <span style='color:{$siteColor.HTML};font-weight:bold;text-shadow: 1px 1px #aaaaaa;'>diffuseColor='<xsl:value-of select="$siteColor"/>'</span> transparency='0.3'/&gt;
-                                                    &lt;/Appearance&gt;
-                                                &lt;/Shape&gt;
-															</li>
-														</ul>
-                                            &lt;/Switch&gt;
-													</li>
-												</ul>
-                                        &lt;/HAnimSegment&gt;
-											</li>
-										</ul>
-										</span>
-		</xsl:if>
-		<!-- TODO avoid creating a second HAnimSegment -->
+				<!-- TODO avoid creating a second HAnimSegment -->
                 <xsl:if test="HAnimSegment">
                     <ul>
                         <xsl:for-each select="HAnimSegment">
@@ -719,39 +658,103 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
 								<code><span class="gray">
                                     <ul>
                                         <!-- If no geometry found, insert suggested HAnimJointShape -->
-                                        <xsl:if test="not(Transform/Shape)">
-                                            <!-- draw Joint shape -->
-                                            <li>
-                                                &lt;!-- Visualization sphere for &lt;<xsl:value-of select="local-name(..)"/> name='<xsl:value-of select="../@name"/>'/&gt; is placed within &lt;<xsl:value-of select="local-name()"/> name='<xsl:value-of select="@name"/>'/&gt; --&gt;
-                                                <br/>
-                                                &lt;TouchSensor description='<xsl:value-of select="$HanimJointTooltip"/>'/&gt;
-                                            </li>
-                                            <li>
-                                                &lt;Transform translation='<xsl:value-of select="../@center"/>'&gt;
-                                                    &lt;Shape USE='<span style='color:{$jointColor.HTML};font-weight:bold;text-shadow: 1px 1px #aaaaaa;'>HAnimJointShape</span>'/&gt;
-													<!-- DEF no longer needed since Shape predefined
-                                                    <xsl:choose>
-                                                        <xsl:when test="not(//*[@DEF='HAnimJointShape']) and (ancestor::HAnimHumanoid) and not(preceding::HAnimSegment)">
-                                                            &lt;Shape DEF='<span style='color:{$jointColor.HTML};font-weight:bold;text-shadow: 1px 1px #aaaaaa;'>HAnimJointShape</span>'&gt;
-                                                                &lt;Sphere radius='<xsl:value-of select="0.006 div number($hanimHumanoidInternalScale)"/>'/&gt; 
-                                                                <xsl:choose>
-                                                                    <xsl:when test="not(//*[@DEF='HAnimJointAppearance']) and (position()=1) and (count(preceding::HAnimJoint) = 0)">
-                                                                &lt;Appearance DEF='HAnimJointAppearance'&gt; &lt;Material <span style='color:{$jointColor.HTML};font-weight:bold;text-shadow: 1px 1px #aaaaaa;'>diffuseColor='<xsl:value-of select="$jointColor"/>'</span> transparency='0.3'/&gt; &lt;/Appearance&gt;
-                                                                    </xsl:when>
-                                                                    <xsl:otherwise>
-                                                                &lt;Appearance USE='<span style='color:{$jointColor.HTML};font-weight:bold;text-shadow: 1px 1px #aaaaaa;'>HAnimJointAppearance'</span>/&gt;  
-                                                                    </xsl:otherwise>
-                                                                </xsl:choose>
-                                                            &lt;/Shape&gt;
-                                                        </xsl:when>
-                                                        <xsl:otherwise>
-                                                    &lt;Shape USE='<span style='color:{$jointColor.HTML};font-weight:bold;text-shadow: 1px 1px #aaaaaa;'>HAnimJointShape</span>'/&gt;
-                                                        </xsl:otherwise>
-                                                    </xsl:choose>
-													-->
-                                                &lt;/Transform&gt;
-                                            </li>
-                                        </xsl:if>
+										<xsl:choose>
+											<xsl:when test="(parent::HAnimJoint[@name='HumanoidRoot']) and (@name = 'sacrum') and not(//Shape[@DEF='HAnimRootShape'])">
+												<!-- only provide visualization shapes if not already available, sacrum should already be provided -->
+												<span class="gray">
+													<li>
+														&lt;!-- Visualization root shape and hidden DEF geometry for later use --&gt;
+													</li>
+													<li>
+														&lt;Viewpoint description='View from (0 0 4) towards HAnimHumanoid center' position='0 0 4'/&gt;
+																</li>
+																<li>
+														&lt;Switch whichChoice='0'&gt;
+																	<ul>
+																		<li>
+															&lt;Group&gt;
+																		<ul>
+																			<li>
+																&lt;TouchSensor description='HAnimHumanoid HAnimSegment HumanoidRoot'/&gt;
+																			</li>
+																			<li>
+																&lt;Shape DEF='<span style='color:{$rootColor.HTML};font-weight:bold;text-shadow: 1px 1px #aaaaaa;'>HAnimRootShape</span>'&gt;
+																	&lt;Sphere DEF='HAnimJointSphere'/&gt;
+																	&lt;Appearance&gt;
+																		&lt;Material DEF='HAnimRootMaterial' <span style='color:{$rootColor.HTML};font-weight:bold;text-shadow: 1px 1px #aaaaaa;'>diffuseColor='<xsl:value-of select="$rootColor"/>'</span> transparency='0.3'/&gt;
+																	&lt;/Appearance&gt;
+																&lt;/Shape&gt;
+																			</li>
+																		</ul>
+															&lt;/Group&gt;
+																		</li>
+																		<li>
+															&lt;Shape DEF='<span style='color:{$jointColor.HTML};font-weight:bold;text-shadow: 1px 1px #aaaaaa;'>HAnimJointShape</span>'&gt;
+																&lt;Sphere USE='HAnimJointSphere'/&gt;
+																&lt;Appearance&gt;
+																	&lt;Material DEF='HAnimJointMaterial' <span style='color:{$jointColor.HTML};font-weight:bold;text-shadow: 1px 1px #aaaaaa;'>diffuseColor='<xsl:value-of select="$jointColor"/>'</span> transparency='0.3'/&gt;
+																&lt;/Appearance&gt;
+															&lt;/Shape&gt;
+																		</li>
+																		<li>
+															&lt;Shape&gt;
+																&lt;LineSet vertexCount='2'&gt;
+																	&lt;!-- transparency indicates parent/child relationship of line segment --&gt;
+																	&lt;ColorRGBA DEF='<span style='color:{$segmentColor.HTML};font-weight:bold;text-shadow: 1px 1px #aaaaaa;'>HAnimSegmentLineColorRGBA' color='<xsl:value-of select="$segmentColor"/> 1 <xsl:value-of select="$segmentColor"/> 0.1'</span>/&gt;
+																	&lt;Coordinate point='0 0 0 0 0 0'/&gt;
+																&lt;/LineSet&gt;
+															&lt;/Shape&gt;
+																		</li>
+																		<li>
+															&lt;Shape DEF='<span style='color:{$siteColor.HTML};font-weight:bold;text-shadow: 1px 1px #aaaaaa;'>HAnimSiteShape</span>'&gt;
+																&lt;IndexedFaceSet DEF='DiamondIFS' colorIndex='0 0 0 0 0 0 0 0' coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1' creaseAngle='0.5' solid='false'&gt;
+																	&lt;ColorRGBA DEF='<span style='color:{$siteColor.HTML};font-weight:bold;text-shadow: 1px 1px #aaaaaa;'>HAnimSiteColorRGBA' color='<xsl:value-of select="$siteColor"/> 1 <xsl:value-of select="$siteColor"/> 0.1'</span>/&gt;
+																	&lt;Coordinate point='0 0.8 0 -0.8 0 0 0 0 0.8 0.8 0 0 0 0 -0.8 0 -0.8 0'/&gt;
+																&lt;/IndexedFaceSet&gt;
+																&lt;Appearance&gt;
+																	&lt;Material <span style='color:{$siteColor.HTML};font-weight:bold;text-shadow: 1px 1px #aaaaaa;'>diffuseColor='<xsl:value-of select="$siteColor"/>'</span> transparency='0.3'/&gt;
+																&lt;/Appearance&gt;
+															&lt;/Shape&gt;
+																		</li>
+																	</ul>
+														&lt;/Switch&gt;
+													</li>
+												</span>
+											</xsl:when>
+											<xsl:when test="not(Transform/Shape)">
+												<!-- draw Joint shape -->
+												<li>
+													&lt;!-- Visualization sphere for &lt;<xsl:value-of select="local-name(..)"/> name='<xsl:value-of select="../@name"/>'/&gt; is placed within &lt;<xsl:value-of select="local-name()"/> name='<xsl:value-of select="@name"/>'/&gt; --&gt;
+													<br/>
+													&lt;TouchSensor description='<xsl:value-of select="$HanimJointTooltip"/>'/&gt;
+												</li>
+												<li>
+													&lt;Transform translation='<xsl:value-of select="../@center"/>'&gt;
+														&lt;Shape USE='<span style='color:{$jointColor.HTML};font-weight:bold;text-shadow: 1px 1px #aaaaaa;'>HAnimJointShape</span>'/&gt;
+														<!-- DEF no longer needed since Shape predefined
+														<xsl:choose>
+															<xsl:when test="not(//*[@DEF='HAnimJointShape']) and (ancestor::HAnimHumanoid) and not(preceding::HAnimSegment)">
+																&lt;Shape DEF='<span style='color:{$jointColor.HTML};font-weight:bold;text-shadow: 1px 1px #aaaaaa;'>HAnimJointShape</span>'&gt;
+																	&lt;Sphere radius='<xsl:value-of select="0.006 div number($hanimHumanoidInternalScale)"/>'/&gt; 
+																	<xsl:choose>
+																		<xsl:when test="not(//*[@DEF='HAnimJointAppearance']) and (position()=1) and (count(preceding::HAnimJoint) = 0)">
+																	&lt;Appearance DEF='HAnimJointAppearance'&gt; &lt;Material <span style='color:{$jointColor.HTML};font-weight:bold;text-shadow: 1px 1px #aaaaaa;'>diffuseColor='<xsl:value-of select="$jointColor"/>'</span> transparency='0.3'/&gt; &lt;/Appearance&gt;
+																		</xsl:when>
+																		<xsl:otherwise>
+																	&lt;Appearance USE='<span style='color:{$jointColor.HTML};font-weight:bold;text-shadow: 1px 1px #aaaaaa;'>HAnimJointAppearance'</span>/&gt;  
+																		</xsl:otherwise>
+																	</xsl:choose>
+																&lt;/Shape&gt;
+															</xsl:when>
+															<xsl:otherwise>
+														&lt;Shape USE='<span style='color:{$jointColor.HTML};font-weight:bold;text-shadow: 1px 1px #aaaaaa;'>HAnimJointShape</span>'/&gt;
+															</xsl:otherwise>
+														</xsl:choose>
+														-->
+													&lt;/Transform&gt;
+												</li>
+											</xsl:when>
+										</xsl:choose>
                                         <!-- Insert suggested LineSet visualization -->
                                         <xsl:if test="not(Shape/LineSet) and not(Shape/IndexedLineSet)">
                                             <!-- draw line segment from beginning to end of segment; note ILS is not pickable and will not show the tooltip -->
@@ -839,6 +842,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                 <xsl:if test="Transform | Shape | HAnimSite | HAnimDisplacer">
                                     <ul>
                                         <xsl:for-each select="Transform">
+											<!-- This Transform node might not hold a Shape but hold HAnimSite or HAnimDisplacer -->
                                             <li>
                                                 <xsl:text>&lt;</xsl:text>
                                                 <span class="element">
@@ -858,7 +862,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                                         <xsl:text>Shape</xsl:text>
                                                     </span>
                                                     <xsl:choose>
-                                                        <xsl:when test="string-length(Shape/@DEF) > 0">
+                                                        <xsl:when test="string-length(@DEF) > 0">
                                                             <xsl:text> </xsl:text>
                                                             <span class="attribute">DEF</span>
                                                             <xsl:text>='</xsl:text>
@@ -867,7 +871,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                                             </a>
                                                             <xsl:text>'</xsl:text>
                                                         </xsl:when>
-                                                        <xsl:when test="string-length(Shape/@USE) > 0">
+                                                        <xsl:when test="string-length(@USE) > 0">
                                                             <xsl:text> </xsl:text>
                                                             <span class="attribute">USE</span>
                                                             <xsl:text>='</xsl:text>
@@ -892,6 +896,102 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                                     <xsl:value-of select="."/>
                                                     <xsl:text>--&gt;</xsl:text>
                                                 </xsl:for-each>
+										<!-- TODO poor design, duplicated for-each loops within/alongside Transorm, should recurse instead -->
+                                        <xsl:for-each select="HAnimSite"> <!-- no Viewpoint child [not(Viewpoint)]-->
+                                            <li>
+                                                <!--
+                                                <xsl:text>&lt;!- - HAnimSite no Viewpoint child - -&gt;</xsl:text>
+                                                <br />
+                                                 -->
+                                                <xsl:text>&lt;</xsl:text>
+                                                <span class="element">
+                                                    <xsl:text>HAnimSite</xsl:text>
+                                                </span>
+                                                <xsl:text> </xsl:text>
+                                                <span class="attribute">DEF</span>
+                                                <xsl:text>='</xsl:text>
+                                                <a href="#{@DEF}" class="idName">
+                                                    <xsl:value-of select="@DEF"/>
+                                                </a>
+                                                <xsl:text>' </xsl:text>
+                                                <span class="attribute">name</span>
+                                                <xsl:text>='</xsl:text>
+                                                    <span class="value">
+                                                        <xsl:value-of select="@name"/>
+                                                    </span>
+                                                <xsl:text>'</xsl:text>
+                                                <xsl:text> </xsl:text>
+                                                <span class="attribute">translation</span>
+                                                <xsl:text>='</xsl:text>
+                                                <span class="value">
+                                                    <xsl:value-of select="@translation"/>
+                                                </span>
+                                                <xsl:text>'</xsl:text>
+                                                <xsl:if test="(string-length(@containerField) > 0) and (@containerField != 'children')">
+                                                    <span class="attribute">containerField</span>
+                                                    <xsl:text> ='</xsl:text>
+                                                    <span class="value">
+                                                        <xsl:value-of select="@containerField"/>
+                                                    </span>
+                                                    <xsl:text>' </xsl:text>
+                                                </xsl:if>
+                                                <xsl:text>&gt;</xsl:text>
+                                                
+                                                <xsl:call-template name="Site-NodeVisualization"/>
+                                                <xsl:choose>
+                                                    <xsl:when test="not(Viewpoint)">
+                                                        <xsl:apply-templates select="*" />
+                                                        <!-- closing element -->
+                                                        <xsl:text>&lt;/</xsl:text>
+                                                        <span class="element">
+                                                            <xsl:text>HAnimSite</xsl:text>
+                                                        </span>
+                                                        <xsl:text>&gt;</xsl:text>
+                                                    </xsl:when>
+                                                    <xsl:otherwise>
+                                                        <!-- insert suggested geometry -->
+                                                        <xsl:call-template name="SiteViewpoint-NodeVisualization"/>
+                                                        <!-- closing element -->
+                                                        <xsl:text>&lt;/</xsl:text>
+                                                        <span class="element">
+                                                            <xsl:value-of select="local-name()"/>
+                                                        </span>
+                                                        <xsl:text>&gt;</xsl:text>
+                                                        <xsl:text>&#10;</xsl:text>
+                                                    </xsl:otherwise>
+                                                </xsl:choose>
+                                            </li>
+                                        </xsl:for-each>
+                                        <xsl:for-each select="HAnimDisplacer">
+                                            <li>
+                                                <xsl:text>&lt;</xsl:text>
+                                                <span class="element">
+                                                    <xsl:text>HAnimDisplacer</xsl:text>
+                                                </span>
+                                                <xsl:text> </xsl:text>
+                                                <span class="attribute">DEF</span>
+                                                <xsl:text>='</xsl:text>
+                                                <a href="#{@DEF}" class="idName">
+                                                    <xsl:value-of select="@DEF"/>
+                                                </a>
+                                                <xsl:text>' </xsl:text>
+                                                <span class="attribute">name</span>
+                                                <xsl:text>='</xsl:text>
+                                                    <span class="value">
+                                                        <xsl:value-of select="@name"/>
+                                                    </span>
+                                                <xsl:text>'</xsl:text>
+                                                <xsl:if test="(string-length(@containerField) > 0) and (@containerField != 'children')">
+                                                    <span class="attribute">containerField</span>
+                                                    <xsl:text> ='</xsl:text>
+                                                    <span class="value">
+                                                        <xsl:value-of select="@containerField"/>
+                                                    </span>
+                                                    <xsl:text>' </xsl:text>
+                                                </xsl:if>
+                                                <xsl:text>/&gt;</xsl:text>
+                                            </li>
+                                        </xsl:for-each>
                                                 <!-- closing element -->
                                                 <xsl:text>&lt;/</xsl:text>
                                                 <span class="element">

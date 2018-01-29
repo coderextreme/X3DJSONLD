@@ -49,7 +49,7 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 18 December 2017 </td>
+			<td> 28 January 2018 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
@@ -125,15 +125,15 @@ import org.web3d.x3d.jsail.Time.*;
 
 public class HelloWorldProgramOutput
 {
-  /** Default constructor to create this object. */
-  public HelloWorldProgramOutput ()
-  {
-    initialize();
-  }
-	
-  /** Create and initialize the X3D model for this object. */
-  public final void initialize()
-  {
+	/** Default constructor to create this object. */
+	public HelloWorldProgramOutput ()
+	{
+	  initialize();
+	}
+
+	/** Create and initialize the X3D model for this object. */
+	public final void initialize()
+	{
   x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
   .setHead(new headObject()
     .addComments(" comment #1 ")
@@ -149,7 +149,7 @@ public class HelloWorldProgramOutput
     .addMeta(new metaObject().setName("reference").setContent("http://www.web3d.org/specifications/java/X3DJSAIL.html"))
     .addMeta(new metaObject().setName("generator").setContent("HelloWorldProgramOutput.java"))
     .addMeta(new metaObject().setName("created").setContent("6 September 2016"))
-    .addMeta(new metaObject().setName("modified").setContent("18 December 2017"))
+    .addMeta(new metaObject().setName("modified").setContent("28 January 2018"))
     .addMeta(new metaObject().setName("generator").setContent("X3D Java Scene Access Interface Library (X3DJSAIL)"))
     .addMeta(new metaObject().setName("generator").setContent("http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"))
     .addMeta(new metaObject().setName("generator").setContent("Netbeans http://www.netbeans.org"))
@@ -171,7 +171,7 @@ public class HelloWorldProgramOutput
     .addChild(new WorldInfoObject("WorldInfoDEF").setTitle("HelloWorldProgram produced by X3D Java SAI Library (X3DJSAIL)"))
     .addChild(new WorldInfoObject().setUSE("WorldInfoDEF"))
     .addChild(new WorldInfoObject().setUSE("WorldInfoDEF"))
-    .addMetadata(new MetadataStringObject("scene.addChildMetadataObject").setName("test"))
+    .addChild(new MetadataStringObject("scene.addChildMetadataObject").setName("test").setValue(new MFStringObject("\"Top-level root Metadata node beneath Scene needs to be one of '-children' in JSON encoding\"")))
     .addChild(new LayerSetObject("scene.addChildLayerSetObjectTest"))
     .addChild(new TransformObject("LogoGeometryTransform").setTranslation(0.0f,1.5f,0.0f)
       .addChild(new AnchorObject().setDescription("select for X3D Java SAI Library (X3DJSAIL) description").setUrl(new MFStringObject("\"../X3DJSAIL.html\" \"http://www.web3d.org/specifications/java/X3DJSAIL.html\""))
@@ -179,7 +179,7 @@ public class HelloWorldProgramOutput
           .setAppearance(new AppearanceObject()
             .setMaterial(new MaterialObject("GreenMaterial").setDiffuseColor(0.0f,1.0f,1.0f).setTransparency(0.1f).setEmissiveColor(0.8f,0.0f,0.0f))
             .setTexture(new ImageTextureObject().setUrl(new MFStringObject("\"images/X3dJavaSceneAccessInterfaceSaiLibrary.png\" \"http://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png\""))))
-          .setGeometry(new BoxObject("test-NMTOKEN_regex.0123456789").setCssClass("textured")))))
+          .setGeometry(new BoxObject("test-NMTOKEN_regex.0123456789").setCssClass("untextured")))))
     .addChild(new ShapeObject("LineShape")
       .setAppearance(new AppearanceObject()
         .setMaterial(new MaterialObject().setEmissiveColor(0.6f,0.19607843f,0.8f)))
@@ -194,11 +194,11 @@ public class HelloWorldProgramOutput
         .setAppearance(new AppearanceObject()
           .setMaterial(new MaterialObject().setUSE("GreenMaterial")))
         .setGeometry(new TextObject().setString(new MFStringObject("\"X3D Java\" \"SAI Library\" \"X3DJSAIL\""))
-          .addComments(" escaped quotation marks example 3: He said, \"Immel did it!\" ")
-          .addComments(" escaped quotation marks example 4: He said, &quot;Immel did it!&quot; ")
+          .addComments(" Comment example A, plain quotation marks: He said, \"Immel did it!\" ")
+          .addComments(" Comment example B, XML character entities: He said, &quot;Immel did it!&quot; ")
           .setMetadata(new MetadataSetObject().setName("EscapedQuotationMarksMetadataSet")
-            .addValue(new MetadataStringObject().setName("escapedQuotesTest1").setValue(new MFStringObject("\"escaped quotation marks example 1: He said, \\\"Immel did it!\\\"\"")))
-            .addValue(new MetadataStringObject().setName("escapedQuotesTest2").setValue(new MFStringObject("\"escaped quotation marks example 2: He said, &quot;Immel did it!&quot;\""))))
+            .addValue(new MetadataStringObject().setName("quotesTestC").setValue(new MFStringObject("\"MFString example C, backslash-escaped quotes: He said, \\\"Immel did it!\\\"\"")))
+            .addValue(new MetadataStringObject().setName("extraChildTest").setValue(new MFStringObject("\"checks MetadataSetObject addValue() method\""))))
           .setFontStyle(new FontStyleObject().setJustify(new MFStringObject("\"MIDDLE\" \"MIDDLE\"")))))
       .addChild(new CollisionObject()
         .addComments(" test containerField='proxy' ")
@@ -253,14 +253,14 @@ public class HelloWorldProgramOutput
     .addComments(" Tested ArtDeco01ProtoInstance, ArtDeco02ProtoInstance for improper node type when ProtoInstance is added in wrong place ")
     .addChild(new ShapeObject("TestShape1")
       .setAppearance(new AppearanceObject("TestAppearance1")
-        .addComments(" ArtDeco01Material prototype goes here... ")
+        .addComments(" ArtDeco01Material prototype goes here... TODO ensure setContainerField is handled in exported Java ")
         .setMaterial(new ProtoInstanceObject().setName("ArtDeco01Material")
           .addComments(" [HelloWorldProgram diagnostic] ArtDeco01ProtoInstance.getNodeType()=\"Material\" ")
           .addFieldValue(new fieldValueObject().setName("description").setValue("ArtDeco01Material can substitute for a Material node"))))
       .setGeometry(new SphereObject().setRadius(0.001f)))
     .addChild(new ShapeObject("TestShape2")
       .setAppearance(new AppearanceObject("TestAppearance2")
-        .addComments(" ArtDeco02Material prototype goes here... ")
+        .addComments(" ArtDeco02Material prototype goes here... TODO ensure setContainerField is handled in exported Java ")
         .setMaterial(new ProtoInstanceObject("ArtDeco02MaterialDEF", "ArtDeco02Material").setDEF("ArtDeco02MaterialDEF").setName("ArtDeco02Material")
           .addComments(" [HelloWorldProgram diagnostic] ArtDeco02ProtoInstance.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time, TODO X3DJSAIL needs to add further capability.\" ")
           .addFieldValue(new fieldValueObject().setName("description").setValue("ArtDeco02Material can substitute for another Material node"))))
@@ -334,14 +334,10 @@ public class HelloWorldProgramOutput
         .setGeometry(new ConeObject().setBottomRadius(0.05f).setHeight(0.1f).setBottom(false)))
       .addComments(" Test success: declarativeGroup.addChild() singleton pipeline method "))
     .addComments(" Test success: declarative statement addChild() ")
-    .addComments(new String[] {" Test success: x3dModel.findNodeByDEF(DeclarativeAppearanceExample) = <Appearance DEF='DeclarativeAppearanceExample'/> i.e.",
-"<Appearance DEF='DeclarativeAppearanceExample'>",
-"    <!- - DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance - ->",
-"    <ProtoInstance DEF='MyMaterialModulator' name='MaterialModulator' containerField='material'/>",
-"</Appearance> "})
+    .addComments(" Test success: x3dModel.findNodeByDEF(DeclarativeAppearanceExample) = <Appearance DEF='DeclarativeAppearanceExample'/> i.e. <Appearance DEF='DeclarativeAppearanceExample'> <!- - DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance - -> <ProtoInstance DEF='MyMaterialModulator' name='MaterialModulator' containerField='material'/> </Appearance> ")
     .addComments(" Test success: x3dModel.findElementByNameValue(findThisNameValue) = <MetadataString DEF='FindableMetadataStringTest' name='findThisNameValue' value='\"test case\"'/> ")
     .addComments(" Test success: x3dModel.findElementByNameValue(\"ArtDeco01Material\", \"ProtoDeclare\") found ")
-    .addComments(" Test success: x3dModel.findElementByNameValue(\"MaterialModulator\", \"ProtoDeclare\")  found ")
+    .addComments(" Test success: x3dModel.findElementByNameValue(\"MaterialModulator\", \"ProtoDeclare\") found ")
     .addComments(" Test success: x3dModel.findElementByNameValue(\"MaterialModulator\", \"ProtoInstance\") found ")
     .addChild(new GroupObject("TestFieldObjectsGroup")
       .addComments(" testFieldObjects() results ")
@@ -360,12 +356,12 @@ public class HelloWorldProgramOutput
       .setSource(new MovieTextureObject().setDescription("mpgsys.mpg from ConformanceNist suite").setUrl(new MFStringObject("\"mpgsys.mpg\" \"http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg\""))
         .addComments(" Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d ")
         .addComments(" Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\" ")))
-    .addComments(" Test success:  AnchorObject.isNode()=true,              siteAnchor.isNode()=true ")
-    .addComments(" Test success:  AnchorObject.isStatement()=false,        siteAnchor.isStatement()=false ")
-    .addComments(" Test success:   ROUTEObject.isNode()=false,     orbitPositionROUTE.isNode()=false ")
-    .addComments(" Test success:   ROUTEObject.isStatement()=true, orbitPositionROUTE.isStatement()=true ")
-    .addComments(" Test success: CommentsBlock.isNode()=false,           testComments.isNode()=false ")
-    .addComments(" Test success: CommentsBlock.isStatement()=false,      testComments.isStatement()=false ")
+    .addComments(" Test success: AnchorObject.isNode()=true, siteAnchor.isNode()=true ")
+    .addComments(" Test success: AnchorObject.isStatement()=false, siteAnchor.isStatement()=false ")
+    .addComments(" Test success: ROUTEObject.isNode()=false, orbitPositionROUTE.isNode()=false ")
+    .addComments(" Test success: ROUTEObject.isStatement()=true, orbitPositionROUTE.isStatement()=true ")
+    .addComments(" Test success: CommentsBlock.isNode()=false, testComments.isNode()=false ")
+    .addComments(" Test failure: CommentsBlock.isStatement()=true, testComments.isStatement()=true ")
     .addChild(new ShapeObject("ExtrusionShape")
       .addComments(" ExampleExtrusion isCrossSectionClosed()=true, crossSection='[1.0, 1.0, 1.0, -1.0, -1.0, -1.0, -1.0, 1.0, 1.0, 1.0]' ")
       .addComments(" ExampleExtrusion isSpineClosed()=false, spine='[0.0, 0.0, 0.0, 0.0, 1.0, 0.0]' ")
@@ -373,34 +369,49 @@ public class HelloWorldProgramOutput
         .setMaterial(new MaterialObject().setTransparency(1.0f)))
       .setGeometry(new ExtrusionObject("ExampleExtrusion"))));
   }
-  // end of initialize() method
+	// end of initialize() method
 
-  /** The initialized model object, created within initialize() method. */
-  private X3DObject x3dModel;
-  
-  /** Provide a 
-   * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
-   * of the X3D model.
-   * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
-   * @return HelloWorldProgramOutput model
-   */
-  public X3DObject getX3dModel()
-  {	  
-	  return x3dModel;
-  }
+	/** The initialized model object, created within initialize() method. */
+	private X3DObject x3dModel;
+
+	/** Provide a 
+	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
+	 * of the X3D model.
+	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
+	 * @return HelloWorldProgramOutput model
+	 */
+	public X3DObject getX3dModel()
+	{	  
+		return x3dModel;
+	}
 	   
-    /** Default main() method provided for test purposes.
-     * @param argv input parameters
-	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(argv)</a>
+    /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
+     * @param args array of input parameters, provided as arguments
+	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(args)</a>
 	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#validationReport--">X3DObject.validationReport()</a>
+     * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
+     * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html#USAGE">CommandLine.USAGE</a>
+     * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
      */
-    public static void main(String argv[])
+    public static void main(String args[])
     {
         X3DObject exampleObject = new HelloWorldProgramOutput().getX3dModel();
 
-        exampleObject.handleArguments(argv);
-        System.out.print("HelloWorldProgramOutput self-validation test results: ");
-        String validationResults = exampleObject.validationReport();
-        System.out.println(validationResults);
+        exampleObject.handleArguments(args);
+		boolean validate = (args.length == 0);
+		for (String arg : args)
+		{
+			if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+			{
+				validate = true;
+				break;
+			}
+		}
+		if (validate)
+		{
+			System.out.print("HelloWorldProgramOutput self-validation test results: ");
+			String validationResults = exampleObject.validationReport();
+			System.out.println(validationResults);
+		}
     }
 }

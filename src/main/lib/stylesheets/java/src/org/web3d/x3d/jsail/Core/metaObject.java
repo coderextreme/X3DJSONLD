@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -75,7 +75,7 @@ import org.web3d.x3d.jsail.fields.*; // making sure #4
  * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/concepts.html#Header" target="blank">X3D Abstract Specification: meta</a>
 
  * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#meta" target="_blank">X3D Tooltips: meta</a>
- * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#metaTags" target="_blank">X3D Scene Authoring Hints: metaTags</a>
+ * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#metaStatements" target="_blank">X3D Scene Authoring Hints: metaStatements</a>
  */
 public class metaObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 {
@@ -392,12 +392,13 @@ public class metaObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 * Assign String value to inputOutput SFString field named <i>content</i>.
 	 * <br><br>
 	 * <i>Tooltip:</i> The content attribute provides metadata information relevant to the name attribute provided. The name and content attributes provide attribute=value metadata pairs. Hint: use Dublin Core metadata terms for name/content values. http://www.dublincore.org/documents/dcmi-terms Hint: alternatively the content attribute can support the http-equiv attribute. Hint: many XML tools substitute XML character references for special characters automatically if needed within an attribute value (such as &amp;#38; for &amp; ampersand character, or &amp;#34; for " quotation-mark character).
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#metaStatements" target="_blank">X3D Scene Authoring Hints: meta Statements</a>
 	 * @param newValue is new value for the content field.
 	 * @return {@link metaObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	public metaObject setContent(String newValue)
 	{
-		if (newValue == null) 
+		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
 		content = newValue;
@@ -434,6 +435,7 @@ public class metaObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 * <i>Warning:</i> authors can only choose from a strict list of enumeration values ({@link #DIR_RTL RTL}, {@link #DIR_LTR LTR}).
 	 * <br><br>
 	 * <i>Tooltip:</i> Direction for weak/neutral text (ltr=left-to-right, rtl=right-to-left). See http://www.w3.org/TR/html4/struct/dirlang.html#adef-dir
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#metaStatements" target="_blank">X3D Scene Authoring Hints: meta Statements</a>
 	 * @param newValue is new value for the dir field.
 	 * @return {@link metaObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -449,7 +451,7 @@ public class metaObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 			newValue.equals(DIR_LTR))) {
 			throw new org.web3d.x3d.sai.InvalidFieldValueException("meta dir newValue=\"" + newValue + "\" has illegal value, must use a valid enumeration string.");
 		}
-		if (newValue == null) 
+		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
 		dir = newValue;
@@ -486,12 +488,13 @@ public class metaObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 * Assign String value to inputOutput SFString field named <i>http-equiv</i>.
 	 * <br><br>
 	 * <i>Tooltip:</i> The http-equiv attribute provides an HTTP header for the value of the content attribute. Example: &lt;meta http-equiv='Expires' content='Tue, 20 Aug 1996 14:25:27 GMT'&gt;. Hint: the http-equiv attribute can be used to simulate an HTTP response header. Hint: if the name attribute is set, the http-equiv attribute should not be set. Hint: see http://www.w3.org/TR/html4/struct/global.html#adef-http-equiv
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#metaStatements" target="_blank">X3D Scene Authoring Hints: meta Statements</a>
 	 * @param newValue is new value for the http-equiv field.
 	 * @return {@link metaObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	public metaObject setHttp_equiv(String newValue)
 	{
-		if (newValue == null) 
+		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
 		http_equiv = newValue;
@@ -526,12 +529,13 @@ public class metaObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 * Assign String value to inputOutput SFString field named <i>lang</i>.
 	 * <br><br>
 	 * <i>Tooltip:</i> Language code, as per [IETF BCP47/RFC5646] http://www.rfc-editor.org/rfc/bcp/bcp47.txt and described in http://www.w3.org/International/articles/language-elements Hint: Language Subtag Lookup at http://people.w3.org/rishida/utils/subelements
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#metaStatements" target="_blank">X3D Scene Authoring Hints: meta Statements</a>
 	 * @param newValue is new value for the lang field.
 	 * @return {@link metaObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	public metaObject setLang(String newValue)
 	{
-		if (newValue == null) 
+		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
 		lang = newValue;
@@ -573,13 +577,14 @@ public class metaObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 * <i>Hint:</i> authors have option to choose from an extendible list of predefined enumeration values ({@link #NAME_ACCESSRIGHTS ACCESSRIGHTS}, {@link #NAME_CONTRIBUTOR CONTRIBUTOR}, {@link #NAME_CREATED CREATED}, {@link #NAME_CREATOR CREATOR}, {@link #NAME_DESCRIPTION DESCRIPTION}, {@link #NAME_DRAWING DRAWING}, {@link #NAME_ERROR ERROR}, {@link #NAME_GENERATOR GENERATOR}, {@link #NAME_HINT HINT}, {@link #NAME_IDENTIFIER IDENTIFIER}, {@link #NAME_IMAGE IMAGE}, {@link #NAME_INFO INFO}, {@link #NAME_LICENSE LICENSE}, {@link #NAME_MODIFIED MODIFIED}, {@link #NAME_MOVINGIMAGE MOVINGIMAGE}, {@link #NAME_PHOTO PHOTO}, {@link #NAME_REFERENCE REFERENCE}, {@link #NAME_REQUIRES REQUIRES}, {@link #NAME_RIGHTS RIGHTS}, {@link #NAME_ROBOTS ROBOTS}, {@link #NAME_SOUND SOUND}, {@link #NAME_SPECIFICATIONSECTION SPECIFICATIONSECTION}, {@link #NAME_SPECIFICATIONURL SPECIFICATIONURL}, {@link #NAME_SUBJECT SUBJECT}, {@link #NAME_TEXT TEXT}, {@link #NAME_TITLE TITLE}, {@link #NAME_TODO TODO}, {@link #NAME_TRANSLATOR TRANSLATOR}, {@link #NAME_TRANSLATED TRANSLATED}, {@link #NAME_VERSION VERSION}, {@link #NAME_WARNING WARNING}).
 	 * <br><br>
 	 * <i>Tooltip:</i> Keyword name of the meta (metadata) attribute. Hint: use Dublin Core metadata terms for name/content values. http://www.dublincore.org/documents/dcmi-terms Hint: if the name attribute is set, the http-equiv attribute should not be set. Hint: well-defined names can simplify design and debugging through improved author understanding. Hint: X3D Scene Authoring Hints, Naming Conventions http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions
-	 * <br><br>@see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions">X3D Scene Authoring Hints: Naming Conventions</a>
+	 * <br><br>@see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions" target="_blank">X3D Scene Authoring Hints: Naming Conventions</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#metaStatements" target="_blank">X3D Scene Authoring Hints: meta Statements</a>
 	 * @param newValue is new value for the name field.
 	 * @return {@link metaObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	public final metaObject setName(String newValue)
 	{
-		if (newValue == null) 
+		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
 		name = newValue;
@@ -612,12 +617,13 @@ public class metaObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 * Assign String value to inputOutput SFString field named <i>scheme</i>.
 	 * <br><br>
 	 * <i>Tooltip:</i> The scheme attribute allows authors to provide user agents more context for the correct interpretation of meta data. For example, &lt;meta scheme="ISBN" name="identifier" content="0-8230-2355-9"&gt; See http://www.w3.org/TR/html4/struct/global.html#idx-scheme
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#metaStatements" target="_blank">X3D Scene Authoring Hints: meta Statements</a>
 	 * @param newValue is new value for the scheme field.
 	 * @return {@link metaObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
 	public metaObject setScheme(String newValue)
 	{
-		if (newValue == null) 
+		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
 		scheme = newValue;
@@ -636,6 +642,20 @@ public class metaObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	}
 
 	// Additional utility methods for this class ==============================
+
+	/**
+	 * Utility constructor that assigns name-value pair for name and content attributes.
+	 * @param newName  name for this meta element
+	 * @param newContent content value for this meta element
+	 * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#meta">X3D Tooltips: meta</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#metaStatements" target="_blank">X3D Scene Authoring Hints: meta Statements</a>
+	 */
+	public metaObject (String newName, String newContent)
+	{
+		initialize();
+		setName   (newName);
+		setContent(newContent);
+	}
 
 	/**
 	 * Add comment as String to contained commentsList.
@@ -675,8 +695,15 @@ setAttribute method invocations).
 	}
 		
 	/**
-	 * Recursive method to provide X3D string serialization of this model subgraph.
+	 * Recursive method to provide X3D string serialization of this model subgraph, utilizing XML encoding and conforming to X3D Canonical Form.
 	 * @param indentLevel number of levels of indentation for this element
+	 * @see X3DObject#FILE_EXTENSION_X3D
+	 * @see X3DObject#FILE_EXTENSION_XML
+	 * @see X3DObject#toStringXML()
+	 * @see X3DObject#toFileXML(String)
+	 * @see X3DObject#toFileX3D(String)
+	 * @see <a href="http://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/X3D_XML.html">X3D XML Encoding</a>
+	 * @see <a href="http://www.web3d.org/documents/specifications/19776-3/V3.3/Part03/concepts.html#X3DCanonicalForm">X3D Compressed Binary Encoding: X3D Canonical Form</a>
 	 * @return X3D string
 	 */
 	@Override
@@ -745,7 +772,9 @@ setAttribute method invocations).
 	/**
 	 * Recursive method to provide ClassicVRML string serialization.
 	 * @param indentLevel number of levels of indentation for this element
+	 * @see X3DObject#FILE_EXTENSION_CLASSICVRML
 	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html#VRML">X3D Resources: Virtual Reality Modeling Language (VRML) 97</a>
+	 * @see <a href="http://www.web3d.org/documents/specifications/19776-2/V3.3/Part02/X3D_ClassicVRML.html">Extensible 3D (X3D) encodings Part 2: Classic VRML encoding</a>
 	 * @see <a href="http://www.web3d.org/documents/specifications/19776-2/V3.3/Part02/grammar.html">Extensible 3D (X3D) encodings Part 2: Classic VRML encoding, Annex A: Grammar</a>
 	 * @return ClassicVRML string
 	 */
@@ -764,6 +793,7 @@ setAttribute method invocations).
 	/**
 	 * Recursive method to provide VRML97 string serialization.
 	 * @param indentLevel number of levels of indentation for this element
+	 * @see X3DObject#FILE_EXTENSION_VRML97
 	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html#VRML">X3D Resources: Virtual Reality Modeling Language (VRML) 97</a>
 	 * @see <a href="http://www.web3d.org/documents/specifications/14772/V2.0/index.html">Virtual Reality Modeling Language (VRML) 97 specification</a>
 	 * @see <a href="http://www.web3d.org/documents/specifications/14772-1/V2.1/index.html">VRML 97 v2.1 Amendment</a>
@@ -779,10 +809,14 @@ setAttribute method invocations).
 	 * Recursive method to provide object reference to node or statement by name attribute, if found as part of this element or in a contained element.
 	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, HAnim nodes.
 	 * <br ><br >
+	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
+	 * <br ><br >
 	 * <i>Warning:</i> more than one element may be found that has the same name, this method does not handle that case.
+	 * @see #findNodeByDEF(String)
+	 * @see X3DConcreteElement#hasAncestorSceneObject()
+	 * @see org.web3d.x3d.jsail.X3DConcreteElement#findAncestorX3DObject()
 	 * @param nameValue is value of the name field being searched for in this element and child elements(if any)
 	 * @return object reference to found element, null otherwise
-	 * @see #findNodeByDEF(String)
 	 */
 	@Override
 	public X3DConcreteElement findElementByNameValue(String nameValue)
@@ -794,11 +828,15 @@ setAttribute method invocations).
 	 * Recursive method to provide object reference to node or statement by name attribute, if found as part of this element or in a contained element.
 	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, HAnim nodes.
 	 * <br ><br >
+	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
+	 * <br ><br >
 	 * <i>Warning:</i> more than one element may be found that has the same name, this method does not handle that case.
+	 * @see #findNodeByDEF(String)
+	 * @see X3DConcreteElement#hasAncestorSceneObject()
+	 * @see org.web3d.x3d.jsail.X3DConcreteElement#findAncestorX3DObject()
 	 * @param nameValue is value of the name field being searched for in this element and child elements(if any)
 	 * @param elementName identifies the element of interest (meta MetadataString ProtoDeclare CADassembly ProtoInstance HAnimHumanoid etc.)
 	 * @return object reference to found element, null otherwise
-	 * @see #findNodeByDEF(String)
 	 */
 	@Override
 	public X3DConcreteElement findElementByNameValue(String nameValue, String elementName)
@@ -831,10 +869,14 @@ setAttribute method invocations).
 	/**
 	 * Recursive method to provide object reference to node by DEF, if found as this node or in a contained node.
 	 * <br ><br >
+	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
+	 * <br ><br >
 	 * <i>Warning:</i> more than one element may be found that has the same DEF, this method does not handle that case.
+	 * @see #findElementByNameValue(String)
+	 * @see X3DConcreteElement#hasAncestorSceneObject()
+	 * @see org.web3d.x3d.jsail.X3DConcreteElement#findAncestorX3DObject()
 	 * @param DEFvalue is value of the name field being searched for in this element and child elements(if any)
 	 * @return object reference to found node, null otherwise
-	 * @see #findElementByNameValue(String)
 	 */
 	@Override
 	public X3DConcreteNode findNodeByDEF(String DEFvalue)

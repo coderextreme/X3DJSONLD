@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -33,6 +33,7 @@ POSSIBILITY OF SUCH DAMAGE.
 package org.web3d.x3d.jsail.fields;
 
 import org.web3d.x3d.jsail.*;
+import org.web3d.x3d.jsail.Core.*;
 import org.web3d.x3d.sai.InvalidFieldValueException;
 
 /**
@@ -42,6 +43,7 @@ import org.web3d.x3d.sai.InvalidFieldValueException;
  * SFString defines a single string encoded with the UTF-8 universal character set.
 <br><br>
 Related field object: {@link MFStringObject}
+ * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#SFString">X3D Tooltips: type SFString</a>
 
  * 
 
@@ -88,18 +90,104 @@ public class SFStringObject extends X3DConcreteField implements org.web3d.x3d.sa
 		SFString = DEFAULT_VALUE;
 	}
 
-	/**
-	 * Utility method to determine if string meets NMTOKEN requirements
+
+        // TODO better collect all regular expressions (regexes)
+/*
+        Names and Tokens https://www.w3.org/TR/xml11/#sec-common-syn
+[4]   	NameStartChar	::=   	":" | [A-Z] | "_" | [a-z] | [#xC0-#xD6] | [#xD8-#xF6] | [#xF8-#x2FF] | [#x370-#x37D] | [#x37F-#x1FFF] | [#x200C-#x200D] | [#x2070-#x218F] | [#x2C00-#x2FEF] | [#x3001-#xD7FF] | [#xF900-#xFDCF] | [#xFDF0-#xFFFD] | [#x10000-#xEFFFF]
+[4a]   	NameChar	::=   	NameStartChar | "-" | "." | [0-9] | #xB7 | [#x0300-#x036F] | [#x203F-#x2040]
+[5]   	Name		::=   	NameStartChar (NameChar)*
+[7]   	Nmtoken		::=   	(NameChar)+
+*/
+        /**
+         * XML Regular Expression NameStartChar.
+         * TODO integrate special-character support into regex.
+         * [4]   	NameStartChar	::=   	":" | [A-Z] | "_" | [a-z] | [#xC0-#xD6] | [#xD8-#xF6] | [#xF8-#x2FF] | [#x370-#x37D] | [#x37F-#x1FFF] | [#x200C-#x200D] | [#x2070-#x218F] | [#x2C00-#x2FEF] | [#x3001-#xD7FF] | [#xF900-#xFDCF] | [#xFDF0-#xFFFD] | [#x10000-#xEFFFF]
+         * @see <a href="https://www.w3.org/TR/xml11/#NT-NameStartChar">XML 1.1 NameStartChar</a>
+	 */
+	public static final String NameStartCharFilter = "A-Z_a-z"; // TODO [\u00C0-\u00D6][\u00D8-\u00F6][\u00F8-\u02FF][\u0370-\u037D][\u037F-\u1FFF][\u200C-\u200D][\u2070-\u218F][\u2C00-\u2FEF][\u3001-\uD7FF][\uF900-\uFDCF][\uFDF0-\uFFFD][\u10000-\uEFFFF]";
+
+        /**
+         * XML Regular Expression NameChar.
+         * TODO integrate special-character support into regex.
+         * [4a]   	NameChar	::=   	NameStartChar | "-" | "." | [0-9] | #xB7 | [#x0300-#x036F] | [#x203F-#x2040]
+         * @see <a href="https://www.w3.org/TR/xml11/#NT-NameChar">XML 1.1 NameChar</a>
+	 */
+        public static final String NameCharFilter = NameStartCharFilter + "-.0-9"; // TODO \u00B7[\u0300-\u036F][\u0203F-\u2040]";
+
+        /**
+         * XML Regular Expression NameFilter.
+         * TODO integrate special-character support into regex.
+         * [5]   	Name		::=   	NameStartChar (NameChar)*
+         * @see <a href="https://www.w3.org/TR/xml11/#NT-NameFilter">XML 1.1 NameFilter</a>
+	 */
+        public static final String NameFilter = "[" + NameStartCharFilter + "][" + NameCharFilter + "]*"; // "[A-Z_a-z][A-Z_a-z-.0-9]*"
+
+        /**
+         * XML Regular Expression Nmtoken.
+         * TODO integrate special-character support into regex.
+         * [7]   	Nmtoken		::=   	(NameChar)+
+         * @see <a href="https://www.w3.org/TR/xml11/#NT-Nmtoken">XML 1.1 Nmtoken</a>
+	 */
+        public static final String NmtokenFilter = "[" + NameCharFilter + "]+"; // "[A-Z_a-z-.0-9]+"
+
+        /**
+	 * Utility method to determine if string meets XML NMTOKEN requirements
 	 * @param value string to check
 	 * @return whether value meets NMTOKEN regex checks
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html#type">X3D Resources: type NMTOKEN</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dTooltips.html#NMTOKEN">X3D Tooltips: type NMTOKEN</a>
 	 * @see <a href="http://www.web3d.org/specifications/X3dRegularExpressions.html">X3D Regular Expressions (regexes)</a>
+	 * @see <a href="http://www.web3d.org/specifications/X3dRegularExpressions.html">X3D Regular Expressions (regexes)</a>
+	 * @see <a href="https://www.w3.org/TR/REC-xml/#sec-common-syn">XML 1.1 Common Syntactic Constructs</a>
+	 * @see <a href="https://www.w3.org/TR/xml11/#NT-Nmtoken">XML 1.1 NMTOKEN</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions" target="_blank">X3D Scene Authoring Hints: Naming Conventions</a>
+	 * @see <a href="https://docs.oracle.com/javase/specs/jls/se7/html/jls-3.html#jls-3.2" target="_blank">Java Language Specification: 3 Lexical Structure, 3.2. Lexical Translations</a>
+	 * @see <a href="https://docs.oracle.com/javase/tutorial/i18n/text/unicode.html" target="_blank">Java Tutorials: Unicode</a>
+	 * @see <a href="http://www.oracle.com/us/technologies/java/supplementary-142654.html" target="_blank">Java and Unicode: Supplementary Characters in the Java Platform</a>
 	 */
 	public static final boolean isNMTOKEN(String value)
 	{
-		if ((value == null) || value.trim().isEmpty())
-			 return false;
-		else return value.matches("[a-zA-Z_][a-zA-Z0-9_.-]*"); // NMTOKEN character regex check
+            if ((value == null) || value.trim().isEmpty())
+                return false;
+            // NMTOKEN character regex check
+            boolean result = value.matches(NmtokenFilter);
+
+/* original was simpler and not strictly correct
+                boolean result = value.matches("[a-zA-Z_][a-zA-Z0-9_]*"); // NMTOKEN character regex check
+                if (value.startsWith(".") || value.startsWith("-"))       // NameStartChar restrictions
+                    result = false;
+*/
+		return result;
+	}
+
+        /**
+	 * Utility method to determine if string meets suggested X3D naming conventions
+	 * @param value string to check
+	 * @return whether value meets suggested X3D naming requirements
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dTooltips.html#NMTOKEN">X3D Tooltips: type NMTOKEN</a>
+	 * @see <a href="http://www.web3d.org/specifications/X3dRegularExpressions.html">X3D Regular Expressions (regexes)</a>
+	 * @see <a href="http://www.web3d.org/specifications/X3dRegularExpressions.html">X3D Regular Expressions (regexes)</a>
+	 * @see <a href="https://www.w3.org/TR/REC-xml/#sec-common-syn">XML 1.1 Common Syntactic Constructs</a>
+	 * @see <a href="https://www.w3.org/TR/xml11/#NT-Nmtoken">XML 1.1 NMTOKEN</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions" target="_blank">X3D Scene Authoring Hints: Naming Conventions</a>
+	 * @see <a href="https://docs.oracle.com/javase/specs/jls/se7/html/jls-3.html#jls-3.2" target="_blank">Java Language Specification: 3 Lexical Structure, 3.2. Lexical Translations</a>
+	 * @see <a href="https://docs.oracle.com/javase/tutorial/i18n/text/unicode.html" target="_blank">Java Tutorials: Unicode</a>
+	 * @see <a href="http://www.oracle.com/us/technologies/java/supplementary-142654.html" target="_blank">Java and Unicode: Supplementary Characters in the Java Platform</a>
+	 */
+	public static final boolean meetsX3dNamingConventions(String value)
+	{
+            if ((value == null) || value.trim().isEmpty())
+                return false;
+            // TODO continue improving character regex checks.  Not identical to NMTOKEN.
+            boolean result = // value.matches(NameFilter) &&               // XML Name
+                                value.matches("[a-zA-Z_][a-zA-Z0-9_.-]*"); // X3D SAH; TODO reconcile guidance . and -
+
+/* original was simpler and not strictly correct
+                boolean result = value.matches("[a-zA-Z_][a-zA-Z0-9_]*"); // NMTOKEN character regex check
+                if (value.startsWith(".") || value.startsWith("-"))       // NameStartChar restrictions
+                    result = false;
+*/
+		return result;
 	}
 	/**
 	 * Utility accessor for SFStringObject using String value
@@ -183,10 +271,14 @@ method invocations on the same node object).
 	}
 
 	/**
-	 * Provide String representation of this object, properly escaped for XML-based X3D syntax.
+	 * Provide String representation of this object, properly escaped for XML-based X3D syntax and conforming to X3D Canonical Form.
 	 * @see SFStringObject#toStringX3D(String)
 	 * @see MFStringObject#toStringX3D
-	 * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#type">X3D Tooltips: type</a>
+	 * @see X3DObject#FILE_EXTENSION_X3D
+	 * @see X3DObject#FILE_EXTENSION_XML
+	 * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#SFString">X3D Tooltips: type SFString</a>
+	 * @see <a href="http://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/X3D_XML.html">X3D XML Encoding</a>
+	 * @see <a href="http://www.web3d.org/documents/specifications/19776-3/V3.3/Part03/concepts.html#X3DCanonicalForm">X3D Compressed Binary Encoding: X3D Canonical Form</a>
 	 * @return XML/X3D-escaped version of this SFString
 	 */
 	public String toStringX3D ()
@@ -214,7 +306,7 @@ method invocations on the same node object).
 	}
 	/**
 	 * Provides current value as a String.
-	 * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#type">X3D Tooltips: type</a>
+	 * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#SFString">X3D Tooltips: type SFString</a>
 	 * @return String version of the provided value
 	 */
 	@Override

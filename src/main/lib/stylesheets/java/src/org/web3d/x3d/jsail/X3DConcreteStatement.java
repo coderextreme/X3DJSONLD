@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -60,7 +60,7 @@ public abstract class X3DConcreteStatement extends org.web3d.x3d.jsail.X3DConcre
 	 * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/glossary.html#Node">X3D Abstract Specification, Terms and definitions: node</a>
 	 * @return whether this element is an X3D Graphics node: false
 	 */
-	public static boolean isNode()
+	public static final boolean isNode()
 	{
             // (this instanceof org.web3d.x3d.jsail.X3DConcreteNode)
             return false;
@@ -72,7 +72,7 @@ public abstract class X3DConcreteStatement extends org.web3d.x3d.jsail.X3DConcre
 	 * @see <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/core.html#AbstractX3DStructure">X3D Abstract Specification: 7.2.5 Abstract X3D structure</a>
 	 * @return whether this element is an X3D Graphics statement: true
 	 */
-	public static boolean isStatement()
+	public static final boolean isStatement()
 	{
             //  (this instanceof org.web3d.x3d.jsail.X3DConcreteStatement) && 
             // !(this instanceof org.web3d.x3d.jsail.Core.CommentsBlock)

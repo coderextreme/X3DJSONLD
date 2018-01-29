@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -49,10 +49,12 @@ import org.web3d.x3d.jsail.Core.*;
  * <ul>
  *  <li> <i>Hint:</i> HAnimDisplacer can be used in three different ways: (a) identify vertices corresponding to a particular feature in a parent HAnimSegment node, (b) represent a particular muscular action for a parent HAnimJoint node by displacing corresponding HAnimHumanoid skin vertices in various directions (linearly or radially), or (c) represent a complete configuration of coordinate vertices in a parent HAnimSegment node or parent HAnimJoint/HAnimHumanoid nodes. Example: in the case of a face, there might be a separate HAnimDisplacer node for each facial expression. </li> 
  *  <li> <i>Hint:</i> name suffixes include _feature, _action and _config. </li> 
- *  <li> <i>Hint:</i> multiple HAnimDisplacer nodes must appear consecutively inside parent HAnimSegment. </li> 
+ *  <li> <i>Hint:</i> multiple HAnimDisplacer nodes must appear consecutively inside parent HAnimSegment for proper content validationi in XML encoding. </li> 
+ *  <li> <i>Warning:</i> index values for HanimHumanoid skin IndexedFaceSet, skinCoord and skinNormal nodes must all be consistently defined together with HAnimJoint HAnimSegment and HAnimDisplacer nodes for proper skin animation. </li> 
  *  <li> <i>Hint:</i> H-Anim Specification <br> <a href="http://www.web3d.org/documents/specifications/19774-1/V2.0/HAnim/HAnimArchitecture.html" target="_blank">http://www.web3d.org/documents/specifications/19774-1/V2.0/HAnim/HAnimArchitecture.html</a> </li> 
  *  <li> <i>Hint:</i> H-Anim Specification, Displacer <br> <a href="http://www.web3d.org/documents/specifications/19774-1/V2.0/HAnim/ObjectInterfaces.html#Displacer" target="_blank">http://www.web3d.org/documents/specifications/19774-1/V2.0/HAnim/ObjectInterfaces.html#Displacer</a> </li> 
- *  <li> <i>Hint:</i>  include &amp;lt;component name='H-Anim' level='1'/&amp;gt; </li> 
+ *  <li> <i>Hint:</i> X3D for Advanced Modeling (X3D4AM) slideset <br> <a href="http://x3dgraphics.com/slidesets/X3dForAdvancedModeling/HumanoidAnimation.pdf" target="_blank">http://x3dgraphics.com/slidesets/X3dForAdvancedModeling/HumanoidAnimation.pdf</a> </li> 
+ *  <li> <i>Warning:</i>  requires X3D profile='Full' or else include &amp;lt;component name='H-Anim' level='1'/&amp;gt; </li> 
  * </ul>
  * <br>
  * <i>Package hint:</i>  This org.web3d.x3d.jsail concrete class is used for implementing a standalone X3D object as a <a href="https://en.wikipedia.org/wiki/Plain_old_Java_object" target="_blank">Plain Old Java Object (POJO)</a>.
@@ -619,7 +621,8 @@ setAttribute method invocations).
 	 * <br><br>
 	 * <i>Tooltip:</i> displacements are a set of SFVec3f values added to neutral/resting position of each of the corresponding HAnimSegment vertices (or HAnimJoint/HAnimHumanoid vertices) referenced by coordIndex field.
  * <ul>
- *  <li> <i> Hint:</i>  Individual displacement values are scaled by the weight factor, if present. </li> 
+ *  <li> <i>Hint:</i> Individual displacement values are scaled by the weight factor, if present. </li> 
+ *  <li> <i>Hint:</i>  since default pose faces along +Z axis, -x values are right side and +x values are left side within HAnimHumanoid. </li> 
  * </ul>
 	 * @return value of displacements field
 	 */
@@ -632,7 +635,7 @@ setAttribute method invocations).
 	/**
 	 * Assign 3-tuple float array to inputOutput MFVec3f field named <i>displacements</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> displacements are a set of SFVec3f values added to neutral/resting position of each of the corresponding HAnimSegment vertices (or HAnimJoint/HAnimHumanoid vertices) referenced by coordIndex field. Hint: Individual displacement values are scaled by the weight factor, if present.
+	 * <i>Tooltip:</i> displacements are a set of SFVec3f values added to neutral/resting position of each of the corresponding HAnimSegment vertices (or HAnimJoint/HAnimHumanoid vertices) referenced by coordIndex field. Hint: Individual displacement values are scaled by the weight factor, if present. Hint: since default pose faces along +Z axis, -x values are right side and +x values are left side within HAnimHumanoid.
 	 * @param newValue is new value for the displacements field.
 	 * @return {@link HAnimDisplacerObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -663,7 +666,7 @@ setAttribute method invocations).
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
 	 * @see #getMetadataProtoInstance()
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @return value of metadata field
 	 */
 	@Override
@@ -675,7 +678,7 @@ setAttribute method invocations).
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
 	 * @see #setMetadata(ProtoInstanceObject)
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @param newValue is new value for the metadata field.
 	 * @return {@link HAnimDisplacerObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -707,12 +710,11 @@ setAttribute method invocations).	 */
 		return this;
 	}
 	/**
-	 * Assign ProtoInstance to <i>metadata</i> field;
-
+	 * Assign ProtoInstance to <i>metadata</i> field.
 	 * <i>Warning:</i> ProtoInstance must match acceptable node type X3DMetadataObject.
 	 * @param newProtoInstanceNode is the new ProtoInstance node for the metadata field
 	 * @see #setMetadata(X3DMetadataObject)
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @return {@link HAnimDisplacerObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
 setAttribute method invocations).
 	 */
@@ -733,7 +735,7 @@ setAttribute method invocations).
 	/**
 	 * Provide properly typed ProtoInstance for inputOutput SFNode field <i>metadata</i>, if available.
 	 * @see #getMetadata()
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @return ProtoInstance value of geometry field
 	 */
 	public ProtoInstanceObject getMetadataProtoInstance()
@@ -746,7 +748,7 @@ setAttribute method invocations).
 	 * @return whether a properly typed node or ProtoInstance or CommentsBlock is available.
 	 * @see #getMetadata()
 	 * @see #getMetadataProtoInstance()
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 */
 	public boolean hasMetadata()
 	{
@@ -757,6 +759,7 @@ setAttribute method invocations).
 	 * <br><br>
 	 * <i>Tooltip:</i> Unique name attribute must be defined so that HAnimDisplacer node can be identified at run time for animation purposes.
  * <ul>
+ *  <li> <i>Warning:</i> name prefix must match ancestor HAnimHumanoid name followed by underscore character, for example 'Nancy_' prepended before location name. </li> 
  *  <li> <i>Warning:</i> name is not included if this instance is a USE node. Examples: sellion r_infraorbitale etc. as listed in H-Anim Specification. </li> 
  *  <li> <i>Hint:</i> H-Anim Feature Points <br> <a href="http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/tables/HAnimSurfaceFeaturePoints19774V1.0.txt" target="_blank">http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/tables/HAnimSurfaceFeaturePoints19774V1.0.txt</a> </li> 
  *  <li> <i>Hint:</i> H-Anim Specification, Feature points for the human body <br> <a href="http://www.web3d.org/documents/specifications/19774-1/V2.0/HAnim/FeaturePoints.html" target="_blank">http://www.web3d.org/documents/specifications/19774-1/V2.0/HAnim/FeaturePoints.html</a> </li> 
@@ -778,8 +781,8 @@ setAttribute method invocations).
 	 * <br><br>
 	 * <i>Warning:</i> authors can only choose from a strict list of enumeration values ({@link #NAME_SELLION SELLION}, {@link #NAME_R_INFRAORBITALE R_INFRAORBITALE}, {@link #NAME_L_INFRAORBITALE L_INFRAORBITALE}, {@link #NAME_SUPRAMENTON SUPRAMENTON}, {@link #NAME_R_TRAGION R_TRAGION}, {@link #NAME_R_GONION R_GONION}, {@link #NAME_L_TRAGION L_TRAGION}, {@link #NAME_L_GONION L_GONION}, {@link #NAME_NUCHALE NUCHALE}, {@link #NAME_R_CLAVICALE R_CLAVICALE}, {@link #NAME_SUPRASTERNALE SUPRASTERNALE}, {@link #NAME_L_CLAVICALE L_CLAVICALE}, {@link #NAME_R_THELION R_THELION}, {@link #NAME_L_THELION L_THELION}, {@link #NAME_SUBSTERNALE SUBSTERNALE}, {@link #NAME_R_RIB10 R_RIB10}, {@link #NAME_R_ASIS R_ASIS}, {@link #NAME_L_RIB10 L_RIB10}, {@link #NAME_L_ASIS L_ASIS}, {@link #NAME_R_ILIOCRISTALE R_ILIOCRISTALE}, {@link #NAME_R_TROCHANTERION R_TROCHANTERION}, {@link #NAME_L_ILIOCRISTALE L_ILIOCRISTALE}, {@link #NAME_L_TROCHANTERION L_TROCHANTERION}, {@link #NAME_CERVICALE CERVICALE}, {@link #NAME_RIB10_MIDSPINE RIB10_MIDSPINE}, {@link #NAME_R_PSIS R_PSIS}, {@link #NAME_L_PSIS L_PSIS}, {@link #NAME_WAIST_PREFERRED_POST WAIST_PREFERRED_POST}, {@link #NAME_R_ACROMION R_ACROMION}, {@link #NAME_R_AXILLA_ANT R_AXILLA_ANT}, {@link #NAME_R_RADIAL_STYLOID R_RADIAL_STYLOID}, {@link #NAME_R_AXILLA_POST R_AXILLA_POST}, {@link #NAME_R_OLECRANON R_OLECRANON}, {@link #NAME_R_HUMERAL_LATERAL_EPICN R_HUMERAL_LATERAL_EPICN}, {@link #NAME_R_HUMERAL_MEDIAL_EPICN R_HUMERAL_MEDIAL_EPICN}, {@link #NAME_R_RADIALE R_RADIALE}, {@link #NAME_R_METACARPAL_PHA2 R_METACARPAL_PHA2}, {@link #NAME_R_DACTYLION R_DACTYLION}, {@link #NAME_R_ULNAR_STYLOID R_ULNAR_STYLOID}, {@link #NAME_R_METACARPAL_PHA5 R_METACARPAL_PHA5}, {@link #NAME_L_ACROMION L_ACROMION}, {@link #NAME_L_AXILLA_ANT L_AXILLA_ANT}, {@link #NAME_L_RADIAL_STYLOID L_RADIAL_STYLOID}, {@link #NAME_L_AXILLA_POST L_AXILLA_POST}, {@link #NAME_L_OLECRANON L_OLECRANON}, {@link #NAME_L_HUMERAL_LATERAL_EPICN L_HUMERAL_LATERAL_EPICN}, {@link #NAME_L_HUMERAL_MEDIAL_EPICN L_HUMERAL_MEDIAL_EPICN}, {@link #NAME_L_RADIALE L_RADIALE}, {@link #NAME_L_METACARPAL_PHA2 L_METACARPAL_PHA2}, {@link #NAME_L_DACTYLION L_DACTYLION}, {@link #NAME_L_ULNAR_STYLOID L_ULNAR_STYLOID}, {@link #NAME_L_METACARPAL_PHA5 L_METACARPAL_PHA5}, {@link #NAME_R_KNEE_CREASE R_KNEE_CREASE}, {@link #NAME_R_FEMORAL_LATERAL_EPICN R_FEMORAL_LATERAL_EPICN}, {@link #NAME_R_FEMORAL_MEDIAL_EPICN R_FEMORAL_MEDIAL_EPICN}, {@link #NAME_R_METATARSAL_PHA5 R_METATARSAL_PHA5}, {@link #NAME_R_LATERAL_MALLEOLUS R_LATERAL_MALLEOLUS}, {@link #NAME_R_MEDIAL_MALLEOLUS R_MEDIAL_MALLEOLUS}, {@link #NAME_R_SPHYRION R_SPHYRION}, {@link #NAME_R_METATARSAL_PHA1 R_METATARSAL_PHA1}, {@link #NAME_R_CALCANEOUS_POST R_CALCANEOUS_POST}, {@link #NAME_R_DIGIT2 R_DIGIT2}, {@link #NAME_L_KNEE_CREASE L_KNEE_CREASE}, {@link #NAME_L_FEMORAL_LATERAL_EPICN L_FEMORAL_LATERAL_EPICN}, {@link #NAME_L_FEMORAL_MEDIAL_EPICN L_FEMORAL_MEDIAL_EPICN}, {@link #NAME_L_METATARSAL_PHA5 L_METATARSAL_PHA5}, {@link #NAME_L_LATERAL_MALLEOLUS L_LATERAL_MALLEOLUS}, {@link #NAME_L_MEDIAL_MALLEOLUS L_MEDIAL_MALLEOLUS}, {@link #NAME_L_SPHYRION L_SPHYRION}, {@link #NAME_L_METATARSAL_PHA1 L_METATARSAL_PHA1}, {@link #NAME_L_CALCANEOUS_POST L_CALCANEOUS_POST}, {@link #NAME_L_DIGIT2 L_DIGIT2}, {@link #NAME_CROTCH CROTCH}, {@link #NAME_R_NECK_BASE R_NECK_BASE}, {@link #NAME_L_NECK_BASE L_NECK_BASE}, {@link #NAME_NAVEL NAVEL}).
 	 * <br><br>
-	 * <i>Tooltip:</i> Unique name attribute must be defined so that HAnimDisplacer node can be identified at run time for animation purposes. Warning: name is not included if this instance is a USE node. Examples: sellion r_infraorbitale etc. as listed in H-Anim Specification. Hint: H-Anim Feature Points http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/tables/HAnimSurfaceFeaturePoints19774V1.0.txt Hint: H-Anim Specification, Feature points for the human body http://www.web3d.org/documents/specifications/19774-1/V2.0/HAnim/FeaturePoints.html Hint: well-defined names can simplify design and debugging through improved author understanding. Hint: X3D Scene Authoring Hints, Naming Conventions http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions
-	 * <br><br>@see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions">X3D Scene Authoring Hints: Naming Conventions</a>
+	 * <i>Tooltip:</i> Unique name attribute must be defined so that HAnimDisplacer node can be identified at run time for animation purposes. Warning: name prefix must match ancestor HAnimHumanoid name followed by underscore character, for example 'Nancy_' prepended before location name. Warning: name is not included if this instance is a USE node. Examples: sellion r_infraorbitale etc. as listed in H-Anim Specification. Hint: H-Anim Feature Points http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/tables/HAnimSurfaceFeaturePoints19774V1.0.txt Hint: H-Anim Specification, Feature points for the human body http://www.web3d.org/documents/specifications/19774-1/V2.0/HAnim/FeaturePoints.html Hint: well-defined names can simplify design and debugging through improved author understanding. Hint: X3D Scene Authoring Hints, Naming Conventions http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions
+	 * <br><br>@see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions" target="_blank">X3D Scene Authoring Hints: Naming Conventions</a>
 	 * @param newValue is new value for the name field.
 	 * @return {@link HAnimDisplacerObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -870,8 +873,7 @@ setAttribute method invocations).
 			newValue.equals(NAME_NAVEL))) {
 			throw new org.web3d.x3d.sai.InvalidFieldValueException("HAnimDisplacer name newValue=\"" + newValue + "\" has illegal value, must use a valid enumeration string.");
 		}
-
-		if (newValue == null) 
+		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to HAnimDisplacer
 		if (!newValue.isEmpty() && !org.web3d.x3d.jsail.fields.SFStringObject.isNMTOKEN(newValue))
@@ -879,6 +881,12 @@ setAttribute method invocations).
 			throw new org.web3d.x3d.sai.InvalidFieldValueException("HAnimDisplacer name newValue='" + newValue + "'" + 
 				" has illegal name value, cannot be empty and must be defined with valid NMTOKEN name string" + 
 				" (with legal characters and no embedded whitespace).");
+		}
+
+		if (!newValue.isEmpty() && !org.web3d.x3d.jsail.fields.SFStringObject.meetsX3dNamingConventions(newValue))
+		{
+			System.out.println("HAnimDisplacer name newValue='" + newValue + "'" + 
+				" has name value that does not meet X3D naming conventions.");
 		}
 		name = newValue;
 		return this;
@@ -946,8 +954,7 @@ setAttribute method invocations).
 	@Override
 	public final HAnimDisplacerObject setDEF(String newValue)
 	{
-
-		if (newValue == null) 
+		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to HAnimDisplacer
 		if (!newValue.isEmpty() && !org.web3d.x3d.jsail.fields.SFStringObject.isNMTOKEN(newValue))
@@ -955,6 +962,12 @@ setAttribute method invocations).
 			throw new org.web3d.x3d.sai.InvalidFieldValueException("HAnimDisplacer DEF newValue='" + newValue + "'" + 
 				" has illegal name value, cannot be empty and must be defined with valid NMTOKEN name string" + 
 				" (with legal characters and no embedded whitespace).");
+		}
+
+		if (!newValue.isEmpty() && !org.web3d.x3d.jsail.fields.SFStringObject.meetsX3dNamingConventions(newValue))
+		{
+			System.out.println("HAnimDisplacer DEF newValue='" + newValue + "'" + 
+				" has name value that does not meet X3D naming conventions.");
 		}
 		setConcreteUSE(""); // ensure that no previous USE value remains
 		setConcreteDEF(newValue); // private superclass methods
@@ -987,8 +1000,7 @@ setAttribute method invocations).
 	@Override
 	public final HAnimDisplacerObject setUSE(String newValue)
 	{
-
-		if (newValue == null) 
+		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to HAnimDisplacer
 		if (!newValue.isEmpty() && !org.web3d.x3d.jsail.fields.SFStringObject.isNMTOKEN(newValue))
@@ -996,6 +1008,12 @@ setAttribute method invocations).
 			throw new org.web3d.x3d.sai.InvalidFieldValueException("HAnimDisplacer USE newValue='" + newValue + "'" + 
 				" has illegal name value, cannot be empty and must be defined with valid NMTOKEN name string" + 
 				" (with legal characters and no embedded whitespace).");
+		}
+
+		if (!newValue.isEmpty() && !org.web3d.x3d.jsail.fields.SFStringObject.meetsX3dNamingConventions(newValue))
+		{
+			System.out.println("HAnimDisplacer USE newValue='" + newValue + "'" + 
+				" has name value that does not meet X3D naming conventions.");
 		}
 		initialize(); // reset all other field values to default (equivalent to empty)
 		setConcreteUSE(newValue); // private superclass method
@@ -1023,7 +1041,7 @@ setAttribute method invocations).
 	@Override
 	public final HAnimDisplacerObject setCssClass(String newValue)
 	{
-		if (newValue == null) 
+		if (newValue == null)
 			newValue = new String(); // Principle of Least Astonishment (POLA)
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
 		setConcreteCssClass(newValue); // private superclass method
@@ -1042,16 +1060,6 @@ setAttribute method invocations).
 	}
 
 	// Additional utility methods for this class ==============================
-
-	/**
-	 * Utility constructor that assigns DEF name after initializing member variables with default values
-	 * @param DEFname unique DEF name for this X3D node
-	 */
-	public HAnimDisplacerObject (String DEFname)
-	{
-		initialize();
-		setDEF(DEFname); // apply checks
-	}
 
 	/**
 	 * Assign field named <i>IS</i> for establishing IS/connect field connections between ProtoInterface fields and internal ProtoBody nodes.
@@ -1103,6 +1111,29 @@ setAttribute method invocations).
 		setUSE(DEFnode.getDEF());
 		return this;
 	}
+	/**
+	 * Utility constructor that assigns DEF label after initializing member variables with default values.
+	 * @param DEFlabel unique DEF name for this X3D node
+	 */
+	public HAnimDisplacerObject (String DEFlabel)
+	{
+		initialize();
+		setDEF(DEFlabel); // apply checks
+	}
+
+	/**
+	 * Utility constructor that assigns both DEF label and name, after initializing member variables with default values.
+	 * @param DEFlabel unique DEF name for this X3D node
+	 * @param newName  name for this meta element
+	 * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#HAnimDisplacerObject">X3D Tooltips: HAnimDisplacerObject</a>
+	 */
+	public HAnimDisplacerObject (String DEFlabel, String newName)
+	{
+		initialize();
+		setDEF  (DEFlabel);
+		setName (newName);
+	}
+
 	/**
 	 * Add comment as String to contained commentsList.
 	 * @param newComment initial value
@@ -1165,8 +1196,15 @@ setAttribute method invocations).
 	}
 		
 	/**
-	 * Recursive method to provide X3D string serialization of this model subgraph.
+	 * Recursive method to provide X3D string serialization of this model subgraph, utilizing XML encoding and conforming to X3D Canonical Form.
 	 * @param indentLevel number of levels of indentation for this element
+	 * @see X3DObject#FILE_EXTENSION_X3D
+	 * @see X3DObject#FILE_EXTENSION_XML
+	 * @see X3DObject#toStringXML()
+	 * @see X3DObject#toFileXML(String)
+	 * @see X3DObject#toFileX3D(String)
+	 * @see <a href="http://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/X3D_XML.html">X3D XML Encoding</a>
+	 * @see <a href="http://www.web3d.org/documents/specifications/19776-3/V3.3/Part03/concepts.html#X3DCanonicalForm">X3D Compressed Binary Encoding: X3D Canonical Form</a>
 	 * @return X3D string
 	 */
 	@Override
@@ -1203,11 +1241,11 @@ setAttribute method invocations).
 				stringX3D.append(" name='").append(SFStringObject.toString(getName())).append("'");
 			}
 			
-			if (!getContainerFieldOverride().isEmpty() && !getContainerFieldOverride().equals(containerField_DEFAULT_VALUE))
-			{
-				stringX3D.append(" containerField='").append(getContainerFieldOverride()).append("'");
-			}
-			
+                            if (!getContainerFieldOverride().isEmpty() && !getContainerFieldOverride().equals(containerField_DEFAULT_VALUE))
+                            {
+                                    stringX3D.append(" containerField='").append(getContainerFieldOverride()).append("'");
+                            }
+                            
 			if (((getCoordIndex().length > 0) || ConfigurationProperties.isShowDefaultAttributes()) && !isUSE())
 			{
 				stringX3D.append(" coordIndex='").append(MFInt32Object.toString(getCoordIndex())).append("'");
@@ -1258,7 +1296,9 @@ setAttribute method invocations).
 	/**
 	 * Recursive method to provide ClassicVRML string serialization.
 	 * @param indentLevel number of levels of indentation for this element
+	 * @see X3DObject#FILE_EXTENSION_CLASSICVRML
 	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html#VRML">X3D Resources: Virtual Reality Modeling Language (VRML) 97</a>
+	 * @see <a href="http://www.web3d.org/documents/specifications/19776-2/V3.3/Part02/X3D_ClassicVRML.html">Extensible 3D (X3D) encodings Part 2: Classic VRML encoding</a>
 	 * @see <a href="http://www.web3d.org/documents/specifications/19776-2/V3.3/Part02/grammar.html">Extensible 3D (X3D) encodings Part 2: Classic VRML encoding, Annex A: Grammar</a>
 	 * @return ClassicVRML string
 	 */
@@ -1408,6 +1448,7 @@ setAttribute method invocations).
 	/**
 	 * Recursive method to provide VRML97 string serialization.
 	 * @param indentLevel number of levels of indentation for this element
+	 * @see X3DObject#FILE_EXTENSION_VRML97
 	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html#VRML">X3D Resources: Virtual Reality Modeling Language (VRML) 97</a>
 	 * @see <a href="http://www.web3d.org/documents/specifications/14772/V2.0/index.html">Virtual Reality Modeling Language (VRML) 97 specification</a>
 	 * @see <a href="http://www.web3d.org/documents/specifications/14772-1/V2.1/index.html">VRML 97 v2.1 Amendment</a>
@@ -1420,35 +1461,17 @@ setAttribute method invocations).
 	}
 
 	/**
-	 * Recursive method to provide object reference to node by DEF name, if found as this node or in a contained node.
-	 * @param DEFname DEF name of node to find
-	 * @return object reference to node
-	 */
-	@Override
-	public X3DConcreteNode getNodeByDEF(String DEFname)
-	{
-		X3DConcreteNode referenceNode;
-
-		if (getDEF().equals(DEFname))
-			return this;
-
-		if (metadata != null)
-		{
-			referenceNode = ((X3DConcreteNode) metadata).getNodeByDEF(DEFname); // SFNode
-			if (referenceNode != null)
-				return referenceNode;
-		}
-		return null; // not found, in this node or in children nodes
-	}
-
-	/**
 	 * Recursive method to provide object reference to node or statement by name attribute, if found as part of this element or in a contained element.
 	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, HAnim nodes.
 	 * <br ><br >
+	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
+	 * <br ><br >
 	 * <i>Warning:</i> more than one element may be found that has the same name, this method does not handle that case.
+	 * @see #findNodeByDEF(String)
+	 * @see X3DConcreteElement#hasAncestorSceneObject()
+	 * @see org.web3d.x3d.jsail.X3DConcreteElement#findAncestorX3DObject()
 	 * @param nameValue is value of the name field being searched for in this element and child elements(if any)
 	 * @return object reference to found element, null otherwise
-	 * @see #findNodeByDEF(String)
 	 */
 	@Override
 	public X3DConcreteElement findElementByNameValue(String nameValue)
@@ -1460,11 +1483,15 @@ setAttribute method invocations).
 	 * Recursive method to provide object reference to node or statement by name attribute, if found as part of this element or in a contained element.
 	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, HAnim nodes.
 	 * <br ><br >
+	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
+	 * <br ><br >
 	 * <i>Warning:</i> more than one element may be found that has the same name, this method does not handle that case.
+	 * @see #findNodeByDEF(String)
+	 * @see X3DConcreteElement#hasAncestorSceneObject()
+	 * @see org.web3d.x3d.jsail.X3DConcreteElement#findAncestorX3DObject()
 	 * @param nameValue is value of the name field being searched for in this element and child elements(if any)
 	 * @param elementName identifies the element of interest (meta MetadataString ProtoDeclare CADassembly ProtoInstance HAnimHumanoid etc.)
 	 * @return object reference to found element, null otherwise
-	 * @see #findNodeByDEF(String)
 	 */
 	@Override
 	public X3DConcreteElement findElementByNameValue(String nameValue, String elementName)
@@ -1510,10 +1537,14 @@ setAttribute method invocations).
 	/**
 	 * Recursive method to provide object reference to node by DEF, if found as this node or in a contained node.
 	 * <br ><br >
+	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
+	 * <br ><br >
 	 * <i>Warning:</i> more than one element may be found that has the same DEF, this method does not handle that case.
+	 * @see #findElementByNameValue(String)
+	 * @see X3DConcreteElement#hasAncestorSceneObject()
+	 * @see org.web3d.x3d.jsail.X3DConcreteElement#findAncestorX3DObject()
 	 * @param DEFvalue is value of the name field being searched for in this element and child elements(if any)
 	 * @return object reference to found node, null otherwise
-	 * @see #findElementByNameValue(String)
 	 */
 	@Override
 	public X3DConcreteNode findNodeByDEF(String DEFvalue)
@@ -1652,7 +1683,7 @@ setAttribute method invocations).
 				!modelProfile.equals("Full"))
 			{
 				String errorNotice = ConfigurationProperties.ERROR_ILLEGAL_VALUE + 
-					" invalid X3D profile='" + getContainerFieldOverride() +
+					" invalid X3D profile='" + modelProfile +
 					"' for parent X3D model, add element <componentInfo name='HAnim' level='1'/>\n" +
 					"or source-code assignment: " +
 					" findAncestorX3DObject().getHead().addComponentInfo(\"HAnim\").setLevel(1);";

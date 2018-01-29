@@ -2665,7 +2665,10 @@
                 </ul>
             </li>
             <li> 
-				<b>field</b> and <b>fieldValue</b> statements containing SFNode/MFNode content use the <code>-children</code> key.
+		<b>field</b> and <b>fieldValue</b> statements containing SFNode/MFNode content use the <code>-children</code> key.
+            </li>
+            <li> 
+		<b>Scene</b> statements containing Metadata* root nodes at topmost level use the <code>-children</code> key.
             </li>
         </ul>
         
@@ -2692,15 +2695,16 @@
             </li>
             <li> 
                 Test capabilities for parsing, rendering, serialization using 
-                <a href="http://www.x3dom.org">X3DOM</a>
+                <a href="http://www.x3dom.org" target="_blank">X3DOM</a>
                 and 
-                <a href="http://titania.create3000.de/cobweb">Cobweb</a>. 
+                <a href="http://create3000.de/x_ite" target="_blank">X_ITE</a>
+                (formerly <i>Cobweb</i>). 
             </li>
             <li> 
                 Test capabilities using various JavaScript rendering libraries:
-                <a href="http://d3js.org">D3.js</a>, 
-                <a href="http://threejs.org">three.js</a>, 
-                <a href="http://xml3d.org">XML3D</a>, 
+                <a href="http://d3js.org" target="_blank">D3.js</a>, 
+                <a href="http://threejs.org" target="_blank">three.js</a>, 
+                <a href="http://xml3d.org" target="_blank">XML3D</a>, 
                 WebGL source code, etc.  All JavaScript libraries for
                 3D&nbsp;visualization are relevant, important and welcome. 
             </li>
@@ -2714,9 +2718,9 @@
                 <br />
                 Thousands of inquiries have been posted for many years why the JSON specification forbids comments.
                 (Examples:
-                <a href="http://www.quora.com/How-do-I-write-comments-inside-a-JSON-document">Native comments are intentionally avoided by JSON specification</a>
+                <a href="http://www.quora.com/How-do-I-write-comments-inside-a-JSON-document" target="_blank">Native comments are intentionally avoided by JSON specification</a>
                 and
-                <a href="http://stackoverflow.com/questions/244777/can-i-use-comments-inside-a-json-file">Can I use comments inside a JSON file?</a>)
+                <a href="http://stackoverflow.com/questions/244777/can-i-use-comments-inside-a-json-file" target="_blank">Can I use comments inside a JSON file?</a>)
                 Without providing a rationale, the suggested JavaScript approach is to use <code>JSON.minify()</code> to strip comments.
                 <!-- TODO has there ever been justification for this JSON restriction? So far, none found. -->
                 <br/>
@@ -2739,14 +2743,14 @@
                 Loss of DOCTYPE from the originating XML document is a commonplace aspect for XSLT transformations,
                 and meanwhile does not appear to be needed in the JSON encoding.
                 If actually needed by someone,
-                <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation">X3D DOCTYPE validation</a>
+                <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation" target="_blank">X3D DOCTYPE validation</a>
                 information can be reconstructed simply by using the X3D version number.
             </li>
             <li> 
                 Not working but no longer needed: stylesheet option for suppression of default attribute values inserted by 
-                <a href="http://stackoverflow.com/questions/11749319/how-can-i-ignore-the-doctype-declaration-with-xsl">XML parser reading DOCTYPE</a>.
+                <a href="http://stackoverflow.com/questions/11749319/how-can-i-ignore-the-doctype-declaration-with-xsl" target="_blank">XML parser reading DOCTYPE</a>.
                 For processing with this stylesheet, the 
-                <a href="http://saxonica.com/documentation9.0/using-xsl/commandline.html">Saxon command-line option</a>
+                <a href="https://www.saxonica.com/documentation9.5/using-xsl/commandline.html" target="_blank">Saxon command-line option</a>
                 expand:off is applied (but apparently doesn't always work).
             </li>
         </ul>
@@ -3272,7 +3276,7 @@
          </blockquote>
         
         <blockquote>
-            Updated: 6 May 2017
+            Updated: 18 January 2018
         </blockquote>
 
     </body>
