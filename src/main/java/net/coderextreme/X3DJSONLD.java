@@ -1,3 +1,5 @@
+package net.coderextreme;
+
 import org.w3c.dom.*;
 import javax.json.*;
 import java.util.*;
@@ -214,30 +216,45 @@ public class X3DJSONLD {
 		return element;
 	}
 
-	public String loadX3DJS(Document document, JsonObject jsobj) {
+	public Document loadJsonIntoDocument(JsonObject jsobj) throws ParserConfigurationException {
+		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+		DocumentBuilder db = dbf.newDocumentBuilder();
+		Document document = db.newDocument();
 		Element element = CreateElement(document, "X3D", null);
 		elementSetAttribute(element,  "xmlns:xsd",  "http://www.w3.org/2001/XMLSchema-instance");
 		convertJsonObject(document, (JsonObject)jsobj.get("X3D"), "-", element, null);
 		// convertProperty(document, "X3D", (JsonObject)(jsobj.get("X3D")), element, null);
 		document.appendChild(element);
-		return serializeDOM(jsobj, document);
+		return document;
 	}
 
+	public JsonObject readJsonFile(File jsonFile) throws FileNotFoundException {
+		InputStream is = new FileInputStream(jsonFile);
+		JsonReader reader = Json.createReader(is);
+		JsonObject jsobj = reader.readObject();
+		return jsobj;
+	}
+
+	public String getX3DVersion(JsonObject jsobj) {
+		String version = "3.3";
+		if (jsobj != null) {
+			version = ((JsonObject)jsobj.get("X3D")).get("@version").toString();
+			version = version.substring(1, version.length()-1);
+		}
+		return version;
+	}
 	public static void main(String args[]) {
 		try {
-			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-			DocumentBuilder db = dbf.newDocumentBuilder();
-			Document doc = db.newDocument();
-			InputStream is = new FileInputStream(args[0]);
-			JsonReader reader = Json.createReader(is);
-			JsonObject jsobj = reader.readObject();
-			System.out.println(new X3DJSONLD().loadX3DJS(doc, jsobj));
+			X3DJSONLD loader = new X3DJSONLD();
+			JsonObject jsobj = loader.readJsonFile(new File(args[0]));
+			Document document = loader.loadJsonIntoDocument(jsobj);
+			System.out.println(loader.serializeDOM(loader.getX3DVersion(jsobj), document));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
-	public String fixXML(String xmlstr, JsonObject json) {
+	public String fixXML(String xmlstr, String version) {
 		// get rid of self-closing tags
 		xmlstr = xmlstr.replaceAll("(<[ \t]*)([A-Za-z0-9]+)([^>]*)/>", "$1$2$3></$2>");
 		// strip out namespace
@@ -265,33 +282,23 @@ public class X3DJSONLD {
 			xmlstr = xmlstr2.replaceAll("(<!\\[CDATA\\[(.|\n)*)&amp;((.|\n)*\\]\\]>)", "$1&$3");
 		} while (!xmlstr.equals(xmlstr2));
 
-		String version = "3.3";
-		if (json != null) {
-			version = ((JsonObject)json.get("X3D")).get("@version").toString();
-			version = version.substring(1, version.length()-1);
-		}
 		xmlstr = xmlstr.replace("?>", "?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D "+version+"//EN\" \"http://www.web3d.org/specifications/x3d-"+version+".dtd\">\n");
 
 		return xmlstr;
 	}
 
-	public String serializeDOM(JsonObject json, Document document) {
-		try {
-			TransformerFactory tFactory = TransformerFactory.newInstance();
-			Transformer transformer = tFactory.newTransformer();
-			transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-			transformer.setOutputProperty(OutputKeys.DOCTYPE_PUBLIC,"yes");
-			transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
-			DOMSource source = new DOMSource(document);
-			StringWriter writer = new StringWriter();
-			StreamResult result = new StreamResult(writer);
-			transformer.transform(source, result);
-			String xml = writer.toString();
-			xml = fixXML(xml, json);
-			return xml;
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return "";
+	public String serializeDOM(String x3dVersion, Document document) throws TransformerConfigurationException, TransformerException {
+		TransformerFactory tFactory = TransformerFactory.newInstance();
+		Transformer transformer = tFactory.newTransformer();
+		transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+		transformer.setOutputProperty(OutputKeys.DOCTYPE_PUBLIC,"yes");
+		transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
+		DOMSource source = new DOMSource(document);
+		StringWriter writer = new StringWriter();
+		StreamResult result = new StreamResult(writer);
+		transformer.transform(source, result);
+		String xml = writer.toString();
+		xml = fixXML(xml, x3dVersion);
+		return xml;
 	}
 }
