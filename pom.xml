@@ -80,6 +80,11 @@
 			<artifactId>X3DJSAIL</artifactId>
 			<version>3.3-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+		    <groupId>org.glassfish</groupId>
+		    <artifactId>javax.json</artifactId>
+		    <version>1.0.4</version>
+		</dependency>
 	</dependencies>
 
 	<build>
