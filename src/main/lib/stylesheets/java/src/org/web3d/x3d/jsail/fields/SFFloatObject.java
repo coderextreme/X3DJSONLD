@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -33,6 +33,7 @@ POSSIBILITY OF SUCH DAMAGE.
 package org.web3d.x3d.jsail.fields;
 
 import org.web3d.x3d.jsail.*;
+import org.web3d.x3d.jsail.Core.*;
 import org.web3d.x3d.sai.InvalidFieldValueException;
 
 /**
@@ -42,6 +43,7 @@ import org.web3d.x3d.sai.InvalidFieldValueException;
  * SFFloat is a single-precision floating-point type.
 <br><br>
 Related field object: {@link MFFloatObject}
+ * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#SFFloat">X3D Tooltips: type SFFloat</a>
 
  * 
 
@@ -193,7 +195,7 @@ method invocations on the same node object).
 	}
 	/**
 	 * Provides current value as a String.
-	 * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#type">X3D Tooltips: type</a>
+	 * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#SFFloat">X3D Tooltips: type SFFloat</a>
 	 * @return String version of the provided value
 	 */
 	@Override

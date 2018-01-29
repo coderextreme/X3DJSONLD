@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -54,7 +54,9 @@ import java.util.Arrays;
  *  <li> <i>Hint:</i> HAnimSegment displays geometry between parent HAnimJoint and sibling HAnimJoint nodes. </li> 
  *  <li> <i>Hint:</i> H-Anim Specification <br> <a href="http://www.web3d.org/documents/specifications/19774-1/V2.0/HAnim/HAnimArchitecture.html" target="_blank">http://www.web3d.org/documents/specifications/19774-1/V2.0/HAnim/HAnimArchitecture.html</a> </li> 
  *  <li> <i>Hint:</i> H-Anim Specification, Segment <br> <a href="http://www.web3d.org/documents/specifications/19774-1/V2.0/HAnim/ObjectInterfaces.html#Segment" target="_blank">http://www.web3d.org/documents/specifications/19774-1/V2.0/HAnim/ObjectInterfaces.html#Segment</a> </li> 
- *  <li> <i>Hint:</i>  include &amp;lt;component name='H-Anim' level='1'/&amp;gt; </li> 
+ *  <li> <i>Hint:</i> X3D for Advanced Modeling (X3D4AM) slideset <br> <a href="http://x3dgraphics.com/slidesets/X3dForAdvancedModeling/HumanoidAnimation.pdf" target="_blank">http://x3dgraphics.com/slidesets/X3dForAdvancedModeling/HumanoidAnimation.pdf</a> </li> 
+ *  <li> <i>Warning:</i> requires X3D profile='Full' or else include &amp;lt;component name='H-Anim' level='1'/&amp;gt; </li> 
+ *  <li> <i>Warning:</i>  the number of contained &amp;lt;HAnimSegment USE='*' containerField='segments'/&amp;gt; nodes at top level of HAnimHumanoid needs to match the number of corresponding HAnimJoint node instances found within the skeleton hierarchy. </li> 
  * </ul>
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
@@ -136,7 +138,8 @@ public interface HAnimSegment extends X3DGroupingNode
 	/**
 	 * Provide array of X3DNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) from inputOutput MFNode field <i>children</i>.
 	 * <br><br>
-	 * <i>Warning:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DChildNode.
+	 * <i>Warning:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DChildNode.
+	 * @see org.web3d.x3d.sai.Core.X3DChildNode
 	 * @return value of children field
 	 */
 	@Override
@@ -145,7 +148,7 @@ public interface HAnimSegment extends X3DGroupingNode
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>children</i>.
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DChildNode.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DChildNode.
 	 * @param newValue is new value for the children field.
 	 * @return {@link HAnimSegment} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -155,24 +158,31 @@ public interface HAnimSegment extends X3DGroupingNode
 	/**
 	 * Add array of children nodes to array of existing nodes (if any).
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DChildNode.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DChildNode.
 	 * @param newValue is new value array to be appended the children field.
 	 */
 	@Override
 	public void addChildren(X3DNode[] newValue); // acceptable node types: X3DChildNode
 	/**
 	 * Set single children node, replacing prior array of existing nodes (if any).
-	 * @param newValue is new node for the children field.
+	 * @param newValue is new node for the children field
 	 */
 	public void setChildren(X3DNode newValue); // acceptable node types: X3DChildNode
 	/**
 	 * Provide X3DCoordinateNode instance (using a properly typed node) from inputOutput SFNode field <i>coord</i>.
+	 * <br><br>
+	 * <i>Tooltip:</i> [X3DCoordinateNode] the coord field is used for HAnimSegment objects that have deformable meshes and shall contain coordinates referenced from the IndexedFaceSet for the paarent HAnimSegment object. The coordinates are given the same name as the HAnim Segment object, but with "_coords" appended to the name (e.g., "skull_coords").
+ * <ul>
+ *  <li> <i> Warning:</i>  index values for HanimHumanoid skin IndexedFaceSet, skinCoord and skinNormal nodes must all be consistently defined together with HAnimJoint HAnimSegment and HAnimDisplacer nodes for proper skin animation. </li> 
+ * </ul>
 	 * @return value of coord field
 	 */
 	public X3DCoordinateNode getCoord(); // acceptable node types: X3DCoordinateNode
 
 	/**
 	 * Assign X3DCoordinateNode instance (using a properly typed node) to inputOutput SFNode field <i>coord</i>.
+	 * <br><br>
+	 * <i>Tooltip:</i> [X3DCoordinateNode] the coord field is used for HAnimSegment objects that have deformable meshes and shall contain coordinates referenced from the IndexedFaceSet for the paarent HAnimSegment object. The coordinates are given the same name as the HAnim Segment object, but with "_coords" appended to the name (e.g., "skull_coords"). Warning: index values for HanimHumanoid skin IndexedFaceSet, skinCoord and skinNormal nodes must all be consistently defined together with HAnimJoint HAnimSegment and HAnimDisplacer nodes for proper skin animation.
 	 * @param newValue is new value for the coord field.
 	 * @return {@link HAnimSegment} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -181,7 +191,13 @@ public interface HAnimSegment extends X3DGroupingNode
 	/**
 	 * Provide array of X3DNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) from inputOutput MFNode field <i>displacers</i>.
 	 * <br><br>
-	 * <i>Warning:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to HAnimDisplacer.
+	 * <i>Tooltip:</i> HAnimDisplacer] the displacers field stores the Displacer objects for a particular Segment object.
+ * <ul>
+ *  <li> <i> Warning:</i>  index values for HanimHumanoid skin IndexedFaceSet, skinCoord and skinNormal nodes must all be consistently defined together with HAnimJoint HAnimSegment and HAnimDisplacer nodes for proper skin animation. </li> 
+ * </ul>
+	 * <br><br>
+	 * <i>Warning:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to HAnimDisplacer.
+	 * @see org.web3d.x3d.jsail.HAnim.HAnimDisplacerObject
 	 * @return value of displacers field
 	 */
 	public X3DNode[] getDisplacers(); // acceptable node types: HAnimDisplacer
@@ -189,7 +205,9 @@ public interface HAnimSegment extends X3DGroupingNode
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>displacers</i>.
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to HAnimDisplacer.
+	 * <i>Tooltip:</i> HAnimDisplacer] the displacers field stores the Displacer objects for a particular Segment object. Warning: index values for HanimHumanoid skin IndexedFaceSet, skinCoord and skinNormal nodes must all be consistently defined together with HAnimJoint HAnimSegment and HAnimDisplacer nodes for proper skin animation.
+	 * <br><br>
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to HAnimDisplacer.
 	 * @param newValue is new value for the displacers field.
 	 * @return {@link HAnimSegment} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -198,13 +216,13 @@ public interface HAnimSegment extends X3DGroupingNode
 	/**
 	 * Add array of child displacers nodes to array of existing nodes (if any).
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to HAnimDisplacer.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to HAnimDisplacer.
 	 * @param newValue is new value array to be appended the displacers field.
 	 */
 	public void addDisplacers(X3DNode[] newValue); // acceptable node types: HAnimDisplacer
 	/**
 	 * Set single child displacers node, replacing prior array of existing nodes (if any).
-	 * @param newValue is new node for the displacers field.
+	 * @param newValue is new node for the displacers field
 	 */
 	public void setDisplacers(X3DNode newValue); // acceptable node types: HAnimDisplacer
 	/**
@@ -227,7 +245,7 @@ public interface HAnimSegment extends X3DGroupingNode
 
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @return value of metadata field
 	 */
 	@Override
@@ -235,7 +253,7 @@ public interface HAnimSegment extends X3DGroupingNode
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @param newValue is new value for the metadata field.
 	 * @return {@link HAnimSegment} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -265,6 +283,7 @@ public interface HAnimSegment extends X3DGroupingNode
 	 * <br><br>
 	 * <i>Tooltip:</i> Unique name attribute must be defined so that HAnimSegment node can be identified at run time for animation purposes.
  * <ul>
+ *  <li> <i>Warning:</i> name prefix must match ancestor HAnimHumanoid name followed by underscore character, for example 'Nancy_' prepended before location name. </li> 
  *  <li> <i>Warning:</i> name is not included if this instance is a USE node. Examples: sacrum pelvis l_thigh l_calf etc. as listed in H-Anim Specification. </li> 
  *  <li> <i>Hint:</i> for abitrary humanoids, HAnimSegment name can describe geometry between parent HAnimJoint and sibling HAnimJoint nodes (for example LeftHip_to_LeftKnee). </li> 
  *  <li> <i>Hint:</i> H-Anim Humanoid Segment Names H-Anim Specification, Humanoid Joint-Segment Hierarchy <br> <a href="http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/tables/HAnimSegmentNames19774V1.0.txt" target="_blank">http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/tables/HAnimSegmentNames19774V1.0.txt</a> </li> 
@@ -279,8 +298,8 @@ public interface HAnimSegment extends X3DGroupingNode
 	/**
 	 * Assign String enumeration value ("sacrum"|"pelvis"|"l_thigh"|"l_calf"|"l_hindfoot"|"l_midproximal"|"l_middistal"|"l_forefoot"|"r_thigh"|"r_calf"|"r_hindfoot"|"r_midproximal"|"r_middistal"|"r_forefoot"|"l5"|"l4"|"l3"|"l2"|"l1"|"t12"|"t11"|"t10"|"t9"|"t8"|"t7"|"t6"|"t5"|"t4"|"t3"|"t2"|"t1"|"c7"|"c6"|"c5"|"c4"|"c3"|"c2"|"c1"|"skull"|"l_eyelid"|"r_eyelid"|"l_eyeball"|"r_eyeball"|"l_eyebrow"|"r_eyebrow"|"jaw"|"l_clavicle"|"l_scapula"|"l_upperarm"|"l_forearm"|"l_hand"|"l_thumb_metacarpal"|"l_thumb_proximal"|"l_thumb_distal"|"l_index_metacarpal"|"l_index_proximal"|"l_index_middle"|"l_index_distal"|"l_middle_metacarpal"|"l_middle_proximal"|"l_middle_middle"|"l_middle_distal"|"l_ring_metacarpal"|"l_ring_proximal"|"l_ring_middle"|"l_ring_distal"|"l_pinky_metacarpal"|"l_pinky_proximal"|"l_pinky_middle"|"l_pinky_distal"|"r_clavicle"|"r_scapula"|"r_upperarm"|"r_forearm"|"r_hand"|"r_thumb_metacarpal"|"r_thumb_proximal"|"r_thumb_distal"|"r_index_metacarpal"|"r_index_proximal"|"r_index_middle"|"r_index_distal"|"r_middle_metacarpal"|"r_middle_proximal"|"r_middle_middle"|"r_middle_distal"|"r_ring_metacarpal"|"r_ring_proximal"|"r_ring_middle"|"r_ring_distal"|"r_pinky_metacarpal"|"r_pinky_proximal"|"r_pinky_middle"|"r_pinky_distal") ['sacrum'|'pelvis'|'l_thigh'|'l_calf'|'l_hindfoot'|'l_midproximal'|'l_middistal'|'l_forefoot'|'r_thigh'|'r_calf'|'r_hindfoot'|'r_midproximal'|'r_middistal'|'r_forefoot'|'l5'|'l4'|'l3'|'l2'|'l1'|'t12'|'t11'|'t10'|'t9'|'t8'|'t7'|'t6'|'t5'|'t4'|'t3'|'t2'|'t1'|'c7'|'c6'|'c5'|'c4'|'c3'|'c2'|'c1'|'skull'|'l_eyelid'|'r_eyelid'|'l_eyeball'|'r_eyeball'|'l_eyebrow'|'r_eyebrow'|'jaw'|'l_clavicle'|'l_scapula'|'l_upperarm'|'l_forearm'|'l_hand'|'l_thumb_metacarpal'|'l_thumb_proximal'|'l_thumb_distal'|'l_index_metacarpal'|'l_index_proximal'|'l_index_middle'|'l_index_distal'|'l_middle_metacarpal'|'l_middle_proximal'|'l_middle_middle'|'l_middle_distal'|'l_ring_metacarpal'|'l_ring_proximal'|'l_ring_middle'|'l_ring_distal'|'l_pinky_metacarpal'|'l_pinky_proximal'|'l_pinky_middle'|'l_pinky_distal'|'r_clavicle'|'r_scapula'|'r_upperarm'|'r_forearm'|'r_hand'|'r_thumb_metacarpal'|'r_thumb_proximal'|'r_thumb_distal'|'r_index_metacarpal'|'r_index_proximal'|'r_index_middle'|'r_index_distal'|'r_middle_metacarpal'|'r_middle_proximal'|'r_middle_middle'|'r_middle_distal'|'r_ring_metacarpal'|'r_ring_proximal'|'r_ring_middle'|'r_ring_distal'|'r_pinky_metacarpal'|'r_pinky_proximal'|'r_pinky_middle'|'r_pinky_distal'] to inputOutput SFString field named <i>name</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> Unique name attribute must be defined so that HAnimSegment node can be identified at run time for animation purposes. Warning: name is not included if this instance is a USE node. Examples: sacrum pelvis l_thigh l_calf etc. as listed in H-Anim Specification. Hint: for abitrary humanoids, HAnimSegment name can describe geometry between parent HAnimJoint and sibling HAnimJoint nodes (for example LeftHip_to_LeftKnee). Hint: H-Anim Humanoid Segment Names H-Anim Specification, Humanoid Joint-Segment Hierarchy http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/tables/HAnimSegmentNames19774V1.0.txt Hint: H-Anim Specification, Humanoid Joint-Segment Hierarchy http://www.web3d.org/documents/specifications/19774-1/V2.0/HAnim/concepts.html#Hierarchy Hint: well-defined names can simplify design and debugging through improved author understanding. Hint: X3D Scene Authoring Hints, Naming Conventions http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions
-	 * <br><br>@see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions">X3D Scene Authoring Hints: Naming Conventions</a>
+	 * <i>Tooltip:</i> Unique name attribute must be defined so that HAnimSegment node can be identified at run time for animation purposes. Warning: name prefix must match ancestor HAnimHumanoid name followed by underscore character, for example 'Nancy_' prepended before location name. Warning: name is not included if this instance is a USE node. Examples: sacrum pelvis l_thigh l_calf etc. as listed in H-Anim Specification. Hint: for abitrary humanoids, HAnimSegment name can describe geometry between parent HAnimJoint and sibling HAnimJoint nodes (for example LeftHip_to_LeftKnee). Hint: H-Anim Humanoid Segment Names H-Anim Specification, Humanoid Joint-Segment Hierarchy http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/tables/HAnimSegmentNames19774V1.0.txt Hint: H-Anim Specification, Humanoid Joint-Segment Hierarchy http://www.web3d.org/documents/specifications/19774-1/V2.0/HAnim/concepts.html#Hierarchy Hint: well-defined names can simplify design and debugging through improved author understanding. Hint: X3D Scene Authoring Hints, Naming Conventions http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions
+	 * <br><br>@see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions" target="_blank">X3D Scene Authoring Hints: Naming Conventions</a>
 	 * @param newValue is new value for the name field.
 	 * @return {@link HAnimSegment} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */

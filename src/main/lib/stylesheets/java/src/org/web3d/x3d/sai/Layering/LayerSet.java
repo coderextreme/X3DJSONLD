@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -94,7 +94,8 @@ public interface LayerSet extends X3DNode
  *  <li> <i>Hint:</i>  nodes that are not part of a layer are considered to be in layer 0. </li> 
  * </ul>
 	 * <br><br>
-	 * <i>Warning:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DLayerNode.
+	 * <i>Warning:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DLayerNode.
+	 * @see org.web3d.x3d.sai.Layering.X3DLayerNode
 	 * @return value of layers field
 	 */
 	public X3DNode[] getLayers(); // acceptable node types: X3DLayerNode
@@ -104,7 +105,7 @@ public interface LayerSet extends X3DNode
 	 * <br><br>
 	 * <i>Tooltip:</i> [X3DLayerNode] The layers list defines a list of Layer nodes that contain the constituent parts of the scene. Each layer is assigned an ordinal number depending on its position in this contained list of nodes. Hint: Ordinal values start with the numeral 1 representing the first item in the list. Hint: nodes that are not part of a layer are considered to be in layer 0.
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DLayerNode.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DLayerNode.
 	 * @param newValue is new value for the layers field.
 	 * @return {@link LayerSet} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -113,18 +114,18 @@ public interface LayerSet extends X3DNode
 	/**
 	 * Add array of child layers nodes to array of existing nodes (if any).
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DLayerNode.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DLayerNode.
 	 * @param newValue is new value array to be appended the layers field.
 	 */
 	public void addLayers(X3DNode[] newValue); // acceptable node types: X3DLayerNode
 	/**
 	 * Set single child layers node, replacing prior array of existing nodes (if any).
-	 * @param newValue is new node for the layers field.
+	 * @param newValue is new node for the layers field
 	 */
 	public void setLayers(X3DNode newValue); // acceptable node types: X3DLayerNode
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @return value of metadata field
 	 */
 	@Override
@@ -132,7 +133,7 @@ public interface LayerSet extends X3DNode
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @param newValue is new value for the metadata field.
 	 * @return {@link LayerSet} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */

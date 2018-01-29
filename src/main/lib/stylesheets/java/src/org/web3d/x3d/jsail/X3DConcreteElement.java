@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -90,9 +90,9 @@ public abstract class X3DConcreteElement
 
 	/**
 	 * Find object reference to ancestor Scene element, assumes this object is an attached child.
-	 * @see #hasAncestorSceneObject()
+	 * @see X3DConcreteElement#hasAncestorSceneObject()
 	 * @see #hasAncestorX3DObject()
-	 * @see #findAncestorX3DObject()
+	 * @see X3DConcreteElement#findAncestorX3DObject()
 	 * @return ancestor Scene child reference if attached, otherwise null
 	 */
 	public SceneObject findAncestorSceneObject()
@@ -110,9 +110,9 @@ public abstract class X3DConcreteElement
 	}
 	/**
 	 * Determine whether ancestor Scene element is found, meaning this object is an attached child.
-	 * @see #findAncestorSceneObject()
+	 * @see X3DConcreteElement#hasAncestorSceneObject()
 	 * @see #hasAncestorX3DObject()
-	 * @see #findAncestorX3DObject()
+	 * @see X3DConcreteElement#findAncestorX3DObject()
 	 * @return whether ancestor Scene node is found
 	 */
 	public boolean hasAncestorSceneObject()
@@ -171,8 +171,8 @@ public abstract class X3DConcreteElement
 	/**
 	 * Find object reference to ancestor X3D element, if this node or statement is part of an X3DObject model.
 	 * @see #hasAncestorX3DObject()
-	 * @see #hasAncestorSceneObject()
-	 * @see #findAncestorSceneObject()
+	 * @see X3DConcreteElement#hasAncestorSceneObject()
+	 * @see X3DConcreteElement#hasAncestorSceneObject()
 	 * @return ancestor X3D reference if attached, otherwise null
 	 */	
 	public X3DObject findAncestorX3DObject()
@@ -190,9 +190,9 @@ public abstract class X3DConcreteElement
 	}
 	/**
 	 * Determine whether ancestor X3D element is found, meaning this object is an attached child.
-	 * @see #findAncestorX3DObject()
-	 * @see #hasAncestorSceneObject()
-	 * @see #findAncestorSceneObject()
+	 * @see X3DConcreteElement#findAncestorX3DObject()
+	 * @see X3DConcreteElement#hasAncestorSceneObject()
+	 * @see X3DConcreteElement#hasAncestorSceneObject()
 	 * @return whether ancestor X3D element is found
 	 */
 	public boolean hasAncestorX3DObject()
@@ -233,13 +233,17 @@ public abstract class X3DConcreteElement
 	 * Recursive method to provide object reference to node or statement by name attribute, if found as part of this element or in a contained element.
 	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, HAnim nodes.
 	 * <br ><br >
+	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
+	 * <br ><br >
+	 * @see #findNodeByDEF(String)
+	 * @see X3DConcreteElement#hasAncestorSceneObject()
+	 * @see org.web3d.x3d.jsail.X3DConcreteElement#findAncestorX3DObject()
+	 * @see metaObject
+	 * @see MetadataStringObject
 	 * <i>Warning:</i> more than one element may be found that has the same name, this method does not handle that case.
 	 * @param nameValue is value of the name field being searched for in this element and child elements(if any)
 	 * @param elementName identifies the element of interest (meta MetadataString ProtoDeclare CADassembly ProtoInstance HAnimHumanoid etc.)
 	 * @return object reference to found element, null otherwise
-	 * @see #findNodeByDEF(String)
-	 * @see metaObject
-	 * @see MetadataStringObject
 	 */
 	abstract public X3DConcreteElement findElementByNameValue(String nameValue, String elementName); // required interface
 										
@@ -247,20 +251,28 @@ public abstract class X3DConcreteElement
 	 * Recursive method to provide object reference to node or statement by name attribute, if found as part of this element or in a contained element.
 	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, HAnim nodes.
 	 * <br ><br >
+	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
+	 * <br ><br >
 	 * <i>Warning:</i> more than one element may be found that has the same name, this method does not handle that case.
+	 * @see #findNodeByDEF(String)
+	 * @see X3DConcreteElement#hasAncestorSceneObject()
+	 * @see org.web3d.x3d.jsail.X3DConcreteElement#findAncestorX3DObject()
 	 * @param nameValue is value of the name field being searched for in this element and child elements(if any)
 	 * @return object reference to found element, null otherwise
-	 * @see #findNodeByDEF(String)
 	 */
 	abstract public X3DConcreteElement findElementByNameValue(String nameValue); // required interface
 										
 	/**
 	 * Recursive method to provide object reference to node by DEF, if found as this node or in a contained node.
 	 * <br ><br >
+	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
+	 * <br ><br >
 	 * <i>Warning:</i> more than one element may be found that has the same DEF, this method does not handle that case.
+	 * @see #findElementByNameValue(String)
+	 * @see X3DConcreteElement#hasAncestorSceneObject()
+	 * @see org.web3d.x3d.jsail.X3DConcreteElement#findAncestorX3DObject()
 	 * @param DEFvalue is value of the name field being searched for in this element and child elements(if any)
 	 * @return object reference to found node, null otherwise
-	 * @see #findElementByNameValue(String)
 	 */
 	abstract public X3DConcreteNode findNodeByDEF(String DEFvalue); // required interface
 										
@@ -817,7 +829,11 @@ setAttribute method invocations).
 	}
 				
 	/**
-	 * Recursive method to provide X3D string serialization of this model subgraph.
+	 * Recursive method to provide X3D string serialization of this model subgraph, utilizing XML encoding and conforming to X3D Canonical Form.
+	 * @see X3DObject#FILE_EXTENSION_X3D
+	 * @see X3DObject#FILE_EXTENSION_XML
+	 * @see <a href="http://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/X3D_XML.html">X3D XML Encoding</a>
+	 * @see <a href="http://www.web3d.org/documents/specifications/19776-3/V3.3/Part03/concepts.html#X3DCanonicalForm">X3D Compressed Binary Encoding: X3D Canonical Form</a>
 	 * @return X3D string
 	 */
 	public String toStringX3D()
@@ -826,15 +842,21 @@ setAttribute method invocations).
 	}
 	
 	/**
-	 * Recursive method to provide X3D string serialization of this model subgraph.
+	 * Recursive method to provide X3D string serialization of this model subgraph, utilizing XML encoding and conforming to X3D Canonical Form.
 	 * @param indentLevel number of levels of indentation for this element
+	 * @see X3DObject#FILE_EXTENSION_X3D
+	 * @see X3DObject#FILE_EXTENSION_XML
+	 * @see <a href="http://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/X3D_XML.html">X3D XML Encoding</a>
+	 * @see <a href="http://www.web3d.org/documents/specifications/19776-3/V3.3/Part03/concepts.html#X3DCanonicalForm">X3D Compressed Binary Encoding: X3D Canonical Form</a>
 	 * @return X3D string
 	 */
 	abstract public String toStringX3D(int indentLevel); // must be overridden
 				
 	/**
 	 * Recursive method to provide ClassicVRML string serialization.
+	 * @see X3DObject#FILE_EXTENSION_CLASSICVRML
 	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html#VRML">X3D Resources: Virtual Reality Modeling Language (VRML) 97</a>
+	 * @see <a href="http://www.web3d.org/documents/specifications/19776-2/V3.3/Part02/X3D_ClassicVRML.html">Extensible 3D (X3D) encodings Part 2: Classic VRML encoding</a>
 	 * @see <a href="http://www.web3d.org/documents/specifications/19776-2/V3.3/Part02/grammar.html">Extensible 3D (X3D) encodings Part 2: Classic VRML encoding, Annex A: Grammar</a>
 	 * @return ClassicVRML string
 	 */
@@ -846,7 +868,9 @@ setAttribute method invocations).
 	/**
 	 * Recursive method to provide ClassicVRML string serialization.
 	 * @param indentLevel number of levels of indentation for this element
+	 * @see X3DObject#FILE_EXTENSION_CLASSICVRML
 	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html#VRML">X3D Resources: Virtual Reality Modeling Language (VRML) 97</a>
+	 * @see <a href="http://www.web3d.org/documents/specifications/19776-2/V3.3/Part02/X3D_ClassicVRML.html">Extensible 3D (X3D) encodings Part 2: Classic VRML encoding</a>
 	 * @see <a href="http://www.web3d.org/documents/specifications/19776-2/V3.3/Part02/grammar.html">Extensible 3D (X3D) encodings Part 2: Classic VRML encoding, Annex A: Grammar</a>
 	 * @return ClassicVRML string
 	 */
@@ -854,6 +878,7 @@ setAttribute method invocations).
 				
 	/**
 	 * Recursive method to provide VRML97 string serialization.
+	 * @see X3DObject#FILE_EXTENSION_VRML97
 	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html#VRML">X3D Resources: Virtual Reality Modeling Language (VRML) 97</a>
 	 * @see <a href="http://www.web3d.org/documents/specifications/14772/V2.0/index.html">Virtual Reality Modeling Language (VRML) 97 specification</a>
 	 * @see <a href="http://www.web3d.org/documents/specifications/14772-1/V2.1/index.html">VRML 97 v2.1 Amendment</a>
@@ -867,6 +892,7 @@ setAttribute method invocations).
 	/**
 	 * Recursive method to provide VRML97 string serialization.
 	 * @param indentLevel number of levels of indentation for this element
+	 * @see X3DObject#FILE_EXTENSION_VRML97
 	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html#VRML">X3D Resources: Virtual Reality Modeling Language (VRML) 97</a>
 	 * @see <a href="http://www.web3d.org/documents/specifications/14772/V2.0/index.html">Virtual Reality Modeling Language (VRML) 97 specification</a>
 	 * @see <a href="http://www.web3d.org/documents/specifications/14772-1/V2.1/index.html">VRML 97 v2.1 Amendment</a>

@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -244,7 +244,8 @@ public interface ParticleSystem extends X3DShapeNode
 	 * <br><br>
 	 * <i>Tooltip:</i> [X3DGeometryNode] The geometry node provides geometry used for each particle when geometryType=GEOMETRY.
  * <ul>
- *  <li> <i> Hint:</i>  include &amp;lt;component name='Geospatial' level='1'/&amp;gt;. </li> 
+ *  <li> <i>Hint:</i> X3D for Advanced Modeling (X3D4AM) slideset <br> <a href="http://x3dgraphics.com/slidesets/X3dForAdvancedModeling/GeospatialComponentX3dEarth.pdf" target="_blank">http://x3dgraphics.com/slidesets/X3dForAdvancedModeling/GeospatialComponentX3dEarth.pdf</a> </li> 
+ *  <li> <i>Warning:</i>  requires X3D profile='Full' or else include &amp;lt;component name='Geospatial' level='1'/&amp;gt; </li> 
  * </ul>
 	 * @return value of geometry field
 	 */
@@ -254,7 +255,7 @@ public interface ParticleSystem extends X3DShapeNode
 	/**
 	 * Assign X3DGeometryNode instance (using a properly typed node) to inputOutput SFNode field <i>geometry</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> [X3DGeometryNode] The geometry node provides geometry used for each particle when geometryType=GEOMETRY. Hint: include &lt;component name='Geospatial' level='1'/&gt;.
+	 * <i>Tooltip:</i> [X3DGeometryNode] The geometry node provides geometry used for each particle when geometryType=GEOMETRY. Hint: X3D for Advanced Modeling (X3D4AM) slideset http://x3dgraphics.com/slidesets/X3dForAdvancedModeling/GeospatialComponentX3dEarth.pdf Warning: requires X3D profile='Full' or else include &lt;component name='Geospatial' level='1'/&gt;
 	 * @param newValue is new value for the geometry field.
 	 * @return {@link ParticleSystem} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -263,12 +264,27 @@ public interface ParticleSystem extends X3DShapeNode
 
 	/**
 	 * Provide String enumeration value ['LINE'|'POINT'|'QUAD'|'SPRITE'|'TRIANGLE'|'GEOMETRY'] from initializeOnly SFString field named <i>geometryType</i>.
+	 * <br><br>
+	 * <i>Tooltip:</i> specifies type of geometry used to represent individual particles. Typically, a particle is calculated as point in space at which the geometry is placed. Changing the value of the geometry field or the definition of the geometry node shall be applied during current computation of the next frame to be rendered.
+ * <ul>
+ *  <li> <i>Hint:</i> LINE means that a line is drawn along the particle's current velocity vector, for this frame, centered about the particle's position. The length of the line is specified by the particle's height from the particleSize field value. </li> 
+ *  <li> <i>Hint:</i> POINT means that a point geometry is rendered at the particle's position. </li> 
+ *  <li> <i>Hint:</i> QUAD means that a 2D quad is rendered aligned in the local coordinate space of the particle system with the face normal pointing along the positive Z axis. Individual quads are not aligned to the user's eye position but are affected in depth by the physics model. The particle's position is at the center of the quad. </li> 
+ *  <li> <i>Hint:</i> SPRITE means that a point sprite that uses a 2D point position to locate a screen-aligned quad at the center of the particle's location is rendered. </li> 
+ *  <li> <i>Hint:</i> TRIANGLE means that a 2D quad is rendered using a pair of triangles aligned in the local coordinate space of the particle system with the face normal pointing along the positive Z axis. Individual triangles are not aligned to the user's eye position, but are affected in depth by the physics model. The particle's position is at the center of the triangle. </li> 
+ *  <li> <i>Hint:</i> GEOMETRY means that the geometry specified by the geometry field is rendered for each particle using the local coordinate system. </li> 
+ *  <li> <i>Warning:</i> do not wrap extra quotation marks around these SFString enumeration values, since "quotation" "marks" are only used for MFString values. </li> 
+ *  <li> <i>Hint:</i> X3D for Advanced Modeling (X3D4AM) slideset <br> <a href="http://x3dgraphics.com/slidesets/X3dForAdvancedModeling/GeospatialComponentX3dEarth.pdf" target="_blank">http://x3dgraphics.com/slidesets/X3dForAdvancedModeling/GeospatialComponentX3dEarth.pdf</a> </li> 
+ *  <li> <i>Warning:</i>  requires X3D profile='Full' or else include &amp;lt;component name='Geospatial' level='1'/&amp;gt; </li> 
+ * </ul>
 	 * @return value of geometryType field
 	 */
 	public String getGeometryType();
 
 	/**
 	 * Assign String enumeration value ("LINE"|"POINT"|"QUAD"|"SPRITE"|"TRIANGLE"|"GEOMETRY") ['LINE'|'POINT'|'QUAD'|'SPRITE'|'TRIANGLE'|'GEOMETRY'] to initializeOnly SFString field named <i>geometryType</i>.
+	 * <br><br>
+	 * <i>Tooltip:</i> specifies type of geometry used to represent individual particles. Typically, a particle is calculated as point in space at which the geometry is placed. Changing the value of the geometry field or the definition of the geometry node shall be applied during current computation of the next frame to be rendered. Hint: LINE means that a line is drawn along the particle's current velocity vector, for this frame, centered about the particle's position. The length of the line is specified by the particle's height from the particleSize field value. Hint: POINT means that a point geometry is rendered at the particle's position. Hint: QUAD means that a 2D quad is rendered aligned in the local coordinate space of the particle system with the face normal pointing along the positive Z axis. Individual quads are not aligned to the user's eye position but are affected in depth by the physics model. The particle's position is at the center of the quad. Hint: SPRITE means that a point sprite that uses a 2D point position to locate a screen-aligned quad at the center of the particle's location is rendered. Hint: TRIANGLE means that a 2D quad is rendered using a pair of triangles aligned in the local coordinate space of the particle system with the face normal pointing along the positive Z axis. Individual triangles are not aligned to the user's eye position, but are affected in depth by the physics model. The particle's position is at the center of the triangle. Hint: GEOMETRY means that the geometry specified by the geometry field is rendered for each particle using the local coordinate system. Warning: do not wrap extra quotation marks around these SFString enumeration values, since "quotation" "marks" are only used for MFString values. Hint: X3D for Advanced Modeling (X3D4AM) slideset http://x3dgraphics.com/slidesets/X3dForAdvancedModeling/GeospatialComponentX3dEarth.pdf Warning: requires X3D profile='Full' or else include &lt;component name='Geospatial' level='1'/&gt;
 	 * @param newValue is new value for the geometryType field.
 	 * @return {@link ParticleSystem} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -322,7 +338,7 @@ public interface ParticleSystem extends X3DShapeNode
 
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @return value of metadata field
 	 */
 	@Override
@@ -330,7 +346,7 @@ public interface ParticleSystem extends X3DShapeNode
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @param newValue is new value for the metadata field.
 	 * @return {@link ParticleSystem} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -382,7 +398,8 @@ public interface ParticleSystem extends X3DShapeNode
 	 * <i>Tooltip:</i>  [X3DParticlePhysicsModelNode] After being created, the individual particles are then manipulated according to the physics model(s) specified in the physics field.  * <br>
 
 	 * <br><br>
-	 * <i>Warning:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DParticlePhysicsModelNode.
+	 * <i>Warning:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DParticlePhysicsModelNode.
+	 * @see org.web3d.x3d.sai.ParticleSystems.X3DParticlePhysicsModelNode
 	 * @return value of physics field
 	 */
 	public X3DNode[] getPhysics(); // acceptable node types: X3DParticlePhysicsModelNode
@@ -392,7 +409,7 @@ public interface ParticleSystem extends X3DShapeNode
 	 * <br><br>
 	 * <i>Tooltip:</i> [X3DParticlePhysicsModelNode] After being created, the individual particles are then manipulated according to the physics model(s) specified in the physics field.
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DParticlePhysicsModelNode.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DParticlePhysicsModelNode.
 	 * @param newValue is new value for the physics field.
 	 * @return {@link ParticleSystem} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -401,13 +418,13 @@ public interface ParticleSystem extends X3DShapeNode
 	/**
 	 * Add array of child physics nodes to array of existing nodes (if any).
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DParticlePhysicsModelNode.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DParticlePhysicsModelNode.
 	 * @param newValue is new value array to be appended the physics field.
 	 */
 	public void addPhysics(X3DNode[] newValue); // acceptable node types: X3DParticlePhysicsModelNode
 	/**
 	 * Set single child physics node, replacing prior array of existing nodes (if any).
-	 * @param newValue is new node for the physics field.
+	 * @param newValue is new node for the physics field
 	 */
 	public void setPhysics(X3DNode newValue); // acceptable node types: X3DParticlePhysicsModelNode
 	/**

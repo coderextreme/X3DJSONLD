@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- You may freely edit this file. See commented blocks below for -->
+<!-- some examples of how to customize the build. -->
+<!-- (If you delete it and reopen the project it will be recreated.) -->
+<!-- By default, only the Clean and Build commands use this build script. -->
+<!-- Commands such as Run, Debug, and Test only use this build script if -->
+<!-- the Compile on Save feature is turned off for the project. -->
+<!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
+<!-- in the project's Project Properties dialog box.-->
+
+<!--
+  Copyright (c) 2000-2018 held by the author(s).  All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+
+    * Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer
+      in the documentation and/or other materials provided with the
+      distribution.
+    * Neither the names of the Naval Postgraduate School (NPS)
+      Modeling Virtual Environments and Simulation (MOVES) Institute
+      (http://www.nps.edu and http://www.MovesInstitute.org)
+      nor the names of its contributors may be used to endorse or
+      promote products derived from this software without specific
+      prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<project name="X3D Nashorn SAI Library" default="default" basedir=".">
+    <description>Builds, tests, and runs the X3D Nashorn SAI Library project.</description>
+	
+    <property name="javac.verbose"            value="-verbose"/>
+    <property name="fork"                     value="true"/>
+
+    <!-- java jvmarg parameters ignored on server unless forked -->
+    <property name="fork"                value="true"/>    <!-- note that Netbeans default path is built in and has to be overridden by going to     -->
+    
+	<!-- Netbeans > Tools > Options > Java > Ant                                              -->
+    <!-- and then pointing to C:\apache-ant-1.9.3 (or somesuch locally installed directory)   -->
+
+    <!-- ANT Contrib archive at http://sourceforge.net/projects/ant-contrib/files    (v1.0b3) -->
+    <!-- must have ant-contrib-1.0b3.jar in ANT_HOME/lib (or else specify path)               -->
+    <taskdef resource="net/sf/antcontrib/antcontrib.properties"/>
+    
+    <!-- jslint4java: a Java wrapper around Douglas Crockford's jslint tool. -->
+    <!-- https://code.google.com/p/jslint4java -->
+    <!-- http://docs.jslint4java.googlecode.com/git/2.0.5/ant.html -->
+	<!-- http://happygiraffe.github.io/jslint4java/cli.html -->
+    <!-- http://kaatz-media.com/2011/10/06/uberprufen-von-javascript-dateien-ant-und-jslint-jenkins-using-ant-on-jenkins-for-jslint -->
+    <!-- TODO bug report: https://code.google.com/p/jslint4java/issues/detail?id=101 -->
+    <property name="jslint.jar"     value="../../lib/jslint4java-2.0.5.jar"/>
+    <taskdef name="jslint" 
+        classname="com.googlecode.jslint4java.ant.JSLintTask"
+        classpath="${jslint.jar}" />
+    <property name="jslint.options" value="white"/>
+    <!-- unused options: ass,bitwise,browser,closure,continue,debug,devel,eqeq,es5,evil,forin,indent,maxerr,maxlen,newcap,node,nomen,passfail,plusplus,predef,properties,regexp,rhino,sloppy,stupid,sub,todo,unparam,vars,warnings, -->
+
+	<!-- https://github.com/fge/json-schema-validator -->
+	<!-- http://stackoverflow.com/questions/22867521/how-to-run-json-schema-validator-from-the-command-line -->
+	<!-- fix double-hyphen switch when running on command line: -->
+	<!-- java -jar lib/json-schema-validator-2.2.6-lib.jar - -help -->
+	<!-- java -jar lib/json-schema-validator-2.2.6-lib.jar - -syntax ../../specifications/x3d-3.3-JSONSchema.json -->
+	<!-- java -jar lib/json-schema-validator-2.2.6-lib.jar ../../specifications/x3d-3.3-JSONSchema.json test/HelloWorld.json -->
+	<property name="json-schema-validator.jar"     value="../../lib/json-schema-validator-2.2.6-lib.jar"/>
+
+    <!-- http://stackoverflow.com/questions/919692/how-to-execute-xslt-2-0-with-ant -->
+    <property name="saxon.dir"               value="../lib" description="relative path"/>
+    <property name="saxon.jar"               value="saxon9he.jar"/>
+
+    <!-- http://openexi.sourceforge.net -->
+    <!-- https://sourceforge.net/projects/openexi/files -->
+    <property name="openexi.dir"             value="../lib" description="relative path"/>
+	<property name="openexi.jar"             value="nagasena.jar"/>
+    
+    <!-- https://exificient.github.io/java -->
+    <!-- https://exificient.github.io/java/exificient-gui-jar-with-dependencies.jar -->
+    <property name="exificient.dir"          value="../lib" description="relative path"/>
+    <property name="exificient.jar"          value="exificient-gui-jar-with-dependencies.jar"/>
+
+    <property name="javax.json.dir"          value="../lib" description="relative path"/>
+    <property name="javax.json.jar"          value="javax.json-api-1.0.jar"/>
+
+
+    <property name="javac.verbose"           value="-verbose"/>
+    <property name="java.dir"                value=".."/>
+    <property name="java.classes.dir"        value="${java.dir}/classes"/>
+    <property name="java.examples.dir"       value="${java.dir}/examples"/>
+    <property name="java.jars.dir"           value="${java.dir}/jars"/>
+    <property name="java.lib.dir"            location="${java.dir}/lib"/>
+    <property name="java.src.dir"            value="${java.dir}/src"/>
+    <property name="java.coderextreme.dir"       value="${java.src.dir}/net/coderextreme"/>
+    <property name="nashorn.dir"             value="."/>
+    <property name="nashorn.examples.dir"       value="${nashorn.dir}/examples"/>
+    <property name="java.jars.dir"           value="${java.dir}/jars"/>
+    <property name="src.org.web3d.x3d.jsail" value="${java.src.dir}/org/web3d/x3d/jsail"/><!-- concretes  -->
+    <property name="src.org.web3d.x3d.sai"   value="${java.src.dir}/org/web3d/x3d/sai"/>  <!-- interfaces -->
+    <property name="jsai.classes.archive.jar.name" value="X3DJSAIL.3.3.classes.jar"/>
+    <property name=   "jsai.full.archive.jar.name" value="X3DJSAIL.3.3.full.jar"/>
+	
+    <target name="all" depends="test.nashorn"/>
+
+    <target name="test.nashorn" description="Test Nashorn output from X3DJSAIL">
+		<echo message="Compile:"/>
+                <!-- local developer modification checks, apparently -->
+		<javac srcdir ="${java.examples.dir}"
+			   classpath=""
+			   destdir="${java.classes.dir}"
+			   debug="on"
+			   verbose="${javac.verbose}"
+			   includeantruntime="false" fork="${fork}">
+		</javac>
+		<javac srcdir ="${java.coderextreme.dir}"
+			   classpath="${javax.json.dir}/${javax.json.jar}"
+			   destdir="${java.classes.dir}"
+			   debug="on"
+			   verbose="${javac.verbose}"
+			   includeantruntime="false" fork="${fork}">
+		</javac>
+                <!-- Dev testing: copying of originals, reconversion and then comparison of files -->
+		<echo message="Copy:"/>
+		<copy file="${java.examples.dir}/HelloWorldProgramOutput.x3d"  tofile="${nashorn.examples.dir}/HelloWorldProgramOutput.x3d"  overwrite="true" verbose="true"/>
+		<copy file="${java.examples.dir}/HelloWorldProgramOutput.json" tofile="${nashorn.examples.dir}/HelloWorldProgramOutput.json" overwrite="true" verbose="true"/>
+		<echo message="Run:"/>
+                <java classname="HelloWorldProgramOutput" classpath="${java.classes.dir};${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
+			<arg value="${nashorn.examples.dir}/HelloWorldProgramOutput.x3d"/>
+                    <arg value="-toJS"/><!-- alternatively -toJavaScript -->
+                    <arg value="-toFile"/>
+		    <arg value="${nashorn.examples.dir}/HelloWorldProgramOutput.Nashorn.js"/>
+                </java>
+                <java classname="HelloWorldProgramOutput" classpath="${java.classes.dir};${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
+			<arg value="${nashorn.examples.dir}/HelloWorldProgramOutput.x3d"/>
+                    <arg value="-toJSON"/>
+                    <arg value="-toFile"/>
+		    <arg value="${nashorn.examples.dir}/HelloWorldProgramOutput.Nashorn.json"/>
+                </java>
+                <java classname="HelloWorldProgramOutput" classpath="${java.classes.dir};${java.jars.dir}/${jsai.full.archive.jar.name}" fork="${fork}">
+			<arg value="${nashorn.examples.dir}/HelloWorldProgramOutput.x3d"/>
+                    <arg value="-toX3D"/>
+                    <arg value="-toFile"/>
+		    <arg value="${nashorn.examples.dir}/HelloWorldProgramOutput.Nashorn.x3d"/>
+                </java>
+		<echo message="==========================================="/>
+		<echo message="HelloWorldProgramOutput.Nashorn.x3d"/>
+		<xmlvalidate lenient="yes" warn="yes" file="${nashorn.examples.dir}/HelloWorldProgramOutput.Nashorn.x3d"/>
+		<xmlvalidate lenient="no"  warn="yes" file="${nashorn.examples.dir}/HelloWorldProgramOutput.Nashorn.x3d"/>
+		<condition property="Nashorn.x3d.match" value="true">
+			<filesmatch file1="${nashorn.examples.dir}/HelloWorldProgramOutput.x3d"
+				file2="${nashorn.examples.dir}/HelloWorldProgramOutput.Nashorn.x3d"/>
+		</condition>
+		<!-- otherwise --><property name="Nashorn.x3d.match" value="false"/>
+		<echo message="matches HelloWorldProgramOutput.x3d: ${Nashorn.x3d.match}"/>
+		<echo message="==========================================="/>
+		<echo message="==========================================="/>
+		<echo message="HelloWorldProgramOutput.Nashorn.json"/>
+		<condition property="Nashorn.json.match" value="true">
+			<filesmatch file1="${nashorn.examples.dir}/HelloWorldProgramOutput.json"
+				file2="${nashorn.examples.dir}/HelloWorldProgramOutput.Nashorn.json"/>
+		</condition>
+		<!-- otherwise --><property name="Nashorn.json.match" value="false"/>
+		<echo message="matches HelloWorldProgramOutput.json: ${Nashorn.json.match}"/>
+		<echo message="==========================================="/>
+		<echo message="script:"/>
+		<!--
+		<script language="javascript" manager="javax">
+			<classpath>
+				<fileset dir="${java.jars.dir}"  includes="${jsai.full.archive.jar.name}"/>
+			</classpath>
+			load('jvm-npm.js');
+			load('repeatPolyfill.js');
+			load('${nashorn.examples.dir}/HelloWorldProgramOutput.Nashorn.js');
+		</script>
+		-->
+		<exec executable="jjs">
+			<arg value="-J-Djava.class.path=../jars/X3DJSAIL.3.3.full.jar"/>
+			<arg value="${nashorn.examples.dir}/HelloWorldProgramOutput.Nashorn.js"/>
+		</exec>
+		<echo message="==========================================="/>
+		<echo message="HelloWorldProgramOutput.Nashorn.x3d"/>
+		<condition property="Nashorn.x3d.match" value="true">
+			<filesmatch file1="${nashorn.examples.dir}/HelloWorldProgramOutput.Nashorn.js.new.x3d"
+				file2="${nashorn.examples.dir}/HelloWorldProgramOutput.Nashorn.x3d"/>
+		</condition>
+		<!-- otherwise --><property name="Nashorn.x3d.match" value="false"/>
+		<echo message="matches HelloWorldProgramOutput.Nashorn.js.new.x3d: ${Nashorn.x3d.match}"/>
+		<echo message="==========================================="/>
+		<echo message="==========================================="/>
+		<echo message="HelloWorldProgramOutput.Nashorn.json"/>
+		<condition property="Nashorn.json.match" value="true">
+			<filesmatch file1="${nashorn.examples.dir}/HelloWorldProgramOutput.Nashorn.js.new.json"
+				file2="${nashorn.examples.dir}/HelloWorldProgramOutput.Nashorn.json"/>
+		</condition>
+		<!-- otherwise --><property name="Nashorn.json.match" value="false"/>
+		<echo message="matches HelloWorldProgramOutput.Nashorn.js.new.json: ${Nashorn.json.match}"/>
+		<echo message="==========================================="/>
+		<exec executable="jjs">
+			<arg value="-J-Djava.class.path=../jars/X3DJSAIL.3.3.full.jar;../classes"/>
+			<arg value="${nashorn.examples.dir}/Nashorn.js"/>
+		</exec>
+
+    </target>
+	
+</project>

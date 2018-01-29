@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -33,6 +33,7 @@ POSSIBILITY OF SUCH DAMAGE.
 package org.web3d.x3d.jsail.fields;
 
 import org.web3d.x3d.jsail.*;
+import org.web3d.x3d.jsail.Core.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import org.web3d.x3d.sai.InvalidFieldValueException;
@@ -44,6 +45,7 @@ import org.web3d.x3d.sai.InvalidFieldValueException;
  * MFString is an array of SFString values, each "quoted" and separated by whitespace. Individual SFString array values are optionally separated by commas.
 <br><br>
 Related field object: {@link SFStringObject}
+ * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#MFString">X3D Tooltips: type MFString</a>
 
  * 
 
@@ -264,11 +266,11 @@ method invocations on the same node object).
 				MFString[0] = newValue; // simple single string (value missing "wrapped quotes")
 				return this;
 			}
-			String[] newValues = newValue.trim().split("\"[\\s+]\"");
+			String[] newValues = cleanupUnescapedEnclosingQuotes(newValue.trim()).split("\"[\\s+]\"");
 			MFString = new String[newValues.length];
 			for (int i=0; i < newValues.length; i++)
 			{
-				MFString[i] = cleanupUnescapedEnclosingQuotes(newValues[i]); // fill array
+				MFString[i] = newValues[i].replace("\\\"","\""); // fill array, no backslash escapes preceding contained quote characters
 			}
 		return this;
 	}
@@ -329,16 +331,29 @@ method invocations on the same node object).
 		for (String eachValue : value)
 		{
 			// http://www.regexplanet.com/advanced/java/index.html
-			result += "\"" + eachValue.replaceAll("\"","\\\\\"") + "\" ";
+			// https://www.regular-expressions.info/java.html see "backslash-mess"
+			// https://docs.oracle.com/javase/tutorial/java/data/characters.html
+			// append another quoted SFString value to MFString output
+			result += " \"" + eachValue.replaceAll("&","&amp;")      // escape ampersands           in XML attributes
+									   .replaceAll("<","&lt;")       // escape    less-than < signs in XML attributes
+									   .replaceAll(">","&gt;")       // escape greater-than > signs in XML attributes
+									   .replaceAll("'","&apos;")     // escape apostrophes since XML attributes in this output are delimited by apostrophes
+									   .replaceAll("\\\\","\\\\")    // escape backslash \ as \\    in XML attributes
+									   .replaceAll("\"",  "\\\\\"")  // escape     quote " as \"    in XML attributes
+				    + "\"";
 		}
 		return (result.trim());
 	}
 
 	/**
-	 * Provide String representation of this object, properly escaped for XML-based X3D syntax.
+	 * Provide String representation of this object, properly escaped for XML-based X3D syntax and conforming to X3D Canonical Form.
 	 * @see SFStringObject#toStringX3D
 	 * @see SFStringObject#toStringX3D(String)
-	 * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#type">X3D Tooltips: type</a>
+	 * @see X3DObject#FILE_EXTENSION_X3D
+	 * @see X3DObject#FILE_EXTENSION_XML
+	 * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#MFString">X3D Tooltips: type MFString</a>
+	 * @see <a href="http://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/X3D_XML.html">X3D XML Encoding</a>
+	 * @see <a href="http://www.web3d.org/documents/specifications/19776-3/V3.3/Part03/concepts.html#X3DCanonicalForm">X3D Compressed Binary Encoding: X3D Canonical Form</a>
 	 * @return XML/X3D-escaped String version of this object
 	 */
 	public String toStringX3D ()
@@ -352,12 +367,16 @@ method invocations on the same node object).
 				result += "\"";
 			// avoid SFStringObject.toStringX3D(MFString[i]) due to additional contrary handling of \" and &
 			// http://www.regexplanet.com/advanced/java/index.html
+			// https://www.regular-expressions.info/java.html see "backslash-mess"
+			// https://docs.oracle.com/javase/tutorial/java/data/characters.html
 			String escapedValue = MFString[i]
-				.replaceAll("&","&amp;")	// escape ampersands
-				.replaceAll("<","&lt;")		// escape    less-than < signs
-				.replaceAll(">","&gt;")		// escape greater-than > signs in XML attributes
-				.replaceAll("'","&apos;")	// escape apostrophes since XML attributes in this output are delimited by apostrophes
-				.replaceAll("\"","\\\\\"");	// escape embedded quotation marks
+				.replaceAll("&","&amp;")      // escape ampersands           in XML attributes
+				.replaceAll("<","&lt;")       // escape    less-than < signs in XML attributes
+				.replaceAll(">","&gt;")       // escape greater-than > signs in XML attributes
+				.replaceAll("'","&apos;")     // escape apostrophes since XML attributes in this output are delimited by apostrophes
+				.replaceAll("\\\\","\\\\")    // escape backslash \ as \\    in XML attributes
+			    .replaceAll("\"",  "\\\\\""); // escape     quote " as \"    in XML attributes 
+
 			result += escapedValue;			// apply escaping to each SFString value
 			if (!MFString[i].startsWith("\""))
 				result += "\"";
@@ -387,7 +406,7 @@ method invocations on the same node object).
 	}
 	/**
 	 * Provides current value as a String.
-	 * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#type">X3D Tooltips: type</a>
+	 * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#MFString">X3D Tooltips: type MFString</a>
 	 * @return String version of the provided value
 	 */
 	@Override

@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -65,7 +65,8 @@ public interface X3DComposedGeometryNode extends X3DGeometryNode
 	/**
 	 * Provide array of X3DNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) from inputOutput MFNode field <i>attrib</i>.
 	 * <br><br>
-	 * <i>Warning:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DVertexAttributeNode.
+	 * <i>Warning:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DVertexAttributeNode.
+	 * @see org.web3d.x3d.sai.Shaders.X3DVertexAttributeNode
 	 * @return value of attrib field
 	 */
 	public X3DNode[] getAttrib(); // acceptable node types: X3DVertexAttributeNode
@@ -73,7 +74,7 @@ public interface X3DComposedGeometryNode extends X3DGeometryNode
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>attrib</i>.
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DVertexAttributeNode.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DVertexAttributeNode.
 	 * @param newValue is new value for the attrib field.
 	 * @return {@link X3DComposedGeometryNode} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -82,13 +83,13 @@ public interface X3DComposedGeometryNode extends X3DGeometryNode
 	/**
 	 * Add array of child attrib nodes to array of existing nodes (if any).
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DVertexAttributeNode.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DVertexAttributeNode.
 	 * @param newValue is new value array to be appended the attrib field.
 	 */
 	public void addAttrib(X3DNode[] newValue); // acceptable node types: X3DVertexAttributeNode
 	/**
 	 * Set single child attrib node, replacing prior array of existing nodes (if any).
-	 * @param newValue is new node for the attrib field.
+	 * @param newValue is new node for the attrib field
 	 */
 	public void setAttrib(X3DNode newValue); // acceptable node types: X3DVertexAttributeNode
 	/**
@@ -158,14 +159,14 @@ public interface X3DComposedGeometryNode extends X3DGeometryNode
 
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @return value of metadata field
 	 */
 	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @param newValue is new value for the metadata field.
 	 * @return {@link X3DComposedGeometryNode} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */

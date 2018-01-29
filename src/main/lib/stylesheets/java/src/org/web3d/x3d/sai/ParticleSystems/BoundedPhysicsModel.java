@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -84,7 +84,8 @@ public interface BoundedPhysicsModel extends X3DParticlePhysicsModelNode
 	 * <br><br>
 	 * <i>Tooltip:</i> [X3DGeometryNode] The geometry node provides the geometry used for each particle when the parent ParticleSystem node has geometryType=GEOMETRY.
  * <ul>
- *  <li> <i> Hint:</i>  include &amp;lt;component name='Geospatial' level='1'/&amp;gt;. </li> 
+ *  <li> <i>Hint:</i> X3D for Advanced Modeling (X3D4AM) slideset <br> <a href="http://x3dgraphics.com/slidesets/X3dForAdvancedModeling/GeospatialComponentX3dEarth.pdf" target="_blank">http://x3dgraphics.com/slidesets/X3dForAdvancedModeling/GeospatialComponentX3dEarth.pdf</a> </li> 
+ *  <li> <i>Warning:</i>  requires X3D profile='Full' or else include &amp;lt;component name='Geospatial' level='1'/&amp;gt; </li> 
  * </ul>
 	 * @return value of geometry field
 	 */
@@ -93,7 +94,7 @@ public interface BoundedPhysicsModel extends X3DParticlePhysicsModelNode
 	/**
 	 * Assign X3DGeometryNode instance (using a properly typed node) to inputOutput SFNode field <i>geometry</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> [X3DGeometryNode] The geometry node provides the geometry used for each particle when the parent ParticleSystem node has geometryType=GEOMETRY. Hint: include &lt;component name='Geospatial' level='1'/&gt;.
+	 * <i>Tooltip:</i> [X3DGeometryNode] The geometry node provides the geometry used for each particle when the parent ParticleSystem node has geometryType=GEOMETRY. Hint: X3D for Advanced Modeling (X3D4AM) slideset http://x3dgraphics.com/slidesets/X3dForAdvancedModeling/GeospatialComponentX3dEarth.pdf Warning: requires X3D profile='Full' or else include &lt;component name='Geospatial' level='1'/&gt;
 	 * @param newValue is new value for the geometry field.
 	 * @return {@link BoundedPhysicsModel} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -101,7 +102,7 @@ public interface BoundedPhysicsModel extends X3DParticlePhysicsModelNode
 
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @return value of metadata field
 	 */
 	@Override
@@ -109,7 +110,7 @@ public interface BoundedPhysicsModel extends X3DParticlePhysicsModelNode
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @param newValue is new value for the metadata field.
 	 * @return {@link BoundedPhysicsModel} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */

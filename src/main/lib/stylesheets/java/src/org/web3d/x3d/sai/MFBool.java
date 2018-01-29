@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -34,7 +34,7 @@ package org.web3d.x3d.sai;
 
 
 /**
- * MFBool is an array of Boolean values. Type MFBool was previously undefined in the VRML 97 Specification, but nevertheless needed for event utilities and scripting. Example use: MFBool is useful for defining a series of behavior states using a BooleanSequencer prototype.
+ * MFBool is an array of Boolean values. Type MFBool was previously undefined in the VRML 97 Specification, but nevertheless needed for event utilities and scripting. Example use: MFBool is useful for defining a series of behavior states using a BooleanSequencer prototype. Hint: boolean values are lower case (true|false) in order to maintain compatibility with HTML and other XML documents.
  * 
  * <br><br>
 

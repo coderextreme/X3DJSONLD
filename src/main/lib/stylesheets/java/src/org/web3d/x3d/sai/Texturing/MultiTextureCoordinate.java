@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -67,7 +67,7 @@ public interface MultiTextureCoordinate extends X3DTextureCoordinateNode
 
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @return value of metadata field
 	 */
 	@Override
@@ -75,7 +75,7 @@ public interface MultiTextureCoordinate extends X3DTextureCoordinateNode
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @param newValue is new value for the metadata field.
 	 * @return {@link MultiTextureCoordinate} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -85,7 +85,8 @@ public interface MultiTextureCoordinate extends X3DTextureCoordinateNode
 	/**
 	 * Provide array of X3DNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) from inputOutput MFNode field <i>texCoord</i>.
 	 * <br><br>
-	 * <i>Warning:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DTextureCoordinateNode.
+	 * <i>Warning:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DTextureCoordinateNode.
+	 * @see org.web3d.x3d.sai.Texturing.X3DTextureCoordinateNode
 	 * @return value of texCoord field
 	 */
 	public X3DNode[] getTexCoord(); // acceptable node types: X3DTextureCoordinateNode
@@ -93,7 +94,7 @@ public interface MultiTextureCoordinate extends X3DTextureCoordinateNode
 	/**
 	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) to inputOutput MFNode field <i>texCoord</i>.
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DTextureCoordinateNode.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DTextureCoordinateNode.
 	 * @param newValue is new value for the texCoord field.
 	 * @return {@link MultiTextureCoordinate} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -102,13 +103,13 @@ public interface MultiTextureCoordinate extends X3DTextureCoordinateNode
 	/**
 	 * Add array of child texCoord nodes to array of existing nodes (if any).
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DTextureCoordinateNode.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DTextureCoordinateNode.
 	 * @param newValue is new value array to be appended the texCoord field.
 	 */
 	public void addTexCoord(X3DNode[] newValue); // acceptable node types: X3DTextureCoordinateNode
 	/**
 	 * Set single child texCoord node, replacing prior array of existing nodes (if any).
-	 * @param newValue is new node for the texCoord field.
+	 * @param newValue is new node for the texCoord field
 	 */
 	public void setTexCoord(X3DNode newValue); // acceptable node types: X3DTextureCoordinateNode
 

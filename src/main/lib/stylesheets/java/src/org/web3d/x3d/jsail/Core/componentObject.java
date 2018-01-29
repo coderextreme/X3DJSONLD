@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -381,7 +381,7 @@ public class componentObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	 * <i>Warning:</i> authors can only choose from a strict list of enumeration values ({@link #NAME_CORE CORE}, {@link #NAME_CADGEOMETRY CADGEOMETRY}, {@link #NAME_CUBEMAPTEXTURING CUBEMAPTEXTURING}, {@link #NAME_DIS DIS}, {@link #NAME_ENVIRONMENTALEFFECTS ENVIRONMENTALEFFECTS}, {@link #NAME_ENVIRONMENTALSENSOR ENVIRONMENTALSENSOR}, {@link #NAME_EVENTUTILITIES EVENTUTILITIES}, {@link #NAME_FOLLOWERS FOLLOWERS}, {@link #NAME_GEOMETRY2D GEOMETRY2D}, {@link #NAME_GEOMETRY3D GEOMETRY3D}, {@link #NAME_GEOSPATIAL GEOSPATIAL}, {@link #NAME_GROUPING GROUPING}, {@link #NAME_H_ANIM H_ANIM}, {@link #NAME_INTERPOLATION INTERPOLATION}, {@link #NAME_KEYDEVICESENSOR KEYDEVICESENSOR}, {@link #NAME_LAYERING LAYERING}, {@link #NAME_LAYOUT LAYOUT}, {@link #NAME_LIGHTING LIGHTING}, {@link #NAME_NAVIGATION NAVIGATION}, {@link #NAME_NETWORKING NETWORKING}, {@link #NAME_NURBS NURBS}, {@link #NAME_PARTICLESYSTEMS PARTICLESYSTEMS}, {@link #NAME_PICKING PICKING}, {@link #NAME_POINTINGDEVICESENSOR POINTINGDEVICESENSOR}, {@link #NAME_RENDERING RENDERING}, {@link #NAME_RIGIDBODYPHYSICS RIGIDBODYPHYSICS}, {@link #NAME_SCRIPTING SCRIPTING}, {@link #NAME_SHADERS SHADERS}, {@link #NAME_SHAPE SHAPE}, {@link #NAME_SOUND SOUND}, {@link #NAME_TEXT TEXT}, {@link #NAME_TEXTURING TEXTURING}, {@link #NAME_TEXTURING3D TEXTURING3D}, {@link #NAME_TIME TIME}, {@link #NAME_VOLUMERENDERING VOLUMERENDERING}).
 	 * <br><br>
 	 * <i>Tooltip:</i> Provides name of this component, as defined in corresponding X3D Specification component Introduction. Example: see X3D Specification 10.1.1 Name for Grouping component http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/group.html#Name Hint: all nodes, components and levels are already supported in Full profile. Hint: well-defined names can simplify design and debugging through improved author understanding. Hint: X3D Scene Authoring Hints, Naming Conventions http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions
-	 * <br><br>@see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions">X3D Scene Authoring Hints: Naming Conventions</a>
+	 * <br><br>@see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions" target="_blank">X3D Scene Authoring Hints: Naming Conventions</a>
 	 * @param newValue is new value for the name field.
 	 * @return {@link componentObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -430,8 +430,7 @@ public class componentObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 			newValue.equals(NAME_VOLUMERENDERING))) {
 			throw new org.web3d.x3d.sai.InvalidFieldValueException("component name newValue=\"" + newValue + "\" has illegal value, must use a valid enumeration string.");
 		}
-
-		if (newValue == null) 
+		if (newValue == null)
 			newValue = new String();
 		// Check that newValue parameter meets naming requirements before assigning to component
 		if (!org.web3d.x3d.jsail.fields.SFStringObject.isNMTOKEN(newValue))
@@ -439,6 +438,12 @@ public class componentObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 			throw new org.web3d.x3d.sai.InvalidFieldValueException("component name newValue='" + newValue + "'" + 
 				" has illegal name value, cannot be empty and must be defined with valid NMTOKEN name string" + 
 				" (with legal characters and no embedded whitespace).");
+		}
+
+		if (!org.web3d.x3d.jsail.fields.SFStringObject.meetsX3dNamingConventions(newValue))
+		{
+			System.out.println("component name newValue='" + newValue + "'" + 
+				" has name value that does not meet X3D naming conventions.");
 		}
 		name = newValue;
 		return this;
@@ -456,6 +461,19 @@ public class componentObject extends org.web3d.x3d.jsail.X3DConcreteStatement
 	}
 
 	// Additional utility methods for this class ==============================
+
+	/**
+	 * Utility constructor that assigns name and level attributes.
+	 * @param newName  name for this component
+	 * @param newLevel level value for this component element
+	 * @see <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#component">X3D Tooltips: component</a>
+	 */
+	public componentObject (String newName, int newLevel)
+	{
+		initialize();
+		setName   (newName);
+		setLevel(newLevel);
+	}
 
 	/**
 	 * Add comment as String to contained commentsList.
@@ -495,8 +513,15 @@ setAttribute method invocations).
 	}
 		
 	/**
-	 * Recursive method to provide X3D string serialization of this model subgraph.
+	 * Recursive method to provide X3D string serialization of this model subgraph, utilizing XML encoding and conforming to X3D Canonical Form.
 	 * @param indentLevel number of levels of indentation for this element
+	 * @see X3DObject#FILE_EXTENSION_X3D
+	 * @see X3DObject#FILE_EXTENSION_XML
+	 * @see X3DObject#toStringXML()
+	 * @see X3DObject#toFileXML(String)
+	 * @see X3DObject#toFileX3D(String)
+	 * @see <a href="http://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/X3D_XML.html">X3D XML Encoding</a>
+	 * @see <a href="http://www.web3d.org/documents/specifications/19776-3/V3.3/Part03/concepts.html#X3DCanonicalForm">X3D Compressed Binary Encoding: X3D Canonical Form</a>
 	 * @return X3D string
 	 */
 	@Override
@@ -549,7 +574,9 @@ setAttribute method invocations).
 	/**
 	 * Recursive method to provide ClassicVRML string serialization.
 	 * @param indentLevel number of levels of indentation for this element
+	 * @see X3DObject#FILE_EXTENSION_CLASSICVRML
 	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html#VRML">X3D Resources: Virtual Reality Modeling Language (VRML) 97</a>
+	 * @see <a href="http://www.web3d.org/documents/specifications/19776-2/V3.3/Part02/X3D_ClassicVRML.html">Extensible 3D (X3D) encodings Part 2: Classic VRML encoding</a>
 	 * @see <a href="http://www.web3d.org/documents/specifications/19776-2/V3.3/Part02/grammar.html">Extensible 3D (X3D) encodings Part 2: Classic VRML encoding, Annex A: Grammar</a>
 	 * @return ClassicVRML string
 	 */
@@ -568,6 +595,7 @@ setAttribute method invocations).
 	/**
 	 * Recursive method to provide VRML97 string serialization.
 	 * @param indentLevel number of levels of indentation for this element
+	 * @see X3DObject#FILE_EXTENSION_VRML97
 	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html#VRML">X3D Resources: Virtual Reality Modeling Language (VRML) 97</a>
 	 * @see <a href="http://www.web3d.org/documents/specifications/14772/V2.0/index.html">Virtual Reality Modeling Language (VRML) 97 specification</a>
 	 * @see <a href="http://www.web3d.org/documents/specifications/14772-1/V2.1/index.html">VRML 97 v2.1 Amendment</a>
@@ -583,10 +611,14 @@ setAttribute method invocations).
 	 * Recursive method to provide object reference to node or statement by name attribute, if found as part of this element or in a contained element.
 	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, HAnim nodes.
 	 * <br ><br >
+	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
+	 * <br ><br >
 	 * <i>Warning:</i> more than one element may be found that has the same name, this method does not handle that case.
+	 * @see #findNodeByDEF(String)
+	 * @see X3DConcreteElement#hasAncestorSceneObject()
+	 * @see org.web3d.x3d.jsail.X3DConcreteElement#findAncestorX3DObject()
 	 * @param nameValue is value of the name field being searched for in this element and child elements(if any)
 	 * @return object reference to found element, null otherwise
-	 * @see #findNodeByDEF(String)
 	 */
 	@Override
 	public X3DConcreteElement findElementByNameValue(String nameValue)
@@ -598,11 +630,15 @@ setAttribute method invocations).
 	 * Recursive method to provide object reference to node or statement by name attribute, if found as part of this element or in a contained element.
 	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, HAnim nodes.
 	 * <br ><br >
+	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
+	 * <br ><br >
 	 * <i>Warning:</i> more than one element may be found that has the same name, this method does not handle that case.
+	 * @see #findNodeByDEF(String)
+	 * @see X3DConcreteElement#hasAncestorSceneObject()
+	 * @see org.web3d.x3d.jsail.X3DConcreteElement#findAncestorX3DObject()
 	 * @param nameValue is value of the name field being searched for in this element and child elements(if any)
 	 * @param elementName identifies the element of interest (meta MetadataString ProtoDeclare CADassembly ProtoInstance HAnimHumanoid etc.)
 	 * @return object reference to found element, null otherwise
-	 * @see #findNodeByDEF(String)
 	 */
 	@Override
 	public X3DConcreteElement findElementByNameValue(String nameValue, String elementName)
@@ -635,10 +671,14 @@ setAttribute method invocations).
 	/**
 	 * Recursive method to provide object reference to node by DEF, if found as this node or in a contained node.
 	 * <br ><br >
+	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
+	 * <br ><br >
 	 * <i>Warning:</i> more than one element may be found that has the same DEF, this method does not handle that case.
+	 * @see #findElementByNameValue(String)
+	 * @see X3DConcreteElement#hasAncestorSceneObject()
+	 * @see org.web3d.x3d.jsail.X3DConcreteElement#findAncestorX3DObject()
 	 * @param DEFvalue is value of the name field being searched for in this element and child elements(if any)
 	 * @return object reference to found node, null otherwise
-	 * @see #findElementByNameValue(String)
 	 */
 	@Override
 	public X3DConcreteNode findNodeByDEF(String DEFvalue)

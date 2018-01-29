@@ -123,7 +123,7 @@ if (typeof require === 'function' && typeof load !== 'function') {
 function loadURLs(loadpath, urls, loadedCallback, protoexp, done, externProtoDeclare, obj) {
 	if (typeof urls !== 'undefined') {
 		// console.error("Preprocessed", urls)
-		urls = processURLs(urls, loadpath);
+		// urls = processURLs(urls, loadpath);
 		// console.error("Postprocessed", urls)
 		for (var u in urls) {
 			try {
@@ -505,7 +505,7 @@ function ConvertToX3DOM(object, parentkey, element, path, containerField) {
                                 if (parentkey === '@url' || parentkey.indexOf("Url") === parentkey.length - 3) {
 					// console.error("Load array  is",localArray);
 					// console.error("Path is",path);
-					processURLs(localArray, path);
+					// processURLs(localArray, path);
 					// console.error("Processed Load array  is",localArray);
 				}
 				elementSetAttribute(element, parentkey.substr(1),'"'+localArray.join('" "')+'"');

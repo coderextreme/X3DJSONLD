@@ -218,7 +218,7 @@ function toggleShowDebugLogs()
          <meta name='reference' content='http://www.web3d.org/specifications/java/X3DJSAIL.html'/>
          <meta name='generator' content='HelloWorldProgramOutput.java'/>
          <meta name='created' content='6 September 2016'/>
-         <meta name='modified' content='18 December 2017'/>
+         <meta name='modified' content='28 January 2018'/>
          <meta name='generator' content='X3D Java Scene Access Interface Library (X3DJSAIL)'/>
          <meta name='generator' content='http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java'/>
          <meta name='generator' content='Netbeans http://www.netbeans.org'/>
@@ -249,7 +249,7 @@ function toggleShowDebugLogs()
          (X3DJSAIL)'/>
          <WorldInfo USE='WorldInfoDEF'/>
          <WorldInfo USE='WorldInfoDEF'/>
-         <MetadataString DEF='scene.addChildMetadataObject' name='test' containerField='metadata'/>
+         <MetadataString DEF='scene.addChildMetadataObject' name='test' value='&quot;Top-level root Metadata node beneath Scene needs to be one of &apos;-children&apos; in JSON encoding&quot;' containerField='metadata'/>
          <LayerSet DEF='scene.addChildLayerSetObjectTest' containerField='children'/>
          <Transform DEF='LogoGeometryTransform' translation='0 1.5 0'>
          <Anchor description='select for X3D Java SAI Library (X3DJSAIL) description' url='&quot;../X3DJSAIL.html&quot; &quot;http://www.web3d.org/specifications/java/X3DJSAIL.html&quot;'>
@@ -258,7 +258,7 @@ function toggleShowDebugLogs()
          <Material DEF='GreenMaterial' diffuseColor='0 1 1' emissiveColor='0.8 0 0' transparency='0.1'/>
          <ImageTexture url='&quot;images/X3dJavaSceneAccessInterfaceSaiLibrary.png&quot; &quot;http://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png&quot;'/>
          </Appearance>
-         <Box DEF='test-NMTOKEN_regex.0123456789' class='textured'/>
+         <Box DEF='test-NMTOKEN_regex.0123456789' class='untextured'/>
          </Shape>
          </Anchor>
          </Transform>
@@ -283,8 +283,8 @@ function toggleShowDebugLogs()
          </Appearance>
          <Text string='&quot;X3D Java&quot; &quot;SAI Library&quot; &quot;X3DJSAIL&quot;'>
          <MetadataSet name='EscapedQuotationMarksMetadataSet' containerField='metadata'>
-         <MetadataString name='escapedQuotesTest1' containerField='value' value='&quot;escaped quotation marks example 1: He said, \&quot;Immel did it!\&quot;&quot;'/>
-         <MetadataString name='escapedQuotesTest2' containerField='value' value='&quot;escaped quotation marks example 2: He said, &amp;quot;Immel did it!&amp;quot;&quot;'/>
+         <MetadataString name='quotesTestC' containerField='value' value='&quot;MFString example C, backslash-escaped quotes: He said, \&quot;Immel did it!\&quot;&quot;'/>
+         <MetadataString name='extraChildTest' containerField='value' value='&quot;checks MetadataSetObject addValue() method&quot;'/>
          </MetadataSet>
          <FontStyle justify='&quot;MIDDLE&quot; &quot;MIDDLE&quot;'/>
          </Text>
@@ -466,7 +466,7 @@ function toggleShowDebugLogs()
             <tr>
                <td style="text-align:right;color:green">modified</td>
                <td> &nbsp; </td>
-               <td>18 December 2017</td>
+               <td>28 January 2018</td>
             </tr>
             <tr>
                <td style="text-align:right;color:green">generator</td>

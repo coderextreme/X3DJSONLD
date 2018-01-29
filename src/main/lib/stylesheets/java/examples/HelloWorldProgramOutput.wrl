@@ -10,7 +10,7 @@
 #META "reference" "http://www.web3d.org/specifications/java/X3DJSAIL.html"
 #META "generator" "HelloWorldProgramOutput.java"
 #META "created" "6 September 2016"
-#META "modified" "18 December 2017"
+#META "modified" "28 January 2018"
 #META "generator" "X3D Java Scene Access Interface Library (X3DJSAIL)"
 #META "generator" "http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"
 #META "generator" "Netbeans http://www.netbeans.org"
@@ -50,6 +50,7 @@ USE WorldInfoDEF
 USE WorldInfoDEF
 DEF scene.addChildMetadataObject MetadataString { 
  name "test"
+ value [ "Top-level root Metadata node beneath Scene needs to be one of &apos;-children&apos; in JSON encoding" ]
  }
 DEF scene.addChildLayerSetObjectTest LayerSet { 
  order [ 0 ]
@@ -73,7 +74,7 @@ DEF LogoGeometryTransform Transform {
                          }
                     }
                  geometry DEF test-NMTOKEN_regex.0123456789 Box { 
-                     # class "textured"
+                     # class "untextured"
                      }
                 }
           ]
@@ -120,17 +121,17 @@ DEF TextTransform Transform {
                  name "EscapedQuotationMarksMetadataSet"
                    value [
                   MetadataString { 
-                         name "escapedQuotesTest1"
-                         value [ "escaped quotation marks example 1: He said, \"Immel did it!\"" ]
+                         name "quotesTestC"
+                         value [ "MFString example C, backslash-escaped quotes: He said, \"Immel did it!\"" ]
                          }
 MetadataString { 
-                         name "escapedQuotesTest2"
-                         value [ "escaped quotation marks example 2: He said, &quot;Immel did it!&quot;" ]
+                         name "extraChildTest"
+                         value [ "checks MetadataSetObject addValue() method" ]
                          }
                   ]
                 }
-            # escaped quotation marks example 3: He said, "Immel did it!"
-            # escaped quotation marks example 4: He said, &quot;Immel did it!&quot;
+            # Comment example A, plain quotation marks: He said, "Immel did it!"
+            # Comment example B, XML character entities: He said, &quot;Immel did it!&quot;
                         }
         }
 Collision { 
@@ -226,7 +227,7 @@ DEF TestShape1 Shape {
 
           description "ArtDeco01Material can substitute for a Material node"# [HelloWorldProgram diagnostic] ArtDeco01ProtoInstance.getNodeType()="Material"
                 }
-    # ArtDeco01Material prototype goes here...
+    # ArtDeco01Material prototype goes here... TODO ensure setContainerField is handled in exported Java
         }
  geometry Sphere { 
      radius 0.001
@@ -238,7 +239,7 @@ DEF TestShape2 Shape {
 
           description "ArtDeco02Material can substitute for another Material node"# [HelloWorldProgram diagnostic] ArtDeco02ProtoInstance.getNodeType()="ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time, TODO X3DJSAIL needs to add further capability."
                 }
-    # ArtDeco02Material prototype goes here...
+    # ArtDeco02Material prototype goes here... TODO ensure setContainerField is handled in exported Java
         }
  geometry Cone { 
      bottomRadius 0.001
@@ -337,14 +338,10 @@ DEF DeclarativeGroupExample Group {
           ]
 }
 # Test success: declarative statement addChild()
-# Test success: x3dModel.findNodeByDEF(DeclarativeAppearanceExample) = <Appearance DEF='DeclarativeAppearanceExample'/> i.e.
-#	<Appearance DEF='DeclarativeAppearanceExample'>
-#	    <!-- DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance -->
-#	    <ProtoInstance DEF='MyMaterialModulator' name='MaterialModulator' containerField='material'/>
-#	</Appearance>
+# Test success: x3dModel.findNodeByDEF(DeclarativeAppearanceExample) = <Appearance DEF='DeclarativeAppearanceExample'/> i.e. <Appearance DEF='DeclarativeAppearanceExample'> <!-- DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance --> <ProtoInstance DEF='MyMaterialModulator' name='MaterialModulator' containerField='material'/> </Appearance>
 # Test success: x3dModel.findElementByNameValue(findThisNameValue) = <MetadataString DEF='FindableMetadataStringTest' name='findThisNameValue' value='"test case"'/>
 # Test success: x3dModel.findElementByNameValue("ArtDeco01Material", "ProtoDeclare") found
-# Test success: x3dModel.findElementByNameValue("MaterialModulator", "ProtoDeclare")  found
+# Test success: x3dModel.findElementByNameValue("MaterialModulator", "ProtoDeclare") found
 # Test success: x3dModel.findElementByNameValue("MaterialModulator", "ProtoInstance") found
 DEF TestFieldObjectsGroup Group { 
    children [
@@ -376,12 +373,12 @@ Sound {
         }
 # set sound-ellipsoid location height at 1.6m to match typical avatar height
 }
-# Test success:  AnchorObject.isNode()=true,              siteAnchor.isNode()=true
-# Test success:  AnchorObject.isStatement()=false,        siteAnchor.isStatement()=false
-# Test success:   ROUTEObject.isNode()=false,     orbitPositionROUTE.isNode()=false
-# Test success:   ROUTEObject.isStatement()=true, orbitPositionROUTE.isStatement()=true
-# Test success: CommentsBlock.isNode()=false,           testComments.isNode()=false
-# Test success: CommentsBlock.isStatement()=false,      testComments.isStatement()=false
+# Test success: AnchorObject.isNode()=true, siteAnchor.isNode()=true
+# Test success: AnchorObject.isStatement()=false, siteAnchor.isStatement()=false
+# Test success: ROUTEObject.isNode()=false, orbitPositionROUTE.isNode()=false
+# Test success: ROUTEObject.isStatement()=true, orbitPositionROUTE.isStatement()=true
+# Test success: CommentsBlock.isNode()=false, testComments.isNode()=false
+# Test failure: CommentsBlock.isStatement()=true, testComments.isStatement()=true
 DEF ExtrusionShape Shape { 
   appearance DEF TransparentAppearance Appearance { 
       material Material { 

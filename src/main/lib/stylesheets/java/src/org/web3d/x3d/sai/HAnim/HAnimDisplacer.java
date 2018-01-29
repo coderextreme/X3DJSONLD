@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -47,10 +47,12 @@ import org.web3d.x3d.sai.Core.*;
  * <ul>
  *  <li> <i>Hint:</i> HAnimDisplacer can be used in three different ways: (a) identify vertices corresponding to a particular feature in a parent HAnimSegment node, (b) represent a particular muscular action for a parent HAnimJoint node by displacing corresponding HAnimHumanoid skin vertices in various directions (linearly or radially), or (c) represent a complete configuration of coordinate vertices in a parent HAnimSegment node or parent HAnimJoint/HAnimHumanoid nodes. Example: in the case of a face, there might be a separate HAnimDisplacer node for each facial expression. </li> 
  *  <li> <i>Hint:</i> name suffixes include _feature, _action and _config. </li> 
- *  <li> <i>Hint:</i> multiple HAnimDisplacer nodes must appear consecutively inside parent HAnimSegment. </li> 
+ *  <li> <i>Hint:</i> multiple HAnimDisplacer nodes must appear consecutively inside parent HAnimSegment for proper content validationi in XML encoding. </li> 
+ *  <li> <i>Warning:</i> index values for HanimHumanoid skin IndexedFaceSet, skinCoord and skinNormal nodes must all be consistently defined together with HAnimJoint HAnimSegment and HAnimDisplacer nodes for proper skin animation. </li> 
  *  <li> <i>Hint:</i> H-Anim Specification <br> <a href="http://www.web3d.org/documents/specifications/19774-1/V2.0/HAnim/HAnimArchitecture.html" target="_blank">http://www.web3d.org/documents/specifications/19774-1/V2.0/HAnim/HAnimArchitecture.html</a> </li> 
  *  <li> <i>Hint:</i> H-Anim Specification, Displacer <br> <a href="http://www.web3d.org/documents/specifications/19774-1/V2.0/HAnim/ObjectInterfaces.html#Displacer" target="_blank">http://www.web3d.org/documents/specifications/19774-1/V2.0/HAnim/ObjectInterfaces.html#Displacer</a> </li> 
- *  <li> <i>Hint:</i>  include &amp;lt;component name='H-Anim' level='1'/&amp;gt; </li> 
+ *  <li> <i>Hint:</i> X3D for Advanced Modeling (X3D4AM) slideset <br> <a href="http://x3dgraphics.com/slidesets/X3dForAdvancedModeling/HumanoidAnimation.pdf" target="_blank">http://x3dgraphics.com/slidesets/X3dForAdvancedModeling/HumanoidAnimation.pdf</a> </li> 
+ *  <li> <i>Warning:</i>  requires X3D profile='Full' or else include &amp;lt;component name='H-Anim' level='1'/&amp;gt; </li> 
  * </ul>
  * <br>
  * <i>Package hint:</i>  This interface is defined by the X3D Java Language Binding Specification for the Scene Authoring Interface (SAI).
@@ -91,7 +93,8 @@ public interface HAnimDisplacer extends X3DGeometricPropertyNode
 	 * <br><br>
 	 * <i>Tooltip:</i> displacements are a set of SFVec3f values added to neutral/resting position of each of the corresponding HAnimSegment vertices (or HAnimJoint/HAnimHumanoid vertices) referenced by coordIndex field.
  * <ul>
- *  <li> <i> Hint:</i>  Individual displacement values are scaled by the weight factor, if present. </li> 
+ *  <li> <i>Hint:</i> Individual displacement values are scaled by the weight factor, if present. </li> 
+ *  <li> <i>Hint:</i>  since default pose faces along +Z axis, -x values are right side and +x values are left side within HAnimHumanoid. </li> 
  * </ul>
 	 * @return value of displacements field
 	 */
@@ -100,7 +103,7 @@ public interface HAnimDisplacer extends X3DGeometricPropertyNode
 	/**
 	 * Assign 3-tuple float array to inputOutput MFVec3f field named <i>displacements</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> displacements are a set of SFVec3f values added to neutral/resting position of each of the corresponding HAnimSegment vertices (or HAnimJoint/HAnimHumanoid vertices) referenced by coordIndex field. Hint: Individual displacement values are scaled by the weight factor, if present.
+	 * <i>Tooltip:</i> displacements are a set of SFVec3f values added to neutral/resting position of each of the corresponding HAnimSegment vertices (or HAnimJoint/HAnimHumanoid vertices) referenced by coordIndex field. Hint: Individual displacement values are scaled by the weight factor, if present. Hint: since default pose faces along +Z axis, -x values are right side and +x values are left side within HAnimHumanoid.
 	 * @param newValue is new value for the displacements field.
 	 * @return {@link HAnimDisplacer} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -108,7 +111,7 @@ public interface HAnimDisplacer extends X3DGeometricPropertyNode
 
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @return value of metadata field
 	 */
 	@Override
@@ -116,7 +119,7 @@ public interface HAnimDisplacer extends X3DGeometricPropertyNode
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @param newValue is new value for the metadata field.
 	 * @return {@link HAnimDisplacer} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -128,6 +131,7 @@ public interface HAnimDisplacer extends X3DGeometricPropertyNode
 	 * <br><br>
 	 * <i>Tooltip:</i> Unique name attribute must be defined so that HAnimDisplacer node can be identified at run time for animation purposes.
  * <ul>
+ *  <li> <i>Warning:</i> name prefix must match ancestor HAnimHumanoid name followed by underscore character, for example 'Nancy_' prepended before location name. </li> 
  *  <li> <i>Warning:</i> name is not included if this instance is a USE node. Examples: sellion r_infraorbitale etc. as listed in H-Anim Specification. </li> 
  *  <li> <i>Hint:</i> H-Anim Feature Points <br> <a href="http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/tables/HAnimSurfaceFeaturePoints19774V1.0.txt" target="_blank">http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/tables/HAnimSurfaceFeaturePoints19774V1.0.txt</a> </li> 
  *  <li> <i>Hint:</i> H-Anim Specification, Feature points for the human body <br> <a href="http://www.web3d.org/documents/specifications/19774-1/V2.0/HAnim/FeaturePoints.html" target="_blank">http://www.web3d.org/documents/specifications/19774-1/V2.0/HAnim/FeaturePoints.html</a> </li> 
@@ -141,8 +145,8 @@ public interface HAnimDisplacer extends X3DGeometricPropertyNode
 	/**
 	 * Assign String enumeration value ("sellion"|"r_infraorbitale"|"l_infraorbitale"|"supramenton"|"r_tragion"|"r_gonion"|"l_tragion"|"l_gonion"|"nuchale"|"r_clavicale"|"suprasternale"|"l_clavicale"|"r_thelion"|"l_thelion"|"substernale"|"r_rib10"|"r_asis"|"l_rib10"|"l_asis"|"r_iliocristale"|"r_trochanterion"|"l_iliocristale"|"l_trochanterion"|"cervicale"|"rib10_midspine"|"r_psis"|"l_psis"|"waist_preferred_post"|"r_acromion"|"r_axilla_ant"|"r_radial_styloid"|"r_axilla_post"|"r_olecranon"|"r_humeral_lateral_epicn"|"r_humeral_medial_epicn"|"r_radiale"|"r_metacarpal_pha2"|"r_dactylion"|"r_ulnar_styloid"|"r_metacarpal_pha5"|"l_acromion"|"l_axilla_ant"|"l_radial_styloid"|"l_axilla_post"|"l_olecranon"|"l_humeral_lateral_epicn"|"l_humeral_medial_epicn"|"l_radiale"|"l_metacarpal_pha2"|"l_dactylion"|"l_ulnar_styloid"|"l_metacarpal_pha5"|"r_knee_crease"|"r_femoral_lateral_epicn"|"r_femoral_medial_epicn"|"r_metatarsal_pha5"|"r_lateral_malleolus"|"r_medial_malleolus"|"r_sphyrion"|"r_metatarsal_pha1"|"r_calcaneous_post"|"r_digit2"|"l_knee_crease"|"l_femoral_lateral_epicn"|"l_femoral_medial_epicn"|"l_metatarsal_pha5"|"l_lateral_malleolus"|"l_medial_malleolus"|"l_sphyrion"|"l_metatarsal_pha1"|"l_calcaneous_post"|"l_digit2"|"crotch"|"r_neck_base"|"l_neck_base"|"navel") ['sellion'|'r_infraorbitale'|'l_infraorbitale'|'supramenton'|'r_tragion'|'r_gonion'|'l_tragion'|'l_gonion'|'nuchale'|'r_clavicale'|'suprasternale'|'l_clavicale'|'r_thelion'|'l_thelion'|'substernale'|'r_rib10'|'r_asis'|'l_rib10'|'l_asis'|'r_iliocristale'|'r_trochanterion'|'l_iliocristale'|'l_trochanterion'|'cervicale'|'rib10_midspine'|'r_psis'|'l_psis'|'waist_preferred_post'|'r_acromion'|'r_axilla_ant'|'r_radial_styloid'|'r_axilla_post'|'r_olecranon'|'r_humeral_lateral_epicn'|'r_humeral_medial_epicn'|'r_radiale'|'r_metacarpal_pha2'|'r_dactylion'|'r_ulnar_styloid'|'r_metacarpal_pha5'|'l_acromion'|'l_axilla_ant'|'l_radial_styloid'|'l_axilla_post'|'l_olecranon'|'l_humeral_lateral_epicn'|'l_humeral_medial_epicn'|'l_radiale'|'l_metacarpal_pha2'|'l_dactylion'|'l_ulnar_styloid'|'l_metacarpal_pha5'|'r_knee_crease'|'r_femoral_lateral_epicn'|'r_femoral_medial_epicn'|'r_metatarsal_pha5'|'r_lateral_malleolus'|'r_medial_malleolus'|'r_sphyrion'|'r_metatarsal_pha1'|'r_calcaneous_post'|'r_digit2'|'l_knee_crease'|'l_femoral_lateral_epicn'|'l_femoral_medial_epicn'|'l_metatarsal_pha5'|'l_lateral_malleolus'|'l_medial_malleolus'|'l_sphyrion'|'l_metatarsal_pha1'|'l_calcaneous_post'|'l_digit2'|'crotch'|'r_neck_base'|'l_neck_base'|'navel'] to inputOutput SFString field named <i>name</i>.
 	 * <br><br>
-	 * <i>Tooltip:</i> Unique name attribute must be defined so that HAnimDisplacer node can be identified at run time for animation purposes. Warning: name is not included if this instance is a USE node. Examples: sellion r_infraorbitale etc. as listed in H-Anim Specification. Hint: H-Anim Feature Points http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/tables/HAnimSurfaceFeaturePoints19774V1.0.txt Hint: H-Anim Specification, Feature points for the human body http://www.web3d.org/documents/specifications/19774-1/V2.0/HAnim/FeaturePoints.html Hint: well-defined names can simplify design and debugging through improved author understanding. Hint: X3D Scene Authoring Hints, Naming Conventions http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions
-	 * <br><br>@see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions">X3D Scene Authoring Hints: Naming Conventions</a>
+	 * <i>Tooltip:</i> Unique name attribute must be defined so that HAnimDisplacer node can be identified at run time for animation purposes. Warning: name prefix must match ancestor HAnimHumanoid name followed by underscore character, for example 'Nancy_' prepended before location name. Warning: name is not included if this instance is a USE node. Examples: sellion r_infraorbitale etc. as listed in H-Anim Specification. Hint: H-Anim Feature Points http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/tables/HAnimSurfaceFeaturePoints19774V1.0.txt Hint: H-Anim Specification, Feature points for the human body http://www.web3d.org/documents/specifications/19774-1/V2.0/HAnim/FeaturePoints.html Hint: well-defined names can simplify design and debugging through improved author understanding. Hint: X3D Scene Authoring Hints, Naming Conventions http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions
+	 * <br><br>@see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions" target="_blank">X3D Scene Authoring Hints: Naming Conventions</a>
 	 * @param newValue is new value for the name field.
 	 * @return {@link HAnimDisplacer} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */

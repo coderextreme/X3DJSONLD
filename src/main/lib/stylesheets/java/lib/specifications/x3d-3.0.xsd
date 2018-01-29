@@ -188,6 +188,7 @@ Open-source license:
 				Each color value is an RGBA 4-tuple of floating point numbers in the range 0.0 to 1.0.
 				Alpha (opacity) values = (1 - transparency).
 				The default value of an uninitialized SFColorRGBA field is (0 0 0 0).
+				Warning: comma characters in attribute values do not pass strict XML validation.
 			</xs:appinfo>
 			<xs:documentation source="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFColorRGBAAndMFColorRGBA"/>
 		</xs:annotation>
@@ -322,7 +323,7 @@ Open-source license:
 	</xs:simpleType>
 	<xs:simpleType name="MFRotation">
 		<xs:annotation>
-			<xs:appinfo>MFRotation is an array of SFRotation values.  Individual SFRotation array values are optionally separated by commas.</xs:appinfo>
+			<xs:appinfo>MFRotation is an array of SFRotation values. Individual singleton SFRotation array values are optionally separated by commas.</xs:appinfo>
 			<xs:documentation source="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFRotationAndMFRotation"/>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
@@ -421,7 +422,7 @@ Open-source license:
 	</xs:simpleType>
 	<xs:simpleType name="MFVec3f">
 		<xs:annotation>
-			<xs:appinfo>MFVec3f is an array of SFVec3f values.  Individual SFVec3f array values are optionally separated by commas.</xs:appinfo>
+			<xs:appinfo>MFVec3f is an array of SFVec3f values. Individual singleton SFVec3f array values are optionally separated by commas.</xs:appinfo>
 			<xs:documentation source="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFVec3fAndMFVec3f"/>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
@@ -792,13 +793,13 @@ Open-source license:
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="2.0">
 				<xs:annotation>
-					<xs:appinfo>HAnim 19774 V1.0 approved by ISO in 2006.</xs:appinfo>
+					<xs:appinfo>International standard HAnim 19774 version 1 approved by ISO in 2006.</xs:appinfo>
 					<xs:documentation source="http://www.web3d.org/documents/specifications/19774/V1.0/HAnim/ObjectInterfaces.html#Humanoid"/>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="2.2">
 				<xs:annotation>
-					<xs:appinfo>Experimental HAnim 19774 V1.0 approved by ISO in 2006.</xs:appinfo>
+					<xs:appinfo>Draft revision standard HAnim 19774 version 2 under review by ISO in 2018.</xs:appinfo>
 					<xs:documentation source="http://www.web3d.org/documents/specifications/19774/V1.0/HAnim/ObjectInterfaces.html#Humanoid"/>
 				</xs:annotation>
 			</xs:enumeration>
@@ -7590,7 +7591,7 @@ Open-source license:
 		</xs:complexType>
 	</xs:element>
 	<!--======================================================================-->
-	<!--Scene graph structural nodes now available as elements and via SAI: X3D, header, component, meta, Scene, ROUTE, USE, field, fieldValue, ProtoDeclare, ExternProtoDeclare, ProtoInstance-->
+	<!--Scene graph statements now available as elements and via SAI: X3D, header, component, meta, Scene, ROUTE, USE, field, fieldValue, ProtoDeclare, ExternProtoDeclare, ProtoInstance-->
 	<!--======================================================================-->
 	<xs:element name="component">
 		<xs:annotation>
@@ -10993,11 +10994,11 @@ Open-source license:
 				<xs:element name="segments" type="MFNode" fixed="inputOutputField" default="HAnimSegment"/>
 				<xs:element name="sites" type="MFNode" fixed="inputOutputField" default="HAnimSite"/>
 				<xs:element name="skeleton" type="MFNode" fixed="inputOutputField" default="HAnimJoint|HAnimSite"/>
-				<xs:element name="skin" type="MFNode" fixed="inputOutputField" default="X3DChildNode"/>
+				<xs:element name="skin" type="MFNode" fixed="inputOutputField" default="Group|Transform|Shape|IndexedFaceSet"/>
 				<xs:element name="skinCoord" type="SFNode" fixed="inputOutputField" default="X3DCoordinateNode"/>
 				<xs:element name="skinNormal" type="SFNode" fixed="inputOutputField" default="X3DNormalNode"/>
 				<xs:element name="viewpoints" type="MFNode" fixed="inputOutputField" default="HAnimSite">
-					<!-- does not contain Viewpoint -->
+					<!-- does not contain Viewpoint nodes, rather contains HAnimSite/Viewpoint pairs -->
 				</xs:element>
 				<xs:attribute name="additionalInterface" type="xs:string" default="X3DBoundedObject"/>
 				<xs:attribute name="componentName" type="xs:NMTOKEN" fixed="H-Anim"/>
@@ -11010,18 +11011,46 @@ Open-source license:
 			<xs:complexContent>
 				<xs:extension base="X3DChildNode">
 					<xs:sequence minOccurs="0" maxOccurs="unbounded">
-						<xs:group ref="ChildContentModel" minOccurs="0" maxOccurs="unbounded"/>
-						<!-- child node HAnimSite USE references can appear here with containerField='viewpoints' -->
-						<xs:choice minOccurs="0">
+						<xs:element ref="HAnimJoint" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>SFNode skeleton, or MFNode joints (USE nodes)</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element ref="HAnimSegment" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>MFNode segments (USE nodes)</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element ref="HAnimSite" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>SFNode skeleton, or MFNode sites/viewpoints (USE nodes)</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:choice minOccurs="0" maxOccurs="1">
+							<xs:annotation>
+								<xs:documentation>SFNode skin</xs:documentation>
+							</xs:annotation>
+							<xs:element ref="Group"/>
+							<xs:element ref="Transform"/>
+							<xs:element ref="Shape"/>
+							<xs:element ref="IndexedFaceSet"/>
+							<!-- TODO possibly add other indexed mesh nodes as alternatives here when Mantis comment is resolved -->
+						</xs:choice>
+						<xs:choice minOccurs="0" maxOccurs="1">
 							<xs:annotation>
 								<xs:documentation>SFNode skinCoord</xs:documentation>
 							</xs:annotation>
 							<xs:element ref="Coordinate"/>
 							<xs:element ref="CoordinateDouble"/>
 						</xs:choice>
-						<xs:element ref="Normal" minOccurs="0">
+						<xs:element ref="Normal" minOccurs="0" maxOccurs="1">
 							<xs:annotation>
 								<xs:documentation>SFNode skinNormal</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element ref="ProtoInstance" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>Appropriately typed substitution node</xs:documentation>
 							</xs:annotation>
 						</xs:element>
 					</xs:sequence>
@@ -11066,13 +11095,15 @@ Open-source license:
 		<xs:annotation>
 			<xs:appinfo>
 				<xs:attribute name="name" type="jointNames"/>
-				<xs:element name="addChildren" type="MFNode" fixed="inputOnlyField" default="HAnimJoint|HAnimSegment"/>
-				<xs:element name="removeChildren" type="MFNode" fixed="inputOnlyField" default="HAnimJoint|HAnimSegment"/>
-				<xs:element name="children" type="MFNode" fixed="inputOutputField" default="HAnimJoint|HAnimSegment"/>
+				<xs:element name="addChildren" type="MFNode" fixed="inputOnlyField" default="HAnimJoint|HAnimSegment|HAnimSite"/>
+				<xs:element name="removeChildren" type="MFNode" fixed="inputOnlyField" default="HAnimJoint|HAnimSegment|HAnimSite"/>
+				<xs:element name="children" type="MFNode" fixed="inputOutputField" default="HAnimJoint|HAnimSegment|HAnimSite"/>
 				<xs:element name="displacers" type="MFNode" fixed="inputOutputField" default="HAnimDisplacer"/>
 				<xs:attribute name="additionalInterface" type="xs:string" default="X3DBoundedObject"/>
 				<xs:attribute name="componentName" type="xs:NMTOKEN" fixed="H-Anim"/>
 				<xs:attribute name="componentLevel" type="xs:positiveInteger" fixed="1"/>
+				<!-- TODO HAnimJoint derives from X3DGroupingNode in specification, how to indicate here? changing below leads to improperly lax and nondeterministic content model. -->
+				<!-- TODO Why is HAnimSite present in X3D 26.3.3? not listed in HAnim 6.3, but excluded in HAnim 4.6? -->
 			</xs:appinfo>
 			<xs:documentation source="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/hanim.html#HAnimJoint"/>
 			<!-- H-Anim specification http://www.web3d.org/documents/specifications/19774/V1.0/HAnim/ObjectInterfaces.html#Joint -->
@@ -11094,9 +11125,19 @@ Open-source license:
 								<xs:documentation>children</xs:documentation>
 							</xs:annotation>
 						</xs:element>
+						<xs:element ref="HAnimSite">
+							<xs:annotation>
+								<xs:documentation>children</xs:documentation>
+							</xs:annotation>
+						</xs:element>
 						<xs:element ref="HAnimDisplacer">
 							<xs:annotation>
 								<xs:documentation>displacers</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element ref="ProtoInstance">
+							<xs:annotation>
+								<xs:documentation>Appropriately typed substitution node</xs:documentation>
 							</xs:annotation>
 						</xs:element>
 					</xs:choice>

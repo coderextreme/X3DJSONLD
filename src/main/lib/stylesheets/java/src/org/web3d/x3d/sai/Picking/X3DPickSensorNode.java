@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2017 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2018 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -106,14 +106,14 @@ public interface X3DPickSensorNode extends X3DSensorNode
 
 	/**
 	 * Provide X3DMetadataObject instance (using a properly typed node) from inputOutput SFNode field <i>metadata</i>.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @return value of metadata field
 	 */
 	public X3DMetadataObject getMetadata(); // acceptable node types: X3DMetadataObject
 
 	/**
 	 * Assign X3DMetadataObject instance (using a properly typed node) to inputOutput SFNode field <i>metadata</i>.
-	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata">X3D Scene Authoring Hints: Metadata Nodes</a>
+	 * @see <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 * @param newValue is new value for the metadata field.
 	 * @return {@link X3DPickSensorNode} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -135,7 +135,8 @@ public interface X3DPickSensorNode extends X3DSensorNode
 	/**
 	 * Provide array of X3DNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) from outputOnly MFNode field <i>pickedGeometry</i>.
 	 * <br><br>
-	 * <i>Warning:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DChildNode.
+	 * <i>Warning:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DChildNode.
+	 * @see org.web3d.x3d.sai.Core.X3DChildNode
 	 * @return value of pickedGeometry field
 	 */
 	public X3DNode[] getPickedGeometry(); // acceptable node types: X3DChildNode
@@ -153,17 +154,20 @@ public interface X3DPickSensorNode extends X3DSensorNode
 	public X3DPickSensorNode setPickingGeometry(X3DGeometryNode newValue); // acceptable node types: X3DGeometryNode
 
 	/**
-	 * Provide array of X3DNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) with acceptable node types X3DGroupingNode|X3DShapeNode|Inline, from inputOutput MFNode field <i>pickTarget</i>.
+	 * Provide array of X3DNode results (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) with acceptable node types limited to X3DGroupingNode|X3DShapeNode|Inline, from inputOutput MFNode field <i>pickTarget</i>.
 	 * <br><br>
-	 * <i>Warning:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DGroupingNode|X3DShapeNode|Inline.
+	 * <i>Warning:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DGroupingNode|X3DShapeNode|Inline.
+	 * @see org.web3d.x3d.sai.Grouping.X3DGroupingNode
+	 * @see org.web3d.x3d.sai.Shape.X3DShapeNode
+	 * @see org.web3d.x3d.jsail.Networking.InlineObject
 	 * @return value of pickTarget field
 	 */
 	public X3DNode[] getPickTarget(); // acceptable node types: X3DGroupingNode|X3DShapeNode|Inline
 
 	/**
-	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) with acceptable node types X3DGroupingNode|X3DShapeNode|Inline, to inputOutput MFNode field <i>pickTarget</i>.
+	 * Assign X3DNode array (using an array consisting of properly typed nodes or X3DPrototypeInstance objects) with acceptable node types limited to X3DGroupingNode|X3DShapeNode|Inline, to inputOutput MFNode field <i>pickTarget</i>.
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DGroupingNode|X3DShapeNode|Inline.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DGroupingNode|X3DShapeNode|Inline.
 	 * @param newValue is new value for the pickTarget field.
 	 * @return {@link X3DPickSensorNode} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same node object).
 	 */
@@ -172,13 +176,13 @@ public interface X3DPickSensorNode extends X3DSensorNode
 	/**
 	 * Add array of child pickTarget nodes to array of existing nodes (if any).
 	 * <br><br>
-	 * <i>Note:</i> according to Object Model for X3D (OMX3D), acceptable node types are limited to X3DGroupingNode|X3DShapeNode|Inline.
+	 * <i>Note:</i> according to X3D Unified Object Model (X3DUOM), acceptable node types are limited to X3DGroupingNode|X3DShapeNode|Inline.
 	 * @param newValue is new value array to be appended the pickTarget field.
 	 */
 	public void addPickTarget(X3DNode[] newValue); // acceptable node types: X3DGroupingNode|X3DShapeNode|Inline
 	/**
 	 * Set single child pickTarget node, replacing prior array of existing nodes (if any).
-	 * @param newValue is new node for the pickTarget field.
+	 * @param newValue is new node for the pickTarget field
 	 */
 	public void setPickTarget(X3DNode newValue); // acceptable node types: X3DGroupingNode|X3DShapeNode|Inline
 	/**
