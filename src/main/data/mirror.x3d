@@ -41,8 +41,8 @@
 		  <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/>
                   <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/>
                   <field name='power' accessType='inputOutput' type='SFFloat' value='2'/>
-                  <ShaderPart url='"../shaders/x3dom.vs" "https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs"' type='VERTEX'></ShaderPart>
-                  <ShaderPart url='"../shaders/mix.fs" "https://coderextreme.net/X3DJSONLD/shaders/mix.fs"' type='FRAGMENT'></ShaderPart>
+		  <ShaderPart url='"../shaders/x3dom.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"' type='VERTEX'></ShaderPart>
+		  <ShaderPart url='"../shaders/mix.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/mix.fs"' type='FRAGMENT'></ShaderPart>
                 </ComposedShader>
                 <ComposedShader DEF="cobweb" language='GLSL'>
 <!--http://hypertextbook.com/facts/2005/JustinChe.shtml-->
@@ -51,8 +51,8 @@
 		  <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/>
                   <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/>
                   <field name='power' accessType='inputOutput' type='SFFloat' value='2'/>
-                  <ShaderPart url='"../shaders/cobweb.vs" "https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"' type='VERTEX'></ShaderPart>
-                  <ShaderPart url='"../shaders/mix.fs" "https://coderextreme.net/X3DJSONLD/shaders/mix.fs"' type='FRAGMENT'></ShaderPart>
+		  <ShaderPart url='"../shaders/cobweb.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/cobweb.vs"' type='VERTEX'></ShaderPart>
+		  <ShaderPart url='"../shaders/mix.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/mix.fs"' type='FRAGMENT'></ShaderPart>
                 </ComposedShader>
             </Appearance>
             <Sphere radius="30"></Sphere>

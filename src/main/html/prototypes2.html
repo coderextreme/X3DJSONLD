@@ -4,7 +4,7 @@
     <title>JSON Loader</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/create3000/cobweb/master/stable/3/3.2/cobweb.css"/>
-   <script type="text/javascript" src="node/cobweb.min.js"></script>
+   <script type="text/javascript" src="../node/cobweb.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ajv/5.0.1/ajv.min.js"></script>
     <style type="text/css">
@@ -37,11 +37,11 @@
 			</td>
 		</tr>
 </body>
-    <script type="text/javascript" src="node/X3DJSONLD.js"></script>
-    <script type="text/javascript" src="node/Script.js"></script>
-    <script type="text/javascript" src="node/PrototypeExpander.js"></script>
-    <script type="text/javascript" src="node/Flattener.js"></script>
-    <script type="text/javascript" src="node/loaderJQuery.js"></script>
+    <script type="text/javascript" src="../node/X3DJSONLD.js"></script>
+    <script type="text/javascript" src="../node/Script.js"></script>
+    <script type="text/javascript" src="../node/PrototypeExpander.js"></script>
+    <script type="text/javascript" src="../node/Flattener.js"></script>
+    <script type="text/javascript" src="../node/loaderJQuery.js"></script>
     <script type="text/javascript">
 // From: https://developers.google.com/web/fundamentals/getting-started/primers/promises
 function get(url) {
@@ -89,7 +89,7 @@ function getJSON(url) {
     			if ($('#scripting').is(':checked')) {
 				loadScripts(json);
 			}
-			var url = 'data/asmallbox.json';
+			var url = '../data/asmallbox.json';
 			getJSON(url).then(function(subjson) {
 				subjson = protoExpander.prototypeExpander(url, subjson, "");
 				subjson = flattener(subjson);
@@ -107,7 +107,7 @@ function getJSON(url) {
 		});
 	}
 	$(document).ready(function() {
-		loadX3DJSON('#x3domjson','data/cobweb.json');
+		loadX3DJSON('#x3domjson','../data/cobweb.json');
 	});
     </script>
 </html>
