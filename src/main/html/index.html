@@ -4,15 +4,12 @@
     <title>X3D JSON Loader</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
     <link rel="stylesheet" type="text/css" href="https://www.x3dom.org/download/dev/x3dom.css"></link>
-    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/create3000/cobweb/master/stable/3/3.2/cobweb.css"/>
-    <!--
-<script type="text/javascript" src="https://cdn.rawgit.com/create3000/cobweb/master/stable/3/3.2/cobweb.js"></script>
-    -->
-<script type="text/javascript" src="../node/cobweb.uncompressed.js"></script>
     <script type="text/javascript" src="https://www.x3dom.org/download/dev/x3dom-full.debug.js"></script>
     <!--
     <script type="text/javascript" src="../node/x3dom-full.debug.js"></script>
     -->
+   <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/create3000/x_ite/4.0.7/dist/x_ite.css"/>
+   <script type="text/javascript" src="https://cdn.rawgit.com/create3000/x_ite/4.0.7/dist/x_ite.min.js"></script>
     <script type="text/javascript" language="javascript" src="Saxonce/Saxonce.nocache.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ajv/5.0.1/ajv.min.js"></script>
@@ -208,7 +205,7 @@ Use Namespace: <select id="namespace">
 		Click <a onclick='updateFromJson(undefined, $("#file option:selected").text());encodeJSON(); return false;'>here</a> to load X3D JSON text into JSON X3DOM viewer, convert to STL,  convert to EXI, and convert to XML (and display).<br>
 	</td>
 	<td>
-		Click <a onclick='updateFromXml($("#file option:selected").text()); return false;'>here</a> to load X3D XML into Cobweb and XML X3DOM viewer. Converts to JSON, but does not do a good job.<br>
+		Click <a onclick='updateFromXml($("#file option:selected").text()); return false;'>here</a> to load X3D XML into X_ITE and XML X3DOM viewer. Converts to JSON, but does not do a good job.<br>
 	</td>
 	<td>
 		Click <a onclick='decodeEXI4JSON();updateFromJson(undefined, $("#file option:selected").text()); return false;'>here</a> to convert EXI to JSON, load X3D JSON and Display.
@@ -218,8 +215,8 @@ Use Namespace: <select id="namespace">
 <td>
 	<textarea id="json" rows="15" cols="80"></textarea><br>
     	<div id="x3domjson"></div>
-    <X3DCanvas id='cobwebjson' cache='false'>
-           <p>Your browser may not support all features required by Cobweb!</p>
+    <X3DCanvas id='x_itedom' cache='false'>
+           <p>Your browser may not support all features required by X_ITE!</p>
 	   <X3D>
 	   <Scene>
 	   </Scene>
@@ -229,8 +226,8 @@ Use Namespace: <select id="namespace">
 <td>
 	<textarea id="xml" rows="15" cols="80"></textarea><br>
 	<div id="x3domxml"></div>
-    <X3DCanvas id='cobwebxml' cache='false'>
-           <p>Your browser may not support all features required by Cobweb!</p>
+    <X3DCanvas id='x_itexml' cache='false'>
+           <p>Your browser may not support all features required by X_ITE!</p>
 	   <X3D>
 	   <Scene>
 	   </Scene>

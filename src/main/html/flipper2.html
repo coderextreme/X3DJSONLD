@@ -4,7 +4,7 @@
     <title>JSON Loader</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/create3000/cobweb/master/stable/3/3.2/cobweb.css"/>
-   <script type="text/javascript" src="node/cobweb.min.js"></script>
+   <script type="text/javascript" src="../node/cobweb.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ajv/5.0.1/ajv.min.js"></script>
     <style type="text/css">
@@ -30,10 +30,10 @@
 	   </X3D>
     </X3DCanvas>
 </body>
-    <script type="text/javascript" src="node/X3DJSONLD.js"></script>
-    <script type="text/javascript" src="node/PrototypeExpander.js"></script>
-    <script type="text/javascript" src="node/Flattener.js"></script>
-    <script type="text/javascript" src="node/loaderJQuery.js"></script>
+    <script type="text/javascript" src="../node/X3DJSONLD.js"></script>
+    <script type="text/javascript" src="../node/PrototypeExpander.js"></script>
+    <script type="text/javascript" src="../node/Flattener.js"></script>
+    <script type="text/javascript" src="../node/loaderJQuery.js"></script>
     <script type="text/javascript">
 // From: https://developers.google.com/web/fundamentals/getting-started/primers/promises
 function get(url) {
@@ -78,7 +78,7 @@ function getJSON(url) {
 	function loadX3DJSON(selector, url) {
 		getJSON(url).then(function(json) {
 			loadCobwebJS(json, 0); // loads into cobweb element 0 on page.
-			var suburl = 'data/abox.json';
+			var suburl = '../data/abox.json';
 			getJSON(suburl).then(function(subjson) {
 				for (var c in subjson["X3D"]["Scene"]["-children"]) {
 					json["X3D"]["Scene"]["-children"].push(subjson["X3D"]["Scene"]["-children"][c])
@@ -94,7 +94,7 @@ function getJSON(url) {
 		});
 	}
 	$(document).ready(function() {
-		loadX3DJSON('#x3domjson','data/flipp.json');
+		loadX3DJSON('#x3domjson','../data/flipp.json');
 	});
     </script>
 </html>

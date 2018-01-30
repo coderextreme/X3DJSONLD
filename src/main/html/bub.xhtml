@@ -4,9 +4,9 @@
 	<head>
 <meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge" />
     <link rel="stylesheet" type="text/css" href="https://www.x3dom.org/download/dev/x3dom.css"></link>
-    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/create3000/cobweb/master/stable/3/3.2/cobweb.css"/>
-    <script type="text/javascript" src="https://cdn.rawgit.com/create3000/cobweb/master/stable/3/3.2/cobweb.min.js"></script>
     <script type="text/javascript" src="https://www.x3dom.org/download/dev/x3dom-full.js"></script>
+   <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/create3000/x_ite/4.0.7/dist/x_ite.css"/>
+   <script type="text/javascript" src="https://cdn.rawgit.com/create3000/x_ite/4.0.7/dist/x_ite.min.js"></script>
 		<style>
 		    X3D { width:800px; height: 250px; }
 		    X3DCanvas { width: 800px; height:250px;
@@ -23,7 +23,7 @@
 	<div style="display:table-cell">
 	<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" showStat='false' showLog='false' width='800px' height='250px' backend='webgl'>
 	<head>
-		<meta name="title" content="data/bub.x3d"></meta>
+		<meta name="title" content="../data/bub.x3d"></meta>
 		<meta name="creator" content="John Carlson"></meta>
 		<meta name="description" content="3 prismatic spheres"></meta>
 		<meta name="generator" content="X3D-Edit, https://savage.nps.edu/X3D-Edit"></meta>
@@ -32,24 +32,24 @@
 	<Scene>
 		<NavigationInfo type="&quot;EXAMINE&quot; &quot;ANY&quot;"/>
 		<Background
-			backUrl='"images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"'
-			bottomUrl='"images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"'
-			frontUrl='"images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"'
-			leftUrl='"images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"'
-			rightUrl='"images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"'
-			topUrl='"images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"'
+			backUrl='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"'
+			bottomUrl='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"'
+			frontUrl='"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"'
+			leftUrl='"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"'
+			rightUrl='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"'
+			topUrl='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"'
 		  />
-		<Transform id="tr1" translation="0 0 0">
+		<Transform DEF="tr1" translation="0 0 0">
 			<Shape DEF="myShape">
 				<Appearance>
 				<Material diffuseColor=".7 .7 .7" specularColor=".5 .5 .5" />
 				<ComposedCubeMapTexture>
-					<ImageTexture url='"images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"' containerField="back"/>
-					<ImageTexture url='"images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"' containerField="bottom"/>
-					<ImageTexture url='"images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"' containerField="front"/>
-					<ImageTexture url='"images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"' containerField="left"/>
-					<ImageTexture url='"images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"' containerField="right"/>
-					<ImageTexture url='"images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"' containerField="top"/>
+					<ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"' containerField="back"/>
+					<ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"' containerField="bottom"/>
+					<ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"' containerField="front"/>
+					<ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"' containerField="left"/>
+					<ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"' containerField="right"/>
+					<ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"' containerField="top"/>
 				</ComposedCubeMapTexture>
 
 				<ComposedShader DEF='x3dom' language="GLSL">
@@ -60,20 +60,20 @@
 				  <field name='scale' type='SFFloat' accessType="inputOutput" value='0.5'/>
 				  <field name='power' type='SFFloat' accessType="inputOutput" value='2.0'/>
 				  
-				<ShaderPart url='"shaders/x3dom.vs" "https://coderextreme.net/X3DJSONLD/shaders/x3dom.vs"' type="VERTEX">
+				<ShaderPart url='"../shaders/x3dom.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"' type="VERTEX">
 				</ShaderPart>
-				<ShaderPart url='"shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/shaders/pc_bubbles.fs"' type='FRAGMENT'>
+				<ShaderPart url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"' type='FRAGMENT'>
 				</ShaderPart>
 				</ComposedShader>
 				</Appearance>
 					<Sphere/>
 				</Shape>
 		</Transform>
-		<Transform id="tr2" translation="0 0 0">
+		<Transform DEF="tr2" translation="0 0 0">
 			<Shape USE="myShape">
 			</Shape>
 		</Transform>
-		<Transform id="tr3" translation="0 0 0">
+		<Transform DEF="tr3" translation="0 0 0">
 			<Shape USE="myShape">
 			</Shape>
 		</Transform>
@@ -83,15 +83,15 @@
 	</div>
 	<div style="display:table-row">
 	<div style="display:table-cell">
-		 <h2>Cobweb</h2>
+		 <h2>I_ITE</h2>
 	</div>
 	<div style="display:table-cell">
-	<X3DCanvas id="bub" cache="false" url='"data/bub.x3d""'>
-		 <p>Your browser may not support all features required by Cobweb!</p>
+	<X3DCanvas id="bub" cache="false" url='"../data/bub.x3d""'>
+		 <p>Your browser may not support all features required by I_ITE!</p>
 	</X3DCanvas>
 	</div>
 	</div>
 	</div>
 	</body>
-	<script type="text/javascript" src="node/bounce.js"></script>
+	<script type="text/javascript" src="../node/bounce.js"></script>
 </html>
