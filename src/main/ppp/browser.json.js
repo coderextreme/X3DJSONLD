@@ -114,63 +114,52 @@ if (typeof X3DJSON['Script'] === 'undefined') {
 X3DJSON['Script'] = {};
 }
 
-X3DJSON['Script']['MoveCylinder'] = function() {
-	this.set_cycle = function (value) {
-		this.proxy.cycle = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
-	};
-	this.cycle_changed = function () {
-		var value = this.cycle;
-		return value;
-	};
-	this.cycle = undefined;
-	this.set_spine = function (value) {
-		this.proxy.spine = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
-	};
-	this.spine_changed = function () {
-		var value = this.spine;
-		return value;
-	};
-	this.spine = new MFVec3f([new SFVec3f ( -50 , -50 , 0 ),new SFVec3f ( 50 , 50 , 0 )]);
+X3DJSON['Script']['Browser'] = function() {
 ecmascript: 
-	this.set_cycle = function (value) { console.error(value); var endA = new SFVec3f(this.proxy.spine[0].x*Math.random()*2, this.proxy.spine[0].y*Math.random()*2, this.proxy.spine[0].z*Math.random()*2); var endB = new SFVec3f(this.proxy.spine[1].x*Math.random()*2, this.proxy.spine[1].y*Math.random()*2, this.proxy.spine[1].z*Math.random()*2); this.proxy.spine = new MFVec3f([endA, endB]); };
+	this.initialize = function () { console.error('DUDES'+'"DUDETTES'); };
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
 
-X3DJSON['Obj']['MoveCylinder'] = new X3DJSON['Script']['MoveCylinder']();
+X3DJSON['Obj']['Browser'] = new X3DJSON['Script']['Browser']();
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj']['MoveCylinder'] === 'undefined') {
-X3DJSON['Obj']['MoveCylinder'] = {};
+if (typeof X3DJSON['Obj']['Browser'] === 'undefined') {
+X3DJSON['Obj']['Browser'] = {};
 }
 
-if (typeof X3DJSON['Obj']['MoveCylinder']['ACTION'] === 'undefined') {
-X3DJSON['Obj']['MoveCylinder']['ACTION'] = {};
-X3DJSON['Obj']['MoveCylinder'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['MoveCylinder']['ACTION'],X3DJSON['Obj']['MoveCylinder']);
+if (typeof X3DJSON['Obj']['Browser']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Browser']['ACTION'] = {};
+X3DJSON['Obj']['Browser'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Browser']['ACTION'],X3DJSON['Obj']['Browser']);
 }
-if (typeof X3DJSON['Obj']['MoveCylinder'].initialize === "function") X3DJSON['Obj']['MoveCylinder'].initialize();
-X3DJSON.nodeUtil('TourTime').addEventListener('outputchange', function(event) {
-			X3DJSON['Obj']['MoveCylinder'].set_cycle(X3DJSON.nodeUtil('TourTime','cycleTime'), __eventTime);
-}, false);
-			X3DJSON['Obj']['MoveCylinder'].set_cycle(X3DJSON.nodeUtil('TourTime','cycleTime'), __eventTime);
+if (typeof X3DJSON['Obj']['Browser'].initialize === "function") X3DJSON['Obj']['Browser'].initialize();
+if (typeof X3DJSON['Script'] === 'undefined') {
+X3DJSON['Script'] = {};
+}
+
+X3DJSON['Script']['Clouds'] = function() {
+ecmascript: 
+	this.cumulustranslation = function () // These values designate the boundary location of the cloud { var xxx = ' '+' '+ ' Transform '+ ' ' + ' '; };
+
+};
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
-if (typeof X3DJSON['Obj']['MoveCylinder'] === 'undefined') {
-X3DJSON['Obj']['MoveCylinder'] = {};
+
+X3DJSON['Obj']['Clouds'] = new X3DJSON['Script']['Clouds']();
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Clouds'] === 'undefined') {
+X3DJSON['Obj']['Clouds'] = {};
 }
 
-if (typeof X3DJSON['Obj']['MoveCylinder']['ACTION']['spine'] === 'undefined') {
-X3DJSON['Obj']['MoveCylinder']['ACTION']['spine'] = [];
+if (typeof X3DJSON['Obj']['Clouds']['ACTION'] === 'undefined') {
+X3DJSON['Obj']['Clouds']['ACTION'] = {};
+X3DJSON['Obj']['Clouds'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Clouds']['ACTION'],X3DJSON['Obj']['Clouds']);
 }
-X3DJSON['Obj']['MoveCylinder']['ACTION']['spine'].push(function(property, value) {
-		if (property === 'spine') {
-			X3DJSON.nodeUtil('extrusion','spine',typeof X3DJSON['Obj']['MoveCylinder'].spine_changed === "function" ? X3DJSON['Obj']['MoveCylinder'].spine_changed() : X3DJSON['Obj']['MoveCylinder'].spine, __eventTime);
-		}
-});
-			X3DJSON.nodeUtil('extrusion','spine',typeof X3DJSON['Obj']['MoveCylinder'].spine_changed === "function" ? X3DJSON['Obj']['MoveCylinder'].spine_changed() : X3DJSON['Obj']['MoveCylinder'].spine, __eventTime);
-			X3DJSON['Obj']['MoveCylinder'].set_cycle(X3DJSON.nodeUtil('TourTime','cycleTime'), __eventTime);
-			X3DJSON.nodeUtil('extrusion','spine',typeof X3DJSON['Obj']['MoveCylinder'].spine_changed === "function" ? X3DJSON['Obj']['MoveCylinder'].spine_changed() : X3DJSON['Obj']['MoveCylinder'].spine, __eventTime);
+if (typeof X3DJSON['Obj']['Clouds'].initialize === "function") X3DJSON['Obj']['Clouds'].initialize();
+

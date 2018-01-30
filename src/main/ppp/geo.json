@@ -6,6 +6,16 @@
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
     "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
+      "component": [
+        {
+          "@name": "Shaders",
+          "@level": 1
+        },
+        {
+          "@name": "CubeMapTexturing",
+          "@level": 1
+        }
+      ],
       "meta": [
         {
           "@name": "title",
@@ -29,7 +39,7 @@
         },
         {
           "@name": "translated",
-          "@content": "10 August 2017"
+          "@content": "30 January 2018"
         },
         {
           "@name": "generator",
@@ -285,8 +295,8 @@
                               {
                                 "ShaderPart": {
                                   "@url": [
-                                    "../shaders/cobweb.vs",
-                                    "https://coderextreme.net/X3DJSONLD/shaders/cobweb.vs"
+                                    "../shaders/x_ite.vs",
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"
                                   ],
                                   "@type": "VERTEX"
                                 }
