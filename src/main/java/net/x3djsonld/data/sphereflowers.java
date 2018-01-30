@@ -84,7 +84,7 @@ public class sphereflowers
         .setProtoBody(new ProtoBodyObject()
           .addChild(new GroupObject()
             .addChild(new ProtoInstanceObject().setName("FlowerProto")
-              .addFieldValue(new fieldValueObject().setName("vertex").setValue("\"../shaders/cobweb_flowers_chromatic.vs\""))
+              .addFieldValue(new fieldValueObject().setName("vertex").setValue("\"../shaders/x_ite_flowers_chromatic.vs\""))
               .addFieldValue(new fieldValueObject().setName("fragment").setValue("\"../shaders/common.fs\""))))))
       .addChild(new ProtoInstanceObject().setName("flower"))
       .addChild(new ProtoInstanceObject().setName("flower"))
