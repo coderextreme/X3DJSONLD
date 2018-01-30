@@ -79,15 +79,15 @@ import org.web3d.x3d.jsail.Shape.*;
 
 public class gridBack
 {
-  /** Default constructor to create this object. */
-  public gridBack ()
-  {
-    initialize();
-  }
-	
-  /** Create and initialize the X3D model for this object. */
-  public final void initialize()
-  {
+	/** Default constructor to create this object. */
+	public gridBack ()
+	{
+	  initialize();
+	}
+
+	/** Create and initialize the X3D model for this object. */
+	public final void initialize()
+	{
   x3dModel = new X3DObject().setProfile("Interchange").setVersion("3.0")
   .setHead(new headObject()
     .addMeta(new metaObject().setName("title").setContent("gridBack.x3d"))
@@ -109,7 +109,7 @@ public class gridBack
         .setCoord(new CoordinateObject().setPoint(Coordinate_5_15_point))
         .setColor(new ColorObject().setColor(new MFColorObject(new float[] {0.5f,0.5f,0.5f,0.75f,0.75f,0.75f}))))));
   }
-  // end of initialize() method
+	// end of initialize() method
 
 	/** Large attribute array: IndexedFaceSet coordIndex field, scene-graph level=4, element #15, 245 total numbers */
 	private MFInt32Object IndexedFaceSet_4_15_coordIndex = new MFInt32Object(new int[] {0,8,9,1,-1,1,9,10,2,-1,2,10,11,3,-1,3,11,12,4,-1,4,12,13,5,-1,5,13,14,6,-1,6,14,15,7,-1,8,16,17,9,-1,9,17,18,10,-1,10,18,19,11,-1,11,19,20,12,-1,12,20,21,13,-1,13,21,22,14,-1,14,22,23,15,-1,16,24,25,17,-1,17,25,26,18,-1,18,26,27,19,-1,19,27,28,20,-1,20,28,29,21,-1,21,29,30,22,-1,22,30,31,23,-1,24,32,33,25,-1,25,33,34,26,-1,26,34,35,27,-1,27,35,36,28,-1,28,36,37,29,-1,29,37,38,30,-1,30,38,39,31,-1,32,40,41,33,-1,33,41,42,34,-1,34,42,43,35,-1,35,43,44,36,-1,36,44,45,37,-1,37,45,46,38,-1,38,46,47,39,-1,40,48,49,41,-1,41,49,50,42,-1,42,50,51,43,-1,43,51,52,44,-1,44,52,53,45,-1,45,53,54,46,-1,46,54,55,47,-1,48,56,57,49,-1,49,57,58,50,-1,50,58,59,51,-1,51,59,60,52,-1,52,60,61,53,-1,53,61,62,54,-1,54,62,63,55,-1});
@@ -124,32 +124,47 @@ public class gridBack
 	.append(new MFVec3fObject(new float[] {-2.25f,-3.75f,0.0f,-0.75f,-3.75f,0.0f,0.75f,-3.75f,0.0f,2.25f,-3.75f,0.0f,3.75f,-3.75f,0.0f,5.25f,-3.75f,0.0f,-5.25f,-5.25f,0.0f,-3.75f,-5.25f,0.0f,-2.25f,-5.25f,0.0f,-0.75f,-5.25f,0.0f}))
 	.append(new MFVec3fObject(new float[] {0.75f,-5.25f,0.0f,2.25f,-5.25f,0.0f,3.75f,-5.25f,0.0f,5.25f,-5.25f,0.0f}));
 
-  /** The initialized model object, created within initialize() method. */
-  private X3DObject x3dModel;
-  
-  /** Provide a 
-   * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
-   * of the X3D model.
-   * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
-   * @return gridBack model
-   */
-  public X3DObject getX3dModel()
-  {	  
-	  return x3dModel;
-  }
+	/** The initialized model object, created within initialize() method. */
+	private X3DObject x3dModel;
+
+	/** Provide a 
+	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
+	 * of the X3D model.
+	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
+	 * @return gridBack model
+	 */
+	public X3DObject getX3dModel()
+	{	  
+		return x3dModel;
+	}
 	   
-    /** Default main() method provided for test purposes.
-     * @param argv input parameters
-	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(argv)</a>
+    /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
+     * @param args array of input parameters, provided as arguments
+	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(args)</a>
 	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#validationReport--">X3DObject.validationReport()</a>
+     * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
+     * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html#USAGE">CommandLine.USAGE</a>
+     * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
      */
-    public static void main(String argv[])
+    public static void main(String args[])
     {
         X3DObject exampleObject = new gridBack().getX3dModel();
 
-        exampleObject.handleArguments(argv);
-        System.out.print("gridBack self-validation test results: ");
-        String validationResults = exampleObject.validationReport();
-        System.out.println(validationResults);
+        exampleObject.handleArguments(args);
+		boolean validate = (args.length == 0);
+		for (String arg : args)
+		{
+			if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+			{
+				validate = true;
+				break;
+			}
+		}
+		if (validate)
+		{
+			System.out.print("gridBack self-validation test results: ");
+			String validationResults = exampleObject.validationReport();
+			System.out.println(validationResults);
+		}
     }
 }
