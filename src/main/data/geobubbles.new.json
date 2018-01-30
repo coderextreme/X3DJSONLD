@@ -34,7 +34,7 @@
           },
           {
             "@name":"translated",
-            "@content":"11 December 2017"
+            "@content":"30 January 2018"
           },
           {
             "@name":"generator",
@@ -142,23 +142,7 @@
                 }
               ],
               "#sourceText":[
-"ecmascript:",
-"",
-"               function set_cycle(value) {",
-"                        var cartesianMult = -150;  // -150 if cartesian, 1 if geo",
-"                        var ov = val;",
-"\t\t\t// Browser.print('old '+ov);",
-"                        do {",
-"                                val = Math.floor(Math.random()*2);",
-"                                var vc = val;",
-"                                positions[vc] = new SFVec3d(Math.round(Math.random()*2)*0.0015708*cartesianMult, Math.round(Math.random()*2)*0.0015708*cartesianMult, 4);",
-"                        } while ( positions[ov][0] === positions[vc][0] && positions[ov][1] === positions[vc][1] && positions[ov][2] === positions[vc][2]);",
-"\t\t\t// Browser.println(positions[ov]);",
-"\t\t\t// Browser.println(positions[vc]);",
-"                        position = new MFVec3d();",
-"                        position[0] = new SFVec3d(positions[ov][0],positions[ov][1],positions[ov][2]);",
-"                        position[1] = new SFVec3d(positions[vc][0],positions[vc][1],positions[vc][2]);",
-"               }"
+"ecmascript: function set_cycle(value) { var cartesianMult = -150; // -150 if cartesian, 1 if geo var ov = val; // Browser.print('old '+ov); do { val = Math.floor(Math.random()*2); var vc = val; positions[vc] = new SFVec3d(Math.round(Math.random()*2)*0.0015708*cartesianMult, Math.round(Math.random()*2)*0.0015708*cartesianMult, 4); } while ( positions[ov][0] === positions[vc][0] && positions[ov][1] === positions[vc][1] && positions[ov][2] === positions[vc][2]); // Browser.println(positions[ov]); // Browser.println(positions[vc]); position = new MFVec3d(); position[0] = new SFVec3d(positions[ov][0],positions[ov][1],positions[ov][2]); position[1] = new SFVec3d(positions[vc][0],positions[vc][1],positions[vc][2]); }"
 ]
             }
           },

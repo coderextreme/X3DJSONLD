@@ -5,6 +5,11 @@
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
     "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
+        "-children":[
+          {
+            "#comment":"Alternate encodings: VRML97, X3D ClassicVRML Encoding, X3D Compressed Binary Encoding (CBE), X3DOM, JSON"
+          }
+        ],
         "meta": [
           {
             "@name":"title",
@@ -100,7 +105,7 @@
           },
           {
             "@name":"translated",
-            "@content":"11 December 2017"
+            "@content":"30 January 2018"
           },
           {
             "@name":"generator",
@@ -109,11 +114,6 @@
           {
             "@name":"reference",
             "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
-          }
-        ],
-        "-children":[
-          {
-            "#comment":"Alternate encodings: VRML97, X3D ClassicVRML Encoding, X3D Compressed Binary Encoding (CBE), X3DOM, JSON"
           }
         ]
     },

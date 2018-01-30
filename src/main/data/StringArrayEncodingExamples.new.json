@@ -68,7 +68,7 @@
           },
           {
             "@name":"translated",
-            "@content":"11 December 2017"
+            "@content":"30 January 2018"
           },
           {
             "@name":"generator",
@@ -110,21 +110,21 @@
                 { "Text":
                   {
                     "@string":["One, Two, Three","","He said, \"Immel did it!\""],
+                    "-children":[
+                      {
+                        "#comment":"alternative XML encoding: Text string='\"One, Two, Three\"\"\"\"He said, \\&quot;Immel did it!\\&quot;\"'"
+                      },
+                      {
+                        "#comment":"alternative Java source: .setString(new String [] {\"One, Two, Three\", \"\", \"He said, \\\"Immel did it!\\\"\"})"
+                      }
+                    ],
                     "-fontStyle":
                       { "FontStyle":
                         {
                           "@justify":["MIDDLE","MIDDLE"],
                           "@style":"BOLD"
                         }
-                      },
-                    "-children":[
-                      {
-                        "#comment":"alternative XML encoding: Text string='\"One, Two, Three\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"'"
-                      },
-                      {
-                        "#comment":"alternative Java source: .setString(new String [] {\"One, Two, Three\", \"\", \"He said, \\\"Immel did it!\\\"\"})"
                       }
-                    ]
                   }
                 }
             }
