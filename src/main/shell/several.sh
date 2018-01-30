@@ -51,17 +51,17 @@ do
 	${NODE} ${NODEDIR}/jsondiff.js $JSON $i
 done
 
-for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" |  sed -e 's/\.x3d$/.newPrettyPrint.intermediate.x3d/' -e 's/-/_/g' -e $ROOTTOLOCAL -e 's/^\/c/../'`
-do
-	X3D=`dirname $i | sed -e 's/_/-/g' -e $LOCALTOROOT `/`basename $i .newPrettyPrint.intermediate.x3d`.x3d 
-	${NODE} ${NODEDIR}/xmldiff.js $X3D $i
-done
+#for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" |  sed -e 's/\.x3d$/.newPrettyPrint.intermediate.x3d/' -e 's/-/_/g' -e $ROOTTOLOCAL -e 's/^\/c/../'`
+#do
+#	X3D=`dirname $i | sed -e 's/_/-/g' -e $LOCALTOROOT `/`basename $i .newPrettyPrint.intermediate.x3d`.x3d 
+#	${NODE} ${NODEDIR}/xmldiff.js $X3D $i
+#done
 
 for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.sail.js/' -e 's/-/_/g' -e 's/^\/c/../' -e $EXTONASH -e $DATATONASH -e $ROOTTONASH| xargs ls -d`
 do
 	pushd ../nashorn
 	echo $i
-	jjs -J-Xss1g -J-Xmx4g -cp "${NASHORN_CLASSPATH}" $i
+	jjs -J-Xss1g -J-Xmx4g -J-Djava.class.path="${NASHORN_CLASSPATH}" $i
 	popd
 done
 
