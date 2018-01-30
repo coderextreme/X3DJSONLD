@@ -10,8 +10,8 @@ Use Cases:
 	*Upload JSON and XML files from client, file dialog, copy and paste, type in.  Download files to desktop from server, copy and paste, or drag and drop.
 
 	*View X3D JSON in 3D.
-	*View X3D XML in Cobweb
-	View VRML in Cobweb.
+	*View X3D XML in X_ITE
+	View VRML in X_ITE.
 	*View X3D XML in 3D (X3DOM).
 	*Validate JSON against a JSON schema.
 		Validate JSON entering website and exiting website
