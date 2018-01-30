@@ -10,7 +10,7 @@ function newVelocity(id) {
 
 function setup(id) {
 	crds[id] = [0, 0, 0];
-    	var crd = document.getElementById(id);
+    	var crd = document.querySelector(id);
 	if (crd != null) {
 		crd.setAttribute("translation", crds[id].join(" "));
 	}
@@ -18,12 +18,12 @@ function setup(id) {
 }
 
 function initialize() {
-	setup("tr1");
-	setup("tr2");
-	setup("tr3");
+	setup("Transform[DEF=tr1]");
+	setup("Transform[DEF=tr2]");
+	setup("Transform[DEF=tr3]");
 }
 function setCoordinates(id) {
-    var crd = document.getElementById(id);
+    var crd = document.querySelector(id);
     crds[id][0] = crds[id][0] + velocity[id][0];
     crds[id][1] = crds[id][1] + velocity[id][1];
     crds[id][2] = crds[id][2] + velocity[id][2];
@@ -43,9 +43,9 @@ function setCoordinates(id) {
 }
 
 function animate() {
-	setCoordinates("tr1");
-	setCoordinates("tr2");
-	setCoordinates("tr3");
+	setCoordinates("Transform[DEF=tr1]");
+	setCoordinates("Transform[DEF=tr2]");
+	setCoordinates("Transform[DEF=tr3]");
 }
 
 initialize();
