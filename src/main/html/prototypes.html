@@ -63,7 +63,7 @@
 			var element = ConvertToX3DOM(json, "X3D", parent, url); // returns an element
 			$(selector+" X3D").remove();
 			$(selector).append(element); // add to X3DOM
-			load_X_ITE_DOM(element); // loads into I_ITE element 0 on page.
+			load_X_ITE_DOM(element); // loads into X_ITE element on page.
     			if ($('#scripting').is(':checked')) {
 				loadScripts(json);
 			}
@@ -75,7 +75,7 @@
 			subjson = protoExpander.prototypeExpander(url, subjson, "");
 			subjson = flattener(subjson);
 			var sceneElement = ConvertToX3DOM(subjson["X3D"]["Scene"], "Scene", element.querySelector(selector), url);  // returns Scene element
-			load_X_ITE_DOM(element); // loads into I_ITE element 0 on page.
+			load_X_ITE_DOM(element); // loads into X_ITE element on page.
 		});
 	}
 	$(document).ready(function() {
