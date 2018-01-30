@@ -3,8 +3,8 @@
 <head>
     <title>JSON Loader</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-   <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/create3000/cobweb/master/stable/3/3.2/cobweb.css"/>
-   <script type="text/javascript" src="../node/cobweb.min.js"></script>
+   <link rel="stylesheet" type="text/css" href="../css/x_ite.css"/>
+   <script type="text/javascript" src="../node/x_ite.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ajv/5.0.1/ajv.min.js"></script>
     <style type="text/css">
@@ -24,11 +24,11 @@
 	<table>
 		<tr>
 			<td>
-				Cobweb
+				X_ITE
 			</td>
 			<td>
-			    <X3DCanvas cache='false'>
-				   <p>Your browser may not support all features required by Cobweb!</p>
+			    <X3DCanvas id="x_itejson" cache='false'>
+				   <p>Your browser may not support all features required by X_ITE!</p>
 				   <X3D>
 				   <Scene>
 				   </Scene>
@@ -85,7 +85,7 @@ function getJSON(url) {
 			var parent = CreateElement('X3D');
 			json = protoExpander.prototypeExpander(url, json, "");
 			json = flattener(json);
-			loadCobwebJS(json, 0); // loads into cobweb element 0 on page.
+			load_X_ITE_JS(json); // loads into X_ITE element on page.
     			if ($('#scripting').is(':checked')) {
 				loadScripts(json);
 			}
@@ -96,7 +96,7 @@ function getJSON(url) {
 				for (var c in subjson["X3D"]["Scene"]["-children"]) {
 					json["X3D"]["Scene"]["-children"].push(subjson["X3D"]["Scene"]["-children"][c])
 				}
-				loadCobwebJS(json, 0); // reloads cobweb element 0 on page.
+				load_X_ITE_JS(json); // reloads X_ITE element on page.
 			}).catch(function(err) {
 				console.log(err);
 				alert("Subscene Load failed");

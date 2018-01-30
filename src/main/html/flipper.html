@@ -84,7 +84,7 @@ function getJSON(url) {
 		}).then(function(element) {
 			$(selector+" "+x3dtag).remove();
 			$(selector).append(element); // add to X3DOM
-			load_X_ITE_DOM(element); // loads into X_ITE element 0 on page.
+			load_X_ITE_DOM(element); // loads into X_ITE element on page.
 			return element
 		}).then(function(element) {
 			var url = '../data/abox.json';
@@ -93,7 +93,7 @@ function getJSON(url) {
 				subjson = flattener(subjson);
 				var sceneElement = ConvertToX3DOM(subjson[x3dtag][scenetag], scenetag, element.querySelector(scenetag), url);  // returns Scene element
 				x3dom.reload();
-				load_X_ITE_DOM(element); // reloads X_ITE element 0 on page.
+				load_X_ITE_DOM(element); // reloads X_ITE element on page.
 			}).catch(function(err) {
 				alert("Subscene Load failed");
 				console.log(err);
